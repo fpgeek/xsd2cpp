@@ -1,0 +1,246 @@
+package xsd.gen;
+
+message Schema {
+	message Namespace {
+		optional string prefix = 1;
+		optional string uri = 2;
+	}
+	required string file_name = 1;
+	optional Form.Type attribute_form_default = 2[default=unqualified];
+	optional Form.Type element_form_default = 3[default=unqualified];
+	optional string block_default = 4;
+	optional string final_default = 5;
+	optional string target_namespace = 6;
+	repeated Namespace namespace = 7;
+	repeated Import import_ = 8;
+	repeated ComplexType complex_type = 9;
+	repeated SimpleType simple_type = 10;
+	repeated Element element = 11;
+}
+
+message Import {
+	optional string namespace = 1;
+	optional string schema_location = 2;
+}
+
+message ComplexType {
+	optional string name = 1;
+	repeated ElementContaner element_container = 2;
+	repeated Attribute attribute = 3;
+}
+
+message SimpleType {
+	message Type {
+		enum Kind {
+			Restriction = 0;
+			List = 1;
+			Union = 2;
+		}
+
+		required Kind kind = 1;
+		optional Restriction restriction = 2;
+		optional List list = 3;
+		optional Union union = 4;
+	}
+	optional string name = 1;
+	required Type type = 2;
+}
+
+message Restriction {
+	required BuiltIn.Type base = 1;
+	optional int32 minExclusive = 2; 
+	optional int32 minInclusive = 3;
+	optional int32 maxExclusive = 4;
+	optional int32 maxInclusive = 5;
+	optional uint32 totalDigits = 6;
+	optional uint32 fractionDigits = 7;
+	optional uint32 length = 8;
+	optional uint32 minLength = 9;
+	optional uint32 maxLength = 10;
+	repeated string enumeration = 11;
+	optional string whiteSpace = 12;
+	optional string pattern = 13;
+}
+
+message List {
+	message ItemType {
+		enum Kind {
+			BuiltIn = 0;
+			SimpleTypeName = 1;
+			SimpleType = 2;
+		}
+		required Kind kind = 1;
+		optional BuiltIn.Type built_in = 2;
+		optional string simple_type_name = 3;
+		optional SimpleType simple_type = 4;
+	}
+	repeated ItemType item_type = 1;
+}
+
+message Union {
+	message MemberType {
+		enum Kind {
+			BuiltIn = 0;
+			SimpleTypeName = 1;
+		}
+		required Kind kind = 1;
+		optional BuiltIn.Type built_in = 2;
+		optional string simple_type_name = 3;
+	}
+	repeated MemberType member_type = 1;
+}
+
+message ElementContaner {
+	enum Kind {
+		Sequence = 0;
+		Choice = 1;
+		SequenceChoice = 2;
+	}
+
+	required Kind kind = 1;
+	repeated Element sequence = 2;
+	repeated Element choice = 3;
+	repeated Element sequenceChoice = 4;
+}
+
+message Element {
+	message Type {
+		enum Kind {
+			BuiltIn = 0;
+			SimpleTypeName = 1;
+			ComplextTypeName = 2;
+			SimpleType = 3;
+			ComplexType = 4;
+		}
+		required Kind kind = 1;
+		optional BuiltIn.Type built_in = 2;
+		optional string simple_type_name = 3;
+		optional string complex_type_name = 4;
+		optional SimpleType simple_type = 5;
+		optional ComplexType complex_type = 6;
+
+	}
+
+	required string name = 1;
+	repeated Type type = 2;
+	optional uint32 min_occur = 3[default=1];
+	optional uint32 max_occur = 4[default=1];
+	optional string default_value = 5;
+	optional string fixed_value = 6;
+}
+
+message Form {
+	enum Type {
+		qualified = 0;
+		unqualified = 1;
+	}
+}
+
+message Attribute {
+	message Type {
+		enum Kind {
+			BuiltIn = 0;
+			SimpleTypeName = 1;
+			SimpleType = 2;
+		}
+		required Kind kind = 1;
+		optional BuiltIn.Type built_in = 2;
+		optional string simple_type_name = 3;
+		optional SimpleType simple_type = 4;
+	}
+	enum Use {
+		optional = 0;
+		prohibited = 1;
+		required = 2;
+	}
+	required string name = 1;
+	required Type type = 2;
+	optional Use use = 3[default=optional];
+	optional string default_value = 4;
+	optional string fixed_value = 5;
+	optional Form.Type form = 6;
+}
+
+message BuiltIn {
+	enum Type {
+		// String
+		ENTITIES = 0;
+		ENTITY = 1;
+		ID = 2;
+		IDREF = 3;
+		IDREFS = 4;
+		language = 5;
+		Name = 6;
+		NCName = 7;
+		NMTOKEN = 8;
+		NMTOKENS = 9;
+		normalizedString = 10;
+		QName = 11;
+		string = 12;
+		token = 13;
+		// Date
+		date = 14;
+		dateTime = 15;
+		duration = 16;
+		gDay = 17;
+		gMonth = 18;
+		gMonthDay = 19;
+		gYear = 20;
+		gYearMonth = 21;
+		time = 22;
+		// Numeric
+		byte = 23;
+		decimal = 24;
+		int = 25;
+		integer = 26;
+		long = 27;
+		negativeInteger = 28;
+		nonNegativeInteger = 29;
+		nonPositiveInteger = 30;
+		positiveInteger = 31;
+		short = 32;
+		unsignedLong = 33;
+		unsignedInt = 34;
+		unsignedShort = 35;
+		unsignedByte = 36;
+		// Miscellaneous
+		anyURI = 37;
+		base64Binary = 38;
+		boolean = 39;
+		double = 40;
+		float = 41;
+		hexBinary = 42;
+		NOTATION = 43;
+	}
+}
+
+//////////////////////
+/*message CT_Document {
+	optional CT_Background background = 1;
+	optional CT_Body body = 2;
+	optional s.ST_ConformanceClass conformance = 3;
+}
+
+message CT_Body {
+	message Choice {
+		optional CT_CustomXmlBlock customXml = 1;
+		optional CT_SdtBlock sdt = 2;
+		optional CT_P p = 3;
+		optional CT_Tbl tbl = 4;
+		//...
+	}
+	repeated Choice choice_1 = 1;
+	optional CT_SectPr sectPr = 2; 
+}
+
+message CT_P {
+	optional CT_PPr pPr = 1;
+	message Choice {
+		CT_CustomXmlRun customXml = 1;
+		// ...
+		CT_R r = 2;
+	}
+	repeated Choice choice_1 = 2;
+	optional ST_LongHexNumber rsidRPr = 3;
+	// ...
+}*/
