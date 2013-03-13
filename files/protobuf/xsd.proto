@@ -27,6 +27,7 @@ message ComplexType {
 	optional string name = 1;
 	repeated ElementContaner element_container = 2;
 	repeated Attribute attribute = 3;
+	optional Restriction restriction = 4;
 }
 
 message SimpleType {
@@ -46,19 +47,31 @@ message SimpleType {
 	required Type type = 2;
 }
 
-message Restriction {
-	required BuiltIn.Type base = 1;
-	optional int32 minExclusive = 2; 
-	optional int32 minInclusive = 3;
-	optional int32 maxExclusive = 4;
-	optional int32 maxInclusive = 5;
-	optional uint32 totalDigits = 6;
-	optional uint32 fractionDigits = 7;
+message Base {
+	enum Kind {
+		BuiltIn = 0;
+		SimpleTypeName = 1;
+		ComplexTypeName = 2;
+	}
+	required Kind kind = 1;
+	optional BuiltIn.Type built_in = 2;
+	optional string simple_type_name = 3;
+	optional string complex_type_name = 4;
+}
+
+message Restriction {	
+	required Base base = 1;
+	optional string min_exclusive = 2; 
+	optional string min_inclusive = 3;
+	optional string max_exclusive = 4;
+	optional string max_inclusive = 5;
+	optional uint32 total_digits = 6;
+	optional uint32 fraction_digits = 7;
 	optional uint32 length = 8;
-	optional uint32 minLength = 9;
-	optional uint32 maxLength = 10;
+	optional uint32 min_length = 9;
+	optional uint32 max_length = 10;
 	repeated string enumeration = 11;
-	optional string whiteSpace = 12;
+	optional string white_space = 12;
 	optional string pattern = 13;
 }
 
@@ -94,13 +107,25 @@ message ElementContaner {
 	enum Kind {
 		Sequence = 0;
 		Choice = 1;
-		SequenceChoice = 2;
+		RepeatedSequence = 2;
+		RepeatedChoice = 3;
 	}
 
 	required Kind kind = 1;
 	repeated Element sequence = 2;
 	repeated Element choice = 3;
-	repeated Element sequenceChoice = 4;
+	repeated Element repeated_sequence = 4;
+	repeated Element repeated_choice = 5;
+	optional uint32 min_occurs = 7;
+}
+
+message MaxOccurs {
+    enum Kind {
+        Count = 0;
+        Unbounded = 1;
+    }
+    required Kind kind = 1[default=Count];
+    optional uint32 count = 2[default=1];
 }
 
 message Element {
@@ -108,9 +133,10 @@ message Element {
 		enum Kind {
 			BuiltIn = 0;
 			SimpleTypeName = 1;
-			ComplextTypeName = 2;
+			ComplexTypeName = 2;
 			SimpleType = 3;
 			ComplexType = 4;
+			Any = 5;
 		}
 		required Kind kind = 1;
 		optional BuiltIn.Type built_in = 2;
@@ -118,15 +144,22 @@ message Element {
 		optional string complex_type_name = 4;
 		optional SimpleType simple_type = 5;
 		optional ComplexType complex_type = 6;
-
+		optional Any any = 7;
 	}
 
 	required string name = 1;
-	repeated Type type = 2;
-	optional uint32 min_occur = 3[default=1];
-	optional uint32 max_occur = 4[default=1];
+	required Type type = 2;
+	optional uint32 min_occurs = 3;
+	optional MaxOccurs max_occurs = 4;
 	optional string default_value = 5;
 	optional string fixed_value = 6;
+	optional Form.Type form = 7;
+	optional string ns_prefix = 8;
+}
+
+message Any {
+	optional string namespace = 1;
+	optional string process_contents = 2;
 }
 
 message Form {
@@ -142,11 +175,13 @@ message Attribute {
 			BuiltIn = 0;
 			SimpleTypeName = 1;
 			SimpleType = 2;
+			T = 3;
 		}
 		required Kind kind = 1;
 		optional BuiltIn.Type built_in = 2;
 		optional string simple_type_name = 3;
 		optional SimpleType simple_type = 4;
+		optional AnyAttribute any_attribute = 5;
 	}
 	enum Use {
 		optional = 0;
@@ -159,6 +194,11 @@ message Attribute {
 	optional string default_value = 4;
 	optional string fixed_value = 5;
 	optional Form.Type form = 6;
+}
+
+message AnyAttribute {
+	optional string namespace = 1;
+	optional string process_contents = 2;
 }
 
 message BuiltIn {
