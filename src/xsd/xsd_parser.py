@@ -361,7 +361,7 @@ class ALL_SCHEMA:
                 nsPrefix = self._findNsPrefixFromAllSchema(namespace)
                 if nsPrefix:
                     pbElem.name = '%s_%s' % (pbElem.name, nsPrefix)
-                    pbElem.ns_prefix = nsPrefix
+                    pbElem.type.any.ns_prefix = nsPrefix
 
                     pbImport = xmlSchema.pbSchema.import_.add()
                     pbImport.namespace = namespace
@@ -405,8 +405,8 @@ class ALL_SCHEMA:
         if pbElem:
             ref = elementElem.attrib.get('ref')
             if ref:
-                nsPrefix = getPrefixFromName(ref)
-                if nsPrefix: pbElem.ns_prefix = nsPrefix
+                # nsPrefix = getPrefixFromName(ref)
+                # if nsPrefix: pbElem.ns_prefix = nsPrefix
 
                 otherElementElem, otherSchema = self._findElement(xmlSchema, ref)
                 otherElemCont = PB.ElementContainer()
@@ -501,13 +501,14 @@ class ALL_SCHEMA:
             elif childElem.tag == '{%s}list' % XSD_URI:
                 pass # TODO - list 처리
             elif childElem.tag == '{%s}union' % XSD_URI:
-                pass # TODO - union 처리
+                pbSimpleType.type.kind = PB.SimpleType.Type.Union
+                self._parseUnion(xmlSchema, childElem, pbSimpleType.type.union)
 
     def _parseAttribute(self, xmlSchema, attributeElem, pbAttribute):
         ref = attributeElem.attrib.get('ref')
         if ref:
-            nsPrefix = getPrefixFromName(ref)
-            if nsPrefix: pbAttribute.ns_prefix = nsPrefix
+            # nsPrefix = getPrefixFromName(ref)
+            # if nsPrefix: pbAttribute.ns_prefix = nsPrefix
 
             otherAttrElem, otherSchema = self._findAttribute(xmlSchema, ref)
             self._parseAttribute(otherSchema, otherAttrElem, pbAttribute)
@@ -537,11 +538,8 @@ class ALL_SCHEMA:
                 pbAttribute.type.built_in = xmlSchema.builtInTypeMap.get(type)
             elif self._isSimpleTypeName(type, xmlSchema):
                 pbAttribute.type.kind = PB.Attribute.Type.SimpleTypeName
-                if hasNsPrefix(type):
-                    pbAttribute.type.simple_type_name = getNsName(type)
-                    pbAttribute.ns_prefix = getNsPrefix(type)
-                else:
-                    pbAttribute.type.simple_type_name = type
+                pbAttribute.type.simple_type_name = type
+
             else:
                 print type
                 assert(False)
@@ -604,19 +602,34 @@ class ALL_SCHEMA:
             elif childElem.tag == '{%s}pattern' % XSD_URI:
                 pbRestriction.pattern = childElem.attrib.get('value')
             elif childElem.tag == '{%s}simpleType' % XSD_URI:
-                pass
+                pass # TODO
             elif childElem.tag == '{%s}group' % XSD_URI:
-                pass
+                pass # TODO
             elif childElem.tag == '{%s}all' % XSD_URI:
-                pass
+                pass # TODO
             elif childElem.tag == '{%s}choice' % XSD_URI:
-                pass
+                pass # TODO
             elif childElem.tag == '{%s}sequence' % XSD_URI:
-                pass
+                pass # TODO
             elif childElem.tag == '{%s}attribute' % XSD_URI:
-                pass
+                pass # TODO
             elif childElem.tag == '{%s}attributeGroup' % XSD_URI:
-                pass
+                pass # TODO
+
+    def _parseUnion(self, xmlSchema, unionElem, pbUnion):
+        memberTypes = unionElem.attrib.get('memberTypes')
+        if memberTypes:
+            memberTypeList = map(lambda m:m.strip(), memberTypes.split(' '))
+            for memberType in memberTypeList:
+                pbMemberType = pbUnion.member_type.add()
+                if isBuiltInType(memberType, xmlSchema.builtInTypeMap):
+                    pbMemberType.kind = PB.Union.MemberType.BuiltIn
+                    pbMemberType.built_in = xmlSchema.builtInTypeMap.get(memberType)
+                else:
+                    pbMemberType.kind = PB.Union.MemberType.SimpleTypeName
+                    pbMemberType.simple_type_name = memberType
+
+
 
 
 

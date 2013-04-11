@@ -155,11 +155,11 @@ message Element {
 	optional string default_value = 5;
 	optional string fixed_value = 6;
 	optional Form.Type form = 7;
-	optional string ns_prefix = 8;
 }
 
 message Any {
 	optional string process_contents = 1;
+	optional string ns_prefix = 2;
 }
 
 message Form {
@@ -194,7 +194,6 @@ message Attribute {
 	optional string default_value = 4;
 	optional string fixed_value = 5;
 	optional Form.Type form = 6;
-	optional string ns_prefix = 7[default=""];
 }
 
 message AnyAttribute {

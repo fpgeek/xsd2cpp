@@ -24,6 +24,10 @@ def _makeCppClasses(cppFile, pbSchema):
     cppClass.name = 'Element'
     cppClass.parent_class.append('XSD::Element')
 
+    cppClass = cppFile.class_.add()
+    cppClass.name = 'Attribute'
+    cppClass.parent_class.append('XSD::Attribute')
+
     for pbSimpleType in pbSchema.simple_type:
         cppClass = cppFile.class_.add()
         _makeCppClassFromSimpleType(pbSimpleType, cppClass)
@@ -37,7 +41,9 @@ def _makeCppClasses(cppFile, pbSchema):
         _makeCppClassFromElement(pbElement, cppClass)
 
     for pbAttr in pbSchema.attribute:
-        print pbAttr.name
+        cppClass = cppFile.class_.add()
+        _makeCppClassFromAttribute(pbAttr, cppClass)
+
 
 # Element를 class로 만들기
 def _makeCppClassFromElement(pbElement, cppClass):
@@ -45,6 +51,14 @@ def _makeCppClassFromElement(pbElement, cppClass):
     cppClass.parent_class.append('Element')
 
     cppVarType = _getCppVarTypeFromElem(pbElement)
+    cppClass.parent_class.append(cppVarType)
+
+# Attribute를 class로 만들기
+def _makeCppClassFromAttribute(pbAttr, cppClass):
+    cppClass.name = pbAttr.name
+    cppClass.parent_class.append('Attribute')
+
+    cppVarType = _getCppVarTypeFromAttr(pbAttr)
     cppClass.parent_class.append(cppVarType)
 
 # ComplexType을 class로 만들기
@@ -103,8 +117,8 @@ def _setCppClassFromCTSequence(pbElemList, cppClass):
             _setCppClassFromAny(pbElem, cppClass)
 
 def _setCppClassFromAny(pbElem, cppClass):
-    cppVarType = _getCppVarType('%s:Element' % pbElem.ns_prefix)
-    cppVarName = 'm_%sAny' % pbElem.ns_prefix
+    cppVarType = _getCppVarType('%s:Element' % _getNsPrefix(pbElem.name))
+    cppVarName = 'm_%s' % _getCppVarName(pbElem.name)
 
     method1 = cppClass.method.add()
     method1.return_type = 'void'
@@ -126,7 +140,6 @@ def _setCppClassFromCTChoice(pbElemList, cppClass, idx):
     innerClass.enum_.name = 'Type'
     for pbElem in pbElemList:
         cppVarName = _getCppVarName(pbElem.name)
-        #cppVarType = _getCppVarTypeFromElem(pbElem)
 
         innerClass.enum_.value.append('_%s_' % cppVarName)
 
@@ -250,11 +263,11 @@ def _makeCppClassFromSimpleType(pbSimpleType, cppClass):
 # SimpleType의 Method 만들기
 def _makeCppMethodFromSimpleType(pbSimpleType, cppClass):
     if pbSimpleType.type.kind == PB.SimpleType.Type.Restriction:
-        return _makeCppMethodFromRestriction(pbSimpleType.type.restriction, cppClass)
+        _makeCppMethodFromRestriction(pbSimpleType.type.restriction, cppClass)
     elif pbSimpleType.type.kind == PB.SimpleType.Type.List:
         pass # TODO - list
     elif pbSimpleType.type.kind == PB.SimpleType.Type.Union:
-        pass # TODO - union
+        _makeCppmethodFromUnion(pbSimpleType.type.union, cppClass)
 
 # restriction 추가
 def _makeCppMethodFromRestriction(pbRestriction, cppClass):
@@ -262,14 +275,33 @@ def _makeCppMethodFromRestriction(pbRestriction, cppClass):
         if (pbRestriction.base.built_in == PB.BuiltIn.string) and (len(pbRestriction.enumeration) > 0): # enum으로 되어 있는 경우 처리
             _setCppClassFromSTRestrictionEnum(pbRestriction.enumeration, cppClass)
         else: # enum이 아닌 일반 restriction 처리
-            cppVarName = getBaseNameStr(pbRestriction.base.built_in)
-            cppVarType = cppVarName
-            _setCppClassByOne(cppVarName, cppVarType, cppClass)
+            _setCppClassFromNormalRestriciton(pbRestriction, cppClass)
 
     elif pbRestriction.base.kind == PB.Base.SimpleTypeName:
         _setCppClassFromSTNameRestriction(pbRestriction.base.simple_type_name, cppClass)
     elif pbRestriction.base.kind == PB.Base.ComplexTypeName:
         _setCppClassFromCTNameRestriction(pbRestriction.base.complex_type_name, cppClass)
+
+# Union 추가
+def _makeCppmethodFromUnion(pbUnion, cppClass):
+    for pbMemberType in pbUnion.member_type:
+        cppClass.enum_.name = 'UnionType'
+        mVar = cppClass.member_var.add()
+        mVar.type = 'UnionType'
+        mVar.name = 'm_unionType'
+
+        if pbMemberType.kind == PB.Union.MemberType.BuiltIn:
+            cppVarName = _getCppVarName(_getBuiltInStr(pbMemberType.built_in))
+            cppVarType = _getCppVarType(_getBuiltInStr(pbMemberType.built_in))
+            _setCppClassByOne(cppVarName, cppVarType, cppClass)
+            cppClass.enum_.value.append('_%s_' % _getBuiltInStr(pbMemberType.built_in))
+        elif pbMemberType.kind == PB.Union.MemberType.SimpleTypeName:
+            cppVarName = _getCppVarName(pbMemberType.simple_type_name)
+            cppVarType = _getCppVarType(pbMemberType.simple_type_name)
+            _setCppClassByOne(cppVarName, cppVarType, cppClass)
+            cppClass.enum_.value.append('_%s_' % pbMemberType.simple_type_name)
+        else:
+            assert(False)
 
 def _setCppClassFromCTNameRestriction(pbCTName, cppClass):
     assert(False) # TODO - 아직은 여기로 오지 않아서 처리하지 않음
@@ -284,6 +316,12 @@ def _setCppClassFromSTNameRestriction(pbSTName, cppClass):
     cppClass.parent_class.remove('XSD::SimpleType')
     cppClass.parent_class.append(_getCppVarName(pbSTName))
 
+def _getNsPrefix(name):
+    nsPrefix = ''
+    if ':' in name:
+        nsPrefix, n = name.split(':')
+    return nsPrefix
+
 # cpp 변수 타입 가져오기
 def _getCppVarType(pbSTName):
     cppVarName = pbSTName
@@ -293,19 +331,31 @@ def _getCppVarType(pbSTName):
 
     return cppVarName
 
+# Element로 부터 cpp var type 가져오기
 def _getCppVarTypeFromElem(pbElem):
     if pbElem.type.kind == PB.Element.Type.BuiltIn:
         return _getBuiltInStr(pbElem.type.built_in)
     elif pbElem.type.kind == PB.Element.Type.SimpleTypeName:
-        return pbElem.type.simple_type_name
+        return _getCppVarType(pbElem.type.simple_type_name)
     elif pbElem.type.kind == PB.Element.Type.ComplexTypeName:
-        return pbElem.type.complex_type_name
+        return _getCppVarType(pbElem.type.complex_type_name)
     elif pbElem.type.kind == PB.Element.Type.SimpleType:
-        return pbElem.type.simple_type.name
+        return _getCppVarType(pbElem.type.simple_type.name)
     elif pbElem.type.kind == PB.Element.Type.ComplexType:
-        return pbElem.type.complex_type.name
+        return _getCppVarType(pbElem.type.complex_type.name)
     elif pbElem.type.kind == PB.Element.Type.Any:
-        return _getCppVarType('%s:Element*' % pbElem.ns_prefix)
+        return _getCppVarType('%s:Element' % pbElem.type.any.ns_prefix)
+
+# Attribute로 부터 cpp var type 가져오기
+def _getCppVarTypeFromAttr(pbAttr):
+    if pbAttr.type.kind == PB.Attribute.Type.BuiltIn:
+        return _getBuiltInStr(pbAttr.type.built_in)
+    elif pbAttr.type.kind == PB.Attribute.Type.SimpleTypeName:
+        return _getCppVarType(pbAttr.type.simple_type_name)
+    elif pbAttr.type.kind == PB.Attribute.Type.SimpleType:
+        return _getCppVarType(pbAttr.type.simple_type.name)
+    elif pbAttr.type.kind == PB.Attribute.Type.AnyAttribute:
+        return _getCppVarType('%s:Attribute' % pbAttr.type.any.ns_prefix)
 
 # cpp 변수명 가져오기
 def _getCppVarName(pbSTName):
@@ -330,6 +380,16 @@ def _setCppClassFromSTRestrictionEnum(pbEnums, cppClass):
     argument = cppClass.construction.argument.add()
     argument.type = 'Type&'
     argument.name = '_type'
+    argument.const = True
+
+# restriction - enum이 아닌 일반 제한 처리
+def _setCppClassFromNormalRestriciton(pbRestriction, cppClass):
+    cppVarName = getBaseNameStr(pbRestriction.base.built_in)
+    cppVarType = cppVarName
+    _setCppClassByOne(cppVarName, cppVarType, cppClass)
+    argument = cppClass.construction.argument.add()
+    argument.type = '%s&' % cppVarType
+    argument.name = '_%s' % cppVarName
     argument.const = True
 
 def getBaseNameStr(pbBuiltIn):
