@@ -19,6 +19,11 @@ def _makeCppFileProp(cppFile, pbSchema):
 
 # cpp class 만들기
 def _makeCppClasses(cppFile, pbSchema):
+    # 기본 Element 생성
+    cppClass = cppFile.class_.add()
+    cppClass.name = 'Element'
+    cppClass.parent_class.append('XSD::Element')
+
     for pbSimpleType in pbSchema.simple_type:
         cppClass = cppFile.class_.add()
         _makeCppClassFromSimpleType(pbSimpleType, cppClass)
@@ -27,31 +32,67 @@ def _makeCppClasses(cppFile, pbSchema):
         cppClass = cppFile.class_.add()
         _makeCppClassFromComplexType(pbComplexType, cppClass)
 
+    for pbElement in pbSchema.element:
+        cppClass = cppFile.class_.add()
+        _makeCppClassFromElement(pbElement, cppClass)
+
+    for pbAttr in pbSchema.attribute:
+        print pbAttr.name
+
+# Element를 class로 만들기
+def _makeCppClassFromElement(pbElement, cppClass):
+    cppClass.name = pbElement.name
+    cppClass.parent_class.append('Element')
+
+    cppVarType = _getCppVarTypeFromElem(pbElement)
+    cppClass.parent_class.append(cppVarType)
+
 # ComplexType을 class로 만들기
 def _makeCppClassFromComplexType(pbComplexType, cppClass):
     cppClass.name = pbComplexType.name
     cppClass.parent_class.append('XSD::ComplexType')
 
-    idx = 1
+    choiceIdx = 1
+    repeatedIdx = 1
     for elemCont in pbComplexType.element_container:
         if elemCont.kind == PB.ElementContainer.Sequence:
             _setCppClassFromCTSequence(elemCont.sequence, cppClass)
         elif elemCont.kind == PB.ElementContainer.Choice:
-            _setCppClassFromCTChoice(elemCont.choice, cppClass)
+            _setCppClassFromCTChoice(elemCont.choice, cppClass, choiceIdx)
+            choiceIdx += 1
         elif elemCont.kind == PB.ElementContainer.RepeatedSequence:
-            _setCppClassFromCTRepeated(elemCont.repeated_sequence, cppClass, idx)
-            idx += 1
+            _setCppClassFromCTRepeated(elemCont.repeated_sequence, cppClass, repeatedIdx)
+            repeatedIdx += 1
         elif elemCont.kind == PB.ElementContainer.RepeatedChoice:
-            _setCppClassFromCTRepeated(elemCont.repeated_choice, cppClass, idx)
-            idx += 1
+            _setCppClassFromCTRepeated(elemCont.repeated_choice, cppClass, repeatedIdx)
+            repeatedIdx += 1
+
+    for pbAttr in pbComplexType.attribute:
+        cppVarName = '%s_attr' % _getCppVarName(pbAttr.name)
+        cppVarType = None
+        if pbAttr.type.kind == PB.Attribute.Type.BuiltIn:
+            cppVarType = getBaseNameStr(pbAttr.type.built_in)
+        elif pbAttr.type.kind == PB.Attribute.Type.SimpleTypeName:
+            cppVarType = _getCppVarType(pbAttr.type.simple_type_name)
+        elif pbAttr.type.kind == PB.Attribute.Type.SimpleType:
+            cppVarType = _getCppVarType(pbAttr.type.simple_type.name)
+        elif pbAttr.type.kind == PB.Attribute.Type.AnyAttribute:
+            cppVarType = _getCppVarType(pbAttr.type.complex_type.name)
+
+        if cppVarType is not None:
+            _setCppClassByOne(cppVarName, cppVarType, cppClass)
 
 
 def _setCppClassFromCTSequence(pbElemList, cppClass):
     for pbElem in pbElemList:
         if pbElem.type.kind == PB.Element.Type.BuiltIn:
-            _setCppClassFromBuiltIn(pbElem.type.built_in, cppClass)
+            cppVarName = getBaseNameStr(pbElem.type.built_in)
+            cppVarType = cppVarName
+            _setCppClassByOne(cppVarName, cppVarType, cppClass)
         elif pbElem.type.kind == PB.Element.Type.SimpleTypeName:
-            _setCppClassFromSTName(pbElem, cppClass)
+            cppVarName = _getCppVarName(pbElem.name)
+            cppVarType = _getCppVarType(pbElem.type.simple_type_name)
+            _setCppClassByOne(cppVarName, cppVarType, cppClass)
         elif pbElem.type.kind == PB.Element.Type.ComplexTypeName:
             _setCppClassFromCTName(pbElem, cppClass)
         elif pbElem.type.kind == PB.Element.Type.SimpleType:
@@ -59,10 +100,40 @@ def _setCppClassFromCTSequence(pbElemList, cppClass):
         elif pbElem.type.kind == PB.Element.Type.ComplexType:
             pass # TODO - 현재는 여기로 오는 것이 없음, 추후 구현 예정
         elif pbElem.type.kind == PB.Element.Type.Any:
-            print 'Any'
+            _setCppClassFromAny(pbElem, cppClass)
 
-def _setCppClassFromCTChoice(pbElemList, cppClass):
-    pass # TODO
+def _setCppClassFromAny(pbElem, cppClass):
+    cppVarType = _getCppVarType('%s:Element' % pbElem.ns_prefix)
+    cppVarName = 'm_%sAny' % pbElem.ns_prefix
+
+    method1 = cppClass.method.add()
+    method1.return_type = 'void'
+    method1.name = 'set_any'
+    arg1 = method1.argument.add()
+    arg1.type =  '%s*' % cppVarType
+    arg1.name = '_any'
+
+    mVar1 = cppClass.member_var.add()
+    mVar1.type = '%s*' % cppVarType
+    mVar1.name = cppVarName
+
+def _setCppClassFromCTChoice(pbElemList, cppClass, idx):
+    innerClass = cppClass.inner_class.add()
+    innerClass.name = 'Choice_%d' % idx
+    _setCppClassFromCTSequence(pbElemList, innerClass)
+    _setCppClassFromCTSequence(pbElemList, cppClass)
+
+    innerClass.enum_.name = 'Type'
+    for pbElem in pbElemList:
+        cppVarName = _getCppVarName(pbElem.name)
+        #cppVarType = _getCppVarTypeFromElem(pbElem)
+
+        innerClass.enum_.value.append('_%s_' % cppVarName)
+
+    var1 = innerClass.member_var.add()
+    var1.type = 'Type'
+    var1.name = 'm_type'
+
 
 def _setCppClassFromCTRepeated(pbElemList, cppClass, idx):
     innerClass = cppClass.inner_class.add()
@@ -100,12 +171,7 @@ def _setCppClassFromCTRepeated(pbElemList, cppClass, idx):
     mVar1.type = 'std::vector<%s*>' % innerClass.name
     mVar1.name = 'm_%s_list' % innerClass.name
 
-def _setCppClassFromSTName(pbElem, cppClass):
-    STName = pbElem.type.simple_type_name
-
-    cppVarName = _getCppVarName(pbElem.name)
-    cppVarType = _getCppVarType(STName)
-
+def _setCppClassByOne(cppVarName, cppVarType, cppClass):
     method1 = cppClass.method.add()
     method1.return_type = 'bool'
     method1.name = 'has_%s' % cppVarName
@@ -196,7 +262,9 @@ def _makeCppMethodFromRestriction(pbRestriction, cppClass):
         if (pbRestriction.base.built_in == PB.BuiltIn.string) and (len(pbRestriction.enumeration) > 0): # enum으로 되어 있는 경우 처리
             _setCppClassFromSTRestrictionEnum(pbRestriction.enumeration, cppClass)
         else: # enum이 아닌 일반 restriction 처리
-            _setCppClassFromBuiltIn(pbRestriction.base.built_in, cppClass)
+            cppVarName = getBaseNameStr(pbRestriction.base.built_in)
+            cppVarType = cppVarName
+            _setCppClassByOne(cppVarName, cppVarType, cppClass)
 
     elif pbRestriction.base.kind == PB.Base.SimpleTypeName:
         _setCppClassFromSTNameRestriction(pbRestriction.base.simple_type_name, cppClass)
@@ -237,7 +305,7 @@ def _getCppVarTypeFromElem(pbElem):
     elif pbElem.type.kind == PB.Element.Type.ComplexType:
         return pbElem.type.complex_type.name
     elif pbElem.type.kind == PB.Element.Type.Any:
-        return 'any'
+        return _getCppVarType('%s:Element*' % pbElem.ns_prefix)
 
 # cpp 변수명 가져오기
 def _getCppVarName(pbSTName):
@@ -255,71 +323,17 @@ def _getBuiltInStr(builtType):
 def _setCppClassFromSTRestrictionEnum(pbEnums, cppClass):
     _makeCppEnum(pbEnums, cppClass.enum_)
 
+    cppVarType = 'Type'
+    cppVarName = 'type'
+    _setCppClassByOne(cppVarType, cppVarName, cppClass)
+
     argument = cppClass.construction.argument.add()
     argument.type = 'Type&'
     argument.name = '_type'
     argument.const = True
 
-    method1 = cppClass.method.add()
-    method1.return_type = 'bool'
-    method1.name = 'has_type'
-    method1.const = True
-    method1.body = "" # TODO
-
-    method2 = cppClass.method.add()
-    method2.return_type = 'void'
-    method2.name = 'set_type'
-    method2_var1 =  method2.argument.add()
-    method2_var1.type = 'Type&'
-    method2_var1.name = '_type'
-    method2_var1.const = True
-    method2.body = "" # TODO
-
-    method3 = cppClass.method.add()
-    method3.return_type = 'const Type&'
-    method3.name = 'type'
-    method3.const = True
-    method3.body = "" # TODO
-
-    memberVar1 = cppClass.member_var.add()
-    memberVar1.type = 'bool'
-    memberVar1.name = 'm_has_type'
-
-    memberVar2 = cppClass.member_var.add()
-    memberVar2.type = 'Type'
-    memberVar2.name = 'm_type'
-
-def _setCppClassFromBuiltIn(pbBuiltIn, cppClass):
-    baseName = PB.BuiltIn.DESCRIPTOR.enum_types_by_name['Type'].values_by_number[pbBuiltIn].name
-
-    method1 = cppClass.method.add()
-    method1.return_type = 'bool'
-    method1.name = 'has_%s' % baseName
-    method1.const = True
-    method1.body = "" # TODO
-
-    method2 = cppClass.method.add()
-    method2.return_type = 'void'
-    method2.name = 'set_%s' % baseName
-    method2_var1 =  method2.argument.add()
-    method2_var1.type = '%s&' % baseName
-    method2_var1.name = '_%s' % baseName
-    method2_var1.const = True
-    method2.body = "" # TODO
-
-    method3 = cppClass.method.add()
-    method3.return_type = 'const %s&' % baseName
-    method3.name = '%s' % baseName
-    method3.const = True
-    method3.body = "" # TODO
-
-    memberVar1 = cppClass.member_var.add()
-    memberVar1.type = 'bool'
-    memberVar1.name = 'm_has_%s' % baseName
-
-    memberVar2 = cppClass.member_var.add()
-    memberVar2.type = '%s' % baseName
-    memberVar2.name = 'm_%s' % baseName
+def getBaseNameStr(pbBuiltIn):
+    return PB.BuiltIn.DESCRIPTOR.enum_types_by_name['Type'].values_by_number[pbBuiltIn].name
 
 # enum 타입 추가
 def _makeCppEnum(pbEnumList, cppEnum):
