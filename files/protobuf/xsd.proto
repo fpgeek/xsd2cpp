@@ -16,6 +16,7 @@ message Schema {
 	repeated ComplexType complex_type = 9;
 	repeated SimpleType simple_type = 10;
 	repeated Element element = 11;
+	repeated Attribute attribute = 12;
 }
 
 message Import {
@@ -25,7 +26,7 @@ message Import {
 
 message ComplexType {
 	optional string name = 1;
-	repeated ElementContaner element_container = 2;
+	repeated ElementContainer element_container = 2;
 	repeated Attribute attribute = 3;
 	optional Restriction restriction = 4;
 }
@@ -103,7 +104,7 @@ message Union {
 	repeated MemberType member_type = 1;
 }
 
-message ElementContaner {
+message ElementContainer {
 	enum Kind {
 		Sequence = 0;
 		Choice = 1;
@@ -116,7 +117,7 @@ message ElementContaner {
 	repeated Element choice = 3;
 	repeated Element repeated_sequence = 4;
 	repeated Element repeated_choice = 5;
-	optional uint32 min_occurs = 7;
+	optional uint32 min_occurs = 6;
 }
 
 message MaxOccurs {
@@ -158,8 +159,7 @@ message Element {
 }
 
 message Any {
-	optional string namespace = 1;
-	optional string process_contents = 2;
+	optional string process_contents = 1;
 }
 
 message Form {
@@ -175,7 +175,7 @@ message Attribute {
 			BuiltIn = 0;
 			SimpleTypeName = 1;
 			SimpleType = 2;
-			T = 3;
+			AnyAttribute = 3;
 		}
 		required Kind kind = 1;
 		optional BuiltIn.Type built_in = 2;
@@ -194,6 +194,7 @@ message Attribute {
 	optional string default_value = 4;
 	optional string fixed_value = 5;
 	optional Form.Type form = 6;
+	optional string ns_prefix = 7[default=""];
 }
 
 message AnyAttribute {

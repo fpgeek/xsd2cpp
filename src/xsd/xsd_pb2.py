@@ -11,7 +11,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='xsd.proto',
   package='xsd.gen',
-  serialized_pb='\n\txsd.proto\x12\x07xsd.gen\"\xd6\x03\n\x06Schema\x12\x11\n\tfile_name\x18\x01 \x02(\t\x12?\n\x16\x61ttribute_form_default\x18\x02 \x01(\x0e\x32\x12.xsd.gen.Form.Type:\x0bunqualified\x12=\n\x14\x65lement_form_default\x18\x03 \x01(\x0e\x32\x12.xsd.gen.Form.Type:\x0bunqualified\x12\x15\n\rblock_default\x18\x04 \x01(\t\x12\x15\n\rfinal_default\x18\x05 \x01(\t\x12\x18\n\x10target_namespace\x18\x06 \x01(\t\x12,\n\tnamespace\x18\x07 \x03(\x0b\x32\x19.xsd.gen.Schema.Namespace\x12 \n\x07import_\x18\x08 \x03(\x0b\x32\x0f.xsd.gen.Import\x12*\n\x0c\x63omplex_type\x18\t \x03(\x0b\x32\x14.xsd.gen.ComplexType\x12(\n\x0bsimple_type\x18\n \x03(\x0b\x32\x13.xsd.gen.SimpleType\x12!\n\x07\x65lement\x18\x0b \x03(\x0b\x32\x10.xsd.gen.Element\x1a(\n\tNamespace\x12\x0e\n\x06prefix\x18\x01 \x01(\t\x12\x0b\n\x03uri\x18\x02 \x01(\t\"4\n\x06Import\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x17\n\x0fschema_location\x18\x02 \x01(\t\"\xa2\x01\n\x0b\x43omplexType\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x33\n\x11\x65lement_container\x18\x02 \x03(\x0b\x32\x18.xsd.gen.ElementContaner\x12%\n\tattribute\x18\x03 \x03(\x0b\x32\x12.xsd.gen.Attribute\x12)\n\x0brestriction\x18\x04 \x01(\x0b\x32\x14.xsd.gen.Restriction\"\x8d\x02\n\nSimpleType\x12\x0c\n\x04name\x18\x01 \x01(\t\x12&\n\x04type\x18\x02 \x02(\x0b\x32\x18.xsd.gen.SimpleType.Type\x1a\xc8\x01\n\x04Type\x12+\n\x04kind\x18\x01 \x02(\x0e\x32\x1d.xsd.gen.SimpleType.Type.Kind\x12)\n\x0brestriction\x18\x02 \x01(\x0b\x32\x14.xsd.gen.Restriction\x12\x1b\n\x04list\x18\x03 \x01(\x0b\x32\r.xsd.gen.List\x12\x1d\n\x05union\x18\x04 \x01(\x0b\x32\x0e.xsd.gen.Union\",\n\x04Kind\x12\x0f\n\x0bRestriction\x10\x00\x12\x08\n\x04List\x10\x01\x12\t\n\x05Union\x10\x02\"\xc4\x01\n\x04\x42\x61se\x12 \n\x04kind\x18\x01 \x02(\x0e\x32\x12.xsd.gen.Base.Kind\x12\'\n\x08\x62uilt_in\x18\x02 \x01(\x0e\x32\x15.xsd.gen.BuiltIn.Type\x12\x18\n\x10simple_type_name\x18\x03 \x01(\t\x12\x19\n\x11\x63omplex_type_name\x18\x04 \x01(\t\"<\n\x04Kind\x12\x0b\n\x07\x42uiltIn\x10\x00\x12\x12\n\x0eSimpleTypeName\x10\x01\x12\x13\n\x0f\x43omplexTypeName\x10\x02\"\xa8\x02\n\x0bRestriction\x12\x1b\n\x04\x62\x61se\x18\x01 \x02(\x0b\x32\r.xsd.gen.Base\x12\x15\n\rmin_exclusive\x18\x02 \x01(\t\x12\x15\n\rmin_inclusive\x18\x03 \x01(\t\x12\x15\n\rmax_exclusive\x18\x04 \x01(\t\x12\x15\n\rmax_inclusive\x18\x05 \x01(\t\x12\x14\n\x0ctotal_digits\x18\x06 \x01(\r\x12\x17\n\x0f\x66raction_digits\x18\x07 \x01(\r\x12\x0e\n\x06length\x18\x08 \x01(\r\x12\x12\n\nmin_length\x18\t \x01(\r\x12\x12\n\nmax_length\x18\n \x01(\r\x12\x13\n\x0b\x65numeration\x18\x0b \x03(\t\x12\x13\n\x0bwhite_space\x18\x0c \x01(\t\x12\x0f\n\x07pattern\x18\r \x01(\t\"\x8f\x02\n\x04List\x12)\n\titem_type\x18\x01 \x03(\x0b\x32\x16.xsd.gen.List.ItemType\x1a\xdb\x01\n\x08ItemType\x12)\n\x04kind\x18\x01 \x02(\x0e\x32\x1b.xsd.gen.List.ItemType.Kind\x12\'\n\x08\x62uilt_in\x18\x02 \x01(\x0e\x32\x15.xsd.gen.BuiltIn.Type\x12\x18\n\x10simple_type_name\x18\x03 \x01(\t\x12(\n\x0bsimple_type\x18\x04 \x01(\x0b\x32\x13.xsd.gen.SimpleType\"7\n\x04Kind\x12\x0b\n\x07\x42uiltIn\x10\x00\x12\x12\n\x0eSimpleTypeName\x10\x01\x12\x0e\n\nSimpleType\x10\x02\"\xe0\x01\n\x05Union\x12.\n\x0bmember_type\x18\x01 \x03(\x0b\x32\x19.xsd.gen.Union.MemberType\x1a\xa6\x01\n\nMemberType\x12,\n\x04kind\x18\x01 \x02(\x0e\x32\x1e.xsd.gen.Union.MemberType.Kind\x12\'\n\x08\x62uilt_in\x18\x02 \x01(\x0e\x32\x15.xsd.gen.BuiltIn.Type\x12\x18\n\x10simple_type_name\x18\x03 \x01(\t\"\'\n\x04Kind\x12\x0b\n\x07\x42uiltIn\x10\x00\x12\x12\n\x0eSimpleTypeName\x10\x01\"\xbc\x02\n\x0f\x45lementContaner\x12+\n\x04kind\x18\x01 \x02(\x0e\x32\x1d.xsd.gen.ElementContaner.Kind\x12\"\n\x08sequence\x18\x02 \x03(\x0b\x32\x10.xsd.gen.Element\x12 \n\x06\x63hoice\x18\x03 \x03(\x0b\x32\x10.xsd.gen.Element\x12+\n\x11repeated_sequence\x18\x04 \x03(\x0b\x32\x10.xsd.gen.Element\x12)\n\x0frepeated_choice\x18\x05 \x03(\x0b\x32\x10.xsd.gen.Element\x12\x12\n\nmin_occurs\x18\x07 \x01(\r\"J\n\x04Kind\x12\x0c\n\x08Sequence\x10\x00\x12\n\n\x06\x43hoice\x10\x01\x12\x14\n\x10RepeatedSequence\x10\x02\x12\x12\n\x0eRepeatedChoice\x10\x03\"m\n\tMaxOccurs\x12,\n\x04kind\x18\x01 \x02(\x0e\x32\x17.xsd.gen.MaxOccurs.Kind:\x05\x43ount\x12\x10\n\x05\x63ount\x18\x02 \x01(\r:\x01\x31\" \n\x04Kind\x12\t\n\x05\x43ount\x10\x00\x12\r\n\tUnbounded\x10\x01\"\xc3\x04\n\x07\x45lement\x12\x0c\n\x04name\x18\x01 \x02(\t\x12#\n\x04type\x18\x02 \x02(\x0b\x32\x15.xsd.gen.Element.Type\x12\x12\n\nmin_occurs\x18\x03 \x01(\r\x12&\n\nmax_occurs\x18\x04 \x01(\x0b\x32\x12.xsd.gen.MaxOccurs\x12\x15\n\rdefault_value\x18\x05 \x01(\t\x12\x13\n\x0b\x66ixed_value\x18\x06 \x01(\t\x12 \n\x04\x66orm\x18\x07 \x01(\x0e\x32\x12.xsd.gen.Form.Type\x12\x11\n\tns_prefix\x18\x08 \x01(\t\x1a\xe7\x02\n\x04Type\x12(\n\x04kind\x18\x01 \x02(\x0e\x32\x1a.xsd.gen.Element.Type.Kind\x12\'\n\x08\x62uilt_in\x18\x02 \x01(\x0e\x32\x15.xsd.gen.BuiltIn.Type\x12\x18\n\x10simple_type_name\x18\x03 \x01(\t\x12\x19\n\x11\x63omplex_type_name\x18\x04 \x01(\t\x12(\n\x0bsimple_type\x18\x05 \x01(\x0b\x32\x13.xsd.gen.SimpleType\x12*\n\x0c\x63omplex_type\x18\x06 \x01(\x0b\x32\x14.xsd.gen.ComplexType\x12\x19\n\x03\x61ny\x18\x07 \x01(\x0b\x32\x0c.xsd.gen.Any\"f\n\x04Kind\x12\x0b\n\x07\x42uiltIn\x10\x00\x12\x12\n\x0eSimpleTypeName\x10\x01\x12\x13\n\x0f\x43omplexTypeName\x10\x02\x12\x0e\n\nSimpleType\x10\x03\x12\x0f\n\x0b\x43omplexType\x10\x04\x12\x07\n\x03\x41ny\x10\x05\"2\n\x03\x41ny\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x18\n\x10process_contents\x18\x02 \x01(\t\".\n\x04\x46orm\"&\n\x04Type\x12\r\n\tqualified\x10\x00\x12\x0f\n\x0bunqualified\x10\x01\"\x80\x04\n\tAttribute\x12\x0c\n\x04name\x18\x01 \x02(\t\x12%\n\x04type\x18\x02 \x02(\x0b\x32\x17.xsd.gen.Attribute.Type\x12-\n\x03use\x18\x03 \x01(\x0e\x32\x16.xsd.gen.Attribute.Use:\x08optional\x12\x15\n\rdefault_value\x18\x04 \x01(\t\x12\x13\n\x0b\x66ixed_value\x18\x05 \x01(\t\x12 \n\x04\x66orm\x18\x06 \x01(\x0e\x32\x12.xsd.gen.Form.Type\x1a\x8d\x02\n\x04Type\x12*\n\x04kind\x18\x01 \x02(\x0e\x32\x1c.xsd.gen.Attribute.Type.Kind\x12\'\n\x08\x62uilt_in\x18\x02 \x01(\x0e\x32\x15.xsd.gen.BuiltIn.Type\x12\x18\n\x10simple_type_name\x18\x03 \x01(\t\x12(\n\x0bsimple_type\x18\x04 \x01(\x0b\x32\x13.xsd.gen.SimpleType\x12,\n\rany_attribute\x18\x05 \x01(\x0b\x32\x15.xsd.gen.AnyAttribute\">\n\x04Kind\x12\x0b\n\x07\x42uiltIn\x10\x00\x12\x12\n\x0eSimpleTypeName\x10\x01\x12\x0e\n\nSimpleType\x10\x02\x12\x05\n\x01T\x10\x03\"1\n\x03Use\x12\x0c\n\x08optional\x10\x00\x12\x0e\n\nprohibited\x10\x01\x12\x0c\n\x08required\x10\x02\";\n\x0c\x41nyAttribute\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x18\n\x10process_contents\x18\x02 \x01(\t\"\xf5\x04\n\x07\x42uiltIn\"\xe9\x04\n\x04Type\x12\x0c\n\x08\x45NTITIES\x10\x00\x12\n\n\x06\x45NTITY\x10\x01\x12\x06\n\x02ID\x10\x02\x12\t\n\x05IDREF\x10\x03\x12\n\n\x06IDREFS\x10\x04\x12\x0c\n\x08language\x10\x05\x12\x08\n\x04Name\x10\x06\x12\n\n\x06NCName\x10\x07\x12\x0b\n\x07NMTOKEN\x10\x08\x12\x0c\n\x08NMTOKENS\x10\t\x12\x14\n\x10normalizedString\x10\n\x12\t\n\x05QName\x10\x0b\x12\n\n\x06string\x10\x0c\x12\t\n\x05token\x10\r\x12\x08\n\x04\x64\x61te\x10\x0e\x12\x0c\n\x08\x64\x61teTime\x10\x0f\x12\x0c\n\x08\x64uration\x10\x10\x12\x08\n\x04gDay\x10\x11\x12\n\n\x06gMonth\x10\x12\x12\r\n\tgMonthDay\x10\x13\x12\t\n\x05gYear\x10\x14\x12\x0e\n\ngYearMonth\x10\x15\x12\x08\n\x04time\x10\x16\x12\x08\n\x04\x62yte\x10\x17\x12\x0b\n\x07\x64\x65\x63imal\x10\x18\x12\x07\n\x03int\x10\x19\x12\x0b\n\x07integer\x10\x1a\x12\x08\n\x04long\x10\x1b\x12\x13\n\x0fnegativeInteger\x10\x1c\x12\x16\n\x12nonNegativeInteger\x10\x1d\x12\x16\n\x12nonPositiveInteger\x10\x1e\x12\x13\n\x0fpositiveInteger\x10\x1f\x12\t\n\x05short\x10 \x12\x10\n\x0cunsignedLong\x10!\x12\x0f\n\x0bunsignedInt\x10\"\x12\x11\n\runsignedShort\x10#\x12\x10\n\x0cunsignedByte\x10$\x12\n\n\x06\x61nyURI\x10%\x12\x10\n\x0c\x62\x61se64Binary\x10&\x12\x0b\n\x07\x62oolean\x10\'\x12\n\n\x06\x64ouble\x10(\x12\t\n\x05\x66loat\x10)\x12\r\n\thexBinary\x10*\x12\x0c\n\x08NOTATION\x10+')
+  serialized_pb='\n\txsd.proto\x12\x07xsd.gen\"\xfd\x03\n\x06Schema\x12\x11\n\tfile_name\x18\x01 \x02(\t\x12?\n\x16\x61ttribute_form_default\x18\x02 \x01(\x0e\x32\x12.xsd.gen.Form.Type:\x0bunqualified\x12=\n\x14\x65lement_form_default\x18\x03 \x01(\x0e\x32\x12.xsd.gen.Form.Type:\x0bunqualified\x12\x15\n\rblock_default\x18\x04 \x01(\t\x12\x15\n\rfinal_default\x18\x05 \x01(\t\x12\x18\n\x10target_namespace\x18\x06 \x01(\t\x12,\n\tnamespace\x18\x07 \x03(\x0b\x32\x19.xsd.gen.Schema.Namespace\x12 \n\x07import_\x18\x08 \x03(\x0b\x32\x0f.xsd.gen.Import\x12*\n\x0c\x63omplex_type\x18\t \x03(\x0b\x32\x14.xsd.gen.ComplexType\x12(\n\x0bsimple_type\x18\n \x03(\x0b\x32\x13.xsd.gen.SimpleType\x12!\n\x07\x65lement\x18\x0b \x03(\x0b\x32\x10.xsd.gen.Element\x12%\n\tattribute\x18\x0c \x03(\x0b\x32\x12.xsd.gen.Attribute\x1a(\n\tNamespace\x12\x0e\n\x06prefix\x18\x01 \x01(\t\x12\x0b\n\x03uri\x18\x02 \x01(\t\"4\n\x06Import\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x17\n\x0fschema_location\x18\x02 \x01(\t\"\xa3\x01\n\x0b\x43omplexType\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x34\n\x11\x65lement_container\x18\x02 \x03(\x0b\x32\x19.xsd.gen.ElementContainer\x12%\n\tattribute\x18\x03 \x03(\x0b\x32\x12.xsd.gen.Attribute\x12)\n\x0brestriction\x18\x04 \x01(\x0b\x32\x14.xsd.gen.Restriction\"\x8d\x02\n\nSimpleType\x12\x0c\n\x04name\x18\x01 \x01(\t\x12&\n\x04type\x18\x02 \x02(\x0b\x32\x18.xsd.gen.SimpleType.Type\x1a\xc8\x01\n\x04Type\x12+\n\x04kind\x18\x01 \x02(\x0e\x32\x1d.xsd.gen.SimpleType.Type.Kind\x12)\n\x0brestriction\x18\x02 \x01(\x0b\x32\x14.xsd.gen.Restriction\x12\x1b\n\x04list\x18\x03 \x01(\x0b\x32\r.xsd.gen.List\x12\x1d\n\x05union\x18\x04 \x01(\x0b\x32\x0e.xsd.gen.Union\",\n\x04Kind\x12\x0f\n\x0bRestriction\x10\x00\x12\x08\n\x04List\x10\x01\x12\t\n\x05Union\x10\x02\"\xc4\x01\n\x04\x42\x61se\x12 \n\x04kind\x18\x01 \x02(\x0e\x32\x12.xsd.gen.Base.Kind\x12\'\n\x08\x62uilt_in\x18\x02 \x01(\x0e\x32\x15.xsd.gen.BuiltIn.Type\x12\x18\n\x10simple_type_name\x18\x03 \x01(\t\x12\x19\n\x11\x63omplex_type_name\x18\x04 \x01(\t\"<\n\x04Kind\x12\x0b\n\x07\x42uiltIn\x10\x00\x12\x12\n\x0eSimpleTypeName\x10\x01\x12\x13\n\x0f\x43omplexTypeName\x10\x02\"\xa8\x02\n\x0bRestriction\x12\x1b\n\x04\x62\x61se\x18\x01 \x02(\x0b\x32\r.xsd.gen.Base\x12\x15\n\rmin_exclusive\x18\x02 \x01(\t\x12\x15\n\rmin_inclusive\x18\x03 \x01(\t\x12\x15\n\rmax_exclusive\x18\x04 \x01(\t\x12\x15\n\rmax_inclusive\x18\x05 \x01(\t\x12\x14\n\x0ctotal_digits\x18\x06 \x01(\r\x12\x17\n\x0f\x66raction_digits\x18\x07 \x01(\r\x12\x0e\n\x06length\x18\x08 \x01(\r\x12\x12\n\nmin_length\x18\t \x01(\r\x12\x12\n\nmax_length\x18\n \x01(\r\x12\x13\n\x0b\x65numeration\x18\x0b \x03(\t\x12\x13\n\x0bwhite_space\x18\x0c \x01(\t\x12\x0f\n\x07pattern\x18\r \x01(\t\"\x8f\x02\n\x04List\x12)\n\titem_type\x18\x01 \x03(\x0b\x32\x16.xsd.gen.List.ItemType\x1a\xdb\x01\n\x08ItemType\x12)\n\x04kind\x18\x01 \x02(\x0e\x32\x1b.xsd.gen.List.ItemType.Kind\x12\'\n\x08\x62uilt_in\x18\x02 \x01(\x0e\x32\x15.xsd.gen.BuiltIn.Type\x12\x18\n\x10simple_type_name\x18\x03 \x01(\t\x12(\n\x0bsimple_type\x18\x04 \x01(\x0b\x32\x13.xsd.gen.SimpleType\"7\n\x04Kind\x12\x0b\n\x07\x42uiltIn\x10\x00\x12\x12\n\x0eSimpleTypeName\x10\x01\x12\x0e\n\nSimpleType\x10\x02\"\xe0\x01\n\x05Union\x12.\n\x0bmember_type\x18\x01 \x03(\x0b\x32\x19.xsd.gen.Union.MemberType\x1a\xa6\x01\n\nMemberType\x12,\n\x04kind\x18\x01 \x02(\x0e\x32\x1e.xsd.gen.Union.MemberType.Kind\x12\'\n\x08\x62uilt_in\x18\x02 \x01(\x0e\x32\x15.xsd.gen.BuiltIn.Type\x12\x18\n\x10simple_type_name\x18\x03 \x01(\t\"\'\n\x04Kind\x12\x0b\n\x07\x42uiltIn\x10\x00\x12\x12\n\x0eSimpleTypeName\x10\x01\"\xbe\x02\n\x10\x45lementContainer\x12,\n\x04kind\x18\x01 \x02(\x0e\x32\x1e.xsd.gen.ElementContainer.Kind\x12\"\n\x08sequence\x18\x02 \x03(\x0b\x32\x10.xsd.gen.Element\x12 \n\x06\x63hoice\x18\x03 \x03(\x0b\x32\x10.xsd.gen.Element\x12+\n\x11repeated_sequence\x18\x04 \x03(\x0b\x32\x10.xsd.gen.Element\x12)\n\x0frepeated_choice\x18\x05 \x03(\x0b\x32\x10.xsd.gen.Element\x12\x12\n\nmin_occurs\x18\x06 \x01(\r\"J\n\x04Kind\x12\x0c\n\x08Sequence\x10\x00\x12\n\n\x06\x43hoice\x10\x01\x12\x14\n\x10RepeatedSequence\x10\x02\x12\x12\n\x0eRepeatedChoice\x10\x03\"m\n\tMaxOccurs\x12,\n\x04kind\x18\x01 \x02(\x0e\x32\x17.xsd.gen.MaxOccurs.Kind:\x05\x43ount\x12\x10\n\x05\x63ount\x18\x02 \x01(\r:\x01\x31\" \n\x04Kind\x12\t\n\x05\x43ount\x10\x00\x12\r\n\tUnbounded\x10\x01\"\xc3\x04\n\x07\x45lement\x12\x0c\n\x04name\x18\x01 \x02(\t\x12#\n\x04type\x18\x02 \x02(\x0b\x32\x15.xsd.gen.Element.Type\x12\x12\n\nmin_occurs\x18\x03 \x01(\r\x12&\n\nmax_occurs\x18\x04 \x01(\x0b\x32\x12.xsd.gen.MaxOccurs\x12\x15\n\rdefault_value\x18\x05 \x01(\t\x12\x13\n\x0b\x66ixed_value\x18\x06 \x01(\t\x12 \n\x04\x66orm\x18\x07 \x01(\x0e\x32\x12.xsd.gen.Form.Type\x12\x11\n\tns_prefix\x18\x08 \x01(\t\x1a\xe7\x02\n\x04Type\x12(\n\x04kind\x18\x01 \x02(\x0e\x32\x1a.xsd.gen.Element.Type.Kind\x12\'\n\x08\x62uilt_in\x18\x02 \x01(\x0e\x32\x15.xsd.gen.BuiltIn.Type\x12\x18\n\x10simple_type_name\x18\x03 \x01(\t\x12\x19\n\x11\x63omplex_type_name\x18\x04 \x01(\t\x12(\n\x0bsimple_type\x18\x05 \x01(\x0b\x32\x13.xsd.gen.SimpleType\x12*\n\x0c\x63omplex_type\x18\x06 \x01(\x0b\x32\x14.xsd.gen.ComplexType\x12\x19\n\x03\x61ny\x18\x07 \x01(\x0b\x32\x0c.xsd.gen.Any\"f\n\x04Kind\x12\x0b\n\x07\x42uiltIn\x10\x00\x12\x12\n\x0eSimpleTypeName\x10\x01\x12\x13\n\x0f\x43omplexTypeName\x10\x02\x12\x0e\n\nSimpleType\x10\x03\x12\x0f\n\x0b\x43omplexType\x10\x04\x12\x07\n\x03\x41ny\x10\x05\"\x1f\n\x03\x41ny\x12\x18\n\x10process_contents\x18\x01 \x01(\t\".\n\x04\x46orm\"&\n\x04Type\x12\r\n\tqualified\x10\x00\x12\x0f\n\x0bunqualified\x10\x01\"\xa0\x04\n\tAttribute\x12\x0c\n\x04name\x18\x01 \x02(\t\x12%\n\x04type\x18\x02 \x02(\x0b\x32\x17.xsd.gen.Attribute.Type\x12-\n\x03use\x18\x03 \x01(\x0e\x32\x16.xsd.gen.Attribute.Use:\x08optional\x12\x15\n\rdefault_value\x18\x04 \x01(\t\x12\x13\n\x0b\x66ixed_value\x18\x05 \x01(\t\x12 \n\x04\x66orm\x18\x06 \x01(\x0e\x32\x12.xsd.gen.Form.Type\x12\x13\n\tns_prefix\x18\x07 \x01(\t:\x00\x1a\x98\x02\n\x04Type\x12*\n\x04kind\x18\x01 \x02(\x0e\x32\x1c.xsd.gen.Attribute.Type.Kind\x12\'\n\x08\x62uilt_in\x18\x02 \x01(\x0e\x32\x15.xsd.gen.BuiltIn.Type\x12\x18\n\x10simple_type_name\x18\x03 \x01(\t\x12(\n\x0bsimple_type\x18\x04 \x01(\x0b\x32\x13.xsd.gen.SimpleType\x12,\n\rany_attribute\x18\x05 \x01(\x0b\x32\x15.xsd.gen.AnyAttribute\"I\n\x04Kind\x12\x0b\n\x07\x42uiltIn\x10\x00\x12\x12\n\x0eSimpleTypeName\x10\x01\x12\x0e\n\nSimpleType\x10\x02\x12\x10\n\x0c\x41nyAttribute\x10\x03\"1\n\x03Use\x12\x0c\n\x08optional\x10\x00\x12\x0e\n\nprohibited\x10\x01\x12\x0c\n\x08required\x10\x02\";\n\x0c\x41nyAttribute\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x18\n\x10process_contents\x18\x02 \x01(\t\"\xf5\x04\n\x07\x42uiltIn\"\xe9\x04\n\x04Type\x12\x0c\n\x08\x45NTITIES\x10\x00\x12\n\n\x06\x45NTITY\x10\x01\x12\x06\n\x02ID\x10\x02\x12\t\n\x05IDREF\x10\x03\x12\n\n\x06IDREFS\x10\x04\x12\x0c\n\x08language\x10\x05\x12\x08\n\x04Name\x10\x06\x12\n\n\x06NCName\x10\x07\x12\x0b\n\x07NMTOKEN\x10\x08\x12\x0c\n\x08NMTOKENS\x10\t\x12\x14\n\x10normalizedString\x10\n\x12\t\n\x05QName\x10\x0b\x12\n\n\x06string\x10\x0c\x12\t\n\x05token\x10\r\x12\x08\n\x04\x64\x61te\x10\x0e\x12\x0c\n\x08\x64\x61teTime\x10\x0f\x12\x0c\n\x08\x64uration\x10\x10\x12\x08\n\x04gDay\x10\x11\x12\n\n\x06gMonth\x10\x12\x12\r\n\tgMonthDay\x10\x13\x12\t\n\x05gYear\x10\x14\x12\x0e\n\ngYearMonth\x10\x15\x12\x08\n\x04time\x10\x16\x12\x08\n\x04\x62yte\x10\x17\x12\x0b\n\x07\x64\x65\x63imal\x10\x18\x12\x07\n\x03int\x10\x19\x12\x0b\n\x07integer\x10\x1a\x12\x08\n\x04long\x10\x1b\x12\x13\n\x0fnegativeInteger\x10\x1c\x12\x16\n\x12nonNegativeInteger\x10\x1d\x12\x16\n\x12nonPositiveInteger\x10\x1e\x12\x13\n\x0fpositiveInteger\x10\x1f\x12\t\n\x05short\x10 \x12\x10\n\x0cunsignedLong\x10!\x12\x0f\n\x0bunsignedInt\x10\"\x12\x11\n\runsignedShort\x10#\x12\x10\n\x0cunsignedByte\x10$\x12\n\n\x06\x61nyURI\x10%\x12\x10\n\x0c\x62\x61se64Binary\x10&\x12\x0b\n\x07\x62oolean\x10\'\x12\n\n\x06\x64ouble\x10(\x12\t\n\x05\x66loat\x10)\x12\r\n\thexBinary\x10*\x12\x0c\n\x08NOTATION\x10+')
 
 
 
@@ -36,8 +36,8 @@ _SIMPLETYPE_TYPE_KIND = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=940,
-  serialized_end=984,
+  serialized_start=980,
+  serialized_end=1024,
 )
 
 _BASE_KIND = descriptor.EnumDescriptor(
@@ -61,8 +61,8 @@ _BASE_KIND = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1123,
-  serialized_end=1183,
+  serialized_start=1163,
+  serialized_end=1223,
 )
 
 _LIST_ITEMTYPE_KIND = descriptor.EnumDescriptor(
@@ -86,8 +86,8 @@ _LIST_ITEMTYPE_KIND = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1701,
-  serialized_end=1756,
+  serialized_start=1741,
+  serialized_end=1796,
 )
 
 _UNION_MEMBERTYPE_KIND = descriptor.EnumDescriptor(
@@ -107,13 +107,13 @@ _UNION_MEMBERTYPE_KIND = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1123,
-  serialized_end=1162,
+  serialized_start=1163,
+  serialized_end=1202,
 )
 
-_ELEMENTCONTANER_KIND = descriptor.EnumDescriptor(
+_ELEMENTCONTAINER_KIND = descriptor.EnumDescriptor(
   name='Kind',
-  full_name='xsd.gen.ElementContaner.Kind',
+  full_name='xsd.gen.ElementContainer.Kind',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -136,8 +136,8 @@ _ELEMENTCONTANER_KIND = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2228,
-  serialized_end=2302,
+  serialized_start=2270,
+  serialized_end=2344,
 )
 
 _MAXOCCURS_KIND = descriptor.EnumDescriptor(
@@ -157,8 +157,8 @@ _MAXOCCURS_KIND = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2381,
-  serialized_end=2413,
+  serialized_start=2423,
+  serialized_end=2455,
 )
 
 _ELEMENT_TYPE_KIND = descriptor.EnumDescriptor(
@@ -194,8 +194,8 @@ _ELEMENT_TYPE_KIND = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=2893,
-  serialized_end=2995,
+  serialized_start=2935,
+  serialized_end=3037,
 )
 
 _FORM_TYPE = descriptor.EnumDescriptor(
@@ -215,8 +215,8 @@ _FORM_TYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=3057,
-  serialized_end=3095,
+  serialized_start=3080,
+  serialized_end=3118,
 )
 
 _ATTRIBUTE_TYPE_KIND = descriptor.EnumDescriptor(
@@ -238,14 +238,14 @@ _ATTRIBUTE_TYPE_KIND = descriptor.EnumDescriptor(
       options=None,
       type=None),
     descriptor.EnumValueDescriptor(
-      name='T', index=3, number=3,
+      name='AnyAttribute', index=3, number=3,
       options=None,
       type=None),
   ],
   containing_type=None,
   options=None,
-  serialized_start=3497,
-  serialized_end=3559,
+  serialized_start=3541,
+  serialized_end=3614,
 )
 
 _ATTRIBUTE_USE = descriptor.EnumDescriptor(
@@ -269,8 +269,8 @@ _ATTRIBUTE_USE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=3561,
-  serialized_end=3610,
+  serialized_start=3616,
+  serialized_end=3665,
 )
 
 _BUILTIN_TYPE = descriptor.EnumDescriptor(
@@ -458,8 +458,8 @@ _BUILTIN_TYPE = descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=3686,
-  serialized_end=4303,
+  serialized_start=3741,
+  serialized_end=4358,
 )
 
 
@@ -493,8 +493,8 @@ _SCHEMA_NAMESPACE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=453,
-  serialized_end=493,
+  serialized_start=492,
+  serialized_end=532,
 )
 
 _SCHEMA = descriptor.Descriptor(
@@ -581,6 +581,13 @@ _SCHEMA = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='attribute', full_name='xsd.gen.Schema.attribute', index=11,
+      number=12, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -591,7 +598,7 @@ _SCHEMA = descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=23,
-  serialized_end=493,
+  serialized_end=532,
 )
 
 
@@ -625,8 +632,8 @@ _IMPORT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=495,
-  serialized_end=547,
+  serialized_start=534,
+  serialized_end=586,
 )
 
 
@@ -674,8 +681,8 @@ _COMPLEXTYPE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=550,
-  serialized_end=712,
+  serialized_start=589,
+  serialized_end=752,
 )
 
 
@@ -724,8 +731,8 @@ _SIMPLETYPE_TYPE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=784,
-  serialized_end=984,
+  serialized_start=824,
+  serialized_end=1024,
 )
 
 _SIMPLETYPE = descriptor.Descriptor(
@@ -758,8 +765,8 @@ _SIMPLETYPE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=715,
-  serialized_end=984,
+  serialized_start=755,
+  serialized_end=1024,
 )
 
 
@@ -808,8 +815,8 @@ _BASE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=987,
-  serialized_end=1183,
+  serialized_start=1027,
+  serialized_end=1223,
 )
 
 
@@ -920,8 +927,8 @@ _RESTRICTION = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1186,
-  serialized_end=1482,
+  serialized_start=1226,
+  serialized_end=1522,
 )
 
 
@@ -970,8 +977,8 @@ _LIST_ITEMTYPE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1537,
-  serialized_end=1756,
+  serialized_start=1577,
+  serialized_end=1796,
 )
 
 _LIST = descriptor.Descriptor(
@@ -997,8 +1004,8 @@ _LIST = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1485,
-  serialized_end=1756,
+  serialized_start=1525,
+  serialized_end=1796,
 )
 
 
@@ -1040,8 +1047,8 @@ _UNION_MEMBERTYPE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1817,
-  serialized_end=1983,
+  serialized_start=1857,
+  serialized_end=2023,
 )
 
 _UNION = descriptor.Descriptor(
@@ -1067,56 +1074,56 @@ _UNION = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1759,
-  serialized_end=1983,
+  serialized_start=1799,
+  serialized_end=2023,
 )
 
 
-_ELEMENTCONTANER = descriptor.Descriptor(
-  name='ElementContaner',
-  full_name='xsd.gen.ElementContaner',
+_ELEMENTCONTAINER = descriptor.Descriptor(
+  name='ElementContainer',
+  full_name='xsd.gen.ElementContainer',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='kind', full_name='xsd.gen.ElementContaner.kind', index=0,
+      name='kind', full_name='xsd.gen.ElementContainer.kind', index=0,
       number=1, type=14, cpp_type=8, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='sequence', full_name='xsd.gen.ElementContaner.sequence', index=1,
+      name='sequence', full_name='xsd.gen.ElementContainer.sequence', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='choice', full_name='xsd.gen.ElementContaner.choice', index=2,
+      name='choice', full_name='xsd.gen.ElementContainer.choice', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='repeated_sequence', full_name='xsd.gen.ElementContaner.repeated_sequence', index=3,
+      name='repeated_sequence', full_name='xsd.gen.ElementContainer.repeated_sequence', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='repeated_choice', full_name='xsd.gen.ElementContaner.repeated_choice', index=4,
+      name='repeated_choice', full_name='xsd.gen.ElementContainer.repeated_choice', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='min_occurs', full_name='xsd.gen.ElementContaner.min_occurs', index=5,
-      number=7, type=13, cpp_type=3, label=1,
+      name='min_occurs', full_name='xsd.gen.ElementContainer.min_occurs', index=5,
+      number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1126,13 +1133,13 @@ _ELEMENTCONTANER = descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
-    _ELEMENTCONTANER_KIND,
+    _ELEMENTCONTAINER_KIND,
   ],
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=1986,
-  serialized_end=2302,
+  serialized_start=2026,
+  serialized_end=2344,
 )
 
 
@@ -1167,8 +1174,8 @@ _MAXOCCURS = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2304,
-  serialized_end=2413,
+  serialized_start=2346,
+  serialized_end=2455,
 )
 
 
@@ -1238,8 +1245,8 @@ _ELEMENT_TYPE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2636,
-  serialized_end=2995,
+  serialized_start=2678,
+  serialized_end=3037,
 )
 
 _ELEMENT = descriptor.Descriptor(
@@ -1314,8 +1321,8 @@ _ELEMENT = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2416,
-  serialized_end=2995,
+  serialized_start=2458,
+  serialized_end=3037,
 )
 
 
@@ -1327,15 +1334,8 @@ _ANY = descriptor.Descriptor(
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='namespace', full_name='xsd.gen.Any.namespace', index=0,
+      name='process_contents', full_name='xsd.gen.Any.process_contents', index=0,
       number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    descriptor.FieldDescriptor(
-      name='process_contents', full_name='xsd.gen.Any.process_contents', index=1,
-      number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1349,8 +1349,8 @@ _ANY = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=2997,
-  serialized_end=3047,
+  serialized_start=3039,
+  serialized_end=3070,
 )
 
 
@@ -1371,8 +1371,8 @@ _FORM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3049,
-  serialized_end=3095,
+  serialized_start=3072,
+  serialized_end=3118,
 )
 
 
@@ -1428,8 +1428,8 @@ _ATTRIBUTE_TYPE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3290,
-  serialized_end=3559,
+  serialized_start=3334,
+  serialized_end=3614,
 )
 
 _ATTRIBUTE = descriptor.Descriptor(
@@ -1481,6 +1481,13 @@ _ATTRIBUTE = descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    descriptor.FieldDescriptor(
+      name='ns_prefix', full_name='xsd.gen.Attribute.ns_prefix', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=True, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -1491,8 +1498,8 @@ _ATTRIBUTE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3098,
-  serialized_end=3610,
+  serialized_start=3121,
+  serialized_end=3665,
 )
 
 
@@ -1526,8 +1533,8 @@ _ANYATTRIBUTE = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3612,
-  serialized_end=3671,
+  serialized_start=3667,
+  serialized_end=3726,
 )
 
 
@@ -1548,8 +1555,8 @@ _BUILTIN = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=3674,
-  serialized_end=4303,
+  serialized_start=3729,
+  serialized_end=4358,
 )
 
 _SCHEMA_NAMESPACE.containing_type = _SCHEMA;
@@ -1560,7 +1567,8 @@ _SCHEMA.fields_by_name['import_'].message_type = _IMPORT
 _SCHEMA.fields_by_name['complex_type'].message_type = _COMPLEXTYPE
 _SCHEMA.fields_by_name['simple_type'].message_type = _SIMPLETYPE
 _SCHEMA.fields_by_name['element'].message_type = _ELEMENT
-_COMPLEXTYPE.fields_by_name['element_container'].message_type = _ELEMENTCONTANER
+_SCHEMA.fields_by_name['attribute'].message_type = _ATTRIBUTE
+_COMPLEXTYPE.fields_by_name['element_container'].message_type = _ELEMENTCONTAINER
 _COMPLEXTYPE.fields_by_name['attribute'].message_type = _ATTRIBUTE
 _COMPLEXTYPE.fields_by_name['restriction'].message_type = _RESTRICTION
 _SIMPLETYPE_TYPE.fields_by_name['kind'].enum_type = _SIMPLETYPE_TYPE_KIND
@@ -1585,12 +1593,12 @@ _UNION_MEMBERTYPE.fields_by_name['built_in'].enum_type = _BUILTIN_TYPE
 _UNION_MEMBERTYPE.containing_type = _UNION;
 _UNION_MEMBERTYPE_KIND.containing_type = _UNION_MEMBERTYPE;
 _UNION.fields_by_name['member_type'].message_type = _UNION_MEMBERTYPE
-_ELEMENTCONTANER.fields_by_name['kind'].enum_type = _ELEMENTCONTANER_KIND
-_ELEMENTCONTANER.fields_by_name['sequence'].message_type = _ELEMENT
-_ELEMENTCONTANER.fields_by_name['choice'].message_type = _ELEMENT
-_ELEMENTCONTANER.fields_by_name['repeated_sequence'].message_type = _ELEMENT
-_ELEMENTCONTANER.fields_by_name['repeated_choice'].message_type = _ELEMENT
-_ELEMENTCONTANER_KIND.containing_type = _ELEMENTCONTANER;
+_ELEMENTCONTAINER.fields_by_name['kind'].enum_type = _ELEMENTCONTAINER_KIND
+_ELEMENTCONTAINER.fields_by_name['sequence'].message_type = _ELEMENT
+_ELEMENTCONTAINER.fields_by_name['choice'].message_type = _ELEMENT
+_ELEMENTCONTAINER.fields_by_name['repeated_sequence'].message_type = _ELEMENT
+_ELEMENTCONTAINER.fields_by_name['repeated_choice'].message_type = _ELEMENT
+_ELEMENTCONTAINER_KIND.containing_type = _ELEMENTCONTAINER;
 _MAXOCCURS.fields_by_name['kind'].enum_type = _MAXOCCURS_KIND
 _MAXOCCURS_KIND.containing_type = _MAXOCCURS;
 _ELEMENT_TYPE.fields_by_name['kind'].enum_type = _ELEMENT_TYPE_KIND
@@ -1623,7 +1631,7 @@ DESCRIPTOR.message_types_by_name['Base'] = _BASE
 DESCRIPTOR.message_types_by_name['Restriction'] = _RESTRICTION
 DESCRIPTOR.message_types_by_name['List'] = _LIST
 DESCRIPTOR.message_types_by_name['Union'] = _UNION
-DESCRIPTOR.message_types_by_name['ElementContaner'] = _ELEMENTCONTANER
+DESCRIPTOR.message_types_by_name['ElementContainer'] = _ELEMENTCONTAINER
 DESCRIPTOR.message_types_by_name['MaxOccurs'] = _MAXOCCURS
 DESCRIPTOR.message_types_by_name['Element'] = _ELEMENT
 DESCRIPTOR.message_types_by_name['Any'] = _ANY
@@ -1704,11 +1712,11 @@ class Union(message.Message):
   
   # @@protoc_insertion_point(class_scope:xsd.gen.Union)
 
-class ElementContaner(message.Message):
+class ElementContainer(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _ELEMENTCONTANER
+  DESCRIPTOR = _ELEMENTCONTAINER
   
-  # @@protoc_insertion_point(class_scope:xsd.gen.ElementContaner)
+  # @@protoc_insertion_point(class_scope:xsd.gen.ElementContainer)
 
 class MaxOccurs(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType

@@ -1,0 +1,43 @@
+package xsd.cpp;
+
+message File {
+	required string name = 1;
+	repeated string include_file = 2;
+	required string namespace = 3;
+	repeated Class class_ = 4;
+}
+
+message Class {
+	required string name = 1;
+	repeated string parent_class = 2;
+	optional Contruction construction = 3;
+	repeated Method method = 4;
+	repeated Var member_var = 5;
+	optional Enum enum_ = 6;
+	repeated Class inner_class = 7;
+}
+
+message Contruction {
+	repeated Var argument = 1;
+}
+
+message Method {
+	required string return_type = 1;
+	required string name = 2;
+	repeated Var argument = 3;
+	optional bool const = 4;
+	optional bool static = 5;
+	required string body = 6;
+}
+
+message Var {
+	required string type = 1;
+	required string name = 2;
+	optional bool const = 3;
+	optional bool static = 4;
+}
+
+message Enum {
+	required string name = 1;
+	repeated string value = 2;
+}

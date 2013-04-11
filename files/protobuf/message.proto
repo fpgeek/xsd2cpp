@@ -1,0 +1,47 @@
+package xsd.msg;
+
+message ProtoFile {
+	optional string xsd_file_name = 1;
+	required string package_name = 2;
+	repeated string import_ = 3;
+	repeated Message msg = 4;
+}
+
+message Message {
+	enum Kind {
+		Element = 0;
+		ComplexType = 1;
+		SimpleType = 2;
+	}
+	required Kind kind = 1;
+	required string name = 2;
+	repeated ChoiceMessage choice_msg = 3;
+	repeated SequenceMessage sequence_msg = 4;
+	repeated Field field = 5;
+}
+
+message Field {	
+	required string modifier = 1;
+	required string type = 2;
+	required string name = 3;
+}
+
+message ChoiceMessage {
+	enum Type {
+		One = 0;
+		Repeated = 1;
+	}
+	required string name = 1;
+	required Type type = 2;
+	repeated Field field = 3;
+}
+
+message SequenceMessage {
+	enum Type {
+		One = 0;
+		Repeated = 1;
+	}
+	required string name = 1;
+	required Type type = 2;
+	repeated Field field = 3;
+}
