@@ -42,7 +42,7 @@ message Destructor {
 }
 
 message Method {
-    optional AccessQualified access_qf = 1[defalut=public];
+    optional AccessQualified.Type access_qf = 1 [default = public];
 	required string return_type = 2;
 	required string name = 3;
 	repeated Var argument = 4;
@@ -52,11 +52,13 @@ message Method {
 }
 
 message Var {
-    optional AccessQualified access_qf = 1[defalut=public];
+    optional AccessQualified.Type access_qf = 1 [default = private];
 	required string type = 2;
 	required string name = 3;
 	optional bool const = 4;
 	optional bool static = 5;
+	repeated string string_list = 6;
+	optional bool array = 7;
 }
 
 message Enum {
