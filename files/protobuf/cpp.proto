@@ -7,34 +7,56 @@ message File {
 	repeated Class class_ = 4;
 }
 
+message AccessQualified {
+    enum Type {
+        public = 0;
+        protected = 1;
+        private = 2;
+    }
+}
+
 message Class {
 	required string name = 1;
 	repeated string parent_class = 2;
-	optional Contruction construction = 3;
-	repeated Method method = 4;
-	repeated Var member_var = 5;
-	optional Enum enum_ = 6;
-	repeated Class inner_class = 7;
+	repeated Constructor constructor = 3;
+	optional Destructor destructor = 4;
+	repeated Method method = 5;
+	repeated Var member_var = 6;
+	optional Enum enum_ = 7;
+	repeated Class inner_class = 8;
 }
 
-message Contruction {
+message Constructor {
 	repeated Var argument = 1;
+	repeated ConstInit const_init = 2;
+	optional string body = 3;
+}
+
+message ConstInit {
+    required string name = 1;
+    required string value = 2;
+}
+
+message Destructor {
+    optional string body = 1;
 }
 
 message Method {
-	required string return_type = 1;
-	required string name = 2;
-	repeated Var argument = 3;
-	optional bool const = 4;
-	optional bool static = 5;
-	required string body = 6;
+    optional AccessQualified access_qf = 1[defalut=public];
+	required string return_type = 2;
+	required string name = 3;
+	repeated Var argument = 4;
+	optional bool const = 5;
+	optional bool static = 6;
+	required string body = 7;
 }
 
 message Var {
-	required string type = 1;
-	required string name = 2;
-	optional bool const = 3;
-	optional bool static = 4;
+    optional AccessQualified access_qf = 1[defalut=public];
+	required string type = 2;
+	required string name = 3;
+	optional bool const = 4;
+	optional bool static = 5;
 }
 
 message Enum {

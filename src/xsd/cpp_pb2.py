@@ -11,7 +11,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='cpp.proto',
   package='xsd.cpp',
-  serialized_pb='\n\tcpp.proto\x12\x07xsd.cpp\"]\n\x04\x46ile\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\x14\n\x0cinclude_file\x18\x02 \x03(\t\x12\x11\n\tnamespace\x18\x03 \x02(\t\x12\x1e\n\x06\x63lass_\x18\x04 \x03(\x0b\x32\x0e.xsd.cpp.Class\"\xdd\x01\n\x05\x43lass\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\x14\n\x0cparent_class\x18\x02 \x03(\t\x12*\n\x0c\x63onstruction\x18\x03 \x01(\x0b\x32\x14.xsd.cpp.Contruction\x12\x1f\n\x06method\x18\x04 \x03(\x0b\x32\x0f.xsd.cpp.Method\x12 \n\nmember_var\x18\x05 \x03(\x0b\x32\x0c.xsd.cpp.Var\x12\x1c\n\x05\x65num_\x18\x06 \x01(\x0b\x32\r.xsd.cpp.Enum\x12#\n\x0binner_class\x18\x07 \x03(\x0b\x32\x0e.xsd.cpp.Class\"-\n\x0b\x43ontruction\x12\x1e\n\x08\x61rgument\x18\x01 \x03(\x0b\x32\x0c.xsd.cpp.Var\"x\n\x06Method\x12\x13\n\x0breturn_type\x18\x01 \x02(\t\x12\x0c\n\x04name\x18\x02 \x02(\t\x12\x1e\n\x08\x61rgument\x18\x03 \x03(\x0b\x32\x0c.xsd.cpp.Var\x12\r\n\x05\x63onst\x18\x04 \x01(\x08\x12\x0e\n\x06static\x18\x05 \x01(\x08\x12\x0c\n\x04\x62ody\x18\x06 \x02(\t\"@\n\x03Var\x12\x0c\n\x04type\x18\x01 \x02(\t\x12\x0c\n\x04name\x18\x02 \x02(\t\x12\r\n\x05\x63onst\x18\x03 \x01(\x08\x12\x0e\n\x06static\x18\x04 \x01(\x08\"#\n\x04\x45num\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\r\n\x05value\x18\x02 \x03(\t')
+  serialized_pb='\n\tcpp.proto\x12\x07xsd.cpp\"]\n\x04\x46ile\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\x14\n\x0cinclude_file\x18\x02 \x03(\t\x12\x11\n\tnamespace\x18\x03 \x02(\t\x12\x1e\n\x06\x63lass_\x18\x04 \x03(\x0b\x32\x0e.xsd.cpp.Class\"\x85\x02\n\x05\x43lass\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\x14\n\x0cparent_class\x18\x02 \x03(\t\x12)\n\x0b\x63onstructor\x18\x03 \x03(\x0b\x32\x14.xsd.cpp.Constructor\x12\'\n\ndestructor\x18\x04 \x01(\x0b\x32\x13.xsd.cpp.Destructor\x12\x1f\n\x06method\x18\x05 \x03(\x0b\x32\x0f.xsd.cpp.Method\x12 \n\nmember_var\x18\x06 \x03(\x0b\x32\x0c.xsd.cpp.Var\x12\x1c\n\x05\x65num_\x18\x07 \x01(\x0b\x32\r.xsd.cpp.Enum\x12#\n\x0binner_class\x18\x08 \x03(\x0b\x32\x0e.xsd.cpp.Class\"c\n\x0b\x43onstructor\x12\x1e\n\x08\x61rgument\x18\x01 \x03(\x0b\x32\x0c.xsd.cpp.Var\x12&\n\nconst_init\x18\x02 \x03(\x0b\x32\x12.xsd.cpp.ConstInit\x12\x0c\n\x04\x62ody\x18\x03 \x01(\t\"(\n\tConstInit\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\r\n\x05value\x18\x02 \x02(\t\"\x1a\n\nDestructor\x12\x0c\n\x04\x62ody\x18\x01 \x01(\t\"x\n\x06Method\x12\x13\n\x0breturn_type\x18\x01 \x02(\t\x12\x0c\n\x04name\x18\x02 \x02(\t\x12\x1e\n\x08\x61rgument\x18\x03 \x03(\x0b\x32\x0c.xsd.cpp.Var\x12\r\n\x05\x63onst\x18\x04 \x01(\x08\x12\x0e\n\x06static\x18\x05 \x01(\x08\x12\x0c\n\x04\x62ody\x18\x06 \x02(\t\"@\n\x03Var\x12\x0c\n\x04type\x18\x01 \x02(\t\x12\x0c\n\x04name\x18\x02 \x02(\t\x12\r\n\x05\x63onst\x18\x03 \x01(\x08\x12\x0e\n\x06static\x18\x04 \x01(\x08\"#\n\x04\x45num\x12\x0c\n\x04name\x18\x01 \x02(\t\x12\r\n\x05value\x18\x02 \x03(\t')
 
 
 
@@ -87,36 +87,43 @@ _CLASS = descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='construction', full_name='xsd.cpp.Class.construction', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    descriptor.FieldDescriptor(
-      name='method', full_name='xsd.cpp.Class.method', index=3,
-      number=4, type=11, cpp_type=10, label=3,
+      name='constructor', full_name='xsd.cpp.Class.constructor', index=2,
+      number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='member_var', full_name='xsd.cpp.Class.member_var', index=4,
+      name='destructor', full_name='xsd.cpp.Class.destructor', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='method', full_name='xsd.cpp.Class.method', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='enum_', full_name='xsd.cpp.Class.enum_', index=5,
-      number=6, type=11, cpp_type=10, label=1,
+      name='member_var', full_name='xsd.cpp.Class.member_var', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='enum_', full_name='xsd.cpp.Class.enum_', index=6,
+      number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
-      name='inner_class', full_name='xsd.cpp.Class.inner_class', index=6,
-      number=7, type=11, cpp_type=10, label=3,
+      name='inner_class', full_name='xsd.cpp.Class.inner_class', index=7,
+      number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -131,21 +138,35 @@ _CLASS = descriptor.Descriptor(
   is_extendable=False,
   extension_ranges=[],
   serialized_start=118,
-  serialized_end=339,
+  serialized_end=379,
 )
 
 
-_CONTRUCTION = descriptor.Descriptor(
-  name='Contruction',
-  full_name='xsd.cpp.Contruction',
+_CONSTRUCTOR = descriptor.Descriptor(
+  name='Constructor',
+  full_name='xsd.cpp.Constructor',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     descriptor.FieldDescriptor(
-      name='argument', full_name='xsd.cpp.Contruction.argument', index=0,
+      name='argument', full_name='xsd.cpp.Constructor.argument', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='const_init', full_name='xsd.cpp.Constructor.const_init', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='body', full_name='xsd.cpp.Constructor.body', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -158,8 +179,71 @@ _CONTRUCTION = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=341,
-  serialized_end=386,
+  serialized_start=381,
+  serialized_end=480,
+)
+
+
+_CONSTINIT = descriptor.Descriptor(
+  name='ConstInit',
+  full_name='xsd.cpp.ConstInit',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='name', full_name='xsd.cpp.ConstInit.name', index=0,
+      number=1, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    descriptor.FieldDescriptor(
+      name='value', full_name='xsd.cpp.ConstInit.value', index=1,
+      number=2, type=9, cpp_type=9, label=2,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=482,
+  serialized_end=522,
+)
+
+
+_DESTRUCTOR = descriptor.Descriptor(
+  name='Destructor',
+  full_name='xsd.cpp.Destructor',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    descriptor.FieldDescriptor(
+      name='body', full_name='xsd.cpp.Destructor.body', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=unicode("", "utf-8"),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  extension_ranges=[],
+  serialized_start=524,
+  serialized_end=550,
 )
 
 
@@ -221,8 +305,8 @@ _METHOD = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=388,
-  serialized_end=508,
+  serialized_start=552,
+  serialized_end=672,
 )
 
 
@@ -270,8 +354,8 @@ _VAR = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=510,
-  serialized_end=574,
+  serialized_start=674,
+  serialized_end=738,
 )
 
 
@@ -305,21 +389,25 @@ _ENUM = descriptor.Descriptor(
   options=None,
   is_extendable=False,
   extension_ranges=[],
-  serialized_start=576,
-  serialized_end=611,
+  serialized_start=740,
+  serialized_end=775,
 )
 
 _FILE.fields_by_name['class_'].message_type = _CLASS
-_CLASS.fields_by_name['construction'].message_type = _CONTRUCTION
+_CLASS.fields_by_name['constructor'].message_type = _CONSTRUCTOR
+_CLASS.fields_by_name['destructor'].message_type = _DESTRUCTOR
 _CLASS.fields_by_name['method'].message_type = _METHOD
 _CLASS.fields_by_name['member_var'].message_type = _VAR
 _CLASS.fields_by_name['enum_'].message_type = _ENUM
 _CLASS.fields_by_name['inner_class'].message_type = _CLASS
-_CONTRUCTION.fields_by_name['argument'].message_type = _VAR
+_CONSTRUCTOR.fields_by_name['argument'].message_type = _VAR
+_CONSTRUCTOR.fields_by_name['const_init'].message_type = _CONSTINIT
 _METHOD.fields_by_name['argument'].message_type = _VAR
 DESCRIPTOR.message_types_by_name['File'] = _FILE
 DESCRIPTOR.message_types_by_name['Class'] = _CLASS
-DESCRIPTOR.message_types_by_name['Contruction'] = _CONTRUCTION
+DESCRIPTOR.message_types_by_name['Constructor'] = _CONSTRUCTOR
+DESCRIPTOR.message_types_by_name['ConstInit'] = _CONSTINIT
+DESCRIPTOR.message_types_by_name['Destructor'] = _DESTRUCTOR
 DESCRIPTOR.message_types_by_name['Method'] = _METHOD
 DESCRIPTOR.message_types_by_name['Var'] = _VAR
 DESCRIPTOR.message_types_by_name['Enum'] = _ENUM
@@ -336,11 +424,23 @@ class Class(message.Message):
   
   # @@protoc_insertion_point(class_scope:xsd.cpp.Class)
 
-class Contruction(message.Message):
+class Constructor(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType
-  DESCRIPTOR = _CONTRUCTION
+  DESCRIPTOR = _CONSTRUCTOR
   
-  # @@protoc_insertion_point(class_scope:xsd.cpp.Contruction)
+  # @@protoc_insertion_point(class_scope:xsd.cpp.Constructor)
+
+class ConstInit(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _CONSTINIT
+  
+  # @@protoc_insertion_point(class_scope:xsd.cpp.ConstInit)
+
+class Destructor(message.Message):
+  __metaclass__ = reflection.GeneratedProtocolMessageType
+  DESCRIPTOR = _DESTRUCTOR
+  
+  # @@protoc_insertion_point(class_scope:xsd.cpp.Destructor)
 
 class Method(message.Message):
   __metaclass__ = reflection.GeneratedProtocolMessageType

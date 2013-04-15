@@ -4,6 +4,7 @@ __author__ = 'fpgeek'
 
 import xsd_pb2 as PB
 import cpp_pb2 as CPB
+import cpp_contents_funcs as CPP_FUNC
 
 def parseToCpp(pbSchema):
     cppFile = CPB.File()
@@ -100,8 +101,8 @@ def _makeCppClassFromComplexType(pbComplexType, cppClass):
 def _setCppClassFromCTSequence(pbElemList, cppClass):
     for pbElem in pbElemList:
         if pbElem.type.kind == PB.Element.Type.BuiltIn:
-            cppVarName = getBaseNameStr(pbElem.type.built_in)
-            cppVarType = cppVarName
+            cppVarName = _getCppVarType(pbElem.name)
+            cppVarType = getBaseNameStr(pbElem.type.built_in)
             _setCppClassByOne(cppVarName, cppVarType, cppClass)
         elif pbElem.type.kind == PB.Element.Type.SimpleTypeName:
             cppVarName = _getCppVarName(pbElem.name)
@@ -308,7 +309,7 @@ def _setCppClassFromCTNameRestriction(pbCTName, cppClass):
 
 # restriction - SimpleType name이 base인 경우 처리
 def _setCppClassFromSTNameRestriction(pbSTName, cppClass):
-    argument = cppClass.construction.argument.add()
+    argument = cppClass.constructor.add().argument.add()
     argument.type = '%s&' % _getCppVarType(pbSTName)
     argument.name = '_%s' % _getCppVarName(pbSTName)
     argument.const = True
@@ -377,20 +378,26 @@ def _setCppClassFromSTRestrictionEnum(pbEnums, cppClass):
     cppVarName = 'type'
     _setCppClassByOne(cppVarType, cppVarName, cppClass)
 
-    argument = cppClass.construction.argument.add()
+    argument = cppClass.constructor.add().argument.add()
     argument.type = 'Type&'
     argument.name = '_type'
     argument.const = True
 
 # restriction - enum이 아닌 일반 제한 처리
 def _setCppClassFromNormalRestriciton(pbRestriction, cppClass):
-    cppVarName = getBaseNameStr(pbRestriction.base.built_in)
-    cppVarType = cppVarName
-    _setCppClassByOne(cppVarName, cppVarType, cppClass)
-    argument = cppClass.construction.argument.add()
-    argument.type = '%s&' % cppVarType
-    argument.name = '_%s' % cppVarName
-    argument.const = True
+    if pbRestriction.base.kind == PB.Base.BuiltIn:
+        CPP_FUNC.simpleType_restriction_builtIn(pbRestriction.base.built_in, cppClass)
+    elif pbRestriction.base.kind == PB.Base.SimpleTypeName:
+        pass
+    elif pbRestriction.base.kind == PB.Base.ComplexTypeName:
+        pass
+    # cppVarName = getBaseNameStr(pbRestriction.base.built_in)
+    # cppVarType = cppVarName
+    # _setCppClassByOne(cppVarName, cppVarType, cppClass)
+    # argument = cppClass.constructor.add().argument.add()
+    # argument.type = '%s&' % cppVarType
+    # argument.name = '_%s' % cppVarName
+    # argument.const = True
 
 def getBaseNameStr(pbBuiltIn):
     return PB.BuiltIn.DESCRIPTOR.enum_types_by_name['Type'].values_by_number[pbBuiltIn].name

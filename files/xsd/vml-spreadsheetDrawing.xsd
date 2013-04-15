@@ -22,7 +22,7 @@
       <xsd:element name="FmlaMacro" type="xsd:string"/>
       <xsd:element name="TextHAlign" type="xsd:string"/>
       <xsd:element name="TextVAlign" type="xsd:string"/>
-      <xsd:element name="LockText" type="s:ST_TrueFalseBlank"/>
+      <xsd:element name="x" type="s:ST_TrueFalseBlank"/>
       <xsd:element name="JustLastX" type="s:ST_TrueFalseBlank"/>
       <xsd:element name="SecretEdit" type="s:ST_TrueFalseBlank"/>
       <xsd:element name="Default" type="s:ST_TrueFalseBlank"/>
@@ -47,7 +47,7 @@
       <xsd:element name="SelType" type="xsd:string"/>
       <xsd:element name="MultiSel" type="xsd:string"/>
       <xsd:element name="LCT" type="xsd:string"/>
-      <xsd:element name="ListItem" type="xsd:string"/>
+      <xsd:element name="st" type="xsd:string"/>
       <xsd:element name="DropStyle" type="xsd:string"/>
       <xsd:element name="Colored" type="s:ST_TrueFalseBlank"/>
       <xsd:element name="DropLines" type="xsd:integer"/>
