@@ -56,14 +56,39 @@ def _makeCppClassFromElement(pbElement, cppClass):
     cppVarType = _getCppVarTypeFromElem(pbElement)
     cppClass.parent_class.append(cppVarType)
 
+    toXmlMethod = cppClass.method.add()
+    toXmlMethod.return_type = 'void'
+    toXmlMethod.name = 'toXml'
+    toXmlMethod.const = True
+    var1 = toXmlMethod.argument.add()
+    var1.type = 'ostream&'
+    var1.name = '_outStream'
+    toXmlMethod.body = \
+    """
+        %(CTType)s::toXml("%(elemName)s", _outStream);
+    """ % {'CTType': cppVarType, 'elemName':pbElement.name}
+
+
 
 # Attribute를 class로 만들기
 def _makeCppClassFromAttribute(pbAttr, cppClass):
-    cppClass.name = pbAttr.name
+    cppClass.name = '%s_attr' % pbAttr.name
     cppClass.parent_class.append('Attribute')
 
     cppVarType = _getCppVarTypeFromAttr(pbAttr)
     cppClass.parent_class.append(cppVarType)
+
+    toXmlMethod = cppClass.method.add()
+    toXmlMethod.return_type = 'void'
+    toXmlMethod.name = 'toXml'
+    toXmlMethod.const = True
+    var1 = toXmlMethod.argument.add()
+    var1.type = 'ostream&'
+    var1.name = '_outStream'
+    toXmlMethod.body = \
+        """
+            %(CTType)s::toXml("%(elemName)s", _outStream);
+        """ % {'CTType': cppVarType, 'elemName':pbAttr.name}
 
 
 # ComplexType을 class로 만들기
@@ -139,7 +164,7 @@ def _makeCppMethodFromSimpleType(pbSimpleType, cppClass):
 # restriction 추가
 def _makeCppMethodFromRestriction(pbRestriction, cppClass):
     if pbRestriction.base.kind == PB.Base.BuiltIn:
-        if (pbRestriction.base.built_in == PB.BuiltIn.string) and (len(pbRestriction.enumeration) > 0): # enum으로 되어 있는 경우 처리
+        if len(pbRestriction.enumeration) > 0: # enum으로 되어 있는 경우 처리
             CPP_FUNC.simpleType_restriction_enum(pbRestriction.enumeration, cppClass)
         else: # enum이 아닌 일반 restriction 처리
             CPP_FUNC.simpleType_restriction_builtIn(pbRestriction.base.built_in, cppClass)

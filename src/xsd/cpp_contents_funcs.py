@@ -238,6 +238,15 @@ def simpleType_restriction_enum(pbEnumList, cppClass):
             return %s;
         """ % varName
 
+    toStringMethod = cppClass.method.add()
+    toStringMethod.return_type = 'string'
+    toStringMethod.name = 'toString'
+    toStringMethod.const = True
+    toStringMethod.body = \
+    """
+        return %s::%s[%s];
+    """ % (cppClass.name, typeStrMember.name, varName)
+
     clearMethodBody = \
         """
             %s = false;
@@ -248,9 +257,9 @@ def simpleType_restriction_enum(pbEnumList, cppClass):
         """
             if (%s)
             {
-                %s;
+                '_outStream << _attrName << "=\\"" << %s() << "\\"";';
             }
-        """ % (hasVarName, _makeToXmlMethodBodyFromAttrEnum(cppClass.name, typeStrMember.name, varName))
+        """ % (hasVarName, toStringMethod.name)
     makeToXmlAttrMethod(toXmlMethodBody, cppClass)
 
     makeDefaultInstanceMethod(cppClass)
