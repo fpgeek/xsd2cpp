@@ -23,7 +23,7 @@ def _isBooleanBuiltInType(pbBuiltIn):
 def makeDefaultInstanceMethod(cppClass):
     method = cppClass.method.add()
     method.return_type = 'const %s&' % cppClass.name
-    method.name = 'default_instance()'
+    method.name = 'default_instance'
     method.const = True
     method.static = True
     method.body = \
