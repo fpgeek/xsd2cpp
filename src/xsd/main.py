@@ -14,7 +14,7 @@ def writePbFile(filePath, pbMsg):
     PT.PrintMessage(pbMsg, f)
     f.close()
 
-def createFileNsNameMap(xsdFileName, pbSchemas):
+def createFileNsNameMap(pbSchemas):
     allNsList = [ns for pbSchema in pbSchemas for ns in pbSchema.namespace if ns.prefix != '']
     allImportList = [imp for pbSchema in pbSchemas for imp in pbSchema.import_]
 
@@ -36,12 +36,17 @@ def run(xsdFileDirPath):
         allSchema.append(schema)
 
     pbSchemas = allSchema.parse()
-    fileNsMap = createFileNsNameMap(xsdFileName, pbSchemas)
+    fileNsMap = createFileNsNameMap(pbSchemas)
+    print fileNsMap
     for pbSchema in pbSchemas:
         writePbFile('../../files/pb_text/%s.txt' % pbSchema.file_name, pbSchema)
 
         cppProtoFile = xsd2cpp.parseToCpp(pbSchema)
-        cppProtoFile.namespace = fileNsMap.get(xsdFileName)
+        fileNsName = fileNsMap.get(pbSchema.file_name)
+        if fileNsName is not None:
+            cppProtoFile.namespace = fileNsName
+        else:
+            cppProtoFile.namespace = 'ns_%s' % pbSchema.file_name[:1]
         writePbFile('../../files/pb_text/%s.cpp.txt' % pbSchema.file_name, cppProtoFile)
 
 if __name__ == '__main__':
