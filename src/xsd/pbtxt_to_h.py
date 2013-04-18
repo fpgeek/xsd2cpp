@@ -224,7 +224,7 @@ def _makehEnum(cppSchema, deep):
     for val in cppSchema.value:
         if firstFlag:
             firstFlag = False
-            hBuf += '    '*deep + '%s = 1' % val
+            hBuf += '    '*deep + '%s = 0' % val
         else :
             hBuf += ',\n' + '    '*deep + val
 

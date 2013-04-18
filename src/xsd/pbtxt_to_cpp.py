@@ -6,7 +6,6 @@ import os
 import StringIO
 
 def cppParse(cppSchema, filePath):
-    #cppFile = open('../../files/cpp/%s.cpp' % cppSchema.name, 'wb')
     cppFile = open(filePath, 'wb')
     cppBuf = '#include "%s.h"\n' % cppSchema.name
     cppBuf += '#include <stdlib.h>\n' 
@@ -17,7 +16,7 @@ def cppParse(cppSchema, filePath):
     for inFile in cppSchema.include_file:
         cppBuf += '#include "%s"\n' % inFile
 
-    cppBuf += 'namespace %s {\n' % cppSchema.namespace
+    cppBuf += 'namespace %s {\n using namespace std;\n' % cppSchema.namespace
     
     for cls in cppSchema.class_:
         cppBuf += _makeCppClass(cls, deep)
@@ -42,16 +41,10 @@ def _makeCppClass(cppSchema, deep):
         cppBuf += _makeCppDestructor(cppSchema.destructor, name, deep)
 
     for met in cppSchema.method:
-        data = _makeCppMethod(met, name, deep)
-        if _checkPublic(data):
-            data = data[7:]
-            cppBuf += data
+        cppBuf += _makeCppMethod(met, name, deep)
 
     for mem in cppSchema.member_var:
-        data = _makeCppMemberVar(mem, name, deep)
-        if _checkPublic(data):
-            data = data[7:]
-            cppBuf += data
+        cppBuf += _makeCppMemberVar(mem, name, deep)
     
     return cppBuf
 
@@ -95,14 +88,7 @@ def _makeCppDestructor(cppSchema, className, deep):
     return cppBuf
 
 def _makeCppMethod(cppSchema, className, deep):
-    if cppSchema.access_qf == 'protected':
-        cppBuf = 'protected\n'
-    elif cppSchema.access_qf == 'private':
-        cppBuf = 'private\n'
-    else:
-        cppBuf = 'public\n'
-
-    cppBuf += '    '*deep + '%s %s::%s(' % (cppSchema.return_type, className, cppSchema.name)
+    cppBuf = '    '*deep + '%s %s::%s(' % (cppSchema.return_type, className, cppSchema.name)
     
     argFlag = True
     for arg in cppSchema.argument:
@@ -120,25 +106,45 @@ def _makeCppMethod(cppSchema, className, deep):
     cppBuf += '\n' + '    '*deep + '{'
     if cppSchema.HasField('body'):
         cppBuf += _makeCppBody(cppSchema.body.decode('string-escape'), deep) + '    '*deep
-    cppBuf += '}\n'
+    cppBuf += '}\n\n'
     return cppBuf
 
 def _makeCppMemberVar(cppSchema, className, deep):
-    deep += 1
-    return _makeCppVar(cppSchema, '    '*deep) + ';\n'
+    if cppSchema.access_qf == 'private' or cppSchema.HasField('access_qf'):
+        if cppSchema.string_list:
+            cppBuf = '    '*deep
+            if cppSchema.HasField('static') and cppSchema.static:
+                   cppBuf += 'static '
+            if cppSchema.HasField('const') and cppSchema.const:
+                   cppBuf += 'const '
+
+            cppBuf += '%s %s::%s' % (cppSchema.type, className, cppSchema.name)
+            if cppSchema.HasField('array') and cppSchema.array:
+                cppBuf += '[] =\n' + '    '*deep + '{\n'
+                deep += 1
+                FirstArg = True
+                for strLst in cppSchema.string_list:
+                    if FirstArg:
+                        FirstArg = False
+                        cppBuf += '    '*deep + '"%s"' % strLst
+                    else:
+                        cppBuf += ',\n' + '    '*deep + '"%s"' % strLst
+
+                deep -= 1
+                cppBuf += '\n' + '    '*deep + '};\n'
+
+                return cppBuf
+            else:
+                return ''
+        else:
+            return ''
+    else:
+        return ''
+    
+    return _makeCppVar(cppSchema, '    '*deep + className) + ';\n'
 
 def _makeCppArgVar(cppSchema):
-    return _makeCppVar(cppSchema, '')
-
-def _makeCppVar(cppSchema, cppBuf):
-    if cppBuf:
-        if cppSchema.access_qf == 'public':
-            cppBuf = 'public\n' + cppBuf
-        elif cppSchema.access_qf == 'protected':
-            cppBuf = 'protected\n' + cppBuf
-        else:
-            cppBuf = 'private\n' + cppBuf
-
+    cppBuf = ''
     if cppSchema.HasField('static') and cppSchema.static:
             cppBuf += 'static '
     if cppSchema.HasField('const') and cppSchema.const:
