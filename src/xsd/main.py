@@ -4,6 +4,8 @@ __author__ = 'fpgeek'
 
 import xsd_parser as xsdParser
 import xsd_to_cpp as xsd2cpp
+import pbtxt_to_cpp as txt2cpp
+import pbtxt_to_h as txt2h
 import os
 import google.protobuf.text_format as PT
 import itertools
@@ -48,6 +50,8 @@ def run(xsdFileDirPath):
         else:
             cppProtoFile.namespace = 'ns_%s' % pbSchema.file_name[:1]
         writePbFile('../../files/pb_text/%s.cpp.txt' % pbSchema.file_name, cppProtoFile)
+        txt2cpp.cppParse(cppProtoFile, pbSchema.file_name)
+        txt2h.hParse(cppProtoFile, pbSchema.file_name)
 
 if __name__ == '__main__':
     run('../../files/xsd')
