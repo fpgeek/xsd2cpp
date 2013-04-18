@@ -3,356 +3,234 @@
 __author__ = 'msgundam00'
 
 import os
-import StringIO
 
-def cppParse(cppProtoFile, fileName):
-    cppProtoBuf = StringIO.StringIO(cppProtoFile)
-    cppFile = open('../../files/cpp/%s.cpp' % fileName.replace('.', '_'), 'wb')
-    cppBuf = ''
+def cppParse(cppSchema):
+    cppFile = open('../../files/cpp/%s.cpp' % cppSchema.name, 'wb')
+    cppBuf = '#include "%s.h"\n' % cppSchema.name
+    cppBuf += '#include <stdlib.h>\n' 
+    cppBuf += '#include <sstream>\n'
+
     deep = 0
 
-    while 1:
-        line = cppProtoBuf.readline()
-        if not line:
-            break
-        
-        if _checkType(line, 'namespace'):
-            cppBuf += 'namespace ' + _getVal(line) + '{\n'
-        elif _checkType(line, 'name'): 
-            cppBuf += '#include "%s.h"\n' % _getVal(line)
-            cppBuf += '#include <stdlib.h>\n' 
-            cppBuf += '#include <sstream>\n'
-        elif _checkType(line, 'include_file'):
-            cppBuf += '#include "%s"\n' % _getVal(line)
-        elif _checkType(line, 'class_'):
-            cppBuf += _makeCppClass(cppProtoBuf, deep)
+    for inFile in cppSchema.include_file:
+        cppBuf += '#include "%s"\n' % inFile
+
+    cppBuf += 'namespace %s {\n' % cppSchema.namespace
+    
+    for cls in cppSchema.class_:
+        cppBuf += _makeCppClass(cls, deep)
     
     cppBuf += '}'
     cppFile.write(cppBuf)
-
-def _getVal(txtLine):
-    index = txtLine.index(':')
-    return txtLine[index+2:].replace('"', '').replace('\n', '')
+    cppFile.close()
 
 def _checkPublic(data):
     return data.startswith('public\n')
 
+def _checkProtect(data):
+    return data.startswith('protected\n')
+
 def _checkType(txtline, comment):
     return txtline.strip().startswith(comment)
             
-def _makeCppClass(cppProtoBuf, deep):
+def _makeCppClass(cppSchema, deep):
     deep += 1
 
-    cppBuf = '    '*deep + 'class '
-    pHead = len(cppBuf)
+    cppBuf = '    '*deep + 'class %s' % cppSchema.name
+
+    parentFlag = True
+    for pcls in cppSchema.parent_class:
+        if parentFlag:
+            parentFlag = False
+            cppBuf += ': public %s' % pcls
+        else:
+            cppBuf += ', public %s' % pcls
+            
     cppBuf += '{\n' + '    '*deep + 'public:\n'
     pPublic = len(cppBuf)
+    cppBuf += '\n' + '    '*deep + 'protected:\n'
+    pProtect= len(cppBuf)
     cppBuf += '\n' + '    '*deep + 'private:\n'
     pPrivate = len(cppBuf)
     cppBuf += '\n' + '    '*deep + '}\n'
+    
+    for con in cppSchema.constructor:
+        data = _makeCppConstructor(con, cppSchema.name, deep)
+        cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic:]
 
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break
+        pPublic += len(data)
+        pProtect += len(data)
+        pPrivate += len(data)
+        
+    if cppSchema.HasField('destructor'):
+        data = _makeCppDestructor(cppSchema.destructor, cppSchema.name, deep)
+        cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic:]
 
-        if _checkType(line, 'name'):
-            className = _getVal(line)
-            cppBuf = cppBuf[:pHead] + className + cppBuf[pHead:]
+        pPublic += len(data)
+        pProtect += len(data)
+        pPrivate += len(data)
 
-            pHead += len(className)
-            pPublic += len(className)
-            pPrivate += len(className)
-        elif _checkType(line, 'parent_class'):
-            parentName = ' : public ' + _getVal(line)
-            cppBuf = cppBuf[:pHead] + parentName + cppBuf[pHead:]
-
-            pPublic += len(parentName)
-            pPrivate += len(parentName)
-        elif _checkType(line, 'constructor'):
-            data = _makeCppConstructor(cppProtoBuf, className, deep)
+    for met in cppSchema.method:
+        data = _makeCppMethod(met, deep)
+        if _checkPublic(data):
+            data = data[7:]
             cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic:]
 
             pPublic += len(data)
+            pProtect += len(data)
             pPrivate += len(data)
-        elif _checkType(line, 'destructor'):
-            data = _makeCppDestructor(cppProtoBuf, className, deep)
-            cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic:]
+        elif _checkProtect(data):
+            data = data[10:]
+            cppBuf = cppBuf[:pProtect] + data + cppBuf[pProtect:]
 
-            pPublic += len(data)
+            pProtect += len(data)
             pPrivate += len(data)
-        elif _checkType(line, 'method'):
-            data = _makeCppMethod(cppProtoBuf, deep)
-            if _checkPublic(data):
-                data = data[7:]
-                cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic:]
-
-                pPublic += len(data)
-                pPrivate += len(data)
-            else:
-                data = data[8:]
-                cppBuf = cppBuf[:pPrivate] + data + cppBuf[pPrivate:]
-
-                pPrivate += len(data)
-        elif _checkType(line, 'member_var'):
-            data = _makeCppMemberVar(cppProtoBuf, deep)
-            if _checkPublic(data):
-                data = data[7:]
-                cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic]
-
-                pPublic += len(data)
-                pPrivate += len(data)
-            else:
-                data = data[8:]
-                cppBuf = cppBuf[:pPrivate] + data + cppBuf[pPrivate:]
-
-                pPrivate += len(data)
-        elif _checkType(line, 'enum'):
-            data = _makeCppEnum(cppProtoBuf, deep)
-            cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic:]
-
-            pPublic += len(data)
-            pPrivate += len(data)
-        elif _checkType(line, 'inner_class'):
-            data = _makeCppClass(cppProtoBuf, deep)
+        else:
+            data = data[8:]
             cppBuf = cppBuf[:pPrivate] + data + cppBuf[pPrivate:]
 
             pPrivate += len(data)
-    cppBuf += '\n'
+
+    for mem in cppSchema.member_var:
+        data = _makeCppMemberVar(mem, deep)
+        if _checkPublic(data):
+            data = data[7:]
+            cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic:]
+
+            pPublic += len(data)
+            pProtect += len(data)
+            pPrivate += len(data)
+        elif _checkProtect(data):
+            data = data[10:]
+            cppBuf = cppBuf[:pProtect] + data + cppBuf[pProtect:]
+
+            pProtect += len(data)
+            pPrivate += len(data)
+        else:
+            data = data[8:]
+            cppBuf = cppBuf[:pPrivate] + data + cppBuf[pPrivate:]
+
+            pPrivate += len(data)
+
+    if cppSchema.HasField('enum_'):
+        data = _makeCppEnum(cppSchema.enum_, deep)
+        cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic:]
+    
+        pPublic += len(data)
+        pProtect += len(data)
+        pPrivate += len(data)
+
+    for icls in cppSchema.inner_class:
+        data = _makeCppClass(icls, deep)
+        cppBuf = cppBuf[:pPrivate] + data + cppBuf[pPrivate:]
+
+        pPrivate += len(data)
+    
     return cppBuf
 
-def _makeCppConstructor(cppProtoBuf, className, deep):
+def _makeCppConstructor(cppSchema, className, deep):
     deep += 1
 
     cppBuf = '    '*deep + className + '('
-    pArg = len(cppBuf)
-    cppBuf += '){\n'
-    pBody = len(cppBuf)
-    cppBuf += '\n' + '    '*deep + '}'
-
     argFlag = True
+    for arg in cppSchema.argument:
+        if argFlag:
+            argFlag = False
+            data = _makeCppArgVar(arg)
+        else:
+            data = ', ' + _makeCppArgVar(arg)
 
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break
-        
-        if _checkType(line, 'argument'):
-            if argFlag:
-                argFlag = False
-                data = _makeCppArgVar(cppProtoBuf)
-            else:
-                data = ', ' + _makeCppArgVar(cppProtoBuf)
-
-            cppBuf = cppBuf[:pArg] + data + cppBuf[pArg:]
-            pArg += len(data)
-            pBody += len(data)
-        elif _checkType(line, 'const_init'):
-            data = _makeCppConstInit(cppProtoBuf, deep)
-            cppBuf = cppBuf[:pBody] + data + cppBuf[pBody:]
-
-            pBody += len(data)
-        elif _checkType(line, 'body'):
-            data = _getVal(line).decode('string-escape')
-            cppBuf = cppBuf[:pBody] + data + cppBuf[pBody:]
-
-            pBody += len(data)
-    
-    cppBuf += '\n'
-    return cppBuf
-
-def _makeCppDestructor(cppProtoBuf, className, deep):
-    deep += 1
-
-    cppBuf = '    '*deep + '~' + className + '(){\n'
-    pBody = len(cppBuf)
-    cppBuf += '\n' + '    '*deep + '}'
-
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break
-        
-        if _checkType(line, 'body'):
-            data = _getVal(line).decode('string-escape')
-            cppBuf = cppBuf[:pBody] + data + cppBuf[pBody:]
-
-            pBody += len(data)
-    
-    cppBuf += '\n'
-    return cppBuf
-
-def _makeCppConstInit(cppProtoBuf, deep):
-    deep += 1
-    cppBuf = '    '*deep
-    pHead = len(cppBuf)
-    cppBuf += ' = '
-
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break;
-
-        if _checkType(line, 'name'):
-            data = _getVal(line)
-            cppBuf = cppBuf[:pHead] + data + cppBuf[pHead:]
-        elif _checkType(line, 'value'):
-            data = _getVal(line)
-            cppBuf += data
-
-    cppBuf += '\n'
-    return cppBuf
-
-def _makeCppMethod(cppProtoBuf, deep):
-    deep += 1
-
-    cppBuf = '    '*deep
-    pHead = len(cppBuf)
-    cppBuf += '('
-    pArg = len(cppBuf)
+        cppBuf += data
     cppBuf += '){\n'
-    pBody = len(cppBuf)
-    cppBuf += '\n' + '    '*deep + '}'
 
-    argFlag = True
-    accessFlag = True
-
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break
-
-        if _checkType(line, 'access_qf'):
-            qf = _getVal(line) + '\n'
-            cppBuf = qf + cppBuf
-            accessFlag =False
-            
-            pHead += len(qf)
-            pArg += len(qf)
-            pBody += len(qf)
-        elif _checkType(line, 'return_type'):
-            data = _getVal(line) + ' '
-            cppBuf = cppBuf[:pHead] + data + cppBuf[pHead:]
-
-            pHead += len(data)
-            pArg += len(data)
-            pBody += len(data)
-        elif _checkType(line, 'name'):
-            data = _getVal(line)
-            cppBuf = cppBuf[:pHead] + data + cppBuf[pHead:]
-
-            pArg += len(data)
-            pBody += len(data)
-        elif _checkType(line, 'argument'):
-            if argFlag:
-                argFlag = False
-                data = _makeCppArgVar(cppProtoBuf)
-            else:
-                data = ', ' + _makeCppArgVar(cppProtoBuf)
-
-            cppBuf = cppBuf[:pArg] + data + cppBuf[pArg:]
-            pArg += len(data)
-            pBody += len(data)
-        #elif _checkType(line, 'const') and _getVal(line) == 'true':
-        #elif _checkType(line, 'static') and _getVal(line) == 'true':
-        elif _checkType(line, 'body'):
-            data = _getVal(line).decode('string-escape')
-            cppBuf = cppBuf[:pBody] + data + cppBuf[pBody:]
-
-            pBody += len(data)
+    for conInit in cppSchema.const_init:
+        cppBuf += _makeCppConstInit(conInit, deep)
     
-    if accessFlag:
-        cppBuf = 'public\n' + cppBuf
-    cppBuf += '\n'
+    cppBuf += cppSchema.body.decode('string-escape')
+    cppBuf += '\n' + '    '*deep + '}\n'
     return cppBuf
 
-def _makeCppMemberVar(cppProtoBuf, deep):
+def _makeCppConstInit(cppSchema, deep):
     deep += 1
-    cppBuf = _makeCppVar(cppProtoBuf, '    '*deep)
-    cppBuf += ';\n'
+    cppBuf = '    '*deep + '%s = %s\n' % (cppSchema.name, cppSchema.value)
 
     return cppBuf
 
-def _makeCppArgVar(cppProtoBuf):
-    return _makeCppVar(cppProtoBuf, '')
+def _makeCppDestructor(cppSchema, className, deep):
+    deep += 1
 
-def _makeCppVar(cppProtoBuf, cppBuf):
-    if not cppBuf:
-        accessFlag = False
+    cppBuf = '    '*deep + '~' + className + '(){\n' + cppSchema.body.decode('string-escape')
+    cppBuf += '\n' + '    '*deep + '}\n'
+
+    return cppBuf
+
+def _makeCppMethod(cppSchema, deep):
+    deep += 1
+    
+    if cppSchema.access_qf == 'protected':
+        cppBuf = 'protected\n'
+    elif cppSchema.access_qf == 'private':
+        cppBuf = 'private\n'
     else:
-        accessFlag = True
-    pProp = len(cppBuf)
-    pHead = len(cppBuf)
+        cppBuf = 'public\n'
+
+    cppBuf += '    '*deep + '%s %s(' % (cppSchema.return_type, cppSchema.name)
     
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break
+    argFlag = True
+    for arg in cppSchema.argument:
+        if argFlag:
+            argFlag = False
+            data = _makeCppArgVar(arg)
+        else:
+            data = ', ' + _makeCppArgVar(arg)
 
-        if _checkType(line, 'access_qf'):
-            accessFlag = False
-            qf = _getVal(line) + '\n'
-            cppBuf = qf + cppBuf
-            
-            pProp += len(qf)
-            pHead += len(qf)
-        elif _checkType(line, 'type'):
-            data = _getVal(line) + ' '
-            cppBuf = cppBuf[:pHead] + data + cppBuf[pHead:]
-
-            pHead += len(data)
-        elif _checkType(line, 'name'):
-            data = _getVal(line) + ' '
-            cppBuf = cppBuf[:pHead] + data + cppBuf[pHead:]
-        elif _checkType(line, 'const') and _getVal(line) == 'true':
-            data = 'const '
-            cppBuf = cppBuf[:pProp] + data + cppBuf[pProp:]
-
-            pHead += len(data)
-        elif _checkType(line, 'static') and _getVal(line) == 'true':
-            data = 'static '
-            cppBuf = cppBuf[:pProp] + data + cppBuf[pProp:]
-
-            pProp += len(data)
-            pHead += len(data)
-        elif _checkType(line, 'array') and _getVal(line) == 'true':
-            cppBuf += '[]'
-    
-    if accessFlag:
-        cppBuf = 'private\n' + cppBuf
+        cppBuf += data
+        
+    cppBuf += '){\n' + cppSchema.body.decode('string-escape')
+    cppBuf += '\n' + '    '*deep + '}\n'
     return cppBuf
 
-def _makeCppEnum(cppProtoBuf, deep):
+def _makeCppMemberVar(cppSchema, deep):
+    deep += 1
+    return _makeCppVar(cppSchema, '    '*deep) + ';\n'
+
+def _makeCppArgVar(cppSchema):
+    return _makeCppVar(cppSchema, '')
+
+def _makeCppVar(cppSchema, cppBuf):
+    if cppBuf:
+        if cppSchema.access_qf == 'public':
+            cppBuf = 'public\n' + cppBuf
+        elif cppSchema.access_qf == 'protected':
+            cppBuf = 'protected\n' + cppBuf
+        else:
+            cppBuf = 'private\n' + cppBuf
+
+    if cppSchema.HasField('static') and cppSchema.static:
+            cppBuf += 'static '
+    if cppSchema.HasField('const') and cppSchema.const:
+            cppBuf += 'const '
+    
+    cppBuf += '%s %s' % (cppSchema.type, cppSchema.name)
+    if cppSchema.array:
+        cppBuf += '[]'
+
+    return cppBuf
+
+def _makeCppEnum(cppSchema, deep):
     deep += 1
 
-    cppBuf = '    '*deep + 'enum '
-    pHead = len(cppBuf)
-    cppBuf += '{\n'
-    pBody = len(cppBuf)
-    cppBuf += '\n' + '    '*deep + '}'
-
+    cppBuf = '    '*deep + 'enum  %s {\n' % cppSchema.name
     deep += 1
     firstFlag = True
-    
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break
+    for val in cppSchema.value:
+        if firstFlag:
+            firstFlag = False
+            cppBuf += '    '*deep + '%s = 1' % val
+        else :
+            cppBuf += ',\n' + '    '*deep + val
 
-        if _checkType(line, 'name'):
-            data = _getVal(line)
-            cppBuf = cppBuf[:pHead] + data + cppBuf[pHead:]
+    deep -= 1
+    cppBuf += '\n' + '    '*deep + '}\n'
 
-            pBody += len(data)
-        elif _checkType(line, 'value'):
-            if firstFlag:
-                firstFlag = False
-                data = '    '*deep + _getVal(line) + ' = 1'
-            else:
-                data = ',\n' + '    '*deep + _getVal(line)
-
-            cppBuf = cppBuf[:pBody] + data + cppBuf[pBody:]
-            pBody += len(data)
-    
-    cppBuf += '\n'
     return cppBuf

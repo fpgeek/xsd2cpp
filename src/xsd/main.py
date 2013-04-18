@@ -50,8 +50,8 @@ def run(xsdFileDirPath):
         else:
             cppProtoFile.namespace = 'ns_%s' % pbSchema.file_name[:1]
         writePbFile('../../files/pb_text/%s.cpp.txt' % pbSchema.file_name, cppProtoFile)
-        txt2cpp.cppParse(cppProtoFile, pbSchema.file_name)
-        txt2h.hParse(cppProtoFile, pbSchema.file_name)
+        txt2cpp.cppParse(cppProtoFile)
+        txt2h.hParse(cppProtoFile)
 
 if __name__ == '__main__':
     run('../../files/xsd')

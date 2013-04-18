@@ -3,330 +3,229 @@
 __author__ = 'msgundam00'
 
 import os
-import StringIO
 
-def hParse(cppProtoFile, fileName):
-    cppProtoBuf = StringIO.StringIO(cppProtoFile)
-    hFile = open('../../files/header/%s.h' % fileName.replace('.', '_'), 'wb') 
-    hBuf = ''
+def hParse(cppSchema):
+    hFile = open('../../files/header/%s.h' % cppSchema.name, 'wb')
+    hBuf = '#ifndef "%s"\n' % cppSchema.name
+    hBuf += '#define "%s" 0\n\n' % cppSchema.name
+    hBuf += '#include "xsddata.h"\n' 
+    hBuf += '#include <vector>\n' 
+    hBuf += '#include <string>\n'
+    hBuf += '#include <iostream>\n'
+
     deep = 0
 
-    while 1:
-        line = cppProtoBuf.readline()
-        if not line:
-            break
-        
-        if _checkType(line, 'namespace'):
-            hBuf += 'namespace ' + _getVal(line) + '{\n'
-        elif _checkType(line, 'name'): 
-            data = _getVal(line)
-            hBuf += '#ifndef %s \n' % data
-            hBuf += '#define %s 0 \n\n' % data
-            hBuf += '#include "xsddata.h"\n' 
-            hBuf += '#include <vector>\n' 
-            hBuf += '#include <string>\n'
-            hBuf += '#include <iostream>\n'
-        elif _checkType(line, 'include_file'):
-            hBuf += '#include "%s"\n' % _getVal(line)
-        elif _checkType(line, 'class_'):
-            hBuf += _makeHClass(cppProtoBuf, deep)
+    for inFile in cppSchema.include_file:
+        hBuf += '#include "%s"\n' % inFile
+
+    hBuf += 'namespace %s {\n' % cppSchema.namespace
+    
+    for cls in cppSchema.class_:
+        hBuf += _makehClass(cls, deep)
     
     hBuf += '}'
     hFile.write(hBuf)
-
-def _getVal(txtLine):
-    index = txtLine.index(':')
-    return txtLine[index+2:].replace('"', '').replace('\n', '')
+    hFile.close()
 
 def _checkPublic(data):
     return data.startswith('public\n')
 
+def _checkProtect(data):
+    return data.startswith('protected\n')
+
 def _checkType(txtline, comment):
     return txtline.strip().startswith(comment)
             
-def _makeHClass(cppProtoBuf, deep):
+def _makehClass(cppSchema, deep):
     deep += 1
 
-    hBuf = '    '*deep + 'class '
-    pHead = len(hBuf)
+    hBuf = '    '*deep + 'class %s' % cppSchema.name
+
+    parentFlag = True
+    for pcls in cppSchema.parent_class:
+        if parentFlag:
+            parentFlag = False
+            hBuf += ': public %s' % pcls
+        else:
+            hBuf += ', public %s' % pcls
+            
     hBuf += '{\n' + '    '*deep + 'public:\n'
     pPublic = len(hBuf)
+    hBuf += '\n' + '    '*deep + 'protected:\n'
+    pProtect= len(hBuf)
     hBuf += '\n' + '    '*deep + 'private:\n'
     pPrivate = len(hBuf)
     hBuf += '\n' + '    '*deep + '}\n'
+    
+    for con in cppSchema.constructor:
+        data = _makehConstructor(con, cppSchema.name, deep)
+        hBuf = hBuf[:pPublic] + data + hBuf[pPublic:]
 
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break
+        pPublic += len(data)
+        pProtect += len(data)
+        pPrivate += len(data)
+        
+    if cppSchema.HasField('destructor'):
+        data = _makehDestructor(cppSchema.destructor, cppSchema.name, deep)
+        hBuf = hBuf[:pPublic] + data + hBuf[pPublic:]
 
-        if _checkType(line, 'name'):
-            className = _getVal(line)
-            hBuf = hBuf[:pHead] + className + hBuf[pHead:]
+        pPublic += len(data)
+        pProtect += len(data)
+        pPrivate += len(data)
 
-            pHead += len(className)
-            pPublic += len(className)
-            pPrivate += len(className)
-        elif _checkType(line, 'parent_class'):
-            parentName = ' : public ' + _getVal(line)
-            hBuf = hBuf[:pHead] + parentName + hBuf[pHead:]
-
-            pPublic += len(parentName)
-            pPrivate += len(parentName)
-        elif _checkType(line, 'constructor'):
-            data = _makeHConstructor(cppProtoBuf, className, deep)
+    for met in cppSchema.method:
+        data = _makehMethod(met, deep)
+        if _checkPublic(data):
+            data = data[7:]
             hBuf = hBuf[:pPublic] + data + hBuf[pPublic:]
 
             pPublic += len(data)
+            pProtect += len(data)
             pPrivate += len(data)
-        elif _checkType(line, 'destructor'):
-            data = _makeHDestructor(cppProtoBuf, className, deep)
-            hBuf = hBuf[:pPublic] + data + hBuf[pPublic:]
+        elif _checkProtect(data):
+            data = data[10:]
+            hBuf = hBuf[:pProtect] + data + hBuf[pProtect:]
 
-            pPublic += len(data)
+            pProtect += len(data)
             pPrivate += len(data)
-        elif _checkType(line, 'method'):
-            data = _makeHMethod(cppProtoBuf, deep)
-            if _checkPublic(data):
-                data = data[7:]
-                hBuf = hBuf[:pPublic] + data + hBuf[pPublic:]
-
-                pPublic += len(data)
-                pPrivate += len(data)
-            else:
-                data = data[8:]
-                hBuf = hBuf[:pPrivate] + data + hBuf[pPrivate:]
-
-                pPrivate += len(data)
-        elif _checkType(line, 'member_var'):
-            data = _makeHMemberVar(cppProtoBuf, deep)
-            if _checkPublic(data):
-                data = data[7:]
-                hBuf = hBuf[:pPublic] + data + hBuf[pPublic]
-
-                pPublic += len(data)
-                pPrivate += len(data)
-            else:
-                data = data[8:]
-                hBuf = hBuf[:pPrivate] + data + hBuf[pPrivate:]
-
-                pPrivate += len(data)
-        elif _checkType(line, 'enum'):
-            data = _makeHEnum(cppProtoBuf, deep)
-            hBuf = hBuf[:pPublic] + data + hBuf[pPublic:]
-
-            pPublic += len(data)
-            pPrivate += len(data)
-        elif _checkType(line, 'inner_class'):
-            data = _makeHClass(cppProtoBuf, deep)
+        else:
+            data = data[8:]
             hBuf = hBuf[:pPrivate] + data + hBuf[pPrivate:]
 
             pPrivate += len(data)
-    hBuf += '\n'
+
+    for mem in cppSchema.member_var:
+        data = _makehMemberVar(mem, deep)
+        if _checkPublic(data):
+            data = data[7:]
+            hBuf = hBuf[:pPublic] + data + hBuf[pPublic:]
+
+            pPublic += len(data)
+            pProtect += len(data)
+            pPrivate += len(data)
+        elif _checkProtect(data):
+            data = data[10:]
+            hBuf = hBuf[:pProtect] + data + hBuf[pProtect:]
+
+            pProtect += len(data)
+            pPrivate += len(data)
+        else:
+            data = data[8:]
+            hBuf = hBuf[:pPrivate] + data + hBuf[pPrivate:]
+
+            pPrivate += len(data)
+
+    if cppSchema.HasField('enum_'):
+        data = _makehEnum(cppSchema.enum_, deep)
+        hBuf = hBuf[:pPublic] + data + hBuf[pPublic:]
+    
+        pPublic += len(data)
+        pProtect += len(data)
+        pPrivate += len(data)
+
+    for icls in cppSchema.inner_class:
+        data = _makehClass(icls, deep)
+        hBuf = hBuf[:pPrivate] + data + hBuf[pPrivate:]
+
+        pPrivate += len(data)
+    
     return hBuf
 
-def _makeHConstructor(cppProtoBuf, className, deep):
+def _makehConstructor(cppSchema, className, deep):
     deep += 1
 
     hBuf = '    '*deep + className + '('
-    pArg = len(hBuf)
-    hBuf += ');\n'
-
     argFlag = True
+    for arg in cppSchema.argument:
+        if argFlag:
+            argFlag = False
+            data = _makehArgVar(arg)
+        else:
+            data = ', ' + _makehArgVar(arg)
 
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break
-        
-        if _checkType(line, 'argument'):
-            if argFlag:
-                argFlag = False
-                data = _makeHArgVar(cppProtoBuf)
-            else:
-                data = ', ' + _makeHArgVar(cppProtoBuf)
-
-            hBuf = hBuf[:pArg] + data + hBuf[pArg:]
-            pArg += len(data)
-        elif _checkType(line, 'const_init'):
-            _makeHConstInit(cppProtoBuf)
-        #elif _checkType(line, 'body'):
+        hBuf += data
+    hBuf += ');\n'
 
     return hBuf
 
-def _makeHDestructor(cppProtoBuf, className, deep):
+def _makehDestructor(cppSchema, className, deep):
     deep += 1
 
     hBuf = '    '*deep + '~' + className + '();\n'
-
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break
-        
-        #if _checkType(line, 'body'):
-    
     return hBuf
 
-
-def _makeHConstInit(cppProtoBuf):
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break;
-
-def _makeHMethod(cppProtoBuf, deep):
+def _makehMethod(cppSchema, deep):
     deep += 1
-
-    hBuf = '    '*deep
-    pProp = len(hBuf)
-    pHead = len(hBuf)
-    hBuf += '('
-    pArg = len(hBuf)
-    hBuf += ')'
-
-    argFlag = True
-    accessFlag = True
-
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break
-
-        if _checkType(line, 'access_qf'):
-            qf = _getVal(line) + '\n'
-            hBuf = qf + hBuf
-            accessFlag =False
-            
-            pProp += len(qf)
-            pHead += len(qf)
-            pArg += len(qf)
-        elif _checkType(line, 'return_type'):
-            data = _getVal(line) + ' '
-            hBuf = hBuf[:pHead] + data + hBuf[pHead:]
-
-            pHead += len(data)
-            pArg += len(data)
-        elif _checkType(line, 'name'):
-            data = _getVal(line)
-            hBuf = hBuf[:pHead] + data + hBuf[pHead:]
-
-            pArg += len(data)
-        elif _checkType(line, 'argument'):
-            if argFlag:
-                argFlag = False
-                data = _makeHArgVar(cppProtoBuf)
-            else:
-                data = ', ' + _makeHArgVar(cppProtoBuf)
-
-            hBuf = hBuf[:pArg] + data + hBuf[pArg:]
-            pArg += len(data)
-        elif _checkType(line, 'const') and _getVal(line) == 'true':
-            hBuf += ' const'
-        elif _checkType(line, 'static') and _getVal(line) == 'true':
-            data = 'static '
-            hBuf = hBuf[:pProp] + data + hBuf[pProp:]
-
-            pProp += len(data)
-            pHead += len(data)
-            pArg += len(data)
-        #elif _checkType(line, 'body'):
     
-    if accessFlag:
-        hBuf = 'public\n' + hBuf
-    hBuf += ';\n'
-    return hBuf
-
-def _makeHMemberVar(cppProtoBuf, deep):
-    deep += 1
-    hBuf = _makeHVar(cppProtoBuf, '    '*deep)
-    hBuf += ';\n'
-
-    return hBuf
-
-def _makeHArgVar(cppProtoBuf):
-    return _makeHVar(cppProtoBuf, '')
-
-def _makeHVar(cppProtoBuf, hBuf):
-    if not hBuf:
-        accessFlag = False
+    if cppSchema.access_qf == 'protected':
+        hBuf = 'protected\n'
+    elif cppSchema.access_qf == 'private':
+        hBuf = 'private\n'
     else:
-        accessFlag = True
-    pProp = len(hBuf)
-    pHead = len(hBuf)
+        hBuf = 'public\n'
+
+    if cppSchema.HasField('static') and cppSchema.static:
+            hBuf += 'static '
+    hBuf += '    '*deep + '%s %s(' % (cppSchema.return_type, cppSchema.name)
     
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break
+    argFlag = True
+    for arg in cppSchema.argument:
+        if argFlag:
+            argFlag = False
+            data = _makehArgVar(arg)
+        else:
+            data = ', ' + _makehArgVar(arg)
 
-        if _checkType(line, 'access_qf'):
-            accessFlag = False
-            qf = _getVal(line) + '\n'
-            hBuf = qf + hBuf
-            
-            pProp += len(qf)
-            pHead += len(qf)
-        elif _checkType(line, 'type'):
-            data = _getVal(line) + ' '
-            hBuf = hBuf[:pHead] + data + hBuf[pHead:]
+        hBuf += data
+        
+    hBuf += ')'
+    if cppSchema.HasField('const') and cppSchema.const:
+        hBuf += 'const '
+	hBuf += ';\n'
 
-            pHead += len(data)
-        elif _checkType(line, 'name'):
-            data = _getVal(line) + ' '
-            hBuf = hBuf[:pHead] + data + hBuf[pHead:]
-        elif _checkType(line, 'const') and _getVal(line) == 'true':
-            data = 'const '
-            hBuf = hBuf[:pProp] + data + hBuf[pProp:]
-
-            pHead += len(data)
-        elif _checkType(line, 'static') and _getVal(line) == 'true':
-            data = 'static '
-            hBuf = hBuf[:pProp] + data + hBuf[pProp:]
-
-            pProp += len(data)
-            pHead += len(data)
-        elif _checkType(line, 'array') and _getVal(line) == 'true':
-            hBuf += '[]'
-    
-    if accessFlag:
-        hBuf = 'private\n' + hBuf
     return hBuf
 
-def _makeHEnum(cppProtoBuf, deep):
+def _makehMemberVar(cppSchema, deep):
+    deep += 1
+    return _makehVar(cppSchema, '    '*deep) + ';\n'
+
+def _makehArgVar(cppSchema):
+    return _makehVar(cppSchema, '')
+
+def _makehVar(cppSchema, hBuf):
+    if hBuf:
+        if cppSchema.access_qf == 'public':
+            hBuf = 'public\n' + hBuf
+        elif cppSchema.access_qf == 'protected':
+            hBuf = 'protected\n' + hBuf
+        else:
+            hBuf = 'private\n' + hBuf
+
+    if cppSchema.HasField('static') and cppSchema.static:
+            hBuf += 'static '
+    if cppSchema.HasField('const') and cppSchema.const:
+            hBuf += 'const '
+    
+    hBuf += '%s %s' % (cppSchema.type, cppSchema.name)
+    if cppSchema.array:
+        hBuf += '[]'
+
+    return hBuf
+
+def _makehEnum(cppSchema, deep):
     deep += 1
 
-    hBuf = '    '*deep + 'enum '
-    pHead = len(hBuf)
-    hBuf += '{\n'
-    pBody = len(hBuf)
-    hBuf += '\n' + '    '*deep + '}'
-
+    hBuf = '    '*deep + 'enum  %s {\n' % cppSchema.name
     deep += 1
     firstFlag = True
-    
-    while 1:
-        line = cppProtoBuf.readline()
-        if _checkType(line, '}'):
-            break
+    for val in cppSchema.value:
+        if firstFlag:
+            firstFlag = False
+            hBuf += '    '*deep + '%s = 1' % val
+        else :
+            hBuf += ',\n' + '    '*deep + val
 
-        if _checkType(line, 'name'):
-            data = _getVal(line)
-            hBuf = hBuf[:pHead] + data + hBuf[pHead:]
+    deep -= 1
+    hBuf += '\n' + '    '*deep + '};\n'
 
-            pBody += len(data)
-        elif _checkType(line, 'value'):
-            if firstFlag:
-                firstFlag = False
-                data = '    '*deep + _getVal(line) + ' = 1'
-            else:
-                data = ',\n' + '    '*deep + _getVal(line)
-
-            hBuf = hBuf[:pBody] + data + hBuf[pBody:]
-            pBody += len(data)
-    
-    hBuf += '\n'
     return hBuf
-
-if __name__ == '__main__':
-    parse('dml-chart.xsd')
