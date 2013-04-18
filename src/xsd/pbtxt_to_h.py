@@ -4,10 +4,15 @@ __author__ = 'msgundam00'
 
 import os
 
-def hParse(cppSchema):
-    hFile = open('../../files/header/%s.h' % cppSchema.name, 'wb')
-    hBuf = '#ifndef "%s"\n' % cppSchema.name
-    hBuf += '#define "%s" 0\n\n' % cppSchema.name
+def hParse(cppSchema, filePath):
+    hFile = open(filePath, 'wb')
+    hBuf = 'namespace %s {\n' % cppSchema.namespace
+    for cls in cppSchema.class_:
+        hBuf += '    class %s;\n' % cls.name
+    hBuf += '}\n'
+
+    hBuf += '#ifndef __%s_\n' % cppSchema.name
+    hBuf += '#define __%s_ 0\n\n' % cppSchema.name
     hBuf += '#include "xsddata.h"\n' 
     hBuf += '#include <vector>\n' 
     hBuf += '#include <string>\n'
@@ -21,7 +26,7 @@ def hParse(cppSchema):
     hBuf += 'namespace %s {\n' % cppSchema.namespace
     
     for cls in cppSchema.class_:
-        hBuf += _makehClass(cls, deep)
+        hBuf += _makehClass(cls, deep) + '\n'
     
     hBuf += '}'
     hFile.write(hBuf)
@@ -33,9 +38,6 @@ def _checkPublic(data):
 def _checkProtect(data):
     return data.startswith('protected\n')
 
-def _checkType(txtline, comment):
-    return txtline.strip().startswith(comment)
-            
 def _makehClass(cppSchema, deep):
     deep += 1
 
@@ -49,13 +51,13 @@ def _makehClass(cppSchema, deep):
         else:
             hBuf += ', public %s' % pcls
             
-    hBuf += '{\n' + '    '*deep + 'public:\n'
+    hBuf += '\n' + '    '*deep + '{\n' + '    '*deep + 'public:\n'
     pPublic = len(hBuf)
-    hBuf += '\n' + '    '*deep + 'protected:\n'
+    hBuf += '    '*deep + 'protected:\n'
     pProtect= len(hBuf)
-    hBuf += '\n' + '    '*deep + 'private:\n'
+    hBuf += '    '*deep + 'private:\n'
     pPrivate = len(hBuf)
-    hBuf += '\n' + '    '*deep + '}\n'
+    hBuf += '    '*deep + '}\n'
     
     for con in cppSchema.constructor:
         data = _makehConstructor(con, cppSchema.name, deep)
@@ -164,9 +166,10 @@ def _makehMethod(cppSchema, deep):
     else:
         hBuf = 'public\n'
 
+    hBuf += '    '*deep
     if cppSchema.HasField('static') and cppSchema.static:
             hBuf += 'static '
-    hBuf += '    '*deep + '%s %s(' % (cppSchema.return_type, cppSchema.name)
+    hBuf += '%s %s(' % (cppSchema.return_type, cppSchema.name)
     
     argFlag = True
     for arg in cppSchema.argument:
@@ -180,8 +183,8 @@ def _makehMethod(cppSchema, deep):
         
     hBuf += ')'
     if cppSchema.HasField('const') and cppSchema.const:
-        hBuf += 'const '
-	hBuf += ';\n'
+        hBuf += ' const'
+    hBuf += ';\n'
 
     return hBuf
 
@@ -215,7 +218,7 @@ def _makehVar(cppSchema, hBuf):
 def _makehEnum(cppSchema, deep):
     deep += 1
 
-    hBuf = '    '*deep + 'enum  %s {\n' % cppSchema.name
+    hBuf = '    '*deep + 'enum  %s \n' % cppSchema.name + '    '*deep + '{\n'
     deep += 1
     firstFlag = True
     for val in cppSchema.value:

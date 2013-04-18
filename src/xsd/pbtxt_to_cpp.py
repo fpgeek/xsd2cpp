@@ -3,9 +3,11 @@
 __author__ = 'msgundam00'
 
 import os
+import StringIO
 
-def cppParse(cppSchema):
-    cppFile = open('../../files/cpp/%s.cpp' % cppSchema.name, 'wb')
+def cppParse(cppSchema, filePath):
+    #cppFile = open('../../files/cpp/%s.cpp' % cppSchema.name, 'wb')
+    cppFile = open(filePath, 'wb')
     cppBuf = '#include "%s.h"\n' % cppSchema.name
     cppBuf += '#include <stdlib.h>\n' 
     cppBuf += '#include <sstream>\n'
@@ -26,112 +28,35 @@ def cppParse(cppSchema):
 
 def _checkPublic(data):
     return data.startswith('public\n')
-
-def _checkProtect(data):
-    return data.startswith('protected\n')
-
-def _checkType(txtline, comment):
-    return txtline.strip().startswith(comment)
             
 def _makeCppClass(cppSchema, deep):
     deep += 1
 
-    cppBuf = '    '*deep + 'class %s' % cppSchema.name
-
-    parentFlag = True
-    for pcls in cppSchema.parent_class:
-        if parentFlag:
-            parentFlag = False
-            cppBuf += ': public %s' % pcls
-        else:
-            cppBuf += ', public %s' % pcls
-            
-    cppBuf += '{\n' + '    '*deep + 'public:\n'
-    pPublic = len(cppBuf)
-    cppBuf += '\n' + '    '*deep + 'protected:\n'
-    pProtect= len(cppBuf)
-    cppBuf += '\n' + '    '*deep + 'private:\n'
-    pPrivate = len(cppBuf)
-    cppBuf += '\n' + '    '*deep + '}\n'
+    name = cppSchema.name
+    cppBuf = '\n' + '    '*deep + '// %s\n' % cppSchema.name
     
     for con in cppSchema.constructor:
-        data = _makeCppConstructor(con, cppSchema.name, deep)
-        cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic:]
-
-        pPublic += len(data)
-        pProtect += len(data)
-        pPrivate += len(data)
+        cppBuf += _makeCppConstructor(con, name, deep)
         
     if cppSchema.HasField('destructor'):
-        data = _makeCppDestructor(cppSchema.destructor, cppSchema.name, deep)
-        cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic:]
-
-        pPublic += len(data)
-        pProtect += len(data)
-        pPrivate += len(data)
+        cppBuf += _makeCppDestructor(cppSchema.destructor, name, deep)
 
     for met in cppSchema.method:
-        data = _makeCppMethod(met, deep)
+        data = _makeCppMethod(met, name, deep)
         if _checkPublic(data):
             data = data[7:]
-            cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic:]
-
-            pPublic += len(data)
-            pProtect += len(data)
-            pPrivate += len(data)
-        elif _checkProtect(data):
-            data = data[10:]
-            cppBuf = cppBuf[:pProtect] + data + cppBuf[pProtect:]
-
-            pProtect += len(data)
-            pPrivate += len(data)
-        else:
-            data = data[8:]
-            cppBuf = cppBuf[:pPrivate] + data + cppBuf[pPrivate:]
-
-            pPrivate += len(data)
+            cppBuf += data
 
     for mem in cppSchema.member_var:
-        data = _makeCppMemberVar(mem, deep)
+        data = _makeCppMemberVar(mem, name, deep)
         if _checkPublic(data):
             data = data[7:]
-            cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic:]
-
-            pPublic += len(data)
-            pProtect += len(data)
-            pPrivate += len(data)
-        elif _checkProtect(data):
-            data = data[10:]
-            cppBuf = cppBuf[:pProtect] + data + cppBuf[pProtect:]
-
-            pProtect += len(data)
-            pPrivate += len(data)
-        else:
-            data = data[8:]
-            cppBuf = cppBuf[:pPrivate] + data + cppBuf[pPrivate:]
-
-            pPrivate += len(data)
-
-    if cppSchema.HasField('enum_'):
-        data = _makeCppEnum(cppSchema.enum_, deep)
-        cppBuf = cppBuf[:pPublic] + data + cppBuf[pPublic:]
-    
-        pPublic += len(data)
-        pProtect += len(data)
-        pPrivate += len(data)
-
-    for icls in cppSchema.inner_class:
-        data = _makeCppClass(icls, deep)
-        cppBuf = cppBuf[:pPrivate] + data + cppBuf[pPrivate:]
-
-        pPrivate += len(data)
+            cppBuf += data
     
     return cppBuf
 
 def _makeCppConstructor(cppSchema, className, deep):
-    deep += 1
-
-    cppBuf = '    '*deep + className + '('
+    cppBuf = '    '*deep + className + '::' + className + '('
     argFlag = True
     for arg in cppSchema.argument:
         if argFlag:
@@ -141,32 +66,35 @@ def _makeCppConstructor(cppSchema, className, deep):
             data = ', ' + _makeCppArgVar(arg)
 
         cppBuf += data
-    cppBuf += '){\n'
+    cppBuf += ')\n'
 
+    conInitFlag = True
     for conInit in cppSchema.const_init:
-        cppBuf += _makeCppConstInit(conInit, deep)
+        if conInitFlag:
+            conInitFlag = False
+            cppBuf += '    '*deep + ':' + _makeCppConstInit(conInit)
+        else:
+            cppBuf += ',\n' + '    '*deep + _makeCppConstInit(conInit)
+
+    cppBuf += '\n' + '    '*deep + '{\n'
     
-    cppBuf += cppSchema.body.decode('string-escape')
-    cppBuf += '\n' + '    '*deep + '}\n'
+    if cppSchema.HasField('body'):
+        cppBuf += _makeCppBody(cppSchema.body.decode('string-escape'), deep)
+    cppBuf += '    '*deep + '}\n'
     return cppBuf
 
-def _makeCppConstInit(cppSchema, deep):
-    deep += 1
-    cppBuf = '    '*deep + '%s = %s\n' % (cppSchema.name, cppSchema.value)
-
-    return cppBuf
+def _makeCppConstInit(cppSchema):
+    return '%s(%s)' % (cppSchema.name, cppSchema.value)
 
 def _makeCppDestructor(cppSchema, className, deep):
-    deep += 1
-
-    cppBuf = '    '*deep + '~' + className + '(){\n' + cppSchema.body.decode('string-escape')
-    cppBuf += '\n' + '    '*deep + '}\n'
+    cppBuf = '    '*deep + '%s::~%s' % (className, className) + '()\n{\n'
+    if cppSchema.HasField('body'):
+        cppBuf += _makeCppBody(cppSchema.body.decode('string-escape'), deep)
+    cppBuf += '    '*deep + '}\n'
 
     return cppBuf
 
-def _makeCppMethod(cppSchema, deep):
-    deep += 1
-    
+def _makeCppMethod(cppSchema, className, deep):
     if cppSchema.access_qf == 'protected':
         cppBuf = 'protected\n'
     elif cppSchema.access_qf == 'private':
@@ -174,7 +102,7 @@ def _makeCppMethod(cppSchema, deep):
     else:
         cppBuf = 'public\n'
 
-    cppBuf += '    '*deep + '%s %s(' % (cppSchema.return_type, cppSchema.name)
+    cppBuf += '    '*deep + '%s %s::%s(' % (cppSchema.return_type, className, cppSchema.name)
     
     argFlag = True
     for arg in cppSchema.argument:
@@ -185,12 +113,17 @@ def _makeCppMethod(cppSchema, deep):
             data = ', ' + _makeCppArgVar(arg)
 
         cppBuf += data
-        
-    cppBuf += '){\n' + cppSchema.body.decode('string-escape')
-    cppBuf += '\n' + '    '*deep + '}\n'
+    
+    cppBuf += ')'
+    if cppSchema.HasField('const') and cppSchema.const:
+        cppBuf += ' const'
+    cppBuf += '\n' + '    '*deep + '{'
+    if cppSchema.HasField('body'):
+        cppBuf += _makeCppBody(cppSchema.body.decode('string-escape'), deep) + '    '*deep
+    cppBuf += '}\n'
     return cppBuf
 
-def _makeCppMemberVar(cppSchema, deep):
+def _makeCppMemberVar(cppSchema, className, deep):
     deep += 1
     return _makeCppVar(cppSchema, '    '*deep) + ';\n'
 
@@ -217,20 +150,14 @@ def _makeCppVar(cppSchema, cppBuf):
 
     return cppBuf
 
-def _makeCppEnum(cppSchema, deep):
-    deep += 1
-
-    cppBuf = '    '*deep + 'enum  %s {\n' % cppSchema.name
-    deep += 1
-    firstFlag = True
-    for val in cppSchema.value:
-        if firstFlag:
-            firstFlag = False
-            cppBuf += '    '*deep + '%s = 1' % val
-        else :
-            cppBuf += ',\n' + '    '*deep + val
-
-    deep -= 1
-    cppBuf += '\n' + '    '*deep + '}\n'
+def _makeCppBody(body, deep):
+    bodyBuf = StringIO.StringIO(body)
+    cppBuf = ''
+    while 1:
+        line = bodyBuf.readline()
+        if not line:
+            break
+        
+        cppBuf += '    '*deep + line
 
     return cppBuf
