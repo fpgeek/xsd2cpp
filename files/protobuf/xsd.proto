@@ -17,6 +17,7 @@ message Schema {
 	repeated SimpleType simple_type = 10;
 	repeated Element element = 11;
 	repeated Attribute attribute = 12;
+	required string xml_ns_prefix = 13;
 }
 
 message Import {
