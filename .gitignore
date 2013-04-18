@@ -1,2 +1,5 @@
 files/pb_text/*
 src/xsd/*.pyc
+.idea
+files/cpp/*
+files/header/*

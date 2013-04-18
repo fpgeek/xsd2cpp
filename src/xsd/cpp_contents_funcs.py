@@ -11,14 +11,18 @@ CHOICE = 1
 def _getBuiltInStr(pbBuiltIn):
     return PB.BuiltIn.DESCRIPTOR.enum_types_by_name['Type'].values_by_number[pbBuiltIn].name
 
+
 def _isStringBuiltInType(pbBuiltIn):
     return ((0 <= pbBuiltIn) and (pbBuiltIn <= 23)) or (pbBuiltIn in [37, 38, 43])
+
 
 def _isIntBuiltInType(pbBuiltIn):
     return ((24 <= pbBuiltIn) and (pbBuiltIn <= 36)) or (pbBuiltIn in [40, 41, 42])
 
+
 def _isBooleanBuiltInType(pbBuiltIn):
     return pbBuiltIn == PB.BuiltIn.boolean
+
 
 def makeDefaultInstanceMethod(cppClass):
     method = cppClass.method.add()
@@ -28,12 +32,13 @@ def makeDefaultInstanceMethod(cppClass):
     method.static = True
     method.body = \
 """
-    if (!%(typeName)s::default_instance_)
-    {
-        %(typeName)s::default_instance_ = new %(typeName)s();
-    }
-    return *%(typeName)s::default_instance_;
+if (!%(typeName)s::default_instance_)
+{
+    %(typeName)s::default_instance_ = new %(typeName)s();
+}
+return *%(typeName)s::default_instance_;
 """ % {'typeName': cppClass.name}
+
 
 def makeDefaultInstanceMember(cppClass):
     member = cppClass.member_var.add()
@@ -42,11 +47,13 @@ def makeDefaultInstanceMember(cppClass):
     member.name = 'default_instance_'
     member.static = True
 
+
 def makeClearMethod(methodBody, cppClass):
     method = cppClass.method.add()
     method.return_type = 'void'
     method.name = 'clear'
     method.body = methodBody
+
 
 def makeToXmlAttrMethod(methodBody, cppClass):
     method = cppClass.method.add()
@@ -62,6 +69,7 @@ def makeToXmlAttrMethod(methodBody, cppClass):
     methodArg2.name = '_outStream'
     method.body = methodBody
 
+
 def makeToXmlElemMethod(methodBody, cppClass):
     method = cppClass.method.add()
     method.return_type = 'void'
@@ -76,6 +84,7 @@ def makeToXmlElemMethod(methodBody, cppClass):
     methodArg2.name = '_outStream'
     method.body = methodBody
 
+
 def _getInitValueFromBuiltIn(pbBuiltIn):
     if _isStringBuiltInType(pbBuiltIn):
         return ''
@@ -86,6 +95,7 @@ def _getInitValueFromBuiltIn(pbBuiltIn):
     else:
         assert(False)
         return ''
+
 
 def _makeClearMethodStrFromBuiltIn(varName, pbBuiltIn):
     if _isStringBuiltInType(pbBuiltIn):
@@ -99,15 +109,17 @@ def _makeClearMethodStrFromBuiltIn(varName, pbBuiltIn):
         assert(False)
         return ''
 
+
 def _makeClearMethodStrFromSTOrCT(varName):
     return \
-    """
-        if (%(var)s)
-        {
-            delete %(var)s;
-            %(var)s = NULL;
-        }
-    """ % {'var':varName}
+"""
+if (%(var)s)
+{
+    delete %(var)s;
+    %(var)s = NULL;
+}
+""" % {'var':varName}
+
 
 # cpp 변수 타입 가져오기
 def _getCppVarType(pbSTName):
@@ -118,6 +130,7 @@ def _getCppVarType(pbSTName):
 
     return cppVarName
 
+
 # cpp 변수명 가져오기
 def _getCppVarName(pbSTName):
     cppVarName = pbSTName
@@ -127,35 +140,101 @@ def _getCppVarName(pbSTName):
 
     return cppVarName
 
+
+def getXmlElementName(pbElemFormType, pbNsPrefix, elemName):
+    if pbElemFormType == PB.Form.qualified:
+        return '%s:%s' % (pbNsPrefix, elemName)
+    elif pbElemFormType == PB.Form.unqualified:
+        return '%s' % elemName
+
+
+def getXmlAttributeName(pbAttrFormType, pbNsPrefix, attrName):
+    if pbAttrFormType == PB.Form.qualified:
+        return '%s:%s' % (pbNsPrefix, attrName)
+    elif pbAttrFormType == PB.Form.unqualified:
+        return '%s' % attrName
+
+
 def _makeCppEnum(pbEnumList, cppEnum):
     cppEnum.name = 'Type'
     for enumValue in pbEnumList:
         cppEnum.value.append('_%s_' % enumValue)
 
+
 def _makeCppEnumStr(pbEnumList, typeStrMember):
     for enumValue in pbEnumList:
         typeStrMember.string_list.append(enumValue)
 
+
+def _getVarNameToXmlFromBuiltIn(cppVarType, attrName):
+    if cppVarType == 'boolean':
+        return 'XSD::BooleanStr(m_%s)' % attrName
+    else:
+        return 'm_%s' % attrName
+
+
+def _makeToXmlMethodBodyFromAttrBuiltInWithAttrName(pbShema, cppVarType, attrName):
+        return \
+"""
+if (%(hasVarName)s)
+{
+    _outStream << " " << "%(attrName)s" << "=\\"" << %(varName)s << "\\"";
+}
+""" % {
+        'hasVarName': 'm_has_%s' % attrName,
+        'varName' : 'm_%s' % _getVarNameToXmlFromBuiltIn(cppVarType, attrName),
+        'attrName' : getXmlAttributeName(pbShema.attribute_form_default, pbShema.xml_ns_prefix, attrName)
+        }
+
 def _makeToXmlMethodBodyFromAttrBuiltIn(cppVarType, varName):
     if cppVarType == 'boolean':
-        return '_outStream << _attrName << "=\\"" << XSD::BooleanStr(%s) << "\\"";' % varName
+        return '_outStream << " " << _attrName << "=\\"" << XSD::BooleanStr(%s) << "\\"";' % varName
     else:
-        return '_outStream << _attrName << "=\\"" << %s << "\\"";' % varName
+        return '_outStream << " " << _attrName << "=\\"" << %s << "\\"";' % varName
+
 
 def _makeToXmlMethodBodyFromAttrEnum(className, enumTypeName, cppVarName):
-    return '_outStream << _attrName << "=\\"" << %s::%s[%s] << "\\"";' % (className, enumTypeName, cppVarName)
+    return '_outStream << " " << _attrName << "=\\"" << %s::%s[%s] << "\\"";' % (className, enumTypeName, cppVarName)
 
-def _makeToXmlMethodBodyFromAttrSTName(varName):
-    return '%s->toXml(_attrName, _outStream);' % varName
 
-def _makeToXmlMethodBodyFromElemBuiltIn(elemName, varName):
-    return '_outStream << "<%(elemName)s>" << %(varName)s << "</%(elemName)s>";' % {'elemName':elemName, 'varName':varName}
+def _makeToXmlMethodBodyFromAttrSTName(pbSchema, attrName):
+    return \
+"""
+if (%(hasVarName)s)
+{
+    %(varName)s->toXml("%(attrName)s", _outStream);
+}
+""" % {
+        'hasVarName' : 'm_has_%s' % attrName,
+        'varName': 'm_%s' % attrName,
+        'attrName': getXmlAttributeName(pbSchema.attribute_form_default, pbSchema.xml_ns_prefix, attrName)
+    }
 
-def _makeToXmlMethodBodyFromElemSTName(elemName, varName):
-    return '_outStream << "<%(elemName)s>" << %(varName)s->toString() << "</%(elemName)s>";' % {'elemName':elemName, 'varName':varName}
 
-def _makeToXmlMethodBodyFromElemCTName(elemName, varName):
-    return '%(varName)s->toXml(%(elemName)s, _outStream);' % {'elemName':elemName, 'varName':varName}
+def _makeToXmlMethodBodyFromUnion(varName):
+    return '%(varName)s->toXml(_attrName, _outStream);' % {'varName':varName}
+
+
+def _makeToXmlMethodBodyFromElemBuiltIn(pbSchema, elemName, varName):
+    return '_outStream << "<%(elemName)s>" << %(varName)s << "</%(elemName)s>";' % {
+        'elemName':getXmlElementName(pbSchema.element_form_default, pbSchema.xml_ns_prefix, elemName),
+        'varName':varName
+    }
+
+
+def _makeToXmlMethodBodyFromElemSTName(pbSchema, elemName, varName):
+    return '_outStream << "<%(elemName)s>" << %(varName)s->toString() << "</%(elemName)s>";' % {
+        'elemName':getXmlElementName(pbSchema.element_form_default, pbSchema.xml_ns_prefix, elemName),
+        'varName':varName
+    }
+
+
+def _makeToXmlMethodBodyFromElemCTName(pbSchema, elemName, varName):
+    return '%(varName)s->toXml("%(elemName)s", _outStream);' % {
+        'elemName': getXmlElementName(pbSchema.element_form_default, pbSchema.xml_ns_prefix, elemName),
+        'varName':varName
+    }
+
 
 # Element로 부터 cpp var type 가져오기
 def _getCppVarTypeFromElem(pbElem):
@@ -171,6 +250,7 @@ def _getCppVarTypeFromElem(pbElem):
         return _getCppVarType(pbElem.type.complex_type.name)
     elif pbElem.type.kind == PB.Element.Type.Any:
         return _getCppVarType('%s:Element' % pbElem.type.any.ns_prefix)
+
 
 def simpleType_restriction_enum(pbEnumList, cppClass):
     cppVarName = 'type'
@@ -243,23 +323,23 @@ def simpleType_restriction_enum(pbEnumList, cppClass):
     toStringMethod.name = 'toString'
     toStringMethod.const = True
     toStringMethod.body = \
-    """
-        return %s::%s[%s];
-    """ % (cppClass.name, typeStrMember.name, varName)
+"""
+return %s::%s[%s];
+""" % (cppClass.name, typeStrMember.name, varName)
 
     clearMethodBody = \
-        """
-            %s = false;
-        """ % hasVarName
+"""
+%s = false;
+""" % hasVarName
     makeClearMethod(clearMethodBody, cppClass)
 
     toXmlMethodBody = \
-        """
-            if (%s)
-            {
-                '_outStream << _attrName << "=\\"" << %s() << "\\"";';
-            }
-        """ % (hasVarName, toStringMethod.name)
+"""
+if (%s)
+{
+_outStream << _attrName << "=\\"" << %s() << "\\"";';
+}
+""" % (hasVarName, toStringMethod.name)
     makeToXmlAttrMethod(toXmlMethodBody, cppClass)
 
     makeDefaultInstanceMethod(cppClass)
@@ -306,7 +386,7 @@ def simpleType_restriction_builtIn(pbBuiltIn, cppClass):
     method1.const = True
     method1.body = \
 """
-    return %s;
+return %s;
 """ % hasVarName
 
     method2 = cppClass.method.add()
@@ -318,8 +398,8 @@ def simpleType_restriction_builtIn(pbBuiltIn, cppClass):
     method2_var1.const = True
     method2.body = \
 """
-    %s = true;
-    %s = %s;
+%s = true;
+%s = %s;
 """ % (hasVarName, varName, method2_var1.name)
 
     method3 = cppClass.method.add()
@@ -328,22 +408,22 @@ def simpleType_restriction_builtIn(pbBuiltIn, cppClass):
     method3.const = True
     method3.body = \
 """
-    return %s;
+return %s;
 """ % varName
 
     clearMethodBody = \
 """
-    %s = false;
-    %s;
+%s = false;
+%s;
 """ % (hasVarName, _makeClearMethodStrFromBuiltIn(varName, pbBuiltIn))
     makeClearMethod(clearMethodBody, cppClass)
 
     toXmlMethodBody = \
 """
-    if (%s)
-    {
-        %s;
-    }
+if (%s)
+{
+    %s;
+}
 """ % (hasVarName, _makeToXmlMethodBodyFromAttrBuiltIn(cppVarType, varName))
     makeToXmlAttrMethod(toXmlMethodBody, cppClass)
 
@@ -370,7 +450,7 @@ def simpleType_restriction_simpleTypeName(pbSTName, cppClass):
 def simpleType_restriction_complexTypeName(pbCTName, cppClass):
     pass #TODO - 아직은 여기로 오지 않아서 처리하지 않음
 
-def simpleType_union(pbUnion, cppClass):
+def simpleType_union(pbSchema, pbUnion, cppClass):
     pbUnionMemberNames = _getUnionMemberNames(pbUnion.member_type)
 
     toXmlMethodBodyList = []
@@ -385,7 +465,7 @@ def simpleType_union(pbUnion, cppClass):
             simpleType_union_simpleTypeName(pbMemberType.simple_type_name, pbUnionMemberNames, cppClass)
             varName = 'm_%s' % _getCppVarName(pbMemberType.simple_type_name)
             hasVarName = 'm_has_%s' % _getCppVarName(pbMemberType.simple_type_name)
-            toXmlMethodBodyList.append((hasVarName, _makeToXmlMethodBodyFromAttrSTName(varName)))
+            toXmlMethodBodyList.append((hasVarName, _makeToXmlMethodBodyFromUnion(varName)))
         else:
             assert(False)
 
@@ -395,12 +475,12 @@ def simpleType_union(pbUnion, cppClass):
     toXmlMethodBody = ""
     for mBody in toXmlMethodBodyList:
         toXmlMethodBody += \
-        """
-        if (%s)
-        {
-            %s;
-            return;
-        }\n""" % (mBody[0], mBody[1])
+"""
+if (%s)
+{
+    %s;
+    return;
+}\n""" % (mBody[0], mBody[1])
     makeToXmlAttrMethod(toXmlMethodBody, cppClass)
 
     makeDefaultInstanceMethod(cppClass)
@@ -422,9 +502,9 @@ def simpleType_union_builtIn(pbBuiltIn, pbUnionMemberNames, cppClass):
     method1.name = 'has_%s' % cppVarName
     method1.const = True
     method1.body = \
-        """
-            return %s;
-        """ % hasVarName
+"""
+return %s;
+""" % hasVarName
 
     method2 = cppClass.method.add()
     method2.return_type = 'void'
@@ -434,34 +514,35 @@ def simpleType_union_builtIn(pbBuiltIn, pbUnionMemberNames, cppClass):
     method2_var1.name = '_%s' % cppVarName
     method2_var1.const = True
     method2.body = \
-        """
-            %(clear_funcs)s
-            %(has_var)s = true;
-            %(var)s = %(arg)s;
-        """ % {
-            'clear_funcs':_clearFuncStrs(pbUnionMemberNames, cppVarName),
-            'has_var':hasVarName,
-            'var':varName,
-            'arg':method2_var1.name}
+"""
+%(clear_funcs)s
+%(has_var)s = true;
+%(var)s = %(arg)s;
+""" % {
+    'clear_funcs':_clearFuncStrs(pbUnionMemberNames, cppVarName),
+    'has_var':hasVarName,
+    'var':varName,
+    'arg':method2_var1.name
+    }
 
     method3 = cppClass.method.add()
     method3.return_type = 'const %s&' % cppVarType
     method3.name = '%s' % cppVarName
     method3.const = True
     method3.body = \
-        """
-            return %s;
-        """ % varName
+"""
+return %s;
+""" % varName
 
     method4 = cppClass.method.add()
     method4.access_qf = CPB.AccessQualified.private
     method4.return_type = 'void'
     method4.name = 'clear_%s' % cppVarName
     method4.body = \
-        """
-            %s = false;
-            %s = %s;
-        """ % (hasVarName, varName, _getInitValueFromBuiltIn(pbBuiltIn))
+"""
+%s = false;
+%s = %s;
+""" % (hasVarName, varName, _getInitValueFromBuiltIn(pbBuiltIn))
 
     memberVar1 = cppClass.member_var.add()
     memberVar1.type = 'bool'
@@ -483,55 +564,55 @@ def simpleType_union_simpleTypeName(pbSimpleTypeName, pbUnionMemberNames, cppCla
     method1.name = 'has_%s' % cppVarName
     method1.const = True
     method1.body = \
-        """
-            return %s;
-        """ % hasVarName
+"""
+return %s;
+""" % hasVarName
 
     method2 = cppClass.method.add()
     method2.return_type = '%s*' % cppVarType
     method2.name = 'mutable_%s' % cppVarName
     method2.body = \
-        """
-            %(clear_funcs)s
-            %(has_var)s = true;
-            if (!%(var)s)
-            {
-                %(var)s = new %(cpp_type)s();
-            }
-            return %(var)s;
-        """ % {
-            'clear_funcs':_clearFuncStrs(pbUnionMemberNames, cppVarName),
-            'has_var':hasVarName,
-            'var':varName,
-            'cpp_type':cppVarType}
+"""
+%(clear_funcs)s
+%(has_var)s = true;
+if (!%(var)s)
+{
+    %(var)s = new %(cpp_type)s();
+}
+return %(var)s;
+""" % {
+    'clear_funcs':_clearFuncStrs(pbUnionMemberNames, cppVarName),
+    'has_var':hasVarName,
+    'var':varName,
+    'cpp_type':cppVarType
+    }
 
     method3 = cppClass.method.add()
     method3.return_type = 'const %s&' % cppVarType
     method3.name = '%s' % cppVarName
     method3.const = True
     method3.body = \
-        """
-            if (%(var)s)
-            {
-                return *%(var)s;
-            }
-
-            return %(cpp_type)s::default_instance();
-        """ % {'var':varName, 'cpp_type':cppVarType}
+"""
+if (%(var)s)
+{
+    return *%(var)s;
+}
+return %(cpp_type)s::default_instance();
+""" % {'var':varName, 'cpp_type':cppVarType}
 
     method4 = cppClass.method.add()
     method4.access_qf = CPB.AccessQualified.private
     method4.return_type = 'void'
     method4.name = 'clear_%s' % cppVarName
     method4.body = \
-        """
-            %(has_var)s = false;
-            if (%(var)s)
-            {
-                delete %(var)s;
-                %(var)s = NULL;
-            }
-        """ % {'has_var':hasVarName, 'var':varName}
+"""
+%(has_var)s = false;
+if (%(var)s)
+{
+    delete %(var)s;
+    %(var)s = NULL;
+}
+""" % {'has_var':hasVarName, 'var':varName}
 
     memberVar1 = cppClass.member_var.add()
     memberVar1.type = 'bool'
@@ -555,10 +636,10 @@ def _getClearMethodBodyStrFromElemList(pbElemList):
     clearMethodBody = ""
     for mBody in mBodyList:
         clearMethodBody += \
-            """
-                %s = false;
-                %s
-            """ % (mBody[0], mBody[1])
+"""
+%s = false;
+%s
+""" % (mBody[0], mBody[1])
     return clearMethodBody
 
 def _getClearMethodBodyListFromElemList(pbElemList):
@@ -590,10 +671,10 @@ def _getClearMethodBodyStrFromAttrList(pbAttrList):
     clearMethodBody = ""
     for mBody in mBodyList:
         clearMethodBody += \
-            """
-                %s = false;
-                %s
-            """ % (mBody[0], mBody[1])
+"""
+%s = false;
+%s
+""" % (mBody[0], mBody[1])
     return clearMethodBody
 
 def _getClearMethodBodyListFromAttrList(pbAttrList):
@@ -619,14 +700,14 @@ def _getClearMethodBodyStrFromRepeated(idx):
     vector_name = 'm_childGroupList_%d' % idx
 
     clearMethodBody = \
-        """
-            %(vector_type)s::iterator iter;
-            for (iter = %(vector_name)s.begin(); iter != %(vector_name)s.end(); ++iter)
-            {
-                delete *iter;
-            }
-            %(vector_name)s.clear();
-        """ % {'vector_type':vector_type, 'vector_name':vector_name}
+"""
+%(vector_type)s::iterator iter;
+for (iter = %(vector_name)s.begin(); iter != %(vector_name)s.end(); ++iter)
+{
+    delete *iter;
+}
+%(vector_name)s.clear();
+""" % {'vector_type':vector_type, 'vector_name':vector_name}
 
     return clearMethodBody
 
@@ -634,13 +715,13 @@ def _toClearMethodBodyStr(clearMethodBodyList):
     clearMethodBodyStr = ""
     for mBody in clearMethodBodyList:
         clearMethodBodyStr += \
-            """
-                %s = false;
-                %s;
-            """ % (mBody[0], mBody[1])
+"""
+%s = false;
+%s;
+""" % (mBody[0], mBody[1])
     return clearMethodBodyStr
 
-def _getToXmlMethodBodyList(pbElemList, varName=None):
+def _getToXmlMethodBodyList(pbSchema, pbElemList, varName=None):
     toXmlMethodBodyList = []
 
     for pbElem in pbElemList:
@@ -649,13 +730,13 @@ def _getToXmlMethodBodyList(pbElemList, varName=None):
             varName = 'm_%s' % _getCppVarName(pbElem.name)
 
         if pbElem.type.kind == PB.Element.Type.BuiltIn:
-            toXmlMethodBodyList.append((pbElem.name, _makeToXmlMethodBodyFromElemBuiltIn(pbElem.name, varName)))
+            toXmlMethodBodyList.append((pbElem.name, _makeToXmlMethodBodyFromElemBuiltIn(pbSchema, pbElem.name, varName)))
 
         elif pbElem.type.kind == PB.Element.Type.SimpleTypeName:
-            toXmlMethodBodyList.append((pbElem.name, _makeToXmlMethodBodyFromElemSTName(pbElem.name, varName)))
+            toXmlMethodBodyList.append((pbElem.name, _makeToXmlMethodBodyFromElemSTName(pbSchema, pbElem.name, varName)))
 
         elif pbElem.type.kind == PB.Element.Type.ComplexTypeName:
-            toXmlMethodBodyList.append((pbElem.name, _makeToXmlMethodBodyFromElemCTName(pbElem.name, varName)))
+            toXmlMethodBodyList.append((pbElem.name, _makeToXmlMethodBodyFromElemCTName(pbSchema, pbElem.name, varName)))
 
         elif pbElem.type.kind == PB.Element.Type.SimpleType:
             pass # TODO - 현재는 여기로 오는 것이 없음, 추후 구현 예정
@@ -667,50 +748,51 @@ def _getToXmlMethodBodyList(pbElemList, varName=None):
 
     return toXmlMethodBodyList
 
-def _getToXmlMethodBodyStr(pbElemList):
-    mBodyList = _getToXmlMethodBodyList(pbElemList)
+def _getToXmlMethodBodyStr(pbSchema, pbElemList):
+    mBodyList = _getToXmlMethodBodyList(pbSchema, pbElemList)
     toXmlMethodBody = ""
     for mBody in mBodyList:
         toXmlMethodBody += \
-            """
-                if (%s)
-                {
-                    %s;
-                }
-            """ % ('m_has_%s' % _getCppVarName(mBody[0]), mBody[1])
+"""
+if (%s)
+{
+    %s;
+}
+""" % ('m_has_%s' % _getCppVarName(mBody[0]), mBody[1])
     return toXmlMethodBody
 
-def _getToXmlMethodBodyStrFromRepeated(pbElemList, idx):
+def _getToXmlMethodBodyStrFromRepeated(pbSchema, pbElemList, idx):
     childGroupType = 'ChildGroup_%d' % idx
     vector_type = 'vector<%s*>' % childGroupType
     vector_name = 'm_childGroupList_%d' % idx
 
-    mBodyList = _getToXmlMethodBodyList(pbElemList, '(*iter)')
+    mBodyList = _getToXmlMethodBodyList(pbSchema, pbElemList, '(*iter)')
 
     toXmlMethodBody = \
-    """
-        %(vector_type)s::const_iterator iter;
-        for (iter = %(vector_name)s.begin(); iter != %(vector_name)s.end(); ++iter)
-        {""" % {'vector_type':vector_type, 'vector_name':vector_name}
+"""
+%(vector_type)s::const_iterator iter;
+for (iter = %(vector_name)s.begin(); iter != %(vector_name)s.end(); ++iter)
+{""" % {'vector_type':vector_type, 'vector_name':vector_name}
 
     for bodyIdx, mBody in enumerate(mBodyList):
         if bodyIdx == 0:
             toXmlMethodBody += \
-    """
-            if ((*iter)->%(has_method)s())
-            {
-                %(body)s
-            }""" % {'has_method':'has_%s' % _getCppVarName(mBody[0]), 'body':mBody[1]}
+"""
+    if ((*iter)->%(has_method)s())
+    {
+        %(body)s
+    }""" % {'has_method':'has_%s' % _getCppVarName(mBody[0]), 'body':mBody[1]}
         else:
             toXmlMethodBody += \
-    """
-            else if ((*iter)->%(has_method)s())
-            {
-                %(body)s
-            }""" % {'has_method':'has_%s' % _getCppVarName(mBody[0]), 'body':mBody[1]}
+"""
+    else if ((*iter)->%(has_method)s())
+    {
+        %(body)s
+    }""" % {'has_method':'has_%s' % _getCppVarName(mBody[0]), 'body':mBody[1]}
     toXmlMethodBody += \
-    """
-        }"""
+"""
+}
+"""
     return toXmlMethodBody
 
 def complexType_one(pbElemList, xsdContainerType, cppClass):
@@ -756,12 +838,12 @@ def complexType_repeated(pbElemList, cppClass, idx):
         addMethod.return_type = '%s*' % cppVarType
         addMethod.name = 'add_%s' % cppVarName
         addMethod.body = \
-        """
-            %(vector_type)s *pChildGroup = new %(inner_class_type)s();
-            %(type)s* pNewChild = pChildGroup->mutable_%(name)s();
-            %(vector_name)s.push_back(pChildGroup);
-            return pNewChild;
-        """ % {
+"""
+%(vector_type)s *pChildGroup = new %(inner_class_type)s();
+%(type)s* pNewChild = pChildGroup->mutable_%(name)s();
+%(vector_name)s.push_back(pChildGroup);
+return pNewChild;
+""" % {
             'vector_type':choiceMember.type,
             'vector_name':choiceMember.name,
             'inner_class_type':innerClass.name,
@@ -787,9 +869,9 @@ def _addBuiltInMethodAndMemberVarInElem(pbElemList, pbElemName, pbBuiltIn, xsdCo
     hasMethod.name = 'has_%s' % cppVarName
     hasMethod.const = True
     hasMethod.body = \
-    """
-        return %s;
-    """ % cppHasVar.name
+"""
+return %s;
+""" % cppHasVar.name
 
     setMethod = cppClass.method.add()
     setMethod.return_type = 'void'
@@ -800,28 +882,28 @@ def _addBuiltInMethodAndMemberVarInElem(pbElemList, pbElemName, pbBuiltIn, xsdCo
     setMethod_var1.const = True
     if xsdContainerType == SEQUENCE:
         setMethod.body = \
-            """
-            %s = true;
-            %s = %s;
-            """ % (cppHasVar.name, cppObjVar.type, setMethod_var1.name)
+"""
+%s = true;
+%s = %s;
+""" % (cppHasVar.name, cppObjVar.type, setMethod_var1.name)
     elif xsdContainerType == CHOICE:
         clearMethodBodyList = filter(lambda x:x[0] != cppHasVar.name, _getClearMethodBodyListFromElemList(pbElemList)) # 자신을 초기화 하는 부분은 제거
         clearMethodBody = _toClearMethodBodyStr(clearMethodBodyList)
         setMethod.body = \
-            """
-                %s
-                %s = true;
-                %s = %s;
-            """ % (clearMethodBody, cppHasVar.name, cppObjVar.type, setMethod_var1.name)
+"""
+%s
+%s = true;
+%s = %s;
+""" % (clearMethodBody, cppHasVar.name, cppObjVar.type, setMethod_var1.name)
 
     getMethod = cppClass.method.add()
     getMethod.return_type = 'const %s&' % cppVarType
     getMethod.name = '%s' % cppVarName
     getMethod.const = True
     getMethod.body = \
-    """
-        return %s;
-    """ % cppObjVar
+"""
+return %s;
+""" % cppObjVar
 
 def _addBuiltInMethodAndMemberVarInAttr(pbAttrName, pbBuiltIn, cppClass):
 
@@ -841,9 +923,9 @@ def _addBuiltInMethodAndMemberVarInAttr(pbAttrName, pbBuiltIn, cppClass):
     hasMethod.name = 'has_%s_attr' % cppVarName
     hasMethod.const = True
     hasMethod.body = \
-        """
-            return %s;
-        """ % cppHasVar.name
+"""
+return %s;
+""" % cppHasVar.name
 
     setMethod = cppClass.method.add()
     setMethod.return_type = 'void'
@@ -853,19 +935,19 @@ def _addBuiltInMethodAndMemberVarInAttr(pbAttrName, pbBuiltIn, cppClass):
     setMethod_var1.name = '_%s_attr' % cppVarName
     setMethod_var1.const = True
     setMethod.body = \
-        """
-        %s = true;
-        %s = %s;
-        """ % (cppHasVar.name, cppObjVar.name, setMethod_var1.name)
+"""
+%s = true;
+%s = %s;
+""" % (cppHasVar.name, cppObjVar.name, setMethod_var1.name)
 
     getMethod = cppClass.method.add()
     getMethod.return_type = 'const %s&' % cppVarType
     getMethod.name = '%s_attr' % cppVarName
     getMethod.const = True
     getMethod.body = \
-        """
-            return %s;
-        """ % cppObjVar
+"""
+return %s;
+""" % cppObjVar
 
 def _addSTOrCTMethodAndMemberVarInElem(pbElemList, pbElemName, pbSimpleTypeName, xsdContainerType, cppClass):
     cppVarName = _getCppVarName(pbElemName)
@@ -884,49 +966,49 @@ def _addSTOrCTMethodAndMemberVarInElem(pbElemList, pbElemName, pbSimpleTypeName,
     hasMethod.name = 'has_%s' % cppVarName
     hasMethod.const = True
     hasMethod.body = \
-        """
-            return %s;
-        """ % cppHasVar.name
+"""
+return %s;
+""" % cppHasVar.name
 
     mutableMethod = cppClass.method.add()
     mutableMethod.return_type = '%s*' % cppVarType
     mutableMethod.name = 'mutable_%s' % cppVarName
     if xsdContainerType == SEQUENCE:
         mutableMethod.body = \
-            """
-                %(has_var)s = true;
-                if (!%(var)s)
-                {
-                    %(var)s = new %(type)s();
-                }
-                return %(var)s;
-            """ % {'has_var':cppHasVar.name, 'var':cppObjVar.name, 'type':cppVarType}
+"""
+%(has_var)s = true;
+if (!%(var)s)
+{
+    %(var)s = new %(type)s();
+}
+return %(var)s;
+""" % {'has_var':cppHasVar.name, 'var':cppObjVar.name, 'type':cppVarType}
     elif xsdContainerType == CHOICE:
         clearMethodBodyList = filter(lambda x:x[0] != cppHasVar.name, _getClearMethodBodyListFromElemList(pbElemList)) # 자신을 초기화 하는 부분은 제거
         clearMethodBody = _toClearMethodBodyStr(clearMethodBodyList)
         mutableMethod.body = \
-            """
-                %(clearMethodCodes)s
-                %(has_var)s = true;
-                if (!%(var)s)
-                {
-                    %(var)s = new %(type)s();
-                }
-                return %(var)s;
-            """ % {'clearMethodCodes': clearMethodBody, 'has_var':cppHasVar.name, 'var':cppObjVar.name, 'type':cppVarType}
+"""
+%(clearMethodCodes)s
+%(has_var)s = true;
+if (!%(var)s)
+{
+    %(var)s = new %(type)s();
+}
+return %(var)s;
+""" % {'clearMethodCodes': clearMethodBody, 'has_var':cppHasVar.name, 'var':cppObjVar.name, 'type':cppVarType}
 
     getMethod = cppClass.method.add()
     getMethod.return_type = 'const %s&' % cppVarType
     getMethod.name = '%s' % cppVarName
     getMethod.const = True
     getMethod.body = \
-        """
-            if (%(var)s)
-            {
-                return *%(var)s;
-            }
-            return %(type)s::default_instance();
-        """ % {'var':cppObjVar.name, 'type':cppVarType}
+"""
+if (%(var)s)
+{
+    return *%(var)s;
+}
+return %(type)s::default_instance();
+""" % {'var':cppObjVar.name, 'type':cppVarType}
 
 
 def _addSTMethodAndMemberVarInAttr(pbAttrName, pbSimpleTypeName, cppClass):
@@ -946,9 +1028,9 @@ def _addSTMethodAndMemberVarInAttr(pbAttrName, pbSimpleTypeName, cppClass):
     hasMethod.name = 'has_%s_attr' % cppVarName
     hasMethod.const = True
     hasMethod.body = \
-        """
-            return %s;
-        """ % cppHasVar.name
+"""
+return %s;
+""" % cppHasVar.name
 
     setMethod = cppClass.method.add()
     setMethod.return_type = 'void'
@@ -958,10 +1040,10 @@ def _addSTMethodAndMemberVarInAttr(pbAttrName, pbSimpleTypeName, cppClass):
     setMethod_var1.name = '_%s_attr' % cppVarName
     setMethod_var1.const = True
     setMethod.body = \
-        """
-            %(has_var)s = true;
-            %(var)s = new %(type)s(%(arg)s);
-        """ % {
+"""
+%(has_var)s = true;
+%(var)s = new %(type)s(%(arg)s);
+""" % {
             'has_var':cppHasVar.name,
             'var':cppObjVar.name,
             'type':cppVarType,
@@ -973,13 +1055,13 @@ def _addSTMethodAndMemberVarInAttr(pbAttrName, pbSimpleTypeName, cppClass):
     getMethod.name = '%s_attr' % cppVarName
     getMethod.const = True
     getMethod.body = \
-        """
-            if (%(var)s)
-            {
-                return *%(var)s;
-            }
-            return %(type)s::default_instance();
-        """ % {'var':cppObjVar.name, 'type':cppVarType}
+"""
+if (%(var)s)
+{
+    return *%(var)s;
+}
+return %(type)s::default_instance();
+""" % {'var':cppObjVar.name, 'type':cppVarType}
 
 
 def getClearMethodBodyStrFromElemCont(pbElemCont):
@@ -1003,37 +1085,34 @@ def getClaerMethodBodyStrFromAttrs(pbAttrList):
     return _getClearMethodBodyStrFromAttrList(pbAttrList)
 
 
-def getToXmlMethodBodyStrFromElemCont(pbElemCont):
+def getToXmlMethodBodyStrFromElemCont(pbSchema, pbElemCont):
     toXmlMethodBodyStrList = []
     repeatedIdx = 1
     for elemCont in pbElemCont:
         if elemCont.kind == PB.ElementContainer.Sequence:
-            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStr(elemCont.sequence))
+            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStr(pbSchema, elemCont.sequence))
         elif elemCont.kind == PB.ElementContainer.Choice:
-            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStr(elemCont.choice))
+            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStr(pbSchema, elemCont.choice))
         elif elemCont.kind == PB.ElementContainer.RepeatedSequence:
-            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(elemCont.repeated_sequence, repeatedIdx))
+            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(pbSchema, elemCont.repeated_sequence, repeatedIdx))
             repeatedIdx += 1
         elif elemCont.kind == PB.ElementContainer.RepeatedChoice:
-            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(elemCont.repeated_choice, repeatedIdx))
+            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(pbSchema, elemCont.repeated_choice, repeatedIdx))
             repeatedIdx += 1
 
     return " ".join(toXmlMethodBodyStrList)
 
 
-def getToXmlMethodBodyStrFromAttrs(pbAttrList):
+def getToXmlMethodBodyStrFromAttrs(pbSchema, pbAttrList):
     toXmlMethodBodyStrList = []
     for pbAttr in pbAttrList:
         if pbAttr.type.kind == PB.Attribute.Type.BuiltIn:
             cppVarType = _getBuiltInStr(pbAttr.type.built_in)
-            varName = 'm_%s_attr' % pbAttr.name
-            toXmlMethodBodyStrList.append(_makeToXmlMethodBodyFromAttrBuiltIn(cppVarType, varName))
+            toXmlMethodBodyStrList.append(_makeToXmlMethodBodyFromAttrBuiltInWithAttrName(pbSchema, cppVarType, pbAttr.name))
         elif pbAttr.type.kind == PB.Attribute.Type.SimpleTypeName:
-            varName = 'm_%s_attr' % pbAttr.name
-            toXmlMethodBodyStrList.append(_makeToXmlMethodBodyFromAttrSTName(varName))
+            toXmlMethodBodyStrList.append(_makeToXmlMethodBodyFromAttrSTName(pbSchema, pbAttr.name))
         elif pbAttr.type.kind == PB.Attribute.Type.SimpleType:
-            varName = 'm_%s_attr' % pbAttr.name
-            toXmlMethodBodyStrList.append(_makeToXmlMethodBodyFromAttrSTName(varName))
+            toXmlMethodBodyStrList.append(_makeToXmlMethodBodyFromAttrSTName(pbSchema, pbAttr.name))
         elif pbAttr.type.kind == PB.Attribute.Type.AnyAttribute:
             pass # TODO
             # CPP_FUNC.complexType_attr_anyAttribute(pbAttr.type.any, cppClass)

@@ -42,13 +42,13 @@ def run(xsdFileDirPath):
         writePbFile('../../files/pb_text/%s.txt' % pbSchema.file_name, pbSchema)
 
         fileNsName = fileNsMap.get(pbSchema.file_name)
+        if fileNsName is None:
+            fileNsName = pbSchema.file_name[:1]
+
         pbSchema.xml_ns_prefix = fileNsName
         cppProtoFile = xsd2cpp.parseToCpp(pbSchema)
+        cppProtoFile.namespace = 'ns_%s' % fileNsName
 
-        if fileNsName is not None:
-            cppProtoFile.namespace = 'ns_%s' % fileNsName
-        else:
-            cppProtoFile.namespace = 'ns_%s' % pbSchema.file_name[:1]
         writePbFile('../../files/pb_text/%s.cpp.txt' % pbSchema.file_name, cppProtoFile)
         txt2cpp.cppParse(cppProtoFile)
         txt2h.hParse(cppProtoFile)

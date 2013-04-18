@@ -33,23 +33,23 @@ def _makeCppClasses(cppFile, pbSchema):
 
     for pbSimpleType in pbSchema.simple_type:
         cppClass = cppFile.class_.add()
-        _makeCppClassFromSimpleType(pbSimpleType, cppClass)
+        _makeCppClassFromSimpleType(pbSchema, pbSimpleType, cppClass)
 
     for pbComplexType in pbSchema.complex_type:
         cppClass = cppFile.class_.add()
-        _makeCppClassFromComplexType(pbComplexType, cppClass)
+        _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass)
 
     for pbElement in pbSchema.element:
         cppClass = cppFile.class_.add()
-        _makeCppClassFromElement(pbElement, cppClass)
+        _makeCppClassFromElement(pbSchema, pbElement, cppClass)
 
     for pbAttr in pbSchema.attribute:
         cppClass = cppFile.class_.add()
-        _makeCppClassFromAttribute(pbAttr, cppClass)
+        _makeCppClassFromAttribute(pbSchema, pbAttr, cppClass)
 
 
 # Element를 class로 만들기
-def _makeCppClassFromElement(pbElement, cppClass):
+def _makeCppClassFromElement(pbSchema, pbElement, cppClass):
     cppClass.name = pbElement.name
     cppClass.parent_class.append('Element')
 
@@ -64,14 +64,14 @@ def _makeCppClassFromElement(pbElement, cppClass):
     var1.type = 'ostream&'
     var1.name = '_outStream'
     toXmlMethod.body = \
-    """
-        %(CTType)s::toXml("%(elemName)s", _outStream);
-    """ % {'CTType': cppVarType, 'elemName':pbElement.name}
+"""
+%(CTType)s::toXml("%(elemName)s", _outStream);
+""" % {'CTType': cppVarType, 'elemName': CPP_FUNC.getXmlElementName(pbSchema.element_form_default, pbSchema.xml_ns_prefix, pbElement.name)}
 
 
 
 # Attribute를 class로 만들기
-def _makeCppClassFromAttribute(pbAttr, cppClass):
+def _makeCppClassFromAttribute(pbSchema, pbAttr, cppClass):
     cppClass.name = '%s_attr' % pbAttr.name
     cppClass.parent_class.append('Attribute')
 
@@ -86,13 +86,13 @@ def _makeCppClassFromAttribute(pbAttr, cppClass):
     var1.type = 'ostream&'
     var1.name = '_outStream'
     toXmlMethod.body = \
-        """
-            %(CTType)s::toXml("%(elemName)s", _outStream);
-        """ % {'CTType': cppVarType, 'elemName':pbAttr.name}
+"""
+%(CTType)s::toXml("%(attrName)s", _outStream);
+""" % {'CTType': cppVarType, 'attrName':CPP_FUNC.getXmlAttributeName(pbSchema.attribute_form_default, pbSchema.xml_ns_prefix, pbAttr.name)}
 
 
 # ComplexType을 class로 만들기
-def _makeCppClassFromComplexType(pbComplexType, cppClass):
+def _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass):
     cppClass.name = pbComplexType.name
     cppClass.parent_class.append('XSD::ComplexType')
 
@@ -114,19 +114,19 @@ def _makeCppClassFromComplexType(pbComplexType, cppClass):
     CPP_FUNC.makeClearMethod(clearMethodBodyStr, cppClass)
 
     toXmlMethodBodyStr = \
-    """
-        _outStream << "<" << _elementName;
-    """
-    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromAttrs(pbComplexType.attribute)
+"""
+_outStream << "<" << _elementName;
+"""
+    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromAttrs(pbSchema, pbComplexType.attribute)
     toXmlMethodBodyStr += \
-    """
-        _outStream << ">";
-    """
-    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromElemCont(pbComplexType.element_container)
+"""
+_outStream << ">";
+"""
+    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromElemCont(pbSchema, pbComplexType.element_container)
     toXmlMethodBodyStr += \
-    """
-        _outStream << "</" << _elementName << ">";
-    """
+"""
+_outStream << "</" << _elementName << ">";
+"""
     CPP_FUNC.makeToXmlElemMethod(toXmlMethodBodyStr, cppClass)
 
     CPP_FUNC.makeDefaultInstanceMethod(cppClass)
@@ -145,20 +145,20 @@ def _makeCppClassFromComplexType(pbComplexType, cppClass):
 
 
 # SimpleType을 class로 만들기
-def _makeCppClassFromSimpleType(pbSimpleType, cppClass):
+def _makeCppClassFromSimpleType(pbSchema, pbSimpleType, cppClass):
     cppClass.name = pbSimpleType.name
     cppClass.parent_class.append('XSD::SimpleType')
-    _makeCppMethodFromSimpleType(pbSimpleType, cppClass)
+    _makeCppMethodFromSimpleType(pbSchema, pbSimpleType, cppClass)
 
 
 # SimpleType의 Method 만들기
-def _makeCppMethodFromSimpleType(pbSimpleType, cppClass):
+def _makeCppMethodFromSimpleType(pbSchema, pbSimpleType, cppClass):
     if pbSimpleType.type.kind == PB.SimpleType.Type.Restriction:
         _makeCppMethodFromRestriction(pbSimpleType.type.restriction, cppClass)
     elif pbSimpleType.type.kind == PB.SimpleType.Type.List:
         pass # TODO - list
     elif pbSimpleType.type.kind == PB.SimpleType.Type.Union:
-        CPP_FUNC.simpleType_union(pbSimpleType.type.union, cppClass)
+        CPP_FUNC.simpleType_union(pbSchema, pbSimpleType.type.union, cppClass)
 
 
 # restriction 추가
@@ -227,6 +227,7 @@ def _getBuiltInStr(builtType):
 # 파일명 가져오기
 def _getCppFileName(xsdFileName):
     return '%s' % xsdFileName.replace('.', '_')
+
 
 # include 파일명 가져오기
 def _getCppIncludeFileName(xsdFileName):
