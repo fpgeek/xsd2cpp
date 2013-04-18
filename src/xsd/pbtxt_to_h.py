@@ -7,7 +7,7 @@ import StringIO
 
 def hParse(cppProtoFile, fileName):
     cppProtoBuf = StringIO.StringIO(cppProtoFile)
-    hFile = open('../../files/header/%s.h' % fileName, 'wb') 
+    hFile = open('../../files/header/%s.h' % fileName.replace('.', '_'), 'wb') 
     hBuf = ''
     deep = 0
 

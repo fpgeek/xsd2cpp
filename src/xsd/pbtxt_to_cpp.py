@@ -7,7 +7,7 @@ import StringIO
 
 def cppParse(cppProtoFile, fileName):
     cppProtoBuf = StringIO.StringIO(cppProtoFile)
-    cppFile = open('../../files/cpp/%s.cpp' % fileName, 'wb')
+    cppFile = open('../../files/cpp/%s.cpp' % fileName.replace('.', '_'), 'wb')
     cppBuf = ''
     deep = 0
 
