@@ -199,7 +199,9 @@ def _makeCppArgVar(cppSchema):
 
 def _makeCppVar(cppSchema, cppBuf):
     if cppBuf:
-        if cppSchema.access_qf == 'public':
+        if not cppSchema.HasField('access_qf'):
+            cppBuf = 'private\n' + cppBuf
+        elif cppSchema.access_qf == 'public':
             cppBuf = 'public\n' + cppBuf
         elif cppSchema.access_qf == 'protected':
             cppBuf = 'protected\n' + cppBuf
@@ -209,7 +211,7 @@ def _makeCppVar(cppSchema, cppBuf):
     if cppSchema.HasField('static') and cppSchema.static:
             cppBuf += 'static '
     if cppSchema.HasField('const') and cppSchema.const:
-            cppBuf += 'const '
+            cppBuf += ' const '
     
     cppBuf += '%s %s' % (cppSchema.type, cppSchema.name)
     if cppSchema.array:

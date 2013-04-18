@@ -166,7 +166,7 @@ def _makehMethod(cppSchema, deep):
 
     if cppSchema.HasField('static') and cppSchema.static:
             hBuf += 'static '
-    hBuf += '    '*deep + '%s %s(' % (cppSchema.return_type, cppSchema.name)
+    hBuf += ' '*deep + '%s %s(' % (cppSchema.return_type, cppSchema.name)
     
     argFlag = True
     for arg in cppSchema.argument:
@@ -180,7 +180,7 @@ def _makehMethod(cppSchema, deep):
         
     hBuf += ')'
     if cppSchema.HasField('const') and cppSchema.const:
-        hBuf += 'const '
+        hBuf += ' const'
 	hBuf += ';\n'
 
     return hBuf

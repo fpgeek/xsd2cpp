@@ -48,6 +48,18 @@ def _makeCppClasses(cppFile, pbSchema):
         _makeCppClassFromAttribute(pbSchema, pbAttr, cppClass)
 
 
+def _getXmlNsPrefixStr(nsPrefix, mainNsPrefix):
+    if nsPrefix == '':
+        return 'xmlns:%s' % mainNsPrefix
+    else:
+        return 'xmlns:%s' % nsPrefix
+
+
+def _makeXmlNsCode(pbNsList, mainNsPrefix):
+    nsCodeList= ['xmlNsStream << " " << "%s=\\\\"%s\\\\"";' % (_getXmlNsPrefixStr(pbNs.prefix, mainNsPrefix), pbNs.uri) for pbNs in pbNsList if pbNs.prefix not in ['xsd'] ]
+    return '\n'.join(nsCodeList)
+
+
 # Element를 class로 만들기
 def _makeCppClassFromElement(pbSchema, pbElement, cppClass):
     cppClass.name = pbElement.name
@@ -60,13 +72,19 @@ def _makeCppClassFromElement(pbSchema, pbElement, cppClass):
     toXmlMethod.return_type = 'void'
     toXmlMethod.name = 'toXml'
     toXmlMethod.const = True
+
     var1 = toXmlMethod.argument.add()
     var1.type = 'ostream&'
     var1.name = '_outStream'
     toXmlMethod.body = \
 """
-%(CTType)s::toXml("%(elemName)s", _outStream);
-""" % {'CTType': cppVarType, 'elemName': CPP_FUNC.getXmlElementName(pbSchema.element_form_default, pbSchema.xml_ns_prefix, pbElement.name)}
+ostream xmlNsStream;
+%(makeXmlNsCode)s
+%(CTType)s::toXml("%(elemName)s", xmlNsStream.str(), _outStream);
+""" % {
+    'makeXmlNsCode': _makeXmlNsCode(pbSchema.namespace, pbSchema.xml_ns_prefix),
+    'CTType': cppVarType,
+    'elemName': CPP_FUNC.getXmlElementName(pbSchema.element_form_default, pbSchema.xml_ns_prefix, pbElement.name)}
 
 
 
@@ -117,6 +135,14 @@ def _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass):
 """
 _outStream << "<" << _elementName;
 """
+    toXmlMethodBodyStr += \
+"""
+if (!_xmlNsStr.empty())
+{
+    _outStream << _xmlNsStr;
+}
+"""
+
     toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromAttrs(pbSchema, pbComplexType.attribute)
     toXmlMethodBodyStr += \
 """

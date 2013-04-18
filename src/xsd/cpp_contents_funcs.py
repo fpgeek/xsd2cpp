@@ -75,13 +75,20 @@ def makeToXmlElemMethod(methodBody, cppClass):
     method.return_type = 'void'
     method.name = 'toXml'
     method.const = True
+
     methodArg1 = method.argument.add()
     methodArg1.type = 'string'
     methodArg1.name = '_elemName'
     methodArg1.const = True
+
     methodArg2 = method.argument.add()
-    methodArg2.type = 'ostream'
-    methodArg2.name = '_outStream'
+    methodArg2.type = 'string&'
+    methodArg2.name = '_xmlNsStr'
+    methodArg2.const = True
+
+    methodArg3 = method.argument.add()
+    methodArg3.type = 'ostream'
+    methodArg3.name = '_outStream'
     method.body = methodBody
 
 
@@ -178,7 +185,7 @@ def _makeToXmlMethodBodyFromAttrBuiltInWithAttrName(pbShema, cppVarType, attrNam
 """
 if (%(hasVarName)s)
 {
-    _outStream << " " << "%(attrName)s" << "=\\"" << %(varName)s << "\\"";
+    _outStream << " " << "%(attrName)s" << "=\\\\"" << %(varName)s << "\\\\"";
 }
 """ % {
         'hasVarName': 'm_has_%s' % attrName,
@@ -188,13 +195,13 @@ if (%(hasVarName)s)
 
 def _makeToXmlMethodBodyFromAttrBuiltIn(cppVarType, varName):
     if cppVarType == 'boolean':
-        return '_outStream << " " << _attrName << "=\\"" << XSD::BooleanStr(%s) << "\\"";' % varName
+        return '_outStream << " " << _attrName << "=\\\\"" << XSD::BooleanStr(%s) << "\\\\"";' % varName
     else:
-        return '_outStream << " " << _attrName << "=\\"" << %s << "\\"";' % varName
+        return '_outStream << " " << _attrName << "=\\\\"" << %s << "\\\\"";' % varName
 
 
 def _makeToXmlMethodBodyFromAttrEnum(className, enumTypeName, cppVarName):
-    return '_outStream << " " << _attrName << "=\\"" << %s::%s[%s] << "\\"";' % (className, enumTypeName, cppVarName)
+    return '_outStream << " " << _attrName << "=\\\\"" << %s::%s[%s] << "\\\\"";' % (className, enumTypeName, cppVarName)
 
 
 def _makeToXmlMethodBodyFromAttrSTName(pbSchema, attrName):
@@ -230,7 +237,7 @@ def _makeToXmlMethodBodyFromElemSTName(pbSchema, elemName, varName):
 
 
 def _makeToXmlMethodBodyFromElemCTName(pbSchema, elemName, varName):
-    return '%(varName)s->toXml("%(elemName)s", _outStream);' % {
+    return '%(varName)s->toXml("%(elemName)s", "", _outStream);' % {
         'elemName': getXmlElementName(pbSchema.element_form_default, pbSchema.xml_ns_prefix, elemName),
         'varName':varName
     }
@@ -337,7 +344,7 @@ return %s::%s[%s];
 """
 if (%s)
 {
-_outStream << _attrName << "=\\"" << %s() << "\\"";';
+_outStream << _attrName << "=\\\\"" << %s() << "\\\\"";';
 }
 """ % (hasVarName, toStringMethod.name)
     makeToXmlAttrMethod(toXmlMethodBody, cppClass)
