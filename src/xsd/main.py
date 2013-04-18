@@ -4,6 +4,7 @@ __author__ = 'fpgeek'
 
 import xsd_parser as xsdParser
 import xsd_to_cpp as xsd2cpp
+import pbtxt_to_cpp as pb2cpp
 import os
 import google.protobuf.text_format as PT
 import itertools
@@ -22,7 +23,7 @@ def createFileNsNameMap(pbSchemas):
     for ns in allNsList:
         for imp in allImportList:
             if ns.uri == imp.namespace:
-                fileNsNameMap[imp.schema_location] = 'ns_%s' % ns.prefix
+                fileNsNameMap[imp.schema_location] = '%s' % ns.prefix
 
     return fileNsNameMap
 
@@ -41,10 +42,12 @@ def run(xsdFileDirPath):
     for pbSchema in pbSchemas:
         writePbFile('../../files/pb_text/%s.txt' % pbSchema.file_name, pbSchema)
 
-        cppProtoFile = xsd2cpp.parseToCpp(pbSchema)
         fileNsName = fileNsMap.get(pbSchema.file_name)
+        pbSchema.xml_ns_prefix = fileNsName
+        cppProtoFile = xsd2cpp.parseToCpp(pbSchema)
+
         if fileNsName is not None:
-            cppProtoFile.namespace = fileNsName
+            cppProtoFile.namespace = 'ns_%s' % fileNsName
         else:
             cppProtoFile.namespace = 'ns_%s' % pbSchema.file_name[:1]
         writePbFile('../../files/pb_text/%s.cpp.txt' % pbSchema.file_name, cppProtoFile)
