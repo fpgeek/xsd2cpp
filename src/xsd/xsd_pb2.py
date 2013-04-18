@@ -590,7 +590,7 @@ _SCHEMA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
-    descriptor.FieldDescriptor(
+    _descriptor.FieldDescriptor(
       name='xml_ns_prefix', full_name='xsd.gen.Schema.xml_ns_prefix', index=12,
       number=13, type=9, cpp_type=9, label=2,
       has_default_value=False, default_value=unicode("", "utf-8"),
