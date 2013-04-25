@@ -21,7 +21,7 @@ def cppParse(cppSchema, filePath):
     cppBuf += 'namespace %s {\n using namespace std;\n' % cppSchema.namespace
     
     for cls in cppSchema.class_:
-        cppBuf += _makeCppClass(cls, deep)
+        cppBuf += _makeCppClass(cls, '', deep)
     
     cppBuf += '}'
     cppFile.write(cppBuf)
@@ -30,28 +30,34 @@ def cppParse(cppSchema, filePath):
 def _checkPublic(data):
     return data.startswith('public\n')
             
-def _makeCppClass(cppSchema, deep):
+def _makeCppClass(cppSchema, namespace, deep):
     deep += 1
 
     name = cppSchema.name
-    cppBuf = '\n' + '    '*deep + '// %s\n' % cppSchema.name
+
+    cppBuf = '\n' + '    '*deep + '// %s%s\n' % (namespace, name)
+
+    namespace += name + '::'
     
     for con in cppSchema.constructor:
-        cppBuf += _makeCppConstructor(con, name, deep)
+        cppBuf += _makeCppConstructor(con, namespace, name, deep)
         
     if cppSchema.HasField('destructor'):
-        cppBuf += _makeCppDestructor(cppSchema.destructor, name, deep)
+        cppBuf += _makeCppDestructor(cppSchema.destructor, namespace, name, deep)
 
     for met in cppSchema.method:
-        cppBuf += _makeCppMethod(met, name, deep)
+        cppBuf += _makeCppMethod(met, namespace, deep)
 
     for mem in cppSchema.member_var:
-        cppBuf += _makeCppMemberVar(mem, name, deep)
+        cppBuf += _makeCppMemberVar(mem, namespace, deep)
+    
+    for incls in cppSchema.inner_class:
+        cppBuf += _makeCppClass(incls, namespace, deep-1)
     
     return cppBuf
 
-def _makeCppConstructor(cppSchema, className, deep):
-    cppBuf = '    '*deep + className + '::' + className + '('
+def _makeCppConstructor(cppSchema, nameSpace, className, deep):
+    cppBuf = '    '*deep + nameSpace + className + '('
     argFlag = True
     for arg in cppSchema.argument:
         if argFlag:
@@ -81,8 +87,8 @@ def _makeCppConstructor(cppSchema, className, deep):
 def _makeCppConstInit(cppSchema):
     return '%s(%s)' % (cppSchema.name, cppSchema.value)
 
-def _makeCppDestructor(cppSchema, className, deep):
-    cppBuf = '    '*deep + '%s::~%s' % (className, className) + '()\n{\n'
+def _makeCppDestructor(cppSchema, nameSpace, className, deep):
+    cppBuf = '    '*deep + '%s~%s' % (nameSpace, className) + '()\n{\n'
     if cppSchema.HasField('body'):
         cppBuf += _makeCppBody(cppSchema.body.decode('string-escape'), deep)
     cppBuf += '    '*deep + '}\n'
@@ -90,7 +96,7 @@ def _makeCppDestructor(cppSchema, className, deep):
     return cppBuf
 
 def _makeCppMethod(cppSchema, className, deep):
-    cppBuf = '    '*deep + '%s %s::%s(' % (cppSchema.return_type, className, cppSchema.name)
+    cppBuf = '    '*deep + '%s %s%s(' % (cppSchema.return_type, className, cppSchema.name)
     
     argFlag = True
     for arg in cppSchema.argument:
@@ -120,7 +126,7 @@ def _makeCppMemberVar(cppSchema, className, deep):
             if cppSchema.HasField('const') and cppSchema.const:
                    cppBuf += 'const '
 
-            cppBuf += '%s %s::%s' % (cppSchema.type, className, cppSchema.name)
+            cppBuf += '%s %s%s' % (cppSchema.type, className, cppSchema.name)
             if cppSchema.HasField('array') and cppSchema.array:
                 cppBuf += '[] =\n' + '    '*deep + '{\n'
                 deep += 1
