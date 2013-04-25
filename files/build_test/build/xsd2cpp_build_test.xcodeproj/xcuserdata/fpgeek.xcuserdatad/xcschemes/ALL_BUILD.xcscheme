@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "77EAFCCEAAF7490ABD746562"
+               BlueprintIdentifier = "2D6AFD7E5503450EB08A622B"
                BuildableName = "ALL_BUILD"
                BlueprintName = "ALL_BUILD"
                ReferencedContainer = "container:build/xsd2cpp_build_test.xcodeproj">

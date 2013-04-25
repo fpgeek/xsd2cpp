@@ -7,25 +7,25 @@
        objects = {
 
 /* Begin PBXAggregateTarget section */
-              77EAFCCEAAF7490ABD746562 /* ALL_BUILD */ = {
+              2D6AFD7E5503450EB08A622B /* ALL_BUILD */ = {
                      isa = PBXAggregateTarget;
-                     buildConfigurationList = CBB8018F64E84CA88921E317 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+                     buildConfigurationList = 82940C37A1104B54BD154749 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
                      buildPhases = (
-                            2C1A34E2CE254D4FBAF3824F /* CMake Rules */,
+                            712A203F14274197AE28C810 /* CMake Rules */,
                      );
                      dependencies = (
-                            5BA491778DAF455289C57F24 /* PBXTargetDependency */,
-                            AB5F4D4076A04C8E9848BD09 /* PBXTargetDependency */,
-                            0493EFC26BC1426C911E358A /* PBXTargetDependency */,
+                            F0F04BAAE1364A55B8B18C2B /* PBXTargetDependency */,
+                            75FFB3401C6B4C40B9AAD0AF /* PBXTargetDependency */,
+                            2DB787BBA01A4CF8AC7BD22B /* PBXTargetDependency */,
                      );
                      name = ALL_BUILD;
                      productName = ALL_BUILD;
               };
-              8A8DAB5BB22342ABA34C96E0 /* ZERO_CHECK */ = {
+              7608978B0A3A4512A6A7E4BC /* ZERO_CHECK */ = {
                      isa = PBXAggregateTarget;
-                     buildConfigurationList = 479E0167FE6447B3A45476A8 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+                     buildConfigurationList = 04E9F26D166F48B7A9B82D3C /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
                      buildPhases = (
-                            2E86861F37334E049D24CC78 /* CMake Rules */,
+                            8063ABCDE28D4D4CBFB6956A /* CMake Rules */,
                      );
                      dependencies = (
                      );
@@ -35,90 +35,90 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-0C11C5A90A2148A68B9F6F96 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 016CFD11927E4A32BA669C45 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-3B26B63530A247DAB78B5FE2 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = DBB037D94D754533AB4C560E /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-0124EC4091854C2281925DAF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp */ = {isa = PBXBuildFile; fileRef = BBFFDBDD068F48C3A00E8E1A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-8E3DB52C4A1D4A1A943BD820 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 950D94DA27A649B589B80B4D /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-2A8203EA0C974A12A00E3ED5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp */ = {isa = PBXBuildFile; fileRef = BD9626F9DBB042F989A886C5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-B91D78FE99E14018A2F8D512 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 83C117FFA51B4032A100A5BC /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-44896D8D5065448086DBB770 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 0AA55AAE45D4431482E307FD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-5F49E59006BF4165807B6523 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 51C7042BD2184A83939A14FB /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-D41ED32692B947CEA01AC3BF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp */ = {isa = PBXBuildFile; fileRef = C8DFF6BAC7F445A2BA1453AD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-C493225A54DF44CAAF69F95A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 1EF22916298C4ED886116AC4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-44A3810AC5F44C68B65576FA /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 797D54003435498FBD86F3A1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-D24BCDEA87074F3081DAC105 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 5310302D5AE74DCA899774F4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-59D0BED6484A449A923EDC2A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp */ = {isa = PBXBuildFile; fileRef = D4C828E53913485185D06DCF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-891FFA985C30443083140CD0 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 6A58B52EF6B74255A4C42C89 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-1CFB164882BA48B89DEC50FE /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp */ = {isa = PBXBuildFile; fileRef = A0C9E55C36FD422DAD14F99B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-8AF2FA940DA348DC930E2898 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 3373D63E150341ADA2CA75E3 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-7174659D1B6D4A32AEEDD669 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 16B259F0475D481FB838E255 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-AB696070B61449D7A663FE0F /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 5BB5F0E032D54A48A918590D /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-812EF0E70A124CCB999689F7 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp */ = {isa = PBXBuildFile; fileRef = FAE402CFB17F494FAEB7B49F /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-23CB98D5AE8F48D09C731BD6 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp */ = {isa = PBXBuildFile; fileRef = D4F4B644BC2B4109922257C4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-555E80AEFD354176AC16AD69 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 9C13D11B56BC4806BF3E2CBC /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-41B9332E4BE04D739219D48A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 9285E85BAFAB48849C018B02 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-4447D7F468CC486C891CC49D /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 6FCC9AAB6F45493883693DE1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-3570ED9476D944EBABD19A16 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = AFE01BFE288147E5ABB1BA84 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-EE92BB63B2DB48239AD217AE /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 97B8AF8A028A4AC38E2A400F /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-4C85A8A34D3D4A09A3DB542C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp */ = {isa = PBXBuildFile; fileRef = B1F94A8235BB439AA62D3B7C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-C725F30345B74B43A93872A8 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp */ = {isa = PBXBuildFile; fileRef = 0B826EF1C4AF492D8AC99E53 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-11C75A2416204B559A7AF81A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h */ = {isa = PBXBuildFile; fileRef = ECA80A4BD62B4C08BD4A759C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-4DF4D3F07DD54C649E4EF937 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = 7C83FF91061C45088C6BED43 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-ACD7165BB9A747CA9A912523 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h */ = {isa = PBXBuildFile; fileRef = C28D0587075E484EBD4F9015 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-4E45899DC02C4DB18DF2E993 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h */ = {isa = PBXBuildFile; fileRef = 85313DE529DF40B8AE6538F4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-710EB8C76DC1491F87EE3992 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-main_xsd.h */ = {isa = PBXBuildFile; fileRef = 2178D26D72824E05ADDCFD41 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-main_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-8C85AE6AFC9748F88075ECD6 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-picture_xsd.h */ = {isa = PBXBuildFile; fileRef = 67FCF5E338274584BB582838 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-picture_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-7B37BD5669CF4F69A56C8DE6 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-spreadsheetDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = 96B8E577C90C4D569FD07CE4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-spreadsheetDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-33B85CF287B546E49B9E2C07 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-wordprocessingDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = 672DA4FD922B4FB1A9A6DD40 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-wordprocessingDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-E61CBF9F16C844B58E40F1C5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/pml_xsd.h */ = {isa = PBXBuildFile; fileRef = 73EB365012D741D38BB1E026 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/pml_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-3A8B3988A95F4FFD891238AA /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-additionalCharacteristics_xsd.h */ = {isa = PBXBuildFile; fileRef = 95BA971A38BF4E77B427C4E7 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-additionalCharacteristics_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-99DC301EA61D4641892980CF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-bibliography_xsd.h */ = {isa = PBXBuildFile; fileRef = 025552833C984997B8D5D4CD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-bibliography_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-AA10EE851D2043608215A057 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-commonSimpleTypes_xsd.h */ = {isa = PBXBuildFile; fileRef = C22B3F9AD2004338A3362BE7 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-commonSimpleTypes_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-54D55F68C77742E7AC1C4F56 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlDataProperties_xsd.h */ = {isa = PBXBuildFile; fileRef = B2F638084A33491FB1E8BDEB /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlDataProperties_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-9AA44AD52E9B44EDAD0D9EA1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlSchemaProperties_xsd.h */ = {isa = PBXBuildFile; fileRef = 50BE0D600CB8466BB1792470 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlSchemaProperties_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-59E421E6E5324E12A8E3E169 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesCustom_xsd.h */ = {isa = PBXBuildFile; fileRef = F2FB108742014281A762BFDB /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesCustom_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-2685ED95C88440439612F385 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesExtended_xsd.h */ = {isa = PBXBuildFile; fileRef = AFFB9FC3140C42318F99EA9B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesExtended_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-9DBD581B0D0749E1840D1C2F /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h */ = {isa = PBXBuildFile; fileRef = 5C876A8EA5254FC7919C1B52 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-8756A5BDB1754FF195F583A8 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-math_xsd.h */ = {isa = PBXBuildFile; fileRef = 953E77D0ADAA44BE8BB8A05A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-math_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-9397E93ACC234F30B11F494A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-relationshipReference_xsd.h */ = {isa = PBXBuildFile; fileRef = 4D3F8563834A423DB67E3C36 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-relationshipReference_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-D5AEDB20F5CD44B78F4E1762 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/sml_xsd.h */ = {isa = PBXBuildFile; fileRef = 79CE22617FDF4BA4A1C257FA /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/sml_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-29A62B358FB946AF93F9A017 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-main_xsd.h */ = {isa = PBXBuildFile; fileRef = 215E7DA7EB0A4354A7A8A35C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-main_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-E033707E8E304810BBA1EE4B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-officeDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = 1CF3B86593A544D6AB048DAD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-officeDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-BEAF28B7FEA9436890C56890 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-presentationDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = 5DDFC31D6F374ADFB7B7FBC5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-presentationDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-F18C6A57685040FCB047529B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-spreadsheetDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = BB8E32435EB346F5BBAF1F5E /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-spreadsheetDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-92E1DB90EC154F46923C953A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-wordprocessingDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = D49469E7D98F45AFB067C439 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-wordprocessingDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-B80863331C59408F91CC9B50 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/wml_xsd.h */ = {isa = PBXBuildFile; fileRef = E474526C0E594AFAA281F630 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/wml_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
-D5319A109EC14716BC62CD16 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = A898C8CFF14A4604852B9745 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
-425A0E89B4B04BFF83A2242C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp */ = {isa = PBXBuildFile; fileRef = AF3126A4D178401B8410003B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-3D16C1F5B4E64B7D84B614C0 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = A898C8CFF14A4604852B9745 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
+2AD9C96B401440008E2E2C8D /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp */ = {isa = PBXBuildFile; fileRef = EFF0A5E22997460DAA554AEF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+4C28AC31A95943ED89C24B00 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 9FEACC24F5D24EF596C2A3EA /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+F9882CC144C0404D9993A5C9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 0534D4D35B654F1C884F87E1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+605EBA58033B41BF8DA6C392 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 6F19419E07D944FCBEAD11B9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+34346D1DA8644D6C86D58128 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 7E04860304584CE2BED5A875 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+A7C357B1D8494BE7899228B9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 2BDF43D2031B4F749AAE7FDB /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+344713F54950462389F4FBC6 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = F4970BAE450A4D368C73898B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+984DF2D7505D437BB3F2F9C5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 0DE7046A97CF436FBBA3CBE1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+7B82D820C9CE4C738A41D9A6 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 54CF6DB154D344ADA41CD367 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+DEBB6196CA45427E9952D84E /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp */ = {isa = PBXBuildFile; fileRef = EC7EE4A4B4BE4551BC7C9CCD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+100F6F7857BD426288251C06 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp */ = {isa = PBXBuildFile; fileRef = A21CE4B75AC848148378D282 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+11C07E0350884DFC99F7537B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp */ = {isa = PBXBuildFile; fileRef = FACF1C83C661431CBA9DC952 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+31239E11BE1040B9A5448116 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp */ = {isa = PBXBuildFile; fileRef = F92D7F2798A04F6FA02E7601 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+EAA82AE27579461A8158A6B0 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 27A585527FE24E98A20A3275 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+C6C73DF0318146DDA25FFCA3 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 2946300D2B284436A8C3C63C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+EE4237F6DA144C159507BA00 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 710B59D6DC974934943F6B69 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+11EBD907F42748F0A951EC2C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp */ = {isa = PBXBuildFile; fileRef = BCC8433AF71A4DCFA7EE16B5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+9CF7FF62C6494666A842EB14 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp */ = {isa = PBXBuildFile; fileRef = D2E0DF03D8DC47E49B3188F4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+74654C7A21D7435794DFB238 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp */ = {isa = PBXBuildFile; fileRef = ED4325274E77438581816D49 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+C26A04E89C0E4BCBAF62B54A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 7C57035F15504AE680E099F9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+F22A53E0D84549C1BB90AD1A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 2072020EC92E4364AEAFAE2A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+64C6215829684DE78A2B832B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 9A0FAE74E5354539B467306B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+4EEF56B6253F41B49B3C04C5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = E2C0CB5599F544E8BBD72A13 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+8D20B751F6FC402AAA4332B5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 776347D35D8C463D913BC917 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+2BF137C74E7F4006BFD2B2C1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp */ = {isa = PBXBuildFile; fileRef = E46E11B0927344E9979A69C9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+F847FCC2A1D84546A6E71CE2 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp */ = {isa = PBXBuildFile; fileRef = 3DDCD40377AA4CFABA79C513 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+775A83F82D3D4E438D56DB60 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp */ = {isa = PBXBuildFile; fileRef = E3AFCFC3CC12453480EE3E6A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+CAF075418F224124928E3889 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h */ = {isa = PBXBuildFile; fileRef = B4B313A74C0F4810A068E35B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+728CB62FAD234C16817957A3 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = AA4883E76F3149A9AAC50AA7 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+BE37865E007A4FAE91F8D80A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h */ = {isa = PBXBuildFile; fileRef = C7D97775A69F466A99C27645 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+5B492DB368CC4822952FFD9F /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h */ = {isa = PBXBuildFile; fileRef = EFEA227ECCF44D2DA9B5E330 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+C1DFF0CAAC09451189DAAFE3 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-main_xsd.h */ = {isa = PBXBuildFile; fileRef = 7E620BD15FB14B068044C1BD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-main_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+C21D7F8BB9A0491396BF0C1E /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-picture_xsd.h */ = {isa = PBXBuildFile; fileRef = CF3890B387F14340943B54C1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-picture_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+13B89D75EB474179A25BDD99 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-spreadsheetDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = 92926E5D95BB431FBD8FFAB3 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-spreadsheetDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+31DA8D34323945D6B336154E /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-wordprocessingDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = 2F6ADBC3790645B8A0BD82E2 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-wordprocessingDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+F95DAF6C030A44A4BE73257D /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/pml_xsd.h */ = {isa = PBXBuildFile; fileRef = 0C38685A226141BB89798512 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/pml_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+9EF627EF1F7F4014AA495978 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-additionalCharacteristics_xsd.h */ = {isa = PBXBuildFile; fileRef = FD3F57B842DA43E6BB2453C1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-additionalCharacteristics_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+38E7134376AE4B38A37DC4B2 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-bibliography_xsd.h */ = {isa = PBXBuildFile; fileRef = E3C8241048614971A0BCF737 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-bibliography_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+A14DACFF014D47C8A654CFC9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-commonSimpleTypes_xsd.h */ = {isa = PBXBuildFile; fileRef = 5360676392C749769FA347EF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-commonSimpleTypes_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+805B34FA96BE400FAF930A8A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlDataProperties_xsd.h */ = {isa = PBXBuildFile; fileRef = 8CA41179226F4B1EB266CF77 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlDataProperties_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+5A25B6110E83405D866D3AA6 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlSchemaProperties_xsd.h */ = {isa = PBXBuildFile; fileRef = 78CDCC474490490F984DFE7E /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlSchemaProperties_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+4ED26CFAFC734D7C91549E5B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesCustom_xsd.h */ = {isa = PBXBuildFile; fileRef = C53CE3851DF8408BBE463B65 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesCustom_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+B5BB190208B84547B572EBE9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesExtended_xsd.h */ = {isa = PBXBuildFile; fileRef = 681026271D104D159F6004DA /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesExtended_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+71675CD48B404EBE8A9578D6 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h */ = {isa = PBXBuildFile; fileRef = 6B874B1EC5764AD39B1F4A6B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+81B808FE503543F8A8512F17 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-math_xsd.h */ = {isa = PBXBuildFile; fileRef = E5B6E24957E14A55A9C5B01A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-math_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+0509C5A3720C4BF9AB3E08A2 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-relationshipReference_xsd.h */ = {isa = PBXBuildFile; fileRef = A03A94033AF24D10B64ADEE2 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-relationshipReference_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+584E4F312DF14953903220EA /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/sml_xsd.h */ = {isa = PBXBuildFile; fileRef = 6EA36C8858EE4DB99AD67E2A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/sml_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+4FE26A23849548379A13E000 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-main_xsd.h */ = {isa = PBXBuildFile; fileRef = 51C8AB2D507C4D26B3197947 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-main_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+542F88F43EE14E1AB90DDA2D /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-officeDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = C46725F61A0D44579016BA61 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-officeDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+FC9875562E1C40ABB174E783 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-presentationDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = E606711B92A645A298B6EE51 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-presentationDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+386ECC37BBE64EAF8F0B6005 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-spreadsheetDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = 952295B28DA64DC698F0AE60 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-spreadsheetDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+E44C067D81DE4B6496E24F96 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-wordprocessingDrawing_xsd.h */ = {isa = PBXBuildFile; fileRef = 69F395D895444448B9139F68 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-wordprocessingDrawing_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+C9C574A8438849A8933CF391 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/wml_xsd.h */ = {isa = PBXBuildFile; fileRef = 52D3CE98A5DD4F8D8C3F4047 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/wml_xsd.h */; settings = { COMPILER_FLAGS = ""; }; };
+D8AE9E235C204311A941CF03 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 25A5CD52D6E9456381E75425 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
+20E01108F09D4081A91B55C0 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp */ = {isa = PBXBuildFile; fileRef = 90CA0D51F8E34831838DB35F /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp */; settings = { COMPILER_FLAGS = ""; }; };
+808167747A7E44ACA6FD0A41 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 25A5CD52D6E9456381E75425 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildStyle section */
-              69A716E805F3484AA31E3456 /*  */ = {
+              633008926A8C43A98A473DD1 /*  */ = {
                      isa = PBXBuildStyle;
               };
-              DB02AD0310E245E9AF6B84F5 /* Debug */ = {
+              2CAEAA6068CC4F62BEDC9626 /* Debug */ = {
                      isa = PBXBuildStyle;
                      buildSettings = {
                             COPY_PHASE_STRIP = NO;
                      };
                      name = Debug;
               };
-              DD53739F50A44F6C8A94B637 /* Release */ = {
+              050C924E4AC14414B98F29AE /* Release */ = {
                      isa = PBXBuildStyle;
                      buildSettings = {
                             COPY_PHASE_STRIP = NO;
                      };
                      name = Release;
               };
-              4308406177B6434E9600B5A2 /* MinSizeRel */ = {
+              2BB5D734B3CD4A74BE383D67 /* MinSizeRel */ = {
                      isa = PBXBuildStyle;
                      buildSettings = {
                             COPY_PHASE_STRIP = NO;
                      };
                      name = MinSizeRel;
               };
-              ACDD2693F6924D90B08B040A /* RelWithDebInfo */ = {
+              8F3145F47442407FA5F7A087 /* RelWithDebInfo */ = {
                      isa = PBXBuildStyle;
                      buildSettings = {
                             COPY_PHASE_STRIP = NO;
@@ -128,248 +128,248 @@ D5319A109EC14716BC62CD16 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-              040EF25DB644414EAB4E9E89 /* PBXContainerItemProxy */ = {
+              648AB858E2A44D5ABFD7E3C6 /* PBXContainerItemProxy */ = {
                      isa = PBXContainerItemProxy;
-                     containerPortal = 148344E1F2FF45E4BA0421B1 /* Project object */;
+                     containerPortal = 38BE9951B6624C4E93E9FBA6 /* Project object */;
                      proxyType = 1;
-                     remoteGlobalIDString = 36B8F61CD876406F9BD5D857;
-                     remoteInfo = xsd2cpp_build_test;
-              };
-              F2C8E29471F7491593988C51 /* PBXContainerItemProxy */ = {
-                     isa = PBXContainerItemProxy;
-                     containerPortal = 148344E1F2FF45E4BA0421B1 /* Project object */;
-                     proxyType = 1;
-                     remoteGlobalIDString = 6810C77D20014CDE8F0065A8;
+                     remoteGlobalIDString = D4419939C83249B884383E47;
                      remoteInfo = xsd2cpp_build_test_exe;
               };
-              342CFBF4D1F74038BD6CEA0E /* PBXContainerItemProxy */ = {
+              AAC7F5DF3CD74BE69AE9CD0E /* PBXContainerItemProxy */ = {
                      isa = PBXContainerItemProxy;
-                     containerPortal = 148344E1F2FF45E4BA0421B1 /* Project object */;
+                     containerPortal = 38BE9951B6624C4E93E9FBA6 /* Project object */;
                      proxyType = 1;
-                     remoteGlobalIDString = 8A8DAB5BB22342ABA34C96E0;
+                     remoteGlobalIDString = 7608978B0A3A4512A6A7E4BC;
                      remoteInfo = ZERO_CHECK;
+              };
+              4DE617089D81446CA315F779 /* PBXContainerItemProxy */ = {
+                     isa = PBXContainerItemProxy;
+                     containerPortal = 38BE9951B6624C4E93E9FBA6 /* Project object */;
+                     proxyType = 1;
+                     remoteGlobalIDString = E7B72BD1B68740A38246DF96;
+                     remoteInfo = xsd2cpp_build_test;
               };
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-A898C8CFF14A4604852B9745 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text"; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
-016CFD11927E4A32BA669C45 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-chart_xsd.cpp"; path = "src/dml-chart_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-DBB037D94D754533AB4C560E /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-chartDrawing_xsd.cpp"; path = "src/dml-chartDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-BBFFDBDD068F48C3A00E8E1A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-diagram_xsd.cpp"; path = "src/dml-diagram_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-950D94DA27A649B589B80B4D /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-lockedCanvas_xsd.cpp"; path = "src/dml-lockedCanvas_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-BD9626F9DBB042F989A886C5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-main_xsd.cpp"; path = "src/dml-main_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-83C117FFA51B4032A100A5BC /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-picture_xsd.cpp"; path = "src/dml-picture_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-0AA55AAE45D4431482E307FD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-spreadsheetDrawing_xsd.cpp"; path = "src/dml-spreadsheetDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-51C7042BD2184A83939A14FB /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-wordprocessingDrawing_xsd.cpp"; path = "src/dml-wordprocessingDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-C8DFF6BAC7F445A2BA1453AD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "pml_xsd.cpp"; path = "src/pml_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-1EF22916298C4ED886116AC4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-additionalCharacteristics_xsd.cpp"; path = "src/shared-additionalCharacteristics_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-797D54003435498FBD86F3A1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-bibliography_xsd.cpp"; path = "src/shared-bibliography_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-5310302D5AE74DCA899774F4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-commonSimpleTypes_xsd.cpp"; path = "src/shared-commonSimpleTypes_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-D4C828E53913485185D06DCF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-customXmlDataProperties_xsd.cpp"; path = "src/shared-customXmlDataProperties_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-6A58B52EF6B74255A4C42C89 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-customXmlSchemaProperties_xsd.cpp"; path = "src/shared-customXmlSchemaProperties_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-A0C9E55C36FD422DAD14F99B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-documentPropertiesCustom_xsd.cpp"; path = "src/shared-documentPropertiesCustom_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-3373D63E150341ADA2CA75E3 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-documentPropertiesExtended_xsd.cpp"; path = "src/shared-documentPropertiesExtended_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-16B259F0475D481FB838E255 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-documentPropertiesVariantTypes_xsd.cpp"; path = "src/shared-documentPropertiesVariantTypes_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-5BB5F0E032D54A48A918590D /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-math_xsd.cpp"; path = "src/shared-math_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-FAE402CFB17F494FAEB7B49F /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-relationshipReference_xsd.cpp"; path = "src/shared-relationshipReference_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-D4F4B644BC2B4109922257C4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "sml_xsd.cpp"; path = "src/sml_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-9C13D11B56BC4806BF3E2CBC /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "vml-main_xsd.cpp"; path = "src/vml-main_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-9285E85BAFAB48849C018B02 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "vml-officeDrawing_xsd.cpp"; path = "src/vml-officeDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-6FCC9AAB6F45493883693DE1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "vml-presentationDrawing_xsd.cpp"; path = "src/vml-presentationDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-AFE01BFE288147E5ABB1BA84 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "vml-spreadsheetDrawing_xsd.cpp"; path = "src/vml-spreadsheetDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-97B8AF8A028A4AC38E2A400F /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "vml-wordprocessingDrawing_xsd.cpp"; path = "src/vml-wordprocessingDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-B1F94A8235BB439AA62D3B7C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "wml_xsd.cpp"; path = "src/wml_xsd.cpp"; sourceTree = SOURCE_ROOT; };
-0B826EF1C4AF492D8AC99E53 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "xsdtype.cpp"; path = "src/xsdtype/xsdtype.cpp"; sourceTree = SOURCE_ROOT; };
-ECA80A4BD62B4C08BD4A759C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-chart_xsd.h"; path = "include/dml-chart_xsd.h"; sourceTree = SOURCE_ROOT; };
-7C83FF91061C45088C6BED43 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-chartDrawing_xsd.h"; path = "include/dml-chartDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
-C28D0587075E484EBD4F9015 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-diagram_xsd.h"; path = "include/dml-diagram_xsd.h"; sourceTree = SOURCE_ROOT; };
-85313DE529DF40B8AE6538F4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-lockedCanvas_xsd.h"; path = "include/dml-lockedCanvas_xsd.h"; sourceTree = SOURCE_ROOT; };
-2178D26D72824E05ADDCFD41 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-main_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-main_xsd.h"; path = "include/dml-main_xsd.h"; sourceTree = SOURCE_ROOT; };
-67FCF5E338274584BB582838 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-picture_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-picture_xsd.h"; path = "include/dml-picture_xsd.h"; sourceTree = SOURCE_ROOT; };
-96B8E577C90C4D569FD07CE4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-spreadsheetDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-spreadsheetDrawing_xsd.h"; path = "include/dml-spreadsheetDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
-672DA4FD922B4FB1A9A6DD40 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-wordprocessingDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-wordprocessingDrawing_xsd.h"; path = "include/dml-wordprocessingDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
-73EB365012D741D38BB1E026 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/pml_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "pml_xsd.h"; path = "include/pml_xsd.h"; sourceTree = SOURCE_ROOT; };
-95BA971A38BF4E77B427C4E7 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-additionalCharacteristics_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-additionalCharacteristics_xsd.h"; path = "include/shared-additionalCharacteristics_xsd.h"; sourceTree = SOURCE_ROOT; };
-025552833C984997B8D5D4CD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-bibliography_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-bibliography_xsd.h"; path = "include/shared-bibliography_xsd.h"; sourceTree = SOURCE_ROOT; };
-C22B3F9AD2004338A3362BE7 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-commonSimpleTypes_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-commonSimpleTypes_xsd.h"; path = "include/shared-commonSimpleTypes_xsd.h"; sourceTree = SOURCE_ROOT; };
-B2F638084A33491FB1E8BDEB /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlDataProperties_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-customXmlDataProperties_xsd.h"; path = "include/shared-customXmlDataProperties_xsd.h"; sourceTree = SOURCE_ROOT; };
-50BE0D600CB8466BB1792470 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlSchemaProperties_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-customXmlSchemaProperties_xsd.h"; path = "include/shared-customXmlSchemaProperties_xsd.h"; sourceTree = SOURCE_ROOT; };
-F2FB108742014281A762BFDB /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesCustom_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-documentPropertiesCustom_xsd.h"; path = "include/shared-documentPropertiesCustom_xsd.h"; sourceTree = SOURCE_ROOT; };
-AFFB9FC3140C42318F99EA9B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesExtended_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-documentPropertiesExtended_xsd.h"; path = "include/shared-documentPropertiesExtended_xsd.h"; sourceTree = SOURCE_ROOT; };
-5C876A8EA5254FC7919C1B52 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-documentPropertiesVariantTypes_xsd.h"; path = "include/shared-documentPropertiesVariantTypes_xsd.h"; sourceTree = SOURCE_ROOT; };
-953E77D0ADAA44BE8BB8A05A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-math_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-math_xsd.h"; path = "include/shared-math_xsd.h"; sourceTree = SOURCE_ROOT; };
-4D3F8563834A423DB67E3C36 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-relationshipReference_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-relationshipReference_xsd.h"; path = "include/shared-relationshipReference_xsd.h"; sourceTree = SOURCE_ROOT; };
-79CE22617FDF4BA4A1C257FA /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/sml_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "sml_xsd.h"; path = "include/sml_xsd.h"; sourceTree = SOURCE_ROOT; };
-215E7DA7EB0A4354A7A8A35C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-main_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "vml-main_xsd.h"; path = "include/vml-main_xsd.h"; sourceTree = SOURCE_ROOT; };
-1CF3B86593A544D6AB048DAD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-officeDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "vml-officeDrawing_xsd.h"; path = "include/vml-officeDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
-5DDFC31D6F374ADFB7B7FBC5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-presentationDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "vml-presentationDrawing_xsd.h"; path = "include/vml-presentationDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
-BB8E32435EB346F5BBAF1F5E /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-spreadsheetDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "vml-spreadsheetDrawing_xsd.h"; path = "include/vml-spreadsheetDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
-D49469E7D98F45AFB067C439 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-wordprocessingDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "vml-wordprocessingDrawing_xsd.h"; path = "include/vml-wordprocessingDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
-E474526C0E594AFAA281F630 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/wml_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "wml_xsd.h"; path = "include/wml_xsd.h"; sourceTree = SOURCE_ROOT; };
-32E6B503EB9E43EE8C5B6E55 /* xsd2cpp_build_test */ = {isa = PBXFileReference; explicitFileType = "archive.ar"; path = "libxsd2cpp_build_test.a"; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
-AF3126A4D178401B8410003B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "main.cpp"; path = "src/main.cpp"; sourceTree = SOURCE_ROOT; };
-815A10D536944AB0BAA0B39A /* xsd2cpp_build_test_exe */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = xsd2cpp_build_test_exe; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
+25A5CD52D6E9456381E75425 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text"; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
+EFF0A5E22997460DAA554AEF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-chart_xsd.cpp"; path = "src/dml-chart_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+9FEACC24F5D24EF596C2A3EA /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-chartDrawing_xsd.cpp"; path = "src/dml-chartDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+0534D4D35B654F1C884F87E1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-diagram_xsd.cpp"; path = "src/dml-diagram_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+6F19419E07D944FCBEAD11B9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-lockedCanvas_xsd.cpp"; path = "src/dml-lockedCanvas_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+7E04860304584CE2BED5A875 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-main_xsd.cpp"; path = "src/dml-main_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+2BDF43D2031B4F749AAE7FDB /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-picture_xsd.cpp"; path = "src/dml-picture_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+F4970BAE450A4D368C73898B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-spreadsheetDrawing_xsd.cpp"; path = "src/dml-spreadsheetDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+0DE7046A97CF436FBBA3CBE1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "dml-wordprocessingDrawing_xsd.cpp"; path = "src/dml-wordprocessingDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+54CF6DB154D344ADA41CD367 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "pml_xsd.cpp"; path = "src/pml_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+EC7EE4A4B4BE4551BC7C9CCD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-additionalCharacteristics_xsd.cpp"; path = "src/shared-additionalCharacteristics_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+A21CE4B75AC848148378D282 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-bibliography_xsd.cpp"; path = "src/shared-bibliography_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+FACF1C83C661431CBA9DC952 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-commonSimpleTypes_xsd.cpp"; path = "src/shared-commonSimpleTypes_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+F92D7F2798A04F6FA02E7601 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-customXmlDataProperties_xsd.cpp"; path = "src/shared-customXmlDataProperties_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+27A585527FE24E98A20A3275 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-customXmlSchemaProperties_xsd.cpp"; path = "src/shared-customXmlSchemaProperties_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+2946300D2B284436A8C3C63C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-documentPropertiesCustom_xsd.cpp"; path = "src/shared-documentPropertiesCustom_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+710B59D6DC974934943F6B69 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-documentPropertiesExtended_xsd.cpp"; path = "src/shared-documentPropertiesExtended_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+BCC8433AF71A4DCFA7EE16B5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-documentPropertiesVariantTypes_xsd.cpp"; path = "src/shared-documentPropertiesVariantTypes_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+D2E0DF03D8DC47E49B3188F4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-math_xsd.cpp"; path = "src/shared-math_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+ED4325274E77438581816D49 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "shared-relationshipReference_xsd.cpp"; path = "src/shared-relationshipReference_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+7C57035F15504AE680E099F9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "sml_xsd.cpp"; path = "src/sml_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+2072020EC92E4364AEAFAE2A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "vml-main_xsd.cpp"; path = "src/vml-main_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+9A0FAE74E5354539B467306B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "vml-officeDrawing_xsd.cpp"; path = "src/vml-officeDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+E2C0CB5599F544E8BBD72A13 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "vml-presentationDrawing_xsd.cpp"; path = "src/vml-presentationDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+776347D35D8C463D913BC917 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "vml-spreadsheetDrawing_xsd.cpp"; path = "src/vml-spreadsheetDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+E46E11B0927344E9979A69C9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "vml-wordprocessingDrawing_xsd.cpp"; path = "src/vml-wordprocessingDrawing_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+3DDCD40377AA4CFABA79C513 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "wml_xsd.cpp"; path = "src/wml_xsd.cpp"; sourceTree = SOURCE_ROOT; };
+E3AFCFC3CC12453480EE3E6A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "xsdtype.cpp"; path = "src/xsdtype/xsdtype.cpp"; sourceTree = SOURCE_ROOT; };
+B4B313A74C0F4810A068E35B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-chart_xsd.h"; path = "include/dml-chart_xsd.h"; sourceTree = SOURCE_ROOT; };
+AA4883E76F3149A9AAC50AA7 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-chartDrawing_xsd.h"; path = "include/dml-chartDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
+C7D97775A69F466A99C27645 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-diagram_xsd.h"; path = "include/dml-diagram_xsd.h"; sourceTree = SOURCE_ROOT; };
+EFEA227ECCF44D2DA9B5E330 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-lockedCanvas_xsd.h"; path = "include/dml-lockedCanvas_xsd.h"; sourceTree = SOURCE_ROOT; };
+7E620BD15FB14B068044C1BD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-main_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-main_xsd.h"; path = "include/dml-main_xsd.h"; sourceTree = SOURCE_ROOT; };
+CF3890B387F14340943B54C1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-picture_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-picture_xsd.h"; path = "include/dml-picture_xsd.h"; sourceTree = SOURCE_ROOT; };
+92926E5D95BB431FBD8FFAB3 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-spreadsheetDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-spreadsheetDrawing_xsd.h"; path = "include/dml-spreadsheetDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
+2F6ADBC3790645B8A0BD82E2 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-wordprocessingDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "dml-wordprocessingDrawing_xsd.h"; path = "include/dml-wordprocessingDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
+0C38685A226141BB89798512 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/pml_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "pml_xsd.h"; path = "include/pml_xsd.h"; sourceTree = SOURCE_ROOT; };
+FD3F57B842DA43E6BB2453C1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-additionalCharacteristics_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-additionalCharacteristics_xsd.h"; path = "include/shared-additionalCharacteristics_xsd.h"; sourceTree = SOURCE_ROOT; };
+E3C8241048614971A0BCF737 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-bibliography_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-bibliography_xsd.h"; path = "include/shared-bibliography_xsd.h"; sourceTree = SOURCE_ROOT; };
+5360676392C749769FA347EF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-commonSimpleTypes_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-commonSimpleTypes_xsd.h"; path = "include/shared-commonSimpleTypes_xsd.h"; sourceTree = SOURCE_ROOT; };
+8CA41179226F4B1EB266CF77 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlDataProperties_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-customXmlDataProperties_xsd.h"; path = "include/shared-customXmlDataProperties_xsd.h"; sourceTree = SOURCE_ROOT; };
+78CDCC474490490F984DFE7E /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlSchemaProperties_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-customXmlSchemaProperties_xsd.h"; path = "include/shared-customXmlSchemaProperties_xsd.h"; sourceTree = SOURCE_ROOT; };
+C53CE3851DF8408BBE463B65 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesCustom_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-documentPropertiesCustom_xsd.h"; path = "include/shared-documentPropertiesCustom_xsd.h"; sourceTree = SOURCE_ROOT; };
+681026271D104D159F6004DA /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesExtended_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-documentPropertiesExtended_xsd.h"; path = "include/shared-documentPropertiesExtended_xsd.h"; sourceTree = SOURCE_ROOT; };
+6B874B1EC5764AD39B1F4A6B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-documentPropertiesVariantTypes_xsd.h"; path = "include/shared-documentPropertiesVariantTypes_xsd.h"; sourceTree = SOURCE_ROOT; };
+E5B6E24957E14A55A9C5B01A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-math_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-math_xsd.h"; path = "include/shared-math_xsd.h"; sourceTree = SOURCE_ROOT; };
+A03A94033AF24D10B64ADEE2 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-relationshipReference_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "shared-relationshipReference_xsd.h"; path = "include/shared-relationshipReference_xsd.h"; sourceTree = SOURCE_ROOT; };
+6EA36C8858EE4DB99AD67E2A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/sml_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "sml_xsd.h"; path = "include/sml_xsd.h"; sourceTree = SOURCE_ROOT; };
+51C8AB2D507C4D26B3197947 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-main_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "vml-main_xsd.h"; path = "include/vml-main_xsd.h"; sourceTree = SOURCE_ROOT; };
+C46725F61A0D44579016BA61 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-officeDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "vml-officeDrawing_xsd.h"; path = "include/vml-officeDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
+E606711B92A645A298B6EE51 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-presentationDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "vml-presentationDrawing_xsd.h"; path = "include/vml-presentationDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
+952295B28DA64DC698F0AE60 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-spreadsheetDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "vml-spreadsheetDrawing_xsd.h"; path = "include/vml-spreadsheetDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
+69F395D895444448B9139F68 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-wordprocessingDrawing_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "vml-wordprocessingDrawing_xsd.h"; path = "include/vml-wordprocessingDrawing_xsd.h"; sourceTree = SOURCE_ROOT; };
+52D3CE98A5DD4F8D8C3F4047 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/wml_xsd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.c.h"; name = "wml_xsd.h"; path = "include/wml_xsd.h"; sourceTree = SOURCE_ROOT; };
+567195CC1F9B428A94472B4C /* xsd2cpp_build_test */ = {isa = PBXFileReference; explicitFileType = "archive.ar"; path = "libxsd2cpp_build_test.a"; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
+90CA0D51F8E34831838DB35F /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "main.cpp"; path = "src/main.cpp"; sourceTree = SOURCE_ROOT; };
+00E6632F08D6418DBF1C782E /* xsd2cpp_build_test_exe */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = xsd2cpp_build_test_exe; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-              4E7604A1AE9440E2812474F2  = {
+              05F2706419BD4571A07FEFD7  = {
                      isa = PBXGroup;
                      children = (
-                            82928C3E2C714C7FBE6915AF /* Sources */,
-                            102DC266BECD4A909E8404C6 /* Resources */,
-                            3C50C2E64BB04DD6A2C0EE26 /* Products */,
+                            822FBEFC86524AC382C0E53F /* Sources */,
+                            23546B50A81B48DC857F44E2 /* Resources */,
+                            9E6F65FC0CCC42C793807BC4 /* Products */,
                      );
                      sourceTree = "<group>";
               };
-              82928C3E2C714C7FBE6915AF /* Sources */ = {
+              822FBEFC86524AC382C0E53F /* Sources */ = {
                      isa = PBXGroup;
                      children = (
-                            6526327842DB4D24957445D4 /* ALL_BUILD */,
-                            E854B53D93454B22BD99A548 /* ZERO_CHECK */,
-                            AC7B209BB47E47EC803B72DC /* xsd2cpp_build_test */,
-                            D3B1BB2484244E089EDBCAAC /* xsd2cpp_build_test_exe */,
+                            8EC384EC22CC458D81AD578D /* ALL_BUILD */,
+                            756E28A85AA64E0394D00E89 /* ZERO_CHECK */,
+                            025C9B8F0B5542F0A29A7F44 /* xsd2cpp_build_test */,
+                            92E73E80E8354F99A3AE5C66 /* xsd2cpp_build_test_exe */,
                      );
                      name = Sources;
                      sourceTree = "<group>";
               };
-              102DC266BECD4A909E8404C6 /* Resources */ = {
+              23546B50A81B48DC857F44E2 /* Resources */ = {
                      isa = PBXGroup;
                      children = (
                      );
                      name = Resources;
                      sourceTree = "<group>";
               };
-              6526327842DB4D24957445D4 /* ALL_BUILD */ = {
+              8EC384EC22CC458D81AD578D /* ALL_BUILD */ = {
                      isa = PBXGroup;
                      children = (
-                            8EF8BBF44C4A4893AD1E6F01 /* CMake Rules */,
-                            A898C8CFF14A4604852B9745 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */,
+                            E1AB5C97BFEE4C03BEE449C5 /* CMake Rules */,
+                            25A5CD52D6E9456381E75425 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */,
                      );
                      name = ALL_BUILD;
                      sourceTree = "<group>";
               };
-              8EF8BBF44C4A4893AD1E6F01 /* CMake Rules */ = {
+              E1AB5C97BFEE4C03BEE449C5 /* CMake Rules */ = {
                      isa = PBXGroup;
                      children = (
                      );
                      name = "CMake Rules";
                      sourceTree = "<group>";
               };
-              E854B53D93454B22BD99A548 /* ZERO_CHECK */ = {
+              756E28A85AA64E0394D00E89 /* ZERO_CHECK */ = {
                      isa = PBXGroup;
                      children = (
-                            52AF60958AED4E0982C0091A /* CMake Rules */,
-                            A898C8CFF14A4604852B9745 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */,
+                            ABC2831E4F384F98A8AE4EF5 /* CMake Rules */,
+                            25A5CD52D6E9456381E75425 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */,
                      );
                      name = ZERO_CHECK;
                      sourceTree = "<group>";
               };
-              52AF60958AED4E0982C0091A /* CMake Rules */ = {
+              ABC2831E4F384F98A8AE4EF5 /* CMake Rules */ = {
                      isa = PBXGroup;
                      children = (
                      );
                      name = "CMake Rules";
                      sourceTree = "<group>";
               };
-              AC7B209BB47E47EC803B72DC /* xsd2cpp_build_test */ = {
+              025C9B8F0B5542F0A29A7F44 /* xsd2cpp_build_test */ = {
                      isa = PBXGroup;
                      children = (
-                            17331C278998464CAB3E0418 /* Source Files */,
-                            A5C8E4C188734B97987E001E /* Header Files */,
-                            A898C8CFF14A4604852B9745 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */,
+                            2D1112FB64E543909FB4605D /* Source Files */,
+                            4D0BA5CF31B64C47A51529EA /* Header Files */,
+                            25A5CD52D6E9456381E75425 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */,
                      );
                      name = xsd2cpp_build_test;
                      sourceTree = "<group>";
               };
-              17331C278998464CAB3E0418 /* Source Files */ = {
+              2D1112FB64E543909FB4605D /* Source Files */ = {
                      isa = PBXGroup;
                      children = (
-                            016CFD11927E4A32BA669C45 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp */,
-                            DBB037D94D754533AB4C560E /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp */,
-                            BBFFDBDD068F48C3A00E8E1A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp */,
-                            950D94DA27A649B589B80B4D /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp */,
-                            BD9626F9DBB042F989A886C5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp */,
-                            83C117FFA51B4032A100A5BC /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp */,
-                            0AA55AAE45D4431482E307FD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp */,
-                            51C7042BD2184A83939A14FB /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp */,
-                            C8DFF6BAC7F445A2BA1453AD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp */,
-                            1EF22916298C4ED886116AC4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp */,
-                            797D54003435498FBD86F3A1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp */,
-                            5310302D5AE74DCA899774F4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp */,
-                            D4C828E53913485185D06DCF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp */,
-                            6A58B52EF6B74255A4C42C89 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp */,
-                            A0C9E55C36FD422DAD14F99B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp */,
-                            3373D63E150341ADA2CA75E3 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp */,
-                            16B259F0475D481FB838E255 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp */,
-                            5BB5F0E032D54A48A918590D /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp */,
-                            FAE402CFB17F494FAEB7B49F /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp */,
-                            D4F4B644BC2B4109922257C4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp */,
-                            9C13D11B56BC4806BF3E2CBC /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp */,
-                            9285E85BAFAB48849C018B02 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp */,
-                            6FCC9AAB6F45493883693DE1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp */,
-                            AFE01BFE288147E5ABB1BA84 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp */,
-                            97B8AF8A028A4AC38E2A400F /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp */,
-                            B1F94A8235BB439AA62D3B7C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp */,
-                            0B826EF1C4AF492D8AC99E53 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp */,
+                            EFF0A5E22997460DAA554AEF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp */,
+                            9FEACC24F5D24EF596C2A3EA /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp */,
+                            0534D4D35B654F1C884F87E1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp */,
+                            6F19419E07D944FCBEAD11B9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp */,
+                            7E04860304584CE2BED5A875 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp */,
+                            2BDF43D2031B4F749AAE7FDB /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp */,
+                            F4970BAE450A4D368C73898B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp */,
+                            0DE7046A97CF436FBBA3CBE1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp */,
+                            54CF6DB154D344ADA41CD367 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp */,
+                            EC7EE4A4B4BE4551BC7C9CCD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp */,
+                            A21CE4B75AC848148378D282 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp */,
+                            FACF1C83C661431CBA9DC952 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp */,
+                            F92D7F2798A04F6FA02E7601 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp */,
+                            27A585527FE24E98A20A3275 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp */,
+                            2946300D2B284436A8C3C63C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp */,
+                            710B59D6DC974934943F6B69 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp */,
+                            BCC8433AF71A4DCFA7EE16B5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp */,
+                            D2E0DF03D8DC47E49B3188F4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp */,
+                            ED4325274E77438581816D49 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp */,
+                            7C57035F15504AE680E099F9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp */,
+                            2072020EC92E4364AEAFAE2A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp */,
+                            9A0FAE74E5354539B467306B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp */,
+                            E2C0CB5599F544E8BBD72A13 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp */,
+                            776347D35D8C463D913BC917 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp */,
+                            E46E11B0927344E9979A69C9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp */,
+                            3DDCD40377AA4CFABA79C513 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp */,
+                            E3AFCFC3CC12453480EE3E6A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp */,
                      );
                      name = "Source Files";
                      sourceTree = "<group>";
               };
-              A5C8E4C188734B97987E001E /* Header Files */ = {
+              4D0BA5CF31B64C47A51529EA /* Header Files */ = {
                      isa = PBXGroup;
                      children = (
-                            ECA80A4BD62B4C08BD4A759C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h */,
-                            7C83FF91061C45088C6BED43 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h */,
-                            C28D0587075E484EBD4F9015 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h */,
-                            85313DE529DF40B8AE6538F4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h */,
-                            2178D26D72824E05ADDCFD41 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-main_xsd.h */,
-                            67FCF5E338274584BB582838 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-picture_xsd.h */,
-                            96B8E577C90C4D569FD07CE4 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-spreadsheetDrawing_xsd.h */,
-                            672DA4FD922B4FB1A9A6DD40 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-wordprocessingDrawing_xsd.h */,
-                            73EB365012D741D38BB1E026 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/pml_xsd.h */,
-                            95BA971A38BF4E77B427C4E7 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-additionalCharacteristics_xsd.h */,
-                            025552833C984997B8D5D4CD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-bibliography_xsd.h */,
-                            C22B3F9AD2004338A3362BE7 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-commonSimpleTypes_xsd.h */,
-                            B2F638084A33491FB1E8BDEB /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlDataProperties_xsd.h */,
-                            50BE0D600CB8466BB1792470 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlSchemaProperties_xsd.h */,
-                            F2FB108742014281A762BFDB /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesCustom_xsd.h */,
-                            AFFB9FC3140C42318F99EA9B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesExtended_xsd.h */,
-                            5C876A8EA5254FC7919C1B52 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h */,
-                            953E77D0ADAA44BE8BB8A05A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-math_xsd.h */,
-                            4D3F8563834A423DB67E3C36 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-relationshipReference_xsd.h */,
-                            79CE22617FDF4BA4A1C257FA /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/sml_xsd.h */,
-                            215E7DA7EB0A4354A7A8A35C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-main_xsd.h */,
-                            1CF3B86593A544D6AB048DAD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-officeDrawing_xsd.h */,
-                            5DDFC31D6F374ADFB7B7FBC5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-presentationDrawing_xsd.h */,
-                            BB8E32435EB346F5BBAF1F5E /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-spreadsheetDrawing_xsd.h */,
-                            D49469E7D98F45AFB067C439 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-wordprocessingDrawing_xsd.h */,
-                            E474526C0E594AFAA281F630 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/wml_xsd.h */,
+                            B4B313A74C0F4810A068E35B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h */,
+                            AA4883E76F3149A9AAC50AA7 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h */,
+                            C7D97775A69F466A99C27645 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h */,
+                            EFEA227ECCF44D2DA9B5E330 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h */,
+                            7E620BD15FB14B068044C1BD /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-main_xsd.h */,
+                            CF3890B387F14340943B54C1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-picture_xsd.h */,
+                            92926E5D95BB431FBD8FFAB3 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-spreadsheetDrawing_xsd.h */,
+                            2F6ADBC3790645B8A0BD82E2 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-wordprocessingDrawing_xsd.h */,
+                            0C38685A226141BB89798512 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/pml_xsd.h */,
+                            FD3F57B842DA43E6BB2453C1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-additionalCharacteristics_xsd.h */,
+                            E3C8241048614971A0BCF737 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-bibliography_xsd.h */,
+                            5360676392C749769FA347EF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-commonSimpleTypes_xsd.h */,
+                            8CA41179226F4B1EB266CF77 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlDataProperties_xsd.h */,
+                            78CDCC474490490F984DFE7E /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlSchemaProperties_xsd.h */,
+                            C53CE3851DF8408BBE463B65 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesCustom_xsd.h */,
+                            681026271D104D159F6004DA /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesExtended_xsd.h */,
+                            6B874B1EC5764AD39B1F4A6B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h */,
+                            E5B6E24957E14A55A9C5B01A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-math_xsd.h */,
+                            A03A94033AF24D10B64ADEE2 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-relationshipReference_xsd.h */,
+                            6EA36C8858EE4DB99AD67E2A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/sml_xsd.h */,
+                            51C8AB2D507C4D26B3197947 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-main_xsd.h */,
+                            C46725F61A0D44579016BA61 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-officeDrawing_xsd.h */,
+                            E606711B92A645A298B6EE51 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-presentationDrawing_xsd.h */,
+                            952295B28DA64DC698F0AE60 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-spreadsheetDrawing_xsd.h */,
+                            69F395D895444448B9139F68 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-wordprocessingDrawing_xsd.h */,
+                            52D3CE98A5DD4F8D8C3F4047 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/wml_xsd.h */,
                      );
                      name = "Header Files";
                      sourceTree = "<group>";
               };
-              D3B1BB2484244E089EDBCAAC /* xsd2cpp_build_test_exe */ = {
+              92E73E80E8354F99A3AE5C66 /* xsd2cpp_build_test_exe */ = {
                      isa = PBXGroup;
                      children = (
-                            45920F8AAB9144AFB030829B /* Source Files */,
-                            A898C8CFF14A4604852B9745 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */,
+                            D42C91E7CB084702AD04EB02 /* Source Files */,
+                            25A5CD52D6E9456381E75425 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/CMakeLists.txt */,
                      );
                      name = xsd2cpp_build_test_exe;
                      sourceTree = "<group>";
               };
-              45920F8AAB9144AFB030829B /* Source Files */ = {
+              D42C91E7CB084702AD04EB02 /* Source Files */ = {
                      isa = PBXGroup;
                      children = (
-                            AF3126A4D178401B8410003B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp */,
+                            90CA0D51F8E34831838DB35F /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp */,
                      );
                      name = "Source Files";
                      sourceTree = "<group>";
               };
-              3C50C2E64BB04DD6A2C0EE26 /* Products */ = {
+              9E6F65FC0CCC42C793807BC4 /* Products */ = {
                      isa = PBXGroup;
                      children = (
-                            32E6B503EB9E43EE8C5B6E55 /* xsd2cpp_build_test */,
-                            815A10D536944AB0BAA0B39A /* xsd2cpp_build_test_exe */,
+                            567195CC1F9B428A94472B4C /* xsd2cpp_build_test */,
+                            00E6632F08D6418DBF1C782E /* xsd2cpp_build_test_exe */,
                      );
                      name = Products;
                      sourceTree = "<group>";
@@ -377,74 +377,74 @@ AF3126A4D178401B8410003B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-              36B8F61CD876406F9BD5D857 /* xsd2cpp_build_test */ = {
+              E7B72BD1B68740A38246DF96 /* xsd2cpp_build_test */ = {
                      isa = PBXNativeTarget;
-                     buildConfigurationList = E096F4556A304430BF83346B /* Build configuration list for PBXNativeTarget "xsd2cpp_build_test" */;
+                     buildConfigurationList = 5C0ED59AE0FF420AAA7CE711 /* Build configuration list for PBXNativeTarget "xsd2cpp_build_test" */;
                      buildPhases = (
-                            0DE6FC471A014659B764E25E /* Sources */,
-                            D5B3CEC0E13D4A8BA318DB6C /* CMake PostBuild Rules */,
+                            05C9624B67324BA8ABD39DB8 /* Sources */,
+                            9DAD5DF0783041B883339609 /* CMake PostBuild Rules */,
                      );
                      buildRules = (
                      );
                      dependencies = (
-                            0493EFC26BC1426C911E358A /* PBXTargetDependency */,
+                            75FFB3401C6B4C40B9AAD0AF /* PBXTargetDependency */,
                      );
                      name = xsd2cpp_build_test;
                      productName = xsd2cpp_build_test;
-                     productReference = 32E6B503EB9E43EE8C5B6E55 /* xsd2cpp_build_test */;
+                     productReference = 567195CC1F9B428A94472B4C /* xsd2cpp_build_test */;
                      productType = "com.apple.product-type.library.static";
               };
-              6810C77D20014CDE8F0065A8 /* xsd2cpp_build_test_exe */ = {
+              D4419939C83249B884383E47 /* xsd2cpp_build_test_exe */ = {
                      isa = PBXNativeTarget;
-                     buildConfigurationList = C9EC21FDA6FF42EC8FDE19FA /* Build configuration list for PBXNativeTarget "xsd2cpp_build_test_exe" */;
+                     buildConfigurationList = 9BB143535F184633B433D7CE /* Build configuration list for PBXNativeTarget "xsd2cpp_build_test_exe" */;
                      buildPhases = (
-                            51A26CF7E923460DAED85E00 /* Sources */,
-                            EC47081453F74D1886FB67D5 /* CMake PostBuild Rules */,
+                            588179D77CAE4D9984AA91AD /* Sources */,
+                            F5D9111B7AB64E2DB22DBDB7 /* CMake PostBuild Rules */,
                      );
                      buildRules = (
                      );
                      dependencies = (
-                            5BA491778DAF455289C57F24 /* PBXTargetDependency */,
-                            0493EFC26BC1426C911E358A /* PBXTargetDependency */,
+                            75FFB3401C6B4C40B9AAD0AF /* PBXTargetDependency */,
+                            2DB787BBA01A4CF8AC7BD22B /* PBXTargetDependency */,
                      );
                      name = xsd2cpp_build_test_exe;
                      productName = xsd2cpp_build_test_exe;
-                     productReference = 815A10D536944AB0BAA0B39A /* xsd2cpp_build_test_exe */;
+                     productReference = 00E6632F08D6418DBF1C782E /* xsd2cpp_build_test_exe */;
                      productType = "com.apple.product-type.tool";
               };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-              148344E1F2FF45E4BA0421B1 /* Project object */ = {
+              38BE9951B6624C4E93E9FBA6 /* Project object */ = {
                      isa = PBXProject;
                      attributes = {
                             BuildIndependentTargetsInParallel = YES;
                      };
-                     buildConfigurationList = 3C540DA40E404B9EB007DD6B /* Build configuration list for PBXProject  "xsd2cpp_build_test" */;
+                     buildConfigurationList = 412DBF3FFB3D46F4BAA52CD2 /* Build configuration list for PBXProject  "xsd2cpp_build_test" */;
                      buildSettings = {
                      };
                      buildStyles = (
-                            DB02AD0310E245E9AF6B84F5 /* Debug */,
-                            DD53739F50A44F6C8A94B637 /* Release */,
-                            4308406177B6434E9600B5A2 /* MinSizeRel */,
-                            ACDD2693F6924D90B08B040A /* RelWithDebInfo */,
+                            2CAEAA6068CC4F62BEDC9626 /* Debug */,
+                            050C924E4AC14414B98F29AE /* Release */,
+                            2BB5D734B3CD4A74BE383D67 /* MinSizeRel */,
+                            8F3145F47442407FA5F7A087 /* RelWithDebInfo */,
                      );
                      compatibilityVersion = "Xcode 3.2";
                      hasScannedForEncodings = 0;
-                     mainGroup = 4E7604A1AE9440E2812474F2;
+                     mainGroup = 05F2706419BD4571A07FEFD7;
                      projectDirPath = "..";
                      projectRoot = "";
                      targets = (
-                            77EAFCCEAAF7490ABD746562 /* ALL_BUILD */,
-                            8A8DAB5BB22342ABA34C96E0 /* ZERO_CHECK */,
-                            36B8F61CD876406F9BD5D857 /* xsd2cpp_build_test */,
-                            6810C77D20014CDE8F0065A8 /* xsd2cpp_build_test_exe */,
+                            2D6AFD7E5503450EB08A622B /* ALL_BUILD */,
+                            7608978B0A3A4512A6A7E4BC /* ZERO_CHECK */,
+                            E7B72BD1B68740A38246DF96 /* xsd2cpp_build_test */,
+                            D4419939C83249B884383E47 /* xsd2cpp_build_test_exe */,
                      );
               };
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-              B52B21E9374F458AB7AD6C1D /*  */ = {
+              49ED99C04EFA45BA8D132663 /*  */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -459,7 +459,7 @@ AF3126A4D178401B8410003B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/
 exit 0";
                      showEnvVarsInLog = 0;
               };
-              2C1A34E2CE254D4FBAF3824F /* CMake Rules */ = {
+              712A203F14274197AE28C810 /* CMake Rules */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -470,7 +470,7 @@ exit 0";
                      shellScript = "make -C /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
                      showEnvVarsInLog = 0;
               };
-              79227F51C1B2420BB5C6D499 /*  */ = {
+              B0ABCD94D81E493CBD54AC9C /*  */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -485,7 +485,7 @@ exit 0";
 exit 0";
                      showEnvVarsInLog = 0;
               };
-              2E86861F37334E049D24CC78 /* CMake Rules */ = {
+              8063ABCDE28D4D4CBFB6956A /* CMake Rules */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -496,7 +496,7 @@ exit 0";
                      shellScript = "make -C /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
                      showEnvVarsInLog = 0;
               };
-              D5B3CEC0E13D4A8BA318DB6C /* CMake PostBuild Rules */ = {
+              9DAD5DF0783041B883339609 /* CMake PostBuild Rules */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -507,7 +507,7 @@ exit 0";
                      shellScript = "make -C /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/xsd2cpp_build_test_postBuildPhase.make$CONFIGURATION all";
                      showEnvVarsInLog = 0;
               };
-              EC47081453F74D1886FB67D5 /* CMake PostBuild Rules */ = {
+              F5D9111B7AB64E2DB22DBDB7 /* CMake PostBuild Rules */ = {
                      isa = PBXShellScriptBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
@@ -521,70 +521,70 @@ exit 0";
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-              0DE6FC471A014659B764E25E /* Sources */ = {
+              05C9624B67324BA8ABD39DB8 /* Sources */ = {
                      isa = PBXSourcesBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
-                            0C11C5A90A2148A68B9F6F96 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp */,
-                            3B26B63530A247DAB78B5FE2 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp */,
-                            0124EC4091854C2281925DAF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp */,
-                            8E3DB52C4A1D4A1A943BD820 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp */,
-                            2A8203EA0C974A12A00E3ED5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp */,
-                            B91D78FE99E14018A2F8D512 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp */,
-                            44896D8D5065448086DBB770 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp */,
-                            5F49E59006BF4165807B6523 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp */,
-                            D41ED32692B947CEA01AC3BF /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp */,
-                            C493225A54DF44CAAF69F95A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp */,
-                            44A3810AC5F44C68B65576FA /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp */,
-                            D24BCDEA87074F3081DAC105 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp */,
-                            59D0BED6484A449A923EDC2A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp */,
-                            891FFA985C30443083140CD0 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp */,
-                            1CFB164882BA48B89DEC50FE /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp */,
-                            8AF2FA940DA348DC930E2898 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp */,
-                            7174659D1B6D4A32AEEDD669 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp */,
-                            AB696070B61449D7A663FE0F /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp */,
-                            812EF0E70A124CCB999689F7 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp */,
-                            23CB98D5AE8F48D09C731BD6 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp */,
-                            555E80AEFD354176AC16AD69 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp */,
-                            41B9332E4BE04D739219D48A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp */,
-                            4447D7F468CC486C891CC49D /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp */,
-                            3570ED9476D944EBABD19A16 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp */,
-                            EE92BB63B2DB48239AD217AE /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp */,
-                            4C85A8A34D3D4A09A3DB542C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp */,
-                            C725F30345B74B43A93872A8 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp */,
+                            2AD9C96B401440008E2E2C8D /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp */,
+                            4C28AC31A95943ED89C24B00 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp */,
+                            F9882CC144C0404D9993A5C9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp */,
+                            605EBA58033B41BF8DA6C392 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp */,
+                            34346D1DA8644D6C86D58128 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp */,
+                            A7C357B1D8494BE7899228B9 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp */,
+                            344713F54950462389F4FBC6 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp */,
+                            984DF2D7505D437BB3F2F9C5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp */,
+                            7B82D820C9CE4C738A41D9A6 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp */,
+                            DEBB6196CA45427E9952D84E /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp */,
+                            100F6F7857BD426288251C06 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp */,
+                            11C07E0350884DFC99F7537B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp */,
+                            31239E11BE1040B9A5448116 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp */,
+                            EAA82AE27579461A8158A6B0 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp */,
+                            C6C73DF0318146DDA25FFCA3 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp */,
+                            EE4237F6DA144C159507BA00 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp */,
+                            11EBD907F42748F0A951EC2C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp */,
+                            9CF7FF62C6494666A842EB14 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp */,
+                            74654C7A21D7435794DFB238 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp */,
+                            C26A04E89C0E4BCBAF62B54A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp */,
+                            F22A53E0D84549C1BB90AD1A /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp */,
+                            64C6215829684DE78A2B832B /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp */,
+                            4EEF56B6253F41B49B3C04C5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp */,
+                            8D20B751F6FC402AAA4332B5 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp */,
+                            2BF137C74E7F4006BFD2B2C1 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp */,
+                            F847FCC2A1D84546A6E71CE2 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp */,
+                            775A83F82D3D4E438D56DB60 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp */,
                      );
                      runOnlyForDeploymentPostprocessing = 0;
               };
-              51A26CF7E923460DAED85E00 /* Sources */ = {
+              588179D77CAE4D9984AA91AD /* Sources */ = {
                      isa = PBXSourcesBuildPhase;
                      buildActionMask = 2147483647;
                      files = (
-                            425A0E89B4B04BFF83A2242C /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp */,
+                            20E01108F09D4081A91B55C0 /* /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp */,
                      );
                      runOnlyForDeploymentPostprocessing = 0;
               };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-              5BA491778DAF455289C57F24 /* PBXTargetDependency */ = {
+              F0F04BAAE1364A55B8B18C2B /* PBXTargetDependency */ = {
                      isa = PBXTargetDependency;
-                     target = 36B8F61CD876406F9BD5D857 /* xsd2cpp_build_test */;
-                     targetProxy = 040EF25DB644414EAB4E9E89 /* PBXContainerItemProxy */;
+                     target = D4419939C83249B884383E47 /* xsd2cpp_build_test_exe */;
+                     targetProxy = 648AB858E2A44D5ABFD7E3C6 /* PBXContainerItemProxy */;
               };
-              AB5F4D4076A04C8E9848BD09 /* PBXTargetDependency */ = {
+              75FFB3401C6B4C40B9AAD0AF /* PBXTargetDependency */ = {
                      isa = PBXTargetDependency;
-                     target = 6810C77D20014CDE8F0065A8 /* xsd2cpp_build_test_exe */;
-                     targetProxy = F2C8E29471F7491593988C51 /* PBXContainerItemProxy */;
+                     target = 7608978B0A3A4512A6A7E4BC /* ZERO_CHECK */;
+                     targetProxy = AAC7F5DF3CD74BE69AE9CD0E /* PBXContainerItemProxy */;
               };
-              0493EFC26BC1426C911E358A /* PBXTargetDependency */ = {
+              2DB787BBA01A4CF8AC7BD22B /* PBXTargetDependency */ = {
                      isa = PBXTargetDependency;
-                     target = 8A8DAB5BB22342ABA34C96E0 /* ZERO_CHECK */;
-                     targetProxy = 342CFBF4D1F74038BD6CEA0E /* PBXContainerItemProxy */;
+                     target = E7B72BD1B68740A38246DF96 /* xsd2cpp_build_test */;
+                     targetProxy = 4DE617089D81446CA315F779 /* PBXContainerItemProxy */;
               };
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-              2E0BF366305A4C93BA453A4F /* Debug */ = {
+              2921E03A2A4043709CE738D7 /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -594,7 +594,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              EB3D5003E222438D90A35A12 /* Release */ = {
+              7E86AC4288EA4C54B8176687 /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -604,7 +604,7 @@ exit 0";
                      };
                      name = Release;
               };
-              3C7A5753297047DBB6A7B06F /* MinSizeRel */ = {
+              EA25D6397B9A4AE089B9C974 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -614,7 +614,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              039CDC1EFF184FB291A1FF40 /* RelWithDebInfo */ = {
+              972CCCB9E82B453BB1A9CD7D /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -624,7 +624,7 @@ exit 0";
                      };
                      name = RelWithDebInfo;
               };
-              18574216E1394E61889ECB0D /* Debug */ = {
+              B2BC5FE997B342F782F72015 /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -645,7 +645,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              D52D8C0252D049A09AEC3FE5 /* Release */ = {
+              7D8F14500C6D4B2ABC5C8447 /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -666,7 +666,7 @@ exit 0";
                      };
                      name = Release;
               };
-              7A26801BCF0F43D99030587E /* MinSizeRel */ = {
+              539D1291C60D42E7B6D69D94 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -687,7 +687,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              FA348422BCD440F7938CDC88 /* RelWithDebInfo */ = {
+              EB3936E653AE46D58A880869 /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -708,7 +708,7 @@ exit 0";
                      };
                      name = RelWithDebInfo;
               };
-              3481C1D9F4164D9DA17EA1AD /* Debug */ = {
+              EE4306D03F6D40FFA20A18D1 /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -729,7 +729,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              461A36815A3343E18B73F1E7 /* Release */ = {
+              4991600EA5664DE1A5D0C8CE /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -750,7 +750,7 @@ exit 0";
                      };
                      name = Release;
               };
-              65B778C3095040C8A5832168 /* MinSizeRel */ = {
+              934D055E15B84092BDB29168 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -771,7 +771,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              FF5F7891B5534D9B9AB4B168 /* RelWithDebInfo */ = {
+              49FE69EA79DC4438A69F3C14 /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
@@ -792,7 +792,7 @@ exit 0";
                      };
                      name = RelWithDebInfo;
               };
-              012212695BD44F3782A8427D /* Debug */ = {
+              6E2BB83AD8A341959A78F39E /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             EXECUTABLE_PREFIX = lib;
@@ -817,7 +817,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              3D084DD560FB460AB7BFC05D /* Release */ = {
+              C248E1F7726747D1A75E65B9 /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             EXECUTABLE_PREFIX = lib;
@@ -842,7 +842,7 @@ exit 0";
                      };
                      name = Release;
               };
-              DF3053D1A95F460DB2908F3B /* MinSizeRel */ = {
+              CCFEFDC7C37246049E035742 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             EXECUTABLE_PREFIX = lib;
@@ -867,7 +867,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              9544BA6E782E4B34968D9C13 /* RelWithDebInfo */ = {
+              2AC14275003A465A85E620E7 /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             EXECUTABLE_PREFIX = lib;
@@ -892,7 +892,7 @@ exit 0";
                      };
                      name = RelWithDebInfo;
               };
-              2735C1952EAA40D1ABEAD13C /* Debug */ = {
+              467CC04B1B624E739DBDFD80 /* Debug */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             EXECUTABLE_PREFIX = "";
@@ -917,7 +917,7 @@ exit 0";
                      };
                      name = Debug;
               };
-              66D0A00B44794FB6A8354A3D /* Release */ = {
+              B7A0B445BC1B4AA19FDA5BDF /* Release */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             EXECUTABLE_PREFIX = "";
@@ -942,7 +942,7 @@ exit 0";
                      };
                      name = Release;
               };
-              3C33A93A57264DE489976916 /* MinSizeRel */ = {
+              79884A5BD3A44B3B9600F527 /* MinSizeRel */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             EXECUTABLE_PREFIX = "";
@@ -967,7 +967,7 @@ exit 0";
                      };
                      name = MinSizeRel;
               };
-              A2D647F82E7D42EB816605E0 /* RelWithDebInfo */ = {
+              4B4233CD48174C858B7B1CE8 /* RelWithDebInfo */ = {
                      isa = XCBuildConfiguration;
                      buildSettings = {
                             EXECUTABLE_PREFIX = "";
@@ -995,62 +995,62 @@ exit 0";
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-              3C540DA40E404B9EB007DD6B /* Build configuration list for PBXProject  "xsd2cpp_build_test" */ = {
+              412DBF3FFB3D46F4BAA52CD2 /* Build configuration list for PBXProject  "xsd2cpp_build_test" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            2E0BF366305A4C93BA453A4F /* Debug */,
-                            EB3D5003E222438D90A35A12 /* Release */,
-                            3C7A5753297047DBB6A7B06F /* MinSizeRel */,
-                            039CDC1EFF184FB291A1FF40 /* RelWithDebInfo */,
+                            2921E03A2A4043709CE738D7 /* Debug */,
+                            7E86AC4288EA4C54B8176687 /* Release */,
+                            EA25D6397B9A4AE089B9C974 /* MinSizeRel */,
+                            972CCCB9E82B453BB1A9CD7D /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
-              CBB8018F64E84CA88921E317 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+              82940C37A1104B54BD154749 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            18574216E1394E61889ECB0D /* Debug */,
-                            D52D8C0252D049A09AEC3FE5 /* Release */,
-                            7A26801BCF0F43D99030587E /* MinSizeRel */,
-                            FA348422BCD440F7938CDC88 /* RelWithDebInfo */,
+                            B2BC5FE997B342F782F72015 /* Debug */,
+                            7D8F14500C6D4B2ABC5C8447 /* Release */,
+                            539D1291C60D42E7B6D69D94 /* MinSizeRel */,
+                            EB3936E653AE46D58A880869 /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
-              479E0167FE6447B3A45476A8 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+              04E9F26D166F48B7A9B82D3C /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            3481C1D9F4164D9DA17EA1AD /* Debug */,
-                            461A36815A3343E18B73F1E7 /* Release */,
-                            65B778C3095040C8A5832168 /* MinSizeRel */,
-                            FF5F7891B5534D9B9AB4B168 /* RelWithDebInfo */,
+                            EE4306D03F6D40FFA20A18D1 /* Debug */,
+                            4991600EA5664DE1A5D0C8CE /* Release */,
+                            934D055E15B84092BDB29168 /* MinSizeRel */,
+                            49FE69EA79DC4438A69F3C14 /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
-              E096F4556A304430BF83346B /* Build configuration list for PBXNativeTarget "xsd2cpp_build_test" */ = {
+              5C0ED59AE0FF420AAA7CE711 /* Build configuration list for PBXNativeTarget "xsd2cpp_build_test" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            012212695BD44F3782A8427D /* Debug */,
-                            3D084DD560FB460AB7BFC05D /* Release */,
-                            DF3053D1A95F460DB2908F3B /* MinSizeRel */,
-                            9544BA6E782E4B34968D9C13 /* RelWithDebInfo */,
+                            6E2BB83AD8A341959A78F39E /* Debug */,
+                            C248E1F7726747D1A75E65B9 /* Release */,
+                            CCFEFDC7C37246049E035742 /* MinSizeRel */,
+                            2AC14275003A465A85E620E7 /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
-              C9EC21FDA6FF42EC8FDE19FA /* Build configuration list for PBXNativeTarget "xsd2cpp_build_test_exe" */ = {
+              9BB143535F184633B433D7CE /* Build configuration list for PBXNativeTarget "xsd2cpp_build_test_exe" */ = {
                      isa = XCConfigurationList;
                      buildConfigurations = (
-                            2735C1952EAA40D1ABEAD13C /* Debug */,
-                            66D0A00B44794FB6A8354A3D /* Release */,
-                            3C33A93A57264DE489976916 /* MinSizeRel */,
-                            A2D647F82E7D42EB816605E0 /* RelWithDebInfo */,
+                            467CC04B1B624E739DBDFD80 /* Debug */,
+                            B7A0B445BC1B4AA19FDA5BDF /* Release */,
+                            79884A5BD3A44B3B9600F527 /* MinSizeRel */,
+                            4B4233CD48174C858B7B1CE8 /* RelWithDebInfo */,
                      );
                      defaultConfigurationIsVisible = 0;
                      defaultConfigurationName = Debug;
               };
 /* End XCConfigurationList section */
        };
-       rootObject = 148344E1F2FF45E4BA0421B1;
+       rootObject = 38BE9951B6624C4E93E9FBA6;
 }

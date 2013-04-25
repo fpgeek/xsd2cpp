@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8A8DAB5BB22342ABA34C96E0"
+               BlueprintIdentifier = "7608978B0A3A4512A6A7E4BC"
                BuildableName = "ZERO_CHECK"
                BlueprintName = "ZERO_CHECK"
                ReferencedContainer = "container:build/xsd2cpp_build_test.xcodeproj">
