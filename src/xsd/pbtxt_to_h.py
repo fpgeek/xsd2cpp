@@ -11,9 +11,9 @@ def hParse(cppSchema, filePath):
         hBuf += '    class %s;\n' % cls.name
     hBuf += '}\n'
 
-    hBuf += '#ifndef __%s_\n' % cppSchema.name
-    hBuf += '#define __%s_ 0\n\n' % cppSchema.name
-    hBuf += '#include "xsddata.h"\n' 
+    hBuf += '#ifndef __%s_\n' % cppSchema.name.replace('-', '_')
+    hBuf += '#define __%s_ 0\n\n' % cppSchema.name.replace('-', '_')
+    hBuf += '#include "xsdtype.h"\n'
     hBuf += '#include <vector>\n' 
     hBuf += '#include <string>\n'
     hBuf += '#include <iostream>\n'
@@ -24,11 +24,12 @@ def hParse(cppSchema, filePath):
         hBuf += '#include "%s"\n' % inFile
 
     hBuf += 'namespace %s {\n' % cppSchema.namespace
-    
+    hBuf += '    using namespace std;\n'
     for cls in cppSchema.class_:
         hBuf += _makehClass(cls, deep) + '\n'
     
-    hBuf += '}'
+    hBuf += '}\n'
+    hBuf += '#endif'
     hFile.write(hBuf)
     hFile.close()
 
@@ -57,7 +58,15 @@ def _makehClass(cppSchema, deep):
     pProtect= len(hBuf)
     hBuf += '    '*deep + 'private:\n'
     pPrivate = len(hBuf)
-    hBuf += '    '*deep + '}\n'
+    hBuf += '    '*deep + '};\n'
+
+    if cppSchema.HasField('enum_'):
+        data = _makehEnum(cppSchema.enum_, deep)
+        hBuf = hBuf[:pPublic] + data + hBuf[pPublic:]
+
+        pPublic += len(data)
+        pProtect += len(data)
+        pPrivate += len(data)
     
     for con in cppSchema.constructor:
         data = _makehConstructor(con, cppSchema.name, deep)
@@ -96,6 +105,12 @@ def _makehClass(cppSchema, deep):
 
             pPrivate += len(data)
 
+    for icls in cppSchema.inner_class:
+        data = _makehClass(icls, deep)
+        hBuf = hBuf[:pPrivate] + data + hBuf[pPrivate:]
+
+        pPrivate += len(data)
+
     for mem in cppSchema.member_var:
         data = _makehMemberVar(mem, deep)
         if _checkPublic(data):
@@ -116,20 +131,6 @@ def _makehClass(cppSchema, deep):
             hBuf = hBuf[:pPrivate] + data + hBuf[pPrivate:]
 
             pPrivate += len(data)
-
-    if cppSchema.HasField('enum_'):
-        data = _makehEnum(cppSchema.enum_, deep)
-        hBuf = hBuf[:pPublic] + data + hBuf[pPublic:]
-    
-        pPublic += len(data)
-        pProtect += len(data)
-        pPrivate += len(data)
-
-    for icls in cppSchema.inner_class:
-        data = _makehClass(icls, deep)
-        hBuf = hBuf[:pPrivate] + data + hBuf[pPrivate:]
-
-        pPrivate += len(data)
     
     return hBuf
 

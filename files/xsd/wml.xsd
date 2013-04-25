@@ -2530,7 +2530,7 @@
   </xsd:complexType>
   <xsd:complexType name="CT_Tbl">
     <xsd:sequence>
-      <xsd:group ref="EG_RangeMarkupElements" minOccurs="0" maxOccurs="unbounded"/>
+      <!--<xsd:group ref="EG_RangeMarkupElements" minOccurs="0" maxOccurs="unbounded"/>-->
       <xsd:element name="tblPr" type="CT_TblPr"/>
       <xsd:element name="tblGrid" type="CT_TblGrid"/>
       <xsd:group ref="EG_ContentRowContent" minOccurs="0" maxOccurs="unbounded"/>

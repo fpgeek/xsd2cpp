@@ -1,0 +1,46 @@
+TZERO_CHECK
+v5
+r1
+cCheck dependencies
+cPhaseScriptExecution "CMake Rules" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-2E86861F37334E049D24CC78.sh
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-0637A98708C8483DB2345761.sh
+c00000000516FBC1100000000000000E3
+t1366277137
+s227
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-2E86861F37334E049D24CC78.sh
+c000000005177839B00000000000000E3
+t1366786971
+s227
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies1ccdf1f03a28b741^986ef2f03a28b741^---0#1#0#--18"Check dependencies36"04C99A52-35B9-40AD-A7FC-3FD9CE31ED84-
+
+CPhaseScriptExecution "CMake Rules" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-0637A98708C8483DB2345761.sh
+s388046835.437466
+e388046835.520121
+r1
+xPhaseScriptExecution
+xCMake Rules
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-0637A98708C8483DB2345761.sh
+oecho ""
+o
+omake -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.make
+omake[1]: `CMakeFiles/cmake.check_cache' is up to date.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'c2de70f31f21b741^ba3185f31f21b741^-170"echo ""make -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.makemake[1]: `CMakeFiles/cmake.check_cache' is up to date.3(21%IDEActivityLogMessage2@8"echo ""-388046835#0#8#-0#-----2@106"make -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.make-388046835#9#106#-0#-----2@55"make[1]: `CMakeFiles/cmake.check_cache' is up to date.-388046835#115#55#-0#-----0#0#0#--361"PhaseScriptExecution "CMake Rules" build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-0637A98708C8483DB2345761.sh    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    /bin/sh -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-0637A98708C8483DB2345761.sh36"1BDF34F0-7811-44ED-942F-FDD0822D7176-
+
+CPhaseScriptExecution "CMake Rules" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-2E86861F37334E049D24CC78.sh
+s388512496.947770
+e388512497.000600
+r1
+xPhaseScriptExecution
+xCMake Rules
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-2E86861F37334E049D24CC78.sh
+oecho ""
+o
+omake -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.make
+omake[1]: `CMakeFiles/cmake.check_cache' is up to date.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'e354f3f03a28b741^d02500f13a28b741^-170"echo ""make -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.makemake[1]: `CMakeFiles/cmake.check_cache' is up to date.3(21%IDEActivityLogMessage2@8"echo ""-388512496#0#8#-0#-----2@106"make -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.make-388512496#9#106#-0#-----2@55"make[1]: `CMakeFiles/cmake.check_cache' is up to date.-388512496#115#55#-0#-----0#0#0#--361"PhaseScriptExecution "CMake Rules" build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-2E86861F37334E049D24CC78.sh    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    /bin/sh -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-2E86861F37334E049D24CC78.sh36"E372189B-9640-4A51-BC06-3233532ABA38-
+

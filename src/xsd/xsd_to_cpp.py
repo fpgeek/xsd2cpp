@@ -5,11 +5,12 @@ __author__ = 'fpgeek'
 import xsd_pb2 as PB
 import cpp_pb2 as CPB
 import cpp_contents_funcs as CPP_FUNC
+import functools
 
-def parseToCpp(pbSchema):
+def parseToCpp(pbSchema, allPbSchemas):
     cppFile = CPB.File()
     _makeCppFileProp(cppFile, pbSchema)
-    _makeCppClasses(cppFile, pbSchema)
+    _makeCppClasses(cppFile, pbSchema, allPbSchemas)
     return cppFile
 
 
@@ -20,8 +21,61 @@ def _makeCppFileProp(cppFile, pbSchema):
         cppFile.include_file.append(_getCppIncludeFileName(imp.schema_location))
 
 
+def _makeToXmlElemMethodBody(pbSchema, pbComplexType, cppClass):
+
+    toXmlMethodBodyStr = \
+        """
+        _outStream << "<" << _elemName;
+        """
+    toXmlMethodBodyStr += \
+        """
+        if (!_xmlNsStr.empty())
+        {
+            _outStream << _xmlNsStr;
+        }
+        """
+
+    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromAttrs(pbSchema, pbComplexType.attribute)
+    toXmlMethodBodyStr += \
+        """
+        _outStream << ">";
+        """
+    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromElemCont(pbSchema, pbComplexType.element_container)
+    toXmlMethodBodyStr += \
+        """
+        _outStream << "</" << _elemName << ">";
+        """
+    CPP_FUNC.makeToXmlElemMethod(toXmlMethodBodyStr, cppClass)
+
+
+def _makeToXmlMethodBodyForElem(pbSchema, pbComplexType, cppClass, pbElem):
+
+    xmlElementName = CPP_FUNC.getXmlElementName(pbSchema.element_form_default, pbSchema.xml_ns_prefix, pbElem.name)
+    toXmlMethodBodyStr = \
+"""
+_outStream << "<%s";
+""" % xmlElementName
+
+    toXmlMethodBodyStr += \
+"""
+%s
+""" % _makeXmlNsCode(pbSchema.namespace, pbSchema.xml_ns_prefix, "_outStream")
+
+    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromAttrs(pbSchema, pbComplexType.attribute)
+    toXmlMethodBodyStr += \
+"""
+_outStream << ">";
+"""
+    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromElemCont(pbSchema, pbComplexType.element_container)
+    toXmlMethodBodyStr += \
+"""
+_outStream << "</%s>";
+""" % xmlElementName
+    CPP_FUNC.makeToXmlMethod(toXmlMethodBodyStr, cppClass)
+
+
 # cpp class 만들기
-def _makeCppClasses(cppFile, pbSchema):
+def _makeCppClasses(cppFile, pbSchema, allPbSchemas):
     # 기본 Element 생성
     cppClass = cppFile.class_.add()
     cppClass.name = 'Element'
@@ -37,11 +91,16 @@ def _makeCppClasses(cppFile, pbSchema):
 
     for pbComplexType in pbSchema.complex_type:
         cppClass = cppFile.class_.add()
-        _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass)
+        cppClass.name = pbComplexType.name
+        cppClass.parent_class.append('XSD::ComplexType')
+
+        _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass, _makeToXmlElemMethodBody)
 
     for pbElement in pbSchema.element:
         cppClass = cppFile.class_.add()
-        _makeCppClassFromElement(pbSchema, pbElement, cppClass)
+        cppClass.name = '%s_element' % pbElement.name
+        cppClass.parent_class.append('Element')
+        _makeCppClassFromElement(pbSchema, pbElement, cppClass, allPbSchemas)
 
     for pbAttr in pbSchema.attribute:
         cppClass = cppFile.class_.add()
@@ -55,64 +114,78 @@ def _getXmlNsPrefixStr(nsPrefix, mainNsPrefix):
         return 'xmlns:%s' % nsPrefix
 
 
-def _makeXmlNsCode(pbNsList, mainNsPrefix):
-    nsCodeList= ['xmlNsStream << " " << "%s=\\\\"%s\\\\"";' % (_getXmlNsPrefixStr(pbNs.prefix, mainNsPrefix), pbNs.uri) for pbNs in pbNsList if pbNs.prefix not in ['xsd'] ]
+def _makeXmlNsCode(pbNsList, mainNsPrefix, cppStreamName):
+    nsCodeList= ['%s << " " << "%s=\\\\"%s\\\\"";' % (cppStreamName, _getXmlNsPrefixStr(pbNs.prefix, mainNsPrefix), pbNs.uri) for pbNs in pbNsList if pbNs.prefix not in ['xsd'] ]
     return '\n'.join(nsCodeList)
 
 
+def isOtherClassType(name):
+    return '::' in name
+
+
+def getNameExceptCppNs(name):
+    if '::' in name:
+        return name.split('::')[1]
+    else:
+        return name
+
+
+def getCppNs(name):
+    if '::' in name:
+        return name.split('::')[0]
+    else:
+        return name
+
+
 # Element를 class로 만들기
-def _makeCppClassFromElement(pbSchema, pbElement, cppClass):
-    cppClass.name = pbElement.name
-    cppClass.parent_class.append('Element')
-
+def _makeCppClassFromElement(pbSchema, pbElement, cppClass, allPbSchemas):
     cppVarType = _getCppVarTypeFromElem(pbElement)
-    cppClass.parent_class.append(cppVarType)
+    # cppClass.parent_class.append(cppVarType)
 
-    toXmlMethod = cppClass.method.add()
-    toXmlMethod.return_type = 'void'
-    toXmlMethod.name = 'toXml'
-    toXmlMethod.const = True
+    foundCtTypes = []
+    if isOtherClassType(cppVarType): # 다른 파일에 있는 ComplexType에서 가져오기
+        foundCtTypes = [ctType for schema in allPbSchemas
+                        for ctType in schema.complex_type
+                        if schema.file_name != pbSchema.file_name and
+                        schema.xml_ns_prefix == pbSchema.xml_ns_prefix and
+                        ctType.name == getNameExceptCppNs(cppVarType)]
+    else: # 다른 파일에 있는 ComplexType에서 가져오기
+        foundCtTypes = [ctType for schema in allPbSchemas
+                        for ctType in schema.complex_type
+                        if schema.file_name == pbSchema.file_name and
+                        schema.xml_ns_prefix == pbSchema.xml_ns_prefix and
+                        ctType.name == cppVarType]
 
-    var1 = toXmlMethod.argument.add()
-    var1.type = 'ostream&'
-    var1.name = '_outStream'
-    toXmlMethod.body = \
-"""
-ostream xmlNsStream;
-%(makeXmlNsCode)s
-%(CTType)s::toXml("%(elemName)s", xmlNsStream.str(), _outStream);
-""" % {
-    'makeXmlNsCode': _makeXmlNsCode(pbSchema.namespace, pbSchema.xml_ns_prefix),
-    'CTType': cppVarType,
-    'elemName': CPP_FUNC.getXmlElementName(pbSchema.element_form_default, pbSchema.xml_ns_prefix, pbElement.name)}
-
-
+    if len(foundCtTypes) == 1:
+        for ctType in foundCtTypes:
+            makeToXmlMethodBodyFunc = functools.partial(_makeToXmlMethodBodyForElem, pbElem=pbElement)
+            _makeCppClassFromComplexType(pbSchema, ctType, cppClass, makeToXmlMethodBodyFunc)
 
 # Attribute를 class로 만들기
 def _makeCppClassFromAttribute(pbSchema, pbAttr, cppClass):
     cppClass.name = '%s_attr' % pbAttr.name
     cppClass.parent_class.append('Attribute')
 
-    cppVarType = _getCppVarTypeFromAttr(pbAttr)
-    cppClass.parent_class.append(cppVarType)
+    # TODO
+    # cppVarType = _getCppVarTypeFromAttr(pbAttr)
+    # cppClass.parent_class.append(cppVarType)
 
     toXmlMethod = cppClass.method.add()
     toXmlMethod.return_type = 'void'
     toXmlMethod.name = 'toXml'
     toXmlMethod.const = True
     var1 = toXmlMethod.argument.add()
-    var1.type = 'ostream&'
+    var1.type = 'std::ostream&'
     var1.name = '_outStream'
-    toXmlMethod.body = \
-"""
-%(CTType)s::toXml("%(attrName)s", _outStream);
-""" % {'CTType': cppVarType, 'attrName':CPP_FUNC.getXmlAttributeName(pbSchema.attribute_form_default, pbSchema.xml_ns_prefix, pbAttr.name)}
+    toXmlMethod.body = ''
+#     toXmlMethod.body = \
+# """
+# %(CTType)s::toXmlAttr("%(attrName)s", _outStream);
+# """ % {'CTType': cppVarType, 'attrName':CPP_FUNC.getXmlAttributeName(pbSchema.attribute_form_default, pbSchema.xml_ns_prefix, pbAttr.name)}
 
 
 # ComplexType을 class로 만들기
-def _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass):
-    cppClass.name = pbComplexType.name
-    cppClass.parent_class.append('XSD::ComplexType')
+def _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass, toXmlMethodBodyFunc):
 
     repeatedIdx = 1
     for elemCont in pbComplexType.element_container:
@@ -131,40 +204,18 @@ def _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass):
     clearMethodBodyStr += CPP_FUNC.getClearMethodBodyStrFromElemCont(pbComplexType.element_container)
     CPP_FUNC.makeClearMethod(clearMethodBodyStr, cppClass)
 
-    toXmlMethodBodyStr = \
-"""
-_outStream << "<" << _elementName;
-"""
-    toXmlMethodBodyStr += \
-"""
-if (!_xmlNsStr.empty())
-{
-    _outStream << _xmlNsStr;
-}
-"""
-
-    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromAttrs(pbSchema, pbComplexType.attribute)
-    toXmlMethodBodyStr += \
-"""
-_outStream << ">";
-"""
-    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromElemCont(pbSchema, pbComplexType.element_container)
-    toXmlMethodBodyStr += \
-"""
-_outStream << "</" << _elementName << ">";
-"""
-    CPP_FUNC.makeToXmlElemMethod(toXmlMethodBodyStr, cppClass)
+    toXmlMethodBodyFunc(pbSchema, pbComplexType, cppClass)
 
     CPP_FUNC.makeDefaultInstanceMethod(cppClass)
     CPP_FUNC.makeDefaultInstanceMember(cppClass)
 
     for pbAttr in pbComplexType.attribute:
         if pbAttr.type.kind == PB.Attribute.Type.BuiltIn:
-            CPP_FUNC.complexType_attr_builtIn(pbAttr.name, pbAttr.type.built_in, cppClass)
+            CPP_FUNC.complexType_attr_builtIn(pbAttr, cppClass)
         elif pbAttr.type.kind == PB.Attribute.Type.SimpleTypeName:
-            CPP_FUNC.complexType_attr_simpleTypeName(pbAttr.name, pbAttr.type.simple_type_name, cppClass)
+            CPP_FUNC.complexType_attr_simpleTypeName(pbAttr, cppClass)
         elif pbAttr.type.kind == PB.Attribute.Type.SimpleType:
-            CPP_FUNC.complexType_attr_simpleTypeName(pbAttr.name, pbAttr.type.simple_type.name, cppClass)
+            CPP_FUNC.complexType_attr_simpleTypeName(pbAttr, cppClass)
         elif pbAttr.type.kind == PB.Attribute.Type.AnyAttribute:
             pass # TODO
             # CPP_FUNC.complexType_attr_anyAttribute(pbAttr.type.any, cppClass)
@@ -191,17 +242,17 @@ def _makeCppMethodFromSimpleType(pbSchema, pbSimpleType, cppClass):
 def _makeCppMethodFromRestriction(pbRestriction, cppClass):
     if pbRestriction.base.kind == PB.Base.BuiltIn:
         if len(pbRestriction.enumeration) > 0: # enum으로 되어 있는 경우 처리
-            CPP_FUNC.simpleType_restriction_enum(pbRestriction.enumeration, cppClass)
+            CPP_FUNC.simpleType_restriction_enum(pbRestriction, cppClass)
         else: # enum이 아닌 일반 restriction 처리
-            CPP_FUNC.simpleType_restriction_builtIn(pbRestriction.base.built_in, cppClass)
+            CPP_FUNC.simpleType_restriction_builtIn(pbRestriction, cppClass)
 
     elif pbRestriction.base.kind == PB.Base.SimpleTypeName:
-        CPP_FUNC.simpleType_restriction_simpleTypeName(pbRestriction.base.simple_type_name, cppClass)
+        CPP_FUNC.simpleType_restriction_simpleTypeName(pbRestriction, cppClass)
     elif pbRestriction.base.kind == PB.Base.ComplexTypeName:
-        CPP_FUNC.simpleType_restriction_complexTypeName(pbRestriction.base.complex_type_name, cppClass)
+        CPP_FUNC.simpleType_restriction_complexTypeName(pbRestriction, cppClass)
 
 
-def _getNsPrefix(name):
+def getNsPrefix(name):
     nsPrefix = ''
     if ':' in name:
         nsPrefix, n = name.split(':')
@@ -221,7 +272,7 @@ def _getCppVarType(pbSTName):
 # Element로 부터 cpp var type 가져오기
 def _getCppVarTypeFromElem(pbElem):
     if pbElem.type.kind == PB.Element.Type.BuiltIn:
-        return _getBuiltInStr(pbElem.type.built_in)
+        return CPP_FUNC.getBuiltInStr(pbElem.type.built_in)
     elif pbElem.type.kind == PB.Element.Type.SimpleTypeName:
         return _getCppVarType(pbElem.type.simple_type_name)
     elif pbElem.type.kind == PB.Element.Type.ComplexTypeName:
@@ -237,17 +288,13 @@ def _getCppVarTypeFromElem(pbElem):
 # Attribute로 부터 cpp var type 가져오기
 def _getCppVarTypeFromAttr(pbAttr):
     if pbAttr.type.kind == PB.Attribute.Type.BuiltIn:
-        return _getBuiltInStr(pbAttr.type.built_in)
+        return CPP_FUNC.getBuiltInStr(pbAttr.type.built_in)
     elif pbAttr.type.kind == PB.Attribute.Type.SimpleTypeName:
         return _getCppVarType(pbAttr.type.simple_type_name)
     elif pbAttr.type.kind == PB.Attribute.Type.SimpleType:
         return _getCppVarType(pbAttr.type.simple_type.name)
     elif pbAttr.type.kind == PB.Attribute.Type.AnyAttribute:
         return _getCppVarType('%s:Attribute' % pbAttr.type.any.ns_prefix)
-
-
-def _getBuiltInStr(builtType):
-    return PB.BuiltIn.DESCRIPTOR.enum_types_by_name['Type'].values_by_number[builtType].name
 
 
 # 파일명 가져오기

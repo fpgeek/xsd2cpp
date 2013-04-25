@@ -169,12 +169,16 @@ class ALL_SCHEMA:
 
     def _findXsdElement(self, xmlSchema, name, xsdElements, findXsdElementFunc):
         if hasNamespace(name): # 네임스페이스가 있는 그룹명
-            otherSchema = self._getSchemaFromFileName( xmlSchema.findFile(getPrefixFromName(name)) )
+            nsPrefix = getPrefixFromName(name)
+            otherSchema = self._getSchemaFromFileName( xmlSchema.findFile(nsPrefix) )
             if otherSchema:
                 return findXsdElementFunc( otherSchema, getNameExceptNsPrefix(name) )
             else:
-                print name
-                assert(False)
+                if nsPrefix == 'xml':
+                    pass # TODO
+                else:
+                    print name
+                    assert(False)
         else:
             findElems = [elem for elem in xsdElements if elem.attrib.get('name') == name]
             if len(findElems) == 1:
@@ -211,7 +215,7 @@ class ALL_SCHEMA:
             self._parseSimpleType(xmlSchema, simpleTypeElem, pbSimpleType)
 
         for elementElem in xmlSchema.elementElems:
-            pbElement = self._parseElement(xmlSchema, elementElem, PB.ElementContainer(), PB.ElementContainer.Sequence)
+            pbElement = self._parseElement(xmlSchema, elementElem, None, PB.ElementContainer(), PB.ElementContainer.Sequence)
             pbSchema.element.add().CopyFrom(pbElement)
 
         for attribute in xmlSchema.attributes:
@@ -220,7 +224,8 @@ class ALL_SCHEMA:
 
     def _parseComplexType(self, xmlSchema, complexTypeElem, pbComplexType, pbContType):
         name = complexTypeElem.attrib.get('name')
-        if name: pbComplexType.name = name
+        if name:
+            pbComplexType.name = name
 
         for childElem in complexTypeElem:
             if childElem.tag == '{%s}sequence' % XSD_URI:
@@ -239,6 +244,8 @@ class ALL_SCHEMA:
             elif childElem.tag == '{%s}anyAttribute' % XSD_URI:
                 pbAttribute = pbComplexType.attribute.add()
                 self._parseAnyAttribute(xmlSchema, childElem, pbAttribute)
+            elif childElem.tag == '{%s}simpleContent' % XSD_URI:
+                self._parseSimpleContent(xmlSchema, childElem, pbComplexType, pbContType)
 
     def _parseComplexContent(self, xmlSchema, complexContentElem, pbComplexType, pbContType):
         for childElem in complexContentElem:
@@ -273,7 +280,7 @@ class ALL_SCHEMA:
                 self._parseAttribute(xmlSchema, childElem, pbAttribute)
 
 
-    def _parseSequence(self, xmlSchema, sequnceElem, pbComplexType, pbContType):
+    def _parseSequence(self, xmlSchema, sequnceElem, pbComplexType, pbContType, nsPrefix=None):
         minOccurs = parseMinOccurs(sequnceElem)
         maxOccurs = parseMaxOccurs(sequnceElem)
         if pbContType == PB.ElementContainer.Sequence:
@@ -290,22 +297,38 @@ class ALL_SCHEMA:
         childElemGroups = itertools.groupby([childElem for childElem in sequnceElem], lambda elem: elem.tag)
         for tag, childElems in childElemGroups:
             pbElemCont = None
-            if tag == '{%s}element' % XSD_URI or tag == '{%s}any' % XSD_URI:
-                pbElemCont = pbComplexType.element_container.add()
-                pbElemCont.kind = pbContType
-            for childElem in childElems:
-                if childElem.tag == '{%s}element' % XSD_URI:
-                    self._parseElement(xmlSchema, childElem, pbElemCont, pbContType)
-                elif childElem.tag == '{%s}group' % XSD_URI:
-                    self._parseGroup(xmlSchema, childElem, pbComplexType, pbContType)
-                elif childElem.tag == '{%s}choice' % XSD_URI:
-                    self._parseChoice(xmlSchema, childElem, pbComplexType, pbContType)
-                elif childElem.tag == '{%s}sequence' % XSD_URI:
-                    self._parseSequence(xmlSchema, childElem, pbComplexType, pbContType)
-                elif childElem.tag == '{%s}any' % XSD_URI:
-                    self._parseAny(xmlSchema, childElem, pbElemCont, pbContType)
+            if tag == '{%s}element' % XSD_URI:
+                def elemGroupByKeyFunc(elem):
+                    maxOccurs = parseMaxOccurs(elem)
+                    return isManyMaxOccurs(maxOccurs)
 
-    def _parseChoice(self, xmlSchema, choiceElem, pbComplexType, pbContType):
+                childElemGroups = itertools.groupby(childElems, elemGroupByKeyFunc) # element 태
+                for isManyMaxOcc, childElems in childElemGroups:
+                    pbElemCont = pbComplexType.element_container.add()
+                    elemContKind = _elemContKindFromIsManyMaxOccurs(pbContType, isManyMaxOcc)
+                    if elemContKind:
+                        pbContType = elemContKind
+                        pbElemCont.kind = pbContType
+                    for childElem in childElems:
+                        self._parseElement(xmlSchema, childElem, pbComplexType, pbElemCont, pbContType, nsPrefix)
+
+            else:
+
+                for childElem in childElems:
+                    # if childElem.tag == '{%s}element' % XSD_URI:
+                    #     self._parseElement(xmlSchema, childElem, pbComplexType, pbElemCont, pbContType, nsPrefix)
+                    if childElem.tag == '{%s}group' % XSD_URI:
+                        self._parseGroup(xmlSchema, childElem, pbComplexType, pbContType, nsPrefix)
+                    elif childElem.tag == '{%s}choice' % XSD_URI:
+                        self._parseChoice(xmlSchema, childElem, pbComplexType, pbContType, nsPrefix)
+                    elif childElem.tag == '{%s}sequence' % XSD_URI:
+                        self._parseSequence(xmlSchema, childElem, pbComplexType, pbContType, nsPrefix)
+                    elif childElem.tag == '{%s}any' % XSD_URI:
+                        pbElemCont = pbComplexType.element_container.add()
+                        pbElemCont.kind = pbContType
+                        self._parseAny(xmlSchema, childElem, pbElemCont, pbContType)
+
+    def _parseChoice(self, xmlSchema, choiceElem, pbComplexType, pbContType, nsPrefix=None):
         minOccurs = parseMinOccurs(choiceElem)
         maxOccurs = parseMaxOccurs(choiceElem)
         if pbContType == PB.ElementContainer.Sequence:
@@ -330,17 +353,17 @@ class ALL_SCHEMA:
                 pbElemCont.kind = pbContType
             for childElem in childElems:
                 if childElem.tag == '{%s}element' % XSD_URI:
-                    self._parseElement(xmlSchema, childElem, pbElemCont, pbContType)
+                    self._parseElement(xmlSchema, childElem, pbComplexType, pbElemCont, pbContType, nsPrefix)
                 elif childElem.tag == '{%s}group' % XSD_URI:
-                    self._parseGroup(xmlSchema, childElem, pbComplexType, pbContType)
+                    self._parseGroup(xmlSchema, childElem, pbComplexType, pbContType, nsPrefix)
                 elif childElem.tag == '{%s}choice' % XSD_URI:
-                    self._parseChoice(xmlSchema, childElem, pbComplexType, pbContType)
+                    self._parseChoice(xmlSchema, childElem, pbComplexType, pbContType, nsPrefix)
                 elif childElem.tag == '{%s}sequence' % XSD_URI:
-                    self._parseSequence(xmlSchema, childElem, pbComplexType, pbContType)
+                    self._parseSequence(xmlSchema, childElem, pbComplexType, pbContType, nsPrefix)
                 elif childElem.tag == '{%s}any' % XSD_URI:
-                    self._parseAny(xmlSchema, childElem, pbElemCont, pbContType)
+                    self._parseAny(xmlSchema, childElem, pbElemCont, pbContType, nsPrefix)
 
-    def _parseAny(self, xmlSchema, anyElem, pbElemCont, pbContType):
+    def _parseAny(self, xmlSchema, anyElem, pbElemCont, pbContType, nsPrefix=None):
         pbElem = None
         if pbContType == PB.ElementContainer.Sequence:
             pbElem = pbElemCont.sequence.add()
@@ -392,9 +415,10 @@ class ALL_SCHEMA:
         return None
 
 
-    def _parseElement(self, xmlSchema, elementElem, pbElemCont, pbContType):
+    def _parseElement(self, xmlSchema, elementElem, pbComplexType, pbElemCont, pbContType, nsPrefix=None):
         pbElem = None
         maxOccurs = parseMaxOccurs(elementElem)
+
         if pbContType == PB.ElementContainer.Sequence:
             pbElem = pbElemCont.sequence.add()
         elif pbContType == PB.ElementContainer.Choice:
@@ -407,12 +431,10 @@ class ALL_SCHEMA:
         if pbElem:
             ref = elementElem.attrib.get('ref')
             if ref:
-                # nsPrefix = getPrefixFromName(ref)
-                # if nsPrefix: pbElem.ns_prefix = nsPrefix
-
+                nsPrefix = getPrefixFromName(ref)
                 otherElementElem, otherSchema = self._findElement(xmlSchema, ref)
                 otherElemCont = PB.ElementContainer()
-                otherPbElem = self._parseElement(otherSchema, otherElementElem, otherElemCont, pbContType)
+                otherPbElem = self._parseElement(otherSchema, otherElementElem, pbComplexType, otherElemCont, pbContType, nsPrefix)
                 pbElem.MergeFrom(otherPbElem)
 
             name = elementElem.attrib.get('name')
@@ -437,10 +459,16 @@ class ALL_SCHEMA:
                     pbElem.type.built_in = xmlSchema.builtInTypeMap.get(type)
                 elif self._isSimpleTypeName(type, xmlSchema):
                     pbElem.type.kind = PB.Element.Type.SimpleTypeName
-                    pbElem.type.simple_type_name = type
+                    if not hasNamespace(type) and nsPrefix is not None:
+                        pbElem.type.simple_type_name = '%s:%s' % (nsPrefix, type)
+                    else:
+                        pbElem.type.simple_type_name = type
                 elif self._isComplexTypeName(type, xmlSchema):
                     pbElem.type.kind = PB.Element.Type.ComplexTypeName
-                    pbElem.type.complex_type_name = type
+                    if not hasNamespace(type) and nsPrefix is not None:
+                        pbElem.type.complex_type_name = '%s:%s' % (nsPrefix, type)
+                    else:
+                        pbElem.type.complex_type_name = type
 
         for childElem in elementElem:
             if childElem.tag == '{%s}simpleType' % XSD_URI:
@@ -452,7 +480,7 @@ class ALL_SCHEMA:
 
         return pbElem
 
-    def _parseGroup(self, xmlSchema, groupElem, pbComplexType, pbContType):
+    def _parseGroup(self, xmlSchema, groupElem, pbComplexType, pbContType, nsPrefix=None):
         maxOccurs = parseMaxOccurs(groupElem)
         if pbContType == PB.ElementContainer.Sequence:
             if isManyMaxOccurs(maxOccurs):
@@ -468,17 +496,19 @@ class ALL_SCHEMA:
         ref = groupElem.attrib.get('ref')
         if ref:
             otherGroupElem, otherSchema = self._findGroup(xmlSchema, ref)
-            self._parseGroup(otherSchema, otherGroupElem, pbComplexType, pbContType)
+            if hasNsPrefix(ref):
+                nsPrefix = getNsPrefix(ref)
+            self._parseGroup(otherSchema, otherGroupElem, pbComplexType, pbContType, nsPrefix)
 
         for childElem in groupElem:
             if childElem.tag == '{%s}sequence' % XSD_URI:
-                self._parseSequence(xmlSchema, childElem, pbComplexType, pbContType)
+                self._parseSequence(xmlSchema, childElem, pbComplexType, pbContType, nsPrefix)
             elif childElem.tag == '{%s}choice' % XSD_URI:
                 if pbContType in (PB.ElementContainer.RepeatedSequence, PB.ElementContainer.RepeatedChoice):
                     pbContType = PB.ElementContainer.RepeatedChoice
-                self._parseChoice(xmlSchema, childElem, pbComplexType, pbContType)
+                self._parseChoice(xmlSchema, childElem, pbComplexType, pbContType, nsPrefix)
             elif childElem.tag == '{%s}all' % XSD_URI:
-                self._parseAll(xmlSchema, childElem, pbComplexType, pbContType)
+                self._parseAll(xmlSchema, childElem, pbComplexType, pbContType, nsPrefix)
 
     def _parseAll(self, xmlSchema, allElem, pbComplexType, pbContType):
         minOccurs = parseMinOccurs(allElem)
@@ -490,7 +520,7 @@ class ALL_SCHEMA:
 
         for childElem in allElem:
             if childElem.tag == '{%s}element' % XSD_URI:
-                self._parseElement(xmlSchema, childElem, pbElemCont, pbContType)
+                self._parseElement(xmlSchema, childElem, pbComplexType, pbElemCont, pbContType)
 
     def _parseSimpleType(self, xmlSchema, simpleTypeElem, pbSimpleType):
         name = simpleTypeElem.attrib.get('name')
@@ -506,14 +536,19 @@ class ALL_SCHEMA:
                 pbSimpleType.type.kind = PB.SimpleType.Type.Union
                 self._parseUnion(xmlSchema, childElem, pbSimpleType.type.union)
 
-    def _parseAttribute(self, xmlSchema, attributeElem, pbAttribute):
+    def _parseAttribute(self, xmlSchema, attributeElem, pbAttribute, nsPrefix=None):
         ref = attributeElem.attrib.get('ref')
         if ref:
-            # nsPrefix = getPrefixFromName(ref)
-            # if nsPrefix: pbAttribute.ns_prefix = nsPrefix
-
+            nsPrefix = getPrefixFromName(ref)
             otherAttrElem, otherSchema = self._findAttribute(xmlSchema, ref)
-            self._parseAttribute(otherSchema, otherAttrElem, pbAttribute)
+            if otherAttrElem is not None:
+                self._parseAttribute(otherSchema, otherAttrElem, pbAttribute, nsPrefix)
+            elif nsPrefix == 'xml':
+                pass # TODO
+            else:
+                print attributeElem
+                print ref
+                assert(False)
 
         name = attributeElem.attrib.get('name')
         if name: pbAttribute.name = name
@@ -540,7 +575,10 @@ class ALL_SCHEMA:
                 pbAttribute.type.built_in = xmlSchema.builtInTypeMap.get(type)
             elif self._isSimpleTypeName(type, xmlSchema):
                 pbAttribute.type.kind = PB.Attribute.Type.SimpleTypeName
-                pbAttribute.type.simple_type_name = type
+                if (not hasNamespace(type)) and (nsPrefix is not None):
+                    pbAttribute.type.simple_type_name = '%s:%s' % (nsPrefix, type)
+                else:
+                    pbAttribute.type.simple_type_name = type
 
             else:
                 print type
@@ -553,18 +591,20 @@ class ALL_SCHEMA:
                 pbType.simple_type = PB.SimpleType()
                 self._parseSimpleType(xmlSchema, childElem, pbType.simple_type)
 
-    def _parseAttributeGroup(self, xmlSchema, attributeGroupElem, pbComplexType):
+    def _parseAttributeGroup(self, xmlSchema, attributeGroupElem, pbComplexType, nsPrefix=None):
         ref = attributeGroupElem.attrib.get('ref')
         if ref:
             otherAttrGroupElem, otherSchema = self._findAttributeGroup(xmlSchema, ref)
-            self._parseAttributeGroup(otherSchema, otherAttrGroupElem, pbComplexType)
+            if hasNsPrefix(ref):
+                nsPrefix = getNsPrefix(ref)
+            self._parseAttributeGroup(otherSchema, otherAttrGroupElem, pbComplexType, nsPrefix)
 
         for childElem in attributeGroupElem:
             if childElem.tag == '{%s}attibuteGroup' % XSD_URI:
-                self._parseAttributeGroup(xmlSchema, childElem, pbComplexType)
+                self._parseAttributeGroup(xmlSchema, childElem, pbComplexType, nsPrefix)
             elif childElem.tag == '{%s}attribute' % XSD_URI:
                 pbAttribute = pbComplexType.attribute.add()
-                self._parseAttribute(xmlSchema, childElem, pbAttribute)
+                self._parseAttribute(xmlSchema, childElem, pbAttribute, nsPrefix)
 
     def _parseAnyAttribute(self, xmlSchema, anyAttrElem, pbAttribute):
         pbAttribute.type.kind = PB.Attribute.Type.AnyAttribute
@@ -573,6 +613,13 @@ class ALL_SCHEMA:
         if namespace: pbAttribute.namespace = namespace
         processContents = anyAttrElem.attrib.get('processContents')
         if processContents: pbAttribute.process_contents = processContents
+
+    def _parseSimpleContent(self, xmlSchema, simpleContentElem, pbComplexType, pbContType):
+        for childElem in simpleContentElem:
+            if childElem.tag == '{%s}restriction' % XSD_URI:
+                self._parseRestriction(xmlSchema, childElem, pbComplexType.restriction)
+            elif childElem.tag == '{%s}extension' % XSD_URI:
+                self._parseExtension(xmlSchema, childElem, pbComplexType, pbContType)
 
     def _parseRestriction(self, xmlSchema, restrictionElem, pbRestriction):
         base = restrictionElem.attrib.get('base')
@@ -713,7 +760,7 @@ def getPrefixFromName(name):
     elif ':' in name:
         return name.split(':')[0]
     else:
-        return ''
+        return None
 
 def isManyMaxOccurs(maxOccurs):
     return (maxOccurs.kind == PB.MaxOccurs.Unbounded) or (maxOccurs.kind == PB.MaxOccurs.Count and maxOccurs.count > 1)
@@ -789,5 +836,18 @@ def parseFormAttr(attrValue):
             return PB.Form.qualified
         elif attrValue == 'unqualified':
             return PB.Form.unqualified
+
+    return None
+
+
+def _elemContKindFromIsManyMaxOccurs(pbContType, isManyMaxOccurs):
+    if pbContType == PB.ElementContainer.Sequence and isManyMaxOccurs:
+        return PB.ElementContainer.RepeatedSequence
+    elif pbContType == PB.ElementContainer.Choice and isManyMaxOccurs:
+        return PB.ElementContainer.RepeatedChoice
+    elif pbContType == PB.ElementContainer.RepeatedSequence:
+        return PB.ElementContainer.RepeatedSequence
+    elif pbContType == PB.ElementContainer.RepeatedChoice:
+        return PB.ElementContainer.RepeatedChoice
 
     return None

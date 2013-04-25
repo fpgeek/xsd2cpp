@@ -1,0 +1,568 @@
+Txsd2cpp_build_test
+v5
+r1
+cCheck dependencies
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+c00000000514A631900000000000000AA
+t1363829529
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/stdlib.h
+c00000000512044410000000000003089
+t1361069121
+s12425
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/libxsd2cpp_build_test.a
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-additionalCharacteristics_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-commonSimpleTypes_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlSchemaProperties_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-relationshipReference_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-presentationDrawing_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-spreadsheetDrawing_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-wordprocessingDrawing_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsd2cpp_build_test.LinkFileList
+c00000000516FBC110000000000001234
+t1366277137
+s4660
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsdtype.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Script-6D5F06B5483048E39F702983.sh
+c00000000516FBC1100000000000000E5
+t1366277137
+s229
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h
+c00000000516FBBBB0000000000004A78
+t1366277051
+s19064
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h
+c00000000516FBBBB0000000000035CD1
+t1366277051
+s220369
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-main_xsd.h
+c00000000516FBBBE00000000000675E1
+t1366277054
+s423393
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-commonSimpleTypes_xsd.h
+c00000000516FBBBF000000000000490B
+t1366277055
+s18699
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-relationshipReference_xsd.h
+c00000000516FBBC10000000000000E7F
+t1366277057
+s3711
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp
+c00000000516FBBBB000000000000D365
+t1366277051
+s54117
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp
+c00000000516FBBBB000000000009F0F7
+t1366277051
+s651511
+i"dml-chart_xsd.h"
+i<stdlib.h>
+i<sstream>
+i"shared-relationshipReference_xsd.h"
+i"dml-main_xsd.h"
+i"dml-chartDrawing_xsd.h"
+i"shared-commonSimpleTypes_xsd.h"
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp
+c00000000516FBBBB000000000005F414
+t1366277051
+s390164
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp
+c00000000516FBBBB00000000000002AC
+t1366277051
+s684
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp
+c00000000516FBBBD000000000011BFF8
+t1366277053
+s1163256
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp
+c00000000516FBBBE000000000000154C
+t1366277054
+s5452
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp
+c00000000516FBBBE0000000000013800
+t1366277054
+s79872
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp
+c00000000516FBBBE00000000000195D9
+t1366277054
+s103897
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp
+c00000000516FBBBF00000000000A7029
+t1366277055
+s684073
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp
+c00000000516FBBBF0000000000001945
+t1366277055
+s6469
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp
+c00000000516FBBBF000000000000A25E
+t1366277055
+s41566
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp
+c00000000516FBBBF0000000000007F7D
+t1366277055
+s32637
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp
+c00000000516FBBBF0000000000001561
+t1366277055
+s5473
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp
+c00000000516FBBBF0000000000001336
+t1366277055
+s4918
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp
+c00000000516FBBC00000000000016477
+t1366277056
+s91255
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp
+c00000000516FBBC00000000000005050
+t1366277056
+s20560
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp
+c00000000516FBBC00000000000020550
+t1366277056
+s132432
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp
+c00000000516FBBC10000000000036777
+t1366277057
+s223095
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp
+c00000000516FBBC10000000000000D47
+t1366277057
+s3399
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp
+c00000000516FBBC300000000001B741F
+t1366277059
+s1799199
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp
+c00000000516FBBC40000000000040823
+t1366277060
+s264227
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp
+c00000000516FBBC5000000000002DAEF
+t1366277061
+s187119
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp
+c00000000516FBBC5000000000000091F
+t1366277061
+s2335
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp
+c00000000516FBBC50000000000007BEC
+t1366277061
+s31724
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp
+c00000000516FBBC50000000000003FA7
+t1366277061
+s16295
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp
+c00000000516FBBC9000000000018A2C8
+t1366277065
+s1614536
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp
+c00000000516FB824000000000000059E
+t1366276132
+s1438
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies2173f591f31fb741^64ebf591f31fb741^---0#1#0#--18"Check dependencies36"8BFF776C-7FA7-496E-B41A-DD5336125A58-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s387969937.968717
+e387969938.638406
+r0
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oIn file included from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp:1:
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h:20:14: warning: extra tokens at end of #ifndef directive [-Wextra-tokens]
+o#ifndef __dml-chartDrawing_xsd_
+o             ^
+o             //
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h:21:14: warning: whitespace recommended after macro name
+o#define __dml-chartDrawing_xsd_ 0
+o             ^
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h:23:10: fatal error: 'xsddata.h' file not found
+o#include "xsddata.h"
+o         ^
+o2 warnings and 1 error generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp471ef891f31fb741^1a6ba392f31fb741^-754"In file included from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp:1:/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h:20:14: warning: extra tokens at end of #ifndef directive [-Wextra-tokens]#ifndef __dml-chartDrawing_xsd_             ^             ///Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h:21:14: warning: whitespace recommended after macro name#define __dml-chartDrawing_xsd_ 0             ^/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h:23:10: fatal error: 'xsddata.h' file not found#include "xsddata.h"         ^2 warnings and 1 error generated.-0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp0000000000000000^2593"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o src/dml-chartDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o36"EDB30063-B992-4A86-A749-34910B259EA9-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s387969937.967932
+e387969939.042292
+r0
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oIn file included from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp:1:
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h:212:14: warning: extra tokens at end of #ifndef directive [-Wextra-tokens]
+o#ifndef __dml-chart_xsd_
+o             ^
+o             //
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h:213:14: warning: whitespace recommended after macro name
+o#define __dml-chart_xsd_ 0
+o             ^
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h:215:10: fatal error: 'xsddata.h' file not found
+o#include "xsddata.h"
+o         ^
+o2 warnings and 1 error generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cppddecf791f31fb741^2fdf0a93f31fb741^-715"In file included from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp:1:/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h:212:14: warning: extra tokens at end of #ifndef directive [-Wextra-tokens]#ifndef __dml-chart_xsd_             ^             ///Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h:213:14: warning: whitespace recommended after macro name#define __dml-chart_xsd_ 0             ^/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h:215:10: fatal error: 'xsddata.h' file not found#include "xsddata.h"         ^2 warnings and 1 error generated.-0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp0000000000000000^2551"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o src/dml-chart_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o36"0495FB2C-FBEC-45A9-B009-DF61AC4D4853-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s387969937.969422
+e387969938.846617
+r0
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oIn file included from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp:1:
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h:140:14: warning: extra tokens at end of #ifndef directive [-Wextra-tokens]
+o#ifndef __dml-diagram_xsd_
+o             ^
+o             //
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h:141:14: warning: whitespace recommended after macro name
+o#define __dml-diagram_xsd_ 0
+o             ^
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h:143:10: fatal error: 'xsddata.h' file not found
+o#include "xsddata.h"
+o         ^
+o2 warnings and 1 error generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp7958f891f31fb741^ea050393f31fb741^-727"In file included from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp:1:/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h:140:14: warning: extra tokens at end of #ifndef directive [-Wextra-tokens]#ifndef __dml-diagram_xsd_             ^             ///Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h:141:14: warning: whitespace recommended after macro name#define __dml-diagram_xsd_ 0             ^/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h:143:10: fatal error: 'xsddata.h' file not found#include "xsddata.h"         ^2 warnings and 1 error generated.-0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp0000000000000000^2563"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o src/dml-diagram_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o36"82D130D0-2E19-474C-B021-DC39FA0F817F-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s387969937.970318
+e387969938.537309
+r0
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oIn file included from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp:1:
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h:6:14: warning: extra tokens at end of #ifndef directive [-Wextra-tokens]
+o#ifndef __dml-lockedCanvas_xsd_
+o             ^
+o             //
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h:7:14: warning: whitespace recommended after macro name
+o#define __dml-lockedCanvas_xsd_ 0
+o             ^
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h:9:10: fatal error: 'xsddata.h' file not found
+o#include "xsddata.h"
+o         ^
+o2 warnings and 1 error generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp9390f891f31fb741^55a58992f31fb741^-751"In file included from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp:1:/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h:6:14: warning: extra tokens at end of #ifndef directive [-Wextra-tokens]#ifndef __dml-lockedCanvas_xsd_             ^             ///Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h:7:14: warning: whitespace recommended after macro name#define __dml-lockedCanvas_xsd_ 0             ^/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h:9:10: fatal error: 'xsddata.h' file not found#include "xsddata.h"         ^2 warnings and 1 error generated.3(36%IDEClangDiagnosticActivityLogMessage2@40"Extra tokens at end of #ifndef directive-387969938#18446744073709551615#0#1(2@116"In file included from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp:1:-387969938#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@107"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp0000000000000000^0#9#0#9#9#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@109"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h0000000000000000^5#13#5#13#96#0#29"Lexical or Preprocessor Issue1(3@109"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h0000000000000000^5#13#5#13#96#0#-2@39"Whitespace recommended after macro name-387969938#18446744073709551615#0#1(2@116"In file included from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp:1:-387969938#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@107"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp0000000000000000^0#9#0#9#9#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@109"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h0000000000000000^6#13#6#13#128#0#29"Lexical or Preprocessor Issue--2@26"'xsddata.h' file not found-387969938#18446744073709551615#0#1(2@116"In file included from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp:1:-387969938#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@107"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp0000000000000000^0#9#0#9#9#0#21"Clang LLVM 1.0 Notice--2#27"com.apple.dt.IDE.diagnostic3@109"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h0000000000000000^8#9#8#9#159#0#29"Lexical or Preprocessor Issue--0#0#0#-19%DVTDocumentLocation4@107"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp0000000000000000^2593"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.o src/dml-lockedCanvas_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.o36"039CDB06-6B84-4F45-A2A7-A06096752801-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-additionalCharacteristics_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-commonSimpleTypes_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlSchemaProperties_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-relationshipReference_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-presentationDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-spreadsheetDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-wordprocessingDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsdtype.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+r0
+
+CLibtool /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/libxsd2cpp_build_test.a normal x86_64
+r0
+
+CPhaseScriptExecution "CMake PostBuild Rules" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Script-6D5F06B5483048E39F702983.sh
+r0
+

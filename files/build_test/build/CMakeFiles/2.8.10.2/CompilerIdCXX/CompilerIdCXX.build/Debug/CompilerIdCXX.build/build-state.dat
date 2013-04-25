@@ -1,0 +1,68 @@
+TCompilerIdCXX
+v5
+r1
+cCheck dependencies
+cCompileC ./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX normal i386
+cPhaseScriptExecution "Run Script" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CompilerIdCXX.LinkFileList
+c00000000516FBBE800000000000000C0
+t1366277096
+s192
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+c00000000516FBBE8000000000000002A
+t1366277096
+s42
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+c00000000516FBBE70000000000002E22
+t1366277095
+s11810
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies2e902068f31fb741^de542c68f31fb741^---0#1#0#--18"Check dependencies36"C240360B-F4A1-44FC-BBC4-76EA6C77D27F-
+
+CCompileC ./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s387969896.177095
+e387969896.197631
+r1
+xCompileC
+x./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection133"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cppfe7e2d68f31fb741^78983268f31fb741^---0#0#0#-19%DVTDocumentLocation2@141"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp0000000000000000^2941"CompileC ./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o CMakeCXXCompilerId.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -g -fvisibility=hidden -fvisibility-inlines-hidden -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.hmap -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/DerivedSources/i386 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/DerivedSources -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.o36"EB204271-29AB-4926-A040-668A24999876-
+
+CLd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX normal i386
+s387969896.204671
+e387969896.224321
+r1
+xLd
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX
+xnormal
+xi386
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Link /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX147b3468f31fb741^946c3968f31fb741^---0#0#0#--791"Ld ./CompilerIdCXX normal i386    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -L/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX -filelist /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CompilerIdCXX.LinkFileList -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX36"E63C0913-656C-46BB-82C7-7812E44E4E36-
+
+CPhaseScriptExecution "Run Script" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+s387969896.232425
+e387969896.250432
+r1
+xPhaseScriptExecution
+xRun Script
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh
+oGCC_VERSION=com.apple.compilers.llvm.clang.1_0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Run custom shell script 'Run Script'b0fe3b68f31fb741^ef1a4068f31fb741^-47"GCC_VERSION=com.apple.compilers.llvm.clang.1_01(21%IDEActivityLogMessage2@47"GCC_VERSION=com.apple.compilers.llvm.clang.1_0-387969896#0#47#-0#-----0#0#0#--428"PhaseScriptExecution "Run Script" ./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX    /bin/sh -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/./CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh36"2EF5B48A-8E3F-403C-9E05-3BB068EB3274-
+

@@ -1,0 +1,1124 @@
+Txsd2cpp_build_test
+v5
+r1
+cCheck dependencies
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-commonSimpleTypes_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-additionalCharacteristics_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlSchemaProperties_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-relationshipReference_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-presentationDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-spreadsheetDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-wordprocessingDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsdtype.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLibtool /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/libxsd2cpp_build_test.a normal x86_64
+cPhaseScriptExecution "CMake PostBuild Rules" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Script-D5B3CEC0E13D4A8BA318DB6C.sh
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
+c00000000517531C600000000000000AA
+t1366634950
+s170
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/assert.h
+c00000000512044400000000000000F6E
+t1361069120
+s3950
+
+N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/usr/include/stdlib.h
+c00000000512044410000000000003089
+t1361069121
+s12425
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/libxsd2cpp_build_test.a
+t1366818920
+s71799504
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o
+t1366819519
+s822572
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o
+t1366819525
+s5512176
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o
+t1366819523
+s4301832
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.o
+t1366819519
+s26996
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.o
+t1366819528
+s7076408
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.o
+t1366819521
+s375552
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.o
+t1366819543
+s1003548
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.o
+t1366819562
+s1293228
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.o
+t1366819638
+s5101388
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-additionalCharacteristics_xsd.o
+t1366819541
+s236096
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.o
+t1366819542
+s629556
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-commonSimpleTypes_xsd.o
+t1366819543
+s294408
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.o
+t1366819549
+s160424
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlSchemaProperties_xsd.o
+t1366819549
+s202260
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.o
+t1366819550
+s372468
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.o
+t1366819550
+s222212
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.o
+t1366819552
+s750184
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.o
+t1366819577
+s2123124
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-relationshipReference_xsd.o
+t1366819559
+s97656
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o
+t1366818919
+s18046552
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.o
+t1366819578
+s3592700
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.o
+t1366819635
+s1833040
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-presentationDrawing_xsd.o
+t1366819632
+s79372
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-spreadsheetDrawing_xsd.o
+t1366819633
+s454416
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-wordprocessingDrawing_xsd.o
+t1366819633
+s215400
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.o
+t2
+s0
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsd2cpp_build_test.LinkFileList
+c00000000516FBC110000000000001234
+t1366277137
+s4660
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsdtype.o
+t1366818782
+s70788
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Script-6D5F06B5483048E39F702983.sh
+c00000000516FBC1100000000000000E5
+t1366277137
+s229
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Script-D5B3CEC0E13D4A8BA318DB6C.sh
+c000000005177839B00000000000000E5
+t1366786971
+s229
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h
+c000000005178027D0000000000004D5C
+t1366819453
+s19804
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h
+c000000005178027D000000000003B8DC
+t1366819453
+s243932
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h
+c000000005178027D000000000002C7C2
+t1366819453
+s182210
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h
+c000000005178027D0000000000000270
+t1366819453
+s624
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-main_xsd.h
+c0000000051780282000000000006E9F6
+t1366819458
+s453110
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-picture_xsd.h
+c00000000517802820000000000000D17
+t1366819458
+s3351
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-spreadsheetDrawing_xsd.h
+c00000000517802830000000000007549
+t1366819459
+s30025
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-wordprocessingDrawing_xsd.h
+c0000000051780283000000000000DC98
+t1366819459
+s56472
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/pml_xsd.h
+c000000005178028700000000000455F0
+t1366819463
+s284144
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-additionalCharacteristics_xsd.h
+c000000005178028700000000000010E7
+t1366819463
+s4327
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-bibliography_xsd.h
+c0000000051780288000000000000688E
+t1366819464
+s26766
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-commonSimpleTypes_xsd.h
+c00000000517802880000000000004DD3
+t1366819464
+s19923
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlDataProperties_xsd.h
+c00000000517802880000000000000E33
+t1366819464
+s3635
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlSchemaProperties_xsd.h
+c00000000517802880000000000000CF8
+t1366819464
+s3320
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesCustom_xsd.h
+c000000005178028900000000000025A8
+t1366819465
+s9640
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesExtended_xsd.h
+c00000000517802890000000000003835
+t1366819465
+s14389
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h
+c000000005178028A000000000000B0A0
+t1366819466
+s45216
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-math_xsd.h
+c00000000517802DC000000000001E1AA
+t1366819548
+s123306
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-relationshipReference_xsd.h
+c000000005178028D0000000000000D8F
+t1366819469
+s3471
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/sml_xsd.h
+c000000005178029600000000000D2B93
+t1366819478
+s863123
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-main_xsd.h
+c000000005178029A000000000003E3D7
+t1366819482
+s254935
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-officeDrawing_xsd.h
+c000000005178029C000000000002630D
+t1366819484
+s156429
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-presentationDrawing_xsd.h
+c000000005178029C0000000000000883
+t1366819484
+s2179
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-spreadsheetDrawing_xsd.h
+c000000005178029D000000000000A639
+t1366819485
+s42553
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-wordprocessingDrawing_xsd.h
+c000000005178029D0000000000003881
+t1366819485
+s14465
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/wml_xsd.h
+c00000000517802E500000000000B3D6C
+t1366819557
+s736620
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype/xsdtype.h
+c00000000517029840000000000000AD5
+t1366305156
+s2773
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp
+c000000005178027D000000000000DDAC
+t1366819453
+s56748
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp
+c000000005178027D0000000000094D6F
+t1366819453
+s609647
+i"dml-chart_xsd.h"
+i<stdlib.h>
+i<sstream>
+i<sstream>
+i<assert.h>
+i"shared-relationshipReference_xsd.h"
+i"dml-main_xsd.h"
+i"dml-chartDrawing_xsd.h"
+i"shared-commonSimpleTypes_xsd.h"
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp
+c000000005178027D000000000006A92C
+t1366819453
+s436524
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp
+c000000005178027D00000000000000FC
+t1366819453
+s252
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp
+c0000000051780282000000000012D1D4
+t1366819458
+s1233364
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp
+c000000005178028200000000000020A5
+t1366819458
+s8357
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp
+c00000000517802D300000000000164A4
+t1366819539
+s91300
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp
+c00000000517802830000000000025FEB
+t1366819459
+s155627
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp
+c000000005178032F00000000000C1696
+t1366819631
+s792214
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp
+c00000000517802870000000000001FC4
+t1366819463
+s8132
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp
+c0000000051780288000000000000C231
+t1366819464
+s49713
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp
+c000000005178028800000000000085C3
+t1366819464
+s34243
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp
+c00000000517802880000000000001EFC
+t1366819464
+s7932
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp
+c000000005178028800000000000018F1
+t1366819464
+s6385
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp
+c00000000517802890000000000017763
+t1366819465
+s96099
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp
+c000000005178028900000000000094D5
+t1366819465
+s38101
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp
+c000000005178028A0000000000039989
+t1366819466
+s235913
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp
+c00000000517802EE000000000004296E
+t1366819566
+s272750
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp
+c000000005178028D0000000000000AE1
+t1366819469
+s2785
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp
+c000000005178029500000000001FB588
+t1366819477
+s2078088
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp
+c000000005178029A000000000007DFA3
+t1366819482
+s516003
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp
+c000000005178029C000000000005F0BD
+t1366819484
+s389309
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp
+c000000005178029C0000000000000E99
+t1366819484
+s3737
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp
+c000000005178029D000000000000F734
+t1366819485
+s63284
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp
+c000000005178029D00000000000074ED
+t1366819485
+s29933
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp
+c000000005178037000000000001A96C2
+t1366819696
+s1742530
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp
+c000000005170298E00000000000005AE
+t1366305166
+s1454
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp
+r0
+
+CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies452a04f13a28b741^576004f13a28b741^---0#1#0#--18"Check dependencies36"744B8F4C-48A4-4936-B2E4-5A6A1F425D23-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512318.217016
+e388512319.967307
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cppbbb6373e3a28b741^94a0f73f3a28b741^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp0000000000000000^2593"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o src/dml-chartDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chartDrawing_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o36"2B86F51D-8101-4204-8B94-0AF40913D269-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512318.217042
+e388512325.314397
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp:26943:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_s::ST_PositiveUniversalMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp:26963:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_s::ST_PositiveUniversalMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o2 warnings generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection92"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp78b6373e3a28b741^3c8550453a28b741^-634"/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp:26943:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_s::ST_PositiveUniversalMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp:26963:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_s::ST_PositiveUniversalMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~2 warnings generated.-0#0#0#-19%DVTDocumentLocation2@100"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp0000000000000000^2551"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o src/dml-chart_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-chart_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o36"78DACF0D-D10F-4B67-9A42-9FDD9BA8FCF5-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512318.217034
+e388512323.804781
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp9ab6373e3a28b741^c806ce433a28b741^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp0000000000000000^2563"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o src/dml-diagram_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-diagram_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o36"C4A318AE-EBB1-4109-8BED-3ACB9C81AE11-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512318.217209
+e388512319.298023
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection99"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cppfeba373e3a28b741^ffcc4c3f3a28b741^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp0000000000000000^2593"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.o src/dml-lockedCanvas_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-lockedCanvas_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.o36"15AA68DE-3326-43F4-8B84-B334390BD659-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512319.327912
+e388512328.355168
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:859:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositivePercentageDecimal::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:894:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_s::ST_PositivePercentage::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:969:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_FixedPercentageDecimal::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:1004:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_s::ST_FixedPercentage::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:1079:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedPercentageDecimal::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:1114:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_s::ST_PositiveFixedPercentage::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:4851:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_TextFontScalePercent::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:5155:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_TextBulletSizeDecimal::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:5962:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_TextSpacingPercent::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:9579:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:11580:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:13865:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:13885:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:13905:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:21612:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_FOVAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:25125:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:25801:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:26618:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:26678:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_FixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:26698:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_FixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:27370:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:27741:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:27761:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:27821:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_FixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:27841:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_FixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:28113:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:28310:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_FixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:28330:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_FixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:29001:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveFixedAngle::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:37681:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_LineWidth::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:50792:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveCoordinate32::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:56148:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_TextMargin::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:56168:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_TextMargin::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:56208:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_TextIndent::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o34 warnings generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cppaf21543f3a28b741^1fda5b483a28b741^-9482"/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:859:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositivePercentageDecimal::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:894:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_s::ST_PositivePercentage::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:969:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_FixedPercentageDecimal::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:1004:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_s::ST_FixedPercentage::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:1079:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedPercentageDecimal::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:1114:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_s::ST_PositiveFixedPercentage::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:4851:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_TextFontScalePercent::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:5155:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_TextBulletSizeDecimal::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:5962:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_TextSpacingPercent::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:9579:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:11580:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:13865:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:13885:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:13905:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:21612:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_FOVAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:25125:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:25801:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:26618:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:26678:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_FixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:26698:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_FixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:27370:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:27741:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:27761:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:27821:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_FixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:27841:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_FixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:28113:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:28310:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_FixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:28330:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_FixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:29001:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveFixedAngle::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:37681:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_LineWidth::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:50792:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveCoordinate32::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:56148:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_TextMargin::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:56168:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_TextMargin::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp:56208:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_TextIndent::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~34 warnings generated.-0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp0000000000000000^2545"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.o src/dml-main_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-main_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.o36"3298286E-C049-4870-BCA1-CDB7AECB5E2D-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512319.968671
+e388512321.160689
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cppeb1ff83f3a28b741^dc2d29413a28b741^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp0000000000000000^2563"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.o src/dml-picture_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-picture_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.o36"FDEF6310-9D95-423B-95A3-13B28C2167C5-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512341.286309
+e388512343.282802
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection105"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp516c49553a28b741^55fb54573a28b741^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp0000000000000000^2629"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.o src/dml-spreadsheetDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.o36"CF11158D-609B-4957-866B-B2DB466586E7-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512358.999236
+e388512362.468675
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp21e5ff663a28b741^16fb776a3a28b741^---0#0#0#-19%DVTDocumentLocation2@116"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp0000000000000000^2647"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.o src/dml-wordprocessingDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.o36"54C0C02E-5DE7-4875-B96B-56D35D1946E8-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512431.514916
+e388512438.320912
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp:19193:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_a::ST_PositiveCoordinate32::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp:19213:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_a::ST_PositiveCoordinate32::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp:19502:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_a::ST_PositiveCoordinate32::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp:19522:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_a::ST_PositiveCoordinate32::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp:33467:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_a::ST_PositiveCoordinate32::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp:33487:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_a::ST_PositiveCoordinate32::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o6 warnings generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cppa5f983af3a28b741^5e2a52b63a28b741^-1774"/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp:19193:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_a::ST_PositiveCoordinate32::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp:19213:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_a::ST_PositiveCoordinate32::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp:19502:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_a::ST_PositiveCoordinate32::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp:19522:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_a::ST_PositiveCoordinate32::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp:33467:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_a::ST_PositiveCoordinate32::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp:33487:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_a::ST_PositiveCoordinate32::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~6 warnings generated.-0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp0000000000000000^2515"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.o src/pml_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/pml_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.o36"0C2915F1-99E5-4580-B407-BA40124AEBD4-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-additionalCharacteristics_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512341.287691
+e388512341.916634
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-additionalCharacteristics_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection115"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cppd8b949553a28b741^cea7ea553a28b741^---0#0#0#-19%DVTDocumentLocation2@123"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp0000000000000000^2689"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-additionalCharacteristics_xsd.o src/shared-additionalCharacteristics_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-additionalCharacteristics_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-additionalCharacteristics_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-additionalCharacteristics_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-additionalCharacteristics_xsd.o36"D254EDEA-C52E-4A74-A171-B696F559C784-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512341.918001
+e388512342.893363
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp0327eb553a28b741^0bb3e4563a28b741^---0#0#0#-19%DVTDocumentLocation2@110"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp0000000000000000^2611"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.o src/shared-bibliography_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-bibliography_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.o36"F561D5D6-4353-4ED6-8934-3F3C0B691C6C-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-commonSimpleTypes_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512342.894969
+e388512343.589728
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-commonSimpleTypes_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp:1068:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PositiveUniversalMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o1 warning generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection107"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp4241e5563a28b741^040097573a28b741^-329"/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp:1068:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PositiveUniversalMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~1 warning generated.-0#0#0#-19%DVTDocumentLocation2@115"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp0000000000000000^2641"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-commonSimpleTypes_xsd.o src/shared-commonSimpleTypes_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-commonSimpleTypes_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-commonSimpleTypes_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-commonSimpleTypes_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-commonSimpleTypes_xsd.o36"4D510CCD-251A-42D2-B536-7B2D8AE1BAD3-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512348.729123
+e388512349.573215
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection113"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cppc4ccba5c3a28b741^7cd1925d3a28b741^---0#0#0#-19%DVTDocumentLocation2@121"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp0000000000000000^2677"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.o src/shared-customXmlDataProperties_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlDataProperties_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.o36"62778E42-D26B-481E-A6B8-BDD78CDAF118-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlSchemaProperties_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512348.730576
+e388512349.627089
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlSchemaProperties_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection115"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp342bbb5c3a28b741^268aa05d3a28b741^---0#0#0#-19%DVTDocumentLocation2@123"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp0000000000000000^2689"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlSchemaProperties_xsd.o src/shared-customXmlSchemaProperties_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlSchemaProperties_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlSchemaProperties_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlSchemaProperties_xsd.o36"415415F8-4C74-4296-B8ED-B195BC9E1D70-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512349.574538
+e388512350.506028
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp2442935d3a28b741^5e9f815e3a28b741^---0#0#0#-19%DVTDocumentLocation2@122"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp0000000000000000^2683"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.o src/shared-documentPropertiesCustom_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.o36"7BE2C4F7-7E80-43B9-9B18-9937652BCF25-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512349.628540
+e388512350.354485
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection116"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cppde1da15d3a28b741^2dcc5a5e3a28b741^---0#0#0#-19%DVTDocumentLocation2@124"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp0000000000000000^2695"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.o src/shared-documentPropertiesExtended_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.o36"582E0319-8609-4945-8B27-F03893B965CE-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512350.355796
+e388512352.307118
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection120"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp213b5b5e3a28b741^54ac4e603a28b741^---0#0#0#-19%DVTDocumentLocation2@128"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp0000000000000000^2719"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.o src/shared-documentPropertiesVariantTypes_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.o36"20E19839-4C88-4270-8A07-23F655960933-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512373.098232
+e388512377.402730
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cppa74119753a28b741^352872793a28b741^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp0000000000000000^2563"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.o src/shared-math_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-math_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.o36"277E8142-7696-41B8-AAE4-A09AF8C3BFF6-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-relationshipReference_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512359.005811
+e388512359.503156
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-relationshipReference_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection111"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cppc39f01673a28b741^b24681673a28b741^---0#0#0#-19%DVTDocumentLocation2@119"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp0000000000000000^2665"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-relationshipReference_xsd.o src/shared-relationshipReference_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-relationshipReference_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-relationshipReference_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/shared-relationshipReference_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-relationshipReference_xsd.o36"24D84838-D751-4D7E-8892-C1C5CF7A7BCA-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512497.029523
+e388512513.323646
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:39988:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_Formula::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:40012:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_Formula::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:49680:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_Formula::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:49704:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_Formula::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:52532:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_s::ST_PositiveUniversalMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:52552:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_s::ST_PositiveUniversalMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:56114:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_s::ST_PositiveUniversalMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:56134:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_s::ST_PositiveUniversalMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:57447:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_Formula::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:58476:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_Formula::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:58516:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_Formula::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:58536:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_Formula::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o12 warnings generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp2db407f13a28b741^9dd952013b28b741^-3255"/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:39988:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_Formula::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:40012:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_Formula::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:49680:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_Formula::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:49704:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_Formula::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:52532:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_s::ST_PositiveUniversalMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:52552:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_s::ST_PositiveUniversalMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:56114:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_s::ST_PositiveUniversalMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:56134:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_s::ST_PositiveUniversalMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:57447:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_Formula::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:58476:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_Formula::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:58516:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_Formula::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp:58536:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_Formula::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~12 warnings generated.12(36%IDEClangDiagnosticActivityLogMessage2@45"Returning reference to local temporary object-388512513#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^39987#11#39987#11#937130#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^39987#11#39987#41#937130#29#-2@45"Returning reference to local temporary object-388512513#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^40011#11#40011#11#937633#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^40011#11#40011#41#937633#29#-2@45"Returning reference to local temporary object-388512513#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^49679#11#49679#11#1168239#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^49679#11#49679#41#1168239#29#-2@45"Returning reference to local temporary object-388512513#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^49703#11#49703#11#1168707#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^49703#11#49703#41#1168707#29#-2@45"Returning reference to local temporary object-388512513#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^52531#11#52531#11#1234254#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^52531#11#52531#64#1234254#52#-2@45"Returning reference to local temporary object-388512513#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^52551#11#52551#11#1234854#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^52551#11#52551#64#1234854#52#-2@45"Returning reference to local temporary object-388512513#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^56113#11#56113#11#1319758#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^56113#11#56113#64#1319758#52#-2@45"Returning reference to local temporary object-388512513#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^56133#11#56133#11#1320364#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^56133#11#56133#64#1320364#52#-2@45"Returning reference to local temporary object-388512513#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^57446#11#57446#11#1351105#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^57446#11#57446#41#1351105#29#-2@45"Returning reference to local temporary object-388512513#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^58475#11#58475#11#1374726#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^58475#11#58475#41#1374726#29#-2@45"Returning reference to local temporary object-388512513#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^58515#11#58515#11#1375716#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^58515#11#58515#41#1375716#29#-2@45"Returning reference to local temporary object-388512513#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^58535#11#58535#11#1376234#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^58535#11#58535#41#1376234#29#-0#0#0#-19%DVTDocumentLocation4@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp0000000000000000^2515"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o src/sml_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/sml_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o36"D86FE9B6-1C4E-4AC7-823C-DC10F9F9EA4E-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512373.100685
+e388512378.813721
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection91"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cppfbeb19753a28b741^f9118f7c3a28b741^---0#0#0#-19%DVTDocumentLocation2@99"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp0000000000000000^2545"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.o src/vml-main_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-main_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.o36"2FA62987-6C47-4CAE-A6FD-39BF41BDF8B2-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512431.520146
+e388512435.797546
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection100"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp444c85af3a28b741^732bccb33a28b741^---0#0#0#-19%DVTDocumentLocation2@108"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp0000000000000000^2599"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.o src/vml-officeDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-officeDrawing_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.o36"26B931A9-8423-4E92-B1E8-1F8EB38E68DD-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-presentationDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512431.520127
+e388512432.158065
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-presentationDrawing_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection106"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp774c85af3a28b741^a98328b03a28b741^---0#0#0#-19%DVTDocumentLocation2@114"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp0000000000000000^2635"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-presentationDrawing_xsd.o src/vml-presentationDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-presentationDrawing_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-presentationDrawing_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-presentationDrawing_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-presentationDrawing_xsd.o36"FB3C1835-D7C0-490A-B371-4407179ED2BD-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-spreadsheetDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512432.159392
+e388512433.139498
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-spreadsheetDrawing_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection105"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp88f328b03a28b741^7cb523b13a28b741^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp0000000000000000^2629"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-spreadsheetDrawing_xsd.o src/vml-spreadsheetDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-spreadsheetDrawing_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-spreadsheetDrawing_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-spreadsheetDrawing_xsd.o36"22B4CCDF-2990-41C7-99B4-28F1C140649A-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-wordprocessingDrawing_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512433.140864
+e388512433.749914
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-wordprocessingDrawing_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp4c3424b13a28b741^d7f9bfb13a28b741^---0#0#0#-19%DVTDocumentLocation2@116"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp0000000000000000^2647"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-wordprocessingDrawing_xsd.o src/vml-wordprocessingDrawing_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-wordprocessingDrawing_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-wordprocessingDrawing_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-wordprocessingDrawing_xsd.o36"8D796753-029E-4D18-B174-A4621C70E641-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388512497.032503
+e388512509.615458
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:575:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ns_s::ST_PositiveUniversalMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:7818:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PixelsMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:9027:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_EighthPointMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:9047:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PointMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:27054:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_EighthPointMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:27074:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PointMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:27461:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_EighthPointMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:27481:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PointMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:27908:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_EighthPointMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:27928:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PointMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:60047:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PixelsMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:60067:12: warning: returning reference to local temporary object [-Wreturn-stack-address]
+o    return ST_PixelsMeasure::default_instance();
+o           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+o12 warnings generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp5c7608f13a28b741^048d9dfd3a28b741^-3276"/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:575:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ns_s::ST_PositiveUniversalMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:7818:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PixelsMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:9027:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_EighthPointMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:9047:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PointMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:27054:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_EighthPointMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:27074:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PointMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:27461:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_EighthPointMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:27481:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PointMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:27908:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_EighthPointMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:27928:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PointMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:60047:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PixelsMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp:60067:12: warning: returning reference to local temporary object [-Wreturn-stack-address]    return ST_PixelsMeasure::default_instance();           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~12 warnings generated.12(36%IDEClangDiagnosticActivityLogMessage2@45"Returning reference to local temporary object-388512509#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^574#11#574#11#14358#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^574#11#574#64#14358#52#-2@45"Returning reference to local temporary object-388512509#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^7817#11#7817#11#175058#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^7817#11#7817#47#175058#35#-2@45"Returning reference to local temporary object-388512509#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^9026#11#9026#11#201281#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^9026#11#9026#52#201281#40#-2@45"Returning reference to local temporary object-388512509#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^9046#11#9046#11#201736#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^9046#11#9046#46#201736#34#-2@45"Returning reference to local temporary object-388512509#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^27053#11#27053#11#599860#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^27053#11#27053#52#599860#40#-2@45"Returning reference to local temporary object-388512509#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^27073#11#27073#11#600327#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^27073#11#27073#46#600327#34#-2@45"Returning reference to local temporary object-388512509#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^27460#11#27460#11#608584#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^27460#11#27460#52#608584#40#-2@45"Returning reference to local temporary object-388512509#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^27480#11#27480#11#609069#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^27480#11#27480#46#609069#34#-2@45"Returning reference to local temporary object-388512509#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^27907#11#27907#11#618429#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^27907#11#27907#52#618429#40#-2@45"Returning reference to local temporary object-388512509#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^27927#11#27927#11#618905#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^27927#11#27927#46#618905#34#-2@45"Returning reference to local temporary object-388512509#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^60046#11#60046#11#1358964#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^60046#11#60046#47#1358964#35#-2@45"Returning reference to local temporary object-388512509#18446744073709551615#0#-1#27"com.apple.dt.IDE.diagnostic3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^60066#11#60066#11#1359425#0#14"Semantic Issue1(3@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^60066#11#60066#47#1359425#35#-0#0#0#-19%DVTDocumentLocation4@94"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp0000000000000000^2515"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.o src/wml_xsd.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/wml_xsd.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.o36"6C8F2B3C-456B-437D-96B1-F6B0096AF54F-
+
+CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsdtype.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s388511581.716670
+e388511582.206194
+r1
+xCompileC
+xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsdtype.o
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection94"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp459bb75d3728b741^9bc8345e3728b741^---0#0#0#-19%DVTDocumentLocation2@102"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp0000000000000000^2531"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsdtype.o src/xsdtype/xsdtype.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsdtype.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsdtype.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/xsdtype/xsdtype.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsdtype.o36"5C2BFC46-A8A1-40CF-8D3B-1CA5E40A9577-
+
+CLibtool /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/libxsd2cpp_build_test.a normal x86_64
+s388512513.330749
+e388512513.664671
+r1
+xLibtool
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/libxsd2cpp_build_test.a
+xnormal
+xx86_64
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection57"Libtool build/Debug/libxsd2cpp_build_test.a normal x86_6440be54013b28b741^371aac013b28b741^---0#0#0#--773"Libtool build/Debug/libxsd2cpp_build_test.a normal x86_64    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -static -arch_only x86_64 -syslibroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -filelist /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsd2cpp_build_test.LinkFileList -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/libxsd2cpp_build_test.a36"E26A0559-0CB3-4002-9263-874B351DEA8A-
+
+CPhaseScriptExecution "CMake PostBuild Rules" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Script-6D5F06B5483048E39F702983.sh
+r0
+
+CPhaseScriptExecution "CMake PostBuild Rules" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Script-D5B3CEC0E13D4A8BA318DB6C.sh
+s388512513.672219
+e388512513.704250
+r1
+xPhaseScriptExecution
+xCMake PostBuild Rules
+x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Script-D5B3CEC0E13D4A8BA318DB6C.sh
+oecho "Depend check for xcode"
+oDepend check for xcode
+ocd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build && make -C /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.xsd2cpp_build_test.Debug
+o/bin/rm -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/xsd2cpp_build_test_exe
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Run custom shell script 'CMake PostBuild Rules'677fac013b28b741^2349b4013b28b741^-459"echo "Depend check for xcode"Depend check for xcodecd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build && make -C /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.xsd2cpp_build_test.Debug/bin/rm -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/xsd2cpp_build_test_exe4(21%IDEActivityLogMessage2@30"echo "Depend check for xcode"-388512513#0#30#-0#-----2@23"Depend check for xcode-388512513#30#23#-0#-----2@297"cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build && make -C /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.xsd2cpp_build_test.Debug-388512513#53#297#-0#-----2@109"/bin/rm -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/xsd2cpp_build_test_exe-388512513#350#109#-0#-----0#0#0#--387"PhaseScriptExecution "CMake PostBuild Rules" build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Script-D5B3CEC0E13D4A8BA318DB6C.sh    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    /bin/sh -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Script-D5B3CEC0E13D4A8BA318DB6C.sh36"74C9B747-8CA5-490C-AD8C-C08EA302B12A-
+

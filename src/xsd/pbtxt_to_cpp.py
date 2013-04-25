@@ -10,6 +10,8 @@ def cppParse(cppSchema, filePath):
     cppBuf = '#include "%s.h"\n' % cppSchema.name
     cppBuf += '#include <stdlib.h>\n' 
     cppBuf += '#include <sstream>\n'
+    cppBuf += '#include <sstream>\n'
+    cppBuf += '#include <assert.h>\n'
 
     deep = 0
 
@@ -113,8 +115,8 @@ def _makeCppMemberVar(cppSchema, className, deep):
     if cppSchema.access_qf == 'private' or cppSchema.HasField('access_qf'):
         if cppSchema.string_list:
             cppBuf = '    '*deep
-            if cppSchema.HasField('static') and cppSchema.static:
-                   cppBuf += 'static '
+            # if cppSchema.HasField('static') and cppSchema.static:
+            #        cppBuf += 'static '
             if cppSchema.HasField('const') and cppSchema.const:
                    cppBuf += 'const '
 
@@ -145,8 +147,8 @@ def _makeCppMemberVar(cppSchema, className, deep):
 
 def _makeCppArgVar(cppSchema):
     cppBuf = ''
-    if cppSchema.HasField('static') and cppSchema.static:
-            cppBuf += 'static '
+    # if cppSchema.HasField('static') and cppSchema.static:
+    #         cppBuf += 'static '
     if cppSchema.HasField('const') and cppSchema.const:
             cppBuf += 'const '
     
