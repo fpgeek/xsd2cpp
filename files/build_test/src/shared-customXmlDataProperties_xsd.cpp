@@ -29,7 +29,7 @@ namespace ns_customXml {
             
     if (m_has_uri_attr)
     {
-        _outStream << " " << "customXml:uri" << "=\"" << m_uri_attr << "\"";
+        _outStream << " " << "uri" << "=\"" << m_uri_attr << "\"";
     }
     
             _outStream << ">";
@@ -62,6 +62,7 @@ namespace ns_customXml {
     return m_uri_attr;
     }
 
+CT_DatastoreSchemaRef* CT_DatastoreSchemaRef::default_instance_ = NULL;
 
     // CT_DatastoreSchemaRefs
     CT_DatastoreSchemaRef* CT_DatastoreSchemaRefs::add_schemaRef()
@@ -101,7 +102,7 @@ namespace ns_customXml {
         {
             if ((*iter)->has_schemaRef())
             {
-                (*iter)->get_schemaRef().toXmlElem("customXml:schemaRef", "", _outStream);
+                (*iter)->get_schemaRef().toXmlElem("schemaRef", "", _outStream);
             }
         }
     }
@@ -118,6 +119,34 @@ namespace ns_customXml {
     return *CT_DatastoreSchemaRefs::default_instance_;
     }
 
+
+    // CT_DatastoreSchemaRefs::ChildGroup_1
+    bool CT_DatastoreSchemaRefs::ChildGroup_1::has_schemaRef() const
+    {    
+    return m_has_schemaRef;
+    }
+
+    CT_DatastoreSchemaRef* CT_DatastoreSchemaRefs::ChildGroup_1::mutable_schemaRef()
+    {    
+    
+    m_has_schemaRef = true;
+    if (!m_schemaRef)
+    {
+        m_schemaRef = new CT_DatastoreSchemaRef();
+    }
+    return m_schemaRef;
+    }
+
+    const CT_DatastoreSchemaRef& CT_DatastoreSchemaRefs::ChildGroup_1::get_schemaRef() const
+    {    
+    if (m_schemaRef)
+    {
+        return *m_schemaRef;
+    }
+    return CT_DatastoreSchemaRef::default_instance();
+    }
+
+CT_DatastoreSchemaRefs* CT_DatastoreSchemaRefs::default_instance_ = NULL;
 
     // CT_DatastoreItem
     bool CT_DatastoreItem::has_schemaRefs() const
@@ -154,15 +183,6 @@ namespace ns_customXml {
         m_s_itemID_attr = NULL;
     }
     
-    
-    m_has_schemaRefs = false;
-    
-    if (m_schemaRefs)
-    {
-        delete m_schemaRefs;
-        m_schemaRefs = NULL;
-    }
-    
     }
 
     void CT_DatastoreItem::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -176,14 +196,14 @@ namespace ns_customXml {
             
     if (m_has_s_itemID_attr)
     {
-        m_s_itemID_attr->toXmlAttr("customXml:itemID", _outStream);
+        m_s_itemID_attr->toXmlAttr("s:itemID", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_schemaRefs)
     {
-        m_schemaRefs->toXmlElem("customXml:schemaRefs", "", _outStream);;
+        m_schemaRefs->toXmlElem("schemaRefs", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -218,6 +238,7 @@ namespace ns_customXml {
     return ns_s::ST_Guid::default_instance();
     }
 
+CT_DatastoreItem* CT_DatastoreItem::default_instance_ = NULL;
 
     // datastoreItem_element
     bool datastoreItem_element::has_schemaRefs() const
@@ -254,37 +275,28 @@ namespace ns_customXml {
         m_s_itemID_attr = NULL;
     }
     
-    
-    m_has_schemaRefs = false;
-    
-    if (m_schemaRefs)
-    {
-        delete m_schemaRefs;
-        m_schemaRefs = NULL;
-    }
-    
     }
 
     void datastoreItem_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<customXml:datastoreItem";
+    _outStream << "<datastoreItem";
     
     _outStream << " " << "xmlns:customXml=\"http://schemas.openxmlformats.org/officeDocument/2006/customXml\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     
     if (m_has_s_itemID_attr)
     {
-        m_s_itemID_attr->toXmlAttr("customXml:itemID", _outStream);
+        m_s_itemID_attr->toXmlAttr("s:itemID", _outStream);
     }
     
     _outStream << ">";
     
     if (m_has_schemaRefs)
     {
-        m_schemaRefs->toXmlElem("customXml:schemaRefs", "", _outStream);;
+        m_schemaRefs->toXmlElem("schemaRefs", "", _outStream);;
     }
     
-    _outStream << "</customXml:datastoreItem>";
+    _outStream << "</datastoreItem>";
     }
 
     const datastoreItem_element& datastoreItem_element::default_instance()
@@ -316,4 +328,5 @@ namespace ns_customXml {
     return ns_s::ST_Guid::default_instance();
     }
 
+datastoreItem_element* datastoreItem_element::default_instance_ = NULL;
 }

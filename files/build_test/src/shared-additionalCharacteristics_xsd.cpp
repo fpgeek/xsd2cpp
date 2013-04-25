@@ -71,6 +71,7 @@ namespace ns_characteristics {
         "lt",
         "eq"
     };
+ST_Relation* ST_Relation::default_instance_ = NULL;
 
     // CT_AdditionalCharacteristics
     CT_Characteristic* CT_AdditionalCharacteristics::add_characteristic()
@@ -110,7 +111,7 @@ namespace ns_characteristics {
         {
             if ((*iter)->has_characteristic())
             {
-                (*iter)->get_characteristic().toXmlElem("characteristics:characteristic", "", _outStream);
+                (*iter)->get_characteristic().toXmlElem("characteristic", "", _outStream);
             }
         }
     }
@@ -127,6 +128,34 @@ namespace ns_characteristics {
     return *CT_AdditionalCharacteristics::default_instance_;
     }
 
+
+    // CT_AdditionalCharacteristics::ChildGroup_1
+    bool CT_AdditionalCharacteristics::ChildGroup_1::has_characteristic() const
+    {    
+    return m_has_characteristic;
+    }
+
+    CT_Characteristic* CT_AdditionalCharacteristics::ChildGroup_1::mutable_characteristic()
+    {    
+    
+    m_has_characteristic = true;
+    if (!m_characteristic)
+    {
+        m_characteristic = new CT_Characteristic();
+    }
+    return m_characteristic;
+    }
+
+    const CT_Characteristic& CT_AdditionalCharacteristics::ChildGroup_1::get_characteristic() const
+    {    
+    if (m_characteristic)
+    {
+        return *m_characteristic;
+    }
+    return CT_Characteristic::default_instance();
+    }
+
+CT_AdditionalCharacteristics* CT_AdditionalCharacteristics::default_instance_ = NULL;
 
     // CT_Characteristic
     void CT_Characteristic::clear()
@@ -264,6 +293,7 @@ namespace ns_characteristics {
     return m_vocabulary_attr;
     }
 
+CT_Characteristic* CT_Characteristic::default_instance_ = NULL;
 
     // additionalCharacteristics_element
     CT_Characteristic* additionalCharacteristics_element::add_characteristic()
@@ -288,7 +318,7 @@ namespace ns_characteristics {
 
     void additionalCharacteristics_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<characteristics:additionalCharacteristics";
+    _outStream << "<additionalCharacteristics";
     
     _outStream << " " << "xmlns:characteristics=\"http://schemas.openxmlformats.org/officeDocument/2006/characteristics\"";
     
@@ -300,12 +330,12 @@ namespace ns_characteristics {
         {
             if ((*iter)->has_characteristic())
             {
-                (*iter)->get_characteristic().toXmlElem("characteristics:characteristic", "", _outStream);
+                (*iter)->get_characteristic().toXmlElem("characteristic", "", _outStream);
             }
         }
     }
     
-    _outStream << "</characteristics:additionalCharacteristics>";
+    _outStream << "</additionalCharacteristics>";
     }
 
     const additionalCharacteristics_element& additionalCharacteristics_element::default_instance()
@@ -317,4 +347,32 @@ namespace ns_characteristics {
     return *additionalCharacteristics_element::default_instance_;
     }
 
+
+    // additionalCharacteristics_element::ChildGroup_1
+    bool additionalCharacteristics_element::ChildGroup_1::has_characteristic() const
+    {    
+    return m_has_characteristic;
+    }
+
+    CT_Characteristic* additionalCharacteristics_element::ChildGroup_1::mutable_characteristic()
+    {    
+    
+    m_has_characteristic = true;
+    if (!m_characteristic)
+    {
+        m_characteristic = new CT_Characteristic();
+    }
+    return m_characteristic;
+    }
+
+    const CT_Characteristic& additionalCharacteristics_element::ChildGroup_1::get_characteristic() const
+    {    
+    if (m_characteristic)
+    {
+        return *m_characteristic;
+    }
+    return CT_Characteristic::default_instance();
+    }
+
+additionalCharacteristics_element* additionalCharacteristics_element::default_instance_ = NULL;
 }

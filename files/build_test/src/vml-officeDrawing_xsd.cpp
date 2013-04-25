@@ -71,6 +71,7 @@ namespace ns_o {
     return strStream.str();
     }
 
+ST_AlternateMathContentType* ST_AlternateMathContentType::default_instance_ = NULL;
 
     // ST_RType
     ST_RType::ST_RType()
@@ -132,6 +133,7 @@ namespace ns_o {
         "connector",
         "align"
     };
+ST_RType* ST_RType::default_instance_ = NULL;
 
     // ST_How
     ST_How::ST_How()
@@ -195,6 +197,7 @@ namespace ns_o {
         "center",
         "right"
     };
+ST_How* ST_How::default_instance_ = NULL;
 
     // ST_BWMode
     ST_BWMode::ST_BWMode()
@@ -264,6 +267,7 @@ namespace ns_o {
         "undrawn",
         "blackTextAndLines"
     };
+ST_BWMode* ST_BWMode::default_instance_ = NULL;
 
     // ST_ScreenSize
     ST_ScreenSize::ST_ScreenSize()
@@ -327,6 +331,7 @@ namespace ns_o {
         "1024,768",
         "1152,862"
     };
+ST_ScreenSize* ST_ScreenSize::default_instance_ = NULL;
 
     // ST_InsetMode
     ST_InsetMode::ST_InsetMode()
@@ -386,6 +391,7 @@ namespace ns_o {
         "auto",
         "custom"
     };
+ST_InsetMode* ST_InsetMode::default_instance_ = NULL;
 
     // ST_ColorMode
     ST_ColorMode::ST_ColorMode()
@@ -445,6 +451,7 @@ namespace ns_o {
         "auto",
         "custom"
     };
+ST_ColorMode* ST_ColorMode::default_instance_ = NULL;
 
     // ST_ContentType
     ST_ContentType::ST_ContentType()
@@ -504,6 +511,7 @@ namespace ns_o {
     return strStream.str();
     }
 
+ST_ContentType* ST_ContentType::default_instance_ = NULL;
 
     // ST_DiagramLayout
     ST_DiagramLayout::ST_DiagramLayout()
@@ -565,6 +573,7 @@ namespace ns_o {
         "2",
         "3"
     };
+ST_DiagramLayout* ST_DiagramLayout::default_instance_ = NULL;
 
     // ST_ExtrusionType
     ST_ExtrusionType::ST_ExtrusionType()
@@ -624,6 +633,7 @@ namespace ns_o {
         "perspective",
         "parallel"
     };
+ST_ExtrusionType* ST_ExtrusionType::default_instance_ = NULL;
 
     // ST_ExtrusionRender
     ST_ExtrusionRender::ST_ExtrusionRender()
@@ -684,6 +694,7 @@ namespace ns_o {
         "wireFrame",
         "boundingCube"
     };
+ST_ExtrusionRender* ST_ExtrusionRender::default_instance_ = NULL;
 
     // ST_ExtrusionPlane
     ST_ExtrusionPlane::ST_ExtrusionPlane()
@@ -744,6 +755,7 @@ namespace ns_o {
         "ZX",
         "YZ"
     };
+ST_ExtrusionPlane* ST_ExtrusionPlane::default_instance_ = NULL;
 
     // ST_Angle
     ST_Angle::ST_Angle()
@@ -807,6 +819,7 @@ namespace ns_o {
         "90",
         "auto"
     };
+ST_Angle* ST_Angle::default_instance_ = NULL;
 
     // ST_CalloutDrop
     ST_CalloutDrop::ST_CalloutDrop()
@@ -866,6 +879,7 @@ namespace ns_o {
     return strStream.str();
     }
 
+ST_CalloutDrop* ST_CalloutDrop::default_instance_ = NULL;
 
     // ST_CalloutPlacement
     ST_CalloutPlacement::ST_CalloutPlacement()
@@ -927,6 +941,7 @@ namespace ns_o {
         "bottom",
         "user"
     };
+ST_CalloutPlacement* ST_CalloutPlacement::default_instance_ = NULL;
 
     // ST_ConnectorType
     ST_ConnectorType::ST_ConnectorType()
@@ -988,6 +1003,7 @@ namespace ns_o {
         "elbow",
         "curved"
     };
+ST_ConnectorType* ST_ConnectorType::default_instance_ = NULL;
 
     // ST_HrAlign
     ST_HrAlign::ST_HrAlign()
@@ -1048,6 +1064,7 @@ namespace ns_o {
         "right",
         "center"
     };
+ST_HrAlign* ST_HrAlign::default_instance_ = NULL;
 
     // ST_ConnectType
     ST_ConnectType::ST_ConnectType()
@@ -1109,6 +1126,7 @@ namespace ns_o {
         "segments",
         "custom"
     };
+ST_ConnectType* ST_ConnectType::default_instance_ = NULL;
 
     // ST_OLELinkType
     ST_OLELinkType::ST_OLELinkType()
@@ -1168,6 +1186,7 @@ namespace ns_o {
     return strStream.str();
     }
 
+ST_OLELinkType* ST_OLELinkType::default_instance_ = NULL;
 
     // ST_OLEType
     ST_OLEType::ST_OLEType()
@@ -1227,6 +1246,7 @@ namespace ns_o {
         "Embed",
         "Link"
     };
+ST_OLEType* ST_OLEType::default_instance_ = NULL;
 
     // ST_OLEDrawAspect
     ST_OLEDrawAspect::ST_OLEDrawAspect()
@@ -1286,6 +1306,7 @@ namespace ns_o {
         "Content",
         "Icon"
     };
+ST_OLEDrawAspect* ST_OLEDrawAspect::default_instance_ = NULL;
 
     // ST_OLEUpdateMode
     ST_OLEUpdateMode::ST_OLEUpdateMode()
@@ -1345,6 +1366,7 @@ namespace ns_o {
         "Always",
         "OnCall"
     };
+ST_OLEUpdateMode* ST_OLEUpdateMode::default_instance_ = NULL;
 
     // ST_FillType
     ST_FillType::ST_FillType()
@@ -1411,6 +1433,7 @@ namespace ns_o {
         "gradient",
         "background"
     };
+ST_FillType* ST_FillType::default_instance_ = NULL;
 
     // CT_ShapeDefaults
     bool CT_ShapeDefaults::has_v_fill() const
@@ -1714,96 +1737,6 @@ namespace ns_o {
         m_s_allowincell_attr = NULL;
     }
     
-    
-    m_has_v_fill = false;
-    
-    if (m_v_fill)
-    {
-        delete m_v_fill;
-        m_v_fill = NULL;
-    }
-    
-    
-    m_has_v_stroke = false;
-    
-    if (m_v_stroke)
-    {
-        delete m_v_stroke;
-        m_v_stroke = NULL;
-    }
-    
-    
-    m_has_v_textbox = false;
-    
-    if (m_v_textbox)
-    {
-        delete m_v_textbox;
-        m_v_textbox = NULL;
-    }
-    
-    
-    m_has_v_shadow = false;
-    
-    if (m_v_shadow)
-    {
-        delete m_v_shadow;
-        m_v_shadow = NULL;
-    }
-    
-    
-    m_has_skew = false;
-    
-    if (m_skew)
-    {
-        delete m_skew;
-        m_skew = NULL;
-    }
-    
-    
-    m_has_extrusion = false;
-    
-    if (m_extrusion)
-    {
-        delete m_extrusion;
-        m_extrusion = NULL;
-    }
-    
-    
-    m_has_callout = false;
-    
-    if (m_callout)
-    {
-        delete m_callout;
-        m_callout = NULL;
-    }
-    
-    
-    m_has_lock = false;
-    
-    if (m_lock)
-    {
-        delete m_lock;
-        m_lock = NULL;
-    }
-    
-    
-    m_has_colormru = false;
-    
-    if (m_colormru)
-    {
-        delete m_colormru;
-        m_colormru = NULL;
-    }
-    
-    
-    m_has_colormenu = false;
-    
-    if (m_colormenu)
-    {
-        delete m_colormenu;
-        m_colormenu = NULL;
-    }
-    
     }
 
     void CT_ShapeDefaults::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1866,52 +1799,52 @@ namespace ns_o {
             
     if (m_has_v_fill)
     {
-        m_v_fill->toXmlElem("o:fill", "", _outStream);;
+        m_v_fill->toXmlElem("v:fill", "", _outStream);;
     }
     
     if (m_has_v_stroke)
     {
-        m_v_stroke->toXmlElem("o:stroke", "", _outStream);;
+        m_v_stroke->toXmlElem("v:stroke", "", _outStream);;
     }
     
     if (m_has_v_textbox)
     {
-        m_v_textbox->toXmlElem("o:textbox", "", _outStream);;
+        m_v_textbox->toXmlElem("v:textbox", "", _outStream);;
     }
     
     if (m_has_v_shadow)
     {
-        m_v_shadow->toXmlElem("o:shadow", "", _outStream);;
+        m_v_shadow->toXmlElem("v:shadow", "", _outStream);;
     }
     
     if (m_has_skew)
     {
-        m_skew->toXmlElem("o:skew", "", _outStream);;
+        m_skew->toXmlElem("skew", "", _outStream);;
     }
     
     if (m_has_extrusion)
     {
-        m_extrusion->toXmlElem("o:extrusion", "", _outStream);;
+        m_extrusion->toXmlElem("extrusion", "", _outStream);;
     }
     
     if (m_has_callout)
     {
-        m_callout->toXmlElem("o:callout", "", _outStream);;
+        m_callout->toXmlElem("callout", "", _outStream);;
     }
     
     if (m_has_lock)
     {
-        m_lock->toXmlElem("o:lock", "", _outStream);;
+        m_lock->toXmlElem("lock", "", _outStream);;
     }
     
     if (m_has_colormru)
     {
-        m_colormru->toXmlElem("o:colormru", "", _outStream);;
+        m_colormru->toXmlElem("colormru", "", _outStream);;
     }
     
     if (m_has_colormenu)
     {
-        m_colormenu->toXmlElem("o:colormenu", "", _outStream);;
+        m_colormenu->toXmlElem("colormenu", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2078,6 +2011,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+CT_ShapeDefaults* CT_ShapeDefaults::default_instance_ = NULL;
 
     // CT_Ink
     void CT_Ink::clear()
@@ -2200,6 +2134,7 @@ namespace ns_o {
     return ST_ContentType::default_instance();
     }
 
+CT_Ink* CT_Ink::default_instance_ = NULL;
 
     // CT_SignatureLine
     void CT_SignatureLine::clear()
@@ -2622,6 +2557,7 @@ namespace ns_o {
     return m_sigprovurl_attr;
     }
 
+CT_SignatureLine* CT_SignatureLine::default_instance_ = NULL;
 
     // CT_ShapeLayout
     bool CT_ShapeLayout::has_idmap() const
@@ -2706,33 +2642,6 @@ namespace ns_o {
         m_v_ext_attr = NULL;
     }
     
-    
-    m_has_idmap = false;
-    
-    if (m_idmap)
-    {
-        delete m_idmap;
-        m_idmap = NULL;
-    }
-    
-    
-    m_has_regrouptable = false;
-    
-    if (m_regrouptable)
-    {
-        delete m_regrouptable;
-        m_regrouptable = NULL;
-    }
-    
-    
-    m_has_rules = false;
-    
-    if (m_rules)
-    {
-        delete m_rules;
-        m_rules = NULL;
-    }
-    
     }
 
     void CT_ShapeLayout::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -2753,17 +2662,17 @@ namespace ns_o {
             
     if (m_has_idmap)
     {
-        m_idmap->toXmlElem("o:idmap", "", _outStream);;
+        m_idmap->toXmlElem("idmap", "", _outStream);;
     }
     
     if (m_has_regrouptable)
     {
-        m_regrouptable->toXmlElem("o:regrouptable", "", _outStream);;
+        m_regrouptable->toXmlElem("regrouptable", "", _outStream);;
     }
     
     if (m_has_rules)
     {
-        m_rules->toXmlElem("o:rules", "", _outStream);;
+        m_rules->toXmlElem("rules", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2798,6 +2707,7 @@ namespace ns_o {
     return ns_v::ST_Ext::default_instance();
     }
 
+CT_ShapeLayout* CT_ShapeLayout::default_instance_ = NULL;
 
     // CT_IdMap
     void CT_IdMap::clear()
@@ -2885,6 +2795,7 @@ namespace ns_o {
     return m_data_attr;
     }
 
+CT_IdMap* CT_IdMap::default_instance_ = NULL;
 
     // CT_RegroupTable
     CT_Entry* CT_RegroupTable::add_entry()
@@ -2938,7 +2849,7 @@ namespace ns_o {
         {
             if ((*iter)->has_entry())
             {
-                (*iter)->get_entry().toXmlElem("o:entry", "", _outStream);
+                (*iter)->get_entry().toXmlElem("entry", "", _outStream);
             }
         }
     }
@@ -2975,6 +2886,34 @@ namespace ns_o {
     return ns_v::ST_Ext::default_instance();
     }
 
+
+    // CT_RegroupTable::ChildGroup_1
+    bool CT_RegroupTable::ChildGroup_1::has_entry() const
+    {    
+    return m_has_entry;
+    }
+
+    CT_Entry* CT_RegroupTable::ChildGroup_1::mutable_entry()
+    {    
+    
+    m_has_entry = true;
+    if (!m_entry)
+    {
+        m_entry = new CT_Entry();
+    }
+    return m_entry;
+    }
+
+    const CT_Entry& CT_RegroupTable::ChildGroup_1::get_entry() const
+    {    
+    if (m_entry)
+    {
+        return *m_entry;
+    }
+    return CT_Entry::default_instance();
+    }
+
+CT_RegroupTable* CT_RegroupTable::default_instance_ = NULL;
 
     // CT_Entry
     void CT_Entry::clear()
@@ -3052,6 +2991,7 @@ namespace ns_o {
     return m_old_attr;
     }
 
+CT_Entry* CT_Entry::default_instance_ = NULL;
 
     // CT_Rules
     CT_R* CT_Rules::add_r()
@@ -3105,7 +3045,7 @@ namespace ns_o {
         {
             if ((*iter)->has_r())
             {
-                (*iter)->get_r().toXmlElem("o:r", "", _outStream);
+                (*iter)->get_r().toXmlElem("r", "", _outStream);
             }
         }
     }
@@ -3142,6 +3082,34 @@ namespace ns_o {
     return ns_v::ST_Ext::default_instance();
     }
 
+
+    // CT_Rules::ChildGroup_1
+    bool CT_Rules::ChildGroup_1::has_r() const
+    {    
+    return m_has_r;
+    }
+
+    CT_R* CT_Rules::ChildGroup_1::mutable_r()
+    {    
+    
+    m_has_r = true;
+    if (!m_r)
+    {
+        m_r = new CT_R();
+    }
+    return m_r;
+    }
+
+    const CT_R& CT_Rules::ChildGroup_1::get_r() const
+    {    
+    if (m_r)
+    {
+        return *m_r;
+    }
+    return CT_R::default_instance();
+    }
+
+CT_Rules* CT_Rules::default_instance_ = NULL;
 
     // CT_R
     CT_Proxy* CT_R::add_proxy()
@@ -3228,7 +3196,7 @@ namespace ns_o {
         {
             if ((*iter)->has_proxy())
             {
-                (*iter)->get_proxy().toXmlElem("o:proxy", "", _outStream);
+                (*iter)->get_proxy().toXmlElem("proxy", "", _outStream);
             }
         }
     }
@@ -3317,6 +3285,34 @@ namespace ns_o {
     return m_idref_attr;
     }
 
+
+    // CT_R::ChildGroup_1
+    bool CT_R::ChildGroup_1::has_proxy() const
+    {    
+    return m_has_proxy;
+    }
+
+    CT_Proxy* CT_R::ChildGroup_1::mutable_proxy()
+    {    
+    
+    m_has_proxy = true;
+    if (!m_proxy)
+    {
+        m_proxy = new CT_Proxy();
+    }
+    return m_proxy;
+    }
+
+    const CT_Proxy& CT_R::ChildGroup_1::get_proxy() const
+    {    
+    if (m_proxy)
+    {
+        return *m_proxy;
+    }
+    return CT_Proxy::default_instance();
+    }
+
+CT_R* CT_R::default_instance_ = NULL;
 
     // CT_Proxy
     void CT_Proxy::clear()
@@ -3464,6 +3460,7 @@ namespace ns_o {
     return m_connectloc_attr;
     }
 
+CT_Proxy* CT_Proxy::default_instance_ = NULL;
 
     // CT_Diagram
     bool CT_Diagram::has_relationtable() const
@@ -3545,15 +3542,6 @@ namespace ns_o {
     
     m_has_dgmbasetextscale_attr = false;
     m_dgmbasetextscale_attr = 0;
-    
-    m_has_relationtable = false;
-    
-    if (m_relationtable)
-    {
-        delete m_relationtable;
-        m_relationtable = NULL;
-    }
-    
     }
 
     void CT_Diagram::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -3628,7 +3616,7 @@ namespace ns_o {
             
     if (m_has_relationtable)
     {
-        m_relationtable->toXmlElem("o:relationtable", "", _outStream);;
+        m_relationtable->toXmlElem("relationtable", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3819,6 +3807,7 @@ namespace ns_o {
     return m_dgmbasetextscale_attr;
     }
 
+CT_Diagram* CT_Diagram::default_instance_ = NULL;
 
     // CT_EquationXml
     void CT_EquationXml::clear()
@@ -3849,6 +3838,13 @@ namespace ns_o {
     
             _outStream << ">";
             
+    if (m_has_any)
+    {
+        
+    m_any->toXml(_outStream);
+    ;
+    }
+    
             _outStream << "</" << _elemName << ">";
                 }
 
@@ -3881,6 +3877,7 @@ namespace ns_o {
     return ST_AlternateMathContentType::default_instance();
     }
 
+CT_EquationXml* CT_EquationXml::default_instance_ = NULL;
 
     // CT_RelationTable
     CT_Relation* CT_RelationTable::add_rel()
@@ -3934,7 +3931,7 @@ namespace ns_o {
         {
             if ((*iter)->has_rel())
             {
-                (*iter)->get_rel().toXmlElem("o:rel", "", _outStream);
+                (*iter)->get_rel().toXmlElem("rel", "", _outStream);
             }
         }
     }
@@ -3971,6 +3968,34 @@ namespace ns_o {
     return ns_v::ST_Ext::default_instance();
     }
 
+
+    // CT_RelationTable::ChildGroup_1
+    bool CT_RelationTable::ChildGroup_1::has_rel() const
+    {    
+    return m_has_rel;
+    }
+
+    CT_Relation* CT_RelationTable::ChildGroup_1::mutable_rel()
+    {    
+    
+    m_has_rel = true;
+    if (!m_rel)
+    {
+        m_rel = new CT_Relation();
+    }
+    return m_rel;
+    }
+
+    const CT_Relation& CT_RelationTable::ChildGroup_1::get_rel() const
+    {    
+    if (m_rel)
+    {
+        return *m_rel;
+    }
+    return CT_Relation::default_instance();
+    }
+
+CT_RelationTable* CT_RelationTable::default_instance_ = NULL;
 
     // CT_Relation
     void CT_Relation::clear()
@@ -4108,6 +4133,7 @@ namespace ns_o {
     return m_idcntr_attr;
     }
 
+CT_Relation* CT_Relation::default_instance_ = NULL;
 
     // CT_ColorMru
     void CT_ColorMru::clear()
@@ -4195,6 +4221,7 @@ namespace ns_o {
     return m_colors_attr;
     }
 
+CT_ColorMru* CT_ColorMru::default_instance_ = NULL;
 
     // CT_ColorMenu
     void CT_ColorMenu::clear()
@@ -4397,6 +4424,7 @@ namespace ns_o {
     return ns_s::ST_ColorType::default_instance();
     }
 
+CT_ColorMenu* CT_ColorMenu::default_instance_ = NULL;
 
     // CT_Skew
     void CT_Skew::clear()
@@ -4594,6 +4622,7 @@ namespace ns_o {
     return m_matrix_attr;
     }
 
+CT_Skew* CT_Skew::default_instance_ = NULL;
 
     // CT_Extrusion
     void CT_Extrusion::clear()
@@ -5576,6 +5605,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+CT_Extrusion* CT_Extrusion::default_instance_ = NULL;
 
     // CT_Callout
     void CT_Callout::clear()
@@ -6053,6 +6083,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+CT_Callout* CT_Callout::default_instance_ = NULL;
 
     // CT_Lock
     void CT_Lock::clear()
@@ -6500,6 +6531,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+CT_Lock* CT_Lock::default_instance_ = NULL;
 
     // CT_OLEObject
     bool CT_OLEObject::has_LinkType() const
@@ -6612,27 +6644,6 @@ namespace ns_o {
         m_UpdateMode_attr = NULL;
     }
     
-    
-    m_has_LinkType = false;
-    
-    if (m_LinkType)
-    {
-        delete m_LinkType;
-        m_LinkType = NULL;
-    }
-    
-    
-    m_has_s_LockedField = false;
-    
-    if (m_s_LockedField)
-    {
-        delete m_s_LockedField;
-        m_s_LockedField = NULL;
-    }
-    
-    
-    m_has_FieldCodes = false;
-    m_FieldCodes.clear();
     }
 
     void CT_OLEObject::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -6689,12 +6700,12 @@ namespace ns_o {
             
     if (m_has_LinkType)
     {
-        _outStream << "<o:LinkType>" << m_LinkType->toString() << "</o:LinkType>";;
+        _outStream << "<LinkType>" << m_LinkType->toString() << "</LinkType>";;
     }
     
     if (m_has_s_LockedField)
     {
-        _outStream << "<o:LockedField>" << m_s_LockedField->toString() << "</o:LockedField>";;
+        _outStream << "<s:LockedField>" << m_s_LockedField->toString() << "</s:LockedField>";;
     }
     
     if (m_has_FieldCodes)
@@ -6842,6 +6853,7 @@ namespace ns_o {
     return ST_OLEUpdateMode::default_instance();
     }
 
+CT_OLEObject* CT_OLEObject::default_instance_ = NULL;
 
     // CT_Complex
     void CT_Complex::clear()
@@ -6904,6 +6916,7 @@ namespace ns_o {
     return ns_v::ST_Ext::default_instance();
     }
 
+CT_Complex* CT_Complex::default_instance_ = NULL;
 
     // CT_StrokeChild
     void CT_StrokeChild::clear()
@@ -7786,6 +7799,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+CT_StrokeChild* CT_StrokeChild::default_instance_ = NULL;
 
     // CT_ClipPath
     void CT_ClipPath::clear()
@@ -7838,6 +7852,7 @@ namespace ns_o {
     return m_v_attr;
     }
 
+CT_ClipPath* CT_ClipPath::default_instance_ = NULL;
 
     // CT_Fill
     void CT_Fill::clear()
@@ -7935,6 +7950,7 @@ namespace ns_o {
     return ST_FillType::default_instance();
     }
 
+CT_Fill* CT_Fill::default_instance_ = NULL;
 
     // shapedefaults_element
     bool shapedefaults_element::has_v_fill() const
@@ -8238,101 +8254,11 @@ namespace ns_o {
         m_s_allowincell_attr = NULL;
     }
     
-    
-    m_has_v_fill = false;
-    
-    if (m_v_fill)
-    {
-        delete m_v_fill;
-        m_v_fill = NULL;
-    }
-    
-    
-    m_has_v_stroke = false;
-    
-    if (m_v_stroke)
-    {
-        delete m_v_stroke;
-        m_v_stroke = NULL;
-    }
-    
-    
-    m_has_v_textbox = false;
-    
-    if (m_v_textbox)
-    {
-        delete m_v_textbox;
-        m_v_textbox = NULL;
-    }
-    
-    
-    m_has_v_shadow = false;
-    
-    if (m_v_shadow)
-    {
-        delete m_v_shadow;
-        m_v_shadow = NULL;
-    }
-    
-    
-    m_has_skew = false;
-    
-    if (m_skew)
-    {
-        delete m_skew;
-        m_skew = NULL;
-    }
-    
-    
-    m_has_extrusion = false;
-    
-    if (m_extrusion)
-    {
-        delete m_extrusion;
-        m_extrusion = NULL;
-    }
-    
-    
-    m_has_callout = false;
-    
-    if (m_callout)
-    {
-        delete m_callout;
-        m_callout = NULL;
-    }
-    
-    
-    m_has_lock = false;
-    
-    if (m_lock)
-    {
-        delete m_lock;
-        m_lock = NULL;
-    }
-    
-    
-    m_has_colormru = false;
-    
-    if (m_colormru)
-    {
-        delete m_colormru;
-        m_colormru = NULL;
-    }
-    
-    
-    m_has_colormenu = false;
-    
-    if (m_colormenu)
-    {
-        delete m_colormenu;
-        m_colormenu = NULL;
-    }
-    
     }
 
     void shapedefaults_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:shapedefaults";
+    _outStream << "<shapedefaults";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -8390,55 +8316,55 @@ namespace ns_o {
     
     if (m_has_v_fill)
     {
-        m_v_fill->toXmlElem("o:fill", "", _outStream);;
+        m_v_fill->toXmlElem("v:fill", "", _outStream);;
     }
     
     if (m_has_v_stroke)
     {
-        m_v_stroke->toXmlElem("o:stroke", "", _outStream);;
+        m_v_stroke->toXmlElem("v:stroke", "", _outStream);;
     }
     
     if (m_has_v_textbox)
     {
-        m_v_textbox->toXmlElem("o:textbox", "", _outStream);;
+        m_v_textbox->toXmlElem("v:textbox", "", _outStream);;
     }
     
     if (m_has_v_shadow)
     {
-        m_v_shadow->toXmlElem("o:shadow", "", _outStream);;
+        m_v_shadow->toXmlElem("v:shadow", "", _outStream);;
     }
     
     if (m_has_skew)
     {
-        m_skew->toXmlElem("o:skew", "", _outStream);;
+        m_skew->toXmlElem("skew", "", _outStream);;
     }
     
     if (m_has_extrusion)
     {
-        m_extrusion->toXmlElem("o:extrusion", "", _outStream);;
+        m_extrusion->toXmlElem("extrusion", "", _outStream);;
     }
     
     if (m_has_callout)
     {
-        m_callout->toXmlElem("o:callout", "", _outStream);;
+        m_callout->toXmlElem("callout", "", _outStream);;
     }
     
     if (m_has_lock)
     {
-        m_lock->toXmlElem("o:lock", "", _outStream);;
+        m_lock->toXmlElem("lock", "", _outStream);;
     }
     
     if (m_has_colormru)
     {
-        m_colormru->toXmlElem("o:colormru", "", _outStream);;
+        m_colormru->toXmlElem("colormru", "", _outStream);;
     }
     
     if (m_has_colormenu)
     {
-        m_colormenu->toXmlElem("o:colormenu", "", _outStream);;
+        m_colormenu->toXmlElem("colormenu", "", _outStream);;
     }
     
-    _outStream << "</o:shapedefaults>";
+    _outStream << "</shapedefaults>";
     }
 
     const shapedefaults_element& shapedefaults_element::default_instance()
@@ -8602,6 +8528,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+shapedefaults_element* shapedefaults_element::default_instance_ = NULL;
 
     // shapelayout_element
     bool shapelayout_element::has_idmap() const
@@ -8686,38 +8613,11 @@ namespace ns_o {
         m_v_ext_attr = NULL;
     }
     
-    
-    m_has_idmap = false;
-    
-    if (m_idmap)
-    {
-        delete m_idmap;
-        m_idmap = NULL;
-    }
-    
-    
-    m_has_regrouptable = false;
-    
-    if (m_regrouptable)
-    {
-        delete m_regrouptable;
-        m_regrouptable = NULL;
-    }
-    
-    
-    m_has_rules = false;
-    
-    if (m_rules)
-    {
-        delete m_rules;
-        m_rules = NULL;
-    }
-    
     }
 
     void shapelayout_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:shapelayout";
+    _outStream << "<shapelayout";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -8733,20 +8633,20 @@ namespace ns_o {
     
     if (m_has_idmap)
     {
-        m_idmap->toXmlElem("o:idmap", "", _outStream);;
+        m_idmap->toXmlElem("idmap", "", _outStream);;
     }
     
     if (m_has_regrouptable)
     {
-        m_regrouptable->toXmlElem("o:regrouptable", "", _outStream);;
+        m_regrouptable->toXmlElem("regrouptable", "", _outStream);;
     }
     
     if (m_has_rules)
     {
-        m_rules->toXmlElem("o:rules", "", _outStream);;
+        m_rules->toXmlElem("rules", "", _outStream);;
     }
     
-    _outStream << "</o:shapelayout>";
+    _outStream << "</shapelayout>";
     }
 
     const shapelayout_element& shapelayout_element::default_instance()
@@ -8778,6 +8678,7 @@ namespace ns_o {
     return ns_v::ST_Ext::default_instance();
     }
 
+shapelayout_element* shapelayout_element::default_instance_ = NULL;
 
     // signatureline_element
     void signatureline_element::clear()
@@ -8866,7 +8767,7 @@ namespace ns_o {
 
     void signatureline_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:signatureline";
+    _outStream << "<signatureline";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -8952,7 +8853,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:signatureline>";
+    _outStream << "</signatureline>";
     }
 
     const signatureline_element& signatureline_element::default_instance()
@@ -9200,6 +9101,7 @@ namespace ns_o {
     return m_sigprovurl_attr;
     }
 
+signatureline_element* signatureline_element::default_instance_ = NULL;
 
     // ink_element
     void ink_element::clear()
@@ -9228,7 +9130,7 @@ namespace ns_o {
 
     void ink_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:ink";
+    _outStream << "<ink";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -9254,7 +9156,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:ink>";
+    _outStream << "</ink>";
     }
 
     const ink_element& ink_element::default_instance()
@@ -9322,6 +9224,7 @@ namespace ns_o {
     return ST_ContentType::default_instance();
     }
 
+ink_element* ink_element::default_instance_ = NULL;
 
     // diagram_element
     bool diagram_element::has_relationtable() const
@@ -9403,20 +9306,11 @@ namespace ns_o {
     
     m_has_dgmbasetextscale_attr = false;
     m_dgmbasetextscale_attr = 0;
-    
-    m_has_relationtable = false;
-    
-    if (m_relationtable)
-    {
-        delete m_relationtable;
-        m_relationtable = NULL;
-    }
-    
     }
 
     void diagram_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:diagram";
+    _outStream << "<diagram";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -9486,10 +9380,10 @@ namespace ns_o {
     
     if (m_has_relationtable)
     {
-        m_relationtable->toXmlElem("o:relationtable", "", _outStream);;
+        m_relationtable->toXmlElem("relationtable", "", _outStream);;
     }
     
-    _outStream << "</o:diagram>";
+    _outStream << "</diagram>";
     }
 
     const diagram_element& diagram_element::default_instance()
@@ -9677,6 +9571,7 @@ namespace ns_o {
     return m_dgmbasetextscale_attr;
     }
 
+diagram_element* diagram_element::default_instance_ = NULL;
 
     // equationxml_element
     void equationxml_element::clear()
@@ -9693,7 +9588,7 @@ namespace ns_o {
 
     void equationxml_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:equationxml";
+    _outStream << "<equationxml";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -9707,7 +9602,14 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:equationxml>";
+    if (m_has_any)
+    {
+        
+    m_any->toXml(_outStream);
+    ;
+    }
+    
+    _outStream << "</equationxml>";
     }
 
     const equationxml_element& equationxml_element::default_instance()
@@ -9739,6 +9641,7 @@ namespace ns_o {
     return ST_AlternateMathContentType::default_instance();
     }
 
+equationxml_element* equationxml_element::default_instance_ = NULL;
 
     // skew_element
     void skew_element::clear()
@@ -9776,7 +9679,7 @@ namespace ns_o {
 
     void skew_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:skew";
+    _outStream << "<skew";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -9820,7 +9723,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:skew>";
+    _outStream << "</skew>";
     }
 
     const skew_element& skew_element::default_instance()
@@ -9936,6 +9839,7 @@ namespace ns_o {
     return m_matrix_attr;
     }
 
+skew_element* skew_element::default_instance_ = NULL;
 
     // extrusion_element
     void extrusion_element::clear()
@@ -10120,7 +10024,7 @@ namespace ns_o {
 
     void extrusion_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:extrusion";
+    _outStream << "<extrusion";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -10326,7 +10230,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:extrusion>";
+    _outStream << "</extrusion>";
     }
 
     const extrusion_element& extrusion_element::default_instance()
@@ -10918,6 +10822,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+extrusion_element* extrusion_element::default_instance_ = NULL;
 
     // callout_element
     void callout_element::clear()
@@ -11027,7 +10932,7 @@ namespace ns_o {
 
     void callout_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:callout";
+    _outStream << "<callout";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -11119,7 +11024,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:callout>";
+    _outStream << "</callout>";
     }
 
     const callout_element& callout_element::default_instance()
@@ -11395,6 +11300,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+callout_element* callout_element::default_instance_ = NULL;
 
     // lock_element
     void lock_element::clear()
@@ -11510,7 +11416,7 @@ namespace ns_o {
 
     void lock_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:lock";
+    _outStream << "<lock";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -11590,7 +11496,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:lock>";
+    _outStream << "</lock>";
     }
 
     const lock_element& lock_element::default_instance()
@@ -11842,6 +11748,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+lock_element* lock_element::default_instance_ = NULL;
 
     // OLEObject_element
     bool OLEObject_element::has_LinkType() const
@@ -11954,32 +11861,11 @@ namespace ns_o {
         m_UpdateMode_attr = NULL;
     }
     
-    
-    m_has_LinkType = false;
-    
-    if (m_LinkType)
-    {
-        delete m_LinkType;
-        m_LinkType = NULL;
-    }
-    
-    
-    m_has_s_LockedField = false;
-    
-    if (m_s_LockedField)
-    {
-        delete m_s_LockedField;
-        m_s_LockedField = NULL;
-    }
-    
-    
-    m_has_FieldCodes = false;
-    m_FieldCodes.clear();
     }
 
     void OLEObject_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:OLEObject";
+    _outStream << "<OLEObject";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -12031,12 +11917,12 @@ namespace ns_o {
     
     if (m_has_LinkType)
     {
-        _outStream << "<o:LinkType>" << m_LinkType->toString() << "</o:LinkType>";;
+        _outStream << "<LinkType>" << m_LinkType->toString() << "</LinkType>";;
     }
     
     if (m_has_s_LockedField)
     {
-        _outStream << "<o:LockedField>" << m_s_LockedField->toString() << "</o:LockedField>";;
+        _outStream << "<s:LockedField>" << m_s_LockedField->toString() << "</s:LockedField>";;
     }
     
     if (m_has_FieldCodes)
@@ -12044,7 +11930,7 @@ namespace ns_o {
         _outStream << "<o:FieldCodes>" << m_FieldCodes << "</o:FieldCodes>";;
     }
     
-    _outStream << "</o:OLEObject>";
+    _outStream << "</OLEObject>";
     }
 
     const OLEObject_element& OLEObject_element::default_instance()
@@ -12184,6 +12070,7 @@ namespace ns_o {
     return ST_OLEUpdateMode::default_instance();
     }
 
+OLEObject_element* OLEObject_element::default_instance_ = NULL;
 
     // complex_element
     void complex_element::clear()
@@ -12200,7 +12087,7 @@ namespace ns_o {
 
     void complex_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:complex";
+    _outStream << "<complex";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -12214,7 +12101,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:complex>";
+    _outStream << "</complex>";
     }
 
     const complex_element& complex_element::default_instance()
@@ -12246,6 +12133,7 @@ namespace ns_o {
     return ns_v::ST_Ext::default_instance();
     }
 
+complex_element* complex_element::default_instance_ = NULL;
 
     // left_element
     void left_element::clear()
@@ -12442,7 +12330,7 @@ namespace ns_o {
 
     void left_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:left";
+    _outStream << "<left";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -12612,7 +12500,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:left>";
+    _outStream << "</left>";
     }
 
     const left_element& left_element::default_instance()
@@ -13128,6 +13016,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+left_element* left_element::default_instance_ = NULL;
 
     // top_element
     void top_element::clear()
@@ -13324,7 +13213,7 @@ namespace ns_o {
 
     void top_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:top";
+    _outStream << "<top";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -13494,7 +13383,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:top>";
+    _outStream << "</top>";
     }
 
     const top_element& top_element::default_instance()
@@ -14010,6 +13899,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+top_element* top_element::default_instance_ = NULL;
 
     // right_element
     void right_element::clear()
@@ -14206,7 +14096,7 @@ namespace ns_o {
 
     void right_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:right";
+    _outStream << "<right";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -14376,7 +14266,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:right>";
+    _outStream << "</right>";
     }
 
     const right_element& right_element::default_instance()
@@ -14892,6 +14782,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+right_element* right_element::default_instance_ = NULL;
 
     // bottom_element
     void bottom_element::clear()
@@ -15088,7 +14979,7 @@ namespace ns_o {
 
     void bottom_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:bottom";
+    _outStream << "<bottom";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -15258,7 +15149,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:bottom>";
+    _outStream << "</bottom>";
     }
 
     const bottom_element& bottom_element::default_instance()
@@ -15774,6 +15665,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+bottom_element* bottom_element::default_instance_ = NULL;
 
     // column_element
     void column_element::clear()
@@ -15970,7 +15862,7 @@ namespace ns_o {
 
     void column_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:column";
+    _outStream << "<column";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -16140,7 +16032,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:column>";
+    _outStream << "</column>";
     }
 
     const column_element& column_element::default_instance()
@@ -16656,6 +16548,7 @@ namespace ns_o {
     return ns_s::ST_TrueFalse::default_instance();
     }
 
+column_element* column_element::default_instance_ = NULL;
 
     // clippath_element
     void clippath_element::clear()
@@ -16666,7 +16559,7 @@ namespace ns_o {
 
     void clippath_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:clippath";
+    _outStream << "<clippath";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -16680,7 +16573,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:clippath>";
+    _outStream << "</clippath>";
     }
 
     const clippath_element& clippath_element::default_instance()
@@ -16708,6 +16601,7 @@ namespace ns_o {
     return m_v_attr;
     }
 
+clippath_element* clippath_element::default_instance_ = NULL;
 
     // fill_element
     void fill_element::clear()
@@ -16733,7 +16627,7 @@ namespace ns_o {
 
     void fill_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<o:fill";
+    _outStream << "<fill";
     
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
@@ -16753,7 +16647,7 @@ namespace ns_o {
     
     _outStream << ">";
     
-    _outStream << "</o:fill>";
+    _outStream << "</fill>";
     }
 
     const fill_element& fill_element::default_instance()
@@ -16805,6 +16699,7 @@ namespace ns_o {
     return ST_FillType::default_instance();
     }
 
+fill_element* fill_element::default_instance_ = NULL;
 
     // bwmode_attr
     void bwmode_attr::toXml(std::ostream& _outStream) const

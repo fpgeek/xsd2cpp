@@ -456,6 +456,7 @@ namespace ns_a {
         ns_s::ST_UniversalMeasure* mutable_ST_UniversalMeasure();
         const ns_s::ST_UniversalMeasure& get_ST_UniversalMeasure() const;
         void clear_ST_UniversalMeasure();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_Coordinate& default_instance();
@@ -498,6 +499,7 @@ namespace ns_a {
         ns_s::ST_UniversalMeasure* mutable_ST_UniversalMeasure();
         const ns_s::ST_UniversalMeasure& get_ST_UniversalMeasure() const;
         void clear_ST_UniversalMeasure();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_Coordinate32& default_instance();
@@ -553,8 +555,10 @@ namespace ns_a {
     public:
         ST_PositiveCoordinate32();
         ST_PositiveCoordinate32(const ST_Coordinate32Unqualified& _ST_Coordinate32Unqualified);
+        static const ST_PositiveCoordinate32& default_instance();
     protected:
     private:
+        static ST_PositiveCoordinate32* default_instance_;
     };
 
     class ST_Angle: public XSD::SimpleType
@@ -581,8 +585,10 @@ namespace ns_a {
     public:
         ST_FixedAngle();
         ST_FixedAngle(const ST_Angle& _ST_Angle);
+        static const ST_FixedAngle& default_instance();
     protected:
     private:
+        static ST_FixedAngle* default_instance_;
     };
 
     class ST_PositiveFixedAngle: public ST_Angle
@@ -590,8 +596,10 @@ namespace ns_a {
     public:
         ST_PositiveFixedAngle();
         ST_PositiveFixedAngle(const ST_Angle& _ST_Angle);
+        static const ST_PositiveFixedAngle& default_instance();
     protected:
     private:
+        static ST_PositiveFixedAngle* default_instance_;
     };
 
     class ST_Percentage: public XSD::SimpleType
@@ -605,6 +613,7 @@ namespace ns_a {
         ns_s::ST_Percentage* mutable_ST_Percentage();
         const ns_s::ST_Percentage& get_ST_Percentage() const;
         void clear_ST_Percentage();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_Percentage& default_instance();
@@ -647,6 +656,7 @@ namespace ns_a {
         ns_s::ST_PositivePercentage* mutable_ST_PositivePercentage();
         const ns_s::ST_PositivePercentage& get_ST_PositivePercentage() const;
         void clear_ST_PositivePercentage();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_PositivePercentage& default_instance();
@@ -664,8 +674,10 @@ namespace ns_a {
     public:
         ST_PositivePercentageDecimal();
         ST_PositivePercentageDecimal(const ST_PercentageDecimal& _ST_PercentageDecimal);
+        static const ST_PositivePercentageDecimal& default_instance();
     protected:
     private:
+        static ST_PositivePercentageDecimal* default_instance_;
     };
 
     class ST_FixedPercentage: public XSD::SimpleType
@@ -679,6 +691,7 @@ namespace ns_a {
         ns_s::ST_FixedPercentage* mutable_ST_FixedPercentage();
         const ns_s::ST_FixedPercentage& get_ST_FixedPercentage() const;
         void clear_ST_FixedPercentage();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_FixedPercentage& default_instance();
@@ -696,8 +709,10 @@ namespace ns_a {
     public:
         ST_FixedPercentageDecimal();
         ST_FixedPercentageDecimal(const ST_PercentageDecimal& _ST_PercentageDecimal);
+        static const ST_FixedPercentageDecimal& default_instance();
     protected:
     private:
+        static ST_FixedPercentageDecimal* default_instance_;
     };
 
     class ST_PositiveFixedPercentage: public XSD::SimpleType
@@ -711,6 +726,7 @@ namespace ns_a {
         ns_s::ST_PositiveFixedPercentage* mutable_ST_PositiveFixedPercentage();
         const ns_s::ST_PositiveFixedPercentage& get_ST_PositiveFixedPercentage() const;
         void clear_ST_PositiveFixedPercentage();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_PositiveFixedPercentage& default_instance();
@@ -728,8 +744,10 @@ namespace ns_a {
     public:
         ST_PositiveFixedPercentageDecimal();
         ST_PositiveFixedPercentageDecimal(const ST_PercentageDecimal& _ST_PercentageDecimal);
+        static const ST_PositiveFixedPercentageDecimal& default_instance();
     protected:
     private:
+        static ST_PositiveFixedPercentageDecimal* default_instance_;
     };
 
     class ST_SystemColorVal: public XSD::SimpleType
@@ -1238,6 +1256,7 @@ namespace ns_a {
         ST_AnimationDgmOnlyBuildType* mutable_ST_AnimationDgmOnlyBuildType();
         const ST_AnimationDgmOnlyBuildType& get_ST_AnimationDgmOnlyBuildType() const;
         void clear_ST_AnimationDgmOnlyBuildType();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_AnimationDgmBuildType& default_instance();
@@ -1288,6 +1307,7 @@ namespace ns_a {
         ST_AnimationChartOnlyBuildType* mutable_ST_AnimationChartOnlyBuildType();
         const ST_AnimationChartOnlyBuildType& get_ST_AnimationChartOnlyBuildType() const;
         void clear_ST_AnimationChartOnlyBuildType();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_AnimationChartBuildType& default_instance();
@@ -1390,8 +1410,10 @@ namespace ns_a {
     public:
         ST_FOVAngle();
         ST_FOVAngle(const ST_Angle& _ST_Angle);
+        static const ST_FOVAngle& default_instance();
     protected:
     private:
+        static ST_FOVAngle* default_instance_;
     };
 
     class ST_LightRigDirection: public XSD::SimpleType
@@ -2125,6 +2147,7 @@ namespace ns_a {
         ST_GeomGuideName* mutable_ST_GeomGuideName();
         const ST_GeomGuideName& get_ST_GeomGuideName() const;
         void clear_ST_GeomGuideName();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_AdjCoordinate& default_instance();
@@ -2148,6 +2171,7 @@ namespace ns_a {
         ST_GeomGuideName* mutable_ST_GeomGuideName();
         const ST_GeomGuideName& get_ST_GeomGuideName() const;
         void clear_ST_GeomGuideName();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_AdjAngle& default_instance();
@@ -2335,8 +2359,10 @@ namespace ns_a {
     public:
         ST_LineWidth();
         ST_LineWidth(const ST_Coordinate32Unqualified& _ST_Coordinate32Unqualified);
+        static const ST_LineWidth& default_instance();
     protected:
     private:
+        static ST_LineWidth* default_instance_;
     };
 
     class ST_PenAlignment: public XSD::SimpleType
@@ -2601,6 +2627,7 @@ namespace ns_a {
         ns_s::ST_Percentage* mutable_ST_Percentage();
         const ns_s::ST_Percentage& get_ST_Percentage() const;
         void clear_ST_Percentage();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_TextFontScalePercentOrPercentString& default_instance();
@@ -2618,8 +2645,10 @@ namespace ns_a {
     public:
         ST_TextFontScalePercent();
         ST_TextFontScalePercent(const ST_PercentageDecimal& _ST_PercentageDecimal);
+        static const ST_TextFontScalePercent& default_instance();
     protected:
     private:
+        static ST_TextFontScalePercent* default_instance_;
     };
 
     class ST_TextBulletStartAtNum: public XSD::SimpleType
@@ -2716,6 +2745,7 @@ namespace ns_a {
         ST_TextBulletSizeDecimal* mutable_ST_TextBulletSizeDecimal();
         const ST_TextBulletSizeDecimal& get_ST_TextBulletSizeDecimal() const;
         void clear_ST_TextBulletSizeDecimal();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_TextBulletSize& default_instance();
@@ -2752,8 +2782,10 @@ namespace ns_a {
     public:
         ST_TextBulletSizeDecimal();
         ST_TextBulletSizeDecimal(const ST_PercentageDecimal& _ST_PercentageDecimal);
+        static const ST_TextBulletSizeDecimal& default_instance();
     protected:
     private:
+        static ST_TextBulletSizeDecimal* default_instance_;
     };
 
     class ST_TextPoint: public XSD::SimpleType
@@ -2767,6 +2799,7 @@ namespace ns_a {
         ns_s::ST_UniversalMeasure* mutable_ST_UniversalMeasure();
         const ns_s::ST_UniversalMeasure& get_ST_UniversalMeasure() const;
         void clear_ST_UniversalMeasure();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_TextPoint& default_instance();
@@ -3019,6 +3052,7 @@ namespace ns_a {
         ns_s::ST_Percentage* mutable_ST_Percentage();
         const ns_s::ST_Percentage& get_ST_Percentage() const;
         void clear_ST_Percentage();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_TextSpacingPercentOrPercentString& default_instance();
@@ -3036,8 +3070,10 @@ namespace ns_a {
     public:
         ST_TextSpacingPercent();
         ST_TextSpacingPercent(const ST_PercentageDecimal& _ST_PercentageDecimal);
+        static const ST_TextSpacingPercent& default_instance();
     protected:
     private:
+        static ST_TextSpacingPercent* default_instance_;
     };
 
     class ST_TextMargin: public ST_Coordinate32Unqualified
@@ -3045,8 +3081,10 @@ namespace ns_a {
     public:
         ST_TextMargin();
         ST_TextMargin(const ST_Coordinate32Unqualified& _ST_Coordinate32Unqualified);
+        static const ST_TextMargin& default_instance();
     protected:
     private:
+        static ST_TextMargin* default_instance_;
     };
 
     class ST_TextIndent: public ST_Coordinate32Unqualified
@@ -3054,8 +3092,10 @@ namespace ns_a {
     public:
         ST_TextIndent();
         ST_TextIndent(const ST_Coordinate32Unqualified& _ST_Coordinate32Unqualified);
+        static const ST_TextIndent& default_instance();
     protected:
     private:
+        static ST_TextIndent* default_instance_;
     };
 
     class ST_TextTabAlignType: public XSD::SimpleType
@@ -3795,6 +3835,8 @@ namespace ns_a {
         const XSD::token_& get_uri_attr() const;
     protected:
     private:
+        bool m_has_any;
+        XSD::Element* m_any;
         static CT_OfficeArtExtension* default_instance_;
         bool m_has_uri_attr;
         XSD::token_ m_uri_attr;
@@ -6182,6 +6224,8 @@ namespace ns_a {
         const XSD::token_& get_uri_attr() const;
     protected:
     private:
+        bool m_has_any;
+        XSD::Element* m_any;
         static CT_GraphicalObjectData* default_instance_;
         bool m_has_uri_attr;
         XSD::token_ m_uri_attr;

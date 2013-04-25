@@ -383,10 +383,10 @@ class ALL_SCHEMA:
             if namespace:
                 nsPrefix = self._findNsPrefixFromAllSchema(namespace)
                 if nsPrefix:
+                    # pbElem.name = '%s_%s' % (pbElem.name, nsPrefix)
+                    pbElem.type.any.ns_prefix = nsPrefix
                     namespaceUriList = [ns for ns in xmlSchema.pbSchema.namespace if ns.uri == namespace] # 이미 있는 네임스페이스는 또다시 등록되지 않도록 한다.
                     if len(namespaceUriList) == 0:
-                        pbElem.name = '%s_%s' % (pbElem.name, nsPrefix)
-                        pbElem.type.any.ns_prefix = nsPrefix
 
                         pbImport = xmlSchema.pbSchema.import_.add()
                         pbImport.namespace = namespace

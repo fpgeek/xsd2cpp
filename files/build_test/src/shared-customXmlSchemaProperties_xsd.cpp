@@ -136,6 +136,7 @@ namespace ns_sl {
     return m_schemaLanguage_attr;
     }
 
+CT_Schema* CT_Schema::default_instance_ = NULL;
 
     // CT_SchemaLibrary
     CT_Schema* CT_SchemaLibrary::add_schema()
@@ -175,7 +176,7 @@ namespace ns_sl {
         {
             if ((*iter)->has_schema())
             {
-                (*iter)->get_schema().toXmlElem("sl:schema", "", _outStream);
+                (*iter)->get_schema().toXmlElem("schema", "", _outStream);
             }
         }
     }
@@ -192,6 +193,34 @@ namespace ns_sl {
     return *CT_SchemaLibrary::default_instance_;
     }
 
+
+    // CT_SchemaLibrary::ChildGroup_1
+    bool CT_SchemaLibrary::ChildGroup_1::has_schema() const
+    {    
+    return m_has_schema;
+    }
+
+    CT_Schema* CT_SchemaLibrary::ChildGroup_1::mutable_schema()
+    {    
+    
+    m_has_schema = true;
+    if (!m_schema)
+    {
+        m_schema = new CT_Schema();
+    }
+    return m_schema;
+    }
+
+    const CT_Schema& CT_SchemaLibrary::ChildGroup_1::get_schema() const
+    {    
+    if (m_schema)
+    {
+        return *m_schema;
+    }
+    return CT_Schema::default_instance();
+    }
+
+CT_SchemaLibrary* CT_SchemaLibrary::default_instance_ = NULL;
 
     // schemaLibrary_element
     CT_Schema* schemaLibrary_element::add_schema()
@@ -216,7 +245,7 @@ namespace ns_sl {
 
     void schemaLibrary_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<sl:schemaLibrary";
+    _outStream << "<schemaLibrary";
     
     _outStream << " " << "xmlns:sl=\"http://schemas.openxmlformats.org/schemaLibrary/2006/main\"";
     
@@ -228,12 +257,12 @@ namespace ns_sl {
         {
             if ((*iter)->has_schema())
             {
-                (*iter)->get_schema().toXmlElem("sl:schema", "", _outStream);
+                (*iter)->get_schema().toXmlElem("schema", "", _outStream);
             }
         }
     }
     
-    _outStream << "</sl:schemaLibrary>";
+    _outStream << "</schemaLibrary>";
     }
 
     const schemaLibrary_element& schemaLibrary_element::default_instance()
@@ -245,4 +274,32 @@ namespace ns_sl {
     return *schemaLibrary_element::default_instance_;
     }
 
+
+    // schemaLibrary_element::ChildGroup_1
+    bool schemaLibrary_element::ChildGroup_1::has_schema() const
+    {    
+    return m_has_schema;
+    }
+
+    CT_Schema* schemaLibrary_element::ChildGroup_1::mutable_schema()
+    {    
+    
+    m_has_schema = true;
+    if (!m_schema)
+    {
+        m_schema = new CT_Schema();
+    }
+    return m_schema;
+    }
+
+    const CT_Schema& schemaLibrary_element::ChildGroup_1::get_schema() const
+    {    
+    if (m_schema)
+    {
+        return *m_schema;
+    }
+    return CT_Schema::default_instance();
+    }
+
+schemaLibrary_element* schemaLibrary_element::default_instance_ = NULL;
 }

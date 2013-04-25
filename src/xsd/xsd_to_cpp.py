@@ -18,7 +18,9 @@ def parseToCpp(pbSchema, allPbSchemas):
 def _makeCppFileProp(cppFile, pbSchema):
     cppFile.name = _getCppFileName(pbSchema.file_name)
     for imp in pbSchema.import_:
-        cppFile.include_file.append(_getCppIncludeFileName(imp.schema_location))
+        includeFileName = _getCppIncludeFileName(imp.schema_location)
+        if includeFileName:
+            cppFile.include_file.append(includeFileName)
 
 
 def _makeToXmlElemMethodBody(pbSchema, pbComplexType, cppClass):
@@ -50,7 +52,7 @@ def _makeToXmlElemMethodBody(pbSchema, pbComplexType, cppClass):
 
 def _makeToXmlMethodBodyForElem(pbSchema, pbComplexType, cppClass, pbElem):
 
-    xmlElementName = CPP_FUNC.getXmlElementName(pbSchema.element_form_default, pbSchema.xml_ns_prefix, pbElem.name)
+    xmlElementName = CPP_FUNC.getXmlElementName(pbSchema, pbElem)
     toXmlMethodBodyStr = \
 """
 _outStream << "<%s";
@@ -201,7 +203,8 @@ def _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass, toXmlMethodB
             repeatedIdx += 1
 
     clearMethodBodyStr = CPP_FUNC.getClaerMethodBodyStrFromAttrs(pbComplexType.attribute)
-    clearMethodBodyStr += CPP_FUNC.getClearMethodBodyStrFromElemCont(pbComplexType.element_container)
+    if len(cppClass.inner_class) > 0:
+        clearMethodBodyStr += CPP_FUNC.getClearMethodBodyStrFromElemCont(pbComplexType.element_container)
     CPP_FUNC.makeClearMethod(clearMethodBodyStr, cppClass)
 
     toXmlMethodBodyFunc(pbSchema, pbComplexType, cppClass)
@@ -282,7 +285,11 @@ def _getCppVarTypeFromElem(pbElem):
     elif pbElem.type.kind == PB.Element.Type.ComplexType:
         return _getCppVarType(pbElem.type.complex_type.name)
     elif pbElem.type.kind == PB.Element.Type.Any:
-        return _getCppVarType('%s:Element' % pbElem.type.any.ns_prefix)
+        if pbElem.type.any.ns_prefix:
+            return _getCppVarType('%s:Element' % pbElem.type.any.ns_prefix)
+        else:
+            print pbElem.type.any.ns_prefix
+            return 'XSD:Element'
 
 
 # Attribute로 부터 cpp var type 가져오기
@@ -305,6 +312,7 @@ def _getCppFileName(xsdFileName):
 # include 파일명 가져오기
 def _getCppIncludeFileName(xsdFileName):
     fileName = _getCppFileName(xsdFileName)
-    if fileName == '': fileName = 'xml.h'
+    # if fileName == '': fileName = 'xml.h'
+    if fileName == '': return None
     else: fileName = '%s.h' % fileName
     return fileName

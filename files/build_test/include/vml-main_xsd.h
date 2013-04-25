@@ -1857,6 +1857,8 @@ namespace ns_v {
     private:
         bool m_has_w_txbxContent;
         ns_w::CT_TxbxContent* m_w_txbxContent;
+        bool m_has_any;
+        XSD::Element* m_any;
         static CT_Textbox* default_instance_;
         bool m_has_id_attr;
         XSD::string_ m_id_attr;
@@ -4398,6 +4400,8 @@ namespace ns_v {
     private:
         bool m_has_w_txbxContent;
         ns_w::CT_TxbxContent* m_w_txbxContent;
+        bool m_has_any;
+        XSD::Element* m_any;
         static textbox_element* default_instance_;
         bool m_has_id_attr;
         XSD::string_ m_id_attr;

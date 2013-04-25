@@ -281,6 +281,7 @@ namespace ns_diagram {
         ST_OutputShapeType* mutable_ST_OutputShapeType();
         const ST_OutputShapeType& get_ST_OutputShapeType() const;
         void clear_ST_OutputShapeType();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_LayoutShapeType& default_instance();
@@ -459,6 +460,7 @@ namespace ns_diagram {
         ST_ConnectorPoint* mutable_ST_ConnectorPoint();
         const ST_ConnectorPoint& get_ST_ConnectorPoint() const;
         void clear_ST_ConnectorPoint();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_ParameterVal& default_instance();
@@ -550,6 +552,7 @@ namespace ns_diagram {
         ns_s::ST_Guid* mutable_ST_Guid();
         const ns_s::ST_Guid& get_ST_Guid() const;
         void clear_ST_Guid();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_ModelId& default_instance();
@@ -573,6 +576,7 @@ namespace ns_diagram {
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
         void clear_int();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_PrSetCustVal& default_instance();
@@ -2115,6 +2119,7 @@ namespace ns_diagram {
         ST_ResizeHandlesStr* mutable_ST_ResizeHandlesStr();
         const ST_ResizeHandlesStr& get_ST_ResizeHandlesStr() const;
         void clear_ST_ResizeHandlesStr();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_FunctionValue& default_instance();
@@ -2177,6 +2182,7 @@ namespace ns_diagram {
         ST_VariableType* mutable_ST_VariableType();
         const ST_VariableType& get_ST_VariableType() const;
         void clear_ST_VariableType();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_FunctionArgument& default_instance();

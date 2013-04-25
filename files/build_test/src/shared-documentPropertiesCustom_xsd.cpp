@@ -50,7 +50,7 @@ namespace ns_custom_properties {
         {
             if ((*iter)->has_property())
             {
-                (*iter)->get_property().toXmlElem("custom_properties:property", "", _outStream);
+                (*iter)->get_property().toXmlElem("property", "", _outStream);
             }
         }
     }
@@ -67,6 +67,34 @@ namespace ns_custom_properties {
     return *CT_Properties::default_instance_;
     }
 
+
+    // CT_Properties::ChildGroup_1
+    bool CT_Properties::ChildGroup_1::has_property() const
+    {    
+    return m_has_property;
+    }
+
+    CT_Property* CT_Properties::ChildGroup_1::mutable_property()
+    {    
+    
+    m_has_property = true;
+    if (!m_property)
+    {
+        m_property = new CT_Property();
+    }
+    return m_property;
+    }
+
+    const CT_Property& CT_Properties::ChildGroup_1::get_property() const
+    {    
+    if (m_property)
+    {
+        return *m_property;
+    }
+    return CT_Property::default_instance();
+    }
+
+CT_Properties* CT_Properties::default_instance_ = NULL;
 
     // CT_Property
     bool CT_Property::has_vt_vector() const
@@ -5417,153 +5445,6 @@ namespace ns_custom_properties {
     
     m_has_linkTarget_attr = false;
     m_linkTarget_attr.clear();
-    
-    m_has_vt_vector = false;
-    
-    if (m_vt_vector)
-    {
-        delete m_vt_vector;
-        m_vt_vector = NULL;
-    }
-    
-    
-    m_has_vt_array = false;
-    
-    if (m_vt_array)
-    {
-        delete m_vt_array;
-        m_vt_array = NULL;
-    }
-    
-    
-    m_has_blob = false;
-    m_blob.clear();
-    
-    m_has_oblob = false;
-    m_oblob.clear();
-    
-    m_has_vt_empty = false;
-    
-    if (m_vt_empty)
-    {
-        delete m_vt_empty;
-        m_vt_empty = NULL;
-    }
-    
-    
-    m_has_vt_null = false;
-    
-    if (m_vt_null)
-    {
-        delete m_vt_null;
-        m_vt_null = NULL;
-    }
-    
-    
-    m_has_i1 = false;
-    m_i1 = 0;
-    
-    m_has_i2 = false;
-    m_i2 = 0;
-    
-    m_has_i4 = false;
-    m_i4 = 0;
-    
-    m_has_i8 = false;
-    m_i8 = 0;
-    
-    m_has_int = false;
-    m_int = 0;
-    
-    m_has_ui1 = false;
-    m_ui1 = 0;
-    
-    m_has_ui2 = false;
-    m_ui2 = 0;
-    
-    m_has_ui4 = false;
-    m_ui4 = 0;
-    
-    m_has_ui8 = false;
-    m_ui8 = 0;
-    
-    m_has_uint = false;
-    m_uint = 0;
-    
-    m_has_r4 = false;
-    m_r4 = 0;
-    
-    m_has_r8 = false;
-    m_r8 = 0;
-    
-    m_has_decimal = false;
-    m_decimal = 0;
-    
-    m_has_lpstr = false;
-    m_lpstr.clear();
-    
-    m_has_lpwstr = false;
-    m_lpwstr.clear();
-    
-    m_has_bstr = false;
-    m_bstr.clear();
-    
-    m_has_date = false;
-    m_date.clear();
-    
-    m_has_filetime = false;
-    m_filetime.clear();
-    
-    m_has_bool = false;
-    m_bool = false;
-    
-    m_has_vt_cy = false;
-    
-    if (m_vt_cy)
-    {
-        delete m_vt_cy;
-        m_vt_cy = NULL;
-    }
-    
-    
-    m_has_vt_error = false;
-    
-    if (m_vt_error)
-    {
-        delete m_vt_error;
-        m_vt_error = NULL;
-    }
-    
-    
-    m_has_stream = false;
-    m_stream.clear();
-    
-    m_has_ostream = false;
-    m_ostream.clear();
-    
-    m_has_storage = false;
-    m_storage.clear();
-    
-    m_has_ostorage = false;
-    m_ostorage.clear();
-    
-    m_has_vt_vstream = false;
-    
-    if (m_vt_vstream)
-    {
-        delete m_vt_vstream;
-        m_vt_vstream = NULL;
-    }
-    
-    
-    m_has_s_clsid = false;
-    
-    if (m_s_clsid)
-    {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
-    }
-    
     }
 
     void CT_Property::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -5602,167 +5483,167 @@ namespace ns_custom_properties {
             
     if (m_has_vt_vector)
     {
-        m_vt_vector->toXmlElem("custom_properties:vector", "", _outStream);;
+        m_vt_vector->toXmlElem("vt:vector", "", _outStream);;
     }
     
     if (m_has_vt_array)
     {
-        m_vt_array->toXmlElem("custom_properties:array", "", _outStream);;
+        m_vt_array->toXmlElem("vt:array", "", _outStream);;
     }
     
     if (m_has_blob)
     {
-        _outStream << "<custom_properties:blob>" << m_blob << "</custom_properties:blob>";;
+        _outStream << "<blob>" << m_blob << "</blob>";;
     }
     
     if (m_has_oblob)
     {
-        _outStream << "<custom_properties:oblob>" << m_oblob << "</custom_properties:oblob>";;
+        _outStream << "<oblob>" << m_oblob << "</oblob>";;
     }
     
     if (m_has_vt_empty)
     {
-        m_vt_empty->toXmlElem("custom_properties:empty", "", _outStream);;
+        m_vt_empty->toXmlElem("vt:empty", "", _outStream);;
     }
     
     if (m_has_vt_null)
     {
-        m_vt_null->toXmlElem("custom_properties:null", "", _outStream);;
+        m_vt_null->toXmlElem("vt:null", "", _outStream);;
     }
     
     if (m_has_i1)
     {
-        _outStream << "<custom_properties:i1>" << m_i1 << "</custom_properties:i1>";;
+        _outStream << "<i1>" << m_i1 << "</i1>";;
     }
     
     if (m_has_i2)
     {
-        _outStream << "<custom_properties:i2>" << m_i2 << "</custom_properties:i2>";;
+        _outStream << "<i2>" << m_i2 << "</i2>";;
     }
     
     if (m_has_i4)
     {
-        _outStream << "<custom_properties:i4>" << m_i4 << "</custom_properties:i4>";;
+        _outStream << "<i4>" << m_i4 << "</i4>";;
     }
     
     if (m_has_i8)
     {
-        _outStream << "<custom_properties:i8>" << m_i8 << "</custom_properties:i8>";;
+        _outStream << "<i8>" << m_i8 << "</i8>";;
     }
     
     if (m_has_int)
     {
-        _outStream << "<custom_properties:int>" << m_int << "</custom_properties:int>";;
+        _outStream << "<int>" << m_int << "</int>";;
     }
     
     if (m_has_ui1)
     {
-        _outStream << "<custom_properties:ui1>" << m_ui1 << "</custom_properties:ui1>";;
+        _outStream << "<ui1>" << m_ui1 << "</ui1>";;
     }
     
     if (m_has_ui2)
     {
-        _outStream << "<custom_properties:ui2>" << m_ui2 << "</custom_properties:ui2>";;
+        _outStream << "<ui2>" << m_ui2 << "</ui2>";;
     }
     
     if (m_has_ui4)
     {
-        _outStream << "<custom_properties:ui4>" << m_ui4 << "</custom_properties:ui4>";;
+        _outStream << "<ui4>" << m_ui4 << "</ui4>";;
     }
     
     if (m_has_ui8)
     {
-        _outStream << "<custom_properties:ui8>" << m_ui8 << "</custom_properties:ui8>";;
+        _outStream << "<ui8>" << m_ui8 << "</ui8>";;
     }
     
     if (m_has_uint)
     {
-        _outStream << "<custom_properties:uint>" << m_uint << "</custom_properties:uint>";;
+        _outStream << "<uint>" << m_uint << "</uint>";;
     }
     
     if (m_has_r4)
     {
-        _outStream << "<custom_properties:r4>" << m_r4 << "</custom_properties:r4>";;
+        _outStream << "<r4>" << m_r4 << "</r4>";;
     }
     
     if (m_has_r8)
     {
-        _outStream << "<custom_properties:r8>" << m_r8 << "</custom_properties:r8>";;
+        _outStream << "<r8>" << m_r8 << "</r8>";;
     }
     
     if (m_has_decimal)
     {
-        _outStream << "<custom_properties:decimal>" << m_decimal << "</custom_properties:decimal>";;
+        _outStream << "<decimal>" << m_decimal << "</decimal>";;
     }
     
     if (m_has_lpstr)
     {
-        _outStream << "<custom_properties:lpstr>" << m_lpstr << "</custom_properties:lpstr>";;
+        _outStream << "<lpstr>" << m_lpstr << "</lpstr>";;
     }
     
     if (m_has_lpwstr)
     {
-        _outStream << "<custom_properties:lpwstr>" << m_lpwstr << "</custom_properties:lpwstr>";;
+        _outStream << "<lpwstr>" << m_lpwstr << "</lpwstr>";;
     }
     
     if (m_has_bstr)
     {
-        _outStream << "<custom_properties:bstr>" << m_bstr << "</custom_properties:bstr>";;
+        _outStream << "<bstr>" << m_bstr << "</bstr>";;
     }
     
     if (m_has_date)
     {
-        _outStream << "<custom_properties:date>" << m_date << "</custom_properties:date>";;
+        _outStream << "<date>" << m_date << "</date>";;
     }
     
     if (m_has_filetime)
     {
-        _outStream << "<custom_properties:filetime>" << m_filetime << "</custom_properties:filetime>";;
+        _outStream << "<filetime>" << m_filetime << "</filetime>";;
     }
     
     if (m_has_bool)
     {
-        _outStream << "<custom_properties:bool>" << m_bool << "</custom_properties:bool>";;
+        _outStream << "<bool>" << m_bool << "</bool>";;
     }
     
     if (m_has_vt_cy)
     {
-        _outStream << "<custom_properties:cy>" << m_vt_cy->toString() << "</custom_properties:cy>";;
+        _outStream << "<vt:cy>" << m_vt_cy->toString() << "</vt:cy>";;
     }
     
     if (m_has_vt_error)
     {
-        _outStream << "<custom_properties:error>" << m_vt_error->toString() << "</custom_properties:error>";;
+        _outStream << "<vt:error>" << m_vt_error->toString() << "</vt:error>";;
     }
     
     if (m_has_stream)
     {
-        _outStream << "<custom_properties:stream>" << m_stream << "</custom_properties:stream>";;
+        _outStream << "<stream>" << m_stream << "</stream>";;
     }
     
     if (m_has_ostream)
     {
-        _outStream << "<custom_properties:ostream>" << m_ostream << "</custom_properties:ostream>";;
+        _outStream << "<ostream>" << m_ostream << "</ostream>";;
     }
     
     if (m_has_storage)
     {
-        _outStream << "<custom_properties:storage>" << m_storage << "</custom_properties:storage>";;
+        _outStream << "<storage>" << m_storage << "</storage>";;
     }
     
     if (m_has_ostorage)
     {
-        _outStream << "<custom_properties:ostorage>" << m_ostorage << "</custom_properties:ostorage>";;
+        _outStream << "<ostorage>" << m_ostorage << "</ostorage>";;
     }
     
     if (m_has_vt_vstream)
     {
-        m_vt_vstream->toXmlElem("custom_properties:vstream", "", _outStream);;
+        m_vt_vstream->toXmlElem("vt:vstream", "", _outStream);;
     }
     
     if (m_has_s_clsid)
     {
-        _outStream << "<custom_properties:clsid>" << m_s_clsid->toString() << "</custom_properties:clsid>";;
+        _outStream << "<s:clsid>" << m_s_clsid->toString() << "</s:clsid>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -5845,6 +5726,7 @@ namespace ns_custom_properties {
     return m_linkTarget_attr;
     }
 
+CT_Property* CT_Property::default_instance_ = NULL;
 
     // Properties_element
     CT_Property* Properties_element::add_property()
@@ -5869,7 +5751,7 @@ namespace ns_custom_properties {
 
     void Properties_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<custom_properties:Properties";
+    _outStream << "<Properties";
     
     _outStream << " " << "xmlns:custom_properties=\"http://schemas.openxmlformats.org/officeDocument/2006/custom-properties\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -5883,12 +5765,12 @@ namespace ns_custom_properties {
         {
             if ((*iter)->has_property())
             {
-                (*iter)->get_property().toXmlElem("custom_properties:property", "", _outStream);
+                (*iter)->get_property().toXmlElem("property", "", _outStream);
             }
         }
     }
     
-    _outStream << "</custom_properties:Properties>";
+    _outStream << "</Properties>";
     }
 
     const Properties_element& Properties_element::default_instance()
@@ -5900,4 +5782,32 @@ namespace ns_custom_properties {
     return *Properties_element::default_instance_;
     }
 
+
+    // Properties_element::ChildGroup_1
+    bool Properties_element::ChildGroup_1::has_property() const
+    {    
+    return m_has_property;
+    }
+
+    CT_Property* Properties_element::ChildGroup_1::mutable_property()
+    {    
+    
+    m_has_property = true;
+    if (!m_property)
+    {
+        m_property = new CT_Property();
+    }
+    return m_property;
+    }
+
+    const CT_Property& Properties_element::ChildGroup_1::get_property() const
+    {    
+    if (m_property)
+    {
+        return *m_property;
+    }
+    return CT_Property::default_instance();
+    }
+
+Properties_element* Properties_element::default_instance_ = NULL;
 }

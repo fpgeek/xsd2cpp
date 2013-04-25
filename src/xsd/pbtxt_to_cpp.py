@@ -53,6 +53,10 @@ def _makeCppClass(cppSchema, namespace, deep):
     
     for incls in cppSchema.inner_class:
         cppBuf += _makeCppClass(incls, namespace, deep-1)
+
+    staticMemberList = [var for var in cppSchema.member_var if var.static]
+    if len(staticMemberList) > 0:
+        cppBuf += '%(className)s* %(className)s::default_instance_ = NULL;\n' % {'className': name}
     
     return cppBuf
 
@@ -148,8 +152,8 @@ def _makeCppMemberVar(cppSchema, className, deep):
             return ''
     else:
         return ''
-    
-    return _makeCppVar(cppSchema, '    '*deep + className) + ';\n'
+
+    # return _makeCppVar(cppSchema, '    '*deep + className) + ';\n'
 
 def _makeCppArgVar(cppSchema):
     cppBuf = ''

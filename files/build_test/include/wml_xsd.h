@@ -423,7 +423,6 @@ namespace ns_w {
 #include "shared-relationshipReference_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
 #include "shared-customXmlSchemaProperties_xsd.h"
-//#include "xml.h"
 #include "vml-main_xsd.h"
 #include "vml-officeDrawing_xsd.h"
 namespace ns_w {
@@ -510,6 +509,7 @@ namespace ns_w {
         ns_s::ST_Percentage* mutable_ST_Percentage();
         const ns_s::ST_Percentage& get_ST_Percentage() const;
         void clear_ST_Percentage();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_DecimalNumberOrPercent& default_instance();
@@ -571,6 +571,7 @@ namespace ns_w {
         ns_s::ST_UniversalMeasure* mutable_ST_UniversalMeasure();
         const ns_s::ST_UniversalMeasure& get_ST_UniversalMeasure() const;
         void clear_ST_UniversalMeasure();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_SignedTwipsMeasure& default_instance();
@@ -588,8 +589,10 @@ namespace ns_w {
     public:
         ST_PixelsMeasure();
         ST_PixelsMeasure(const ns_s::ST_UnsignedDecimalNumber& _ST_UnsignedDecimalNumber);
+        static const ST_PixelsMeasure& default_instance();
     protected:
     private:
+        static ST_PixelsMeasure* default_instance_;
     };
 
     class ST_HpsMeasure: public XSD::SimpleType
@@ -603,6 +606,7 @@ namespace ns_w {
         ns_s::ST_PositiveUniversalMeasure* mutable_ST_PositiveUniversalMeasure();
         const ns_s::ST_PositiveUniversalMeasure& get_ST_PositiveUniversalMeasure() const;
         void clear_ST_PositiveUniversalMeasure();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_HpsMeasure& default_instance();
@@ -626,6 +630,7 @@ namespace ns_w {
         ns_s::ST_UniversalMeasure* mutable_ST_UniversalMeasure();
         const ns_s::ST_UniversalMeasure& get_ST_UniversalMeasure() const;
         void clear_ST_UniversalMeasure();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_SignedHpsMeasure& default_instance();
@@ -681,8 +686,10 @@ namespace ns_w {
     public:
         ST_EighthPointMeasure();
         ST_EighthPointMeasure(const ns_s::ST_UnsignedDecimalNumber& _ST_UnsignedDecimalNumber);
+        static const ST_EighthPointMeasure& default_instance();
     protected:
     private:
+        static ST_EighthPointMeasure* default_instance_;
     };
 
     class ST_PointMeasure: public ns_s::ST_UnsignedDecimalNumber
@@ -690,8 +697,10 @@ namespace ns_w {
     public:
         ST_PointMeasure();
         ST_PointMeasure(const ns_s::ST_UnsignedDecimalNumber& _ST_UnsignedDecimalNumber);
+        static const ST_PointMeasure& default_instance();
     protected:
     private:
+        static ST_PointMeasure* default_instance_;
     };
 
     class ST_TextScale: public XSD::SimpleType
@@ -705,6 +714,7 @@ namespace ns_w {
         ST_TextScaleDecimal* mutable_ST_TextScaleDecimal();
         const ST_TextScaleDecimal& get_ST_TextScaleDecimal() const;
         void clear_ST_TextScaleDecimal();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_TextScale& default_instance();
@@ -830,6 +840,7 @@ namespace ns_w {
         ns_s::ST_HexColorRGB* mutable_ST_HexColorRGB();
         const ns_s::ST_HexColorRGB& get_ST_HexColorRGB() const;
         void clear_ST_HexColorRGB();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_HexColor& default_instance();
@@ -2852,6 +2863,7 @@ namespace ns_w {
         ns_s::ST_UniversalMeasure* mutable_ST_UniversalMeasure();
         const ns_s::ST_UniversalMeasure& get_ST_UniversalMeasure() const;
         void clear_ST_UniversalMeasure();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_MeasurementOrPercent& default_instance();
@@ -6631,6 +6643,8 @@ namespace ns_w {
     class CT_Background: public XSD::ComplexType
     {
     public:
+        void append_v_any(ns_v::Element* _v_any);
+        void append_o_any(ns_o::Element* _o_any);
         bool has_drawing() const;
         CT_Drawing* mutable_drawing();
         const CT_Drawing& get_drawing() const;
@@ -6651,13 +6665,8 @@ namespace ns_w {
         const ST_UcharHexNumber& get_themeShade_attr() const;
     protected:
     private:
-        class ChildGroup_1
-        {
-        public:
-        protected:
-        private:
-        };
-        vector<ChildGroup_1*> m_childGroupList_1;
+        vector<ns_v::Element*> m_v_any_list;
+        vector<ns_o::Element*> m_o_any_list;
         bool m_has_drawing;
         CT_Drawing* m_drawing;
         static CT_Background* default_instance_;
@@ -6690,6 +6699,8 @@ namespace ns_w {
     class CT_Object: public XSD::ComplexType
     {
     public:
+        void append_v_any(ns_v::Element* _v_any);
+        void append_o_any(ns_o::Element* _o_any);
         bool has_drawing() const;
         CT_Drawing* mutable_drawing();
         const CT_Drawing& get_drawing() const;
@@ -6716,13 +6727,8 @@ namespace ns_w {
         const ns_s::ST_TwipsMeasure& get_s_dyaOrig_attr() const;
     protected:
     private:
-        class ChildGroup_1
-        {
-        public:
-        protected:
-        private:
-        };
-        vector<ChildGroup_1*> m_childGroupList_1;
+        vector<ns_v::Element*> m_v_any_list;
+        vector<ns_o::Element*> m_o_any_list;
         bool m_has_drawing;
         CT_Drawing* m_drawing;
         bool m_has_control;
@@ -6743,6 +6749,8 @@ namespace ns_w {
     class CT_Picture: public XSD::ComplexType
     {
     public:
+        void append_v_any(ns_v::Element* _v_any);
+        void append_o_any(ns_o::Element* _o_any);
         bool has_movie() const;
         CT_Rel* mutable_movie();
         const CT_Rel& get_movie() const;
@@ -6754,13 +6762,8 @@ namespace ns_w {
         static const CT_Picture& default_instance();
     protected:
     private:
-        class ChildGroup_1
-        {
-        public:
-        protected:
-        private:
-        };
-        vector<ChildGroup_1*> m_childGroupList_1;
+        vector<ns_v::Element*> m_v_any_list;
+        vector<ns_o::Element*> m_o_any_list;
         bool m_has_movie;
         CT_Rel* m_movie;
         bool m_has_control;
@@ -17659,18 +17662,13 @@ namespace ns_w {
     class CT_ShapeDefaults: public XSD::ComplexType
     {
     public:
+        void append_o_any(ns_o::Element* _o_any);
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ShapeDefaults& default_instance();
     protected:
     private:
-        class ChildGroup_1
-        {
-        public:
-        protected:
-        private:
-        };
-        vector<ChildGroup_1*> m_childGroupList_1;
+        vector<ns_o::Element*> m_o_any_list;
         static CT_ShapeDefaults* default_instance_;
     };
 

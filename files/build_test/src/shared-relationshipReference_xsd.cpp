@@ -68,6 +68,7 @@ namespace ns_r {
     return strStream.str();
     }
 
+ST_RelationshipId* ST_RelationshipId::default_instance_ = NULL;
 
     // id_attr
     void id_attr::toXml(std::ostream& _outStream) const

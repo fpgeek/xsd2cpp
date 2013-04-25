@@ -272,6 +272,7 @@ namespace ns_s {
         ST_OnOff1* mutable_ST_OnOff1();
         const ST_OnOff1& get_ST_OnOff1() const;
         void clear_ST_OnOff1();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_OnOff& default_instance();
@@ -434,6 +435,7 @@ namespace ns_s {
         ST_PositiveUniversalMeasure* mutable_ST_PositiveUniversalMeasure();
         const ST_PositiveUniversalMeasure& get_ST_PositiveUniversalMeasure() const;
         void clear_ST_PositiveUniversalMeasure();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_TwipsMeasure& default_instance();
@@ -597,8 +599,10 @@ namespace ns_s {
     public:
         ST_PositiveUniversalMeasure();
         ST_PositiveUniversalMeasure(const ST_UniversalMeasure& _ST_UniversalMeasure);
+        static const ST_PositiveUniversalMeasure& default_instance();
     protected:
     private:
+        static ST_PositiveUniversalMeasure* default_instance_;
     };
 
     class ST_Percentage: public XSD::SimpleType
@@ -625,8 +629,10 @@ namespace ns_s {
     public:
         ST_FixedPercentage();
         ST_FixedPercentage(const ST_Percentage& _ST_Percentage);
+        static const ST_FixedPercentage& default_instance();
     protected:
     private:
+        static ST_FixedPercentage* default_instance_;
     };
 
     class ST_PositivePercentage: public ST_Percentage
@@ -634,8 +640,10 @@ namespace ns_s {
     public:
         ST_PositivePercentage();
         ST_PositivePercentage(const ST_Percentage& _ST_Percentage);
+        static const ST_PositivePercentage& default_instance();
     protected:
     private:
+        static ST_PositivePercentage* default_instance_;
     };
 
     class ST_PositiveFixedPercentage: public ST_Percentage
@@ -643,8 +651,10 @@ namespace ns_s {
     public:
         ST_PositiveFixedPercentage();
         ST_PositiveFixedPercentage(const ST_Percentage& _ST_Percentage);
+        static const ST_PositiveFixedPercentage& default_instance();
     protected:
     private:
+        static ST_PositiveFixedPercentage* default_instance_;
     };
 
 }

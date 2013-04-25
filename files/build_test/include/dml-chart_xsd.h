@@ -316,6 +316,7 @@ namespace ns_chart {
         ST_HPercentUShort* mutable_ST_HPercentUShort();
         const ST_HPercentUShort& get_ST_HPercentUShort() const;
         void clear_ST_HPercentUShort();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_HPercent& default_instance();
@@ -396,6 +397,7 @@ namespace ns_chart {
         ST_DepthPercentUShort* mutable_ST_DepthPercentUShort();
         const ST_DepthPercentUShort& get_ST_DepthPercentUShort() const;
         void clear_ST_DepthPercentUShort();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_DepthPercent& default_instance();
@@ -476,6 +478,7 @@ namespace ns_chart {
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
         void clear_unsignedInt();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_Thickness& default_instance();
@@ -518,6 +521,7 @@ namespace ns_chart {
         ST_GapAmountUShort* mutable_ST_GapAmountUShort();
         const ST_GapAmountUShort& get_ST_GapAmountUShort() const;
         void clear_ST_GapAmountUShort();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_GapAmount& default_instance();
@@ -579,6 +583,7 @@ namespace ns_chart {
         ST_OverlapByte* mutable_ST_OverlapByte();
         const ST_OverlapByte& get_ST_OverlapByte() const;
         void clear_ST_OverlapByte();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_Overlap& default_instance();
@@ -640,6 +645,7 @@ namespace ns_chart {
         ST_BubbleScaleUInt* mutable_ST_BubbleScaleUInt();
         const ST_BubbleScaleUInt& get_ST_BubbleScaleUInt() const;
         void clear_ST_BubbleScaleUInt();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_BubbleScale& default_instance();
@@ -745,6 +751,7 @@ namespace ns_chart {
         ST_HoleSizeUByte* mutable_ST_HoleSizeUByte();
         const ST_HoleSizeUByte& get_ST_HoleSizeUByte() const;
         void clear_ST_HoleSizeUByte();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_HoleSize& default_instance();
@@ -834,6 +841,7 @@ namespace ns_chart {
         ST_SecondPieSizeUShort* mutable_ST_SecondPieSizeUShort();
         const ST_SecondPieSizeUShort& get_ST_SecondPieSizeUShort() const;
         void clear_ST_SecondPieSizeUShort();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_SecondPieSize& default_instance();
@@ -1657,6 +1665,7 @@ namespace ns_chart {
         ST_LblOffsetUShort* mutable_ST_LblOffsetUShort();
         const ST_LblOffsetUShort& get_ST_LblOffsetUShort() const;
         void clear_ST_LblOffsetUShort();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_LblOffset& default_instance();
@@ -1881,6 +1890,8 @@ namespace ns_chart {
         const XSD::token_& get_uri_attr() const;
     protected:
     private:
+        bool m_has_any;
+        XSD::Element* m_any;
         static CT_Extension* default_instance_;
         bool m_has_uri_attr;
         XSD::token_ m_uri_attr;

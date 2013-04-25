@@ -40,8 +40,10 @@ namespace ns_bibliography {
     public:
         ST_SourceType();
         ST_SourceType(const ns_s::ST_String& _ST_String);
+        static const ST_SourceType& default_instance();
     protected:
     private:
+        static ST_SourceType* default_instance_;
     };
 
     class CT_NameListType: public XSD::ComplexType

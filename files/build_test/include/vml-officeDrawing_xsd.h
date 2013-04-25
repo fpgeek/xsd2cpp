@@ -1227,6 +1227,8 @@ namespace ns_o {
         const ST_AlternateMathContentType& get_contentType_attr() const;
     protected:
     private:
+        bool m_has_any;
+        XSD::Element* m_any;
         static CT_EquationXml* default_instance_;
         bool m_has_contentType_attr;
         ST_AlternateMathContentType* m_contentType_attr;
@@ -2289,6 +2291,8 @@ namespace ns_o {
         const ST_AlternateMathContentType& get_contentType_attr() const;
     protected:
     private:
+        bool m_has_any;
+        XSD::Element* m_any;
         static equationxml_element* default_instance_;
         bool m_has_contentType_attr;
         ST_AlternateMathContentType* m_contentType_attr;

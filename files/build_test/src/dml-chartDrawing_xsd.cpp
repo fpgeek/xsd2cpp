@@ -71,6 +71,7 @@ namespace ns_cdr {
     return strStream.str();
     }
 
+ST_MarkerCoordinate* ST_MarkerCoordinate::default_instance_ = NULL;
 
     // CT_ShapeNonVisual
     bool CT_ShapeNonVisual::has_a_cNvPr() const
@@ -122,25 +123,7 @@ namespace ns_cdr {
     }
 
     void CT_ShapeNonVisual::clear()
-    {    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-    
-    m_has_a_cNvSpPr = false;
-    
-    if (m_a_cNvSpPr)
-    {
-        delete m_a_cNvSpPr;
-        m_a_cNvSpPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_ShapeNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -155,12 +138,12 @@ namespace ns_cdr {
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvSpPr)
     {
-        m_a_cNvSpPr->toXmlElem("cdr:cNvSpPr", "", _outStream);;
+        m_a_cNvSpPr->toXmlElem("a:cNvSpPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -175,6 +158,7 @@ namespace ns_cdr {
     return *CT_ShapeNonVisual::default_instance_;
     }
 
+CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
 
     // CT_Shape
     bool CT_Shape::has_nvSpPr() const
@@ -286,42 +270,6 @@ namespace ns_cdr {
     
     m_has_fPublished_attr = false;
     m_fPublished_attr = false;
-    
-    m_has_nvSpPr = false;
-    
-    if (m_nvSpPr)
-    {
-        delete m_nvSpPr;
-        m_nvSpPr = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_style = false;
-    
-    if (m_a_style)
-    {
-        delete m_a_style;
-        m_a_style = NULL;
-    }
-    
-    
-    m_has_a_txBody = false;
-    
-    if (m_a_txBody)
-    {
-        delete m_a_txBody;
-        m_a_txBody = NULL;
-    }
-    
     }
 
     void CT_Shape::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -360,22 +308,22 @@ namespace ns_cdr {
             
     if (m_has_nvSpPr)
     {
-        m_nvSpPr->toXmlElem("cdr:nvSpPr", "", _outStream);;
+        m_nvSpPr->toXmlElem("nvSpPr", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("cdr:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_style)
     {
-        m_a_style->toXmlElem("cdr:style", "", _outStream);;
+        m_a_style->toXmlElem("a:style", "", _outStream);;
     }
     
     if (m_has_a_txBody)
     {
-        m_a_txBody->toXmlElem("cdr:txBody", "", _outStream);;
+        m_a_txBody->toXmlElem("a:txBody", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -454,6 +402,7 @@ namespace ns_cdr {
     return m_fPublished_attr;
     }
 
+CT_Shape* CT_Shape::default_instance_ = NULL;
 
     // CT_ConnectorNonVisual
     bool CT_ConnectorNonVisual::has_a_cNvPr() const
@@ -505,25 +454,7 @@ namespace ns_cdr {
     }
 
     void CT_ConnectorNonVisual::clear()
-    {    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-    
-    m_has_a_cNvCxnSpPr = false;
-    
-    if (m_a_cNvCxnSpPr)
-    {
-        delete m_a_cNvCxnSpPr;
-        m_a_cNvCxnSpPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_ConnectorNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -538,12 +469,12 @@ namespace ns_cdr {
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvCxnSpPr)
     {
-        m_a_cNvCxnSpPr->toXmlElem("cdr:cNvCxnSpPr", "", _outStream);;
+        m_a_cNvCxnSpPr->toXmlElem("a:cNvCxnSpPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -558,6 +489,7 @@ namespace ns_cdr {
     return *CT_ConnectorNonVisual::default_instance_;
     }
 
+CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
 
     // CT_Connector
     bool CT_Connector::has_nvCxnSpPr() const
@@ -639,33 +571,6 @@ namespace ns_cdr {
     
     m_has_fPublished_attr = false;
     m_fPublished_attr = false;
-    
-    m_has_nvCxnSpPr = false;
-    
-    if (m_nvCxnSpPr)
-    {
-        delete m_nvCxnSpPr;
-        m_nvCxnSpPr = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_style = false;
-    
-    if (m_a_style)
-    {
-        delete m_a_style;
-        m_a_style = NULL;
-    }
-    
     }
 
     void CT_Connector::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -692,17 +597,17 @@ namespace ns_cdr {
             
     if (m_has_nvCxnSpPr)
     {
-        m_nvCxnSpPr->toXmlElem("cdr:nvCxnSpPr", "", _outStream);;
+        m_nvCxnSpPr->toXmlElem("nvCxnSpPr", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("cdr:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_style)
     {
-        m_a_style->toXmlElem("cdr:style", "", _outStream);;
+        m_a_style->toXmlElem("a:style", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -749,6 +654,7 @@ namespace ns_cdr {
     return m_fPublished_attr;
     }
 
+CT_Connector* CT_Connector::default_instance_ = NULL;
 
     // CT_PictureNonVisual
     bool CT_PictureNonVisual::has_a_cNvPr() const
@@ -800,25 +706,7 @@ namespace ns_cdr {
     }
 
     void CT_PictureNonVisual::clear()
-    {    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-    
-    m_has_a_cNvPicPr = false;
-    
-    if (m_a_cNvPicPr)
-    {
-        delete m_a_cNvPicPr;
-        m_a_cNvPicPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_PictureNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -833,12 +721,12 @@ namespace ns_cdr {
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvPicPr)
     {
-        m_a_cNvPicPr->toXmlElem("cdr:cNvPicPr", "", _outStream);;
+        m_a_cNvPicPr->toXmlElem("a:cNvPicPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -853,6 +741,7 @@ namespace ns_cdr {
     return *CT_PictureNonVisual::default_instance_;
     }
 
+CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
 
     // CT_Picture
     bool CT_Picture::has_nvPicPr() const
@@ -958,42 +847,6 @@ namespace ns_cdr {
     
     m_has_fPublished_attr = false;
     m_fPublished_attr = false;
-    
-    m_has_nvPicPr = false;
-    
-    if (m_nvPicPr)
-    {
-        delete m_nvPicPr;
-        m_nvPicPr = NULL;
-    }
-    
-    
-    m_has_a_blipFill = false;
-    
-    if (m_a_blipFill)
-    {
-        delete m_a_blipFill;
-        m_a_blipFill = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_style = false;
-    
-    if (m_a_style)
-    {
-        delete m_a_style;
-        m_a_style = NULL;
-    }
-    
     }
 
     void CT_Picture::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1020,22 +873,22 @@ namespace ns_cdr {
             
     if (m_has_nvPicPr)
     {
-        m_nvPicPr->toXmlElem("cdr:nvPicPr", "", _outStream);;
+        m_nvPicPr->toXmlElem("nvPicPr", "", _outStream);;
     }
     
     if (m_has_a_blipFill)
     {
-        m_a_blipFill->toXmlElem("cdr:blipFill", "", _outStream);;
+        m_a_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("cdr:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_style)
     {
-        m_a_style->toXmlElem("cdr:style", "", _outStream);;
+        m_a_style->toXmlElem("a:style", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1082,6 +935,7 @@ namespace ns_cdr {
     return m_fPublished_attr;
     }
 
+CT_Picture* CT_Picture::default_instance_ = NULL;
 
     // CT_GraphicFrameNonVisual
     bool CT_GraphicFrameNonVisual::has_a_cNvPr() const
@@ -1133,25 +987,7 @@ namespace ns_cdr {
     }
 
     void CT_GraphicFrameNonVisual::clear()
-    {    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-    
-    m_has_a_cNvGraphicFramePr = false;
-    
-    if (m_a_cNvGraphicFramePr)
-    {
-        delete m_a_cNvGraphicFramePr;
-        m_a_cNvGraphicFramePr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_GraphicFrameNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -1166,12 +1002,12 @@ namespace ns_cdr {
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr->toXmlElem("cdr:cNvGraphicFramePr", "", _outStream);;
+        m_a_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1186,6 +1022,7 @@ namespace ns_cdr {
     return *CT_GraphicFrameNonVisual::default_instance_;
     }
 
+CT_GraphicFrameNonVisual* CT_GraphicFrameNonVisual::default_instance_ = NULL;
 
     // CT_GraphicFrame
     bool CT_GraphicFrame::has_nvGraphicFramePr() const
@@ -1267,33 +1104,6 @@ namespace ns_cdr {
     
     m_has_fPublished_attr = false;
     m_fPublished_attr = false;
-    
-    m_has_nvGraphicFramePr = false;
-    
-    if (m_nvGraphicFramePr)
-    {
-        delete m_nvGraphicFramePr;
-        m_nvGraphicFramePr = NULL;
-    }
-    
-    
-    m_has_a_xfrm = false;
-    
-    if (m_a_xfrm)
-    {
-        delete m_a_xfrm;
-        m_a_xfrm = NULL;
-    }
-    
-    
-    m_has_a_graphic = false;
-    
-    if (m_a_graphic)
-    {
-        delete m_a_graphic;
-        m_a_graphic = NULL;
-    }
-    
     }
 
     void CT_GraphicFrame::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1320,17 +1130,17 @@ namespace ns_cdr {
             
     if (m_has_nvGraphicFramePr)
     {
-        m_nvGraphicFramePr->toXmlElem("cdr:nvGraphicFramePr", "", _outStream);;
+        m_nvGraphicFramePr->toXmlElem("nvGraphicFramePr", "", _outStream);;
     }
     
     if (m_has_a_xfrm)
     {
-        m_a_xfrm->toXmlElem("cdr:xfrm", "", _outStream);;
+        m_a_xfrm->toXmlElem("a:xfrm", "", _outStream);;
     }
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("cdr:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1377,6 +1187,7 @@ namespace ns_cdr {
     return m_fPublished_attr;
     }
 
+CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
 
     // CT_GroupShapeNonVisual
     bool CT_GroupShapeNonVisual::has_a_cNvPr() const
@@ -1428,25 +1239,7 @@ namespace ns_cdr {
     }
 
     void CT_GroupShapeNonVisual::clear()
-    {    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-    
-    m_has_a_cNvGrpSpPr = false;
-    
-    if (m_a_cNvGrpSpPr)
-    {
-        delete m_a_cNvGrpSpPr;
-        m_a_cNvGrpSpPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_GroupShapeNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -1461,12 +1254,12 @@ namespace ns_cdr {
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvGrpSpPr)
     {
-        m_a_cNvGrpSpPr->toXmlElem("cdr:cNvGrpSpPr", "", _outStream);;
+        m_a_cNvGrpSpPr->toXmlElem("a:cNvGrpSpPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1481,6 +1274,7 @@ namespace ns_cdr {
     return *CT_GroupShapeNonVisual::default_instance_;
     }
 
+CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
 
     // CT_GroupShape
     bool CT_GroupShape::has_nvGrpSpPr() const
@@ -1614,12 +1408,12 @@ namespace ns_cdr {
             
     if (m_has_nvGrpSpPr)
     {
-        m_nvGrpSpPr->toXmlElem("cdr:nvGrpSpPr", "", _outStream);;
+        m_nvGrpSpPr->toXmlElem("nvGrpSpPr", "", _outStream);;
     }
     
     if (m_has_a_grpSpPr)
     {
-        m_a_grpSpPr->toXmlElem("cdr:grpSpPr", "", _outStream);;
+        m_a_grpSpPr->toXmlElem("a:grpSpPr", "", _outStream);;
     }
      
     {
@@ -1628,23 +1422,23 @@ namespace ns_cdr {
         {
             if ((*iter)->has_sp())
             {
-                (*iter)->get_sp().toXmlElem("cdr:sp", "", _outStream);
+                (*iter)->get_sp().toXmlElem("sp", "", _outStream);
             }
             else if ((*iter)->has_grpSp())
             {
-                (*iter)->get_grpSp().toXmlElem("cdr:grpSp", "", _outStream);
+                (*iter)->get_grpSp().toXmlElem("grpSp", "", _outStream);
             }
             else if ((*iter)->has_graphicFrame())
             {
-                (*iter)->get_graphicFrame().toXmlElem("cdr:graphicFrame", "", _outStream);
+                (*iter)->get_graphicFrame().toXmlElem("graphicFrame", "", _outStream);
             }
             else if ((*iter)->has_cxnSp())
             {
-                (*iter)->get_cxnSp().toXmlElem("cdr:cxnSp", "", _outStream);
+                (*iter)->get_cxnSp().toXmlElem("cxnSp", "", _outStream);
             }
             else if ((*iter)->has_pic())
             {
-                (*iter)->get_pic().toXmlElem("cdr:pic", "", _outStream);
+                (*iter)->get_pic().toXmlElem("pic", "", _outStream);
             }
         }
     }
@@ -1661,6 +1455,314 @@ namespace ns_cdr {
     return *CT_GroupShape::default_instance_;
     }
 
+
+    // CT_GroupShape::ChildGroup_1
+    bool CT_GroupShape::ChildGroup_1::has_sp() const
+    {    
+    return m_has_sp;
+    }
+
+    CT_Shape* CT_GroupShape::ChildGroup_1::mutable_sp()
+    {    
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_cxnSp = false;
+    
+    if (m_cxnSp)
+    {
+        delete m_cxnSp;
+        m_cxnSp = NULL;
+    }
+    ;
+    
+    m_has_pic = false;
+    
+    if (m_pic)
+    {
+        delete m_pic;
+        m_pic = NULL;
+    }
+    ;
+    
+    m_has_sp = true;
+    if (!m_sp)
+    {
+        m_sp = new CT_Shape();
+    }
+    return m_sp;
+    }
+
+    const CT_Shape& CT_GroupShape::ChildGroup_1::get_sp() const
+    {    
+    if (m_sp)
+    {
+        return *m_sp;
+    }
+    return CT_Shape::default_instance();
+    }
+
+    bool CT_GroupShape::ChildGroup_1::has_grpSp() const
+    {    
+    return m_has_grpSp;
+    }
+
+    CT_GroupShape* CT_GroupShape::ChildGroup_1::mutable_grpSp()
+    {    
+    
+    m_has_sp = false;
+    
+    if (m_sp)
+    {
+        delete m_sp;
+        m_sp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_cxnSp = false;
+    
+    if (m_cxnSp)
+    {
+        delete m_cxnSp;
+        m_cxnSp = NULL;
+    }
+    ;
+    
+    m_has_pic = false;
+    
+    if (m_pic)
+    {
+        delete m_pic;
+        m_pic = NULL;
+    }
+    ;
+    
+    m_has_grpSp = true;
+    if (!m_grpSp)
+    {
+        m_grpSp = new CT_GroupShape();
+    }
+    return m_grpSp;
+    }
+
+    const CT_GroupShape& CT_GroupShape::ChildGroup_1::get_grpSp() const
+    {    
+    if (m_grpSp)
+    {
+        return *m_grpSp;
+    }
+    return CT_GroupShape::default_instance();
+    }
+
+    bool CT_GroupShape::ChildGroup_1::has_graphicFrame() const
+    {    
+    return m_has_graphicFrame;
+    }
+
+    CT_GraphicFrame* CT_GroupShape::ChildGroup_1::mutable_graphicFrame()
+    {    
+    
+    m_has_sp = false;
+    
+    if (m_sp)
+    {
+        delete m_sp;
+        m_sp = NULL;
+    }
+    ;
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_cxnSp = false;
+    
+    if (m_cxnSp)
+    {
+        delete m_cxnSp;
+        m_cxnSp = NULL;
+    }
+    ;
+    
+    m_has_pic = false;
+    
+    if (m_pic)
+    {
+        delete m_pic;
+        m_pic = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = true;
+    if (!m_graphicFrame)
+    {
+        m_graphicFrame = new CT_GraphicFrame();
+    }
+    return m_graphicFrame;
+    }
+
+    const CT_GraphicFrame& CT_GroupShape::ChildGroup_1::get_graphicFrame() const
+    {    
+    if (m_graphicFrame)
+    {
+        return *m_graphicFrame;
+    }
+    return CT_GraphicFrame::default_instance();
+    }
+
+    bool CT_GroupShape::ChildGroup_1::has_cxnSp() const
+    {    
+    return m_has_cxnSp;
+    }
+
+    CT_Connector* CT_GroupShape::ChildGroup_1::mutable_cxnSp()
+    {    
+    
+    m_has_sp = false;
+    
+    if (m_sp)
+    {
+        delete m_sp;
+        m_sp = NULL;
+    }
+    ;
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_pic = false;
+    
+    if (m_pic)
+    {
+        delete m_pic;
+        m_pic = NULL;
+    }
+    ;
+    
+    m_has_cxnSp = true;
+    if (!m_cxnSp)
+    {
+        m_cxnSp = new CT_Connector();
+    }
+    return m_cxnSp;
+    }
+
+    const CT_Connector& CT_GroupShape::ChildGroup_1::get_cxnSp() const
+    {    
+    if (m_cxnSp)
+    {
+        return *m_cxnSp;
+    }
+    return CT_Connector::default_instance();
+    }
+
+    bool CT_GroupShape::ChildGroup_1::has_pic() const
+    {    
+    return m_has_pic;
+    }
+
+    CT_Picture* CT_GroupShape::ChildGroup_1::mutable_pic()
+    {    
+    
+    m_has_sp = false;
+    
+    if (m_sp)
+    {
+        delete m_sp;
+        m_sp = NULL;
+    }
+    ;
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_cxnSp = false;
+    
+    if (m_cxnSp)
+    {
+        delete m_cxnSp;
+        m_cxnSp = NULL;
+    }
+    ;
+    
+    m_has_pic = true;
+    if (!m_pic)
+    {
+        m_pic = new CT_Picture();
+    }
+    return m_pic;
+    }
+
+    const CT_Picture& CT_GroupShape::ChildGroup_1::get_pic() const
+    {    
+    if (m_pic)
+    {
+        return *m_pic;
+    }
+    return CT_Picture::default_instance();
+    }
+
+CT_GroupShape* CT_GroupShape::default_instance_ = NULL;
 
     // CT_Marker
     bool CT_Marker::has_x() const
@@ -1712,25 +1814,7 @@ namespace ns_cdr {
     }
 
     void CT_Marker::clear()
-    {    
-    m_has_x = false;
-    
-    if (m_x)
-    {
-        delete m_x;
-        m_x = NULL;
-    }
-    
-    
-    m_has_y = false;
-    
-    if (m_y)
-    {
-        delete m_y;
-        m_y = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Marker::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -1745,12 +1829,12 @@ namespace ns_cdr {
             
     if (m_has_x)
     {
-        _outStream << "<cdr:x>" << m_x->toString() << "</cdr:x>";;
+        _outStream << "<x>" << m_x->toString() << "</x>";;
     }
     
     if (m_has_y)
     {
-        _outStream << "<cdr:y>" << m_y->toString() << "</cdr:y>";;
+        _outStream << "<y>" << m_y->toString() << "</y>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1765,6 +1849,7 @@ namespace ns_cdr {
     return *CT_Marker::default_instance_;
     }
 
+CT_Marker* CT_Marker::default_instance_ = NULL;
 
     // CT_RelSizeAnchor
     bool CT_RelSizeAnchor::has_from() const
@@ -2121,70 +2206,7 @@ namespace ns_cdr {
     }
 
     void CT_RelSizeAnchor::clear()
-    {    
-    m_has_from = false;
-    
-    if (m_from)
-    {
-        delete m_from;
-        m_from = NULL;
-    }
-    
-    
-    m_has_to = false;
-    
-    if (m_to)
-    {
-        delete m_to;
-        m_to = NULL;
-    }
-    
-     
-    m_has_sp = false;
-    
-    if (m_sp)
-    {
-        delete m_sp;
-        m_sp = NULL;
-    }
-    
-    
-    m_has_grpSp = false;
-    
-    if (m_grpSp)
-    {
-        delete m_grpSp;
-        m_grpSp = NULL;
-    }
-    
-    
-    m_has_graphicFrame = false;
-    
-    if (m_graphicFrame)
-    {
-        delete m_graphicFrame;
-        m_graphicFrame = NULL;
-    }
-    
-    
-    m_has_cxnSp = false;
-    
-    if (m_cxnSp)
-    {
-        delete m_cxnSp;
-        m_cxnSp = NULL;
-    }
-    
-    
-    m_has_pic = false;
-    
-    if (m_pic)
-    {
-        delete m_pic;
-        m_pic = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_RelSizeAnchor::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -2199,37 +2221,37 @@ namespace ns_cdr {
             
     if (m_has_from)
     {
-        m_from->toXmlElem("cdr:from", "", _outStream);;
+        m_from->toXmlElem("from", "", _outStream);;
     }
     
     if (m_has_to)
     {
-        m_to->toXmlElem("cdr:to", "", _outStream);;
+        m_to->toXmlElem("to", "", _outStream);;
     }
      
     if (m_has_sp)
     {
-        m_sp->toXmlElem("cdr:sp", "", _outStream);;
+        m_sp->toXmlElem("sp", "", _outStream);;
     }
     
     if (m_has_grpSp)
     {
-        m_grpSp->toXmlElem("cdr:grpSp", "", _outStream);;
+        m_grpSp->toXmlElem("grpSp", "", _outStream);;
     }
     
     if (m_has_graphicFrame)
     {
-        m_graphicFrame->toXmlElem("cdr:graphicFrame", "", _outStream);;
+        m_graphicFrame->toXmlElem("graphicFrame", "", _outStream);;
     }
     
     if (m_has_cxnSp)
     {
-        m_cxnSp->toXmlElem("cdr:cxnSp", "", _outStream);;
+        m_cxnSp->toXmlElem("cxnSp", "", _outStream);;
     }
     
     if (m_has_pic)
     {
-        m_pic->toXmlElem("cdr:pic", "", _outStream);;
+        m_pic->toXmlElem("pic", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2244,6 +2266,7 @@ namespace ns_cdr {
     return *CT_RelSizeAnchor::default_instance_;
     }
 
+CT_RelSizeAnchor* CT_RelSizeAnchor::default_instance_ = NULL;
 
     // CT_AbsSizeAnchor
     bool CT_AbsSizeAnchor::has_from() const
@@ -2600,70 +2623,7 @@ namespace ns_cdr {
     }
 
     void CT_AbsSizeAnchor::clear()
-    {    
-    m_has_from = false;
-    
-    if (m_from)
-    {
-        delete m_from;
-        m_from = NULL;
-    }
-    
-    
-    m_has_a_ext = false;
-    
-    if (m_a_ext)
-    {
-        delete m_a_ext;
-        m_a_ext = NULL;
-    }
-    
-     
-    m_has_sp = false;
-    
-    if (m_sp)
-    {
-        delete m_sp;
-        m_sp = NULL;
-    }
-    
-    
-    m_has_grpSp = false;
-    
-    if (m_grpSp)
-    {
-        delete m_grpSp;
-        m_grpSp = NULL;
-    }
-    
-    
-    m_has_graphicFrame = false;
-    
-    if (m_graphicFrame)
-    {
-        delete m_graphicFrame;
-        m_graphicFrame = NULL;
-    }
-    
-    
-    m_has_cxnSp = false;
-    
-    if (m_cxnSp)
-    {
-        delete m_cxnSp;
-        m_cxnSp = NULL;
-    }
-    
-    
-    m_has_pic = false;
-    
-    if (m_pic)
-    {
-        delete m_pic;
-        m_pic = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_AbsSizeAnchor::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -2678,37 +2638,37 @@ namespace ns_cdr {
             
     if (m_has_from)
     {
-        m_from->toXmlElem("cdr:from", "", _outStream);;
+        m_from->toXmlElem("from", "", _outStream);;
     }
     
     if (m_has_a_ext)
     {
-        m_a_ext->toXmlElem("cdr:ext", "", _outStream);;
+        m_a_ext->toXmlElem("a:ext", "", _outStream);;
     }
      
     if (m_has_sp)
     {
-        m_sp->toXmlElem("cdr:sp", "", _outStream);;
+        m_sp->toXmlElem("sp", "", _outStream);;
     }
     
     if (m_has_grpSp)
     {
-        m_grpSp->toXmlElem("cdr:grpSp", "", _outStream);;
+        m_grpSp->toXmlElem("grpSp", "", _outStream);;
     }
     
     if (m_has_graphicFrame)
     {
-        m_graphicFrame->toXmlElem("cdr:graphicFrame", "", _outStream);;
+        m_graphicFrame->toXmlElem("graphicFrame", "", _outStream);;
     }
     
     if (m_has_cxnSp)
     {
-        m_cxnSp->toXmlElem("cdr:cxnSp", "", _outStream);;
+        m_cxnSp->toXmlElem("cxnSp", "", _outStream);;
     }
     
     if (m_has_pic)
     {
-        m_pic->toXmlElem("cdr:pic", "", _outStream);;
+        m_pic->toXmlElem("pic", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2723,6 +2683,7 @@ namespace ns_cdr {
     return *CT_AbsSizeAnchor::default_instance_;
     }
 
+CT_AbsSizeAnchor* CT_AbsSizeAnchor::default_instance_ = NULL;
 
     // CT_Drawing
     CT_RelSizeAnchor* CT_Drawing::add_relSizeAnchor()
@@ -2770,11 +2731,11 @@ namespace ns_cdr {
         {
             if ((*iter)->has_relSizeAnchor())
             {
-                (*iter)->get_relSizeAnchor().toXmlElem("cdr:relSizeAnchor", "", _outStream);
+                (*iter)->get_relSizeAnchor().toXmlElem("relSizeAnchor", "", _outStream);
             }
             else if ((*iter)->has_absSizeAnchor())
             {
-                (*iter)->get_absSizeAnchor().toXmlElem("cdr:absSizeAnchor", "", _outStream);
+                (*iter)->get_absSizeAnchor().toXmlElem("absSizeAnchor", "", _outStream);
             }
         }
     }
@@ -2791,4 +2752,75 @@ namespace ns_cdr {
     return *CT_Drawing::default_instance_;
     }
 
+
+    // CT_Drawing::ChildGroup_1
+    bool CT_Drawing::ChildGroup_1::has_relSizeAnchor() const
+    {    
+    return m_has_relSizeAnchor;
+    }
+
+    CT_RelSizeAnchor* CT_Drawing::ChildGroup_1::mutable_relSizeAnchor()
+    {    
+    
+    m_has_absSizeAnchor = false;
+    
+    if (m_absSizeAnchor)
+    {
+        delete m_absSizeAnchor;
+        m_absSizeAnchor = NULL;
+    }
+    ;
+    
+    m_has_relSizeAnchor = true;
+    if (!m_relSizeAnchor)
+    {
+        m_relSizeAnchor = new CT_RelSizeAnchor();
+    }
+    return m_relSizeAnchor;
+    }
+
+    const CT_RelSizeAnchor& CT_Drawing::ChildGroup_1::get_relSizeAnchor() const
+    {    
+    if (m_relSizeAnchor)
+    {
+        return *m_relSizeAnchor;
+    }
+    return CT_RelSizeAnchor::default_instance();
+    }
+
+    bool CT_Drawing::ChildGroup_1::has_absSizeAnchor() const
+    {    
+    return m_has_absSizeAnchor;
+    }
+
+    CT_AbsSizeAnchor* CT_Drawing::ChildGroup_1::mutable_absSizeAnchor()
+    {    
+    
+    m_has_relSizeAnchor = false;
+    
+    if (m_relSizeAnchor)
+    {
+        delete m_relSizeAnchor;
+        m_relSizeAnchor = NULL;
+    }
+    ;
+    
+    m_has_absSizeAnchor = true;
+    if (!m_absSizeAnchor)
+    {
+        m_absSizeAnchor = new CT_AbsSizeAnchor();
+    }
+    return m_absSizeAnchor;
+    }
+
+    const CT_AbsSizeAnchor& CT_Drawing::ChildGroup_1::get_absSizeAnchor() const
+    {    
+    if (m_absSizeAnchor)
+    {
+        return *m_absSizeAnchor;
+    }
+    return CT_AbsSizeAnchor::default_instance();
+    }
+
+CT_Drawing* CT_Drawing::default_instance_ = NULL;
 }

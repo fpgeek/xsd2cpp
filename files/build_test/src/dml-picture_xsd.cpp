@@ -61,25 +61,7 @@ namespace ns_dpct {
     }
 
     void CT_PictureNonVisual::clear()
-    {    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-    
-    m_has_a_cNvPicPr = false;
-    
-    if (m_a_cNvPicPr)
-    {
-        delete m_a_cNvPicPr;
-        m_a_cNvPicPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_PictureNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -94,12 +76,12 @@ namespace ns_dpct {
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("dpct:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvPicPr)
     {
-        m_a_cNvPicPr->toXmlElem("dpct:cNvPicPr", "", _outStream);;
+        m_a_cNvPicPr->toXmlElem("a:cNvPicPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -114,6 +96,7 @@ namespace ns_dpct {
     return *CT_PictureNonVisual::default_instance_;
     }
 
+CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
 
     // CT_Picture
     bool CT_Picture::has_nvPicPr() const
@@ -189,34 +172,7 @@ namespace ns_dpct {
     }
 
     void CT_Picture::clear()
-    {    
-    m_has_nvPicPr = false;
-    
-    if (m_nvPicPr)
-    {
-        delete m_nvPicPr;
-        m_nvPicPr = NULL;
-    }
-    
-    
-    m_has_a_blipFill = false;
-    
-    if (m_a_blipFill)
-    {
-        delete m_a_blipFill;
-        m_a_blipFill = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Picture::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -231,17 +187,17 @@ namespace ns_dpct {
             
     if (m_has_nvPicPr)
     {
-        m_nvPicPr->toXmlElem("dpct:nvPicPr", "", _outStream);;
+        m_nvPicPr->toXmlElem("nvPicPr", "", _outStream);;
     }
     
     if (m_has_a_blipFill)
     {
-        m_a_blipFill->toXmlElem("dpct:blipFill", "", _outStream);;
+        m_a_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("dpct:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -256,6 +212,7 @@ namespace ns_dpct {
     return *CT_Picture::default_instance_;
     }
 
+CT_Picture* CT_Picture::default_instance_ = NULL;
 
     // pic_element
     bool pic_element::has_nvPicPr() const
@@ -331,38 +288,11 @@ namespace ns_dpct {
     }
 
     void pic_element::clear()
-    {    
-    m_has_nvPicPr = false;
-    
-    if (m_nvPicPr)
-    {
-        delete m_nvPicPr;
-        m_nvPicPr = NULL;
-    }
-    
-    
-    m_has_a_blipFill = false;
-    
-    if (m_a_blipFill)
-    {
-        delete m_a_blipFill;
-        m_a_blipFill = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    }
+    {    }
 
     void pic_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<dpct:pic";
+    _outStream << "<pic";
     
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
     _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
@@ -371,20 +301,20 @@ namespace ns_dpct {
     
     if (m_has_nvPicPr)
     {
-        m_nvPicPr->toXmlElem("dpct:nvPicPr", "", _outStream);;
+        m_nvPicPr->toXmlElem("nvPicPr", "", _outStream);;
     }
     
     if (m_has_a_blipFill)
     {
-        m_a_blipFill->toXmlElem("dpct:blipFill", "", _outStream);;
+        m_a_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("dpct:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
-    _outStream << "</dpct:pic>";
+    _outStream << "</pic>";
     }
 
     const pic_element& pic_element::default_instance()
@@ -396,4 +326,5 @@ namespace ns_dpct {
     return *pic_element::default_instance_;
     }
 
+pic_element* pic_element::default_instance_ = NULL;
 }

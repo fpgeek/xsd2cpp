@@ -802,8 +802,10 @@ namespace ns_main {
     public:
         ST_Formula();
         ST_Formula(const ns_s::ST_Xstring& _ST_Xstring);
+        static const ST_Formula& default_instance();
     protected:
     private:
+        static ST_Formula* default_instance_;
     };
 
     class ST_UnsignedIntHex: public XSD::SimpleType
@@ -3664,6 +3666,8 @@ namespace ns_main {
         const XSD::token_& get_uri_attr() const;
     protected:
     private:
+        bool m_has_any;
+        XSD::Element* m_any;
         static CT_Extension* default_instance_;
         bool m_has_uri_attr;
         XSD::token_ m_uri_attr;
@@ -4046,6 +4050,8 @@ namespace ns_main {
         const XSD::token_& get_SchemaLanguage_attr() const;
     protected:
     private:
+        bool m_has_any;
+        XSD::Element* m_any;
         static CT_Schema* default_instance_;
         bool m_has_ID_attr;
         XSD::string_ m_ID_attr;
@@ -4141,6 +4147,8 @@ namespace ns_main {
         const XSD::unsignedInt_& get_DataBindingLoadMode_attr() const;
     protected:
     private:
+        bool m_has_any;
+        XSD::Element* m_any;
         static CT_DataBinding* default_instance_;
         bool m_has_DataBindingName_attr;
         XSD::string_ m_DataBindingName_attr;

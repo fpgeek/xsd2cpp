@@ -72,6 +72,7 @@ namespace ns_chart {
         "inner",
         "outer"
     };
+ST_LayoutTarget* ST_LayoutTarget::default_instance_ = NULL;
 
     // ST_LayoutMode
     ST_LayoutMode::ST_LayoutMode()
@@ -131,6 +132,7 @@ namespace ns_chart {
         "edge",
         "factor"
     };
+ST_LayoutMode* ST_LayoutMode::default_instance_ = NULL;
 
     // ST_RotX
     ST_RotX::ST_RotX()
@@ -192,6 +194,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_RotX* ST_RotX::default_instance_ = NULL;
 
     // ST_HPercent
     bool ST_HPercent::has_ST_HPercentWithSymbol() const
@@ -264,6 +267,21 @@ namespace ns_chart {
     }
     }
 
+    std::string ST_HPercent::toString() const
+    {    
+    if (m_has_ST_HPercentWithSymbol)
+    {
+        return m_ST_HPercentWithSymbol->toString();
+    }
+    
+    if (m_has_ST_HPercentUShort)
+    {
+        return m_ST_HPercentUShort->toString();
+    }
+    
+    return string();
+    }
+
     void ST_HPercent::clear()
     {    clear_ST_HPercentWithSymbol();
     clear_ST_HPercentUShort();    }
@@ -272,13 +290,13 @@ namespace ns_chart {
     {    
     if (m_has_ST_HPercentWithSymbol)
     {
-        m_ST_HPercentWithSymbol->toXmlAttr(_attrName, _outStream);;
+        m_ST_HPercentWithSymbol->toXmlAttr(_attrName, _outStream);
         return;
     }
     
     if (m_has_ST_HPercentUShort)
     {
-        m_ST_HPercentUShort->toXmlAttr(_attrName, _outStream);;
+        m_ST_HPercentUShort->toXmlAttr(_attrName, _outStream);
         return;
     }
     }
@@ -292,6 +310,7 @@ namespace ns_chart {
     return *ST_HPercent::default_instance_;
     }
 
+ST_HPercent* ST_HPercent::default_instance_ = NULL;
 
     // ST_HPercentWithSymbol
     ST_HPercentWithSymbol::ST_HPercentWithSymbol()
@@ -351,6 +370,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_HPercentWithSymbol* ST_HPercentWithSymbol::default_instance_ = NULL;
 
     // ST_HPercentUShort
     ST_HPercentUShort::ST_HPercentUShort()
@@ -412,6 +432,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_HPercentUShort* ST_HPercentUShort::default_instance_ = NULL;
 
     // ST_RotY
     ST_RotY::ST_RotY()
@@ -473,6 +494,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_RotY* ST_RotY::default_instance_ = NULL;
 
     // ST_DepthPercent
     bool ST_DepthPercent::has_ST_DepthPercentWithSymbol() const
@@ -545,6 +567,21 @@ namespace ns_chart {
     }
     }
 
+    std::string ST_DepthPercent::toString() const
+    {    
+    if (m_has_ST_DepthPercentWithSymbol)
+    {
+        return m_ST_DepthPercentWithSymbol->toString();
+    }
+    
+    if (m_has_ST_DepthPercentUShort)
+    {
+        return m_ST_DepthPercentUShort->toString();
+    }
+    
+    return string();
+    }
+
     void ST_DepthPercent::clear()
     {    clear_ST_DepthPercentWithSymbol();
     clear_ST_DepthPercentUShort();    }
@@ -553,13 +590,13 @@ namespace ns_chart {
     {    
     if (m_has_ST_DepthPercentWithSymbol)
     {
-        m_ST_DepthPercentWithSymbol->toXmlAttr(_attrName, _outStream);;
+        m_ST_DepthPercentWithSymbol->toXmlAttr(_attrName, _outStream);
         return;
     }
     
     if (m_has_ST_DepthPercentUShort)
     {
-        m_ST_DepthPercentUShort->toXmlAttr(_attrName, _outStream);;
+        m_ST_DepthPercentUShort->toXmlAttr(_attrName, _outStream);
         return;
     }
     }
@@ -573,6 +610,7 @@ namespace ns_chart {
     return *ST_DepthPercent::default_instance_;
     }
 
+ST_DepthPercent* ST_DepthPercent::default_instance_ = NULL;
 
     // ST_DepthPercentWithSymbol
     ST_DepthPercentWithSymbol::ST_DepthPercentWithSymbol()
@@ -632,6 +670,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_DepthPercentWithSymbol* ST_DepthPercentWithSymbol::default_instance_ = NULL;
 
     // ST_DepthPercentUShort
     ST_DepthPercentUShort::ST_DepthPercentUShort()
@@ -693,6 +732,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_DepthPercentUShort* ST_DepthPercentUShort::default_instance_ = NULL;
 
     // ST_Perspective
     ST_Perspective::ST_Perspective()
@@ -754,6 +794,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_Perspective* ST_Perspective::default_instance_ = NULL;
 
     // ST_Thickness
     bool ST_Thickness::has_ST_ThicknessPercent() const
@@ -814,6 +855,25 @@ namespace ns_chart {
     m_unsignedInt = 0;
     }
 
+    std::string ST_Thickness::toString() const
+    {    
+    if (m_has_ST_ThicknessPercent)
+    {
+        return m_ST_ThicknessPercent->toString();
+    }
+    
+    if (m_has_unsignedInt)
+    {
+        
+    std::stringstream strStream;
+    strStream << m_unsignedInt;
+    return strStream.str();
+    
+    }
+    
+    return string();
+    }
+
     void ST_Thickness::clear()
     {    clear_ST_ThicknessPercent();
     clear_unsignedInt();    }
@@ -822,13 +882,13 @@ namespace ns_chart {
     {    
     if (m_has_ST_ThicknessPercent)
     {
-        m_ST_ThicknessPercent->toXmlAttr(_attrName, _outStream);;
+        m_ST_ThicknessPercent->toXmlAttr(_attrName, _outStream);
         return;
     }
     
     if (m_has_unsignedInt)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedInt << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_unsignedInt << "\"";
         return;
     }
     }
@@ -842,6 +902,7 @@ namespace ns_chart {
     return *ST_Thickness::default_instance_;
     }
 
+ST_Thickness* ST_Thickness::default_instance_ = NULL;
 
     // ST_ThicknessPercent
     ST_ThicknessPercent::ST_ThicknessPercent()
@@ -901,6 +962,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_ThicknessPercent* ST_ThicknessPercent::default_instance_ = NULL;
 
     // ST_GapAmount
     bool ST_GapAmount::has_ST_GapAmountPercent() const
@@ -973,6 +1035,21 @@ namespace ns_chart {
     }
     }
 
+    std::string ST_GapAmount::toString() const
+    {    
+    if (m_has_ST_GapAmountPercent)
+    {
+        return m_ST_GapAmountPercent->toString();
+    }
+    
+    if (m_has_ST_GapAmountUShort)
+    {
+        return m_ST_GapAmountUShort->toString();
+    }
+    
+    return string();
+    }
+
     void ST_GapAmount::clear()
     {    clear_ST_GapAmountPercent();
     clear_ST_GapAmountUShort();    }
@@ -981,13 +1058,13 @@ namespace ns_chart {
     {    
     if (m_has_ST_GapAmountPercent)
     {
-        m_ST_GapAmountPercent->toXmlAttr(_attrName, _outStream);;
+        m_ST_GapAmountPercent->toXmlAttr(_attrName, _outStream);
         return;
     }
     
     if (m_has_ST_GapAmountUShort)
     {
-        m_ST_GapAmountUShort->toXmlAttr(_attrName, _outStream);;
+        m_ST_GapAmountUShort->toXmlAttr(_attrName, _outStream);
         return;
     }
     }
@@ -1001,6 +1078,7 @@ namespace ns_chart {
     return *ST_GapAmount::default_instance_;
     }
 
+ST_GapAmount* ST_GapAmount::default_instance_ = NULL;
 
     // ST_GapAmountPercent
     ST_GapAmountPercent::ST_GapAmountPercent()
@@ -1060,6 +1138,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_GapAmountPercent* ST_GapAmountPercent::default_instance_ = NULL;
 
     // ST_GapAmountUShort
     ST_GapAmountUShort::ST_GapAmountUShort()
@@ -1121,6 +1200,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_GapAmountUShort* ST_GapAmountUShort::default_instance_ = NULL;
 
     // ST_Overlap
     bool ST_Overlap::has_ST_OverlapPercent() const
@@ -1193,6 +1273,21 @@ namespace ns_chart {
     }
     }
 
+    std::string ST_Overlap::toString() const
+    {    
+    if (m_has_ST_OverlapPercent)
+    {
+        return m_ST_OverlapPercent->toString();
+    }
+    
+    if (m_has_ST_OverlapByte)
+    {
+        return m_ST_OverlapByte->toString();
+    }
+    
+    return string();
+    }
+
     void ST_Overlap::clear()
     {    clear_ST_OverlapPercent();
     clear_ST_OverlapByte();    }
@@ -1201,13 +1296,13 @@ namespace ns_chart {
     {    
     if (m_has_ST_OverlapPercent)
     {
-        m_ST_OverlapPercent->toXmlAttr(_attrName, _outStream);;
+        m_ST_OverlapPercent->toXmlAttr(_attrName, _outStream);
         return;
     }
     
     if (m_has_ST_OverlapByte)
     {
-        m_ST_OverlapByte->toXmlAttr(_attrName, _outStream);;
+        m_ST_OverlapByte->toXmlAttr(_attrName, _outStream);
         return;
     }
     }
@@ -1221,6 +1316,7 @@ namespace ns_chart {
     return *ST_Overlap::default_instance_;
     }
 
+ST_Overlap* ST_Overlap::default_instance_ = NULL;
 
     // ST_OverlapPercent
     ST_OverlapPercent::ST_OverlapPercent()
@@ -1280,6 +1376,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_OverlapPercent* ST_OverlapPercent::default_instance_ = NULL;
 
     // ST_OverlapByte
     ST_OverlapByte::ST_OverlapByte()
@@ -1341,6 +1438,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_OverlapByte* ST_OverlapByte::default_instance_ = NULL;
 
     // ST_BubbleScale
     bool ST_BubbleScale::has_ST_BubbleScalePercent() const
@@ -1413,6 +1511,21 @@ namespace ns_chart {
     }
     }
 
+    std::string ST_BubbleScale::toString() const
+    {    
+    if (m_has_ST_BubbleScalePercent)
+    {
+        return m_ST_BubbleScalePercent->toString();
+    }
+    
+    if (m_has_ST_BubbleScaleUInt)
+    {
+        return m_ST_BubbleScaleUInt->toString();
+    }
+    
+    return string();
+    }
+
     void ST_BubbleScale::clear()
     {    clear_ST_BubbleScalePercent();
     clear_ST_BubbleScaleUInt();    }
@@ -1421,13 +1534,13 @@ namespace ns_chart {
     {    
     if (m_has_ST_BubbleScalePercent)
     {
-        m_ST_BubbleScalePercent->toXmlAttr(_attrName, _outStream);;
+        m_ST_BubbleScalePercent->toXmlAttr(_attrName, _outStream);
         return;
     }
     
     if (m_has_ST_BubbleScaleUInt)
     {
-        m_ST_BubbleScaleUInt->toXmlAttr(_attrName, _outStream);;
+        m_ST_BubbleScaleUInt->toXmlAttr(_attrName, _outStream);
         return;
     }
     }
@@ -1441,6 +1554,7 @@ namespace ns_chart {
     return *ST_BubbleScale::default_instance_;
     }
 
+ST_BubbleScale* ST_BubbleScale::default_instance_ = NULL;
 
     // ST_BubbleScalePercent
     ST_BubbleScalePercent::ST_BubbleScalePercent()
@@ -1500,6 +1614,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_BubbleScalePercent* ST_BubbleScalePercent::default_instance_ = NULL;
 
     // ST_BubbleScaleUInt
     ST_BubbleScaleUInt::ST_BubbleScaleUInt()
@@ -1561,6 +1676,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_BubbleScaleUInt* ST_BubbleScaleUInt::default_instance_ = NULL;
 
     // ST_SizeRepresents
     ST_SizeRepresents::ST_SizeRepresents()
@@ -1620,6 +1736,7 @@ namespace ns_chart {
         "area",
         "w"
     };
+ST_SizeRepresents* ST_SizeRepresents::default_instance_ = NULL;
 
     // ST_FirstSliceAng
     ST_FirstSliceAng::ST_FirstSliceAng()
@@ -1681,6 +1798,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_FirstSliceAng* ST_FirstSliceAng::default_instance_ = NULL;
 
     // ST_HoleSize
     bool ST_HoleSize::has_ST_HoleSizePercent() const
@@ -1753,6 +1871,21 @@ namespace ns_chart {
     }
     }
 
+    std::string ST_HoleSize::toString() const
+    {    
+    if (m_has_ST_HoleSizePercent)
+    {
+        return m_ST_HoleSizePercent->toString();
+    }
+    
+    if (m_has_ST_HoleSizeUByte)
+    {
+        return m_ST_HoleSizeUByte->toString();
+    }
+    
+    return string();
+    }
+
     void ST_HoleSize::clear()
     {    clear_ST_HoleSizePercent();
     clear_ST_HoleSizeUByte();    }
@@ -1761,13 +1894,13 @@ namespace ns_chart {
     {    
     if (m_has_ST_HoleSizePercent)
     {
-        m_ST_HoleSizePercent->toXmlAttr(_attrName, _outStream);;
+        m_ST_HoleSizePercent->toXmlAttr(_attrName, _outStream);
         return;
     }
     
     if (m_has_ST_HoleSizeUByte)
     {
-        m_ST_HoleSizeUByte->toXmlAttr(_attrName, _outStream);;
+        m_ST_HoleSizeUByte->toXmlAttr(_attrName, _outStream);
         return;
     }
     }
@@ -1781,6 +1914,7 @@ namespace ns_chart {
     return *ST_HoleSize::default_instance_;
     }
 
+ST_HoleSize* ST_HoleSize::default_instance_ = NULL;
 
     // ST_HoleSizePercent
     ST_HoleSizePercent::ST_HoleSizePercent()
@@ -1840,6 +1974,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_HoleSizePercent* ST_HoleSizePercent::default_instance_ = NULL;
 
     // ST_HoleSizeUByte
     ST_HoleSizeUByte::ST_HoleSizeUByte()
@@ -1901,6 +2036,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_HoleSizeUByte* ST_HoleSizeUByte::default_instance_ = NULL;
 
     // ST_SplitType
     ST_SplitType::ST_SplitType()
@@ -1963,6 +2099,7 @@ namespace ns_chart {
         "pos",
         "val"
     };
+ST_SplitType* ST_SplitType::default_instance_ = NULL;
 
     // ST_SecondPieSize
     bool ST_SecondPieSize::has_ST_SecondPieSizePercent() const
@@ -2035,6 +2172,21 @@ namespace ns_chart {
     }
     }
 
+    std::string ST_SecondPieSize::toString() const
+    {    
+    if (m_has_ST_SecondPieSizePercent)
+    {
+        return m_ST_SecondPieSizePercent->toString();
+    }
+    
+    if (m_has_ST_SecondPieSizeUShort)
+    {
+        return m_ST_SecondPieSizeUShort->toString();
+    }
+    
+    return string();
+    }
+
     void ST_SecondPieSize::clear()
     {    clear_ST_SecondPieSizePercent();
     clear_ST_SecondPieSizeUShort();    }
@@ -2043,13 +2195,13 @@ namespace ns_chart {
     {    
     if (m_has_ST_SecondPieSizePercent)
     {
-        m_ST_SecondPieSizePercent->toXmlAttr(_attrName, _outStream);;
+        m_ST_SecondPieSizePercent->toXmlAttr(_attrName, _outStream);
         return;
     }
     
     if (m_has_ST_SecondPieSizeUShort)
     {
-        m_ST_SecondPieSizeUShort->toXmlAttr(_attrName, _outStream);;
+        m_ST_SecondPieSizeUShort->toXmlAttr(_attrName, _outStream);
         return;
     }
     }
@@ -2063,6 +2215,7 @@ namespace ns_chart {
     return *ST_SecondPieSize::default_instance_;
     }
 
+ST_SecondPieSize* ST_SecondPieSize::default_instance_ = NULL;
 
     // ST_SecondPieSizePercent
     ST_SecondPieSizePercent::ST_SecondPieSizePercent()
@@ -2122,6 +2275,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_SecondPieSizePercent* ST_SecondPieSizePercent::default_instance_ = NULL;
 
     // ST_SecondPieSizeUShort
     ST_SecondPieSizeUShort::ST_SecondPieSizeUShort()
@@ -2183,6 +2337,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_SecondPieSizeUShort* ST_SecondPieSizeUShort::default_instance_ = NULL;
 
     // ST_LblAlgn
     ST_LblAlgn::ST_LblAlgn()
@@ -2243,6 +2398,7 @@ namespace ns_chart {
         "l",
         "r"
     };
+ST_LblAlgn* ST_LblAlgn::default_instance_ = NULL;
 
     // ST_DLblPos
     ST_DLblPos::ST_DLblPos()
@@ -2309,6 +2465,7 @@ namespace ns_chart {
         "r",
         "t"
     };
+ST_DLblPos* ST_DLblPos::default_instance_ = NULL;
 
     // ST_MarkerStyle
     ST_MarkerStyle::ST_MarkerStyle()
@@ -2378,6 +2535,7 @@ namespace ns_chart {
         "x",
         "auto"
     };
+ST_MarkerStyle* ST_MarkerStyle::default_instance_ = NULL;
 
     // ST_MarkerSize
     ST_MarkerSize::ST_MarkerSize()
@@ -2439,6 +2597,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_MarkerSize* ST_MarkerSize::default_instance_ = NULL;
 
     // ST_TrendlineType
     ST_TrendlineType::ST_TrendlineType()
@@ -2502,6 +2661,7 @@ namespace ns_chart {
         "poly",
         "power"
     };
+ST_TrendlineType* ST_TrendlineType::default_instance_ = NULL;
 
     // ST_Order
     ST_Order::ST_Order()
@@ -2563,6 +2723,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_Order* ST_Order::default_instance_ = NULL;
 
     // ST_Period
     ST_Period::ST_Period()
@@ -2623,6 +2784,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_Period* ST_Period::default_instance_ = NULL;
 
     // ST_ErrDir
     ST_ErrDir::ST_ErrDir()
@@ -2682,6 +2844,7 @@ namespace ns_chart {
         "x",
         "y"
     };
+ST_ErrDir* ST_ErrDir::default_instance_ = NULL;
 
     // ST_ErrBarType
     ST_ErrBarType::ST_ErrBarType()
@@ -2742,6 +2905,7 @@ namespace ns_chart {
         "minus",
         "plus"
     };
+ST_ErrBarType* ST_ErrBarType::default_instance_ = NULL;
 
     // ST_ErrValType
     ST_ErrValType::ST_ErrValType()
@@ -2804,6 +2968,7 @@ namespace ns_chart {
         "stdDev",
         "stdErr"
     };
+ST_ErrValType* ST_ErrValType::default_instance_ = NULL;
 
     // ST_Grouping
     ST_Grouping::ST_Grouping()
@@ -2864,6 +3029,7 @@ namespace ns_chart {
         "standard",
         "stacked"
     };
+ST_Grouping* ST_Grouping::default_instance_ = NULL;
 
     // ST_ScatterStyle
     ST_ScatterStyle::ST_ScatterStyle()
@@ -2927,6 +3093,7 @@ namespace ns_chart {
         "smooth",
         "smoothMarker"
     };
+ST_ScatterStyle* ST_ScatterStyle::default_instance_ = NULL;
 
     // ST_RadarStyle
     ST_RadarStyle::ST_RadarStyle()
@@ -2987,6 +3154,7 @@ namespace ns_chart {
         "marker",
         "filled"
     };
+ST_RadarStyle* ST_RadarStyle::default_instance_ = NULL;
 
     // ST_BarGrouping
     ST_BarGrouping::ST_BarGrouping()
@@ -3048,6 +3216,7 @@ namespace ns_chart {
         "standard",
         "stacked"
     };
+ST_BarGrouping* ST_BarGrouping::default_instance_ = NULL;
 
     // ST_BarDir
     ST_BarDir::ST_BarDir()
@@ -3107,6 +3276,7 @@ namespace ns_chart {
         "bar",
         "col"
     };
+ST_BarDir* ST_BarDir::default_instance_ = NULL;
 
     // ST_Shape
     ST_Shape::ST_Shape()
@@ -3170,6 +3340,7 @@ namespace ns_chart {
         "pyramid",
         "pyramidToMax"
     };
+ST_Shape* ST_Shape::default_instance_ = NULL;
 
     // ST_OfPieType
     ST_OfPieType::ST_OfPieType()
@@ -3229,6 +3400,7 @@ namespace ns_chart {
         "pie",
         "bar"
     };
+ST_OfPieType* ST_OfPieType::default_instance_ = NULL;
 
     // ST_AxPos
     ST_AxPos::ST_AxPos()
@@ -3290,6 +3462,7 @@ namespace ns_chart {
         "r",
         "t"
     };
+ST_AxPos* ST_AxPos::default_instance_ = NULL;
 
     // ST_Crosses
     ST_Crosses::ST_Crosses()
@@ -3350,6 +3523,7 @@ namespace ns_chart {
         "max",
         "min"
     };
+ST_Crosses* ST_Crosses::default_instance_ = NULL;
 
     // ST_CrossBetween
     ST_CrossBetween::ST_CrossBetween()
@@ -3409,6 +3583,7 @@ namespace ns_chart {
         "between",
         "midCat"
     };
+ST_CrossBetween* ST_CrossBetween::default_instance_ = NULL;
 
     // ST_TickMark
     ST_TickMark::ST_TickMark()
@@ -3470,6 +3645,7 @@ namespace ns_chart {
         "none",
         "out"
     };
+ST_TickMark* ST_TickMark::default_instance_ = NULL;
 
     // ST_TickLblPos
     ST_TickLblPos::ST_TickLblPos()
@@ -3531,6 +3707,7 @@ namespace ns_chart {
         "nextTo",
         "none"
     };
+ST_TickLblPos* ST_TickLblPos::default_instance_ = NULL;
 
     // ST_Skip
     ST_Skip::ST_Skip()
@@ -3591,6 +3768,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_Skip* ST_Skip::default_instance_ = NULL;
 
     // ST_TimeUnit
     ST_TimeUnit::ST_TimeUnit()
@@ -3651,6 +3829,7 @@ namespace ns_chart {
         "months",
         "years"
     };
+ST_TimeUnit* ST_TimeUnit::default_instance_ = NULL;
 
     // ST_AxisUnit
     ST_AxisUnit::ST_AxisUnit()
@@ -3711,6 +3890,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_AxisUnit* ST_AxisUnit::default_instance_ = NULL;
 
     // ST_BuiltInUnit
     ST_BuiltInUnit::ST_BuiltInUnit()
@@ -3777,6 +3957,7 @@ namespace ns_chart {
         "billions",
         "trillions"
     };
+ST_BuiltInUnit* ST_BuiltInUnit::default_instance_ = NULL;
 
     // ST_PictureFormat
     ST_PictureFormat::ST_PictureFormat()
@@ -3837,6 +4018,7 @@ namespace ns_chart {
         "stack",
         "stackScale"
     };
+ST_PictureFormat* ST_PictureFormat::default_instance_ = NULL;
 
     // ST_PictureStackUnit
     ST_PictureStackUnit::ST_PictureStackUnit()
@@ -3897,6 +4079,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_PictureStackUnit* ST_PictureStackUnit::default_instance_ = NULL;
 
     // ST_Orientation
     ST_Orientation::ST_Orientation()
@@ -3956,6 +4139,7 @@ namespace ns_chart {
         "maxMin",
         "minMax"
     };
+ST_Orientation* ST_Orientation::default_instance_ = NULL;
 
     // ST_LogBase
     ST_LogBase::ST_LogBase()
@@ -4017,6 +4201,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_LogBase* ST_LogBase::default_instance_ = NULL;
 
     // ST_LblOffset
     bool ST_LblOffset::has_ST_LblOffsetPercent() const
@@ -4089,6 +4274,21 @@ namespace ns_chart {
     }
     }
 
+    std::string ST_LblOffset::toString() const
+    {    
+    if (m_has_ST_LblOffsetPercent)
+    {
+        return m_ST_LblOffsetPercent->toString();
+    }
+    
+    if (m_has_ST_LblOffsetUShort)
+    {
+        return m_ST_LblOffsetUShort->toString();
+    }
+    
+    return string();
+    }
+
     void ST_LblOffset::clear()
     {    clear_ST_LblOffsetPercent();
     clear_ST_LblOffsetUShort();    }
@@ -4097,13 +4297,13 @@ namespace ns_chart {
     {    
     if (m_has_ST_LblOffsetPercent)
     {
-        m_ST_LblOffsetPercent->toXmlAttr(_attrName, _outStream);;
+        m_ST_LblOffsetPercent->toXmlAttr(_attrName, _outStream);
         return;
     }
     
     if (m_has_ST_LblOffsetUShort)
     {
-        m_ST_LblOffsetUShort->toXmlAttr(_attrName, _outStream);;
+        m_ST_LblOffsetUShort->toXmlAttr(_attrName, _outStream);
         return;
     }
     }
@@ -4117,6 +4317,7 @@ namespace ns_chart {
     return *ST_LblOffset::default_instance_;
     }
 
+ST_LblOffset* ST_LblOffset::default_instance_ = NULL;
 
     // ST_LblOffsetPercent
     ST_LblOffsetPercent::ST_LblOffsetPercent()
@@ -4176,6 +4377,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_LblOffsetPercent* ST_LblOffsetPercent::default_instance_ = NULL;
 
     // ST_LblOffsetUShort
     ST_LblOffsetUShort::ST_LblOffsetUShort()
@@ -4237,6 +4439,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_LblOffsetUShort* ST_LblOffsetUShort::default_instance_ = NULL;
 
     // ST_LegendPos
     ST_LegendPos::ST_LegendPos()
@@ -4299,6 +4502,7 @@ namespace ns_chart {
         "r",
         "t"
     };
+ST_LegendPos* ST_LegendPos::default_instance_ = NULL;
 
     // ST_DispBlanksAs
     ST_DispBlanksAs::ST_DispBlanksAs()
@@ -4359,6 +4563,7 @@ namespace ns_chart {
         "gap",
         "zero"
     };
+ST_DispBlanksAs* ST_DispBlanksAs::default_instance_ = NULL;
 
     // ST_Style
     ST_Style::ST_Style()
@@ -4420,6 +4625,7 @@ namespace ns_chart {
     return strStream.str();
     }
 
+ST_Style* ST_Style::default_instance_ = NULL;
 
     // ST_PageSetupOrientation
     ST_PageSetupOrientation::ST_PageSetupOrientation()
@@ -4480,6 +4686,7 @@ namespace ns_chart {
         "portrait",
         "landscape"
     };
+ST_PageSetupOrientation* ST_PageSetupOrientation::default_instance_ = NULL;
 
     // CT_Boolean
     void CT_Boolean::clear()
@@ -4532,6 +4739,7 @@ namespace ns_chart {
     return m_val_attr;
     }
 
+CT_Boolean* CT_Boolean::default_instance_ = NULL;
 
     // CT_Double
     void CT_Double::clear()
@@ -4584,6 +4792,7 @@ namespace ns_chart {
     return m_val_attr;
     }
 
+CT_Double* CT_Double::default_instance_ = NULL;
 
     // CT_UnsignedInt
     void CT_UnsignedInt::clear()
@@ -4636,6 +4845,7 @@ namespace ns_chart {
     return m_val_attr;
     }
 
+CT_UnsignedInt* CT_UnsignedInt::default_instance_ = NULL;
 
     // CT_RelId
     void CT_RelId::clear()
@@ -4698,6 +4908,7 @@ namespace ns_chart {
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_RelId* CT_RelId::default_instance_ = NULL;
 
     // CT_Extension
     void CT_Extension::clear()
@@ -4722,6 +4933,13 @@ namespace ns_chart {
     
             _outStream << ">";
             
+    if (m_has_any)
+    {
+        
+    m_any->toXml(_outStream);
+    ;
+    }
+    
             _outStream << "</" << _elemName << ">";
                 }
 
@@ -4750,6 +4968,7 @@ namespace ns_chart {
     return m_uri_attr;
     }
 
+CT_Extension* CT_Extension::default_instance_ = NULL;
 
     // CT_ExtensionList
     CT_Extension* CT_ExtensionList::add_ext()
@@ -4789,7 +5008,7 @@ namespace ns_chart {
         {
             if ((*iter)->has_ext())
             {
-                (*iter)->get_ext().toXmlElem("chart:ext", "", _outStream);
+                (*iter)->get_ext().toXmlElem("ext", "", _outStream);
             }
         }
     }
@@ -4806,6 +5025,34 @@ namespace ns_chart {
     return *CT_ExtensionList::default_instance_;
     }
 
+
+    // CT_ExtensionList::ChildGroup_1
+    bool CT_ExtensionList::ChildGroup_1::has_ext() const
+    {    
+    return m_has_ext;
+    }
+
+    CT_Extension* CT_ExtensionList::ChildGroup_1::mutable_ext()
+    {    
+    
+    m_has_ext = true;
+    if (!m_ext)
+    {
+        m_ext = new CT_Extension();
+    }
+    return m_ext;
+    }
+
+    const CT_Extension& CT_ExtensionList::ChildGroup_1::get_ext() const
+    {    
+    if (m_ext)
+    {
+        return *m_ext;
+    }
+    return CT_Extension::default_instance();
+    }
+
+CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
 
     // CT_NumVal
     bool CT_NumVal::has_s_v() const
@@ -4845,15 +5092,6 @@ namespace ns_chart {
         m_s_formatCode_attr = NULL;
     }
     
-    
-    m_has_s_v = false;
-    
-    if (m_s_v)
-    {
-        delete m_s_v;
-        m_s_v = NULL;
-    }
-    
     }
 
     void CT_NumVal::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -4880,7 +5118,7 @@ namespace ns_chart {
             
     if (m_has_s_v)
     {
-        _outStream << "<chart:v>" << m_s_v->toString() << "</chart:v>";;
+        _outStream << "<s:v>" << m_s_v->toString() << "</s:v>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4931,6 +5169,7 @@ namespace ns_chart {
     return ns_s::ST_Xstring::default_instance();
     }
 
+CT_NumVal* CT_NumVal::default_instance_ = NULL;
 
     // CT_NumData
     bool CT_NumData::has_s_formatCode() const
@@ -5040,12 +5279,12 @@ namespace ns_chart {
             
     if (m_has_s_formatCode)
     {
-        _outStream << "<chart:formatCode>" << m_s_formatCode->toString() << "</chart:formatCode>";;
+        _outStream << "<s:formatCode>" << m_s_formatCode->toString() << "</s:formatCode>";;
     }
     
     if (m_has_ptCount)
     {
-        m_ptCount->toXmlElem("chart:ptCount", "", _outStream);;
+        m_ptCount->toXmlElem("ptCount", "", _outStream);;
     }
      
     {
@@ -5054,11 +5293,11 @@ namespace ns_chart {
         {
             if ((*iter)->has_pt())
             {
-                (*iter)->get_pt().toXmlElem("chart:pt", "", _outStream);
+                (*iter)->get_pt().toXmlElem("pt", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -5075,6 +5314,77 @@ namespace ns_chart {
     return *CT_NumData::default_instance_;
     }
 
+
+    // CT_NumData::ChildGroup_1
+    bool CT_NumData::ChildGroup_1::has_pt() const
+    {    
+    return m_has_pt;
+    }
+
+    CT_NumVal* CT_NumData::ChildGroup_1::mutable_pt()
+    {    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_pt = true;
+    if (!m_pt)
+    {
+        m_pt = new CT_NumVal();
+    }
+    return m_pt;
+    }
+
+    const CT_NumVal& CT_NumData::ChildGroup_1::get_pt() const
+    {    
+    if (m_pt)
+    {
+        return *m_pt;
+    }
+    return CT_NumVal::default_instance();
+    }
+
+    bool CT_NumData::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_NumData::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_pt = false;
+    
+    if (m_pt)
+    {
+        delete m_pt;
+        m_pt = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_NumData::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_NumData* CT_NumData::default_instance_ = NULL;
 
     // CT_NumRef
     bool CT_NumRef::has_f() const
@@ -5142,28 +5452,7 @@ namespace ns_chart {
     }
 
     void CT_NumRef::clear()
-    {    
-    m_has_f = false;
-    m_f.clear();
-    
-    m_has_numCache = false;
-    
-    if (m_numCache)
-    {
-        delete m_numCache;
-        m_numCache = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_NumRef::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -5178,17 +5467,17 @@ namespace ns_chart {
             
     if (m_has_f)
     {
-        _outStream << "<chart:f>" << m_f << "</chart:f>";;
+        _outStream << "<f>" << m_f << "</f>";;
     }
     
     if (m_has_numCache)
     {
-        m_numCache->toXmlElem("chart:numCache", "", _outStream);;
+        m_numCache->toXmlElem("numCache", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -5203,6 +5492,7 @@ namespace ns_chart {
     return *CT_NumRef::default_instance_;
     }
 
+CT_NumRef* CT_NumRef::default_instance_ = NULL;
 
     // CT_NumDataSource
     bool CT_NumDataSource::has_numRef() const
@@ -5274,25 +5564,7 @@ namespace ns_chart {
     }
 
     void CT_NumDataSource::clear()
-    {    
-    m_has_numRef = false;
-    
-    if (m_numRef)
-    {
-        delete m_numRef;
-        m_numRef = NULL;
-    }
-    
-    
-    m_has_numLit = false;
-    
-    if (m_numLit)
-    {
-        delete m_numLit;
-        m_numLit = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_NumDataSource::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -5307,12 +5579,12 @@ namespace ns_chart {
             
     if (m_has_numRef)
     {
-        m_numRef->toXmlElem("chart:numRef", "", _outStream);;
+        m_numRef->toXmlElem("numRef", "", _outStream);;
     }
     
     if (m_has_numLit)
     {
-        m_numLit->toXmlElem("chart:numLit", "", _outStream);;
+        m_numLit->toXmlElem("numLit", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -5327,6 +5599,7 @@ namespace ns_chart {
     return *CT_NumDataSource::default_instance_;
     }
 
+CT_NumDataSource* CT_NumDataSource::default_instance_ = NULL;
 
     // CT_StrVal
     bool CT_StrVal::has_s_v() const
@@ -5357,15 +5630,6 @@ namespace ns_chart {
     {    
     m_has_idx_attr = false;
     m_idx_attr = 0;
-    
-    m_has_s_v = false;
-    
-    if (m_s_v)
-    {
-        delete m_s_v;
-        m_s_v = NULL;
-    }
-    
     }
 
     void CT_StrVal::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -5386,7 +5650,7 @@ namespace ns_chart {
             
     if (m_has_s_v)
     {
-        _outStream << "<chart:v>" << m_s_v->toString() << "</chart:v>";;
+        _outStream << "<s:v>" << m_s_v->toString() << "</s:v>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -5417,6 +5681,7 @@ namespace ns_chart {
     return m_idx_attr;
     }
 
+CT_StrVal* CT_StrVal::default_instance_ = NULL;
 
     // CT_StrData
     bool CT_StrData::has_ptCount() const
@@ -5493,7 +5758,7 @@ namespace ns_chart {
             
     if (m_has_ptCount)
     {
-        m_ptCount->toXmlElem("chart:ptCount", "", _outStream);;
+        m_ptCount->toXmlElem("ptCount", "", _outStream);;
     }
      
     {
@@ -5502,11 +5767,11 @@ namespace ns_chart {
         {
             if ((*iter)->has_pt())
             {
-                (*iter)->get_pt().toXmlElem("chart:pt", "", _outStream);
+                (*iter)->get_pt().toXmlElem("pt", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -5523,6 +5788,77 @@ namespace ns_chart {
     return *CT_StrData::default_instance_;
     }
 
+
+    // CT_StrData::ChildGroup_1
+    bool CT_StrData::ChildGroup_1::has_pt() const
+    {    
+    return m_has_pt;
+    }
+
+    CT_StrVal* CT_StrData::ChildGroup_1::mutable_pt()
+    {    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_pt = true;
+    if (!m_pt)
+    {
+        m_pt = new CT_StrVal();
+    }
+    return m_pt;
+    }
+
+    const CT_StrVal& CT_StrData::ChildGroup_1::get_pt() const
+    {    
+    if (m_pt)
+    {
+        return *m_pt;
+    }
+    return CT_StrVal::default_instance();
+    }
+
+    bool CT_StrData::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_StrData::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_pt = false;
+    
+    if (m_pt)
+    {
+        delete m_pt;
+        m_pt = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_StrData::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_StrData* CT_StrData::default_instance_ = NULL;
 
     // CT_StrRef
     bool CT_StrRef::has_f() const
@@ -5590,28 +5926,7 @@ namespace ns_chart {
     }
 
     void CT_StrRef::clear()
-    {    
-    m_has_f = false;
-    m_f.clear();
-    
-    m_has_strCache = false;
-    
-    if (m_strCache)
-    {
-        delete m_strCache;
-        m_strCache = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_StrRef::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -5626,17 +5941,17 @@ namespace ns_chart {
             
     if (m_has_f)
     {
-        _outStream << "<chart:f>" << m_f << "</chart:f>";;
+        _outStream << "<f>" << m_f << "</f>";;
     }
     
     if (m_has_strCache)
     {
-        m_strCache->toXmlElem("chart:strCache", "", _outStream);;
+        m_strCache->toXmlElem("strCache", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -5651,6 +5966,7 @@ namespace ns_chart {
     return *CT_StrRef::default_instance_;
     }
 
+CT_StrRef* CT_StrRef::default_instance_ = NULL;
 
     // CT_Tx
     bool CT_Tx::has_strRef() const
@@ -5722,25 +6038,7 @@ namespace ns_chart {
     }
 
     void CT_Tx::clear()
-    {    
-    m_has_strRef = false;
-    
-    if (m_strRef)
-    {
-        delete m_strRef;
-        m_strRef = NULL;
-    }
-    
-    
-    m_has_a_rich = false;
-    
-    if (m_a_rich)
-    {
-        delete m_a_rich;
-        m_a_rich = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Tx::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -5755,12 +6053,12 @@ namespace ns_chart {
             
     if (m_has_strRef)
     {
-        m_strRef->toXmlElem("chart:strRef", "", _outStream);;
+        m_strRef->toXmlElem("strRef", "", _outStream);;
     }
     
     if (m_has_a_rich)
     {
-        m_a_rich->toXmlElem("chart:rich", "", _outStream);;
+        m_a_rich->toXmlElem("a:rich", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -5775,6 +6073,7 @@ namespace ns_chart {
     return *CT_Tx::default_instance_;
     }
 
+CT_Tx* CT_Tx::default_instance_ = NULL;
 
     // CT_TextLanguageID
     void CT_TextLanguageID::clear()
@@ -5837,6 +6136,7 @@ namespace ns_chart {
     return ns_s::ST_Lang::default_instance();
     }
 
+CT_TextLanguageID* CT_TextLanguageID::default_instance_ = NULL;
 
     // CT_Lvl
     CT_StrVal* CT_Lvl::add_pt()
@@ -5876,7 +6176,7 @@ namespace ns_chart {
         {
             if ((*iter)->has_pt())
             {
-                (*iter)->get_pt().toXmlElem("chart:pt", "", _outStream);
+                (*iter)->get_pt().toXmlElem("pt", "", _outStream);
             }
         }
     }
@@ -5893,6 +6193,34 @@ namespace ns_chart {
     return *CT_Lvl::default_instance_;
     }
 
+
+    // CT_Lvl::ChildGroup_1
+    bool CT_Lvl::ChildGroup_1::has_pt() const
+    {    
+    return m_has_pt;
+    }
+
+    CT_StrVal* CT_Lvl::ChildGroup_1::mutable_pt()
+    {    
+    
+    m_has_pt = true;
+    if (!m_pt)
+    {
+        m_pt = new CT_StrVal();
+    }
+    return m_pt;
+    }
+
+    const CT_StrVal& CT_Lvl::ChildGroup_1::get_pt() const
+    {    
+    if (m_pt)
+    {
+        return *m_pt;
+    }
+    return CT_StrVal::default_instance();
+    }
+
+CT_Lvl* CT_Lvl::default_instance_ = NULL;
 
     // CT_MultiLvlStrData
     bool CT_MultiLvlStrData::has_ptCount() const
@@ -5969,7 +6297,7 @@ namespace ns_chart {
             
     if (m_has_ptCount)
     {
-        m_ptCount->toXmlElem("chart:ptCount", "", _outStream);;
+        m_ptCount->toXmlElem("ptCount", "", _outStream);;
     }
      
     {
@@ -5978,11 +6306,11 @@ namespace ns_chart {
         {
             if ((*iter)->has_lvl())
             {
-                (*iter)->get_lvl().toXmlElem("chart:lvl", "", _outStream);
+                (*iter)->get_lvl().toXmlElem("lvl", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -5999,6 +6327,77 @@ namespace ns_chart {
     return *CT_MultiLvlStrData::default_instance_;
     }
 
+
+    // CT_MultiLvlStrData::ChildGroup_1
+    bool CT_MultiLvlStrData::ChildGroup_1::has_lvl() const
+    {    
+    return m_has_lvl;
+    }
+
+    CT_Lvl* CT_MultiLvlStrData::ChildGroup_1::mutable_lvl()
+    {    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_lvl = true;
+    if (!m_lvl)
+    {
+        m_lvl = new CT_Lvl();
+    }
+    return m_lvl;
+    }
+
+    const CT_Lvl& CT_MultiLvlStrData::ChildGroup_1::get_lvl() const
+    {    
+    if (m_lvl)
+    {
+        return *m_lvl;
+    }
+    return CT_Lvl::default_instance();
+    }
+
+    bool CT_MultiLvlStrData::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_MultiLvlStrData::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_lvl = false;
+    
+    if (m_lvl)
+    {
+        delete m_lvl;
+        m_lvl = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_MultiLvlStrData::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_MultiLvlStrData* CT_MultiLvlStrData::default_instance_ = NULL;
 
     // CT_MultiLvlStrRef
     bool CT_MultiLvlStrRef::has_f() const
@@ -6066,28 +6465,7 @@ namespace ns_chart {
     }
 
     void CT_MultiLvlStrRef::clear()
-    {    
-    m_has_f = false;
-    m_f.clear();
-    
-    m_has_multiLvlStrCache = false;
-    
-    if (m_multiLvlStrCache)
-    {
-        delete m_multiLvlStrCache;
-        m_multiLvlStrCache = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_MultiLvlStrRef::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -6102,17 +6480,17 @@ namespace ns_chart {
             
     if (m_has_f)
     {
-        _outStream << "<chart:f>" << m_f << "</chart:f>";;
+        _outStream << "<f>" << m_f << "</f>";;
     }
     
     if (m_has_multiLvlStrCache)
     {
-        m_multiLvlStrCache->toXmlElem("chart:multiLvlStrCache", "", _outStream);;
+        m_multiLvlStrCache->toXmlElem("multiLvlStrCache", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -6127,6 +6505,7 @@ namespace ns_chart {
     return *CT_MultiLvlStrRef::default_instance_;
     }
 
+CT_MultiLvlStrRef* CT_MultiLvlStrRef::default_instance_ = NULL;
 
     // CT_AxDataSource
     bool CT_AxDataSource::has_multiLvlStrRef() const
@@ -6435,52 +6814,7 @@ namespace ns_chart {
     }
 
     void CT_AxDataSource::clear()
-    {    
-    m_has_multiLvlStrRef = false;
-    
-    if (m_multiLvlStrRef)
-    {
-        delete m_multiLvlStrRef;
-        m_multiLvlStrRef = NULL;
-    }
-    
-    
-    m_has_numRef = false;
-    
-    if (m_numRef)
-    {
-        delete m_numRef;
-        m_numRef = NULL;
-    }
-    
-    
-    m_has_numLit = false;
-    
-    if (m_numLit)
-    {
-        delete m_numLit;
-        m_numLit = NULL;
-    }
-    
-    
-    m_has_strRef = false;
-    
-    if (m_strRef)
-    {
-        delete m_strRef;
-        m_strRef = NULL;
-    }
-    
-    
-    m_has_strLit = false;
-    
-    if (m_strLit)
-    {
-        delete m_strLit;
-        m_strLit = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_AxDataSource::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -6495,27 +6829,27 @@ namespace ns_chart {
             
     if (m_has_multiLvlStrRef)
     {
-        m_multiLvlStrRef->toXmlElem("chart:multiLvlStrRef", "", _outStream);;
+        m_multiLvlStrRef->toXmlElem("multiLvlStrRef", "", _outStream);;
     }
     
     if (m_has_numRef)
     {
-        m_numRef->toXmlElem("chart:numRef", "", _outStream);;
+        m_numRef->toXmlElem("numRef", "", _outStream);;
     }
     
     if (m_has_numLit)
     {
-        m_numLit->toXmlElem("chart:numLit", "", _outStream);;
+        m_numLit->toXmlElem("numLit", "", _outStream);;
     }
     
     if (m_has_strRef)
     {
-        m_strRef->toXmlElem("chart:strRef", "", _outStream);;
+        m_strRef->toXmlElem("strRef", "", _outStream);;
     }
     
     if (m_has_strLit)
     {
-        m_strLit->toXmlElem("chart:strLit", "", _outStream);;
+        m_strLit->toXmlElem("strLit", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -6530,6 +6864,7 @@ namespace ns_chart {
     return *CT_AxDataSource::default_instance_;
     }
 
+CT_AxDataSource* CT_AxDataSource::default_instance_ = NULL;
 
     // CT_SerTx
     bool CT_SerTx::has_strRef() const
@@ -6601,25 +6936,7 @@ namespace ns_chart {
     }
 
     void CT_SerTx::clear()
-    {    
-    m_has_strRef = false;
-    
-    if (m_strRef)
-    {
-        delete m_strRef;
-        m_strRef = NULL;
-    }
-    
-    
-    m_has_s_v = false;
-    
-    if (m_s_v)
-    {
-        delete m_s_v;
-        m_s_v = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_SerTx::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -6634,12 +6951,12 @@ namespace ns_chart {
             
     if (m_has_strRef)
     {
-        m_strRef->toXmlElem("chart:strRef", "", _outStream);;
+        m_strRef->toXmlElem("strRef", "", _outStream);;
     }
     
     if (m_has_s_v)
     {
-        _outStream << "<chart:v>" << m_s_v->toString() << "</chart:v>";;
+        _outStream << "<s:v>" << m_s_v->toString() << "</s:v>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -6654,6 +6971,7 @@ namespace ns_chart {
     return *CT_SerTx::default_instance_;
     }
 
+CT_SerTx* CT_SerTx::default_instance_ = NULL;
 
     // CT_LayoutTarget
     void CT_LayoutTarget::clear()
@@ -6716,6 +7034,7 @@ namespace ns_chart {
     return ST_LayoutTarget::default_instance();
     }
 
+CT_LayoutTarget* CT_LayoutTarget::default_instance_ = NULL;
 
     // CT_LayoutMode
     void CT_LayoutMode::clear()
@@ -6778,6 +7097,7 @@ namespace ns_chart {
     return ST_LayoutMode::default_instance();
     }
 
+CT_LayoutMode* CT_LayoutMode::default_instance_ = NULL;
 
     // CT_ManualLayout
     bool CT_ManualLayout::has_layoutTarget() const
@@ -7021,97 +7341,7 @@ namespace ns_chart {
     }
 
     void CT_ManualLayout::clear()
-    {    
-    m_has_layoutTarget = false;
-    
-    if (m_layoutTarget)
-    {
-        delete m_layoutTarget;
-        m_layoutTarget = NULL;
-    }
-    
-    
-    m_has_xMode = false;
-    
-    if (m_xMode)
-    {
-        delete m_xMode;
-        m_xMode = NULL;
-    }
-    
-    
-    m_has_yMode = false;
-    
-    if (m_yMode)
-    {
-        delete m_yMode;
-        m_yMode = NULL;
-    }
-    
-    
-    m_has_wMode = false;
-    
-    if (m_wMode)
-    {
-        delete m_wMode;
-        m_wMode = NULL;
-    }
-    
-    
-    m_has_hMode = false;
-    
-    if (m_hMode)
-    {
-        delete m_hMode;
-        m_hMode = NULL;
-    }
-    
-    
-    m_has_x = false;
-    
-    if (m_x)
-    {
-        delete m_x;
-        m_x = NULL;
-    }
-    
-    
-    m_has_y = false;
-    
-    if (m_y)
-    {
-        delete m_y;
-        m_y = NULL;
-    }
-    
-    
-    m_has_w = false;
-    
-    if (m_w)
-    {
-        delete m_w;
-        m_w = NULL;
-    }
-    
-    
-    m_has_h = false;
-    
-    if (m_h)
-    {
-        delete m_h;
-        m_h = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_ManualLayout::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -7126,52 +7356,52 @@ namespace ns_chart {
             
     if (m_has_layoutTarget)
     {
-        m_layoutTarget->toXmlElem("chart:layoutTarget", "", _outStream);;
+        m_layoutTarget->toXmlElem("layoutTarget", "", _outStream);;
     }
     
     if (m_has_xMode)
     {
-        m_xMode->toXmlElem("chart:xMode", "", _outStream);;
+        m_xMode->toXmlElem("xMode", "", _outStream);;
     }
     
     if (m_has_yMode)
     {
-        m_yMode->toXmlElem("chart:yMode", "", _outStream);;
+        m_yMode->toXmlElem("yMode", "", _outStream);;
     }
     
     if (m_has_wMode)
     {
-        m_wMode->toXmlElem("chart:wMode", "", _outStream);;
+        m_wMode->toXmlElem("wMode", "", _outStream);;
     }
     
     if (m_has_hMode)
     {
-        m_hMode->toXmlElem("chart:hMode", "", _outStream);;
+        m_hMode->toXmlElem("hMode", "", _outStream);;
     }
     
     if (m_has_x)
     {
-        m_x->toXmlElem("chart:x", "", _outStream);;
+        m_x->toXmlElem("x", "", _outStream);;
     }
     
     if (m_has_y)
     {
-        m_y->toXmlElem("chart:y", "", _outStream);;
+        m_y->toXmlElem("y", "", _outStream);;
     }
     
     if (m_has_w)
     {
-        m_w->toXmlElem("chart:w", "", _outStream);;
+        m_w->toXmlElem("w", "", _outStream);;
     }
     
     if (m_has_h)
     {
-        m_h->toXmlElem("chart:h", "", _outStream);;
+        m_h->toXmlElem("h", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7186,6 +7416,7 @@ namespace ns_chart {
     return *CT_ManualLayout::default_instance_;
     }
 
+CT_ManualLayout* CT_ManualLayout::default_instance_ = NULL;
 
     // CT_Layout
     bool CT_Layout::has_manualLayout() const
@@ -7237,25 +7468,7 @@ namespace ns_chart {
     }
 
     void CT_Layout::clear()
-    {    
-    m_has_manualLayout = false;
-    
-    if (m_manualLayout)
-    {
-        delete m_manualLayout;
-        m_manualLayout = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Layout::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -7270,12 +7483,12 @@ namespace ns_chart {
             
     if (m_has_manualLayout)
     {
-        m_manualLayout->toXmlElem("chart:manualLayout", "", _outStream);;
+        m_manualLayout->toXmlElem("manualLayout", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7290,6 +7503,7 @@ namespace ns_chart {
     return *CT_Layout::default_instance_;
     }
 
+CT_Layout* CT_Layout::default_instance_ = NULL;
 
     // CT_Title
     bool CT_Title::has_tx() const
@@ -7437,61 +7651,7 @@ namespace ns_chart {
     }
 
     void CT_Title::clear()
-    {    
-    m_has_tx = false;
-    
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    
-    
-    m_has_layout = false;
-    
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    
-    
-    m_has_overlay = false;
-    
-    if (m_overlay)
-    {
-        delete m_overlay;
-        m_overlay = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_txPr = false;
-    
-    if (m_a_txPr)
-    {
-        delete m_a_txPr;
-        m_a_txPr = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Title::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -7506,32 +7666,32 @@ namespace ns_chart {
             
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("tx", "", _outStream);;
     }
     
     if (m_has_layout)
     {
-        m_layout->toXmlElem("chart:layout", "", _outStream);;
+        m_layout->toXmlElem("layout", "", _outStream);;
     }
     
     if (m_has_overlay)
     {
-        m_overlay->toXmlElem("chart:overlay", "", _outStream);;
+        m_overlay->toXmlElem("overlay", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_txPr)
     {
-        m_a_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_a_txPr->toXmlElem("a:txPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7546,6 +7706,7 @@ namespace ns_chart {
     return *CT_Title::default_instance_;
     }
 
+CT_Title* CT_Title::default_instance_ = NULL;
 
     // CT_RotX
     void CT_RotX::clear()
@@ -7608,6 +7769,7 @@ namespace ns_chart {
     return ST_RotX::default_instance();
     }
 
+CT_RotX* CT_RotX::default_instance_ = NULL;
 
     // CT_HPercent
     void CT_HPercent::clear()
@@ -7670,6 +7832,7 @@ namespace ns_chart {
     return ST_HPercent::default_instance();
     }
 
+CT_HPercent* CT_HPercent::default_instance_ = NULL;
 
     // CT_RotY
     void CT_RotY::clear()
@@ -7732,6 +7895,7 @@ namespace ns_chart {
     return ST_RotY::default_instance();
     }
 
+CT_RotY* CT_RotY::default_instance_ = NULL;
 
     // CT_DepthPercent
     void CT_DepthPercent::clear()
@@ -7794,6 +7958,7 @@ namespace ns_chart {
     return ST_DepthPercent::default_instance();
     }
 
+CT_DepthPercent* CT_DepthPercent::default_instance_ = NULL;
 
     // CT_Perspective
     void CT_Perspective::clear()
@@ -7856,6 +8021,7 @@ namespace ns_chart {
     return ST_Perspective::default_instance();
     }
 
+CT_Perspective* CT_Perspective::default_instance_ = NULL;
 
     // CT_View3D
     bool CT_View3D::has_rotX() const
@@ -8027,70 +8193,7 @@ namespace ns_chart {
     }
 
     void CT_View3D::clear()
-    {    
-    m_has_rotX = false;
-    
-    if (m_rotX)
-    {
-        delete m_rotX;
-        m_rotX = NULL;
-    }
-    
-    
-    m_has_hPercent = false;
-    
-    if (m_hPercent)
-    {
-        delete m_hPercent;
-        m_hPercent = NULL;
-    }
-    
-    
-    m_has_rotY = false;
-    
-    if (m_rotY)
-    {
-        delete m_rotY;
-        m_rotY = NULL;
-    }
-    
-    
-    m_has_depthPercent = false;
-    
-    if (m_depthPercent)
-    {
-        delete m_depthPercent;
-        m_depthPercent = NULL;
-    }
-    
-    
-    m_has_rAngAx = false;
-    
-    if (m_rAngAx)
-    {
-        delete m_rAngAx;
-        m_rAngAx = NULL;
-    }
-    
-    
-    m_has_perspective = false;
-    
-    if (m_perspective)
-    {
-        delete m_perspective;
-        m_perspective = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_View3D::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -8105,37 +8208,37 @@ namespace ns_chart {
             
     if (m_has_rotX)
     {
-        m_rotX->toXmlElem("chart:rotX", "", _outStream);;
+        m_rotX->toXmlElem("rotX", "", _outStream);;
     }
     
     if (m_has_hPercent)
     {
-        m_hPercent->toXmlElem("chart:hPercent", "", _outStream);;
+        m_hPercent->toXmlElem("hPercent", "", _outStream);;
     }
     
     if (m_has_rotY)
     {
-        m_rotY->toXmlElem("chart:rotY", "", _outStream);;
+        m_rotY->toXmlElem("rotY", "", _outStream);;
     }
     
     if (m_has_depthPercent)
     {
-        m_depthPercent->toXmlElem("chart:depthPercent", "", _outStream);;
+        m_depthPercent->toXmlElem("depthPercent", "", _outStream);;
     }
     
     if (m_has_rAngAx)
     {
-        m_rAngAx->toXmlElem("chart:rAngAx", "", _outStream);;
+        m_rAngAx->toXmlElem("rAngAx", "", _outStream);;
     }
     
     if (m_has_perspective)
     {
-        m_perspective->toXmlElem("chart:perspective", "", _outStream);;
+        m_perspective->toXmlElem("perspective", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -8150,6 +8253,7 @@ namespace ns_chart {
     return *CT_View3D::default_instance_;
     }
 
+CT_View3D* CT_View3D::default_instance_ = NULL;
 
     // CT_Surface
     bool CT_Surface::has_thickness() const
@@ -8249,43 +8353,7 @@ namespace ns_chart {
     }
 
     void CT_Surface::clear()
-    {    
-    m_has_thickness = false;
-    
-    if (m_thickness)
-    {
-        delete m_thickness;
-        m_thickness = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_pictureOptions = false;
-    
-    if (m_pictureOptions)
-    {
-        delete m_pictureOptions;
-        m_pictureOptions = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Surface::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -8300,22 +8368,22 @@ namespace ns_chart {
             
     if (m_has_thickness)
     {
-        m_thickness->toXmlElem("chart:thickness", "", _outStream);;
+        m_thickness->toXmlElem("thickness", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_pictureOptions)
     {
-        m_pictureOptions->toXmlElem("chart:pictureOptions", "", _outStream);;
+        m_pictureOptions->toXmlElem("pictureOptions", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -8330,6 +8398,7 @@ namespace ns_chart {
     return *CT_Surface::default_instance_;
     }
 
+CT_Surface* CT_Surface::default_instance_ = NULL;
 
     // CT_Thickness
     void CT_Thickness::clear()
@@ -8392,6 +8461,7 @@ namespace ns_chart {
     return ST_Thickness::default_instance();
     }
 
+CT_Thickness* CT_Thickness::default_instance_ = NULL;
 
     // CT_DTable
     bool CT_DTable::has_showHorzBorder() const
@@ -8563,70 +8633,7 @@ namespace ns_chart {
     }
 
     void CT_DTable::clear()
-    {    
-    m_has_showHorzBorder = false;
-    
-    if (m_showHorzBorder)
-    {
-        delete m_showHorzBorder;
-        m_showHorzBorder = NULL;
-    }
-    
-    
-    m_has_showVertBorder = false;
-    
-    if (m_showVertBorder)
-    {
-        delete m_showVertBorder;
-        m_showVertBorder = NULL;
-    }
-    
-    
-    m_has_showOutline = false;
-    
-    if (m_showOutline)
-    {
-        delete m_showOutline;
-        m_showOutline = NULL;
-    }
-    
-    
-    m_has_showKeys = false;
-    
-    if (m_showKeys)
-    {
-        delete m_showKeys;
-        m_showKeys = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_txPr = false;
-    
-    if (m_a_txPr)
-    {
-        delete m_a_txPr;
-        m_a_txPr = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_DTable::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -8641,37 +8648,37 @@ namespace ns_chart {
             
     if (m_has_showHorzBorder)
     {
-        m_showHorzBorder->toXmlElem("chart:showHorzBorder", "", _outStream);;
+        m_showHorzBorder->toXmlElem("showHorzBorder", "", _outStream);;
     }
     
     if (m_has_showVertBorder)
     {
-        m_showVertBorder->toXmlElem("chart:showVertBorder", "", _outStream);;
+        m_showVertBorder->toXmlElem("showVertBorder", "", _outStream);;
     }
     
     if (m_has_showOutline)
     {
-        m_showOutline->toXmlElem("chart:showOutline", "", _outStream);;
+        m_showOutline->toXmlElem("showOutline", "", _outStream);;
     }
     
     if (m_has_showKeys)
     {
-        m_showKeys->toXmlElem("chart:showKeys", "", _outStream);;
+        m_showKeys->toXmlElem("showKeys", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_txPr)
     {
-        m_a_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_a_txPr->toXmlElem("a:txPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -8686,6 +8693,7 @@ namespace ns_chart {
     return *CT_DTable::default_instance_;
     }
 
+CT_DTable* CT_DTable::default_instance_ = NULL;
 
     // CT_GapAmount
     void CT_GapAmount::clear()
@@ -8748,6 +8756,7 @@ namespace ns_chart {
     return ST_GapAmount::default_instance();
     }
 
+CT_GapAmount* CT_GapAmount::default_instance_ = NULL;
 
     // CT_Overlap
     void CT_Overlap::clear()
@@ -8810,6 +8819,7 @@ namespace ns_chart {
     return ST_Overlap::default_instance();
     }
 
+CT_Overlap* CT_Overlap::default_instance_ = NULL;
 
     // CT_BubbleScale
     void CT_BubbleScale::clear()
@@ -8872,6 +8882,7 @@ namespace ns_chart {
     return ST_BubbleScale::default_instance();
     }
 
+CT_BubbleScale* CT_BubbleScale::default_instance_ = NULL;
 
     // CT_SizeRepresents
     void CT_SizeRepresents::clear()
@@ -8934,6 +8945,7 @@ namespace ns_chart {
     return ST_SizeRepresents::default_instance();
     }
 
+CT_SizeRepresents* CT_SizeRepresents::default_instance_ = NULL;
 
     // CT_FirstSliceAng
     void CT_FirstSliceAng::clear()
@@ -8996,6 +9008,7 @@ namespace ns_chart {
     return ST_FirstSliceAng::default_instance();
     }
 
+CT_FirstSliceAng* CT_FirstSliceAng::default_instance_ = NULL;
 
     // CT_HoleSize
     void CT_HoleSize::clear()
@@ -9058,6 +9071,7 @@ namespace ns_chart {
     return ST_HoleSize::default_instance();
     }
 
+CT_HoleSize* CT_HoleSize::default_instance_ = NULL;
 
     // CT_SplitType
     void CT_SplitType::clear()
@@ -9120,6 +9134,7 @@ namespace ns_chart {
     return ST_SplitType::default_instance();
     }
 
+CT_SplitType* CT_SplitType::default_instance_ = NULL;
 
     // CT_CustSplit
     CT_UnsignedInt* CT_CustSplit::add_secondPiePt()
@@ -9159,7 +9174,7 @@ namespace ns_chart {
         {
             if ((*iter)->has_secondPiePt())
             {
-                (*iter)->get_secondPiePt().toXmlElem("chart:secondPiePt", "", _outStream);
+                (*iter)->get_secondPiePt().toXmlElem("secondPiePt", "", _outStream);
             }
         }
     }
@@ -9176,6 +9191,34 @@ namespace ns_chart {
     return *CT_CustSplit::default_instance_;
     }
 
+
+    // CT_CustSplit::ChildGroup_1
+    bool CT_CustSplit::ChildGroup_1::has_secondPiePt() const
+    {    
+    return m_has_secondPiePt;
+    }
+
+    CT_UnsignedInt* CT_CustSplit::ChildGroup_1::mutable_secondPiePt()
+    {    
+    
+    m_has_secondPiePt = true;
+    if (!m_secondPiePt)
+    {
+        m_secondPiePt = new CT_UnsignedInt();
+    }
+    return m_secondPiePt;
+    }
+
+    const CT_UnsignedInt& CT_CustSplit::ChildGroup_1::get_secondPiePt() const
+    {    
+    if (m_secondPiePt)
+    {
+        return *m_secondPiePt;
+    }
+    return CT_UnsignedInt::default_instance();
+    }
+
+CT_CustSplit* CT_CustSplit::default_instance_ = NULL;
 
     // CT_SecondPieSize
     void CT_SecondPieSize::clear()
@@ -9238,6 +9281,7 @@ namespace ns_chart {
     return ST_SecondPieSize::default_instance();
     }
 
+CT_SecondPieSize* CT_SecondPieSize::default_instance_ = NULL;
 
     // CT_NumFmt
     void CT_NumFmt::clear()
@@ -9325,6 +9369,7 @@ namespace ns_chart {
     return m_sourceLinked_attr;
     }
 
+CT_NumFmt* CT_NumFmt::default_instance_ = NULL;
 
     // CT_LblAlgn
     void CT_LblAlgn::clear()
@@ -9387,6 +9432,7 @@ namespace ns_chart {
     return ST_LblAlgn::default_instance();
     }
 
+CT_LblAlgn* CT_LblAlgn::default_instance_ = NULL;
 
     // CT_DLblPos
     void CT_DLblPos::clear()
@@ -9449,6 +9495,7 @@ namespace ns_chart {
     return ST_DLblPos::default_instance();
     }
 
+CT_DLblPos* CT_DLblPos::default_instance_ = NULL;
 
     // CT_DLbl
     bool CT_DLbl::has_idx() const
@@ -9525,34 +9572,7 @@ namespace ns_chart {
     }
 
     void CT_DLbl::clear()
-    {    
-    m_has_idx = false;
-    
-    if (m_idx)
-    {
-        delete m_idx;
-        m_idx = NULL;
-    }
-    
-     
-    m_has_delete = false;
-    
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    
-     
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_DLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -9567,17 +9587,17 @@ namespace ns_chart {
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("idx", "", _outStream);;
     }
      
     if (m_has_delete)
     {
-        m_delete->toXmlElem("chart:delete", "", _outStream);;
+        m_delete->toXmlElem("delete", "", _outStream);;
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9592,6 +9612,7 @@ namespace ns_chart {
     return *CT_DLbl::default_instance_;
     }
 
+CT_DLbl* CT_DLbl::default_instance_ = NULL;
 
     // CT_DLbls
     CT_DLbl* CT_DLbls::add_dLbl()
@@ -9750,67 +9771,67 @@ namespace ns_chart {
         {
             if ((*iter)->has_dLbl())
             {
-                (*iter)->get_dLbl().toXmlElem("chart:dLbl", "", _outStream);
+                (*iter)->get_dLbl().toXmlElem("dLbl", "", _outStream);
             }
             else if ((*iter)->has_delete())
             {
-                (*iter)->get_delete().toXmlElem("chart:delete", "", _outStream);
+                (*iter)->get_delete().toXmlElem("delete", "", _outStream);
             }
             else if ((*iter)->has_numFmt())
             {
-                (*iter)->get_numFmt().toXmlElem("chart:numFmt", "", _outStream);
+                (*iter)->get_numFmt().toXmlElem("numFmt", "", _outStream);
             }
             else if ((*iter)->has_a_spPr())
             {
-                (*iter)->get_a_spPr().toXmlElem("chart:spPr", "", _outStream);
+                (*iter)->get_a_spPr().toXmlElem("a:spPr", "", _outStream);
             }
             else if ((*iter)->has_a_txPr())
             {
-                (*iter)->get_a_txPr().toXmlElem("chart:txPr", "", _outStream);
+                (*iter)->get_a_txPr().toXmlElem("a:txPr", "", _outStream);
             }
             else if ((*iter)->has_dLblPos())
             {
-                (*iter)->get_dLblPos().toXmlElem("chart:dLblPos", "", _outStream);
+                (*iter)->get_dLblPos().toXmlElem("dLblPos", "", _outStream);
             }
             else if ((*iter)->has_showLegendKey())
             {
-                (*iter)->get_showLegendKey().toXmlElem("chart:showLegendKey", "", _outStream);
+                (*iter)->get_showLegendKey().toXmlElem("showLegendKey", "", _outStream);
             }
             else if ((*iter)->has_showVal())
             {
-                (*iter)->get_showVal().toXmlElem("chart:showVal", "", _outStream);
+                (*iter)->get_showVal().toXmlElem("showVal", "", _outStream);
             }
             else if ((*iter)->has_showCatName())
             {
-                (*iter)->get_showCatName().toXmlElem("chart:showCatName", "", _outStream);
+                (*iter)->get_showCatName().toXmlElem("showCatName", "", _outStream);
             }
             else if ((*iter)->has_showSerName())
             {
-                (*iter)->get_showSerName().toXmlElem("chart:showSerName", "", _outStream);
+                (*iter)->get_showSerName().toXmlElem("showSerName", "", _outStream);
             }
             else if ((*iter)->has_showPercent())
             {
-                (*iter)->get_showPercent().toXmlElem("chart:showPercent", "", _outStream);
+                (*iter)->get_showPercent().toXmlElem("showPercent", "", _outStream);
             }
             else if ((*iter)->has_showBubbleSize())
             {
-                (*iter)->get_showBubbleSize().toXmlElem("chart:showBubbleSize", "", _outStream);
+                (*iter)->get_showBubbleSize().toXmlElem("showBubbleSize", "", _outStream);
             }
             else if ((*iter)->has_separator())
             {
-                _outStream << "<chart:separator>" << (*iter)->get_separator() << "</chart:separator>";
+                _outStream << "<separator>" << (*iter)->get_separator() << "</separator>";
             }
             else if ((*iter)->has_showLeaderLines())
             {
-                (*iter)->get_showLeaderLines().toXmlElem("chart:showLeaderLines", "", _outStream);
+                (*iter)->get_showLeaderLines().toXmlElem("showLeaderLines", "", _outStream);
             }
             else if ((*iter)->has_leaderLines())
             {
-                (*iter)->get_leaderLines().toXmlElem("chart:leaderLines", "", _outStream);
+                (*iter)->get_leaderLines().toXmlElem("leaderLines", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -9827,6 +9848,2471 @@ namespace ns_chart {
     return *CT_DLbls::default_instance_;
     }
 
+
+    // CT_DLbls::ChildGroup_1
+    bool CT_DLbls::ChildGroup_1::has_dLbl() const
+    {    
+    return m_has_dLbl;
+    }
+
+    CT_DLbl* CT_DLbls::ChildGroup_1::mutable_dLbl()
+    {    
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLbl = true;
+    if (!m_dLbl)
+    {
+        m_dLbl = new CT_DLbl();
+    }
+    return m_dLbl;
+    }
+
+    const CT_DLbl& CT_DLbls::ChildGroup_1::get_dLbl() const
+    {    
+    if (m_dLbl)
+    {
+        return *m_dLbl;
+    }
+    return CT_DLbl::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_delete() const
+    {    
+    return m_has_delete;
+    }
+
+    CT_Boolean* CT_DLbls::ChildGroup_1::mutable_delete()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_delete = true;
+    if (!m_delete)
+    {
+        m_delete = new CT_Boolean();
+    }
+    return m_delete;
+    }
+
+    const CT_Boolean& CT_DLbls::ChildGroup_1::get_delete() const
+    {    
+    if (m_delete)
+    {
+        return *m_delete;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_numFmt() const
+    {    
+    return m_has_numFmt;
+    }
+
+    CT_NumFmt* CT_DLbls::ChildGroup_1::mutable_numFmt()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_numFmt = true;
+    if (!m_numFmt)
+    {
+        m_numFmt = new CT_NumFmt();
+    }
+    return m_numFmt;
+    }
+
+    const CT_NumFmt& CT_DLbls::ChildGroup_1::get_numFmt() const
+    {    
+    if (m_numFmt)
+    {
+        return *m_numFmt;
+    }
+    return CT_NumFmt::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_a_spPr() const
+    {    
+    return m_has_a_spPr;
+    }
+
+    ns_a::CT_ShapeProperties* CT_DLbls::ChildGroup_1::mutable_a_spPr()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = true;
+    if (!m_a_spPr)
+    {
+        m_a_spPr = new ns_a::CT_ShapeProperties();
+    }
+    return m_a_spPr;
+    }
+
+    const ns_a::CT_ShapeProperties& CT_DLbls::ChildGroup_1::get_a_spPr() const
+    {    
+    if (m_a_spPr)
+    {
+        return *m_a_spPr;
+    }
+    return ns_a::CT_ShapeProperties::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_a_txPr() const
+    {    
+    return m_has_a_txPr;
+    }
+
+    ns_a::CT_TextBody* CT_DLbls::ChildGroup_1::mutable_a_txPr()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = true;
+    if (!m_a_txPr)
+    {
+        m_a_txPr = new ns_a::CT_TextBody();
+    }
+    return m_a_txPr;
+    }
+
+    const ns_a::CT_TextBody& CT_DLbls::ChildGroup_1::get_a_txPr() const
+    {    
+    if (m_a_txPr)
+    {
+        return *m_a_txPr;
+    }
+    return ns_a::CT_TextBody::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_dLblPos() const
+    {    
+    return m_has_dLblPos;
+    }
+
+    CT_DLblPos* CT_DLbls::ChildGroup_1::mutable_dLblPos()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = true;
+    if (!m_dLblPos)
+    {
+        m_dLblPos = new CT_DLblPos();
+    }
+    return m_dLblPos;
+    }
+
+    const CT_DLblPos& CT_DLbls::ChildGroup_1::get_dLblPos() const
+    {    
+    if (m_dLblPos)
+    {
+        return *m_dLblPos;
+    }
+    return CT_DLblPos::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_showLegendKey() const
+    {    
+    return m_has_showLegendKey;
+    }
+
+    CT_Boolean* CT_DLbls::ChildGroup_1::mutable_showLegendKey()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = true;
+    if (!m_showLegendKey)
+    {
+        m_showLegendKey = new CT_Boolean();
+    }
+    return m_showLegendKey;
+    }
+
+    const CT_Boolean& CT_DLbls::ChildGroup_1::get_showLegendKey() const
+    {    
+    if (m_showLegendKey)
+    {
+        return *m_showLegendKey;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_showVal() const
+    {    
+    return m_has_showVal;
+    }
+
+    CT_Boolean* CT_DLbls::ChildGroup_1::mutable_showVal()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_showVal = true;
+    if (!m_showVal)
+    {
+        m_showVal = new CT_Boolean();
+    }
+    return m_showVal;
+    }
+
+    const CT_Boolean& CT_DLbls::ChildGroup_1::get_showVal() const
+    {    
+    if (m_showVal)
+    {
+        return *m_showVal;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_showCatName() const
+    {    
+    return m_has_showCatName;
+    }
+
+    CT_Boolean* CT_DLbls::ChildGroup_1::mutable_showCatName()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_showCatName = true;
+    if (!m_showCatName)
+    {
+        m_showCatName = new CT_Boolean();
+    }
+    return m_showCatName;
+    }
+
+    const CT_Boolean& CT_DLbls::ChildGroup_1::get_showCatName() const
+    {    
+    if (m_showCatName)
+    {
+        return *m_showCatName;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_showSerName() const
+    {    
+    return m_has_showSerName;
+    }
+
+    CT_Boolean* CT_DLbls::ChildGroup_1::mutable_showSerName()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_showSerName = true;
+    if (!m_showSerName)
+    {
+        m_showSerName = new CT_Boolean();
+    }
+    return m_showSerName;
+    }
+
+    const CT_Boolean& CT_DLbls::ChildGroup_1::get_showSerName() const
+    {    
+    if (m_showSerName)
+    {
+        return *m_showSerName;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_showPercent() const
+    {    
+    return m_has_showPercent;
+    }
+
+    CT_Boolean* CT_DLbls::ChildGroup_1::mutable_showPercent()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_showPercent = true;
+    if (!m_showPercent)
+    {
+        m_showPercent = new CT_Boolean();
+    }
+    return m_showPercent;
+    }
+
+    const CT_Boolean& CT_DLbls::ChildGroup_1::get_showPercent() const
+    {    
+    if (m_showPercent)
+    {
+        return *m_showPercent;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_showBubbleSize() const
+    {    
+    return m_has_showBubbleSize;
+    }
+
+    CT_Boolean* CT_DLbls::ChildGroup_1::mutable_showBubbleSize()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = true;
+    if (!m_showBubbleSize)
+    {
+        m_showBubbleSize = new CT_Boolean();
+    }
+    return m_showBubbleSize;
+    }
+
+    const CT_Boolean& CT_DLbls::ChildGroup_1::get_showBubbleSize() const
+    {    
+    if (m_showBubbleSize)
+    {
+        return *m_showBubbleSize;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_separator() const
+    {    
+    return m_has_separator;
+    }
+
+    void CT_DLbls::ChildGroup_1::set_separator(const XSD::string_& _separator)
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_separator = true;
+    m_separator = _separator;
+    }
+
+    const XSD::string_& CT_DLbls::ChildGroup_1::get_separator() const
+    {    
+    return m_separator;
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_showLeaderLines() const
+    {    
+    return m_has_showLeaderLines;
+    }
+
+    CT_Boolean* CT_DLbls::ChildGroup_1::mutable_showLeaderLines()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_showLeaderLines = true;
+    if (!m_showLeaderLines)
+    {
+        m_showLeaderLines = new CT_Boolean();
+    }
+    return m_showLeaderLines;
+    }
+
+    const CT_Boolean& CT_DLbls::ChildGroup_1::get_showLeaderLines() const
+    {    
+    if (m_showLeaderLines)
+    {
+        return *m_showLeaderLines;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_leaderLines() const
+    {    
+    return m_has_leaderLines;
+    }
+
+    CT_ChartLines* CT_DLbls::ChildGroup_1::mutable_leaderLines()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = true;
+    if (!m_leaderLines)
+    {
+        m_leaderLines = new CT_ChartLines();
+    }
+    return m_leaderLines;
+    }
+
+    const CT_ChartLines& CT_DLbls::ChildGroup_1::get_leaderLines() const
+    {    
+    if (m_leaderLines)
+    {
+        return *m_leaderLines;
+    }
+    return CT_ChartLines::default_instance();
+    }
+
+    bool CT_DLbls::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_DLbls::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_dLbl = false;
+    
+    if (m_dLbl)
+    {
+        delete m_dLbl;
+        m_dLbl = NULL;
+    }
+    ;
+    
+    m_has_delete = false;
+    
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_dLblPos = false;
+    
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+    
+    m_has_showLegendKey = false;
+    
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+    
+    m_has_showVal = false;
+    
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+    
+    m_has_showCatName = false;
+    
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+    
+    m_has_showSerName = false;
+    
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+    
+    m_has_showPercent = false;
+    
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+    
+    m_has_showBubbleSize = false;
+    
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+    
+    m_has_separator = false;
+    m_separator.clear();;
+    
+    m_has_showLeaderLines = false;
+    
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+    
+    m_has_leaderLines = false;
+    
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_DLbls::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_DLbls* CT_DLbls::default_instance_ = NULL;
 
     // CT_MarkerStyle
     void CT_MarkerStyle::clear()
@@ -9889,6 +12375,7 @@ namespace ns_chart {
     return ST_MarkerStyle::default_instance();
     }
 
+CT_MarkerStyle* CT_MarkerStyle::default_instance_ = NULL;
 
     // CT_MarkerSize
     void CT_MarkerSize::clear()
@@ -9951,6 +12438,7 @@ namespace ns_chart {
     return ST_MarkerSize::default_instance();
     }
 
+CT_MarkerSize* CT_MarkerSize::default_instance_ = NULL;
 
     // CT_Marker
     bool CT_Marker::has_symbol() const
@@ -10050,43 +12538,7 @@ namespace ns_chart {
     }
 
     void CT_Marker::clear()
-    {    
-    m_has_symbol = false;
-    
-    if (m_symbol)
-    {
-        delete m_symbol;
-        m_symbol = NULL;
-    }
-    
-    
-    m_has_size = false;
-    
-    if (m_size)
-    {
-        delete m_size;
-        m_size = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Marker::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -10101,22 +12553,22 @@ namespace ns_chart {
             
     if (m_has_symbol)
     {
-        m_symbol->toXmlElem("chart:symbol", "", _outStream);;
+        m_symbol->toXmlElem("symbol", "", _outStream);;
     }
     
     if (m_has_size)
     {
-        m_size->toXmlElem("chart:size", "", _outStream);;
+        m_size->toXmlElem("size", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10131,6 +12583,7 @@ namespace ns_chart {
     return *CT_Marker::default_instance_;
     }
 
+CT_Marker* CT_Marker::default_instance_ = NULL;
 
     // CT_DPt
     bool CT_DPt::has_idx() const
@@ -10326,79 +12779,7 @@ namespace ns_chart {
     }
 
     void CT_DPt::clear()
-    {    
-    m_has_idx = false;
-    
-    if (m_idx)
-    {
-        delete m_idx;
-        m_idx = NULL;
-    }
-    
-    
-    m_has_invertIfNegative = false;
-    
-    if (m_invertIfNegative)
-    {
-        delete m_invertIfNegative;
-        m_invertIfNegative = NULL;
-    }
-    
-    
-    m_has_marker = false;
-    
-    if (m_marker)
-    {
-        delete m_marker;
-        m_marker = NULL;
-    }
-    
-    
-    m_has_bubble3D = false;
-    
-    if (m_bubble3D)
-    {
-        delete m_bubble3D;
-        m_bubble3D = NULL;
-    }
-    
-    
-    m_has_explosion = false;
-    
-    if (m_explosion)
-    {
-        delete m_explosion;
-        m_explosion = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_pictureOptions = false;
-    
-    if (m_pictureOptions)
-    {
-        delete m_pictureOptions;
-        m_pictureOptions = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_DPt::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -10413,42 +12794,42 @@ namespace ns_chart {
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("idx", "", _outStream);;
     }
     
     if (m_has_invertIfNegative)
     {
-        m_invertIfNegative->toXmlElem("chart:invertIfNegative", "", _outStream);;
+        m_invertIfNegative->toXmlElem("invertIfNegative", "", _outStream);;
     }
     
     if (m_has_marker)
     {
-        m_marker->toXmlElem("chart:marker", "", _outStream);;
+        m_marker->toXmlElem("marker", "", _outStream);;
     }
     
     if (m_has_bubble3D)
     {
-        m_bubble3D->toXmlElem("chart:bubble3D", "", _outStream);;
+        m_bubble3D->toXmlElem("bubble3D", "", _outStream);;
     }
     
     if (m_has_explosion)
     {
-        m_explosion->toXmlElem("chart:explosion", "", _outStream);;
+        m_explosion->toXmlElem("explosion", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_pictureOptions)
     {
-        m_pictureOptions->toXmlElem("chart:pictureOptions", "", _outStream);;
+        m_pictureOptions->toXmlElem("pictureOptions", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10463,6 +12844,7 @@ namespace ns_chart {
     return *CT_DPt::default_instance_;
     }
 
+CT_DPt* CT_DPt::default_instance_ = NULL;
 
     // CT_TrendlineType
     void CT_TrendlineType::clear()
@@ -10525,6 +12907,7 @@ namespace ns_chart {
     return ST_TrendlineType::default_instance();
     }
 
+CT_TrendlineType* CT_TrendlineType::default_instance_ = NULL;
 
     // CT_Order
     void CT_Order::clear()
@@ -10587,6 +12970,7 @@ namespace ns_chart {
     return ST_Order::default_instance();
     }
 
+CT_Order* CT_Order::default_instance_ = NULL;
 
     // CT_Period
     void CT_Period::clear()
@@ -10649,6 +13033,7 @@ namespace ns_chart {
     return ST_Period::default_instance();
     }
 
+CT_Period* CT_Period::default_instance_ = NULL;
 
     // CT_TrendlineLbl
     bool CT_TrendlineLbl::has_layout() const
@@ -10796,61 +13181,7 @@ namespace ns_chart {
     }
 
     void CT_TrendlineLbl::clear()
-    {    
-    m_has_layout = false;
-    
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    
-    
-    m_has_tx = false;
-    
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    
-    
-    m_has_numFmt = false;
-    
-    if (m_numFmt)
-    {
-        delete m_numFmt;
-        m_numFmt = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_txPr = false;
-    
-    if (m_a_txPr)
-    {
-        delete m_a_txPr;
-        m_a_txPr = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_TrendlineLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -10865,32 +13196,32 @@ namespace ns_chart {
             
     if (m_has_layout)
     {
-        m_layout->toXmlElem("chart:layout", "", _outStream);;
+        m_layout->toXmlElem("layout", "", _outStream);;
     }
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("tx", "", _outStream);;
     }
     
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);;
+        m_numFmt->toXmlElem("numFmt", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_txPr)
     {
-        m_a_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_a_txPr->toXmlElem("a:txPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10905,6 +13236,7 @@ namespace ns_chart {
     return *CT_TrendlineLbl::default_instance_;
     }
 
+CT_TrendlineLbl* CT_TrendlineLbl::default_instance_ = NULL;
 
     // CT_Trendline
     bool CT_Trendline::has_name() const
@@ -11188,109 +13520,7 @@ namespace ns_chart {
     }
 
     void CT_Trendline::clear()
-    {    
-    m_has_name = false;
-    m_name.clear();
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_trendlineType = false;
-    
-    if (m_trendlineType)
-    {
-        delete m_trendlineType;
-        m_trendlineType = NULL;
-    }
-    
-    
-    m_has_order = false;
-    
-    if (m_order)
-    {
-        delete m_order;
-        m_order = NULL;
-    }
-    
-    
-    m_has_period = false;
-    
-    if (m_period)
-    {
-        delete m_period;
-        m_period = NULL;
-    }
-    
-    
-    m_has_forward = false;
-    
-    if (m_forward)
-    {
-        delete m_forward;
-        m_forward = NULL;
-    }
-    
-    
-    m_has_backward = false;
-    
-    if (m_backward)
-    {
-        delete m_backward;
-        m_backward = NULL;
-    }
-    
-    
-    m_has_intercept = false;
-    
-    if (m_intercept)
-    {
-        delete m_intercept;
-        m_intercept = NULL;
-    }
-    
-    
-    m_has_dispRSqr = false;
-    
-    if (m_dispRSqr)
-    {
-        delete m_dispRSqr;
-        m_dispRSqr = NULL;
-    }
-    
-    
-    m_has_dispEq = false;
-    
-    if (m_dispEq)
-    {
-        delete m_dispEq;
-        m_dispEq = NULL;
-    }
-    
-    
-    m_has_trendlineLbl = false;
-    
-    if (m_trendlineLbl)
-    {
-        delete m_trendlineLbl;
-        m_trendlineLbl = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Trendline::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -11305,62 +13535,62 @@ namespace ns_chart {
             
     if (m_has_name)
     {
-        _outStream << "<chart:name>" << m_name << "</chart:name>";;
+        _outStream << "<name>" << m_name << "</name>";;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_trendlineType)
     {
-        m_trendlineType->toXmlElem("chart:trendlineType", "", _outStream);;
+        m_trendlineType->toXmlElem("trendlineType", "", _outStream);;
     }
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("order", "", _outStream);;
     }
     
     if (m_has_period)
     {
-        m_period->toXmlElem("chart:period", "", _outStream);;
+        m_period->toXmlElem("period", "", _outStream);;
     }
     
     if (m_has_forward)
     {
-        m_forward->toXmlElem("chart:forward", "", _outStream);;
+        m_forward->toXmlElem("forward", "", _outStream);;
     }
     
     if (m_has_backward)
     {
-        m_backward->toXmlElem("chart:backward", "", _outStream);;
+        m_backward->toXmlElem("backward", "", _outStream);;
     }
     
     if (m_has_intercept)
     {
-        m_intercept->toXmlElem("chart:intercept", "", _outStream);;
+        m_intercept->toXmlElem("intercept", "", _outStream);;
     }
     
     if (m_has_dispRSqr)
     {
-        m_dispRSqr->toXmlElem("chart:dispRSqr", "", _outStream);;
+        m_dispRSqr->toXmlElem("dispRSqr", "", _outStream);;
     }
     
     if (m_has_dispEq)
     {
-        m_dispEq->toXmlElem("chart:dispEq", "", _outStream);;
+        m_dispEq->toXmlElem("dispEq", "", _outStream);;
     }
     
     if (m_has_trendlineLbl)
     {
-        m_trendlineLbl->toXmlElem("chart:trendlineLbl", "", _outStream);;
+        m_trendlineLbl->toXmlElem("trendlineLbl", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11375,6 +13605,7 @@ namespace ns_chart {
     return *CT_Trendline::default_instance_;
     }
 
+CT_Trendline* CT_Trendline::default_instance_ = NULL;
 
     // CT_ErrDir
     void CT_ErrDir::clear()
@@ -11437,6 +13668,7 @@ namespace ns_chart {
     return ST_ErrDir::default_instance();
     }
 
+CT_ErrDir* CT_ErrDir::default_instance_ = NULL;
 
     // CT_ErrBarType
     void CT_ErrBarType::clear()
@@ -11499,6 +13731,7 @@ namespace ns_chart {
     return ST_ErrBarType::default_instance();
     }
 
+CT_ErrBarType* CT_ErrBarType::default_instance_ = NULL;
 
     // CT_ErrValType
     void CT_ErrValType::clear()
@@ -11561,6 +13794,7 @@ namespace ns_chart {
     return ST_ErrValType::default_instance();
     }
 
+CT_ErrValType* CT_ErrValType::default_instance_ = NULL;
 
     // CT_ErrBars
     bool CT_ErrBars::has_errDir() const
@@ -11780,88 +14014,7 @@ namespace ns_chart {
     }
 
     void CT_ErrBars::clear()
-    {    
-    m_has_errDir = false;
-    
-    if (m_errDir)
-    {
-        delete m_errDir;
-        m_errDir = NULL;
-    }
-    
-    
-    m_has_errBarType = false;
-    
-    if (m_errBarType)
-    {
-        delete m_errBarType;
-        m_errBarType = NULL;
-    }
-    
-    
-    m_has_errValType = false;
-    
-    if (m_errValType)
-    {
-        delete m_errValType;
-        m_errValType = NULL;
-    }
-    
-    
-    m_has_noEndCap = false;
-    
-    if (m_noEndCap)
-    {
-        delete m_noEndCap;
-        m_noEndCap = NULL;
-    }
-    
-    
-    m_has_plus = false;
-    
-    if (m_plus)
-    {
-        delete m_plus;
-        m_plus = NULL;
-    }
-    
-    
-    m_has_minus = false;
-    
-    if (m_minus)
-    {
-        delete m_minus;
-        m_minus = NULL;
-    }
-    
-    
-    m_has_val = false;
-    
-    if (m_val)
-    {
-        delete m_val;
-        m_val = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_ErrBars::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -11876,47 +14029,47 @@ namespace ns_chart {
             
     if (m_has_errDir)
     {
-        m_errDir->toXmlElem("chart:errDir", "", _outStream);;
+        m_errDir->toXmlElem("errDir", "", _outStream);;
     }
     
     if (m_has_errBarType)
     {
-        m_errBarType->toXmlElem("chart:errBarType", "", _outStream);;
+        m_errBarType->toXmlElem("errBarType", "", _outStream);;
     }
     
     if (m_has_errValType)
     {
-        m_errValType->toXmlElem("chart:errValType", "", _outStream);;
+        m_errValType->toXmlElem("errValType", "", _outStream);;
     }
     
     if (m_has_noEndCap)
     {
-        m_noEndCap->toXmlElem("chart:noEndCap", "", _outStream);;
+        m_noEndCap->toXmlElem("noEndCap", "", _outStream);;
     }
     
     if (m_has_plus)
     {
-        m_plus->toXmlElem("chart:plus", "", _outStream);;
+        m_plus->toXmlElem("plus", "", _outStream);;
     }
     
     if (m_has_minus)
     {
-        m_minus->toXmlElem("chart:minus", "", _outStream);;
+        m_minus->toXmlElem("minus", "", _outStream);;
     }
     
     if (m_has_val)
     {
-        m_val->toXmlElem("chart:val", "", _outStream);;
+        m_val->toXmlElem("val", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11931,6 +14084,7 @@ namespace ns_chart {
     return *CT_ErrBars::default_instance_;
     }
 
+CT_ErrBars* CT_ErrBars::default_instance_ = NULL;
 
     // CT_UpDownBar
     bool CT_UpDownBar::has_a_spPr() const
@@ -11958,16 +14112,7 @@ namespace ns_chart {
     }
 
     void CT_UpDownBar::clear()
-    {    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_UpDownBar::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -11982,7 +14127,7 @@ namespace ns_chart {
             
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11997,6 +14142,7 @@ namespace ns_chart {
     return *CT_UpDownBar::default_instance_;
     }
 
+CT_UpDownBar* CT_UpDownBar::default_instance_ = NULL;
 
     // CT_UpDownBars
     bool CT_UpDownBars::has_gapWidth() const
@@ -12096,43 +14242,7 @@ namespace ns_chart {
     }
 
     void CT_UpDownBars::clear()
-    {    
-    m_has_gapWidth = false;
-    
-    if (m_gapWidth)
-    {
-        delete m_gapWidth;
-        m_gapWidth = NULL;
-    }
-    
-    
-    m_has_upBars = false;
-    
-    if (m_upBars)
-    {
-        delete m_upBars;
-        m_upBars = NULL;
-    }
-    
-    
-    m_has_downBars = false;
-    
-    if (m_downBars)
-    {
-        delete m_downBars;
-        m_downBars = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_UpDownBars::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -12147,22 +14257,22 @@ namespace ns_chart {
             
     if (m_has_gapWidth)
     {
-        m_gapWidth->toXmlElem("chart:gapWidth", "", _outStream);;
+        m_gapWidth->toXmlElem("gapWidth", "", _outStream);;
     }
     
     if (m_has_upBars)
     {
-        m_upBars->toXmlElem("chart:upBars", "", _outStream);;
+        m_upBars->toXmlElem("upBars", "", _outStream);;
     }
     
     if (m_has_downBars)
     {
-        m_downBars->toXmlElem("chart:downBars", "", _outStream);;
+        m_downBars->toXmlElem("downBars", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -12177,6 +14287,7 @@ namespace ns_chart {
     return *CT_UpDownBars::default_instance_;
     }
 
+CT_UpDownBars* CT_UpDownBars::default_instance_ = NULL;
 
     // CT_LineSer
     bool CT_LineSer::has_idx() const
@@ -12433,27 +14544,27 @@ namespace ns_chart {
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("idx", "", _outStream);;
     }
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("order", "", _outStream);;
     }
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("tx", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_marker)
     {
-        m_marker->toXmlElem("chart:marker", "", _outStream);;
+        m_marker->toXmlElem("marker", "", _outStream);;
     }
      
     {
@@ -12462,35 +14573,35 @@ namespace ns_chart {
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("dPt", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_trendline())
             {
-                (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
+                (*iter)->get_trendline().toXmlElem("trendline", "", _outStream);
             }
             else if ((*iter)->has_errBars())
             {
-                (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
+                (*iter)->get_errBars().toXmlElem("errBars", "", _outStream);
             }
             else if ((*iter)->has_cat())
             {
-                (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
+                (*iter)->get_cat().toXmlElem("cat", "", _outStream);
             }
             else if ((*iter)->has_val())
             {
-                (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
+                (*iter)->get_val().toXmlElem("val", "", _outStream);
             }
             else if ((*iter)->has_smooth())
             {
-                (*iter)->get_smooth().toXmlElem("chart:smooth", "", _outStream);
+                (*iter)->get_smooth().toXmlElem("smooth", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -12507,6 +14618,713 @@ namespace ns_chart {
     return *CT_LineSer::default_instance_;
     }
 
+
+    // CT_LineSer::ChildGroup_1
+    bool CT_LineSer::ChildGroup_1::has_dPt() const
+    {    
+    return m_has_dPt;
+    }
+
+    CT_DPt* CT_LineSer::ChildGroup_1::mutable_dPt()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dPt = true;
+    if (!m_dPt)
+    {
+        m_dPt = new CT_DPt();
+    }
+    return m_dPt;
+    }
+
+    const CT_DPt& CT_LineSer::ChildGroup_1::get_dPt() const
+    {    
+    if (m_dPt)
+    {
+        return *m_dPt;
+    }
+    return CT_DPt::default_instance();
+    }
+
+    bool CT_LineSer::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_LineSer::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_LineSer::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_LineSer::ChildGroup_1::has_trendline() const
+    {    
+    return m_has_trendline;
+    }
+
+    CT_Trendline* CT_LineSer::ChildGroup_1::mutable_trendline()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_trendline = true;
+    if (!m_trendline)
+    {
+        m_trendline = new CT_Trendline();
+    }
+    return m_trendline;
+    }
+
+    const CT_Trendline& CT_LineSer::ChildGroup_1::get_trendline() const
+    {    
+    if (m_trendline)
+    {
+        return *m_trendline;
+    }
+    return CT_Trendline::default_instance();
+    }
+
+    bool CT_LineSer::ChildGroup_1::has_errBars() const
+    {    
+    return m_has_errBars;
+    }
+
+    CT_ErrBars* CT_LineSer::ChildGroup_1::mutable_errBars()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_errBars = true;
+    if (!m_errBars)
+    {
+        m_errBars = new CT_ErrBars();
+    }
+    return m_errBars;
+    }
+
+    const CT_ErrBars& CT_LineSer::ChildGroup_1::get_errBars() const
+    {    
+    if (m_errBars)
+    {
+        return *m_errBars;
+    }
+    return CT_ErrBars::default_instance();
+    }
+
+    bool CT_LineSer::ChildGroup_1::has_cat() const
+    {    
+    return m_has_cat;
+    }
+
+    CT_AxDataSource* CT_LineSer::ChildGroup_1::mutable_cat()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_cat = true;
+    if (!m_cat)
+    {
+        m_cat = new CT_AxDataSource();
+    }
+    return m_cat;
+    }
+
+    const CT_AxDataSource& CT_LineSer::ChildGroup_1::get_cat() const
+    {    
+    if (m_cat)
+    {
+        return *m_cat;
+    }
+    return CT_AxDataSource::default_instance();
+    }
+
+    bool CT_LineSer::ChildGroup_1::has_val() const
+    {    
+    return m_has_val;
+    }
+
+    CT_NumDataSource* CT_LineSer::ChildGroup_1::mutable_val()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_val = true;
+    if (!m_val)
+    {
+        m_val = new CT_NumDataSource();
+    }
+    return m_val;
+    }
+
+    const CT_NumDataSource& CT_LineSer::ChildGroup_1::get_val() const
+    {    
+    if (m_val)
+    {
+        return *m_val;
+    }
+    return CT_NumDataSource::default_instance();
+    }
+
+    bool CT_LineSer::ChildGroup_1::has_smooth() const
+    {    
+    return m_has_smooth;
+    }
+
+    CT_Boolean* CT_LineSer::ChildGroup_1::mutable_smooth()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_smooth = true;
+    if (!m_smooth)
+    {
+        m_smooth = new CT_Boolean();
+    }
+    return m_smooth;
+    }
+
+    const CT_Boolean& CT_LineSer::ChildGroup_1::get_smooth() const
+    {    
+    if (m_smooth)
+    {
+        return *m_smooth;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_LineSer::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_LineSer::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_LineSer::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_LineSer* CT_LineSer::default_instance_ = NULL;
 
     // CT_ScatterSer
     bool CT_ScatterSer::has_idx() const
@@ -12763,27 +15581,27 @@ namespace ns_chart {
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("idx", "", _outStream);;
     }
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("order", "", _outStream);;
     }
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("tx", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_marker)
     {
-        m_marker->toXmlElem("chart:marker", "", _outStream);;
+        m_marker->toXmlElem("marker", "", _outStream);;
     }
      
     {
@@ -12792,35 +15610,35 @@ namespace ns_chart {
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("dPt", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_trendline())
             {
-                (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
+                (*iter)->get_trendline().toXmlElem("trendline", "", _outStream);
             }
             else if ((*iter)->has_errBars())
             {
-                (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
+                (*iter)->get_errBars().toXmlElem("errBars", "", _outStream);
             }
             else if ((*iter)->has_xVal())
             {
-                (*iter)->get_xVal().toXmlElem("chart:xVal", "", _outStream);
+                (*iter)->get_xVal().toXmlElem("xVal", "", _outStream);
             }
             else if ((*iter)->has_yVal())
             {
-                (*iter)->get_yVal().toXmlElem("chart:yVal", "", _outStream);
+                (*iter)->get_yVal().toXmlElem("yVal", "", _outStream);
             }
             else if ((*iter)->has_smooth())
             {
-                (*iter)->get_smooth().toXmlElem("chart:smooth", "", _outStream);
+                (*iter)->get_smooth().toXmlElem("smooth", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -12837,6 +15655,713 @@ namespace ns_chart {
     return *CT_ScatterSer::default_instance_;
     }
 
+
+    // CT_ScatterSer::ChildGroup_1
+    bool CT_ScatterSer::ChildGroup_1::has_dPt() const
+    {    
+    return m_has_dPt;
+    }
+
+    CT_DPt* CT_ScatterSer::ChildGroup_1::mutable_dPt()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dPt = true;
+    if (!m_dPt)
+    {
+        m_dPt = new CT_DPt();
+    }
+    return m_dPt;
+    }
+
+    const CT_DPt& CT_ScatterSer::ChildGroup_1::get_dPt() const
+    {    
+    if (m_dPt)
+    {
+        return *m_dPt;
+    }
+    return CT_DPt::default_instance();
+    }
+
+    bool CT_ScatterSer::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_ScatterSer::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_ScatterSer::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_ScatterSer::ChildGroup_1::has_trendline() const
+    {    
+    return m_has_trendline;
+    }
+
+    CT_Trendline* CT_ScatterSer::ChildGroup_1::mutable_trendline()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_trendline = true;
+    if (!m_trendline)
+    {
+        m_trendline = new CT_Trendline();
+    }
+    return m_trendline;
+    }
+
+    const CT_Trendline& CT_ScatterSer::ChildGroup_1::get_trendline() const
+    {    
+    if (m_trendline)
+    {
+        return *m_trendline;
+    }
+    return CT_Trendline::default_instance();
+    }
+
+    bool CT_ScatterSer::ChildGroup_1::has_errBars() const
+    {    
+    return m_has_errBars;
+    }
+
+    CT_ErrBars* CT_ScatterSer::ChildGroup_1::mutable_errBars()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_errBars = true;
+    if (!m_errBars)
+    {
+        m_errBars = new CT_ErrBars();
+    }
+    return m_errBars;
+    }
+
+    const CT_ErrBars& CT_ScatterSer::ChildGroup_1::get_errBars() const
+    {    
+    if (m_errBars)
+    {
+        return *m_errBars;
+    }
+    return CT_ErrBars::default_instance();
+    }
+
+    bool CT_ScatterSer::ChildGroup_1::has_xVal() const
+    {    
+    return m_has_xVal;
+    }
+
+    CT_AxDataSource* CT_ScatterSer::ChildGroup_1::mutable_xVal()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_xVal = true;
+    if (!m_xVal)
+    {
+        m_xVal = new CT_AxDataSource();
+    }
+    return m_xVal;
+    }
+
+    const CT_AxDataSource& CT_ScatterSer::ChildGroup_1::get_xVal() const
+    {    
+    if (m_xVal)
+    {
+        return *m_xVal;
+    }
+    return CT_AxDataSource::default_instance();
+    }
+
+    bool CT_ScatterSer::ChildGroup_1::has_yVal() const
+    {    
+    return m_has_yVal;
+    }
+
+    CT_NumDataSource* CT_ScatterSer::ChildGroup_1::mutable_yVal()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_yVal = true;
+    if (!m_yVal)
+    {
+        m_yVal = new CT_NumDataSource();
+    }
+    return m_yVal;
+    }
+
+    const CT_NumDataSource& CT_ScatterSer::ChildGroup_1::get_yVal() const
+    {    
+    if (m_yVal)
+    {
+        return *m_yVal;
+    }
+    return CT_NumDataSource::default_instance();
+    }
+
+    bool CT_ScatterSer::ChildGroup_1::has_smooth() const
+    {    
+    return m_has_smooth;
+    }
+
+    CT_Boolean* CT_ScatterSer::ChildGroup_1::mutable_smooth()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_smooth = true;
+    if (!m_smooth)
+    {
+        m_smooth = new CT_Boolean();
+    }
+    return m_smooth;
+    }
+
+    const CT_Boolean& CT_ScatterSer::ChildGroup_1::get_smooth() const
+    {    
+    if (m_smooth)
+    {
+        return *m_smooth;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_ScatterSer::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_ScatterSer::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_smooth = false;
+    
+    if (m_smooth)
+    {
+        delete m_smooth;
+        m_smooth = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_ScatterSer::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_ScatterSer* CT_ScatterSer::default_instance_ = NULL;
 
     // CT_RadarSer
     bool CT_RadarSer::has_idx() const
@@ -13069,27 +16594,27 @@ namespace ns_chart {
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("idx", "", _outStream);;
     }
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("order", "", _outStream);;
     }
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("tx", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_marker)
     {
-        m_marker->toXmlElem("chart:marker", "", _outStream);;
+        m_marker->toXmlElem("marker", "", _outStream);;
     }
      
     {
@@ -13098,23 +16623,23 @@ namespace ns_chart {
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("dPt", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_cat())
             {
-                (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
+                (*iter)->get_cat().toXmlElem("cat", "", _outStream);
             }
             else if ((*iter)->has_val())
             {
-                (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
+                (*iter)->get_val().toXmlElem("val", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -13131,6 +16656,314 @@ namespace ns_chart {
     return *CT_RadarSer::default_instance_;
     }
 
+
+    // CT_RadarSer::ChildGroup_1
+    bool CT_RadarSer::ChildGroup_1::has_dPt() const
+    {    
+    return m_has_dPt;
+    }
+
+    CT_DPt* CT_RadarSer::ChildGroup_1::mutable_dPt()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dPt = true;
+    if (!m_dPt)
+    {
+        m_dPt = new CT_DPt();
+    }
+    return m_dPt;
+    }
+
+    const CT_DPt& CT_RadarSer::ChildGroup_1::get_dPt() const
+    {    
+    if (m_dPt)
+    {
+        return *m_dPt;
+    }
+    return CT_DPt::default_instance();
+    }
+
+    bool CT_RadarSer::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_RadarSer::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_RadarSer::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_RadarSer::ChildGroup_1::has_cat() const
+    {    
+    return m_has_cat;
+    }
+
+    CT_AxDataSource* CT_RadarSer::ChildGroup_1::mutable_cat()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_cat = true;
+    if (!m_cat)
+    {
+        m_cat = new CT_AxDataSource();
+    }
+    return m_cat;
+    }
+
+    const CT_AxDataSource& CT_RadarSer::ChildGroup_1::get_cat() const
+    {    
+    if (m_cat)
+    {
+        return *m_cat;
+    }
+    return CT_AxDataSource::default_instance();
+    }
+
+    bool CT_RadarSer::ChildGroup_1::has_val() const
+    {    
+    return m_has_val;
+    }
+
+    CT_NumDataSource* CT_RadarSer::ChildGroup_1::mutable_val()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_val = true;
+    if (!m_val)
+    {
+        m_val = new CT_NumDataSource();
+    }
+    return m_val;
+    }
+
+    const CT_NumDataSource& CT_RadarSer::ChildGroup_1::get_val() const
+    {    
+    if (m_val)
+    {
+        return *m_val;
+    }
+    return CT_NumDataSource::default_instance();
+    }
+
+    bool CT_RadarSer::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_RadarSer::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_RadarSer::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_RadarSer* CT_RadarSer::default_instance_ = NULL;
 
     // CT_BarSer
     bool CT_BarSer::has_idx() const
@@ -13420,32 +17253,32 @@ namespace ns_chart {
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("idx", "", _outStream);;
     }
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("order", "", _outStream);;
     }
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("tx", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_invertIfNegative)
     {
-        m_invertIfNegative->toXmlElem("chart:invertIfNegative", "", _outStream);;
+        m_invertIfNegative->toXmlElem("invertIfNegative", "", _outStream);;
     }
     
     if (m_has_pictureOptions)
     {
-        m_pictureOptions->toXmlElem("chart:pictureOptions", "", _outStream);;
+        m_pictureOptions->toXmlElem("pictureOptions", "", _outStream);;
     }
      
     {
@@ -13454,35 +17287,35 @@ namespace ns_chart {
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("dPt", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_trendline())
             {
-                (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
+                (*iter)->get_trendline().toXmlElem("trendline", "", _outStream);
             }
             else if ((*iter)->has_errBars())
             {
-                (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
+                (*iter)->get_errBars().toXmlElem("errBars", "", _outStream);
             }
             else if ((*iter)->has_cat())
             {
-                (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
+                (*iter)->get_cat().toXmlElem("cat", "", _outStream);
             }
             else if ((*iter)->has_val())
             {
-                (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
+                (*iter)->get_val().toXmlElem("val", "", _outStream);
             }
             else if ((*iter)->has_shape())
             {
-                (*iter)->get_shape().toXmlElem("chart:shape", "", _outStream);
+                (*iter)->get_shape().toXmlElem("shape", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -13499,6 +17332,713 @@ namespace ns_chart {
     return *CT_BarSer::default_instance_;
     }
 
+
+    // CT_BarSer::ChildGroup_1
+    bool CT_BarSer::ChildGroup_1::has_dPt() const
+    {    
+    return m_has_dPt;
+    }
+
+    CT_DPt* CT_BarSer::ChildGroup_1::mutable_dPt()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_shape = false;
+    
+    if (m_shape)
+    {
+        delete m_shape;
+        m_shape = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dPt = true;
+    if (!m_dPt)
+    {
+        m_dPt = new CT_DPt();
+    }
+    return m_dPt;
+    }
+
+    const CT_DPt& CT_BarSer::ChildGroup_1::get_dPt() const
+    {    
+    if (m_dPt)
+    {
+        return *m_dPt;
+    }
+    return CT_DPt::default_instance();
+    }
+
+    bool CT_BarSer::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_BarSer::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_shape = false;
+    
+    if (m_shape)
+    {
+        delete m_shape;
+        m_shape = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_BarSer::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_BarSer::ChildGroup_1::has_trendline() const
+    {    
+    return m_has_trendline;
+    }
+
+    CT_Trendline* CT_BarSer::ChildGroup_1::mutable_trendline()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_shape = false;
+    
+    if (m_shape)
+    {
+        delete m_shape;
+        m_shape = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_trendline = true;
+    if (!m_trendline)
+    {
+        m_trendline = new CT_Trendline();
+    }
+    return m_trendline;
+    }
+
+    const CT_Trendline& CT_BarSer::ChildGroup_1::get_trendline() const
+    {    
+    if (m_trendline)
+    {
+        return *m_trendline;
+    }
+    return CT_Trendline::default_instance();
+    }
+
+    bool CT_BarSer::ChildGroup_1::has_errBars() const
+    {    
+    return m_has_errBars;
+    }
+
+    CT_ErrBars* CT_BarSer::ChildGroup_1::mutable_errBars()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_shape = false;
+    
+    if (m_shape)
+    {
+        delete m_shape;
+        m_shape = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_errBars = true;
+    if (!m_errBars)
+    {
+        m_errBars = new CT_ErrBars();
+    }
+    return m_errBars;
+    }
+
+    const CT_ErrBars& CT_BarSer::ChildGroup_1::get_errBars() const
+    {    
+    if (m_errBars)
+    {
+        return *m_errBars;
+    }
+    return CT_ErrBars::default_instance();
+    }
+
+    bool CT_BarSer::ChildGroup_1::has_cat() const
+    {    
+    return m_has_cat;
+    }
+
+    CT_AxDataSource* CT_BarSer::ChildGroup_1::mutable_cat()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_shape = false;
+    
+    if (m_shape)
+    {
+        delete m_shape;
+        m_shape = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_cat = true;
+    if (!m_cat)
+    {
+        m_cat = new CT_AxDataSource();
+    }
+    return m_cat;
+    }
+
+    const CT_AxDataSource& CT_BarSer::ChildGroup_1::get_cat() const
+    {    
+    if (m_cat)
+    {
+        return *m_cat;
+    }
+    return CT_AxDataSource::default_instance();
+    }
+
+    bool CT_BarSer::ChildGroup_1::has_val() const
+    {    
+    return m_has_val;
+    }
+
+    CT_NumDataSource* CT_BarSer::ChildGroup_1::mutable_val()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_shape = false;
+    
+    if (m_shape)
+    {
+        delete m_shape;
+        m_shape = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_val = true;
+    if (!m_val)
+    {
+        m_val = new CT_NumDataSource();
+    }
+    return m_val;
+    }
+
+    const CT_NumDataSource& CT_BarSer::ChildGroup_1::get_val() const
+    {    
+    if (m_val)
+    {
+        return *m_val;
+    }
+    return CT_NumDataSource::default_instance();
+    }
+
+    bool CT_BarSer::ChildGroup_1::has_shape() const
+    {    
+    return m_has_shape;
+    }
+
+    CT_Shape* CT_BarSer::ChildGroup_1::mutable_shape()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_shape = true;
+    if (!m_shape)
+    {
+        m_shape = new CT_Shape();
+    }
+    return m_shape;
+    }
+
+    const CT_Shape& CT_BarSer::ChildGroup_1::get_shape() const
+    {    
+    if (m_shape)
+    {
+        return *m_shape;
+    }
+    return CT_Shape::default_instance();
+    }
+
+    bool CT_BarSer::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_BarSer::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_shape = false;
+    
+    if (m_shape)
+    {
+        delete m_shape;
+        m_shape = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_BarSer::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_BarSer* CT_BarSer::default_instance_ = NULL;
 
     // CT_AreaSer
     bool CT_AreaSer::has_idx() const
@@ -13747,27 +18287,27 @@ namespace ns_chart {
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("idx", "", _outStream);;
     }
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("order", "", _outStream);;
     }
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("tx", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_pictureOptions)
     {
-        m_pictureOptions->toXmlElem("chart:pictureOptions", "", _outStream);;
+        m_pictureOptions->toXmlElem("pictureOptions", "", _outStream);;
     }
      
     {
@@ -13776,31 +18316,31 @@ namespace ns_chart {
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("dPt", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_trendline())
             {
-                (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
+                (*iter)->get_trendline().toXmlElem("trendline", "", _outStream);
             }
             else if ((*iter)->has_errBars())
             {
-                (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
+                (*iter)->get_errBars().toXmlElem("errBars", "", _outStream);
             }
             else if ((*iter)->has_cat())
             {
-                (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
+                (*iter)->get_cat().toXmlElem("cat", "", _outStream);
             }
             else if ((*iter)->has_val())
             {
-                (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
+                (*iter)->get_val().toXmlElem("val", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -13817,6 +18357,562 @@ namespace ns_chart {
     return *CT_AreaSer::default_instance_;
     }
 
+
+    // CT_AreaSer::ChildGroup_1
+    bool CT_AreaSer::ChildGroup_1::has_dPt() const
+    {    
+    return m_has_dPt;
+    }
+
+    CT_DPt* CT_AreaSer::ChildGroup_1::mutable_dPt()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dPt = true;
+    if (!m_dPt)
+    {
+        m_dPt = new CT_DPt();
+    }
+    return m_dPt;
+    }
+
+    const CT_DPt& CT_AreaSer::ChildGroup_1::get_dPt() const
+    {    
+    if (m_dPt)
+    {
+        return *m_dPt;
+    }
+    return CT_DPt::default_instance();
+    }
+
+    bool CT_AreaSer::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_AreaSer::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_AreaSer::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_AreaSer::ChildGroup_1::has_trendline() const
+    {    
+    return m_has_trendline;
+    }
+
+    CT_Trendline* CT_AreaSer::ChildGroup_1::mutable_trendline()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_trendline = true;
+    if (!m_trendline)
+    {
+        m_trendline = new CT_Trendline();
+    }
+    return m_trendline;
+    }
+
+    const CT_Trendline& CT_AreaSer::ChildGroup_1::get_trendline() const
+    {    
+    if (m_trendline)
+    {
+        return *m_trendline;
+    }
+    return CT_Trendline::default_instance();
+    }
+
+    bool CT_AreaSer::ChildGroup_1::has_errBars() const
+    {    
+    return m_has_errBars;
+    }
+
+    CT_ErrBars* CT_AreaSer::ChildGroup_1::mutable_errBars()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_errBars = true;
+    if (!m_errBars)
+    {
+        m_errBars = new CT_ErrBars();
+    }
+    return m_errBars;
+    }
+
+    const CT_ErrBars& CT_AreaSer::ChildGroup_1::get_errBars() const
+    {    
+    if (m_errBars)
+    {
+        return *m_errBars;
+    }
+    return CT_ErrBars::default_instance();
+    }
+
+    bool CT_AreaSer::ChildGroup_1::has_cat() const
+    {    
+    return m_has_cat;
+    }
+
+    CT_AxDataSource* CT_AreaSer::ChildGroup_1::mutable_cat()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_cat = true;
+    if (!m_cat)
+    {
+        m_cat = new CT_AxDataSource();
+    }
+    return m_cat;
+    }
+
+    const CT_AxDataSource& CT_AreaSer::ChildGroup_1::get_cat() const
+    {    
+    if (m_cat)
+    {
+        return *m_cat;
+    }
+    return CT_AxDataSource::default_instance();
+    }
+
+    bool CT_AreaSer::ChildGroup_1::has_val() const
+    {    
+    return m_has_val;
+    }
+
+    CT_NumDataSource* CT_AreaSer::ChildGroup_1::mutable_val()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_val = true;
+    if (!m_val)
+    {
+        m_val = new CT_NumDataSource();
+    }
+    return m_val;
+    }
+
+    const CT_NumDataSource& CT_AreaSer::ChildGroup_1::get_val() const
+    {    
+    if (m_val)
+    {
+        return *m_val;
+    }
+    return CT_NumDataSource::default_instance();
+    }
+
+    bool CT_AreaSer::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_AreaSer::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_AreaSer::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_AreaSer* CT_AreaSer::default_instance_ = NULL;
 
     // CT_PieSer
     bool CT_PieSer::has_idx() const
@@ -14049,27 +19145,27 @@ namespace ns_chart {
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("idx", "", _outStream);;
     }
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("order", "", _outStream);;
     }
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("tx", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_explosion)
     {
-        m_explosion->toXmlElem("chart:explosion", "", _outStream);;
+        m_explosion->toXmlElem("explosion", "", _outStream);;
     }
      
     {
@@ -14078,23 +19174,23 @@ namespace ns_chart {
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("dPt", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_cat())
             {
-                (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
+                (*iter)->get_cat().toXmlElem("cat", "", _outStream);
             }
             else if ((*iter)->has_val())
             {
-                (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
+                (*iter)->get_val().toXmlElem("val", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -14111,6 +19207,314 @@ namespace ns_chart {
     return *CT_PieSer::default_instance_;
     }
 
+
+    // CT_PieSer::ChildGroup_1
+    bool CT_PieSer::ChildGroup_1::has_dPt() const
+    {    
+    return m_has_dPt;
+    }
+
+    CT_DPt* CT_PieSer::ChildGroup_1::mutable_dPt()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dPt = true;
+    if (!m_dPt)
+    {
+        m_dPt = new CT_DPt();
+    }
+    return m_dPt;
+    }
+
+    const CT_DPt& CT_PieSer::ChildGroup_1::get_dPt() const
+    {    
+    if (m_dPt)
+    {
+        return *m_dPt;
+    }
+    return CT_DPt::default_instance();
+    }
+
+    bool CT_PieSer::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_PieSer::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_PieSer::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_PieSer::ChildGroup_1::has_cat() const
+    {    
+    return m_has_cat;
+    }
+
+    CT_AxDataSource* CT_PieSer::ChildGroup_1::mutable_cat()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_cat = true;
+    if (!m_cat)
+    {
+        m_cat = new CT_AxDataSource();
+    }
+    return m_cat;
+    }
+
+    const CT_AxDataSource& CT_PieSer::ChildGroup_1::get_cat() const
+    {    
+    if (m_cat)
+    {
+        return *m_cat;
+    }
+    return CT_AxDataSource::default_instance();
+    }
+
+    bool CT_PieSer::ChildGroup_1::has_val() const
+    {    
+    return m_has_val;
+    }
+
+    CT_NumDataSource* CT_PieSer::ChildGroup_1::mutable_val()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_val = true;
+    if (!m_val)
+    {
+        m_val = new CT_NumDataSource();
+    }
+    return m_val;
+    }
+
+    const CT_NumDataSource& CT_PieSer::ChildGroup_1::get_val() const
+    {    
+    if (m_val)
+    {
+        return *m_val;
+    }
+    return CT_NumDataSource::default_instance();
+    }
+
+    bool CT_PieSer::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_PieSer::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_cat = false;
+    
+    if (m_cat)
+    {
+        delete m_cat;
+        m_cat = NULL;
+    }
+    ;
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_PieSer::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_PieSer* CT_PieSer::default_instance_ = NULL;
 
     // CT_BubbleSer
     bool CT_BubbleSer::has_idx() const
@@ -14375,27 +19779,27 @@ namespace ns_chart {
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("idx", "", _outStream);;
     }
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("order", "", _outStream);;
     }
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("tx", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_invertIfNegative)
     {
-        m_invertIfNegative->toXmlElem("chart:invertIfNegative", "", _outStream);;
+        m_invertIfNegative->toXmlElem("invertIfNegative", "", _outStream);;
     }
      
     {
@@ -14404,39 +19808,39 @@ namespace ns_chart {
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("dPt", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_trendline())
             {
-                (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
+                (*iter)->get_trendline().toXmlElem("trendline", "", _outStream);
             }
             else if ((*iter)->has_errBars())
             {
-                (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
+                (*iter)->get_errBars().toXmlElem("errBars", "", _outStream);
             }
             else if ((*iter)->has_xVal())
             {
-                (*iter)->get_xVal().toXmlElem("chart:xVal", "", _outStream);
+                (*iter)->get_xVal().toXmlElem("xVal", "", _outStream);
             }
             else if ((*iter)->has_yVal())
             {
-                (*iter)->get_yVal().toXmlElem("chart:yVal", "", _outStream);
+                (*iter)->get_yVal().toXmlElem("yVal", "", _outStream);
             }
             else if ((*iter)->has_bubbleSize())
             {
-                (*iter)->get_bubbleSize().toXmlElem("chart:bubbleSize", "", _outStream);
+                (*iter)->get_bubbleSize().toXmlElem("bubbleSize", "", _outStream);
             }
             else if ((*iter)->has_bubble3D())
             {
-                (*iter)->get_bubble3D().toXmlElem("chart:bubble3D", "", _outStream);
+                (*iter)->get_bubble3D().toXmlElem("bubble3D", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -14453,6 +19857,882 @@ namespace ns_chart {
     return *CT_BubbleSer::default_instance_;
     }
 
+
+    // CT_BubbleSer::ChildGroup_1
+    bool CT_BubbleSer::ChildGroup_1::has_dPt() const
+    {    
+    return m_has_dPt;
+    }
+
+    CT_DPt* CT_BubbleSer::ChildGroup_1::mutable_dPt()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_bubbleSize = false;
+    
+    if (m_bubbleSize)
+    {
+        delete m_bubbleSize;
+        m_bubbleSize = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dPt = true;
+    if (!m_dPt)
+    {
+        m_dPt = new CT_DPt();
+    }
+    return m_dPt;
+    }
+
+    const CT_DPt& CT_BubbleSer::ChildGroup_1::get_dPt() const
+    {    
+    if (m_dPt)
+    {
+        return *m_dPt;
+    }
+    return CT_DPt::default_instance();
+    }
+
+    bool CT_BubbleSer::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_BubbleSer::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_bubbleSize = false;
+    
+    if (m_bubbleSize)
+    {
+        delete m_bubbleSize;
+        m_bubbleSize = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_BubbleSer::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_BubbleSer::ChildGroup_1::has_trendline() const
+    {    
+    return m_has_trendline;
+    }
+
+    CT_Trendline* CT_BubbleSer::ChildGroup_1::mutable_trendline()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_bubbleSize = false;
+    
+    if (m_bubbleSize)
+    {
+        delete m_bubbleSize;
+        m_bubbleSize = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_trendline = true;
+    if (!m_trendline)
+    {
+        m_trendline = new CT_Trendline();
+    }
+    return m_trendline;
+    }
+
+    const CT_Trendline& CT_BubbleSer::ChildGroup_1::get_trendline() const
+    {    
+    if (m_trendline)
+    {
+        return *m_trendline;
+    }
+    return CT_Trendline::default_instance();
+    }
+
+    bool CT_BubbleSer::ChildGroup_1::has_errBars() const
+    {    
+    return m_has_errBars;
+    }
+
+    CT_ErrBars* CT_BubbleSer::ChildGroup_1::mutable_errBars()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_bubbleSize = false;
+    
+    if (m_bubbleSize)
+    {
+        delete m_bubbleSize;
+        m_bubbleSize = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_errBars = true;
+    if (!m_errBars)
+    {
+        m_errBars = new CT_ErrBars();
+    }
+    return m_errBars;
+    }
+
+    const CT_ErrBars& CT_BubbleSer::ChildGroup_1::get_errBars() const
+    {    
+    if (m_errBars)
+    {
+        return *m_errBars;
+    }
+    return CT_ErrBars::default_instance();
+    }
+
+    bool CT_BubbleSer::ChildGroup_1::has_xVal() const
+    {    
+    return m_has_xVal;
+    }
+
+    CT_AxDataSource* CT_BubbleSer::ChildGroup_1::mutable_xVal()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_bubbleSize = false;
+    
+    if (m_bubbleSize)
+    {
+        delete m_bubbleSize;
+        m_bubbleSize = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_xVal = true;
+    if (!m_xVal)
+    {
+        m_xVal = new CT_AxDataSource();
+    }
+    return m_xVal;
+    }
+
+    const CT_AxDataSource& CT_BubbleSer::ChildGroup_1::get_xVal() const
+    {    
+    if (m_xVal)
+    {
+        return *m_xVal;
+    }
+    return CT_AxDataSource::default_instance();
+    }
+
+    bool CT_BubbleSer::ChildGroup_1::has_yVal() const
+    {    
+    return m_has_yVal;
+    }
+
+    CT_NumDataSource* CT_BubbleSer::ChildGroup_1::mutable_yVal()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_bubbleSize = false;
+    
+    if (m_bubbleSize)
+    {
+        delete m_bubbleSize;
+        m_bubbleSize = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_yVal = true;
+    if (!m_yVal)
+    {
+        m_yVal = new CT_NumDataSource();
+    }
+    return m_yVal;
+    }
+
+    const CT_NumDataSource& CT_BubbleSer::ChildGroup_1::get_yVal() const
+    {    
+    if (m_yVal)
+    {
+        return *m_yVal;
+    }
+    return CT_NumDataSource::default_instance();
+    }
+
+    bool CT_BubbleSer::ChildGroup_1::has_bubbleSize() const
+    {    
+    return m_has_bubbleSize;
+    }
+
+    CT_NumDataSource* CT_BubbleSer::ChildGroup_1::mutable_bubbleSize()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_bubbleSize = true;
+    if (!m_bubbleSize)
+    {
+        m_bubbleSize = new CT_NumDataSource();
+    }
+    return m_bubbleSize;
+    }
+
+    const CT_NumDataSource& CT_BubbleSer::ChildGroup_1::get_bubbleSize() const
+    {    
+    if (m_bubbleSize)
+    {
+        return *m_bubbleSize;
+    }
+    return CT_NumDataSource::default_instance();
+    }
+
+    bool CT_BubbleSer::ChildGroup_1::has_bubble3D() const
+    {    
+    return m_has_bubble3D;
+    }
+
+    CT_Boolean* CT_BubbleSer::ChildGroup_1::mutable_bubble3D()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_bubbleSize = false;
+    
+    if (m_bubbleSize)
+    {
+        delete m_bubbleSize;
+        m_bubbleSize = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = true;
+    if (!m_bubble3D)
+    {
+        m_bubble3D = new CT_Boolean();
+    }
+    return m_bubble3D;
+    }
+
+    const CT_Boolean& CT_BubbleSer::ChildGroup_1::get_bubble3D() const
+    {    
+    if (m_bubble3D)
+    {
+        return *m_bubble3D;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_BubbleSer::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_BubbleSer::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_dPt = false;
+    
+    if (m_dPt)
+    {
+        delete m_dPt;
+        m_dPt = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_trendline = false;
+    
+    if (m_trendline)
+    {
+        delete m_trendline;
+        m_trendline = NULL;
+    }
+    ;
+    
+    m_has_errBars = false;
+    
+    if (m_errBars)
+    {
+        delete m_errBars;
+        m_errBars = NULL;
+    }
+    ;
+    
+    m_has_xVal = false;
+    
+    if (m_xVal)
+    {
+        delete m_xVal;
+        m_xVal = NULL;
+    }
+    ;
+    
+    m_has_yVal = false;
+    
+    if (m_yVal)
+    {
+        delete m_yVal;
+        m_yVal = NULL;
+    }
+    ;
+    
+    m_has_bubbleSize = false;
+    
+    if (m_bubbleSize)
+    {
+        delete m_bubbleSize;
+        m_bubbleSize = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_BubbleSer::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_BubbleSer* CT_BubbleSer::default_instance_ = NULL;
 
     // CT_SurfaceSer
     bool CT_SurfaceSer::has_idx() const
@@ -14624,70 +20904,7 @@ namespace ns_chart {
     }
 
     void CT_SurfaceSer::clear()
-    {    
-    m_has_idx = false;
-    
-    if (m_idx)
-    {
-        delete m_idx;
-        m_idx = NULL;
-    }
-    
-    
-    m_has_order = false;
-    
-    if (m_order)
-    {
-        delete m_order;
-        m_order = NULL;
-    }
-    
-    
-    m_has_tx = false;
-    
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_cat = false;
-    
-    if (m_cat)
-    {
-        delete m_cat;
-        m_cat = NULL;
-    }
-    
-    
-    m_has_val = false;
-    
-    if (m_val)
-    {
-        delete m_val;
-        m_val = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_SurfaceSer::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -14702,37 +20919,37 @@ namespace ns_chart {
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("idx", "", _outStream);;
     }
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("order", "", _outStream);;
     }
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("tx", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_cat)
     {
-        m_cat->toXmlElem("chart:cat", "", _outStream);;
+        m_cat->toXmlElem("cat", "", _outStream);;
     }
     
     if (m_has_val)
     {
-        m_val->toXmlElem("chart:val", "", _outStream);;
+        m_val->toXmlElem("val", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14747,6 +20964,7 @@ namespace ns_chart {
     return *CT_SurfaceSer::default_instance_;
     }
 
+CT_SurfaceSer* CT_SurfaceSer::default_instance_ = NULL;
 
     // CT_Grouping
     void CT_Grouping::clear()
@@ -14809,6 +21027,7 @@ namespace ns_chart {
     return ST_Grouping::default_instance();
     }
 
+CT_Grouping* CT_Grouping::default_instance_ = NULL;
 
     // CT_ChartLines
     bool CT_ChartLines::has_a_spPr() const
@@ -14836,16 +21055,7 @@ namespace ns_chart {
     }
 
     void CT_ChartLines::clear()
-    {    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_ChartLines::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -14860,7 +21070,7 @@ namespace ns_chart {
             
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14875,6 +21085,7 @@ namespace ns_chart {
     return *CT_ChartLines::default_instance_;
     }
 
+CT_ChartLines* CT_ChartLines::default_instance_ = NULL;
 
     // CT_LineChart
     bool CT_LineChart::has_grouping() const
@@ -15149,12 +21360,12 @@ namespace ns_chart {
             
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("chart:grouping", "", _outStream);;
+        m_grouping->toXmlElem("grouping", "", _outStream);;
     }
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("varyColors", "", _outStream);;
     }
      
     {
@@ -15163,37 +21374,37 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_dropLines())
             {
-                (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
+                (*iter)->get_dropLines().toXmlElem("dropLines", "", _outStream);
             }
         }
     }
      
     if (m_has_hiLowLines)
     {
-        m_hiLowLines->toXmlElem("chart:hiLowLines", "", _outStream);;
+        m_hiLowLines->toXmlElem("hiLowLines", "", _outStream);;
     }
     
     if (m_has_upDownBars)
     {
-        m_upDownBars->toXmlElem("chart:upDownBars", "", _outStream);;
+        m_upDownBars->toXmlElem("upDownBars", "", _outStream);;
     }
     
     if (m_has_marker)
     {
-        m_marker->toXmlElem("chart:marker", "", _outStream);;
+        m_marker->toXmlElem("marker", "", _outStream);;
     }
     
     if (m_has_smooth)
     {
-        m_smooth->toXmlElem("chart:smooth", "", _outStream);;
+        m_smooth->toXmlElem("smooth", "", _outStream);;
     }
      
     {
@@ -15202,11 +21413,11 @@ namespace ns_chart {
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("axId", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -15223,6 +21434,208 @@ namespace ns_chart {
     return *CT_LineChart::default_instance_;
     }
 
+
+    // CT_LineChart::ChildGroup_1
+    bool CT_LineChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_LineSer* CT_LineChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_LineSer();
+    }
+    return m_ser;
+    }
+
+    const CT_LineSer& CT_LineChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_LineSer::default_instance();
+    }
+
+    bool CT_LineChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_LineChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_LineChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_LineChart::ChildGroup_1::has_dropLines() const
+    {    
+    return m_has_dropLines;
+    }
+
+    CT_ChartLines* CT_LineChart::ChildGroup_1::mutable_dropLines()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = true;
+    if (!m_dropLines)
+    {
+        m_dropLines = new CT_ChartLines();
+    }
+    return m_dropLines;
+    }
+
+    const CT_ChartLines& CT_LineChart::ChildGroup_1::get_dropLines() const
+    {    
+    if (m_dropLines)
+    {
+        return *m_dropLines;
+    }
+    return CT_ChartLines::default_instance();
+    }
+
+
+    // CT_LineChart::ChildGroup_2
+    bool CT_LineChart::ChildGroup_2::has_axId() const
+    {    
+    return m_has_axId;
+    }
+
+    CT_UnsignedInt* CT_LineChart::ChildGroup_2::mutable_axId()
+    {    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_axId = true;
+    if (!m_axId)
+    {
+        m_axId = new CT_UnsignedInt();
+    }
+    return m_axId;
+    }
+
+    const CT_UnsignedInt& CT_LineChart::ChildGroup_2::get_axId() const
+    {    
+    if (m_axId)
+    {
+        return *m_axId;
+    }
+    return CT_UnsignedInt::default_instance();
+    }
+
+    bool CT_LineChart::ChildGroup_2::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_LineChart::ChildGroup_2::mutable_extLst()
+    {    
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_LineChart::ChildGroup_2::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_LineChart* CT_LineChart::default_instance_ = NULL;
 
     // CT_Line3DChart
     bool CT_Line3DChart::has_grouping() const
@@ -15398,12 +21811,12 @@ namespace ns_chart {
             
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("chart:grouping", "", _outStream);;
+        m_grouping->toXmlElem("grouping", "", _outStream);;
     }
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("varyColors", "", _outStream);;
     }
      
     {
@@ -15412,22 +21825,22 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_dropLines())
             {
-                (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
+                (*iter)->get_dropLines().toXmlElem("dropLines", "", _outStream);
             }
         }
     }
      
     if (m_has_gapDepth)
     {
-        m_gapDepth->toXmlElem("chart:gapDepth", "", _outStream);;
+        m_gapDepth->toXmlElem("gapDepth", "", _outStream);;
     }
      
     {
@@ -15436,11 +21849,11 @@ namespace ns_chart {
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("axId", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -15457,6 +21870,208 @@ namespace ns_chart {
     return *CT_Line3DChart::default_instance_;
     }
 
+
+    // CT_Line3DChart::ChildGroup_1
+    bool CT_Line3DChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_LineSer* CT_Line3DChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_LineSer();
+    }
+    return m_ser;
+    }
+
+    const CT_LineSer& CT_Line3DChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_LineSer::default_instance();
+    }
+
+    bool CT_Line3DChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_Line3DChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_Line3DChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_Line3DChart::ChildGroup_1::has_dropLines() const
+    {    
+    return m_has_dropLines;
+    }
+
+    CT_ChartLines* CT_Line3DChart::ChildGroup_1::mutable_dropLines()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = true;
+    if (!m_dropLines)
+    {
+        m_dropLines = new CT_ChartLines();
+    }
+    return m_dropLines;
+    }
+
+    const CT_ChartLines& CT_Line3DChart::ChildGroup_1::get_dropLines() const
+    {    
+    if (m_dropLines)
+    {
+        return *m_dropLines;
+    }
+    return CT_ChartLines::default_instance();
+    }
+
+
+    // CT_Line3DChart::ChildGroup_2
+    bool CT_Line3DChart::ChildGroup_2::has_axId() const
+    {    
+    return m_has_axId;
+    }
+
+    CT_UnsignedInt* CT_Line3DChart::ChildGroup_2::mutable_axId()
+    {    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_axId = true;
+    if (!m_axId)
+    {
+        m_axId = new CT_UnsignedInt();
+    }
+    return m_axId;
+    }
+
+    const CT_UnsignedInt& CT_Line3DChart::ChildGroup_2::get_axId() const
+    {    
+    if (m_axId)
+    {
+        return *m_axId;
+    }
+    return CT_UnsignedInt::default_instance();
+    }
+
+    bool CT_Line3DChart::ChildGroup_2::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_Line3DChart::ChildGroup_2::mutable_extLst()
+    {    
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_Line3DChart::ChildGroup_2::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_Line3DChart* CT_Line3DChart::default_instance_ = NULL;
 
     // CT_StockChart
     CT_LineSer* CT_StockChart::add_ser()
@@ -15544,31 +22159,31 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_dropLines())
             {
-                (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
+                (*iter)->get_dropLines().toXmlElem("dropLines", "", _outStream);
             }
             else if ((*iter)->has_hiLowLines())
             {
-                (*iter)->get_hiLowLines().toXmlElem("chart:hiLowLines", "", _outStream);
+                (*iter)->get_hiLowLines().toXmlElem("hiLowLines", "", _outStream);
             }
             else if ((*iter)->has_upDownBars())
             {
-                (*iter)->get_upDownBars().toXmlElem("chart:upDownBars", "", _outStream);
+                (*iter)->get_upDownBars().toXmlElem("upDownBars", "", _outStream);
             }
             else if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("axId", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -15585,6 +22200,562 @@ namespace ns_chart {
     return *CT_StockChart::default_instance_;
     }
 
+
+    // CT_StockChart::ChildGroup_1
+    bool CT_StockChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_LineSer* CT_StockChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_hiLowLines = false;
+    
+    if (m_hiLowLines)
+    {
+        delete m_hiLowLines;
+        m_hiLowLines = NULL;
+    }
+    ;
+    
+    m_has_upDownBars = false;
+    
+    if (m_upDownBars)
+    {
+        delete m_upDownBars;
+        m_upDownBars = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_LineSer();
+    }
+    return m_ser;
+    }
+
+    const CT_LineSer& CT_StockChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_LineSer::default_instance();
+    }
+
+    bool CT_StockChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_StockChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_hiLowLines = false;
+    
+    if (m_hiLowLines)
+    {
+        delete m_hiLowLines;
+        m_hiLowLines = NULL;
+    }
+    ;
+    
+    m_has_upDownBars = false;
+    
+    if (m_upDownBars)
+    {
+        delete m_upDownBars;
+        m_upDownBars = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_StockChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_StockChart::ChildGroup_1::has_dropLines() const
+    {    
+    return m_has_dropLines;
+    }
+
+    CT_ChartLines* CT_StockChart::ChildGroup_1::mutable_dropLines()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_hiLowLines = false;
+    
+    if (m_hiLowLines)
+    {
+        delete m_hiLowLines;
+        m_hiLowLines = NULL;
+    }
+    ;
+    
+    m_has_upDownBars = false;
+    
+    if (m_upDownBars)
+    {
+        delete m_upDownBars;
+        m_upDownBars = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dropLines = true;
+    if (!m_dropLines)
+    {
+        m_dropLines = new CT_ChartLines();
+    }
+    return m_dropLines;
+    }
+
+    const CT_ChartLines& CT_StockChart::ChildGroup_1::get_dropLines() const
+    {    
+    if (m_dropLines)
+    {
+        return *m_dropLines;
+    }
+    return CT_ChartLines::default_instance();
+    }
+
+    bool CT_StockChart::ChildGroup_1::has_hiLowLines() const
+    {    
+    return m_has_hiLowLines;
+    }
+
+    CT_ChartLines* CT_StockChart::ChildGroup_1::mutable_hiLowLines()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_upDownBars = false;
+    
+    if (m_upDownBars)
+    {
+        delete m_upDownBars;
+        m_upDownBars = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_hiLowLines = true;
+    if (!m_hiLowLines)
+    {
+        m_hiLowLines = new CT_ChartLines();
+    }
+    return m_hiLowLines;
+    }
+
+    const CT_ChartLines& CT_StockChart::ChildGroup_1::get_hiLowLines() const
+    {    
+    if (m_hiLowLines)
+    {
+        return *m_hiLowLines;
+    }
+    return CT_ChartLines::default_instance();
+    }
+
+    bool CT_StockChart::ChildGroup_1::has_upDownBars() const
+    {    
+    return m_has_upDownBars;
+    }
+
+    CT_UpDownBars* CT_StockChart::ChildGroup_1::mutable_upDownBars()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_hiLowLines = false;
+    
+    if (m_hiLowLines)
+    {
+        delete m_hiLowLines;
+        m_hiLowLines = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_upDownBars = true;
+    if (!m_upDownBars)
+    {
+        m_upDownBars = new CT_UpDownBars();
+    }
+    return m_upDownBars;
+    }
+
+    const CT_UpDownBars& CT_StockChart::ChildGroup_1::get_upDownBars() const
+    {    
+    if (m_upDownBars)
+    {
+        return *m_upDownBars;
+    }
+    return CT_UpDownBars::default_instance();
+    }
+
+    bool CT_StockChart::ChildGroup_1::has_axId() const
+    {    
+    return m_has_axId;
+    }
+
+    CT_UnsignedInt* CT_StockChart::ChildGroup_1::mutable_axId()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_hiLowLines = false;
+    
+    if (m_hiLowLines)
+    {
+        delete m_hiLowLines;
+        m_hiLowLines = NULL;
+    }
+    ;
+    
+    m_has_upDownBars = false;
+    
+    if (m_upDownBars)
+    {
+        delete m_upDownBars;
+        m_upDownBars = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_axId = true;
+    if (!m_axId)
+    {
+        m_axId = new CT_UnsignedInt();
+    }
+    return m_axId;
+    }
+
+    const CT_UnsignedInt& CT_StockChart::ChildGroup_1::get_axId() const
+    {    
+    if (m_axId)
+    {
+        return *m_axId;
+    }
+    return CT_UnsignedInt::default_instance();
+    }
+
+    bool CT_StockChart::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_StockChart::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_hiLowLines = false;
+    
+    if (m_hiLowLines)
+    {
+        delete m_hiLowLines;
+        m_hiLowLines = NULL;
+    }
+    ;
+    
+    m_has_upDownBars = false;
+    
+    if (m_upDownBars)
+    {
+        delete m_upDownBars;
+        m_upDownBars = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_StockChart::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_StockChart* CT_StockChart::default_instance_ = NULL;
 
     // CT_ScatterStyle
     void CT_ScatterStyle::clear()
@@ -15647,6 +22818,7 @@ namespace ns_chart {
     return ST_ScatterStyle::default_instance();
     }
 
+CT_ScatterStyle* CT_ScatterStyle::default_instance_ = NULL;
 
     // CT_ScatterChart
     bool CT_ScatterChart::has_scatterStyle() const
@@ -15772,12 +22944,12 @@ namespace ns_chart {
             
     if (m_has_scatterStyle)
     {
-        m_scatterStyle->toXmlElem("chart:scatterStyle", "", _outStream);;
+        m_scatterStyle->toXmlElem("scatterStyle", "", _outStream);;
     }
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("varyColors", "", _outStream);;
     }
      
     {
@@ -15786,19 +22958,19 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("axId", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -15815,6 +22987,217 @@ namespace ns_chart {
     return *CT_ScatterChart::default_instance_;
     }
 
+
+    // CT_ScatterChart::ChildGroup_1
+    bool CT_ScatterChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_ScatterSer* CT_ScatterChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_ScatterSer();
+    }
+    return m_ser;
+    }
+
+    const CT_ScatterSer& CT_ScatterChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_ScatterSer::default_instance();
+    }
+
+    bool CT_ScatterChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_ScatterChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_ScatterChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_ScatterChart::ChildGroup_1::has_axId() const
+    {    
+    return m_has_axId;
+    }
+
+    CT_UnsignedInt* CT_ScatterChart::ChildGroup_1::mutable_axId()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_axId = true;
+    if (!m_axId)
+    {
+        m_axId = new CT_UnsignedInt();
+    }
+    return m_axId;
+    }
+
+    const CT_UnsignedInt& CT_ScatterChart::ChildGroup_1::get_axId() const
+    {    
+    if (m_axId)
+    {
+        return *m_axId;
+    }
+    return CT_UnsignedInt::default_instance();
+    }
+
+    bool CT_ScatterChart::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_ScatterChart::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_ScatterChart::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_ScatterChart* CT_ScatterChart::default_instance_ = NULL;
 
     // CT_RadarStyle
     void CT_RadarStyle::clear()
@@ -15877,6 +23260,7 @@ namespace ns_chart {
     return ST_RadarStyle::default_instance();
     }
 
+CT_RadarStyle* CT_RadarStyle::default_instance_ = NULL;
 
     // CT_RadarChart
     bool CT_RadarChart::has_radarStyle() const
@@ -16002,12 +23386,12 @@ namespace ns_chart {
             
     if (m_has_radarStyle)
     {
-        m_radarStyle->toXmlElem("chart:radarStyle", "", _outStream);;
+        m_radarStyle->toXmlElem("radarStyle", "", _outStream);;
     }
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("varyColors", "", _outStream);;
     }
      
     {
@@ -16016,19 +23400,19 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("axId", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -16045,6 +23429,217 @@ namespace ns_chart {
     return *CT_RadarChart::default_instance_;
     }
 
+
+    // CT_RadarChart::ChildGroup_1
+    bool CT_RadarChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_RadarSer* CT_RadarChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_RadarSer();
+    }
+    return m_ser;
+    }
+
+    const CT_RadarSer& CT_RadarChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_RadarSer::default_instance();
+    }
+
+    bool CT_RadarChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_RadarChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_RadarChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_RadarChart::ChildGroup_1::has_axId() const
+    {    
+    return m_has_axId;
+    }
+
+    CT_UnsignedInt* CT_RadarChart::ChildGroup_1::mutable_axId()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_axId = true;
+    if (!m_axId)
+    {
+        m_axId = new CT_UnsignedInt();
+    }
+    return m_axId;
+    }
+
+    const CT_UnsignedInt& CT_RadarChart::ChildGroup_1::get_axId() const
+    {    
+    if (m_axId)
+    {
+        return *m_axId;
+    }
+    return CT_UnsignedInt::default_instance();
+    }
+
+    bool CT_RadarChart::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_RadarChart::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_RadarChart::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_RadarChart* CT_RadarChart::default_instance_ = NULL;
 
     // CT_BarGrouping
     void CT_BarGrouping::clear()
@@ -16107,6 +23702,7 @@ namespace ns_chart {
     return ST_BarGrouping::default_instance();
     }
 
+CT_BarGrouping* CT_BarGrouping::default_instance_ = NULL;
 
     // CT_BarDir
     void CT_BarDir::clear()
@@ -16169,6 +23765,7 @@ namespace ns_chart {
     return ST_BarDir::default_instance();
     }
 
+CT_BarDir* CT_BarDir::default_instance_ = NULL;
 
     // CT_Shape
     void CT_Shape::clear()
@@ -16231,6 +23828,7 @@ namespace ns_chart {
     return ST_Shape::default_instance();
     }
 
+CT_Shape* CT_Shape::default_instance_ = NULL;
 
     // CT_BarChart
     bool CT_BarChart::has_barDir() const
@@ -16472,17 +24070,17 @@ namespace ns_chart {
             
     if (m_has_barDir)
     {
-        m_barDir->toXmlElem("chart:barDir", "", _outStream);;
+        m_barDir->toXmlElem("barDir", "", _outStream);;
     }
     
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("chart:grouping", "", _outStream);;
+        m_grouping->toXmlElem("grouping", "", _outStream);;
     }
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("varyColors", "", _outStream);;
     }
      
     {
@@ -16491,23 +24089,23 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
         }
     }
      
     if (m_has_gapWidth)
     {
-        m_gapWidth->toXmlElem("chart:gapWidth", "", _outStream);;
+        m_gapWidth->toXmlElem("gapWidth", "", _outStream);;
     }
     
     if (m_has_overlap)
     {
-        m_overlap->toXmlElem("chart:overlap", "", _outStream);;
+        m_overlap->toXmlElem("overlap", "", _outStream);;
     }
      
     {
@@ -16516,15 +24114,15 @@ namespace ns_chart {
         {
             if ((*iter)->has_serLines())
             {
-                (*iter)->get_serLines().toXmlElem("chart:serLines", "", _outStream);
+                (*iter)->get_serLines().toXmlElem("serLines", "", _outStream);
             }
             else if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("axId", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -16541,6 +24139,208 @@ namespace ns_chart {
     return *CT_BarChart::default_instance_;
     }
 
+
+    // CT_BarChart::ChildGroup_1
+    bool CT_BarChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_BarSer* CT_BarChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_BarSer();
+    }
+    return m_ser;
+    }
+
+    const CT_BarSer& CT_BarChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_BarSer::default_instance();
+    }
+
+    bool CT_BarChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_BarChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_BarChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+
+    // CT_BarChart::ChildGroup_2
+    bool CT_BarChart::ChildGroup_2::has_serLines() const
+    {    
+    return m_has_serLines;
+    }
+
+    CT_ChartLines* CT_BarChart::ChildGroup_2::mutable_serLines()
+    {    
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_serLines = true;
+    if (!m_serLines)
+    {
+        m_serLines = new CT_ChartLines();
+    }
+    return m_serLines;
+    }
+
+    const CT_ChartLines& CT_BarChart::ChildGroup_2::get_serLines() const
+    {    
+    if (m_serLines)
+    {
+        return *m_serLines;
+    }
+    return CT_ChartLines::default_instance();
+    }
+
+    bool CT_BarChart::ChildGroup_2::has_axId() const
+    {    
+    return m_has_axId;
+    }
+
+    CT_UnsignedInt* CT_BarChart::ChildGroup_2::mutable_axId()
+    {    
+    
+    m_has_serLines = false;
+    
+    if (m_serLines)
+    {
+        delete m_serLines;
+        m_serLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_axId = true;
+    if (!m_axId)
+    {
+        m_axId = new CT_UnsignedInt();
+    }
+    return m_axId;
+    }
+
+    const CT_UnsignedInt& CT_BarChart::ChildGroup_2::get_axId() const
+    {    
+    if (m_axId)
+    {
+        return *m_axId;
+    }
+    return CT_UnsignedInt::default_instance();
+    }
+
+    bool CT_BarChart::ChildGroup_2::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_BarChart::ChildGroup_2::mutable_extLst()
+    {    
+    
+    m_has_serLines = false;
+    
+    if (m_serLines)
+    {
+        delete m_serLines;
+        m_serLines = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_BarChart::ChildGroup_2::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_BarChart* CT_BarChart::default_instance_ = NULL;
 
     // CT_Bar3DChart
     bool CT_Bar3DChart::has_barDir() const
@@ -16807,17 +24607,17 @@ namespace ns_chart {
             
     if (m_has_barDir)
     {
-        m_barDir->toXmlElem("chart:barDir", "", _outStream);;
+        m_barDir->toXmlElem("barDir", "", _outStream);;
     }
     
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("chart:grouping", "", _outStream);;
+        m_grouping->toXmlElem("grouping", "", _outStream);;
     }
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("varyColors", "", _outStream);;
     }
      
     {
@@ -16826,28 +24626,28 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
         }
     }
      
     if (m_has_gapWidth)
     {
-        m_gapWidth->toXmlElem("chart:gapWidth", "", _outStream);;
+        m_gapWidth->toXmlElem("gapWidth", "", _outStream);;
     }
     
     if (m_has_gapDepth)
     {
-        m_gapDepth->toXmlElem("chart:gapDepth", "", _outStream);;
+        m_gapDepth->toXmlElem("gapDepth", "", _outStream);;
     }
     
     if (m_has_shape)
     {
-        m_shape->toXmlElem("chart:shape", "", _outStream);;
+        m_shape->toXmlElem("shape", "", _outStream);;
     }
      
     {
@@ -16856,11 +24656,11 @@ namespace ns_chart {
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("axId", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -16877,6 +24677,147 @@ namespace ns_chart {
     return *CT_Bar3DChart::default_instance_;
     }
 
+
+    // CT_Bar3DChart::ChildGroup_1
+    bool CT_Bar3DChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_BarSer* CT_Bar3DChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_BarSer();
+    }
+    return m_ser;
+    }
+
+    const CT_BarSer& CT_Bar3DChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_BarSer::default_instance();
+    }
+
+    bool CT_Bar3DChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_Bar3DChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_Bar3DChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+
+    // CT_Bar3DChart::ChildGroup_2
+    bool CT_Bar3DChart::ChildGroup_2::has_axId() const
+    {    
+    return m_has_axId;
+    }
+
+    CT_UnsignedInt* CT_Bar3DChart::ChildGroup_2::mutable_axId()
+    {    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_axId = true;
+    if (!m_axId)
+    {
+        m_axId = new CT_UnsignedInt();
+    }
+    return m_axId;
+    }
+
+    const CT_UnsignedInt& CT_Bar3DChart::ChildGroup_2::get_axId() const
+    {    
+    if (m_axId)
+    {
+        return *m_axId;
+    }
+    return CT_UnsignedInt::default_instance();
+    }
+
+    bool CT_Bar3DChart::ChildGroup_2::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_Bar3DChart::ChildGroup_2::mutable_extLst()
+    {    
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_Bar3DChart::ChildGroup_2::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_Bar3DChart* CT_Bar3DChart::default_instance_ = NULL;
 
     // CT_AreaChart
     bool CT_AreaChart::has_grouping() const
@@ -17010,12 +24951,12 @@ namespace ns_chart {
             
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("chart:grouping", "", _outStream);;
+        m_grouping->toXmlElem("grouping", "", _outStream);;
     }
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("varyColors", "", _outStream);;
     }
      
     {
@@ -17024,23 +24965,23 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_dropLines())
             {
-                (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
+                (*iter)->get_dropLines().toXmlElem("dropLines", "", _outStream);
             }
             else if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("axId", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -17057,6 +24998,314 @@ namespace ns_chart {
     return *CT_AreaChart::default_instance_;
     }
 
+
+    // CT_AreaChart::ChildGroup_1
+    bool CT_AreaChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_AreaSer* CT_AreaChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_AreaSer();
+    }
+    return m_ser;
+    }
+
+    const CT_AreaSer& CT_AreaChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_AreaSer::default_instance();
+    }
+
+    bool CT_AreaChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_AreaChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_AreaChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_AreaChart::ChildGroup_1::has_dropLines() const
+    {    
+    return m_has_dropLines;
+    }
+
+    CT_ChartLines* CT_AreaChart::ChildGroup_1::mutable_dropLines()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dropLines = true;
+    if (!m_dropLines)
+    {
+        m_dropLines = new CT_ChartLines();
+    }
+    return m_dropLines;
+    }
+
+    const CT_ChartLines& CT_AreaChart::ChildGroup_1::get_dropLines() const
+    {    
+    if (m_dropLines)
+    {
+        return *m_dropLines;
+    }
+    return CT_ChartLines::default_instance();
+    }
+
+    bool CT_AreaChart::ChildGroup_1::has_axId() const
+    {    
+    return m_has_axId;
+    }
+
+    CT_UnsignedInt* CT_AreaChart::ChildGroup_1::mutable_axId()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_axId = true;
+    if (!m_axId)
+    {
+        m_axId = new CT_UnsignedInt();
+    }
+    return m_axId;
+    }
+
+    const CT_UnsignedInt& CT_AreaChart::ChildGroup_1::get_axId() const
+    {    
+    if (m_axId)
+    {
+        return *m_axId;
+    }
+    return CT_UnsignedInt::default_instance();
+    }
+
+    bool CT_AreaChart::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_AreaChart::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_AreaChart::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_AreaChart* CT_AreaChart::default_instance_ = NULL;
 
     // CT_Area3DChart
     bool CT_Area3DChart::has_grouping() const
@@ -17232,12 +25481,12 @@ namespace ns_chart {
             
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("chart:grouping", "", _outStream);;
+        m_grouping->toXmlElem("grouping", "", _outStream);;
     }
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("varyColors", "", _outStream);;
     }
      
     {
@@ -17246,22 +25495,22 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_dropLines())
             {
-                (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
+                (*iter)->get_dropLines().toXmlElem("dropLines", "", _outStream);
             }
         }
     }
      
     if (m_has_gapDepth)
     {
-        m_gapDepth->toXmlElem("chart:gapDepth", "", _outStream);;
+        m_gapDepth->toXmlElem("gapDepth", "", _outStream);;
     }
      
     {
@@ -17270,11 +25519,11 @@ namespace ns_chart {
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("axId", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -17291,6 +25540,208 @@ namespace ns_chart {
     return *CT_Area3DChart::default_instance_;
     }
 
+
+    // CT_Area3DChart::ChildGroup_1
+    bool CT_Area3DChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_AreaSer* CT_Area3DChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_AreaSer();
+    }
+    return m_ser;
+    }
+
+    const CT_AreaSer& CT_Area3DChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_AreaSer::default_instance();
+    }
+
+    bool CT_Area3DChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_Area3DChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dropLines = false;
+    
+    if (m_dropLines)
+    {
+        delete m_dropLines;
+        m_dropLines = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_Area3DChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_Area3DChart::ChildGroup_1::has_dropLines() const
+    {    
+    return m_has_dropLines;
+    }
+
+    CT_ChartLines* CT_Area3DChart::ChildGroup_1::mutable_dropLines()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_dropLines = true;
+    if (!m_dropLines)
+    {
+        m_dropLines = new CT_ChartLines();
+    }
+    return m_dropLines;
+    }
+
+    const CT_ChartLines& CT_Area3DChart::ChildGroup_1::get_dropLines() const
+    {    
+    if (m_dropLines)
+    {
+        return *m_dropLines;
+    }
+    return CT_ChartLines::default_instance();
+    }
+
+
+    // CT_Area3DChart::ChildGroup_2
+    bool CT_Area3DChart::ChildGroup_2::has_axId() const
+    {    
+    return m_has_axId;
+    }
+
+    CT_UnsignedInt* CT_Area3DChart::ChildGroup_2::mutable_axId()
+    {    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_axId = true;
+    if (!m_axId)
+    {
+        m_axId = new CT_UnsignedInt();
+    }
+    return m_axId;
+    }
+
+    const CT_UnsignedInt& CT_Area3DChart::ChildGroup_2::get_axId() const
+    {    
+    if (m_axId)
+    {
+        return *m_axId;
+    }
+    return CT_UnsignedInt::default_instance();
+    }
+
+    bool CT_Area3DChart::ChildGroup_2::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_Area3DChart::ChildGroup_2::mutable_extLst()
+    {    
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_Area3DChart::ChildGroup_2::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_Area3DChart* CT_Area3DChart::default_instance_ = NULL;
 
     // CT_PieChart
     bool CT_PieChart::has_varyColors() const
@@ -17433,7 +25884,7 @@ namespace ns_chart {
             
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("varyColors", "", _outStream);;
     }
      
     {
@@ -17442,23 +25893,23 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
         }
     }
      
     if (m_has_firstSliceAng)
     {
-        m_firstSliceAng->toXmlElem("chart:firstSliceAng", "", _outStream);;
+        m_firstSliceAng->toXmlElem("firstSliceAng", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17473,6 +25924,77 @@ namespace ns_chart {
     return *CT_PieChart::default_instance_;
     }
 
+
+    // CT_PieChart::ChildGroup_1
+    bool CT_PieChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_PieSer* CT_PieChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_PieSer();
+    }
+    return m_ser;
+    }
+
+    const CT_PieSer& CT_PieChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_PieSer::default_instance();
+    }
+
+    bool CT_PieChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_PieChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_PieChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+CT_PieChart* CT_PieChart::default_instance_ = NULL;
 
     // CT_Pie3DChart
     bool CT_Pie3DChart::has_varyColors() const
@@ -17582,7 +26104,7 @@ namespace ns_chart {
             
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("varyColors", "", _outStream);;
     }
      
     {
@@ -17591,18 +26113,18 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
         }
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17617,6 +26139,77 @@ namespace ns_chart {
     return *CT_Pie3DChart::default_instance_;
     }
 
+
+    // CT_Pie3DChart::ChildGroup_1
+    bool CT_Pie3DChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_PieSer* CT_Pie3DChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_PieSer();
+    }
+    return m_ser;
+    }
+
+    const CT_PieSer& CT_Pie3DChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_PieSer::default_instance();
+    }
+
+    bool CT_Pie3DChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_Pie3DChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_Pie3DChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+CT_Pie3DChart* CT_Pie3DChart::default_instance_ = NULL;
 
     // CT_DoughnutChart
     bool CT_DoughnutChart::has_varyColors() const
@@ -17792,7 +26385,7 @@ namespace ns_chart {
             
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("varyColors", "", _outStream);;
     }
      
     {
@@ -17801,28 +26394,28 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
         }
     }
      
     if (m_has_firstSliceAng)
     {
-        m_firstSliceAng->toXmlElem("chart:firstSliceAng", "", _outStream);;
+        m_firstSliceAng->toXmlElem("firstSliceAng", "", _outStream);;
     }
     
     if (m_has_holeSize)
     {
-        m_holeSize->toXmlElem("chart:holeSize", "", _outStream);;
+        m_holeSize->toXmlElem("holeSize", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17837,6 +26430,77 @@ namespace ns_chart {
     return *CT_DoughnutChart::default_instance_;
     }
 
+
+    // CT_DoughnutChart::ChildGroup_1
+    bool CT_DoughnutChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_PieSer* CT_DoughnutChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_PieSer();
+    }
+    return m_ser;
+    }
+
+    const CT_PieSer& CT_DoughnutChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_PieSer::default_instance();
+    }
+
+    bool CT_DoughnutChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_DoughnutChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_DoughnutChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+CT_DoughnutChart* CT_DoughnutChart::default_instance_ = NULL;
 
     // CT_OfPieType
     void CT_OfPieType::clear()
@@ -17899,6 +26563,7 @@ namespace ns_chart {
     return ST_OfPieType::default_instance();
     }
 
+CT_OfPieType* CT_OfPieType::default_instance_ = NULL;
 
     // CT_OfPieChart
     bool CT_OfPieChart::has_ofPieType() const
@@ -18198,12 +26863,12 @@ namespace ns_chart {
             
     if (m_has_ofPieType)
     {
-        m_ofPieType->toXmlElem("chart:ofPieType", "", _outStream);;
+        m_ofPieType->toXmlElem("ofPieType", "", _outStream);;
     }
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("varyColors", "", _outStream);;
     }
      
     {
@@ -18212,38 +26877,38 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
         }
     }
      
     if (m_has_gapWidth)
     {
-        m_gapWidth->toXmlElem("chart:gapWidth", "", _outStream);;
+        m_gapWidth->toXmlElem("gapWidth", "", _outStream);;
     }
     
     if (m_has_splitType)
     {
-        m_splitType->toXmlElem("chart:splitType", "", _outStream);;
+        m_splitType->toXmlElem("splitType", "", _outStream);;
     }
     
     if (m_has_splitPos)
     {
-        m_splitPos->toXmlElem("chart:splitPos", "", _outStream);;
+        m_splitPos->toXmlElem("splitPos", "", _outStream);;
     }
     
     if (m_has_custSplit)
     {
-        m_custSplit->toXmlElem("chart:custSplit", "", _outStream);;
+        m_custSplit->toXmlElem("custSplit", "", _outStream);;
     }
     
     if (m_has_secondPieSize)
     {
-        m_secondPieSize->toXmlElem("chart:secondPieSize", "", _outStream);;
+        m_secondPieSize->toXmlElem("secondPieSize", "", _outStream);;
     }
      
     {
@@ -18252,11 +26917,11 @@ namespace ns_chart {
         {
             if ((*iter)->has_serLines())
             {
-                (*iter)->get_serLines().toXmlElem("chart:serLines", "", _outStream);
+                (*iter)->get_serLines().toXmlElem("serLines", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -18273,6 +26938,147 @@ namespace ns_chart {
     return *CT_OfPieChart::default_instance_;
     }
 
+
+    // CT_OfPieChart::ChildGroup_1
+    bool CT_OfPieChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_PieSer* CT_OfPieChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_PieSer();
+    }
+    return m_ser;
+    }
+
+    const CT_PieSer& CT_OfPieChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_PieSer::default_instance();
+    }
+
+    bool CT_OfPieChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_OfPieChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_OfPieChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+
+    // CT_OfPieChart::ChildGroup_2
+    bool CT_OfPieChart::ChildGroup_2::has_serLines() const
+    {    
+    return m_has_serLines;
+    }
+
+    CT_ChartLines* CT_OfPieChart::ChildGroup_2::mutable_serLines()
+    {    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_serLines = true;
+    if (!m_serLines)
+    {
+        m_serLines = new CT_ChartLines();
+    }
+    return m_serLines;
+    }
+
+    const CT_ChartLines& CT_OfPieChart::ChildGroup_2::get_serLines() const
+    {    
+    if (m_serLines)
+    {
+        return *m_serLines;
+    }
+    return CT_ChartLines::default_instance();
+    }
+
+    bool CT_OfPieChart::ChildGroup_2::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_OfPieChart::ChildGroup_2::mutable_extLst()
+    {    
+    
+    m_has_serLines = false;
+    
+    if (m_serLines)
+    {
+        delete m_serLines;
+        m_serLines = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_OfPieChart::ChildGroup_2::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_OfPieChart* CT_OfPieChart::default_instance_ = NULL;
 
     // CT_BubbleChart
     bool CT_BubbleChart::has_varyColors() const
@@ -18397,7 +27203,7 @@ namespace ns_chart {
             
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("varyColors", "", _outStream);;
     }
      
     {
@@ -18406,35 +27212,35 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_dLbls())
             {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+                (*iter)->get_dLbls().toXmlElem("dLbls", "", _outStream);
             }
             else if ((*iter)->has_bubble3D())
             {
-                (*iter)->get_bubble3D().toXmlElem("chart:bubble3D", "", _outStream);
+                (*iter)->get_bubble3D().toXmlElem("bubble3D", "", _outStream);
             }
             else if ((*iter)->has_bubbleScale())
             {
-                (*iter)->get_bubbleScale().toXmlElem("chart:bubbleScale", "", _outStream);
+                (*iter)->get_bubbleScale().toXmlElem("bubbleScale", "", _outStream);
             }
             else if ((*iter)->has_showNegBubbles())
             {
-                (*iter)->get_showNegBubbles().toXmlElem("chart:showNegBubbles", "", _outStream);
+                (*iter)->get_showNegBubbles().toXmlElem("showNegBubbles", "", _outStream);
             }
             else if ((*iter)->has_sizeRepresents())
             {
-                (*iter)->get_sizeRepresents().toXmlElem("chart:sizeRepresents", "", _outStream);
+                (*iter)->get_sizeRepresents().toXmlElem("sizeRepresents", "", _outStream);
             }
             else if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("axId", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -18451,6 +27257,713 @@ namespace ns_chart {
     return *CT_BubbleChart::default_instance_;
     }
 
+
+    // CT_BubbleChart::ChildGroup_1
+    bool CT_BubbleChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_BubbleSer* CT_BubbleChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_bubbleScale = false;
+    
+    if (m_bubbleScale)
+    {
+        delete m_bubbleScale;
+        m_bubbleScale = NULL;
+    }
+    ;
+    
+    m_has_showNegBubbles = false;
+    
+    if (m_showNegBubbles)
+    {
+        delete m_showNegBubbles;
+        m_showNegBubbles = NULL;
+    }
+    ;
+    
+    m_has_sizeRepresents = false;
+    
+    if (m_sizeRepresents)
+    {
+        delete m_sizeRepresents;
+        m_sizeRepresents = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_BubbleSer();
+    }
+    return m_ser;
+    }
+
+    const CT_BubbleSer& CT_BubbleChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_BubbleSer::default_instance();
+    }
+
+    bool CT_BubbleChart::ChildGroup_1::has_dLbls() const
+    {    
+    return m_has_dLbls;
+    }
+
+    CT_DLbls* CT_BubbleChart::ChildGroup_1::mutable_dLbls()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_bubbleScale = false;
+    
+    if (m_bubbleScale)
+    {
+        delete m_bubbleScale;
+        m_bubbleScale = NULL;
+    }
+    ;
+    
+    m_has_showNegBubbles = false;
+    
+    if (m_showNegBubbles)
+    {
+        delete m_showNegBubbles;
+        m_showNegBubbles = NULL;
+    }
+    ;
+    
+    m_has_sizeRepresents = false;
+    
+    if (m_sizeRepresents)
+    {
+        delete m_sizeRepresents;
+        m_sizeRepresents = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_dLbls = true;
+    if (!m_dLbls)
+    {
+        m_dLbls = new CT_DLbls();
+    }
+    return m_dLbls;
+    }
+
+    const CT_DLbls& CT_BubbleChart::ChildGroup_1::get_dLbls() const
+    {    
+    if (m_dLbls)
+    {
+        return *m_dLbls;
+    }
+    return CT_DLbls::default_instance();
+    }
+
+    bool CT_BubbleChart::ChildGroup_1::has_bubble3D() const
+    {    
+    return m_has_bubble3D;
+    }
+
+    CT_Boolean* CT_BubbleChart::ChildGroup_1::mutable_bubble3D()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_bubbleScale = false;
+    
+    if (m_bubbleScale)
+    {
+        delete m_bubbleScale;
+        m_bubbleScale = NULL;
+    }
+    ;
+    
+    m_has_showNegBubbles = false;
+    
+    if (m_showNegBubbles)
+    {
+        delete m_showNegBubbles;
+        m_showNegBubbles = NULL;
+    }
+    ;
+    
+    m_has_sizeRepresents = false;
+    
+    if (m_sizeRepresents)
+    {
+        delete m_sizeRepresents;
+        m_sizeRepresents = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = true;
+    if (!m_bubble3D)
+    {
+        m_bubble3D = new CT_Boolean();
+    }
+    return m_bubble3D;
+    }
+
+    const CT_Boolean& CT_BubbleChart::ChildGroup_1::get_bubble3D() const
+    {    
+    if (m_bubble3D)
+    {
+        return *m_bubble3D;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_BubbleChart::ChildGroup_1::has_bubbleScale() const
+    {    
+    return m_has_bubbleScale;
+    }
+
+    CT_BubbleScale* CT_BubbleChart::ChildGroup_1::mutable_bubbleScale()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_showNegBubbles = false;
+    
+    if (m_showNegBubbles)
+    {
+        delete m_showNegBubbles;
+        m_showNegBubbles = NULL;
+    }
+    ;
+    
+    m_has_sizeRepresents = false;
+    
+    if (m_sizeRepresents)
+    {
+        delete m_sizeRepresents;
+        m_sizeRepresents = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_bubbleScale = true;
+    if (!m_bubbleScale)
+    {
+        m_bubbleScale = new CT_BubbleScale();
+    }
+    return m_bubbleScale;
+    }
+
+    const CT_BubbleScale& CT_BubbleChart::ChildGroup_1::get_bubbleScale() const
+    {    
+    if (m_bubbleScale)
+    {
+        return *m_bubbleScale;
+    }
+    return CT_BubbleScale::default_instance();
+    }
+
+    bool CT_BubbleChart::ChildGroup_1::has_showNegBubbles() const
+    {    
+    return m_has_showNegBubbles;
+    }
+
+    CT_Boolean* CT_BubbleChart::ChildGroup_1::mutable_showNegBubbles()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_bubbleScale = false;
+    
+    if (m_bubbleScale)
+    {
+        delete m_bubbleScale;
+        m_bubbleScale = NULL;
+    }
+    ;
+    
+    m_has_sizeRepresents = false;
+    
+    if (m_sizeRepresents)
+    {
+        delete m_sizeRepresents;
+        m_sizeRepresents = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_showNegBubbles = true;
+    if (!m_showNegBubbles)
+    {
+        m_showNegBubbles = new CT_Boolean();
+    }
+    return m_showNegBubbles;
+    }
+
+    const CT_Boolean& CT_BubbleChart::ChildGroup_1::get_showNegBubbles() const
+    {    
+    if (m_showNegBubbles)
+    {
+        return *m_showNegBubbles;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_BubbleChart::ChildGroup_1::has_sizeRepresents() const
+    {    
+    return m_has_sizeRepresents;
+    }
+
+    CT_SizeRepresents* CT_BubbleChart::ChildGroup_1::mutable_sizeRepresents()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_bubbleScale = false;
+    
+    if (m_bubbleScale)
+    {
+        delete m_bubbleScale;
+        m_bubbleScale = NULL;
+    }
+    ;
+    
+    m_has_showNegBubbles = false;
+    
+    if (m_showNegBubbles)
+    {
+        delete m_showNegBubbles;
+        m_showNegBubbles = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_sizeRepresents = true;
+    if (!m_sizeRepresents)
+    {
+        m_sizeRepresents = new CT_SizeRepresents();
+    }
+    return m_sizeRepresents;
+    }
+
+    const CT_SizeRepresents& CT_BubbleChart::ChildGroup_1::get_sizeRepresents() const
+    {    
+    if (m_sizeRepresents)
+    {
+        return *m_sizeRepresents;
+    }
+    return CT_SizeRepresents::default_instance();
+    }
+
+    bool CT_BubbleChart::ChildGroup_1::has_axId() const
+    {    
+    return m_has_axId;
+    }
+
+    CT_UnsignedInt* CT_BubbleChart::ChildGroup_1::mutable_axId()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_bubbleScale = false;
+    
+    if (m_bubbleScale)
+    {
+        delete m_bubbleScale;
+        m_bubbleScale = NULL;
+    }
+    ;
+    
+    m_has_showNegBubbles = false;
+    
+    if (m_showNegBubbles)
+    {
+        delete m_showNegBubbles;
+        m_showNegBubbles = NULL;
+    }
+    ;
+    
+    m_has_sizeRepresents = false;
+    
+    if (m_sizeRepresents)
+    {
+        delete m_sizeRepresents;
+        m_sizeRepresents = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_axId = true;
+    if (!m_axId)
+    {
+        m_axId = new CT_UnsignedInt();
+    }
+    return m_axId;
+    }
+
+    const CT_UnsignedInt& CT_BubbleChart::ChildGroup_1::get_axId() const
+    {    
+    if (m_axId)
+    {
+        return *m_axId;
+    }
+    return CT_UnsignedInt::default_instance();
+    }
+
+    bool CT_BubbleChart::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_BubbleChart::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_dLbls = false;
+    
+    if (m_dLbls)
+    {
+        delete m_dLbls;
+        m_dLbls = NULL;
+    }
+    ;
+    
+    m_has_bubble3D = false;
+    
+    if (m_bubble3D)
+    {
+        delete m_bubble3D;
+        m_bubble3D = NULL;
+    }
+    ;
+    
+    m_has_bubbleScale = false;
+    
+    if (m_bubbleScale)
+    {
+        delete m_bubbleScale;
+        m_bubbleScale = NULL;
+    }
+    ;
+    
+    m_has_showNegBubbles = false;
+    
+    if (m_showNegBubbles)
+    {
+        delete m_showNegBubbles;
+        m_showNegBubbles = NULL;
+    }
+    ;
+    
+    m_has_sizeRepresents = false;
+    
+    if (m_sizeRepresents)
+    {
+        delete m_sizeRepresents;
+        m_sizeRepresents = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_BubbleChart::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_BubbleChart* CT_BubbleChart::default_instance_ = NULL;
 
     // CT_BandFmt
     bool CT_BandFmt::has_idx() const
@@ -18502,25 +28015,7 @@ namespace ns_chart {
     }
 
     void CT_BandFmt::clear()
-    {    
-    m_has_idx = false;
-    
-    if (m_idx)
-    {
-        delete m_idx;
-        m_idx = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_BandFmt::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -18535,12 +28030,12 @@ namespace ns_chart {
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("idx", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18555,6 +28050,7 @@ namespace ns_chart {
     return *CT_BandFmt::default_instance_;
     }
 
+CT_BandFmt* CT_BandFmt::default_instance_ = NULL;
 
     // CT_BandFmts
     CT_BandFmt* CT_BandFmts::add_bandFmt()
@@ -18594,7 +28090,7 @@ namespace ns_chart {
         {
             if ((*iter)->has_bandFmt())
             {
-                (*iter)->get_bandFmt().toXmlElem("chart:bandFmt", "", _outStream);
+                (*iter)->get_bandFmt().toXmlElem("bandFmt", "", _outStream);
             }
         }
     }
@@ -18611,6 +28107,34 @@ namespace ns_chart {
     return *CT_BandFmts::default_instance_;
     }
 
+
+    // CT_BandFmts::ChildGroup_1
+    bool CT_BandFmts::ChildGroup_1::has_bandFmt() const
+    {    
+    return m_has_bandFmt;
+    }
+
+    CT_BandFmt* CT_BandFmts::ChildGroup_1::mutable_bandFmt()
+    {    
+    
+    m_has_bandFmt = true;
+    if (!m_bandFmt)
+    {
+        m_bandFmt = new CT_BandFmt();
+    }
+    return m_bandFmt;
+    }
+
+    const CT_BandFmt& CT_BandFmts::ChildGroup_1::get_bandFmt() const
+    {    
+    if (m_bandFmt)
+    {
+        return *m_bandFmt;
+    }
+    return CT_BandFmt::default_instance();
+    }
+
+CT_BandFmts* CT_BandFmts::default_instance_ = NULL;
 
     // CT_SurfaceChart
     bool CT_SurfaceChart::has_wireframe() const
@@ -18703,7 +28227,7 @@ namespace ns_chart {
             
     if (m_has_wireframe)
     {
-        m_wireframe->toXmlElem("chart:wireframe", "", _outStream);;
+        m_wireframe->toXmlElem("wireframe", "", _outStream);;
     }
      
     {
@@ -18712,19 +28236,19 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_bandFmts())
             {
-                (*iter)->get_bandFmts().toXmlElem("chart:bandFmts", "", _outStream);
+                (*iter)->get_bandFmts().toXmlElem("bandFmts", "", _outStream);
             }
             else if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("axId", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -18741,6 +28265,217 @@ namespace ns_chart {
     return *CT_SurfaceChart::default_instance_;
     }
 
+
+    // CT_SurfaceChart::ChildGroup_1
+    bool CT_SurfaceChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_SurfaceSer* CT_SurfaceChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_bandFmts = false;
+    
+    if (m_bandFmts)
+    {
+        delete m_bandFmts;
+        m_bandFmts = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_SurfaceSer();
+    }
+    return m_ser;
+    }
+
+    const CT_SurfaceSer& CT_SurfaceChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_SurfaceSer::default_instance();
+    }
+
+    bool CT_SurfaceChart::ChildGroup_1::has_bandFmts() const
+    {    
+    return m_has_bandFmts;
+    }
+
+    CT_BandFmts* CT_SurfaceChart::ChildGroup_1::mutable_bandFmts()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_bandFmts = true;
+    if (!m_bandFmts)
+    {
+        m_bandFmts = new CT_BandFmts();
+    }
+    return m_bandFmts;
+    }
+
+    const CT_BandFmts& CT_SurfaceChart::ChildGroup_1::get_bandFmts() const
+    {    
+    if (m_bandFmts)
+    {
+        return *m_bandFmts;
+    }
+    return CT_BandFmts::default_instance();
+    }
+
+    bool CT_SurfaceChart::ChildGroup_1::has_axId() const
+    {    
+    return m_has_axId;
+    }
+
+    CT_UnsignedInt* CT_SurfaceChart::ChildGroup_1::mutable_axId()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_bandFmts = false;
+    
+    if (m_bandFmts)
+    {
+        delete m_bandFmts;
+        m_bandFmts = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_axId = true;
+    if (!m_axId)
+    {
+        m_axId = new CT_UnsignedInt();
+    }
+    return m_axId;
+    }
+
+    const CT_UnsignedInt& CT_SurfaceChart::ChildGroup_1::get_axId() const
+    {    
+    if (m_axId)
+    {
+        return *m_axId;
+    }
+    return CT_UnsignedInt::default_instance();
+    }
+
+    bool CT_SurfaceChart::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_SurfaceChart::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_bandFmts = false;
+    
+    if (m_bandFmts)
+    {
+        delete m_bandFmts;
+        m_bandFmts = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_SurfaceChart::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_SurfaceChart* CT_SurfaceChart::default_instance_ = NULL;
 
     // CT_Surface3DChart
     bool CT_Surface3DChart::has_wireframe() const
@@ -18833,7 +28568,7 @@ namespace ns_chart {
             
     if (m_has_wireframe)
     {
-        m_wireframe->toXmlElem("chart:wireframe", "", _outStream);;
+        m_wireframe->toXmlElem("wireframe", "", _outStream);;
     }
      
     {
@@ -18842,19 +28577,19 @@ namespace ns_chart {
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("ser", "", _outStream);
             }
             else if ((*iter)->has_bandFmts())
             {
-                (*iter)->get_bandFmts().toXmlElem("chart:bandFmts", "", _outStream);
+                (*iter)->get_bandFmts().toXmlElem("bandFmts", "", _outStream);
             }
             else if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("axId", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -18871,6 +28606,217 @@ namespace ns_chart {
     return *CT_Surface3DChart::default_instance_;
     }
 
+
+    // CT_Surface3DChart::ChildGroup_1
+    bool CT_Surface3DChart::ChildGroup_1::has_ser() const
+    {    
+    return m_has_ser;
+    }
+
+    CT_SurfaceSer* CT_Surface3DChart::ChildGroup_1::mutable_ser()
+    {    
+    
+    m_has_bandFmts = false;
+    
+    if (m_bandFmts)
+    {
+        delete m_bandFmts;
+        m_bandFmts = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_ser = true;
+    if (!m_ser)
+    {
+        m_ser = new CT_SurfaceSer();
+    }
+    return m_ser;
+    }
+
+    const CT_SurfaceSer& CT_Surface3DChart::ChildGroup_1::get_ser() const
+    {    
+    if (m_ser)
+    {
+        return *m_ser;
+    }
+    return CT_SurfaceSer::default_instance();
+    }
+
+    bool CT_Surface3DChart::ChildGroup_1::has_bandFmts() const
+    {    
+    return m_has_bandFmts;
+    }
+
+    CT_BandFmts* CT_Surface3DChart::ChildGroup_1::mutable_bandFmts()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_bandFmts = true;
+    if (!m_bandFmts)
+    {
+        m_bandFmts = new CT_BandFmts();
+    }
+    return m_bandFmts;
+    }
+
+    const CT_BandFmts& CT_Surface3DChart::ChildGroup_1::get_bandFmts() const
+    {    
+    if (m_bandFmts)
+    {
+        return *m_bandFmts;
+    }
+    return CT_BandFmts::default_instance();
+    }
+
+    bool CT_Surface3DChart::ChildGroup_1::has_axId() const
+    {    
+    return m_has_axId;
+    }
+
+    CT_UnsignedInt* CT_Surface3DChart::ChildGroup_1::mutable_axId()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_bandFmts = false;
+    
+    if (m_bandFmts)
+    {
+        delete m_bandFmts;
+        m_bandFmts = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_axId = true;
+    if (!m_axId)
+    {
+        m_axId = new CT_UnsignedInt();
+    }
+    return m_axId;
+    }
+
+    const CT_UnsignedInt& CT_Surface3DChart::ChildGroup_1::get_axId() const
+    {    
+    if (m_axId)
+    {
+        return *m_axId;
+    }
+    return CT_UnsignedInt::default_instance();
+    }
+
+    bool CT_Surface3DChart::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_Surface3DChart::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_ser = false;
+    
+    if (m_ser)
+    {
+        delete m_ser;
+        m_ser = NULL;
+    }
+    ;
+    
+    m_has_bandFmts = false;
+    
+    if (m_bandFmts)
+    {
+        delete m_bandFmts;
+        m_bandFmts = NULL;
+    }
+    ;
+    
+    m_has_axId = false;
+    
+    if (m_axId)
+    {
+        delete m_axId;
+        m_axId = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_Surface3DChart::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_Surface3DChart* CT_Surface3DChart::default_instance_ = NULL;
 
     // CT_AxPos
     void CT_AxPos::clear()
@@ -18933,6 +28879,7 @@ namespace ns_chart {
     return ST_AxPos::default_instance();
     }
 
+CT_AxPos* CT_AxPos::default_instance_ = NULL;
 
     // CT_Crosses
     void CT_Crosses::clear()
@@ -18995,6 +28942,7 @@ namespace ns_chart {
     return ST_Crosses::default_instance();
     }
 
+CT_Crosses* CT_Crosses::default_instance_ = NULL;
 
     // CT_CrossBetween
     void CT_CrossBetween::clear()
@@ -19057,6 +29005,7 @@ namespace ns_chart {
     return ST_CrossBetween::default_instance();
     }
 
+CT_CrossBetween* CT_CrossBetween::default_instance_ = NULL;
 
     // CT_TickMark
     void CT_TickMark::clear()
@@ -19119,6 +29068,7 @@ namespace ns_chart {
     return ST_TickMark::default_instance();
     }
 
+CT_TickMark* CT_TickMark::default_instance_ = NULL;
 
     // CT_TickLblPos
     void CT_TickLblPos::clear()
@@ -19181,6 +29131,7 @@ namespace ns_chart {
     return ST_TickLblPos::default_instance();
     }
 
+CT_TickLblPos* CT_TickLblPos::default_instance_ = NULL;
 
     // CT_Skip
     void CT_Skip::clear()
@@ -19243,6 +29194,7 @@ namespace ns_chart {
     return ST_Skip::default_instance();
     }
 
+CT_Skip* CT_Skip::default_instance_ = NULL;
 
     // CT_TimeUnit
     void CT_TimeUnit::clear()
@@ -19305,6 +29257,7 @@ namespace ns_chart {
     return ST_TimeUnit::default_instance();
     }
 
+CT_TimeUnit* CT_TimeUnit::default_instance_ = NULL;
 
     // CT_AxisUnit
     void CT_AxisUnit::clear()
@@ -19367,6 +29320,7 @@ namespace ns_chart {
     return ST_AxisUnit::default_instance();
     }
 
+CT_AxisUnit* CT_AxisUnit::default_instance_ = NULL;
 
     // CT_BuiltInUnit
     void CT_BuiltInUnit::clear()
@@ -19429,6 +29383,7 @@ namespace ns_chart {
     return ST_BuiltInUnit::default_instance();
     }
 
+CT_BuiltInUnit* CT_BuiltInUnit::default_instance_ = NULL;
 
     // CT_PictureFormat
     void CT_PictureFormat::clear()
@@ -19491,6 +29446,7 @@ namespace ns_chart {
     return ST_PictureFormat::default_instance();
     }
 
+CT_PictureFormat* CT_PictureFormat::default_instance_ = NULL;
 
     // CT_PictureStackUnit
     void CT_PictureStackUnit::clear()
@@ -19553,6 +29509,7 @@ namespace ns_chart {
     return ST_PictureStackUnit::default_instance();
     }
 
+CT_PictureStackUnit* CT_PictureStackUnit::default_instance_ = NULL;
 
     // CT_PictureOptions
     bool CT_PictureOptions::has_applyToFront() const
@@ -19676,52 +29633,7 @@ namespace ns_chart {
     }
 
     void CT_PictureOptions::clear()
-    {    
-    m_has_applyToFront = false;
-    
-    if (m_applyToFront)
-    {
-        delete m_applyToFront;
-        m_applyToFront = NULL;
-    }
-    
-    
-    m_has_applyToSides = false;
-    
-    if (m_applyToSides)
-    {
-        delete m_applyToSides;
-        m_applyToSides = NULL;
-    }
-    
-    
-    m_has_applyToEnd = false;
-    
-    if (m_applyToEnd)
-    {
-        delete m_applyToEnd;
-        m_applyToEnd = NULL;
-    }
-    
-    
-    m_has_pictureFormat = false;
-    
-    if (m_pictureFormat)
-    {
-        delete m_pictureFormat;
-        m_pictureFormat = NULL;
-    }
-    
-    
-    m_has_pictureStackUnit = false;
-    
-    if (m_pictureStackUnit)
-    {
-        delete m_pictureStackUnit;
-        m_pictureStackUnit = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_PictureOptions::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -19736,27 +29648,27 @@ namespace ns_chart {
             
     if (m_has_applyToFront)
     {
-        m_applyToFront->toXmlElem("chart:applyToFront", "", _outStream);;
+        m_applyToFront->toXmlElem("applyToFront", "", _outStream);;
     }
     
     if (m_has_applyToSides)
     {
-        m_applyToSides->toXmlElem("chart:applyToSides", "", _outStream);;
+        m_applyToSides->toXmlElem("applyToSides", "", _outStream);;
     }
     
     if (m_has_applyToEnd)
     {
-        m_applyToEnd->toXmlElem("chart:applyToEnd", "", _outStream);;
+        m_applyToEnd->toXmlElem("applyToEnd", "", _outStream);;
     }
     
     if (m_has_pictureFormat)
     {
-        m_pictureFormat->toXmlElem("chart:pictureFormat", "", _outStream);;
+        m_pictureFormat->toXmlElem("pictureFormat", "", _outStream);;
     }
     
     if (m_has_pictureStackUnit)
     {
-        m_pictureStackUnit->toXmlElem("chart:pictureStackUnit", "", _outStream);;
+        m_pictureStackUnit->toXmlElem("pictureStackUnit", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19771,6 +29683,7 @@ namespace ns_chart {
     return *CT_PictureOptions::default_instance_;
     }
 
+CT_PictureOptions* CT_PictureOptions::default_instance_ = NULL;
 
     // CT_DispUnitsLbl
     bool CT_DispUnitsLbl::has_layout() const
@@ -19870,43 +29783,7 @@ namespace ns_chart {
     }
 
     void CT_DispUnitsLbl::clear()
-    {    
-    m_has_layout = false;
-    
-    if (m_layout)
-    {
-        delete m_layout;
-        m_layout = NULL;
-    }
-    
-    
-    m_has_tx = false;
-    
-    if (m_tx)
-    {
-        delete m_tx;
-        m_tx = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_txPr = false;
-    
-    if (m_a_txPr)
-    {
-        delete m_a_txPr;
-        m_a_txPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_DispUnitsLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -19921,22 +29798,22 @@ namespace ns_chart {
             
     if (m_has_layout)
     {
-        m_layout->toXmlElem("chart:layout", "", _outStream);;
+        m_layout->toXmlElem("layout", "", _outStream);;
     }
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("tx", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_txPr)
     {
-        m_a_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_a_txPr->toXmlElem("a:txPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19951,6 +29828,7 @@ namespace ns_chart {
     return *CT_DispUnitsLbl::default_instance_;
     }
 
+CT_DispUnitsLbl* CT_DispUnitsLbl::default_instance_ = NULL;
 
     // CT_DispUnits
     bool CT_DispUnits::has_custUnit() const
@@ -20070,43 +29948,7 @@ namespace ns_chart {
     }
 
     void CT_DispUnits::clear()
-    {    
-    m_has_custUnit = false;
-    
-    if (m_custUnit)
-    {
-        delete m_custUnit;
-        m_custUnit = NULL;
-    }
-    
-    
-    m_has_builtInUnit = false;
-    
-    if (m_builtInUnit)
-    {
-        delete m_builtInUnit;
-        m_builtInUnit = NULL;
-    }
-    
-     
-    m_has_dispUnitsLbl = false;
-    
-    if (m_dispUnitsLbl)
-    {
-        delete m_dispUnitsLbl;
-        m_dispUnitsLbl = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_DispUnits::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -20121,22 +29963,22 @@ namespace ns_chart {
             
     if (m_has_custUnit)
     {
-        m_custUnit->toXmlElem("chart:custUnit", "", _outStream);;
+        m_custUnit->toXmlElem("custUnit", "", _outStream);;
     }
     
     if (m_has_builtInUnit)
     {
-        m_builtInUnit->toXmlElem("chart:builtInUnit", "", _outStream);;
+        m_builtInUnit->toXmlElem("builtInUnit", "", _outStream);;
     }
      
     if (m_has_dispUnitsLbl)
     {
-        m_dispUnitsLbl->toXmlElem("chart:dispUnitsLbl", "", _outStream);;
+        m_dispUnitsLbl->toXmlElem("dispUnitsLbl", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20151,6 +29993,7 @@ namespace ns_chart {
     return *CT_DispUnits::default_instance_;
     }
 
+CT_DispUnits* CT_DispUnits::default_instance_ = NULL;
 
     // CT_Orientation
     void CT_Orientation::clear()
@@ -20213,6 +30056,7 @@ namespace ns_chart {
     return ST_Orientation::default_instance();
     }
 
+CT_Orientation* CT_Orientation::default_instance_ = NULL;
 
     // CT_LogBase
     void CT_LogBase::clear()
@@ -20275,6 +30119,7 @@ namespace ns_chart {
     return ST_LogBase::default_instance();
     }
 
+CT_LogBase* CT_LogBase::default_instance_ = NULL;
 
     // CT_Scaling
     bool CT_Scaling::has_logBase() const
@@ -20398,52 +30243,7 @@ namespace ns_chart {
     }
 
     void CT_Scaling::clear()
-    {    
-    m_has_logBase = false;
-    
-    if (m_logBase)
-    {
-        delete m_logBase;
-        m_logBase = NULL;
-    }
-    
-    
-    m_has_orientation = false;
-    
-    if (m_orientation)
-    {
-        delete m_orientation;
-        m_orientation = NULL;
-    }
-    
-    
-    m_has_max = false;
-    
-    if (m_max)
-    {
-        delete m_max;
-        m_max = NULL;
-    }
-    
-    
-    m_has_min = false;
-    
-    if (m_min)
-    {
-        delete m_min;
-        m_min = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Scaling::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -20458,27 +30258,27 @@ namespace ns_chart {
             
     if (m_has_logBase)
     {
-        m_logBase->toXmlElem("chart:logBase", "", _outStream);;
+        m_logBase->toXmlElem("logBase", "", _outStream);;
     }
     
     if (m_has_orientation)
     {
-        m_orientation->toXmlElem("chart:orientation", "", _outStream);;
+        m_orientation->toXmlElem("orientation", "", _outStream);;
     }
     
     if (m_has_max)
     {
-        m_max->toXmlElem("chart:max", "", _outStream);;
+        m_max->toXmlElem("max", "", _outStream);;
     }
     
     if (m_has_min)
     {
-        m_min->toXmlElem("chart:min", "", _outStream);;
+        m_min->toXmlElem("min", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20493,6 +30293,7 @@ namespace ns_chart {
     return *CT_Scaling::default_instance_;
     }
 
+CT_Scaling* CT_Scaling::default_instance_ = NULL;
 
     // CT_LblOffset
     void CT_LblOffset::clear()
@@ -20555,6 +30356,7 @@ namespace ns_chart {
     return ST_LblOffset::default_instance();
     }
 
+CT_LblOffset* CT_LblOffset::default_instance_ = NULL;
 
     // CT_CatAx
     bool CT_CatAx::has_axId() const
@@ -21130,214 +30932,7 @@ namespace ns_chart {
     }
 
     void CT_CatAx::clear()
-    {    
-    m_has_axId = false;
-    
-    if (m_axId)
-    {
-        delete m_axId;
-        m_axId = NULL;
-    }
-    
-    
-    m_has_scaling = false;
-    
-    if (m_scaling)
-    {
-        delete m_scaling;
-        m_scaling = NULL;
-    }
-    
-    
-    m_has_delete = false;
-    
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    
-    
-    m_has_axPos = false;
-    
-    if (m_axPos)
-    {
-        delete m_axPos;
-        m_axPos = NULL;
-    }
-    
-    
-    m_has_majorGridlines = false;
-    
-    if (m_majorGridlines)
-    {
-        delete m_majorGridlines;
-        m_majorGridlines = NULL;
-    }
-    
-    
-    m_has_minorGridlines = false;
-    
-    if (m_minorGridlines)
-    {
-        delete m_minorGridlines;
-        m_minorGridlines = NULL;
-    }
-    
-    
-    m_has_title = false;
-    
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    
-    
-    m_has_numFmt = false;
-    
-    if (m_numFmt)
-    {
-        delete m_numFmt;
-        m_numFmt = NULL;
-    }
-    
-    
-    m_has_majorTickMark = false;
-    
-    if (m_majorTickMark)
-    {
-        delete m_majorTickMark;
-        m_majorTickMark = NULL;
-    }
-    
-    
-    m_has_minorTickMark = false;
-    
-    if (m_minorTickMark)
-    {
-        delete m_minorTickMark;
-        m_minorTickMark = NULL;
-    }
-    
-    
-    m_has_tickLblPos = false;
-    
-    if (m_tickLblPos)
-    {
-        delete m_tickLblPos;
-        m_tickLblPos = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_txPr = false;
-    
-    if (m_a_txPr)
-    {
-        delete m_a_txPr;
-        m_a_txPr = NULL;
-    }
-    
-    
-    m_has_crossAx = false;
-    
-    if (m_crossAx)
-    {
-        delete m_crossAx;
-        m_crossAx = NULL;
-    }
-    
-     
-    m_has_crosses = false;
-    
-    if (m_crosses)
-    {
-        delete m_crosses;
-        m_crosses = NULL;
-    }
-    
-    
-    m_has_crossesAt = false;
-    
-    if (m_crossesAt)
-    {
-        delete m_crossesAt;
-        m_crossesAt = NULL;
-    }
-    
-     
-    m_has_auto = false;
-    
-    if (m_auto)
-    {
-        delete m_auto;
-        m_auto = NULL;
-    }
-    
-    
-    m_has_lblAlgn = false;
-    
-    if (m_lblAlgn)
-    {
-        delete m_lblAlgn;
-        m_lblAlgn = NULL;
-    }
-    
-    
-    m_has_lblOffset = false;
-    
-    if (m_lblOffset)
-    {
-        delete m_lblOffset;
-        m_lblOffset = NULL;
-    }
-    
-    
-    m_has_tickLblSkip = false;
-    
-    if (m_tickLblSkip)
-    {
-        delete m_tickLblSkip;
-        m_tickLblSkip = NULL;
-    }
-    
-    
-    m_has_tickMarkSkip = false;
-    
-    if (m_tickMarkSkip)
-    {
-        delete m_tickMarkSkip;
-        m_tickMarkSkip = NULL;
-    }
-    
-    
-    m_has_noMultiLvlLbl = false;
-    
-    if (m_noMultiLvlLbl)
-    {
-        delete m_noMultiLvlLbl;
-        m_noMultiLvlLbl = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_CatAx::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -21352,117 +30947,117 @@ namespace ns_chart {
             
     if (m_has_axId)
     {
-        m_axId->toXmlElem("chart:axId", "", _outStream);;
+        m_axId->toXmlElem("axId", "", _outStream);;
     }
     
     if (m_has_scaling)
     {
-        m_scaling->toXmlElem("chart:scaling", "", _outStream);;
+        m_scaling->toXmlElem("scaling", "", _outStream);;
     }
     
     if (m_has_delete)
     {
-        m_delete->toXmlElem("chart:delete", "", _outStream);;
+        m_delete->toXmlElem("delete", "", _outStream);;
     }
     
     if (m_has_axPos)
     {
-        m_axPos->toXmlElem("chart:axPos", "", _outStream);;
+        m_axPos->toXmlElem("axPos", "", _outStream);;
     }
     
     if (m_has_majorGridlines)
     {
-        m_majorGridlines->toXmlElem("chart:majorGridlines", "", _outStream);;
+        m_majorGridlines->toXmlElem("majorGridlines", "", _outStream);;
     }
     
     if (m_has_minorGridlines)
     {
-        m_minorGridlines->toXmlElem("chart:minorGridlines", "", _outStream);;
+        m_minorGridlines->toXmlElem("minorGridlines", "", _outStream);;
     }
     
     if (m_has_title)
     {
-        m_title->toXmlElem("chart:title", "", _outStream);;
+        m_title->toXmlElem("title", "", _outStream);;
     }
     
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);;
+        m_numFmt->toXmlElem("numFmt", "", _outStream);;
     }
     
     if (m_has_majorTickMark)
     {
-        m_majorTickMark->toXmlElem("chart:majorTickMark", "", _outStream);;
+        m_majorTickMark->toXmlElem("majorTickMark", "", _outStream);;
     }
     
     if (m_has_minorTickMark)
     {
-        m_minorTickMark->toXmlElem("chart:minorTickMark", "", _outStream);;
+        m_minorTickMark->toXmlElem("minorTickMark", "", _outStream);;
     }
     
     if (m_has_tickLblPos)
     {
-        m_tickLblPos->toXmlElem("chart:tickLblPos", "", _outStream);;
+        m_tickLblPos->toXmlElem("tickLblPos", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_txPr)
     {
-        m_a_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_a_txPr->toXmlElem("a:txPr", "", _outStream);;
     }
     
     if (m_has_crossAx)
     {
-        m_crossAx->toXmlElem("chart:crossAx", "", _outStream);;
+        m_crossAx->toXmlElem("crossAx", "", _outStream);;
     }
      
     if (m_has_crosses)
     {
-        m_crosses->toXmlElem("chart:crosses", "", _outStream);;
+        m_crosses->toXmlElem("crosses", "", _outStream);;
     }
     
     if (m_has_crossesAt)
     {
-        m_crossesAt->toXmlElem("chart:crossesAt", "", _outStream);;
+        m_crossesAt->toXmlElem("crossesAt", "", _outStream);;
     }
      
     if (m_has_auto)
     {
-        m_auto->toXmlElem("chart:auto", "", _outStream);;
+        m_auto->toXmlElem("auto", "", _outStream);;
     }
     
     if (m_has_lblAlgn)
     {
-        m_lblAlgn->toXmlElem("chart:lblAlgn", "", _outStream);;
+        m_lblAlgn->toXmlElem("lblAlgn", "", _outStream);;
     }
     
     if (m_has_lblOffset)
     {
-        m_lblOffset->toXmlElem("chart:lblOffset", "", _outStream);;
+        m_lblOffset->toXmlElem("lblOffset", "", _outStream);;
     }
     
     if (m_has_tickLblSkip)
     {
-        m_tickLblSkip->toXmlElem("chart:tickLblSkip", "", _outStream);;
+        m_tickLblSkip->toXmlElem("tickLblSkip", "", _outStream);;
     }
     
     if (m_has_tickMarkSkip)
     {
-        m_tickMarkSkip->toXmlElem("chart:tickMarkSkip", "", _outStream);;
+        m_tickMarkSkip->toXmlElem("tickMarkSkip", "", _outStream);;
     }
     
     if (m_has_noMultiLvlLbl)
     {
-        m_noMultiLvlLbl->toXmlElem("chart:noMultiLvlLbl", "", _outStream);;
+        m_noMultiLvlLbl->toXmlElem("noMultiLvlLbl", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -21477,6 +31072,7 @@ namespace ns_chart {
     return *CT_CatAx::default_instance_;
     }
 
+CT_CatAx* CT_CatAx::default_instance_ = NULL;
 
     // CT_DateAx
     bool CT_DateAx::has_axId() const
@@ -22076,223 +31672,7 @@ namespace ns_chart {
     }
 
     void CT_DateAx::clear()
-    {    
-    m_has_axId = false;
-    
-    if (m_axId)
-    {
-        delete m_axId;
-        m_axId = NULL;
-    }
-    
-    
-    m_has_scaling = false;
-    
-    if (m_scaling)
-    {
-        delete m_scaling;
-        m_scaling = NULL;
-    }
-    
-    
-    m_has_delete = false;
-    
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    
-    
-    m_has_axPos = false;
-    
-    if (m_axPos)
-    {
-        delete m_axPos;
-        m_axPos = NULL;
-    }
-    
-    
-    m_has_majorGridlines = false;
-    
-    if (m_majorGridlines)
-    {
-        delete m_majorGridlines;
-        m_majorGridlines = NULL;
-    }
-    
-    
-    m_has_minorGridlines = false;
-    
-    if (m_minorGridlines)
-    {
-        delete m_minorGridlines;
-        m_minorGridlines = NULL;
-    }
-    
-    
-    m_has_title = false;
-    
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    
-    
-    m_has_numFmt = false;
-    
-    if (m_numFmt)
-    {
-        delete m_numFmt;
-        m_numFmt = NULL;
-    }
-    
-    
-    m_has_majorTickMark = false;
-    
-    if (m_majorTickMark)
-    {
-        delete m_majorTickMark;
-        m_majorTickMark = NULL;
-    }
-    
-    
-    m_has_minorTickMark = false;
-    
-    if (m_minorTickMark)
-    {
-        delete m_minorTickMark;
-        m_minorTickMark = NULL;
-    }
-    
-    
-    m_has_tickLblPos = false;
-    
-    if (m_tickLblPos)
-    {
-        delete m_tickLblPos;
-        m_tickLblPos = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_txPr = false;
-    
-    if (m_a_txPr)
-    {
-        delete m_a_txPr;
-        m_a_txPr = NULL;
-    }
-    
-    
-    m_has_crossAx = false;
-    
-    if (m_crossAx)
-    {
-        delete m_crossAx;
-        m_crossAx = NULL;
-    }
-    
-     
-    m_has_crosses = false;
-    
-    if (m_crosses)
-    {
-        delete m_crosses;
-        m_crosses = NULL;
-    }
-    
-    
-    m_has_crossesAt = false;
-    
-    if (m_crossesAt)
-    {
-        delete m_crossesAt;
-        m_crossesAt = NULL;
-    }
-    
-     
-    m_has_auto = false;
-    
-    if (m_auto)
-    {
-        delete m_auto;
-        m_auto = NULL;
-    }
-    
-    
-    m_has_lblOffset = false;
-    
-    if (m_lblOffset)
-    {
-        delete m_lblOffset;
-        m_lblOffset = NULL;
-    }
-    
-    
-    m_has_baseTimeUnit = false;
-    
-    if (m_baseTimeUnit)
-    {
-        delete m_baseTimeUnit;
-        m_baseTimeUnit = NULL;
-    }
-    
-    
-    m_has_majorUnit = false;
-    
-    if (m_majorUnit)
-    {
-        delete m_majorUnit;
-        m_majorUnit = NULL;
-    }
-    
-    
-    m_has_majorTimeUnit = false;
-    
-    if (m_majorTimeUnit)
-    {
-        delete m_majorTimeUnit;
-        m_majorTimeUnit = NULL;
-    }
-    
-    
-    m_has_minorUnit = false;
-    
-    if (m_minorUnit)
-    {
-        delete m_minorUnit;
-        m_minorUnit = NULL;
-    }
-    
-    
-    m_has_minorTimeUnit = false;
-    
-    if (m_minorTimeUnit)
-    {
-        delete m_minorTimeUnit;
-        m_minorTimeUnit = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_DateAx::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -22307,122 +31687,122 @@ namespace ns_chart {
             
     if (m_has_axId)
     {
-        m_axId->toXmlElem("chart:axId", "", _outStream);;
+        m_axId->toXmlElem("axId", "", _outStream);;
     }
     
     if (m_has_scaling)
     {
-        m_scaling->toXmlElem("chart:scaling", "", _outStream);;
+        m_scaling->toXmlElem("scaling", "", _outStream);;
     }
     
     if (m_has_delete)
     {
-        m_delete->toXmlElem("chart:delete", "", _outStream);;
+        m_delete->toXmlElem("delete", "", _outStream);;
     }
     
     if (m_has_axPos)
     {
-        m_axPos->toXmlElem("chart:axPos", "", _outStream);;
+        m_axPos->toXmlElem("axPos", "", _outStream);;
     }
     
     if (m_has_majorGridlines)
     {
-        m_majorGridlines->toXmlElem("chart:majorGridlines", "", _outStream);;
+        m_majorGridlines->toXmlElem("majorGridlines", "", _outStream);;
     }
     
     if (m_has_minorGridlines)
     {
-        m_minorGridlines->toXmlElem("chart:minorGridlines", "", _outStream);;
+        m_minorGridlines->toXmlElem("minorGridlines", "", _outStream);;
     }
     
     if (m_has_title)
     {
-        m_title->toXmlElem("chart:title", "", _outStream);;
+        m_title->toXmlElem("title", "", _outStream);;
     }
     
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);;
+        m_numFmt->toXmlElem("numFmt", "", _outStream);;
     }
     
     if (m_has_majorTickMark)
     {
-        m_majorTickMark->toXmlElem("chart:majorTickMark", "", _outStream);;
+        m_majorTickMark->toXmlElem("majorTickMark", "", _outStream);;
     }
     
     if (m_has_minorTickMark)
     {
-        m_minorTickMark->toXmlElem("chart:minorTickMark", "", _outStream);;
+        m_minorTickMark->toXmlElem("minorTickMark", "", _outStream);;
     }
     
     if (m_has_tickLblPos)
     {
-        m_tickLblPos->toXmlElem("chart:tickLblPos", "", _outStream);;
+        m_tickLblPos->toXmlElem("tickLblPos", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_txPr)
     {
-        m_a_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_a_txPr->toXmlElem("a:txPr", "", _outStream);;
     }
     
     if (m_has_crossAx)
     {
-        m_crossAx->toXmlElem("chart:crossAx", "", _outStream);;
+        m_crossAx->toXmlElem("crossAx", "", _outStream);;
     }
      
     if (m_has_crosses)
     {
-        m_crosses->toXmlElem("chart:crosses", "", _outStream);;
+        m_crosses->toXmlElem("crosses", "", _outStream);;
     }
     
     if (m_has_crossesAt)
     {
-        m_crossesAt->toXmlElem("chart:crossesAt", "", _outStream);;
+        m_crossesAt->toXmlElem("crossesAt", "", _outStream);;
     }
      
     if (m_has_auto)
     {
-        m_auto->toXmlElem("chart:auto", "", _outStream);;
+        m_auto->toXmlElem("auto", "", _outStream);;
     }
     
     if (m_has_lblOffset)
     {
-        m_lblOffset->toXmlElem("chart:lblOffset", "", _outStream);;
+        m_lblOffset->toXmlElem("lblOffset", "", _outStream);;
     }
     
     if (m_has_baseTimeUnit)
     {
-        m_baseTimeUnit->toXmlElem("chart:baseTimeUnit", "", _outStream);;
+        m_baseTimeUnit->toXmlElem("baseTimeUnit", "", _outStream);;
     }
     
     if (m_has_majorUnit)
     {
-        m_majorUnit->toXmlElem("chart:majorUnit", "", _outStream);;
+        m_majorUnit->toXmlElem("majorUnit", "", _outStream);;
     }
     
     if (m_has_majorTimeUnit)
     {
-        m_majorTimeUnit->toXmlElem("chart:majorTimeUnit", "", _outStream);;
+        m_majorTimeUnit->toXmlElem("majorTimeUnit", "", _outStream);;
     }
     
     if (m_has_minorUnit)
     {
-        m_minorUnit->toXmlElem("chart:minorUnit", "", _outStream);;
+        m_minorUnit->toXmlElem("minorUnit", "", _outStream);;
     }
     
     if (m_has_minorTimeUnit)
     {
-        m_minorTimeUnit->toXmlElem("chart:minorTimeUnit", "", _outStream);;
+        m_minorTimeUnit->toXmlElem("minorTimeUnit", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -22437,6 +31817,7 @@ namespace ns_chart {
     return *CT_DateAx::default_instance_;
     }
 
+CT_DateAx* CT_DateAx::default_instance_ = NULL;
 
     // CT_SerAx
     bool CT_SerAx::has_axId() const
@@ -22916,178 +32297,7 @@ namespace ns_chart {
     }
 
     void CT_SerAx::clear()
-    {    
-    m_has_axId = false;
-    
-    if (m_axId)
-    {
-        delete m_axId;
-        m_axId = NULL;
-    }
-    
-    
-    m_has_scaling = false;
-    
-    if (m_scaling)
-    {
-        delete m_scaling;
-        m_scaling = NULL;
-    }
-    
-    
-    m_has_delete = false;
-    
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    
-    
-    m_has_axPos = false;
-    
-    if (m_axPos)
-    {
-        delete m_axPos;
-        m_axPos = NULL;
-    }
-    
-    
-    m_has_majorGridlines = false;
-    
-    if (m_majorGridlines)
-    {
-        delete m_majorGridlines;
-        m_majorGridlines = NULL;
-    }
-    
-    
-    m_has_minorGridlines = false;
-    
-    if (m_minorGridlines)
-    {
-        delete m_minorGridlines;
-        m_minorGridlines = NULL;
-    }
-    
-    
-    m_has_title = false;
-    
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    
-    
-    m_has_numFmt = false;
-    
-    if (m_numFmt)
-    {
-        delete m_numFmt;
-        m_numFmt = NULL;
-    }
-    
-    
-    m_has_majorTickMark = false;
-    
-    if (m_majorTickMark)
-    {
-        delete m_majorTickMark;
-        m_majorTickMark = NULL;
-    }
-    
-    
-    m_has_minorTickMark = false;
-    
-    if (m_minorTickMark)
-    {
-        delete m_minorTickMark;
-        m_minorTickMark = NULL;
-    }
-    
-    
-    m_has_tickLblPos = false;
-    
-    if (m_tickLblPos)
-    {
-        delete m_tickLblPos;
-        m_tickLblPos = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_txPr = false;
-    
-    if (m_a_txPr)
-    {
-        delete m_a_txPr;
-        m_a_txPr = NULL;
-    }
-    
-    
-    m_has_crossAx = false;
-    
-    if (m_crossAx)
-    {
-        delete m_crossAx;
-        m_crossAx = NULL;
-    }
-    
-     
-    m_has_crosses = false;
-    
-    if (m_crosses)
-    {
-        delete m_crosses;
-        m_crosses = NULL;
-    }
-    
-    
-    m_has_crossesAt = false;
-    
-    if (m_crossesAt)
-    {
-        delete m_crossesAt;
-        m_crossesAt = NULL;
-    }
-    
-     
-    m_has_tickLblSkip = false;
-    
-    if (m_tickLblSkip)
-    {
-        delete m_tickLblSkip;
-        m_tickLblSkip = NULL;
-    }
-    
-    
-    m_has_tickMarkSkip = false;
-    
-    if (m_tickMarkSkip)
-    {
-        delete m_tickMarkSkip;
-        m_tickMarkSkip = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_SerAx::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -23102,97 +32312,97 @@ namespace ns_chart {
             
     if (m_has_axId)
     {
-        m_axId->toXmlElem("chart:axId", "", _outStream);;
+        m_axId->toXmlElem("axId", "", _outStream);;
     }
     
     if (m_has_scaling)
     {
-        m_scaling->toXmlElem("chart:scaling", "", _outStream);;
+        m_scaling->toXmlElem("scaling", "", _outStream);;
     }
     
     if (m_has_delete)
     {
-        m_delete->toXmlElem("chart:delete", "", _outStream);;
+        m_delete->toXmlElem("delete", "", _outStream);;
     }
     
     if (m_has_axPos)
     {
-        m_axPos->toXmlElem("chart:axPos", "", _outStream);;
+        m_axPos->toXmlElem("axPos", "", _outStream);;
     }
     
     if (m_has_majorGridlines)
     {
-        m_majorGridlines->toXmlElem("chart:majorGridlines", "", _outStream);;
+        m_majorGridlines->toXmlElem("majorGridlines", "", _outStream);;
     }
     
     if (m_has_minorGridlines)
     {
-        m_minorGridlines->toXmlElem("chart:minorGridlines", "", _outStream);;
+        m_minorGridlines->toXmlElem("minorGridlines", "", _outStream);;
     }
     
     if (m_has_title)
     {
-        m_title->toXmlElem("chart:title", "", _outStream);;
+        m_title->toXmlElem("title", "", _outStream);;
     }
     
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);;
+        m_numFmt->toXmlElem("numFmt", "", _outStream);;
     }
     
     if (m_has_majorTickMark)
     {
-        m_majorTickMark->toXmlElem("chart:majorTickMark", "", _outStream);;
+        m_majorTickMark->toXmlElem("majorTickMark", "", _outStream);;
     }
     
     if (m_has_minorTickMark)
     {
-        m_minorTickMark->toXmlElem("chart:minorTickMark", "", _outStream);;
+        m_minorTickMark->toXmlElem("minorTickMark", "", _outStream);;
     }
     
     if (m_has_tickLblPos)
     {
-        m_tickLblPos->toXmlElem("chart:tickLblPos", "", _outStream);;
+        m_tickLblPos->toXmlElem("tickLblPos", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_txPr)
     {
-        m_a_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_a_txPr->toXmlElem("a:txPr", "", _outStream);;
     }
     
     if (m_has_crossAx)
     {
-        m_crossAx->toXmlElem("chart:crossAx", "", _outStream);;
+        m_crossAx->toXmlElem("crossAx", "", _outStream);;
     }
      
     if (m_has_crosses)
     {
-        m_crosses->toXmlElem("chart:crosses", "", _outStream);;
+        m_crosses->toXmlElem("crosses", "", _outStream);;
     }
     
     if (m_has_crossesAt)
     {
-        m_crossesAt->toXmlElem("chart:crossesAt", "", _outStream);;
+        m_crossesAt->toXmlElem("crossesAt", "", _outStream);;
     }
      
     if (m_has_tickLblSkip)
     {
-        m_tickLblSkip->toXmlElem("chart:tickLblSkip", "", _outStream);;
+        m_tickLblSkip->toXmlElem("tickLblSkip", "", _outStream);;
     }
     
     if (m_has_tickMarkSkip)
     {
-        m_tickMarkSkip->toXmlElem("chart:tickMarkSkip", "", _outStream);;
+        m_tickMarkSkip->toXmlElem("tickMarkSkip", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -23207,6 +32417,7 @@ namespace ns_chart {
     return *CT_SerAx::default_instance_;
     }
 
+CT_SerAx* CT_SerAx::default_instance_ = NULL;
 
     // CT_ValAx
     bool CT_ValAx::has_axId() const
@@ -23734,196 +32945,7 @@ namespace ns_chart {
     }
 
     void CT_ValAx::clear()
-    {    
-    m_has_axId = false;
-    
-    if (m_axId)
-    {
-        delete m_axId;
-        m_axId = NULL;
-    }
-    
-    
-    m_has_scaling = false;
-    
-    if (m_scaling)
-    {
-        delete m_scaling;
-        m_scaling = NULL;
-    }
-    
-    
-    m_has_delete = false;
-    
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    
-    
-    m_has_axPos = false;
-    
-    if (m_axPos)
-    {
-        delete m_axPos;
-        m_axPos = NULL;
-    }
-    
-    
-    m_has_majorGridlines = false;
-    
-    if (m_majorGridlines)
-    {
-        delete m_majorGridlines;
-        m_majorGridlines = NULL;
-    }
-    
-    
-    m_has_minorGridlines = false;
-    
-    if (m_minorGridlines)
-    {
-        delete m_minorGridlines;
-        m_minorGridlines = NULL;
-    }
-    
-    
-    m_has_title = false;
-    
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    
-    
-    m_has_numFmt = false;
-    
-    if (m_numFmt)
-    {
-        delete m_numFmt;
-        m_numFmt = NULL;
-    }
-    
-    
-    m_has_majorTickMark = false;
-    
-    if (m_majorTickMark)
-    {
-        delete m_majorTickMark;
-        m_majorTickMark = NULL;
-    }
-    
-    
-    m_has_minorTickMark = false;
-    
-    if (m_minorTickMark)
-    {
-        delete m_minorTickMark;
-        m_minorTickMark = NULL;
-    }
-    
-    
-    m_has_tickLblPos = false;
-    
-    if (m_tickLblPos)
-    {
-        delete m_tickLblPos;
-        m_tickLblPos = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_txPr = false;
-    
-    if (m_a_txPr)
-    {
-        delete m_a_txPr;
-        m_a_txPr = NULL;
-    }
-    
-    
-    m_has_crossAx = false;
-    
-    if (m_crossAx)
-    {
-        delete m_crossAx;
-        m_crossAx = NULL;
-    }
-    
-     
-    m_has_crosses = false;
-    
-    if (m_crosses)
-    {
-        delete m_crosses;
-        m_crosses = NULL;
-    }
-    
-    
-    m_has_crossesAt = false;
-    
-    if (m_crossesAt)
-    {
-        delete m_crossesAt;
-        m_crossesAt = NULL;
-    }
-    
-     
-    m_has_crossBetween = false;
-    
-    if (m_crossBetween)
-    {
-        delete m_crossBetween;
-        m_crossBetween = NULL;
-    }
-    
-    
-    m_has_majorUnit = false;
-    
-    if (m_majorUnit)
-    {
-        delete m_majorUnit;
-        m_majorUnit = NULL;
-    }
-    
-    
-    m_has_minorUnit = false;
-    
-    if (m_minorUnit)
-    {
-        delete m_minorUnit;
-        m_minorUnit = NULL;
-    }
-    
-    
-    m_has_dispUnits = false;
-    
-    if (m_dispUnits)
-    {
-        delete m_dispUnits;
-        m_dispUnits = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_ValAx::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -23938,107 +32960,107 @@ namespace ns_chart {
             
     if (m_has_axId)
     {
-        m_axId->toXmlElem("chart:axId", "", _outStream);;
+        m_axId->toXmlElem("axId", "", _outStream);;
     }
     
     if (m_has_scaling)
     {
-        m_scaling->toXmlElem("chart:scaling", "", _outStream);;
+        m_scaling->toXmlElem("scaling", "", _outStream);;
     }
     
     if (m_has_delete)
     {
-        m_delete->toXmlElem("chart:delete", "", _outStream);;
+        m_delete->toXmlElem("delete", "", _outStream);;
     }
     
     if (m_has_axPos)
     {
-        m_axPos->toXmlElem("chart:axPos", "", _outStream);;
+        m_axPos->toXmlElem("axPos", "", _outStream);;
     }
     
     if (m_has_majorGridlines)
     {
-        m_majorGridlines->toXmlElem("chart:majorGridlines", "", _outStream);;
+        m_majorGridlines->toXmlElem("majorGridlines", "", _outStream);;
     }
     
     if (m_has_minorGridlines)
     {
-        m_minorGridlines->toXmlElem("chart:minorGridlines", "", _outStream);;
+        m_minorGridlines->toXmlElem("minorGridlines", "", _outStream);;
     }
     
     if (m_has_title)
     {
-        m_title->toXmlElem("chart:title", "", _outStream);;
+        m_title->toXmlElem("title", "", _outStream);;
     }
     
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);;
+        m_numFmt->toXmlElem("numFmt", "", _outStream);;
     }
     
     if (m_has_majorTickMark)
     {
-        m_majorTickMark->toXmlElem("chart:majorTickMark", "", _outStream);;
+        m_majorTickMark->toXmlElem("majorTickMark", "", _outStream);;
     }
     
     if (m_has_minorTickMark)
     {
-        m_minorTickMark->toXmlElem("chart:minorTickMark", "", _outStream);;
+        m_minorTickMark->toXmlElem("minorTickMark", "", _outStream);;
     }
     
     if (m_has_tickLblPos)
     {
-        m_tickLblPos->toXmlElem("chart:tickLblPos", "", _outStream);;
+        m_tickLblPos->toXmlElem("tickLblPos", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_txPr)
     {
-        m_a_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_a_txPr->toXmlElem("a:txPr", "", _outStream);;
     }
     
     if (m_has_crossAx)
     {
-        m_crossAx->toXmlElem("chart:crossAx", "", _outStream);;
+        m_crossAx->toXmlElem("crossAx", "", _outStream);;
     }
      
     if (m_has_crosses)
     {
-        m_crosses->toXmlElem("chart:crosses", "", _outStream);;
+        m_crosses->toXmlElem("crosses", "", _outStream);;
     }
     
     if (m_has_crossesAt)
     {
-        m_crossesAt->toXmlElem("chart:crossesAt", "", _outStream);;
+        m_crossesAt->toXmlElem("crossesAt", "", _outStream);;
     }
      
     if (m_has_crossBetween)
     {
-        m_crossBetween->toXmlElem("chart:crossBetween", "", _outStream);;
+        m_crossBetween->toXmlElem("crossBetween", "", _outStream);;
     }
     
     if (m_has_majorUnit)
     {
-        m_majorUnit->toXmlElem("chart:majorUnit", "", _outStream);;
+        m_majorUnit->toXmlElem("majorUnit", "", _outStream);;
     }
     
     if (m_has_minorUnit)
     {
-        m_minorUnit->toXmlElem("chart:minorUnit", "", _outStream);;
+        m_minorUnit->toXmlElem("minorUnit", "", _outStream);;
     }
     
     if (m_has_dispUnits)
     {
-        m_dispUnits->toXmlElem("chart:dispUnits", "", _outStream);;
+        m_dispUnits->toXmlElem("dispUnits", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -24053,6 +33075,7 @@ namespace ns_chart {
     return *CT_ValAx::default_instance_;
     }
 
+CT_ValAx* CT_ValAx::default_instance_ = NULL;
 
     // CT_PlotArea
     bool CT_PlotArea::has_layout() const
@@ -24372,7 +33395,7 @@ namespace ns_chart {
             
     if (m_has_layout)
     {
-        m_layout->toXmlElem("chart:layout", "", _outStream);;
+        m_layout->toXmlElem("layout", "", _outStream);;
     }
      
     {
@@ -24381,100 +33404,100 @@ namespace ns_chart {
         {
             if ((*iter)->has_areaChart())
             {
-                (*iter)->get_areaChart().toXmlElem("chart:areaChart", "", _outStream);
+                (*iter)->get_areaChart().toXmlElem("areaChart", "", _outStream);
             }
             else if ((*iter)->has_area3DChart())
             {
-                (*iter)->get_area3DChart().toXmlElem("chart:area3DChart", "", _outStream);
+                (*iter)->get_area3DChart().toXmlElem("area3DChart", "", _outStream);
             }
             else if ((*iter)->has_lineChart())
             {
-                (*iter)->get_lineChart().toXmlElem("chart:lineChart", "", _outStream);
+                (*iter)->get_lineChart().toXmlElem("lineChart", "", _outStream);
             }
             else if ((*iter)->has_line3DChart())
             {
-                (*iter)->get_line3DChart().toXmlElem("chart:line3DChart", "", _outStream);
+                (*iter)->get_line3DChart().toXmlElem("line3DChart", "", _outStream);
             }
             else if ((*iter)->has_stockChart())
             {
-                (*iter)->get_stockChart().toXmlElem("chart:stockChart", "", _outStream);
+                (*iter)->get_stockChart().toXmlElem("stockChart", "", _outStream);
             }
             else if ((*iter)->has_radarChart())
             {
-                (*iter)->get_radarChart().toXmlElem("chart:radarChart", "", _outStream);
+                (*iter)->get_radarChart().toXmlElem("radarChart", "", _outStream);
             }
             else if ((*iter)->has_scatterChart())
             {
-                (*iter)->get_scatterChart().toXmlElem("chart:scatterChart", "", _outStream);
+                (*iter)->get_scatterChart().toXmlElem("scatterChart", "", _outStream);
             }
             else if ((*iter)->has_pieChart())
             {
-                (*iter)->get_pieChart().toXmlElem("chart:pieChart", "", _outStream);
+                (*iter)->get_pieChart().toXmlElem("pieChart", "", _outStream);
             }
             else if ((*iter)->has_pie3DChart())
             {
-                (*iter)->get_pie3DChart().toXmlElem("chart:pie3DChart", "", _outStream);
+                (*iter)->get_pie3DChart().toXmlElem("pie3DChart", "", _outStream);
             }
             else if ((*iter)->has_doughnutChart())
             {
-                (*iter)->get_doughnutChart().toXmlElem("chart:doughnutChart", "", _outStream);
+                (*iter)->get_doughnutChart().toXmlElem("doughnutChart", "", _outStream);
             }
             else if ((*iter)->has_barChart())
             {
-                (*iter)->get_barChart().toXmlElem("chart:barChart", "", _outStream);
+                (*iter)->get_barChart().toXmlElem("barChart", "", _outStream);
             }
             else if ((*iter)->has_bar3DChart())
             {
-                (*iter)->get_bar3DChart().toXmlElem("chart:bar3DChart", "", _outStream);
+                (*iter)->get_bar3DChart().toXmlElem("bar3DChart", "", _outStream);
             }
             else if ((*iter)->has_ofPieChart())
             {
-                (*iter)->get_ofPieChart().toXmlElem("chart:ofPieChart", "", _outStream);
+                (*iter)->get_ofPieChart().toXmlElem("ofPieChart", "", _outStream);
             }
             else if ((*iter)->has_surfaceChart())
             {
-                (*iter)->get_surfaceChart().toXmlElem("chart:surfaceChart", "", _outStream);
+                (*iter)->get_surfaceChart().toXmlElem("surfaceChart", "", _outStream);
             }
             else if ((*iter)->has_surface3DChart())
             {
-                (*iter)->get_surface3DChart().toXmlElem("chart:surface3DChart", "", _outStream);
+                (*iter)->get_surface3DChart().toXmlElem("surface3DChart", "", _outStream);
             }
             else if ((*iter)->has_bubbleChart())
             {
-                (*iter)->get_bubbleChart().toXmlElem("chart:bubbleChart", "", _outStream);
+                (*iter)->get_bubbleChart().toXmlElem("bubbleChart", "", _outStream);
             }
             else if ((*iter)->has_valAx())
             {
-                (*iter)->get_valAx().toXmlElem("chart:valAx", "", _outStream);
+                (*iter)->get_valAx().toXmlElem("valAx", "", _outStream);
             }
             else if ((*iter)->has_catAx())
             {
-                (*iter)->get_catAx().toXmlElem("chart:catAx", "", _outStream);
+                (*iter)->get_catAx().toXmlElem("catAx", "", _outStream);
             }
             else if ((*iter)->has_dateAx())
             {
-                (*iter)->get_dateAx().toXmlElem("chart:dateAx", "", _outStream);
+                (*iter)->get_dateAx().toXmlElem("dateAx", "", _outStream);
             }
             else if ((*iter)->has_serAx())
             {
-                (*iter)->get_serAx().toXmlElem("chart:serAx", "", _outStream);
+                (*iter)->get_serAx().toXmlElem("serAx", "", _outStream);
             }
         }
     }
      
     if (m_has_dTable)
     {
-        m_dTable->toXmlElem("chart:dTable", "", _outStream);;
+        m_dTable->toXmlElem("dTable", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -24489,6 +33512,3929 @@ namespace ns_chart {
     return *CT_PlotArea::default_instance_;
     }
 
+
+    // CT_PlotArea::ChildGroup_1
+    bool CT_PlotArea::ChildGroup_1::has_areaChart() const
+    {    
+    return m_has_areaChart;
+    }
+
+    CT_AreaChart* CT_PlotArea::ChildGroup_1::mutable_areaChart()
+    {    
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_areaChart = true;
+    if (!m_areaChart)
+    {
+        m_areaChart = new CT_AreaChart();
+    }
+    return m_areaChart;
+    }
+
+    const CT_AreaChart& CT_PlotArea::ChildGroup_1::get_areaChart() const
+    {    
+    if (m_areaChart)
+    {
+        return *m_areaChart;
+    }
+    return CT_AreaChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_area3DChart() const
+    {    
+    return m_has_area3DChart;
+    }
+
+    CT_Area3DChart* CT_PlotArea::ChildGroup_1::mutable_area3DChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = true;
+    if (!m_area3DChart)
+    {
+        m_area3DChart = new CT_Area3DChart();
+    }
+    return m_area3DChart;
+    }
+
+    const CT_Area3DChart& CT_PlotArea::ChildGroup_1::get_area3DChart() const
+    {    
+    if (m_area3DChart)
+    {
+        return *m_area3DChart;
+    }
+    return CT_Area3DChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_lineChart() const
+    {    
+    return m_has_lineChart;
+    }
+
+    CT_LineChart* CT_PlotArea::ChildGroup_1::mutable_lineChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_lineChart = true;
+    if (!m_lineChart)
+    {
+        m_lineChart = new CT_LineChart();
+    }
+    return m_lineChart;
+    }
+
+    const CT_LineChart& CT_PlotArea::ChildGroup_1::get_lineChart() const
+    {    
+    if (m_lineChart)
+    {
+        return *m_lineChart;
+    }
+    return CT_LineChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_line3DChart() const
+    {    
+    return m_has_line3DChart;
+    }
+
+    CT_Line3DChart* CT_PlotArea::ChildGroup_1::mutable_line3DChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = true;
+    if (!m_line3DChart)
+    {
+        m_line3DChart = new CT_Line3DChart();
+    }
+    return m_line3DChart;
+    }
+
+    const CT_Line3DChart& CT_PlotArea::ChildGroup_1::get_line3DChart() const
+    {    
+    if (m_line3DChart)
+    {
+        return *m_line3DChart;
+    }
+    return CT_Line3DChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_stockChart() const
+    {    
+    return m_has_stockChart;
+    }
+
+    CT_StockChart* CT_PlotArea::ChildGroup_1::mutable_stockChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_stockChart = true;
+    if (!m_stockChart)
+    {
+        m_stockChart = new CT_StockChart();
+    }
+    return m_stockChart;
+    }
+
+    const CT_StockChart& CT_PlotArea::ChildGroup_1::get_stockChart() const
+    {    
+    if (m_stockChart)
+    {
+        return *m_stockChart;
+    }
+    return CT_StockChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_radarChart() const
+    {    
+    return m_has_radarChart;
+    }
+
+    CT_RadarChart* CT_PlotArea::ChildGroup_1::mutable_radarChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_radarChart = true;
+    if (!m_radarChart)
+    {
+        m_radarChart = new CT_RadarChart();
+    }
+    return m_radarChart;
+    }
+
+    const CT_RadarChart& CT_PlotArea::ChildGroup_1::get_radarChart() const
+    {    
+    if (m_radarChart)
+    {
+        return *m_radarChart;
+    }
+    return CT_RadarChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_scatterChart() const
+    {    
+    return m_has_scatterChart;
+    }
+
+    CT_ScatterChart* CT_PlotArea::ChildGroup_1::mutable_scatterChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = true;
+    if (!m_scatterChart)
+    {
+        m_scatterChart = new CT_ScatterChart();
+    }
+    return m_scatterChart;
+    }
+
+    const CT_ScatterChart& CT_PlotArea::ChildGroup_1::get_scatterChart() const
+    {    
+    if (m_scatterChart)
+    {
+        return *m_scatterChart;
+    }
+    return CT_ScatterChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_pieChart() const
+    {    
+    return m_has_pieChart;
+    }
+
+    CT_PieChart* CT_PlotArea::ChildGroup_1::mutable_pieChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_pieChart = true;
+    if (!m_pieChart)
+    {
+        m_pieChart = new CT_PieChart();
+    }
+    return m_pieChart;
+    }
+
+    const CT_PieChart& CT_PlotArea::ChildGroup_1::get_pieChart() const
+    {    
+    if (m_pieChart)
+    {
+        return *m_pieChart;
+    }
+    return CT_PieChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_pie3DChart() const
+    {    
+    return m_has_pie3DChart;
+    }
+
+    CT_Pie3DChart* CT_PlotArea::ChildGroup_1::mutable_pie3DChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = true;
+    if (!m_pie3DChart)
+    {
+        m_pie3DChart = new CT_Pie3DChart();
+    }
+    return m_pie3DChart;
+    }
+
+    const CT_Pie3DChart& CT_PlotArea::ChildGroup_1::get_pie3DChart() const
+    {    
+    if (m_pie3DChart)
+    {
+        return *m_pie3DChart;
+    }
+    return CT_Pie3DChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_doughnutChart() const
+    {    
+    return m_has_doughnutChart;
+    }
+
+    CT_DoughnutChart* CT_PlotArea::ChildGroup_1::mutable_doughnutChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = true;
+    if (!m_doughnutChart)
+    {
+        m_doughnutChart = new CT_DoughnutChart();
+    }
+    return m_doughnutChart;
+    }
+
+    const CT_DoughnutChart& CT_PlotArea::ChildGroup_1::get_doughnutChart() const
+    {    
+    if (m_doughnutChart)
+    {
+        return *m_doughnutChart;
+    }
+    return CT_DoughnutChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_barChart() const
+    {    
+    return m_has_barChart;
+    }
+
+    CT_BarChart* CT_PlotArea::ChildGroup_1::mutable_barChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_barChart = true;
+    if (!m_barChart)
+    {
+        m_barChart = new CT_BarChart();
+    }
+    return m_barChart;
+    }
+
+    const CT_BarChart& CT_PlotArea::ChildGroup_1::get_barChart() const
+    {    
+    if (m_barChart)
+    {
+        return *m_barChart;
+    }
+    return CT_BarChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_bar3DChart() const
+    {    
+    return m_has_bar3DChart;
+    }
+
+    CT_Bar3DChart* CT_PlotArea::ChildGroup_1::mutable_bar3DChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = true;
+    if (!m_bar3DChart)
+    {
+        m_bar3DChart = new CT_Bar3DChart();
+    }
+    return m_bar3DChart;
+    }
+
+    const CT_Bar3DChart& CT_PlotArea::ChildGroup_1::get_bar3DChart() const
+    {    
+    if (m_bar3DChart)
+    {
+        return *m_bar3DChart;
+    }
+    return CT_Bar3DChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_ofPieChart() const
+    {    
+    return m_has_ofPieChart;
+    }
+
+    CT_OfPieChart* CT_PlotArea::ChildGroup_1::mutable_ofPieChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = true;
+    if (!m_ofPieChart)
+    {
+        m_ofPieChart = new CT_OfPieChart();
+    }
+    return m_ofPieChart;
+    }
+
+    const CT_OfPieChart& CT_PlotArea::ChildGroup_1::get_ofPieChart() const
+    {    
+    if (m_ofPieChart)
+    {
+        return *m_ofPieChart;
+    }
+    return CT_OfPieChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_surfaceChart() const
+    {    
+    return m_has_surfaceChart;
+    }
+
+    CT_SurfaceChart* CT_PlotArea::ChildGroup_1::mutable_surfaceChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = true;
+    if (!m_surfaceChart)
+    {
+        m_surfaceChart = new CT_SurfaceChart();
+    }
+    return m_surfaceChart;
+    }
+
+    const CT_SurfaceChart& CT_PlotArea::ChildGroup_1::get_surfaceChart() const
+    {    
+    if (m_surfaceChart)
+    {
+        return *m_surfaceChart;
+    }
+    return CT_SurfaceChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_surface3DChart() const
+    {    
+    return m_has_surface3DChart;
+    }
+
+    CT_Surface3DChart* CT_PlotArea::ChildGroup_1::mutable_surface3DChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = true;
+    if (!m_surface3DChart)
+    {
+        m_surface3DChart = new CT_Surface3DChart();
+    }
+    return m_surface3DChart;
+    }
+
+    const CT_Surface3DChart& CT_PlotArea::ChildGroup_1::get_surface3DChart() const
+    {    
+    if (m_surface3DChart)
+    {
+        return *m_surface3DChart;
+    }
+    return CT_Surface3DChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_bubbleChart() const
+    {    
+    return m_has_bubbleChart;
+    }
+
+    CT_BubbleChart* CT_PlotArea::ChildGroup_1::mutable_bubbleChart()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = true;
+    if (!m_bubbleChart)
+    {
+        m_bubbleChart = new CT_BubbleChart();
+    }
+    return m_bubbleChart;
+    }
+
+    const CT_BubbleChart& CT_PlotArea::ChildGroup_1::get_bubbleChart() const
+    {    
+    if (m_bubbleChart)
+    {
+        return *m_bubbleChart;
+    }
+    return CT_BubbleChart::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_valAx() const
+    {    
+    return m_has_valAx;
+    }
+
+    CT_ValAx* CT_PlotArea::ChildGroup_1::mutable_valAx()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_valAx = true;
+    if (!m_valAx)
+    {
+        m_valAx = new CT_ValAx();
+    }
+    return m_valAx;
+    }
+
+    const CT_ValAx& CT_PlotArea::ChildGroup_1::get_valAx() const
+    {    
+    if (m_valAx)
+    {
+        return *m_valAx;
+    }
+    return CT_ValAx::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_catAx() const
+    {    
+    return m_has_catAx;
+    }
+
+    CT_CatAx* CT_PlotArea::ChildGroup_1::mutable_catAx()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = true;
+    if (!m_catAx)
+    {
+        m_catAx = new CT_CatAx();
+    }
+    return m_catAx;
+    }
+
+    const CT_CatAx& CT_PlotArea::ChildGroup_1::get_catAx() const
+    {    
+    if (m_catAx)
+    {
+        return *m_catAx;
+    }
+    return CT_CatAx::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_dateAx() const
+    {    
+    return m_has_dateAx;
+    }
+
+    CT_DateAx* CT_PlotArea::ChildGroup_1::mutable_dateAx()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = false;
+    
+    if (m_serAx)
+    {
+        delete m_serAx;
+        m_serAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = true;
+    if (!m_dateAx)
+    {
+        m_dateAx = new CT_DateAx();
+    }
+    return m_dateAx;
+    }
+
+    const CT_DateAx& CT_PlotArea::ChildGroup_1::get_dateAx() const
+    {    
+    if (m_dateAx)
+    {
+        return *m_dateAx;
+    }
+    return CT_DateAx::default_instance();
+    }
+
+    bool CT_PlotArea::ChildGroup_1::has_serAx() const
+    {    
+    return m_has_serAx;
+    }
+
+    CT_SerAx* CT_PlotArea::ChildGroup_1::mutable_serAx()
+    {    
+    
+    m_has_areaChart = false;
+    
+    if (m_areaChart)
+    {
+        delete m_areaChart;
+        m_areaChart = NULL;
+    }
+    ;
+    
+    m_has_area3DChart = false;
+    
+    if (m_area3DChart)
+    {
+        delete m_area3DChart;
+        m_area3DChart = NULL;
+    }
+    ;
+    
+    m_has_lineChart = false;
+    
+    if (m_lineChart)
+    {
+        delete m_lineChart;
+        m_lineChart = NULL;
+    }
+    ;
+    
+    m_has_line3DChart = false;
+    
+    if (m_line3DChart)
+    {
+        delete m_line3DChart;
+        m_line3DChart = NULL;
+    }
+    ;
+    
+    m_has_stockChart = false;
+    
+    if (m_stockChart)
+    {
+        delete m_stockChart;
+        m_stockChart = NULL;
+    }
+    ;
+    
+    m_has_radarChart = false;
+    
+    if (m_radarChart)
+    {
+        delete m_radarChart;
+        m_radarChart = NULL;
+    }
+    ;
+    
+    m_has_scatterChart = false;
+    
+    if (m_scatterChart)
+    {
+        delete m_scatterChart;
+        m_scatterChart = NULL;
+    }
+    ;
+    
+    m_has_pieChart = false;
+    
+    if (m_pieChart)
+    {
+        delete m_pieChart;
+        m_pieChart = NULL;
+    }
+    ;
+    
+    m_has_pie3DChart = false;
+    
+    if (m_pie3DChart)
+    {
+        delete m_pie3DChart;
+        m_pie3DChart = NULL;
+    }
+    ;
+    
+    m_has_doughnutChart = false;
+    
+    if (m_doughnutChart)
+    {
+        delete m_doughnutChart;
+        m_doughnutChart = NULL;
+    }
+    ;
+    
+    m_has_barChart = false;
+    
+    if (m_barChart)
+    {
+        delete m_barChart;
+        m_barChart = NULL;
+    }
+    ;
+    
+    m_has_bar3DChart = false;
+    
+    if (m_bar3DChart)
+    {
+        delete m_bar3DChart;
+        m_bar3DChart = NULL;
+    }
+    ;
+    
+    m_has_ofPieChart = false;
+    
+    if (m_ofPieChart)
+    {
+        delete m_ofPieChart;
+        m_ofPieChart = NULL;
+    }
+    ;
+    
+    m_has_surfaceChart = false;
+    
+    if (m_surfaceChart)
+    {
+        delete m_surfaceChart;
+        m_surfaceChart = NULL;
+    }
+    ;
+    
+    m_has_surface3DChart = false;
+    
+    if (m_surface3DChart)
+    {
+        delete m_surface3DChart;
+        m_surface3DChart = NULL;
+    }
+    ;
+    
+    m_has_bubbleChart = false;
+    
+    if (m_bubbleChart)
+    {
+        delete m_bubbleChart;
+        m_bubbleChart = NULL;
+    }
+    ;
+    
+    m_has_valAx = false;
+    
+    if (m_valAx)
+    {
+        delete m_valAx;
+        m_valAx = NULL;
+    }
+    ;
+    
+    m_has_catAx = false;
+    
+    if (m_catAx)
+    {
+        delete m_catAx;
+        m_catAx = NULL;
+    }
+    ;
+    
+    m_has_dateAx = false;
+    
+    if (m_dateAx)
+    {
+        delete m_dateAx;
+        m_dateAx = NULL;
+    }
+    ;
+    
+    m_has_serAx = true;
+    if (!m_serAx)
+    {
+        m_serAx = new CT_SerAx();
+    }
+    return m_serAx;
+    }
+
+    const CT_SerAx& CT_PlotArea::ChildGroup_1::get_serAx() const
+    {    
+    if (m_serAx)
+    {
+        return *m_serAx;
+    }
+    return CT_SerAx::default_instance();
+    }
+
+CT_PlotArea* CT_PlotArea::default_instance_ = NULL;
 
     // CT_PivotFmt
     bool CT_PivotFmt::has_idx() const
@@ -24636,61 +37582,7 @@ namespace ns_chart {
     }
 
     void CT_PivotFmt::clear()
-    {    
-    m_has_idx = false;
-    
-    if (m_idx)
-    {
-        delete m_idx;
-        m_idx = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_txPr = false;
-    
-    if (m_a_txPr)
-    {
-        delete m_a_txPr;
-        m_a_txPr = NULL;
-    }
-    
-    
-    m_has_marker = false;
-    
-    if (m_marker)
-    {
-        delete m_marker;
-        m_marker = NULL;
-    }
-    
-    
-    m_has_dLbl = false;
-    
-    if (m_dLbl)
-    {
-        delete m_dLbl;
-        m_dLbl = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_PivotFmt::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -24705,32 +37597,32 @@ namespace ns_chart {
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("idx", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_txPr)
     {
-        m_a_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_a_txPr->toXmlElem("a:txPr", "", _outStream);;
     }
     
     if (m_has_marker)
     {
-        m_marker->toXmlElem("chart:marker", "", _outStream);;
+        m_marker->toXmlElem("marker", "", _outStream);;
     }
     
     if (m_has_dLbl)
     {
-        m_dLbl->toXmlElem("chart:dLbl", "", _outStream);;
+        m_dLbl->toXmlElem("dLbl", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -24745,6 +37637,7 @@ namespace ns_chart {
     return *CT_PivotFmt::default_instance_;
     }
 
+CT_PivotFmt* CT_PivotFmt::default_instance_ = NULL;
 
     // CT_PivotFmts
     CT_PivotFmt* CT_PivotFmts::add_pivotFmt()
@@ -24784,7 +37677,7 @@ namespace ns_chart {
         {
             if ((*iter)->has_pivotFmt())
             {
-                (*iter)->get_pivotFmt().toXmlElem("chart:pivotFmt", "", _outStream);
+                (*iter)->get_pivotFmt().toXmlElem("pivotFmt", "", _outStream);
             }
         }
     }
@@ -24801,6 +37694,34 @@ namespace ns_chart {
     return *CT_PivotFmts::default_instance_;
     }
 
+
+    // CT_PivotFmts::ChildGroup_1
+    bool CT_PivotFmts::ChildGroup_1::has_pivotFmt() const
+    {    
+    return m_has_pivotFmt;
+    }
+
+    CT_PivotFmt* CT_PivotFmts::ChildGroup_1::mutable_pivotFmt()
+    {    
+    
+    m_has_pivotFmt = true;
+    if (!m_pivotFmt)
+    {
+        m_pivotFmt = new CT_PivotFmt();
+    }
+    return m_pivotFmt;
+    }
+
+    const CT_PivotFmt& CT_PivotFmts::ChildGroup_1::get_pivotFmt() const
+    {    
+    if (m_pivotFmt)
+    {
+        return *m_pivotFmt;
+    }
+    return CT_PivotFmt::default_instance();
+    }
+
+CT_PivotFmts* CT_PivotFmts::default_instance_ = NULL;
 
     // CT_LegendPos
     void CT_LegendPos::clear()
@@ -24863,6 +37784,7 @@ namespace ns_chart {
     return ST_LegendPos::default_instance();
     }
 
+CT_LegendPos* CT_LegendPos::default_instance_ = NULL;
 
     // CT_LegendEntry
     bool CT_LegendEntry::has_idx() const
@@ -24939,34 +37861,7 @@ namespace ns_chart {
     }
 
     void CT_LegendEntry::clear()
-    {    
-    m_has_idx = false;
-    
-    if (m_idx)
-    {
-        delete m_idx;
-        m_idx = NULL;
-    }
-    
-     
-    m_has_delete = false;
-    
-    if (m_delete)
-    {
-        delete m_delete;
-        m_delete = NULL;
-    }
-    
-     
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_LegendEntry::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -24981,17 +37876,17 @@ namespace ns_chart {
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("idx", "", _outStream);;
     }
      
     if (m_has_delete)
     {
-        m_delete->toXmlElem("chart:delete", "", _outStream);;
+        m_delete->toXmlElem("delete", "", _outStream);;
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -25006,6 +37901,7 @@ namespace ns_chart {
     return *CT_LegendEntry::default_instance_;
     }
 
+CT_LegendEntry* CT_LegendEntry::default_instance_ = NULL;
 
     // CT_Legend
     bool CT_Legend::has_legendPos() const
@@ -25114,7 +38010,7 @@ namespace ns_chart {
             
     if (m_has_legendPos)
     {
-        m_legendPos->toXmlElem("chart:legendPos", "", _outStream);;
+        m_legendPos->toXmlElem("legendPos", "", _outStream);;
     }
      
     {
@@ -25123,27 +38019,27 @@ namespace ns_chart {
         {
             if ((*iter)->has_legendEntry())
             {
-                (*iter)->get_legendEntry().toXmlElem("chart:legendEntry", "", _outStream);
+                (*iter)->get_legendEntry().toXmlElem("legendEntry", "", _outStream);
             }
             else if ((*iter)->has_layout())
             {
-                (*iter)->get_layout().toXmlElem("chart:layout", "", _outStream);
+                (*iter)->get_layout().toXmlElem("layout", "", _outStream);
             }
             else if ((*iter)->has_overlay())
             {
-                (*iter)->get_overlay().toXmlElem("chart:overlay", "", _outStream);
+                (*iter)->get_overlay().toXmlElem("overlay", "", _outStream);
             }
             else if ((*iter)->has_a_spPr())
             {
-                (*iter)->get_a_spPr().toXmlElem("chart:spPr", "", _outStream);
+                (*iter)->get_a_spPr().toXmlElem("a:spPr", "", _outStream);
             }
             else if ((*iter)->has_a_txPr())
             {
-                (*iter)->get_a_txPr().toXmlElem("chart:txPr", "", _outStream);
+                (*iter)->get_a_txPr().toXmlElem("a:txPr", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -25160,6 +38056,429 @@ namespace ns_chart {
     return *CT_Legend::default_instance_;
     }
 
+
+    // CT_Legend::ChildGroup_1
+    bool CT_Legend::ChildGroup_1::has_legendEntry() const
+    {    
+    return m_has_legendEntry;
+    }
+
+    CT_LegendEntry* CT_Legend::ChildGroup_1::mutable_legendEntry()
+    {    
+    
+    m_has_layout = false;
+    
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+    
+    m_has_overlay = false;
+    
+    if (m_overlay)
+    {
+        delete m_overlay;
+        m_overlay = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_legendEntry = true;
+    if (!m_legendEntry)
+    {
+        m_legendEntry = new CT_LegendEntry();
+    }
+    return m_legendEntry;
+    }
+
+    const CT_LegendEntry& CT_Legend::ChildGroup_1::get_legendEntry() const
+    {    
+    if (m_legendEntry)
+    {
+        return *m_legendEntry;
+    }
+    return CT_LegendEntry::default_instance();
+    }
+
+    bool CT_Legend::ChildGroup_1::has_layout() const
+    {    
+    return m_has_layout;
+    }
+
+    CT_Layout* CT_Legend::ChildGroup_1::mutable_layout()
+    {    
+    
+    m_has_legendEntry = false;
+    
+    if (m_legendEntry)
+    {
+        delete m_legendEntry;
+        m_legendEntry = NULL;
+    }
+    ;
+    
+    m_has_overlay = false;
+    
+    if (m_overlay)
+    {
+        delete m_overlay;
+        m_overlay = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_layout = true;
+    if (!m_layout)
+    {
+        m_layout = new CT_Layout();
+    }
+    return m_layout;
+    }
+
+    const CT_Layout& CT_Legend::ChildGroup_1::get_layout() const
+    {    
+    if (m_layout)
+    {
+        return *m_layout;
+    }
+    return CT_Layout::default_instance();
+    }
+
+    bool CT_Legend::ChildGroup_1::has_overlay() const
+    {    
+    return m_has_overlay;
+    }
+
+    CT_Boolean* CT_Legend::ChildGroup_1::mutable_overlay()
+    {    
+    
+    m_has_legendEntry = false;
+    
+    if (m_legendEntry)
+    {
+        delete m_legendEntry;
+        m_legendEntry = NULL;
+    }
+    ;
+    
+    m_has_layout = false;
+    
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_overlay = true;
+    if (!m_overlay)
+    {
+        m_overlay = new CT_Boolean();
+    }
+    return m_overlay;
+    }
+
+    const CT_Boolean& CT_Legend::ChildGroup_1::get_overlay() const
+    {    
+    if (m_overlay)
+    {
+        return *m_overlay;
+    }
+    return CT_Boolean::default_instance();
+    }
+
+    bool CT_Legend::ChildGroup_1::has_a_spPr() const
+    {    
+    return m_has_a_spPr;
+    }
+
+    ns_a::CT_ShapeProperties* CT_Legend::ChildGroup_1::mutable_a_spPr()
+    {    
+    
+    m_has_legendEntry = false;
+    
+    if (m_legendEntry)
+    {
+        delete m_legendEntry;
+        m_legendEntry = NULL;
+    }
+    ;
+    
+    m_has_layout = false;
+    
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+    
+    m_has_overlay = false;
+    
+    if (m_overlay)
+    {
+        delete m_overlay;
+        m_overlay = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = true;
+    if (!m_a_spPr)
+    {
+        m_a_spPr = new ns_a::CT_ShapeProperties();
+    }
+    return m_a_spPr;
+    }
+
+    const ns_a::CT_ShapeProperties& CT_Legend::ChildGroup_1::get_a_spPr() const
+    {    
+    if (m_a_spPr)
+    {
+        return *m_a_spPr;
+    }
+    return ns_a::CT_ShapeProperties::default_instance();
+    }
+
+    bool CT_Legend::ChildGroup_1::has_a_txPr() const
+    {    
+    return m_has_a_txPr;
+    }
+
+    ns_a::CT_TextBody* CT_Legend::ChildGroup_1::mutable_a_txPr()
+    {    
+    
+    m_has_legendEntry = false;
+    
+    if (m_legendEntry)
+    {
+        delete m_legendEntry;
+        m_legendEntry = NULL;
+    }
+    ;
+    
+    m_has_layout = false;
+    
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+    
+    m_has_overlay = false;
+    
+    if (m_overlay)
+    {
+        delete m_overlay;
+        m_overlay = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = true;
+    if (!m_a_txPr)
+    {
+        m_a_txPr = new ns_a::CT_TextBody();
+    }
+    return m_a_txPr;
+    }
+
+    const ns_a::CT_TextBody& CT_Legend::ChildGroup_1::get_a_txPr() const
+    {    
+    if (m_a_txPr)
+    {
+        return *m_a_txPr;
+    }
+    return ns_a::CT_TextBody::default_instance();
+    }
+
+    bool CT_Legend::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_Legend::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_legendEntry = false;
+    
+    if (m_legendEntry)
+    {
+        delete m_legendEntry;
+        m_legendEntry = NULL;
+    }
+    ;
+    
+    m_has_layout = false;
+    
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+    
+    m_has_overlay = false;
+    
+    if (m_overlay)
+    {
+        delete m_overlay;
+        m_overlay = NULL;
+    }
+    ;
+    
+    m_has_a_spPr = false;
+    
+    if (m_a_spPr)
+    {
+        delete m_a_spPr;
+        m_a_spPr = NULL;
+    }
+    ;
+    
+    m_has_a_txPr = false;
+    
+    if (m_a_txPr)
+    {
+        delete m_a_txPr;
+        m_a_txPr = NULL;
+    }
+    ;
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_Legend::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_Legend* CT_Legend::default_instance_ = NULL;
 
     // CT_DispBlanksAs
     void CT_DispBlanksAs::clear()
@@ -25222,6 +38541,7 @@ namespace ns_chart {
     return ST_DispBlanksAs::default_instance();
     }
 
+CT_DispBlanksAs* CT_DispBlanksAs::default_instance_ = NULL;
 
     // CT_Chart
     bool CT_Chart::has_title() const
@@ -25537,124 +38857,7 @@ namespace ns_chart {
     }
 
     void CT_Chart::clear()
-    {    
-    m_has_title = false;
-    
-    if (m_title)
-    {
-        delete m_title;
-        m_title = NULL;
-    }
-    
-    
-    m_has_autoTitleDeleted = false;
-    
-    if (m_autoTitleDeleted)
-    {
-        delete m_autoTitleDeleted;
-        m_autoTitleDeleted = NULL;
-    }
-    
-    
-    m_has_pivotFmts = false;
-    
-    if (m_pivotFmts)
-    {
-        delete m_pivotFmts;
-        m_pivotFmts = NULL;
-    }
-    
-    
-    m_has_view3D = false;
-    
-    if (m_view3D)
-    {
-        delete m_view3D;
-        m_view3D = NULL;
-    }
-    
-    
-    m_has_floor = false;
-    
-    if (m_floor)
-    {
-        delete m_floor;
-        m_floor = NULL;
-    }
-    
-    
-    m_has_sideWall = false;
-    
-    if (m_sideWall)
-    {
-        delete m_sideWall;
-        m_sideWall = NULL;
-    }
-    
-    
-    m_has_backWall = false;
-    
-    if (m_backWall)
-    {
-        delete m_backWall;
-        m_backWall = NULL;
-    }
-    
-    
-    m_has_plotArea = false;
-    
-    if (m_plotArea)
-    {
-        delete m_plotArea;
-        m_plotArea = NULL;
-    }
-    
-    
-    m_has_legend = false;
-    
-    if (m_legend)
-    {
-        delete m_legend;
-        m_legend = NULL;
-    }
-    
-    
-    m_has_plotVisOnly = false;
-    
-    if (m_plotVisOnly)
-    {
-        delete m_plotVisOnly;
-        m_plotVisOnly = NULL;
-    }
-    
-    
-    m_has_dispBlanksAs = false;
-    
-    if (m_dispBlanksAs)
-    {
-        delete m_dispBlanksAs;
-        m_dispBlanksAs = NULL;
-    }
-    
-    
-    m_has_showDLblsOverMax = false;
-    
-    if (m_showDLblsOverMax)
-    {
-        delete m_showDLblsOverMax;
-        m_showDLblsOverMax = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Chart::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -25669,67 +38872,67 @@ namespace ns_chart {
             
     if (m_has_title)
     {
-        m_title->toXmlElem("chart:title", "", _outStream);;
+        m_title->toXmlElem("title", "", _outStream);;
     }
     
     if (m_has_autoTitleDeleted)
     {
-        m_autoTitleDeleted->toXmlElem("chart:autoTitleDeleted", "", _outStream);;
+        m_autoTitleDeleted->toXmlElem("autoTitleDeleted", "", _outStream);;
     }
     
     if (m_has_pivotFmts)
     {
-        m_pivotFmts->toXmlElem("chart:pivotFmts", "", _outStream);;
+        m_pivotFmts->toXmlElem("pivotFmts", "", _outStream);;
     }
     
     if (m_has_view3D)
     {
-        m_view3D->toXmlElem("chart:view3D", "", _outStream);;
+        m_view3D->toXmlElem("view3D", "", _outStream);;
     }
     
     if (m_has_floor)
     {
-        m_floor->toXmlElem("chart:floor", "", _outStream);;
+        m_floor->toXmlElem("floor", "", _outStream);;
     }
     
     if (m_has_sideWall)
     {
-        m_sideWall->toXmlElem("chart:sideWall", "", _outStream);;
+        m_sideWall->toXmlElem("sideWall", "", _outStream);;
     }
     
     if (m_has_backWall)
     {
-        m_backWall->toXmlElem("chart:backWall", "", _outStream);;
+        m_backWall->toXmlElem("backWall", "", _outStream);;
     }
     
     if (m_has_plotArea)
     {
-        m_plotArea->toXmlElem("chart:plotArea", "", _outStream);;
+        m_plotArea->toXmlElem("plotArea", "", _outStream);;
     }
     
     if (m_has_legend)
     {
-        m_legend->toXmlElem("chart:legend", "", _outStream);;
+        m_legend->toXmlElem("legend", "", _outStream);;
     }
     
     if (m_has_plotVisOnly)
     {
-        m_plotVisOnly->toXmlElem("chart:plotVisOnly", "", _outStream);;
+        m_plotVisOnly->toXmlElem("plotVisOnly", "", _outStream);;
     }
     
     if (m_has_dispBlanksAs)
     {
-        m_dispBlanksAs->toXmlElem("chart:dispBlanksAs", "", _outStream);;
+        m_dispBlanksAs->toXmlElem("dispBlanksAs", "", _outStream);;
     }
     
     if (m_has_showDLblsOverMax)
     {
-        m_showDLblsOverMax->toXmlElem("chart:showDLblsOverMax", "", _outStream);;
+        m_showDLblsOverMax->toXmlElem("showDLblsOverMax", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -25744,6 +38947,7 @@ namespace ns_chart {
     return *CT_Chart::default_instance_;
     }
 
+CT_Chart* CT_Chart::default_instance_ = NULL;
 
     // CT_Style
     void CT_Style::clear()
@@ -25806,6 +39010,7 @@ namespace ns_chart {
     return ST_Style::default_instance();
     }
 
+CT_Style* CT_Style::default_instance_ = NULL;
 
     // CT_PivotSource
     bool CT_PivotSource::has_s_name() const
@@ -25907,12 +39112,12 @@ namespace ns_chart {
             
     if (m_has_s_name)
     {
-        _outStream << "<chart:name>" << m_s_name->toString() << "</chart:name>";;
+        _outStream << "<s:name>" << m_s_name->toString() << "</s:name>";;
     }
     
     if (m_has_fmtId)
     {
-        m_fmtId->toXmlElem("chart:fmtId", "", _outStream);;
+        m_fmtId->toXmlElem("fmtId", "", _outStream);;
     }
      
     {
@@ -25921,7 +39126,7 @@ namespace ns_chart {
         {
             if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
             }
         }
     }
@@ -25938,6 +39143,34 @@ namespace ns_chart {
     return *CT_PivotSource::default_instance_;
     }
 
+
+    // CT_PivotSource::ChildGroup_1
+    bool CT_PivotSource::ChildGroup_1::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_PivotSource::ChildGroup_1::mutable_extLst()
+    {    
+    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_PivotSource::ChildGroup_1::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
+    }
+
+CT_PivotSource* CT_PivotSource::default_instance_ = NULL;
 
     // CT_Protection
     bool CT_Protection::has_chartObject() const
@@ -26061,52 +39294,7 @@ namespace ns_chart {
     }
 
     void CT_Protection::clear()
-    {    
-    m_has_chartObject = false;
-    
-    if (m_chartObject)
-    {
-        delete m_chartObject;
-        m_chartObject = NULL;
-    }
-    
-    
-    m_has_data = false;
-    
-    if (m_data)
-    {
-        delete m_data;
-        m_data = NULL;
-    }
-    
-    
-    m_has_formatting = false;
-    
-    if (m_formatting)
-    {
-        delete m_formatting;
-        m_formatting = NULL;
-    }
-    
-    
-    m_has_selection = false;
-    
-    if (m_selection)
-    {
-        delete m_selection;
-        m_selection = NULL;
-    }
-    
-    
-    m_has_userInterface = false;
-    
-    if (m_userInterface)
-    {
-        delete m_userInterface;
-        m_userInterface = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Protection::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -26121,27 +39309,27 @@ namespace ns_chart {
             
     if (m_has_chartObject)
     {
-        m_chartObject->toXmlElem("chart:chartObject", "", _outStream);;
+        m_chartObject->toXmlElem("chartObject", "", _outStream);;
     }
     
     if (m_has_data)
     {
-        m_data->toXmlElem("chart:data", "", _outStream);;
+        m_data->toXmlElem("data", "", _outStream);;
     }
     
     if (m_has_formatting)
     {
-        m_formatting->toXmlElem("chart:formatting", "", _outStream);;
+        m_formatting->toXmlElem("formatting", "", _outStream);;
     }
     
     if (m_has_selection)
     {
-        m_selection->toXmlElem("chart:selection", "", _outStream);;
+        m_selection->toXmlElem("selection", "", _outStream);;
     }
     
     if (m_has_userInterface)
     {
-        m_userInterface->toXmlElem("chart:userInterface", "", _outStream);;
+        m_userInterface->toXmlElem("userInterface", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -26156,6 +39344,7 @@ namespace ns_chart {
     return *CT_Protection::default_instance_;
     }
 
+CT_Protection* CT_Protection::default_instance_ = NULL;
 
     // CT_HeaderFooter
     bool CT_HeaderFooter::has_s_oddHeader() const
@@ -26312,60 +39501,6 @@ namespace ns_chart {
     
     m_has_differentFirst_attr = false;
     m_differentFirst_attr = false;
-    
-    m_has_s_oddHeader = false;
-    
-    if (m_s_oddHeader)
-    {
-        delete m_s_oddHeader;
-        m_s_oddHeader = NULL;
-    }
-    
-    
-    m_has_s_oddFooter = false;
-    
-    if (m_s_oddFooter)
-    {
-        delete m_s_oddFooter;
-        m_s_oddFooter = NULL;
-    }
-    
-    
-    m_has_s_evenHeader = false;
-    
-    if (m_s_evenHeader)
-    {
-        delete m_s_evenHeader;
-        m_s_evenHeader = NULL;
-    }
-    
-    
-    m_has_s_evenFooter = false;
-    
-    if (m_s_evenFooter)
-    {
-        delete m_s_evenFooter;
-        m_s_evenFooter = NULL;
-    }
-    
-    
-    m_has_s_firstHeader = false;
-    
-    if (m_s_firstHeader)
-    {
-        delete m_s_firstHeader;
-        m_s_firstHeader = NULL;
-    }
-    
-    
-    m_has_s_firstFooter = false;
-    
-    if (m_s_firstFooter)
-    {
-        delete m_s_firstFooter;
-        m_s_firstFooter = NULL;
-    }
-    
     }
 
     void CT_HeaderFooter::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -26398,32 +39533,32 @@ namespace ns_chart {
             
     if (m_has_s_oddHeader)
     {
-        _outStream << "<chart:oddHeader>" << m_s_oddHeader->toString() << "</chart:oddHeader>";;
+        _outStream << "<s:oddHeader>" << m_s_oddHeader->toString() << "</s:oddHeader>";;
     }
     
     if (m_has_s_oddFooter)
     {
-        _outStream << "<chart:oddFooter>" << m_s_oddFooter->toString() << "</chart:oddFooter>";;
+        _outStream << "<s:oddFooter>" << m_s_oddFooter->toString() << "</s:oddFooter>";;
     }
     
     if (m_has_s_evenHeader)
     {
-        _outStream << "<chart:evenHeader>" << m_s_evenHeader->toString() << "</chart:evenHeader>";;
+        _outStream << "<s:evenHeader>" << m_s_evenHeader->toString() << "</s:evenHeader>";;
     }
     
     if (m_has_s_evenFooter)
     {
-        _outStream << "<chart:evenFooter>" << m_s_evenFooter->toString() << "</chart:evenFooter>";;
+        _outStream << "<s:evenFooter>" << m_s_evenFooter->toString() << "</s:evenFooter>";;
     }
     
     if (m_has_s_firstHeader)
     {
-        _outStream << "<chart:firstHeader>" << m_s_firstHeader->toString() << "</chart:firstHeader>";;
+        _outStream << "<s:firstHeader>" << m_s_firstHeader->toString() << "</s:firstHeader>";;
     }
     
     if (m_has_s_firstFooter)
     {
-        _outStream << "<chart:firstFooter>" << m_s_firstFooter->toString() << "</chart:firstFooter>";;
+        _outStream << "<s:firstFooter>" << m_s_firstFooter->toString() << "</s:firstFooter>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -26486,6 +39621,7 @@ namespace ns_chart {
     return m_differentFirst_attr;
     }
 
+CT_HeaderFooter* CT_HeaderFooter::default_instance_ = NULL;
 
     // CT_PageMargins
     void CT_PageMargins::clear()
@@ -26663,6 +39799,7 @@ namespace ns_chart {
     return m_footer_attr;
     }
 
+CT_PageMargins* CT_PageMargins::default_instance_ = NULL;
 
     // CT_ExternalData
     bool CT_ExternalData::has_autoUpdate() const
@@ -26699,15 +39836,6 @@ namespace ns_chart {
         m_r_id_attr = NULL;
     }
     
-    
-    m_has_autoUpdate = false;
-    
-    if (m_autoUpdate)
-    {
-        delete m_autoUpdate;
-        m_autoUpdate = NULL;
-    }
-    
     }
 
     void CT_ExternalData::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -26728,7 +39856,7 @@ namespace ns_chart {
             
     if (m_has_autoUpdate)
     {
-        m_autoUpdate->toXmlElem("chart:autoUpdate", "", _outStream);;
+        m_autoUpdate->toXmlElem("autoUpdate", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -26763,6 +39891,7 @@ namespace ns_chart {
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_ExternalData* CT_ExternalData::default_instance_ = NULL;
 
     // CT_PageSetup
     void CT_PageSetup::clear()
@@ -27095,6 +40224,7 @@ namespace ns_chart {
     return m_copies_attr;
     }
 
+CT_PageSetup* CT_PageSetup::default_instance_ = NULL;
 
     // CT_PrintSettings
     bool CT_PrintSettings::has_headerFooter() const
@@ -27194,43 +40324,7 @@ namespace ns_chart {
     }
 
     void CT_PrintSettings::clear()
-    {    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_PrintSettings::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -27245,22 +40339,22 @@ namespace ns_chart {
             
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("chart:headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("headerFooter", "", _outStream);;
     }
     
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("chart:pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("pageMargins", "", _outStream);;
     }
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("chart:pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("pageSetup", "", _outStream);;
     }
     
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("chart:legacyDrawingHF", "", _outStream);;
+        m_legacyDrawingHF->toXmlElem("legacyDrawingHF", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -27275,6 +40369,7 @@ namespace ns_chart {
     return *CT_PrintSettings::default_instance_;
     }
 
+CT_PrintSettings* CT_PrintSettings::default_instance_ = NULL;
 
     // CT_ChartSpace
     bool CT_ChartSpace::has_date1904() const
@@ -27614,133 +40709,7 @@ namespace ns_chart {
     }
 
     void CT_ChartSpace::clear()
-    {    
-    m_has_date1904 = false;
-    
-    if (m_date1904)
-    {
-        delete m_date1904;
-        m_date1904 = NULL;
-    }
-    
-    
-    m_has_lang = false;
-    
-    if (m_lang)
-    {
-        delete m_lang;
-        m_lang = NULL;
-    }
-    
-    
-    m_has_roundedCorners = false;
-    
-    if (m_roundedCorners)
-    {
-        delete m_roundedCorners;
-        m_roundedCorners = NULL;
-    }
-    
-    
-    m_has_style = false;
-    
-    if (m_style)
-    {
-        delete m_style;
-        m_style = NULL;
-    }
-    
-    
-    m_has_a_clrMapOvr = false;
-    
-    if (m_a_clrMapOvr)
-    {
-        delete m_a_clrMapOvr;
-        m_a_clrMapOvr = NULL;
-    }
-    
-    
-    m_has_pivotSource = false;
-    
-    if (m_pivotSource)
-    {
-        delete m_pivotSource;
-        m_pivotSource = NULL;
-    }
-    
-    
-    m_has_protection = false;
-    
-    if (m_protection)
-    {
-        delete m_protection;
-        m_protection = NULL;
-    }
-    
-    
-    m_has_chart = false;
-    
-    if (m_chart)
-    {
-        delete m_chart;
-        m_chart = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_txPr = false;
-    
-    if (m_a_txPr)
-    {
-        delete m_a_txPr;
-        m_a_txPr = NULL;
-    }
-    
-    
-    m_has_externalData = false;
-    
-    if (m_externalData)
-    {
-        delete m_externalData;
-        m_externalData = NULL;
-    }
-    
-    
-    m_has_printSettings = false;
-    
-    if (m_printSettings)
-    {
-        delete m_printSettings;
-        m_printSettings = NULL;
-    }
-    
-    
-    m_has_userShapes = false;
-    
-    if (m_userShapes)
-    {
-        delete m_userShapes;
-        m_userShapes = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_ChartSpace::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -27755,72 +40724,72 @@ namespace ns_chart {
             
     if (m_has_date1904)
     {
-        m_date1904->toXmlElem("chart:date1904", "", _outStream);;
+        m_date1904->toXmlElem("date1904", "", _outStream);;
     }
     
     if (m_has_lang)
     {
-        m_lang->toXmlElem("chart:lang", "", _outStream);;
+        m_lang->toXmlElem("lang", "", _outStream);;
     }
     
     if (m_has_roundedCorners)
     {
-        m_roundedCorners->toXmlElem("chart:roundedCorners", "", _outStream);;
+        m_roundedCorners->toXmlElem("roundedCorners", "", _outStream);;
     }
     
     if (m_has_style)
     {
-        m_style->toXmlElem("chart:style", "", _outStream);;
+        m_style->toXmlElem("style", "", _outStream);;
     }
     
     if (m_has_a_clrMapOvr)
     {
-        m_a_clrMapOvr->toXmlElem("chart:clrMapOvr", "", _outStream);;
+        m_a_clrMapOvr->toXmlElem("a:clrMapOvr", "", _outStream);;
     }
     
     if (m_has_pivotSource)
     {
-        m_pivotSource->toXmlElem("chart:pivotSource", "", _outStream);;
+        m_pivotSource->toXmlElem("pivotSource", "", _outStream);;
     }
     
     if (m_has_protection)
     {
-        m_protection->toXmlElem("chart:protection", "", _outStream);;
+        m_protection->toXmlElem("protection", "", _outStream);;
     }
     
     if (m_has_chart)
     {
-        m_chart->toXmlElem("chart:chart", "", _outStream);;
+        m_chart->toXmlElem("chart", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_txPr)
     {
-        m_a_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_a_txPr->toXmlElem("a:txPr", "", _outStream);;
     }
     
     if (m_has_externalData)
     {
-        m_externalData->toXmlElem("chart:externalData", "", _outStream);;
+        m_externalData->toXmlElem("externalData", "", _outStream);;
     }
     
     if (m_has_printSettings)
     {
-        m_printSettings->toXmlElem("chart:printSettings", "", _outStream);;
+        m_printSettings->toXmlElem("printSettings", "", _outStream);;
     }
     
     if (m_has_userShapes)
     {
-        m_userShapes->toXmlElem("chart:userShapes", "", _outStream);;
+        m_userShapes->toXmlElem("userShapes", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -27835,6 +40804,7 @@ namespace ns_chart {
     return *CT_ChartSpace::default_instance_;
     }
 
+CT_ChartSpace* CT_ChartSpace::default_instance_ = NULL;
 
     // chartSpace_element
     bool chartSpace_element::has_date1904() const
@@ -28174,137 +41144,11 @@ namespace ns_chart {
     }
 
     void chartSpace_element::clear()
-    {    
-    m_has_date1904 = false;
-    
-    if (m_date1904)
-    {
-        delete m_date1904;
-        m_date1904 = NULL;
-    }
-    
-    
-    m_has_lang = false;
-    
-    if (m_lang)
-    {
-        delete m_lang;
-        m_lang = NULL;
-    }
-    
-    
-    m_has_roundedCorners = false;
-    
-    if (m_roundedCorners)
-    {
-        delete m_roundedCorners;
-        m_roundedCorners = NULL;
-    }
-    
-    
-    m_has_style = false;
-    
-    if (m_style)
-    {
-        delete m_style;
-        m_style = NULL;
-    }
-    
-    
-    m_has_a_clrMapOvr = false;
-    
-    if (m_a_clrMapOvr)
-    {
-        delete m_a_clrMapOvr;
-        m_a_clrMapOvr = NULL;
-    }
-    
-    
-    m_has_pivotSource = false;
-    
-    if (m_pivotSource)
-    {
-        delete m_pivotSource;
-        m_pivotSource = NULL;
-    }
-    
-    
-    m_has_protection = false;
-    
-    if (m_protection)
-    {
-        delete m_protection;
-        m_protection = NULL;
-    }
-    
-    
-    m_has_chart = false;
-    
-    if (m_chart)
-    {
-        delete m_chart;
-        m_chart = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_txPr = false;
-    
-    if (m_a_txPr)
-    {
-        delete m_a_txPr;
-        m_a_txPr = NULL;
-    }
-    
-    
-    m_has_externalData = false;
-    
-    if (m_externalData)
-    {
-        delete m_externalData;
-        m_externalData = NULL;
-    }
-    
-    
-    m_has_printSettings = false;
-    
-    if (m_printSettings)
-    {
-        delete m_printSettings;
-        m_printSettings = NULL;
-    }
-    
-    
-    m_has_userShapes = false;
-    
-    if (m_userShapes)
-    {
-        delete m_userShapes;
-        m_userShapes = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void chartSpace_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<chart:chartSpace";
+    _outStream << "<chartSpace";
     
     _outStream << " " << "xmlns:chart=\"http://schemas.openxmlformats.org/drawingml/2006/chart\"";
     _outStream << " " << "xmlns:cdr=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\"";
@@ -28316,75 +41160,75 @@ namespace ns_chart {
     
     if (m_has_date1904)
     {
-        m_date1904->toXmlElem("chart:date1904", "", _outStream);;
+        m_date1904->toXmlElem("date1904", "", _outStream);;
     }
     
     if (m_has_lang)
     {
-        m_lang->toXmlElem("chart:lang", "", _outStream);;
+        m_lang->toXmlElem("lang", "", _outStream);;
     }
     
     if (m_has_roundedCorners)
     {
-        m_roundedCorners->toXmlElem("chart:roundedCorners", "", _outStream);;
+        m_roundedCorners->toXmlElem("roundedCorners", "", _outStream);;
     }
     
     if (m_has_style)
     {
-        m_style->toXmlElem("chart:style", "", _outStream);;
+        m_style->toXmlElem("style", "", _outStream);;
     }
     
     if (m_has_a_clrMapOvr)
     {
-        m_a_clrMapOvr->toXmlElem("chart:clrMapOvr", "", _outStream);;
+        m_a_clrMapOvr->toXmlElem("a:clrMapOvr", "", _outStream);;
     }
     
     if (m_has_pivotSource)
     {
-        m_pivotSource->toXmlElem("chart:pivotSource", "", _outStream);;
+        m_pivotSource->toXmlElem("pivotSource", "", _outStream);;
     }
     
     if (m_has_protection)
     {
-        m_protection->toXmlElem("chart:protection", "", _outStream);;
+        m_protection->toXmlElem("protection", "", _outStream);;
     }
     
     if (m_has_chart)
     {
-        m_chart->toXmlElem("chart:chart", "", _outStream);;
+        m_chart->toXmlElem("chart", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_txPr)
     {
-        m_a_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_a_txPr->toXmlElem("a:txPr", "", _outStream);;
     }
     
     if (m_has_externalData)
     {
-        m_externalData->toXmlElem("chart:externalData", "", _outStream);;
+        m_externalData->toXmlElem("externalData", "", _outStream);;
     }
     
     if (m_has_printSettings)
     {
-        m_printSettings->toXmlElem("chart:printSettings", "", _outStream);;
+        m_printSettings->toXmlElem("printSettings", "", _outStream);;
     }
     
     if (m_has_userShapes)
     {
-        m_userShapes->toXmlElem("chart:userShapes", "", _outStream);;
+        m_userShapes->toXmlElem("userShapes", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
-    _outStream << "</chart:chartSpace>";
+    _outStream << "</chartSpace>";
     }
 
     const chartSpace_element& chartSpace_element::default_instance()
@@ -28396,6 +41240,7 @@ namespace ns_chart {
     return *chartSpace_element::default_instance_;
     }
 
+chartSpace_element* chartSpace_element::default_instance_ = NULL;
 
     // userShapes_element
 
@@ -28414,7 +41259,7 @@ namespace ns_chart {
 
     void chart_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<chart:chart";
+    _outStream << "<chart";
     
     _outStream << " " << "xmlns:chart=\"http://schemas.openxmlformats.org/drawingml/2006/chart\"";
     _outStream << " " << "xmlns:cdr=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\"";
@@ -28429,7 +41274,7 @@ namespace ns_chart {
     
     _outStream << ">";
     
-    _outStream << "</chart:chart>";
+    _outStream << "</chart>";
     }
 
     const chart_element& chart_element::default_instance()
@@ -28461,4 +41306,5 @@ namespace ns_chart {
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+chart_element* chart_element::default_instance_ = NULL;
 }

@@ -339,6 +339,7 @@ namespace ns_p {
         ST_TransitionCornerDirectionType* mutable_ST_TransitionCornerDirectionType();
         const ST_TransitionCornerDirectionType& get_ST_TransitionCornerDirectionType() const;
         void clear_ST_TransitionCornerDirectionType();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_TransitionEightDirectionType& default_instance();
@@ -412,6 +413,7 @@ namespace ns_p {
         ST_TLTimeIndefinite* mutable_ST_TLTimeIndefinite();
         const ST_TLTimeIndefinite& get_ST_TLTimeIndefinite() const;
         void clear_ST_TLTimeIndefinite();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_TLTime& default_instance();
@@ -886,6 +888,7 @@ namespace ns_p {
         ST_TLTimeIndefinite* mutable_ST_TLTimeIndefinite();
         const ST_TLTimeIndefinite& get_ST_TLTimeIndefinite() const;
         void clear_ST_TLTimeIndefinite();
+        std::string toString() const;
         void clear();
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_TLTimeAnimateValueTime& default_instance();
@@ -1389,8 +1392,10 @@ namespace ns_p {
     public:
         ST_SlideSizeCoordinate();
         ST_SlideSizeCoordinate(const ns_a::ST_PositiveCoordinate32& _ST_PositiveCoordinate32);
+        static const ST_SlideSizeCoordinate& default_instance();
     protected:
     private:
+        static ST_SlideSizeCoordinate* default_instance_;
     };
 
     class ST_SlideSizeType: public XSD::SimpleType
@@ -3870,6 +3875,8 @@ namespace ns_p {
         const XSD::token_& get_uri_attr() const;
     protected:
     private:
+        bool m_has_any;
+        XSD::Element* m_any;
         static CT_Extension* default_instance_;
         bool m_has_uri_attr;
         XSD::token_ m_uri_attr;

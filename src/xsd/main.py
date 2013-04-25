@@ -53,6 +53,16 @@ def run(xsdFileDirPath):
 
     fileNsMap = createFileNsNameMap(allNsList, allImportList)
     for pbSchema in pbSchemas:
+        for schemaLocation in fileNsMap:
+            xmlNs = pbSchema.xml_namespace.add()
+
+            fileNsPrefix = fileNsMap[schemaLocation]
+            xmlNs.prefix = fileNsPrefix
+
+            nsList = [imp.namespace for imp in allImportList if imp.schema_location == schemaLocation]
+            if len(nsList) > 0:
+                xmlNs.uri = nsList[0]
+
         writePbFile('../../files/pb_text/%s.txt' % pbSchema.file_name, pbSchema)
 
         fileNsName = fileNsMap.get(pbSchema.file_name)

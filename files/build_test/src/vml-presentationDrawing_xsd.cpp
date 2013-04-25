@@ -37,6 +37,7 @@ namespace ns_pvml {
     return *CT_Empty::default_instance_;
     }
 
+CT_Empty* CT_Empty::default_instance_ = NULL;
 
     // CT_Rel
     void CT_Rel::clear()
@@ -89,6 +90,7 @@ namespace ns_pvml {
     return m_id_attr;
     }
 
+CT_Rel* CT_Rel::default_instance_ = NULL;
 
     // iscomment_element
     void iscomment_element::clear()
@@ -96,13 +98,13 @@ namespace ns_pvml {
 
     void iscomment_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<pvml:iscomment";
+    _outStream << "<iscomment";
     
     _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
     
     _outStream << ">";
     
-    _outStream << "</pvml:iscomment>";
+    _outStream << "</iscomment>";
     }
 
     const iscomment_element& iscomment_element::default_instance()
@@ -114,6 +116,7 @@ namespace ns_pvml {
     return *iscomment_element::default_instance_;
     }
 
+iscomment_element* iscomment_element::default_instance_ = NULL;
 
     // textdata_element
     void textdata_element::clear()
@@ -124,7 +127,7 @@ namespace ns_pvml {
 
     void textdata_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<pvml:textdata";
+    _outStream << "<textdata";
     
     _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
     
@@ -135,7 +138,7 @@ namespace ns_pvml {
     
     _outStream << ">";
     
-    _outStream << "</pvml:textdata>";
+    _outStream << "</textdata>";
     }
 
     const textdata_element& textdata_element::default_instance()
@@ -163,4 +166,5 @@ namespace ns_pvml {
     return m_id_attr;
     }
 
+textdata_element* textdata_element::default_instance_ = NULL;
 }

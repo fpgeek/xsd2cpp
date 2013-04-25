@@ -87,6 +87,7 @@ namespace ns_vt {
         "error",
         "clsid"
     };
+ST_VectorBaseType* ST_VectorBaseType::default_instance_ = NULL;
 
     // ST_ArrayBaseType
     ST_ArrayBaseType::ST_ArrayBaseType()
@@ -161,6 +162,7 @@ namespace ns_vt {
         "cy",
         "error"
     };
+ST_ArrayBaseType* ST_ArrayBaseType::default_instance_ = NULL;
 
     // ST_Cy
     ST_Cy::ST_Cy()
@@ -220,6 +222,7 @@ namespace ns_vt {
     return strStream.str();
     }
 
+ST_Cy* ST_Cy::default_instance_ = NULL;
 
     // ST_Error
     ST_Error::ST_Error()
@@ -279,6 +282,7 @@ namespace ns_vt {
     return strStream.str();
     }
 
+ST_Error* ST_Error::default_instance_ = NULL;
 
     // CT_Empty
     void CT_Empty::clear()
@@ -307,6 +311,7 @@ namespace ns_vt {
     return *CT_Empty::default_instance_;
     }
 
+CT_Empty* CT_Empty::default_instance_ = NULL;
 
     // CT_Null
     void CT_Null::clear()
@@ -335,6 +340,7 @@ namespace ns_vt {
     return *CT_Null::default_instance_;
     }
 
+CT_Null* CT_Null::default_instance_ = NULL;
 
     // CT_Vector
     CT_Variant* CT_Vector::add_variant()
@@ -533,7 +539,7 @@ namespace ns_vt {
         {
             if ((*iter)->has_variant())
             {
-                (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
+                (*iter)->get_variant().toXmlElem("variant", "", _outStream);
             }
             else if ((*iter)->has_i1())
             {
@@ -601,15 +607,15 @@ namespace ns_vt {
             }
             else if ((*iter)->has_cy())
             {
-                _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
+                _outStream << "<cy>" << (*iter)->get_cy().toString() << "</cy>";
             }
             else if ((*iter)->has_error())
             {
-                _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
+                _outStream << "<error>" << (*iter)->get_error().toString() << "</error>";
             }
             else if ((*iter)->has_s_clsid())
             {
-                _outStream << "<vt:clsid>" << (*iter)->get_s_clsid().toString() << "</vt:clsid>";
+                _outStream << "<s:clsid>" << (*iter)->get_s_clsid().toString() << "</s:clsid>";
             }
         }
     }
@@ -662,6 +668,1977 @@ namespace ns_vt {
     return m_size_attr;
     }
 
+
+    // CT_Vector::ChildGroup_1
+    bool CT_Vector::ChildGroup_1::has_variant() const
+    {    
+    return m_has_variant;
+    }
+
+    CT_Variant* CT_Vector::ChildGroup_1::mutable_variant()
+    {    
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_variant = true;
+    if (!m_variant)
+    {
+        m_variant = new CT_Variant();
+    }
+    return m_variant;
+    }
+
+    const CT_Variant& CT_Vector::ChildGroup_1::get_variant() const
+    {    
+    if (m_variant)
+    {
+        return *m_variant;
+    }
+    return CT_Variant::default_instance();
+    }
+
+    bool CT_Vector::ChildGroup_1::has_i1() const
+    {    
+    return m_has_i1;
+    }
+
+    void CT_Vector::ChildGroup_1::set_i1(const XSD::byte_& _i1)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_i1 = true;
+    m_i1 = _i1;
+    }
+
+    const XSD::byte_& CT_Vector::ChildGroup_1::get_i1() const
+    {    
+    return m_i1;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_i2() const
+    {    
+    return m_has_i2;
+    }
+
+    void CT_Vector::ChildGroup_1::set_i2(const XSD::short_& _i2)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_i2 = true;
+    m_i2 = _i2;
+    }
+
+    const XSD::short_& CT_Vector::ChildGroup_1::get_i2() const
+    {    
+    return m_i2;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_i4() const
+    {    
+    return m_has_i4;
+    }
+
+    void CT_Vector::ChildGroup_1::set_i4(const XSD::int_& _i4)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_i4 = true;
+    m_i4 = _i4;
+    }
+
+    const XSD::int_& CT_Vector::ChildGroup_1::get_i4() const
+    {    
+    return m_i4;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_i8() const
+    {    
+    return m_has_i8;
+    }
+
+    void CT_Vector::ChildGroup_1::set_i8(const XSD::long_& _i8)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_i8 = true;
+    m_i8 = _i8;
+    }
+
+    const XSD::long_& CT_Vector::ChildGroup_1::get_i8() const
+    {    
+    return m_i8;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_ui1() const
+    {    
+    return m_has_ui1;
+    }
+
+    void CT_Vector::ChildGroup_1::set_ui1(const XSD::unsignedByte_& _ui1)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_ui1 = true;
+    m_ui1 = _ui1;
+    }
+
+    const XSD::unsignedByte_& CT_Vector::ChildGroup_1::get_ui1() const
+    {    
+    return m_ui1;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_ui2() const
+    {    
+    return m_has_ui2;
+    }
+
+    void CT_Vector::ChildGroup_1::set_ui2(const XSD::unsignedShort_& _ui2)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_ui2 = true;
+    m_ui2 = _ui2;
+    }
+
+    const XSD::unsignedShort_& CT_Vector::ChildGroup_1::get_ui2() const
+    {    
+    return m_ui2;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_ui4() const
+    {    
+    return m_has_ui4;
+    }
+
+    void CT_Vector::ChildGroup_1::set_ui4(const XSD::unsignedInt_& _ui4)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_ui4 = true;
+    m_ui4 = _ui4;
+    }
+
+    const XSD::unsignedInt_& CT_Vector::ChildGroup_1::get_ui4() const
+    {    
+    return m_ui4;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_ui8() const
+    {    
+    return m_has_ui8;
+    }
+
+    void CT_Vector::ChildGroup_1::set_ui8(const XSD::unsignedLong_& _ui8)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_ui8 = true;
+    m_ui8 = _ui8;
+    }
+
+    const XSD::unsignedLong_& CT_Vector::ChildGroup_1::get_ui8() const
+    {    
+    return m_ui8;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_r4() const
+    {    
+    return m_has_r4;
+    }
+
+    void CT_Vector::ChildGroup_1::set_r4(const XSD::float_& _r4)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_r4 = true;
+    m_r4 = _r4;
+    }
+
+    const XSD::float_& CT_Vector::ChildGroup_1::get_r4() const
+    {    
+    return m_r4;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_r8() const
+    {    
+    return m_has_r8;
+    }
+
+    void CT_Vector::ChildGroup_1::set_r8(const XSD::double_& _r8)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_r8 = true;
+    m_r8 = _r8;
+    }
+
+    const XSD::double_& CT_Vector::ChildGroup_1::get_r8() const
+    {    
+    return m_r8;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_lpstr() const
+    {    
+    return m_has_lpstr;
+    }
+
+    void CT_Vector::ChildGroup_1::set_lpstr(const XSD::string_& _lpstr)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_lpstr = true;
+    m_lpstr = _lpstr;
+    }
+
+    const XSD::string_& CT_Vector::ChildGroup_1::get_lpstr() const
+    {    
+    return m_lpstr;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_lpwstr() const
+    {    
+    return m_has_lpwstr;
+    }
+
+    void CT_Vector::ChildGroup_1::set_lpwstr(const XSD::string_& _lpwstr)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_lpwstr = true;
+    m_lpwstr = _lpwstr;
+    }
+
+    const XSD::string_& CT_Vector::ChildGroup_1::get_lpwstr() const
+    {    
+    return m_lpwstr;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_bstr() const
+    {    
+    return m_has_bstr;
+    }
+
+    void CT_Vector::ChildGroup_1::set_bstr(const XSD::string_& _bstr)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_bstr = true;
+    m_bstr = _bstr;
+    }
+
+    const XSD::string_& CT_Vector::ChildGroup_1::get_bstr() const
+    {    
+    return m_bstr;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_date() const
+    {    
+    return m_has_date;
+    }
+
+    void CT_Vector::ChildGroup_1::set_date(const XSD::dateTime_& _date)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_date = true;
+    m_date = _date;
+    }
+
+    const XSD::dateTime_& CT_Vector::ChildGroup_1::get_date() const
+    {    
+    return m_date;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_filetime() const
+    {    
+    return m_has_filetime;
+    }
+
+    void CT_Vector::ChildGroup_1::set_filetime(const XSD::dateTime_& _filetime)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_filetime = true;
+    m_filetime = _filetime;
+    }
+
+    const XSD::dateTime_& CT_Vector::ChildGroup_1::get_filetime() const
+    {    
+    return m_filetime;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_bool() const
+    {    
+    return m_has_bool;
+    }
+
+    void CT_Vector::ChildGroup_1::set_bool(const XSD::boolean_& _bool)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_bool = true;
+    m_bool = _bool;
+    }
+
+    const XSD::boolean_& CT_Vector::ChildGroup_1::get_bool() const
+    {    
+    return m_bool;
+    }
+
+    bool CT_Vector::ChildGroup_1::has_cy() const
+    {    
+    return m_has_cy;
+    }
+
+    ST_Cy* CT_Vector::ChildGroup_1::mutable_cy()
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_cy = true;
+    if (!m_cy)
+    {
+        m_cy = new ST_Cy();
+    }
+    return m_cy;
+    }
+
+    const ST_Cy& CT_Vector::ChildGroup_1::get_cy() const
+    {    
+    if (m_cy)
+    {
+        return *m_cy;
+    }
+    return ST_Cy::default_instance();
+    }
+
+    bool CT_Vector::ChildGroup_1::has_error() const
+    {    
+    return m_has_error;
+    }
+
+    ST_Error* CT_Vector::ChildGroup_1::mutable_error()
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_error = true;
+    if (!m_error)
+    {
+        m_error = new ST_Error();
+    }
+    return m_error;
+    }
+
+    const ST_Error& CT_Vector::ChildGroup_1::get_error() const
+    {    
+    if (m_error)
+    {
+        return *m_error;
+    }
+    return ST_Error::default_instance();
+    }
+
+    bool CT_Vector::ChildGroup_1::has_s_clsid() const
+    {    
+    return m_has_s_clsid;
+    }
+
+    ns_s::ST_Guid* CT_Vector::ChildGroup_1::mutable_s_clsid()
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = true;
+    if (!m_s_clsid)
+    {
+        m_s_clsid = new ns_s::ST_Guid();
+    }
+    return m_s_clsid;
+    }
+
+    const ns_s::ST_Guid& CT_Vector::ChildGroup_1::get_s_clsid() const
+    {    
+    if (m_s_clsid)
+    {
+        return *m_s_clsid;
+    }
+    return ns_s::ST_Guid::default_instance();
+    }
+
+CT_Vector* CT_Vector::default_instance_ = NULL;
 
     // CT_Array
     CT_Variant* CT_Array::add_variant()
@@ -847,7 +2824,7 @@ namespace ns_vt {
         {
             if ((*iter)->has_variant())
             {
-                (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
+                (*iter)->get_variant().toXmlElem("variant", "", _outStream);
             }
             else if ((*iter)->has_i1())
             {
@@ -907,11 +2884,11 @@ namespace ns_vt {
             }
             else if ((*iter)->has_error())
             {
-                _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
+                _outStream << "<error>" << (*iter)->get_error().toString() << "</error>";
             }
             else if ((*iter)->has_cy())
             {
-                _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
+                _outStream << "<cy>" << (*iter)->get_cy().toString() << "</cy>";
             }
         }
     }
@@ -980,6 +2957,1426 @@ namespace ns_vt {
     return ST_ArrayBaseType::default_instance();
     }
 
+
+    // CT_Array::ChildGroup_1
+    bool CT_Array::ChildGroup_1::has_variant() const
+    {    
+    return m_has_variant;
+    }
+
+    CT_Variant* CT_Array::ChildGroup_1::mutable_variant()
+    {    
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_variant = true;
+    if (!m_variant)
+    {
+        m_variant = new CT_Variant();
+    }
+    return m_variant;
+    }
+
+    const CT_Variant& CT_Array::ChildGroup_1::get_variant() const
+    {    
+    if (m_variant)
+    {
+        return *m_variant;
+    }
+    return CT_Variant::default_instance();
+    }
+
+    bool CT_Array::ChildGroup_1::has_i1() const
+    {    
+    return m_has_i1;
+    }
+
+    void CT_Array::ChildGroup_1::set_i1(const XSD::byte_& _i1)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_i1 = true;
+    m_i1 = _i1;
+    }
+
+    const XSD::byte_& CT_Array::ChildGroup_1::get_i1() const
+    {    
+    return m_i1;
+    }
+
+    bool CT_Array::ChildGroup_1::has_i2() const
+    {    
+    return m_has_i2;
+    }
+
+    void CT_Array::ChildGroup_1::set_i2(const XSD::short_& _i2)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_i2 = true;
+    m_i2 = _i2;
+    }
+
+    const XSD::short_& CT_Array::ChildGroup_1::get_i2() const
+    {    
+    return m_i2;
+    }
+
+    bool CT_Array::ChildGroup_1::has_i4() const
+    {    
+    return m_has_i4;
+    }
+
+    void CT_Array::ChildGroup_1::set_i4(const XSD::int_& _i4)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_i4 = true;
+    m_i4 = _i4;
+    }
+
+    const XSD::int_& CT_Array::ChildGroup_1::get_i4() const
+    {    
+    return m_i4;
+    }
+
+    bool CT_Array::ChildGroup_1::has_int() const
+    {    
+    return m_has_int;
+    }
+
+    void CT_Array::ChildGroup_1::set_int(const XSD::int_& _int)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_int = true;
+    m_int = _int;
+    }
+
+    const XSD::int_& CT_Array::ChildGroup_1::get_int() const
+    {    
+    return m_int;
+    }
+
+    bool CT_Array::ChildGroup_1::has_ui1() const
+    {    
+    return m_has_ui1;
+    }
+
+    void CT_Array::ChildGroup_1::set_ui1(const XSD::unsignedByte_& _ui1)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_ui1 = true;
+    m_ui1 = _ui1;
+    }
+
+    const XSD::unsignedByte_& CT_Array::ChildGroup_1::get_ui1() const
+    {    
+    return m_ui1;
+    }
+
+    bool CT_Array::ChildGroup_1::has_ui2() const
+    {    
+    return m_has_ui2;
+    }
+
+    void CT_Array::ChildGroup_1::set_ui2(const XSD::unsignedShort_& _ui2)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_ui2 = true;
+    m_ui2 = _ui2;
+    }
+
+    const XSD::unsignedShort_& CT_Array::ChildGroup_1::get_ui2() const
+    {    
+    return m_ui2;
+    }
+
+    bool CT_Array::ChildGroup_1::has_ui4() const
+    {    
+    return m_has_ui4;
+    }
+
+    void CT_Array::ChildGroup_1::set_ui4(const XSD::unsignedInt_& _ui4)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_ui4 = true;
+    m_ui4 = _ui4;
+    }
+
+    const XSD::unsignedInt_& CT_Array::ChildGroup_1::get_ui4() const
+    {    
+    return m_ui4;
+    }
+
+    bool CT_Array::ChildGroup_1::has_uint() const
+    {    
+    return m_has_uint;
+    }
+
+    void CT_Array::ChildGroup_1::set_uint(const XSD::unsignedInt_& _uint)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_uint = true;
+    m_uint = _uint;
+    }
+
+    const XSD::unsignedInt_& CT_Array::ChildGroup_1::get_uint() const
+    {    
+    return m_uint;
+    }
+
+    bool CT_Array::ChildGroup_1::has_r4() const
+    {    
+    return m_has_r4;
+    }
+
+    void CT_Array::ChildGroup_1::set_r4(const XSD::float_& _r4)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_r4 = true;
+    m_r4 = _r4;
+    }
+
+    const XSD::float_& CT_Array::ChildGroup_1::get_r4() const
+    {    
+    return m_r4;
+    }
+
+    bool CT_Array::ChildGroup_1::has_r8() const
+    {    
+    return m_has_r8;
+    }
+
+    void CT_Array::ChildGroup_1::set_r8(const XSD::double_& _r8)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_r8 = true;
+    m_r8 = _r8;
+    }
+
+    const XSD::double_& CT_Array::ChildGroup_1::get_r8() const
+    {    
+    return m_r8;
+    }
+
+    bool CT_Array::ChildGroup_1::has_decimal() const
+    {    
+    return m_has_decimal;
+    }
+
+    void CT_Array::ChildGroup_1::set_decimal(const XSD::decimal_& _decimal)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_decimal = true;
+    m_decimal = _decimal;
+    }
+
+    const XSD::decimal_& CT_Array::ChildGroup_1::get_decimal() const
+    {    
+    return m_decimal;
+    }
+
+    bool CT_Array::ChildGroup_1::has_bstr() const
+    {    
+    return m_has_bstr;
+    }
+
+    void CT_Array::ChildGroup_1::set_bstr(const XSD::string_& _bstr)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_bstr = true;
+    m_bstr = _bstr;
+    }
+
+    const XSD::string_& CT_Array::ChildGroup_1::get_bstr() const
+    {    
+    return m_bstr;
+    }
+
+    bool CT_Array::ChildGroup_1::has_date() const
+    {    
+    return m_has_date;
+    }
+
+    void CT_Array::ChildGroup_1::set_date(const XSD::dateTime_& _date)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_date = true;
+    m_date = _date;
+    }
+
+    const XSD::dateTime_& CT_Array::ChildGroup_1::get_date() const
+    {    
+    return m_date;
+    }
+
+    bool CT_Array::ChildGroup_1::has_bool() const
+    {    
+    return m_has_bool;
+    }
+
+    void CT_Array::ChildGroup_1::set_bool(const XSD::boolean_& _bool)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_bool = true;
+    m_bool = _bool;
+    }
+
+    const XSD::boolean_& CT_Array::ChildGroup_1::get_bool() const
+    {    
+    return m_bool;
+    }
+
+    bool CT_Array::ChildGroup_1::has_error() const
+    {    
+    return m_has_error;
+    }
+
+    ST_Error* CT_Array::ChildGroup_1::mutable_error()
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = true;
+    if (!m_error)
+    {
+        m_error = new ST_Error();
+    }
+    return m_error;
+    }
+
+    const ST_Error& CT_Array::ChildGroup_1::get_error() const
+    {    
+    if (m_error)
+    {
+        return *m_error;
+    }
+    return ST_Error::default_instance();
+    }
+
+    bool CT_Array::ChildGroup_1::has_cy() const
+    {    
+    return m_has_cy;
+    }
+
+    ST_Cy* CT_Array::ChildGroup_1::mutable_cy()
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = true;
+    if (!m_cy)
+    {
+        m_cy = new ST_Cy();
+    }
+    return m_cy;
+    }
+
+    const ST_Cy& CT_Array::ChildGroup_1::get_cy() const
+    {    
+    if (m_cy)
+    {
+        return *m_cy;
+    }
+    return ST_Cy::default_instance();
+    }
+
+CT_Array* CT_Array::default_instance_ = NULL;
 
     // CT_Variant
     bool CT_Variant::has_variant() const
@@ -6781,163 +10178,7 @@ namespace ns_vt {
     }
 
     void CT_Variant::clear()
-    {    
-    m_has_variant = false;
-    
-    if (m_variant)
-    {
-        delete m_variant;
-        m_variant = NULL;
-    }
-    
-    
-    m_has_vector = false;
-    
-    if (m_vector)
-    {
-        delete m_vector;
-        m_vector = NULL;
-    }
-    
-    
-    m_has_array = false;
-    
-    if (m_array)
-    {
-        delete m_array;
-        m_array = NULL;
-    }
-    
-    
-    m_has_blob = false;
-    m_blob.clear();
-    
-    m_has_oblob = false;
-    m_oblob.clear();
-    
-    m_has_empty = false;
-    
-    if (m_empty)
-    {
-        delete m_empty;
-        m_empty = NULL;
-    }
-    
-    
-    m_has_null = false;
-    
-    if (m_null)
-    {
-        delete m_null;
-        m_null = NULL;
-    }
-    
-    
-    m_has_i1 = false;
-    m_i1 = 0;
-    
-    m_has_i2 = false;
-    m_i2 = 0;
-    
-    m_has_i4 = false;
-    m_i4 = 0;
-    
-    m_has_i8 = false;
-    m_i8 = 0;
-    
-    m_has_int = false;
-    m_int = 0;
-    
-    m_has_ui1 = false;
-    m_ui1 = 0;
-    
-    m_has_ui2 = false;
-    m_ui2 = 0;
-    
-    m_has_ui4 = false;
-    m_ui4 = 0;
-    
-    m_has_ui8 = false;
-    m_ui8 = 0;
-    
-    m_has_uint = false;
-    m_uint = 0;
-    
-    m_has_r4 = false;
-    m_r4 = 0;
-    
-    m_has_r8 = false;
-    m_r8 = 0;
-    
-    m_has_decimal = false;
-    m_decimal = 0;
-    
-    m_has_lpstr = false;
-    m_lpstr.clear();
-    
-    m_has_lpwstr = false;
-    m_lpwstr.clear();
-    
-    m_has_bstr = false;
-    m_bstr.clear();
-    
-    m_has_date = false;
-    m_date.clear();
-    
-    m_has_filetime = false;
-    m_filetime.clear();
-    
-    m_has_bool = false;
-    m_bool = false;
-    
-    m_has_cy = false;
-    
-    if (m_cy)
-    {
-        delete m_cy;
-        m_cy = NULL;
-    }
-    
-    
-    m_has_error = false;
-    
-    if (m_error)
-    {
-        delete m_error;
-        m_error = NULL;
-    }
-    
-    
-    m_has_stream = false;
-    m_stream.clear();
-    
-    m_has_ostream = false;
-    m_ostream.clear();
-    
-    m_has_storage = false;
-    m_storage.clear();
-    
-    m_has_ostorage = false;
-    m_ostorage.clear();
-    
-    m_has_vstream = false;
-    
-    if (m_vstream)
-    {
-        delete m_vstream;
-        m_vstream = NULL;
-    }
-    
-    
-    m_has_s_clsid = false;
-    
-    if (m_s_clsid)
-    {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Variant::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -6952,17 +10193,17 @@ namespace ns_vt {
             
     if (m_has_variant)
     {
-        m_variant->toXmlElem("vt:variant", "", _outStream);;
+        m_variant->toXmlElem("variant", "", _outStream);;
     }
     
     if (m_has_vector)
     {
-        m_vector->toXmlElem("vt:vector", "", _outStream);;
+        m_vector->toXmlElem("vector", "", _outStream);;
     }
     
     if (m_has_array)
     {
-        m_array->toXmlElem("vt:array", "", _outStream);;
+        m_array->toXmlElem("array", "", _outStream);;
     }
     
     if (m_has_blob)
@@ -6977,12 +10218,12 @@ namespace ns_vt {
     
     if (m_has_empty)
     {
-        m_empty->toXmlElem("vt:empty", "", _outStream);;
+        m_empty->toXmlElem("empty", "", _outStream);;
     }
     
     if (m_has_null)
     {
-        m_null->toXmlElem("vt:null", "", _outStream);;
+        m_null->toXmlElem("null", "", _outStream);;
     }
     
     if (m_has_i1)
@@ -7082,12 +10323,12 @@ namespace ns_vt {
     
     if (m_has_cy)
     {
-        _outStream << "<vt:cy>" << m_cy->toString() << "</vt:cy>";;
+        _outStream << "<cy>" << m_cy->toString() << "</cy>";;
     }
     
     if (m_has_error)
     {
-        _outStream << "<vt:error>" << m_error->toString() << "</vt:error>";;
+        _outStream << "<error>" << m_error->toString() << "</error>";;
     }
     
     if (m_has_stream)
@@ -7112,12 +10353,12 @@ namespace ns_vt {
     
     if (m_has_vstream)
     {
-        m_vstream->toXmlElem("vt:vstream", "", _outStream);;
+        m_vstream->toXmlElem("vstream", "", _outStream);;
     }
     
     if (m_has_s_clsid)
     {
-        _outStream << "<vt:clsid>" << m_s_clsid->toString() << "</vt:clsid>";;
+        _outStream << "<s:clsid>" << m_s_clsid->toString() << "</s:clsid>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7132,6 +10373,7 @@ namespace ns_vt {
     return *CT_Variant::default_instance_;
     }
 
+CT_Variant* CT_Variant::default_instance_ = NULL;
 
     // CT_Vstream
     void CT_Vstream::clear()
@@ -7194,6 +10436,7 @@ namespace ns_vt {
     return ns_s::ST_Guid::default_instance();
     }
 
+CT_Vstream* CT_Vstream::default_instance_ = NULL;
 
     // variant_element
     bool variant_element::has_variant() const
@@ -12995,167 +16238,11 @@ namespace ns_vt {
     }
 
     void variant_element::clear()
-    {    
-    m_has_variant = false;
-    
-    if (m_variant)
-    {
-        delete m_variant;
-        m_variant = NULL;
-    }
-    
-    
-    m_has_vector = false;
-    
-    if (m_vector)
-    {
-        delete m_vector;
-        m_vector = NULL;
-    }
-    
-    
-    m_has_array = false;
-    
-    if (m_array)
-    {
-        delete m_array;
-        m_array = NULL;
-    }
-    
-    
-    m_has_blob = false;
-    m_blob.clear();
-    
-    m_has_oblob = false;
-    m_oblob.clear();
-    
-    m_has_empty = false;
-    
-    if (m_empty)
-    {
-        delete m_empty;
-        m_empty = NULL;
-    }
-    
-    
-    m_has_null = false;
-    
-    if (m_null)
-    {
-        delete m_null;
-        m_null = NULL;
-    }
-    
-    
-    m_has_i1 = false;
-    m_i1 = 0;
-    
-    m_has_i2 = false;
-    m_i2 = 0;
-    
-    m_has_i4 = false;
-    m_i4 = 0;
-    
-    m_has_i8 = false;
-    m_i8 = 0;
-    
-    m_has_int = false;
-    m_int = 0;
-    
-    m_has_ui1 = false;
-    m_ui1 = 0;
-    
-    m_has_ui2 = false;
-    m_ui2 = 0;
-    
-    m_has_ui4 = false;
-    m_ui4 = 0;
-    
-    m_has_ui8 = false;
-    m_ui8 = 0;
-    
-    m_has_uint = false;
-    m_uint = 0;
-    
-    m_has_r4 = false;
-    m_r4 = 0;
-    
-    m_has_r8 = false;
-    m_r8 = 0;
-    
-    m_has_decimal = false;
-    m_decimal = 0;
-    
-    m_has_lpstr = false;
-    m_lpstr.clear();
-    
-    m_has_lpwstr = false;
-    m_lpwstr.clear();
-    
-    m_has_bstr = false;
-    m_bstr.clear();
-    
-    m_has_date = false;
-    m_date.clear();
-    
-    m_has_filetime = false;
-    m_filetime.clear();
-    
-    m_has_bool = false;
-    m_bool = false;
-    
-    m_has_cy = false;
-    
-    if (m_cy)
-    {
-        delete m_cy;
-        m_cy = NULL;
-    }
-    
-    
-    m_has_error = false;
-    
-    if (m_error)
-    {
-        delete m_error;
-        m_error = NULL;
-    }
-    
-    
-    m_has_stream = false;
-    m_stream.clear();
-    
-    m_has_ostream = false;
-    m_ostream.clear();
-    
-    m_has_storage = false;
-    m_storage.clear();
-    
-    m_has_ostorage = false;
-    m_ostorage.clear();
-    
-    m_has_vstream = false;
-    
-    if (m_vstream)
-    {
-        delete m_vstream;
-        m_vstream = NULL;
-    }
-    
-    
-    m_has_s_clsid = false;
-    
-    if (m_s_clsid)
-    {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
-    }
-    
-    }
+    {    }
 
     void variant_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<vt:variant";
+    _outStream << "<variant";
     
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -13164,17 +16251,17 @@ namespace ns_vt {
     
     if (m_has_variant)
     {
-        m_variant->toXmlElem("vt:variant", "", _outStream);;
+        m_variant->toXmlElem("variant", "", _outStream);;
     }
     
     if (m_has_vector)
     {
-        m_vector->toXmlElem("vt:vector", "", _outStream);;
+        m_vector->toXmlElem("vector", "", _outStream);;
     }
     
     if (m_has_array)
     {
-        m_array->toXmlElem("vt:array", "", _outStream);;
+        m_array->toXmlElem("array", "", _outStream);;
     }
     
     if (m_has_blob)
@@ -13189,12 +16276,12 @@ namespace ns_vt {
     
     if (m_has_empty)
     {
-        m_empty->toXmlElem("vt:empty", "", _outStream);;
+        m_empty->toXmlElem("empty", "", _outStream);;
     }
     
     if (m_has_null)
     {
-        m_null->toXmlElem("vt:null", "", _outStream);;
+        m_null->toXmlElem("null", "", _outStream);;
     }
     
     if (m_has_i1)
@@ -13294,12 +16381,12 @@ namespace ns_vt {
     
     if (m_has_cy)
     {
-        _outStream << "<vt:cy>" << m_cy->toString() << "</vt:cy>";;
+        _outStream << "<cy>" << m_cy->toString() << "</cy>";;
     }
     
     if (m_has_error)
     {
-        _outStream << "<vt:error>" << m_error->toString() << "</vt:error>";;
+        _outStream << "<error>" << m_error->toString() << "</error>";;
     }
     
     if (m_has_stream)
@@ -13324,15 +16411,15 @@ namespace ns_vt {
     
     if (m_has_vstream)
     {
-        m_vstream->toXmlElem("vt:vstream", "", _outStream);;
+        m_vstream->toXmlElem("vstream", "", _outStream);;
     }
     
     if (m_has_s_clsid)
     {
-        _outStream << "<vt:clsid>" << m_s_clsid->toString() << "</vt:clsid>";;
+        _outStream << "<s:clsid>" << m_s_clsid->toString() << "</s:clsid>";;
     }
     
-    _outStream << "</vt:variant>";
+    _outStream << "</variant>";
     }
 
     const variant_element& variant_element::default_instance()
@@ -13344,6 +16431,7 @@ namespace ns_vt {
     return *variant_element::default_instance_;
     }
 
+variant_element* variant_element::default_instance_ = NULL;
 
     // vector_element
     CT_Variant* vector_element::add_variant()
@@ -13516,7 +16604,7 @@ namespace ns_vt {
 
     void vector_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<vt:vector";
+    _outStream << "<vector";
     
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -13540,7 +16628,7 @@ namespace ns_vt {
         {
             if ((*iter)->has_variant())
             {
-                (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
+                (*iter)->get_variant().toXmlElem("variant", "", _outStream);
             }
             else if ((*iter)->has_i1())
             {
@@ -13608,20 +16696,20 @@ namespace ns_vt {
             }
             else if ((*iter)->has_cy())
             {
-                _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
+                _outStream << "<cy>" << (*iter)->get_cy().toString() << "</cy>";
             }
             else if ((*iter)->has_error())
             {
-                _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
+                _outStream << "<error>" << (*iter)->get_error().toString() << "</error>";
             }
             else if ((*iter)->has_s_clsid())
             {
-                _outStream << "<vt:clsid>" << (*iter)->get_s_clsid().toString() << "</vt:clsid>";
+                _outStream << "<s:clsid>" << (*iter)->get_s_clsid().toString() << "</s:clsid>";
             }
         }
     }
     
-    _outStream << "</vt:vector>";
+    _outStream << "</vector>";
     }
 
     const vector_element& vector_element::default_instance()
@@ -13669,6 +16757,1977 @@ namespace ns_vt {
     return m_size_attr;
     }
 
+
+    // vector_element::ChildGroup_1
+    bool vector_element::ChildGroup_1::has_variant() const
+    {    
+    return m_has_variant;
+    }
+
+    CT_Variant* vector_element::ChildGroup_1::mutable_variant()
+    {    
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_variant = true;
+    if (!m_variant)
+    {
+        m_variant = new CT_Variant();
+    }
+    return m_variant;
+    }
+
+    const CT_Variant& vector_element::ChildGroup_1::get_variant() const
+    {    
+    if (m_variant)
+    {
+        return *m_variant;
+    }
+    return CT_Variant::default_instance();
+    }
+
+    bool vector_element::ChildGroup_1::has_i1() const
+    {    
+    return m_has_i1;
+    }
+
+    void vector_element::ChildGroup_1::set_i1(const XSD::byte_& _i1)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_i1 = true;
+    m_i1 = _i1;
+    }
+
+    const XSD::byte_& vector_element::ChildGroup_1::get_i1() const
+    {    
+    return m_i1;
+    }
+
+    bool vector_element::ChildGroup_1::has_i2() const
+    {    
+    return m_has_i2;
+    }
+
+    void vector_element::ChildGroup_1::set_i2(const XSD::short_& _i2)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_i2 = true;
+    m_i2 = _i2;
+    }
+
+    const XSD::short_& vector_element::ChildGroup_1::get_i2() const
+    {    
+    return m_i2;
+    }
+
+    bool vector_element::ChildGroup_1::has_i4() const
+    {    
+    return m_has_i4;
+    }
+
+    void vector_element::ChildGroup_1::set_i4(const XSD::int_& _i4)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_i4 = true;
+    m_i4 = _i4;
+    }
+
+    const XSD::int_& vector_element::ChildGroup_1::get_i4() const
+    {    
+    return m_i4;
+    }
+
+    bool vector_element::ChildGroup_1::has_i8() const
+    {    
+    return m_has_i8;
+    }
+
+    void vector_element::ChildGroup_1::set_i8(const XSD::long_& _i8)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_i8 = true;
+    m_i8 = _i8;
+    }
+
+    const XSD::long_& vector_element::ChildGroup_1::get_i8() const
+    {    
+    return m_i8;
+    }
+
+    bool vector_element::ChildGroup_1::has_ui1() const
+    {    
+    return m_has_ui1;
+    }
+
+    void vector_element::ChildGroup_1::set_ui1(const XSD::unsignedByte_& _ui1)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_ui1 = true;
+    m_ui1 = _ui1;
+    }
+
+    const XSD::unsignedByte_& vector_element::ChildGroup_1::get_ui1() const
+    {    
+    return m_ui1;
+    }
+
+    bool vector_element::ChildGroup_1::has_ui2() const
+    {    
+    return m_has_ui2;
+    }
+
+    void vector_element::ChildGroup_1::set_ui2(const XSD::unsignedShort_& _ui2)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_ui2 = true;
+    m_ui2 = _ui2;
+    }
+
+    const XSD::unsignedShort_& vector_element::ChildGroup_1::get_ui2() const
+    {    
+    return m_ui2;
+    }
+
+    bool vector_element::ChildGroup_1::has_ui4() const
+    {    
+    return m_has_ui4;
+    }
+
+    void vector_element::ChildGroup_1::set_ui4(const XSD::unsignedInt_& _ui4)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_ui4 = true;
+    m_ui4 = _ui4;
+    }
+
+    const XSD::unsignedInt_& vector_element::ChildGroup_1::get_ui4() const
+    {    
+    return m_ui4;
+    }
+
+    bool vector_element::ChildGroup_1::has_ui8() const
+    {    
+    return m_has_ui8;
+    }
+
+    void vector_element::ChildGroup_1::set_ui8(const XSD::unsignedLong_& _ui8)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_ui8 = true;
+    m_ui8 = _ui8;
+    }
+
+    const XSD::unsignedLong_& vector_element::ChildGroup_1::get_ui8() const
+    {    
+    return m_ui8;
+    }
+
+    bool vector_element::ChildGroup_1::has_r4() const
+    {    
+    return m_has_r4;
+    }
+
+    void vector_element::ChildGroup_1::set_r4(const XSD::float_& _r4)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_r4 = true;
+    m_r4 = _r4;
+    }
+
+    const XSD::float_& vector_element::ChildGroup_1::get_r4() const
+    {    
+    return m_r4;
+    }
+
+    bool vector_element::ChildGroup_1::has_r8() const
+    {    
+    return m_has_r8;
+    }
+
+    void vector_element::ChildGroup_1::set_r8(const XSD::double_& _r8)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_r8 = true;
+    m_r8 = _r8;
+    }
+
+    const XSD::double_& vector_element::ChildGroup_1::get_r8() const
+    {    
+    return m_r8;
+    }
+
+    bool vector_element::ChildGroup_1::has_lpstr() const
+    {    
+    return m_has_lpstr;
+    }
+
+    void vector_element::ChildGroup_1::set_lpstr(const XSD::string_& _lpstr)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_lpstr = true;
+    m_lpstr = _lpstr;
+    }
+
+    const XSD::string_& vector_element::ChildGroup_1::get_lpstr() const
+    {    
+    return m_lpstr;
+    }
+
+    bool vector_element::ChildGroup_1::has_lpwstr() const
+    {    
+    return m_has_lpwstr;
+    }
+
+    void vector_element::ChildGroup_1::set_lpwstr(const XSD::string_& _lpwstr)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_lpwstr = true;
+    m_lpwstr = _lpwstr;
+    }
+
+    const XSD::string_& vector_element::ChildGroup_1::get_lpwstr() const
+    {    
+    return m_lpwstr;
+    }
+
+    bool vector_element::ChildGroup_1::has_bstr() const
+    {    
+    return m_has_bstr;
+    }
+
+    void vector_element::ChildGroup_1::set_bstr(const XSD::string_& _bstr)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_bstr = true;
+    m_bstr = _bstr;
+    }
+
+    const XSD::string_& vector_element::ChildGroup_1::get_bstr() const
+    {    
+    return m_bstr;
+    }
+
+    bool vector_element::ChildGroup_1::has_date() const
+    {    
+    return m_has_date;
+    }
+
+    void vector_element::ChildGroup_1::set_date(const XSD::dateTime_& _date)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_date = true;
+    m_date = _date;
+    }
+
+    const XSD::dateTime_& vector_element::ChildGroup_1::get_date() const
+    {    
+    return m_date;
+    }
+
+    bool vector_element::ChildGroup_1::has_filetime() const
+    {    
+    return m_has_filetime;
+    }
+
+    void vector_element::ChildGroup_1::set_filetime(const XSD::dateTime_& _filetime)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_filetime = true;
+    m_filetime = _filetime;
+    }
+
+    const XSD::dateTime_& vector_element::ChildGroup_1::get_filetime() const
+    {    
+    return m_filetime;
+    }
+
+    bool vector_element::ChildGroup_1::has_bool() const
+    {    
+    return m_has_bool;
+    }
+
+    void vector_element::ChildGroup_1::set_bool(const XSD::boolean_& _bool)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_bool = true;
+    m_bool = _bool;
+    }
+
+    const XSD::boolean_& vector_element::ChildGroup_1::get_bool() const
+    {    
+    return m_bool;
+    }
+
+    bool vector_element::ChildGroup_1::has_cy() const
+    {    
+    return m_has_cy;
+    }
+
+    ST_Cy* vector_element::ChildGroup_1::mutable_cy()
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_cy = true;
+    if (!m_cy)
+    {
+        m_cy = new ST_Cy();
+    }
+    return m_cy;
+    }
+
+    const ST_Cy& vector_element::ChildGroup_1::get_cy() const
+    {    
+    if (m_cy)
+    {
+        return *m_cy;
+    }
+    return ST_Cy::default_instance();
+    }
+
+    bool vector_element::ChildGroup_1::has_error() const
+    {    
+    return m_has_error;
+    }
+
+    ST_Error* vector_element::ChildGroup_1::mutable_error()
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = false;
+    
+    if (m_s_clsid)
+    {
+        delete m_s_clsid;
+        m_s_clsid = NULL;
+    }
+    ;
+    
+    m_has_error = true;
+    if (!m_error)
+    {
+        m_error = new ST_Error();
+    }
+    return m_error;
+    }
+
+    const ST_Error& vector_element::ChildGroup_1::get_error() const
+    {    
+    if (m_error)
+    {
+        return *m_error;
+    }
+    return ST_Error::default_instance();
+    }
+
+    bool vector_element::ChildGroup_1::has_s_clsid() const
+    {    
+    return m_has_s_clsid;
+    }
+
+    ns_s::ST_Guid* vector_element::ChildGroup_1::mutable_s_clsid()
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_i8 = false;
+    m_i8 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();;
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_filetime = false;
+    m_filetime.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_s_clsid = true;
+    if (!m_s_clsid)
+    {
+        m_s_clsid = new ns_s::ST_Guid();
+    }
+    return m_s_clsid;
+    }
+
+    const ns_s::ST_Guid& vector_element::ChildGroup_1::get_s_clsid() const
+    {    
+    if (m_s_clsid)
+    {
+        return *m_s_clsid;
+    }
+    return ns_s::ST_Guid::default_instance();
+    }
+
+vector_element* vector_element::default_instance_ = NULL;
 
     // array_element
     CT_Variant* array_element::add_variant()
@@ -13822,7 +18881,7 @@ namespace ns_vt {
 
     void array_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<vt:array";
+    _outStream << "<array";
     
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -13852,7 +18911,7 @@ namespace ns_vt {
         {
             if ((*iter)->has_variant())
             {
-                (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
+                (*iter)->get_variant().toXmlElem("variant", "", _outStream);
             }
             else if ((*iter)->has_i1())
             {
@@ -13912,16 +18971,16 @@ namespace ns_vt {
             }
             else if ((*iter)->has_error())
             {
-                _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
+                _outStream << "<error>" << (*iter)->get_error().toString() << "</error>";
             }
             else if ((*iter)->has_cy())
             {
-                _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
+                _outStream << "<cy>" << (*iter)->get_cy().toString() << "</cy>";
             }
         }
     }
     
-    _outStream << "</vt:array>";
+    _outStream << "</array>";
     }
 
     const array_element& array_element::default_instance()
@@ -13986,6 +19045,1426 @@ namespace ns_vt {
     }
 
 
+    // array_element::ChildGroup_1
+    bool array_element::ChildGroup_1::has_variant() const
+    {    
+    return m_has_variant;
+    }
+
+    CT_Variant* array_element::ChildGroup_1::mutable_variant()
+    {    
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_variant = true;
+    if (!m_variant)
+    {
+        m_variant = new CT_Variant();
+    }
+    return m_variant;
+    }
+
+    const CT_Variant& array_element::ChildGroup_1::get_variant() const
+    {    
+    if (m_variant)
+    {
+        return *m_variant;
+    }
+    return CT_Variant::default_instance();
+    }
+
+    bool array_element::ChildGroup_1::has_i1() const
+    {    
+    return m_has_i1;
+    }
+
+    void array_element::ChildGroup_1::set_i1(const XSD::byte_& _i1)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_i1 = true;
+    m_i1 = _i1;
+    }
+
+    const XSD::byte_& array_element::ChildGroup_1::get_i1() const
+    {    
+    return m_i1;
+    }
+
+    bool array_element::ChildGroup_1::has_i2() const
+    {    
+    return m_has_i2;
+    }
+
+    void array_element::ChildGroup_1::set_i2(const XSD::short_& _i2)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_i2 = true;
+    m_i2 = _i2;
+    }
+
+    const XSD::short_& array_element::ChildGroup_1::get_i2() const
+    {    
+    return m_i2;
+    }
+
+    bool array_element::ChildGroup_1::has_i4() const
+    {    
+    return m_has_i4;
+    }
+
+    void array_element::ChildGroup_1::set_i4(const XSD::int_& _i4)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_i4 = true;
+    m_i4 = _i4;
+    }
+
+    const XSD::int_& array_element::ChildGroup_1::get_i4() const
+    {    
+    return m_i4;
+    }
+
+    bool array_element::ChildGroup_1::has_int() const
+    {    
+    return m_has_int;
+    }
+
+    void array_element::ChildGroup_1::set_int(const XSD::int_& _int)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_int = true;
+    m_int = _int;
+    }
+
+    const XSD::int_& array_element::ChildGroup_1::get_int() const
+    {    
+    return m_int;
+    }
+
+    bool array_element::ChildGroup_1::has_ui1() const
+    {    
+    return m_has_ui1;
+    }
+
+    void array_element::ChildGroup_1::set_ui1(const XSD::unsignedByte_& _ui1)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_ui1 = true;
+    m_ui1 = _ui1;
+    }
+
+    const XSD::unsignedByte_& array_element::ChildGroup_1::get_ui1() const
+    {    
+    return m_ui1;
+    }
+
+    bool array_element::ChildGroup_1::has_ui2() const
+    {    
+    return m_has_ui2;
+    }
+
+    void array_element::ChildGroup_1::set_ui2(const XSD::unsignedShort_& _ui2)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_ui2 = true;
+    m_ui2 = _ui2;
+    }
+
+    const XSD::unsignedShort_& array_element::ChildGroup_1::get_ui2() const
+    {    
+    return m_ui2;
+    }
+
+    bool array_element::ChildGroup_1::has_ui4() const
+    {    
+    return m_has_ui4;
+    }
+
+    void array_element::ChildGroup_1::set_ui4(const XSD::unsignedInt_& _ui4)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_ui4 = true;
+    m_ui4 = _ui4;
+    }
+
+    const XSD::unsignedInt_& array_element::ChildGroup_1::get_ui4() const
+    {    
+    return m_ui4;
+    }
+
+    bool array_element::ChildGroup_1::has_uint() const
+    {    
+    return m_has_uint;
+    }
+
+    void array_element::ChildGroup_1::set_uint(const XSD::unsignedInt_& _uint)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_uint = true;
+    m_uint = _uint;
+    }
+
+    const XSD::unsignedInt_& array_element::ChildGroup_1::get_uint() const
+    {    
+    return m_uint;
+    }
+
+    bool array_element::ChildGroup_1::has_r4() const
+    {    
+    return m_has_r4;
+    }
+
+    void array_element::ChildGroup_1::set_r4(const XSD::float_& _r4)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_r4 = true;
+    m_r4 = _r4;
+    }
+
+    const XSD::float_& array_element::ChildGroup_1::get_r4() const
+    {    
+    return m_r4;
+    }
+
+    bool array_element::ChildGroup_1::has_r8() const
+    {    
+    return m_has_r8;
+    }
+
+    void array_element::ChildGroup_1::set_r8(const XSD::double_& _r8)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_r8 = true;
+    m_r8 = _r8;
+    }
+
+    const XSD::double_& array_element::ChildGroup_1::get_r8() const
+    {    
+    return m_r8;
+    }
+
+    bool array_element::ChildGroup_1::has_decimal() const
+    {    
+    return m_has_decimal;
+    }
+
+    void array_element::ChildGroup_1::set_decimal(const XSD::decimal_& _decimal)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_decimal = true;
+    m_decimal = _decimal;
+    }
+
+    const XSD::decimal_& array_element::ChildGroup_1::get_decimal() const
+    {    
+    return m_decimal;
+    }
+
+    bool array_element::ChildGroup_1::has_bstr() const
+    {    
+    return m_has_bstr;
+    }
+
+    void array_element::ChildGroup_1::set_bstr(const XSD::string_& _bstr)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_bstr = true;
+    m_bstr = _bstr;
+    }
+
+    const XSD::string_& array_element::ChildGroup_1::get_bstr() const
+    {    
+    return m_bstr;
+    }
+
+    bool array_element::ChildGroup_1::has_date() const
+    {    
+    return m_has_date;
+    }
+
+    void array_element::ChildGroup_1::set_date(const XSD::dateTime_& _date)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_date = true;
+    m_date = _date;
+    }
+
+    const XSD::dateTime_& array_element::ChildGroup_1::get_date() const
+    {    
+    return m_date;
+    }
+
+    bool array_element::ChildGroup_1::has_bool() const
+    {    
+    return m_has_bool;
+    }
+
+    void array_element::ChildGroup_1::set_bool(const XSD::boolean_& _bool)
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_bool = true;
+    m_bool = _bool;
+    }
+
+    const XSD::boolean_& array_element::ChildGroup_1::get_bool() const
+    {    
+    return m_bool;
+    }
+
+    bool array_element::ChildGroup_1::has_error() const
+    {    
+    return m_has_error;
+    }
+
+    ST_Error* array_element::ChildGroup_1::mutable_error()
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    ;
+    
+    m_has_error = true;
+    if (!m_error)
+    {
+        m_error = new ST_Error();
+    }
+    return m_error;
+    }
+
+    const ST_Error& array_element::ChildGroup_1::get_error() const
+    {    
+    if (m_error)
+    {
+        return *m_error;
+    }
+    return ST_Error::default_instance();
+    }
+
+    bool array_element::ChildGroup_1::has_cy() const
+    {    
+    return m_has_cy;
+    }
+
+    ST_Cy* array_element::ChildGroup_1::mutable_cy()
+    {    
+    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    ;
+    
+    m_has_i1 = false;
+    m_i1 = 0;;
+    
+    m_has_i2 = false;
+    m_i2 = 0;;
+    
+    m_has_i4 = false;
+    m_i4 = 0;;
+    
+    m_has_int = false;
+    m_int = 0;;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;;
+    
+    m_has_uint = false;
+    m_uint = 0;;
+    
+    m_has_r4 = false;
+    m_r4 = 0;;
+    
+    m_has_r8 = false;
+    m_r8 = 0;;
+    
+    m_has_decimal = false;
+    m_decimal = 0;;
+    
+    m_has_bstr = false;
+    m_bstr.clear();;
+    
+    m_has_date = false;
+    m_date.clear();;
+    
+    m_has_bool = false;
+    m_bool = false;;
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    ;
+    
+    m_has_cy = true;
+    if (!m_cy)
+    {
+        m_cy = new ST_Cy();
+    }
+    return m_cy;
+    }
+
+    const ST_Cy& array_element::ChildGroup_1::get_cy() const
+    {    
+    if (m_cy)
+    {
+        return *m_cy;
+    }
+    return ST_Cy::default_instance();
+    }
+
+array_element* array_element::default_instance_ = NULL;
+
     // blob_element
 
     // oblob_element
@@ -13996,14 +20475,14 @@ namespace ns_vt {
 
     void empty_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<vt:empty";
+    _outStream << "<empty";
     
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     
     _outStream << ">";
     
-    _outStream << "</vt:empty>";
+    _outStream << "</empty>";
     }
 
     const empty_element& empty_element::default_instance()
@@ -14015,6 +20494,7 @@ namespace ns_vt {
     return *empty_element::default_instance_;
     }
 
+empty_element* empty_element::default_instance_ = NULL;
 
     // null_element
     void null_element::clear()
@@ -14022,14 +20502,14 @@ namespace ns_vt {
 
     void null_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<vt:null";
+    _outStream << "<null";
     
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     
     _outStream << ">";
     
-    _outStream << "</vt:null>";
+    _outStream << "</null>";
     }
 
     const null_element& null_element::default_instance()
@@ -14041,6 +20521,7 @@ namespace ns_vt {
     return *null_element::default_instance_;
     }
 
+null_element* null_element::default_instance_ = NULL;
 
     // i1_element
 
@@ -14107,7 +20588,7 @@ namespace ns_vt {
 
     void vstream_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<vt:vstream";
+    _outStream << "<vstream";
     
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -14119,7 +20600,7 @@ namespace ns_vt {
     
     _outStream << ">";
     
-    _outStream << "</vt:vstream>";
+    _outStream << "</vstream>";
     }
 
     const vstream_element& vstream_element::default_instance()
@@ -14151,6 +20632,7 @@ namespace ns_vt {
     return ns_s::ST_Guid::default_instance();
     }
 
+vstream_element* vstream_element::default_instance_ = NULL;
 
     // clsid_element
 }

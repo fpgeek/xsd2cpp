@@ -100,7 +100,6 @@ namespace ns_m {
 #include <iostream>
 #include "wml_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
-//#include "xml.h"
 namespace ns_m {
     using namespace std;
     class Element: public XSD::Element

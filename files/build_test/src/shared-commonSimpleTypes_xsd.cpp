@@ -68,6 +68,7 @@ namespace ns_s {
     return strStream.str();
     }
 
+ST_Lang* ST_Lang::default_instance_ = NULL;
 
     // ST_HexColorRGB
     ST_HexColorRGB::ST_HexColorRGB()
@@ -128,6 +129,7 @@ namespace ns_s {
     return strStream.str();
     }
 
+ST_HexColorRGB* ST_HexColorRGB::default_instance_ = NULL;
 
     // ST_Panose
     ST_Panose::ST_Panose()
@@ -188,6 +190,7 @@ namespace ns_s {
     return strStream.str();
     }
 
+ST_Panose* ST_Panose::default_instance_ = NULL;
 
     // ST_CalendarType
     ST_CalendarType::ST_CalendarType()
@@ -259,6 +262,7 @@ namespace ns_s {
         "gregorianXlitFrench",
         "none"
     };
+ST_CalendarType* ST_CalendarType::default_instance_ = NULL;
 
     // ST_AlgClass
     ST_AlgClass::ST_AlgClass()
@@ -318,6 +322,7 @@ namespace ns_s {
         "hash",
         "custom"
     };
+ST_AlgClass* ST_AlgClass::default_instance_ = NULL;
 
     // ST_CryptProv
     ST_CryptProv::ST_CryptProv()
@@ -378,6 +383,7 @@ namespace ns_s {
         "rsaFull",
         "custom"
     };
+ST_CryptProv* ST_CryptProv::default_instance_ = NULL;
 
     // ST_AlgType
     ST_AlgType::ST_AlgType()
@@ -437,6 +443,7 @@ namespace ns_s {
         "typeAny",
         "custom"
     };
+ST_AlgType* ST_AlgType::default_instance_ = NULL;
 
     // ST_ColorType
     ST_ColorType::ST_ColorType()
@@ -496,6 +503,7 @@ namespace ns_s {
     return strStream.str();
     }
 
+ST_ColorType* ST_ColorType::default_instance_ = NULL;
 
     // ST_Guid
     ST_Guid::ST_Guid()
@@ -555,6 +563,7 @@ namespace ns_s {
     return strStream.str();
     }
 
+ST_Guid* ST_Guid::default_instance_ = NULL;
 
     // ST_OnOff
     bool ST_OnOff::has_boolean() const
@@ -615,6 +624,21 @@ namespace ns_s {
     }
     }
 
+    std::string ST_OnOff::toString() const
+    {    
+    if (m_has_boolean)
+    {
+        return XSD::XMLBooleanStr(m_boolean);
+    }
+    
+    if (m_has_ST_OnOff1)
+    {
+        return m_ST_OnOff1->toString();
+    }
+    
+    return string();
+    }
+
     void ST_OnOff::clear()
     {    clear_boolean();
     clear_ST_OnOff1();    }
@@ -623,13 +647,13 @@ namespace ns_s {
     {    
     if (m_has_boolean)
     {
-        _outStream << " " << _attrName << "=\"" << XSD::XMLBooleanStr(m_boolean) << "\"";;
+        _outStream << " " << _attrName << "=\"" << XSD::XMLBooleanStr(m_boolean) << "\"";
         return;
     }
     
     if (m_has_ST_OnOff1)
     {
-        m_ST_OnOff1->toXmlAttr(_attrName, _outStream);;
+        m_ST_OnOff1->toXmlAttr(_attrName, _outStream);
         return;
     }
     }
@@ -643,6 +667,7 @@ namespace ns_s {
     return *ST_OnOff::default_instance_;
     }
 
+ST_OnOff* ST_OnOff::default_instance_ = NULL;
 
     // ST_OnOff1
     ST_OnOff1::ST_OnOff1()
@@ -702,6 +727,7 @@ namespace ns_s {
         "on",
         "off"
     };
+ST_OnOff1* ST_OnOff1::default_instance_ = NULL;
 
     // ST_String
     ST_String::ST_String()
@@ -761,6 +787,7 @@ namespace ns_s {
     return strStream.str();
     }
 
+ST_String* ST_String::default_instance_ = NULL;
 
     // ST_XmlName
     ST_XmlName::ST_XmlName()
@@ -822,6 +849,7 @@ namespace ns_s {
     return strStream.str();
     }
 
+ST_XmlName* ST_XmlName::default_instance_ = NULL;
 
     // ST_TrueFalse
     ST_TrueFalse::ST_TrueFalse()
@@ -883,6 +911,7 @@ namespace ns_s {
         "true",
         "false"
     };
+ST_TrueFalse* ST_TrueFalse::default_instance_ = NULL;
 
     // ST_TrueFalseBlank
     ST_TrueFalseBlank::ST_TrueFalseBlank()
@@ -947,6 +976,7 @@ namespace ns_s {
         "True",
         "False"
     };
+ST_TrueFalseBlank* ST_TrueFalseBlank::default_instance_ = NULL;
 
     // ST_UnsignedDecimalNumber
     ST_UnsignedDecimalNumber::ST_UnsignedDecimalNumber()
@@ -1006,6 +1036,7 @@ namespace ns_s {
     return strStream.str();
     }
 
+ST_UnsignedDecimalNumber* ST_UnsignedDecimalNumber::default_instance_ = NULL;
 
     // ST_TwipsMeasure
     bool ST_TwipsMeasure::has_ST_UnsignedDecimalNumber() const
@@ -1078,6 +1109,21 @@ namespace ns_s {
     }
     }
 
+    std::string ST_TwipsMeasure::toString() const
+    {    
+    if (m_has_ST_UnsignedDecimalNumber)
+    {
+        return m_ST_UnsignedDecimalNumber->toString();
+    }
+    
+    if (m_has_ST_PositiveUniversalMeasure)
+    {
+        return m_ST_PositiveUniversalMeasure->toString();
+    }
+    
+    return string();
+    }
+
     void ST_TwipsMeasure::clear()
     {    clear_ST_UnsignedDecimalNumber();
     clear_ST_PositiveUniversalMeasure();    }
@@ -1086,13 +1132,13 @@ namespace ns_s {
     {    
     if (m_has_ST_UnsignedDecimalNumber)
     {
-        m_ST_UnsignedDecimalNumber->toXmlAttr(_attrName, _outStream);;
+        m_ST_UnsignedDecimalNumber->toXmlAttr(_attrName, _outStream);
         return;
     }
     
     if (m_has_ST_PositiveUniversalMeasure)
     {
-        m_ST_PositiveUniversalMeasure->toXmlAttr(_attrName, _outStream);;
+        m_ST_PositiveUniversalMeasure->toXmlAttr(_attrName, _outStream);
         return;
     }
     }
@@ -1106,6 +1152,7 @@ namespace ns_s {
     return *ST_TwipsMeasure::default_instance_;
     }
 
+ST_TwipsMeasure* ST_TwipsMeasure::default_instance_ = NULL;
 
     // ST_VerticalAlignRun
     ST_VerticalAlignRun::ST_VerticalAlignRun()
@@ -1166,6 +1213,7 @@ namespace ns_s {
         "superscript",
         "subscript"
     };
+ST_VerticalAlignRun* ST_VerticalAlignRun::default_instance_ = NULL;
 
     // ST_Xstring
     ST_Xstring::ST_Xstring()
@@ -1225,6 +1273,7 @@ namespace ns_s {
     return strStream.str();
     }
 
+ST_Xstring* ST_Xstring::default_instance_ = NULL;
 
     // ST_XAlign
     ST_XAlign::ST_XAlign()
@@ -1287,6 +1336,7 @@ namespace ns_s {
         "inside",
         "outside"
     };
+ST_XAlign* ST_XAlign::default_instance_ = NULL;
 
     // ST_YAlign
     ST_YAlign::ST_YAlign()
@@ -1350,6 +1400,7 @@ namespace ns_s {
         "inside",
         "outside"
     };
+ST_YAlign* ST_YAlign::default_instance_ = NULL;
 
     // ST_ConformanceClass
     ST_ConformanceClass::ST_ConformanceClass()
@@ -1409,6 +1460,7 @@ namespace ns_s {
         "strict",
         "transitional"
     };
+ST_ConformanceClass* ST_ConformanceClass::default_instance_ = NULL;
 
     // ST_UniversalMeasure
     ST_UniversalMeasure::ST_UniversalMeasure()
@@ -1468,6 +1520,7 @@ namespace ns_s {
     return strStream.str();
     }
 
+ST_UniversalMeasure* ST_UniversalMeasure::default_instance_ = NULL;
 
     // ST_PositiveUniversalMeasure
     ST_PositiveUniversalMeasure::ST_PositiveUniversalMeasure()
@@ -1478,6 +1531,16 @@ namespace ns_s {
 
     {
     }
+    const ST_PositiveUniversalMeasure& ST_PositiveUniversalMeasure::default_instance()
+    {    
+    if (!ST_PositiveUniversalMeasure::default_instance_)
+    {
+        ST_PositiveUniversalMeasure::default_instance_ = new ST_PositiveUniversalMeasure();
+    }
+    return *ST_PositiveUniversalMeasure::default_instance_;
+    }
+
+ST_PositiveUniversalMeasure* ST_PositiveUniversalMeasure::default_instance_ = NULL;
 
     // ST_Percentage
     ST_Percentage::ST_Percentage()
@@ -1537,6 +1600,7 @@ namespace ns_s {
     return strStream.str();
     }
 
+ST_Percentage* ST_Percentage::default_instance_ = NULL;
 
     // ST_FixedPercentage
     ST_FixedPercentage::ST_FixedPercentage()
@@ -1547,6 +1611,16 @@ namespace ns_s {
 
     {
     }
+    const ST_FixedPercentage& ST_FixedPercentage::default_instance()
+    {    
+    if (!ST_FixedPercentage::default_instance_)
+    {
+        ST_FixedPercentage::default_instance_ = new ST_FixedPercentage();
+    }
+    return *ST_FixedPercentage::default_instance_;
+    }
+
+ST_FixedPercentage* ST_FixedPercentage::default_instance_ = NULL;
 
     // ST_PositivePercentage
     ST_PositivePercentage::ST_PositivePercentage()
@@ -1557,6 +1631,16 @@ namespace ns_s {
 
     {
     }
+    const ST_PositivePercentage& ST_PositivePercentage::default_instance()
+    {    
+    if (!ST_PositivePercentage::default_instance_)
+    {
+        ST_PositivePercentage::default_instance_ = new ST_PositivePercentage();
+    }
+    return *ST_PositivePercentage::default_instance_;
+    }
+
+ST_PositivePercentage* ST_PositivePercentage::default_instance_ = NULL;
 
     // ST_PositiveFixedPercentage
     ST_PositiveFixedPercentage::ST_PositiveFixedPercentage()
@@ -1567,4 +1651,14 @@ namespace ns_s {
 
     {
     }
+    const ST_PositiveFixedPercentage& ST_PositiveFixedPercentage::default_instance()
+    {    
+    if (!ST_PositiveFixedPercentage::default_instance_)
+    {
+        ST_PositiveFixedPercentage::default_instance_ = new ST_PositiveFixedPercentage();
+    }
+    return *ST_PositiveFixedPercentage::default_instance_;
+    }
+
+ST_PositiveFixedPercentage* ST_PositiveFixedPercentage::default_instance_ = NULL;
 }

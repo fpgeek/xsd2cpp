@@ -93,6 +93,7 @@ namespace ns_w10 {
         "HTMLOutset",
         "HTMLInset"
     };
+ST_BorderType* ST_BorderType::default_instance_ = NULL;
 
     // ST_BorderShadow
     ST_BorderShadow::ST_BorderShadow()
@@ -154,6 +155,7 @@ namespace ns_w10 {
         "f",
         "false"
     };
+ST_BorderShadow* ST_BorderShadow::default_instance_ = NULL;
 
     // ST_WrapType
     ST_WrapType::ST_WrapType()
@@ -216,6 +218,7 @@ namespace ns_w10 {
         "tight",
         "through"
     };
+ST_WrapType* ST_WrapType::default_instance_ = NULL;
 
     // ST_WrapSide
     ST_WrapSide::ST_WrapSide()
@@ -277,6 +280,7 @@ namespace ns_w10 {
         "right",
         "largest"
     };
+ST_WrapSide* ST_WrapSide::default_instance_ = NULL;
 
     // ST_HorizontalAnchor
     ST_HorizontalAnchor::ST_HorizontalAnchor()
@@ -338,6 +342,7 @@ namespace ns_w10 {
         "text",
         "char"
     };
+ST_HorizontalAnchor* ST_HorizontalAnchor::default_instance_ = NULL;
 
     // ST_VerticalAnchor
     ST_VerticalAnchor::ST_VerticalAnchor()
@@ -399,6 +404,7 @@ namespace ns_w10 {
         "text",
         "line"
     };
+ST_VerticalAnchor* ST_VerticalAnchor::default_instance_ = NULL;
 
     // CT_Border
     void CT_Border::clear()
@@ -521,6 +527,7 @@ namespace ns_w10 {
     return ST_BorderShadow::default_instance();
     }
 
+CT_Border* CT_Border::default_instance_ = NULL;
 
     // CT_Wrap
     void CT_Wrap::clear()
@@ -688,6 +695,7 @@ namespace ns_w10 {
     return ST_VerticalAnchor::default_instance();
     }
 
+CT_Wrap* CT_Wrap::default_instance_ = NULL;
 
     // CT_AnchorLock
     void CT_AnchorLock::clear()
@@ -716,6 +724,7 @@ namespace ns_w10 {
     return *CT_AnchorLock::default_instance_;
     }
 
+CT_AnchorLock* CT_AnchorLock::default_instance_ = NULL;
 
     // bordertop_element
     void bordertop_element::clear()
@@ -744,7 +753,7 @@ namespace ns_w10 {
 
     void bordertop_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<w10:bordertop";
+    _outStream << "<bordertop";
     
     _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
     
@@ -767,7 +776,7 @@ namespace ns_w10 {
     
     _outStream << ">";
     
-    _outStream << "</w10:bordertop>";
+    _outStream << "</bordertop>";
     }
 
     const bordertop_element& bordertop_element::default_instance()
@@ -835,6 +844,7 @@ namespace ns_w10 {
     return ST_BorderShadow::default_instance();
     }
 
+bordertop_element* bordertop_element::default_instance_ = NULL;
 
     // borderleft_element
     void borderleft_element::clear()
@@ -863,7 +873,7 @@ namespace ns_w10 {
 
     void borderleft_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<w10:borderleft";
+    _outStream << "<borderleft";
     
     _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
     
@@ -886,7 +896,7 @@ namespace ns_w10 {
     
     _outStream << ">";
     
-    _outStream << "</w10:borderleft>";
+    _outStream << "</borderleft>";
     }
 
     const borderleft_element& borderleft_element::default_instance()
@@ -954,6 +964,7 @@ namespace ns_w10 {
     return ST_BorderShadow::default_instance();
     }
 
+borderleft_element* borderleft_element::default_instance_ = NULL;
 
     // borderright_element
     void borderright_element::clear()
@@ -982,7 +993,7 @@ namespace ns_w10 {
 
     void borderright_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<w10:borderright";
+    _outStream << "<borderright";
     
     _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
     
@@ -1005,7 +1016,7 @@ namespace ns_w10 {
     
     _outStream << ">";
     
-    _outStream << "</w10:borderright>";
+    _outStream << "</borderright>";
     }
 
     const borderright_element& borderright_element::default_instance()
@@ -1073,6 +1084,7 @@ namespace ns_w10 {
     return ST_BorderShadow::default_instance();
     }
 
+borderright_element* borderright_element::default_instance_ = NULL;
 
     // borderbottom_element
     void borderbottom_element::clear()
@@ -1101,7 +1113,7 @@ namespace ns_w10 {
 
     void borderbottom_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<w10:borderbottom";
+    _outStream << "<borderbottom";
     
     _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
     
@@ -1124,7 +1136,7 @@ namespace ns_w10 {
     
     _outStream << ">";
     
-    _outStream << "</w10:borderbottom>";
+    _outStream << "</borderbottom>";
     }
 
     const borderbottom_element& borderbottom_element::default_instance()
@@ -1192,6 +1204,7 @@ namespace ns_w10 {
     return ST_BorderShadow::default_instance();
     }
 
+borderbottom_element* borderbottom_element::default_instance_ = NULL;
 
     // wrap_element
     void wrap_element::clear()
@@ -1235,7 +1248,7 @@ namespace ns_w10 {
 
     void wrap_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<w10:wrap";
+    _outStream << "<wrap";
     
     _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
     
@@ -1264,7 +1277,7 @@ namespace ns_w10 {
     
     _outStream << ">";
     
-    _outStream << "</w10:wrap>";
+    _outStream << "</wrap>";
     }
 
     const wrap_element& wrap_element::default_instance()
@@ -1356,6 +1369,7 @@ namespace ns_w10 {
     return ST_VerticalAnchor::default_instance();
     }
 
+wrap_element* wrap_element::default_instance_ = NULL;
 
     // anchorlock_element
     void anchorlock_element::clear()
@@ -1363,13 +1377,13 @@ namespace ns_w10 {
 
     void anchorlock_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<w10:anchorlock";
+    _outStream << "<anchorlock";
     
     _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
     
     _outStream << ">";
     
-    _outStream << "</w10:anchorlock>";
+    _outStream << "</anchorlock>";
     }
 
     const anchorlock_element& anchorlock_element::default_instance()
@@ -1381,4 +1395,5 @@ namespace ns_w10 {
     return *anchorlock_element::default_instance_;
     }
 
+anchorlock_element* anchorlock_element::default_instance_ = NULL;
 }

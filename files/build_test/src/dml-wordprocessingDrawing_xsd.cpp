@@ -72,6 +72,7 @@ namespace ns_wp {
     return strStream.str();
     }
 
+ST_WrapDistance* ST_WrapDistance::default_instance_ = NULL;
 
     // ST_WrapText
     ST_WrapText::ST_WrapText()
@@ -133,6 +134,7 @@ namespace ns_wp {
         "right",
         "largest"
     };
+ST_WrapText* ST_WrapText::default_instance_ = NULL;
 
     // ST_PositionOffset
     ST_PositionOffset::ST_PositionOffset()
@@ -192,6 +194,7 @@ namespace ns_wp {
     return strStream.str();
     }
 
+ST_PositionOffset* ST_PositionOffset::default_instance_ = NULL;
 
     // ST_AlignH
     ST_AlignH::ST_AlignH()
@@ -254,6 +257,7 @@ namespace ns_wp {
         "inside",
         "outside"
     };
+ST_AlignH* ST_AlignH::default_instance_ = NULL;
 
     // ST_RelFromH
     ST_RelFromH::ST_RelFromH()
@@ -319,6 +323,7 @@ namespace ns_wp {
         "insideMargin",
         "outsideMargin"
     };
+ST_RelFromH* ST_RelFromH::default_instance_ = NULL;
 
     // ST_AlignV
     ST_AlignV::ST_AlignV()
@@ -381,6 +386,7 @@ namespace ns_wp {
         "inside",
         "outside"
     };
+ST_AlignV* ST_AlignV::default_instance_ = NULL;
 
     // ST_RelFromV
     ST_RelFromV::ST_RelFromV()
@@ -446,6 +452,7 @@ namespace ns_wp {
         "insideMargin",
         "outsideMargin"
     };
+ST_RelFromV* ST_RelFromV::default_instance_ = NULL;
 
     // CT_EffectExtent
     void CT_EffectExtent::clear()
@@ -613,6 +620,7 @@ namespace ns_wp {
     return ns_a::ST_Coordinate::default_instance();
     }
 
+CT_EffectExtent* CT_EffectExtent::default_instance_ = NULL;
 
     // CT_Inline
     bool CT_Inline::has_a_extent() const
@@ -772,51 +780,6 @@ namespace ns_wp {
         m_distR_attr = NULL;
     }
     
-    
-    m_has_a_extent = false;
-    
-    if (m_a_extent)
-    {
-        delete m_a_extent;
-        m_a_extent = NULL;
-    }
-    
-    
-    m_has_effectExtent = false;
-    
-    if (m_effectExtent)
-    {
-        delete m_effectExtent;
-        m_effectExtent = NULL;
-    }
-    
-    
-    m_has_a_docPr = false;
-    
-    if (m_a_docPr)
-    {
-        delete m_a_docPr;
-        m_a_docPr = NULL;
-    }
-    
-    
-    m_has_a_cNvGraphicFramePr = false;
-    
-    if (m_a_cNvGraphicFramePr)
-    {
-        delete m_a_cNvGraphicFramePr;
-        m_a_cNvGraphicFramePr = NULL;
-    }
-    
-    
-    m_has_a_graphic = false;
-    
-    if (m_a_graphic)
-    {
-        delete m_a_graphic;
-        m_a_graphic = NULL;
-    }
-    
     }
 
     void CT_Inline::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -855,27 +818,27 @@ namespace ns_wp {
             
     if (m_has_a_extent)
     {
-        m_a_extent->toXmlElem("wp:extent", "", _outStream);;
+        m_a_extent->toXmlElem("a:extent", "", _outStream);;
     }
     
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("effectExtent", "", _outStream);;
     }
     
     if (m_has_a_docPr)
     {
-        m_a_docPr->toXmlElem("wp:docPr", "", _outStream);;
+        m_a_docPr->toXmlElem("a:docPr", "", _outStream);;
     }
     
     if (m_has_a_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);;
+        m_a_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);;
     }
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("wp:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -970,6 +933,7 @@ namespace ns_wp {
     return ST_WrapDistance::default_instance();
     }
 
+CT_Inline* CT_Inline::default_instance_ = NULL;
 
     // CT_WrapPath
     bool CT_WrapPath::has_a_start() const
@@ -1046,7 +1010,7 @@ namespace ns_wp {
             
     if (m_has_a_start)
     {
-        m_a_start->toXmlElem("wp:start", "", _outStream);;
+        m_a_start->toXmlElem("a:start", "", _outStream);;
     }
      
     {
@@ -1055,7 +1019,7 @@ namespace ns_wp {
         {
             if ((*iter)->has_a_lineTo())
             {
-                (*iter)->get_a_lineTo().toXmlElem("wp:lineTo", "", _outStream);
+                (*iter)->get_a_lineTo().toXmlElem("a:lineTo", "", _outStream);
             }
         }
     }
@@ -1089,6 +1053,34 @@ namespace ns_wp {
     }
 
 
+    // CT_WrapPath::ChildGroup_1
+    bool CT_WrapPath::ChildGroup_1::has_a_lineTo() const
+    {    
+    return m_has_a_lineTo;
+    }
+
+    ns_a::CT_Point2D* CT_WrapPath::ChildGroup_1::mutable_a_lineTo()
+    {    
+    
+    m_has_a_lineTo = true;
+    if (!m_a_lineTo)
+    {
+        m_a_lineTo = new ns_a::CT_Point2D();
+    }
+    return m_a_lineTo;
+    }
+
+    const ns_a::CT_Point2D& CT_WrapPath::ChildGroup_1::get_a_lineTo() const
+    {    
+    if (m_a_lineTo)
+    {
+        return *m_a_lineTo;
+    }
+    return ns_a::CT_Point2D::default_instance();
+    }
+
+CT_WrapPath* CT_WrapPath::default_instance_ = NULL;
+
     // CT_WrapNone
     void CT_WrapNone::clear()
     {    }
@@ -1116,6 +1108,7 @@ namespace ns_wp {
     return *CT_WrapNone::default_instance_;
     }
 
+CT_WrapNone* CT_WrapNone::default_instance_ = NULL;
 
     // CT_WrapSquare
     bool CT_WrapSquare::has_effectExtent() const
@@ -1188,15 +1181,6 @@ namespace ns_wp {
         m_distR_attr = NULL;
     }
     
-    
-    m_has_effectExtent = false;
-    
-    if (m_effectExtent)
-    {
-        delete m_effectExtent;
-        m_effectExtent = NULL;
-    }
-    
     }
 
     void CT_WrapSquare::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1241,7 +1225,7 @@ namespace ns_wp {
             
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("effectExtent", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1356,6 +1340,7 @@ namespace ns_wp {
     return ST_WrapDistance::default_instance();
     }
 
+CT_WrapSquare* CT_WrapSquare::default_instance_ = NULL;
 
     // CT_WrapTight
     bool CT_WrapTight::has_wrapPolygon() const
@@ -1410,15 +1395,6 @@ namespace ns_wp {
         m_distR_attr = NULL;
     }
     
-    
-    m_has_wrapPolygon = false;
-    
-    if (m_wrapPolygon)
-    {
-        delete m_wrapPolygon;
-        m_wrapPolygon = NULL;
-    }
-    
     }
 
     void CT_WrapTight::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1451,7 +1427,7 @@ namespace ns_wp {
             
     if (m_has_wrapPolygon)
     {
-        m_wrapPolygon->toXmlElem("wp:wrapPolygon", "", _outStream);;
+        m_wrapPolygon->toXmlElem("wrapPolygon", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1526,6 +1502,7 @@ namespace ns_wp {
     return ST_WrapDistance::default_instance();
     }
 
+CT_WrapTight* CT_WrapTight::default_instance_ = NULL;
 
     // CT_WrapThrough
     bool CT_WrapThrough::has_wrapPolygon() const
@@ -1580,15 +1557,6 @@ namespace ns_wp {
         m_distR_attr = NULL;
     }
     
-    
-    m_has_wrapPolygon = false;
-    
-    if (m_wrapPolygon)
-    {
-        delete m_wrapPolygon;
-        m_wrapPolygon = NULL;
-    }
-    
     }
 
     void CT_WrapThrough::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1621,7 +1589,7 @@ namespace ns_wp {
             
     if (m_has_wrapPolygon)
     {
-        m_wrapPolygon->toXmlElem("wp:wrapPolygon", "", _outStream);;
+        m_wrapPolygon->toXmlElem("wrapPolygon", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1696,6 +1664,7 @@ namespace ns_wp {
     return ST_WrapDistance::default_instance();
     }
 
+CT_WrapThrough* CT_WrapThrough::default_instance_ = NULL;
 
     // CT_WrapTopBottom
     bool CT_WrapTopBottom::has_effectExtent() const
@@ -1741,15 +1710,6 @@ namespace ns_wp {
         m_distB_attr = NULL;
     }
     
-    
-    m_has_effectExtent = false;
-    
-    if (m_effectExtent)
-    {
-        delete m_effectExtent;
-        m_effectExtent = NULL;
-    }
-    
     }
 
     void CT_WrapTopBottom::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1776,7 +1736,7 @@ namespace ns_wp {
             
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("effectExtent", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1831,6 +1791,7 @@ namespace ns_wp {
     return ST_WrapDistance::default_instance();
     }
 
+CT_WrapTopBottom* CT_WrapTopBottom::default_instance_ = NULL;
 
     // CT_PosH
     bool CT_PosH::has_align() const
@@ -1911,24 +1872,6 @@ namespace ns_wp {
         m_relativeFrom_attr = NULL;
     }
     
-    
-    m_has_align = false;
-    
-    if (m_align)
-    {
-        delete m_align;
-        m_align = NULL;
-    }
-    
-    
-    m_has_posOffset = false;
-    
-    if (m_posOffset)
-    {
-        delete m_posOffset;
-        m_posOffset = NULL;
-    }
-    
     }
 
     void CT_PosH::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1949,12 +1892,12 @@ namespace ns_wp {
             
     if (m_has_align)
     {
-        _outStream << "<wp:align>" << m_align->toString() << "</wp:align>";;
+        _outStream << "<align>" << m_align->toString() << "</align>";;
     }
     
     if (m_has_posOffset)
     {
-        _outStream << "<wp:posOffset>" << m_posOffset->toString() << "</wp:posOffset>";;
+        _outStream << "<posOffset>" << m_posOffset->toString() << "</posOffset>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1989,6 +1932,7 @@ namespace ns_wp {
     return ST_RelFromH::default_instance();
     }
 
+CT_PosH* CT_PosH::default_instance_ = NULL;
 
     // CT_PosV
     bool CT_PosV::has_align() const
@@ -2069,24 +2013,6 @@ namespace ns_wp {
         m_relativeFrom_attr = NULL;
     }
     
-    
-    m_has_align = false;
-    
-    if (m_align)
-    {
-        delete m_align;
-        m_align = NULL;
-    }
-    
-    
-    m_has_posOffset = false;
-    
-    if (m_posOffset)
-    {
-        delete m_posOffset;
-        m_posOffset = NULL;
-    }
-    
     }
 
     void CT_PosV::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -2107,12 +2033,12 @@ namespace ns_wp {
             
     if (m_has_align)
     {
-        _outStream << "<wp:align>" << m_align->toString() << "</wp:align>";;
+        _outStream << "<align>" << m_align->toString() << "</align>";;
     }
     
     if (m_has_posOffset)
     {
-        _outStream << "<wp:posOffset>" << m_posOffset->toString() << "</wp:posOffset>";;
+        _outStream << "<posOffset>" << m_posOffset->toString() << "</posOffset>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2147,6 +2073,7 @@ namespace ns_wp {
     return ST_RelFromV::default_instance();
     }
 
+CT_PosV* CT_PosV::default_instance_ = NULL;
 
     // CT_Anchor
     bool CT_Anchor::has_a_simplePos() const
@@ -2704,123 +2631,6 @@ namespace ns_wp {
     
     m_has_allowOverlap_attr = false;
     m_allowOverlap_attr = false;
-    
-    m_has_a_simplePos = false;
-    
-    if (m_a_simplePos)
-    {
-        delete m_a_simplePos;
-        m_a_simplePos = NULL;
-    }
-    
-    
-    m_has_positionH = false;
-    
-    if (m_positionH)
-    {
-        delete m_positionH;
-        m_positionH = NULL;
-    }
-    
-    
-    m_has_positionV = false;
-    
-    if (m_positionV)
-    {
-        delete m_positionV;
-        m_positionV = NULL;
-    }
-    
-    
-    m_has_a_extent = false;
-    
-    if (m_a_extent)
-    {
-        delete m_a_extent;
-        m_a_extent = NULL;
-    }
-    
-    
-    m_has_effectExtent = false;
-    
-    if (m_effectExtent)
-    {
-        delete m_effectExtent;
-        m_effectExtent = NULL;
-    }
-    
-     
-    m_has_wrapNone = false;
-    
-    if (m_wrapNone)
-    {
-        delete m_wrapNone;
-        m_wrapNone = NULL;
-    }
-    
-    
-    m_has_wrapSquare = false;
-    
-    if (m_wrapSquare)
-    {
-        delete m_wrapSquare;
-        m_wrapSquare = NULL;
-    }
-    
-    
-    m_has_wrapTight = false;
-    
-    if (m_wrapTight)
-    {
-        delete m_wrapTight;
-        m_wrapTight = NULL;
-    }
-    
-    
-    m_has_wrapThrough = false;
-    
-    if (m_wrapThrough)
-    {
-        delete m_wrapThrough;
-        m_wrapThrough = NULL;
-    }
-    
-    
-    m_has_wrapTopAndBottom = false;
-    
-    if (m_wrapTopAndBottom)
-    {
-        delete m_wrapTopAndBottom;
-        m_wrapTopAndBottom = NULL;
-    }
-    
-     
-    m_has_a_docPr = false;
-    
-    if (m_a_docPr)
-    {
-        delete m_a_docPr;
-        m_a_docPr = NULL;
-    }
-    
-    
-    m_has_a_cNvGraphicFramePr = false;
-    
-    if (m_a_cNvGraphicFramePr)
-    {
-        delete m_a_cNvGraphicFramePr;
-        m_a_cNvGraphicFramePr = NULL;
-    }
-    
-    
-    m_has_a_graphic = false;
-    
-    if (m_a_graphic)
-    {
-        delete m_a_graphic;
-        m_a_graphic = NULL;
-    }
-    
     }
 
     void CT_Anchor::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -2901,67 +2711,67 @@ namespace ns_wp {
             
     if (m_has_a_simplePos)
     {
-        m_a_simplePos->toXmlElem("wp:simplePos", "", _outStream);;
+        m_a_simplePos->toXmlElem("a:simplePos", "", _outStream);;
     }
     
     if (m_has_positionH)
     {
-        m_positionH->toXmlElem("wp:positionH", "", _outStream);;
+        m_positionH->toXmlElem("positionH", "", _outStream);;
     }
     
     if (m_has_positionV)
     {
-        m_positionV->toXmlElem("wp:positionV", "", _outStream);;
+        m_positionV->toXmlElem("positionV", "", _outStream);;
     }
     
     if (m_has_a_extent)
     {
-        m_a_extent->toXmlElem("wp:extent", "", _outStream);;
+        m_a_extent->toXmlElem("a:extent", "", _outStream);;
     }
     
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("effectExtent", "", _outStream);;
     }
      
     if (m_has_wrapNone)
     {
-        m_wrapNone->toXmlElem("wp:wrapNone", "", _outStream);;
+        m_wrapNone->toXmlElem("wrapNone", "", _outStream);;
     }
     
     if (m_has_wrapSquare)
     {
-        m_wrapSquare->toXmlElem("wp:wrapSquare", "", _outStream);;
+        m_wrapSquare->toXmlElem("wrapSquare", "", _outStream);;
     }
     
     if (m_has_wrapTight)
     {
-        m_wrapTight->toXmlElem("wp:wrapTight", "", _outStream);;
+        m_wrapTight->toXmlElem("wrapTight", "", _outStream);;
     }
     
     if (m_has_wrapThrough)
     {
-        m_wrapThrough->toXmlElem("wp:wrapThrough", "", _outStream);;
+        m_wrapThrough->toXmlElem("wrapThrough", "", _outStream);;
     }
     
     if (m_has_wrapTopAndBottom)
     {
-        m_wrapTopAndBottom->toXmlElem("wp:wrapTopAndBottom", "", _outStream);;
+        m_wrapTopAndBottom->toXmlElem("wrapTopAndBottom", "", _outStream);;
     }
      
     if (m_has_a_docPr)
     {
-        m_a_docPr->toXmlElem("wp:docPr", "", _outStream);;
+        m_a_docPr->toXmlElem("a:docPr", "", _outStream);;
     }
     
     if (m_has_a_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);;
+        m_a_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);;
     }
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("wp:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3168,6 +2978,7 @@ namespace ns_wp {
     return m_allowOverlap_attr;
     }
 
+CT_Anchor* CT_Anchor::default_instance_ = NULL;
 
     // CT_TxbxContent
     void CT_TxbxContent::clear()
@@ -3196,6 +3007,7 @@ namespace ns_wp {
     return *CT_TxbxContent::default_instance_;
     }
 
+CT_TxbxContent* CT_TxbxContent::default_instance_ = NULL;
 
     // CT_TextboxInfo
     bool CT_TextboxInfo::has_txbxContent() const
@@ -3250,24 +3062,6 @@ namespace ns_wp {
     {    
     m_has_id_attr = false;
     m_id_attr = 0;
-    
-    m_has_txbxContent = false;
-    
-    if (m_txbxContent)
-    {
-        delete m_txbxContent;
-        m_txbxContent = NULL;
-    }
-    
-    
-    m_has_a_extLst = false;
-    
-    if (m_a_extLst)
-    {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
-    }
-    
     }
 
     void CT_TextboxInfo::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -3288,12 +3082,12 @@ namespace ns_wp {
             
     if (m_has_txbxContent)
     {
-        m_txbxContent->toXmlElem("wp:txbxContent", "", _outStream);;
+        m_txbxContent->toXmlElem("txbxContent", "", _outStream);;
     }
     
     if (m_has_a_extLst)
     {
-        m_a_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3324,6 +3118,7 @@ namespace ns_wp {
     return m_id_attr;
     }
 
+CT_TextboxInfo* CT_TextboxInfo::default_instance_ = NULL;
 
     // CT_LinkedTextboxInformation
     bool CT_LinkedTextboxInformation::has_a_extLst() const
@@ -3357,15 +3152,6 @@ namespace ns_wp {
     
     m_has_seq_attr = false;
     m_seq_attr = 0;
-    
-    m_has_a_extLst = false;
-    
-    if (m_a_extLst)
-    {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
-    }
-    
     }
 
     void CT_LinkedTextboxInformation::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -3392,7 +3178,7 @@ namespace ns_wp {
             
     if (m_has_a_extLst)
     {
-        m_a_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3439,6 +3225,7 @@ namespace ns_wp {
     return m_seq_attr;
     }
 
+CT_LinkedTextboxInformation* CT_LinkedTextboxInformation::default_instance_ = NULL;
 
     // CT_WordprocessingShape
     bool CT_WordprocessingShape::has_a_cNvPr() const
@@ -3701,87 +3488,6 @@ namespace ns_wp {
     {    
     m_has_normalEastAsianFlow_attr = false;
     m_normalEastAsianFlow_attr = false;
-    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-     
-    m_has_a_cNvSpPr = false;
-    
-    if (m_a_cNvSpPr)
-    {
-        delete m_a_cNvSpPr;
-        m_a_cNvSpPr = NULL;
-    }
-    
-    
-    m_has_a_cNvCnPr = false;
-    
-    if (m_a_cNvCnPr)
-    {
-        delete m_a_cNvCnPr;
-        m_a_cNvCnPr = NULL;
-    }
-    
-     
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_style = false;
-    
-    if (m_a_style)
-    {
-        delete m_a_style;
-        m_a_style = NULL;
-    }
-    
-    
-    m_has_a_extLst = false;
-    
-    if (m_a_extLst)
-    {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
-    }
-    
-     
-    m_has_txbx = false;
-    
-    if (m_txbx)
-    {
-        delete m_txbx;
-        m_txbx = NULL;
-    }
-    
-    
-    m_has_linkedTxbx = false;
-    
-    if (m_linkedTxbx)
-    {
-        delete m_linkedTxbx;
-        m_linkedTxbx = NULL;
-    }
-    
-     
-    m_has_a_bodyPr = false;
-    
-    if (m_a_bodyPr)
-    {
-        delete m_a_bodyPr;
-        m_a_bodyPr = NULL;
-    }
-    
     }
 
     void CT_WordprocessingShape::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -3802,47 +3508,47 @@ namespace ns_wp {
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
      
     if (m_has_a_cNvSpPr)
     {
-        m_a_cNvSpPr->toXmlElem("wp:cNvSpPr", "", _outStream);;
+        m_a_cNvSpPr->toXmlElem("a:cNvSpPr", "", _outStream);;
     }
     
     if (m_has_a_cNvCnPr)
     {
-        m_a_cNvCnPr->toXmlElem("wp:cNvCnPr", "", _outStream);;
+        m_a_cNvCnPr->toXmlElem("a:cNvCnPr", "", _outStream);;
     }
      
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("wp:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_style)
     {
-        m_a_style->toXmlElem("wp:style", "", _outStream);;
+        m_a_style->toXmlElem("a:style", "", _outStream);;
     }
     
     if (m_has_a_extLst)
     {
-        m_a_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
      
     if (m_has_txbx)
     {
-        m_txbx->toXmlElem("wp:txbx", "", _outStream);;
+        m_txbx->toXmlElem("txbx", "", _outStream);;
     }
     
     if (m_has_linkedTxbx)
     {
-        m_linkedTxbx->toXmlElem("wp:linkedTxbx", "", _outStream);;
+        m_linkedTxbx->toXmlElem("linkedTxbx", "", _outStream);;
     }
      
     if (m_has_a_bodyPr)
     {
-        m_a_bodyPr->toXmlElem("wp:bodyPr", "", _outStream);;
+        m_a_bodyPr->toXmlElem("a:bodyPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3873,6 +3579,7 @@ namespace ns_wp {
     return m_normalEastAsianFlow_attr;
     }
 
+CT_WordprocessingShape* CT_WordprocessingShape::default_instance_ = NULL;
 
     // CT_GraphicFrame
     bool CT_GraphicFrame::has_a_cNvPr() const
@@ -3996,52 +3703,7 @@ namespace ns_wp {
     }
 
     void CT_GraphicFrame::clear()
-    {    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-    
-    m_has_a_cNvFrPr = false;
-    
-    if (m_a_cNvFrPr)
-    {
-        delete m_a_cNvFrPr;
-        m_a_cNvFrPr = NULL;
-    }
-    
-    
-    m_has_a_xfrm = false;
-    
-    if (m_a_xfrm)
-    {
-        delete m_a_xfrm;
-        m_a_xfrm = NULL;
-    }
-    
-    
-    m_has_a_graphic = false;
-    
-    if (m_a_graphic)
-    {
-        delete m_a_graphic;
-        m_a_graphic = NULL;
-    }
-    
-    
-    m_has_a_extLst = false;
-    
-    if (m_a_extLst)
-    {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_GraphicFrame::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -4056,27 +3718,27 @@ namespace ns_wp {
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvFrPr)
     {
-        m_a_cNvFrPr->toXmlElem("wp:cNvFrPr", "", _outStream);;
+        m_a_cNvFrPr->toXmlElem("a:cNvFrPr", "", _outStream);;
     }
     
     if (m_has_a_xfrm)
     {
-        m_a_xfrm->toXmlElem("wp:xfrm", "", _outStream);;
+        m_a_xfrm->toXmlElem("a:xfrm", "", _outStream);;
     }
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("wp:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
     }
     
     if (m_has_a_extLst)
     {
-        m_a_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4091,6 +3753,7 @@ namespace ns_wp {
     return *CT_GraphicFrame::default_instance_;
     }
 
+CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
 
     // CT_WordprocessingContentPartNonVisual
     bool CT_WordprocessingContentPartNonVisual::has_a_cNvPr() const
@@ -4142,25 +3805,7 @@ namespace ns_wp {
     }
 
     void CT_WordprocessingContentPartNonVisual::clear()
-    {    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-    
-    m_has_a_cNvContentPartPr = false;
-    
-    if (m_a_cNvContentPartPr)
-    {
-        delete m_a_cNvContentPartPr;
-        m_a_cNvContentPartPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_WordprocessingContentPartNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -4175,12 +3820,12 @@ namespace ns_wp {
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvContentPartPr)
     {
-        m_a_cNvContentPartPr->toXmlElem("wp:cNvContentPartPr", "", _outStream);;
+        m_a_cNvContentPartPr->toXmlElem("a:cNvContentPartPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4195,6 +3840,7 @@ namespace ns_wp {
     return *CT_WordprocessingContentPartNonVisual::default_instance_;
     }
 
+CT_WordprocessingContentPartNonVisual* CT_WordprocessingContentPartNonVisual::default_instance_ = NULL;
 
     // CT_WordprocessingContentPart
     bool CT_WordprocessingContentPart::has_nvContentPartPr() const
@@ -4288,33 +3934,6 @@ namespace ns_wp {
         m_r_id_attr = NULL;
     }
     
-    
-    m_has_nvContentPartPr = false;
-    
-    if (m_nvContentPartPr)
-    {
-        delete m_nvContentPartPr;
-        m_nvContentPartPr = NULL;
-    }
-    
-    
-    m_has_a_xfrm = false;
-    
-    if (m_a_xfrm)
-    {
-        delete m_a_xfrm;
-        m_a_xfrm = NULL;
-    }
-    
-    
-    m_has_a_extLst = false;
-    
-    if (m_a_extLst)
-    {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
-    }
-    
     }
 
     void CT_WordprocessingContentPart::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -4341,17 +3960,17 @@ namespace ns_wp {
             
     if (m_has_nvContentPartPr)
     {
-        m_nvContentPartPr->toXmlElem("wp:nvContentPartPr", "", _outStream);;
+        m_nvContentPartPr->toXmlElem("nvContentPartPr", "", _outStream);;
     }
     
     if (m_has_a_xfrm)
     {
-        m_a_xfrm->toXmlElem("wp:xfrm", "", _outStream);;
+        m_a_xfrm->toXmlElem("a:xfrm", "", _outStream);;
     }
     
     if (m_has_a_extLst)
     {
-        m_a_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4406,6 +4025,7 @@ namespace ns_wp {
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_WordprocessingContentPart* CT_WordprocessingContentPart::default_instance_ = NULL;
 
     // CT_WordprocessingGroup
     bool CT_WordprocessingGroup::has_a_cNvPr() const
@@ -4605,17 +4225,17 @@ namespace ns_wp {
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvGrpSpPr)
     {
-        m_a_cNvGrpSpPr->toXmlElem("wp:cNvGrpSpPr", "", _outStream);;
+        m_a_cNvGrpSpPr->toXmlElem("a:cNvGrpSpPr", "", _outStream);;
     }
     
     if (m_has_a_grpSpPr)
     {
-        m_a_grpSpPr->toXmlElem("wp:grpSpPr", "", _outStream);;
+        m_a_grpSpPr->toXmlElem("a:grpSpPr", "", _outStream);;
     }
      
     {
@@ -4624,30 +4244,30 @@ namespace ns_wp {
         {
             if ((*iter)->has_wsp())
             {
-                (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
+                (*iter)->get_wsp().toXmlElem("wsp", "", _outStream);
             }
             else if ((*iter)->has_grpSp())
             {
-                (*iter)->get_grpSp().toXmlElem("wp:grpSp", "", _outStream);
+                (*iter)->get_grpSp().toXmlElem("grpSp", "", _outStream);
             }
             else if ((*iter)->has_graphicFrame())
             {
-                (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
+                (*iter)->get_graphicFrame().toXmlElem("graphicFrame", "", _outStream);
             }
             else if ((*iter)->has_dpct_pic())
             {
-                (*iter)->get_dpct_pic().toXmlElem("wp:pic", "", _outStream);
+                (*iter)->get_dpct_pic().toXmlElem("dpct:pic", "", _outStream);
             }
             else if ((*iter)->has_contentPart())
             {
-                (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
+                (*iter)->get_contentPart().toXmlElem("contentPart", "", _outStream);
             }
         }
     }
      
     if (m_has_a_extLst)
     {
-        m_a_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4662,6 +4282,314 @@ namespace ns_wp {
     return *CT_WordprocessingGroup::default_instance_;
     }
 
+
+    // CT_WordprocessingGroup::ChildGroup_1
+    bool CT_WordprocessingGroup::ChildGroup_1::has_wsp() const
+    {    
+    return m_has_wsp;
+    }
+
+    CT_WordprocessingShape* CT_WordprocessingGroup::ChildGroup_1::mutable_wsp()
+    {    
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_wsp = true;
+    if (!m_wsp)
+    {
+        m_wsp = new CT_WordprocessingShape();
+    }
+    return m_wsp;
+    }
+
+    const CT_WordprocessingShape& CT_WordprocessingGroup::ChildGroup_1::get_wsp() const
+    {    
+    if (m_wsp)
+    {
+        return *m_wsp;
+    }
+    return CT_WordprocessingShape::default_instance();
+    }
+
+    bool CT_WordprocessingGroup::ChildGroup_1::has_grpSp() const
+    {    
+    return m_has_grpSp;
+    }
+
+    CT_WordprocessingGroup* CT_WordprocessingGroup::ChildGroup_1::mutable_grpSp()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_grpSp = true;
+    if (!m_grpSp)
+    {
+        m_grpSp = new CT_WordprocessingGroup();
+    }
+    return m_grpSp;
+    }
+
+    const CT_WordprocessingGroup& CT_WordprocessingGroup::ChildGroup_1::get_grpSp() const
+    {    
+    if (m_grpSp)
+    {
+        return *m_grpSp;
+    }
+    return CT_WordprocessingGroup::default_instance();
+    }
+
+    bool CT_WordprocessingGroup::ChildGroup_1::has_graphicFrame() const
+    {    
+    return m_has_graphicFrame;
+    }
+
+    CT_GraphicFrame* CT_WordprocessingGroup::ChildGroup_1::mutable_graphicFrame()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = true;
+    if (!m_graphicFrame)
+    {
+        m_graphicFrame = new CT_GraphicFrame();
+    }
+    return m_graphicFrame;
+    }
+
+    const CT_GraphicFrame& CT_WordprocessingGroup::ChildGroup_1::get_graphicFrame() const
+    {    
+    if (m_graphicFrame)
+    {
+        return *m_graphicFrame;
+    }
+    return CT_GraphicFrame::default_instance();
+    }
+
+    bool CT_WordprocessingGroup::ChildGroup_1::has_dpct_pic() const
+    {    
+    return m_has_dpct_pic;
+    }
+
+    ns_dpct::CT_Picture* CT_WordprocessingGroup::ChildGroup_1::mutable_dpct_pic()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = true;
+    if (!m_dpct_pic)
+    {
+        m_dpct_pic = new ns_dpct::CT_Picture();
+    }
+    return m_dpct_pic;
+    }
+
+    const ns_dpct::CT_Picture& CT_WordprocessingGroup::ChildGroup_1::get_dpct_pic() const
+    {    
+    if (m_dpct_pic)
+    {
+        return *m_dpct_pic;
+    }
+    return ns_dpct::CT_Picture::default_instance();
+    }
+
+    bool CT_WordprocessingGroup::ChildGroup_1::has_contentPart() const
+    {    
+    return m_has_contentPart;
+    }
+
+    CT_WordprocessingContentPart* CT_WordprocessingGroup::ChildGroup_1::mutable_contentPart()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = true;
+    if (!m_contentPart)
+    {
+        m_contentPart = new CT_WordprocessingContentPart();
+    }
+    return m_contentPart;
+    }
+
+    const CT_WordprocessingContentPart& CT_WordprocessingGroup::ChildGroup_1::get_contentPart() const
+    {    
+    if (m_contentPart)
+    {
+        return *m_contentPart;
+    }
+    return CT_WordprocessingContentPart::default_instance();
+    }
+
+CT_WordprocessingGroup* CT_WordprocessingGroup::default_instance_ = NULL;
 
     // CT_WordprocessingCanvas
     bool CT_WordprocessingCanvas::has_a_bg() const
@@ -4828,12 +4756,12 @@ namespace ns_wp {
             
     if (m_has_a_bg)
     {
-        m_a_bg->toXmlElem("wp:bg", "", _outStream);;
+        m_a_bg->toXmlElem("a:bg", "", _outStream);;
     }
     
     if (m_has_a_whole)
     {
-        m_a_whole->toXmlElem("wp:whole", "", _outStream);;
+        m_a_whole->toXmlElem("a:whole", "", _outStream);;
     }
      
     {
@@ -4842,30 +4770,30 @@ namespace ns_wp {
         {
             if ((*iter)->has_wsp())
             {
-                (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
+                (*iter)->get_wsp().toXmlElem("wsp", "", _outStream);
             }
             else if ((*iter)->has_dpct_pic())
             {
-                (*iter)->get_dpct_pic().toXmlElem("wp:pic", "", _outStream);
+                (*iter)->get_dpct_pic().toXmlElem("dpct:pic", "", _outStream);
             }
             else if ((*iter)->has_contentPart())
             {
-                (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
+                (*iter)->get_contentPart().toXmlElem("contentPart", "", _outStream);
             }
             else if ((*iter)->has_wgp())
             {
-                (*iter)->get_wgp().toXmlElem("wp:wgp", "", _outStream);
+                (*iter)->get_wgp().toXmlElem("wgp", "", _outStream);
             }
             else if ((*iter)->has_graphicFrame())
             {
-                (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
+                (*iter)->get_graphicFrame().toXmlElem("graphicFrame", "", _outStream);
             }
         }
     }
      
     if (m_has_a_extLst)
     {
-        m_a_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4880,6 +4808,314 @@ namespace ns_wp {
     return *CT_WordprocessingCanvas::default_instance_;
     }
 
+
+    // CT_WordprocessingCanvas::ChildGroup_1
+    bool CT_WordprocessingCanvas::ChildGroup_1::has_wsp() const
+    {    
+    return m_has_wsp;
+    }
+
+    CT_WordprocessingShape* CT_WordprocessingCanvas::ChildGroup_1::mutable_wsp()
+    {    
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_wgp = false;
+    
+    if (m_wgp)
+    {
+        delete m_wgp;
+        m_wgp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_wsp = true;
+    if (!m_wsp)
+    {
+        m_wsp = new CT_WordprocessingShape();
+    }
+    return m_wsp;
+    }
+
+    const CT_WordprocessingShape& CT_WordprocessingCanvas::ChildGroup_1::get_wsp() const
+    {    
+    if (m_wsp)
+    {
+        return *m_wsp;
+    }
+    return CT_WordprocessingShape::default_instance();
+    }
+
+    bool CT_WordprocessingCanvas::ChildGroup_1::has_dpct_pic() const
+    {    
+    return m_has_dpct_pic;
+    }
+
+    ns_dpct::CT_Picture* CT_WordprocessingCanvas::ChildGroup_1::mutable_dpct_pic()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_wgp = false;
+    
+    if (m_wgp)
+    {
+        delete m_wgp;
+        m_wgp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = true;
+    if (!m_dpct_pic)
+    {
+        m_dpct_pic = new ns_dpct::CT_Picture();
+    }
+    return m_dpct_pic;
+    }
+
+    const ns_dpct::CT_Picture& CT_WordprocessingCanvas::ChildGroup_1::get_dpct_pic() const
+    {    
+    if (m_dpct_pic)
+    {
+        return *m_dpct_pic;
+    }
+    return ns_dpct::CT_Picture::default_instance();
+    }
+
+    bool CT_WordprocessingCanvas::ChildGroup_1::has_contentPart() const
+    {    
+    return m_has_contentPart;
+    }
+
+    CT_WordprocessingContentPart* CT_WordprocessingCanvas::ChildGroup_1::mutable_contentPart()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_wgp = false;
+    
+    if (m_wgp)
+    {
+        delete m_wgp;
+        m_wgp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_contentPart = true;
+    if (!m_contentPart)
+    {
+        m_contentPart = new CT_WordprocessingContentPart();
+    }
+    return m_contentPart;
+    }
+
+    const CT_WordprocessingContentPart& CT_WordprocessingCanvas::ChildGroup_1::get_contentPart() const
+    {    
+    if (m_contentPart)
+    {
+        return *m_contentPart;
+    }
+    return CT_WordprocessingContentPart::default_instance();
+    }
+
+    bool CT_WordprocessingCanvas::ChildGroup_1::has_wgp() const
+    {    
+    return m_has_wgp;
+    }
+
+    CT_WordprocessingGroup* CT_WordprocessingCanvas::ChildGroup_1::mutable_wgp()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_wgp = true;
+    if (!m_wgp)
+    {
+        m_wgp = new CT_WordprocessingGroup();
+    }
+    return m_wgp;
+    }
+
+    const CT_WordprocessingGroup& CT_WordprocessingCanvas::ChildGroup_1::get_wgp() const
+    {    
+    if (m_wgp)
+    {
+        return *m_wgp;
+    }
+    return CT_WordprocessingGroup::default_instance();
+    }
+
+    bool CT_WordprocessingCanvas::ChildGroup_1::has_graphicFrame() const
+    {    
+    return m_has_graphicFrame;
+    }
+
+    CT_GraphicFrame* CT_WordprocessingCanvas::ChildGroup_1::mutable_graphicFrame()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_wgp = false;
+    
+    if (m_wgp)
+    {
+        delete m_wgp;
+        m_wgp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = true;
+    if (!m_graphicFrame)
+    {
+        m_graphicFrame = new CT_GraphicFrame();
+    }
+    return m_graphicFrame;
+    }
+
+    const CT_GraphicFrame& CT_WordprocessingCanvas::ChildGroup_1::get_graphicFrame() const
+    {    
+    if (m_graphicFrame)
+    {
+        return *m_graphicFrame;
+    }
+    return CT_GraphicFrame::default_instance();
+    }
+
+CT_WordprocessingCanvas* CT_WordprocessingCanvas::default_instance_ = NULL;
 
     // wpc_element
     bool wpc_element::has_a_bg() const
@@ -5035,7 +5271,7 @@ namespace ns_wp {
 
     void wpc_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<wp:wpc";
+    _outStream << "<wpc";
     
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
     _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
@@ -5047,12 +5283,12 @@ namespace ns_wp {
     
     if (m_has_a_bg)
     {
-        m_a_bg->toXmlElem("wp:bg", "", _outStream);;
+        m_a_bg->toXmlElem("a:bg", "", _outStream);;
     }
     
     if (m_has_a_whole)
     {
-        m_a_whole->toXmlElem("wp:whole", "", _outStream);;
+        m_a_whole->toXmlElem("a:whole", "", _outStream);;
     }
      
     {
@@ -5061,33 +5297,33 @@ namespace ns_wp {
         {
             if ((*iter)->has_wsp())
             {
-                (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
+                (*iter)->get_wsp().toXmlElem("wsp", "", _outStream);
             }
             else if ((*iter)->has_dpct_pic())
             {
-                (*iter)->get_dpct_pic().toXmlElem("wp:pic", "", _outStream);
+                (*iter)->get_dpct_pic().toXmlElem("dpct:pic", "", _outStream);
             }
             else if ((*iter)->has_contentPart())
             {
-                (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
+                (*iter)->get_contentPart().toXmlElem("contentPart", "", _outStream);
             }
             else if ((*iter)->has_wgp())
             {
-                (*iter)->get_wgp().toXmlElem("wp:wgp", "", _outStream);
+                (*iter)->get_wgp().toXmlElem("wgp", "", _outStream);
             }
             else if ((*iter)->has_graphicFrame())
             {
-                (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
+                (*iter)->get_graphicFrame().toXmlElem("graphicFrame", "", _outStream);
             }
         }
     }
      
     if (m_has_a_extLst)
     {
-        m_a_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
-    _outStream << "</wp:wpc>";
+    _outStream << "</wpc>";
     }
 
     const wpc_element& wpc_element::default_instance()
@@ -5099,6 +5335,314 @@ namespace ns_wp {
     return *wpc_element::default_instance_;
     }
 
+
+    // wpc_element::ChildGroup_1
+    bool wpc_element::ChildGroup_1::has_wsp() const
+    {    
+    return m_has_wsp;
+    }
+
+    CT_WordprocessingShape* wpc_element::ChildGroup_1::mutable_wsp()
+    {    
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_wgp = false;
+    
+    if (m_wgp)
+    {
+        delete m_wgp;
+        m_wgp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_wsp = true;
+    if (!m_wsp)
+    {
+        m_wsp = new CT_WordprocessingShape();
+    }
+    return m_wsp;
+    }
+
+    const CT_WordprocessingShape& wpc_element::ChildGroup_1::get_wsp() const
+    {    
+    if (m_wsp)
+    {
+        return *m_wsp;
+    }
+    return CT_WordprocessingShape::default_instance();
+    }
+
+    bool wpc_element::ChildGroup_1::has_dpct_pic() const
+    {    
+    return m_has_dpct_pic;
+    }
+
+    ns_dpct::CT_Picture* wpc_element::ChildGroup_1::mutable_dpct_pic()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_wgp = false;
+    
+    if (m_wgp)
+    {
+        delete m_wgp;
+        m_wgp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = true;
+    if (!m_dpct_pic)
+    {
+        m_dpct_pic = new ns_dpct::CT_Picture();
+    }
+    return m_dpct_pic;
+    }
+
+    const ns_dpct::CT_Picture& wpc_element::ChildGroup_1::get_dpct_pic() const
+    {    
+    if (m_dpct_pic)
+    {
+        return *m_dpct_pic;
+    }
+    return ns_dpct::CT_Picture::default_instance();
+    }
+
+    bool wpc_element::ChildGroup_1::has_contentPart() const
+    {    
+    return m_has_contentPart;
+    }
+
+    CT_WordprocessingContentPart* wpc_element::ChildGroup_1::mutable_contentPart()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_wgp = false;
+    
+    if (m_wgp)
+    {
+        delete m_wgp;
+        m_wgp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_contentPart = true;
+    if (!m_contentPart)
+    {
+        m_contentPart = new CT_WordprocessingContentPart();
+    }
+    return m_contentPart;
+    }
+
+    const CT_WordprocessingContentPart& wpc_element::ChildGroup_1::get_contentPart() const
+    {    
+    if (m_contentPart)
+    {
+        return *m_contentPart;
+    }
+    return CT_WordprocessingContentPart::default_instance();
+    }
+
+    bool wpc_element::ChildGroup_1::has_wgp() const
+    {    
+    return m_has_wgp;
+    }
+
+    CT_WordprocessingGroup* wpc_element::ChildGroup_1::mutable_wgp()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_wgp = true;
+    if (!m_wgp)
+    {
+        m_wgp = new CT_WordprocessingGroup();
+    }
+    return m_wgp;
+    }
+
+    const CT_WordprocessingGroup& wpc_element::ChildGroup_1::get_wgp() const
+    {    
+    if (m_wgp)
+    {
+        return *m_wgp;
+    }
+    return CT_WordprocessingGroup::default_instance();
+    }
+
+    bool wpc_element::ChildGroup_1::has_graphicFrame() const
+    {    
+    return m_has_graphicFrame;
+    }
+
+    CT_GraphicFrame* wpc_element::ChildGroup_1::mutable_graphicFrame()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_wgp = false;
+    
+    if (m_wgp)
+    {
+        delete m_wgp;
+        m_wgp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = true;
+    if (!m_graphicFrame)
+    {
+        m_graphicFrame = new CT_GraphicFrame();
+    }
+    return m_graphicFrame;
+    }
+
+    const CT_GraphicFrame& wpc_element::ChildGroup_1::get_graphicFrame() const
+    {    
+    if (m_graphicFrame)
+    {
+        return *m_graphicFrame;
+    }
+    return CT_GraphicFrame::default_instance();
+    }
+
+wpc_element* wpc_element::default_instance_ = NULL;
 
     // wgp_element
     bool wgp_element::has_a_cNvPr() const
@@ -5287,7 +5831,7 @@ namespace ns_wp {
 
     void wgp_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<wp:wgp";
+    _outStream << "<wgp";
     
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
     _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
@@ -5299,17 +5843,17 @@ namespace ns_wp {
     
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvGrpSpPr)
     {
-        m_a_cNvGrpSpPr->toXmlElem("wp:cNvGrpSpPr", "", _outStream);;
+        m_a_cNvGrpSpPr->toXmlElem("a:cNvGrpSpPr", "", _outStream);;
     }
     
     if (m_has_a_grpSpPr)
     {
-        m_a_grpSpPr->toXmlElem("wp:grpSpPr", "", _outStream);;
+        m_a_grpSpPr->toXmlElem("a:grpSpPr", "", _outStream);;
     }
      
     {
@@ -5318,33 +5862,33 @@ namespace ns_wp {
         {
             if ((*iter)->has_wsp())
             {
-                (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
+                (*iter)->get_wsp().toXmlElem("wsp", "", _outStream);
             }
             else if ((*iter)->has_grpSp())
             {
-                (*iter)->get_grpSp().toXmlElem("wp:grpSp", "", _outStream);
+                (*iter)->get_grpSp().toXmlElem("grpSp", "", _outStream);
             }
             else if ((*iter)->has_graphicFrame())
             {
-                (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
+                (*iter)->get_graphicFrame().toXmlElem("graphicFrame", "", _outStream);
             }
             else if ((*iter)->has_dpct_pic())
             {
-                (*iter)->get_dpct_pic().toXmlElem("wp:pic", "", _outStream);
+                (*iter)->get_dpct_pic().toXmlElem("dpct:pic", "", _outStream);
             }
             else if ((*iter)->has_contentPart())
             {
-                (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
+                (*iter)->get_contentPart().toXmlElem("contentPart", "", _outStream);
             }
         }
     }
      
     if (m_has_a_extLst)
     {
-        m_a_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
-    _outStream << "</wp:wgp>";
+    _outStream << "</wgp>";
     }
 
     const wgp_element& wgp_element::default_instance()
@@ -5356,6 +5900,314 @@ namespace ns_wp {
     return *wgp_element::default_instance_;
     }
 
+
+    // wgp_element::ChildGroup_1
+    bool wgp_element::ChildGroup_1::has_wsp() const
+    {    
+    return m_has_wsp;
+    }
+
+    CT_WordprocessingShape* wgp_element::ChildGroup_1::mutable_wsp()
+    {    
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_wsp = true;
+    if (!m_wsp)
+    {
+        m_wsp = new CT_WordprocessingShape();
+    }
+    return m_wsp;
+    }
+
+    const CT_WordprocessingShape& wgp_element::ChildGroup_1::get_wsp() const
+    {    
+    if (m_wsp)
+    {
+        return *m_wsp;
+    }
+    return CT_WordprocessingShape::default_instance();
+    }
+
+    bool wgp_element::ChildGroup_1::has_grpSp() const
+    {    
+    return m_has_grpSp;
+    }
+
+    CT_WordprocessingGroup* wgp_element::ChildGroup_1::mutable_grpSp()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_grpSp = true;
+    if (!m_grpSp)
+    {
+        m_grpSp = new CT_WordprocessingGroup();
+    }
+    return m_grpSp;
+    }
+
+    const CT_WordprocessingGroup& wgp_element::ChildGroup_1::get_grpSp() const
+    {    
+    if (m_grpSp)
+    {
+        return *m_grpSp;
+    }
+    return CT_WordprocessingGroup::default_instance();
+    }
+
+    bool wgp_element::ChildGroup_1::has_graphicFrame() const
+    {    
+    return m_has_graphicFrame;
+    }
+
+    CT_GraphicFrame* wgp_element::ChildGroup_1::mutable_graphicFrame()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = true;
+    if (!m_graphicFrame)
+    {
+        m_graphicFrame = new CT_GraphicFrame();
+    }
+    return m_graphicFrame;
+    }
+
+    const CT_GraphicFrame& wgp_element::ChildGroup_1::get_graphicFrame() const
+    {    
+    if (m_graphicFrame)
+    {
+        return *m_graphicFrame;
+    }
+    return CT_GraphicFrame::default_instance();
+    }
+
+    bool wgp_element::ChildGroup_1::has_dpct_pic() const
+    {    
+    return m_has_dpct_pic;
+    }
+
+    ns_dpct::CT_Picture* wgp_element::ChildGroup_1::mutable_dpct_pic()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = true;
+    if (!m_dpct_pic)
+    {
+        m_dpct_pic = new ns_dpct::CT_Picture();
+    }
+    return m_dpct_pic;
+    }
+
+    const ns_dpct::CT_Picture& wgp_element::ChildGroup_1::get_dpct_pic() const
+    {    
+    if (m_dpct_pic)
+    {
+        return *m_dpct_pic;
+    }
+    return ns_dpct::CT_Picture::default_instance();
+    }
+
+    bool wgp_element::ChildGroup_1::has_contentPart() const
+    {    
+    return m_has_contentPart;
+    }
+
+    CT_WordprocessingContentPart* wgp_element::ChildGroup_1::mutable_contentPart()
+    {    
+    
+    m_has_wsp = false;
+    
+    if (m_wsp)
+    {
+        delete m_wsp;
+        m_wsp = NULL;
+    }
+    ;
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_dpct_pic = false;
+    
+    if (m_dpct_pic)
+    {
+        delete m_dpct_pic;
+        m_dpct_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = true;
+    if (!m_contentPart)
+    {
+        m_contentPart = new CT_WordprocessingContentPart();
+    }
+    return m_contentPart;
+    }
+
+    const CT_WordprocessingContentPart& wgp_element::ChildGroup_1::get_contentPart() const
+    {    
+    if (m_contentPart)
+    {
+        return *m_contentPart;
+    }
+    return CT_WordprocessingContentPart::default_instance();
+    }
+
+wgp_element* wgp_element::default_instance_ = NULL;
 
     // wsp_element
     bool wsp_element::has_a_cNvPr() const
@@ -5618,92 +6470,11 @@ namespace ns_wp {
     {    
     m_has_normalEastAsianFlow_attr = false;
     m_normalEastAsianFlow_attr = false;
-    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-     
-    m_has_a_cNvSpPr = false;
-    
-    if (m_a_cNvSpPr)
-    {
-        delete m_a_cNvSpPr;
-        m_a_cNvSpPr = NULL;
-    }
-    
-    
-    m_has_a_cNvCnPr = false;
-    
-    if (m_a_cNvCnPr)
-    {
-        delete m_a_cNvCnPr;
-        m_a_cNvCnPr = NULL;
-    }
-    
-     
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_style = false;
-    
-    if (m_a_style)
-    {
-        delete m_a_style;
-        m_a_style = NULL;
-    }
-    
-    
-    m_has_a_extLst = false;
-    
-    if (m_a_extLst)
-    {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
-    }
-    
-     
-    m_has_txbx = false;
-    
-    if (m_txbx)
-    {
-        delete m_txbx;
-        m_txbx = NULL;
-    }
-    
-    
-    m_has_linkedTxbx = false;
-    
-    if (m_linkedTxbx)
-    {
-        delete m_linkedTxbx;
-        m_linkedTxbx = NULL;
-    }
-    
-     
-    m_has_a_bodyPr = false;
-    
-    if (m_a_bodyPr)
-    {
-        delete m_a_bodyPr;
-        m_a_bodyPr = NULL;
-    }
-    
     }
 
     void wsp_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<wp:wsp";
+    _outStream << "<wsp";
     
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
     _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
@@ -5720,50 +6491,50 @@ namespace ns_wp {
     
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
      
     if (m_has_a_cNvSpPr)
     {
-        m_a_cNvSpPr->toXmlElem("wp:cNvSpPr", "", _outStream);;
+        m_a_cNvSpPr->toXmlElem("a:cNvSpPr", "", _outStream);;
     }
     
     if (m_has_a_cNvCnPr)
     {
-        m_a_cNvCnPr->toXmlElem("wp:cNvCnPr", "", _outStream);;
+        m_a_cNvCnPr->toXmlElem("a:cNvCnPr", "", _outStream);;
     }
      
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("wp:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_style)
     {
-        m_a_style->toXmlElem("wp:style", "", _outStream);;
+        m_a_style->toXmlElem("a:style", "", _outStream);;
     }
     
     if (m_has_a_extLst)
     {
-        m_a_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
      
     if (m_has_txbx)
     {
-        m_txbx->toXmlElem("wp:txbx", "", _outStream);;
+        m_txbx->toXmlElem("txbx", "", _outStream);;
     }
     
     if (m_has_linkedTxbx)
     {
-        m_linkedTxbx->toXmlElem("wp:linkedTxbx", "", _outStream);;
+        m_linkedTxbx->toXmlElem("linkedTxbx", "", _outStream);;
     }
      
     if (m_has_a_bodyPr)
     {
-        m_a_bodyPr->toXmlElem("wp:bodyPr", "", _outStream);;
+        m_a_bodyPr->toXmlElem("a:bodyPr", "", _outStream);;
     }
     
-    _outStream << "</wp:wsp>";
+    _outStream << "</wsp>";
     }
 
     const wsp_element& wsp_element::default_instance()
@@ -5791,6 +6562,7 @@ namespace ns_wp {
     return m_normalEastAsianFlow_attr;
     }
 
+wsp_element* wsp_element::default_instance_ = NULL;
 
     // inline_element
     bool inline_element::has_a_extent() const
@@ -5950,56 +6722,11 @@ namespace ns_wp {
         m_distR_attr = NULL;
     }
     
-    
-    m_has_a_extent = false;
-    
-    if (m_a_extent)
-    {
-        delete m_a_extent;
-        m_a_extent = NULL;
-    }
-    
-    
-    m_has_effectExtent = false;
-    
-    if (m_effectExtent)
-    {
-        delete m_effectExtent;
-        m_effectExtent = NULL;
-    }
-    
-    
-    m_has_a_docPr = false;
-    
-    if (m_a_docPr)
-    {
-        delete m_a_docPr;
-        m_a_docPr = NULL;
-    }
-    
-    
-    m_has_a_cNvGraphicFramePr = false;
-    
-    if (m_a_cNvGraphicFramePr)
-    {
-        delete m_a_cNvGraphicFramePr;
-        m_a_cNvGraphicFramePr = NULL;
-    }
-    
-    
-    m_has_a_graphic = false;
-    
-    if (m_a_graphic)
-    {
-        delete m_a_graphic;
-        m_a_graphic = NULL;
-    }
-    
     }
 
     void inline_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<wp:inline";
+    _outStream << "<inline";
     
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
     _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
@@ -6034,30 +6761,30 @@ namespace ns_wp {
     
     if (m_has_a_extent)
     {
-        m_a_extent->toXmlElem("wp:extent", "", _outStream);;
+        m_a_extent->toXmlElem("a:extent", "", _outStream);;
     }
     
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("effectExtent", "", _outStream);;
     }
     
     if (m_has_a_docPr)
     {
-        m_a_docPr->toXmlElem("wp:docPr", "", _outStream);;
+        m_a_docPr->toXmlElem("a:docPr", "", _outStream);;
     }
     
     if (m_has_a_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);;
+        m_a_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);;
     }
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("wp:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
     }
     
-    _outStream << "</wp:inline>";
+    _outStream << "</inline>";
     }
 
     const inline_element& inline_element::default_instance()
@@ -6149,6 +6876,7 @@ namespace ns_wp {
     return ST_WrapDistance::default_instance();
     }
 
+inline_element* inline_element::default_instance_ = NULL;
 
     // anchor_element
     bool anchor_element::has_a_simplePos() const
@@ -6706,128 +7434,11 @@ namespace ns_wp {
     
     m_has_allowOverlap_attr = false;
     m_allowOverlap_attr = false;
-    
-    m_has_a_simplePos = false;
-    
-    if (m_a_simplePos)
-    {
-        delete m_a_simplePos;
-        m_a_simplePos = NULL;
-    }
-    
-    
-    m_has_positionH = false;
-    
-    if (m_positionH)
-    {
-        delete m_positionH;
-        m_positionH = NULL;
-    }
-    
-    
-    m_has_positionV = false;
-    
-    if (m_positionV)
-    {
-        delete m_positionV;
-        m_positionV = NULL;
-    }
-    
-    
-    m_has_a_extent = false;
-    
-    if (m_a_extent)
-    {
-        delete m_a_extent;
-        m_a_extent = NULL;
-    }
-    
-    
-    m_has_effectExtent = false;
-    
-    if (m_effectExtent)
-    {
-        delete m_effectExtent;
-        m_effectExtent = NULL;
-    }
-    
-     
-    m_has_wrapNone = false;
-    
-    if (m_wrapNone)
-    {
-        delete m_wrapNone;
-        m_wrapNone = NULL;
-    }
-    
-    
-    m_has_wrapSquare = false;
-    
-    if (m_wrapSquare)
-    {
-        delete m_wrapSquare;
-        m_wrapSquare = NULL;
-    }
-    
-    
-    m_has_wrapTight = false;
-    
-    if (m_wrapTight)
-    {
-        delete m_wrapTight;
-        m_wrapTight = NULL;
-    }
-    
-    
-    m_has_wrapThrough = false;
-    
-    if (m_wrapThrough)
-    {
-        delete m_wrapThrough;
-        m_wrapThrough = NULL;
-    }
-    
-    
-    m_has_wrapTopAndBottom = false;
-    
-    if (m_wrapTopAndBottom)
-    {
-        delete m_wrapTopAndBottom;
-        m_wrapTopAndBottom = NULL;
-    }
-    
-     
-    m_has_a_docPr = false;
-    
-    if (m_a_docPr)
-    {
-        delete m_a_docPr;
-        m_a_docPr = NULL;
-    }
-    
-    
-    m_has_a_cNvGraphicFramePr = false;
-    
-    if (m_a_cNvGraphicFramePr)
-    {
-        delete m_a_cNvGraphicFramePr;
-        m_a_cNvGraphicFramePr = NULL;
-    }
-    
-    
-    m_has_a_graphic = false;
-    
-    if (m_a_graphic)
-    {
-        delete m_a_graphic;
-        m_a_graphic = NULL;
-    }
-    
     }
 
     void anchor_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<wp:anchor";
+    _outStream << "<anchor";
     
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
     _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
@@ -6904,70 +7515,70 @@ namespace ns_wp {
     
     if (m_has_a_simplePos)
     {
-        m_a_simplePos->toXmlElem("wp:simplePos", "", _outStream);;
+        m_a_simplePos->toXmlElem("a:simplePos", "", _outStream);;
     }
     
     if (m_has_positionH)
     {
-        m_positionH->toXmlElem("wp:positionH", "", _outStream);;
+        m_positionH->toXmlElem("positionH", "", _outStream);;
     }
     
     if (m_has_positionV)
     {
-        m_positionV->toXmlElem("wp:positionV", "", _outStream);;
+        m_positionV->toXmlElem("positionV", "", _outStream);;
     }
     
     if (m_has_a_extent)
     {
-        m_a_extent->toXmlElem("wp:extent", "", _outStream);;
+        m_a_extent->toXmlElem("a:extent", "", _outStream);;
     }
     
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("effectExtent", "", _outStream);;
     }
      
     if (m_has_wrapNone)
     {
-        m_wrapNone->toXmlElem("wp:wrapNone", "", _outStream);;
+        m_wrapNone->toXmlElem("wrapNone", "", _outStream);;
     }
     
     if (m_has_wrapSquare)
     {
-        m_wrapSquare->toXmlElem("wp:wrapSquare", "", _outStream);;
+        m_wrapSquare->toXmlElem("wrapSquare", "", _outStream);;
     }
     
     if (m_has_wrapTight)
     {
-        m_wrapTight->toXmlElem("wp:wrapTight", "", _outStream);;
+        m_wrapTight->toXmlElem("wrapTight", "", _outStream);;
     }
     
     if (m_has_wrapThrough)
     {
-        m_wrapThrough->toXmlElem("wp:wrapThrough", "", _outStream);;
+        m_wrapThrough->toXmlElem("wrapThrough", "", _outStream);;
     }
     
     if (m_has_wrapTopAndBottom)
     {
-        m_wrapTopAndBottom->toXmlElem("wp:wrapTopAndBottom", "", _outStream);;
+        m_wrapTopAndBottom->toXmlElem("wrapTopAndBottom", "", _outStream);;
     }
      
     if (m_has_a_docPr)
     {
-        m_a_docPr->toXmlElem("wp:docPr", "", _outStream);;
+        m_a_docPr->toXmlElem("a:docPr", "", _outStream);;
     }
     
     if (m_has_a_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);;
+        m_a_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);;
     }
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("wp:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
     }
     
-    _outStream << "</wp:anchor>";
+    _outStream << "</anchor>";
     }
 
     const anchor_element& anchor_element::default_instance()
@@ -7171,4 +7782,5 @@ namespace ns_wp {
     return m_allowOverlap_attr;
     }
 
+anchor_element* anchor_element::default_instance_ = NULL;
 }

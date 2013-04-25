@@ -73,6 +73,7 @@ namespace ns_p {
         "r",
         "d"
     };
+ST_TransitionSideDirectionType* ST_TransitionSideDirectionType::default_instance_ = NULL;
 
     // ST_TransitionCornerDirectionType
     ST_TransitionCornerDirectionType::ST_TransitionCornerDirectionType()
@@ -134,6 +135,7 @@ namespace ns_p {
         "ld",
         "rd"
     };
+ST_TransitionCornerDirectionType* ST_TransitionCornerDirectionType::default_instance_ = NULL;
 
     // ST_TransitionInOutDirectionType
     ST_TransitionInOutDirectionType::ST_TransitionInOutDirectionType()
@@ -193,6 +195,7 @@ namespace ns_p {
         "out",
         "in"
     };
+ST_TransitionInOutDirectionType* ST_TransitionInOutDirectionType::default_instance_ = NULL;
 
     // ST_TransitionEightDirectionType
     bool ST_TransitionEightDirectionType::has_ST_TransitionSideDirectionType() const
@@ -265,6 +268,21 @@ namespace ns_p {
     }
     }
 
+    std::string ST_TransitionEightDirectionType::toString() const
+    {    
+    if (m_has_ST_TransitionSideDirectionType)
+    {
+        return m_ST_TransitionSideDirectionType->toString();
+    }
+    
+    if (m_has_ST_TransitionCornerDirectionType)
+    {
+        return m_ST_TransitionCornerDirectionType->toString();
+    }
+    
+    return string();
+    }
+
     void ST_TransitionEightDirectionType::clear()
     {    clear_ST_TransitionSideDirectionType();
     clear_ST_TransitionCornerDirectionType();    }
@@ -273,13 +291,13 @@ namespace ns_p {
     {    
     if (m_has_ST_TransitionSideDirectionType)
     {
-        m_ST_TransitionSideDirectionType->toXmlAttr(_attrName, _outStream);;
+        m_ST_TransitionSideDirectionType->toXmlAttr(_attrName, _outStream);
         return;
     }
     
     if (m_has_ST_TransitionCornerDirectionType)
     {
-        m_ST_TransitionCornerDirectionType->toXmlAttr(_attrName, _outStream);;
+        m_ST_TransitionCornerDirectionType->toXmlAttr(_attrName, _outStream);
         return;
     }
     }
@@ -293,6 +311,7 @@ namespace ns_p {
     return *ST_TransitionEightDirectionType::default_instance_;
     }
 
+ST_TransitionEightDirectionType* ST_TransitionEightDirectionType::default_instance_ = NULL;
 
     // ST_TransitionSpeed
     ST_TransitionSpeed::ST_TransitionSpeed()
@@ -353,6 +372,7 @@ namespace ns_p {
         "med",
         "fast"
     };
+ST_TransitionSpeed* ST_TransitionSpeed::default_instance_ = NULL;
 
     // ST_TLTimeIndefinite
     ST_TLTimeIndefinite::ST_TLTimeIndefinite()
@@ -411,6 +431,7 @@ namespace ns_p {
     {
         "indefinite"
     };
+ST_TLTimeIndefinite* ST_TLTimeIndefinite::default_instance_ = NULL;
 
     // ST_TLTime
     bool ST_TLTime::has_unsignedInt() const
@@ -471,6 +492,25 @@ namespace ns_p {
     }
     }
 
+    std::string ST_TLTime::toString() const
+    {    
+    if (m_has_unsignedInt)
+    {
+        
+    std::stringstream strStream;
+    strStream << m_unsignedInt;
+    return strStream.str();
+    
+    }
+    
+    if (m_has_ST_TLTimeIndefinite)
+    {
+        return m_ST_TLTimeIndefinite->toString();
+    }
+    
+    return string();
+    }
+
     void ST_TLTime::clear()
     {    clear_unsignedInt();
     clear_ST_TLTimeIndefinite();    }
@@ -479,13 +519,13 @@ namespace ns_p {
     {    
     if (m_has_unsignedInt)
     {
-        _outStream << " " << _attrName << "=\"" << m_unsignedInt << "\"";;
+        _outStream << " " << _attrName << "=\"" << m_unsignedInt << "\"";
         return;
     }
     
     if (m_has_ST_TLTimeIndefinite)
     {
-        m_ST_TLTimeIndefinite->toXmlAttr(_attrName, _outStream);;
+        m_ST_TLTimeIndefinite->toXmlAttr(_attrName, _outStream);
         return;
     }
     }
@@ -499,6 +539,7 @@ namespace ns_p {
     return *ST_TLTime::default_instance_;
     }
 
+ST_TLTime* ST_TLTime::default_instance_ = NULL;
 
     // ST_TLTimeNodeID
     ST_TLTimeNodeID::ST_TLTimeNodeID()
@@ -558,6 +599,7 @@ namespace ns_p {
     return strStream.str();
     }
 
+ST_TLTimeNodeID* ST_TLTimeNodeID::default_instance_ = NULL;
 
     // ST_IterateType
     ST_IterateType::ST_IterateType()
@@ -618,6 +660,7 @@ namespace ns_p {
         "wd",
         "lt"
     };
+ST_IterateType* ST_IterateType::default_instance_ = NULL;
 
     // ST_TLChartSubelementType
     ST_TLChartSubelementType::ST_TLChartSubelementType()
@@ -680,6 +723,7 @@ namespace ns_p {
         "ptInSeries",
         "ptInCategory"
     };
+ST_TLChartSubelementType* ST_TLChartSubelementType::default_instance_ = NULL;
 
     // ST_TLTriggerRuntimeNode
     ST_TLTriggerRuntimeNode::ST_TLTriggerRuntimeNode()
@@ -740,6 +784,7 @@ namespace ns_p {
         "last",
         "all"
     };
+ST_TLTriggerRuntimeNode* ST_TLTriggerRuntimeNode::default_instance_ = NULL;
 
     // ST_TLTriggerEvent
     ST_TLTriggerEvent::ST_TLTriggerEvent()
@@ -808,6 +853,7 @@ namespace ns_p {
         "onPrev",
         "onStopAudio"
     };
+ST_TLTriggerEvent* ST_TLTriggerEvent::default_instance_ = NULL;
 
     // ST_TLTimeNodePresetClassType
     ST_TLTimeNodePresetClassType::ST_TLTimeNodePresetClassType()
@@ -871,6 +917,7 @@ namespace ns_p {
         "verb",
         "mediacall"
     };
+ST_TLTimeNodePresetClassType* ST_TLTimeNodePresetClassType::default_instance_ = NULL;
 
     // ST_TLTimeNodeRestartType
     ST_TLTimeNodeRestartType::ST_TLTimeNodeRestartType()
@@ -931,6 +978,7 @@ namespace ns_p {
         "whenNotActive",
         "never"
     };
+ST_TLTimeNodeRestartType* ST_TLTimeNodeRestartType::default_instance_ = NULL;
 
     // ST_TLTimeNodeFillType
     ST_TLTimeNodeFillType::ST_TLTimeNodeFillType()
@@ -992,6 +1040,7 @@ namespace ns_p {
         "hold",
         "transition"
     };
+ST_TLTimeNodeFillType* ST_TLTimeNodeFillType::default_instance_ = NULL;
 
     // ST_TLTimeNodeSyncType
     ST_TLTimeNodeSyncType::ST_TLTimeNodeSyncType()
@@ -1051,6 +1100,7 @@ namespace ns_p {
         "canSlip",
         "locked"
     };
+ST_TLTimeNodeSyncType* ST_TLTimeNodeSyncType::default_instance_ = NULL;
 
     // ST_TLTimeNodeMasterRelation
     ST_TLTimeNodeMasterRelation::ST_TLTimeNodeMasterRelation()
@@ -1111,6 +1161,7 @@ namespace ns_p {
         "lastClick",
         "nextClick"
     };
+ST_TLTimeNodeMasterRelation* ST_TLTimeNodeMasterRelation::default_instance_ = NULL;
 
     // ST_TLTimeNodeType
     ST_TLTimeNodeType::ST_TLTimeNodeType()
@@ -1177,6 +1228,7 @@ namespace ns_p {
         "afterGroup",
         "tmRoot"
     };
+ST_TLTimeNodeType* ST_TLTimeNodeType::default_instance_ = NULL;
 
     // ST_TLNextActionType
     ST_TLNextActionType::ST_TLNextActionType()
@@ -1236,6 +1288,7 @@ namespace ns_p {
         "none",
         "seek"
     };
+ST_TLNextActionType* ST_TLNextActionType::default_instance_ = NULL;
 
     // ST_TLPreviousActionType
     ST_TLPreviousActionType::ST_TLPreviousActionType()
@@ -1295,6 +1348,7 @@ namespace ns_p {
         "none",
         "skipTimed"
     };
+ST_TLPreviousActionType* ST_TLPreviousActionType::default_instance_ = NULL;
 
     // ST_TLBehaviorAdditiveType
     ST_TLBehaviorAdditiveType::ST_TLBehaviorAdditiveType()
@@ -1357,6 +1411,7 @@ namespace ns_p {
         "mult",
         "none"
     };
+ST_TLBehaviorAdditiveType* ST_TLBehaviorAdditiveType::default_instance_ = NULL;
 
     // ST_TLBehaviorAccumulateType
     ST_TLBehaviorAccumulateType::ST_TLBehaviorAccumulateType()
@@ -1416,6 +1471,7 @@ namespace ns_p {
         "none",
         "always"
     };
+ST_TLBehaviorAccumulateType* ST_TLBehaviorAccumulateType::default_instance_ = NULL;
 
     // ST_TLBehaviorTransformType
     ST_TLBehaviorTransformType::ST_TLBehaviorTransformType()
@@ -1475,6 +1531,7 @@ namespace ns_p {
         "pt",
         "img"
     };
+ST_TLBehaviorTransformType* ST_TLBehaviorTransformType::default_instance_ = NULL;
 
     // ST_TLBehaviorOverrideType
     ST_TLBehaviorOverrideType::ST_TLBehaviorOverrideType()
@@ -1534,6 +1591,7 @@ namespace ns_p {
         "normal",
         "childStyle"
     };
+ST_TLBehaviorOverrideType* ST_TLBehaviorOverrideType::default_instance_ = NULL;
 
     // ST_TLTimeAnimateValueTime
     bool ST_TLTimeAnimateValueTime::has_ST_PositiveFixedPercentage() const
@@ -1606,6 +1664,21 @@ namespace ns_p {
     }
     }
 
+    std::string ST_TLTimeAnimateValueTime::toString() const
+    {    
+    if (m_has_ST_PositiveFixedPercentage)
+    {
+        return m_ST_PositiveFixedPercentage->toString();
+    }
+    
+    if (m_has_ST_TLTimeIndefinite)
+    {
+        return m_ST_TLTimeIndefinite->toString();
+    }
+    
+    return string();
+    }
+
     void ST_TLTimeAnimateValueTime::clear()
     {    clear_ST_PositiveFixedPercentage();
     clear_ST_TLTimeIndefinite();    }
@@ -1614,13 +1687,13 @@ namespace ns_p {
     {    
     if (m_has_ST_PositiveFixedPercentage)
     {
-        m_ST_PositiveFixedPercentage->toXmlAttr(_attrName, _outStream);;
+        m_ST_PositiveFixedPercentage->toXmlAttr(_attrName, _outStream);
         return;
     }
     
     if (m_has_ST_TLTimeIndefinite)
     {
-        m_ST_TLTimeIndefinite->toXmlAttr(_attrName, _outStream);;
+        m_ST_TLTimeIndefinite->toXmlAttr(_attrName, _outStream);
         return;
     }
     }
@@ -1634,6 +1707,7 @@ namespace ns_p {
     return *ST_TLTimeAnimateValueTime::default_instance_;
     }
 
+ST_TLTimeAnimateValueTime* ST_TLTimeAnimateValueTime::default_instance_ = NULL;
 
     // ST_TLAnimateBehaviorCalcMode
     ST_TLAnimateBehaviorCalcMode::ST_TLAnimateBehaviorCalcMode()
@@ -1694,6 +1768,7 @@ namespace ns_p {
         "lin",
         "fmla"
     };
+ST_TLAnimateBehaviorCalcMode* ST_TLAnimateBehaviorCalcMode::default_instance_ = NULL;
 
     // ST_TLAnimateBehaviorValueType
     ST_TLAnimateBehaviorValueType::ST_TLAnimateBehaviorValueType()
@@ -1754,6 +1829,7 @@ namespace ns_p {
         "num",
         "clr"
     };
+ST_TLAnimateBehaviorValueType* ST_TLAnimateBehaviorValueType::default_instance_ = NULL;
 
     // ST_TLAnimateColorSpace
     ST_TLAnimateColorSpace::ST_TLAnimateColorSpace()
@@ -1813,6 +1889,7 @@ namespace ns_p {
         "rgb",
         "hsl"
     };
+ST_TLAnimateColorSpace* ST_TLAnimateColorSpace::default_instance_ = NULL;
 
     // ST_TLAnimateColorDirection
     ST_TLAnimateColorDirection::ST_TLAnimateColorDirection()
@@ -1872,6 +1949,7 @@ namespace ns_p {
         "cw",
         "ccw"
     };
+ST_TLAnimateColorDirection* ST_TLAnimateColorDirection::default_instance_ = NULL;
 
     // ST_TLAnimateEffectTransition
     ST_TLAnimateEffectTransition::ST_TLAnimateEffectTransition()
@@ -1932,6 +2010,7 @@ namespace ns_p {
         "out",
         "none"
     };
+ST_TLAnimateEffectTransition* ST_TLAnimateEffectTransition::default_instance_ = NULL;
 
     // ST_TLAnimateMotionBehaviorOrigin
     ST_TLAnimateMotionBehaviorOrigin::ST_TLAnimateMotionBehaviorOrigin()
@@ -1991,6 +2070,7 @@ namespace ns_p {
         "parent",
         "layout"
     };
+ST_TLAnimateMotionBehaviorOrigin* ST_TLAnimateMotionBehaviorOrigin::default_instance_ = NULL;
 
     // ST_TLAnimateMotionPathEditMode
     ST_TLAnimateMotionPathEditMode::ST_TLAnimateMotionPathEditMode()
@@ -2050,6 +2130,7 @@ namespace ns_p {
         "relative",
         "fixed"
     };
+ST_TLAnimateMotionPathEditMode* ST_TLAnimateMotionPathEditMode::default_instance_ = NULL;
 
     // ST_TLCommandType
     ST_TLCommandType::ST_TLCommandType()
@@ -2110,6 +2191,7 @@ namespace ns_p {
         "call",
         "verb"
     };
+ST_TLCommandType* ST_TLCommandType::default_instance_ = NULL;
 
     // ST_TLParaBuildType
     ST_TLParaBuildType::ST_TLParaBuildType()
@@ -2171,6 +2253,7 @@ namespace ns_p {
         "cust",
         "whole"
     };
+ST_TLParaBuildType* ST_TLParaBuildType::default_instance_ = NULL;
 
     // ST_TLDiagramBuildType
     ST_TLDiagramBuildType::ST_TLDiagramBuildType()
@@ -2245,6 +2328,7 @@ namespace ns_p {
         "allAtOnce",
         "cust"
     };
+ST_TLDiagramBuildType* ST_TLDiagramBuildType::default_instance_ = NULL;
 
     // ST_TLOleChartBuildType
     ST_TLOleChartBuildType::ST_TLOleChartBuildType()
@@ -2307,6 +2391,7 @@ namespace ns_p {
         "seriesEl",
         "categoryEl"
     };
+ST_TLOleChartBuildType* ST_TLOleChartBuildType::default_instance_ = NULL;
 
     // ST_Name
     ST_Name::ST_Name()
@@ -2366,6 +2451,7 @@ namespace ns_p {
     return strStream.str();
     }
 
+ST_Name* ST_Name::default_instance_ = NULL;
 
     // ST_Direction
     ST_Direction::ST_Direction()
@@ -2425,6 +2511,7 @@ namespace ns_p {
         "horz",
         "vert"
     };
+ST_Direction* ST_Direction::default_instance_ = NULL;
 
     // ST_Index
     ST_Index::ST_Index()
@@ -2484,6 +2571,7 @@ namespace ns_p {
     return strStream.str();
     }
 
+ST_Index* ST_Index::default_instance_ = NULL;
 
     // ST_OleObjectFollowColorScheme
     ST_OleObjectFollowColorScheme::ST_OleObjectFollowColorScheme()
@@ -2544,6 +2632,7 @@ namespace ns_p {
         "full",
         "textAndBackground"
     };
+ST_OleObjectFollowColorScheme* ST_OleObjectFollowColorScheme::default_instance_ = NULL;
 
     // ST_SlideId
     ST_SlideId::ST_SlideId()
@@ -2605,6 +2694,7 @@ namespace ns_p {
     return strStream.str();
     }
 
+ST_SlideId* ST_SlideId::default_instance_ = NULL;
 
     // ST_SlideMasterId
     ST_SlideMasterId::ST_SlideMasterId()
@@ -2665,6 +2755,7 @@ namespace ns_p {
     return strStream.str();
     }
 
+ST_SlideMasterId* ST_SlideMasterId::default_instance_ = NULL;
 
     // ST_PhotoAlbumLayout
     ST_PhotoAlbumLayout::ST_PhotoAlbumLayout()
@@ -2729,6 +2820,7 @@ namespace ns_p {
         "2picTitle",
         "4picTitle"
     };
+ST_PhotoAlbumLayout* ST_PhotoAlbumLayout::default_instance_ = NULL;
 
     // ST_PhotoAlbumFrameShape
     ST_PhotoAlbumFrameShape::ST_PhotoAlbumFrameShape()
@@ -2793,6 +2885,7 @@ namespace ns_p {
         "frameStyle6",
         "frameStyle7"
     };
+ST_PhotoAlbumFrameShape* ST_PhotoAlbumFrameShape::default_instance_ = NULL;
 
     // ST_SlideSizeCoordinate
     ST_SlideSizeCoordinate::ST_SlideSizeCoordinate()
@@ -2803,6 +2896,16 @@ namespace ns_p {
 
     {
     }
+    const ST_SlideSizeCoordinate& ST_SlideSizeCoordinate::default_instance()
+    {    
+    if (!ST_SlideSizeCoordinate::default_instance_)
+    {
+        ST_SlideSizeCoordinate::default_instance_ = new ST_SlideSizeCoordinate();
+    }
+    return *ST_SlideSizeCoordinate::default_instance_;
+    }
+
+ST_SlideSizeCoordinate* ST_SlideSizeCoordinate::default_instance_ = NULL;
 
     // ST_SlideSizeType
     ST_SlideSizeType::ST_SlideSizeType()
@@ -2876,6 +2979,7 @@ namespace ns_p {
         "screen16x9",
         "screen16x10"
     };
+ST_SlideSizeType* ST_SlideSizeType::default_instance_ = NULL;
 
     // ST_BookmarkIdSeed
     ST_BookmarkIdSeed::ST_BookmarkIdSeed()
@@ -2937,6 +3041,7 @@ namespace ns_p {
     return strStream.str();
     }
 
+ST_BookmarkIdSeed* ST_BookmarkIdSeed::default_instance_ = NULL;
 
     // ST_WebColorType
     ST_WebColorType::ST_WebColorType()
@@ -3000,6 +3105,7 @@ namespace ns_p {
         "whiteTextOnBlack",
         "blackTextOnWhite"
     };
+ST_WebColorType* ST_WebColorType::default_instance_ = NULL;
 
     // ST_WebScreenSize
     ST_WebScreenSize::ST_WebScreenSize()
@@ -3068,6 +3174,7 @@ namespace ns_p {
         "1800x1400",
         "1920x1200"
     };
+ST_WebScreenSize* ST_WebScreenSize::default_instance_ = NULL;
 
     // ST_WebEncoding
     ST_WebEncoding::ST_WebEncoding()
@@ -3127,6 +3234,7 @@ namespace ns_p {
     return strStream.str();
     }
 
+ST_WebEncoding* ST_WebEncoding::default_instance_ = NULL;
 
     // ST_PrintWhat
     ST_PrintWhat::ST_PrintWhat()
@@ -3193,6 +3301,7 @@ namespace ns_p {
         "notes",
         "outline"
     };
+ST_PrintWhat* ST_PrintWhat::default_instance_ = NULL;
 
     // ST_PrintColorMode
     ST_PrintColorMode::ST_PrintColorMode()
@@ -3253,6 +3362,7 @@ namespace ns_p {
         "gray",
         "clr"
     };
+ST_PrintColorMode* ST_PrintColorMode::default_instance_ = NULL;
 
     // ST_PlaceholderType
     ST_PlaceholderType::ST_PlaceholderType()
@@ -3326,6 +3436,7 @@ namespace ns_p {
         "sldImg",
         "pic"
     };
+ST_PlaceholderType* ST_PlaceholderType::default_instance_ = NULL;
 
     // ST_PlaceholderSize
     ST_PlaceholderSize::ST_PlaceholderSize()
@@ -3386,6 +3497,7 @@ namespace ns_p {
         "half",
         "quarter"
     };
+ST_PlaceholderSize* ST_PlaceholderSize::default_instance_ = NULL;
 
     // ST_SlideLayoutType
     ST_SlideLayoutType::ST_SlideLayoutType()
@@ -3479,6 +3591,7 @@ namespace ns_p {
         "objTx",
         "picTx"
     };
+ST_SlideLayoutType* ST_SlideLayoutType::default_instance_ = NULL;
 
     // ST_SlideLayoutId
     ST_SlideLayoutId::ST_SlideLayoutId()
@@ -3539,6 +3652,7 @@ namespace ns_p {
     return strStream.str();
     }
 
+ST_SlideLayoutId* ST_SlideLayoutId::default_instance_ = NULL;
 
     // ST_SplitterBarState
     ST_SplitterBarState::ST_SplitterBarState()
@@ -3599,6 +3713,7 @@ namespace ns_p {
         "restored",
         "maximized"
     };
+ST_SplitterBarState* ST_SplitterBarState::default_instance_ = NULL;
 
     // ST_ViewType
     ST_ViewType::ST_ViewType()
@@ -3664,6 +3779,7 @@ namespace ns_p {
         "sldSorterView",
         "sldThumbnailView"
     };
+ST_ViewType* ST_ViewType::default_instance_ = NULL;
 
     // CT_SideDirectionTransition
     void CT_SideDirectionTransition::clear()
@@ -3726,6 +3842,7 @@ namespace ns_p {
     return ST_TransitionSideDirectionType::default_instance();
     }
 
+CT_SideDirectionTransition* CT_SideDirectionTransition::default_instance_ = NULL;
 
     // CT_CornerDirectionTransition
     void CT_CornerDirectionTransition::clear()
@@ -3788,6 +3905,7 @@ namespace ns_p {
     return ST_TransitionCornerDirectionType::default_instance();
     }
 
+CT_CornerDirectionTransition* CT_CornerDirectionTransition::default_instance_ = NULL;
 
     // CT_EightDirectionTransition
     void CT_EightDirectionTransition::clear()
@@ -3850,6 +3968,7 @@ namespace ns_p {
     return ST_TransitionEightDirectionType::default_instance();
     }
 
+CT_EightDirectionTransition* CT_EightDirectionTransition::default_instance_ = NULL;
 
     // CT_OrientationTransition
     void CT_OrientationTransition::clear()
@@ -3912,6 +4031,7 @@ namespace ns_p {
     return ST_Direction::default_instance();
     }
 
+CT_OrientationTransition* CT_OrientationTransition::default_instance_ = NULL;
 
     // CT_InOutTransition
     void CT_InOutTransition::clear()
@@ -3974,6 +4094,7 @@ namespace ns_p {
     return ST_TransitionInOutDirectionType::default_instance();
     }
 
+CT_InOutTransition* CT_InOutTransition::default_instance_ = NULL;
 
     // CT_OptionalBlackTransition
     void CT_OptionalBlackTransition::clear()
@@ -4026,6 +4147,7 @@ namespace ns_p {
     return m_thruBlk_attr;
     }
 
+CT_OptionalBlackTransition* CT_OptionalBlackTransition::default_instance_ = NULL;
 
     // CT_SplitTransition
     void CT_SplitTransition::clear()
@@ -4123,6 +4245,7 @@ namespace ns_p {
     return ST_TransitionInOutDirectionType::default_instance();
     }
 
+CT_SplitTransition* CT_SplitTransition::default_instance_ = NULL;
 
     // CT_WheelTransition
     void CT_WheelTransition::clear()
@@ -4175,6 +4298,7 @@ namespace ns_p {
     return m_spokes_attr;
     }
 
+CT_WheelTransition* CT_WheelTransition::default_instance_ = NULL;
 
     // CT_TransitionStartSoundAction
     bool CT_TransitionStartSoundAction::has_a_snd() const
@@ -4205,15 +4329,6 @@ namespace ns_p {
     {    
     m_has_loop_attr = false;
     m_loop_attr = false;
-    
-    m_has_a_snd = false;
-    
-    if (m_a_snd)
-    {
-        delete m_a_snd;
-        m_a_snd = NULL;
-    }
-    
     }
 
     void CT_TransitionStartSoundAction::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -4234,7 +4349,7 @@ namespace ns_p {
             
     if (m_has_a_snd)
     {
-        m_a_snd->toXmlElem("p:snd", "", _outStream);;
+        m_a_snd->toXmlElem("a:snd", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4265,6 +4380,7 @@ namespace ns_p {
     return m_loop_attr;
     }
 
+CT_TransitionStartSoundAction* CT_TransitionStartSoundAction::default_instance_ = NULL;
 
     // CT_TransitionSoundAction
     bool CT_TransitionSoundAction::has_stSnd() const
@@ -4336,25 +4452,7 @@ namespace ns_p {
     }
 
     void CT_TransitionSoundAction::clear()
-    {    
-    m_has_stSnd = false;
-    
-    if (m_stSnd)
-    {
-        delete m_stSnd;
-        m_stSnd = NULL;
-    }
-    
-    
-    m_has_endSnd = false;
-    
-    if (m_endSnd)
-    {
-        delete m_endSnd;
-        m_endSnd = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_TransitionSoundAction::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -4369,12 +4467,12 @@ namespace ns_p {
             
     if (m_has_stSnd)
     {
-        m_stSnd->toXmlElem("p:stSnd", "", _outStream);;
+        m_stSnd->toXmlElem("stSnd", "", _outStream);;
     }
     
     if (m_has_endSnd)
     {
-        m_endSnd->toXmlElem("p:endSnd", "", _outStream);;
+        m_endSnd->toXmlElem("endSnd", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4389,6 +4487,7 @@ namespace ns_p {
     return *CT_TransitionSoundAction::default_instance_;
     }
 
+CT_TransitionSoundAction* CT_TransitionSoundAction::default_instance_ = NULL;
 
     // CT_SlideTransition
     bool CT_SlideTransition::has_blinds() const
@@ -8760,213 +8859,6 @@ namespace ns_p {
     
     m_has_advTm_attr = false;
     m_advTm_attr = 0;
-    
-    m_has_blinds = false;
-    
-    if (m_blinds)
-    {
-        delete m_blinds;
-        m_blinds = NULL;
-    }
-    
-    
-    m_has_checker = false;
-    
-    if (m_checker)
-    {
-        delete m_checker;
-        m_checker = NULL;
-    }
-    
-    
-    m_has_circle = false;
-    
-    if (m_circle)
-    {
-        delete m_circle;
-        m_circle = NULL;
-    }
-    
-    
-    m_has_dissolve = false;
-    
-    if (m_dissolve)
-    {
-        delete m_dissolve;
-        m_dissolve = NULL;
-    }
-    
-    
-    m_has_comb = false;
-    
-    if (m_comb)
-    {
-        delete m_comb;
-        m_comb = NULL;
-    }
-    
-    
-    m_has_cover = false;
-    
-    if (m_cover)
-    {
-        delete m_cover;
-        m_cover = NULL;
-    }
-    
-    
-    m_has_cut = false;
-    
-    if (m_cut)
-    {
-        delete m_cut;
-        m_cut = NULL;
-    }
-    
-    
-    m_has_diamond = false;
-    
-    if (m_diamond)
-    {
-        delete m_diamond;
-        m_diamond = NULL;
-    }
-    
-    
-    m_has_fade = false;
-    
-    if (m_fade)
-    {
-        delete m_fade;
-        m_fade = NULL;
-    }
-    
-    
-    m_has_newsflash = false;
-    
-    if (m_newsflash)
-    {
-        delete m_newsflash;
-        m_newsflash = NULL;
-    }
-    
-    
-    m_has_plus = false;
-    
-    if (m_plus)
-    {
-        delete m_plus;
-        m_plus = NULL;
-    }
-    
-    
-    m_has_pull = false;
-    
-    if (m_pull)
-    {
-        delete m_pull;
-        m_pull = NULL;
-    }
-    
-    
-    m_has_push = false;
-    
-    if (m_push)
-    {
-        delete m_push;
-        m_push = NULL;
-    }
-    
-    
-    m_has_random = false;
-    
-    if (m_random)
-    {
-        delete m_random;
-        m_random = NULL;
-    }
-    
-    
-    m_has_randomBar = false;
-    
-    if (m_randomBar)
-    {
-        delete m_randomBar;
-        m_randomBar = NULL;
-    }
-    
-    
-    m_has_split = false;
-    
-    if (m_split)
-    {
-        delete m_split;
-        m_split = NULL;
-    }
-    
-    
-    m_has_strips = false;
-    
-    if (m_strips)
-    {
-        delete m_strips;
-        m_strips = NULL;
-    }
-    
-    
-    m_has_wedge = false;
-    
-    if (m_wedge)
-    {
-        delete m_wedge;
-        m_wedge = NULL;
-    }
-    
-    
-    m_has_wheel = false;
-    
-    if (m_wheel)
-    {
-        delete m_wheel;
-        m_wheel = NULL;
-    }
-    
-    
-    m_has_wipe = false;
-    
-    if (m_wipe)
-    {
-        delete m_wipe;
-        m_wipe = NULL;
-    }
-    
-    
-    m_has_zoom = false;
-    
-    if (m_zoom)
-    {
-        delete m_zoom;
-        m_zoom = NULL;
-    }
-    
-     
-    m_has_sndAc = false;
-    
-    if (m_sndAc)
-    {
-        delete m_sndAc;
-        m_sndAc = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_SlideTransition::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -8999,117 +8891,117 @@ namespace ns_p {
             
     if (m_has_blinds)
     {
-        m_blinds->toXmlElem("p:blinds", "", _outStream);;
+        m_blinds->toXmlElem("blinds", "", _outStream);;
     }
     
     if (m_has_checker)
     {
-        m_checker->toXmlElem("p:checker", "", _outStream);;
+        m_checker->toXmlElem("checker", "", _outStream);;
     }
     
     if (m_has_circle)
     {
-        m_circle->toXmlElem("p:circle", "", _outStream);;
+        m_circle->toXmlElem("circle", "", _outStream);;
     }
     
     if (m_has_dissolve)
     {
-        m_dissolve->toXmlElem("p:dissolve", "", _outStream);;
+        m_dissolve->toXmlElem("dissolve", "", _outStream);;
     }
     
     if (m_has_comb)
     {
-        m_comb->toXmlElem("p:comb", "", _outStream);;
+        m_comb->toXmlElem("comb", "", _outStream);;
     }
     
     if (m_has_cover)
     {
-        m_cover->toXmlElem("p:cover", "", _outStream);;
+        m_cover->toXmlElem("cover", "", _outStream);;
     }
     
     if (m_has_cut)
     {
-        m_cut->toXmlElem("p:cut", "", _outStream);;
+        m_cut->toXmlElem("cut", "", _outStream);;
     }
     
     if (m_has_diamond)
     {
-        m_diamond->toXmlElem("p:diamond", "", _outStream);;
+        m_diamond->toXmlElem("diamond", "", _outStream);;
     }
     
     if (m_has_fade)
     {
-        m_fade->toXmlElem("p:fade", "", _outStream);;
+        m_fade->toXmlElem("fade", "", _outStream);;
     }
     
     if (m_has_newsflash)
     {
-        m_newsflash->toXmlElem("p:newsflash", "", _outStream);;
+        m_newsflash->toXmlElem("newsflash", "", _outStream);;
     }
     
     if (m_has_plus)
     {
-        m_plus->toXmlElem("p:plus", "", _outStream);;
+        m_plus->toXmlElem("plus", "", _outStream);;
     }
     
     if (m_has_pull)
     {
-        m_pull->toXmlElem("p:pull", "", _outStream);;
+        m_pull->toXmlElem("pull", "", _outStream);;
     }
     
     if (m_has_push)
     {
-        m_push->toXmlElem("p:push", "", _outStream);;
+        m_push->toXmlElem("push", "", _outStream);;
     }
     
     if (m_has_random)
     {
-        m_random->toXmlElem("p:random", "", _outStream);;
+        m_random->toXmlElem("random", "", _outStream);;
     }
     
     if (m_has_randomBar)
     {
-        m_randomBar->toXmlElem("p:randomBar", "", _outStream);;
+        m_randomBar->toXmlElem("randomBar", "", _outStream);;
     }
     
     if (m_has_split)
     {
-        m_split->toXmlElem("p:split", "", _outStream);;
+        m_split->toXmlElem("split", "", _outStream);;
     }
     
     if (m_has_strips)
     {
-        m_strips->toXmlElem("p:strips", "", _outStream);;
+        m_strips->toXmlElem("strips", "", _outStream);;
     }
     
     if (m_has_wedge)
     {
-        m_wedge->toXmlElem("p:wedge", "", _outStream);;
+        m_wedge->toXmlElem("wedge", "", _outStream);;
     }
     
     if (m_has_wheel)
     {
-        m_wheel->toXmlElem("p:wheel", "", _outStream);;
+        m_wheel->toXmlElem("wheel", "", _outStream);;
     }
     
     if (m_has_wipe)
     {
-        m_wipe->toXmlElem("p:wipe", "", _outStream);;
+        m_wipe->toXmlElem("wipe", "", _outStream);;
     }
     
     if (m_has_zoom)
     {
-        m_zoom->toXmlElem("p:zoom", "", _outStream);;
+        m_zoom->toXmlElem("zoom", "", _outStream);;
     }
      
     if (m_has_sndAc)
     {
-        m_sndAc->toXmlElem("p:sndAc", "", _outStream);;
+        m_sndAc->toXmlElem("sndAc", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9176,6 +9068,7 @@ namespace ns_p {
     return m_advTm_attr;
     }
 
+CT_SlideTransition* CT_SlideTransition::default_instance_ = NULL;
 
     // CT_TLIterateIntervalTime
     void CT_TLIterateIntervalTime::clear()
@@ -9238,6 +9131,7 @@ namespace ns_p {
     return ST_TLTime::default_instance();
     }
 
+CT_TLIterateIntervalTime* CT_TLIterateIntervalTime::default_instance_ = NULL;
 
     // CT_TLIterateIntervalPercentage
     void CT_TLIterateIntervalPercentage::clear()
@@ -9300,6 +9194,7 @@ namespace ns_p {
     return ns_a::ST_PositivePercentage::default_instance();
     }
 
+CT_TLIterateIntervalPercentage* CT_TLIterateIntervalPercentage::default_instance_ = NULL;
 
     // CT_TLIterateData
     bool CT_TLIterateData::has_tmAbs() const
@@ -9383,24 +9278,6 @@ namespace ns_p {
     
     m_has_backwards_attr = false;
     m_backwards_attr = false;
-    
-    m_has_tmAbs = false;
-    
-    if (m_tmAbs)
-    {
-        delete m_tmAbs;
-        m_tmAbs = NULL;
-    }
-    
-    
-    m_has_tmPct = false;
-    
-    if (m_tmPct)
-    {
-        delete m_tmPct;
-        m_tmPct = NULL;
-    }
-    
     }
 
     void CT_TLIterateData::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -9427,12 +9304,12 @@ namespace ns_p {
             
     if (m_has_tmAbs)
     {
-        m_tmAbs->toXmlElem("p:tmAbs", "", _outStream);;
+        m_tmAbs->toXmlElem("tmAbs", "", _outStream);;
     }
     
     if (m_has_tmPct)
     {
-        m_tmPct->toXmlElem("p:tmPct", "", _outStream);;
+        m_tmPct->toXmlElem("tmPct", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9483,6 +9360,7 @@ namespace ns_p {
     return m_backwards_attr;
     }
 
+CT_TLIterateData* CT_TLIterateData::default_instance_ = NULL;
 
     // CT_TLSubShapeId
     void CT_TLSubShapeId::clear()
@@ -9545,6 +9423,7 @@ namespace ns_p {
     return ns_a::ST_ShapeID::default_instance();
     }
 
+CT_TLSubShapeId* CT_TLSubShapeId::default_instance_ = NULL;
 
     // CT_TLTextTargetElement
     bool CT_TLTextTargetElement::has_charRg() const
@@ -9616,25 +9495,7 @@ namespace ns_p {
     }
 
     void CT_TLTextTargetElement::clear()
-    {    
-    m_has_charRg = false;
-    
-    if (m_charRg)
-    {
-        delete m_charRg;
-        m_charRg = NULL;
-    }
-    
-    
-    m_has_pRg = false;
-    
-    if (m_pRg)
-    {
-        delete m_pRg;
-        m_pRg = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_TLTextTargetElement::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -9649,12 +9510,12 @@ namespace ns_p {
             
     if (m_has_charRg)
     {
-        m_charRg->toXmlElem("p:charRg", "", _outStream);;
+        m_charRg->toXmlElem("charRg", "", _outStream);;
     }
     
     if (m_has_pRg)
     {
-        m_pRg->toXmlElem("p:pRg", "", _outStream);;
+        m_pRg->toXmlElem("pRg", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9669,6 +9530,7 @@ namespace ns_p {
     return *CT_TLTextTargetElement::default_instance_;
     }
 
+CT_TLTextTargetElement* CT_TLTextTargetElement::default_instance_ = NULL;
 
     // CT_TLOleChartTargetElement
     void CT_TLOleChartTargetElement::clear()
@@ -9756,6 +9618,7 @@ namespace ns_p {
     return m_lvl_attr;
     }
 
+CT_TLOleChartTargetElement* CT_TLOleChartTargetElement::default_instance_ = NULL;
 
     // CT_TLShapeTargetElement
     bool CT_TLShapeTargetElement::has_bg() const
@@ -10073,51 +9936,6 @@ namespace ns_p {
         m_a_spid_attr = NULL;
     }
     
-    
-    m_has_bg = false;
-    
-    if (m_bg)
-    {
-        delete m_bg;
-        m_bg = NULL;
-    }
-    
-    
-    m_has_subSp = false;
-    
-    if (m_subSp)
-    {
-        delete m_subSp;
-        m_subSp = NULL;
-    }
-    
-    
-    m_has_oleChartEl = false;
-    
-    if (m_oleChartEl)
-    {
-        delete m_oleChartEl;
-        m_oleChartEl = NULL;
-    }
-    
-    
-    m_has_txEl = false;
-    
-    if (m_txEl)
-    {
-        delete m_txEl;
-        m_txEl = NULL;
-    }
-    
-    
-    m_has_a_graphicEl = false;
-    
-    if (m_a_graphicEl)
-    {
-        delete m_a_graphicEl;
-        m_a_graphicEl = NULL;
-    }
-    
     }
 
     void CT_TLShapeTargetElement::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -10138,27 +9956,27 @@ namespace ns_p {
             
     if (m_has_bg)
     {
-        m_bg->toXmlElem("p:bg", "", _outStream);;
+        m_bg->toXmlElem("bg", "", _outStream);;
     }
     
     if (m_has_subSp)
     {
-        m_subSp->toXmlElem("p:subSp", "", _outStream);;
+        m_subSp->toXmlElem("subSp", "", _outStream);;
     }
     
     if (m_has_oleChartEl)
     {
-        m_oleChartEl->toXmlElem("p:oleChartEl", "", _outStream);;
+        m_oleChartEl->toXmlElem("oleChartEl", "", _outStream);;
     }
     
     if (m_has_txEl)
     {
-        m_txEl->toXmlElem("p:txEl", "", _outStream);;
+        m_txEl->toXmlElem("txEl", "", _outStream);;
     }
     
     if (m_has_a_graphicEl)
     {
-        m_a_graphicEl->toXmlElem("p:graphicEl", "", _outStream);;
+        m_a_graphicEl->toXmlElem("a:graphicEl", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10193,6 +10011,7 @@ namespace ns_p {
     return ns_a::ST_DrawingElementId::default_instance();
     }
 
+CT_TLShapeTargetElement* CT_TLShapeTargetElement::default_instance_ = NULL;
 
     // CT_TLTimeTargetElement
     bool CT_TLTimeTargetElement::has_sldTgt() const
@@ -10404,43 +10223,7 @@ namespace ns_p {
     }
 
     void CT_TLTimeTargetElement::clear()
-    {    
-    m_has_sldTgt = false;
-    
-    if (m_sldTgt)
-    {
-        delete m_sldTgt;
-        m_sldTgt = NULL;
-    }
-    
-    
-    m_has_a_sndTgt = false;
-    
-    if (m_a_sndTgt)
-    {
-        delete m_a_sndTgt;
-        m_a_sndTgt = NULL;
-    }
-    
-    
-    m_has_spTgt = false;
-    
-    if (m_spTgt)
-    {
-        delete m_spTgt;
-        m_spTgt = NULL;
-    }
-    
-    
-    m_has_inkTgt = false;
-    
-    if (m_inkTgt)
-    {
-        delete m_inkTgt;
-        m_inkTgt = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_TLTimeTargetElement::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -10455,22 +10238,22 @@ namespace ns_p {
             
     if (m_has_sldTgt)
     {
-        m_sldTgt->toXmlElem("p:sldTgt", "", _outStream);;
+        m_sldTgt->toXmlElem("sldTgt", "", _outStream);;
     }
     
     if (m_has_a_sndTgt)
     {
-        m_a_sndTgt->toXmlElem("p:sndTgt", "", _outStream);;
+        m_a_sndTgt->toXmlElem("a:sndTgt", "", _outStream);;
     }
     
     if (m_has_spTgt)
     {
-        m_spTgt->toXmlElem("p:spTgt", "", _outStream);;
+        m_spTgt->toXmlElem("spTgt", "", _outStream);;
     }
     
     if (m_has_inkTgt)
     {
-        m_inkTgt->toXmlElem("p:inkTgt", "", _outStream);;
+        m_inkTgt->toXmlElem("inkTgt", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10485,6 +10268,7 @@ namespace ns_p {
     return *CT_TLTimeTargetElement::default_instance_;
     }
 
+CT_TLTimeTargetElement* CT_TLTimeTargetElement::default_instance_ = NULL;
 
     // CT_TLTriggerTimeNodeID
     void CT_TLTriggerTimeNodeID::clear()
@@ -10547,6 +10331,7 @@ namespace ns_p {
     return ST_TLTimeNodeID::default_instance();
     }
 
+CT_TLTriggerTimeNodeID* CT_TLTriggerTimeNodeID::default_instance_ = NULL;
 
     // CT_TLTriggerRuntimeNode
     void CT_TLTriggerRuntimeNode::clear()
@@ -10609,6 +10394,7 @@ namespace ns_p {
     return ST_TLTriggerRuntimeNode::default_instance();
     }
 
+CT_TLTriggerRuntimeNode* CT_TLTriggerRuntimeNode::default_instance_ = NULL;
 
     // CT_TLTimeCondition
     bool CT_TLTimeCondition::has_tgtEl() const
@@ -10759,33 +10545,6 @@ namespace ns_p {
         m_delay_attr = NULL;
     }
     
-    
-    m_has_tgtEl = false;
-    
-    if (m_tgtEl)
-    {
-        delete m_tgtEl;
-        m_tgtEl = NULL;
-    }
-    
-    
-    m_has_tn = false;
-    
-    if (m_tn)
-    {
-        delete m_tn;
-        m_tn = NULL;
-    }
-    
-    
-    m_has_rtn = false;
-    
-    if (m_rtn)
-    {
-        delete m_rtn;
-        m_rtn = NULL;
-    }
-    
     }
 
     void CT_TLTimeCondition::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -10812,17 +10571,17 @@ namespace ns_p {
             
     if (m_has_tgtEl)
     {
-        m_tgtEl->toXmlElem("p:tgtEl", "", _outStream);;
+        m_tgtEl->toXmlElem("tgtEl", "", _outStream);;
     }
     
     if (m_has_tn)
     {
-        m_tn->toXmlElem("p:tn", "", _outStream);;
+        m_tn->toXmlElem("tn", "", _outStream);;
     }
     
     if (m_has_rtn)
     {
-        m_rtn->toXmlElem("p:rtn", "", _outStream);;
+        m_rtn->toXmlElem("rtn", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10877,6 +10636,7 @@ namespace ns_p {
     return ST_TLTime::default_instance();
     }
 
+CT_TLTimeCondition* CT_TLTimeCondition::default_instance_ = NULL;
 
     // CT_TLTimeConditionList
     CT_TLTimeCondition* CT_TLTimeConditionList::add_cond()
@@ -10916,7 +10676,7 @@ namespace ns_p {
         {
             if ((*iter)->has_cond())
             {
-                (*iter)->get_cond().toXmlElem("p:cond", "", _outStream);
+                (*iter)->get_cond().toXmlElem("cond", "", _outStream);
             }
         }
     }
@@ -10933,6 +10693,34 @@ namespace ns_p {
     return *CT_TLTimeConditionList::default_instance_;
     }
 
+
+    // CT_TLTimeConditionList::ChildGroup_1
+    bool CT_TLTimeConditionList::ChildGroup_1::has_cond() const
+    {    
+    return m_has_cond;
+    }
+
+    CT_TLTimeCondition* CT_TLTimeConditionList::ChildGroup_1::mutable_cond()
+    {    
+    
+    m_has_cond = true;
+    if (!m_cond)
+    {
+        m_cond = new CT_TLTimeCondition();
+    }
+    return m_cond;
+    }
+
+    const CT_TLTimeCondition& CT_TLTimeConditionList::ChildGroup_1::get_cond() const
+    {    
+    if (m_cond)
+    {
+        return *m_cond;
+    }
+    return CT_TLTimeCondition::default_instance();
+    }
+
+CT_TLTimeConditionList* CT_TLTimeConditionList::default_instance_ = NULL;
 
     // CT_TimeNodeList
     CT_TLTimeNodeParallel* CT_TimeNodeList::add_par()
@@ -11068,55 +10856,55 @@ namespace ns_p {
         {
             if ((*iter)->has_par())
             {
-                (*iter)->get_par().toXmlElem("p:par", "", _outStream);
+                (*iter)->get_par().toXmlElem("par", "", _outStream);
             }
             else if ((*iter)->has_seq())
             {
-                (*iter)->get_seq().toXmlElem("p:seq", "", _outStream);
+                (*iter)->get_seq().toXmlElem("seq", "", _outStream);
             }
             else if ((*iter)->has_excl())
             {
-                (*iter)->get_excl().toXmlElem("p:excl", "", _outStream);
+                (*iter)->get_excl().toXmlElem("excl", "", _outStream);
             }
             else if ((*iter)->has_anim())
             {
-                (*iter)->get_anim().toXmlElem("p:anim", "", _outStream);
+                (*iter)->get_anim().toXmlElem("anim", "", _outStream);
             }
             else if ((*iter)->has_animClr())
             {
-                (*iter)->get_animClr().toXmlElem("p:animClr", "", _outStream);
+                (*iter)->get_animClr().toXmlElem("animClr", "", _outStream);
             }
             else if ((*iter)->has_animEffect())
             {
-                (*iter)->get_animEffect().toXmlElem("p:animEffect", "", _outStream);
+                (*iter)->get_animEffect().toXmlElem("animEffect", "", _outStream);
             }
             else if ((*iter)->has_animMotion())
             {
-                (*iter)->get_animMotion().toXmlElem("p:animMotion", "", _outStream);
+                (*iter)->get_animMotion().toXmlElem("animMotion", "", _outStream);
             }
             else if ((*iter)->has_animRot())
             {
-                (*iter)->get_animRot().toXmlElem("p:animRot", "", _outStream);
+                (*iter)->get_animRot().toXmlElem("animRot", "", _outStream);
             }
             else if ((*iter)->has_animScale())
             {
-                (*iter)->get_animScale().toXmlElem("p:animScale", "", _outStream);
+                (*iter)->get_animScale().toXmlElem("animScale", "", _outStream);
             }
             else if ((*iter)->has_cmd())
             {
-                (*iter)->get_cmd().toXmlElem("p:cmd", "", _outStream);
+                (*iter)->get_cmd().toXmlElem("cmd", "", _outStream);
             }
             else if ((*iter)->has_set())
             {
-                (*iter)->get_set().toXmlElem("p:set", "", _outStream);
+                (*iter)->get_set().toXmlElem("set", "", _outStream);
             }
             else if ((*iter)->has_audio())
             {
-                (*iter)->get_audio().toXmlElem("p:audio", "", _outStream);
+                (*iter)->get_audio().toXmlElem("audio", "", _outStream);
             }
             else if ((*iter)->has_video())
             {
-                (*iter)->get_video().toXmlElem("p:video", "", _outStream);
+                (*iter)->get_video().toXmlElem("video", "", _outStream);
             }
         }
     }
@@ -11133,6 +10921,1738 @@ namespace ns_p {
     return *CT_TimeNodeList::default_instance_;
     }
 
+
+    // CT_TimeNodeList::ChildGroup_1
+    bool CT_TimeNodeList::ChildGroup_1::has_par() const
+    {    
+    return m_has_par;
+    }
+
+    CT_TLTimeNodeParallel* CT_TimeNodeList::ChildGroup_1::mutable_par()
+    {    
+    
+    m_has_seq = false;
+    
+    if (m_seq)
+    {
+        delete m_seq;
+        m_seq = NULL;
+    }
+    ;
+    
+    m_has_excl = false;
+    
+    if (m_excl)
+    {
+        delete m_excl;
+        m_excl = NULL;
+    }
+    ;
+    
+    m_has_anim = false;
+    
+    if (m_anim)
+    {
+        delete m_anim;
+        m_anim = NULL;
+    }
+    ;
+    
+    m_has_animClr = false;
+    
+    if (m_animClr)
+    {
+        delete m_animClr;
+        m_animClr = NULL;
+    }
+    ;
+    
+    m_has_animEffect = false;
+    
+    if (m_animEffect)
+    {
+        delete m_animEffect;
+        m_animEffect = NULL;
+    }
+    ;
+    
+    m_has_animMotion = false;
+    
+    if (m_animMotion)
+    {
+        delete m_animMotion;
+        m_animMotion = NULL;
+    }
+    ;
+    
+    m_has_animRot = false;
+    
+    if (m_animRot)
+    {
+        delete m_animRot;
+        m_animRot = NULL;
+    }
+    ;
+    
+    m_has_animScale = false;
+    
+    if (m_animScale)
+    {
+        delete m_animScale;
+        m_animScale = NULL;
+    }
+    ;
+    
+    m_has_cmd = false;
+    
+    if (m_cmd)
+    {
+        delete m_cmd;
+        m_cmd = NULL;
+    }
+    ;
+    
+    m_has_set = false;
+    
+    if (m_set)
+    {
+        delete m_set;
+        m_set = NULL;
+    }
+    ;
+    
+    m_has_audio = false;
+    
+    if (m_audio)
+    {
+        delete m_audio;
+        m_audio = NULL;
+    }
+    ;
+    
+    m_has_video = false;
+    
+    if (m_video)
+    {
+        delete m_video;
+        m_video = NULL;
+    }
+    ;
+    
+    m_has_par = true;
+    if (!m_par)
+    {
+        m_par = new CT_TLTimeNodeParallel();
+    }
+    return m_par;
+    }
+
+    const CT_TLTimeNodeParallel& CT_TimeNodeList::ChildGroup_1::get_par() const
+    {    
+    if (m_par)
+    {
+        return *m_par;
+    }
+    return CT_TLTimeNodeParallel::default_instance();
+    }
+
+    bool CT_TimeNodeList::ChildGroup_1::has_seq() const
+    {    
+    return m_has_seq;
+    }
+
+    CT_TLTimeNodeSequence* CT_TimeNodeList::ChildGroup_1::mutable_seq()
+    {    
+    
+    m_has_par = false;
+    
+    if (m_par)
+    {
+        delete m_par;
+        m_par = NULL;
+    }
+    ;
+    
+    m_has_excl = false;
+    
+    if (m_excl)
+    {
+        delete m_excl;
+        m_excl = NULL;
+    }
+    ;
+    
+    m_has_anim = false;
+    
+    if (m_anim)
+    {
+        delete m_anim;
+        m_anim = NULL;
+    }
+    ;
+    
+    m_has_animClr = false;
+    
+    if (m_animClr)
+    {
+        delete m_animClr;
+        m_animClr = NULL;
+    }
+    ;
+    
+    m_has_animEffect = false;
+    
+    if (m_animEffect)
+    {
+        delete m_animEffect;
+        m_animEffect = NULL;
+    }
+    ;
+    
+    m_has_animMotion = false;
+    
+    if (m_animMotion)
+    {
+        delete m_animMotion;
+        m_animMotion = NULL;
+    }
+    ;
+    
+    m_has_animRot = false;
+    
+    if (m_animRot)
+    {
+        delete m_animRot;
+        m_animRot = NULL;
+    }
+    ;
+    
+    m_has_animScale = false;
+    
+    if (m_animScale)
+    {
+        delete m_animScale;
+        m_animScale = NULL;
+    }
+    ;
+    
+    m_has_cmd = false;
+    
+    if (m_cmd)
+    {
+        delete m_cmd;
+        m_cmd = NULL;
+    }
+    ;
+    
+    m_has_set = false;
+    
+    if (m_set)
+    {
+        delete m_set;
+        m_set = NULL;
+    }
+    ;
+    
+    m_has_audio = false;
+    
+    if (m_audio)
+    {
+        delete m_audio;
+        m_audio = NULL;
+    }
+    ;
+    
+    m_has_video = false;
+    
+    if (m_video)
+    {
+        delete m_video;
+        m_video = NULL;
+    }
+    ;
+    
+    m_has_seq = true;
+    if (!m_seq)
+    {
+        m_seq = new CT_TLTimeNodeSequence();
+    }
+    return m_seq;
+    }
+
+    const CT_TLTimeNodeSequence& CT_TimeNodeList::ChildGroup_1::get_seq() const
+    {    
+    if (m_seq)
+    {
+        return *m_seq;
+    }
+    return CT_TLTimeNodeSequence::default_instance();
+    }
+
+    bool CT_TimeNodeList::ChildGroup_1::has_excl() const
+    {    
+    return m_has_excl;
+    }
+
+    CT_TLTimeNodeExclusive* CT_TimeNodeList::ChildGroup_1::mutable_excl()
+    {    
+    
+    m_has_par = false;
+    
+    if (m_par)
+    {
+        delete m_par;
+        m_par = NULL;
+    }
+    ;
+    
+    m_has_seq = false;
+    
+    if (m_seq)
+    {
+        delete m_seq;
+        m_seq = NULL;
+    }
+    ;
+    
+    m_has_anim = false;
+    
+    if (m_anim)
+    {
+        delete m_anim;
+        m_anim = NULL;
+    }
+    ;
+    
+    m_has_animClr = false;
+    
+    if (m_animClr)
+    {
+        delete m_animClr;
+        m_animClr = NULL;
+    }
+    ;
+    
+    m_has_animEffect = false;
+    
+    if (m_animEffect)
+    {
+        delete m_animEffect;
+        m_animEffect = NULL;
+    }
+    ;
+    
+    m_has_animMotion = false;
+    
+    if (m_animMotion)
+    {
+        delete m_animMotion;
+        m_animMotion = NULL;
+    }
+    ;
+    
+    m_has_animRot = false;
+    
+    if (m_animRot)
+    {
+        delete m_animRot;
+        m_animRot = NULL;
+    }
+    ;
+    
+    m_has_animScale = false;
+    
+    if (m_animScale)
+    {
+        delete m_animScale;
+        m_animScale = NULL;
+    }
+    ;
+    
+    m_has_cmd = false;
+    
+    if (m_cmd)
+    {
+        delete m_cmd;
+        m_cmd = NULL;
+    }
+    ;
+    
+    m_has_set = false;
+    
+    if (m_set)
+    {
+        delete m_set;
+        m_set = NULL;
+    }
+    ;
+    
+    m_has_audio = false;
+    
+    if (m_audio)
+    {
+        delete m_audio;
+        m_audio = NULL;
+    }
+    ;
+    
+    m_has_video = false;
+    
+    if (m_video)
+    {
+        delete m_video;
+        m_video = NULL;
+    }
+    ;
+    
+    m_has_excl = true;
+    if (!m_excl)
+    {
+        m_excl = new CT_TLTimeNodeExclusive();
+    }
+    return m_excl;
+    }
+
+    const CT_TLTimeNodeExclusive& CT_TimeNodeList::ChildGroup_1::get_excl() const
+    {    
+    if (m_excl)
+    {
+        return *m_excl;
+    }
+    return CT_TLTimeNodeExclusive::default_instance();
+    }
+
+    bool CT_TimeNodeList::ChildGroup_1::has_anim() const
+    {    
+    return m_has_anim;
+    }
+
+    CT_TLAnimateBehavior* CT_TimeNodeList::ChildGroup_1::mutable_anim()
+    {    
+    
+    m_has_par = false;
+    
+    if (m_par)
+    {
+        delete m_par;
+        m_par = NULL;
+    }
+    ;
+    
+    m_has_seq = false;
+    
+    if (m_seq)
+    {
+        delete m_seq;
+        m_seq = NULL;
+    }
+    ;
+    
+    m_has_excl = false;
+    
+    if (m_excl)
+    {
+        delete m_excl;
+        m_excl = NULL;
+    }
+    ;
+    
+    m_has_animClr = false;
+    
+    if (m_animClr)
+    {
+        delete m_animClr;
+        m_animClr = NULL;
+    }
+    ;
+    
+    m_has_animEffect = false;
+    
+    if (m_animEffect)
+    {
+        delete m_animEffect;
+        m_animEffect = NULL;
+    }
+    ;
+    
+    m_has_animMotion = false;
+    
+    if (m_animMotion)
+    {
+        delete m_animMotion;
+        m_animMotion = NULL;
+    }
+    ;
+    
+    m_has_animRot = false;
+    
+    if (m_animRot)
+    {
+        delete m_animRot;
+        m_animRot = NULL;
+    }
+    ;
+    
+    m_has_animScale = false;
+    
+    if (m_animScale)
+    {
+        delete m_animScale;
+        m_animScale = NULL;
+    }
+    ;
+    
+    m_has_cmd = false;
+    
+    if (m_cmd)
+    {
+        delete m_cmd;
+        m_cmd = NULL;
+    }
+    ;
+    
+    m_has_set = false;
+    
+    if (m_set)
+    {
+        delete m_set;
+        m_set = NULL;
+    }
+    ;
+    
+    m_has_audio = false;
+    
+    if (m_audio)
+    {
+        delete m_audio;
+        m_audio = NULL;
+    }
+    ;
+    
+    m_has_video = false;
+    
+    if (m_video)
+    {
+        delete m_video;
+        m_video = NULL;
+    }
+    ;
+    
+    m_has_anim = true;
+    if (!m_anim)
+    {
+        m_anim = new CT_TLAnimateBehavior();
+    }
+    return m_anim;
+    }
+
+    const CT_TLAnimateBehavior& CT_TimeNodeList::ChildGroup_1::get_anim() const
+    {    
+    if (m_anim)
+    {
+        return *m_anim;
+    }
+    return CT_TLAnimateBehavior::default_instance();
+    }
+
+    bool CT_TimeNodeList::ChildGroup_1::has_animClr() const
+    {    
+    return m_has_animClr;
+    }
+
+    CT_TLAnimateColorBehavior* CT_TimeNodeList::ChildGroup_1::mutable_animClr()
+    {    
+    
+    m_has_par = false;
+    
+    if (m_par)
+    {
+        delete m_par;
+        m_par = NULL;
+    }
+    ;
+    
+    m_has_seq = false;
+    
+    if (m_seq)
+    {
+        delete m_seq;
+        m_seq = NULL;
+    }
+    ;
+    
+    m_has_excl = false;
+    
+    if (m_excl)
+    {
+        delete m_excl;
+        m_excl = NULL;
+    }
+    ;
+    
+    m_has_anim = false;
+    
+    if (m_anim)
+    {
+        delete m_anim;
+        m_anim = NULL;
+    }
+    ;
+    
+    m_has_animEffect = false;
+    
+    if (m_animEffect)
+    {
+        delete m_animEffect;
+        m_animEffect = NULL;
+    }
+    ;
+    
+    m_has_animMotion = false;
+    
+    if (m_animMotion)
+    {
+        delete m_animMotion;
+        m_animMotion = NULL;
+    }
+    ;
+    
+    m_has_animRot = false;
+    
+    if (m_animRot)
+    {
+        delete m_animRot;
+        m_animRot = NULL;
+    }
+    ;
+    
+    m_has_animScale = false;
+    
+    if (m_animScale)
+    {
+        delete m_animScale;
+        m_animScale = NULL;
+    }
+    ;
+    
+    m_has_cmd = false;
+    
+    if (m_cmd)
+    {
+        delete m_cmd;
+        m_cmd = NULL;
+    }
+    ;
+    
+    m_has_set = false;
+    
+    if (m_set)
+    {
+        delete m_set;
+        m_set = NULL;
+    }
+    ;
+    
+    m_has_audio = false;
+    
+    if (m_audio)
+    {
+        delete m_audio;
+        m_audio = NULL;
+    }
+    ;
+    
+    m_has_video = false;
+    
+    if (m_video)
+    {
+        delete m_video;
+        m_video = NULL;
+    }
+    ;
+    
+    m_has_animClr = true;
+    if (!m_animClr)
+    {
+        m_animClr = new CT_TLAnimateColorBehavior();
+    }
+    return m_animClr;
+    }
+
+    const CT_TLAnimateColorBehavior& CT_TimeNodeList::ChildGroup_1::get_animClr() const
+    {    
+    if (m_animClr)
+    {
+        return *m_animClr;
+    }
+    return CT_TLAnimateColorBehavior::default_instance();
+    }
+
+    bool CT_TimeNodeList::ChildGroup_1::has_animEffect() const
+    {    
+    return m_has_animEffect;
+    }
+
+    CT_TLAnimateEffectBehavior* CT_TimeNodeList::ChildGroup_1::mutable_animEffect()
+    {    
+    
+    m_has_par = false;
+    
+    if (m_par)
+    {
+        delete m_par;
+        m_par = NULL;
+    }
+    ;
+    
+    m_has_seq = false;
+    
+    if (m_seq)
+    {
+        delete m_seq;
+        m_seq = NULL;
+    }
+    ;
+    
+    m_has_excl = false;
+    
+    if (m_excl)
+    {
+        delete m_excl;
+        m_excl = NULL;
+    }
+    ;
+    
+    m_has_anim = false;
+    
+    if (m_anim)
+    {
+        delete m_anim;
+        m_anim = NULL;
+    }
+    ;
+    
+    m_has_animClr = false;
+    
+    if (m_animClr)
+    {
+        delete m_animClr;
+        m_animClr = NULL;
+    }
+    ;
+    
+    m_has_animMotion = false;
+    
+    if (m_animMotion)
+    {
+        delete m_animMotion;
+        m_animMotion = NULL;
+    }
+    ;
+    
+    m_has_animRot = false;
+    
+    if (m_animRot)
+    {
+        delete m_animRot;
+        m_animRot = NULL;
+    }
+    ;
+    
+    m_has_animScale = false;
+    
+    if (m_animScale)
+    {
+        delete m_animScale;
+        m_animScale = NULL;
+    }
+    ;
+    
+    m_has_cmd = false;
+    
+    if (m_cmd)
+    {
+        delete m_cmd;
+        m_cmd = NULL;
+    }
+    ;
+    
+    m_has_set = false;
+    
+    if (m_set)
+    {
+        delete m_set;
+        m_set = NULL;
+    }
+    ;
+    
+    m_has_audio = false;
+    
+    if (m_audio)
+    {
+        delete m_audio;
+        m_audio = NULL;
+    }
+    ;
+    
+    m_has_video = false;
+    
+    if (m_video)
+    {
+        delete m_video;
+        m_video = NULL;
+    }
+    ;
+    
+    m_has_animEffect = true;
+    if (!m_animEffect)
+    {
+        m_animEffect = new CT_TLAnimateEffectBehavior();
+    }
+    return m_animEffect;
+    }
+
+    const CT_TLAnimateEffectBehavior& CT_TimeNodeList::ChildGroup_1::get_animEffect() const
+    {    
+    if (m_animEffect)
+    {
+        return *m_animEffect;
+    }
+    return CT_TLAnimateEffectBehavior::default_instance();
+    }
+
+    bool CT_TimeNodeList::ChildGroup_1::has_animMotion() const
+    {    
+    return m_has_animMotion;
+    }
+
+    CT_TLAnimateMotionBehavior* CT_TimeNodeList::ChildGroup_1::mutable_animMotion()
+    {    
+    
+    m_has_par = false;
+    
+    if (m_par)
+    {
+        delete m_par;
+        m_par = NULL;
+    }
+    ;
+    
+    m_has_seq = false;
+    
+    if (m_seq)
+    {
+        delete m_seq;
+        m_seq = NULL;
+    }
+    ;
+    
+    m_has_excl = false;
+    
+    if (m_excl)
+    {
+        delete m_excl;
+        m_excl = NULL;
+    }
+    ;
+    
+    m_has_anim = false;
+    
+    if (m_anim)
+    {
+        delete m_anim;
+        m_anim = NULL;
+    }
+    ;
+    
+    m_has_animClr = false;
+    
+    if (m_animClr)
+    {
+        delete m_animClr;
+        m_animClr = NULL;
+    }
+    ;
+    
+    m_has_animEffect = false;
+    
+    if (m_animEffect)
+    {
+        delete m_animEffect;
+        m_animEffect = NULL;
+    }
+    ;
+    
+    m_has_animRot = false;
+    
+    if (m_animRot)
+    {
+        delete m_animRot;
+        m_animRot = NULL;
+    }
+    ;
+    
+    m_has_animScale = false;
+    
+    if (m_animScale)
+    {
+        delete m_animScale;
+        m_animScale = NULL;
+    }
+    ;
+    
+    m_has_cmd = false;
+    
+    if (m_cmd)
+    {
+        delete m_cmd;
+        m_cmd = NULL;
+    }
+    ;
+    
+    m_has_set = false;
+    
+    if (m_set)
+    {
+        delete m_set;
+        m_set = NULL;
+    }
+    ;
+    
+    m_has_audio = false;
+    
+    if (m_audio)
+    {
+        delete m_audio;
+        m_audio = NULL;
+    }
+    ;
+    
+    m_has_video = false;
+    
+    if (m_video)
+    {
+        delete m_video;
+        m_video = NULL;
+    }
+    ;
+    
+    m_has_animMotion = true;
+    if (!m_animMotion)
+    {
+        m_animMotion = new CT_TLAnimateMotionBehavior();
+    }
+    return m_animMotion;
+    }
+
+    const CT_TLAnimateMotionBehavior& CT_TimeNodeList::ChildGroup_1::get_animMotion() const
+    {    
+    if (m_animMotion)
+    {
+        return *m_animMotion;
+    }
+    return CT_TLAnimateMotionBehavior::default_instance();
+    }
+
+    bool CT_TimeNodeList::ChildGroup_1::has_animRot() const
+    {    
+    return m_has_animRot;
+    }
+
+    CT_TLAnimateRotationBehavior* CT_TimeNodeList::ChildGroup_1::mutable_animRot()
+    {    
+    
+    m_has_par = false;
+    
+    if (m_par)
+    {
+        delete m_par;
+        m_par = NULL;
+    }
+    ;
+    
+    m_has_seq = false;
+    
+    if (m_seq)
+    {
+        delete m_seq;
+        m_seq = NULL;
+    }
+    ;
+    
+    m_has_excl = false;
+    
+    if (m_excl)
+    {
+        delete m_excl;
+        m_excl = NULL;
+    }
+    ;
+    
+    m_has_anim = false;
+    
+    if (m_anim)
+    {
+        delete m_anim;
+        m_anim = NULL;
+    }
+    ;
+    
+    m_has_animClr = false;
+    
+    if (m_animClr)
+    {
+        delete m_animClr;
+        m_animClr = NULL;
+    }
+    ;
+    
+    m_has_animEffect = false;
+    
+    if (m_animEffect)
+    {
+        delete m_animEffect;
+        m_animEffect = NULL;
+    }
+    ;
+    
+    m_has_animMotion = false;
+    
+    if (m_animMotion)
+    {
+        delete m_animMotion;
+        m_animMotion = NULL;
+    }
+    ;
+    
+    m_has_animScale = false;
+    
+    if (m_animScale)
+    {
+        delete m_animScale;
+        m_animScale = NULL;
+    }
+    ;
+    
+    m_has_cmd = false;
+    
+    if (m_cmd)
+    {
+        delete m_cmd;
+        m_cmd = NULL;
+    }
+    ;
+    
+    m_has_set = false;
+    
+    if (m_set)
+    {
+        delete m_set;
+        m_set = NULL;
+    }
+    ;
+    
+    m_has_audio = false;
+    
+    if (m_audio)
+    {
+        delete m_audio;
+        m_audio = NULL;
+    }
+    ;
+    
+    m_has_video = false;
+    
+    if (m_video)
+    {
+        delete m_video;
+        m_video = NULL;
+    }
+    ;
+    
+    m_has_animRot = true;
+    if (!m_animRot)
+    {
+        m_animRot = new CT_TLAnimateRotationBehavior();
+    }
+    return m_animRot;
+    }
+
+    const CT_TLAnimateRotationBehavior& CT_TimeNodeList::ChildGroup_1::get_animRot() const
+    {    
+    if (m_animRot)
+    {
+        return *m_animRot;
+    }
+    return CT_TLAnimateRotationBehavior::default_instance();
+    }
+
+    bool CT_TimeNodeList::ChildGroup_1::has_animScale() const
+    {    
+    return m_has_animScale;
+    }
+
+    CT_TLAnimateScaleBehavior* CT_TimeNodeList::ChildGroup_1::mutable_animScale()
+    {    
+    
+    m_has_par = false;
+    
+    if (m_par)
+    {
+        delete m_par;
+        m_par = NULL;
+    }
+    ;
+    
+    m_has_seq = false;
+    
+    if (m_seq)
+    {
+        delete m_seq;
+        m_seq = NULL;
+    }
+    ;
+    
+    m_has_excl = false;
+    
+    if (m_excl)
+    {
+        delete m_excl;
+        m_excl = NULL;
+    }
+    ;
+    
+    m_has_anim = false;
+    
+    if (m_anim)
+    {
+        delete m_anim;
+        m_anim = NULL;
+    }
+    ;
+    
+    m_has_animClr = false;
+    
+    if (m_animClr)
+    {
+        delete m_animClr;
+        m_animClr = NULL;
+    }
+    ;
+    
+    m_has_animEffect = false;
+    
+    if (m_animEffect)
+    {
+        delete m_animEffect;
+        m_animEffect = NULL;
+    }
+    ;
+    
+    m_has_animMotion = false;
+    
+    if (m_animMotion)
+    {
+        delete m_animMotion;
+        m_animMotion = NULL;
+    }
+    ;
+    
+    m_has_animRot = false;
+    
+    if (m_animRot)
+    {
+        delete m_animRot;
+        m_animRot = NULL;
+    }
+    ;
+    
+    m_has_cmd = false;
+    
+    if (m_cmd)
+    {
+        delete m_cmd;
+        m_cmd = NULL;
+    }
+    ;
+    
+    m_has_set = false;
+    
+    if (m_set)
+    {
+        delete m_set;
+        m_set = NULL;
+    }
+    ;
+    
+    m_has_audio = false;
+    
+    if (m_audio)
+    {
+        delete m_audio;
+        m_audio = NULL;
+    }
+    ;
+    
+    m_has_video = false;
+    
+    if (m_video)
+    {
+        delete m_video;
+        m_video = NULL;
+    }
+    ;
+    
+    m_has_animScale = true;
+    if (!m_animScale)
+    {
+        m_animScale = new CT_TLAnimateScaleBehavior();
+    }
+    return m_animScale;
+    }
+
+    const CT_TLAnimateScaleBehavior& CT_TimeNodeList::ChildGroup_1::get_animScale() const
+    {    
+    if (m_animScale)
+    {
+        return *m_animScale;
+    }
+    return CT_TLAnimateScaleBehavior::default_instance();
+    }
+
+    bool CT_TimeNodeList::ChildGroup_1::has_cmd() const
+    {    
+    return m_has_cmd;
+    }
+
+    CT_TLCommandBehavior* CT_TimeNodeList::ChildGroup_1::mutable_cmd()
+    {    
+    
+    m_has_par = false;
+    
+    if (m_par)
+    {
+        delete m_par;
+        m_par = NULL;
+    }
+    ;
+    
+    m_has_seq = false;
+    
+    if (m_seq)
+    {
+        delete m_seq;
+        m_seq = NULL;
+    }
+    ;
+    
+    m_has_excl = false;
+    
+    if (m_excl)
+    {
+        delete m_excl;
+        m_excl = NULL;
+    }
+    ;
+    
+    m_has_anim = false;
+    
+    if (m_anim)
+    {
+        delete m_anim;
+        m_anim = NULL;
+    }
+    ;
+    
+    m_has_animClr = false;
+    
+    if (m_animClr)
+    {
+        delete m_animClr;
+        m_animClr = NULL;
+    }
+    ;
+    
+    m_has_animEffect = false;
+    
+    if (m_animEffect)
+    {
+        delete m_animEffect;
+        m_animEffect = NULL;
+    }
+    ;
+    
+    m_has_animMotion = false;
+    
+    if (m_animMotion)
+    {
+        delete m_animMotion;
+        m_animMotion = NULL;
+    }
+    ;
+    
+    m_has_animRot = false;
+    
+    if (m_animRot)
+    {
+        delete m_animRot;
+        m_animRot = NULL;
+    }
+    ;
+    
+    m_has_animScale = false;
+    
+    if (m_animScale)
+    {
+        delete m_animScale;
+        m_animScale = NULL;
+    }
+    ;
+    
+    m_has_set = false;
+    
+    if (m_set)
+    {
+        delete m_set;
+        m_set = NULL;
+    }
+    ;
+    
+    m_has_audio = false;
+    
+    if (m_audio)
+    {
+        delete m_audio;
+        m_audio = NULL;
+    }
+    ;
+    
+    m_has_video = false;
+    
+    if (m_video)
+    {
+        delete m_video;
+        m_video = NULL;
+    }
+    ;
+    
+    m_has_cmd = true;
+    if (!m_cmd)
+    {
+        m_cmd = new CT_TLCommandBehavior();
+    }
+    return m_cmd;
+    }
+
+    const CT_TLCommandBehavior& CT_TimeNodeList::ChildGroup_1::get_cmd() const
+    {    
+    if (m_cmd)
+    {
+        return *m_cmd;
+    }
+    return CT_TLCommandBehavior::default_instance();
+    }
+
+    bool CT_TimeNodeList::ChildGroup_1::has_set() const
+    {    
+    return m_has_set;
+    }
+
+    CT_TLSetBehavior* CT_TimeNodeList::ChildGroup_1::mutable_set()
+    {    
+    
+    m_has_par = false;
+    
+    if (m_par)
+    {
+        delete m_par;
+        m_par = NULL;
+    }
+    ;
+    
+    m_has_seq = false;
+    
+    if (m_seq)
+    {
+        delete m_seq;
+        m_seq = NULL;
+    }
+    ;
+    
+    m_has_excl = false;
+    
+    if (m_excl)
+    {
+        delete m_excl;
+        m_excl = NULL;
+    }
+    ;
+    
+    m_has_anim = false;
+    
+    if (m_anim)
+    {
+        delete m_anim;
+        m_anim = NULL;
+    }
+    ;
+    
+    m_has_animClr = false;
+    
+    if (m_animClr)
+    {
+        delete m_animClr;
+        m_animClr = NULL;
+    }
+    ;
+    
+    m_has_animEffect = false;
+    
+    if (m_animEffect)
+    {
+        delete m_animEffect;
+        m_animEffect = NULL;
+    }
+    ;
+    
+    m_has_animMotion = false;
+    
+    if (m_animMotion)
+    {
+        delete m_animMotion;
+        m_animMotion = NULL;
+    }
+    ;
+    
+    m_has_animRot = false;
+    
+    if (m_animRot)
+    {
+        delete m_animRot;
+        m_animRot = NULL;
+    }
+    ;
+    
+    m_has_animScale = false;
+    
+    if (m_animScale)
+    {
+        delete m_animScale;
+        m_animScale = NULL;
+    }
+    ;
+    
+    m_has_cmd = false;
+    
+    if (m_cmd)
+    {
+        delete m_cmd;
+        m_cmd = NULL;
+    }
+    ;
+    
+    m_has_audio = false;
+    
+    if (m_audio)
+    {
+        delete m_audio;
+        m_audio = NULL;
+    }
+    ;
+    
+    m_has_video = false;
+    
+    if (m_video)
+    {
+        delete m_video;
+        m_video = NULL;
+    }
+    ;
+    
+    m_has_set = true;
+    if (!m_set)
+    {
+        m_set = new CT_TLSetBehavior();
+    }
+    return m_set;
+    }
+
+    const CT_TLSetBehavior& CT_TimeNodeList::ChildGroup_1::get_set() const
+    {    
+    if (m_set)
+    {
+        return *m_set;
+    }
+    return CT_TLSetBehavior::default_instance();
+    }
+
+    bool CT_TimeNodeList::ChildGroup_1::has_audio() const
+    {    
+    return m_has_audio;
+    }
+
+    CT_TLMediaNodeAudio* CT_TimeNodeList::ChildGroup_1::mutable_audio()
+    {    
+    
+    m_has_par = false;
+    
+    if (m_par)
+    {
+        delete m_par;
+        m_par = NULL;
+    }
+    ;
+    
+    m_has_seq = false;
+    
+    if (m_seq)
+    {
+        delete m_seq;
+        m_seq = NULL;
+    }
+    ;
+    
+    m_has_excl = false;
+    
+    if (m_excl)
+    {
+        delete m_excl;
+        m_excl = NULL;
+    }
+    ;
+    
+    m_has_anim = false;
+    
+    if (m_anim)
+    {
+        delete m_anim;
+        m_anim = NULL;
+    }
+    ;
+    
+    m_has_animClr = false;
+    
+    if (m_animClr)
+    {
+        delete m_animClr;
+        m_animClr = NULL;
+    }
+    ;
+    
+    m_has_animEffect = false;
+    
+    if (m_animEffect)
+    {
+        delete m_animEffect;
+        m_animEffect = NULL;
+    }
+    ;
+    
+    m_has_animMotion = false;
+    
+    if (m_animMotion)
+    {
+        delete m_animMotion;
+        m_animMotion = NULL;
+    }
+    ;
+    
+    m_has_animRot = false;
+    
+    if (m_animRot)
+    {
+        delete m_animRot;
+        m_animRot = NULL;
+    }
+    ;
+    
+    m_has_animScale = false;
+    
+    if (m_animScale)
+    {
+        delete m_animScale;
+        m_animScale = NULL;
+    }
+    ;
+    
+    m_has_cmd = false;
+    
+    if (m_cmd)
+    {
+        delete m_cmd;
+        m_cmd = NULL;
+    }
+    ;
+    
+    m_has_set = false;
+    
+    if (m_set)
+    {
+        delete m_set;
+        m_set = NULL;
+    }
+    ;
+    
+    m_has_video = false;
+    
+    if (m_video)
+    {
+        delete m_video;
+        m_video = NULL;
+    }
+    ;
+    
+    m_has_audio = true;
+    if (!m_audio)
+    {
+        m_audio = new CT_TLMediaNodeAudio();
+    }
+    return m_audio;
+    }
+
+    const CT_TLMediaNodeAudio& CT_TimeNodeList::ChildGroup_1::get_audio() const
+    {    
+    if (m_audio)
+    {
+        return *m_audio;
+    }
+    return CT_TLMediaNodeAudio::default_instance();
+    }
+
+    bool CT_TimeNodeList::ChildGroup_1::has_video() const
+    {    
+    return m_has_video;
+    }
+
+    CT_TLMediaNodeVideo* CT_TimeNodeList::ChildGroup_1::mutable_video()
+    {    
+    
+    m_has_par = false;
+    
+    if (m_par)
+    {
+        delete m_par;
+        m_par = NULL;
+    }
+    ;
+    
+    m_has_seq = false;
+    
+    if (m_seq)
+    {
+        delete m_seq;
+        m_seq = NULL;
+    }
+    ;
+    
+    m_has_excl = false;
+    
+    if (m_excl)
+    {
+        delete m_excl;
+        m_excl = NULL;
+    }
+    ;
+    
+    m_has_anim = false;
+    
+    if (m_anim)
+    {
+        delete m_anim;
+        m_anim = NULL;
+    }
+    ;
+    
+    m_has_animClr = false;
+    
+    if (m_animClr)
+    {
+        delete m_animClr;
+        m_animClr = NULL;
+    }
+    ;
+    
+    m_has_animEffect = false;
+    
+    if (m_animEffect)
+    {
+        delete m_animEffect;
+        m_animEffect = NULL;
+    }
+    ;
+    
+    m_has_animMotion = false;
+    
+    if (m_animMotion)
+    {
+        delete m_animMotion;
+        m_animMotion = NULL;
+    }
+    ;
+    
+    m_has_animRot = false;
+    
+    if (m_animRot)
+    {
+        delete m_animRot;
+        m_animRot = NULL;
+    }
+    ;
+    
+    m_has_animScale = false;
+    
+    if (m_animScale)
+    {
+        delete m_animScale;
+        m_animScale = NULL;
+    }
+    ;
+    
+    m_has_cmd = false;
+    
+    if (m_cmd)
+    {
+        delete m_cmd;
+        m_cmd = NULL;
+    }
+    ;
+    
+    m_has_set = false;
+    
+    if (m_set)
+    {
+        delete m_set;
+        m_set = NULL;
+    }
+    ;
+    
+    m_has_audio = false;
+    
+    if (m_audio)
+    {
+        delete m_audio;
+        m_audio = NULL;
+    }
+    ;
+    
+    m_has_video = true;
+    if (!m_video)
+    {
+        m_video = new CT_TLMediaNodeVideo();
+    }
+    return m_video;
+    }
+
+    const CT_TLMediaNodeVideo& CT_TimeNodeList::ChildGroup_1::get_video() const
+    {    
+    if (m_video)
+    {
+        return *m_video;
+    }
+    return CT_TLMediaNodeVideo::default_instance();
+    }
+
+CT_TimeNodeList* CT_TimeNodeList::default_instance_ = NULL;
 
     // CT_TLCommonTimeNodeData
     bool CT_TLCommonTimeNodeData::has_stCondLst() const
@@ -11427,60 +12947,6 @@ namespace ns_p {
     
     m_has_nodePh_attr = false;
     m_nodePh_attr = false;
-    
-    m_has_stCondLst = false;
-    
-    if (m_stCondLst)
-    {
-        delete m_stCondLst;
-        m_stCondLst = NULL;
-    }
-    
-    
-    m_has_endCondLst = false;
-    
-    if (m_endCondLst)
-    {
-        delete m_endCondLst;
-        m_endCondLst = NULL;
-    }
-    
-    
-    m_has_endSync = false;
-    
-    if (m_endSync)
-    {
-        delete m_endSync;
-        m_endSync = NULL;
-    }
-    
-    
-    m_has_iterate = false;
-    
-    if (m_iterate)
-    {
-        delete m_iterate;
-        m_iterate = NULL;
-    }
-    
-    
-    m_has_childTnLst = false;
-    
-    if (m_childTnLst)
-    {
-        delete m_childTnLst;
-        m_childTnLst = NULL;
-    }
-    
-    
-    m_has_subTnLst = false;
-    
-    if (m_subTnLst)
-    {
-        delete m_subTnLst;
-        m_subTnLst = NULL;
-    }
-    
     }
 
     void CT_TLCommonTimeNodeData::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -11633,32 +13099,32 @@ namespace ns_p {
             
     if (m_has_stCondLst)
     {
-        m_stCondLst->toXmlElem("p:stCondLst", "", _outStream);;
+        m_stCondLst->toXmlElem("stCondLst", "", _outStream);;
     }
     
     if (m_has_endCondLst)
     {
-        m_endCondLst->toXmlElem("p:endCondLst", "", _outStream);;
+        m_endCondLst->toXmlElem("endCondLst", "", _outStream);;
     }
     
     if (m_has_endSync)
     {
-        m_endSync->toXmlElem("p:endSync", "", _outStream);;
+        m_endSync->toXmlElem("endSync", "", _outStream);;
     }
     
     if (m_has_iterate)
     {
-        m_iterate->toXmlElem("p:iterate", "", _outStream);;
+        m_iterate->toXmlElem("iterate", "", _outStream);;
     }
     
     if (m_has_childTnLst)
     {
-        m_childTnLst->toXmlElem("p:childTnLst", "", _outStream);;
+        m_childTnLst->toXmlElem("childTnLst", "", _outStream);;
     }
     
     if (m_has_subTnLst)
     {
-        m_subTnLst->toXmlElem("p:subTnLst", "", _outStream);;
+        m_subTnLst->toXmlElem("subTnLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -12093,6 +13559,7 @@ namespace ns_p {
     return m_nodePh_attr;
     }
 
+CT_TLCommonTimeNodeData* CT_TLCommonTimeNodeData::default_instance_ = NULL;
 
     // CT_TLTimeNodeParallel
     bool CT_TLTimeNodeParallel::has_cTn() const
@@ -12120,16 +13587,7 @@ namespace ns_p {
     }
 
     void CT_TLTimeNodeParallel::clear()
-    {    
-    m_has_cTn = false;
-    
-    if (m_cTn)
-    {
-        delete m_cTn;
-        m_cTn = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_TLTimeNodeParallel::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -12144,7 +13602,7 @@ namespace ns_p {
             
     if (m_has_cTn)
     {
-        m_cTn->toXmlElem("p:cTn", "", _outStream);;
+        m_cTn->toXmlElem("cTn", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -12159,6 +13617,7 @@ namespace ns_p {
     return *CT_TLTimeNodeParallel::default_instance_;
     }
 
+CT_TLTimeNodeParallel* CT_TLTimeNodeParallel::default_instance_ = NULL;
 
     // CT_TLTimeNodeSequence
     bool CT_TLTimeNodeSequence::has_cTn() const
@@ -12255,33 +13714,6 @@ namespace ns_p {
         m_nextAc_attr = NULL;
     }
     
-    
-    m_has_cTn = false;
-    
-    if (m_cTn)
-    {
-        delete m_cTn;
-        m_cTn = NULL;
-    }
-    
-    
-    m_has_prevCondLst = false;
-    
-    if (m_prevCondLst)
-    {
-        delete m_prevCondLst;
-        m_prevCondLst = NULL;
-    }
-    
-    
-    m_has_nextCondLst = false;
-    
-    if (m_nextCondLst)
-    {
-        delete m_nextCondLst;
-        m_nextCondLst = NULL;
-    }
-    
     }
 
     void CT_TLTimeNodeSequence::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -12314,17 +13746,17 @@ namespace ns_p {
             
     if (m_has_cTn)
     {
-        m_cTn->toXmlElem("p:cTn", "", _outStream);;
+        m_cTn->toXmlElem("cTn", "", _outStream);;
     }
     
     if (m_has_prevCondLst)
     {
-        m_prevCondLst->toXmlElem("p:prevCondLst", "", _outStream);;
+        m_prevCondLst->toXmlElem("prevCondLst", "", _outStream);;
     }
     
     if (m_has_nextCondLst)
     {
-        m_nextCondLst->toXmlElem("p:nextCondLst", "", _outStream);;
+        m_nextCondLst->toXmlElem("nextCondLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -12395,6 +13827,7 @@ namespace ns_p {
     return ST_TLNextActionType::default_instance();
     }
 
+CT_TLTimeNodeSequence* CT_TLTimeNodeSequence::default_instance_ = NULL;
 
     // CT_TLTimeNodeExclusive
     bool CT_TLTimeNodeExclusive::has_cTn() const
@@ -12422,16 +13855,7 @@ namespace ns_p {
     }
 
     void CT_TLTimeNodeExclusive::clear()
-    {    
-    m_has_cTn = false;
-    
-    if (m_cTn)
-    {
-        delete m_cTn;
-        m_cTn = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_TLTimeNodeExclusive::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -12446,7 +13870,7 @@ namespace ns_p {
             
     if (m_has_cTn)
     {
-        m_cTn->toXmlElem("p:cTn", "", _outStream);;
+        m_cTn->toXmlElem("cTn", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -12461,6 +13885,7 @@ namespace ns_p {
     return *CT_TLTimeNodeExclusive::default_instance_;
     }
 
+CT_TLTimeNodeExclusive* CT_TLTimeNodeExclusive::default_instance_ = NULL;
 
     // CT_TLBehaviorAttributeNameList
     void CT_TLBehaviorAttributeNameList::add_attrName(const XSD::string_& _attrName)
@@ -12499,7 +13924,7 @@ namespace ns_p {
         {
             if ((*iter)->has_attrName())
             {
-                _outStream << "<p:attrName>" << (*iter)->get_attrName() << "</p:attrName>";
+                _outStream << "<attrName>" << (*iter)->get_attrName() << "</attrName>";
             }
         }
     }
@@ -12516,6 +13941,26 @@ namespace ns_p {
     return *CT_TLBehaviorAttributeNameList::default_instance_;
     }
 
+
+    // CT_TLBehaviorAttributeNameList::ChildGroup_1
+    bool CT_TLBehaviorAttributeNameList::ChildGroup_1::has_attrName() const
+    {    
+    return m_has_attrName;
+    }
+
+    void CT_TLBehaviorAttributeNameList::ChildGroup_1::set_attrName(const XSD::string_& _attrName)
+    {    
+    
+    m_has_attrName = true;
+    m_attrName = _attrName;
+    }
+
+    const XSD::string_& CT_TLBehaviorAttributeNameList::ChildGroup_1::get_attrName() const
+    {    
+    return m_attrName;
+    }
+
+CT_TLBehaviorAttributeNameList* CT_TLBehaviorAttributeNameList::default_instance_ = NULL;
 
     // CT_TLCommonBehaviorData
     bool CT_TLCommonBehaviorData::has_cTn() const
@@ -12639,33 +14084,6 @@ namespace ns_p {
         m_override_attr = NULL;
     }
     
-    
-    m_has_cTn = false;
-    
-    if (m_cTn)
-    {
-        delete m_cTn;
-        m_cTn = NULL;
-    }
-    
-    
-    m_has_tgtEl = false;
-    
-    if (m_tgtEl)
-    {
-        delete m_tgtEl;
-        m_tgtEl = NULL;
-    }
-    
-    
-    m_has_attrNameLst = false;
-    
-    if (m_attrNameLst)
-    {
-        delete m_attrNameLst;
-        m_attrNameLst = NULL;
-    }
-    
     }
 
     void CT_TLCommonBehaviorData::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -12728,17 +14146,17 @@ namespace ns_p {
             
     if (m_has_cTn)
     {
-        m_cTn->toXmlElem("p:cTn", "", _outStream);;
+        m_cTn->toXmlElem("cTn", "", _outStream);;
     }
     
     if (m_has_tgtEl)
     {
-        m_tgtEl->toXmlElem("p:tgtEl", "", _outStream);;
+        m_tgtEl->toXmlElem("tgtEl", "", _outStream);;
     }
     
     if (m_has_attrNameLst)
     {
-        m_attrNameLst->toXmlElem("p:attrNameLst", "", _outStream);;
+        m_attrNameLst->toXmlElem("attrNameLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -12897,6 +14315,7 @@ namespace ns_p {
     return ST_TLBehaviorOverrideType::default_instance();
     }
 
+CT_TLCommonBehaviorData* CT_TLCommonBehaviorData::default_instance_ = NULL;
 
     // CT_TLAnimVariantBooleanVal
     void CT_TLAnimVariantBooleanVal::clear()
@@ -12949,6 +14368,7 @@ namespace ns_p {
     return m_val_attr;
     }
 
+CT_TLAnimVariantBooleanVal* CT_TLAnimVariantBooleanVal::default_instance_ = NULL;
 
     // CT_TLAnimVariantIntegerVal
     void CT_TLAnimVariantIntegerVal::clear()
@@ -13001,6 +14421,7 @@ namespace ns_p {
     return m_val_attr;
     }
 
+CT_TLAnimVariantIntegerVal* CT_TLAnimVariantIntegerVal::default_instance_ = NULL;
 
     // CT_TLAnimVariantFloatVal
     void CT_TLAnimVariantFloatVal::clear()
@@ -13053,6 +14474,7 @@ namespace ns_p {
     return m_val_attr;
     }
 
+CT_TLAnimVariantFloatVal* CT_TLAnimVariantFloatVal::default_instance_ = NULL;
 
     // CT_TLAnimVariantStringVal
     void CT_TLAnimVariantStringVal::clear()
@@ -13105,6 +14527,7 @@ namespace ns_p {
     return m_val_attr;
     }
 
+CT_TLAnimVariantStringVal* CT_TLAnimVariantStringVal::default_instance_ = NULL;
 
     // CT_TLAnimVariant
     bool CT_TLAnimVariant::has_boolVal() const
@@ -13413,52 +14836,7 @@ namespace ns_p {
     }
 
     void CT_TLAnimVariant::clear()
-    {    
-    m_has_boolVal = false;
-    
-    if (m_boolVal)
-    {
-        delete m_boolVal;
-        m_boolVal = NULL;
-    }
-    
-    
-    m_has_intVal = false;
-    
-    if (m_intVal)
-    {
-        delete m_intVal;
-        m_intVal = NULL;
-    }
-    
-    
-    m_has_fltVal = false;
-    
-    if (m_fltVal)
-    {
-        delete m_fltVal;
-        m_fltVal = NULL;
-    }
-    
-    
-    m_has_strVal = false;
-    
-    if (m_strVal)
-    {
-        delete m_strVal;
-        m_strVal = NULL;
-    }
-    
-    
-    m_has_a_clrVal = false;
-    
-    if (m_a_clrVal)
-    {
-        delete m_a_clrVal;
-        m_a_clrVal = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_TLAnimVariant::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -13473,27 +14851,27 @@ namespace ns_p {
             
     if (m_has_boolVal)
     {
-        m_boolVal->toXmlElem("p:boolVal", "", _outStream);;
+        m_boolVal->toXmlElem("boolVal", "", _outStream);;
     }
     
     if (m_has_intVal)
     {
-        m_intVal->toXmlElem("p:intVal", "", _outStream);;
+        m_intVal->toXmlElem("intVal", "", _outStream);;
     }
     
     if (m_has_fltVal)
     {
-        m_fltVal->toXmlElem("p:fltVal", "", _outStream);;
+        m_fltVal->toXmlElem("fltVal", "", _outStream);;
     }
     
     if (m_has_strVal)
     {
-        m_strVal->toXmlElem("p:strVal", "", _outStream);;
+        m_strVal->toXmlElem("strVal", "", _outStream);;
     }
     
     if (m_has_a_clrVal)
     {
-        m_a_clrVal->toXmlElem("p:clrVal", "", _outStream);;
+        m_a_clrVal->toXmlElem("a:clrVal", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -13508,6 +14886,7 @@ namespace ns_p {
     return *CT_TLAnimVariant::default_instance_;
     }
 
+CT_TLAnimVariant* CT_TLAnimVariant::default_instance_ = NULL;
 
     // CT_TLTimeAnimateValue
     bool CT_TLTimeAnimateValue::has_val() const
@@ -13547,15 +14926,6 @@ namespace ns_p {
     
     m_has_fmla_attr = false;
     m_fmla_attr.clear();
-    
-    m_has_val = false;
-    
-    if (m_val)
-    {
-        delete m_val;
-        m_val = NULL;
-    }
-    
     }
 
     void CT_TLTimeAnimateValue::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -13582,7 +14952,7 @@ namespace ns_p {
             
     if (m_has_val)
     {
-        m_val->toXmlElem("p:val", "", _outStream);;
+        m_val->toXmlElem("val", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -13633,6 +15003,7 @@ namespace ns_p {
     return m_fmla_attr;
     }
 
+CT_TLTimeAnimateValue* CT_TLTimeAnimateValue::default_instance_ = NULL;
 
     // CT_TLTimeAnimateValueList
     CT_TLTimeAnimateValue* CT_TLTimeAnimateValueList::add_tav()
@@ -13672,7 +15043,7 @@ namespace ns_p {
         {
             if ((*iter)->has_tav())
             {
-                (*iter)->get_tav().toXmlElem("p:tav", "", _outStream);
+                (*iter)->get_tav().toXmlElem("tav", "", _outStream);
             }
         }
     }
@@ -13689,6 +15060,34 @@ namespace ns_p {
     return *CT_TLTimeAnimateValueList::default_instance_;
     }
 
+
+    // CT_TLTimeAnimateValueList::ChildGroup_1
+    bool CT_TLTimeAnimateValueList::ChildGroup_1::has_tav() const
+    {    
+    return m_has_tav;
+    }
+
+    CT_TLTimeAnimateValue* CT_TLTimeAnimateValueList::ChildGroup_1::mutable_tav()
+    {    
+    
+    m_has_tav = true;
+    if (!m_tav)
+    {
+        m_tav = new CT_TLTimeAnimateValue();
+    }
+    return m_tav;
+    }
+
+    const CT_TLTimeAnimateValue& CT_TLTimeAnimateValueList::ChildGroup_1::get_tav() const
+    {    
+    if (m_tav)
+    {
+        return *m_tav;
+    }
+    return CT_TLTimeAnimateValue::default_instance();
+    }
+
+CT_TLTimeAnimateValueList* CT_TLTimeAnimateValueList::default_instance_ = NULL;
 
     // CT_TLAnimateBehavior
     bool CT_TLAnimateBehavior::has_cBhvr() const
@@ -13767,24 +15166,6 @@ namespace ns_p {
         m_valueType_attr = NULL;
     }
     
-    
-    m_has_cBhvr = false;
-    
-    if (m_cBhvr)
-    {
-        delete m_cBhvr;
-        m_cBhvr = NULL;
-    }
-    
-    
-    m_has_tavLst = false;
-    
-    if (m_tavLst)
-    {
-        delete m_tavLst;
-        m_tavLst = NULL;
-    }
-    
     }
 
     void CT_TLAnimateBehavior::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -13829,12 +15210,12 @@ namespace ns_p {
             
     if (m_has_cBhvr)
     {
-        m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);;
+        m_cBhvr->toXmlElem("cBhvr", "", _outStream);;
     }
     
     if (m_has_tavLst)
     {
-        m_tavLst->toXmlElem("p:tavLst", "", _outStream);;
+        m_tavLst->toXmlElem("tavLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -13937,6 +15318,7 @@ namespace ns_p {
     return ST_TLAnimateBehaviorValueType::default_instance();
     }
 
+CT_TLAnimateBehavior* CT_TLAnimateBehavior::default_instance_ = NULL;
 
     // CT_TLByRgbColorTransform
     void CT_TLByRgbColorTransform::clear()
@@ -14069,6 +15451,7 @@ namespace ns_p {
     return ns_a::ST_FixedPercentage::default_instance();
     }
 
+CT_TLByRgbColorTransform* CT_TLByRgbColorTransform::default_instance_ = NULL;
 
     // CT_TLByHslColorTransform
     void CT_TLByHslColorTransform::clear()
@@ -14201,6 +15584,7 @@ namespace ns_p {
     return ns_a::ST_FixedPercentage::default_instance();
     }
 
+CT_TLByHslColorTransform* CT_TLByHslColorTransform::default_instance_ = NULL;
 
     // CT_TLByAnimateColorTransform
     bool CT_TLByAnimateColorTransform::has_rgb() const
@@ -14272,25 +15656,7 @@ namespace ns_p {
     }
 
     void CT_TLByAnimateColorTransform::clear()
-    {    
-    m_has_rgb = false;
-    
-    if (m_rgb)
-    {
-        delete m_rgb;
-        m_rgb = NULL;
-    }
-    
-    
-    m_has_hsl = false;
-    
-    if (m_hsl)
-    {
-        delete m_hsl;
-        m_hsl = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_TLByAnimateColorTransform::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -14305,12 +15671,12 @@ namespace ns_p {
             
     if (m_has_rgb)
     {
-        m_rgb->toXmlElem("p:rgb", "", _outStream);;
+        m_rgb->toXmlElem("rgb", "", _outStream);;
     }
     
     if (m_has_hsl)
     {
-        m_hsl->toXmlElem("p:hsl", "", _outStream);;
+        m_hsl->toXmlElem("hsl", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14325,6 +15691,7 @@ namespace ns_p {
     return *CT_TLByAnimateColorTransform::default_instance_;
     }
 
+CT_TLByAnimateColorTransform* CT_TLByAnimateColorTransform::default_instance_ = NULL;
 
     // CT_TLAnimateColorBehavior
     bool CT_TLAnimateColorBehavior::has_cBhvr() const
@@ -14442,42 +15809,6 @@ namespace ns_p {
         m_dir_attr = NULL;
     }
     
-    
-    m_has_cBhvr = false;
-    
-    if (m_cBhvr)
-    {
-        delete m_cBhvr;
-        m_cBhvr = NULL;
-    }
-    
-    
-    m_has_by = false;
-    
-    if (m_by)
-    {
-        delete m_by;
-        m_by = NULL;
-    }
-    
-    
-    m_has_a_from = false;
-    
-    if (m_a_from)
-    {
-        delete m_a_from;
-        m_a_from = NULL;
-    }
-    
-    
-    m_has_a_to = false;
-    
-    if (m_a_to)
-    {
-        delete m_a_to;
-        m_a_to = NULL;
-    }
-    
     }
 
     void CT_TLAnimateColorBehavior::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -14504,22 +15835,22 @@ namespace ns_p {
             
     if (m_has_cBhvr)
     {
-        m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);;
+        m_cBhvr->toXmlElem("cBhvr", "", _outStream);;
     }
     
     if (m_has_by)
     {
-        m_by->toXmlElem("p:by", "", _outStream);;
+        m_by->toXmlElem("by", "", _outStream);;
     }
     
     if (m_has_a_from)
     {
-        m_a_from->toXmlElem("p:from", "", _outStream);;
+        m_a_from->toXmlElem("a:from", "", _outStream);;
     }
     
     if (m_has_a_to)
     {
-        m_a_to->toXmlElem("p:to", "", _outStream);;
+        m_a_to->toXmlElem("a:to", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14574,6 +15905,7 @@ namespace ns_p {
     return ST_TLAnimateColorDirection::default_instance();
     }
 
+CT_TLAnimateColorBehavior* CT_TLAnimateColorBehavior::default_instance_ = NULL;
 
     // CT_TLAnimateEffectBehavior
     bool CT_TLAnimateEffectBehavior::has_cBhvr() const
@@ -14640,24 +15972,6 @@ namespace ns_p {
     
     m_has_prLst_attr = false;
     m_prLst_attr.clear();
-    
-    m_has_cBhvr = false;
-    
-    if (m_cBhvr)
-    {
-        delete m_cBhvr;
-        m_cBhvr = NULL;
-    }
-    
-    
-    m_has_progress = false;
-    
-    if (m_progress)
-    {
-        delete m_progress;
-        m_progress = NULL;
-    }
-    
     }
 
     void CT_TLAnimateEffectBehavior::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -14690,12 +16004,12 @@ namespace ns_p {
             
     if (m_has_cBhvr)
     {
-        m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);;
+        m_cBhvr->toXmlElem("cBhvr", "", _outStream);;
     }
     
     if (m_has_progress)
     {
-        m_progress->toXmlElem("p:progress", "", _outStream);;
+        m_progress->toXmlElem("progress", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14762,6 +16076,7 @@ namespace ns_p {
     return m_prLst_attr;
     }
 
+CT_TLAnimateEffectBehavior* CT_TLAnimateEffectBehavior::default_instance_ = NULL;
 
     // CT_TLPoint
     void CT_TLPoint::clear()
@@ -14859,6 +16174,7 @@ namespace ns_p {
     return ns_a::ST_Percentage::default_instance();
     }
 
+CT_TLPoint* CT_TLPoint::default_instance_ = NULL;
 
     // CT_TLAnimateMotionBehavior
     bool CT_TLAnimateMotionBehavior::has_cBhvr() const
@@ -15015,51 +16331,6 @@ namespace ns_p {
     
     m_has_ptsTypes_attr = false;
     m_ptsTypes_attr.clear();
-    
-    m_has_cBhvr = false;
-    
-    if (m_cBhvr)
-    {
-        delete m_cBhvr;
-        m_cBhvr = NULL;
-    }
-    
-    
-    m_has_by = false;
-    
-    if (m_by)
-    {
-        delete m_by;
-        m_by = NULL;
-    }
-    
-    
-    m_has_from = false;
-    
-    if (m_from)
-    {
-        delete m_from;
-        m_from = NULL;
-    }
-    
-    
-    m_has_to = false;
-    
-    if (m_to)
-    {
-        delete m_to;
-        m_to = NULL;
-    }
-    
-    
-    m_has_rCtr = false;
-    
-    if (m_rCtr)
-    {
-        delete m_rCtr;
-        m_rCtr = NULL;
-    }
-    
     }
 
     void CT_TLAnimateMotionBehavior::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -15104,27 +16375,27 @@ namespace ns_p {
             
     if (m_has_cBhvr)
     {
-        m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);;
+        m_cBhvr->toXmlElem("cBhvr", "", _outStream);;
     }
     
     if (m_has_by)
     {
-        m_by->toXmlElem("p:by", "", _outStream);;
+        m_by->toXmlElem("by", "", _outStream);;
     }
     
     if (m_has_from)
     {
-        m_from->toXmlElem("p:from", "", _outStream);;
+        m_from->toXmlElem("from", "", _outStream);;
     }
     
     if (m_has_to)
     {
-        m_to->toXmlElem("p:to", "", _outStream);;
+        m_to->toXmlElem("to", "", _outStream);;
     }
     
     if (m_has_rCtr)
     {
-        m_rCtr->toXmlElem("p:rCtr", "", _outStream);;
+        m_rCtr->toXmlElem("rCtr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15231,6 +16502,7 @@ namespace ns_p {
     return m_ptsTypes_attr;
     }
 
+CT_TLAnimateMotionBehavior* CT_TLAnimateMotionBehavior::default_instance_ = NULL;
 
     // CT_TLAnimateRotationBehavior
     bool CT_TLAnimateRotationBehavior::has_cBhvr() const
@@ -15285,15 +16557,6 @@ namespace ns_p {
         m_a_to_attr = NULL;
     }
     
-    
-    m_has_cBhvr = false;
-    
-    if (m_cBhvr)
-    {
-        delete m_cBhvr;
-        m_cBhvr = NULL;
-    }
-    
     }
 
     void CT_TLAnimateRotationBehavior::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -15326,7 +16589,7 @@ namespace ns_p {
             
     if (m_has_cBhvr)
     {
-        m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);;
+        m_cBhvr->toXmlElem("cBhvr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15401,6 +16664,7 @@ namespace ns_p {
     return ns_a::ST_Angle::default_instance();
     }
 
+CT_TLAnimateRotationBehavior* CT_TLAnimateRotationBehavior::default_instance_ = NULL;
 
     // CT_TLAnimateScaleBehavior
     bool CT_TLAnimateScaleBehavior::has_cBhvr() const
@@ -15503,42 +16767,6 @@ namespace ns_p {
     {    
     m_has_zoomContents_attr = false;
     m_zoomContents_attr = false;
-    
-    m_has_cBhvr = false;
-    
-    if (m_cBhvr)
-    {
-        delete m_cBhvr;
-        m_cBhvr = NULL;
-    }
-    
-    
-    m_has_by = false;
-    
-    if (m_by)
-    {
-        delete m_by;
-        m_by = NULL;
-    }
-    
-    
-    m_has_from = false;
-    
-    if (m_from)
-    {
-        delete m_from;
-        m_from = NULL;
-    }
-    
-    
-    m_has_to = false;
-    
-    if (m_to)
-    {
-        delete m_to;
-        m_to = NULL;
-    }
-    
     }
 
     void CT_TLAnimateScaleBehavior::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -15559,22 +16787,22 @@ namespace ns_p {
             
     if (m_has_cBhvr)
     {
-        m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);;
+        m_cBhvr->toXmlElem("cBhvr", "", _outStream);;
     }
     
     if (m_has_by)
     {
-        m_by->toXmlElem("p:by", "", _outStream);;
+        m_by->toXmlElem("by", "", _outStream);;
     }
     
     if (m_has_from)
     {
-        m_from->toXmlElem("p:from", "", _outStream);;
+        m_from->toXmlElem("from", "", _outStream);;
     }
     
     if (m_has_to)
     {
-        m_to->toXmlElem("p:to", "", _outStream);;
+        m_to->toXmlElem("to", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15605,6 +16833,7 @@ namespace ns_p {
     return m_zoomContents_attr;
     }
 
+CT_TLAnimateScaleBehavior* CT_TLAnimateScaleBehavior::default_instance_ = NULL;
 
     // CT_TLCommandBehavior
     bool CT_TLCommandBehavior::has_cBhvr() const
@@ -15644,15 +16873,6 @@ namespace ns_p {
     
     m_has_cmd_attr = false;
     m_cmd_attr.clear();
-    
-    m_has_cBhvr = false;
-    
-    if (m_cBhvr)
-    {
-        delete m_cBhvr;
-        m_cBhvr = NULL;
-    }
-    
     }
 
     void CT_TLCommandBehavior::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -15679,7 +16899,7 @@ namespace ns_p {
             
     if (m_has_cBhvr)
     {
-        m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);;
+        m_cBhvr->toXmlElem("cBhvr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15730,6 +16950,7 @@ namespace ns_p {
     return m_cmd_attr;
     }
 
+CT_TLCommandBehavior* CT_TLCommandBehavior::default_instance_ = NULL;
 
     // CT_TLSetBehavior
     bool CT_TLSetBehavior::has_cBhvr() const
@@ -15781,25 +17002,7 @@ namespace ns_p {
     }
 
     void CT_TLSetBehavior::clear()
-    {    
-    m_has_cBhvr = false;
-    
-    if (m_cBhvr)
-    {
-        delete m_cBhvr;
-        m_cBhvr = NULL;
-    }
-    
-    
-    m_has_to = false;
-    
-    if (m_to)
-    {
-        delete m_to;
-        m_to = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_TLSetBehavior::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -15814,12 +17017,12 @@ namespace ns_p {
             
     if (m_has_cBhvr)
     {
-        m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);;
+        m_cBhvr->toXmlElem("cBhvr", "", _outStream);;
     }
     
     if (m_has_to)
     {
-        m_to->toXmlElem("p:to", "", _outStream);;
+        m_to->toXmlElem("to", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15834,6 +17037,7 @@ namespace ns_p {
     return *CT_TLSetBehavior::default_instance_;
     }
 
+CT_TLSetBehavior* CT_TLSetBehavior::default_instance_ = NULL;
 
     // CT_TLCommonMediaNodeData
     bool CT_TLCommonMediaNodeData::has_cTn() const
@@ -15903,24 +17107,6 @@ namespace ns_p {
     
     m_has_showWhenStopped_attr = false;
     m_showWhenStopped_attr = false;
-    
-    m_has_cTn = false;
-    
-    if (m_cTn)
-    {
-        delete m_cTn;
-        m_cTn = NULL;
-    }
-    
-    
-    m_has_tgtEl = false;
-    
-    if (m_tgtEl)
-    {
-        delete m_tgtEl;
-        m_tgtEl = NULL;
-    }
-    
     }
 
     void CT_TLCommonMediaNodeData::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -15959,12 +17145,12 @@ namespace ns_p {
             
     if (m_has_cTn)
     {
-        m_cTn->toXmlElem("p:cTn", "", _outStream);;
+        m_cTn->toXmlElem("cTn", "", _outStream);;
     }
     
     if (m_has_tgtEl)
     {
-        m_tgtEl->toXmlElem("p:tgtEl", "", _outStream);;
+        m_tgtEl->toXmlElem("tgtEl", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16047,6 +17233,7 @@ namespace ns_p {
     return m_showWhenStopped_attr;
     }
 
+CT_TLCommonMediaNodeData* CT_TLCommonMediaNodeData::default_instance_ = NULL;
 
     // CT_TLMediaNodeAudio
     bool CT_TLMediaNodeAudio::has_cMediaNode() const
@@ -16077,15 +17264,6 @@ namespace ns_p {
     {    
     m_has_isNarration_attr = false;
     m_isNarration_attr = false;
-    
-    m_has_cMediaNode = false;
-    
-    if (m_cMediaNode)
-    {
-        delete m_cMediaNode;
-        m_cMediaNode = NULL;
-    }
-    
     }
 
     void CT_TLMediaNodeAudio::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -16106,7 +17284,7 @@ namespace ns_p {
             
     if (m_has_cMediaNode)
     {
-        m_cMediaNode->toXmlElem("p:cMediaNode", "", _outStream);;
+        m_cMediaNode->toXmlElem("cMediaNode", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16137,6 +17315,7 @@ namespace ns_p {
     return m_isNarration_attr;
     }
 
+CT_TLMediaNodeAudio* CT_TLMediaNodeAudio::default_instance_ = NULL;
 
     // CT_TLMediaNodeVideo
     bool CT_TLMediaNodeVideo::has_cMediaNode() const
@@ -16167,15 +17346,6 @@ namespace ns_p {
     {    
     m_has_fullScrn_attr = false;
     m_fullScrn_attr = false;
-    
-    m_has_cMediaNode = false;
-    
-    if (m_cMediaNode)
-    {
-        delete m_cMediaNode;
-        m_cMediaNode = NULL;
-    }
-    
     }
 
     void CT_TLMediaNodeVideo::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -16196,7 +17366,7 @@ namespace ns_p {
             
     if (m_has_cMediaNode)
     {
-        m_cMediaNode->toXmlElem("p:cMediaNode", "", _outStream);;
+        m_cMediaNode->toXmlElem("cMediaNode", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16227,6 +17397,7 @@ namespace ns_p {
     return m_fullScrn_attr;
     }
 
+CT_TLMediaNodeVideo* CT_TLMediaNodeVideo::default_instance_ = NULL;
 
     // CT_TLTemplate
     bool CT_TLTemplate::has_tnLst() const
@@ -16257,15 +17428,6 @@ namespace ns_p {
     {    
     m_has_lvl_attr = false;
     m_lvl_attr = 0;
-    
-    m_has_tnLst = false;
-    
-    if (m_tnLst)
-    {
-        delete m_tnLst;
-        m_tnLst = NULL;
-    }
-    
     }
 
     void CT_TLTemplate::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -16286,7 +17448,7 @@ namespace ns_p {
             
     if (m_has_tnLst)
     {
-        m_tnLst->toXmlElem("p:tnLst", "", _outStream);;
+        m_tnLst->toXmlElem("tnLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16317,6 +17479,7 @@ namespace ns_p {
     return m_lvl_attr;
     }
 
+CT_TLTemplate* CT_TLTemplate::default_instance_ = NULL;
 
     // CT_TLTemplateList
     CT_TLTemplate* CT_TLTemplateList::add_tmpl()
@@ -16356,7 +17519,7 @@ namespace ns_p {
         {
             if ((*iter)->has_tmpl())
             {
-                (*iter)->get_tmpl().toXmlElem("p:tmpl", "", _outStream);
+                (*iter)->get_tmpl().toXmlElem("tmpl", "", _outStream);
             }
         }
     }
@@ -16373,6 +17536,34 @@ namespace ns_p {
     return *CT_TLTemplateList::default_instance_;
     }
 
+
+    // CT_TLTemplateList::ChildGroup_1
+    bool CT_TLTemplateList::ChildGroup_1::has_tmpl() const
+    {    
+    return m_has_tmpl;
+    }
+
+    CT_TLTemplate* CT_TLTemplateList::ChildGroup_1::mutable_tmpl()
+    {    
+    
+    m_has_tmpl = true;
+    if (!m_tmpl)
+    {
+        m_tmpl = new CT_TLTemplate();
+    }
+    return m_tmpl;
+    }
+
+    const CT_TLTemplate& CT_TLTemplateList::ChildGroup_1::get_tmpl() const
+    {    
+    if (m_tmpl)
+    {
+        return *m_tmpl;
+    }
+    return CT_TLTemplate::default_instance();
+    }
+
+CT_TLTemplateList* CT_TLTemplateList::default_instance_ = NULL;
 
     // CT_TLBuildParagraph
     bool CT_TLBuildParagraph::has_tmplLst() const
@@ -16445,15 +17636,6 @@ namespace ns_p {
         m_advAuto_attr = NULL;
     }
     
-    
-    m_has_tmplLst = false;
-    
-    if (m_tmplLst)
-    {
-        delete m_tmplLst;
-        m_tmplLst = NULL;
-    }
-    
     }
 
     void CT_TLBuildParagraph::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -16522,7 +17704,7 @@ namespace ns_p {
             
     if (m_has_tmplLst)
     {
-        m_tmplLst->toXmlElem("p:tmplLst", "", _outStream);;
+        m_tmplLst->toXmlElem("tmplLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16693,6 +17875,7 @@ namespace ns_p {
     return ST_TLTime::default_instance();
     }
 
+CT_TLBuildParagraph* CT_TLBuildParagraph::default_instance_ = NULL;
 
     // CT_TLBuildDiagram
     void CT_TLBuildDiagram::clear()
@@ -16840,6 +18023,7 @@ namespace ns_p {
     return ST_TLDiagramBuildType::default_instance();
     }
 
+CT_TLBuildDiagram* CT_TLBuildDiagram::default_instance_ = NULL;
 
     // CT_TLOleBuildChart
     void CT_TLOleBuildChart::clear()
@@ -17012,6 +18196,7 @@ namespace ns_p {
     return m_animBg_attr;
     }
 
+CT_TLOleBuildChart* CT_TLOleBuildChart::default_instance_ = NULL;
 
     // CT_TLGraphicalObjectBuild
     bool CT_TLGraphicalObjectBuild::has_bldAsOne() const
@@ -17098,24 +18283,6 @@ namespace ns_p {
     
     m_has_uiExpand_attr = false;
     m_uiExpand_attr = false;
-    
-    m_has_bldAsOne = false;
-    
-    if (m_bldAsOne)
-    {
-        delete m_bldAsOne;
-        m_bldAsOne = NULL;
-    }
-    
-    
-    m_has_a_bldSub = false;
-    
-    if (m_a_bldSub)
-    {
-        delete m_a_bldSub;
-        m_a_bldSub = NULL;
-    }
-    
     }
 
     void CT_TLGraphicalObjectBuild::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -17148,12 +18315,12 @@ namespace ns_p {
             
     if (m_has_bldAsOne)
     {
-        m_bldAsOne->toXmlElem("p:bldAsOne", "", _outStream);;
+        m_bldAsOne->toXmlElem("bldAsOne", "", _outStream);;
     }
     
     if (m_has_a_bldSub)
     {
-        m_a_bldSub->toXmlElem("p:bldSub", "", _outStream);;
+        m_a_bldSub->toXmlElem("a:bldSub", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17220,6 +18387,7 @@ namespace ns_p {
     return m_uiExpand_attr;
     }
 
+CT_TLGraphicalObjectBuild* CT_TLGraphicalObjectBuild::default_instance_ = NULL;
 
     // CT_BuildList
     CT_TLBuildParagraph* CT_BuildList::add_bldP()
@@ -17283,19 +18451,19 @@ namespace ns_p {
         {
             if ((*iter)->has_bldP())
             {
-                (*iter)->get_bldP().toXmlElem("p:bldP", "", _outStream);
+                (*iter)->get_bldP().toXmlElem("bldP", "", _outStream);
             }
             else if ((*iter)->has_bldDgm())
             {
-                (*iter)->get_bldDgm().toXmlElem("p:bldDgm", "", _outStream);
+                (*iter)->get_bldDgm().toXmlElem("bldDgm", "", _outStream);
             }
             else if ((*iter)->has_bldOleChart())
             {
-                (*iter)->get_bldOleChart().toXmlElem("p:bldOleChart", "", _outStream);
+                (*iter)->get_bldOleChart().toXmlElem("bldOleChart", "", _outStream);
             }
             else if ((*iter)->has_bldGraphic())
             {
-                (*iter)->get_bldGraphic().toXmlElem("p:bldGraphic", "", _outStream);
+                (*iter)->get_bldGraphic().toXmlElem("bldGraphic", "", _outStream);
             }
         }
     }
@@ -17312,6 +18480,217 @@ namespace ns_p {
     return *CT_BuildList::default_instance_;
     }
 
+
+    // CT_BuildList::ChildGroup_1
+    bool CT_BuildList::ChildGroup_1::has_bldP() const
+    {    
+    return m_has_bldP;
+    }
+
+    CT_TLBuildParagraph* CT_BuildList::ChildGroup_1::mutable_bldP()
+    {    
+    
+    m_has_bldDgm = false;
+    
+    if (m_bldDgm)
+    {
+        delete m_bldDgm;
+        m_bldDgm = NULL;
+    }
+    ;
+    
+    m_has_bldOleChart = false;
+    
+    if (m_bldOleChart)
+    {
+        delete m_bldOleChart;
+        m_bldOleChart = NULL;
+    }
+    ;
+    
+    m_has_bldGraphic = false;
+    
+    if (m_bldGraphic)
+    {
+        delete m_bldGraphic;
+        m_bldGraphic = NULL;
+    }
+    ;
+    
+    m_has_bldP = true;
+    if (!m_bldP)
+    {
+        m_bldP = new CT_TLBuildParagraph();
+    }
+    return m_bldP;
+    }
+
+    const CT_TLBuildParagraph& CT_BuildList::ChildGroup_1::get_bldP() const
+    {    
+    if (m_bldP)
+    {
+        return *m_bldP;
+    }
+    return CT_TLBuildParagraph::default_instance();
+    }
+
+    bool CT_BuildList::ChildGroup_1::has_bldDgm() const
+    {    
+    return m_has_bldDgm;
+    }
+
+    CT_TLBuildDiagram* CT_BuildList::ChildGroup_1::mutable_bldDgm()
+    {    
+    
+    m_has_bldP = false;
+    
+    if (m_bldP)
+    {
+        delete m_bldP;
+        m_bldP = NULL;
+    }
+    ;
+    
+    m_has_bldOleChart = false;
+    
+    if (m_bldOleChart)
+    {
+        delete m_bldOleChart;
+        m_bldOleChart = NULL;
+    }
+    ;
+    
+    m_has_bldGraphic = false;
+    
+    if (m_bldGraphic)
+    {
+        delete m_bldGraphic;
+        m_bldGraphic = NULL;
+    }
+    ;
+    
+    m_has_bldDgm = true;
+    if (!m_bldDgm)
+    {
+        m_bldDgm = new CT_TLBuildDiagram();
+    }
+    return m_bldDgm;
+    }
+
+    const CT_TLBuildDiagram& CT_BuildList::ChildGroup_1::get_bldDgm() const
+    {    
+    if (m_bldDgm)
+    {
+        return *m_bldDgm;
+    }
+    return CT_TLBuildDiagram::default_instance();
+    }
+
+    bool CT_BuildList::ChildGroup_1::has_bldOleChart() const
+    {    
+    return m_has_bldOleChart;
+    }
+
+    CT_TLOleBuildChart* CT_BuildList::ChildGroup_1::mutable_bldOleChart()
+    {    
+    
+    m_has_bldP = false;
+    
+    if (m_bldP)
+    {
+        delete m_bldP;
+        m_bldP = NULL;
+    }
+    ;
+    
+    m_has_bldDgm = false;
+    
+    if (m_bldDgm)
+    {
+        delete m_bldDgm;
+        m_bldDgm = NULL;
+    }
+    ;
+    
+    m_has_bldGraphic = false;
+    
+    if (m_bldGraphic)
+    {
+        delete m_bldGraphic;
+        m_bldGraphic = NULL;
+    }
+    ;
+    
+    m_has_bldOleChart = true;
+    if (!m_bldOleChart)
+    {
+        m_bldOleChart = new CT_TLOleBuildChart();
+    }
+    return m_bldOleChart;
+    }
+
+    const CT_TLOleBuildChart& CT_BuildList::ChildGroup_1::get_bldOleChart() const
+    {    
+    if (m_bldOleChart)
+    {
+        return *m_bldOleChart;
+    }
+    return CT_TLOleBuildChart::default_instance();
+    }
+
+    bool CT_BuildList::ChildGroup_1::has_bldGraphic() const
+    {    
+    return m_has_bldGraphic;
+    }
+
+    CT_TLGraphicalObjectBuild* CT_BuildList::ChildGroup_1::mutable_bldGraphic()
+    {    
+    
+    m_has_bldP = false;
+    
+    if (m_bldP)
+    {
+        delete m_bldP;
+        m_bldP = NULL;
+    }
+    ;
+    
+    m_has_bldDgm = false;
+    
+    if (m_bldDgm)
+    {
+        delete m_bldDgm;
+        m_bldDgm = NULL;
+    }
+    ;
+    
+    m_has_bldOleChart = false;
+    
+    if (m_bldOleChart)
+    {
+        delete m_bldOleChart;
+        m_bldOleChart = NULL;
+    }
+    ;
+    
+    m_has_bldGraphic = true;
+    if (!m_bldGraphic)
+    {
+        m_bldGraphic = new CT_TLGraphicalObjectBuild();
+    }
+    return m_bldGraphic;
+    }
+
+    const CT_TLGraphicalObjectBuild& CT_BuildList::ChildGroup_1::get_bldGraphic() const
+    {    
+    if (m_bldGraphic)
+    {
+        return *m_bldGraphic;
+    }
+    return CT_TLGraphicalObjectBuild::default_instance();
+    }
+
+CT_BuildList* CT_BuildList::default_instance_ = NULL;
 
     // CT_SlideTiming
     bool CT_SlideTiming::has_tnLst() const
@@ -17387,34 +18766,7 @@ namespace ns_p {
     }
 
     void CT_SlideTiming::clear()
-    {    
-    m_has_tnLst = false;
-    
-    if (m_tnLst)
-    {
-        delete m_tnLst;
-        m_tnLst = NULL;
-    }
-    
-    
-    m_has_bldLst = false;
-    
-    if (m_bldLst)
-    {
-        delete m_bldLst;
-        m_bldLst = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_SlideTiming::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -17429,17 +18781,17 @@ namespace ns_p {
             
     if (m_has_tnLst)
     {
-        m_tnLst->toXmlElem("p:tnLst", "", _outStream);;
+        m_tnLst->toXmlElem("tnLst", "", _outStream);;
     }
     
     if (m_has_bldLst)
     {
-        m_bldLst->toXmlElem("p:bldLst", "", _outStream);;
+        m_bldLst->toXmlElem("bldLst", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17454,6 +18806,7 @@ namespace ns_p {
     return *CT_SlideTiming::default_instance_;
     }
 
+CT_SlideTiming* CT_SlideTiming::default_instance_ = NULL;
 
     // CT_Empty
     void CT_Empty::clear()
@@ -17482,6 +18835,7 @@ namespace ns_p {
     return *CT_Empty::default_instance_;
     }
 
+CT_Empty* CT_Empty::default_instance_ = NULL;
 
     // CT_IndexRange
     void CT_IndexRange::clear()
@@ -17579,6 +18933,7 @@ namespace ns_p {
     return ST_Index::default_instance();
     }
 
+CT_IndexRange* CT_IndexRange::default_instance_ = NULL;
 
     // CT_SlideRelationshipListEntry
     void CT_SlideRelationshipListEntry::clear()
@@ -17641,6 +18996,7 @@ namespace ns_p {
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_SlideRelationshipListEntry* CT_SlideRelationshipListEntry::default_instance_ = NULL;
 
     // CT_SlideRelationshipList
     CT_SlideRelationshipListEntry* CT_SlideRelationshipList::add_sld()
@@ -17680,7 +19036,7 @@ namespace ns_p {
         {
             if ((*iter)->has_sld())
             {
-                (*iter)->get_sld().toXmlElem("p:sld", "", _outStream);
+                (*iter)->get_sld().toXmlElem("sld", "", _outStream);
             }
         }
     }
@@ -17697,6 +19053,34 @@ namespace ns_p {
     return *CT_SlideRelationshipList::default_instance_;
     }
 
+
+    // CT_SlideRelationshipList::ChildGroup_1
+    bool CT_SlideRelationshipList::ChildGroup_1::has_sld() const
+    {    
+    return m_has_sld;
+    }
+
+    CT_SlideRelationshipListEntry* CT_SlideRelationshipList::ChildGroup_1::mutable_sld()
+    {    
+    
+    m_has_sld = true;
+    if (!m_sld)
+    {
+        m_sld = new CT_SlideRelationshipListEntry();
+    }
+    return m_sld;
+    }
+
+    const CT_SlideRelationshipListEntry& CT_SlideRelationshipList::ChildGroup_1::get_sld() const
+    {    
+    if (m_sld)
+    {
+        return *m_sld;
+    }
+    return CT_SlideRelationshipListEntry::default_instance();
+    }
+
+CT_SlideRelationshipList* CT_SlideRelationshipList::default_instance_ = NULL;
 
     // CT_CustomShowId
     void CT_CustomShowId::clear()
@@ -17749,6 +19133,7 @@ namespace ns_p {
     return m_id_attr;
     }
 
+CT_CustomShowId* CT_CustomShowId::default_instance_ = NULL;
 
     // CT_CustomerData
     void CT_CustomerData::clear()
@@ -17811,6 +19196,7 @@ namespace ns_p {
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_CustomerData* CT_CustomerData::default_instance_ = NULL;
 
     // CT_TagsData
     void CT_TagsData::clear()
@@ -17873,6 +19259,7 @@ namespace ns_p {
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_TagsData* CT_TagsData::default_instance_ = NULL;
 
     // CT_CustomerDataList
     CT_CustomerData* CT_CustomerDataList::add_custData()
@@ -17920,11 +19307,11 @@ namespace ns_p {
         {
             if ((*iter)->has_custData())
             {
-                (*iter)->get_custData().toXmlElem("p:custData", "", _outStream);
+                (*iter)->get_custData().toXmlElem("custData", "", _outStream);
             }
             else if ((*iter)->has_tags())
             {
-                (*iter)->get_tags().toXmlElem("p:tags", "", _outStream);
+                (*iter)->get_tags().toXmlElem("tags", "", _outStream);
             }
         }
     }
@@ -17941,6 +19328,77 @@ namespace ns_p {
     return *CT_CustomerDataList::default_instance_;
     }
 
+
+    // CT_CustomerDataList::ChildGroup_1
+    bool CT_CustomerDataList::ChildGroup_1::has_custData() const
+    {    
+    return m_has_custData;
+    }
+
+    CT_CustomerData* CT_CustomerDataList::ChildGroup_1::mutable_custData()
+    {    
+    
+    m_has_tags = false;
+    
+    if (m_tags)
+    {
+        delete m_tags;
+        m_tags = NULL;
+    }
+    ;
+    
+    m_has_custData = true;
+    if (!m_custData)
+    {
+        m_custData = new CT_CustomerData();
+    }
+    return m_custData;
+    }
+
+    const CT_CustomerData& CT_CustomerDataList::ChildGroup_1::get_custData() const
+    {    
+    if (m_custData)
+    {
+        return *m_custData;
+    }
+    return CT_CustomerData::default_instance();
+    }
+
+    bool CT_CustomerDataList::ChildGroup_1::has_tags() const
+    {    
+    return m_has_tags;
+    }
+
+    CT_TagsData* CT_CustomerDataList::ChildGroup_1::mutable_tags()
+    {    
+    
+    m_has_custData = false;
+    
+    if (m_custData)
+    {
+        delete m_custData;
+        m_custData = NULL;
+    }
+    ;
+    
+    m_has_tags = true;
+    if (!m_tags)
+    {
+        m_tags = new CT_TagsData();
+    }
+    return m_tags;
+    }
+
+    const CT_TagsData& CT_CustomerDataList::ChildGroup_1::get_tags() const
+    {    
+    if (m_tags)
+    {
+        return *m_tags;
+    }
+    return CT_TagsData::default_instance();
+    }
+
+CT_CustomerDataList* CT_CustomerDataList::default_instance_ = NULL;
 
     // CT_Extension
     void CT_Extension::clear()
@@ -17965,6 +19423,13 @@ namespace ns_p {
     
             _outStream << ">";
             
+    if (m_has_any)
+    {
+        
+    m_any->toXml(_outStream);
+    ;
+    }
+    
             _outStream << "</" << _elemName << ">";
                 }
 
@@ -17993,6 +19458,7 @@ namespace ns_p {
     return m_uri_attr;
     }
 
+CT_Extension* CT_Extension::default_instance_ = NULL;
 
     // CT_ExtensionList
     CT_Extension* CT_ExtensionList::add_ext()
@@ -18032,7 +19498,7 @@ namespace ns_p {
         {
             if ((*iter)->has_ext())
             {
-                (*iter)->get_ext().toXmlElem("p:ext", "", _outStream);
+                (*iter)->get_ext().toXmlElem("ext", "", _outStream);
             }
         }
     }
@@ -18049,6 +19515,34 @@ namespace ns_p {
     return *CT_ExtensionList::default_instance_;
     }
 
+
+    // CT_ExtensionList::ChildGroup_1
+    bool CT_ExtensionList::ChildGroup_1::has_ext() const
+    {    
+    return m_has_ext;
+    }
+
+    CT_Extension* CT_ExtensionList::ChildGroup_1::mutable_ext()
+    {    
+    
+    m_has_ext = true;
+    if (!m_ext)
+    {
+        m_ext = new CT_Extension();
+    }
+    return m_ext;
+    }
+
+    const CT_Extension& CT_ExtensionList::ChildGroup_1::get_ext() const
+    {    
+    if (m_ext)
+    {
+        return *m_ext;
+    }
+    return CT_Extension::default_instance();
+    }
+
+CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
 
     // CT_ExtensionListModify
     CT_Extension* CT_ExtensionListModify::add_ext()
@@ -18096,7 +19590,7 @@ namespace ns_p {
         {
             if ((*iter)->has_ext())
             {
-                (*iter)->get_ext().toXmlElem("p:ext", "", _outStream);
+                (*iter)->get_ext().toXmlElem("ext", "", _outStream);
             }
         }
     }
@@ -18129,6 +19623,34 @@ namespace ns_p {
     return m_mod_attr;
     }
 
+
+    // CT_ExtensionListModify::ChildGroup_1
+    bool CT_ExtensionListModify::ChildGroup_1::has_ext() const
+    {    
+    return m_has_ext;
+    }
+
+    CT_Extension* CT_ExtensionListModify::ChildGroup_1::mutable_ext()
+    {    
+    
+    m_has_ext = true;
+    if (!m_ext)
+    {
+        m_ext = new CT_Extension();
+    }
+    return m_ext;
+    }
+
+    const CT_Extension& CT_ExtensionListModify::ChildGroup_1::get_ext() const
+    {    
+    if (m_ext)
+    {
+        return *m_ext;
+    }
+    return CT_Extension::default_instance();
+    }
+
+CT_ExtensionListModify* CT_ExtensionListModify::default_instance_ = NULL;
 
     // CT_CommentAuthor
     bool CT_CommentAuthor::has_extLst() const
@@ -18183,15 +19705,6 @@ namespace ns_p {
     
     m_has_clrIdx_attr = false;
     m_clrIdx_attr = 0;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_CommentAuthor::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -18236,7 +19749,7 @@ namespace ns_p {
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18339,6 +19852,7 @@ namespace ns_p {
     return m_clrIdx_attr;
     }
 
+CT_CommentAuthor* CT_CommentAuthor::default_instance_ = NULL;
 
     // CT_CommentAuthorList
     CT_CommentAuthor* CT_CommentAuthorList::add_cmAuthor()
@@ -18378,7 +19892,7 @@ namespace ns_p {
         {
             if ((*iter)->has_cmAuthor())
             {
-                (*iter)->get_cmAuthor().toXmlElem("p:cmAuthor", "", _outStream);
+                (*iter)->get_cmAuthor().toXmlElem("cmAuthor", "", _outStream);
             }
         }
     }
@@ -18395,6 +19909,34 @@ namespace ns_p {
     return *CT_CommentAuthorList::default_instance_;
     }
 
+
+    // CT_CommentAuthorList::ChildGroup_1
+    bool CT_CommentAuthorList::ChildGroup_1::has_cmAuthor() const
+    {    
+    return m_has_cmAuthor;
+    }
+
+    CT_CommentAuthor* CT_CommentAuthorList::ChildGroup_1::mutable_cmAuthor()
+    {    
+    
+    m_has_cmAuthor = true;
+    if (!m_cmAuthor)
+    {
+        m_cmAuthor = new CT_CommentAuthor();
+    }
+    return m_cmAuthor;
+    }
+
+    const CT_CommentAuthor& CT_CommentAuthorList::ChildGroup_1::get_cmAuthor() const
+    {    
+    if (m_cmAuthor)
+    {
+        return *m_cmAuthor;
+    }
+    return CT_CommentAuthor::default_instance();
+    }
+
+CT_CommentAuthorList* CT_CommentAuthorList::default_instance_ = NULL;
 
     // CT_Comment
     bool CT_Comment::has_a_pos() const
@@ -18477,27 +20019,6 @@ namespace ns_p {
         m_idx_attr = NULL;
     }
     
-    
-    m_has_a_pos = false;
-    
-    if (m_a_pos)
-    {
-        delete m_a_pos;
-        m_a_pos = NULL;
-    }
-    
-    
-    m_has_text = false;
-    m_text.clear();
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_Comment::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -18530,17 +20051,17 @@ namespace ns_p {
             
     if (m_has_a_pos)
     {
-        m_a_pos->toXmlElem("p:pos", "", _outStream);;
+        m_a_pos->toXmlElem("a:pos", "", _outStream);;
     }
     
     if (m_has_text)
     {
-        _outStream << "<p:text>" << m_text << "</p:text>";;
+        _outStream << "<text>" << m_text << "</text>";;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18607,6 +20128,7 @@ namespace ns_p {
     return ST_Index::default_instance();
     }
 
+CT_Comment* CT_Comment::default_instance_ = NULL;
 
     // CT_CommentList
     CT_Comment* CT_CommentList::add_cm()
@@ -18646,7 +20168,7 @@ namespace ns_p {
         {
             if ((*iter)->has_cm())
             {
-                (*iter)->get_cm().toXmlElem("p:cm", "", _outStream);
+                (*iter)->get_cm().toXmlElem("cm", "", _outStream);
             }
         }
     }
@@ -18663,6 +20185,34 @@ namespace ns_p {
     return *CT_CommentList::default_instance_;
     }
 
+
+    // CT_CommentList::ChildGroup_1
+    bool CT_CommentList::ChildGroup_1::has_cm() const
+    {    
+    return m_has_cm;
+    }
+
+    CT_Comment* CT_CommentList::ChildGroup_1::mutable_cm()
+    {    
+    
+    m_has_cm = true;
+    if (!m_cm)
+    {
+        m_cm = new CT_Comment();
+    }
+    return m_cm;
+    }
+
+    const CT_Comment& CT_CommentList::ChildGroup_1::get_cm() const
+    {    
+    if (m_cm)
+    {
+        return *m_cm;
+    }
+    return CT_Comment::default_instance();
+    }
+
+CT_CommentList* CT_CommentList::default_instance_ = NULL;
 
     // CT_OleObjectEmbed
     bool CT_OleObjectEmbed::has_extLst() const
@@ -18699,15 +20249,6 @@ namespace ns_p {
         m_followColorScheme_attr = NULL;
     }
     
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_OleObjectEmbed::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -18728,7 +20269,7 @@ namespace ns_p {
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18763,6 +20304,7 @@ namespace ns_p {
     return ST_OleObjectFollowColorScheme::default_instance();
     }
 
+CT_OleObjectEmbed* CT_OleObjectEmbed::default_instance_ = NULL;
 
     // CT_OleObjectLink
     bool CT_OleObjectLink::has_extLst() const
@@ -18793,15 +20335,6 @@ namespace ns_p {
     {    
     m_has_updateAutomatic_attr = false;
     m_updateAutomatic_attr = false;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_OleObjectLink::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -18822,7 +20355,7 @@ namespace ns_p {
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18853,6 +20386,7 @@ namespace ns_p {
     return m_updateAutomatic_attr;
     }
 
+CT_OleObjectLink* CT_OleObjectLink::default_instance_ = NULL;
 
     // CT_OleObject
     bool CT_OleObject::has_embed() const
@@ -18993,33 +20527,6 @@ namespace ns_p {
     
     m_has_progId_attr = false;
     m_progId_attr.clear();
-    
-    m_has_embed = false;
-    
-    if (m_embed)
-    {
-        delete m_embed;
-        m_embed = NULL;
-    }
-    
-    
-    m_has_link = false;
-    
-    if (m_link)
-    {
-        delete m_link;
-        m_link = NULL;
-    }
-    
-     
-    m_has_pic = false;
-    
-    if (m_pic)
-    {
-        delete m_pic;
-        m_pic = NULL;
-    }
-    
     }
 
     void CT_OleObject::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -19076,17 +20583,17 @@ namespace ns_p {
             
     if (m_has_embed)
     {
-        m_embed->toXmlElem("p:embed", "", _outStream);;
+        m_embed->toXmlElem("embed", "", _outStream);;
     }
     
     if (m_has_link)
     {
-        m_link->toXmlElem("p:link", "", _outStream);;
+        m_link->toXmlElem("link", "", _outStream);;
     }
      
     if (m_has_pic)
     {
-        m_pic->toXmlElem("p:pic", "", _outStream);;
+        m_pic->toXmlElem("pic", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19229,6 +20736,7 @@ namespace ns_p {
     return m_progId_attr;
     }
 
+CT_OleObject* CT_OleObject::default_instance_ = NULL;
 
     // CT_Control
     bool CT_Control::has_extLst() const
@@ -19322,24 +20830,6 @@ namespace ns_p {
         m_a_imgH_attr = NULL;
     }
     
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    
-    m_has_pic = false;
-    
-    if (m_pic)
-    {
-        delete m_pic;
-        m_pic = NULL;
-    }
-    
     }
 
     void CT_Control::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -19390,12 +20880,12 @@ namespace ns_p {
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
     if (m_has_pic)
     {
-        m_pic->toXmlElem("p:pic", "", _outStream);;
+        m_pic->toXmlElem("pic", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19522,6 +21012,7 @@ namespace ns_p {
     return ns_a::ST_PositiveCoordinate32::default_instance();
     }
 
+CT_Control* CT_Control::default_instance_ = NULL;
 
     // CT_ControlList
     CT_Control* CT_ControlList::add_control()
@@ -19561,7 +21052,7 @@ namespace ns_p {
         {
             if ((*iter)->has_control())
             {
-                (*iter)->get_control().toXmlElem("p:control", "", _outStream);
+                (*iter)->get_control().toXmlElem("control", "", _outStream);
             }
         }
     }
@@ -19578,6 +21069,34 @@ namespace ns_p {
     return *CT_ControlList::default_instance_;
     }
 
+
+    // CT_ControlList::ChildGroup_1
+    bool CT_ControlList::ChildGroup_1::has_control() const
+    {    
+    return m_has_control;
+    }
+
+    CT_Control* CT_ControlList::ChildGroup_1::mutable_control()
+    {    
+    
+    m_has_control = true;
+    if (!m_control)
+    {
+        m_control = new CT_Control();
+    }
+    return m_control;
+    }
+
+    const CT_Control& CT_ControlList::ChildGroup_1::get_control() const
+    {    
+    if (m_control)
+    {
+        return *m_control;
+    }
+    return CT_Control::default_instance();
+    }
+
+CT_ControlList* CT_ControlList::default_instance_ = NULL;
 
     // CT_SlideIdListEntry
     bool CT_SlideIdListEntry::has_extLst() const
@@ -19623,15 +21142,6 @@ namespace ns_p {
         m_r_id_attr = NULL;
     }
     
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_SlideIdListEntry::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -19658,7 +21168,7 @@ namespace ns_p {
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19713,6 +21223,7 @@ namespace ns_p {
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_SlideIdListEntry* CT_SlideIdListEntry::default_instance_ = NULL;
 
     // CT_SlideIdList
     CT_SlideIdListEntry* CT_SlideIdList::add_sldId()
@@ -19752,7 +21263,7 @@ namespace ns_p {
         {
             if ((*iter)->has_sldId())
             {
-                (*iter)->get_sldId().toXmlElem("p:sldId", "", _outStream);
+                (*iter)->get_sldId().toXmlElem("sldId", "", _outStream);
             }
         }
     }
@@ -19769,6 +21280,34 @@ namespace ns_p {
     return *CT_SlideIdList::default_instance_;
     }
 
+
+    // CT_SlideIdList::ChildGroup_1
+    bool CT_SlideIdList::ChildGroup_1::has_sldId() const
+    {    
+    return m_has_sldId;
+    }
+
+    CT_SlideIdListEntry* CT_SlideIdList::ChildGroup_1::mutable_sldId()
+    {    
+    
+    m_has_sldId = true;
+    if (!m_sldId)
+    {
+        m_sldId = new CT_SlideIdListEntry();
+    }
+    return m_sldId;
+    }
+
+    const CT_SlideIdListEntry& CT_SlideIdList::ChildGroup_1::get_sldId() const
+    {    
+    if (m_sldId)
+    {
+        return *m_sldId;
+    }
+    return CT_SlideIdListEntry::default_instance();
+    }
+
+CT_SlideIdList* CT_SlideIdList::default_instance_ = NULL;
 
     // CT_SlideMasterIdListEntry
     bool CT_SlideMasterIdListEntry::has_extLst() const
@@ -19814,15 +21353,6 @@ namespace ns_p {
         m_r_id_attr = NULL;
     }
     
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_SlideMasterIdListEntry::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -19849,7 +21379,7 @@ namespace ns_p {
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19904,6 +21434,7 @@ namespace ns_p {
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_SlideMasterIdListEntry* CT_SlideMasterIdListEntry::default_instance_ = NULL;
 
     // CT_SlideMasterIdList
     CT_SlideMasterIdListEntry* CT_SlideMasterIdList::add_sldMasterId()
@@ -19943,7 +21474,7 @@ namespace ns_p {
         {
             if ((*iter)->has_sldMasterId())
             {
-                (*iter)->get_sldMasterId().toXmlElem("p:sldMasterId", "", _outStream);
+                (*iter)->get_sldMasterId().toXmlElem("sldMasterId", "", _outStream);
             }
         }
     }
@@ -19960,6 +21491,34 @@ namespace ns_p {
     return *CT_SlideMasterIdList::default_instance_;
     }
 
+
+    // CT_SlideMasterIdList::ChildGroup_1
+    bool CT_SlideMasterIdList::ChildGroup_1::has_sldMasterId() const
+    {    
+    return m_has_sldMasterId;
+    }
+
+    CT_SlideMasterIdListEntry* CT_SlideMasterIdList::ChildGroup_1::mutable_sldMasterId()
+    {    
+    
+    m_has_sldMasterId = true;
+    if (!m_sldMasterId)
+    {
+        m_sldMasterId = new CT_SlideMasterIdListEntry();
+    }
+    return m_sldMasterId;
+    }
+
+    const CT_SlideMasterIdListEntry& CT_SlideMasterIdList::ChildGroup_1::get_sldMasterId() const
+    {    
+    if (m_sldMasterId)
+    {
+        return *m_sldMasterId;
+    }
+    return CT_SlideMasterIdListEntry::default_instance();
+    }
+
+CT_SlideMasterIdList* CT_SlideMasterIdList::default_instance_ = NULL;
 
     // CT_NotesMasterIdListEntry
     bool CT_NotesMasterIdListEntry::has_extLst() const
@@ -19996,15 +21555,6 @@ namespace ns_p {
         m_r_id_attr = NULL;
     }
     
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_NotesMasterIdListEntry::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -20025,7 +21575,7 @@ namespace ns_p {
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20060,6 +21610,7 @@ namespace ns_p {
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_NotesMasterIdListEntry* CT_NotesMasterIdListEntry::default_instance_ = NULL;
 
     // CT_NotesMasterIdList
     bool CT_NotesMasterIdList::has_notesMasterId() const
@@ -20087,16 +21638,7 @@ namespace ns_p {
     }
 
     void CT_NotesMasterIdList::clear()
-    {    
-    m_has_notesMasterId = false;
-    
-    if (m_notesMasterId)
-    {
-        delete m_notesMasterId;
-        m_notesMasterId = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_NotesMasterIdList::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -20111,7 +21653,7 @@ namespace ns_p {
             
     if (m_has_notesMasterId)
     {
-        m_notesMasterId->toXmlElem("p:notesMasterId", "", _outStream);;
+        m_notesMasterId->toXmlElem("notesMasterId", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20126,6 +21668,7 @@ namespace ns_p {
     return *CT_NotesMasterIdList::default_instance_;
     }
 
+CT_NotesMasterIdList* CT_NotesMasterIdList::default_instance_ = NULL;
 
     // CT_HandoutMasterIdListEntry
     bool CT_HandoutMasterIdListEntry::has_extLst() const
@@ -20162,15 +21705,6 @@ namespace ns_p {
         m_r_id_attr = NULL;
     }
     
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_HandoutMasterIdListEntry::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -20191,7 +21725,7 @@ namespace ns_p {
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20226,6 +21760,7 @@ namespace ns_p {
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_HandoutMasterIdListEntry* CT_HandoutMasterIdListEntry::default_instance_ = NULL;
 
     // CT_HandoutMasterIdList
     bool CT_HandoutMasterIdList::has_handoutMasterId() const
@@ -20253,16 +21788,7 @@ namespace ns_p {
     }
 
     void CT_HandoutMasterIdList::clear()
-    {    
-    m_has_handoutMasterId = false;
-    
-    if (m_handoutMasterId)
-    {
-        delete m_handoutMasterId;
-        m_handoutMasterId = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_HandoutMasterIdList::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -20277,7 +21803,7 @@ namespace ns_p {
             
     if (m_has_handoutMasterId)
     {
-        m_handoutMasterId->toXmlElem("p:handoutMasterId", "", _outStream);;
+        m_handoutMasterId->toXmlElem("handoutMasterId", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20292,6 +21818,7 @@ namespace ns_p {
     return *CT_HandoutMasterIdList::default_instance_;
     }
 
+CT_HandoutMasterIdList* CT_HandoutMasterIdList::default_instance_ = NULL;
 
     // CT_EmbeddedFontDataId
     void CT_EmbeddedFontDataId::clear()
@@ -20354,6 +21881,7 @@ namespace ns_p {
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_EmbeddedFontDataId* CT_EmbeddedFontDataId::default_instance_ = NULL;
 
     // CT_EmbeddedFontListEntry
     bool CT_EmbeddedFontListEntry::has_a_font() const
@@ -20477,52 +22005,7 @@ namespace ns_p {
     }
 
     void CT_EmbeddedFontListEntry::clear()
-    {    
-    m_has_a_font = false;
-    
-    if (m_a_font)
-    {
-        delete m_a_font;
-        m_a_font = NULL;
-    }
-    
-    
-    m_has_regular = false;
-    
-    if (m_regular)
-    {
-        delete m_regular;
-        m_regular = NULL;
-    }
-    
-    
-    m_has_bold = false;
-    
-    if (m_bold)
-    {
-        delete m_bold;
-        m_bold = NULL;
-    }
-    
-    
-    m_has_italic = false;
-    
-    if (m_italic)
-    {
-        delete m_italic;
-        m_italic = NULL;
-    }
-    
-    
-    m_has_boldItalic = false;
-    
-    if (m_boldItalic)
-    {
-        delete m_boldItalic;
-        m_boldItalic = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_EmbeddedFontListEntry::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -20537,27 +22020,27 @@ namespace ns_p {
             
     if (m_has_a_font)
     {
-        m_a_font->toXmlElem("p:font", "", _outStream);;
+        m_a_font->toXmlElem("a:font", "", _outStream);;
     }
     
     if (m_has_regular)
     {
-        m_regular->toXmlElem("p:regular", "", _outStream);;
+        m_regular->toXmlElem("regular", "", _outStream);;
     }
     
     if (m_has_bold)
     {
-        m_bold->toXmlElem("p:bold", "", _outStream);;
+        m_bold->toXmlElem("bold", "", _outStream);;
     }
     
     if (m_has_italic)
     {
-        m_italic->toXmlElem("p:italic", "", _outStream);;
+        m_italic->toXmlElem("italic", "", _outStream);;
     }
     
     if (m_has_boldItalic)
     {
-        m_boldItalic->toXmlElem("p:boldItalic", "", _outStream);;
+        m_boldItalic->toXmlElem("boldItalic", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20572,6 +22055,7 @@ namespace ns_p {
     return *CT_EmbeddedFontListEntry::default_instance_;
     }
 
+CT_EmbeddedFontListEntry* CT_EmbeddedFontListEntry::default_instance_ = NULL;
 
     // CT_EmbeddedFontList
     CT_EmbeddedFontListEntry* CT_EmbeddedFontList::add_embeddedFont()
@@ -20611,7 +22095,7 @@ namespace ns_p {
         {
             if ((*iter)->has_embeddedFont())
             {
-                (*iter)->get_embeddedFont().toXmlElem("p:embeddedFont", "", _outStream);
+                (*iter)->get_embeddedFont().toXmlElem("embeddedFont", "", _outStream);
             }
         }
     }
@@ -20628,6 +22112,34 @@ namespace ns_p {
     return *CT_EmbeddedFontList::default_instance_;
     }
 
+
+    // CT_EmbeddedFontList::ChildGroup_1
+    bool CT_EmbeddedFontList::ChildGroup_1::has_embeddedFont() const
+    {    
+    return m_has_embeddedFont;
+    }
+
+    CT_EmbeddedFontListEntry* CT_EmbeddedFontList::ChildGroup_1::mutable_embeddedFont()
+    {    
+    
+    m_has_embeddedFont = true;
+    if (!m_embeddedFont)
+    {
+        m_embeddedFont = new CT_EmbeddedFontListEntry();
+    }
+    return m_embeddedFont;
+    }
+
+    const CT_EmbeddedFontListEntry& CT_EmbeddedFontList::ChildGroup_1::get_embeddedFont() const
+    {    
+    if (m_embeddedFont)
+    {
+        return *m_embeddedFont;
+    }
+    return CT_EmbeddedFontListEntry::default_instance();
+    }
+
+CT_EmbeddedFontList* CT_EmbeddedFontList::default_instance_ = NULL;
 
     // CT_SmartTags
     void CT_SmartTags::clear()
@@ -20690,6 +22202,7 @@ namespace ns_p {
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_SmartTags* CT_SmartTags::default_instance_ = NULL;
 
     // CT_CustomShow
     bool CT_CustomShow::has_sldLst() const
@@ -20753,24 +22266,6 @@ namespace ns_p {
     
     m_has_id_attr = false;
     m_id_attr = 0;
-    
-    m_has_sldLst = false;
-    
-    if (m_sldLst)
-    {
-        delete m_sldLst;
-        m_sldLst = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_CustomShow::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -20797,12 +22292,12 @@ namespace ns_p {
             
     if (m_has_sldLst)
     {
-        m_sldLst->toXmlElem("p:sldLst", "", _outStream);;
+        m_sldLst->toXmlElem("sldLst", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20853,6 +22348,7 @@ namespace ns_p {
     return m_id_attr;
     }
 
+CT_CustomShow* CT_CustomShow::default_instance_ = NULL;
 
     // CT_CustomShowList
     CT_CustomShow* CT_CustomShowList::add_custShow()
@@ -20892,7 +22388,7 @@ namespace ns_p {
         {
             if ((*iter)->has_custShow())
             {
-                (*iter)->get_custShow().toXmlElem("p:custShow", "", _outStream);
+                (*iter)->get_custShow().toXmlElem("custShow", "", _outStream);
             }
         }
     }
@@ -20909,6 +22405,34 @@ namespace ns_p {
     return *CT_CustomShowList::default_instance_;
     }
 
+
+    // CT_CustomShowList::ChildGroup_1
+    bool CT_CustomShowList::ChildGroup_1::has_custShow() const
+    {    
+    return m_has_custShow;
+    }
+
+    CT_CustomShow* CT_CustomShowList::ChildGroup_1::mutable_custShow()
+    {    
+    
+    m_has_custShow = true;
+    if (!m_custShow)
+    {
+        m_custShow = new CT_CustomShow();
+    }
+    return m_custShow;
+    }
+
+    const CT_CustomShow& CT_CustomShowList::ChildGroup_1::get_custShow() const
+    {    
+    if (m_custShow)
+    {
+        return *m_custShow;
+    }
+    return CT_CustomShow::default_instance();
+    }
+
+CT_CustomShowList* CT_CustomShowList::default_instance_ = NULL;
 
     // CT_PhotoAlbum
     bool CT_PhotoAlbum::has_extLst() const
@@ -20960,15 +22484,6 @@ namespace ns_p {
         m_frame_attr = NULL;
     }
     
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_PhotoAlbum::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -21007,7 +22522,7 @@ namespace ns_p {
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -21094,6 +22609,7 @@ namespace ns_p {
     return ST_PhotoAlbumFrameShape::default_instance();
     }
 
+CT_PhotoAlbum* CT_PhotoAlbum::default_instance_ = NULL;
 
     // CT_SlideSize
     void CT_SlideSize::clear()
@@ -21183,7 +22699,7 @@ namespace ns_p {
     {
         return *m_cx_attr;
     }
-return *m_cx_attr;
+    return ST_SlideSizeCoordinate::default_instance();
     }
 
     bool CT_SlideSize::has_cy_attr() const
@@ -21203,7 +22719,7 @@ return *m_cx_attr;
     {
         return *m_cy_attr;
     }
-        return *m_cy_attr;
+    return ST_SlideSizeCoordinate::default_instance();
     }
 
     bool CT_SlideSize::has_type_attr() const
@@ -21226,6 +22742,7 @@ return *m_cx_attr;
     return ST_SlideSizeType::default_instance();
     }
 
+CT_SlideSize* CT_SlideSize::default_instance_ = NULL;
 
     // CT_Kinsoku
     void CT_Kinsoku::clear()
@@ -21328,6 +22845,7 @@ return *m_cx_attr;
     return m_invalEndChars_attr;
     }
 
+CT_Kinsoku* CT_Kinsoku::default_instance_ = NULL;
 
     // CT_ModifyVerifier
     void CT_ModifyVerifier::clear()
@@ -21785,6 +23303,7 @@ return *m_cx_attr;
     return m_cryptProviderTypeExtSource_attr;
     }
 
+CT_ModifyVerifier* CT_ModifyVerifier::default_instance_ = NULL;
 
     // CT_Presentation
     bool CT_Presentation::has_sldMasterIdLst() const
@@ -22202,141 +23721,6 @@ return *m_cx_attr;
         m_s_conformance_attr = NULL;
     }
     
-    
-    m_has_sldMasterIdLst = false;
-    
-    if (m_sldMasterIdLst)
-    {
-        delete m_sldMasterIdLst;
-        m_sldMasterIdLst = NULL;
-    }
-    
-    
-    m_has_notesMasterIdLst = false;
-    
-    if (m_notesMasterIdLst)
-    {
-        delete m_notesMasterIdLst;
-        m_notesMasterIdLst = NULL;
-    }
-    
-    
-    m_has_handoutMasterIdLst = false;
-    
-    if (m_handoutMasterIdLst)
-    {
-        delete m_handoutMasterIdLst;
-        m_handoutMasterIdLst = NULL;
-    }
-    
-    
-    m_has_sldIdLst = false;
-    
-    if (m_sldIdLst)
-    {
-        delete m_sldIdLst;
-        m_sldIdLst = NULL;
-    }
-    
-    
-    m_has_sldSz = false;
-    
-    if (m_sldSz)
-    {
-        delete m_sldSz;
-        m_sldSz = NULL;
-    }
-    
-    
-    m_has_a_notesSz = false;
-    
-    if (m_a_notesSz)
-    {
-        delete m_a_notesSz;
-        m_a_notesSz = NULL;
-    }
-    
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    
-    
-    m_has_embeddedFontLst = false;
-    
-    if (m_embeddedFontLst)
-    {
-        delete m_embeddedFontLst;
-        m_embeddedFontLst = NULL;
-    }
-    
-    
-    m_has_custShowLst = false;
-    
-    if (m_custShowLst)
-    {
-        delete m_custShowLst;
-        m_custShowLst = NULL;
-    }
-    
-    
-    m_has_photoAlbum = false;
-    
-    if (m_photoAlbum)
-    {
-        delete m_photoAlbum;
-        m_photoAlbum = NULL;
-    }
-    
-    
-    m_has_custDataLst = false;
-    
-    if (m_custDataLst)
-    {
-        delete m_custDataLst;
-        m_custDataLst = NULL;
-    }
-    
-    
-    m_has_kinsoku = false;
-    
-    if (m_kinsoku)
-    {
-        delete m_kinsoku;
-        m_kinsoku = NULL;
-    }
-    
-    
-    m_has_a_defaultTextStyle = false;
-    
-    if (m_a_defaultTextStyle)
-    {
-        delete m_a_defaultTextStyle;
-        m_a_defaultTextStyle = NULL;
-    }
-    
-    
-    m_has_modifyVerifier = false;
-    
-    if (m_modifyVerifier)
-    {
-        delete m_modifyVerifier;
-        m_modifyVerifier = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_Presentation::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -22423,77 +23807,77 @@ return *m_cx_attr;
             
     if (m_has_sldMasterIdLst)
     {
-        m_sldMasterIdLst->toXmlElem("p:sldMasterIdLst", "", _outStream);;
+        m_sldMasterIdLst->toXmlElem("sldMasterIdLst", "", _outStream);;
     }
     
     if (m_has_notesMasterIdLst)
     {
-        m_notesMasterIdLst->toXmlElem("p:notesMasterIdLst", "", _outStream);;
+        m_notesMasterIdLst->toXmlElem("notesMasterIdLst", "", _outStream);;
     }
     
     if (m_has_handoutMasterIdLst)
     {
-        m_handoutMasterIdLst->toXmlElem("p:handoutMasterIdLst", "", _outStream);;
+        m_handoutMasterIdLst->toXmlElem("handoutMasterIdLst", "", _outStream);;
     }
     
     if (m_has_sldIdLst)
     {
-        m_sldIdLst->toXmlElem("p:sldIdLst", "", _outStream);;
+        m_sldIdLst->toXmlElem("sldIdLst", "", _outStream);;
     }
     
     if (m_has_sldSz)
     {
-        m_sldSz->toXmlElem("p:sldSz", "", _outStream);;
+        m_sldSz->toXmlElem("sldSz", "", _outStream);;
     }
     
     if (m_has_a_notesSz)
     {
-        m_a_notesSz->toXmlElem("p:notesSz", "", _outStream);;
+        m_a_notesSz->toXmlElem("a:notesSz", "", _outStream);;
     }
     
     if (m_has_smartTags)
     {
-        m_smartTags->toXmlElem("p:smartTags", "", _outStream);;
+        m_smartTags->toXmlElem("smartTags", "", _outStream);;
     }
     
     if (m_has_embeddedFontLst)
     {
-        m_embeddedFontLst->toXmlElem("p:embeddedFontLst", "", _outStream);;
+        m_embeddedFontLst->toXmlElem("embeddedFontLst", "", _outStream);;
     }
     
     if (m_has_custShowLst)
     {
-        m_custShowLst->toXmlElem("p:custShowLst", "", _outStream);;
+        m_custShowLst->toXmlElem("custShowLst", "", _outStream);;
     }
     
     if (m_has_photoAlbum)
     {
-        m_photoAlbum->toXmlElem("p:photoAlbum", "", _outStream);;
+        m_photoAlbum->toXmlElem("photoAlbum", "", _outStream);;
     }
     
     if (m_has_custDataLst)
     {
-        m_custDataLst->toXmlElem("p:custDataLst", "", _outStream);;
+        m_custDataLst->toXmlElem("custDataLst", "", _outStream);;
     }
     
     if (m_has_kinsoku)
     {
-        m_kinsoku->toXmlElem("p:kinsoku", "", _outStream);;
+        m_kinsoku->toXmlElem("kinsoku", "", _outStream);;
     }
     
     if (m_has_a_defaultTextStyle)
     {
-        m_a_defaultTextStyle->toXmlElem("p:defaultTextStyle", "", _outStream);;
+        m_a_defaultTextStyle->toXmlElem("a:defaultTextStyle", "", _outStream);;
     }
     
     if (m_has_modifyVerifier)
     {
-        m_modifyVerifier->toXmlElem("p:modifyVerifier", "", _outStream);;
+        m_modifyVerifier->toXmlElem("modifyVerifier", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -22712,6 +24096,7 @@ return *m_cx_attr;
     return ns_s::ST_ConformanceClass::default_instance();
     }
 
+CT_Presentation* CT_Presentation::default_instance_ = NULL;
 
     // CT_HtmlPublishProperties
     bool CT_HtmlPublishProperties::has_sldAll() const
@@ -22886,42 +24271,6 @@ return *m_cx_attr;
         m_r_id_attr = NULL;
     }
     
-    
-    m_has_sldAll = false;
-    
-    if (m_sldAll)
-    {
-        delete m_sldAll;
-        m_sldAll = NULL;
-    }
-    
-    
-    m_has_sldRg = false;
-    
-    if (m_sldRg)
-    {
-        delete m_sldRg;
-        m_sldRg = NULL;
-    }
-    
-    
-    m_has_custShow = false;
-    
-    if (m_custShow)
-    {
-        delete m_custShow;
-        m_custShow = NULL;
-    }
-    
-     
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_HtmlPublishProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -22960,22 +24309,22 @@ return *m_cx_attr;
             
     if (m_has_sldAll)
     {
-        m_sldAll->toXmlElem("p:sldAll", "", _outStream);;
+        m_sldAll->toXmlElem("sldAll", "", _outStream);;
     }
     
     if (m_has_sldRg)
     {
-        m_sldRg->toXmlElem("p:sldRg", "", _outStream);;
+        m_sldRg->toXmlElem("sldRg", "", _outStream);;
     }
     
     if (m_has_custShow)
     {
-        m_custShow->toXmlElem("p:custShow", "", _outStream);;
+        m_custShow->toXmlElem("custShow", "", _outStream);;
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -23058,6 +24407,7 @@ return *m_cx_attr;
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_HtmlPublishProperties* CT_HtmlPublishProperties::default_instance_ = NULL;
 
     // CT_WebProperties
     bool CT_WebProperties::has_extLst() const
@@ -23130,15 +24480,6 @@ return *m_cx_attr;
         m_clr_attr = NULL;
     }
     
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_WebProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -23207,7 +24548,7 @@ return *m_cx_attr;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -23378,6 +24719,7 @@ return *m_cx_attr;
     return ST_WebColorType::default_instance();
     }
 
+CT_WebProperties* CT_WebProperties::default_instance_ = NULL;
 
     // CT_PrintProperties
     bool CT_PrintProperties::has_extLst() const
@@ -23432,15 +24774,6 @@ return *m_cx_attr;
     
     m_has_frameSlides_attr = false;
     m_frameSlides_attr = false;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_PrintProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -23485,7 +24818,7 @@ return *m_cx_attr;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -23588,6 +24921,7 @@ return *m_cx_attr;
     return m_frameSlides_attr;
     }
 
+CT_PrintProperties* CT_PrintProperties::default_instance_ = NULL;
 
     // CT_ShowInfoBrowse
     void CT_ShowInfoBrowse::clear()
@@ -23640,6 +24974,7 @@ return *m_cx_attr;
     return m_showScrollbar_attr;
     }
 
+CT_ShowInfoBrowse* CT_ShowInfoBrowse::default_instance_ = NULL;
 
     // CT_ShowInfoKiosk
     void CT_ShowInfoKiosk::clear()
@@ -23692,6 +25027,7 @@ return *m_cx_attr;
     return m_restart_attr;
     }
 
+CT_ShowInfoKiosk* CT_ShowInfoKiosk::default_instance_ = NULL;
 
     // CT_ShowProperties
     bool CT_ShowProperties::has_present() const
@@ -24175,78 +25511,6 @@ return *m_cx_attr;
     
     m_has_useTimings_attr = false;
     m_useTimings_attr = false;
-    
-    m_has_present = false;
-    
-    if (m_present)
-    {
-        delete m_present;
-        m_present = NULL;
-    }
-    
-    
-    m_has_browse = false;
-    
-    if (m_browse)
-    {
-        delete m_browse;
-        m_browse = NULL;
-    }
-    
-    
-    m_has_kiosk = false;
-    
-    if (m_kiosk)
-    {
-        delete m_kiosk;
-        m_kiosk = NULL;
-    }
-    
-    
-    m_has_sldAll = false;
-    
-    if (m_sldAll)
-    {
-        delete m_sldAll;
-        m_sldAll = NULL;
-    }
-    
-    
-    m_has_sldRg = false;
-    
-    if (m_sldRg)
-    {
-        delete m_sldRg;
-        m_sldRg = NULL;
-    }
-    
-    
-    m_has_custShow = false;
-    
-    if (m_custShow)
-    {
-        delete m_custShow;
-        m_custShow = NULL;
-    }
-    
-     
-    m_has_a_penClr = false;
-    
-    if (m_a_penClr)
-    {
-        delete m_a_penClr;
-        m_a_penClr = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_ShowProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -24285,42 +25549,42 @@ return *m_cx_attr;
             
     if (m_has_present)
     {
-        m_present->toXmlElem("p:present", "", _outStream);;
+        m_present->toXmlElem("present", "", _outStream);;
     }
     
     if (m_has_browse)
     {
-        m_browse->toXmlElem("p:browse", "", _outStream);;
+        m_browse->toXmlElem("browse", "", _outStream);;
     }
     
     if (m_has_kiosk)
     {
-        m_kiosk->toXmlElem("p:kiosk", "", _outStream);;
+        m_kiosk->toXmlElem("kiosk", "", _outStream);;
     }
     
     if (m_has_sldAll)
     {
-        m_sldAll->toXmlElem("p:sldAll", "", _outStream);;
+        m_sldAll->toXmlElem("sldAll", "", _outStream);;
     }
     
     if (m_has_sldRg)
     {
-        m_sldRg->toXmlElem("p:sldRg", "", _outStream);;
+        m_sldRg->toXmlElem("sldRg", "", _outStream);;
     }
     
     if (m_has_custShow)
     {
-        m_custShow->toXmlElem("p:custShow", "", _outStream);;
+        m_custShow->toXmlElem("custShow", "", _outStream);;
     }
      
     if (m_has_a_penClr)
     {
-        m_a_penClr->toXmlElem("p:penClr", "", _outStream);;
+        m_a_penClr->toXmlElem("a:penClr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -24399,6 +25663,7 @@ return *m_cx_attr;
     return m_useTimings_attr;
     }
 
+CT_ShowProperties* CT_ShowProperties::default_instance_ = NULL;
 
     // CT_PresentationProperties
     bool CT_PresentationProperties::has_htmlPubPr() const
@@ -24546,61 +25811,7 @@ return *m_cx_attr;
     }
 
     void CT_PresentationProperties::clear()
-    {    
-    m_has_htmlPubPr = false;
-    
-    if (m_htmlPubPr)
-    {
-        delete m_htmlPubPr;
-        m_htmlPubPr = NULL;
-    }
-    
-    
-    m_has_webPr = false;
-    
-    if (m_webPr)
-    {
-        delete m_webPr;
-        m_webPr = NULL;
-    }
-    
-    
-    m_has_prnPr = false;
-    
-    if (m_prnPr)
-    {
-        delete m_prnPr;
-        m_prnPr = NULL;
-    }
-    
-    
-    m_has_showPr = false;
-    
-    if (m_showPr)
-    {
-        delete m_showPr;
-        m_showPr = NULL;
-    }
-    
-    
-    m_has_a_clrMru = false;
-    
-    if (m_a_clrMru)
-    {
-        delete m_a_clrMru;
-        m_a_clrMru = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_PresentationProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -24615,32 +25826,32 @@ return *m_cx_attr;
             
     if (m_has_htmlPubPr)
     {
-        m_htmlPubPr->toXmlElem("p:htmlPubPr", "", _outStream);;
+        m_htmlPubPr->toXmlElem("htmlPubPr", "", _outStream);;
     }
     
     if (m_has_webPr)
     {
-        m_webPr->toXmlElem("p:webPr", "", _outStream);;
+        m_webPr->toXmlElem("webPr", "", _outStream);;
     }
     
     if (m_has_prnPr)
     {
-        m_prnPr->toXmlElem("p:prnPr", "", _outStream);;
+        m_prnPr->toXmlElem("prnPr", "", _outStream);;
     }
     
     if (m_has_showPr)
     {
-        m_showPr->toXmlElem("p:showPr", "", _outStream);;
+        m_showPr->toXmlElem("showPr", "", _outStream);;
     }
     
     if (m_has_a_clrMru)
     {
-        m_a_clrMru->toXmlElem("p:clrMru", "", _outStream);;
+        m_a_clrMru->toXmlElem("a:clrMru", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -24655,6 +25866,7 @@ return *m_cx_attr;
     return *CT_PresentationProperties::default_instance_;
     }
 
+CT_PresentationProperties* CT_PresentationProperties::default_instance_ = NULL;
 
     // CT_HeaderFooter
     bool CT_HeaderFooter::has_extLst() const
@@ -24694,15 +25906,6 @@ return *m_cx_attr;
     
     m_has_dt_attr = false;
     m_dt_attr = false;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_HeaderFooter::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -24741,7 +25944,7 @@ return *m_cx_attr;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -24820,6 +26023,7 @@ return *m_cx_attr;
     return m_dt_attr;
     }
 
+CT_HeaderFooter* CT_HeaderFooter::default_instance_ = NULL;
 
     // CT_Placeholder
     bool CT_Placeholder::has_extLst() const
@@ -24880,15 +26084,6 @@ return *m_cx_attr;
     
     m_has_hasCustomPrompt_attr = false;
     m_hasCustomPrompt_attr = false;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_Placeholder::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -24933,7 +26128,7 @@ return *m_cx_attr;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -25040,6 +26235,7 @@ return *m_cx_attr;
     return m_hasCustomPrompt_attr;
     }
 
+CT_Placeholder* CT_Placeholder::default_instance_ = NULL;
 
     // CT_ApplicationNonVisualDrawingProps
     bool CT_ApplicationNonVisualDrawingProps::has_ph() const
@@ -25426,78 +26622,6 @@ return *m_cx_attr;
     
     m_has_userDrawn_attr = false;
     m_userDrawn_attr = false;
-    
-    m_has_ph = false;
-    
-    if (m_ph)
-    {
-        delete m_ph;
-        m_ph = NULL;
-    }
-    
-     
-    m_has_a_audioCd = false;
-    
-    if (m_a_audioCd)
-    {
-        delete m_a_audioCd;
-        m_a_audioCd = NULL;
-    }
-    
-    
-    m_has_a_wavAudioFile = false;
-    
-    if (m_a_wavAudioFile)
-    {
-        delete m_a_wavAudioFile;
-        m_a_wavAudioFile = NULL;
-    }
-    
-    
-    m_has_a_audioFile = false;
-    
-    if (m_a_audioFile)
-    {
-        delete m_a_audioFile;
-        m_a_audioFile = NULL;
-    }
-    
-    
-    m_has_a_videoFile = false;
-    
-    if (m_a_videoFile)
-    {
-        delete m_a_videoFile;
-        m_a_videoFile = NULL;
-    }
-    
-    
-    m_has_a_quickTimeFile = false;
-    
-    if (m_a_quickTimeFile)
-    {
-        delete m_a_quickTimeFile;
-        m_a_quickTimeFile = NULL;
-    }
-    
-     
-    m_has_custDataLst = false;
-    
-    if (m_custDataLst)
-    {
-        delete m_custDataLst;
-        m_custDataLst = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_ApplicationNonVisualDrawingProps::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -25524,42 +26648,42 @@ return *m_cx_attr;
             
     if (m_has_ph)
     {
-        m_ph->toXmlElem("p:ph", "", _outStream);;
+        m_ph->toXmlElem("ph", "", _outStream);;
     }
      
     if (m_has_a_audioCd)
     {
-        m_a_audioCd->toXmlElem("p:audioCd", "", _outStream);;
+        m_a_audioCd->toXmlElem("a:audioCd", "", _outStream);;
     }
     
     if (m_has_a_wavAudioFile)
     {
-        m_a_wavAudioFile->toXmlElem("p:wavAudioFile", "", _outStream);;
+        m_a_wavAudioFile->toXmlElem("a:wavAudioFile", "", _outStream);;
     }
     
     if (m_has_a_audioFile)
     {
-        m_a_audioFile->toXmlElem("p:audioFile", "", _outStream);;
+        m_a_audioFile->toXmlElem("a:audioFile", "", _outStream);;
     }
     
     if (m_has_a_videoFile)
     {
-        m_a_videoFile->toXmlElem("p:videoFile", "", _outStream);;
+        m_a_videoFile->toXmlElem("a:videoFile", "", _outStream);;
     }
     
     if (m_has_a_quickTimeFile)
     {
-        m_a_quickTimeFile->toXmlElem("p:quickTimeFile", "", _outStream);;
+        m_a_quickTimeFile->toXmlElem("a:quickTimeFile", "", _outStream);;
     }
      
     if (m_has_custDataLst)
     {
-        m_custDataLst->toXmlElem("p:custDataLst", "", _outStream);;
+        m_custDataLst->toXmlElem("custDataLst", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -25606,6 +26730,7 @@ return *m_cx_attr;
     return m_userDrawn_attr;
     }
 
+CT_ApplicationNonVisualDrawingProps* CT_ApplicationNonVisualDrawingProps::default_instance_ = NULL;
 
     // CT_ShapeNonVisual
     bool CT_ShapeNonVisual::has_a_cNvPr() const
@@ -25681,34 +26806,7 @@ return *m_cx_attr;
     }
 
     void CT_ShapeNonVisual::clear()
-    {    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-    
-    m_has_a_cNvSpPr = false;
-    
-    if (m_a_cNvSpPr)
-    {
-        delete m_a_cNvSpPr;
-        m_a_cNvSpPr = NULL;
-    }
-    
-    
-    m_has_nvPr = false;
-    
-    if (m_nvPr)
-    {
-        delete m_nvPr;
-        m_nvPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_ShapeNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -25723,17 +26821,17 @@ return *m_cx_attr;
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("p:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvSpPr)
     {
-        m_a_cNvSpPr->toXmlElem("p:cNvSpPr", "", _outStream);;
+        m_a_cNvSpPr->toXmlElem("a:cNvSpPr", "", _outStream);;
     }
     
     if (m_has_nvPr)
     {
-        m_nvPr->toXmlElem("p:nvPr", "", _outStream);;
+        m_nvPr->toXmlElem("nvPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -25748,6 +26846,7 @@ return *m_cx_attr;
     return *CT_ShapeNonVisual::default_instance_;
     }
 
+CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
 
     // CT_Shape
     bool CT_Shape::has_nvSpPr() const
@@ -25874,51 +26973,6 @@ return *m_cx_attr;
     {    
     m_has_useBgFill_attr = false;
     m_useBgFill_attr = false;
-    
-    m_has_nvSpPr = false;
-    
-    if (m_nvSpPr)
-    {
-        delete m_nvSpPr;
-        m_nvSpPr = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_style = false;
-    
-    if (m_a_style)
-    {
-        delete m_a_style;
-        m_a_style = NULL;
-    }
-    
-    
-    m_has_a_txBody = false;
-    
-    if (m_a_txBody)
-    {
-        delete m_a_txBody;
-        m_a_txBody = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_Shape::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -25939,27 +26993,27 @@ return *m_cx_attr;
             
     if (m_has_nvSpPr)
     {
-        m_nvSpPr->toXmlElem("p:nvSpPr", "", _outStream);;
+        m_nvSpPr->toXmlElem("nvSpPr", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("p:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_style)
     {
-        m_a_style->toXmlElem("p:style", "", _outStream);;
+        m_a_style->toXmlElem("a:style", "", _outStream);;
     }
     
     if (m_has_a_txBody)
     {
-        m_a_txBody->toXmlElem("p:txBody", "", _outStream);;
+        m_a_txBody->toXmlElem("a:txBody", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -25990,6 +27044,7 @@ return *m_cx_attr;
     return m_useBgFill_attr;
     }
 
+CT_Shape* CT_Shape::default_instance_ = NULL;
 
     // CT_ConnectorNonVisual
     bool CT_ConnectorNonVisual::has_a_cNvPr() const
@@ -26065,34 +27120,7 @@ return *m_cx_attr;
     }
 
     void CT_ConnectorNonVisual::clear()
-    {    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-    
-    m_has_a_cNvCxnSpPr = false;
-    
-    if (m_a_cNvCxnSpPr)
-    {
-        delete m_a_cNvCxnSpPr;
-        m_a_cNvCxnSpPr = NULL;
-    }
-    
-    
-    m_has_nvPr = false;
-    
-    if (m_nvPr)
-    {
-        delete m_nvPr;
-        m_nvPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_ConnectorNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -26107,17 +27135,17 @@ return *m_cx_attr;
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("p:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvCxnSpPr)
     {
-        m_a_cNvCxnSpPr->toXmlElem("p:cNvCxnSpPr", "", _outStream);;
+        m_a_cNvCxnSpPr->toXmlElem("a:cNvCxnSpPr", "", _outStream);;
     }
     
     if (m_has_nvPr)
     {
-        m_nvPr->toXmlElem("p:nvPr", "", _outStream);;
+        m_nvPr->toXmlElem("nvPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -26132,6 +27160,7 @@ return *m_cx_attr;
     return *CT_ConnectorNonVisual::default_instance_;
     }
 
+CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
 
     // CT_Connector
     bool CT_Connector::has_nvCxnSpPr() const
@@ -26231,43 +27260,7 @@ return *m_cx_attr;
     }
 
     void CT_Connector::clear()
-    {    
-    m_has_nvCxnSpPr = false;
-    
-    if (m_nvCxnSpPr)
-    {
-        delete m_nvCxnSpPr;
-        m_nvCxnSpPr = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_style = false;
-    
-    if (m_a_style)
-    {
-        delete m_a_style;
-        m_a_style = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Connector::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -26282,22 +27275,22 @@ return *m_cx_attr;
             
     if (m_has_nvCxnSpPr)
     {
-        m_nvCxnSpPr->toXmlElem("p:nvCxnSpPr", "", _outStream);;
+        m_nvCxnSpPr->toXmlElem("nvCxnSpPr", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("p:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_style)
     {
-        m_a_style->toXmlElem("p:style", "", _outStream);;
+        m_a_style->toXmlElem("a:style", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -26312,6 +27305,7 @@ return *m_cx_attr;
     return *CT_Connector::default_instance_;
     }
 
+CT_Connector* CT_Connector::default_instance_ = NULL;
 
     // CT_PictureNonVisual
     bool CT_PictureNonVisual::has_a_cNvPr() const
@@ -26387,34 +27381,7 @@ return *m_cx_attr;
     }
 
     void CT_PictureNonVisual::clear()
-    {    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-    
-    m_has_a_cNvPicPr = false;
-    
-    if (m_a_cNvPicPr)
-    {
-        delete m_a_cNvPicPr;
-        m_a_cNvPicPr = NULL;
-    }
-    
-    
-    m_has_nvPr = false;
-    
-    if (m_nvPr)
-    {
-        delete m_nvPr;
-        m_nvPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_PictureNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -26429,17 +27396,17 @@ return *m_cx_attr;
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("p:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvPicPr)
     {
-        m_a_cNvPicPr->toXmlElem("p:cNvPicPr", "", _outStream);;
+        m_a_cNvPicPr->toXmlElem("a:cNvPicPr", "", _outStream);;
     }
     
     if (m_has_nvPr)
     {
-        m_nvPr->toXmlElem("p:nvPr", "", _outStream);;
+        m_nvPr->toXmlElem("nvPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -26454,6 +27421,7 @@ return *m_cx_attr;
     return *CT_PictureNonVisual::default_instance_;
     }
 
+CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
 
     // CT_Picture
     bool CT_Picture::has_nvPicPr() const
@@ -26577,52 +27545,7 @@ return *m_cx_attr;
     }
 
     void CT_Picture::clear()
-    {    
-    m_has_nvPicPr = false;
-    
-    if (m_nvPicPr)
-    {
-        delete m_nvPicPr;
-        m_nvPicPr = NULL;
-    }
-    
-    
-    m_has_a_blipFill = false;
-    
-    if (m_a_blipFill)
-    {
-        delete m_a_blipFill;
-        m_a_blipFill = NULL;
-    }
-    
-    
-    m_has_a_spPr = false;
-    
-    if (m_a_spPr)
-    {
-        delete m_a_spPr;
-        m_a_spPr = NULL;
-    }
-    
-    
-    m_has_a_style = false;
-    
-    if (m_a_style)
-    {
-        delete m_a_style;
-        m_a_style = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_Picture::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -26637,27 +27560,27 @@ return *m_cx_attr;
             
     if (m_has_nvPicPr)
     {
-        m_nvPicPr->toXmlElem("p:nvPicPr", "", _outStream);;
+        m_nvPicPr->toXmlElem("nvPicPr", "", _outStream);;
     }
     
     if (m_has_a_blipFill)
     {
-        m_a_blipFill->toXmlElem("p:blipFill", "", _outStream);;
+        m_a_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_a_spPr)
     {
-        m_a_spPr->toXmlElem("p:spPr", "", _outStream);;
+        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_a_style)
     {
-        m_a_style->toXmlElem("p:style", "", _outStream);;
+        m_a_style->toXmlElem("a:style", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -26672,6 +27595,7 @@ return *m_cx_attr;
     return *CT_Picture::default_instance_;
     }
 
+CT_Picture* CT_Picture::default_instance_ = NULL;
 
     // CT_GraphicalObjectFrameNonVisual
     bool CT_GraphicalObjectFrameNonVisual::has_a_cNvPr() const
@@ -26747,34 +27671,7 @@ return *m_cx_attr;
     }
 
     void CT_GraphicalObjectFrameNonVisual::clear()
-    {    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-    
-    m_has_a_cNvGraphicFramePr = false;
-    
-    if (m_a_cNvGraphicFramePr)
-    {
-        delete m_a_cNvGraphicFramePr;
-        m_a_cNvGraphicFramePr = NULL;
-    }
-    
-    
-    m_has_nvPr = false;
-    
-    if (m_nvPr)
-    {
-        delete m_nvPr;
-        m_nvPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_GraphicalObjectFrameNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -26789,17 +27686,17 @@ return *m_cx_attr;
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("p:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr->toXmlElem("p:cNvGraphicFramePr", "", _outStream);;
+        m_a_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);;
     }
     
     if (m_has_nvPr)
     {
-        m_nvPr->toXmlElem("p:nvPr", "", _outStream);;
+        m_nvPr->toXmlElem("nvPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -26814,6 +27711,7 @@ return *m_cx_attr;
     return *CT_GraphicalObjectFrameNonVisual::default_instance_;
     }
 
+CT_GraphicalObjectFrameNonVisual* CT_GraphicalObjectFrameNonVisual::default_instance_ = NULL;
 
     // CT_GraphicalObjectFrame
     bool CT_GraphicalObjectFrame::has_nvGraphicFramePr() const
@@ -26922,42 +27820,6 @@ return *m_cx_attr;
         m_a_bwMode_attr = NULL;
     }
     
-    
-    m_has_nvGraphicFramePr = false;
-    
-    if (m_nvGraphicFramePr)
-    {
-        delete m_nvGraphicFramePr;
-        m_nvGraphicFramePr = NULL;
-    }
-    
-    
-    m_has_a_xfrm = false;
-    
-    if (m_a_xfrm)
-    {
-        delete m_a_xfrm;
-        m_a_xfrm = NULL;
-    }
-    
-    
-    m_has_a_graphic = false;
-    
-    if (m_a_graphic)
-    {
-        delete m_a_graphic;
-        m_a_graphic = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_GraphicalObjectFrame::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -26978,22 +27840,22 @@ return *m_cx_attr;
             
     if (m_has_nvGraphicFramePr)
     {
-        m_nvGraphicFramePr->toXmlElem("p:nvGraphicFramePr", "", _outStream);;
+        m_nvGraphicFramePr->toXmlElem("nvGraphicFramePr", "", _outStream);;
     }
     
     if (m_has_a_xfrm)
     {
-        m_a_xfrm->toXmlElem("p:xfrm", "", _outStream);;
+        m_a_xfrm->toXmlElem("a:xfrm", "", _outStream);;
     }
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("p:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -27028,6 +27890,7 @@ return *m_cx_attr;
     return ns_a::ST_BlackWhiteMode::default_instance();
     }
 
+CT_GraphicalObjectFrame* CT_GraphicalObjectFrame::default_instance_ = NULL;
 
     // CT_GroupShapeNonVisual
     bool CT_GroupShapeNonVisual::has_a_cNvPr() const
@@ -27103,34 +27966,7 @@ return *m_cx_attr;
     }
 
     void CT_GroupShapeNonVisual::clear()
-    {    
-    m_has_a_cNvPr = false;
-    
-    if (m_a_cNvPr)
-    {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
-    }
-    
-    
-    m_has_a_cNvGrpSpPr = false;
-    
-    if (m_a_cNvGrpSpPr)
-    {
-        delete m_a_cNvGrpSpPr;
-        m_a_cNvGrpSpPr = NULL;
-    }
-    
-    
-    m_has_nvPr = false;
-    
-    if (m_nvPr)
-    {
-        delete m_nvPr;
-        m_nvPr = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_GroupShapeNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -27145,17 +27981,17 @@ return *m_cx_attr;
             
     if (m_has_a_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("p:cNvPr", "", _outStream);;
+        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_a_cNvGrpSpPr)
     {
-        m_a_cNvGrpSpPr->toXmlElem("p:cNvGrpSpPr", "", _outStream);;
+        m_a_cNvGrpSpPr->toXmlElem("a:cNvGrpSpPr", "", _outStream);;
     }
     
     if (m_has_nvPr)
     {
-        m_nvPr->toXmlElem("p:nvPr", "", _outStream);;
+        m_nvPr->toXmlElem("nvPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -27170,6 +28006,7 @@ return *m_cx_attr;
     return *CT_GroupShapeNonVisual::default_instance_;
     }
 
+CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
 
     // CT_GroupShape
     bool CT_GroupShape::has_nvGrpSpPr() const
@@ -27344,12 +28181,12 @@ return *m_cx_attr;
             
     if (m_has_nvGrpSpPr)
     {
-        m_nvGrpSpPr->toXmlElem("p:nvGrpSpPr", "", _outStream);;
+        m_nvGrpSpPr->toXmlElem("nvGrpSpPr", "", _outStream);;
     }
     
     if (m_has_a_grpSpPr)
     {
-        m_a_grpSpPr->toXmlElem("p:grpSpPr", "", _outStream);;
+        m_a_grpSpPr->toXmlElem("a:grpSpPr", "", _outStream);;
     }
      
     {
@@ -27358,34 +28195,34 @@ return *m_cx_attr;
         {
             if ((*iter)->has_sp())
             {
-                (*iter)->get_sp().toXmlElem("p:sp", "", _outStream);
+                (*iter)->get_sp().toXmlElem("sp", "", _outStream);
             }
             else if ((*iter)->has_grpSp())
             {
-                (*iter)->get_grpSp().toXmlElem("p:grpSp", "", _outStream);
+                (*iter)->get_grpSp().toXmlElem("grpSp", "", _outStream);
             }
             else if ((*iter)->has_graphicFrame())
             {
-                (*iter)->get_graphicFrame().toXmlElem("p:graphicFrame", "", _outStream);
+                (*iter)->get_graphicFrame().toXmlElem("graphicFrame", "", _outStream);
             }
             else if ((*iter)->has_cxnSp())
             {
-                (*iter)->get_cxnSp().toXmlElem("p:cxnSp", "", _outStream);
+                (*iter)->get_cxnSp().toXmlElem("cxnSp", "", _outStream);
             }
             else if ((*iter)->has_pic())
             {
-                (*iter)->get_pic().toXmlElem("p:pic", "", _outStream);
+                (*iter)->get_pic().toXmlElem("pic", "", _outStream);
             }
             else if ((*iter)->has_contentPart())
             {
-                (*iter)->get_contentPart().toXmlElem("p:contentPart", "", _outStream);
+                (*iter)->get_contentPart().toXmlElem("contentPart", "", _outStream);
             }
         }
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -27400,6 +28237,429 @@ return *m_cx_attr;
     return *CT_GroupShape::default_instance_;
     }
 
+
+    // CT_GroupShape::ChildGroup_1
+    bool CT_GroupShape::ChildGroup_1::has_sp() const
+    {    
+    return m_has_sp;
+    }
+
+    CT_Shape* CT_GroupShape::ChildGroup_1::mutable_sp()
+    {    
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_cxnSp = false;
+    
+    if (m_cxnSp)
+    {
+        delete m_cxnSp;
+        m_cxnSp = NULL;
+    }
+    ;
+    
+    m_has_pic = false;
+    
+    if (m_pic)
+    {
+        delete m_pic;
+        m_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_sp = true;
+    if (!m_sp)
+    {
+        m_sp = new CT_Shape();
+    }
+    return m_sp;
+    }
+
+    const CT_Shape& CT_GroupShape::ChildGroup_1::get_sp() const
+    {    
+    if (m_sp)
+    {
+        return *m_sp;
+    }
+    return CT_Shape::default_instance();
+    }
+
+    bool CT_GroupShape::ChildGroup_1::has_grpSp() const
+    {    
+    return m_has_grpSp;
+    }
+
+    CT_GroupShape* CT_GroupShape::ChildGroup_1::mutable_grpSp()
+    {    
+    
+    m_has_sp = false;
+    
+    if (m_sp)
+    {
+        delete m_sp;
+        m_sp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_cxnSp = false;
+    
+    if (m_cxnSp)
+    {
+        delete m_cxnSp;
+        m_cxnSp = NULL;
+    }
+    ;
+    
+    m_has_pic = false;
+    
+    if (m_pic)
+    {
+        delete m_pic;
+        m_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_grpSp = true;
+    if (!m_grpSp)
+    {
+        m_grpSp = new CT_GroupShape();
+    }
+    return m_grpSp;
+    }
+
+    const CT_GroupShape& CT_GroupShape::ChildGroup_1::get_grpSp() const
+    {    
+    if (m_grpSp)
+    {
+        return *m_grpSp;
+    }
+    return CT_GroupShape::default_instance();
+    }
+
+    bool CT_GroupShape::ChildGroup_1::has_graphicFrame() const
+    {    
+    return m_has_graphicFrame;
+    }
+
+    CT_GraphicalObjectFrame* CT_GroupShape::ChildGroup_1::mutable_graphicFrame()
+    {    
+    
+    m_has_sp = false;
+    
+    if (m_sp)
+    {
+        delete m_sp;
+        m_sp = NULL;
+    }
+    ;
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_cxnSp = false;
+    
+    if (m_cxnSp)
+    {
+        delete m_cxnSp;
+        m_cxnSp = NULL;
+    }
+    ;
+    
+    m_has_pic = false;
+    
+    if (m_pic)
+    {
+        delete m_pic;
+        m_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = true;
+    if (!m_graphicFrame)
+    {
+        m_graphicFrame = new CT_GraphicalObjectFrame();
+    }
+    return m_graphicFrame;
+    }
+
+    const CT_GraphicalObjectFrame& CT_GroupShape::ChildGroup_1::get_graphicFrame() const
+    {    
+    if (m_graphicFrame)
+    {
+        return *m_graphicFrame;
+    }
+    return CT_GraphicalObjectFrame::default_instance();
+    }
+
+    bool CT_GroupShape::ChildGroup_1::has_cxnSp() const
+    {    
+    return m_has_cxnSp;
+    }
+
+    CT_Connector* CT_GroupShape::ChildGroup_1::mutable_cxnSp()
+    {    
+    
+    m_has_sp = false;
+    
+    if (m_sp)
+    {
+        delete m_sp;
+        m_sp = NULL;
+    }
+    ;
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_pic = false;
+    
+    if (m_pic)
+    {
+        delete m_pic;
+        m_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_cxnSp = true;
+    if (!m_cxnSp)
+    {
+        m_cxnSp = new CT_Connector();
+    }
+    return m_cxnSp;
+    }
+
+    const CT_Connector& CT_GroupShape::ChildGroup_1::get_cxnSp() const
+    {    
+    if (m_cxnSp)
+    {
+        return *m_cxnSp;
+    }
+    return CT_Connector::default_instance();
+    }
+
+    bool CT_GroupShape::ChildGroup_1::has_pic() const
+    {    
+    return m_has_pic;
+    }
+
+    CT_Picture* CT_GroupShape::ChildGroup_1::mutable_pic()
+    {    
+    
+    m_has_sp = false;
+    
+    if (m_sp)
+    {
+        delete m_sp;
+        m_sp = NULL;
+    }
+    ;
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_cxnSp = false;
+    
+    if (m_cxnSp)
+    {
+        delete m_cxnSp;
+        m_cxnSp = NULL;
+    }
+    ;
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    ;
+    
+    m_has_pic = true;
+    if (!m_pic)
+    {
+        m_pic = new CT_Picture();
+    }
+    return m_pic;
+    }
+
+    const CT_Picture& CT_GroupShape::ChildGroup_1::get_pic() const
+    {    
+    if (m_pic)
+    {
+        return *m_pic;
+    }
+    return CT_Picture::default_instance();
+    }
+
+    bool CT_GroupShape::ChildGroup_1::has_contentPart() const
+    {    
+    return m_has_contentPart;
+    }
+
+    CT_Rel* CT_GroupShape::ChildGroup_1::mutable_contentPart()
+    {    
+    
+    m_has_sp = false;
+    
+    if (m_sp)
+    {
+        delete m_sp;
+        m_sp = NULL;
+    }
+    ;
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    ;
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    ;
+    
+    m_has_cxnSp = false;
+    
+    if (m_cxnSp)
+    {
+        delete m_cxnSp;
+        m_cxnSp = NULL;
+    }
+    ;
+    
+    m_has_pic = false;
+    
+    if (m_pic)
+    {
+        delete m_pic;
+        m_pic = NULL;
+    }
+    ;
+    
+    m_has_contentPart = true;
+    if (!m_contentPart)
+    {
+        m_contentPart = new CT_Rel();
+    }
+    return m_contentPart;
+    }
+
+    const CT_Rel& CT_GroupShape::ChildGroup_1::get_contentPart() const
+    {    
+    if (m_contentPart)
+    {
+        return *m_contentPart;
+    }
+    return CT_Rel::default_instance();
+    }
+
+CT_GroupShape* CT_GroupShape::default_instance_ = NULL;
 
     // CT_Rel
     void CT_Rel::clear()
@@ -27462,6 +28722,7 @@ return *m_cx_attr;
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_Rel* CT_Rel::default_instance_ = NULL;
 
     // CT_BackgroundProperties
     bool CT_BackgroundProperties::has_a_noFill() const
@@ -28196,87 +29457,6 @@ return *m_cx_attr;
     {    
     m_has_shadeToTitle_attr = false;
     m_shadeToTitle_attr = false;
-    
-    m_has_a_noFill = false;
-    
-    if (m_a_noFill)
-    {
-        delete m_a_noFill;
-        m_a_noFill = NULL;
-    }
-    
-    
-    m_has_a_solidFill = false;
-    
-    if (m_a_solidFill)
-    {
-        delete m_a_solidFill;
-        m_a_solidFill = NULL;
-    }
-    
-    
-    m_has_a_gradFill = false;
-    
-    if (m_a_gradFill)
-    {
-        delete m_a_gradFill;
-        m_a_gradFill = NULL;
-    }
-    
-    
-    m_has_a_blipFill = false;
-    
-    if (m_a_blipFill)
-    {
-        delete m_a_blipFill;
-        m_a_blipFill = NULL;
-    }
-    
-    
-    m_has_a_pattFill = false;
-    
-    if (m_a_pattFill)
-    {
-        delete m_a_pattFill;
-        m_a_pattFill = NULL;
-    }
-    
-    
-    m_has_a_grpFill = false;
-    
-    if (m_a_grpFill)
-    {
-        delete m_a_grpFill;
-        m_a_grpFill = NULL;
-    }
-    
-    
-    m_has_a_effectLst = false;
-    
-    if (m_a_effectLst)
-    {
-        delete m_a_effectLst;
-        m_a_effectLst = NULL;
-    }
-    
-    
-    m_has_a_effectDag = false;
-    
-    if (m_a_effectDag)
-    {
-        delete m_a_effectDag;
-        m_a_effectDag = NULL;
-    }
-    
-     
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_BackgroundProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -28297,47 +29477,47 @@ return *m_cx_attr;
             
     if (m_has_a_noFill)
     {
-        m_a_noFill->toXmlElem("p:noFill", "", _outStream);;
+        m_a_noFill->toXmlElem("a:noFill", "", _outStream);;
     }
     
     if (m_has_a_solidFill)
     {
-        m_a_solidFill->toXmlElem("p:solidFill", "", _outStream);;
+        m_a_solidFill->toXmlElem("a:solidFill", "", _outStream);;
     }
     
     if (m_has_a_gradFill)
     {
-        m_a_gradFill->toXmlElem("p:gradFill", "", _outStream);;
+        m_a_gradFill->toXmlElem("a:gradFill", "", _outStream);;
     }
     
     if (m_has_a_blipFill)
     {
-        m_a_blipFill->toXmlElem("p:blipFill", "", _outStream);;
+        m_a_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_a_pattFill)
     {
-        m_a_pattFill->toXmlElem("p:pattFill", "", _outStream);;
+        m_a_pattFill->toXmlElem("a:pattFill", "", _outStream);;
     }
     
     if (m_has_a_grpFill)
     {
-        m_a_grpFill->toXmlElem("p:grpFill", "", _outStream);;
+        m_a_grpFill->toXmlElem("a:grpFill", "", _outStream);;
     }
     
     if (m_has_a_effectLst)
     {
-        m_a_effectLst->toXmlElem("p:effectLst", "", _outStream);;
+        m_a_effectLst->toXmlElem("a:effectLst", "", _outStream);;
     }
     
     if (m_has_a_effectDag)
     {
-        m_a_effectDag->toXmlElem("p:effectDag", "", _outStream);;
+        m_a_effectDag->toXmlElem("a:effectDag", "", _outStream);;
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -28368,6 +29548,7 @@ return *m_cx_attr;
     return m_shadeToTitle_attr;
     }
 
+CT_BackgroundProperties* CT_BackgroundProperties::default_instance_ = NULL;
 
     // CT_Background
     bool CT_Background::has_bgPr() const
@@ -28448,24 +29629,6 @@ return *m_cx_attr;
         m_a_bwMode_attr = NULL;
     }
     
-    
-    m_has_bgPr = false;
-    
-    if (m_bgPr)
-    {
-        delete m_bgPr;
-        m_bgPr = NULL;
-    }
-    
-    
-    m_has_a_bgRef = false;
-    
-    if (m_a_bgRef)
-    {
-        delete m_a_bgRef;
-        m_a_bgRef = NULL;
-    }
-    
     }
 
     void CT_Background::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -28486,12 +29649,12 @@ return *m_cx_attr;
             
     if (m_has_bgPr)
     {
-        m_bgPr->toXmlElem("p:bgPr", "", _outStream);;
+        m_bgPr->toXmlElem("bgPr", "", _outStream);;
     }
     
     if (m_has_a_bgRef)
     {
-        m_a_bgRef->toXmlElem("p:bgRef", "", _outStream);;
+        m_a_bgRef->toXmlElem("a:bgRef", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -28526,6 +29689,7 @@ return *m_cx_attr;
     return ns_a::ST_BlackWhiteMode::default_instance();
     }
 
+CT_Background* CT_Background::default_instance_ = NULL;
 
     // CT_CommonSlideData
     bool CT_CommonSlideData::has_bg() const
@@ -28652,51 +29816,6 @@ return *m_cx_attr;
     {    
     m_has_name_attr = false;
     m_name_attr.clear();
-    
-    m_has_bg = false;
-    
-    if (m_bg)
-    {
-        delete m_bg;
-        m_bg = NULL;
-    }
-    
-    
-    m_has_spTree = false;
-    
-    if (m_spTree)
-    {
-        delete m_spTree;
-        m_spTree = NULL;
-    }
-    
-    
-    m_has_custDataLst = false;
-    
-    if (m_custDataLst)
-    {
-        delete m_custDataLst;
-        m_custDataLst = NULL;
-    }
-    
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_CommonSlideData::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -28717,27 +29836,27 @@ return *m_cx_attr;
             
     if (m_has_bg)
     {
-        m_bg->toXmlElem("p:bg", "", _outStream);;
+        m_bg->toXmlElem("bg", "", _outStream);;
     }
     
     if (m_has_spTree)
     {
-        m_spTree->toXmlElem("p:spTree", "", _outStream);;
+        m_spTree->toXmlElem("spTree", "", _outStream);;
     }
     
     if (m_has_custDataLst)
     {
-        m_custDataLst->toXmlElem("p:custDataLst", "", _outStream);;
+        m_custDataLst->toXmlElem("custDataLst", "", _outStream);;
     }
     
     if (m_has_controls)
     {
-        m_controls->toXmlElem("p:controls", "", _outStream);;
+        m_controls->toXmlElem("controls", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -28768,6 +29887,7 @@ return *m_cx_attr;
     return m_name_attr;
     }
 
+CT_CommonSlideData* CT_CommonSlideData::default_instance_ = NULL;
 
     // CT_Slide
     bool CT_Slide::has_cSld() const
@@ -28900,51 +30020,6 @@ return *m_cx_attr;
     
     m_has_show_attr = false;
     m_show_attr = false;
-    
-    m_has_cSld = false;
-    
-    if (m_cSld)
-    {
-        delete m_cSld;
-        m_cSld = NULL;
-    }
-    
-    
-    m_has_a_clrMapOvr = false;
-    
-    if (m_a_clrMapOvr)
-    {
-        delete m_a_clrMapOvr;
-        m_a_clrMapOvr = NULL;
-    }
-    
-    
-    m_has_transition = false;
-    
-    if (m_transition)
-    {
-        delete m_transition;
-        m_transition = NULL;
-    }
-    
-    
-    m_has_timing = false;
-    
-    if (m_timing)
-    {
-        delete m_timing;
-        m_timing = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_Slide::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -28977,27 +30052,27 @@ return *m_cx_attr;
             
     if (m_has_cSld)
     {
-        m_cSld->toXmlElem("p:cSld", "", _outStream);;
+        m_cSld->toXmlElem("cSld", "", _outStream);;
     }
     
     if (m_has_a_clrMapOvr)
     {
-        m_a_clrMapOvr->toXmlElem("p:clrMapOvr", "", _outStream);;
+        m_a_clrMapOvr->toXmlElem("a:clrMapOvr", "", _outStream);;
     }
     
     if (m_has_transition)
     {
-        m_transition->toXmlElem("p:transition", "", _outStream);;
+        m_transition->toXmlElem("transition", "", _outStream);;
     }
     
     if (m_has_timing)
     {
-        m_timing->toXmlElem("p:timing", "", _outStream);;
+        m_timing->toXmlElem("timing", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -29060,6 +30135,7 @@ return *m_cx_attr;
     return m_show_attr;
     }
 
+CT_Slide* CT_Slide::default_instance_ = NULL;
 
     // CT_SlideLayout
     bool CT_SlideLayout::has_cSld() const
@@ -29231,60 +30307,6 @@ return *m_cx_attr;
     
     m_has_userDrawn_attr = false;
     m_userDrawn_attr = false;
-    
-    m_has_cSld = false;
-    
-    if (m_cSld)
-    {
-        delete m_cSld;
-        m_cSld = NULL;
-    }
-    
-    
-    m_has_a_clrMapOvr = false;
-    
-    if (m_a_clrMapOvr)
-    {
-        delete m_a_clrMapOvr;
-        m_a_clrMapOvr = NULL;
-    }
-    
-    
-    m_has_transition = false;
-    
-    if (m_transition)
-    {
-        delete m_transition;
-        m_transition = NULL;
-    }
-    
-    
-    m_has_timing = false;
-    
-    if (m_timing)
-    {
-        delete m_timing;
-        m_timing = NULL;
-    }
-    
-    
-    m_has_hf = false;
-    
-    if (m_hf)
-    {
-        delete m_hf;
-        m_hf = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_SlideLayout::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -29335,32 +30357,32 @@ return *m_cx_attr;
             
     if (m_has_cSld)
     {
-        m_cSld->toXmlElem("p:cSld", "", _outStream);;
+        m_cSld->toXmlElem("cSld", "", _outStream);;
     }
     
     if (m_has_a_clrMapOvr)
     {
-        m_a_clrMapOvr->toXmlElem("p:clrMapOvr", "", _outStream);;
+        m_a_clrMapOvr->toXmlElem("a:clrMapOvr", "", _outStream);;
     }
     
     if (m_has_transition)
     {
-        m_transition->toXmlElem("p:transition", "", _outStream);;
+        m_transition->toXmlElem("transition", "", _outStream);;
     }
     
     if (m_has_timing)
     {
-        m_timing->toXmlElem("p:timing", "", _outStream);;
+        m_timing->toXmlElem("timing", "", _outStream);;
     }
     
     if (m_has_hf)
     {
-        m_hf->toXmlElem("p:hf", "", _outStream);;
+        m_hf->toXmlElem("hf", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -29475,6 +30497,7 @@ return *m_cx_attr;
     return m_userDrawn_attr;
     }
 
+CT_SlideLayout* CT_SlideLayout::default_instance_ = NULL;
 
     // CT_SlideMasterTextStyles
     bool CT_SlideMasterTextStyles::has_a_titleStyle() const
@@ -29574,43 +30597,7 @@ return *m_cx_attr;
     }
 
     void CT_SlideMasterTextStyles::clear()
-    {    
-    m_has_a_titleStyle = false;
-    
-    if (m_a_titleStyle)
-    {
-        delete m_a_titleStyle;
-        m_a_titleStyle = NULL;
-    }
-    
-    
-    m_has_a_bodyStyle = false;
-    
-    if (m_a_bodyStyle)
-    {
-        delete m_a_bodyStyle;
-        m_a_bodyStyle = NULL;
-    }
-    
-    
-    m_has_a_otherStyle = false;
-    
-    if (m_a_otherStyle)
-    {
-        delete m_a_otherStyle;
-        m_a_otherStyle = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_SlideMasterTextStyles::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -29625,22 +30612,22 @@ return *m_cx_attr;
             
     if (m_has_a_titleStyle)
     {
-        m_a_titleStyle->toXmlElem("p:titleStyle", "", _outStream);;
+        m_a_titleStyle->toXmlElem("a:titleStyle", "", _outStream);;
     }
     
     if (m_has_a_bodyStyle)
     {
-        m_a_bodyStyle->toXmlElem("p:bodyStyle", "", _outStream);;
+        m_a_bodyStyle->toXmlElem("a:bodyStyle", "", _outStream);;
     }
     
     if (m_has_a_otherStyle)
     {
-        m_a_otherStyle->toXmlElem("p:otherStyle", "", _outStream);;
+        m_a_otherStyle->toXmlElem("a:otherStyle", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -29655,6 +30642,7 @@ return *m_cx_attr;
     return *CT_SlideMasterTextStyles::default_instance_;
     }
 
+CT_SlideMasterTextStyles* CT_SlideMasterTextStyles::default_instance_ = NULL;
 
     // CT_SlideLayoutIdListEntry
     bool CT_SlideLayoutIdListEntry::has_extLst() const
@@ -29700,15 +30688,6 @@ return *m_cx_attr;
         m_r_id_attr = NULL;
     }
     
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_SlideLayoutIdListEntry::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -29735,7 +30714,7 @@ return *m_cx_attr;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -29790,6 +30769,7 @@ return *m_cx_attr;
     return ns_r::ST_RelationshipId::default_instance();
     }
 
+CT_SlideLayoutIdListEntry* CT_SlideLayoutIdListEntry::default_instance_ = NULL;
 
     // CT_SlideLayoutIdList
     CT_SlideLayoutIdListEntry* CT_SlideLayoutIdList::add_sldLayoutId()
@@ -29829,7 +30809,7 @@ return *m_cx_attr;
         {
             if ((*iter)->has_sldLayoutId())
             {
-                (*iter)->get_sldLayoutId().toXmlElem("p:sldLayoutId", "", _outStream);
+                (*iter)->get_sldLayoutId().toXmlElem("sldLayoutId", "", _outStream);
             }
         }
     }
@@ -29846,6 +30826,34 @@ return *m_cx_attr;
     return *CT_SlideLayoutIdList::default_instance_;
     }
 
+
+    // CT_SlideLayoutIdList::ChildGroup_1
+    bool CT_SlideLayoutIdList::ChildGroup_1::has_sldLayoutId() const
+    {    
+    return m_has_sldLayoutId;
+    }
+
+    CT_SlideLayoutIdListEntry* CT_SlideLayoutIdList::ChildGroup_1::mutable_sldLayoutId()
+    {    
+    
+    m_has_sldLayoutId = true;
+    if (!m_sldLayoutId)
+    {
+        m_sldLayoutId = new CT_SlideLayoutIdListEntry();
+    }
+    return m_sldLayoutId;
+    }
+
+    const CT_SlideLayoutIdListEntry& CT_SlideLayoutIdList::ChildGroup_1::get_sldLayoutId() const
+    {    
+    if (m_sldLayoutId)
+    {
+        return *m_sldLayoutId;
+    }
+    return CT_SlideLayoutIdListEntry::default_instance();
+    }
+
+CT_SlideLayoutIdList* CT_SlideLayoutIdList::default_instance_ = NULL;
 
     // CT_SlideMaster
     bool CT_SlideMaster::has_cSld() const
@@ -30044,78 +31052,6 @@ return *m_cx_attr;
     {    
     m_has_preserve_attr = false;
     m_preserve_attr = false;
-    
-    m_has_cSld = false;
-    
-    if (m_cSld)
-    {
-        delete m_cSld;
-        m_cSld = NULL;
-    }
-    
-    
-    m_has_a_clrMap = false;
-    
-    if (m_a_clrMap)
-    {
-        delete m_a_clrMap;
-        m_a_clrMap = NULL;
-    }
-    
-    
-    m_has_sldLayoutIdLst = false;
-    
-    if (m_sldLayoutIdLst)
-    {
-        delete m_sldLayoutIdLst;
-        m_sldLayoutIdLst = NULL;
-    }
-    
-    
-    m_has_transition = false;
-    
-    if (m_transition)
-    {
-        delete m_transition;
-        m_transition = NULL;
-    }
-    
-    
-    m_has_timing = false;
-    
-    if (m_timing)
-    {
-        delete m_timing;
-        m_timing = NULL;
-    }
-    
-    
-    m_has_hf = false;
-    
-    if (m_hf)
-    {
-        delete m_hf;
-        m_hf = NULL;
-    }
-    
-    
-    m_has_txStyles = false;
-    
-    if (m_txStyles)
-    {
-        delete m_txStyles;
-        m_txStyles = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_SlideMaster::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -30136,42 +31072,42 @@ return *m_cx_attr;
             
     if (m_has_cSld)
     {
-        m_cSld->toXmlElem("p:cSld", "", _outStream);;
+        m_cSld->toXmlElem("cSld", "", _outStream);;
     }
     
     if (m_has_a_clrMap)
     {
-        m_a_clrMap->toXmlElem("p:clrMap", "", _outStream);;
+        m_a_clrMap->toXmlElem("a:clrMap", "", _outStream);;
     }
     
     if (m_has_sldLayoutIdLst)
     {
-        m_sldLayoutIdLst->toXmlElem("p:sldLayoutIdLst", "", _outStream);;
+        m_sldLayoutIdLst->toXmlElem("sldLayoutIdLst", "", _outStream);;
     }
     
     if (m_has_transition)
     {
-        m_transition->toXmlElem("p:transition", "", _outStream);;
+        m_transition->toXmlElem("transition", "", _outStream);;
     }
     
     if (m_has_timing)
     {
-        m_timing->toXmlElem("p:timing", "", _outStream);;
+        m_timing->toXmlElem("timing", "", _outStream);;
     }
     
     if (m_has_hf)
     {
-        m_hf->toXmlElem("p:hf", "", _outStream);;
+        m_hf->toXmlElem("hf", "", _outStream);;
     }
     
     if (m_has_txStyles)
     {
-        m_txStyles->toXmlElem("p:txStyles", "", _outStream);;
+        m_txStyles->toXmlElem("txStyles", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -30202,6 +31138,7 @@ return *m_cx_attr;
     return m_preserve_attr;
     }
 
+CT_SlideMaster* CT_SlideMaster::default_instance_ = NULL;
 
     // CT_HandoutMaster
     bool CT_HandoutMaster::has_cSld() const
@@ -30301,43 +31238,7 @@ return *m_cx_attr;
     }
 
     void CT_HandoutMaster::clear()
-    {    
-    m_has_cSld = false;
-    
-    if (m_cSld)
-    {
-        delete m_cSld;
-        m_cSld = NULL;
-    }
-    
-    
-    m_has_a_clrMap = false;
-    
-    if (m_a_clrMap)
-    {
-        delete m_a_clrMap;
-        m_a_clrMap = NULL;
-    }
-    
-    
-    m_has_hf = false;
-    
-    if (m_hf)
-    {
-        delete m_hf;
-        m_hf = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_HandoutMaster::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -30352,22 +31253,22 @@ return *m_cx_attr;
             
     if (m_has_cSld)
     {
-        m_cSld->toXmlElem("p:cSld", "", _outStream);;
+        m_cSld->toXmlElem("cSld", "", _outStream);;
     }
     
     if (m_has_a_clrMap)
     {
-        m_a_clrMap->toXmlElem("p:clrMap", "", _outStream);;
+        m_a_clrMap->toXmlElem("a:clrMap", "", _outStream);;
     }
     
     if (m_has_hf)
     {
-        m_hf->toXmlElem("p:hf", "", _outStream);;
+        m_hf->toXmlElem("hf", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -30382,6 +31283,7 @@ return *m_cx_attr;
     return *CT_HandoutMaster::default_instance_;
     }
 
+CT_HandoutMaster* CT_HandoutMaster::default_instance_ = NULL;
 
     // CT_NotesMaster
     bool CT_NotesMaster::has_cSld() const
@@ -30505,52 +31407,7 @@ return *m_cx_attr;
     }
 
     void CT_NotesMaster::clear()
-    {    
-    m_has_cSld = false;
-    
-    if (m_cSld)
-    {
-        delete m_cSld;
-        m_cSld = NULL;
-    }
-    
-    
-    m_has_a_clrMap = false;
-    
-    if (m_a_clrMap)
-    {
-        delete m_a_clrMap;
-        m_a_clrMap = NULL;
-    }
-    
-    
-    m_has_hf = false;
-    
-    if (m_hf)
-    {
-        delete m_hf;
-        m_hf = NULL;
-    }
-    
-    
-    m_has_a_notesStyle = false;
-    
-    if (m_a_notesStyle)
-    {
-        delete m_a_notesStyle;
-        m_a_notesStyle = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_NotesMaster::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -30565,27 +31422,27 @@ return *m_cx_attr;
             
     if (m_has_cSld)
     {
-        m_cSld->toXmlElem("p:cSld", "", _outStream);;
+        m_cSld->toXmlElem("cSld", "", _outStream);;
     }
     
     if (m_has_a_clrMap)
     {
-        m_a_clrMap->toXmlElem("p:clrMap", "", _outStream);;
+        m_a_clrMap->toXmlElem("a:clrMap", "", _outStream);;
     }
     
     if (m_has_hf)
     {
-        m_hf->toXmlElem("p:hf", "", _outStream);;
+        m_hf->toXmlElem("hf", "", _outStream);;
     }
     
     if (m_has_a_notesStyle)
     {
-        m_a_notesStyle->toXmlElem("p:notesStyle", "", _outStream);;
+        m_a_notesStyle->toXmlElem("a:notesStyle", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -30600,6 +31457,7 @@ return *m_cx_attr;
     return *CT_NotesMaster::default_instance_;
     }
 
+CT_NotesMaster* CT_NotesMaster::default_instance_ = NULL;
 
     // CT_NotesSlide
     bool CT_NotesSlide::has_cSld() const
@@ -30681,33 +31539,6 @@ return *m_cx_attr;
     
     m_has_showMasterPhAnim_attr = false;
     m_showMasterPhAnim_attr = false;
-    
-    m_has_cSld = false;
-    
-    if (m_cSld)
-    {
-        delete m_cSld;
-        m_cSld = NULL;
-    }
-    
-    
-    m_has_a_clrMapOvr = false;
-    
-    if (m_a_clrMapOvr)
-    {
-        delete m_a_clrMapOvr;
-        m_a_clrMapOvr = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_NotesSlide::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -30734,17 +31565,17 @@ return *m_cx_attr;
             
     if (m_has_cSld)
     {
-        m_cSld->toXmlElem("p:cSld", "", _outStream);;
+        m_cSld->toXmlElem("cSld", "", _outStream);;
     }
     
     if (m_has_a_clrMapOvr)
     {
-        m_a_clrMapOvr->toXmlElem("p:clrMapOvr", "", _outStream);;
+        m_a_clrMapOvr->toXmlElem("a:clrMapOvr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -30791,6 +31622,7 @@ return *m_cx_attr;
     return m_showMasterPhAnim_attr;
     }
 
+CT_NotesSlide* CT_NotesSlide::default_instance_ = NULL;
 
     // CT_SlideSyncProperties
     bool CT_SlideSyncProperties::has_extLst() const
@@ -30827,15 +31659,6 @@ return *m_cx_attr;
     
     m_has_clientInsertedTime_attr = false;
     m_clientInsertedTime_attr.clear();
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_SlideSyncProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -30868,7 +31691,7 @@ return *m_cx_attr;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -30931,6 +31754,7 @@ return *m_cx_attr;
     return m_clientInsertedTime_attr;
     }
 
+CT_SlideSyncProperties* CT_SlideSyncProperties::default_instance_ = NULL;
 
     // CT_StringTag
     void CT_StringTag::clear()
@@ -31008,6 +31832,7 @@ return *m_cx_attr;
     return m_val_attr;
     }
 
+CT_StringTag* CT_StringTag::default_instance_ = NULL;
 
     // CT_TagList
     CT_StringTag* CT_TagList::add_tag()
@@ -31047,7 +31872,7 @@ return *m_cx_attr;
         {
             if ((*iter)->has_tag())
             {
-                (*iter)->get_tag().toXmlElem("p:tag", "", _outStream);
+                (*iter)->get_tag().toXmlElem("tag", "", _outStream);
             }
         }
     }
@@ -31064,6 +31889,34 @@ return *m_cx_attr;
     return *CT_TagList::default_instance_;
     }
 
+
+    // CT_TagList::ChildGroup_1
+    bool CT_TagList::ChildGroup_1::has_tag() const
+    {    
+    return m_has_tag;
+    }
+
+    CT_StringTag* CT_TagList::ChildGroup_1::mutable_tag()
+    {    
+    
+    m_has_tag = true;
+    if (!m_tag)
+    {
+        m_tag = new CT_StringTag();
+    }
+    return m_tag;
+    }
+
+    const CT_StringTag& CT_TagList::ChildGroup_1::get_tag() const
+    {    
+    if (m_tag)
+    {
+        return *m_tag;
+    }
+    return CT_StringTag::default_instance();
+    }
+
+CT_TagList* CT_TagList::default_instance_ = NULL;
 
     // CT_NormalViewPortion
     void CT_NormalViewPortion::clear()
@@ -31151,6 +32004,7 @@ return *m_cx_attr;
     return m_autoAdjust_attr;
     }
 
+CT_NormalViewPortion* CT_NormalViewPortion::default_instance_ = NULL;
 
     // CT_NormalViewProperties
     bool CT_NormalViewProperties::has_restoredLeft() const
@@ -31253,33 +32107,6 @@ return *m_cx_attr;
     
     m_has_preferSingleView_attr = false;
     m_preferSingleView_attr = false;
-    
-    m_has_restoredLeft = false;
-    
-    if (m_restoredLeft)
-    {
-        delete m_restoredLeft;
-        m_restoredLeft = NULL;
-    }
-    
-    
-    m_has_restoredTop = false;
-    
-    if (m_restoredTop)
-    {
-        delete m_restoredTop;
-        m_restoredTop = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_NormalViewProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -31324,17 +32151,17 @@ return *m_cx_attr;
             
     if (m_has_restoredLeft)
     {
-        m_restoredLeft->toXmlElem("p:restoredLeft", "", _outStream);;
+        m_restoredLeft->toXmlElem("restoredLeft", "", _outStream);;
     }
     
     if (m_has_restoredTop)
     {
-        m_restoredTop->toXmlElem("p:restoredTop", "", _outStream);;
+        m_restoredTop->toXmlElem("restoredTop", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -31437,6 +32264,7 @@ return *m_cx_attr;
     return m_preferSingleView_attr;
     }
 
+CT_NormalViewProperties* CT_NormalViewProperties::default_instance_ = NULL;
 
     // CT_CommonViewProperties
     bool CT_CommonViewProperties::has_a_scale() const
@@ -31491,24 +32319,6 @@ return *m_cx_attr;
     {    
     m_has_varScale_attr = false;
     m_varScale_attr = false;
-    
-    m_has_a_scale = false;
-    
-    if (m_a_scale)
-    {
-        delete m_a_scale;
-        m_a_scale = NULL;
-    }
-    
-    
-    m_has_a_origin = false;
-    
-    if (m_a_origin)
-    {
-        delete m_a_origin;
-        m_a_origin = NULL;
-    }
-    
     }
 
     void CT_CommonViewProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -31529,12 +32339,12 @@ return *m_cx_attr;
             
     if (m_has_a_scale)
     {
-        m_a_scale->toXmlElem("p:scale", "", _outStream);;
+        m_a_scale->toXmlElem("a:scale", "", _outStream);;
     }
     
     if (m_has_a_origin)
     {
-        m_a_origin->toXmlElem("p:origin", "", _outStream);;
+        m_a_origin->toXmlElem("a:origin", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -31565,6 +32375,7 @@ return *m_cx_attr;
     return m_varScale_attr;
     }
 
+CT_CommonViewProperties* CT_CommonViewProperties::default_instance_ = NULL;
 
     // CT_NotesTextViewProperties
     bool CT_NotesTextViewProperties::has_cViewPr() const
@@ -31616,25 +32427,7 @@ return *m_cx_attr;
     }
 
     void CT_NotesTextViewProperties::clear()
-    {    
-    m_has_cViewPr = false;
-    
-    if (m_cViewPr)
-    {
-        delete m_cViewPr;
-        m_cViewPr = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_NotesTextViewProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -31649,12 +32442,12 @@ return *m_cx_attr;
             
     if (m_has_cViewPr)
     {
-        m_cViewPr->toXmlElem("p:cViewPr", "", _outStream);;
+        m_cViewPr->toXmlElem("cViewPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -31669,6 +32462,7 @@ return *m_cx_attr;
     return *CT_NotesTextViewProperties::default_instance_;
     }
 
+CT_NotesTextViewProperties* CT_NotesTextViewProperties::default_instance_ = NULL;
 
     // CT_OutlineViewSlideEntry
     void CT_OutlineViewSlideEntry::clear()
@@ -31756,6 +32550,7 @@ return *m_cx_attr;
     return m_collapse_attr;
     }
 
+CT_OutlineViewSlideEntry* CT_OutlineViewSlideEntry::default_instance_ = NULL;
 
     // CT_OutlineViewSlideList
     CT_OutlineViewSlideEntry* CT_OutlineViewSlideList::add_sld()
@@ -31795,7 +32590,7 @@ return *m_cx_attr;
         {
             if ((*iter)->has_sld())
             {
-                (*iter)->get_sld().toXmlElem("p:sld", "", _outStream);
+                (*iter)->get_sld().toXmlElem("sld", "", _outStream);
             }
         }
     }
@@ -31812,6 +32607,34 @@ return *m_cx_attr;
     return *CT_OutlineViewSlideList::default_instance_;
     }
 
+
+    // CT_OutlineViewSlideList::ChildGroup_1
+    bool CT_OutlineViewSlideList::ChildGroup_1::has_sld() const
+    {    
+    return m_has_sld;
+    }
+
+    CT_OutlineViewSlideEntry* CT_OutlineViewSlideList::ChildGroup_1::mutable_sld()
+    {    
+    
+    m_has_sld = true;
+    if (!m_sld)
+    {
+        m_sld = new CT_OutlineViewSlideEntry();
+    }
+    return m_sld;
+    }
+
+    const CT_OutlineViewSlideEntry& CT_OutlineViewSlideList::ChildGroup_1::get_sld() const
+    {    
+    if (m_sld)
+    {
+        return *m_sld;
+    }
+    return CT_OutlineViewSlideEntry::default_instance();
+    }
+
+CT_OutlineViewSlideList* CT_OutlineViewSlideList::default_instance_ = NULL;
 
     // CT_OutlineViewProperties
     bool CT_OutlineViewProperties::has_cViewPr() const
@@ -31887,34 +32710,7 @@ return *m_cx_attr;
     }
 
     void CT_OutlineViewProperties::clear()
-    {    
-    m_has_cViewPr = false;
-    
-    if (m_cViewPr)
-    {
-        delete m_cViewPr;
-        m_cViewPr = NULL;
-    }
-    
-    
-    m_has_sldLst = false;
-    
-    if (m_sldLst)
-    {
-        delete m_sldLst;
-        m_sldLst = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_OutlineViewProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -31929,17 +32725,17 @@ return *m_cx_attr;
             
     if (m_has_cViewPr)
     {
-        m_cViewPr->toXmlElem("p:cViewPr", "", _outStream);;
+        m_cViewPr->toXmlElem("cViewPr", "", _outStream);;
     }
     
     if (m_has_sldLst)
     {
-        m_sldLst->toXmlElem("p:sldLst", "", _outStream);;
+        m_sldLst->toXmlElem("sldLst", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -31954,6 +32750,7 @@ return *m_cx_attr;
     return *CT_OutlineViewProperties::default_instance_;
     }
 
+CT_OutlineViewProperties* CT_OutlineViewProperties::default_instance_ = NULL;
 
     // CT_SlideSorterViewProperties
     bool CT_SlideSorterViewProperties::has_cViewPr() const
@@ -32008,24 +32805,6 @@ return *m_cx_attr;
     {    
     m_has_showFormatting_attr = false;
     m_showFormatting_attr = false;
-    
-    m_has_cViewPr = false;
-    
-    if (m_cViewPr)
-    {
-        delete m_cViewPr;
-        m_cViewPr = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_SlideSorterViewProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -32046,12 +32825,12 @@ return *m_cx_attr;
             
     if (m_has_cViewPr)
     {
-        m_cViewPr->toXmlElem("p:cViewPr", "", _outStream);;
+        m_cViewPr->toXmlElem("cViewPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -32082,6 +32861,7 @@ return *m_cx_attr;
     return m_showFormatting_attr;
     }
 
+CT_SlideSorterViewProperties* CT_SlideSorterViewProperties::default_instance_ = NULL;
 
     // CT_Guide
     void CT_Guide::clear()
@@ -32179,6 +32959,7 @@ return *m_cx_attr;
     return ns_a::ST_Coordinate32::default_instance();
     }
 
+CT_Guide* CT_Guide::default_instance_ = NULL;
 
     // CT_GuideList
     CT_Guide* CT_GuideList::add_guide()
@@ -32218,7 +32999,7 @@ return *m_cx_attr;
         {
             if ((*iter)->has_guide())
             {
-                (*iter)->get_guide().toXmlElem("p:guide", "", _outStream);
+                (*iter)->get_guide().toXmlElem("guide", "", _outStream);
             }
         }
     }
@@ -32235,6 +33016,34 @@ return *m_cx_attr;
     return *CT_GuideList::default_instance_;
     }
 
+
+    // CT_GuideList::ChildGroup_1
+    bool CT_GuideList::ChildGroup_1::has_guide() const
+    {    
+    return m_has_guide;
+    }
+
+    CT_Guide* CT_GuideList::ChildGroup_1::mutable_guide()
+    {    
+    
+    m_has_guide = true;
+    if (!m_guide)
+    {
+        m_guide = new CT_Guide();
+    }
+    return m_guide;
+    }
+
+    const CT_Guide& CT_GuideList::ChildGroup_1::get_guide() const
+    {    
+    if (m_guide)
+    {
+        return *m_guide;
+    }
+    return CT_Guide::default_instance();
+    }
+
+CT_GuideList* CT_GuideList::default_instance_ = NULL;
 
     // CT_CommonSlideViewProperties
     bool CT_CommonSlideViewProperties::has_cViewPr() const
@@ -32295,24 +33104,6 @@ return *m_cx_attr;
     
     m_has_showGuides_attr = false;
     m_showGuides_attr = false;
-    
-    m_has_cViewPr = false;
-    
-    if (m_cViewPr)
-    {
-        delete m_cViewPr;
-        m_cViewPr = NULL;
-    }
-    
-    
-    m_has_guideLst = false;
-    
-    if (m_guideLst)
-    {
-        delete m_guideLst;
-        m_guideLst = NULL;
-    }
-    
     }
 
     void CT_CommonSlideViewProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -32345,12 +33136,12 @@ return *m_cx_attr;
             
     if (m_has_cViewPr)
     {
-        m_cViewPr->toXmlElem("p:cViewPr", "", _outStream);;
+        m_cViewPr->toXmlElem("cViewPr", "", _outStream);;
     }
     
     if (m_has_guideLst)
     {
-        m_guideLst->toXmlElem("p:guideLst", "", _outStream);;
+        m_guideLst->toXmlElem("guideLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -32413,6 +33204,7 @@ return *m_cx_attr;
     return m_showGuides_attr;
     }
 
+CT_CommonSlideViewProperties* CT_CommonSlideViewProperties::default_instance_ = NULL;
 
     // CT_SlideViewProperties
     bool CT_SlideViewProperties::has_cSldViewPr() const
@@ -32464,25 +33256,7 @@ return *m_cx_attr;
     }
 
     void CT_SlideViewProperties::clear()
-    {    
-    m_has_cSldViewPr = false;
-    
-    if (m_cSldViewPr)
-    {
-        delete m_cSldViewPr;
-        m_cSldViewPr = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_SlideViewProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -32497,12 +33271,12 @@ return *m_cx_attr;
             
     if (m_has_cSldViewPr)
     {
-        m_cSldViewPr->toXmlElem("p:cSldViewPr", "", _outStream);;
+        m_cSldViewPr->toXmlElem("cSldViewPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -32517,6 +33291,7 @@ return *m_cx_attr;
     return *CT_SlideViewProperties::default_instance_;
     }
 
+CT_SlideViewProperties* CT_SlideViewProperties::default_instance_ = NULL;
 
     // CT_NotesViewProperties
     bool CT_NotesViewProperties::has_cSldViewPr() const
@@ -32568,25 +33343,7 @@ return *m_cx_attr;
     }
 
     void CT_NotesViewProperties::clear()
-    {    
-    m_has_cSldViewPr = false;
-    
-    if (m_cSldViewPr)
-    {
-        delete m_cSldViewPr;
-        m_cSldViewPr = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void CT_NotesViewProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -32601,12 +33358,12 @@ return *m_cx_attr;
             
     if (m_has_cSldViewPr)
     {
-        m_cSldViewPr->toXmlElem("p:cSldViewPr", "", _outStream);;
+        m_cSldViewPr->toXmlElem("cSldViewPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -32621,6 +33378,7 @@ return *m_cx_attr;
     return *CT_NotesViewProperties::default_instance_;
     }
 
+CT_NotesViewProperties* CT_NotesViewProperties::default_instance_ = NULL;
 
     // CT_ViewProperties
     bool CT_ViewProperties::has_normalViewPr() const
@@ -32828,78 +33586,6 @@ return *m_cx_attr;
     
     m_has_showComments_attr = false;
     m_showComments_attr = false;
-    
-    m_has_normalViewPr = false;
-    
-    if (m_normalViewPr)
-    {
-        delete m_normalViewPr;
-        m_normalViewPr = NULL;
-    }
-    
-    
-    m_has_slideViewPr = false;
-    
-    if (m_slideViewPr)
-    {
-        delete m_slideViewPr;
-        m_slideViewPr = NULL;
-    }
-    
-    
-    m_has_outlineViewPr = false;
-    
-    if (m_outlineViewPr)
-    {
-        delete m_outlineViewPr;
-        m_outlineViewPr = NULL;
-    }
-    
-    
-    m_has_notesTextViewPr = false;
-    
-    if (m_notesTextViewPr)
-    {
-        delete m_notesTextViewPr;
-        m_notesTextViewPr = NULL;
-    }
-    
-    
-    m_has_sorterViewPr = false;
-    
-    if (m_sorterViewPr)
-    {
-        delete m_sorterViewPr;
-        m_sorterViewPr = NULL;
-    }
-    
-    
-    m_has_notesViewPr = false;
-    
-    if (m_notesViewPr)
-    {
-        delete m_notesViewPr;
-        m_notesViewPr = NULL;
-    }
-    
-    
-    m_has_a_gridSpacing = false;
-    
-    if (m_a_gridSpacing)
-    {
-        delete m_a_gridSpacing;
-        m_a_gridSpacing = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void CT_ViewProperties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -32926,42 +33612,42 @@ return *m_cx_attr;
             
     if (m_has_normalViewPr)
     {
-        m_normalViewPr->toXmlElem("p:normalViewPr", "", _outStream);;
+        m_normalViewPr->toXmlElem("normalViewPr", "", _outStream);;
     }
     
     if (m_has_slideViewPr)
     {
-        m_slideViewPr->toXmlElem("p:slideViewPr", "", _outStream);;
+        m_slideViewPr->toXmlElem("slideViewPr", "", _outStream);;
     }
     
     if (m_has_outlineViewPr)
     {
-        m_outlineViewPr->toXmlElem("p:outlineViewPr", "", _outStream);;
+        m_outlineViewPr->toXmlElem("outlineViewPr", "", _outStream);;
     }
     
     if (m_has_notesTextViewPr)
     {
-        m_notesTextViewPr->toXmlElem("p:notesTextViewPr", "", _outStream);;
+        m_notesTextViewPr->toXmlElem("notesTextViewPr", "", _outStream);;
     }
     
     if (m_has_sorterViewPr)
     {
-        m_sorterViewPr->toXmlElem("p:sorterViewPr", "", _outStream);;
+        m_sorterViewPr->toXmlElem("sorterViewPr", "", _outStream);;
     }
     
     if (m_has_notesViewPr)
     {
-        m_notesViewPr->toXmlElem("p:notesViewPr", "", _outStream);;
+        m_notesViewPr->toXmlElem("notesViewPr", "", _outStream);;
     }
     
     if (m_has_a_gridSpacing)
     {
-        m_a_gridSpacing->toXmlElem("p:gridSpacing", "", _outStream);;
+        m_a_gridSpacing->toXmlElem("a:gridSpacing", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -33012,6 +33698,7 @@ return *m_cx_attr;
     return m_showComments_attr;
     }
 
+CT_ViewProperties* CT_ViewProperties::default_instance_ = NULL;
 
     // cmAuthorLst_element
     CT_CommentAuthor* cmAuthorLst_element::add_cmAuthor()
@@ -33036,7 +33723,7 @@ return *m_cx_attr;
 
     void cmAuthorLst_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:cmAuthorLst";
+    _outStream << "<cmAuthorLst";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -33052,12 +33739,12 @@ return *m_cx_attr;
         {
             if ((*iter)->has_cmAuthor())
             {
-                (*iter)->get_cmAuthor().toXmlElem("p:cmAuthor", "", _outStream);
+                (*iter)->get_cmAuthor().toXmlElem("cmAuthor", "", _outStream);
             }
         }
     }
     
-    _outStream << "</p:cmAuthorLst>";
+    _outStream << "</cmAuthorLst>";
     }
 
     const cmAuthorLst_element& cmAuthorLst_element::default_instance()
@@ -33069,6 +33756,34 @@ return *m_cx_attr;
     return *cmAuthorLst_element::default_instance_;
     }
 
+
+    // cmAuthorLst_element::ChildGroup_1
+    bool cmAuthorLst_element::ChildGroup_1::has_cmAuthor() const
+    {    
+    return m_has_cmAuthor;
+    }
+
+    CT_CommentAuthor* cmAuthorLst_element::ChildGroup_1::mutable_cmAuthor()
+    {    
+    
+    m_has_cmAuthor = true;
+    if (!m_cmAuthor)
+    {
+        m_cmAuthor = new CT_CommentAuthor();
+    }
+    return m_cmAuthor;
+    }
+
+    const CT_CommentAuthor& cmAuthorLst_element::ChildGroup_1::get_cmAuthor() const
+    {    
+    if (m_cmAuthor)
+    {
+        return *m_cmAuthor;
+    }
+    return CT_CommentAuthor::default_instance();
+    }
+
+cmAuthorLst_element* cmAuthorLst_element::default_instance_ = NULL;
 
     // cmLst_element
     CT_Comment* cmLst_element::add_cm()
@@ -33093,7 +33808,7 @@ return *m_cx_attr;
 
     void cmLst_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:cmLst";
+    _outStream << "<cmLst";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -33109,12 +33824,12 @@ return *m_cx_attr;
         {
             if ((*iter)->has_cm())
             {
-                (*iter)->get_cm().toXmlElem("p:cm", "", _outStream);
+                (*iter)->get_cm().toXmlElem("cm", "", _outStream);
             }
         }
     }
     
-    _outStream << "</p:cmLst>";
+    _outStream << "</cmLst>";
     }
 
     const cmLst_element& cmLst_element::default_instance()
@@ -33126,6 +33841,34 @@ return *m_cx_attr;
     return *cmLst_element::default_instance_;
     }
 
+
+    // cmLst_element::ChildGroup_1
+    bool cmLst_element::ChildGroup_1::has_cm() const
+    {    
+    return m_has_cm;
+    }
+
+    CT_Comment* cmLst_element::ChildGroup_1::mutable_cm()
+    {    
+    
+    m_has_cm = true;
+    if (!m_cm)
+    {
+        m_cm = new CT_Comment();
+    }
+    return m_cm;
+    }
+
+    const CT_Comment& cmLst_element::ChildGroup_1::get_cm() const
+    {    
+    if (m_cm)
+    {
+        return *m_cm;
+    }
+    return CT_Comment::default_instance();
+    }
+
+cmLst_element* cmLst_element::default_instance_ = NULL;
 
     // oleObj_element
     bool oleObj_element::has_embed() const
@@ -33266,38 +34009,11 @@ return *m_cx_attr;
     
     m_has_progId_attr = false;
     m_progId_attr.clear();
-    
-    m_has_embed = false;
-    
-    if (m_embed)
-    {
-        delete m_embed;
-        m_embed = NULL;
-    }
-    
-    
-    m_has_link = false;
-    
-    if (m_link)
-    {
-        delete m_link;
-        m_link = NULL;
-    }
-    
-     
-    m_has_pic = false;
-    
-    if (m_pic)
-    {
-        delete m_pic;
-        m_pic = NULL;
-    }
-    
     }
 
     void oleObj_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:oleObj";
+    _outStream << "<oleObj";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -33350,20 +34066,20 @@ return *m_cx_attr;
     
     if (m_has_embed)
     {
-        m_embed->toXmlElem("p:embed", "", _outStream);;
+        m_embed->toXmlElem("embed", "", _outStream);;
     }
     
     if (m_has_link)
     {
-        m_link->toXmlElem("p:link", "", _outStream);;
+        m_link->toXmlElem("link", "", _outStream);;
     }
      
     if (m_has_pic)
     {
-        m_pic->toXmlElem("p:pic", "", _outStream);;
+        m_pic->toXmlElem("pic", "", _outStream);;
     }
     
-    _outStream << "</p:oleObj>";
+    _outStream << "</oleObj>";
     }
 
     const oleObj_element& oleObj_element::default_instance()
@@ -33503,6 +34219,7 @@ return *m_cx_attr;
     return m_progId_attr;
     }
 
+oleObj_element* oleObj_element::default_instance_ = NULL;
 
     // presentation_element
     bool presentation_element::has_sldMasterIdLst() const
@@ -33920,146 +34637,11 @@ return *m_cx_attr;
         m_s_conformance_attr = NULL;
     }
     
-    
-    m_has_sldMasterIdLst = false;
-    
-    if (m_sldMasterIdLst)
-    {
-        delete m_sldMasterIdLst;
-        m_sldMasterIdLst = NULL;
-    }
-    
-    
-    m_has_notesMasterIdLst = false;
-    
-    if (m_notesMasterIdLst)
-    {
-        delete m_notesMasterIdLst;
-        m_notesMasterIdLst = NULL;
-    }
-    
-    
-    m_has_handoutMasterIdLst = false;
-    
-    if (m_handoutMasterIdLst)
-    {
-        delete m_handoutMasterIdLst;
-        m_handoutMasterIdLst = NULL;
-    }
-    
-    
-    m_has_sldIdLst = false;
-    
-    if (m_sldIdLst)
-    {
-        delete m_sldIdLst;
-        m_sldIdLst = NULL;
-    }
-    
-    
-    m_has_sldSz = false;
-    
-    if (m_sldSz)
-    {
-        delete m_sldSz;
-        m_sldSz = NULL;
-    }
-    
-    
-    m_has_a_notesSz = false;
-    
-    if (m_a_notesSz)
-    {
-        delete m_a_notesSz;
-        m_a_notesSz = NULL;
-    }
-    
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    
-    
-    m_has_embeddedFontLst = false;
-    
-    if (m_embeddedFontLst)
-    {
-        delete m_embeddedFontLst;
-        m_embeddedFontLst = NULL;
-    }
-    
-    
-    m_has_custShowLst = false;
-    
-    if (m_custShowLst)
-    {
-        delete m_custShowLst;
-        m_custShowLst = NULL;
-    }
-    
-    
-    m_has_photoAlbum = false;
-    
-    if (m_photoAlbum)
-    {
-        delete m_photoAlbum;
-        m_photoAlbum = NULL;
-    }
-    
-    
-    m_has_custDataLst = false;
-    
-    if (m_custDataLst)
-    {
-        delete m_custDataLst;
-        m_custDataLst = NULL;
-    }
-    
-    
-    m_has_kinsoku = false;
-    
-    if (m_kinsoku)
-    {
-        delete m_kinsoku;
-        m_kinsoku = NULL;
-    }
-    
-    
-    m_has_a_defaultTextStyle = false;
-    
-    if (m_a_defaultTextStyle)
-    {
-        delete m_a_defaultTextStyle;
-        m_a_defaultTextStyle = NULL;
-    }
-    
-    
-    m_has_modifyVerifier = false;
-    
-    if (m_modifyVerifier)
-    {
-        delete m_modifyVerifier;
-        m_modifyVerifier = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void presentation_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:presentation";
+    _outStream << "<presentation";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -34142,80 +34724,80 @@ return *m_cx_attr;
     
     if (m_has_sldMasterIdLst)
     {
-        m_sldMasterIdLst->toXmlElem("p:sldMasterIdLst", "", _outStream);;
+        m_sldMasterIdLst->toXmlElem("sldMasterIdLst", "", _outStream);;
     }
     
     if (m_has_notesMasterIdLst)
     {
-        m_notesMasterIdLst->toXmlElem("p:notesMasterIdLst", "", _outStream);;
+        m_notesMasterIdLst->toXmlElem("notesMasterIdLst", "", _outStream);;
     }
     
     if (m_has_handoutMasterIdLst)
     {
-        m_handoutMasterIdLst->toXmlElem("p:handoutMasterIdLst", "", _outStream);;
+        m_handoutMasterIdLst->toXmlElem("handoutMasterIdLst", "", _outStream);;
     }
     
     if (m_has_sldIdLst)
     {
-        m_sldIdLst->toXmlElem("p:sldIdLst", "", _outStream);;
+        m_sldIdLst->toXmlElem("sldIdLst", "", _outStream);;
     }
     
     if (m_has_sldSz)
     {
-        m_sldSz->toXmlElem("p:sldSz", "", _outStream);;
+        m_sldSz->toXmlElem("sldSz", "", _outStream);;
     }
     
     if (m_has_a_notesSz)
     {
-        m_a_notesSz->toXmlElem("p:notesSz", "", _outStream);;
+        m_a_notesSz->toXmlElem("a:notesSz", "", _outStream);;
     }
     
     if (m_has_smartTags)
     {
-        m_smartTags->toXmlElem("p:smartTags", "", _outStream);;
+        m_smartTags->toXmlElem("smartTags", "", _outStream);;
     }
     
     if (m_has_embeddedFontLst)
     {
-        m_embeddedFontLst->toXmlElem("p:embeddedFontLst", "", _outStream);;
+        m_embeddedFontLst->toXmlElem("embeddedFontLst", "", _outStream);;
     }
     
     if (m_has_custShowLst)
     {
-        m_custShowLst->toXmlElem("p:custShowLst", "", _outStream);;
+        m_custShowLst->toXmlElem("custShowLst", "", _outStream);;
     }
     
     if (m_has_photoAlbum)
     {
-        m_photoAlbum->toXmlElem("p:photoAlbum", "", _outStream);;
+        m_photoAlbum->toXmlElem("photoAlbum", "", _outStream);;
     }
     
     if (m_has_custDataLst)
     {
-        m_custDataLst->toXmlElem("p:custDataLst", "", _outStream);;
+        m_custDataLst->toXmlElem("custDataLst", "", _outStream);;
     }
     
     if (m_has_kinsoku)
     {
-        m_kinsoku->toXmlElem("p:kinsoku", "", _outStream);;
+        m_kinsoku->toXmlElem("kinsoku", "", _outStream);;
     }
     
     if (m_has_a_defaultTextStyle)
     {
-        m_a_defaultTextStyle->toXmlElem("p:defaultTextStyle", "", _outStream);;
+        m_a_defaultTextStyle->toXmlElem("a:defaultTextStyle", "", _outStream);;
     }
     
     if (m_has_modifyVerifier)
     {
-        m_modifyVerifier->toXmlElem("p:modifyVerifier", "", _outStream);;
+        m_modifyVerifier->toXmlElem("modifyVerifier", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
-    _outStream << "</p:presentation>";
+    _outStream << "</presentation>";
     }
 
     const presentation_element& presentation_element::default_instance()
@@ -34431,6 +35013,7 @@ return *m_cx_attr;
     return ns_s::ST_ConformanceClass::default_instance();
     }
 
+presentation_element* presentation_element::default_instance_ = NULL;
 
     // presentationPr_element
     bool presentationPr_element::has_htmlPubPr() const
@@ -34578,65 +35161,11 @@ return *m_cx_attr;
     }
 
     void presentationPr_element::clear()
-    {    
-    m_has_htmlPubPr = false;
-    
-    if (m_htmlPubPr)
-    {
-        delete m_htmlPubPr;
-        m_htmlPubPr = NULL;
-    }
-    
-    
-    m_has_webPr = false;
-    
-    if (m_webPr)
-    {
-        delete m_webPr;
-        m_webPr = NULL;
-    }
-    
-    
-    m_has_prnPr = false;
-    
-    if (m_prnPr)
-    {
-        delete m_prnPr;
-        m_prnPr = NULL;
-    }
-    
-    
-    m_has_showPr = false;
-    
-    if (m_showPr)
-    {
-        delete m_showPr;
-        m_showPr = NULL;
-    }
-    
-    
-    m_has_a_clrMru = false;
-    
-    if (m_a_clrMru)
-    {
-        delete m_a_clrMru;
-        m_a_clrMru = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void presentationPr_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:presentationPr";
+    _outStream << "<presentationPr";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -34648,35 +35177,35 @@ return *m_cx_attr;
     
     if (m_has_htmlPubPr)
     {
-        m_htmlPubPr->toXmlElem("p:htmlPubPr", "", _outStream);;
+        m_htmlPubPr->toXmlElem("htmlPubPr", "", _outStream);;
     }
     
     if (m_has_webPr)
     {
-        m_webPr->toXmlElem("p:webPr", "", _outStream);;
+        m_webPr->toXmlElem("webPr", "", _outStream);;
     }
     
     if (m_has_prnPr)
     {
-        m_prnPr->toXmlElem("p:prnPr", "", _outStream);;
+        m_prnPr->toXmlElem("prnPr", "", _outStream);;
     }
     
     if (m_has_showPr)
     {
-        m_showPr->toXmlElem("p:showPr", "", _outStream);;
+        m_showPr->toXmlElem("showPr", "", _outStream);;
     }
     
     if (m_has_a_clrMru)
     {
-        m_a_clrMru->toXmlElem("p:clrMru", "", _outStream);;
+        m_a_clrMru->toXmlElem("a:clrMru", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
-    _outStream << "</p:presentationPr>";
+    _outStream << "</presentationPr>";
     }
 
     const presentationPr_element& presentationPr_element::default_instance()
@@ -34688,6 +35217,7 @@ return *m_cx_attr;
     return *presentationPr_element::default_instance_;
     }
 
+presentationPr_element* presentationPr_element::default_instance_ = NULL;
 
     // sld_element
     bool sld_element::has_cSld() const
@@ -34820,56 +35350,11 @@ return *m_cx_attr;
     
     m_has_show_attr = false;
     m_show_attr = false;
-    
-    m_has_cSld = false;
-    
-    if (m_cSld)
-    {
-        delete m_cSld;
-        m_cSld = NULL;
-    }
-    
-    
-    m_has_a_clrMapOvr = false;
-    
-    if (m_a_clrMapOvr)
-    {
-        delete m_a_clrMapOvr;
-        m_a_clrMapOvr = NULL;
-    }
-    
-    
-    m_has_transition = false;
-    
-    if (m_transition)
-    {
-        delete m_transition;
-        m_transition = NULL;
-    }
-    
-    
-    m_has_timing = false;
-    
-    if (m_timing)
-    {
-        delete m_timing;
-        m_timing = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void sld_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:sld";
+    _outStream << "<sld";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -34898,30 +35383,30 @@ return *m_cx_attr;
     
     if (m_has_cSld)
     {
-        m_cSld->toXmlElem("p:cSld", "", _outStream);;
+        m_cSld->toXmlElem("cSld", "", _outStream);;
     }
     
     if (m_has_a_clrMapOvr)
     {
-        m_a_clrMapOvr->toXmlElem("p:clrMapOvr", "", _outStream);;
+        m_a_clrMapOvr->toXmlElem("a:clrMapOvr", "", _outStream);;
     }
     
     if (m_has_transition)
     {
-        m_transition->toXmlElem("p:transition", "", _outStream);;
+        m_transition->toXmlElem("transition", "", _outStream);;
     }
     
     if (m_has_timing)
     {
-        m_timing->toXmlElem("p:timing", "", _outStream);;
+        m_timing->toXmlElem("timing", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
-    _outStream << "</p:sld>";
+    _outStream << "</sld>";
     }
 
     const sld_element& sld_element::default_instance()
@@ -34981,6 +35466,7 @@ return *m_cx_attr;
     return m_show_attr;
     }
 
+sld_element* sld_element::default_instance_ = NULL;
 
     // sldLayout_element
     bool sldLayout_element::has_cSld() const
@@ -35152,65 +35638,11 @@ return *m_cx_attr;
     
     m_has_userDrawn_attr = false;
     m_userDrawn_attr = false;
-    
-    m_has_cSld = false;
-    
-    if (m_cSld)
-    {
-        delete m_cSld;
-        m_cSld = NULL;
-    }
-    
-    
-    m_has_a_clrMapOvr = false;
-    
-    if (m_a_clrMapOvr)
-    {
-        delete m_a_clrMapOvr;
-        m_a_clrMapOvr = NULL;
-    }
-    
-    
-    m_has_transition = false;
-    
-    if (m_transition)
-    {
-        delete m_transition;
-        m_transition = NULL;
-    }
-    
-    
-    m_has_timing = false;
-    
-    if (m_timing)
-    {
-        delete m_timing;
-        m_timing = NULL;
-    }
-    
-    
-    m_has_hf = false;
-    
-    if (m_hf)
-    {
-        delete m_hf;
-        m_hf = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void sldLayout_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:sldLayout";
+    _outStream << "<sldLayout";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -35257,35 +35689,35 @@ return *m_cx_attr;
     
     if (m_has_cSld)
     {
-        m_cSld->toXmlElem("p:cSld", "", _outStream);;
+        m_cSld->toXmlElem("cSld", "", _outStream);;
     }
     
     if (m_has_a_clrMapOvr)
     {
-        m_a_clrMapOvr->toXmlElem("p:clrMapOvr", "", _outStream);;
+        m_a_clrMapOvr->toXmlElem("a:clrMapOvr", "", _outStream);;
     }
     
     if (m_has_transition)
     {
-        m_transition->toXmlElem("p:transition", "", _outStream);;
+        m_transition->toXmlElem("transition", "", _outStream);;
     }
     
     if (m_has_timing)
     {
-        m_timing->toXmlElem("p:timing", "", _outStream);;
+        m_timing->toXmlElem("timing", "", _outStream);;
     }
     
     if (m_has_hf)
     {
-        m_hf->toXmlElem("p:hf", "", _outStream);;
+        m_hf->toXmlElem("hf", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
-    _outStream << "</p:sldLayout>";
+    _outStream << "</sldLayout>";
     }
 
     const sldLayout_element& sldLayout_element::default_instance()
@@ -35397,6 +35829,7 @@ return *m_cx_attr;
     return m_userDrawn_attr;
     }
 
+sldLayout_element* sldLayout_element::default_instance_ = NULL;
 
     // sldMaster_element
     bool sldMaster_element::has_cSld() const
@@ -35595,83 +36028,11 @@ return *m_cx_attr;
     {    
     m_has_preserve_attr = false;
     m_preserve_attr = false;
-    
-    m_has_cSld = false;
-    
-    if (m_cSld)
-    {
-        delete m_cSld;
-        m_cSld = NULL;
-    }
-    
-    
-    m_has_a_clrMap = false;
-    
-    if (m_a_clrMap)
-    {
-        delete m_a_clrMap;
-        m_a_clrMap = NULL;
-    }
-    
-    
-    m_has_sldLayoutIdLst = false;
-    
-    if (m_sldLayoutIdLst)
-    {
-        delete m_sldLayoutIdLst;
-        m_sldLayoutIdLst = NULL;
-    }
-    
-    
-    m_has_transition = false;
-    
-    if (m_transition)
-    {
-        delete m_transition;
-        m_transition = NULL;
-    }
-    
-    
-    m_has_timing = false;
-    
-    if (m_timing)
-    {
-        delete m_timing;
-        m_timing = NULL;
-    }
-    
-    
-    m_has_hf = false;
-    
-    if (m_hf)
-    {
-        delete m_hf;
-        m_hf = NULL;
-    }
-    
-    
-    m_has_txStyles = false;
-    
-    if (m_txStyles)
-    {
-        delete m_txStyles;
-        m_txStyles = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void sldMaster_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:sldMaster";
+    _outStream << "<sldMaster";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -35688,45 +36049,45 @@ return *m_cx_attr;
     
     if (m_has_cSld)
     {
-        m_cSld->toXmlElem("p:cSld", "", _outStream);;
+        m_cSld->toXmlElem("cSld", "", _outStream);;
     }
     
     if (m_has_a_clrMap)
     {
-        m_a_clrMap->toXmlElem("p:clrMap", "", _outStream);;
+        m_a_clrMap->toXmlElem("a:clrMap", "", _outStream);;
     }
     
     if (m_has_sldLayoutIdLst)
     {
-        m_sldLayoutIdLst->toXmlElem("p:sldLayoutIdLst", "", _outStream);;
+        m_sldLayoutIdLst->toXmlElem("sldLayoutIdLst", "", _outStream);;
     }
     
     if (m_has_transition)
     {
-        m_transition->toXmlElem("p:transition", "", _outStream);;
+        m_transition->toXmlElem("transition", "", _outStream);;
     }
     
     if (m_has_timing)
     {
-        m_timing->toXmlElem("p:timing", "", _outStream);;
+        m_timing->toXmlElem("timing", "", _outStream);;
     }
     
     if (m_has_hf)
     {
-        m_hf->toXmlElem("p:hf", "", _outStream);;
+        m_hf->toXmlElem("hf", "", _outStream);;
     }
     
     if (m_has_txStyles)
     {
-        m_txStyles->toXmlElem("p:txStyles", "", _outStream);;
+        m_txStyles->toXmlElem("txStyles", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
-    _outStream << "</p:sldMaster>";
+    _outStream << "</sldMaster>";
     }
 
     const sldMaster_element& sldMaster_element::default_instance()
@@ -35754,6 +36115,7 @@ return *m_cx_attr;
     return m_preserve_attr;
     }
 
+sldMaster_element* sldMaster_element::default_instance_ = NULL;
 
     // handoutMaster_element
     bool handoutMaster_element::has_cSld() const
@@ -35853,47 +36215,11 @@ return *m_cx_attr;
     }
 
     void handoutMaster_element::clear()
-    {    
-    m_has_cSld = false;
-    
-    if (m_cSld)
-    {
-        delete m_cSld;
-        m_cSld = NULL;
-    }
-    
-    
-    m_has_a_clrMap = false;
-    
-    if (m_a_clrMap)
-    {
-        delete m_a_clrMap;
-        m_a_clrMap = NULL;
-    }
-    
-    
-    m_has_hf = false;
-    
-    if (m_hf)
-    {
-        delete m_hf;
-        m_hf = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void handoutMaster_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:handoutMaster";
+    _outStream << "<handoutMaster";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -35905,25 +36231,25 @@ return *m_cx_attr;
     
     if (m_has_cSld)
     {
-        m_cSld->toXmlElem("p:cSld", "", _outStream);;
+        m_cSld->toXmlElem("cSld", "", _outStream);;
     }
     
     if (m_has_a_clrMap)
     {
-        m_a_clrMap->toXmlElem("p:clrMap", "", _outStream);;
+        m_a_clrMap->toXmlElem("a:clrMap", "", _outStream);;
     }
     
     if (m_has_hf)
     {
-        m_hf->toXmlElem("p:hf", "", _outStream);;
+        m_hf->toXmlElem("hf", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
-    _outStream << "</p:handoutMaster>";
+    _outStream << "</handoutMaster>";
     }
 
     const handoutMaster_element& handoutMaster_element::default_instance()
@@ -35935,6 +36261,7 @@ return *m_cx_attr;
     return *handoutMaster_element::default_instance_;
     }
 
+handoutMaster_element* handoutMaster_element::default_instance_ = NULL;
 
     // notesMaster_element
     bool notesMaster_element::has_cSld() const
@@ -36058,56 +36385,11 @@ return *m_cx_attr;
     }
 
     void notesMaster_element::clear()
-    {    
-    m_has_cSld = false;
-    
-    if (m_cSld)
-    {
-        delete m_cSld;
-        m_cSld = NULL;
-    }
-    
-    
-    m_has_a_clrMap = false;
-    
-    if (m_a_clrMap)
-    {
-        delete m_a_clrMap;
-        m_a_clrMap = NULL;
-    }
-    
-    
-    m_has_hf = false;
-    
-    if (m_hf)
-    {
-        delete m_hf;
-        m_hf = NULL;
-    }
-    
-    
-    m_has_a_notesStyle = false;
-    
-    if (m_a_notesStyle)
-    {
-        delete m_a_notesStyle;
-        m_a_notesStyle = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
-    }
+    {    }
 
     void notesMaster_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:notesMaster";
+    _outStream << "<notesMaster";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -36119,30 +36401,30 @@ return *m_cx_attr;
     
     if (m_has_cSld)
     {
-        m_cSld->toXmlElem("p:cSld", "", _outStream);;
+        m_cSld->toXmlElem("cSld", "", _outStream);;
     }
     
     if (m_has_a_clrMap)
     {
-        m_a_clrMap->toXmlElem("p:clrMap", "", _outStream);;
+        m_a_clrMap->toXmlElem("a:clrMap", "", _outStream);;
     }
     
     if (m_has_hf)
     {
-        m_hf->toXmlElem("p:hf", "", _outStream);;
+        m_hf->toXmlElem("hf", "", _outStream);;
     }
     
     if (m_has_a_notesStyle)
     {
-        m_a_notesStyle->toXmlElem("p:notesStyle", "", _outStream);;
+        m_a_notesStyle->toXmlElem("a:notesStyle", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
-    _outStream << "</p:notesMaster>";
+    _outStream << "</notesMaster>";
     }
 
     const notesMaster_element& notesMaster_element::default_instance()
@@ -36154,6 +36436,7 @@ return *m_cx_attr;
     return *notesMaster_element::default_instance_;
     }
 
+notesMaster_element* notesMaster_element::default_instance_ = NULL;
 
     // notes_element
     bool notes_element::has_cSld() const
@@ -36235,38 +36518,11 @@ return *m_cx_attr;
     
     m_has_showMasterPhAnim_attr = false;
     m_showMasterPhAnim_attr = false;
-    
-    m_has_cSld = false;
-    
-    if (m_cSld)
-    {
-        delete m_cSld;
-        m_cSld = NULL;
-    }
-    
-    
-    m_has_a_clrMapOvr = false;
-    
-    if (m_a_clrMapOvr)
-    {
-        delete m_a_clrMapOvr;
-        m_a_clrMapOvr = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void notes_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:notes";
+    _outStream << "<notes";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -36289,20 +36545,20 @@ return *m_cx_attr;
     
     if (m_has_cSld)
     {
-        m_cSld->toXmlElem("p:cSld", "", _outStream);;
+        m_cSld->toXmlElem("cSld", "", _outStream);;
     }
     
     if (m_has_a_clrMapOvr)
     {
-        m_a_clrMapOvr->toXmlElem("p:clrMapOvr", "", _outStream);;
+        m_a_clrMapOvr->toXmlElem("a:clrMapOvr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
-    _outStream << "</p:notes>";
+    _outStream << "</notes>";
     }
 
     const notes_element& notes_element::default_instance()
@@ -36346,6 +36602,7 @@ return *m_cx_attr;
     return m_showMasterPhAnim_attr;
     }
 
+notes_element* notes_element::default_instance_ = NULL;
 
     // sldSyncPr_element
     bool sldSyncPr_element::has_extLst() const
@@ -36382,20 +36639,11 @@ return *m_cx_attr;
     
     m_has_clientInsertedTime_attr = false;
     m_clientInsertedTime_attr.clear();
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void sldSyncPr_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:sldSyncPr";
+    _outStream << "<sldSyncPr";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -36424,10 +36672,10 @@ return *m_cx_attr;
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
-    _outStream << "</p:sldSyncPr>";
+    _outStream << "</sldSyncPr>";
     }
 
     const sldSyncPr_element& sldSyncPr_element::default_instance()
@@ -36487,6 +36735,7 @@ return *m_cx_attr;
     return m_clientInsertedTime_attr;
     }
 
+sldSyncPr_element* sldSyncPr_element::default_instance_ = NULL;
 
     // tagLst_element
     CT_StringTag* tagLst_element::add_tag()
@@ -36511,7 +36760,7 @@ return *m_cx_attr;
 
     void tagLst_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:tagLst";
+    _outStream << "<tagLst";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -36527,12 +36776,12 @@ return *m_cx_attr;
         {
             if ((*iter)->has_tag())
             {
-                (*iter)->get_tag().toXmlElem("p:tag", "", _outStream);
+                (*iter)->get_tag().toXmlElem("tag", "", _outStream);
             }
         }
     }
     
-    _outStream << "</p:tagLst>";
+    _outStream << "</tagLst>";
     }
 
     const tagLst_element& tagLst_element::default_instance()
@@ -36544,6 +36793,34 @@ return *m_cx_attr;
     return *tagLst_element::default_instance_;
     }
 
+
+    // tagLst_element::ChildGroup_1
+    bool tagLst_element::ChildGroup_1::has_tag() const
+    {    
+    return m_has_tag;
+    }
+
+    CT_StringTag* tagLst_element::ChildGroup_1::mutable_tag()
+    {    
+    
+    m_has_tag = true;
+    if (!m_tag)
+    {
+        m_tag = new CT_StringTag();
+    }
+    return m_tag;
+    }
+
+    const CT_StringTag& tagLst_element::ChildGroup_1::get_tag() const
+    {    
+    if (m_tag)
+    {
+        return *m_tag;
+    }
+    return CT_StringTag::default_instance();
+    }
+
+tagLst_element* tagLst_element::default_instance_ = NULL;
 
     // viewPr_element
     bool viewPr_element::has_normalViewPr() const
@@ -36751,83 +37028,11 @@ return *m_cx_attr;
     
     m_has_showComments_attr = false;
     m_showComments_attr = false;
-    
-    m_has_normalViewPr = false;
-    
-    if (m_normalViewPr)
-    {
-        delete m_normalViewPr;
-        m_normalViewPr = NULL;
-    }
-    
-    
-    m_has_slideViewPr = false;
-    
-    if (m_slideViewPr)
-    {
-        delete m_slideViewPr;
-        m_slideViewPr = NULL;
-    }
-    
-    
-    m_has_outlineViewPr = false;
-    
-    if (m_outlineViewPr)
-    {
-        delete m_outlineViewPr;
-        m_outlineViewPr = NULL;
-    }
-    
-    
-    m_has_notesTextViewPr = false;
-    
-    if (m_notesTextViewPr)
-    {
-        delete m_notesTextViewPr;
-        m_notesTextViewPr = NULL;
-    }
-    
-    
-    m_has_sorterViewPr = false;
-    
-    if (m_sorterViewPr)
-    {
-        delete m_sorterViewPr;
-        m_sorterViewPr = NULL;
-    }
-    
-    
-    m_has_notesViewPr = false;
-    
-    if (m_notesViewPr)
-    {
-        delete m_notesViewPr;
-        m_notesViewPr = NULL;
-    }
-    
-    
-    m_has_a_gridSpacing = false;
-    
-    if (m_a_gridSpacing)
-    {
-        delete m_a_gridSpacing;
-        m_a_gridSpacing = NULL;
-    }
-    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    
     }
 
     void viewPr_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<p:viewPr";
+    _outStream << "<viewPr";
     
     _outStream << " " << "xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -36850,45 +37055,45 @@ return *m_cx_attr;
     
     if (m_has_normalViewPr)
     {
-        m_normalViewPr->toXmlElem("p:normalViewPr", "", _outStream);;
+        m_normalViewPr->toXmlElem("normalViewPr", "", _outStream);;
     }
     
     if (m_has_slideViewPr)
     {
-        m_slideViewPr->toXmlElem("p:slideViewPr", "", _outStream);;
+        m_slideViewPr->toXmlElem("slideViewPr", "", _outStream);;
     }
     
     if (m_has_outlineViewPr)
     {
-        m_outlineViewPr->toXmlElem("p:outlineViewPr", "", _outStream);;
+        m_outlineViewPr->toXmlElem("outlineViewPr", "", _outStream);;
     }
     
     if (m_has_notesTextViewPr)
     {
-        m_notesTextViewPr->toXmlElem("p:notesTextViewPr", "", _outStream);;
+        m_notesTextViewPr->toXmlElem("notesTextViewPr", "", _outStream);;
     }
     
     if (m_has_sorterViewPr)
     {
-        m_sorterViewPr->toXmlElem("p:sorterViewPr", "", _outStream);;
+        m_sorterViewPr->toXmlElem("sorterViewPr", "", _outStream);;
     }
     
     if (m_has_notesViewPr)
     {
-        m_notesViewPr->toXmlElem("p:notesViewPr", "", _outStream);;
+        m_notesViewPr->toXmlElem("notesViewPr", "", _outStream);;
     }
     
     if (m_has_a_gridSpacing)
     {
-        m_a_gridSpacing->toXmlElem("p:gridSpacing", "", _outStream);;
+        m_a_gridSpacing->toXmlElem("a:gridSpacing", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("p:extLst", "", _outStream);;
+        m_extLst->toXmlElem("extLst", "", _outStream);;
     }
     
-    _outStream << "</p:viewPr>";
+    _outStream << "</viewPr>";
     }
 
     const viewPr_element& viewPr_element::default_instance()
@@ -36936,4 +37141,5 @@ return *m_cx_attr;
     return m_showComments_attr;
     }
 
+viewPr_element* viewPr_element::default_instance_ = NULL;
 }
