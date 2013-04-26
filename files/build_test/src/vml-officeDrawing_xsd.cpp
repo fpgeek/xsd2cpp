@@ -1779,6 +1779,96 @@ ST_FillType* ST_FillType::default_instance_ = NULL;
         m_allowincell_attr = NULL;
     }
     
+    
+    m_has_v_fill = false;
+    
+    if (m_v_fill)
+    {
+        delete m_v_fill;
+        m_v_fill = NULL;
+    }
+    
+    
+    m_has_v_stroke = false;
+    
+    if (m_v_stroke)
+    {
+        delete m_v_stroke;
+        m_v_stroke = NULL;
+    }
+    
+    
+    m_has_v_textbox = false;
+    
+    if (m_v_textbox)
+    {
+        delete m_v_textbox;
+        m_v_textbox = NULL;
+    }
+    
+    
+    m_has_v_shadow = false;
+    
+    if (m_v_shadow)
+    {
+        delete m_v_shadow;
+        m_v_shadow = NULL;
+    }
+    
+    
+    m_has_skew = false;
+    
+    if (m_skew)
+    {
+        delete m_skew;
+        m_skew = NULL;
+    }
+    
+    
+    m_has_extrusion = false;
+    
+    if (m_extrusion)
+    {
+        delete m_extrusion;
+        m_extrusion = NULL;
+    }
+    
+    
+    m_has_callout = false;
+    
+    if (m_callout)
+    {
+        delete m_callout;
+        m_callout = NULL;
+    }
+    
+    
+    m_has_lock = false;
+    
+    if (m_lock)
+    {
+        delete m_lock;
+        m_lock = NULL;
+    }
+    
+    
+    m_has_colormru = false;
+    
+    if (m_colormru)
+    {
+        delete m_colormru;
+        m_colormru = NULL;
+    }
+    
+    
+    m_has_colormenu = false;
+    
+    if (m_colormenu)
+    {
+        delete m_colormenu;
+        m_colormenu = NULL;
+    }
+    
     }
 
     void CT_ShapeDefaults::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -2740,6 +2830,33 @@ CT_SignatureLine* CT_SignatureLine::default_instance_ = NULL;
     {
         delete m_v_ext_attr;
         m_v_ext_attr = NULL;
+    }
+    
+    
+    m_has_idmap = false;
+    
+    if (m_idmap)
+    {
+        delete m_idmap;
+        m_idmap = NULL;
+    }
+    
+    
+    m_has_regrouptable = false;
+    
+    if (m_regrouptable)
+    {
+        delete m_regrouptable;
+        m_regrouptable = NULL;
+    }
+    
+    
+    m_has_rules = false;
+    
+    if (m_rules)
+    {
+        delete m_rules;
+        m_rules = NULL;
     }
     
     }
@@ -3749,6 +3866,15 @@ CT_Proxy* CT_Proxy::default_instance_ = NULL;
     
     m_has_dgmbasetextscale_attr = false;
     m_dgmbasetextscale_attr = 0;
+    
+    m_has_relationtable = false;
+    
+    if (m_relationtable)
+    {
+        delete m_relationtable;
+        m_relationtable = NULL;
+    }
+    
     }
 
     void CT_Diagram::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -7094,6 +7220,27 @@ CT_Lock* CT_Lock::default_instance_ = NULL;
         m_UpdateMode_attr = NULL;
     }
     
+    
+    m_has_LinkType = false;
+    
+    if (m_LinkType)
+    {
+        delete m_LinkType;
+        m_LinkType = NULL;
+    }
+    
+    
+    m_has_LockedField = false;
+    
+    if (m_LockedField)
+    {
+        delete m_LockedField;
+        m_LockedField = NULL;
+    }
+    
+    
+    m_has_FieldCodes = false;
+    m_FieldCodes.clear();
     }
 
     void CT_OLEObject::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -8832,6 +8979,96 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
         m_allowincell_attr = NULL;
     }
     
+    
+    m_has_v_fill = false;
+    
+    if (m_v_fill)
+    {
+        delete m_v_fill;
+        m_v_fill = NULL;
+    }
+    
+    
+    m_has_v_stroke = false;
+    
+    if (m_v_stroke)
+    {
+        delete m_v_stroke;
+        m_v_stroke = NULL;
+    }
+    
+    
+    m_has_v_textbox = false;
+    
+    if (m_v_textbox)
+    {
+        delete m_v_textbox;
+        m_v_textbox = NULL;
+    }
+    
+    
+    m_has_v_shadow = false;
+    
+    if (m_v_shadow)
+    {
+        delete m_v_shadow;
+        m_v_shadow = NULL;
+    }
+    
+    
+    m_has_skew = false;
+    
+    if (m_skew)
+    {
+        delete m_skew;
+        m_skew = NULL;
+    }
+    
+    
+    m_has_extrusion = false;
+    
+    if (m_extrusion)
+    {
+        delete m_extrusion;
+        m_extrusion = NULL;
+    }
+    
+    
+    m_has_callout = false;
+    
+    if (m_callout)
+    {
+        delete m_callout;
+        m_callout = NULL;
+    }
+    
+    
+    m_has_lock = false;
+    
+    if (m_lock)
+    {
+        delete m_lock;
+        m_lock = NULL;
+    }
+    
+    
+    m_has_colormru = false;
+    
+    if (m_colormru)
+    {
+        delete m_colormru;
+        m_colormru = NULL;
+    }
+    
+    
+    m_has_colormenu = false;
+    
+    if (m_colormenu)
+    {
+        delete m_colormenu;
+        m_colormenu = NULL;
+    }
+    
     }
 
     void shapedefaults_element::toXml(std::ostream& _outStream) const
@@ -9203,6 +9440,33 @@ shapedefaults_element* shapedefaults_element::default_instance_ = NULL;
     {
         delete m_v_ext_attr;
         m_v_ext_attr = NULL;
+    }
+    
+    
+    m_has_idmap = false;
+    
+    if (m_idmap)
+    {
+        delete m_idmap;
+        m_idmap = NULL;
+    }
+    
+    
+    m_has_regrouptable = false;
+    
+    if (m_regrouptable)
+    {
+        delete m_regrouptable;
+        m_regrouptable = NULL;
+    }
+    
+    
+    m_has_rules = false;
+    
+    if (m_rules)
+    {
+        delete m_rules;
+        m_rules = NULL;
     }
     
     }
@@ -9970,6 +10234,15 @@ ink_element* ink_element::default_instance_ = NULL;
     
     m_has_dgmbasetextscale_attr = false;
     m_dgmbasetextscale_attr = 0;
+    
+    m_has_relationtable = false;
+    
+    if (m_relationtable)
+    {
+        delete m_relationtable;
+        m_relationtable = NULL;
+    }
+    
     }
 
     void diagram_element::toXml(std::ostream& _outStream) const
@@ -12715,6 +12988,27 @@ lock_element* lock_element::default_instance_ = NULL;
         m_UpdateMode_attr = NULL;
     }
     
+    
+    m_has_LinkType = false;
+    
+    if (m_LinkType)
+    {
+        delete m_LinkType;
+        m_LinkType = NULL;
+    }
+    
+    
+    m_has_LockedField = false;
+    
+    if (m_LockedField)
+    {
+        delete m_LockedField;
+        m_LockedField = NULL;
+    }
+    
+    
+    m_has_FieldCodes = false;
+    m_FieldCodes.clear();
     }
 
     void OLEObject_element::toXml(std::ostream& _outStream) const

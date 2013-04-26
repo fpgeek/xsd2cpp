@@ -6933,6 +6933,69 @@ CT_AutoFilter* CT_AutoFilter::default_instance_ = NULL;
     
     m_has_showButton_attr = false;
     m_showButton_attr = false;
+    
+    m_has_filters = false;
+    
+    if (m_filters)
+    {
+        delete m_filters;
+        m_filters = NULL;
+    }
+    
+    
+    m_has_top10 = false;
+    
+    if (m_top10)
+    {
+        delete m_top10;
+        m_top10 = NULL;
+    }
+    
+    
+    m_has_customFilters = false;
+    
+    if (m_customFilters)
+    {
+        delete m_customFilters;
+        m_customFilters = NULL;
+    }
+    
+    
+    m_has_dynamicFilter = false;
+    
+    if (m_dynamicFilter)
+    {
+        delete m_dynamicFilter;
+        m_dynamicFilter = NULL;
+    }
+    
+    
+    m_has_colorFilter = false;
+    
+    if (m_colorFilter)
+    {
+        delete m_colorFilter;
+        m_colorFilter = NULL;
+    }
+    
+    
+    m_has_iconFilter = false;
+    
+    if (m_iconFilter)
+    {
+        delete m_iconFilter;
+        m_iconFilter = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_FilterColumn::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -9088,6 +9151,24 @@ CT_Extension* CT_Extension::default_instance_ = NULL;
     
     m_has_sizeWithCells_attr = false;
     m_sizeWithCells_attr = false;
+    
+    m_has_xdr_from = false;
+    
+    if (m_xdr_from)
+    {
+        delete m_xdr_from;
+        m_xdr_from = NULL;
+    }
+    
+    
+    m_has_xdr_to = false;
+    
+    if (m_xdr_to)
+    {
+        delete m_xdr_to;
+        m_xdr_to = NULL;
+    }
+    
     }
 
     void CT_ObjectAnchor::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -9746,7 +9827,34 @@ CT_CalcCell* CT_CalcCell::default_instance_ = NULL;
     }
 
     void CT_Comments::clear()
-    {    }
+    {    
+    m_has_authors = false;
+    
+    if (m_authors)
+    {
+        delete m_authors;
+        m_authors = NULL;
+    }
+    
+    
+    m_has_commentList = false;
+    
+    if (m_commentList)
+    {
+        delete m_commentList;
+        m_commentList = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void CT_Comments::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -10072,6 +10180,24 @@ CT_CommentList* CT_CommentList::default_instance_ = NULL;
     
     m_has_shapeId_attr = false;
     m_shapeId_attr = 0;
+    
+    m_has_text = false;
+    
+    if (m_text)
+    {
+        delete m_text;
+        m_text = NULL;
+    }
+    
+    
+    m_has_commentPr = false;
+    
+    if (m_commentPr)
+    {
+        delete m_commentPr;
+        m_commentPr = NULL;
+    }
+    
     }
 
     void CT_Comment::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -10316,6 +10442,15 @@ CT_Comment* CT_Comment::default_instance_ = NULL;
     
     m_has_autoScale_attr = false;
     m_autoScale_attr = false;
+    
+    m_has_anchor = false;
+    
+    if (m_anchor)
+    {
+        delete m_anchor;
+        m_anchor = NULL;
+    }
+    
     }
 
     void CT_CommentPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -11031,6 +11166,15 @@ CT_Schema* CT_Schema::default_instance_ = NULL;
     
     m_has_PreserveFormat_attr = false;
     m_PreserveFormat_attr = false;
+    
+    m_has_DataBinding = false;
+    
+    if (m_DataBinding)
+    {
+        delete m_DataBinding;
+        m_DataBinding = NULL;
+    }
+    
     }
 
     void CT_Map::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -11832,6 +11976,60 @@ CT_Connections* CT_Connections::default_instance_ = NULL;
     {
         delete m_singleSignOnId_attr;
         m_singleSignOnId_attr = NULL;
+    }
+    
+    
+    m_has_dbPr = false;
+    
+    if (m_dbPr)
+    {
+        delete m_dbPr;
+        m_dbPr = NULL;
+    }
+    
+    
+    m_has_olapPr = false;
+    
+    if (m_olapPr)
+    {
+        delete m_olapPr;
+        m_olapPr = NULL;
+    }
+    
+    
+    m_has_webPr = false;
+    
+    if (m_webPr)
+    {
+        delete m_webPr;
+        m_webPr = NULL;
+    }
+    
+    
+    m_has_textPr = false;
+    
+    if (m_textPr)
+    {
+        delete m_textPr;
+        m_textPr = NULL;
+    }
+    
+    
+    m_has_parameters = false;
+    
+    if (m_parameters)
+    {
+        delete m_parameters;
+        m_parameters = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
     }
     
     }
@@ -12934,6 +13132,15 @@ CT_OlapPr* CT_OlapPr::default_instance_ = NULL;
     {
         delete m_editPage_attr;
         m_editPage_attr = NULL;
+    }
+    
+    
+    m_has_tables = false;
+    
+    if (m_tables)
+    {
+        delete m_tables;
+        m_tables = NULL;
     }
     
     }
@@ -14183,6 +14390,15 @@ CT_TableMissing* CT_TableMissing::default_instance_ = NULL;
         m_delimiter_attr = NULL;
     }
     
+    
+    m_has_textFields = false;
+    
+    if (m_textFields)
+    {
+        delete m_textFields;
+        m_textFields = NULL;
+    }
+    
     }
 
     void CT_TextPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -15210,6 +15426,105 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
     
     m_has_supportAdvancedDrill_attr = false;
     m_supportAdvancedDrill_attr = false;
+    
+    m_has_cacheSource = false;
+    
+    if (m_cacheSource)
+    {
+        delete m_cacheSource;
+        m_cacheSource = NULL;
+    }
+    
+    
+    m_has_cacheFields = false;
+    
+    if (m_cacheFields)
+    {
+        delete m_cacheFields;
+        m_cacheFields = NULL;
+    }
+    
+    
+    m_has_cacheHierarchies = false;
+    
+    if (m_cacheHierarchies)
+    {
+        delete m_cacheHierarchies;
+        m_cacheHierarchies = NULL;
+    }
+    
+    
+    m_has_kpis = false;
+    
+    if (m_kpis)
+    {
+        delete m_kpis;
+        m_kpis = NULL;
+    }
+    
+    
+    m_has_tupleCache = false;
+    
+    if (m_tupleCache)
+    {
+        delete m_tupleCache;
+        m_tupleCache = NULL;
+    }
+    
+    
+    m_has_calculatedItems = false;
+    
+    if (m_calculatedItems)
+    {
+        delete m_calculatedItems;
+        m_calculatedItems = NULL;
+    }
+    
+    
+    m_has_calculatedMembers = false;
+    
+    if (m_calculatedMembers)
+    {
+        delete m_calculatedMembers;
+        m_calculatedMembers = NULL;
+    }
+    
+    
+    m_has_dimensions = false;
+    
+    if (m_dimensions)
+    {
+        delete m_dimensions;
+        m_dimensions = NULL;
+    }
+    
+    
+    m_has_measureGroups = false;
+    
+    if (m_measureGroups)
+    {
+        delete m_measureGroups;
+        m_measureGroups = NULL;
+    }
+    
+    
+    m_has_maps = false;
+    
+    if (m_maps)
+    {
+        delete m_maps;
+        m_maps = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_PivotCacheDefinition::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -16629,6 +16944,33 @@ CT_CacheField* CT_CacheField::default_instance_ = NULL;
     
     m_has_connectionId_attr = false;
     m_connectionId_attr = 0;
+    
+    m_has_worksheetSource = false;
+    
+    if (m_worksheetSource)
+    {
+        delete m_worksheetSource;
+        m_worksheetSource = NULL;
+    }
+    
+    
+    m_has_consolidation = false;
+    
+    if (m_consolidation)
+    {
+        delete m_consolidation;
+        m_consolidation = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_CacheSource::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -16965,6 +17307,24 @@ CT_WorksheetSource* CT_WorksheetSource::default_instance_ = NULL;
     {    
     m_has_autoPage_attr = false;
     m_autoPage_attr = false;
+    
+    m_has_pages = false;
+    
+    if (m_pages)
+    {
+        delete m_pages;
+        m_pages = NULL;
+    }
+    
+    
+    m_has_rangeSets = false;
+    
+    if (m_rangeSets)
+    {
+        delete m_rangeSets;
+        m_rangeSets = NULL;
+    }
+    
     }
 
     void CT_Consolidation::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -21254,6 +21614,33 @@ CT_DateTime* CT_DateTime::default_instance_ = NULL;
     
     m_has_base_attr = false;
     m_base_attr = 0;
+    
+    m_has_rangePr = false;
+    
+    if (m_rangePr)
+    {
+        delete m_rangePr;
+        m_rangePr = NULL;
+    }
+    
+    
+    m_has_discretePr = false;
+    
+    if (m_discretePr)
+    {
+        delete m_discretePr;
+        m_discretePr = NULL;
+    }
+    
+    
+    m_has_groupItems = false;
+    
+    if (m_groupItems)
+    {
+        delete m_groupItems;
+        m_groupItems = NULL;
+    }
+    
     }
 
     void CT_FieldGroup::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -24119,6 +24506,33 @@ CT_CacheHierarchies* CT_CacheHierarchies::default_instance_ = NULL;
     
     m_has_hidden_attr = false;
     m_hidden_attr = false;
+    
+    m_has_fieldsUsage = false;
+    
+    if (m_fieldsUsage)
+    {
+        delete m_fieldsUsage;
+        m_fieldsUsage = NULL;
+    }
+    
+    
+    m_has_groupLevels = false;
+    
+    if (m_groupLevels)
+    {
+        delete m_groupLevels;
+        m_groupLevels = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_CacheHierarchy::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -25071,6 +25485,24 @@ CT_GroupLevels* CT_GroupLevels::default_instance_ = NULL;
     
     m_has_customRollUp_attr = false;
     m_customRollUp_attr = false;
+    
+    m_has_groups = false;
+    
+    if (m_groups)
+    {
+        delete m_groups;
+        m_groups = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_GroupLevel::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -25407,6 +25839,15 @@ CT_Groups* CT_Groups::default_instance_ = NULL;
     
     m_has_id_attr = false;
     m_id_attr = 0;
+    
+    m_has_groupMembers = false;
+    
+    if (m_groupMembers)
+    {
+        delete m_groupMembers;
+        m_groupMembers = NULL;
+    }
+    
     }
 
     void CT_LevelGroup::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -25921,7 +26362,52 @@ CT_GroupMember* CT_GroupMember::default_instance_ = NULL;
     }
 
     void CT_TupleCache::clear()
-    {    }
+    {    
+    m_has_entries = false;
+    
+    if (m_entries)
+    {
+        delete m_entries;
+        m_entries = NULL;
+    }
+    
+    
+    m_has_sets = false;
+    
+    if (m_sets)
+    {
+        delete m_sets;
+        m_sets = NULL;
+    }
+    
+    
+    m_has_queryCache = false;
+    
+    if (m_queryCache)
+    {
+        delete m_queryCache;
+        m_queryCache = NULL;
+    }
+    
+    
+    m_has_serverFormats = false;
+    
+    if (m_serverFormats)
+    {
+        delete m_serverFormats;
+        m_serverFormats = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void CT_TupleCache::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -27377,6 +27863,15 @@ CT_QueryCache* CT_QueryCache::default_instance_ = NULL;
         m_mdx_attr = NULL;
     }
     
+    
+    m_has_tpls = false;
+    
+    if (m_tpls)
+    {
+        delete m_tpls;
+        m_tpls = NULL;
+    }
+    
     }
 
     void CT_Query::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -27629,6 +28124,24 @@ CT_CalculatedItems* CT_CalculatedItems::default_instance_ = NULL;
     {
         delete m_formula_attr;
         m_formula_attr = NULL;
+    }
+    
+    
+    m_has_pivotArea = false;
+    
+    if (m_pivotArea)
+    {
+        delete m_pivotArea;
+        m_pivotArea = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
     }
     
     }
@@ -27935,6 +28448,15 @@ CT_CalculatedMembers* CT_CalculatedMembers::default_instance_ = NULL;
     
     m_has_set_attr = false;
     m_set_attr = false;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_CalculatedMember::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -28996,6 +29518,159 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
     
     m_has_customListSort_attr = false;
     m_customListSort_attr = false;
+    
+    m_has_location = false;
+    
+    if (m_location)
+    {
+        delete m_location;
+        m_location = NULL;
+    }
+    
+    
+    m_has_pivotFields = false;
+    
+    if (m_pivotFields)
+    {
+        delete m_pivotFields;
+        m_pivotFields = NULL;
+    }
+    
+    
+    m_has_rowFields = false;
+    
+    if (m_rowFields)
+    {
+        delete m_rowFields;
+        m_rowFields = NULL;
+    }
+    
+    
+    m_has_rowItems = false;
+    
+    if (m_rowItems)
+    {
+        delete m_rowItems;
+        m_rowItems = NULL;
+    }
+    
+    
+    m_has_colFields = false;
+    
+    if (m_colFields)
+    {
+        delete m_colFields;
+        m_colFields = NULL;
+    }
+    
+    
+    m_has_colItems = false;
+    
+    if (m_colItems)
+    {
+        delete m_colItems;
+        m_colItems = NULL;
+    }
+    
+    
+    m_has_pageFields = false;
+    
+    if (m_pageFields)
+    {
+        delete m_pageFields;
+        m_pageFields = NULL;
+    }
+    
+    
+    m_has_dataFields = false;
+    
+    if (m_dataFields)
+    {
+        delete m_dataFields;
+        m_dataFields = NULL;
+    }
+    
+    
+    m_has_formats = false;
+    
+    if (m_formats)
+    {
+        delete m_formats;
+        m_formats = NULL;
+    }
+    
+    
+    m_has_conditionalFormats = false;
+    
+    if (m_conditionalFormats)
+    {
+        delete m_conditionalFormats;
+        m_conditionalFormats = NULL;
+    }
+    
+    
+    m_has_chartFormats = false;
+    
+    if (m_chartFormats)
+    {
+        delete m_chartFormats;
+        m_chartFormats = NULL;
+    }
+    
+    
+    m_has_pivotHierarchies = false;
+    
+    if (m_pivotHierarchies)
+    {
+        delete m_pivotHierarchies;
+        m_pivotHierarchies = NULL;
+    }
+    
+    
+    m_has_pivotTableStyleInfo = false;
+    
+    if (m_pivotTableStyleInfo)
+    {
+        delete m_pivotTableStyleInfo;
+        m_pivotTableStyleInfo = NULL;
+    }
+    
+    
+    m_has_filters = false;
+    
+    if (m_filters)
+    {
+        delete m_filters;
+        m_filters = NULL;
+    }
+    
+    
+    m_has_rowHierarchiesUsage = false;
+    
+    if (m_rowHierarchiesUsage)
+    {
+        delete m_rowHierarchiesUsage;
+        m_rowHierarchiesUsage = NULL;
+    }
+    
+    
+    m_has_colHierarchiesUsage = false;
+    
+    if (m_colHierarchiesUsage)
+    {
+        delete m_colHierarchiesUsage;
+        m_colHierarchiesUsage = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_pivotTableDefinition::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -31336,6 +32011,33 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
     
     m_has_defaultAttributeDrillState_attr = false;
     m_defaultAttributeDrillState_attr = false;
+    
+    m_has_items = false;
+    
+    if (m_items)
+    {
+        delete m_items;
+        m_items = NULL;
+    }
+    
+    
+    m_has_autoSortScope = false;
+    
+    if (m_autoSortScope)
+    {
+        delete m_autoSortScope;
+        m_autoSortScope = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_PivotField::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -32491,7 +33193,16 @@ CT_PivotField* CT_PivotField::default_instance_ = NULL;
     }
 
     void CT_AutoSortScope::clear()
-    {    }
+    {    
+    m_has_pivotArea = false;
+    
+    if (m_pivotArea)
+    {
+        delete m_pivotArea;
+        m_pivotArea = NULL;
+    }
+    
+    }
 
     void CT_AutoSortScope::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -33187,6 +33898,15 @@ CT_PageFields* CT_PageFields::default_instance_ = NULL;
         m_cap_attr = NULL;
     }
     
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_PageField::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -33548,6 +34268,15 @@ CT_DataFields* CT_DataFields::default_instance_ = NULL;
     {
         delete m_numFmtId_attr;
         m_numFmtId_attr = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
     }
     
     }
@@ -34745,6 +35474,24 @@ CT_Formats* CT_Formats::default_instance_ = NULL;
         m_dxfId_attr = NULL;
     }
     
+    
+    m_has_pivotArea = false;
+    
+    if (m_pivotArea)
+    {
+        delete m_pivotArea;
+        m_pivotArea = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Format::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -35041,6 +35788,24 @@ CT_ConditionalFormats* CT_ConditionalFormats::default_instance_ = NULL;
     
     m_has_priority_attr = false;
     m_priority_attr = 0;
+    
+    m_has_pivotAreas = false;
+    
+    if (m_pivotAreas)
+    {
+        delete m_pivotAreas;
+        m_pivotAreas = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_ConditionalFormat::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -35442,6 +36207,15 @@ CT_ChartFormats* CT_ChartFormats::default_instance_ = NULL;
     
     m_has_series_attr = false;
     m_series_attr = false;
+    
+    m_has_pivotArea = false;
+    
+    if (m_pivotArea)
+    {
+        delete m_pivotArea;
+        m_pivotArea = NULL;
+    }
+    
     }
 
     void CT_ChartFormat::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -38281,6 +39055,24 @@ CT_PivotFilters* CT_PivotFilters::default_instance_ = NULL;
         m_stringValue2_attr = NULL;
     }
     
+    
+    m_has_autoFilter = false;
+    
+    if (m_autoFilter)
+    {
+        delete m_autoFilter;
+        m_autoFilter = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_PivotFilter::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -38717,6 +39509,24 @@ CT_PivotFilter* CT_PivotFilter::default_instance_ = NULL;
     
     m_has_fieldPosition_attr = false;
     m_fieldPosition_attr = 0;
+    
+    m_has_references = false;
+    
+    if (m_references)
+    {
+        delete m_references;
+        m_references = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_PivotArea::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -40003,6 +40813,24 @@ CT_Index* CT_Index::default_instance_ = NULL;
     
     m_has_applyWidthHeightFormats_attr = false;
     m_applyWidthHeightFormats_attr = false;
+    
+    m_has_queryTableRefresh = false;
+    
+    if (m_queryTableRefresh)
+    {
+        delete m_queryTableRefresh;
+        m_queryTableRefresh = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_QueryTable::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -40678,6 +41506,42 @@ CT_QueryTable* CT_QueryTable::default_instance_ = NULL;
     
     m_has_unboundColumnsRight_attr = false;
     m_unboundColumnsRight_attr = 0;
+    
+    m_has_queryTableFields = false;
+    
+    if (m_queryTableFields)
+    {
+        delete m_queryTableFields;
+        m_queryTableFields = NULL;
+    }
+    
+    
+    m_has_queryTableDeletedFields = false;
+    
+    if (m_queryTableDeletedFields)
+    {
+        delete m_queryTableDeletedFields;
+        m_queryTableDeletedFields = NULL;
+    }
+    
+    
+    m_has_sortState = false;
+    
+    if (m_sortState)
+    {
+        delete m_sortState;
+        m_sortState = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_QueryTableRefresh::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -41266,6 +42130,15 @@ CT_QueryTableFields* CT_QueryTableFields::default_instance_ = NULL;
     
     m_has_tableColumnId_attr = false;
     m_tableColumnId_attr = 0;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_QueryTableField::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -41704,6 +42577,15 @@ CT_Sst* CT_Sst::default_instance_ = NULL;
     
     m_has_eb_attr = false;
     m_eb_attr = 0;
+    
+    m_has_t = false;
+    
+    if (m_t)
+    {
+        delete m_t;
+        m_t = NULL;
+    }
+    
     }
 
     void CT_PhoneticRun::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -41839,7 +42721,25 @@ CT_PhoneticRun* CT_PhoneticRun::default_instance_ = NULL;
     }
 
     void CT_RElt::clear()
-    {    }
+    {    
+    m_has_rPr = false;
+    
+    if (m_rPr)
+    {
+        delete m_rPr;
+        m_rPr = NULL;
+    }
+    
+    
+    m_has_t = false;
+    
+    if (m_t)
+    {
+        delete m_t;
+        m_t = NULL;
+    }
+    
+    }
 
     void CT_RElt::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -47110,6 +48010,33 @@ CT_Revisions* CT_Revisions::default_instance_ = NULL;
     
     m_has_maxRId_attr = false;
     m_maxRId_attr = 0;
+    
+    m_has_sheetIdMap = false;
+    
+    if (m_sheetIdMap)
+    {
+        delete m_sheetIdMap;
+        m_sheetIdMap = NULL;
+    }
+    
+    
+    m_has_reviewedList = false;
+    
+    if (m_reviewedList)
+    {
+        delete m_reviewedList;
+        m_reviewedList = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_RevisionHeader::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -49133,6 +50060,15 @@ CT_RevisionCustomView* CT_RevisionCustomView::default_instance_ = NULL;
         m_newName_attr = NULL;
     }
     
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_RevisionSheetRename::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -49724,6 +50660,51 @@ CT_RevisionInsertSheet* CT_RevisionInsertSheet::default_instance_ = NULL;
     
     m_has_endOfListFormulaUpdate_attr = false;
     m_endOfListFormulaUpdate_attr = false;
+    
+    m_has_oc = false;
+    
+    if (m_oc)
+    {
+        delete m_oc;
+        m_oc = NULL;
+    }
+    
+    
+    m_has_nc = false;
+    
+    if (m_nc)
+    {
+        delete m_nc;
+        m_nc = NULL;
+    }
+    
+    
+    m_has_odxf = false;
+    
+    if (m_odxf)
+    {
+        delete m_odxf;
+        m_odxf = NULL;
+    }
+    
+    
+    m_has_ndxf = false;
+    
+    if (m_ndxf)
+    {
+        delete m_ndxf;
+        m_ndxf = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_RevisionCellChange::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -50183,6 +51164,24 @@ CT_RevisionCellChange* CT_RevisionCellChange::default_instance_ = NULL;
     
     m_has_length_attr = false;
     m_length_attr = 0;
+    
+    m_has_dxf = false;
+    
+    if (m_dxf)
+    {
+        delete m_dxf;
+        m_dxf = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_RevisionFormatting::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -51285,6 +52284,33 @@ CT_RevisionComment* CT_RevisionComment::default_instance_ = NULL;
         m_oldComment_attr = NULL;
     }
     
+    
+    m_has_formula = false;
+    
+    if (m_formula)
+    {
+        delete m_formula;
+        m_formula = NULL;
+    }
+    
+    
+    m_has_oldFormula = false;
+    
+    if (m_oldFormula)
+    {
+        delete m_oldFormula;
+        m_oldFormula = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_RevisionDefinedName::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -52352,6 +53378,15 @@ CT_Users* CT_Users::default_instance_ = NULL;
     
     m_has_dateTime_attr = false;
     m_dateTime_attr.clear();
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_SharedUser::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -58570,7 +59605,151 @@ CT_Macrosheet* CT_Macrosheet::default_instance_ = NULL;
     }
 
     void CT_Dialogsheet::clear()
-    {    }
+    {    
+    m_has_sheetPr = false;
+    
+    if (m_sheetPr)
+    {
+        delete m_sheetPr;
+        m_sheetPr = NULL;
+    }
+    
+    
+    m_has_sheetViews = false;
+    
+    if (m_sheetViews)
+    {
+        delete m_sheetViews;
+        m_sheetViews = NULL;
+    }
+    
+    
+    m_has_sheetFormatPr = false;
+    
+    if (m_sheetFormatPr)
+    {
+        delete m_sheetFormatPr;
+        m_sheetFormatPr = NULL;
+    }
+    
+    
+    m_has_sheetProtection = false;
+    
+    if (m_sheetProtection)
+    {
+        delete m_sheetProtection;
+        m_sheetProtection = NULL;
+    }
+    
+    
+    m_has_customSheetViews = false;
+    
+    if (m_customSheetViews)
+    {
+        delete m_customSheetViews;
+        m_customSheetViews = NULL;
+    }
+    
+    
+    m_has_printOptions = false;
+    
+    if (m_printOptions)
+    {
+        delete m_printOptions;
+        m_printOptions = NULL;
+    }
+    
+    
+    m_has_pageMargins = false;
+    
+    if (m_pageMargins)
+    {
+        delete m_pageMargins;
+        m_pageMargins = NULL;
+    }
+    
+    
+    m_has_pageSetup = false;
+    
+    if (m_pageSetup)
+    {
+        delete m_pageSetup;
+        m_pageSetup = NULL;
+    }
+    
+    
+    m_has_headerFooter = false;
+    
+    if (m_headerFooter)
+    {
+        delete m_headerFooter;
+        m_headerFooter = NULL;
+    }
+    
+    
+    m_has_drawing = false;
+    
+    if (m_drawing)
+    {
+        delete m_drawing;
+        m_drawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawing = false;
+    
+    if (m_legacyDrawing)
+    {
+        delete m_legacyDrawing;
+        m_legacyDrawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawingHF = false;
+    
+    if (m_legacyDrawingHF)
+    {
+        delete m_legacyDrawingHF;
+        m_legacyDrawingHF = NULL;
+    }
+    
+    
+    m_has_drawingHF = false;
+    
+    if (m_drawingHF)
+    {
+        delete m_drawingHF;
+        m_drawingHF = NULL;
+    }
+    
+    
+    m_has_oleObjects = false;
+    
+    if (m_oleObjects)
+    {
+        delete m_oleObjects;
+        m_oleObjects = NULL;
+    }
+    
+    
+    m_has_controls = false;
+    
+    if (m_controls)
+    {
+        delete m_controls;
+        m_controls = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void CT_Dialogsheet::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -72441,6 +73620,42 @@ CT_Row* CT_Row::default_instance_ = NULL;
     
     m_has_ph_attr = false;
     m_ph_attr = false;
+    
+    m_has_f = false;
+    
+    if (m_f)
+    {
+        delete m_f;
+        m_f = NULL;
+    }
+    
+    
+    m_has_v = false;
+    
+    if (m_v)
+    {
+        delete m_v;
+        m_v = NULL;
+    }
+    
+    
+    m_has_is = false;
+    
+    if (m_is)
+    {
+        delete m_is;
+        m_is = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Cell::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -72764,6 +73979,33 @@ CT_Cell* CT_Cell::default_instance_ = NULL;
     
     m_has_enableFormatConditionsCalculation_attr = false;
     m_enableFormatConditionsCalculation_attr = false;
+    
+    m_has_tabColor = false;
+    
+    if (m_tabColor)
+    {
+        delete m_tabColor;
+        m_tabColor = NULL;
+    }
+    
+    
+    m_has_outlinePr = false;
+    
+    if (m_outlinePr)
+    {
+        delete m_outlinePr;
+        m_outlinePr = NULL;
+    }
+    
+    
+    m_has_pageSetUpPr = false;
+    
+    if (m_pageSetUpPr)
+    {
+        delete m_pageSetUpPr;
+        m_pageSetUpPr = NULL;
+    }
+    
     }
 
     void CT_SheetPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -74366,6 +75608,15 @@ CT_Pane* CT_Pane::default_instance_ = NULL;
         m_r_id_attr = NULL;
     }
     
+    
+    m_has_pivotArea = false;
+    
+    if (m_pivotArea)
+    {
+        delete m_pivotArea;
+        m_pivotArea = NULL;
+    }
+    
     }
 
     void CT_PivotSelection::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -75567,6 +76818,15 @@ CT_PageSetUpPr* CT_PageSetUpPr::default_instance_ = NULL;
     
     m_has_link_attr = false;
     m_link_attr = false;
+    
+    m_has_dataRefs = false;
+    
+    if (m_dataRefs)
+    {
+        delete m_dataRefs;
+        m_dataRefs = NULL;
+    }
+    
     }
 
     void CT_DataConsolidate::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -77904,6 +79164,96 @@ CT_CustomSheetViews* CT_CustomSheetViews::default_instance_ = NULL;
         m_topLeftCell_attr = NULL;
     }
     
+    
+    m_has_pane = false;
+    
+    if (m_pane)
+    {
+        delete m_pane;
+        m_pane = NULL;
+    }
+    
+    
+    m_has_selection = false;
+    
+    if (m_selection)
+    {
+        delete m_selection;
+        m_selection = NULL;
+    }
+    
+    
+    m_has_rowBreaks = false;
+    
+    if (m_rowBreaks)
+    {
+        delete m_rowBreaks;
+        m_rowBreaks = NULL;
+    }
+    
+    
+    m_has_colBreaks = false;
+    
+    if (m_colBreaks)
+    {
+        delete m_colBreaks;
+        m_colBreaks = NULL;
+    }
+    
+    
+    m_has_pageMargins = false;
+    
+    if (m_pageMargins)
+    {
+        delete m_pageMargins;
+        m_pageMargins = NULL;
+    }
+    
+    
+    m_has_printOptions = false;
+    
+    if (m_printOptions)
+    {
+        delete m_printOptions;
+        m_printOptions = NULL;
+    }
+    
+    
+    m_has_pageSetup = false;
+    
+    if (m_pageSetup)
+    {
+        delete m_pageSetup;
+        m_pageSetup = NULL;
+    }
+    
+    
+    m_has_headerFooter = false;
+    
+    if (m_headerFooter)
+    {
+        delete m_headerFooter;
+        m_headerFooter = NULL;
+    }
+    
+    
+    m_has_autoFilter = false;
+    
+    if (m_autoFilter)
+    {
+        delete m_autoFilter;
+        m_autoFilter = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_CustomSheetView::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -78815,6 +80165,24 @@ CT_DataValidations* CT_DataValidations::default_instance_ = NULL;
     {
         delete m_sqref_attr;
         m_sqref_attr = NULL;
+    }
+    
+    
+    m_has_formula1 = false;
+    
+    if (m_formula1)
+    {
+        delete m_formula1;
+        m_formula1 = NULL;
+    }
+    
+    
+    m_has_formula2 = false;
+    
+    if (m_formula2)
+    {
+        delete m_formula2;
+        m_formula2 = NULL;
     }
     
     }
@@ -81582,6 +82950,15 @@ CT_IconSet* CT_IconSet::default_instance_ = NULL;
     
     m_has_gte_attr = false;
     m_gte_attr = false;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Cfvo::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -82853,6 +84230,60 @@ CT_PageSetup* CT_PageSetup::default_instance_ = NULL;
     
     m_has_alignWithMargins_attr = false;
     m_alignWithMargins_attr = false;
+    
+    m_has_oddHeader = false;
+    
+    if (m_oddHeader)
+    {
+        delete m_oddHeader;
+        m_oddHeader = NULL;
+    }
+    
+    
+    m_has_oddFooter = false;
+    
+    if (m_oddFooter)
+    {
+        delete m_oddFooter;
+        m_oddFooter = NULL;
+    }
+    
+    
+    m_has_evenHeader = false;
+    
+    if (m_evenHeader)
+    {
+        delete m_evenHeader;
+        m_evenHeader = NULL;
+    }
+    
+    
+    m_has_evenFooter = false;
+    
+    if (m_evenFooter)
+    {
+        delete m_evenFooter;
+        m_evenFooter = NULL;
+    }
+    
+    
+    m_has_firstHeader = false;
+    
+    if (m_firstHeader)
+    {
+        delete m_firstHeader;
+        m_firstHeader = NULL;
+    }
+    
+    
+    m_has_firstFooter = false;
+    
+    if (m_firstFooter)
+    {
+        delete m_firstFooter;
+        m_firstFooter = NULL;
+    }
+    
     }
 
     void CT_HeaderFooter::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -85264,7 +86695,133 @@ CT_CellWatch* CT_CellWatch::default_instance_ = NULL;
     }
 
     void CT_Chartsheet::clear()
-    {    }
+    {    
+    m_has_sheetPr = false;
+    
+    if (m_sheetPr)
+    {
+        delete m_sheetPr;
+        m_sheetPr = NULL;
+    }
+    
+    
+    m_has_sheetViews = false;
+    
+    if (m_sheetViews)
+    {
+        delete m_sheetViews;
+        m_sheetViews = NULL;
+    }
+    
+    
+    m_has_sheetProtection = false;
+    
+    if (m_sheetProtection)
+    {
+        delete m_sheetProtection;
+        m_sheetProtection = NULL;
+    }
+    
+    
+    m_has_customSheetViews = false;
+    
+    if (m_customSheetViews)
+    {
+        delete m_customSheetViews;
+        m_customSheetViews = NULL;
+    }
+    
+    
+    m_has_pageMargins = false;
+    
+    if (m_pageMargins)
+    {
+        delete m_pageMargins;
+        m_pageMargins = NULL;
+    }
+    
+    
+    m_has_pageSetup = false;
+    
+    if (m_pageSetup)
+    {
+        delete m_pageSetup;
+        m_pageSetup = NULL;
+    }
+    
+    
+    m_has_headerFooter = false;
+    
+    if (m_headerFooter)
+    {
+        delete m_headerFooter;
+        m_headerFooter = NULL;
+    }
+    
+    
+    m_has_drawing = false;
+    
+    if (m_drawing)
+    {
+        delete m_drawing;
+        m_drawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawing = false;
+    
+    if (m_legacyDrawing)
+    {
+        delete m_legacyDrawing;
+        m_legacyDrawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawingHF = false;
+    
+    if (m_legacyDrawingHF)
+    {
+        delete m_legacyDrawingHF;
+        m_legacyDrawingHF = NULL;
+    }
+    
+    
+    m_has_drawingHF = false;
+    
+    if (m_drawingHF)
+    {
+        delete m_drawingHF;
+        m_drawingHF = NULL;
+    }
+    
+    
+    m_has_picture = false;
+    
+    if (m_picture)
+    {
+        delete m_picture;
+        m_picture = NULL;
+    }
+    
+    
+    m_has_webPublishItems = false;
+    
+    if (m_webPublishItems)
+    {
+        delete m_webPublishItems;
+        m_webPublishItems = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void CT_Chartsheet::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -85405,6 +86962,15 @@ CT_Chartsheet* CT_Chartsheet::default_instance_ = NULL;
     
     m_has_codeName_attr = false;
     m_codeName_attr.clear();
+    
+    m_has_tabColor = false;
+    
+    if (m_tabColor)
+    {
+        delete m_tabColor;
+        m_tabColor = NULL;
+    }
+    
     }
 
     void CT_ChartsheetPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -85687,6 +87253,15 @@ CT_ChartsheetViews* CT_ChartsheetViews::default_instance_ = NULL;
     
     m_has_zoomToFit_attr = false;
     m_zoomToFit_attr = false;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_ChartsheetView::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -86688,6 +88263,33 @@ CT_CustomChartsheetViews* CT_CustomChartsheetViews::default_instance_ = NULL;
     
     m_has_zoomToFit_attr = false;
     m_zoomToFit_attr = false;
+    
+    m_has_pageMargins = false;
+    
+    if (m_pageMargins)
+    {
+        delete m_pageMargins;
+        m_pageMargins = NULL;
+    }
+    
+    
+    m_has_pageSetup = false;
+    
+    if (m_pageSetup)
+    {
+        delete m_pageSetup;
+        m_pageSetup = NULL;
+    }
+    
+    
+    m_has_headerFooter = false;
+    
+    if (m_headerFooter)
+    {
+        delete m_headerFooter;
+        m_headerFooter = NULL;
+    }
+    
     }
 
     void CT_CustomChartsheetView::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -87218,6 +88820,15 @@ CT_OleObjects* CT_OleObjects::default_instance_ = NULL;
         m_r_id_attr = NULL;
     }
     
+    
+    m_has_objectPr = false;
+    
+    if (m_objectPr)
+    {
+        delete m_objectPr;
+        m_objectPr = NULL;
+    }
+    
     }
 
     void CT_OleObject::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -87529,6 +89140,15 @@ CT_OleObject* CT_OleObject::default_instance_ = NULL;
     {
         delete m_r_id_attr;
         m_r_id_attr = NULL;
+    }
+    
+    
+    m_has_anchor = false;
+    
+    if (m_anchor)
+    {
+        delete m_anchor;
+        m_anchor = NULL;
     }
     
     }
@@ -88420,6 +90040,15 @@ CT_Controls* CT_Controls::default_instance_ = NULL;
     
     m_has_name_attr = false;
     m_name_attr.clear();
+    
+    m_has_controlPr = false;
+    
+    if (m_controlPr)
+    {
+        delete m_controlPr;
+        m_controlPr = NULL;
+    }
+    
     }
 
     void CT_Control::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -88664,6 +90293,15 @@ CT_Control* CT_Control::default_instance_ = NULL;
     {
         delete m_r_id_attr;
         m_r_id_attr = NULL;
+    }
+    
+    
+    m_has_anchor = false;
+    
+    if (m_anchor)
+    {
+        delete m_anchor;
+        m_anchor = NULL;
     }
     
     }
@@ -91625,7 +93263,16 @@ CT_FutureMetadata* CT_FutureMetadata::default_instance_ = NULL;
     }
 
     void CT_FutureMetadataBlock::clear()
-    {    }
+    {    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void CT_FutureMetadataBlock::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -92016,6 +93663,42 @@ CT_MdxMetadata* CT_MdxMetadata::default_instance_ = NULL;
     {
         delete m_f_attr;
         m_f_attr = NULL;
+    }
+    
+    
+    m_has_t = false;
+    
+    if (m_t)
+    {
+        delete m_t;
+        m_t = NULL;
+    }
+    
+    
+    m_has_ms = false;
+    
+    if (m_ms)
+    {
+        delete m_ms;
+        m_ms = NULL;
+    }
+    
+    
+    m_has_p = false;
+    
+    if (m_p)
+    {
+        delete m_p;
+        m_p = NULL;
+    }
+    
+    
+    m_has_k = false;
+    
+    if (m_k)
+    {
+        delete m_k;
+        m_k = NULL;
     }
     
     }
@@ -93290,6 +94973,24 @@ CT_SingleXmlCells* CT_SingleXmlCells::default_instance_ = NULL;
     
     m_has_connectionId_attr = false;
     m_connectionId_attr = 0;
+    
+    m_has_xmlCellPr = false;
+    
+    if (m_xmlCellPr)
+    {
+        delete m_xmlCellPr;
+        m_xmlCellPr = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_SingleXmlCell::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -93472,6 +95173,24 @@ CT_SingleXmlCell* CT_SingleXmlCell::default_instance_ = NULL;
         m_uniqueName_attr = NULL;
     }
     
+    
+    m_has_xmlPr = false;
+    
+    if (m_xmlPr)
+    {
+        delete m_xmlPr;
+        m_xmlPr = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_XmlCellPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -93615,6 +95334,15 @@ CT_XmlCellPr* CT_XmlCellPr::default_instance_ = NULL;
     {
         delete m_xmlDataType_attr;
         m_xmlDataType_attr = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
     }
     
     }
@@ -94016,7 +95744,106 @@ CT_XmlPr* CT_XmlPr::default_instance_ = NULL;
     }
 
     void CT_Stylesheet::clear()
-    {    }
+    {    
+    m_has_numFmts = false;
+    
+    if (m_numFmts)
+    {
+        delete m_numFmts;
+        m_numFmts = NULL;
+    }
+    
+    
+    m_has_fonts = false;
+    
+    if (m_fonts)
+    {
+        delete m_fonts;
+        m_fonts = NULL;
+    }
+    
+    
+    m_has_fills = false;
+    
+    if (m_fills)
+    {
+        delete m_fills;
+        m_fills = NULL;
+    }
+    
+    
+    m_has_borders = false;
+    
+    if (m_borders)
+    {
+        delete m_borders;
+        m_borders = NULL;
+    }
+    
+    
+    m_has_cellStyleXfs = false;
+    
+    if (m_cellStyleXfs)
+    {
+        delete m_cellStyleXfs;
+        m_cellStyleXfs = NULL;
+    }
+    
+    
+    m_has_cellXfs = false;
+    
+    if (m_cellXfs)
+    {
+        delete m_cellXfs;
+        m_cellXfs = NULL;
+    }
+    
+    
+    m_has_cellStyles = false;
+    
+    if (m_cellStyles)
+    {
+        delete m_cellStyles;
+        m_cellStyles = NULL;
+    }
+    
+    
+    m_has_dxfs = false;
+    
+    if (m_dxfs)
+    {
+        delete m_dxfs;
+        m_dxfs = NULL;
+    }
+    
+    
+    m_has_tableStyles = false;
+    
+    if (m_tableStyles)
+    {
+        delete m_tableStyles;
+        m_tableStyles = NULL;
+    }
+    
+    
+    m_has_colors = false;
+    
+    if (m_colors)
+    {
+        delete m_colors;
+        m_colors = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void CT_Stylesheet::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -94773,6 +96600,87 @@ CT_Borders* CT_Borders::default_instance_ = NULL;
     
     m_has_outline_attr = false;
     m_outline_attr = false;
+    
+    m_has_start = false;
+    
+    if (m_start)
+    {
+        delete m_start;
+        m_start = NULL;
+    }
+    
+    
+    m_has_end = false;
+    
+    if (m_end)
+    {
+        delete m_end;
+        m_end = NULL;
+    }
+    
+    
+    m_has_left = false;
+    
+    if (m_left)
+    {
+        delete m_left;
+        m_left = NULL;
+    }
+    
+    
+    m_has_right = false;
+    
+    if (m_right)
+    {
+        delete m_right;
+        m_right = NULL;
+    }
+    
+    
+    m_has_top = false;
+    
+    if (m_top)
+    {
+        delete m_top;
+        m_top = NULL;
+    }
+    
+    
+    m_has_bottom = false;
+    
+    if (m_bottom)
+    {
+        delete m_bottom;
+        m_bottom = NULL;
+    }
+    
+    
+    m_has_diagonal = false;
+    
+    if (m_diagonal)
+    {
+        delete m_diagonal;
+        m_diagonal = NULL;
+    }
+    
+    
+    m_has_vertical = false;
+    
+    if (m_vertical)
+    {
+        delete m_vertical;
+        m_vertical = NULL;
+    }
+    
+    
+    m_has_horizontal = false;
+    
+    if (m_horizontal)
+    {
+        delete m_horizontal;
+        m_horizontal = NULL;
+    }
+    
     }
 
     void CT_Border::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -94953,6 +96861,15 @@ CT_Border* CT_Border::default_instance_ = NULL;
     {
         delete m_style_attr;
         m_style_attr = NULL;
+    }
+    
+    
+    m_has_color = false;
+    
+    if (m_color)
+    {
+        delete m_color;
+        m_color = NULL;
     }
     
     }
@@ -95422,7 +97339,25 @@ CT_Fills* CT_Fills::default_instance_ = NULL;
     }
 
     void CT_Fill::clear()
-    {    }
+    {    
+    m_has_patternFill = false;
+    
+    if (m_patternFill)
+    {
+        delete m_patternFill;
+        m_patternFill = NULL;
+    }
+    
+    
+    m_has_gradientFill = false;
+    
+    if (m_gradientFill)
+    {
+        delete m_gradientFill;
+        m_gradientFill = NULL;
+    }
+    
+    }
 
     void CT_Fill::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -95528,6 +97463,24 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
     {
         delete m_patternType_attr;
         m_patternType_attr = NULL;
+    }
+    
+    
+    m_has_fgColor = false;
+    
+    if (m_fgColor)
+    {
+        delete m_fgColor;
+        m_fgColor = NULL;
+    }
+    
+    
+    m_has_bgColor = false;
+    
+    if (m_bgColor)
+    {
+        delete m_bgColor;
+        m_bgColor = NULL;
     }
     
     }
@@ -96076,6 +98029,15 @@ CT_GradientFill* CT_GradientFill::default_instance_ = NULL;
     {    
     m_has_position_attr = false;
     m_position_attr = 0;
+    
+    m_has_color = false;
+    
+    if (m_color)
+    {
+        delete m_color;
+        m_color = NULL;
+    }
+    
     }
 
     void CT_GradientStop::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -96781,6 +98743,33 @@ CT_CellXfs* CT_CellXfs::default_instance_ = NULL;
     
     m_has_applyProtection_attr = false;
     m_applyProtection_attr = false;
+    
+    m_has_alignment = false;
+    
+    if (m_alignment)
+    {
+        delete m_alignment;
+        m_alignment = NULL;
+    }
+    
+    
+    m_has_protection = false;
+    
+    if (m_protection)
+    {
+        delete m_protection;
+        m_protection = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Xf::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -97325,6 +99314,15 @@ CT_CellStyles* CT_CellStyles::default_instance_ = NULL;
     
     m_has_customBuiltin_attr = false;
     m_customBuiltin_attr = false;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_CellStyle::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -97807,7 +99805,70 @@ CT_Dxfs* CT_Dxfs::default_instance_ = NULL;
     }
 
     void CT_Dxf::clear()
-    {    }
+    {    
+    m_has_font = false;
+    
+    if (m_font)
+    {
+        delete m_font;
+        m_font = NULL;
+    }
+    
+    
+    m_has_numFmt = false;
+    
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    
+    
+    m_has_fill = false;
+    
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    
+    
+    m_has_alignment = false;
+    
+    if (m_alignment)
+    {
+        delete m_alignment;
+        m_alignment = NULL;
+    }
+    
+    
+    m_has_border = false;
+    
+    if (m_border)
+    {
+        delete m_border;
+        m_border = NULL;
+    }
+    
+    
+    m_has_protection = false;
+    
+    if (m_protection)
+    {
+        delete m_protection;
+        m_protection = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void CT_Dxf::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -97929,7 +99990,25 @@ CT_Dxf* CT_Dxf::default_instance_ = NULL;
     }
 
     void CT_Colors::clear()
-    {    }
+    {    
+    m_has_indexedColors = false;
+    
+    if (m_indexedColors)
+    {
+        delete m_indexedColors;
+        m_indexedColors = NULL;
+    }
+    
+    
+    m_has_mruColors = false;
+    
+    if (m_mruColors)
+    {
+        delete m_mruColors;
+        m_mruColors = NULL;
+    }
+    
+    }
 
     void CT_Colors::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -101980,7 +104059,43 @@ CT_FontFamily* CT_FontFamily::default_instance_ = NULL;
     }
 
     void CT_ExternalLink::clear()
-    {    }
+    {    
+    m_has_externalBook = false;
+    
+    if (m_externalBook)
+    {
+        delete m_externalBook;
+        m_externalBook = NULL;
+    }
+    
+    
+    m_has_ddeLink = false;
+    
+    if (m_ddeLink)
+    {
+        delete m_ddeLink;
+        m_ddeLink = NULL;
+    }
+    
+    
+    m_has_oleLink = false;
+    
+    if (m_oleLink)
+    {
+        delete m_oleLink;
+        m_oleLink = NULL;
+    }
+    
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void CT_ExternalLink::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -102122,6 +104237,33 @@ CT_ExternalLink* CT_ExternalLink::default_instance_ = NULL;
     {
         delete m_r_id_attr;
         m_r_id_attr = NULL;
+    }
+    
+    
+    m_has_sheetNames = false;
+    
+    if (m_sheetNames)
+    {
+        delete m_sheetNames;
+        m_sheetNames = NULL;
+    }
+    
+    
+    m_has_definedNames = false;
+    
+    if (m_definedNames)
+    {
+        delete m_definedNames;
+        m_definedNames = NULL;
+    }
+    
+    
+    m_has_sheetDataSet = false;
+    
+    if (m_sheetDataSet)
+    {
+        delete m_sheetDataSet;
+        m_sheetDataSet = NULL;
     }
     
     }
@@ -103015,6 +105157,15 @@ CT_ExternalRow* CT_ExternalRow::default_instance_ = NULL;
     
     m_has_vm_attr = false;
     m_vm_attr = 0;
+    
+    m_has_v = false;
+    
+    if (m_v)
+    {
+        delete m_v;
+        m_v = NULL;
+    }
+    
     }
 
     void CT_ExternalCell::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -103174,6 +105325,15 @@ CT_ExternalCell* CT_ExternalCell::default_instance_ = NULL;
     {
         delete m_ddeTopic_attr;
         m_ddeTopic_attr = NULL;
+    }
+    
+    
+    m_has_ddeItems = false;
+    
+    if (m_ddeItems)
+    {
+        delete m_ddeItems;
+        m_ddeItems = NULL;
     }
     
     }
@@ -103415,6 +105575,15 @@ CT_DdeItems* CT_DdeItems::default_instance_ = NULL;
     
     m_has_preferPic_attr = false;
     m_preferPic_attr = false;
+    
+    m_has_values = false;
+    
+    if (m_values)
+    {
+        delete m_values;
+        m_values = NULL;
+    }
+    
     }
 
     void CT_DdeItem::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -103731,6 +105900,15 @@ CT_DdeValues* CT_DdeValues::default_instance_ = NULL;
         m_t_attr = NULL;
     }
     
+    
+    m_has_val = false;
+    
+    if (m_val)
+    {
+        delete m_val;
+        m_val = NULL;
+    }
+    
     }
 
     void CT_DdeValue::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -103842,6 +106020,15 @@ CT_DdeValue* CT_DdeValue::default_instance_ = NULL;
     {
         delete m_progId_attr;
         m_progId_attr = NULL;
+    }
+    
+    
+    m_has_oleItems = false;
+    
+    if (m_oleItems)
+    {
+        delete m_oleItems;
+        m_oleItems = NULL;
     }
     
     }
@@ -104507,6 +106694,51 @@ CT_OleItem* CT_OleItem::default_instance_ = NULL;
     
     m_has_connectionId_attr = false;
     m_connectionId_attr = 0;
+    
+    m_has_autoFilter = false;
+    
+    if (m_autoFilter)
+    {
+        delete m_autoFilter;
+        m_autoFilter = NULL;
+    }
+    
+    
+    m_has_sortState = false;
+    
+    if (m_sortState)
+    {
+        delete m_sortState;
+        m_sortState = NULL;
+    }
+    
+    
+    m_has_tableColumns = false;
+    
+    if (m_tableColumns)
+    {
+        delete m_tableColumns;
+        m_tableColumns = NULL;
+    }
+    
+    
+    m_has_tableStyleInfo = false;
+    
+    if (m_tableStyleInfo)
+    {
+        delete m_tableStyleInfo;
+        m_tableStyleInfo = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Table::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -105630,6 +107862,42 @@ CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
         m_totalsRowCellStyle_attr = NULL;
     }
     
+    
+    m_has_calculatedColumnFormula = false;
+    
+    if (m_calculatedColumnFormula)
+    {
+        delete m_calculatedColumnFormula;
+        m_calculatedColumnFormula = NULL;
+    }
+    
+    
+    m_has_totalsRowFormula = false;
+    
+    if (m_totalsRowFormula)
+    {
+        delete m_totalsRowFormula;
+        m_totalsRowFormula = NULL;
+    }
+    
+    
+    m_has_xmlColumnPr = false;
+    
+    if (m_xmlColumnPr)
+    {
+        delete m_xmlColumnPr;
+        m_xmlColumnPr = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_TableColumn::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -106105,6 +108373,15 @@ CT_TableFormula* CT_TableFormula::default_instance_ = NULL;
     {
         delete m_xmlDataType_attr;
         m_xmlDataType_attr = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
     }
     
     }
@@ -108258,6 +110535,15 @@ CT_BookViews* CT_BookViews::default_instance_ = NULL;
     
     m_has_autoFilterDateGrouping_attr = false;
     m_autoFilterDateGrouping_attr = false;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_BookView::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -108851,6 +111137,15 @@ CT_CustomWorkbookViews* CT_CustomWorkbookViews::default_instance_ = NULL;
     {
         delete m_showObjects_attr;
         m_showObjects_attr = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
     }
     
     }
@@ -114037,7 +116332,34 @@ calcChain_element* calcChain_element::default_instance_ = NULL;
     }
 
     void comments_element::clear()
-    {    }
+    {    
+    m_has_authors = false;
+    
+    if (m_authors)
+    {
+        delete m_authors;
+        m_authors = NULL;
+    }
+    
+    
+    m_has_commentList = false;
+    
+    if (m_commentList)
+    {
+        delete m_commentList;
+        m_commentList = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void comments_element::toXml(std::ostream& _outStream) const
     {    
@@ -114754,6 +117076,105 @@ connections_element* connections_element::default_instance_ = NULL;
     
     m_has_supportAdvancedDrill_attr = false;
     m_supportAdvancedDrill_attr = false;
+    
+    m_has_cacheSource = false;
+    
+    if (m_cacheSource)
+    {
+        delete m_cacheSource;
+        m_cacheSource = NULL;
+    }
+    
+    
+    m_has_cacheFields = false;
+    
+    if (m_cacheFields)
+    {
+        delete m_cacheFields;
+        m_cacheFields = NULL;
+    }
+    
+    
+    m_has_cacheHierarchies = false;
+    
+    if (m_cacheHierarchies)
+    {
+        delete m_cacheHierarchies;
+        m_cacheHierarchies = NULL;
+    }
+    
+    
+    m_has_kpis = false;
+    
+    if (m_kpis)
+    {
+        delete m_kpis;
+        m_kpis = NULL;
+    }
+    
+    
+    m_has_tupleCache = false;
+    
+    if (m_tupleCache)
+    {
+        delete m_tupleCache;
+        m_tupleCache = NULL;
+    }
+    
+    
+    m_has_calculatedItems = false;
+    
+    if (m_calculatedItems)
+    {
+        delete m_calculatedItems;
+        m_calculatedItems = NULL;
+    }
+    
+    
+    m_has_calculatedMembers = false;
+    
+    if (m_calculatedMembers)
+    {
+        delete m_calculatedMembers;
+        m_calculatedMembers = NULL;
+    }
+    
+    
+    m_has_dimensions = false;
+    
+    if (m_dimensions)
+    {
+        delete m_dimensions;
+        m_dimensions = NULL;
+    }
+    
+    
+    m_has_measureGroups = false;
+    
+    if (m_measureGroups)
+    {
+        delete m_measureGroups;
+        m_measureGroups = NULL;
+    }
+    
+    
+    m_has_maps = false;
+    
+    if (m_maps)
+    {
+        delete m_maps;
+        m_maps = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void pivotCacheDefinition_element::toXml(std::ostream& _outStream) const
@@ -116295,6 +118716,159 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     
     m_has_customListSort_attr = false;
     m_customListSort_attr = false;
+    
+    m_has_location = false;
+    
+    if (m_location)
+    {
+        delete m_location;
+        m_location = NULL;
+    }
+    
+    
+    m_has_pivotFields = false;
+    
+    if (m_pivotFields)
+    {
+        delete m_pivotFields;
+        m_pivotFields = NULL;
+    }
+    
+    
+    m_has_rowFields = false;
+    
+    if (m_rowFields)
+    {
+        delete m_rowFields;
+        m_rowFields = NULL;
+    }
+    
+    
+    m_has_rowItems = false;
+    
+    if (m_rowItems)
+    {
+        delete m_rowItems;
+        m_rowItems = NULL;
+    }
+    
+    
+    m_has_colFields = false;
+    
+    if (m_colFields)
+    {
+        delete m_colFields;
+        m_colFields = NULL;
+    }
+    
+    
+    m_has_colItems = false;
+    
+    if (m_colItems)
+    {
+        delete m_colItems;
+        m_colItems = NULL;
+    }
+    
+    
+    m_has_pageFields = false;
+    
+    if (m_pageFields)
+    {
+        delete m_pageFields;
+        m_pageFields = NULL;
+    }
+    
+    
+    m_has_dataFields = false;
+    
+    if (m_dataFields)
+    {
+        delete m_dataFields;
+        m_dataFields = NULL;
+    }
+    
+    
+    m_has_formats = false;
+    
+    if (m_formats)
+    {
+        delete m_formats;
+        m_formats = NULL;
+    }
+    
+    
+    m_has_conditionalFormats = false;
+    
+    if (m_conditionalFormats)
+    {
+        delete m_conditionalFormats;
+        m_conditionalFormats = NULL;
+    }
+    
+    
+    m_has_chartFormats = false;
+    
+    if (m_chartFormats)
+    {
+        delete m_chartFormats;
+        m_chartFormats = NULL;
+    }
+    
+    
+    m_has_pivotHierarchies = false;
+    
+    if (m_pivotHierarchies)
+    {
+        delete m_pivotHierarchies;
+        m_pivotHierarchies = NULL;
+    }
+    
+    
+    m_has_pivotTableStyleInfo = false;
+    
+    if (m_pivotTableStyleInfo)
+    {
+        delete m_pivotTableStyleInfo;
+        m_pivotTableStyleInfo = NULL;
+    }
+    
+    
+    m_has_filters = false;
+    
+    if (m_filters)
+    {
+        delete m_filters;
+        m_filters = NULL;
+    }
+    
+    
+    m_has_rowHierarchiesUsage = false;
+    
+    if (m_rowHierarchiesUsage)
+    {
+        delete m_rowHierarchiesUsage;
+        m_rowHierarchiesUsage = NULL;
+    }
+    
+    
+    m_has_colHierarchiesUsage = false;
+    
+    if (m_colHierarchiesUsage)
+    {
+        delete m_colHierarchiesUsage;
+        m_colHierarchiesUsage = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void pivotTableDefinition_element::toXml(std::ostream& _outStream) const
@@ -118128,6 +120702,24 @@ pivotTableDefinition_element* pivotTableDefinition_element::default_instance_ = 
     
     m_has_applyWidthHeightFormats_attr = false;
     m_applyWidthHeightFormats_attr = false;
+    
+    m_has_queryTableRefresh = false;
+    
+    if (m_queryTableRefresh)
+    {
+        delete m_queryTableRefresh;
+        m_queryTableRefresh = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void queryTable_element::toXml(std::ostream& _outStream) const
@@ -133796,7 +136388,133 @@ worksheet_element* worksheet_element::default_instance_ = NULL;
     }
 
     void chartsheet_element::clear()
-    {    }
+    {    
+    m_has_sheetPr = false;
+    
+    if (m_sheetPr)
+    {
+        delete m_sheetPr;
+        m_sheetPr = NULL;
+    }
+    
+    
+    m_has_sheetViews = false;
+    
+    if (m_sheetViews)
+    {
+        delete m_sheetViews;
+        m_sheetViews = NULL;
+    }
+    
+    
+    m_has_sheetProtection = false;
+    
+    if (m_sheetProtection)
+    {
+        delete m_sheetProtection;
+        m_sheetProtection = NULL;
+    }
+    
+    
+    m_has_customSheetViews = false;
+    
+    if (m_customSheetViews)
+    {
+        delete m_customSheetViews;
+        m_customSheetViews = NULL;
+    }
+    
+    
+    m_has_pageMargins = false;
+    
+    if (m_pageMargins)
+    {
+        delete m_pageMargins;
+        m_pageMargins = NULL;
+    }
+    
+    
+    m_has_pageSetup = false;
+    
+    if (m_pageSetup)
+    {
+        delete m_pageSetup;
+        m_pageSetup = NULL;
+    }
+    
+    
+    m_has_headerFooter = false;
+    
+    if (m_headerFooter)
+    {
+        delete m_headerFooter;
+        m_headerFooter = NULL;
+    }
+    
+    
+    m_has_drawing = false;
+    
+    if (m_drawing)
+    {
+        delete m_drawing;
+        m_drawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawing = false;
+    
+    if (m_legacyDrawing)
+    {
+        delete m_legacyDrawing;
+        m_legacyDrawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawingHF = false;
+    
+    if (m_legacyDrawingHF)
+    {
+        delete m_legacyDrawingHF;
+        m_legacyDrawingHF = NULL;
+    }
+    
+    
+    m_has_drawingHF = false;
+    
+    if (m_drawingHF)
+    {
+        delete m_drawingHF;
+        m_drawingHF = NULL;
+    }
+    
+    
+    m_has_picture = false;
+    
+    if (m_picture)
+    {
+        delete m_picture;
+        m_picture = NULL;
+    }
+    
+    
+    m_has_webPublishItems = false;
+    
+    if (m_webPublishItems)
+    {
+        delete m_webPublishItems;
+        m_webPublishItems = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void chartsheet_element::toXml(std::ostream& _outStream) const
     {    
@@ -134317,7 +137035,151 @@ chartsheet_element* chartsheet_element::default_instance_ = NULL;
     }
 
     void dialogsheet_element::clear()
-    {    }
+    {    
+    m_has_sheetPr = false;
+    
+    if (m_sheetPr)
+    {
+        delete m_sheetPr;
+        m_sheetPr = NULL;
+    }
+    
+    
+    m_has_sheetViews = false;
+    
+    if (m_sheetViews)
+    {
+        delete m_sheetViews;
+        m_sheetViews = NULL;
+    }
+    
+    
+    m_has_sheetFormatPr = false;
+    
+    if (m_sheetFormatPr)
+    {
+        delete m_sheetFormatPr;
+        m_sheetFormatPr = NULL;
+    }
+    
+    
+    m_has_sheetProtection = false;
+    
+    if (m_sheetProtection)
+    {
+        delete m_sheetProtection;
+        m_sheetProtection = NULL;
+    }
+    
+    
+    m_has_customSheetViews = false;
+    
+    if (m_customSheetViews)
+    {
+        delete m_customSheetViews;
+        m_customSheetViews = NULL;
+    }
+    
+    
+    m_has_printOptions = false;
+    
+    if (m_printOptions)
+    {
+        delete m_printOptions;
+        m_printOptions = NULL;
+    }
+    
+    
+    m_has_pageMargins = false;
+    
+    if (m_pageMargins)
+    {
+        delete m_pageMargins;
+        m_pageMargins = NULL;
+    }
+    
+    
+    m_has_pageSetup = false;
+    
+    if (m_pageSetup)
+    {
+        delete m_pageSetup;
+        m_pageSetup = NULL;
+    }
+    
+    
+    m_has_headerFooter = false;
+    
+    if (m_headerFooter)
+    {
+        delete m_headerFooter;
+        m_headerFooter = NULL;
+    }
+    
+    
+    m_has_drawing = false;
+    
+    if (m_drawing)
+    {
+        delete m_drawing;
+        m_drawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawing = false;
+    
+    if (m_legacyDrawing)
+    {
+        delete m_legacyDrawing;
+        m_legacyDrawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawingHF = false;
+    
+    if (m_legacyDrawingHF)
+    {
+        delete m_legacyDrawingHF;
+        m_legacyDrawingHF = NULL;
+    }
+    
+    
+    m_has_drawingHF = false;
+    
+    if (m_drawingHF)
+    {
+        delete m_drawingHF;
+        m_drawingHF = NULL;
+    }
+    
+    
+    m_has_oleObjects = false;
+    
+    if (m_oleObjects)
+    {
+        delete m_oleObjects;
+        m_oleObjects = NULL;
+    }
+    
+    
+    m_has_controls = false;
+    
+    if (m_controls)
+    {
+        delete m_controls;
+        m_controls = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void dialogsheet_element::toXml(std::ostream& _outStream) const
     {    
@@ -135254,7 +138116,106 @@ singleXmlCells_element* singleXmlCells_element::default_instance_ = NULL;
     }
 
     void styleSheet_element::clear()
-    {    }
+    {    
+    m_has_numFmts = false;
+    
+    if (m_numFmts)
+    {
+        delete m_numFmts;
+        m_numFmts = NULL;
+    }
+    
+    
+    m_has_fonts = false;
+    
+    if (m_fonts)
+    {
+        delete m_fonts;
+        m_fonts = NULL;
+    }
+    
+    
+    m_has_fills = false;
+    
+    if (m_fills)
+    {
+        delete m_fills;
+        m_fills = NULL;
+    }
+    
+    
+    m_has_borders = false;
+    
+    if (m_borders)
+    {
+        delete m_borders;
+        m_borders = NULL;
+    }
+    
+    
+    m_has_cellStyleXfs = false;
+    
+    if (m_cellStyleXfs)
+    {
+        delete m_cellStyleXfs;
+        m_cellStyleXfs = NULL;
+    }
+    
+    
+    m_has_cellXfs = false;
+    
+    if (m_cellXfs)
+    {
+        delete m_cellXfs;
+        m_cellXfs = NULL;
+    }
+    
+    
+    m_has_cellStyles = false;
+    
+    if (m_cellStyles)
+    {
+        delete m_cellStyles;
+        m_cellStyles = NULL;
+    }
+    
+    
+    m_has_dxfs = false;
+    
+    if (m_dxfs)
+    {
+        delete m_dxfs;
+        m_dxfs = NULL;
+    }
+    
+    
+    m_has_tableStyles = false;
+    
+    if (m_tableStyles)
+    {
+        delete m_tableStyles;
+        m_tableStyles = NULL;
+    }
+    
+    
+    m_has_colors = false;
+    
+    if (m_colors)
+    {
+        delete m_colors;
+        m_colors = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void styleSheet_element::toXml(std::ostream& _outStream) const
     {    
@@ -135505,7 +138466,43 @@ styleSheet_element* styleSheet_element::default_instance_ = NULL;
     }
 
     void externalLink_element::clear()
-    {    }
+    {    
+    m_has_externalBook = false;
+    
+    if (m_externalBook)
+    {
+        delete m_externalBook;
+        m_externalBook = NULL;
+    }
+    
+    
+    m_has_ddeLink = false;
+    
+    if (m_ddeLink)
+    {
+        delete m_ddeLink;
+        m_ddeLink = NULL;
+    }
+    
+    
+    m_has_oleLink = false;
+    
+    if (m_oleLink)
+    {
+        delete m_oleLink;
+        m_oleLink = NULL;
+    }
+    
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void externalLink_element::toXml(std::ostream& _outStream) const
     {    
@@ -135884,6 +138881,51 @@ externalLink_element* externalLink_element::default_instance_ = NULL;
     
     m_has_connectionId_attr = false;
     m_connectionId_attr = 0;
+    
+    m_has_autoFilter = false;
+    
+    if (m_autoFilter)
+    {
+        delete m_autoFilter;
+        m_autoFilter = NULL;
+    }
+    
+    
+    m_has_sortState = false;
+    
+    if (m_sortState)
+    {
+        delete m_sortState;
+        m_sortState = NULL;
+    }
+    
+    
+    m_has_tableColumns = false;
+    
+    if (m_tableColumns)
+    {
+        delete m_tableColumns;
+        m_tableColumns = NULL;
+    }
+    
+    
+    m_has_tableStyleInfo = false;
+    
+    if (m_tableStyleInfo)
+    {
+        delete m_tableStyleInfo;
+        m_tableStyleInfo = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void table_element::toXml(std::ostream& _outStream) const

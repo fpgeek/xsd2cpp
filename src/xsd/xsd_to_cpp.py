@@ -214,8 +214,8 @@ def _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass, toXmlMethodB
     cppClass.destructor.body = 'clear();'
 
     clearMethodBodyStr = CPP_FUNC.getClaerMethodBodyStrFromAttrs(pbComplexType.attribute)
-    if len(cppClass.inner_class) > 0:
-        clearMethodBodyStr += CPP_FUNC.getClearMethodBodyStrFromElemCont(pbComplexType.element_container)
+    # if len(cppClass.inner_class) > 0 or len(cppClass.member_var) > 0:
+    clearMethodBodyStr += CPP_FUNC.getClearMethodBodyStrFromElemCont(pbComplexType.element_container)
 
     CPP_FUNC.makeClearMethod(clearMethodBodyStr, cppClass)
 

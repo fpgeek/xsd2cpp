@@ -25845,6 +25845,15 @@ CT_Group* CT_Group::default_instance_ = NULL;
         m_o_targetscreensize_attr = NULL;
     }
     
+    
+    m_has_fill = false;
+    
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    
     }
 
     void CT_Background::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -26293,6 +26302,15 @@ CT_Background* CT_Background::default_instance_ = NULL;
     {
         delete m_o_relid_attr;
         m_o_relid_attr = NULL;
+    }
+    
+    
+    m_has_o_fill = false;
+    
+    if (m_o_fill)
+    {
+        delete m_o_fill;
+        m_o_fill = NULL;
     }
     
     }
@@ -29617,6 +29635,51 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
         m_o_relid_attr = NULL;
     }
     
+    
+    m_has_o_left = false;
+    
+    if (m_o_left)
+    {
+        delete m_o_left;
+        m_o_left = NULL;
+    }
+    
+    
+    m_has_o_top = false;
+    
+    if (m_o_top)
+    {
+        delete m_o_top;
+        m_o_top = NULL;
+    }
+    
+    
+    m_has_o_right = false;
+    
+    if (m_o_right)
+    {
+        delete m_o_right;
+        m_o_right = NULL;
+    }
+    
+    
+    m_has_o_bottom = false;
+    
+    if (m_o_bottom)
+    {
+        delete m_o_bottom;
+        m_o_bottom = NULL;
+    }
+    
+    
+    m_has_o_column = false;
+    
+    if (m_o_column)
+    {
+        delete m_o_column;
+        m_o_column = NULL;
+    }
+    
     }
 
     void CT_Stroke::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -30454,6 +30517,15 @@ CT_Stroke* CT_Stroke::default_instance_ = NULL;
     {
         delete m_o_insetmode_attr;
         m_o_insetmode_attr = NULL;
+    }
+    
+    
+    m_has_w_txbxContent = false;
+    
+    if (m_w_txbxContent)
+    {
+        delete m_w_txbxContent;
+        m_w_txbxContent = NULL;
     }
     
     }
@@ -101070,6 +101142,15 @@ group_element* group_element::default_instance_ = NULL;
         m_o_targetscreensize_attr = NULL;
     }
     
+    
+    m_has_fill = false;
+    
+    if (m_fill)
+    {
+        delete m_fill;
+        m_fill = NULL;
+    }
+    
     }
 
     void background_element::toXml(std::ostream& _outStream) const
@@ -101522,6 +101603,15 @@ background_element* background_element::default_instance_ = NULL;
     {
         delete m_o_relid_attr;
         m_o_relid_attr = NULL;
+    }
+    
+    
+    m_has_o_fill = false;
+    
+    if (m_o_fill)
+    {
+        delete m_o_fill;
+        m_o_fill = NULL;
     }
     
     }
@@ -103794,6 +103884,15 @@ path_element* path_element::default_instance_ = NULL;
         m_o_insetmode_attr = NULL;
     }
     
+    
+    m_has_w_txbxContent = false;
+    
+    if (m_w_txbxContent)
+    {
+        delete m_w_txbxContent;
+        m_w_txbxContent = NULL;
+    }
+    
     }
 
     void textbox_element::toXml(std::ostream& _outStream) const
@@ -104734,6 +104833,51 @@ shadow_element* shadow_element::default_instance_ = NULL;
     {
         delete m_o_relid_attr;
         m_o_relid_attr = NULL;
+    }
+    
+    
+    m_has_o_left = false;
+    
+    if (m_o_left)
+    {
+        delete m_o_left;
+        m_o_left = NULL;
+    }
+    
+    
+    m_has_o_top = false;
+    
+    if (m_o_top)
+    {
+        delete m_o_top;
+        m_o_top = NULL;
+    }
+    
+    
+    m_has_o_right = false;
+    
+    if (m_o_right)
+    {
+        delete m_o_right;
+        m_o_right = NULL;
+    }
+    
+    
+    m_has_o_bottom = false;
+    
+    if (m_o_bottom)
+    {
+        delete m_o_bottom;
+        m_o_bottom = NULL;
+    }
+    
+    
+    m_has_o_column = false;
+    
+    if (m_o_column)
+    {
+        delete m_o_column;
+        m_o_column = NULL;
     }
     
     }

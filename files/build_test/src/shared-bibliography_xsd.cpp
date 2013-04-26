@@ -389,7 +389,16 @@ CT_PersonType* CT_PersonType::default_instance_ = NULL;
     }
 
     void CT_NameType::clear()
-    {    }
+    {    
+    m_has_NameList = false;
+    
+    if (m_NameList)
+    {
+        delete m_NameList;
+        m_NameList = NULL;
+    }
+    
+    }
 
     void CT_NameType::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -501,7 +510,25 @@ CT_NameType* CT_NameType::default_instance_ = NULL;
     }
 
     void CT_NameOrCorporateType::clear()
-    {    }
+    {    
+    m_has_NameList = false;
+    
+    if (m_NameList)
+    {
+        delete m_NameList;
+        m_NameList = NULL;
+    }
+    
+    
+    m_has_Corporate = false;
+    
+    if (m_Corporate)
+    {
+        delete m_Corporate;
+        m_Corporate = NULL;
+    }
+    
+    }
 
     void CT_NameOrCorporateType::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    

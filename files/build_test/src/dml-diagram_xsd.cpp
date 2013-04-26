@@ -8815,6 +8815,69 @@ CT_Colors* CT_Colors::default_instance_ = NULL;
     {    
     m_has_name_attr = false;
     m_name_attr.clear();
+    
+    m_has_fillClrLst = false;
+    
+    if (m_fillClrLst)
+    {
+        delete m_fillClrLst;
+        m_fillClrLst = NULL;
+    }
+    
+    
+    m_has_linClrLst = false;
+    
+    if (m_linClrLst)
+    {
+        delete m_linClrLst;
+        m_linClrLst = NULL;
+    }
+    
+    
+    m_has_effectClrLst = false;
+    
+    if (m_effectClrLst)
+    {
+        delete m_effectClrLst;
+        m_effectClrLst = NULL;
+    }
+    
+    
+    m_has_txLinClrLst = false;
+    
+    if (m_txLinClrLst)
+    {
+        delete m_txLinClrLst;
+        m_txLinClrLst = NULL;
+    }
+    
+    
+    m_has_txFillClrLst = false;
+    
+    if (m_txFillClrLst)
+    {
+        delete m_txFillClrLst;
+        m_txFillClrLst = NULL;
+    }
+    
+    
+    m_has_txEffectClrLst = false;
+    
+    if (m_txEffectClrLst)
+    {
+        delete m_txEffectClrLst;
+        m_txEffectClrLst = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_CTStyleLabel::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -10023,6 +10086,42 @@ CT_ColorTransformHeaderLst* CT_ColorTransformHeaderLst::default_instance_ = NULL
         m_cxnId_attr = NULL;
     }
     
+    
+    m_has_prSet = false;
+    
+    if (m_prSet)
+    {
+        delete m_prSet;
+        m_prSet = NULL;
+    }
+    
+    
+    m_has_spPr = false;
+    
+    if (m_spPr)
+    {
+        delete m_spPr;
+        m_spPr = NULL;
+    }
+    
+    
+    m_has_t = false;
+    
+    if (m_t)
+    {
+        delete m_t;
+        m_t = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Pt::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -10358,6 +10457,15 @@ CT_PtList* CT_PtList::default_instance_ = NULL;
     
     m_has_presId_attr = false;
     m_presId_attr.clear();
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Cxn::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -10845,7 +10953,52 @@ CT_CxnList* CT_CxnList::default_instance_ = NULL;
     }
 
     void CT_DataModel::clear()
-    {    }
+    {    
+    m_has_ptLst = false;
+    
+    if (m_ptLst)
+    {
+        delete m_ptLst;
+        m_ptLst = NULL;
+    }
+    
+    
+    m_has_cxnLst = false;
+    
+    if (m_cxnLst)
+    {
+        delete m_cxnLst;
+        m_cxnLst = NULL;
+    }
+    
+    
+    m_has_bg = false;
+    
+    if (m_bg)
+    {
+        delete m_bg;
+        m_bg = NULL;
+    }
+    
+    
+    m_has_whole = false;
+    
+    if (m_whole)
+    {
+        delete m_whole;
+        m_whole = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void CT_DataModel::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -11028,6 +11181,15 @@ CT_DataModel* CT_DataModel::default_instance_ = NULL;
     
     m_has_fact_attr = false;
     m_fact_attr = 0;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Constraint::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -11512,6 +11674,15 @@ CT_Constraints* CT_Constraints::default_instance_ = NULL;
     
     m_has_max_attr = false;
     m_max_attr = 0;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_NumericRule::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -11903,6 +12074,15 @@ CT_Rules* CT_Rules::default_instance_ = NULL;
     {
         delete m_step_attr;
         m_step_attr = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
     }
     
     }
@@ -12393,6 +12573,24 @@ CT_AdjLst* CT_AdjLst::default_instance_ = NULL;
     
     m_has_blipPhldr_attr = false;
     m_blipPhldr_attr = false;
+    
+    m_has_adjLst = false;
+    
+    if (m_adjLst)
+    {
+        delete m_adjLst;
+        m_adjLst = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Shape::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -18366,6 +18564,15 @@ CT_Choose* CT_Choose::default_instance_ = NULL;
     {    
     m_has_useDef_attr = false;
     m_useDef_attr = false;
+    
+    m_has_dataModel = false;
+    
+    if (m_dataModel)
+    {
+        delete m_dataModel;
+        m_dataModel = NULL;
+    }
+    
     }
 
     void CT_SampleData::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -20690,6 +20897,24 @@ CT_RelIds* CT_RelIds::default_instance_ = NULL;
         m_custRadScaleInc_attr = NULL;
     }
     
+    
+    m_has_presLayoutVars = false;
+    
+    if (m_presLayoutVars)
+    {
+        delete m_presLayoutVars;
+        m_presLayoutVars = NULL;
+    }
+    
+    
+    m_has_style = false;
+    
+    if (m_style)
+    {
+        delete m_style;
+        m_style = NULL;
+    }
+    
     }
 
     void CT_ElemPropSet::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -22239,7 +22464,88 @@ CT_ResizeHandles* CT_ResizeHandles::default_instance_ = NULL;
     }
 
     void CT_LayoutVariablePropertySet::clear()
-    {    }
+    {    
+    m_has_orgChart = false;
+    
+    if (m_orgChart)
+    {
+        delete m_orgChart;
+        m_orgChart = NULL;
+    }
+    
+    
+    m_has_chMax = false;
+    
+    if (m_chMax)
+    {
+        delete m_chMax;
+        m_chMax = NULL;
+    }
+    
+    
+    m_has_chPref = false;
+    
+    if (m_chPref)
+    {
+        delete m_chPref;
+        m_chPref = NULL;
+    }
+    
+    
+    m_has_bulletEnabled = false;
+    
+    if (m_bulletEnabled)
+    {
+        delete m_bulletEnabled;
+        m_bulletEnabled = NULL;
+    }
+    
+    
+    m_has_dir = false;
+    
+    if (m_dir)
+    {
+        delete m_dir;
+        m_dir = NULL;
+    }
+    
+    
+    m_has_hierBranch = false;
+    
+    if (m_hierBranch)
+    {
+        delete m_hierBranch;
+        m_hierBranch = NULL;
+    }
+    
+    
+    m_has_animOne = false;
+    
+    if (m_animOne)
+    {
+        delete m_animOne;
+        m_animOne = NULL;
+    }
+    
+    
+    m_has_animLvl = false;
+    
+    if (m_animLvl)
+    {
+        delete m_animLvl;
+        m_animLvl = NULL;
+    }
+    
+    
+    m_has_resizeHandles = false;
+    
+    if (m_resizeHandles)
+    {
+        delete m_resizeHandles;
+        m_resizeHandles = NULL;
+    }
+    
+    }
 
     void CT_LayoutVariablePropertySet::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -22751,7 +23057,25 @@ CT_SDCategories* CT_SDCategories::default_instance_ = NULL;
     }
 
     void CT_TextProps::clear()
-    {    }
+    {    
+    m_has_a_sp3d = false;
+    
+    if (m_a_sp3d)
+    {
+        delete m_a_sp3d;
+        m_a_sp3d = NULL;
+    }
+    
+    
+    m_has_a_flatTx = false;
+    
+    if (m_a_flatTx)
+    {
+        delete m_a_flatTx;
+        m_a_flatTx = NULL;
+    }
+    
+    }
 
     void CT_TextProps::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -22931,6 +23255,51 @@ CT_TextProps* CT_TextProps::default_instance_ = NULL;
     {    
     m_has_name_attr = false;
     m_name_attr.clear();
+    
+    m_has_scene3d = false;
+    
+    if (m_scene3d)
+    {
+        delete m_scene3d;
+        m_scene3d = NULL;
+    }
+    
+    
+    m_has_sp3d = false;
+    
+    if (m_sp3d)
+    {
+        delete m_sp3d;
+        m_sp3d = NULL;
+    }
+    
+    
+    m_has_txPr = false;
+    
+    if (m_txPr)
+    {
+        delete m_txPr;
+        m_txPr = NULL;
+    }
+    
+    
+    m_has_style = false;
+    
+    if (m_style)
+    {
+        delete m_style;
+        m_style = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_StyleLabel::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -25231,7 +25600,52 @@ colorsDefHdrLst_element* colorsDefHdrLst_element::default_instance_ = NULL;
     }
 
     void dataModel_element::clear()
-    {    }
+    {    
+    m_has_ptLst = false;
+    
+    if (m_ptLst)
+    {
+        delete m_ptLst;
+        m_ptLst = NULL;
+    }
+    
+    
+    m_has_cxnLst = false;
+    
+    if (m_cxnLst)
+    {
+        delete m_cxnLst;
+        m_cxnLst = NULL;
+    }
+    
+    
+    m_has_bg = false;
+    
+    if (m_bg)
+    {
+        delete m_bg;
+        m_bg = NULL;
+    }
+    
+    
+    m_has_whole = false;
+    
+    if (m_whole)
+    {
+        delete m_whole;
+        m_whole = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void dataModel_element::toXml(std::ostream& _outStream) const
     {    

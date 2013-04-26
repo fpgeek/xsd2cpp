@@ -343,7 +343,25 @@ CT_AnchorClientData* CT_AnchorClientData::default_instance_ = NULL;
     }
 
     void CT_ShapeNonVisual::clear()
-    {    }
+    {    
+    m_has_cNvPr = false;
+    
+    if (m_cNvPr)
+    {
+        delete m_cNvPr;
+        m_cNvPr = NULL;
+    }
+    
+    
+    m_has_cNvSpPr = false;
+    
+    if (m_cNvSpPr)
+    {
+        delete m_cNvSpPr;
+        m_cNvSpPr = NULL;
+    }
+    
+    }
 
     void CT_ShapeNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -512,6 +530,42 @@ CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
     
     m_has_fPublished_attr = false;
     m_fPublished_attr = false;
+    
+    m_has_nvSpPr = false;
+    
+    if (m_nvSpPr)
+    {
+        delete m_nvSpPr;
+        m_nvSpPr = NULL;
+    }
+    
+    
+    m_has_spPr = false;
+    
+    if (m_spPr)
+    {
+        delete m_spPr;
+        m_spPr = NULL;
+    }
+    
+    
+    m_has_style = false;
+    
+    if (m_style)
+    {
+        delete m_style;
+        m_style = NULL;
+    }
+    
+    
+    m_has_txBody = false;
+    
+    if (m_txBody)
+    {
+        delete m_txBody;
+        m_txBody = NULL;
+    }
+    
     }
 
     void CT_Shape::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -706,7 +760,25 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
     }
 
     void CT_ConnectorNonVisual::clear()
-    {    }
+    {    
+    m_has_cNvPr = false;
+    
+    if (m_cNvPr)
+    {
+        delete m_cNvPr;
+        m_cNvPr = NULL;
+    }
+    
+    
+    m_has_cNvCxnSpPr = false;
+    
+    if (m_cNvCxnSpPr)
+    {
+        delete m_cNvCxnSpPr;
+        m_cNvCxnSpPr = NULL;
+    }
+    
+    }
 
     void CT_ConnectorNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -839,6 +911,33 @@ CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
     
     m_has_fPublished_attr = false;
     m_fPublished_attr = false;
+    
+    m_has_nvCxnSpPr = false;
+    
+    if (m_nvCxnSpPr)
+    {
+        delete m_nvCxnSpPr;
+        m_nvCxnSpPr = NULL;
+    }
+    
+    
+    m_has_spPr = false;
+    
+    if (m_spPr)
+    {
+        delete m_spPr;
+        m_spPr = NULL;
+    }
+    
+    
+    m_has_style = false;
+    
+    if (m_style)
+    {
+        delete m_style;
+        m_style = NULL;
+    }
+    
     }
 
     void CT_Connector::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -984,7 +1083,25 @@ CT_Connector* CT_Connector::default_instance_ = NULL;
     }
 
     void CT_PictureNonVisual::clear()
-    {    }
+    {    
+    m_has_cNvPr = false;
+    
+    if (m_cNvPr)
+    {
+        delete m_cNvPr;
+        m_cNvPr = NULL;
+    }
+    
+    
+    m_has_cNvPicPr = false;
+    
+    if (m_cNvPicPr)
+    {
+        delete m_cNvPicPr;
+        m_cNvPicPr = NULL;
+    }
+    
+    }
 
     void CT_PictureNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -1143,6 +1260,42 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
     
     m_has_fPublished_attr = false;
     m_fPublished_attr = false;
+    
+    m_has_nvPicPr = false;
+    
+    if (m_nvPicPr)
+    {
+        delete m_nvPicPr;
+        m_nvPicPr = NULL;
+    }
+    
+    
+    m_has_blipFill = false;
+    
+    if (m_blipFill)
+    {
+        delete m_blipFill;
+        m_blipFill = NULL;
+    }
+    
+    
+    m_has_spPr = false;
+    
+    if (m_spPr)
+    {
+        delete m_spPr;
+        m_spPr = NULL;
+    }
+    
+    
+    m_has_style = false;
+    
+    if (m_style)
+    {
+        delete m_style;
+        m_style = NULL;
+    }
+    
     }
 
     void CT_Picture::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1293,7 +1446,25 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
     }
 
     void CT_GraphicalObjectFrameNonVisual::clear()
-    {    }
+    {    
+    m_has_cNvPr = false;
+    
+    if (m_cNvPr)
+    {
+        delete m_cNvPr;
+        m_cNvPr = NULL;
+    }
+    
+    
+    m_has_cNvGraphicFramePr = false;
+    
+    if (m_cNvGraphicFramePr)
+    {
+        delete m_cNvGraphicFramePr;
+        m_cNvGraphicFramePr = NULL;
+    }
+    
+    }
 
     void CT_GraphicalObjectFrameNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -1426,6 +1597,33 @@ CT_GraphicalObjectFrameNonVisual* CT_GraphicalObjectFrameNonVisual::default_inst
     
     m_has_fPublished_attr = false;
     m_fPublished_attr = false;
+    
+    m_has_nvGraphicFramePr = false;
+    
+    if (m_nvGraphicFramePr)
+    {
+        delete m_nvGraphicFramePr;
+        m_nvGraphicFramePr = NULL;
+    }
+    
+    
+    m_has_xfrm = false;
+    
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    
+    
+    m_has_a_graphic = false;
+    
+    if (m_a_graphic)
+    {
+        delete m_a_graphic;
+        m_a_graphic = NULL;
+    }
+    
     }
 
     void CT_GraphicalObjectFrame::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1571,7 +1769,25 @@ CT_GraphicalObjectFrame* CT_GraphicalObjectFrame::default_instance_ = NULL;
     }
 
     void CT_GroupShapeNonVisual::clear()
-    {    }
+    {    
+    m_has_cNvPr = false;
+    
+    if (m_cNvPr)
+    {
+        delete m_cNvPr;
+        m_cNvPr = NULL;
+    }
+    
+    
+    m_has_cNvGrpSpPr = false;
+    
+    if (m_cNvGrpSpPr)
+    {
+        delete m_cNvGrpSpPr;
+        m_cNvGrpSpPr = NULL;
+    }
+    
+    }
 
     void CT_GroupShapeNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -2302,7 +2518,43 @@ CT_Rel* CT_Rel::default_instance_ = NULL;
     }
 
     void CT_Marker::clear()
-    {    }
+    {    
+    m_has_col = false;
+    
+    if (m_col)
+    {
+        delete m_col;
+        m_col = NULL;
+    }
+    
+    
+    m_has_colOff = false;
+    
+    if (m_colOff)
+    {
+        delete m_colOff;
+        m_colOff = NULL;
+    }
+    
+    
+    m_has_row = false;
+    
+    if (m_row)
+    {
+        delete m_row;
+        m_row = NULL;
+    }
+    
+    
+    m_has_rowOff = false;
+    
+    if (m_rowOff)
+    {
+        delete m_rowOff;
+        m_rowOff = NULL;
+    }
+    
+    }
 
     void CT_Marker::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -2876,6 +3128,87 @@ CT_Marker* CT_Marker::default_instance_ = NULL;
     {
         delete m_editAs_attr;
         m_editAs_attr = NULL;
+    }
+    
+    
+    m_has_from = false;
+    
+    if (m_from)
+    {
+        delete m_from;
+        m_from = NULL;
+    }
+    
+    
+    m_has_to = false;
+    
+    if (m_to)
+    {
+        delete m_to;
+        m_to = NULL;
+    }
+    
+     
+    m_has_sp = false;
+    
+    if (m_sp)
+    {
+        delete m_sp;
+        m_sp = NULL;
+    }
+    
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    
+    
+    m_has_cxnSp = false;
+    
+    if (m_cxnSp)
+    {
+        delete m_cxnSp;
+        m_cxnSp = NULL;
+    }
+    
+    
+    m_has_pic = false;
+    
+    if (m_pic)
+    {
+        delete m_pic;
+        m_pic = NULL;
+    }
+    
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    
+     
+    m_has_clientData = false;
+    
+    if (m_clientData)
+    {
+        delete m_clientData;
+        m_clientData = NULL;
     }
     
     }
@@ -3493,7 +3826,88 @@ CT_TwoCellAnchor* CT_TwoCellAnchor::default_instance_ = NULL;
     }
 
     void CT_OneCellAnchor::clear()
-    {    }
+    {    
+    m_has_from = false;
+    
+    if (m_from)
+    {
+        delete m_from;
+        m_from = NULL;
+    }
+    
+    
+    m_has_ext = false;
+    
+    if (m_ext)
+    {
+        delete m_ext;
+        m_ext = NULL;
+    }
+    
+     
+    m_has_sp = false;
+    
+    if (m_sp)
+    {
+        delete m_sp;
+        m_sp = NULL;
+    }
+    
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    
+    
+    m_has_cxnSp = false;
+    
+    if (m_cxnSp)
+    {
+        delete m_cxnSp;
+        m_cxnSp = NULL;
+    }
+    
+    
+    m_has_pic = false;
+    
+    if (m_pic)
+    {
+        delete m_pic;
+        m_pic = NULL;
+    }
+    
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    
+     
+    m_has_clientData = false;
+    
+    if (m_clientData)
+    {
+        delete m_clientData;
+        m_clientData = NULL;
+    }
+    
+    }
 
     void CT_OneCellAnchor::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -4083,7 +4497,88 @@ CT_OneCellAnchor* CT_OneCellAnchor::default_instance_ = NULL;
     }
 
     void CT_AbsoluteAnchor::clear()
-    {    }
+    {    
+    m_has_pos = false;
+    
+    if (m_pos)
+    {
+        delete m_pos;
+        m_pos = NULL;
+    }
+    
+    
+    m_has_ext = false;
+    
+    if (m_ext)
+    {
+        delete m_ext;
+        m_ext = NULL;
+    }
+    
+     
+    m_has_sp = false;
+    
+    if (m_sp)
+    {
+        delete m_sp;
+        m_sp = NULL;
+    }
+    
+    
+    m_has_grpSp = false;
+    
+    if (m_grpSp)
+    {
+        delete m_grpSp;
+        m_grpSp = NULL;
+    }
+    
+    
+    m_has_graphicFrame = false;
+    
+    if (m_graphicFrame)
+    {
+        delete m_graphicFrame;
+        m_graphicFrame = NULL;
+    }
+    
+    
+    m_has_cxnSp = false;
+    
+    if (m_cxnSp)
+    {
+        delete m_cxnSp;
+        m_cxnSp = NULL;
+    }
+    
+    
+    m_has_pic = false;
+    
+    if (m_pic)
+    {
+        delete m_pic;
+        m_pic = NULL;
+    }
+    
+    
+    m_has_contentPart = false;
+    
+    if (m_contentPart)
+    {
+        delete m_contentPart;
+        m_contentPart = NULL;
+    }
+    
+     
+    m_has_clientData = false;
+    
+    if (m_clientData)
+    {
+        delete m_clientData;
+        m_clientData = NULL;
+    }
+    
+    }
 
     void CT_AbsoluteAnchor::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -4495,7 +4990,43 @@ CT_Drawing* CT_Drawing::default_instance_ = NULL;
     }
 
     void from_element::clear()
-    {    }
+    {    
+    m_has_col = false;
+    
+    if (m_col)
+    {
+        delete m_col;
+        m_col = NULL;
+    }
+    
+    
+    m_has_colOff = false;
+    
+    if (m_colOff)
+    {
+        delete m_colOff;
+        m_colOff = NULL;
+    }
+    
+    
+    m_has_row = false;
+    
+    if (m_row)
+    {
+        delete m_row;
+        m_row = NULL;
+    }
+    
+    
+    m_has_rowOff = false;
+    
+    if (m_rowOff)
+    {
+        delete m_rowOff;
+        m_rowOff = NULL;
+    }
+    
+    }
 
     void from_element::toXml(std::ostream& _outStream) const
     {    
@@ -4653,7 +5184,43 @@ from_element* from_element::default_instance_ = NULL;
     }
 
     void to_element::clear()
-    {    }
+    {    
+    m_has_col = false;
+    
+    if (m_col)
+    {
+        delete m_col;
+        m_col = NULL;
+    }
+    
+    
+    m_has_colOff = false;
+    
+    if (m_colOff)
+    {
+        delete m_colOff;
+        m_colOff = NULL;
+    }
+    
+    
+    m_has_row = false;
+    
+    if (m_row)
+    {
+        delete m_row;
+        m_row = NULL;
+    }
+    
+    
+    m_has_rowOff = false;
+    
+    if (m_rowOff)
+    {
+        delete m_rowOff;
+        m_rowOff = NULL;
+    }
+    
+    }
 
     void to_element::toXml(std::ostream& _outStream) const
     {    

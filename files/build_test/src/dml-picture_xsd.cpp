@@ -71,7 +71,25 @@ namespace ns_dpct {
     }
 
     void CT_PictureNonVisual::clear()
-    {    }
+    {    
+    m_has_cNvPr = false;
+    
+    if (m_cNvPr)
+    {
+        delete m_cNvPr;
+        m_cNvPr = NULL;
+    }
+    
+    
+    m_has_cNvPicPr = false;
+    
+    if (m_cNvPicPr)
+    {
+        delete m_cNvPicPr;
+        m_cNvPicPr = NULL;
+    }
+    
+    }
 
     void CT_PictureNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -194,7 +212,34 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
     }
 
     void CT_Picture::clear()
-    {    }
+    {    
+    m_has_nvPicPr = false;
+    
+    if (m_nvPicPr)
+    {
+        delete m_nvPicPr;
+        m_nvPicPr = NULL;
+    }
+    
+    
+    m_has_blipFill = false;
+    
+    if (m_blipFill)
+    {
+        delete m_blipFill;
+        m_blipFill = NULL;
+    }
+    
+    
+    m_has_spPr = false;
+    
+    if (m_spPr)
+    {
+        delete m_spPr;
+        m_spPr = NULL;
+    }
+    
+    }
 
     void CT_Picture::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -322,7 +367,34 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
     }
 
     void pic_element::clear()
-    {    }
+    {    
+    m_has_nvPicPr = false;
+    
+    if (m_nvPicPr)
+    {
+        delete m_nvPicPr;
+        m_nvPicPr = NULL;
+    }
+    
+    
+    m_has_blipFill = false;
+    
+    if (m_blipFill)
+    {
+        delete m_blipFill;
+        m_blipFill = NULL;
+    }
+    
+    
+    m_has_spPr = false;
+    
+    if (m_spPr)
+    {
+        delete m_spPr;
+        m_spPr = NULL;
+    }
+    
+    }
 
     void pic_element::toXml(std::ostream& _outStream) const
     {    

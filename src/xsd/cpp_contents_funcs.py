@@ -969,7 +969,12 @@ def _getClearMethodBodyListFromAttrList(pbAttrList):
 
     return clearMethodBodyList
 
-def _getClearMethodBodyStrFromRepeated(idx):
+def _getClearMethodBodyStrFromRepeated(pbElemList, idx):
+
+    anyElems = filter(lambda pbElem:pbElem.type.kind == PB.Element.Type.Any, pbElemList)
+    if len(anyElems) == len(pbElemList):
+        return ''
+
     vector_type = 'vector<ChildGroup_%d*>' % idx
     vector_name = 'm_childGroupList_%d' % idx
 
@@ -1553,10 +1558,10 @@ def getClearMethodBodyStrFromElemCont(pbElemCont):
         elif elemCont.kind == PB.ElementContainer.Choice:
             clearMethodBodyStrList.append(_getClearMethodBodyStrFromElemList(elemCont.choice))
         elif elemCont.kind == PB.ElementContainer.RepeatedSequence:
-            clearMethodBodyStrList.append(_getClearMethodBodyStrFromRepeated(repeatedIdx))
+            clearMethodBodyStrList.append(_getClearMethodBodyStrFromRepeated(elemCont.repeated_sequence, repeatedIdx))
             repeatedIdx += 1
         elif elemCont.kind == PB.ElementContainer.RepeatedChoice:
-            clearMethodBodyStrList.append(_getClearMethodBodyStrFromRepeated(repeatedIdx))
+            clearMethodBodyStrList.append(_getClearMethodBodyStrFromRepeated(elemCont.repeated_choice, repeatedIdx))
             repeatedIdx += 1
     return " ".join(clearMethodBodyStrList)
 

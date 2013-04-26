@@ -537,7 +537,112 @@ namespace ns_extended_properties {
     }
 
     void CT_Properties::clear()
-    {    }
+    {    
+    m_has_Template = false;
+    m_Template.clear();
+    
+    m_has_Manager = false;
+    m_Manager.clear();
+    
+    m_has_Company = false;
+    m_Company.clear();
+    
+    m_has_Pages = false;
+    m_Pages = 0;
+    
+    m_has_Words = false;
+    m_Words = 0;
+    
+    m_has_Characters = false;
+    m_Characters = 0;
+    
+    m_has_PresentationFormat = false;
+    m_PresentationFormat.clear();
+    
+    m_has_Lines = false;
+    m_Lines = 0;
+    
+    m_has_Paragraphs = false;
+    m_Paragraphs = 0;
+    
+    m_has_Slides = false;
+    m_Slides = 0;
+    
+    m_has_Notes = false;
+    m_Notes = 0;
+    
+    m_has_TotalTime = false;
+    m_TotalTime = 0;
+    
+    m_has_HiddenSlides = false;
+    m_HiddenSlides = 0;
+    
+    m_has_MMClips = false;
+    m_MMClips = 0;
+    
+    m_has_ScaleCrop = false;
+    m_ScaleCrop = false;
+    
+    m_has_HeadingPairs = false;
+    
+    if (m_HeadingPairs)
+    {
+        delete m_HeadingPairs;
+        m_HeadingPairs = NULL;
+    }
+    
+    
+    m_has_TitlesOfParts = false;
+    
+    if (m_TitlesOfParts)
+    {
+        delete m_TitlesOfParts;
+        m_TitlesOfParts = NULL;
+    }
+    
+    
+    m_has_LinksUpToDate = false;
+    m_LinksUpToDate = false;
+    
+    m_has_CharactersWithSpaces = false;
+    m_CharactersWithSpaces = 0;
+    
+    m_has_SharedDoc = false;
+    m_SharedDoc = false;
+    
+    m_has_HyperlinkBase = false;
+    m_HyperlinkBase.clear();
+    
+    m_has_HLinks = false;
+    
+    if (m_HLinks)
+    {
+        delete m_HLinks;
+        m_HLinks = NULL;
+    }
+    
+    
+    m_has_HyperlinksChanged = false;
+    m_HyperlinksChanged = false;
+    
+    m_has_DigSig = false;
+    
+    if (m_DigSig)
+    {
+        delete m_DigSig;
+        m_DigSig = NULL;
+    }
+    
+    
+    m_has_Application = false;
+    m_Application.clear();
+    
+    m_has_AppVersion = false;
+    m_AppVersion.clear();
+    
+    m_has_DocSecurity = false;
+    m_DocSecurity = 0;
+    }
 
     void CT_Properties::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -733,7 +838,16 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
 
     void CT_VectorVariant::clear()
-    {    }
+    {    
+    m_has_vt_vector = false;
+    
+    if (m_vt_vector)
+    {
+        delete m_vt_vector;
+        m_vt_vector = NULL;
+    }
+    
+    }
 
     void CT_VectorVariant::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -799,7 +913,16 @@ CT_VectorVariant* CT_VectorVariant::default_instance_ = NULL;
     }
 
     void CT_VectorLpstr::clear()
-    {    }
+    {    
+    m_has_vt_vector = false;
+    
+    if (m_vt_vector)
+    {
+        delete m_vt_vector;
+        m_vt_vector = NULL;
+    }
+    
+    }
 
     void CT_VectorLpstr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -857,7 +980,10 @@ CT_VectorLpstr* CT_VectorLpstr::default_instance_ = NULL;
     }
 
     void CT_DigSigBlob::clear()
-    {    }
+    {    
+    m_has_vt_blob = false;
+    m_vt_blob.clear();
+    }
 
     void CT_DigSigBlob::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -1415,7 +1541,112 @@ CT_DigSigBlob* CT_DigSigBlob::default_instance_ = NULL;
     }
 
     void Properties_element::clear()
-    {    }
+    {    
+    m_has_Template = false;
+    m_Template.clear();
+    
+    m_has_Manager = false;
+    m_Manager.clear();
+    
+    m_has_Company = false;
+    m_Company.clear();
+    
+    m_has_Pages = false;
+    m_Pages = 0;
+    
+    m_has_Words = false;
+    m_Words = 0;
+    
+    m_has_Characters = false;
+    m_Characters = 0;
+    
+    m_has_PresentationFormat = false;
+    m_PresentationFormat.clear();
+    
+    m_has_Lines = false;
+    m_Lines = 0;
+    
+    m_has_Paragraphs = false;
+    m_Paragraphs = 0;
+    
+    m_has_Slides = false;
+    m_Slides = 0;
+    
+    m_has_Notes = false;
+    m_Notes = 0;
+    
+    m_has_TotalTime = false;
+    m_TotalTime = 0;
+    
+    m_has_HiddenSlides = false;
+    m_HiddenSlides = 0;
+    
+    m_has_MMClips = false;
+    m_MMClips = 0;
+    
+    m_has_ScaleCrop = false;
+    m_ScaleCrop = false;
+    
+    m_has_HeadingPairs = false;
+    
+    if (m_HeadingPairs)
+    {
+        delete m_HeadingPairs;
+        m_HeadingPairs = NULL;
+    }
+    
+    
+    m_has_TitlesOfParts = false;
+    
+    if (m_TitlesOfParts)
+    {
+        delete m_TitlesOfParts;
+        m_TitlesOfParts = NULL;
+    }
+    
+    
+    m_has_LinksUpToDate = false;
+    m_LinksUpToDate = false;
+    
+    m_has_CharactersWithSpaces = false;
+    m_CharactersWithSpaces = 0;
+    
+    m_has_SharedDoc = false;
+    m_SharedDoc = false;
+    
+    m_has_HyperlinkBase = false;
+    m_HyperlinkBase.clear();
+    
+    m_has_HLinks = false;
+    
+    if (m_HLinks)
+    {
+        delete m_HLinks;
+        m_HLinks = NULL;
+    }
+    
+    
+    m_has_HyperlinksChanged = false;
+    m_HyperlinksChanged = false;
+    
+    m_has_DigSig = false;
+    
+    if (m_DigSig)
+    {
+        delete m_DigSig;
+        m_DigSig = NULL;
+    }
+    
+    
+    m_has_Application = false;
+    m_Application.clear();
+    
+    m_has_AppVersion = false;
+    m_AppVersion.clear();
+    
+    m_has_DocSecurity = false;
+    m_DocSecurity = 0;
+    }
 
     void Properties_element::toXml(std::ostream& _outStream) const
     {    

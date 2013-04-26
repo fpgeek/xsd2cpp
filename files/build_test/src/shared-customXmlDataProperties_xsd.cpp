@@ -213,6 +213,15 @@ CT_DatastoreSchemaRefs* CT_DatastoreSchemaRefs::default_instance_ = NULL;
         m_itemID_attr = NULL;
     }
     
+    
+    m_has_schemaRefs = false;
+    
+    if (m_schemaRefs)
+    {
+        delete m_schemaRefs;
+        m_schemaRefs = NULL;
+    }
+    
     }
 
     void CT_DatastoreItem::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -313,6 +322,15 @@ CT_DatastoreItem* CT_DatastoreItem::default_instance_ = NULL;
     {
         delete m_itemID_attr;
         m_itemID_attr = NULL;
+    }
+    
+    
+    m_has_schemaRefs = false;
+    
+    if (m_schemaRefs)
+    {
+        delete m_schemaRefs;
+        m_schemaRefs = NULL;
     }
     
     }

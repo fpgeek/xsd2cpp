@@ -2120,7 +2120,43 @@ CT_ManualBreak* CT_ManualBreak::default_instance_ = NULL;
     }
 
     void CT_RPR::clear()
-    {    }
+    {    
+    m_has_lit = false;
+    
+    if (m_lit)
+    {
+        delete m_lit;
+        m_lit = NULL;
+    }
+    
+     
+    m_has_nor = false;
+    
+    if (m_nor)
+    {
+        delete m_nor;
+        m_nor = NULL;
+    }
+    
+     
+    m_has_brk = false;
+    
+    if (m_brk)
+    {
+        delete m_brk;
+        m_brk = NULL;
+    }
+    
+    
+    m_has_aln = false;
+    
+    if (m_aln)
+    {
+        delete m_aln;
+        m_aln = NULL;
+    }
+    
+    }
 
     void CT_RPR::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -13868,7 +13904,25 @@ CT_R* CT_R::default_instance_ = NULL;
     }
 
     void CT_CtrlPr::clear()
-    {    }
+    {     
+    m_has_w_ins = false;
+    
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    
+    
+    m_has_w_del = false;
+    
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    
+    }
 
     void CT_CtrlPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -13965,7 +14019,25 @@ CT_CtrlPr* CT_CtrlPr::default_instance_ = NULL;
     }
 
     void CT_AccPr::clear()
-    {    }
+    {    
+    m_has_chr = false;
+    
+    if (m_chr)
+    {
+        delete m_chr;
+        m_chr = NULL;
+    }
+    
+    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_AccPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -14062,7 +14134,25 @@ CT_AccPr* CT_AccPr::default_instance_ = NULL;
     }
 
     void CT_Acc::clear()
-    {    }
+    {    
+    m_has_accPr = false;
+    
+    if (m_accPr)
+    {
+        delete m_accPr;
+        m_accPr = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    }
 
     void CT_Acc::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -14159,7 +14249,25 @@ CT_Acc* CT_Acc::default_instance_ = NULL;
     }
 
     void CT_BarPr::clear()
-    {    }
+    {    
+    m_has_pos = false;
+    
+    if (m_pos)
+    {
+        delete m_pos;
+        m_pos = NULL;
+    }
+    
+    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_BarPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -14256,7 +14364,25 @@ CT_BarPr* CT_BarPr::default_instance_ = NULL;
     }
 
     void CT_Bar::clear()
-    {    }
+    {    
+    m_has_barPr = false;
+    
+    if (m_barPr)
+    {
+        delete m_barPr;
+        m_barPr = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    }
 
     void CT_Bar::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -14457,7 +14583,61 @@ CT_Bar* CT_Bar::default_instance_ = NULL;
     }
 
     void CT_BoxPr::clear()
-    {    }
+    {    
+    m_has_opEmu = false;
+    
+    if (m_opEmu)
+    {
+        delete m_opEmu;
+        m_opEmu = NULL;
+    }
+    
+    
+    m_has_noBreak = false;
+    
+    if (m_noBreak)
+    {
+        delete m_noBreak;
+        m_noBreak = NULL;
+    }
+    
+    
+    m_has_diff = false;
+    
+    if (m_diff)
+    {
+        delete m_diff;
+        m_diff = NULL;
+    }
+    
+    
+    m_has_brk = false;
+    
+    if (m_brk)
+    {
+        delete m_brk;
+        m_brk = NULL;
+    }
+    
+    
+    m_has_aln = false;
+    
+    if (m_aln)
+    {
+        delete m_aln;
+        m_aln = NULL;
+    }
+    
+    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_BoxPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -14574,7 +14754,25 @@ CT_BoxPr* CT_BoxPr::default_instance_ = NULL;
     }
 
     void CT_Box::clear()
-    {    }
+    {    
+    m_has_boxPr = false;
+    
+    if (m_boxPr)
+    {
+        delete m_boxPr;
+        m_boxPr = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    }
 
     void CT_Box::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -14853,7 +15051,88 @@ CT_Box* CT_Box::default_instance_ = NULL;
     }
 
     void CT_BorderBoxPr::clear()
-    {    }
+    {    
+    m_has_hideTop = false;
+    
+    if (m_hideTop)
+    {
+        delete m_hideTop;
+        m_hideTop = NULL;
+    }
+    
+    
+    m_has_hideBot = false;
+    
+    if (m_hideBot)
+    {
+        delete m_hideBot;
+        m_hideBot = NULL;
+    }
+    
+    
+    m_has_hideLeft = false;
+    
+    if (m_hideLeft)
+    {
+        delete m_hideLeft;
+        m_hideLeft = NULL;
+    }
+    
+    
+    m_has_hideRight = false;
+    
+    if (m_hideRight)
+    {
+        delete m_hideRight;
+        m_hideRight = NULL;
+    }
+    
+    
+    m_has_strikeH = false;
+    
+    if (m_strikeH)
+    {
+        delete m_strikeH;
+        m_strikeH = NULL;
+    }
+    
+    
+    m_has_strikeV = false;
+    
+    if (m_strikeV)
+    {
+        delete m_strikeV;
+        m_strikeV = NULL;
+    }
+    
+    
+    m_has_strikeBLTR = false;
+    
+    if (m_strikeBLTR)
+    {
+        delete m_strikeBLTR;
+        m_strikeBLTR = NULL;
+    }
+    
+    
+    m_has_strikeTLBR = false;
+    
+    if (m_strikeTLBR)
+    {
+        delete m_strikeTLBR;
+        m_strikeTLBR = NULL;
+    }
+    
+    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_BorderBoxPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -14985,7 +15264,25 @@ CT_BorderBoxPr* CT_BorderBoxPr::default_instance_ = NULL;
     }
 
     void CT_BorderBox::clear()
-    {    }
+    {    
+    m_has_borderBoxPr = false;
+    
+    if (m_borderBoxPr)
+    {
+        delete m_borderBoxPr;
+        m_borderBoxPr = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    }
 
     void CT_BorderBox::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -15186,7 +15483,61 @@ CT_BorderBox* CT_BorderBox::default_instance_ = NULL;
     }
 
     void CT_DPr::clear()
-    {    }
+    {    
+    m_has_begChr = false;
+    
+    if (m_begChr)
+    {
+        delete m_begChr;
+        m_begChr = NULL;
+    }
+    
+    
+    m_has_sepChr = false;
+    
+    if (m_sepChr)
+    {
+        delete m_sepChr;
+        m_sepChr = NULL;
+    }
+    
+    
+    m_has_endChr = false;
+    
+    if (m_endChr)
+    {
+        delete m_endChr;
+        m_endChr = NULL;
+    }
+    
+    
+    m_has_grow = false;
+    
+    if (m_grow)
+    {
+        delete m_grow;
+        m_grow = NULL;
+    }
+    
+    
+    m_has_shp = false;
+    
+    if (m_shp)
+    {
+        delete m_shp;
+        m_shp = NULL;
+    }
+    
+    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_DPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -15542,7 +15893,61 @@ CT_D* CT_D::default_instance_ = NULL;
     }
 
     void CT_EqArrPr::clear()
-    {    }
+    {    
+    m_has_baseJc = false;
+    
+    if (m_baseJc)
+    {
+        delete m_baseJc;
+        m_baseJc = NULL;
+    }
+    
+    
+    m_has_maxDist = false;
+    
+    if (m_maxDist)
+    {
+        delete m_maxDist;
+        m_maxDist = NULL;
+    }
+    
+    
+    m_has_objDist = false;
+    
+    if (m_objDist)
+    {
+        delete m_objDist;
+        m_objDist = NULL;
+    }
+    
+    
+    m_has_rSpRule = false;
+    
+    if (m_rSpRule)
+    {
+        delete m_rSpRule;
+        m_rSpRule = NULL;
+    }
+    
+    
+    m_has_rSp = false;
+    
+    if (m_rSp)
+    {
+        delete m_rSp;
+        m_rSp = NULL;
+    }
+    
+    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_EqArrPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -15794,7 +16199,25 @@ CT_EqArr* CT_EqArr::default_instance_ = NULL;
     }
 
     void CT_FPr::clear()
-    {    }
+    {    
+    m_has_type = false;
+    
+    if (m_type)
+    {
+        delete m_type;
+        m_type = NULL;
+    }
+    
+    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_FPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -15917,7 +16340,34 @@ CT_FPr* CT_FPr::default_instance_ = NULL;
     }
 
     void CT_F::clear()
-    {    }
+    {    
+    m_has_fPr = false;
+    
+    if (m_fPr)
+    {
+        delete m_fPr;
+        m_fPr = NULL;
+    }
+    
+    
+    m_has_num = false;
+    
+    if (m_num)
+    {
+        delete m_num;
+        m_num = NULL;
+    }
+    
+    
+    m_has_den = false;
+    
+    if (m_den)
+    {
+        delete m_den;
+        m_den = NULL;
+    }
+    
+    }
 
     void CT_F::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -15993,7 +16443,16 @@ CT_F* CT_F::default_instance_ = NULL;
     }
 
     void CT_FuncPr::clear()
-    {    }
+    {    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_FuncPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -16111,7 +16570,34 @@ CT_FuncPr* CT_FuncPr::default_instance_ = NULL;
     }
 
     void CT_Func::clear()
-    {    }
+    {    
+    m_has_funcPr = false;
+    
+    if (m_funcPr)
+    {
+        delete m_funcPr;
+        m_funcPr = NULL;
+    }
+    
+    
+    m_has_fName = false;
+    
+    if (m_fName)
+    {
+        delete m_fName;
+        m_fName = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    }
 
     void CT_Func::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -16265,7 +16751,43 @@ CT_Func* CT_Func::default_instance_ = NULL;
     }
 
     void CT_GroupChrPr::clear()
-    {    }
+    {    
+    m_has_chr = false;
+    
+    if (m_chr)
+    {
+        delete m_chr;
+        m_chr = NULL;
+    }
+    
+    
+    m_has_pos = false;
+    
+    if (m_pos)
+    {
+        delete m_pos;
+        m_pos = NULL;
+    }
+    
+    
+    m_has_vertJc = false;
+    
+    if (m_vertJc)
+    {
+        delete m_vertJc;
+        m_vertJc = NULL;
+    }
+    
+    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_GroupChrPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -16372,7 +16894,25 @@ CT_GroupChrPr* CT_GroupChrPr::default_instance_ = NULL;
     }
 
     void CT_GroupChr::clear()
-    {    }
+    {    
+    m_has_groupChrPr = false;
+    
+    if (m_groupChrPr)
+    {
+        delete m_groupChrPr;
+        m_groupChrPr = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    }
 
     void CT_GroupChr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -16443,7 +16983,16 @@ CT_GroupChr* CT_GroupChr::default_instance_ = NULL;
     }
 
     void CT_LimLowPr::clear()
-    {    }
+    {    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_LimLowPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -16561,7 +17110,34 @@ CT_LimLowPr* CT_LimLowPr::default_instance_ = NULL;
     }
 
     void CT_LimLow::clear()
-    {    }
+    {    
+    m_has_limLowPr = false;
+    
+    if (m_limLowPr)
+    {
+        delete m_limLowPr;
+        m_limLowPr = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    
+    m_has_lim = false;
+    
+    if (m_lim)
+    {
+        delete m_lim;
+        m_lim = NULL;
+    }
+    
+    }
 
     void CT_LimLow::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -16637,7 +17213,16 @@ CT_LimLow* CT_LimLow::default_instance_ = NULL;
     }
 
     void CT_LimUppPr::clear()
-    {    }
+    {    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_LimUppPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -16755,7 +17340,34 @@ CT_LimUppPr* CT_LimUppPr::default_instance_ = NULL;
     }
 
     void CT_LimUpp::clear()
-    {    }
+    {    
+    m_has_limUppPr = false;
+    
+    if (m_limUppPr)
+    {
+        delete m_limUppPr;
+        m_limUppPr = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    
+    m_has_lim = false;
+    
+    if (m_lim)
+    {
+        delete m_lim;
+        m_lim = NULL;
+    }
+    
+    }
 
     void CT_LimUpp::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -16857,7 +17469,25 @@ CT_LimUpp* CT_LimUpp::default_instance_ = NULL;
     }
 
     void CT_MCPr::clear()
-    {    }
+    {    
+    m_has_count = false;
+    
+    if (m_count)
+    {
+        delete m_count;
+        m_count = NULL;
+    }
+    
+    
+    m_has_mcJc = false;
+    
+    if (m_mcJc)
+    {
+        delete m_mcJc;
+        m_mcJc = NULL;
+    }
+    
+    }
 
     void CT_MCPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -16928,7 +17558,16 @@ CT_MCPr* CT_MCPr::default_instance_ = NULL;
     }
 
     void CT_MC::clear()
-    {    }
+    {    
+    m_has_mcPr = false;
+    
+    if (m_mcPr)
+    {
+        delete m_mcPr;
+        m_mcPr = NULL;
+    }
+    
+    }
 
     void CT_MC::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -17298,7 +17937,88 @@ CT_MCS* CT_MCS::default_instance_ = NULL;
     }
 
     void CT_MPr::clear()
-    {    }
+    {    
+    m_has_baseJc = false;
+    
+    if (m_baseJc)
+    {
+        delete m_baseJc;
+        m_baseJc = NULL;
+    }
+    
+    
+    m_has_plcHide = false;
+    
+    if (m_plcHide)
+    {
+        delete m_plcHide;
+        m_plcHide = NULL;
+    }
+    
+    
+    m_has_rSpRule = false;
+    
+    if (m_rSpRule)
+    {
+        delete m_rSpRule;
+        m_rSpRule = NULL;
+    }
+    
+    
+    m_has_cGpRule = false;
+    
+    if (m_cGpRule)
+    {
+        delete m_cGpRule;
+        m_cGpRule = NULL;
+    }
+    
+    
+    m_has_rSp = false;
+    
+    if (m_rSp)
+    {
+        delete m_rSp;
+        m_rSp = NULL;
+    }
+    
+    
+    m_has_cSp = false;
+    
+    if (m_cSp)
+    {
+        delete m_cSp;
+        m_cSp = NULL;
+    }
+    
+    
+    m_has_cGp = false;
+    
+    if (m_cGp)
+    {
+        delete m_cGp;
+        m_cGp = NULL;
+    }
+    
+    
+    m_has_mcs = false;
+    
+    if (m_mcs)
+    {
+        delete m_mcs;
+        m_mcs = NULL;
+    }
+    
+    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_MPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -17765,7 +18485,61 @@ CT_M* CT_M::default_instance_ = NULL;
     }
 
     void CT_NaryPr::clear()
-    {    }
+    {    
+    m_has_chr = false;
+    
+    if (m_chr)
+    {
+        delete m_chr;
+        m_chr = NULL;
+    }
+    
+    
+    m_has_limLoc = false;
+    
+    if (m_limLoc)
+    {
+        delete m_limLoc;
+        m_limLoc = NULL;
+    }
+    
+    
+    m_has_grow = false;
+    
+    if (m_grow)
+    {
+        delete m_grow;
+        m_grow = NULL;
+    }
+    
+    
+    m_has_subHide = false;
+    
+    if (m_subHide)
+    {
+        delete m_subHide;
+        m_subHide = NULL;
+    }
+    
+    
+    m_has_supHide = false;
+    
+    if (m_supHide)
+    {
+        delete m_supHide;
+        m_supHide = NULL;
+    }
+    
+    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_NaryPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -17934,7 +18708,43 @@ CT_NaryPr* CT_NaryPr::default_instance_ = NULL;
     }
 
     void CT_Nary::clear()
-    {    }
+    {    
+    m_has_naryPr = false;
+    
+    if (m_naryPr)
+    {
+        delete m_naryPr;
+        m_naryPr = NULL;
+    }
+    
+    
+    m_has_sub = false;
+    
+    if (m_sub)
+    {
+        delete m_sub;
+        m_sub = NULL;
+    }
+    
+    
+    m_has_sup = false;
+    
+    if (m_sup)
+    {
+        delete m_sup;
+        m_sup = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    }
 
     void CT_Nary::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -18145,7 +18955,61 @@ CT_Nary* CT_Nary::default_instance_ = NULL;
     }
 
     void CT_PhantPr::clear()
-    {    }
+    {    
+    m_has_show = false;
+    
+    if (m_show)
+    {
+        delete m_show;
+        m_show = NULL;
+    }
+    
+    
+    m_has_zeroWid = false;
+    
+    if (m_zeroWid)
+    {
+        delete m_zeroWid;
+        m_zeroWid = NULL;
+    }
+    
+    
+    m_has_zeroAsc = false;
+    
+    if (m_zeroAsc)
+    {
+        delete m_zeroAsc;
+        m_zeroAsc = NULL;
+    }
+    
+    
+    m_has_zeroDesc = false;
+    
+    if (m_zeroDesc)
+    {
+        delete m_zeroDesc;
+        m_zeroDesc = NULL;
+    }
+    
+    
+    m_has_transp = false;
+    
+    if (m_transp)
+    {
+        delete m_transp;
+        m_transp = NULL;
+    }
+    
+    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_PhantPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -18262,7 +19126,25 @@ CT_PhantPr* CT_PhantPr::default_instance_ = NULL;
     }
 
     void CT_Phant::clear()
-    {    }
+    {    
+    m_has_phantPr = false;
+    
+    if (m_phantPr)
+    {
+        delete m_phantPr;
+        m_phantPr = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    }
 
     void CT_Phant::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -18359,7 +19241,25 @@ CT_Phant* CT_Phant::default_instance_ = NULL;
     }
 
     void CT_RadPr::clear()
-    {    }
+    {    
+    m_has_degHide = false;
+    
+    if (m_degHide)
+    {
+        delete m_degHide;
+        m_degHide = NULL;
+    }
+    
+    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_RadPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -18482,7 +19382,34 @@ CT_RadPr* CT_RadPr::default_instance_ = NULL;
     }
 
     void CT_Rad::clear()
-    {    }
+    {    
+    m_has_radPr = false;
+    
+    if (m_radPr)
+    {
+        delete m_radPr;
+        m_radPr = NULL;
+    }
+    
+    
+    m_has_deg = false;
+    
+    if (m_deg)
+    {
+        delete m_deg;
+        m_deg = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    }
 
     void CT_Rad::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -18558,7 +19485,16 @@ CT_Rad* CT_Rad::default_instance_ = NULL;
     }
 
     void CT_SPrePr::clear()
-    {    }
+    {    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_SPrePr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -18702,7 +19638,43 @@ CT_SPrePr* CT_SPrePr::default_instance_ = NULL;
     }
 
     void CT_SPre::clear()
-    {    }
+    {    
+    m_has_sPrePr = false;
+    
+    if (m_sPrePr)
+    {
+        delete m_sPrePr;
+        m_sPrePr = NULL;
+    }
+    
+    
+    m_has_sub = false;
+    
+    if (m_sub)
+    {
+        delete m_sub;
+        m_sub = NULL;
+    }
+    
+    
+    m_has_sup = false;
+    
+    if (m_sup)
+    {
+        delete m_sup;
+        m_sup = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    }
 
     void CT_SPre::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -18783,7 +19755,16 @@ CT_SPre* CT_SPre::default_instance_ = NULL;
     }
 
     void CT_SSubPr::clear()
-    {    }
+    {    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_SSubPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -18901,7 +19882,34 @@ CT_SSubPr* CT_SSubPr::default_instance_ = NULL;
     }
 
     void CT_SSub::clear()
-    {    }
+    {    
+    m_has_sSubPr = false;
+    
+    if (m_sSubPr)
+    {
+        delete m_sSubPr;
+        m_sSubPr = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    
+    m_has_sub = false;
+    
+    if (m_sub)
+    {
+        delete m_sub;
+        m_sub = NULL;
+    }
+    
+    }
 
     void CT_SSub::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -19003,7 +20011,25 @@ CT_SSub* CT_SSub::default_instance_ = NULL;
     }
 
     void CT_SSubSupPr::clear()
-    {    }
+    {    
+    m_has_alnScr = false;
+    
+    if (m_alnScr)
+    {
+        delete m_alnScr;
+        m_alnScr = NULL;
+    }
+    
+    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_SSubSupPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -19152,7 +20178,43 @@ CT_SSubSupPr* CT_SSubSupPr::default_instance_ = NULL;
     }
 
     void CT_SSubSup::clear()
-    {    }
+    {    
+    m_has_sSubSupPr = false;
+    
+    if (m_sSubSupPr)
+    {
+        delete m_sSubSupPr;
+        m_sSubSupPr = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    
+    m_has_sub = false;
+    
+    if (m_sub)
+    {
+        delete m_sub;
+        m_sub = NULL;
+    }
+    
+    
+    m_has_sup = false;
+    
+    if (m_sup)
+    {
+        delete m_sup;
+        m_sup = NULL;
+    }
+    
+    }
 
     void CT_SSubSup::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -19233,7 +20295,16 @@ CT_SSubSup* CT_SSubSup::default_instance_ = NULL;
     }
 
     void CT_SSupPr::clear()
-    {    }
+    {    
+    m_has_ctrlPr = false;
+    
+    if (m_ctrlPr)
+    {
+        delete m_ctrlPr;
+        m_ctrlPr = NULL;
+    }
+    
+    }
 
     void CT_SSupPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -19351,7 +20422,34 @@ CT_SSupPr* CT_SSupPr::default_instance_ = NULL;
     }
 
     void CT_SSup::clear()
-    {    }
+    {    
+    m_has_sSupPr = false;
+    
+    if (m_sSupPr)
+    {
+        delete m_sSupPr;
+        m_sSupPr = NULL;
+    }
+    
+    
+    m_has_e = false;
+    
+    if (m_e)
+    {
+        delete m_e;
+        m_e = NULL;
+    }
+    
+    
+    m_has_sup = false;
+    
+    if (m_sup)
+    {
+        delete m_sup;
+        m_sup = NULL;
+    }
+    
+    }
 
     void CT_SSup::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -19427,7 +20525,16 @@ CT_SSup* CT_SSup::default_instance_ = NULL;
     }
 
     void CT_OMathArgPr::clear()
-    {    }
+    {    
+    m_has_argSz = false;
+    
+    if (m_argSz)
+    {
+        delete m_argSz;
+        m_argSz = NULL;
+    }
+    
+    }
 
     void CT_OMathArgPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -43700,7 +44807,16 @@ CT_OMathJc* CT_OMathJc::default_instance_ = NULL;
     }
 
     void CT_OMathParaPr::clear()
-    {    }
+    {    
+    m_has_jc = false;
+    
+    if (m_jc)
+    {
+        delete m_jc;
+        m_jc = NULL;
+    }
+    
+    }
 
     void CT_OMathParaPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -44389,7 +45505,151 @@ CT_BreakBinSub* CT_BreakBinSub::default_instance_ = NULL;
     }
 
     void CT_MathPr::clear()
-    {    }
+    {    
+    m_has_mathFont = false;
+    
+    if (m_mathFont)
+    {
+        delete m_mathFont;
+        m_mathFont = NULL;
+    }
+    
+    
+    m_has_brkBin = false;
+    
+    if (m_brkBin)
+    {
+        delete m_brkBin;
+        m_brkBin = NULL;
+    }
+    
+    
+    m_has_brkBinSub = false;
+    
+    if (m_brkBinSub)
+    {
+        delete m_brkBinSub;
+        m_brkBinSub = NULL;
+    }
+    
+    
+    m_has_smallFrac = false;
+    
+    if (m_smallFrac)
+    {
+        delete m_smallFrac;
+        m_smallFrac = NULL;
+    }
+    
+    
+    m_has_dispDef = false;
+    
+    if (m_dispDef)
+    {
+        delete m_dispDef;
+        m_dispDef = NULL;
+    }
+    
+    
+    m_has_lMargin = false;
+    
+    if (m_lMargin)
+    {
+        delete m_lMargin;
+        m_lMargin = NULL;
+    }
+    
+    
+    m_has_rMargin = false;
+    
+    if (m_rMargin)
+    {
+        delete m_rMargin;
+        m_rMargin = NULL;
+    }
+    
+    
+    m_has_defJc = false;
+    
+    if (m_defJc)
+    {
+        delete m_defJc;
+        m_defJc = NULL;
+    }
+    
+    
+    m_has_preSp = false;
+    
+    if (m_preSp)
+    {
+        delete m_preSp;
+        m_preSp = NULL;
+    }
+    
+    
+    m_has_postSp = false;
+    
+    if (m_postSp)
+    {
+        delete m_postSp;
+        m_postSp = NULL;
+    }
+    
+    
+    m_has_interSp = false;
+    
+    if (m_interSp)
+    {
+        delete m_interSp;
+        m_interSp = NULL;
+    }
+    
+    
+    m_has_intraSp = false;
+    
+    if (m_intraSp)
+    {
+        delete m_intraSp;
+        m_intraSp = NULL;
+    }
+    
+     
+    m_has_wrapIndent = false;
+    
+    if (m_wrapIndent)
+    {
+        delete m_wrapIndent;
+        m_wrapIndent = NULL;
+    }
+    
+    
+    m_has_wrapRight = false;
+    
+    if (m_wrapRight)
+    {
+        delete m_wrapRight;
+        m_wrapRight = NULL;
+    }
+    
+     
+    m_has_intLim = false;
+    
+    if (m_intLim)
+    {
+        delete m_intLim;
+        m_intLim = NULL;
+    }
+    
+    
+    m_has_naryLim = false;
+    
+    if (m_naryLim)
+    {
+        delete m_naryLim;
+        m_naryLim = NULL;
+    }
+    
+    }
 
     void CT_MathPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -69132,7 +70392,151 @@ CT_OMath* CT_OMath::default_instance_ = NULL;
     }
 
     void mathPr_element::clear()
-    {    }
+    {    
+    m_has_mathFont = false;
+    
+    if (m_mathFont)
+    {
+        delete m_mathFont;
+        m_mathFont = NULL;
+    }
+    
+    
+    m_has_brkBin = false;
+    
+    if (m_brkBin)
+    {
+        delete m_brkBin;
+        m_brkBin = NULL;
+    }
+    
+    
+    m_has_brkBinSub = false;
+    
+    if (m_brkBinSub)
+    {
+        delete m_brkBinSub;
+        m_brkBinSub = NULL;
+    }
+    
+    
+    m_has_smallFrac = false;
+    
+    if (m_smallFrac)
+    {
+        delete m_smallFrac;
+        m_smallFrac = NULL;
+    }
+    
+    
+    m_has_dispDef = false;
+    
+    if (m_dispDef)
+    {
+        delete m_dispDef;
+        m_dispDef = NULL;
+    }
+    
+    
+    m_has_lMargin = false;
+    
+    if (m_lMargin)
+    {
+        delete m_lMargin;
+        m_lMargin = NULL;
+    }
+    
+    
+    m_has_rMargin = false;
+    
+    if (m_rMargin)
+    {
+        delete m_rMargin;
+        m_rMargin = NULL;
+    }
+    
+    
+    m_has_defJc = false;
+    
+    if (m_defJc)
+    {
+        delete m_defJc;
+        m_defJc = NULL;
+    }
+    
+    
+    m_has_preSp = false;
+    
+    if (m_preSp)
+    {
+        delete m_preSp;
+        m_preSp = NULL;
+    }
+    
+    
+    m_has_postSp = false;
+    
+    if (m_postSp)
+    {
+        delete m_postSp;
+        m_postSp = NULL;
+    }
+    
+    
+    m_has_interSp = false;
+    
+    if (m_interSp)
+    {
+        delete m_interSp;
+        m_interSp = NULL;
+    }
+    
+    
+    m_has_intraSp = false;
+    
+    if (m_intraSp)
+    {
+        delete m_intraSp;
+        m_intraSp = NULL;
+    }
+    
+     
+    m_has_wrapIndent = false;
+    
+    if (m_wrapIndent)
+    {
+        delete m_wrapIndent;
+        m_wrapIndent = NULL;
+    }
+    
+    
+    m_has_wrapRight = false;
+    
+    if (m_wrapRight)
+    {
+        delete m_wrapRight;
+        m_wrapRight = NULL;
+    }
+    
+     
+    m_has_intLim = false;
+    
+    if (m_intLim)
+    {
+        delete m_intLim;
+        m_intLim = NULL;
+    }
+    
+    
+    m_has_naryLim = false;
+    
+    if (m_naryLim)
+    {
+        delete m_naryLim;
+        m_naryLim = NULL;
+    }
+    
+    }
 
     void mathPr_element::toXml(std::ostream& _outStream) const
     {    

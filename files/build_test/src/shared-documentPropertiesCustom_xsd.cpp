@@ -5537,6 +5537,153 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     
     m_has_linkTarget_attr = false;
     m_linkTarget_attr.clear();
+    
+    m_has_vt_vector = false;
+    
+    if (m_vt_vector)
+    {
+        delete m_vt_vector;
+        m_vt_vector = NULL;
+    }
+    
+    
+    m_has_vt_array = false;
+    
+    if (m_vt_array)
+    {
+        delete m_vt_array;
+        m_vt_array = NULL;
+    }
+    
+    
+    m_has_vt_blob = false;
+    m_vt_blob.clear();
+    
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();
+    
+    m_has_vt_empty = false;
+    
+    if (m_vt_empty)
+    {
+        delete m_vt_empty;
+        m_vt_empty = NULL;
+    }
+    
+    
+    m_has_vt_null = false;
+    
+    if (m_vt_null)
+    {
+        delete m_vt_null;
+        m_vt_null = NULL;
+    }
+    
+    
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;
+    
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;
+    
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;
+    
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;
+    
+    m_has_vt_int = false;
+    m_vt_int = 0;
+    
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;
+    
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;
+    
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;
+    
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;
+    
+    m_has_vt_uint = false;
+    m_vt_uint = 0;
+    
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;
+    
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;
+    
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;
+    
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();
+    
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();
+    
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();
+    
+    m_has_vt_date = false;
+    m_vt_date.clear();
+    
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();
+    
+    m_has_vt_bool = false;
+    m_vt_bool = false;
+    
+    m_has_vt_cy = false;
+    
+    if (m_vt_cy)
+    {
+        delete m_vt_cy;
+        m_vt_cy = NULL;
+    }
+    
+    
+    m_has_vt_error = false;
+    
+    if (m_vt_error)
+    {
+        delete m_vt_error;
+        m_vt_error = NULL;
+    }
+    
+    
+    m_has_vt_stream = false;
+    m_vt_stream.clear();
+    
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();
+    
+    m_has_vt_storage = false;
+    m_vt_storage.clear();
+    
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();
+    
+    m_has_vt_vstream = false;
+    
+    if (m_vt_vstream)
+    {
+        delete m_vt_vstream;
+        m_vt_vstream = NULL;
+    }
+    
+    
+    m_has_vt_clsid = false;
+    
+    if (m_vt_clsid)
+    {
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
+    }
+    
     }
 
     void CT_Property::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const

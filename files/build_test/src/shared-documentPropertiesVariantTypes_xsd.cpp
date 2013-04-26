@@ -10368,7 +10368,163 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
 
     void CT_Variant::clear()
-    {    }
+    {    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    
+    
+    m_has_vector = false;
+    
+    if (m_vector)
+    {
+        delete m_vector;
+        m_vector = NULL;
+    }
+    
+    
+    m_has_array = false;
+    
+    if (m_array)
+    {
+        delete m_array;
+        m_array = NULL;
+    }
+    
+    
+    m_has_blob = false;
+    m_blob.clear();
+    
+    m_has_oblob = false;
+    m_oblob.clear();
+    
+    m_has_empty = false;
+    
+    if (m_empty)
+    {
+        delete m_empty;
+        m_empty = NULL;
+    }
+    
+    
+    m_has_null = false;
+    
+    if (m_null)
+    {
+        delete m_null;
+        m_null = NULL;
+    }
+    
+    
+    m_has_i1 = false;
+    m_i1 = 0;
+    
+    m_has_i2 = false;
+    m_i2 = 0;
+    
+    m_has_i4 = false;
+    m_i4 = 0;
+    
+    m_has_i8 = false;
+    m_i8 = 0;
+    
+    m_has_int = false;
+    m_int = 0;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;
+    
+    m_has_uint = false;
+    m_uint = 0;
+    
+    m_has_r4 = false;
+    m_r4 = 0;
+    
+    m_has_r8 = false;
+    m_r8 = 0;
+    
+    m_has_decimal = false;
+    m_decimal = 0;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();
+    
+    m_has_bstr = false;
+    m_bstr.clear();
+    
+    m_has_date = false;
+    m_date.clear();
+    
+    m_has_filetime = false;
+    m_filetime.clear();
+    
+    m_has_bool = false;
+    m_bool = false;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    
+    
+    m_has_stream = false;
+    m_stream.clear();
+    
+    m_has_ostream = false;
+    m_ostream.clear();
+    
+    m_has_storage = false;
+    m_storage.clear();
+    
+    m_has_ostorage = false;
+    m_ostorage.clear();
+    
+    m_has_vstream = false;
+    
+    if (m_vstream)
+    {
+        delete m_vstream;
+        m_vstream = NULL;
+    }
+    
+    
+    m_has_clsid = false;
+    
+    if (m_clsid)
+    {
+        delete m_clsid;
+        m_clsid = NULL;
+    }
+    
+    }
 
     void CT_Variant::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -16510,7 +16666,163 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
 
     void variant_element::clear()
-    {    }
+    {    
+    m_has_variant = false;
+    
+    if (m_variant)
+    {
+        delete m_variant;
+        m_variant = NULL;
+    }
+    
+    
+    m_has_vector = false;
+    
+    if (m_vector)
+    {
+        delete m_vector;
+        m_vector = NULL;
+    }
+    
+    
+    m_has_array = false;
+    
+    if (m_array)
+    {
+        delete m_array;
+        m_array = NULL;
+    }
+    
+    
+    m_has_blob = false;
+    m_blob.clear();
+    
+    m_has_oblob = false;
+    m_oblob.clear();
+    
+    m_has_empty = false;
+    
+    if (m_empty)
+    {
+        delete m_empty;
+        m_empty = NULL;
+    }
+    
+    
+    m_has_null = false;
+    
+    if (m_null)
+    {
+        delete m_null;
+        m_null = NULL;
+    }
+    
+    
+    m_has_i1 = false;
+    m_i1 = 0;
+    
+    m_has_i2 = false;
+    m_i2 = 0;
+    
+    m_has_i4 = false;
+    m_i4 = 0;
+    
+    m_has_i8 = false;
+    m_i8 = 0;
+    
+    m_has_int = false;
+    m_int = 0;
+    
+    m_has_ui1 = false;
+    m_ui1 = 0;
+    
+    m_has_ui2 = false;
+    m_ui2 = 0;
+    
+    m_has_ui4 = false;
+    m_ui4 = 0;
+    
+    m_has_ui8 = false;
+    m_ui8 = 0;
+    
+    m_has_uint = false;
+    m_uint = 0;
+    
+    m_has_r4 = false;
+    m_r4 = 0;
+    
+    m_has_r8 = false;
+    m_r8 = 0;
+    
+    m_has_decimal = false;
+    m_decimal = 0;
+    
+    m_has_lpstr = false;
+    m_lpstr.clear();
+    
+    m_has_lpwstr = false;
+    m_lpwstr.clear();
+    
+    m_has_bstr = false;
+    m_bstr.clear();
+    
+    m_has_date = false;
+    m_date.clear();
+    
+    m_has_filetime = false;
+    m_filetime.clear();
+    
+    m_has_bool = false;
+    m_bool = false;
+    
+    m_has_cy = false;
+    
+    if (m_cy)
+    {
+        delete m_cy;
+        m_cy = NULL;
+    }
+    
+    
+    m_has_error = false;
+    
+    if (m_error)
+    {
+        delete m_error;
+        m_error = NULL;
+    }
+    
+    
+    m_has_stream = false;
+    m_stream.clear();
+    
+    m_has_ostream = false;
+    m_ostream.clear();
+    
+    m_has_storage = false;
+    m_storage.clear();
+    
+    m_has_ostorage = false;
+    m_ostorage.clear();
+    
+    m_has_vstream = false;
+    
+    if (m_vstream)
+    {
+        delete m_vstream;
+        m_vstream = NULL;
+    }
+    
+    
+    m_has_clsid = false;
+    
+    if (m_clsid)
+    {
+        delete m_clsid;
+        m_clsid = NULL;
+    }
+    
+    }
 
     void variant_element::toXml(std::ostream& _outStream) const
     {    

@@ -818,6 +818,51 @@ CT_EffectExtent* CT_EffectExtent::default_instance_ = NULL;
         m_distR_attr = NULL;
     }
     
+    
+    m_has_extent = false;
+    
+    if (m_extent)
+    {
+        delete m_extent;
+        m_extent = NULL;
+    }
+    
+    
+    m_has_effectExtent = false;
+    
+    if (m_effectExtent)
+    {
+        delete m_effectExtent;
+        m_effectExtent = NULL;
+    }
+    
+    
+    m_has_docPr = false;
+    
+    if (m_docPr)
+    {
+        delete m_docPr;
+        m_docPr = NULL;
+    }
+    
+    
+    m_has_cNvGraphicFramePr = false;
+    
+    if (m_cNvGraphicFramePr)
+    {
+        delete m_cNvGraphicFramePr;
+        m_cNvGraphicFramePr = NULL;
+    }
+    
+    
+    m_has_a_graphic = false;
+    
+    if (m_a_graphic)
+    {
+        delete m_a_graphic;
+        m_a_graphic = NULL;
+    }
+    
     }
 
     void CT_Inline::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1259,6 +1304,15 @@ CT_WrapNone* CT_WrapNone::default_instance_ = NULL;
         m_distR_attr = NULL;
     }
     
+    
+    m_has_effectExtent = false;
+    
+    if (m_effectExtent)
+    {
+        delete m_effectExtent;
+        m_effectExtent = NULL;
+    }
+    
     }
 
     void CT_WrapSquare::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1487,6 +1541,15 @@ CT_WrapSquare* CT_WrapSquare::default_instance_ = NULL;
         m_distR_attr = NULL;
     }
     
+    
+    m_has_wrapPolygon = false;
+    
+    if (m_wrapPolygon)
+    {
+        delete m_wrapPolygon;
+        m_wrapPolygon = NULL;
+    }
+    
     }
 
     void CT_WrapTight::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1663,6 +1726,15 @@ CT_WrapTight* CT_WrapTight::default_instance_ = NULL;
         m_distR_attr = NULL;
     }
     
+    
+    m_has_wrapPolygon = false;
+    
+    if (m_wrapPolygon)
+    {
+        delete m_wrapPolygon;
+        m_wrapPolygon = NULL;
+    }
+    
     }
 
     void CT_WrapThrough::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -1826,6 +1898,15 @@ CT_WrapThrough* CT_WrapThrough::default_instance_ = NULL;
     {
         delete m_distB_attr;
         m_distB_attr = NULL;
+    }
+    
+    
+    m_has_effectExtent = false;
+    
+    if (m_effectExtent)
+    {
+        delete m_effectExtent;
+        m_effectExtent = NULL;
     }
     
     }
@@ -2002,6 +2083,24 @@ CT_WrapTopBottom* CT_WrapTopBottom::default_instance_ = NULL;
         m_relativeFrom_attr = NULL;
     }
     
+    
+    m_has_align = false;
+    
+    if (m_align)
+    {
+        delete m_align;
+        m_align = NULL;
+    }
+    
+    
+    m_has_posOffset = false;
+    
+    if (m_posOffset)
+    {
+        delete m_posOffset;
+        m_posOffset = NULL;
+    }
+    
     }
 
     void CT_PosH::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -2153,6 +2252,24 @@ CT_PosH* CT_PosH::default_instance_ = NULL;
     {
         delete m_relativeFrom_attr;
         m_relativeFrom_attr = NULL;
+    }
+    
+    
+    m_has_align = false;
+    
+    if (m_align)
+    {
+        delete m_align;
+        m_align = NULL;
+    }
+    
+    
+    m_has_posOffset = false;
+    
+    if (m_posOffset)
+    {
+        delete m_posOffset;
+        m_posOffset = NULL;
     }
     
     }
@@ -2827,6 +2944,123 @@ CT_PosV* CT_PosV::default_instance_ = NULL;
     
     m_has_allowOverlap_attr = false;
     m_allowOverlap_attr = false;
+    
+    m_has_simplePos = false;
+    
+    if (m_simplePos)
+    {
+        delete m_simplePos;
+        m_simplePos = NULL;
+    }
+    
+    
+    m_has_positionH = false;
+    
+    if (m_positionH)
+    {
+        delete m_positionH;
+        m_positionH = NULL;
+    }
+    
+    
+    m_has_positionV = false;
+    
+    if (m_positionV)
+    {
+        delete m_positionV;
+        m_positionV = NULL;
+    }
+    
+    
+    m_has_extent = false;
+    
+    if (m_extent)
+    {
+        delete m_extent;
+        m_extent = NULL;
+    }
+    
+    
+    m_has_effectExtent = false;
+    
+    if (m_effectExtent)
+    {
+        delete m_effectExtent;
+        m_effectExtent = NULL;
+    }
+    
+     
+    m_has_wrapNone = false;
+    
+    if (m_wrapNone)
+    {
+        delete m_wrapNone;
+        m_wrapNone = NULL;
+    }
+    
+    
+    m_has_wrapSquare = false;
+    
+    if (m_wrapSquare)
+    {
+        delete m_wrapSquare;
+        m_wrapSquare = NULL;
+    }
+    
+    
+    m_has_wrapTight = false;
+    
+    if (m_wrapTight)
+    {
+        delete m_wrapTight;
+        m_wrapTight = NULL;
+    }
+    
+    
+    m_has_wrapThrough = false;
+    
+    if (m_wrapThrough)
+    {
+        delete m_wrapThrough;
+        m_wrapThrough = NULL;
+    }
+    
+    
+    m_has_wrapTopAndBottom = false;
+    
+    if (m_wrapTopAndBottom)
+    {
+        delete m_wrapTopAndBottom;
+        m_wrapTopAndBottom = NULL;
+    }
+    
+     
+    m_has_docPr = false;
+    
+    if (m_docPr)
+    {
+        delete m_docPr;
+        m_docPr = NULL;
+    }
+    
+    
+    m_has_cNvGraphicFramePr = false;
+    
+    if (m_cNvGraphicFramePr)
+    {
+        delete m_cNvGraphicFramePr;
+        m_cNvGraphicFramePr = NULL;
+    }
+    
+    
+    m_has_a_graphic = false;
+    
+    if (m_a_graphic)
+    {
+        delete m_a_graphic;
+        m_a_graphic = NULL;
+    }
+    
     }
 
     void CT_Anchor::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -3277,6 +3511,24 @@ CT_TxbxContent* CT_TxbxContent::default_instance_ = NULL;
     {    
     m_has_id_attr = false;
     m_id_attr = 0;
+    
+    m_has_txbxContent = false;
+    
+    if (m_txbxContent)
+    {
+        delete m_txbxContent;
+        m_txbxContent = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_TextboxInfo::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -3379,6 +3631,15 @@ CT_TextboxInfo* CT_TextboxInfo::default_instance_ = NULL;
     
     m_has_seq_attr = false;
     m_seq_attr = 0;
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_LinkedTextboxInformation::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -3741,6 +4002,87 @@ CT_LinkedTextboxInformation* CT_LinkedTextboxInformation::default_instance_ = NU
     {    
     m_has_normalEastAsianFlow_attr = false;
     m_normalEastAsianFlow_attr = false;
+    
+    m_has_cNvPr = false;
+    
+    if (m_cNvPr)
+    {
+        delete m_cNvPr;
+        m_cNvPr = NULL;
+    }
+    
+     
+    m_has_cNvSpPr = false;
+    
+    if (m_cNvSpPr)
+    {
+        delete m_cNvSpPr;
+        m_cNvSpPr = NULL;
+    }
+    
+    
+    m_has_cNvCnPr = false;
+    
+    if (m_cNvCnPr)
+    {
+        delete m_cNvCnPr;
+        m_cNvCnPr = NULL;
+    }
+    
+     
+    m_has_spPr = false;
+    
+    if (m_spPr)
+    {
+        delete m_spPr;
+        m_spPr = NULL;
+    }
+    
+    
+    m_has_style = false;
+    
+    if (m_style)
+    {
+        delete m_style;
+        m_style = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+     
+    m_has_txbx = false;
+    
+    if (m_txbx)
+    {
+        delete m_txbx;
+        m_txbx = NULL;
+    }
+    
+    
+    m_has_linkedTxbx = false;
+    
+    if (m_linkedTxbx)
+    {
+        delete m_linkedTxbx;
+        m_linkedTxbx = NULL;
+    }
+    
+     
+    m_has_bodyPr = false;
+    
+    if (m_bodyPr)
+    {
+        delete m_bodyPr;
+        m_bodyPr = NULL;
+    }
+    
     }
 
     void CT_WordprocessingShape::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -3972,7 +4314,52 @@ CT_WordprocessingShape* CT_WordprocessingShape::default_instance_ = NULL;
     }
 
     void CT_GraphicFrame::clear()
-    {    }
+    {    
+    m_has_cNvPr = false;
+    
+    if (m_cNvPr)
+    {
+        delete m_cNvPr;
+        m_cNvPr = NULL;
+    }
+    
+    
+    m_has_cNvFrPr = false;
+    
+    if (m_cNvFrPr)
+    {
+        delete m_cNvFrPr;
+        m_cNvFrPr = NULL;
+    }
+    
+    
+    m_has_xfrm = false;
+    
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    
+    
+    m_has_a_graphic = false;
+    
+    if (m_a_graphic)
+    {
+        delete m_a_graphic;
+        m_a_graphic = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+    }
 
     void CT_GraphicFrame::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -4084,7 +4471,25 @@ CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
     }
 
     void CT_WordprocessingContentPartNonVisual::clear()
-    {    }
+    {    
+    m_has_cNvPr = false;
+    
+    if (m_cNvPr)
+    {
+        delete m_cNvPr;
+        m_cNvPr = NULL;
+    }
+    
+    
+    m_has_cNvContentPartPr = false;
+    
+    if (m_cNvContentPartPr)
+    {
+        delete m_cNvContentPartPr;
+        m_cNvContentPartPr = NULL;
+    }
+    
+    }
 
     void CT_WordprocessingContentPartNonVisual::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -4227,6 +4632,33 @@ CT_WordprocessingContentPartNonVisual* CT_WordprocessingContentPartNonVisual::de
     {
         delete m_r_id_attr;
         m_r_id_attr = NULL;
+    }
+    
+    
+    m_has_nvContentPartPr = false;
+    
+    if (m_nvContentPartPr)
+    {
+        delete m_nvContentPartPr;
+        m_nvContentPartPr = NULL;
+    }
+    
+    
+    m_has_xfrm = false;
+    
+    if (m_xfrm)
+    {
+        delete m_xfrm;
+        m_xfrm = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
     }
     
     }
@@ -6895,6 +7327,87 @@ wgp_element* wgp_element::default_instance_ = NULL;
     {    
     m_has_normalEastAsianFlow_attr = false;
     m_normalEastAsianFlow_attr = false;
+    
+    m_has_cNvPr = false;
+    
+    if (m_cNvPr)
+    {
+        delete m_cNvPr;
+        m_cNvPr = NULL;
+    }
+    
+     
+    m_has_cNvSpPr = false;
+    
+    if (m_cNvSpPr)
+    {
+        delete m_cNvSpPr;
+        m_cNvSpPr = NULL;
+    }
+    
+    
+    m_has_cNvCnPr = false;
+    
+    if (m_cNvCnPr)
+    {
+        delete m_cNvCnPr;
+        m_cNvCnPr = NULL;
+    }
+    
+     
+    m_has_spPr = false;
+    
+    if (m_spPr)
+    {
+        delete m_spPr;
+        m_spPr = NULL;
+    }
+    
+    
+    m_has_style = false;
+    
+    if (m_style)
+    {
+        delete m_style;
+        m_style = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
+     
+    m_has_txbx = false;
+    
+    if (m_txbx)
+    {
+        delete m_txbx;
+        m_txbx = NULL;
+    }
+    
+    
+    m_has_linkedTxbx = false;
+    
+    if (m_linkedTxbx)
+    {
+        delete m_linkedTxbx;
+        m_linkedTxbx = NULL;
+    }
+    
+     
+    m_has_bodyPr = false;
+    
+    if (m_bodyPr)
+    {
+        delete m_bodyPr;
+        m_bodyPr = NULL;
+    }
+    
     }
 
     void wsp_element::toXml(std::ostream& _outStream) const
@@ -7169,6 +7682,51 @@ wsp_element* wsp_element::default_instance_ = NULL;
     {
         delete m_distR_attr;
         m_distR_attr = NULL;
+    }
+    
+    
+    m_has_extent = false;
+    
+    if (m_extent)
+    {
+        delete m_extent;
+        m_extent = NULL;
+    }
+    
+    
+    m_has_effectExtent = false;
+    
+    if (m_effectExtent)
+    {
+        delete m_effectExtent;
+        m_effectExtent = NULL;
+    }
+    
+    
+    m_has_docPr = false;
+    
+    if (m_docPr)
+    {
+        delete m_docPr;
+        m_docPr = NULL;
+    }
+    
+    
+    m_has_cNvGraphicFramePr = false;
+    
+    if (m_cNvGraphicFramePr)
+    {
+        delete m_cNvGraphicFramePr;
+        m_cNvGraphicFramePr = NULL;
+    }
+    
+    
+    m_has_a_graphic = false;
+    
+    if (m_a_graphic)
+    {
+        delete m_a_graphic;
+        m_a_graphic = NULL;
     }
     
     }
@@ -7937,6 +8495,123 @@ inline_element* inline_element::default_instance_ = NULL;
     
     m_has_allowOverlap_attr = false;
     m_allowOverlap_attr = false;
+    
+    m_has_simplePos = false;
+    
+    if (m_simplePos)
+    {
+        delete m_simplePos;
+        m_simplePos = NULL;
+    }
+    
+    
+    m_has_positionH = false;
+    
+    if (m_positionH)
+    {
+        delete m_positionH;
+        m_positionH = NULL;
+    }
+    
+    
+    m_has_positionV = false;
+    
+    if (m_positionV)
+    {
+        delete m_positionV;
+        m_positionV = NULL;
+    }
+    
+    
+    m_has_extent = false;
+    
+    if (m_extent)
+    {
+        delete m_extent;
+        m_extent = NULL;
+    }
+    
+    
+    m_has_effectExtent = false;
+    
+    if (m_effectExtent)
+    {
+        delete m_effectExtent;
+        m_effectExtent = NULL;
+    }
+    
+     
+    m_has_wrapNone = false;
+    
+    if (m_wrapNone)
+    {
+        delete m_wrapNone;
+        m_wrapNone = NULL;
+    }
+    
+    
+    m_has_wrapSquare = false;
+    
+    if (m_wrapSquare)
+    {
+        delete m_wrapSquare;
+        m_wrapSquare = NULL;
+    }
+    
+    
+    m_has_wrapTight = false;
+    
+    if (m_wrapTight)
+    {
+        delete m_wrapTight;
+        m_wrapTight = NULL;
+    }
+    
+    
+    m_has_wrapThrough = false;
+    
+    if (m_wrapThrough)
+    {
+        delete m_wrapThrough;
+        m_wrapThrough = NULL;
+    }
+    
+    
+    m_has_wrapTopAndBottom = false;
+    
+    if (m_wrapTopAndBottom)
+    {
+        delete m_wrapTopAndBottom;
+        m_wrapTopAndBottom = NULL;
+    }
+    
+     
+    m_has_docPr = false;
+    
+    if (m_docPr)
+    {
+        delete m_docPr;
+        m_docPr = NULL;
+    }
+    
+    
+    m_has_cNvGraphicFramePr = false;
+    
+    if (m_cNvGraphicFramePr)
+    {
+        delete m_cNvGraphicFramePr;
+        m_cNvGraphicFramePr = NULL;
+    }
+    
+    
+    m_has_a_graphic = false;
+    
+    if (m_a_graphic)
+    {
+        delete m_a_graphic;
+        m_a_graphic = NULL;
+    }
+    
     }
 
     void anchor_element::toXml(std::ostream& _outStream) const
