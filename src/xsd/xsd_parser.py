@@ -428,10 +428,16 @@ class ALL_SCHEMA:
         elif pbContType == PB.ElementContainer.RepeatedChoice:
             pbElem = pbElemCont.repeated_choice.add()
 
+        if nsPrefix:
+            pbElem.ref_ns_prefix = nsPrefix
+
         if pbElem:
             ref = elementElem.attrib.get('ref')
             if ref:
-                nsPrefix = getPrefixFromName(ref)
+                elemNsPrefix = getPrefixFromName(ref)
+                if elemNsPrefix:
+                    nsPrefix = elemNsPrefix
+                    pbElem.ref_ns_prefix = nsPrefix
                 otherElementElem, otherSchema = self._findElement(xmlSchema, ref)
                 otherElemCont = PB.ElementContainer()
                 otherPbElem = self._parseElement(otherSchema, otherElementElem, pbComplexType, otherElemCont, pbContType, nsPrefix)
@@ -495,6 +501,9 @@ class ALL_SCHEMA:
 
         ref = groupElem.attrib.get('ref')
         if ref:
+            groupNsPrefix = getPrefixFromName(ref)
+            if groupNsPrefix:
+                nsPrefix = groupNsPrefix
             otherGroupElem, otherSchema = self._findGroup(xmlSchema, ref)
             if hasNsPrefix(ref):
                 nsPrefix = getNsPrefix(ref)
@@ -537,9 +546,16 @@ class ALL_SCHEMA:
                 self._parseUnion(xmlSchema, childElem, pbSimpleType.type.union)
 
     def _parseAttribute(self, xmlSchema, attributeElem, pbAttribute, nsPrefix=None):
+        if nsPrefix:
+            pbAttribute.ref_ns_prefix = nsPrefix
+
         ref = attributeElem.attrib.get('ref')
         if ref:
-            nsPrefix = getPrefixFromName(ref)
+            attrNsPrefix = getPrefixFromName(ref)
+            if attrNsPrefix:
+                nsPrefix = attrNsPrefix
+                if nsPrefix != 'xml':
+                    pbAttribute.ref_ns_prefix = nsPrefix
             otherAttrElem, otherSchema = self._findAttribute(xmlSchema, ref)
             if otherAttrElem is not None:
                 self._parseAttribute(otherSchema, otherAttrElem, pbAttribute, nsPrefix)
@@ -594,6 +610,9 @@ class ALL_SCHEMA:
     def _parseAttributeGroup(self, xmlSchema, attributeGroupElem, pbComplexType, nsPrefix=None):
         ref = attributeGroupElem.attrib.get('ref')
         if ref:
+            attrGroupNsPrefix = getPrefixFromName(ref)
+            if attrGroupNsPrefix:
+                nsPrefix = attrGroupNsPrefix
             otherAttrGroupElem, otherSchema = self._findAttributeGroup(xmlSchema, ref)
             if hasNsPrefix(ref):
                 nsPrefix = getNsPrefix(ref)

@@ -117,7 +117,14 @@ def _getXmlNsPrefixStr(nsPrefix, mainNsPrefix):
 
 
 def _makeXmlNsCode(pbNsList, mainNsPrefix, cppStreamName):
-    nsCodeList= ['%s << " " << "%s=\\\\"%s\\\\"";' % (cppStreamName, _getXmlNsPrefixStr(pbNs.prefix, mainNsPrefix), pbNs.uri) for pbNs in pbNsList if pbNs.prefix not in ['xsd'] ]
+    pbNsSet = set()
+    pbNsRemoveDupList = []
+    for pbNs in pbNsList:
+        if not pbNs.uri in pbNsSet:
+            pbNsRemoveDupList.append(pbNs)
+        pbNsSet.add(pbNs.uri)
+
+    nsCodeList= ['%s << " " << "%s=\\\\"%s\\\\"";' % (cppStreamName, _getXmlNsPrefixStr(pbNs.prefix, mainNsPrefix), pbNs.uri) for pbNs in pbNsRemoveDupList if pbNs.prefix not in ['xsd'] ]
     return '\n'.join(nsCodeList)
 
 
@@ -188,6 +195,8 @@ def _makeCppClassFromAttribute(pbSchema, pbAttr, cppClass):
 
 # ComplexType을 class로 만들기
 def _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass, toXmlMethodBodyFunc):
+
+    cppClass.constructor.add()
 
     repeatedIdx = 1
     for elemCont in pbComplexType.element_container:

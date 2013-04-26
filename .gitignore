@@ -3,4 +3,4 @@ src/xsd/*.pyc
 .idea
 files/cpp/*
 files/header/*
-files/build_test/build/*
+files/build_test/build/
