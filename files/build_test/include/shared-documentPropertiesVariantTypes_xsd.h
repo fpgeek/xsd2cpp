@@ -194,6 +194,7 @@ namespace ns_vt {
     class CT_Empty: public XSD::ComplexType
     {
     public:
+        CT_Empty();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Empty& default_instance();
@@ -205,6 +206,7 @@ namespace ns_vt {
     class CT_Null: public XSD::ComplexType
     {
     public:
+        CT_Null();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Null& default_instance();
@@ -216,6 +218,7 @@ namespace ns_vt {
     class CT_Vector: public XSD::ComplexType
     {
     public:
+        CT_Vector();
         CT_Variant* add_variant();
         void add_i1(const XSD::byte_& _i1);
         void add_i2(const XSD::short_& _i2);
@@ -235,7 +238,7 @@ namespace ns_vt {
         void add_bool(const XSD::boolean_& _bool);
         ST_Cy* add_cy();
         ST_Error* add_error();
-        ns_s::ST_Guid* add_s_clsid();
+        ns_s::ST_Guid* add_clsid();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Vector& default_instance();
@@ -250,6 +253,7 @@ namespace ns_vt {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_variant() const;
             CT_Variant* mutable_variant();
             const CT_Variant& get_variant() const;
@@ -307,9 +311,9 @@ namespace ns_vt {
             bool has_error() const;
             ST_Error* mutable_error();
             const ST_Error& get_error() const;
-            bool has_s_clsid() const;
-            ns_s::ST_Guid* mutable_s_clsid();
-            const ns_s::ST_Guid& get_s_clsid() const;
+            bool has_clsid() const;
+            ns_s::ST_Guid* mutable_clsid();
+            const ns_s::ST_Guid& get_clsid() const;
         protected:
         private:
             bool m_has_variant;
@@ -350,8 +354,8 @@ namespace ns_vt {
             ST_Cy* m_cy;
             bool m_has_error;
             ST_Error* m_error;
-            bool m_has_s_clsid;
-            ns_s::ST_Guid* m_s_clsid;
+            bool m_has_clsid;
+            ns_s::ST_Guid* m_clsid;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_Vector* default_instance_;
@@ -364,6 +368,7 @@ namespace ns_vt {
     class CT_Array: public XSD::ComplexType
     {
     public:
+        CT_Array();
         CT_Variant* add_variant();
         void add_i1(const XSD::byte_& _i1);
         void add_i2(const XSD::short_& _i2);
@@ -398,6 +403,7 @@ namespace ns_vt {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_variant() const;
             CT_Variant* mutable_variant();
             const CT_Variant& get_variant() const;
@@ -499,6 +505,7 @@ namespace ns_vt {
     class CT_Variant: public XSD::ComplexType
     {
     public:
+        CT_Variant();
         bool has_variant() const;
         CT_Variant* mutable_variant();
         const CT_Variant& get_variant() const;
@@ -598,9 +605,9 @@ namespace ns_vt {
         bool has_vstream() const;
         CT_Vstream* mutable_vstream();
         const CT_Vstream& get_vstream() const;
-        bool has_s_clsid() const;
-        ns_s::ST_Guid* mutable_s_clsid();
-        const ns_s::ST_Guid& get_s_clsid() const;
+        bool has_clsid() const;
+        ns_s::ST_Guid* mutable_clsid();
+        const ns_s::ST_Guid& get_clsid() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Variant& default_instance();
@@ -672,30 +679,32 @@ namespace ns_vt {
         XSD::base64Binary_ m_ostorage;
         bool m_has_vstream;
         CT_Vstream* m_vstream;
-        bool m_has_s_clsid;
-        ns_s::ST_Guid* m_s_clsid;
+        bool m_has_clsid;
+        ns_s::ST_Guid* m_clsid;
         static CT_Variant* default_instance_;
     };
 
     class CT_Vstream: public XSD::ComplexType
     {
     public:
+        CT_Vstream();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Vstream& default_instance();
-        bool has_s_version_attr() const;
-        void set_s_version_attr(const ns_s::ST_Guid& _s_version_attr);
-        const ns_s::ST_Guid& get_s_version_attr() const;
+        bool has_version_attr() const;
+        void set_version_attr(const ns_s::ST_Guid& _version_attr);
+        const ns_s::ST_Guid& get_version_attr() const;
     protected:
     private:
         static CT_Vstream* default_instance_;
-        bool m_has_s_version_attr;
-        ns_s::ST_Guid* m_s_version_attr;
+        bool m_has_version_attr;
+        ns_s::ST_Guid* m_version_attr;
     };
 
     class variant_element: public Element
     {
     public:
+        variant_element();
         bool has_variant() const;
         CT_Variant* mutable_variant();
         const CT_Variant& get_variant() const;
@@ -795,9 +804,9 @@ namespace ns_vt {
         bool has_vstream() const;
         CT_Vstream* mutable_vstream();
         const CT_Vstream& get_vstream() const;
-        bool has_s_clsid() const;
-        ns_s::ST_Guid* mutable_s_clsid();
-        const ns_s::ST_Guid& get_s_clsid() const;
+        bool has_clsid() const;
+        ns_s::ST_Guid* mutable_clsid();
+        const ns_s::ST_Guid& get_clsid() const;
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const variant_element& default_instance();
@@ -869,14 +878,15 @@ namespace ns_vt {
         XSD::base64Binary_ m_ostorage;
         bool m_has_vstream;
         CT_Vstream* m_vstream;
-        bool m_has_s_clsid;
-        ns_s::ST_Guid* m_s_clsid;
+        bool m_has_clsid;
+        ns_s::ST_Guid* m_clsid;
         static variant_element* default_instance_;
     };
 
     class vector_element: public Element
     {
     public:
+        vector_element();
         CT_Variant* add_variant();
         void add_i1(const XSD::byte_& _i1);
         void add_i2(const XSD::short_& _i2);
@@ -896,7 +906,7 @@ namespace ns_vt {
         void add_bool(const XSD::boolean_& _bool);
         ST_Cy* add_cy();
         ST_Error* add_error();
-        ns_s::ST_Guid* add_s_clsid();
+        ns_s::ST_Guid* add_clsid();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const vector_element& default_instance();
@@ -911,6 +921,7 @@ namespace ns_vt {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_variant() const;
             CT_Variant* mutable_variant();
             const CT_Variant& get_variant() const;
@@ -968,9 +979,9 @@ namespace ns_vt {
             bool has_error() const;
             ST_Error* mutable_error();
             const ST_Error& get_error() const;
-            bool has_s_clsid() const;
-            ns_s::ST_Guid* mutable_s_clsid();
-            const ns_s::ST_Guid& get_s_clsid() const;
+            bool has_clsid() const;
+            ns_s::ST_Guid* mutable_clsid();
+            const ns_s::ST_Guid& get_clsid() const;
         protected:
         private:
             bool m_has_variant;
@@ -1011,8 +1022,8 @@ namespace ns_vt {
             ST_Cy* m_cy;
             bool m_has_error;
             ST_Error* m_error;
-            bool m_has_s_clsid;
-            ns_s::ST_Guid* m_s_clsid;
+            bool m_has_clsid;
+            ns_s::ST_Guid* m_clsid;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
         static vector_element* default_instance_;
@@ -1025,6 +1036,7 @@ namespace ns_vt {
     class array_element: public Element
     {
     public:
+        array_element();
         CT_Variant* add_variant();
         void add_i1(const XSD::byte_& _i1);
         void add_i2(const XSD::short_& _i2);
@@ -1059,6 +1071,7 @@ namespace ns_vt {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_variant() const;
             CT_Variant* mutable_variant();
             const CT_Variant& get_variant() const;
@@ -1174,6 +1187,7 @@ namespace ns_vt {
     class empty_element: public Element
     {
     public:
+        empty_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const empty_element& default_instance();
@@ -1185,6 +1199,7 @@ namespace ns_vt {
     class null_element: public Element
     {
     public:
+        null_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const null_element& default_instance();
@@ -1371,17 +1386,18 @@ namespace ns_vt {
     class vstream_element: public Element
     {
     public:
+        vstream_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const vstream_element& default_instance();
-        bool has_s_version_attr() const;
-        void set_s_version_attr(const ns_s::ST_Guid& _s_version_attr);
-        const ns_s::ST_Guid& get_s_version_attr() const;
+        bool has_version_attr() const;
+        void set_version_attr(const ns_s::ST_Guid& _version_attr);
+        const ns_s::ST_Guid& get_version_attr() const;
     protected:
     private:
         static vstream_element* default_instance_;
-        bool m_has_s_version_attr;
-        ns_s::ST_Guid* m_s_version_attr;
+        bool m_has_version_attr;
+        ns_s::ST_Guid* m_version_attr;
     };
 
     class clsid_element: public Element

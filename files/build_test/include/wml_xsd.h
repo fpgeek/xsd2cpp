@@ -501,6 +501,7 @@ namespace ns_w {
     class ST_DecimalNumberOrPercent: public XSD::SimpleType
     {
     public:
+        ST_DecimalNumberOrPercent();
         bool has_ST_UnqualifiedPercentage() const;
         ST_UnqualifiedPercentage* mutable_ST_UnqualifiedPercentage();
         const ST_UnqualifiedPercentage& get_ST_UnqualifiedPercentage() const;
@@ -563,6 +564,7 @@ namespace ns_w {
     class ST_SignedTwipsMeasure: public XSD::SimpleType
     {
     public:
+        ST_SignedTwipsMeasure();
         bool has_integer() const;
         void set_integer(const XSD::integer_& _integer);
         const XSD::integer_& get_integer() const;
@@ -598,6 +600,7 @@ namespace ns_w {
     class ST_HpsMeasure: public XSD::SimpleType
     {
     public:
+        ST_HpsMeasure();
         bool has_ST_UnsignedDecimalNumber() const;
         ns_s::ST_UnsignedDecimalNumber* mutable_ST_UnsignedDecimalNumber();
         const ns_s::ST_UnsignedDecimalNumber& get_ST_UnsignedDecimalNumber() const;
@@ -622,6 +625,7 @@ namespace ns_w {
     class ST_SignedHpsMeasure: public XSD::SimpleType
     {
     public:
+        ST_SignedHpsMeasure();
         bool has_integer() const;
         void set_integer(const XSD::integer_& _integer);
         const XSD::integer_& get_integer() const;
@@ -706,6 +710,7 @@ namespace ns_w {
     class ST_TextScale: public XSD::SimpleType
     {
     public:
+        ST_TextScale();
         bool has_ST_TextScalePercent() const;
         ST_TextScalePercent* mutable_ST_TextScalePercent();
         const ST_TextScalePercent& get_ST_TextScalePercent() const;
@@ -832,6 +837,7 @@ namespace ns_w {
     class ST_HexColor: public XSD::SimpleType
     {
     public:
+        ST_HexColor();
         bool has_ST_HexColorAuto() const;
         ST_HexColorAuto* mutable_ST_HexColorAuto();
         const ST_HexColorAuto& get_ST_HexColorAuto() const;
@@ -2855,6 +2861,7 @@ namespace ns_w {
     class ST_MeasurementOrPercent: public XSD::SimpleType
     {
     public:
+        ST_MeasurementOrPercent();
         bool has_ST_DecimalNumberOrPercent() const;
         ST_DecimalNumberOrPercent* mutable_ST_DecimalNumberOrPercent();
         const ST_DecimalNumberOrPercent& get_ST_DecimalNumberOrPercent() const;
@@ -3619,6 +3626,7 @@ namespace ns_w {
     class CT_Empty: public XSD::ComplexType
     {
     public:
+        CT_Empty();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Empty& default_instance();
@@ -3630,22 +3638,24 @@ namespace ns_w {
     class CT_OnOff: public XSD::ComplexType
     {
     public:
+        CT_OnOff();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OnOff& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_OnOff& _s_val_attr);
-        const ns_s::ST_OnOff& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_OnOff& _val_attr);
+        const ns_s::ST_OnOff& get_val_attr() const;
     protected:
     private:
         static CT_OnOff* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_OnOff* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_OnOff* m_val_attr;
     };
 
     class CT_LongHexNumber: public XSD::ComplexType
     {
     public:
+        CT_LongHexNumber();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LongHexNumber& default_instance();
@@ -3662,27 +3672,29 @@ namespace ns_w {
     class CT_Charset: public XSD::ComplexType
     {
     public:
+        CT_Charset();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Charset& default_instance();
         bool has_val_attr() const;
         void set_val_attr(const ST_UcharHexNumber& _val_attr);
         const ST_UcharHexNumber& get_val_attr() const;
-        bool has_s_characterSet_attr() const;
-        void set_s_characterSet_attr(const ns_s::ST_String& _s_characterSet_attr);
-        const ns_s::ST_String& get_s_characterSet_attr() const;
+        bool has_characterSet_attr() const;
+        void set_characterSet_attr(const ns_s::ST_String& _characterSet_attr);
+        const ns_s::ST_String& get_characterSet_attr() const;
     protected:
     private:
         static CT_Charset* default_instance_;
         bool m_has_val_attr;
         ST_UcharHexNumber* m_val_attr;
-        bool m_has_s_characterSet_attr;
-        ns_s::ST_String* m_s_characterSet_attr;
+        bool m_has_characterSet_attr;
+        ns_s::ST_String* m_characterSet_attr;
     };
 
     class CT_DecimalNumber: public XSD::ComplexType
     {
     public:
+        CT_DecimalNumber();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DecimalNumber& default_instance();
@@ -3699,22 +3711,24 @@ namespace ns_w {
     class CT_UnsignedDecimalNumber: public XSD::ComplexType
     {
     public:
+        CT_UnsignedDecimalNumber();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_UnsignedDecimalNumber& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_UnsignedDecimalNumber& _s_val_attr);
-        const ns_s::ST_UnsignedDecimalNumber& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_UnsignedDecimalNumber& _val_attr);
+        const ns_s::ST_UnsignedDecimalNumber& get_val_attr() const;
     protected:
     private:
         static CT_UnsignedDecimalNumber* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_UnsignedDecimalNumber* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_UnsignedDecimalNumber* m_val_attr;
     };
 
     class CT_DecimalNumberOrPrecent: public XSD::ComplexType
     {
     public:
+        CT_DecimalNumberOrPrecent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DecimalNumberOrPrecent& default_instance();
@@ -3731,22 +3745,24 @@ namespace ns_w {
     class CT_TwipsMeasure: public XSD::ComplexType
     {
     public:
+        CT_TwipsMeasure();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TwipsMeasure& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_TwipsMeasure& _s_val_attr);
-        const ns_s::ST_TwipsMeasure& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_TwipsMeasure& _val_attr);
+        const ns_s::ST_TwipsMeasure& get_val_attr() const;
     protected:
     private:
         static CT_TwipsMeasure* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_TwipsMeasure* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_TwipsMeasure* m_val_attr;
     };
 
     class CT_SignedTwipsMeasure: public XSD::ComplexType
     {
     public:
+        CT_SignedTwipsMeasure();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SignedTwipsMeasure& default_instance();
@@ -3763,6 +3779,7 @@ namespace ns_w {
     class CT_PixelsMeasure: public XSD::ComplexType
     {
     public:
+        CT_PixelsMeasure();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PixelsMeasure& default_instance();
@@ -3779,6 +3796,7 @@ namespace ns_w {
     class CT_HpsMeasure: public XSD::ComplexType
     {
     public:
+        CT_HpsMeasure();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_HpsMeasure& default_instance();
@@ -3795,6 +3813,7 @@ namespace ns_w {
     class CT_SignedHpsMeasure: public XSD::ComplexType
     {
     public:
+        CT_SignedHpsMeasure();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SignedHpsMeasure& default_instance();
@@ -3811,6 +3830,7 @@ namespace ns_w {
     class CT_MacroName: public XSD::ComplexType
     {
     public:
+        CT_MacroName();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MacroName& default_instance();
@@ -3827,22 +3847,24 @@ namespace ns_w {
     class CT_String: public XSD::ComplexType
     {
     public:
+        CT_String();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_String& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_String& _s_val_attr);
-        const ns_s::ST_String& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_String& _val_attr);
+        const ns_s::ST_String& get_val_attr() const;
     protected:
     private:
         static CT_String* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_String* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_String* m_val_attr;
     };
 
     class CT_TextScale: public XSD::ComplexType
     {
     public:
+        CT_TextScale();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextScale& default_instance();
@@ -3859,6 +3881,7 @@ namespace ns_w {
     class CT_Highlight: public XSD::ComplexType
     {
     public:
+        CT_Highlight();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Highlight& default_instance();
@@ -3875,6 +3898,7 @@ namespace ns_w {
     class CT_Color: public XSD::ComplexType
     {
     public:
+        CT_Color();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Color& default_instance();
@@ -3906,38 +3930,41 @@ namespace ns_w {
     class CT_Lang: public XSD::ComplexType
     {
     public:
+        CT_Lang();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Lang& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_Lang& _s_val_attr);
-        const ns_s::ST_Lang& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_Lang& _val_attr);
+        const ns_s::ST_Lang& get_val_attr() const;
     protected:
     private:
         static CT_Lang* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_Lang* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_Lang* m_val_attr;
     };
 
     class CT_Guid: public XSD::ComplexType
     {
     public:
+        CT_Guid();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Guid& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_Guid& _s_val_attr);
-        const ns_s::ST_Guid& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_Guid& _val_attr);
+        const ns_s::ST_Guid& get_val_attr() const;
     protected:
     private:
         static CT_Guid* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_Guid* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_Guid* m_val_attr;
     };
 
     class CT_Underline: public XSD::ComplexType
     {
     public:
+        CT_Underline();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Underline& default_instance();
@@ -3974,6 +4001,7 @@ namespace ns_w {
     class CT_TextEffect: public XSD::ComplexType
     {
     public:
+        CT_TextEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextEffect& default_instance();
@@ -3990,6 +4018,7 @@ namespace ns_w {
     class CT_Border: public XSD::ComplexType
     {
     public:
+        CT_Border();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Border& default_instance();
@@ -4014,12 +4043,12 @@ namespace ns_w {
         bool has_space_attr() const;
         void set_space_attr(const ST_PointMeasure& _space_attr);
         const ST_PointMeasure& get_space_attr() const;
-        bool has_s_shadow_attr() const;
-        void set_s_shadow_attr(const ns_s::ST_OnOff& _s_shadow_attr);
-        const ns_s::ST_OnOff& get_s_shadow_attr() const;
-        bool has_s_frame_attr() const;
-        void set_s_frame_attr(const ns_s::ST_OnOff& _s_frame_attr);
-        const ns_s::ST_OnOff& get_s_frame_attr() const;
+        bool has_shadow_attr() const;
+        void set_shadow_attr(const ns_s::ST_OnOff& _shadow_attr);
+        const ns_s::ST_OnOff& get_shadow_attr() const;
+        bool has_frame_attr() const;
+        void set_frame_attr(const ns_s::ST_OnOff& _frame_attr);
+        const ns_s::ST_OnOff& get_frame_attr() const;
     protected:
     private:
         static CT_Border* default_instance_;
@@ -4037,15 +4066,16 @@ namespace ns_w {
         ST_EighthPointMeasure* m_sz_attr;
         bool m_has_space_attr;
         ST_PointMeasure* m_space_attr;
-        bool m_has_s_shadow_attr;
-        ns_s::ST_OnOff* m_s_shadow_attr;
-        bool m_has_s_frame_attr;
-        ns_s::ST_OnOff* m_s_frame_attr;
+        bool m_has_shadow_attr;
+        ns_s::ST_OnOff* m_shadow_attr;
+        bool m_has_frame_attr;
+        ns_s::ST_OnOff* m_frame_attr;
     };
 
     class CT_Shd: public XSD::ComplexType
     {
     public:
+        CT_Shd();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Shd& default_instance();
@@ -4102,36 +4132,38 @@ namespace ns_w {
     class CT_VerticalAlignRun: public XSD::ComplexType
     {
     public:
+        CT_VerticalAlignRun();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_VerticalAlignRun& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_VerticalAlignRun& _s_val_attr);
-        const ns_s::ST_VerticalAlignRun& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_VerticalAlignRun& _val_attr);
+        const ns_s::ST_VerticalAlignRun& get_val_attr() const;
     protected:
     private:
         static CT_VerticalAlignRun* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_VerticalAlignRun* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_VerticalAlignRun* m_val_attr;
     };
 
     class CT_FitText: public XSD::ComplexType
     {
     public:
+        CT_FitText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FitText& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_TwipsMeasure& _s_val_attr);
-        const ns_s::ST_TwipsMeasure& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_TwipsMeasure& _val_attr);
+        const ns_s::ST_TwipsMeasure& get_val_attr() const;
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
     protected:
     private:
         static CT_FitText* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_TwipsMeasure* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_TwipsMeasure* m_val_attr;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
     };
@@ -4139,6 +4171,7 @@ namespace ns_w {
     class CT_Em: public XSD::ComplexType
     {
     public:
+        CT_Em();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Em& default_instance();
@@ -4155,68 +4188,71 @@ namespace ns_w {
     class CT_Language: public XSD::ComplexType
     {
     public:
+        CT_Language();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Language& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_Lang& _s_val_attr);
-        const ns_s::ST_Lang& get_s_val_attr() const;
-        bool has_s_eastAsia_attr() const;
-        void set_s_eastAsia_attr(const ns_s::ST_Lang& _s_eastAsia_attr);
-        const ns_s::ST_Lang& get_s_eastAsia_attr() const;
-        bool has_s_bidi_attr() const;
-        void set_s_bidi_attr(const ns_s::ST_Lang& _s_bidi_attr);
-        const ns_s::ST_Lang& get_s_bidi_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_Lang& _val_attr);
+        const ns_s::ST_Lang& get_val_attr() const;
+        bool has_eastAsia_attr() const;
+        void set_eastAsia_attr(const ns_s::ST_Lang& _eastAsia_attr);
+        const ns_s::ST_Lang& get_eastAsia_attr() const;
+        bool has_bidi_attr() const;
+        void set_bidi_attr(const ns_s::ST_Lang& _bidi_attr);
+        const ns_s::ST_Lang& get_bidi_attr() const;
     protected:
     private:
         static CT_Language* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_Lang* m_s_val_attr;
-        bool m_has_s_eastAsia_attr;
-        ns_s::ST_Lang* m_s_eastAsia_attr;
-        bool m_has_s_bidi_attr;
-        ns_s::ST_Lang* m_s_bidi_attr;
+        bool m_has_val_attr;
+        ns_s::ST_Lang* m_val_attr;
+        bool m_has_eastAsia_attr;
+        ns_s::ST_Lang* m_eastAsia_attr;
+        bool m_has_bidi_attr;
+        ns_s::ST_Lang* m_bidi_attr;
     };
 
     class CT_EastAsianLayout: public XSD::ComplexType
     {
     public:
+        CT_EastAsianLayout();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_EastAsianLayout& default_instance();
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_combine_attr() const;
-        void set_s_combine_attr(const ns_s::ST_OnOff& _s_combine_attr);
-        const ns_s::ST_OnOff& get_s_combine_attr() const;
+        bool has_combine_attr() const;
+        void set_combine_attr(const ns_s::ST_OnOff& _combine_attr);
+        const ns_s::ST_OnOff& get_combine_attr() const;
         bool has_combineBrackets_attr() const;
         void set_combineBrackets_attr(const ST_CombineBrackets& _combineBrackets_attr);
         const ST_CombineBrackets& get_combineBrackets_attr() const;
-        bool has_s_vert_attr() const;
-        void set_s_vert_attr(const ns_s::ST_OnOff& _s_vert_attr);
-        const ns_s::ST_OnOff& get_s_vert_attr() const;
-        bool has_s_vertCompress_attr() const;
-        void set_s_vertCompress_attr(const ns_s::ST_OnOff& _s_vertCompress_attr);
-        const ns_s::ST_OnOff& get_s_vertCompress_attr() const;
+        bool has_vert_attr() const;
+        void set_vert_attr(const ns_s::ST_OnOff& _vert_attr);
+        const ns_s::ST_OnOff& get_vert_attr() const;
+        bool has_vertCompress_attr() const;
+        void set_vertCompress_attr(const ns_s::ST_OnOff& _vertCompress_attr);
+        const ns_s::ST_OnOff& get_vertCompress_attr() const;
     protected:
     private:
         static CT_EastAsianLayout* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_combine_attr;
-        ns_s::ST_OnOff* m_s_combine_attr;
+        bool m_has_combine_attr;
+        ns_s::ST_OnOff* m_combine_attr;
         bool m_has_combineBrackets_attr;
         ST_CombineBrackets* m_combineBrackets_attr;
-        bool m_has_s_vert_attr;
-        ns_s::ST_OnOff* m_s_vert_attr;
-        bool m_has_s_vertCompress_attr;
-        ns_s::ST_OnOff* m_s_vertCompress_attr;
+        bool m_has_vert_attr;
+        ns_s::ST_OnOff* m_vert_attr;
+        bool m_has_vertCompress_attr;
+        ns_s::ST_OnOff* m_vertCompress_attr;
     };
 
     class CT_FramePr: public XSD::ComplexType
     {
     public:
+        CT_FramePr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FramePr& default_instance();
@@ -4226,18 +4262,18 @@ namespace ns_w {
         bool has_lines_attr() const;
         void set_lines_attr(const ST_DecimalNumber& _lines_attr);
         const ST_DecimalNumber& get_lines_attr() const;
-        bool has_s_w_attr() const;
-        void set_s_w_attr(const ns_s::ST_TwipsMeasure& _s_w_attr);
-        const ns_s::ST_TwipsMeasure& get_s_w_attr() const;
-        bool has_s_h_attr() const;
-        void set_s_h_attr(const ns_s::ST_TwipsMeasure& _s_h_attr);
-        const ns_s::ST_TwipsMeasure& get_s_h_attr() const;
-        bool has_s_vSpace_attr() const;
-        void set_s_vSpace_attr(const ns_s::ST_TwipsMeasure& _s_vSpace_attr);
-        const ns_s::ST_TwipsMeasure& get_s_vSpace_attr() const;
-        bool has_s_hSpace_attr() const;
-        void set_s_hSpace_attr(const ns_s::ST_TwipsMeasure& _s_hSpace_attr);
-        const ns_s::ST_TwipsMeasure& get_s_hSpace_attr() const;
+        bool has_w_attr() const;
+        void set_w_attr(const ns_s::ST_TwipsMeasure& _w_attr);
+        const ns_s::ST_TwipsMeasure& get_w_attr() const;
+        bool has_h_attr() const;
+        void set_h_attr(const ns_s::ST_TwipsMeasure& _h_attr);
+        const ns_s::ST_TwipsMeasure& get_h_attr() const;
+        bool has_vSpace_attr() const;
+        void set_vSpace_attr(const ns_s::ST_TwipsMeasure& _vSpace_attr);
+        const ns_s::ST_TwipsMeasure& get_vSpace_attr() const;
+        bool has_hSpace_attr() const;
+        void set_hSpace_attr(const ns_s::ST_TwipsMeasure& _hSpace_attr);
+        const ns_s::ST_TwipsMeasure& get_hSpace_attr() const;
         bool has_wrap_attr() const;
         void set_wrap_attr(const ST_Wrap& _wrap_attr);
         const ST_Wrap& get_wrap_attr() const;
@@ -4250,21 +4286,21 @@ namespace ns_w {
         bool has_x_attr() const;
         void set_x_attr(const ST_SignedTwipsMeasure& _x_attr);
         const ST_SignedTwipsMeasure& get_x_attr() const;
-        bool has_s_xAlign_attr() const;
-        void set_s_xAlign_attr(const ns_s::ST_XAlign& _s_xAlign_attr);
-        const ns_s::ST_XAlign& get_s_xAlign_attr() const;
+        bool has_xAlign_attr() const;
+        void set_xAlign_attr(const ns_s::ST_XAlign& _xAlign_attr);
+        const ns_s::ST_XAlign& get_xAlign_attr() const;
         bool has_y_attr() const;
         void set_y_attr(const ST_SignedTwipsMeasure& _y_attr);
         const ST_SignedTwipsMeasure& get_y_attr() const;
-        bool has_s_yAlign_attr() const;
-        void set_s_yAlign_attr(const ns_s::ST_YAlign& _s_yAlign_attr);
-        const ns_s::ST_YAlign& get_s_yAlign_attr() const;
+        bool has_yAlign_attr() const;
+        void set_yAlign_attr(const ns_s::ST_YAlign& _yAlign_attr);
+        const ns_s::ST_YAlign& get_yAlign_attr() const;
         bool has_hRule_attr() const;
         void set_hRule_attr(const ST_HeightRule& _hRule_attr);
         const ST_HeightRule& get_hRule_attr() const;
-        bool has_s_anchorLock_attr() const;
-        void set_s_anchorLock_attr(const ns_s::ST_OnOff& _s_anchorLock_attr);
-        const ns_s::ST_OnOff& get_s_anchorLock_attr() const;
+        bool has_anchorLock_attr() const;
+        void set_anchorLock_attr(const ns_s::ST_OnOff& _anchorLock_attr);
+        const ns_s::ST_OnOff& get_anchorLock_attr() const;
     protected:
     private:
         static CT_FramePr* default_instance_;
@@ -4272,14 +4308,14 @@ namespace ns_w {
         ST_DropCap* m_dropCap_attr;
         bool m_has_lines_attr;
         ST_DecimalNumber* m_lines_attr;
-        bool m_has_s_w_attr;
-        ns_s::ST_TwipsMeasure* m_s_w_attr;
-        bool m_has_s_h_attr;
-        ns_s::ST_TwipsMeasure* m_s_h_attr;
-        bool m_has_s_vSpace_attr;
-        ns_s::ST_TwipsMeasure* m_s_vSpace_attr;
-        bool m_has_s_hSpace_attr;
-        ns_s::ST_TwipsMeasure* m_s_hSpace_attr;
+        bool m_has_w_attr;
+        ns_s::ST_TwipsMeasure* m_w_attr;
+        bool m_has_h_attr;
+        ns_s::ST_TwipsMeasure* m_h_attr;
+        bool m_has_vSpace_attr;
+        ns_s::ST_TwipsMeasure* m_vSpace_attr;
+        bool m_has_hSpace_attr;
+        ns_s::ST_TwipsMeasure* m_hSpace_attr;
         bool m_has_wrap_attr;
         ST_Wrap* m_wrap_attr;
         bool m_has_hAnchor_attr;
@@ -4288,21 +4324,22 @@ namespace ns_w {
         ST_VAnchor* m_vAnchor_attr;
         bool m_has_x_attr;
         ST_SignedTwipsMeasure* m_x_attr;
-        bool m_has_s_xAlign_attr;
-        ns_s::ST_XAlign* m_s_xAlign_attr;
+        bool m_has_xAlign_attr;
+        ns_s::ST_XAlign* m_xAlign_attr;
         bool m_has_y_attr;
         ST_SignedTwipsMeasure* m_y_attr;
-        bool m_has_s_yAlign_attr;
-        ns_s::ST_YAlign* m_s_yAlign_attr;
+        bool m_has_yAlign_attr;
+        ns_s::ST_YAlign* m_yAlign_attr;
         bool m_has_hRule_attr;
         ST_HeightRule* m_hRule_attr;
-        bool m_has_s_anchorLock_attr;
-        ns_s::ST_OnOff* m_s_anchorLock_attr;
+        bool m_has_anchorLock_attr;
+        ns_s::ST_OnOff* m_anchorLock_attr;
     };
 
     class CT_TabStop: public XSD::ComplexType
     {
     public:
+        CT_TabStop();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TabStop& default_instance();
@@ -4329,27 +4366,28 @@ namespace ns_w {
     class CT_Spacing: public XSD::ComplexType
     {
     public:
+        CT_Spacing();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Spacing& default_instance();
-        bool has_s_before_attr() const;
-        void set_s_before_attr(const ns_s::ST_TwipsMeasure& _s_before_attr);
-        const ns_s::ST_TwipsMeasure& get_s_before_attr() const;
+        bool has_before_attr() const;
+        void set_before_attr(const ns_s::ST_TwipsMeasure& _before_attr);
+        const ns_s::ST_TwipsMeasure& get_before_attr() const;
         bool has_beforeLines_attr() const;
         void set_beforeLines_attr(const ST_DecimalNumber& _beforeLines_attr);
         const ST_DecimalNumber& get_beforeLines_attr() const;
-        bool has_s_beforeAutospacing_attr() const;
-        void set_s_beforeAutospacing_attr(const ns_s::ST_OnOff& _s_beforeAutospacing_attr);
-        const ns_s::ST_OnOff& get_s_beforeAutospacing_attr() const;
-        bool has_s_after_attr() const;
-        void set_s_after_attr(const ns_s::ST_TwipsMeasure& _s_after_attr);
-        const ns_s::ST_TwipsMeasure& get_s_after_attr() const;
+        bool has_beforeAutospacing_attr() const;
+        void set_beforeAutospacing_attr(const ns_s::ST_OnOff& _beforeAutospacing_attr);
+        const ns_s::ST_OnOff& get_beforeAutospacing_attr() const;
+        bool has_after_attr() const;
+        void set_after_attr(const ns_s::ST_TwipsMeasure& _after_attr);
+        const ns_s::ST_TwipsMeasure& get_after_attr() const;
         bool has_afterLines_attr() const;
         void set_afterLines_attr(const ST_DecimalNumber& _afterLines_attr);
         const ST_DecimalNumber& get_afterLines_attr() const;
-        bool has_s_afterAutospacing_attr() const;
-        void set_s_afterAutospacing_attr(const ns_s::ST_OnOff& _s_afterAutospacing_attr);
-        const ns_s::ST_OnOff& get_s_afterAutospacing_attr() const;
+        bool has_afterAutospacing_attr() const;
+        void set_afterAutospacing_attr(const ns_s::ST_OnOff& _afterAutospacing_attr);
+        const ns_s::ST_OnOff& get_afterAutospacing_attr() const;
         bool has_line_attr() const;
         void set_line_attr(const ST_SignedTwipsMeasure& _line_attr);
         const ST_SignedTwipsMeasure& get_line_attr() const;
@@ -4359,18 +4397,18 @@ namespace ns_w {
     protected:
     private:
         static CT_Spacing* default_instance_;
-        bool m_has_s_before_attr;
-        ns_s::ST_TwipsMeasure* m_s_before_attr;
+        bool m_has_before_attr;
+        ns_s::ST_TwipsMeasure* m_before_attr;
         bool m_has_beforeLines_attr;
         ST_DecimalNumber* m_beforeLines_attr;
-        bool m_has_s_beforeAutospacing_attr;
-        ns_s::ST_OnOff* m_s_beforeAutospacing_attr;
-        bool m_has_s_after_attr;
-        ns_s::ST_TwipsMeasure* m_s_after_attr;
+        bool m_has_beforeAutospacing_attr;
+        ns_s::ST_OnOff* m_beforeAutospacing_attr;
+        bool m_has_after_attr;
+        ns_s::ST_TwipsMeasure* m_after_attr;
         bool m_has_afterLines_attr;
         ST_DecimalNumber* m_afterLines_attr;
-        bool m_has_s_afterAutospacing_attr;
-        ns_s::ST_OnOff* m_s_afterAutospacing_attr;
+        bool m_has_afterAutospacing_attr;
+        ns_s::ST_OnOff* m_afterAutospacing_attr;
         bool m_has_line_attr;
         ST_SignedTwipsMeasure* m_line_attr;
         bool m_has_lineRule_attr;
@@ -4380,6 +4418,7 @@ namespace ns_w {
     class CT_Ind: public XSD::ComplexType
     {
     public:
+        CT_Ind();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Ind& default_instance();
@@ -4407,15 +4446,15 @@ namespace ns_w {
         bool has_rightChars_attr() const;
         void set_rightChars_attr(const ST_DecimalNumber& _rightChars_attr);
         const ST_DecimalNumber& get_rightChars_attr() const;
-        bool has_s_hanging_attr() const;
-        void set_s_hanging_attr(const ns_s::ST_TwipsMeasure& _s_hanging_attr);
-        const ns_s::ST_TwipsMeasure& get_s_hanging_attr() const;
+        bool has_hanging_attr() const;
+        void set_hanging_attr(const ns_s::ST_TwipsMeasure& _hanging_attr);
+        const ns_s::ST_TwipsMeasure& get_hanging_attr() const;
         bool has_hangingChars_attr() const;
         void set_hangingChars_attr(const ST_DecimalNumber& _hangingChars_attr);
         const ST_DecimalNumber& get_hangingChars_attr() const;
-        bool has_s_firstLine_attr() const;
-        void set_s_firstLine_attr(const ns_s::ST_TwipsMeasure& _s_firstLine_attr);
-        const ns_s::ST_TwipsMeasure& get_s_firstLine_attr() const;
+        bool has_firstLine_attr() const;
+        void set_firstLine_attr(const ns_s::ST_TwipsMeasure& _firstLine_attr);
+        const ns_s::ST_TwipsMeasure& get_firstLine_attr() const;
         bool has_firstLineChars_attr() const;
         void set_firstLineChars_attr(const ST_DecimalNumber& _firstLineChars_attr);
         const ST_DecimalNumber& get_firstLineChars_attr() const;
@@ -4438,12 +4477,12 @@ namespace ns_w {
         ST_SignedTwipsMeasure* m_right_attr;
         bool m_has_rightChars_attr;
         ST_DecimalNumber* m_rightChars_attr;
-        bool m_has_s_hanging_attr;
-        ns_s::ST_TwipsMeasure* m_s_hanging_attr;
+        bool m_has_hanging_attr;
+        ns_s::ST_TwipsMeasure* m_hanging_attr;
         bool m_has_hangingChars_attr;
         ST_DecimalNumber* m_hangingChars_attr;
-        bool m_has_s_firstLine_attr;
-        ns_s::ST_TwipsMeasure* m_s_firstLine_attr;
+        bool m_has_firstLine_attr;
+        ns_s::ST_TwipsMeasure* m_firstLine_attr;
         bool m_has_firstLineChars_attr;
         ST_DecimalNumber* m_firstLineChars_attr;
     };
@@ -4451,6 +4490,7 @@ namespace ns_w {
     class CT_Jc: public XSD::ComplexType
     {
     public:
+        CT_Jc();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Jc& default_instance();
@@ -4467,6 +4507,7 @@ namespace ns_w {
     class CT_JcTable: public XSD::ComplexType
     {
     public:
+        CT_JcTable();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_JcTable& default_instance();
@@ -4483,6 +4524,7 @@ namespace ns_w {
     class CT_View: public XSD::ComplexType
     {
     public:
+        CT_View();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_View& default_instance();
@@ -4499,6 +4541,7 @@ namespace ns_w {
     class CT_Zoom: public XSD::ComplexType
     {
     public:
+        CT_Zoom();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Zoom& default_instance();
@@ -4520,47 +4563,49 @@ namespace ns_w {
     class CT_WritingStyle: public XSD::ComplexType
     {
     public:
+        CT_WritingStyle();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WritingStyle& default_instance();
-        bool has_s_lang_attr() const;
-        void set_s_lang_attr(const ns_s::ST_Lang& _s_lang_attr);
-        const ns_s::ST_Lang& get_s_lang_attr() const;
-        bool has_s_vendorID_attr() const;
-        void set_s_vendorID_attr(const ns_s::ST_String& _s_vendorID_attr);
-        const ns_s::ST_String& get_s_vendorID_attr() const;
-        bool has_s_dllVersion_attr() const;
-        void set_s_dllVersion_attr(const ns_s::ST_String& _s_dllVersion_attr);
-        const ns_s::ST_String& get_s_dllVersion_attr() const;
-        bool has_s_nlCheck_attr() const;
-        void set_s_nlCheck_attr(const ns_s::ST_OnOff& _s_nlCheck_attr);
-        const ns_s::ST_OnOff& get_s_nlCheck_attr() const;
-        bool has_s_checkStyle_attr() const;
-        void set_s_checkStyle_attr(const ns_s::ST_OnOff& _s_checkStyle_attr);
-        const ns_s::ST_OnOff& get_s_checkStyle_attr() const;
-        bool has_s_appName_attr() const;
-        void set_s_appName_attr(const ns_s::ST_String& _s_appName_attr);
-        const ns_s::ST_String& get_s_appName_attr() const;
+        bool has_lang_attr() const;
+        void set_lang_attr(const ns_s::ST_Lang& _lang_attr);
+        const ns_s::ST_Lang& get_lang_attr() const;
+        bool has_vendorID_attr() const;
+        void set_vendorID_attr(const ns_s::ST_String& _vendorID_attr);
+        const ns_s::ST_String& get_vendorID_attr() const;
+        bool has_dllVersion_attr() const;
+        void set_dllVersion_attr(const ns_s::ST_String& _dllVersion_attr);
+        const ns_s::ST_String& get_dllVersion_attr() const;
+        bool has_nlCheck_attr() const;
+        void set_nlCheck_attr(const ns_s::ST_OnOff& _nlCheck_attr);
+        const ns_s::ST_OnOff& get_nlCheck_attr() const;
+        bool has_checkStyle_attr() const;
+        void set_checkStyle_attr(const ns_s::ST_OnOff& _checkStyle_attr);
+        const ns_s::ST_OnOff& get_checkStyle_attr() const;
+        bool has_appName_attr() const;
+        void set_appName_attr(const ns_s::ST_String& _appName_attr);
+        const ns_s::ST_String& get_appName_attr() const;
     protected:
     private:
         static CT_WritingStyle* default_instance_;
-        bool m_has_s_lang_attr;
-        ns_s::ST_Lang* m_s_lang_attr;
-        bool m_has_s_vendorID_attr;
-        ns_s::ST_String* m_s_vendorID_attr;
-        bool m_has_s_dllVersion_attr;
-        ns_s::ST_String* m_s_dllVersion_attr;
-        bool m_has_s_nlCheck_attr;
-        ns_s::ST_OnOff* m_s_nlCheck_attr;
-        bool m_has_s_checkStyle_attr;
-        ns_s::ST_OnOff* m_s_checkStyle_attr;
-        bool m_has_s_appName_attr;
-        ns_s::ST_String* m_s_appName_attr;
+        bool m_has_lang_attr;
+        ns_s::ST_Lang* m_lang_attr;
+        bool m_has_vendorID_attr;
+        ns_s::ST_String* m_vendorID_attr;
+        bool m_has_dllVersion_attr;
+        ns_s::ST_String* m_dllVersion_attr;
+        bool m_has_nlCheck_attr;
+        ns_s::ST_OnOff* m_nlCheck_attr;
+        bool m_has_checkStyle_attr;
+        ns_s::ST_OnOff* m_checkStyle_attr;
+        bool m_has_appName_attr;
+        ns_s::ST_String* m_appName_attr;
     };
 
     class CT_Proof: public XSD::ComplexType
     {
     public:
+        CT_Proof();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Proof& default_instance();
@@ -4582,6 +4627,7 @@ namespace ns_w {
     class CT_DocType: public XSD::ComplexType
     {
     public:
+        CT_DocType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocType& default_instance();
@@ -4598,21 +4644,22 @@ namespace ns_w {
     class CT_DocProtect: public XSD::ComplexType
     {
     public:
+        CT_DocProtect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocProtect& default_instance();
         bool has_edit_attr() const;
         void set_edit_attr(const ST_DocProtect& _edit_attr);
         const ST_DocProtect& get_edit_attr() const;
-        bool has_s_formatting_attr() const;
-        void set_s_formatting_attr(const ns_s::ST_OnOff& _s_formatting_attr);
-        const ns_s::ST_OnOff& get_s_formatting_attr() const;
-        bool has_s_enforcement_attr() const;
-        void set_s_enforcement_attr(const ns_s::ST_OnOff& _s_enforcement_attr);
-        const ns_s::ST_OnOff& get_s_enforcement_attr() const;
-        bool has_s_algorithmName_attr() const;
-        void set_s_algorithmName_attr(const ns_s::ST_String& _s_algorithmName_attr);
-        const ns_s::ST_String& get_s_algorithmName_attr() const;
+        bool has_formatting_attr() const;
+        void set_formatting_attr(const ns_s::ST_OnOff& _formatting_attr);
+        const ns_s::ST_OnOff& get_formatting_attr() const;
+        bool has_enforcement_attr() const;
+        void set_enforcement_attr(const ns_s::ST_OnOff& _enforcement_attr);
+        const ns_s::ST_OnOff& get_enforcement_attr() const;
+        bool has_algorithmName_attr() const;
+        void set_algorithmName_attr(const ns_s::ST_String& _algorithmName_attr);
+        const ns_s::ST_String& get_algorithmName_attr() const;
         bool has_hashValue_attr() const;
         void set_hashValue_attr(const XSD::base64Binary_& _hashValue_attr);
         const XSD::base64Binary_& get_hashValue_attr() const;
@@ -4622,36 +4669,36 @@ namespace ns_w {
         bool has_spinCount_attr() const;
         void set_spinCount_attr(const ST_DecimalNumber& _spinCount_attr);
         const ST_DecimalNumber& get_spinCount_attr() const;
-        bool has_s_cryptProviderType_attr() const;
-        void set_s_cryptProviderType_attr(const ns_s::ST_CryptProv& _s_cryptProviderType_attr);
-        const ns_s::ST_CryptProv& get_s_cryptProviderType_attr() const;
-        bool has_s_cryptAlgorithmClass_attr() const;
-        void set_s_cryptAlgorithmClass_attr(const ns_s::ST_AlgClass& _s_cryptAlgorithmClass_attr);
-        const ns_s::ST_AlgClass& get_s_cryptAlgorithmClass_attr() const;
-        bool has_s_cryptAlgorithmType_attr() const;
-        void set_s_cryptAlgorithmType_attr(const ns_s::ST_AlgType& _s_cryptAlgorithmType_attr);
-        const ns_s::ST_AlgType& get_s_cryptAlgorithmType_attr() const;
+        bool has_cryptProviderType_attr() const;
+        void set_cryptProviderType_attr(const ns_s::ST_CryptProv& _cryptProviderType_attr);
+        const ns_s::ST_CryptProv& get_cryptProviderType_attr() const;
+        bool has_cryptAlgorithmClass_attr() const;
+        void set_cryptAlgorithmClass_attr(const ns_s::ST_AlgClass& _cryptAlgorithmClass_attr);
+        const ns_s::ST_AlgClass& get_cryptAlgorithmClass_attr() const;
+        bool has_cryptAlgorithmType_attr() const;
+        void set_cryptAlgorithmType_attr(const ns_s::ST_AlgType& _cryptAlgorithmType_attr);
+        const ns_s::ST_AlgType& get_cryptAlgorithmType_attr() const;
         bool has_cryptAlgorithmSid_attr() const;
         void set_cryptAlgorithmSid_attr(const ST_DecimalNumber& _cryptAlgorithmSid_attr);
         const ST_DecimalNumber& get_cryptAlgorithmSid_attr() const;
         bool has_cryptSpinCount_attr() const;
         void set_cryptSpinCount_attr(const ST_DecimalNumber& _cryptSpinCount_attr);
         const ST_DecimalNumber& get_cryptSpinCount_attr() const;
-        bool has_s_cryptProvider_attr() const;
-        void set_s_cryptProvider_attr(const ns_s::ST_String& _s_cryptProvider_attr);
-        const ns_s::ST_String& get_s_cryptProvider_attr() const;
+        bool has_cryptProvider_attr() const;
+        void set_cryptProvider_attr(const ns_s::ST_String& _cryptProvider_attr);
+        const ns_s::ST_String& get_cryptProvider_attr() const;
         bool has_algIdExt_attr() const;
         void set_algIdExt_attr(const ST_LongHexNumber& _algIdExt_attr);
         const ST_LongHexNumber& get_algIdExt_attr() const;
-        bool has_s_algIdExtSource_attr() const;
-        void set_s_algIdExtSource_attr(const ns_s::ST_String& _s_algIdExtSource_attr);
-        const ns_s::ST_String& get_s_algIdExtSource_attr() const;
+        bool has_algIdExtSource_attr() const;
+        void set_algIdExtSource_attr(const ns_s::ST_String& _algIdExtSource_attr);
+        const ns_s::ST_String& get_algIdExtSource_attr() const;
         bool has_cryptProviderTypeExt_attr() const;
         void set_cryptProviderTypeExt_attr(const ST_LongHexNumber& _cryptProviderTypeExt_attr);
         const ST_LongHexNumber& get_cryptProviderTypeExt_attr() const;
-        bool has_s_cryptProviderTypeExtSource_attr() const;
-        void set_s_cryptProviderTypeExtSource_attr(const ns_s::ST_String& _s_cryptProviderTypeExtSource_attr);
-        const ns_s::ST_String& get_s_cryptProviderTypeExtSource_attr() const;
+        bool has_cryptProviderTypeExtSource_attr() const;
+        void set_cryptProviderTypeExtSource_attr(const ns_s::ST_String& _cryptProviderTypeExtSource_attr);
+        const ns_s::ST_String& get_cryptProviderTypeExtSource_attr() const;
         bool has_hash_attr() const;
         void set_hash_attr(const XSD::base64Binary_& _hash_attr);
         const XSD::base64Binary_& get_hash_attr() const;
@@ -4663,38 +4710,38 @@ namespace ns_w {
         static CT_DocProtect* default_instance_;
         bool m_has_edit_attr;
         ST_DocProtect* m_edit_attr;
-        bool m_has_s_formatting_attr;
-        ns_s::ST_OnOff* m_s_formatting_attr;
-        bool m_has_s_enforcement_attr;
-        ns_s::ST_OnOff* m_s_enforcement_attr;
-        bool m_has_s_algorithmName_attr;
-        ns_s::ST_String* m_s_algorithmName_attr;
+        bool m_has_formatting_attr;
+        ns_s::ST_OnOff* m_formatting_attr;
+        bool m_has_enforcement_attr;
+        ns_s::ST_OnOff* m_enforcement_attr;
+        bool m_has_algorithmName_attr;
+        ns_s::ST_String* m_algorithmName_attr;
         bool m_has_hashValue_attr;
         XSD::base64Binary_ m_hashValue_attr;
         bool m_has_saltValue_attr;
         XSD::base64Binary_ m_saltValue_attr;
         bool m_has_spinCount_attr;
         ST_DecimalNumber* m_spinCount_attr;
-        bool m_has_s_cryptProviderType_attr;
-        ns_s::ST_CryptProv* m_s_cryptProviderType_attr;
-        bool m_has_s_cryptAlgorithmClass_attr;
-        ns_s::ST_AlgClass* m_s_cryptAlgorithmClass_attr;
-        bool m_has_s_cryptAlgorithmType_attr;
-        ns_s::ST_AlgType* m_s_cryptAlgorithmType_attr;
+        bool m_has_cryptProviderType_attr;
+        ns_s::ST_CryptProv* m_cryptProviderType_attr;
+        bool m_has_cryptAlgorithmClass_attr;
+        ns_s::ST_AlgClass* m_cryptAlgorithmClass_attr;
+        bool m_has_cryptAlgorithmType_attr;
+        ns_s::ST_AlgType* m_cryptAlgorithmType_attr;
         bool m_has_cryptAlgorithmSid_attr;
         ST_DecimalNumber* m_cryptAlgorithmSid_attr;
         bool m_has_cryptSpinCount_attr;
         ST_DecimalNumber* m_cryptSpinCount_attr;
-        bool m_has_s_cryptProvider_attr;
-        ns_s::ST_String* m_s_cryptProvider_attr;
+        bool m_has_cryptProvider_attr;
+        ns_s::ST_String* m_cryptProvider_attr;
         bool m_has_algIdExt_attr;
         ST_LongHexNumber* m_algIdExt_attr;
-        bool m_has_s_algIdExtSource_attr;
-        ns_s::ST_String* m_s_algIdExtSource_attr;
+        bool m_has_algIdExtSource_attr;
+        ns_s::ST_String* m_algIdExtSource_attr;
         bool m_has_cryptProviderTypeExt_attr;
         ST_LongHexNumber* m_cryptProviderTypeExt_attr;
-        bool m_has_s_cryptProviderTypeExtSource_attr;
-        ns_s::ST_String* m_s_cryptProviderTypeExtSource_attr;
+        bool m_has_cryptProviderTypeExtSource_attr;
+        ns_s::ST_String* m_cryptProviderTypeExtSource_attr;
         bool m_has_hash_attr;
         XSD::base64Binary_ m_hash_attr;
         bool m_has_salt_attr;
@@ -4704,6 +4751,7 @@ namespace ns_w {
     class CT_MailMergeDocType: public XSD::ComplexType
     {
     public:
+        CT_MailMergeDocType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MailMergeDocType& default_instance();
@@ -4720,6 +4768,7 @@ namespace ns_w {
     class CT_MailMergeDataType: public XSD::ComplexType
     {
     public:
+        CT_MailMergeDataType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MailMergeDataType& default_instance();
@@ -4736,6 +4785,7 @@ namespace ns_w {
     class CT_MailMergeDest: public XSD::ComplexType
     {
     public:
+        CT_MailMergeDest();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MailMergeDest& default_instance();
@@ -4752,6 +4802,7 @@ namespace ns_w {
     class CT_MailMergeOdsoFMDFieldType: public XSD::ComplexType
     {
     public:
+        CT_MailMergeOdsoFMDFieldType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MailMergeOdsoFMDFieldType& default_instance();
@@ -4768,63 +4819,66 @@ namespace ns_w {
     class CT_TrackChangesView: public XSD::ComplexType
     {
     public:
+        CT_TrackChangesView();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TrackChangesView& default_instance();
-        bool has_s_markup_attr() const;
-        void set_s_markup_attr(const ns_s::ST_OnOff& _s_markup_attr);
-        const ns_s::ST_OnOff& get_s_markup_attr() const;
-        bool has_s_comments_attr() const;
-        void set_s_comments_attr(const ns_s::ST_OnOff& _s_comments_attr);
-        const ns_s::ST_OnOff& get_s_comments_attr() const;
-        bool has_s_insDel_attr() const;
-        void set_s_insDel_attr(const ns_s::ST_OnOff& _s_insDel_attr);
-        const ns_s::ST_OnOff& get_s_insDel_attr() const;
-        bool has_s_formatting_attr() const;
-        void set_s_formatting_attr(const ns_s::ST_OnOff& _s_formatting_attr);
-        const ns_s::ST_OnOff& get_s_formatting_attr() const;
-        bool has_s_inkAnnotations_attr() const;
-        void set_s_inkAnnotations_attr(const ns_s::ST_OnOff& _s_inkAnnotations_attr);
-        const ns_s::ST_OnOff& get_s_inkAnnotations_attr() const;
+        bool has_markup_attr() const;
+        void set_markup_attr(const ns_s::ST_OnOff& _markup_attr);
+        const ns_s::ST_OnOff& get_markup_attr() const;
+        bool has_comments_attr() const;
+        void set_comments_attr(const ns_s::ST_OnOff& _comments_attr);
+        const ns_s::ST_OnOff& get_comments_attr() const;
+        bool has_insDel_attr() const;
+        void set_insDel_attr(const ns_s::ST_OnOff& _insDel_attr);
+        const ns_s::ST_OnOff& get_insDel_attr() const;
+        bool has_formatting_attr() const;
+        void set_formatting_attr(const ns_s::ST_OnOff& _formatting_attr);
+        const ns_s::ST_OnOff& get_formatting_attr() const;
+        bool has_inkAnnotations_attr() const;
+        void set_inkAnnotations_attr(const ns_s::ST_OnOff& _inkAnnotations_attr);
+        const ns_s::ST_OnOff& get_inkAnnotations_attr() const;
     protected:
     private:
         static CT_TrackChangesView* default_instance_;
-        bool m_has_s_markup_attr;
-        ns_s::ST_OnOff* m_s_markup_attr;
-        bool m_has_s_comments_attr;
-        ns_s::ST_OnOff* m_s_comments_attr;
-        bool m_has_s_insDel_attr;
-        ns_s::ST_OnOff* m_s_insDel_attr;
-        bool m_has_s_formatting_attr;
-        ns_s::ST_OnOff* m_s_formatting_attr;
-        bool m_has_s_inkAnnotations_attr;
-        ns_s::ST_OnOff* m_s_inkAnnotations_attr;
+        bool m_has_markup_attr;
+        ns_s::ST_OnOff* m_markup_attr;
+        bool m_has_comments_attr;
+        ns_s::ST_OnOff* m_comments_attr;
+        bool m_has_insDel_attr;
+        ns_s::ST_OnOff* m_insDel_attr;
+        bool m_has_formatting_attr;
+        ns_s::ST_OnOff* m_formatting_attr;
+        bool m_has_inkAnnotations_attr;
+        ns_s::ST_OnOff* m_inkAnnotations_attr;
     };
 
     class CT_Kinsoku: public XSD::ComplexType
     {
     public:
+        CT_Kinsoku();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Kinsoku& default_instance();
-        bool has_s_lang_attr() const;
-        void set_s_lang_attr(const ns_s::ST_Lang& _s_lang_attr);
-        const ns_s::ST_Lang& get_s_lang_attr() const;
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_String& _s_val_attr);
-        const ns_s::ST_String& get_s_val_attr() const;
+        bool has_lang_attr() const;
+        void set_lang_attr(const ns_s::ST_Lang& _lang_attr);
+        const ns_s::ST_Lang& get_lang_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_String& _val_attr);
+        const ns_s::ST_String& get_val_attr() const;
     protected:
     private:
         static CT_Kinsoku* default_instance_;
-        bool m_has_s_lang_attr;
-        ns_s::ST_Lang* m_s_lang_attr;
-        bool m_has_s_val_attr;
-        ns_s::ST_String* m_s_val_attr;
+        bool m_has_lang_attr;
+        ns_s::ST_Lang* m_lang_attr;
+        bool m_has_val_attr;
+        ns_s::ST_String* m_val_attr;
     };
 
     class CT_TextDirection: public XSD::ComplexType
     {
     public:
+        CT_TextDirection();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextDirection& default_instance();
@@ -4841,6 +4895,7 @@ namespace ns_w {
     class CT_TextAlignment: public XSD::ComplexType
     {
     public:
+        CT_TextAlignment();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextAlignment& default_instance();
@@ -4857,6 +4912,7 @@ namespace ns_w {
     class CT_Markup: public XSD::ComplexType
     {
     public:
+        CT_Markup();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Markup& default_instance();
@@ -4873,15 +4929,16 @@ namespace ns_w {
     class CT_TrackChange: public XSD::ComplexType
     {
     public:
+        CT_TrackChange();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TrackChange& default_instance();
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -4890,8 +4947,8 @@ namespace ns_w {
         static CT_TrackChange* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
     };
@@ -4899,15 +4956,16 @@ namespace ns_w {
     class CT_CellMergeTrackChange: public XSD::ComplexType
     {
     public:
+        CT_CellMergeTrackChange();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CellMergeTrackChange& default_instance();
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -4922,8 +4980,8 @@ namespace ns_w {
         static CT_CellMergeTrackChange* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
         bool m_has_vMerge_attr;
@@ -4935,15 +4993,16 @@ namespace ns_w {
     class CT_TrackChangeRange: public XSD::ComplexType
     {
     public:
+        CT_TrackChangeRange();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TrackChangeRange& default_instance();
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -4955,8 +5014,8 @@ namespace ns_w {
         static CT_TrackChangeRange* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
         bool m_has_displacedByCustomXml_attr;
@@ -4966,6 +5025,7 @@ namespace ns_w {
     class CT_MarkupRange: public XSD::ComplexType
     {
     public:
+        CT_MarkupRange();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MarkupRange& default_instance();
@@ -4987,6 +5047,7 @@ namespace ns_w {
     class CT_BookmarkRange: public XSD::ComplexType
     {
     public:
+        CT_BookmarkRange();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BookmarkRange& default_instance();
@@ -5018,6 +5079,7 @@ namespace ns_w {
     class CT_Bookmark: public XSD::ComplexType
     {
     public:
+        CT_Bookmark();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Bookmark& default_instance();
@@ -5033,9 +5095,9 @@ namespace ns_w {
         bool has_colLast_attr() const;
         void set_colLast_attr(const ST_DecimalNumber& _colLast_attr);
         const ST_DecimalNumber& get_colLast_attr() const;
-        bool has_s_name_attr() const;
-        void set_s_name_attr(const ns_s::ST_String& _s_name_attr);
-        const ns_s::ST_String& get_s_name_attr() const;
+        bool has_name_attr() const;
+        void set_name_attr(const ns_s::ST_String& _name_attr);
+        const ns_s::ST_String& get_name_attr() const;
     protected:
     private:
         static CT_Bookmark* default_instance_;
@@ -5047,13 +5109,14 @@ namespace ns_w {
         ST_DecimalNumber* m_colFirst_attr;
         bool m_has_colLast_attr;
         ST_DecimalNumber* m_colLast_attr;
-        bool m_has_s_name_attr;
-        ns_s::ST_String* m_s_name_attr;
+        bool m_has_name_attr;
+        ns_s::ST_String* m_name_attr;
     };
 
     class CT_MoveBookmark: public XSD::ComplexType
     {
     public:
+        CT_MoveBookmark();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MoveBookmark& default_instance();
@@ -5069,12 +5132,12 @@ namespace ns_w {
         bool has_colLast_attr() const;
         void set_colLast_attr(const ST_DecimalNumber& _colLast_attr);
         const ST_DecimalNumber& get_colLast_attr() const;
-        bool has_s_name_attr() const;
-        void set_s_name_attr(const ns_s::ST_String& _s_name_attr);
-        const ns_s::ST_String& get_s_name_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_name_attr() const;
+        void set_name_attr(const ns_s::ST_String& _name_attr);
+        const ns_s::ST_String& get_name_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -5089,10 +5152,10 @@ namespace ns_w {
         ST_DecimalNumber* m_colFirst_attr;
         bool m_has_colLast_attr;
         ST_DecimalNumber* m_colLast_attr;
-        bool m_has_s_name_attr;
-        ns_s::ST_String* m_s_name_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_name_attr;
+        ns_s::ST_String* m_name_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
     };
@@ -5100,6 +5163,7 @@ namespace ns_w {
     class CT_Comment: public XSD::ComplexType
     {
     public:
+        CT_Comment();
         CT_CustomXmlBlock* add_customXml();
         CT_SdtBlock* add_sdt();
         CT_P* add_p();
@@ -5136,20 +5200,21 @@ namespace ns_w {
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
-        bool has_s_initials_attr() const;
-        void set_s_initials_attr(const ns_s::ST_String& _s_initials_attr);
-        const ns_s::ST_String& get_s_initials_attr() const;
+        bool has_initials_attr() const;
+        void set_initials_attr(const ns_s::ST_String& _initials_attr);
+        const ns_s::ST_String& get_initials_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_customXml() const;
             CT_CustomXmlBlock* mutable_customXml();
             const CT_CustomXmlBlock& get_customXml() const;
@@ -5307,48 +5372,50 @@ namespace ns_w {
         static CT_Comment* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
-        bool m_has_s_initials_attr;
-        ns_s::ST_String* m_s_initials_attr;
+        bool m_has_initials_attr;
+        ns_s::ST_String* m_initials_attr;
     };
 
     class CT_TrackChangeNumbering: public XSD::ComplexType
     {
     public:
+        CT_TrackChangeNumbering();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TrackChangeNumbering& default_instance();
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
-        bool has_s_original_attr() const;
-        void set_s_original_attr(const ns_s::ST_String& _s_original_attr);
-        const ns_s::ST_String& get_s_original_attr() const;
+        bool has_original_attr() const;
+        void set_original_attr(const ns_s::ST_String& _original_attr);
+        const ns_s::ST_String& get_original_attr() const;
     protected:
     private:
         static CT_TrackChangeNumbering* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
-        bool m_has_s_original_attr;
-        ns_s::ST_String* m_s_original_attr;
+        bool m_has_original_attr;
+        ns_s::ST_String* m_original_attr;
     };
 
     class CT_TblPrExChange: public XSD::ComplexType
     {
     public:
+        CT_TblPrExChange();
         bool has_tblPrEx() const;
         CT_TblPrExBase* mutable_tblPrEx();
         const CT_TblPrExBase& get_tblPrEx() const;
@@ -5358,9 +5425,9 @@ namespace ns_w {
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -5371,8 +5438,8 @@ namespace ns_w {
         static CT_TblPrExChange* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
     };
@@ -5380,6 +5447,7 @@ namespace ns_w {
     class CT_TcPrChange: public XSD::ComplexType
     {
     public:
+        CT_TcPrChange();
         bool has_tcPr() const;
         CT_TcPrInner* mutable_tcPr();
         const CT_TcPrInner& get_tcPr() const;
@@ -5389,9 +5457,9 @@ namespace ns_w {
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -5402,8 +5470,8 @@ namespace ns_w {
         static CT_TcPrChange* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
     };
@@ -5411,6 +5479,7 @@ namespace ns_w {
     class CT_TrPrChange: public XSD::ComplexType
     {
     public:
+        CT_TrPrChange();
         bool has_trPr() const;
         CT_TrPrBase* mutable_trPr();
         const CT_TrPrBase& get_trPr() const;
@@ -5420,9 +5489,9 @@ namespace ns_w {
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -5433,8 +5502,8 @@ namespace ns_w {
         static CT_TrPrChange* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
     };
@@ -5442,6 +5511,7 @@ namespace ns_w {
     class CT_TblGridChange: public XSD::ComplexType
     {
     public:
+        CT_TblGridChange();
         bool has_tblGrid() const;
         CT_TblGridBase* mutable_tblGrid();
         const CT_TblGridBase& get_tblGrid() const;
@@ -5463,6 +5533,7 @@ namespace ns_w {
     class CT_TblPrChange: public XSD::ComplexType
     {
     public:
+        CT_TblPrChange();
         bool has_tblPr() const;
         CT_TblPrBase* mutable_tblPr();
         const CT_TblPrBase& get_tblPr() const;
@@ -5472,9 +5543,9 @@ namespace ns_w {
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -5485,8 +5556,8 @@ namespace ns_w {
         static CT_TblPrChange* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
     };
@@ -5494,6 +5565,7 @@ namespace ns_w {
     class CT_SectPrChange: public XSD::ComplexType
     {
     public:
+        CT_SectPrChange();
         bool has_sectPr() const;
         CT_SectPrBase* mutable_sectPr();
         const CT_SectPrBase& get_sectPr() const;
@@ -5503,9 +5575,9 @@ namespace ns_w {
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -5516,8 +5588,8 @@ namespace ns_w {
         static CT_SectPrChange* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
     };
@@ -5525,6 +5597,7 @@ namespace ns_w {
     class CT_PPrChange: public XSD::ComplexType
     {
     public:
+        CT_PPrChange();
         bool has_pPr() const;
         CT_PPrBase* mutable_pPr();
         const CT_PPrBase& get_pPr() const;
@@ -5534,9 +5607,9 @@ namespace ns_w {
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -5547,8 +5620,8 @@ namespace ns_w {
         static CT_PPrChange* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
     };
@@ -5556,6 +5629,7 @@ namespace ns_w {
     class CT_RPrChange: public XSD::ComplexType
     {
     public:
+        CT_RPrChange();
         bool has_rPr() const;
         CT_RPrOriginal* mutable_rPr();
         const CT_RPrOriginal& get_rPr() const;
@@ -5565,9 +5639,9 @@ namespace ns_w {
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -5578,8 +5652,8 @@ namespace ns_w {
         static CT_RPrChange* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
     };
@@ -5587,6 +5661,7 @@ namespace ns_w {
     class CT_ParaRPrChange: public XSD::ComplexType
     {
     public:
+        CT_ParaRPrChange();
         bool has_rPr() const;
         CT_ParaRPrOriginal* mutable_rPr();
         const CT_ParaRPrOriginal& get_rPr() const;
@@ -5596,9 +5671,9 @@ namespace ns_w {
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -5609,8 +5684,8 @@ namespace ns_w {
         static CT_ParaRPrChange* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
     };
@@ -5618,6 +5693,7 @@ namespace ns_w {
     class CT_RunTrackChange: public XSD::ComplexType
     {
     public:
+        CT_RunTrackChange();
         CT_CustomXmlRun* add_customXml();
         CT_SmartTagRun* add_smartTag();
         CT_SdtRun* add_sdt();
@@ -5675,9 +5751,9 @@ namespace ns_w {
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -5686,6 +5762,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_customXml() const;
             CT_CustomXmlRun* mutable_customXml();
             const CT_CustomXmlRun& get_customXml() const;
@@ -5948,8 +6025,8 @@ namespace ns_w {
         static CT_RunTrackChange* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
     };
@@ -5957,6 +6034,7 @@ namespace ns_w {
     class CT_NumPr: public XSD::ComplexType
     {
     public:
+        CT_NumPr();
         bool has_ilvl() const;
         CT_DecimalNumber* mutable_ilvl();
         const CT_DecimalNumber& get_ilvl() const;
@@ -5988,6 +6066,7 @@ namespace ns_w {
     class CT_PBdr: public XSD::ComplexType
     {
     public:
+        CT_PBdr();
         bool has_top() const;
         CT_Border* mutable_top();
         const CT_Border& get_top() const;
@@ -6029,6 +6108,7 @@ namespace ns_w {
     class CT_Tabs: public XSD::ComplexType
     {
     public:
+        CT_Tabs();
         CT_TabStop* add_tab();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6038,6 +6118,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_tab() const;
             CT_TabStop* mutable_tab();
             const CT_TabStop& get_tab() const;
@@ -6053,6 +6134,7 @@ namespace ns_w {
     class CT_TextboxTightWrap: public XSD::ComplexType
     {
     public:
+        CT_TextboxTightWrap();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextboxTightWrap& default_instance();
@@ -6069,6 +6151,7 @@ namespace ns_w {
     class CT_PPr: public XSD::ComplexType
     {
     public:
+        CT_PPr();
         bool has_pStyle() const;
         CT_String* mutable_pStyle();
         const CT_String& get_pStyle() const;
@@ -6260,6 +6343,7 @@ namespace ns_w {
     class CT_PPrBase: public XSD::ComplexType
     {
     public:
+        CT_PPrBase();
         bool has_pStyle() const;
         CT_String* mutable_pStyle();
         const CT_String& get_pStyle() const;
@@ -6436,6 +6520,7 @@ namespace ns_w {
     class CT_PPrGeneral: public XSD::ComplexType
     {
     public:
+        CT_PPrGeneral();
         bool has_pStyle() const;
         CT_String* mutable_pStyle();
         const CT_String& get_pStyle() const;
@@ -6617,25 +6702,26 @@ namespace ns_w {
     class CT_Control: public XSD::ComplexType
     {
     public:
+        CT_Control();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Control& default_instance();
-        bool has_s_name_attr() const;
-        void set_s_name_attr(const ns_s::ST_String& _s_name_attr);
-        const ns_s::ST_String& get_s_name_attr() const;
-        bool has_s_shapeid_attr() const;
-        void set_s_shapeid_attr(const ns_s::ST_String& _s_shapeid_attr);
-        const ns_s::ST_String& get_s_shapeid_attr() const;
+        bool has_name_attr() const;
+        void set_name_attr(const ns_s::ST_String& _name_attr);
+        const ns_s::ST_String& get_name_attr() const;
+        bool has_shapeid_attr() const;
+        void set_shapeid_attr(const ns_s::ST_String& _shapeid_attr);
+        const ns_s::ST_String& get_shapeid_attr() const;
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
     protected:
     private:
         static CT_Control* default_instance_;
-        bool m_has_s_name_attr;
-        ns_s::ST_String* m_s_name_attr;
-        bool m_has_s_shapeid_attr;
-        ns_s::ST_String* m_s_shapeid_attr;
+        bool m_has_name_attr;
+        ns_s::ST_String* m_name_attr;
+        bool m_has_shapeid_attr;
+        ns_s::ST_String* m_shapeid_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
     };
@@ -6643,6 +6729,7 @@ namespace ns_w {
     class CT_Background: public XSD::ComplexType
     {
     public:
+        CT_Background();
         void append_v_any(ns_v::Element* _v_any);
         void append_o_any(ns_o::Element* _o_any);
         bool has_drawing() const;
@@ -6683,6 +6770,7 @@ namespace ns_w {
     class CT_Rel: public XSD::ComplexType
     {
     public:
+        CT_Rel();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Rel& default_instance();
@@ -6699,6 +6787,7 @@ namespace ns_w {
     class CT_Object: public XSD::ComplexType
     {
     public:
+        CT_Object();
         void append_v_any(ns_v::Element* _v_any);
         void append_o_any(ns_o::Element* _o_any);
         bool has_drawing() const;
@@ -6719,12 +6808,12 @@ namespace ns_w {
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Object& default_instance();
-        bool has_s_dxaOrig_attr() const;
-        void set_s_dxaOrig_attr(const ns_s::ST_TwipsMeasure& _s_dxaOrig_attr);
-        const ns_s::ST_TwipsMeasure& get_s_dxaOrig_attr() const;
-        bool has_s_dyaOrig_attr() const;
-        void set_s_dyaOrig_attr(const ns_s::ST_TwipsMeasure& _s_dyaOrig_attr);
-        const ns_s::ST_TwipsMeasure& get_s_dyaOrig_attr() const;
+        bool has_dxaOrig_attr() const;
+        void set_dxaOrig_attr(const ns_s::ST_TwipsMeasure& _dxaOrig_attr);
+        const ns_s::ST_TwipsMeasure& get_dxaOrig_attr() const;
+        bool has_dyaOrig_attr() const;
+        void set_dyaOrig_attr(const ns_s::ST_TwipsMeasure& _dyaOrig_attr);
+        const ns_s::ST_TwipsMeasure& get_dyaOrig_attr() const;
     protected:
     private:
         vector<ns_v::Element*> m_v_any_list;
@@ -6740,15 +6829,16 @@ namespace ns_w {
         bool m_has_movie;
         CT_Rel* m_movie;
         static CT_Object* default_instance_;
-        bool m_has_s_dxaOrig_attr;
-        ns_s::ST_TwipsMeasure* m_s_dxaOrig_attr;
-        bool m_has_s_dyaOrig_attr;
-        ns_s::ST_TwipsMeasure* m_s_dyaOrig_attr;
+        bool m_has_dxaOrig_attr;
+        ns_s::ST_TwipsMeasure* m_dxaOrig_attr;
+        bool m_has_dyaOrig_attr;
+        ns_s::ST_TwipsMeasure* m_dyaOrig_attr;
     };
 
     class CT_Picture: public XSD::ComplexType
     {
     public:
+        CT_Picture();
         void append_v_any(ns_v::Element* _v_any);
         void append_o_any(ns_o::Element* _o_any);
         bool has_movie() const;
@@ -6774,6 +6864,7 @@ namespace ns_w {
     class CT_ObjectEmbed: public XSD::ComplexType
     {
     public:
+        CT_ObjectEmbed();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ObjectEmbed& default_instance();
@@ -6783,15 +6874,15 @@ namespace ns_w {
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
-        bool has_s_progId_attr() const;
-        void set_s_progId_attr(const ns_s::ST_String& _s_progId_attr);
-        const ns_s::ST_String& get_s_progId_attr() const;
-        bool has_s_shapeId_attr() const;
-        void set_s_shapeId_attr(const ns_s::ST_String& _s_shapeId_attr);
-        const ns_s::ST_String& get_s_shapeId_attr() const;
-        bool has_s_fieldCodes_attr() const;
-        void set_s_fieldCodes_attr(const ns_s::ST_String& _s_fieldCodes_attr);
-        const ns_s::ST_String& get_s_fieldCodes_attr() const;
+        bool has_progId_attr() const;
+        void set_progId_attr(const ns_s::ST_String& _progId_attr);
+        const ns_s::ST_String& get_progId_attr() const;
+        bool has_shapeId_attr() const;
+        void set_shapeId_attr(const ns_s::ST_String& _shapeId_attr);
+        const ns_s::ST_String& get_shapeId_attr() const;
+        bool has_fieldCodes_attr() const;
+        void set_fieldCodes_attr(const ns_s::ST_String& _fieldCodes_attr);
+        const ns_s::ST_String& get_fieldCodes_attr() const;
     protected:
     private:
         static CT_ObjectEmbed* default_instance_;
@@ -6799,17 +6890,18 @@ namespace ns_w {
         ST_ObjectDrawAspect* m_drawAspect_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
-        bool m_has_s_progId_attr;
-        ns_s::ST_String* m_s_progId_attr;
-        bool m_has_s_shapeId_attr;
-        ns_s::ST_String* m_s_shapeId_attr;
-        bool m_has_s_fieldCodes_attr;
-        ns_s::ST_String* m_s_fieldCodes_attr;
+        bool m_has_progId_attr;
+        ns_s::ST_String* m_progId_attr;
+        bool m_has_shapeId_attr;
+        ns_s::ST_String* m_shapeId_attr;
+        bool m_has_fieldCodes_attr;
+        ns_s::ST_String* m_fieldCodes_attr;
     };
 
     class CT_ObjectLink: public XSD::ComplexType
     {
     public:
+        CT_ObjectLink();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ObjectLink& default_instance();
@@ -6819,21 +6911,21 @@ namespace ns_w {
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
-        bool has_s_progId_attr() const;
-        void set_s_progId_attr(const ns_s::ST_String& _s_progId_attr);
-        const ns_s::ST_String& get_s_progId_attr() const;
-        bool has_s_shapeId_attr() const;
-        void set_s_shapeId_attr(const ns_s::ST_String& _s_shapeId_attr);
-        const ns_s::ST_String& get_s_shapeId_attr() const;
-        bool has_s_fieldCodes_attr() const;
-        void set_s_fieldCodes_attr(const ns_s::ST_String& _s_fieldCodes_attr);
-        const ns_s::ST_String& get_s_fieldCodes_attr() const;
+        bool has_progId_attr() const;
+        void set_progId_attr(const ns_s::ST_String& _progId_attr);
+        const ns_s::ST_String& get_progId_attr() const;
+        bool has_shapeId_attr() const;
+        void set_shapeId_attr(const ns_s::ST_String& _shapeId_attr);
+        const ns_s::ST_String& get_shapeId_attr() const;
+        bool has_fieldCodes_attr() const;
+        void set_fieldCodes_attr(const ns_s::ST_String& _fieldCodes_attr);
+        const ns_s::ST_String& get_fieldCodes_attr() const;
         bool has_updateMode_attr() const;
         void set_updateMode_attr(const ST_ObjectUpdateMode& _updateMode_attr);
         const ST_ObjectUpdateMode& get_updateMode_attr() const;
-        bool has_s_lockedField_attr() const;
-        void set_s_lockedField_attr(const ns_s::ST_OnOff& _s_lockedField_attr);
-        const ns_s::ST_OnOff& get_s_lockedField_attr() const;
+        bool has_lockedField_attr() const;
+        void set_lockedField_attr(const ns_s::ST_OnOff& _lockedField_attr);
+        const ns_s::ST_OnOff& get_lockedField_attr() const;
     protected:
     private:
         static CT_ObjectLink* default_instance_;
@@ -6841,21 +6933,22 @@ namespace ns_w {
         ST_ObjectDrawAspect* m_drawAspect_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
-        bool m_has_s_progId_attr;
-        ns_s::ST_String* m_s_progId_attr;
-        bool m_has_s_shapeId_attr;
-        ns_s::ST_String* m_s_shapeId_attr;
-        bool m_has_s_fieldCodes_attr;
-        ns_s::ST_String* m_s_fieldCodes_attr;
+        bool m_has_progId_attr;
+        ns_s::ST_String* m_progId_attr;
+        bool m_has_shapeId_attr;
+        ns_s::ST_String* m_shapeId_attr;
+        bool m_has_fieldCodes_attr;
+        ns_s::ST_String* m_fieldCodes_attr;
         bool m_has_updateMode_attr;
         ST_ObjectUpdateMode* m_updateMode_attr;
-        bool m_has_s_lockedField_attr;
-        ns_s::ST_OnOff* m_s_lockedField_attr;
+        bool m_has_lockedField_attr;
+        ns_s::ST_OnOff* m_lockedField_attr;
     };
 
     class CT_Drawing: public XSD::ComplexType
     {
     public:
+        CT_Drawing();
         ns_wp::CT_Anchor* add_wp_anchor();
         ns_wp::CT_Inline* add_wp_inline();
         void clear();
@@ -6866,6 +6959,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_wp_anchor() const;
             ns_wp::CT_Anchor* mutable_wp_anchor();
             const ns_wp::CT_Anchor& get_wp_anchor() const;
@@ -6886,6 +6980,7 @@ namespace ns_w {
     class CT_SimpleField: public XSD::ComplexType
     {
     public:
+        CT_SimpleField();
         bool has_fldData() const;
         CT_Text* mutable_fldData();
         const CT_Text& get_fldData() const;
@@ -6926,20 +7021,21 @@ namespace ns_w {
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SimpleField& default_instance();
-        bool has_s_instr_attr() const;
-        void set_s_instr_attr(const ns_s::ST_String& _s_instr_attr);
-        const ns_s::ST_String& get_s_instr_attr() const;
-        bool has_s_fldLock_attr() const;
-        void set_s_fldLock_attr(const ns_s::ST_OnOff& _s_fldLock_attr);
-        const ns_s::ST_OnOff& get_s_fldLock_attr() const;
-        bool has_s_dirty_attr() const;
-        void set_s_dirty_attr(const ns_s::ST_OnOff& _s_dirty_attr);
-        const ns_s::ST_OnOff& get_s_dirty_attr() const;
+        bool has_instr_attr() const;
+        void set_instr_attr(const ns_s::ST_String& _instr_attr);
+        const ns_s::ST_String& get_instr_attr() const;
+        bool has_fldLock_attr() const;
+        void set_fldLock_attr(const ns_s::ST_OnOff& _fldLock_attr);
+        const ns_s::ST_OnOff& get_fldLock_attr() const;
+        bool has_dirty_attr() const;
+        void set_dirty_attr(const ns_s::ST_OnOff& _dirty_attr);
+        const ns_s::ST_OnOff& get_dirty_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_customXml() const;
             CT_CustomXmlRun* mutable_customXml();
             const CT_CustomXmlRun& get_customXml() const;
@@ -7117,17 +7213,18 @@ namespace ns_w {
         CT_Text* m_fldData;
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_SimpleField* default_instance_;
-        bool m_has_s_instr_attr;
-        ns_s::ST_String* m_s_instr_attr;
-        bool m_has_s_fldLock_attr;
-        ns_s::ST_OnOff* m_s_fldLock_attr;
-        bool m_has_s_dirty_attr;
-        ns_s::ST_OnOff* m_s_dirty_attr;
+        bool m_has_instr_attr;
+        ns_s::ST_String* m_instr_attr;
+        bool m_has_fldLock_attr;
+        ns_s::ST_OnOff* m_fldLock_attr;
+        bool m_has_dirty_attr;
+        ns_s::ST_OnOff* m_dirty_attr;
     };
 
     class CT_FFTextType: public XSD::ComplexType
     {
     public:
+        CT_FFTextType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FFTextType& default_instance();
@@ -7144,6 +7241,7 @@ namespace ns_w {
     class CT_FFName: public XSD::ComplexType
     {
     public:
+        CT_FFName();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FFName& default_instance();
@@ -7160,6 +7258,7 @@ namespace ns_w {
     class CT_FldChar: public XSD::ComplexType
     {
     public:
+        CT_FldChar();
         bool has_fldData() const;
         CT_Text* mutable_fldData();
         const CT_Text& get_fldData() const;
@@ -7175,12 +7274,12 @@ namespace ns_w {
         bool has_fldCharType_attr() const;
         void set_fldCharType_attr(const ST_FldCharType& _fldCharType_attr);
         const ST_FldCharType& get_fldCharType_attr() const;
-        bool has_s_fldLock_attr() const;
-        void set_s_fldLock_attr(const ns_s::ST_OnOff& _s_fldLock_attr);
-        const ns_s::ST_OnOff& get_s_fldLock_attr() const;
-        bool has_s_dirty_attr() const;
-        void set_s_dirty_attr(const ns_s::ST_OnOff& _s_dirty_attr);
-        const ns_s::ST_OnOff& get_s_dirty_attr() const;
+        bool has_fldLock_attr() const;
+        void set_fldLock_attr(const ns_s::ST_OnOff& _fldLock_attr);
+        const ns_s::ST_OnOff& get_fldLock_attr() const;
+        bool has_dirty_attr() const;
+        void set_dirty_attr(const ns_s::ST_OnOff& _dirty_attr);
+        const ns_s::ST_OnOff& get_dirty_attr() const;
     protected:
     private:
         bool m_has_fldData;
@@ -7192,49 +7291,50 @@ namespace ns_w {
         static CT_FldChar* default_instance_;
         bool m_has_fldCharType_attr;
         ST_FldCharType* m_fldCharType_attr;
-        bool m_has_s_fldLock_attr;
-        ns_s::ST_OnOff* m_s_fldLock_attr;
-        bool m_has_s_dirty_attr;
-        ns_s::ST_OnOff* m_s_dirty_attr;
+        bool m_has_fldLock_attr;
+        ns_s::ST_OnOff* m_fldLock_attr;
+        bool m_has_dirty_attr;
+        ns_s::ST_OnOff* m_dirty_attr;
     };
 
     class CT_Hyperlink: public XSD::ComplexType
     {
     public:
+        CT_Hyperlink();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Hyperlink& default_instance();
-        bool has_s_tgtFrame_attr() const;
-        void set_s_tgtFrame_attr(const ns_s::ST_String& _s_tgtFrame_attr);
-        const ns_s::ST_String& get_s_tgtFrame_attr() const;
-        bool has_s_tooltip_attr() const;
-        void set_s_tooltip_attr(const ns_s::ST_String& _s_tooltip_attr);
-        const ns_s::ST_String& get_s_tooltip_attr() const;
-        bool has_s_docLocation_attr() const;
-        void set_s_docLocation_attr(const ns_s::ST_String& _s_docLocation_attr);
-        const ns_s::ST_String& get_s_docLocation_attr() const;
-        bool has_s_history_attr() const;
-        void set_s_history_attr(const ns_s::ST_OnOff& _s_history_attr);
-        const ns_s::ST_OnOff& get_s_history_attr() const;
-        bool has_s_anchor_attr() const;
-        void set_s_anchor_attr(const ns_s::ST_String& _s_anchor_attr);
-        const ns_s::ST_String& get_s_anchor_attr() const;
+        bool has_tgtFrame_attr() const;
+        void set_tgtFrame_attr(const ns_s::ST_String& _tgtFrame_attr);
+        const ns_s::ST_String& get_tgtFrame_attr() const;
+        bool has_tooltip_attr() const;
+        void set_tooltip_attr(const ns_s::ST_String& _tooltip_attr);
+        const ns_s::ST_String& get_tooltip_attr() const;
+        bool has_docLocation_attr() const;
+        void set_docLocation_attr(const ns_s::ST_String& _docLocation_attr);
+        const ns_s::ST_String& get_docLocation_attr() const;
+        bool has_history_attr() const;
+        void set_history_attr(const ns_s::ST_OnOff& _history_attr);
+        const ns_s::ST_OnOff& get_history_attr() const;
+        bool has_anchor_attr() const;
+        void set_anchor_attr(const ns_s::ST_String& _anchor_attr);
+        const ns_s::ST_String& get_anchor_attr() const;
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
     protected:
     private:
         static CT_Hyperlink* default_instance_;
-        bool m_has_s_tgtFrame_attr;
-        ns_s::ST_String* m_s_tgtFrame_attr;
-        bool m_has_s_tooltip_attr;
-        ns_s::ST_String* m_s_tooltip_attr;
-        bool m_has_s_docLocation_attr;
-        ns_s::ST_String* m_s_docLocation_attr;
-        bool m_has_s_history_attr;
-        ns_s::ST_OnOff* m_s_history_attr;
-        bool m_has_s_anchor_attr;
-        ns_s::ST_String* m_s_anchor_attr;
+        bool m_has_tgtFrame_attr;
+        ns_s::ST_String* m_tgtFrame_attr;
+        bool m_has_tooltip_attr;
+        ns_s::ST_String* m_tooltip_attr;
+        bool m_has_docLocation_attr;
+        ns_s::ST_String* m_docLocation_attr;
+        bool m_has_history_attr;
+        ns_s::ST_OnOff* m_history_attr;
+        bool m_has_anchor_attr;
+        ns_s::ST_String* m_anchor_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
     };
@@ -7242,6 +7342,7 @@ namespace ns_w {
     class CT_FFData: public XSD::ComplexType
     {
     public:
+        CT_FFData();
         CT_FFName* add_name();
         CT_DecimalNumber* add_label();
         CT_UnsignedDecimalNumber* add_tabIndex();
@@ -7262,6 +7363,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_name() const;
             CT_FFName* mutable_name();
             const CT_FFName& get_name() const;
@@ -7332,6 +7434,7 @@ namespace ns_w {
     class CT_FFHelpText: public XSD::ComplexType
     {
     public:
+        CT_FFHelpText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FFHelpText& default_instance();
@@ -7353,6 +7456,7 @@ namespace ns_w {
     class CT_FFStatusText: public XSD::ComplexType
     {
     public:
+        CT_FFStatusText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FFStatusText& default_instance();
@@ -7374,6 +7478,7 @@ namespace ns_w {
     class CT_FFCheckBox: public XSD::ComplexType
     {
     public:
+        CT_FFCheckBox();
         bool has_size() const;
         CT_HpsMeasure* mutable_size();
         const CT_HpsMeasure& get_size() const;
@@ -7405,6 +7510,7 @@ namespace ns_w {
     class CT_FFDDList: public XSD::ComplexType
     {
     public:
+        CT_FFDDList();
         bool has_result() const;
         CT_DecimalNumber* mutable_result();
         const CT_DecimalNumber& get_result() const;
@@ -7420,6 +7526,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_listEntry() const;
             CT_String* mutable_listEntry();
             const CT_String& get_listEntry() const;
@@ -7439,6 +7546,7 @@ namespace ns_w {
     class CT_FFTextInput: public XSD::ComplexType
     {
     public:
+        CT_FFTextInput();
         bool has_type() const;
         CT_FFTextType* mutable_type();
         const CT_FFTextType& get_type() const;
@@ -7470,6 +7578,7 @@ namespace ns_w {
     class CT_SectType: public XSD::ComplexType
     {
     public:
+        CT_SectType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SectType& default_instance();
@@ -7486,6 +7595,7 @@ namespace ns_w {
     class CT_PaperSource: public XSD::ComplexType
     {
     public:
+        CT_PaperSource();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PaperSource& default_instance();
@@ -7507,15 +7617,16 @@ namespace ns_w {
     class CT_PageSz: public XSD::ComplexType
     {
     public:
+        CT_PageSz();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageSz& default_instance();
-        bool has_s_w_attr() const;
-        void set_s_w_attr(const ns_s::ST_TwipsMeasure& _s_w_attr);
-        const ns_s::ST_TwipsMeasure& get_s_w_attr() const;
-        bool has_s_h_attr() const;
-        void set_s_h_attr(const ns_s::ST_TwipsMeasure& _s_h_attr);
-        const ns_s::ST_TwipsMeasure& get_s_h_attr() const;
+        bool has_w_attr() const;
+        void set_w_attr(const ns_s::ST_TwipsMeasure& _w_attr);
+        const ns_s::ST_TwipsMeasure& get_w_attr() const;
+        bool has_h_attr() const;
+        void set_h_attr(const ns_s::ST_TwipsMeasure& _h_attr);
+        const ns_s::ST_TwipsMeasure& get_h_attr() const;
         bool has_orient_attr() const;
         void set_orient_attr(const ST_PageOrientation& _orient_attr);
         const ST_PageOrientation& get_orient_attr() const;
@@ -7525,10 +7636,10 @@ namespace ns_w {
     protected:
     private:
         static CT_PageSz* default_instance_;
-        bool m_has_s_w_attr;
-        ns_s::ST_TwipsMeasure* m_s_w_attr;
-        bool m_has_s_h_attr;
-        ns_s::ST_TwipsMeasure* m_s_h_attr;
+        bool m_has_w_attr;
+        ns_s::ST_TwipsMeasure* m_w_attr;
+        bool m_has_h_attr;
+        ns_s::ST_TwipsMeasure* m_h_attr;
         bool m_has_orient_attr;
         ST_PageOrientation* m_orient_attr;
         bool m_has_code_attr;
@@ -7538,52 +7649,54 @@ namespace ns_w {
     class CT_PageMar: public XSD::ComplexType
     {
     public:
+        CT_PageMar();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageMar& default_instance();
         bool has_top_attr() const;
         void set_top_attr(const ST_SignedTwipsMeasure& _top_attr);
         const ST_SignedTwipsMeasure& get_top_attr() const;
-        bool has_s_right_attr() const;
-        void set_s_right_attr(const ns_s::ST_TwipsMeasure& _s_right_attr);
-        const ns_s::ST_TwipsMeasure& get_s_right_attr() const;
+        bool has_right_attr() const;
+        void set_right_attr(const ns_s::ST_TwipsMeasure& _right_attr);
+        const ns_s::ST_TwipsMeasure& get_right_attr() const;
         bool has_bottom_attr() const;
         void set_bottom_attr(const ST_SignedTwipsMeasure& _bottom_attr);
         const ST_SignedTwipsMeasure& get_bottom_attr() const;
-        bool has_s_left_attr() const;
-        void set_s_left_attr(const ns_s::ST_TwipsMeasure& _s_left_attr);
-        const ns_s::ST_TwipsMeasure& get_s_left_attr() const;
-        bool has_s_header_attr() const;
-        void set_s_header_attr(const ns_s::ST_TwipsMeasure& _s_header_attr);
-        const ns_s::ST_TwipsMeasure& get_s_header_attr() const;
-        bool has_s_footer_attr() const;
-        void set_s_footer_attr(const ns_s::ST_TwipsMeasure& _s_footer_attr);
-        const ns_s::ST_TwipsMeasure& get_s_footer_attr() const;
-        bool has_s_gutter_attr() const;
-        void set_s_gutter_attr(const ns_s::ST_TwipsMeasure& _s_gutter_attr);
-        const ns_s::ST_TwipsMeasure& get_s_gutter_attr() const;
+        bool has_left_attr() const;
+        void set_left_attr(const ns_s::ST_TwipsMeasure& _left_attr);
+        const ns_s::ST_TwipsMeasure& get_left_attr() const;
+        bool has_header_attr() const;
+        void set_header_attr(const ns_s::ST_TwipsMeasure& _header_attr);
+        const ns_s::ST_TwipsMeasure& get_header_attr() const;
+        bool has_footer_attr() const;
+        void set_footer_attr(const ns_s::ST_TwipsMeasure& _footer_attr);
+        const ns_s::ST_TwipsMeasure& get_footer_attr() const;
+        bool has_gutter_attr() const;
+        void set_gutter_attr(const ns_s::ST_TwipsMeasure& _gutter_attr);
+        const ns_s::ST_TwipsMeasure& get_gutter_attr() const;
     protected:
     private:
         static CT_PageMar* default_instance_;
         bool m_has_top_attr;
         ST_SignedTwipsMeasure* m_top_attr;
-        bool m_has_s_right_attr;
-        ns_s::ST_TwipsMeasure* m_s_right_attr;
+        bool m_has_right_attr;
+        ns_s::ST_TwipsMeasure* m_right_attr;
         bool m_has_bottom_attr;
         ST_SignedTwipsMeasure* m_bottom_attr;
-        bool m_has_s_left_attr;
-        ns_s::ST_TwipsMeasure* m_s_left_attr;
-        bool m_has_s_header_attr;
-        ns_s::ST_TwipsMeasure* m_s_header_attr;
-        bool m_has_s_footer_attr;
-        ns_s::ST_TwipsMeasure* m_s_footer_attr;
-        bool m_has_s_gutter_attr;
-        ns_s::ST_TwipsMeasure* m_s_gutter_attr;
+        bool m_has_left_attr;
+        ns_s::ST_TwipsMeasure* m_left_attr;
+        bool m_has_header_attr;
+        ns_s::ST_TwipsMeasure* m_header_attr;
+        bool m_has_footer_attr;
+        ns_s::ST_TwipsMeasure* m_footer_attr;
+        bool m_has_gutter_attr;
+        ns_s::ST_TwipsMeasure* m_gutter_attr;
     };
 
     class CT_PageBorders: public XSD::ComplexType
     {
     public:
+        CT_PageBorders();
         bool has_top() const;
         CT_TopPageBorder* mutable_top();
         const CT_TopPageBorder& get_top() const;
@@ -7630,6 +7743,7 @@ namespace ns_w {
     class CT_PageBorder: public XSD::ComplexType
     {
     public:
+        CT_PageBorder();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageBorder& default_instance();
@@ -7654,12 +7768,12 @@ namespace ns_w {
         bool has_space_attr() const;
         void set_space_attr(const ST_PointMeasure& _space_attr);
         const ST_PointMeasure& get_space_attr() const;
-        bool has_s_shadow_attr() const;
-        void set_s_shadow_attr(const ns_s::ST_OnOff& _s_shadow_attr);
-        const ns_s::ST_OnOff& get_s_shadow_attr() const;
-        bool has_s_frame_attr() const;
-        void set_s_frame_attr(const ns_s::ST_OnOff& _s_frame_attr);
-        const ns_s::ST_OnOff& get_s_frame_attr() const;
+        bool has_shadow_attr() const;
+        void set_shadow_attr(const ns_s::ST_OnOff& _shadow_attr);
+        const ns_s::ST_OnOff& get_shadow_attr() const;
+        bool has_frame_attr() const;
+        void set_frame_attr(const ns_s::ST_OnOff& _frame_attr);
+        const ns_s::ST_OnOff& get_frame_attr() const;
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
@@ -7680,10 +7794,10 @@ namespace ns_w {
         ST_EighthPointMeasure* m_sz_attr;
         bool m_has_space_attr;
         ST_PointMeasure* m_space_attr;
-        bool m_has_s_shadow_attr;
-        ns_s::ST_OnOff* m_s_shadow_attr;
-        bool m_has_s_frame_attr;
-        ns_s::ST_OnOff* m_s_frame_attr;
+        bool m_has_shadow_attr;
+        ns_s::ST_OnOff* m_shadow_attr;
+        bool m_has_frame_attr;
+        ns_s::ST_OnOff* m_frame_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
     };
@@ -7691,6 +7805,7 @@ namespace ns_w {
     class CT_BottomPageBorder: public XSD::ComplexType
     {
     public:
+        CT_BottomPageBorder();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BottomPageBorder& default_instance();
@@ -7715,12 +7830,12 @@ namespace ns_w {
         bool has_space_attr() const;
         void set_space_attr(const ST_PointMeasure& _space_attr);
         const ST_PointMeasure& get_space_attr() const;
-        bool has_s_shadow_attr() const;
-        void set_s_shadow_attr(const ns_s::ST_OnOff& _s_shadow_attr);
-        const ns_s::ST_OnOff& get_s_shadow_attr() const;
-        bool has_s_frame_attr() const;
-        void set_s_frame_attr(const ns_s::ST_OnOff& _s_frame_attr);
-        const ns_s::ST_OnOff& get_s_frame_attr() const;
+        bool has_shadow_attr() const;
+        void set_shadow_attr(const ns_s::ST_OnOff& _shadow_attr);
+        const ns_s::ST_OnOff& get_shadow_attr() const;
+        bool has_frame_attr() const;
+        void set_frame_attr(const ns_s::ST_OnOff& _frame_attr);
+        const ns_s::ST_OnOff& get_frame_attr() const;
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
@@ -7747,10 +7862,10 @@ namespace ns_w {
         ST_EighthPointMeasure* m_sz_attr;
         bool m_has_space_attr;
         ST_PointMeasure* m_space_attr;
-        bool m_has_s_shadow_attr;
-        ns_s::ST_OnOff* m_s_shadow_attr;
-        bool m_has_s_frame_attr;
-        ns_s::ST_OnOff* m_s_frame_attr;
+        bool m_has_shadow_attr;
+        ns_s::ST_OnOff* m_shadow_attr;
+        bool m_has_frame_attr;
+        ns_s::ST_OnOff* m_frame_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
         bool m_has_r_bottomLeft_attr;
@@ -7762,6 +7877,7 @@ namespace ns_w {
     class CT_TopPageBorder: public XSD::ComplexType
     {
     public:
+        CT_TopPageBorder();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TopPageBorder& default_instance();
@@ -7786,12 +7902,12 @@ namespace ns_w {
         bool has_space_attr() const;
         void set_space_attr(const ST_PointMeasure& _space_attr);
         const ST_PointMeasure& get_space_attr() const;
-        bool has_s_shadow_attr() const;
-        void set_s_shadow_attr(const ns_s::ST_OnOff& _s_shadow_attr);
-        const ns_s::ST_OnOff& get_s_shadow_attr() const;
-        bool has_s_frame_attr() const;
-        void set_s_frame_attr(const ns_s::ST_OnOff& _s_frame_attr);
-        const ns_s::ST_OnOff& get_s_frame_attr() const;
+        bool has_shadow_attr() const;
+        void set_shadow_attr(const ns_s::ST_OnOff& _shadow_attr);
+        const ns_s::ST_OnOff& get_shadow_attr() const;
+        bool has_frame_attr() const;
+        void set_frame_attr(const ns_s::ST_OnOff& _frame_attr);
+        const ns_s::ST_OnOff& get_frame_attr() const;
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
@@ -7818,10 +7934,10 @@ namespace ns_w {
         ST_EighthPointMeasure* m_sz_attr;
         bool m_has_space_attr;
         ST_PointMeasure* m_space_attr;
-        bool m_has_s_shadow_attr;
-        ns_s::ST_OnOff* m_s_shadow_attr;
-        bool m_has_s_frame_attr;
-        ns_s::ST_OnOff* m_s_frame_attr;
+        bool m_has_shadow_attr;
+        ns_s::ST_OnOff* m_shadow_attr;
+        bool m_has_frame_attr;
+        ns_s::ST_OnOff* m_frame_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
         bool m_has_r_topLeft_attr;
@@ -7833,6 +7949,7 @@ namespace ns_w {
     class CT_LineNumber: public XSD::ComplexType
     {
     public:
+        CT_LineNumber();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LineNumber& default_instance();
@@ -7842,9 +7959,9 @@ namespace ns_w {
         bool has_start_attr() const;
         void set_start_attr(const ST_DecimalNumber& _start_attr);
         const ST_DecimalNumber& get_start_attr() const;
-        bool has_s_distance_attr() const;
-        void set_s_distance_attr(const ns_s::ST_TwipsMeasure& _s_distance_attr);
-        const ns_s::ST_TwipsMeasure& get_s_distance_attr() const;
+        bool has_distance_attr() const;
+        void set_distance_attr(const ns_s::ST_TwipsMeasure& _distance_attr);
+        const ns_s::ST_TwipsMeasure& get_distance_attr() const;
         bool has_restart_attr() const;
         void set_restart_attr(const ST_LineNumberRestart& _restart_attr);
         const ST_LineNumberRestart& get_restart_attr() const;
@@ -7855,8 +7972,8 @@ namespace ns_w {
         ST_DecimalNumber* m_countBy_attr;
         bool m_has_start_attr;
         ST_DecimalNumber* m_start_attr;
-        bool m_has_s_distance_attr;
-        ns_s::ST_TwipsMeasure* m_s_distance_attr;
+        bool m_has_distance_attr;
+        ns_s::ST_TwipsMeasure* m_distance_attr;
         bool m_has_restart_attr;
         ST_LineNumberRestart* m_restart_attr;
     };
@@ -7864,6 +7981,7 @@ namespace ns_w {
     class CT_PageNumber: public XSD::ComplexType
     {
     public:
+        CT_PageNumber();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageNumber& default_instance();
@@ -7895,48 +8013,51 @@ namespace ns_w {
     class CT_Column: public XSD::ComplexType
     {
     public:
+        CT_Column();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Column& default_instance();
-        bool has_s_w_attr() const;
-        void set_s_w_attr(const ns_s::ST_TwipsMeasure& _s_w_attr);
-        const ns_s::ST_TwipsMeasure& get_s_w_attr() const;
-        bool has_s_space_attr() const;
-        void set_s_space_attr(const ns_s::ST_TwipsMeasure& _s_space_attr);
-        const ns_s::ST_TwipsMeasure& get_s_space_attr() const;
+        bool has_w_attr() const;
+        void set_w_attr(const ns_s::ST_TwipsMeasure& _w_attr);
+        const ns_s::ST_TwipsMeasure& get_w_attr() const;
+        bool has_space_attr() const;
+        void set_space_attr(const ns_s::ST_TwipsMeasure& _space_attr);
+        const ns_s::ST_TwipsMeasure& get_space_attr() const;
     protected:
     private:
         static CT_Column* default_instance_;
-        bool m_has_s_w_attr;
-        ns_s::ST_TwipsMeasure* m_s_w_attr;
-        bool m_has_s_space_attr;
-        ns_s::ST_TwipsMeasure* m_s_space_attr;
+        bool m_has_w_attr;
+        ns_s::ST_TwipsMeasure* m_w_attr;
+        bool m_has_space_attr;
+        ns_s::ST_TwipsMeasure* m_space_attr;
     };
 
     class CT_Columns: public XSD::ComplexType
     {
     public:
+        CT_Columns();
         CT_Column* add_col();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Columns& default_instance();
-        bool has_s_equalWidth_attr() const;
-        void set_s_equalWidth_attr(const ns_s::ST_OnOff& _s_equalWidth_attr);
-        const ns_s::ST_OnOff& get_s_equalWidth_attr() const;
-        bool has_s_space_attr() const;
-        void set_s_space_attr(const ns_s::ST_TwipsMeasure& _s_space_attr);
-        const ns_s::ST_TwipsMeasure& get_s_space_attr() const;
+        bool has_equalWidth_attr() const;
+        void set_equalWidth_attr(const ns_s::ST_OnOff& _equalWidth_attr);
+        const ns_s::ST_OnOff& get_equalWidth_attr() const;
+        bool has_space_attr() const;
+        void set_space_attr(const ns_s::ST_TwipsMeasure& _space_attr);
+        const ns_s::ST_TwipsMeasure& get_space_attr() const;
         bool has_num_attr() const;
         void set_num_attr(const ST_DecimalNumber& _num_attr);
         const ST_DecimalNumber& get_num_attr() const;
-        bool has_s_sep_attr() const;
-        void set_s_sep_attr(const ns_s::ST_OnOff& _s_sep_attr);
-        const ns_s::ST_OnOff& get_s_sep_attr() const;
+        bool has_sep_attr() const;
+        void set_sep_attr(const ns_s::ST_OnOff& _sep_attr);
+        const ns_s::ST_OnOff& get_sep_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_col() const;
             CT_Column* mutable_col();
             const CT_Column& get_col() const;
@@ -7947,19 +8068,20 @@ namespace ns_w {
         };
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_Columns* default_instance_;
-        bool m_has_s_equalWidth_attr;
-        ns_s::ST_OnOff* m_s_equalWidth_attr;
-        bool m_has_s_space_attr;
-        ns_s::ST_TwipsMeasure* m_s_space_attr;
+        bool m_has_equalWidth_attr;
+        ns_s::ST_OnOff* m_equalWidth_attr;
+        bool m_has_space_attr;
+        ns_s::ST_TwipsMeasure* m_space_attr;
         bool m_has_num_attr;
         ST_DecimalNumber* m_num_attr;
-        bool m_has_s_sep_attr;
-        ns_s::ST_OnOff* m_s_sep_attr;
+        bool m_has_sep_attr;
+        ns_s::ST_OnOff* m_sep_attr;
     };
 
     class CT_VerticalJc: public XSD::ComplexType
     {
     public:
+        CT_VerticalJc();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_VerticalJc& default_instance();
@@ -7976,6 +8098,7 @@ namespace ns_w {
     class CT_DocGrid: public XSD::ComplexType
     {
     public:
+        CT_DocGrid();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocGrid& default_instance();
@@ -8002,6 +8125,7 @@ namespace ns_w {
     class CT_HdrFtrRef: public XSD::ComplexType
     {
     public:
+        CT_HdrFtrRef();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_HdrFtrRef& default_instance();
@@ -8023,6 +8147,7 @@ namespace ns_w {
     class CT_HdrFtr: public XSD::ComplexType
     {
     public:
+        CT_HdrFtr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_HdrFtr& default_instance();
@@ -8034,6 +8159,7 @@ namespace ns_w {
     class CT_SectPrBase: public XSD::ComplexType
     {
     public:
+        CT_SectPrBase();
         bool has_footnotePr() const;
         CT_FtnProps* mutable_footnotePr();
         const CT_FtnProps& get_footnotePr() const;
@@ -8160,6 +8286,7 @@ namespace ns_w {
     class CT_SectPr: public XSD::ComplexType
     {
     public:
+        CT_SectPr();
         CT_HdrFtrRef* add_headerReference();
         CT_HdrFtrRef* add_footerReference();
         bool has_footnotePr() const;
@@ -8242,6 +8369,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_headerReference() const;
             CT_HdrFtrRef* mutable_headerReference();
             const CT_HdrFtrRef& get_headerReference() const;
@@ -8310,6 +8438,7 @@ namespace ns_w {
     class CT_Br: public XSD::ComplexType
     {
     public:
+        CT_Br();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Br& default_instance();
@@ -8331,6 +8460,7 @@ namespace ns_w {
     class CT_PTab: public XSD::ComplexType
     {
     public:
+        CT_PTab();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PTab& default_instance();
@@ -8357,20 +8487,21 @@ namespace ns_w {
     class CT_Sym: public XSD::ComplexType
     {
     public:
+        CT_Sym();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Sym& default_instance();
-        bool has_s_font_attr() const;
-        void set_s_font_attr(const ns_s::ST_String& _s_font_attr);
-        const ns_s::ST_String& get_s_font_attr() const;
+        bool has_font_attr() const;
+        void set_font_attr(const ns_s::ST_String& _font_attr);
+        const ns_s::ST_String& get_font_attr() const;
         bool has_char_attr() const;
         void set_char_attr(const ST_ShortHexNumber& _char_attr);
         const ST_ShortHexNumber& get_char_attr() const;
     protected:
     private:
         static CT_Sym* default_instance_;
-        bool m_has_s_font_attr;
-        ns_s::ST_String* m_s_font_attr;
+        bool m_has_font_attr;
+        ns_s::ST_String* m_font_attr;
         bool m_has_char_attr;
         ST_ShortHexNumber* m_char_attr;
     };
@@ -8378,6 +8509,7 @@ namespace ns_w {
     class CT_ProofErr: public XSD::ComplexType
     {
     public:
+        CT_ProofErr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ProofErr& default_instance();
@@ -8394,20 +8526,21 @@ namespace ns_w {
     class CT_Perm: public XSD::ComplexType
     {
     public:
+        CT_Perm();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Perm& default_instance();
-        bool has_s_id_attr() const;
-        void set_s_id_attr(const ns_s::ST_String& _s_id_attr);
-        const ns_s::ST_String& get_s_id_attr() const;
+        bool has_id_attr() const;
+        void set_id_attr(const ns_s::ST_String& _id_attr);
+        const ns_s::ST_String& get_id_attr() const;
         bool has_displacedByCustomXml_attr() const;
         void set_displacedByCustomXml_attr(const ST_DisplacedByCustomXml& _displacedByCustomXml_attr);
         const ST_DisplacedByCustomXml& get_displacedByCustomXml_attr() const;
     protected:
     private:
         static CT_Perm* default_instance_;
-        bool m_has_s_id_attr;
-        ns_s::ST_String* m_s_id_attr;
+        bool m_has_id_attr;
+        ns_s::ST_String* m_id_attr;
         bool m_has_displacedByCustomXml_attr;
         ST_DisplacedByCustomXml* m_displacedByCustomXml_attr;
     };
@@ -8415,21 +8548,22 @@ namespace ns_w {
     class CT_PermStart: public XSD::ComplexType
     {
     public:
+        CT_PermStart();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PermStart& default_instance();
-        bool has_s_id_attr() const;
-        void set_s_id_attr(const ns_s::ST_String& _s_id_attr);
-        const ns_s::ST_String& get_s_id_attr() const;
+        bool has_id_attr() const;
+        void set_id_attr(const ns_s::ST_String& _id_attr);
+        const ns_s::ST_String& get_id_attr() const;
         bool has_displacedByCustomXml_attr() const;
         void set_displacedByCustomXml_attr(const ST_DisplacedByCustomXml& _displacedByCustomXml_attr);
         const ST_DisplacedByCustomXml& get_displacedByCustomXml_attr() const;
         bool has_edGrp_attr() const;
         void set_edGrp_attr(const ST_EdGrp& _edGrp_attr);
         const ST_EdGrp& get_edGrp_attr() const;
-        bool has_s_ed_attr() const;
-        void set_s_ed_attr(const ns_s::ST_String& _s_ed_attr);
-        const ns_s::ST_String& get_s_ed_attr() const;
+        bool has_ed_attr() const;
+        void set_ed_attr(const ns_s::ST_String& _ed_attr);
+        const ns_s::ST_String& get_ed_attr() const;
         bool has_colFirst_attr() const;
         void set_colFirst_attr(const ST_DecimalNumber& _colFirst_attr);
         const ST_DecimalNumber& get_colFirst_attr() const;
@@ -8439,14 +8573,14 @@ namespace ns_w {
     protected:
     private:
         static CT_PermStart* default_instance_;
-        bool m_has_s_id_attr;
-        ns_s::ST_String* m_s_id_attr;
+        bool m_has_id_attr;
+        ns_s::ST_String* m_id_attr;
         bool m_has_displacedByCustomXml_attr;
         ST_DisplacedByCustomXml* m_displacedByCustomXml_attr;
         bool m_has_edGrp_attr;
         ST_EdGrp* m_edGrp_attr;
-        bool m_has_s_ed_attr;
-        ns_s::ST_String* m_s_ed_attr;
+        bool m_has_ed_attr;
+        ns_s::ST_String* m_ed_attr;
         bool m_has_colFirst_attr;
         ST_DecimalNumber* m_colFirst_attr;
         bool m_has_colLast_attr;
@@ -8456,6 +8590,7 @@ namespace ns_w {
     class CT_Text: public XSD::ComplexType
     {
     public:
+        CT_Text();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Text& default_instance();
@@ -8472,6 +8607,7 @@ namespace ns_w {
     class CT_R: public XSD::ComplexType
     {
     public:
+        CT_R();
         bool has_rPr() const;
         CT_RPr* mutable_rPr();
         const CT_RPr& get_rPr() const;
@@ -8525,6 +8661,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_br() const;
             CT_Br* mutable_br();
             const CT_Br& get_br() const;
@@ -8708,24 +8845,25 @@ namespace ns_w {
     class CT_Fonts: public XSD::ComplexType
     {
     public:
+        CT_Fonts();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Fonts& default_instance();
         bool has_hint_attr() const;
         void set_hint_attr(const ST_Hint& _hint_attr);
         const ST_Hint& get_hint_attr() const;
-        bool has_s_ascii_attr() const;
-        void set_s_ascii_attr(const ns_s::ST_String& _s_ascii_attr);
-        const ns_s::ST_String& get_s_ascii_attr() const;
-        bool has_s_hAnsi_attr() const;
-        void set_s_hAnsi_attr(const ns_s::ST_String& _s_hAnsi_attr);
-        const ns_s::ST_String& get_s_hAnsi_attr() const;
-        bool has_s_eastAsia_attr() const;
-        void set_s_eastAsia_attr(const ns_s::ST_String& _s_eastAsia_attr);
-        const ns_s::ST_String& get_s_eastAsia_attr() const;
-        bool has_s_cs_attr() const;
-        void set_s_cs_attr(const ns_s::ST_String& _s_cs_attr);
-        const ns_s::ST_String& get_s_cs_attr() const;
+        bool has_ascii_attr() const;
+        void set_ascii_attr(const ns_s::ST_String& _ascii_attr);
+        const ns_s::ST_String& get_ascii_attr() const;
+        bool has_hAnsi_attr() const;
+        void set_hAnsi_attr(const ns_s::ST_String& _hAnsi_attr);
+        const ns_s::ST_String& get_hAnsi_attr() const;
+        bool has_eastAsia_attr() const;
+        void set_eastAsia_attr(const ns_s::ST_String& _eastAsia_attr);
+        const ns_s::ST_String& get_eastAsia_attr() const;
+        bool has_cs_attr() const;
+        void set_cs_attr(const ns_s::ST_String& _cs_attr);
+        const ns_s::ST_String& get_cs_attr() const;
         bool has_asciiTheme_attr() const;
         void set_asciiTheme_attr(const ST_Theme& _asciiTheme_attr);
         const ST_Theme& get_asciiTheme_attr() const;
@@ -8743,14 +8881,14 @@ namespace ns_w {
         static CT_Fonts* default_instance_;
         bool m_has_hint_attr;
         ST_Hint* m_hint_attr;
-        bool m_has_s_ascii_attr;
-        ns_s::ST_String* m_s_ascii_attr;
-        bool m_has_s_hAnsi_attr;
-        ns_s::ST_String* m_s_hAnsi_attr;
-        bool m_has_s_eastAsia_attr;
-        ns_s::ST_String* m_s_eastAsia_attr;
-        bool m_has_s_cs_attr;
-        ns_s::ST_String* m_s_cs_attr;
+        bool m_has_ascii_attr;
+        ns_s::ST_String* m_ascii_attr;
+        bool m_has_hAnsi_attr;
+        ns_s::ST_String* m_hAnsi_attr;
+        bool m_has_eastAsia_attr;
+        ns_s::ST_String* m_eastAsia_attr;
+        bool m_has_cs_attr;
+        ns_s::ST_String* m_cs_attr;
         bool m_has_asciiTheme_attr;
         ST_Theme* m_asciiTheme_attr;
         bool m_has_hAnsiTheme_attr;
@@ -8764,6 +8902,7 @@ namespace ns_w {
     class CT_RPr: public XSD::ComplexType
     {
     public:
+        CT_RPr();
         CT_String* add_rStyle();
         CT_Fonts* add_rFonts();
         CT_OnOff* add_b();
@@ -8814,6 +8953,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_rStyle() const;
             CT_String* mutable_rStyle();
             const CT_String& get_rStyle() const;
@@ -9021,6 +9161,7 @@ namespace ns_w {
     class CT_MathCtrlIns: public XSD::ComplexType
     {
     public:
+        CT_MathCtrlIns();
         bool has_del() const;
         CT_RPrChange* mutable_del();
         const CT_RPrChange& get_del() const;
@@ -9033,9 +9174,9 @@ namespace ns_w {
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -9048,8 +9189,8 @@ namespace ns_w {
         static CT_MathCtrlIns* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
     };
@@ -9057,6 +9198,7 @@ namespace ns_w {
     class CT_MathCtrlDel: public XSD::ComplexType
     {
     public:
+        CT_MathCtrlDel();
         bool has_rPr() const;
         CT_RPr* mutable_rPr();
         const CT_RPr& get_rPr() const;
@@ -9066,9 +9208,9 @@ namespace ns_w {
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
-        bool has_s_author_attr() const;
-        void set_s_author_attr(const ns_s::ST_String& _s_author_attr);
-        const ns_s::ST_String& get_s_author_attr() const;
+        bool has_author_attr() const;
+        void set_author_attr(const ns_s::ST_String& _author_attr);
+        const ns_s::ST_String& get_author_attr() const;
         bool has_date_attr() const;
         void set_date_attr(const ST_DateTime& _date_attr);
         const ST_DateTime& get_date_attr() const;
@@ -9079,8 +9221,8 @@ namespace ns_w {
         static CT_MathCtrlDel* default_instance_;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
-        bool m_has_s_author_attr;
-        ns_s::ST_String* m_s_author_attr;
+        bool m_has_author_attr;
+        ns_s::ST_String* m_author_attr;
         bool m_has_date_attr;
         ST_DateTime* m_date_attr;
     };
@@ -9088,6 +9230,7 @@ namespace ns_w {
     class CT_RPrOriginal: public XSD::ComplexType
     {
     public:
+        CT_RPrOriginal();
         CT_String* add_rStyle();
         CT_Fonts* add_rFonts();
         CT_OnOff* add_b();
@@ -9135,6 +9278,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_rStyle() const;
             CT_String* mutable_rStyle();
             const CT_String& get_rStyle() const;
@@ -9340,6 +9484,7 @@ namespace ns_w {
     class CT_ParaRPrOriginal: public XSD::ComplexType
     {
     public:
+        CT_ParaRPrOriginal();
         bool has_ins() const;
         CT_TrackChange* mutable_ins();
         const CT_TrackChange& get_ins() const;
@@ -9399,6 +9544,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_rStyle() const;
             CT_String* mutable_rStyle();
             const CT_String& get_rStyle() const;
@@ -9612,6 +9758,7 @@ namespace ns_w {
     class CT_ParaRPr: public XSD::ComplexType
     {
     public:
+        CT_ParaRPr();
         bool has_ins() const;
         CT_TrackChange* mutable_ins();
         const CT_TrackChange& get_ins() const;
@@ -9674,6 +9821,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_rStyle() const;
             CT_String* mutable_rStyle();
             const CT_String& get_rStyle() const;
@@ -9889,6 +10037,7 @@ namespace ns_w {
     class CT_AltChunk: public XSD::ComplexType
     {
     public:
+        CT_AltChunk();
         bool has_altChunkPr() const;
         CT_AltChunkPr* mutable_altChunkPr();
         const CT_AltChunkPr& get_altChunkPr() const;
@@ -9910,6 +10059,7 @@ namespace ns_w {
     class CT_AltChunkPr: public XSD::ComplexType
     {
     public:
+        CT_AltChunkPr();
         bool has_matchSrc() const;
         CT_OnOff* mutable_matchSrc();
         const CT_OnOff& get_matchSrc() const;
@@ -9926,6 +10076,7 @@ namespace ns_w {
     class CT_RubyAlign: public XSD::ComplexType
     {
     public:
+        CT_RubyAlign();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RubyAlign& default_instance();
@@ -9942,6 +10093,7 @@ namespace ns_w {
     class CT_RubyPr: public XSD::ComplexType
     {
     public:
+        CT_RubyPr();
         bool has_rubyAlign() const;
         CT_RubyAlign* mutable_rubyAlign();
         const CT_RubyAlign& get_rubyAlign() const;
@@ -9983,6 +10135,7 @@ namespace ns_w {
     class CT_RubyContent: public XSD::ComplexType
     {
     public:
+        CT_RubyContent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RubyContent& default_instance();
@@ -9994,6 +10147,7 @@ namespace ns_w {
     class CT_Ruby: public XSD::ComplexType
     {
     public:
+        CT_Ruby();
         bool has_rubyPr() const;
         CT_RubyPr* mutable_rubyPr();
         const CT_RubyPr& get_rubyPr() const;
@@ -10020,6 +10174,7 @@ namespace ns_w {
     class CT_Lock: public XSD::ComplexType
     {
     public:
+        CT_Lock();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Lock& default_instance();
@@ -10036,27 +10191,29 @@ namespace ns_w {
     class CT_SdtListItem: public XSD::ComplexType
     {
     public:
+        CT_SdtListItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtListItem& default_instance();
-        bool has_s_displayText_attr() const;
-        void set_s_displayText_attr(const ns_s::ST_String& _s_displayText_attr);
-        const ns_s::ST_String& get_s_displayText_attr() const;
-        bool has_s_value_attr() const;
-        void set_s_value_attr(const ns_s::ST_String& _s_value_attr);
-        const ns_s::ST_String& get_s_value_attr() const;
+        bool has_displayText_attr() const;
+        void set_displayText_attr(const ns_s::ST_String& _displayText_attr);
+        const ns_s::ST_String& get_displayText_attr() const;
+        bool has_value_attr() const;
+        void set_value_attr(const ns_s::ST_String& _value_attr);
+        const ns_s::ST_String& get_value_attr() const;
     protected:
     private:
         static CT_SdtListItem* default_instance_;
-        bool m_has_s_displayText_attr;
-        ns_s::ST_String* m_s_displayText_attr;
-        bool m_has_s_value_attr;
-        ns_s::ST_String* m_s_value_attr;
+        bool m_has_displayText_attr;
+        ns_s::ST_String* m_displayText_attr;
+        bool m_has_value_attr;
+        ns_s::ST_String* m_value_attr;
     };
 
     class CT_SdtDateMappingType: public XSD::ComplexType
     {
     public:
+        CT_SdtDateMappingType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtDateMappingType& default_instance();
@@ -10073,22 +10230,24 @@ namespace ns_w {
     class CT_CalendarType: public XSD::ComplexType
     {
     public:
+        CT_CalendarType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CalendarType& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_CalendarType& _s_val_attr);
-        const ns_s::ST_CalendarType& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_CalendarType& _val_attr);
+        const ns_s::ST_CalendarType& get_val_attr() const;
     protected:
     private:
         static CT_CalendarType* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_CalendarType* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_CalendarType* m_val_attr;
     };
 
     class CT_SdtDate: public XSD::ComplexType
     {
     public:
+        CT_SdtDate();
         bool has_dateFormat() const;
         CT_String* mutable_dateFormat();
         const CT_String& get_dateFormat() const;
@@ -10125,18 +10284,20 @@ namespace ns_w {
     class CT_SdtComboBox: public XSD::ComplexType
     {
     public:
+        CT_SdtComboBox();
         CT_SdtListItem* add_listItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtComboBox& default_instance();
-        bool has_s_lastValue_attr() const;
-        void set_s_lastValue_attr(const ns_s::ST_String& _s_lastValue_attr);
-        const ns_s::ST_String& get_s_lastValue_attr() const;
+        bool has_lastValue_attr() const;
+        void set_lastValue_attr(const ns_s::ST_String& _lastValue_attr);
+        const ns_s::ST_String& get_lastValue_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_listItem() const;
             CT_SdtListItem* mutable_listItem();
             const CT_SdtListItem& get_listItem() const;
@@ -10147,13 +10308,14 @@ namespace ns_w {
         };
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_SdtComboBox* default_instance_;
-        bool m_has_s_lastValue_attr;
-        ns_s::ST_String* m_s_lastValue_attr;
+        bool m_has_lastValue_attr;
+        ns_s::ST_String* m_lastValue_attr;
     };
 
     class CT_SdtDocPart: public XSD::ComplexType
     {
     public:
+        CT_SdtDocPart();
         bool has_docPartGallery() const;
         CT_String* mutable_docPartGallery();
         const CT_String& get_docPartGallery() const;
@@ -10180,18 +10342,20 @@ namespace ns_w {
     class CT_SdtDropDownList: public XSD::ComplexType
     {
     public:
+        CT_SdtDropDownList();
         CT_SdtListItem* add_listItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtDropDownList& default_instance();
-        bool has_s_lastValue_attr() const;
-        void set_s_lastValue_attr(const ns_s::ST_String& _s_lastValue_attr);
-        const ns_s::ST_String& get_s_lastValue_attr() const;
+        bool has_lastValue_attr() const;
+        void set_lastValue_attr(const ns_s::ST_String& _lastValue_attr);
+        const ns_s::ST_String& get_lastValue_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_listItem() const;
             CT_SdtListItem* mutable_listItem();
             const CT_SdtListItem& get_listItem() const;
@@ -10202,13 +10366,14 @@ namespace ns_w {
         };
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_SdtDropDownList* default_instance_;
-        bool m_has_s_lastValue_attr;
-        ns_s::ST_String* m_s_lastValue_attr;
+        bool m_has_lastValue_attr;
+        ns_s::ST_String* m_lastValue_attr;
     };
 
     class CT_Placeholder: public XSD::ComplexType
     {
     public:
+        CT_Placeholder();
         bool has_docPart() const;
         CT_String* mutable_docPart();
         const CT_String& get_docPart() const;
@@ -10225,48 +10390,51 @@ namespace ns_w {
     class CT_SdtText: public XSD::ComplexType
     {
     public:
+        CT_SdtText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtText& default_instance();
-        bool has_s_multiLine_attr() const;
-        void set_s_multiLine_attr(const ns_s::ST_OnOff& _s_multiLine_attr);
-        const ns_s::ST_OnOff& get_s_multiLine_attr() const;
+        bool has_multiLine_attr() const;
+        void set_multiLine_attr(const ns_s::ST_OnOff& _multiLine_attr);
+        const ns_s::ST_OnOff& get_multiLine_attr() const;
     protected:
     private:
         static CT_SdtText* default_instance_;
-        bool m_has_s_multiLine_attr;
-        ns_s::ST_OnOff* m_s_multiLine_attr;
+        bool m_has_multiLine_attr;
+        ns_s::ST_OnOff* m_multiLine_attr;
     };
 
     class CT_DataBinding: public XSD::ComplexType
     {
     public:
+        CT_DataBinding();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DataBinding& default_instance();
-        bool has_s_prefixMappings_attr() const;
-        void set_s_prefixMappings_attr(const ns_s::ST_String& _s_prefixMappings_attr);
-        const ns_s::ST_String& get_s_prefixMappings_attr() const;
-        bool has_s_xpath_attr() const;
-        void set_s_xpath_attr(const ns_s::ST_String& _s_xpath_attr);
-        const ns_s::ST_String& get_s_xpath_attr() const;
-        bool has_s_storeItemID_attr() const;
-        void set_s_storeItemID_attr(const ns_s::ST_String& _s_storeItemID_attr);
-        const ns_s::ST_String& get_s_storeItemID_attr() const;
+        bool has_prefixMappings_attr() const;
+        void set_prefixMappings_attr(const ns_s::ST_String& _prefixMappings_attr);
+        const ns_s::ST_String& get_prefixMappings_attr() const;
+        bool has_xpath_attr() const;
+        void set_xpath_attr(const ns_s::ST_String& _xpath_attr);
+        const ns_s::ST_String& get_xpath_attr() const;
+        bool has_storeItemID_attr() const;
+        void set_storeItemID_attr(const ns_s::ST_String& _storeItemID_attr);
+        const ns_s::ST_String& get_storeItemID_attr() const;
     protected:
     private:
         static CT_DataBinding* default_instance_;
-        bool m_has_s_prefixMappings_attr;
-        ns_s::ST_String* m_s_prefixMappings_attr;
-        bool m_has_s_xpath_attr;
-        ns_s::ST_String* m_s_xpath_attr;
-        bool m_has_s_storeItemID_attr;
-        ns_s::ST_String* m_s_storeItemID_attr;
+        bool m_has_prefixMappings_attr;
+        ns_s::ST_String* m_prefixMappings_attr;
+        bool m_has_xpath_attr;
+        ns_s::ST_String* m_xpath_attr;
+        bool m_has_storeItemID_attr;
+        ns_s::ST_String* m_storeItemID_attr;
     };
 
     class CT_SdtPr: public XSD::ComplexType
     {
     public:
+        CT_SdtPr();
         bool has_rPr() const;
         CT_RPr* mutable_rPr();
         const CT_RPr& get_rPr() const;
@@ -10393,6 +10561,7 @@ namespace ns_w {
     class CT_SdtEndPr: public XSD::ComplexType
     {
     public:
+        CT_SdtEndPr();
         CT_RPr* add_rPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -10402,6 +10571,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_rPr() const;
             CT_RPr* mutable_rPr();
             const CT_RPr& get_rPr() const;
@@ -10417,6 +10587,7 @@ namespace ns_w {
     class CT_DirContentRun: public XSD::ComplexType
     {
     public:
+        CT_DirContentRun();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DirContentRun& default_instance();
@@ -10433,6 +10604,7 @@ namespace ns_w {
     class CT_BdoContentRun: public XSD::ComplexType
     {
     public:
+        CT_BdoContentRun();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BdoContentRun& default_instance();
@@ -10449,6 +10621,7 @@ namespace ns_w {
     class CT_SdtContentRun: public XSD::ComplexType
     {
     public:
+        CT_SdtContentRun();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtContentRun& default_instance();
@@ -10460,6 +10633,7 @@ namespace ns_w {
     class CT_SdtContentBlock: public XSD::ComplexType
     {
     public:
+        CT_SdtContentBlock();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtContentBlock& default_instance();
@@ -10471,6 +10645,7 @@ namespace ns_w {
     class CT_SdtContentRow: public XSD::ComplexType
     {
     public:
+        CT_SdtContentRow();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtContentRow& default_instance();
@@ -10482,6 +10657,7 @@ namespace ns_w {
     class CT_SdtContentCell: public XSD::ComplexType
     {
     public:
+        CT_SdtContentCell();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtContentCell& default_instance();
@@ -10493,6 +10669,7 @@ namespace ns_w {
     class CT_SdtBlock: public XSD::ComplexType
     {
     public:
+        CT_SdtBlock();
         bool has_sdtPr() const;
         CT_SdtPr* mutable_sdtPr();
         const CT_SdtPr& get_sdtPr() const;
@@ -10519,6 +10696,7 @@ namespace ns_w {
     class CT_SdtRun: public XSD::ComplexType
     {
     public:
+        CT_SdtRun();
         bool has_sdtPr() const;
         CT_SdtPr* mutable_sdtPr();
         const CT_SdtPr& get_sdtPr() const;
@@ -10545,6 +10723,7 @@ namespace ns_w {
     class CT_SdtCell: public XSD::ComplexType
     {
     public:
+        CT_SdtCell();
         bool has_sdtPr() const;
         CT_SdtPr* mutable_sdtPr();
         const CT_SdtPr& get_sdtPr() const;
@@ -10571,6 +10750,7 @@ namespace ns_w {
     class CT_SdtRow: public XSD::ComplexType
     {
     public:
+        CT_SdtRow();
         bool has_sdtPr() const;
         CT_SdtPr* mutable_sdtPr();
         const CT_SdtPr& get_sdtPr() const;
@@ -10597,32 +10777,34 @@ namespace ns_w {
     class CT_Attr: public XSD::ComplexType
     {
     public:
+        CT_Attr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Attr& default_instance();
-        bool has_s_uri_attr() const;
-        void set_s_uri_attr(const ns_s::ST_String& _s_uri_attr);
-        const ns_s::ST_String& get_s_uri_attr() const;
-        bool has_s_name_attr() const;
-        void set_s_name_attr(const ns_s::ST_String& _s_name_attr);
-        const ns_s::ST_String& get_s_name_attr() const;
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_String& _s_val_attr);
-        const ns_s::ST_String& get_s_val_attr() const;
+        bool has_uri_attr() const;
+        void set_uri_attr(const ns_s::ST_String& _uri_attr);
+        const ns_s::ST_String& get_uri_attr() const;
+        bool has_name_attr() const;
+        void set_name_attr(const ns_s::ST_String& _name_attr);
+        const ns_s::ST_String& get_name_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_String& _val_attr);
+        const ns_s::ST_String& get_val_attr() const;
     protected:
     private:
         static CT_Attr* default_instance_;
-        bool m_has_s_uri_attr;
-        ns_s::ST_String* m_s_uri_attr;
-        bool m_has_s_name_attr;
-        ns_s::ST_String* m_s_name_attr;
-        bool m_has_s_val_attr;
-        ns_s::ST_String* m_s_val_attr;
+        bool m_has_uri_attr;
+        ns_s::ST_String* m_uri_attr;
+        bool m_has_name_attr;
+        ns_s::ST_String* m_name_attr;
+        bool m_has_val_attr;
+        ns_s::ST_String* m_val_attr;
     };
 
     class CT_CustomXmlRun: public XSD::ComplexType
     {
     public:
+        CT_CustomXmlRun();
         bool has_customXmlPr() const;
         CT_CustomXmlPr* mutable_customXmlPr();
         const CT_CustomXmlPr& get_customXmlPr() const;
@@ -10663,17 +10845,18 @@ namespace ns_w {
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CustomXmlRun& default_instance();
-        bool has_s_uri_attr() const;
-        void set_s_uri_attr(const ns_s::ST_String& _s_uri_attr);
-        const ns_s::ST_String& get_s_uri_attr() const;
-        bool has_s_element_attr() const;
-        void set_s_element_attr(const ns_s::ST_XmlName& _s_element_attr);
-        const ns_s::ST_XmlName& get_s_element_attr() const;
+        bool has_uri_attr() const;
+        void set_uri_attr(const ns_s::ST_String& _uri_attr);
+        const ns_s::ST_String& get_uri_attr() const;
+        bool has_element_attr() const;
+        void set_element_attr(const ns_s::ST_XmlName& _element_attr);
+        const ns_s::ST_XmlName& get_element_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_customXml() const;
             CT_CustomXmlRun* mutable_customXml();
             const CT_CustomXmlRun& get_customXml() const;
@@ -10851,15 +11034,16 @@ namespace ns_w {
         CT_CustomXmlPr* m_customXmlPr;
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_CustomXmlRun* default_instance_;
-        bool m_has_s_uri_attr;
-        ns_s::ST_String* m_s_uri_attr;
-        bool m_has_s_element_attr;
-        ns_s::ST_XmlName* m_s_element_attr;
+        bool m_has_uri_attr;
+        ns_s::ST_String* m_uri_attr;
+        bool m_has_element_attr;
+        ns_s::ST_XmlName* m_element_attr;
     };
 
     class CT_SmartTagRun: public XSD::ComplexType
     {
     public:
+        CT_SmartTagRun();
         bool has_smartTagPr() const;
         CT_SmartTagPr* mutable_smartTagPr();
         const CT_SmartTagPr& get_smartTagPr() const;
@@ -10900,17 +11084,18 @@ namespace ns_w {
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SmartTagRun& default_instance();
-        bool has_s_uri_attr() const;
-        void set_s_uri_attr(const ns_s::ST_String& _s_uri_attr);
-        const ns_s::ST_String& get_s_uri_attr() const;
-        bool has_s_element_attr() const;
-        void set_s_element_attr(const ns_s::ST_XmlName& _s_element_attr);
-        const ns_s::ST_XmlName& get_s_element_attr() const;
+        bool has_uri_attr() const;
+        void set_uri_attr(const ns_s::ST_String& _uri_attr);
+        const ns_s::ST_String& get_uri_attr() const;
+        bool has_element_attr() const;
+        void set_element_attr(const ns_s::ST_XmlName& _element_attr);
+        const ns_s::ST_XmlName& get_element_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_customXml() const;
             CT_CustomXmlRun* mutable_customXml();
             const CT_CustomXmlRun& get_customXml() const;
@@ -11088,15 +11273,16 @@ namespace ns_w {
         CT_SmartTagPr* m_smartTagPr;
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_SmartTagRun* default_instance_;
-        bool m_has_s_uri_attr;
-        ns_s::ST_String* m_s_uri_attr;
-        bool m_has_s_element_attr;
-        ns_s::ST_XmlName* m_s_element_attr;
+        bool m_has_uri_attr;
+        ns_s::ST_String* m_uri_attr;
+        bool m_has_element_attr;
+        ns_s::ST_XmlName* m_element_attr;
     };
 
     class CT_CustomXmlBlock: public XSD::ComplexType
     {
     public:
+        CT_CustomXmlBlock();
         bool has_customXmlPr() const;
         CT_CustomXmlPr* mutable_customXmlPr();
         const CT_CustomXmlPr& get_customXmlPr() const;
@@ -11132,17 +11318,18 @@ namespace ns_w {
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CustomXmlBlock& default_instance();
-        bool has_s_uri_attr() const;
-        void set_s_uri_attr(const ns_s::ST_String& _s_uri_attr);
-        const ns_s::ST_String& get_s_uri_attr() const;
-        bool has_s_element_attr() const;
-        void set_s_element_attr(const ns_s::ST_XmlName& _s_element_attr);
-        const ns_s::ST_XmlName& get_s_element_attr() const;
+        bool has_uri_attr() const;
+        void set_uri_attr(const ns_s::ST_String& _uri_attr);
+        const ns_s::ST_String& get_uri_attr() const;
+        bool has_element_attr() const;
+        void set_element_attr(const ns_s::ST_XmlName& _element_attr);
+        const ns_s::ST_XmlName& get_element_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_customXml() const;
             CT_CustomXmlBlock* mutable_customXml();
             const CT_CustomXmlBlock& get_customXml() const;
@@ -11295,15 +11482,16 @@ namespace ns_w {
         CT_CustomXmlPr* m_customXmlPr;
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_CustomXmlBlock* default_instance_;
-        bool m_has_s_uri_attr;
-        ns_s::ST_String* m_s_uri_attr;
-        bool m_has_s_element_attr;
-        ns_s::ST_XmlName* m_s_element_attr;
+        bool m_has_uri_attr;
+        ns_s::ST_String* m_uri_attr;
+        bool m_has_element_attr;
+        ns_s::ST_XmlName* m_element_attr;
     };
 
     class CT_CustomXmlPr: public XSD::ComplexType
     {
     public:
+        CT_CustomXmlPr();
         bool has_placeholder() const;
         CT_String* mutable_placeholder();
         const CT_String& get_placeholder() const;
@@ -11316,6 +11504,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_attr() const;
             CT_Attr* mutable_attr();
             const CT_Attr& get_attr() const;
@@ -11333,6 +11522,7 @@ namespace ns_w {
     class CT_CustomXmlRow: public XSD::ComplexType
     {
     public:
+        CT_CustomXmlRow();
         bool has_customXmlPr() const;
         CT_CustomXmlPr* mutable_customXmlPr();
         const CT_CustomXmlPr& get_customXmlPr() const;
@@ -11367,17 +11557,18 @@ namespace ns_w {
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CustomXmlRow& default_instance();
-        bool has_s_uri_attr() const;
-        void set_s_uri_attr(const ns_s::ST_String& _s_uri_attr);
-        const ns_s::ST_String& get_s_uri_attr() const;
-        bool has_s_element_attr() const;
-        void set_s_element_attr(const ns_s::ST_XmlName& _s_element_attr);
-        const ns_s::ST_XmlName& get_s_element_attr() const;
+        bool has_uri_attr() const;
+        void set_uri_attr(const ns_s::ST_String& _uri_attr);
+        const ns_s::ST_String& get_uri_attr() const;
+        bool has_element_attr() const;
+        void set_element_attr(const ns_s::ST_XmlName& _element_attr);
+        const ns_s::ST_XmlName& get_element_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_tr() const;
             CT_Row* mutable_tr();
             const CT_Row& get_tr() const;
@@ -11525,15 +11716,16 @@ namespace ns_w {
         CT_CustomXmlPr* m_customXmlPr;
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_CustomXmlRow* default_instance_;
-        bool m_has_s_uri_attr;
-        ns_s::ST_String* m_s_uri_attr;
-        bool m_has_s_element_attr;
-        ns_s::ST_XmlName* m_s_element_attr;
+        bool m_has_uri_attr;
+        ns_s::ST_String* m_uri_attr;
+        bool m_has_element_attr;
+        ns_s::ST_XmlName* m_element_attr;
     };
 
     class CT_CustomXmlCell: public XSD::ComplexType
     {
     public:
+        CT_CustomXmlCell();
         bool has_customXmlPr() const;
         CT_CustomXmlPr* mutable_customXmlPr();
         const CT_CustomXmlPr& get_customXmlPr() const;
@@ -11568,17 +11760,18 @@ namespace ns_w {
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CustomXmlCell& default_instance();
-        bool has_s_uri_attr() const;
-        void set_s_uri_attr(const ns_s::ST_String& _s_uri_attr);
-        const ns_s::ST_String& get_s_uri_attr() const;
-        bool has_s_element_attr() const;
-        void set_s_element_attr(const ns_s::ST_XmlName& _s_element_attr);
-        const ns_s::ST_XmlName& get_s_element_attr() const;
+        bool has_uri_attr() const;
+        void set_uri_attr(const ns_s::ST_String& _uri_attr);
+        const ns_s::ST_String& get_uri_attr() const;
+        bool has_element_attr() const;
+        void set_element_attr(const ns_s::ST_XmlName& _element_attr);
+        const ns_s::ST_XmlName& get_element_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_tc() const;
             CT_Tc* mutable_tc();
             const CT_Tc& get_tc() const;
@@ -11726,15 +11919,16 @@ namespace ns_w {
         CT_CustomXmlPr* m_customXmlPr;
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_CustomXmlCell* default_instance_;
-        bool m_has_s_uri_attr;
-        ns_s::ST_String* m_s_uri_attr;
-        bool m_has_s_element_attr;
-        ns_s::ST_XmlName* m_s_element_attr;
+        bool m_has_uri_attr;
+        ns_s::ST_String* m_uri_attr;
+        bool m_has_element_attr;
+        ns_s::ST_XmlName* m_element_attr;
     };
 
     class CT_SmartTagPr: public XSD::ComplexType
     {
     public:
+        CT_SmartTagPr();
         CT_Attr* add_attr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -11744,6 +11938,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_attr() const;
             CT_Attr* mutable_attr();
             const CT_Attr& get_attr() const;
@@ -11759,6 +11954,7 @@ namespace ns_w {
     class CT_P: public XSD::ComplexType
     {
     public:
+        CT_P();
         bool has_pPr() const;
         CT_PPr* mutable_pPr();
         const CT_PPr& get_pPr() const;
@@ -11819,6 +12015,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_customXml() const;
             CT_CustomXmlRun* mutable_customXml();
             const CT_CustomXmlRun& get_customXml() const;
@@ -12011,20 +12208,21 @@ namespace ns_w {
     class CT_Height: public XSD::ComplexType
     {
     public:
+        CT_Height();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Height& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_TwipsMeasure& _s_val_attr);
-        const ns_s::ST_TwipsMeasure& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_TwipsMeasure& _val_attr);
+        const ns_s::ST_TwipsMeasure& get_val_attr() const;
         bool has_hRule_attr() const;
         void set_hRule_attr(const ST_HeightRule& _hRule_attr);
         const ST_HeightRule& get_hRule_attr() const;
     protected:
     private:
         static CT_Height* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_TwipsMeasure* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_TwipsMeasure* m_val_attr;
         bool m_has_hRule_attr;
         ST_HeightRule* m_hRule_attr;
     };
@@ -12032,6 +12230,7 @@ namespace ns_w {
     class CT_TblWidth: public XSD::ComplexType
     {
     public:
+        CT_TblWidth();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TblWidth& default_instance();
@@ -12053,22 +12252,24 @@ namespace ns_w {
     class CT_TblGridCol: public XSD::ComplexType
     {
     public:
+        CT_TblGridCol();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TblGridCol& default_instance();
-        bool has_s_w_attr() const;
-        void set_s_w_attr(const ns_s::ST_TwipsMeasure& _s_w_attr);
-        const ns_s::ST_TwipsMeasure& get_s_w_attr() const;
+        bool has_w_attr() const;
+        void set_w_attr(const ns_s::ST_TwipsMeasure& _w_attr);
+        const ns_s::ST_TwipsMeasure& get_w_attr() const;
     protected:
     private:
         static CT_TblGridCol* default_instance_;
-        bool m_has_s_w_attr;
-        ns_s::ST_TwipsMeasure* m_s_w_attr;
+        bool m_has_w_attr;
+        ns_s::ST_TwipsMeasure* m_w_attr;
     };
 
     class CT_TblGridBase: public XSD::ComplexType
     {
     public:
+        CT_TblGridBase();
         CT_TblGridCol* add_gridCol();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -12078,6 +12279,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_gridCol() const;
             CT_TblGridCol* mutable_gridCol();
             const CT_TblGridCol& get_gridCol() const;
@@ -12093,6 +12295,7 @@ namespace ns_w {
     class CT_TblGrid: public XSD::ComplexType
     {
     public:
+        CT_TblGrid();
         CT_TblGridCol* add_gridCol();
         bool has_tblGridChange() const;
         CT_TblGridChange* mutable_tblGridChange();
@@ -12105,6 +12308,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_gridCol() const;
             CT_TblGridCol* mutable_gridCol();
             const CT_TblGridCol& get_gridCol() const;
@@ -12122,6 +12326,7 @@ namespace ns_w {
     class CT_TcBorders: public XSD::ComplexType
     {
     public:
+        CT_TcBorders();
         bool has_top() const;
         CT_Border* mutable_top();
         const CT_Border& get_top() const;
@@ -12183,6 +12388,7 @@ namespace ns_w {
     class CT_TcMar: public XSD::ComplexType
     {
     public:
+        CT_TcMar();
         bool has_top() const;
         CT_TblWidth* mutable_top();
         const CT_TblWidth& get_top() const;
@@ -12224,6 +12430,7 @@ namespace ns_w {
     class CT_VMerge: public XSD::ComplexType
     {
     public:
+        CT_VMerge();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_VMerge& default_instance();
@@ -12240,6 +12447,7 @@ namespace ns_w {
     class CT_HMerge: public XSD::ComplexType
     {
     public:
+        CT_HMerge();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_HMerge& default_instance();
@@ -12256,6 +12464,7 @@ namespace ns_w {
     class CT_TcPrBase: public XSD::ComplexType
     {
     public:
+        CT_TcPrBase();
         bool has_cnfStyle() const;
         CT_Cnf* mutable_cnfStyle();
         const CT_Cnf& get_cnfStyle() const;
@@ -12337,6 +12546,7 @@ namespace ns_w {
     class CT_TcPr: public XSD::ComplexType
     {
     public:
+        CT_TcPr();
         bool has_cnfStyle() const;
         CT_Cnf* mutable_cnfStyle();
         const CT_Cnf& get_cnfStyle() const;
@@ -12438,6 +12648,7 @@ namespace ns_w {
     class CT_TcPrInner: public XSD::ComplexType
     {
     public:
+        CT_TcPrInner();
         bool has_cnfStyle() const;
         CT_Cnf* mutable_cnfStyle();
         const CT_Cnf& get_cnfStyle() const;
@@ -12534,6 +12745,7 @@ namespace ns_w {
     class CT_Tc: public XSD::ComplexType
     {
     public:
+        CT_Tc();
         bool has_tcPr() const;
         CT_TcPr* mutable_tcPr();
         const CT_TcPr& get_tcPr() const;
@@ -12570,14 +12782,15 @@ namespace ns_w {
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Tc& default_instance();
-        bool has_s_id_attr() const;
-        void set_s_id_attr(const ns_s::ST_String& _s_id_attr);
-        const ns_s::ST_String& get_s_id_attr() const;
+        bool has_id_attr() const;
+        void set_id_attr(const ns_s::ST_String& _id_attr);
+        const ns_s::ST_String& get_id_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_customXml() const;
             CT_CustomXmlBlock* mutable_customXml();
             const CT_CustomXmlBlock& get_customXml() const;
@@ -12735,89 +12948,91 @@ namespace ns_w {
         CT_TcPr* m_tcPr;
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_Tc* default_instance_;
-        bool m_has_s_id_attr;
-        ns_s::ST_String* m_s_id_attr;
+        bool m_has_id_attr;
+        ns_s::ST_String* m_id_attr;
     };
 
     class CT_Cnf: public XSD::ComplexType
     {
     public:
+        CT_Cnf();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Cnf& default_instance();
         bool has_val_attr() const;
         void set_val_attr(const ST_Cnf& _val_attr);
         const ST_Cnf& get_val_attr() const;
-        bool has_s_firstRow_attr() const;
-        void set_s_firstRow_attr(const ns_s::ST_OnOff& _s_firstRow_attr);
-        const ns_s::ST_OnOff& get_s_firstRow_attr() const;
-        bool has_s_lastRow_attr() const;
-        void set_s_lastRow_attr(const ns_s::ST_OnOff& _s_lastRow_attr);
-        const ns_s::ST_OnOff& get_s_lastRow_attr() const;
-        bool has_s_firstColumn_attr() const;
-        void set_s_firstColumn_attr(const ns_s::ST_OnOff& _s_firstColumn_attr);
-        const ns_s::ST_OnOff& get_s_firstColumn_attr() const;
-        bool has_s_lastColumn_attr() const;
-        void set_s_lastColumn_attr(const ns_s::ST_OnOff& _s_lastColumn_attr);
-        const ns_s::ST_OnOff& get_s_lastColumn_attr() const;
-        bool has_s_oddVBand_attr() const;
-        void set_s_oddVBand_attr(const ns_s::ST_OnOff& _s_oddVBand_attr);
-        const ns_s::ST_OnOff& get_s_oddVBand_attr() const;
-        bool has_s_evenVBand_attr() const;
-        void set_s_evenVBand_attr(const ns_s::ST_OnOff& _s_evenVBand_attr);
-        const ns_s::ST_OnOff& get_s_evenVBand_attr() const;
-        bool has_s_oddHBand_attr() const;
-        void set_s_oddHBand_attr(const ns_s::ST_OnOff& _s_oddHBand_attr);
-        const ns_s::ST_OnOff& get_s_oddHBand_attr() const;
-        bool has_s_evenHBand_attr() const;
-        void set_s_evenHBand_attr(const ns_s::ST_OnOff& _s_evenHBand_attr);
-        const ns_s::ST_OnOff& get_s_evenHBand_attr() const;
-        bool has_s_firstRowFirstColumn_attr() const;
-        void set_s_firstRowFirstColumn_attr(const ns_s::ST_OnOff& _s_firstRowFirstColumn_attr);
-        const ns_s::ST_OnOff& get_s_firstRowFirstColumn_attr() const;
-        bool has_s_firstRowLastColumn_attr() const;
-        void set_s_firstRowLastColumn_attr(const ns_s::ST_OnOff& _s_firstRowLastColumn_attr);
-        const ns_s::ST_OnOff& get_s_firstRowLastColumn_attr() const;
-        bool has_s_lastRowFirstColumn_attr() const;
-        void set_s_lastRowFirstColumn_attr(const ns_s::ST_OnOff& _s_lastRowFirstColumn_attr);
-        const ns_s::ST_OnOff& get_s_lastRowFirstColumn_attr() const;
-        bool has_s_lastRowLastColumn_attr() const;
-        void set_s_lastRowLastColumn_attr(const ns_s::ST_OnOff& _s_lastRowLastColumn_attr);
-        const ns_s::ST_OnOff& get_s_lastRowLastColumn_attr() const;
+        bool has_firstRow_attr() const;
+        void set_firstRow_attr(const ns_s::ST_OnOff& _firstRow_attr);
+        const ns_s::ST_OnOff& get_firstRow_attr() const;
+        bool has_lastRow_attr() const;
+        void set_lastRow_attr(const ns_s::ST_OnOff& _lastRow_attr);
+        const ns_s::ST_OnOff& get_lastRow_attr() const;
+        bool has_firstColumn_attr() const;
+        void set_firstColumn_attr(const ns_s::ST_OnOff& _firstColumn_attr);
+        const ns_s::ST_OnOff& get_firstColumn_attr() const;
+        bool has_lastColumn_attr() const;
+        void set_lastColumn_attr(const ns_s::ST_OnOff& _lastColumn_attr);
+        const ns_s::ST_OnOff& get_lastColumn_attr() const;
+        bool has_oddVBand_attr() const;
+        void set_oddVBand_attr(const ns_s::ST_OnOff& _oddVBand_attr);
+        const ns_s::ST_OnOff& get_oddVBand_attr() const;
+        bool has_evenVBand_attr() const;
+        void set_evenVBand_attr(const ns_s::ST_OnOff& _evenVBand_attr);
+        const ns_s::ST_OnOff& get_evenVBand_attr() const;
+        bool has_oddHBand_attr() const;
+        void set_oddHBand_attr(const ns_s::ST_OnOff& _oddHBand_attr);
+        const ns_s::ST_OnOff& get_oddHBand_attr() const;
+        bool has_evenHBand_attr() const;
+        void set_evenHBand_attr(const ns_s::ST_OnOff& _evenHBand_attr);
+        const ns_s::ST_OnOff& get_evenHBand_attr() const;
+        bool has_firstRowFirstColumn_attr() const;
+        void set_firstRowFirstColumn_attr(const ns_s::ST_OnOff& _firstRowFirstColumn_attr);
+        const ns_s::ST_OnOff& get_firstRowFirstColumn_attr() const;
+        bool has_firstRowLastColumn_attr() const;
+        void set_firstRowLastColumn_attr(const ns_s::ST_OnOff& _firstRowLastColumn_attr);
+        const ns_s::ST_OnOff& get_firstRowLastColumn_attr() const;
+        bool has_lastRowFirstColumn_attr() const;
+        void set_lastRowFirstColumn_attr(const ns_s::ST_OnOff& _lastRowFirstColumn_attr);
+        const ns_s::ST_OnOff& get_lastRowFirstColumn_attr() const;
+        bool has_lastRowLastColumn_attr() const;
+        void set_lastRowLastColumn_attr(const ns_s::ST_OnOff& _lastRowLastColumn_attr);
+        const ns_s::ST_OnOff& get_lastRowLastColumn_attr() const;
     protected:
     private:
         static CT_Cnf* default_instance_;
         bool m_has_val_attr;
         ST_Cnf* m_val_attr;
-        bool m_has_s_firstRow_attr;
-        ns_s::ST_OnOff* m_s_firstRow_attr;
-        bool m_has_s_lastRow_attr;
-        ns_s::ST_OnOff* m_s_lastRow_attr;
-        bool m_has_s_firstColumn_attr;
-        ns_s::ST_OnOff* m_s_firstColumn_attr;
-        bool m_has_s_lastColumn_attr;
-        ns_s::ST_OnOff* m_s_lastColumn_attr;
-        bool m_has_s_oddVBand_attr;
-        ns_s::ST_OnOff* m_s_oddVBand_attr;
-        bool m_has_s_evenVBand_attr;
-        ns_s::ST_OnOff* m_s_evenVBand_attr;
-        bool m_has_s_oddHBand_attr;
-        ns_s::ST_OnOff* m_s_oddHBand_attr;
-        bool m_has_s_evenHBand_attr;
-        ns_s::ST_OnOff* m_s_evenHBand_attr;
-        bool m_has_s_firstRowFirstColumn_attr;
-        ns_s::ST_OnOff* m_s_firstRowFirstColumn_attr;
-        bool m_has_s_firstRowLastColumn_attr;
-        ns_s::ST_OnOff* m_s_firstRowLastColumn_attr;
-        bool m_has_s_lastRowFirstColumn_attr;
-        ns_s::ST_OnOff* m_s_lastRowFirstColumn_attr;
-        bool m_has_s_lastRowLastColumn_attr;
-        ns_s::ST_OnOff* m_s_lastRowLastColumn_attr;
+        bool m_has_firstRow_attr;
+        ns_s::ST_OnOff* m_firstRow_attr;
+        bool m_has_lastRow_attr;
+        ns_s::ST_OnOff* m_lastRow_attr;
+        bool m_has_firstColumn_attr;
+        ns_s::ST_OnOff* m_firstColumn_attr;
+        bool m_has_lastColumn_attr;
+        ns_s::ST_OnOff* m_lastColumn_attr;
+        bool m_has_oddVBand_attr;
+        ns_s::ST_OnOff* m_oddVBand_attr;
+        bool m_has_evenVBand_attr;
+        ns_s::ST_OnOff* m_evenVBand_attr;
+        bool m_has_oddHBand_attr;
+        ns_s::ST_OnOff* m_oddHBand_attr;
+        bool m_has_evenHBand_attr;
+        ns_s::ST_OnOff* m_evenHBand_attr;
+        bool m_has_firstRowFirstColumn_attr;
+        ns_s::ST_OnOff* m_firstRowFirstColumn_attr;
+        bool m_has_firstRowLastColumn_attr;
+        ns_s::ST_OnOff* m_firstRowLastColumn_attr;
+        bool m_has_lastRowFirstColumn_attr;
+        ns_s::ST_OnOff* m_lastRowFirstColumn_attr;
+        bool m_has_lastRowLastColumn_attr;
+        ns_s::ST_OnOff* m_lastRowLastColumn_attr;
     };
 
     class CT_Headers: public XSD::ComplexType
     {
     public:
+        CT_Headers();
         CT_String* add_header();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -12827,6 +13042,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_header() const;
             CT_String* mutable_header();
             const CT_String& get_header() const;
@@ -12842,6 +13058,7 @@ namespace ns_w {
     class CT_TrPrBase: public XSD::ComplexType
     {
     public:
+        CT_TrPrBase();
         CT_Cnf* add_cnfStyle();
         CT_DecimalNumber* add_divId();
         CT_DecimalNumber* add_gridBefore();
@@ -12862,6 +13079,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_cnfStyle() const;
             CT_Cnf* mutable_cnfStyle();
             const CT_Cnf& get_cnfStyle() const;
@@ -12932,6 +13150,7 @@ namespace ns_w {
     class CT_TrPr: public XSD::ComplexType
     {
     public:
+        CT_TrPr();
         CT_Cnf* add_cnfStyle();
         CT_DecimalNumber* add_divId();
         CT_DecimalNumber* add_gridBefore();
@@ -12961,6 +13180,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_cnfStyle() const;
             CT_Cnf* mutable_cnfStyle();
             const CT_Cnf& get_cnfStyle() const;
@@ -13037,6 +13257,7 @@ namespace ns_w {
     class CT_Row: public XSD::ComplexType
     {
     public:
+        CT_Row();
         bool has_tblPrEx() const;
         CT_TblPrEx* mutable_tblPrEx();
         const CT_TblPrEx& get_tblPrEx() const;
@@ -13091,6 +13312,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_tc() const;
             CT_Tc* mutable_tc();
             const CT_Tc& get_tc() const;
@@ -13253,6 +13475,7 @@ namespace ns_w {
     class CT_TblLayoutType: public XSD::ComplexType
     {
     public:
+        CT_TblLayoutType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TblLayoutType& default_instance();
@@ -13269,6 +13492,7 @@ namespace ns_w {
     class CT_TblOverlap: public XSD::ComplexType
     {
     public:
+        CT_TblOverlap();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TblOverlap& default_instance();
@@ -13285,60 +13509,61 @@ namespace ns_w {
     class CT_TblPPr: public XSD::ComplexType
     {
     public:
+        CT_TblPPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TblPPr& default_instance();
-        bool has_s_leftFromText_attr() const;
-        void set_s_leftFromText_attr(const ns_s::ST_TwipsMeasure& _s_leftFromText_attr);
-        const ns_s::ST_TwipsMeasure& get_s_leftFromText_attr() const;
-        bool has_s_rightFromText_attr() const;
-        void set_s_rightFromText_attr(const ns_s::ST_TwipsMeasure& _s_rightFromText_attr);
-        const ns_s::ST_TwipsMeasure& get_s_rightFromText_attr() const;
-        bool has_s_topFromText_attr() const;
-        void set_s_topFromText_attr(const ns_s::ST_TwipsMeasure& _s_topFromText_attr);
-        const ns_s::ST_TwipsMeasure& get_s_topFromText_attr() const;
-        bool has_s_bottomFromText_attr() const;
-        void set_s_bottomFromText_attr(const ns_s::ST_TwipsMeasure& _s_bottomFromText_attr);
-        const ns_s::ST_TwipsMeasure& get_s_bottomFromText_attr() const;
+        bool has_leftFromText_attr() const;
+        void set_leftFromText_attr(const ns_s::ST_TwipsMeasure& _leftFromText_attr);
+        const ns_s::ST_TwipsMeasure& get_leftFromText_attr() const;
+        bool has_rightFromText_attr() const;
+        void set_rightFromText_attr(const ns_s::ST_TwipsMeasure& _rightFromText_attr);
+        const ns_s::ST_TwipsMeasure& get_rightFromText_attr() const;
+        bool has_topFromText_attr() const;
+        void set_topFromText_attr(const ns_s::ST_TwipsMeasure& _topFromText_attr);
+        const ns_s::ST_TwipsMeasure& get_topFromText_attr() const;
+        bool has_bottomFromText_attr() const;
+        void set_bottomFromText_attr(const ns_s::ST_TwipsMeasure& _bottomFromText_attr);
+        const ns_s::ST_TwipsMeasure& get_bottomFromText_attr() const;
         bool has_vertAnchor_attr() const;
         void set_vertAnchor_attr(const ST_VAnchor& _vertAnchor_attr);
         const ST_VAnchor& get_vertAnchor_attr() const;
         bool has_horzAnchor_attr() const;
         void set_horzAnchor_attr(const ST_HAnchor& _horzAnchor_attr);
         const ST_HAnchor& get_horzAnchor_attr() const;
-        bool has_s_tblpXSpec_attr() const;
-        void set_s_tblpXSpec_attr(const ns_s::ST_XAlign& _s_tblpXSpec_attr);
-        const ns_s::ST_XAlign& get_s_tblpXSpec_attr() const;
+        bool has_tblpXSpec_attr() const;
+        void set_tblpXSpec_attr(const ns_s::ST_XAlign& _tblpXSpec_attr);
+        const ns_s::ST_XAlign& get_tblpXSpec_attr() const;
         bool has_tblpX_attr() const;
         void set_tblpX_attr(const ST_SignedTwipsMeasure& _tblpX_attr);
         const ST_SignedTwipsMeasure& get_tblpX_attr() const;
-        bool has_s_tblpYSpec_attr() const;
-        void set_s_tblpYSpec_attr(const ns_s::ST_YAlign& _s_tblpYSpec_attr);
-        const ns_s::ST_YAlign& get_s_tblpYSpec_attr() const;
+        bool has_tblpYSpec_attr() const;
+        void set_tblpYSpec_attr(const ns_s::ST_YAlign& _tblpYSpec_attr);
+        const ns_s::ST_YAlign& get_tblpYSpec_attr() const;
         bool has_tblpY_attr() const;
         void set_tblpY_attr(const ST_SignedTwipsMeasure& _tblpY_attr);
         const ST_SignedTwipsMeasure& get_tblpY_attr() const;
     protected:
     private:
         static CT_TblPPr* default_instance_;
-        bool m_has_s_leftFromText_attr;
-        ns_s::ST_TwipsMeasure* m_s_leftFromText_attr;
-        bool m_has_s_rightFromText_attr;
-        ns_s::ST_TwipsMeasure* m_s_rightFromText_attr;
-        bool m_has_s_topFromText_attr;
-        ns_s::ST_TwipsMeasure* m_s_topFromText_attr;
-        bool m_has_s_bottomFromText_attr;
-        ns_s::ST_TwipsMeasure* m_s_bottomFromText_attr;
+        bool m_has_leftFromText_attr;
+        ns_s::ST_TwipsMeasure* m_leftFromText_attr;
+        bool m_has_rightFromText_attr;
+        ns_s::ST_TwipsMeasure* m_rightFromText_attr;
+        bool m_has_topFromText_attr;
+        ns_s::ST_TwipsMeasure* m_topFromText_attr;
+        bool m_has_bottomFromText_attr;
+        ns_s::ST_TwipsMeasure* m_bottomFromText_attr;
         bool m_has_vertAnchor_attr;
         ST_VAnchor* m_vertAnchor_attr;
         bool m_has_horzAnchor_attr;
         ST_HAnchor* m_horzAnchor_attr;
-        bool m_has_s_tblpXSpec_attr;
-        ns_s::ST_XAlign* m_s_tblpXSpec_attr;
+        bool m_has_tblpXSpec_attr;
+        ns_s::ST_XAlign* m_tblpXSpec_attr;
         bool m_has_tblpX_attr;
         ST_SignedTwipsMeasure* m_tblpX_attr;
-        bool m_has_s_tblpYSpec_attr;
-        ns_s::ST_YAlign* m_s_tblpYSpec_attr;
+        bool m_has_tblpYSpec_attr;
+        ns_s::ST_YAlign* m_tblpYSpec_attr;
         bool m_has_tblpY_attr;
         ST_SignedTwipsMeasure* m_tblpY_attr;
     };
@@ -13346,6 +13571,7 @@ namespace ns_w {
     class CT_TblCellMar: public XSD::ComplexType
     {
     public:
+        CT_TblCellMar();
         bool has_top() const;
         CT_TblWidth* mutable_top();
         const CT_TblWidth& get_top() const;
@@ -13387,6 +13613,7 @@ namespace ns_w {
     class CT_TblBorders: public XSD::ComplexType
     {
     public:
+        CT_TblBorders();
         bool has_top() const;
         CT_Border* mutable_top();
         const CT_Border& get_top() const;
@@ -13438,6 +13665,7 @@ namespace ns_w {
     class CT_TblPrBase: public XSD::ComplexType
     {
     public:
+        CT_TblPrBase();
         bool has_tblStyle() const;
         CT_String* mutable_tblStyle();
         const CT_String& get_tblStyle() const;
@@ -13534,6 +13762,7 @@ namespace ns_w {
     class CT_TblPr: public XSD::ComplexType
     {
     public:
+        CT_TblPr();
         bool has_tblStyle() const;
         CT_String* mutable_tblStyle();
         const CT_String& get_tblStyle() const;
@@ -13635,6 +13864,7 @@ namespace ns_w {
     class CT_TblPrExBase: public XSD::ComplexType
     {
     public:
+        CT_TblPrExBase();
         bool has_tblW() const;
         CT_TblWidth* mutable_tblW();
         const CT_TblWidth& get_tblW() const;
@@ -13691,6 +13921,7 @@ namespace ns_w {
     class CT_TblPrEx: public XSD::ComplexType
     {
     public:
+        CT_TblPrEx();
         bool has_tblW() const;
         CT_TblWidth* mutable_tblW();
         const CT_TblWidth& get_tblW() const;
@@ -13752,6 +13983,7 @@ namespace ns_w {
     class CT_Tbl: public XSD::ComplexType
     {
     public:
+        CT_Tbl();
         bool has_tblPr() const;
         CT_TblPr* mutable_tblPr();
         const CT_TblPr& get_tblPr() const;
@@ -13794,6 +14026,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_tr() const;
             CT_Row* mutable_tr();
             const CT_Row& get_tr() const;
@@ -13948,45 +14181,46 @@ namespace ns_w {
     class CT_TblLook: public XSD::ComplexType
     {
     public:
+        CT_TblLook();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TblLook& default_instance();
-        bool has_s_firstRow_attr() const;
-        void set_s_firstRow_attr(const ns_s::ST_OnOff& _s_firstRow_attr);
-        const ns_s::ST_OnOff& get_s_firstRow_attr() const;
-        bool has_s_lastRow_attr() const;
-        void set_s_lastRow_attr(const ns_s::ST_OnOff& _s_lastRow_attr);
-        const ns_s::ST_OnOff& get_s_lastRow_attr() const;
-        bool has_s_firstColumn_attr() const;
-        void set_s_firstColumn_attr(const ns_s::ST_OnOff& _s_firstColumn_attr);
-        const ns_s::ST_OnOff& get_s_firstColumn_attr() const;
-        bool has_s_lastColumn_attr() const;
-        void set_s_lastColumn_attr(const ns_s::ST_OnOff& _s_lastColumn_attr);
-        const ns_s::ST_OnOff& get_s_lastColumn_attr() const;
-        bool has_s_noHBand_attr() const;
-        void set_s_noHBand_attr(const ns_s::ST_OnOff& _s_noHBand_attr);
-        const ns_s::ST_OnOff& get_s_noHBand_attr() const;
-        bool has_s_noVBand_attr() const;
-        void set_s_noVBand_attr(const ns_s::ST_OnOff& _s_noVBand_attr);
-        const ns_s::ST_OnOff& get_s_noVBand_attr() const;
+        bool has_firstRow_attr() const;
+        void set_firstRow_attr(const ns_s::ST_OnOff& _firstRow_attr);
+        const ns_s::ST_OnOff& get_firstRow_attr() const;
+        bool has_lastRow_attr() const;
+        void set_lastRow_attr(const ns_s::ST_OnOff& _lastRow_attr);
+        const ns_s::ST_OnOff& get_lastRow_attr() const;
+        bool has_firstColumn_attr() const;
+        void set_firstColumn_attr(const ns_s::ST_OnOff& _firstColumn_attr);
+        const ns_s::ST_OnOff& get_firstColumn_attr() const;
+        bool has_lastColumn_attr() const;
+        void set_lastColumn_attr(const ns_s::ST_OnOff& _lastColumn_attr);
+        const ns_s::ST_OnOff& get_lastColumn_attr() const;
+        bool has_noHBand_attr() const;
+        void set_noHBand_attr(const ns_s::ST_OnOff& _noHBand_attr);
+        const ns_s::ST_OnOff& get_noHBand_attr() const;
+        bool has_noVBand_attr() const;
+        void set_noVBand_attr(const ns_s::ST_OnOff& _noVBand_attr);
+        const ns_s::ST_OnOff& get_noVBand_attr() const;
         bool has_val_attr() const;
         void set_val_attr(const ST_ShortHexNumber& _val_attr);
         const ST_ShortHexNumber& get_val_attr() const;
     protected:
     private:
         static CT_TblLook* default_instance_;
-        bool m_has_s_firstRow_attr;
-        ns_s::ST_OnOff* m_s_firstRow_attr;
-        bool m_has_s_lastRow_attr;
-        ns_s::ST_OnOff* m_s_lastRow_attr;
-        bool m_has_s_firstColumn_attr;
-        ns_s::ST_OnOff* m_s_firstColumn_attr;
-        bool m_has_s_lastColumn_attr;
-        ns_s::ST_OnOff* m_s_lastColumn_attr;
-        bool m_has_s_noHBand_attr;
-        ns_s::ST_OnOff* m_s_noHBand_attr;
-        bool m_has_s_noVBand_attr;
-        ns_s::ST_OnOff* m_s_noVBand_attr;
+        bool m_has_firstRow_attr;
+        ns_s::ST_OnOff* m_firstRow_attr;
+        bool m_has_lastRow_attr;
+        ns_s::ST_OnOff* m_lastRow_attr;
+        bool m_has_firstColumn_attr;
+        ns_s::ST_OnOff* m_firstColumn_attr;
+        bool m_has_lastColumn_attr;
+        ns_s::ST_OnOff* m_lastColumn_attr;
+        bool m_has_noHBand_attr;
+        ns_s::ST_OnOff* m_noHBand_attr;
+        bool m_has_noVBand_attr;
+        ns_s::ST_OnOff* m_noVBand_attr;
         bool m_has_val_attr;
         ST_ShortHexNumber* m_val_attr;
     };
@@ -13994,6 +14228,7 @@ namespace ns_w {
     class CT_FtnPos: public XSD::ComplexType
     {
     public:
+        CT_FtnPos();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FtnPos& default_instance();
@@ -14010,6 +14245,7 @@ namespace ns_w {
     class CT_EdnPos: public XSD::ComplexType
     {
     public:
+        CT_EdnPos();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_EdnPos& default_instance();
@@ -14026,27 +14262,29 @@ namespace ns_w {
     class CT_NumFmt: public XSD::ComplexType
     {
     public:
+        CT_NumFmt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_NumFmt& default_instance();
         bool has_val_attr() const;
         void set_val_attr(const ST_NumberFormat& _val_attr);
         const ST_NumberFormat& get_val_attr() const;
-        bool has_s_format_attr() const;
-        void set_s_format_attr(const ns_s::ST_String& _s_format_attr);
-        const ns_s::ST_String& get_s_format_attr() const;
+        bool has_format_attr() const;
+        void set_format_attr(const ns_s::ST_String& _format_attr);
+        const ns_s::ST_String& get_format_attr() const;
     protected:
     private:
         static CT_NumFmt* default_instance_;
         bool m_has_val_attr;
         ST_NumberFormat* m_val_attr;
-        bool m_has_s_format_attr;
-        ns_s::ST_String* m_s_format_attr;
+        bool m_has_format_attr;
+        ns_s::ST_String* m_format_attr;
     };
 
     class CT_NumRestart: public XSD::ComplexType
     {
     public:
+        CT_NumRestart();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_NumRestart& default_instance();
@@ -14063,20 +14301,21 @@ namespace ns_w {
     class CT_FtnEdnRef: public XSD::ComplexType
     {
     public:
+        CT_FtnEdnRef();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FtnEdnRef& default_instance();
-        bool has_s_customMarkFollows_attr() const;
-        void set_s_customMarkFollows_attr(const ns_s::ST_OnOff& _s_customMarkFollows_attr);
-        const ns_s::ST_OnOff& get_s_customMarkFollows_attr() const;
+        bool has_customMarkFollows_attr() const;
+        void set_customMarkFollows_attr(const ns_s::ST_OnOff& _customMarkFollows_attr);
+        const ns_s::ST_OnOff& get_customMarkFollows_attr() const;
         bool has_id_attr() const;
         void set_id_attr(const ST_DecimalNumber& _id_attr);
         const ST_DecimalNumber& get_id_attr() const;
     protected:
     private:
         static CT_FtnEdnRef* default_instance_;
-        bool m_has_s_customMarkFollows_attr;
-        ns_s::ST_OnOff* m_s_customMarkFollows_attr;
+        bool m_has_customMarkFollows_attr;
+        ns_s::ST_OnOff* m_customMarkFollows_attr;
         bool m_has_id_attr;
         ST_DecimalNumber* m_id_attr;
     };
@@ -14084,6 +14323,7 @@ namespace ns_w {
     class CT_FtnEdnSepRef: public XSD::ComplexType
     {
     public:
+        CT_FtnEdnSepRef();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FtnEdnSepRef& default_instance();
@@ -14100,6 +14340,7 @@ namespace ns_w {
     class CT_FtnEdn: public XSD::ComplexType
     {
     public:
+        CT_FtnEdn();
         CT_CustomXmlBlock* add_customXml();
         CT_SdtBlock* add_sdt();
         CT_P* add_p();
@@ -14144,6 +14385,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_customXml() const;
             CT_CustomXmlBlock* mutable_customXml();
             const CT_CustomXmlBlock& get_customXml() const;
@@ -14308,6 +14550,7 @@ namespace ns_w {
     class CT_FtnProps: public XSD::ComplexType
     {
     public:
+        CT_FtnProps();
         bool has_pos() const;
         CT_FtnPos* mutable_pos();
         const CT_FtnPos& get_pos() const;
@@ -14339,6 +14582,7 @@ namespace ns_w {
     class CT_EdnProps: public XSD::ComplexType
     {
     public:
+        CT_EdnProps();
         bool has_pos() const;
         CT_EdnPos* mutable_pos();
         const CT_EdnPos& get_pos() const;
@@ -14370,6 +14614,7 @@ namespace ns_w {
     class CT_FtnDocProps: public XSD::ComplexType
     {
     public:
+        CT_FtnDocProps();
         bool has_pos() const;
         CT_FtnPos* mutable_pos();
         const CT_FtnPos& get_pos() const;
@@ -14391,6 +14636,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_footnote() const;
             CT_FtnEdnSepRef* mutable_footnote();
             const CT_FtnEdnSepRef& get_footnote() const;
@@ -14414,6 +14660,7 @@ namespace ns_w {
     class CT_EdnDocProps: public XSD::ComplexType
     {
     public:
+        CT_EdnDocProps();
         bool has_pos() const;
         CT_EdnPos* mutable_pos();
         const CT_EdnPos& get_pos() const;
@@ -14435,6 +14682,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_endnote() const;
             CT_FtnEdnSepRef* mutable_endnote();
             const CT_FtnEdnSepRef& get_endnote() const;
@@ -14458,6 +14706,7 @@ namespace ns_w {
     class CT_RecipientData: public XSD::ComplexType
     {
     public:
+        CT_RecipientData();
         bool has_active() const;
         CT_OnOff* mutable_active();
         const CT_OnOff& get_active() const;
@@ -14484,6 +14733,7 @@ namespace ns_w {
     class CT_Base64Binary: public XSD::ComplexType
     {
     public:
+        CT_Base64Binary();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Base64Binary& default_instance();
@@ -14500,6 +14750,7 @@ namespace ns_w {
     class CT_Recipients: public XSD::ComplexType
     {
     public:
+        CT_Recipients();
         CT_RecipientData* add_recipientData();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -14509,6 +14760,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_recipientData() const;
             CT_RecipientData* mutable_recipientData();
             const CT_RecipientData& get_recipientData() const;
@@ -14524,6 +14776,7 @@ namespace ns_w {
     class CT_OdsoFieldMapData: public XSD::ComplexType
     {
     public:
+        CT_OdsoFieldMapData();
         bool has_type() const;
         CT_MailMergeOdsoFMDFieldType* mutable_type();
         const CT_MailMergeOdsoFMDFieldType& get_type() const;
@@ -14565,6 +14818,7 @@ namespace ns_w {
     class CT_MailMergeSourceType: public XSD::ComplexType
     {
     public:
+        CT_MailMergeSourceType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MailMergeSourceType& default_instance();
@@ -14581,6 +14835,7 @@ namespace ns_w {
     class CT_Odso: public XSD::ComplexType
     {
     public:
+        CT_Odso();
         bool has_udl() const;
         CT_String* mutable_udl();
         const CT_String& get_udl() const;
@@ -14609,6 +14864,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_fieldMapData() const;
             CT_OdsoFieldMapData* mutable_fieldMapData();
             const CT_OdsoFieldMapData& get_fieldMapData() const;
@@ -14641,6 +14897,7 @@ namespace ns_w {
     class CT_MailMerge: public XSD::ComplexType
     {
     public:
+        CT_MailMerge();
         bool has_mainDocumentType() const;
         CT_MailMergeDocType* mutable_mainDocumentType();
         const CT_MailMergeDocType& get_mainDocumentType() const;
@@ -14732,6 +14989,7 @@ namespace ns_w {
     class CT_TargetScreenSz: public XSD::ComplexType
     {
     public:
+        CT_TargetScreenSz();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TargetScreenSz& default_instance();
@@ -14748,6 +15006,7 @@ namespace ns_w {
     class CT_Compat: public XSD::ComplexType
     {
     public:
+        CT_Compat();
         bool has_useSingleBorderforContiguousCells() const;
         CT_OnOff* mutable_useSingleBorderforContiguousCells();
         const CT_OnOff& get_useSingleBorderforContiguousCells() const;
@@ -14952,6 +15211,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_compatSetting() const;
             CT_CompatSetting* mutable_compatSetting();
             const CT_CompatSetting& get_compatSetting() const;
@@ -15097,53 +15357,56 @@ namespace ns_w {
     class CT_CompatSetting: public XSD::ComplexType
     {
     public:
+        CT_CompatSetting();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CompatSetting& default_instance();
-        bool has_s_name_attr() const;
-        void set_s_name_attr(const ns_s::ST_String& _s_name_attr);
-        const ns_s::ST_String& get_s_name_attr() const;
-        bool has_s_uri_attr() const;
-        void set_s_uri_attr(const ns_s::ST_String& _s_uri_attr);
-        const ns_s::ST_String& get_s_uri_attr() const;
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_String& _s_val_attr);
-        const ns_s::ST_String& get_s_val_attr() const;
+        bool has_name_attr() const;
+        void set_name_attr(const ns_s::ST_String& _name_attr);
+        const ns_s::ST_String& get_name_attr() const;
+        bool has_uri_attr() const;
+        void set_uri_attr(const ns_s::ST_String& _uri_attr);
+        const ns_s::ST_String& get_uri_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_String& _val_attr);
+        const ns_s::ST_String& get_val_attr() const;
     protected:
     private:
         static CT_CompatSetting* default_instance_;
-        bool m_has_s_name_attr;
-        ns_s::ST_String* m_s_name_attr;
-        bool m_has_s_uri_attr;
-        ns_s::ST_String* m_s_uri_attr;
-        bool m_has_s_val_attr;
-        ns_s::ST_String* m_s_val_attr;
+        bool m_has_name_attr;
+        ns_s::ST_String* m_name_attr;
+        bool m_has_uri_attr;
+        ns_s::ST_String* m_uri_attr;
+        bool m_has_val_attr;
+        ns_s::ST_String* m_val_attr;
     };
 
     class CT_DocVar: public XSD::ComplexType
     {
     public:
+        CT_DocVar();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocVar& default_instance();
-        bool has_s_name_attr() const;
-        void set_s_name_attr(const ns_s::ST_String& _s_name_attr);
-        const ns_s::ST_String& get_s_name_attr() const;
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_String& _s_val_attr);
-        const ns_s::ST_String& get_s_val_attr() const;
+        bool has_name_attr() const;
+        void set_name_attr(const ns_s::ST_String& _name_attr);
+        const ns_s::ST_String& get_name_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_String& _val_attr);
+        const ns_s::ST_String& get_val_attr() const;
     protected:
     private:
         static CT_DocVar* default_instance_;
-        bool m_has_s_name_attr;
-        ns_s::ST_String* m_s_name_attr;
-        bool m_has_s_val_attr;
-        ns_s::ST_String* m_s_val_attr;
+        bool m_has_name_attr;
+        ns_s::ST_String* m_name_attr;
+        bool m_has_val_attr;
+        ns_s::ST_String* m_val_attr;
     };
 
     class CT_DocVars: public XSD::ComplexType
     {
     public:
+        CT_DocVars();
         CT_DocVar* add_docVar();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -15153,6 +15416,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_docVar() const;
             CT_DocVar* mutable_docVar();
             const CT_DocVar& get_docVar() const;
@@ -15168,6 +15432,7 @@ namespace ns_w {
     class CT_DocRsids: public XSD::ComplexType
     {
     public:
+        CT_DocRsids();
         bool has_rsidRoot() const;
         CT_LongHexNumber* mutable_rsidRoot();
         const CT_LongHexNumber& get_rsidRoot() const;
@@ -15180,6 +15445,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_rsid() const;
             CT_LongHexNumber* mutable_rsid();
             const CT_LongHexNumber& get_rsid() const;
@@ -15197,6 +15463,7 @@ namespace ns_w {
     class CT_CharacterSpacing: public XSD::ComplexType
     {
     public:
+        CT_CharacterSpacing();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CharacterSpacing& default_instance();
@@ -15213,27 +15480,29 @@ namespace ns_w {
     class CT_SaveThroughXslt: public XSD::ComplexType
     {
     public:
+        CT_SaveThroughXslt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SaveThroughXslt& default_instance();
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
-        bool has_s_solutionID_attr() const;
-        void set_s_solutionID_attr(const ns_s::ST_String& _s_solutionID_attr);
-        const ns_s::ST_String& get_s_solutionID_attr() const;
+        bool has_solutionID_attr() const;
+        void set_solutionID_attr(const ns_s::ST_String& _solutionID_attr);
+        const ns_s::ST_String& get_solutionID_attr() const;
     protected:
     private:
         static CT_SaveThroughXslt* default_instance_;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
-        bool m_has_s_solutionID_attr;
-        ns_s::ST_String* m_s_solutionID_attr;
+        bool m_has_solutionID_attr;
+        ns_s::ST_String* m_solutionID_attr;
     };
 
     class CT_RPrDefault: public XSD::ComplexType
     {
     public:
+        CT_RPrDefault();
         bool has_rPr() const;
         CT_RPr* mutable_rPr();
         const CT_RPr& get_rPr() const;
@@ -15250,6 +15519,7 @@ namespace ns_w {
     class CT_PPrDefault: public XSD::ComplexType
     {
     public:
+        CT_PPrDefault();
         bool has_pPr() const;
         CT_PPrGeneral* mutable_pPr();
         const CT_PPrGeneral& get_pPr() const;
@@ -15266,6 +15536,7 @@ namespace ns_w {
     class CT_DocDefaults: public XSD::ComplexType
     {
     public:
+        CT_DocDefaults();
         bool has_rPrDefault() const;
         CT_RPrDefault* mutable_rPrDefault();
         const CT_RPrDefault& get_rPrDefault() const;
@@ -15287,6 +15558,7 @@ namespace ns_w {
     class CT_ColorSchemeMapping: public XSD::ComplexType
     {
     public:
+        CT_ColorSchemeMapping();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ColorSchemeMapping& default_instance();
@@ -15358,12 +15630,13 @@ namespace ns_w {
     class CT_ReadingModeInkLockDown: public XSD::ComplexType
     {
     public:
+        CT_ReadingModeInkLockDown();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ReadingModeInkLockDown& default_instance();
-        bool has_s_actualPg_attr() const;
-        void set_s_actualPg_attr(const ns_s::ST_OnOff& _s_actualPg_attr);
-        const ns_s::ST_OnOff& get_s_actualPg_attr() const;
+        bool has_actualPg_attr() const;
+        void set_actualPg_attr(const ns_s::ST_OnOff& _actualPg_attr);
+        const ns_s::ST_OnOff& get_actualPg_attr() const;
         bool has_w_attr() const;
         void set_w_attr(const ST_PixelsMeasure& _w_attr);
         const ST_PixelsMeasure& get_w_attr() const;
@@ -15376,8 +15649,8 @@ namespace ns_w {
     protected:
     private:
         static CT_ReadingModeInkLockDown* default_instance_;
-        bool m_has_s_actualPg_attr;
-        ns_s::ST_OnOff* m_s_actualPg_attr;
+        bool m_has_actualPg_attr;
+        ns_s::ST_OnOff* m_actualPg_attr;
         bool m_has_w_attr;
         ST_PixelsMeasure* m_w_attr;
         bool m_has_h_attr;
@@ -15389,15 +15662,16 @@ namespace ns_w {
     class CT_WriteProtection: public XSD::ComplexType
     {
     public:
+        CT_WriteProtection();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WriteProtection& default_instance();
-        bool has_s_recommended_attr() const;
-        void set_s_recommended_attr(const ns_s::ST_OnOff& _s_recommended_attr);
-        const ns_s::ST_OnOff& get_s_recommended_attr() const;
-        bool has_s_algorithmName_attr() const;
-        void set_s_algorithmName_attr(const ns_s::ST_String& _s_algorithmName_attr);
-        const ns_s::ST_String& get_s_algorithmName_attr() const;
+        bool has_recommended_attr() const;
+        void set_recommended_attr(const ns_s::ST_OnOff& _recommended_attr);
+        const ns_s::ST_OnOff& get_recommended_attr() const;
+        bool has_algorithmName_attr() const;
+        void set_algorithmName_attr(const ns_s::ST_String& _algorithmName_attr);
+        const ns_s::ST_String& get_algorithmName_attr() const;
         bool has_hashValue_attr() const;
         void set_hashValue_attr(const XSD::base64Binary_& _hashValue_attr);
         const XSD::base64Binary_& get_hashValue_attr() const;
@@ -15407,36 +15681,36 @@ namespace ns_w {
         bool has_spinCount_attr() const;
         void set_spinCount_attr(const ST_DecimalNumber& _spinCount_attr);
         const ST_DecimalNumber& get_spinCount_attr() const;
-        bool has_s_cryptProviderType_attr() const;
-        void set_s_cryptProviderType_attr(const ns_s::ST_CryptProv& _s_cryptProviderType_attr);
-        const ns_s::ST_CryptProv& get_s_cryptProviderType_attr() const;
-        bool has_s_cryptAlgorithmClass_attr() const;
-        void set_s_cryptAlgorithmClass_attr(const ns_s::ST_AlgClass& _s_cryptAlgorithmClass_attr);
-        const ns_s::ST_AlgClass& get_s_cryptAlgorithmClass_attr() const;
-        bool has_s_cryptAlgorithmType_attr() const;
-        void set_s_cryptAlgorithmType_attr(const ns_s::ST_AlgType& _s_cryptAlgorithmType_attr);
-        const ns_s::ST_AlgType& get_s_cryptAlgorithmType_attr() const;
+        bool has_cryptProviderType_attr() const;
+        void set_cryptProviderType_attr(const ns_s::ST_CryptProv& _cryptProviderType_attr);
+        const ns_s::ST_CryptProv& get_cryptProviderType_attr() const;
+        bool has_cryptAlgorithmClass_attr() const;
+        void set_cryptAlgorithmClass_attr(const ns_s::ST_AlgClass& _cryptAlgorithmClass_attr);
+        const ns_s::ST_AlgClass& get_cryptAlgorithmClass_attr() const;
+        bool has_cryptAlgorithmType_attr() const;
+        void set_cryptAlgorithmType_attr(const ns_s::ST_AlgType& _cryptAlgorithmType_attr);
+        const ns_s::ST_AlgType& get_cryptAlgorithmType_attr() const;
         bool has_cryptAlgorithmSid_attr() const;
         void set_cryptAlgorithmSid_attr(const ST_DecimalNumber& _cryptAlgorithmSid_attr);
         const ST_DecimalNumber& get_cryptAlgorithmSid_attr() const;
         bool has_cryptSpinCount_attr() const;
         void set_cryptSpinCount_attr(const ST_DecimalNumber& _cryptSpinCount_attr);
         const ST_DecimalNumber& get_cryptSpinCount_attr() const;
-        bool has_s_cryptProvider_attr() const;
-        void set_s_cryptProvider_attr(const ns_s::ST_String& _s_cryptProvider_attr);
-        const ns_s::ST_String& get_s_cryptProvider_attr() const;
+        bool has_cryptProvider_attr() const;
+        void set_cryptProvider_attr(const ns_s::ST_String& _cryptProvider_attr);
+        const ns_s::ST_String& get_cryptProvider_attr() const;
         bool has_algIdExt_attr() const;
         void set_algIdExt_attr(const ST_LongHexNumber& _algIdExt_attr);
         const ST_LongHexNumber& get_algIdExt_attr() const;
-        bool has_s_algIdExtSource_attr() const;
-        void set_s_algIdExtSource_attr(const ns_s::ST_String& _s_algIdExtSource_attr);
-        const ns_s::ST_String& get_s_algIdExtSource_attr() const;
+        bool has_algIdExtSource_attr() const;
+        void set_algIdExtSource_attr(const ns_s::ST_String& _algIdExtSource_attr);
+        const ns_s::ST_String& get_algIdExtSource_attr() const;
         bool has_cryptProviderTypeExt_attr() const;
         void set_cryptProviderTypeExt_attr(const ST_LongHexNumber& _cryptProviderTypeExt_attr);
         const ST_LongHexNumber& get_cryptProviderTypeExt_attr() const;
-        bool has_s_cryptProviderTypeExtSource_attr() const;
-        void set_s_cryptProviderTypeExtSource_attr(const ns_s::ST_String& _s_cryptProviderTypeExtSource_attr);
-        const ns_s::ST_String& get_s_cryptProviderTypeExtSource_attr() const;
+        bool has_cryptProviderTypeExtSource_attr() const;
+        void set_cryptProviderTypeExtSource_attr(const ns_s::ST_String& _cryptProviderTypeExtSource_attr);
+        const ns_s::ST_String& get_cryptProviderTypeExtSource_attr() const;
         bool has_hash_attr() const;
         void set_hash_attr(const XSD::base64Binary_& _hash_attr);
         const XSD::base64Binary_& get_hash_attr() const;
@@ -15446,36 +15720,36 @@ namespace ns_w {
     protected:
     private:
         static CT_WriteProtection* default_instance_;
-        bool m_has_s_recommended_attr;
-        ns_s::ST_OnOff* m_s_recommended_attr;
-        bool m_has_s_algorithmName_attr;
-        ns_s::ST_String* m_s_algorithmName_attr;
+        bool m_has_recommended_attr;
+        ns_s::ST_OnOff* m_recommended_attr;
+        bool m_has_algorithmName_attr;
+        ns_s::ST_String* m_algorithmName_attr;
         bool m_has_hashValue_attr;
         XSD::base64Binary_ m_hashValue_attr;
         bool m_has_saltValue_attr;
         XSD::base64Binary_ m_saltValue_attr;
         bool m_has_spinCount_attr;
         ST_DecimalNumber* m_spinCount_attr;
-        bool m_has_s_cryptProviderType_attr;
-        ns_s::ST_CryptProv* m_s_cryptProviderType_attr;
-        bool m_has_s_cryptAlgorithmClass_attr;
-        ns_s::ST_AlgClass* m_s_cryptAlgorithmClass_attr;
-        bool m_has_s_cryptAlgorithmType_attr;
-        ns_s::ST_AlgType* m_s_cryptAlgorithmType_attr;
+        bool m_has_cryptProviderType_attr;
+        ns_s::ST_CryptProv* m_cryptProviderType_attr;
+        bool m_has_cryptAlgorithmClass_attr;
+        ns_s::ST_AlgClass* m_cryptAlgorithmClass_attr;
+        bool m_has_cryptAlgorithmType_attr;
+        ns_s::ST_AlgType* m_cryptAlgorithmType_attr;
         bool m_has_cryptAlgorithmSid_attr;
         ST_DecimalNumber* m_cryptAlgorithmSid_attr;
         bool m_has_cryptSpinCount_attr;
         ST_DecimalNumber* m_cryptSpinCount_attr;
-        bool m_has_s_cryptProvider_attr;
-        ns_s::ST_String* m_s_cryptProvider_attr;
+        bool m_has_cryptProvider_attr;
+        ns_s::ST_String* m_cryptProvider_attr;
         bool m_has_algIdExt_attr;
         ST_LongHexNumber* m_algIdExt_attr;
-        bool m_has_s_algIdExtSource_attr;
-        ns_s::ST_String* m_s_algIdExtSource_attr;
+        bool m_has_algIdExtSource_attr;
+        ns_s::ST_String* m_algIdExtSource_attr;
         bool m_has_cryptProviderTypeExt_attr;
         ST_LongHexNumber* m_cryptProviderTypeExt_attr;
-        bool m_has_s_cryptProviderTypeExtSource_attr;
-        ns_s::ST_String* m_s_cryptProviderTypeExtSource_attr;
+        bool m_has_cryptProviderTypeExtSource_attr;
+        ns_s::ST_String* m_cryptProviderTypeExtSource_attr;
         bool m_has_hash_attr;
         XSD::base64Binary_ m_hash_attr;
         bool m_has_salt_attr;
@@ -15485,6 +15759,7 @@ namespace ns_w {
     class CT_Settings: public XSD::ComplexType
     {
     public:
+        CT_Settings();
         bool has_writeProtection() const;
         CT_WriteProtection* mutable_writeProtection();
         const CT_WriteProtection& get_writeProtection() const;
@@ -15633,6 +15908,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_activeWritingStyle() const;
             CT_WritingStyle* mutable_activeWritingStyle();
             const CT_WritingStyle& get_activeWritingStyle() const;
@@ -16070,6 +16346,7 @@ namespace ns_w {
     class CT_StyleSort: public XSD::ComplexType
     {
     public:
+        CT_StyleSort();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_StyleSort& default_instance();
@@ -16086,90 +16363,91 @@ namespace ns_w {
     class CT_StylePaneFilter: public XSD::ComplexType
     {
     public:
+        CT_StylePaneFilter();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_StylePaneFilter& default_instance();
-        bool has_s_allStyles_attr() const;
-        void set_s_allStyles_attr(const ns_s::ST_OnOff& _s_allStyles_attr);
-        const ns_s::ST_OnOff& get_s_allStyles_attr() const;
-        bool has_s_customStyles_attr() const;
-        void set_s_customStyles_attr(const ns_s::ST_OnOff& _s_customStyles_attr);
-        const ns_s::ST_OnOff& get_s_customStyles_attr() const;
-        bool has_s_latentStyles_attr() const;
-        void set_s_latentStyles_attr(const ns_s::ST_OnOff& _s_latentStyles_attr);
-        const ns_s::ST_OnOff& get_s_latentStyles_attr() const;
-        bool has_s_stylesInUse_attr() const;
-        void set_s_stylesInUse_attr(const ns_s::ST_OnOff& _s_stylesInUse_attr);
-        const ns_s::ST_OnOff& get_s_stylesInUse_attr() const;
-        bool has_s_headingStyles_attr() const;
-        void set_s_headingStyles_attr(const ns_s::ST_OnOff& _s_headingStyles_attr);
-        const ns_s::ST_OnOff& get_s_headingStyles_attr() const;
-        bool has_s_numberingStyles_attr() const;
-        void set_s_numberingStyles_attr(const ns_s::ST_OnOff& _s_numberingStyles_attr);
-        const ns_s::ST_OnOff& get_s_numberingStyles_attr() const;
-        bool has_s_tableStyles_attr() const;
-        void set_s_tableStyles_attr(const ns_s::ST_OnOff& _s_tableStyles_attr);
-        const ns_s::ST_OnOff& get_s_tableStyles_attr() const;
-        bool has_s_directFormattingOnRuns_attr() const;
-        void set_s_directFormattingOnRuns_attr(const ns_s::ST_OnOff& _s_directFormattingOnRuns_attr);
-        const ns_s::ST_OnOff& get_s_directFormattingOnRuns_attr() const;
-        bool has_s_directFormattingOnParagraphs_attr() const;
-        void set_s_directFormattingOnParagraphs_attr(const ns_s::ST_OnOff& _s_directFormattingOnParagraphs_attr);
-        const ns_s::ST_OnOff& get_s_directFormattingOnParagraphs_attr() const;
-        bool has_s_directFormattingOnNumbering_attr() const;
-        void set_s_directFormattingOnNumbering_attr(const ns_s::ST_OnOff& _s_directFormattingOnNumbering_attr);
-        const ns_s::ST_OnOff& get_s_directFormattingOnNumbering_attr() const;
-        bool has_s_directFormattingOnTables_attr() const;
-        void set_s_directFormattingOnTables_attr(const ns_s::ST_OnOff& _s_directFormattingOnTables_attr);
-        const ns_s::ST_OnOff& get_s_directFormattingOnTables_attr() const;
-        bool has_s_clearFormatting_attr() const;
-        void set_s_clearFormatting_attr(const ns_s::ST_OnOff& _s_clearFormatting_attr);
-        const ns_s::ST_OnOff& get_s_clearFormatting_attr() const;
-        bool has_s_top3HeadingStyles_attr() const;
-        void set_s_top3HeadingStyles_attr(const ns_s::ST_OnOff& _s_top3HeadingStyles_attr);
-        const ns_s::ST_OnOff& get_s_top3HeadingStyles_attr() const;
-        bool has_s_visibleStyles_attr() const;
-        void set_s_visibleStyles_attr(const ns_s::ST_OnOff& _s_visibleStyles_attr);
-        const ns_s::ST_OnOff& get_s_visibleStyles_attr() const;
-        bool has_s_alternateStyleNames_attr() const;
-        void set_s_alternateStyleNames_attr(const ns_s::ST_OnOff& _s_alternateStyleNames_attr);
-        const ns_s::ST_OnOff& get_s_alternateStyleNames_attr() const;
+        bool has_allStyles_attr() const;
+        void set_allStyles_attr(const ns_s::ST_OnOff& _allStyles_attr);
+        const ns_s::ST_OnOff& get_allStyles_attr() const;
+        bool has_customStyles_attr() const;
+        void set_customStyles_attr(const ns_s::ST_OnOff& _customStyles_attr);
+        const ns_s::ST_OnOff& get_customStyles_attr() const;
+        bool has_latentStyles_attr() const;
+        void set_latentStyles_attr(const ns_s::ST_OnOff& _latentStyles_attr);
+        const ns_s::ST_OnOff& get_latentStyles_attr() const;
+        bool has_stylesInUse_attr() const;
+        void set_stylesInUse_attr(const ns_s::ST_OnOff& _stylesInUse_attr);
+        const ns_s::ST_OnOff& get_stylesInUse_attr() const;
+        bool has_headingStyles_attr() const;
+        void set_headingStyles_attr(const ns_s::ST_OnOff& _headingStyles_attr);
+        const ns_s::ST_OnOff& get_headingStyles_attr() const;
+        bool has_numberingStyles_attr() const;
+        void set_numberingStyles_attr(const ns_s::ST_OnOff& _numberingStyles_attr);
+        const ns_s::ST_OnOff& get_numberingStyles_attr() const;
+        bool has_tableStyles_attr() const;
+        void set_tableStyles_attr(const ns_s::ST_OnOff& _tableStyles_attr);
+        const ns_s::ST_OnOff& get_tableStyles_attr() const;
+        bool has_directFormattingOnRuns_attr() const;
+        void set_directFormattingOnRuns_attr(const ns_s::ST_OnOff& _directFormattingOnRuns_attr);
+        const ns_s::ST_OnOff& get_directFormattingOnRuns_attr() const;
+        bool has_directFormattingOnParagraphs_attr() const;
+        void set_directFormattingOnParagraphs_attr(const ns_s::ST_OnOff& _directFormattingOnParagraphs_attr);
+        const ns_s::ST_OnOff& get_directFormattingOnParagraphs_attr() const;
+        bool has_directFormattingOnNumbering_attr() const;
+        void set_directFormattingOnNumbering_attr(const ns_s::ST_OnOff& _directFormattingOnNumbering_attr);
+        const ns_s::ST_OnOff& get_directFormattingOnNumbering_attr() const;
+        bool has_directFormattingOnTables_attr() const;
+        void set_directFormattingOnTables_attr(const ns_s::ST_OnOff& _directFormattingOnTables_attr);
+        const ns_s::ST_OnOff& get_directFormattingOnTables_attr() const;
+        bool has_clearFormatting_attr() const;
+        void set_clearFormatting_attr(const ns_s::ST_OnOff& _clearFormatting_attr);
+        const ns_s::ST_OnOff& get_clearFormatting_attr() const;
+        bool has_top3HeadingStyles_attr() const;
+        void set_top3HeadingStyles_attr(const ns_s::ST_OnOff& _top3HeadingStyles_attr);
+        const ns_s::ST_OnOff& get_top3HeadingStyles_attr() const;
+        bool has_visibleStyles_attr() const;
+        void set_visibleStyles_attr(const ns_s::ST_OnOff& _visibleStyles_attr);
+        const ns_s::ST_OnOff& get_visibleStyles_attr() const;
+        bool has_alternateStyleNames_attr() const;
+        void set_alternateStyleNames_attr(const ns_s::ST_OnOff& _alternateStyleNames_attr);
+        const ns_s::ST_OnOff& get_alternateStyleNames_attr() const;
         bool has_val_attr() const;
         void set_val_attr(const ST_ShortHexNumber& _val_attr);
         const ST_ShortHexNumber& get_val_attr() const;
     protected:
     private:
         static CT_StylePaneFilter* default_instance_;
-        bool m_has_s_allStyles_attr;
-        ns_s::ST_OnOff* m_s_allStyles_attr;
-        bool m_has_s_customStyles_attr;
-        ns_s::ST_OnOff* m_s_customStyles_attr;
-        bool m_has_s_latentStyles_attr;
-        ns_s::ST_OnOff* m_s_latentStyles_attr;
-        bool m_has_s_stylesInUse_attr;
-        ns_s::ST_OnOff* m_s_stylesInUse_attr;
-        bool m_has_s_headingStyles_attr;
-        ns_s::ST_OnOff* m_s_headingStyles_attr;
-        bool m_has_s_numberingStyles_attr;
-        ns_s::ST_OnOff* m_s_numberingStyles_attr;
-        bool m_has_s_tableStyles_attr;
-        ns_s::ST_OnOff* m_s_tableStyles_attr;
-        bool m_has_s_directFormattingOnRuns_attr;
-        ns_s::ST_OnOff* m_s_directFormattingOnRuns_attr;
-        bool m_has_s_directFormattingOnParagraphs_attr;
-        ns_s::ST_OnOff* m_s_directFormattingOnParagraphs_attr;
-        bool m_has_s_directFormattingOnNumbering_attr;
-        ns_s::ST_OnOff* m_s_directFormattingOnNumbering_attr;
-        bool m_has_s_directFormattingOnTables_attr;
-        ns_s::ST_OnOff* m_s_directFormattingOnTables_attr;
-        bool m_has_s_clearFormatting_attr;
-        ns_s::ST_OnOff* m_s_clearFormatting_attr;
-        bool m_has_s_top3HeadingStyles_attr;
-        ns_s::ST_OnOff* m_s_top3HeadingStyles_attr;
-        bool m_has_s_visibleStyles_attr;
-        ns_s::ST_OnOff* m_s_visibleStyles_attr;
-        bool m_has_s_alternateStyleNames_attr;
-        ns_s::ST_OnOff* m_s_alternateStyleNames_attr;
+        bool m_has_allStyles_attr;
+        ns_s::ST_OnOff* m_allStyles_attr;
+        bool m_has_customStyles_attr;
+        ns_s::ST_OnOff* m_customStyles_attr;
+        bool m_has_latentStyles_attr;
+        ns_s::ST_OnOff* m_latentStyles_attr;
+        bool m_has_stylesInUse_attr;
+        ns_s::ST_OnOff* m_stylesInUse_attr;
+        bool m_has_headingStyles_attr;
+        ns_s::ST_OnOff* m_headingStyles_attr;
+        bool m_has_numberingStyles_attr;
+        ns_s::ST_OnOff* m_numberingStyles_attr;
+        bool m_has_tableStyles_attr;
+        ns_s::ST_OnOff* m_tableStyles_attr;
+        bool m_has_directFormattingOnRuns_attr;
+        ns_s::ST_OnOff* m_directFormattingOnRuns_attr;
+        bool m_has_directFormattingOnParagraphs_attr;
+        ns_s::ST_OnOff* m_directFormattingOnParagraphs_attr;
+        bool m_has_directFormattingOnNumbering_attr;
+        ns_s::ST_OnOff* m_directFormattingOnNumbering_attr;
+        bool m_has_directFormattingOnTables_attr;
+        ns_s::ST_OnOff* m_directFormattingOnTables_attr;
+        bool m_has_clearFormatting_attr;
+        ns_s::ST_OnOff* m_clearFormatting_attr;
+        bool m_has_top3HeadingStyles_attr;
+        ns_s::ST_OnOff* m_top3HeadingStyles_attr;
+        bool m_has_visibleStyles_attr;
+        ns_s::ST_OnOff* m_visibleStyles_attr;
+        bool m_has_alternateStyleNames_attr;
+        ns_s::ST_OnOff* m_alternateStyleNames_attr;
         bool m_has_val_attr;
         ST_ShortHexNumber* m_val_attr;
     };
@@ -16177,6 +16455,7 @@ namespace ns_w {
     class CT_WebSettings: public XSD::ComplexType
     {
     public:
+        CT_WebSettings();
         bool has_frameset() const;
         CT_Frameset* mutable_frameset();
         const CT_Frameset& get_frameset() const;
@@ -16253,6 +16532,7 @@ namespace ns_w {
     class CT_FrameScrollbar: public XSD::ComplexType
     {
     public:
+        CT_FrameScrollbar();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FrameScrollbar& default_instance();
@@ -16269,27 +16549,29 @@ namespace ns_w {
     class CT_OptimizeForBrowser: public XSD::ComplexType
     {
     public:
+        CT_OptimizeForBrowser();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OptimizeForBrowser& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_OnOff& _s_val_attr);
-        const ns_s::ST_OnOff& get_s_val_attr() const;
-        bool has_s_target_attr() const;
-        void set_s_target_attr(const ns_s::ST_String& _s_target_attr);
-        const ns_s::ST_String& get_s_target_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_OnOff& _val_attr);
+        const ns_s::ST_OnOff& get_val_attr() const;
+        bool has_target_attr() const;
+        void set_target_attr(const ns_s::ST_String& _target_attr);
+        const ns_s::ST_String& get_target_attr() const;
     protected:
     private:
         static CT_OptimizeForBrowser* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_OnOff* m_s_val_attr;
-        bool m_has_s_target_attr;
-        ns_s::ST_String* m_s_target_attr;
+        bool m_has_val_attr;
+        ns_s::ST_OnOff* m_val_attr;
+        bool m_has_target_attr;
+        ns_s::ST_String* m_target_attr;
     };
 
     class CT_Frame: public XSD::ComplexType
     {
     public:
+        CT_Frame();
         bool has_sz() const;
         CT_String* mutable_sz();
         const CT_String& get_sz() const;
@@ -16351,6 +16633,7 @@ namespace ns_w {
     class CT_FrameLayout: public XSD::ComplexType
     {
     public:
+        CT_FrameLayout();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FrameLayout& default_instance();
@@ -16367,6 +16650,7 @@ namespace ns_w {
     class CT_FramesetSplitbar: public XSD::ComplexType
     {
     public:
+        CT_FramesetSplitbar();
         bool has_w() const;
         CT_TwipsMeasure* mutable_w();
         const CT_TwipsMeasure& get_w() const;
@@ -16398,6 +16682,7 @@ namespace ns_w {
     class CT_Frameset: public XSD::ComplexType
     {
     public:
+        CT_Frameset();
         bool has_sz() const;
         CT_String* mutable_sz();
         const CT_String& get_sz() const;
@@ -16420,6 +16705,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_frameset() const;
             CT_Frameset* mutable_frameset();
             const CT_Frameset& get_frameset() const;
@@ -16448,6 +16734,7 @@ namespace ns_w {
     class CT_NumPicBullet: public XSD::ComplexType
     {
     public:
+        CT_NumPicBullet();
         bool has_pict() const;
         CT_Picture* mutable_pict();
         const CT_Picture& get_pict() const;
@@ -16474,6 +16761,7 @@ namespace ns_w {
     class CT_LevelSuffix: public XSD::ComplexType
     {
     public:
+        CT_LevelSuffix();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LevelSuffix& default_instance();
@@ -16490,46 +16778,48 @@ namespace ns_w {
     class CT_LevelText: public XSD::ComplexType
     {
     public:
+        CT_LevelText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LevelText& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_String& _s_val_attr);
-        const ns_s::ST_String& get_s_val_attr() const;
-        bool has_s_null_attr() const;
-        void set_s_null_attr(const ns_s::ST_OnOff& _s_null_attr);
-        const ns_s::ST_OnOff& get_s_null_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_String& _val_attr);
+        const ns_s::ST_String& get_val_attr() const;
+        bool has_null_attr() const;
+        void set_null_attr(const ns_s::ST_OnOff& _null_attr);
+        const ns_s::ST_OnOff& get_null_attr() const;
     protected:
     private:
         static CT_LevelText* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_String* m_s_val_attr;
-        bool m_has_s_null_attr;
-        ns_s::ST_OnOff* m_s_null_attr;
+        bool m_has_val_attr;
+        ns_s::ST_String* m_val_attr;
+        bool m_has_null_attr;
+        ns_s::ST_OnOff* m_null_attr;
     };
 
     class CT_LvlLegacy: public XSD::ComplexType
     {
     public:
+        CT_LvlLegacy();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LvlLegacy& default_instance();
-        bool has_s_legacy_attr() const;
-        void set_s_legacy_attr(const ns_s::ST_OnOff& _s_legacy_attr);
-        const ns_s::ST_OnOff& get_s_legacy_attr() const;
-        bool has_s_legacySpace_attr() const;
-        void set_s_legacySpace_attr(const ns_s::ST_TwipsMeasure& _s_legacySpace_attr);
-        const ns_s::ST_TwipsMeasure& get_s_legacySpace_attr() const;
+        bool has_legacy_attr() const;
+        void set_legacy_attr(const ns_s::ST_OnOff& _legacy_attr);
+        const ns_s::ST_OnOff& get_legacy_attr() const;
+        bool has_legacySpace_attr() const;
+        void set_legacySpace_attr(const ns_s::ST_TwipsMeasure& _legacySpace_attr);
+        const ns_s::ST_TwipsMeasure& get_legacySpace_attr() const;
         bool has_legacyIndent_attr() const;
         void set_legacyIndent_attr(const ST_SignedTwipsMeasure& _legacyIndent_attr);
         const ST_SignedTwipsMeasure& get_legacyIndent_attr() const;
     protected:
     private:
         static CT_LvlLegacy* default_instance_;
-        bool m_has_s_legacy_attr;
-        ns_s::ST_OnOff* m_s_legacy_attr;
-        bool m_has_s_legacySpace_attr;
-        ns_s::ST_TwipsMeasure* m_s_legacySpace_attr;
+        bool m_has_legacy_attr;
+        ns_s::ST_OnOff* m_legacy_attr;
+        bool m_has_legacySpace_attr;
+        ns_s::ST_TwipsMeasure* m_legacySpace_attr;
         bool m_has_legacyIndent_attr;
         ST_SignedTwipsMeasure* m_legacyIndent_attr;
     };
@@ -16537,6 +16827,7 @@ namespace ns_w {
     class CT_Lvl: public XSD::ComplexType
     {
     public:
+        CT_Lvl();
         bool has_start() const;
         CT_DecimalNumber* mutable_start();
         const CT_DecimalNumber& get_start() const;
@@ -16582,9 +16873,9 @@ namespace ns_w {
         bool has_tplc_attr() const;
         void set_tplc_attr(const ST_LongHexNumber& _tplc_attr);
         const ST_LongHexNumber& get_tplc_attr() const;
-        bool has_s_tentative_attr() const;
-        void set_s_tentative_attr(const ns_s::ST_OnOff& _s_tentative_attr);
-        const ns_s::ST_OnOff& get_s_tentative_attr() const;
+        bool has_tentative_attr() const;
+        void set_tentative_attr(const ns_s::ST_OnOff& _tentative_attr);
+        const ns_s::ST_OnOff& get_tentative_attr() const;
     protected:
     private:
         bool m_has_start;
@@ -16616,13 +16907,14 @@ namespace ns_w {
         ST_DecimalNumber* m_ilvl_attr;
         bool m_has_tplc_attr;
         ST_LongHexNumber* m_tplc_attr;
-        bool m_has_s_tentative_attr;
-        ns_s::ST_OnOff* m_s_tentative_attr;
+        bool m_has_tentative_attr;
+        ns_s::ST_OnOff* m_tentative_attr;
     };
 
     class CT_MultiLevelType: public XSD::ComplexType
     {
     public:
+        CT_MultiLevelType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MultiLevelType& default_instance();
@@ -16639,6 +16931,7 @@ namespace ns_w {
     class CT_AbstractNum: public XSD::ComplexType
     {
     public:
+        CT_AbstractNum();
         bool has_nsid() const;
         CT_LongHexNumber* mutable_nsid();
         const CT_LongHexNumber& get_nsid() const;
@@ -16669,6 +16962,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_lvl() const;
             CT_Lvl* mutable_lvl();
             const CT_Lvl& get_lvl() const;
@@ -16698,6 +16992,7 @@ namespace ns_w {
     class CT_NumLvl: public XSD::ComplexType
     {
     public:
+        CT_NumLvl();
         bool has_startOverride() const;
         CT_DecimalNumber* mutable_startOverride();
         const CT_DecimalNumber& get_startOverride() const;
@@ -16724,6 +17019,7 @@ namespace ns_w {
     class CT_Num: public XSD::ComplexType
     {
     public:
+        CT_Num();
         bool has_abstractNumId() const;
         CT_DecimalNumber* mutable_abstractNumId();
         const CT_DecimalNumber& get_abstractNumId() const;
@@ -16739,6 +17035,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_lvlOverride() const;
             CT_NumLvl* mutable_lvlOverride();
             const CT_NumLvl& get_lvlOverride() const;
@@ -16758,6 +17055,7 @@ namespace ns_w {
     class CT_Numbering: public XSD::ComplexType
     {
     public:
+        CT_Numbering();
         CT_NumPicBullet* add_numPicBullet();
         CT_AbstractNum* add_abstractNum();
         CT_Num* add_num();
@@ -16770,6 +17068,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_numPicBullet() const;
             CT_NumPicBullet* mutable_numPicBullet();
             const CT_NumPicBullet& get_numPicBullet() const;
@@ -16800,6 +17099,7 @@ namespace ns_w {
     class CT_TblStylePr: public XSD::ComplexType
     {
     public:
+        CT_TblStylePr();
         bool has_pPr() const;
         CT_PPrGeneral* mutable_pPr();
         const CT_PPrGeneral& get_pPr() const;
@@ -16841,6 +17141,7 @@ namespace ns_w {
     class CT_Style: public XSD::ComplexType
     {
     public:
+        CT_Style();
         bool has_name() const;
         CT_String* mutable_name();
         const CT_String& get_name() const;
@@ -16911,20 +17212,21 @@ namespace ns_w {
         bool has_type_attr() const;
         void set_type_attr(const ST_StyleType& _type_attr);
         const ST_StyleType& get_type_attr() const;
-        bool has_s_styleId_attr() const;
-        void set_s_styleId_attr(const ns_s::ST_String& _s_styleId_attr);
-        const ns_s::ST_String& get_s_styleId_attr() const;
-        bool has_s_default_attr() const;
-        void set_s_default_attr(const ns_s::ST_OnOff& _s_default_attr);
-        const ns_s::ST_OnOff& get_s_default_attr() const;
-        bool has_s_customStyle_attr() const;
-        void set_s_customStyle_attr(const ns_s::ST_OnOff& _s_customStyle_attr);
-        const ns_s::ST_OnOff& get_s_customStyle_attr() const;
+        bool has_styleId_attr() const;
+        void set_styleId_attr(const ns_s::ST_String& _styleId_attr);
+        const ns_s::ST_String& get_styleId_attr() const;
+        bool has_default_attr() const;
+        void set_default_attr(const ns_s::ST_OnOff& _default_attr);
+        const ns_s::ST_OnOff& get_default_attr() const;
+        bool has_customStyle_attr() const;
+        void set_customStyle_attr(const ns_s::ST_OnOff& _customStyle_attr);
+        const ns_s::ST_OnOff& get_customStyle_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_tblStylePr() const;
             CT_TblStylePr* mutable_tblStylePr();
             const CT_TblStylePr& get_tblStylePr() const;
@@ -16979,77 +17281,79 @@ namespace ns_w {
         static CT_Style* default_instance_;
         bool m_has_type_attr;
         ST_StyleType* m_type_attr;
-        bool m_has_s_styleId_attr;
-        ns_s::ST_String* m_s_styleId_attr;
-        bool m_has_s_default_attr;
-        ns_s::ST_OnOff* m_s_default_attr;
-        bool m_has_s_customStyle_attr;
-        ns_s::ST_OnOff* m_s_customStyle_attr;
+        bool m_has_styleId_attr;
+        ns_s::ST_String* m_styleId_attr;
+        bool m_has_default_attr;
+        ns_s::ST_OnOff* m_default_attr;
+        bool m_has_customStyle_attr;
+        ns_s::ST_OnOff* m_customStyle_attr;
     };
 
     class CT_LsdException: public XSD::ComplexType
     {
     public:
+        CT_LsdException();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LsdException& default_instance();
-        bool has_s_name_attr() const;
-        void set_s_name_attr(const ns_s::ST_String& _s_name_attr);
-        const ns_s::ST_String& get_s_name_attr() const;
-        bool has_s_locked_attr() const;
-        void set_s_locked_attr(const ns_s::ST_OnOff& _s_locked_attr);
-        const ns_s::ST_OnOff& get_s_locked_attr() const;
+        bool has_name_attr() const;
+        void set_name_attr(const ns_s::ST_String& _name_attr);
+        const ns_s::ST_String& get_name_attr() const;
+        bool has_locked_attr() const;
+        void set_locked_attr(const ns_s::ST_OnOff& _locked_attr);
+        const ns_s::ST_OnOff& get_locked_attr() const;
         bool has_uiPriority_attr() const;
         void set_uiPriority_attr(const ST_DecimalNumber& _uiPriority_attr);
         const ST_DecimalNumber& get_uiPriority_attr() const;
-        bool has_s_semiHidden_attr() const;
-        void set_s_semiHidden_attr(const ns_s::ST_OnOff& _s_semiHidden_attr);
-        const ns_s::ST_OnOff& get_s_semiHidden_attr() const;
-        bool has_s_unhideWhenUsed_attr() const;
-        void set_s_unhideWhenUsed_attr(const ns_s::ST_OnOff& _s_unhideWhenUsed_attr);
-        const ns_s::ST_OnOff& get_s_unhideWhenUsed_attr() const;
-        bool has_s_qFormat_attr() const;
-        void set_s_qFormat_attr(const ns_s::ST_OnOff& _s_qFormat_attr);
-        const ns_s::ST_OnOff& get_s_qFormat_attr() const;
+        bool has_semiHidden_attr() const;
+        void set_semiHidden_attr(const ns_s::ST_OnOff& _semiHidden_attr);
+        const ns_s::ST_OnOff& get_semiHidden_attr() const;
+        bool has_unhideWhenUsed_attr() const;
+        void set_unhideWhenUsed_attr(const ns_s::ST_OnOff& _unhideWhenUsed_attr);
+        const ns_s::ST_OnOff& get_unhideWhenUsed_attr() const;
+        bool has_qFormat_attr() const;
+        void set_qFormat_attr(const ns_s::ST_OnOff& _qFormat_attr);
+        const ns_s::ST_OnOff& get_qFormat_attr() const;
     protected:
     private:
         static CT_LsdException* default_instance_;
-        bool m_has_s_name_attr;
-        ns_s::ST_String* m_s_name_attr;
-        bool m_has_s_locked_attr;
-        ns_s::ST_OnOff* m_s_locked_attr;
+        bool m_has_name_attr;
+        ns_s::ST_String* m_name_attr;
+        bool m_has_locked_attr;
+        ns_s::ST_OnOff* m_locked_attr;
         bool m_has_uiPriority_attr;
         ST_DecimalNumber* m_uiPriority_attr;
-        bool m_has_s_semiHidden_attr;
-        ns_s::ST_OnOff* m_s_semiHidden_attr;
-        bool m_has_s_unhideWhenUsed_attr;
-        ns_s::ST_OnOff* m_s_unhideWhenUsed_attr;
-        bool m_has_s_qFormat_attr;
-        ns_s::ST_OnOff* m_s_qFormat_attr;
+        bool m_has_semiHidden_attr;
+        ns_s::ST_OnOff* m_semiHidden_attr;
+        bool m_has_unhideWhenUsed_attr;
+        ns_s::ST_OnOff* m_unhideWhenUsed_attr;
+        bool m_has_qFormat_attr;
+        ns_s::ST_OnOff* m_qFormat_attr;
     };
 
     class CT_LatentStyles: public XSD::ComplexType
     {
     public:
+        CT_LatentStyles();
         CT_LsdException* add_lsdException();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LatentStyles& default_instance();
-        bool has_s_defLockedState_attr() const;
-        void set_s_defLockedState_attr(const ns_s::ST_OnOff& _s_defLockedState_attr);
-        const ns_s::ST_OnOff& get_s_defLockedState_attr() const;
+        bool has_defLockedState_attr() const;
+        void set_defLockedState_attr(const ns_s::ST_OnOff& _defLockedState_attr);
+        const ns_s::ST_OnOff& get_defLockedState_attr() const;
         bool has_defUIPriority_attr() const;
         void set_defUIPriority_attr(const ST_DecimalNumber& _defUIPriority_attr);
         const ST_DecimalNumber& get_defUIPriority_attr() const;
-        bool has_s_defSemiHidden_attr() const;
-        void set_s_defSemiHidden_attr(const ns_s::ST_OnOff& _s_defSemiHidden_attr);
-        const ns_s::ST_OnOff& get_s_defSemiHidden_attr() const;
-        bool has_s_defUnhideWhenUsed_attr() const;
-        void set_s_defUnhideWhenUsed_attr(const ns_s::ST_OnOff& _s_defUnhideWhenUsed_attr);
-        const ns_s::ST_OnOff& get_s_defUnhideWhenUsed_attr() const;
-        bool has_s_defQFormat_attr() const;
-        void set_s_defQFormat_attr(const ns_s::ST_OnOff& _s_defQFormat_attr);
-        const ns_s::ST_OnOff& get_s_defQFormat_attr() const;
+        bool has_defSemiHidden_attr() const;
+        void set_defSemiHidden_attr(const ns_s::ST_OnOff& _defSemiHidden_attr);
+        const ns_s::ST_OnOff& get_defSemiHidden_attr() const;
+        bool has_defUnhideWhenUsed_attr() const;
+        void set_defUnhideWhenUsed_attr(const ns_s::ST_OnOff& _defUnhideWhenUsed_attr);
+        const ns_s::ST_OnOff& get_defUnhideWhenUsed_attr() const;
+        bool has_defQFormat_attr() const;
+        void set_defQFormat_attr(const ns_s::ST_OnOff& _defQFormat_attr);
+        const ns_s::ST_OnOff& get_defQFormat_attr() const;
         bool has_count_attr() const;
         void set_count_attr(const ST_DecimalNumber& _count_attr);
         const ST_DecimalNumber& get_count_attr() const;
@@ -17058,6 +17362,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_lsdException() const;
             CT_LsdException* mutable_lsdException();
             const CT_LsdException& get_lsdException() const;
@@ -17068,16 +17373,16 @@ namespace ns_w {
         };
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_LatentStyles* default_instance_;
-        bool m_has_s_defLockedState_attr;
-        ns_s::ST_OnOff* m_s_defLockedState_attr;
+        bool m_has_defLockedState_attr;
+        ns_s::ST_OnOff* m_defLockedState_attr;
         bool m_has_defUIPriority_attr;
         ST_DecimalNumber* m_defUIPriority_attr;
-        bool m_has_s_defSemiHidden_attr;
-        ns_s::ST_OnOff* m_s_defSemiHidden_attr;
-        bool m_has_s_defUnhideWhenUsed_attr;
-        ns_s::ST_OnOff* m_s_defUnhideWhenUsed_attr;
-        bool m_has_s_defQFormat_attr;
-        ns_s::ST_OnOff* m_s_defQFormat_attr;
+        bool m_has_defSemiHidden_attr;
+        ns_s::ST_OnOff* m_defSemiHidden_attr;
+        bool m_has_defUnhideWhenUsed_attr;
+        ns_s::ST_OnOff* m_defUnhideWhenUsed_attr;
+        bool m_has_defQFormat_attr;
+        ns_s::ST_OnOff* m_defQFormat_attr;
         bool m_has_count_attr;
         ST_DecimalNumber* m_count_attr;
     };
@@ -17085,6 +17390,7 @@ namespace ns_w {
     class CT_Styles: public XSD::ComplexType
     {
     public:
+        CT_Styles();
         bool has_docDefaults() const;
         CT_DocDefaults* mutable_docDefaults();
         const CT_DocDefaults& get_docDefaults() const;
@@ -17100,6 +17406,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_style() const;
             CT_Style* mutable_style();
             const CT_Style& get_style() const;
@@ -17119,22 +17426,24 @@ namespace ns_w {
     class CT_Panose: public XSD::ComplexType
     {
     public:
+        CT_Panose();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Panose& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_Panose& _s_val_attr);
-        const ns_s::ST_Panose& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_Panose& _val_attr);
+        const ns_s::ST_Panose& get_val_attr() const;
     protected:
     private:
         static CT_Panose* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_Panose* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_Panose* m_val_attr;
     };
 
     class CT_FontFamily: public XSD::ComplexType
     {
     public:
+        CT_FontFamily();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FontFamily& default_instance();
@@ -17151,6 +17460,7 @@ namespace ns_w {
     class CT_Pitch: public XSD::ComplexType
     {
     public:
+        CT_Pitch();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Pitch& default_instance();
@@ -17167,6 +17477,7 @@ namespace ns_w {
     class CT_FontSig: public XSD::ComplexType
     {
     public:
+        CT_FontSig();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FontSig& default_instance();
@@ -17208,32 +17519,34 @@ namespace ns_w {
     class CT_FontRel: public XSD::ComplexType
     {
     public:
+        CT_FontRel();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FontRel& default_instance();
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
-        bool has_s_fontKey_attr() const;
-        void set_s_fontKey_attr(const ns_s::ST_Guid& _s_fontKey_attr);
-        const ns_s::ST_Guid& get_s_fontKey_attr() const;
-        bool has_s_subsetted_attr() const;
-        void set_s_subsetted_attr(const ns_s::ST_OnOff& _s_subsetted_attr);
-        const ns_s::ST_OnOff& get_s_subsetted_attr() const;
+        bool has_fontKey_attr() const;
+        void set_fontKey_attr(const ns_s::ST_Guid& _fontKey_attr);
+        const ns_s::ST_Guid& get_fontKey_attr() const;
+        bool has_subsetted_attr() const;
+        void set_subsetted_attr(const ns_s::ST_OnOff& _subsetted_attr);
+        const ns_s::ST_OnOff& get_subsetted_attr() const;
     protected:
     private:
         static CT_FontRel* default_instance_;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
-        bool m_has_s_fontKey_attr;
-        ns_s::ST_Guid* m_s_fontKey_attr;
-        bool m_has_s_subsetted_attr;
-        ns_s::ST_OnOff* m_s_subsetted_attr;
+        bool m_has_fontKey_attr;
+        ns_s::ST_Guid* m_fontKey_attr;
+        bool m_has_subsetted_attr;
+        ns_s::ST_OnOff* m_subsetted_attr;
     };
 
     class CT_Font: public XSD::ComplexType
     {
     public:
+        CT_Font();
         bool has_altName() const;
         CT_String* mutable_altName();
         const CT_String& get_altName() const;
@@ -17270,9 +17583,9 @@ namespace ns_w {
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Font& default_instance();
-        bool has_s_name_attr() const;
-        void set_s_name_attr(const ns_s::ST_String& _s_name_attr);
-        const ns_s::ST_String& get_s_name_attr() const;
+        bool has_name_attr() const;
+        void set_name_attr(const ns_s::ST_String& _name_attr);
+        const ns_s::ST_String& get_name_attr() const;
     protected:
     private:
         bool m_has_altName;
@@ -17298,13 +17611,14 @@ namespace ns_w {
         bool m_has_embedBoldItalic;
         CT_FontRel* m_embedBoldItalic;
         static CT_Font* default_instance_;
-        bool m_has_s_name_attr;
-        ns_s::ST_String* m_s_name_attr;
+        bool m_has_name_attr;
+        ns_s::ST_String* m_name_attr;
     };
 
     class CT_FontsList: public XSD::ComplexType
     {
     public:
+        CT_FontsList();
         CT_Font* add_font();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17314,6 +17628,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_font() const;
             CT_Font* mutable_font();
             const CT_Font& get_font() const;
@@ -17329,6 +17644,7 @@ namespace ns_w {
     class CT_DivBdr: public XSD::ComplexType
     {
     public:
+        CT_DivBdr();
         bool has_top() const;
         CT_Border* mutable_top();
         const CT_Border& get_top() const;
@@ -17360,6 +17676,7 @@ namespace ns_w {
     class CT_Div: public XSD::ComplexType
     {
     public:
+        CT_Div();
         bool has_blockQuote() const;
         CT_OnOff* mutable_blockQuote();
         const CT_OnOff& get_blockQuote() const;
@@ -17393,6 +17710,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_divsChild() const;
             CT_Divs* mutable_divsChild();
             const CT_Divs& get_divsChild() const;
@@ -17424,6 +17742,7 @@ namespace ns_w {
     class CT_Divs: public XSD::ComplexType
     {
     public:
+        CT_Divs();
         CT_Div* add_div();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17433,6 +17752,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_div() const;
             CT_Div* mutable_div();
             const CT_Div& get_div() const;
@@ -17448,6 +17768,7 @@ namespace ns_w {
     class CT_TxbxContent: public XSD::ComplexType
     {
     public:
+        CT_TxbxContent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TxbxContent& default_instance();
@@ -17459,6 +17780,7 @@ namespace ns_w {
     class CT_Body: public XSD::ComplexType
     {
     public:
+        CT_Body();
         CT_CustomXmlBlock* add_customXml();
         CT_SdtBlock* add_sdt();
         CT_P* add_p();
@@ -17500,6 +17822,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_customXml() const;
             CT_CustomXmlBlock* mutable_customXml();
             const CT_CustomXmlBlock& get_customXml() const;
@@ -17662,6 +17985,7 @@ namespace ns_w {
     class CT_ShapeDefaults: public XSD::ComplexType
     {
     public:
+        CT_ShapeDefaults();
         void append_o_any(ns_o::Element* _o_any);
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17675,6 +17999,7 @@ namespace ns_w {
     class CT_Comments: public XSD::ComplexType
     {
     public:
+        CT_Comments();
         CT_Comment* add_comment();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17684,6 +18009,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_comment() const;
             CT_Comment* mutable_comment();
             const CT_Comment& get_comment() const;
@@ -17699,6 +18025,7 @@ namespace ns_w {
     class CT_Footnotes: public XSD::ComplexType
     {
     public:
+        CT_Footnotes();
         CT_FtnEdn* add_footnote();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17708,6 +18035,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_footnote() const;
             CT_FtnEdn* mutable_footnote();
             const CT_FtnEdn& get_footnote() const;
@@ -17723,6 +18051,7 @@ namespace ns_w {
     class CT_Endnotes: public XSD::ComplexType
     {
     public:
+        CT_Endnotes();
         CT_FtnEdn* add_endnote();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17732,6 +18061,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_endnote() const;
             CT_FtnEdn* mutable_endnote();
             const CT_FtnEdn& get_endnote() const;
@@ -17747,32 +18077,34 @@ namespace ns_w {
     class CT_SmartTagType: public XSD::ComplexType
     {
     public:
+        CT_SmartTagType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SmartTagType& default_instance();
-        bool has_s_namespaceuri_attr() const;
-        void set_s_namespaceuri_attr(const ns_s::ST_String& _s_namespaceuri_attr);
-        const ns_s::ST_String& get_s_namespaceuri_attr() const;
-        bool has_s_name_attr() const;
-        void set_s_name_attr(const ns_s::ST_String& _s_name_attr);
-        const ns_s::ST_String& get_s_name_attr() const;
-        bool has_s_url_attr() const;
-        void set_s_url_attr(const ns_s::ST_String& _s_url_attr);
-        const ns_s::ST_String& get_s_url_attr() const;
+        bool has_namespaceuri_attr() const;
+        void set_namespaceuri_attr(const ns_s::ST_String& _namespaceuri_attr);
+        const ns_s::ST_String& get_namespaceuri_attr() const;
+        bool has_name_attr() const;
+        void set_name_attr(const ns_s::ST_String& _name_attr);
+        const ns_s::ST_String& get_name_attr() const;
+        bool has_url_attr() const;
+        void set_url_attr(const ns_s::ST_String& _url_attr);
+        const ns_s::ST_String& get_url_attr() const;
     protected:
     private:
         static CT_SmartTagType* default_instance_;
-        bool m_has_s_namespaceuri_attr;
-        ns_s::ST_String* m_s_namespaceuri_attr;
-        bool m_has_s_name_attr;
-        ns_s::ST_String* m_s_name_attr;
-        bool m_has_s_url_attr;
-        ns_s::ST_String* m_s_url_attr;
+        bool m_has_namespaceuri_attr;
+        ns_s::ST_String* m_namespaceuri_attr;
+        bool m_has_name_attr;
+        ns_s::ST_String* m_name_attr;
+        bool m_has_url_attr;
+        ns_s::ST_String* m_url_attr;
     };
 
     class CT_DocPartBehavior: public XSD::ComplexType
     {
     public:
+        CT_DocPartBehavior();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocPartBehavior& default_instance();
@@ -17789,6 +18121,7 @@ namespace ns_w {
     class CT_DocPartBehaviors: public XSD::ComplexType
     {
     public:
+        CT_DocPartBehaviors();
         bool has_behavior() const;
         CT_DocPartBehavior* mutable_behavior();
         const CT_DocPartBehavior& get_behavior() const;
@@ -17805,6 +18138,7 @@ namespace ns_w {
     class CT_DocPartType: public XSD::ComplexType
     {
     public:
+        CT_DocPartType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocPartType& default_instance();
@@ -17821,27 +18155,29 @@ namespace ns_w {
     class CT_DocPartTypes: public XSD::ComplexType
     {
     public:
+        CT_DocPartTypes();
         bool has_type() const;
         CT_DocPartType* mutable_type();
         const CT_DocPartType& get_type() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocPartTypes& default_instance();
-        bool has_s_all_attr() const;
-        void set_s_all_attr(const ns_s::ST_OnOff& _s_all_attr);
-        const ns_s::ST_OnOff& get_s_all_attr() const;
+        bool has_all_attr() const;
+        void set_all_attr(const ns_s::ST_OnOff& _all_attr);
+        const ns_s::ST_OnOff& get_all_attr() const;
     protected:
     private:
         bool m_has_type;
         CT_DocPartType* m_type;
         static CT_DocPartTypes* default_instance_;
-        bool m_has_s_all_attr;
-        ns_s::ST_OnOff* m_s_all_attr;
+        bool m_has_all_attr;
+        ns_s::ST_OnOff* m_all_attr;
     };
 
     class CT_DocPartGallery: public XSD::ComplexType
     {
     public:
+        CT_DocPartGallery();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocPartGallery& default_instance();
@@ -17858,6 +18194,7 @@ namespace ns_w {
     class CT_DocPartCategory: public XSD::ComplexType
     {
     public:
+        CT_DocPartCategory();
         bool has_name() const;
         CT_String* mutable_name();
         const CT_String& get_name() const;
@@ -17879,27 +18216,29 @@ namespace ns_w {
     class CT_DocPartName: public XSD::ComplexType
     {
     public:
+        CT_DocPartName();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocPartName& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_String& _s_val_attr);
-        const ns_s::ST_String& get_s_val_attr() const;
-        bool has_s_decorated_attr() const;
-        void set_s_decorated_attr(const ns_s::ST_OnOff& _s_decorated_attr);
-        const ns_s::ST_OnOff& get_s_decorated_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_String& _val_attr);
+        const ns_s::ST_String& get_val_attr() const;
+        bool has_decorated_attr() const;
+        void set_decorated_attr(const ns_s::ST_OnOff& _decorated_attr);
+        const ns_s::ST_OnOff& get_decorated_attr() const;
     protected:
     private:
         static CT_DocPartName* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_String* m_s_val_attr;
-        bool m_has_s_decorated_attr;
-        ns_s::ST_OnOff* m_s_decorated_attr;
+        bool m_has_val_attr;
+        ns_s::ST_String* m_val_attr;
+        bool m_has_decorated_attr;
+        ns_s::ST_OnOff* m_decorated_attr;
     };
 
     class CT_DocPartPr: public XSD::ComplexType
     {
     public:
+        CT_DocPartPr();
         bool has_name() const;
         CT_DocPartName* mutable_name();
         const CT_DocPartName& get_name() const;
@@ -17946,6 +18285,7 @@ namespace ns_w {
     class CT_DocPart: public XSD::ComplexType
     {
     public:
+        CT_DocPart();
         bool has_docPartPr() const;
         CT_DocPartPr* mutable_docPartPr();
         const CT_DocPartPr& get_docPartPr() const;
@@ -17967,6 +18307,7 @@ namespace ns_w {
     class CT_DocParts: public XSD::ComplexType
     {
     public:
+        CT_DocParts();
         bool has_docPart() const;
         CT_DocPart* mutable_docPart();
         const CT_DocPart& get_docPart() const;
@@ -17983,24 +18324,25 @@ namespace ns_w {
     class CT_Caption: public XSD::ComplexType
     {
     public:
+        CT_Caption();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Caption& default_instance();
-        bool has_s_name_attr() const;
-        void set_s_name_attr(const ns_s::ST_String& _s_name_attr);
-        const ns_s::ST_String& get_s_name_attr() const;
+        bool has_name_attr() const;
+        void set_name_attr(const ns_s::ST_String& _name_attr);
+        const ns_s::ST_String& get_name_attr() const;
         bool has_pos_attr() const;
         void set_pos_attr(const ST_CaptionPos& _pos_attr);
         const ST_CaptionPos& get_pos_attr() const;
-        bool has_s_chapNum_attr() const;
-        void set_s_chapNum_attr(const ns_s::ST_OnOff& _s_chapNum_attr);
-        const ns_s::ST_OnOff& get_s_chapNum_attr() const;
+        bool has_chapNum_attr() const;
+        void set_chapNum_attr(const ns_s::ST_OnOff& _chapNum_attr);
+        const ns_s::ST_OnOff& get_chapNum_attr() const;
         bool has_heading_attr() const;
         void set_heading_attr(const ST_DecimalNumber& _heading_attr);
         const ST_DecimalNumber& get_heading_attr() const;
-        bool has_s_noLabel_attr() const;
-        void set_s_noLabel_attr(const ns_s::ST_OnOff& _s_noLabel_attr);
-        const ns_s::ST_OnOff& get_s_noLabel_attr() const;
+        bool has_noLabel_attr() const;
+        void set_noLabel_attr(const ns_s::ST_OnOff& _noLabel_attr);
+        const ns_s::ST_OnOff& get_noLabel_attr() const;
         bool has_numFmt_attr() const;
         void set_numFmt_attr(const ST_NumberFormat& _numFmt_attr);
         const ST_NumberFormat& get_numFmt_attr() const;
@@ -18010,16 +18352,16 @@ namespace ns_w {
     protected:
     private:
         static CT_Caption* default_instance_;
-        bool m_has_s_name_attr;
-        ns_s::ST_String* m_s_name_attr;
+        bool m_has_name_attr;
+        ns_s::ST_String* m_name_attr;
         bool m_has_pos_attr;
         ST_CaptionPos* m_pos_attr;
-        bool m_has_s_chapNum_attr;
-        ns_s::ST_OnOff* m_s_chapNum_attr;
+        bool m_has_chapNum_attr;
+        ns_s::ST_OnOff* m_chapNum_attr;
         bool m_has_heading_attr;
         ST_DecimalNumber* m_heading_attr;
-        bool m_has_s_noLabel_attr;
-        ns_s::ST_OnOff* m_s_noLabel_attr;
+        bool m_has_noLabel_attr;
+        ns_s::ST_OnOff* m_noLabel_attr;
         bool m_has_numFmt_attr;
         ST_NumberFormat* m_numFmt_attr;
         bool m_has_sep_attr;
@@ -18029,27 +18371,29 @@ namespace ns_w {
     class CT_AutoCaption: public XSD::ComplexType
     {
     public:
+        CT_AutoCaption();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AutoCaption& default_instance();
-        bool has_s_name_attr() const;
-        void set_s_name_attr(const ns_s::ST_String& _s_name_attr);
-        const ns_s::ST_String& get_s_name_attr() const;
-        bool has_s_caption_attr() const;
-        void set_s_caption_attr(const ns_s::ST_String& _s_caption_attr);
-        const ns_s::ST_String& get_s_caption_attr() const;
+        bool has_name_attr() const;
+        void set_name_attr(const ns_s::ST_String& _name_attr);
+        const ns_s::ST_String& get_name_attr() const;
+        bool has_caption_attr() const;
+        void set_caption_attr(const ns_s::ST_String& _caption_attr);
+        const ns_s::ST_String& get_caption_attr() const;
     protected:
     private:
         static CT_AutoCaption* default_instance_;
-        bool m_has_s_name_attr;
-        ns_s::ST_String* m_s_name_attr;
-        bool m_has_s_caption_attr;
-        ns_s::ST_String* m_s_caption_attr;
+        bool m_has_name_attr;
+        ns_s::ST_String* m_name_attr;
+        bool m_has_caption_attr;
+        ns_s::ST_String* m_caption_attr;
     };
 
     class CT_AutoCaptions: public XSD::ComplexType
     {
     public:
+        CT_AutoCaptions();
         CT_AutoCaption* add_autoCaption();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18059,6 +18403,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_autoCaption() const;
             CT_AutoCaption* mutable_autoCaption();
             const CT_AutoCaption& get_autoCaption() const;
@@ -18074,6 +18419,7 @@ namespace ns_w {
     class CT_Captions: public XSD::ComplexType
     {
     public:
+        CT_Captions();
         CT_Caption* add_caption();
         CT_AutoCaptions* add_autoCaptions();
         void clear();
@@ -18084,6 +18430,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_caption() const;
             CT_Caption* mutable_caption();
             const CT_Caption& get_caption() const;
@@ -18104,6 +18451,7 @@ namespace ns_w {
     class CT_DocumentBase: public XSD::ComplexType
     {
     public:
+        CT_DocumentBase();
         bool has_background() const;
         CT_Background* mutable_background();
         const CT_Background& get_background() const;
@@ -18120,6 +18468,7 @@ namespace ns_w {
     class CT_Document: public XSD::ComplexType
     {
     public:
+        CT_Document();
         bool has_background() const;
         CT_Background* mutable_background();
         const CT_Background& get_background() const;
@@ -18129,9 +18478,9 @@ namespace ns_w {
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Document& default_instance();
-        bool has_s_conformance_attr() const;
-        void set_s_conformance_attr(const ns_s::ST_ConformanceClass& _s_conformance_attr);
-        const ns_s::ST_ConformanceClass& get_s_conformance_attr() const;
+        bool has_conformance_attr() const;
+        void set_conformance_attr(const ns_s::ST_ConformanceClass& _conformance_attr);
+        const ns_s::ST_ConformanceClass& get_conformance_attr() const;
     protected:
     private:
         bool m_has_background;
@@ -18139,13 +18488,14 @@ namespace ns_w {
         bool m_has_body;
         CT_Body* m_body;
         static CT_Document* default_instance_;
-        bool m_has_s_conformance_attr;
-        ns_s::ST_ConformanceClass* m_s_conformance_attr;
+        bool m_has_conformance_attr;
+        ns_s::ST_ConformanceClass* m_conformance_attr;
     };
 
     class CT_GlossaryDocument: public XSD::ComplexType
     {
     public:
+        CT_GlossaryDocument();
         bool has_background() const;
         CT_Background* mutable_background();
         const CT_Background& get_background() const;
@@ -18167,6 +18517,7 @@ namespace ns_w {
     class recipients_element: public Element
     {
     public:
+        recipients_element();
         CT_RecipientData* add_recipientData();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -18176,6 +18527,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_recipientData() const;
             CT_RecipientData* mutable_recipientData();
             const CT_RecipientData& get_recipientData() const;
@@ -18191,6 +18543,7 @@ namespace ns_w {
     class txbxContent_element: public Element
     {
     public:
+        txbxContent_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const txbxContent_element& default_instance();
@@ -18202,6 +18555,7 @@ namespace ns_w {
     class comments_element: public Element
     {
     public:
+        comments_element();
         CT_Comment* add_comment();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -18211,6 +18565,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_comment() const;
             CT_Comment* mutable_comment();
             const CT_Comment& get_comment() const;
@@ -18226,6 +18581,7 @@ namespace ns_w {
     class footnotes_element: public Element
     {
     public:
+        footnotes_element();
         CT_FtnEdn* add_footnote();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -18235,6 +18591,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_footnote() const;
             CT_FtnEdn* mutable_footnote();
             const CT_FtnEdn& get_footnote() const;
@@ -18250,6 +18607,7 @@ namespace ns_w {
     class endnotes_element: public Element
     {
     public:
+        endnotes_element();
         CT_FtnEdn* add_endnote();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -18259,6 +18617,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_endnote() const;
             CT_FtnEdn* mutable_endnote();
             const CT_FtnEdn& get_endnote() const;
@@ -18274,6 +18633,7 @@ namespace ns_w {
     class hdr_element: public Element
     {
     public:
+        hdr_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const hdr_element& default_instance();
@@ -18285,6 +18645,7 @@ namespace ns_w {
     class ftr_element: public Element
     {
     public:
+        ftr_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const ftr_element& default_instance();
@@ -18296,6 +18657,7 @@ namespace ns_w {
     class settings_element: public Element
     {
     public:
+        settings_element();
         bool has_writeProtection() const;
         CT_WriteProtection* mutable_writeProtection();
         const CT_WriteProtection& get_writeProtection() const;
@@ -18444,6 +18806,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_activeWritingStyle() const;
             CT_WritingStyle* mutable_activeWritingStyle();
             const CT_WritingStyle& get_activeWritingStyle() const;
@@ -18881,6 +19244,7 @@ namespace ns_w {
     class webSettings_element: public Element
     {
     public:
+        webSettings_element();
         bool has_frameset() const;
         CT_Frameset* mutable_frameset();
         const CT_Frameset& get_frameset() const;
@@ -18957,6 +19321,7 @@ namespace ns_w {
     class fonts_element: public Element
     {
     public:
+        fonts_element();
         CT_Font* add_font();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -18966,6 +19331,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_font() const;
             CT_Font* mutable_font();
             const CT_Font& get_font() const;
@@ -18981,6 +19347,7 @@ namespace ns_w {
     class numbering_element: public Element
     {
     public:
+        numbering_element();
         CT_NumPicBullet* add_numPicBullet();
         CT_AbstractNum* add_abstractNum();
         CT_Num* add_num();
@@ -18993,6 +19360,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_numPicBullet() const;
             CT_NumPicBullet* mutable_numPicBullet();
             const CT_NumPicBullet& get_numPicBullet() const;
@@ -19023,6 +19391,7 @@ namespace ns_w {
     class styles_element: public Element
     {
     public:
+        styles_element();
         bool has_docDefaults() const;
         CT_DocDefaults* mutable_docDefaults();
         const CT_DocDefaults& get_docDefaults() const;
@@ -19038,6 +19407,7 @@ namespace ns_w {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_style() const;
             CT_Style* mutable_style();
             const CT_Style& get_style() const;
@@ -19057,6 +19427,7 @@ namespace ns_w {
     class document_element: public Element
     {
     public:
+        document_element();
         bool has_background() const;
         CT_Background* mutable_background();
         const CT_Background& get_background() const;
@@ -19066,9 +19437,9 @@ namespace ns_w {
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const document_element& default_instance();
-        bool has_s_conformance_attr() const;
-        void set_s_conformance_attr(const ns_s::ST_ConformanceClass& _s_conformance_attr);
-        const ns_s::ST_ConformanceClass& get_s_conformance_attr() const;
+        bool has_conformance_attr() const;
+        void set_conformance_attr(const ns_s::ST_ConformanceClass& _conformance_attr);
+        const ns_s::ST_ConformanceClass& get_conformance_attr() const;
     protected:
     private:
         bool m_has_background;
@@ -19076,13 +19447,14 @@ namespace ns_w {
         bool m_has_body;
         CT_Body* m_body;
         static document_element* default_instance_;
-        bool m_has_s_conformance_attr;
-        ns_s::ST_ConformanceClass* m_s_conformance_attr;
+        bool m_has_conformance_attr;
+        ns_s::ST_ConformanceClass* m_conformance_attr;
     };
 
     class glossaryDocument_element: public Element
     {
     public:
+        glossaryDocument_element();
         bool has_background() const;
         CT_Background* mutable_background();
         const CT_Background& get_background() const;

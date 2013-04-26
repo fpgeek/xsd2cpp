@@ -21,7 +21,7 @@ namespace ns_cdr {
     :m_has_double(true)
     {
     
-    set_double(m_double);
+    set_double(_double);
     }
     bool ST_MarkerCoordinate::has_double() const
     {    
@@ -74,50 +74,57 @@ namespace ns_cdr {
 ST_MarkerCoordinate* ST_MarkerCoordinate::default_instance_ = NULL;
 
     // CT_ShapeNonVisual
-    bool CT_ShapeNonVisual::has_a_cNvPr() const
+    CT_ShapeNonVisual::CT_ShapeNonVisual()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvSpPr(false),
+    m_cNvSpPr(NULL)
+    {
+    }
+    bool CT_ShapeNonVisual::has_cNvPr() const
     {    
-    return m_has_a_cNvPr;
+    return m_has_cNvPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* CT_ShapeNonVisual::mutable_a_cNvPr()
+    ns_a::CT_NonVisualDrawingProps* CT_ShapeNonVisual::mutable_cNvPr()
     {    
-    m_has_a_cNvPr = true;
-    if (!m_a_cNvPr)
+    m_has_cNvPr = true;
+    if (!m_cNvPr)
     {
-        m_a_cNvPr = new ns_a::CT_NonVisualDrawingProps();
+        m_cNvPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_cNvPr;
+    return m_cNvPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& CT_ShapeNonVisual::get_a_cNvPr() const
+    const ns_a::CT_NonVisualDrawingProps& CT_ShapeNonVisual::get_cNvPr() const
     {    
-    if (m_a_cNvPr)
+    if (m_cNvPr)
     {
-        return *m_a_cNvPr;
+        return *m_cNvPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool CT_ShapeNonVisual::has_a_cNvSpPr() const
+    bool CT_ShapeNonVisual::has_cNvSpPr() const
     {    
-    return m_has_a_cNvSpPr;
+    return m_has_cNvSpPr;
     }
 
-    ns_a::CT_NonVisualDrawingShapeProps* CT_ShapeNonVisual::mutable_a_cNvSpPr()
+    ns_a::CT_NonVisualDrawingShapeProps* CT_ShapeNonVisual::mutable_cNvSpPr()
     {    
-    m_has_a_cNvSpPr = true;
-    if (!m_a_cNvSpPr)
+    m_has_cNvSpPr = true;
+    if (!m_cNvSpPr)
     {
-        m_a_cNvSpPr = new ns_a::CT_NonVisualDrawingShapeProps();
+        m_cNvSpPr = new ns_a::CT_NonVisualDrawingShapeProps();
     }
-    return m_a_cNvSpPr;
+    return m_cNvSpPr;
     }
 
-    const ns_a::CT_NonVisualDrawingShapeProps& CT_ShapeNonVisual::get_a_cNvSpPr() const
+    const ns_a::CT_NonVisualDrawingShapeProps& CT_ShapeNonVisual::get_cNvSpPr() const
     {    
-    if (m_a_cNvSpPr)
+    if (m_cNvSpPr)
     {
-        return *m_a_cNvSpPr;
+        return *m_cNvSpPr;
     }
     return ns_a::CT_NonVisualDrawingShapeProps::default_instance();
     }
@@ -136,14 +143,14 @@ ST_MarkerCoordinate* ST_MarkerCoordinate::default_instance_ = NULL;
             
             _outStream << ">";
             
-    if (m_has_a_cNvPr)
+    if (m_has_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvSpPr)
+    if (m_has_cNvSpPr)
     {
-        m_a_cNvSpPr->toXmlElem("a:cNvSpPr", "", _outStream);;
+        m_cNvSpPr->toXmlElem("cdr:cNvSpPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -161,6 +168,25 @@ ST_MarkerCoordinate* ST_MarkerCoordinate::default_instance_ = NULL;
 CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
 
     // CT_Shape
+    CT_Shape::CT_Shape()
+    :m_has_nvSpPr(false),
+    m_nvSpPr(NULL),
+    m_has_spPr(false),
+    m_spPr(NULL),
+    m_has_style(false),
+    m_style(NULL),
+    m_has_txBody(false),
+    m_txBody(NULL),
+    m_has_macro_attr(false),
+    m_macro_attr(""),
+    m_has_textlink_attr(false),
+    m_textlink_attr(""),
+    m_has_fLocksText_attr(false),
+    m_fLocksText_attr(false),
+    m_has_fPublished_attr(false),
+    m_fPublished_attr(false)
+    {
+    }
     bool CT_Shape::has_nvSpPr() const
     {    
     return m_has_nvSpPr;
@@ -185,74 +211,74 @@ CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
     return CT_ShapeNonVisual::default_instance();
     }
 
-    bool CT_Shape::has_a_spPr() const
+    bool CT_Shape::has_spPr() const
     {    
-    return m_has_a_spPr;
+    return m_has_spPr;
     }
 
-    ns_a::CT_ShapeProperties* CT_Shape::mutable_a_spPr()
+    ns_a::CT_ShapeProperties* CT_Shape::mutable_spPr()
     {    
-    m_has_a_spPr = true;
-    if (!m_a_spPr)
+    m_has_spPr = true;
+    if (!m_spPr)
     {
-        m_a_spPr = new ns_a::CT_ShapeProperties();
+        m_spPr = new ns_a::CT_ShapeProperties();
     }
-    return m_a_spPr;
+    return m_spPr;
     }
 
-    const ns_a::CT_ShapeProperties& CT_Shape::get_a_spPr() const
+    const ns_a::CT_ShapeProperties& CT_Shape::get_spPr() const
     {    
-    if (m_a_spPr)
+    if (m_spPr)
     {
-        return *m_a_spPr;
+        return *m_spPr;
     }
     return ns_a::CT_ShapeProperties::default_instance();
     }
 
-    bool CT_Shape::has_a_style() const
+    bool CT_Shape::has_style() const
     {    
-    return m_has_a_style;
+    return m_has_style;
     }
 
-    ns_a::CT_ShapeStyle* CT_Shape::mutable_a_style()
+    ns_a::CT_ShapeStyle* CT_Shape::mutable_style()
     {    
-    m_has_a_style = true;
-    if (!m_a_style)
+    m_has_style = true;
+    if (!m_style)
     {
-        m_a_style = new ns_a::CT_ShapeStyle();
+        m_style = new ns_a::CT_ShapeStyle();
     }
-    return m_a_style;
+    return m_style;
     }
 
-    const ns_a::CT_ShapeStyle& CT_Shape::get_a_style() const
+    const ns_a::CT_ShapeStyle& CT_Shape::get_style() const
     {    
-    if (m_a_style)
+    if (m_style)
     {
-        return *m_a_style;
+        return *m_style;
     }
     return ns_a::CT_ShapeStyle::default_instance();
     }
 
-    bool CT_Shape::has_a_txBody() const
+    bool CT_Shape::has_txBody() const
     {    
-    return m_has_a_txBody;
+    return m_has_txBody;
     }
 
-    ns_a::CT_TextBody* CT_Shape::mutable_a_txBody()
+    ns_a::CT_TextBody* CT_Shape::mutable_txBody()
     {    
-    m_has_a_txBody = true;
-    if (!m_a_txBody)
+    m_has_txBody = true;
+    if (!m_txBody)
     {
-        m_a_txBody = new ns_a::CT_TextBody();
+        m_txBody = new ns_a::CT_TextBody();
     }
-    return m_a_txBody;
+    return m_txBody;
     }
 
-    const ns_a::CT_TextBody& CT_Shape::get_a_txBody() const
+    const ns_a::CT_TextBody& CT_Shape::get_txBody() const
     {    
-    if (m_a_txBody)
+    if (m_txBody)
     {
-        return *m_a_txBody;
+        return *m_txBody;
     }
     return ns_a::CT_TextBody::default_instance();
     }
@@ -308,22 +334,22 @@ CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
             
     if (m_has_nvSpPr)
     {
-        m_nvSpPr->toXmlElem("nvSpPr", "", _outStream);;
+        m_nvSpPr->toXmlElem("cdr:nvSpPr", "", _outStream);;
     }
     
-    if (m_has_a_spPr)
+    if (m_has_spPr)
     {
-        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
+        m_spPr->toXmlElem("cdr:spPr", "", _outStream);;
     }
     
-    if (m_has_a_style)
+    if (m_has_style)
     {
-        m_a_style->toXmlElem("a:style", "", _outStream);;
+        m_style->toXmlElem("cdr:style", "", _outStream);;
     }
     
-    if (m_has_a_txBody)
+    if (m_has_txBody)
     {
-        m_a_txBody->toXmlElem("a:txBody", "", _outStream);;
+        m_txBody->toXmlElem("cdr:txBody", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -405,50 +431,57 @@ CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
 CT_Shape* CT_Shape::default_instance_ = NULL;
 
     // CT_ConnectorNonVisual
-    bool CT_ConnectorNonVisual::has_a_cNvPr() const
+    CT_ConnectorNonVisual::CT_ConnectorNonVisual()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvCxnSpPr(false),
+    m_cNvCxnSpPr(NULL)
+    {
+    }
+    bool CT_ConnectorNonVisual::has_cNvPr() const
     {    
-    return m_has_a_cNvPr;
+    return m_has_cNvPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* CT_ConnectorNonVisual::mutable_a_cNvPr()
+    ns_a::CT_NonVisualDrawingProps* CT_ConnectorNonVisual::mutable_cNvPr()
     {    
-    m_has_a_cNvPr = true;
-    if (!m_a_cNvPr)
+    m_has_cNvPr = true;
+    if (!m_cNvPr)
     {
-        m_a_cNvPr = new ns_a::CT_NonVisualDrawingProps();
+        m_cNvPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_cNvPr;
+    return m_cNvPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& CT_ConnectorNonVisual::get_a_cNvPr() const
+    const ns_a::CT_NonVisualDrawingProps& CT_ConnectorNonVisual::get_cNvPr() const
     {    
-    if (m_a_cNvPr)
+    if (m_cNvPr)
     {
-        return *m_a_cNvPr;
+        return *m_cNvPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool CT_ConnectorNonVisual::has_a_cNvCxnSpPr() const
+    bool CT_ConnectorNonVisual::has_cNvCxnSpPr() const
     {    
-    return m_has_a_cNvCxnSpPr;
+    return m_has_cNvCxnSpPr;
     }
 
-    ns_a::CT_NonVisualConnectorProperties* CT_ConnectorNonVisual::mutable_a_cNvCxnSpPr()
+    ns_a::CT_NonVisualConnectorProperties* CT_ConnectorNonVisual::mutable_cNvCxnSpPr()
     {    
-    m_has_a_cNvCxnSpPr = true;
-    if (!m_a_cNvCxnSpPr)
+    m_has_cNvCxnSpPr = true;
+    if (!m_cNvCxnSpPr)
     {
-        m_a_cNvCxnSpPr = new ns_a::CT_NonVisualConnectorProperties();
+        m_cNvCxnSpPr = new ns_a::CT_NonVisualConnectorProperties();
     }
-    return m_a_cNvCxnSpPr;
+    return m_cNvCxnSpPr;
     }
 
-    const ns_a::CT_NonVisualConnectorProperties& CT_ConnectorNonVisual::get_a_cNvCxnSpPr() const
+    const ns_a::CT_NonVisualConnectorProperties& CT_ConnectorNonVisual::get_cNvCxnSpPr() const
     {    
-    if (m_a_cNvCxnSpPr)
+    if (m_cNvCxnSpPr)
     {
-        return *m_a_cNvCxnSpPr;
+        return *m_cNvCxnSpPr;
     }
     return ns_a::CT_NonVisualConnectorProperties::default_instance();
     }
@@ -467,14 +500,14 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
             
             _outStream << ">";
             
-    if (m_has_a_cNvPr)
+    if (m_has_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvCxnSpPr)
+    if (m_has_cNvCxnSpPr)
     {
-        m_a_cNvCxnSpPr->toXmlElem("a:cNvCxnSpPr", "", _outStream);;
+        m_cNvCxnSpPr->toXmlElem("cdr:cNvCxnSpPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -492,6 +525,19 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
 CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
 
     // CT_Connector
+    CT_Connector::CT_Connector()
+    :m_has_nvCxnSpPr(false),
+    m_nvCxnSpPr(NULL),
+    m_has_spPr(false),
+    m_spPr(NULL),
+    m_has_style(false),
+    m_style(NULL),
+    m_has_macro_attr(false),
+    m_macro_attr(""),
+    m_has_fPublished_attr(false),
+    m_fPublished_attr(false)
+    {
+    }
     bool CT_Connector::has_nvCxnSpPr() const
     {    
     return m_has_nvCxnSpPr;
@@ -516,50 +562,50 @@ CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
     return CT_ConnectorNonVisual::default_instance();
     }
 
-    bool CT_Connector::has_a_spPr() const
+    bool CT_Connector::has_spPr() const
     {    
-    return m_has_a_spPr;
+    return m_has_spPr;
     }
 
-    ns_a::CT_ShapeProperties* CT_Connector::mutable_a_spPr()
+    ns_a::CT_ShapeProperties* CT_Connector::mutable_spPr()
     {    
-    m_has_a_spPr = true;
-    if (!m_a_spPr)
+    m_has_spPr = true;
+    if (!m_spPr)
     {
-        m_a_spPr = new ns_a::CT_ShapeProperties();
+        m_spPr = new ns_a::CT_ShapeProperties();
     }
-    return m_a_spPr;
+    return m_spPr;
     }
 
-    const ns_a::CT_ShapeProperties& CT_Connector::get_a_spPr() const
+    const ns_a::CT_ShapeProperties& CT_Connector::get_spPr() const
     {    
-    if (m_a_spPr)
+    if (m_spPr)
     {
-        return *m_a_spPr;
+        return *m_spPr;
     }
     return ns_a::CT_ShapeProperties::default_instance();
     }
 
-    bool CT_Connector::has_a_style() const
+    bool CT_Connector::has_style() const
     {    
-    return m_has_a_style;
+    return m_has_style;
     }
 
-    ns_a::CT_ShapeStyle* CT_Connector::mutable_a_style()
+    ns_a::CT_ShapeStyle* CT_Connector::mutable_style()
     {    
-    m_has_a_style = true;
-    if (!m_a_style)
+    m_has_style = true;
+    if (!m_style)
     {
-        m_a_style = new ns_a::CT_ShapeStyle();
+        m_style = new ns_a::CT_ShapeStyle();
     }
-    return m_a_style;
+    return m_style;
     }
 
-    const ns_a::CT_ShapeStyle& CT_Connector::get_a_style() const
+    const ns_a::CT_ShapeStyle& CT_Connector::get_style() const
     {    
-    if (m_a_style)
+    if (m_style)
     {
-        return *m_a_style;
+        return *m_style;
     }
     return ns_a::CT_ShapeStyle::default_instance();
     }
@@ -597,17 +643,17 @@ CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
             
     if (m_has_nvCxnSpPr)
     {
-        m_nvCxnSpPr->toXmlElem("nvCxnSpPr", "", _outStream);;
+        m_nvCxnSpPr->toXmlElem("cdr:nvCxnSpPr", "", _outStream);;
     }
     
-    if (m_has_a_spPr)
+    if (m_has_spPr)
     {
-        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
+        m_spPr->toXmlElem("cdr:spPr", "", _outStream);;
     }
     
-    if (m_has_a_style)
+    if (m_has_style)
     {
-        m_a_style->toXmlElem("a:style", "", _outStream);;
+        m_style->toXmlElem("cdr:style", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -657,50 +703,57 @@ CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
 CT_Connector* CT_Connector::default_instance_ = NULL;
 
     // CT_PictureNonVisual
-    bool CT_PictureNonVisual::has_a_cNvPr() const
+    CT_PictureNonVisual::CT_PictureNonVisual()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvPicPr(false),
+    m_cNvPicPr(NULL)
+    {
+    }
+    bool CT_PictureNonVisual::has_cNvPr() const
     {    
-    return m_has_a_cNvPr;
+    return m_has_cNvPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* CT_PictureNonVisual::mutable_a_cNvPr()
+    ns_a::CT_NonVisualDrawingProps* CT_PictureNonVisual::mutable_cNvPr()
     {    
-    m_has_a_cNvPr = true;
-    if (!m_a_cNvPr)
+    m_has_cNvPr = true;
+    if (!m_cNvPr)
     {
-        m_a_cNvPr = new ns_a::CT_NonVisualDrawingProps();
+        m_cNvPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_cNvPr;
+    return m_cNvPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& CT_PictureNonVisual::get_a_cNvPr() const
+    const ns_a::CT_NonVisualDrawingProps& CT_PictureNonVisual::get_cNvPr() const
     {    
-    if (m_a_cNvPr)
+    if (m_cNvPr)
     {
-        return *m_a_cNvPr;
+        return *m_cNvPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool CT_PictureNonVisual::has_a_cNvPicPr() const
+    bool CT_PictureNonVisual::has_cNvPicPr() const
     {    
-    return m_has_a_cNvPicPr;
+    return m_has_cNvPicPr;
     }
 
-    ns_a::CT_NonVisualPictureProperties* CT_PictureNonVisual::mutable_a_cNvPicPr()
+    ns_a::CT_NonVisualPictureProperties* CT_PictureNonVisual::mutable_cNvPicPr()
     {    
-    m_has_a_cNvPicPr = true;
-    if (!m_a_cNvPicPr)
+    m_has_cNvPicPr = true;
+    if (!m_cNvPicPr)
     {
-        m_a_cNvPicPr = new ns_a::CT_NonVisualPictureProperties();
+        m_cNvPicPr = new ns_a::CT_NonVisualPictureProperties();
     }
-    return m_a_cNvPicPr;
+    return m_cNvPicPr;
     }
 
-    const ns_a::CT_NonVisualPictureProperties& CT_PictureNonVisual::get_a_cNvPicPr() const
+    const ns_a::CT_NonVisualPictureProperties& CT_PictureNonVisual::get_cNvPicPr() const
     {    
-    if (m_a_cNvPicPr)
+    if (m_cNvPicPr)
     {
-        return *m_a_cNvPicPr;
+        return *m_cNvPicPr;
     }
     return ns_a::CT_NonVisualPictureProperties::default_instance();
     }
@@ -719,14 +772,14 @@ CT_Connector* CT_Connector::default_instance_ = NULL;
             
             _outStream << ">";
             
-    if (m_has_a_cNvPr)
+    if (m_has_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvPicPr)
+    if (m_has_cNvPicPr)
     {
-        m_a_cNvPicPr->toXmlElem("a:cNvPicPr", "", _outStream);;
+        m_cNvPicPr->toXmlElem("cdr:cNvPicPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -744,6 +797,21 @@ CT_Connector* CT_Connector::default_instance_ = NULL;
 CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
 
     // CT_Picture
+    CT_Picture::CT_Picture()
+    :m_has_nvPicPr(false),
+    m_nvPicPr(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_spPr(false),
+    m_spPr(NULL),
+    m_has_style(false),
+    m_style(NULL),
+    m_has_macro_attr(false),
+    m_macro_attr(""),
+    m_has_fPublished_attr(false),
+    m_fPublished_attr(false)
+    {
+    }
     bool CT_Picture::has_nvPicPr() const
     {    
     return m_has_nvPicPr;
@@ -768,74 +836,74 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
     return CT_PictureNonVisual::default_instance();
     }
 
-    bool CT_Picture::has_a_blipFill() const
+    bool CT_Picture::has_blipFill() const
     {    
-    return m_has_a_blipFill;
+    return m_has_blipFill;
     }
 
-    ns_a::CT_BlipFillProperties* CT_Picture::mutable_a_blipFill()
+    ns_a::CT_BlipFillProperties* CT_Picture::mutable_blipFill()
     {    
-    m_has_a_blipFill = true;
-    if (!m_a_blipFill)
+    m_has_blipFill = true;
+    if (!m_blipFill)
     {
-        m_a_blipFill = new ns_a::CT_BlipFillProperties();
+        m_blipFill = new ns_a::CT_BlipFillProperties();
     }
-    return m_a_blipFill;
+    return m_blipFill;
     }
 
-    const ns_a::CT_BlipFillProperties& CT_Picture::get_a_blipFill() const
+    const ns_a::CT_BlipFillProperties& CT_Picture::get_blipFill() const
     {    
-    if (m_a_blipFill)
+    if (m_blipFill)
     {
-        return *m_a_blipFill;
+        return *m_blipFill;
     }
     return ns_a::CT_BlipFillProperties::default_instance();
     }
 
-    bool CT_Picture::has_a_spPr() const
+    bool CT_Picture::has_spPr() const
     {    
-    return m_has_a_spPr;
+    return m_has_spPr;
     }
 
-    ns_a::CT_ShapeProperties* CT_Picture::mutable_a_spPr()
+    ns_a::CT_ShapeProperties* CT_Picture::mutable_spPr()
     {    
-    m_has_a_spPr = true;
-    if (!m_a_spPr)
+    m_has_spPr = true;
+    if (!m_spPr)
     {
-        m_a_spPr = new ns_a::CT_ShapeProperties();
+        m_spPr = new ns_a::CT_ShapeProperties();
     }
-    return m_a_spPr;
+    return m_spPr;
     }
 
-    const ns_a::CT_ShapeProperties& CT_Picture::get_a_spPr() const
+    const ns_a::CT_ShapeProperties& CT_Picture::get_spPr() const
     {    
-    if (m_a_spPr)
+    if (m_spPr)
     {
-        return *m_a_spPr;
+        return *m_spPr;
     }
     return ns_a::CT_ShapeProperties::default_instance();
     }
 
-    bool CT_Picture::has_a_style() const
+    bool CT_Picture::has_style() const
     {    
-    return m_has_a_style;
+    return m_has_style;
     }
 
-    ns_a::CT_ShapeStyle* CT_Picture::mutable_a_style()
+    ns_a::CT_ShapeStyle* CT_Picture::mutable_style()
     {    
-    m_has_a_style = true;
-    if (!m_a_style)
+    m_has_style = true;
+    if (!m_style)
     {
-        m_a_style = new ns_a::CT_ShapeStyle();
+        m_style = new ns_a::CT_ShapeStyle();
     }
-    return m_a_style;
+    return m_style;
     }
 
-    const ns_a::CT_ShapeStyle& CT_Picture::get_a_style() const
+    const ns_a::CT_ShapeStyle& CT_Picture::get_style() const
     {    
-    if (m_a_style)
+    if (m_style)
     {
-        return *m_a_style;
+        return *m_style;
     }
     return ns_a::CT_ShapeStyle::default_instance();
     }
@@ -873,22 +941,22 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
             
     if (m_has_nvPicPr)
     {
-        m_nvPicPr->toXmlElem("nvPicPr", "", _outStream);;
+        m_nvPicPr->toXmlElem("cdr:nvPicPr", "", _outStream);;
     }
     
-    if (m_has_a_blipFill)
+    if (m_has_blipFill)
     {
-        m_a_blipFill->toXmlElem("a:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("cdr:blipFill", "", _outStream);;
     }
     
-    if (m_has_a_spPr)
+    if (m_has_spPr)
     {
-        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
+        m_spPr->toXmlElem("cdr:spPr", "", _outStream);;
     }
     
-    if (m_has_a_style)
+    if (m_has_style)
     {
-        m_a_style->toXmlElem("a:style", "", _outStream);;
+        m_style->toXmlElem("cdr:style", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -938,50 +1006,57 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
 CT_Picture* CT_Picture::default_instance_ = NULL;
 
     // CT_GraphicFrameNonVisual
-    bool CT_GraphicFrameNonVisual::has_a_cNvPr() const
+    CT_GraphicFrameNonVisual::CT_GraphicFrameNonVisual()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvGraphicFramePr(false),
+    m_cNvGraphicFramePr(NULL)
+    {
+    }
+    bool CT_GraphicFrameNonVisual::has_cNvPr() const
     {    
-    return m_has_a_cNvPr;
+    return m_has_cNvPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* CT_GraphicFrameNonVisual::mutable_a_cNvPr()
+    ns_a::CT_NonVisualDrawingProps* CT_GraphicFrameNonVisual::mutable_cNvPr()
     {    
-    m_has_a_cNvPr = true;
-    if (!m_a_cNvPr)
+    m_has_cNvPr = true;
+    if (!m_cNvPr)
     {
-        m_a_cNvPr = new ns_a::CT_NonVisualDrawingProps();
+        m_cNvPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_cNvPr;
+    return m_cNvPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& CT_GraphicFrameNonVisual::get_a_cNvPr() const
+    const ns_a::CT_NonVisualDrawingProps& CT_GraphicFrameNonVisual::get_cNvPr() const
     {    
-    if (m_a_cNvPr)
+    if (m_cNvPr)
     {
-        return *m_a_cNvPr;
+        return *m_cNvPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool CT_GraphicFrameNonVisual::has_a_cNvGraphicFramePr() const
+    bool CT_GraphicFrameNonVisual::has_cNvGraphicFramePr() const
     {    
-    return m_has_a_cNvGraphicFramePr;
+    return m_has_cNvGraphicFramePr;
     }
 
-    ns_a::CT_NonVisualGraphicFrameProperties* CT_GraphicFrameNonVisual::mutable_a_cNvGraphicFramePr()
+    ns_a::CT_NonVisualGraphicFrameProperties* CT_GraphicFrameNonVisual::mutable_cNvGraphicFramePr()
     {    
-    m_has_a_cNvGraphicFramePr = true;
-    if (!m_a_cNvGraphicFramePr)
+    m_has_cNvGraphicFramePr = true;
+    if (!m_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr = new ns_a::CT_NonVisualGraphicFrameProperties();
+        m_cNvGraphicFramePr = new ns_a::CT_NonVisualGraphicFrameProperties();
     }
-    return m_a_cNvGraphicFramePr;
+    return m_cNvGraphicFramePr;
     }
 
-    const ns_a::CT_NonVisualGraphicFrameProperties& CT_GraphicFrameNonVisual::get_a_cNvGraphicFramePr() const
+    const ns_a::CT_NonVisualGraphicFrameProperties& CT_GraphicFrameNonVisual::get_cNvGraphicFramePr() const
     {    
-    if (m_a_cNvGraphicFramePr)
+    if (m_cNvGraphicFramePr)
     {
-        return *m_a_cNvGraphicFramePr;
+        return *m_cNvGraphicFramePr;
     }
     return ns_a::CT_NonVisualGraphicFrameProperties::default_instance();
     }
@@ -1000,14 +1075,14 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
             
             _outStream << ">";
             
-    if (m_has_a_cNvPr)
+    if (m_has_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvGraphicFramePr)
+    if (m_has_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);;
+        m_cNvGraphicFramePr->toXmlElem("cdr:cNvGraphicFramePr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1025,6 +1100,19 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
 CT_GraphicFrameNonVisual* CT_GraphicFrameNonVisual::default_instance_ = NULL;
 
     // CT_GraphicFrame
+    CT_GraphicFrame::CT_GraphicFrame()
+    :m_has_nvGraphicFramePr(false),
+    m_nvGraphicFramePr(NULL),
+    m_has_xfrm(false),
+    m_xfrm(NULL),
+    m_has_a_graphic(false),
+    m_a_graphic(NULL),
+    m_has_macro_attr(false),
+    m_macro_attr(""),
+    m_has_fPublished_attr(false),
+    m_fPublished_attr(false)
+    {
+    }
     bool CT_GraphicFrame::has_nvGraphicFramePr() const
     {    
     return m_has_nvGraphicFramePr;
@@ -1049,26 +1137,26 @@ CT_GraphicFrameNonVisual* CT_GraphicFrameNonVisual::default_instance_ = NULL;
     return CT_GraphicFrameNonVisual::default_instance();
     }
 
-    bool CT_GraphicFrame::has_a_xfrm() const
+    bool CT_GraphicFrame::has_xfrm() const
     {    
-    return m_has_a_xfrm;
+    return m_has_xfrm;
     }
 
-    ns_a::CT_Transform2D* CT_GraphicFrame::mutable_a_xfrm()
+    ns_a::CT_Transform2D* CT_GraphicFrame::mutable_xfrm()
     {    
-    m_has_a_xfrm = true;
-    if (!m_a_xfrm)
+    m_has_xfrm = true;
+    if (!m_xfrm)
     {
-        m_a_xfrm = new ns_a::CT_Transform2D();
+        m_xfrm = new ns_a::CT_Transform2D();
     }
-    return m_a_xfrm;
+    return m_xfrm;
     }
 
-    const ns_a::CT_Transform2D& CT_GraphicFrame::get_a_xfrm() const
+    const ns_a::CT_Transform2D& CT_GraphicFrame::get_xfrm() const
     {    
-    if (m_a_xfrm)
+    if (m_xfrm)
     {
-        return *m_a_xfrm;
+        return *m_xfrm;
     }
     return ns_a::CT_Transform2D::default_instance();
     }
@@ -1130,12 +1218,12 @@ CT_GraphicFrameNonVisual* CT_GraphicFrameNonVisual::default_instance_ = NULL;
             
     if (m_has_nvGraphicFramePr)
     {
-        m_nvGraphicFramePr->toXmlElem("nvGraphicFramePr", "", _outStream);;
+        m_nvGraphicFramePr->toXmlElem("cdr:nvGraphicFramePr", "", _outStream);;
     }
     
-    if (m_has_a_xfrm)
+    if (m_has_xfrm)
     {
-        m_a_xfrm->toXmlElem("a:xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("cdr:xfrm", "", _outStream);;
     }
     
     if (m_has_a_graphic)
@@ -1190,50 +1278,57 @@ CT_GraphicFrameNonVisual* CT_GraphicFrameNonVisual::default_instance_ = NULL;
 CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
 
     // CT_GroupShapeNonVisual
-    bool CT_GroupShapeNonVisual::has_a_cNvPr() const
+    CT_GroupShapeNonVisual::CT_GroupShapeNonVisual()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvGrpSpPr(false),
+    m_cNvGrpSpPr(NULL)
+    {
+    }
+    bool CT_GroupShapeNonVisual::has_cNvPr() const
     {    
-    return m_has_a_cNvPr;
+    return m_has_cNvPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* CT_GroupShapeNonVisual::mutable_a_cNvPr()
+    ns_a::CT_NonVisualDrawingProps* CT_GroupShapeNonVisual::mutable_cNvPr()
     {    
-    m_has_a_cNvPr = true;
-    if (!m_a_cNvPr)
+    m_has_cNvPr = true;
+    if (!m_cNvPr)
     {
-        m_a_cNvPr = new ns_a::CT_NonVisualDrawingProps();
+        m_cNvPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_cNvPr;
+    return m_cNvPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& CT_GroupShapeNonVisual::get_a_cNvPr() const
+    const ns_a::CT_NonVisualDrawingProps& CT_GroupShapeNonVisual::get_cNvPr() const
     {    
-    if (m_a_cNvPr)
+    if (m_cNvPr)
     {
-        return *m_a_cNvPr;
+        return *m_cNvPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool CT_GroupShapeNonVisual::has_a_cNvGrpSpPr() const
+    bool CT_GroupShapeNonVisual::has_cNvGrpSpPr() const
     {    
-    return m_has_a_cNvGrpSpPr;
+    return m_has_cNvGrpSpPr;
     }
 
-    ns_a::CT_NonVisualGroupDrawingShapeProps* CT_GroupShapeNonVisual::mutable_a_cNvGrpSpPr()
+    ns_a::CT_NonVisualGroupDrawingShapeProps* CT_GroupShapeNonVisual::mutable_cNvGrpSpPr()
     {    
-    m_has_a_cNvGrpSpPr = true;
-    if (!m_a_cNvGrpSpPr)
+    m_has_cNvGrpSpPr = true;
+    if (!m_cNvGrpSpPr)
     {
-        m_a_cNvGrpSpPr = new ns_a::CT_NonVisualGroupDrawingShapeProps();
+        m_cNvGrpSpPr = new ns_a::CT_NonVisualGroupDrawingShapeProps();
     }
-    return m_a_cNvGrpSpPr;
+    return m_cNvGrpSpPr;
     }
 
-    const ns_a::CT_NonVisualGroupDrawingShapeProps& CT_GroupShapeNonVisual::get_a_cNvGrpSpPr() const
+    const ns_a::CT_NonVisualGroupDrawingShapeProps& CT_GroupShapeNonVisual::get_cNvGrpSpPr() const
     {    
-    if (m_a_cNvGrpSpPr)
+    if (m_cNvGrpSpPr)
     {
-        return *m_a_cNvGrpSpPr;
+        return *m_cNvGrpSpPr;
     }
     return ns_a::CT_NonVisualGroupDrawingShapeProps::default_instance();
     }
@@ -1252,14 +1347,14 @@ CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
             
             _outStream << ">";
             
-    if (m_has_a_cNvPr)
+    if (m_has_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvGrpSpPr)
+    if (m_has_cNvGrpSpPr)
     {
-        m_a_cNvGrpSpPr->toXmlElem("a:cNvGrpSpPr", "", _outStream);;
+        m_cNvGrpSpPr->toXmlElem("cdr:cNvGrpSpPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1277,6 +1372,13 @@ CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
 CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
 
     // CT_GroupShape
+    CT_GroupShape::CT_GroupShape()
+    :m_has_nvGrpSpPr(false),
+    m_nvGrpSpPr(NULL),
+    m_has_grpSpPr(false),
+    m_grpSpPr(NULL)
+    {
+    }
     bool CT_GroupShape::has_nvGrpSpPr() const
     {    
     return m_has_nvGrpSpPr;
@@ -1301,26 +1403,26 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
     return CT_GroupShapeNonVisual::default_instance();
     }
 
-    bool CT_GroupShape::has_a_grpSpPr() const
+    bool CT_GroupShape::has_grpSpPr() const
     {    
-    return m_has_a_grpSpPr;
+    return m_has_grpSpPr;
     }
 
-    ns_a::CT_GroupShapeProperties* CT_GroupShape::mutable_a_grpSpPr()
+    ns_a::CT_GroupShapeProperties* CT_GroupShape::mutable_grpSpPr()
     {    
-    m_has_a_grpSpPr = true;
-    if (!m_a_grpSpPr)
+    m_has_grpSpPr = true;
+    if (!m_grpSpPr)
     {
-        m_a_grpSpPr = new ns_a::CT_GroupShapeProperties();
+        m_grpSpPr = new ns_a::CT_GroupShapeProperties();
     }
-    return m_a_grpSpPr;
+    return m_grpSpPr;
     }
 
-    const ns_a::CT_GroupShapeProperties& CT_GroupShape::get_a_grpSpPr() const
+    const ns_a::CT_GroupShapeProperties& CT_GroupShape::get_grpSpPr() const
     {    
-    if (m_a_grpSpPr)
+    if (m_grpSpPr)
     {
-        return *m_a_grpSpPr;
+        return *m_grpSpPr;
     }
     return ns_a::CT_GroupShapeProperties::default_instance();
     }
@@ -1376,12 +1478,12 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
     }
     
     
-    m_has_a_grpSpPr = false;
+    m_has_grpSpPr = false;
     
-    if (m_a_grpSpPr)
+    if (m_grpSpPr)
     {
-        delete m_a_grpSpPr;
-        m_a_grpSpPr = NULL;
+        delete m_grpSpPr;
+        m_grpSpPr = NULL;
     }
     
      
@@ -1408,12 +1510,12 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
             
     if (m_has_nvGrpSpPr)
     {
-        m_nvGrpSpPr->toXmlElem("nvGrpSpPr", "", _outStream);;
+        m_nvGrpSpPr->toXmlElem("cdr:nvGrpSpPr", "", _outStream);;
     }
     
-    if (m_has_a_grpSpPr)
+    if (m_has_grpSpPr)
     {
-        m_a_grpSpPr->toXmlElem("a:grpSpPr", "", _outStream);;
+        m_grpSpPr->toXmlElem("cdr:grpSpPr", "", _outStream);;
     }
      
     {
@@ -1422,23 +1524,23 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
         {
             if ((*iter)->has_sp())
             {
-                (*iter)->get_sp().toXmlElem("sp", "", _outStream);
+                (*iter)->get_sp().toXmlElem("cdr:sp", "", _outStream);
             }
             else if ((*iter)->has_grpSp())
             {
-                (*iter)->get_grpSp().toXmlElem("grpSp", "", _outStream);
+                (*iter)->get_grpSp().toXmlElem("cdr:grpSp", "", _outStream);
             }
             else if ((*iter)->has_graphicFrame())
             {
-                (*iter)->get_graphicFrame().toXmlElem("graphicFrame", "", _outStream);
+                (*iter)->get_graphicFrame().toXmlElem("cdr:graphicFrame", "", _outStream);
             }
             else if ((*iter)->has_cxnSp())
             {
-                (*iter)->get_cxnSp().toXmlElem("cxnSp", "", _outStream);
+                (*iter)->get_cxnSp().toXmlElem("cdr:cxnSp", "", _outStream);
             }
             else if ((*iter)->has_pic())
             {
-                (*iter)->get_pic().toXmlElem("pic", "", _outStream);
+                (*iter)->get_pic().toXmlElem("cdr:pic", "", _outStream);
             }
         }
     }
@@ -1457,6 +1559,19 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
 
 
     // CT_GroupShape::ChildGroup_1
+    CT_GroupShape::ChildGroup_1::ChildGroup_1()
+    :m_has_sp(false),
+    m_sp(NULL),
+    m_has_grpSp(false),
+    m_grpSp(NULL),
+    m_has_graphicFrame(false),
+    m_graphicFrame(NULL),
+    m_has_cxnSp(false),
+    m_cxnSp(NULL),
+    m_has_pic(false),
+    m_pic(NULL)
+    {
+    }
     bool CT_GroupShape::ChildGroup_1::has_sp() const
     {    
     return m_has_sp;
@@ -1765,6 +1880,13 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
 CT_GroupShape* CT_GroupShape::default_instance_ = NULL;
 
     // CT_Marker
+    CT_Marker::CT_Marker()
+    :m_has_x(false),
+    m_x(NULL),
+    m_has_y(false),
+    m_y(NULL)
+    {
+    }
     bool CT_Marker::has_x() const
     {    
     return m_has_x;
@@ -1829,12 +1951,12 @@ CT_GroupShape* CT_GroupShape::default_instance_ = NULL;
             
     if (m_has_x)
     {
-        _outStream << "<x>" << m_x->toString() << "</x>";;
+        _outStream << "<cdr:x>" << m_x->toString() << "</cdr:x>";;
     }
     
     if (m_has_y)
     {
-        _outStream << "<y>" << m_y->toString() << "</y>";;
+        _outStream << "<cdr:y>" << m_y->toString() << "</cdr:y>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1852,6 +1974,23 @@ CT_GroupShape* CT_GroupShape::default_instance_ = NULL;
 CT_Marker* CT_Marker::default_instance_ = NULL;
 
     // CT_RelSizeAnchor
+    CT_RelSizeAnchor::CT_RelSizeAnchor()
+    :m_has_from(false),
+    m_from(NULL),
+    m_has_to(false),
+    m_to(NULL),
+    m_has_sp(false),
+    m_sp(NULL),
+    m_has_grpSp(false),
+    m_grpSp(NULL),
+    m_has_graphicFrame(false),
+    m_graphicFrame(NULL),
+    m_has_cxnSp(false),
+    m_cxnSp(NULL),
+    m_has_pic(false),
+    m_pic(NULL)
+    {
+    }
     bool CT_RelSizeAnchor::has_from() const
     {    
     return m_has_from;
@@ -2221,37 +2360,37 @@ CT_Marker* CT_Marker::default_instance_ = NULL;
             
     if (m_has_from)
     {
-        m_from->toXmlElem("from", "", _outStream);;
+        m_from->toXmlElem("cdr:from", "", _outStream);;
     }
     
     if (m_has_to)
     {
-        m_to->toXmlElem("to", "", _outStream);;
+        m_to->toXmlElem("cdr:to", "", _outStream);;
     }
      
     if (m_has_sp)
     {
-        m_sp->toXmlElem("sp", "", _outStream);;
+        m_sp->toXmlElem("cdr:sp", "", _outStream);;
     }
     
     if (m_has_grpSp)
     {
-        m_grpSp->toXmlElem("grpSp", "", _outStream);;
+        m_grpSp->toXmlElem("cdr:grpSp", "", _outStream);;
     }
     
     if (m_has_graphicFrame)
     {
-        m_graphicFrame->toXmlElem("graphicFrame", "", _outStream);;
+        m_graphicFrame->toXmlElem("cdr:graphicFrame", "", _outStream);;
     }
     
     if (m_has_cxnSp)
     {
-        m_cxnSp->toXmlElem("cxnSp", "", _outStream);;
+        m_cxnSp->toXmlElem("cdr:cxnSp", "", _outStream);;
     }
     
     if (m_has_pic)
     {
-        m_pic->toXmlElem("pic", "", _outStream);;
+        m_pic->toXmlElem("cdr:pic", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2269,6 +2408,23 @@ CT_Marker* CT_Marker::default_instance_ = NULL;
 CT_RelSizeAnchor* CT_RelSizeAnchor::default_instance_ = NULL;
 
     // CT_AbsSizeAnchor
+    CT_AbsSizeAnchor::CT_AbsSizeAnchor()
+    :m_has_from(false),
+    m_from(NULL),
+    m_has_ext(false),
+    m_ext(NULL),
+    m_has_sp(false),
+    m_sp(NULL),
+    m_has_grpSp(false),
+    m_grpSp(NULL),
+    m_has_graphicFrame(false),
+    m_graphicFrame(NULL),
+    m_has_cxnSp(false),
+    m_cxnSp(NULL),
+    m_has_pic(false),
+    m_pic(NULL)
+    {
+    }
     bool CT_AbsSizeAnchor::has_from() const
     {    
     return m_has_from;
@@ -2293,26 +2449,26 @@ CT_RelSizeAnchor* CT_RelSizeAnchor::default_instance_ = NULL;
     return CT_Marker::default_instance();
     }
 
-    bool CT_AbsSizeAnchor::has_a_ext() const
+    bool CT_AbsSizeAnchor::has_ext() const
     {    
-    return m_has_a_ext;
+    return m_has_ext;
     }
 
-    ns_a::CT_PositiveSize2D* CT_AbsSizeAnchor::mutable_a_ext()
+    ns_a::CT_PositiveSize2D* CT_AbsSizeAnchor::mutable_ext()
     {    
-    m_has_a_ext = true;
-    if (!m_a_ext)
+    m_has_ext = true;
+    if (!m_ext)
     {
-        m_a_ext = new ns_a::CT_PositiveSize2D();
+        m_ext = new ns_a::CT_PositiveSize2D();
     }
-    return m_a_ext;
+    return m_ext;
     }
 
-    const ns_a::CT_PositiveSize2D& CT_AbsSizeAnchor::get_a_ext() const
+    const ns_a::CT_PositiveSize2D& CT_AbsSizeAnchor::get_ext() const
     {    
-    if (m_a_ext)
+    if (m_ext)
     {
-        return *m_a_ext;
+        return *m_ext;
     }
     return ns_a::CT_PositiveSize2D::default_instance();
     }
@@ -2638,37 +2794,37 @@ CT_RelSizeAnchor* CT_RelSizeAnchor::default_instance_ = NULL;
             
     if (m_has_from)
     {
-        m_from->toXmlElem("from", "", _outStream);;
+        m_from->toXmlElem("cdr:from", "", _outStream);;
     }
     
-    if (m_has_a_ext)
+    if (m_has_ext)
     {
-        m_a_ext->toXmlElem("a:ext", "", _outStream);;
+        m_ext->toXmlElem("cdr:ext", "", _outStream);;
     }
      
     if (m_has_sp)
     {
-        m_sp->toXmlElem("sp", "", _outStream);;
+        m_sp->toXmlElem("cdr:sp", "", _outStream);;
     }
     
     if (m_has_grpSp)
     {
-        m_grpSp->toXmlElem("grpSp", "", _outStream);;
+        m_grpSp->toXmlElem("cdr:grpSp", "", _outStream);;
     }
     
     if (m_has_graphicFrame)
     {
-        m_graphicFrame->toXmlElem("graphicFrame", "", _outStream);;
+        m_graphicFrame->toXmlElem("cdr:graphicFrame", "", _outStream);;
     }
     
     if (m_has_cxnSp)
     {
-        m_cxnSp->toXmlElem("cxnSp", "", _outStream);;
+        m_cxnSp->toXmlElem("cdr:cxnSp", "", _outStream);;
     }
     
     if (m_has_pic)
     {
-        m_pic->toXmlElem("pic", "", _outStream);;
+        m_pic->toXmlElem("cdr:pic", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2686,6 +2842,10 @@ CT_RelSizeAnchor* CT_RelSizeAnchor::default_instance_ = NULL;
 CT_AbsSizeAnchor* CT_AbsSizeAnchor::default_instance_ = NULL;
 
     // CT_Drawing
+    CT_Drawing::CT_Drawing()
+
+    {
+    }
     CT_RelSizeAnchor* CT_Drawing::add_relSizeAnchor()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -2731,11 +2891,11 @@ CT_AbsSizeAnchor* CT_AbsSizeAnchor::default_instance_ = NULL;
         {
             if ((*iter)->has_relSizeAnchor())
             {
-                (*iter)->get_relSizeAnchor().toXmlElem("relSizeAnchor", "", _outStream);
+                (*iter)->get_relSizeAnchor().toXmlElem("cdr:relSizeAnchor", "", _outStream);
             }
             else if ((*iter)->has_absSizeAnchor())
             {
-                (*iter)->get_absSizeAnchor().toXmlElem("absSizeAnchor", "", _outStream);
+                (*iter)->get_absSizeAnchor().toXmlElem("cdr:absSizeAnchor", "", _outStream);
             }
         }
     }
@@ -2754,6 +2914,13 @@ CT_AbsSizeAnchor* CT_AbsSizeAnchor::default_instance_ = NULL;
 
 
     // CT_Drawing::ChildGroup_1
+    CT_Drawing::ChildGroup_1::ChildGroup_1()
+    :m_has_relSizeAnchor(false),
+    m_relSizeAnchor(NULL),
+    m_has_absSizeAnchor(false),
+    m_absSizeAnchor(NULL)
+    {
+    }
     bool CT_Drawing::ChildGroup_1::has_relSizeAnchor() const
     {    
     return m_has_relSizeAnchor;

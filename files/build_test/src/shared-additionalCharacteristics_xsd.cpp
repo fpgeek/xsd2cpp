@@ -74,6 +74,10 @@ namespace ns_characteristics {
 ST_Relation* ST_Relation::default_instance_ = NULL;
 
     // CT_AdditionalCharacteristics
+    CT_AdditionalCharacteristics::CT_AdditionalCharacteristics()
+
+    {
+    }
     CT_Characteristic* CT_AdditionalCharacteristics::add_characteristic()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -111,7 +115,7 @@ ST_Relation* ST_Relation::default_instance_ = NULL;
         {
             if ((*iter)->has_characteristic())
             {
-                (*iter)->get_characteristic().toXmlElem("characteristic", "", _outStream);
+                (*iter)->get_characteristic().toXmlElem("characteristics:characteristic", "", _outStream);
             }
         }
     }
@@ -130,6 +134,11 @@ ST_Relation* ST_Relation::default_instance_ = NULL;
 
 
     // CT_AdditionalCharacteristics::ChildGroup_1
+    CT_AdditionalCharacteristics::ChildGroup_1::ChildGroup_1()
+    :m_has_characteristic(false),
+    m_characteristic(NULL)
+    {
+    }
     bool CT_AdditionalCharacteristics::ChildGroup_1::has_characteristic() const
     {    
     return m_has_characteristic;
@@ -158,6 +167,17 @@ ST_Relation* ST_Relation::default_instance_ = NULL;
 CT_AdditionalCharacteristics* CT_AdditionalCharacteristics::default_instance_ = NULL;
 
     // CT_Characteristic
+    CT_Characteristic::CT_Characteristic()
+    :m_has_name_attr(false),
+    m_name_attr(""),
+    m_has_relation_attr(false),
+    m_relation_attr(NULL),
+    m_has_val_attr(false),
+    m_val_attr(""),
+    m_has_vocabulary_attr(false),
+    m_vocabulary_attr("")
+    {
+    }
     void CT_Characteristic::clear()
     {    
     m_has_name_attr = false;
@@ -296,6 +316,10 @@ CT_AdditionalCharacteristics* CT_AdditionalCharacteristics::default_instance_ = 
 CT_Characteristic* CT_Characteristic::default_instance_ = NULL;
 
     // additionalCharacteristics_element
+    additionalCharacteristics_element::additionalCharacteristics_element()
+
+    {
+    }
     CT_Characteristic* additionalCharacteristics_element::add_characteristic()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -318,7 +342,7 @@ CT_Characteristic* CT_Characteristic::default_instance_ = NULL;
 
     void additionalCharacteristics_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<additionalCharacteristics";
+    _outStream << "<characteristics:additionalCharacteristics";
     
     _outStream << " " << "xmlns:characteristics=\"http://schemas.openxmlformats.org/officeDocument/2006/characteristics\"";
     
@@ -330,12 +354,12 @@ CT_Characteristic* CT_Characteristic::default_instance_ = NULL;
         {
             if ((*iter)->has_characteristic())
             {
-                (*iter)->get_characteristic().toXmlElem("characteristic", "", _outStream);
+                (*iter)->get_characteristic().toXmlElem("characteristics:characteristic", "", _outStream);
             }
         }
     }
     
-    _outStream << "</additionalCharacteristics>";
+    _outStream << "</characteristics:additionalCharacteristics>";
     }
 
     const additionalCharacteristics_element& additionalCharacteristics_element::default_instance()
@@ -349,6 +373,11 @@ CT_Characteristic* CT_Characteristic::default_instance_ = NULL;
 
 
     // additionalCharacteristics_element::ChildGroup_1
+    additionalCharacteristics_element::ChildGroup_1::ChildGroup_1()
+    :m_has_characteristic(false),
+    m_characteristic(NULL)
+    {
+    }
     bool additionalCharacteristics_element::ChildGroup_1::has_characteristic() const
     {    
     return m_has_characteristic;

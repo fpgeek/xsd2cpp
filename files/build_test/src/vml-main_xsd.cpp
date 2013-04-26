@@ -765,6 +765,19 @@ ST_ImageAspect* ST_ImageAspect::default_instance_ = NULL;
 ST_EditAs* ST_EditAs::default_instance_ = NULL;
 
     // CT_Shape
+    CT_Shape::CT_Shape()
+    :m_has_type_attr(false),
+    m_type_attr(""),
+    m_has_adj_attr(false),
+    m_adj_attr(""),
+    m_has_path_attr(false),
+    m_path_attr(""),
+    m_has_o_gfxdata_attr(false),
+    m_o_gfxdata_attr(""),
+    m_has_equationxml_attr(false),
+    m_equationxml_attr("")
+    {
+    }
     CT_Path* CT_Shape::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -984,8 +997,8 @@ ST_EditAs* ST_EditAs::default_instance_ = NULL;
     m_has_path_attr = false;
     m_path_attr.clear();
     
-    m_has_gfxdata_attr = false;
-    m_gfxdata_attr.clear();
+    m_has_o_gfxdata_attr = false;
+    m_o_gfxdata_attr.clear();
     
     m_has_equationxml_attr = false;
     m_equationxml_attr.clear();
@@ -1027,9 +1040,9 @@ ST_EditAs* ST_EditAs::default_instance_ = NULL;
     }
     
     
-    if (m_has_gfxdata_attr)
+    if (m_has_o_gfxdata_attr)
     {
-        _outStream << " " << "gfxdata" << "=\"" << m_gfxdata_attr << "\"";
+        _outStream << " " << "o:gfxdata" << "=\"" << m_o_gfxdata_attr << "\"";
     }
     
     
@@ -1046,39 +1059,39 @@ ST_EditAs* ST_EditAs::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -1211,20 +1224,20 @@ ST_EditAs* ST_EditAs::default_instance_ = NULL;
     return m_path_attr;
     }
 
-    bool CT_Shape::has_gfxdata_attr() const
+    bool CT_Shape::has_o_gfxdata_attr() const
     {    
-    return m_has_gfxdata_attr;
+    return m_has_o_gfxdata_attr;
     }
 
-    void CT_Shape::set_gfxdata_attr(const XSD::base64Binary_& _gfxdata_attr)
+    void CT_Shape::set_o_gfxdata_attr(const XSD::base64Binary_& _o_gfxdata_attr)
     {    
-    m_has_gfxdata_attr = true;
-    m_gfxdata_attr = _gfxdata_attr;
+    m_has_o_gfxdata_attr = true;
+    m_o_gfxdata_attr = _o_gfxdata_attr;
     }
 
-    const XSD::base64Binary_& CT_Shape::get_gfxdata_attr() const
+    const XSD::base64Binary_& CT_Shape::get_o_gfxdata_attr() const
     {    
-    return m_gfxdata_attr;
+    return m_o_gfxdata_attr;
     }
 
     bool CT_Shape::has_equationxml_attr() const
@@ -1245,6 +1258,61 @@ ST_EditAs* ST_EditAs::default_instance_ = NULL;
 
 
     // CT_Shape::ChildGroup_1
+    CT_Shape::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL),
+    m_has_o_ink(false),
+    m_o_ink(NULL),
+    m_has_pvml_iscomment(false),
+    m_pvml_iscomment(NULL),
+    m_has_o_equationxml(false),
+    m_o_equationxml(NULL)
+    {
+    }
     bool CT_Shape::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -7748,6 +7816,17 @@ ST_EditAs* ST_EditAs::default_instance_ = NULL;
 CT_Shape* CT_Shape::default_instance_ = NULL;
 
     // CT_Shapetype
+    CT_Shapetype::CT_Shapetype()
+    :m_has_o_complex(false),
+    m_o_complex(NULL),
+    m_has_adj_attr(false),
+    m_adj_attr(""),
+    m_has_path_attr(false),
+    m_path_attr(""),
+    m_has_o_master_attr(false),
+    m_o_master_attr("")
+    {
+    }
     CT_Path* CT_Shapetype::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -7964,8 +8043,8 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
     m_has_path_attr = false;
     m_path_attr.clear();
     
-    m_has_master_attr = false;
-    m_master_attr.clear();
+    m_has_o_master_attr = false;
+    m_o_master_attr.clear();
     
     {
         vector<ChildGroup_1*>::iterator iter;
@@ -8007,9 +8086,9 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
     }
     
     
-    if (m_has_master_attr)
+    if (m_has_o_master_attr)
     {
-        _outStream << " " << "master" << "=\"" << m_master_attr << "\"";
+        _outStream << " " << "o:master" << "=\"" << m_o_master_attr << "\"";
     }
     
             _outStream << ">";
@@ -8020,39 +8099,39 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -8162,24 +8241,73 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
     return m_path_attr;
     }
 
-    bool CT_Shapetype::has_master_attr() const
+    bool CT_Shapetype::has_o_master_attr() const
     {    
-    return m_has_master_attr;
+    return m_has_o_master_attr;
     }
 
-    void CT_Shapetype::set_master_attr(const XSD::string_& _master_attr)
+    void CT_Shapetype::set_o_master_attr(const XSD::string_& _o_master_attr)
     {    
-    m_has_master_attr = true;
-    m_master_attr = _master_attr;
+    m_has_o_master_attr = true;
+    m_o_master_attr = _o_master_attr;
     }
 
-    const XSD::string_& CT_Shapetype::get_master_attr() const
+    const XSD::string_& CT_Shapetype::get_o_master_attr() const
     {    
-    return m_master_attr;
+    return m_o_master_attr;
     }
 
 
     // CT_Shapetype::ChildGroup_1
+    CT_Shapetype::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool CT_Shapetype::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -13312,6 +13440,19 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
 CT_Shapetype* CT_Shapetype::default_instance_ = NULL;
 
     // CT_Group
+    CT_Group::CT_Group()
+    :m_has_filled_attr(false),
+    m_filled_attr(NULL),
+    m_has_fillcolor_attr(false),
+    m_fillcolor_attr(NULL),
+    m_has_editas_attr(false),
+    m_editas_attr(NULL),
+    m_has_o_tableproperties_attr(false),
+    m_o_tableproperties_attr(""),
+    m_has_o_tablelimits_attr(false),
+    m_o_tablelimits_attr("")
+    {
+    }
     CT_Path* CT_Group::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -13594,21 +13735,21 @@ CT_Shapetype* CT_Shapetype::default_instance_ = NULL;
 
     void CT_Group::clear()
     {    
-    m_has_s_filled_attr = false;
+    m_has_filled_attr = false;
     
-    if (m_s_filled_attr)
+    if (m_filled_attr)
     {
-        delete m_s_filled_attr;
-        m_s_filled_attr = NULL;
+        delete m_filled_attr;
+        m_filled_attr = NULL;
     }
     
     
-    m_has_s_fillcolor_attr = false;
+    m_has_fillcolor_attr = false;
     
-    if (m_s_fillcolor_attr)
+    if (m_fillcolor_attr)
     {
-        delete m_s_fillcolor_attr;
-        m_s_fillcolor_attr = NULL;
+        delete m_fillcolor_attr;
+        m_fillcolor_attr = NULL;
     }
     
     
@@ -13621,11 +13762,11 @@ CT_Shapetype* CT_Shapetype::default_instance_ = NULL;
     }
     
     
-    m_has_tableproperties_attr = false;
-    m_tableproperties_attr.clear();
+    m_has_o_tableproperties_attr = false;
+    m_o_tableproperties_attr.clear();
     
-    m_has_tablelimits_attr = false;
-    m_tablelimits_attr.clear();
+    m_has_o_tablelimits_attr = false;
+    m_o_tablelimits_attr.clear();
     
     {
         vector<ChildGroup_1*>::iterator iter;
@@ -13646,15 +13787,15 @@ CT_Shapetype* CT_Shapetype::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_filled_attr)
+    if (m_has_filled_attr)
     {
-        m_s_filled_attr->toXmlAttr("filled", _outStream);
+        m_filled_attr->toXmlAttr("filled", _outStream);
     }
     
     
-    if (m_has_s_fillcolor_attr)
+    if (m_has_fillcolor_attr)
     {
-        m_s_fillcolor_attr->toXmlAttr("fillcolor", _outStream);
+        m_fillcolor_attr->toXmlAttr("fillcolor", _outStream);
     }
     
     
@@ -13664,15 +13805,15 @@ CT_Shapetype* CT_Shapetype::default_instance_ = NULL;
     }
     
     
-    if (m_has_tableproperties_attr)
+    if (m_has_o_tableproperties_attr)
     {
-        _outStream << " " << "tableproperties" << "=\"" << m_tableproperties_attr << "\"";
+        _outStream << " " << "o:tableproperties" << "=\"" << m_o_tableproperties_attr << "\"";
     }
     
     
-    if (m_has_tablelimits_attr)
+    if (m_has_o_tablelimits_attr)
     {
-        _outStream << " " << "tablelimits" << "=\"" << m_tablelimits_attr << "\"";
+        _outStream << " " << "o:tablelimits" << "=\"" << m_o_tablelimits_attr << "\"";
     }
     
             _outStream << ">";
@@ -13683,39 +13824,39 @@ CT_Shapetype* CT_Shapetype::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -13775,47 +13916,47 @@ CT_Shapetype* CT_Shapetype::default_instance_ = NULL;
             }
             else if ((*iter)->has_group())
             {
-                (*iter)->get_group().toXmlElem("group", "", _outStream);
+                (*iter)->get_group().toXmlElem("v:group", "", _outStream);
             }
             else if ((*iter)->has_shape())
             {
-                (*iter)->get_shape().toXmlElem("shape", "", _outStream);
+                (*iter)->get_shape().toXmlElem("v:shape", "", _outStream);
             }
             else if ((*iter)->has_shapetype())
             {
-                (*iter)->get_shapetype().toXmlElem("shapetype", "", _outStream);
+                (*iter)->get_shapetype().toXmlElem("v:shapetype", "", _outStream);
             }
             else if ((*iter)->has_arc())
             {
-                (*iter)->get_arc().toXmlElem("arc", "", _outStream);
+                (*iter)->get_arc().toXmlElem("v:arc", "", _outStream);
             }
             else if ((*iter)->has_curve())
             {
-                (*iter)->get_curve().toXmlElem("curve", "", _outStream);
+                (*iter)->get_curve().toXmlElem("v:curve", "", _outStream);
             }
             else if ((*iter)->has_image())
             {
-                (*iter)->get_image().toXmlElem("image", "", _outStream);
+                (*iter)->get_image().toXmlElem("v:image", "", _outStream);
             }
             else if ((*iter)->has_line())
             {
-                (*iter)->get_line().toXmlElem("line", "", _outStream);
+                (*iter)->get_line().toXmlElem("v:line", "", _outStream);
             }
             else if ((*iter)->has_oval())
             {
-                (*iter)->get_oval().toXmlElem("oval", "", _outStream);
+                (*iter)->get_oval().toXmlElem("v:oval", "", _outStream);
             }
             else if ((*iter)->has_polyline())
             {
-                (*iter)->get_polyline().toXmlElem("polyline", "", _outStream);
+                (*iter)->get_polyline().toXmlElem("v:polyline", "", _outStream);
             }
             else if ((*iter)->has_rect())
             {
-                (*iter)->get_rect().toXmlElem("rect", "", _outStream);
+                (*iter)->get_rect().toXmlElem("v:rect", "", _outStream);
             }
             else if ((*iter)->has_roundrect())
             {
-                (*iter)->get_roundrect().toXmlElem("roundrect", "", _outStream);
+                (*iter)->get_roundrect().toXmlElem("v:roundrect", "", _outStream);
             }
             else if ((*iter)->has_o_diagram())
             {
@@ -13836,42 +13977,42 @@ CT_Shapetype* CT_Shapetype::default_instance_ = NULL;
     return *CT_Group::default_instance_;
     }
 
-    bool CT_Group::has_s_filled_attr() const
+    bool CT_Group::has_filled_attr() const
     {    
-    return m_has_s_filled_attr;
+    return m_has_filled_attr;
     }
 
-    void CT_Group::set_s_filled_attr(const ns_s::ST_TrueFalse& _s_filled_attr)
+    void CT_Group::set_filled_attr(const ns_s::ST_TrueFalse& _filled_attr)
     {    
-    m_has_s_filled_attr = true;
-    m_s_filled_attr = new ns_s::ST_TrueFalse(_s_filled_attr);
+    m_has_filled_attr = true;
+    m_filled_attr = new ns_s::ST_TrueFalse(_filled_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Group::get_s_filled_attr() const
+    const ns_s::ST_TrueFalse& CT_Group::get_filled_attr() const
     {    
-    if (m_s_filled_attr)
+    if (m_filled_attr)
     {
-        return *m_s_filled_attr;
+        return *m_filled_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Group::has_s_fillcolor_attr() const
+    bool CT_Group::has_fillcolor_attr() const
     {    
-    return m_has_s_fillcolor_attr;
+    return m_has_fillcolor_attr;
     }
 
-    void CT_Group::set_s_fillcolor_attr(const ns_s::ST_ColorType& _s_fillcolor_attr)
+    void CT_Group::set_fillcolor_attr(const ns_s::ST_ColorType& _fillcolor_attr)
     {    
-    m_has_s_fillcolor_attr = true;
-    m_s_fillcolor_attr = new ns_s::ST_ColorType(_s_fillcolor_attr);
+    m_has_fillcolor_attr = true;
+    m_fillcolor_attr = new ns_s::ST_ColorType(_fillcolor_attr);
     }
 
-    const ns_s::ST_ColorType& CT_Group::get_s_fillcolor_attr() const
+    const ns_s::ST_ColorType& CT_Group::get_fillcolor_attr() const
     {    
-    if (m_s_fillcolor_attr)
+    if (m_fillcolor_attr)
     {
-        return *m_s_fillcolor_attr;
+        return *m_fillcolor_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -13896,40 +14037,113 @@ CT_Shapetype* CT_Shapetype::default_instance_ = NULL;
     return ST_EditAs::default_instance();
     }
 
-    bool CT_Group::has_tableproperties_attr() const
+    bool CT_Group::has_o_tableproperties_attr() const
     {    
-    return m_has_tableproperties_attr;
+    return m_has_o_tableproperties_attr;
     }
 
-    void CT_Group::set_tableproperties_attr(const XSD::string_& _tableproperties_attr)
+    void CT_Group::set_o_tableproperties_attr(const XSD::string_& _o_tableproperties_attr)
     {    
-    m_has_tableproperties_attr = true;
-    m_tableproperties_attr = _tableproperties_attr;
+    m_has_o_tableproperties_attr = true;
+    m_o_tableproperties_attr = _o_tableproperties_attr;
     }
 
-    const XSD::string_& CT_Group::get_tableproperties_attr() const
+    const XSD::string_& CT_Group::get_o_tableproperties_attr() const
     {    
-    return m_tableproperties_attr;
+    return m_o_tableproperties_attr;
     }
 
-    bool CT_Group::has_tablelimits_attr() const
+    bool CT_Group::has_o_tablelimits_attr() const
     {    
-    return m_has_tablelimits_attr;
+    return m_has_o_tablelimits_attr;
     }
 
-    void CT_Group::set_tablelimits_attr(const XSD::string_& _tablelimits_attr)
+    void CT_Group::set_o_tablelimits_attr(const XSD::string_& _o_tablelimits_attr)
     {    
-    m_has_tablelimits_attr = true;
-    m_tablelimits_attr = _tablelimits_attr;
+    m_has_o_tablelimits_attr = true;
+    m_o_tablelimits_attr = _o_tablelimits_attr;
     }
 
-    const XSD::string_& CT_Group::get_tablelimits_attr() const
+    const XSD::string_& CT_Group::get_o_tablelimits_attr() const
     {    
-    return m_tablelimits_attr;
+    return m_o_tablelimits_attr;
     }
 
 
     // CT_Group::ChildGroup_1
+    CT_Group::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL),
+    m_has_group(false),
+    m_group(NULL),
+    m_has_shape(false),
+    m_shape(NULL),
+    m_has_shapetype(false),
+    m_shapetype(NULL),
+    m_has_arc(false),
+    m_arc(NULL),
+    m_has_curve(false),
+    m_curve(NULL),
+    m_has_image(false),
+    m_image(NULL),
+    m_has_line(false),
+    m_line(NULL),
+    m_has_oval(false),
+    m_oval(NULL),
+    m_has_polyline(false),
+    m_polyline(NULL),
+    m_has_rect(false),
+    m_rect(NULL),
+    m_has_roundrect(false),
+    m_roundrect(NULL),
+    m_has_o_diagram(false),
+    m_o_diagram(NULL)
+    {
+    }
     bool CT_Group::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -25518,6 +25732,25 @@ CT_Shapetype* CT_Shapetype::default_instance_ = NULL;
 CT_Group* CT_Group::default_instance_ = NULL;
 
     // CT_Background
+    CT_Background::CT_Background()
+    :m_has_fill(false),
+    m_fill(NULL),
+    m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_filled_attr(false),
+    m_filled_attr(NULL),
+    m_has_fillcolor_attr(false),
+    m_fillcolor_attr(NULL),
+    m_has_o_bwmode_attr(false),
+    m_o_bwmode_attr(NULL),
+    m_has_o_bwpure_attr(false),
+    m_o_bwpure_attr(NULL),
+    m_has_o_bwnormal_attr(false),
+    m_o_bwnormal_attr(NULL),
+    m_has_o_targetscreensize_attr(false),
+    m_o_targetscreensize_attr(NULL)
+    {
+    }
     bool CT_Background::has_fill() const
     {    
     return m_has_fill;
@@ -25547,21 +25780,21 @@ CT_Group* CT_Group::default_instance_ = NULL;
     m_has_id_attr = false;
     m_id_attr.clear();
     
-    m_has_s_filled_attr = false;
+    m_has_filled_attr = false;
     
-    if (m_s_filled_attr)
+    if (m_filled_attr)
     {
-        delete m_s_filled_attr;
-        m_s_filled_attr = NULL;
+        delete m_filled_attr;
+        m_filled_attr = NULL;
     }
     
     
-    m_has_s_fillcolor_attr = false;
+    m_has_fillcolor_attr = false;
     
-    if (m_s_fillcolor_attr)
+    if (m_fillcolor_attr)
     {
-        delete m_s_fillcolor_attr;
-        m_s_fillcolor_attr = NULL;
+        delete m_fillcolor_attr;
+        m_fillcolor_attr = NULL;
     }
     
     
@@ -25617,46 +25850,46 @@ CT_Group* CT_Group::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_filled_attr)
+    if (m_has_filled_attr)
     {
-        m_s_filled_attr->toXmlAttr("filled", _outStream);
+        m_filled_attr->toXmlAttr("filled", _outStream);
     }
     
     
-    if (m_has_s_fillcolor_attr)
+    if (m_has_fillcolor_attr)
     {
-        m_s_fillcolor_attr->toXmlAttr("fillcolor", _outStream);
+        m_fillcolor_attr->toXmlAttr("fillcolor", _outStream);
     }
     
     
     if (m_has_o_bwmode_attr)
     {
-        m_o_bwmode_attr->toXmlAttr("bwmode", _outStream);
+        m_o_bwmode_attr->toXmlAttr("o:bwmode", _outStream);
     }
     
     
     if (m_has_o_bwpure_attr)
     {
-        m_o_bwpure_attr->toXmlAttr("bwpure", _outStream);
+        m_o_bwpure_attr->toXmlAttr("o:bwpure", _outStream);
     }
     
     
     if (m_has_o_bwnormal_attr)
     {
-        m_o_bwnormal_attr->toXmlAttr("bwnormal", _outStream);
+        m_o_bwnormal_attr->toXmlAttr("o:bwnormal", _outStream);
     }
     
     
     if (m_has_o_targetscreensize_attr)
     {
-        m_o_targetscreensize_attr->toXmlAttr("targetscreensize", _outStream);
+        m_o_targetscreensize_attr->toXmlAttr("o:targetscreensize", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_fill)
     {
-        m_fill->toXmlElem("fill", "", _outStream);;
+        m_fill->toXmlElem("v:fill", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -25687,42 +25920,42 @@ CT_Group* CT_Group::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool CT_Background::has_s_filled_attr() const
+    bool CT_Background::has_filled_attr() const
     {    
-    return m_has_s_filled_attr;
+    return m_has_filled_attr;
     }
 
-    void CT_Background::set_s_filled_attr(const ns_s::ST_TrueFalse& _s_filled_attr)
+    void CT_Background::set_filled_attr(const ns_s::ST_TrueFalse& _filled_attr)
     {    
-    m_has_s_filled_attr = true;
-    m_s_filled_attr = new ns_s::ST_TrueFalse(_s_filled_attr);
+    m_has_filled_attr = true;
+    m_filled_attr = new ns_s::ST_TrueFalse(_filled_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Background::get_s_filled_attr() const
+    const ns_s::ST_TrueFalse& CT_Background::get_filled_attr() const
     {    
-    if (m_s_filled_attr)
+    if (m_filled_attr)
     {
-        return *m_s_filled_attr;
+        return *m_filled_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Background::has_s_fillcolor_attr() const
+    bool CT_Background::has_fillcolor_attr() const
     {    
-    return m_has_s_fillcolor_attr;
+    return m_has_fillcolor_attr;
     }
 
-    void CT_Background::set_s_fillcolor_attr(const ns_s::ST_ColorType& _s_fillcolor_attr)
+    void CT_Background::set_fillcolor_attr(const ns_s::ST_ColorType& _fillcolor_attr)
     {    
-    m_has_s_fillcolor_attr = true;
-    m_s_fillcolor_attr = new ns_s::ST_ColorType(_s_fillcolor_attr);
+    m_has_fillcolor_attr = true;
+    m_fillcolor_attr = new ns_s::ST_ColorType(_fillcolor_attr);
     }
 
-    const ns_s::ST_ColorType& CT_Background::get_s_fillcolor_attr() const
+    const ns_s::ST_ColorType& CT_Background::get_fillcolor_attr() const
     {    
-    if (m_s_fillcolor_attr)
+    if (m_fillcolor_attr)
     {
-        return *m_s_fillcolor_attr;
+        return *m_fillcolor_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -25810,6 +26043,65 @@ CT_Group* CT_Group::default_instance_ = NULL;
 CT_Background* CT_Background::default_instance_ = NULL;
 
     // CT_Fill
+    CT_Fill::CT_Fill()
+    :m_has_o_fill(false),
+    m_o_fill(NULL),
+    m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_on_attr(false),
+    m_on_attr(NULL),
+    m_has_color_attr(false),
+    m_color_attr(NULL),
+    m_has_opacity_attr(false),
+    m_opacity_attr(""),
+    m_has_color2_attr(false),
+    m_color2_attr(NULL),
+    m_has_src_attr(false),
+    m_src_attr(""),
+    m_has_o_href_attr(false),
+    m_o_href_attr(""),
+    m_has_o_althref_attr(false),
+    m_o_althref_attr(""),
+    m_has_size_attr(false),
+    m_size_attr(""),
+    m_has_origin_attr(false),
+    m_origin_attr(""),
+    m_has_position_attr(false),
+    m_position_attr(""),
+    m_has_aspect_attr(false),
+    m_aspect_attr(NULL),
+    m_has_colors_attr(false),
+    m_colors_attr(""),
+    m_has_angle_attr(false),
+    m_angle_attr(0),
+    m_has_alignshape_attr(false),
+    m_alignshape_attr(NULL),
+    m_has_focus_attr(false),
+    m_focus_attr(""),
+    m_has_focussize_attr(false),
+    m_focussize_attr(""),
+    m_has_focusposition_attr(false),
+    m_focusposition_attr(""),
+    m_has_method_attr(false),
+    m_method_attr(NULL),
+    m_has_o_detectmouseclick_attr(false),
+    m_o_detectmouseclick_attr(NULL),
+    m_has_o_title_attr(false),
+    m_o_title_attr(""),
+    m_has_o_opacity2_attr(false),
+    m_o_opacity2_attr(""),
+    m_has_recolor_attr(false),
+    m_recolor_attr(NULL),
+    m_has_rotate_attr(false),
+    m_rotate_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_o_relid_attr(false),
+    m_o_relid_attr(NULL)
+    {
+    }
     bool CT_Fill::has_o_fill() const
     {    
     return m_has_o_fill;
@@ -25848,44 +26140,44 @@ CT_Background* CT_Background::default_instance_ = NULL;
     }
     
     
-    m_has_s_on_attr = false;
+    m_has_on_attr = false;
     
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        delete m_s_on_attr;
-        m_s_on_attr = NULL;
+        delete m_on_attr;
+        m_on_attr = NULL;
     }
     
     
-    m_has_s_color_attr = false;
+    m_has_color_attr = false;
     
-    if (m_s_color_attr)
+    if (m_color_attr)
     {
-        delete m_s_color_attr;
-        m_s_color_attr = NULL;
+        delete m_color_attr;
+        m_color_attr = NULL;
     }
     
     
     m_has_opacity_attr = false;
     m_opacity_attr.clear();
     
-    m_has_s_color2_attr = false;
+    m_has_color2_attr = false;
     
-    if (m_s_color2_attr)
+    if (m_color2_attr)
     {
-        delete m_s_color2_attr;
-        m_s_color2_attr = NULL;
+        delete m_color2_attr;
+        m_color2_attr = NULL;
     }
     
     
     m_has_src_attr = false;
     m_src_attr.clear();
     
-    m_has_href_attr = false;
-    m_href_attr.clear();
+    m_has_o_href_attr = false;
+    m_o_href_attr.clear();
     
-    m_has_althref_attr = false;
-    m_althref_attr.clear();
+    m_has_o_althref_attr = false;
+    m_o_althref_attr.clear();
     
     m_has_size_attr = false;
     m_size_attr.clear();
@@ -25911,12 +26203,12 @@ CT_Background* CT_Background::default_instance_ = NULL;
     m_has_angle_attr = false;
     m_angle_attr = 0;
     
-    m_has_s_alignshape_attr = false;
+    m_has_alignshape_attr = false;
     
-    if (m_s_alignshape_attr)
+    if (m_alignshape_attr)
     {
-        delete m_s_alignshape_attr;
-        m_s_alignshape_attr = NULL;
+        delete m_alignshape_attr;
+        m_alignshape_attr = NULL;
     }
     
     
@@ -25938,36 +26230,36 @@ CT_Background* CT_Background::default_instance_ = NULL;
     }
     
     
-    m_has_s_detectmouseclick_attr = false;
+    m_has_o_detectmouseclick_attr = false;
     
-    if (m_s_detectmouseclick_attr)
+    if (m_o_detectmouseclick_attr)
     {
-        delete m_s_detectmouseclick_attr;
-        m_s_detectmouseclick_attr = NULL;
+        delete m_o_detectmouseclick_attr;
+        m_o_detectmouseclick_attr = NULL;
     }
     
     
-    m_has_title_attr = false;
-    m_title_attr.clear();
+    m_has_o_title_attr = false;
+    m_o_title_attr.clear();
     
-    m_has_opacity2_attr = false;
-    m_opacity2_attr.clear();
+    m_has_o_opacity2_attr = false;
+    m_o_opacity2_attr.clear();
     
-    m_has_s_recolor_attr = false;
+    m_has_recolor_attr = false;
     
-    if (m_s_recolor_attr)
+    if (m_recolor_attr)
     {
-        delete m_s_recolor_attr;
-        m_s_recolor_attr = NULL;
+        delete m_recolor_attr;
+        m_recolor_attr = NULL;
     }
     
     
-    m_has_s_rotate_attr = false;
+    m_has_rotate_attr = false;
     
-    if (m_s_rotate_attr)
+    if (m_rotate_attr)
     {
-        delete m_s_rotate_attr;
-        m_s_rotate_attr = NULL;
+        delete m_rotate_attr;
+        m_rotate_attr = NULL;
     }
     
     
@@ -25980,12 +26272,12 @@ CT_Background* CT_Background::default_instance_ = NULL;
     }
     
     
-    m_has_r_relid_attr = false;
+    m_has_o_relid_attr = false;
     
-    if (m_r_relid_attr)
+    if (m_o_relid_attr)
     {
-        delete m_r_relid_attr;
-        m_r_relid_attr = NULL;
+        delete m_o_relid_attr;
+        m_o_relid_attr = NULL;
     }
     
     }
@@ -26011,15 +26303,15 @@ CT_Background* CT_Background::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_on_attr)
+    if (m_has_on_attr)
     {
-        m_s_on_attr->toXmlAttr("on", _outStream);
+        m_on_attr->toXmlAttr("on", _outStream);
     }
     
     
-    if (m_has_s_color_attr)
+    if (m_has_color_attr)
     {
-        m_s_color_attr->toXmlAttr("color", _outStream);
+        m_color_attr->toXmlAttr("color", _outStream);
     }
     
     
@@ -26029,9 +26321,9 @@ CT_Background* CT_Background::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_color2_attr)
+    if (m_has_color2_attr)
     {
-        m_s_color2_attr->toXmlAttr("color2", _outStream);
+        m_color2_attr->toXmlAttr("color2", _outStream);
     }
     
     
@@ -26041,15 +26333,15 @@ CT_Background* CT_Background::default_instance_ = NULL;
     }
     
     
-    if (m_has_href_attr)
+    if (m_has_o_href_attr)
     {
-        _outStream << " " << "href" << "=\"" << m_href_attr << "\"";
+        _outStream << " " << "o:href" << "=\"" << m_o_href_attr << "\"";
     }
     
     
-    if (m_has_althref_attr)
+    if (m_has_o_althref_attr)
     {
-        _outStream << " " << "althref" << "=\"" << m_althref_attr << "\"";
+        _outStream << " " << "o:althref" << "=\"" << m_o_althref_attr << "\"";
     }
     
     
@@ -26089,9 +26381,9 @@ CT_Background* CT_Background::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_alignshape_attr)
+    if (m_has_alignshape_attr)
     {
-        m_s_alignshape_attr->toXmlAttr("alignshape", _outStream);
+        m_alignshape_attr->toXmlAttr("alignshape", _outStream);
     }
     
     
@@ -26119,45 +26411,45 @@ CT_Background* CT_Background::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_detectmouseclick_attr)
+    if (m_has_o_detectmouseclick_attr)
     {
-        m_s_detectmouseclick_attr->toXmlAttr("detectmouseclick", _outStream);
+        m_o_detectmouseclick_attr->toXmlAttr("o:detectmouseclick", _outStream);
     }
     
     
-    if (m_has_title_attr)
+    if (m_has_o_title_attr)
     {
-        _outStream << " " << "title" << "=\"" << m_title_attr << "\"";
+        _outStream << " " << "o:title" << "=\"" << m_o_title_attr << "\"";
     }
     
     
-    if (m_has_opacity2_attr)
+    if (m_has_o_opacity2_attr)
     {
-        _outStream << " " << "opacity2" << "=\"" << m_opacity2_attr << "\"";
+        _outStream << " " << "o:opacity2" << "=\"" << m_o_opacity2_attr << "\"";
     }
     
     
-    if (m_has_s_recolor_attr)
+    if (m_has_recolor_attr)
     {
-        m_s_recolor_attr->toXmlAttr("recolor", _outStream);
+        m_recolor_attr->toXmlAttr("recolor", _outStream);
     }
     
     
-    if (m_has_s_rotate_attr)
+    if (m_has_rotate_attr)
     {
-        m_s_rotate_attr->toXmlAttr("rotate", _outStream);
+        m_rotate_attr->toXmlAttr("rotate", _outStream);
     }
     
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
-    if (m_has_r_relid_attr)
+    if (m_has_o_relid_attr)
     {
-        m_r_relid_attr->toXmlAttr("relid", _outStream);
+        m_o_relid_attr->toXmlAttr("o:relid", _outStream);
     }
     
             _outStream << ">";
@@ -26215,42 +26507,42 @@ CT_Background* CT_Background::default_instance_ = NULL;
     return ST_FillType::default_instance();
     }
 
-    bool CT_Fill::has_s_on_attr() const
+    bool CT_Fill::has_on_attr() const
     {    
-    return m_has_s_on_attr;
+    return m_has_on_attr;
     }
 
-    void CT_Fill::set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr)
+    void CT_Fill::set_on_attr(const ns_s::ST_TrueFalse& _on_attr)
     {    
-    m_has_s_on_attr = true;
-    m_s_on_attr = new ns_s::ST_TrueFalse(_s_on_attr);
+    m_has_on_attr = true;
+    m_on_attr = new ns_s::ST_TrueFalse(_on_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Fill::get_s_on_attr() const
+    const ns_s::ST_TrueFalse& CT_Fill::get_on_attr() const
     {    
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        return *m_s_on_attr;
+        return *m_on_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Fill::has_s_color_attr() const
+    bool CT_Fill::has_color_attr() const
     {    
-    return m_has_s_color_attr;
+    return m_has_color_attr;
     }
 
-    void CT_Fill::set_s_color_attr(const ns_s::ST_ColorType& _s_color_attr)
+    void CT_Fill::set_color_attr(const ns_s::ST_ColorType& _color_attr)
     {    
-    m_has_s_color_attr = true;
-    m_s_color_attr = new ns_s::ST_ColorType(_s_color_attr);
+    m_has_color_attr = true;
+    m_color_attr = new ns_s::ST_ColorType(_color_attr);
     }
 
-    const ns_s::ST_ColorType& CT_Fill::get_s_color_attr() const
+    const ns_s::ST_ColorType& CT_Fill::get_color_attr() const
     {    
-    if (m_s_color_attr)
+    if (m_color_attr)
     {
-        return *m_s_color_attr;
+        return *m_color_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -26271,22 +26563,22 @@ CT_Background* CT_Background::default_instance_ = NULL;
     return m_opacity_attr;
     }
 
-    bool CT_Fill::has_s_color2_attr() const
+    bool CT_Fill::has_color2_attr() const
     {    
-    return m_has_s_color2_attr;
+    return m_has_color2_attr;
     }
 
-    void CT_Fill::set_s_color2_attr(const ns_s::ST_ColorType& _s_color2_attr)
+    void CT_Fill::set_color2_attr(const ns_s::ST_ColorType& _color2_attr)
     {    
-    m_has_s_color2_attr = true;
-    m_s_color2_attr = new ns_s::ST_ColorType(_s_color2_attr);
+    m_has_color2_attr = true;
+    m_color2_attr = new ns_s::ST_ColorType(_color2_attr);
     }
 
-    const ns_s::ST_ColorType& CT_Fill::get_s_color2_attr() const
+    const ns_s::ST_ColorType& CT_Fill::get_color2_attr() const
     {    
-    if (m_s_color2_attr)
+    if (m_color2_attr)
     {
-        return *m_s_color2_attr;
+        return *m_color2_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -26307,36 +26599,36 @@ CT_Background* CT_Background::default_instance_ = NULL;
     return m_src_attr;
     }
 
-    bool CT_Fill::has_href_attr() const
+    bool CT_Fill::has_o_href_attr() const
     {    
-    return m_has_href_attr;
+    return m_has_o_href_attr;
     }
 
-    void CT_Fill::set_href_attr(const XSD::string_& _href_attr)
+    void CT_Fill::set_o_href_attr(const XSD::string_& _o_href_attr)
     {    
-    m_has_href_attr = true;
-    m_href_attr = _href_attr;
+    m_has_o_href_attr = true;
+    m_o_href_attr = _o_href_attr;
     }
 
-    const XSD::string_& CT_Fill::get_href_attr() const
+    const XSD::string_& CT_Fill::get_o_href_attr() const
     {    
-    return m_href_attr;
+    return m_o_href_attr;
     }
 
-    bool CT_Fill::has_althref_attr() const
+    bool CT_Fill::has_o_althref_attr() const
     {    
-    return m_has_althref_attr;
+    return m_has_o_althref_attr;
     }
 
-    void CT_Fill::set_althref_attr(const XSD::string_& _althref_attr)
+    void CT_Fill::set_o_althref_attr(const XSD::string_& _o_althref_attr)
     {    
-    m_has_althref_attr = true;
-    m_althref_attr = _althref_attr;
+    m_has_o_althref_attr = true;
+    m_o_althref_attr = _o_althref_attr;
     }
 
-    const XSD::string_& CT_Fill::get_althref_attr() const
+    const XSD::string_& CT_Fill::get_o_althref_attr() const
     {    
-    return m_althref_attr;
+    return m_o_althref_attr;
     }
 
     bool CT_Fill::has_size_attr() const
@@ -26439,22 +26731,22 @@ CT_Background* CT_Background::default_instance_ = NULL;
     return m_angle_attr;
     }
 
-    bool CT_Fill::has_s_alignshape_attr() const
+    bool CT_Fill::has_alignshape_attr() const
     {    
-    return m_has_s_alignshape_attr;
+    return m_has_alignshape_attr;
     }
 
-    void CT_Fill::set_s_alignshape_attr(const ns_s::ST_TrueFalse& _s_alignshape_attr)
+    void CT_Fill::set_alignshape_attr(const ns_s::ST_TrueFalse& _alignshape_attr)
     {    
-    m_has_s_alignshape_attr = true;
-    m_s_alignshape_attr = new ns_s::ST_TrueFalse(_s_alignshape_attr);
+    m_has_alignshape_attr = true;
+    m_alignshape_attr = new ns_s::ST_TrueFalse(_alignshape_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Fill::get_s_alignshape_attr() const
+    const ns_s::ST_TrueFalse& CT_Fill::get_alignshape_attr() const
     {    
-    if (m_s_alignshape_attr)
+    if (m_alignshape_attr)
     {
-        return *m_s_alignshape_attr;
+        return *m_alignshape_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -26527,94 +26819,94 @@ CT_Background* CT_Background::default_instance_ = NULL;
     return ST_FillMethod::default_instance();
     }
 
-    bool CT_Fill::has_s_detectmouseclick_attr() const
+    bool CT_Fill::has_o_detectmouseclick_attr() const
     {    
-    return m_has_s_detectmouseclick_attr;
+    return m_has_o_detectmouseclick_attr;
     }
 
-    void CT_Fill::set_s_detectmouseclick_attr(const ns_s::ST_TrueFalse& _s_detectmouseclick_attr)
+    void CT_Fill::set_o_detectmouseclick_attr(const ns_s::ST_TrueFalse& _o_detectmouseclick_attr)
     {    
-    m_has_s_detectmouseclick_attr = true;
-    m_s_detectmouseclick_attr = new ns_s::ST_TrueFalse(_s_detectmouseclick_attr);
+    m_has_o_detectmouseclick_attr = true;
+    m_o_detectmouseclick_attr = new ns_s::ST_TrueFalse(_o_detectmouseclick_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Fill::get_s_detectmouseclick_attr() const
+    const ns_s::ST_TrueFalse& CT_Fill::get_o_detectmouseclick_attr() const
     {    
-    if (m_s_detectmouseclick_attr)
+    if (m_o_detectmouseclick_attr)
     {
-        return *m_s_detectmouseclick_attr;
+        return *m_o_detectmouseclick_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Fill::has_title_attr() const
+    bool CT_Fill::has_o_title_attr() const
     {    
-    return m_has_title_attr;
+    return m_has_o_title_attr;
     }
 
-    void CT_Fill::set_title_attr(const XSD::string_& _title_attr)
+    void CT_Fill::set_o_title_attr(const XSD::string_& _o_title_attr)
     {    
-    m_has_title_attr = true;
-    m_title_attr = _title_attr;
+    m_has_o_title_attr = true;
+    m_o_title_attr = _o_title_attr;
     }
 
-    const XSD::string_& CT_Fill::get_title_attr() const
+    const XSD::string_& CT_Fill::get_o_title_attr() const
     {    
-    return m_title_attr;
+    return m_o_title_attr;
     }
 
-    bool CT_Fill::has_opacity2_attr() const
+    bool CT_Fill::has_o_opacity2_attr() const
     {    
-    return m_has_opacity2_attr;
+    return m_has_o_opacity2_attr;
     }
 
-    void CT_Fill::set_opacity2_attr(const XSD::string_& _opacity2_attr)
+    void CT_Fill::set_o_opacity2_attr(const XSD::string_& _o_opacity2_attr)
     {    
-    m_has_opacity2_attr = true;
-    m_opacity2_attr = _opacity2_attr;
+    m_has_o_opacity2_attr = true;
+    m_o_opacity2_attr = _o_opacity2_attr;
     }
 
-    const XSD::string_& CT_Fill::get_opacity2_attr() const
+    const XSD::string_& CT_Fill::get_o_opacity2_attr() const
     {    
-    return m_opacity2_attr;
+    return m_o_opacity2_attr;
     }
 
-    bool CT_Fill::has_s_recolor_attr() const
+    bool CT_Fill::has_recolor_attr() const
     {    
-    return m_has_s_recolor_attr;
+    return m_has_recolor_attr;
     }
 
-    void CT_Fill::set_s_recolor_attr(const ns_s::ST_TrueFalse& _s_recolor_attr)
+    void CT_Fill::set_recolor_attr(const ns_s::ST_TrueFalse& _recolor_attr)
     {    
-    m_has_s_recolor_attr = true;
-    m_s_recolor_attr = new ns_s::ST_TrueFalse(_s_recolor_attr);
+    m_has_recolor_attr = true;
+    m_recolor_attr = new ns_s::ST_TrueFalse(_recolor_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Fill::get_s_recolor_attr() const
+    const ns_s::ST_TrueFalse& CT_Fill::get_recolor_attr() const
     {    
-    if (m_s_recolor_attr)
+    if (m_recolor_attr)
     {
-        return *m_s_recolor_attr;
+        return *m_recolor_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Fill::has_s_rotate_attr() const
+    bool CT_Fill::has_rotate_attr() const
     {    
-    return m_has_s_rotate_attr;
+    return m_has_rotate_attr;
     }
 
-    void CT_Fill::set_s_rotate_attr(const ns_s::ST_TrueFalse& _s_rotate_attr)
+    void CT_Fill::set_rotate_attr(const ns_s::ST_TrueFalse& _rotate_attr)
     {    
-    m_has_s_rotate_attr = true;
-    m_s_rotate_attr = new ns_s::ST_TrueFalse(_s_rotate_attr);
+    m_has_rotate_attr = true;
+    m_rotate_attr = new ns_s::ST_TrueFalse(_rotate_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Fill::get_s_rotate_attr() const
+    const ns_s::ST_TrueFalse& CT_Fill::get_rotate_attr() const
     {    
-    if (m_s_rotate_attr)
+    if (m_rotate_attr)
     {
-        return *m_s_rotate_attr;
+        return *m_rotate_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -26639,22 +26931,22 @@ CT_Background* CT_Background::default_instance_ = NULL;
     return ns_r::ST_RelationshipId::default_instance();
     }
 
-    bool CT_Fill::has_r_relid_attr() const
+    bool CT_Fill::has_o_relid_attr() const
     {    
-    return m_has_r_relid_attr;
+    return m_has_o_relid_attr;
     }
 
-    void CT_Fill::set_r_relid_attr(const ns_r::ST_RelationshipId& _r_relid_attr)
+    void CT_Fill::set_o_relid_attr(const ns_r::ST_RelationshipId& _o_relid_attr)
     {    
-    m_has_r_relid_attr = true;
-    m_r_relid_attr = new ns_r::ST_RelationshipId(_r_relid_attr);
+    m_has_o_relid_attr = true;
+    m_o_relid_attr = new ns_r::ST_RelationshipId(_o_relid_attr);
     }
 
-    const ns_r::ST_RelationshipId& CT_Fill::get_r_relid_attr() const
+    const ns_r::ST_RelationshipId& CT_Fill::get_o_relid_attr() const
     {    
-    if (m_r_relid_attr)
+    if (m_o_relid_attr)
     {
-        return *m_r_relid_attr;
+        return *m_o_relid_attr;
     }
     return ns_r::ST_RelationshipId::default_instance();
     }
@@ -26662,6 +26954,10 @@ CT_Background* CT_Background::default_instance_ = NULL;
 CT_Fill* CT_Fill::default_instance_ = NULL;
 
     // CT_Formulas
+    CT_Formulas::CT_Formulas()
+
+    {
+    }
     CT_F* CT_Formulas::add_f()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -26699,7 +26995,7 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
         {
             if ((*iter)->has_f())
             {
-                (*iter)->get_f().toXmlElem("f", "", _outStream);
+                (*iter)->get_f().toXmlElem("v:f", "", _outStream);
             }
         }
     }
@@ -26718,6 +27014,11 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
 
 
     // CT_Formulas::ChildGroup_1
+    CT_Formulas::ChildGroup_1::ChildGroup_1()
+    :m_has_f(false),
+    m_f(NULL)
+    {
+    }
     bool CT_Formulas::ChildGroup_1::has_f() const
     {    
     return m_has_f;
@@ -26746,6 +27047,11 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
 CT_Formulas* CT_Formulas::default_instance_ = NULL;
 
     // CT_F
+    CT_F::CT_F()
+    :m_has_eqn_attr(false),
+    m_eqn_attr("")
+    {
+    }
     void CT_F::clear()
     {    
     m_has_eqn_attr = false;
@@ -26799,6 +27105,10 @@ CT_Formulas* CT_Formulas::default_instance_ = NULL;
 CT_F* CT_F::default_instance_ = NULL;
 
     // CT_Handles
+    CT_Handles::CT_Handles()
+
+    {
+    }
     CT_H* CT_Handles::add_h()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -26836,7 +27146,7 @@ CT_F* CT_F::default_instance_ = NULL;
         {
             if ((*iter)->has_h())
             {
-                (*iter)->get_h().toXmlElem("h", "", _outStream);
+                (*iter)->get_h().toXmlElem("v:h", "", _outStream);
             }
         }
     }
@@ -26855,6 +27165,11 @@ CT_F* CT_F::default_instance_ = NULL;
 
 
     // CT_Handles::ChildGroup_1
+    CT_Handles::ChildGroup_1::ChildGroup_1()
+    :m_has_h(false),
+    m_h(NULL)
+    {
+    }
     bool CT_Handles::ChildGroup_1::has_h() const
     {    
     return m_has_h;
@@ -26883,6 +27198,27 @@ CT_F* CT_F::default_instance_ = NULL;
 CT_Handles* CT_Handles::default_instance_ = NULL;
 
     // CT_H
+    CT_H::CT_H()
+    :m_has_position_attr(false),
+    m_position_attr(""),
+    m_has_polar_attr(false),
+    m_polar_attr(""),
+    m_has_map_attr(false),
+    m_map_attr(""),
+    m_has_invx_attr(false),
+    m_invx_attr(NULL),
+    m_has_invy_attr(false),
+    m_invy_attr(NULL),
+    m_has_switch_attr(false),
+    m_switch_attr(NULL),
+    m_has_xrange_attr(false),
+    m_xrange_attr(""),
+    m_has_yrange_attr(false),
+    m_yrange_attr(""),
+    m_has_radiusrange_attr(false),
+    m_radiusrange_attr("")
+    {
+    }
     void CT_H::clear()
     {    
     m_has_position_attr = false;
@@ -26894,30 +27230,30 @@ CT_Handles* CT_Handles::default_instance_ = NULL;
     m_has_map_attr = false;
     m_map_attr.clear();
     
-    m_has_s_invx_attr = false;
+    m_has_invx_attr = false;
     
-    if (m_s_invx_attr)
+    if (m_invx_attr)
     {
-        delete m_s_invx_attr;
-        m_s_invx_attr = NULL;
+        delete m_invx_attr;
+        m_invx_attr = NULL;
     }
     
     
-    m_has_s_invy_attr = false;
+    m_has_invy_attr = false;
     
-    if (m_s_invy_attr)
+    if (m_invy_attr)
     {
-        delete m_s_invy_attr;
-        m_s_invy_attr = NULL;
+        delete m_invy_attr;
+        m_invy_attr = NULL;
     }
     
     
-    m_has_s_switch_attr = false;
+    m_has_switch_attr = false;
     
-    if (m_s_switch_attr)
+    if (m_switch_attr)
     {
-        delete m_s_switch_attr;
-        m_s_switch_attr = NULL;
+        delete m_switch_attr;
+        m_switch_attr = NULL;
     }
     
     
@@ -26958,21 +27294,21 @@ CT_Handles* CT_Handles::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_invx_attr)
+    if (m_has_invx_attr)
     {
-        m_s_invx_attr->toXmlAttr("invx", _outStream);
+        m_invx_attr->toXmlAttr("invx", _outStream);
     }
     
     
-    if (m_has_s_invy_attr)
+    if (m_has_invy_attr)
     {
-        m_s_invy_attr->toXmlAttr("invy", _outStream);
+        m_invy_attr->toXmlAttr("invy", _outStream);
     }
     
     
-    if (m_has_s_switch_attr)
+    if (m_has_switch_attr)
     {
-        m_s_switch_attr->toXmlAttr("switch", _outStream);
+        m_switch_attr->toXmlAttr("switch", _outStream);
     }
     
     
@@ -27055,62 +27391,62 @@ CT_Handles* CT_Handles::default_instance_ = NULL;
     return m_map_attr;
     }
 
-    bool CT_H::has_s_invx_attr() const
+    bool CT_H::has_invx_attr() const
     {    
-    return m_has_s_invx_attr;
+    return m_has_invx_attr;
     }
 
-    void CT_H::set_s_invx_attr(const ns_s::ST_TrueFalse& _s_invx_attr)
+    void CT_H::set_invx_attr(const ns_s::ST_TrueFalse& _invx_attr)
     {    
-    m_has_s_invx_attr = true;
-    m_s_invx_attr = new ns_s::ST_TrueFalse(_s_invx_attr);
+    m_has_invx_attr = true;
+    m_invx_attr = new ns_s::ST_TrueFalse(_invx_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_H::get_s_invx_attr() const
+    const ns_s::ST_TrueFalse& CT_H::get_invx_attr() const
     {    
-    if (m_s_invx_attr)
+    if (m_invx_attr)
     {
-        return *m_s_invx_attr;
+        return *m_invx_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_H::has_s_invy_attr() const
+    bool CT_H::has_invy_attr() const
     {    
-    return m_has_s_invy_attr;
+    return m_has_invy_attr;
     }
 
-    void CT_H::set_s_invy_attr(const ns_s::ST_TrueFalse& _s_invy_attr)
+    void CT_H::set_invy_attr(const ns_s::ST_TrueFalse& _invy_attr)
     {    
-    m_has_s_invy_attr = true;
-    m_s_invy_attr = new ns_s::ST_TrueFalse(_s_invy_attr);
+    m_has_invy_attr = true;
+    m_invy_attr = new ns_s::ST_TrueFalse(_invy_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_H::get_s_invy_attr() const
+    const ns_s::ST_TrueFalse& CT_H::get_invy_attr() const
     {    
-    if (m_s_invy_attr)
+    if (m_invy_attr)
     {
-        return *m_s_invy_attr;
+        return *m_invy_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_H::has_s_switch_attr() const
+    bool CT_H::has_switch_attr() const
     {    
-    return m_has_s_switch_attr;
+    return m_has_switch_attr;
     }
 
-    void CT_H::set_s_switch_attr(const ns_s::ST_TrueFalseBlank& _s_switch_attr)
+    void CT_H::set_switch_attr(const ns_s::ST_TrueFalseBlank& _switch_attr)
     {    
-    m_has_s_switch_attr = true;
-    m_s_switch_attr = new ns_s::ST_TrueFalseBlank(_s_switch_attr);
+    m_has_switch_attr = true;
+    m_switch_attr = new ns_s::ST_TrueFalseBlank(_switch_attr);
     }
 
-    const ns_s::ST_TrueFalseBlank& CT_H::get_s_switch_attr() const
+    const ns_s::ST_TrueFalseBlank& CT_H::get_switch_attr() const
     {    
-    if (m_s_switch_attr)
+    if (m_switch_attr)
     {
-        return *m_s_switch_attr;
+        return *m_switch_attr;
     }
     return ns_s::ST_TrueFalseBlank::default_instance();
     }
@@ -27166,6 +27502,57 @@ CT_Handles* CT_Handles::default_instance_ = NULL;
 CT_H* CT_H::default_instance_ = NULL;
 
     // CT_ImageData
+    CT_ImageData::CT_ImageData()
+    :m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_src_attr(false),
+    m_src_attr(""),
+    m_has_cropleft_attr(false),
+    m_cropleft_attr(""),
+    m_has_croptop_attr(false),
+    m_croptop_attr(""),
+    m_has_cropright_attr(false),
+    m_cropright_attr(""),
+    m_has_cropbottom_attr(false),
+    m_cropbottom_attr(""),
+    m_has_gain_attr(false),
+    m_gain_attr(""),
+    m_has_blacklevel_attr(false),
+    m_blacklevel_attr(""),
+    m_has_gamma_attr(false),
+    m_gamma_attr(""),
+    m_has_grayscale_attr(false),
+    m_grayscale_attr(NULL),
+    m_has_bilevel_attr(false),
+    m_bilevel_attr(NULL),
+    m_has_chromakey_attr(false),
+    m_chromakey_attr(NULL),
+    m_has_embosscolor_attr(false),
+    m_embosscolor_attr(NULL),
+    m_has_recolortarget_attr(false),
+    m_recolortarget_attr(NULL),
+    m_has_o_href_attr(false),
+    m_o_href_attr(""),
+    m_has_o_althref_attr(false),
+    m_o_althref_attr(""),
+    m_has_o_title_attr(false),
+    m_o_title_attr(""),
+    m_has_o_oleid_attr(false),
+    m_o_oleid_attr(0),
+    m_has_o_detectmouseclick_attr(false),
+    m_o_detectmouseclick_attr(NULL),
+    m_has_o_movie_attr(false),
+    m_o_movie_attr(0),
+    m_has_o_relid_attr(false),
+    m_o_relid_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_r_pict_attr(false),
+    m_r_pict_attr(NULL),
+    m_has_r_href_attr(false),
+    m_r_href_attr(NULL)
+    {
+    }
     void CT_ImageData::clear()
     {    
     m_has_id_attr = false;
@@ -27195,81 +27582,81 @@ CT_H* CT_H::default_instance_ = NULL;
     m_has_gamma_attr = false;
     m_gamma_attr.clear();
     
-    m_has_s_grayscale_attr = false;
+    m_has_grayscale_attr = false;
     
-    if (m_s_grayscale_attr)
+    if (m_grayscale_attr)
     {
-        delete m_s_grayscale_attr;
-        m_s_grayscale_attr = NULL;
+        delete m_grayscale_attr;
+        m_grayscale_attr = NULL;
     }
     
     
-    m_has_s_bilevel_attr = false;
+    m_has_bilevel_attr = false;
     
-    if (m_s_bilevel_attr)
+    if (m_bilevel_attr)
     {
-        delete m_s_bilevel_attr;
-        m_s_bilevel_attr = NULL;
+        delete m_bilevel_attr;
+        m_bilevel_attr = NULL;
     }
     
     
-    m_has_s_chromakey_attr = false;
+    m_has_chromakey_attr = false;
     
-    if (m_s_chromakey_attr)
+    if (m_chromakey_attr)
     {
-        delete m_s_chromakey_attr;
-        m_s_chromakey_attr = NULL;
+        delete m_chromakey_attr;
+        m_chromakey_attr = NULL;
     }
     
     
-    m_has_s_embosscolor_attr = false;
+    m_has_embosscolor_attr = false;
     
-    if (m_s_embosscolor_attr)
+    if (m_embosscolor_attr)
     {
-        delete m_s_embosscolor_attr;
-        m_s_embosscolor_attr = NULL;
+        delete m_embosscolor_attr;
+        m_embosscolor_attr = NULL;
     }
     
     
-    m_has_s_recolortarget_attr = false;
+    m_has_recolortarget_attr = false;
     
-    if (m_s_recolortarget_attr)
+    if (m_recolortarget_attr)
     {
-        delete m_s_recolortarget_attr;
-        m_s_recolortarget_attr = NULL;
+        delete m_recolortarget_attr;
+        m_recolortarget_attr = NULL;
     }
     
     
-    m_has_href_attr = false;
-    m_href_attr.clear();
+    m_has_o_href_attr = false;
+    m_o_href_attr.clear();
     
-    m_has_althref_attr = false;
-    m_althref_attr.clear();
+    m_has_o_althref_attr = false;
+    m_o_althref_attr.clear();
     
-    m_has_title_attr = false;
-    m_title_attr.clear();
+    m_has_o_title_attr = false;
+    m_o_title_attr.clear();
     
-    m_has_oleid_attr = false;
-    m_oleid_attr = 0;
+    m_has_o_oleid_attr = false;
+    m_o_oleid_attr = 0;
     
-    m_has_s_detectmouseclick_attr = false;
+    m_has_o_detectmouseclick_attr = false;
     
-    if (m_s_detectmouseclick_attr)
+    if (m_o_detectmouseclick_attr)
     {
-        delete m_s_detectmouseclick_attr;
-        m_s_detectmouseclick_attr = NULL;
+        delete m_o_detectmouseclick_attr;
+        m_o_detectmouseclick_attr = NULL;
     }
     
     
-    m_has_movie_attr = false;
-    m_movie_attr = 0;
+    m_has_o_movie_attr = false;
+    m_o_movie_attr = 0;
     
-    m_has_r_relid_attr = false;
+    m_has_o_relid_attr = false;
     
-    if (m_r_relid_attr)
+    if (m_o_relid_attr)
     {
-        delete m_r_relid_attr;
-        m_r_relid_attr = NULL;
+        delete m_o_relid_attr;
+        m_o_relid_attr = NULL;
     }
     
     
@@ -27364,93 +27751,93 @@ CT_H* CT_H::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_grayscale_attr)
+    if (m_has_grayscale_attr)
     {
-        m_s_grayscale_attr->toXmlAttr("grayscale", _outStream);
+        m_grayscale_attr->toXmlAttr("grayscale", _outStream);
     }
     
     
-    if (m_has_s_bilevel_attr)
+    if (m_has_bilevel_attr)
     {
-        m_s_bilevel_attr->toXmlAttr("bilevel", _outStream);
+        m_bilevel_attr->toXmlAttr("bilevel", _outStream);
     }
     
     
-    if (m_has_s_chromakey_attr)
+    if (m_has_chromakey_attr)
     {
-        m_s_chromakey_attr->toXmlAttr("chromakey", _outStream);
+        m_chromakey_attr->toXmlAttr("chromakey", _outStream);
     }
     
     
-    if (m_has_s_embosscolor_attr)
+    if (m_has_embosscolor_attr)
     {
-        m_s_embosscolor_attr->toXmlAttr("embosscolor", _outStream);
+        m_embosscolor_attr->toXmlAttr("embosscolor", _outStream);
     }
     
     
-    if (m_has_s_recolortarget_attr)
+    if (m_has_recolortarget_attr)
     {
-        m_s_recolortarget_attr->toXmlAttr("recolortarget", _outStream);
+        m_recolortarget_attr->toXmlAttr("recolortarget", _outStream);
     }
     
     
-    if (m_has_href_attr)
+    if (m_has_o_href_attr)
     {
-        _outStream << " " << "href" << "=\"" << m_href_attr << "\"";
+        _outStream << " " << "o:href" << "=\"" << m_o_href_attr << "\"";
     }
     
     
-    if (m_has_althref_attr)
+    if (m_has_o_althref_attr)
     {
-        _outStream << " " << "althref" << "=\"" << m_althref_attr << "\"";
+        _outStream << " " << "o:althref" << "=\"" << m_o_althref_attr << "\"";
     }
     
     
-    if (m_has_title_attr)
+    if (m_has_o_title_attr)
     {
-        _outStream << " " << "title" << "=\"" << m_title_attr << "\"";
+        _outStream << " " << "o:title" << "=\"" << m_o_title_attr << "\"";
     }
     
     
-    if (m_has_oleid_attr)
+    if (m_has_o_oleid_attr)
     {
-        _outStream << " " << "oleid" << "=\"" << m_oleid_attr << "\"";
+        _outStream << " " << "o:oleid" << "=\"" << m_o_oleid_attr << "\"";
     }
     
     
-    if (m_has_s_detectmouseclick_attr)
+    if (m_has_o_detectmouseclick_attr)
     {
-        m_s_detectmouseclick_attr->toXmlAttr("detectmouseclick", _outStream);
+        m_o_detectmouseclick_attr->toXmlAttr("o:detectmouseclick", _outStream);
     }
     
     
-    if (m_has_movie_attr)
+    if (m_has_o_movie_attr)
     {
-        _outStream << " " << "movie" << "=\"" << m_movie_attr << "\"";
+        _outStream << " " << "o:movie" << "=\"" << m_o_movie_attr << "\"";
     }
     
     
-    if (m_has_r_relid_attr)
+    if (m_has_o_relid_attr)
     {
-        m_r_relid_attr->toXmlAttr("relid", _outStream);
+        m_o_relid_attr->toXmlAttr("o:relid", _outStream);
     }
     
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
     if (m_has_r_pict_attr)
     {
-        m_r_pict_attr->toXmlAttr("pict", _outStream);
+        m_r_pict_attr->toXmlAttr("r:pict", _outStream);
     }
     
     
     if (m_has_r_href_attr)
     {
-        m_r_href_attr->toXmlAttr("href", _outStream);
+        m_r_href_attr->toXmlAttr("r:href", _outStream);
     }
     
             _outStream << ">";
@@ -27611,222 +27998,222 @@ CT_H* CT_H::default_instance_ = NULL;
     return m_gamma_attr;
     }
 
-    bool CT_ImageData::has_s_grayscale_attr() const
+    bool CT_ImageData::has_grayscale_attr() const
     {    
-    return m_has_s_grayscale_attr;
+    return m_has_grayscale_attr;
     }
 
-    void CT_ImageData::set_s_grayscale_attr(const ns_s::ST_TrueFalse& _s_grayscale_attr)
+    void CT_ImageData::set_grayscale_attr(const ns_s::ST_TrueFalse& _grayscale_attr)
     {    
-    m_has_s_grayscale_attr = true;
-    m_s_grayscale_attr = new ns_s::ST_TrueFalse(_s_grayscale_attr);
+    m_has_grayscale_attr = true;
+    m_grayscale_attr = new ns_s::ST_TrueFalse(_grayscale_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_ImageData::get_s_grayscale_attr() const
+    const ns_s::ST_TrueFalse& CT_ImageData::get_grayscale_attr() const
     {    
-    if (m_s_grayscale_attr)
+    if (m_grayscale_attr)
     {
-        return *m_s_grayscale_attr;
+        return *m_grayscale_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_ImageData::has_s_bilevel_attr() const
+    bool CT_ImageData::has_bilevel_attr() const
     {    
-    return m_has_s_bilevel_attr;
+    return m_has_bilevel_attr;
     }
 
-    void CT_ImageData::set_s_bilevel_attr(const ns_s::ST_TrueFalse& _s_bilevel_attr)
+    void CT_ImageData::set_bilevel_attr(const ns_s::ST_TrueFalse& _bilevel_attr)
     {    
-    m_has_s_bilevel_attr = true;
-    m_s_bilevel_attr = new ns_s::ST_TrueFalse(_s_bilevel_attr);
+    m_has_bilevel_attr = true;
+    m_bilevel_attr = new ns_s::ST_TrueFalse(_bilevel_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_ImageData::get_s_bilevel_attr() const
+    const ns_s::ST_TrueFalse& CT_ImageData::get_bilevel_attr() const
     {    
-    if (m_s_bilevel_attr)
+    if (m_bilevel_attr)
     {
-        return *m_s_bilevel_attr;
+        return *m_bilevel_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_ImageData::has_s_chromakey_attr() const
+    bool CT_ImageData::has_chromakey_attr() const
     {    
-    return m_has_s_chromakey_attr;
+    return m_has_chromakey_attr;
     }
 
-    void CT_ImageData::set_s_chromakey_attr(const ns_s::ST_ColorType& _s_chromakey_attr)
+    void CT_ImageData::set_chromakey_attr(const ns_s::ST_ColorType& _chromakey_attr)
     {    
-    m_has_s_chromakey_attr = true;
-    m_s_chromakey_attr = new ns_s::ST_ColorType(_s_chromakey_attr);
+    m_has_chromakey_attr = true;
+    m_chromakey_attr = new ns_s::ST_ColorType(_chromakey_attr);
     }
 
-    const ns_s::ST_ColorType& CT_ImageData::get_s_chromakey_attr() const
+    const ns_s::ST_ColorType& CT_ImageData::get_chromakey_attr() const
     {    
-    if (m_s_chromakey_attr)
+    if (m_chromakey_attr)
     {
-        return *m_s_chromakey_attr;
+        return *m_chromakey_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
 
-    bool CT_ImageData::has_s_embosscolor_attr() const
+    bool CT_ImageData::has_embosscolor_attr() const
     {    
-    return m_has_s_embosscolor_attr;
+    return m_has_embosscolor_attr;
     }
 
-    void CT_ImageData::set_s_embosscolor_attr(const ns_s::ST_ColorType& _s_embosscolor_attr)
+    void CT_ImageData::set_embosscolor_attr(const ns_s::ST_ColorType& _embosscolor_attr)
     {    
-    m_has_s_embosscolor_attr = true;
-    m_s_embosscolor_attr = new ns_s::ST_ColorType(_s_embosscolor_attr);
+    m_has_embosscolor_attr = true;
+    m_embosscolor_attr = new ns_s::ST_ColorType(_embosscolor_attr);
     }
 
-    const ns_s::ST_ColorType& CT_ImageData::get_s_embosscolor_attr() const
+    const ns_s::ST_ColorType& CT_ImageData::get_embosscolor_attr() const
     {    
-    if (m_s_embosscolor_attr)
+    if (m_embosscolor_attr)
     {
-        return *m_s_embosscolor_attr;
+        return *m_embosscolor_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
 
-    bool CT_ImageData::has_s_recolortarget_attr() const
+    bool CT_ImageData::has_recolortarget_attr() const
     {    
-    return m_has_s_recolortarget_attr;
+    return m_has_recolortarget_attr;
     }
 
-    void CT_ImageData::set_s_recolortarget_attr(const ns_s::ST_ColorType& _s_recolortarget_attr)
+    void CT_ImageData::set_recolortarget_attr(const ns_s::ST_ColorType& _recolortarget_attr)
     {    
-    m_has_s_recolortarget_attr = true;
-    m_s_recolortarget_attr = new ns_s::ST_ColorType(_s_recolortarget_attr);
+    m_has_recolortarget_attr = true;
+    m_recolortarget_attr = new ns_s::ST_ColorType(_recolortarget_attr);
     }
 
-    const ns_s::ST_ColorType& CT_ImageData::get_s_recolortarget_attr() const
+    const ns_s::ST_ColorType& CT_ImageData::get_recolortarget_attr() const
     {    
-    if (m_s_recolortarget_attr)
+    if (m_recolortarget_attr)
     {
-        return *m_s_recolortarget_attr;
+        return *m_recolortarget_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
 
-    bool CT_ImageData::has_href_attr() const
+    bool CT_ImageData::has_o_href_attr() const
     {    
-    return m_has_href_attr;
+    return m_has_o_href_attr;
     }
 
-    void CT_ImageData::set_href_attr(const XSD::string_& _href_attr)
+    void CT_ImageData::set_o_href_attr(const XSD::string_& _o_href_attr)
     {    
-    m_has_href_attr = true;
-    m_href_attr = _href_attr;
+    m_has_o_href_attr = true;
+    m_o_href_attr = _o_href_attr;
     }
 
-    const XSD::string_& CT_ImageData::get_href_attr() const
+    const XSD::string_& CT_ImageData::get_o_href_attr() const
     {    
-    return m_href_attr;
+    return m_o_href_attr;
     }
 
-    bool CT_ImageData::has_althref_attr() const
+    bool CT_ImageData::has_o_althref_attr() const
     {    
-    return m_has_althref_attr;
+    return m_has_o_althref_attr;
     }
 
-    void CT_ImageData::set_althref_attr(const XSD::string_& _althref_attr)
+    void CT_ImageData::set_o_althref_attr(const XSD::string_& _o_althref_attr)
     {    
-    m_has_althref_attr = true;
-    m_althref_attr = _althref_attr;
+    m_has_o_althref_attr = true;
+    m_o_althref_attr = _o_althref_attr;
     }
 
-    const XSD::string_& CT_ImageData::get_althref_attr() const
+    const XSD::string_& CT_ImageData::get_o_althref_attr() const
     {    
-    return m_althref_attr;
+    return m_o_althref_attr;
     }
 
-    bool CT_ImageData::has_title_attr() const
+    bool CT_ImageData::has_o_title_attr() const
     {    
-    return m_has_title_attr;
+    return m_has_o_title_attr;
     }
 
-    void CT_ImageData::set_title_attr(const XSD::string_& _title_attr)
+    void CT_ImageData::set_o_title_attr(const XSD::string_& _o_title_attr)
     {    
-    m_has_title_attr = true;
-    m_title_attr = _title_attr;
+    m_has_o_title_attr = true;
+    m_o_title_attr = _o_title_attr;
     }
 
-    const XSD::string_& CT_ImageData::get_title_attr() const
+    const XSD::string_& CT_ImageData::get_o_title_attr() const
     {    
-    return m_title_attr;
+    return m_o_title_attr;
     }
 
-    bool CT_ImageData::has_oleid_attr() const
+    bool CT_ImageData::has_o_oleid_attr() const
     {    
-    return m_has_oleid_attr;
+    return m_has_o_oleid_attr;
     }
 
-    void CT_ImageData::set_oleid_attr(const XSD::float_& _oleid_attr)
+    void CT_ImageData::set_o_oleid_attr(const XSD::float_& _o_oleid_attr)
     {    
-    m_has_oleid_attr = true;
-    m_oleid_attr = _oleid_attr;
+    m_has_o_oleid_attr = true;
+    m_o_oleid_attr = _o_oleid_attr;
     }
 
-    const XSD::float_& CT_ImageData::get_oleid_attr() const
+    const XSD::float_& CT_ImageData::get_o_oleid_attr() const
     {    
-    return m_oleid_attr;
+    return m_o_oleid_attr;
     }
 
-    bool CT_ImageData::has_s_detectmouseclick_attr() const
+    bool CT_ImageData::has_o_detectmouseclick_attr() const
     {    
-    return m_has_s_detectmouseclick_attr;
+    return m_has_o_detectmouseclick_attr;
     }
 
-    void CT_ImageData::set_s_detectmouseclick_attr(const ns_s::ST_TrueFalse& _s_detectmouseclick_attr)
+    void CT_ImageData::set_o_detectmouseclick_attr(const ns_s::ST_TrueFalse& _o_detectmouseclick_attr)
     {    
-    m_has_s_detectmouseclick_attr = true;
-    m_s_detectmouseclick_attr = new ns_s::ST_TrueFalse(_s_detectmouseclick_attr);
+    m_has_o_detectmouseclick_attr = true;
+    m_o_detectmouseclick_attr = new ns_s::ST_TrueFalse(_o_detectmouseclick_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_ImageData::get_s_detectmouseclick_attr() const
+    const ns_s::ST_TrueFalse& CT_ImageData::get_o_detectmouseclick_attr() const
     {    
-    if (m_s_detectmouseclick_attr)
+    if (m_o_detectmouseclick_attr)
     {
-        return *m_s_detectmouseclick_attr;
+        return *m_o_detectmouseclick_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_ImageData::has_movie_attr() const
+    bool CT_ImageData::has_o_movie_attr() const
     {    
-    return m_has_movie_attr;
+    return m_has_o_movie_attr;
     }
 
-    void CT_ImageData::set_movie_attr(const XSD::float_& _movie_attr)
+    void CT_ImageData::set_o_movie_attr(const XSD::float_& _o_movie_attr)
     {    
-    m_has_movie_attr = true;
-    m_movie_attr = _movie_attr;
+    m_has_o_movie_attr = true;
+    m_o_movie_attr = _o_movie_attr;
     }
 
-    const XSD::float_& CT_ImageData::get_movie_attr() const
+    const XSD::float_& CT_ImageData::get_o_movie_attr() const
     {    
-    return m_movie_attr;
+    return m_o_movie_attr;
     }
 
-    bool CT_ImageData::has_r_relid_attr() const
+    bool CT_ImageData::has_o_relid_attr() const
     {    
-    return m_has_r_relid_attr;
+    return m_has_o_relid_attr;
     }
 
-    void CT_ImageData::set_r_relid_attr(const ns_r::ST_RelationshipId& _r_relid_attr)
+    void CT_ImageData::set_o_relid_attr(const ns_r::ST_RelationshipId& _o_relid_attr)
     {    
-    m_has_r_relid_attr = true;
-    m_r_relid_attr = new ns_r::ST_RelationshipId(_r_relid_attr);
+    m_has_o_relid_attr = true;
+    m_o_relid_attr = new ns_r::ST_RelationshipId(_o_relid_attr);
     }
 
-    const ns_r::ST_RelationshipId& CT_ImageData::get_r_relid_attr() const
+    const ns_r::ST_RelationshipId& CT_ImageData::get_o_relid_attr() const
     {    
-    if (m_r_relid_attr)
+    if (m_o_relid_attr)
     {
-        return *m_r_relid_attr;
+        return *m_o_relid_attr;
     }
     return ns_r::ST_RelationshipId::default_instance();
     }
@@ -27894,6 +28281,39 @@ CT_H* CT_H::default_instance_ = NULL;
 CT_ImageData* CT_ImageData::default_instance_ = NULL;
 
     // CT_Path
+    CT_Path::CT_Path()
+    :m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_v_attr(false),
+    m_v_attr(""),
+    m_has_limo_attr(false),
+    m_limo_attr(""),
+    m_has_textboxrect_attr(false),
+    m_textboxrect_attr(""),
+    m_has_fillok_attr(false),
+    m_fillok_attr(NULL),
+    m_has_strokeok_attr(false),
+    m_strokeok_attr(NULL),
+    m_has_shadowok_attr(false),
+    m_shadowok_attr(NULL),
+    m_has_arrowok_attr(false),
+    m_arrowok_attr(NULL),
+    m_has_gradientshapeok_attr(false),
+    m_gradientshapeok_attr(NULL),
+    m_has_textpathok_attr(false),
+    m_textpathok_attr(NULL),
+    m_has_insetpenok_attr(false),
+    m_insetpenok_attr(NULL),
+    m_has_o_connecttype_attr(false),
+    m_o_connecttype_attr(NULL),
+    m_has_o_connectlocs_attr(false),
+    m_o_connectlocs_attr(""),
+    m_has_o_connectangles_attr(false),
+    m_o_connectangles_attr(""),
+    m_has_o_extrusionok_attr(false),
+    m_o_extrusionok_attr(NULL)
+    {
+    }
     void CT_Path::clear()
     {    
     m_has_id_attr = false;
@@ -27908,66 +28328,66 @@ CT_ImageData* CT_ImageData::default_instance_ = NULL;
     m_has_textboxrect_attr = false;
     m_textboxrect_attr.clear();
     
-    m_has_s_fillok_attr = false;
+    m_has_fillok_attr = false;
     
-    if (m_s_fillok_attr)
+    if (m_fillok_attr)
     {
-        delete m_s_fillok_attr;
-        m_s_fillok_attr = NULL;
+        delete m_fillok_attr;
+        m_fillok_attr = NULL;
     }
     
     
-    m_has_s_strokeok_attr = false;
+    m_has_strokeok_attr = false;
     
-    if (m_s_strokeok_attr)
+    if (m_strokeok_attr)
     {
-        delete m_s_strokeok_attr;
-        m_s_strokeok_attr = NULL;
+        delete m_strokeok_attr;
+        m_strokeok_attr = NULL;
     }
     
     
-    m_has_s_shadowok_attr = false;
+    m_has_shadowok_attr = false;
     
-    if (m_s_shadowok_attr)
+    if (m_shadowok_attr)
     {
-        delete m_s_shadowok_attr;
-        m_s_shadowok_attr = NULL;
+        delete m_shadowok_attr;
+        m_shadowok_attr = NULL;
     }
     
     
-    m_has_s_arrowok_attr = false;
+    m_has_arrowok_attr = false;
     
-    if (m_s_arrowok_attr)
+    if (m_arrowok_attr)
     {
-        delete m_s_arrowok_attr;
-        m_s_arrowok_attr = NULL;
+        delete m_arrowok_attr;
+        m_arrowok_attr = NULL;
     }
     
     
-    m_has_s_gradientshapeok_attr = false;
+    m_has_gradientshapeok_attr = false;
     
-    if (m_s_gradientshapeok_attr)
+    if (m_gradientshapeok_attr)
     {
-        delete m_s_gradientshapeok_attr;
-        m_s_gradientshapeok_attr = NULL;
+        delete m_gradientshapeok_attr;
+        m_gradientshapeok_attr = NULL;
     }
     
     
-    m_has_s_textpathok_attr = false;
+    m_has_textpathok_attr = false;
     
-    if (m_s_textpathok_attr)
+    if (m_textpathok_attr)
     {
-        delete m_s_textpathok_attr;
-        m_s_textpathok_attr = NULL;
+        delete m_textpathok_attr;
+        m_textpathok_attr = NULL;
     }
     
     
-    m_has_s_insetpenok_attr = false;
+    m_has_insetpenok_attr = false;
     
-    if (m_s_insetpenok_attr)
+    if (m_insetpenok_attr)
     {
-        delete m_s_insetpenok_attr;
-        m_s_insetpenok_attr = NULL;
+        delete m_insetpenok_attr;
+        m_insetpenok_attr = NULL;
     }
     
     
@@ -27980,18 +28400,18 @@ CT_ImageData* CT_ImageData::default_instance_ = NULL;
     }
     
     
-    m_has_connectlocs_attr = false;
-    m_connectlocs_attr.clear();
+    m_has_o_connectlocs_attr = false;
+    m_o_connectlocs_attr.clear();
     
-    m_has_connectangles_attr = false;
-    m_connectangles_attr.clear();
+    m_has_o_connectangles_attr = false;
+    m_o_connectangles_attr.clear();
     
-    m_has_s_extrusionok_attr = false;
+    m_has_o_extrusionok_attr = false;
     
-    if (m_s_extrusionok_attr)
+    if (m_o_extrusionok_attr)
     {
-        delete m_s_extrusionok_attr;
-        m_s_extrusionok_attr = NULL;
+        delete m_o_extrusionok_attr;
+        m_o_extrusionok_attr = NULL;
     }
     
     }
@@ -28029,69 +28449,69 @@ CT_ImageData* CT_ImageData::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_fillok_attr)
+    if (m_has_fillok_attr)
     {
-        m_s_fillok_attr->toXmlAttr("fillok", _outStream);
+        m_fillok_attr->toXmlAttr("fillok", _outStream);
     }
     
     
-    if (m_has_s_strokeok_attr)
+    if (m_has_strokeok_attr)
     {
-        m_s_strokeok_attr->toXmlAttr("strokeok", _outStream);
+        m_strokeok_attr->toXmlAttr("strokeok", _outStream);
     }
     
     
-    if (m_has_s_shadowok_attr)
+    if (m_has_shadowok_attr)
     {
-        m_s_shadowok_attr->toXmlAttr("shadowok", _outStream);
+        m_shadowok_attr->toXmlAttr("shadowok", _outStream);
     }
     
     
-    if (m_has_s_arrowok_attr)
+    if (m_has_arrowok_attr)
     {
-        m_s_arrowok_attr->toXmlAttr("arrowok", _outStream);
+        m_arrowok_attr->toXmlAttr("arrowok", _outStream);
     }
     
     
-    if (m_has_s_gradientshapeok_attr)
+    if (m_has_gradientshapeok_attr)
     {
-        m_s_gradientshapeok_attr->toXmlAttr("gradientshapeok", _outStream);
+        m_gradientshapeok_attr->toXmlAttr("gradientshapeok", _outStream);
     }
     
     
-    if (m_has_s_textpathok_attr)
+    if (m_has_textpathok_attr)
     {
-        m_s_textpathok_attr->toXmlAttr("textpathok", _outStream);
+        m_textpathok_attr->toXmlAttr("textpathok", _outStream);
     }
     
     
-    if (m_has_s_insetpenok_attr)
+    if (m_has_insetpenok_attr)
     {
-        m_s_insetpenok_attr->toXmlAttr("insetpenok", _outStream);
+        m_insetpenok_attr->toXmlAttr("insetpenok", _outStream);
     }
     
     
     if (m_has_o_connecttype_attr)
     {
-        m_o_connecttype_attr->toXmlAttr("connecttype", _outStream);
+        m_o_connecttype_attr->toXmlAttr("o:connecttype", _outStream);
     }
     
     
-    if (m_has_connectlocs_attr)
+    if (m_has_o_connectlocs_attr)
     {
-        _outStream << " " << "connectlocs" << "=\"" << m_connectlocs_attr << "\"";
+        _outStream << " " << "o:connectlocs" << "=\"" << m_o_connectlocs_attr << "\"";
     }
     
     
-    if (m_has_connectangles_attr)
+    if (m_has_o_connectangles_attr)
     {
-        _outStream << " " << "connectangles" << "=\"" << m_connectangles_attr << "\"";
+        _outStream << " " << "o:connectangles" << "=\"" << m_o_connectangles_attr << "\"";
     }
     
     
-    if (m_has_s_extrusionok_attr)
+    if (m_has_o_extrusionok_attr)
     {
-        m_s_extrusionok_attr->toXmlAttr("extrusionok", _outStream);
+        m_o_extrusionok_attr->toXmlAttr("o:extrusionok", _outStream);
     }
     
             _outStream << ">";
@@ -28172,142 +28592,142 @@ CT_ImageData* CT_ImageData::default_instance_ = NULL;
     return m_textboxrect_attr;
     }
 
-    bool CT_Path::has_s_fillok_attr() const
+    bool CT_Path::has_fillok_attr() const
     {    
-    return m_has_s_fillok_attr;
+    return m_has_fillok_attr;
     }
 
-    void CT_Path::set_s_fillok_attr(const ns_s::ST_TrueFalse& _s_fillok_attr)
+    void CT_Path::set_fillok_attr(const ns_s::ST_TrueFalse& _fillok_attr)
     {    
-    m_has_s_fillok_attr = true;
-    m_s_fillok_attr = new ns_s::ST_TrueFalse(_s_fillok_attr);
+    m_has_fillok_attr = true;
+    m_fillok_attr = new ns_s::ST_TrueFalse(_fillok_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Path::get_s_fillok_attr() const
+    const ns_s::ST_TrueFalse& CT_Path::get_fillok_attr() const
     {    
-    if (m_s_fillok_attr)
+    if (m_fillok_attr)
     {
-        return *m_s_fillok_attr;
+        return *m_fillok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Path::has_s_strokeok_attr() const
+    bool CT_Path::has_strokeok_attr() const
     {    
-    return m_has_s_strokeok_attr;
+    return m_has_strokeok_attr;
     }
 
-    void CT_Path::set_s_strokeok_attr(const ns_s::ST_TrueFalse& _s_strokeok_attr)
+    void CT_Path::set_strokeok_attr(const ns_s::ST_TrueFalse& _strokeok_attr)
     {    
-    m_has_s_strokeok_attr = true;
-    m_s_strokeok_attr = new ns_s::ST_TrueFalse(_s_strokeok_attr);
+    m_has_strokeok_attr = true;
+    m_strokeok_attr = new ns_s::ST_TrueFalse(_strokeok_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Path::get_s_strokeok_attr() const
+    const ns_s::ST_TrueFalse& CT_Path::get_strokeok_attr() const
     {    
-    if (m_s_strokeok_attr)
+    if (m_strokeok_attr)
     {
-        return *m_s_strokeok_attr;
+        return *m_strokeok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Path::has_s_shadowok_attr() const
+    bool CT_Path::has_shadowok_attr() const
     {    
-    return m_has_s_shadowok_attr;
+    return m_has_shadowok_attr;
     }
 
-    void CT_Path::set_s_shadowok_attr(const ns_s::ST_TrueFalse& _s_shadowok_attr)
+    void CT_Path::set_shadowok_attr(const ns_s::ST_TrueFalse& _shadowok_attr)
     {    
-    m_has_s_shadowok_attr = true;
-    m_s_shadowok_attr = new ns_s::ST_TrueFalse(_s_shadowok_attr);
+    m_has_shadowok_attr = true;
+    m_shadowok_attr = new ns_s::ST_TrueFalse(_shadowok_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Path::get_s_shadowok_attr() const
+    const ns_s::ST_TrueFalse& CT_Path::get_shadowok_attr() const
     {    
-    if (m_s_shadowok_attr)
+    if (m_shadowok_attr)
     {
-        return *m_s_shadowok_attr;
+        return *m_shadowok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Path::has_s_arrowok_attr() const
+    bool CT_Path::has_arrowok_attr() const
     {    
-    return m_has_s_arrowok_attr;
+    return m_has_arrowok_attr;
     }
 
-    void CT_Path::set_s_arrowok_attr(const ns_s::ST_TrueFalse& _s_arrowok_attr)
+    void CT_Path::set_arrowok_attr(const ns_s::ST_TrueFalse& _arrowok_attr)
     {    
-    m_has_s_arrowok_attr = true;
-    m_s_arrowok_attr = new ns_s::ST_TrueFalse(_s_arrowok_attr);
+    m_has_arrowok_attr = true;
+    m_arrowok_attr = new ns_s::ST_TrueFalse(_arrowok_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Path::get_s_arrowok_attr() const
+    const ns_s::ST_TrueFalse& CT_Path::get_arrowok_attr() const
     {    
-    if (m_s_arrowok_attr)
+    if (m_arrowok_attr)
     {
-        return *m_s_arrowok_attr;
+        return *m_arrowok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Path::has_s_gradientshapeok_attr() const
+    bool CT_Path::has_gradientshapeok_attr() const
     {    
-    return m_has_s_gradientshapeok_attr;
+    return m_has_gradientshapeok_attr;
     }
 
-    void CT_Path::set_s_gradientshapeok_attr(const ns_s::ST_TrueFalse& _s_gradientshapeok_attr)
+    void CT_Path::set_gradientshapeok_attr(const ns_s::ST_TrueFalse& _gradientshapeok_attr)
     {    
-    m_has_s_gradientshapeok_attr = true;
-    m_s_gradientshapeok_attr = new ns_s::ST_TrueFalse(_s_gradientshapeok_attr);
+    m_has_gradientshapeok_attr = true;
+    m_gradientshapeok_attr = new ns_s::ST_TrueFalse(_gradientshapeok_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Path::get_s_gradientshapeok_attr() const
+    const ns_s::ST_TrueFalse& CT_Path::get_gradientshapeok_attr() const
     {    
-    if (m_s_gradientshapeok_attr)
+    if (m_gradientshapeok_attr)
     {
-        return *m_s_gradientshapeok_attr;
+        return *m_gradientshapeok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Path::has_s_textpathok_attr() const
+    bool CT_Path::has_textpathok_attr() const
     {    
-    return m_has_s_textpathok_attr;
+    return m_has_textpathok_attr;
     }
 
-    void CT_Path::set_s_textpathok_attr(const ns_s::ST_TrueFalse& _s_textpathok_attr)
+    void CT_Path::set_textpathok_attr(const ns_s::ST_TrueFalse& _textpathok_attr)
     {    
-    m_has_s_textpathok_attr = true;
-    m_s_textpathok_attr = new ns_s::ST_TrueFalse(_s_textpathok_attr);
+    m_has_textpathok_attr = true;
+    m_textpathok_attr = new ns_s::ST_TrueFalse(_textpathok_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Path::get_s_textpathok_attr() const
+    const ns_s::ST_TrueFalse& CT_Path::get_textpathok_attr() const
     {    
-    if (m_s_textpathok_attr)
+    if (m_textpathok_attr)
     {
-        return *m_s_textpathok_attr;
+        return *m_textpathok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Path::has_s_insetpenok_attr() const
+    bool CT_Path::has_insetpenok_attr() const
     {    
-    return m_has_s_insetpenok_attr;
+    return m_has_insetpenok_attr;
     }
 
-    void CT_Path::set_s_insetpenok_attr(const ns_s::ST_TrueFalse& _s_insetpenok_attr)
+    void CT_Path::set_insetpenok_attr(const ns_s::ST_TrueFalse& _insetpenok_attr)
     {    
-    m_has_s_insetpenok_attr = true;
-    m_s_insetpenok_attr = new ns_s::ST_TrueFalse(_s_insetpenok_attr);
+    m_has_insetpenok_attr = true;
+    m_insetpenok_attr = new ns_s::ST_TrueFalse(_insetpenok_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Path::get_s_insetpenok_attr() const
+    const ns_s::ST_TrueFalse& CT_Path::get_insetpenok_attr() const
     {    
-    if (m_s_insetpenok_attr)
+    if (m_insetpenok_attr)
     {
-        return *m_s_insetpenok_attr;
+        return *m_insetpenok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -28332,54 +28752,54 @@ CT_ImageData* CT_ImageData::default_instance_ = NULL;
     return ns_o::ST_ConnectType::default_instance();
     }
 
-    bool CT_Path::has_connectlocs_attr() const
+    bool CT_Path::has_o_connectlocs_attr() const
     {    
-    return m_has_connectlocs_attr;
+    return m_has_o_connectlocs_attr;
     }
 
-    void CT_Path::set_connectlocs_attr(const XSD::string_& _connectlocs_attr)
+    void CT_Path::set_o_connectlocs_attr(const XSD::string_& _o_connectlocs_attr)
     {    
-    m_has_connectlocs_attr = true;
-    m_connectlocs_attr = _connectlocs_attr;
+    m_has_o_connectlocs_attr = true;
+    m_o_connectlocs_attr = _o_connectlocs_attr;
     }
 
-    const XSD::string_& CT_Path::get_connectlocs_attr() const
+    const XSD::string_& CT_Path::get_o_connectlocs_attr() const
     {    
-    return m_connectlocs_attr;
+    return m_o_connectlocs_attr;
     }
 
-    bool CT_Path::has_connectangles_attr() const
+    bool CT_Path::has_o_connectangles_attr() const
     {    
-    return m_has_connectangles_attr;
+    return m_has_o_connectangles_attr;
     }
 
-    void CT_Path::set_connectangles_attr(const XSD::string_& _connectangles_attr)
+    void CT_Path::set_o_connectangles_attr(const XSD::string_& _o_connectangles_attr)
     {    
-    m_has_connectangles_attr = true;
-    m_connectangles_attr = _connectangles_attr;
+    m_has_o_connectangles_attr = true;
+    m_o_connectangles_attr = _o_connectangles_attr;
     }
 
-    const XSD::string_& CT_Path::get_connectangles_attr() const
+    const XSD::string_& CT_Path::get_o_connectangles_attr() const
     {    
-    return m_connectangles_attr;
+    return m_o_connectangles_attr;
     }
 
-    bool CT_Path::has_s_extrusionok_attr() const
+    bool CT_Path::has_o_extrusionok_attr() const
     {    
-    return m_has_s_extrusionok_attr;
+    return m_has_o_extrusionok_attr;
     }
 
-    void CT_Path::set_s_extrusionok_attr(const ns_s::ST_TrueFalse& _s_extrusionok_attr)
+    void CT_Path::set_o_extrusionok_attr(const ns_s::ST_TrueFalse& _o_extrusionok_attr)
     {    
-    m_has_s_extrusionok_attr = true;
-    m_s_extrusionok_attr = new ns_s::ST_TrueFalse(_s_extrusionok_attr);
+    m_has_o_extrusionok_attr = true;
+    m_o_extrusionok_attr = new ns_s::ST_TrueFalse(_o_extrusionok_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Path::get_s_extrusionok_attr() const
+    const ns_s::ST_TrueFalse& CT_Path::get_o_extrusionok_attr() const
     {    
-    if (m_s_extrusionok_attr)
+    if (m_o_extrusionok_attr)
     {
-        return *m_s_extrusionok_attr;
+        return *m_o_extrusionok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -28387,17 +28807,42 @@ CT_ImageData* CT_ImageData::default_instance_ = NULL;
 CT_Path* CT_Path::default_instance_ = NULL;
 
     // CT_Shadow
+    CT_Shadow::CT_Shadow()
+    :m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_on_attr(false),
+    m_on_attr(NULL),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_obscured_attr(false),
+    m_obscured_attr(NULL),
+    m_has_color_attr(false),
+    m_color_attr(NULL),
+    m_has_opacity_attr(false),
+    m_opacity_attr(""),
+    m_has_offset_attr(false),
+    m_offset_attr(""),
+    m_has_color2_attr(false),
+    m_color2_attr(NULL),
+    m_has_offset2_attr(false),
+    m_offset2_attr(""),
+    m_has_origin_attr(false),
+    m_origin_attr(""),
+    m_has_matrix_attr(false),
+    m_matrix_attr("")
+    {
+    }
     void CT_Shadow::clear()
     {    
     m_has_id_attr = false;
     m_id_attr.clear();
     
-    m_has_s_on_attr = false;
+    m_has_on_attr = false;
     
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        delete m_s_on_attr;
-        m_s_on_attr = NULL;
+        delete m_on_attr;
+        m_on_attr = NULL;
     }
     
     
@@ -28410,21 +28855,21 @@ CT_Path* CT_Path::default_instance_ = NULL;
     }
     
     
-    m_has_s_obscured_attr = false;
+    m_has_obscured_attr = false;
     
-    if (m_s_obscured_attr)
+    if (m_obscured_attr)
     {
-        delete m_s_obscured_attr;
-        m_s_obscured_attr = NULL;
+        delete m_obscured_attr;
+        m_obscured_attr = NULL;
     }
     
     
-    m_has_s_color_attr = false;
+    m_has_color_attr = false;
     
-    if (m_s_color_attr)
+    if (m_color_attr)
     {
-        delete m_s_color_attr;
-        m_s_color_attr = NULL;
+        delete m_color_attr;
+        m_color_attr = NULL;
     }
     
     
@@ -28434,12 +28879,12 @@ CT_Path* CT_Path::default_instance_ = NULL;
     m_has_offset_attr = false;
     m_offset_attr.clear();
     
-    m_has_s_color2_attr = false;
+    m_has_color2_attr = false;
     
-    if (m_s_color2_attr)
+    if (m_color2_attr)
     {
-        delete m_s_color2_attr;
-        m_s_color2_attr = NULL;
+        delete m_color2_attr;
+        m_color2_attr = NULL;
     }
     
     
@@ -28468,9 +28913,9 @@ CT_Path* CT_Path::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_on_attr)
+    if (m_has_on_attr)
     {
-        m_s_on_attr->toXmlAttr("on", _outStream);
+        m_on_attr->toXmlAttr("on", _outStream);
     }
     
     
@@ -28480,15 +28925,15 @@ CT_Path* CT_Path::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_obscured_attr)
+    if (m_has_obscured_attr)
     {
-        m_s_obscured_attr->toXmlAttr("obscured", _outStream);
+        m_obscured_attr->toXmlAttr("obscured", _outStream);
     }
     
     
-    if (m_has_s_color_attr)
+    if (m_has_color_attr)
     {
-        m_s_color_attr->toXmlAttr("color", _outStream);
+        m_color_attr->toXmlAttr("color", _outStream);
     }
     
     
@@ -28504,9 +28949,9 @@ CT_Path* CT_Path::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_color2_attr)
+    if (m_has_color2_attr)
     {
-        m_s_color2_attr->toXmlAttr("color2", _outStream);
+        m_color2_attr->toXmlAttr("color2", _outStream);
     }
     
     
@@ -28557,22 +29002,22 @@ CT_Path* CT_Path::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool CT_Shadow::has_s_on_attr() const
+    bool CT_Shadow::has_on_attr() const
     {    
-    return m_has_s_on_attr;
+    return m_has_on_attr;
     }
 
-    void CT_Shadow::set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr)
+    void CT_Shadow::set_on_attr(const ns_s::ST_TrueFalse& _on_attr)
     {    
-    m_has_s_on_attr = true;
-    m_s_on_attr = new ns_s::ST_TrueFalse(_s_on_attr);
+    m_has_on_attr = true;
+    m_on_attr = new ns_s::ST_TrueFalse(_on_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Shadow::get_s_on_attr() const
+    const ns_s::ST_TrueFalse& CT_Shadow::get_on_attr() const
     {    
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        return *m_s_on_attr;
+        return *m_on_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -28597,42 +29042,42 @@ CT_Path* CT_Path::default_instance_ = NULL;
     return ST_ShadowType::default_instance();
     }
 
-    bool CT_Shadow::has_s_obscured_attr() const
+    bool CT_Shadow::has_obscured_attr() const
     {    
-    return m_has_s_obscured_attr;
+    return m_has_obscured_attr;
     }
 
-    void CT_Shadow::set_s_obscured_attr(const ns_s::ST_TrueFalse& _s_obscured_attr)
+    void CT_Shadow::set_obscured_attr(const ns_s::ST_TrueFalse& _obscured_attr)
     {    
-    m_has_s_obscured_attr = true;
-    m_s_obscured_attr = new ns_s::ST_TrueFalse(_s_obscured_attr);
+    m_has_obscured_attr = true;
+    m_obscured_attr = new ns_s::ST_TrueFalse(_obscured_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Shadow::get_s_obscured_attr() const
+    const ns_s::ST_TrueFalse& CT_Shadow::get_obscured_attr() const
     {    
-    if (m_s_obscured_attr)
+    if (m_obscured_attr)
     {
-        return *m_s_obscured_attr;
+        return *m_obscured_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Shadow::has_s_color_attr() const
+    bool CT_Shadow::has_color_attr() const
     {    
-    return m_has_s_color_attr;
+    return m_has_color_attr;
     }
 
-    void CT_Shadow::set_s_color_attr(const ns_s::ST_ColorType& _s_color_attr)
+    void CT_Shadow::set_color_attr(const ns_s::ST_ColorType& _color_attr)
     {    
-    m_has_s_color_attr = true;
-    m_s_color_attr = new ns_s::ST_ColorType(_s_color_attr);
+    m_has_color_attr = true;
+    m_color_attr = new ns_s::ST_ColorType(_color_attr);
     }
 
-    const ns_s::ST_ColorType& CT_Shadow::get_s_color_attr() const
+    const ns_s::ST_ColorType& CT_Shadow::get_color_attr() const
     {    
-    if (m_s_color_attr)
+    if (m_color_attr)
     {
-        return *m_s_color_attr;
+        return *m_color_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -28669,22 +29114,22 @@ CT_Path* CT_Path::default_instance_ = NULL;
     return m_offset_attr;
     }
 
-    bool CT_Shadow::has_s_color2_attr() const
+    bool CT_Shadow::has_color2_attr() const
     {    
-    return m_has_s_color2_attr;
+    return m_has_color2_attr;
     }
 
-    void CT_Shadow::set_s_color2_attr(const ns_s::ST_ColorType& _s_color2_attr)
+    void CT_Shadow::set_color2_attr(const ns_s::ST_ColorType& _color2_attr)
     {    
-    m_has_s_color2_attr = true;
-    m_s_color2_attr = new ns_s::ST_ColorType(_s_color2_attr);
+    m_has_color2_attr = true;
+    m_color2_attr = new ns_s::ST_ColorType(_color2_attr);
     }
 
-    const ns_s::ST_ColorType& CT_Shadow::get_s_color2_attr() const
+    const ns_s::ST_ColorType& CT_Shadow::get_color2_attr() const
     {    
-    if (m_s_color2_attr)
+    if (m_color2_attr)
     {
-        return *m_s_color2_attr;
+        return *m_color2_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -28740,6 +29185,77 @@ CT_Path* CT_Path::default_instance_ = NULL;
 CT_Shadow* CT_Shadow::default_instance_ = NULL;
 
     // CT_Stroke
+    CT_Stroke::CT_Stroke()
+    :m_has_o_left(false),
+    m_o_left(NULL),
+    m_has_o_top(false),
+    m_o_top(NULL),
+    m_has_o_right(false),
+    m_o_right(NULL),
+    m_has_o_bottom(false),
+    m_o_bottom(NULL),
+    m_has_o_column(false),
+    m_o_column(NULL),
+    m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_on_attr(false),
+    m_on_attr(NULL),
+    m_has_weight_attr(false),
+    m_weight_attr(""),
+    m_has_color_attr(false),
+    m_color_attr(NULL),
+    m_has_opacity_attr(false),
+    m_opacity_attr(""),
+    m_has_linestyle_attr(false),
+    m_linestyle_attr(NULL),
+    m_has_miterlimit_attr(false),
+    m_miterlimit_attr(0),
+    m_has_joinstyle_attr(false),
+    m_joinstyle_attr(NULL),
+    m_has_endcap_attr(false),
+    m_endcap_attr(NULL),
+    m_has_dashstyle_attr(false),
+    m_dashstyle_attr(""),
+    m_has_filltype_attr(false),
+    m_filltype_attr(NULL),
+    m_has_src_attr(false),
+    m_src_attr(""),
+    m_has_imageaspect_attr(false),
+    m_imageaspect_attr(NULL),
+    m_has_imagesize_attr(false),
+    m_imagesize_attr(""),
+    m_has_imagealignshape_attr(false),
+    m_imagealignshape_attr(NULL),
+    m_has_color2_attr(false),
+    m_color2_attr(NULL),
+    m_has_startarrow_attr(false),
+    m_startarrow_attr(NULL),
+    m_has_startarrowwidth_attr(false),
+    m_startarrowwidth_attr(NULL),
+    m_has_startarrowlength_attr(false),
+    m_startarrowlength_attr(NULL),
+    m_has_endarrow_attr(false),
+    m_endarrow_attr(NULL),
+    m_has_endarrowwidth_attr(false),
+    m_endarrowwidth_attr(NULL),
+    m_has_endarrowlength_attr(false),
+    m_endarrowlength_attr(NULL),
+    m_has_o_href_attr(false),
+    m_o_href_attr(""),
+    m_has_o_althref_attr(false),
+    m_o_althref_attr(""),
+    m_has_o_title_attr(false),
+    m_o_title_attr(""),
+    m_has_o_forcedash_attr(false),
+    m_o_forcedash_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_insetpen_attr(false),
+    m_insetpen_attr(NULL),
+    m_has_o_relid_attr(false),
+    m_o_relid_attr(NULL)
+    {
+    }
     bool CT_Stroke::has_o_left() const
     {    
     return m_has_o_left;
@@ -28865,24 +29381,24 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     m_has_id_attr = false;
     m_id_attr.clear();
     
-    m_has_s_on_attr = false;
+    m_has_on_attr = false;
     
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        delete m_s_on_attr;
-        m_s_on_attr = NULL;
+        delete m_on_attr;
+        m_on_attr = NULL;
     }
     
     
     m_has_weight_attr = false;
     m_weight_attr.clear();
     
-    m_has_s_color_attr = false;
+    m_has_color_attr = false;
     
-    if (m_s_color_attr)
+    if (m_color_attr)
     {
-        delete m_s_color_attr;
-        m_s_color_attr = NULL;
+        delete m_color_attr;
+        m_color_attr = NULL;
     }
     
     
@@ -28946,21 +29462,21 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     m_has_imagesize_attr = false;
     m_imagesize_attr.clear();
     
-    m_has_s_imagealignshape_attr = false;
+    m_has_imagealignshape_attr = false;
     
-    if (m_s_imagealignshape_attr)
+    if (m_imagealignshape_attr)
     {
-        delete m_s_imagealignshape_attr;
-        m_s_imagealignshape_attr = NULL;
+        delete m_imagealignshape_attr;
+        m_imagealignshape_attr = NULL;
     }
     
     
-    m_has_s_color2_attr = false;
+    m_has_color2_attr = false;
     
-    if (m_s_color2_attr)
+    if (m_color2_attr)
     {
-        delete m_s_color2_attr;
-        m_s_color2_attr = NULL;
+        delete m_color2_attr;
+        m_color2_attr = NULL;
     }
     
     
@@ -29018,21 +29534,21 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     }
     
     
-    m_has_href_attr = false;
-    m_href_attr.clear();
+    m_has_o_href_attr = false;
+    m_o_href_attr.clear();
     
-    m_has_althref_attr = false;
-    m_althref_attr.clear();
+    m_has_o_althref_attr = false;
+    m_o_althref_attr.clear();
     
-    m_has_title_attr = false;
-    m_title_attr.clear();
+    m_has_o_title_attr = false;
+    m_o_title_attr.clear();
     
-    m_has_s_forcedash_attr = false;
+    m_has_o_forcedash_attr = false;
     
-    if (m_s_forcedash_attr)
+    if (m_o_forcedash_attr)
     {
-        delete m_s_forcedash_attr;
-        m_s_forcedash_attr = NULL;
+        delete m_o_forcedash_attr;
+        m_o_forcedash_attr = NULL;
     }
     
     
@@ -29045,21 +29561,21 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     }
     
     
-    m_has_s_insetpen_attr = false;
+    m_has_insetpen_attr = false;
     
-    if (m_s_insetpen_attr)
+    if (m_insetpen_attr)
     {
-        delete m_s_insetpen_attr;
-        m_s_insetpen_attr = NULL;
+        delete m_insetpen_attr;
+        m_insetpen_attr = NULL;
     }
     
     
-    m_has_r_relid_attr = false;
+    m_has_o_relid_attr = false;
     
-    if (m_r_relid_attr)
+    if (m_o_relid_attr)
     {
-        delete m_r_relid_attr;
-        m_r_relid_attr = NULL;
+        delete m_o_relid_attr;
+        m_o_relid_attr = NULL;
     }
     
     }
@@ -29079,9 +29595,9 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_on_attr)
+    if (m_has_on_attr)
     {
-        m_s_on_attr->toXmlAttr("on", _outStream);
+        m_on_attr->toXmlAttr("on", _outStream);
     }
     
     
@@ -29091,9 +29607,9 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_color_attr)
+    if (m_has_color_attr)
     {
-        m_s_color_attr->toXmlAttr("color", _outStream);
+        m_color_attr->toXmlAttr("color", _outStream);
     }
     
     
@@ -29157,15 +29673,15 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_imagealignshape_attr)
+    if (m_has_imagealignshape_attr)
     {
-        m_s_imagealignshape_attr->toXmlAttr("imagealignshape", _outStream);
+        m_imagealignshape_attr->toXmlAttr("imagealignshape", _outStream);
     }
     
     
-    if (m_has_s_color2_attr)
+    if (m_has_color2_attr)
     {
-        m_s_color2_attr->toXmlAttr("color2", _outStream);
+        m_color2_attr->toXmlAttr("color2", _outStream);
     }
     
     
@@ -29205,45 +29721,45 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     }
     
     
-    if (m_has_href_attr)
+    if (m_has_o_href_attr)
     {
-        _outStream << " " << "href" << "=\"" << m_href_attr << "\"";
+        _outStream << " " << "o:href" << "=\"" << m_o_href_attr << "\"";
     }
     
     
-    if (m_has_althref_attr)
+    if (m_has_o_althref_attr)
     {
-        _outStream << " " << "althref" << "=\"" << m_althref_attr << "\"";
+        _outStream << " " << "o:althref" << "=\"" << m_o_althref_attr << "\"";
     }
     
     
-    if (m_has_title_attr)
+    if (m_has_o_title_attr)
     {
-        _outStream << " " << "title" << "=\"" << m_title_attr << "\"";
+        _outStream << " " << "o:title" << "=\"" << m_o_title_attr << "\"";
     }
     
     
-    if (m_has_s_forcedash_attr)
+    if (m_has_o_forcedash_attr)
     {
-        m_s_forcedash_attr->toXmlAttr("forcedash", _outStream);
+        m_o_forcedash_attr->toXmlAttr("o:forcedash", _outStream);
     }
     
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
-    if (m_has_s_insetpen_attr)
+    if (m_has_insetpen_attr)
     {
-        m_s_insetpen_attr->toXmlAttr("insetpen", _outStream);
+        m_insetpen_attr->toXmlAttr("insetpen", _outStream);
     }
     
     
-    if (m_has_r_relid_attr)
+    if (m_has_o_relid_attr)
     {
-        m_r_relid_attr->toXmlAttr("relid", _outStream);
+        m_o_relid_attr->toXmlAttr("o:relid", _outStream);
     }
     
             _outStream << ">";
@@ -29301,22 +29817,22 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool CT_Stroke::has_s_on_attr() const
+    bool CT_Stroke::has_on_attr() const
     {    
-    return m_has_s_on_attr;
+    return m_has_on_attr;
     }
 
-    void CT_Stroke::set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr)
+    void CT_Stroke::set_on_attr(const ns_s::ST_TrueFalse& _on_attr)
     {    
-    m_has_s_on_attr = true;
-    m_s_on_attr = new ns_s::ST_TrueFalse(_s_on_attr);
+    m_has_on_attr = true;
+    m_on_attr = new ns_s::ST_TrueFalse(_on_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Stroke::get_s_on_attr() const
+    const ns_s::ST_TrueFalse& CT_Stroke::get_on_attr() const
     {    
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        return *m_s_on_attr;
+        return *m_on_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -29337,22 +29853,22 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     return m_weight_attr;
     }
 
-    bool CT_Stroke::has_s_color_attr() const
+    bool CT_Stroke::has_color_attr() const
     {    
-    return m_has_s_color_attr;
+    return m_has_color_attr;
     }
 
-    void CT_Stroke::set_s_color_attr(const ns_s::ST_ColorType& _s_color_attr)
+    void CT_Stroke::set_color_attr(const ns_s::ST_ColorType& _color_attr)
     {    
-    m_has_s_color_attr = true;
-    m_s_color_attr = new ns_s::ST_ColorType(_s_color_attr);
+    m_has_color_attr = true;
+    m_color_attr = new ns_s::ST_ColorType(_color_attr);
     }
 
-    const ns_s::ST_ColorType& CT_Stroke::get_s_color_attr() const
+    const ns_s::ST_ColorType& CT_Stroke::get_color_attr() const
     {    
-    if (m_s_color_attr)
+    if (m_color_attr)
     {
-        return *m_s_color_attr;
+        return *m_color_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -29537,42 +30053,42 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     return m_imagesize_attr;
     }
 
-    bool CT_Stroke::has_s_imagealignshape_attr() const
+    bool CT_Stroke::has_imagealignshape_attr() const
     {    
-    return m_has_s_imagealignshape_attr;
+    return m_has_imagealignshape_attr;
     }
 
-    void CT_Stroke::set_s_imagealignshape_attr(const ns_s::ST_TrueFalse& _s_imagealignshape_attr)
+    void CT_Stroke::set_imagealignshape_attr(const ns_s::ST_TrueFalse& _imagealignshape_attr)
     {    
-    m_has_s_imagealignshape_attr = true;
-    m_s_imagealignshape_attr = new ns_s::ST_TrueFalse(_s_imagealignshape_attr);
+    m_has_imagealignshape_attr = true;
+    m_imagealignshape_attr = new ns_s::ST_TrueFalse(_imagealignshape_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Stroke::get_s_imagealignshape_attr() const
+    const ns_s::ST_TrueFalse& CT_Stroke::get_imagealignshape_attr() const
     {    
-    if (m_s_imagealignshape_attr)
+    if (m_imagealignshape_attr)
     {
-        return *m_s_imagealignshape_attr;
+        return *m_imagealignshape_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Stroke::has_s_color2_attr() const
+    bool CT_Stroke::has_color2_attr() const
     {    
-    return m_has_s_color2_attr;
+    return m_has_color2_attr;
     }
 
-    void CT_Stroke::set_s_color2_attr(const ns_s::ST_ColorType& _s_color2_attr)
+    void CT_Stroke::set_color2_attr(const ns_s::ST_ColorType& _color2_attr)
     {    
-    m_has_s_color2_attr = true;
-    m_s_color2_attr = new ns_s::ST_ColorType(_s_color2_attr);
+    m_has_color2_attr = true;
+    m_color2_attr = new ns_s::ST_ColorType(_color2_attr);
     }
 
-    const ns_s::ST_ColorType& CT_Stroke::get_s_color2_attr() const
+    const ns_s::ST_ColorType& CT_Stroke::get_color2_attr() const
     {    
-    if (m_s_color2_attr)
+    if (m_color2_attr)
     {
-        return *m_s_color2_attr;
+        return *m_color2_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -29697,70 +30213,70 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     return ST_StrokeArrowLength::default_instance();
     }
 
-    bool CT_Stroke::has_href_attr() const
+    bool CT_Stroke::has_o_href_attr() const
     {    
-    return m_has_href_attr;
+    return m_has_o_href_attr;
     }
 
-    void CT_Stroke::set_href_attr(const XSD::string_& _href_attr)
+    void CT_Stroke::set_o_href_attr(const XSD::string_& _o_href_attr)
     {    
-    m_has_href_attr = true;
-    m_href_attr = _href_attr;
+    m_has_o_href_attr = true;
+    m_o_href_attr = _o_href_attr;
     }
 
-    const XSD::string_& CT_Stroke::get_href_attr() const
+    const XSD::string_& CT_Stroke::get_o_href_attr() const
     {    
-    return m_href_attr;
+    return m_o_href_attr;
     }
 
-    bool CT_Stroke::has_althref_attr() const
+    bool CT_Stroke::has_o_althref_attr() const
     {    
-    return m_has_althref_attr;
+    return m_has_o_althref_attr;
     }
 
-    void CT_Stroke::set_althref_attr(const XSD::string_& _althref_attr)
+    void CT_Stroke::set_o_althref_attr(const XSD::string_& _o_althref_attr)
     {    
-    m_has_althref_attr = true;
-    m_althref_attr = _althref_attr;
+    m_has_o_althref_attr = true;
+    m_o_althref_attr = _o_althref_attr;
     }
 
-    const XSD::string_& CT_Stroke::get_althref_attr() const
+    const XSD::string_& CT_Stroke::get_o_althref_attr() const
     {    
-    return m_althref_attr;
+    return m_o_althref_attr;
     }
 
-    bool CT_Stroke::has_title_attr() const
+    bool CT_Stroke::has_o_title_attr() const
     {    
-    return m_has_title_attr;
+    return m_has_o_title_attr;
     }
 
-    void CT_Stroke::set_title_attr(const XSD::string_& _title_attr)
+    void CT_Stroke::set_o_title_attr(const XSD::string_& _o_title_attr)
     {    
-    m_has_title_attr = true;
-    m_title_attr = _title_attr;
+    m_has_o_title_attr = true;
+    m_o_title_attr = _o_title_attr;
     }
 
-    const XSD::string_& CT_Stroke::get_title_attr() const
+    const XSD::string_& CT_Stroke::get_o_title_attr() const
     {    
-    return m_title_attr;
+    return m_o_title_attr;
     }
 
-    bool CT_Stroke::has_s_forcedash_attr() const
+    bool CT_Stroke::has_o_forcedash_attr() const
     {    
-    return m_has_s_forcedash_attr;
+    return m_has_o_forcedash_attr;
     }
 
-    void CT_Stroke::set_s_forcedash_attr(const ns_s::ST_TrueFalse& _s_forcedash_attr)
+    void CT_Stroke::set_o_forcedash_attr(const ns_s::ST_TrueFalse& _o_forcedash_attr)
     {    
-    m_has_s_forcedash_attr = true;
-    m_s_forcedash_attr = new ns_s::ST_TrueFalse(_s_forcedash_attr);
+    m_has_o_forcedash_attr = true;
+    m_o_forcedash_attr = new ns_s::ST_TrueFalse(_o_forcedash_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Stroke::get_s_forcedash_attr() const
+    const ns_s::ST_TrueFalse& CT_Stroke::get_o_forcedash_attr() const
     {    
-    if (m_s_forcedash_attr)
+    if (m_o_forcedash_attr)
     {
-        return *m_s_forcedash_attr;
+        return *m_o_forcedash_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -29785,42 +30301,42 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     return ns_r::ST_RelationshipId::default_instance();
     }
 
-    bool CT_Stroke::has_s_insetpen_attr() const
+    bool CT_Stroke::has_insetpen_attr() const
     {    
-    return m_has_s_insetpen_attr;
+    return m_has_insetpen_attr;
     }
 
-    void CT_Stroke::set_s_insetpen_attr(const ns_s::ST_TrueFalse& _s_insetpen_attr)
+    void CT_Stroke::set_insetpen_attr(const ns_s::ST_TrueFalse& _insetpen_attr)
     {    
-    m_has_s_insetpen_attr = true;
-    m_s_insetpen_attr = new ns_s::ST_TrueFalse(_s_insetpen_attr);
+    m_has_insetpen_attr = true;
+    m_insetpen_attr = new ns_s::ST_TrueFalse(_insetpen_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Stroke::get_s_insetpen_attr() const
+    const ns_s::ST_TrueFalse& CT_Stroke::get_insetpen_attr() const
     {    
-    if (m_s_insetpen_attr)
+    if (m_insetpen_attr)
     {
-        return *m_s_insetpen_attr;
+        return *m_insetpen_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Stroke::has_r_relid_attr() const
+    bool CT_Stroke::has_o_relid_attr() const
     {    
-    return m_has_r_relid_attr;
+    return m_has_o_relid_attr;
     }
 
-    void CT_Stroke::set_r_relid_attr(const ns_r::ST_RelationshipId& _r_relid_attr)
+    void CT_Stroke::set_o_relid_attr(const ns_r::ST_RelationshipId& _o_relid_attr)
     {    
-    m_has_r_relid_attr = true;
-    m_r_relid_attr = new ns_r::ST_RelationshipId(_r_relid_attr);
+    m_has_o_relid_attr = true;
+    m_o_relid_attr = new ns_r::ST_RelationshipId(_o_relid_attr);
     }
 
-    const ns_r::ST_RelationshipId& CT_Stroke::get_r_relid_attr() const
+    const ns_r::ST_RelationshipId& CT_Stroke::get_o_relid_attr() const
     {    
-    if (m_r_relid_attr)
+    if (m_o_relid_attr)
     {
-        return *m_r_relid_attr;
+        return *m_o_relid_attr;
     }
     return ns_r::ST_RelationshipId::default_instance();
     }
@@ -29828,6 +30344,23 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
 CT_Stroke* CT_Stroke::default_instance_ = NULL;
 
     // CT_Textbox
+    CT_Textbox::CT_Textbox()
+    :m_has_w_txbxContent(false),
+    m_w_txbxContent(NULL),
+    m_has__any(false),
+    m__any(NULL),
+    m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_style_attr(false),
+    m_style_attr(""),
+    m_has_inset_attr(false),
+    m_inset_attr(""),
+    m_has_o_singleclick_attr(false),
+    m_o_singleclick_attr(NULL),
+    m_has_o_insetmode_attr(false),
+    m_o_insetmode_attr(NULL)
+    {
+    }
     bool CT_Textbox::has_w_txbxContent() const
     {    
     return m_has_w_txbxContent;
@@ -29864,12 +30397,12 @@ CT_Stroke* CT_Stroke::default_instance_ = NULL;
     m_has_inset_attr = false;
     m_inset_attr.clear();
     
-    m_has_s_singleclick_attr = false;
+    m_has_o_singleclick_attr = false;
     
-    if (m_s_singleclick_attr)
+    if (m_o_singleclick_attr)
     {
-        delete m_s_singleclick_attr;
-        m_s_singleclick_attr = NULL;
+        delete m_o_singleclick_attr;
+        m_o_singleclick_attr = NULL;
     }
     
     
@@ -29910,15 +30443,15 @@ CT_Stroke* CT_Stroke::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_singleclick_attr)
+    if (m_has_o_singleclick_attr)
     {
-        m_s_singleclick_attr->toXmlAttr("singleclick", _outStream);
+        m_o_singleclick_attr->toXmlAttr("o:singleclick", _outStream);
     }
     
     
     if (m_has_o_insetmode_attr)
     {
-        m_o_insetmode_attr->toXmlAttr("insetmode", _outStream);
+        m_o_insetmode_attr->toXmlAttr("o:insetmode", _outStream);
     }
     
             _outStream << ">";
@@ -29928,10 +30461,10 @@ CT_Stroke* CT_Stroke::default_instance_ = NULL;
         m_w_txbxContent->toXmlElem("w:txbxContent", "", _outStream);;
     }
     
-    if (m_has_any)
+    if (m_has__any)
     {
         
-    m_any->toXml(_outStream);
+    m__any->toXml(_outStream);
     ;
     }
     
@@ -29995,22 +30528,22 @@ CT_Stroke* CT_Stroke::default_instance_ = NULL;
     return m_inset_attr;
     }
 
-    bool CT_Textbox::has_s_singleclick_attr() const
+    bool CT_Textbox::has_o_singleclick_attr() const
     {    
-    return m_has_s_singleclick_attr;
+    return m_has_o_singleclick_attr;
     }
 
-    void CT_Textbox::set_s_singleclick_attr(const ns_s::ST_TrueFalse& _s_singleclick_attr)
+    void CT_Textbox::set_o_singleclick_attr(const ns_s::ST_TrueFalse& _o_singleclick_attr)
     {    
-    m_has_s_singleclick_attr = true;
-    m_s_singleclick_attr = new ns_s::ST_TrueFalse(_s_singleclick_attr);
+    m_has_o_singleclick_attr = true;
+    m_o_singleclick_attr = new ns_s::ST_TrueFalse(_o_singleclick_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Textbox::get_s_singleclick_attr() const
+    const ns_s::ST_TrueFalse& CT_Textbox::get_o_singleclick_attr() const
     {    
-    if (m_s_singleclick_attr)
+    if (m_o_singleclick_attr)
     {
-        return *m_s_singleclick_attr;
+        return *m_o_singleclick_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -30038,6 +30571,25 @@ CT_Stroke* CT_Stroke::default_instance_ = NULL;
 CT_Textbox* CT_Textbox::default_instance_ = NULL;
 
     // CT_TextPath
+    CT_TextPath::CT_TextPath()
+    :m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_style_attr(false),
+    m_style_attr(""),
+    m_has_on_attr(false),
+    m_on_attr(NULL),
+    m_has_fitshape_attr(false),
+    m_fitshape_attr(NULL),
+    m_has_fitpath_attr(false),
+    m_fitpath_attr(NULL),
+    m_has_trim_attr(false),
+    m_trim_attr(NULL),
+    m_has_xscale_attr(false),
+    m_xscale_attr(NULL),
+    m_has_string_attr(false),
+    m_string_attr("")
+    {
+    }
     void CT_TextPath::clear()
     {    
     m_has_id_attr = false;
@@ -30046,48 +30598,48 @@ CT_Textbox* CT_Textbox::default_instance_ = NULL;
     m_has_style_attr = false;
     m_style_attr.clear();
     
-    m_has_s_on_attr = false;
+    m_has_on_attr = false;
     
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        delete m_s_on_attr;
-        m_s_on_attr = NULL;
+        delete m_on_attr;
+        m_on_attr = NULL;
     }
     
     
-    m_has_s_fitshape_attr = false;
+    m_has_fitshape_attr = false;
     
-    if (m_s_fitshape_attr)
+    if (m_fitshape_attr)
     {
-        delete m_s_fitshape_attr;
-        m_s_fitshape_attr = NULL;
+        delete m_fitshape_attr;
+        m_fitshape_attr = NULL;
     }
     
     
-    m_has_s_fitpath_attr = false;
+    m_has_fitpath_attr = false;
     
-    if (m_s_fitpath_attr)
+    if (m_fitpath_attr)
     {
-        delete m_s_fitpath_attr;
-        m_s_fitpath_attr = NULL;
+        delete m_fitpath_attr;
+        m_fitpath_attr = NULL;
     }
     
     
-    m_has_s_trim_attr = false;
+    m_has_trim_attr = false;
     
-    if (m_s_trim_attr)
+    if (m_trim_attr)
     {
-        delete m_s_trim_attr;
-        m_s_trim_attr = NULL;
+        delete m_trim_attr;
+        m_trim_attr = NULL;
     }
     
     
-    m_has_s_xscale_attr = false;
+    m_has_xscale_attr = false;
     
-    if (m_s_xscale_attr)
+    if (m_xscale_attr)
     {
-        delete m_s_xscale_attr;
-        m_s_xscale_attr = NULL;
+        delete m_xscale_attr;
+        m_xscale_attr = NULL;
     }
     
     
@@ -30116,33 +30668,33 @@ CT_Textbox* CT_Textbox::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_on_attr)
+    if (m_has_on_attr)
     {
-        m_s_on_attr->toXmlAttr("on", _outStream);
+        m_on_attr->toXmlAttr("on", _outStream);
     }
     
     
-    if (m_has_s_fitshape_attr)
+    if (m_has_fitshape_attr)
     {
-        m_s_fitshape_attr->toXmlAttr("fitshape", _outStream);
+        m_fitshape_attr->toXmlAttr("fitshape", _outStream);
     }
     
     
-    if (m_has_s_fitpath_attr)
+    if (m_has_fitpath_attr)
     {
-        m_s_fitpath_attr->toXmlAttr("fitpath", _outStream);
+        m_fitpath_attr->toXmlAttr("fitpath", _outStream);
     }
     
     
-    if (m_has_s_trim_attr)
+    if (m_has_trim_attr)
     {
-        m_s_trim_attr->toXmlAttr("trim", _outStream);
+        m_trim_attr->toXmlAttr("trim", _outStream);
     }
     
     
-    if (m_has_s_xscale_attr)
+    if (m_has_xscale_attr)
     {
-        m_s_xscale_attr->toXmlAttr("xscale", _outStream);
+        m_xscale_attr->toXmlAttr("xscale", _outStream);
     }
     
     
@@ -30197,102 +30749,102 @@ CT_Textbox* CT_Textbox::default_instance_ = NULL;
     return m_style_attr;
     }
 
-    bool CT_TextPath::has_s_on_attr() const
+    bool CT_TextPath::has_on_attr() const
     {    
-    return m_has_s_on_attr;
+    return m_has_on_attr;
     }
 
-    void CT_TextPath::set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr)
+    void CT_TextPath::set_on_attr(const ns_s::ST_TrueFalse& _on_attr)
     {    
-    m_has_s_on_attr = true;
-    m_s_on_attr = new ns_s::ST_TrueFalse(_s_on_attr);
+    m_has_on_attr = true;
+    m_on_attr = new ns_s::ST_TrueFalse(_on_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_TextPath::get_s_on_attr() const
+    const ns_s::ST_TrueFalse& CT_TextPath::get_on_attr() const
     {    
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        return *m_s_on_attr;
+        return *m_on_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_TextPath::has_s_fitshape_attr() const
+    bool CT_TextPath::has_fitshape_attr() const
     {    
-    return m_has_s_fitshape_attr;
+    return m_has_fitshape_attr;
     }
 
-    void CT_TextPath::set_s_fitshape_attr(const ns_s::ST_TrueFalse& _s_fitshape_attr)
+    void CT_TextPath::set_fitshape_attr(const ns_s::ST_TrueFalse& _fitshape_attr)
     {    
-    m_has_s_fitshape_attr = true;
-    m_s_fitshape_attr = new ns_s::ST_TrueFalse(_s_fitshape_attr);
+    m_has_fitshape_attr = true;
+    m_fitshape_attr = new ns_s::ST_TrueFalse(_fitshape_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_TextPath::get_s_fitshape_attr() const
+    const ns_s::ST_TrueFalse& CT_TextPath::get_fitshape_attr() const
     {    
-    if (m_s_fitshape_attr)
+    if (m_fitshape_attr)
     {
-        return *m_s_fitshape_attr;
+        return *m_fitshape_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_TextPath::has_s_fitpath_attr() const
+    bool CT_TextPath::has_fitpath_attr() const
     {    
-    return m_has_s_fitpath_attr;
+    return m_has_fitpath_attr;
     }
 
-    void CT_TextPath::set_s_fitpath_attr(const ns_s::ST_TrueFalse& _s_fitpath_attr)
+    void CT_TextPath::set_fitpath_attr(const ns_s::ST_TrueFalse& _fitpath_attr)
     {    
-    m_has_s_fitpath_attr = true;
-    m_s_fitpath_attr = new ns_s::ST_TrueFalse(_s_fitpath_attr);
+    m_has_fitpath_attr = true;
+    m_fitpath_attr = new ns_s::ST_TrueFalse(_fitpath_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_TextPath::get_s_fitpath_attr() const
+    const ns_s::ST_TrueFalse& CT_TextPath::get_fitpath_attr() const
     {    
-    if (m_s_fitpath_attr)
+    if (m_fitpath_attr)
     {
-        return *m_s_fitpath_attr;
+        return *m_fitpath_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_TextPath::has_s_trim_attr() const
+    bool CT_TextPath::has_trim_attr() const
     {    
-    return m_has_s_trim_attr;
+    return m_has_trim_attr;
     }
 
-    void CT_TextPath::set_s_trim_attr(const ns_s::ST_TrueFalse& _s_trim_attr)
+    void CT_TextPath::set_trim_attr(const ns_s::ST_TrueFalse& _trim_attr)
     {    
-    m_has_s_trim_attr = true;
-    m_s_trim_attr = new ns_s::ST_TrueFalse(_s_trim_attr);
+    m_has_trim_attr = true;
+    m_trim_attr = new ns_s::ST_TrueFalse(_trim_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_TextPath::get_s_trim_attr() const
+    const ns_s::ST_TrueFalse& CT_TextPath::get_trim_attr() const
     {    
-    if (m_s_trim_attr)
+    if (m_trim_attr)
     {
-        return *m_s_trim_attr;
+        return *m_trim_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_TextPath::has_s_xscale_attr() const
+    bool CT_TextPath::has_xscale_attr() const
     {    
-    return m_has_s_xscale_attr;
+    return m_has_xscale_attr;
     }
 
-    void CT_TextPath::set_s_xscale_attr(const ns_s::ST_TrueFalse& _s_xscale_attr)
+    void CT_TextPath::set_xscale_attr(const ns_s::ST_TrueFalse& _xscale_attr)
     {    
-    m_has_s_xscale_attr = true;
-    m_s_xscale_attr = new ns_s::ST_TrueFalse(_s_xscale_attr);
+    m_has_xscale_attr = true;
+    m_xscale_attr = new ns_s::ST_TrueFalse(_xscale_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_TextPath::get_s_xscale_attr() const
+    const ns_s::ST_TrueFalse& CT_TextPath::get_xscale_attr() const
     {    
-    if (m_s_xscale_attr)
+    if (m_xscale_attr)
     {
-        return *m_s_xscale_attr;
+        return *m_xscale_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -30316,6 +30868,13 @@ CT_Textbox* CT_Textbox::default_instance_ = NULL;
 CT_TextPath* CT_TextPath::default_instance_ = NULL;
 
     // CT_Arc
+    CT_Arc::CT_Arc()
+    :m_has_startAngle_attr(false),
+    m_startAngle_attr(0),
+    m_has_endAngle_attr(false),
+    m_endAngle_attr(0)
+    {
+    }
     CT_Path* CT_Arc::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -30546,39 +31105,39 @@ CT_TextPath* CT_TextPath::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -30685,6 +31244,55 @@ CT_TextPath* CT_TextPath::default_instance_ = NULL;
 
 
     // CT_Arc::ChildGroup_1
+    CT_Arc::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool CT_Arc::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -35817,6 +36425,17 @@ CT_TextPath* CT_TextPath::default_instance_ = NULL;
 CT_Arc* CT_Arc::default_instance_ = NULL;
 
     // CT_Curve
+    CT_Curve::CT_Curve()
+    :m_has_from_attr(false),
+    m_from_attr(""),
+    m_has_control1_attr(false),
+    m_control1_attr(""),
+    m_has_control2_attr(false),
+    m_control2_attr(""),
+    m_has_to_attr(false),
+    m_to_attr("")
+    {
+    }
     CT_Path* CT_Curve::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -36065,39 +36684,39 @@ CT_Arc* CT_Arc::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -36236,6 +36855,55 @@ CT_Arc* CT_Arc::default_instance_ = NULL;
 
 
     // CT_Curve::ChildGroup_1
+    CT_Curve::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool CT_Curve::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -41368,6 +42036,29 @@ CT_Arc* CT_Arc::default_instance_ = NULL;
 CT_Curve* CT_Curve::default_instance_ = NULL;
 
     // CT_Image
+    CT_Image::CT_Image()
+    :m_has_src_attr(false),
+    m_src_attr(""),
+    m_has_cropleft_attr(false),
+    m_cropleft_attr(""),
+    m_has_croptop_attr(false),
+    m_croptop_attr(""),
+    m_has_cropright_attr(false),
+    m_cropright_attr(""),
+    m_has_cropbottom_attr(false),
+    m_cropbottom_attr(""),
+    m_has_gain_attr(false),
+    m_gain_attr(""),
+    m_has_blacklevel_attr(false),
+    m_blacklevel_attr(""),
+    m_has_gamma_attr(false),
+    m_gamma_attr(""),
+    m_has_grayscale_attr(false),
+    m_grayscale_attr(NULL),
+    m_has_bilevel_attr(false),
+    m_bilevel_attr(NULL)
+    {
+    }
     CT_Path* CT_Image::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -41578,21 +42269,21 @@ CT_Curve* CT_Curve::default_instance_ = NULL;
     m_has_gamma_attr = false;
     m_gamma_attr.clear();
     
-    m_has_s_grayscale_attr = false;
+    m_has_grayscale_attr = false;
     
-    if (m_s_grayscale_attr)
+    if (m_grayscale_attr)
     {
-        delete m_s_grayscale_attr;
-        m_s_grayscale_attr = NULL;
+        delete m_grayscale_attr;
+        m_grayscale_attr = NULL;
     }
     
     
-    m_has_s_bilevel_attr = false;
+    m_has_bilevel_attr = false;
     
-    if (m_s_bilevel_attr)
+    if (m_bilevel_attr)
     {
-        delete m_s_bilevel_attr;
-        m_s_bilevel_attr = NULL;
+        delete m_bilevel_attr;
+        m_bilevel_attr = NULL;
     }
     
     
@@ -41663,15 +42354,15 @@ CT_Curve* CT_Curve::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_grayscale_attr)
+    if (m_has_grayscale_attr)
     {
-        m_s_grayscale_attr->toXmlAttr("grayscale", _outStream);
+        m_grayscale_attr->toXmlAttr("grayscale", _outStream);
     }
     
     
-    if (m_has_s_bilevel_attr)
+    if (m_has_bilevel_attr)
     {
-        m_s_bilevel_attr->toXmlAttr("bilevel", _outStream);
+        m_bilevel_attr->toXmlAttr("bilevel", _outStream);
     }
     
             _outStream << ">";
@@ -41682,39 +42373,39 @@ CT_Curve* CT_Curve::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -41915,48 +42606,97 @@ CT_Curve* CT_Curve::default_instance_ = NULL;
     return m_gamma_attr;
     }
 
-    bool CT_Image::has_s_grayscale_attr() const
+    bool CT_Image::has_grayscale_attr() const
     {    
-    return m_has_s_grayscale_attr;
+    return m_has_grayscale_attr;
     }
 
-    void CT_Image::set_s_grayscale_attr(const ns_s::ST_TrueFalse& _s_grayscale_attr)
+    void CT_Image::set_grayscale_attr(const ns_s::ST_TrueFalse& _grayscale_attr)
     {    
-    m_has_s_grayscale_attr = true;
-    m_s_grayscale_attr = new ns_s::ST_TrueFalse(_s_grayscale_attr);
+    m_has_grayscale_attr = true;
+    m_grayscale_attr = new ns_s::ST_TrueFalse(_grayscale_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Image::get_s_grayscale_attr() const
+    const ns_s::ST_TrueFalse& CT_Image::get_grayscale_attr() const
     {    
-    if (m_s_grayscale_attr)
+    if (m_grayscale_attr)
     {
-        return *m_s_grayscale_attr;
+        return *m_grayscale_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool CT_Image::has_s_bilevel_attr() const
+    bool CT_Image::has_bilevel_attr() const
     {    
-    return m_has_s_bilevel_attr;
+    return m_has_bilevel_attr;
     }
 
-    void CT_Image::set_s_bilevel_attr(const ns_s::ST_TrueFalse& _s_bilevel_attr)
+    void CT_Image::set_bilevel_attr(const ns_s::ST_TrueFalse& _bilevel_attr)
     {    
-    m_has_s_bilevel_attr = true;
-    m_s_bilevel_attr = new ns_s::ST_TrueFalse(_s_bilevel_attr);
+    m_has_bilevel_attr = true;
+    m_bilevel_attr = new ns_s::ST_TrueFalse(_bilevel_attr);
     }
 
-    const ns_s::ST_TrueFalse& CT_Image::get_s_bilevel_attr() const
+    const ns_s::ST_TrueFalse& CT_Image::get_bilevel_attr() const
     {    
-    if (m_s_bilevel_attr)
+    if (m_bilevel_attr)
     {
-        return *m_s_bilevel_attr;
+        return *m_bilevel_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
 
     // CT_Image::ChildGroup_1
+    CT_Image::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool CT_Image::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -47089,6 +47829,13 @@ CT_Curve* CT_Curve::default_instance_ = NULL;
 CT_Image* CT_Image::default_instance_ = NULL;
 
     // CT_Line
+    CT_Line::CT_Line()
+    :m_has_from_attr(false),
+    m_from_attr(""),
+    m_has_to_attr(false),
+    m_to_attr("")
+    {
+    }
     CT_Path* CT_Line::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -47319,39 +48066,39 @@ CT_Image* CT_Image::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -47458,6 +48205,55 @@ CT_Image* CT_Image::default_instance_ = NULL;
 
 
     // CT_Line::ChildGroup_1
+    CT_Line::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool CT_Line::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -52590,6 +53386,10 @@ CT_Image* CT_Image::default_instance_ = NULL;
 CT_Line* CT_Line::default_instance_ = NULL;
 
     // CT_Oval
+    CT_Oval::CT_Oval()
+
+    {
+    }
     CT_Path* CT_Oval::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -52803,39 +53603,39 @@ CT_Line* CT_Line::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -52910,6 +53710,55 @@ CT_Line* CT_Line::default_instance_ = NULL;
 
 
     // CT_Oval::ChildGroup_1
+    CT_Oval::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool CT_Oval::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -58042,6 +58891,11 @@ CT_Line* CT_Line::default_instance_ = NULL;
 CT_Oval* CT_Oval::default_instance_ = NULL;
 
     // CT_PolyLine
+    CT_PolyLine::CT_PolyLine()
+    :m_has_points_attr(false),
+    m_points_attr("")
+    {
+    }
     CT_Path* CT_PolyLine::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -58271,39 +59125,39 @@ CT_Oval* CT_Oval::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -58398,6 +59252,57 @@ CT_Oval* CT_Oval::default_instance_ = NULL;
 
 
     // CT_PolyLine::ChildGroup_1
+    CT_PolyLine::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL),
+    m_has_o_ink(false),
+    m_o_ink(NULL)
+    {
+    }
     bool CT_PolyLine::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -63969,6 +64874,10 @@ CT_Oval* CT_Oval::default_instance_ = NULL;
 CT_PolyLine* CT_PolyLine::default_instance_ = NULL;
 
     // CT_Rect
+    CT_Rect::CT_Rect()
+
+    {
+    }
     CT_Path* CT_Rect::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -64182,39 +65091,39 @@ CT_PolyLine* CT_PolyLine::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -64289,6 +65198,55 @@ CT_PolyLine* CT_PolyLine::default_instance_ = NULL;
 
 
     // CT_Rect::ChildGroup_1
+    CT_Rect::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool CT_Rect::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -69421,6 +70379,11 @@ CT_PolyLine* CT_PolyLine::default_instance_ = NULL;
 CT_Rect* CT_Rect::default_instance_ = NULL;
 
     // CT_RoundRect
+    CT_RoundRect::CT_RoundRect()
+    :m_has_arcsize_attr(false),
+    m_arcsize_attr("")
+    {
+    }
     CT_Path* CT_RoundRect::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -69642,39 +70605,39 @@ CT_Rect* CT_Rect::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -69765,6 +70728,55 @@ CT_Rect* CT_Rect::default_instance_ = NULL;
 
 
     // CT_RoundRect::ChildGroup_1
+    CT_RoundRect::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool CT_RoundRect::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -74897,6 +75909,19 @@ CT_Rect* CT_Rect::default_instance_ = NULL;
 CT_RoundRect* CT_RoundRect::default_instance_ = NULL;
 
     // shape_element
+    shape_element::shape_element()
+    :m_has_type_attr(false),
+    m_type_attr(""),
+    m_has_adj_attr(false),
+    m_adj_attr(""),
+    m_has_path_attr(false),
+    m_path_attr(""),
+    m_has_o_gfxdata_attr(false),
+    m_o_gfxdata_attr(""),
+    m_has_equationxml_attr(false),
+    m_equationxml_attr("")
+    {
+    }
     CT_Path* shape_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -75116,8 +76141,8 @@ CT_RoundRect* CT_RoundRect::default_instance_ = NULL;
     m_has_path_attr = false;
     m_path_attr.clear();
     
-    m_has_gfxdata_attr = false;
-    m_gfxdata_attr.clear();
+    m_has_o_gfxdata_attr = false;
+    m_o_gfxdata_attr.clear();
     
     m_has_equationxml_attr = false;
     m_equationxml_attr.clear();
@@ -75134,7 +76159,7 @@ CT_RoundRect* CT_RoundRect::default_instance_ = NULL;
 
     void shape_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<shape";
+    _outStream << "<v:shape";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -75163,9 +76188,9 @@ CT_RoundRect* CT_RoundRect::default_instance_ = NULL;
     }
     
     
-    if (m_has_gfxdata_attr)
+    if (m_has_o_gfxdata_attr)
     {
-        _outStream << " " << "gfxdata" << "=\"" << m_gfxdata_attr << "\"";
+        _outStream << " " << "o:gfxdata" << "=\"" << m_o_gfxdata_attr << "\"";
     }
     
     
@@ -75182,39 +76207,39 @@ CT_RoundRect* CT_RoundRect::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -75287,7 +76312,7 @@ CT_RoundRect* CT_RoundRect::default_instance_ = NULL;
         }
     }
     
-    _outStream << "</shape>";
+    _outStream << "</v:shape>";
     }
 
     const shape_element& shape_element::default_instance()
@@ -75347,20 +76372,20 @@ CT_RoundRect* CT_RoundRect::default_instance_ = NULL;
     return m_path_attr;
     }
 
-    bool shape_element::has_gfxdata_attr() const
+    bool shape_element::has_o_gfxdata_attr() const
     {    
-    return m_has_gfxdata_attr;
+    return m_has_o_gfxdata_attr;
     }
 
-    void shape_element::set_gfxdata_attr(const XSD::base64Binary_& _gfxdata_attr)
+    void shape_element::set_o_gfxdata_attr(const XSD::base64Binary_& _o_gfxdata_attr)
     {    
-    m_has_gfxdata_attr = true;
-    m_gfxdata_attr = _gfxdata_attr;
+    m_has_o_gfxdata_attr = true;
+    m_o_gfxdata_attr = _o_gfxdata_attr;
     }
 
-    const XSD::base64Binary_& shape_element::get_gfxdata_attr() const
+    const XSD::base64Binary_& shape_element::get_o_gfxdata_attr() const
     {    
-    return m_gfxdata_attr;
+    return m_o_gfxdata_attr;
     }
 
     bool shape_element::has_equationxml_attr() const
@@ -75381,6 +76406,61 @@ CT_RoundRect* CT_RoundRect::default_instance_ = NULL;
 
 
     // shape_element::ChildGroup_1
+    shape_element::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL),
+    m_has_o_ink(false),
+    m_o_ink(NULL),
+    m_has_pvml_iscomment(false),
+    m_pvml_iscomment(NULL),
+    m_has_o_equationxml(false),
+    m_o_equationxml(NULL)
+    {
+    }
     bool shape_element::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -81884,6 +82964,17 @@ CT_RoundRect* CT_RoundRect::default_instance_ = NULL;
 shape_element* shape_element::default_instance_ = NULL;
 
     // shapetype_element
+    shapetype_element::shapetype_element()
+    :m_has_o_complex(false),
+    m_o_complex(NULL),
+    m_has_adj_attr(false),
+    m_adj_attr(""),
+    m_has_path_attr(false),
+    m_path_attr(""),
+    m_has_o_master_attr(false),
+    m_o_master_attr("")
+    {
+    }
     CT_Path* shapetype_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -82100,8 +83191,8 @@ shape_element* shape_element::default_instance_ = NULL;
     m_has_path_attr = false;
     m_path_attr.clear();
     
-    m_has_master_attr = false;
-    m_master_attr.clear();
+    m_has_o_master_attr = false;
+    m_o_master_attr.clear();
     
     {
         vector<ChildGroup_1*>::iterator iter;
@@ -82124,7 +83215,7 @@ shape_element* shape_element::default_instance_ = NULL;
 
     void shapetype_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<shapetype";
+    _outStream << "<v:shapetype";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -82147,9 +83238,9 @@ shape_element* shape_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_master_attr)
+    if (m_has_o_master_attr)
     {
-        _outStream << " " << "master" << "=\"" << m_master_attr << "\"";
+        _outStream << " " << "o:master" << "=\"" << m_o_master_attr << "\"";
     }
     
     _outStream << ">";
@@ -82160,39 +83251,39 @@ shape_element* shape_element::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -82258,7 +83349,7 @@ shape_element* shape_element::default_instance_ = NULL;
         m_o_complex->toXmlElem("o:complex", "", _outStream);;
     }
     
-    _outStream << "</shapetype>";
+    _outStream << "</v:shapetype>";
     }
 
     const shapetype_element& shapetype_element::default_instance()
@@ -82302,24 +83393,73 @@ shape_element* shape_element::default_instance_ = NULL;
     return m_path_attr;
     }
 
-    bool shapetype_element::has_master_attr() const
+    bool shapetype_element::has_o_master_attr() const
     {    
-    return m_has_master_attr;
+    return m_has_o_master_attr;
     }
 
-    void shapetype_element::set_master_attr(const XSD::string_& _master_attr)
+    void shapetype_element::set_o_master_attr(const XSD::string_& _o_master_attr)
     {    
-    m_has_master_attr = true;
-    m_master_attr = _master_attr;
+    m_has_o_master_attr = true;
+    m_o_master_attr = _o_master_attr;
     }
 
-    const XSD::string_& shapetype_element::get_master_attr() const
+    const XSD::string_& shapetype_element::get_o_master_attr() const
     {    
-    return m_master_attr;
+    return m_o_master_attr;
     }
 
 
     // shapetype_element::ChildGroup_1
+    shapetype_element::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool shapetype_element::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -87452,6 +88592,19 @@ shape_element* shape_element::default_instance_ = NULL;
 shapetype_element* shapetype_element::default_instance_ = NULL;
 
     // group_element
+    group_element::group_element()
+    :m_has_filled_attr(false),
+    m_filled_attr(NULL),
+    m_has_fillcolor_attr(false),
+    m_fillcolor_attr(NULL),
+    m_has_editas_attr(false),
+    m_editas_attr(NULL),
+    m_has_o_tableproperties_attr(false),
+    m_o_tableproperties_attr(""),
+    m_has_o_tablelimits_attr(false),
+    m_o_tablelimits_attr("")
+    {
+    }
     CT_Path* group_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -87734,21 +88887,21 @@ shapetype_element* shapetype_element::default_instance_ = NULL;
 
     void group_element::clear()
     {    
-    m_has_s_filled_attr = false;
+    m_has_filled_attr = false;
     
-    if (m_s_filled_attr)
+    if (m_filled_attr)
     {
-        delete m_s_filled_attr;
-        m_s_filled_attr = NULL;
+        delete m_filled_attr;
+        m_filled_attr = NULL;
     }
     
     
-    m_has_s_fillcolor_attr = false;
+    m_has_fillcolor_attr = false;
     
-    if (m_s_fillcolor_attr)
+    if (m_fillcolor_attr)
     {
-        delete m_s_fillcolor_attr;
-        m_s_fillcolor_attr = NULL;
+        delete m_fillcolor_attr;
+        m_fillcolor_attr = NULL;
     }
     
     
@@ -87761,11 +88914,11 @@ shapetype_element* shapetype_element::default_instance_ = NULL;
     }
     
     
-    m_has_tableproperties_attr = false;
-    m_tableproperties_attr.clear();
+    m_has_o_tableproperties_attr = false;
+    m_o_tableproperties_attr.clear();
     
-    m_has_tablelimits_attr = false;
-    m_tablelimits_attr.clear();
+    m_has_o_tablelimits_attr = false;
+    m_o_tablelimits_attr.clear();
     
     {
         vector<ChildGroup_1*>::iterator iter;
@@ -87779,7 +88932,7 @@ shapetype_element* shapetype_element::default_instance_ = NULL;
 
     void group_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<group";
+    _outStream << "<v:group";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -87790,15 +88943,15 @@ shapetype_element* shapetype_element::default_instance_ = NULL;
     _outStream << " " << "xmlns:o=\"urn:schemas-microsoft-com:office:office\"";
     _outStream << " " << "xmlns:pvml=\"urn:schemas-microsoft-com:office:powerpoint\"";
     
-    if (m_has_s_filled_attr)
+    if (m_has_filled_attr)
     {
-        m_s_filled_attr->toXmlAttr("filled", _outStream);
+        m_filled_attr->toXmlAttr("filled", _outStream);
     }
     
     
-    if (m_has_s_fillcolor_attr)
+    if (m_has_fillcolor_attr)
     {
-        m_s_fillcolor_attr->toXmlAttr("fillcolor", _outStream);
+        m_fillcolor_attr->toXmlAttr("fillcolor", _outStream);
     }
     
     
@@ -87808,15 +88961,15 @@ shapetype_element* shapetype_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_tableproperties_attr)
+    if (m_has_o_tableproperties_attr)
     {
-        _outStream << " " << "tableproperties" << "=\"" << m_tableproperties_attr << "\"";
+        _outStream << " " << "o:tableproperties" << "=\"" << m_o_tableproperties_attr << "\"";
     }
     
     
-    if (m_has_tablelimits_attr)
+    if (m_has_o_tablelimits_attr)
     {
-        _outStream << " " << "tablelimits" << "=\"" << m_tablelimits_attr << "\"";
+        _outStream << " " << "o:tablelimits" << "=\"" << m_o_tablelimits_attr << "\"";
     }
     
     _outStream << ">";
@@ -87827,39 +88980,39 @@ shapetype_element* shapetype_element::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -87919,47 +89072,47 @@ shapetype_element* shapetype_element::default_instance_ = NULL;
             }
             else if ((*iter)->has_group())
             {
-                (*iter)->get_group().toXmlElem("group", "", _outStream);
+                (*iter)->get_group().toXmlElem("v:group", "", _outStream);
             }
             else if ((*iter)->has_shape())
             {
-                (*iter)->get_shape().toXmlElem("shape", "", _outStream);
+                (*iter)->get_shape().toXmlElem("v:shape", "", _outStream);
             }
             else if ((*iter)->has_shapetype())
             {
-                (*iter)->get_shapetype().toXmlElem("shapetype", "", _outStream);
+                (*iter)->get_shapetype().toXmlElem("v:shapetype", "", _outStream);
             }
             else if ((*iter)->has_arc())
             {
-                (*iter)->get_arc().toXmlElem("arc", "", _outStream);
+                (*iter)->get_arc().toXmlElem("v:arc", "", _outStream);
             }
             else if ((*iter)->has_curve())
             {
-                (*iter)->get_curve().toXmlElem("curve", "", _outStream);
+                (*iter)->get_curve().toXmlElem("v:curve", "", _outStream);
             }
             else if ((*iter)->has_image())
             {
-                (*iter)->get_image().toXmlElem("image", "", _outStream);
+                (*iter)->get_image().toXmlElem("v:image", "", _outStream);
             }
             else if ((*iter)->has_line())
             {
-                (*iter)->get_line().toXmlElem("line", "", _outStream);
+                (*iter)->get_line().toXmlElem("v:line", "", _outStream);
             }
             else if ((*iter)->has_oval())
             {
-                (*iter)->get_oval().toXmlElem("oval", "", _outStream);
+                (*iter)->get_oval().toXmlElem("v:oval", "", _outStream);
             }
             else if ((*iter)->has_polyline())
             {
-                (*iter)->get_polyline().toXmlElem("polyline", "", _outStream);
+                (*iter)->get_polyline().toXmlElem("v:polyline", "", _outStream);
             }
             else if ((*iter)->has_rect())
             {
-                (*iter)->get_rect().toXmlElem("rect", "", _outStream);
+                (*iter)->get_rect().toXmlElem("v:rect", "", _outStream);
             }
             else if ((*iter)->has_roundrect())
             {
-                (*iter)->get_roundrect().toXmlElem("roundrect", "", _outStream);
+                (*iter)->get_roundrect().toXmlElem("v:roundrect", "", _outStream);
             }
             else if ((*iter)->has_o_diagram())
             {
@@ -87968,7 +89121,7 @@ shapetype_element* shapetype_element::default_instance_ = NULL;
         }
     }
     
-    _outStream << "</group>";
+    _outStream << "</v:group>";
     }
 
     const group_element& group_element::default_instance()
@@ -87980,42 +89133,42 @@ shapetype_element* shapetype_element::default_instance_ = NULL;
     return *group_element::default_instance_;
     }
 
-    bool group_element::has_s_filled_attr() const
+    bool group_element::has_filled_attr() const
     {    
-    return m_has_s_filled_attr;
+    return m_has_filled_attr;
     }
 
-    void group_element::set_s_filled_attr(const ns_s::ST_TrueFalse& _s_filled_attr)
+    void group_element::set_filled_attr(const ns_s::ST_TrueFalse& _filled_attr)
     {    
-    m_has_s_filled_attr = true;
-    m_s_filled_attr = new ns_s::ST_TrueFalse(_s_filled_attr);
+    m_has_filled_attr = true;
+    m_filled_attr = new ns_s::ST_TrueFalse(_filled_attr);
     }
 
-    const ns_s::ST_TrueFalse& group_element::get_s_filled_attr() const
+    const ns_s::ST_TrueFalse& group_element::get_filled_attr() const
     {    
-    if (m_s_filled_attr)
+    if (m_filled_attr)
     {
-        return *m_s_filled_attr;
+        return *m_filled_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool group_element::has_s_fillcolor_attr() const
+    bool group_element::has_fillcolor_attr() const
     {    
-    return m_has_s_fillcolor_attr;
+    return m_has_fillcolor_attr;
     }
 
-    void group_element::set_s_fillcolor_attr(const ns_s::ST_ColorType& _s_fillcolor_attr)
+    void group_element::set_fillcolor_attr(const ns_s::ST_ColorType& _fillcolor_attr)
     {    
-    m_has_s_fillcolor_attr = true;
-    m_s_fillcolor_attr = new ns_s::ST_ColorType(_s_fillcolor_attr);
+    m_has_fillcolor_attr = true;
+    m_fillcolor_attr = new ns_s::ST_ColorType(_fillcolor_attr);
     }
 
-    const ns_s::ST_ColorType& group_element::get_s_fillcolor_attr() const
+    const ns_s::ST_ColorType& group_element::get_fillcolor_attr() const
     {    
-    if (m_s_fillcolor_attr)
+    if (m_fillcolor_attr)
     {
-        return *m_s_fillcolor_attr;
+        return *m_fillcolor_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -88040,40 +89193,113 @@ shapetype_element* shapetype_element::default_instance_ = NULL;
     return ST_EditAs::default_instance();
     }
 
-    bool group_element::has_tableproperties_attr() const
+    bool group_element::has_o_tableproperties_attr() const
     {    
-    return m_has_tableproperties_attr;
+    return m_has_o_tableproperties_attr;
     }
 
-    void group_element::set_tableproperties_attr(const XSD::string_& _tableproperties_attr)
+    void group_element::set_o_tableproperties_attr(const XSD::string_& _o_tableproperties_attr)
     {    
-    m_has_tableproperties_attr = true;
-    m_tableproperties_attr = _tableproperties_attr;
+    m_has_o_tableproperties_attr = true;
+    m_o_tableproperties_attr = _o_tableproperties_attr;
     }
 
-    const XSD::string_& group_element::get_tableproperties_attr() const
+    const XSD::string_& group_element::get_o_tableproperties_attr() const
     {    
-    return m_tableproperties_attr;
+    return m_o_tableproperties_attr;
     }
 
-    bool group_element::has_tablelimits_attr() const
+    bool group_element::has_o_tablelimits_attr() const
     {    
-    return m_has_tablelimits_attr;
+    return m_has_o_tablelimits_attr;
     }
 
-    void group_element::set_tablelimits_attr(const XSD::string_& _tablelimits_attr)
+    void group_element::set_o_tablelimits_attr(const XSD::string_& _o_tablelimits_attr)
     {    
-    m_has_tablelimits_attr = true;
-    m_tablelimits_attr = _tablelimits_attr;
+    m_has_o_tablelimits_attr = true;
+    m_o_tablelimits_attr = _o_tablelimits_attr;
     }
 
-    const XSD::string_& group_element::get_tablelimits_attr() const
+    const XSD::string_& group_element::get_o_tablelimits_attr() const
     {    
-    return m_tablelimits_attr;
+    return m_o_tablelimits_attr;
     }
 
 
     // group_element::ChildGroup_1
+    group_element::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL),
+    m_has_group(false),
+    m_group(NULL),
+    m_has_shape(false),
+    m_shape(NULL),
+    m_has_shapetype(false),
+    m_shapetype(NULL),
+    m_has_arc(false),
+    m_arc(NULL),
+    m_has_curve(false),
+    m_curve(NULL),
+    m_has_image(false),
+    m_image(NULL),
+    m_has_line(false),
+    m_line(NULL),
+    m_has_oval(false),
+    m_oval(NULL),
+    m_has_polyline(false),
+    m_polyline(NULL),
+    m_has_rect(false),
+    m_rect(NULL),
+    m_has_roundrect(false),
+    m_roundrect(NULL),
+    m_has_o_diagram(false),
+    m_o_diagram(NULL)
+    {
+    }
     bool group_element::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -99662,6 +100888,25 @@ shapetype_element* shapetype_element::default_instance_ = NULL;
 group_element* group_element::default_instance_ = NULL;
 
     // background_element
+    background_element::background_element()
+    :m_has_fill(false),
+    m_fill(NULL),
+    m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_filled_attr(false),
+    m_filled_attr(NULL),
+    m_has_fillcolor_attr(false),
+    m_fillcolor_attr(NULL),
+    m_has_o_bwmode_attr(false),
+    m_o_bwmode_attr(NULL),
+    m_has_o_bwpure_attr(false),
+    m_o_bwpure_attr(NULL),
+    m_has_o_bwnormal_attr(false),
+    m_o_bwnormal_attr(NULL),
+    m_has_o_targetscreensize_attr(false),
+    m_o_targetscreensize_attr(NULL)
+    {
+    }
     bool background_element::has_fill() const
     {    
     return m_has_fill;
@@ -99691,21 +100936,21 @@ group_element* group_element::default_instance_ = NULL;
     m_has_id_attr = false;
     m_id_attr.clear();
     
-    m_has_s_filled_attr = false;
+    m_has_filled_attr = false;
     
-    if (m_s_filled_attr)
+    if (m_filled_attr)
     {
-        delete m_s_filled_attr;
-        m_s_filled_attr = NULL;
+        delete m_filled_attr;
+        m_filled_attr = NULL;
     }
     
     
-    m_has_s_fillcolor_attr = false;
+    m_has_fillcolor_attr = false;
     
-    if (m_s_fillcolor_attr)
+    if (m_fillcolor_attr)
     {
-        delete m_s_fillcolor_attr;
-        m_s_fillcolor_attr = NULL;
+        delete m_fillcolor_attr;
+        m_fillcolor_attr = NULL;
     }
     
     
@@ -99748,7 +100993,7 @@ group_element* group_element::default_instance_ = NULL;
 
     void background_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<background";
+    _outStream << "<v:background";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -99765,49 +101010,49 @@ group_element* group_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_filled_attr)
+    if (m_has_filled_attr)
     {
-        m_s_filled_attr->toXmlAttr("filled", _outStream);
+        m_filled_attr->toXmlAttr("filled", _outStream);
     }
     
     
-    if (m_has_s_fillcolor_attr)
+    if (m_has_fillcolor_attr)
     {
-        m_s_fillcolor_attr->toXmlAttr("fillcolor", _outStream);
+        m_fillcolor_attr->toXmlAttr("fillcolor", _outStream);
     }
     
     
     if (m_has_o_bwmode_attr)
     {
-        m_o_bwmode_attr->toXmlAttr("bwmode", _outStream);
+        m_o_bwmode_attr->toXmlAttr("o:bwmode", _outStream);
     }
     
     
     if (m_has_o_bwpure_attr)
     {
-        m_o_bwpure_attr->toXmlAttr("bwpure", _outStream);
+        m_o_bwpure_attr->toXmlAttr("o:bwpure", _outStream);
     }
     
     
     if (m_has_o_bwnormal_attr)
     {
-        m_o_bwnormal_attr->toXmlAttr("bwnormal", _outStream);
+        m_o_bwnormal_attr->toXmlAttr("o:bwnormal", _outStream);
     }
     
     
     if (m_has_o_targetscreensize_attr)
     {
-        m_o_targetscreensize_attr->toXmlAttr("targetscreensize", _outStream);
+        m_o_targetscreensize_attr->toXmlAttr("o:targetscreensize", _outStream);
     }
     
     _outStream << ">";
     
     if (m_has_fill)
     {
-        m_fill->toXmlElem("fill", "", _outStream);;
+        m_fill->toXmlElem("v:fill", "", _outStream);;
     }
     
-    _outStream << "</background>";
+    _outStream << "</v:background>";
     }
 
     const background_element& background_element::default_instance()
@@ -99835,42 +101080,42 @@ group_element* group_element::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool background_element::has_s_filled_attr() const
+    bool background_element::has_filled_attr() const
     {    
-    return m_has_s_filled_attr;
+    return m_has_filled_attr;
     }
 
-    void background_element::set_s_filled_attr(const ns_s::ST_TrueFalse& _s_filled_attr)
+    void background_element::set_filled_attr(const ns_s::ST_TrueFalse& _filled_attr)
     {    
-    m_has_s_filled_attr = true;
-    m_s_filled_attr = new ns_s::ST_TrueFalse(_s_filled_attr);
+    m_has_filled_attr = true;
+    m_filled_attr = new ns_s::ST_TrueFalse(_filled_attr);
     }
 
-    const ns_s::ST_TrueFalse& background_element::get_s_filled_attr() const
+    const ns_s::ST_TrueFalse& background_element::get_filled_attr() const
     {    
-    if (m_s_filled_attr)
+    if (m_filled_attr)
     {
-        return *m_s_filled_attr;
+        return *m_filled_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool background_element::has_s_fillcolor_attr() const
+    bool background_element::has_fillcolor_attr() const
     {    
-    return m_has_s_fillcolor_attr;
+    return m_has_fillcolor_attr;
     }
 
-    void background_element::set_s_fillcolor_attr(const ns_s::ST_ColorType& _s_fillcolor_attr)
+    void background_element::set_fillcolor_attr(const ns_s::ST_ColorType& _fillcolor_attr)
     {    
-    m_has_s_fillcolor_attr = true;
-    m_s_fillcolor_attr = new ns_s::ST_ColorType(_s_fillcolor_attr);
+    m_has_fillcolor_attr = true;
+    m_fillcolor_attr = new ns_s::ST_ColorType(_fillcolor_attr);
     }
 
-    const ns_s::ST_ColorType& background_element::get_s_fillcolor_attr() const
+    const ns_s::ST_ColorType& background_element::get_fillcolor_attr() const
     {    
-    if (m_s_fillcolor_attr)
+    if (m_fillcolor_attr)
     {
-        return *m_s_fillcolor_attr;
+        return *m_fillcolor_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -99958,6 +101203,65 @@ group_element* group_element::default_instance_ = NULL;
 background_element* background_element::default_instance_ = NULL;
 
     // fill_element
+    fill_element::fill_element()
+    :m_has_o_fill(false),
+    m_o_fill(NULL),
+    m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_on_attr(false),
+    m_on_attr(NULL),
+    m_has_color_attr(false),
+    m_color_attr(NULL),
+    m_has_opacity_attr(false),
+    m_opacity_attr(""),
+    m_has_color2_attr(false),
+    m_color2_attr(NULL),
+    m_has_src_attr(false),
+    m_src_attr(""),
+    m_has_o_href_attr(false),
+    m_o_href_attr(""),
+    m_has_o_althref_attr(false),
+    m_o_althref_attr(""),
+    m_has_size_attr(false),
+    m_size_attr(""),
+    m_has_origin_attr(false),
+    m_origin_attr(""),
+    m_has_position_attr(false),
+    m_position_attr(""),
+    m_has_aspect_attr(false),
+    m_aspect_attr(NULL),
+    m_has_colors_attr(false),
+    m_colors_attr(""),
+    m_has_angle_attr(false),
+    m_angle_attr(0),
+    m_has_alignshape_attr(false),
+    m_alignshape_attr(NULL),
+    m_has_focus_attr(false),
+    m_focus_attr(""),
+    m_has_focussize_attr(false),
+    m_focussize_attr(""),
+    m_has_focusposition_attr(false),
+    m_focusposition_attr(""),
+    m_has_method_attr(false),
+    m_method_attr(NULL),
+    m_has_o_detectmouseclick_attr(false),
+    m_o_detectmouseclick_attr(NULL),
+    m_has_o_title_attr(false),
+    m_o_title_attr(""),
+    m_has_o_opacity2_attr(false),
+    m_o_opacity2_attr(""),
+    m_has_recolor_attr(false),
+    m_recolor_attr(NULL),
+    m_has_rotate_attr(false),
+    m_rotate_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_o_relid_attr(false),
+    m_o_relid_attr(NULL)
+    {
+    }
     bool fill_element::has_o_fill() const
     {    
     return m_has_o_fill;
@@ -99996,44 +101300,44 @@ background_element* background_element::default_instance_ = NULL;
     }
     
     
-    m_has_s_on_attr = false;
+    m_has_on_attr = false;
     
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        delete m_s_on_attr;
-        m_s_on_attr = NULL;
+        delete m_on_attr;
+        m_on_attr = NULL;
     }
     
     
-    m_has_s_color_attr = false;
+    m_has_color_attr = false;
     
-    if (m_s_color_attr)
+    if (m_color_attr)
     {
-        delete m_s_color_attr;
-        m_s_color_attr = NULL;
+        delete m_color_attr;
+        m_color_attr = NULL;
     }
     
     
     m_has_opacity_attr = false;
     m_opacity_attr.clear();
     
-    m_has_s_color2_attr = false;
+    m_has_color2_attr = false;
     
-    if (m_s_color2_attr)
+    if (m_color2_attr)
     {
-        delete m_s_color2_attr;
-        m_s_color2_attr = NULL;
+        delete m_color2_attr;
+        m_color2_attr = NULL;
     }
     
     
     m_has_src_attr = false;
     m_src_attr.clear();
     
-    m_has_href_attr = false;
-    m_href_attr.clear();
+    m_has_o_href_attr = false;
+    m_o_href_attr.clear();
     
-    m_has_althref_attr = false;
-    m_althref_attr.clear();
+    m_has_o_althref_attr = false;
+    m_o_althref_attr.clear();
     
     m_has_size_attr = false;
     m_size_attr.clear();
@@ -100059,12 +101363,12 @@ background_element* background_element::default_instance_ = NULL;
     m_has_angle_attr = false;
     m_angle_attr = 0;
     
-    m_has_s_alignshape_attr = false;
+    m_has_alignshape_attr = false;
     
-    if (m_s_alignshape_attr)
+    if (m_alignshape_attr)
     {
-        delete m_s_alignshape_attr;
-        m_s_alignshape_attr = NULL;
+        delete m_alignshape_attr;
+        m_alignshape_attr = NULL;
     }
     
     
@@ -100086,36 +101390,36 @@ background_element* background_element::default_instance_ = NULL;
     }
     
     
-    m_has_s_detectmouseclick_attr = false;
+    m_has_o_detectmouseclick_attr = false;
     
-    if (m_s_detectmouseclick_attr)
+    if (m_o_detectmouseclick_attr)
     {
-        delete m_s_detectmouseclick_attr;
-        m_s_detectmouseclick_attr = NULL;
+        delete m_o_detectmouseclick_attr;
+        m_o_detectmouseclick_attr = NULL;
     }
     
     
-    m_has_title_attr = false;
-    m_title_attr.clear();
+    m_has_o_title_attr = false;
+    m_o_title_attr.clear();
     
-    m_has_opacity2_attr = false;
-    m_opacity2_attr.clear();
+    m_has_o_opacity2_attr = false;
+    m_o_opacity2_attr.clear();
     
-    m_has_s_recolor_attr = false;
+    m_has_recolor_attr = false;
     
-    if (m_s_recolor_attr)
+    if (m_recolor_attr)
     {
-        delete m_s_recolor_attr;
-        m_s_recolor_attr = NULL;
+        delete m_recolor_attr;
+        m_recolor_attr = NULL;
     }
     
     
-    m_has_s_rotate_attr = false;
+    m_has_rotate_attr = false;
     
-    if (m_s_rotate_attr)
+    if (m_rotate_attr)
     {
-        delete m_s_rotate_attr;
-        m_s_rotate_attr = NULL;
+        delete m_rotate_attr;
+        m_rotate_attr = NULL;
     }
     
     
@@ -100128,19 +101432,19 @@ background_element* background_element::default_instance_ = NULL;
     }
     
     
-    m_has_r_relid_attr = false;
+    m_has_o_relid_attr = false;
     
-    if (m_r_relid_attr)
+    if (m_o_relid_attr)
     {
-        delete m_r_relid_attr;
-        m_r_relid_attr = NULL;
+        delete m_o_relid_attr;
+        m_o_relid_attr = NULL;
     }
     
     }
 
     void fill_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<fill";
+    _outStream << "<v:fill";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -100163,15 +101467,15 @@ background_element* background_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_on_attr)
+    if (m_has_on_attr)
     {
-        m_s_on_attr->toXmlAttr("on", _outStream);
+        m_on_attr->toXmlAttr("on", _outStream);
     }
     
     
-    if (m_has_s_color_attr)
+    if (m_has_color_attr)
     {
-        m_s_color_attr->toXmlAttr("color", _outStream);
+        m_color_attr->toXmlAttr("color", _outStream);
     }
     
     
@@ -100181,9 +101485,9 @@ background_element* background_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_color2_attr)
+    if (m_has_color2_attr)
     {
-        m_s_color2_attr->toXmlAttr("color2", _outStream);
+        m_color2_attr->toXmlAttr("color2", _outStream);
     }
     
     
@@ -100193,15 +101497,15 @@ background_element* background_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_href_attr)
+    if (m_has_o_href_attr)
     {
-        _outStream << " " << "href" << "=\"" << m_href_attr << "\"";
+        _outStream << " " << "o:href" << "=\"" << m_o_href_attr << "\"";
     }
     
     
-    if (m_has_althref_attr)
+    if (m_has_o_althref_attr)
     {
-        _outStream << " " << "althref" << "=\"" << m_althref_attr << "\"";
+        _outStream << " " << "o:althref" << "=\"" << m_o_althref_attr << "\"";
     }
     
     
@@ -100241,9 +101545,9 @@ background_element* background_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_alignshape_attr)
+    if (m_has_alignshape_attr)
     {
-        m_s_alignshape_attr->toXmlAttr("alignshape", _outStream);
+        m_alignshape_attr->toXmlAttr("alignshape", _outStream);
     }
     
     
@@ -100271,45 +101575,45 @@ background_element* background_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_detectmouseclick_attr)
+    if (m_has_o_detectmouseclick_attr)
     {
-        m_s_detectmouseclick_attr->toXmlAttr("detectmouseclick", _outStream);
+        m_o_detectmouseclick_attr->toXmlAttr("o:detectmouseclick", _outStream);
     }
     
     
-    if (m_has_title_attr)
+    if (m_has_o_title_attr)
     {
-        _outStream << " " << "title" << "=\"" << m_title_attr << "\"";
+        _outStream << " " << "o:title" << "=\"" << m_o_title_attr << "\"";
     }
     
     
-    if (m_has_opacity2_attr)
+    if (m_has_o_opacity2_attr)
     {
-        _outStream << " " << "opacity2" << "=\"" << m_opacity2_attr << "\"";
+        _outStream << " " << "o:opacity2" << "=\"" << m_o_opacity2_attr << "\"";
     }
     
     
-    if (m_has_s_recolor_attr)
+    if (m_has_recolor_attr)
     {
-        m_s_recolor_attr->toXmlAttr("recolor", _outStream);
+        m_recolor_attr->toXmlAttr("recolor", _outStream);
     }
     
     
-    if (m_has_s_rotate_attr)
+    if (m_has_rotate_attr)
     {
-        m_s_rotate_attr->toXmlAttr("rotate", _outStream);
+        m_rotate_attr->toXmlAttr("rotate", _outStream);
     }
     
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
-    if (m_has_r_relid_attr)
+    if (m_has_o_relid_attr)
     {
-        m_r_relid_attr->toXmlAttr("relid", _outStream);
+        m_o_relid_attr->toXmlAttr("o:relid", _outStream);
     }
     
     _outStream << ">";
@@ -100319,7 +101623,7 @@ background_element* background_element::default_instance_ = NULL;
         m_o_fill->toXmlElem("o:fill", "", _outStream);;
     }
     
-    _outStream << "</fill>";
+    _outStream << "</v:fill>";
     }
 
     const fill_element& fill_element::default_instance()
@@ -100367,42 +101671,42 @@ background_element* background_element::default_instance_ = NULL;
     return ST_FillType::default_instance();
     }
 
-    bool fill_element::has_s_on_attr() const
+    bool fill_element::has_on_attr() const
     {    
-    return m_has_s_on_attr;
+    return m_has_on_attr;
     }
 
-    void fill_element::set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr)
+    void fill_element::set_on_attr(const ns_s::ST_TrueFalse& _on_attr)
     {    
-    m_has_s_on_attr = true;
-    m_s_on_attr = new ns_s::ST_TrueFalse(_s_on_attr);
+    m_has_on_attr = true;
+    m_on_attr = new ns_s::ST_TrueFalse(_on_attr);
     }
 
-    const ns_s::ST_TrueFalse& fill_element::get_s_on_attr() const
+    const ns_s::ST_TrueFalse& fill_element::get_on_attr() const
     {    
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        return *m_s_on_attr;
+        return *m_on_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool fill_element::has_s_color_attr() const
+    bool fill_element::has_color_attr() const
     {    
-    return m_has_s_color_attr;
+    return m_has_color_attr;
     }
 
-    void fill_element::set_s_color_attr(const ns_s::ST_ColorType& _s_color_attr)
+    void fill_element::set_color_attr(const ns_s::ST_ColorType& _color_attr)
     {    
-    m_has_s_color_attr = true;
-    m_s_color_attr = new ns_s::ST_ColorType(_s_color_attr);
+    m_has_color_attr = true;
+    m_color_attr = new ns_s::ST_ColorType(_color_attr);
     }
 
-    const ns_s::ST_ColorType& fill_element::get_s_color_attr() const
+    const ns_s::ST_ColorType& fill_element::get_color_attr() const
     {    
-    if (m_s_color_attr)
+    if (m_color_attr)
     {
-        return *m_s_color_attr;
+        return *m_color_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -100423,22 +101727,22 @@ background_element* background_element::default_instance_ = NULL;
     return m_opacity_attr;
     }
 
-    bool fill_element::has_s_color2_attr() const
+    bool fill_element::has_color2_attr() const
     {    
-    return m_has_s_color2_attr;
+    return m_has_color2_attr;
     }
 
-    void fill_element::set_s_color2_attr(const ns_s::ST_ColorType& _s_color2_attr)
+    void fill_element::set_color2_attr(const ns_s::ST_ColorType& _color2_attr)
     {    
-    m_has_s_color2_attr = true;
-    m_s_color2_attr = new ns_s::ST_ColorType(_s_color2_attr);
+    m_has_color2_attr = true;
+    m_color2_attr = new ns_s::ST_ColorType(_color2_attr);
     }
 
-    const ns_s::ST_ColorType& fill_element::get_s_color2_attr() const
+    const ns_s::ST_ColorType& fill_element::get_color2_attr() const
     {    
-    if (m_s_color2_attr)
+    if (m_color2_attr)
     {
-        return *m_s_color2_attr;
+        return *m_color2_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -100459,36 +101763,36 @@ background_element* background_element::default_instance_ = NULL;
     return m_src_attr;
     }
 
-    bool fill_element::has_href_attr() const
+    bool fill_element::has_o_href_attr() const
     {    
-    return m_has_href_attr;
+    return m_has_o_href_attr;
     }
 
-    void fill_element::set_href_attr(const XSD::string_& _href_attr)
+    void fill_element::set_o_href_attr(const XSD::string_& _o_href_attr)
     {    
-    m_has_href_attr = true;
-    m_href_attr = _href_attr;
+    m_has_o_href_attr = true;
+    m_o_href_attr = _o_href_attr;
     }
 
-    const XSD::string_& fill_element::get_href_attr() const
+    const XSD::string_& fill_element::get_o_href_attr() const
     {    
-    return m_href_attr;
+    return m_o_href_attr;
     }
 
-    bool fill_element::has_althref_attr() const
+    bool fill_element::has_o_althref_attr() const
     {    
-    return m_has_althref_attr;
+    return m_has_o_althref_attr;
     }
 
-    void fill_element::set_althref_attr(const XSD::string_& _althref_attr)
+    void fill_element::set_o_althref_attr(const XSD::string_& _o_althref_attr)
     {    
-    m_has_althref_attr = true;
-    m_althref_attr = _althref_attr;
+    m_has_o_althref_attr = true;
+    m_o_althref_attr = _o_althref_attr;
     }
 
-    const XSD::string_& fill_element::get_althref_attr() const
+    const XSD::string_& fill_element::get_o_althref_attr() const
     {    
-    return m_althref_attr;
+    return m_o_althref_attr;
     }
 
     bool fill_element::has_size_attr() const
@@ -100591,22 +101895,22 @@ background_element* background_element::default_instance_ = NULL;
     return m_angle_attr;
     }
 
-    bool fill_element::has_s_alignshape_attr() const
+    bool fill_element::has_alignshape_attr() const
     {    
-    return m_has_s_alignshape_attr;
+    return m_has_alignshape_attr;
     }
 
-    void fill_element::set_s_alignshape_attr(const ns_s::ST_TrueFalse& _s_alignshape_attr)
+    void fill_element::set_alignshape_attr(const ns_s::ST_TrueFalse& _alignshape_attr)
     {    
-    m_has_s_alignshape_attr = true;
-    m_s_alignshape_attr = new ns_s::ST_TrueFalse(_s_alignshape_attr);
+    m_has_alignshape_attr = true;
+    m_alignshape_attr = new ns_s::ST_TrueFalse(_alignshape_attr);
     }
 
-    const ns_s::ST_TrueFalse& fill_element::get_s_alignshape_attr() const
+    const ns_s::ST_TrueFalse& fill_element::get_alignshape_attr() const
     {    
-    if (m_s_alignshape_attr)
+    if (m_alignshape_attr)
     {
-        return *m_s_alignshape_attr;
+        return *m_alignshape_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -100679,94 +101983,94 @@ background_element* background_element::default_instance_ = NULL;
     return ST_FillMethod::default_instance();
     }
 
-    bool fill_element::has_s_detectmouseclick_attr() const
+    bool fill_element::has_o_detectmouseclick_attr() const
     {    
-    return m_has_s_detectmouseclick_attr;
+    return m_has_o_detectmouseclick_attr;
     }
 
-    void fill_element::set_s_detectmouseclick_attr(const ns_s::ST_TrueFalse& _s_detectmouseclick_attr)
+    void fill_element::set_o_detectmouseclick_attr(const ns_s::ST_TrueFalse& _o_detectmouseclick_attr)
     {    
-    m_has_s_detectmouseclick_attr = true;
-    m_s_detectmouseclick_attr = new ns_s::ST_TrueFalse(_s_detectmouseclick_attr);
+    m_has_o_detectmouseclick_attr = true;
+    m_o_detectmouseclick_attr = new ns_s::ST_TrueFalse(_o_detectmouseclick_attr);
     }
 
-    const ns_s::ST_TrueFalse& fill_element::get_s_detectmouseclick_attr() const
+    const ns_s::ST_TrueFalse& fill_element::get_o_detectmouseclick_attr() const
     {    
-    if (m_s_detectmouseclick_attr)
+    if (m_o_detectmouseclick_attr)
     {
-        return *m_s_detectmouseclick_attr;
+        return *m_o_detectmouseclick_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool fill_element::has_title_attr() const
+    bool fill_element::has_o_title_attr() const
     {    
-    return m_has_title_attr;
+    return m_has_o_title_attr;
     }
 
-    void fill_element::set_title_attr(const XSD::string_& _title_attr)
+    void fill_element::set_o_title_attr(const XSD::string_& _o_title_attr)
     {    
-    m_has_title_attr = true;
-    m_title_attr = _title_attr;
+    m_has_o_title_attr = true;
+    m_o_title_attr = _o_title_attr;
     }
 
-    const XSD::string_& fill_element::get_title_attr() const
+    const XSD::string_& fill_element::get_o_title_attr() const
     {    
-    return m_title_attr;
+    return m_o_title_attr;
     }
 
-    bool fill_element::has_opacity2_attr() const
+    bool fill_element::has_o_opacity2_attr() const
     {    
-    return m_has_opacity2_attr;
+    return m_has_o_opacity2_attr;
     }
 
-    void fill_element::set_opacity2_attr(const XSD::string_& _opacity2_attr)
+    void fill_element::set_o_opacity2_attr(const XSD::string_& _o_opacity2_attr)
     {    
-    m_has_opacity2_attr = true;
-    m_opacity2_attr = _opacity2_attr;
+    m_has_o_opacity2_attr = true;
+    m_o_opacity2_attr = _o_opacity2_attr;
     }
 
-    const XSD::string_& fill_element::get_opacity2_attr() const
+    const XSD::string_& fill_element::get_o_opacity2_attr() const
     {    
-    return m_opacity2_attr;
+    return m_o_opacity2_attr;
     }
 
-    bool fill_element::has_s_recolor_attr() const
+    bool fill_element::has_recolor_attr() const
     {    
-    return m_has_s_recolor_attr;
+    return m_has_recolor_attr;
     }
 
-    void fill_element::set_s_recolor_attr(const ns_s::ST_TrueFalse& _s_recolor_attr)
+    void fill_element::set_recolor_attr(const ns_s::ST_TrueFalse& _recolor_attr)
     {    
-    m_has_s_recolor_attr = true;
-    m_s_recolor_attr = new ns_s::ST_TrueFalse(_s_recolor_attr);
+    m_has_recolor_attr = true;
+    m_recolor_attr = new ns_s::ST_TrueFalse(_recolor_attr);
     }
 
-    const ns_s::ST_TrueFalse& fill_element::get_s_recolor_attr() const
+    const ns_s::ST_TrueFalse& fill_element::get_recolor_attr() const
     {    
-    if (m_s_recolor_attr)
+    if (m_recolor_attr)
     {
-        return *m_s_recolor_attr;
+        return *m_recolor_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool fill_element::has_s_rotate_attr() const
+    bool fill_element::has_rotate_attr() const
     {    
-    return m_has_s_rotate_attr;
+    return m_has_rotate_attr;
     }
 
-    void fill_element::set_s_rotate_attr(const ns_s::ST_TrueFalse& _s_rotate_attr)
+    void fill_element::set_rotate_attr(const ns_s::ST_TrueFalse& _rotate_attr)
     {    
-    m_has_s_rotate_attr = true;
-    m_s_rotate_attr = new ns_s::ST_TrueFalse(_s_rotate_attr);
+    m_has_rotate_attr = true;
+    m_rotate_attr = new ns_s::ST_TrueFalse(_rotate_attr);
     }
 
-    const ns_s::ST_TrueFalse& fill_element::get_s_rotate_attr() const
+    const ns_s::ST_TrueFalse& fill_element::get_rotate_attr() const
     {    
-    if (m_s_rotate_attr)
+    if (m_rotate_attr)
     {
-        return *m_s_rotate_attr;
+        return *m_rotate_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -100791,22 +102095,22 @@ background_element* background_element::default_instance_ = NULL;
     return ns_r::ST_RelationshipId::default_instance();
     }
 
-    bool fill_element::has_r_relid_attr() const
+    bool fill_element::has_o_relid_attr() const
     {    
-    return m_has_r_relid_attr;
+    return m_has_o_relid_attr;
     }
 
-    void fill_element::set_r_relid_attr(const ns_r::ST_RelationshipId& _r_relid_attr)
+    void fill_element::set_o_relid_attr(const ns_r::ST_RelationshipId& _o_relid_attr)
     {    
-    m_has_r_relid_attr = true;
-    m_r_relid_attr = new ns_r::ST_RelationshipId(_r_relid_attr);
+    m_has_o_relid_attr = true;
+    m_o_relid_attr = new ns_r::ST_RelationshipId(_o_relid_attr);
     }
 
-    const ns_r::ST_RelationshipId& fill_element::get_r_relid_attr() const
+    const ns_r::ST_RelationshipId& fill_element::get_o_relid_attr() const
     {    
-    if (m_r_relid_attr)
+    if (m_o_relid_attr)
     {
-        return *m_r_relid_attr;
+        return *m_o_relid_attr;
     }
     return ns_r::ST_RelationshipId::default_instance();
     }
@@ -100814,6 +102118,10 @@ background_element* background_element::default_instance_ = NULL;
 fill_element* fill_element::default_instance_ = NULL;
 
     // formulas_element
+    formulas_element::formulas_element()
+
+    {
+    }
     CT_F* formulas_element::add_f()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -100836,7 +102144,7 @@ fill_element* fill_element::default_instance_ = NULL;
 
     void formulas_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<formulas";
+    _outStream << "<v:formulas";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -100855,12 +102163,12 @@ fill_element* fill_element::default_instance_ = NULL;
         {
             if ((*iter)->has_f())
             {
-                (*iter)->get_f().toXmlElem("f", "", _outStream);
+                (*iter)->get_f().toXmlElem("v:f", "", _outStream);
             }
         }
     }
     
-    _outStream << "</formulas>";
+    _outStream << "</v:formulas>";
     }
 
     const formulas_element& formulas_element::default_instance()
@@ -100874,6 +102182,11 @@ fill_element* fill_element::default_instance_ = NULL;
 
 
     // formulas_element::ChildGroup_1
+    formulas_element::ChildGroup_1::ChildGroup_1()
+    :m_has_f(false),
+    m_f(NULL)
+    {
+    }
     bool formulas_element::ChildGroup_1::has_f() const
     {    
     return m_has_f;
@@ -100902,6 +102215,10 @@ fill_element* fill_element::default_instance_ = NULL;
 formulas_element* formulas_element::default_instance_ = NULL;
 
     // handles_element
+    handles_element::handles_element()
+
+    {
+    }
     CT_H* handles_element::add_h()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -100924,7 +102241,7 @@ formulas_element* formulas_element::default_instance_ = NULL;
 
     void handles_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<handles";
+    _outStream << "<v:handles";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -100943,12 +102260,12 @@ formulas_element* formulas_element::default_instance_ = NULL;
         {
             if ((*iter)->has_h())
             {
-                (*iter)->get_h().toXmlElem("h", "", _outStream);
+                (*iter)->get_h().toXmlElem("v:h", "", _outStream);
             }
         }
     }
     
-    _outStream << "</handles>";
+    _outStream << "</v:handles>";
     }
 
     const handles_element& handles_element::default_instance()
@@ -100962,6 +102279,11 @@ formulas_element* formulas_element::default_instance_ = NULL;
 
 
     // handles_element::ChildGroup_1
+    handles_element::ChildGroup_1::ChildGroup_1()
+    :m_has_h(false),
+    m_h(NULL)
+    {
+    }
     bool handles_element::ChildGroup_1::has_h() const
     {    
     return m_has_h;
@@ -100990,6 +102312,57 @@ formulas_element* formulas_element::default_instance_ = NULL;
 handles_element* handles_element::default_instance_ = NULL;
 
     // imagedata_element
+    imagedata_element::imagedata_element()
+    :m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_src_attr(false),
+    m_src_attr(""),
+    m_has_cropleft_attr(false),
+    m_cropleft_attr(""),
+    m_has_croptop_attr(false),
+    m_croptop_attr(""),
+    m_has_cropright_attr(false),
+    m_cropright_attr(""),
+    m_has_cropbottom_attr(false),
+    m_cropbottom_attr(""),
+    m_has_gain_attr(false),
+    m_gain_attr(""),
+    m_has_blacklevel_attr(false),
+    m_blacklevel_attr(""),
+    m_has_gamma_attr(false),
+    m_gamma_attr(""),
+    m_has_grayscale_attr(false),
+    m_grayscale_attr(NULL),
+    m_has_bilevel_attr(false),
+    m_bilevel_attr(NULL),
+    m_has_chromakey_attr(false),
+    m_chromakey_attr(NULL),
+    m_has_embosscolor_attr(false),
+    m_embosscolor_attr(NULL),
+    m_has_recolortarget_attr(false),
+    m_recolortarget_attr(NULL),
+    m_has_o_href_attr(false),
+    m_o_href_attr(""),
+    m_has_o_althref_attr(false),
+    m_o_althref_attr(""),
+    m_has_o_title_attr(false),
+    m_o_title_attr(""),
+    m_has_o_oleid_attr(false),
+    m_o_oleid_attr(0),
+    m_has_o_detectmouseclick_attr(false),
+    m_o_detectmouseclick_attr(NULL),
+    m_has_o_movie_attr(false),
+    m_o_movie_attr(0),
+    m_has_o_relid_attr(false),
+    m_o_relid_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_r_pict_attr(false),
+    m_r_pict_attr(NULL),
+    m_has_r_href_attr(false),
+    m_r_href_attr(NULL)
+    {
+    }
     void imagedata_element::clear()
     {    
     m_has_id_attr = false;
@@ -101019,81 +102392,81 @@ handles_element* handles_element::default_instance_ = NULL;
     m_has_gamma_attr = false;
     m_gamma_attr.clear();
     
-    m_has_s_grayscale_attr = false;
+    m_has_grayscale_attr = false;
     
-    if (m_s_grayscale_attr)
+    if (m_grayscale_attr)
     {
-        delete m_s_grayscale_attr;
-        m_s_grayscale_attr = NULL;
+        delete m_grayscale_attr;
+        m_grayscale_attr = NULL;
     }
     
     
-    m_has_s_bilevel_attr = false;
+    m_has_bilevel_attr = false;
     
-    if (m_s_bilevel_attr)
+    if (m_bilevel_attr)
     {
-        delete m_s_bilevel_attr;
-        m_s_bilevel_attr = NULL;
+        delete m_bilevel_attr;
+        m_bilevel_attr = NULL;
     }
     
     
-    m_has_s_chromakey_attr = false;
+    m_has_chromakey_attr = false;
     
-    if (m_s_chromakey_attr)
+    if (m_chromakey_attr)
     {
-        delete m_s_chromakey_attr;
-        m_s_chromakey_attr = NULL;
+        delete m_chromakey_attr;
+        m_chromakey_attr = NULL;
     }
     
     
-    m_has_s_embosscolor_attr = false;
+    m_has_embosscolor_attr = false;
     
-    if (m_s_embosscolor_attr)
+    if (m_embosscolor_attr)
     {
-        delete m_s_embosscolor_attr;
-        m_s_embosscolor_attr = NULL;
+        delete m_embosscolor_attr;
+        m_embosscolor_attr = NULL;
     }
     
     
-    m_has_s_recolortarget_attr = false;
+    m_has_recolortarget_attr = false;
     
-    if (m_s_recolortarget_attr)
+    if (m_recolortarget_attr)
     {
-        delete m_s_recolortarget_attr;
-        m_s_recolortarget_attr = NULL;
+        delete m_recolortarget_attr;
+        m_recolortarget_attr = NULL;
     }
     
     
-    m_has_href_attr = false;
-    m_href_attr.clear();
+    m_has_o_href_attr = false;
+    m_o_href_attr.clear();
     
-    m_has_althref_attr = false;
-    m_althref_attr.clear();
+    m_has_o_althref_attr = false;
+    m_o_althref_attr.clear();
     
-    m_has_title_attr = false;
-    m_title_attr.clear();
+    m_has_o_title_attr = false;
+    m_o_title_attr.clear();
     
-    m_has_oleid_attr = false;
-    m_oleid_attr = 0;
+    m_has_o_oleid_attr = false;
+    m_o_oleid_attr = 0;
     
-    m_has_s_detectmouseclick_attr = false;
+    m_has_o_detectmouseclick_attr = false;
     
-    if (m_s_detectmouseclick_attr)
+    if (m_o_detectmouseclick_attr)
     {
-        delete m_s_detectmouseclick_attr;
-        m_s_detectmouseclick_attr = NULL;
+        delete m_o_detectmouseclick_attr;
+        m_o_detectmouseclick_attr = NULL;
     }
     
     
-    m_has_movie_attr = false;
-    m_movie_attr = 0;
+    m_has_o_movie_attr = false;
+    m_o_movie_attr = 0;
     
-    m_has_r_relid_attr = false;
+    m_has_o_relid_attr = false;
     
-    if (m_r_relid_attr)
+    if (m_o_relid_attr)
     {
-        delete m_r_relid_attr;
-        m_r_relid_attr = NULL;
+        delete m_o_relid_attr;
+        m_o_relid_attr = NULL;
     }
     
     
@@ -101127,7 +102500,7 @@ handles_element* handles_element::default_instance_ = NULL;
 
     void imagedata_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<imagedata";
+    _outStream << "<v:imagedata";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -101192,98 +102565,98 @@ handles_element* handles_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_grayscale_attr)
+    if (m_has_grayscale_attr)
     {
-        m_s_grayscale_attr->toXmlAttr("grayscale", _outStream);
+        m_grayscale_attr->toXmlAttr("grayscale", _outStream);
     }
     
     
-    if (m_has_s_bilevel_attr)
+    if (m_has_bilevel_attr)
     {
-        m_s_bilevel_attr->toXmlAttr("bilevel", _outStream);
+        m_bilevel_attr->toXmlAttr("bilevel", _outStream);
     }
     
     
-    if (m_has_s_chromakey_attr)
+    if (m_has_chromakey_attr)
     {
-        m_s_chromakey_attr->toXmlAttr("chromakey", _outStream);
+        m_chromakey_attr->toXmlAttr("chromakey", _outStream);
     }
     
     
-    if (m_has_s_embosscolor_attr)
+    if (m_has_embosscolor_attr)
     {
-        m_s_embosscolor_attr->toXmlAttr("embosscolor", _outStream);
+        m_embosscolor_attr->toXmlAttr("embosscolor", _outStream);
     }
     
     
-    if (m_has_s_recolortarget_attr)
+    if (m_has_recolortarget_attr)
     {
-        m_s_recolortarget_attr->toXmlAttr("recolortarget", _outStream);
+        m_recolortarget_attr->toXmlAttr("recolortarget", _outStream);
     }
     
     
-    if (m_has_href_attr)
+    if (m_has_o_href_attr)
     {
-        _outStream << " " << "href" << "=\"" << m_href_attr << "\"";
+        _outStream << " " << "o:href" << "=\"" << m_o_href_attr << "\"";
     }
     
     
-    if (m_has_althref_attr)
+    if (m_has_o_althref_attr)
     {
-        _outStream << " " << "althref" << "=\"" << m_althref_attr << "\"";
+        _outStream << " " << "o:althref" << "=\"" << m_o_althref_attr << "\"";
     }
     
     
-    if (m_has_title_attr)
+    if (m_has_o_title_attr)
     {
-        _outStream << " " << "title" << "=\"" << m_title_attr << "\"";
+        _outStream << " " << "o:title" << "=\"" << m_o_title_attr << "\"";
     }
     
     
-    if (m_has_oleid_attr)
+    if (m_has_o_oleid_attr)
     {
-        _outStream << " " << "oleid" << "=\"" << m_oleid_attr << "\"";
+        _outStream << " " << "o:oleid" << "=\"" << m_o_oleid_attr << "\"";
     }
     
     
-    if (m_has_s_detectmouseclick_attr)
+    if (m_has_o_detectmouseclick_attr)
     {
-        m_s_detectmouseclick_attr->toXmlAttr("detectmouseclick", _outStream);
+        m_o_detectmouseclick_attr->toXmlAttr("o:detectmouseclick", _outStream);
     }
     
     
-    if (m_has_movie_attr)
+    if (m_has_o_movie_attr)
     {
-        _outStream << " " << "movie" << "=\"" << m_movie_attr << "\"";
+        _outStream << " " << "o:movie" << "=\"" << m_o_movie_attr << "\"";
     }
     
     
-    if (m_has_r_relid_attr)
+    if (m_has_o_relid_attr)
     {
-        m_r_relid_attr->toXmlAttr("relid", _outStream);
+        m_o_relid_attr->toXmlAttr("o:relid", _outStream);
     }
     
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
     if (m_has_r_pict_attr)
     {
-        m_r_pict_attr->toXmlAttr("pict", _outStream);
+        m_r_pict_attr->toXmlAttr("r:pict", _outStream);
     }
     
     
     if (m_has_r_href_attr)
     {
-        m_r_href_attr->toXmlAttr("href", _outStream);
+        m_r_href_attr->toXmlAttr("r:href", _outStream);
     }
     
     _outStream << ">";
     
-    _outStream << "</imagedata>";
+    _outStream << "</v:imagedata>";
     }
 
     const imagedata_element& imagedata_element::default_instance()
@@ -101439,222 +102812,222 @@ handles_element* handles_element::default_instance_ = NULL;
     return m_gamma_attr;
     }
 
-    bool imagedata_element::has_s_grayscale_attr() const
+    bool imagedata_element::has_grayscale_attr() const
     {    
-    return m_has_s_grayscale_attr;
+    return m_has_grayscale_attr;
     }
 
-    void imagedata_element::set_s_grayscale_attr(const ns_s::ST_TrueFalse& _s_grayscale_attr)
+    void imagedata_element::set_grayscale_attr(const ns_s::ST_TrueFalse& _grayscale_attr)
     {    
-    m_has_s_grayscale_attr = true;
-    m_s_grayscale_attr = new ns_s::ST_TrueFalse(_s_grayscale_attr);
+    m_has_grayscale_attr = true;
+    m_grayscale_attr = new ns_s::ST_TrueFalse(_grayscale_attr);
     }
 
-    const ns_s::ST_TrueFalse& imagedata_element::get_s_grayscale_attr() const
+    const ns_s::ST_TrueFalse& imagedata_element::get_grayscale_attr() const
     {    
-    if (m_s_grayscale_attr)
+    if (m_grayscale_attr)
     {
-        return *m_s_grayscale_attr;
+        return *m_grayscale_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool imagedata_element::has_s_bilevel_attr() const
+    bool imagedata_element::has_bilevel_attr() const
     {    
-    return m_has_s_bilevel_attr;
+    return m_has_bilevel_attr;
     }
 
-    void imagedata_element::set_s_bilevel_attr(const ns_s::ST_TrueFalse& _s_bilevel_attr)
+    void imagedata_element::set_bilevel_attr(const ns_s::ST_TrueFalse& _bilevel_attr)
     {    
-    m_has_s_bilevel_attr = true;
-    m_s_bilevel_attr = new ns_s::ST_TrueFalse(_s_bilevel_attr);
+    m_has_bilevel_attr = true;
+    m_bilevel_attr = new ns_s::ST_TrueFalse(_bilevel_attr);
     }
 
-    const ns_s::ST_TrueFalse& imagedata_element::get_s_bilevel_attr() const
+    const ns_s::ST_TrueFalse& imagedata_element::get_bilevel_attr() const
     {    
-    if (m_s_bilevel_attr)
+    if (m_bilevel_attr)
     {
-        return *m_s_bilevel_attr;
+        return *m_bilevel_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool imagedata_element::has_s_chromakey_attr() const
+    bool imagedata_element::has_chromakey_attr() const
     {    
-    return m_has_s_chromakey_attr;
+    return m_has_chromakey_attr;
     }
 
-    void imagedata_element::set_s_chromakey_attr(const ns_s::ST_ColorType& _s_chromakey_attr)
+    void imagedata_element::set_chromakey_attr(const ns_s::ST_ColorType& _chromakey_attr)
     {    
-    m_has_s_chromakey_attr = true;
-    m_s_chromakey_attr = new ns_s::ST_ColorType(_s_chromakey_attr);
+    m_has_chromakey_attr = true;
+    m_chromakey_attr = new ns_s::ST_ColorType(_chromakey_attr);
     }
 
-    const ns_s::ST_ColorType& imagedata_element::get_s_chromakey_attr() const
+    const ns_s::ST_ColorType& imagedata_element::get_chromakey_attr() const
     {    
-    if (m_s_chromakey_attr)
+    if (m_chromakey_attr)
     {
-        return *m_s_chromakey_attr;
+        return *m_chromakey_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
 
-    bool imagedata_element::has_s_embosscolor_attr() const
+    bool imagedata_element::has_embosscolor_attr() const
     {    
-    return m_has_s_embosscolor_attr;
+    return m_has_embosscolor_attr;
     }
 
-    void imagedata_element::set_s_embosscolor_attr(const ns_s::ST_ColorType& _s_embosscolor_attr)
+    void imagedata_element::set_embosscolor_attr(const ns_s::ST_ColorType& _embosscolor_attr)
     {    
-    m_has_s_embosscolor_attr = true;
-    m_s_embosscolor_attr = new ns_s::ST_ColorType(_s_embosscolor_attr);
+    m_has_embosscolor_attr = true;
+    m_embosscolor_attr = new ns_s::ST_ColorType(_embosscolor_attr);
     }
 
-    const ns_s::ST_ColorType& imagedata_element::get_s_embosscolor_attr() const
+    const ns_s::ST_ColorType& imagedata_element::get_embosscolor_attr() const
     {    
-    if (m_s_embosscolor_attr)
+    if (m_embosscolor_attr)
     {
-        return *m_s_embosscolor_attr;
+        return *m_embosscolor_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
 
-    bool imagedata_element::has_s_recolortarget_attr() const
+    bool imagedata_element::has_recolortarget_attr() const
     {    
-    return m_has_s_recolortarget_attr;
+    return m_has_recolortarget_attr;
     }
 
-    void imagedata_element::set_s_recolortarget_attr(const ns_s::ST_ColorType& _s_recolortarget_attr)
+    void imagedata_element::set_recolortarget_attr(const ns_s::ST_ColorType& _recolortarget_attr)
     {    
-    m_has_s_recolortarget_attr = true;
-    m_s_recolortarget_attr = new ns_s::ST_ColorType(_s_recolortarget_attr);
+    m_has_recolortarget_attr = true;
+    m_recolortarget_attr = new ns_s::ST_ColorType(_recolortarget_attr);
     }
 
-    const ns_s::ST_ColorType& imagedata_element::get_s_recolortarget_attr() const
+    const ns_s::ST_ColorType& imagedata_element::get_recolortarget_attr() const
     {    
-    if (m_s_recolortarget_attr)
+    if (m_recolortarget_attr)
     {
-        return *m_s_recolortarget_attr;
+        return *m_recolortarget_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
 
-    bool imagedata_element::has_href_attr() const
+    bool imagedata_element::has_o_href_attr() const
     {    
-    return m_has_href_attr;
+    return m_has_o_href_attr;
     }
 
-    void imagedata_element::set_href_attr(const XSD::string_& _href_attr)
+    void imagedata_element::set_o_href_attr(const XSD::string_& _o_href_attr)
     {    
-    m_has_href_attr = true;
-    m_href_attr = _href_attr;
+    m_has_o_href_attr = true;
+    m_o_href_attr = _o_href_attr;
     }
 
-    const XSD::string_& imagedata_element::get_href_attr() const
+    const XSD::string_& imagedata_element::get_o_href_attr() const
     {    
-    return m_href_attr;
+    return m_o_href_attr;
     }
 
-    bool imagedata_element::has_althref_attr() const
+    bool imagedata_element::has_o_althref_attr() const
     {    
-    return m_has_althref_attr;
+    return m_has_o_althref_attr;
     }
 
-    void imagedata_element::set_althref_attr(const XSD::string_& _althref_attr)
+    void imagedata_element::set_o_althref_attr(const XSD::string_& _o_althref_attr)
     {    
-    m_has_althref_attr = true;
-    m_althref_attr = _althref_attr;
+    m_has_o_althref_attr = true;
+    m_o_althref_attr = _o_althref_attr;
     }
 
-    const XSD::string_& imagedata_element::get_althref_attr() const
+    const XSD::string_& imagedata_element::get_o_althref_attr() const
     {    
-    return m_althref_attr;
+    return m_o_althref_attr;
     }
 
-    bool imagedata_element::has_title_attr() const
+    bool imagedata_element::has_o_title_attr() const
     {    
-    return m_has_title_attr;
+    return m_has_o_title_attr;
     }
 
-    void imagedata_element::set_title_attr(const XSD::string_& _title_attr)
+    void imagedata_element::set_o_title_attr(const XSD::string_& _o_title_attr)
     {    
-    m_has_title_attr = true;
-    m_title_attr = _title_attr;
+    m_has_o_title_attr = true;
+    m_o_title_attr = _o_title_attr;
     }
 
-    const XSD::string_& imagedata_element::get_title_attr() const
+    const XSD::string_& imagedata_element::get_o_title_attr() const
     {    
-    return m_title_attr;
+    return m_o_title_attr;
     }
 
-    bool imagedata_element::has_oleid_attr() const
+    bool imagedata_element::has_o_oleid_attr() const
     {    
-    return m_has_oleid_attr;
+    return m_has_o_oleid_attr;
     }
 
-    void imagedata_element::set_oleid_attr(const XSD::float_& _oleid_attr)
+    void imagedata_element::set_o_oleid_attr(const XSD::float_& _o_oleid_attr)
     {    
-    m_has_oleid_attr = true;
-    m_oleid_attr = _oleid_attr;
+    m_has_o_oleid_attr = true;
+    m_o_oleid_attr = _o_oleid_attr;
     }
 
-    const XSD::float_& imagedata_element::get_oleid_attr() const
+    const XSD::float_& imagedata_element::get_o_oleid_attr() const
     {    
-    return m_oleid_attr;
+    return m_o_oleid_attr;
     }
 
-    bool imagedata_element::has_s_detectmouseclick_attr() const
+    bool imagedata_element::has_o_detectmouseclick_attr() const
     {    
-    return m_has_s_detectmouseclick_attr;
+    return m_has_o_detectmouseclick_attr;
     }
 
-    void imagedata_element::set_s_detectmouseclick_attr(const ns_s::ST_TrueFalse& _s_detectmouseclick_attr)
+    void imagedata_element::set_o_detectmouseclick_attr(const ns_s::ST_TrueFalse& _o_detectmouseclick_attr)
     {    
-    m_has_s_detectmouseclick_attr = true;
-    m_s_detectmouseclick_attr = new ns_s::ST_TrueFalse(_s_detectmouseclick_attr);
+    m_has_o_detectmouseclick_attr = true;
+    m_o_detectmouseclick_attr = new ns_s::ST_TrueFalse(_o_detectmouseclick_attr);
     }
 
-    const ns_s::ST_TrueFalse& imagedata_element::get_s_detectmouseclick_attr() const
+    const ns_s::ST_TrueFalse& imagedata_element::get_o_detectmouseclick_attr() const
     {    
-    if (m_s_detectmouseclick_attr)
+    if (m_o_detectmouseclick_attr)
     {
-        return *m_s_detectmouseclick_attr;
+        return *m_o_detectmouseclick_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool imagedata_element::has_movie_attr() const
+    bool imagedata_element::has_o_movie_attr() const
     {    
-    return m_has_movie_attr;
+    return m_has_o_movie_attr;
     }
 
-    void imagedata_element::set_movie_attr(const XSD::float_& _movie_attr)
+    void imagedata_element::set_o_movie_attr(const XSD::float_& _o_movie_attr)
     {    
-    m_has_movie_attr = true;
-    m_movie_attr = _movie_attr;
+    m_has_o_movie_attr = true;
+    m_o_movie_attr = _o_movie_attr;
     }
 
-    const XSD::float_& imagedata_element::get_movie_attr() const
+    const XSD::float_& imagedata_element::get_o_movie_attr() const
     {    
-    return m_movie_attr;
+    return m_o_movie_attr;
     }
 
-    bool imagedata_element::has_r_relid_attr() const
+    bool imagedata_element::has_o_relid_attr() const
     {    
-    return m_has_r_relid_attr;
+    return m_has_o_relid_attr;
     }
 
-    void imagedata_element::set_r_relid_attr(const ns_r::ST_RelationshipId& _r_relid_attr)
+    void imagedata_element::set_o_relid_attr(const ns_r::ST_RelationshipId& _o_relid_attr)
     {    
-    m_has_r_relid_attr = true;
-    m_r_relid_attr = new ns_r::ST_RelationshipId(_r_relid_attr);
+    m_has_o_relid_attr = true;
+    m_o_relid_attr = new ns_r::ST_RelationshipId(_o_relid_attr);
     }
 
-    const ns_r::ST_RelationshipId& imagedata_element::get_r_relid_attr() const
+    const ns_r::ST_RelationshipId& imagedata_element::get_o_relid_attr() const
     {    
-    if (m_r_relid_attr)
+    if (m_o_relid_attr)
     {
-        return *m_r_relid_attr;
+        return *m_o_relid_attr;
     }
     return ns_r::ST_RelationshipId::default_instance();
     }
@@ -101722,6 +103095,39 @@ handles_element* handles_element::default_instance_ = NULL;
 imagedata_element* imagedata_element::default_instance_ = NULL;
 
     // path_element
+    path_element::path_element()
+    :m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_v_attr(false),
+    m_v_attr(""),
+    m_has_limo_attr(false),
+    m_limo_attr(""),
+    m_has_textboxrect_attr(false),
+    m_textboxrect_attr(""),
+    m_has_fillok_attr(false),
+    m_fillok_attr(NULL),
+    m_has_strokeok_attr(false),
+    m_strokeok_attr(NULL),
+    m_has_shadowok_attr(false),
+    m_shadowok_attr(NULL),
+    m_has_arrowok_attr(false),
+    m_arrowok_attr(NULL),
+    m_has_gradientshapeok_attr(false),
+    m_gradientshapeok_attr(NULL),
+    m_has_textpathok_attr(false),
+    m_textpathok_attr(NULL),
+    m_has_insetpenok_attr(false),
+    m_insetpenok_attr(NULL),
+    m_has_o_connecttype_attr(false),
+    m_o_connecttype_attr(NULL),
+    m_has_o_connectlocs_attr(false),
+    m_o_connectlocs_attr(""),
+    m_has_o_connectangles_attr(false),
+    m_o_connectangles_attr(""),
+    m_has_o_extrusionok_attr(false),
+    m_o_extrusionok_attr(NULL)
+    {
+    }
     void path_element::clear()
     {    
     m_has_id_attr = false;
@@ -101736,66 +103142,66 @@ imagedata_element* imagedata_element::default_instance_ = NULL;
     m_has_textboxrect_attr = false;
     m_textboxrect_attr.clear();
     
-    m_has_s_fillok_attr = false;
+    m_has_fillok_attr = false;
     
-    if (m_s_fillok_attr)
+    if (m_fillok_attr)
     {
-        delete m_s_fillok_attr;
-        m_s_fillok_attr = NULL;
+        delete m_fillok_attr;
+        m_fillok_attr = NULL;
     }
     
     
-    m_has_s_strokeok_attr = false;
+    m_has_strokeok_attr = false;
     
-    if (m_s_strokeok_attr)
+    if (m_strokeok_attr)
     {
-        delete m_s_strokeok_attr;
-        m_s_strokeok_attr = NULL;
+        delete m_strokeok_attr;
+        m_strokeok_attr = NULL;
     }
     
     
-    m_has_s_shadowok_attr = false;
+    m_has_shadowok_attr = false;
     
-    if (m_s_shadowok_attr)
+    if (m_shadowok_attr)
     {
-        delete m_s_shadowok_attr;
-        m_s_shadowok_attr = NULL;
+        delete m_shadowok_attr;
+        m_shadowok_attr = NULL;
     }
     
     
-    m_has_s_arrowok_attr = false;
+    m_has_arrowok_attr = false;
     
-    if (m_s_arrowok_attr)
+    if (m_arrowok_attr)
     {
-        delete m_s_arrowok_attr;
-        m_s_arrowok_attr = NULL;
+        delete m_arrowok_attr;
+        m_arrowok_attr = NULL;
     }
     
     
-    m_has_s_gradientshapeok_attr = false;
+    m_has_gradientshapeok_attr = false;
     
-    if (m_s_gradientshapeok_attr)
+    if (m_gradientshapeok_attr)
     {
-        delete m_s_gradientshapeok_attr;
-        m_s_gradientshapeok_attr = NULL;
+        delete m_gradientshapeok_attr;
+        m_gradientshapeok_attr = NULL;
     }
     
     
-    m_has_s_textpathok_attr = false;
+    m_has_textpathok_attr = false;
     
-    if (m_s_textpathok_attr)
+    if (m_textpathok_attr)
     {
-        delete m_s_textpathok_attr;
-        m_s_textpathok_attr = NULL;
+        delete m_textpathok_attr;
+        m_textpathok_attr = NULL;
     }
     
     
-    m_has_s_insetpenok_attr = false;
+    m_has_insetpenok_attr = false;
     
-    if (m_s_insetpenok_attr)
+    if (m_insetpenok_attr)
     {
-        delete m_s_insetpenok_attr;
-        m_s_insetpenok_attr = NULL;
+        delete m_insetpenok_attr;
+        m_insetpenok_attr = NULL;
     }
     
     
@@ -101808,25 +103214,25 @@ imagedata_element* imagedata_element::default_instance_ = NULL;
     }
     
     
-    m_has_connectlocs_attr = false;
-    m_connectlocs_attr.clear();
+    m_has_o_connectlocs_attr = false;
+    m_o_connectlocs_attr.clear();
     
-    m_has_connectangles_attr = false;
-    m_connectangles_attr.clear();
+    m_has_o_connectangles_attr = false;
+    m_o_connectangles_attr.clear();
     
-    m_has_s_extrusionok_attr = false;
+    m_has_o_extrusionok_attr = false;
     
-    if (m_s_extrusionok_attr)
+    if (m_o_extrusionok_attr)
     {
-        delete m_s_extrusionok_attr;
-        m_s_extrusionok_attr = NULL;
+        delete m_o_extrusionok_attr;
+        m_o_extrusionok_attr = NULL;
     }
     
     }
 
     void path_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<path";
+    _outStream << "<v:path";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -101861,74 +103267,74 @@ imagedata_element* imagedata_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_fillok_attr)
+    if (m_has_fillok_attr)
     {
-        m_s_fillok_attr->toXmlAttr("fillok", _outStream);
+        m_fillok_attr->toXmlAttr("fillok", _outStream);
     }
     
     
-    if (m_has_s_strokeok_attr)
+    if (m_has_strokeok_attr)
     {
-        m_s_strokeok_attr->toXmlAttr("strokeok", _outStream);
+        m_strokeok_attr->toXmlAttr("strokeok", _outStream);
     }
     
     
-    if (m_has_s_shadowok_attr)
+    if (m_has_shadowok_attr)
     {
-        m_s_shadowok_attr->toXmlAttr("shadowok", _outStream);
+        m_shadowok_attr->toXmlAttr("shadowok", _outStream);
     }
     
     
-    if (m_has_s_arrowok_attr)
+    if (m_has_arrowok_attr)
     {
-        m_s_arrowok_attr->toXmlAttr("arrowok", _outStream);
+        m_arrowok_attr->toXmlAttr("arrowok", _outStream);
     }
     
     
-    if (m_has_s_gradientshapeok_attr)
+    if (m_has_gradientshapeok_attr)
     {
-        m_s_gradientshapeok_attr->toXmlAttr("gradientshapeok", _outStream);
+        m_gradientshapeok_attr->toXmlAttr("gradientshapeok", _outStream);
     }
     
     
-    if (m_has_s_textpathok_attr)
+    if (m_has_textpathok_attr)
     {
-        m_s_textpathok_attr->toXmlAttr("textpathok", _outStream);
+        m_textpathok_attr->toXmlAttr("textpathok", _outStream);
     }
     
     
-    if (m_has_s_insetpenok_attr)
+    if (m_has_insetpenok_attr)
     {
-        m_s_insetpenok_attr->toXmlAttr("insetpenok", _outStream);
+        m_insetpenok_attr->toXmlAttr("insetpenok", _outStream);
     }
     
     
     if (m_has_o_connecttype_attr)
     {
-        m_o_connecttype_attr->toXmlAttr("connecttype", _outStream);
+        m_o_connecttype_attr->toXmlAttr("o:connecttype", _outStream);
     }
     
     
-    if (m_has_connectlocs_attr)
+    if (m_has_o_connectlocs_attr)
     {
-        _outStream << " " << "connectlocs" << "=\"" << m_connectlocs_attr << "\"";
+        _outStream << " " << "o:connectlocs" << "=\"" << m_o_connectlocs_attr << "\"";
     }
     
     
-    if (m_has_connectangles_attr)
+    if (m_has_o_connectangles_attr)
     {
-        _outStream << " " << "connectangles" << "=\"" << m_connectangles_attr << "\"";
+        _outStream << " " << "o:connectangles" << "=\"" << m_o_connectangles_attr << "\"";
     }
     
     
-    if (m_has_s_extrusionok_attr)
+    if (m_has_o_extrusionok_attr)
     {
-        m_s_extrusionok_attr->toXmlAttr("extrusionok", _outStream);
+        m_o_extrusionok_attr->toXmlAttr("o:extrusionok", _outStream);
     }
     
     _outStream << ">";
     
-    _outStream << "</path>";
+    _outStream << "</v:path>";
     }
 
     const path_element& path_element::default_instance()
@@ -102004,142 +103410,142 @@ imagedata_element* imagedata_element::default_instance_ = NULL;
     return m_textboxrect_attr;
     }
 
-    bool path_element::has_s_fillok_attr() const
+    bool path_element::has_fillok_attr() const
     {    
-    return m_has_s_fillok_attr;
+    return m_has_fillok_attr;
     }
 
-    void path_element::set_s_fillok_attr(const ns_s::ST_TrueFalse& _s_fillok_attr)
+    void path_element::set_fillok_attr(const ns_s::ST_TrueFalse& _fillok_attr)
     {    
-    m_has_s_fillok_attr = true;
-    m_s_fillok_attr = new ns_s::ST_TrueFalse(_s_fillok_attr);
+    m_has_fillok_attr = true;
+    m_fillok_attr = new ns_s::ST_TrueFalse(_fillok_attr);
     }
 
-    const ns_s::ST_TrueFalse& path_element::get_s_fillok_attr() const
+    const ns_s::ST_TrueFalse& path_element::get_fillok_attr() const
     {    
-    if (m_s_fillok_attr)
+    if (m_fillok_attr)
     {
-        return *m_s_fillok_attr;
+        return *m_fillok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool path_element::has_s_strokeok_attr() const
+    bool path_element::has_strokeok_attr() const
     {    
-    return m_has_s_strokeok_attr;
+    return m_has_strokeok_attr;
     }
 
-    void path_element::set_s_strokeok_attr(const ns_s::ST_TrueFalse& _s_strokeok_attr)
+    void path_element::set_strokeok_attr(const ns_s::ST_TrueFalse& _strokeok_attr)
     {    
-    m_has_s_strokeok_attr = true;
-    m_s_strokeok_attr = new ns_s::ST_TrueFalse(_s_strokeok_attr);
+    m_has_strokeok_attr = true;
+    m_strokeok_attr = new ns_s::ST_TrueFalse(_strokeok_attr);
     }
 
-    const ns_s::ST_TrueFalse& path_element::get_s_strokeok_attr() const
+    const ns_s::ST_TrueFalse& path_element::get_strokeok_attr() const
     {    
-    if (m_s_strokeok_attr)
+    if (m_strokeok_attr)
     {
-        return *m_s_strokeok_attr;
+        return *m_strokeok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool path_element::has_s_shadowok_attr() const
+    bool path_element::has_shadowok_attr() const
     {    
-    return m_has_s_shadowok_attr;
+    return m_has_shadowok_attr;
     }
 
-    void path_element::set_s_shadowok_attr(const ns_s::ST_TrueFalse& _s_shadowok_attr)
+    void path_element::set_shadowok_attr(const ns_s::ST_TrueFalse& _shadowok_attr)
     {    
-    m_has_s_shadowok_attr = true;
-    m_s_shadowok_attr = new ns_s::ST_TrueFalse(_s_shadowok_attr);
+    m_has_shadowok_attr = true;
+    m_shadowok_attr = new ns_s::ST_TrueFalse(_shadowok_attr);
     }
 
-    const ns_s::ST_TrueFalse& path_element::get_s_shadowok_attr() const
+    const ns_s::ST_TrueFalse& path_element::get_shadowok_attr() const
     {    
-    if (m_s_shadowok_attr)
+    if (m_shadowok_attr)
     {
-        return *m_s_shadowok_attr;
+        return *m_shadowok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool path_element::has_s_arrowok_attr() const
+    bool path_element::has_arrowok_attr() const
     {    
-    return m_has_s_arrowok_attr;
+    return m_has_arrowok_attr;
     }
 
-    void path_element::set_s_arrowok_attr(const ns_s::ST_TrueFalse& _s_arrowok_attr)
+    void path_element::set_arrowok_attr(const ns_s::ST_TrueFalse& _arrowok_attr)
     {    
-    m_has_s_arrowok_attr = true;
-    m_s_arrowok_attr = new ns_s::ST_TrueFalse(_s_arrowok_attr);
+    m_has_arrowok_attr = true;
+    m_arrowok_attr = new ns_s::ST_TrueFalse(_arrowok_attr);
     }
 
-    const ns_s::ST_TrueFalse& path_element::get_s_arrowok_attr() const
+    const ns_s::ST_TrueFalse& path_element::get_arrowok_attr() const
     {    
-    if (m_s_arrowok_attr)
+    if (m_arrowok_attr)
     {
-        return *m_s_arrowok_attr;
+        return *m_arrowok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool path_element::has_s_gradientshapeok_attr() const
+    bool path_element::has_gradientshapeok_attr() const
     {    
-    return m_has_s_gradientshapeok_attr;
+    return m_has_gradientshapeok_attr;
     }
 
-    void path_element::set_s_gradientshapeok_attr(const ns_s::ST_TrueFalse& _s_gradientshapeok_attr)
+    void path_element::set_gradientshapeok_attr(const ns_s::ST_TrueFalse& _gradientshapeok_attr)
     {    
-    m_has_s_gradientshapeok_attr = true;
-    m_s_gradientshapeok_attr = new ns_s::ST_TrueFalse(_s_gradientshapeok_attr);
+    m_has_gradientshapeok_attr = true;
+    m_gradientshapeok_attr = new ns_s::ST_TrueFalse(_gradientshapeok_attr);
     }
 
-    const ns_s::ST_TrueFalse& path_element::get_s_gradientshapeok_attr() const
+    const ns_s::ST_TrueFalse& path_element::get_gradientshapeok_attr() const
     {    
-    if (m_s_gradientshapeok_attr)
+    if (m_gradientshapeok_attr)
     {
-        return *m_s_gradientshapeok_attr;
+        return *m_gradientshapeok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool path_element::has_s_textpathok_attr() const
+    bool path_element::has_textpathok_attr() const
     {    
-    return m_has_s_textpathok_attr;
+    return m_has_textpathok_attr;
     }
 
-    void path_element::set_s_textpathok_attr(const ns_s::ST_TrueFalse& _s_textpathok_attr)
+    void path_element::set_textpathok_attr(const ns_s::ST_TrueFalse& _textpathok_attr)
     {    
-    m_has_s_textpathok_attr = true;
-    m_s_textpathok_attr = new ns_s::ST_TrueFalse(_s_textpathok_attr);
+    m_has_textpathok_attr = true;
+    m_textpathok_attr = new ns_s::ST_TrueFalse(_textpathok_attr);
     }
 
-    const ns_s::ST_TrueFalse& path_element::get_s_textpathok_attr() const
+    const ns_s::ST_TrueFalse& path_element::get_textpathok_attr() const
     {    
-    if (m_s_textpathok_attr)
+    if (m_textpathok_attr)
     {
-        return *m_s_textpathok_attr;
+        return *m_textpathok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool path_element::has_s_insetpenok_attr() const
+    bool path_element::has_insetpenok_attr() const
     {    
-    return m_has_s_insetpenok_attr;
+    return m_has_insetpenok_attr;
     }
 
-    void path_element::set_s_insetpenok_attr(const ns_s::ST_TrueFalse& _s_insetpenok_attr)
+    void path_element::set_insetpenok_attr(const ns_s::ST_TrueFalse& _insetpenok_attr)
     {    
-    m_has_s_insetpenok_attr = true;
-    m_s_insetpenok_attr = new ns_s::ST_TrueFalse(_s_insetpenok_attr);
+    m_has_insetpenok_attr = true;
+    m_insetpenok_attr = new ns_s::ST_TrueFalse(_insetpenok_attr);
     }
 
-    const ns_s::ST_TrueFalse& path_element::get_s_insetpenok_attr() const
+    const ns_s::ST_TrueFalse& path_element::get_insetpenok_attr() const
     {    
-    if (m_s_insetpenok_attr)
+    if (m_insetpenok_attr)
     {
-        return *m_s_insetpenok_attr;
+        return *m_insetpenok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -102164,54 +103570,54 @@ imagedata_element* imagedata_element::default_instance_ = NULL;
     return ns_o::ST_ConnectType::default_instance();
     }
 
-    bool path_element::has_connectlocs_attr() const
+    bool path_element::has_o_connectlocs_attr() const
     {    
-    return m_has_connectlocs_attr;
+    return m_has_o_connectlocs_attr;
     }
 
-    void path_element::set_connectlocs_attr(const XSD::string_& _connectlocs_attr)
+    void path_element::set_o_connectlocs_attr(const XSD::string_& _o_connectlocs_attr)
     {    
-    m_has_connectlocs_attr = true;
-    m_connectlocs_attr = _connectlocs_attr;
+    m_has_o_connectlocs_attr = true;
+    m_o_connectlocs_attr = _o_connectlocs_attr;
     }
 
-    const XSD::string_& path_element::get_connectlocs_attr() const
+    const XSD::string_& path_element::get_o_connectlocs_attr() const
     {    
-    return m_connectlocs_attr;
+    return m_o_connectlocs_attr;
     }
 
-    bool path_element::has_connectangles_attr() const
+    bool path_element::has_o_connectangles_attr() const
     {    
-    return m_has_connectangles_attr;
+    return m_has_o_connectangles_attr;
     }
 
-    void path_element::set_connectangles_attr(const XSD::string_& _connectangles_attr)
+    void path_element::set_o_connectangles_attr(const XSD::string_& _o_connectangles_attr)
     {    
-    m_has_connectangles_attr = true;
-    m_connectangles_attr = _connectangles_attr;
+    m_has_o_connectangles_attr = true;
+    m_o_connectangles_attr = _o_connectangles_attr;
     }
 
-    const XSD::string_& path_element::get_connectangles_attr() const
+    const XSD::string_& path_element::get_o_connectangles_attr() const
     {    
-    return m_connectangles_attr;
+    return m_o_connectangles_attr;
     }
 
-    bool path_element::has_s_extrusionok_attr() const
+    bool path_element::has_o_extrusionok_attr() const
     {    
-    return m_has_s_extrusionok_attr;
+    return m_has_o_extrusionok_attr;
     }
 
-    void path_element::set_s_extrusionok_attr(const ns_s::ST_TrueFalse& _s_extrusionok_attr)
+    void path_element::set_o_extrusionok_attr(const ns_s::ST_TrueFalse& _o_extrusionok_attr)
     {    
-    m_has_s_extrusionok_attr = true;
-    m_s_extrusionok_attr = new ns_s::ST_TrueFalse(_s_extrusionok_attr);
+    m_has_o_extrusionok_attr = true;
+    m_o_extrusionok_attr = new ns_s::ST_TrueFalse(_o_extrusionok_attr);
     }
 
-    const ns_s::ST_TrueFalse& path_element::get_s_extrusionok_attr() const
+    const ns_s::ST_TrueFalse& path_element::get_o_extrusionok_attr() const
     {    
-    if (m_s_extrusionok_attr)
+    if (m_o_extrusionok_attr)
     {
-        return *m_s_extrusionok_attr;
+        return *m_o_extrusionok_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -102219,6 +103625,23 @@ imagedata_element* imagedata_element::default_instance_ = NULL;
 path_element* path_element::default_instance_ = NULL;
 
     // textbox_element
+    textbox_element::textbox_element()
+    :m_has_w_txbxContent(false),
+    m_w_txbxContent(NULL),
+    m_has__any(false),
+    m__any(NULL),
+    m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_style_attr(false),
+    m_style_attr(""),
+    m_has_inset_attr(false),
+    m_inset_attr(""),
+    m_has_o_singleclick_attr(false),
+    m_o_singleclick_attr(NULL),
+    m_has_o_insetmode_attr(false),
+    m_o_insetmode_attr(NULL)
+    {
+    }
     bool textbox_element::has_w_txbxContent() const
     {    
     return m_has_w_txbxContent;
@@ -102255,12 +103678,12 @@ path_element* path_element::default_instance_ = NULL;
     m_has_inset_attr = false;
     m_inset_attr.clear();
     
-    m_has_s_singleclick_attr = false;
+    m_has_o_singleclick_attr = false;
     
-    if (m_s_singleclick_attr)
+    if (m_o_singleclick_attr)
     {
-        delete m_s_singleclick_attr;
-        m_s_singleclick_attr = NULL;
+        delete m_o_singleclick_attr;
+        m_o_singleclick_attr = NULL;
     }
     
     
@@ -102276,7 +103699,7 @@ path_element* path_element::default_instance_ = NULL;
 
     void textbox_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<textbox";
+    _outStream << "<v:textbox";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -102305,15 +103728,15 @@ path_element* path_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_singleclick_attr)
+    if (m_has_o_singleclick_attr)
     {
-        m_s_singleclick_attr->toXmlAttr("singleclick", _outStream);
+        m_o_singleclick_attr->toXmlAttr("o:singleclick", _outStream);
     }
     
     
     if (m_has_o_insetmode_attr)
     {
-        m_o_insetmode_attr->toXmlAttr("insetmode", _outStream);
+        m_o_insetmode_attr->toXmlAttr("o:insetmode", _outStream);
     }
     
     _outStream << ">";
@@ -102323,14 +103746,14 @@ path_element* path_element::default_instance_ = NULL;
         m_w_txbxContent->toXmlElem("w:txbxContent", "", _outStream);;
     }
     
-    if (m_has_any)
+    if (m_has__any)
     {
         
-    m_any->toXml(_outStream);
+    m__any->toXml(_outStream);
     ;
     }
     
-    _outStream << "</textbox>";
+    _outStream << "</v:textbox>";
     }
 
     const textbox_element& textbox_element::default_instance()
@@ -102390,22 +103813,22 @@ path_element* path_element::default_instance_ = NULL;
     return m_inset_attr;
     }
 
-    bool textbox_element::has_s_singleclick_attr() const
+    bool textbox_element::has_o_singleclick_attr() const
     {    
-    return m_has_s_singleclick_attr;
+    return m_has_o_singleclick_attr;
     }
 
-    void textbox_element::set_s_singleclick_attr(const ns_s::ST_TrueFalse& _s_singleclick_attr)
+    void textbox_element::set_o_singleclick_attr(const ns_s::ST_TrueFalse& _o_singleclick_attr)
     {    
-    m_has_s_singleclick_attr = true;
-    m_s_singleclick_attr = new ns_s::ST_TrueFalse(_s_singleclick_attr);
+    m_has_o_singleclick_attr = true;
+    m_o_singleclick_attr = new ns_s::ST_TrueFalse(_o_singleclick_attr);
     }
 
-    const ns_s::ST_TrueFalse& textbox_element::get_s_singleclick_attr() const
+    const ns_s::ST_TrueFalse& textbox_element::get_o_singleclick_attr() const
     {    
-    if (m_s_singleclick_attr)
+    if (m_o_singleclick_attr)
     {
-        return *m_s_singleclick_attr;
+        return *m_o_singleclick_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -102433,17 +103856,42 @@ path_element* path_element::default_instance_ = NULL;
 textbox_element* textbox_element::default_instance_ = NULL;
 
     // shadow_element
+    shadow_element::shadow_element()
+    :m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_on_attr(false),
+    m_on_attr(NULL),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_obscured_attr(false),
+    m_obscured_attr(NULL),
+    m_has_color_attr(false),
+    m_color_attr(NULL),
+    m_has_opacity_attr(false),
+    m_opacity_attr(""),
+    m_has_offset_attr(false),
+    m_offset_attr(""),
+    m_has_color2_attr(false),
+    m_color2_attr(NULL),
+    m_has_offset2_attr(false),
+    m_offset2_attr(""),
+    m_has_origin_attr(false),
+    m_origin_attr(""),
+    m_has_matrix_attr(false),
+    m_matrix_attr("")
+    {
+    }
     void shadow_element::clear()
     {    
     m_has_id_attr = false;
     m_id_attr.clear();
     
-    m_has_s_on_attr = false;
+    m_has_on_attr = false;
     
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        delete m_s_on_attr;
-        m_s_on_attr = NULL;
+        delete m_on_attr;
+        m_on_attr = NULL;
     }
     
     
@@ -102456,21 +103904,21 @@ textbox_element* textbox_element::default_instance_ = NULL;
     }
     
     
-    m_has_s_obscured_attr = false;
+    m_has_obscured_attr = false;
     
-    if (m_s_obscured_attr)
+    if (m_obscured_attr)
     {
-        delete m_s_obscured_attr;
-        m_s_obscured_attr = NULL;
+        delete m_obscured_attr;
+        m_obscured_attr = NULL;
     }
     
     
-    m_has_s_color_attr = false;
+    m_has_color_attr = false;
     
-    if (m_s_color_attr)
+    if (m_color_attr)
     {
-        delete m_s_color_attr;
-        m_s_color_attr = NULL;
+        delete m_color_attr;
+        m_color_attr = NULL;
     }
     
     
@@ -102480,12 +103928,12 @@ textbox_element* textbox_element::default_instance_ = NULL;
     m_has_offset_attr = false;
     m_offset_attr.clear();
     
-    m_has_s_color2_attr = false;
+    m_has_color2_attr = false;
     
-    if (m_s_color2_attr)
+    if (m_color2_attr)
     {
-        delete m_s_color2_attr;
-        m_s_color2_attr = NULL;
+        delete m_color2_attr;
+        m_color2_attr = NULL;
     }
     
     
@@ -102501,7 +103949,7 @@ textbox_element* textbox_element::default_instance_ = NULL;
 
     void shadow_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<shadow";
+    _outStream << "<v:shadow";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -102518,9 +103966,9 @@ textbox_element* textbox_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_on_attr)
+    if (m_has_on_attr)
     {
-        m_s_on_attr->toXmlAttr("on", _outStream);
+        m_on_attr->toXmlAttr("on", _outStream);
     }
     
     
@@ -102530,15 +103978,15 @@ textbox_element* textbox_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_obscured_attr)
+    if (m_has_obscured_attr)
     {
-        m_s_obscured_attr->toXmlAttr("obscured", _outStream);
+        m_obscured_attr->toXmlAttr("obscured", _outStream);
     }
     
     
-    if (m_has_s_color_attr)
+    if (m_has_color_attr)
     {
-        m_s_color_attr->toXmlAttr("color", _outStream);
+        m_color_attr->toXmlAttr("color", _outStream);
     }
     
     
@@ -102554,9 +104002,9 @@ textbox_element* textbox_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_color2_attr)
+    if (m_has_color2_attr)
     {
-        m_s_color2_attr->toXmlAttr("color2", _outStream);
+        m_color2_attr->toXmlAttr("color2", _outStream);
     }
     
     
@@ -102579,7 +104027,7 @@ textbox_element* textbox_element::default_instance_ = NULL;
     
     _outStream << ">";
     
-    _outStream << "</shadow>";
+    _outStream << "</v:shadow>";
     }
 
     const shadow_element& shadow_element::default_instance()
@@ -102607,22 +104055,22 @@ textbox_element* textbox_element::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool shadow_element::has_s_on_attr() const
+    bool shadow_element::has_on_attr() const
     {    
-    return m_has_s_on_attr;
+    return m_has_on_attr;
     }
 
-    void shadow_element::set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr)
+    void shadow_element::set_on_attr(const ns_s::ST_TrueFalse& _on_attr)
     {    
-    m_has_s_on_attr = true;
-    m_s_on_attr = new ns_s::ST_TrueFalse(_s_on_attr);
+    m_has_on_attr = true;
+    m_on_attr = new ns_s::ST_TrueFalse(_on_attr);
     }
 
-    const ns_s::ST_TrueFalse& shadow_element::get_s_on_attr() const
+    const ns_s::ST_TrueFalse& shadow_element::get_on_attr() const
     {    
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        return *m_s_on_attr;
+        return *m_on_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -102647,42 +104095,42 @@ textbox_element* textbox_element::default_instance_ = NULL;
     return ST_ShadowType::default_instance();
     }
 
-    bool shadow_element::has_s_obscured_attr() const
+    bool shadow_element::has_obscured_attr() const
     {    
-    return m_has_s_obscured_attr;
+    return m_has_obscured_attr;
     }
 
-    void shadow_element::set_s_obscured_attr(const ns_s::ST_TrueFalse& _s_obscured_attr)
+    void shadow_element::set_obscured_attr(const ns_s::ST_TrueFalse& _obscured_attr)
     {    
-    m_has_s_obscured_attr = true;
-    m_s_obscured_attr = new ns_s::ST_TrueFalse(_s_obscured_attr);
+    m_has_obscured_attr = true;
+    m_obscured_attr = new ns_s::ST_TrueFalse(_obscured_attr);
     }
 
-    const ns_s::ST_TrueFalse& shadow_element::get_s_obscured_attr() const
+    const ns_s::ST_TrueFalse& shadow_element::get_obscured_attr() const
     {    
-    if (m_s_obscured_attr)
+    if (m_obscured_attr)
     {
-        return *m_s_obscured_attr;
+        return *m_obscured_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool shadow_element::has_s_color_attr() const
+    bool shadow_element::has_color_attr() const
     {    
-    return m_has_s_color_attr;
+    return m_has_color_attr;
     }
 
-    void shadow_element::set_s_color_attr(const ns_s::ST_ColorType& _s_color_attr)
+    void shadow_element::set_color_attr(const ns_s::ST_ColorType& _color_attr)
     {    
-    m_has_s_color_attr = true;
-    m_s_color_attr = new ns_s::ST_ColorType(_s_color_attr);
+    m_has_color_attr = true;
+    m_color_attr = new ns_s::ST_ColorType(_color_attr);
     }
 
-    const ns_s::ST_ColorType& shadow_element::get_s_color_attr() const
+    const ns_s::ST_ColorType& shadow_element::get_color_attr() const
     {    
-    if (m_s_color_attr)
+    if (m_color_attr)
     {
-        return *m_s_color_attr;
+        return *m_color_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -102719,22 +104167,22 @@ textbox_element* textbox_element::default_instance_ = NULL;
     return m_offset_attr;
     }
 
-    bool shadow_element::has_s_color2_attr() const
+    bool shadow_element::has_color2_attr() const
     {    
-    return m_has_s_color2_attr;
+    return m_has_color2_attr;
     }
 
-    void shadow_element::set_s_color2_attr(const ns_s::ST_ColorType& _s_color2_attr)
+    void shadow_element::set_color2_attr(const ns_s::ST_ColorType& _color2_attr)
     {    
-    m_has_s_color2_attr = true;
-    m_s_color2_attr = new ns_s::ST_ColorType(_s_color2_attr);
+    m_has_color2_attr = true;
+    m_color2_attr = new ns_s::ST_ColorType(_color2_attr);
     }
 
-    const ns_s::ST_ColorType& shadow_element::get_s_color2_attr() const
+    const ns_s::ST_ColorType& shadow_element::get_color2_attr() const
     {    
-    if (m_s_color2_attr)
+    if (m_color2_attr)
     {
-        return *m_s_color2_attr;
+        return *m_color2_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -102790,6 +104238,77 @@ textbox_element* textbox_element::default_instance_ = NULL;
 shadow_element* shadow_element::default_instance_ = NULL;
 
     // stroke_element
+    stroke_element::stroke_element()
+    :m_has_o_left(false),
+    m_o_left(NULL),
+    m_has_o_top(false),
+    m_o_top(NULL),
+    m_has_o_right(false),
+    m_o_right(NULL),
+    m_has_o_bottom(false),
+    m_o_bottom(NULL),
+    m_has_o_column(false),
+    m_o_column(NULL),
+    m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_on_attr(false),
+    m_on_attr(NULL),
+    m_has_weight_attr(false),
+    m_weight_attr(""),
+    m_has_color_attr(false),
+    m_color_attr(NULL),
+    m_has_opacity_attr(false),
+    m_opacity_attr(""),
+    m_has_linestyle_attr(false),
+    m_linestyle_attr(NULL),
+    m_has_miterlimit_attr(false),
+    m_miterlimit_attr(0),
+    m_has_joinstyle_attr(false),
+    m_joinstyle_attr(NULL),
+    m_has_endcap_attr(false),
+    m_endcap_attr(NULL),
+    m_has_dashstyle_attr(false),
+    m_dashstyle_attr(""),
+    m_has_filltype_attr(false),
+    m_filltype_attr(NULL),
+    m_has_src_attr(false),
+    m_src_attr(""),
+    m_has_imageaspect_attr(false),
+    m_imageaspect_attr(NULL),
+    m_has_imagesize_attr(false),
+    m_imagesize_attr(""),
+    m_has_imagealignshape_attr(false),
+    m_imagealignshape_attr(NULL),
+    m_has_color2_attr(false),
+    m_color2_attr(NULL),
+    m_has_startarrow_attr(false),
+    m_startarrow_attr(NULL),
+    m_has_startarrowwidth_attr(false),
+    m_startarrowwidth_attr(NULL),
+    m_has_startarrowlength_attr(false),
+    m_startarrowlength_attr(NULL),
+    m_has_endarrow_attr(false),
+    m_endarrow_attr(NULL),
+    m_has_endarrowwidth_attr(false),
+    m_endarrowwidth_attr(NULL),
+    m_has_endarrowlength_attr(false),
+    m_endarrowlength_attr(NULL),
+    m_has_o_href_attr(false),
+    m_o_href_attr(""),
+    m_has_o_althref_attr(false),
+    m_o_althref_attr(""),
+    m_has_o_title_attr(false),
+    m_o_title_attr(""),
+    m_has_o_forcedash_attr(false),
+    m_o_forcedash_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_insetpen_attr(false),
+    m_insetpen_attr(NULL),
+    m_has_o_relid_attr(false),
+    m_o_relid_attr(NULL)
+    {
+    }
     bool stroke_element::has_o_left() const
     {    
     return m_has_o_left;
@@ -102915,24 +104434,24 @@ shadow_element* shadow_element::default_instance_ = NULL;
     m_has_id_attr = false;
     m_id_attr.clear();
     
-    m_has_s_on_attr = false;
+    m_has_on_attr = false;
     
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        delete m_s_on_attr;
-        m_s_on_attr = NULL;
+        delete m_on_attr;
+        m_on_attr = NULL;
     }
     
     
     m_has_weight_attr = false;
     m_weight_attr.clear();
     
-    m_has_s_color_attr = false;
+    m_has_color_attr = false;
     
-    if (m_s_color_attr)
+    if (m_color_attr)
     {
-        delete m_s_color_attr;
-        m_s_color_attr = NULL;
+        delete m_color_attr;
+        m_color_attr = NULL;
     }
     
     
@@ -102996,21 +104515,21 @@ shadow_element* shadow_element::default_instance_ = NULL;
     m_has_imagesize_attr = false;
     m_imagesize_attr.clear();
     
-    m_has_s_imagealignshape_attr = false;
+    m_has_imagealignshape_attr = false;
     
-    if (m_s_imagealignshape_attr)
+    if (m_imagealignshape_attr)
     {
-        delete m_s_imagealignshape_attr;
-        m_s_imagealignshape_attr = NULL;
+        delete m_imagealignshape_attr;
+        m_imagealignshape_attr = NULL;
     }
     
     
-    m_has_s_color2_attr = false;
+    m_has_color2_attr = false;
     
-    if (m_s_color2_attr)
+    if (m_color2_attr)
     {
-        delete m_s_color2_attr;
-        m_s_color2_attr = NULL;
+        delete m_color2_attr;
+        m_color2_attr = NULL;
     }
     
     
@@ -103068,21 +104587,21 @@ shadow_element* shadow_element::default_instance_ = NULL;
     }
     
     
-    m_has_href_attr = false;
-    m_href_attr.clear();
+    m_has_o_href_attr = false;
+    m_o_href_attr.clear();
     
-    m_has_althref_attr = false;
-    m_althref_attr.clear();
+    m_has_o_althref_attr = false;
+    m_o_althref_attr.clear();
     
-    m_has_title_attr = false;
-    m_title_attr.clear();
+    m_has_o_title_attr = false;
+    m_o_title_attr.clear();
     
-    m_has_s_forcedash_attr = false;
+    m_has_o_forcedash_attr = false;
     
-    if (m_s_forcedash_attr)
+    if (m_o_forcedash_attr)
     {
-        delete m_s_forcedash_attr;
-        m_s_forcedash_attr = NULL;
+        delete m_o_forcedash_attr;
+        m_o_forcedash_attr = NULL;
     }
     
     
@@ -103095,28 +104614,28 @@ shadow_element* shadow_element::default_instance_ = NULL;
     }
     
     
-    m_has_s_insetpen_attr = false;
+    m_has_insetpen_attr = false;
     
-    if (m_s_insetpen_attr)
+    if (m_insetpen_attr)
     {
-        delete m_s_insetpen_attr;
-        m_s_insetpen_attr = NULL;
+        delete m_insetpen_attr;
+        m_insetpen_attr = NULL;
     }
     
     
-    m_has_r_relid_attr = false;
+    m_has_o_relid_attr = false;
     
-    if (m_r_relid_attr)
+    if (m_o_relid_attr)
     {
-        delete m_r_relid_attr;
-        m_r_relid_attr = NULL;
+        delete m_o_relid_attr;
+        m_o_relid_attr = NULL;
     }
     
     }
 
     void stroke_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<stroke";
+    _outStream << "<v:stroke";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -103133,9 +104652,9 @@ shadow_element* shadow_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_on_attr)
+    if (m_has_on_attr)
     {
-        m_s_on_attr->toXmlAttr("on", _outStream);
+        m_on_attr->toXmlAttr("on", _outStream);
     }
     
     
@@ -103145,9 +104664,9 @@ shadow_element* shadow_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_color_attr)
+    if (m_has_color_attr)
     {
-        m_s_color_attr->toXmlAttr("color", _outStream);
+        m_color_attr->toXmlAttr("color", _outStream);
     }
     
     
@@ -103211,15 +104730,15 @@ shadow_element* shadow_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_imagealignshape_attr)
+    if (m_has_imagealignshape_attr)
     {
-        m_s_imagealignshape_attr->toXmlAttr("imagealignshape", _outStream);
+        m_imagealignshape_attr->toXmlAttr("imagealignshape", _outStream);
     }
     
     
-    if (m_has_s_color2_attr)
+    if (m_has_color2_attr)
     {
-        m_s_color2_attr->toXmlAttr("color2", _outStream);
+        m_color2_attr->toXmlAttr("color2", _outStream);
     }
     
     
@@ -103259,45 +104778,45 @@ shadow_element* shadow_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_href_attr)
+    if (m_has_o_href_attr)
     {
-        _outStream << " " << "href" << "=\"" << m_href_attr << "\"";
+        _outStream << " " << "o:href" << "=\"" << m_o_href_attr << "\"";
     }
     
     
-    if (m_has_althref_attr)
+    if (m_has_o_althref_attr)
     {
-        _outStream << " " << "althref" << "=\"" << m_althref_attr << "\"";
+        _outStream << " " << "o:althref" << "=\"" << m_o_althref_attr << "\"";
     }
     
     
-    if (m_has_title_attr)
+    if (m_has_o_title_attr)
     {
-        _outStream << " " << "title" << "=\"" << m_title_attr << "\"";
+        _outStream << " " << "o:title" << "=\"" << m_o_title_attr << "\"";
     }
     
     
-    if (m_has_s_forcedash_attr)
+    if (m_has_o_forcedash_attr)
     {
-        m_s_forcedash_attr->toXmlAttr("forcedash", _outStream);
+        m_o_forcedash_attr->toXmlAttr("o:forcedash", _outStream);
     }
     
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
-    if (m_has_s_insetpen_attr)
+    if (m_has_insetpen_attr)
     {
-        m_s_insetpen_attr->toXmlAttr("insetpen", _outStream);
+        m_insetpen_attr->toXmlAttr("insetpen", _outStream);
     }
     
     
-    if (m_has_r_relid_attr)
+    if (m_has_o_relid_attr)
     {
-        m_r_relid_attr->toXmlAttr("relid", _outStream);
+        m_o_relid_attr->toXmlAttr("o:relid", _outStream);
     }
     
     _outStream << ">";
@@ -103327,7 +104846,7 @@ shadow_element* shadow_element::default_instance_ = NULL;
         m_o_column->toXmlElem("o:column", "", _outStream);;
     }
     
-    _outStream << "</stroke>";
+    _outStream << "</v:stroke>";
     }
 
     const stroke_element& stroke_element::default_instance()
@@ -103355,22 +104874,22 @@ shadow_element* shadow_element::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool stroke_element::has_s_on_attr() const
+    bool stroke_element::has_on_attr() const
     {    
-    return m_has_s_on_attr;
+    return m_has_on_attr;
     }
 
-    void stroke_element::set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr)
+    void stroke_element::set_on_attr(const ns_s::ST_TrueFalse& _on_attr)
     {    
-    m_has_s_on_attr = true;
-    m_s_on_attr = new ns_s::ST_TrueFalse(_s_on_attr);
+    m_has_on_attr = true;
+    m_on_attr = new ns_s::ST_TrueFalse(_on_attr);
     }
 
-    const ns_s::ST_TrueFalse& stroke_element::get_s_on_attr() const
+    const ns_s::ST_TrueFalse& stroke_element::get_on_attr() const
     {    
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        return *m_s_on_attr;
+        return *m_on_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -103391,22 +104910,22 @@ shadow_element* shadow_element::default_instance_ = NULL;
     return m_weight_attr;
     }
 
-    bool stroke_element::has_s_color_attr() const
+    bool stroke_element::has_color_attr() const
     {    
-    return m_has_s_color_attr;
+    return m_has_color_attr;
     }
 
-    void stroke_element::set_s_color_attr(const ns_s::ST_ColorType& _s_color_attr)
+    void stroke_element::set_color_attr(const ns_s::ST_ColorType& _color_attr)
     {    
-    m_has_s_color_attr = true;
-    m_s_color_attr = new ns_s::ST_ColorType(_s_color_attr);
+    m_has_color_attr = true;
+    m_color_attr = new ns_s::ST_ColorType(_color_attr);
     }
 
-    const ns_s::ST_ColorType& stroke_element::get_s_color_attr() const
+    const ns_s::ST_ColorType& stroke_element::get_color_attr() const
     {    
-    if (m_s_color_attr)
+    if (m_color_attr)
     {
-        return *m_s_color_attr;
+        return *m_color_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -103591,42 +105110,42 @@ shadow_element* shadow_element::default_instance_ = NULL;
     return m_imagesize_attr;
     }
 
-    bool stroke_element::has_s_imagealignshape_attr() const
+    bool stroke_element::has_imagealignshape_attr() const
     {    
-    return m_has_s_imagealignshape_attr;
+    return m_has_imagealignshape_attr;
     }
 
-    void stroke_element::set_s_imagealignshape_attr(const ns_s::ST_TrueFalse& _s_imagealignshape_attr)
+    void stroke_element::set_imagealignshape_attr(const ns_s::ST_TrueFalse& _imagealignshape_attr)
     {    
-    m_has_s_imagealignshape_attr = true;
-    m_s_imagealignshape_attr = new ns_s::ST_TrueFalse(_s_imagealignshape_attr);
+    m_has_imagealignshape_attr = true;
+    m_imagealignshape_attr = new ns_s::ST_TrueFalse(_imagealignshape_attr);
     }
 
-    const ns_s::ST_TrueFalse& stroke_element::get_s_imagealignshape_attr() const
+    const ns_s::ST_TrueFalse& stroke_element::get_imagealignshape_attr() const
     {    
-    if (m_s_imagealignshape_attr)
+    if (m_imagealignshape_attr)
     {
-        return *m_s_imagealignshape_attr;
+        return *m_imagealignshape_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool stroke_element::has_s_color2_attr() const
+    bool stroke_element::has_color2_attr() const
     {    
-    return m_has_s_color2_attr;
+    return m_has_color2_attr;
     }
 
-    void stroke_element::set_s_color2_attr(const ns_s::ST_ColorType& _s_color2_attr)
+    void stroke_element::set_color2_attr(const ns_s::ST_ColorType& _color2_attr)
     {    
-    m_has_s_color2_attr = true;
-    m_s_color2_attr = new ns_s::ST_ColorType(_s_color2_attr);
+    m_has_color2_attr = true;
+    m_color2_attr = new ns_s::ST_ColorType(_color2_attr);
     }
 
-    const ns_s::ST_ColorType& stroke_element::get_s_color2_attr() const
+    const ns_s::ST_ColorType& stroke_element::get_color2_attr() const
     {    
-    if (m_s_color2_attr)
+    if (m_color2_attr)
     {
-        return *m_s_color2_attr;
+        return *m_color2_attr;
     }
     return ns_s::ST_ColorType::default_instance();
     }
@@ -103751,70 +105270,70 @@ shadow_element* shadow_element::default_instance_ = NULL;
     return ST_StrokeArrowLength::default_instance();
     }
 
-    bool stroke_element::has_href_attr() const
+    bool stroke_element::has_o_href_attr() const
     {    
-    return m_has_href_attr;
+    return m_has_o_href_attr;
     }
 
-    void stroke_element::set_href_attr(const XSD::string_& _href_attr)
+    void stroke_element::set_o_href_attr(const XSD::string_& _o_href_attr)
     {    
-    m_has_href_attr = true;
-    m_href_attr = _href_attr;
+    m_has_o_href_attr = true;
+    m_o_href_attr = _o_href_attr;
     }
 
-    const XSD::string_& stroke_element::get_href_attr() const
+    const XSD::string_& stroke_element::get_o_href_attr() const
     {    
-    return m_href_attr;
+    return m_o_href_attr;
     }
 
-    bool stroke_element::has_althref_attr() const
+    bool stroke_element::has_o_althref_attr() const
     {    
-    return m_has_althref_attr;
+    return m_has_o_althref_attr;
     }
 
-    void stroke_element::set_althref_attr(const XSD::string_& _althref_attr)
+    void stroke_element::set_o_althref_attr(const XSD::string_& _o_althref_attr)
     {    
-    m_has_althref_attr = true;
-    m_althref_attr = _althref_attr;
+    m_has_o_althref_attr = true;
+    m_o_althref_attr = _o_althref_attr;
     }
 
-    const XSD::string_& stroke_element::get_althref_attr() const
+    const XSD::string_& stroke_element::get_o_althref_attr() const
     {    
-    return m_althref_attr;
+    return m_o_althref_attr;
     }
 
-    bool stroke_element::has_title_attr() const
+    bool stroke_element::has_o_title_attr() const
     {    
-    return m_has_title_attr;
+    return m_has_o_title_attr;
     }
 
-    void stroke_element::set_title_attr(const XSD::string_& _title_attr)
+    void stroke_element::set_o_title_attr(const XSD::string_& _o_title_attr)
     {    
-    m_has_title_attr = true;
-    m_title_attr = _title_attr;
+    m_has_o_title_attr = true;
+    m_o_title_attr = _o_title_attr;
     }
 
-    const XSD::string_& stroke_element::get_title_attr() const
+    const XSD::string_& stroke_element::get_o_title_attr() const
     {    
-    return m_title_attr;
+    return m_o_title_attr;
     }
 
-    bool stroke_element::has_s_forcedash_attr() const
+    bool stroke_element::has_o_forcedash_attr() const
     {    
-    return m_has_s_forcedash_attr;
+    return m_has_o_forcedash_attr;
     }
 
-    void stroke_element::set_s_forcedash_attr(const ns_s::ST_TrueFalse& _s_forcedash_attr)
+    void stroke_element::set_o_forcedash_attr(const ns_s::ST_TrueFalse& _o_forcedash_attr)
     {    
-    m_has_s_forcedash_attr = true;
-    m_s_forcedash_attr = new ns_s::ST_TrueFalse(_s_forcedash_attr);
+    m_has_o_forcedash_attr = true;
+    m_o_forcedash_attr = new ns_s::ST_TrueFalse(_o_forcedash_attr);
     }
 
-    const ns_s::ST_TrueFalse& stroke_element::get_s_forcedash_attr() const
+    const ns_s::ST_TrueFalse& stroke_element::get_o_forcedash_attr() const
     {    
-    if (m_s_forcedash_attr)
+    if (m_o_forcedash_attr)
     {
-        return *m_s_forcedash_attr;
+        return *m_o_forcedash_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -103839,42 +105358,42 @@ shadow_element* shadow_element::default_instance_ = NULL;
     return ns_r::ST_RelationshipId::default_instance();
     }
 
-    bool stroke_element::has_s_insetpen_attr() const
+    bool stroke_element::has_insetpen_attr() const
     {    
-    return m_has_s_insetpen_attr;
+    return m_has_insetpen_attr;
     }
 
-    void stroke_element::set_s_insetpen_attr(const ns_s::ST_TrueFalse& _s_insetpen_attr)
+    void stroke_element::set_insetpen_attr(const ns_s::ST_TrueFalse& _insetpen_attr)
     {    
-    m_has_s_insetpen_attr = true;
-    m_s_insetpen_attr = new ns_s::ST_TrueFalse(_s_insetpen_attr);
+    m_has_insetpen_attr = true;
+    m_insetpen_attr = new ns_s::ST_TrueFalse(_insetpen_attr);
     }
 
-    const ns_s::ST_TrueFalse& stroke_element::get_s_insetpen_attr() const
+    const ns_s::ST_TrueFalse& stroke_element::get_insetpen_attr() const
     {    
-    if (m_s_insetpen_attr)
+    if (m_insetpen_attr)
     {
-        return *m_s_insetpen_attr;
+        return *m_insetpen_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool stroke_element::has_r_relid_attr() const
+    bool stroke_element::has_o_relid_attr() const
     {    
-    return m_has_r_relid_attr;
+    return m_has_o_relid_attr;
     }
 
-    void stroke_element::set_r_relid_attr(const ns_r::ST_RelationshipId& _r_relid_attr)
+    void stroke_element::set_o_relid_attr(const ns_r::ST_RelationshipId& _o_relid_attr)
     {    
-    m_has_r_relid_attr = true;
-    m_r_relid_attr = new ns_r::ST_RelationshipId(_r_relid_attr);
+    m_has_o_relid_attr = true;
+    m_o_relid_attr = new ns_r::ST_RelationshipId(_o_relid_attr);
     }
 
-    const ns_r::ST_RelationshipId& stroke_element::get_r_relid_attr() const
+    const ns_r::ST_RelationshipId& stroke_element::get_o_relid_attr() const
     {    
-    if (m_r_relid_attr)
+    if (m_o_relid_attr)
     {
-        return *m_r_relid_attr;
+        return *m_o_relid_attr;
     }
     return ns_r::ST_RelationshipId::default_instance();
     }
@@ -103882,6 +105401,25 @@ shadow_element* shadow_element::default_instance_ = NULL;
 stroke_element* stroke_element::default_instance_ = NULL;
 
     // textpath_element
+    textpath_element::textpath_element()
+    :m_has_id_attr(false),
+    m_id_attr(""),
+    m_has_style_attr(false),
+    m_style_attr(""),
+    m_has_on_attr(false),
+    m_on_attr(NULL),
+    m_has_fitshape_attr(false),
+    m_fitshape_attr(NULL),
+    m_has_fitpath_attr(false),
+    m_fitpath_attr(NULL),
+    m_has_trim_attr(false),
+    m_trim_attr(NULL),
+    m_has_xscale_attr(false),
+    m_xscale_attr(NULL),
+    m_has_string_attr(false),
+    m_string_attr("")
+    {
+    }
     void textpath_element::clear()
     {    
     m_has_id_attr = false;
@@ -103890,48 +105428,48 @@ stroke_element* stroke_element::default_instance_ = NULL;
     m_has_style_attr = false;
     m_style_attr.clear();
     
-    m_has_s_on_attr = false;
+    m_has_on_attr = false;
     
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        delete m_s_on_attr;
-        m_s_on_attr = NULL;
+        delete m_on_attr;
+        m_on_attr = NULL;
     }
     
     
-    m_has_s_fitshape_attr = false;
+    m_has_fitshape_attr = false;
     
-    if (m_s_fitshape_attr)
+    if (m_fitshape_attr)
     {
-        delete m_s_fitshape_attr;
-        m_s_fitshape_attr = NULL;
+        delete m_fitshape_attr;
+        m_fitshape_attr = NULL;
     }
     
     
-    m_has_s_fitpath_attr = false;
+    m_has_fitpath_attr = false;
     
-    if (m_s_fitpath_attr)
+    if (m_fitpath_attr)
     {
-        delete m_s_fitpath_attr;
-        m_s_fitpath_attr = NULL;
+        delete m_fitpath_attr;
+        m_fitpath_attr = NULL;
     }
     
     
-    m_has_s_trim_attr = false;
+    m_has_trim_attr = false;
     
-    if (m_s_trim_attr)
+    if (m_trim_attr)
     {
-        delete m_s_trim_attr;
-        m_s_trim_attr = NULL;
+        delete m_trim_attr;
+        m_trim_attr = NULL;
     }
     
     
-    m_has_s_xscale_attr = false;
+    m_has_xscale_attr = false;
     
-    if (m_s_xscale_attr)
+    if (m_xscale_attr)
     {
-        delete m_s_xscale_attr;
-        m_s_xscale_attr = NULL;
+        delete m_xscale_attr;
+        m_xscale_attr = NULL;
     }
     
     
@@ -103941,7 +105479,7 @@ stroke_element* stroke_element::default_instance_ = NULL;
 
     void textpath_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<textpath";
+    _outStream << "<v:textpath";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -103964,33 +105502,33 @@ stroke_element* stroke_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_on_attr)
+    if (m_has_on_attr)
     {
-        m_s_on_attr->toXmlAttr("on", _outStream);
+        m_on_attr->toXmlAttr("on", _outStream);
     }
     
     
-    if (m_has_s_fitshape_attr)
+    if (m_has_fitshape_attr)
     {
-        m_s_fitshape_attr->toXmlAttr("fitshape", _outStream);
+        m_fitshape_attr->toXmlAttr("fitshape", _outStream);
     }
     
     
-    if (m_has_s_fitpath_attr)
+    if (m_has_fitpath_attr)
     {
-        m_s_fitpath_attr->toXmlAttr("fitpath", _outStream);
+        m_fitpath_attr->toXmlAttr("fitpath", _outStream);
     }
     
     
-    if (m_has_s_trim_attr)
+    if (m_has_trim_attr)
     {
-        m_s_trim_attr->toXmlAttr("trim", _outStream);
+        m_trim_attr->toXmlAttr("trim", _outStream);
     }
     
     
-    if (m_has_s_xscale_attr)
+    if (m_has_xscale_attr)
     {
-        m_s_xscale_attr->toXmlAttr("xscale", _outStream);
+        m_xscale_attr->toXmlAttr("xscale", _outStream);
     }
     
     
@@ -104001,7 +105539,7 @@ stroke_element* stroke_element::default_instance_ = NULL;
     
     _outStream << ">";
     
-    _outStream << "</textpath>";
+    _outStream << "</v:textpath>";
     }
 
     const textpath_element& textpath_element::default_instance()
@@ -104045,102 +105583,102 @@ stroke_element* stroke_element::default_instance_ = NULL;
     return m_style_attr;
     }
 
-    bool textpath_element::has_s_on_attr() const
+    bool textpath_element::has_on_attr() const
     {    
-    return m_has_s_on_attr;
+    return m_has_on_attr;
     }
 
-    void textpath_element::set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr)
+    void textpath_element::set_on_attr(const ns_s::ST_TrueFalse& _on_attr)
     {    
-    m_has_s_on_attr = true;
-    m_s_on_attr = new ns_s::ST_TrueFalse(_s_on_attr);
+    m_has_on_attr = true;
+    m_on_attr = new ns_s::ST_TrueFalse(_on_attr);
     }
 
-    const ns_s::ST_TrueFalse& textpath_element::get_s_on_attr() const
+    const ns_s::ST_TrueFalse& textpath_element::get_on_attr() const
     {    
-    if (m_s_on_attr)
+    if (m_on_attr)
     {
-        return *m_s_on_attr;
+        return *m_on_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool textpath_element::has_s_fitshape_attr() const
+    bool textpath_element::has_fitshape_attr() const
     {    
-    return m_has_s_fitshape_attr;
+    return m_has_fitshape_attr;
     }
 
-    void textpath_element::set_s_fitshape_attr(const ns_s::ST_TrueFalse& _s_fitshape_attr)
+    void textpath_element::set_fitshape_attr(const ns_s::ST_TrueFalse& _fitshape_attr)
     {    
-    m_has_s_fitshape_attr = true;
-    m_s_fitshape_attr = new ns_s::ST_TrueFalse(_s_fitshape_attr);
+    m_has_fitshape_attr = true;
+    m_fitshape_attr = new ns_s::ST_TrueFalse(_fitshape_attr);
     }
 
-    const ns_s::ST_TrueFalse& textpath_element::get_s_fitshape_attr() const
+    const ns_s::ST_TrueFalse& textpath_element::get_fitshape_attr() const
     {    
-    if (m_s_fitshape_attr)
+    if (m_fitshape_attr)
     {
-        return *m_s_fitshape_attr;
+        return *m_fitshape_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool textpath_element::has_s_fitpath_attr() const
+    bool textpath_element::has_fitpath_attr() const
     {    
-    return m_has_s_fitpath_attr;
+    return m_has_fitpath_attr;
     }
 
-    void textpath_element::set_s_fitpath_attr(const ns_s::ST_TrueFalse& _s_fitpath_attr)
+    void textpath_element::set_fitpath_attr(const ns_s::ST_TrueFalse& _fitpath_attr)
     {    
-    m_has_s_fitpath_attr = true;
-    m_s_fitpath_attr = new ns_s::ST_TrueFalse(_s_fitpath_attr);
+    m_has_fitpath_attr = true;
+    m_fitpath_attr = new ns_s::ST_TrueFalse(_fitpath_attr);
     }
 
-    const ns_s::ST_TrueFalse& textpath_element::get_s_fitpath_attr() const
+    const ns_s::ST_TrueFalse& textpath_element::get_fitpath_attr() const
     {    
-    if (m_s_fitpath_attr)
+    if (m_fitpath_attr)
     {
-        return *m_s_fitpath_attr;
+        return *m_fitpath_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool textpath_element::has_s_trim_attr() const
+    bool textpath_element::has_trim_attr() const
     {    
-    return m_has_s_trim_attr;
+    return m_has_trim_attr;
     }
 
-    void textpath_element::set_s_trim_attr(const ns_s::ST_TrueFalse& _s_trim_attr)
+    void textpath_element::set_trim_attr(const ns_s::ST_TrueFalse& _trim_attr)
     {    
-    m_has_s_trim_attr = true;
-    m_s_trim_attr = new ns_s::ST_TrueFalse(_s_trim_attr);
+    m_has_trim_attr = true;
+    m_trim_attr = new ns_s::ST_TrueFalse(_trim_attr);
     }
 
-    const ns_s::ST_TrueFalse& textpath_element::get_s_trim_attr() const
+    const ns_s::ST_TrueFalse& textpath_element::get_trim_attr() const
     {    
-    if (m_s_trim_attr)
+    if (m_trim_attr)
     {
-        return *m_s_trim_attr;
+        return *m_trim_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool textpath_element::has_s_xscale_attr() const
+    bool textpath_element::has_xscale_attr() const
     {    
-    return m_has_s_xscale_attr;
+    return m_has_xscale_attr;
     }
 
-    void textpath_element::set_s_xscale_attr(const ns_s::ST_TrueFalse& _s_xscale_attr)
+    void textpath_element::set_xscale_attr(const ns_s::ST_TrueFalse& _xscale_attr)
     {    
-    m_has_s_xscale_attr = true;
-    m_s_xscale_attr = new ns_s::ST_TrueFalse(_s_xscale_attr);
+    m_has_xscale_attr = true;
+    m_xscale_attr = new ns_s::ST_TrueFalse(_xscale_attr);
     }
 
-    const ns_s::ST_TrueFalse& textpath_element::get_s_xscale_attr() const
+    const ns_s::ST_TrueFalse& textpath_element::get_xscale_attr() const
     {    
-    if (m_s_xscale_attr)
+    if (m_xscale_attr)
     {
-        return *m_s_xscale_attr;
+        return *m_xscale_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
@@ -104164,6 +105702,13 @@ stroke_element* stroke_element::default_instance_ = NULL;
 textpath_element* textpath_element::default_instance_ = NULL;
 
     // arc_element
+    arc_element::arc_element()
+    :m_has_startAngle_attr(false),
+    m_startAngle_attr(0),
+    m_has_endAngle_attr(false),
+    m_endAngle_attr(0)
+    {
+    }
     CT_Path* arc_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -104368,7 +105913,7 @@ textpath_element* textpath_element::default_instance_ = NULL;
 
     void arc_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<arc";
+    _outStream << "<v:arc";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -104398,39 +105943,39 @@ textpath_element* textpath_element::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -104491,7 +106036,7 @@ textpath_element* textpath_element::default_instance_ = NULL;
         }
     }
     
-    _outStream << "</arc>";
+    _outStream << "</v:arc>";
     }
 
     const arc_element& arc_element::default_instance()
@@ -104537,6 +106082,55 @@ textpath_element* textpath_element::default_instance_ = NULL;
 
 
     // arc_element::ChildGroup_1
+    arc_element::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool arc_element::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -109669,6 +111263,17 @@ textpath_element* textpath_element::default_instance_ = NULL;
 arc_element* arc_element::default_instance_ = NULL;
 
     // curve_element
+    curve_element::curve_element()
+    :m_has_from_attr(false),
+    m_from_attr(""),
+    m_has_control1_attr(false),
+    m_control1_attr(""),
+    m_has_control2_attr(false),
+    m_control2_attr(""),
+    m_has_to_attr(false),
+    m_to_attr("")
+    {
+    }
     CT_Path* curve_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -109879,7 +111484,7 @@ arc_element* arc_element::default_instance_ = NULL;
 
     void curve_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<curve";
+    _outStream << "<v:curve";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -109921,39 +111526,39 @@ arc_element* arc_element::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -110014,7 +111619,7 @@ arc_element* arc_element::default_instance_ = NULL;
         }
     }
     
-    _outStream << "</curve>";
+    _outStream << "</v:curve>";
     }
 
     const curve_element& curve_element::default_instance()
@@ -110092,6 +111697,55 @@ arc_element* arc_element::default_instance_ = NULL;
 
 
     // curve_element::ChildGroup_1
+    curve_element::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool curve_element::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -115224,6 +116878,29 @@ arc_element* arc_element::default_instance_ = NULL;
 curve_element* curve_element::default_instance_ = NULL;
 
     // image_element
+    image_element::image_element()
+    :m_has_src_attr(false),
+    m_src_attr(""),
+    m_has_cropleft_attr(false),
+    m_cropleft_attr(""),
+    m_has_croptop_attr(false),
+    m_croptop_attr(""),
+    m_has_cropright_attr(false),
+    m_cropright_attr(""),
+    m_has_cropbottom_attr(false),
+    m_cropbottom_attr(""),
+    m_has_gain_attr(false),
+    m_gain_attr(""),
+    m_has_blacklevel_attr(false),
+    m_blacklevel_attr(""),
+    m_has_gamma_attr(false),
+    m_gamma_attr(""),
+    m_has_grayscale_attr(false),
+    m_grayscale_attr(NULL),
+    m_has_bilevel_attr(false),
+    m_bilevel_attr(NULL)
+    {
+    }
     CT_Path* image_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -115434,21 +117111,21 @@ curve_element* curve_element::default_instance_ = NULL;
     m_has_gamma_attr = false;
     m_gamma_attr.clear();
     
-    m_has_s_grayscale_attr = false;
+    m_has_grayscale_attr = false;
     
-    if (m_s_grayscale_attr)
+    if (m_grayscale_attr)
     {
-        delete m_s_grayscale_attr;
-        m_s_grayscale_attr = NULL;
+        delete m_grayscale_attr;
+        m_grayscale_attr = NULL;
     }
     
     
-    m_has_s_bilevel_attr = false;
+    m_has_bilevel_attr = false;
     
-    if (m_s_bilevel_attr)
+    if (m_bilevel_attr)
     {
-        delete m_s_bilevel_attr;
-        m_s_bilevel_attr = NULL;
+        delete m_bilevel_attr;
+        m_bilevel_attr = NULL;
     }
     
     
@@ -115464,7 +117141,7 @@ curve_element* curve_element::default_instance_ = NULL;
 
     void image_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<image";
+    _outStream << "<v:image";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -115523,15 +117200,15 @@ curve_element* curve_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_grayscale_attr)
+    if (m_has_grayscale_attr)
     {
-        m_s_grayscale_attr->toXmlAttr("grayscale", _outStream);
+        m_grayscale_attr->toXmlAttr("grayscale", _outStream);
     }
     
     
-    if (m_has_s_bilevel_attr)
+    if (m_has_bilevel_attr)
     {
-        m_s_bilevel_attr->toXmlAttr("bilevel", _outStream);
+        m_bilevel_attr->toXmlAttr("bilevel", _outStream);
     }
     
     _outStream << ">";
@@ -115542,39 +117219,39 @@ curve_element* curve_element::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -115635,7 +117312,7 @@ curve_element* curve_element::default_instance_ = NULL;
         }
     }
     
-    _outStream << "</image>";
+    _outStream << "</v:image>";
     }
 
     const image_element& image_element::default_instance()
@@ -115775,48 +117452,97 @@ curve_element* curve_element::default_instance_ = NULL;
     return m_gamma_attr;
     }
 
-    bool image_element::has_s_grayscale_attr() const
+    bool image_element::has_grayscale_attr() const
     {    
-    return m_has_s_grayscale_attr;
+    return m_has_grayscale_attr;
     }
 
-    void image_element::set_s_grayscale_attr(const ns_s::ST_TrueFalse& _s_grayscale_attr)
+    void image_element::set_grayscale_attr(const ns_s::ST_TrueFalse& _grayscale_attr)
     {    
-    m_has_s_grayscale_attr = true;
-    m_s_grayscale_attr = new ns_s::ST_TrueFalse(_s_grayscale_attr);
+    m_has_grayscale_attr = true;
+    m_grayscale_attr = new ns_s::ST_TrueFalse(_grayscale_attr);
     }
 
-    const ns_s::ST_TrueFalse& image_element::get_s_grayscale_attr() const
+    const ns_s::ST_TrueFalse& image_element::get_grayscale_attr() const
     {    
-    if (m_s_grayscale_attr)
+    if (m_grayscale_attr)
     {
-        return *m_s_grayscale_attr;
+        return *m_grayscale_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
-    bool image_element::has_s_bilevel_attr() const
+    bool image_element::has_bilevel_attr() const
     {    
-    return m_has_s_bilevel_attr;
+    return m_has_bilevel_attr;
     }
 
-    void image_element::set_s_bilevel_attr(const ns_s::ST_TrueFalse& _s_bilevel_attr)
+    void image_element::set_bilevel_attr(const ns_s::ST_TrueFalse& _bilevel_attr)
     {    
-    m_has_s_bilevel_attr = true;
-    m_s_bilevel_attr = new ns_s::ST_TrueFalse(_s_bilevel_attr);
+    m_has_bilevel_attr = true;
+    m_bilevel_attr = new ns_s::ST_TrueFalse(_bilevel_attr);
     }
 
-    const ns_s::ST_TrueFalse& image_element::get_s_bilevel_attr() const
+    const ns_s::ST_TrueFalse& image_element::get_bilevel_attr() const
     {    
-    if (m_s_bilevel_attr)
+    if (m_bilevel_attr)
     {
-        return *m_s_bilevel_attr;
+        return *m_bilevel_attr;
     }
     return ns_s::ST_TrueFalse::default_instance();
     }
 
 
     // image_element::ChildGroup_1
+    image_element::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool image_element::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -120949,6 +122675,13 @@ curve_element* curve_element::default_instance_ = NULL;
 image_element* image_element::default_instance_ = NULL;
 
     // line_element
+    line_element::line_element()
+    :m_has_from_attr(false),
+    m_from_attr(""),
+    m_has_to_attr(false),
+    m_to_attr("")
+    {
+    }
     CT_Path* line_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -121153,7 +122886,7 @@ image_element* image_element::default_instance_ = NULL;
 
     void line_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<line";
+    _outStream << "<v:line";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -121183,39 +122916,39 @@ image_element* image_element::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -121276,7 +123009,7 @@ image_element* image_element::default_instance_ = NULL;
         }
     }
     
-    _outStream << "</line>";
+    _outStream << "</v:line>";
     }
 
     const line_element& line_element::default_instance()
@@ -121322,6 +123055,55 @@ image_element* image_element::default_instance_ = NULL;
 
 
     // line_element::ChildGroup_1
+    line_element::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool line_element::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -126454,6 +128236,10 @@ image_element* image_element::default_instance_ = NULL;
 line_element* line_element::default_instance_ = NULL;
 
     // oval_element
+    oval_element::oval_element()
+
+    {
+    }
     CT_Path* oval_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -126652,7 +128438,7 @@ line_element* line_element::default_instance_ = NULL;
 
     void oval_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<oval";
+    _outStream << "<v:oval";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -126671,39 +128457,39 @@ line_element* line_element::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -126764,7 +128550,7 @@ line_element* line_element::default_instance_ = NULL;
         }
     }
     
-    _outStream << "</oval>";
+    _outStream << "</v:oval>";
     }
 
     const oval_element& oval_element::default_instance()
@@ -126778,6 +128564,55 @@ line_element* line_element::default_instance_ = NULL;
 
 
     // oval_element::ChildGroup_1
+    oval_element::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool oval_element::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -131910,6 +133745,11 @@ line_element* line_element::default_instance_ = NULL;
 oval_element* oval_element::default_instance_ = NULL;
 
     // polyline_element
+    polyline_element::polyline_element()
+    :m_has_points_attr(false),
+    m_points_attr("")
+    {
+    }
     CT_Path* polyline_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -132119,7 +133959,7 @@ oval_element* oval_element::default_instance_ = NULL;
 
     void polyline_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<polyline";
+    _outStream << "<v:polyline";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -132143,39 +133983,39 @@ oval_element* oval_element::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -132240,7 +134080,7 @@ oval_element* oval_element::default_instance_ = NULL;
         }
     }
     
-    _outStream << "</polyline>";
+    _outStream << "</v:polyline>";
     }
 
     const polyline_element& polyline_element::default_instance()
@@ -132270,6 +134110,57 @@ oval_element* oval_element::default_instance_ = NULL;
 
 
     // polyline_element::ChildGroup_1
+    polyline_element::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL),
+    m_has_o_ink(false),
+    m_o_ink(NULL)
+    {
+    }
     bool polyline_element::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -137841,6 +139732,10 @@ oval_element* oval_element::default_instance_ = NULL;
 polyline_element* polyline_element::default_instance_ = NULL;
 
     // rect_element
+    rect_element::rect_element()
+
+    {
+    }
     CT_Path* rect_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -138039,7 +139934,7 @@ polyline_element* polyline_element::default_instance_ = NULL;
 
     void rect_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<rect";
+    _outStream << "<v:rect";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -138058,39 +139953,39 @@ polyline_element* polyline_element::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -138151,7 +140046,7 @@ polyline_element* polyline_element::default_instance_ = NULL;
         }
     }
     
-    _outStream << "</rect>";
+    _outStream << "</v:rect>";
     }
 
     const rect_element& rect_element::default_instance()
@@ -138165,6 +140060,55 @@ polyline_element* polyline_element::default_instance_ = NULL;
 
 
     // rect_element::ChildGroup_1
+    rect_element::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool rect_element::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -143297,6 +145241,11 @@ polyline_element* polyline_element::default_instance_ = NULL;
 rect_element* rect_element::default_instance_ = NULL;
 
     // roundrect_element
+    roundrect_element::roundrect_element()
+    :m_has_arcsize_attr(false),
+    m_arcsize_attr("")
+    {
+    }
     CT_Path* roundrect_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -143498,7 +145447,7 @@ rect_element* rect_element::default_instance_ = NULL;
 
     void roundrect_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<roundrect";
+    _outStream << "<v:roundrect";
     
     _outStream << " " << "xmlns:v=\"urn:schemas-microsoft-com:vml\"";
     _outStream << " " << "xmlns:x=\"urn:schemas-microsoft-com:office:excel\"";
@@ -143522,39 +145471,39 @@ rect_element* rect_element::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
             }
             else if ((*iter)->has_formulas())
             {
-                (*iter)->get_formulas().toXmlElem("formulas", "", _outStream);
+                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
             }
             else if ((*iter)->has_handles())
             {
-                (*iter)->get_handles().toXmlElem("handles", "", _outStream);
+                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
             }
             else if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
             }
             else if ((*iter)->has_stroke())
             {
-                (*iter)->get_stroke().toXmlElem("stroke", "", _outStream);
+                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
             }
             else if ((*iter)->has_textbox())
             {
-                (*iter)->get_textbox().toXmlElem("textbox", "", _outStream);
+                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
             }
             else if ((*iter)->has_textpath())
             {
-                (*iter)->get_textpath().toXmlElem("textpath", "", _outStream);
+                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
             }
             else if ((*iter)->has_imagedata())
             {
-                (*iter)->get_imagedata().toXmlElem("imagedata", "", _outStream);
+                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
             }
             else if ((*iter)->has_o_skew())
             {
@@ -143615,7 +145564,7 @@ rect_element* rect_element::default_instance_ = NULL;
         }
     }
     
-    _outStream << "</roundrect>";
+    _outStream << "</v:roundrect>";
     }
 
     const roundrect_element& roundrect_element::default_instance()
@@ -143645,6 +145594,55 @@ rect_element* rect_element::default_instance_ = NULL;
 
 
     // roundrect_element::ChildGroup_1
+    roundrect_element::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL),
+    m_has_formulas(false),
+    m_formulas(NULL),
+    m_has_handles(false),
+    m_handles(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_stroke(false),
+    m_stroke(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_textbox(false),
+    m_textbox(NULL),
+    m_has_textpath(false),
+    m_textpath(NULL),
+    m_has_imagedata(false),
+    m_imagedata(NULL),
+    m_has_o_skew(false),
+    m_o_skew(NULL),
+    m_has_o_extrusion(false),
+    m_o_extrusion(NULL),
+    m_has_o_callout(false),
+    m_o_callout(NULL),
+    m_has_o_lock(false),
+    m_o_lock(NULL),
+    m_has_o_clippath(false),
+    m_o_clippath(NULL),
+    m_has_o_signatureline(false),
+    m_o_signatureline(NULL),
+    m_has_w10_wrap(false),
+    m_w10_wrap(NULL),
+    m_has_w10_anchorlock(false),
+    m_w10_anchorlock(NULL),
+    m_has_w10_bordertop(false),
+    m_w10_bordertop(NULL),
+    m_has_w10_borderbottom(false),
+    m_w10_borderbottom(NULL),
+    m_has_w10_borderleft(false),
+    m_w10_borderleft(NULL),
+    m_has_w10_borderright(false),
+    m_w10_borderright(NULL),
+    m_has_x_ClientData(false),
+    m_x_ClientData(NULL),
+    m_has_pvml_textdata(false),
+    m_pvml_textdata(NULL)
+    {
+    }
     bool roundrect_element::ChildGroup_1::has_path() const
     {    
     return m_has_path;

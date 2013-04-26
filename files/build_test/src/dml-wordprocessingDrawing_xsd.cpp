@@ -24,7 +24,7 @@ namespace ns_wp {
     :m_has_unsignedInt(true)
     {
     
-    set_unsignedInt(m_unsignedInt);
+    set_unsignedInt(_unsignedInt);
     }
     bool ST_WrapDistance::has_unsignedInt() const
     {    
@@ -146,7 +146,7 @@ ST_WrapText* ST_WrapText::default_instance_ = NULL;
     :m_has_int(true)
     {
     
-    set_int(m_int);
+    set_int(_int);
     }
     bool ST_PositionOffset::has_int() const
     {    
@@ -455,41 +455,52 @@ ST_AlignV* ST_AlignV::default_instance_ = NULL;
 ST_RelFromV* ST_RelFromV::default_instance_ = NULL;
 
     // CT_EffectExtent
+    CT_EffectExtent::CT_EffectExtent()
+    :m_has_l_attr(false),
+    m_l_attr(NULL),
+    m_has_t_attr(false),
+    m_t_attr(NULL),
+    m_has_r_attr(false),
+    m_r_attr(NULL),
+    m_has_b_attr(false),
+    m_b_attr(NULL)
+    {
+    }
     void CT_EffectExtent::clear()
     {    
-    m_has_a_l_attr = false;
+    m_has_l_attr = false;
     
-    if (m_a_l_attr)
+    if (m_l_attr)
     {
-        delete m_a_l_attr;
-        m_a_l_attr = NULL;
+        delete m_l_attr;
+        m_l_attr = NULL;
     }
     
     
-    m_has_a_t_attr = false;
+    m_has_t_attr = false;
     
-    if (m_a_t_attr)
+    if (m_t_attr)
     {
-        delete m_a_t_attr;
-        m_a_t_attr = NULL;
+        delete m_t_attr;
+        m_t_attr = NULL;
     }
     
     
-    m_has_a_r_attr = false;
+    m_has_r_attr = false;
     
-    if (m_a_r_attr)
+    if (m_r_attr)
     {
-        delete m_a_r_attr;
-        m_a_r_attr = NULL;
+        delete m_r_attr;
+        m_r_attr = NULL;
     }
     
     
-    m_has_a_b_attr = false;
+    m_has_b_attr = false;
     
-    if (m_a_b_attr)
+    if (m_b_attr)
     {
-        delete m_a_b_attr;
-        m_a_b_attr = NULL;
+        delete m_b_attr;
+        m_b_attr = NULL;
     }
     
     }
@@ -503,27 +514,27 @@ ST_RelFromV* ST_RelFromV::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_a_l_attr)
+    if (m_has_l_attr)
     {
-        m_a_l_attr->toXmlAttr("l", _outStream);
+        m_l_attr->toXmlAttr("l", _outStream);
     }
     
     
-    if (m_has_a_t_attr)
+    if (m_has_t_attr)
     {
-        m_a_t_attr->toXmlAttr("t", _outStream);
+        m_t_attr->toXmlAttr("t", _outStream);
     }
     
     
-    if (m_has_a_r_attr)
+    if (m_has_r_attr)
     {
-        m_a_r_attr->toXmlAttr("r", _outStream);
+        m_r_attr->toXmlAttr("r", _outStream);
     }
     
     
-    if (m_has_a_b_attr)
+    if (m_has_b_attr)
     {
-        m_a_b_attr->toXmlAttr("b", _outStream);
+        m_b_attr->toXmlAttr("b", _outStream);
     }
     
             _outStream << ">";
@@ -540,82 +551,82 @@ ST_RelFromV* ST_RelFromV::default_instance_ = NULL;
     return *CT_EffectExtent::default_instance_;
     }
 
-    bool CT_EffectExtent::has_a_l_attr() const
+    bool CT_EffectExtent::has_l_attr() const
     {    
-    return m_has_a_l_attr;
+    return m_has_l_attr;
     }
 
-    void CT_EffectExtent::set_a_l_attr(const ns_a::ST_Coordinate& _a_l_attr)
+    void CT_EffectExtent::set_l_attr(const ns_a::ST_Coordinate& _l_attr)
     {    
-    m_has_a_l_attr = true;
-    m_a_l_attr = new ns_a::ST_Coordinate(_a_l_attr);
+    m_has_l_attr = true;
+    m_l_attr = new ns_a::ST_Coordinate(_l_attr);
     }
 
-    const ns_a::ST_Coordinate& CT_EffectExtent::get_a_l_attr() const
+    const ns_a::ST_Coordinate& CT_EffectExtent::get_l_attr() const
     {    
-    if (m_a_l_attr)
+    if (m_l_attr)
     {
-        return *m_a_l_attr;
+        return *m_l_attr;
     }
     return ns_a::ST_Coordinate::default_instance();
     }
 
-    bool CT_EffectExtent::has_a_t_attr() const
+    bool CT_EffectExtent::has_t_attr() const
     {    
-    return m_has_a_t_attr;
+    return m_has_t_attr;
     }
 
-    void CT_EffectExtent::set_a_t_attr(const ns_a::ST_Coordinate& _a_t_attr)
+    void CT_EffectExtent::set_t_attr(const ns_a::ST_Coordinate& _t_attr)
     {    
-    m_has_a_t_attr = true;
-    m_a_t_attr = new ns_a::ST_Coordinate(_a_t_attr);
+    m_has_t_attr = true;
+    m_t_attr = new ns_a::ST_Coordinate(_t_attr);
     }
 
-    const ns_a::ST_Coordinate& CT_EffectExtent::get_a_t_attr() const
+    const ns_a::ST_Coordinate& CT_EffectExtent::get_t_attr() const
     {    
-    if (m_a_t_attr)
+    if (m_t_attr)
     {
-        return *m_a_t_attr;
+        return *m_t_attr;
     }
     return ns_a::ST_Coordinate::default_instance();
     }
 
-    bool CT_EffectExtent::has_a_r_attr() const
+    bool CT_EffectExtent::has_r_attr() const
     {    
-    return m_has_a_r_attr;
+    return m_has_r_attr;
     }
 
-    void CT_EffectExtent::set_a_r_attr(const ns_a::ST_Coordinate& _a_r_attr)
+    void CT_EffectExtent::set_r_attr(const ns_a::ST_Coordinate& _r_attr)
     {    
-    m_has_a_r_attr = true;
-    m_a_r_attr = new ns_a::ST_Coordinate(_a_r_attr);
+    m_has_r_attr = true;
+    m_r_attr = new ns_a::ST_Coordinate(_r_attr);
     }
 
-    const ns_a::ST_Coordinate& CT_EffectExtent::get_a_r_attr() const
+    const ns_a::ST_Coordinate& CT_EffectExtent::get_r_attr() const
     {    
-    if (m_a_r_attr)
+    if (m_r_attr)
     {
-        return *m_a_r_attr;
+        return *m_r_attr;
     }
     return ns_a::ST_Coordinate::default_instance();
     }
 
-    bool CT_EffectExtent::has_a_b_attr() const
+    bool CT_EffectExtent::has_b_attr() const
     {    
-    return m_has_a_b_attr;
+    return m_has_b_attr;
     }
 
-    void CT_EffectExtent::set_a_b_attr(const ns_a::ST_Coordinate& _a_b_attr)
+    void CT_EffectExtent::set_b_attr(const ns_a::ST_Coordinate& _b_attr)
     {    
-    m_has_a_b_attr = true;
-    m_a_b_attr = new ns_a::ST_Coordinate(_a_b_attr);
+    m_has_b_attr = true;
+    m_b_attr = new ns_a::ST_Coordinate(_b_attr);
     }
 
-    const ns_a::ST_Coordinate& CT_EffectExtent::get_a_b_attr() const
+    const ns_a::ST_Coordinate& CT_EffectExtent::get_b_attr() const
     {    
-    if (m_a_b_attr)
+    if (m_b_attr)
     {
-        return *m_a_b_attr;
+        return *m_b_attr;
     }
     return ns_a::ST_Coordinate::default_instance();
     }
@@ -623,26 +634,47 @@ ST_RelFromV* ST_RelFromV::default_instance_ = NULL;
 CT_EffectExtent* CT_EffectExtent::default_instance_ = NULL;
 
     // CT_Inline
-    bool CT_Inline::has_a_extent() const
+    CT_Inline::CT_Inline()
+    :m_has_extent(false),
+    m_extent(NULL),
+    m_has_effectExtent(false),
+    m_effectExtent(NULL),
+    m_has_docPr(false),
+    m_docPr(NULL),
+    m_has_cNvGraphicFramePr(false),
+    m_cNvGraphicFramePr(NULL),
+    m_has_a_graphic(false),
+    m_a_graphic(NULL),
+    m_has_distT_attr(false),
+    m_distT_attr(NULL),
+    m_has_distB_attr(false),
+    m_distB_attr(NULL),
+    m_has_distL_attr(false),
+    m_distL_attr(NULL),
+    m_has_distR_attr(false),
+    m_distR_attr(NULL)
+    {
+    }
+    bool CT_Inline::has_extent() const
     {    
-    return m_has_a_extent;
+    return m_has_extent;
     }
 
-    ns_a::CT_PositiveSize2D* CT_Inline::mutable_a_extent()
+    ns_a::CT_PositiveSize2D* CT_Inline::mutable_extent()
     {    
-    m_has_a_extent = true;
-    if (!m_a_extent)
+    m_has_extent = true;
+    if (!m_extent)
     {
-        m_a_extent = new ns_a::CT_PositiveSize2D();
+        m_extent = new ns_a::CT_PositiveSize2D();
     }
-    return m_a_extent;
+    return m_extent;
     }
 
-    const ns_a::CT_PositiveSize2D& CT_Inline::get_a_extent() const
+    const ns_a::CT_PositiveSize2D& CT_Inline::get_extent() const
     {    
-    if (m_a_extent)
+    if (m_extent)
     {
-        return *m_a_extent;
+        return *m_extent;
     }
     return ns_a::CT_PositiveSize2D::default_instance();
     }
@@ -671,50 +703,50 @@ CT_EffectExtent* CT_EffectExtent::default_instance_ = NULL;
     return CT_EffectExtent::default_instance();
     }
 
-    bool CT_Inline::has_a_docPr() const
+    bool CT_Inline::has_docPr() const
     {    
-    return m_has_a_docPr;
+    return m_has_docPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* CT_Inline::mutable_a_docPr()
+    ns_a::CT_NonVisualDrawingProps* CT_Inline::mutable_docPr()
     {    
-    m_has_a_docPr = true;
-    if (!m_a_docPr)
+    m_has_docPr = true;
+    if (!m_docPr)
     {
-        m_a_docPr = new ns_a::CT_NonVisualDrawingProps();
+        m_docPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_docPr;
+    return m_docPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& CT_Inline::get_a_docPr() const
+    const ns_a::CT_NonVisualDrawingProps& CT_Inline::get_docPr() const
     {    
-    if (m_a_docPr)
+    if (m_docPr)
     {
-        return *m_a_docPr;
+        return *m_docPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool CT_Inline::has_a_cNvGraphicFramePr() const
+    bool CT_Inline::has_cNvGraphicFramePr() const
     {    
-    return m_has_a_cNvGraphicFramePr;
+    return m_has_cNvGraphicFramePr;
     }
 
-    ns_a::CT_NonVisualGraphicFrameProperties* CT_Inline::mutable_a_cNvGraphicFramePr()
+    ns_a::CT_NonVisualGraphicFrameProperties* CT_Inline::mutable_cNvGraphicFramePr()
     {    
-    m_has_a_cNvGraphicFramePr = true;
-    if (!m_a_cNvGraphicFramePr)
+    m_has_cNvGraphicFramePr = true;
+    if (!m_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr = new ns_a::CT_NonVisualGraphicFrameProperties();
+        m_cNvGraphicFramePr = new ns_a::CT_NonVisualGraphicFrameProperties();
     }
-    return m_a_cNvGraphicFramePr;
+    return m_cNvGraphicFramePr;
     }
 
-    const ns_a::CT_NonVisualGraphicFrameProperties& CT_Inline::get_a_cNvGraphicFramePr() const
+    const ns_a::CT_NonVisualGraphicFrameProperties& CT_Inline::get_cNvGraphicFramePr() const
     {    
-    if (m_a_cNvGraphicFramePr)
+    if (m_cNvGraphicFramePr)
     {
-        return *m_a_cNvGraphicFramePr;
+        return *m_cNvGraphicFramePr;
     }
     return ns_a::CT_NonVisualGraphicFrameProperties::default_instance();
     }
@@ -816,24 +848,24 @@ CT_EffectExtent* CT_EffectExtent::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_a_extent)
+    if (m_has_extent)
     {
-        m_a_extent->toXmlElem("a:extent", "", _outStream);;
+        m_extent->toXmlElem("wp:extent", "", _outStream);;
     }
     
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
     }
     
-    if (m_has_a_docPr)
+    if (m_has_docPr)
     {
-        m_a_docPr->toXmlElem("a:docPr", "", _outStream);;
+        m_docPr->toXmlElem("wp:docPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvGraphicFramePr)
+    if (m_has_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);;
+        m_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);;
     }
     
     if (m_has_a_graphic)
@@ -936,34 +968,41 @@ CT_EffectExtent* CT_EffectExtent::default_instance_ = NULL;
 CT_Inline* CT_Inline::default_instance_ = NULL;
 
     // CT_WrapPath
-    bool CT_WrapPath::has_a_start() const
+    CT_WrapPath::CT_WrapPath()
+    :m_has_start(false),
+    m_start(NULL),
+    m_has_edited_attr(false),
+    m_edited_attr(false)
+    {
+    }
+    bool CT_WrapPath::has_start() const
     {    
-    return m_has_a_start;
+    return m_has_start;
     }
 
-    ns_a::CT_Point2D* CT_WrapPath::mutable_a_start()
+    ns_a::CT_Point2D* CT_WrapPath::mutable_start()
     {    
-    m_has_a_start = true;
-    if (!m_a_start)
+    m_has_start = true;
+    if (!m_start)
     {
-        m_a_start = new ns_a::CT_Point2D();
+        m_start = new ns_a::CT_Point2D();
     }
-    return m_a_start;
+    return m_start;
     }
 
-    const ns_a::CT_Point2D& CT_WrapPath::get_a_start() const
+    const ns_a::CT_Point2D& CT_WrapPath::get_start() const
     {    
-    if (m_a_start)
+    if (m_start)
     {
-        return *m_a_start;
+        return *m_start;
     }
     return ns_a::CT_Point2D::default_instance();
     }
 
-    ns_a::CT_Point2D* CT_WrapPath::add_a_lineTo()
+    ns_a::CT_Point2D* CT_WrapPath::add_lineTo()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_Point2D* pNewChild = pChildGroup->mutable_a_lineTo();
+    ns_a::CT_Point2D* pNewChild = pChildGroup->mutable_lineTo();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -973,12 +1012,12 @@ CT_Inline* CT_Inline::default_instance_ = NULL;
     m_has_edited_attr = false;
     m_edited_attr = false;
     
-    m_has_a_start = false;
+    m_has_start = false;
     
-    if (m_a_start)
+    if (m_start)
     {
-        delete m_a_start;
-        m_a_start = NULL;
+        delete m_start;
+        m_start = NULL;
     }
     
      
@@ -1008,18 +1047,18 @@ CT_Inline* CT_Inline::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_a_start)
+    if (m_has_start)
     {
-        m_a_start->toXmlElem("a:start", "", _outStream);;
+        m_start->toXmlElem("wp:start", "", _outStream);;
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_a_lineTo())
+            if ((*iter)->has_lineTo())
             {
-                (*iter)->get_a_lineTo().toXmlElem("a:lineTo", "", _outStream);
+                (*iter)->get_lineTo().toXmlElem("wp:lineTo", "", _outStream);
             }
         }
     }
@@ -1054,27 +1093,32 @@ CT_Inline* CT_Inline::default_instance_ = NULL;
 
 
     // CT_WrapPath::ChildGroup_1
-    bool CT_WrapPath::ChildGroup_1::has_a_lineTo() const
+    CT_WrapPath::ChildGroup_1::ChildGroup_1()
+    :m_has_lineTo(false),
+    m_lineTo(NULL)
+    {
+    }
+    bool CT_WrapPath::ChildGroup_1::has_lineTo() const
     {    
-    return m_has_a_lineTo;
+    return m_has_lineTo;
     }
 
-    ns_a::CT_Point2D* CT_WrapPath::ChildGroup_1::mutable_a_lineTo()
+    ns_a::CT_Point2D* CT_WrapPath::ChildGroup_1::mutable_lineTo()
     {    
     
-    m_has_a_lineTo = true;
-    if (!m_a_lineTo)
+    m_has_lineTo = true;
+    if (!m_lineTo)
     {
-        m_a_lineTo = new ns_a::CT_Point2D();
+        m_lineTo = new ns_a::CT_Point2D();
     }
-    return m_a_lineTo;
+    return m_lineTo;
     }
 
-    const ns_a::CT_Point2D& CT_WrapPath::ChildGroup_1::get_a_lineTo() const
+    const ns_a::CT_Point2D& CT_WrapPath::ChildGroup_1::get_lineTo() const
     {    
-    if (m_a_lineTo)
+    if (m_lineTo)
     {
-        return *m_a_lineTo;
+        return *m_lineTo;
     }
     return ns_a::CT_Point2D::default_instance();
     }
@@ -1082,6 +1126,10 @@ CT_Inline* CT_Inline::default_instance_ = NULL;
 CT_WrapPath* CT_WrapPath::default_instance_ = NULL;
 
     // CT_WrapNone
+    CT_WrapNone::CT_WrapNone()
+
+    {
+    }
     void CT_WrapNone::clear()
     {    }
 
@@ -1111,6 +1159,21 @@ CT_WrapPath* CT_WrapPath::default_instance_ = NULL;
 CT_WrapNone* CT_WrapNone::default_instance_ = NULL;
 
     // CT_WrapSquare
+    CT_WrapSquare::CT_WrapSquare()
+    :m_has_effectExtent(false),
+    m_effectExtent(NULL),
+    m_has_wrapText_attr(false),
+    m_wrapText_attr(NULL),
+    m_has_distT_attr(false),
+    m_distT_attr(NULL),
+    m_has_distB_attr(false),
+    m_distB_attr(NULL),
+    m_has_distL_attr(false),
+    m_distL_attr(NULL),
+    m_has_distR_attr(false),
+    m_distR_attr(NULL)
+    {
+    }
     bool CT_WrapSquare::has_effectExtent() const
     {    
     return m_has_effectExtent;
@@ -1225,7 +1288,7 @@ CT_WrapNone* CT_WrapNone::default_instance_ = NULL;
             
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1343,6 +1406,17 @@ CT_WrapNone* CT_WrapNone::default_instance_ = NULL;
 CT_WrapSquare* CT_WrapSquare::default_instance_ = NULL;
 
     // CT_WrapTight
+    CT_WrapTight::CT_WrapTight()
+    :m_has_wrapPolygon(false),
+    m_wrapPolygon(NULL),
+    m_has_wrapText_attr(false),
+    m_wrapText_attr(NULL),
+    m_has_distL_attr(false),
+    m_distL_attr(NULL),
+    m_has_distR_attr(false),
+    m_distR_attr(NULL)
+    {
+    }
     bool CT_WrapTight::has_wrapPolygon() const
     {    
     return m_has_wrapPolygon;
@@ -1427,7 +1501,7 @@ CT_WrapSquare* CT_WrapSquare::default_instance_ = NULL;
             
     if (m_has_wrapPolygon)
     {
-        m_wrapPolygon->toXmlElem("wrapPolygon", "", _outStream);;
+        m_wrapPolygon->toXmlElem("wp:wrapPolygon", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1505,6 +1579,17 @@ CT_WrapSquare* CT_WrapSquare::default_instance_ = NULL;
 CT_WrapTight* CT_WrapTight::default_instance_ = NULL;
 
     // CT_WrapThrough
+    CT_WrapThrough::CT_WrapThrough()
+    :m_has_wrapPolygon(false),
+    m_wrapPolygon(NULL),
+    m_has_wrapText_attr(false),
+    m_wrapText_attr(NULL),
+    m_has_distL_attr(false),
+    m_distL_attr(NULL),
+    m_has_distR_attr(false),
+    m_distR_attr(NULL)
+    {
+    }
     bool CT_WrapThrough::has_wrapPolygon() const
     {    
     return m_has_wrapPolygon;
@@ -1589,7 +1674,7 @@ CT_WrapTight* CT_WrapTight::default_instance_ = NULL;
             
     if (m_has_wrapPolygon)
     {
-        m_wrapPolygon->toXmlElem("wrapPolygon", "", _outStream);;
+        m_wrapPolygon->toXmlElem("wp:wrapPolygon", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1667,6 +1752,15 @@ CT_WrapTight* CT_WrapTight::default_instance_ = NULL;
 CT_WrapThrough* CT_WrapThrough::default_instance_ = NULL;
 
     // CT_WrapTopBottom
+    CT_WrapTopBottom::CT_WrapTopBottom()
+    :m_has_effectExtent(false),
+    m_effectExtent(NULL),
+    m_has_distT_attr(false),
+    m_distT_attr(NULL),
+    m_has_distB_attr(false),
+    m_distB_attr(NULL)
+    {
+    }
     bool CT_WrapTopBottom::has_effectExtent() const
     {    
     return m_has_effectExtent;
@@ -1736,7 +1830,7 @@ CT_WrapThrough* CT_WrapThrough::default_instance_ = NULL;
             
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1794,6 +1888,15 @@ CT_WrapThrough* CT_WrapThrough::default_instance_ = NULL;
 CT_WrapTopBottom* CT_WrapTopBottom::default_instance_ = NULL;
 
     // CT_PosH
+    CT_PosH::CT_PosH()
+    :m_has_align(false),
+    m_align(NULL),
+    m_has_posOffset(false),
+    m_posOffset(NULL),
+    m_has_relativeFrom_attr(false),
+    m_relativeFrom_attr(NULL)
+    {
+    }
     bool CT_PosH::has_align() const
     {    
     return m_has_align;
@@ -1892,12 +1995,12 @@ CT_WrapTopBottom* CT_WrapTopBottom::default_instance_ = NULL;
             
     if (m_has_align)
     {
-        _outStream << "<align>" << m_align->toString() << "</align>";;
+        _outStream << "<wp:align>" << m_align->toString() << "</wp:align>";;
     }
     
     if (m_has_posOffset)
     {
-        _outStream << "<posOffset>" << m_posOffset->toString() << "</posOffset>";;
+        _outStream << "<wp:posOffset>" << m_posOffset->toString() << "</wp:posOffset>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1935,6 +2038,15 @@ CT_WrapTopBottom* CT_WrapTopBottom::default_instance_ = NULL;
 CT_PosH* CT_PosH::default_instance_ = NULL;
 
     // CT_PosV
+    CT_PosV::CT_PosV()
+    :m_has_align(false),
+    m_align(NULL),
+    m_has_posOffset(false),
+    m_posOffset(NULL),
+    m_has_relativeFrom_attr(false),
+    m_relativeFrom_attr(NULL)
+    {
+    }
     bool CT_PosV::has_align() const
     {    
     return m_has_align;
@@ -2033,12 +2145,12 @@ CT_PosH* CT_PosH::default_instance_ = NULL;
             
     if (m_has_align)
     {
-        _outStream << "<align>" << m_align->toString() << "</align>";;
+        _outStream << "<wp:align>" << m_align->toString() << "</wp:align>";;
     }
     
     if (m_has_posOffset)
     {
-        _outStream << "<posOffset>" << m_posOffset->toString() << "</posOffset>";;
+        _outStream << "<wp:posOffset>" << m_posOffset->toString() << "</wp:posOffset>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2076,26 +2188,77 @@ CT_PosH* CT_PosH::default_instance_ = NULL;
 CT_PosV* CT_PosV::default_instance_ = NULL;
 
     // CT_Anchor
-    bool CT_Anchor::has_a_simplePos() const
+    CT_Anchor::CT_Anchor()
+    :m_has_simplePos(false),
+    m_simplePos(NULL),
+    m_has_positionH(false),
+    m_positionH(NULL),
+    m_has_positionV(false),
+    m_positionV(NULL),
+    m_has_extent(false),
+    m_extent(NULL),
+    m_has_effectExtent(false),
+    m_effectExtent(NULL),
+    m_has_wrapNone(false),
+    m_wrapNone(NULL),
+    m_has_wrapSquare(false),
+    m_wrapSquare(NULL),
+    m_has_wrapTight(false),
+    m_wrapTight(NULL),
+    m_has_wrapThrough(false),
+    m_wrapThrough(NULL),
+    m_has_wrapTopAndBottom(false),
+    m_wrapTopAndBottom(NULL),
+    m_has_docPr(false),
+    m_docPr(NULL),
+    m_has_cNvGraphicFramePr(false),
+    m_cNvGraphicFramePr(NULL),
+    m_has_a_graphic(false),
+    m_a_graphic(NULL),
+    m_has_distT_attr(false),
+    m_distT_attr(NULL),
+    m_has_distB_attr(false),
+    m_distB_attr(NULL),
+    m_has_distL_attr(false),
+    m_distL_attr(NULL),
+    m_has_distR_attr(false),
+    m_distR_attr(NULL),
+    m_has_simplePos_attr(false),
+    m_simplePos_attr(false),
+    m_has_relativeHeight_attr(false),
+    m_relativeHeight_attr(0),
+    m_has_behindDoc_attr(false),
+    m_behindDoc_attr(false),
+    m_has_locked_attr(false),
+    m_locked_attr(false),
+    m_has_layoutInCell_attr(false),
+    m_layoutInCell_attr(false),
+    m_has_hidden_attr(false),
+    m_hidden_attr(false),
+    m_has_allowOverlap_attr(false),
+    m_allowOverlap_attr(false)
+    {
+    }
+    bool CT_Anchor::has_simplePos() const
     {    
-    return m_has_a_simplePos;
+    return m_has_simplePos;
     }
 
-    ns_a::CT_Point2D* CT_Anchor::mutable_a_simplePos()
+    ns_a::CT_Point2D* CT_Anchor::mutable_simplePos()
     {    
-    m_has_a_simplePos = true;
-    if (!m_a_simplePos)
+    m_has_simplePos = true;
+    if (!m_simplePos)
     {
-        m_a_simplePos = new ns_a::CT_Point2D();
+        m_simplePos = new ns_a::CT_Point2D();
     }
-    return m_a_simplePos;
+    return m_simplePos;
     }
 
-    const ns_a::CT_Point2D& CT_Anchor::get_a_simplePos() const
+    const ns_a::CT_Point2D& CT_Anchor::get_simplePos() const
     {    
-    if (m_a_simplePos)
+    if (m_simplePos)
     {
-        return *m_a_simplePos;
+        return *m_simplePos;
     }
     return ns_a::CT_Point2D::default_instance();
     }
@@ -2148,26 +2311,26 @@ CT_PosV* CT_PosV::default_instance_ = NULL;
     return CT_PosV::default_instance();
     }
 
-    bool CT_Anchor::has_a_extent() const
+    bool CT_Anchor::has_extent() const
     {    
-    return m_has_a_extent;
+    return m_has_extent;
     }
 
-    ns_a::CT_PositiveSize2D* CT_Anchor::mutable_a_extent()
+    ns_a::CT_PositiveSize2D* CT_Anchor::mutable_extent()
     {    
-    m_has_a_extent = true;
-    if (!m_a_extent)
+    m_has_extent = true;
+    if (!m_extent)
     {
-        m_a_extent = new ns_a::CT_PositiveSize2D();
+        m_extent = new ns_a::CT_PositiveSize2D();
     }
-    return m_a_extent;
+    return m_extent;
     }
 
-    const ns_a::CT_PositiveSize2D& CT_Anchor::get_a_extent() const
+    const ns_a::CT_PositiveSize2D& CT_Anchor::get_extent() const
     {    
-    if (m_a_extent)
+    if (m_extent)
     {
-        return *m_a_extent;
+        return *m_extent;
     }
     return ns_a::CT_PositiveSize2D::default_instance();
     }
@@ -2501,50 +2664,50 @@ CT_PosV* CT_PosV::default_instance_ = NULL;
     return CT_WrapTopBottom::default_instance();
     }
 
-    bool CT_Anchor::has_a_docPr() const
+    bool CT_Anchor::has_docPr() const
     {    
-    return m_has_a_docPr;
+    return m_has_docPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* CT_Anchor::mutable_a_docPr()
+    ns_a::CT_NonVisualDrawingProps* CT_Anchor::mutable_docPr()
     {    
-    m_has_a_docPr = true;
-    if (!m_a_docPr)
+    m_has_docPr = true;
+    if (!m_docPr)
     {
-        m_a_docPr = new ns_a::CT_NonVisualDrawingProps();
+        m_docPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_docPr;
+    return m_docPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& CT_Anchor::get_a_docPr() const
+    const ns_a::CT_NonVisualDrawingProps& CT_Anchor::get_docPr() const
     {    
-    if (m_a_docPr)
+    if (m_docPr)
     {
-        return *m_a_docPr;
+        return *m_docPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool CT_Anchor::has_a_cNvGraphicFramePr() const
+    bool CT_Anchor::has_cNvGraphicFramePr() const
     {    
-    return m_has_a_cNvGraphicFramePr;
+    return m_has_cNvGraphicFramePr;
     }
 
-    ns_a::CT_NonVisualGraphicFrameProperties* CT_Anchor::mutable_a_cNvGraphicFramePr()
+    ns_a::CT_NonVisualGraphicFrameProperties* CT_Anchor::mutable_cNvGraphicFramePr()
     {    
-    m_has_a_cNvGraphicFramePr = true;
-    if (!m_a_cNvGraphicFramePr)
+    m_has_cNvGraphicFramePr = true;
+    if (!m_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr = new ns_a::CT_NonVisualGraphicFrameProperties();
+        m_cNvGraphicFramePr = new ns_a::CT_NonVisualGraphicFrameProperties();
     }
-    return m_a_cNvGraphicFramePr;
+    return m_cNvGraphicFramePr;
     }
 
-    const ns_a::CT_NonVisualGraphicFrameProperties& CT_Anchor::get_a_cNvGraphicFramePr() const
+    const ns_a::CT_NonVisualGraphicFrameProperties& CT_Anchor::get_cNvGraphicFramePr() const
     {    
-    if (m_a_cNvGraphicFramePr)
+    if (m_cNvGraphicFramePr)
     {
-        return *m_a_cNvGraphicFramePr;
+        return *m_cNvGraphicFramePr;
     }
     return ns_a::CT_NonVisualGraphicFrameProperties::default_instance();
     }
@@ -2709,64 +2872,64 @@ CT_PosV* CT_PosV::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_a_simplePos)
+    if (m_has_simplePos)
     {
-        m_a_simplePos->toXmlElem("a:simplePos", "", _outStream);;
+        m_simplePos->toXmlElem("wp:simplePos", "", _outStream);;
     }
     
     if (m_has_positionH)
     {
-        m_positionH->toXmlElem("positionH", "", _outStream);;
+        m_positionH->toXmlElem("wp:positionH", "", _outStream);;
     }
     
     if (m_has_positionV)
     {
-        m_positionV->toXmlElem("positionV", "", _outStream);;
+        m_positionV->toXmlElem("wp:positionV", "", _outStream);;
     }
     
-    if (m_has_a_extent)
+    if (m_has_extent)
     {
-        m_a_extent->toXmlElem("a:extent", "", _outStream);;
+        m_extent->toXmlElem("wp:extent", "", _outStream);;
     }
     
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
     }
      
     if (m_has_wrapNone)
     {
-        m_wrapNone->toXmlElem("wrapNone", "", _outStream);;
+        m_wrapNone->toXmlElem("wp:wrapNone", "", _outStream);;
     }
     
     if (m_has_wrapSquare)
     {
-        m_wrapSquare->toXmlElem("wrapSquare", "", _outStream);;
+        m_wrapSquare->toXmlElem("wp:wrapSquare", "", _outStream);;
     }
     
     if (m_has_wrapTight)
     {
-        m_wrapTight->toXmlElem("wrapTight", "", _outStream);;
+        m_wrapTight->toXmlElem("wp:wrapTight", "", _outStream);;
     }
     
     if (m_has_wrapThrough)
     {
-        m_wrapThrough->toXmlElem("wrapThrough", "", _outStream);;
+        m_wrapThrough->toXmlElem("wp:wrapThrough", "", _outStream);;
     }
     
     if (m_has_wrapTopAndBottom)
     {
-        m_wrapTopAndBottom->toXmlElem("wrapTopAndBottom", "", _outStream);;
+        m_wrapTopAndBottom->toXmlElem("wp:wrapTopAndBottom", "", _outStream);;
     }
      
-    if (m_has_a_docPr)
+    if (m_has_docPr)
     {
-        m_a_docPr->toXmlElem("a:docPr", "", _outStream);;
+        m_docPr->toXmlElem("wp:docPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvGraphicFramePr)
+    if (m_has_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);;
+        m_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);;
     }
     
     if (m_has_a_graphic)
@@ -2981,6 +3144,10 @@ CT_PosV* CT_PosV::default_instance_ = NULL;
 CT_Anchor* CT_Anchor::default_instance_ = NULL;
 
     // CT_TxbxContent
+    CT_TxbxContent::CT_TxbxContent()
+
+    {
+    }
     void CT_TxbxContent::clear()
     {    }
 
@@ -3010,6 +3177,15 @@ CT_Anchor* CT_Anchor::default_instance_ = NULL;
 CT_TxbxContent* CT_TxbxContent::default_instance_ = NULL;
 
     // CT_TextboxInfo
+    CT_TextboxInfo::CT_TextboxInfo()
+    :m_has_txbxContent(false),
+    m_txbxContent(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_id_attr(false),
+    m_id_attr(0)
+    {
+    }
     bool CT_TextboxInfo::has_txbxContent() const
     {    
     return m_has_txbxContent;
@@ -3034,26 +3210,26 @@ CT_TxbxContent* CT_TxbxContent::default_instance_ = NULL;
     return CT_TxbxContent::default_instance();
     }
 
-    bool CT_TextboxInfo::has_a_extLst() const
+    bool CT_TextboxInfo::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_TextboxInfo::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_TextboxInfo::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_TextboxInfo::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_TextboxInfo::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -3082,12 +3258,12 @@ CT_TxbxContent* CT_TxbxContent::default_instance_ = NULL;
             
     if (m_has_txbxContent)
     {
-        m_txbxContent->toXmlElem("txbxContent", "", _outStream);;
+        m_txbxContent->toXmlElem("wp:txbxContent", "", _outStream);;
     }
     
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3121,26 +3297,35 @@ CT_TxbxContent* CT_TxbxContent::default_instance_ = NULL;
 CT_TextboxInfo* CT_TextboxInfo::default_instance_ = NULL;
 
     // CT_LinkedTextboxInformation
-    bool CT_LinkedTextboxInformation::has_a_extLst() const
+    CT_LinkedTextboxInformation::CT_LinkedTextboxInformation()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_id_attr(false),
+    m_id_attr(0),
+    m_has_seq_attr(false),
+    m_seq_attr(0)
+    {
+    }
+    bool CT_LinkedTextboxInformation::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_LinkedTextboxInformation::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_LinkedTextboxInformation::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_LinkedTextboxInformation::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_LinkedTextboxInformation::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -3176,9 +3361,9 @@ CT_TextboxInfo* CT_TextboxInfo::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3228,166 +3413,189 @@ CT_TextboxInfo* CT_TextboxInfo::default_instance_ = NULL;
 CT_LinkedTextboxInformation* CT_LinkedTextboxInformation::default_instance_ = NULL;
 
     // CT_WordprocessingShape
-    bool CT_WordprocessingShape::has_a_cNvPr() const
+    CT_WordprocessingShape::CT_WordprocessingShape()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvSpPr(false),
+    m_cNvSpPr(NULL),
+    m_has_cNvCnPr(false),
+    m_cNvCnPr(NULL),
+    m_has_spPr(false),
+    m_spPr(NULL),
+    m_has_style(false),
+    m_style(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_txbx(false),
+    m_txbx(NULL),
+    m_has_linkedTxbx(false),
+    m_linkedTxbx(NULL),
+    m_has_bodyPr(false),
+    m_bodyPr(NULL),
+    m_has_normalEastAsianFlow_attr(false),
+    m_normalEastAsianFlow_attr(false)
+    {
+    }
+    bool CT_WordprocessingShape::has_cNvPr() const
     {    
-    return m_has_a_cNvPr;
+    return m_has_cNvPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* CT_WordprocessingShape::mutable_a_cNvPr()
+    ns_a::CT_NonVisualDrawingProps* CT_WordprocessingShape::mutable_cNvPr()
     {    
-    m_has_a_cNvPr = true;
-    if (!m_a_cNvPr)
+    m_has_cNvPr = true;
+    if (!m_cNvPr)
     {
-        m_a_cNvPr = new ns_a::CT_NonVisualDrawingProps();
+        m_cNvPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_cNvPr;
+    return m_cNvPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& CT_WordprocessingShape::get_a_cNvPr() const
+    const ns_a::CT_NonVisualDrawingProps& CT_WordprocessingShape::get_cNvPr() const
     {    
-    if (m_a_cNvPr)
+    if (m_cNvPr)
     {
-        return *m_a_cNvPr;
+        return *m_cNvPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool CT_WordprocessingShape::has_a_cNvSpPr() const
+    bool CT_WordprocessingShape::has_cNvSpPr() const
     {    
-    return m_has_a_cNvSpPr;
+    return m_has_cNvSpPr;
     }
 
-    ns_a::CT_NonVisualDrawingShapeProps* CT_WordprocessingShape::mutable_a_cNvSpPr()
+    ns_a::CT_NonVisualDrawingShapeProps* CT_WordprocessingShape::mutable_cNvSpPr()
     {    
     
-    m_has_a_cNvCnPr = false;
+    m_has_cNvCnPr = false;
     
-    if (m_a_cNvCnPr)
+    if (m_cNvCnPr)
     {
-        delete m_a_cNvCnPr;
-        m_a_cNvCnPr = NULL;
+        delete m_cNvCnPr;
+        m_cNvCnPr = NULL;
     }
     ;
     
-    m_has_a_cNvSpPr = true;
-    if (!m_a_cNvSpPr)
+    m_has_cNvSpPr = true;
+    if (!m_cNvSpPr)
     {
-        m_a_cNvSpPr = new ns_a::CT_NonVisualDrawingShapeProps();
+        m_cNvSpPr = new ns_a::CT_NonVisualDrawingShapeProps();
     }
-    return m_a_cNvSpPr;
+    return m_cNvSpPr;
     }
 
-    const ns_a::CT_NonVisualDrawingShapeProps& CT_WordprocessingShape::get_a_cNvSpPr() const
+    const ns_a::CT_NonVisualDrawingShapeProps& CT_WordprocessingShape::get_cNvSpPr() const
     {    
-    if (m_a_cNvSpPr)
+    if (m_cNvSpPr)
     {
-        return *m_a_cNvSpPr;
+        return *m_cNvSpPr;
     }
     return ns_a::CT_NonVisualDrawingShapeProps::default_instance();
     }
 
-    bool CT_WordprocessingShape::has_a_cNvCnPr() const
+    bool CT_WordprocessingShape::has_cNvCnPr() const
     {    
-    return m_has_a_cNvCnPr;
+    return m_has_cNvCnPr;
     }
 
-    ns_a::CT_NonVisualConnectorProperties* CT_WordprocessingShape::mutable_a_cNvCnPr()
+    ns_a::CT_NonVisualConnectorProperties* CT_WordprocessingShape::mutable_cNvCnPr()
     {    
     
-    m_has_a_cNvSpPr = false;
+    m_has_cNvSpPr = false;
     
-    if (m_a_cNvSpPr)
+    if (m_cNvSpPr)
     {
-        delete m_a_cNvSpPr;
-        m_a_cNvSpPr = NULL;
+        delete m_cNvSpPr;
+        m_cNvSpPr = NULL;
     }
     ;
     
-    m_has_a_cNvCnPr = true;
-    if (!m_a_cNvCnPr)
+    m_has_cNvCnPr = true;
+    if (!m_cNvCnPr)
     {
-        m_a_cNvCnPr = new ns_a::CT_NonVisualConnectorProperties();
+        m_cNvCnPr = new ns_a::CT_NonVisualConnectorProperties();
     }
-    return m_a_cNvCnPr;
+    return m_cNvCnPr;
     }
 
-    const ns_a::CT_NonVisualConnectorProperties& CT_WordprocessingShape::get_a_cNvCnPr() const
+    const ns_a::CT_NonVisualConnectorProperties& CT_WordprocessingShape::get_cNvCnPr() const
     {    
-    if (m_a_cNvCnPr)
+    if (m_cNvCnPr)
     {
-        return *m_a_cNvCnPr;
+        return *m_cNvCnPr;
     }
     return ns_a::CT_NonVisualConnectorProperties::default_instance();
     }
 
-    bool CT_WordprocessingShape::has_a_spPr() const
+    bool CT_WordprocessingShape::has_spPr() const
     {    
-    return m_has_a_spPr;
+    return m_has_spPr;
     }
 
-    ns_a::CT_ShapeProperties* CT_WordprocessingShape::mutable_a_spPr()
+    ns_a::CT_ShapeProperties* CT_WordprocessingShape::mutable_spPr()
     {    
-    m_has_a_spPr = true;
-    if (!m_a_spPr)
+    m_has_spPr = true;
+    if (!m_spPr)
     {
-        m_a_spPr = new ns_a::CT_ShapeProperties();
+        m_spPr = new ns_a::CT_ShapeProperties();
     }
-    return m_a_spPr;
+    return m_spPr;
     }
 
-    const ns_a::CT_ShapeProperties& CT_WordprocessingShape::get_a_spPr() const
+    const ns_a::CT_ShapeProperties& CT_WordprocessingShape::get_spPr() const
     {    
-    if (m_a_spPr)
+    if (m_spPr)
     {
-        return *m_a_spPr;
+        return *m_spPr;
     }
     return ns_a::CT_ShapeProperties::default_instance();
     }
 
-    bool CT_WordprocessingShape::has_a_style() const
+    bool CT_WordprocessingShape::has_style() const
     {    
-    return m_has_a_style;
+    return m_has_style;
     }
 
-    ns_a::CT_ShapeStyle* CT_WordprocessingShape::mutable_a_style()
+    ns_a::CT_ShapeStyle* CT_WordprocessingShape::mutable_style()
     {    
-    m_has_a_style = true;
-    if (!m_a_style)
+    m_has_style = true;
+    if (!m_style)
     {
-        m_a_style = new ns_a::CT_ShapeStyle();
+        m_style = new ns_a::CT_ShapeStyle();
     }
-    return m_a_style;
+    return m_style;
     }
 
-    const ns_a::CT_ShapeStyle& CT_WordprocessingShape::get_a_style() const
+    const ns_a::CT_ShapeStyle& CT_WordprocessingShape::get_style() const
     {    
-    if (m_a_style)
+    if (m_style)
     {
-        return *m_a_style;
+        return *m_style;
     }
     return ns_a::CT_ShapeStyle::default_instance();
     }
 
-    bool CT_WordprocessingShape::has_a_extLst() const
+    bool CT_WordprocessingShape::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_WordprocessingShape::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_WordprocessingShape::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_WordprocessingShape::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_WordprocessingShape::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -3460,26 +3668,26 @@ CT_LinkedTextboxInformation* CT_LinkedTextboxInformation::default_instance_ = NU
     return CT_LinkedTextboxInformation::default_instance();
     }
 
-    bool CT_WordprocessingShape::has_a_bodyPr() const
+    bool CT_WordprocessingShape::has_bodyPr() const
     {    
-    return m_has_a_bodyPr;
+    return m_has_bodyPr;
     }
 
-    ns_a::CT_TextBodyProperties* CT_WordprocessingShape::mutable_a_bodyPr()
+    ns_a::CT_TextBodyProperties* CT_WordprocessingShape::mutable_bodyPr()
     {    
-    m_has_a_bodyPr = true;
-    if (!m_a_bodyPr)
+    m_has_bodyPr = true;
+    if (!m_bodyPr)
     {
-        m_a_bodyPr = new ns_a::CT_TextBodyProperties();
+        m_bodyPr = new ns_a::CT_TextBodyProperties();
     }
-    return m_a_bodyPr;
+    return m_bodyPr;
     }
 
-    const ns_a::CT_TextBodyProperties& CT_WordprocessingShape::get_a_bodyPr() const
+    const ns_a::CT_TextBodyProperties& CT_WordprocessingShape::get_bodyPr() const
     {    
-    if (m_a_bodyPr)
+    if (m_bodyPr)
     {
-        return *m_a_bodyPr;
+        return *m_bodyPr;
     }
     return ns_a::CT_TextBodyProperties::default_instance();
     }
@@ -3506,49 +3714,49 @@ CT_LinkedTextboxInformation* CT_LinkedTextboxInformation::default_instance_ = NU
     
             _outStream << ">";
             
-    if (m_has_a_cNvPr)
+    if (m_has_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
     }
      
-    if (m_has_a_cNvSpPr)
+    if (m_has_cNvSpPr)
     {
-        m_a_cNvSpPr->toXmlElem("a:cNvSpPr", "", _outStream);;
+        m_cNvSpPr->toXmlElem("wp:cNvSpPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvCnPr)
+    if (m_has_cNvCnPr)
     {
-        m_a_cNvCnPr->toXmlElem("a:cNvCnPr", "", _outStream);;
+        m_cNvCnPr->toXmlElem("wp:cNvCnPr", "", _outStream);;
     }
      
-    if (m_has_a_spPr)
+    if (m_has_spPr)
     {
-        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
+        m_spPr->toXmlElem("wp:spPr", "", _outStream);;
     }
     
-    if (m_has_a_style)
+    if (m_has_style)
     {
-        m_a_style->toXmlElem("a:style", "", _outStream);;
+        m_style->toXmlElem("wp:style", "", _outStream);;
     }
     
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
     }
      
     if (m_has_txbx)
     {
-        m_txbx->toXmlElem("txbx", "", _outStream);;
+        m_txbx->toXmlElem("wp:txbx", "", _outStream);;
     }
     
     if (m_has_linkedTxbx)
     {
-        m_linkedTxbx->toXmlElem("linkedTxbx", "", _outStream);;
+        m_linkedTxbx->toXmlElem("wp:linkedTxbx", "", _outStream);;
     }
      
-    if (m_has_a_bodyPr)
+    if (m_has_bodyPr)
     {
-        m_a_bodyPr->toXmlElem("a:bodyPr", "", _outStream);;
+        m_bodyPr->toXmlElem("wp:bodyPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3582,74 +3790,87 @@ CT_LinkedTextboxInformation* CT_LinkedTextboxInformation::default_instance_ = NU
 CT_WordprocessingShape* CT_WordprocessingShape::default_instance_ = NULL;
 
     // CT_GraphicFrame
-    bool CT_GraphicFrame::has_a_cNvPr() const
+    CT_GraphicFrame::CT_GraphicFrame()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvFrPr(false),
+    m_cNvFrPr(NULL),
+    m_has_xfrm(false),
+    m_xfrm(NULL),
+    m_has_a_graphic(false),
+    m_a_graphic(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
+    bool CT_GraphicFrame::has_cNvPr() const
     {    
-    return m_has_a_cNvPr;
+    return m_has_cNvPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* CT_GraphicFrame::mutable_a_cNvPr()
+    ns_a::CT_NonVisualDrawingProps* CT_GraphicFrame::mutable_cNvPr()
     {    
-    m_has_a_cNvPr = true;
-    if (!m_a_cNvPr)
+    m_has_cNvPr = true;
+    if (!m_cNvPr)
     {
-        m_a_cNvPr = new ns_a::CT_NonVisualDrawingProps();
+        m_cNvPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_cNvPr;
+    return m_cNvPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& CT_GraphicFrame::get_a_cNvPr() const
+    const ns_a::CT_NonVisualDrawingProps& CT_GraphicFrame::get_cNvPr() const
     {    
-    if (m_a_cNvPr)
+    if (m_cNvPr)
     {
-        return *m_a_cNvPr;
+        return *m_cNvPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool CT_GraphicFrame::has_a_cNvFrPr() const
+    bool CT_GraphicFrame::has_cNvFrPr() const
     {    
-    return m_has_a_cNvFrPr;
+    return m_has_cNvFrPr;
     }
 
-    ns_a::CT_NonVisualGraphicFrameProperties* CT_GraphicFrame::mutable_a_cNvFrPr()
+    ns_a::CT_NonVisualGraphicFrameProperties* CT_GraphicFrame::mutable_cNvFrPr()
     {    
-    m_has_a_cNvFrPr = true;
-    if (!m_a_cNvFrPr)
+    m_has_cNvFrPr = true;
+    if (!m_cNvFrPr)
     {
-        m_a_cNvFrPr = new ns_a::CT_NonVisualGraphicFrameProperties();
+        m_cNvFrPr = new ns_a::CT_NonVisualGraphicFrameProperties();
     }
-    return m_a_cNvFrPr;
+    return m_cNvFrPr;
     }
 
-    const ns_a::CT_NonVisualGraphicFrameProperties& CT_GraphicFrame::get_a_cNvFrPr() const
+    const ns_a::CT_NonVisualGraphicFrameProperties& CT_GraphicFrame::get_cNvFrPr() const
     {    
-    if (m_a_cNvFrPr)
+    if (m_cNvFrPr)
     {
-        return *m_a_cNvFrPr;
+        return *m_cNvFrPr;
     }
     return ns_a::CT_NonVisualGraphicFrameProperties::default_instance();
     }
 
-    bool CT_GraphicFrame::has_a_xfrm() const
+    bool CT_GraphicFrame::has_xfrm() const
     {    
-    return m_has_a_xfrm;
+    return m_has_xfrm;
     }
 
-    ns_a::CT_Transform2D* CT_GraphicFrame::mutable_a_xfrm()
+    ns_a::CT_Transform2D* CT_GraphicFrame::mutable_xfrm()
     {    
-    m_has_a_xfrm = true;
-    if (!m_a_xfrm)
+    m_has_xfrm = true;
+    if (!m_xfrm)
     {
-        m_a_xfrm = new ns_a::CT_Transform2D();
+        m_xfrm = new ns_a::CT_Transform2D();
     }
-    return m_a_xfrm;
+    return m_xfrm;
     }
 
-    const ns_a::CT_Transform2D& CT_GraphicFrame::get_a_xfrm() const
+    const ns_a::CT_Transform2D& CT_GraphicFrame::get_xfrm() const
     {    
-    if (m_a_xfrm)
+    if (m_xfrm)
     {
-        return *m_a_xfrm;
+        return *m_xfrm;
     }
     return ns_a::CT_Transform2D::default_instance();
     }
@@ -3678,26 +3899,26 @@ CT_WordprocessingShape* CT_WordprocessingShape::default_instance_ = NULL;
     return ns_a::CT_GraphicalObject::default_instance();
     }
 
-    bool CT_GraphicFrame::has_a_extLst() const
+    bool CT_GraphicFrame::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_GraphicFrame::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_GraphicFrame::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_GraphicFrame::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_GraphicFrame::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -3716,19 +3937,19 @@ CT_WordprocessingShape* CT_WordprocessingShape::default_instance_ = NULL;
             
             _outStream << ">";
             
-    if (m_has_a_cNvPr)
+    if (m_has_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvFrPr)
+    if (m_has_cNvFrPr)
     {
-        m_a_cNvFrPr->toXmlElem("a:cNvFrPr", "", _outStream);;
+        m_cNvFrPr->toXmlElem("wp:cNvFrPr", "", _outStream);;
     }
     
-    if (m_has_a_xfrm)
+    if (m_has_xfrm)
     {
-        m_a_xfrm->toXmlElem("a:xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("wp:xfrm", "", _outStream);;
     }
     
     if (m_has_a_graphic)
@@ -3736,9 +3957,9 @@ CT_WordprocessingShape* CT_WordprocessingShape::default_instance_ = NULL;
         m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
     }
     
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3756,50 +3977,57 @@ CT_WordprocessingShape* CT_WordprocessingShape::default_instance_ = NULL;
 CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
 
     // CT_WordprocessingContentPartNonVisual
-    bool CT_WordprocessingContentPartNonVisual::has_a_cNvPr() const
+    CT_WordprocessingContentPartNonVisual::CT_WordprocessingContentPartNonVisual()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvContentPartPr(false),
+    m_cNvContentPartPr(NULL)
+    {
+    }
+    bool CT_WordprocessingContentPartNonVisual::has_cNvPr() const
     {    
-    return m_has_a_cNvPr;
+    return m_has_cNvPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* CT_WordprocessingContentPartNonVisual::mutable_a_cNvPr()
+    ns_a::CT_NonVisualDrawingProps* CT_WordprocessingContentPartNonVisual::mutable_cNvPr()
     {    
-    m_has_a_cNvPr = true;
-    if (!m_a_cNvPr)
+    m_has_cNvPr = true;
+    if (!m_cNvPr)
     {
-        m_a_cNvPr = new ns_a::CT_NonVisualDrawingProps();
+        m_cNvPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_cNvPr;
+    return m_cNvPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& CT_WordprocessingContentPartNonVisual::get_a_cNvPr() const
+    const ns_a::CT_NonVisualDrawingProps& CT_WordprocessingContentPartNonVisual::get_cNvPr() const
     {    
-    if (m_a_cNvPr)
+    if (m_cNvPr)
     {
-        return *m_a_cNvPr;
+        return *m_cNvPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool CT_WordprocessingContentPartNonVisual::has_a_cNvContentPartPr() const
+    bool CT_WordprocessingContentPartNonVisual::has_cNvContentPartPr() const
     {    
-    return m_has_a_cNvContentPartPr;
+    return m_has_cNvContentPartPr;
     }
 
-    ns_a::CT_NonVisualContentPartProperties* CT_WordprocessingContentPartNonVisual::mutable_a_cNvContentPartPr()
+    ns_a::CT_NonVisualContentPartProperties* CT_WordprocessingContentPartNonVisual::mutable_cNvContentPartPr()
     {    
-    m_has_a_cNvContentPartPr = true;
-    if (!m_a_cNvContentPartPr)
+    m_has_cNvContentPartPr = true;
+    if (!m_cNvContentPartPr)
     {
-        m_a_cNvContentPartPr = new ns_a::CT_NonVisualContentPartProperties();
+        m_cNvContentPartPr = new ns_a::CT_NonVisualContentPartProperties();
     }
-    return m_a_cNvContentPartPr;
+    return m_cNvContentPartPr;
     }
 
-    const ns_a::CT_NonVisualContentPartProperties& CT_WordprocessingContentPartNonVisual::get_a_cNvContentPartPr() const
+    const ns_a::CT_NonVisualContentPartProperties& CT_WordprocessingContentPartNonVisual::get_cNvContentPartPr() const
     {    
-    if (m_a_cNvContentPartPr)
+    if (m_cNvContentPartPr)
     {
-        return *m_a_cNvContentPartPr;
+        return *m_cNvContentPartPr;
     }
     return ns_a::CT_NonVisualContentPartProperties::default_instance();
     }
@@ -3818,14 +4046,14 @@ CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
             
             _outStream << ">";
             
-    if (m_has_a_cNvPr)
+    if (m_has_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvContentPartPr)
+    if (m_has_cNvContentPartPr)
     {
-        m_a_cNvContentPartPr->toXmlElem("a:cNvContentPartPr", "", _outStream);;
+        m_cNvContentPartPr->toXmlElem("wp:cNvContentPartPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3843,6 +4071,19 @@ CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
 CT_WordprocessingContentPartNonVisual* CT_WordprocessingContentPartNonVisual::default_instance_ = NULL;
 
     // CT_WordprocessingContentPart
+    CT_WordprocessingContentPart::CT_WordprocessingContentPart()
+    :m_has_nvContentPartPr(false),
+    m_nvContentPartPr(NULL),
+    m_has_xfrm(false),
+    m_xfrm(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_bwMode_attr(false),
+    m_bwMode_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     bool CT_WordprocessingContentPart::has_nvContentPartPr() const
     {    
     return m_has_nvContentPartPr;
@@ -3867,62 +4108,62 @@ CT_WordprocessingContentPartNonVisual* CT_WordprocessingContentPartNonVisual::de
     return CT_WordprocessingContentPartNonVisual::default_instance();
     }
 
-    bool CT_WordprocessingContentPart::has_a_xfrm() const
+    bool CT_WordprocessingContentPart::has_xfrm() const
     {    
-    return m_has_a_xfrm;
+    return m_has_xfrm;
     }
 
-    ns_a::CT_Transform2D* CT_WordprocessingContentPart::mutable_a_xfrm()
+    ns_a::CT_Transform2D* CT_WordprocessingContentPart::mutable_xfrm()
     {    
-    m_has_a_xfrm = true;
-    if (!m_a_xfrm)
+    m_has_xfrm = true;
+    if (!m_xfrm)
     {
-        m_a_xfrm = new ns_a::CT_Transform2D();
+        m_xfrm = new ns_a::CT_Transform2D();
     }
-    return m_a_xfrm;
+    return m_xfrm;
     }
 
-    const ns_a::CT_Transform2D& CT_WordprocessingContentPart::get_a_xfrm() const
+    const ns_a::CT_Transform2D& CT_WordprocessingContentPart::get_xfrm() const
     {    
-    if (m_a_xfrm)
+    if (m_xfrm)
     {
-        return *m_a_xfrm;
+        return *m_xfrm;
     }
     return ns_a::CT_Transform2D::default_instance();
     }
 
-    bool CT_WordprocessingContentPart::has_a_extLst() const
+    bool CT_WordprocessingContentPart::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_WordprocessingContentPart::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_WordprocessingContentPart::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_WordprocessingContentPart::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_WordprocessingContentPart::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
 
     void CT_WordprocessingContentPart::clear()
     {    
-    m_has_a_bwMode_attr = false;
+    m_has_bwMode_attr = false;
     
-    if (m_a_bwMode_attr)
+    if (m_bwMode_attr)
     {
-        delete m_a_bwMode_attr;
-        m_a_bwMode_attr = NULL;
+        delete m_bwMode_attr;
+        m_bwMode_attr = NULL;
     }
     
     
@@ -3945,32 +4186,32 @@ CT_WordprocessingContentPartNonVisual* CT_WordprocessingContentPartNonVisual::de
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_a_bwMode_attr)
+    if (m_has_bwMode_attr)
     {
-        m_a_bwMode_attr->toXmlAttr("bwMode", _outStream);
+        m_bwMode_attr->toXmlAttr("bwMode", _outStream);
     }
     
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_nvContentPartPr)
     {
-        m_nvContentPartPr->toXmlElem("nvContentPartPr", "", _outStream);;
+        m_nvContentPartPr->toXmlElem("wp:nvContentPartPr", "", _outStream);;
     }
     
-    if (m_has_a_xfrm)
+    if (m_has_xfrm)
     {
-        m_a_xfrm->toXmlElem("a:xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("wp:xfrm", "", _outStream);;
     }
     
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3985,22 +4226,22 @@ CT_WordprocessingContentPartNonVisual* CT_WordprocessingContentPartNonVisual::de
     return *CT_WordprocessingContentPart::default_instance_;
     }
 
-    bool CT_WordprocessingContentPart::has_a_bwMode_attr() const
+    bool CT_WordprocessingContentPart::has_bwMode_attr() const
     {    
-    return m_has_a_bwMode_attr;
+    return m_has_bwMode_attr;
     }
 
-    void CT_WordprocessingContentPart::set_a_bwMode_attr(const ns_a::ST_BlackWhiteMode& _a_bwMode_attr)
+    void CT_WordprocessingContentPart::set_bwMode_attr(const ns_a::ST_BlackWhiteMode& _bwMode_attr)
     {    
-    m_has_a_bwMode_attr = true;
-    m_a_bwMode_attr = new ns_a::ST_BlackWhiteMode(_a_bwMode_attr);
+    m_has_bwMode_attr = true;
+    m_bwMode_attr = new ns_a::ST_BlackWhiteMode(_bwMode_attr);
     }
 
-    const ns_a::ST_BlackWhiteMode& CT_WordprocessingContentPart::get_a_bwMode_attr() const
+    const ns_a::ST_BlackWhiteMode& CT_WordprocessingContentPart::get_bwMode_attr() const
     {    
-    if (m_a_bwMode_attr)
+    if (m_bwMode_attr)
     {
-        return *m_a_bwMode_attr;
+        return *m_bwMode_attr;
     }
     return ns_a::ST_BlackWhiteMode::default_instance();
     }
@@ -4028,74 +4269,85 @@ CT_WordprocessingContentPartNonVisual* CT_WordprocessingContentPartNonVisual::de
 CT_WordprocessingContentPart* CT_WordprocessingContentPart::default_instance_ = NULL;
 
     // CT_WordprocessingGroup
-    bool CT_WordprocessingGroup::has_a_cNvPr() const
+    CT_WordprocessingGroup::CT_WordprocessingGroup()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvGrpSpPr(false),
+    m_cNvGrpSpPr(NULL),
+    m_has_grpSpPr(false),
+    m_grpSpPr(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
+    bool CT_WordprocessingGroup::has_cNvPr() const
     {    
-    return m_has_a_cNvPr;
+    return m_has_cNvPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* CT_WordprocessingGroup::mutable_a_cNvPr()
+    ns_a::CT_NonVisualDrawingProps* CT_WordprocessingGroup::mutable_cNvPr()
     {    
-    m_has_a_cNvPr = true;
-    if (!m_a_cNvPr)
+    m_has_cNvPr = true;
+    if (!m_cNvPr)
     {
-        m_a_cNvPr = new ns_a::CT_NonVisualDrawingProps();
+        m_cNvPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_cNvPr;
+    return m_cNvPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& CT_WordprocessingGroup::get_a_cNvPr() const
+    const ns_a::CT_NonVisualDrawingProps& CT_WordprocessingGroup::get_cNvPr() const
     {    
-    if (m_a_cNvPr)
+    if (m_cNvPr)
     {
-        return *m_a_cNvPr;
+        return *m_cNvPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool CT_WordprocessingGroup::has_a_cNvGrpSpPr() const
+    bool CT_WordprocessingGroup::has_cNvGrpSpPr() const
     {    
-    return m_has_a_cNvGrpSpPr;
+    return m_has_cNvGrpSpPr;
     }
 
-    ns_a::CT_NonVisualGroupDrawingShapeProps* CT_WordprocessingGroup::mutable_a_cNvGrpSpPr()
+    ns_a::CT_NonVisualGroupDrawingShapeProps* CT_WordprocessingGroup::mutable_cNvGrpSpPr()
     {    
-    m_has_a_cNvGrpSpPr = true;
-    if (!m_a_cNvGrpSpPr)
+    m_has_cNvGrpSpPr = true;
+    if (!m_cNvGrpSpPr)
     {
-        m_a_cNvGrpSpPr = new ns_a::CT_NonVisualGroupDrawingShapeProps();
+        m_cNvGrpSpPr = new ns_a::CT_NonVisualGroupDrawingShapeProps();
     }
-    return m_a_cNvGrpSpPr;
+    return m_cNvGrpSpPr;
     }
 
-    const ns_a::CT_NonVisualGroupDrawingShapeProps& CT_WordprocessingGroup::get_a_cNvGrpSpPr() const
+    const ns_a::CT_NonVisualGroupDrawingShapeProps& CT_WordprocessingGroup::get_cNvGrpSpPr() const
     {    
-    if (m_a_cNvGrpSpPr)
+    if (m_cNvGrpSpPr)
     {
-        return *m_a_cNvGrpSpPr;
+        return *m_cNvGrpSpPr;
     }
     return ns_a::CT_NonVisualGroupDrawingShapeProps::default_instance();
     }
 
-    bool CT_WordprocessingGroup::has_a_grpSpPr() const
+    bool CT_WordprocessingGroup::has_grpSpPr() const
     {    
-    return m_has_a_grpSpPr;
+    return m_has_grpSpPr;
     }
 
-    ns_a::CT_GroupShapeProperties* CT_WordprocessingGroup::mutable_a_grpSpPr()
+    ns_a::CT_GroupShapeProperties* CT_WordprocessingGroup::mutable_grpSpPr()
     {    
-    m_has_a_grpSpPr = true;
-    if (!m_a_grpSpPr)
+    m_has_grpSpPr = true;
+    if (!m_grpSpPr)
     {
-        m_a_grpSpPr = new ns_a::CT_GroupShapeProperties();
+        m_grpSpPr = new ns_a::CT_GroupShapeProperties();
     }
-    return m_a_grpSpPr;
+    return m_grpSpPr;
     }
 
-    const ns_a::CT_GroupShapeProperties& CT_WordprocessingGroup::get_a_grpSpPr() const
+    const ns_a::CT_GroupShapeProperties& CT_WordprocessingGroup::get_grpSpPr() const
     {    
-    if (m_a_grpSpPr)
+    if (m_grpSpPr)
     {
-        return *m_a_grpSpPr;
+        return *m_grpSpPr;
     }
     return ns_a::CT_GroupShapeProperties::default_instance();
     }
@@ -4140,56 +4392,56 @@ CT_WordprocessingContentPart* CT_WordprocessingContentPart::default_instance_ = 
     return pNewChild;
     }
 
-    bool CT_WordprocessingGroup::has_a_extLst() const
+    bool CT_WordprocessingGroup::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_WordprocessingGroup::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_WordprocessingGroup::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_WordprocessingGroup::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_WordprocessingGroup::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
 
     void CT_WordprocessingGroup::clear()
     {    
-    m_has_a_cNvPr = false;
+    m_has_cNvPr = false;
     
-    if (m_a_cNvPr)
+    if (m_cNvPr)
     {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
+        delete m_cNvPr;
+        m_cNvPr = NULL;
     }
     
     
-    m_has_a_cNvGrpSpPr = false;
+    m_has_cNvGrpSpPr = false;
     
-    if (m_a_cNvGrpSpPr)
+    if (m_cNvGrpSpPr)
     {
-        delete m_a_cNvGrpSpPr;
-        m_a_cNvGrpSpPr = NULL;
+        delete m_cNvGrpSpPr;
+        m_cNvGrpSpPr = NULL;
     }
     
     
-    m_has_a_grpSpPr = false;
+    m_has_grpSpPr = false;
     
-    if (m_a_grpSpPr)
+    if (m_grpSpPr)
     {
-        delete m_a_grpSpPr;
-        m_a_grpSpPr = NULL;
+        delete m_grpSpPr;
+        m_grpSpPr = NULL;
     }
     
      
@@ -4202,12 +4454,12 @@ CT_WordprocessingContentPart* CT_WordprocessingContentPart::default_instance_ = 
         m_childGroupList_1.clear();
     }
      
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     
     }
@@ -4223,19 +4475,19 @@ CT_WordprocessingContentPart* CT_WordprocessingContentPart::default_instance_ = 
             
             _outStream << ">";
             
-    if (m_has_a_cNvPr)
+    if (m_has_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvGrpSpPr)
+    if (m_has_cNvGrpSpPr)
     {
-        m_a_cNvGrpSpPr->toXmlElem("a:cNvGrpSpPr", "", _outStream);;
+        m_cNvGrpSpPr->toXmlElem("wp:cNvGrpSpPr", "", _outStream);;
     }
     
-    if (m_has_a_grpSpPr)
+    if (m_has_grpSpPr)
     {
-        m_a_grpSpPr->toXmlElem("a:grpSpPr", "", _outStream);;
+        m_grpSpPr->toXmlElem("wp:grpSpPr", "", _outStream);;
     }
      
     {
@@ -4244,15 +4496,15 @@ CT_WordprocessingContentPart* CT_WordprocessingContentPart::default_instance_ = 
         {
             if ((*iter)->has_wsp())
             {
-                (*iter)->get_wsp().toXmlElem("wsp", "", _outStream);
+                (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
             }
             else if ((*iter)->has_grpSp())
             {
-                (*iter)->get_grpSp().toXmlElem("grpSp", "", _outStream);
+                (*iter)->get_grpSp().toXmlElem("wp:grpSp", "", _outStream);
             }
             else if ((*iter)->has_graphicFrame())
             {
-                (*iter)->get_graphicFrame().toXmlElem("graphicFrame", "", _outStream);
+                (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
             }
             else if ((*iter)->has_dpct_pic())
             {
@@ -4260,14 +4512,14 @@ CT_WordprocessingContentPart* CT_WordprocessingContentPart::default_instance_ = 
             }
             else if ((*iter)->has_contentPart())
             {
-                (*iter)->get_contentPart().toXmlElem("contentPart", "", _outStream);
+                (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
             }
         }
     }
      
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4284,6 +4536,19 @@ CT_WordprocessingContentPart* CT_WordprocessingContentPart::default_instance_ = 
 
 
     // CT_WordprocessingGroup::ChildGroup_1
+    CT_WordprocessingGroup::ChildGroup_1::ChildGroup_1()
+    :m_has_wsp(false),
+    m_wsp(NULL),
+    m_has_grpSp(false),
+    m_grpSp(NULL),
+    m_has_graphicFrame(false),
+    m_graphicFrame(NULL),
+    m_has_dpct_pic(false),
+    m_dpct_pic(NULL),
+    m_has_contentPart(false),
+    m_contentPart(NULL)
+    {
+    }
     bool CT_WordprocessingGroup::ChildGroup_1::has_wsp() const
     {    
     return m_has_wsp;
@@ -4592,50 +4857,59 @@ CT_WordprocessingContentPart* CT_WordprocessingContentPart::default_instance_ = 
 CT_WordprocessingGroup* CT_WordprocessingGroup::default_instance_ = NULL;
 
     // CT_WordprocessingCanvas
-    bool CT_WordprocessingCanvas::has_a_bg() const
+    CT_WordprocessingCanvas::CT_WordprocessingCanvas()
+    :m_has_bg(false),
+    m_bg(NULL),
+    m_has_whole(false),
+    m_whole(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
+    bool CT_WordprocessingCanvas::has_bg() const
     {    
-    return m_has_a_bg;
+    return m_has_bg;
     }
 
-    ns_a::CT_BackgroundFormatting* CT_WordprocessingCanvas::mutable_a_bg()
+    ns_a::CT_BackgroundFormatting* CT_WordprocessingCanvas::mutable_bg()
     {    
-    m_has_a_bg = true;
-    if (!m_a_bg)
+    m_has_bg = true;
+    if (!m_bg)
     {
-        m_a_bg = new ns_a::CT_BackgroundFormatting();
+        m_bg = new ns_a::CT_BackgroundFormatting();
     }
-    return m_a_bg;
+    return m_bg;
     }
 
-    const ns_a::CT_BackgroundFormatting& CT_WordprocessingCanvas::get_a_bg() const
+    const ns_a::CT_BackgroundFormatting& CT_WordprocessingCanvas::get_bg() const
     {    
-    if (m_a_bg)
+    if (m_bg)
     {
-        return *m_a_bg;
+        return *m_bg;
     }
     return ns_a::CT_BackgroundFormatting::default_instance();
     }
 
-    bool CT_WordprocessingCanvas::has_a_whole() const
+    bool CT_WordprocessingCanvas::has_whole() const
     {    
-    return m_has_a_whole;
+    return m_has_whole;
     }
 
-    ns_a::CT_WholeE2oFormatting* CT_WordprocessingCanvas::mutable_a_whole()
+    ns_a::CT_WholeE2oFormatting* CT_WordprocessingCanvas::mutable_whole()
     {    
-    m_has_a_whole = true;
-    if (!m_a_whole)
+    m_has_whole = true;
+    if (!m_whole)
     {
-        m_a_whole = new ns_a::CT_WholeE2oFormatting();
+        m_whole = new ns_a::CT_WholeE2oFormatting();
     }
-    return m_a_whole;
+    return m_whole;
     }
 
-    const ns_a::CT_WholeE2oFormatting& CT_WordprocessingCanvas::get_a_whole() const
+    const ns_a::CT_WholeE2oFormatting& CT_WordprocessingCanvas::get_whole() const
     {    
-    if (m_a_whole)
+    if (m_whole)
     {
-        return *m_a_whole;
+        return *m_whole;
     }
     return ns_a::CT_WholeE2oFormatting::default_instance();
     }
@@ -4680,47 +4954,47 @@ CT_WordprocessingGroup* CT_WordprocessingGroup::default_instance_ = NULL;
     return pNewChild;
     }
 
-    bool CT_WordprocessingCanvas::has_a_extLst() const
+    bool CT_WordprocessingCanvas::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_WordprocessingCanvas::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_WordprocessingCanvas::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_WordprocessingCanvas::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_WordprocessingCanvas::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
 
     void CT_WordprocessingCanvas::clear()
     {    
-    m_has_a_bg = false;
+    m_has_bg = false;
     
-    if (m_a_bg)
+    if (m_bg)
     {
-        delete m_a_bg;
-        m_a_bg = NULL;
+        delete m_bg;
+        m_bg = NULL;
     }
     
     
-    m_has_a_whole = false;
+    m_has_whole = false;
     
-    if (m_a_whole)
+    if (m_whole)
     {
-        delete m_a_whole;
-        m_a_whole = NULL;
+        delete m_whole;
+        m_whole = NULL;
     }
     
      
@@ -4733,12 +5007,12 @@ CT_WordprocessingGroup* CT_WordprocessingGroup::default_instance_ = NULL;
         m_childGroupList_1.clear();
     }
      
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     
     }
@@ -4754,14 +5028,14 @@ CT_WordprocessingGroup* CT_WordprocessingGroup::default_instance_ = NULL;
             
             _outStream << ">";
             
-    if (m_has_a_bg)
+    if (m_has_bg)
     {
-        m_a_bg->toXmlElem("a:bg", "", _outStream);;
+        m_bg->toXmlElem("wp:bg", "", _outStream);;
     }
     
-    if (m_has_a_whole)
+    if (m_has_whole)
     {
-        m_a_whole->toXmlElem("a:whole", "", _outStream);;
+        m_whole->toXmlElem("wp:whole", "", _outStream);;
     }
      
     {
@@ -4770,7 +5044,7 @@ CT_WordprocessingGroup* CT_WordprocessingGroup::default_instance_ = NULL;
         {
             if ((*iter)->has_wsp())
             {
-                (*iter)->get_wsp().toXmlElem("wsp", "", _outStream);
+                (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
             }
             else if ((*iter)->has_dpct_pic())
             {
@@ -4778,22 +5052,22 @@ CT_WordprocessingGroup* CT_WordprocessingGroup::default_instance_ = NULL;
             }
             else if ((*iter)->has_contentPart())
             {
-                (*iter)->get_contentPart().toXmlElem("contentPart", "", _outStream);
+                (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
             }
             else if ((*iter)->has_wgp())
             {
-                (*iter)->get_wgp().toXmlElem("wgp", "", _outStream);
+                (*iter)->get_wgp().toXmlElem("wp:wgp", "", _outStream);
             }
             else if ((*iter)->has_graphicFrame())
             {
-                (*iter)->get_graphicFrame().toXmlElem("graphicFrame", "", _outStream);
+                (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
             }
         }
     }
      
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4810,6 +5084,19 @@ CT_WordprocessingGroup* CT_WordprocessingGroup::default_instance_ = NULL;
 
 
     // CT_WordprocessingCanvas::ChildGroup_1
+    CT_WordprocessingCanvas::ChildGroup_1::ChildGroup_1()
+    :m_has_wsp(false),
+    m_wsp(NULL),
+    m_has_dpct_pic(false),
+    m_dpct_pic(NULL),
+    m_has_contentPart(false),
+    m_contentPart(NULL),
+    m_has_wgp(false),
+    m_wgp(NULL),
+    m_has_graphicFrame(false),
+    m_graphicFrame(NULL)
+    {
+    }
     bool CT_WordprocessingCanvas::ChildGroup_1::has_wsp() const
     {    
     return m_has_wsp;
@@ -5118,50 +5405,59 @@ CT_WordprocessingGroup* CT_WordprocessingGroup::default_instance_ = NULL;
 CT_WordprocessingCanvas* CT_WordprocessingCanvas::default_instance_ = NULL;
 
     // wpc_element
-    bool wpc_element::has_a_bg() const
+    wpc_element::wpc_element()
+    :m_has_bg(false),
+    m_bg(NULL),
+    m_has_whole(false),
+    m_whole(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
+    bool wpc_element::has_bg() const
     {    
-    return m_has_a_bg;
+    return m_has_bg;
     }
 
-    ns_a::CT_BackgroundFormatting* wpc_element::mutable_a_bg()
+    ns_a::CT_BackgroundFormatting* wpc_element::mutable_bg()
     {    
-    m_has_a_bg = true;
-    if (!m_a_bg)
+    m_has_bg = true;
+    if (!m_bg)
     {
-        m_a_bg = new ns_a::CT_BackgroundFormatting();
+        m_bg = new ns_a::CT_BackgroundFormatting();
     }
-    return m_a_bg;
+    return m_bg;
     }
 
-    const ns_a::CT_BackgroundFormatting& wpc_element::get_a_bg() const
+    const ns_a::CT_BackgroundFormatting& wpc_element::get_bg() const
     {    
-    if (m_a_bg)
+    if (m_bg)
     {
-        return *m_a_bg;
+        return *m_bg;
     }
     return ns_a::CT_BackgroundFormatting::default_instance();
     }
 
-    bool wpc_element::has_a_whole() const
+    bool wpc_element::has_whole() const
     {    
-    return m_has_a_whole;
+    return m_has_whole;
     }
 
-    ns_a::CT_WholeE2oFormatting* wpc_element::mutable_a_whole()
+    ns_a::CT_WholeE2oFormatting* wpc_element::mutable_whole()
     {    
-    m_has_a_whole = true;
-    if (!m_a_whole)
+    m_has_whole = true;
+    if (!m_whole)
     {
-        m_a_whole = new ns_a::CT_WholeE2oFormatting();
+        m_whole = new ns_a::CT_WholeE2oFormatting();
     }
-    return m_a_whole;
+    return m_whole;
     }
 
-    const ns_a::CT_WholeE2oFormatting& wpc_element::get_a_whole() const
+    const ns_a::CT_WholeE2oFormatting& wpc_element::get_whole() const
     {    
-    if (m_a_whole)
+    if (m_whole)
     {
-        return *m_a_whole;
+        return *m_whole;
     }
     return ns_a::CT_WholeE2oFormatting::default_instance();
     }
@@ -5206,47 +5502,47 @@ CT_WordprocessingCanvas* CT_WordprocessingCanvas::default_instance_ = NULL;
     return pNewChild;
     }
 
-    bool wpc_element::has_a_extLst() const
+    bool wpc_element::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* wpc_element::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* wpc_element::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& wpc_element::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& wpc_element::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
 
     void wpc_element::clear()
     {    
-    m_has_a_bg = false;
+    m_has_bg = false;
     
-    if (m_a_bg)
+    if (m_bg)
     {
-        delete m_a_bg;
-        m_a_bg = NULL;
+        delete m_bg;
+        m_bg = NULL;
     }
     
     
-    m_has_a_whole = false;
+    m_has_whole = false;
     
-    if (m_a_whole)
+    if (m_whole)
     {
-        delete m_a_whole;
-        m_a_whole = NULL;
+        delete m_whole;
+        m_whole = NULL;
     }
     
      
@@ -5259,19 +5555,19 @@ CT_WordprocessingCanvas* CT_WordprocessingCanvas::default_instance_ = NULL;
         m_childGroupList_1.clear();
     }
      
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     
     }
 
     void wpc_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<wpc";
+    _outStream << "<wp:wpc";
     
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
     _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
@@ -5281,14 +5577,14 @@ CT_WordprocessingCanvas* CT_WordprocessingCanvas::default_instance_ = NULL;
     
     _outStream << ">";
     
-    if (m_has_a_bg)
+    if (m_has_bg)
     {
-        m_a_bg->toXmlElem("a:bg", "", _outStream);;
+        m_bg->toXmlElem("wp:bg", "", _outStream);;
     }
     
-    if (m_has_a_whole)
+    if (m_has_whole)
     {
-        m_a_whole->toXmlElem("a:whole", "", _outStream);;
+        m_whole->toXmlElem("wp:whole", "", _outStream);;
     }
      
     {
@@ -5297,7 +5593,7 @@ CT_WordprocessingCanvas* CT_WordprocessingCanvas::default_instance_ = NULL;
         {
             if ((*iter)->has_wsp())
             {
-                (*iter)->get_wsp().toXmlElem("wsp", "", _outStream);
+                (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
             }
             else if ((*iter)->has_dpct_pic())
             {
@@ -5305,25 +5601,25 @@ CT_WordprocessingCanvas* CT_WordprocessingCanvas::default_instance_ = NULL;
             }
             else if ((*iter)->has_contentPart())
             {
-                (*iter)->get_contentPart().toXmlElem("contentPart", "", _outStream);
+                (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
             }
             else if ((*iter)->has_wgp())
             {
-                (*iter)->get_wgp().toXmlElem("wgp", "", _outStream);
+                (*iter)->get_wgp().toXmlElem("wp:wgp", "", _outStream);
             }
             else if ((*iter)->has_graphicFrame())
             {
-                (*iter)->get_graphicFrame().toXmlElem("graphicFrame", "", _outStream);
+                (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
             }
         }
     }
      
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
     }
     
-    _outStream << "</wpc>";
+    _outStream << "</wp:wpc>";
     }
 
     const wpc_element& wpc_element::default_instance()
@@ -5337,6 +5633,19 @@ CT_WordprocessingCanvas* CT_WordprocessingCanvas::default_instance_ = NULL;
 
 
     // wpc_element::ChildGroup_1
+    wpc_element::ChildGroup_1::ChildGroup_1()
+    :m_has_wsp(false),
+    m_wsp(NULL),
+    m_has_dpct_pic(false),
+    m_dpct_pic(NULL),
+    m_has_contentPart(false),
+    m_contentPart(NULL),
+    m_has_wgp(false),
+    m_wgp(NULL),
+    m_has_graphicFrame(false),
+    m_graphicFrame(NULL)
+    {
+    }
     bool wpc_element::ChildGroup_1::has_wsp() const
     {    
     return m_has_wsp;
@@ -5645,74 +5954,85 @@ CT_WordprocessingCanvas* CT_WordprocessingCanvas::default_instance_ = NULL;
 wpc_element* wpc_element::default_instance_ = NULL;
 
     // wgp_element
-    bool wgp_element::has_a_cNvPr() const
+    wgp_element::wgp_element()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvGrpSpPr(false),
+    m_cNvGrpSpPr(NULL),
+    m_has_grpSpPr(false),
+    m_grpSpPr(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
+    bool wgp_element::has_cNvPr() const
     {    
-    return m_has_a_cNvPr;
+    return m_has_cNvPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* wgp_element::mutable_a_cNvPr()
+    ns_a::CT_NonVisualDrawingProps* wgp_element::mutable_cNvPr()
     {    
-    m_has_a_cNvPr = true;
-    if (!m_a_cNvPr)
+    m_has_cNvPr = true;
+    if (!m_cNvPr)
     {
-        m_a_cNvPr = new ns_a::CT_NonVisualDrawingProps();
+        m_cNvPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_cNvPr;
+    return m_cNvPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& wgp_element::get_a_cNvPr() const
+    const ns_a::CT_NonVisualDrawingProps& wgp_element::get_cNvPr() const
     {    
-    if (m_a_cNvPr)
+    if (m_cNvPr)
     {
-        return *m_a_cNvPr;
+        return *m_cNvPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool wgp_element::has_a_cNvGrpSpPr() const
+    bool wgp_element::has_cNvGrpSpPr() const
     {    
-    return m_has_a_cNvGrpSpPr;
+    return m_has_cNvGrpSpPr;
     }
 
-    ns_a::CT_NonVisualGroupDrawingShapeProps* wgp_element::mutable_a_cNvGrpSpPr()
+    ns_a::CT_NonVisualGroupDrawingShapeProps* wgp_element::mutable_cNvGrpSpPr()
     {    
-    m_has_a_cNvGrpSpPr = true;
-    if (!m_a_cNvGrpSpPr)
+    m_has_cNvGrpSpPr = true;
+    if (!m_cNvGrpSpPr)
     {
-        m_a_cNvGrpSpPr = new ns_a::CT_NonVisualGroupDrawingShapeProps();
+        m_cNvGrpSpPr = new ns_a::CT_NonVisualGroupDrawingShapeProps();
     }
-    return m_a_cNvGrpSpPr;
+    return m_cNvGrpSpPr;
     }
 
-    const ns_a::CT_NonVisualGroupDrawingShapeProps& wgp_element::get_a_cNvGrpSpPr() const
+    const ns_a::CT_NonVisualGroupDrawingShapeProps& wgp_element::get_cNvGrpSpPr() const
     {    
-    if (m_a_cNvGrpSpPr)
+    if (m_cNvGrpSpPr)
     {
-        return *m_a_cNvGrpSpPr;
+        return *m_cNvGrpSpPr;
     }
     return ns_a::CT_NonVisualGroupDrawingShapeProps::default_instance();
     }
 
-    bool wgp_element::has_a_grpSpPr() const
+    bool wgp_element::has_grpSpPr() const
     {    
-    return m_has_a_grpSpPr;
+    return m_has_grpSpPr;
     }
 
-    ns_a::CT_GroupShapeProperties* wgp_element::mutable_a_grpSpPr()
+    ns_a::CT_GroupShapeProperties* wgp_element::mutable_grpSpPr()
     {    
-    m_has_a_grpSpPr = true;
-    if (!m_a_grpSpPr)
+    m_has_grpSpPr = true;
+    if (!m_grpSpPr)
     {
-        m_a_grpSpPr = new ns_a::CT_GroupShapeProperties();
+        m_grpSpPr = new ns_a::CT_GroupShapeProperties();
     }
-    return m_a_grpSpPr;
+    return m_grpSpPr;
     }
 
-    const ns_a::CT_GroupShapeProperties& wgp_element::get_a_grpSpPr() const
+    const ns_a::CT_GroupShapeProperties& wgp_element::get_grpSpPr() const
     {    
-    if (m_a_grpSpPr)
+    if (m_grpSpPr)
     {
-        return *m_a_grpSpPr;
+        return *m_grpSpPr;
     }
     return ns_a::CT_GroupShapeProperties::default_instance();
     }
@@ -5757,56 +6077,56 @@ wpc_element* wpc_element::default_instance_ = NULL;
     return pNewChild;
     }
 
-    bool wgp_element::has_a_extLst() const
+    bool wgp_element::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* wgp_element::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* wgp_element::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& wgp_element::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& wgp_element::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
 
     void wgp_element::clear()
     {    
-    m_has_a_cNvPr = false;
+    m_has_cNvPr = false;
     
-    if (m_a_cNvPr)
+    if (m_cNvPr)
     {
-        delete m_a_cNvPr;
-        m_a_cNvPr = NULL;
+        delete m_cNvPr;
+        m_cNvPr = NULL;
     }
     
     
-    m_has_a_cNvGrpSpPr = false;
+    m_has_cNvGrpSpPr = false;
     
-    if (m_a_cNvGrpSpPr)
+    if (m_cNvGrpSpPr)
     {
-        delete m_a_cNvGrpSpPr;
-        m_a_cNvGrpSpPr = NULL;
+        delete m_cNvGrpSpPr;
+        m_cNvGrpSpPr = NULL;
     }
     
     
-    m_has_a_grpSpPr = false;
+    m_has_grpSpPr = false;
     
-    if (m_a_grpSpPr)
+    if (m_grpSpPr)
     {
-        delete m_a_grpSpPr;
-        m_a_grpSpPr = NULL;
+        delete m_grpSpPr;
+        m_grpSpPr = NULL;
     }
     
      
@@ -5819,19 +6139,19 @@ wpc_element* wpc_element::default_instance_ = NULL;
         m_childGroupList_1.clear();
     }
      
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     
     }
 
     void wgp_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<wgp";
+    _outStream << "<wp:wgp";
     
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
     _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
@@ -5841,19 +6161,19 @@ wpc_element* wpc_element::default_instance_ = NULL;
     
     _outStream << ">";
     
-    if (m_has_a_cNvPr)
+    if (m_has_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvGrpSpPr)
+    if (m_has_cNvGrpSpPr)
     {
-        m_a_cNvGrpSpPr->toXmlElem("a:cNvGrpSpPr", "", _outStream);;
+        m_cNvGrpSpPr->toXmlElem("wp:cNvGrpSpPr", "", _outStream);;
     }
     
-    if (m_has_a_grpSpPr)
+    if (m_has_grpSpPr)
     {
-        m_a_grpSpPr->toXmlElem("a:grpSpPr", "", _outStream);;
+        m_grpSpPr->toXmlElem("wp:grpSpPr", "", _outStream);;
     }
      
     {
@@ -5862,15 +6182,15 @@ wpc_element* wpc_element::default_instance_ = NULL;
         {
             if ((*iter)->has_wsp())
             {
-                (*iter)->get_wsp().toXmlElem("wsp", "", _outStream);
+                (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
             }
             else if ((*iter)->has_grpSp())
             {
-                (*iter)->get_grpSp().toXmlElem("grpSp", "", _outStream);
+                (*iter)->get_grpSp().toXmlElem("wp:grpSp", "", _outStream);
             }
             else if ((*iter)->has_graphicFrame())
             {
-                (*iter)->get_graphicFrame().toXmlElem("graphicFrame", "", _outStream);
+                (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
             }
             else if ((*iter)->has_dpct_pic())
             {
@@ -5878,17 +6198,17 @@ wpc_element* wpc_element::default_instance_ = NULL;
             }
             else if ((*iter)->has_contentPart())
             {
-                (*iter)->get_contentPart().toXmlElem("contentPart", "", _outStream);
+                (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
             }
         }
     }
      
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
     }
     
-    _outStream << "</wgp>";
+    _outStream << "</wp:wgp>";
     }
 
     const wgp_element& wgp_element::default_instance()
@@ -5902,6 +6222,19 @@ wpc_element* wpc_element::default_instance_ = NULL;
 
 
     // wgp_element::ChildGroup_1
+    wgp_element::ChildGroup_1::ChildGroup_1()
+    :m_has_wsp(false),
+    m_wsp(NULL),
+    m_has_grpSp(false),
+    m_grpSp(NULL),
+    m_has_graphicFrame(false),
+    m_graphicFrame(NULL),
+    m_has_dpct_pic(false),
+    m_dpct_pic(NULL),
+    m_has_contentPart(false),
+    m_contentPart(NULL)
+    {
+    }
     bool wgp_element::ChildGroup_1::has_wsp() const
     {    
     return m_has_wsp;
@@ -6210,166 +6543,189 @@ wpc_element* wpc_element::default_instance_ = NULL;
 wgp_element* wgp_element::default_instance_ = NULL;
 
     // wsp_element
-    bool wsp_element::has_a_cNvPr() const
+    wsp_element::wsp_element()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvSpPr(false),
+    m_cNvSpPr(NULL),
+    m_has_cNvCnPr(false),
+    m_cNvCnPr(NULL),
+    m_has_spPr(false),
+    m_spPr(NULL),
+    m_has_style(false),
+    m_style(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_txbx(false),
+    m_txbx(NULL),
+    m_has_linkedTxbx(false),
+    m_linkedTxbx(NULL),
+    m_has_bodyPr(false),
+    m_bodyPr(NULL),
+    m_has_normalEastAsianFlow_attr(false),
+    m_normalEastAsianFlow_attr(false)
+    {
+    }
+    bool wsp_element::has_cNvPr() const
     {    
-    return m_has_a_cNvPr;
+    return m_has_cNvPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* wsp_element::mutable_a_cNvPr()
+    ns_a::CT_NonVisualDrawingProps* wsp_element::mutable_cNvPr()
     {    
-    m_has_a_cNvPr = true;
-    if (!m_a_cNvPr)
+    m_has_cNvPr = true;
+    if (!m_cNvPr)
     {
-        m_a_cNvPr = new ns_a::CT_NonVisualDrawingProps();
+        m_cNvPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_cNvPr;
+    return m_cNvPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& wsp_element::get_a_cNvPr() const
+    const ns_a::CT_NonVisualDrawingProps& wsp_element::get_cNvPr() const
     {    
-    if (m_a_cNvPr)
+    if (m_cNvPr)
     {
-        return *m_a_cNvPr;
+        return *m_cNvPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool wsp_element::has_a_cNvSpPr() const
+    bool wsp_element::has_cNvSpPr() const
     {    
-    return m_has_a_cNvSpPr;
+    return m_has_cNvSpPr;
     }
 
-    ns_a::CT_NonVisualDrawingShapeProps* wsp_element::mutable_a_cNvSpPr()
+    ns_a::CT_NonVisualDrawingShapeProps* wsp_element::mutable_cNvSpPr()
     {    
     
-    m_has_a_cNvCnPr = false;
+    m_has_cNvCnPr = false;
     
-    if (m_a_cNvCnPr)
+    if (m_cNvCnPr)
     {
-        delete m_a_cNvCnPr;
-        m_a_cNvCnPr = NULL;
+        delete m_cNvCnPr;
+        m_cNvCnPr = NULL;
     }
     ;
     
-    m_has_a_cNvSpPr = true;
-    if (!m_a_cNvSpPr)
+    m_has_cNvSpPr = true;
+    if (!m_cNvSpPr)
     {
-        m_a_cNvSpPr = new ns_a::CT_NonVisualDrawingShapeProps();
+        m_cNvSpPr = new ns_a::CT_NonVisualDrawingShapeProps();
     }
-    return m_a_cNvSpPr;
+    return m_cNvSpPr;
     }
 
-    const ns_a::CT_NonVisualDrawingShapeProps& wsp_element::get_a_cNvSpPr() const
+    const ns_a::CT_NonVisualDrawingShapeProps& wsp_element::get_cNvSpPr() const
     {    
-    if (m_a_cNvSpPr)
+    if (m_cNvSpPr)
     {
-        return *m_a_cNvSpPr;
+        return *m_cNvSpPr;
     }
     return ns_a::CT_NonVisualDrawingShapeProps::default_instance();
     }
 
-    bool wsp_element::has_a_cNvCnPr() const
+    bool wsp_element::has_cNvCnPr() const
     {    
-    return m_has_a_cNvCnPr;
+    return m_has_cNvCnPr;
     }
 
-    ns_a::CT_NonVisualConnectorProperties* wsp_element::mutable_a_cNvCnPr()
+    ns_a::CT_NonVisualConnectorProperties* wsp_element::mutable_cNvCnPr()
     {    
     
-    m_has_a_cNvSpPr = false;
+    m_has_cNvSpPr = false;
     
-    if (m_a_cNvSpPr)
+    if (m_cNvSpPr)
     {
-        delete m_a_cNvSpPr;
-        m_a_cNvSpPr = NULL;
+        delete m_cNvSpPr;
+        m_cNvSpPr = NULL;
     }
     ;
     
-    m_has_a_cNvCnPr = true;
-    if (!m_a_cNvCnPr)
+    m_has_cNvCnPr = true;
+    if (!m_cNvCnPr)
     {
-        m_a_cNvCnPr = new ns_a::CT_NonVisualConnectorProperties();
+        m_cNvCnPr = new ns_a::CT_NonVisualConnectorProperties();
     }
-    return m_a_cNvCnPr;
+    return m_cNvCnPr;
     }
 
-    const ns_a::CT_NonVisualConnectorProperties& wsp_element::get_a_cNvCnPr() const
+    const ns_a::CT_NonVisualConnectorProperties& wsp_element::get_cNvCnPr() const
     {    
-    if (m_a_cNvCnPr)
+    if (m_cNvCnPr)
     {
-        return *m_a_cNvCnPr;
+        return *m_cNvCnPr;
     }
     return ns_a::CT_NonVisualConnectorProperties::default_instance();
     }
 
-    bool wsp_element::has_a_spPr() const
+    bool wsp_element::has_spPr() const
     {    
-    return m_has_a_spPr;
+    return m_has_spPr;
     }
 
-    ns_a::CT_ShapeProperties* wsp_element::mutable_a_spPr()
+    ns_a::CT_ShapeProperties* wsp_element::mutable_spPr()
     {    
-    m_has_a_spPr = true;
-    if (!m_a_spPr)
+    m_has_spPr = true;
+    if (!m_spPr)
     {
-        m_a_spPr = new ns_a::CT_ShapeProperties();
+        m_spPr = new ns_a::CT_ShapeProperties();
     }
-    return m_a_spPr;
+    return m_spPr;
     }
 
-    const ns_a::CT_ShapeProperties& wsp_element::get_a_spPr() const
+    const ns_a::CT_ShapeProperties& wsp_element::get_spPr() const
     {    
-    if (m_a_spPr)
+    if (m_spPr)
     {
-        return *m_a_spPr;
+        return *m_spPr;
     }
     return ns_a::CT_ShapeProperties::default_instance();
     }
 
-    bool wsp_element::has_a_style() const
+    bool wsp_element::has_style() const
     {    
-    return m_has_a_style;
+    return m_has_style;
     }
 
-    ns_a::CT_ShapeStyle* wsp_element::mutable_a_style()
+    ns_a::CT_ShapeStyle* wsp_element::mutable_style()
     {    
-    m_has_a_style = true;
-    if (!m_a_style)
+    m_has_style = true;
+    if (!m_style)
     {
-        m_a_style = new ns_a::CT_ShapeStyle();
+        m_style = new ns_a::CT_ShapeStyle();
     }
-    return m_a_style;
+    return m_style;
     }
 
-    const ns_a::CT_ShapeStyle& wsp_element::get_a_style() const
+    const ns_a::CT_ShapeStyle& wsp_element::get_style() const
     {    
-    if (m_a_style)
+    if (m_style)
     {
-        return *m_a_style;
+        return *m_style;
     }
     return ns_a::CT_ShapeStyle::default_instance();
     }
 
-    bool wsp_element::has_a_extLst() const
+    bool wsp_element::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* wsp_element::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* wsp_element::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& wsp_element::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& wsp_element::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -6442,26 +6798,26 @@ wgp_element* wgp_element::default_instance_ = NULL;
     return CT_LinkedTextboxInformation::default_instance();
     }
 
-    bool wsp_element::has_a_bodyPr() const
+    bool wsp_element::has_bodyPr() const
     {    
-    return m_has_a_bodyPr;
+    return m_has_bodyPr;
     }
 
-    ns_a::CT_TextBodyProperties* wsp_element::mutable_a_bodyPr()
+    ns_a::CT_TextBodyProperties* wsp_element::mutable_bodyPr()
     {    
-    m_has_a_bodyPr = true;
-    if (!m_a_bodyPr)
+    m_has_bodyPr = true;
+    if (!m_bodyPr)
     {
-        m_a_bodyPr = new ns_a::CT_TextBodyProperties();
+        m_bodyPr = new ns_a::CT_TextBodyProperties();
     }
-    return m_a_bodyPr;
+    return m_bodyPr;
     }
 
-    const ns_a::CT_TextBodyProperties& wsp_element::get_a_bodyPr() const
+    const ns_a::CT_TextBodyProperties& wsp_element::get_bodyPr() const
     {    
-    if (m_a_bodyPr)
+    if (m_bodyPr)
     {
-        return *m_a_bodyPr;
+        return *m_bodyPr;
     }
     return ns_a::CT_TextBodyProperties::default_instance();
     }
@@ -6474,7 +6830,7 @@ wgp_element* wgp_element::default_instance_ = NULL;
 
     void wsp_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<wsp";
+    _outStream << "<wp:wsp";
     
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
     _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
@@ -6489,52 +6845,52 @@ wgp_element* wgp_element::default_instance_ = NULL;
     
     _outStream << ">";
     
-    if (m_has_a_cNvPr)
+    if (m_has_cNvPr)
     {
-        m_a_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
     }
      
-    if (m_has_a_cNvSpPr)
+    if (m_has_cNvSpPr)
     {
-        m_a_cNvSpPr->toXmlElem("a:cNvSpPr", "", _outStream);;
+        m_cNvSpPr->toXmlElem("wp:cNvSpPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvCnPr)
+    if (m_has_cNvCnPr)
     {
-        m_a_cNvCnPr->toXmlElem("a:cNvCnPr", "", _outStream);;
+        m_cNvCnPr->toXmlElem("wp:cNvCnPr", "", _outStream);;
     }
      
-    if (m_has_a_spPr)
+    if (m_has_spPr)
     {
-        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
+        m_spPr->toXmlElem("wp:spPr", "", _outStream);;
     }
     
-    if (m_has_a_style)
+    if (m_has_style)
     {
-        m_a_style->toXmlElem("a:style", "", _outStream);;
+        m_style->toXmlElem("wp:style", "", _outStream);;
     }
     
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
     }
      
     if (m_has_txbx)
     {
-        m_txbx->toXmlElem("txbx", "", _outStream);;
+        m_txbx->toXmlElem("wp:txbx", "", _outStream);;
     }
     
     if (m_has_linkedTxbx)
     {
-        m_linkedTxbx->toXmlElem("linkedTxbx", "", _outStream);;
+        m_linkedTxbx->toXmlElem("wp:linkedTxbx", "", _outStream);;
     }
      
-    if (m_has_a_bodyPr)
+    if (m_has_bodyPr)
     {
-        m_a_bodyPr->toXmlElem("a:bodyPr", "", _outStream);;
+        m_bodyPr->toXmlElem("wp:bodyPr", "", _outStream);;
     }
     
-    _outStream << "</wsp>";
+    _outStream << "</wp:wsp>";
     }
 
     const wsp_element& wsp_element::default_instance()
@@ -6565,26 +6921,47 @@ wgp_element* wgp_element::default_instance_ = NULL;
 wsp_element* wsp_element::default_instance_ = NULL;
 
     // inline_element
-    bool inline_element::has_a_extent() const
+    inline_element::inline_element()
+    :m_has_extent(false),
+    m_extent(NULL),
+    m_has_effectExtent(false),
+    m_effectExtent(NULL),
+    m_has_docPr(false),
+    m_docPr(NULL),
+    m_has_cNvGraphicFramePr(false),
+    m_cNvGraphicFramePr(NULL),
+    m_has_a_graphic(false),
+    m_a_graphic(NULL),
+    m_has_distT_attr(false),
+    m_distT_attr(NULL),
+    m_has_distB_attr(false),
+    m_distB_attr(NULL),
+    m_has_distL_attr(false),
+    m_distL_attr(NULL),
+    m_has_distR_attr(false),
+    m_distR_attr(NULL)
+    {
+    }
+    bool inline_element::has_extent() const
     {    
-    return m_has_a_extent;
+    return m_has_extent;
     }
 
-    ns_a::CT_PositiveSize2D* inline_element::mutable_a_extent()
+    ns_a::CT_PositiveSize2D* inline_element::mutable_extent()
     {    
-    m_has_a_extent = true;
-    if (!m_a_extent)
+    m_has_extent = true;
+    if (!m_extent)
     {
-        m_a_extent = new ns_a::CT_PositiveSize2D();
+        m_extent = new ns_a::CT_PositiveSize2D();
     }
-    return m_a_extent;
+    return m_extent;
     }
 
-    const ns_a::CT_PositiveSize2D& inline_element::get_a_extent() const
+    const ns_a::CT_PositiveSize2D& inline_element::get_extent() const
     {    
-    if (m_a_extent)
+    if (m_extent)
     {
-        return *m_a_extent;
+        return *m_extent;
     }
     return ns_a::CT_PositiveSize2D::default_instance();
     }
@@ -6613,50 +6990,50 @@ wsp_element* wsp_element::default_instance_ = NULL;
     return CT_EffectExtent::default_instance();
     }
 
-    bool inline_element::has_a_docPr() const
+    bool inline_element::has_docPr() const
     {    
-    return m_has_a_docPr;
+    return m_has_docPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* inline_element::mutable_a_docPr()
+    ns_a::CT_NonVisualDrawingProps* inline_element::mutable_docPr()
     {    
-    m_has_a_docPr = true;
-    if (!m_a_docPr)
+    m_has_docPr = true;
+    if (!m_docPr)
     {
-        m_a_docPr = new ns_a::CT_NonVisualDrawingProps();
+        m_docPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_docPr;
+    return m_docPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& inline_element::get_a_docPr() const
+    const ns_a::CT_NonVisualDrawingProps& inline_element::get_docPr() const
     {    
-    if (m_a_docPr)
+    if (m_docPr)
     {
-        return *m_a_docPr;
+        return *m_docPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool inline_element::has_a_cNvGraphicFramePr() const
+    bool inline_element::has_cNvGraphicFramePr() const
     {    
-    return m_has_a_cNvGraphicFramePr;
+    return m_has_cNvGraphicFramePr;
     }
 
-    ns_a::CT_NonVisualGraphicFrameProperties* inline_element::mutable_a_cNvGraphicFramePr()
+    ns_a::CT_NonVisualGraphicFrameProperties* inline_element::mutable_cNvGraphicFramePr()
     {    
-    m_has_a_cNvGraphicFramePr = true;
-    if (!m_a_cNvGraphicFramePr)
+    m_has_cNvGraphicFramePr = true;
+    if (!m_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr = new ns_a::CT_NonVisualGraphicFrameProperties();
+        m_cNvGraphicFramePr = new ns_a::CT_NonVisualGraphicFrameProperties();
     }
-    return m_a_cNvGraphicFramePr;
+    return m_cNvGraphicFramePr;
     }
 
-    const ns_a::CT_NonVisualGraphicFrameProperties& inline_element::get_a_cNvGraphicFramePr() const
+    const ns_a::CT_NonVisualGraphicFrameProperties& inline_element::get_cNvGraphicFramePr() const
     {    
-    if (m_a_cNvGraphicFramePr)
+    if (m_cNvGraphicFramePr)
     {
-        return *m_a_cNvGraphicFramePr;
+        return *m_cNvGraphicFramePr;
     }
     return ns_a::CT_NonVisualGraphicFrameProperties::default_instance();
     }
@@ -6726,7 +7103,7 @@ wsp_element* wsp_element::default_instance_ = NULL;
 
     void inline_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<inline";
+    _outStream << "<wp:inline";
     
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
     _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
@@ -6759,24 +7136,24 @@ wsp_element* wsp_element::default_instance_ = NULL;
     
     _outStream << ">";
     
-    if (m_has_a_extent)
+    if (m_has_extent)
     {
-        m_a_extent->toXmlElem("a:extent", "", _outStream);;
+        m_extent->toXmlElem("wp:extent", "", _outStream);;
     }
     
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
     }
     
-    if (m_has_a_docPr)
+    if (m_has_docPr)
     {
-        m_a_docPr->toXmlElem("a:docPr", "", _outStream);;
+        m_docPr->toXmlElem("wp:docPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvGraphicFramePr)
+    if (m_has_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);;
+        m_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);;
     }
     
     if (m_has_a_graphic)
@@ -6784,7 +7161,7 @@ wsp_element* wsp_element::default_instance_ = NULL;
         m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
     }
     
-    _outStream << "</inline>";
+    _outStream << "</wp:inline>";
     }
 
     const inline_element& inline_element::default_instance()
@@ -6879,26 +7256,77 @@ wsp_element* wsp_element::default_instance_ = NULL;
 inline_element* inline_element::default_instance_ = NULL;
 
     // anchor_element
-    bool anchor_element::has_a_simplePos() const
+    anchor_element::anchor_element()
+    :m_has_simplePos(false),
+    m_simplePos(NULL),
+    m_has_positionH(false),
+    m_positionH(NULL),
+    m_has_positionV(false),
+    m_positionV(NULL),
+    m_has_extent(false),
+    m_extent(NULL),
+    m_has_effectExtent(false),
+    m_effectExtent(NULL),
+    m_has_wrapNone(false),
+    m_wrapNone(NULL),
+    m_has_wrapSquare(false),
+    m_wrapSquare(NULL),
+    m_has_wrapTight(false),
+    m_wrapTight(NULL),
+    m_has_wrapThrough(false),
+    m_wrapThrough(NULL),
+    m_has_wrapTopAndBottom(false),
+    m_wrapTopAndBottom(NULL),
+    m_has_docPr(false),
+    m_docPr(NULL),
+    m_has_cNvGraphicFramePr(false),
+    m_cNvGraphicFramePr(NULL),
+    m_has_a_graphic(false),
+    m_a_graphic(NULL),
+    m_has_distT_attr(false),
+    m_distT_attr(NULL),
+    m_has_distB_attr(false),
+    m_distB_attr(NULL),
+    m_has_distL_attr(false),
+    m_distL_attr(NULL),
+    m_has_distR_attr(false),
+    m_distR_attr(NULL),
+    m_has_simplePos_attr(false),
+    m_simplePos_attr(false),
+    m_has_relativeHeight_attr(false),
+    m_relativeHeight_attr(0),
+    m_has_behindDoc_attr(false),
+    m_behindDoc_attr(false),
+    m_has_locked_attr(false),
+    m_locked_attr(false),
+    m_has_layoutInCell_attr(false),
+    m_layoutInCell_attr(false),
+    m_has_hidden_attr(false),
+    m_hidden_attr(false),
+    m_has_allowOverlap_attr(false),
+    m_allowOverlap_attr(false)
+    {
+    }
+    bool anchor_element::has_simplePos() const
     {    
-    return m_has_a_simplePos;
+    return m_has_simplePos;
     }
 
-    ns_a::CT_Point2D* anchor_element::mutable_a_simplePos()
+    ns_a::CT_Point2D* anchor_element::mutable_simplePos()
     {    
-    m_has_a_simplePos = true;
-    if (!m_a_simplePos)
+    m_has_simplePos = true;
+    if (!m_simplePos)
     {
-        m_a_simplePos = new ns_a::CT_Point2D();
+        m_simplePos = new ns_a::CT_Point2D();
     }
-    return m_a_simplePos;
+    return m_simplePos;
     }
 
-    const ns_a::CT_Point2D& anchor_element::get_a_simplePos() const
+    const ns_a::CT_Point2D& anchor_element::get_simplePos() const
     {    
-    if (m_a_simplePos)
+    if (m_simplePos)
     {
-        return *m_a_simplePos;
+        return *m_simplePos;
     }
     return ns_a::CT_Point2D::default_instance();
     }
@@ -6951,26 +7379,26 @@ inline_element* inline_element::default_instance_ = NULL;
     return CT_PosV::default_instance();
     }
 
-    bool anchor_element::has_a_extent() const
+    bool anchor_element::has_extent() const
     {    
-    return m_has_a_extent;
+    return m_has_extent;
     }
 
-    ns_a::CT_PositiveSize2D* anchor_element::mutable_a_extent()
+    ns_a::CT_PositiveSize2D* anchor_element::mutable_extent()
     {    
-    m_has_a_extent = true;
-    if (!m_a_extent)
+    m_has_extent = true;
+    if (!m_extent)
     {
-        m_a_extent = new ns_a::CT_PositiveSize2D();
+        m_extent = new ns_a::CT_PositiveSize2D();
     }
-    return m_a_extent;
+    return m_extent;
     }
 
-    const ns_a::CT_PositiveSize2D& anchor_element::get_a_extent() const
+    const ns_a::CT_PositiveSize2D& anchor_element::get_extent() const
     {    
-    if (m_a_extent)
+    if (m_extent)
     {
-        return *m_a_extent;
+        return *m_extent;
     }
     return ns_a::CT_PositiveSize2D::default_instance();
     }
@@ -7304,50 +7732,50 @@ inline_element* inline_element::default_instance_ = NULL;
     return CT_WrapTopBottom::default_instance();
     }
 
-    bool anchor_element::has_a_docPr() const
+    bool anchor_element::has_docPr() const
     {    
-    return m_has_a_docPr;
+    return m_has_docPr;
     }
 
-    ns_a::CT_NonVisualDrawingProps* anchor_element::mutable_a_docPr()
+    ns_a::CT_NonVisualDrawingProps* anchor_element::mutable_docPr()
     {    
-    m_has_a_docPr = true;
-    if (!m_a_docPr)
+    m_has_docPr = true;
+    if (!m_docPr)
     {
-        m_a_docPr = new ns_a::CT_NonVisualDrawingProps();
+        m_docPr = new ns_a::CT_NonVisualDrawingProps();
     }
-    return m_a_docPr;
+    return m_docPr;
     }
 
-    const ns_a::CT_NonVisualDrawingProps& anchor_element::get_a_docPr() const
+    const ns_a::CT_NonVisualDrawingProps& anchor_element::get_docPr() const
     {    
-    if (m_a_docPr)
+    if (m_docPr)
     {
-        return *m_a_docPr;
+        return *m_docPr;
     }
     return ns_a::CT_NonVisualDrawingProps::default_instance();
     }
 
-    bool anchor_element::has_a_cNvGraphicFramePr() const
+    bool anchor_element::has_cNvGraphicFramePr() const
     {    
-    return m_has_a_cNvGraphicFramePr;
+    return m_has_cNvGraphicFramePr;
     }
 
-    ns_a::CT_NonVisualGraphicFrameProperties* anchor_element::mutable_a_cNvGraphicFramePr()
+    ns_a::CT_NonVisualGraphicFrameProperties* anchor_element::mutable_cNvGraphicFramePr()
     {    
-    m_has_a_cNvGraphicFramePr = true;
-    if (!m_a_cNvGraphicFramePr)
+    m_has_cNvGraphicFramePr = true;
+    if (!m_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr = new ns_a::CT_NonVisualGraphicFrameProperties();
+        m_cNvGraphicFramePr = new ns_a::CT_NonVisualGraphicFrameProperties();
     }
-    return m_a_cNvGraphicFramePr;
+    return m_cNvGraphicFramePr;
     }
 
-    const ns_a::CT_NonVisualGraphicFrameProperties& anchor_element::get_a_cNvGraphicFramePr() const
+    const ns_a::CT_NonVisualGraphicFrameProperties& anchor_element::get_cNvGraphicFramePr() const
     {    
-    if (m_a_cNvGraphicFramePr)
+    if (m_cNvGraphicFramePr)
     {
-        return *m_a_cNvGraphicFramePr;
+        return *m_cNvGraphicFramePr;
     }
     return ns_a::CT_NonVisualGraphicFrameProperties::default_instance();
     }
@@ -7438,7 +7866,7 @@ inline_element* inline_element::default_instance_ = NULL;
 
     void anchor_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<anchor";
+    _outStream << "<wp:anchor";
     
     _outStream << " " << "xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\"";
     _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
@@ -7513,64 +7941,64 @@ inline_element* inline_element::default_instance_ = NULL;
     
     _outStream << ">";
     
-    if (m_has_a_simplePos)
+    if (m_has_simplePos)
     {
-        m_a_simplePos->toXmlElem("a:simplePos", "", _outStream);;
+        m_simplePos->toXmlElem("wp:simplePos", "", _outStream);;
     }
     
     if (m_has_positionH)
     {
-        m_positionH->toXmlElem("positionH", "", _outStream);;
+        m_positionH->toXmlElem("wp:positionH", "", _outStream);;
     }
     
     if (m_has_positionV)
     {
-        m_positionV->toXmlElem("positionV", "", _outStream);;
+        m_positionV->toXmlElem("wp:positionV", "", _outStream);;
     }
     
-    if (m_has_a_extent)
+    if (m_has_extent)
     {
-        m_a_extent->toXmlElem("a:extent", "", _outStream);;
+        m_extent->toXmlElem("wp:extent", "", _outStream);;
     }
     
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
     }
      
     if (m_has_wrapNone)
     {
-        m_wrapNone->toXmlElem("wrapNone", "", _outStream);;
+        m_wrapNone->toXmlElem("wp:wrapNone", "", _outStream);;
     }
     
     if (m_has_wrapSquare)
     {
-        m_wrapSquare->toXmlElem("wrapSquare", "", _outStream);;
+        m_wrapSquare->toXmlElem("wp:wrapSquare", "", _outStream);;
     }
     
     if (m_has_wrapTight)
     {
-        m_wrapTight->toXmlElem("wrapTight", "", _outStream);;
+        m_wrapTight->toXmlElem("wp:wrapTight", "", _outStream);;
     }
     
     if (m_has_wrapThrough)
     {
-        m_wrapThrough->toXmlElem("wrapThrough", "", _outStream);;
+        m_wrapThrough->toXmlElem("wp:wrapThrough", "", _outStream);;
     }
     
     if (m_has_wrapTopAndBottom)
     {
-        m_wrapTopAndBottom->toXmlElem("wrapTopAndBottom", "", _outStream);;
+        m_wrapTopAndBottom->toXmlElem("wp:wrapTopAndBottom", "", _outStream);;
     }
      
-    if (m_has_a_docPr)
+    if (m_has_docPr)
     {
-        m_a_docPr->toXmlElem("a:docPr", "", _outStream);;
+        m_docPr->toXmlElem("wp:docPr", "", _outStream);;
     }
     
-    if (m_has_a_cNvGraphicFramePr)
+    if (m_has_cNvGraphicFramePr)
     {
-        m_a_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);;
+        m_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);;
     }
     
     if (m_has_a_graphic)
@@ -7578,7 +8006,7 @@ inline_element* inline_element::default_instance_ = NULL;
         m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
     }
     
-    _outStream << "</anchor>";
+    _outStream << "</wp:anchor>";
     }
 
     const anchor_element& anchor_element::default_instance()

@@ -407,6 +407,15 @@ ST_HorizontalAnchor* ST_HorizontalAnchor::default_instance_ = NULL;
 ST_VerticalAnchor* ST_VerticalAnchor::default_instance_ = NULL;
 
     // CT_Border
+    CT_Border::CT_Border()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_width_attr(false),
+    m_width_attr(0),
+    m_has_shadow_attr(false),
+    m_shadow_attr(NULL)
+    {
+    }
     void CT_Border::clear()
     {    
     m_has_type_attr = false;
@@ -530,6 +539,17 @@ ST_VerticalAnchor* ST_VerticalAnchor::default_instance_ = NULL;
 CT_Border* CT_Border::default_instance_ = NULL;
 
     // CT_Wrap
+    CT_Wrap::CT_Wrap()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_side_attr(false),
+    m_side_attr(NULL),
+    m_has_anchorx_attr(false),
+    m_anchorx_attr(NULL),
+    m_has_anchory_attr(false),
+    m_anchory_attr(NULL)
+    {
+    }
     void CT_Wrap::clear()
     {    
     m_has_type_attr = false;
@@ -698,6 +718,10 @@ CT_Border* CT_Border::default_instance_ = NULL;
 CT_Wrap* CT_Wrap::default_instance_ = NULL;
 
     // CT_AnchorLock
+    CT_AnchorLock::CT_AnchorLock()
+
+    {
+    }
     void CT_AnchorLock::clear()
     {    }
 
@@ -727,6 +751,15 @@ CT_Wrap* CT_Wrap::default_instance_ = NULL;
 CT_AnchorLock* CT_AnchorLock::default_instance_ = NULL;
 
     // bordertop_element
+    bordertop_element::bordertop_element()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_width_attr(false),
+    m_width_attr(0),
+    m_has_shadow_attr(false),
+    m_shadow_attr(NULL)
+    {
+    }
     void bordertop_element::clear()
     {    
     m_has_type_attr = false;
@@ -753,7 +786,7 @@ CT_AnchorLock* CT_AnchorLock::default_instance_ = NULL;
 
     void bordertop_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<bordertop";
+    _outStream << "<w10:bordertop";
     
     _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
     
@@ -776,7 +809,7 @@ CT_AnchorLock* CT_AnchorLock::default_instance_ = NULL;
     
     _outStream << ">";
     
-    _outStream << "</bordertop>";
+    _outStream << "</w10:bordertop>";
     }
 
     const bordertop_element& bordertop_element::default_instance()
@@ -847,6 +880,15 @@ CT_AnchorLock* CT_AnchorLock::default_instance_ = NULL;
 bordertop_element* bordertop_element::default_instance_ = NULL;
 
     // borderleft_element
+    borderleft_element::borderleft_element()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_width_attr(false),
+    m_width_attr(0),
+    m_has_shadow_attr(false),
+    m_shadow_attr(NULL)
+    {
+    }
     void borderleft_element::clear()
     {    
     m_has_type_attr = false;
@@ -873,7 +915,7 @@ bordertop_element* bordertop_element::default_instance_ = NULL;
 
     void borderleft_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<borderleft";
+    _outStream << "<w10:borderleft";
     
     _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
     
@@ -896,7 +938,7 @@ bordertop_element* bordertop_element::default_instance_ = NULL;
     
     _outStream << ">";
     
-    _outStream << "</borderleft>";
+    _outStream << "</w10:borderleft>";
     }
 
     const borderleft_element& borderleft_element::default_instance()
@@ -967,6 +1009,15 @@ bordertop_element* bordertop_element::default_instance_ = NULL;
 borderleft_element* borderleft_element::default_instance_ = NULL;
 
     // borderright_element
+    borderright_element::borderright_element()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_width_attr(false),
+    m_width_attr(0),
+    m_has_shadow_attr(false),
+    m_shadow_attr(NULL)
+    {
+    }
     void borderright_element::clear()
     {    
     m_has_type_attr = false;
@@ -993,7 +1044,7 @@ borderleft_element* borderleft_element::default_instance_ = NULL;
 
     void borderright_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<borderright";
+    _outStream << "<w10:borderright";
     
     _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
     
@@ -1016,7 +1067,7 @@ borderleft_element* borderleft_element::default_instance_ = NULL;
     
     _outStream << ">";
     
-    _outStream << "</borderright>";
+    _outStream << "</w10:borderright>";
     }
 
     const borderright_element& borderright_element::default_instance()
@@ -1087,6 +1138,15 @@ borderleft_element* borderleft_element::default_instance_ = NULL;
 borderright_element* borderright_element::default_instance_ = NULL;
 
     // borderbottom_element
+    borderbottom_element::borderbottom_element()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_width_attr(false),
+    m_width_attr(0),
+    m_has_shadow_attr(false),
+    m_shadow_attr(NULL)
+    {
+    }
     void borderbottom_element::clear()
     {    
     m_has_type_attr = false;
@@ -1113,7 +1173,7 @@ borderright_element* borderright_element::default_instance_ = NULL;
 
     void borderbottom_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<borderbottom";
+    _outStream << "<w10:borderbottom";
     
     _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
     
@@ -1136,7 +1196,7 @@ borderright_element* borderright_element::default_instance_ = NULL;
     
     _outStream << ">";
     
-    _outStream << "</borderbottom>";
+    _outStream << "</w10:borderbottom>";
     }
 
     const borderbottom_element& borderbottom_element::default_instance()
@@ -1207,6 +1267,17 @@ borderright_element* borderright_element::default_instance_ = NULL;
 borderbottom_element* borderbottom_element::default_instance_ = NULL;
 
     // wrap_element
+    wrap_element::wrap_element()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_side_attr(false),
+    m_side_attr(NULL),
+    m_has_anchorx_attr(false),
+    m_anchorx_attr(NULL),
+    m_has_anchory_attr(false),
+    m_anchory_attr(NULL)
+    {
+    }
     void wrap_element::clear()
     {    
     m_has_type_attr = false;
@@ -1248,7 +1319,7 @@ borderbottom_element* borderbottom_element::default_instance_ = NULL;
 
     void wrap_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<wrap";
+    _outStream << "<w10:wrap";
     
     _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
     
@@ -1277,7 +1348,7 @@ borderbottom_element* borderbottom_element::default_instance_ = NULL;
     
     _outStream << ">";
     
-    _outStream << "</wrap>";
+    _outStream << "</w10:wrap>";
     }
 
     const wrap_element& wrap_element::default_instance()
@@ -1372,18 +1443,22 @@ borderbottom_element* borderbottom_element::default_instance_ = NULL;
 wrap_element* wrap_element::default_instance_ = NULL;
 
     // anchorlock_element
+    anchorlock_element::anchorlock_element()
+
+    {
+    }
     void anchorlock_element::clear()
     {    }
 
     void anchorlock_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<anchorlock";
+    _outStream << "<w10:anchorlock";
     
     _outStream << " " << "xmlns:w10=\"urn:schemas-microsoft-com:office:word\"";
     
     _outStream << ">";
     
-    _outStream << "</anchorlock>";
+    _outStream << "</w10:anchorlock>";
     }
 
     const anchorlock_element& anchorlock_element::default_instance()

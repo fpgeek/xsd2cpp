@@ -26,7 +26,7 @@ namespace ns_a {
     :m_has_unsignedInt(true)
     {
     
-    set_unsignedInt(m_unsignedInt);
+    set_unsignedInt(_unsignedInt);
     }
     bool ST_StyleMatrixColumnIndex::has_unsignedInt() const
     {    
@@ -208,6 +208,13 @@ ST_FontCollectionIndex* ST_FontCollectionIndex::default_instance_ = NULL;
 ST_ColorSchemeIndex* ST_ColorSchemeIndex::default_instance_ = NULL;
 
     // ST_Coordinate
+    ST_Coordinate::ST_Coordinate()
+    :m_has_ST_CoordinateUnqualified(false),
+    m_ST_CoordinateUnqualified(NULL),
+    m_has_ST_UniversalMeasure(false),
+    m_ST_UniversalMeasure(NULL)
+    {
+    }
     bool ST_Coordinate::has_ST_CoordinateUnqualified() const
     {    
     return m_has_ST_CoordinateUnqualified;
@@ -333,7 +340,7 @@ ST_Coordinate* ST_Coordinate::default_instance_ = NULL;
     :m_has_long(true)
     {
     
-    set_long(m_long);
+    set_long(_long);
     }
     bool ST_CoordinateUnqualified::has_long() const
     {    
@@ -386,6 +393,13 @@ ST_Coordinate* ST_Coordinate::default_instance_ = NULL;
 ST_CoordinateUnqualified* ST_CoordinateUnqualified::default_instance_ = NULL;
 
     // ST_Coordinate32
+    ST_Coordinate32::ST_Coordinate32()
+    :m_has_ST_Coordinate32Unqualified(false),
+    m_ST_Coordinate32Unqualified(NULL),
+    m_has_ST_UniversalMeasure(false),
+    m_ST_UniversalMeasure(NULL)
+    {
+    }
     bool ST_Coordinate32::has_ST_Coordinate32Unqualified() const
     {    
     return m_has_ST_Coordinate32Unqualified;
@@ -511,7 +525,7 @@ ST_Coordinate32* ST_Coordinate32::default_instance_ = NULL;
     :m_has_int(true)
     {
     
-    set_int(m_int);
+    set_int(_int);
     }
     bool ST_Coordinate32Unqualified::has_int() const
     {    
@@ -571,7 +585,7 @@ ST_Coordinate32Unqualified* ST_Coordinate32Unqualified::default_instance_ = NULL
     :m_has_long(true)
     {
     
-    set_long(m_long);
+    set_long(_long);
     }
     bool ST_PositiveCoordinate::has_long() const
     {    
@@ -653,7 +667,7 @@ ST_PositiveCoordinate32* ST_PositiveCoordinate32::default_instance_ = NULL;
     :m_has_int(true)
     {
     
-    set_int(m_int);
+    set_int(_int);
     }
     bool ST_Angle::has_int() const
     {    
@@ -744,6 +758,13 @@ ST_FixedAngle* ST_FixedAngle::default_instance_ = NULL;
 ST_PositiveFixedAngle* ST_PositiveFixedAngle::default_instance_ = NULL;
 
     // ST_Percentage
+    ST_Percentage::ST_Percentage()
+    :m_has_ST_PercentageDecimal(false),
+    m_ST_PercentageDecimal(NULL),
+    m_has_ST_Percentage(false),
+    m_ST_Percentage(NULL)
+    {
+    }
     bool ST_Percentage::has_ST_PercentageDecimal() const
     {    
     return m_has_ST_PercentageDecimal;
@@ -869,7 +890,7 @@ ST_Percentage* ST_Percentage::default_instance_ = NULL;
     :m_has_int(true)
     {
     
-    set_int(m_int);
+    set_int(_int);
     }
     bool ST_PercentageDecimal::has_int() const
     {    
@@ -920,6 +941,13 @@ ST_Percentage* ST_Percentage::default_instance_ = NULL;
 ST_PercentageDecimal* ST_PercentageDecimal::default_instance_ = NULL;
 
     // ST_PositivePercentage
+    ST_PositivePercentage::ST_PositivePercentage()
+    :m_has_ST_PositivePercentageDecimal(false),
+    m_ST_PositivePercentageDecimal(NULL),
+    m_has_ST_PositivePercentage(false),
+    m_ST_PositivePercentage(NULL)
+    {
+    }
     bool ST_PositivePercentage::has_ST_PositivePercentageDecimal() const
     {    
     return m_has_ST_PositivePercentageDecimal;
@@ -1056,6 +1084,13 @@ ST_PositivePercentage* ST_PositivePercentage::default_instance_ = NULL;
 ST_PositivePercentageDecimal* ST_PositivePercentageDecimal::default_instance_ = NULL;
 
     // ST_FixedPercentage
+    ST_FixedPercentage::ST_FixedPercentage()
+    :m_has_ST_FixedPercentageDecimal(false),
+    m_ST_FixedPercentageDecimal(NULL),
+    m_has_ST_FixedPercentage(false),
+    m_ST_FixedPercentage(NULL)
+    {
+    }
     bool ST_FixedPercentage::has_ST_FixedPercentageDecimal() const
     {    
     return m_has_ST_FixedPercentageDecimal;
@@ -1192,6 +1227,13 @@ ST_FixedPercentage* ST_FixedPercentage::default_instance_ = NULL;
 ST_FixedPercentageDecimal* ST_FixedPercentageDecimal::default_instance_ = NULL;
 
     // ST_PositiveFixedPercentage
+    ST_PositiveFixedPercentage::ST_PositiveFixedPercentage()
+    :m_has_ST_PositiveFixedPercentageDecimal(false),
+    m_ST_PositiveFixedPercentageDecimal(NULL),
+    m_has_ST_PositiveFixedPercentage(false),
+    m_ST_PositiveFixedPercentage(NULL)
+    {
+    }
     bool ST_PositiveFixedPercentage::has_ST_PositiveFixedPercentageDecimal() const
     {    
     return m_has_ST_PositiveFixedPercentageDecimal;
@@ -1884,7 +1926,7 @@ ST_BlackWhiteMode* ST_BlackWhiteMode::default_instance_ = NULL;
     :m_has_unsignedInt(true)
     {
     
-    set_unsignedInt(m_unsignedInt);
+    set_unsignedInt(_unsignedInt);
     }
     bool ST_DrawingElementId::has_unsignedInt() const
     {    
@@ -2179,6 +2221,13 @@ ST_AnimationBuildType* ST_AnimationBuildType::default_instance_ = NULL;
 ST_AnimationDgmOnlyBuildType* ST_AnimationDgmOnlyBuildType::default_instance_ = NULL;
 
     // ST_AnimationDgmBuildType
+    ST_AnimationDgmBuildType::ST_AnimationDgmBuildType()
+    :m_has_ST_AnimationBuildType(false),
+    m_ST_AnimationBuildType(NULL),
+    m_has_ST_AnimationDgmOnlyBuildType(false),
+    m_ST_AnimationDgmOnlyBuildType(NULL)
+    {
+    }
     bool ST_AnimationDgmBuildType::has_ST_AnimationBuildType() const
     {    
     return m_has_ST_AnimationBuildType;
@@ -2357,6 +2406,13 @@ ST_AnimationDgmBuildType* ST_AnimationDgmBuildType::default_instance_ = NULL;
 ST_AnimationChartOnlyBuildType* ST_AnimationChartOnlyBuildType::default_instance_ = NULL;
 
     // ST_AnimationChartBuildType
+    ST_AnimationChartBuildType::ST_AnimationChartBuildType()
+    :m_has_ST_AnimationBuildType(false),
+    m_ST_AnimationBuildType(NULL),
+    m_has_ST_AnimationChartOnlyBuildType(false),
+    m_ST_AnimationChartOnlyBuildType(NULL)
+    {
+    }
     bool ST_AnimationChartBuildType::has_ST_AnimationBuildType() const
     {    
     return m_has_ST_AnimationBuildType;
@@ -3759,7 +3815,7 @@ ST_TextShapeType* ST_TextShapeType::default_instance_ = NULL;
     :m_has_token(true)
     {
     
-    set_token(m_token);
+    set_token(_token);
     }
     bool ST_GeomGuideName::has_token() const
     {    
@@ -3819,7 +3875,7 @@ ST_GeomGuideName* ST_GeomGuideName::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_GeomGuideFormula::has_string() const
     {    
@@ -3870,6 +3926,13 @@ ST_GeomGuideName* ST_GeomGuideName::default_instance_ = NULL;
 ST_GeomGuideFormula* ST_GeomGuideFormula::default_instance_ = NULL;
 
     // ST_AdjCoordinate
+    ST_AdjCoordinate::ST_AdjCoordinate()
+    :m_has_ST_Coordinate(false),
+    m_ST_Coordinate(NULL),
+    m_has_ST_GeomGuideName(false),
+    m_ST_GeomGuideName(NULL)
+    {
+    }
     bool ST_AdjCoordinate::has_ST_Coordinate() const
     {    
     return m_has_ST_Coordinate;
@@ -3986,6 +4049,13 @@ ST_GeomGuideFormula* ST_GeomGuideFormula::default_instance_ = NULL;
 ST_AdjCoordinate* ST_AdjCoordinate::default_instance_ = NULL;
 
     // ST_AdjAngle
+    ST_AdjAngle::ST_AdjAngle()
+    :m_has_ST_Angle(false),
+    m_ST_Angle(NULL),
+    m_has_ST_GeomGuideName(false),
+    m_ST_GeomGuideName(NULL)
+    {
+    }
     bool ST_AdjAngle::has_ST_Angle() const
     {    
     return m_has_ST_Angle;
@@ -4634,7 +4704,7 @@ ST_CompoundLine* ST_CompoundLine::default_instance_ = NULL;
     :m_has_token(true)
     {
     
-    set_token(m_token);
+    set_token(_token);
     }
     bool ST_ShapeID::has_token() const
     {    
@@ -5064,7 +5134,7 @@ ST_TextWrappingType* ST_TextWrappingType::default_instance_ = NULL;
     :m_has_int(true)
     {
     
-    set_int(m_int);
+    set_int(_int);
     }
     bool ST_TextColumnCount::has_int() const
     {    
@@ -5117,6 +5187,13 @@ ST_TextWrappingType* ST_TextWrappingType::default_instance_ = NULL;
 ST_TextColumnCount* ST_TextColumnCount::default_instance_ = NULL;
 
     // ST_TextFontScalePercentOrPercentString
+    ST_TextFontScalePercentOrPercentString::ST_TextFontScalePercentOrPercentString()
+    :m_has_ST_TextFontScalePercent(false),
+    m_ST_TextFontScalePercent(NULL),
+    m_has_ST_Percentage(false),
+    m_ST_Percentage(NULL)
+    {
+    }
     bool ST_TextFontScalePercentOrPercentString::has_ST_TextFontScalePercent() const
     {    
     return m_has_ST_TextFontScalePercent;
@@ -5262,7 +5339,7 @@ ST_TextFontScalePercent* ST_TextFontScalePercent::default_instance_ = NULL;
     :m_has_int(true)
     {
     
-    set_int(m_int);
+    set_int(_int);
     }
     bool ST_TextBulletStartAtNum::has_int() const
     {    
@@ -5414,6 +5491,13 @@ ST_TextBulletStartAtNum* ST_TextBulletStartAtNum::default_instance_ = NULL;
 ST_TextAutonumberScheme* ST_TextAutonumberScheme::default_instance_ = NULL;
 
     // ST_TextBulletSize
+    ST_TextBulletSize::ST_TextBulletSize()
+    :m_has_ST_TextBulletSizePercent(false),
+    m_ST_TextBulletSizePercent(NULL),
+    m_has_ST_TextBulletSizeDecimal(false),
+    m_ST_TextBulletSizeDecimal(NULL)
+    {
+    }
     bool ST_TextBulletSize::has_ST_TextBulletSizePercent() const
     {    
     return m_has_ST_TextBulletSizePercent;
@@ -5539,7 +5623,7 @@ ST_TextBulletSize* ST_TextBulletSize::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_TextBulletSizePercent::has_string() const
     {    
@@ -5610,6 +5694,13 @@ ST_TextBulletSizePercent* ST_TextBulletSizePercent::default_instance_ = NULL;
 ST_TextBulletSizeDecimal* ST_TextBulletSizeDecimal::default_instance_ = NULL;
 
     // ST_TextPoint
+    ST_TextPoint::ST_TextPoint()
+    :m_has_ST_TextPointUnqualified(false),
+    m_ST_TextPointUnqualified(NULL),
+    m_has_ST_UniversalMeasure(false),
+    m_ST_UniversalMeasure(NULL)
+    {
+    }
     bool ST_TextPoint::has_ST_TextPointUnqualified() const
     {    
     return m_has_ST_TextPointUnqualified;
@@ -5735,7 +5826,7 @@ ST_TextPoint* ST_TextPoint::default_instance_ = NULL;
     :m_has_int(true)
     {
     
-    set_int(m_int);
+    set_int(_int);
     }
     bool ST_TextPointUnqualified::has_int() const
     {    
@@ -5797,7 +5888,7 @@ ST_TextPointUnqualified* ST_TextPointUnqualified::default_instance_ = NULL;
     :m_has_int(true)
     {
     
-    set_int(m_int);
+    set_int(_int);
     }
     bool ST_TextNonNegativePoint::has_int() const
     {    
@@ -5859,7 +5950,7 @@ ST_TextNonNegativePoint* ST_TextNonNegativePoint::default_instance_ = NULL;
     :m_has_int(true)
     {
     
-    set_int(m_int);
+    set_int(_int);
     }
     bool ST_TextFontSize::has_int() const
     {    
@@ -5921,7 +6012,7 @@ ST_TextFontSize* ST_TextFontSize::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_TextTypeface::has_string() const
     {    
@@ -6255,7 +6346,7 @@ ST_TextCapsType* ST_TextCapsType::default_instance_ = NULL;
     :m_has_int(true)
     {
     
-    set_int(m_int);
+    set_int(_int);
     }
     bool ST_TextSpacingPoint::has_int() const
     {    
@@ -6308,6 +6399,13 @@ ST_TextCapsType* ST_TextCapsType::default_instance_ = NULL;
 ST_TextSpacingPoint* ST_TextSpacingPoint::default_instance_ = NULL;
 
     // ST_TextSpacingPercentOrPercentString
+    ST_TextSpacingPercentOrPercentString::ST_TextSpacingPercentOrPercentString()
+    :m_has_ST_TextSpacingPercent(false),
+    m_ST_TextSpacingPercent(NULL),
+    m_has_ST_Percentage(false),
+    m_ST_Percentage(NULL)
+    {
+    }
     bool ST_TextSpacingPercentOrPercentString::has_ST_TextSpacingPercent() const
     {    
     return m_has_ST_TextSpacingPercent;
@@ -6683,7 +6781,7 @@ ST_TextFontAlignType* ST_TextFontAlignType::default_instance_ = NULL;
     :m_has_int(true)
     {
     
-    set_int(m_int);
+    set_int(_int);
     }
     bool ST_TextIndentLevelType::has_int() const
     {    
@@ -6736,6 +6834,15 @@ ST_TextFontAlignType* ST_TextFontAlignType::default_instance_ = NULL;
 ST_TextIndentLevelType* ST_TextIndentLevelType::default_instance_ = NULL;
 
     // CT_AudioFile
+    CT_AudioFile::CT_AudioFile()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_r_link_attr(false),
+    m_r_link_attr(NULL),
+    m_has_contentType_attr(false),
+    m_contentType_attr("")
+    {
+    }
     bool CT_AudioFile::has_extLst() const
     {    
     return m_has_extLst;
@@ -6786,7 +6893,7 @@ ST_TextIndentLevelType* ST_TextIndentLevelType::default_instance_ = NULL;
             
     if (m_has_r_link_attr)
     {
-        m_r_link_attr->toXmlAttr("link", _outStream);
+        m_r_link_attr->toXmlAttr("r:link", _outStream);
     }
     
     
@@ -6799,7 +6906,7 @@ ST_TextIndentLevelType* ST_TextIndentLevelType::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -6853,6 +6960,15 @@ ST_TextIndentLevelType* ST_TextIndentLevelType::default_instance_ = NULL;
 CT_AudioFile* CT_AudioFile::default_instance_ = NULL;
 
     // CT_VideoFile
+    CT_VideoFile::CT_VideoFile()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_r_link_attr(false),
+    m_r_link_attr(NULL),
+    m_has_contentType_attr(false),
+    m_contentType_attr("")
+    {
+    }
     bool CT_VideoFile::has_extLst() const
     {    
     return m_has_extLst;
@@ -6903,7 +7019,7 @@ CT_AudioFile* CT_AudioFile::default_instance_ = NULL;
             
     if (m_has_r_link_attr)
     {
-        m_r_link_attr->toXmlAttr("link", _outStream);
+        m_r_link_attr->toXmlAttr("r:link", _outStream);
     }
     
     
@@ -6916,7 +7032,7 @@ CT_AudioFile* CT_AudioFile::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -6970,6 +7086,13 @@ CT_AudioFile* CT_AudioFile::default_instance_ = NULL;
 CT_VideoFile* CT_VideoFile::default_instance_ = NULL;
 
     // CT_QuickTimeFile
+    CT_QuickTimeFile::CT_QuickTimeFile()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_r_link_attr(false),
+    m_r_link_attr(NULL)
+    {
+    }
     bool CT_QuickTimeFile::has_extLst() const
     {    
     return m_has_extLst;
@@ -7017,14 +7140,14 @@ CT_VideoFile* CT_VideoFile::default_instance_ = NULL;
             
     if (m_has_r_link_attr)
     {
-        m_r_link_attr->toXmlAttr("link", _outStream);
+        m_r_link_attr->toXmlAttr("r:link", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7062,6 +7185,13 @@ CT_VideoFile* CT_VideoFile::default_instance_ = NULL;
 CT_QuickTimeFile* CT_QuickTimeFile::default_instance_ = NULL;
 
     // CT_AudioCDTime
+    CT_AudioCDTime::CT_AudioCDTime()
+    :m_has_track_attr(false),
+    m_track_attr(0),
+    m_has_time_attr(false),
+    m_time_attr(0)
+    {
+    }
     void CT_AudioCDTime::clear()
     {    
     m_has_track_attr = false;
@@ -7140,6 +7270,15 @@ CT_QuickTimeFile* CT_QuickTimeFile::default_instance_ = NULL;
 CT_AudioCDTime* CT_AudioCDTime::default_instance_ = NULL;
 
     // CT_AudioCD
+    CT_AudioCD::CT_AudioCD()
+    :m_has_st(false),
+    m_st(NULL),
+    m_has_end(false),
+    m_end(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_AudioCD::has_st() const
     {    
     return m_has_st;
@@ -7228,17 +7367,17 @@ CT_AudioCDTime* CT_AudioCDTime::default_instance_ = NULL;
             
     if (m_has_st)
     {
-        m_st->toXmlElem("st", "", _outStream);;
+        m_st->toXmlElem("a:st", "", _outStream);;
     }
     
     if (m_has_end)
     {
-        m_end->toXmlElem("end", "", _outStream);;
+        m_end->toXmlElem("a:end", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7256,6 +7395,37 @@ CT_AudioCDTime* CT_AudioCDTime::default_instance_ = NULL;
 CT_AudioCD* CT_AudioCD::default_instance_ = NULL;
 
     // CT_ColorScheme
+    CT_ColorScheme::CT_ColorScheme()
+    :m_has_dk1(false),
+    m_dk1(NULL),
+    m_has_lt1(false),
+    m_lt1(NULL),
+    m_has_dk2(false),
+    m_dk2(NULL),
+    m_has_lt2(false),
+    m_lt2(NULL),
+    m_has_accent1(false),
+    m_accent1(NULL),
+    m_has_accent2(false),
+    m_accent2(NULL),
+    m_has_accent3(false),
+    m_accent3(NULL),
+    m_has_accent4(false),
+    m_accent4(NULL),
+    m_has_accent5(false),
+    m_accent5(NULL),
+    m_has_accent6(false),
+    m_accent6(NULL),
+    m_has_hlink(false),
+    m_hlink(NULL),
+    m_has_folHlink(false),
+    m_folHlink(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr("")
+    {
+    }
     bool CT_ColorScheme::has_dk1() const
     {    
     return m_has_dk1;
@@ -7592,67 +7762,67 @@ CT_AudioCD* CT_AudioCD::default_instance_ = NULL;
             
     if (m_has_dk1)
     {
-        m_dk1->toXmlElem("dk1", "", _outStream);;
+        m_dk1->toXmlElem("a:dk1", "", _outStream);;
     }
     
     if (m_has_lt1)
     {
-        m_lt1->toXmlElem("lt1", "", _outStream);;
+        m_lt1->toXmlElem("a:lt1", "", _outStream);;
     }
     
     if (m_has_dk2)
     {
-        m_dk2->toXmlElem("dk2", "", _outStream);;
+        m_dk2->toXmlElem("a:dk2", "", _outStream);;
     }
     
     if (m_has_lt2)
     {
-        m_lt2->toXmlElem("lt2", "", _outStream);;
+        m_lt2->toXmlElem("a:lt2", "", _outStream);;
     }
     
     if (m_has_accent1)
     {
-        m_accent1->toXmlElem("accent1", "", _outStream);;
+        m_accent1->toXmlElem("a:accent1", "", _outStream);;
     }
     
     if (m_has_accent2)
     {
-        m_accent2->toXmlElem("accent2", "", _outStream);;
+        m_accent2->toXmlElem("a:accent2", "", _outStream);;
     }
     
     if (m_has_accent3)
     {
-        m_accent3->toXmlElem("accent3", "", _outStream);;
+        m_accent3->toXmlElem("a:accent3", "", _outStream);;
     }
     
     if (m_has_accent4)
     {
-        m_accent4->toXmlElem("accent4", "", _outStream);;
+        m_accent4->toXmlElem("a:accent4", "", _outStream);;
     }
     
     if (m_has_accent5)
     {
-        m_accent5->toXmlElem("accent5", "", _outStream);;
+        m_accent5->toXmlElem("a:accent5", "", _outStream);;
     }
     
     if (m_has_accent6)
     {
-        m_accent6->toXmlElem("accent6", "", _outStream);;
+        m_accent6->toXmlElem("a:accent6", "", _outStream);;
     }
     
     if (m_has_hlink)
     {
-        m_hlink->toXmlElem("hlink", "", _outStream);;
+        m_hlink->toXmlElem("a:hlink", "", _outStream);;
     }
     
     if (m_has_folHlink)
     {
-        m_folHlink->toXmlElem("folHlink", "", _outStream);;
+        m_folHlink->toXmlElem("a:folHlink", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7686,6 +7856,23 @@ CT_AudioCD* CT_AudioCD::default_instance_ = NULL;
 CT_ColorScheme* CT_ColorScheme::default_instance_ = NULL;
 
     // CT_CustomColor
+    CT_CustomColor::CT_CustomColor()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL),
+    m_has_name_attr(false),
+    m_name_attr("")
+    {
+    }
     bool CT_CustomColor::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -8130,32 +8317,32 @@ CT_ColorScheme* CT_ColorScheme::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
     }
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
     }
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
     }
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
     }
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
     }
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -8189,6 +8376,13 @@ CT_ColorScheme* CT_ColorScheme::default_instance_ = NULL;
 CT_CustomColor* CT_CustomColor::default_instance_ = NULL;
 
     // CT_SupplementalFont
+    CT_SupplementalFont::CT_SupplementalFont()
+    :m_has_script_attr(false),
+    m_script_attr(""),
+    m_has_typeface_attr(false),
+    m_typeface_attr(NULL)
+    {
+    }
     void CT_SupplementalFont::clear()
     {    
     m_has_script_attr = false;
@@ -8277,6 +8471,10 @@ CT_CustomColor* CT_CustomColor::default_instance_ = NULL;
 CT_SupplementalFont* CT_SupplementalFont::default_instance_ = NULL;
 
     // CT_CustomColorList
+    CT_CustomColorList::CT_CustomColorList()
+
+    {
+    }
     CT_CustomColor* CT_CustomColorList::add_custClr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -8314,7 +8512,7 @@ CT_SupplementalFont* CT_SupplementalFont::default_instance_ = NULL;
         {
             if ((*iter)->has_custClr())
             {
-                (*iter)->get_custClr().toXmlElem("custClr", "", _outStream);
+                (*iter)->get_custClr().toXmlElem("a:custClr", "", _outStream);
             }
         }
     }
@@ -8333,6 +8531,11 @@ CT_SupplementalFont* CT_SupplementalFont::default_instance_ = NULL;
 
 
     // CT_CustomColorList::ChildGroup_1
+    CT_CustomColorList::ChildGroup_1::ChildGroup_1()
+    :m_has_custClr(false),
+    m_custClr(NULL)
+    {
+    }
     bool CT_CustomColorList::ChildGroup_1::has_custClr() const
     {    
     return m_has_custClr;
@@ -8361,6 +8564,15 @@ CT_SupplementalFont* CT_SupplementalFont::default_instance_ = NULL;
 CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
 
     // CT_FontCollection
+    CT_FontCollection::CT_FontCollection()
+    :m_has_latin(false),
+    m_latin(NULL),
+    m_has_ea(false),
+    m_ea(NULL),
+    m_has_cs(false),
+    m_cs(NULL)
+    {
+    }
     bool CT_FontCollection::has_latin() const
     {    
     return m_has_latin;
@@ -8501,17 +8713,17 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
             
     if (m_has_latin)
     {
-        m_latin->toXmlElem("latin", "", _outStream);;
+        m_latin->toXmlElem("a:latin", "", _outStream);;
     }
     
     if (m_has_ea)
     {
-        m_ea->toXmlElem("ea", "", _outStream);;
+        m_ea->toXmlElem("a:ea", "", _outStream);;
     }
     
     if (m_has_cs)
     {
-        m_cs->toXmlElem("cs", "", _outStream);;
+        m_cs->toXmlElem("a:cs", "", _outStream);;
     }
      
     {
@@ -8520,11 +8732,11 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
         {
             if ((*iter)->has_font())
             {
-                (*iter)->get_font().toXmlElem("font", "", _outStream);
+                (*iter)->get_font().toXmlElem("a:font", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("a:extLst", "", _outStream);
             }
         }
     }
@@ -8543,6 +8755,13 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
 
 
     // CT_FontCollection::ChildGroup_1
+    CT_FontCollection::ChildGroup_1::ChildGroup_1()
+    :m_has_font(false),
+    m_font(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_FontCollection::ChildGroup_1::has_font() const
     {    
     return m_has_font;
@@ -8614,6 +8833,17 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
 CT_FontCollection* CT_FontCollection::default_instance_ = NULL;
 
     // CT_EffectStyleItem
+    CT_EffectStyleItem::CT_EffectStyleItem()
+    :m_has_effectLst(false),
+    m_effectLst(NULL),
+    m_has_effectDag(false),
+    m_effectDag(NULL),
+    m_has_scene3d(false),
+    m_scene3d(NULL),
+    m_has_sp3d(false),
+    m_sp3d(NULL)
+    {
+    }
     bool CT_EffectStyleItem::has_effectLst() const
     {    
     return m_has_effectLst;
@@ -8746,22 +8976,22 @@ CT_FontCollection* CT_FontCollection::default_instance_ = NULL;
             
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
     }
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
     }
      
     if (m_has_scene3d)
     {
-        m_scene3d->toXmlElem("scene3d", "", _outStream);;
+        m_scene3d->toXmlElem("a:scene3d", "", _outStream);;
     }
     
     if (m_has_sp3d)
     {
-        m_sp3d->toXmlElem("sp3d", "", _outStream);;
+        m_sp3d->toXmlElem("a:sp3d", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -8779,6 +9009,17 @@ CT_FontCollection* CT_FontCollection::default_instance_ = NULL;
 CT_EffectStyleItem* CT_EffectStyleItem::default_instance_ = NULL;
 
     // CT_FontScheme
+    CT_FontScheme::CT_FontScheme()
+    :m_has_majorFont(false),
+    m_majorFont(NULL),
+    m_has_minorFont(false),
+    m_minorFont(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr("")
+    {
+    }
     bool CT_FontScheme::has_majorFont() const
     {    
     return m_has_majorFont;
@@ -8875,17 +9116,17 @@ CT_EffectStyleItem* CT_EffectStyleItem::default_instance_ = NULL;
             
     if (m_has_majorFont)
     {
-        m_majorFont->toXmlElem("majorFont", "", _outStream);;
+        m_majorFont->toXmlElem("a:majorFont", "", _outStream);;
     }
     
     if (m_has_minorFont)
     {
-        m_minorFont->toXmlElem("minorFont", "", _outStream);;
+        m_minorFont->toXmlElem("a:minorFont", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -8919,6 +9160,10 @@ CT_EffectStyleItem* CT_EffectStyleItem::default_instance_ = NULL;
 CT_FontScheme* CT_FontScheme::default_instance_ = NULL;
 
     // CT_FillStyleList
+    CT_FillStyleList::CT_FillStyleList()
+
+    {
+    }
     CT_NoFillProperties* CT_FillStyleList::add_noFill()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -8996,27 +9241,27 @@ CT_FontScheme* CT_FontScheme::default_instance_ = NULL;
         {
             if ((*iter)->has_noFill())
             {
-                (*iter)->get_noFill().toXmlElem("noFill", "", _outStream);
+                (*iter)->get_noFill().toXmlElem("a:noFill", "", _outStream);
             }
             else if ((*iter)->has_solidFill())
             {
-                (*iter)->get_solidFill().toXmlElem("solidFill", "", _outStream);
+                (*iter)->get_solidFill().toXmlElem("a:solidFill", "", _outStream);
             }
             else if ((*iter)->has_gradFill())
             {
-                (*iter)->get_gradFill().toXmlElem("gradFill", "", _outStream);
+                (*iter)->get_gradFill().toXmlElem("a:gradFill", "", _outStream);
             }
             else if ((*iter)->has_blipFill())
             {
-                (*iter)->get_blipFill().toXmlElem("blipFill", "", _outStream);
+                (*iter)->get_blipFill().toXmlElem("a:blipFill", "", _outStream);
             }
             else if ((*iter)->has_pattFill())
             {
-                (*iter)->get_pattFill().toXmlElem("pattFill", "", _outStream);
+                (*iter)->get_pattFill().toXmlElem("a:pattFill", "", _outStream);
             }
             else if ((*iter)->has_grpFill())
             {
-                (*iter)->get_grpFill().toXmlElem("grpFill", "", _outStream);
+                (*iter)->get_grpFill().toXmlElem("a:grpFill", "", _outStream);
             }
         }
     }
@@ -9035,6 +9280,21 @@ CT_FontScheme* CT_FontScheme::default_instance_ = NULL;
 
 
     // CT_FillStyleList::ChildGroup_1
+    CT_FillStyleList::ChildGroup_1::ChildGroup_1()
+    :m_has_noFill(false),
+    m_noFill(NULL),
+    m_has_solidFill(false),
+    m_solidFill(NULL),
+    m_has_gradFill(false),
+    m_gradFill(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_pattFill(false),
+    m_pattFill(NULL),
+    m_has_grpFill(false),
+    m_grpFill(NULL)
+    {
+    }
     bool CT_FillStyleList::ChildGroup_1::has_noFill() const
     {    
     return m_has_noFill;
@@ -9458,6 +9718,10 @@ CT_FontScheme* CT_FontScheme::default_instance_ = NULL;
 CT_FillStyleList* CT_FillStyleList::default_instance_ = NULL;
 
     // CT_LineStyleList
+    CT_LineStyleList::CT_LineStyleList()
+
+    {
+    }
     CT_LineProperties* CT_LineStyleList::add_ln()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9495,7 +9759,7 @@ CT_FillStyleList* CT_FillStyleList::default_instance_ = NULL;
         {
             if ((*iter)->has_ln())
             {
-                (*iter)->get_ln().toXmlElem("ln", "", _outStream);
+                (*iter)->get_ln().toXmlElem("a:ln", "", _outStream);
             }
         }
     }
@@ -9514,6 +9778,11 @@ CT_FillStyleList* CT_FillStyleList::default_instance_ = NULL;
 
 
     // CT_LineStyleList::ChildGroup_1
+    CT_LineStyleList::ChildGroup_1::ChildGroup_1()
+    :m_has_ln(false),
+    m_ln(NULL)
+    {
+    }
     bool CT_LineStyleList::ChildGroup_1::has_ln() const
     {    
     return m_has_ln;
@@ -9542,6 +9811,10 @@ CT_FillStyleList* CT_FillStyleList::default_instance_ = NULL;
 CT_LineStyleList* CT_LineStyleList::default_instance_ = NULL;
 
     // CT_EffectStyleList
+    CT_EffectStyleList::CT_EffectStyleList()
+
+    {
+    }
     CT_EffectStyleItem* CT_EffectStyleList::add_effectStyle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9579,7 +9852,7 @@ CT_LineStyleList* CT_LineStyleList::default_instance_ = NULL;
         {
             if ((*iter)->has_effectStyle())
             {
-                (*iter)->get_effectStyle().toXmlElem("effectStyle", "", _outStream);
+                (*iter)->get_effectStyle().toXmlElem("a:effectStyle", "", _outStream);
             }
         }
     }
@@ -9598,6 +9871,11 @@ CT_LineStyleList* CT_LineStyleList::default_instance_ = NULL;
 
 
     // CT_EffectStyleList::ChildGroup_1
+    CT_EffectStyleList::ChildGroup_1::ChildGroup_1()
+    :m_has_effectStyle(false),
+    m_effectStyle(NULL)
+    {
+    }
     bool CT_EffectStyleList::ChildGroup_1::has_effectStyle() const
     {    
     return m_has_effectStyle;
@@ -9626,6 +9904,10 @@ CT_LineStyleList* CT_LineStyleList::default_instance_ = NULL;
 CT_EffectStyleList* CT_EffectStyleList::default_instance_ = NULL;
 
     // CT_BackgroundFillStyleList
+    CT_BackgroundFillStyleList::CT_BackgroundFillStyleList()
+
+    {
+    }
     CT_NoFillProperties* CT_BackgroundFillStyleList::add_noFill()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9703,27 +9985,27 @@ CT_EffectStyleList* CT_EffectStyleList::default_instance_ = NULL;
         {
             if ((*iter)->has_noFill())
             {
-                (*iter)->get_noFill().toXmlElem("noFill", "", _outStream);
+                (*iter)->get_noFill().toXmlElem("a:noFill", "", _outStream);
             }
             else if ((*iter)->has_solidFill())
             {
-                (*iter)->get_solidFill().toXmlElem("solidFill", "", _outStream);
+                (*iter)->get_solidFill().toXmlElem("a:solidFill", "", _outStream);
             }
             else if ((*iter)->has_gradFill())
             {
-                (*iter)->get_gradFill().toXmlElem("gradFill", "", _outStream);
+                (*iter)->get_gradFill().toXmlElem("a:gradFill", "", _outStream);
             }
             else if ((*iter)->has_blipFill())
             {
-                (*iter)->get_blipFill().toXmlElem("blipFill", "", _outStream);
+                (*iter)->get_blipFill().toXmlElem("a:blipFill", "", _outStream);
             }
             else if ((*iter)->has_pattFill())
             {
-                (*iter)->get_pattFill().toXmlElem("pattFill", "", _outStream);
+                (*iter)->get_pattFill().toXmlElem("a:pattFill", "", _outStream);
             }
             else if ((*iter)->has_grpFill())
             {
-                (*iter)->get_grpFill().toXmlElem("grpFill", "", _outStream);
+                (*iter)->get_grpFill().toXmlElem("a:grpFill", "", _outStream);
             }
         }
     }
@@ -9742,6 +10024,21 @@ CT_EffectStyleList* CT_EffectStyleList::default_instance_ = NULL;
 
 
     // CT_BackgroundFillStyleList::ChildGroup_1
+    CT_BackgroundFillStyleList::ChildGroup_1::ChildGroup_1()
+    :m_has_noFill(false),
+    m_noFill(NULL),
+    m_has_solidFill(false),
+    m_solidFill(NULL),
+    m_has_gradFill(false),
+    m_gradFill(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_pattFill(false),
+    m_pattFill(NULL),
+    m_has_grpFill(false),
+    m_grpFill(NULL)
+    {
+    }
     bool CT_BackgroundFillStyleList::ChildGroup_1::has_noFill() const
     {    
     return m_has_noFill;
@@ -10165,6 +10462,19 @@ CT_EffectStyleList* CT_EffectStyleList::default_instance_ = NULL;
 CT_BackgroundFillStyleList* CT_BackgroundFillStyleList::default_instance_ = NULL;
 
     // CT_StyleMatrix
+    CT_StyleMatrix::CT_StyleMatrix()
+    :m_has_fillStyleLst(false),
+    m_fillStyleLst(NULL),
+    m_has_lnStyleLst(false),
+    m_lnStyleLst(NULL),
+    m_has_effectStyleLst(false),
+    m_effectStyleLst(NULL),
+    m_has_bgFillStyleLst(false),
+    m_bgFillStyleLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr("")
+    {
+    }
     bool CT_StyleMatrix::has_fillStyleLst() const
     {    
     return m_has_fillStyleLst;
@@ -10285,22 +10595,22 @@ CT_BackgroundFillStyleList* CT_BackgroundFillStyleList::default_instance_ = NULL
             
     if (m_has_fillStyleLst)
     {
-        m_fillStyleLst->toXmlElem("fillStyleLst", "", _outStream);;
+        m_fillStyleLst->toXmlElem("a:fillStyleLst", "", _outStream);;
     }
     
     if (m_has_lnStyleLst)
     {
-        m_lnStyleLst->toXmlElem("lnStyleLst", "", _outStream);;
+        m_lnStyleLst->toXmlElem("a:lnStyleLst", "", _outStream);;
     }
     
     if (m_has_effectStyleLst)
     {
-        m_effectStyleLst->toXmlElem("effectStyleLst", "", _outStream);;
+        m_effectStyleLst->toXmlElem("a:effectStyleLst", "", _outStream);;
     }
     
     if (m_has_bgFillStyleLst)
     {
-        m_bgFillStyleLst->toXmlElem("bgFillStyleLst", "", _outStream);;
+        m_bgFillStyleLst->toXmlElem("a:bgFillStyleLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10334,6 +10644,17 @@ CT_BackgroundFillStyleList* CT_BackgroundFillStyleList::default_instance_ = NULL
 CT_StyleMatrix* CT_StyleMatrix::default_instance_ = NULL;
 
     // CT_BaseStyles
+    CT_BaseStyles::CT_BaseStyles()
+    :m_has_clrScheme(false),
+    m_clrScheme(NULL),
+    m_has_fontScheme(false),
+    m_fontScheme(NULL),
+    m_has_fmtScheme(false),
+    m_fmtScheme(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_BaseStyles::has_clrScheme() const
     {    
     return m_has_clrScheme;
@@ -10446,22 +10767,22 @@ CT_StyleMatrix* CT_StyleMatrix::default_instance_ = NULL;
             
     if (m_has_clrScheme)
     {
-        m_clrScheme->toXmlElem("clrScheme", "", _outStream);;
+        m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);;
     }
     
     if (m_has_fontScheme)
     {
-        m_fontScheme->toXmlElem("fontScheme", "", _outStream);;
+        m_fontScheme->toXmlElem("a:fontScheme", "", _outStream);;
     }
     
     if (m_has_fmtScheme)
     {
-        m_fmtScheme->toXmlElem("fmtScheme", "", _outStream);;
+        m_fmtScheme->toXmlElem("a:fmtScheme", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10479,6 +10800,13 @@ CT_StyleMatrix* CT_StyleMatrix::default_instance_ = NULL;
 CT_BaseStyles* CT_BaseStyles::default_instance_ = NULL;
 
     // CT_OfficeArtExtension
+    CT_OfficeArtExtension::CT_OfficeArtExtension()
+    :m_has__any(false),
+    m__any(NULL),
+    m_has_uri_attr(false),
+    m_uri_attr("")
+    {
+    }
     void CT_OfficeArtExtension::clear()
     {    
     m_has_uri_attr = false;
@@ -10501,10 +10829,10 @@ CT_BaseStyles* CT_BaseStyles::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_any)
+    if (m_has__any)
     {
         
-    m_any->toXml(_outStream);
+    m__any->toXml(_outStream);
     ;
     }
     
@@ -10539,6 +10867,11 @@ CT_BaseStyles* CT_BaseStyles::default_instance_ = NULL;
 CT_OfficeArtExtension* CT_OfficeArtExtension::default_instance_ = NULL;
 
     // CT_Angle
+    CT_Angle::CT_Angle()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_Angle::clear()
     {    
     m_has_val_attr = false;
@@ -10602,6 +10935,11 @@ CT_OfficeArtExtension* CT_OfficeArtExtension::default_instance_ = NULL;
 CT_Angle* CT_Angle::default_instance_ = NULL;
 
     // CT_PositiveFixedAngle
+    CT_PositiveFixedAngle::CT_PositiveFixedAngle()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_PositiveFixedAngle::clear()
     {    
     m_has_val_attr = false;
@@ -10665,6 +11003,11 @@ CT_Angle* CT_Angle::default_instance_ = NULL;
 CT_PositiveFixedAngle* CT_PositiveFixedAngle::default_instance_ = NULL;
 
     // CT_Percentage
+    CT_Percentage::CT_Percentage()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_Percentage::clear()
     {    
     m_has_val_attr = false;
@@ -10728,6 +11071,11 @@ CT_PositiveFixedAngle* CT_PositiveFixedAngle::default_instance_ = NULL;
 CT_Percentage* CT_Percentage::default_instance_ = NULL;
 
     // CT_PositivePercentage
+    CT_PositivePercentage::CT_PositivePercentage()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_PositivePercentage::clear()
     {    
     m_has_val_attr = false;
@@ -10791,6 +11139,11 @@ CT_Percentage* CT_Percentage::default_instance_ = NULL;
 CT_PositivePercentage* CT_PositivePercentage::default_instance_ = NULL;
 
     // CT_FixedPercentage
+    CT_FixedPercentage::CT_FixedPercentage()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_FixedPercentage::clear()
     {    
     m_has_val_attr = false;
@@ -10854,6 +11207,11 @@ CT_PositivePercentage* CT_PositivePercentage::default_instance_ = NULL;
 CT_FixedPercentage* CT_FixedPercentage::default_instance_ = NULL;
 
     // CT_PositiveFixedPercentage
+    CT_PositiveFixedPercentage::CT_PositiveFixedPercentage()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_PositiveFixedPercentage::clear()
     {    
     m_has_val_attr = false;
@@ -10917,6 +11275,13 @@ CT_FixedPercentage* CT_FixedPercentage::default_instance_ = NULL;
 CT_PositiveFixedPercentage* CT_PositiveFixedPercentage::default_instance_ = NULL;
 
     // CT_Ratio
+    CT_Ratio::CT_Ratio()
+    :m_has_n_attr(false),
+    m_n_attr(0),
+    m_has_d_attr(false),
+    m_d_attr(0)
+    {
+    }
     void CT_Ratio::clear()
     {    
     m_has_n_attr = false;
@@ -10995,6 +11360,13 @@ CT_PositiveFixedPercentage* CT_PositiveFixedPercentage::default_instance_ = NULL
 CT_Ratio* CT_Ratio::default_instance_ = NULL;
 
     // CT_Point2D
+    CT_Point2D::CT_Point2D()
+    :m_has_x_attr(false),
+    m_x_attr(NULL),
+    m_has_y_attr(false),
+    m_y_attr(NULL)
+    {
+    }
     void CT_Point2D::clear()
     {    
     m_has_x_attr = false;
@@ -11093,6 +11465,13 @@ CT_Ratio* CT_Ratio::default_instance_ = NULL;
 CT_Point2D* CT_Point2D::default_instance_ = NULL;
 
     // CT_PositiveSize2D
+    CT_PositiveSize2D::CT_PositiveSize2D()
+    :m_has_cx_attr(false),
+    m_cx_attr(NULL),
+    m_has_cy_attr(false),
+    m_cy_attr(NULL)
+    {
+    }
     void CT_PositiveSize2D::clear()
     {    
     m_has_cx_attr = false;
@@ -11191,6 +11570,10 @@ CT_Point2D* CT_Point2D::default_instance_ = NULL;
 CT_PositiveSize2D* CT_PositiveSize2D::default_instance_ = NULL;
 
     // CT_ComplementTransform
+    CT_ComplementTransform::CT_ComplementTransform()
+
+    {
+    }
     void CT_ComplementTransform::clear()
     {    }
 
@@ -11220,6 +11603,10 @@ CT_PositiveSize2D* CT_PositiveSize2D::default_instance_ = NULL;
 CT_ComplementTransform* CT_ComplementTransform::default_instance_ = NULL;
 
     // CT_InverseTransform
+    CT_InverseTransform::CT_InverseTransform()
+
+    {
+    }
     void CT_InverseTransform::clear()
     {    }
 
@@ -11249,6 +11636,10 @@ CT_ComplementTransform* CT_ComplementTransform::default_instance_ = NULL;
 CT_InverseTransform* CT_InverseTransform::default_instance_ = NULL;
 
     // CT_GrayscaleTransform
+    CT_GrayscaleTransform::CT_GrayscaleTransform()
+
+    {
+    }
     void CT_GrayscaleTransform::clear()
     {    }
 
@@ -11278,6 +11669,10 @@ CT_InverseTransform* CT_InverseTransform::default_instance_ = NULL;
 CT_GrayscaleTransform* CT_GrayscaleTransform::default_instance_ = NULL;
 
     // CT_GammaTransform
+    CT_GammaTransform::CT_GammaTransform()
+
+    {
+    }
     void CT_GammaTransform::clear()
     {    }
 
@@ -11307,6 +11702,10 @@ CT_GrayscaleTransform* CT_GrayscaleTransform::default_instance_ = NULL;
 CT_GammaTransform* CT_GammaTransform::default_instance_ = NULL;
 
     // CT_InverseGammaTransform
+    CT_InverseGammaTransform::CT_InverseGammaTransform()
+
+    {
+    }
     void CT_InverseGammaTransform::clear()
     {    }
 
@@ -11336,6 +11735,15 @@ CT_GammaTransform* CT_GammaTransform::default_instance_ = NULL;
 CT_InverseGammaTransform* CT_InverseGammaTransform::default_instance_ = NULL;
 
     // CT_ScRgbColor
+    CT_ScRgbColor::CT_ScRgbColor()
+    :m_has_r_attr(false),
+    m_r_attr(NULL),
+    m_has_g_attr(false),
+    m_g_attr(NULL),
+    m_has_b_attr(false),
+    m_b_attr(NULL)
+    {
+    }
     CT_PositiveFixedPercentage* CT_ScRgbColor::add_tint()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -11633,115 +12041,115 @@ CT_InverseGammaTransform* CT_InverseGammaTransform::default_instance_ = NULL;
         {
             if ((*iter)->has_tint())
             {
-                (*iter)->get_tint().toXmlElem("tint", "", _outStream);
+                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
             }
             else if ((*iter)->has_shade())
             {
-                (*iter)->get_shade().toXmlElem("shade", "", _outStream);
+                (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
             }
             else if ((*iter)->has_comp())
             {
-                (*iter)->get_comp().toXmlElem("comp", "", _outStream);
+                (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
             }
             else if ((*iter)->has_inv())
             {
-                (*iter)->get_inv().toXmlElem("inv", "", _outStream);
+                (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
             }
             else if ((*iter)->has_gray())
             {
-                (*iter)->get_gray().toXmlElem("gray", "", _outStream);
+                (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
             }
             else if ((*iter)->has_alpha())
             {
-                (*iter)->get_alpha().toXmlElem("alpha", "", _outStream);
+                (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
             }
             else if ((*iter)->has_alphaOff())
             {
-                (*iter)->get_alphaOff().toXmlElem("alphaOff", "", _outStream);
+                (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
             }
             else if ((*iter)->has_alphaMod())
             {
-                (*iter)->get_alphaMod().toXmlElem("alphaMod", "", _outStream);
+                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
             }
             else if ((*iter)->has_hue())
             {
-                (*iter)->get_hue().toXmlElem("hue", "", _outStream);
+                (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
             }
             else if ((*iter)->has_hueOff())
             {
-                (*iter)->get_hueOff().toXmlElem("hueOff", "", _outStream);
+                (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
             }
             else if ((*iter)->has_hueMod())
             {
-                (*iter)->get_hueMod().toXmlElem("hueMod", "", _outStream);
+                (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
             }
             else if ((*iter)->has_sat())
             {
-                (*iter)->get_sat().toXmlElem("sat", "", _outStream);
+                (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
             }
             else if ((*iter)->has_satOff())
             {
-                (*iter)->get_satOff().toXmlElem("satOff", "", _outStream);
+                (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
             }
             else if ((*iter)->has_satMod())
             {
-                (*iter)->get_satMod().toXmlElem("satMod", "", _outStream);
+                (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
             }
             else if ((*iter)->has_lum())
             {
-                (*iter)->get_lum().toXmlElem("lum", "", _outStream);
+                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
             }
             else if ((*iter)->has_lumOff())
             {
-                (*iter)->get_lumOff().toXmlElem("lumOff", "", _outStream);
+                (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
             }
             else if ((*iter)->has_lumMod())
             {
-                (*iter)->get_lumMod().toXmlElem("lumMod", "", _outStream);
+                (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
             }
             else if ((*iter)->has_red())
             {
-                (*iter)->get_red().toXmlElem("red", "", _outStream);
+                (*iter)->get_red().toXmlElem("a:red", "", _outStream);
             }
             else if ((*iter)->has_redOff())
             {
-                (*iter)->get_redOff().toXmlElem("redOff", "", _outStream);
+                (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
             }
             else if ((*iter)->has_redMod())
             {
-                (*iter)->get_redMod().toXmlElem("redMod", "", _outStream);
+                (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
             }
             else if ((*iter)->has_green())
             {
-                (*iter)->get_green().toXmlElem("green", "", _outStream);
+                (*iter)->get_green().toXmlElem("a:green", "", _outStream);
             }
             else if ((*iter)->has_greenOff())
             {
-                (*iter)->get_greenOff().toXmlElem("greenOff", "", _outStream);
+                (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
             }
             else if ((*iter)->has_greenMod())
             {
-                (*iter)->get_greenMod().toXmlElem("greenMod", "", _outStream);
+                (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
             }
             else if ((*iter)->has_blue())
             {
-                (*iter)->get_blue().toXmlElem("blue", "", _outStream);
+                (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
             }
             else if ((*iter)->has_blueOff())
             {
-                (*iter)->get_blueOff().toXmlElem("blueOff", "", _outStream);
+                (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
             }
             else if ((*iter)->has_blueMod())
             {
-                (*iter)->get_blueMod().toXmlElem("blueMod", "", _outStream);
+                (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
             }
             else if ((*iter)->has_gamma())
             {
-                (*iter)->get_gamma().toXmlElem("gamma", "", _outStream);
+                (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
             }
             else if ((*iter)->has_invGamma())
             {
-                (*iter)->get_invGamma().toXmlElem("invGamma", "", _outStream);
+                (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
             }
         }
     }
@@ -11820,6 +12228,65 @@ CT_InverseGammaTransform* CT_InverseGammaTransform::default_instance_ = NULL;
 
 
     // CT_ScRgbColor::ChildGroup_1
+    CT_ScRgbColor::ChildGroup_1::ChildGroup_1()
+    :m_has_tint(false),
+    m_tint(NULL),
+    m_has_shade(false),
+    m_shade(NULL),
+    m_has_comp(false),
+    m_comp(NULL),
+    m_has_inv(false),
+    m_inv(NULL),
+    m_has_gray(false),
+    m_gray(NULL),
+    m_has_alpha(false),
+    m_alpha(NULL),
+    m_has_alphaOff(false),
+    m_alphaOff(NULL),
+    m_has_alphaMod(false),
+    m_alphaMod(NULL),
+    m_has_hue(false),
+    m_hue(NULL),
+    m_has_hueOff(false),
+    m_hueOff(NULL),
+    m_has_hueMod(false),
+    m_hueMod(NULL),
+    m_has_sat(false),
+    m_sat(NULL),
+    m_has_satOff(false),
+    m_satOff(NULL),
+    m_has_satMod(false),
+    m_satMod(NULL),
+    m_has_lum(false),
+    m_lum(NULL),
+    m_has_lumOff(false),
+    m_lumOff(NULL),
+    m_has_lumMod(false),
+    m_lumMod(NULL),
+    m_has_red(false),
+    m_red(NULL),
+    m_has_redOff(false),
+    m_redOff(NULL),
+    m_has_redMod(false),
+    m_redMod(NULL),
+    m_has_green(false),
+    m_green(NULL),
+    m_has_greenOff(false),
+    m_greenOff(NULL),
+    m_has_greenMod(false),
+    m_greenMod(NULL),
+    m_has_blue(false),
+    m_blue(NULL),
+    m_has_blueOff(false),
+    m_blueOff(NULL),
+    m_has_blueMod(false),
+    m_blueMod(NULL),
+    m_has_gamma(false),
+    m_gamma(NULL),
+    m_has_invGamma(false),
+    m_invGamma(NULL)
+    {
+    }
     bool CT_ScRgbColor::ChildGroup_1::has_tint() const
     {    
     return m_has_tint;
@@ -19327,6 +19794,11 @@ CT_InverseGammaTransform* CT_InverseGammaTransform::default_instance_ = NULL;
 CT_ScRgbColor* CT_ScRgbColor::default_instance_ = NULL;
 
     // CT_SRgbColor
+    CT_SRgbColor::CT_SRgbColor()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     CT_PositiveFixedPercentage* CT_SRgbColor::add_tint()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -19553,12 +20025,12 @@ CT_ScRgbColor* CT_ScRgbColor::default_instance_ = NULL;
 
     void CT_SRgbColor::clear()
     {    
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     
@@ -19581,9 +20053,9 @@ CT_ScRgbColor* CT_ScRgbColor::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("val", _outStream);
+        m_val_attr->toXmlAttr("val", _outStream);
     }
     
             _outStream << ">";
@@ -19594,115 +20066,115 @@ CT_ScRgbColor* CT_ScRgbColor::default_instance_ = NULL;
         {
             if ((*iter)->has_tint())
             {
-                (*iter)->get_tint().toXmlElem("tint", "", _outStream);
+                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
             }
             else if ((*iter)->has_shade())
             {
-                (*iter)->get_shade().toXmlElem("shade", "", _outStream);
+                (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
             }
             else if ((*iter)->has_comp())
             {
-                (*iter)->get_comp().toXmlElem("comp", "", _outStream);
+                (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
             }
             else if ((*iter)->has_inv())
             {
-                (*iter)->get_inv().toXmlElem("inv", "", _outStream);
+                (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
             }
             else if ((*iter)->has_gray())
             {
-                (*iter)->get_gray().toXmlElem("gray", "", _outStream);
+                (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
             }
             else if ((*iter)->has_alpha())
             {
-                (*iter)->get_alpha().toXmlElem("alpha", "", _outStream);
+                (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
             }
             else if ((*iter)->has_alphaOff())
             {
-                (*iter)->get_alphaOff().toXmlElem("alphaOff", "", _outStream);
+                (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
             }
             else if ((*iter)->has_alphaMod())
             {
-                (*iter)->get_alphaMod().toXmlElem("alphaMod", "", _outStream);
+                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
             }
             else if ((*iter)->has_hue())
             {
-                (*iter)->get_hue().toXmlElem("hue", "", _outStream);
+                (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
             }
             else if ((*iter)->has_hueOff())
             {
-                (*iter)->get_hueOff().toXmlElem("hueOff", "", _outStream);
+                (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
             }
             else if ((*iter)->has_hueMod())
             {
-                (*iter)->get_hueMod().toXmlElem("hueMod", "", _outStream);
+                (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
             }
             else if ((*iter)->has_sat())
             {
-                (*iter)->get_sat().toXmlElem("sat", "", _outStream);
+                (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
             }
             else if ((*iter)->has_satOff())
             {
-                (*iter)->get_satOff().toXmlElem("satOff", "", _outStream);
+                (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
             }
             else if ((*iter)->has_satMod())
             {
-                (*iter)->get_satMod().toXmlElem("satMod", "", _outStream);
+                (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
             }
             else if ((*iter)->has_lum())
             {
-                (*iter)->get_lum().toXmlElem("lum", "", _outStream);
+                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
             }
             else if ((*iter)->has_lumOff())
             {
-                (*iter)->get_lumOff().toXmlElem("lumOff", "", _outStream);
+                (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
             }
             else if ((*iter)->has_lumMod())
             {
-                (*iter)->get_lumMod().toXmlElem("lumMod", "", _outStream);
+                (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
             }
             else if ((*iter)->has_red())
             {
-                (*iter)->get_red().toXmlElem("red", "", _outStream);
+                (*iter)->get_red().toXmlElem("a:red", "", _outStream);
             }
             else if ((*iter)->has_redOff())
             {
-                (*iter)->get_redOff().toXmlElem("redOff", "", _outStream);
+                (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
             }
             else if ((*iter)->has_redMod())
             {
-                (*iter)->get_redMod().toXmlElem("redMod", "", _outStream);
+                (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
             }
             else if ((*iter)->has_green())
             {
-                (*iter)->get_green().toXmlElem("green", "", _outStream);
+                (*iter)->get_green().toXmlElem("a:green", "", _outStream);
             }
             else if ((*iter)->has_greenOff())
             {
-                (*iter)->get_greenOff().toXmlElem("greenOff", "", _outStream);
+                (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
             }
             else if ((*iter)->has_greenMod())
             {
-                (*iter)->get_greenMod().toXmlElem("greenMod", "", _outStream);
+                (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
             }
             else if ((*iter)->has_blue())
             {
-                (*iter)->get_blue().toXmlElem("blue", "", _outStream);
+                (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
             }
             else if ((*iter)->has_blueOff())
             {
-                (*iter)->get_blueOff().toXmlElem("blueOff", "", _outStream);
+                (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
             }
             else if ((*iter)->has_blueMod())
             {
-                (*iter)->get_blueMod().toXmlElem("blueMod", "", _outStream);
+                (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
             }
             else if ((*iter)->has_gamma())
             {
-                (*iter)->get_gamma().toXmlElem("gamma", "", _outStream);
+                (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
             }
             else if ((*iter)->has_invGamma())
             {
-                (*iter)->get_invGamma().toXmlElem("invGamma", "", _outStream);
+                (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
             }
         }
     }
@@ -19719,28 +20191,87 @@ CT_ScRgbColor* CT_ScRgbColor::default_instance_ = NULL;
     return *CT_SRgbColor::default_instance_;
     }
 
-    bool CT_SRgbColor::has_s_val_attr() const
+    bool CT_SRgbColor::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_SRgbColor::set_s_val_attr(const ns_s::ST_HexColorRGB& _s_val_attr)
+    void CT_SRgbColor::set_val_attr(const ns_s::ST_HexColorRGB& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_HexColorRGB(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_HexColorRGB(_val_attr);
     }
 
-    const ns_s::ST_HexColorRGB& CT_SRgbColor::get_s_val_attr() const
+    const ns_s::ST_HexColorRGB& CT_SRgbColor::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_HexColorRGB::default_instance();
     }
 
 
     // CT_SRgbColor::ChildGroup_1
+    CT_SRgbColor::ChildGroup_1::ChildGroup_1()
+    :m_has_tint(false),
+    m_tint(NULL),
+    m_has_shade(false),
+    m_shade(NULL),
+    m_has_comp(false),
+    m_comp(NULL),
+    m_has_inv(false),
+    m_inv(NULL),
+    m_has_gray(false),
+    m_gray(NULL),
+    m_has_alpha(false),
+    m_alpha(NULL),
+    m_has_alphaOff(false),
+    m_alphaOff(NULL),
+    m_has_alphaMod(false),
+    m_alphaMod(NULL),
+    m_has_hue(false),
+    m_hue(NULL),
+    m_has_hueOff(false),
+    m_hueOff(NULL),
+    m_has_hueMod(false),
+    m_hueMod(NULL),
+    m_has_sat(false),
+    m_sat(NULL),
+    m_has_satOff(false),
+    m_satOff(NULL),
+    m_has_satMod(false),
+    m_satMod(NULL),
+    m_has_lum(false),
+    m_lum(NULL),
+    m_has_lumOff(false),
+    m_lumOff(NULL),
+    m_has_lumMod(false),
+    m_lumMod(NULL),
+    m_has_red(false),
+    m_red(NULL),
+    m_has_redOff(false),
+    m_redOff(NULL),
+    m_has_redMod(false),
+    m_redMod(NULL),
+    m_has_green(false),
+    m_green(NULL),
+    m_has_greenOff(false),
+    m_greenOff(NULL),
+    m_has_greenMod(false),
+    m_greenMod(NULL),
+    m_has_blue(false),
+    m_blue(NULL),
+    m_has_blueOff(false),
+    m_blueOff(NULL),
+    m_has_blueMod(false),
+    m_blueMod(NULL),
+    m_has_gamma(false),
+    m_gamma(NULL),
+    m_has_invGamma(false),
+    m_invGamma(NULL)
+    {
+    }
     bool CT_SRgbColor::ChildGroup_1::has_tint() const
     {    
     return m_has_tint;
@@ -27248,6 +27779,15 @@ CT_ScRgbColor* CT_ScRgbColor::default_instance_ = NULL;
 CT_SRgbColor* CT_SRgbColor::default_instance_ = NULL;
 
     // CT_HslColor
+    CT_HslColor::CT_HslColor()
+    :m_has_hue_attr(false),
+    m_hue_attr(NULL),
+    m_has_sat_attr(false),
+    m_sat_attr(NULL),
+    m_has_lum_attr(false),
+    m_lum_attr(NULL)
+    {
+    }
     CT_PositiveFixedPercentage* CT_HslColor::add_tint()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -27545,115 +28085,115 @@ CT_SRgbColor* CT_SRgbColor::default_instance_ = NULL;
         {
             if ((*iter)->has_tint())
             {
-                (*iter)->get_tint().toXmlElem("tint", "", _outStream);
+                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
             }
             else if ((*iter)->has_shade())
             {
-                (*iter)->get_shade().toXmlElem("shade", "", _outStream);
+                (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
             }
             else if ((*iter)->has_comp())
             {
-                (*iter)->get_comp().toXmlElem("comp", "", _outStream);
+                (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
             }
             else if ((*iter)->has_inv())
             {
-                (*iter)->get_inv().toXmlElem("inv", "", _outStream);
+                (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
             }
             else if ((*iter)->has_gray())
             {
-                (*iter)->get_gray().toXmlElem("gray", "", _outStream);
+                (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
             }
             else if ((*iter)->has_alpha())
             {
-                (*iter)->get_alpha().toXmlElem("alpha", "", _outStream);
+                (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
             }
             else if ((*iter)->has_alphaOff())
             {
-                (*iter)->get_alphaOff().toXmlElem("alphaOff", "", _outStream);
+                (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
             }
             else if ((*iter)->has_alphaMod())
             {
-                (*iter)->get_alphaMod().toXmlElem("alphaMod", "", _outStream);
+                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
             }
             else if ((*iter)->has_hue())
             {
-                (*iter)->get_hue().toXmlElem("hue", "", _outStream);
+                (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
             }
             else if ((*iter)->has_hueOff())
             {
-                (*iter)->get_hueOff().toXmlElem("hueOff", "", _outStream);
+                (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
             }
             else if ((*iter)->has_hueMod())
             {
-                (*iter)->get_hueMod().toXmlElem("hueMod", "", _outStream);
+                (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
             }
             else if ((*iter)->has_sat())
             {
-                (*iter)->get_sat().toXmlElem("sat", "", _outStream);
+                (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
             }
             else if ((*iter)->has_satOff())
             {
-                (*iter)->get_satOff().toXmlElem("satOff", "", _outStream);
+                (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
             }
             else if ((*iter)->has_satMod())
             {
-                (*iter)->get_satMod().toXmlElem("satMod", "", _outStream);
+                (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
             }
             else if ((*iter)->has_lum())
             {
-                (*iter)->get_lum().toXmlElem("lum", "", _outStream);
+                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
             }
             else if ((*iter)->has_lumOff())
             {
-                (*iter)->get_lumOff().toXmlElem("lumOff", "", _outStream);
+                (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
             }
             else if ((*iter)->has_lumMod())
             {
-                (*iter)->get_lumMod().toXmlElem("lumMod", "", _outStream);
+                (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
             }
             else if ((*iter)->has_red())
             {
-                (*iter)->get_red().toXmlElem("red", "", _outStream);
+                (*iter)->get_red().toXmlElem("a:red", "", _outStream);
             }
             else if ((*iter)->has_redOff())
             {
-                (*iter)->get_redOff().toXmlElem("redOff", "", _outStream);
+                (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
             }
             else if ((*iter)->has_redMod())
             {
-                (*iter)->get_redMod().toXmlElem("redMod", "", _outStream);
+                (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
             }
             else if ((*iter)->has_green())
             {
-                (*iter)->get_green().toXmlElem("green", "", _outStream);
+                (*iter)->get_green().toXmlElem("a:green", "", _outStream);
             }
             else if ((*iter)->has_greenOff())
             {
-                (*iter)->get_greenOff().toXmlElem("greenOff", "", _outStream);
+                (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
             }
             else if ((*iter)->has_greenMod())
             {
-                (*iter)->get_greenMod().toXmlElem("greenMod", "", _outStream);
+                (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
             }
             else if ((*iter)->has_blue())
             {
-                (*iter)->get_blue().toXmlElem("blue", "", _outStream);
+                (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
             }
             else if ((*iter)->has_blueOff())
             {
-                (*iter)->get_blueOff().toXmlElem("blueOff", "", _outStream);
+                (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
             }
             else if ((*iter)->has_blueMod())
             {
-                (*iter)->get_blueMod().toXmlElem("blueMod", "", _outStream);
+                (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
             }
             else if ((*iter)->has_gamma())
             {
-                (*iter)->get_gamma().toXmlElem("gamma", "", _outStream);
+                (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
             }
             else if ((*iter)->has_invGamma())
             {
-                (*iter)->get_invGamma().toXmlElem("invGamma", "", _outStream);
+                (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
             }
         }
     }
@@ -27732,6 +28272,65 @@ CT_SRgbColor* CT_SRgbColor::default_instance_ = NULL;
 
 
     // CT_HslColor::ChildGroup_1
+    CT_HslColor::ChildGroup_1::ChildGroup_1()
+    :m_has_tint(false),
+    m_tint(NULL),
+    m_has_shade(false),
+    m_shade(NULL),
+    m_has_comp(false),
+    m_comp(NULL),
+    m_has_inv(false),
+    m_inv(NULL),
+    m_has_gray(false),
+    m_gray(NULL),
+    m_has_alpha(false),
+    m_alpha(NULL),
+    m_has_alphaOff(false),
+    m_alphaOff(NULL),
+    m_has_alphaMod(false),
+    m_alphaMod(NULL),
+    m_has_hue(false),
+    m_hue(NULL),
+    m_has_hueOff(false),
+    m_hueOff(NULL),
+    m_has_hueMod(false),
+    m_hueMod(NULL),
+    m_has_sat(false),
+    m_sat(NULL),
+    m_has_satOff(false),
+    m_satOff(NULL),
+    m_has_satMod(false),
+    m_satMod(NULL),
+    m_has_lum(false),
+    m_lum(NULL),
+    m_has_lumOff(false),
+    m_lumOff(NULL),
+    m_has_lumMod(false),
+    m_lumMod(NULL),
+    m_has_red(false),
+    m_red(NULL),
+    m_has_redOff(false),
+    m_redOff(NULL),
+    m_has_redMod(false),
+    m_redMod(NULL),
+    m_has_green(false),
+    m_green(NULL),
+    m_has_greenOff(false),
+    m_greenOff(NULL),
+    m_has_greenMod(false),
+    m_greenMod(NULL),
+    m_has_blue(false),
+    m_blue(NULL),
+    m_has_blueOff(false),
+    m_blueOff(NULL),
+    m_has_blueMod(false),
+    m_blueMod(NULL),
+    m_has_gamma(false),
+    m_gamma(NULL),
+    m_has_invGamma(false),
+    m_invGamma(NULL)
+    {
+    }
     bool CT_HslColor::ChildGroup_1::has_tint() const
     {    
     return m_has_tint;
@@ -35239,6 +35838,13 @@ CT_SRgbColor* CT_SRgbColor::default_instance_ = NULL;
 CT_HslColor* CT_HslColor::default_instance_ = NULL;
 
     // CT_SystemColor
+    CT_SystemColor::CT_SystemColor()
+    :m_has_val_attr(false),
+    m_val_attr(NULL),
+    m_has_lastClr_attr(false),
+    m_lastClr_attr(NULL)
+    {
+    }
     CT_PositiveFixedPercentage* CT_SystemColor::add_tint()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -35474,12 +36080,12 @@ CT_HslColor* CT_HslColor::default_instance_ = NULL;
     }
     
     
-    m_has_s_lastClr_attr = false;
+    m_has_lastClr_attr = false;
     
-    if (m_s_lastClr_attr)
+    if (m_lastClr_attr)
     {
-        delete m_s_lastClr_attr;
-        m_s_lastClr_attr = NULL;
+        delete m_lastClr_attr;
+        m_lastClr_attr = NULL;
     }
     
     
@@ -35508,9 +36114,9 @@ CT_HslColor* CT_HslColor::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_lastClr_attr)
+    if (m_has_lastClr_attr)
     {
-        m_s_lastClr_attr->toXmlAttr("lastClr", _outStream);
+        m_lastClr_attr->toXmlAttr("lastClr", _outStream);
     }
     
             _outStream << ">";
@@ -35521,115 +36127,115 @@ CT_HslColor* CT_HslColor::default_instance_ = NULL;
         {
             if ((*iter)->has_tint())
             {
-                (*iter)->get_tint().toXmlElem("tint", "", _outStream);
+                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
             }
             else if ((*iter)->has_shade())
             {
-                (*iter)->get_shade().toXmlElem("shade", "", _outStream);
+                (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
             }
             else if ((*iter)->has_comp())
             {
-                (*iter)->get_comp().toXmlElem("comp", "", _outStream);
+                (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
             }
             else if ((*iter)->has_inv())
             {
-                (*iter)->get_inv().toXmlElem("inv", "", _outStream);
+                (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
             }
             else if ((*iter)->has_gray())
             {
-                (*iter)->get_gray().toXmlElem("gray", "", _outStream);
+                (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
             }
             else if ((*iter)->has_alpha())
             {
-                (*iter)->get_alpha().toXmlElem("alpha", "", _outStream);
+                (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
             }
             else if ((*iter)->has_alphaOff())
             {
-                (*iter)->get_alphaOff().toXmlElem("alphaOff", "", _outStream);
+                (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
             }
             else if ((*iter)->has_alphaMod())
             {
-                (*iter)->get_alphaMod().toXmlElem("alphaMod", "", _outStream);
+                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
             }
             else if ((*iter)->has_hue())
             {
-                (*iter)->get_hue().toXmlElem("hue", "", _outStream);
+                (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
             }
             else if ((*iter)->has_hueOff())
             {
-                (*iter)->get_hueOff().toXmlElem("hueOff", "", _outStream);
+                (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
             }
             else if ((*iter)->has_hueMod())
             {
-                (*iter)->get_hueMod().toXmlElem("hueMod", "", _outStream);
+                (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
             }
             else if ((*iter)->has_sat())
             {
-                (*iter)->get_sat().toXmlElem("sat", "", _outStream);
+                (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
             }
             else if ((*iter)->has_satOff())
             {
-                (*iter)->get_satOff().toXmlElem("satOff", "", _outStream);
+                (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
             }
             else if ((*iter)->has_satMod())
             {
-                (*iter)->get_satMod().toXmlElem("satMod", "", _outStream);
+                (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
             }
             else if ((*iter)->has_lum())
             {
-                (*iter)->get_lum().toXmlElem("lum", "", _outStream);
+                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
             }
             else if ((*iter)->has_lumOff())
             {
-                (*iter)->get_lumOff().toXmlElem("lumOff", "", _outStream);
+                (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
             }
             else if ((*iter)->has_lumMod())
             {
-                (*iter)->get_lumMod().toXmlElem("lumMod", "", _outStream);
+                (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
             }
             else if ((*iter)->has_red())
             {
-                (*iter)->get_red().toXmlElem("red", "", _outStream);
+                (*iter)->get_red().toXmlElem("a:red", "", _outStream);
             }
             else if ((*iter)->has_redOff())
             {
-                (*iter)->get_redOff().toXmlElem("redOff", "", _outStream);
+                (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
             }
             else if ((*iter)->has_redMod())
             {
-                (*iter)->get_redMod().toXmlElem("redMod", "", _outStream);
+                (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
             }
             else if ((*iter)->has_green())
             {
-                (*iter)->get_green().toXmlElem("green", "", _outStream);
+                (*iter)->get_green().toXmlElem("a:green", "", _outStream);
             }
             else if ((*iter)->has_greenOff())
             {
-                (*iter)->get_greenOff().toXmlElem("greenOff", "", _outStream);
+                (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
             }
             else if ((*iter)->has_greenMod())
             {
-                (*iter)->get_greenMod().toXmlElem("greenMod", "", _outStream);
+                (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
             }
             else if ((*iter)->has_blue())
             {
-                (*iter)->get_blue().toXmlElem("blue", "", _outStream);
+                (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
             }
             else if ((*iter)->has_blueOff())
             {
-                (*iter)->get_blueOff().toXmlElem("blueOff", "", _outStream);
+                (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
             }
             else if ((*iter)->has_blueMod())
             {
-                (*iter)->get_blueMod().toXmlElem("blueMod", "", _outStream);
+                (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
             }
             else if ((*iter)->has_gamma())
             {
-                (*iter)->get_gamma().toXmlElem("gamma", "", _outStream);
+                (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
             }
             else if ((*iter)->has_invGamma())
             {
-                (*iter)->get_invGamma().toXmlElem("invGamma", "", _outStream);
+                (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
             }
         }
     }
@@ -35666,28 +36272,87 @@ CT_HslColor* CT_HslColor::default_instance_ = NULL;
     return ST_SystemColorVal::default_instance();
     }
 
-    bool CT_SystemColor::has_s_lastClr_attr() const
+    bool CT_SystemColor::has_lastClr_attr() const
     {    
-    return m_has_s_lastClr_attr;
+    return m_has_lastClr_attr;
     }
 
-    void CT_SystemColor::set_s_lastClr_attr(const ns_s::ST_HexColorRGB& _s_lastClr_attr)
+    void CT_SystemColor::set_lastClr_attr(const ns_s::ST_HexColorRGB& _lastClr_attr)
     {    
-    m_has_s_lastClr_attr = true;
-    m_s_lastClr_attr = new ns_s::ST_HexColorRGB(_s_lastClr_attr);
+    m_has_lastClr_attr = true;
+    m_lastClr_attr = new ns_s::ST_HexColorRGB(_lastClr_attr);
     }
 
-    const ns_s::ST_HexColorRGB& CT_SystemColor::get_s_lastClr_attr() const
+    const ns_s::ST_HexColorRGB& CT_SystemColor::get_lastClr_attr() const
     {    
-    if (m_s_lastClr_attr)
+    if (m_lastClr_attr)
     {
-        return *m_s_lastClr_attr;
+        return *m_lastClr_attr;
     }
     return ns_s::ST_HexColorRGB::default_instance();
     }
 
 
     // CT_SystemColor::ChildGroup_1
+    CT_SystemColor::ChildGroup_1::ChildGroup_1()
+    :m_has_tint(false),
+    m_tint(NULL),
+    m_has_shade(false),
+    m_shade(NULL),
+    m_has_comp(false),
+    m_comp(NULL),
+    m_has_inv(false),
+    m_inv(NULL),
+    m_has_gray(false),
+    m_gray(NULL),
+    m_has_alpha(false),
+    m_alpha(NULL),
+    m_has_alphaOff(false),
+    m_alphaOff(NULL),
+    m_has_alphaMod(false),
+    m_alphaMod(NULL),
+    m_has_hue(false),
+    m_hue(NULL),
+    m_has_hueOff(false),
+    m_hueOff(NULL),
+    m_has_hueMod(false),
+    m_hueMod(NULL),
+    m_has_sat(false),
+    m_sat(NULL),
+    m_has_satOff(false),
+    m_satOff(NULL),
+    m_has_satMod(false),
+    m_satMod(NULL),
+    m_has_lum(false),
+    m_lum(NULL),
+    m_has_lumOff(false),
+    m_lumOff(NULL),
+    m_has_lumMod(false),
+    m_lumMod(NULL),
+    m_has_red(false),
+    m_red(NULL),
+    m_has_redOff(false),
+    m_redOff(NULL),
+    m_has_redMod(false),
+    m_redMod(NULL),
+    m_has_green(false),
+    m_green(NULL),
+    m_has_greenOff(false),
+    m_greenOff(NULL),
+    m_has_greenMod(false),
+    m_greenMod(NULL),
+    m_has_blue(false),
+    m_blue(NULL),
+    m_has_blueOff(false),
+    m_blueOff(NULL),
+    m_has_blueMod(false),
+    m_blueMod(NULL),
+    m_has_gamma(false),
+    m_gamma(NULL),
+    m_has_invGamma(false),
+    m_invGamma(NULL)
+    {
+    }
     bool CT_SystemColor::ChildGroup_1::has_tint() const
     {    
     return m_has_tint;
@@ -43195,6 +43860,11 @@ CT_HslColor* CT_HslColor::default_instance_ = NULL;
 CT_SystemColor* CT_SystemColor::default_instance_ = NULL;
 
     // CT_SchemeColor
+    CT_SchemeColor::CT_SchemeColor()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     CT_PositiveFixedPercentage* CT_SchemeColor::add_tint()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -43462,115 +44132,115 @@ CT_SystemColor* CT_SystemColor::default_instance_ = NULL;
         {
             if ((*iter)->has_tint())
             {
-                (*iter)->get_tint().toXmlElem("tint", "", _outStream);
+                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
             }
             else if ((*iter)->has_shade())
             {
-                (*iter)->get_shade().toXmlElem("shade", "", _outStream);
+                (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
             }
             else if ((*iter)->has_comp())
             {
-                (*iter)->get_comp().toXmlElem("comp", "", _outStream);
+                (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
             }
             else if ((*iter)->has_inv())
             {
-                (*iter)->get_inv().toXmlElem("inv", "", _outStream);
+                (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
             }
             else if ((*iter)->has_gray())
             {
-                (*iter)->get_gray().toXmlElem("gray", "", _outStream);
+                (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
             }
             else if ((*iter)->has_alpha())
             {
-                (*iter)->get_alpha().toXmlElem("alpha", "", _outStream);
+                (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
             }
             else if ((*iter)->has_alphaOff())
             {
-                (*iter)->get_alphaOff().toXmlElem("alphaOff", "", _outStream);
+                (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
             }
             else if ((*iter)->has_alphaMod())
             {
-                (*iter)->get_alphaMod().toXmlElem("alphaMod", "", _outStream);
+                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
             }
             else if ((*iter)->has_hue())
             {
-                (*iter)->get_hue().toXmlElem("hue", "", _outStream);
+                (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
             }
             else if ((*iter)->has_hueOff())
             {
-                (*iter)->get_hueOff().toXmlElem("hueOff", "", _outStream);
+                (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
             }
             else if ((*iter)->has_hueMod())
             {
-                (*iter)->get_hueMod().toXmlElem("hueMod", "", _outStream);
+                (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
             }
             else if ((*iter)->has_sat())
             {
-                (*iter)->get_sat().toXmlElem("sat", "", _outStream);
+                (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
             }
             else if ((*iter)->has_satOff())
             {
-                (*iter)->get_satOff().toXmlElem("satOff", "", _outStream);
+                (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
             }
             else if ((*iter)->has_satMod())
             {
-                (*iter)->get_satMod().toXmlElem("satMod", "", _outStream);
+                (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
             }
             else if ((*iter)->has_lum())
             {
-                (*iter)->get_lum().toXmlElem("lum", "", _outStream);
+                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
             }
             else if ((*iter)->has_lumOff())
             {
-                (*iter)->get_lumOff().toXmlElem("lumOff", "", _outStream);
+                (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
             }
             else if ((*iter)->has_lumMod())
             {
-                (*iter)->get_lumMod().toXmlElem("lumMod", "", _outStream);
+                (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
             }
             else if ((*iter)->has_red())
             {
-                (*iter)->get_red().toXmlElem("red", "", _outStream);
+                (*iter)->get_red().toXmlElem("a:red", "", _outStream);
             }
             else if ((*iter)->has_redOff())
             {
-                (*iter)->get_redOff().toXmlElem("redOff", "", _outStream);
+                (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
             }
             else if ((*iter)->has_redMod())
             {
-                (*iter)->get_redMod().toXmlElem("redMod", "", _outStream);
+                (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
             }
             else if ((*iter)->has_green())
             {
-                (*iter)->get_green().toXmlElem("green", "", _outStream);
+                (*iter)->get_green().toXmlElem("a:green", "", _outStream);
             }
             else if ((*iter)->has_greenOff())
             {
-                (*iter)->get_greenOff().toXmlElem("greenOff", "", _outStream);
+                (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
             }
             else if ((*iter)->has_greenMod())
             {
-                (*iter)->get_greenMod().toXmlElem("greenMod", "", _outStream);
+                (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
             }
             else if ((*iter)->has_blue())
             {
-                (*iter)->get_blue().toXmlElem("blue", "", _outStream);
+                (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
             }
             else if ((*iter)->has_blueOff())
             {
-                (*iter)->get_blueOff().toXmlElem("blueOff", "", _outStream);
+                (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
             }
             else if ((*iter)->has_blueMod())
             {
-                (*iter)->get_blueMod().toXmlElem("blueMod", "", _outStream);
+                (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
             }
             else if ((*iter)->has_gamma())
             {
-                (*iter)->get_gamma().toXmlElem("gamma", "", _outStream);
+                (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
             }
             else if ((*iter)->has_invGamma())
             {
-                (*iter)->get_invGamma().toXmlElem("invGamma", "", _outStream);
+                (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
             }
         }
     }
@@ -43609,6 +44279,65 @@ CT_SystemColor* CT_SystemColor::default_instance_ = NULL;
 
 
     // CT_SchemeColor::ChildGroup_1
+    CT_SchemeColor::ChildGroup_1::ChildGroup_1()
+    :m_has_tint(false),
+    m_tint(NULL),
+    m_has_shade(false),
+    m_shade(NULL),
+    m_has_comp(false),
+    m_comp(NULL),
+    m_has_inv(false),
+    m_inv(NULL),
+    m_has_gray(false),
+    m_gray(NULL),
+    m_has_alpha(false),
+    m_alpha(NULL),
+    m_has_alphaOff(false),
+    m_alphaOff(NULL),
+    m_has_alphaMod(false),
+    m_alphaMod(NULL),
+    m_has_hue(false),
+    m_hue(NULL),
+    m_has_hueOff(false),
+    m_hueOff(NULL),
+    m_has_hueMod(false),
+    m_hueMod(NULL),
+    m_has_sat(false),
+    m_sat(NULL),
+    m_has_satOff(false),
+    m_satOff(NULL),
+    m_has_satMod(false),
+    m_satMod(NULL),
+    m_has_lum(false),
+    m_lum(NULL),
+    m_has_lumOff(false),
+    m_lumOff(NULL),
+    m_has_lumMod(false),
+    m_lumMod(NULL),
+    m_has_red(false),
+    m_red(NULL),
+    m_has_redOff(false),
+    m_redOff(NULL),
+    m_has_redMod(false),
+    m_redMod(NULL),
+    m_has_green(false),
+    m_green(NULL),
+    m_has_greenOff(false),
+    m_greenOff(NULL),
+    m_has_greenMod(false),
+    m_greenMod(NULL),
+    m_has_blue(false),
+    m_blue(NULL),
+    m_has_blueOff(false),
+    m_blueOff(NULL),
+    m_has_blueMod(false),
+    m_blueMod(NULL),
+    m_has_gamma(false),
+    m_gamma(NULL),
+    m_has_invGamma(false),
+    m_invGamma(NULL)
+    {
+    }
     bool CT_SchemeColor::ChildGroup_1::has_tint() const
     {    
     return m_has_tint;
@@ -51116,6 +51845,11 @@ CT_SystemColor* CT_SystemColor::default_instance_ = NULL;
 CT_SchemeColor* CT_SchemeColor::default_instance_ = NULL;
 
     // CT_PresetColor
+    CT_PresetColor::CT_PresetColor()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     CT_PositiveFixedPercentage* CT_PresetColor::add_tint()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -51383,115 +52117,115 @@ CT_SchemeColor* CT_SchemeColor::default_instance_ = NULL;
         {
             if ((*iter)->has_tint())
             {
-                (*iter)->get_tint().toXmlElem("tint", "", _outStream);
+                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
             }
             else if ((*iter)->has_shade())
             {
-                (*iter)->get_shade().toXmlElem("shade", "", _outStream);
+                (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
             }
             else if ((*iter)->has_comp())
             {
-                (*iter)->get_comp().toXmlElem("comp", "", _outStream);
+                (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
             }
             else if ((*iter)->has_inv())
             {
-                (*iter)->get_inv().toXmlElem("inv", "", _outStream);
+                (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
             }
             else if ((*iter)->has_gray())
             {
-                (*iter)->get_gray().toXmlElem("gray", "", _outStream);
+                (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
             }
             else if ((*iter)->has_alpha())
             {
-                (*iter)->get_alpha().toXmlElem("alpha", "", _outStream);
+                (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
             }
             else if ((*iter)->has_alphaOff())
             {
-                (*iter)->get_alphaOff().toXmlElem("alphaOff", "", _outStream);
+                (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
             }
             else if ((*iter)->has_alphaMod())
             {
-                (*iter)->get_alphaMod().toXmlElem("alphaMod", "", _outStream);
+                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
             }
             else if ((*iter)->has_hue())
             {
-                (*iter)->get_hue().toXmlElem("hue", "", _outStream);
+                (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
             }
             else if ((*iter)->has_hueOff())
             {
-                (*iter)->get_hueOff().toXmlElem("hueOff", "", _outStream);
+                (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
             }
             else if ((*iter)->has_hueMod())
             {
-                (*iter)->get_hueMod().toXmlElem("hueMod", "", _outStream);
+                (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
             }
             else if ((*iter)->has_sat())
             {
-                (*iter)->get_sat().toXmlElem("sat", "", _outStream);
+                (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
             }
             else if ((*iter)->has_satOff())
             {
-                (*iter)->get_satOff().toXmlElem("satOff", "", _outStream);
+                (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
             }
             else if ((*iter)->has_satMod())
             {
-                (*iter)->get_satMod().toXmlElem("satMod", "", _outStream);
+                (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
             }
             else if ((*iter)->has_lum())
             {
-                (*iter)->get_lum().toXmlElem("lum", "", _outStream);
+                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
             }
             else if ((*iter)->has_lumOff())
             {
-                (*iter)->get_lumOff().toXmlElem("lumOff", "", _outStream);
+                (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
             }
             else if ((*iter)->has_lumMod())
             {
-                (*iter)->get_lumMod().toXmlElem("lumMod", "", _outStream);
+                (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
             }
             else if ((*iter)->has_red())
             {
-                (*iter)->get_red().toXmlElem("red", "", _outStream);
+                (*iter)->get_red().toXmlElem("a:red", "", _outStream);
             }
             else if ((*iter)->has_redOff())
             {
-                (*iter)->get_redOff().toXmlElem("redOff", "", _outStream);
+                (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
             }
             else if ((*iter)->has_redMod())
             {
-                (*iter)->get_redMod().toXmlElem("redMod", "", _outStream);
+                (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
             }
             else if ((*iter)->has_green())
             {
-                (*iter)->get_green().toXmlElem("green", "", _outStream);
+                (*iter)->get_green().toXmlElem("a:green", "", _outStream);
             }
             else if ((*iter)->has_greenOff())
             {
-                (*iter)->get_greenOff().toXmlElem("greenOff", "", _outStream);
+                (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
             }
             else if ((*iter)->has_greenMod())
             {
-                (*iter)->get_greenMod().toXmlElem("greenMod", "", _outStream);
+                (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
             }
             else if ((*iter)->has_blue())
             {
-                (*iter)->get_blue().toXmlElem("blue", "", _outStream);
+                (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
             }
             else if ((*iter)->has_blueOff())
             {
-                (*iter)->get_blueOff().toXmlElem("blueOff", "", _outStream);
+                (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
             }
             else if ((*iter)->has_blueMod())
             {
-                (*iter)->get_blueMod().toXmlElem("blueMod", "", _outStream);
+                (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
             }
             else if ((*iter)->has_gamma())
             {
-                (*iter)->get_gamma().toXmlElem("gamma", "", _outStream);
+                (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
             }
             else if ((*iter)->has_invGamma())
             {
-                (*iter)->get_invGamma().toXmlElem("invGamma", "", _outStream);
+                (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
             }
         }
     }
@@ -51530,6 +52264,65 @@ CT_SchemeColor* CT_SchemeColor::default_instance_ = NULL;
 
 
     // CT_PresetColor::ChildGroup_1
+    CT_PresetColor::ChildGroup_1::ChildGroup_1()
+    :m_has_tint(false),
+    m_tint(NULL),
+    m_has_shade(false),
+    m_shade(NULL),
+    m_has_comp(false),
+    m_comp(NULL),
+    m_has_inv(false),
+    m_inv(NULL),
+    m_has_gray(false),
+    m_gray(NULL),
+    m_has_alpha(false),
+    m_alpha(NULL),
+    m_has_alphaOff(false),
+    m_alphaOff(NULL),
+    m_has_alphaMod(false),
+    m_alphaMod(NULL),
+    m_has_hue(false),
+    m_hue(NULL),
+    m_has_hueOff(false),
+    m_hueOff(NULL),
+    m_has_hueMod(false),
+    m_hueMod(NULL),
+    m_has_sat(false),
+    m_sat(NULL),
+    m_has_satOff(false),
+    m_satOff(NULL),
+    m_has_satMod(false),
+    m_satMod(NULL),
+    m_has_lum(false),
+    m_lum(NULL),
+    m_has_lumOff(false),
+    m_lumOff(NULL),
+    m_has_lumMod(false),
+    m_lumMod(NULL),
+    m_has_red(false),
+    m_red(NULL),
+    m_has_redOff(false),
+    m_redOff(NULL),
+    m_has_redMod(false),
+    m_redMod(NULL),
+    m_has_green(false),
+    m_green(NULL),
+    m_has_greenOff(false),
+    m_greenOff(NULL),
+    m_has_greenMod(false),
+    m_greenMod(NULL),
+    m_has_blue(false),
+    m_blue(NULL),
+    m_has_blueOff(false),
+    m_blueOff(NULL),
+    m_has_blueMod(false),
+    m_blueMod(NULL),
+    m_has_gamma(false),
+    m_gamma(NULL),
+    m_has_invGamma(false),
+    m_invGamma(NULL)
+    {
+    }
     bool CT_PresetColor::ChildGroup_1::has_tint() const
     {    
     return m_has_tint;
@@ -59037,6 +59830,10 @@ CT_SchemeColor* CT_SchemeColor::default_instance_ = NULL;
 CT_PresetColor* CT_PresetColor::default_instance_ = NULL;
 
     // CT_OfficeArtExtensionList
+    CT_OfficeArtExtensionList::CT_OfficeArtExtensionList()
+
+    {
+    }
     CT_OfficeArtExtension* CT_OfficeArtExtensionList::add_ext()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -59074,7 +59871,7 @@ CT_PresetColor* CT_PresetColor::default_instance_ = NULL;
         {
             if ((*iter)->has_ext())
             {
-                (*iter)->get_ext().toXmlElem("ext", "", _outStream);
+                (*iter)->get_ext().toXmlElem("a:ext", "", _outStream);
             }
         }
     }
@@ -59093,6 +59890,11 @@ CT_PresetColor* CT_PresetColor::default_instance_ = NULL;
 
 
     // CT_OfficeArtExtensionList::ChildGroup_1
+    CT_OfficeArtExtensionList::ChildGroup_1::ChildGroup_1()
+    :m_has_ext(false),
+    m_ext(NULL)
+    {
+    }
     bool CT_OfficeArtExtensionList::ChildGroup_1::has_ext() const
     {    
     return m_has_ext;
@@ -59121,6 +59923,13 @@ CT_PresetColor* CT_PresetColor::default_instance_ = NULL;
 CT_OfficeArtExtensionList* CT_OfficeArtExtensionList::default_instance_ = NULL;
 
     // CT_Scale2D
+    CT_Scale2D::CT_Scale2D()
+    :m_has_sx(false),
+    m_sx(NULL),
+    m_has_sy(false),
+    m_sy(NULL)
+    {
+    }
     bool CT_Scale2D::has_sx() const
     {    
     return m_has_sx;
@@ -59185,12 +59994,12 @@ CT_OfficeArtExtensionList* CT_OfficeArtExtensionList::default_instance_ = NULL;
             
     if (m_has_sx)
     {
-        m_sx->toXmlElem("sx", "", _outStream);;
+        m_sx->toXmlElem("a:sx", "", _outStream);;
     }
     
     if (m_has_sy)
     {
-        m_sy->toXmlElem("sy", "", _outStream);;
+        m_sy->toXmlElem("a:sy", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -59208,6 +60017,19 @@ CT_OfficeArtExtensionList* CT_OfficeArtExtensionList::default_instance_ = NULL;
 CT_Scale2D* CT_Scale2D::default_instance_ = NULL;
 
     // CT_Transform2D
+    CT_Transform2D::CT_Transform2D()
+    :m_has_off(false),
+    m_off(NULL),
+    m_has_ext(false),
+    m_ext(NULL),
+    m_has_rot_attr(false),
+    m_rot_attr(NULL),
+    m_has_flipH_attr(false),
+    m_flipH_attr(false),
+    m_has_flipV_attr(false),
+    m_flipV_attr(false)
+    {
+    }
     bool CT_Transform2D::has_off() const
     {    
     return m_has_off;
@@ -59304,12 +60126,12 @@ CT_Scale2D* CT_Scale2D::default_instance_ = NULL;
             
     if (m_has_off)
     {
-        m_off->toXmlElem("off", "", _outStream);;
+        m_off->toXmlElem("a:off", "", _outStream);;
     }
     
     if (m_has_ext)
     {
-        m_ext->toXmlElem("ext", "", _outStream);;
+        m_ext->toXmlElem("a:ext", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -59379,6 +60201,23 @@ CT_Scale2D* CT_Scale2D::default_instance_ = NULL;
 CT_Transform2D* CT_Transform2D::default_instance_ = NULL;
 
     // CT_GroupTransform2D
+    CT_GroupTransform2D::CT_GroupTransform2D()
+    :m_has_off(false),
+    m_off(NULL),
+    m_has_ext(false),
+    m_ext(NULL),
+    m_has_chOff(false),
+    m_chOff(NULL),
+    m_has_chExt(false),
+    m_chExt(NULL),
+    m_has_rot_attr(false),
+    m_rot_attr(NULL),
+    m_has_flipH_attr(false),
+    m_flipH_attr(false),
+    m_has_flipV_attr(false),
+    m_flipV_attr(false)
+    {
+    }
     bool CT_GroupTransform2D::has_off() const
     {    
     return m_has_off;
@@ -59523,22 +60362,22 @@ CT_Transform2D* CT_Transform2D::default_instance_ = NULL;
             
     if (m_has_off)
     {
-        m_off->toXmlElem("off", "", _outStream);;
+        m_off->toXmlElem("a:off", "", _outStream);;
     }
     
     if (m_has_ext)
     {
-        m_ext->toXmlElem("ext", "", _outStream);;
+        m_ext->toXmlElem("a:ext", "", _outStream);;
     }
     
     if (m_has_chOff)
     {
-        m_chOff->toXmlElem("chOff", "", _outStream);;
+        m_chOff->toXmlElem("a:chOff", "", _outStream);;
     }
     
     if (m_has_chExt)
     {
-        m_chExt->toXmlElem("chExt", "", _outStream);;
+        m_chExt->toXmlElem("a:chExt", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -59608,6 +60447,15 @@ CT_Transform2D* CT_Transform2D::default_instance_ = NULL;
 CT_GroupTransform2D* CT_GroupTransform2D::default_instance_ = NULL;
 
     // CT_Point3D
+    CT_Point3D::CT_Point3D()
+    :m_has_x_attr(false),
+    m_x_attr(NULL),
+    m_has_y_attr(false),
+    m_y_attr(NULL),
+    m_has_z_attr(false),
+    m_z_attr(NULL)
+    {
+    }
     void CT_Point3D::clear()
     {    
     m_has_x_attr = false;
@@ -59741,6 +60589,15 @@ CT_GroupTransform2D* CT_GroupTransform2D::default_instance_ = NULL;
 CT_Point3D* CT_Point3D::default_instance_ = NULL;
 
     // CT_Vector3D
+    CT_Vector3D::CT_Vector3D()
+    :m_has_dx_attr(false),
+    m_dx_attr(NULL),
+    m_has_dy_attr(false),
+    m_dy_attr(NULL),
+    m_has_dz_attr(false),
+    m_dz_attr(NULL)
+    {
+    }
     void CT_Vector3D::clear()
     {    
     m_has_dx_attr = false;
@@ -59874,6 +60731,15 @@ CT_Point3D* CT_Point3D::default_instance_ = NULL;
 CT_Vector3D* CT_Vector3D::default_instance_ = NULL;
 
     // CT_SphereCoords
+    CT_SphereCoords::CT_SphereCoords()
+    :m_has_lat_attr(false),
+    m_lat_attr(NULL),
+    m_has_lon_attr(false),
+    m_lon_attr(NULL),
+    m_has_rev_attr(false),
+    m_rev_attr(NULL)
+    {
+    }
     void CT_SphereCoords::clear()
     {    
     m_has_lat_attr = false;
@@ -60007,6 +60873,17 @@ CT_Vector3D* CT_Vector3D::default_instance_ = NULL;
 CT_SphereCoords* CT_SphereCoords::default_instance_ = NULL;
 
     // CT_RelativeRect
+    CT_RelativeRect::CT_RelativeRect()
+    :m_has_l_attr(false),
+    m_l_attr(NULL),
+    m_has_t_attr(false),
+    m_t_attr(NULL),
+    m_has_r_attr(false),
+    m_r_attr(NULL),
+    m_has_b_attr(false),
+    m_b_attr(NULL)
+    {
+    }
     void CT_RelativeRect::clear()
     {    
     m_has_l_attr = false;
@@ -60175,6 +61052,21 @@ CT_SphereCoords* CT_SphereCoords::default_instance_ = NULL;
 CT_RelativeRect* CT_RelativeRect::default_instance_ = NULL;
 
     // CT_Color
+    CT_Color::CT_Color()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL)
+    {
+    }
     bool CT_Color::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -60611,32 +61503,32 @@ CT_RelativeRect* CT_RelativeRect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
     }
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
     }
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
     }
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
     }
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
     }
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -60654,6 +61546,10 @@ CT_RelativeRect* CT_RelativeRect::default_instance_ = NULL;
 CT_Color* CT_Color::default_instance_ = NULL;
 
     // CT_ColorMRU
+    CT_ColorMRU::CT_ColorMRU()
+
+    {
+    }
     CT_ScRgbColor* CT_ColorMRU::add_scrgbClr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -60731,27 +61627,27 @@ CT_Color* CT_Color::default_instance_ = NULL;
         {
             if ((*iter)->has_scrgbClr())
             {
-                (*iter)->get_scrgbClr().toXmlElem("scrgbClr", "", _outStream);
+                (*iter)->get_scrgbClr().toXmlElem("a:scrgbClr", "", _outStream);
             }
             else if ((*iter)->has_srgbClr())
             {
-                (*iter)->get_srgbClr().toXmlElem("srgbClr", "", _outStream);
+                (*iter)->get_srgbClr().toXmlElem("a:srgbClr", "", _outStream);
             }
             else if ((*iter)->has_hslClr())
             {
-                (*iter)->get_hslClr().toXmlElem("hslClr", "", _outStream);
+                (*iter)->get_hslClr().toXmlElem("a:hslClr", "", _outStream);
             }
             else if ((*iter)->has_sysClr())
             {
-                (*iter)->get_sysClr().toXmlElem("sysClr", "", _outStream);
+                (*iter)->get_sysClr().toXmlElem("a:sysClr", "", _outStream);
             }
             else if ((*iter)->has_schemeClr())
             {
-                (*iter)->get_schemeClr().toXmlElem("schemeClr", "", _outStream);
+                (*iter)->get_schemeClr().toXmlElem("a:schemeClr", "", _outStream);
             }
             else if ((*iter)->has_prstClr())
             {
-                (*iter)->get_prstClr().toXmlElem("prstClr", "", _outStream);
+                (*iter)->get_prstClr().toXmlElem("a:prstClr", "", _outStream);
             }
         }
     }
@@ -60770,6 +61666,21 @@ CT_Color* CT_Color::default_instance_ = NULL;
 
 
     // CT_ColorMRU::ChildGroup_1
+    CT_ColorMRU::ChildGroup_1::ChildGroup_1()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL)
+    {
+    }
     bool CT_ColorMRU::ChildGroup_1::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -61193,6 +62104,13 @@ CT_Color* CT_Color::default_instance_ = NULL;
 CT_ColorMRU* CT_ColorMRU::default_instance_ = NULL;
 
     // CT_EmbeddedWAVAudioFile
+    CT_EmbeddedWAVAudioFile::CT_EmbeddedWAVAudioFile()
+    :m_has_r_embed_attr(false),
+    m_r_embed_attr(NULL),
+    m_has_name_attr(false),
+    m_name_attr("")
+    {
+    }
     void CT_EmbeddedWAVAudioFile::clear()
     {    
     m_has_r_embed_attr = false;
@@ -61219,7 +62137,7 @@ CT_ColorMRU* CT_ColorMRU::default_instance_ = NULL;
             
     if (m_has_r_embed_attr)
     {
-        m_r_embed_attr->toXmlAttr("embed", _outStream);
+        m_r_embed_attr->toXmlAttr("r:embed", _outStream);
     }
     
     
@@ -61281,6 +62199,29 @@ CT_ColorMRU* CT_ColorMRU::default_instance_ = NULL;
 CT_EmbeddedWAVAudioFile* CT_EmbeddedWAVAudioFile::default_instance_ = NULL;
 
     // CT_Hyperlink
+    CT_Hyperlink::CT_Hyperlink()
+    :m_has_snd(false),
+    m_snd(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_invalidUrl_attr(false),
+    m_invalidUrl_attr(""),
+    m_has_action_attr(false),
+    m_action_attr(""),
+    m_has_tgtFrame_attr(false),
+    m_tgtFrame_attr(""),
+    m_has_tooltip_attr(false),
+    m_tooltip_attr(""),
+    m_has_history_attr(false),
+    m_history_attr(false),
+    m_has_highlightClick_attr(false),
+    m_highlightClick_attr(false),
+    m_has_endSnd_attr(false),
+    m_endSnd_attr(false)
+    {
+    }
     bool CT_Hyperlink::has_snd() const
     {    
     return m_has_snd;
@@ -61373,7 +62314,7 @@ CT_EmbeddedWAVAudioFile* CT_EmbeddedWAVAudioFile::default_instance_ = NULL;
             
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
@@ -61422,12 +62363,12 @@ CT_EmbeddedWAVAudioFile* CT_EmbeddedWAVAudioFile::default_instance_ = NULL;
             
     if (m_has_snd)
     {
-        m_snd->toXmlElem("snd", "", _outStream);;
+        m_snd->toXmlElem("a:snd", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -61577,6 +62518,31 @@ CT_EmbeddedWAVAudioFile* CT_EmbeddedWAVAudioFile::default_instance_ = NULL;
 CT_Hyperlink* CT_Hyperlink::default_instance_ = NULL;
 
     // CT_ConnectorLocking
+    CT_ConnectorLocking::CT_ConnectorLocking()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_noGrp_attr(false),
+    m_noGrp_attr(false),
+    m_has_noSelect_attr(false),
+    m_noSelect_attr(false),
+    m_has_noRot_attr(false),
+    m_noRot_attr(false),
+    m_has_noChangeAspect_attr(false),
+    m_noChangeAspect_attr(false),
+    m_has_noMove_attr(false),
+    m_noMove_attr(false),
+    m_has_noResize_attr(false),
+    m_noResize_attr(false),
+    m_has_noEditPoints_attr(false),
+    m_noEditPoints_attr(false),
+    m_has_noAdjustHandles_attr(false),
+    m_noAdjustHandles_attr(false),
+    m_has_noChangeArrowheads_attr(false),
+    m_noChangeArrowheads_attr(false),
+    m_has_noChangeShapeType_attr(false),
+    m_noChangeShapeType_attr(false)
+    {
+    }
     bool CT_ConnectorLocking::has_extLst() const
     {    
     return m_has_extLst;
@@ -61706,7 +62672,7 @@ CT_Hyperlink* CT_Hyperlink::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -61884,6 +62850,33 @@ CT_Hyperlink* CT_Hyperlink::default_instance_ = NULL;
 CT_ConnectorLocking* CT_ConnectorLocking::default_instance_ = NULL;
 
     // CT_ShapeLocking
+    CT_ShapeLocking::CT_ShapeLocking()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_noGrp_attr(false),
+    m_noGrp_attr(false),
+    m_has_noSelect_attr(false),
+    m_noSelect_attr(false),
+    m_has_noRot_attr(false),
+    m_noRot_attr(false),
+    m_has_noChangeAspect_attr(false),
+    m_noChangeAspect_attr(false),
+    m_has_noMove_attr(false),
+    m_noMove_attr(false),
+    m_has_noResize_attr(false),
+    m_noResize_attr(false),
+    m_has_noEditPoints_attr(false),
+    m_noEditPoints_attr(false),
+    m_has_noAdjustHandles_attr(false),
+    m_noAdjustHandles_attr(false),
+    m_has_noChangeArrowheads_attr(false),
+    m_noChangeArrowheads_attr(false),
+    m_has_noChangeShapeType_attr(false),
+    m_noChangeShapeType_attr(false),
+    m_has_noTextEdit_attr(false),
+    m_noTextEdit_attr(false)
+    {
+    }
     bool CT_ShapeLocking::has_extLst() const
     {    
     return m_has_extLst;
@@ -62022,7 +63015,7 @@ CT_ConnectorLocking* CT_ConnectorLocking::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -62216,6 +63209,33 @@ CT_ConnectorLocking* CT_ConnectorLocking::default_instance_ = NULL;
 CT_ShapeLocking* CT_ShapeLocking::default_instance_ = NULL;
 
     // CT_PictureLocking
+    CT_PictureLocking::CT_PictureLocking()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_noGrp_attr(false),
+    m_noGrp_attr(false),
+    m_has_noSelect_attr(false),
+    m_noSelect_attr(false),
+    m_has_noRot_attr(false),
+    m_noRot_attr(false),
+    m_has_noChangeAspect_attr(false),
+    m_noChangeAspect_attr(false),
+    m_has_noMove_attr(false),
+    m_noMove_attr(false),
+    m_has_noResize_attr(false),
+    m_noResize_attr(false),
+    m_has_noEditPoints_attr(false),
+    m_noEditPoints_attr(false),
+    m_has_noAdjustHandles_attr(false),
+    m_noAdjustHandles_attr(false),
+    m_has_noChangeArrowheads_attr(false),
+    m_noChangeArrowheads_attr(false),
+    m_has_noChangeShapeType_attr(false),
+    m_noChangeShapeType_attr(false),
+    m_has_noCrop_attr(false),
+    m_noCrop_attr(false)
+    {
+    }
     bool CT_PictureLocking::has_extLst() const
     {    
     return m_has_extLst;
@@ -62354,7 +63374,7 @@ CT_ShapeLocking* CT_ShapeLocking::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -62548,6 +63568,25 @@ CT_ShapeLocking* CT_ShapeLocking::default_instance_ = NULL;
 CT_PictureLocking* CT_PictureLocking::default_instance_ = NULL;
 
     // CT_GroupLocking
+    CT_GroupLocking::CT_GroupLocking()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_noGrp_attr(false),
+    m_noGrp_attr(false),
+    m_has_noUngrp_attr(false),
+    m_noUngrp_attr(false),
+    m_has_noSelect_attr(false),
+    m_noSelect_attr(false),
+    m_has_noRot_attr(false),
+    m_noRot_attr(false),
+    m_has_noChangeAspect_attr(false),
+    m_noChangeAspect_attr(false),
+    m_has_noMove_attr(false),
+    m_noMove_attr(false),
+    m_has_noResize_attr(false),
+    m_noResize_attr(false)
+    {
+    }
     bool CT_GroupLocking::has_extLst() const
     {    
     return m_has_extLst;
@@ -62650,7 +63689,7 @@ CT_PictureLocking* CT_PictureLocking::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -62780,6 +63819,23 @@ CT_PictureLocking* CT_PictureLocking::default_instance_ = NULL;
 CT_GroupLocking* CT_GroupLocking::default_instance_ = NULL;
 
     // CT_GraphicalObjectFrameLocking
+    CT_GraphicalObjectFrameLocking::CT_GraphicalObjectFrameLocking()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_noGrp_attr(false),
+    m_noGrp_attr(false),
+    m_has_noDrilldown_attr(false),
+    m_noDrilldown_attr(false),
+    m_has_noSelect_attr(false),
+    m_noSelect_attr(false),
+    m_has_noChangeAspect_attr(false),
+    m_noChangeAspect_attr(false),
+    m_has_noMove_attr(false),
+    m_noMove_attr(false),
+    m_has_noResize_attr(false),
+    m_noResize_attr(false)
+    {
+    }
     bool CT_GraphicalObjectFrameLocking::has_extLst() const
     {    
     return m_has_extLst;
@@ -62873,7 +63929,7 @@ CT_GroupLocking* CT_GroupLocking::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -62987,6 +64043,31 @@ CT_GroupLocking* CT_GroupLocking::default_instance_ = NULL;
 CT_GraphicalObjectFrameLocking* CT_GraphicalObjectFrameLocking::default_instance_ = NULL;
 
     // CT_ContentPartLocking
+    CT_ContentPartLocking::CT_ContentPartLocking()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_noGrp_attr(false),
+    m_noGrp_attr(false),
+    m_has_noSelect_attr(false),
+    m_noSelect_attr(false),
+    m_has_noRot_attr(false),
+    m_noRot_attr(false),
+    m_has_noChangeAspect_attr(false),
+    m_noChangeAspect_attr(false),
+    m_has_noMove_attr(false),
+    m_noMove_attr(false),
+    m_has_noResize_attr(false),
+    m_noResize_attr(false),
+    m_has_noEditPoints_attr(false),
+    m_noEditPoints_attr(false),
+    m_has_noAdjustHandles_attr(false),
+    m_noAdjustHandles_attr(false),
+    m_has_noChangeArrowheads_attr(false),
+    m_noChangeArrowheads_attr(false),
+    m_has_noChangeShapeType_attr(false),
+    m_noChangeShapeType_attr(false)
+    {
+    }
     bool CT_ContentPartLocking::has_extLst() const
     {    
     return m_has_extLst;
@@ -63116,7 +64197,7 @@ CT_GraphicalObjectFrameLocking* CT_GraphicalObjectFrameLocking::default_instance
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -63294,6 +64375,25 @@ CT_GraphicalObjectFrameLocking* CT_GraphicalObjectFrameLocking::default_instance
 CT_ContentPartLocking* CT_ContentPartLocking::default_instance_ = NULL;
 
     // CT_NonVisualDrawingProps
+    CT_NonVisualDrawingProps::CT_NonVisualDrawingProps()
+    :m_has_hlinkClick(false),
+    m_hlinkClick(NULL),
+    m_has_hlinkHover(false),
+    m_hlinkHover(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_id_attr(false),
+    m_id_attr(NULL),
+    m_has_name_attr(false),
+    m_name_attr(""),
+    m_has_descr_attr(false),
+    m_descr_attr(""),
+    m_has_hidden_attr(false),
+    m_hidden_attr(false),
+    m_has_title_attr(false),
+    m_title_attr("")
+    {
+    }
     bool CT_NonVisualDrawingProps::has_hlinkClick() const
     {    
     return m_has_hlinkClick;
@@ -63432,17 +64532,17 @@ CT_ContentPartLocking* CT_ContentPartLocking::default_instance_ = NULL;
             
     if (m_has_hlinkClick)
     {
-        m_hlinkClick->toXmlElem("hlinkClick", "", _outStream);;
+        m_hlinkClick->toXmlElem("a:hlinkClick", "", _outStream);;
     }
     
     if (m_has_hlinkHover)
     {
-        m_hlinkHover->toXmlElem("hlinkHover", "", _outStream);;
+        m_hlinkHover->toXmlElem("a:hlinkHover", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -63544,6 +64644,15 @@ CT_ContentPartLocking* CT_ContentPartLocking::default_instance_ = NULL;
 CT_NonVisualDrawingProps* CT_NonVisualDrawingProps::default_instance_ = NULL;
 
     // CT_NonVisualDrawingShapeProps
+    CT_NonVisualDrawingShapeProps::CT_NonVisualDrawingShapeProps()
+    :m_has_spLocks(false),
+    m_spLocks(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_txBox_attr(false),
+    m_txBox_attr(false)
+    {
+    }
     bool CT_NonVisualDrawingShapeProps::has_spLocks() const
     {    
     return m_has_spLocks;
@@ -63616,12 +64725,12 @@ CT_NonVisualDrawingProps* CT_NonVisualDrawingProps::default_instance_ = NULL;
             
     if (m_has_spLocks)
     {
-        m_spLocks->toXmlElem("spLocks", "", _outStream);;
+        m_spLocks->toXmlElem("a:spLocks", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -63655,6 +64764,17 @@ CT_NonVisualDrawingProps* CT_NonVisualDrawingProps::default_instance_ = NULL;
 CT_NonVisualDrawingShapeProps* CT_NonVisualDrawingShapeProps::default_instance_ = NULL;
 
     // CT_NonVisualConnectorProperties
+    CT_NonVisualConnectorProperties::CT_NonVisualConnectorProperties()
+    :m_has_cxnSpLocks(false),
+    m_cxnSpLocks(NULL),
+    m_has_stCxn(false),
+    m_stCxn(NULL),
+    m_has_endCxn(false),
+    m_endCxn(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_NonVisualConnectorProperties::has_cxnSpLocks() const
     {    
     return m_has_cxnSpLocks;
@@ -63767,22 +64887,22 @@ CT_NonVisualDrawingShapeProps* CT_NonVisualDrawingShapeProps::default_instance_ 
             
     if (m_has_cxnSpLocks)
     {
-        m_cxnSpLocks->toXmlElem("cxnSpLocks", "", _outStream);;
+        m_cxnSpLocks->toXmlElem("a:cxnSpLocks", "", _outStream);;
     }
     
     if (m_has_stCxn)
     {
-        m_stCxn->toXmlElem("stCxn", "", _outStream);;
+        m_stCxn->toXmlElem("a:stCxn", "", _outStream);;
     }
     
     if (m_has_endCxn)
     {
-        m_endCxn->toXmlElem("endCxn", "", _outStream);;
+        m_endCxn->toXmlElem("a:endCxn", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -63800,6 +64920,15 @@ CT_NonVisualDrawingShapeProps* CT_NonVisualDrawingShapeProps::default_instance_ 
 CT_NonVisualConnectorProperties* CT_NonVisualConnectorProperties::default_instance_ = NULL;
 
     // CT_NonVisualPictureProperties
+    CT_NonVisualPictureProperties::CT_NonVisualPictureProperties()
+    :m_has_picLocks(false),
+    m_picLocks(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_preferRelativeResize_attr(false),
+    m_preferRelativeResize_attr(false)
+    {
+    }
     bool CT_NonVisualPictureProperties::has_picLocks() const
     {    
     return m_has_picLocks;
@@ -63872,12 +65001,12 @@ CT_NonVisualConnectorProperties* CT_NonVisualConnectorProperties::default_instan
             
     if (m_has_picLocks)
     {
-        m_picLocks->toXmlElem("picLocks", "", _outStream);;
+        m_picLocks->toXmlElem("a:picLocks", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -63911,6 +65040,13 @@ CT_NonVisualConnectorProperties* CT_NonVisualConnectorProperties::default_instan
 CT_NonVisualPictureProperties* CT_NonVisualPictureProperties::default_instance_ = NULL;
 
     // CT_NonVisualGroupDrawingShapeProps
+    CT_NonVisualGroupDrawingShapeProps::CT_NonVisualGroupDrawingShapeProps()
+    :m_has_grpSpLocks(false),
+    m_grpSpLocks(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_NonVisualGroupDrawingShapeProps::has_grpSpLocks() const
     {    
     return m_has_grpSpLocks;
@@ -63975,12 +65111,12 @@ CT_NonVisualPictureProperties* CT_NonVisualPictureProperties::default_instance_ 
             
     if (m_has_grpSpLocks)
     {
-        m_grpSpLocks->toXmlElem("grpSpLocks", "", _outStream);;
+        m_grpSpLocks->toXmlElem("a:grpSpLocks", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -63998,6 +65134,13 @@ CT_NonVisualPictureProperties* CT_NonVisualPictureProperties::default_instance_ 
 CT_NonVisualGroupDrawingShapeProps* CT_NonVisualGroupDrawingShapeProps::default_instance_ = NULL;
 
     // CT_NonVisualGraphicFrameProperties
+    CT_NonVisualGraphicFrameProperties::CT_NonVisualGraphicFrameProperties()
+    :m_has_graphicFrameLocks(false),
+    m_graphicFrameLocks(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_NonVisualGraphicFrameProperties::has_graphicFrameLocks() const
     {    
     return m_has_graphicFrameLocks;
@@ -64062,12 +65205,12 @@ CT_NonVisualGroupDrawingShapeProps* CT_NonVisualGroupDrawingShapeProps::default_
             
     if (m_has_graphicFrameLocks)
     {
-        m_graphicFrameLocks->toXmlElem("graphicFrameLocks", "", _outStream);;
+        m_graphicFrameLocks->toXmlElem("a:graphicFrameLocks", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -64085,6 +65228,15 @@ CT_NonVisualGroupDrawingShapeProps* CT_NonVisualGroupDrawingShapeProps::default_
 CT_NonVisualGraphicFrameProperties* CT_NonVisualGraphicFrameProperties::default_instance_ = NULL;
 
     // CT_NonVisualContentPartProperties
+    CT_NonVisualContentPartProperties::CT_NonVisualContentPartProperties()
+    :m_has_cpLocks(false),
+    m_cpLocks(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_isComment_attr(false),
+    m_isComment_attr(false)
+    {
+    }
     bool CT_NonVisualContentPartProperties::has_cpLocks() const
     {    
     return m_has_cpLocks;
@@ -64157,12 +65309,12 @@ CT_NonVisualGraphicFrameProperties* CT_NonVisualGraphicFrameProperties::default_
             
     if (m_has_cpLocks)
     {
-        m_cpLocks->toXmlElem("cpLocks", "", _outStream);;
+        m_cpLocks->toXmlElem("a:cpLocks", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -64196,6 +65348,13 @@ CT_NonVisualGraphicFrameProperties* CT_NonVisualGraphicFrameProperties::default_
 CT_NonVisualContentPartProperties* CT_NonVisualContentPartProperties::default_instance_ = NULL;
 
     // CT_GraphicalObjectData
+    CT_GraphicalObjectData::CT_GraphicalObjectData()
+    :m_has__any(false),
+    m__any(NULL),
+    m_has_uri_attr(false),
+    m_uri_attr("")
+    {
+    }
     void CT_GraphicalObjectData::clear()
     {    
     m_has_uri_attr = false;
@@ -64218,10 +65377,10 @@ CT_NonVisualContentPartProperties* CT_NonVisualContentPartProperties::default_in
     
             _outStream << ">";
             
-    if (m_has_any)
+    if (m_has__any)
     {
         
-    m_any->toXml(_outStream);
+    m__any->toXml(_outStream);
     ;
     }
     
@@ -64256,6 +65415,11 @@ CT_NonVisualContentPartProperties* CT_NonVisualContentPartProperties::default_in
 CT_GraphicalObjectData* CT_GraphicalObjectData::default_instance_ = NULL;
 
     // CT_GraphicalObject
+    CT_GraphicalObject::CT_GraphicalObject()
+    :m_has_graphicData(false),
+    m_graphicData(NULL)
+    {
+    }
     bool CT_GraphicalObject::has_graphicData() const
     {    
     return m_has_graphicData;
@@ -64296,7 +65460,7 @@ CT_GraphicalObjectData* CT_GraphicalObjectData::default_instance_ = NULL;
             
     if (m_has_graphicData)
     {
-        m_graphicData->toXmlElem("graphicData", "", _outStream);;
+        m_graphicData->toXmlElem("a:graphicData", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -64314,14 +65478,21 @@ CT_GraphicalObjectData* CT_GraphicalObjectData::default_instance_ = NULL;
 CT_GraphicalObject* CT_GraphicalObject::default_instance_ = NULL;
 
     // CT_AnimationDgmElement
+    CT_AnimationDgmElement::CT_AnimationDgmElement()
+    :m_has_id_attr(false),
+    m_id_attr(NULL),
+    m_has_bldStep_attr(false),
+    m_bldStep_attr(NULL)
+    {
+    }
     void CT_AnimationDgmElement::clear()
     {    
-    m_has_s_id_attr = false;
+    m_has_id_attr = false;
     
-    if (m_s_id_attr)
+    if (m_id_attr)
     {
-        delete m_s_id_attr;
-        m_s_id_attr = NULL;
+        delete m_id_attr;
+        m_id_attr = NULL;
     }
     
     
@@ -64344,9 +65515,9 @@ CT_GraphicalObject* CT_GraphicalObject::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_id_attr)
+    if (m_has_id_attr)
     {
-        m_s_id_attr->toXmlAttr("id", _outStream);
+        m_id_attr->toXmlAttr("id", _outStream);
     }
     
     
@@ -64369,22 +65540,22 @@ CT_GraphicalObject* CT_GraphicalObject::default_instance_ = NULL;
     return *CT_AnimationDgmElement::default_instance_;
     }
 
-    bool CT_AnimationDgmElement::has_s_id_attr() const
+    bool CT_AnimationDgmElement::has_id_attr() const
     {    
-    return m_has_s_id_attr;
+    return m_has_id_attr;
     }
 
-    void CT_AnimationDgmElement::set_s_id_attr(const ns_s::ST_Guid& _s_id_attr)
+    void CT_AnimationDgmElement::set_id_attr(const ns_s::ST_Guid& _id_attr)
     {    
-    m_has_s_id_attr = true;
-    m_s_id_attr = new ns_s::ST_Guid(_s_id_attr);
+    m_has_id_attr = true;
+    m_id_attr = new ns_s::ST_Guid(_id_attr);
     }
 
-    const ns_s::ST_Guid& CT_AnimationDgmElement::get_s_id_attr() const
+    const ns_s::ST_Guid& CT_AnimationDgmElement::get_id_attr() const
     {    
-    if (m_s_id_attr)
+    if (m_id_attr)
     {
-        return *m_s_id_attr;
+        return *m_id_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -64412,6 +65583,15 @@ CT_GraphicalObject* CT_GraphicalObject::default_instance_ = NULL;
 CT_AnimationDgmElement* CT_AnimationDgmElement::default_instance_ = NULL;
 
     // CT_AnimationChartElement
+    CT_AnimationChartElement::CT_AnimationChartElement()
+    :m_has_seriesIdx_attr(false),
+    m_seriesIdx_attr(0),
+    m_has_categoryIdx_attr(false),
+    m_categoryIdx_attr(0),
+    m_has_bldStep_attr(false),
+    m_bldStep_attr(NULL)
+    {
+    }
     void CT_AnimationChartElement::clear()
     {    
     m_has_seriesIdx_attr = false;
@@ -64525,6 +65705,13 @@ CT_AnimationDgmElement* CT_AnimationDgmElement::default_instance_ = NULL;
 CT_AnimationChartElement* CT_AnimationChartElement::default_instance_ = NULL;
 
     // CT_AnimationElementChoice
+    CT_AnimationElementChoice::CT_AnimationElementChoice()
+    :m_has_dgm(false),
+    m_dgm(NULL),
+    m_has_chart(false),
+    m_chart(NULL)
+    {
+    }
     bool CT_AnimationElementChoice::has_dgm() const
     {    
     return m_has_dgm;
@@ -64609,12 +65796,12 @@ CT_AnimationChartElement* CT_AnimationChartElement::default_instance_ = NULL;
             
     if (m_has_dgm)
     {
-        m_dgm->toXmlElem("dgm", "", _outStream);;
+        m_dgm->toXmlElem("a:dgm", "", _outStream);;
     }
     
     if (m_has_chart)
     {
-        m_chart->toXmlElem("chart", "", _outStream);;
+        m_chart->toXmlElem("a:chart", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -64632,6 +65819,13 @@ CT_AnimationChartElement* CT_AnimationChartElement::default_instance_ = NULL;
 CT_AnimationElementChoice* CT_AnimationElementChoice::default_instance_ = NULL;
 
     // CT_AnimationDgmBuildProperties
+    CT_AnimationDgmBuildProperties::CT_AnimationDgmBuildProperties()
+    :m_has_bld_attr(false),
+    m_bld_attr(NULL),
+    m_has_rev_attr(false),
+    m_rev_attr(false)
+    {
+    }
     void CT_AnimationDgmBuildProperties::clear()
     {    
     m_has_bld_attr = false;
@@ -64720,6 +65914,13 @@ CT_AnimationElementChoice* CT_AnimationElementChoice::default_instance_ = NULL;
 CT_AnimationDgmBuildProperties* CT_AnimationDgmBuildProperties::default_instance_ = NULL;
 
     // CT_AnimationChartBuildProperties
+    CT_AnimationChartBuildProperties::CT_AnimationChartBuildProperties()
+    :m_has_bld_attr(false),
+    m_bld_attr(NULL),
+    m_has_animBg_attr(false),
+    m_animBg_attr(false)
+    {
+    }
     void CT_AnimationChartBuildProperties::clear()
     {    
     m_has_bld_attr = false;
@@ -64808,6 +66009,13 @@ CT_AnimationDgmBuildProperties* CT_AnimationDgmBuildProperties::default_instance
 CT_AnimationChartBuildProperties* CT_AnimationChartBuildProperties::default_instance_ = NULL;
 
     // CT_AnimationGraphicalObjectBuildProperties
+    CT_AnimationGraphicalObjectBuildProperties::CT_AnimationGraphicalObjectBuildProperties()
+    :m_has_bldDgm(false),
+    m_bldDgm(NULL),
+    m_has_bldChart(false),
+    m_bldChart(NULL)
+    {
+    }
     bool CT_AnimationGraphicalObjectBuildProperties::has_bldDgm() const
     {    
     return m_has_bldDgm;
@@ -64892,12 +66100,12 @@ CT_AnimationChartBuildProperties* CT_AnimationChartBuildProperties::default_inst
             
     if (m_has_bldDgm)
     {
-        m_bldDgm->toXmlElem("bldDgm", "", _outStream);;
+        m_bldDgm->toXmlElem("a:bldDgm", "", _outStream);;
     }
     
     if (m_has_bldChart)
     {
-        m_bldChart->toXmlElem("bldChart", "", _outStream);;
+        m_bldChart->toXmlElem("a:bldChart", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -64915,6 +66123,25 @@ CT_AnimationChartBuildProperties* CT_AnimationChartBuildProperties::default_inst
 CT_AnimationGraphicalObjectBuildProperties* CT_AnimationGraphicalObjectBuildProperties::default_instance_ = NULL;
 
     // CT_BackgrCT_TextEffectoundFormatting
+    CT_BackgrCT_TextEffectoundFormatting::CT_BackgrCT_TextEffectoundFormatting()
+    :m_has_noFill(false),
+    m_noFill(NULL),
+    m_has_solidFill(false),
+    m_solidFill(NULL),
+    m_has_gradFill(false),
+    m_gradFill(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_pattFill(false),
+    m_pattFill(NULL),
+    m_has_grpFill(false),
+    m_grpFill(NULL),
+    m_has_effectLst(false),
+    m_effectLst(NULL),
+    m_has_effectDag(false),
+    m_effectDag(NULL)
+    {
+    }
     bool CT_BackgrCT_TextEffectoundFormatting::has_noFill() const
     {    
     return m_has_noFill;
@@ -65635,42 +66862,42 @@ CT_AnimationGraphicalObjectBuildProperties* CT_AnimationGraphicalObjectBuildProp
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);;
     }
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
     }
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
     }
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
     }
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
     }
     
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
     }
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -65688,6 +66915,15 @@ CT_AnimationGraphicalObjectBuildProperties* CT_AnimationGraphicalObjectBuildProp
 CT_BackgrCT_TextEffectoundFormatting* CT_BackgrCT_TextEffectoundFormatting::default_instance_ = NULL;
 
     // CT_WholeE2oFormatting
+    CT_WholeE2oFormatting::CT_WholeE2oFormatting()
+    :m_has_ln(false),
+    m_ln(NULL),
+    m_has_effectLst(false),
+    m_effectLst(NULL),
+    m_has_effectDag(false),
+    m_effectDag(NULL)
+    {
+    }
     bool CT_WholeE2oFormatting::has_ln() const
     {    
     return m_has_ln;
@@ -65796,17 +67032,17 @@ CT_BackgrCT_TextEffectoundFormatting* CT_BackgrCT_TextEffectoundFormatting::defa
             
     if (m_has_ln)
     {
-        m_ln->toXmlElem("ln", "", _outStream);;
+        m_ln->toXmlElem("a:ln", "", _outStream);;
     }
      
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
     }
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -65824,6 +67060,10 @@ CT_BackgrCT_TextEffectoundFormatting* CT_BackgrCT_TextEffectoundFormatting::defa
 CT_WholeE2oFormatting* CT_WholeE2oFormatting::default_instance_ = NULL;
 
     // CT_GvmlUseShapeRectangle
+    CT_GvmlUseShapeRectangle::CT_GvmlUseShapeRectangle()
+
+    {
+    }
     void CT_GvmlUseShapeRectangle::clear()
     {    }
 
@@ -65853,6 +67093,17 @@ CT_WholeE2oFormatting* CT_WholeE2oFormatting::default_instance_ = NULL;
 CT_GvmlUseShapeRectangle* CT_GvmlUseShapeRectangle::default_instance_ = NULL;
 
     // CT_GvmlTextShape
+    CT_GvmlTextShape::CT_GvmlTextShape()
+    :m_has_txBody(false),
+    m_txBody(NULL),
+    m_has_useSpRect(false),
+    m_useSpRect(NULL),
+    m_has_xfrm(false),
+    m_xfrm(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_GvmlTextShape::has_txBody() const
     {    
     return m_has_txBody;
@@ -65985,22 +67236,22 @@ CT_GvmlUseShapeRectangle* CT_GvmlUseShapeRectangle::default_instance_ = NULL;
             
     if (m_has_txBody)
     {
-        m_txBody->toXmlElem("txBody", "", _outStream);;
+        m_txBody->toXmlElem("a:txBody", "", _outStream);;
     }
      
     if (m_has_useSpRect)
     {
-        m_useSpRect->toXmlElem("useSpRect", "", _outStream);;
+        m_useSpRect->toXmlElem("a:useSpRect", "", _outStream);;
     }
     
     if (m_has_xfrm)
     {
-        m_xfrm->toXmlElem("xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("a:xfrm", "", _outStream);;
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66018,6 +67269,13 @@ CT_GvmlUseShapeRectangle* CT_GvmlUseShapeRectangle::default_instance_ = NULL;
 CT_GvmlTextShape* CT_GvmlTextShape::default_instance_ = NULL;
 
     // CT_GvmlShapeNonVisual
+    CT_GvmlShapeNonVisual::CT_GvmlShapeNonVisual()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvSpPr(false),
+    m_cNvSpPr(NULL)
+    {
+    }
     bool CT_GvmlShapeNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -66082,12 +67340,12 @@ CT_GvmlTextShape* CT_GvmlTextShape::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_cNvSpPr)
     {
-        m_cNvSpPr->toXmlElem("cNvSpPr", "", _outStream);;
+        m_cNvSpPr->toXmlElem("a:cNvSpPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66105,6 +67363,19 @@ CT_GvmlTextShape* CT_GvmlTextShape::default_instance_ = NULL;
 CT_GvmlShapeNonVisual* CT_GvmlShapeNonVisual::default_instance_ = NULL;
 
     // CT_GvmlShape
+    CT_GvmlShape::CT_GvmlShape()
+    :m_has_nvSpPr(false),
+    m_nvSpPr(NULL),
+    m_has_spPr(false),
+    m_spPr(NULL),
+    m_has_txSp(false),
+    m_txSp(NULL),
+    m_has_style(false),
+    m_style(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_GvmlShape::has_nvSpPr() const
     {    
     return m_has_nvSpPr;
@@ -66241,27 +67512,27 @@ CT_GvmlShapeNonVisual* CT_GvmlShapeNonVisual::default_instance_ = NULL;
             
     if (m_has_nvSpPr)
     {
-        m_nvSpPr->toXmlElem("nvSpPr", "", _outStream);;
+        m_nvSpPr->toXmlElem("a:nvSpPr", "", _outStream);;
     }
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("spPr", "", _outStream);;
+        m_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_txSp)
     {
-        m_txSp->toXmlElem("txSp", "", _outStream);;
+        m_txSp->toXmlElem("a:txSp", "", _outStream);;
     }
     
     if (m_has_style)
     {
-        m_style->toXmlElem("style", "", _outStream);;
+        m_style->toXmlElem("a:style", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66279,6 +67550,13 @@ CT_GvmlShapeNonVisual* CT_GvmlShapeNonVisual::default_instance_ = NULL;
 CT_GvmlShape* CT_GvmlShape::default_instance_ = NULL;
 
     // CT_GvmlConnectorNonVisual
+    CT_GvmlConnectorNonVisual::CT_GvmlConnectorNonVisual()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvCxnSpPr(false),
+    m_cNvCxnSpPr(NULL)
+    {
+    }
     bool CT_GvmlConnectorNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -66343,12 +67621,12 @@ CT_GvmlShape* CT_GvmlShape::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_cNvCxnSpPr)
     {
-        m_cNvCxnSpPr->toXmlElem("cNvCxnSpPr", "", _outStream);;
+        m_cNvCxnSpPr->toXmlElem("a:cNvCxnSpPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66366,6 +67644,17 @@ CT_GvmlShape* CT_GvmlShape::default_instance_ = NULL;
 CT_GvmlConnectorNonVisual* CT_GvmlConnectorNonVisual::default_instance_ = NULL;
 
     // CT_GvmlConnector
+    CT_GvmlConnector::CT_GvmlConnector()
+    :m_has_nvCxnSpPr(false),
+    m_nvCxnSpPr(NULL),
+    m_has_spPr(false),
+    m_spPr(NULL),
+    m_has_style(false),
+    m_style(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_GvmlConnector::has_nvCxnSpPr() const
     {    
     return m_has_nvCxnSpPr;
@@ -66478,22 +67767,22 @@ CT_GvmlConnectorNonVisual* CT_GvmlConnectorNonVisual::default_instance_ = NULL;
             
     if (m_has_nvCxnSpPr)
     {
-        m_nvCxnSpPr->toXmlElem("nvCxnSpPr", "", _outStream);;
+        m_nvCxnSpPr->toXmlElem("a:nvCxnSpPr", "", _outStream);;
     }
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("spPr", "", _outStream);;
+        m_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_style)
     {
-        m_style->toXmlElem("style", "", _outStream);;
+        m_style->toXmlElem("a:style", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66511,6 +67800,13 @@ CT_GvmlConnectorNonVisual* CT_GvmlConnectorNonVisual::default_instance_ = NULL;
 CT_GvmlConnector* CT_GvmlConnector::default_instance_ = NULL;
 
     // CT_GvmlPictureNonVisual
+    CT_GvmlPictureNonVisual::CT_GvmlPictureNonVisual()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvPicPr(false),
+    m_cNvPicPr(NULL)
+    {
+    }
     bool CT_GvmlPictureNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -66575,12 +67871,12 @@ CT_GvmlConnector* CT_GvmlConnector::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_cNvPicPr)
     {
-        m_cNvPicPr->toXmlElem("cNvPicPr", "", _outStream);;
+        m_cNvPicPr->toXmlElem("a:cNvPicPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66598,6 +67894,19 @@ CT_GvmlConnector* CT_GvmlConnector::default_instance_ = NULL;
 CT_GvmlPictureNonVisual* CT_GvmlPictureNonVisual::default_instance_ = NULL;
 
     // CT_GvmlPicture
+    CT_GvmlPicture::CT_GvmlPicture()
+    :m_has_nvPicPr(false),
+    m_nvPicPr(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_spPr(false),
+    m_spPr(NULL),
+    m_has_style(false),
+    m_style(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_GvmlPicture::has_nvPicPr() const
     {    
     return m_has_nvPicPr;
@@ -66734,27 +68043,27 @@ CT_GvmlPictureNonVisual* CT_GvmlPictureNonVisual::default_instance_ = NULL;
             
     if (m_has_nvPicPr)
     {
-        m_nvPicPr->toXmlElem("nvPicPr", "", _outStream);;
+        m_nvPicPr->toXmlElem("a:nvPicPr", "", _outStream);;
     }
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("spPr", "", _outStream);;
+        m_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_style)
     {
-        m_style->toXmlElem("style", "", _outStream);;
+        m_style->toXmlElem("a:style", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66772,6 +68081,13 @@ CT_GvmlPictureNonVisual* CT_GvmlPictureNonVisual::default_instance_ = NULL;
 CT_GvmlPicture* CT_GvmlPicture::default_instance_ = NULL;
 
     // CT_GvmlGraphicFrameNonVisual
+    CT_GvmlGraphicFrameNonVisual::CT_GvmlGraphicFrameNonVisual()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvGraphicFramePr(false),
+    m_cNvGraphicFramePr(NULL)
+    {
+    }
     bool CT_GvmlGraphicFrameNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -66836,12 +68152,12 @@ CT_GvmlPicture* CT_GvmlPicture::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_cNvGraphicFramePr)
     {
-        m_cNvGraphicFramePr->toXmlElem("cNvGraphicFramePr", "", _outStream);;
+        m_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66859,6 +68175,17 @@ CT_GvmlPicture* CT_GvmlPicture::default_instance_ = NULL;
 CT_GvmlGraphicFrameNonVisual* CT_GvmlGraphicFrameNonVisual::default_instance_ = NULL;
 
     // CT_GvmlGraphicalObjectFrame
+    CT_GvmlGraphicalObjectFrame::CT_GvmlGraphicalObjectFrame()
+    :m_has_nvGraphicFramePr(false),
+    m_nvGraphicFramePr(NULL),
+    m_has_graphic(false),
+    m_graphic(NULL),
+    m_has_xfrm(false),
+    m_xfrm(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_GvmlGraphicalObjectFrame::has_nvGraphicFramePr() const
     {    
     return m_has_nvGraphicFramePr;
@@ -66971,22 +68298,22 @@ CT_GvmlGraphicFrameNonVisual* CT_GvmlGraphicFrameNonVisual::default_instance_ = 
             
     if (m_has_nvGraphicFramePr)
     {
-        m_nvGraphicFramePr->toXmlElem("nvGraphicFramePr", "", _outStream);;
+        m_nvGraphicFramePr->toXmlElem("a:nvGraphicFramePr", "", _outStream);;
     }
     
     if (m_has_graphic)
     {
-        m_graphic->toXmlElem("graphic", "", _outStream);;
+        m_graphic->toXmlElem("a:graphic", "", _outStream);;
     }
     
     if (m_has_xfrm)
     {
-        m_xfrm->toXmlElem("xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("a:xfrm", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -67004,6 +68331,13 @@ CT_GvmlGraphicFrameNonVisual* CT_GvmlGraphicFrameNonVisual::default_instance_ = 
 CT_GvmlGraphicalObjectFrame* CT_GvmlGraphicalObjectFrame::default_instance_ = NULL;
 
     // CT_GvmlGroupShapeNonVisual
+    CT_GvmlGroupShapeNonVisual::CT_GvmlGroupShapeNonVisual()
+    :m_has_cNvPr(false),
+    m_cNvPr(NULL),
+    m_has_cNvGrpSpPr(false),
+    m_cNvGrpSpPr(NULL)
+    {
+    }
     bool CT_GvmlGroupShapeNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -67068,12 +68402,12 @@ CT_GvmlGraphicalObjectFrame* CT_GvmlGraphicalObjectFrame::default_instance_ = NU
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
     }
     
     if (m_has_cNvGrpSpPr)
     {
-        m_cNvGrpSpPr->toXmlElem("cNvGrpSpPr", "", _outStream);;
+        m_cNvGrpSpPr->toXmlElem("a:cNvGrpSpPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -67091,6 +68425,15 @@ CT_GvmlGraphicalObjectFrame* CT_GvmlGraphicalObjectFrame::default_instance_ = NU
 CT_GvmlGroupShapeNonVisual* CT_GvmlGroupShapeNonVisual::default_instance_ = NULL;
 
     // CT_GvmlGroupShape
+    CT_GvmlGroupShape::CT_GvmlGroupShape()
+    :m_has_nvGrpSpPr(false),
+    m_nvGrpSpPr(NULL),
+    m_has_grpSpPr(false),
+    m_grpSpPr(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_GvmlGroupShape::has_nvGrpSpPr() const
     {    
     return m_has_nvGrpSpPr;
@@ -67263,12 +68606,12 @@ CT_GvmlGroupShapeNonVisual* CT_GvmlGroupShapeNonVisual::default_instance_ = NULL
             
     if (m_has_nvGrpSpPr)
     {
-        m_nvGrpSpPr->toXmlElem("nvGrpSpPr", "", _outStream);;
+        m_nvGrpSpPr->toXmlElem("a:nvGrpSpPr", "", _outStream);;
     }
     
     if (m_has_grpSpPr)
     {
-        m_grpSpPr->toXmlElem("grpSpPr", "", _outStream);;
+        m_grpSpPr->toXmlElem("a:grpSpPr", "", _outStream);;
     }
      
     {
@@ -67277,34 +68620,34 @@ CT_GvmlGroupShapeNonVisual* CT_GvmlGroupShapeNonVisual::default_instance_ = NULL
         {
             if ((*iter)->has_txSp())
             {
-                (*iter)->get_txSp().toXmlElem("txSp", "", _outStream);
+                (*iter)->get_txSp().toXmlElem("a:txSp", "", _outStream);
             }
             else if ((*iter)->has_sp())
             {
-                (*iter)->get_sp().toXmlElem("sp", "", _outStream);
+                (*iter)->get_sp().toXmlElem("a:sp", "", _outStream);
             }
             else if ((*iter)->has_cxnSp())
             {
-                (*iter)->get_cxnSp().toXmlElem("cxnSp", "", _outStream);
+                (*iter)->get_cxnSp().toXmlElem("a:cxnSp", "", _outStream);
             }
             else if ((*iter)->has_pic())
             {
-                (*iter)->get_pic().toXmlElem("pic", "", _outStream);
+                (*iter)->get_pic().toXmlElem("a:pic", "", _outStream);
             }
             else if ((*iter)->has_graphicFrame())
             {
-                (*iter)->get_graphicFrame().toXmlElem("graphicFrame", "", _outStream);
+                (*iter)->get_graphicFrame().toXmlElem("a:graphicFrame", "", _outStream);
             }
             else if ((*iter)->has_grpSp())
             {
-                (*iter)->get_grpSp().toXmlElem("grpSp", "", _outStream);
+                (*iter)->get_grpSp().toXmlElem("a:grpSp", "", _outStream);
             }
         }
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -67321,6 +68664,21 @@ CT_GvmlGroupShapeNonVisual* CT_GvmlGroupShapeNonVisual::default_instance_ = NULL
 
 
     // CT_GvmlGroupShape::ChildGroup_1
+    CT_GvmlGroupShape::ChildGroup_1::ChildGroup_1()
+    :m_has_txSp(false),
+    m_txSp(NULL),
+    m_has_sp(false),
+    m_sp(NULL),
+    m_has_cxnSp(false),
+    m_cxnSp(NULL),
+    m_has_pic(false),
+    m_pic(NULL),
+    m_has_graphicFrame(false),
+    m_graphicFrame(NULL),
+    m_has_grpSp(false),
+    m_grpSp(NULL)
+    {
+    }
     bool CT_GvmlGroupShape::ChildGroup_1::has_txSp() const
     {    
     return m_has_txSp;
@@ -67744,6 +69102,17 @@ CT_GvmlGroupShapeNonVisual* CT_GvmlGroupShapeNonVisual::default_instance_ = NULL
 CT_GvmlGroupShape* CT_GvmlGroupShape::default_instance_ = NULL;
 
     // CT_Camera
+    CT_Camera::CT_Camera()
+    :m_has_rot(false),
+    m_rot(NULL),
+    m_has_prst_attr(false),
+    m_prst_attr(NULL),
+    m_has_fov_attr(false),
+    m_fov_attr(NULL),
+    m_has_zoom_attr(false),
+    m_zoom_attr(NULL)
+    {
+    }
     bool CT_Camera::has_rot() const
     {    
     return m_has_rot;
@@ -67828,7 +69197,7 @@ CT_GvmlGroupShape* CT_GvmlGroupShape::default_instance_ = NULL;
             
     if (m_has_rot)
     {
-        m_rot->toXmlElem("rot", "", _outStream);;
+        m_rot->toXmlElem("a:rot", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -67906,6 +69275,15 @@ CT_GvmlGroupShape* CT_GvmlGroupShape::default_instance_ = NULL;
 CT_Camera* CT_Camera::default_instance_ = NULL;
 
     // CT_LightRig
+    CT_LightRig::CT_LightRig()
+    :m_has_rot(false),
+    m_rot(NULL),
+    m_has_rig_attr(false),
+    m_rig_attr(NULL),
+    m_has_dir_attr(false),
+    m_dir_attr(NULL)
+    {
+    }
     bool CT_LightRig::has_rot() const
     {    
     return m_has_rot;
@@ -67975,7 +69353,7 @@ CT_Camera* CT_Camera::default_instance_ = NULL;
             
     if (m_has_rot)
     {
-        m_rot->toXmlElem("rot", "", _outStream);;
+        m_rot->toXmlElem("a:rot", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -68033,6 +69411,17 @@ CT_Camera* CT_Camera::default_instance_ = NULL;
 CT_LightRig* CT_LightRig::default_instance_ = NULL;
 
     // CT_Scene3D
+    CT_Scene3D::CT_Scene3D()
+    :m_has_camera(false),
+    m_camera(NULL),
+    m_has_lightRig(false),
+    m_lightRig(NULL),
+    m_has_backdrop(false),
+    m_backdrop(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Scene3D::has_camera() const
     {    
     return m_has_camera;
@@ -68145,22 +69534,22 @@ CT_LightRig* CT_LightRig::default_instance_ = NULL;
             
     if (m_has_camera)
     {
-        m_camera->toXmlElem("camera", "", _outStream);;
+        m_camera->toXmlElem("a:camera", "", _outStream);;
     }
     
     if (m_has_lightRig)
     {
-        m_lightRig->toXmlElem("lightRig", "", _outStream);;
+        m_lightRig->toXmlElem("a:lightRig", "", _outStream);;
     }
     
     if (m_has_backdrop)
     {
-        m_backdrop->toXmlElem("backdrop", "", _outStream);;
+        m_backdrop->toXmlElem("a:backdrop", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -68178,6 +69567,17 @@ CT_LightRig* CT_LightRig::default_instance_ = NULL;
 CT_Scene3D* CT_Scene3D::default_instance_ = NULL;
 
     // CT_Backdrop
+    CT_Backdrop::CT_Backdrop()
+    :m_has_anchor(false),
+    m_anchor(NULL),
+    m_has_norm(false),
+    m_norm(NULL),
+    m_has_up(false),
+    m_up(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Backdrop::has_anchor() const
     {    
     return m_has_anchor;
@@ -68290,22 +69690,22 @@ CT_Scene3D* CT_Scene3D::default_instance_ = NULL;
             
     if (m_has_anchor)
     {
-        m_anchor->toXmlElem("anchor", "", _outStream);;
+        m_anchor->toXmlElem("a:anchor", "", _outStream);;
     }
     
     if (m_has_norm)
     {
-        m_norm->toXmlElem("norm", "", _outStream);;
+        m_norm->toXmlElem("a:norm", "", _outStream);;
     }
     
     if (m_has_up)
     {
-        m_up->toXmlElem("up", "", _outStream);;
+        m_up->toXmlElem("a:up", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -68323,6 +69723,15 @@ CT_Scene3D* CT_Scene3D::default_instance_ = NULL;
 CT_Backdrop* CT_Backdrop::default_instance_ = NULL;
 
     // CT_Bevel
+    CT_Bevel::CT_Bevel()
+    :m_has_w_attr(false),
+    m_w_attr(NULL),
+    m_has_h_attr(false),
+    m_h_attr(NULL),
+    m_has_prst_attr(false),
+    m_prst_attr(NULL)
+    {
+    }
     void CT_Bevel::clear()
     {    
     m_has_w_attr = false;
@@ -68456,6 +69865,27 @@ CT_Backdrop* CT_Backdrop::default_instance_ = NULL;
 CT_Bevel* CT_Bevel::default_instance_ = NULL;
 
     // CT_Shape3D
+    CT_Shape3D::CT_Shape3D()
+    :m_has_bevelT(false),
+    m_bevelT(NULL),
+    m_has_bevelB(false),
+    m_bevelB(NULL),
+    m_has_extrusionClr(false),
+    m_extrusionClr(NULL),
+    m_has_contourClr(false),
+    m_contourClr(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_z_attr(false),
+    m_z_attr(NULL),
+    m_has_extrusionH_attr(false),
+    m_extrusionH_attr(NULL),
+    m_has_contourW_attr(false),
+    m_contourW_attr(NULL),
+    m_has_prstMaterial_attr(false),
+    m_prstMaterial_attr(NULL)
+    {
+    }
     bool CT_Shape3D::has_bevelT() const
     {    
     return m_has_bevelT;
@@ -68651,27 +70081,27 @@ CT_Bevel* CT_Bevel::default_instance_ = NULL;
             
     if (m_has_bevelT)
     {
-        m_bevelT->toXmlElem("bevelT", "", _outStream);;
+        m_bevelT->toXmlElem("a:bevelT", "", _outStream);;
     }
     
     if (m_has_bevelB)
     {
-        m_bevelB->toXmlElem("bevelB", "", _outStream);;
+        m_bevelB->toXmlElem("a:bevelB", "", _outStream);;
     }
     
     if (m_has_extrusionClr)
     {
-        m_extrusionClr->toXmlElem("extrusionClr", "", _outStream);;
+        m_extrusionClr->toXmlElem("a:extrusionClr", "", _outStream);;
     }
     
     if (m_has_contourClr)
     {
-        m_contourClr->toXmlElem("contourClr", "", _outStream);;
+        m_contourClr->toXmlElem("a:contourClr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -68769,6 +70199,11 @@ CT_Bevel* CT_Bevel::default_instance_ = NULL;
 CT_Shape3D* CT_Shape3D::default_instance_ = NULL;
 
     // CT_FlatText
+    CT_FlatText::CT_FlatText()
+    :m_has_z_attr(false),
+    m_z_attr(NULL)
+    {
+    }
     void CT_FlatText::clear()
     {    
     m_has_z_attr = false;
@@ -68832,6 +70267,11 @@ CT_Shape3D* CT_Shape3D::default_instance_ = NULL;
 CT_FlatText* CT_FlatText::default_instance_ = NULL;
 
     // CT_AlphaBiLevelEffect
+    CT_AlphaBiLevelEffect::CT_AlphaBiLevelEffect()
+    :m_has_thresh_attr(false),
+    m_thresh_attr(NULL)
+    {
+    }
     void CT_AlphaBiLevelEffect::clear()
     {    
     m_has_thresh_attr = false;
@@ -68895,6 +70335,10 @@ CT_FlatText* CT_FlatText::default_instance_ = NULL;
 CT_AlphaBiLevelEffect* CT_AlphaBiLevelEffect::default_instance_ = NULL;
 
     // CT_AlphaCeilingEffect
+    CT_AlphaCeilingEffect::CT_AlphaCeilingEffect()
+
+    {
+    }
     void CT_AlphaCeilingEffect::clear()
     {    }
 
@@ -68924,6 +70368,10 @@ CT_AlphaBiLevelEffect* CT_AlphaBiLevelEffect::default_instance_ = NULL;
 CT_AlphaCeilingEffect* CT_AlphaCeilingEffect::default_instance_ = NULL;
 
     // CT_AlphaFloorEffect
+    CT_AlphaFloorEffect::CT_AlphaFloorEffect()
+
+    {
+    }
     void CT_AlphaFloorEffect::clear()
     {    }
 
@@ -68953,6 +70401,21 @@ CT_AlphaCeilingEffect* CT_AlphaCeilingEffect::default_instance_ = NULL;
 CT_AlphaFloorEffect* CT_AlphaFloorEffect::default_instance_ = NULL;
 
     // CT_AlphaInverseEffect
+    CT_AlphaInverseEffect::CT_AlphaInverseEffect()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL)
+    {
+    }
     bool CT_AlphaInverseEffect::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -69389,32 +70852,32 @@ CT_AlphaFloorEffect* CT_AlphaFloorEffect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
     }
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
     }
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
     }
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
     }
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
     }
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -69432,6 +70895,11 @@ CT_AlphaFloorEffect* CT_AlphaFloorEffect::default_instance_ = NULL;
 CT_AlphaInverseEffect* CT_AlphaInverseEffect::default_instance_ = NULL;
 
     // CT_AlphaModulateFixedEffect
+    CT_AlphaModulateFixedEffect::CT_AlphaModulateFixedEffect()
+    :m_has_amt_attr(false),
+    m_amt_attr(NULL)
+    {
+    }
     void CT_AlphaModulateFixedEffect::clear()
     {    
     m_has_amt_attr = false;
@@ -69495,6 +70963,11 @@ CT_AlphaInverseEffect* CT_AlphaInverseEffect::default_instance_ = NULL;
 CT_AlphaModulateFixedEffect* CT_AlphaModulateFixedEffect::default_instance_ = NULL;
 
     // CT_AlphaOutsetEffect
+    CT_AlphaOutsetEffect::CT_AlphaOutsetEffect()
+    :m_has_rad_attr(false),
+    m_rad_attr(NULL)
+    {
+    }
     void CT_AlphaOutsetEffect::clear()
     {    
     m_has_rad_attr = false;
@@ -69558,6 +71031,11 @@ CT_AlphaModulateFixedEffect* CT_AlphaModulateFixedEffect::default_instance_ = NU
 CT_AlphaOutsetEffect* CT_AlphaOutsetEffect::default_instance_ = NULL;
 
     // CT_AlphaReplaceEffect
+    CT_AlphaReplaceEffect::CT_AlphaReplaceEffect()
+    :m_has_a_attr(false),
+    m_a_attr(NULL)
+    {
+    }
     void CT_AlphaReplaceEffect::clear()
     {    
     m_has_a_attr = false;
@@ -69621,6 +71099,11 @@ CT_AlphaOutsetEffect* CT_AlphaOutsetEffect::default_instance_ = NULL;
 CT_AlphaReplaceEffect* CT_AlphaReplaceEffect::default_instance_ = NULL;
 
     // CT_BiLevelEffect
+    CT_BiLevelEffect::CT_BiLevelEffect()
+    :m_has_thresh_attr(false),
+    m_thresh_attr(NULL)
+    {
+    }
     void CT_BiLevelEffect::clear()
     {    
     m_has_thresh_attr = false;
@@ -69684,6 +71167,13 @@ CT_AlphaReplaceEffect* CT_AlphaReplaceEffect::default_instance_ = NULL;
 CT_BiLevelEffect* CT_BiLevelEffect::default_instance_ = NULL;
 
     // CT_BlurEffect
+    CT_BlurEffect::CT_BlurEffect()
+    :m_has_rad_attr(false),
+    m_rad_attr(NULL),
+    m_has_grow_attr(false),
+    m_grow_attr(false)
+    {
+    }
     void CT_BlurEffect::clear()
     {    
     m_has_rad_attr = false;
@@ -69772,6 +71262,15 @@ CT_BiLevelEffect* CT_BiLevelEffect::default_instance_ = NULL;
 CT_BlurEffect* CT_BlurEffect::default_instance_ = NULL;
 
     // CT_ColorChangeEffect
+    CT_ColorChangeEffect::CT_ColorChangeEffect()
+    :m_has_clrFrom(false),
+    m_clrFrom(NULL),
+    m_has_clrTo(false),
+    m_clrTo(NULL),
+    m_has_useA_attr(false),
+    m_useA_attr(false)
+    {
+    }
     bool CT_ColorChangeEffect::has_clrFrom() const
     {    
     return m_has_clrFrom;
@@ -69844,12 +71343,12 @@ CT_BlurEffect* CT_BlurEffect::default_instance_ = NULL;
             
     if (m_has_clrFrom)
     {
-        m_clrFrom->toXmlElem("clrFrom", "", _outStream);;
+        m_clrFrom->toXmlElem("a:clrFrom", "", _outStream);;
     }
     
     if (m_has_clrTo)
     {
-        m_clrTo->toXmlElem("clrTo", "", _outStream);;
+        m_clrTo->toXmlElem("a:clrTo", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -69883,6 +71382,21 @@ CT_BlurEffect* CT_BlurEffect::default_instance_ = NULL;
 CT_ColorChangeEffect* CT_ColorChangeEffect::default_instance_ = NULL;
 
     // CT_ColorReplaceEffect
+    CT_ColorReplaceEffect::CT_ColorReplaceEffect()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL)
+    {
+    }
     bool CT_ColorReplaceEffect::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -70319,32 +71833,32 @@ CT_ColorChangeEffect* CT_ColorChangeEffect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
     }
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
     }
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
     }
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
     }
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
     }
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -70362,6 +71876,10 @@ CT_ColorChangeEffect* CT_ColorChangeEffect::default_instance_ = NULL;
 CT_ColorReplaceEffect* CT_ColorReplaceEffect::default_instance_ = NULL;
 
     // CT_DuotoneEffect
+    CT_DuotoneEffect::CT_DuotoneEffect()
+
+    {
+    }
     CT_ScRgbColor* CT_DuotoneEffect::add_scrgbClr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -70439,27 +71957,27 @@ CT_ColorReplaceEffect* CT_ColorReplaceEffect::default_instance_ = NULL;
         {
             if ((*iter)->has_scrgbClr())
             {
-                (*iter)->get_scrgbClr().toXmlElem("scrgbClr", "", _outStream);
+                (*iter)->get_scrgbClr().toXmlElem("a:scrgbClr", "", _outStream);
             }
             else if ((*iter)->has_srgbClr())
             {
-                (*iter)->get_srgbClr().toXmlElem("srgbClr", "", _outStream);
+                (*iter)->get_srgbClr().toXmlElem("a:srgbClr", "", _outStream);
             }
             else if ((*iter)->has_hslClr())
             {
-                (*iter)->get_hslClr().toXmlElem("hslClr", "", _outStream);
+                (*iter)->get_hslClr().toXmlElem("a:hslClr", "", _outStream);
             }
             else if ((*iter)->has_sysClr())
             {
-                (*iter)->get_sysClr().toXmlElem("sysClr", "", _outStream);
+                (*iter)->get_sysClr().toXmlElem("a:sysClr", "", _outStream);
             }
             else if ((*iter)->has_schemeClr())
             {
-                (*iter)->get_schemeClr().toXmlElem("schemeClr", "", _outStream);
+                (*iter)->get_schemeClr().toXmlElem("a:schemeClr", "", _outStream);
             }
             else if ((*iter)->has_prstClr())
             {
-                (*iter)->get_prstClr().toXmlElem("prstClr", "", _outStream);
+                (*iter)->get_prstClr().toXmlElem("a:prstClr", "", _outStream);
             }
         }
     }
@@ -70478,6 +71996,21 @@ CT_ColorReplaceEffect* CT_ColorReplaceEffect::default_instance_ = NULL;
 
 
     // CT_DuotoneEffect::ChildGroup_1
+    CT_DuotoneEffect::ChildGroup_1::ChildGroup_1()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL)
+    {
+    }
     bool CT_DuotoneEffect::ChildGroup_1::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -70901,6 +72434,23 @@ CT_ColorReplaceEffect* CT_ColorReplaceEffect::default_instance_ = NULL;
 CT_DuotoneEffect* CT_DuotoneEffect::default_instance_ = NULL;
 
     // CT_GlowEffect
+    CT_GlowEffect::CT_GlowEffect()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL),
+    m_has_rad_attr(false),
+    m_rad_attr(NULL)
+    {
+    }
     bool CT_GlowEffect::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -71351,32 +72901,32 @@ CT_DuotoneEffect* CT_DuotoneEffect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
     }
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
     }
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
     }
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
     }
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
     }
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -71414,6 +72964,10 @@ CT_DuotoneEffect* CT_DuotoneEffect::default_instance_ = NULL;
 CT_GlowEffect* CT_GlowEffect::default_instance_ = NULL;
 
     // CT_GrayscaleEffect
+    CT_GrayscaleEffect::CT_GrayscaleEffect()
+
+    {
+    }
     void CT_GrayscaleEffect::clear()
     {    }
 
@@ -71443,6 +72997,15 @@ CT_GlowEffect* CT_GlowEffect::default_instance_ = NULL;
 CT_GrayscaleEffect* CT_GrayscaleEffect::default_instance_ = NULL;
 
     // CT_HSLEffect
+    CT_HSLEffect::CT_HSLEffect()
+    :m_has_hue_attr(false),
+    m_hue_attr(NULL),
+    m_has_sat_attr(false),
+    m_sat_attr(NULL),
+    m_has_lum_attr(false),
+    m_lum_attr(NULL)
+    {
+    }
     void CT_HSLEffect::clear()
     {    
     m_has_hue_attr = false;
@@ -71576,6 +73139,27 @@ CT_GrayscaleEffect* CT_GrayscaleEffect::default_instance_ = NULL;
 CT_HSLEffect* CT_HSLEffect::default_instance_ = NULL;
 
     // CT_InnerShadowEffect
+    CT_InnerShadowEffect::CT_InnerShadowEffect()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL),
+    m_has_blurRad_attr(false),
+    m_blurRad_attr(NULL),
+    m_has_dist_attr(false),
+    m_dist_attr(NULL),
+    m_has_dir_attr(false),
+    m_dir_attr(NULL)
+    {
+    }
     bool CT_InnerShadowEffect::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -72056,32 +73640,32 @@ CT_HSLEffect* CT_HSLEffect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
     }
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
     }
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
     }
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
     }
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
     }
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -72159,6 +73743,13 @@ CT_HSLEffect* CT_HSLEffect::default_instance_ = NULL;
 CT_InnerShadowEffect* CT_InnerShadowEffect::default_instance_ = NULL;
 
     // CT_LuminanceEffect
+    CT_LuminanceEffect::CT_LuminanceEffect()
+    :m_has_bright_attr(false),
+    m_bright_attr(NULL),
+    m_has_contrast_attr(false),
+    m_contrast_attr(NULL)
+    {
+    }
     void CT_LuminanceEffect::clear()
     {    
     m_has_bright_attr = false;
@@ -72257,6 +73848,39 @@ CT_InnerShadowEffect* CT_InnerShadowEffect::default_instance_ = NULL;
 CT_LuminanceEffect* CT_LuminanceEffect::default_instance_ = NULL;
 
     // CT_OuterShadowEffect
+    CT_OuterShadowEffect::CT_OuterShadowEffect()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL),
+    m_has_blurRad_attr(false),
+    m_blurRad_attr(NULL),
+    m_has_dist_attr(false),
+    m_dist_attr(NULL),
+    m_has_dir_attr(false),
+    m_dir_attr(NULL),
+    m_has_sx_attr(false),
+    m_sx_attr(NULL),
+    m_has_sy_attr(false),
+    m_sy_attr(NULL),
+    m_has_kx_attr(false),
+    m_kx_attr(NULL),
+    m_has_ky_attr(false),
+    m_ky_attr(NULL),
+    m_has_algn_attr(false),
+    m_algn_attr(NULL),
+    m_has_rotWithShape_attr(false),
+    m_rotWithShape_attr(false)
+    {
+    }
     bool CT_OuterShadowEffect::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -72821,32 +74445,32 @@ CT_LuminanceEffect* CT_LuminanceEffect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
     }
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
     }
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
     }
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
     }
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
     }
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -73040,6 +74664,27 @@ CT_LuminanceEffect* CT_LuminanceEffect::default_instance_ = NULL;
 CT_OuterShadowEffect* CT_OuterShadowEffect::default_instance_ = NULL;
 
     // CT_PresetShadowEffect
+    CT_PresetShadowEffect::CT_PresetShadowEffect()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL),
+    m_has_prst_attr(false),
+    m_prst_attr(NULL),
+    m_has_dist_attr(false),
+    m_dist_attr(NULL),
+    m_has_dir_attr(false),
+    m_dir_attr(NULL)
+    {
+    }
     bool CT_PresetShadowEffect::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -73520,32 +75165,32 @@ CT_OuterShadowEffect* CT_OuterShadowEffect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
     }
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
     }
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
     }
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
     }
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
     }
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -73623,6 +75268,37 @@ CT_OuterShadowEffect* CT_OuterShadowEffect::default_instance_ = NULL;
 CT_PresetShadowEffect* CT_PresetShadowEffect::default_instance_ = NULL;
 
     // CT_ReflectionEffect
+    CT_ReflectionEffect::CT_ReflectionEffect()
+    :m_has_blurRad_attr(false),
+    m_blurRad_attr(NULL),
+    m_has_stA_attr(false),
+    m_stA_attr(NULL),
+    m_has_stPos_attr(false),
+    m_stPos_attr(NULL),
+    m_has_endA_attr(false),
+    m_endA_attr(NULL),
+    m_has_endPos_attr(false),
+    m_endPos_attr(NULL),
+    m_has_dist_attr(false),
+    m_dist_attr(NULL),
+    m_has_dir_attr(false),
+    m_dir_attr(NULL),
+    m_has_fadeDir_attr(false),
+    m_fadeDir_attr(NULL),
+    m_has_sx_attr(false),
+    m_sx_attr(NULL),
+    m_has_sy_attr(false),
+    m_sy_attr(NULL),
+    m_has_kx_attr(false),
+    m_kx_attr(NULL),
+    m_has_ky_attr(false),
+    m_ky_attr(NULL),
+    m_has_algn_attr(false),
+    m_algn_attr(NULL),
+    m_has_rotWithShape_attr(false),
+    m_rotWithShape_attr(false)
+    {
+    }
     void CT_ReflectionEffect::clear()
     {    
     m_has_blurRad_attr = false;
@@ -74131,6 +75807,13 @@ CT_PresetShadowEffect* CT_PresetShadowEffect::default_instance_ = NULL;
 CT_ReflectionEffect* CT_ReflectionEffect::default_instance_ = NULL;
 
     // CT_RelativeOffsetEffect
+    CT_RelativeOffsetEffect::CT_RelativeOffsetEffect()
+    :m_has_tx_attr(false),
+    m_tx_attr(NULL),
+    m_has_ty_attr(false),
+    m_ty_attr(NULL)
+    {
+    }
     void CT_RelativeOffsetEffect::clear()
     {    
     m_has_tx_attr = false;
@@ -74229,6 +75912,11 @@ CT_ReflectionEffect* CT_ReflectionEffect::default_instance_ = NULL;
 CT_RelativeOffsetEffect* CT_RelativeOffsetEffect::default_instance_ = NULL;
 
     // CT_SoftEdgesEffect
+    CT_SoftEdgesEffect::CT_SoftEdgesEffect()
+    :m_has_rad_attr(false),
+    m_rad_attr(NULL)
+    {
+    }
     void CT_SoftEdgesEffect::clear()
     {    
     m_has_rad_attr = false;
@@ -74292,6 +75980,13 @@ CT_RelativeOffsetEffect* CT_RelativeOffsetEffect::default_instance_ = NULL;
 CT_SoftEdgesEffect* CT_SoftEdgesEffect::default_instance_ = NULL;
 
     // CT_TintEffect
+    CT_TintEffect::CT_TintEffect()
+    :m_has_hue_attr(false),
+    m_hue_attr(NULL),
+    m_has_amt_attr(false),
+    m_amt_attr(NULL)
+    {
+    }
     void CT_TintEffect::clear()
     {    
     m_has_hue_attr = false;
@@ -74390,6 +76085,21 @@ CT_SoftEdgesEffect* CT_SoftEdgesEffect::default_instance_ = NULL;
 CT_TintEffect* CT_TintEffect::default_instance_ = NULL;
 
     // CT_TransformEffect
+    CT_TransformEffect::CT_TransformEffect()
+    :m_has_sx_attr(false),
+    m_sx_attr(NULL),
+    m_has_sy_attr(false),
+    m_sy_attr(NULL),
+    m_has_kx_attr(false),
+    m_kx_attr(NULL),
+    m_has_ky_attr(false),
+    m_ky_attr(NULL),
+    m_has_tx_attr(false),
+    m_tx_attr(NULL),
+    m_has_ty_attr(false),
+    m_ty_attr(NULL)
+    {
+    }
     void CT_TransformEffect::clear()
     {    
     m_has_sx_attr = false;
@@ -74628,6 +76338,10 @@ CT_TintEffect* CT_TintEffect::default_instance_ = NULL;
 CT_TransformEffect* CT_TransformEffect::default_instance_ = NULL;
 
     // CT_NoFillProperties
+    CT_NoFillProperties::CT_NoFillProperties()
+
+    {
+    }
     void CT_NoFillProperties::clear()
     {    }
 
@@ -74657,6 +76371,21 @@ CT_TransformEffect* CT_TransformEffect::default_instance_ = NULL;
 CT_NoFillProperties* CT_NoFillProperties::default_instance_ = NULL;
 
     // CT_SolidColorFillProperties
+    CT_SolidColorFillProperties::CT_SolidColorFillProperties()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL)
+    {
+    }
     bool CT_SolidColorFillProperties::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -75093,32 +76822,32 @@ CT_NoFillProperties* CT_NoFillProperties::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
     }
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
     }
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
     }
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
     }
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
     }
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -75136,6 +76865,13 @@ CT_NoFillProperties* CT_NoFillProperties::default_instance_ = NULL;
 CT_SolidColorFillProperties* CT_SolidColorFillProperties::default_instance_ = NULL;
 
     // CT_LinearShadeProperties
+    CT_LinearShadeProperties::CT_LinearShadeProperties()
+    :m_has_ang_attr(false),
+    m_ang_attr(NULL),
+    m_has_scaled_attr(false),
+    m_scaled_attr(false)
+    {
+    }
     void CT_LinearShadeProperties::clear()
     {    
     m_has_ang_attr = false;
@@ -75224,6 +76960,13 @@ CT_SolidColorFillProperties* CT_SolidColorFillProperties::default_instance_ = NU
 CT_LinearShadeProperties* CT_LinearShadeProperties::default_instance_ = NULL;
 
     // CT_PathShadeProperties
+    CT_PathShadeProperties::CT_PathShadeProperties()
+    :m_has_fillToRect(false),
+    m_fillToRect(NULL),
+    m_has_path_attr(false),
+    m_path_attr(NULL)
+    {
+    }
     bool CT_PathShadeProperties::has_fillToRect() const
     {    
     return m_has_fillToRect;
@@ -75278,7 +77021,7 @@ CT_LinearShadeProperties* CT_LinearShadeProperties::default_instance_ = NULL;
             
     if (m_has_fillToRect)
     {
-        m_fillToRect->toXmlElem("fillToRect", "", _outStream);;
+        m_fillToRect->toXmlElem("a:fillToRect", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -75316,6 +77059,23 @@ CT_LinearShadeProperties* CT_LinearShadeProperties::default_instance_ = NULL;
 CT_PathShadeProperties* CT_PathShadeProperties::default_instance_ = NULL;
 
     // CT_GradientStop
+    CT_GradientStop::CT_GradientStop()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL),
+    m_has_pos_attr(false),
+    m_pos_attr(NULL)
+    {
+    }
     bool CT_GradientStop::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -75766,32 +77526,32 @@ CT_PathShadeProperties* CT_PathShadeProperties::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
     }
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
     }
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
     }
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
     }
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
     }
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -75829,6 +77589,10 @@ CT_PathShadeProperties* CT_PathShadeProperties::default_instance_ = NULL;
 CT_GradientStop* CT_GradientStop::default_instance_ = NULL;
 
     // CT_GradientStopList
+    CT_GradientStopList::CT_GradientStopList()
+
+    {
+    }
     CT_GradientStop* CT_GradientStopList::add_gs()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -75866,7 +77630,7 @@ CT_GradientStop* CT_GradientStop::default_instance_ = NULL;
         {
             if ((*iter)->has_gs())
             {
-                (*iter)->get_gs().toXmlElem("gs", "", _outStream);
+                (*iter)->get_gs().toXmlElem("a:gs", "", _outStream);
             }
         }
     }
@@ -75885,6 +77649,11 @@ CT_GradientStop* CT_GradientStop::default_instance_ = NULL;
 
 
     // CT_GradientStopList::ChildGroup_1
+    CT_GradientStopList::ChildGroup_1::ChildGroup_1()
+    :m_has_gs(false),
+    m_gs(NULL)
+    {
+    }
     bool CT_GradientStopList::ChildGroup_1::has_gs() const
     {    
     return m_has_gs;
@@ -75913,6 +77682,21 @@ CT_GradientStop* CT_GradientStop::default_instance_ = NULL;
 CT_GradientStopList* CT_GradientStopList::default_instance_ = NULL;
 
     // CT_GradientFillProperties
+    CT_GradientFillProperties::CT_GradientFillProperties()
+    :m_has_gsLst(false),
+    m_gsLst(NULL),
+    m_has_lin(false),
+    m_lin(NULL),
+    m_has_path(false),
+    m_path(NULL),
+    m_has_tileRect(false),
+    m_tileRect(NULL),
+    m_has_flip_attr(false),
+    m_flip_attr(NULL),
+    m_has_rotWithShape_attr(false),
+    m_rotWithShape_attr(false)
+    {
+    }
     bool CT_GradientFillProperties::has_gsLst() const
     {    
     return m_has_gsLst;
@@ -76068,22 +77852,22 @@ CT_GradientStopList* CT_GradientStopList::default_instance_ = NULL;
             
     if (m_has_gsLst)
     {
-        m_gsLst->toXmlElem("gsLst", "", _outStream);;
+        m_gsLst->toXmlElem("a:gsLst", "", _outStream);;
     }
      
     if (m_has_lin)
     {
-        m_lin->toXmlElem("lin", "", _outStream);;
+        m_lin->toXmlElem("a:lin", "", _outStream);;
     }
     
     if (m_has_path)
     {
-        m_path->toXmlElem("path", "", _outStream);;
+        m_path->toXmlElem("a:path", "", _outStream);;
     }
      
     if (m_has_tileRect)
     {
-        m_tileRect->toXmlElem("tileRect", "", _outStream);;
+        m_tileRect->toXmlElem("a:tileRect", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -76137,6 +77921,21 @@ CT_GradientStopList* CT_GradientStopList::default_instance_ = NULL;
 CT_GradientFillProperties* CT_GradientFillProperties::default_instance_ = NULL;
 
     // CT_TileInfoProperties
+    CT_TileInfoProperties::CT_TileInfoProperties()
+    :m_has_tx_attr(false),
+    m_tx_attr(NULL),
+    m_has_ty_attr(false),
+    m_ty_attr(NULL),
+    m_has_sx_attr(false),
+    m_sx_attr(NULL),
+    m_has_sy_attr(false),
+    m_sy_attr(NULL),
+    m_has_flip_attr(false),
+    m_flip_attr(NULL),
+    m_has_algn_attr(false),
+    m_algn_attr(NULL)
+    {
+    }
     void CT_TileInfoProperties::clear()
     {    
     m_has_tx_attr = false;
@@ -76375,6 +78174,11 @@ CT_GradientFillProperties* CT_GradientFillProperties::default_instance_ = NULL;
 CT_TileInfoProperties* CT_TileInfoProperties::default_instance_ = NULL;
 
     // CT_StretchInfoProperties
+    CT_StretchInfoProperties::CT_StretchInfoProperties()
+    :m_has_fillRect(false),
+    m_fillRect(NULL)
+    {
+    }
     bool CT_StretchInfoProperties::has_fillRect() const
     {    
     return m_has_fillRect;
@@ -76415,7 +78219,7 @@ CT_TileInfoProperties* CT_TileInfoProperties::default_instance_ = NULL;
             
     if (m_has_fillRect)
     {
-        m_fillRect->toXmlElem("fillRect", "", _outStream);;
+        m_fillRect->toXmlElem("a:fillRect", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -76433,6 +78237,17 @@ CT_TileInfoProperties* CT_TileInfoProperties::default_instance_ = NULL;
 CT_StretchInfoProperties* CT_StretchInfoProperties::default_instance_ = NULL;
 
     // CT_Blip
+    CT_Blip::CT_Blip()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_r_embed_attr(false),
+    m_r_embed_attr(NULL),
+    m_has_r_link_attr(false),
+    m_r_link_attr(NULL),
+    m_has_cstate_attr(false),
+    m_cstate_attr(NULL)
+    {
+    }
     CT_AlphaBiLevelEffect* CT_Blip::add_alphaBiLevel()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -76652,13 +78467,13 @@ CT_StretchInfoProperties* CT_StretchInfoProperties::default_instance_ = NULL;
             
     if (m_has_r_embed_attr)
     {
-        m_r_embed_attr->toXmlAttr("embed", _outStream);
+        m_r_embed_attr->toXmlAttr("r:embed", _outStream);
     }
     
     
     if (m_has_r_link_attr)
     {
-        m_r_link_attr->toXmlAttr("link", _outStream);
+        m_r_link_attr->toXmlAttr("r:link", _outStream);
     }
     
     
@@ -76675,78 +78490,78 @@ CT_StretchInfoProperties* CT_StretchInfoProperties::default_instance_ = NULL;
         {
             if ((*iter)->has_alphaBiLevel())
             {
-                (*iter)->get_alphaBiLevel().toXmlElem("alphaBiLevel", "", _outStream);
+                (*iter)->get_alphaBiLevel().toXmlElem("a:alphaBiLevel", "", _outStream);
             }
             else if ((*iter)->has_alphaCeiling())
             {
-                (*iter)->get_alphaCeiling().toXmlElem("alphaCeiling", "", _outStream);
+                (*iter)->get_alphaCeiling().toXmlElem("a:alphaCeiling", "", _outStream);
             }
             else if ((*iter)->has_alphaFloor())
             {
-                (*iter)->get_alphaFloor().toXmlElem("alphaFloor", "", _outStream);
+                (*iter)->get_alphaFloor().toXmlElem("a:alphaFloor", "", _outStream);
             }
             else if ((*iter)->has_alphaInv())
             {
-                (*iter)->get_alphaInv().toXmlElem("alphaInv", "", _outStream);
+                (*iter)->get_alphaInv().toXmlElem("a:alphaInv", "", _outStream);
             }
             else if ((*iter)->has_alphaMod())
             {
-                (*iter)->get_alphaMod().toXmlElem("alphaMod", "", _outStream);
+                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
             }
             else if ((*iter)->has_alphaModFix())
             {
-                (*iter)->get_alphaModFix().toXmlElem("alphaModFix", "", _outStream);
+                (*iter)->get_alphaModFix().toXmlElem("a:alphaModFix", "", _outStream);
             }
             else if ((*iter)->has_alphaRepl())
             {
-                (*iter)->get_alphaRepl().toXmlElem("alphaRepl", "", _outStream);
+                (*iter)->get_alphaRepl().toXmlElem("a:alphaRepl", "", _outStream);
             }
             else if ((*iter)->has_biLevel())
             {
-                (*iter)->get_biLevel().toXmlElem("biLevel", "", _outStream);
+                (*iter)->get_biLevel().toXmlElem("a:biLevel", "", _outStream);
             }
             else if ((*iter)->has_blur())
             {
-                (*iter)->get_blur().toXmlElem("blur", "", _outStream);
+                (*iter)->get_blur().toXmlElem("a:blur", "", _outStream);
             }
             else if ((*iter)->has_clrChange())
             {
-                (*iter)->get_clrChange().toXmlElem("clrChange", "", _outStream);
+                (*iter)->get_clrChange().toXmlElem("a:clrChange", "", _outStream);
             }
             else if ((*iter)->has_clrRepl())
             {
-                (*iter)->get_clrRepl().toXmlElem("clrRepl", "", _outStream);
+                (*iter)->get_clrRepl().toXmlElem("a:clrRepl", "", _outStream);
             }
             else if ((*iter)->has_duotone())
             {
-                (*iter)->get_duotone().toXmlElem("duotone", "", _outStream);
+                (*iter)->get_duotone().toXmlElem("a:duotone", "", _outStream);
             }
             else if ((*iter)->has_fillOverlay())
             {
-                (*iter)->get_fillOverlay().toXmlElem("fillOverlay", "", _outStream);
+                (*iter)->get_fillOverlay().toXmlElem("a:fillOverlay", "", _outStream);
             }
             else if ((*iter)->has_grayscl())
             {
-                (*iter)->get_grayscl().toXmlElem("grayscl", "", _outStream);
+                (*iter)->get_grayscl().toXmlElem("a:grayscl", "", _outStream);
             }
             else if ((*iter)->has_hsl())
             {
-                (*iter)->get_hsl().toXmlElem("hsl", "", _outStream);
+                (*iter)->get_hsl().toXmlElem("a:hsl", "", _outStream);
             }
             else if ((*iter)->has_lum())
             {
-                (*iter)->get_lum().toXmlElem("lum", "", _outStream);
+                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
             }
             else if ((*iter)->has_tint())
             {
-                (*iter)->get_tint().toXmlElem("tint", "", _outStream);
+                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
             }
         }
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -76823,6 +78638,43 @@ CT_StretchInfoProperties* CT_StretchInfoProperties::default_instance_ = NULL;
 
 
     // CT_Blip::ChildGroup_1
+    CT_Blip::ChildGroup_1::ChildGroup_1()
+    :m_has_alphaBiLevel(false),
+    m_alphaBiLevel(NULL),
+    m_has_alphaCeiling(false),
+    m_alphaCeiling(NULL),
+    m_has_alphaFloor(false),
+    m_alphaFloor(NULL),
+    m_has_alphaInv(false),
+    m_alphaInv(NULL),
+    m_has_alphaMod(false),
+    m_alphaMod(NULL),
+    m_has_alphaModFix(false),
+    m_alphaModFix(NULL),
+    m_has_alphaRepl(false),
+    m_alphaRepl(NULL),
+    m_has_biLevel(false),
+    m_biLevel(NULL),
+    m_has_blur(false),
+    m_blur(NULL),
+    m_has_clrChange(false),
+    m_clrChange(NULL),
+    m_has_clrRepl(false),
+    m_clrRepl(NULL),
+    m_has_duotone(false),
+    m_duotone(NULL),
+    m_has_fillOverlay(false),
+    m_fillOverlay(NULL),
+    m_has_grayscl(false),
+    m_grayscl(NULL),
+    m_has_hsl(false),
+    m_hsl(NULL),
+    m_has_lum(false),
+    m_lum(NULL),
+    m_has_tint(false),
+    m_tint(NULL)
+    {
+    }
     bool CT_Blip::ChildGroup_1::has_alphaBiLevel() const
     {    
     return m_has_alphaBiLevel;
@@ -79699,6 +81551,21 @@ CT_StretchInfoProperties* CT_StretchInfoProperties::default_instance_ = NULL;
 CT_Blip* CT_Blip::default_instance_ = NULL;
 
     // CT_BlipFillProperties
+    CT_BlipFillProperties::CT_BlipFillProperties()
+    :m_has_blip(false),
+    m_blip(NULL),
+    m_has_srcRect(false),
+    m_srcRect(NULL),
+    m_has_tile(false),
+    m_tile(NULL),
+    m_has_stretch(false),
+    m_stretch(NULL),
+    m_has_dpi_attr(false),
+    m_dpi_attr(0),
+    m_has_rotWithShape_attr(false),
+    m_rotWithShape_attr(false)
+    {
+    }
     bool CT_BlipFillProperties::has_blip() const
     {    
     return m_has_blip;
@@ -79848,22 +81715,22 @@ CT_Blip* CT_Blip::default_instance_ = NULL;
             
     if (m_has_blip)
     {
-        m_blip->toXmlElem("blip", "", _outStream);;
+        m_blip->toXmlElem("a:blip", "", _outStream);;
     }
     
     if (m_has_srcRect)
     {
-        m_srcRect->toXmlElem("srcRect", "", _outStream);;
+        m_srcRect->toXmlElem("a:srcRect", "", _outStream);;
     }
      
     if (m_has_tile)
     {
-        m_tile->toXmlElem("tile", "", _outStream);;
+        m_tile->toXmlElem("a:tile", "", _outStream);;
     }
     
     if (m_has_stretch)
     {
-        m_stretch->toXmlElem("stretch", "", _outStream);;
+        m_stretch->toXmlElem("a:stretch", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -79913,6 +81780,15 @@ CT_Blip* CT_Blip::default_instance_ = NULL;
 CT_BlipFillProperties* CT_BlipFillProperties::default_instance_ = NULL;
 
     // CT_PatternFillProperties
+    CT_PatternFillProperties::CT_PatternFillProperties()
+    :m_has_fgClr(false),
+    m_fgClr(NULL),
+    m_has_bgClr(false),
+    m_bgClr(NULL),
+    m_has_prst_attr(false),
+    m_prst_attr(NULL)
+    {
+    }
     bool CT_PatternFillProperties::has_fgClr() const
     {    
     return m_has_fgClr;
@@ -79991,12 +81867,12 @@ CT_BlipFillProperties* CT_BlipFillProperties::default_instance_ = NULL;
             
     if (m_has_fgClr)
     {
-        m_fgClr->toXmlElem("fgClr", "", _outStream);;
+        m_fgClr->toXmlElem("a:fgClr", "", _outStream);;
     }
     
     if (m_has_bgClr)
     {
-        m_bgClr->toXmlElem("bgClr", "", _outStream);;
+        m_bgClr->toXmlElem("a:bgClr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -80034,6 +81910,10 @@ CT_BlipFillProperties* CT_BlipFillProperties::default_instance_ = NULL;
 CT_PatternFillProperties* CT_PatternFillProperties::default_instance_ = NULL;
 
     // CT_GroupFillProperties
+    CT_GroupFillProperties::CT_GroupFillProperties()
+
+    {
+    }
     void CT_GroupFillProperties::clear()
     {    }
 
@@ -80063,6 +81943,21 @@ CT_PatternFillProperties* CT_PatternFillProperties::default_instance_ = NULL;
 CT_GroupFillProperties* CT_GroupFillProperties::default_instance_ = NULL;
 
     // CT_FillProperties
+    CT_FillProperties::CT_FillProperties()
+    :m_has_noFill(false),
+    m_noFill(NULL),
+    m_has_solidFill(false),
+    m_solidFill(NULL),
+    m_has_gradFill(false),
+    m_gradFill(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_pattFill(false),
+    m_pattFill(NULL),
+    m_has_grpFill(false),
+    m_grpFill(NULL)
+    {
+    }
     bool CT_FillProperties::has_noFill() const
     {    
     return m_has_noFill;
@@ -80499,32 +82394,32 @@ CT_GroupFillProperties* CT_GroupFillProperties::default_instance_ = NULL;
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);;
     }
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
     }
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
     }
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
     }
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -80542,6 +82437,21 @@ CT_GroupFillProperties* CT_GroupFillProperties::default_instance_ = NULL;
 CT_FillProperties* CT_FillProperties::default_instance_ = NULL;
 
     // CT_FillEffect
+    CT_FillEffect::CT_FillEffect()
+    :m_has_noFill(false),
+    m_noFill(NULL),
+    m_has_solidFill(false),
+    m_solidFill(NULL),
+    m_has_gradFill(false),
+    m_gradFill(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_pattFill(false),
+    m_pattFill(NULL),
+    m_has_grpFill(false),
+    m_grpFill(NULL)
+    {
+    }
     bool CT_FillEffect::has_noFill() const
     {    
     return m_has_noFill;
@@ -80978,32 +82888,32 @@ CT_FillProperties* CT_FillProperties::default_instance_ = NULL;
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);;
     }
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
     }
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
     }
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
     }
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -81021,6 +82931,23 @@ CT_FillProperties* CT_FillProperties::default_instance_ = NULL;
 CT_FillEffect* CT_FillEffect::default_instance_ = NULL;
 
     // CT_FillOverlayEffect
+    CT_FillOverlayEffect::CT_FillOverlayEffect()
+    :m_has_noFill(false),
+    m_noFill(NULL),
+    m_has_solidFill(false),
+    m_solidFill(NULL),
+    m_has_gradFill(false),
+    m_gradFill(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_pattFill(false),
+    m_pattFill(NULL),
+    m_has_grpFill(false),
+    m_grpFill(NULL),
+    m_has_blend_attr(false),
+    m_blend_attr(NULL)
+    {
+    }
     bool CT_FillOverlayEffect::has_noFill() const
     {    
     return m_has_noFill;
@@ -81471,32 +83398,32 @@ CT_FillEffect* CT_FillEffect::default_instance_ = NULL;
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);;
     }
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
     }
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
     }
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
     }
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -81534,6 +83461,11 @@ CT_FillEffect* CT_FillEffect::default_instance_ = NULL;
 CT_FillOverlayEffect* CT_FillOverlayEffect::default_instance_ = NULL;
 
     // CT_EffectReference
+    CT_EffectReference::CT_EffectReference()
+    :m_has_ref_attr(false),
+    m_ref_attr("")
+    {
+    }
     void CT_EffectReference::clear()
     {    
     m_has_ref_attr = false;
@@ -81587,6 +83519,13 @@ CT_FillOverlayEffect* CT_FillOverlayEffect::default_instance_ = NULL;
 CT_EffectReference* CT_EffectReference::default_instance_ = NULL;
 
     // CT_EffectContainer
+    CT_EffectContainer::CT_EffectContainer()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_name_attr(false),
+    m_name_attr("")
+    {
+    }
     void CT_EffectContainer::clear()
     {    
     m_has_type_attr = false;
@@ -81675,6 +83614,11 @@ CT_EffectReference* CT_EffectReference::default_instance_ = NULL;
 CT_EffectContainer* CT_EffectContainer::default_instance_ = NULL;
 
     // CT_AlphaModulateEffect
+    CT_AlphaModulateEffect::CT_AlphaModulateEffect()
+    :m_has_cont(false),
+    m_cont(NULL)
+    {
+    }
     bool CT_AlphaModulateEffect::has_cont() const
     {    
     return m_has_cont;
@@ -81715,7 +83659,7 @@ CT_EffectContainer* CT_EffectContainer::default_instance_ = NULL;
             
     if (m_has_cont)
     {
-        m_cont->toXmlElem("cont", "", _outStream);;
+        m_cont->toXmlElem("a:cont", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -81733,6 +83677,13 @@ CT_EffectContainer* CT_EffectContainer::default_instance_ = NULL;
 CT_AlphaModulateEffect* CT_AlphaModulateEffect::default_instance_ = NULL;
 
     // CT_BlendEffect
+    CT_BlendEffect::CT_BlendEffect()
+    :m_has_cont(false),
+    m_cont(NULL),
+    m_has_blend_attr(false),
+    m_blend_attr(NULL)
+    {
+    }
     bool CT_BlendEffect::has_cont() const
     {    
     return m_has_cont;
@@ -81787,7 +83738,7 @@ CT_AlphaModulateEffect* CT_AlphaModulateEffect::default_instance_ = NULL;
             
     if (m_has_cont)
     {
-        m_cont->toXmlElem("cont", "", _outStream);;
+        m_cont->toXmlElem("a:cont", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -81825,6 +83776,25 @@ CT_AlphaModulateEffect* CT_AlphaModulateEffect::default_instance_ = NULL;
 CT_BlendEffect* CT_BlendEffect::default_instance_ = NULL;
 
     // CT_EffectList
+    CT_EffectList::CT_EffectList()
+    :m_has_blur(false),
+    m_blur(NULL),
+    m_has_fillOverlay(false),
+    m_fillOverlay(NULL),
+    m_has_glow(false),
+    m_glow(NULL),
+    m_has_innerShdw(false),
+    m_innerShdw(NULL),
+    m_has_outerShdw(false),
+    m_outerShdw(NULL),
+    m_has_prstShdw(false),
+    m_prstShdw(NULL),
+    m_has_reflection(false),
+    m_reflection(NULL),
+    m_has_softEdge(false),
+    m_softEdge(NULL)
+    {
+    }
     bool CT_EffectList::has_blur() const
     {    
     return m_has_blur;
@@ -82033,42 +84003,42 @@ CT_BlendEffect* CT_BlendEffect::default_instance_ = NULL;
             
     if (m_has_blur)
     {
-        m_blur->toXmlElem("blur", "", _outStream);;
+        m_blur->toXmlElem("a:blur", "", _outStream);;
     }
     
     if (m_has_fillOverlay)
     {
-        m_fillOverlay->toXmlElem("fillOverlay", "", _outStream);;
+        m_fillOverlay->toXmlElem("a:fillOverlay", "", _outStream);;
     }
     
     if (m_has_glow)
     {
-        m_glow->toXmlElem("glow", "", _outStream);;
+        m_glow->toXmlElem("a:glow", "", _outStream);;
     }
     
     if (m_has_innerShdw)
     {
-        m_innerShdw->toXmlElem("innerShdw", "", _outStream);;
+        m_innerShdw->toXmlElem("a:innerShdw", "", _outStream);;
     }
     
     if (m_has_outerShdw)
     {
-        m_outerShdw->toXmlElem("outerShdw", "", _outStream);;
+        m_outerShdw->toXmlElem("a:outerShdw", "", _outStream);;
     }
     
     if (m_has_prstShdw)
     {
-        m_prstShdw->toXmlElem("prstShdw", "", _outStream);;
+        m_prstShdw->toXmlElem("a:prstShdw", "", _outStream);;
     }
     
     if (m_has_reflection)
     {
-        m_reflection->toXmlElem("reflection", "", _outStream);;
+        m_reflection->toXmlElem("a:reflection", "", _outStream);;
     }
     
     if (m_has_softEdge)
     {
-        m_softEdge->toXmlElem("softEdge", "", _outStream);;
+        m_softEdge->toXmlElem("a:softEdge", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -82086,6 +84056,13 @@ CT_BlendEffect* CT_BlendEffect::default_instance_ = NULL;
 CT_EffectList* CT_EffectList::default_instance_ = NULL;
 
     // CT_EffectProperties
+    CT_EffectProperties::CT_EffectProperties()
+    :m_has_effectLst(false),
+    m_effectLst(NULL),
+    m_has_effectDag(false),
+    m_effectDag(NULL)
+    {
+    }
     bool CT_EffectProperties::has_effectLst() const
     {    
     return m_has_effectLst;
@@ -82170,12 +84147,12 @@ CT_EffectList* CT_EffectList::default_instance_ = NULL;
             
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
     }
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -82193,6 +84170,13 @@ CT_EffectList* CT_EffectList::default_instance_ = NULL;
 CT_EffectProperties* CT_EffectProperties::default_instance_ = NULL;
 
     // CT_GeomGuide
+    CT_GeomGuide::CT_GeomGuide()
+    :m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_fmla_attr(false),
+    m_fmla_attr(NULL)
+    {
+    }
     void CT_GeomGuide::clear()
     {    
     m_has_name_attr = false;
@@ -82291,6 +84275,10 @@ CT_EffectProperties* CT_EffectProperties::default_instance_ = NULL;
 CT_GeomGuide* CT_GeomGuide::default_instance_ = NULL;
 
     // CT_GeomGuideList
+    CT_GeomGuideList::CT_GeomGuideList()
+
+    {
+    }
     CT_GeomGuide* CT_GeomGuideList::add_gd()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -82328,7 +84316,7 @@ CT_GeomGuide* CT_GeomGuide::default_instance_ = NULL;
         {
             if ((*iter)->has_gd())
             {
-                (*iter)->get_gd().toXmlElem("gd", "", _outStream);
+                (*iter)->get_gd().toXmlElem("a:gd", "", _outStream);
             }
         }
     }
@@ -82347,6 +84335,11 @@ CT_GeomGuide* CT_GeomGuide::default_instance_ = NULL;
 
 
     // CT_GeomGuideList::ChildGroup_1
+    CT_GeomGuideList::ChildGroup_1::ChildGroup_1()
+    :m_has_gd(false),
+    m_gd(NULL)
+    {
+    }
     bool CT_GeomGuideList::ChildGroup_1::has_gd() const
     {    
     return m_has_gd;
@@ -82375,6 +84368,13 @@ CT_GeomGuide* CT_GeomGuide::default_instance_ = NULL;
 CT_GeomGuideList* CT_GeomGuideList::default_instance_ = NULL;
 
     // CT_AdjPoint2D
+    CT_AdjPoint2D::CT_AdjPoint2D()
+    :m_has_x_attr(false),
+    m_x_attr(NULL),
+    m_has_y_attr(false),
+    m_y_attr(NULL)
+    {
+    }
     void CT_AdjPoint2D::clear()
     {    
     m_has_x_attr = false;
@@ -82473,6 +84473,17 @@ CT_GeomGuideList* CT_GeomGuideList::default_instance_ = NULL;
 CT_AdjPoint2D* CT_AdjPoint2D::default_instance_ = NULL;
 
     // CT_GeomRect
+    CT_GeomRect::CT_GeomRect()
+    :m_has_l_attr(false),
+    m_l_attr(NULL),
+    m_has_t_attr(false),
+    m_t_attr(NULL),
+    m_has_r_attr(false),
+    m_r_attr(NULL),
+    m_has_b_attr(false),
+    m_b_attr(NULL)
+    {
+    }
     void CT_GeomRect::clear()
     {    
     m_has_l_attr = false;
@@ -82641,6 +84652,23 @@ CT_AdjPoint2D* CT_AdjPoint2D::default_instance_ = NULL;
 CT_GeomRect* CT_GeomRect::default_instance_ = NULL;
 
     // CT_XYAdjustHandle
+    CT_XYAdjustHandle::CT_XYAdjustHandle()
+    :m_has_pos(false),
+    m_pos(NULL),
+    m_has_gdRefX_attr(false),
+    m_gdRefX_attr(NULL),
+    m_has_minX_attr(false),
+    m_minX_attr(NULL),
+    m_has_maxX_attr(false),
+    m_maxX_attr(NULL),
+    m_has_gdRefY_attr(false),
+    m_gdRefY_attr(NULL),
+    m_has_minY_attr(false),
+    m_minY_attr(NULL),
+    m_has_maxY_attr(false),
+    m_maxY_attr(NULL)
+    {
+    }
     bool CT_XYAdjustHandle::has_pos() const
     {    
     return m_has_pos;
@@ -82770,7 +84798,7 @@ CT_GeomRect* CT_GeomRect::default_instance_ = NULL;
             
     if (m_has_pos)
     {
-        m_pos->toXmlElem("pos", "", _outStream);;
+        m_pos->toXmlElem("a:pos", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -82908,6 +84936,23 @@ CT_GeomRect* CT_GeomRect::default_instance_ = NULL;
 CT_XYAdjustHandle* CT_XYAdjustHandle::default_instance_ = NULL;
 
     // CT_PolarAdjustHandle
+    CT_PolarAdjustHandle::CT_PolarAdjustHandle()
+    :m_has_pos(false),
+    m_pos(NULL),
+    m_has_gdRefR_attr(false),
+    m_gdRefR_attr(NULL),
+    m_has_minR_attr(false),
+    m_minR_attr(NULL),
+    m_has_maxR_attr(false),
+    m_maxR_attr(NULL),
+    m_has_gdRefAng_attr(false),
+    m_gdRefAng_attr(NULL),
+    m_has_minAng_attr(false),
+    m_minAng_attr(NULL),
+    m_has_maxAng_attr(false),
+    m_maxAng_attr(NULL)
+    {
+    }
     bool CT_PolarAdjustHandle::has_pos() const
     {    
     return m_has_pos;
@@ -83037,7 +85082,7 @@ CT_XYAdjustHandle* CT_XYAdjustHandle::default_instance_ = NULL;
             
     if (m_has_pos)
     {
-        m_pos->toXmlElem("pos", "", _outStream);;
+        m_pos->toXmlElem("a:pos", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -83175,6 +85220,13 @@ CT_XYAdjustHandle* CT_XYAdjustHandle::default_instance_ = NULL;
 CT_PolarAdjustHandle* CT_PolarAdjustHandle::default_instance_ = NULL;
 
     // CT_ConnectionSite
+    CT_ConnectionSite::CT_ConnectionSite()
+    :m_has_pos(false),
+    m_pos(NULL),
+    m_has_ang_attr(false),
+    m_ang_attr(NULL)
+    {
+    }
     bool CT_ConnectionSite::has_pos() const
     {    
     return m_has_pos;
@@ -83229,7 +85281,7 @@ CT_PolarAdjustHandle* CT_PolarAdjustHandle::default_instance_ = NULL;
             
     if (m_has_pos)
     {
-        m_pos->toXmlElem("pos", "", _outStream);;
+        m_pos->toXmlElem("a:pos", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -83267,6 +85319,10 @@ CT_PolarAdjustHandle* CT_PolarAdjustHandle::default_instance_ = NULL;
 CT_ConnectionSite* CT_ConnectionSite::default_instance_ = NULL;
 
     // CT_AdjustHandleList
+    CT_AdjustHandleList::CT_AdjustHandleList()
+
+    {
+    }
     CT_XYAdjustHandle* CT_AdjustHandleList::add_ahXY()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -83312,11 +85368,11 @@ CT_ConnectionSite* CT_ConnectionSite::default_instance_ = NULL;
         {
             if ((*iter)->has_ahXY())
             {
-                (*iter)->get_ahXY().toXmlElem("ahXY", "", _outStream);
+                (*iter)->get_ahXY().toXmlElem("a:ahXY", "", _outStream);
             }
             else if ((*iter)->has_ahPolar())
             {
-                (*iter)->get_ahPolar().toXmlElem("ahPolar", "", _outStream);
+                (*iter)->get_ahPolar().toXmlElem("a:ahPolar", "", _outStream);
             }
         }
     }
@@ -83335,6 +85391,13 @@ CT_ConnectionSite* CT_ConnectionSite::default_instance_ = NULL;
 
 
     // CT_AdjustHandleList::ChildGroup_1
+    CT_AdjustHandleList::ChildGroup_1::ChildGroup_1()
+    :m_has_ahXY(false),
+    m_ahXY(NULL),
+    m_has_ahPolar(false),
+    m_ahPolar(NULL)
+    {
+    }
     bool CT_AdjustHandleList::ChildGroup_1::has_ahXY() const
     {    
     return m_has_ahXY;
@@ -83406,6 +85469,10 @@ CT_ConnectionSite* CT_ConnectionSite::default_instance_ = NULL;
 CT_AdjustHandleList* CT_AdjustHandleList::default_instance_ = NULL;
 
     // CT_ConnectionSiteList
+    CT_ConnectionSiteList::CT_ConnectionSiteList()
+
+    {
+    }
     CT_ConnectionSite* CT_ConnectionSiteList::add_cxn()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -83443,7 +85510,7 @@ CT_AdjustHandleList* CT_AdjustHandleList::default_instance_ = NULL;
         {
             if ((*iter)->has_cxn())
             {
-                (*iter)->get_cxn().toXmlElem("cxn", "", _outStream);
+                (*iter)->get_cxn().toXmlElem("a:cxn", "", _outStream);
             }
         }
     }
@@ -83462,6 +85529,11 @@ CT_AdjustHandleList* CT_AdjustHandleList::default_instance_ = NULL;
 
 
     // CT_ConnectionSiteList::ChildGroup_1
+    CT_ConnectionSiteList::ChildGroup_1::ChildGroup_1()
+    :m_has_cxn(false),
+    m_cxn(NULL)
+    {
+    }
     bool CT_ConnectionSiteList::ChildGroup_1::has_cxn() const
     {    
     return m_has_cxn;
@@ -83490,6 +85562,13 @@ CT_AdjustHandleList* CT_AdjustHandleList::default_instance_ = NULL;
 CT_ConnectionSiteList* CT_ConnectionSiteList::default_instance_ = NULL;
 
     // CT_Connection
+    CT_Connection::CT_Connection()
+    :m_has_id_attr(false),
+    m_id_attr(NULL),
+    m_has_idx_attr(false),
+    m_idx_attr(0)
+    {
+    }
     void CT_Connection::clear()
     {    
     m_has_id_attr = false;
@@ -83578,6 +85657,11 @@ CT_ConnectionSiteList* CT_ConnectionSiteList::default_instance_ = NULL;
 CT_Connection* CT_Connection::default_instance_ = NULL;
 
     // CT_Path2DMoveTo
+    CT_Path2DMoveTo::CT_Path2DMoveTo()
+    :m_has_pt(false),
+    m_pt(NULL)
+    {
+    }
     bool CT_Path2DMoveTo::has_pt() const
     {    
     return m_has_pt;
@@ -83618,7 +85702,7 @@ CT_Connection* CT_Connection::default_instance_ = NULL;
             
     if (m_has_pt)
     {
-        m_pt->toXmlElem("pt", "", _outStream);;
+        m_pt->toXmlElem("a:pt", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -83636,6 +85720,11 @@ CT_Connection* CT_Connection::default_instance_ = NULL;
 CT_Path2DMoveTo* CT_Path2DMoveTo::default_instance_ = NULL;
 
     // CT_Path2DLineTo
+    CT_Path2DLineTo::CT_Path2DLineTo()
+    :m_has_pt(false),
+    m_pt(NULL)
+    {
+    }
     bool CT_Path2DLineTo::has_pt() const
     {    
     return m_has_pt;
@@ -83676,7 +85765,7 @@ CT_Path2DMoveTo* CT_Path2DMoveTo::default_instance_ = NULL;
             
     if (m_has_pt)
     {
-        m_pt->toXmlElem("pt", "", _outStream);;
+        m_pt->toXmlElem("a:pt", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -83694,6 +85783,17 @@ CT_Path2DMoveTo* CT_Path2DMoveTo::default_instance_ = NULL;
 CT_Path2DLineTo* CT_Path2DLineTo::default_instance_ = NULL;
 
     // CT_Path2DArcTo
+    CT_Path2DArcTo::CT_Path2DArcTo()
+    :m_has_wR_attr(false),
+    m_wR_attr(NULL),
+    m_has_hR_attr(false),
+    m_hR_attr(NULL),
+    m_has_stAng_attr(false),
+    m_stAng_attr(NULL),
+    m_has_swAng_attr(false),
+    m_swAng_attr(NULL)
+    {
+    }
     void CT_Path2DArcTo::clear()
     {    
     m_has_wR_attr = false;
@@ -83862,6 +85962,10 @@ CT_Path2DLineTo* CT_Path2DLineTo::default_instance_ = NULL;
 CT_Path2DArcTo* CT_Path2DArcTo::default_instance_ = NULL;
 
     // CT_Path2DQuadBezierTo
+    CT_Path2DQuadBezierTo::CT_Path2DQuadBezierTo()
+
+    {
+    }
     CT_AdjPoint2D* CT_Path2DQuadBezierTo::add_pt()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -83899,7 +86003,7 @@ CT_Path2DArcTo* CT_Path2DArcTo::default_instance_ = NULL;
         {
             if ((*iter)->has_pt())
             {
-                (*iter)->get_pt().toXmlElem("pt", "", _outStream);
+                (*iter)->get_pt().toXmlElem("a:pt", "", _outStream);
             }
         }
     }
@@ -83918,6 +86022,11 @@ CT_Path2DArcTo* CT_Path2DArcTo::default_instance_ = NULL;
 
 
     // CT_Path2DQuadBezierTo::ChildGroup_1
+    CT_Path2DQuadBezierTo::ChildGroup_1::ChildGroup_1()
+    :m_has_pt(false),
+    m_pt(NULL)
+    {
+    }
     bool CT_Path2DQuadBezierTo::ChildGroup_1::has_pt() const
     {    
     return m_has_pt;
@@ -83946,6 +86055,10 @@ CT_Path2DArcTo* CT_Path2DArcTo::default_instance_ = NULL;
 CT_Path2DQuadBezierTo* CT_Path2DQuadBezierTo::default_instance_ = NULL;
 
     // CT_Path2DCubicBezierTo
+    CT_Path2DCubicBezierTo::CT_Path2DCubicBezierTo()
+
+    {
+    }
     CT_AdjPoint2D* CT_Path2DCubicBezierTo::add_pt()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -83983,7 +86096,7 @@ CT_Path2DQuadBezierTo* CT_Path2DQuadBezierTo::default_instance_ = NULL;
         {
             if ((*iter)->has_pt())
             {
-                (*iter)->get_pt().toXmlElem("pt", "", _outStream);
+                (*iter)->get_pt().toXmlElem("a:pt", "", _outStream);
             }
         }
     }
@@ -84002,6 +86115,11 @@ CT_Path2DQuadBezierTo* CT_Path2DQuadBezierTo::default_instance_ = NULL;
 
 
     // CT_Path2DCubicBezierTo::ChildGroup_1
+    CT_Path2DCubicBezierTo::ChildGroup_1::ChildGroup_1()
+    :m_has_pt(false),
+    m_pt(NULL)
+    {
+    }
     bool CT_Path2DCubicBezierTo::ChildGroup_1::has_pt() const
     {    
     return m_has_pt;
@@ -84030,6 +86148,10 @@ CT_Path2DQuadBezierTo* CT_Path2DQuadBezierTo::default_instance_ = NULL;
 CT_Path2DCubicBezierTo* CT_Path2DCubicBezierTo::default_instance_ = NULL;
 
     // CT_Path2DClose
+    CT_Path2DClose::CT_Path2DClose()
+
+    {
+    }
     void CT_Path2DClose::clear()
     {    }
 
@@ -84059,6 +86181,19 @@ CT_Path2DCubicBezierTo* CT_Path2DCubicBezierTo::default_instance_ = NULL;
 CT_Path2DClose* CT_Path2DClose::default_instance_ = NULL;
 
     // CT_Path2D
+    CT_Path2D::CT_Path2D()
+    :m_has_w_attr(false),
+    m_w_attr(NULL),
+    m_has_h_attr(false),
+    m_h_attr(NULL),
+    m_has_fill_attr(false),
+    m_fill_attr(NULL),
+    m_has_stroke_attr(false),
+    m_stroke_attr(false),
+    m_has_extrusionOk_attr(false),
+    m_extrusionOk_attr(false)
+    {
+    }
     CT_Path2DClose* CT_Path2D::add_close()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -84198,27 +86333,27 @@ CT_Path2DClose* CT_Path2DClose::default_instance_ = NULL;
         {
             if ((*iter)->has_close())
             {
-                (*iter)->get_close().toXmlElem("close", "", _outStream);
+                (*iter)->get_close().toXmlElem("a:close", "", _outStream);
             }
             else if ((*iter)->has_moveTo())
             {
-                (*iter)->get_moveTo().toXmlElem("moveTo", "", _outStream);
+                (*iter)->get_moveTo().toXmlElem("a:moveTo", "", _outStream);
             }
             else if ((*iter)->has_lnTo())
             {
-                (*iter)->get_lnTo().toXmlElem("lnTo", "", _outStream);
+                (*iter)->get_lnTo().toXmlElem("a:lnTo", "", _outStream);
             }
             else if ((*iter)->has_arcTo())
             {
-                (*iter)->get_arcTo().toXmlElem("arcTo", "", _outStream);
+                (*iter)->get_arcTo().toXmlElem("a:arcTo", "", _outStream);
             }
             else if ((*iter)->has_quadBezTo())
             {
-                (*iter)->get_quadBezTo().toXmlElem("quadBezTo", "", _outStream);
+                (*iter)->get_quadBezTo().toXmlElem("a:quadBezTo", "", _outStream);
             }
             else if ((*iter)->has_cubicBezTo())
             {
-                (*iter)->get_cubicBezTo().toXmlElem("cubicBezTo", "", _outStream);
+                (*iter)->get_cubicBezTo().toXmlElem("a:cubicBezTo", "", _outStream);
             }
         }
     }
@@ -84329,6 +86464,21 @@ CT_Path2DClose* CT_Path2DClose::default_instance_ = NULL;
 
 
     // CT_Path2D::ChildGroup_1
+    CT_Path2D::ChildGroup_1::ChildGroup_1()
+    :m_has_close(false),
+    m_close(NULL),
+    m_has_moveTo(false),
+    m_moveTo(NULL),
+    m_has_lnTo(false),
+    m_lnTo(NULL),
+    m_has_arcTo(false),
+    m_arcTo(NULL),
+    m_has_quadBezTo(false),
+    m_quadBezTo(NULL),
+    m_has_cubicBezTo(false),
+    m_cubicBezTo(NULL)
+    {
+    }
     bool CT_Path2D::ChildGroup_1::has_close() const
     {    
     return m_has_close;
@@ -84752,6 +86902,10 @@ CT_Path2DClose* CT_Path2DClose::default_instance_ = NULL;
 CT_Path2D* CT_Path2D::default_instance_ = NULL;
 
     // CT_Path2DList
+    CT_Path2DList::CT_Path2DList()
+
+    {
+    }
     CT_Path2D* CT_Path2DList::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -84789,7 +86943,7 @@ CT_Path2D* CT_Path2D::default_instance_ = NULL;
         {
             if ((*iter)->has_path())
             {
-                (*iter)->get_path().toXmlElem("path", "", _outStream);
+                (*iter)->get_path().toXmlElem("a:path", "", _outStream);
             }
         }
     }
@@ -84808,6 +86962,11 @@ CT_Path2D* CT_Path2D::default_instance_ = NULL;
 
 
     // CT_Path2DList::ChildGroup_1
+    CT_Path2DList::ChildGroup_1::ChildGroup_1()
+    :m_has_path(false),
+    m_path(NULL)
+    {
+    }
     bool CT_Path2DList::ChildGroup_1::has_path() const
     {    
     return m_has_path;
@@ -84836,6 +86995,13 @@ CT_Path2D* CT_Path2D::default_instance_ = NULL;
 CT_Path2DList* CT_Path2DList::default_instance_ = NULL;
 
     // CT_PresetGeometry2D
+    CT_PresetGeometry2D::CT_PresetGeometry2D()
+    :m_has_avLst(false),
+    m_avLst(NULL),
+    m_has_prst_attr(false),
+    m_prst_attr(NULL)
+    {
+    }
     bool CT_PresetGeometry2D::has_avLst() const
     {    
     return m_has_avLst;
@@ -84890,7 +87056,7 @@ CT_Path2DList* CT_Path2DList::default_instance_ = NULL;
             
     if (m_has_avLst)
     {
-        m_avLst->toXmlElem("avLst", "", _outStream);;
+        m_avLst->toXmlElem("a:avLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -84928,6 +87094,13 @@ CT_Path2DList* CT_Path2DList::default_instance_ = NULL;
 CT_PresetGeometry2D* CT_PresetGeometry2D::default_instance_ = NULL;
 
     // CT_PresetTextShape
+    CT_PresetTextShape::CT_PresetTextShape()
+    :m_has_avLst(false),
+    m_avLst(NULL),
+    m_has_prst_attr(false),
+    m_prst_attr(NULL)
+    {
+    }
     bool CT_PresetTextShape::has_avLst() const
     {    
     return m_has_avLst;
@@ -84982,7 +87155,7 @@ CT_PresetGeometry2D* CT_PresetGeometry2D::default_instance_ = NULL;
             
     if (m_has_avLst)
     {
-        m_avLst->toXmlElem("avLst", "", _outStream);;
+        m_avLst->toXmlElem("a:avLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -85020,6 +87193,21 @@ CT_PresetGeometry2D* CT_PresetGeometry2D::default_instance_ = NULL;
 CT_PresetTextShape* CT_PresetTextShape::default_instance_ = NULL;
 
     // CT_CustomGeometry2D
+    CT_CustomGeometry2D::CT_CustomGeometry2D()
+    :m_has_avLst(false),
+    m_avLst(NULL),
+    m_has_gdLst(false),
+    m_gdLst(NULL),
+    m_has_ahLst(false),
+    m_ahLst(NULL),
+    m_has_cxnLst(false),
+    m_cxnLst(NULL),
+    m_has_rect(false),
+    m_rect(NULL),
+    m_has_pathLst(false),
+    m_pathLst(NULL)
+    {
+    }
     bool CT_CustomGeometry2D::has_avLst() const
     {    
     return m_has_avLst;
@@ -85180,32 +87368,32 @@ CT_PresetTextShape* CT_PresetTextShape::default_instance_ = NULL;
             
     if (m_has_avLst)
     {
-        m_avLst->toXmlElem("avLst", "", _outStream);;
+        m_avLst->toXmlElem("a:avLst", "", _outStream);;
     }
     
     if (m_has_gdLst)
     {
-        m_gdLst->toXmlElem("gdLst", "", _outStream);;
+        m_gdLst->toXmlElem("a:gdLst", "", _outStream);;
     }
     
     if (m_has_ahLst)
     {
-        m_ahLst->toXmlElem("ahLst", "", _outStream);;
+        m_ahLst->toXmlElem("a:ahLst", "", _outStream);;
     }
     
     if (m_has_cxnLst)
     {
-        m_cxnLst->toXmlElem("cxnLst", "", _outStream);;
+        m_cxnLst->toXmlElem("a:cxnLst", "", _outStream);;
     }
     
     if (m_has_rect)
     {
-        m_rect->toXmlElem("rect", "", _outStream);;
+        m_rect->toXmlElem("a:rect", "", _outStream);;
     }
     
     if (m_has_pathLst)
     {
-        m_pathLst->toXmlElem("pathLst", "", _outStream);;
+        m_pathLst->toXmlElem("a:pathLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -85223,6 +87411,15 @@ CT_PresetTextShape* CT_PresetTextShape::default_instance_ = NULL;
 CT_CustomGeometry2D* CT_CustomGeometry2D::default_instance_ = NULL;
 
     // CT_LineEndProperties
+    CT_LineEndProperties::CT_LineEndProperties()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_w_attr(false),
+    m_w_attr(NULL),
+    m_has_len_attr(false),
+    m_len_attr(NULL)
+    {
+    }
     void CT_LineEndProperties::clear()
     {    
     m_has_type_attr = false;
@@ -85356,6 +87553,10 @@ CT_CustomGeometry2D* CT_CustomGeometry2D::default_instance_ = NULL;
 CT_LineEndProperties* CT_LineEndProperties::default_instance_ = NULL;
 
     // CT_LineJoinBevel
+    CT_LineJoinBevel::CT_LineJoinBevel()
+
+    {
+    }
     void CT_LineJoinBevel::clear()
     {    }
 
@@ -85385,6 +87586,10 @@ CT_LineEndProperties* CT_LineEndProperties::default_instance_ = NULL;
 CT_LineJoinBevel* CT_LineJoinBevel::default_instance_ = NULL;
 
     // CT_LineJoinRound
+    CT_LineJoinRound::CT_LineJoinRound()
+
+    {
+    }
     void CT_LineJoinRound::clear()
     {    }
 
@@ -85414,6 +87619,11 @@ CT_LineJoinBevel* CT_LineJoinBevel::default_instance_ = NULL;
 CT_LineJoinRound* CT_LineJoinRound::default_instance_ = NULL;
 
     // CT_LineJoinMiterProperties
+    CT_LineJoinMiterProperties::CT_LineJoinMiterProperties()
+    :m_has_lim_attr(false),
+    m_lim_attr(NULL)
+    {
+    }
     void CT_LineJoinMiterProperties::clear()
     {    
     m_has_lim_attr = false;
@@ -85477,6 +87687,11 @@ CT_LineJoinRound* CT_LineJoinRound::default_instance_ = NULL;
 CT_LineJoinMiterProperties* CT_LineJoinMiterProperties::default_instance_ = NULL;
 
     // CT_PresetLineDashProperties
+    CT_PresetLineDashProperties::CT_PresetLineDashProperties()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_PresetLineDashProperties::clear()
     {    
     m_has_val_attr = false;
@@ -85540,6 +87755,13 @@ CT_LineJoinMiterProperties* CT_LineJoinMiterProperties::default_instance_ = NULL
 CT_PresetLineDashProperties* CT_PresetLineDashProperties::default_instance_ = NULL;
 
     // CT_DashStop
+    CT_DashStop::CT_DashStop()
+    :m_has_d_attr(false),
+    m_d_attr(NULL),
+    m_has_sp_attr(false),
+    m_sp_attr(NULL)
+    {
+    }
     void CT_DashStop::clear()
     {    
     m_has_d_attr = false;
@@ -85638,6 +87860,10 @@ CT_PresetLineDashProperties* CT_PresetLineDashProperties::default_instance_ = NU
 CT_DashStop* CT_DashStop::default_instance_ = NULL;
 
     // CT_DashStopList
+    CT_DashStopList::CT_DashStopList()
+
+    {
+    }
     CT_DashStop* CT_DashStopList::add_ds()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -85675,7 +87901,7 @@ CT_DashStop* CT_DashStop::default_instance_ = NULL;
         {
             if ((*iter)->has_ds())
             {
-                (*iter)->get_ds().toXmlElem("ds", "", _outStream);
+                (*iter)->get_ds().toXmlElem("a:ds", "", _outStream);
             }
         }
     }
@@ -85694,6 +87920,11 @@ CT_DashStop* CT_DashStop::default_instance_ = NULL;
 
 
     // CT_DashStopList::ChildGroup_1
+    CT_DashStopList::ChildGroup_1::ChildGroup_1()
+    :m_has_ds(false),
+    m_ds(NULL)
+    {
+    }
     bool CT_DashStopList::ChildGroup_1::has_ds() const
     {    
     return m_has_ds;
@@ -85722,6 +87953,41 @@ CT_DashStop* CT_DashStop::default_instance_ = NULL;
 CT_DashStopList* CT_DashStopList::default_instance_ = NULL;
 
     // CT_LineProperties
+    CT_LineProperties::CT_LineProperties()
+    :m_has_noFill(false),
+    m_noFill(NULL),
+    m_has_solidFill(false),
+    m_solidFill(NULL),
+    m_has_gradFill(false),
+    m_gradFill(NULL),
+    m_has_pattFill(false),
+    m_pattFill(NULL),
+    m_has_prstDash(false),
+    m_prstDash(NULL),
+    m_has_custDash(false),
+    m_custDash(NULL),
+    m_has_round(false),
+    m_round(NULL),
+    m_has_bevel(false),
+    m_bevel(NULL),
+    m_has_miter(false),
+    m_miter(NULL),
+    m_has_headEnd(false),
+    m_headEnd(NULL),
+    m_has_tailEnd(false),
+    m_tailEnd(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_w_attr(false),
+    m_w_attr(NULL),
+    m_has_cap_attr(false),
+    m_cap_attr(NULL),
+    m_has_cmpd_attr(false),
+    m_cmpd_attr(NULL),
+    m_has_algn_attr(false),
+    m_algn_attr(NULL)
+    {
+    }
     bool CT_LineProperties::has_noFill() const
     {    
     return m_has_noFill;
@@ -86742,62 +89008,62 @@ CT_DashStopList* CT_DashStopList::default_instance_ = NULL;
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);;
     }
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
     }
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
     }
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
     }
     
     if (m_has_prstDash)
     {
-        m_prstDash->toXmlElem("prstDash", "", _outStream);;
+        m_prstDash->toXmlElem("a:prstDash", "", _outStream);;
     }
     
     if (m_has_custDash)
     {
-        m_custDash->toXmlElem("custDash", "", _outStream);;
+        m_custDash->toXmlElem("a:custDash", "", _outStream);;
     }
     
     if (m_has_round)
     {
-        m_round->toXmlElem("round", "", _outStream);;
+        m_round->toXmlElem("a:round", "", _outStream);;
     }
     
     if (m_has_bevel)
     {
-        m_bevel->toXmlElem("bevel", "", _outStream);;
+        m_bevel->toXmlElem("a:bevel", "", _outStream);;
     }
     
     if (m_has_miter)
     {
-        m_miter->toXmlElem("miter", "", _outStream);;
+        m_miter->toXmlElem("a:miter", "", _outStream);;
     }
      
     if (m_has_headEnd)
     {
-        m_headEnd->toXmlElem("headEnd", "", _outStream);;
+        m_headEnd->toXmlElem("a:headEnd", "", _outStream);;
     }
     
     if (m_has_tailEnd)
     {
-        m_tailEnd->toXmlElem("tailEnd", "", _outStream);;
+        m_tailEnd->toXmlElem("a:tailEnd", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -86895,6 +89161,41 @@ CT_DashStopList* CT_DashStopList::default_instance_ = NULL;
 CT_LineProperties* CT_LineProperties::default_instance_ = NULL;
 
     // CT_ShapeProperties
+    CT_ShapeProperties::CT_ShapeProperties()
+    :m_has_xfrm(false),
+    m_xfrm(NULL),
+    m_has_custGeom(false),
+    m_custGeom(NULL),
+    m_has_prstGeom(false),
+    m_prstGeom(NULL),
+    m_has_noFill(false),
+    m_noFill(NULL),
+    m_has_solidFill(false),
+    m_solidFill(NULL),
+    m_has_gradFill(false),
+    m_gradFill(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_pattFill(false),
+    m_pattFill(NULL),
+    m_has_grpFill(false),
+    m_grpFill(NULL),
+    m_has_ln(false),
+    m_ln(NULL),
+    m_has_effectLst(false),
+    m_effectLst(NULL),
+    m_has_effectDag(false),
+    m_effectDag(NULL),
+    m_has_scene3d(false),
+    m_scene3d(NULL),
+    m_has_sp3d(false),
+    m_sp3d(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_bwMode_attr(false),
+    m_bwMode_attr(NULL)
+    {
+    }
     bool CT_ShapeProperties::has_xfrm() const
     {    
     return m_has_xfrm;
@@ -87817,77 +90118,77 @@ CT_LineProperties* CT_LineProperties::default_instance_ = NULL;
             
     if (m_has_xfrm)
     {
-        m_xfrm->toXmlElem("xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("a:xfrm", "", _outStream);;
     }
      
     if (m_has_custGeom)
     {
-        m_custGeom->toXmlElem("custGeom", "", _outStream);;
+        m_custGeom->toXmlElem("a:custGeom", "", _outStream);;
     }
     
     if (m_has_prstGeom)
     {
-        m_prstGeom->toXmlElem("prstGeom", "", _outStream);;
+        m_prstGeom->toXmlElem("a:prstGeom", "", _outStream);;
     }
     
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);;
     }
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
     }
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
     }
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
     }
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
     }
      
     if (m_has_ln)
     {
-        m_ln->toXmlElem("ln", "", _outStream);;
+        m_ln->toXmlElem("a:ln", "", _outStream);;
     }
      
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
     }
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
     }
      
     if (m_has_scene3d)
     {
-        m_scene3d->toXmlElem("scene3d", "", _outStream);;
+        m_scene3d->toXmlElem("a:scene3d", "", _outStream);;
     }
     
     if (m_has_sp3d)
     {
-        m_sp3d->toXmlElem("sp3d", "", _outStream);;
+        m_sp3d->toXmlElem("a:sp3d", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -87925,6 +90226,33 @@ CT_LineProperties* CT_LineProperties::default_instance_ = NULL;
 CT_ShapeProperties* CT_ShapeProperties::default_instance_ = NULL;
 
     // CT_GroupShapeProperties
+    CT_GroupShapeProperties::CT_GroupShapeProperties()
+    :m_has_xfrm(false),
+    m_xfrm(NULL),
+    m_has_noFill(false),
+    m_noFill(NULL),
+    m_has_solidFill(false),
+    m_solidFill(NULL),
+    m_has_gradFill(false),
+    m_gradFill(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_pattFill(false),
+    m_pattFill(NULL),
+    m_has_grpFill(false),
+    m_grpFill(NULL),
+    m_has_effectLst(false),
+    m_effectLst(NULL),
+    m_has_effectDag(false),
+    m_effectDag(NULL),
+    m_has_scene3d(false),
+    m_scene3d(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_bwMode_attr(false),
+    m_bwMode_attr(NULL)
+    {
+    }
     bool CT_GroupShapeProperties::has_xfrm() const
     {    
     return m_has_xfrm;
@@ -88731,57 +91059,57 @@ CT_ShapeProperties* CT_ShapeProperties::default_instance_ = NULL;
             
     if (m_has_xfrm)
     {
-        m_xfrm->toXmlElem("xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("a:xfrm", "", _outStream);;
     }
      
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);;
     }
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
     }
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
     }
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
     }
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
     }
     
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
     }
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
     }
      
     if (m_has_scene3d)
     {
-        m_scene3d->toXmlElem("scene3d", "", _outStream);;
+        m_scene3d->toXmlElem("a:scene3d", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -88819,6 +91147,23 @@ CT_ShapeProperties* CT_ShapeProperties::default_instance_ = NULL;
 CT_GroupShapeProperties* CT_GroupShapeProperties::default_instance_ = NULL;
 
     // CT_StyleMatrixReference
+    CT_StyleMatrixReference::CT_StyleMatrixReference()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL),
+    m_has_idx_attr(false),
+    m_idx_attr(NULL)
+    {
+    }
     bool CT_StyleMatrixReference::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -89269,32 +91614,32 @@ CT_GroupShapeProperties* CT_GroupShapeProperties::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
     }
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
     }
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
     }
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
     }
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
     }
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -89332,6 +91677,23 @@ CT_GroupShapeProperties* CT_GroupShapeProperties::default_instance_ = NULL;
 CT_StyleMatrixReference* CT_StyleMatrixReference::default_instance_ = NULL;
 
     // CT_FontReference
+    CT_FontReference::CT_FontReference()
+    :m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL),
+    m_has_idx_attr(false),
+    m_idx_attr(NULL)
+    {
+    }
     bool CT_FontReference::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -89782,32 +92144,32 @@ CT_StyleMatrixReference* CT_StyleMatrixReference::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
     }
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
     }
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
     }
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
     }
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
     }
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -89845,6 +92207,17 @@ CT_StyleMatrixReference* CT_StyleMatrixReference::default_instance_ = NULL;
 CT_FontReference* CT_FontReference::default_instance_ = NULL;
 
     // CT_ShapeStyle
+    CT_ShapeStyle::CT_ShapeStyle()
+    :m_has_lnRef(false),
+    m_lnRef(NULL),
+    m_has_fillRef(false),
+    m_fillRef(NULL),
+    m_has_effectRef(false),
+    m_effectRef(NULL),
+    m_has_fontRef(false),
+    m_fontRef(NULL)
+    {
+    }
     bool CT_ShapeStyle::has_lnRef() const
     {    
     return m_has_lnRef;
@@ -89957,22 +92330,22 @@ CT_FontReference* CT_FontReference::default_instance_ = NULL;
             
     if (m_has_lnRef)
     {
-        m_lnRef->toXmlElem("lnRef", "", _outStream);;
+        m_lnRef->toXmlElem("a:lnRef", "", _outStream);;
     }
     
     if (m_has_fillRef)
     {
-        m_fillRef->toXmlElem("fillRef", "", _outStream);;
+        m_fillRef->toXmlElem("a:fillRef", "", _outStream);;
     }
     
     if (m_has_effectRef)
     {
-        m_effectRef->toXmlElem("effectRef", "", _outStream);;
+        m_effectRef->toXmlElem("a:effectRef", "", _outStream);;
     }
     
     if (m_has_fontRef)
     {
-        m_fontRef->toXmlElem("fontRef", "", _outStream);;
+        m_fontRef->toXmlElem("a:fontRef", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -89990,6 +92363,19 @@ CT_FontReference* CT_FontReference::default_instance_ = NULL;
 CT_ShapeStyle* CT_ShapeStyle::default_instance_ = NULL;
 
     // CT_DefaultShapeDefinition
+    CT_DefaultShapeDefinition::CT_DefaultShapeDefinition()
+    :m_has_spPr(false),
+    m_spPr(NULL),
+    m_has_bodyPr(false),
+    m_bodyPr(NULL),
+    m_has_lstStyle(false),
+    m_lstStyle(NULL),
+    m_has_style(false),
+    m_style(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_DefaultShapeDefinition::has_spPr() const
     {    
     return m_has_spPr;
@@ -90126,27 +92512,27 @@ CT_ShapeStyle* CT_ShapeStyle::default_instance_ = NULL;
             
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("spPr", "", _outStream);;
+        m_spPr->toXmlElem("a:spPr", "", _outStream);;
     }
     
     if (m_has_bodyPr)
     {
-        m_bodyPr->toXmlElem("bodyPr", "", _outStream);;
+        m_bodyPr->toXmlElem("a:bodyPr", "", _outStream);;
     }
     
     if (m_has_lstStyle)
     {
-        m_lstStyle->toXmlElem("lstStyle", "", _outStream);;
+        m_lstStyle->toXmlElem("a:lstStyle", "", _outStream);;
     }
     
     if (m_has_style)
     {
-        m_style->toXmlElem("style", "", _outStream);;
+        m_style->toXmlElem("a:style", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -90164,6 +92550,17 @@ CT_ShapeStyle* CT_ShapeStyle::default_instance_ = NULL;
 CT_DefaultShapeDefinition* CT_DefaultShapeDefinition::default_instance_ = NULL;
 
     // CT_ObjectStyleDefaults
+    CT_ObjectStyleDefaults::CT_ObjectStyleDefaults()
+    :m_has_spDef(false),
+    m_spDef(NULL),
+    m_has_lnDef(false),
+    m_lnDef(NULL),
+    m_has_txDef(false),
+    m_txDef(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_ObjectStyleDefaults::has_spDef() const
     {    
     return m_has_spDef;
@@ -90276,22 +92673,22 @@ CT_DefaultShapeDefinition* CT_DefaultShapeDefinition::default_instance_ = NULL;
             
     if (m_has_spDef)
     {
-        m_spDef->toXmlElem("spDef", "", _outStream);;
+        m_spDef->toXmlElem("a:spDef", "", _outStream);;
     }
     
     if (m_has_lnDef)
     {
-        m_lnDef->toXmlElem("lnDef", "", _outStream);;
+        m_lnDef->toXmlElem("a:lnDef", "", _outStream);;
     }
     
     if (m_has_txDef)
     {
-        m_txDef->toXmlElem("txDef", "", _outStream);;
+        m_txDef->toXmlElem("a:txDef", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -90309,6 +92706,10 @@ CT_DefaultShapeDefinition* CT_DefaultShapeDefinition::default_instance_ = NULL;
 CT_ObjectStyleDefaults* CT_ObjectStyleDefaults::default_instance_ = NULL;
 
     // CT_EmptyElement
+    CT_EmptyElement::CT_EmptyElement()
+
+    {
+    }
     void CT_EmptyElement::clear()
     {    }
 
@@ -90338,6 +92739,35 @@ CT_ObjectStyleDefaults* CT_ObjectStyleDefaults::default_instance_ = NULL;
 CT_EmptyElement* CT_EmptyElement::default_instance_ = NULL;
 
     // CT_ColorMapping
+    CT_ColorMapping::CT_ColorMapping()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_bg1_attr(false),
+    m_bg1_attr(NULL),
+    m_has_tx1_attr(false),
+    m_tx1_attr(NULL),
+    m_has_bg2_attr(false),
+    m_bg2_attr(NULL),
+    m_has_tx2_attr(false),
+    m_tx2_attr(NULL),
+    m_has_accent1_attr(false),
+    m_accent1_attr(NULL),
+    m_has_accent2_attr(false),
+    m_accent2_attr(NULL),
+    m_has_accent3_attr(false),
+    m_accent3_attr(NULL),
+    m_has_accent4_attr(false),
+    m_accent4_attr(NULL),
+    m_has_accent5_attr(false),
+    m_accent5_attr(NULL),
+    m_has_accent6_attr(false),
+    m_accent6_attr(NULL),
+    m_has_hlink_attr(false),
+    m_hlink_attr(NULL),
+    m_has_folHlink_attr(false),
+    m_folHlink_attr(NULL)
+    {
+    }
     bool CT_ColorMapping::has_extLst() const
     {    
     return m_has_extLst;
@@ -90557,7 +92987,7 @@ CT_EmptyElement* CT_EmptyElement::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -90815,6 +93245,13 @@ CT_EmptyElement* CT_EmptyElement::default_instance_ = NULL;
 CT_ColorMapping* CT_ColorMapping::default_instance_ = NULL;
 
     // CT_ColorMappingOverride
+    CT_ColorMappingOverride::CT_ColorMappingOverride()
+    :m_has_masterClrMapping(false),
+    m_masterClrMapping(NULL),
+    m_has_overrideClrMapping(false),
+    m_overrideClrMapping(NULL)
+    {
+    }
     bool CT_ColorMappingOverride::has_masterClrMapping() const
     {    
     return m_has_masterClrMapping;
@@ -90899,12 +93336,12 @@ CT_ColorMapping* CT_ColorMapping::default_instance_ = NULL;
             
     if (m_has_masterClrMapping)
     {
-        m_masterClrMapping->toXmlElem("masterClrMapping", "", _outStream);;
+        m_masterClrMapping->toXmlElem("a:masterClrMapping", "", _outStream);;
     }
     
     if (m_has_overrideClrMapping)
     {
-        m_overrideClrMapping->toXmlElem("overrideClrMapping", "", _outStream);;
+        m_overrideClrMapping->toXmlElem("a:overrideClrMapping", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -90922,6 +93359,13 @@ CT_ColorMapping* CT_ColorMapping::default_instance_ = NULL;
 CT_ColorMappingOverride* CT_ColorMappingOverride::default_instance_ = NULL;
 
     // CT_ColorSchemeAndMapping
+    CT_ColorSchemeAndMapping::CT_ColorSchemeAndMapping()
+    :m_has_clrScheme(false),
+    m_clrScheme(NULL),
+    m_has_clrMap(false),
+    m_clrMap(NULL)
+    {
+    }
     bool CT_ColorSchemeAndMapping::has_clrScheme() const
     {    
     return m_has_clrScheme;
@@ -90986,12 +93430,12 @@ CT_ColorMappingOverride* CT_ColorMappingOverride::default_instance_ = NULL;
             
     if (m_has_clrScheme)
     {
-        m_clrScheme->toXmlElem("clrScheme", "", _outStream);;
+        m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);;
     }
     
     if (m_has_clrMap)
     {
-        m_clrMap->toXmlElem("clrMap", "", _outStream);;
+        m_clrMap->toXmlElem("a:clrMap", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -91009,6 +93453,10 @@ CT_ColorMappingOverride* CT_ColorMappingOverride::default_instance_ = NULL;
 CT_ColorSchemeAndMapping* CT_ColorSchemeAndMapping::default_instance_ = NULL;
 
     // CT_ColorSchemeList
+    CT_ColorSchemeList::CT_ColorSchemeList()
+
+    {
+    }
     CT_ColorSchemeAndMapping* CT_ColorSchemeList::add_extraClrScheme()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -91046,7 +93494,7 @@ CT_ColorSchemeAndMapping* CT_ColorSchemeAndMapping::default_instance_ = NULL;
         {
             if ((*iter)->has_extraClrScheme())
             {
-                (*iter)->get_extraClrScheme().toXmlElem("extraClrScheme", "", _outStream);
+                (*iter)->get_extraClrScheme().toXmlElem("a:extraClrScheme", "", _outStream);
             }
         }
     }
@@ -91065,6 +93513,11 @@ CT_ColorSchemeAndMapping* CT_ColorSchemeAndMapping::default_instance_ = NULL;
 
 
     // CT_ColorSchemeList::ChildGroup_1
+    CT_ColorSchemeList::ChildGroup_1::ChildGroup_1()
+    :m_has_extraClrScheme(false),
+    m_extraClrScheme(NULL)
+    {
+    }
     bool CT_ColorSchemeList::ChildGroup_1::has_extraClrScheme() const
     {    
     return m_has_extraClrScheme;
@@ -91093,6 +93546,21 @@ CT_ColorSchemeAndMapping* CT_ColorSchemeAndMapping::default_instance_ = NULL;
 CT_ColorSchemeList* CT_ColorSchemeList::default_instance_ = NULL;
 
     // CT_OfficeStyleSheet
+    CT_OfficeStyleSheet::CT_OfficeStyleSheet()
+    :m_has_themeElements(false),
+    m_themeElements(NULL),
+    m_has_objectDefaults(false),
+    m_objectDefaults(NULL),
+    m_has_extraClrSchemeLst(false),
+    m_extraClrSchemeLst(NULL),
+    m_has_custClrLst(false),
+    m_custClrLst(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr("")
+    {
+    }
     bool CT_OfficeStyleSheet::has_themeElements() const
     {    
     return m_has_themeElements;
@@ -91237,27 +93705,27 @@ CT_ColorSchemeList* CT_ColorSchemeList::default_instance_ = NULL;
             
     if (m_has_themeElements)
     {
-        m_themeElements->toXmlElem("themeElements", "", _outStream);;
+        m_themeElements->toXmlElem("a:themeElements", "", _outStream);;
     }
     
     if (m_has_objectDefaults)
     {
-        m_objectDefaults->toXmlElem("objectDefaults", "", _outStream);;
+        m_objectDefaults->toXmlElem("a:objectDefaults", "", _outStream);;
     }
     
     if (m_has_extraClrSchemeLst)
     {
-        m_extraClrSchemeLst->toXmlElem("extraClrSchemeLst", "", _outStream);;
+        m_extraClrSchemeLst->toXmlElem("a:extraClrSchemeLst", "", _outStream);;
     }
     
     if (m_has_custClrLst)
     {
-        m_custClrLst->toXmlElem("custClrLst", "", _outStream);;
+        m_custClrLst->toXmlElem("a:custClrLst", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -91291,6 +93759,15 @@ CT_ColorSchemeList* CT_ColorSchemeList::default_instance_ = NULL;
 CT_OfficeStyleSheet* CT_OfficeStyleSheet::default_instance_ = NULL;
 
     // CT_BaseStylesOverride
+    CT_BaseStylesOverride::CT_BaseStylesOverride()
+    :m_has_clrScheme(false),
+    m_clrScheme(NULL),
+    m_has_fontScheme(false),
+    m_fontScheme(NULL),
+    m_has_fmtScheme(false),
+    m_fmtScheme(NULL)
+    {
+    }
     bool CT_BaseStylesOverride::has_clrScheme() const
     {    
     return m_has_clrScheme;
@@ -91379,17 +93856,17 @@ CT_OfficeStyleSheet* CT_OfficeStyleSheet::default_instance_ = NULL;
             
     if (m_has_clrScheme)
     {
-        m_clrScheme->toXmlElem("clrScheme", "", _outStream);;
+        m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);;
     }
     
     if (m_has_fontScheme)
     {
-        m_fontScheme->toXmlElem("fontScheme", "", _outStream);;
+        m_fontScheme->toXmlElem("a:fontScheme", "", _outStream);;
     }
     
     if (m_has_fmtScheme)
     {
-        m_fmtScheme->toXmlElem("fmtScheme", "", _outStream);;
+        m_fmtScheme->toXmlElem("a:fmtScheme", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -91407,6 +93884,13 @@ CT_OfficeStyleSheet* CT_OfficeStyleSheet::default_instance_ = NULL;
 CT_BaseStylesOverride* CT_BaseStylesOverride::default_instance_ = NULL;
 
     // CT_ClipboardStyleSheet
+    CT_ClipboardStyleSheet::CT_ClipboardStyleSheet()
+    :m_has_themeElements(false),
+    m_themeElements(NULL),
+    m_has_clrMap(false),
+    m_clrMap(NULL)
+    {
+    }
     bool CT_ClipboardStyleSheet::has_themeElements() const
     {    
     return m_has_themeElements;
@@ -91471,12 +93955,12 @@ CT_BaseStylesOverride* CT_BaseStylesOverride::default_instance_ = NULL;
             
     if (m_has_themeElements)
     {
-        m_themeElements->toXmlElem("themeElements", "", _outStream);;
+        m_themeElements->toXmlElem("a:themeElements", "", _outStream);;
     }
     
     if (m_has_clrMap)
     {
-        m_clrMap->toXmlElem("clrMap", "", _outStream);;
+        m_clrMap->toXmlElem("a:clrMap", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -91494,6 +93978,55 @@ CT_BaseStylesOverride* CT_BaseStylesOverride::default_instance_ = NULL;
 CT_ClipboardStyleSheet* CT_ClipboardStyleSheet::default_instance_ = NULL;
 
     // CT_TableCellProperties
+    CT_TableCellProperties::CT_TableCellProperties()
+    :m_has_lnL(false),
+    m_lnL(NULL),
+    m_has_lnR(false),
+    m_lnR(NULL),
+    m_has_lnT(false),
+    m_lnT(NULL),
+    m_has_lnB(false),
+    m_lnB(NULL),
+    m_has_lnTlToBr(false),
+    m_lnTlToBr(NULL),
+    m_has_lnBlToTr(false),
+    m_lnBlToTr(NULL),
+    m_has_cell3D(false),
+    m_cell3D(NULL),
+    m_has_noFill(false),
+    m_noFill(NULL),
+    m_has_solidFill(false),
+    m_solidFill(NULL),
+    m_has_gradFill(false),
+    m_gradFill(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_pattFill(false),
+    m_pattFill(NULL),
+    m_has_grpFill(false),
+    m_grpFill(NULL),
+    m_has_headers(false),
+    m_headers(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_marL_attr(false),
+    m_marL_attr(NULL),
+    m_has_marR_attr(false),
+    m_marR_attr(NULL),
+    m_has_marT_attr(false),
+    m_marT_attr(NULL),
+    m_has_marB_attr(false),
+    m_marB_attr(NULL),
+    m_has_vert_attr(false),
+    m_vert_attr(NULL),
+    m_has_anchor_attr(false),
+    m_anchor_attr(NULL),
+    m_has_anchorCtr_attr(false),
+    m_anchorCtr_attr(false),
+    m_has_horzOverflow_attr(false),
+    m_horzOverflow_attr(NULL)
+    {
+    }
     bool CT_TableCellProperties::has_lnL() const
     {    
     return m_has_lnL;
@@ -92259,77 +94792,77 @@ CT_ClipboardStyleSheet* CT_ClipboardStyleSheet::default_instance_ = NULL;
             
     if (m_has_lnL)
     {
-        m_lnL->toXmlElem("lnL", "", _outStream);;
+        m_lnL->toXmlElem("a:lnL", "", _outStream);;
     }
     
     if (m_has_lnR)
     {
-        m_lnR->toXmlElem("lnR", "", _outStream);;
+        m_lnR->toXmlElem("a:lnR", "", _outStream);;
     }
     
     if (m_has_lnT)
     {
-        m_lnT->toXmlElem("lnT", "", _outStream);;
+        m_lnT->toXmlElem("a:lnT", "", _outStream);;
     }
     
     if (m_has_lnB)
     {
-        m_lnB->toXmlElem("lnB", "", _outStream);;
+        m_lnB->toXmlElem("a:lnB", "", _outStream);;
     }
     
     if (m_has_lnTlToBr)
     {
-        m_lnTlToBr->toXmlElem("lnTlToBr", "", _outStream);;
+        m_lnTlToBr->toXmlElem("a:lnTlToBr", "", _outStream);;
     }
     
     if (m_has_lnBlToTr)
     {
-        m_lnBlToTr->toXmlElem("lnBlToTr", "", _outStream);;
+        m_lnBlToTr->toXmlElem("a:lnBlToTr", "", _outStream);;
     }
     
     if (m_has_cell3D)
     {
-        m_cell3D->toXmlElem("cell3D", "", _outStream);;
+        m_cell3D->toXmlElem("a:cell3D", "", _outStream);;
     }
      
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);;
     }
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
     }
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
     }
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
     }
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
     }
      
     if (m_has_headers)
     {
-        m_headers->toXmlElem("headers", "", _outStream);;
+        m_headers->toXmlElem("a:headers", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -92503,6 +95036,10 @@ CT_ClipboardStyleSheet* CT_ClipboardStyleSheet::default_instance_ = NULL;
 CT_TableCellProperties* CT_TableCellProperties::default_instance_ = NULL;
 
     // CT_Headers
+    CT_Headers::CT_Headers()
+
+    {
+    }
     void CT_Headers::add_header(const XSD::string_& _header)
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -92558,6 +95095,11 @@ CT_TableCellProperties* CT_TableCellProperties::default_instance_ = NULL;
 
 
     // CT_Headers::ChildGroup_1
+    CT_Headers::ChildGroup_1::ChildGroup_1()
+    :m_has_header(false),
+    m_header("")
+    {
+    }
     bool CT_Headers::ChildGroup_1::has_header() const
     {    
     return m_has_header;
@@ -92578,6 +95120,13 @@ CT_TableCellProperties* CT_TableCellProperties::default_instance_ = NULL;
 CT_Headers* CT_Headers::default_instance_ = NULL;
 
     // CT_TableCol
+    CT_TableCol::CT_TableCol()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_w_attr(false),
+    m_w_attr(NULL)
+    {
+    }
     bool CT_TableCol::has_extLst() const
     {    
     return m_has_extLst;
@@ -92632,7 +95181,7 @@ CT_Headers* CT_Headers::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -92670,6 +95219,10 @@ CT_Headers* CT_Headers::default_instance_ = NULL;
 CT_TableCol* CT_TableCol::default_instance_ = NULL;
 
     // CT_TableGrid
+    CT_TableGrid::CT_TableGrid()
+
+    {
+    }
     CT_TableCol* CT_TableGrid::add_gridCol()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -92707,7 +95260,7 @@ CT_TableCol* CT_TableCol::default_instance_ = NULL;
         {
             if ((*iter)->has_gridCol())
             {
-                (*iter)->get_gridCol().toXmlElem("gridCol", "", _outStream);
+                (*iter)->get_gridCol().toXmlElem("a:gridCol", "", _outStream);
             }
         }
     }
@@ -92726,6 +95279,11 @@ CT_TableCol* CT_TableCol::default_instance_ = NULL;
 
 
     // CT_TableGrid::ChildGroup_1
+    CT_TableGrid::ChildGroup_1::ChildGroup_1()
+    :m_has_gridCol(false),
+    m_gridCol(NULL)
+    {
+    }
     bool CT_TableGrid::ChildGroup_1::has_gridCol() const
     {    
     return m_has_gridCol;
@@ -92754,6 +95312,25 @@ CT_TableCol* CT_TableCol::default_instance_ = NULL;
 CT_TableGrid* CT_TableGrid::default_instance_ = NULL;
 
     // CT_TableCell
+    CT_TableCell::CT_TableCell()
+    :m_has_txBody(false),
+    m_txBody(NULL),
+    m_has_tcPr(false),
+    m_tcPr(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_rowSpan_attr(false),
+    m_rowSpan_attr(0),
+    m_has_gridSpan_attr(false),
+    m_gridSpan_attr(0),
+    m_has_hMerge_attr(false),
+    m_hMerge_attr(false),
+    m_has_vMerge_attr(false),
+    m_vMerge_attr(false),
+    m_has_id_attr(false),
+    m_id_attr("")
+    {
+    }
     bool CT_TableCell::has_txBody() const
     {    
     return m_has_txBody;
@@ -92886,17 +95463,17 @@ CT_TableGrid* CT_TableGrid::default_instance_ = NULL;
             
     if (m_has_txBody)
     {
-        m_txBody->toXmlElem("txBody", "", _outStream);;
+        m_txBody->toXmlElem("a:txBody", "", _outStream);;
     }
     
     if (m_has_tcPr)
     {
-        m_tcPr->toXmlElem("tcPr", "", _outStream);;
+        m_tcPr->toXmlElem("a:tcPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -92994,6 +95571,11 @@ CT_TableGrid* CT_TableGrid::default_instance_ = NULL;
 CT_TableCell* CT_TableCell::default_instance_ = NULL;
 
     // CT_TableRow
+    CT_TableRow::CT_TableRow()
+    :m_has_h_attr(false),
+    m_h_attr(NULL)
+    {
+    }
     CT_TableCell* CT_TableRow::add_tc()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -93053,11 +95635,11 @@ CT_TableCell* CT_TableCell::default_instance_ = NULL;
         {
             if ((*iter)->has_tc())
             {
-                (*iter)->get_tc().toXmlElem("tc", "", _outStream);
+                (*iter)->get_tc().toXmlElem("a:tc", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("a:extLst", "", _outStream);
             }
         }
     }
@@ -93096,6 +95678,13 @@ CT_TableCell* CT_TableCell::default_instance_ = NULL;
 
 
     // CT_TableRow::ChildGroup_1
+    CT_TableRow::ChildGroup_1::ChildGroup_1()
+    :m_has_tc(false),
+    m_tc(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_TableRow::ChildGroup_1::has_tc() const
     {    
     return m_has_tc;
@@ -93167,6 +95756,45 @@ CT_TableCell* CT_TableCell::default_instance_ = NULL;
 CT_TableRow* CT_TableRow::default_instance_ = NULL;
 
     // CT_TableProperties
+    CT_TableProperties::CT_TableProperties()
+    :m_has_noFill(false),
+    m_noFill(NULL),
+    m_has_solidFill(false),
+    m_solidFill(NULL),
+    m_has_gradFill(false),
+    m_gradFill(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_pattFill(false),
+    m_pattFill(NULL),
+    m_has_grpFill(false),
+    m_grpFill(NULL),
+    m_has_effectLst(false),
+    m_effectLst(NULL),
+    m_has_effectDag(false),
+    m_effectDag(NULL),
+    m_has_tableStyle(false),
+    m_tableStyle(NULL),
+    m_has_tableStyleId(false),
+    m_tableStyleId(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_rtl_attr(false),
+    m_rtl_attr(false),
+    m_has_firstRow_attr(false),
+    m_firstRow_attr(false),
+    m_has_firstCol_attr(false),
+    m_firstCol_attr(false),
+    m_has_lastRow_attr(false),
+    m_lastRow_attr(false),
+    m_has_lastCol_attr(false),
+    m_lastCol_attr(false),
+    m_has_bandRow_attr(false),
+    m_bandRow_attr(false),
+    m_has_bandCol_attr(false),
+    m_bandCol_attr(false)
+    {
+    }
     bool CT_TableProperties::has_noFill() const
     {    
     return m_has_noFill;
@@ -93247,12 +95875,12 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_tableStyleId = false;
+    m_has_tableStyleId = false;
     
-    if (m_s_tableStyleId)
+    if (m_tableStyleId)
     {
-        delete m_s_tableStyleId;
-        m_s_tableStyleId = NULL;
+        delete m_tableStyleId;
+        m_tableStyleId = NULL;
     }
     ;
     
@@ -93353,12 +95981,12 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_tableStyleId = false;
+    m_has_tableStyleId = false;
     
-    if (m_s_tableStyleId)
+    if (m_tableStyleId)
     {
-        delete m_s_tableStyleId;
-        m_s_tableStyleId = NULL;
+        delete m_tableStyleId;
+        m_tableStyleId = NULL;
     }
     ;
     
@@ -93459,12 +96087,12 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_tableStyleId = false;
+    m_has_tableStyleId = false;
     
-    if (m_s_tableStyleId)
+    if (m_tableStyleId)
     {
-        delete m_s_tableStyleId;
-        m_s_tableStyleId = NULL;
+        delete m_tableStyleId;
+        m_tableStyleId = NULL;
     }
     ;
     
@@ -93565,12 +96193,12 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_tableStyleId = false;
+    m_has_tableStyleId = false;
     
-    if (m_s_tableStyleId)
+    if (m_tableStyleId)
     {
-        delete m_s_tableStyleId;
-        m_s_tableStyleId = NULL;
+        delete m_tableStyleId;
+        m_tableStyleId = NULL;
     }
     ;
     
@@ -93671,12 +96299,12 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_tableStyleId = false;
+    m_has_tableStyleId = false;
     
-    if (m_s_tableStyleId)
+    if (m_tableStyleId)
     {
-        delete m_s_tableStyleId;
-        m_s_tableStyleId = NULL;
+        delete m_tableStyleId;
+        m_tableStyleId = NULL;
     }
     ;
     
@@ -93777,12 +96405,12 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_tableStyleId = false;
+    m_has_tableStyleId = false;
     
-    if (m_s_tableStyleId)
+    if (m_tableStyleId)
     {
-        delete m_s_tableStyleId;
-        m_s_tableStyleId = NULL;
+        delete m_tableStyleId;
+        m_tableStyleId = NULL;
     }
     ;
     
@@ -93883,12 +96511,12 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_tableStyleId = false;
+    m_has_tableStyleId = false;
     
-    if (m_s_tableStyleId)
+    if (m_tableStyleId)
     {
-        delete m_s_tableStyleId;
-        m_s_tableStyleId = NULL;
+        delete m_tableStyleId;
+        m_tableStyleId = NULL;
     }
     ;
     
@@ -93989,12 +96617,12 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_tableStyleId = false;
+    m_has_tableStyleId = false;
     
-    if (m_s_tableStyleId)
+    if (m_tableStyleId)
     {
-        delete m_s_tableStyleId;
-        m_s_tableStyleId = NULL;
+        delete m_tableStyleId;
+        m_tableStyleId = NULL;
     }
     ;
     
@@ -94095,12 +96723,12 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_tableStyleId = false;
+    m_has_tableStyleId = false;
     
-    if (m_s_tableStyleId)
+    if (m_tableStyleId)
     {
-        delete m_s_tableStyleId;
-        m_s_tableStyleId = NULL;
+        delete m_tableStyleId;
+        m_tableStyleId = NULL;
     }
     ;
     
@@ -94121,12 +96749,12 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
     return CT_TableStyle::default_instance();
     }
 
-    bool CT_TableProperties::has_s_tableStyleId() const
+    bool CT_TableProperties::has_tableStyleId() const
     {    
-    return m_has_s_tableStyleId;
+    return m_has_tableStyleId;
     }
 
-    ns_s::ST_Guid* CT_TableProperties::mutable_s_tableStyleId()
+    ns_s::ST_Guid* CT_TableProperties::mutable_tableStyleId()
     {    
     
     m_has_noFill = false;
@@ -94210,19 +96838,19 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_tableStyleId = true;
-    if (!m_s_tableStyleId)
+    m_has_tableStyleId = true;
+    if (!m_tableStyleId)
     {
-        m_s_tableStyleId = new ns_s::ST_Guid();
+        m_tableStyleId = new ns_s::ST_Guid();
     }
-    return m_s_tableStyleId;
+    return m_tableStyleId;
     }
 
-    const ns_s::ST_Guid& CT_TableProperties::get_s_tableStyleId() const
+    const ns_s::ST_Guid& CT_TableProperties::get_tableStyleId() const
     {    
-    if (m_s_tableStyleId)
+    if (m_tableStyleId)
     {
-        return *m_s_tableStyleId;
+        return *m_tableStyleId;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -94329,57 +96957,57 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);;
     }
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
     }
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
     }
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
     }
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
     }
     
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
     }
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
     }
     
     if (m_has_tableStyle)
     {
-        m_tableStyle->toXmlElem("tableStyle", "", _outStream);;
+        m_tableStyle->toXmlElem("a:tableStyle", "", _outStream);;
     }
     
-    if (m_has_s_tableStyleId)
+    if (m_has_tableStyleId)
     {
-        _outStream << "<s:tableStyleId>" << m_s_tableStyleId->toString() << "</s:tableStyleId>";;
+        _outStream << "<a:tableStyleId>" << m_tableStyleId->toString() << "</a:tableStyleId>";;
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -94509,6 +97137,13 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
 CT_TableProperties* CT_TableProperties::default_instance_ = NULL;
 
     // CT_Table
+    CT_Table::CT_Table()
+    :m_has_tblPr(false),
+    m_tblPr(NULL),
+    m_has_tblGrid(false),
+    m_tblGrid(NULL)
+    {
+    }
     bool CT_Table::has_tblPr() const
     {    
     return m_has_tblPr;
@@ -94608,12 +97243,12 @@ CT_TableProperties* CT_TableProperties::default_instance_ = NULL;
             
     if (m_has_tblPr)
     {
-        m_tblPr->toXmlElem("tblPr", "", _outStream);;
+        m_tblPr->toXmlElem("a:tblPr", "", _outStream);;
     }
     
     if (m_has_tblGrid)
     {
-        m_tblGrid->toXmlElem("tblGrid", "", _outStream);;
+        m_tblGrid->toXmlElem("a:tblGrid", "", _outStream);;
     }
      
     {
@@ -94622,7 +97257,7 @@ CT_TableProperties* CT_TableProperties::default_instance_ = NULL;
         {
             if ((*iter)->has_tr())
             {
-                (*iter)->get_tr().toXmlElem("tr", "", _outStream);
+                (*iter)->get_tr().toXmlElem("a:tr", "", _outStream);
             }
         }
     }
@@ -94641,6 +97276,11 @@ CT_TableProperties* CT_TableProperties::default_instance_ = NULL;
 
 
     // CT_Table::ChildGroup_1
+    CT_Table::ChildGroup_1::ChildGroup_1()
+    :m_has_tr(false),
+    m_tr(NULL)
+    {
+    }
     bool CT_Table::ChildGroup_1::has_tr() const
     {    
     return m_has_tr;
@@ -94669,6 +97309,17 @@ CT_TableProperties* CT_TableProperties::default_instance_ = NULL;
 CT_Table* CT_Table::default_instance_ = NULL;
 
     // CT_Cell3D
+    CT_Cell3D::CT_Cell3D()
+    :m_has_bevel(false),
+    m_bevel(NULL),
+    m_has_lightRig(false),
+    m_lightRig(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_prstMaterial_attr(false),
+    m_prstMaterial_attr(NULL)
+    {
+    }
     bool CT_Cell3D::has_bevel() const
     {    
     return m_has_bevel;
@@ -94771,17 +97422,17 @@ CT_Table* CT_Table::default_instance_ = NULL;
             
     if (m_has_bevel)
     {
-        m_bevel->toXmlElem("bevel", "", _outStream);;
+        m_bevel->toXmlElem("a:bevel", "", _outStream);;
     }
     
     if (m_has_lightRig)
     {
-        m_lightRig->toXmlElem("lightRig", "", _outStream);;
+        m_lightRig->toXmlElem("a:lightRig", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -94819,6 +97470,13 @@ CT_Table* CT_Table::default_instance_ = NULL;
 CT_Cell3D* CT_Cell3D::default_instance_ = NULL;
 
     // CT_ThemeableLineStyle
+    CT_ThemeableLineStyle::CT_ThemeableLineStyle()
+    :m_has_ln(false),
+    m_ln(NULL),
+    m_has_lnRef(false),
+    m_lnRef(NULL)
+    {
+    }
     bool CT_ThemeableLineStyle::has_ln() const
     {    
     return m_has_ln;
@@ -94903,12 +97561,12 @@ CT_Cell3D* CT_Cell3D::default_instance_ = NULL;
             
     if (m_has_ln)
     {
-        m_ln->toXmlElem("ln", "", _outStream);;
+        m_ln->toXmlElem("a:ln", "", _outStream);;
     }
     
     if (m_has_lnRef)
     {
-        m_lnRef->toXmlElem("lnRef", "", _outStream);;
+        m_lnRef->toXmlElem("a:lnRef", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -94926,6 +97584,31 @@ CT_Cell3D* CT_Cell3D::default_instance_ = NULL;
 CT_ThemeableLineStyle* CT_ThemeableLineStyle::default_instance_ = NULL;
 
     // CT_TableStyleTextStyle
+    CT_TableStyleTextStyle::CT_TableStyleTextStyle()
+    :m_has_font(false),
+    m_font(NULL),
+    m_has_fontRef(false),
+    m_fontRef(NULL),
+    m_has_scrgbClr(false),
+    m_scrgbClr(NULL),
+    m_has_srgbClr(false),
+    m_srgbClr(NULL),
+    m_has_hslClr(false),
+    m_hslClr(NULL),
+    m_has_sysClr(false),
+    m_sysClr(NULL),
+    m_has_schemeClr(false),
+    m_schemeClr(NULL),
+    m_has_prstClr(false),
+    m_prstClr(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_b_attr(false),
+    m_b_attr(NULL),
+    m_has_i_attr(false),
+    m_i_attr(NULL)
+    {
+    }
     bool CT_TableStyleTextStyle::has_font() const
     {    
     return m_has_font;
@@ -95699,47 +98382,47 @@ CT_ThemeableLineStyle* CT_ThemeableLineStyle::default_instance_ = NULL;
             
     if (m_has_font)
     {
-        m_font->toXmlElem("font", "", _outStream);;
+        m_font->toXmlElem("a:font", "", _outStream);;
     }
     
     if (m_has_fontRef)
     {
-        m_fontRef->toXmlElem("fontRef", "", _outStream);;
+        m_fontRef->toXmlElem("a:fontRef", "", _outStream);;
     }
     
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
     }
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
     }
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
     }
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
     }
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
     }
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -95797,6 +98480,27 @@ CT_ThemeableLineStyle* CT_ThemeableLineStyle::default_instance_ = NULL;
 CT_TableStyleTextStyle* CT_TableStyleTextStyle::default_instance_ = NULL;
 
     // CT_TableCellBorderStyle
+    CT_TableCellBorderStyle::CT_TableCellBorderStyle()
+    :m_has_left(false),
+    m_left(NULL),
+    m_has_right(false),
+    m_right(NULL),
+    m_has_top(false),
+    m_top(NULL),
+    m_has_bottom(false),
+    m_bottom(NULL),
+    m_has_insideH(false),
+    m_insideH(NULL),
+    m_has_insideV(false),
+    m_insideV(NULL),
+    m_has_tl2br(false),
+    m_tl2br(NULL),
+    m_has_tr2bl(false),
+    m_tr2bl(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_TableCellBorderStyle::has_left() const
     {    
     return m_has_left;
@@ -96029,47 +98733,47 @@ CT_TableStyleTextStyle* CT_TableStyleTextStyle::default_instance_ = NULL;
             
     if (m_has_left)
     {
-        m_left->toXmlElem("left", "", _outStream);;
+        m_left->toXmlElem("a:left", "", _outStream);;
     }
     
     if (m_has_right)
     {
-        m_right->toXmlElem("right", "", _outStream);;
+        m_right->toXmlElem("a:right", "", _outStream);;
     }
     
     if (m_has_top)
     {
-        m_top->toXmlElem("top", "", _outStream);;
+        m_top->toXmlElem("a:top", "", _outStream);;
     }
     
     if (m_has_bottom)
     {
-        m_bottom->toXmlElem("bottom", "", _outStream);;
+        m_bottom->toXmlElem("a:bottom", "", _outStream);;
     }
     
     if (m_has_insideH)
     {
-        m_insideH->toXmlElem("insideH", "", _outStream);;
+        m_insideH->toXmlElem("a:insideH", "", _outStream);;
     }
     
     if (m_has_insideV)
     {
-        m_insideV->toXmlElem("insideV", "", _outStream);;
+        m_insideV->toXmlElem("a:insideV", "", _outStream);;
     }
     
     if (m_has_tl2br)
     {
-        m_tl2br->toXmlElem("tl2br", "", _outStream);;
+        m_tl2br->toXmlElem("a:tl2br", "", _outStream);;
     }
     
     if (m_has_tr2bl)
     {
-        m_tr2bl->toXmlElem("tr2bl", "", _outStream);;
+        m_tr2bl->toXmlElem("a:tr2bl", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -96087,6 +98791,17 @@ CT_TableStyleTextStyle* CT_TableStyleTextStyle::default_instance_ = NULL;
 CT_TableCellBorderStyle* CT_TableCellBorderStyle::default_instance_ = NULL;
 
     // CT_TableBackgroundStyle
+    CT_TableBackgroundStyle::CT_TableBackgroundStyle()
+    :m_has_fill(false),
+    m_fill(NULL),
+    m_has_fillRef(false),
+    m_fillRef(NULL),
+    m_has_effect(false),
+    m_effect(NULL),
+    m_has_effectRef(false),
+    m_effectRef(NULL)
+    {
+    }
     bool CT_TableBackgroundStyle::has_fill() const
     {    
     return m_has_fill;
@@ -96311,22 +99026,22 @@ CT_TableCellBorderStyle* CT_TableCellBorderStyle::default_instance_ = NULL;
             
     if (m_has_fill)
     {
-        m_fill->toXmlElem("fill", "", _outStream);;
+        m_fill->toXmlElem("a:fill", "", _outStream);;
     }
     
     if (m_has_fillRef)
     {
-        m_fillRef->toXmlElem("fillRef", "", _outStream);;
+        m_fillRef->toXmlElem("a:fillRef", "", _outStream);;
     }
     
     if (m_has_effect)
     {
-        m_effect->toXmlElem("effect", "", _outStream);;
+        m_effect->toXmlElem("a:effect", "", _outStream);;
     }
     
     if (m_has_effectRef)
     {
-        m_effectRef->toXmlElem("effectRef", "", _outStream);;
+        m_effectRef->toXmlElem("a:effectRef", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -96344,6 +99059,17 @@ CT_TableCellBorderStyle* CT_TableCellBorderStyle::default_instance_ = NULL;
 CT_TableBackgroundStyle* CT_TableBackgroundStyle::default_instance_ = NULL;
 
     // CT_TableStyleCellStyle
+    CT_TableStyleCellStyle::CT_TableStyleCellStyle()
+    :m_has_tcBdr(false),
+    m_tcBdr(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_fillRef(false),
+    m_fillRef(NULL),
+    m_has_cell3D(false),
+    m_cell3D(NULL)
+    {
+    }
     bool CT_TableStyleCellStyle::has_tcBdr() const
     {    
     return m_has_tcBdr;
@@ -96476,22 +99202,22 @@ CT_TableBackgroundStyle* CT_TableBackgroundStyle::default_instance_ = NULL;
             
     if (m_has_tcBdr)
     {
-        m_tcBdr->toXmlElem("tcBdr", "", _outStream);;
+        m_tcBdr->toXmlElem("a:tcBdr", "", _outStream);;
     }
      
     if (m_has_fill)
     {
-        m_fill->toXmlElem("fill", "", _outStream);;
+        m_fill->toXmlElem("a:fill", "", _outStream);;
     }
     
     if (m_has_fillRef)
     {
-        m_fillRef->toXmlElem("fillRef", "", _outStream);;
+        m_fillRef->toXmlElem("a:fillRef", "", _outStream);;
     }
      
     if (m_has_cell3D)
     {
-        m_cell3D->toXmlElem("cell3D", "", _outStream);;
+        m_cell3D->toXmlElem("a:cell3D", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -96509,6 +99235,13 @@ CT_TableBackgroundStyle* CT_TableBackgroundStyle::default_instance_ = NULL;
 CT_TableStyleCellStyle* CT_TableStyleCellStyle::default_instance_ = NULL;
 
     // CT_TablePartStyle
+    CT_TablePartStyle::CT_TablePartStyle()
+    :m_has_tcTxStyle(false),
+    m_tcTxStyle(NULL),
+    m_has_tcStyle(false),
+    m_tcStyle(NULL)
+    {
+    }
     bool CT_TablePartStyle::has_tcTxStyle() const
     {    
     return m_has_tcTxStyle;
@@ -96573,12 +99306,12 @@ CT_TableStyleCellStyle* CT_TableStyleCellStyle::default_instance_ = NULL;
             
     if (m_has_tcTxStyle)
     {
-        m_tcTxStyle->toXmlElem("tcTxStyle", "", _outStream);;
+        m_tcTxStyle->toXmlElem("a:tcTxStyle", "", _outStream);;
     }
     
     if (m_has_tcStyle)
     {
-        m_tcStyle->toXmlElem("tcStyle", "", _outStream);;
+        m_tcStyle->toXmlElem("a:tcStyle", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -96596,6 +99329,43 @@ CT_TableStyleCellStyle* CT_TableStyleCellStyle::default_instance_ = NULL;
 CT_TablePartStyle* CT_TablePartStyle::default_instance_ = NULL;
 
     // CT_TableStyle
+    CT_TableStyle::CT_TableStyle()
+    :m_has_tblBg(false),
+    m_tblBg(NULL),
+    m_has_wholeTbl(false),
+    m_wholeTbl(NULL),
+    m_has_band1H(false),
+    m_band1H(NULL),
+    m_has_band2H(false),
+    m_band2H(NULL),
+    m_has_band1V(false),
+    m_band1V(NULL),
+    m_has_band2V(false),
+    m_band2V(NULL),
+    m_has_lastCol(false),
+    m_lastCol(NULL),
+    m_has_firstCol(false),
+    m_firstCol(NULL),
+    m_has_lastRow(false),
+    m_lastRow(NULL),
+    m_has_seCell(false),
+    m_seCell(NULL),
+    m_has_swCell(false),
+    m_swCell(NULL),
+    m_has_firstRow(false),
+    m_firstRow(NULL),
+    m_has_neCell(false),
+    m_neCell(NULL),
+    m_has_nwCell(false),
+    m_nwCell(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_styleId_attr(false),
+    m_styleId_attr(NULL),
+    m_has_styleName_attr(false),
+    m_styleName_attr("")
+    {
+    }
     bool CT_TableStyle::has_tblBg() const
     {    
     return m_has_tblBg;
@@ -96958,12 +99728,12 @@ CT_TablePartStyle* CT_TablePartStyle::default_instance_ = NULL;
 
     void CT_TableStyle::clear()
     {    
-    m_has_s_styleId_attr = false;
+    m_has_styleId_attr = false;
     
-    if (m_s_styleId_attr)
+    if (m_styleId_attr)
     {
-        delete m_s_styleId_attr;
-        m_s_styleId_attr = NULL;
+        delete m_styleId_attr;
+        m_styleId_attr = NULL;
     }
     
     
@@ -96980,9 +99750,9 @@ CT_TablePartStyle* CT_TablePartStyle::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_styleId_attr)
+    if (m_has_styleId_attr)
     {
-        m_s_styleId_attr->toXmlAttr("styleId", _outStream);
+        m_styleId_attr->toXmlAttr("styleId", _outStream);
     }
     
     
@@ -96995,77 +99765,77 @@ CT_TablePartStyle* CT_TablePartStyle::default_instance_ = NULL;
             
     if (m_has_tblBg)
     {
-        m_tblBg->toXmlElem("tblBg", "", _outStream);;
+        m_tblBg->toXmlElem("a:tblBg", "", _outStream);;
     }
     
     if (m_has_wholeTbl)
     {
-        m_wholeTbl->toXmlElem("wholeTbl", "", _outStream);;
+        m_wholeTbl->toXmlElem("a:wholeTbl", "", _outStream);;
     }
     
     if (m_has_band1H)
     {
-        m_band1H->toXmlElem("band1H", "", _outStream);;
+        m_band1H->toXmlElem("a:band1H", "", _outStream);;
     }
     
     if (m_has_band2H)
     {
-        m_band2H->toXmlElem("band2H", "", _outStream);;
+        m_band2H->toXmlElem("a:band2H", "", _outStream);;
     }
     
     if (m_has_band1V)
     {
-        m_band1V->toXmlElem("band1V", "", _outStream);;
+        m_band1V->toXmlElem("a:band1V", "", _outStream);;
     }
     
     if (m_has_band2V)
     {
-        m_band2V->toXmlElem("band2V", "", _outStream);;
+        m_band2V->toXmlElem("a:band2V", "", _outStream);;
     }
     
     if (m_has_lastCol)
     {
-        m_lastCol->toXmlElem("lastCol", "", _outStream);;
+        m_lastCol->toXmlElem("a:lastCol", "", _outStream);;
     }
     
     if (m_has_firstCol)
     {
-        m_firstCol->toXmlElem("firstCol", "", _outStream);;
+        m_firstCol->toXmlElem("a:firstCol", "", _outStream);;
     }
     
     if (m_has_lastRow)
     {
-        m_lastRow->toXmlElem("lastRow", "", _outStream);;
+        m_lastRow->toXmlElem("a:lastRow", "", _outStream);;
     }
     
     if (m_has_seCell)
     {
-        m_seCell->toXmlElem("seCell", "", _outStream);;
+        m_seCell->toXmlElem("a:seCell", "", _outStream);;
     }
     
     if (m_has_swCell)
     {
-        m_swCell->toXmlElem("swCell", "", _outStream);;
+        m_swCell->toXmlElem("a:swCell", "", _outStream);;
     }
     
     if (m_has_firstRow)
     {
-        m_firstRow->toXmlElem("firstRow", "", _outStream);;
+        m_firstRow->toXmlElem("a:firstRow", "", _outStream);;
     }
     
     if (m_has_neCell)
     {
-        m_neCell->toXmlElem("neCell", "", _outStream);;
+        m_neCell->toXmlElem("a:neCell", "", _outStream);;
     }
     
     if (m_has_nwCell)
     {
-        m_nwCell->toXmlElem("nwCell", "", _outStream);;
+        m_nwCell->toXmlElem("a:nwCell", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -97080,22 +99850,22 @@ CT_TablePartStyle* CT_TablePartStyle::default_instance_ = NULL;
     return *CT_TableStyle::default_instance_;
     }
 
-    bool CT_TableStyle::has_s_styleId_attr() const
+    bool CT_TableStyle::has_styleId_attr() const
     {    
-    return m_has_s_styleId_attr;
+    return m_has_styleId_attr;
     }
 
-    void CT_TableStyle::set_s_styleId_attr(const ns_s::ST_Guid& _s_styleId_attr)
+    void CT_TableStyle::set_styleId_attr(const ns_s::ST_Guid& _styleId_attr)
     {    
-    m_has_s_styleId_attr = true;
-    m_s_styleId_attr = new ns_s::ST_Guid(_s_styleId_attr);
+    m_has_styleId_attr = true;
+    m_styleId_attr = new ns_s::ST_Guid(_styleId_attr);
     }
 
-    const ns_s::ST_Guid& CT_TableStyle::get_s_styleId_attr() const
+    const ns_s::ST_Guid& CT_TableStyle::get_styleId_attr() const
     {    
-    if (m_s_styleId_attr)
+    if (m_styleId_attr)
     {
-        return *m_s_styleId_attr;
+        return *m_styleId_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -97119,6 +99889,11 @@ CT_TablePartStyle* CT_TablePartStyle::default_instance_ = NULL;
 CT_TableStyle* CT_TableStyle::default_instance_ = NULL;
 
     // CT_TableStyleList
+    CT_TableStyleList::CT_TableStyleList()
+    :m_has_def_attr(false),
+    m_def_attr(NULL)
+    {
+    }
     CT_TableStyle* CT_TableStyleList::add_tblStyle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -97129,12 +99904,12 @@ CT_TableStyle* CT_TableStyle::default_instance_ = NULL;
 
     void CT_TableStyleList::clear()
     {    
-    m_has_s_def_attr = false;
+    m_has_def_attr = false;
     
-    if (m_s_def_attr)
+    if (m_def_attr)
     {
-        delete m_s_def_attr;
-        m_s_def_attr = NULL;
+        delete m_def_attr;
+        m_def_attr = NULL;
     }
     
     
@@ -97157,9 +99932,9 @@ CT_TableStyle* CT_TableStyle::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_def_attr)
+    if (m_has_def_attr)
     {
-        m_s_def_attr->toXmlAttr("def", _outStream);
+        m_def_attr->toXmlAttr("def", _outStream);
     }
     
             _outStream << ">";
@@ -97170,7 +99945,7 @@ CT_TableStyle* CT_TableStyle::default_instance_ = NULL;
         {
             if ((*iter)->has_tblStyle())
             {
-                (*iter)->get_tblStyle().toXmlElem("tblStyle", "", _outStream);
+                (*iter)->get_tblStyle().toXmlElem("a:tblStyle", "", _outStream);
             }
         }
     }
@@ -97187,28 +99962,33 @@ CT_TableStyle* CT_TableStyle::default_instance_ = NULL;
     return *CT_TableStyleList::default_instance_;
     }
 
-    bool CT_TableStyleList::has_s_def_attr() const
+    bool CT_TableStyleList::has_def_attr() const
     {    
-    return m_has_s_def_attr;
+    return m_has_def_attr;
     }
 
-    void CT_TableStyleList::set_s_def_attr(const ns_s::ST_Guid& _s_def_attr)
+    void CT_TableStyleList::set_def_attr(const ns_s::ST_Guid& _def_attr)
     {    
-    m_has_s_def_attr = true;
-    m_s_def_attr = new ns_s::ST_Guid(_s_def_attr);
+    m_has_def_attr = true;
+    m_def_attr = new ns_s::ST_Guid(_def_attr);
     }
 
-    const ns_s::ST_Guid& CT_TableStyleList::get_s_def_attr() const
+    const ns_s::ST_Guid& CT_TableStyleList::get_def_attr() const
     {    
-    if (m_s_def_attr)
+    if (m_def_attr)
     {
-        return *m_s_def_attr;
+        return *m_def_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
 
 
     // CT_TableStyleList::ChildGroup_1
+    CT_TableStyleList::ChildGroup_1::ChildGroup_1()
+    :m_has_tblStyle(false),
+    m_tblStyle(NULL)
+    {
+    }
     bool CT_TableStyleList::ChildGroup_1::has_tblStyle() const
     {    
     return m_has_tblStyle;
@@ -97237,6 +100017,13 @@ CT_TableStyle* CT_TableStyle::default_instance_ = NULL;
 CT_TableStyleList* CT_TableStyleList::default_instance_ = NULL;
 
     // CT_TextParagraph
+    CT_TextParagraph::CT_TextParagraph()
+    :m_has_pPr(false),
+    m_pPr(NULL),
+    m_has_endParaRPr(false),
+    m_endParaRPr(NULL)
+    {
+    }
     bool CT_TextParagraph::has_pPr() const
     {    
     return m_has_pPr;
@@ -97352,7 +100139,7 @@ CT_TableStyleList* CT_TableStyleList::default_instance_ = NULL;
             
     if (m_has_pPr)
     {
-        m_pPr->toXmlElem("pPr", "", _outStream);;
+        m_pPr->toXmlElem("a:pPr", "", _outStream);;
     }
      
     {
@@ -97361,22 +100148,22 @@ CT_TableStyleList* CT_TableStyleList::default_instance_ = NULL;
         {
             if ((*iter)->has_r())
             {
-                (*iter)->get_r().toXmlElem("r", "", _outStream);
+                (*iter)->get_r().toXmlElem("a:r", "", _outStream);
             }
             else if ((*iter)->has_br())
             {
-                (*iter)->get_br().toXmlElem("br", "", _outStream);
+                (*iter)->get_br().toXmlElem("a:br", "", _outStream);
             }
             else if ((*iter)->has_fld())
             {
-                (*iter)->get_fld().toXmlElem("fld", "", _outStream);
+                (*iter)->get_fld().toXmlElem("a:fld", "", _outStream);
             }
         }
     }
      
     if (m_has_endParaRPr)
     {
-        m_endParaRPr->toXmlElem("endParaRPr", "", _outStream);;
+        m_endParaRPr->toXmlElem("a:endParaRPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -97393,6 +100180,15 @@ CT_TableStyleList* CT_TableStyleList::default_instance_ = NULL;
 
 
     // CT_TextParagraph::ChildGroup_1
+    CT_TextParagraph::ChildGroup_1::ChildGroup_1()
+    :m_has_r(false),
+    m_r(NULL),
+    m_has_br(false),
+    m_br(NULL),
+    m_has_fld(false),
+    m_fld(NULL)
+    {
+    }
     bool CT_TextParagraph::ChildGroup_1::has_r() const
     {    
     return m_has_r;
@@ -97525,6 +100321,31 @@ CT_TableStyleList* CT_TableStyleList::default_instance_ = NULL;
 CT_TextParagraph* CT_TextParagraph::default_instance_ = NULL;
 
     // CT_TextListStyle
+    CT_TextListStyle::CT_TextListStyle()
+    :m_has_defPPr(false),
+    m_defPPr(NULL),
+    m_has_lvl1pPr(false),
+    m_lvl1pPr(NULL),
+    m_has_lvl2pPr(false),
+    m_lvl2pPr(NULL),
+    m_has_lvl3pPr(false),
+    m_lvl3pPr(NULL),
+    m_has_lvl4pPr(false),
+    m_lvl4pPr(NULL),
+    m_has_lvl5pPr(false),
+    m_lvl5pPr(NULL),
+    m_has_lvl6pPr(false),
+    m_lvl6pPr(NULL),
+    m_has_lvl7pPr(false),
+    m_lvl7pPr(NULL),
+    m_has_lvl8pPr(false),
+    m_lvl8pPr(NULL),
+    m_has_lvl9pPr(false),
+    m_lvl9pPr(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_TextListStyle::has_defPPr() const
     {    
     return m_has_defPPr;
@@ -97805,57 +100626,57 @@ CT_TextParagraph* CT_TextParagraph::default_instance_ = NULL;
             
     if (m_has_defPPr)
     {
-        m_defPPr->toXmlElem("defPPr", "", _outStream);;
+        m_defPPr->toXmlElem("a:defPPr", "", _outStream);;
     }
     
     if (m_has_lvl1pPr)
     {
-        m_lvl1pPr->toXmlElem("lvl1pPr", "", _outStream);;
+        m_lvl1pPr->toXmlElem("a:lvl1pPr", "", _outStream);;
     }
     
     if (m_has_lvl2pPr)
     {
-        m_lvl2pPr->toXmlElem("lvl2pPr", "", _outStream);;
+        m_lvl2pPr->toXmlElem("a:lvl2pPr", "", _outStream);;
     }
     
     if (m_has_lvl3pPr)
     {
-        m_lvl3pPr->toXmlElem("lvl3pPr", "", _outStream);;
+        m_lvl3pPr->toXmlElem("a:lvl3pPr", "", _outStream);;
     }
     
     if (m_has_lvl4pPr)
     {
-        m_lvl4pPr->toXmlElem("lvl4pPr", "", _outStream);;
+        m_lvl4pPr->toXmlElem("a:lvl4pPr", "", _outStream);;
     }
     
     if (m_has_lvl5pPr)
     {
-        m_lvl5pPr->toXmlElem("lvl5pPr", "", _outStream);;
+        m_lvl5pPr->toXmlElem("a:lvl5pPr", "", _outStream);;
     }
     
     if (m_has_lvl6pPr)
     {
-        m_lvl6pPr->toXmlElem("lvl6pPr", "", _outStream);;
+        m_lvl6pPr->toXmlElem("a:lvl6pPr", "", _outStream);;
     }
     
     if (m_has_lvl7pPr)
     {
-        m_lvl7pPr->toXmlElem("lvl7pPr", "", _outStream);;
+        m_lvl7pPr->toXmlElem("a:lvl7pPr", "", _outStream);;
     }
     
     if (m_has_lvl8pPr)
     {
-        m_lvl8pPr->toXmlElem("lvl8pPr", "", _outStream);;
+        m_lvl8pPr->toXmlElem("a:lvl8pPr", "", _outStream);;
     }
     
     if (m_has_lvl9pPr)
     {
-        m_lvl9pPr->toXmlElem("lvl9pPr", "", _outStream);;
+        m_lvl9pPr->toXmlElem("a:lvl9pPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -97873,6 +100694,13 @@ CT_TextParagraph* CT_TextParagraph::default_instance_ = NULL;
 CT_TextListStyle* CT_TextListStyle::default_instance_ = NULL;
 
     // CT_TextNormalAutofit
+    CT_TextNormalAutofit::CT_TextNormalAutofit()
+    :m_has_fontScale_attr(false),
+    m_fontScale_attr(NULL),
+    m_has_lnSpcReduction_attr(false),
+    m_lnSpcReduction_attr(NULL)
+    {
+    }
     void CT_TextNormalAutofit::clear()
     {    
     m_has_fontScale_attr = false;
@@ -97971,6 +100799,10 @@ CT_TextListStyle* CT_TextListStyle::default_instance_ = NULL;
 CT_TextNormalAutofit* CT_TextNormalAutofit::default_instance_ = NULL;
 
     // CT_TextShapeAutofit
+    CT_TextShapeAutofit::CT_TextShapeAutofit()
+
+    {
+    }
     void CT_TextShapeAutofit::clear()
     {    }
 
@@ -98000,6 +100832,10 @@ CT_TextNormalAutofit* CT_TextNormalAutofit::default_instance_ = NULL;
 CT_TextShapeAutofit* CT_TextShapeAutofit::default_instance_ = NULL;
 
     // CT_TextNoAutofit
+    CT_TextNoAutofit::CT_TextNoAutofit()
+
+    {
+    }
     void CT_TextNoAutofit::clear()
     {    }
 
@@ -98029,6 +100865,63 @@ CT_TextShapeAutofit* CT_TextShapeAutofit::default_instance_ = NULL;
 CT_TextNoAutofit* CT_TextNoAutofit::default_instance_ = NULL;
 
     // CT_TextBodyProperties
+    CT_TextBodyProperties::CT_TextBodyProperties()
+    :m_has_prstTxWarp(false),
+    m_prstTxWarp(NULL),
+    m_has_noAutofit(false),
+    m_noAutofit(NULL),
+    m_has_normAutofit(false),
+    m_normAutofit(NULL),
+    m_has_spAutoFit(false),
+    m_spAutoFit(NULL),
+    m_has_scene3d(false),
+    m_scene3d(NULL),
+    m_has_sp3d(false),
+    m_sp3d(NULL),
+    m_has_flatTx(false),
+    m_flatTx(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_rot_attr(false),
+    m_rot_attr(NULL),
+    m_has_spcFirstLastPara_attr(false),
+    m_spcFirstLastPara_attr(false),
+    m_has_vertOverflow_attr(false),
+    m_vertOverflow_attr(NULL),
+    m_has_horzOverflow_attr(false),
+    m_horzOverflow_attr(NULL),
+    m_has_vert_attr(false),
+    m_vert_attr(NULL),
+    m_has_wrap_attr(false),
+    m_wrap_attr(NULL),
+    m_has_lIns_attr(false),
+    m_lIns_attr(NULL),
+    m_has_tIns_attr(false),
+    m_tIns_attr(NULL),
+    m_has_rIns_attr(false),
+    m_rIns_attr(NULL),
+    m_has_bIns_attr(false),
+    m_bIns_attr(NULL),
+    m_has_numCol_attr(false),
+    m_numCol_attr(NULL),
+    m_has_spcCol_attr(false),
+    m_spcCol_attr(NULL),
+    m_has_rtlCol_attr(false),
+    m_rtlCol_attr(false),
+    m_has_fromWordArt_attr(false),
+    m_fromWordArt_attr(false),
+    m_has_anchor_attr(false),
+    m_anchor_attr(NULL),
+    m_has_anchorCtr_attr(false),
+    m_anchorCtr_attr(false),
+    m_has_forceAA_attr(false),
+    m_forceAA_attr(false),
+    m_has_upright_attr(false),
+    m_upright_attr(false),
+    m_has_compatLnSpc_attr(false),
+    m_compatLnSpc_attr(false)
+    {
+    }
     bool CT_TextBodyProperties::has_prstTxWarp() const
     {    
     return m_has_prstTxWarp;
@@ -98556,42 +101449,42 @@ CT_TextNoAutofit* CT_TextNoAutofit::default_instance_ = NULL;
             
     if (m_has_prstTxWarp)
     {
-        m_prstTxWarp->toXmlElem("prstTxWarp", "", _outStream);;
+        m_prstTxWarp->toXmlElem("a:prstTxWarp", "", _outStream);;
     }
      
     if (m_has_noAutofit)
     {
-        m_noAutofit->toXmlElem("noAutofit", "", _outStream);;
+        m_noAutofit->toXmlElem("a:noAutofit", "", _outStream);;
     }
     
     if (m_has_normAutofit)
     {
-        m_normAutofit->toXmlElem("normAutofit", "", _outStream);;
+        m_normAutofit->toXmlElem("a:normAutofit", "", _outStream);;
     }
     
     if (m_has_spAutoFit)
     {
-        m_spAutoFit->toXmlElem("spAutoFit", "", _outStream);;
+        m_spAutoFit->toXmlElem("a:spAutoFit", "", _outStream);;
     }
      
     if (m_has_scene3d)
     {
-        m_scene3d->toXmlElem("scene3d", "", _outStream);;
+        m_scene3d->toXmlElem("a:scene3d", "", _outStream);;
     }
      
     if (m_has_sp3d)
     {
-        m_sp3d->toXmlElem("sp3d", "", _outStream);;
+        m_sp3d->toXmlElem("a:sp3d", "", _outStream);;
     }
     
     if (m_has_flatTx)
     {
-        m_flatTx->toXmlElem("flatTx", "", _outStream);;
+        m_flatTx->toXmlElem("a:flatTx", "", _outStream);;
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -98961,6 +101854,13 @@ CT_TextNoAutofit* CT_TextNoAutofit::default_instance_ = NULL;
 CT_TextBodyProperties* CT_TextBodyProperties::default_instance_ = NULL;
 
     // CT_TextBody
+    CT_TextBody::CT_TextBody()
+    :m_has_bodyPr(false),
+    m_bodyPr(NULL),
+    m_has_lstStyle(false),
+    m_lstStyle(NULL)
+    {
+    }
     bool CT_TextBody::has_bodyPr() const
     {    
     return m_has_bodyPr;
@@ -99060,12 +101960,12 @@ CT_TextBodyProperties* CT_TextBodyProperties::default_instance_ = NULL;
             
     if (m_has_bodyPr)
     {
-        m_bodyPr->toXmlElem("bodyPr", "", _outStream);;
+        m_bodyPr->toXmlElem("a:bodyPr", "", _outStream);;
     }
     
     if (m_has_lstStyle)
     {
-        m_lstStyle->toXmlElem("lstStyle", "", _outStream);;
+        m_lstStyle->toXmlElem("a:lstStyle", "", _outStream);;
     }
      
     {
@@ -99074,7 +101974,7 @@ CT_TextBodyProperties* CT_TextBodyProperties::default_instance_ = NULL;
         {
             if ((*iter)->has_p())
             {
-                (*iter)->get_p().toXmlElem("p", "", _outStream);
+                (*iter)->get_p().toXmlElem("a:p", "", _outStream);
             }
         }
     }
@@ -99093,6 +101993,11 @@ CT_TextBodyProperties* CT_TextBodyProperties::default_instance_ = NULL;
 
 
     // CT_TextBody::ChildGroup_1
+    CT_TextBody::ChildGroup_1::ChildGroup_1()
+    :m_has_p(false),
+    m_p(NULL)
+    {
+    }
     bool CT_TextBody::ChildGroup_1::has_p() const
     {    
     return m_has_p;
@@ -99121,6 +102026,10 @@ CT_TextBodyProperties* CT_TextBodyProperties::default_instance_ = NULL;
 CT_TextBody* CT_TextBody::default_instance_ = NULL;
 
     // CT_TextBulletColorFollowText
+    CT_TextBulletColorFollowText::CT_TextBulletColorFollowText()
+
+    {
+    }
     void CT_TextBulletColorFollowText::clear()
     {    }
 
@@ -99150,6 +102059,10 @@ CT_TextBody* CT_TextBody::default_instance_ = NULL;
 CT_TextBulletColorFollowText* CT_TextBulletColorFollowText::default_instance_ = NULL;
 
     // CT_TextBulletSizeFollowText
+    CT_TextBulletSizeFollowText::CT_TextBulletSizeFollowText()
+
+    {
+    }
     void CT_TextBulletSizeFollowText::clear()
     {    }
 
@@ -99179,6 +102092,11 @@ CT_TextBulletColorFollowText* CT_TextBulletColorFollowText::default_instance_ = 
 CT_TextBulletSizeFollowText* CT_TextBulletSizeFollowText::default_instance_ = NULL;
 
     // CT_TextBulletSizePercent
+    CT_TextBulletSizePercent::CT_TextBulletSizePercent()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_TextBulletSizePercent::clear()
     {    
     m_has_val_attr = false;
@@ -99242,6 +102160,11 @@ CT_TextBulletSizeFollowText* CT_TextBulletSizeFollowText::default_instance_ = NU
 CT_TextBulletSizePercent* CT_TextBulletSizePercent::default_instance_ = NULL;
 
     // CT_TextBulletSizePoint
+    CT_TextBulletSizePoint::CT_TextBulletSizePoint()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_TextBulletSizePoint::clear()
     {    
     m_has_val_attr = false;
@@ -99305,6 +102228,10 @@ CT_TextBulletSizePercent* CT_TextBulletSizePercent::default_instance_ = NULL;
 CT_TextBulletSizePoint* CT_TextBulletSizePoint::default_instance_ = NULL;
 
     // CT_TextBulletTypefaceFollowText
+    CT_TextBulletTypefaceFollowText::CT_TextBulletTypefaceFollowText()
+
+    {
+    }
     void CT_TextBulletTypefaceFollowText::clear()
     {    }
 
@@ -99334,6 +102261,13 @@ CT_TextBulletSizePoint* CT_TextBulletSizePoint::default_instance_ = NULL;
 CT_TextBulletTypefaceFollowText* CT_TextBulletTypefaceFollowText::default_instance_ = NULL;
 
     // CT_TextAutonumberBullet
+    CT_TextAutonumberBullet::CT_TextAutonumberBullet()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_startAt_attr(false),
+    m_startAt_attr(NULL)
+    {
+    }
     void CT_TextAutonumberBullet::clear()
     {    
     m_has_type_attr = false;
@@ -99432,6 +102366,11 @@ CT_TextBulletTypefaceFollowText* CT_TextBulletTypefaceFollowText::default_instan
 CT_TextAutonumberBullet* CT_TextAutonumberBullet::default_instance_ = NULL;
 
     // CT_TextCharBullet
+    CT_TextCharBullet::CT_TextCharBullet()
+    :m_has_char_attr(false),
+    m_char_attr("")
+    {
+    }
     void CT_TextCharBullet::clear()
     {    
     m_has_char_attr = false;
@@ -99485,6 +102424,11 @@ CT_TextAutonumberBullet* CT_TextAutonumberBullet::default_instance_ = NULL;
 CT_TextCharBullet* CT_TextCharBullet::default_instance_ = NULL;
 
     // CT_TextBlipBullet
+    CT_TextBlipBullet::CT_TextBlipBullet()
+    :m_has_blip(false),
+    m_blip(NULL)
+    {
+    }
     bool CT_TextBlipBullet::has_blip() const
     {    
     return m_has_blip;
@@ -99525,7 +102469,7 @@ CT_TextCharBullet* CT_TextCharBullet::default_instance_ = NULL;
             
     if (m_has_blip)
     {
-        m_blip->toXmlElem("blip", "", _outStream);;
+        m_blip->toXmlElem("a:blip", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -99543,6 +102487,10 @@ CT_TextCharBullet* CT_TextCharBullet::default_instance_ = NULL;
 CT_TextBlipBullet* CT_TextBlipBullet::default_instance_ = NULL;
 
     // CT_TextNoBullet
+    CT_TextNoBullet::CT_TextNoBullet()
+
+    {
+    }
     void CT_TextNoBullet::clear()
     {    }
 
@@ -99572,6 +102520,17 @@ CT_TextBlipBullet* CT_TextBlipBullet::default_instance_ = NULL;
 CT_TextNoBullet* CT_TextNoBullet::default_instance_ = NULL;
 
     // CT_TextFont
+    CT_TextFont::CT_TextFont()
+    :m_has_typeface_attr(false),
+    m_typeface_attr(NULL),
+    m_has_panose_attr(false),
+    m_panose_attr(NULL),
+    m_has_pitchFamily_attr(false),
+    m_pitchFamily_attr(NULL),
+    m_has_charset_attr(false),
+    m_charset_attr(0)
+    {
+    }
     void CT_TextFont::clear()
     {    
     m_has_typeface_attr = false;
@@ -99583,12 +102542,12 @@ CT_TextNoBullet* CT_TextNoBullet::default_instance_ = NULL;
     }
     
     
-    m_has_s_panose_attr = false;
+    m_has_panose_attr = false;
     
-    if (m_s_panose_attr)
+    if (m_panose_attr)
     {
-        delete m_s_panose_attr;
-        m_s_panose_attr = NULL;
+        delete m_panose_attr;
+        m_panose_attr = NULL;
     }
     
     
@@ -99620,9 +102579,9 @@ CT_TextNoBullet* CT_TextNoBullet::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_panose_attr)
+    if (m_has_panose_attr)
     {
-        m_s_panose_attr->toXmlAttr("panose", _outStream);
+        m_panose_attr->toXmlAttr("panose", _outStream);
     }
     
     
@@ -99671,22 +102630,22 @@ CT_TextNoBullet* CT_TextNoBullet::default_instance_ = NULL;
     return ST_TextTypeface::default_instance();
     }
 
-    bool CT_TextFont::has_s_panose_attr() const
+    bool CT_TextFont::has_panose_attr() const
     {    
-    return m_has_s_panose_attr;
+    return m_has_panose_attr;
     }
 
-    void CT_TextFont::set_s_panose_attr(const ns_s::ST_Panose& _s_panose_attr)
+    void CT_TextFont::set_panose_attr(const ns_s::ST_Panose& _panose_attr)
     {    
-    m_has_s_panose_attr = true;
-    m_s_panose_attr = new ns_s::ST_Panose(_s_panose_attr);
+    m_has_panose_attr = true;
+    m_panose_attr = new ns_s::ST_Panose(_panose_attr);
     }
 
-    const ns_s::ST_Panose& CT_TextFont::get_s_panose_attr() const
+    const ns_s::ST_Panose& CT_TextFont::get_panose_attr() const
     {    
-    if (m_s_panose_attr)
+    if (m_panose_attr)
     {
-        return *m_s_panose_attr;
+        return *m_panose_attr;
     }
     return ns_s::ST_Panose::default_instance();
     }
@@ -99730,6 +102689,10 @@ CT_TextNoBullet* CT_TextNoBullet::default_instance_ = NULL;
 CT_TextFont* CT_TextFont::default_instance_ = NULL;
 
     // CT_TextUnderlineLineFollowText
+    CT_TextUnderlineLineFollowText::CT_TextUnderlineLineFollowText()
+
+    {
+    }
     void CT_TextUnderlineLineFollowText::clear()
     {    }
 
@@ -99759,6 +102722,10 @@ CT_TextFont* CT_TextFont::default_instance_ = NULL;
 CT_TextUnderlineLineFollowText* CT_TextUnderlineLineFollowText::default_instance_ = NULL;
 
     // CT_TextUnderlineFillFollowText
+    CT_TextUnderlineFillFollowText::CT_TextUnderlineFillFollowText()
+
+    {
+    }
     void CT_TextUnderlineFillFollowText::clear()
     {    }
 
@@ -99788,6 +102755,10 @@ CT_TextUnderlineLineFollowText* CT_TextUnderlineLineFollowText::default_instance
 CT_TextUnderlineFillFollowText* CT_TextUnderlineFillFollowText::default_instance_ = NULL;
 
     // CT_TextUnderlineFillGroupWrapper
+    CT_TextUnderlineFillGroupWrapper::CT_TextUnderlineFillGroupWrapper()
+
+    {
+    }
     void CT_TextUnderlineFillGroupWrapper::clear()
     {    }
 
@@ -99817,6 +102788,91 @@ CT_TextUnderlineFillFollowText* CT_TextUnderlineFillFollowText::default_instance
 CT_TextUnderlineFillGroupWrapper* CT_TextUnderlineFillGroupWrapper::default_instance_ = NULL;
 
     // CT_TextCharacterProperties
+    CT_TextCharacterProperties::CT_TextCharacterProperties()
+    :m_has_ln(false),
+    m_ln(NULL),
+    m_has_noFill(false),
+    m_noFill(NULL),
+    m_has_solidFill(false),
+    m_solidFill(NULL),
+    m_has_gradFill(false),
+    m_gradFill(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_pattFill(false),
+    m_pattFill(NULL),
+    m_has_grpFill(false),
+    m_grpFill(NULL),
+    m_has_effectLst(false),
+    m_effectLst(NULL),
+    m_has_effectDag(false),
+    m_effectDag(NULL),
+    m_has_highlight(false),
+    m_highlight(NULL),
+    m_has_uLnTx(false),
+    m_uLnTx(NULL),
+    m_has_uLn(false),
+    m_uLn(NULL),
+    m_has_uFillTx(false),
+    m_uFillTx(NULL),
+    m_has_uFill(false),
+    m_uFill(NULL),
+    m_has_latin(false),
+    m_latin(NULL),
+    m_has_ea(false),
+    m_ea(NULL),
+    m_has_cs(false),
+    m_cs(NULL),
+    m_has_sym(false),
+    m_sym(NULL),
+    m_has_hlinkClick(false),
+    m_hlinkClick(NULL),
+    m_has_hlinkMouseOver(false),
+    m_hlinkMouseOver(NULL),
+    m_has_rtl(false),
+    m_rtl(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_kumimoji_attr(false),
+    m_kumimoji_attr(false),
+    m_has_lang_attr(false),
+    m_lang_attr(NULL),
+    m_has_altLang_attr(false),
+    m_altLang_attr(NULL),
+    m_has_sz_attr(false),
+    m_sz_attr(NULL),
+    m_has_b_attr(false),
+    m_b_attr(false),
+    m_has_i_attr(false),
+    m_i_attr(false),
+    m_has_u_attr(false),
+    m_u_attr(NULL),
+    m_has_strike_attr(false),
+    m_strike_attr(NULL),
+    m_has_kern_attr(false),
+    m_kern_attr(NULL),
+    m_has_cap_attr(false),
+    m_cap_attr(NULL),
+    m_has_spc_attr(false),
+    m_spc_attr(NULL),
+    m_has_normalizeH_attr(false),
+    m_normalizeH_attr(false),
+    m_has_baseline_attr(false),
+    m_baseline_attr(NULL),
+    m_has_noProof_attr(false),
+    m_noProof_attr(false),
+    m_has_dirty_attr(false),
+    m_dirty_attr(false),
+    m_has_err_attr(false),
+    m_err_attr(false),
+    m_has_smtClean_attr(false),
+    m_smtClean_attr(false),
+    m_has_smtId_attr(false),
+    m_smtId_attr(0),
+    m_has_bmk_attr(false),
+    m_bmk_attr("")
+    {
+    }
     bool CT_TextCharacterProperties::has_ln() const
     {    
     return m_has_ln;
@@ -100974,21 +104030,21 @@ CT_TextUnderlineFillGroupWrapper* CT_TextUnderlineFillGroupWrapper::default_inst
     m_has_kumimoji_attr = false;
     m_kumimoji_attr = false;
     
-    m_has_s_lang_attr = false;
+    m_has_lang_attr = false;
     
-    if (m_s_lang_attr)
+    if (m_lang_attr)
     {
-        delete m_s_lang_attr;
-        m_s_lang_attr = NULL;
+        delete m_lang_attr;
+        m_lang_attr = NULL;
     }
     
     
-    m_has_s_altLang_attr = false;
+    m_has_altLang_attr = false;
     
-    if (m_s_altLang_attr)
+    if (m_altLang_attr)
     {
-        delete m_s_altLang_attr;
-        m_s_altLang_attr = NULL;
+        delete m_altLang_attr;
+        m_altLang_attr = NULL;
     }
     
     
@@ -101098,15 +104154,15 @@ CT_TextUnderlineFillGroupWrapper* CT_TextUnderlineFillGroupWrapper::default_inst
     }
     
     
-    if (m_has_s_lang_attr)
+    if (m_has_lang_attr)
     {
-        m_s_lang_attr->toXmlAttr("lang", _outStream);
+        m_lang_attr->toXmlAttr("lang", _outStream);
     }
     
     
-    if (m_has_s_altLang_attr)
+    if (m_has_altLang_attr)
     {
-        m_s_altLang_attr->toXmlAttr("altLang", _outStream);
+        m_altLang_attr->toXmlAttr("altLang", _outStream);
     }
     
     
@@ -101209,112 +104265,112 @@ CT_TextUnderlineFillGroupWrapper* CT_TextUnderlineFillGroupWrapper::default_inst
             
     if (m_has_ln)
     {
-        m_ln->toXmlElem("ln", "", _outStream);;
+        m_ln->toXmlElem("a:ln", "", _outStream);;
     }
      
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);;
     }
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
     }
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
     }
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
     }
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
     }
     
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
     }
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
     }
      
     if (m_has_highlight)
     {
-        m_highlight->toXmlElem("highlight", "", _outStream);;
+        m_highlight->toXmlElem("a:highlight", "", _outStream);;
     }
      
     if (m_has_uLnTx)
     {
-        m_uLnTx->toXmlElem("uLnTx", "", _outStream);;
+        m_uLnTx->toXmlElem("a:uLnTx", "", _outStream);;
     }
     
     if (m_has_uLn)
     {
-        m_uLn->toXmlElem("uLn", "", _outStream);;
+        m_uLn->toXmlElem("a:uLn", "", _outStream);;
     }
     
     if (m_has_uFillTx)
     {
-        m_uFillTx->toXmlElem("uFillTx", "", _outStream);;
+        m_uFillTx->toXmlElem("a:uFillTx", "", _outStream);;
     }
     
     if (m_has_uFill)
     {
-        m_uFill->toXmlElem("uFill", "", _outStream);;
+        m_uFill->toXmlElem("a:uFill", "", _outStream);;
     }
      
     if (m_has_latin)
     {
-        m_latin->toXmlElem("latin", "", _outStream);;
+        m_latin->toXmlElem("a:latin", "", _outStream);;
     }
     
     if (m_has_ea)
     {
-        m_ea->toXmlElem("ea", "", _outStream);;
+        m_ea->toXmlElem("a:ea", "", _outStream);;
     }
     
     if (m_has_cs)
     {
-        m_cs->toXmlElem("cs", "", _outStream);;
+        m_cs->toXmlElem("a:cs", "", _outStream);;
     }
     
     if (m_has_sym)
     {
-        m_sym->toXmlElem("sym", "", _outStream);;
+        m_sym->toXmlElem("a:sym", "", _outStream);;
     }
     
     if (m_has_hlinkClick)
     {
-        m_hlinkClick->toXmlElem("hlinkClick", "", _outStream);;
+        m_hlinkClick->toXmlElem("a:hlinkClick", "", _outStream);;
     }
     
     if (m_has_hlinkMouseOver)
     {
-        m_hlinkMouseOver->toXmlElem("hlinkMouseOver", "", _outStream);;
+        m_hlinkMouseOver->toXmlElem("a:hlinkMouseOver", "", _outStream);;
     }
     
     if (m_has_rtl)
     {
-        m_rtl->toXmlElem("rtl", "", _outStream);;
+        m_rtl->toXmlElem("a:rtl", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -101345,42 +104401,42 @@ CT_TextUnderlineFillGroupWrapper* CT_TextUnderlineFillGroupWrapper::default_inst
     return m_kumimoji_attr;
     }
 
-    bool CT_TextCharacterProperties::has_s_lang_attr() const
+    bool CT_TextCharacterProperties::has_lang_attr() const
     {    
-    return m_has_s_lang_attr;
+    return m_has_lang_attr;
     }
 
-    void CT_TextCharacterProperties::set_s_lang_attr(const ns_s::ST_Lang& _s_lang_attr)
+    void CT_TextCharacterProperties::set_lang_attr(const ns_s::ST_Lang& _lang_attr)
     {    
-    m_has_s_lang_attr = true;
-    m_s_lang_attr = new ns_s::ST_Lang(_s_lang_attr);
+    m_has_lang_attr = true;
+    m_lang_attr = new ns_s::ST_Lang(_lang_attr);
     }
 
-    const ns_s::ST_Lang& CT_TextCharacterProperties::get_s_lang_attr() const
+    const ns_s::ST_Lang& CT_TextCharacterProperties::get_lang_attr() const
     {    
-    if (m_s_lang_attr)
+    if (m_lang_attr)
     {
-        return *m_s_lang_attr;
+        return *m_lang_attr;
     }
     return ns_s::ST_Lang::default_instance();
     }
 
-    bool CT_TextCharacterProperties::has_s_altLang_attr() const
+    bool CT_TextCharacterProperties::has_altLang_attr() const
     {    
-    return m_has_s_altLang_attr;
+    return m_has_altLang_attr;
     }
 
-    void CT_TextCharacterProperties::set_s_altLang_attr(const ns_s::ST_Lang& _s_altLang_attr)
+    void CT_TextCharacterProperties::set_altLang_attr(const ns_s::ST_Lang& _altLang_attr)
     {    
-    m_has_s_altLang_attr = true;
-    m_s_altLang_attr = new ns_s::ST_Lang(_s_altLang_attr);
+    m_has_altLang_attr = true;
+    m_altLang_attr = new ns_s::ST_Lang(_altLang_attr);
     }
 
-    const ns_s::ST_Lang& CT_TextCharacterProperties::get_s_altLang_attr() const
+    const ns_s::ST_Lang& CT_TextCharacterProperties::get_altLang_attr() const
     {    
-    if (m_s_altLang_attr)
+    if (m_altLang_attr)
     {
-        return *m_s_altLang_attr;
+        return *m_altLang_attr;
     }
     return ns_s::ST_Lang::default_instance();
     }
@@ -101672,14 +104728,19 @@ CT_TextUnderlineFillGroupWrapper* CT_TextUnderlineFillGroupWrapper::default_inst
 CT_TextCharacterProperties* CT_TextCharacterProperties::default_instance_ = NULL;
 
     // CT_Boolean
+    CT_Boolean::CT_Boolean()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_Boolean::clear()
     {    
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     }
@@ -101693,9 +104754,9 @@ CT_TextCharacterProperties* CT_TextCharacterProperties::default_instance_ = NULL
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("val", _outStream);
+        m_val_attr->toXmlAttr("val", _outStream);
     }
     
             _outStream << ">";
@@ -101712,22 +104773,22 @@ CT_TextCharacterProperties* CT_TextCharacterProperties::default_instance_ = NULL
     return *CT_Boolean::default_instance_;
     }
 
-    bool CT_Boolean::has_s_val_attr() const
+    bool CT_Boolean::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_Boolean::set_s_val_attr(const ns_s::ST_OnOff& _s_val_attr)
+    void CT_Boolean::set_val_attr(const ns_s::ST_OnOff& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_OnOff(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_OnOff(_val_attr);
     }
 
-    const ns_s::ST_OnOff& CT_Boolean::get_s_val_attr() const
+    const ns_s::ST_OnOff& CT_Boolean::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_OnOff::default_instance();
     }
@@ -101735,6 +104796,11 @@ CT_TextCharacterProperties* CT_TextCharacterProperties::default_instance_ = NULL
 CT_Boolean* CT_Boolean::default_instance_ = NULL;
 
     // CT_TextSpacingPercent
+    CT_TextSpacingPercent::CT_TextSpacingPercent()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_TextSpacingPercent::clear()
     {    
     m_has_val_attr = false;
@@ -101798,6 +104864,11 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
 CT_TextSpacingPercent* CT_TextSpacingPercent::default_instance_ = NULL;
 
     // CT_TextSpacingPoint
+    CT_TextSpacingPoint::CT_TextSpacingPoint()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_TextSpacingPoint::clear()
     {    
     m_has_val_attr = false;
@@ -101861,6 +104932,13 @@ CT_TextSpacingPercent* CT_TextSpacingPercent::default_instance_ = NULL;
 CT_TextSpacingPoint* CT_TextSpacingPoint::default_instance_ = NULL;
 
     // CT_TextTabStop
+    CT_TextTabStop::CT_TextTabStop()
+    :m_has_pos_attr(false),
+    m_pos_attr(NULL),
+    m_has_algn_attr(false),
+    m_algn_attr(NULL)
+    {
+    }
     void CT_TextTabStop::clear()
     {    
     m_has_pos_attr = false;
@@ -101959,6 +105037,10 @@ CT_TextSpacingPoint* CT_TextSpacingPoint::default_instance_ = NULL;
 CT_TextTabStop* CT_TextTabStop::default_instance_ = NULL;
 
     // CT_TextTabStopList
+    CT_TextTabStopList::CT_TextTabStopList()
+
+    {
+    }
     CT_TextTabStop* CT_TextTabStopList::add_tab()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -101996,7 +105078,7 @@ CT_TextTabStop* CT_TextTabStop::default_instance_ = NULL;
         {
             if ((*iter)->has_tab())
             {
-                (*iter)->get_tab().toXmlElem("tab", "", _outStream);
+                (*iter)->get_tab().toXmlElem("a:tab", "", _outStream);
             }
         }
     }
@@ -102015,6 +105097,11 @@ CT_TextTabStop* CT_TextTabStop::default_instance_ = NULL;
 
 
     // CT_TextTabStopList::ChildGroup_1
+    CT_TextTabStopList::ChildGroup_1::ChildGroup_1()
+    :m_has_tab(false),
+    m_tab(NULL)
+    {
+    }
     bool CT_TextTabStopList::ChildGroup_1::has_tab() const
     {    
     return m_has_tab;
@@ -102043,6 +105130,11 @@ CT_TextTabStop* CT_TextTabStop::default_instance_ = NULL;
 CT_TextTabStopList* CT_TextTabStopList::default_instance_ = NULL;
 
     // CT_TextLineBreak
+    CT_TextLineBreak::CT_TextLineBreak()
+    :m_has_rPr(false),
+    m_rPr(NULL)
+    {
+    }
     bool CT_TextLineBreak::has_rPr() const
     {    
     return m_has_rPr;
@@ -102083,7 +105175,7 @@ CT_TextTabStopList* CT_TextTabStopList::default_instance_ = NULL;
             
     if (m_has_rPr)
     {
-        m_rPr->toXmlElem("rPr", "", _outStream);;
+        m_rPr->toXmlElem("a:rPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -102101,6 +105193,13 @@ CT_TextTabStopList* CT_TextTabStopList::default_instance_ = NULL;
 CT_TextLineBreak* CT_TextLineBreak::default_instance_ = NULL;
 
     // CT_TextSpacing
+    CT_TextSpacing::CT_TextSpacing()
+    :m_has_spcPct(false),
+    m_spcPct(NULL),
+    m_has_spcPts(false),
+    m_spcPts(NULL)
+    {
+    }
     bool CT_TextSpacing::has_spcPct() const
     {    
     return m_has_spcPct;
@@ -102185,12 +105284,12 @@ CT_TextLineBreak* CT_TextLineBreak::default_instance_ = NULL;
             
     if (m_has_spcPct)
     {
-        m_spcPct->toXmlElem("spcPct", "", _outStream);;
+        m_spcPct->toXmlElem("a:spcPct", "", _outStream);;
     }
     
     if (m_has_spcPts)
     {
-        m_spcPts->toXmlElem("spcPts", "", _outStream);;
+        m_spcPts->toXmlElem("a:spcPts", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -102208,6 +105307,65 @@ CT_TextLineBreak* CT_TextLineBreak::default_instance_ = NULL;
 CT_TextSpacing* CT_TextSpacing::default_instance_ = NULL;
 
     // CT_TextParagraphProperties
+    CT_TextParagraphProperties::CT_TextParagraphProperties()
+    :m_has_lnSpc(false),
+    m_lnSpc(NULL),
+    m_has_spcBef(false),
+    m_spcBef(NULL),
+    m_has_spcAft(false),
+    m_spcAft(NULL),
+    m_has_buClrTx(false),
+    m_buClrTx(NULL),
+    m_has_buClr(false),
+    m_buClr(NULL),
+    m_has_buSzTx(false),
+    m_buSzTx(NULL),
+    m_has_buSzPct(false),
+    m_buSzPct(NULL),
+    m_has_buSzPts(false),
+    m_buSzPts(NULL),
+    m_has_buFontTx(false),
+    m_buFontTx(NULL),
+    m_has_buFont(false),
+    m_buFont(NULL),
+    m_has_buNone(false),
+    m_buNone(NULL),
+    m_has_buAutoNum(false),
+    m_buAutoNum(NULL),
+    m_has_buChar(false),
+    m_buChar(NULL),
+    m_has_buBlip(false),
+    m_buBlip(NULL),
+    m_has_tabLst(false),
+    m_tabLst(NULL),
+    m_has_defRPr(false),
+    m_defRPr(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_marL_attr(false),
+    m_marL_attr(NULL),
+    m_has_marR_attr(false),
+    m_marR_attr(NULL),
+    m_has_lvl_attr(false),
+    m_lvl_attr(NULL),
+    m_has_indent_attr(false),
+    m_indent_attr(NULL),
+    m_has_algn_attr(false),
+    m_algn_attr(NULL),
+    m_has_defTabSz_attr(false),
+    m_defTabSz_attr(NULL),
+    m_has_rtl_attr(false),
+    m_rtl_attr(false),
+    m_has_eaLnBrk_attr(false),
+    m_eaLnBrk_attr(false),
+    m_has_fontAlgn_attr(false),
+    m_fontAlgn_attr(NULL),
+    m_has_latinLnBrk_attr(false),
+    m_latinLnBrk_attr(false),
+    m_has_hangingPunct_attr(false),
+    m_hangingPunct_attr(false)
+    {
+    }
     bool CT_TextParagraphProperties::has_lnSpc() const
     {    
     return m_has_lnSpc;
@@ -103773,87 +106931,87 @@ CT_TextSpacing* CT_TextSpacing::default_instance_ = NULL;
             
     if (m_has_lnSpc)
     {
-        m_lnSpc->toXmlElem("lnSpc", "", _outStream);;
+        m_lnSpc->toXmlElem("a:lnSpc", "", _outStream);;
     }
     
     if (m_has_spcBef)
     {
-        m_spcBef->toXmlElem("spcBef", "", _outStream);;
+        m_spcBef->toXmlElem("a:spcBef", "", _outStream);;
     }
     
     if (m_has_spcAft)
     {
-        m_spcAft->toXmlElem("spcAft", "", _outStream);;
+        m_spcAft->toXmlElem("a:spcAft", "", _outStream);;
     }
      
     if (m_has_buClrTx)
     {
-        m_buClrTx->toXmlElem("buClrTx", "", _outStream);;
+        m_buClrTx->toXmlElem("a:buClrTx", "", _outStream);;
     }
     
     if (m_has_buClr)
     {
-        m_buClr->toXmlElem("buClr", "", _outStream);;
+        m_buClr->toXmlElem("a:buClr", "", _outStream);;
     }
     
     if (m_has_buSzTx)
     {
-        m_buSzTx->toXmlElem("buSzTx", "", _outStream);;
+        m_buSzTx->toXmlElem("a:buSzTx", "", _outStream);;
     }
     
     if (m_has_buSzPct)
     {
-        m_buSzPct->toXmlElem("buSzPct", "", _outStream);;
+        m_buSzPct->toXmlElem("a:buSzPct", "", _outStream);;
     }
     
     if (m_has_buSzPts)
     {
-        m_buSzPts->toXmlElem("buSzPts", "", _outStream);;
+        m_buSzPts->toXmlElem("a:buSzPts", "", _outStream);;
     }
     
     if (m_has_buFontTx)
     {
-        m_buFontTx->toXmlElem("buFontTx", "", _outStream);;
+        m_buFontTx->toXmlElem("a:buFontTx", "", _outStream);;
     }
     
     if (m_has_buFont)
     {
-        m_buFont->toXmlElem("buFont", "", _outStream);;
+        m_buFont->toXmlElem("a:buFont", "", _outStream);;
     }
     
     if (m_has_buNone)
     {
-        m_buNone->toXmlElem("buNone", "", _outStream);;
+        m_buNone->toXmlElem("a:buNone", "", _outStream);;
     }
     
     if (m_has_buAutoNum)
     {
-        m_buAutoNum->toXmlElem("buAutoNum", "", _outStream);;
+        m_buAutoNum->toXmlElem("a:buAutoNum", "", _outStream);;
     }
     
     if (m_has_buChar)
     {
-        m_buChar->toXmlElem("buChar", "", _outStream);;
+        m_buChar->toXmlElem("a:buChar", "", _outStream);;
     }
     
     if (m_has_buBlip)
     {
-        m_buBlip->toXmlElem("buBlip", "", _outStream);;
+        m_buBlip->toXmlElem("a:buBlip", "", _outStream);;
     }
      
     if (m_has_tabLst)
     {
-        m_tabLst->toXmlElem("tabLst", "", _outStream);;
+        m_tabLst->toXmlElem("a:tabLst", "", _outStream);;
     }
     
     if (m_has_defRPr)
     {
-        m_defRPr->toXmlElem("defRPr", "", _outStream);;
+        m_defRPr->toXmlElem("a:defRPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -104075,6 +107233,19 @@ CT_TextSpacing* CT_TextSpacing::default_instance_ = NULL;
 CT_TextParagraphProperties* CT_TextParagraphProperties::default_instance_ = NULL;
 
     // CT_TextField
+    CT_TextField::CT_TextField()
+    :m_has_rPr(false),
+    m_rPr(NULL),
+    m_has_pPr(false),
+    m_pPr(NULL),
+    m_has_t(false),
+    m_t(""),
+    m_has_id_attr(false),
+    m_id_attr(NULL),
+    m_has_type_attr(false),
+    m_type_attr("")
+    {
+    }
     bool CT_TextField::has_rPr() const
     {    
     return m_has_rPr;
@@ -104141,12 +107312,12 @@ CT_TextParagraphProperties* CT_TextParagraphProperties::default_instance_ = NULL
 
     void CT_TextField::clear()
     {    
-    m_has_s_id_attr = false;
+    m_has_id_attr = false;
     
-    if (m_s_id_attr)
+    if (m_id_attr)
     {
-        delete m_s_id_attr;
-        m_s_id_attr = NULL;
+        delete m_id_attr;
+        m_id_attr = NULL;
     }
     
     
@@ -104163,9 +107334,9 @@ CT_TextParagraphProperties* CT_TextParagraphProperties::default_instance_ = NULL
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_id_attr)
+    if (m_has_id_attr)
     {
-        m_s_id_attr->toXmlAttr("id", _outStream);
+        m_id_attr->toXmlAttr("id", _outStream);
     }
     
     
@@ -104178,12 +107349,12 @@ CT_TextParagraphProperties* CT_TextParagraphProperties::default_instance_ = NULL
             
     if (m_has_rPr)
     {
-        m_rPr->toXmlElem("rPr", "", _outStream);;
+        m_rPr->toXmlElem("a:rPr", "", _outStream);;
     }
     
     if (m_has_pPr)
     {
-        m_pPr->toXmlElem("pPr", "", _outStream);;
+        m_pPr->toXmlElem("a:pPr", "", _outStream);;
     }
     
     if (m_has_t)
@@ -104203,22 +107374,22 @@ CT_TextParagraphProperties* CT_TextParagraphProperties::default_instance_ = NULL
     return *CT_TextField::default_instance_;
     }
 
-    bool CT_TextField::has_s_id_attr() const
+    bool CT_TextField::has_id_attr() const
     {    
-    return m_has_s_id_attr;
+    return m_has_id_attr;
     }
 
-    void CT_TextField::set_s_id_attr(const ns_s::ST_Guid& _s_id_attr)
+    void CT_TextField::set_id_attr(const ns_s::ST_Guid& _id_attr)
     {    
-    m_has_s_id_attr = true;
-    m_s_id_attr = new ns_s::ST_Guid(_s_id_attr);
+    m_has_id_attr = true;
+    m_id_attr = new ns_s::ST_Guid(_id_attr);
     }
 
-    const ns_s::ST_Guid& CT_TextField::get_s_id_attr() const
+    const ns_s::ST_Guid& CT_TextField::get_id_attr() const
     {    
-    if (m_s_id_attr)
+    if (m_id_attr)
     {
-        return *m_s_id_attr;
+        return *m_id_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -104242,6 +107413,13 @@ CT_TextParagraphProperties* CT_TextParagraphProperties::default_instance_ = NULL
 CT_TextField* CT_TextField::default_instance_ = NULL;
 
     // CT_RegularTextRun
+    CT_RegularTextRun::CT_RegularTextRun()
+    :m_has_rPr(false),
+    m_rPr(NULL),
+    m_has_t(false),
+    m_t("")
+    {
+    }
     bool CT_RegularTextRun::has_rPr() const
     {    
     return m_has_rPr;
@@ -104298,7 +107476,7 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
             
     if (m_has_rPr)
     {
-        m_rPr->toXmlElem("rPr", "", _outStream);;
+        m_rPr->toXmlElem("a:rPr", "", _outStream);;
     }
     
     if (m_has_t)
@@ -104321,6 +107499,25 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
 CT_RegularTextRun* CT_RegularTextRun::default_instance_ = NULL;
 
     // CT_BackgroundFormatting
+    CT_BackgroundFormatting::CT_BackgroundFormatting()
+    :m_has_noFill(false),
+    m_noFill(NULL),
+    m_has_solidFill(false),
+    m_solidFill(NULL),
+    m_has_gradFill(false),
+    m_gradFill(NULL),
+    m_has_blipFill(false),
+    m_blipFill(NULL),
+    m_has_pattFill(false),
+    m_pattFill(NULL),
+    m_has_grpFill(false),
+    m_grpFill(NULL),
+    m_has_effectLst(false),
+    m_effectLst(NULL),
+    m_has_effectDag(false),
+    m_effectDag(NULL)
+    {
+    }
     bool CT_BackgroundFormatting::has_noFill() const
     {    
     return m_has_noFill;
@@ -105041,42 +108238,42 @@ CT_RegularTextRun* CT_RegularTextRun::default_instance_ = NULL;
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);;
     }
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
     }
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
     }
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
     }
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
     }
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
     }
     
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
     }
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -105094,6 +108291,15 @@ CT_RegularTextRun* CT_RegularTextRun::default_instance_ = NULL;
 CT_BackgroundFormatting* CT_BackgroundFormatting::default_instance_ = NULL;
 
     // videoFile_element
+    videoFile_element::videoFile_element()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_r_link_attr(false),
+    m_r_link_attr(NULL),
+    m_has_contentType_attr(false),
+    m_contentType_attr("")
+    {
+    }
     bool videoFile_element::has_extLst() const
     {    
     return m_has_extLst;
@@ -105135,7 +108341,7 @@ CT_BackgroundFormatting* CT_BackgroundFormatting::default_instance_ = NULL;
 
     void videoFile_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<videoFile";
+    _outStream << "<a:videoFile";
     
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -105143,7 +108349,7 @@ CT_BackgroundFormatting* CT_BackgroundFormatting::default_instance_ = NULL;
     
     if (m_has_r_link_attr)
     {
-        m_r_link_attr->toXmlAttr("link", _outStream);
+        m_r_link_attr->toXmlAttr("r:link", _outStream);
     }
     
     
@@ -105156,10 +108362,10 @@ CT_BackgroundFormatting* CT_BackgroundFormatting::default_instance_ = NULL;
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
-    _outStream << "</videoFile>";
+    _outStream << "</a:videoFile>";
     }
 
     const videoFile_element& videoFile_element::default_instance()
@@ -105210,6 +108416,11 @@ CT_BackgroundFormatting* CT_BackgroundFormatting::default_instance_ = NULL;
 videoFile_element* videoFile_element::default_instance_ = NULL;
 
     // graphic_element
+    graphic_element::graphic_element()
+    :m_has_graphicData(false),
+    m_graphicData(NULL)
+    {
+    }
     bool graphic_element::has_graphicData() const
     {    
     return m_has_graphicData;
@@ -105239,7 +108450,7 @@ videoFile_element* videoFile_element::default_instance_ = NULL;
 
     void graphic_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<graphic";
+    _outStream << "<a:graphic";
     
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -105249,10 +108460,10 @@ videoFile_element* videoFile_element::default_instance_ = NULL;
     
     if (m_has_graphicData)
     {
-        m_graphicData->toXmlElem("graphicData", "", _outStream);;
+        m_graphicData->toXmlElem("a:graphicData", "", _outStream);;
     }
     
-    _outStream << "</graphic>";
+    _outStream << "</a:graphic>";
     }
 
     const graphic_element& graphic_element::default_instance()
@@ -105267,6 +108478,17 @@ videoFile_element* videoFile_element::default_instance_ = NULL;
 graphic_element* graphic_element::default_instance_ = NULL;
 
     // blip_element
+    blip_element::blip_element()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_r_embed_attr(false),
+    m_r_embed_attr(NULL),
+    m_has_r_link_attr(false),
+    m_r_link_attr(NULL),
+    m_has_cstate_attr(false),
+    m_cstate_attr(NULL)
+    {
+    }
     CT_AlphaBiLevelEffect* blip_element::add_alphaBiLevel()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -105477,7 +108699,7 @@ graphic_element* graphic_element::default_instance_ = NULL;
 
     void blip_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<blip";
+    _outStream << "<a:blip";
     
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -105485,13 +108707,13 @@ graphic_element* graphic_element::default_instance_ = NULL;
     
     if (m_has_r_embed_attr)
     {
-        m_r_embed_attr->toXmlAttr("embed", _outStream);
+        m_r_embed_attr->toXmlAttr("r:embed", _outStream);
     }
     
     
     if (m_has_r_link_attr)
     {
-        m_r_link_attr->toXmlAttr("link", _outStream);
+        m_r_link_attr->toXmlAttr("r:link", _outStream);
     }
     
     
@@ -105508,81 +108730,81 @@ graphic_element* graphic_element::default_instance_ = NULL;
         {
             if ((*iter)->has_alphaBiLevel())
             {
-                (*iter)->get_alphaBiLevel().toXmlElem("alphaBiLevel", "", _outStream);
+                (*iter)->get_alphaBiLevel().toXmlElem("a:alphaBiLevel", "", _outStream);
             }
             else if ((*iter)->has_alphaCeiling())
             {
-                (*iter)->get_alphaCeiling().toXmlElem("alphaCeiling", "", _outStream);
+                (*iter)->get_alphaCeiling().toXmlElem("a:alphaCeiling", "", _outStream);
             }
             else if ((*iter)->has_alphaFloor())
             {
-                (*iter)->get_alphaFloor().toXmlElem("alphaFloor", "", _outStream);
+                (*iter)->get_alphaFloor().toXmlElem("a:alphaFloor", "", _outStream);
             }
             else if ((*iter)->has_alphaInv())
             {
-                (*iter)->get_alphaInv().toXmlElem("alphaInv", "", _outStream);
+                (*iter)->get_alphaInv().toXmlElem("a:alphaInv", "", _outStream);
             }
             else if ((*iter)->has_alphaMod())
             {
-                (*iter)->get_alphaMod().toXmlElem("alphaMod", "", _outStream);
+                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
             }
             else if ((*iter)->has_alphaModFix())
             {
-                (*iter)->get_alphaModFix().toXmlElem("alphaModFix", "", _outStream);
+                (*iter)->get_alphaModFix().toXmlElem("a:alphaModFix", "", _outStream);
             }
             else if ((*iter)->has_alphaRepl())
             {
-                (*iter)->get_alphaRepl().toXmlElem("alphaRepl", "", _outStream);
+                (*iter)->get_alphaRepl().toXmlElem("a:alphaRepl", "", _outStream);
             }
             else if ((*iter)->has_biLevel())
             {
-                (*iter)->get_biLevel().toXmlElem("biLevel", "", _outStream);
+                (*iter)->get_biLevel().toXmlElem("a:biLevel", "", _outStream);
             }
             else if ((*iter)->has_blur())
             {
-                (*iter)->get_blur().toXmlElem("blur", "", _outStream);
+                (*iter)->get_blur().toXmlElem("a:blur", "", _outStream);
             }
             else if ((*iter)->has_clrChange())
             {
-                (*iter)->get_clrChange().toXmlElem("clrChange", "", _outStream);
+                (*iter)->get_clrChange().toXmlElem("a:clrChange", "", _outStream);
             }
             else if ((*iter)->has_clrRepl())
             {
-                (*iter)->get_clrRepl().toXmlElem("clrRepl", "", _outStream);
+                (*iter)->get_clrRepl().toXmlElem("a:clrRepl", "", _outStream);
             }
             else if ((*iter)->has_duotone())
             {
-                (*iter)->get_duotone().toXmlElem("duotone", "", _outStream);
+                (*iter)->get_duotone().toXmlElem("a:duotone", "", _outStream);
             }
             else if ((*iter)->has_fillOverlay())
             {
-                (*iter)->get_fillOverlay().toXmlElem("fillOverlay", "", _outStream);
+                (*iter)->get_fillOverlay().toXmlElem("a:fillOverlay", "", _outStream);
             }
             else if ((*iter)->has_grayscl())
             {
-                (*iter)->get_grayscl().toXmlElem("grayscl", "", _outStream);
+                (*iter)->get_grayscl().toXmlElem("a:grayscl", "", _outStream);
             }
             else if ((*iter)->has_hsl())
             {
-                (*iter)->get_hsl().toXmlElem("hsl", "", _outStream);
+                (*iter)->get_hsl().toXmlElem("a:hsl", "", _outStream);
             }
             else if ((*iter)->has_lum())
             {
-                (*iter)->get_lum().toXmlElem("lum", "", _outStream);
+                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
             }
             else if ((*iter)->has_tint())
             {
-                (*iter)->get_tint().toXmlElem("tint", "", _outStream);
+                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
             }
         }
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
-    _outStream << "</blip>";
+    _outStream << "</a:blip>";
     }
 
     const blip_element& blip_element::default_instance()
@@ -105656,6 +108878,43 @@ graphic_element* graphic_element::default_instance_ = NULL;
 
 
     // blip_element::ChildGroup_1
+    blip_element::ChildGroup_1::ChildGroup_1()
+    :m_has_alphaBiLevel(false),
+    m_alphaBiLevel(NULL),
+    m_has_alphaCeiling(false),
+    m_alphaCeiling(NULL),
+    m_has_alphaFloor(false),
+    m_alphaFloor(NULL),
+    m_has_alphaInv(false),
+    m_alphaInv(NULL),
+    m_has_alphaMod(false),
+    m_alphaMod(NULL),
+    m_has_alphaModFix(false),
+    m_alphaModFix(NULL),
+    m_has_alphaRepl(false),
+    m_alphaRepl(NULL),
+    m_has_biLevel(false),
+    m_biLevel(NULL),
+    m_has_blur(false),
+    m_blur(NULL),
+    m_has_clrChange(false),
+    m_clrChange(NULL),
+    m_has_clrRepl(false),
+    m_clrRepl(NULL),
+    m_has_duotone(false),
+    m_duotone(NULL),
+    m_has_fillOverlay(false),
+    m_fillOverlay(NULL),
+    m_has_grayscl(false),
+    m_grayscl(NULL),
+    m_has_hsl(false),
+    m_hsl(NULL),
+    m_has_lum(false),
+    m_lum(NULL),
+    m_has_tint(false),
+    m_tint(NULL)
+    {
+    }
     bool blip_element::ChildGroup_1::has_alphaBiLevel() const
     {    
     return m_has_alphaBiLevel;
@@ -108532,6 +111791,21 @@ graphic_element* graphic_element::default_instance_ = NULL;
 blip_element* blip_element::default_instance_ = NULL;
 
     // theme_element
+    theme_element::theme_element()
+    :m_has_themeElements(false),
+    m_themeElements(NULL),
+    m_has_objectDefaults(false),
+    m_objectDefaults(NULL),
+    m_has_extraClrSchemeLst(false),
+    m_extraClrSchemeLst(NULL),
+    m_has_custClrLst(false),
+    m_custClrLst(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr("")
+    {
+    }
     bool theme_element::has_themeElements() const
     {    
     return m_has_themeElements;
@@ -108660,7 +111934,7 @@ blip_element* blip_element::default_instance_ = NULL;
 
     void theme_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<theme";
+    _outStream << "<a:theme";
     
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -108675,30 +111949,30 @@ blip_element* blip_element::default_instance_ = NULL;
     
     if (m_has_themeElements)
     {
-        m_themeElements->toXmlElem("themeElements", "", _outStream);;
+        m_themeElements->toXmlElem("a:themeElements", "", _outStream);;
     }
     
     if (m_has_objectDefaults)
     {
-        m_objectDefaults->toXmlElem("objectDefaults", "", _outStream);;
+        m_objectDefaults->toXmlElem("a:objectDefaults", "", _outStream);;
     }
     
     if (m_has_extraClrSchemeLst)
     {
-        m_extraClrSchemeLst->toXmlElem("extraClrSchemeLst", "", _outStream);;
+        m_extraClrSchemeLst->toXmlElem("a:extraClrSchemeLst", "", _outStream);;
     }
     
     if (m_has_custClrLst)
     {
-        m_custClrLst->toXmlElem("custClrLst", "", _outStream);;
+        m_custClrLst->toXmlElem("a:custClrLst", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);;
     }
     
-    _outStream << "</theme>";
+    _outStream << "</a:theme>";
     }
 
     const theme_element& theme_element::default_instance()
@@ -108729,6 +112003,15 @@ blip_element* blip_element::default_instance_ = NULL;
 theme_element* theme_element::default_instance_ = NULL;
 
     // themeOverride_element
+    themeOverride_element::themeOverride_element()
+    :m_has_clrScheme(false),
+    m_clrScheme(NULL),
+    m_has_fontScheme(false),
+    m_fontScheme(NULL),
+    m_has_fmtScheme(false),
+    m_fmtScheme(NULL)
+    {
+    }
     bool themeOverride_element::has_clrScheme() const
     {    
     return m_has_clrScheme;
@@ -108806,7 +112089,7 @@ theme_element* theme_element::default_instance_ = NULL;
 
     void themeOverride_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<themeOverride";
+    _outStream << "<a:themeOverride";
     
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -108816,20 +112099,20 @@ theme_element* theme_element::default_instance_ = NULL;
     
     if (m_has_clrScheme)
     {
-        m_clrScheme->toXmlElem("clrScheme", "", _outStream);;
+        m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);;
     }
     
     if (m_has_fontScheme)
     {
-        m_fontScheme->toXmlElem("fontScheme", "", _outStream);;
+        m_fontScheme->toXmlElem("a:fontScheme", "", _outStream);;
     }
     
     if (m_has_fmtScheme)
     {
-        m_fmtScheme->toXmlElem("fmtScheme", "", _outStream);;
+        m_fmtScheme->toXmlElem("a:fmtScheme", "", _outStream);;
     }
     
-    _outStream << "</themeOverride>";
+    _outStream << "</a:themeOverride>";
     }
 
     const themeOverride_element& themeOverride_element::default_instance()
@@ -108844,12 +112127,16 @@ theme_element* theme_element::default_instance_ = NULL;
 themeOverride_element* themeOverride_element::default_instance_ = NULL;
 
     // themeManager_element
+    themeManager_element::themeManager_element()
+
+    {
+    }
     void themeManager_element::clear()
     {    }
 
     void themeManager_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<themeManager";
+    _outStream << "<a:themeManager";
     
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -108857,7 +112144,7 @@ themeOverride_element* themeOverride_element::default_instance_ = NULL;
     
     _outStream << ">";
     
-    _outStream << "</themeManager>";
+    _outStream << "</a:themeManager>";
     }
 
     const themeManager_element& themeManager_element::default_instance()
@@ -108872,6 +112159,13 @@ themeOverride_element* themeOverride_element::default_instance_ = NULL;
 themeManager_element* themeManager_element::default_instance_ = NULL;
 
     // tbl_element
+    tbl_element::tbl_element()
+    :m_has_tblPr(false),
+    m_tblPr(NULL),
+    m_has_tblGrid(false),
+    m_tblGrid(NULL)
+    {
+    }
     bool tbl_element::has_tblPr() const
     {    
     return m_has_tblPr;
@@ -108960,7 +112254,7 @@ themeManager_element* themeManager_element::default_instance_ = NULL;
 
     void tbl_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<tbl";
+    _outStream << "<a:tbl";
     
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -108970,12 +112264,12 @@ themeManager_element* themeManager_element::default_instance_ = NULL;
     
     if (m_has_tblPr)
     {
-        m_tblPr->toXmlElem("tblPr", "", _outStream);;
+        m_tblPr->toXmlElem("a:tblPr", "", _outStream);;
     }
     
     if (m_has_tblGrid)
     {
-        m_tblGrid->toXmlElem("tblGrid", "", _outStream);;
+        m_tblGrid->toXmlElem("a:tblGrid", "", _outStream);;
     }
      
     {
@@ -108984,12 +112278,12 @@ themeManager_element* themeManager_element::default_instance_ = NULL;
         {
             if ((*iter)->has_tr())
             {
-                (*iter)->get_tr().toXmlElem("tr", "", _outStream);
+                (*iter)->get_tr().toXmlElem("a:tr", "", _outStream);
             }
         }
     }
     
-    _outStream << "</tbl>";
+    _outStream << "</a:tbl>";
     }
 
     const tbl_element& tbl_element::default_instance()
@@ -109003,6 +112297,11 @@ themeManager_element* themeManager_element::default_instance_ = NULL;
 
 
     // tbl_element::ChildGroup_1
+    tbl_element::ChildGroup_1::ChildGroup_1()
+    :m_has_tr(false),
+    m_tr(NULL)
+    {
+    }
     bool tbl_element::ChildGroup_1::has_tr() const
     {    
     return m_has_tr;
@@ -109031,6 +112330,11 @@ themeManager_element* themeManager_element::default_instance_ = NULL;
 tbl_element* tbl_element::default_instance_ = NULL;
 
     // tblStyleLst_element
+    tblStyleLst_element::tblStyleLst_element()
+    :m_has_def_attr(false),
+    m_def_attr(NULL)
+    {
+    }
     CT_TableStyle* tblStyleLst_element::add_tblStyle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -109041,12 +112345,12 @@ tbl_element* tbl_element::default_instance_ = NULL;
 
     void tblStyleLst_element::clear()
     {    
-    m_has_s_def_attr = false;
+    m_has_def_attr = false;
     
-    if (m_s_def_attr)
+    if (m_def_attr)
     {
-        delete m_s_def_attr;
-        m_s_def_attr = NULL;
+        delete m_def_attr;
+        m_def_attr = NULL;
     }
     
     
@@ -109062,15 +112366,15 @@ tbl_element* tbl_element::default_instance_ = NULL;
 
     void tblStyleLst_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<tblStyleLst";
+    _outStream << "<a:tblStyleLst";
     
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     
-    if (m_has_s_def_attr)
+    if (m_has_def_attr)
     {
-        m_s_def_attr->toXmlAttr("def", _outStream);
+        m_def_attr->toXmlAttr("def", _outStream);
     }
     
     _outStream << ">";
@@ -109081,12 +112385,12 @@ tbl_element* tbl_element::default_instance_ = NULL;
         {
             if ((*iter)->has_tblStyle())
             {
-                (*iter)->get_tblStyle().toXmlElem("tblStyle", "", _outStream);
+                (*iter)->get_tblStyle().toXmlElem("a:tblStyle", "", _outStream);
             }
         }
     }
     
-    _outStream << "</tblStyleLst>";
+    _outStream << "</a:tblStyleLst>";
     }
 
     const tblStyleLst_element& tblStyleLst_element::default_instance()
@@ -109098,28 +112402,33 @@ tbl_element* tbl_element::default_instance_ = NULL;
     return *tblStyleLst_element::default_instance_;
     }
 
-    bool tblStyleLst_element::has_s_def_attr() const
+    bool tblStyleLst_element::has_def_attr() const
     {    
-    return m_has_s_def_attr;
+    return m_has_def_attr;
     }
 
-    void tblStyleLst_element::set_s_def_attr(const ns_s::ST_Guid& _s_def_attr)
+    void tblStyleLst_element::set_def_attr(const ns_s::ST_Guid& _def_attr)
     {    
-    m_has_s_def_attr = true;
-    m_s_def_attr = new ns_s::ST_Guid(_s_def_attr);
+    m_has_def_attr = true;
+    m_def_attr = new ns_s::ST_Guid(_def_attr);
     }
 
-    const ns_s::ST_Guid& tblStyleLst_element::get_s_def_attr() const
+    const ns_s::ST_Guid& tblStyleLst_element::get_def_attr() const
     {    
-    if (m_s_def_attr)
+    if (m_def_attr)
     {
-        return *m_s_def_attr;
+        return *m_def_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
 
 
     // tblStyleLst_element::ChildGroup_1
+    tblStyleLst_element::ChildGroup_1::ChildGroup_1()
+    :m_has_tblStyle(false),
+    m_tblStyle(NULL)
+    {
+    }
     bool tblStyleLst_element::ChildGroup_1::has_tblStyle() const
     {    
     return m_has_tblStyle;

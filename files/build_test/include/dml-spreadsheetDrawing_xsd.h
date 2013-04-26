@@ -117,6 +117,7 @@ namespace ns_xdr {
     class CT_AnchorClientData: public XSD::ComplexType
     {
     public:
+        CT_AnchorClientData();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AnchorClientData& default_instance();
@@ -138,39 +139,41 @@ namespace ns_xdr {
     class CT_ShapeNonVisual: public XSD::ComplexType
     {
     public:
-        bool has_a_cNvPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_cNvPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_cNvPr() const;
-        bool has_a_cNvSpPr() const;
-        ns_a::CT_NonVisualDrawingShapeProps* mutable_a_cNvSpPr();
-        const ns_a::CT_NonVisualDrawingShapeProps& get_a_cNvSpPr() const;
+        CT_ShapeNonVisual();
+        bool has_cNvPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
+        const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
+        bool has_cNvSpPr() const;
+        ns_a::CT_NonVisualDrawingShapeProps* mutable_cNvSpPr();
+        const ns_a::CT_NonVisualDrawingShapeProps& get_cNvSpPr() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ShapeNonVisual& default_instance();
     protected:
     private:
-        bool m_has_a_cNvPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_cNvPr;
-        bool m_has_a_cNvSpPr;
-        ns_a::CT_NonVisualDrawingShapeProps* m_a_cNvSpPr;
+        bool m_has_cNvPr;
+        ns_a::CT_NonVisualDrawingProps* m_cNvPr;
+        bool m_has_cNvSpPr;
+        ns_a::CT_NonVisualDrawingShapeProps* m_cNvSpPr;
         static CT_ShapeNonVisual* default_instance_;
     };
 
     class CT_Shape: public XSD::ComplexType
     {
     public:
+        CT_Shape();
         bool has_nvSpPr() const;
         CT_ShapeNonVisual* mutable_nvSpPr();
         const CT_ShapeNonVisual& get_nvSpPr() const;
-        bool has_a_spPr() const;
-        ns_a::CT_ShapeProperties* mutable_a_spPr();
-        const ns_a::CT_ShapeProperties& get_a_spPr() const;
-        bool has_a_style() const;
-        ns_a::CT_ShapeStyle* mutable_a_style();
-        const ns_a::CT_ShapeStyle& get_a_style() const;
-        bool has_a_txBody() const;
-        ns_a::CT_TextBody* mutable_a_txBody();
-        const ns_a::CT_TextBody& get_a_txBody() const;
+        bool has_spPr() const;
+        ns_a::CT_ShapeProperties* mutable_spPr();
+        const ns_a::CT_ShapeProperties& get_spPr() const;
+        bool has_style() const;
+        ns_a::CT_ShapeStyle* mutable_style();
+        const ns_a::CT_ShapeStyle& get_style() const;
+        bool has_txBody() const;
+        ns_a::CT_TextBody* mutable_txBody();
+        const ns_a::CT_TextBody& get_txBody() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Shape& default_instance();
@@ -190,12 +193,12 @@ namespace ns_xdr {
     private:
         bool m_has_nvSpPr;
         CT_ShapeNonVisual* m_nvSpPr;
-        bool m_has_a_spPr;
-        ns_a::CT_ShapeProperties* m_a_spPr;
-        bool m_has_a_style;
-        ns_a::CT_ShapeStyle* m_a_style;
-        bool m_has_a_txBody;
-        ns_a::CT_TextBody* m_a_txBody;
+        bool m_has_spPr;
+        ns_a::CT_ShapeProperties* m_spPr;
+        bool m_has_style;
+        ns_a::CT_ShapeStyle* m_style;
+        bool m_has_txBody;
+        ns_a::CT_TextBody* m_txBody;
         static CT_Shape* default_instance_;
         bool m_has_macro_attr;
         XSD::string_ m_macro_attr;
@@ -210,36 +213,38 @@ namespace ns_xdr {
     class CT_ConnectorNonVisual: public XSD::ComplexType
     {
     public:
-        bool has_a_cNvPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_cNvPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_cNvPr() const;
-        bool has_a_cNvCxnSpPr() const;
-        ns_a::CT_NonVisualConnectorProperties* mutable_a_cNvCxnSpPr();
-        const ns_a::CT_NonVisualConnectorProperties& get_a_cNvCxnSpPr() const;
+        CT_ConnectorNonVisual();
+        bool has_cNvPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
+        const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
+        bool has_cNvCxnSpPr() const;
+        ns_a::CT_NonVisualConnectorProperties* mutable_cNvCxnSpPr();
+        const ns_a::CT_NonVisualConnectorProperties& get_cNvCxnSpPr() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ConnectorNonVisual& default_instance();
     protected:
     private:
-        bool m_has_a_cNvPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_cNvPr;
-        bool m_has_a_cNvCxnSpPr;
-        ns_a::CT_NonVisualConnectorProperties* m_a_cNvCxnSpPr;
+        bool m_has_cNvPr;
+        ns_a::CT_NonVisualDrawingProps* m_cNvPr;
+        bool m_has_cNvCxnSpPr;
+        ns_a::CT_NonVisualConnectorProperties* m_cNvCxnSpPr;
         static CT_ConnectorNonVisual* default_instance_;
     };
 
     class CT_Connector: public XSD::ComplexType
     {
     public:
+        CT_Connector();
         bool has_nvCxnSpPr() const;
         CT_ConnectorNonVisual* mutable_nvCxnSpPr();
         const CT_ConnectorNonVisual& get_nvCxnSpPr() const;
-        bool has_a_spPr() const;
-        ns_a::CT_ShapeProperties* mutable_a_spPr();
-        const ns_a::CT_ShapeProperties& get_a_spPr() const;
-        bool has_a_style() const;
-        ns_a::CT_ShapeStyle* mutable_a_style();
-        const ns_a::CT_ShapeStyle& get_a_style() const;
+        bool has_spPr() const;
+        ns_a::CT_ShapeProperties* mutable_spPr();
+        const ns_a::CT_ShapeProperties& get_spPr() const;
+        bool has_style() const;
+        ns_a::CT_ShapeStyle* mutable_style();
+        const ns_a::CT_ShapeStyle& get_style() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Connector& default_instance();
@@ -253,10 +258,10 @@ namespace ns_xdr {
     private:
         bool m_has_nvCxnSpPr;
         CT_ConnectorNonVisual* m_nvCxnSpPr;
-        bool m_has_a_spPr;
-        ns_a::CT_ShapeProperties* m_a_spPr;
-        bool m_has_a_style;
-        ns_a::CT_ShapeStyle* m_a_style;
+        bool m_has_spPr;
+        ns_a::CT_ShapeProperties* m_spPr;
+        bool m_has_style;
+        ns_a::CT_ShapeStyle* m_style;
         static CT_Connector* default_instance_;
         bool m_has_macro_attr;
         XSD::string_ m_macro_attr;
@@ -267,39 +272,41 @@ namespace ns_xdr {
     class CT_PictureNonVisual: public XSD::ComplexType
     {
     public:
-        bool has_a_cNvPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_cNvPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_cNvPr() const;
-        bool has_a_cNvPicPr() const;
-        ns_a::CT_NonVisualPictureProperties* mutable_a_cNvPicPr();
-        const ns_a::CT_NonVisualPictureProperties& get_a_cNvPicPr() const;
+        CT_PictureNonVisual();
+        bool has_cNvPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
+        const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
+        bool has_cNvPicPr() const;
+        ns_a::CT_NonVisualPictureProperties* mutable_cNvPicPr();
+        const ns_a::CT_NonVisualPictureProperties& get_cNvPicPr() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PictureNonVisual& default_instance();
     protected:
     private:
-        bool m_has_a_cNvPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_cNvPr;
-        bool m_has_a_cNvPicPr;
-        ns_a::CT_NonVisualPictureProperties* m_a_cNvPicPr;
+        bool m_has_cNvPr;
+        ns_a::CT_NonVisualDrawingProps* m_cNvPr;
+        bool m_has_cNvPicPr;
+        ns_a::CT_NonVisualPictureProperties* m_cNvPicPr;
         static CT_PictureNonVisual* default_instance_;
     };
 
     class CT_Picture: public XSD::ComplexType
     {
     public:
+        CT_Picture();
         bool has_nvPicPr() const;
         CT_PictureNonVisual* mutable_nvPicPr();
         const CT_PictureNonVisual& get_nvPicPr() const;
-        bool has_a_blipFill() const;
-        ns_a::CT_BlipFillProperties* mutable_a_blipFill();
-        const ns_a::CT_BlipFillProperties& get_a_blipFill() const;
-        bool has_a_spPr() const;
-        ns_a::CT_ShapeProperties* mutable_a_spPr();
-        const ns_a::CT_ShapeProperties& get_a_spPr() const;
-        bool has_a_style() const;
-        ns_a::CT_ShapeStyle* mutable_a_style();
-        const ns_a::CT_ShapeStyle& get_a_style() const;
+        bool has_blipFill() const;
+        ns_a::CT_BlipFillProperties* mutable_blipFill();
+        const ns_a::CT_BlipFillProperties& get_blipFill() const;
+        bool has_spPr() const;
+        ns_a::CT_ShapeProperties* mutable_spPr();
+        const ns_a::CT_ShapeProperties& get_spPr() const;
+        bool has_style() const;
+        ns_a::CT_ShapeStyle* mutable_style();
+        const ns_a::CT_ShapeStyle& get_style() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Picture& default_instance();
@@ -313,12 +320,12 @@ namespace ns_xdr {
     private:
         bool m_has_nvPicPr;
         CT_PictureNonVisual* m_nvPicPr;
-        bool m_has_a_blipFill;
-        ns_a::CT_BlipFillProperties* m_a_blipFill;
-        bool m_has_a_spPr;
-        ns_a::CT_ShapeProperties* m_a_spPr;
-        bool m_has_a_style;
-        ns_a::CT_ShapeStyle* m_a_style;
+        bool m_has_blipFill;
+        ns_a::CT_BlipFillProperties* m_blipFill;
+        bool m_has_spPr;
+        ns_a::CT_ShapeProperties* m_spPr;
+        bool m_has_style;
+        ns_a::CT_ShapeStyle* m_style;
         static CT_Picture* default_instance_;
         bool m_has_macro_attr;
         XSD::string_ m_macro_attr;
@@ -329,33 +336,35 @@ namespace ns_xdr {
     class CT_GraphicalObjectFrameNonVisual: public XSD::ComplexType
     {
     public:
-        bool has_a_cNvPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_cNvPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_cNvPr() const;
-        bool has_a_cNvGraphicFramePr() const;
-        ns_a::CT_NonVisualGraphicFrameProperties* mutable_a_cNvGraphicFramePr();
-        const ns_a::CT_NonVisualGraphicFrameProperties& get_a_cNvGraphicFramePr() const;
+        CT_GraphicalObjectFrameNonVisual();
+        bool has_cNvPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
+        const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
+        bool has_cNvGraphicFramePr() const;
+        ns_a::CT_NonVisualGraphicFrameProperties* mutable_cNvGraphicFramePr();
+        const ns_a::CT_NonVisualGraphicFrameProperties& get_cNvGraphicFramePr() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_GraphicalObjectFrameNonVisual& default_instance();
     protected:
     private:
-        bool m_has_a_cNvPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_cNvPr;
-        bool m_has_a_cNvGraphicFramePr;
-        ns_a::CT_NonVisualGraphicFrameProperties* m_a_cNvGraphicFramePr;
+        bool m_has_cNvPr;
+        ns_a::CT_NonVisualDrawingProps* m_cNvPr;
+        bool m_has_cNvGraphicFramePr;
+        ns_a::CT_NonVisualGraphicFrameProperties* m_cNvGraphicFramePr;
         static CT_GraphicalObjectFrameNonVisual* default_instance_;
     };
 
     class CT_GraphicalObjectFrame: public XSD::ComplexType
     {
     public:
+        CT_GraphicalObjectFrame();
         bool has_nvGraphicFramePr() const;
         CT_GraphicalObjectFrameNonVisual* mutable_nvGraphicFramePr();
         const CT_GraphicalObjectFrameNonVisual& get_nvGraphicFramePr() const;
-        bool has_a_xfrm() const;
-        ns_a::CT_Transform2D* mutable_a_xfrm();
-        const ns_a::CT_Transform2D& get_a_xfrm() const;
+        bool has_xfrm() const;
+        ns_a::CT_Transform2D* mutable_xfrm();
+        const ns_a::CT_Transform2D& get_xfrm() const;
         bool has_a_graphic() const;
         ns_a::CT_GraphicalObject* mutable_a_graphic();
         const ns_a::CT_GraphicalObject& get_a_graphic() const;
@@ -372,8 +381,8 @@ namespace ns_xdr {
     private:
         bool m_has_nvGraphicFramePr;
         CT_GraphicalObjectFrameNonVisual* m_nvGraphicFramePr;
-        bool m_has_a_xfrm;
-        ns_a::CT_Transform2D* m_a_xfrm;
+        bool m_has_xfrm;
+        ns_a::CT_Transform2D* m_xfrm;
         bool m_has_a_graphic;
         ns_a::CT_GraphicalObject* m_a_graphic;
         static CT_GraphicalObjectFrame* default_instance_;
@@ -386,33 +395,35 @@ namespace ns_xdr {
     class CT_GroupShapeNonVisual: public XSD::ComplexType
     {
     public:
-        bool has_a_cNvPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_cNvPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_cNvPr() const;
-        bool has_a_cNvGrpSpPr() const;
-        ns_a::CT_NonVisualGroupDrawingShapeProps* mutable_a_cNvGrpSpPr();
-        const ns_a::CT_NonVisualGroupDrawingShapeProps& get_a_cNvGrpSpPr() const;
+        CT_GroupShapeNonVisual();
+        bool has_cNvPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
+        const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
+        bool has_cNvGrpSpPr() const;
+        ns_a::CT_NonVisualGroupDrawingShapeProps* mutable_cNvGrpSpPr();
+        const ns_a::CT_NonVisualGroupDrawingShapeProps& get_cNvGrpSpPr() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_GroupShapeNonVisual& default_instance();
     protected:
     private:
-        bool m_has_a_cNvPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_cNvPr;
-        bool m_has_a_cNvGrpSpPr;
-        ns_a::CT_NonVisualGroupDrawingShapeProps* m_a_cNvGrpSpPr;
+        bool m_has_cNvPr;
+        ns_a::CT_NonVisualDrawingProps* m_cNvPr;
+        bool m_has_cNvGrpSpPr;
+        ns_a::CT_NonVisualGroupDrawingShapeProps* m_cNvGrpSpPr;
         static CT_GroupShapeNonVisual* default_instance_;
     };
 
     class CT_GroupShape: public XSD::ComplexType
     {
     public:
+        CT_GroupShape();
         bool has_nvGrpSpPr() const;
         CT_GroupShapeNonVisual* mutable_nvGrpSpPr();
         const CT_GroupShapeNonVisual& get_nvGrpSpPr() const;
-        bool has_a_grpSpPr() const;
-        ns_a::CT_GroupShapeProperties* mutable_a_grpSpPr();
-        const ns_a::CT_GroupShapeProperties& get_a_grpSpPr() const;
+        bool has_grpSpPr() const;
+        ns_a::CT_GroupShapeProperties* mutable_grpSpPr();
+        const ns_a::CT_GroupShapeProperties& get_grpSpPr() const;
         CT_Shape* add_sp();
         CT_GroupShape* add_grpSp();
         CT_GraphicalObjectFrame* add_graphicFrame();
@@ -426,6 +437,7 @@ namespace ns_xdr {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_sp() const;
             CT_Shape* mutable_sp();
             const CT_Shape& get_sp() const;
@@ -456,8 +468,8 @@ namespace ns_xdr {
         };
         bool m_has_nvGrpSpPr;
         CT_GroupShapeNonVisual* m_nvGrpSpPr;
-        bool m_has_a_grpSpPr;
-        ns_a::CT_GroupShapeProperties* m_a_grpSpPr;
+        bool m_has_grpSpPr;
+        ns_a::CT_GroupShapeProperties* m_grpSpPr;
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_GroupShape* default_instance_;
     };
@@ -465,6 +477,7 @@ namespace ns_xdr {
     class CT_Rel: public XSD::ComplexType
     {
     public:
+        CT_Rel();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Rel& default_instance();
@@ -481,18 +494,19 @@ namespace ns_xdr {
     class CT_Marker: public XSD::ComplexType
     {
     public:
+        CT_Marker();
         bool has_col() const;
         ST_ColID* mutable_col();
         const ST_ColID& get_col() const;
-        bool has_a_colOff() const;
-        ns_a::ST_Coordinate* mutable_a_colOff();
-        const ns_a::ST_Coordinate& get_a_colOff() const;
+        bool has_colOff() const;
+        ns_a::ST_Coordinate* mutable_colOff();
+        const ns_a::ST_Coordinate& get_colOff() const;
         bool has_row() const;
         ST_RowID* mutable_row();
         const ST_RowID& get_row() const;
-        bool has_a_rowOff() const;
-        ns_a::ST_Coordinate* mutable_a_rowOff();
-        const ns_a::ST_Coordinate& get_a_rowOff() const;
+        bool has_rowOff() const;
+        ns_a::ST_Coordinate* mutable_rowOff();
+        const ns_a::ST_Coordinate& get_rowOff() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Marker& default_instance();
@@ -500,18 +514,19 @@ namespace ns_xdr {
     private:
         bool m_has_col;
         ST_ColID* m_col;
-        bool m_has_a_colOff;
-        ns_a::ST_Coordinate* m_a_colOff;
+        bool m_has_colOff;
+        ns_a::ST_Coordinate* m_colOff;
         bool m_has_row;
         ST_RowID* m_row;
-        bool m_has_a_rowOff;
-        ns_a::ST_Coordinate* m_a_rowOff;
+        bool m_has_rowOff;
+        ns_a::ST_Coordinate* m_rowOff;
         static CT_Marker* default_instance_;
     };
 
     class CT_TwoCellAnchor: public XSD::ComplexType
     {
     public:
+        CT_TwoCellAnchor();
         bool has_from() const;
         CT_Marker* mutable_from();
         const CT_Marker& get_from() const;
@@ -573,12 +588,13 @@ namespace ns_xdr {
     class CT_OneCellAnchor: public XSD::ComplexType
     {
     public:
+        CT_OneCellAnchor();
         bool has_from() const;
         CT_Marker* mutable_from();
         const CT_Marker& get_from() const;
-        bool has_a_ext() const;
-        ns_a::CT_PositiveSize2D* mutable_a_ext();
-        const ns_a::CT_PositiveSize2D& get_a_ext() const;
+        bool has_ext() const;
+        ns_a::CT_PositiveSize2D* mutable_ext();
+        const ns_a::CT_PositiveSize2D& get_ext() const;
         bool has_sp() const;
         CT_Shape* mutable_sp();
         const CT_Shape& get_sp() const;
@@ -607,8 +623,8 @@ namespace ns_xdr {
     private:
         bool m_has_from;
         CT_Marker* m_from;
-        bool m_has_a_ext;
-        ns_a::CT_PositiveSize2D* m_a_ext;
+        bool m_has_ext;
+        ns_a::CT_PositiveSize2D* m_ext;
         bool m_has_sp;
         CT_Shape* m_sp;
         bool m_has_grpSp;
@@ -629,12 +645,13 @@ namespace ns_xdr {
     class CT_AbsoluteAnchor: public XSD::ComplexType
     {
     public:
-        bool has_a_pos() const;
-        ns_a::CT_Point2D* mutable_a_pos();
-        const ns_a::CT_Point2D& get_a_pos() const;
-        bool has_a_ext() const;
-        ns_a::CT_PositiveSize2D* mutable_a_ext();
-        const ns_a::CT_PositiveSize2D& get_a_ext() const;
+        CT_AbsoluteAnchor();
+        bool has_pos() const;
+        ns_a::CT_Point2D* mutable_pos();
+        const ns_a::CT_Point2D& get_pos() const;
+        bool has_ext() const;
+        ns_a::CT_PositiveSize2D* mutable_ext();
+        const ns_a::CT_PositiveSize2D& get_ext() const;
         bool has_sp() const;
         CT_Shape* mutable_sp();
         const CT_Shape& get_sp() const;
@@ -661,10 +678,10 @@ namespace ns_xdr {
         static const CT_AbsoluteAnchor& default_instance();
     protected:
     private:
-        bool m_has_a_pos;
-        ns_a::CT_Point2D* m_a_pos;
-        bool m_has_a_ext;
-        ns_a::CT_PositiveSize2D* m_a_ext;
+        bool m_has_pos;
+        ns_a::CT_Point2D* m_pos;
+        bool m_has_ext;
+        ns_a::CT_PositiveSize2D* m_ext;
         bool m_has_sp;
         CT_Shape* m_sp;
         bool m_has_grpSp;
@@ -685,6 +702,7 @@ namespace ns_xdr {
     class CT_Drawing: public XSD::ComplexType
     {
     public:
+        CT_Drawing();
         CT_TwoCellAnchor* add_twoCellAnchor();
         CT_OneCellAnchor* add_oneCellAnchor();
         CT_AbsoluteAnchor* add_absoluteAnchor();
@@ -696,6 +714,7 @@ namespace ns_xdr {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_twoCellAnchor() const;
             CT_TwoCellAnchor* mutable_twoCellAnchor();
             const CT_TwoCellAnchor& get_twoCellAnchor() const;
@@ -721,18 +740,19 @@ namespace ns_xdr {
     class from_element: public Element
     {
     public:
+        from_element();
         bool has_col() const;
         ST_ColID* mutable_col();
         const ST_ColID& get_col() const;
-        bool has_a_colOff() const;
-        ns_a::ST_Coordinate* mutable_a_colOff();
-        const ns_a::ST_Coordinate& get_a_colOff() const;
+        bool has_colOff() const;
+        ns_a::ST_Coordinate* mutable_colOff();
+        const ns_a::ST_Coordinate& get_colOff() const;
         bool has_row() const;
         ST_RowID* mutable_row();
         const ST_RowID& get_row() const;
-        bool has_a_rowOff() const;
-        ns_a::ST_Coordinate* mutable_a_rowOff();
-        const ns_a::ST_Coordinate& get_a_rowOff() const;
+        bool has_rowOff() const;
+        ns_a::ST_Coordinate* mutable_rowOff();
+        const ns_a::ST_Coordinate& get_rowOff() const;
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const from_element& default_instance();
@@ -740,30 +760,31 @@ namespace ns_xdr {
     private:
         bool m_has_col;
         ST_ColID* m_col;
-        bool m_has_a_colOff;
-        ns_a::ST_Coordinate* m_a_colOff;
+        bool m_has_colOff;
+        ns_a::ST_Coordinate* m_colOff;
         bool m_has_row;
         ST_RowID* m_row;
-        bool m_has_a_rowOff;
-        ns_a::ST_Coordinate* m_a_rowOff;
+        bool m_has_rowOff;
+        ns_a::ST_Coordinate* m_rowOff;
         static from_element* default_instance_;
     };
 
     class to_element: public Element
     {
     public:
+        to_element();
         bool has_col() const;
         ST_ColID* mutable_col();
         const ST_ColID& get_col() const;
-        bool has_a_colOff() const;
-        ns_a::ST_Coordinate* mutable_a_colOff();
-        const ns_a::ST_Coordinate& get_a_colOff() const;
+        bool has_colOff() const;
+        ns_a::ST_Coordinate* mutable_colOff();
+        const ns_a::ST_Coordinate& get_colOff() const;
         bool has_row() const;
         ST_RowID* mutable_row();
         const ST_RowID& get_row() const;
-        bool has_a_rowOff() const;
-        ns_a::ST_Coordinate* mutable_a_rowOff();
-        const ns_a::ST_Coordinate& get_a_rowOff() const;
+        bool has_rowOff() const;
+        ns_a::ST_Coordinate* mutable_rowOff();
+        const ns_a::ST_Coordinate& get_rowOff() const;
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const to_element& default_instance();
@@ -771,18 +792,19 @@ namespace ns_xdr {
     private:
         bool m_has_col;
         ST_ColID* m_col;
-        bool m_has_a_colOff;
-        ns_a::ST_Coordinate* m_a_colOff;
+        bool m_has_colOff;
+        ns_a::ST_Coordinate* m_colOff;
         bool m_has_row;
         ST_RowID* m_row;
-        bool m_has_a_rowOff;
-        ns_a::ST_Coordinate* m_a_rowOff;
+        bool m_has_rowOff;
+        ns_a::ST_Coordinate* m_rowOff;
         static to_element* default_instance_;
     };
 
     class wsDr_element: public Element
     {
     public:
+        wsDr_element();
         CT_TwoCellAnchor* add_twoCellAnchor();
         CT_OneCellAnchor* add_oneCellAnchor();
         CT_AbsoluteAnchor* add_absoluteAnchor();
@@ -794,6 +816,7 @@ namespace ns_xdr {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_twoCellAnchor() const;
             CT_TwoCellAnchor* mutable_twoCellAnchor();
             const CT_TwoCellAnchor& get_twoCellAnchor() const;

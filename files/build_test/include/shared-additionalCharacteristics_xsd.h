@@ -60,6 +60,7 @@ namespace ns_characteristics {
     class CT_AdditionalCharacteristics: public XSD::ComplexType
     {
     public:
+        CT_AdditionalCharacteristics();
         CT_Characteristic* add_characteristic();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -69,6 +70,7 @@ namespace ns_characteristics {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_characteristic() const;
             CT_Characteristic* mutable_characteristic();
             const CT_Characteristic& get_characteristic() const;
@@ -84,6 +86,7 @@ namespace ns_characteristics {
     class CT_Characteristic: public XSD::ComplexType
     {
     public:
+        CT_Characteristic();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Characteristic& default_instance();
@@ -115,6 +118,7 @@ namespace ns_characteristics {
     class additionalCharacteristics_element: public Element
     {
     public:
+        additionalCharacteristics_element();
         CT_Characteristic* add_characteristic();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -124,6 +128,7 @@ namespace ns_characteristics {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_characteristic() const;
             CT_Characteristic* mutable_characteristic();
             const CT_Characteristic& get_characteristic() const;

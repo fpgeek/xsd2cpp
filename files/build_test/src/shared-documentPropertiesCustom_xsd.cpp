@@ -13,6 +13,10 @@ namespace ns_custom_properties {
     // Attribute
 
     // CT_Properties
+    CT_Properties::CT_Properties()
+
+    {
+    }
     CT_Property* CT_Properties::add_property()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -50,7 +54,7 @@ namespace ns_custom_properties {
         {
             if ((*iter)->has_property())
             {
-                (*iter)->get_property().toXmlElem("property", "", _outStream);
+                (*iter)->get_property().toXmlElem("custom_properties:property", "", _outStream);
             }
         }
     }
@@ -69,6 +73,11 @@ namespace ns_custom_properties {
 
 
     // CT_Properties::ChildGroup_1
+    CT_Properties::ChildGroup_1::ChildGroup_1()
+    :m_has_property(false),
+    m_property(NULL)
+    {
+    }
     bool CT_Properties::ChildGroup_1::has_property() const
     {    
     return m_has_property;
@@ -97,6 +106,83 @@ namespace ns_custom_properties {
 CT_Properties* CT_Properties::default_instance_ = NULL;
 
     // CT_Property
+    CT_Property::CT_Property()
+    :m_has_vt_vector(false),
+    m_vt_vector(NULL),
+    m_has_vt_array(false),
+    m_vt_array(NULL),
+    m_has_vt_blob(false),
+    m_vt_blob(""),
+    m_has_vt_oblob(false),
+    m_vt_oblob(""),
+    m_has_vt_empty(false),
+    m_vt_empty(NULL),
+    m_has_vt_null(false),
+    m_vt_null(NULL),
+    m_has_vt_i1(false),
+    m_vt_i1(0),
+    m_has_vt_i2(false),
+    m_vt_i2(0),
+    m_has_vt_i4(false),
+    m_vt_i4(0),
+    m_has_vt_i8(false),
+    m_vt_i8(0),
+    m_has_vt_int(false),
+    m_vt_int(0),
+    m_has_vt_ui1(false),
+    m_vt_ui1(0),
+    m_has_vt_ui2(false),
+    m_vt_ui2(0),
+    m_has_vt_ui4(false),
+    m_vt_ui4(0),
+    m_has_vt_ui8(false),
+    m_vt_ui8(0),
+    m_has_vt_uint(false),
+    m_vt_uint(0),
+    m_has_vt_r4(false),
+    m_vt_r4(0),
+    m_has_vt_r8(false),
+    m_vt_r8(0),
+    m_has_vt_decimal(false),
+    m_vt_decimal(0),
+    m_has_vt_lpstr(false),
+    m_vt_lpstr(""),
+    m_has_vt_lpwstr(false),
+    m_vt_lpwstr(""),
+    m_has_vt_bstr(false),
+    m_vt_bstr(""),
+    m_has_vt_date(false),
+    m_vt_date(""),
+    m_has_vt_filetime(false),
+    m_vt_filetime(""),
+    m_has_vt_bool(false),
+    m_vt_bool(false),
+    m_has_vt_cy(false),
+    m_vt_cy(NULL),
+    m_has_vt_error(false),
+    m_vt_error(NULL),
+    m_has_vt_stream(false),
+    m_vt_stream(""),
+    m_has_vt_ostream(false),
+    m_vt_ostream(""),
+    m_has_vt_storage(false),
+    m_vt_storage(""),
+    m_has_vt_ostorage(false),
+    m_vt_ostorage(""),
+    m_has_vt_vstream(false),
+    m_vt_vstream(NULL),
+    m_has_vt_clsid(false),
+    m_vt_clsid(NULL),
+    m_has_fmtid_attr(false),
+    m_fmtid_attr(NULL),
+    m_has_pid_attr(false),
+    m_pid_attr(0),
+    m_has_name_attr(false),
+    m_name_attr(""),
+    m_has_linkTarget_attr(false),
+    m_linkTarget_attr("")
+    {
+    }
     bool CT_Property::has_vt_vector() const
     {    
     return m_has_vt_vector;
@@ -114,11 +200,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -138,62 +224,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -213,17 +299,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -234,12 +320,12 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
@@ -277,11 +363,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -301,62 +387,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -376,17 +462,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -397,12 +483,12 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
@@ -423,12 +509,12 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     return ns_vt::CT_Array::default_instance();
     }
 
-    bool CT_Property::has_blob() const
+    bool CT_Property::has_vt_blob() const
     {    
-    return m_has_blob;
+    return m_has_vt_blob;
     }
 
-    void CT_Property::set_blob(const XSD::base64Binary_& _blob)
+    void CT_Property::set_vt_blob(const XSD::base64Binary_& _vt_blob)
     {    
     
     m_has_vt_vector = false;
@@ -449,8 +535,8 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -470,62 +556,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -545,17 +631,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -566,30 +652,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_blob = true;
-    m_blob = _blob;
+    m_has_vt_blob = true;
+    m_vt_blob = _vt_blob;
     }
 
-    const XSD::base64Binary_& CT_Property::get_blob() const
+    const XSD::base64Binary_& CT_Property::get_vt_blob() const
     {    
-    return m_blob;
+    return m_vt_blob;
     }
 
-    bool CT_Property::has_oblob() const
+    bool CT_Property::has_vt_oblob() const
     {    
-    return m_has_oblob;
+    return m_has_vt_oblob;
     }
 
-    void CT_Property::set_oblob(const XSD::base64Binary_& _oblob)
+    void CT_Property::set_vt_oblob(const XSD::base64Binary_& _vt_oblob)
     {    
     
     m_has_vt_vector = false;
@@ -610,8 +696,8 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
     m_has_vt_empty = false;
     
@@ -631,62 +717,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -706,17 +792,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -727,22 +813,22 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_oblob = true;
-    m_oblob = _oblob;
+    m_has_vt_oblob = true;
+    m_vt_oblob = _vt_oblob;
     }
 
-    const XSD::base64Binary_& CT_Property::get_oblob() const
+    const XSD::base64Binary_& CT_Property::get_vt_oblob() const
     {    
-    return m_oblob;
+    return m_vt_oblob;
     }
 
     bool CT_Property::has_vt_empty() const
@@ -771,11 +857,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_null = false;
     
@@ -786,62 +872,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -861,17 +947,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -882,12 +968,12 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
@@ -934,11 +1020,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -949,62 +1035,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -1024,17 +1110,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -1045,12 +1131,12 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
@@ -1071,12 +1157,12 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     return ns_vt::CT_Null::default_instance();
     }
 
-    bool CT_Property::has_i1() const
+    bool CT_Property::has_vt_i1() const
     {    
-    return m_has_i1;
+    return m_has_vt_i1;
     }
 
-    void CT_Property::set_i1(const XSD::byte_& _i1)
+    void CT_Property::set_vt_i1(const XSD::byte_& _vt_i1)
     {    
     
     m_has_vt_vector = false;
@@ -1097,11 +1183,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -1121,59 +1207,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -1193,17 +1279,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -1214,30 +1300,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_i1 = true;
-    m_i1 = _i1;
+    m_has_vt_i1 = true;
+    m_vt_i1 = _vt_i1;
     }
 
-    const XSD::byte_& CT_Property::get_i1() const
+    const XSD::byte_& CT_Property::get_vt_i1() const
     {    
-    return m_i1;
+    return m_vt_i1;
     }
 
-    bool CT_Property::has_i2() const
+    bool CT_Property::has_vt_i2() const
     {    
-    return m_has_i2;
+    return m_has_vt_i2;
     }
 
-    void CT_Property::set_i2(const XSD::short_& _i2)
+    void CT_Property::set_vt_i2(const XSD::short_& _vt_i2)
     {    
     
     m_has_vt_vector = false;
@@ -1258,11 +1344,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -1282,59 +1368,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -1354,17 +1440,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -1375,30 +1461,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_i2 = true;
-    m_i2 = _i2;
+    m_has_vt_i2 = true;
+    m_vt_i2 = _vt_i2;
     }
 
-    const XSD::short_& CT_Property::get_i2() const
+    const XSD::short_& CT_Property::get_vt_i2() const
     {    
-    return m_i2;
+    return m_vt_i2;
     }
 
-    bool CT_Property::has_i4() const
+    bool CT_Property::has_vt_i4() const
     {    
-    return m_has_i4;
+    return m_has_vt_i4;
     }
 
-    void CT_Property::set_i4(const XSD::int_& _i4)
+    void CT_Property::set_vt_i4(const XSD::int_& _vt_i4)
     {    
     
     m_has_vt_vector = false;
@@ -1419,11 +1505,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -1443,59 +1529,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -1515,17 +1601,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -1536,30 +1622,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_i4 = true;
-    m_i4 = _i4;
+    m_has_vt_i4 = true;
+    m_vt_i4 = _vt_i4;
     }
 
-    const XSD::int_& CT_Property::get_i4() const
+    const XSD::int_& CT_Property::get_vt_i4() const
     {    
-    return m_i4;
+    return m_vt_i4;
     }
 
-    bool CT_Property::has_i8() const
+    bool CT_Property::has_vt_i8() const
     {    
-    return m_has_i8;
+    return m_has_vt_i8;
     }
 
-    void CT_Property::set_i8(const XSD::long_& _i8)
+    void CT_Property::set_vt_i8(const XSD::long_& _vt_i8)
     {    
     
     m_has_vt_vector = false;
@@ -1580,11 +1666,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -1604,59 +1690,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -1676,17 +1762,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -1697,30 +1783,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_i8 = true;
-    m_i8 = _i8;
+    m_has_vt_i8 = true;
+    m_vt_i8 = _vt_i8;
     }
 
-    const XSD::long_& CT_Property::get_i8() const
+    const XSD::long_& CT_Property::get_vt_i8() const
     {    
-    return m_i8;
+    return m_vt_i8;
     }
 
-    bool CT_Property::has_int() const
+    bool CT_Property::has_vt_int() const
     {    
-    return m_has_int;
+    return m_has_vt_int;
     }
 
-    void CT_Property::set_int(const XSD::int_& _int)
+    void CT_Property::set_vt_int(const XSD::int_& _vt_int)
     {    
     
     m_has_vt_vector = false;
@@ -1741,11 +1827,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -1765,59 +1851,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -1837,17 +1923,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -1858,30 +1944,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_int = true;
-    m_int = _int;
+    m_has_vt_int = true;
+    m_vt_int = _vt_int;
     }
 
-    const XSD::int_& CT_Property::get_int() const
+    const XSD::int_& CT_Property::get_vt_int() const
     {    
-    return m_int;
+    return m_vt_int;
     }
 
-    bool CT_Property::has_ui1() const
+    bool CT_Property::has_vt_ui1() const
     {    
-    return m_has_ui1;
+    return m_has_vt_ui1;
     }
 
-    void CT_Property::set_ui1(const XSD::unsignedByte_& _ui1)
+    void CT_Property::set_vt_ui1(const XSD::unsignedByte_& _vt_ui1)
     {    
     
     m_has_vt_vector = false;
@@ -1902,11 +1988,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -1926,59 +2012,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -1998,17 +2084,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -2019,30 +2105,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_ui1 = true;
-    m_ui1 = _ui1;
+    m_has_vt_ui1 = true;
+    m_vt_ui1 = _vt_ui1;
     }
 
-    const XSD::unsignedByte_& CT_Property::get_ui1() const
+    const XSD::unsignedByte_& CT_Property::get_vt_ui1() const
     {    
-    return m_ui1;
+    return m_vt_ui1;
     }
 
-    bool CT_Property::has_ui2() const
+    bool CT_Property::has_vt_ui2() const
     {    
-    return m_has_ui2;
+    return m_has_vt_ui2;
     }
 
-    void CT_Property::set_ui2(const XSD::unsignedShort_& _ui2)
+    void CT_Property::set_vt_ui2(const XSD::unsignedShort_& _vt_ui2)
     {    
     
     m_has_vt_vector = false;
@@ -2063,11 +2149,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -2087,59 +2173,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -2159,17 +2245,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -2180,30 +2266,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_ui2 = true;
-    m_ui2 = _ui2;
+    m_has_vt_ui2 = true;
+    m_vt_ui2 = _vt_ui2;
     }
 
-    const XSD::unsignedShort_& CT_Property::get_ui2() const
+    const XSD::unsignedShort_& CT_Property::get_vt_ui2() const
     {    
-    return m_ui2;
+    return m_vt_ui2;
     }
 
-    bool CT_Property::has_ui4() const
+    bool CT_Property::has_vt_ui4() const
     {    
-    return m_has_ui4;
+    return m_has_vt_ui4;
     }
 
-    void CT_Property::set_ui4(const XSD::unsignedInt_& _ui4)
+    void CT_Property::set_vt_ui4(const XSD::unsignedInt_& _vt_ui4)
     {    
     
     m_has_vt_vector = false;
@@ -2224,11 +2310,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -2248,59 +2334,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -2320,17 +2406,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -2341,30 +2427,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_ui4 = true;
-    m_ui4 = _ui4;
+    m_has_vt_ui4 = true;
+    m_vt_ui4 = _vt_ui4;
     }
 
-    const XSD::unsignedInt_& CT_Property::get_ui4() const
+    const XSD::unsignedInt_& CT_Property::get_vt_ui4() const
     {    
-    return m_ui4;
+    return m_vt_ui4;
     }
 
-    bool CT_Property::has_ui8() const
+    bool CT_Property::has_vt_ui8() const
     {    
-    return m_has_ui8;
+    return m_has_vt_ui8;
     }
 
-    void CT_Property::set_ui8(const XSD::unsignedLong_& _ui8)
+    void CT_Property::set_vt_ui8(const XSD::unsignedLong_& _vt_ui8)
     {    
     
     m_has_vt_vector = false;
@@ -2385,11 +2471,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -2409,59 +2495,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -2481,17 +2567,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -2502,30 +2588,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_ui8 = true;
-    m_ui8 = _ui8;
+    m_has_vt_ui8 = true;
+    m_vt_ui8 = _vt_ui8;
     }
 
-    const XSD::unsignedLong_& CT_Property::get_ui8() const
+    const XSD::unsignedLong_& CT_Property::get_vt_ui8() const
     {    
-    return m_ui8;
+    return m_vt_ui8;
     }
 
-    bool CT_Property::has_uint() const
+    bool CT_Property::has_vt_uint() const
     {    
-    return m_has_uint;
+    return m_has_vt_uint;
     }
 
-    void CT_Property::set_uint(const XSD::unsignedInt_& _uint)
+    void CT_Property::set_vt_uint(const XSD::unsignedInt_& _vt_uint)
     {    
     
     m_has_vt_vector = false;
@@ -2546,11 +2632,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -2570,59 +2656,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -2642,17 +2728,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -2663,30 +2749,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_uint = true;
-    m_uint = _uint;
+    m_has_vt_uint = true;
+    m_vt_uint = _vt_uint;
     }
 
-    const XSD::unsignedInt_& CT_Property::get_uint() const
+    const XSD::unsignedInt_& CT_Property::get_vt_uint() const
     {    
-    return m_uint;
+    return m_vt_uint;
     }
 
-    bool CT_Property::has_r4() const
+    bool CT_Property::has_vt_r4() const
     {    
-    return m_has_r4;
+    return m_has_vt_r4;
     }
 
-    void CT_Property::set_r4(const XSD::float_& _r4)
+    void CT_Property::set_vt_r4(const XSD::float_& _vt_r4)
     {    
     
     m_has_vt_vector = false;
@@ -2707,11 +2793,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -2731,59 +2817,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -2803,17 +2889,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -2824,30 +2910,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_r4 = true;
-    m_r4 = _r4;
+    m_has_vt_r4 = true;
+    m_vt_r4 = _vt_r4;
     }
 
-    const XSD::float_& CT_Property::get_r4() const
+    const XSD::float_& CT_Property::get_vt_r4() const
     {    
-    return m_r4;
+    return m_vt_r4;
     }
 
-    bool CT_Property::has_r8() const
+    bool CT_Property::has_vt_r8() const
     {    
-    return m_has_r8;
+    return m_has_vt_r8;
     }
 
-    void CT_Property::set_r8(const XSD::double_& _r8)
+    void CT_Property::set_vt_r8(const XSD::double_& _vt_r8)
     {    
     
     m_has_vt_vector = false;
@@ -2868,11 +2954,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -2892,59 +2978,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -2964,17 +3050,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -2985,30 +3071,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_r8 = true;
-    m_r8 = _r8;
+    m_has_vt_r8 = true;
+    m_vt_r8 = _vt_r8;
     }
 
-    const XSD::double_& CT_Property::get_r8() const
+    const XSD::double_& CT_Property::get_vt_r8() const
     {    
-    return m_r8;
+    return m_vt_r8;
     }
 
-    bool CT_Property::has_decimal() const
+    bool CT_Property::has_vt_decimal() const
     {    
-    return m_has_decimal;
+    return m_has_vt_decimal;
     }
 
-    void CT_Property::set_decimal(const XSD::decimal_& _decimal)
+    void CT_Property::set_vt_decimal(const XSD::decimal_& _vt_decimal)
     {    
     
     m_has_vt_vector = false;
@@ -3029,11 +3115,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -3053,59 +3139,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -3125,17 +3211,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -3146,30 +3232,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_decimal = true;
-    m_decimal = _decimal;
+    m_has_vt_decimal = true;
+    m_vt_decimal = _vt_decimal;
     }
 
-    const XSD::decimal_& CT_Property::get_decimal() const
+    const XSD::decimal_& CT_Property::get_vt_decimal() const
     {    
-    return m_decimal;
+    return m_vt_decimal;
     }
 
-    bool CT_Property::has_lpstr() const
+    bool CT_Property::has_vt_lpstr() const
     {    
-    return m_has_lpstr;
+    return m_has_vt_lpstr;
     }
 
-    void CT_Property::set_lpstr(const XSD::string_& _lpstr)
+    void CT_Property::set_vt_lpstr(const XSD::string_& _vt_lpstr)
     {    
     
     m_has_vt_vector = false;
@@ -3190,11 +3276,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -3214,59 +3300,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -3286,17 +3372,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -3307,30 +3393,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_lpstr = true;
-    m_lpstr = _lpstr;
+    m_has_vt_lpstr = true;
+    m_vt_lpstr = _vt_lpstr;
     }
 
-    const XSD::string_& CT_Property::get_lpstr() const
+    const XSD::string_& CT_Property::get_vt_lpstr() const
     {    
-    return m_lpstr;
+    return m_vt_lpstr;
     }
 
-    bool CT_Property::has_lpwstr() const
+    bool CT_Property::has_vt_lpwstr() const
     {    
-    return m_has_lpwstr;
+    return m_has_vt_lpwstr;
     }
 
-    void CT_Property::set_lpwstr(const XSD::string_& _lpwstr)
+    void CT_Property::set_vt_lpwstr(const XSD::string_& _vt_lpwstr)
     {    
     
     m_has_vt_vector = false;
@@ -3351,11 +3437,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -3375,59 +3461,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -3447,17 +3533,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -3468,30 +3554,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_lpwstr = true;
-    m_lpwstr = _lpwstr;
+    m_has_vt_lpwstr = true;
+    m_vt_lpwstr = _vt_lpwstr;
     }
 
-    const XSD::string_& CT_Property::get_lpwstr() const
+    const XSD::string_& CT_Property::get_vt_lpwstr() const
     {    
-    return m_lpwstr;
+    return m_vt_lpwstr;
     }
 
-    bool CT_Property::has_bstr() const
+    bool CT_Property::has_vt_bstr() const
     {    
-    return m_has_bstr;
+    return m_has_vt_bstr;
     }
 
-    void CT_Property::set_bstr(const XSD::string_& _bstr)
+    void CT_Property::set_vt_bstr(const XSD::string_& _vt_bstr)
     {    
     
     m_has_vt_vector = false;
@@ -3512,11 +3598,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -3536,59 +3622,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -3608,17 +3694,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -3629,30 +3715,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_bstr = true;
-    m_bstr = _bstr;
+    m_has_vt_bstr = true;
+    m_vt_bstr = _vt_bstr;
     }
 
-    const XSD::string_& CT_Property::get_bstr() const
+    const XSD::string_& CT_Property::get_vt_bstr() const
     {    
-    return m_bstr;
+    return m_vt_bstr;
     }
 
-    bool CT_Property::has_date() const
+    bool CT_Property::has_vt_date() const
     {    
-    return m_has_date;
+    return m_has_vt_date;
     }
 
-    void CT_Property::set_date(const XSD::dateTime_& _date)
+    void CT_Property::set_vt_date(const XSD::dateTime_& _vt_date)
     {    
     
     m_has_vt_vector = false;
@@ -3673,11 +3759,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -3697,59 +3783,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -3769,17 +3855,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -3790,30 +3876,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_date = true;
-    m_date = _date;
+    m_has_vt_date = true;
+    m_vt_date = _vt_date;
     }
 
-    const XSD::dateTime_& CT_Property::get_date() const
+    const XSD::dateTime_& CT_Property::get_vt_date() const
     {    
-    return m_date;
+    return m_vt_date;
     }
 
-    bool CT_Property::has_filetime() const
+    bool CT_Property::has_vt_filetime() const
     {    
-    return m_has_filetime;
+    return m_has_vt_filetime;
     }
 
-    void CT_Property::set_filetime(const XSD::dateTime_& _filetime)
+    void CT_Property::set_vt_filetime(const XSD::dateTime_& _vt_filetime)
     {    
     
     m_has_vt_vector = false;
@@ -3834,11 +3920,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -3858,59 +3944,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -3930,17 +4016,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -3951,30 +4037,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_filetime = true;
-    m_filetime = _filetime;
+    m_has_vt_filetime = true;
+    m_vt_filetime = _vt_filetime;
     }
 
-    const XSD::dateTime_& CT_Property::get_filetime() const
+    const XSD::dateTime_& CT_Property::get_vt_filetime() const
     {    
-    return m_filetime;
+    return m_vt_filetime;
     }
 
-    bool CT_Property::has_bool() const
+    bool CT_Property::has_vt_bool() const
     {    
-    return m_has_bool;
+    return m_has_vt_bool;
     }
 
-    void CT_Property::set_bool(const XSD::boolean_& _bool)
+    void CT_Property::set_vt_bool(const XSD::boolean_& _vt_bool)
     {    
     
     m_has_vt_vector = false;
@@ -3995,11 +4081,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -4019,59 +4105,59 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
     m_has_vt_cy = false;
     
@@ -4091,17 +4177,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -4112,22 +4198,22 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_bool = true;
-    m_bool = _bool;
+    m_has_vt_bool = true;
+    m_vt_bool = _vt_bool;
     }
 
-    const XSD::boolean_& CT_Property::get_bool() const
+    const XSD::boolean_& CT_Property::get_vt_bool() const
     {    
-    return m_bool;
+    return m_vt_bool;
     }
 
     bool CT_Property::has_vt_cy() const
@@ -4156,11 +4242,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -4180,62 +4266,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_error = false;
     
@@ -4246,17 +4332,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -4267,12 +4353,12 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
@@ -4319,11 +4405,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -4343,62 +4429,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -4409,17 +4495,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -4430,12 +4516,12 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
@@ -4456,12 +4542,12 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     return ns_vt::ST_Error::default_instance();
     }
 
-    bool CT_Property::has_stream() const
+    bool CT_Property::has_vt_stream() const
     {    
-    return m_has_stream;
+    return m_has_vt_stream;
     }
 
-    void CT_Property::set_stream(const XSD::base64Binary_& _stream)
+    void CT_Property::set_vt_stream(const XSD::base64Binary_& _vt_stream)
     {    
     
     m_has_vt_vector = false;
@@ -4482,11 +4568,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -4506,62 +4592,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -4581,14 +4667,14 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -4599,30 +4685,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_stream = true;
-    m_stream = _stream;
+    m_has_vt_stream = true;
+    m_vt_stream = _vt_stream;
     }
 
-    const XSD::base64Binary_& CT_Property::get_stream() const
+    const XSD::base64Binary_& CT_Property::get_vt_stream() const
     {    
-    return m_stream;
+    return m_vt_stream;
     }
 
-    bool CT_Property::has_ostream() const
+    bool CT_Property::has_vt_ostream() const
     {    
-    return m_has_ostream;
+    return m_has_vt_ostream;
     }
 
-    void CT_Property::set_ostream(const XSD::base64Binary_& _ostream)
+    void CT_Property::set_vt_ostream(const XSD::base64Binary_& _vt_ostream)
     {    
     
     m_has_vt_vector = false;
@@ -4643,11 +4729,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -4667,62 +4753,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -4742,14 +4828,14 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -4760,30 +4846,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_ostream = true;
-    m_ostream = _ostream;
+    m_has_vt_ostream = true;
+    m_vt_ostream = _vt_ostream;
     }
 
-    const XSD::base64Binary_& CT_Property::get_ostream() const
+    const XSD::base64Binary_& CT_Property::get_vt_ostream() const
     {    
-    return m_ostream;
+    return m_vt_ostream;
     }
 
-    bool CT_Property::has_storage() const
+    bool CT_Property::has_vt_storage() const
     {    
-    return m_has_storage;
+    return m_has_vt_storage;
     }
 
-    void CT_Property::set_storage(const XSD::base64Binary_& _storage)
+    void CT_Property::set_vt_storage(const XSD::base64Binary_& _vt_storage)
     {    
     
     m_has_vt_vector = false;
@@ -4804,11 +4890,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -4828,62 +4914,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -4903,14 +4989,14 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -4921,30 +5007,30 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_storage = true;
-    m_storage = _storage;
+    m_has_vt_storage = true;
+    m_vt_storage = _vt_storage;
     }
 
-    const XSD::base64Binary_& CT_Property::get_storage() const
+    const XSD::base64Binary_& CT_Property::get_vt_storage() const
     {    
-    return m_storage;
+    return m_vt_storage;
     }
 
-    bool CT_Property::has_ostorage() const
+    bool CT_Property::has_vt_ostorage() const
     {    
-    return m_has_ostorage;
+    return m_has_vt_ostorage;
     }
 
-    void CT_Property::set_ostorage(const XSD::base64Binary_& _ostorage)
+    void CT_Property::set_vt_ostorage(const XSD::base64Binary_& _vt_ostorage)
     {    
     
     m_has_vt_vector = false;
@@ -4965,11 +5051,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -4989,62 +5075,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -5064,14 +5150,14 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -5082,22 +5168,22 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
-    m_has_ostorage = true;
-    m_ostorage = _ostorage;
+    m_has_vt_ostorage = true;
+    m_vt_ostorage = _vt_ostorage;
     }
 
-    const XSD::base64Binary_& CT_Property::get_ostorage() const
+    const XSD::base64Binary_& CT_Property::get_vt_ostorage() const
     {    
-    return m_ostorage;
+    return m_vt_ostorage;
     }
 
     bool CT_Property::has_vt_vstream() const
@@ -5126,11 +5212,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -5150,62 +5236,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -5225,24 +5311,24 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
-    m_has_s_clsid = false;
+    m_has_vt_clsid = false;
     
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_vt_clsid;
+        m_vt_clsid = NULL;
     }
     ;
     
@@ -5263,12 +5349,12 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     return ns_vt::CT_Vstream::default_instance();
     }
 
-    bool CT_Property::has_s_clsid() const
+    bool CT_Property::has_vt_clsid() const
     {    
-    return m_has_s_clsid;
+    return m_has_vt_clsid;
     }
 
-    ns_s::ST_Guid* CT_Property::mutable_s_clsid()
+    ns_s::ST_Guid* CT_Property::mutable_vt_clsid()
     {    
     
     m_has_vt_vector = false;
@@ -5289,11 +5375,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_blob = false;
-    m_blob.clear();;
+    m_has_vt_blob = false;
+    m_vt_blob.clear();;
     
-    m_has_oblob = false;
-    m_oblob.clear();;
+    m_has_vt_oblob = false;
+    m_vt_oblob.clear();;
     
     m_has_vt_empty = false;
     
@@ -5313,62 +5399,62 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_i1 = false;
-    m_i1 = 0;;
+    m_has_vt_i1 = false;
+    m_vt_i1 = 0;;
     
-    m_has_i2 = false;
-    m_i2 = 0;;
+    m_has_vt_i2 = false;
+    m_vt_i2 = 0;;
     
-    m_has_i4 = false;
-    m_i4 = 0;;
+    m_has_vt_i4 = false;
+    m_vt_i4 = 0;;
     
-    m_has_i8 = false;
-    m_i8 = 0;;
+    m_has_vt_i8 = false;
+    m_vt_i8 = 0;;
     
-    m_has_int = false;
-    m_int = 0;;
+    m_has_vt_int = false;
+    m_vt_int = 0;;
     
-    m_has_ui1 = false;
-    m_ui1 = 0;;
+    m_has_vt_ui1 = false;
+    m_vt_ui1 = 0;;
     
-    m_has_ui2 = false;
-    m_ui2 = 0;;
+    m_has_vt_ui2 = false;
+    m_vt_ui2 = 0;;
     
-    m_has_ui4 = false;
-    m_ui4 = 0;;
+    m_has_vt_ui4 = false;
+    m_vt_ui4 = 0;;
     
-    m_has_ui8 = false;
-    m_ui8 = 0;;
+    m_has_vt_ui8 = false;
+    m_vt_ui8 = 0;;
     
-    m_has_uint = false;
-    m_uint = 0;;
+    m_has_vt_uint = false;
+    m_vt_uint = 0;;
     
-    m_has_r4 = false;
-    m_r4 = 0;;
+    m_has_vt_r4 = false;
+    m_vt_r4 = 0;;
     
-    m_has_r8 = false;
-    m_r8 = 0;;
+    m_has_vt_r8 = false;
+    m_vt_r8 = 0;;
     
-    m_has_decimal = false;
-    m_decimal = 0;;
+    m_has_vt_decimal = false;
+    m_vt_decimal = 0;;
     
-    m_has_lpstr = false;
-    m_lpstr.clear();;
+    m_has_vt_lpstr = false;
+    m_vt_lpstr.clear();;
     
-    m_has_lpwstr = false;
-    m_lpwstr.clear();;
+    m_has_vt_lpwstr = false;
+    m_vt_lpwstr.clear();;
     
-    m_has_bstr = false;
-    m_bstr.clear();;
+    m_has_vt_bstr = false;
+    m_vt_bstr.clear();;
     
-    m_has_date = false;
-    m_date.clear();;
+    m_has_vt_date = false;
+    m_vt_date.clear();;
     
-    m_has_filetime = false;
-    m_filetime.clear();;
+    m_has_vt_filetime = false;
+    m_vt_filetime.clear();;
     
-    m_has_bool = false;
-    m_bool = false;;
+    m_has_vt_bool = false;
+    m_vt_bool = false;;
     
     m_has_vt_cy = false;
     
@@ -5388,17 +5474,17 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_stream = false;
-    m_stream.clear();;
+    m_has_vt_stream = false;
+    m_vt_stream.clear();;
     
-    m_has_ostream = false;
-    m_ostream.clear();;
+    m_has_vt_ostream = false;
+    m_vt_ostream.clear();;
     
-    m_has_storage = false;
-    m_storage.clear();;
+    m_has_vt_storage = false;
+    m_vt_storage.clear();;
     
-    m_has_ostorage = false;
-    m_ostorage.clear();;
+    m_has_vt_ostorage = false;
+    m_vt_ostorage.clear();;
     
     m_has_vt_vstream = false;
     
@@ -5409,31 +5495,31 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = true;
-    if (!m_s_clsid)
+    m_has_vt_clsid = true;
+    if (!m_vt_clsid)
     {
-        m_s_clsid = new ns_s::ST_Guid();
+        m_vt_clsid = new ns_s::ST_Guid();
     }
-    return m_s_clsid;
+    return m_vt_clsid;
     }
 
-    const ns_s::ST_Guid& CT_Property::get_s_clsid() const
+    const ns_s::ST_Guid& CT_Property::get_vt_clsid() const
     {    
-    if (m_s_clsid)
+    if (m_vt_clsid)
     {
-        return *m_s_clsid;
+        return *m_vt_clsid;
     }
     return ns_s::ST_Guid::default_instance();
     }
 
     void CT_Property::clear()
     {    
-    m_has_s_fmtid_attr = false;
+    m_has_fmtid_attr = false;
     
-    if (m_s_fmtid_attr)
+    if (m_fmtid_attr)
     {
-        delete m_s_fmtid_attr;
-        m_s_fmtid_attr = NULL;
+        delete m_fmtid_attr;
+        m_fmtid_attr = NULL;
     }
     
     
@@ -5456,9 +5542,9 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_fmtid_attr)
+    if (m_has_fmtid_attr)
     {
-        m_s_fmtid_attr->toXmlAttr("fmtid", _outStream);
+        m_fmtid_attr->toXmlAttr("fmtid", _outStream);
     }
     
     
@@ -5491,14 +5577,14 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
         m_vt_array->toXmlElem("vt:array", "", _outStream);;
     }
     
-    if (m_has_blob)
+    if (m_has_vt_blob)
     {
-        _outStream << "<blob>" << m_blob << "</blob>";;
+        _outStream << "<vt:blob>" << m_vt_blob << "</vt:blob>";;
     }
     
-    if (m_has_oblob)
+    if (m_has_vt_oblob)
     {
-        _outStream << "<oblob>" << m_oblob << "</oblob>";;
+        _outStream << "<vt:oblob>" << m_vt_oblob << "</vt:oblob>";;
     }
     
     if (m_has_vt_empty)
@@ -5511,99 +5597,99 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
         m_vt_null->toXmlElem("vt:null", "", _outStream);;
     }
     
-    if (m_has_i1)
+    if (m_has_vt_i1)
     {
-        _outStream << "<i1>" << m_i1 << "</i1>";;
+        _outStream << "<vt:i1>" << m_vt_i1 << "</vt:i1>";;
     }
     
-    if (m_has_i2)
+    if (m_has_vt_i2)
     {
-        _outStream << "<i2>" << m_i2 << "</i2>";;
+        _outStream << "<vt:i2>" << m_vt_i2 << "</vt:i2>";;
     }
     
-    if (m_has_i4)
+    if (m_has_vt_i4)
     {
-        _outStream << "<i4>" << m_i4 << "</i4>";;
+        _outStream << "<vt:i4>" << m_vt_i4 << "</vt:i4>";;
     }
     
-    if (m_has_i8)
+    if (m_has_vt_i8)
     {
-        _outStream << "<i8>" << m_i8 << "</i8>";;
+        _outStream << "<vt:i8>" << m_vt_i8 << "</vt:i8>";;
     }
     
-    if (m_has_int)
+    if (m_has_vt_int)
     {
-        _outStream << "<int>" << m_int << "</int>";;
+        _outStream << "<vt:int>" << m_vt_int << "</vt:int>";;
     }
     
-    if (m_has_ui1)
+    if (m_has_vt_ui1)
     {
-        _outStream << "<ui1>" << m_ui1 << "</ui1>";;
+        _outStream << "<vt:ui1>" << m_vt_ui1 << "</vt:ui1>";;
     }
     
-    if (m_has_ui2)
+    if (m_has_vt_ui2)
     {
-        _outStream << "<ui2>" << m_ui2 << "</ui2>";;
+        _outStream << "<vt:ui2>" << m_vt_ui2 << "</vt:ui2>";;
     }
     
-    if (m_has_ui4)
+    if (m_has_vt_ui4)
     {
-        _outStream << "<ui4>" << m_ui4 << "</ui4>";;
+        _outStream << "<vt:ui4>" << m_vt_ui4 << "</vt:ui4>";;
     }
     
-    if (m_has_ui8)
+    if (m_has_vt_ui8)
     {
-        _outStream << "<ui8>" << m_ui8 << "</ui8>";;
+        _outStream << "<vt:ui8>" << m_vt_ui8 << "</vt:ui8>";;
     }
     
-    if (m_has_uint)
+    if (m_has_vt_uint)
     {
-        _outStream << "<uint>" << m_uint << "</uint>";;
+        _outStream << "<vt:uint>" << m_vt_uint << "</vt:uint>";;
     }
     
-    if (m_has_r4)
+    if (m_has_vt_r4)
     {
-        _outStream << "<r4>" << m_r4 << "</r4>";;
+        _outStream << "<vt:r4>" << m_vt_r4 << "</vt:r4>";;
     }
     
-    if (m_has_r8)
+    if (m_has_vt_r8)
     {
-        _outStream << "<r8>" << m_r8 << "</r8>";;
+        _outStream << "<vt:r8>" << m_vt_r8 << "</vt:r8>";;
     }
     
-    if (m_has_decimal)
+    if (m_has_vt_decimal)
     {
-        _outStream << "<decimal>" << m_decimal << "</decimal>";;
+        _outStream << "<vt:decimal>" << m_vt_decimal << "</vt:decimal>";;
     }
     
-    if (m_has_lpstr)
+    if (m_has_vt_lpstr)
     {
-        _outStream << "<lpstr>" << m_lpstr << "</lpstr>";;
+        _outStream << "<vt:lpstr>" << m_vt_lpstr << "</vt:lpstr>";;
     }
     
-    if (m_has_lpwstr)
+    if (m_has_vt_lpwstr)
     {
-        _outStream << "<lpwstr>" << m_lpwstr << "</lpwstr>";;
+        _outStream << "<vt:lpwstr>" << m_vt_lpwstr << "</vt:lpwstr>";;
     }
     
-    if (m_has_bstr)
+    if (m_has_vt_bstr)
     {
-        _outStream << "<bstr>" << m_bstr << "</bstr>";;
+        _outStream << "<vt:bstr>" << m_vt_bstr << "</vt:bstr>";;
     }
     
-    if (m_has_date)
+    if (m_has_vt_date)
     {
-        _outStream << "<date>" << m_date << "</date>";;
+        _outStream << "<vt:date>" << m_vt_date << "</vt:date>";;
     }
     
-    if (m_has_filetime)
+    if (m_has_vt_filetime)
     {
-        _outStream << "<filetime>" << m_filetime << "</filetime>";;
+        _outStream << "<vt:filetime>" << m_vt_filetime << "</vt:filetime>";;
     }
     
-    if (m_has_bool)
+    if (m_has_vt_bool)
     {
-        _outStream << "<bool>" << m_bool << "</bool>";;
+        _outStream << "<vt:bool>" << m_vt_bool << "</vt:bool>";;
     }
     
     if (m_has_vt_cy)
@@ -5616,24 +5702,24 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
         _outStream << "<vt:error>" << m_vt_error->toString() << "</vt:error>";;
     }
     
-    if (m_has_stream)
+    if (m_has_vt_stream)
     {
-        _outStream << "<stream>" << m_stream << "</stream>";;
+        _outStream << "<vt:stream>" << m_vt_stream << "</vt:stream>";;
     }
     
-    if (m_has_ostream)
+    if (m_has_vt_ostream)
     {
-        _outStream << "<ostream>" << m_ostream << "</ostream>";;
+        _outStream << "<vt:ostream>" << m_vt_ostream << "</vt:ostream>";;
     }
     
-    if (m_has_storage)
+    if (m_has_vt_storage)
     {
-        _outStream << "<storage>" << m_storage << "</storage>";;
+        _outStream << "<vt:storage>" << m_vt_storage << "</vt:storage>";;
     }
     
-    if (m_has_ostorage)
+    if (m_has_vt_ostorage)
     {
-        _outStream << "<ostorage>" << m_ostorage << "</ostorage>";;
+        _outStream << "<vt:ostorage>" << m_vt_ostorage << "</vt:ostorage>";;
     }
     
     if (m_has_vt_vstream)
@@ -5641,9 +5727,9 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
         m_vt_vstream->toXmlElem("vt:vstream", "", _outStream);;
     }
     
-    if (m_has_s_clsid)
+    if (m_has_vt_clsid)
     {
-        _outStream << "<s:clsid>" << m_s_clsid->toString() << "</s:clsid>";;
+        _outStream << "<vt:clsid>" << m_vt_clsid->toString() << "</vt:clsid>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -5658,22 +5744,22 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     return *CT_Property::default_instance_;
     }
 
-    bool CT_Property::has_s_fmtid_attr() const
+    bool CT_Property::has_fmtid_attr() const
     {    
-    return m_has_s_fmtid_attr;
+    return m_has_fmtid_attr;
     }
 
-    void CT_Property::set_s_fmtid_attr(const ns_s::ST_Guid& _s_fmtid_attr)
+    void CT_Property::set_fmtid_attr(const ns_s::ST_Guid& _fmtid_attr)
     {    
-    m_has_s_fmtid_attr = true;
-    m_s_fmtid_attr = new ns_s::ST_Guid(_s_fmtid_attr);
+    m_has_fmtid_attr = true;
+    m_fmtid_attr = new ns_s::ST_Guid(_fmtid_attr);
     }
 
-    const ns_s::ST_Guid& CT_Property::get_s_fmtid_attr() const
+    const ns_s::ST_Guid& CT_Property::get_fmtid_attr() const
     {    
-    if (m_s_fmtid_attr)
+    if (m_fmtid_attr)
     {
-        return *m_s_fmtid_attr;
+        return *m_fmtid_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -5729,6 +5815,10 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
 CT_Property* CT_Property::default_instance_ = NULL;
 
     // Properties_element
+    Properties_element::Properties_element()
+
+    {
+    }
     CT_Property* Properties_element::add_property()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -5751,7 +5841,7 @@ CT_Property* CT_Property::default_instance_ = NULL;
 
     void Properties_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<Properties";
+    _outStream << "<custom_properties:Properties";
     
     _outStream << " " << "xmlns:custom_properties=\"http://schemas.openxmlformats.org/officeDocument/2006/custom-properties\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -5765,12 +5855,12 @@ CT_Property* CT_Property::default_instance_ = NULL;
         {
             if ((*iter)->has_property())
             {
-                (*iter)->get_property().toXmlElem("property", "", _outStream);
+                (*iter)->get_property().toXmlElem("custom_properties:property", "", _outStream);
             }
         }
     }
     
-    _outStream << "</Properties>";
+    _outStream << "</custom_properties:Properties>";
     }
 
     const Properties_element& Properties_element::default_instance()
@@ -5784,6 +5874,11 @@ CT_Property* CT_Property::default_instance_ = NULL;
 
 
     // Properties_element::ChildGroup_1
+    Properties_element::ChildGroup_1::ChildGroup_1()
+    :m_has_property(false),
+    m_property(NULL)
+    {
+    }
     bool Properties_element::ChildGroup_1::has_property() const
     {    
     return m_has_property;

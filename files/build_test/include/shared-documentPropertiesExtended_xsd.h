@@ -34,6 +34,7 @@ namespace ns_extended_properties {
     class CT_Properties: public XSD::ComplexType
     {
     public:
+        CT_Properties();
         bool has_Template() const;
         void set_Template(const XSD::string_& _Template);
         const XSD::string_& get_Template() const;
@@ -180,6 +181,7 @@ namespace ns_extended_properties {
     class CT_VectorVariant: public XSD::ComplexType
     {
     public:
+        CT_VectorVariant();
         bool has_vt_vector() const;
         ns_vt::CT_Vector* mutable_vt_vector();
         const ns_vt::CT_Vector& get_vt_vector() const;
@@ -196,6 +198,7 @@ namespace ns_extended_properties {
     class CT_VectorLpstr: public XSD::ComplexType
     {
     public:
+        CT_VectorLpstr();
         bool has_vt_vector() const;
         ns_vt::CT_Vector* mutable_vt_vector();
         const ns_vt::CT_Vector& get_vt_vector() const;
@@ -212,22 +215,24 @@ namespace ns_extended_properties {
     class CT_DigSigBlob: public XSD::ComplexType
     {
     public:
-        bool has_blob() const;
-        void set_blob(const XSD::base64Binary_& _blob);
-        const XSD::base64Binary_& get_blob() const;
+        CT_DigSigBlob();
+        bool has_vt_blob() const;
+        void set_vt_blob(const XSD::base64Binary_& _vt_blob);
+        const XSD::base64Binary_& get_vt_blob() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DigSigBlob& default_instance();
     protected:
     private:
-        bool m_has_blob;
-        XSD::base64Binary_ m_blob;
+        bool m_has_vt_blob;
+        XSD::base64Binary_ m_vt_blob;
         static CT_DigSigBlob* default_instance_;
     };
 
     class Properties_element: public Element
     {
     public:
+        Properties_element();
         bool has_Template() const;
         void set_Template(const XSD::string_& _Template);
         const XSD::string_& get_Template() const;

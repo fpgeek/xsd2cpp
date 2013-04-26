@@ -261,6 +261,13 @@ ST_PtType* ST_PtType::default_instance_ = NULL;
 ST_CxnType* ST_CxnType::default_instance_ = NULL;
 
     // ST_LayoutShapeType
+    ST_LayoutShapeType::ST_LayoutShapeType()
+    :m_has_ST_ShapeType(false),
+    m_ST_ShapeType(NULL),
+    m_has_ST_OutputShapeType(false),
+    m_ST_OutputShapeType(NULL)
+    {
+    }
     bool ST_LayoutShapeType::has_ST_ShapeType() const
     {    
     return m_has_ST_ShapeType;
@@ -386,7 +393,7 @@ ST_LayoutShapeType* ST_LayoutShapeType::default_instance_ = NULL;
     :m_has_unsignedInt(true)
     {
     
-    set_unsignedInt(m_unsignedInt);
+    set_unsignedInt(_unsignedInt);
     }
     bool ST_Index1::has_unsignedInt() const
     {    
@@ -438,6 +445,81 @@ ST_LayoutShapeType* ST_LayoutShapeType::default_instance_ = NULL;
 ST_Index1* ST_Index1::default_instance_ = NULL;
 
     // ST_ParameterVal
+    ST_ParameterVal::ST_ParameterVal()
+    :m_has_ST_DiagramHorizontalAlignment(false),
+    m_ST_DiagramHorizontalAlignment(NULL),
+    m_has_ST_VerticalAlignment(false),
+    m_ST_VerticalAlignment(NULL),
+    m_has_ST_ChildDirection(false),
+    m_ST_ChildDirection(NULL),
+    m_has_ST_ChildAlignment(false),
+    m_ST_ChildAlignment(NULL),
+    m_has_ST_SecondaryChildAlignment(false),
+    m_ST_SecondaryChildAlignment(NULL),
+    m_has_ST_LinearDirection(false),
+    m_ST_LinearDirection(NULL),
+    m_has_ST_SecondaryLinearDirection(false),
+    m_ST_SecondaryLinearDirection(NULL),
+    m_has_ST_StartingElement(false),
+    m_ST_StartingElement(NULL),
+    m_has_ST_BendPoint(false),
+    m_ST_BendPoint(NULL),
+    m_has_ST_ConnectorRouting(false),
+    m_ST_ConnectorRouting(NULL),
+    m_has_ST_ArrowheadStyle(false),
+    m_ST_ArrowheadStyle(NULL),
+    m_has_ST_ConnectorDimension(false),
+    m_ST_ConnectorDimension(NULL),
+    m_has_ST_RotationPath(false),
+    m_ST_RotationPath(NULL),
+    m_has_ST_CenterShapeMapping(false),
+    m_ST_CenterShapeMapping(NULL),
+    m_has_ST_NodeHorizontalAlignment(false),
+    m_ST_NodeHorizontalAlignment(NULL),
+    m_has_ST_NodeVerticalAlignment(false),
+    m_ST_NodeVerticalAlignment(NULL),
+    m_has_ST_FallbackDimension(false),
+    m_ST_FallbackDimension(NULL),
+    m_has_ST_TextDirection(false),
+    m_ST_TextDirection(NULL),
+    m_has_ST_PyramidAccentPosition(false),
+    m_ST_PyramidAccentPosition(NULL),
+    m_has_ST_PyramidAccentTextMargin(false),
+    m_ST_PyramidAccentTextMargin(NULL),
+    m_has_ST_TextBlockDirection(false),
+    m_ST_TextBlockDirection(NULL),
+    m_has_ST_TextAnchorHorizontal(false),
+    m_ST_TextAnchorHorizontal(NULL),
+    m_has_ST_TextAnchorVertical(false),
+    m_ST_TextAnchorVertical(NULL),
+    m_has_ST_DiagramTextAlignment(false),
+    m_ST_DiagramTextAlignment(NULL),
+    m_has_ST_AutoTextRotation(false),
+    m_ST_AutoTextRotation(NULL),
+    m_has_ST_GrowDirection(false),
+    m_ST_GrowDirection(NULL),
+    m_has_ST_FlowDirection(false),
+    m_ST_FlowDirection(NULL),
+    m_has_ST_ContinueDirection(false),
+    m_ST_ContinueDirection(NULL),
+    m_has_ST_Breakpoint(false),
+    m_ST_Breakpoint(NULL),
+    m_has_ST_Offset(false),
+    m_ST_Offset(NULL),
+    m_has_ST_HierarchyAlignment(false),
+    m_ST_HierarchyAlignment(NULL),
+    m_has_int(false),
+    m_int(0),
+    m_has_double(false),
+    m_double(0),
+    m_has_boolean(false),
+    m_boolean(false),
+    m_has_string(false),
+    m_string(""),
+    m_has_ST_ConnectorPoint(false),
+    m_ST_ConnectorPoint(NULL)
+    {
+    }
     bool ST_ParameterVal::has_ST_DiagramHorizontalAlignment() const
     {    
     return m_has_ST_DiagramHorizontalAlignment;
@@ -3340,6 +3422,13 @@ ST_Index1* ST_Index1::default_instance_ = NULL;
 ST_ParameterVal* ST_ParameterVal::default_instance_ = NULL;
 
     // ST_ModelId
+    ST_ModelId::ST_ModelId()
+    :m_has_int(false),
+    m_int(0),
+    m_has_ST_Guid(false),
+    m_ST_Guid(NULL)
+    {
+    }
     bool ST_ModelId::has_int() const
     {    
     return m_has_int;
@@ -3448,6 +3537,13 @@ ST_ParameterVal* ST_ParameterVal::default_instance_ = NULL;
 ST_ModelId* ST_ModelId::default_instance_ = NULL;
 
     // ST_PrSetCustVal
+    ST_PrSetCustVal::ST_PrSetCustVal()
+    :m_has_ST_Percentage(false),
+    m_ST_Percentage(NULL),
+    m_has_int(false),
+    m_int(0)
+    {
+    }
     bool ST_PrSetCustVal::has_ST_Percentage() const
     {    
     return m_has_ST_Percentage;
@@ -3810,7 +3906,7 @@ ST_AnimLvlStr* ST_AnimLvlStr::default_instance_ = NULL;
     :m_has_int(true)
     {
     
-    set_int(m_int);
+    set_int(_int);
     }
     bool ST_NodeCount::has_int() const
     {    
@@ -4070,7 +4166,7 @@ ST_AxisType* ST_AxisType::default_instance_ = NULL;
     :m_has_ENTITIES(true)
     {
     
-    set_ENTITIES(m_ENTITIES);
+    set_ENTITIES(_ENTITIES);
     }
     bool ST_AxisTypes::has_ENTITIES() const
     {    
@@ -4503,7 +4599,7 @@ ST_ElementType* ST_ElementType::default_instance_ = NULL;
     :m_has_ENTITIES(true)
     {
     
-    set_ENTITIES(m_ENTITIES);
+    set_ENTITIES(_ENTITIES);
     }
     bool ST_ElementTypes::has_ENTITIES() const
     {    
@@ -4676,7 +4772,7 @@ ST_ParameterId* ST_ParameterId::default_instance_ = NULL;
     :m_has_ENTITIES(true)
     {
     
-    set_ENTITIES(m_ENTITIES);
+    set_ENTITIES(_ENTITIES);
     }
     bool ST_Ints::has_ENTITIES() const
     {    
@@ -4736,7 +4832,7 @@ ST_Ints* ST_Ints::default_instance_ = NULL;
     :m_has_ENTITIES(true)
     {
     
-    set_ENTITIES(m_ENTITIES);
+    set_ENTITIES(_ENTITIES);
     }
     bool ST_UnsignedInts::has_ENTITIES() const
     {    
@@ -4796,7 +4892,7 @@ ST_UnsignedInts* ST_UnsignedInts::default_instance_ = NULL;
     :m_has_ENTITIES(true)
     {
     
-    set_ENTITIES(m_ENTITIES);
+    set_ENTITIES(_ENTITIES);
     }
     bool ST_Booleans::has_ENTITIES() const
     {    
@@ -6947,6 +7043,23 @@ ST_Offset* ST_Offset::default_instance_ = NULL;
 ST_HierarchyAlignment* ST_HierarchyAlignment::default_instance_ = NULL;
 
     // ST_FunctionValue
+    ST_FunctionValue::ST_FunctionValue()
+    :m_has_int(false),
+    m_int(0),
+    m_has_boolean(false),
+    m_boolean(false),
+    m_has_ST_Direction(false),
+    m_ST_Direction(NULL),
+    m_has_ST_HierBranchStyle(false),
+    m_ST_HierBranchStyle(NULL),
+    m_has_ST_AnimOneStr(false),
+    m_ST_AnimOneStr(NULL),
+    m_has_ST_AnimLvlStr(false),
+    m_ST_AnimLvlStr(NULL),
+    m_has_ST_ResizeHandlesStr(false),
+    m_ST_ResizeHandlesStr(NULL)
+    {
+    }
     bool ST_FunctionValue::has_int() const
     {    
     return m_has_int;
@@ -7381,6 +7494,11 @@ ST_FunctionValue* ST_FunctionValue::default_instance_ = NULL;
 ST_VariableType* ST_VariableType::default_instance_ = NULL;
 
     // ST_FunctionArgument
+    ST_FunctionArgument::ST_FunctionArgument()
+    :m_has_ST_VariableType(false),
+    m_ST_VariableType(NULL)
+    {
+    }
     bool ST_FunctionArgument::has_ST_VariableType() const
     {    
     return m_has_ST_VariableType;
@@ -7510,6 +7628,13 @@ ST_FunctionArgument* ST_FunctionArgument::default_instance_ = NULL;
 ST_OutputShapeType* ST_OutputShapeType::default_instance_ = NULL;
 
     // CT_CTName
+    CT_CTName::CT_CTName()
+    :m_has_lang_attr(false),
+    m_lang_attr(""),
+    m_has_val_attr(false),
+    m_val_attr("")
+    {
+    }
     void CT_CTName::clear()
     {    
     m_has_lang_attr = false;
@@ -7588,6 +7713,13 @@ ST_OutputShapeType* ST_OutputShapeType::default_instance_ = NULL;
 CT_CTName* CT_CTName::default_instance_ = NULL;
 
     // CT_CTDescription
+    CT_CTDescription::CT_CTDescription()
+    :m_has_lang_attr(false),
+    m_lang_attr(""),
+    m_has_val_attr(false),
+    m_val_attr("")
+    {
+    }
     void CT_CTDescription::clear()
     {    
     m_has_lang_attr = false;
@@ -7666,6 +7798,13 @@ CT_CTName* CT_CTName::default_instance_ = NULL;
 CT_CTDescription* CT_CTDescription::default_instance_ = NULL;
 
     // CT_CTCategory
+    CT_CTCategory::CT_CTCategory()
+    :m_has_type_attr(false),
+    m_type_attr(""),
+    m_has_pri_attr(false),
+    m_pri_attr(0)
+    {
+    }
     void CT_CTCategory::clear()
     {    
     m_has_type_attr = false;
@@ -7744,6 +7883,10 @@ CT_CTDescription* CT_CTDescription::default_instance_ = NULL;
 CT_CTCategory* CT_CTCategory::default_instance_ = NULL;
 
     // CT_CTCategories
+    CT_CTCategories::CT_CTCategories()
+
+    {
+    }
     CT_CTCategory* CT_CTCategories::add_cat()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -7781,7 +7924,7 @@ CT_CTCategory* CT_CTCategory::default_instance_ = NULL;
         {
             if ((*iter)->has_cat())
             {
-                (*iter)->get_cat().toXmlElem("cat", "", _outStream);
+                (*iter)->get_cat().toXmlElem("diagram:cat", "", _outStream);
             }
         }
     }
@@ -7800,6 +7943,11 @@ CT_CTCategory* CT_CTCategory::default_instance_ = NULL;
 
 
     // CT_CTCategories::ChildGroup_1
+    CT_CTCategories::ChildGroup_1::ChildGroup_1()
+    :m_has_cat(false),
+    m_cat(NULL)
+    {
+    }
     bool CT_CTCategories::ChildGroup_1::has_cat() const
     {    
     return m_has_cat;
@@ -7828,6 +7976,13 @@ CT_CTCategory* CT_CTCategory::default_instance_ = NULL;
 CT_CTCategories* CT_CTCategories::default_instance_ = NULL;
 
     // CT_Colors
+    CT_Colors::CT_Colors()
+    :m_has_meth_attr(false),
+    m_meth_attr(NULL),
+    m_has_hueDir_attr(false),
+    m_hueDir_attr(NULL)
+    {
+    }
     ns_a::CT_ScRgbColor* CT_Colors::add_a_scrgbClr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -8013,6 +8168,21 @@ CT_CTCategories* CT_CTCategories::default_instance_ = NULL;
 
 
     // CT_Colors::ChildGroup_1
+    CT_Colors::ChildGroup_1::ChildGroup_1()
+    :m_has_a_scrgbClr(false),
+    m_a_scrgbClr(NULL),
+    m_has_a_srgbClr(false),
+    m_a_srgbClr(NULL),
+    m_has_a_hslClr(false),
+    m_a_hslClr(NULL),
+    m_has_a_sysClr(false),
+    m_a_sysClr(NULL),
+    m_has_a_schemeClr(false),
+    m_a_schemeClr(NULL),
+    m_has_a_prstClr(false),
+    m_a_prstClr(NULL)
+    {
+    }
     bool CT_Colors::ChildGroup_1::has_a_scrgbClr() const
     {    
     return m_has_a_scrgbClr;
@@ -8436,6 +8606,25 @@ CT_CTCategories* CT_CTCategories::default_instance_ = NULL;
 CT_Colors* CT_Colors::default_instance_ = NULL;
 
     // CT_CTStyleLabel
+    CT_CTStyleLabel::CT_CTStyleLabel()
+    :m_has_fillClrLst(false),
+    m_fillClrLst(NULL),
+    m_has_linClrLst(false),
+    m_linClrLst(NULL),
+    m_has_effectClrLst(false),
+    m_effectClrLst(NULL),
+    m_has_txLinClrLst(false),
+    m_txLinClrLst(NULL),
+    m_has_txFillClrLst(false),
+    m_txFillClrLst(NULL),
+    m_has_txEffectClrLst(false),
+    m_txEffectClrLst(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr("")
+    {
+    }
     bool CT_CTStyleLabel::has_fillClrLst() const
     {    
     return m_has_fillClrLst;
@@ -8580,26 +8769,26 @@ CT_Colors* CT_Colors::default_instance_ = NULL;
     return CT_Colors::default_instance();
     }
 
-    bool CT_CTStyleLabel::has_a_extLst() const
+    bool CT_CTStyleLabel::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_CTStyleLabel::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_CTStyleLabel::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_CTStyleLabel::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_CTStyleLabel::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -8628,37 +8817,37 @@ CT_Colors* CT_Colors::default_instance_ = NULL;
             
     if (m_has_fillClrLst)
     {
-        m_fillClrLst->toXmlElem("fillClrLst", "", _outStream);;
+        m_fillClrLst->toXmlElem("diagram:fillClrLst", "", _outStream);;
     }
     
     if (m_has_linClrLst)
     {
-        m_linClrLst->toXmlElem("linClrLst", "", _outStream);;
+        m_linClrLst->toXmlElem("diagram:linClrLst", "", _outStream);;
     }
     
     if (m_has_effectClrLst)
     {
-        m_effectClrLst->toXmlElem("effectClrLst", "", _outStream);;
+        m_effectClrLst->toXmlElem("diagram:effectClrLst", "", _outStream);;
     }
     
     if (m_has_txLinClrLst)
     {
-        m_txLinClrLst->toXmlElem("txLinClrLst", "", _outStream);;
+        m_txLinClrLst->toXmlElem("diagram:txLinClrLst", "", _outStream);;
     }
     
     if (m_has_txFillClrLst)
     {
-        m_txFillClrLst->toXmlElem("txFillClrLst", "", _outStream);;
+        m_txFillClrLst->toXmlElem("diagram:txFillClrLst", "", _outStream);;
     }
     
     if (m_has_txEffectClrLst)
     {
-        m_txEffectClrLst->toXmlElem("txEffectClrLst", "", _outStream);;
+        m_txEffectClrLst->toXmlElem("diagram:txEffectClrLst", "", _outStream);;
     }
     
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -8692,6 +8881,13 @@ CT_Colors* CT_Colors::default_instance_ = NULL;
 CT_CTStyleLabel* CT_CTStyleLabel::default_instance_ = NULL;
 
     // CT_ColorTransform
+    CT_ColorTransform::CT_ColorTransform()
+    :m_has_uniqueId_attr(false),
+    m_uniqueId_attr(""),
+    m_has_minVer_attr(false),
+    m_minVer_attr("")
+    {
+    }
     CT_CTName* CT_ColorTransform::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -8724,10 +8920,10 @@ CT_CTStyleLabel* CT_CTStyleLabel::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_ColorTransform::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_ColorTransform::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -8778,23 +8974,23 @@ CT_CTStyleLabel* CT_CTStyleLabel::default_instance_ = NULL;
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("title", "", _outStream);
+                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
             }
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
             }
             else if ((*iter)->has_catLst())
             {
-                (*iter)->get_catLst().toXmlElem("catLst", "", _outStream);
+                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
             }
             else if ((*iter)->has_styleLbl())
             {
-                (*iter)->get_styleLbl().toXmlElem("styleLbl", "", _outStream);
+                (*iter)->get_styleLbl().toXmlElem("diagram:styleLbl", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
@@ -8845,6 +9041,19 @@ CT_CTStyleLabel* CT_CTStyleLabel::default_instance_ = NULL;
 
 
     // CT_ColorTransform::ChildGroup_1
+    CT_ColorTransform::ChildGroup_1::ChildGroup_1()
+    :m_has_title(false),
+    m_title(NULL),
+    m_has_desc(false),
+    m_desc(NULL),
+    m_has_catLst(false),
+    m_catLst(NULL),
+    m_has_styleLbl(false),
+    m_styleLbl(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_ColorTransform::ChildGroup_1::has_title() const
     {    
     return m_has_title;
@@ -8880,12 +9089,12 @@ CT_CTStyleLabel* CT_CTStyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -8941,12 +9150,12 @@ CT_CTStyleLabel* CT_CTStyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -9002,12 +9211,12 @@ CT_CTStyleLabel* CT_CTStyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -9063,12 +9272,12 @@ CT_CTStyleLabel* CT_CTStyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -9089,12 +9298,12 @@ CT_CTStyleLabel* CT_CTStyleLabel::default_instance_ = NULL;
     return CT_CTStyleLabel::default_instance();
     }
 
-    bool CT_ColorTransform::ChildGroup_1::has_a_extLst() const
+    bool CT_ColorTransform::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_ColorTransform::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_ColorTransform::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_title = false;
@@ -9133,19 +9342,19 @@ CT_CTStyleLabel* CT_CTStyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_ColorTransform::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_ColorTransform::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -9153,6 +9362,15 @@ CT_CTStyleLabel* CT_CTStyleLabel::default_instance_ = NULL;
 CT_ColorTransform* CT_ColorTransform::default_instance_ = NULL;
 
     // CT_ColorTransformHeader
+    CT_ColorTransformHeader::CT_ColorTransformHeader()
+    :m_has_uniqueId_attr(false),
+    m_uniqueId_attr(""),
+    m_has_minVer_attr(false),
+    m_minVer_attr(""),
+    m_has_resId_attr(false),
+    m_resId_attr(0)
+    {
+    }
     CT_CTName* CT_ColorTransformHeader::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9177,10 +9395,10 @@ CT_ColorTransform* CT_ColorTransform::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_ColorTransformHeader::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_ColorTransformHeader::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -9240,19 +9458,19 @@ CT_ColorTransform* CT_ColorTransform::default_instance_ = NULL;
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("title", "", _outStream);
+                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
             }
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
             }
             else if ((*iter)->has_catLst())
             {
-                (*iter)->get_catLst().toXmlElem("catLst", "", _outStream);
+                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
@@ -9319,6 +9537,17 @@ CT_ColorTransform* CT_ColorTransform::default_instance_ = NULL;
 
 
     // CT_ColorTransformHeader::ChildGroup_1
+    CT_ColorTransformHeader::ChildGroup_1::ChildGroup_1()
+    :m_has_title(false),
+    m_title(NULL),
+    m_has_desc(false),
+    m_desc(NULL),
+    m_has_catLst(false),
+    m_catLst(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_ColorTransformHeader::ChildGroup_1::has_title() const
     {    
     return m_has_title;
@@ -9345,12 +9574,12 @@ CT_ColorTransform* CT_ColorTransform::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -9397,12 +9626,12 @@ CT_ColorTransform* CT_ColorTransform::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -9449,12 +9678,12 @@ CT_ColorTransform* CT_ColorTransform::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -9475,12 +9704,12 @@ CT_ColorTransform* CT_ColorTransform::default_instance_ = NULL;
     return CT_CTCategories::default_instance();
     }
 
-    bool CT_ColorTransformHeader::ChildGroup_1::has_a_extLst() const
+    bool CT_ColorTransformHeader::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_ColorTransformHeader::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_ColorTransformHeader::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_title = false;
@@ -9510,19 +9739,19 @@ CT_ColorTransform* CT_ColorTransform::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_ColorTransformHeader::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_ColorTransformHeader::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -9530,6 +9759,10 @@ CT_ColorTransform* CT_ColorTransform::default_instance_ = NULL;
 CT_ColorTransformHeader* CT_ColorTransformHeader::default_instance_ = NULL;
 
     // CT_ColorTransformHeaderLst
+    CT_ColorTransformHeaderLst::CT_ColorTransformHeaderLst()
+
+    {
+    }
     CT_ColorTransformHeader* CT_ColorTransformHeaderLst::add_colorsDefHdr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9567,7 +9800,7 @@ CT_ColorTransformHeader* CT_ColorTransformHeader::default_instance_ = NULL;
         {
             if ((*iter)->has_colorsDefHdr())
             {
-                (*iter)->get_colorsDefHdr().toXmlElem("colorsDefHdr", "", _outStream);
+                (*iter)->get_colorsDefHdr().toXmlElem("diagram:colorsDefHdr", "", _outStream);
             }
         }
     }
@@ -9586,6 +9819,11 @@ CT_ColorTransformHeader* CT_ColorTransformHeader::default_instance_ = NULL;
 
 
     // CT_ColorTransformHeaderLst::ChildGroup_1
+    CT_ColorTransformHeaderLst::ChildGroup_1::ChildGroup_1()
+    :m_has_colorsDefHdr(false),
+    m_colorsDefHdr(NULL)
+    {
+    }
     bool CT_ColorTransformHeaderLst::ChildGroup_1::has_colorsDefHdr() const
     {    
     return m_has_colorsDefHdr;
@@ -9614,6 +9852,23 @@ CT_ColorTransformHeader* CT_ColorTransformHeader::default_instance_ = NULL;
 CT_ColorTransformHeaderLst* CT_ColorTransformHeaderLst::default_instance_ = NULL;
 
     // CT_Pt
+    CT_Pt::CT_Pt()
+    :m_has_prSet(false),
+    m_prSet(NULL),
+    m_has_spPr(false),
+    m_spPr(NULL),
+    m_has_t(false),
+    m_t(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_modelId_attr(false),
+    m_modelId_attr(NULL),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_cxnId_attr(false),
+    m_cxnId_attr(NULL)
+    {
+    }
     bool CT_Pt::has_prSet() const
     {    
     return m_has_prSet;
@@ -9638,74 +9893,74 @@ CT_ColorTransformHeaderLst* CT_ColorTransformHeaderLst::default_instance_ = NULL
     return CT_ElemPropSet::default_instance();
     }
 
-    bool CT_Pt::has_a_spPr() const
+    bool CT_Pt::has_spPr() const
     {    
-    return m_has_a_spPr;
+    return m_has_spPr;
     }
 
-    ns_a::CT_ShapeProperties* CT_Pt::mutable_a_spPr()
+    ns_a::CT_ShapeProperties* CT_Pt::mutable_spPr()
     {    
-    m_has_a_spPr = true;
-    if (!m_a_spPr)
+    m_has_spPr = true;
+    if (!m_spPr)
     {
-        m_a_spPr = new ns_a::CT_ShapeProperties();
+        m_spPr = new ns_a::CT_ShapeProperties();
     }
-    return m_a_spPr;
+    return m_spPr;
     }
 
-    const ns_a::CT_ShapeProperties& CT_Pt::get_a_spPr() const
+    const ns_a::CT_ShapeProperties& CT_Pt::get_spPr() const
     {    
-    if (m_a_spPr)
+    if (m_spPr)
     {
-        return *m_a_spPr;
+        return *m_spPr;
     }
     return ns_a::CT_ShapeProperties::default_instance();
     }
 
-    bool CT_Pt::has_a_t() const
+    bool CT_Pt::has_t() const
     {    
-    return m_has_a_t;
+    return m_has_t;
     }
 
-    ns_a::CT_TextBody* CT_Pt::mutable_a_t()
+    ns_a::CT_TextBody* CT_Pt::mutable_t()
     {    
-    m_has_a_t = true;
-    if (!m_a_t)
+    m_has_t = true;
+    if (!m_t)
     {
-        m_a_t = new ns_a::CT_TextBody();
+        m_t = new ns_a::CT_TextBody();
     }
-    return m_a_t;
+    return m_t;
     }
 
-    const ns_a::CT_TextBody& CT_Pt::get_a_t() const
+    const ns_a::CT_TextBody& CT_Pt::get_t() const
     {    
-    if (m_a_t)
+    if (m_t)
     {
-        return *m_a_t;
+        return *m_t;
     }
     return ns_a::CT_TextBody::default_instance();
     }
 
-    bool CT_Pt::has_a_extLst() const
+    bool CT_Pt::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_Pt::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_Pt::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_Pt::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_Pt::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -9770,22 +10025,22 @@ CT_ColorTransformHeaderLst* CT_ColorTransformHeaderLst::default_instance_ = NULL
             
     if (m_has_prSet)
     {
-        m_prSet->toXmlElem("prSet", "", _outStream);;
+        m_prSet->toXmlElem("diagram:prSet", "", _outStream);;
     }
     
-    if (m_has_a_spPr)
+    if (m_has_spPr)
     {
-        m_a_spPr->toXmlElem("a:spPr", "", _outStream);;
+        m_spPr->toXmlElem("diagram:spPr", "", _outStream);;
     }
     
-    if (m_has_a_t)
+    if (m_has_t)
     {
-        m_a_t->toXmlElem("a:t", "", _outStream);;
+        m_t->toXmlElem("diagram:t", "", _outStream);;
     }
     
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9863,6 +10118,10 @@ CT_ColorTransformHeaderLst* CT_ColorTransformHeaderLst::default_instance_ = NULL
 CT_Pt* CT_Pt::default_instance_ = NULL;
 
     // CT_PtList
+    CT_PtList::CT_PtList()
+
+    {
+    }
     CT_Pt* CT_PtList::add_pt()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9900,7 +10159,7 @@ CT_Pt* CT_Pt::default_instance_ = NULL;
         {
             if ((*iter)->has_pt())
             {
-                (*iter)->get_pt().toXmlElem("pt", "", _outStream);
+                (*iter)->get_pt().toXmlElem("diagram:pt", "", _outStream);
             }
         }
     }
@@ -9919,6 +10178,11 @@ CT_Pt* CT_Pt::default_instance_ = NULL;
 
 
     // CT_PtList::ChildGroup_1
+    CT_PtList::ChildGroup_1::ChildGroup_1()
+    :m_has_pt(false),
+    m_pt(NULL)
+    {
+    }
     bool CT_PtList::ChildGroup_1::has_pt() const
     {    
     return m_has_pt;
@@ -9947,26 +10211,49 @@ CT_Pt* CT_Pt::default_instance_ = NULL;
 CT_PtList* CT_PtList::default_instance_ = NULL;
 
     // CT_Cxn
-    bool CT_Cxn::has_a_extLst() const
+    CT_Cxn::CT_Cxn()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_modelId_attr(false),
+    m_modelId_attr(NULL),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_srcId_attr(false),
+    m_srcId_attr(NULL),
+    m_has_destId_attr(false),
+    m_destId_attr(NULL),
+    m_has_srcOrd_attr(false),
+    m_srcOrd_attr(0),
+    m_has_destOrd_attr(false),
+    m_destOrd_attr(0),
+    m_has_parTransId_attr(false),
+    m_parTransId_attr(NULL),
+    m_has_sibTransId_attr(false),
+    m_sibTransId_attr(NULL),
+    m_has_presId_attr(false),
+    m_presId_attr("")
+    {
+    }
+    bool CT_Cxn::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_Cxn::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_Cxn::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_Cxn::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_Cxn::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -10101,9 +10388,9 @@ CT_PtList* CT_PtList::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10289,6 +10576,10 @@ CT_PtList* CT_PtList::default_instance_ = NULL;
 CT_Cxn* CT_Cxn::default_instance_ = NULL;
 
     // CT_CxnList
+    CT_CxnList::CT_CxnList()
+
+    {
+    }
     CT_Cxn* CT_CxnList::add_cxn()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -10326,7 +10617,7 @@ CT_Cxn* CT_Cxn::default_instance_ = NULL;
         {
             if ((*iter)->has_cxn())
             {
-                (*iter)->get_cxn().toXmlElem("cxn", "", _outStream);
+                (*iter)->get_cxn().toXmlElem("diagram:cxn", "", _outStream);
             }
         }
     }
@@ -10345,6 +10636,11 @@ CT_Cxn* CT_Cxn::default_instance_ = NULL;
 
 
     // CT_CxnList::ChildGroup_1
+    CT_CxnList::ChildGroup_1::ChildGroup_1()
+    :m_has_cxn(false),
+    m_cxn(NULL)
+    {
+    }
     bool CT_CxnList::ChildGroup_1::has_cxn() const
     {    
     return m_has_cxn;
@@ -10373,6 +10669,19 @@ CT_Cxn* CT_Cxn::default_instance_ = NULL;
 CT_CxnList* CT_CxnList::default_instance_ = NULL;
 
     // CT_DataModel
+    CT_DataModel::CT_DataModel()
+    :m_has_ptLst(false),
+    m_ptLst(NULL),
+    m_has_cxnLst(false),
+    m_cxnLst(NULL),
+    m_has_bg(false),
+    m_bg(NULL),
+    m_has_whole(false),
+    m_whole(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_DataModel::has_ptLst() const
     {    
     return m_has_ptLst;
@@ -10421,74 +10730,74 @@ CT_CxnList* CT_CxnList::default_instance_ = NULL;
     return CT_CxnList::default_instance();
     }
 
-    bool CT_DataModel::has_a_bg() const
+    bool CT_DataModel::has_bg() const
     {    
-    return m_has_a_bg;
+    return m_has_bg;
     }
 
-    ns_a::CT_BackgroundFormatting* CT_DataModel::mutable_a_bg()
+    ns_a::CT_BackgroundFormatting* CT_DataModel::mutable_bg()
     {    
-    m_has_a_bg = true;
-    if (!m_a_bg)
+    m_has_bg = true;
+    if (!m_bg)
     {
-        m_a_bg = new ns_a::CT_BackgroundFormatting();
+        m_bg = new ns_a::CT_BackgroundFormatting();
     }
-    return m_a_bg;
+    return m_bg;
     }
 
-    const ns_a::CT_BackgroundFormatting& CT_DataModel::get_a_bg() const
+    const ns_a::CT_BackgroundFormatting& CT_DataModel::get_bg() const
     {    
-    if (m_a_bg)
+    if (m_bg)
     {
-        return *m_a_bg;
+        return *m_bg;
     }
     return ns_a::CT_BackgroundFormatting::default_instance();
     }
 
-    bool CT_DataModel::has_a_whole() const
+    bool CT_DataModel::has_whole() const
     {    
-    return m_has_a_whole;
+    return m_has_whole;
     }
 
-    ns_a::CT_WholeE2oFormatting* CT_DataModel::mutable_a_whole()
+    ns_a::CT_WholeE2oFormatting* CT_DataModel::mutable_whole()
     {    
-    m_has_a_whole = true;
-    if (!m_a_whole)
+    m_has_whole = true;
+    if (!m_whole)
     {
-        m_a_whole = new ns_a::CT_WholeE2oFormatting();
+        m_whole = new ns_a::CT_WholeE2oFormatting();
     }
-    return m_a_whole;
+    return m_whole;
     }
 
-    const ns_a::CT_WholeE2oFormatting& CT_DataModel::get_a_whole() const
+    const ns_a::CT_WholeE2oFormatting& CT_DataModel::get_whole() const
     {    
-    if (m_a_whole)
+    if (m_whole)
     {
-        return *m_a_whole;
+        return *m_whole;
     }
     return ns_a::CT_WholeE2oFormatting::default_instance();
     }
 
-    bool CT_DataModel::has_a_extLst() const
+    bool CT_DataModel::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_DataModel::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_DataModel::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_DataModel::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_DataModel::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -10509,27 +10818,27 @@ CT_CxnList* CT_CxnList::default_instance_ = NULL;
             
     if (m_has_ptLst)
     {
-        m_ptLst->toXmlElem("ptLst", "", _outStream);;
+        m_ptLst->toXmlElem("diagram:ptLst", "", _outStream);;
     }
     
     if (m_has_cxnLst)
     {
-        m_cxnLst->toXmlElem("cxnLst", "", _outStream);;
+        m_cxnLst->toXmlElem("diagram:cxnLst", "", _outStream);;
     }
     
-    if (m_has_a_bg)
+    if (m_has_bg)
     {
-        m_a_bg->toXmlElem("a:bg", "", _outStream);;
+        m_bg->toXmlElem("diagram:bg", "", _outStream);;
     }
     
-    if (m_has_a_whole)
+    if (m_has_whole)
     {
-        m_a_whole->toXmlElem("a:whole", "", _outStream);;
+        m_whole->toXmlElem("diagram:whole", "", _outStream);;
     }
     
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10547,26 +10856,53 @@ CT_CxnList* CT_CxnList::default_instance_ = NULL;
 CT_DataModel* CT_DataModel::default_instance_ = NULL;
 
     // CT_Constraint
-    bool CT_Constraint::has_a_extLst() const
+    CT_Constraint::CT_Constraint()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_for_attr(false),
+    m_for_attr(NULL),
+    m_has_forName_attr(false),
+    m_forName_attr(""),
+    m_has_ptType_attr(false),
+    m_ptType_attr(NULL),
+    m_has_refType_attr(false),
+    m_refType_attr(NULL),
+    m_has_refFor_attr(false),
+    m_refFor_attr(NULL),
+    m_has_refForName_attr(false),
+    m_refForName_attr(""),
+    m_has_refPtType_attr(false),
+    m_refPtType_attr(NULL),
+    m_has_op_attr(false),
+    m_op_attr(NULL),
+    m_has_val_attr(false),
+    m_val_attr(0),
+    m_has_fact_attr(false),
+    m_fact_attr(0)
+    {
+    }
+    bool CT_Constraint::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_Constraint::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_Constraint::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_Constraint::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_Constraint::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -10725,9 +11061,9 @@ CT_DataModel* CT_DataModel::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10949,6 +11285,10 @@ CT_DataModel* CT_DataModel::default_instance_ = NULL;
 CT_Constraint* CT_Constraint::default_instance_ = NULL;
 
     // CT_Constraints
+    CT_Constraints::CT_Constraints()
+
+    {
+    }
     CT_Constraint* CT_Constraints::add_constr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -10986,7 +11326,7 @@ CT_Constraint* CT_Constraint::default_instance_ = NULL;
         {
             if ((*iter)->has_constr())
             {
-                (*iter)->get_constr().toXmlElem("constr", "", _outStream);
+                (*iter)->get_constr().toXmlElem("diagram:constr", "", _outStream);
             }
         }
     }
@@ -11005,6 +11345,11 @@ CT_Constraint* CT_Constraint::default_instance_ = NULL;
 
 
     // CT_Constraints::ChildGroup_1
+    CT_Constraints::ChildGroup_1::ChildGroup_1()
+    :m_has_constr(false),
+    m_constr(NULL)
+    {
+    }
     bool CT_Constraints::ChildGroup_1::has_constr() const
     {    
     return m_has_constr;
@@ -11033,26 +11378,45 @@ CT_Constraint* CT_Constraint::default_instance_ = NULL;
 CT_Constraints* CT_Constraints::default_instance_ = NULL;
 
     // CT_NumericRule
-    bool CT_NumericRule::has_a_extLst() const
+    CT_NumericRule::CT_NumericRule()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_for_attr(false),
+    m_for_attr(NULL),
+    m_has_forName_attr(false),
+    m_forName_attr(""),
+    m_has_ptType_attr(false),
+    m_ptType_attr(NULL),
+    m_has_val_attr(false),
+    m_val_attr(0),
+    m_has_fact_attr(false),
+    m_fact_attr(0),
+    m_has_max_attr(false),
+    m_max_attr(0)
+    {
+    }
+    bool CT_NumericRule::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_NumericRule::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_NumericRule::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_NumericRule::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_NumericRule::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -11151,9 +11515,9 @@ CT_Constraints* CT_Constraints::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11295,6 +11659,10 @@ CT_Constraints* CT_Constraints::default_instance_ = NULL;
 CT_NumericRule* CT_NumericRule::default_instance_ = NULL;
 
     // CT_Rules
+    CT_Rules::CT_Rules()
+
+    {
+    }
     CT_NumericRule* CT_Rules::add_rule()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -11332,7 +11700,7 @@ CT_NumericRule* CT_NumericRule::default_instance_ = NULL;
         {
             if ((*iter)->has_rule())
             {
-                (*iter)->get_rule().toXmlElem("rule", "", _outStream);
+                (*iter)->get_rule().toXmlElem("diagram:rule", "", _outStream);
             }
         }
     }
@@ -11351,6 +11719,11 @@ CT_NumericRule* CT_NumericRule::default_instance_ = NULL;
 
 
     // CT_Rules::ChildGroup_1
+    CT_Rules::ChildGroup_1::ChildGroup_1()
+    :m_has_rule(false),
+    m_rule(NULL)
+    {
+    }
     bool CT_Rules::ChildGroup_1::has_rule() const
     {    
     return m_has_rule;
@@ -11379,26 +11752,43 @@ CT_NumericRule* CT_NumericRule::default_instance_ = NULL;
 CT_Rules* CT_Rules::default_instance_ = NULL;
 
     // CT_PresentationOf
-    bool CT_PresentationOf::has_a_extLst() const
+    CT_PresentationOf::CT_PresentationOf()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_axis_attr(false),
+    m_axis_attr(NULL),
+    m_has_ptType_attr(false),
+    m_ptType_attr(NULL),
+    m_has_hideLastTrans_attr(false),
+    m_hideLastTrans_attr(NULL),
+    m_has_st_attr(false),
+    m_st_attr(NULL),
+    m_has_cnt_attr(false),
+    m_cnt_attr(NULL),
+    m_has_step_attr(false),
+    m_step_attr(NULL)
+    {
+    }
+    bool CT_PresentationOf::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_PresentationOf::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_PresentationOf::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_PresentationOf::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_PresentationOf::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -11506,9 +11896,9 @@ CT_Rules* CT_Rules::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11646,6 +12036,13 @@ CT_Rules* CT_Rules::default_instance_ = NULL;
 CT_PresentationOf* CT_PresentationOf::default_instance_ = NULL;
 
     // CT_Adj
+    CT_Adj::CT_Adj()
+    :m_has_idx_attr(false),
+    m_idx_attr(NULL),
+    m_has_val_attr(false),
+    m_val_attr(0)
+    {
+    }
     void CT_Adj::clear()
     {    
     m_has_idx_attr = false;
@@ -11734,6 +12131,10 @@ CT_PresentationOf* CT_PresentationOf::default_instance_ = NULL;
 CT_Adj* CT_Adj::default_instance_ = NULL;
 
     // CT_AdjLst
+    CT_AdjLst::CT_AdjLst()
+
+    {
+    }
     CT_Adj* CT_AdjLst::add_adj()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -11771,7 +12172,7 @@ CT_Adj* CT_Adj::default_instance_ = NULL;
         {
             if ((*iter)->has_adj())
             {
-                (*iter)->get_adj().toXmlElem("adj", "", _outStream);
+                (*iter)->get_adj().toXmlElem("diagram:adj", "", _outStream);
             }
         }
     }
@@ -11790,6 +12191,11 @@ CT_Adj* CT_Adj::default_instance_ = NULL;
 
 
     // CT_AdjLst::ChildGroup_1
+    CT_AdjLst::ChildGroup_1::ChildGroup_1()
+    :m_has_adj(false),
+    m_adj(NULL)
+    {
+    }
     bool CT_AdjLst::ChildGroup_1::has_adj() const
     {    
     return m_has_adj;
@@ -11818,6 +12224,27 @@ CT_Adj* CT_Adj::default_instance_ = NULL;
 CT_AdjLst* CT_AdjLst::default_instance_ = NULL;
 
     // CT_Shape
+    CT_Shape::CT_Shape()
+    :m_has_adjLst(false),
+    m_adjLst(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_rot_attr(false),
+    m_rot_attr(0),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_r_blip_attr(false),
+    m_r_blip_attr(NULL),
+    m_has_zOrderOff_attr(false),
+    m_zOrderOff_attr(0),
+    m_has_hideGeom_attr(false),
+    m_hideGeom_attr(false),
+    m_has_lkTxEntry_attr(false),
+    m_lkTxEntry_attr(false),
+    m_has_blipPhldr_attr(false),
+    m_blipPhldr_attr(false)
+    {
+    }
     bool CT_Shape::has_adjLst() const
     {    
     return m_has_adjLst;
@@ -11842,26 +12269,26 @@ CT_AdjLst* CT_AdjLst::default_instance_ = NULL;
     return CT_AdjLst::default_instance();
     }
 
-    bool CT_Shape::has_a_extLst() const
+    bool CT_Shape::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_Shape::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_Shape::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_Shape::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_Shape::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -11925,7 +12352,7 @@ CT_AdjLst* CT_AdjLst::default_instance_ = NULL;
     
     if (m_has_r_blip_attr)
     {
-        m_r_blip_attr->toXmlAttr("blip", _outStream);
+        m_r_blip_attr->toXmlAttr("r:blip", _outStream);
     }
     
     
@@ -11956,12 +12383,12 @@ CT_AdjLst* CT_AdjLst::default_instance_ = NULL;
             
     if (m_has_adjLst)
     {
-        m_adjLst->toXmlElem("adjLst", "", _outStream);;
+        m_adjLst->toXmlElem("diagram:adjLst", "", _outStream);;
     }
     
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -12099,6 +12526,13 @@ CT_AdjLst* CT_AdjLst::default_instance_ = NULL;
 CT_Shape* CT_Shape::default_instance_ = NULL;
 
     // CT_Parameter
+    CT_Parameter::CT_Parameter()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_Parameter::clear()
     {    
     m_has_type_attr = false;
@@ -12197,6 +12631,13 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
 CT_Parameter* CT_Parameter::default_instance_ = NULL;
 
     // CT_Algorithm
+    CT_Algorithm::CT_Algorithm()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_rev_attr(false),
+    m_rev_attr(0)
+    {
+    }
     CT_Parameter* CT_Algorithm::add_param()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -12205,10 +12646,10 @@ CT_Parameter* CT_Parameter::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_Algorithm::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_Algorithm::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -12265,11 +12706,11 @@ CT_Parameter* CT_Parameter::default_instance_ = NULL;
         {
             if ((*iter)->has_param())
             {
-                (*iter)->get_param().toXmlElem("param", "", _outStream);
+                (*iter)->get_param().toXmlElem("diagram:param", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
@@ -12324,6 +12765,13 @@ CT_Parameter* CT_Parameter::default_instance_ = NULL;
 
 
     // CT_Algorithm::ChildGroup_1
+    CT_Algorithm::ChildGroup_1::ChildGroup_1()
+    :m_has_param(false),
+    m_param(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Algorithm::ChildGroup_1::has_param() const
     {    
     return m_has_param;
@@ -12332,12 +12780,12 @@ CT_Parameter* CT_Parameter::default_instance_ = NULL;
     CT_Parameter* CT_Algorithm::ChildGroup_1::mutable_param()
     {    
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -12358,12 +12806,12 @@ CT_Parameter* CT_Parameter::default_instance_ = NULL;
     return CT_Parameter::default_instance();
     }
 
-    bool CT_Algorithm::ChildGroup_1::has_a_extLst() const
+    bool CT_Algorithm::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_Algorithm::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_Algorithm::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_param = false;
@@ -12375,19 +12823,19 @@ CT_Parameter* CT_Parameter::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_Algorithm::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_Algorithm::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -12395,6 +12843,17 @@ CT_Parameter* CT_Parameter::default_instance_ = NULL;
 CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
 
     // CT_LayoutNode
+    CT_LayoutNode::CT_LayoutNode()
+    :m_has_name_attr(false),
+    m_name_attr(""),
+    m_has_styleLbl_attr(false),
+    m_styleLbl_attr(""),
+    m_has_chOrder_attr(false),
+    m_chOrder_attr(NULL),
+    m_has_moveWith_attr(false),
+    m_moveWith_attr("")
+    {
+    }
     CT_Algorithm* CT_LayoutNode::add_alg()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -12467,10 +12926,10 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_LayoutNode::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_LayoutNode::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -12545,43 +13004,43 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
         {
             if ((*iter)->has_alg())
             {
-                (*iter)->get_alg().toXmlElem("alg", "", _outStream);
+                (*iter)->get_alg().toXmlElem("diagram:alg", "", _outStream);
             }
             else if ((*iter)->has_shape())
             {
-                (*iter)->get_shape().toXmlElem("shape", "", _outStream);
+                (*iter)->get_shape().toXmlElem("diagram:shape", "", _outStream);
             }
             else if ((*iter)->has_presOf())
             {
-                (*iter)->get_presOf().toXmlElem("presOf", "", _outStream);
+                (*iter)->get_presOf().toXmlElem("diagram:presOf", "", _outStream);
             }
             else if ((*iter)->has_constrLst())
             {
-                (*iter)->get_constrLst().toXmlElem("constrLst", "", _outStream);
+                (*iter)->get_constrLst().toXmlElem("diagram:constrLst", "", _outStream);
             }
             else if ((*iter)->has_ruleLst())
             {
-                (*iter)->get_ruleLst().toXmlElem("ruleLst", "", _outStream);
+                (*iter)->get_ruleLst().toXmlElem("diagram:ruleLst", "", _outStream);
             }
             else if ((*iter)->has_varLst())
             {
-                (*iter)->get_varLst().toXmlElem("varLst", "", _outStream);
+                (*iter)->get_varLst().toXmlElem("diagram:varLst", "", _outStream);
             }
             else if ((*iter)->has_forEach())
             {
-                (*iter)->get_forEach().toXmlElem("forEach", "", _outStream);
+                (*iter)->get_forEach().toXmlElem("diagram:forEach", "", _outStream);
             }
             else if ((*iter)->has_layoutNode())
             {
-                (*iter)->get_layoutNode().toXmlElem("layoutNode", "", _outStream);
+                (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
             }
             else if ((*iter)->has_choose())
             {
-                (*iter)->get_choose().toXmlElem("choose", "", _outStream);
+                (*iter)->get_choose().toXmlElem("diagram:choose", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
@@ -12668,6 +13127,29 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
 
 
     // CT_LayoutNode::ChildGroup_1
+    CT_LayoutNode::ChildGroup_1::ChildGroup_1()
+    :m_has_alg(false),
+    m_alg(NULL),
+    m_has_shape(false),
+    m_shape(NULL),
+    m_has_presOf(false),
+    m_presOf(NULL),
+    m_has_constrLst(false),
+    m_constrLst(NULL),
+    m_has_ruleLst(false),
+    m_ruleLst(NULL),
+    m_has_varLst(false),
+    m_varLst(NULL),
+    m_has_forEach(false),
+    m_forEach(NULL),
+    m_has_layoutNode(false),
+    m_layoutNode(NULL),
+    m_has_choose(false),
+    m_choose(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_LayoutNode::ChildGroup_1::has_alg() const
     {    
     return m_has_alg;
@@ -12748,12 +13230,12 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -12854,12 +13336,12 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -12960,12 +13442,12 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -13066,12 +13548,12 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -13172,12 +13654,12 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -13278,12 +13760,12 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -13384,12 +13866,12 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -13490,12 +13972,12 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -13596,12 +14078,12 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -13622,12 +14104,12 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
     return CT_Choose::default_instance();
     }
 
-    bool CT_LayoutNode::ChildGroup_1::has_a_extLst() const
+    bool CT_LayoutNode::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_LayoutNode::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_LayoutNode::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_alg = false;
@@ -13711,19 +14193,19 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_LayoutNode::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_LayoutNode::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -13731,6 +14213,25 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
 CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
 
     // CT_ForEach
+    CT_ForEach::CT_ForEach()
+    :m_has_name_attr(false),
+    m_name_attr(""),
+    m_has_ref_attr(false),
+    m_ref_attr(""),
+    m_has_axis_attr(false),
+    m_axis_attr(NULL),
+    m_has_ptType_attr(false),
+    m_ptType_attr(NULL),
+    m_has_hideLastTrans_attr(false),
+    m_hideLastTrans_attr(NULL),
+    m_has_st_attr(false),
+    m_st_attr(NULL),
+    m_has_cnt_attr(false),
+    m_cnt_attr(NULL),
+    m_has_step_attr(false),
+    m_step_attr(NULL)
+    {
+    }
     CT_Algorithm* CT_ForEach::add_alg()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -13795,10 +14296,10 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_ForEach::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_ForEach::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -13939,39 +14440,39 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
         {
             if ((*iter)->has_alg())
             {
-                (*iter)->get_alg().toXmlElem("alg", "", _outStream);
+                (*iter)->get_alg().toXmlElem("diagram:alg", "", _outStream);
             }
             else if ((*iter)->has_shape())
             {
-                (*iter)->get_shape().toXmlElem("shape", "", _outStream);
+                (*iter)->get_shape().toXmlElem("diagram:shape", "", _outStream);
             }
             else if ((*iter)->has_presOf())
             {
-                (*iter)->get_presOf().toXmlElem("presOf", "", _outStream);
+                (*iter)->get_presOf().toXmlElem("diagram:presOf", "", _outStream);
             }
             else if ((*iter)->has_constrLst())
             {
-                (*iter)->get_constrLst().toXmlElem("constrLst", "", _outStream);
+                (*iter)->get_constrLst().toXmlElem("diagram:constrLst", "", _outStream);
             }
             else if ((*iter)->has_ruleLst())
             {
-                (*iter)->get_ruleLst().toXmlElem("ruleLst", "", _outStream);
+                (*iter)->get_ruleLst().toXmlElem("diagram:ruleLst", "", _outStream);
             }
             else if ((*iter)->has_forEach())
             {
-                (*iter)->get_forEach().toXmlElem("forEach", "", _outStream);
+                (*iter)->get_forEach().toXmlElem("diagram:forEach", "", _outStream);
             }
             else if ((*iter)->has_layoutNode())
             {
-                (*iter)->get_layoutNode().toXmlElem("layoutNode", "", _outStream);
+                (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
             }
             else if ((*iter)->has_choose())
             {
-                (*iter)->get_choose().toXmlElem("choose", "", _outStream);
+                (*iter)->get_choose().toXmlElem("diagram:choose", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
@@ -14142,6 +14643,27 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
 
 
     // CT_ForEach::ChildGroup_1
+    CT_ForEach::ChildGroup_1::ChildGroup_1()
+    :m_has_alg(false),
+    m_alg(NULL),
+    m_has_shape(false),
+    m_shape(NULL),
+    m_has_presOf(false),
+    m_presOf(NULL),
+    m_has_constrLst(false),
+    m_constrLst(NULL),
+    m_has_ruleLst(false),
+    m_ruleLst(NULL),
+    m_has_forEach(false),
+    m_forEach(NULL),
+    m_has_layoutNode(false),
+    m_layoutNode(NULL),
+    m_has_choose(false),
+    m_choose(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_ForEach::ChildGroup_1::has_alg() const
     {    
     return m_has_alg;
@@ -14213,12 +14735,12 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -14310,12 +14832,12 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -14407,12 +14929,12 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -14504,12 +15026,12 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -14601,12 +15123,12 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -14698,12 +15220,12 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -14795,12 +15317,12 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -14892,12 +15414,12 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -14918,12 +15440,12 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
     return CT_Choose::default_instance();
     }
 
-    bool CT_ForEach::ChildGroup_1::has_a_extLst() const
+    bool CT_ForEach::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_ForEach::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_ForEach::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_alg = false;
@@ -14998,19 +15520,19 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_ForEach::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_ForEach::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -15018,6 +15540,31 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
 CT_ForEach* CT_ForEach::default_instance_ = NULL;
 
     // CT_When
+    CT_When::CT_When()
+    :m_has_name_attr(false),
+    m_name_attr(""),
+    m_has_axis_attr(false),
+    m_axis_attr(NULL),
+    m_has_ptType_attr(false),
+    m_ptType_attr(NULL),
+    m_has_hideLastTrans_attr(false),
+    m_hideLastTrans_attr(NULL),
+    m_has_st_attr(false),
+    m_st_attr(NULL),
+    m_has_cnt_attr(false),
+    m_cnt_attr(NULL),
+    m_has_step_attr(false),
+    m_step_attr(NULL),
+    m_has_func_attr(false),
+    m_func_attr(NULL),
+    m_has_arg_attr(false),
+    m_arg_attr(NULL),
+    m_has_op_attr(false),
+    m_op_attr(NULL),
+    m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     CT_Algorithm* CT_When::add_alg()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -15082,10 +15629,10 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_When::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_When::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -15277,39 +15824,39 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
         {
             if ((*iter)->has_alg())
             {
-                (*iter)->get_alg().toXmlElem("alg", "", _outStream);
+                (*iter)->get_alg().toXmlElem("diagram:alg", "", _outStream);
             }
             else if ((*iter)->has_shape())
             {
-                (*iter)->get_shape().toXmlElem("shape", "", _outStream);
+                (*iter)->get_shape().toXmlElem("diagram:shape", "", _outStream);
             }
             else if ((*iter)->has_presOf())
             {
-                (*iter)->get_presOf().toXmlElem("presOf", "", _outStream);
+                (*iter)->get_presOf().toXmlElem("diagram:presOf", "", _outStream);
             }
             else if ((*iter)->has_constrLst())
             {
-                (*iter)->get_constrLst().toXmlElem("constrLst", "", _outStream);
+                (*iter)->get_constrLst().toXmlElem("diagram:constrLst", "", _outStream);
             }
             else if ((*iter)->has_ruleLst())
             {
-                (*iter)->get_ruleLst().toXmlElem("ruleLst", "", _outStream);
+                (*iter)->get_ruleLst().toXmlElem("diagram:ruleLst", "", _outStream);
             }
             else if ((*iter)->has_forEach())
             {
-                (*iter)->get_forEach().toXmlElem("forEach", "", _outStream);
+                (*iter)->get_forEach().toXmlElem("diagram:forEach", "", _outStream);
             }
             else if ((*iter)->has_layoutNode())
             {
-                (*iter)->get_layoutNode().toXmlElem("layoutNode", "", _outStream);
+                (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
             }
             else if ((*iter)->has_choose())
             {
-                (*iter)->get_choose().toXmlElem("choose", "", _outStream);
+                (*iter)->get_choose().toXmlElem("diagram:choose", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
@@ -15544,6 +16091,27 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
 
 
     // CT_When::ChildGroup_1
+    CT_When::ChildGroup_1::ChildGroup_1()
+    :m_has_alg(false),
+    m_alg(NULL),
+    m_has_shape(false),
+    m_shape(NULL),
+    m_has_presOf(false),
+    m_presOf(NULL),
+    m_has_constrLst(false),
+    m_constrLst(NULL),
+    m_has_ruleLst(false),
+    m_ruleLst(NULL),
+    m_has_forEach(false),
+    m_forEach(NULL),
+    m_has_layoutNode(false),
+    m_layoutNode(NULL),
+    m_has_choose(false),
+    m_choose(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_When::ChildGroup_1::has_alg() const
     {    
     return m_has_alg;
@@ -15615,12 +16183,12 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -15712,12 +16280,12 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -15809,12 +16377,12 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -15906,12 +16474,12 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -16003,12 +16571,12 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -16100,12 +16668,12 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -16197,12 +16765,12 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -16294,12 +16862,12 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -16320,12 +16888,12 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
     return CT_Choose::default_instance();
     }
 
-    bool CT_When::ChildGroup_1::has_a_extLst() const
+    bool CT_When::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_When::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_When::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_alg = false;
@@ -16400,19 +16968,19 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_When::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_When::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -16420,6 +16988,11 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
 CT_When* CT_When::default_instance_ = NULL;
 
     // CT_Otherwise
+    CT_Otherwise::CT_Otherwise()
+    :m_has_name_attr(false),
+    m_name_attr("")
+    {
+    }
     CT_Algorithm* CT_Otherwise::add_alg()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -16484,10 +17057,10 @@ CT_When* CT_When::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_Otherwise::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_Otherwise::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -16529,39 +17102,39 @@ CT_When* CT_When::default_instance_ = NULL;
         {
             if ((*iter)->has_alg())
             {
-                (*iter)->get_alg().toXmlElem("alg", "", _outStream);
+                (*iter)->get_alg().toXmlElem("diagram:alg", "", _outStream);
             }
             else if ((*iter)->has_shape())
             {
-                (*iter)->get_shape().toXmlElem("shape", "", _outStream);
+                (*iter)->get_shape().toXmlElem("diagram:shape", "", _outStream);
             }
             else if ((*iter)->has_presOf())
             {
-                (*iter)->get_presOf().toXmlElem("presOf", "", _outStream);
+                (*iter)->get_presOf().toXmlElem("diagram:presOf", "", _outStream);
             }
             else if ((*iter)->has_constrLst())
             {
-                (*iter)->get_constrLst().toXmlElem("constrLst", "", _outStream);
+                (*iter)->get_constrLst().toXmlElem("diagram:constrLst", "", _outStream);
             }
             else if ((*iter)->has_ruleLst())
             {
-                (*iter)->get_ruleLst().toXmlElem("ruleLst", "", _outStream);
+                (*iter)->get_ruleLst().toXmlElem("diagram:ruleLst", "", _outStream);
             }
             else if ((*iter)->has_forEach())
             {
-                (*iter)->get_forEach().toXmlElem("forEach", "", _outStream);
+                (*iter)->get_forEach().toXmlElem("diagram:forEach", "", _outStream);
             }
             else if ((*iter)->has_layoutNode())
             {
-                (*iter)->get_layoutNode().toXmlElem("layoutNode", "", _outStream);
+                (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
             }
             else if ((*iter)->has_choose())
             {
-                (*iter)->get_choose().toXmlElem("choose", "", _outStream);
+                (*iter)->get_choose().toXmlElem("diagram:choose", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
@@ -16596,6 +17169,27 @@ CT_When* CT_When::default_instance_ = NULL;
 
 
     // CT_Otherwise::ChildGroup_1
+    CT_Otherwise::ChildGroup_1::ChildGroup_1()
+    :m_has_alg(false),
+    m_alg(NULL),
+    m_has_shape(false),
+    m_shape(NULL),
+    m_has_presOf(false),
+    m_presOf(NULL),
+    m_has_constrLst(false),
+    m_constrLst(NULL),
+    m_has_ruleLst(false),
+    m_ruleLst(NULL),
+    m_has_forEach(false),
+    m_forEach(NULL),
+    m_has_layoutNode(false),
+    m_layoutNode(NULL),
+    m_has_choose(false),
+    m_choose(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Otherwise::ChildGroup_1::has_alg() const
     {    
     return m_has_alg;
@@ -16667,12 +17261,12 @@ CT_When* CT_When::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -16764,12 +17358,12 @@ CT_When* CT_When::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -16861,12 +17455,12 @@ CT_When* CT_When::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -16958,12 +17552,12 @@ CT_When* CT_When::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -17055,12 +17649,12 @@ CT_When* CT_When::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -17152,12 +17746,12 @@ CT_When* CT_When::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -17249,12 +17843,12 @@ CT_When* CT_When::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -17346,12 +17940,12 @@ CT_When* CT_When::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -17372,12 +17966,12 @@ CT_When* CT_When::default_instance_ = NULL;
     return CT_Choose::default_instance();
     }
 
-    bool CT_Otherwise::ChildGroup_1::has_a_extLst() const
+    bool CT_Otherwise::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_Otherwise::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_Otherwise::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_alg = false;
@@ -17452,19 +18046,19 @@ CT_When* CT_When::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_Otherwise::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_Otherwise::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -17472,6 +18066,11 @@ CT_When* CT_When::default_instance_ = NULL;
 CT_Otherwise* CT_Otherwise::default_instance_ = NULL;
 
     // CT_Choose
+    CT_Choose::CT_Choose()
+    :m_has_name_attr(false),
+    m_name_attr("")
+    {
+    }
     CT_When* CT_Choose::add_if()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -17525,11 +18124,11 @@ CT_Otherwise* CT_Otherwise::default_instance_ = NULL;
         {
             if ((*iter)->has_if())
             {
-                (*iter)->get_if().toXmlElem("if", "", _outStream);
+                (*iter)->get_if().toXmlElem("diagram:if", "", _outStream);
             }
             else if ((*iter)->has_else())
             {
-                (*iter)->get_else().toXmlElem("else", "", _outStream);
+                (*iter)->get_else().toXmlElem("diagram:else", "", _outStream);
             }
         }
     }
@@ -17564,6 +18163,13 @@ CT_Otherwise* CT_Otherwise::default_instance_ = NULL;
 
 
     // CT_Choose::ChildGroup_1
+    CT_Choose::ChildGroup_1::ChildGroup_1()
+    :m_has_if(false),
+    m_if(NULL),
+    m_has_else(false),
+    m_else(NULL)
+    {
+    }
     bool CT_Choose::ChildGroup_1::has_if() const
     {    
     return m_has_if;
@@ -17635,6 +18241,13 @@ CT_Otherwise* CT_Otherwise::default_instance_ = NULL;
 CT_Choose* CT_Choose::default_instance_ = NULL;
 
     // CT_SampleData
+    CT_SampleData::CT_SampleData()
+    :m_has_dataModel(false),
+    m_dataModel(NULL),
+    m_has_useDef_attr(false),
+    m_useDef_attr(false)
+    {
+    }
     bool CT_SampleData::has_dataModel() const
     {    
     return m_has_dataModel;
@@ -17683,7 +18296,7 @@ CT_Choose* CT_Choose::default_instance_ = NULL;
             
     if (m_has_dataModel)
     {
-        m_dataModel->toXmlElem("dataModel", "", _outStream);;
+        m_dataModel->toXmlElem("diagram:dataModel", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17717,6 +18330,13 @@ CT_Choose* CT_Choose::default_instance_ = NULL;
 CT_SampleData* CT_SampleData::default_instance_ = NULL;
 
     // CT_Category
+    CT_Category::CT_Category()
+    :m_has_type_attr(false),
+    m_type_attr(""),
+    m_has_pri_attr(false),
+    m_pri_attr(0)
+    {
+    }
     void CT_Category::clear()
     {    
     m_has_type_attr = false;
@@ -17795,6 +18415,10 @@ CT_SampleData* CT_SampleData::default_instance_ = NULL;
 CT_Category* CT_Category::default_instance_ = NULL;
 
     // CT_Categories
+    CT_Categories::CT_Categories()
+
+    {
+    }
     CT_Category* CT_Categories::add_cat()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -17832,7 +18456,7 @@ CT_Category* CT_Category::default_instance_ = NULL;
         {
             if ((*iter)->has_cat())
             {
-                (*iter)->get_cat().toXmlElem("cat", "", _outStream);
+                (*iter)->get_cat().toXmlElem("diagram:cat", "", _outStream);
             }
         }
     }
@@ -17851,6 +18475,11 @@ CT_Category* CT_Category::default_instance_ = NULL;
 
 
     // CT_Categories::ChildGroup_1
+    CT_Categories::ChildGroup_1::ChildGroup_1()
+    :m_has_cat(false),
+    m_cat(NULL)
+    {
+    }
     bool CT_Categories::ChildGroup_1::has_cat() const
     {    
     return m_has_cat;
@@ -17879,6 +18508,13 @@ CT_Category* CT_Category::default_instance_ = NULL;
 CT_Categories* CT_Categories::default_instance_ = NULL;
 
     // CT_Name
+    CT_Name::CT_Name()
+    :m_has_lang_attr(false),
+    m_lang_attr(""),
+    m_has_val_attr(false),
+    m_val_attr("")
+    {
+    }
     void CT_Name::clear()
     {    
     m_has_lang_attr = false;
@@ -17957,6 +18593,13 @@ CT_Categories* CT_Categories::default_instance_ = NULL;
 CT_Name* CT_Name::default_instance_ = NULL;
 
     // CT_Description
+    CT_Description::CT_Description()
+    :m_has_lang_attr(false),
+    m_lang_attr(""),
+    m_has_val_attr(false),
+    m_val_attr("")
+    {
+    }
     void CT_Description::clear()
     {    
     m_has_lang_attr = false;
@@ -18035,6 +18678,15 @@ CT_Name* CT_Name::default_instance_ = NULL;
 CT_Description* CT_Description::default_instance_ = NULL;
 
     // CT_DiagramDefinition
+    CT_DiagramDefinition::CT_DiagramDefinition()
+    :m_has_uniqueId_attr(false),
+    m_uniqueId_attr(""),
+    m_has_minVer_attr(false),
+    m_minVer_attr(""),
+    m_has_defStyle_attr(false),
+    m_defStyle_attr("")
+    {
+    }
     CT_Name* CT_DiagramDefinition::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -18091,10 +18743,10 @@ CT_Description* CT_Description::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_DiagramDefinition::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_DiagramDefinition::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -18154,35 +18806,35 @@ CT_Description* CT_Description::default_instance_ = NULL;
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("title", "", _outStream);
+                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
             }
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
             }
             else if ((*iter)->has_catLst())
             {
-                (*iter)->get_catLst().toXmlElem("catLst", "", _outStream);
+                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
             }
             else if ((*iter)->has_sampData())
             {
-                (*iter)->get_sampData().toXmlElem("sampData", "", _outStream);
+                (*iter)->get_sampData().toXmlElem("diagram:sampData", "", _outStream);
             }
             else if ((*iter)->has_styleData())
             {
-                (*iter)->get_styleData().toXmlElem("styleData", "", _outStream);
+                (*iter)->get_styleData().toXmlElem("diagram:styleData", "", _outStream);
             }
             else if ((*iter)->has_clrData())
             {
-                (*iter)->get_clrData().toXmlElem("clrData", "", _outStream);
+                (*iter)->get_clrData().toXmlElem("diagram:clrData", "", _outStream);
             }
             else if ((*iter)->has_layoutNode())
             {
-                (*iter)->get_layoutNode().toXmlElem("layoutNode", "", _outStream);
+                (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
@@ -18249,6 +18901,25 @@ CT_Description* CT_Description::default_instance_ = NULL;
 
 
     // CT_DiagramDefinition::ChildGroup_1
+    CT_DiagramDefinition::ChildGroup_1::ChildGroup_1()
+    :m_has_title(false),
+    m_title(NULL),
+    m_has_desc(false),
+    m_desc(NULL),
+    m_has_catLst(false),
+    m_catLst(NULL),
+    m_has_sampData(false),
+    m_sampData(NULL),
+    m_has_styleData(false),
+    m_styleData(NULL),
+    m_has_clrData(false),
+    m_clrData(NULL),
+    m_has_layoutNode(false),
+    m_layoutNode(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_DiagramDefinition::ChildGroup_1::has_title() const
     {    
     return m_has_title;
@@ -18311,12 +18982,12 @@ CT_Description* CT_Description::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -18399,12 +19070,12 @@ CT_Description* CT_Description::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -18487,12 +19158,12 @@ CT_Description* CT_Description::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -18575,12 +19246,12 @@ CT_Description* CT_Description::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -18663,12 +19334,12 @@ CT_Description* CT_Description::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -18751,12 +19422,12 @@ CT_Description* CT_Description::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -18839,12 +19510,12 @@ CT_Description* CT_Description::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -18865,12 +19536,12 @@ CT_Description* CT_Description::default_instance_ = NULL;
     return CT_LayoutNode::default_instance();
     }
 
-    bool CT_DiagramDefinition::ChildGroup_1::has_a_extLst() const
+    bool CT_DiagramDefinition::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_DiagramDefinition::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_DiagramDefinition::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_title = false;
@@ -18936,19 +19607,19 @@ CT_Description* CT_Description::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_DiagramDefinition::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_DiagramDefinition::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -18956,6 +19627,17 @@ CT_Description* CT_Description::default_instance_ = NULL;
 CT_DiagramDefinition* CT_DiagramDefinition::default_instance_ = NULL;
 
     // CT_DiagramDefinitionHeader
+    CT_DiagramDefinitionHeader::CT_DiagramDefinitionHeader()
+    :m_has_uniqueId_attr(false),
+    m_uniqueId_attr(""),
+    m_has_minVer_attr(false),
+    m_minVer_attr(""),
+    m_has_defStyle_attr(false),
+    m_defStyle_attr(""),
+    m_has_resId_attr(false),
+    m_resId_attr(0)
+    {
+    }
     CT_Name* CT_DiagramDefinitionHeader::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -18980,10 +19662,10 @@ CT_DiagramDefinition* CT_DiagramDefinition::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_DiagramDefinitionHeader::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_DiagramDefinitionHeader::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -19052,19 +19734,19 @@ CT_DiagramDefinition* CT_DiagramDefinition::default_instance_ = NULL;
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("title", "", _outStream);
+                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
             }
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
             }
             else if ((*iter)->has_catLst())
             {
-                (*iter)->get_catLst().toXmlElem("catLst", "", _outStream);
+                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
@@ -19147,6 +19829,17 @@ CT_DiagramDefinition* CT_DiagramDefinition::default_instance_ = NULL;
 
 
     // CT_DiagramDefinitionHeader::ChildGroup_1
+    CT_DiagramDefinitionHeader::ChildGroup_1::ChildGroup_1()
+    :m_has_title(false),
+    m_title(NULL),
+    m_has_desc(false),
+    m_desc(NULL),
+    m_has_catLst(false),
+    m_catLst(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_DiagramDefinitionHeader::ChildGroup_1::has_title() const
     {    
     return m_has_title;
@@ -19173,12 +19866,12 @@ CT_DiagramDefinition* CT_DiagramDefinition::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -19225,12 +19918,12 @@ CT_DiagramDefinition* CT_DiagramDefinition::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -19277,12 +19970,12 @@ CT_DiagramDefinition* CT_DiagramDefinition::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -19303,12 +19996,12 @@ CT_DiagramDefinition* CT_DiagramDefinition::default_instance_ = NULL;
     return CT_Categories::default_instance();
     }
 
-    bool CT_DiagramDefinitionHeader::ChildGroup_1::has_a_extLst() const
+    bool CT_DiagramDefinitionHeader::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_DiagramDefinitionHeader::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_DiagramDefinitionHeader::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_title = false;
@@ -19338,19 +20031,19 @@ CT_DiagramDefinition* CT_DiagramDefinition::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_DiagramDefinitionHeader::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_DiagramDefinitionHeader::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -19358,6 +20051,10 @@ CT_DiagramDefinition* CT_DiagramDefinition::default_instance_ = NULL;
 CT_DiagramDefinitionHeader* CT_DiagramDefinitionHeader::default_instance_ = NULL;
 
     // CT_DiagramDefinitionHeaderLst
+    CT_DiagramDefinitionHeaderLst::CT_DiagramDefinitionHeaderLst()
+
+    {
+    }
     CT_DiagramDefinitionHeader* CT_DiagramDefinitionHeaderLst::add_layoutDefHdr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -19395,7 +20092,7 @@ CT_DiagramDefinitionHeader* CT_DiagramDefinitionHeader::default_instance_ = NULL
         {
             if ((*iter)->has_layoutDefHdr())
             {
-                (*iter)->get_layoutDefHdr().toXmlElem("layoutDefHdr", "", _outStream);
+                (*iter)->get_layoutDefHdr().toXmlElem("diagram:layoutDefHdr", "", _outStream);
             }
         }
     }
@@ -19414,6 +20111,11 @@ CT_DiagramDefinitionHeader* CT_DiagramDefinitionHeader::default_instance_ = NULL
 
 
     // CT_DiagramDefinitionHeaderLst::ChildGroup_1
+    CT_DiagramDefinitionHeaderLst::ChildGroup_1::ChildGroup_1()
+    :m_has_layoutDefHdr(false),
+    m_layoutDefHdr(NULL)
+    {
+    }
     bool CT_DiagramDefinitionHeaderLst::ChildGroup_1::has_layoutDefHdr() const
     {    
     return m_has_layoutDefHdr;
@@ -19442,6 +20144,17 @@ CT_DiagramDefinitionHeader* CT_DiagramDefinitionHeader::default_instance_ = NULL
 CT_DiagramDefinitionHeaderLst* CT_DiagramDefinitionHeaderLst::default_instance_ = NULL;
 
     // CT_RelIds
+    CT_RelIds::CT_RelIds()
+    :m_has_r_dm_attr(false),
+    m_r_dm_attr(NULL),
+    m_has_r_lo_attr(false),
+    m_r_lo_attr(NULL),
+    m_has_r_qs_attr(false),
+    m_r_qs_attr(NULL),
+    m_has_r_cs_attr(false),
+    m_r_cs_attr(NULL)
+    {
+    }
     void CT_RelIds::clear()
     {    
     m_has_r_dm_attr = false;
@@ -19492,25 +20205,25 @@ CT_DiagramDefinitionHeaderLst* CT_DiagramDefinitionHeaderLst::default_instance_ 
             
     if (m_has_r_dm_attr)
     {
-        m_r_dm_attr->toXmlAttr("dm", _outStream);
+        m_r_dm_attr->toXmlAttr("r:dm", _outStream);
     }
     
     
     if (m_has_r_lo_attr)
     {
-        m_r_lo_attr->toXmlAttr("lo", _outStream);
+        m_r_lo_attr->toXmlAttr("r:lo", _outStream);
     }
     
     
     if (m_has_r_qs_attr)
     {
-        m_r_qs_attr->toXmlAttr("qs", _outStream);
+        m_r_qs_attr->toXmlAttr("r:qs", _outStream);
     }
     
     
     if (m_has_r_cs_attr)
     {
-        m_r_cs_attr->toXmlAttr("cs", _outStream);
+        m_r_cs_attr->toXmlAttr("r:cs", _outStream);
     }
     
             _outStream << ">";
@@ -19610,6 +20323,69 @@ CT_DiagramDefinitionHeaderLst* CT_DiagramDefinitionHeaderLst::default_instance_ 
 CT_RelIds* CT_RelIds::default_instance_ = NULL;
 
     // CT_ElemPropSet
+    CT_ElemPropSet::CT_ElemPropSet()
+    :m_has_presLayoutVars(false),
+    m_presLayoutVars(NULL),
+    m_has_style(false),
+    m_style(NULL),
+    m_has_presAssocID_attr(false),
+    m_presAssocID_attr(NULL),
+    m_has_presName_attr(false),
+    m_presName_attr(""),
+    m_has_presStyleLbl_attr(false),
+    m_presStyleLbl_attr(""),
+    m_has_presStyleIdx_attr(false),
+    m_presStyleIdx_attr(0),
+    m_has_presStyleCnt_attr(false),
+    m_presStyleCnt_attr(0),
+    m_has_loTypeId_attr(false),
+    m_loTypeId_attr(""),
+    m_has_loCatId_attr(false),
+    m_loCatId_attr(""),
+    m_has_qsTypeId_attr(false),
+    m_qsTypeId_attr(""),
+    m_has_qsCatId_attr(false),
+    m_qsCatId_attr(""),
+    m_has_csTypeId_attr(false),
+    m_csTypeId_attr(""),
+    m_has_csCatId_attr(false),
+    m_csCatId_attr(""),
+    m_has_coherent3DOff_attr(false),
+    m_coherent3DOff_attr(false),
+    m_has_phldrT_attr(false),
+    m_phldrT_attr(""),
+    m_has_phldr_attr(false),
+    m_phldr_attr(false),
+    m_has_custAng_attr(false),
+    m_custAng_attr(0),
+    m_has_custFlipVert_attr(false),
+    m_custFlipVert_attr(false),
+    m_has_custFlipHor_attr(false),
+    m_custFlipHor_attr(false),
+    m_has_custSzX_attr(false),
+    m_custSzX_attr(0),
+    m_has_custSzY_attr(false),
+    m_custSzY_attr(0),
+    m_has_custScaleX_attr(false),
+    m_custScaleX_attr(NULL),
+    m_has_custScaleY_attr(false),
+    m_custScaleY_attr(NULL),
+    m_has_custT_attr(false),
+    m_custT_attr(false),
+    m_has_custLinFactX_attr(false),
+    m_custLinFactX_attr(NULL),
+    m_has_custLinFactY_attr(false),
+    m_custLinFactY_attr(NULL),
+    m_has_custLinFactNeighborX_attr(false),
+    m_custLinFactNeighborX_attr(NULL),
+    m_has_custLinFactNeighborY_attr(false),
+    m_custLinFactNeighborY_attr(NULL),
+    m_has_custRadScaleRad_attr(false),
+    m_custRadScaleRad_attr(NULL),
+    m_has_custRadScaleInc_attr(false),
+    m_custRadScaleInc_attr(NULL)
+    {
+    }
     bool CT_ElemPropSet::has_presLayoutVars() const
     {    
     return m_has_presLayoutVars;
@@ -19634,26 +20410,26 @@ CT_RelIds* CT_RelIds::default_instance_ = NULL;
     return CT_LayoutVariablePropertySet::default_instance();
     }
 
-    bool CT_ElemPropSet::has_a_style() const
+    bool CT_ElemPropSet::has_style() const
     {    
-    return m_has_a_style;
+    return m_has_style;
     }
 
-    ns_a::CT_ShapeStyle* CT_ElemPropSet::mutable_a_style()
+    ns_a::CT_ShapeStyle* CT_ElemPropSet::mutable_style()
     {    
-    m_has_a_style = true;
-    if (!m_a_style)
+    m_has_style = true;
+    if (!m_style)
     {
-        m_a_style = new ns_a::CT_ShapeStyle();
+        m_style = new ns_a::CT_ShapeStyle();
     }
-    return m_a_style;
+    return m_style;
     }
 
-    const ns_a::CT_ShapeStyle& CT_ElemPropSet::get_a_style() const
+    const ns_a::CT_ShapeStyle& CT_ElemPropSet::get_style() const
     {    
-    if (m_a_style)
+    if (m_style)
     {
-        return *m_a_style;
+        return *m_style;
     }
     return ns_a::CT_ShapeStyle::default_instance();
     }
@@ -19979,12 +20755,12 @@ CT_RelIds* CT_RelIds::default_instance_ = NULL;
             
     if (m_has_presLayoutVars)
     {
-        m_presLayoutVars->toXmlElem("presLayoutVars", "", _outStream);;
+        m_presLayoutVars->toXmlElem("diagram:presLayoutVars", "", _outStream);;
     }
     
-    if (m_has_a_style)
+    if (m_has_style)
     {
-        m_a_style->toXmlElem("a:style", "", _outStream);;
+        m_style->toXmlElem("diagram:style", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20486,6 +21262,11 @@ CT_RelIds* CT_RelIds::default_instance_ = NULL;
 CT_ElemPropSet* CT_ElemPropSet::default_instance_ = NULL;
 
     // CT_OrgChart
+    CT_OrgChart::CT_OrgChart()
+    :m_has_val_attr(false),
+    m_val_attr(false)
+    {
+    }
     void CT_OrgChart::clear()
     {    
     m_has_val_attr = false;
@@ -20539,6 +21320,11 @@ CT_ElemPropSet* CT_ElemPropSet::default_instance_ = NULL;
 CT_OrgChart* CT_OrgChart::default_instance_ = NULL;
 
     // CT_ChildMax
+    CT_ChildMax::CT_ChildMax()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_ChildMax::clear()
     {    
     m_has_val_attr = false;
@@ -20602,6 +21388,11 @@ CT_OrgChart* CT_OrgChart::default_instance_ = NULL;
 CT_ChildMax* CT_ChildMax::default_instance_ = NULL;
 
     // CT_ChildPref
+    CT_ChildPref::CT_ChildPref()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_ChildPref::clear()
     {    
     m_has_val_attr = false;
@@ -20665,6 +21456,11 @@ CT_ChildMax* CT_ChildMax::default_instance_ = NULL;
 CT_ChildPref* CT_ChildPref::default_instance_ = NULL;
 
     // CT_BulletEnabled
+    CT_BulletEnabled::CT_BulletEnabled()
+    :m_has_val_attr(false),
+    m_val_attr(false)
+    {
+    }
     void CT_BulletEnabled::clear()
     {    
     m_has_val_attr = false;
@@ -20718,6 +21514,11 @@ CT_ChildPref* CT_ChildPref::default_instance_ = NULL;
 CT_BulletEnabled* CT_BulletEnabled::default_instance_ = NULL;
 
     // CT_Direction
+    CT_Direction::CT_Direction()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_Direction::clear()
     {    
     m_has_val_attr = false;
@@ -20781,6 +21582,11 @@ CT_BulletEnabled* CT_BulletEnabled::default_instance_ = NULL;
 CT_Direction* CT_Direction::default_instance_ = NULL;
 
     // CT_HierBranchStyle
+    CT_HierBranchStyle::CT_HierBranchStyle()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_HierBranchStyle::clear()
     {    
     m_has_val_attr = false;
@@ -20844,6 +21650,11 @@ CT_Direction* CT_Direction::default_instance_ = NULL;
 CT_HierBranchStyle* CT_HierBranchStyle::default_instance_ = NULL;
 
     // CT_AnimOne
+    CT_AnimOne::CT_AnimOne()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_AnimOne::clear()
     {    
     m_has_val_attr = false;
@@ -20907,6 +21718,11 @@ CT_HierBranchStyle* CT_HierBranchStyle::default_instance_ = NULL;
 CT_AnimOne* CT_AnimOne::default_instance_ = NULL;
 
     // CT_AnimLvl
+    CT_AnimLvl::CT_AnimLvl()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_AnimLvl::clear()
     {    
     m_has_val_attr = false;
@@ -20970,6 +21786,11 @@ CT_AnimOne* CT_AnimOne::default_instance_ = NULL;
 CT_AnimLvl* CT_AnimLvl::default_instance_ = NULL;
 
     // CT_ResizeHandles
+    CT_ResizeHandles::CT_ResizeHandles()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_ResizeHandles::clear()
     {    
     m_has_val_attr = false;
@@ -21033,6 +21854,27 @@ CT_AnimLvl* CT_AnimLvl::default_instance_ = NULL;
 CT_ResizeHandles* CT_ResizeHandles::default_instance_ = NULL;
 
     // CT_LayoutVariablePropertySet
+    CT_LayoutVariablePropertySet::CT_LayoutVariablePropertySet()
+    :m_has_orgChart(false),
+    m_orgChart(NULL),
+    m_has_chMax(false),
+    m_chMax(NULL),
+    m_has_chPref(false),
+    m_chPref(NULL),
+    m_has_bulletEnabled(false),
+    m_bulletEnabled(NULL),
+    m_has_dir(false),
+    m_dir(NULL),
+    m_has_hierBranch(false),
+    m_hierBranch(NULL),
+    m_has_animOne(false),
+    m_animOne(NULL),
+    m_has_animLvl(false),
+    m_animLvl(NULL),
+    m_has_resizeHandles(false),
+    m_resizeHandles(NULL)
+    {
+    }
     bool CT_LayoutVariablePropertySet::has_orgChart() const
     {    
     return m_has_orgChart;
@@ -21265,47 +22107,47 @@ CT_ResizeHandles* CT_ResizeHandles::default_instance_ = NULL;
             
     if (m_has_orgChart)
     {
-        m_orgChart->toXmlElem("orgChart", "", _outStream);;
+        m_orgChart->toXmlElem("diagram:orgChart", "", _outStream);;
     }
     
     if (m_has_chMax)
     {
-        m_chMax->toXmlElem("chMax", "", _outStream);;
+        m_chMax->toXmlElem("diagram:chMax", "", _outStream);;
     }
     
     if (m_has_chPref)
     {
-        m_chPref->toXmlElem("chPref", "", _outStream);;
+        m_chPref->toXmlElem("diagram:chPref", "", _outStream);;
     }
     
     if (m_has_bulletEnabled)
     {
-        m_bulletEnabled->toXmlElem("bulletEnabled", "", _outStream);;
+        m_bulletEnabled->toXmlElem("diagram:bulletEnabled", "", _outStream);;
     }
     
     if (m_has_dir)
     {
-        m_dir->toXmlElem("dir", "", _outStream);;
+        m_dir->toXmlElem("diagram:dir", "", _outStream);;
     }
     
     if (m_has_hierBranch)
     {
-        m_hierBranch->toXmlElem("hierBranch", "", _outStream);;
+        m_hierBranch->toXmlElem("diagram:hierBranch", "", _outStream);;
     }
     
     if (m_has_animOne)
     {
-        m_animOne->toXmlElem("animOne", "", _outStream);;
+        m_animOne->toXmlElem("diagram:animOne", "", _outStream);;
     }
     
     if (m_has_animLvl)
     {
-        m_animLvl->toXmlElem("animLvl", "", _outStream);;
+        m_animLvl->toXmlElem("diagram:animLvl", "", _outStream);;
     }
     
     if (m_has_resizeHandles)
     {
-        m_resizeHandles->toXmlElem("resizeHandles", "", _outStream);;
+        m_resizeHandles->toXmlElem("diagram:resizeHandles", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -21323,6 +22165,13 @@ CT_ResizeHandles* CT_ResizeHandles::default_instance_ = NULL;
 CT_LayoutVariablePropertySet* CT_LayoutVariablePropertySet::default_instance_ = NULL;
 
     // CT_SDName
+    CT_SDName::CT_SDName()
+    :m_has_lang_attr(false),
+    m_lang_attr(""),
+    m_has_val_attr(false),
+    m_val_attr("")
+    {
+    }
     void CT_SDName::clear()
     {    
     m_has_lang_attr = false;
@@ -21401,6 +22250,13 @@ CT_LayoutVariablePropertySet* CT_LayoutVariablePropertySet::default_instance_ = 
 CT_SDName* CT_SDName::default_instance_ = NULL;
 
     // CT_SDDescription
+    CT_SDDescription::CT_SDDescription()
+    :m_has_lang_attr(false),
+    m_lang_attr(""),
+    m_has_val_attr(false),
+    m_val_attr("")
+    {
+    }
     void CT_SDDescription::clear()
     {    
     m_has_lang_attr = false;
@@ -21479,6 +22335,13 @@ CT_SDName* CT_SDName::default_instance_ = NULL;
 CT_SDDescription* CT_SDDescription::default_instance_ = NULL;
 
     // CT_SDCategory
+    CT_SDCategory::CT_SDCategory()
+    :m_has_type_attr(false),
+    m_type_attr(""),
+    m_has_pri_attr(false),
+    m_pri_attr(0)
+    {
+    }
     void CT_SDCategory::clear()
     {    
     m_has_type_attr = false;
@@ -21557,6 +22420,10 @@ CT_SDDescription* CT_SDDescription::default_instance_ = NULL;
 CT_SDCategory* CT_SDCategory::default_instance_ = NULL;
 
     // CT_SDCategories
+    CT_SDCategories::CT_SDCategories()
+
+    {
+    }
     CT_SDCategory* CT_SDCategories::add_cat()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -21594,7 +22461,7 @@ CT_SDCategory* CT_SDCategory::default_instance_ = NULL;
         {
             if ((*iter)->has_cat())
             {
-                (*iter)->get_cat().toXmlElem("cat", "", _outStream);
+                (*iter)->get_cat().toXmlElem("diagram:cat", "", _outStream);
             }
         }
     }
@@ -21613,6 +22480,11 @@ CT_SDCategory* CT_SDCategory::default_instance_ = NULL;
 
 
     // CT_SDCategories::ChildGroup_1
+    CT_SDCategories::ChildGroup_1::ChildGroup_1()
+    :m_has_cat(false),
+    m_cat(NULL)
+    {
+    }
     bool CT_SDCategories::ChildGroup_1::has_cat() const
     {    
     return m_has_cat;
@@ -21641,6 +22513,13 @@ CT_SDCategory* CT_SDCategory::default_instance_ = NULL;
 CT_SDCategories* CT_SDCategories::default_instance_ = NULL;
 
     // CT_TextProps
+    CT_TextProps::CT_TextProps()
+    :m_has_a_sp3d(false),
+    m_a_sp3d(NULL),
+    m_has_a_flatTx(false),
+    m_a_flatTx(NULL)
+    {
+    }
     bool CT_TextProps::has_a_sp3d() const
     {    
     return m_has_a_sp3d;
@@ -21748,50 +22627,65 @@ CT_SDCategories* CT_SDCategories::default_instance_ = NULL;
 CT_TextProps* CT_TextProps::default_instance_ = NULL;
 
     // CT_StyleLabel
-    bool CT_StyleLabel::has_a_scene3d() const
+    CT_StyleLabel::CT_StyleLabel()
+    :m_has_scene3d(false),
+    m_scene3d(NULL),
+    m_has_sp3d(false),
+    m_sp3d(NULL),
+    m_has_txPr(false),
+    m_txPr(NULL),
+    m_has_style(false),
+    m_style(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr("")
+    {
+    }
+    bool CT_StyleLabel::has_scene3d() const
     {    
-    return m_has_a_scene3d;
+    return m_has_scene3d;
     }
 
-    ns_a::CT_Scene3D* CT_StyleLabel::mutable_a_scene3d()
+    ns_a::CT_Scene3D* CT_StyleLabel::mutable_scene3d()
     {    
-    m_has_a_scene3d = true;
-    if (!m_a_scene3d)
+    m_has_scene3d = true;
+    if (!m_scene3d)
     {
-        m_a_scene3d = new ns_a::CT_Scene3D();
+        m_scene3d = new ns_a::CT_Scene3D();
     }
-    return m_a_scene3d;
+    return m_scene3d;
     }
 
-    const ns_a::CT_Scene3D& CT_StyleLabel::get_a_scene3d() const
+    const ns_a::CT_Scene3D& CT_StyleLabel::get_scene3d() const
     {    
-    if (m_a_scene3d)
+    if (m_scene3d)
     {
-        return *m_a_scene3d;
+        return *m_scene3d;
     }
     return ns_a::CT_Scene3D::default_instance();
     }
 
-    bool CT_StyleLabel::has_a_sp3d() const
+    bool CT_StyleLabel::has_sp3d() const
     {    
-    return m_has_a_sp3d;
+    return m_has_sp3d;
     }
 
-    ns_a::CT_Shape3D* CT_StyleLabel::mutable_a_sp3d()
+    ns_a::CT_Shape3D* CT_StyleLabel::mutable_sp3d()
     {    
-    m_has_a_sp3d = true;
-    if (!m_a_sp3d)
+    m_has_sp3d = true;
+    if (!m_sp3d)
     {
-        m_a_sp3d = new ns_a::CT_Shape3D();
+        m_sp3d = new ns_a::CT_Shape3D();
     }
-    return m_a_sp3d;
+    return m_sp3d;
     }
 
-    const ns_a::CT_Shape3D& CT_StyleLabel::get_a_sp3d() const
+    const ns_a::CT_Shape3D& CT_StyleLabel::get_sp3d() const
     {    
-    if (m_a_sp3d)
+    if (m_sp3d)
     {
-        return *m_a_sp3d;
+        return *m_sp3d;
     }
     return ns_a::CT_Shape3D::default_instance();
     }
@@ -21820,50 +22714,50 @@ CT_TextProps* CT_TextProps::default_instance_ = NULL;
     return CT_TextProps::default_instance();
     }
 
-    bool CT_StyleLabel::has_a_style() const
+    bool CT_StyleLabel::has_style() const
     {    
-    return m_has_a_style;
+    return m_has_style;
     }
 
-    ns_a::CT_ShapeStyle* CT_StyleLabel::mutable_a_style()
+    ns_a::CT_ShapeStyle* CT_StyleLabel::mutable_style()
     {    
-    m_has_a_style = true;
-    if (!m_a_style)
+    m_has_style = true;
+    if (!m_style)
     {
-        m_a_style = new ns_a::CT_ShapeStyle();
+        m_style = new ns_a::CT_ShapeStyle();
     }
-    return m_a_style;
+    return m_style;
     }
 
-    const ns_a::CT_ShapeStyle& CT_StyleLabel::get_a_style() const
+    const ns_a::CT_ShapeStyle& CT_StyleLabel::get_style() const
     {    
-    if (m_a_style)
+    if (m_style)
     {
-        return *m_a_style;
+        return *m_style;
     }
     return ns_a::CT_ShapeStyle::default_instance();
     }
 
-    bool CT_StyleLabel::has_a_extLst() const
+    bool CT_StyleLabel::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_StyleLabel::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_StyleLabel::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_StyleLabel::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_StyleLabel::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -21890,29 +22784,29 @@ CT_TextProps* CT_TextProps::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_a_scene3d)
+    if (m_has_scene3d)
     {
-        m_a_scene3d->toXmlElem("a:scene3d", "", _outStream);;
+        m_scene3d->toXmlElem("diagram:scene3d", "", _outStream);;
     }
     
-    if (m_has_a_sp3d)
+    if (m_has_sp3d)
     {
-        m_a_sp3d->toXmlElem("a:sp3d", "", _outStream);;
+        m_sp3d->toXmlElem("diagram:sp3d", "", _outStream);;
     }
     
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("txPr", "", _outStream);;
+        m_txPr->toXmlElem("diagram:txPr", "", _outStream);;
     }
     
-    if (m_has_a_style)
+    if (m_has_style)
     {
-        m_a_style->toXmlElem("a:style", "", _outStream);;
+        m_style->toXmlElem("diagram:style", "", _outStream);;
     }
     
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -21946,6 +22840,13 @@ CT_TextProps* CT_TextProps::default_instance_ = NULL;
 CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
 
     // CT_StyleDefinition
+    CT_StyleDefinition::CT_StyleDefinition()
+    :m_has_uniqueId_attr(false),
+    m_uniqueId_attr(""),
+    m_has_minVer_attr(false),
+    m_minVer_attr("")
+    {
+    }
     CT_SDName* CT_StyleDefinition::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -21970,10 +22871,10 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_Scene3D* CT_StyleDefinition::add_a_scene3d()
+    ns_a::CT_Scene3D* CT_StyleDefinition::add_scene3d()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_Scene3D* pNewChild = pChildGroup->mutable_a_scene3d();
+    ns_a::CT_Scene3D* pNewChild = pChildGroup->mutable_scene3d();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -21986,10 +22887,10 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_StyleDefinition::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_StyleDefinition::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -22040,27 +22941,27 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("title", "", _outStream);
+                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
             }
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
             }
             else if ((*iter)->has_catLst())
             {
-                (*iter)->get_catLst().toXmlElem("catLst", "", _outStream);
+                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
             }
-            else if ((*iter)->has_a_scene3d())
+            else if ((*iter)->has_scene3d())
             {
-                (*iter)->get_a_scene3d().toXmlElem("a:scene3d", "", _outStream);
+                (*iter)->get_scene3d().toXmlElem("diagram:scene3d", "", _outStream);
             }
             else if ((*iter)->has_styleLbl())
             {
-                (*iter)->get_styleLbl().toXmlElem("styleLbl", "", _outStream);
+                (*iter)->get_styleLbl().toXmlElem("diagram:styleLbl", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
@@ -22111,6 +23012,21 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
 
 
     // CT_StyleDefinition::ChildGroup_1
+    CT_StyleDefinition::ChildGroup_1::ChildGroup_1()
+    :m_has_title(false),
+    m_title(NULL),
+    m_has_desc(false),
+    m_desc(NULL),
+    m_has_catLst(false),
+    m_catLst(NULL),
+    m_has_scene3d(false),
+    m_scene3d(NULL),
+    m_has_styleLbl(false),
+    m_styleLbl(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_StyleDefinition::ChildGroup_1::has_title() const
     {    
     return m_has_title;
@@ -22137,12 +23053,12 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_scene3d = false;
+    m_has_scene3d = false;
     
-    if (m_a_scene3d)
+    if (m_scene3d)
     {
-        delete m_a_scene3d;
-        m_a_scene3d = NULL;
+        delete m_scene3d;
+        m_scene3d = NULL;
     }
     ;
     
@@ -22155,12 +23071,12 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -22207,12 +23123,12 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_scene3d = false;
+    m_has_scene3d = false;
     
-    if (m_a_scene3d)
+    if (m_scene3d)
     {
-        delete m_a_scene3d;
-        m_a_scene3d = NULL;
+        delete m_scene3d;
+        m_scene3d = NULL;
     }
     ;
     
@@ -22225,12 +23141,12 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -22277,12 +23193,12 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_scene3d = false;
+    m_has_scene3d = false;
     
-    if (m_a_scene3d)
+    if (m_scene3d)
     {
-        delete m_a_scene3d;
-        m_a_scene3d = NULL;
+        delete m_scene3d;
+        m_scene3d = NULL;
     }
     ;
     
@@ -22295,12 +23211,12 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -22321,12 +23237,12 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     return CT_SDCategories::default_instance();
     }
 
-    bool CT_StyleDefinition::ChildGroup_1::has_a_scene3d() const
+    bool CT_StyleDefinition::ChildGroup_1::has_scene3d() const
     {    
-    return m_has_a_scene3d;
+    return m_has_scene3d;
     }
 
-    ns_a::CT_Scene3D* CT_StyleDefinition::ChildGroup_1::mutable_a_scene3d()
+    ns_a::CT_Scene3D* CT_StyleDefinition::ChildGroup_1::mutable_scene3d()
     {    
     
     m_has_title = false;
@@ -22365,28 +23281,28 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
-    m_has_a_scene3d = true;
-    if (!m_a_scene3d)
+    m_has_scene3d = true;
+    if (!m_scene3d)
     {
-        m_a_scene3d = new ns_a::CT_Scene3D();
+        m_scene3d = new ns_a::CT_Scene3D();
     }
-    return m_a_scene3d;
+    return m_scene3d;
     }
 
-    const ns_a::CT_Scene3D& CT_StyleDefinition::ChildGroup_1::get_a_scene3d() const
+    const ns_a::CT_Scene3D& CT_StyleDefinition::ChildGroup_1::get_scene3d() const
     {    
-    if (m_a_scene3d)
+    if (m_scene3d)
     {
-        return *m_a_scene3d;
+        return *m_scene3d;
     }
     return ns_a::CT_Scene3D::default_instance();
     }
@@ -22426,21 +23342,21 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_scene3d = false;
+    m_has_scene3d = false;
     
-    if (m_a_scene3d)
+    if (m_scene3d)
     {
-        delete m_a_scene3d;
-        m_a_scene3d = NULL;
+        delete m_scene3d;
+        m_scene3d = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -22461,12 +23377,12 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     return CT_StyleLabel::default_instance();
     }
 
-    bool CT_StyleDefinition::ChildGroup_1::has_a_extLst() const
+    bool CT_StyleDefinition::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_StyleDefinition::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_StyleDefinition::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_title = false;
@@ -22496,12 +23412,12 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_scene3d = false;
+    m_has_scene3d = false;
     
-    if (m_a_scene3d)
+    if (m_scene3d)
     {
-        delete m_a_scene3d;
-        m_a_scene3d = NULL;
+        delete m_scene3d;
+        m_scene3d = NULL;
     }
     ;
     
@@ -22514,19 +23430,19 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_StyleDefinition::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_StyleDefinition::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -22534,6 +23450,15 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
 CT_StyleDefinition* CT_StyleDefinition::default_instance_ = NULL;
 
     // CT_StyleDefinitionHeader
+    CT_StyleDefinitionHeader::CT_StyleDefinitionHeader()
+    :m_has_uniqueId_attr(false),
+    m_uniqueId_attr(""),
+    m_has_minVer_attr(false),
+    m_minVer_attr(""),
+    m_has_resId_attr(false),
+    m_resId_attr(0)
+    {
+    }
     CT_SDName* CT_StyleDefinitionHeader::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -22558,10 +23483,10 @@ CT_StyleDefinition* CT_StyleDefinition::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_StyleDefinitionHeader::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_StyleDefinitionHeader::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -22621,19 +23546,19 @@ CT_StyleDefinition* CT_StyleDefinition::default_instance_ = NULL;
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("title", "", _outStream);
+                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
             }
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
             }
             else if ((*iter)->has_catLst())
             {
-                (*iter)->get_catLst().toXmlElem("catLst", "", _outStream);
+                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
@@ -22700,6 +23625,17 @@ CT_StyleDefinition* CT_StyleDefinition::default_instance_ = NULL;
 
 
     // CT_StyleDefinitionHeader::ChildGroup_1
+    CT_StyleDefinitionHeader::ChildGroup_1::ChildGroup_1()
+    :m_has_title(false),
+    m_title(NULL),
+    m_has_desc(false),
+    m_desc(NULL),
+    m_has_catLst(false),
+    m_catLst(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_StyleDefinitionHeader::ChildGroup_1::has_title() const
     {    
     return m_has_title;
@@ -22726,12 +23662,12 @@ CT_StyleDefinition* CT_StyleDefinition::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -22778,12 +23714,12 @@ CT_StyleDefinition* CT_StyleDefinition::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -22830,12 +23766,12 @@ CT_StyleDefinition* CT_StyleDefinition::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -22856,12 +23792,12 @@ CT_StyleDefinition* CT_StyleDefinition::default_instance_ = NULL;
     return CT_SDCategories::default_instance();
     }
 
-    bool CT_StyleDefinitionHeader::ChildGroup_1::has_a_extLst() const
+    bool CT_StyleDefinitionHeader::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* CT_StyleDefinitionHeader::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* CT_StyleDefinitionHeader::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_title = false;
@@ -22891,19 +23827,19 @@ CT_StyleDefinition* CT_StyleDefinition::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& CT_StyleDefinitionHeader::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& CT_StyleDefinitionHeader::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -22911,6 +23847,10 @@ CT_StyleDefinition* CT_StyleDefinition::default_instance_ = NULL;
 CT_StyleDefinitionHeader* CT_StyleDefinitionHeader::default_instance_ = NULL;
 
     // CT_StyleDefinitionHeaderLst
+    CT_StyleDefinitionHeaderLst::CT_StyleDefinitionHeaderLst()
+
+    {
+    }
     CT_StyleDefinitionHeader* CT_StyleDefinitionHeaderLst::add_styleDefHdr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -22948,7 +23888,7 @@ CT_StyleDefinitionHeader* CT_StyleDefinitionHeader::default_instance_ = NULL;
         {
             if ((*iter)->has_styleDefHdr())
             {
-                (*iter)->get_styleDefHdr().toXmlElem("styleDefHdr", "", _outStream);
+                (*iter)->get_styleDefHdr().toXmlElem("diagram:styleDefHdr", "", _outStream);
             }
         }
     }
@@ -22967,6 +23907,11 @@ CT_StyleDefinitionHeader* CT_StyleDefinitionHeader::default_instance_ = NULL;
 
 
     // CT_StyleDefinitionHeaderLst::ChildGroup_1
+    CT_StyleDefinitionHeaderLst::ChildGroup_1::ChildGroup_1()
+    :m_has_styleDefHdr(false),
+    m_styleDefHdr(NULL)
+    {
+    }
     bool CT_StyleDefinitionHeaderLst::ChildGroup_1::has_styleDefHdr() const
     {    
     return m_has_styleDefHdr;
@@ -22995,6 +23940,13 @@ CT_StyleDefinitionHeader* CT_StyleDefinitionHeader::default_instance_ = NULL;
 CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NULL;
 
     // colorsDef_element
+    colorsDef_element::colorsDef_element()
+    :m_has_uniqueId_attr(false),
+    m_uniqueId_attr(""),
+    m_has_minVer_attr(false),
+    m_minVer_attr("")
+    {
+    }
     CT_CTName* colorsDef_element::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -23027,10 +23979,10 @@ CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NU
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* colorsDef_element::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* colorsDef_element::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -23055,7 +24007,7 @@ CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NU
 
     void colorsDef_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<colorsDef";
+    _outStream << "<diagram:colorsDef";
     
     _outStream << " " << "xmlns:diagram=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -23081,28 +24033,28 @@ CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NU
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("title", "", _outStream);
+                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
             }
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
             }
             else if ((*iter)->has_catLst())
             {
-                (*iter)->get_catLst().toXmlElem("catLst", "", _outStream);
+                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
             }
             else if ((*iter)->has_styleLbl())
             {
-                (*iter)->get_styleLbl().toXmlElem("styleLbl", "", _outStream);
+                (*iter)->get_styleLbl().toXmlElem("diagram:styleLbl", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
     
-    _outStream << "</colorsDef>";
+    _outStream << "</diagram:colorsDef>";
     }
 
     const colorsDef_element& colorsDef_element::default_instance()
@@ -23148,6 +24100,19 @@ CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NU
 
 
     // colorsDef_element::ChildGroup_1
+    colorsDef_element::ChildGroup_1::ChildGroup_1()
+    :m_has_title(false),
+    m_title(NULL),
+    m_has_desc(false),
+    m_desc(NULL),
+    m_has_catLst(false),
+    m_catLst(NULL),
+    m_has_styleLbl(false),
+    m_styleLbl(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool colorsDef_element::ChildGroup_1::has_title() const
     {    
     return m_has_title;
@@ -23183,12 +24148,12 @@ CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NU
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -23244,12 +24209,12 @@ CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NU
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -23305,12 +24270,12 @@ CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NU
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -23366,12 +24331,12 @@ CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NU
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -23392,12 +24357,12 @@ CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NU
     return CT_CTStyleLabel::default_instance();
     }
 
-    bool colorsDef_element::ChildGroup_1::has_a_extLst() const
+    bool colorsDef_element::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* colorsDef_element::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* colorsDef_element::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_title = false;
@@ -23436,19 +24401,19 @@ CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NU
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& colorsDef_element::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& colorsDef_element::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -23456,6 +24421,15 @@ CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NU
 colorsDef_element* colorsDef_element::default_instance_ = NULL;
 
     // colorsDefHdr_element
+    colorsDefHdr_element::colorsDefHdr_element()
+    :m_has_uniqueId_attr(false),
+    m_uniqueId_attr(""),
+    m_has_minVer_attr(false),
+    m_minVer_attr(""),
+    m_has_resId_attr(false),
+    m_resId_attr(0)
+    {
+    }
     CT_CTName* colorsDefHdr_element::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -23480,10 +24454,10 @@ colorsDef_element* colorsDef_element::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* colorsDefHdr_element::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* colorsDefHdr_element::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -23511,7 +24485,7 @@ colorsDef_element* colorsDef_element::default_instance_ = NULL;
 
     void colorsDefHdr_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<colorsDefHdr";
+    _outStream << "<diagram:colorsDefHdr";
     
     _outStream << " " << "xmlns:diagram=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -23543,24 +24517,24 @@ colorsDef_element* colorsDef_element::default_instance_ = NULL;
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("title", "", _outStream);
+                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
             }
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
             }
             else if ((*iter)->has_catLst())
             {
-                (*iter)->get_catLst().toXmlElem("catLst", "", _outStream);
+                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
     
-    _outStream << "</colorsDefHdr>";
+    _outStream << "</diagram:colorsDefHdr>";
     }
 
     const colorsDefHdr_element& colorsDefHdr_element::default_instance()
@@ -23622,6 +24596,17 @@ colorsDef_element* colorsDef_element::default_instance_ = NULL;
 
 
     // colorsDefHdr_element::ChildGroup_1
+    colorsDefHdr_element::ChildGroup_1::ChildGroup_1()
+    :m_has_title(false),
+    m_title(NULL),
+    m_has_desc(false),
+    m_desc(NULL),
+    m_has_catLst(false),
+    m_catLst(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool colorsDefHdr_element::ChildGroup_1::has_title() const
     {    
     return m_has_title;
@@ -23648,12 +24633,12 @@ colorsDef_element* colorsDef_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -23700,12 +24685,12 @@ colorsDef_element* colorsDef_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -23752,12 +24737,12 @@ colorsDef_element* colorsDef_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -23778,12 +24763,12 @@ colorsDef_element* colorsDef_element::default_instance_ = NULL;
     return CT_CTCategories::default_instance();
     }
 
-    bool colorsDefHdr_element::ChildGroup_1::has_a_extLst() const
+    bool colorsDefHdr_element::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* colorsDefHdr_element::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* colorsDefHdr_element::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_title = false;
@@ -23813,19 +24798,19 @@ colorsDef_element* colorsDef_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& colorsDefHdr_element::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& colorsDefHdr_element::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -23833,6 +24818,10 @@ colorsDef_element* colorsDef_element::default_instance_ = NULL;
 colorsDefHdr_element* colorsDefHdr_element::default_instance_ = NULL;
 
     // colorsDefHdrLst_element
+    colorsDefHdrLst_element::colorsDefHdrLst_element()
+
+    {
+    }
     CT_ColorTransformHeader* colorsDefHdrLst_element::add_colorsDefHdr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -23855,7 +24844,7 @@ colorsDefHdr_element* colorsDefHdr_element::default_instance_ = NULL;
 
     void colorsDefHdrLst_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<colorsDefHdrLst";
+    _outStream << "<diagram:colorsDefHdrLst";
     
     _outStream << " " << "xmlns:diagram=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -23870,12 +24859,12 @@ colorsDefHdr_element* colorsDefHdr_element::default_instance_ = NULL;
         {
             if ((*iter)->has_colorsDefHdr())
             {
-                (*iter)->get_colorsDefHdr().toXmlElem("colorsDefHdr", "", _outStream);
+                (*iter)->get_colorsDefHdr().toXmlElem("diagram:colorsDefHdr", "", _outStream);
             }
         }
     }
     
-    _outStream << "</colorsDefHdrLst>";
+    _outStream << "</diagram:colorsDefHdrLst>";
     }
 
     const colorsDefHdrLst_element& colorsDefHdrLst_element::default_instance()
@@ -23889,6 +24878,11 @@ colorsDefHdr_element* colorsDefHdr_element::default_instance_ = NULL;
 
 
     // colorsDefHdrLst_element::ChildGroup_1
+    colorsDefHdrLst_element::ChildGroup_1::ChildGroup_1()
+    :m_has_colorsDefHdr(false),
+    m_colorsDefHdr(NULL)
+    {
+    }
     bool colorsDefHdrLst_element::ChildGroup_1::has_colorsDefHdr() const
     {    
     return m_has_colorsDefHdr;
@@ -23917,6 +24911,19 @@ colorsDefHdr_element* colorsDefHdr_element::default_instance_ = NULL;
 colorsDefHdrLst_element* colorsDefHdrLst_element::default_instance_ = NULL;
 
     // dataModel_element
+    dataModel_element::dataModel_element()
+    :m_has_ptLst(false),
+    m_ptLst(NULL),
+    m_has_cxnLst(false),
+    m_cxnLst(NULL),
+    m_has_bg(false),
+    m_bg(NULL),
+    m_has_whole(false),
+    m_whole(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool dataModel_element::has_ptLst() const
     {    
     return m_has_ptLst;
@@ -23965,74 +24972,74 @@ colorsDefHdrLst_element* colorsDefHdrLst_element::default_instance_ = NULL;
     return CT_CxnList::default_instance();
     }
 
-    bool dataModel_element::has_a_bg() const
+    bool dataModel_element::has_bg() const
     {    
-    return m_has_a_bg;
+    return m_has_bg;
     }
 
-    ns_a::CT_BackgroundFormatting* dataModel_element::mutable_a_bg()
+    ns_a::CT_BackgroundFormatting* dataModel_element::mutable_bg()
     {    
-    m_has_a_bg = true;
-    if (!m_a_bg)
+    m_has_bg = true;
+    if (!m_bg)
     {
-        m_a_bg = new ns_a::CT_BackgroundFormatting();
+        m_bg = new ns_a::CT_BackgroundFormatting();
     }
-    return m_a_bg;
+    return m_bg;
     }
 
-    const ns_a::CT_BackgroundFormatting& dataModel_element::get_a_bg() const
+    const ns_a::CT_BackgroundFormatting& dataModel_element::get_bg() const
     {    
-    if (m_a_bg)
+    if (m_bg)
     {
-        return *m_a_bg;
+        return *m_bg;
     }
     return ns_a::CT_BackgroundFormatting::default_instance();
     }
 
-    bool dataModel_element::has_a_whole() const
+    bool dataModel_element::has_whole() const
     {    
-    return m_has_a_whole;
+    return m_has_whole;
     }
 
-    ns_a::CT_WholeE2oFormatting* dataModel_element::mutable_a_whole()
+    ns_a::CT_WholeE2oFormatting* dataModel_element::mutable_whole()
     {    
-    m_has_a_whole = true;
-    if (!m_a_whole)
+    m_has_whole = true;
+    if (!m_whole)
     {
-        m_a_whole = new ns_a::CT_WholeE2oFormatting();
+        m_whole = new ns_a::CT_WholeE2oFormatting();
     }
-    return m_a_whole;
+    return m_whole;
     }
 
-    const ns_a::CT_WholeE2oFormatting& dataModel_element::get_a_whole() const
+    const ns_a::CT_WholeE2oFormatting& dataModel_element::get_whole() const
     {    
-    if (m_a_whole)
+    if (m_whole)
     {
-        return *m_a_whole;
+        return *m_whole;
     }
     return ns_a::CT_WholeE2oFormatting::default_instance();
     }
 
-    bool dataModel_element::has_a_extLst() const
+    bool dataModel_element::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* dataModel_element::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* dataModel_element::mutable_extLst()
     {    
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& dataModel_element::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& dataModel_element::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -24042,7 +25049,7 @@ colorsDefHdrLst_element* colorsDefHdrLst_element::default_instance_ = NULL;
 
     void dataModel_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<dataModel";
+    _outStream << "<diagram:dataModel";
     
     _outStream << " " << "xmlns:diagram=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -24053,30 +25060,30 @@ colorsDefHdrLst_element* colorsDefHdrLst_element::default_instance_ = NULL;
     
     if (m_has_ptLst)
     {
-        m_ptLst->toXmlElem("ptLst", "", _outStream);;
+        m_ptLst->toXmlElem("diagram:ptLst", "", _outStream);;
     }
     
     if (m_has_cxnLst)
     {
-        m_cxnLst->toXmlElem("cxnLst", "", _outStream);;
+        m_cxnLst->toXmlElem("diagram:cxnLst", "", _outStream);;
     }
     
-    if (m_has_a_bg)
+    if (m_has_bg)
     {
-        m_a_bg->toXmlElem("a:bg", "", _outStream);;
+        m_bg->toXmlElem("diagram:bg", "", _outStream);;
     }
     
-    if (m_has_a_whole)
+    if (m_has_whole)
     {
-        m_a_whole->toXmlElem("a:whole", "", _outStream);;
+        m_whole->toXmlElem("diagram:whole", "", _outStream);;
     }
     
-    if (m_has_a_extLst)
+    if (m_has_extLst)
     {
-        m_a_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
     }
     
-    _outStream << "</dataModel>";
+    _outStream << "</diagram:dataModel>";
     }
 
     const dataModel_element& dataModel_element::default_instance()
@@ -24091,6 +25098,15 @@ colorsDefHdrLst_element* colorsDefHdrLst_element::default_instance_ = NULL;
 dataModel_element* dataModel_element::default_instance_ = NULL;
 
     // layoutDef_element
+    layoutDef_element::layoutDef_element()
+    :m_has_uniqueId_attr(false),
+    m_uniqueId_attr(""),
+    m_has_minVer_attr(false),
+    m_minVer_attr(""),
+    m_has_defStyle_attr(false),
+    m_defStyle_attr("")
+    {
+    }
     CT_Name* layoutDef_element::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -24147,10 +25163,10 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* layoutDef_element::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* layoutDef_element::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -24178,7 +25194,7 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
 
     void layoutDef_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<layoutDef";
+    _outStream << "<diagram:layoutDef";
     
     _outStream << " " << "xmlns:diagram=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -24210,40 +25226,40 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("title", "", _outStream);
+                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
             }
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
             }
             else if ((*iter)->has_catLst())
             {
-                (*iter)->get_catLst().toXmlElem("catLst", "", _outStream);
+                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
             }
             else if ((*iter)->has_sampData())
             {
-                (*iter)->get_sampData().toXmlElem("sampData", "", _outStream);
+                (*iter)->get_sampData().toXmlElem("diagram:sampData", "", _outStream);
             }
             else if ((*iter)->has_styleData())
             {
-                (*iter)->get_styleData().toXmlElem("styleData", "", _outStream);
+                (*iter)->get_styleData().toXmlElem("diagram:styleData", "", _outStream);
             }
             else if ((*iter)->has_clrData())
             {
-                (*iter)->get_clrData().toXmlElem("clrData", "", _outStream);
+                (*iter)->get_clrData().toXmlElem("diagram:clrData", "", _outStream);
             }
             else if ((*iter)->has_layoutNode())
             {
-                (*iter)->get_layoutNode().toXmlElem("layoutNode", "", _outStream);
+                (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
     
-    _outStream << "</layoutDef>";
+    _outStream << "</diagram:layoutDef>";
     }
 
     const layoutDef_element& layoutDef_element::default_instance()
@@ -24305,6 +25321,25 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
 
 
     // layoutDef_element::ChildGroup_1
+    layoutDef_element::ChildGroup_1::ChildGroup_1()
+    :m_has_title(false),
+    m_title(NULL),
+    m_has_desc(false),
+    m_desc(NULL),
+    m_has_catLst(false),
+    m_catLst(NULL),
+    m_has_sampData(false),
+    m_sampData(NULL),
+    m_has_styleData(false),
+    m_styleData(NULL),
+    m_has_clrData(false),
+    m_clrData(NULL),
+    m_has_layoutNode(false),
+    m_layoutNode(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool layoutDef_element::ChildGroup_1::has_title() const
     {    
     return m_has_title;
@@ -24367,12 +25402,12 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -24455,12 +25490,12 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -24543,12 +25578,12 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -24631,12 +25666,12 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -24719,12 +25754,12 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -24807,12 +25842,12 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -24895,12 +25930,12 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -24921,12 +25956,12 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
     return CT_LayoutNode::default_instance();
     }
 
-    bool layoutDef_element::ChildGroup_1::has_a_extLst() const
+    bool layoutDef_element::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* layoutDef_element::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* layoutDef_element::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_title = false;
@@ -24992,19 +26027,19 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& layoutDef_element::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& layoutDef_element::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -25012,6 +26047,17 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
 layoutDef_element* layoutDef_element::default_instance_ = NULL;
 
     // layoutDefHdr_element
+    layoutDefHdr_element::layoutDefHdr_element()
+    :m_has_uniqueId_attr(false),
+    m_uniqueId_attr(""),
+    m_has_minVer_attr(false),
+    m_minVer_attr(""),
+    m_has_defStyle_attr(false),
+    m_defStyle_attr(""),
+    m_has_resId_attr(false),
+    m_resId_attr(0)
+    {
+    }
     CT_Name* layoutDefHdr_element::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -25036,10 +26082,10 @@ layoutDef_element* layoutDef_element::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* layoutDefHdr_element::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* layoutDefHdr_element::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -25070,7 +26116,7 @@ layoutDef_element* layoutDef_element::default_instance_ = NULL;
 
     void layoutDefHdr_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<layoutDefHdr";
+    _outStream << "<diagram:layoutDefHdr";
     
     _outStream << " " << "xmlns:diagram=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -25108,24 +26154,24 @@ layoutDef_element* layoutDef_element::default_instance_ = NULL;
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("title", "", _outStream);
+                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
             }
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
             }
             else if ((*iter)->has_catLst())
             {
-                (*iter)->get_catLst().toXmlElem("catLst", "", _outStream);
+                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
     
-    _outStream << "</layoutDefHdr>";
+    _outStream << "</diagram:layoutDefHdr>";
     }
 
     const layoutDefHdr_element& layoutDefHdr_element::default_instance()
@@ -25203,6 +26249,17 @@ layoutDef_element* layoutDef_element::default_instance_ = NULL;
 
 
     // layoutDefHdr_element::ChildGroup_1
+    layoutDefHdr_element::ChildGroup_1::ChildGroup_1()
+    :m_has_title(false),
+    m_title(NULL),
+    m_has_desc(false),
+    m_desc(NULL),
+    m_has_catLst(false),
+    m_catLst(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool layoutDefHdr_element::ChildGroup_1::has_title() const
     {    
     return m_has_title;
@@ -25229,12 +26286,12 @@ layoutDef_element* layoutDef_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -25281,12 +26338,12 @@ layoutDef_element* layoutDef_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -25333,12 +26390,12 @@ layoutDef_element* layoutDef_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -25359,12 +26416,12 @@ layoutDef_element* layoutDef_element::default_instance_ = NULL;
     return CT_Categories::default_instance();
     }
 
-    bool layoutDefHdr_element::ChildGroup_1::has_a_extLst() const
+    bool layoutDefHdr_element::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* layoutDefHdr_element::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* layoutDefHdr_element::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_title = false;
@@ -25394,19 +26451,19 @@ layoutDef_element* layoutDef_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& layoutDefHdr_element::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& layoutDefHdr_element::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -25414,6 +26471,10 @@ layoutDef_element* layoutDef_element::default_instance_ = NULL;
 layoutDefHdr_element* layoutDefHdr_element::default_instance_ = NULL;
 
     // layoutDefHdrLst_element
+    layoutDefHdrLst_element::layoutDefHdrLst_element()
+
+    {
+    }
     CT_DiagramDefinitionHeader* layoutDefHdrLst_element::add_layoutDefHdr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -25436,7 +26497,7 @@ layoutDefHdr_element* layoutDefHdr_element::default_instance_ = NULL;
 
     void layoutDefHdrLst_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<layoutDefHdrLst";
+    _outStream << "<diagram:layoutDefHdrLst";
     
     _outStream << " " << "xmlns:diagram=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -25451,12 +26512,12 @@ layoutDefHdr_element* layoutDefHdr_element::default_instance_ = NULL;
         {
             if ((*iter)->has_layoutDefHdr())
             {
-                (*iter)->get_layoutDefHdr().toXmlElem("layoutDefHdr", "", _outStream);
+                (*iter)->get_layoutDefHdr().toXmlElem("diagram:layoutDefHdr", "", _outStream);
             }
         }
     }
     
-    _outStream << "</layoutDefHdrLst>";
+    _outStream << "</diagram:layoutDefHdrLst>";
     }
 
     const layoutDefHdrLst_element& layoutDefHdrLst_element::default_instance()
@@ -25470,6 +26531,11 @@ layoutDefHdr_element* layoutDefHdr_element::default_instance_ = NULL;
 
 
     // layoutDefHdrLst_element::ChildGroup_1
+    layoutDefHdrLst_element::ChildGroup_1::ChildGroup_1()
+    :m_has_layoutDefHdr(false),
+    m_layoutDefHdr(NULL)
+    {
+    }
     bool layoutDefHdrLst_element::ChildGroup_1::has_layoutDefHdr() const
     {    
     return m_has_layoutDefHdr;
@@ -25498,6 +26564,17 @@ layoutDefHdr_element* layoutDefHdr_element::default_instance_ = NULL;
 layoutDefHdrLst_element* layoutDefHdrLst_element::default_instance_ = NULL;
 
     // relIds_element
+    relIds_element::relIds_element()
+    :m_has_r_dm_attr(false),
+    m_r_dm_attr(NULL),
+    m_has_r_lo_attr(false),
+    m_r_lo_attr(NULL),
+    m_has_r_qs_attr(false),
+    m_r_qs_attr(NULL),
+    m_has_r_cs_attr(false),
+    m_r_cs_attr(NULL)
+    {
+    }
     void relIds_element::clear()
     {    
     m_has_r_dm_attr = false;
@@ -25539,7 +26616,7 @@ layoutDefHdrLst_element* layoutDefHdrLst_element::default_instance_ = NULL;
 
     void relIds_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<relIds";
+    _outStream << "<diagram:relIds";
     
     _outStream << " " << "xmlns:diagram=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -25548,30 +26625,30 @@ layoutDefHdrLst_element* layoutDefHdrLst_element::default_instance_ = NULL;
     
     if (m_has_r_dm_attr)
     {
-        m_r_dm_attr->toXmlAttr("dm", _outStream);
+        m_r_dm_attr->toXmlAttr("r:dm", _outStream);
     }
     
     
     if (m_has_r_lo_attr)
     {
-        m_r_lo_attr->toXmlAttr("lo", _outStream);
+        m_r_lo_attr->toXmlAttr("r:lo", _outStream);
     }
     
     
     if (m_has_r_qs_attr)
     {
-        m_r_qs_attr->toXmlAttr("qs", _outStream);
+        m_r_qs_attr->toXmlAttr("r:qs", _outStream);
     }
     
     
     if (m_has_r_cs_attr)
     {
-        m_r_cs_attr->toXmlAttr("cs", _outStream);
+        m_r_cs_attr->toXmlAttr("r:cs", _outStream);
     }
     
     _outStream << ">";
     
-    _outStream << "</relIds>";
+    _outStream << "</diagram:relIds>";
     }
 
     const relIds_element& relIds_element::default_instance()
@@ -25666,6 +26743,13 @@ layoutDefHdrLst_element* layoutDefHdrLst_element::default_instance_ = NULL;
 relIds_element* relIds_element::default_instance_ = NULL;
 
     // styleDef_element
+    styleDef_element::styleDef_element()
+    :m_has_uniqueId_attr(false),
+    m_uniqueId_attr(""),
+    m_has_minVer_attr(false),
+    m_minVer_attr("")
+    {
+    }
     CT_SDName* styleDef_element::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -25690,10 +26774,10 @@ relIds_element* relIds_element::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_Scene3D* styleDef_element::add_a_scene3d()
+    ns_a::CT_Scene3D* styleDef_element::add_scene3d()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_Scene3D* pNewChild = pChildGroup->mutable_a_scene3d();
+    ns_a::CT_Scene3D* pNewChild = pChildGroup->mutable_scene3d();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -25706,10 +26790,10 @@ relIds_element* relIds_element::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* styleDef_element::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* styleDef_element::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -25734,7 +26818,7 @@ relIds_element* relIds_element::default_instance_ = NULL;
 
     void styleDef_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<styleDef";
+    _outStream << "<diagram:styleDef";
     
     _outStream << " " << "xmlns:diagram=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -25760,32 +26844,32 @@ relIds_element* relIds_element::default_instance_ = NULL;
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("title", "", _outStream);
+                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
             }
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
             }
             else if ((*iter)->has_catLst())
             {
-                (*iter)->get_catLst().toXmlElem("catLst", "", _outStream);
+                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
             }
-            else if ((*iter)->has_a_scene3d())
+            else if ((*iter)->has_scene3d())
             {
-                (*iter)->get_a_scene3d().toXmlElem("a:scene3d", "", _outStream);
+                (*iter)->get_scene3d().toXmlElem("diagram:scene3d", "", _outStream);
             }
             else if ((*iter)->has_styleLbl())
             {
-                (*iter)->get_styleLbl().toXmlElem("styleLbl", "", _outStream);
+                (*iter)->get_styleLbl().toXmlElem("diagram:styleLbl", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
     
-    _outStream << "</styleDef>";
+    _outStream << "</diagram:styleDef>";
     }
 
     const styleDef_element& styleDef_element::default_instance()
@@ -25831,6 +26915,21 @@ relIds_element* relIds_element::default_instance_ = NULL;
 
 
     // styleDef_element::ChildGroup_1
+    styleDef_element::ChildGroup_1::ChildGroup_1()
+    :m_has_title(false),
+    m_title(NULL),
+    m_has_desc(false),
+    m_desc(NULL),
+    m_has_catLst(false),
+    m_catLst(NULL),
+    m_has_scene3d(false),
+    m_scene3d(NULL),
+    m_has_styleLbl(false),
+    m_styleLbl(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool styleDef_element::ChildGroup_1::has_title() const
     {    
     return m_has_title;
@@ -25857,12 +26956,12 @@ relIds_element* relIds_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_scene3d = false;
+    m_has_scene3d = false;
     
-    if (m_a_scene3d)
+    if (m_scene3d)
     {
-        delete m_a_scene3d;
-        m_a_scene3d = NULL;
+        delete m_scene3d;
+        m_scene3d = NULL;
     }
     ;
     
@@ -25875,12 +26974,12 @@ relIds_element* relIds_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -25927,12 +27026,12 @@ relIds_element* relIds_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_scene3d = false;
+    m_has_scene3d = false;
     
-    if (m_a_scene3d)
+    if (m_scene3d)
     {
-        delete m_a_scene3d;
-        m_a_scene3d = NULL;
+        delete m_scene3d;
+        m_scene3d = NULL;
     }
     ;
     
@@ -25945,12 +27044,12 @@ relIds_element* relIds_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -25997,12 +27096,12 @@ relIds_element* relIds_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_scene3d = false;
+    m_has_scene3d = false;
     
-    if (m_a_scene3d)
+    if (m_scene3d)
     {
-        delete m_a_scene3d;
-        m_a_scene3d = NULL;
+        delete m_scene3d;
+        m_scene3d = NULL;
     }
     ;
     
@@ -26015,12 +27114,12 @@ relIds_element* relIds_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -26041,12 +27140,12 @@ relIds_element* relIds_element::default_instance_ = NULL;
     return CT_SDCategories::default_instance();
     }
 
-    bool styleDef_element::ChildGroup_1::has_a_scene3d() const
+    bool styleDef_element::ChildGroup_1::has_scene3d() const
     {    
-    return m_has_a_scene3d;
+    return m_has_scene3d;
     }
 
-    ns_a::CT_Scene3D* styleDef_element::ChildGroup_1::mutable_a_scene3d()
+    ns_a::CT_Scene3D* styleDef_element::ChildGroup_1::mutable_scene3d()
     {    
     
     m_has_title = false;
@@ -26085,28 +27184,28 @@ relIds_element* relIds_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
-    m_has_a_scene3d = true;
-    if (!m_a_scene3d)
+    m_has_scene3d = true;
+    if (!m_scene3d)
     {
-        m_a_scene3d = new ns_a::CT_Scene3D();
+        m_scene3d = new ns_a::CT_Scene3D();
     }
-    return m_a_scene3d;
+    return m_scene3d;
     }
 
-    const ns_a::CT_Scene3D& styleDef_element::ChildGroup_1::get_a_scene3d() const
+    const ns_a::CT_Scene3D& styleDef_element::ChildGroup_1::get_scene3d() const
     {    
-    if (m_a_scene3d)
+    if (m_scene3d)
     {
-        return *m_a_scene3d;
+        return *m_scene3d;
     }
     return ns_a::CT_Scene3D::default_instance();
     }
@@ -26146,21 +27245,21 @@ relIds_element* relIds_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_scene3d = false;
+    m_has_scene3d = false;
     
-    if (m_a_scene3d)
+    if (m_scene3d)
     {
-        delete m_a_scene3d;
-        m_a_scene3d = NULL;
+        delete m_scene3d;
+        m_scene3d = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -26181,12 +27280,12 @@ relIds_element* relIds_element::default_instance_ = NULL;
     return CT_StyleLabel::default_instance();
     }
 
-    bool styleDef_element::ChildGroup_1::has_a_extLst() const
+    bool styleDef_element::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* styleDef_element::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* styleDef_element::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_title = false;
@@ -26216,12 +27315,12 @@ relIds_element* relIds_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_scene3d = false;
+    m_has_scene3d = false;
     
-    if (m_a_scene3d)
+    if (m_scene3d)
     {
-        delete m_a_scene3d;
-        m_a_scene3d = NULL;
+        delete m_scene3d;
+        m_scene3d = NULL;
     }
     ;
     
@@ -26234,19 +27333,19 @@ relIds_element* relIds_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& styleDef_element::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& styleDef_element::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -26254,6 +27353,15 @@ relIds_element* relIds_element::default_instance_ = NULL;
 styleDef_element* styleDef_element::default_instance_ = NULL;
 
     // styleDefHdr_element
+    styleDefHdr_element::styleDefHdr_element()
+    :m_has_uniqueId_attr(false),
+    m_uniqueId_attr(""),
+    m_has_minVer_attr(false),
+    m_minVer_attr(""),
+    m_has_resId_attr(false),
+    m_resId_attr(0)
+    {
+    }
     CT_SDName* styleDefHdr_element::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -26278,10 +27386,10 @@ styleDef_element* styleDef_element::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_a::CT_OfficeArtExtensionList* styleDefHdr_element::add_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* styleDefHdr_element::add_extLst()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_a_extLst();
+    ns_a::CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -26309,7 +27417,7 @@ styleDef_element* styleDef_element::default_instance_ = NULL;
 
     void styleDefHdr_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<styleDefHdr";
+    _outStream << "<diagram:styleDefHdr";
     
     _outStream << " " << "xmlns:diagram=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -26341,24 +27449,24 @@ styleDef_element* styleDef_element::default_instance_ = NULL;
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("title", "", _outStream);
+                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
             }
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
             }
             else if ((*iter)->has_catLst())
             {
-                (*iter)->get_catLst().toXmlElem("catLst", "", _outStream);
+                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
             }
-            else if ((*iter)->has_a_extLst())
+            else if ((*iter)->has_extLst())
             {
-                (*iter)->get_a_extLst().toXmlElem("a:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
             }
         }
     }
     
-    _outStream << "</styleDefHdr>";
+    _outStream << "</diagram:styleDefHdr>";
     }
 
     const styleDefHdr_element& styleDefHdr_element::default_instance()
@@ -26420,6 +27528,17 @@ styleDef_element* styleDef_element::default_instance_ = NULL;
 
 
     // styleDefHdr_element::ChildGroup_1
+    styleDefHdr_element::ChildGroup_1::ChildGroup_1()
+    :m_has_title(false),
+    m_title(NULL),
+    m_has_desc(false),
+    m_desc(NULL),
+    m_has_catLst(false),
+    m_catLst(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool styleDefHdr_element::ChildGroup_1::has_title() const
     {    
     return m_has_title;
@@ -26446,12 +27565,12 @@ styleDef_element* styleDef_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -26498,12 +27617,12 @@ styleDef_element* styleDef_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -26550,12 +27669,12 @@ styleDef_element* styleDef_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = false;
+    m_has_extLst = false;
     
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        delete m_a_extLst;
-        m_a_extLst = NULL;
+        delete m_extLst;
+        m_extLst = NULL;
     }
     ;
     
@@ -26576,12 +27695,12 @@ styleDef_element* styleDef_element::default_instance_ = NULL;
     return CT_SDCategories::default_instance();
     }
 
-    bool styleDefHdr_element::ChildGroup_1::has_a_extLst() const
+    bool styleDefHdr_element::ChildGroup_1::has_extLst() const
     {    
-    return m_has_a_extLst;
+    return m_has_extLst;
     }
 
-    ns_a::CT_OfficeArtExtensionList* styleDefHdr_element::ChildGroup_1::mutable_a_extLst()
+    ns_a::CT_OfficeArtExtensionList* styleDefHdr_element::ChildGroup_1::mutable_extLst()
     {    
     
     m_has_title = false;
@@ -26611,19 +27730,19 @@ styleDef_element* styleDef_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_a_extLst = true;
-    if (!m_a_extLst)
+    m_has_extLst = true;
+    if (!m_extLst)
     {
-        m_a_extLst = new ns_a::CT_OfficeArtExtensionList();
+        m_extLst = new ns_a::CT_OfficeArtExtensionList();
     }
-    return m_a_extLst;
+    return m_extLst;
     }
 
-    const ns_a::CT_OfficeArtExtensionList& styleDefHdr_element::ChildGroup_1::get_a_extLst() const
+    const ns_a::CT_OfficeArtExtensionList& styleDefHdr_element::ChildGroup_1::get_extLst() const
     {    
-    if (m_a_extLst)
+    if (m_extLst)
     {
-        return *m_a_extLst;
+        return *m_extLst;
     }
     return ns_a::CT_OfficeArtExtensionList::default_instance();
     }
@@ -26631,6 +27750,10 @@ styleDef_element* styleDef_element::default_instance_ = NULL;
 styleDefHdr_element* styleDefHdr_element::default_instance_ = NULL;
 
     // styleDefHdrLst_element
+    styleDefHdrLst_element::styleDefHdrLst_element()
+
+    {
+    }
     CT_StyleDefinitionHeader* styleDefHdrLst_element::add_styleDefHdr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -26653,7 +27776,7 @@ styleDefHdr_element* styleDefHdr_element::default_instance_ = NULL;
 
     void styleDefHdrLst_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<styleDefHdrLst";
+    _outStream << "<diagram:styleDefHdrLst";
     
     _outStream << " " << "xmlns:diagram=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -26668,12 +27791,12 @@ styleDefHdr_element* styleDefHdr_element::default_instance_ = NULL;
         {
             if ((*iter)->has_styleDefHdr())
             {
-                (*iter)->get_styleDefHdr().toXmlElem("styleDefHdr", "", _outStream);
+                (*iter)->get_styleDefHdr().toXmlElem("diagram:styleDefHdr", "", _outStream);
             }
         }
     }
     
-    _outStream << "</styleDefHdrLst>";
+    _outStream << "</diagram:styleDefHdrLst>";
     }
 
     const styleDefHdrLst_element& styleDefHdrLst_element::default_instance()
@@ -26687,6 +27810,11 @@ styleDefHdr_element* styleDefHdr_element::default_instance_ = NULL;
 
 
     // styleDefHdrLst_element::ChildGroup_1
+    styleDefHdrLst_element::ChildGroup_1::ChildGroup_1()
+    :m_has_styleDefHdr(false),
+    m_styleDefHdr(NULL)
+    {
+    }
     bool styleDefHdrLst_element::ChildGroup_1::has_styleDefHdr() const
     {    
     return m_has_styleDefHdr;

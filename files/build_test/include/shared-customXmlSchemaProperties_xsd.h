@@ -31,6 +31,7 @@ namespace ns_sl {
     class CT_Schema: public XSD::ComplexType
     {
     public:
+        CT_Schema();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Schema& default_instance();
@@ -62,6 +63,7 @@ namespace ns_sl {
     class CT_SchemaLibrary: public XSD::ComplexType
     {
     public:
+        CT_SchemaLibrary();
         CT_Schema* add_schema();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -71,6 +73,7 @@ namespace ns_sl {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_schema() const;
             CT_Schema* mutable_schema();
             const CT_Schema& get_schema() const;
@@ -86,6 +89,7 @@ namespace ns_sl {
     class schemaLibrary_element: public Element
     {
     public:
+        schemaLibrary_element();
         CT_Schema* add_schema();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -95,6 +99,7 @@ namespace ns_sl {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_schema() const;
             CT_Schema* mutable_schema();
             const CT_Schema& get_schema() const;

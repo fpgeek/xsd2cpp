@@ -32,6 +32,7 @@ namespace ns_pvml {
     class CT_Empty: public XSD::ComplexType
     {
     public:
+        CT_Empty();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Empty& default_instance();
@@ -43,6 +44,7 @@ namespace ns_pvml {
     class CT_Rel: public XSD::ComplexType
     {
     public:
+        CT_Rel();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Rel& default_instance();
@@ -59,6 +61,7 @@ namespace ns_pvml {
     class iscomment_element: public Element
     {
     public:
+        iscomment_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const iscomment_element& default_instance();
@@ -70,6 +73,7 @@ namespace ns_pvml {
     class textdata_element: public Element
     {
     public:
+        textdata_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const textdata_element& default_instance();

@@ -32,6 +32,10 @@ namespace ns_bibliography {
 ST_SourceType* ST_SourceType::default_instance_ = NULL;
 
     // CT_NameListType
+    CT_NameListType::CT_NameListType()
+
+    {
+    }
     CT_PersonType* CT_NameListType::add_Person()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -69,7 +73,7 @@ ST_SourceType* ST_SourceType::default_instance_ = NULL;
         {
             if ((*iter)->has_Person())
             {
-                (*iter)->get_Person().toXmlElem("Person", "", _outStream);
+                (*iter)->get_Person().toXmlElem("bibliography:Person", "", _outStream);
             }
         }
     }
@@ -88,6 +92,11 @@ ST_SourceType* ST_SourceType::default_instance_ = NULL;
 
 
     // CT_NameListType::ChildGroup_1
+    CT_NameListType::ChildGroup_1::ChildGroup_1()
+    :m_has_Person(false),
+    m_Person(NULL)
+    {
+    }
     bool CT_NameListType::ChildGroup_1::has_Person() const
     {    
     return m_has_Person;
@@ -116,26 +125,30 @@ ST_SourceType* ST_SourceType::default_instance_ = NULL;
 CT_NameListType* CT_NameListType::default_instance_ = NULL;
 
     // CT_PersonType
-    ns_s::ST_String* CT_PersonType::add_s_Last()
+    CT_PersonType::CT_PersonType()
+
+    {
+    }
+    ns_s::ST_String* CT_PersonType::add_Last()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Last();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Last();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_PersonType::add_s_First()
+    ns_s::ST_String* CT_PersonType::add_First()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_First();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_First();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_PersonType::add_s_Middle()
+    ns_s::ST_String* CT_PersonType::add_Middle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Middle();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Middle();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -167,17 +180,17 @@ CT_NameListType* CT_NameListType::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_s_Last())
+            if ((*iter)->has_Last())
             {
-                _outStream << "<s:Last>" << (*iter)->get_s_Last().toString() << "</s:Last>";
+                _outStream << "<bibliography:Last>" << (*iter)->get_Last().toString() << "</bibliography:Last>";
             }
-            else if ((*iter)->has_s_First())
+            else if ((*iter)->has_First())
             {
-                _outStream << "<s:First>" << (*iter)->get_s_First().toString() << "</s:First>";
+                _outStream << "<bibliography:First>" << (*iter)->get_First().toString() << "</bibliography:First>";
             }
-            else if ((*iter)->has_s_Middle())
+            else if ((*iter)->has_Middle())
             {
-                _outStream << "<s:Middle>" << (*iter)->get_s_Middle().toString() << "</s:Middle>";
+                _outStream << "<bibliography:Middle>" << (*iter)->get_Middle().toString() << "</bibliography:Middle>";
             }
         }
     }
@@ -196,131 +209,140 @@ CT_NameListType* CT_NameListType::default_instance_ = NULL;
 
 
     // CT_PersonType::ChildGroup_1
-    bool CT_PersonType::ChildGroup_1::has_s_Last() const
+    CT_PersonType::ChildGroup_1::ChildGroup_1()
+    :m_has_Last(false),
+    m_Last(NULL),
+    m_has_First(false),
+    m_First(NULL),
+    m_has_Middle(false),
+    m_Middle(NULL)
+    {
+    }
+    bool CT_PersonType::ChildGroup_1::has_Last() const
     {    
-    return m_has_s_Last;
+    return m_has_Last;
     }
 
-    ns_s::ST_String* CT_PersonType::ChildGroup_1::mutable_s_Last()
+    ns_s::ST_String* CT_PersonType::ChildGroup_1::mutable_Last()
     {    
     
-    m_has_s_First = false;
+    m_has_First = false;
     
-    if (m_s_First)
+    if (m_First)
     {
-        delete m_s_First;
-        m_s_First = NULL;
+        delete m_First;
+        m_First = NULL;
     }
     ;
     
-    m_has_s_Middle = false;
+    m_has_Middle = false;
     
-    if (m_s_Middle)
+    if (m_Middle)
     {
-        delete m_s_Middle;
-        m_s_Middle = NULL;
+        delete m_Middle;
+        m_Middle = NULL;
     }
     ;
     
-    m_has_s_Last = true;
-    if (!m_s_Last)
+    m_has_Last = true;
+    if (!m_Last)
     {
-        m_s_Last = new ns_s::ST_String();
+        m_Last = new ns_s::ST_String();
     }
-    return m_s_Last;
+    return m_Last;
     }
 
-    const ns_s::ST_String& CT_PersonType::ChildGroup_1::get_s_Last() const
+    const ns_s::ST_String& CT_PersonType::ChildGroup_1::get_Last() const
     {    
-    if (m_s_Last)
+    if (m_Last)
     {
-        return *m_s_Last;
+        return *m_Last;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_PersonType::ChildGroup_1::has_s_First() const
+    bool CT_PersonType::ChildGroup_1::has_First() const
     {    
-    return m_has_s_First;
+    return m_has_First;
     }
 
-    ns_s::ST_String* CT_PersonType::ChildGroup_1::mutable_s_First()
+    ns_s::ST_String* CT_PersonType::ChildGroup_1::mutable_First()
     {    
     
-    m_has_s_Last = false;
+    m_has_Last = false;
     
-    if (m_s_Last)
+    if (m_Last)
     {
-        delete m_s_Last;
-        m_s_Last = NULL;
+        delete m_Last;
+        m_Last = NULL;
     }
     ;
     
-    m_has_s_Middle = false;
+    m_has_Middle = false;
     
-    if (m_s_Middle)
+    if (m_Middle)
     {
-        delete m_s_Middle;
-        m_s_Middle = NULL;
+        delete m_Middle;
+        m_Middle = NULL;
     }
     ;
     
-    m_has_s_First = true;
-    if (!m_s_First)
+    m_has_First = true;
+    if (!m_First)
     {
-        m_s_First = new ns_s::ST_String();
+        m_First = new ns_s::ST_String();
     }
-    return m_s_First;
+    return m_First;
     }
 
-    const ns_s::ST_String& CT_PersonType::ChildGroup_1::get_s_First() const
+    const ns_s::ST_String& CT_PersonType::ChildGroup_1::get_First() const
     {    
-    if (m_s_First)
+    if (m_First)
     {
-        return *m_s_First;
+        return *m_First;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_PersonType::ChildGroup_1::has_s_Middle() const
+    bool CT_PersonType::ChildGroup_1::has_Middle() const
     {    
-    return m_has_s_Middle;
+    return m_has_Middle;
     }
 
-    ns_s::ST_String* CT_PersonType::ChildGroup_1::mutable_s_Middle()
+    ns_s::ST_String* CT_PersonType::ChildGroup_1::mutable_Middle()
     {    
     
-    m_has_s_Last = false;
+    m_has_Last = false;
     
-    if (m_s_Last)
+    if (m_Last)
     {
-        delete m_s_Last;
-        m_s_Last = NULL;
+        delete m_Last;
+        m_Last = NULL;
     }
     ;
     
-    m_has_s_First = false;
+    m_has_First = false;
     
-    if (m_s_First)
+    if (m_First)
     {
-        delete m_s_First;
-        m_s_First = NULL;
+        delete m_First;
+        m_First = NULL;
     }
     ;
     
-    m_has_s_Middle = true;
-    if (!m_s_Middle)
+    m_has_Middle = true;
+    if (!m_Middle)
     {
-        m_s_Middle = new ns_s::ST_String();
+        m_Middle = new ns_s::ST_String();
     }
-    return m_s_Middle;
+    return m_Middle;
     }
 
-    const ns_s::ST_String& CT_PersonType::ChildGroup_1::get_s_Middle() const
+    const ns_s::ST_String& CT_PersonType::ChildGroup_1::get_Middle() const
     {    
-    if (m_s_Middle)
+    if (m_Middle)
     {
-        return *m_s_Middle;
+        return *m_Middle;
     }
     return ns_s::ST_String::default_instance();
     }
@@ -328,6 +350,11 @@ CT_NameListType* CT_NameListType::default_instance_ = NULL;
 CT_PersonType* CT_PersonType::default_instance_ = NULL;
 
     // CT_NameType
+    CT_NameType::CT_NameType()
+    :m_has_NameList(false),
+    m_NameList(NULL)
+    {
+    }
     bool CT_NameType::has_NameList() const
     {    
     return m_has_NameList;
@@ -368,7 +395,7 @@ CT_PersonType* CT_PersonType::default_instance_ = NULL;
             
     if (m_has_NameList)
     {
-        m_NameList->toXmlElem("NameList", "", _outStream);;
+        m_NameList->toXmlElem("bibliography:NameList", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -386,6 +413,13 @@ CT_PersonType* CT_PersonType::default_instance_ = NULL;
 CT_NameType* CT_NameType::default_instance_ = NULL;
 
     // CT_NameOrCorporateType
+    CT_NameOrCorporateType::CT_NameOrCorporateType()
+    :m_has_NameList(false),
+    m_NameList(NULL),
+    m_has_Corporate(false),
+    m_Corporate(NULL)
+    {
+    }
     bool CT_NameOrCorporateType::has_NameList() const
     {    
     return m_has_NameList;
@@ -394,12 +428,12 @@ CT_NameType* CT_NameType::default_instance_ = NULL;
     CT_NameListType* CT_NameOrCorporateType::mutable_NameList()
     {    
     
-    m_has_s_Corporate = false;
+    m_has_Corporate = false;
     
-    if (m_s_Corporate)
+    if (m_Corporate)
     {
-        delete m_s_Corporate;
-        m_s_Corporate = NULL;
+        delete m_Corporate;
+        m_Corporate = NULL;
     }
     ;
     
@@ -420,12 +454,12 @@ CT_NameType* CT_NameType::default_instance_ = NULL;
     return CT_NameListType::default_instance();
     }
 
-    bool CT_NameOrCorporateType::has_s_Corporate() const
+    bool CT_NameOrCorporateType::has_Corporate() const
     {    
-    return m_has_s_Corporate;
+    return m_has_Corporate;
     }
 
-    ns_s::ST_String* CT_NameOrCorporateType::mutable_s_Corporate()
+    ns_s::ST_String* CT_NameOrCorporateType::mutable_Corporate()
     {    
     
     m_has_NameList = false;
@@ -437,19 +471,19 @@ CT_NameType* CT_NameType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_Corporate = true;
-    if (!m_s_Corporate)
+    m_has_Corporate = true;
+    if (!m_Corporate)
     {
-        m_s_Corporate = new ns_s::ST_String();
+        m_Corporate = new ns_s::ST_String();
     }
-    return m_s_Corporate;
+    return m_Corporate;
     }
 
-    const ns_s::ST_String& CT_NameOrCorporateType::get_s_Corporate() const
+    const ns_s::ST_String& CT_NameOrCorporateType::get_Corporate() const
     {    
-    if (m_s_Corporate)
+    if (m_Corporate)
     {
-        return *m_s_Corporate;
+        return *m_Corporate;
     }
     return ns_s::ST_String::default_instance();
     }
@@ -470,12 +504,12 @@ CT_NameType* CT_NameType::default_instance_ = NULL;
             
     if (m_has_NameList)
     {
-        m_NameList->toXmlElem("NameList", "", _outStream);;
+        m_NameList->toXmlElem("bibliography:NameList", "", _outStream);;
     }
     
-    if (m_has_s_Corporate)
+    if (m_has_Corporate)
     {
-        _outStream << "<s:Corporate>" << m_s_Corporate->toString() << "</s:Corporate>";;
+        _outStream << "<bibliography:Corporate>" << m_Corporate->toString() << "</bibliography:Corporate>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -493,6 +527,10 @@ CT_NameType* CT_NameType::default_instance_ = NULL;
 CT_NameOrCorporateType* CT_NameOrCorporateType::default_instance_ = NULL;
 
     // CT_AuthorType
+    CT_AuthorType::CT_AuthorType()
+
+    {
+    }
     CT_NameType* CT_AuthorType::add_Artist()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -650,67 +688,67 @@ CT_NameOrCorporateType* CT_NameOrCorporateType::default_instance_ = NULL;
         {
             if ((*iter)->has_Artist())
             {
-                (*iter)->get_Artist().toXmlElem("Artist", "", _outStream);
+                (*iter)->get_Artist().toXmlElem("bibliography:Artist", "", _outStream);
             }
             else if ((*iter)->has_Author())
             {
-                (*iter)->get_Author().toXmlElem("Author", "", _outStream);
+                (*iter)->get_Author().toXmlElem("bibliography:Author", "", _outStream);
             }
             else if ((*iter)->has_BookAuthor())
             {
-                (*iter)->get_BookAuthor().toXmlElem("BookAuthor", "", _outStream);
+                (*iter)->get_BookAuthor().toXmlElem("bibliography:BookAuthor", "", _outStream);
             }
             else if ((*iter)->has_Compiler())
             {
-                (*iter)->get_Compiler().toXmlElem("Compiler", "", _outStream);
+                (*iter)->get_Compiler().toXmlElem("bibliography:Compiler", "", _outStream);
             }
             else if ((*iter)->has_Composer())
             {
-                (*iter)->get_Composer().toXmlElem("Composer", "", _outStream);
+                (*iter)->get_Composer().toXmlElem("bibliography:Composer", "", _outStream);
             }
             else if ((*iter)->has_Conductor())
             {
-                (*iter)->get_Conductor().toXmlElem("Conductor", "", _outStream);
+                (*iter)->get_Conductor().toXmlElem("bibliography:Conductor", "", _outStream);
             }
             else if ((*iter)->has_Counsel())
             {
-                (*iter)->get_Counsel().toXmlElem("Counsel", "", _outStream);
+                (*iter)->get_Counsel().toXmlElem("bibliography:Counsel", "", _outStream);
             }
             else if ((*iter)->has_Director())
             {
-                (*iter)->get_Director().toXmlElem("Director", "", _outStream);
+                (*iter)->get_Director().toXmlElem("bibliography:Director", "", _outStream);
             }
             else if ((*iter)->has_Editor())
             {
-                (*iter)->get_Editor().toXmlElem("Editor", "", _outStream);
+                (*iter)->get_Editor().toXmlElem("bibliography:Editor", "", _outStream);
             }
             else if ((*iter)->has_Interviewee())
             {
-                (*iter)->get_Interviewee().toXmlElem("Interviewee", "", _outStream);
+                (*iter)->get_Interviewee().toXmlElem("bibliography:Interviewee", "", _outStream);
             }
             else if ((*iter)->has_Interviewer())
             {
-                (*iter)->get_Interviewer().toXmlElem("Interviewer", "", _outStream);
+                (*iter)->get_Interviewer().toXmlElem("bibliography:Interviewer", "", _outStream);
             }
             else if ((*iter)->has_Inventor())
             {
-                (*iter)->get_Inventor().toXmlElem("Inventor", "", _outStream);
+                (*iter)->get_Inventor().toXmlElem("bibliography:Inventor", "", _outStream);
             }
             else if ((*iter)->has_Performer())
             {
-                (*iter)->get_Performer().toXmlElem("Performer", "", _outStream);
+                (*iter)->get_Performer().toXmlElem("bibliography:Performer", "", _outStream);
             }
             else if ((*iter)->has_ProducerName())
             {
-                (*iter)->get_ProducerName().toXmlElem("ProducerName", "", _outStream);
+                (*iter)->get_ProducerName().toXmlElem("bibliography:ProducerName", "", _outStream);
             }
             else if ((*iter)->has_Translator())
             {
-                (*iter)->get_Translator().toXmlElem("Translator", "", _outStream);
+                (*iter)->get_Translator().toXmlElem("bibliography:Translator", "", _outStream);
             }
             else if ((*iter)->has_Writer())
             {
-                (*iter)->get_Writer().toXmlElem("Writer", "", _outStream);
+                (*iter)->get_Writer().toXmlElem("bibliography:Writer", "", _outStream);
             }
         }
     }
@@ -729,6 +767,41 @@ CT_NameOrCorporateType* CT_NameOrCorporateType::default_instance_ = NULL;
 
 
     // CT_AuthorType::ChildGroup_1
+    CT_AuthorType::ChildGroup_1::ChildGroup_1()
+    :m_has_Artist(false),
+    m_Artist(NULL),
+    m_has_Author(false),
+    m_Author(NULL),
+    m_has_BookAuthor(false),
+    m_BookAuthor(NULL),
+    m_has_Compiler(false),
+    m_Compiler(NULL),
+    m_has_Composer(false),
+    m_Composer(NULL),
+    m_has_Conductor(false),
+    m_Conductor(NULL),
+    m_has_Counsel(false),
+    m_Counsel(NULL),
+    m_has_Director(false),
+    m_Director(NULL),
+    m_has_Editor(false),
+    m_Editor(NULL),
+    m_has_Interviewee(false),
+    m_Interviewee(NULL),
+    m_has_Interviewer(false),
+    m_Interviewer(NULL),
+    m_has_Inventor(false),
+    m_Inventor(NULL),
+    m_has_Performer(false),
+    m_Performer(NULL),
+    m_has_ProducerName(false),
+    m_ProducerName(NULL),
+    m_has_Translator(false),
+    m_Translator(NULL),
+    m_has_Writer(false),
+    m_Writer(NULL)
+    {
+    }
     bool CT_AuthorType::ChildGroup_1::has_Artist() const
     {    
     return m_has_Artist;
@@ -3292,18 +3365,22 @@ CT_NameOrCorporateType* CT_NameOrCorporateType::default_instance_ = NULL;
 CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
 
     // CT_SourceType
-    ns_s::ST_String* CT_SourceType::add_s_AbbreviatedCaseNumber()
+    CT_SourceType::CT_SourceType()
+
+    {
+    }
+    ns_s::ST_String* CT_SourceType::add_AbbreviatedCaseNumber()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_AbbreviatedCaseNumber();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_AbbreviatedCaseNumber();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_AlbumTitle()
+    ns_s::ST_String* CT_SourceType::add_AlbumTitle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_AlbumTitle();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_AlbumTitle();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -3316,274 +3393,274 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_BookTitle()
+    ns_s::ST_String* CT_SourceType::add_BookTitle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_BookTitle();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_BookTitle();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Broadcaster()
+    ns_s::ST_String* CT_SourceType::add_Broadcaster()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Broadcaster();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Broadcaster();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_BroadcastTitle()
+    ns_s::ST_String* CT_SourceType::add_BroadcastTitle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_BroadcastTitle();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_BroadcastTitle();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_CaseNumber()
+    ns_s::ST_String* CT_SourceType::add_CaseNumber()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_CaseNumber();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_CaseNumber();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_ChapterNumber()
+    ns_s::ST_String* CT_SourceType::add_ChapterNumber()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_ChapterNumber();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_ChapterNumber();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_City()
+    ns_s::ST_String* CT_SourceType::add_City()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_City();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_City();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Comments()
+    ns_s::ST_String* CT_SourceType::add_Comments()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Comments();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Comments();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_ConferenceName()
+    ns_s::ST_String* CT_SourceType::add_ConferenceName()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_ConferenceName();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_ConferenceName();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_CountryRegion()
+    ns_s::ST_String* CT_SourceType::add_CountryRegion()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_CountryRegion();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_CountryRegion();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Court()
+    ns_s::ST_String* CT_SourceType::add_Court()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Court();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Court();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Day()
+    ns_s::ST_String* CT_SourceType::add_Day()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Day();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Day();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_DayAccessed()
+    ns_s::ST_String* CT_SourceType::add_DayAccessed()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_DayAccessed();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_DayAccessed();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Department()
+    ns_s::ST_String* CT_SourceType::add_Department()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Department();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Department();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Distributor()
+    ns_s::ST_String* CT_SourceType::add_Distributor()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Distributor();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Distributor();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Edition()
+    ns_s::ST_String* CT_SourceType::add_Edition()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Edition();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Edition();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Guid()
+    ns_s::ST_String* CT_SourceType::add_Guid()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Guid();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Guid();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Institution()
+    ns_s::ST_String* CT_SourceType::add_Institution()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Institution();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Institution();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_InternetSiteTitle()
+    ns_s::ST_String* CT_SourceType::add_InternetSiteTitle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_InternetSiteTitle();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_InternetSiteTitle();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Issue()
+    ns_s::ST_String* CT_SourceType::add_Issue()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Issue();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Issue();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_JournalName()
+    ns_s::ST_String* CT_SourceType::add_JournalName()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_JournalName();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_JournalName();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_Lang* CT_SourceType::add_s_LCID()
+    ns_s::ST_Lang* CT_SourceType::add_LCID()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_Lang* pNewChild = pChildGroup->mutable_s_LCID();
+    ns_s::ST_Lang* pNewChild = pChildGroup->mutable_LCID();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Medium()
+    ns_s::ST_String* CT_SourceType::add_Medium()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Medium();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Medium();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Month()
+    ns_s::ST_String* CT_SourceType::add_Month()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Month();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Month();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_MonthAccessed()
+    ns_s::ST_String* CT_SourceType::add_MonthAccessed()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_MonthAccessed();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_MonthAccessed();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_NumberVolumes()
+    ns_s::ST_String* CT_SourceType::add_NumberVolumes()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_NumberVolumes();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_NumberVolumes();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Pages()
+    ns_s::ST_String* CT_SourceType::add_Pages()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Pages();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Pages();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_PatentNumber()
+    ns_s::ST_String* CT_SourceType::add_PatentNumber()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_PatentNumber();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_PatentNumber();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_PeriodicalTitle()
+    ns_s::ST_String* CT_SourceType::add_PeriodicalTitle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_PeriodicalTitle();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_PeriodicalTitle();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_ProductionCompany()
+    ns_s::ST_String* CT_SourceType::add_ProductionCompany()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_ProductionCompany();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_ProductionCompany();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_PublicationTitle()
+    ns_s::ST_String* CT_SourceType::add_PublicationTitle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_PublicationTitle();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_PublicationTitle();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Publisher()
+    ns_s::ST_String* CT_SourceType::add_Publisher()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Publisher();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Publisher();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_RecordingNumber()
+    ns_s::ST_String* CT_SourceType::add_RecordingNumber()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_RecordingNumber();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_RecordingNumber();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_RefOrder()
+    ns_s::ST_String* CT_SourceType::add_RefOrder()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_RefOrder();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_RefOrder();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Reporter()
+    ns_s::ST_String* CT_SourceType::add_Reporter()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Reporter();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Reporter();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -3596,114 +3673,114 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_ShortTitle()
+    ns_s::ST_String* CT_SourceType::add_ShortTitle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_ShortTitle();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_ShortTitle();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_StandardNumber()
+    ns_s::ST_String* CT_SourceType::add_StandardNumber()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_StandardNumber();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_StandardNumber();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_StateProvince()
+    ns_s::ST_String* CT_SourceType::add_StateProvince()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_StateProvince();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_StateProvince();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Station()
+    ns_s::ST_String* CT_SourceType::add_Station()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Station();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Station();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Tag()
+    ns_s::ST_String* CT_SourceType::add_Tag()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Tag();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Tag();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Theater()
+    ns_s::ST_String* CT_SourceType::add_Theater()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Theater();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Theater();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_ThesisType()
+    ns_s::ST_String* CT_SourceType::add_ThesisType()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_ThesisType();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_ThesisType();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Title()
+    ns_s::ST_String* CT_SourceType::add_Title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Title();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Title();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Type()
+    ns_s::ST_String* CT_SourceType::add_Type()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Type();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Type();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_URL()
+    ns_s::ST_String* CT_SourceType::add_URL()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_URL();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_URL();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Version()
+    ns_s::ST_String* CT_SourceType::add_Version()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Version();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Version();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Volume()
+    ns_s::ST_String* CT_SourceType::add_Volume()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Volume();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Volume();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_Year()
+    ns_s::ST_String* CT_SourceType::add_Year()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_Year();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_Year();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
 
-    ns_s::ST_String* CT_SourceType::add_s_YearAccessed()
+    ns_s::ST_String* CT_SourceType::add_YearAccessed()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_String* pNewChild = pChildGroup->mutable_s_YearAccessed();
+    ns_s::ST_String* pNewChild = pChildGroup->mutable_YearAccessed();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -3735,213 +3812,213 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_s_AbbreviatedCaseNumber())
+            if ((*iter)->has_AbbreviatedCaseNumber())
             {
-                _outStream << "<s:AbbreviatedCaseNumber>" << (*iter)->get_s_AbbreviatedCaseNumber().toString() << "</s:AbbreviatedCaseNumber>";
+                _outStream << "<bibliography:AbbreviatedCaseNumber>" << (*iter)->get_AbbreviatedCaseNumber().toString() << "</bibliography:AbbreviatedCaseNumber>";
             }
-            else if ((*iter)->has_s_AlbumTitle())
+            else if ((*iter)->has_AlbumTitle())
             {
-                _outStream << "<s:AlbumTitle>" << (*iter)->get_s_AlbumTitle().toString() << "</s:AlbumTitle>";
+                _outStream << "<bibliography:AlbumTitle>" << (*iter)->get_AlbumTitle().toString() << "</bibliography:AlbumTitle>";
             }
             else if ((*iter)->has_Author())
             {
-                (*iter)->get_Author().toXmlElem("Author", "", _outStream);
+                (*iter)->get_Author().toXmlElem("bibliography:Author", "", _outStream);
             }
-            else if ((*iter)->has_s_BookTitle())
+            else if ((*iter)->has_BookTitle())
             {
-                _outStream << "<s:BookTitle>" << (*iter)->get_s_BookTitle().toString() << "</s:BookTitle>";
+                _outStream << "<bibliography:BookTitle>" << (*iter)->get_BookTitle().toString() << "</bibliography:BookTitle>";
             }
-            else if ((*iter)->has_s_Broadcaster())
+            else if ((*iter)->has_Broadcaster())
             {
-                _outStream << "<s:Broadcaster>" << (*iter)->get_s_Broadcaster().toString() << "</s:Broadcaster>";
+                _outStream << "<bibliography:Broadcaster>" << (*iter)->get_Broadcaster().toString() << "</bibliography:Broadcaster>";
             }
-            else if ((*iter)->has_s_BroadcastTitle())
+            else if ((*iter)->has_BroadcastTitle())
             {
-                _outStream << "<s:BroadcastTitle>" << (*iter)->get_s_BroadcastTitle().toString() << "</s:BroadcastTitle>";
+                _outStream << "<bibliography:BroadcastTitle>" << (*iter)->get_BroadcastTitle().toString() << "</bibliography:BroadcastTitle>";
             }
-            else if ((*iter)->has_s_CaseNumber())
+            else if ((*iter)->has_CaseNumber())
             {
-                _outStream << "<s:CaseNumber>" << (*iter)->get_s_CaseNumber().toString() << "</s:CaseNumber>";
+                _outStream << "<bibliography:CaseNumber>" << (*iter)->get_CaseNumber().toString() << "</bibliography:CaseNumber>";
             }
-            else if ((*iter)->has_s_ChapterNumber())
+            else if ((*iter)->has_ChapterNumber())
             {
-                _outStream << "<s:ChapterNumber>" << (*iter)->get_s_ChapterNumber().toString() << "</s:ChapterNumber>";
+                _outStream << "<bibliography:ChapterNumber>" << (*iter)->get_ChapterNumber().toString() << "</bibliography:ChapterNumber>";
             }
-            else if ((*iter)->has_s_City())
+            else if ((*iter)->has_City())
             {
-                _outStream << "<s:City>" << (*iter)->get_s_City().toString() << "</s:City>";
+                _outStream << "<bibliography:City>" << (*iter)->get_City().toString() << "</bibliography:City>";
             }
-            else if ((*iter)->has_s_Comments())
+            else if ((*iter)->has_Comments())
             {
-                _outStream << "<s:Comments>" << (*iter)->get_s_Comments().toString() << "</s:Comments>";
+                _outStream << "<bibliography:Comments>" << (*iter)->get_Comments().toString() << "</bibliography:Comments>";
             }
-            else if ((*iter)->has_s_ConferenceName())
+            else if ((*iter)->has_ConferenceName())
             {
-                _outStream << "<s:ConferenceName>" << (*iter)->get_s_ConferenceName().toString() << "</s:ConferenceName>";
+                _outStream << "<bibliography:ConferenceName>" << (*iter)->get_ConferenceName().toString() << "</bibliography:ConferenceName>";
             }
-            else if ((*iter)->has_s_CountryRegion())
+            else if ((*iter)->has_CountryRegion())
             {
-                _outStream << "<s:CountryRegion>" << (*iter)->get_s_CountryRegion().toString() << "</s:CountryRegion>";
+                _outStream << "<bibliography:CountryRegion>" << (*iter)->get_CountryRegion().toString() << "</bibliography:CountryRegion>";
             }
-            else if ((*iter)->has_s_Court())
+            else if ((*iter)->has_Court())
             {
-                _outStream << "<s:Court>" << (*iter)->get_s_Court().toString() << "</s:Court>";
+                _outStream << "<bibliography:Court>" << (*iter)->get_Court().toString() << "</bibliography:Court>";
             }
-            else if ((*iter)->has_s_Day())
+            else if ((*iter)->has_Day())
             {
-                _outStream << "<s:Day>" << (*iter)->get_s_Day().toString() << "</s:Day>";
+                _outStream << "<bibliography:Day>" << (*iter)->get_Day().toString() << "</bibliography:Day>";
             }
-            else if ((*iter)->has_s_DayAccessed())
+            else if ((*iter)->has_DayAccessed())
             {
-                _outStream << "<s:DayAccessed>" << (*iter)->get_s_DayAccessed().toString() << "</s:DayAccessed>";
+                _outStream << "<bibliography:DayAccessed>" << (*iter)->get_DayAccessed().toString() << "</bibliography:DayAccessed>";
             }
-            else if ((*iter)->has_s_Department())
+            else if ((*iter)->has_Department())
             {
-                _outStream << "<s:Department>" << (*iter)->get_s_Department().toString() << "</s:Department>";
+                _outStream << "<bibliography:Department>" << (*iter)->get_Department().toString() << "</bibliography:Department>";
             }
-            else if ((*iter)->has_s_Distributor())
+            else if ((*iter)->has_Distributor())
             {
-                _outStream << "<s:Distributor>" << (*iter)->get_s_Distributor().toString() << "</s:Distributor>";
+                _outStream << "<bibliography:Distributor>" << (*iter)->get_Distributor().toString() << "</bibliography:Distributor>";
             }
-            else if ((*iter)->has_s_Edition())
+            else if ((*iter)->has_Edition())
             {
-                _outStream << "<s:Edition>" << (*iter)->get_s_Edition().toString() << "</s:Edition>";
+                _outStream << "<bibliography:Edition>" << (*iter)->get_Edition().toString() << "</bibliography:Edition>";
             }
-            else if ((*iter)->has_s_Guid())
+            else if ((*iter)->has_Guid())
             {
-                _outStream << "<s:Guid>" << (*iter)->get_s_Guid().toString() << "</s:Guid>";
+                _outStream << "<bibliography:Guid>" << (*iter)->get_Guid().toString() << "</bibliography:Guid>";
             }
-            else if ((*iter)->has_s_Institution())
+            else if ((*iter)->has_Institution())
             {
-                _outStream << "<s:Institution>" << (*iter)->get_s_Institution().toString() << "</s:Institution>";
+                _outStream << "<bibliography:Institution>" << (*iter)->get_Institution().toString() << "</bibliography:Institution>";
             }
-            else if ((*iter)->has_s_InternetSiteTitle())
+            else if ((*iter)->has_InternetSiteTitle())
             {
-                _outStream << "<s:InternetSiteTitle>" << (*iter)->get_s_InternetSiteTitle().toString() << "</s:InternetSiteTitle>";
+                _outStream << "<bibliography:InternetSiteTitle>" << (*iter)->get_InternetSiteTitle().toString() << "</bibliography:InternetSiteTitle>";
             }
-            else if ((*iter)->has_s_Issue())
+            else if ((*iter)->has_Issue())
             {
-                _outStream << "<s:Issue>" << (*iter)->get_s_Issue().toString() << "</s:Issue>";
+                _outStream << "<bibliography:Issue>" << (*iter)->get_Issue().toString() << "</bibliography:Issue>";
             }
-            else if ((*iter)->has_s_JournalName())
+            else if ((*iter)->has_JournalName())
             {
-                _outStream << "<s:JournalName>" << (*iter)->get_s_JournalName().toString() << "</s:JournalName>";
+                _outStream << "<bibliography:JournalName>" << (*iter)->get_JournalName().toString() << "</bibliography:JournalName>";
             }
-            else if ((*iter)->has_s_LCID())
+            else if ((*iter)->has_LCID())
             {
-                _outStream << "<s:LCID>" << (*iter)->get_s_LCID().toString() << "</s:LCID>";
+                _outStream << "<bibliography:LCID>" << (*iter)->get_LCID().toString() << "</bibliography:LCID>";
             }
-            else if ((*iter)->has_s_Medium())
+            else if ((*iter)->has_Medium())
             {
-                _outStream << "<s:Medium>" << (*iter)->get_s_Medium().toString() << "</s:Medium>";
+                _outStream << "<bibliography:Medium>" << (*iter)->get_Medium().toString() << "</bibliography:Medium>";
             }
-            else if ((*iter)->has_s_Month())
+            else if ((*iter)->has_Month())
             {
-                _outStream << "<s:Month>" << (*iter)->get_s_Month().toString() << "</s:Month>";
+                _outStream << "<bibliography:Month>" << (*iter)->get_Month().toString() << "</bibliography:Month>";
             }
-            else if ((*iter)->has_s_MonthAccessed())
+            else if ((*iter)->has_MonthAccessed())
             {
-                _outStream << "<s:MonthAccessed>" << (*iter)->get_s_MonthAccessed().toString() << "</s:MonthAccessed>";
+                _outStream << "<bibliography:MonthAccessed>" << (*iter)->get_MonthAccessed().toString() << "</bibliography:MonthAccessed>";
             }
-            else if ((*iter)->has_s_NumberVolumes())
+            else if ((*iter)->has_NumberVolumes())
             {
-                _outStream << "<s:NumberVolumes>" << (*iter)->get_s_NumberVolumes().toString() << "</s:NumberVolumes>";
+                _outStream << "<bibliography:NumberVolumes>" << (*iter)->get_NumberVolumes().toString() << "</bibliography:NumberVolumes>";
             }
-            else if ((*iter)->has_s_Pages())
+            else if ((*iter)->has_Pages())
             {
-                _outStream << "<s:Pages>" << (*iter)->get_s_Pages().toString() << "</s:Pages>";
+                _outStream << "<bibliography:Pages>" << (*iter)->get_Pages().toString() << "</bibliography:Pages>";
             }
-            else if ((*iter)->has_s_PatentNumber())
+            else if ((*iter)->has_PatentNumber())
             {
-                _outStream << "<s:PatentNumber>" << (*iter)->get_s_PatentNumber().toString() << "</s:PatentNumber>";
+                _outStream << "<bibliography:PatentNumber>" << (*iter)->get_PatentNumber().toString() << "</bibliography:PatentNumber>";
             }
-            else if ((*iter)->has_s_PeriodicalTitle())
+            else if ((*iter)->has_PeriodicalTitle())
             {
-                _outStream << "<s:PeriodicalTitle>" << (*iter)->get_s_PeriodicalTitle().toString() << "</s:PeriodicalTitle>";
+                _outStream << "<bibliography:PeriodicalTitle>" << (*iter)->get_PeriodicalTitle().toString() << "</bibliography:PeriodicalTitle>";
             }
-            else if ((*iter)->has_s_ProductionCompany())
+            else if ((*iter)->has_ProductionCompany())
             {
-                _outStream << "<s:ProductionCompany>" << (*iter)->get_s_ProductionCompany().toString() << "</s:ProductionCompany>";
+                _outStream << "<bibliography:ProductionCompany>" << (*iter)->get_ProductionCompany().toString() << "</bibliography:ProductionCompany>";
             }
-            else if ((*iter)->has_s_PublicationTitle())
+            else if ((*iter)->has_PublicationTitle())
             {
-                _outStream << "<s:PublicationTitle>" << (*iter)->get_s_PublicationTitle().toString() << "</s:PublicationTitle>";
+                _outStream << "<bibliography:PublicationTitle>" << (*iter)->get_PublicationTitle().toString() << "</bibliography:PublicationTitle>";
             }
-            else if ((*iter)->has_s_Publisher())
+            else if ((*iter)->has_Publisher())
             {
-                _outStream << "<s:Publisher>" << (*iter)->get_s_Publisher().toString() << "</s:Publisher>";
+                _outStream << "<bibliography:Publisher>" << (*iter)->get_Publisher().toString() << "</bibliography:Publisher>";
             }
-            else if ((*iter)->has_s_RecordingNumber())
+            else if ((*iter)->has_RecordingNumber())
             {
-                _outStream << "<s:RecordingNumber>" << (*iter)->get_s_RecordingNumber().toString() << "</s:RecordingNumber>";
+                _outStream << "<bibliography:RecordingNumber>" << (*iter)->get_RecordingNumber().toString() << "</bibliography:RecordingNumber>";
             }
-            else if ((*iter)->has_s_RefOrder())
+            else if ((*iter)->has_RefOrder())
             {
-                _outStream << "<s:RefOrder>" << (*iter)->get_s_RefOrder().toString() << "</s:RefOrder>";
+                _outStream << "<bibliography:RefOrder>" << (*iter)->get_RefOrder().toString() << "</bibliography:RefOrder>";
             }
-            else if ((*iter)->has_s_Reporter())
+            else if ((*iter)->has_Reporter())
             {
-                _outStream << "<s:Reporter>" << (*iter)->get_s_Reporter().toString() << "</s:Reporter>";
+                _outStream << "<bibliography:Reporter>" << (*iter)->get_Reporter().toString() << "</bibliography:Reporter>";
             }
             else if ((*iter)->has_SourceType())
             {
-                _outStream << "<SourceType>" << (*iter)->get_SourceType().toString() << "</SourceType>";
+                _outStream << "<bibliography:SourceType>" << (*iter)->get_SourceType().toString() << "</bibliography:SourceType>";
             }
-            else if ((*iter)->has_s_ShortTitle())
+            else if ((*iter)->has_ShortTitle())
             {
-                _outStream << "<s:ShortTitle>" << (*iter)->get_s_ShortTitle().toString() << "</s:ShortTitle>";
+                _outStream << "<bibliography:ShortTitle>" << (*iter)->get_ShortTitle().toString() << "</bibliography:ShortTitle>";
             }
-            else if ((*iter)->has_s_StandardNumber())
+            else if ((*iter)->has_StandardNumber())
             {
-                _outStream << "<s:StandardNumber>" << (*iter)->get_s_StandardNumber().toString() << "</s:StandardNumber>";
+                _outStream << "<bibliography:StandardNumber>" << (*iter)->get_StandardNumber().toString() << "</bibliography:StandardNumber>";
             }
-            else if ((*iter)->has_s_StateProvince())
+            else if ((*iter)->has_StateProvince())
             {
-                _outStream << "<s:StateProvince>" << (*iter)->get_s_StateProvince().toString() << "</s:StateProvince>";
+                _outStream << "<bibliography:StateProvince>" << (*iter)->get_StateProvince().toString() << "</bibliography:StateProvince>";
             }
-            else if ((*iter)->has_s_Station())
+            else if ((*iter)->has_Station())
             {
-                _outStream << "<s:Station>" << (*iter)->get_s_Station().toString() << "</s:Station>";
+                _outStream << "<bibliography:Station>" << (*iter)->get_Station().toString() << "</bibliography:Station>";
             }
-            else if ((*iter)->has_s_Tag())
+            else if ((*iter)->has_Tag())
             {
-                _outStream << "<s:Tag>" << (*iter)->get_s_Tag().toString() << "</s:Tag>";
+                _outStream << "<bibliography:Tag>" << (*iter)->get_Tag().toString() << "</bibliography:Tag>";
             }
-            else if ((*iter)->has_s_Theater())
+            else if ((*iter)->has_Theater())
             {
-                _outStream << "<s:Theater>" << (*iter)->get_s_Theater().toString() << "</s:Theater>";
+                _outStream << "<bibliography:Theater>" << (*iter)->get_Theater().toString() << "</bibliography:Theater>";
             }
-            else if ((*iter)->has_s_ThesisType())
+            else if ((*iter)->has_ThesisType())
             {
-                _outStream << "<s:ThesisType>" << (*iter)->get_s_ThesisType().toString() << "</s:ThesisType>";
+                _outStream << "<bibliography:ThesisType>" << (*iter)->get_ThesisType().toString() << "</bibliography:ThesisType>";
             }
-            else if ((*iter)->has_s_Title())
+            else if ((*iter)->has_Title())
             {
-                _outStream << "<s:Title>" << (*iter)->get_s_Title().toString() << "</s:Title>";
+                _outStream << "<bibliography:Title>" << (*iter)->get_Title().toString() << "</bibliography:Title>";
             }
-            else if ((*iter)->has_s_Type())
+            else if ((*iter)->has_Type())
             {
-                _outStream << "<s:Type>" << (*iter)->get_s_Type().toString() << "</s:Type>";
+                _outStream << "<bibliography:Type>" << (*iter)->get_Type().toString() << "</bibliography:Type>";
             }
-            else if ((*iter)->has_s_URL())
+            else if ((*iter)->has_URL())
             {
-                _outStream << "<s:URL>" << (*iter)->get_s_URL().toString() << "</s:URL>";
+                _outStream << "<bibliography:URL>" << (*iter)->get_URL().toString() << "</bibliography:URL>";
             }
-            else if ((*iter)->has_s_Version())
+            else if ((*iter)->has_Version())
             {
-                _outStream << "<s:Version>" << (*iter)->get_s_Version().toString() << "</s:Version>";
+                _outStream << "<bibliography:Version>" << (*iter)->get_Version().toString() << "</bibliography:Version>";
             }
-            else if ((*iter)->has_s_Volume())
+            else if ((*iter)->has_Volume())
             {
-                _outStream << "<s:Volume>" << (*iter)->get_s_Volume().toString() << "</s:Volume>";
+                _outStream << "<bibliography:Volume>" << (*iter)->get_Volume().toString() << "</bibliography:Volume>";
             }
-            else if ((*iter)->has_s_Year())
+            else if ((*iter)->has_Year())
             {
-                _outStream << "<s:Year>" << (*iter)->get_s_Year().toString() << "</s:Year>";
+                _outStream << "<bibliography:Year>" << (*iter)->get_Year().toString() << "</bibliography:Year>";
             }
-            else if ((*iter)->has_s_YearAccessed())
+            else if ((*iter)->has_YearAccessed())
             {
-                _outStream << "<s:YearAccessed>" << (*iter)->get_s_YearAccessed().toString() << "</s:YearAccessed>";
+                _outStream << "<bibliography:YearAccessed>" << (*iter)->get_YearAccessed().toString() << "</bibliography:YearAccessed>";
             }
         }
     }
@@ -3960,20 +4037,127 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
 
 
     // CT_SourceType::ChildGroup_1
-    bool CT_SourceType::ChildGroup_1::has_s_AbbreviatedCaseNumber() const
+    CT_SourceType::ChildGroup_1::ChildGroup_1()
+    :m_has_AbbreviatedCaseNumber(false),
+    m_AbbreviatedCaseNumber(NULL),
+    m_has_AlbumTitle(false),
+    m_AlbumTitle(NULL),
+    m_has_Author(false),
+    m_Author(NULL),
+    m_has_BookTitle(false),
+    m_BookTitle(NULL),
+    m_has_Broadcaster(false),
+    m_Broadcaster(NULL),
+    m_has_BroadcastTitle(false),
+    m_BroadcastTitle(NULL),
+    m_has_CaseNumber(false),
+    m_CaseNumber(NULL),
+    m_has_ChapterNumber(false),
+    m_ChapterNumber(NULL),
+    m_has_City(false),
+    m_City(NULL),
+    m_has_Comments(false),
+    m_Comments(NULL),
+    m_has_ConferenceName(false),
+    m_ConferenceName(NULL),
+    m_has_CountryRegion(false),
+    m_CountryRegion(NULL),
+    m_has_Court(false),
+    m_Court(NULL),
+    m_has_Day(false),
+    m_Day(NULL),
+    m_has_DayAccessed(false),
+    m_DayAccessed(NULL),
+    m_has_Department(false),
+    m_Department(NULL),
+    m_has_Distributor(false),
+    m_Distributor(NULL),
+    m_has_Edition(false),
+    m_Edition(NULL),
+    m_has_Guid(false),
+    m_Guid(NULL),
+    m_has_Institution(false),
+    m_Institution(NULL),
+    m_has_InternetSiteTitle(false),
+    m_InternetSiteTitle(NULL),
+    m_has_Issue(false),
+    m_Issue(NULL),
+    m_has_JournalName(false),
+    m_JournalName(NULL),
+    m_has_LCID(false),
+    m_LCID(NULL),
+    m_has_Medium(false),
+    m_Medium(NULL),
+    m_has_Month(false),
+    m_Month(NULL),
+    m_has_MonthAccessed(false),
+    m_MonthAccessed(NULL),
+    m_has_NumberVolumes(false),
+    m_NumberVolumes(NULL),
+    m_has_Pages(false),
+    m_Pages(NULL),
+    m_has_PatentNumber(false),
+    m_PatentNumber(NULL),
+    m_has_PeriodicalTitle(false),
+    m_PeriodicalTitle(NULL),
+    m_has_ProductionCompany(false),
+    m_ProductionCompany(NULL),
+    m_has_PublicationTitle(false),
+    m_PublicationTitle(NULL),
+    m_has_Publisher(false),
+    m_Publisher(NULL),
+    m_has_RecordingNumber(false),
+    m_RecordingNumber(NULL),
+    m_has_RefOrder(false),
+    m_RefOrder(NULL),
+    m_has_Reporter(false),
+    m_Reporter(NULL),
+    m_has_SourceType(false),
+    m_SourceType(NULL),
+    m_has_ShortTitle(false),
+    m_ShortTitle(NULL),
+    m_has_StandardNumber(false),
+    m_StandardNumber(NULL),
+    m_has_StateProvince(false),
+    m_StateProvince(NULL),
+    m_has_Station(false),
+    m_Station(NULL),
+    m_has_Tag(false),
+    m_Tag(NULL),
+    m_has_Theater(false),
+    m_Theater(NULL),
+    m_has_ThesisType(false),
+    m_ThesisType(NULL),
+    m_has_Title(false),
+    m_Title(NULL),
+    m_has_Type(false),
+    m_Type(NULL),
+    m_has_URL(false),
+    m_URL(NULL),
+    m_has_Version(false),
+    m_Version(NULL),
+    m_has_Volume(false),
+    m_Volume(NULL),
+    m_has_Year(false),
+    m_Year(NULL),
+    m_has_YearAccessed(false),
+    m_YearAccessed(NULL)
+    {
+    }
+    bool CT_SourceType::ChildGroup_1::has_AbbreviatedCaseNumber() const
     {    
-    return m_has_s_AbbreviatedCaseNumber;
+    return m_has_AbbreviatedCaseNumber;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_AbbreviatedCaseNumber()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_AbbreviatedCaseNumber()
     {    
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -3986,309 +4170,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -4301,163 +4485,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_AbbreviatedCaseNumber = true;
-    if (!m_s_AbbreviatedCaseNumber)
+    m_has_AbbreviatedCaseNumber = true;
+    if (!m_AbbreviatedCaseNumber)
     {
-        m_s_AbbreviatedCaseNumber = new ns_s::ST_String();
+        m_AbbreviatedCaseNumber = new ns_s::ST_String();
     }
-    return m_s_AbbreviatedCaseNumber;
+    return m_AbbreviatedCaseNumber;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_AbbreviatedCaseNumber() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_AbbreviatedCaseNumber() const
     {    
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        return *m_s_AbbreviatedCaseNumber;
+        return *m_AbbreviatedCaseNumber;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_AlbumTitle() const
+    bool CT_SourceType::ChildGroup_1::has_AlbumTitle() const
     {    
-    return m_has_s_AlbumTitle;
+    return m_has_AlbumTitle;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_AlbumTitle()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_AlbumTitle()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
@@ -4470,309 +4654,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -4785,145 +4969,145 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = true;
-    if (!m_s_AlbumTitle)
+    m_has_AlbumTitle = true;
+    if (!m_AlbumTitle)
     {
-        m_s_AlbumTitle = new ns_s::ST_String();
+        m_AlbumTitle = new ns_s::ST_String();
     }
-    return m_s_AlbumTitle;
+    return m_AlbumTitle;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_AlbumTitle() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_AlbumTitle() const
     {    
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        return *m_s_AlbumTitle;
+        return *m_AlbumTitle;
     }
     return ns_s::ST_String::default_instance();
     }
@@ -4936,327 +5120,327 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     CT_AuthorType* CT_SourceType::ChildGroup_1::mutable_Author()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -5269,129 +5453,129 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
@@ -5412,29 +5596,29 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     return CT_AuthorType::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_BookTitle() const
+    bool CT_SourceType::ChildGroup_1::has_BookTitle() const
     {    
-    return m_has_s_BookTitle;
+    return m_has_BookTitle;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_BookTitle()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_BookTitle()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -5447,300 +5631,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -5753,172 +5937,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_BookTitle = true;
-    if (!m_s_BookTitle)
+    m_has_BookTitle = true;
+    if (!m_BookTitle)
     {
-        m_s_BookTitle = new ns_s::ST_String();
+        m_BookTitle = new ns_s::ST_String();
     }
-    return m_s_BookTitle;
+    return m_BookTitle;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_BookTitle() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_BookTitle() const
     {    
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        return *m_s_BookTitle;
+        return *m_BookTitle;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Broadcaster() const
+    bool CT_SourceType::ChildGroup_1::has_Broadcaster() const
     {    
-    return m_has_s_Broadcaster;
+    return m_has_Broadcaster;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Broadcaster()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Broadcaster()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -5931,300 +6115,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -6237,172 +6421,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = true;
-    if (!m_s_Broadcaster)
+    m_has_Broadcaster = true;
+    if (!m_Broadcaster)
     {
-        m_s_Broadcaster = new ns_s::ST_String();
+        m_Broadcaster = new ns_s::ST_String();
     }
-    return m_s_Broadcaster;
+    return m_Broadcaster;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Broadcaster() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Broadcaster() const
     {    
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        return *m_s_Broadcaster;
+        return *m_Broadcaster;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_BroadcastTitle() const
+    bool CT_SourceType::ChildGroup_1::has_BroadcastTitle() const
     {    
-    return m_has_s_BroadcastTitle;
+    return m_has_BroadcastTitle;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_BroadcastTitle()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_BroadcastTitle()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -6415,300 +6599,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -6721,172 +6905,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = true;
-    if (!m_s_BroadcastTitle)
+    m_has_BroadcastTitle = true;
+    if (!m_BroadcastTitle)
     {
-        m_s_BroadcastTitle = new ns_s::ST_String();
+        m_BroadcastTitle = new ns_s::ST_String();
     }
-    return m_s_BroadcastTitle;
+    return m_BroadcastTitle;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_BroadcastTitle() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_BroadcastTitle() const
     {    
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        return *m_s_BroadcastTitle;
+        return *m_BroadcastTitle;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_CaseNumber() const
+    bool CT_SourceType::ChildGroup_1::has_CaseNumber() const
     {    
-    return m_has_s_CaseNumber;
+    return m_has_CaseNumber;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_CaseNumber()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_CaseNumber()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -6899,300 +7083,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -7205,172 +7389,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = true;
-    if (!m_s_CaseNumber)
+    m_has_CaseNumber = true;
+    if (!m_CaseNumber)
     {
-        m_s_CaseNumber = new ns_s::ST_String();
+        m_CaseNumber = new ns_s::ST_String();
     }
-    return m_s_CaseNumber;
+    return m_CaseNumber;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_CaseNumber() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_CaseNumber() const
     {    
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        return *m_s_CaseNumber;
+        return *m_CaseNumber;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_ChapterNumber() const
+    bool CT_SourceType::ChildGroup_1::has_ChapterNumber() const
     {    
-    return m_has_s_ChapterNumber;
+    return m_has_ChapterNumber;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_ChapterNumber()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_ChapterNumber()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -7383,300 +7567,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -7689,172 +7873,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = true;
-    if (!m_s_ChapterNumber)
+    m_has_ChapterNumber = true;
+    if (!m_ChapterNumber)
     {
-        m_s_ChapterNumber = new ns_s::ST_String();
+        m_ChapterNumber = new ns_s::ST_String();
     }
-    return m_s_ChapterNumber;
+    return m_ChapterNumber;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_ChapterNumber() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_ChapterNumber() const
     {    
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        return *m_s_ChapterNumber;
+        return *m_ChapterNumber;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_City() const
+    bool CT_SourceType::ChildGroup_1::has_City() const
     {    
-    return m_has_s_City;
+    return m_has_City;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_City()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_City()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -7867,300 +8051,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -8173,172 +8357,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_City = true;
-    if (!m_s_City)
+    m_has_City = true;
+    if (!m_City)
     {
-        m_s_City = new ns_s::ST_String();
+        m_City = new ns_s::ST_String();
     }
-    return m_s_City;
+    return m_City;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_City() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_City() const
     {    
-    if (m_s_City)
+    if (m_City)
     {
-        return *m_s_City;
+        return *m_City;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Comments() const
+    bool CT_SourceType::ChildGroup_1::has_Comments() const
     {    
-    return m_has_s_Comments;
+    return m_has_Comments;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Comments()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Comments()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -8351,300 +8535,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -8657,172 +8841,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Comments = true;
-    if (!m_s_Comments)
+    m_has_Comments = true;
+    if (!m_Comments)
     {
-        m_s_Comments = new ns_s::ST_String();
+        m_Comments = new ns_s::ST_String();
     }
-    return m_s_Comments;
+    return m_Comments;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Comments() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Comments() const
     {    
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        return *m_s_Comments;
+        return *m_Comments;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_ConferenceName() const
+    bool CT_SourceType::ChildGroup_1::has_ConferenceName() const
     {    
-    return m_has_s_ConferenceName;
+    return m_has_ConferenceName;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_ConferenceName()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_ConferenceName()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -8835,300 +9019,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -9141,172 +9325,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = true;
-    if (!m_s_ConferenceName)
+    m_has_ConferenceName = true;
+    if (!m_ConferenceName)
     {
-        m_s_ConferenceName = new ns_s::ST_String();
+        m_ConferenceName = new ns_s::ST_String();
     }
-    return m_s_ConferenceName;
+    return m_ConferenceName;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_ConferenceName() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_ConferenceName() const
     {    
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        return *m_s_ConferenceName;
+        return *m_ConferenceName;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_CountryRegion() const
+    bool CT_SourceType::ChildGroup_1::has_CountryRegion() const
     {    
-    return m_has_s_CountryRegion;
+    return m_has_CountryRegion;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_CountryRegion()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_CountryRegion()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -9319,300 +9503,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -9625,172 +9809,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = true;
-    if (!m_s_CountryRegion)
+    m_has_CountryRegion = true;
+    if (!m_CountryRegion)
     {
-        m_s_CountryRegion = new ns_s::ST_String();
+        m_CountryRegion = new ns_s::ST_String();
     }
-    return m_s_CountryRegion;
+    return m_CountryRegion;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_CountryRegion() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_CountryRegion() const
     {    
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        return *m_s_CountryRegion;
+        return *m_CountryRegion;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Court() const
+    bool CT_SourceType::ChildGroup_1::has_Court() const
     {    
-    return m_has_s_Court;
+    return m_has_Court;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Court()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Court()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -9803,300 +9987,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -10109,172 +10293,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Court = true;
-    if (!m_s_Court)
+    m_has_Court = true;
+    if (!m_Court)
     {
-        m_s_Court = new ns_s::ST_String();
+        m_Court = new ns_s::ST_String();
     }
-    return m_s_Court;
+    return m_Court;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Court() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Court() const
     {    
-    if (m_s_Court)
+    if (m_Court)
     {
-        return *m_s_Court;
+        return *m_Court;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Day() const
+    bool CT_SourceType::ChildGroup_1::has_Day() const
     {    
-    return m_has_s_Day;
+    return m_has_Day;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Day()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Day()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -10287,300 +10471,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -10593,172 +10777,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Day = true;
-    if (!m_s_Day)
+    m_has_Day = true;
+    if (!m_Day)
     {
-        m_s_Day = new ns_s::ST_String();
+        m_Day = new ns_s::ST_String();
     }
-    return m_s_Day;
+    return m_Day;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Day() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Day() const
     {    
-    if (m_s_Day)
+    if (m_Day)
     {
-        return *m_s_Day;
+        return *m_Day;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_DayAccessed() const
+    bool CT_SourceType::ChildGroup_1::has_DayAccessed() const
     {    
-    return m_has_s_DayAccessed;
+    return m_has_DayAccessed;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_DayAccessed()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_DayAccessed()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -10771,300 +10955,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -11077,172 +11261,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = true;
-    if (!m_s_DayAccessed)
+    m_has_DayAccessed = true;
+    if (!m_DayAccessed)
     {
-        m_s_DayAccessed = new ns_s::ST_String();
+        m_DayAccessed = new ns_s::ST_String();
     }
-    return m_s_DayAccessed;
+    return m_DayAccessed;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_DayAccessed() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_DayAccessed() const
     {    
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        return *m_s_DayAccessed;
+        return *m_DayAccessed;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Department() const
+    bool CT_SourceType::ChildGroup_1::has_Department() const
     {    
-    return m_has_s_Department;
+    return m_has_Department;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Department()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Department()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -11255,300 +11439,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -11561,172 +11745,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = true;
-    if (!m_s_Department)
+    m_has_Department = true;
+    if (!m_Department)
     {
-        m_s_Department = new ns_s::ST_String();
+        m_Department = new ns_s::ST_String();
     }
-    return m_s_Department;
+    return m_Department;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Department() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Department() const
     {    
-    if (m_s_Department)
+    if (m_Department)
     {
-        return *m_s_Department;
+        return *m_Department;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Distributor() const
+    bool CT_SourceType::ChildGroup_1::has_Distributor() const
     {    
-    return m_has_s_Distributor;
+    return m_has_Distributor;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Distributor()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Distributor()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -11739,300 +11923,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -12045,172 +12229,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Distributor = true;
-    if (!m_s_Distributor)
+    m_has_Distributor = true;
+    if (!m_Distributor)
     {
-        m_s_Distributor = new ns_s::ST_String();
+        m_Distributor = new ns_s::ST_String();
     }
-    return m_s_Distributor;
+    return m_Distributor;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Distributor() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Distributor() const
     {    
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        return *m_s_Distributor;
+        return *m_Distributor;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Edition() const
+    bool CT_SourceType::ChildGroup_1::has_Edition() const
     {    
-    return m_has_s_Edition;
+    return m_has_Edition;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Edition()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Edition()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -12223,300 +12407,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -12529,172 +12713,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Edition = true;
-    if (!m_s_Edition)
+    m_has_Edition = true;
+    if (!m_Edition)
     {
-        m_s_Edition = new ns_s::ST_String();
+        m_Edition = new ns_s::ST_String();
     }
-    return m_s_Edition;
+    return m_Edition;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Edition() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Edition() const
     {    
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        return *m_s_Edition;
+        return *m_Edition;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Guid() const
+    bool CT_SourceType::ChildGroup_1::has_Guid() const
     {    
-    return m_has_s_Guid;
+    return m_has_Guid;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Guid()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Guid()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -12707,300 +12891,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -13013,172 +13197,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Guid = true;
-    if (!m_s_Guid)
+    m_has_Guid = true;
+    if (!m_Guid)
     {
-        m_s_Guid = new ns_s::ST_String();
+        m_Guid = new ns_s::ST_String();
     }
-    return m_s_Guid;
+    return m_Guid;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Guid() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Guid() const
     {    
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        return *m_s_Guid;
+        return *m_Guid;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Institution() const
+    bool CT_SourceType::ChildGroup_1::has_Institution() const
     {    
-    return m_has_s_Institution;
+    return m_has_Institution;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Institution()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Institution()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -13191,300 +13375,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -13497,172 +13681,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Institution = true;
-    if (!m_s_Institution)
+    m_has_Institution = true;
+    if (!m_Institution)
     {
-        m_s_Institution = new ns_s::ST_String();
+        m_Institution = new ns_s::ST_String();
     }
-    return m_s_Institution;
+    return m_Institution;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Institution() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Institution() const
     {    
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        return *m_s_Institution;
+        return *m_Institution;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_InternetSiteTitle() const
+    bool CT_SourceType::ChildGroup_1::has_InternetSiteTitle() const
     {    
-    return m_has_s_InternetSiteTitle;
+    return m_has_InternetSiteTitle;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_InternetSiteTitle()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_InternetSiteTitle()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -13675,300 +13859,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -13981,172 +14165,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = true;
-    if (!m_s_InternetSiteTitle)
+    m_has_InternetSiteTitle = true;
+    if (!m_InternetSiteTitle)
     {
-        m_s_InternetSiteTitle = new ns_s::ST_String();
+        m_InternetSiteTitle = new ns_s::ST_String();
     }
-    return m_s_InternetSiteTitle;
+    return m_InternetSiteTitle;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_InternetSiteTitle() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_InternetSiteTitle() const
     {    
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        return *m_s_InternetSiteTitle;
+        return *m_InternetSiteTitle;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Issue() const
+    bool CT_SourceType::ChildGroup_1::has_Issue() const
     {    
-    return m_has_s_Issue;
+    return m_has_Issue;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Issue()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Issue()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -14159,300 +14343,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -14465,172 +14649,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Issue = true;
-    if (!m_s_Issue)
+    m_has_Issue = true;
+    if (!m_Issue)
     {
-        m_s_Issue = new ns_s::ST_String();
+        m_Issue = new ns_s::ST_String();
     }
-    return m_s_Issue;
+    return m_Issue;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Issue() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Issue() const
     {    
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        return *m_s_Issue;
+        return *m_Issue;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_JournalName() const
+    bool CT_SourceType::ChildGroup_1::has_JournalName() const
     {    
-    return m_has_s_JournalName;
+    return m_has_JournalName;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_JournalName()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_JournalName()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -14643,300 +14827,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -14949,172 +15133,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_JournalName = true;
-    if (!m_s_JournalName)
+    m_has_JournalName = true;
+    if (!m_JournalName)
     {
-        m_s_JournalName = new ns_s::ST_String();
+        m_JournalName = new ns_s::ST_String();
     }
-    return m_s_JournalName;
+    return m_JournalName;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_JournalName() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_JournalName() const
     {    
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        return *m_s_JournalName;
+        return *m_JournalName;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_LCID() const
+    bool CT_SourceType::ChildGroup_1::has_LCID() const
     {    
-    return m_has_s_LCID;
+    return m_has_LCID;
     }
 
-    ns_s::ST_Lang* CT_SourceType::ChildGroup_1::mutable_s_LCID()
+    ns_s::ST_Lang* CT_SourceType::ChildGroup_1::mutable_LCID()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -15127,300 +15311,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -15433,172 +15617,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_LCID = true;
-    if (!m_s_LCID)
+    m_has_LCID = true;
+    if (!m_LCID)
     {
-        m_s_LCID = new ns_s::ST_Lang();
+        m_LCID = new ns_s::ST_Lang();
     }
-    return m_s_LCID;
+    return m_LCID;
     }
 
-    const ns_s::ST_Lang& CT_SourceType::ChildGroup_1::get_s_LCID() const
+    const ns_s::ST_Lang& CT_SourceType::ChildGroup_1::get_LCID() const
     {    
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        return *m_s_LCID;
+        return *m_LCID;
     }
     return ns_s::ST_Lang::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Medium() const
+    bool CT_SourceType::ChildGroup_1::has_Medium() const
     {    
-    return m_has_s_Medium;
+    return m_has_Medium;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Medium()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Medium()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -15611,300 +15795,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -15917,172 +16101,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Medium = true;
-    if (!m_s_Medium)
+    m_has_Medium = true;
+    if (!m_Medium)
     {
-        m_s_Medium = new ns_s::ST_String();
+        m_Medium = new ns_s::ST_String();
     }
-    return m_s_Medium;
+    return m_Medium;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Medium() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Medium() const
     {    
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        return *m_s_Medium;
+        return *m_Medium;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Month() const
+    bool CT_SourceType::ChildGroup_1::has_Month() const
     {    
-    return m_has_s_Month;
+    return m_has_Month;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Month()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Month()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -16095,300 +16279,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -16401,172 +16585,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Month = true;
-    if (!m_s_Month)
+    m_has_Month = true;
+    if (!m_Month)
     {
-        m_s_Month = new ns_s::ST_String();
+        m_Month = new ns_s::ST_String();
     }
-    return m_s_Month;
+    return m_Month;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Month() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Month() const
     {    
-    if (m_s_Month)
+    if (m_Month)
     {
-        return *m_s_Month;
+        return *m_Month;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_MonthAccessed() const
+    bool CT_SourceType::ChildGroup_1::has_MonthAccessed() const
     {    
-    return m_has_s_MonthAccessed;
+    return m_has_MonthAccessed;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_MonthAccessed()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_MonthAccessed()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -16579,300 +16763,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -16885,172 +17069,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = true;
-    if (!m_s_MonthAccessed)
+    m_has_MonthAccessed = true;
+    if (!m_MonthAccessed)
     {
-        m_s_MonthAccessed = new ns_s::ST_String();
+        m_MonthAccessed = new ns_s::ST_String();
     }
-    return m_s_MonthAccessed;
+    return m_MonthAccessed;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_MonthAccessed() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_MonthAccessed() const
     {    
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        return *m_s_MonthAccessed;
+        return *m_MonthAccessed;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_NumberVolumes() const
+    bool CT_SourceType::ChildGroup_1::has_NumberVolumes() const
     {    
-    return m_has_s_NumberVolumes;
+    return m_has_NumberVolumes;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_NumberVolumes()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_NumberVolumes()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -17063,300 +17247,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -17369,172 +17553,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = true;
-    if (!m_s_NumberVolumes)
+    m_has_NumberVolumes = true;
+    if (!m_NumberVolumes)
     {
-        m_s_NumberVolumes = new ns_s::ST_String();
+        m_NumberVolumes = new ns_s::ST_String();
     }
-    return m_s_NumberVolumes;
+    return m_NumberVolumes;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_NumberVolumes() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_NumberVolumes() const
     {    
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        return *m_s_NumberVolumes;
+        return *m_NumberVolumes;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Pages() const
+    bool CT_SourceType::ChildGroup_1::has_Pages() const
     {    
-    return m_has_s_Pages;
+    return m_has_Pages;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Pages()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Pages()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -17547,300 +17731,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -17853,172 +18037,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Pages = true;
-    if (!m_s_Pages)
+    m_has_Pages = true;
+    if (!m_Pages)
     {
-        m_s_Pages = new ns_s::ST_String();
+        m_Pages = new ns_s::ST_String();
     }
-    return m_s_Pages;
+    return m_Pages;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Pages() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Pages() const
     {    
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        return *m_s_Pages;
+        return *m_Pages;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_PatentNumber() const
+    bool CT_SourceType::ChildGroup_1::has_PatentNumber() const
     {    
-    return m_has_s_PatentNumber;
+    return m_has_PatentNumber;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_PatentNumber()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_PatentNumber()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -18031,300 +18215,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -18337,172 +18521,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = true;
-    if (!m_s_PatentNumber)
+    m_has_PatentNumber = true;
+    if (!m_PatentNumber)
     {
-        m_s_PatentNumber = new ns_s::ST_String();
+        m_PatentNumber = new ns_s::ST_String();
     }
-    return m_s_PatentNumber;
+    return m_PatentNumber;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_PatentNumber() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_PatentNumber() const
     {    
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        return *m_s_PatentNumber;
+        return *m_PatentNumber;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_PeriodicalTitle() const
+    bool CT_SourceType::ChildGroup_1::has_PeriodicalTitle() const
     {    
-    return m_has_s_PeriodicalTitle;
+    return m_has_PeriodicalTitle;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_PeriodicalTitle()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_PeriodicalTitle()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -18515,300 +18699,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -18821,172 +19005,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = true;
-    if (!m_s_PeriodicalTitle)
+    m_has_PeriodicalTitle = true;
+    if (!m_PeriodicalTitle)
     {
-        m_s_PeriodicalTitle = new ns_s::ST_String();
+        m_PeriodicalTitle = new ns_s::ST_String();
     }
-    return m_s_PeriodicalTitle;
+    return m_PeriodicalTitle;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_PeriodicalTitle() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_PeriodicalTitle() const
     {    
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        return *m_s_PeriodicalTitle;
+        return *m_PeriodicalTitle;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_ProductionCompany() const
+    bool CT_SourceType::ChildGroup_1::has_ProductionCompany() const
     {    
-    return m_has_s_ProductionCompany;
+    return m_has_ProductionCompany;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_ProductionCompany()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_ProductionCompany()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -18999,300 +19183,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -19305,172 +19489,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = true;
-    if (!m_s_ProductionCompany)
+    m_has_ProductionCompany = true;
+    if (!m_ProductionCompany)
     {
-        m_s_ProductionCompany = new ns_s::ST_String();
+        m_ProductionCompany = new ns_s::ST_String();
     }
-    return m_s_ProductionCompany;
+    return m_ProductionCompany;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_ProductionCompany() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_ProductionCompany() const
     {    
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        return *m_s_ProductionCompany;
+        return *m_ProductionCompany;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_PublicationTitle() const
+    bool CT_SourceType::ChildGroup_1::has_PublicationTitle() const
     {    
-    return m_has_s_PublicationTitle;
+    return m_has_PublicationTitle;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_PublicationTitle()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_PublicationTitle()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -19483,300 +19667,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -19789,172 +19973,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = true;
-    if (!m_s_PublicationTitle)
+    m_has_PublicationTitle = true;
+    if (!m_PublicationTitle)
     {
-        m_s_PublicationTitle = new ns_s::ST_String();
+        m_PublicationTitle = new ns_s::ST_String();
     }
-    return m_s_PublicationTitle;
+    return m_PublicationTitle;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_PublicationTitle() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_PublicationTitle() const
     {    
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        return *m_s_PublicationTitle;
+        return *m_PublicationTitle;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Publisher() const
+    bool CT_SourceType::ChildGroup_1::has_Publisher() const
     {    
-    return m_has_s_Publisher;
+    return m_has_Publisher;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Publisher()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Publisher()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -19967,300 +20151,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -20273,172 +20457,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Publisher = true;
-    if (!m_s_Publisher)
+    m_has_Publisher = true;
+    if (!m_Publisher)
     {
-        m_s_Publisher = new ns_s::ST_String();
+        m_Publisher = new ns_s::ST_String();
     }
-    return m_s_Publisher;
+    return m_Publisher;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Publisher() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Publisher() const
     {    
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        return *m_s_Publisher;
+        return *m_Publisher;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_RecordingNumber() const
+    bool CT_SourceType::ChildGroup_1::has_RecordingNumber() const
     {    
-    return m_has_s_RecordingNumber;
+    return m_has_RecordingNumber;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_RecordingNumber()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_RecordingNumber()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -20451,300 +20635,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -20757,172 +20941,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = true;
-    if (!m_s_RecordingNumber)
+    m_has_RecordingNumber = true;
+    if (!m_RecordingNumber)
     {
-        m_s_RecordingNumber = new ns_s::ST_String();
+        m_RecordingNumber = new ns_s::ST_String();
     }
-    return m_s_RecordingNumber;
+    return m_RecordingNumber;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_RecordingNumber() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_RecordingNumber() const
     {    
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        return *m_s_RecordingNumber;
+        return *m_RecordingNumber;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_RefOrder() const
+    bool CT_SourceType::ChildGroup_1::has_RefOrder() const
     {    
-    return m_has_s_RefOrder;
+    return m_has_RefOrder;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_RefOrder()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_RefOrder()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -20935,300 +21119,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -21241,172 +21425,172 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_RefOrder = true;
-    if (!m_s_RefOrder)
+    m_has_RefOrder = true;
+    if (!m_RefOrder)
     {
-        m_s_RefOrder = new ns_s::ST_String();
+        m_RefOrder = new ns_s::ST_String();
     }
-    return m_s_RefOrder;
+    return m_RefOrder;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_RefOrder() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_RefOrder() const
     {    
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        return *m_s_RefOrder;
+        return *m_RefOrder;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Reporter() const
+    bool CT_SourceType::ChildGroup_1::has_Reporter() const
     {    
-    return m_has_s_Reporter;
+    return m_has_Reporter;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Reporter()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Reporter()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -21419,300 +21603,300 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
@@ -21725,145 +21909,145 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Reporter = true;
-    if (!m_s_Reporter)
+    m_has_Reporter = true;
+    if (!m_Reporter)
     {
-        m_s_Reporter = new ns_s::ST_String();
+        m_Reporter = new ns_s::ST_String();
     }
-    return m_s_Reporter;
+    return m_Reporter;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Reporter() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Reporter() const
     {    
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        return *m_s_Reporter;
+        return *m_Reporter;
     }
     return ns_s::ST_String::default_instance();
     }
@@ -21876,21 +22060,21 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     ST_SourceType* CT_SourceType::ChildGroup_1::mutable_SourceType()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -21903,435 +22087,435 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
@@ -22352,29 +22536,29 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     return ST_SourceType::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_ShortTitle() const
+    bool CT_SourceType::ChildGroup_1::has_ShortTitle() const
     {    
-    return m_has_s_ShortTitle;
+    return m_has_ShortTitle;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_ShortTitle()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_ShortTitle()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -22387,309 +22571,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -22702,163 +22886,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = true;
-    if (!m_s_ShortTitle)
+    m_has_ShortTitle = true;
+    if (!m_ShortTitle)
     {
-        m_s_ShortTitle = new ns_s::ST_String();
+        m_ShortTitle = new ns_s::ST_String();
     }
-    return m_s_ShortTitle;
+    return m_ShortTitle;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_ShortTitle() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_ShortTitle() const
     {    
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        return *m_s_ShortTitle;
+        return *m_ShortTitle;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_StandardNumber() const
+    bool CT_SourceType::ChildGroup_1::has_StandardNumber() const
     {    
-    return m_has_s_StandardNumber;
+    return m_has_StandardNumber;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_StandardNumber()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_StandardNumber()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -22871,309 +23055,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -23186,163 +23370,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = true;
-    if (!m_s_StandardNumber)
+    m_has_StandardNumber = true;
+    if (!m_StandardNumber)
     {
-        m_s_StandardNumber = new ns_s::ST_String();
+        m_StandardNumber = new ns_s::ST_String();
     }
-    return m_s_StandardNumber;
+    return m_StandardNumber;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_StandardNumber() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_StandardNumber() const
     {    
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        return *m_s_StandardNumber;
+        return *m_StandardNumber;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_StateProvince() const
+    bool CT_SourceType::ChildGroup_1::has_StateProvince() const
     {    
-    return m_has_s_StateProvince;
+    return m_has_StateProvince;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_StateProvince()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_StateProvince()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -23355,309 +23539,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -23670,163 +23854,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_StateProvince = true;
-    if (!m_s_StateProvince)
+    m_has_StateProvince = true;
+    if (!m_StateProvince)
     {
-        m_s_StateProvince = new ns_s::ST_String();
+        m_StateProvince = new ns_s::ST_String();
     }
-    return m_s_StateProvince;
+    return m_StateProvince;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_StateProvince() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_StateProvince() const
     {    
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        return *m_s_StateProvince;
+        return *m_StateProvince;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Station() const
+    bool CT_SourceType::ChildGroup_1::has_Station() const
     {    
-    return m_has_s_Station;
+    return m_has_Station;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Station()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Station()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -23839,309 +24023,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -24154,163 +24338,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Station = true;
-    if (!m_s_Station)
+    m_has_Station = true;
+    if (!m_Station)
     {
-        m_s_Station = new ns_s::ST_String();
+        m_Station = new ns_s::ST_String();
     }
-    return m_s_Station;
+    return m_Station;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Station() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Station() const
     {    
-    if (m_s_Station)
+    if (m_Station)
     {
-        return *m_s_Station;
+        return *m_Station;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Tag() const
+    bool CT_SourceType::ChildGroup_1::has_Tag() const
     {    
-    return m_has_s_Tag;
+    return m_has_Tag;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Tag()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Tag()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -24323,309 +24507,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -24638,163 +24822,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Tag = true;
-    if (!m_s_Tag)
+    m_has_Tag = true;
+    if (!m_Tag)
     {
-        m_s_Tag = new ns_s::ST_String();
+        m_Tag = new ns_s::ST_String();
     }
-    return m_s_Tag;
+    return m_Tag;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Tag() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Tag() const
     {    
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        return *m_s_Tag;
+        return *m_Tag;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Theater() const
+    bool CT_SourceType::ChildGroup_1::has_Theater() const
     {    
-    return m_has_s_Theater;
+    return m_has_Theater;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Theater()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Theater()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -24807,309 +24991,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -25122,163 +25306,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Theater = true;
-    if (!m_s_Theater)
+    m_has_Theater = true;
+    if (!m_Theater)
     {
-        m_s_Theater = new ns_s::ST_String();
+        m_Theater = new ns_s::ST_String();
     }
-    return m_s_Theater;
+    return m_Theater;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Theater() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Theater() const
     {    
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        return *m_s_Theater;
+        return *m_Theater;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_ThesisType() const
+    bool CT_SourceType::ChildGroup_1::has_ThesisType() const
     {    
-    return m_has_s_ThesisType;
+    return m_has_ThesisType;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_ThesisType()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_ThesisType()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -25291,309 +25475,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -25606,163 +25790,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_ThesisType = true;
-    if (!m_s_ThesisType)
+    m_has_ThesisType = true;
+    if (!m_ThesisType)
     {
-        m_s_ThesisType = new ns_s::ST_String();
+        m_ThesisType = new ns_s::ST_String();
     }
-    return m_s_ThesisType;
+    return m_ThesisType;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_ThesisType() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_ThesisType() const
     {    
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        return *m_s_ThesisType;
+        return *m_ThesisType;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Title() const
+    bool CT_SourceType::ChildGroup_1::has_Title() const
     {    
-    return m_has_s_Title;
+    return m_has_Title;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Title()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Title()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -25775,309 +25959,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -26090,163 +26274,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Title = true;
-    if (!m_s_Title)
+    m_has_Title = true;
+    if (!m_Title)
     {
-        m_s_Title = new ns_s::ST_String();
+        m_Title = new ns_s::ST_String();
     }
-    return m_s_Title;
+    return m_Title;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Title() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Title() const
     {    
-    if (m_s_Title)
+    if (m_Title)
     {
-        return *m_s_Title;
+        return *m_Title;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Type() const
+    bool CT_SourceType::ChildGroup_1::has_Type() const
     {    
-    return m_has_s_Type;
+    return m_has_Type;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Type()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Type()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -26259,309 +26443,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -26574,163 +26758,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Type = true;
-    if (!m_s_Type)
+    m_has_Type = true;
+    if (!m_Type)
     {
-        m_s_Type = new ns_s::ST_String();
+        m_Type = new ns_s::ST_String();
     }
-    return m_s_Type;
+    return m_Type;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Type() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Type() const
     {    
-    if (m_s_Type)
+    if (m_Type)
     {
-        return *m_s_Type;
+        return *m_Type;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_URL() const
+    bool CT_SourceType::ChildGroup_1::has_URL() const
     {    
-    return m_has_s_URL;
+    return m_has_URL;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_URL()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_URL()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -26743,309 +26927,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -27058,163 +27242,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_URL = true;
-    if (!m_s_URL)
+    m_has_URL = true;
+    if (!m_URL)
     {
-        m_s_URL = new ns_s::ST_String();
+        m_URL = new ns_s::ST_String();
     }
-    return m_s_URL;
+    return m_URL;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_URL() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_URL() const
     {    
-    if (m_s_URL)
+    if (m_URL)
     {
-        return *m_s_URL;
+        return *m_URL;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Version() const
+    bool CT_SourceType::ChildGroup_1::has_Version() const
     {    
-    return m_has_s_Version;
+    return m_has_Version;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Version()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Version()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -27227,309 +27411,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -27542,163 +27726,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Version = true;
-    if (!m_s_Version)
+    m_has_Version = true;
+    if (!m_Version)
     {
-        m_s_Version = new ns_s::ST_String();
+        m_Version = new ns_s::ST_String();
     }
-    return m_s_Version;
+    return m_Version;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Version() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Version() const
     {    
-    if (m_s_Version)
+    if (m_Version)
     {
-        return *m_s_Version;
+        return *m_Version;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Volume() const
+    bool CT_SourceType::ChildGroup_1::has_Volume() const
     {    
-    return m_has_s_Volume;
+    return m_has_Volume;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Volume()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Volume()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -27711,309 +27895,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -28026,163 +28210,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Volume = true;
-    if (!m_s_Volume)
+    m_has_Volume = true;
+    if (!m_Volume)
     {
-        m_s_Volume = new ns_s::ST_String();
+        m_Volume = new ns_s::ST_String();
     }
-    return m_s_Volume;
+    return m_Volume;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Volume() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Volume() const
     {    
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        return *m_s_Volume;
+        return *m_Volume;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_Year() const
+    bool CT_SourceType::ChildGroup_1::has_Year() const
     {    
-    return m_has_s_Year;
+    return m_has_Year;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_Year()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_Year()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -28195,309 +28379,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -28510,163 +28694,163 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = false;
+    m_has_YearAccessed = false;
     
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        delete m_s_YearAccessed;
-        m_s_YearAccessed = NULL;
+        delete m_YearAccessed;
+        m_YearAccessed = NULL;
     }
     ;
     
-    m_has_s_Year = true;
-    if (!m_s_Year)
+    m_has_Year = true;
+    if (!m_Year)
     {
-        m_s_Year = new ns_s::ST_String();
+        m_Year = new ns_s::ST_String();
     }
-    return m_s_Year;
+    return m_Year;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_Year() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_Year() const
     {    
-    if (m_s_Year)
+    if (m_Year)
     {
-        return *m_s_Year;
+        return *m_Year;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_SourceType::ChildGroup_1::has_s_YearAccessed() const
+    bool CT_SourceType::ChildGroup_1::has_YearAccessed() const
     {    
-    return m_has_s_YearAccessed;
+    return m_has_YearAccessed;
     }
 
-    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_s_YearAccessed()
+    ns_s::ST_String* CT_SourceType::ChildGroup_1::mutable_YearAccessed()
     {    
     
-    m_has_s_AbbreviatedCaseNumber = false;
+    m_has_AbbreviatedCaseNumber = false;
     
-    if (m_s_AbbreviatedCaseNumber)
+    if (m_AbbreviatedCaseNumber)
     {
-        delete m_s_AbbreviatedCaseNumber;
-        m_s_AbbreviatedCaseNumber = NULL;
+        delete m_AbbreviatedCaseNumber;
+        m_AbbreviatedCaseNumber = NULL;
     }
     ;
     
-    m_has_s_AlbumTitle = false;
+    m_has_AlbumTitle = false;
     
-    if (m_s_AlbumTitle)
+    if (m_AlbumTitle)
     {
-        delete m_s_AlbumTitle;
-        m_s_AlbumTitle = NULL;
+        delete m_AlbumTitle;
+        m_AlbumTitle = NULL;
     }
     ;
     
@@ -28679,309 +28863,309 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_BookTitle = false;
+    m_has_BookTitle = false;
     
-    if (m_s_BookTitle)
+    if (m_BookTitle)
     {
-        delete m_s_BookTitle;
-        m_s_BookTitle = NULL;
+        delete m_BookTitle;
+        m_BookTitle = NULL;
     }
     ;
     
-    m_has_s_Broadcaster = false;
+    m_has_Broadcaster = false;
     
-    if (m_s_Broadcaster)
+    if (m_Broadcaster)
     {
-        delete m_s_Broadcaster;
-        m_s_Broadcaster = NULL;
+        delete m_Broadcaster;
+        m_Broadcaster = NULL;
     }
     ;
     
-    m_has_s_BroadcastTitle = false;
+    m_has_BroadcastTitle = false;
     
-    if (m_s_BroadcastTitle)
+    if (m_BroadcastTitle)
     {
-        delete m_s_BroadcastTitle;
-        m_s_BroadcastTitle = NULL;
+        delete m_BroadcastTitle;
+        m_BroadcastTitle = NULL;
     }
     ;
     
-    m_has_s_CaseNumber = false;
+    m_has_CaseNumber = false;
     
-    if (m_s_CaseNumber)
+    if (m_CaseNumber)
     {
-        delete m_s_CaseNumber;
-        m_s_CaseNumber = NULL;
+        delete m_CaseNumber;
+        m_CaseNumber = NULL;
     }
     ;
     
-    m_has_s_ChapterNumber = false;
+    m_has_ChapterNumber = false;
     
-    if (m_s_ChapterNumber)
+    if (m_ChapterNumber)
     {
-        delete m_s_ChapterNumber;
-        m_s_ChapterNumber = NULL;
+        delete m_ChapterNumber;
+        m_ChapterNumber = NULL;
     }
     ;
     
-    m_has_s_City = false;
+    m_has_City = false;
     
-    if (m_s_City)
+    if (m_City)
     {
-        delete m_s_City;
-        m_s_City = NULL;
+        delete m_City;
+        m_City = NULL;
     }
     ;
     
-    m_has_s_Comments = false;
+    m_has_Comments = false;
     
-    if (m_s_Comments)
+    if (m_Comments)
     {
-        delete m_s_Comments;
-        m_s_Comments = NULL;
+        delete m_Comments;
+        m_Comments = NULL;
     }
     ;
     
-    m_has_s_ConferenceName = false;
+    m_has_ConferenceName = false;
     
-    if (m_s_ConferenceName)
+    if (m_ConferenceName)
     {
-        delete m_s_ConferenceName;
-        m_s_ConferenceName = NULL;
+        delete m_ConferenceName;
+        m_ConferenceName = NULL;
     }
     ;
     
-    m_has_s_CountryRegion = false;
+    m_has_CountryRegion = false;
     
-    if (m_s_CountryRegion)
+    if (m_CountryRegion)
     {
-        delete m_s_CountryRegion;
-        m_s_CountryRegion = NULL;
+        delete m_CountryRegion;
+        m_CountryRegion = NULL;
     }
     ;
     
-    m_has_s_Court = false;
+    m_has_Court = false;
     
-    if (m_s_Court)
+    if (m_Court)
     {
-        delete m_s_Court;
-        m_s_Court = NULL;
+        delete m_Court;
+        m_Court = NULL;
     }
     ;
     
-    m_has_s_Day = false;
+    m_has_Day = false;
     
-    if (m_s_Day)
+    if (m_Day)
     {
-        delete m_s_Day;
-        m_s_Day = NULL;
+        delete m_Day;
+        m_Day = NULL;
     }
     ;
     
-    m_has_s_DayAccessed = false;
+    m_has_DayAccessed = false;
     
-    if (m_s_DayAccessed)
+    if (m_DayAccessed)
     {
-        delete m_s_DayAccessed;
-        m_s_DayAccessed = NULL;
+        delete m_DayAccessed;
+        m_DayAccessed = NULL;
     }
     ;
     
-    m_has_s_Department = false;
+    m_has_Department = false;
     
-    if (m_s_Department)
+    if (m_Department)
     {
-        delete m_s_Department;
-        m_s_Department = NULL;
+        delete m_Department;
+        m_Department = NULL;
     }
     ;
     
-    m_has_s_Distributor = false;
+    m_has_Distributor = false;
     
-    if (m_s_Distributor)
+    if (m_Distributor)
     {
-        delete m_s_Distributor;
-        m_s_Distributor = NULL;
+        delete m_Distributor;
+        m_Distributor = NULL;
     }
     ;
     
-    m_has_s_Edition = false;
+    m_has_Edition = false;
     
-    if (m_s_Edition)
+    if (m_Edition)
     {
-        delete m_s_Edition;
-        m_s_Edition = NULL;
+        delete m_Edition;
+        m_Edition = NULL;
     }
     ;
     
-    m_has_s_Guid = false;
+    m_has_Guid = false;
     
-    if (m_s_Guid)
+    if (m_Guid)
     {
-        delete m_s_Guid;
-        m_s_Guid = NULL;
+        delete m_Guid;
+        m_Guid = NULL;
     }
     ;
     
-    m_has_s_Institution = false;
+    m_has_Institution = false;
     
-    if (m_s_Institution)
+    if (m_Institution)
     {
-        delete m_s_Institution;
-        m_s_Institution = NULL;
+        delete m_Institution;
+        m_Institution = NULL;
     }
     ;
     
-    m_has_s_InternetSiteTitle = false;
+    m_has_InternetSiteTitle = false;
     
-    if (m_s_InternetSiteTitle)
+    if (m_InternetSiteTitle)
     {
-        delete m_s_InternetSiteTitle;
-        m_s_InternetSiteTitle = NULL;
+        delete m_InternetSiteTitle;
+        m_InternetSiteTitle = NULL;
     }
     ;
     
-    m_has_s_Issue = false;
+    m_has_Issue = false;
     
-    if (m_s_Issue)
+    if (m_Issue)
     {
-        delete m_s_Issue;
-        m_s_Issue = NULL;
+        delete m_Issue;
+        m_Issue = NULL;
     }
     ;
     
-    m_has_s_JournalName = false;
+    m_has_JournalName = false;
     
-    if (m_s_JournalName)
+    if (m_JournalName)
     {
-        delete m_s_JournalName;
-        m_s_JournalName = NULL;
+        delete m_JournalName;
+        m_JournalName = NULL;
     }
     ;
     
-    m_has_s_LCID = false;
+    m_has_LCID = false;
     
-    if (m_s_LCID)
+    if (m_LCID)
     {
-        delete m_s_LCID;
-        m_s_LCID = NULL;
+        delete m_LCID;
+        m_LCID = NULL;
     }
     ;
     
-    m_has_s_Medium = false;
+    m_has_Medium = false;
     
-    if (m_s_Medium)
+    if (m_Medium)
     {
-        delete m_s_Medium;
-        m_s_Medium = NULL;
+        delete m_Medium;
+        m_Medium = NULL;
     }
     ;
     
-    m_has_s_Month = false;
+    m_has_Month = false;
     
-    if (m_s_Month)
+    if (m_Month)
     {
-        delete m_s_Month;
-        m_s_Month = NULL;
+        delete m_Month;
+        m_Month = NULL;
     }
     ;
     
-    m_has_s_MonthAccessed = false;
+    m_has_MonthAccessed = false;
     
-    if (m_s_MonthAccessed)
+    if (m_MonthAccessed)
     {
-        delete m_s_MonthAccessed;
-        m_s_MonthAccessed = NULL;
+        delete m_MonthAccessed;
+        m_MonthAccessed = NULL;
     }
     ;
     
-    m_has_s_NumberVolumes = false;
+    m_has_NumberVolumes = false;
     
-    if (m_s_NumberVolumes)
+    if (m_NumberVolumes)
     {
-        delete m_s_NumberVolumes;
-        m_s_NumberVolumes = NULL;
+        delete m_NumberVolumes;
+        m_NumberVolumes = NULL;
     }
     ;
     
-    m_has_s_Pages = false;
+    m_has_Pages = false;
     
-    if (m_s_Pages)
+    if (m_Pages)
     {
-        delete m_s_Pages;
-        m_s_Pages = NULL;
+        delete m_Pages;
+        m_Pages = NULL;
     }
     ;
     
-    m_has_s_PatentNumber = false;
+    m_has_PatentNumber = false;
     
-    if (m_s_PatentNumber)
+    if (m_PatentNumber)
     {
-        delete m_s_PatentNumber;
-        m_s_PatentNumber = NULL;
+        delete m_PatentNumber;
+        m_PatentNumber = NULL;
     }
     ;
     
-    m_has_s_PeriodicalTitle = false;
+    m_has_PeriodicalTitle = false;
     
-    if (m_s_PeriodicalTitle)
+    if (m_PeriodicalTitle)
     {
-        delete m_s_PeriodicalTitle;
-        m_s_PeriodicalTitle = NULL;
+        delete m_PeriodicalTitle;
+        m_PeriodicalTitle = NULL;
     }
     ;
     
-    m_has_s_ProductionCompany = false;
+    m_has_ProductionCompany = false;
     
-    if (m_s_ProductionCompany)
+    if (m_ProductionCompany)
     {
-        delete m_s_ProductionCompany;
-        m_s_ProductionCompany = NULL;
+        delete m_ProductionCompany;
+        m_ProductionCompany = NULL;
     }
     ;
     
-    m_has_s_PublicationTitle = false;
+    m_has_PublicationTitle = false;
     
-    if (m_s_PublicationTitle)
+    if (m_PublicationTitle)
     {
-        delete m_s_PublicationTitle;
-        m_s_PublicationTitle = NULL;
+        delete m_PublicationTitle;
+        m_PublicationTitle = NULL;
     }
     ;
     
-    m_has_s_Publisher = false;
+    m_has_Publisher = false;
     
-    if (m_s_Publisher)
+    if (m_Publisher)
     {
-        delete m_s_Publisher;
-        m_s_Publisher = NULL;
+        delete m_Publisher;
+        m_Publisher = NULL;
     }
     ;
     
-    m_has_s_RecordingNumber = false;
+    m_has_RecordingNumber = false;
     
-    if (m_s_RecordingNumber)
+    if (m_RecordingNumber)
     {
-        delete m_s_RecordingNumber;
-        m_s_RecordingNumber = NULL;
+        delete m_RecordingNumber;
+        m_RecordingNumber = NULL;
     }
     ;
     
-    m_has_s_RefOrder = false;
+    m_has_RefOrder = false;
     
-    if (m_s_RefOrder)
+    if (m_RefOrder)
     {
-        delete m_s_RefOrder;
-        m_s_RefOrder = NULL;
+        delete m_RefOrder;
+        m_RefOrder = NULL;
     }
     ;
     
-    m_has_s_Reporter = false;
+    m_has_Reporter = false;
     
-    if (m_s_Reporter)
+    if (m_Reporter)
     {
-        delete m_s_Reporter;
-        m_s_Reporter = NULL;
+        delete m_Reporter;
+        m_Reporter = NULL;
     }
     ;
     
@@ -28994,136 +29178,136 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_ShortTitle = false;
+    m_has_ShortTitle = false;
     
-    if (m_s_ShortTitle)
+    if (m_ShortTitle)
     {
-        delete m_s_ShortTitle;
-        m_s_ShortTitle = NULL;
+        delete m_ShortTitle;
+        m_ShortTitle = NULL;
     }
     ;
     
-    m_has_s_StandardNumber = false;
+    m_has_StandardNumber = false;
     
-    if (m_s_StandardNumber)
+    if (m_StandardNumber)
     {
-        delete m_s_StandardNumber;
-        m_s_StandardNumber = NULL;
+        delete m_StandardNumber;
+        m_StandardNumber = NULL;
     }
     ;
     
-    m_has_s_StateProvince = false;
+    m_has_StateProvince = false;
     
-    if (m_s_StateProvince)
+    if (m_StateProvince)
     {
-        delete m_s_StateProvince;
-        m_s_StateProvince = NULL;
+        delete m_StateProvince;
+        m_StateProvince = NULL;
     }
     ;
     
-    m_has_s_Station = false;
+    m_has_Station = false;
     
-    if (m_s_Station)
+    if (m_Station)
     {
-        delete m_s_Station;
-        m_s_Station = NULL;
+        delete m_Station;
+        m_Station = NULL;
     }
     ;
     
-    m_has_s_Tag = false;
+    m_has_Tag = false;
     
-    if (m_s_Tag)
+    if (m_Tag)
     {
-        delete m_s_Tag;
-        m_s_Tag = NULL;
+        delete m_Tag;
+        m_Tag = NULL;
     }
     ;
     
-    m_has_s_Theater = false;
+    m_has_Theater = false;
     
-    if (m_s_Theater)
+    if (m_Theater)
     {
-        delete m_s_Theater;
-        m_s_Theater = NULL;
+        delete m_Theater;
+        m_Theater = NULL;
     }
     ;
     
-    m_has_s_ThesisType = false;
+    m_has_ThesisType = false;
     
-    if (m_s_ThesisType)
+    if (m_ThesisType)
     {
-        delete m_s_ThesisType;
-        m_s_ThesisType = NULL;
+        delete m_ThesisType;
+        m_ThesisType = NULL;
     }
     ;
     
-    m_has_s_Title = false;
+    m_has_Title = false;
     
-    if (m_s_Title)
+    if (m_Title)
     {
-        delete m_s_Title;
-        m_s_Title = NULL;
+        delete m_Title;
+        m_Title = NULL;
     }
     ;
     
-    m_has_s_Type = false;
+    m_has_Type = false;
     
-    if (m_s_Type)
+    if (m_Type)
     {
-        delete m_s_Type;
-        m_s_Type = NULL;
+        delete m_Type;
+        m_Type = NULL;
     }
     ;
     
-    m_has_s_URL = false;
+    m_has_URL = false;
     
-    if (m_s_URL)
+    if (m_URL)
     {
-        delete m_s_URL;
-        m_s_URL = NULL;
+        delete m_URL;
+        m_URL = NULL;
     }
     ;
     
-    m_has_s_Version = false;
+    m_has_Version = false;
     
-    if (m_s_Version)
+    if (m_Version)
     {
-        delete m_s_Version;
-        m_s_Version = NULL;
+        delete m_Version;
+        m_Version = NULL;
     }
     ;
     
-    m_has_s_Volume = false;
+    m_has_Volume = false;
     
-    if (m_s_Volume)
+    if (m_Volume)
     {
-        delete m_s_Volume;
-        m_s_Volume = NULL;
+        delete m_Volume;
+        m_Volume = NULL;
     }
     ;
     
-    m_has_s_Year = false;
+    m_has_Year = false;
     
-    if (m_s_Year)
+    if (m_Year)
     {
-        delete m_s_Year;
-        m_s_Year = NULL;
+        delete m_Year;
+        m_Year = NULL;
     }
     ;
     
-    m_has_s_YearAccessed = true;
-    if (!m_s_YearAccessed)
+    m_has_YearAccessed = true;
+    if (!m_YearAccessed)
     {
-        m_s_YearAccessed = new ns_s::ST_String();
+        m_YearAccessed = new ns_s::ST_String();
     }
-    return m_s_YearAccessed;
+    return m_YearAccessed;
     }
 
-    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_s_YearAccessed() const
+    const ns_s::ST_String& CT_SourceType::ChildGroup_1::get_YearAccessed() const
     {    
-    if (m_s_YearAccessed)
+    if (m_YearAccessed)
     {
-        return *m_s_YearAccessed;
+        return *m_YearAccessed;
     }
     return ns_s::ST_String::default_instance();
     }
@@ -29131,6 +29315,15 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
 CT_SourceType* CT_SourceType::default_instance_ = NULL;
 
     // CT_Sources
+    CT_Sources::CT_Sources()
+    :m_has_SelectedStyle_attr(false),
+    m_SelectedStyle_attr(NULL),
+    m_has_StyleName_attr(false),
+    m_StyleName_attr(NULL),
+    m_has_URI_attr(false),
+    m_URI_attr(NULL)
+    {
+    }
     CT_SourceType* CT_Sources::add_Source()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -29141,30 +29334,30 @@ CT_SourceType* CT_SourceType::default_instance_ = NULL;
 
     void CT_Sources::clear()
     {    
-    m_has_s_SelectedStyle_attr = false;
+    m_has_SelectedStyle_attr = false;
     
-    if (m_s_SelectedStyle_attr)
+    if (m_SelectedStyle_attr)
     {
-        delete m_s_SelectedStyle_attr;
-        m_s_SelectedStyle_attr = NULL;
+        delete m_SelectedStyle_attr;
+        m_SelectedStyle_attr = NULL;
     }
     
     
-    m_has_s_StyleName_attr = false;
+    m_has_StyleName_attr = false;
     
-    if (m_s_StyleName_attr)
+    if (m_StyleName_attr)
     {
-        delete m_s_StyleName_attr;
-        m_s_StyleName_attr = NULL;
+        delete m_StyleName_attr;
+        m_StyleName_attr = NULL;
     }
     
     
-    m_has_s_URI_attr = false;
+    m_has_URI_attr = false;
     
-    if (m_s_URI_attr)
+    if (m_URI_attr)
     {
-        delete m_s_URI_attr;
-        m_s_URI_attr = NULL;
+        delete m_URI_attr;
+        m_URI_attr = NULL;
     }
     
     
@@ -29187,21 +29380,21 @@ CT_SourceType* CT_SourceType::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_SelectedStyle_attr)
+    if (m_has_SelectedStyle_attr)
     {
-        m_s_SelectedStyle_attr->toXmlAttr("SelectedStyle", _outStream);
+        m_SelectedStyle_attr->toXmlAttr("SelectedStyle", _outStream);
     }
     
     
-    if (m_has_s_StyleName_attr)
+    if (m_has_StyleName_attr)
     {
-        m_s_StyleName_attr->toXmlAttr("StyleName", _outStream);
+        m_StyleName_attr->toXmlAttr("StyleName", _outStream);
     }
     
     
-    if (m_has_s_URI_attr)
+    if (m_has_URI_attr)
     {
-        m_s_URI_attr->toXmlAttr("URI", _outStream);
+        m_URI_attr->toXmlAttr("URI", _outStream);
     }
     
             _outStream << ">";
@@ -29212,7 +29405,7 @@ CT_SourceType* CT_SourceType::default_instance_ = NULL;
         {
             if ((*iter)->has_Source())
             {
-                (*iter)->get_Source().toXmlElem("Source", "", _outStream);
+                (*iter)->get_Source().toXmlElem("bibliography:Source", "", _outStream);
             }
         }
     }
@@ -29229,68 +29422,73 @@ CT_SourceType* CT_SourceType::default_instance_ = NULL;
     return *CT_Sources::default_instance_;
     }
 
-    bool CT_Sources::has_s_SelectedStyle_attr() const
+    bool CT_Sources::has_SelectedStyle_attr() const
     {    
-    return m_has_s_SelectedStyle_attr;
+    return m_has_SelectedStyle_attr;
     }
 
-    void CT_Sources::set_s_SelectedStyle_attr(const ns_s::ST_String& _s_SelectedStyle_attr)
+    void CT_Sources::set_SelectedStyle_attr(const ns_s::ST_String& _SelectedStyle_attr)
     {    
-    m_has_s_SelectedStyle_attr = true;
-    m_s_SelectedStyle_attr = new ns_s::ST_String(_s_SelectedStyle_attr);
+    m_has_SelectedStyle_attr = true;
+    m_SelectedStyle_attr = new ns_s::ST_String(_SelectedStyle_attr);
     }
 
-    const ns_s::ST_String& CT_Sources::get_s_SelectedStyle_attr() const
+    const ns_s::ST_String& CT_Sources::get_SelectedStyle_attr() const
     {    
-    if (m_s_SelectedStyle_attr)
+    if (m_SelectedStyle_attr)
     {
-        return *m_s_SelectedStyle_attr;
+        return *m_SelectedStyle_attr;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_Sources::has_s_StyleName_attr() const
+    bool CT_Sources::has_StyleName_attr() const
     {    
-    return m_has_s_StyleName_attr;
+    return m_has_StyleName_attr;
     }
 
-    void CT_Sources::set_s_StyleName_attr(const ns_s::ST_String& _s_StyleName_attr)
+    void CT_Sources::set_StyleName_attr(const ns_s::ST_String& _StyleName_attr)
     {    
-    m_has_s_StyleName_attr = true;
-    m_s_StyleName_attr = new ns_s::ST_String(_s_StyleName_attr);
+    m_has_StyleName_attr = true;
+    m_StyleName_attr = new ns_s::ST_String(_StyleName_attr);
     }
 
-    const ns_s::ST_String& CT_Sources::get_s_StyleName_attr() const
+    const ns_s::ST_String& CT_Sources::get_StyleName_attr() const
     {    
-    if (m_s_StyleName_attr)
+    if (m_StyleName_attr)
     {
-        return *m_s_StyleName_attr;
+        return *m_StyleName_attr;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool CT_Sources::has_s_URI_attr() const
+    bool CT_Sources::has_URI_attr() const
     {    
-    return m_has_s_URI_attr;
+    return m_has_URI_attr;
     }
 
-    void CT_Sources::set_s_URI_attr(const ns_s::ST_String& _s_URI_attr)
+    void CT_Sources::set_URI_attr(const ns_s::ST_String& _URI_attr)
     {    
-    m_has_s_URI_attr = true;
-    m_s_URI_attr = new ns_s::ST_String(_s_URI_attr);
+    m_has_URI_attr = true;
+    m_URI_attr = new ns_s::ST_String(_URI_attr);
     }
 
-    const ns_s::ST_String& CT_Sources::get_s_URI_attr() const
+    const ns_s::ST_String& CT_Sources::get_URI_attr() const
     {    
-    if (m_s_URI_attr)
+    if (m_URI_attr)
     {
-        return *m_s_URI_attr;
+        return *m_URI_attr;
     }
     return ns_s::ST_String::default_instance();
     }
 
 
     // CT_Sources::ChildGroup_1
+    CT_Sources::ChildGroup_1::ChildGroup_1()
+    :m_has_Source(false),
+    m_Source(NULL)
+    {
+    }
     bool CT_Sources::ChildGroup_1::has_Source() const
     {    
     return m_has_Source;
@@ -29319,6 +29517,15 @@ CT_SourceType* CT_SourceType::default_instance_ = NULL;
 CT_Sources* CT_Sources::default_instance_ = NULL;
 
     // Sources_element
+    Sources_element::Sources_element()
+    :m_has_SelectedStyle_attr(false),
+    m_SelectedStyle_attr(NULL),
+    m_has_StyleName_attr(false),
+    m_StyleName_attr(NULL),
+    m_has_URI_attr(false),
+    m_URI_attr(NULL)
+    {
+    }
     CT_SourceType* Sources_element::add_Source()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -29329,30 +29536,30 @@ CT_Sources* CT_Sources::default_instance_ = NULL;
 
     void Sources_element::clear()
     {    
-    m_has_s_SelectedStyle_attr = false;
+    m_has_SelectedStyle_attr = false;
     
-    if (m_s_SelectedStyle_attr)
+    if (m_SelectedStyle_attr)
     {
-        delete m_s_SelectedStyle_attr;
-        m_s_SelectedStyle_attr = NULL;
+        delete m_SelectedStyle_attr;
+        m_SelectedStyle_attr = NULL;
     }
     
     
-    m_has_s_StyleName_attr = false;
+    m_has_StyleName_attr = false;
     
-    if (m_s_StyleName_attr)
+    if (m_StyleName_attr)
     {
-        delete m_s_StyleName_attr;
-        m_s_StyleName_attr = NULL;
+        delete m_StyleName_attr;
+        m_StyleName_attr = NULL;
     }
     
     
-    m_has_s_URI_attr = false;
+    m_has_URI_attr = false;
     
-    if (m_s_URI_attr)
+    if (m_URI_attr)
     {
-        delete m_s_URI_attr;
-        m_s_URI_attr = NULL;
+        delete m_URI_attr;
+        m_URI_attr = NULL;
     }
     
     
@@ -29368,26 +29575,26 @@ CT_Sources* CT_Sources::default_instance_ = NULL;
 
     void Sources_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<Sources";
+    _outStream << "<bibliography:Sources";
     
     _outStream << " " << "xmlns:bibliography=\"http://schemas.openxmlformats.org/officeDocument/2006/bibliography\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     
-    if (m_has_s_SelectedStyle_attr)
+    if (m_has_SelectedStyle_attr)
     {
-        m_s_SelectedStyle_attr->toXmlAttr("SelectedStyle", _outStream);
+        m_SelectedStyle_attr->toXmlAttr("SelectedStyle", _outStream);
     }
     
     
-    if (m_has_s_StyleName_attr)
+    if (m_has_StyleName_attr)
     {
-        m_s_StyleName_attr->toXmlAttr("StyleName", _outStream);
+        m_StyleName_attr->toXmlAttr("StyleName", _outStream);
     }
     
     
-    if (m_has_s_URI_attr)
+    if (m_has_URI_attr)
     {
-        m_s_URI_attr->toXmlAttr("URI", _outStream);
+        m_URI_attr->toXmlAttr("URI", _outStream);
     }
     
     _outStream << ">";
@@ -29398,12 +29605,12 @@ CT_Sources* CT_Sources::default_instance_ = NULL;
         {
             if ((*iter)->has_Source())
             {
-                (*iter)->get_Source().toXmlElem("Source", "", _outStream);
+                (*iter)->get_Source().toXmlElem("bibliography:Source", "", _outStream);
             }
         }
     }
     
-    _outStream << "</Sources>";
+    _outStream << "</bibliography:Sources>";
     }
 
     const Sources_element& Sources_element::default_instance()
@@ -29415,68 +29622,73 @@ CT_Sources* CT_Sources::default_instance_ = NULL;
     return *Sources_element::default_instance_;
     }
 
-    bool Sources_element::has_s_SelectedStyle_attr() const
+    bool Sources_element::has_SelectedStyle_attr() const
     {    
-    return m_has_s_SelectedStyle_attr;
+    return m_has_SelectedStyle_attr;
     }
 
-    void Sources_element::set_s_SelectedStyle_attr(const ns_s::ST_String& _s_SelectedStyle_attr)
+    void Sources_element::set_SelectedStyle_attr(const ns_s::ST_String& _SelectedStyle_attr)
     {    
-    m_has_s_SelectedStyle_attr = true;
-    m_s_SelectedStyle_attr = new ns_s::ST_String(_s_SelectedStyle_attr);
+    m_has_SelectedStyle_attr = true;
+    m_SelectedStyle_attr = new ns_s::ST_String(_SelectedStyle_attr);
     }
 
-    const ns_s::ST_String& Sources_element::get_s_SelectedStyle_attr() const
+    const ns_s::ST_String& Sources_element::get_SelectedStyle_attr() const
     {    
-    if (m_s_SelectedStyle_attr)
+    if (m_SelectedStyle_attr)
     {
-        return *m_s_SelectedStyle_attr;
+        return *m_SelectedStyle_attr;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool Sources_element::has_s_StyleName_attr() const
+    bool Sources_element::has_StyleName_attr() const
     {    
-    return m_has_s_StyleName_attr;
+    return m_has_StyleName_attr;
     }
 
-    void Sources_element::set_s_StyleName_attr(const ns_s::ST_String& _s_StyleName_attr)
+    void Sources_element::set_StyleName_attr(const ns_s::ST_String& _StyleName_attr)
     {    
-    m_has_s_StyleName_attr = true;
-    m_s_StyleName_attr = new ns_s::ST_String(_s_StyleName_attr);
+    m_has_StyleName_attr = true;
+    m_StyleName_attr = new ns_s::ST_String(_StyleName_attr);
     }
 
-    const ns_s::ST_String& Sources_element::get_s_StyleName_attr() const
+    const ns_s::ST_String& Sources_element::get_StyleName_attr() const
     {    
-    if (m_s_StyleName_attr)
+    if (m_StyleName_attr)
     {
-        return *m_s_StyleName_attr;
+        return *m_StyleName_attr;
     }
     return ns_s::ST_String::default_instance();
     }
 
-    bool Sources_element::has_s_URI_attr() const
+    bool Sources_element::has_URI_attr() const
     {    
-    return m_has_s_URI_attr;
+    return m_has_URI_attr;
     }
 
-    void Sources_element::set_s_URI_attr(const ns_s::ST_String& _s_URI_attr)
+    void Sources_element::set_URI_attr(const ns_s::ST_String& _URI_attr)
     {    
-    m_has_s_URI_attr = true;
-    m_s_URI_attr = new ns_s::ST_String(_s_URI_attr);
+    m_has_URI_attr = true;
+    m_URI_attr = new ns_s::ST_String(_URI_attr);
     }
 
-    const ns_s::ST_String& Sources_element::get_s_URI_attr() const
+    const ns_s::ST_String& Sources_element::get_URI_attr() const
     {    
-    if (m_s_URI_attr)
+    if (m_URI_attr)
     {
-        return *m_s_URI_attr;
+        return *m_URI_attr;
     }
     return ns_s::ST_String::default_instance();
     }
 
 
     // Sources_element::ChildGroup_1
+    Sources_element::ChildGroup_1::ChildGroup_1()
+    :m_has_Source(false),
+    m_Source(NULL)
+    {
+    }
     bool Sources_element::ChildGroup_1::has_Source() const
     {    
     return m_has_Source;

@@ -1,19 +1,59 @@
 #include <iostream>
 #include <sstream>
+#include <fstream>
 #include "wml_xsd.h"
-
-using namespace ns_w;
+#include "vml-main_xsd.h"
+#include "pml_xsd.h"
 
 int main()
 {
 	using namespace std;
 	cout << "xsd2cpp main execution!" << endl;
     
-    document_element docElement;
-    docElement.mutable_body();
+    // word
+    {
+        using namespace ns_w;
+        document_element docElement;
+        CT_Body* pBodyElem = docElement.mutable_body();
+        ns_s::ST_OnOff valAttr;
+        valAttr.set_boolean(true);
+        pBodyElem->add_p()->add_r()->mutable_rPr()->add_dstrike()->set_val_attr(valAttr);
+        pBodyElem->add_p()->add_r()->mutable_rPr()->add_b();
+        CT_P *pPElem = pBodyElem->add_p();
+        pPElem->add_bookmarkStart()->set_id_attr(0);
+        pPElem->add_bookmarkStart()->set_colFirst_attr(100);
+        pPElem->clear();
+        
+        pBodyElem->add_p();
+        pBodyElem->add_p();
+        
+        ns_v::rect_element* pVRectElement = new ns_v::rect_element();
+        pVRectElement->add_fill();
+        docElement.mutable_background()->append_v_any(pVRectElement);
+        
+        fstream fileStream("word.xml", fstream::out);
+        docElement.toXml(fileStream);
+        fileStream.close();
+    }
     
-    stringstream strStream;
-    docElement.toXml(strStream);
-    cout << strStream.str() << endl;
+    
+    // slide
+    {
+        using namespace ns_p;
+        
+        sld_element sldElement;
+        
+        cout << sldElement.get_cSld().has_bg() << endl;
+        sldElement.mutable_cSld()->mutable_spTree()->mutable_nvGrpSpPr()->mutable_cNvPr();
+        sldElement.mutable_cSld()->mutable_spTree()->mutable_grpSpPr()->mutable_xfrm();
+        cout << sldElement.get_cSld().has_spTree() << endl;
+        
+        fstream fileStream("slide.xml", fstream::out);
+        sldElement.toXml(fileStream);
+        fileStream.close();
+    }
+    
+    
+    
 	return 0;
 }

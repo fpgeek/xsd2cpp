@@ -174,7 +174,7 @@ ST_ArrayBaseType* ST_ArrayBaseType::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_Cy::has_string() const
     {    
@@ -234,7 +234,7 @@ ST_Cy* ST_Cy::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_Error::has_string() const
     {    
@@ -285,6 +285,10 @@ ST_Cy* ST_Cy::default_instance_ = NULL;
 ST_Error* ST_Error::default_instance_ = NULL;
 
     // CT_Empty
+    CT_Empty::CT_Empty()
+
+    {
+    }
     void CT_Empty::clear()
     {    }
 
@@ -314,6 +318,10 @@ ST_Error* ST_Error::default_instance_ = NULL;
 CT_Empty* CT_Empty::default_instance_ = NULL;
 
     // CT_Null
+    CT_Null::CT_Null()
+
+    {
+    }
     void CT_Null::clear()
     {    }
 
@@ -343,6 +351,13 @@ CT_Empty* CT_Empty::default_instance_ = NULL;
 CT_Null* CT_Null::default_instance_ = NULL;
 
     // CT_Vector
+    CT_Vector::CT_Vector()
+    :m_has_baseType_attr(false),
+    m_baseType_attr(NULL),
+    m_has_size_attr(false),
+    m_size_attr(0)
+    {
+    }
     CT_Variant* CT_Vector::add_variant()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -479,10 +494,10 @@ CT_Null* CT_Null::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_s::ST_Guid* CT_Vector::add_s_clsid()
+    ns_s::ST_Guid* CT_Vector::add_clsid()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_Guid* pNewChild = pChildGroup->mutable_s_clsid();
+    ns_s::ST_Guid* pNewChild = pChildGroup->mutable_clsid();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -539,7 +554,7 @@ CT_Null* CT_Null::default_instance_ = NULL;
         {
             if ((*iter)->has_variant())
             {
-                (*iter)->get_variant().toXmlElem("variant", "", _outStream);
+                (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
             }
             else if ((*iter)->has_i1())
             {
@@ -607,15 +622,15 @@ CT_Null* CT_Null::default_instance_ = NULL;
             }
             else if ((*iter)->has_cy())
             {
-                _outStream << "<cy>" << (*iter)->get_cy().toString() << "</cy>";
+                _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
             }
             else if ((*iter)->has_error())
             {
-                _outStream << "<error>" << (*iter)->get_error().toString() << "</error>";
+                _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
             }
-            else if ((*iter)->has_s_clsid())
+            else if ((*iter)->has_clsid())
             {
-                _outStream << "<s:clsid>" << (*iter)->get_s_clsid().toString() << "</s:clsid>";
+                _outStream << "<vt:clsid>" << (*iter)->get_clsid().toString() << "</vt:clsid>";
             }
         }
     }
@@ -670,6 +685,49 @@ CT_Null* CT_Null::default_instance_ = NULL;
 
 
     // CT_Vector::ChildGroup_1
+    CT_Vector::ChildGroup_1::ChildGroup_1()
+    :m_has_variant(false),
+    m_variant(NULL),
+    m_has_i1(false),
+    m_i1(0),
+    m_has_i2(false),
+    m_i2(0),
+    m_has_i4(false),
+    m_i4(0),
+    m_has_i8(false),
+    m_i8(0),
+    m_has_ui1(false),
+    m_ui1(0),
+    m_has_ui2(false),
+    m_ui2(0),
+    m_has_ui4(false),
+    m_ui4(0),
+    m_has_ui8(false),
+    m_ui8(0),
+    m_has_r4(false),
+    m_r4(0),
+    m_has_r8(false),
+    m_r8(0),
+    m_has_lpstr(false),
+    m_lpstr(""),
+    m_has_lpwstr(false),
+    m_lpwstr(""),
+    m_has_bstr(false),
+    m_bstr(""),
+    m_has_date(false),
+    m_date(""),
+    m_has_filetime(false),
+    m_filetime(""),
+    m_has_bool(false),
+    m_bool(false),
+    m_has_cy(false),
+    m_cy(NULL),
+    m_has_error(false),
+    m_error(NULL),
+    m_has_clsid(false),
+    m_clsid(NULL)
+    {
+    }
     bool CT_Vector::ChildGroup_1::has_variant() const
     {    
     return m_has_variant;
@@ -744,12 +802,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -850,12 +908,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -948,12 +1006,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -1046,12 +1104,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -1144,12 +1202,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -1242,12 +1300,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -1340,12 +1398,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -1438,12 +1496,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -1536,12 +1594,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -1634,12 +1692,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -1732,12 +1790,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -1830,12 +1888,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -1928,12 +1986,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -2026,12 +2084,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -2124,12 +2182,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -2222,12 +2280,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -2320,12 +2378,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -2412,12 +2470,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -2512,12 +2570,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -2538,12 +2596,12 @@ CT_Null* CT_Null::default_instance_ = NULL;
     return ST_Error::default_instance();
     }
 
-    bool CT_Vector::ChildGroup_1::has_s_clsid() const
+    bool CT_Vector::ChildGroup_1::has_clsid() const
     {    
-    return m_has_s_clsid;
+    return m_has_clsid;
     }
 
-    ns_s::ST_Guid* CT_Vector::ChildGroup_1::mutable_s_clsid()
+    ns_s::ST_Guid* CT_Vector::ChildGroup_1::mutable_clsid()
     {    
     
     m_has_variant = false;
@@ -2621,19 +2679,19 @@ CT_Null* CT_Null::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = true;
-    if (!m_s_clsid)
+    m_has_clsid = true;
+    if (!m_clsid)
     {
-        m_s_clsid = new ns_s::ST_Guid();
+        m_clsid = new ns_s::ST_Guid();
     }
-    return m_s_clsid;
+    return m_clsid;
     }
 
-    const ns_s::ST_Guid& CT_Vector::ChildGroup_1::get_s_clsid() const
+    const ns_s::ST_Guid& CT_Vector::ChildGroup_1::get_clsid() const
     {    
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        return *m_s_clsid;
+        return *m_clsid;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -2641,6 +2699,15 @@ CT_Null* CT_Null::default_instance_ = NULL;
 CT_Vector* CT_Vector::default_instance_ = NULL;
 
     // CT_Array
+    CT_Array::CT_Array()
+    :m_has_lBounds_attr(false),
+    m_lBounds_attr(0),
+    m_has_uBounds_attr(false),
+    m_uBounds_attr(0),
+    m_has_baseType_attr(false),
+    m_baseType_attr(NULL)
+    {
+    }
     CT_Variant* CT_Array::add_variant()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -2824,7 +2891,7 @@ CT_Vector* CT_Vector::default_instance_ = NULL;
         {
             if ((*iter)->has_variant())
             {
-                (*iter)->get_variant().toXmlElem("variant", "", _outStream);
+                (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
             }
             else if ((*iter)->has_i1())
             {
@@ -2884,11 +2951,11 @@ CT_Vector* CT_Vector::default_instance_ = NULL;
             }
             else if ((*iter)->has_error())
             {
-                _outStream << "<error>" << (*iter)->get_error().toString() << "</error>";
+                _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
             }
             else if ((*iter)->has_cy())
             {
-                _outStream << "<cy>" << (*iter)->get_cy().toString() << "</cy>";
+                _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
             }
         }
     }
@@ -2959,6 +3026,43 @@ CT_Vector* CT_Vector::default_instance_ = NULL;
 
 
     // CT_Array::ChildGroup_1
+    CT_Array::ChildGroup_1::ChildGroup_1()
+    :m_has_variant(false),
+    m_variant(NULL),
+    m_has_i1(false),
+    m_i1(0),
+    m_has_i2(false),
+    m_i2(0),
+    m_has_i4(false),
+    m_i4(0),
+    m_has_int(false),
+    m_int(0),
+    m_has_ui1(false),
+    m_ui1(0),
+    m_has_ui2(false),
+    m_ui2(0),
+    m_has_ui4(false),
+    m_ui4(0),
+    m_has_uint(false),
+    m_uint(0),
+    m_has_r4(false),
+    m_r4(0),
+    m_has_r8(false),
+    m_r8(0),
+    m_has_decimal(false),
+    m_decimal(0),
+    m_has_bstr(false),
+    m_bstr(""),
+    m_has_date(false),
+    m_date(""),
+    m_has_bool(false),
+    m_bool(false),
+    m_has_error(false),
+    m_error(NULL),
+    m_has_cy(false),
+    m_cy(NULL)
+    {
+    }
     bool CT_Array::ChildGroup_1::has_variant() const
     {    
     return m_has_variant;
@@ -4379,6 +4483,77 @@ CT_Vector* CT_Vector::default_instance_ = NULL;
 CT_Array* CT_Array::default_instance_ = NULL;
 
     // CT_Variant
+    CT_Variant::CT_Variant()
+    :m_has_variant(false),
+    m_variant(NULL),
+    m_has_vector(false),
+    m_vector(NULL),
+    m_has_array(false),
+    m_array(NULL),
+    m_has_blob(false),
+    m_blob(""),
+    m_has_oblob(false),
+    m_oblob(""),
+    m_has_empty(false),
+    m_empty(NULL),
+    m_has_null(false),
+    m_null(NULL),
+    m_has_i1(false),
+    m_i1(0),
+    m_has_i2(false),
+    m_i2(0),
+    m_has_i4(false),
+    m_i4(0),
+    m_has_i8(false),
+    m_i8(0),
+    m_has_int(false),
+    m_int(0),
+    m_has_ui1(false),
+    m_ui1(0),
+    m_has_ui2(false),
+    m_ui2(0),
+    m_has_ui4(false),
+    m_ui4(0),
+    m_has_ui8(false),
+    m_ui8(0),
+    m_has_uint(false),
+    m_uint(0),
+    m_has_r4(false),
+    m_r4(0),
+    m_has_r8(false),
+    m_r8(0),
+    m_has_decimal(false),
+    m_decimal(0),
+    m_has_lpstr(false),
+    m_lpstr(""),
+    m_has_lpwstr(false),
+    m_lpwstr(""),
+    m_has_bstr(false),
+    m_bstr(""),
+    m_has_date(false),
+    m_date(""),
+    m_has_filetime(false),
+    m_filetime(""),
+    m_has_bool(false),
+    m_bool(false),
+    m_has_cy(false),
+    m_cy(NULL),
+    m_has_error(false),
+    m_error(NULL),
+    m_has_stream(false),
+    m_stream(""),
+    m_has_ostream(false),
+    m_ostream(""),
+    m_has_storage(false),
+    m_storage(""),
+    m_has_ostorage(false),
+    m_ostorage(""),
+    m_has_vstream(false),
+    m_vstream(NULL),
+    m_has_clsid(false),
+    m_clsid(NULL)
+    {
+    }
     bool CT_Variant::has_variant() const
     {    
     return m_has_variant;
@@ -4525,12 +4700,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -4697,12 +4872,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -4869,12 +5044,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -5047,12 +5222,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -5217,12 +5392,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -5381,12 +5556,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -5553,12 +5728,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -5731,12 +5906,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -5901,12 +6076,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -6071,12 +6246,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -6241,12 +6416,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -6411,12 +6586,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -6581,12 +6756,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -6751,12 +6926,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -6921,12 +7096,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -7091,12 +7266,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -7261,12 +7436,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -7431,12 +7606,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -7601,12 +7776,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -7771,12 +7946,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -7941,12 +8116,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -8111,12 +8286,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -8281,12 +8456,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -8451,12 +8626,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -8621,12 +8796,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -8791,12 +8966,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -8955,12 +9130,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -9127,12 +9302,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -9305,12 +9480,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -9475,12 +9650,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -9645,12 +9820,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -9815,12 +9990,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -9979,12 +10154,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     m_has_ostorage = false;
     m_ostorage.clear();;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -10005,12 +10180,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     return CT_Vstream::default_instance();
     }
 
-    bool CT_Variant::has_s_clsid() const
+    bool CT_Variant::has_clsid() const
     {    
-    return m_has_s_clsid;
+    return m_has_clsid;
     }
 
-    ns_s::ST_Guid* CT_Variant::mutable_s_clsid()
+    ns_s::ST_Guid* CT_Variant::mutable_clsid()
     {    
     
     m_has_variant = false;
@@ -10160,19 +10335,19 @@ CT_Array* CT_Array::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = true;
-    if (!m_s_clsid)
+    m_has_clsid = true;
+    if (!m_clsid)
     {
-        m_s_clsid = new ns_s::ST_Guid();
+        m_clsid = new ns_s::ST_Guid();
     }
-    return m_s_clsid;
+    return m_clsid;
     }
 
-    const ns_s::ST_Guid& CT_Variant::get_s_clsid() const
+    const ns_s::ST_Guid& CT_Variant::get_clsid() const
     {    
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        return *m_s_clsid;
+        return *m_clsid;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -10193,17 +10368,17 @@ CT_Array* CT_Array::default_instance_ = NULL;
             
     if (m_has_variant)
     {
-        m_variant->toXmlElem("variant", "", _outStream);;
+        m_variant->toXmlElem("vt:variant", "", _outStream);;
     }
     
     if (m_has_vector)
     {
-        m_vector->toXmlElem("vector", "", _outStream);;
+        m_vector->toXmlElem("vt:vector", "", _outStream);;
     }
     
     if (m_has_array)
     {
-        m_array->toXmlElem("array", "", _outStream);;
+        m_array->toXmlElem("vt:array", "", _outStream);;
     }
     
     if (m_has_blob)
@@ -10218,12 +10393,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     
     if (m_has_empty)
     {
-        m_empty->toXmlElem("empty", "", _outStream);;
+        m_empty->toXmlElem("vt:empty", "", _outStream);;
     }
     
     if (m_has_null)
     {
-        m_null->toXmlElem("null", "", _outStream);;
+        m_null->toXmlElem("vt:null", "", _outStream);;
     }
     
     if (m_has_i1)
@@ -10323,12 +10498,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     
     if (m_has_cy)
     {
-        _outStream << "<cy>" << m_cy->toString() << "</cy>";;
+        _outStream << "<vt:cy>" << m_cy->toString() << "</vt:cy>";;
     }
     
     if (m_has_error)
     {
-        _outStream << "<error>" << m_error->toString() << "</error>";;
+        _outStream << "<vt:error>" << m_error->toString() << "</vt:error>";;
     }
     
     if (m_has_stream)
@@ -10353,12 +10528,12 @@ CT_Array* CT_Array::default_instance_ = NULL;
     
     if (m_has_vstream)
     {
-        m_vstream->toXmlElem("vstream", "", _outStream);;
+        m_vstream->toXmlElem("vt:vstream", "", _outStream);;
     }
     
-    if (m_has_s_clsid)
+    if (m_has_clsid)
     {
-        _outStream << "<s:clsid>" << m_s_clsid->toString() << "</s:clsid>";;
+        _outStream << "<vt:clsid>" << m_clsid->toString() << "</vt:clsid>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10376,14 +10551,19 @@ CT_Array* CT_Array::default_instance_ = NULL;
 CT_Variant* CT_Variant::default_instance_ = NULL;
 
     // CT_Vstream
+    CT_Vstream::CT_Vstream()
+    :m_has_version_attr(false),
+    m_version_attr(NULL)
+    {
+    }
     void CT_Vstream::clear()
     {    
-    m_has_s_version_attr = false;
+    m_has_version_attr = false;
     
-    if (m_s_version_attr)
+    if (m_version_attr)
     {
-        delete m_s_version_attr;
-        m_s_version_attr = NULL;
+        delete m_version_attr;
+        m_version_attr = NULL;
     }
     
     }
@@ -10397,9 +10577,9 @@ CT_Variant* CT_Variant::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_version_attr)
+    if (m_has_version_attr)
     {
-        m_s_version_attr->toXmlAttr("version", _outStream);
+        m_version_attr->toXmlAttr("version", _outStream);
     }
     
             _outStream << ">";
@@ -10416,22 +10596,22 @@ CT_Variant* CT_Variant::default_instance_ = NULL;
     return *CT_Vstream::default_instance_;
     }
 
-    bool CT_Vstream::has_s_version_attr() const
+    bool CT_Vstream::has_version_attr() const
     {    
-    return m_has_s_version_attr;
+    return m_has_version_attr;
     }
 
-    void CT_Vstream::set_s_version_attr(const ns_s::ST_Guid& _s_version_attr)
+    void CT_Vstream::set_version_attr(const ns_s::ST_Guid& _version_attr)
     {    
-    m_has_s_version_attr = true;
-    m_s_version_attr = new ns_s::ST_Guid(_s_version_attr);
+    m_has_version_attr = true;
+    m_version_attr = new ns_s::ST_Guid(_version_attr);
     }
 
-    const ns_s::ST_Guid& CT_Vstream::get_s_version_attr() const
+    const ns_s::ST_Guid& CT_Vstream::get_version_attr() const
     {    
-    if (m_s_version_attr)
+    if (m_version_attr)
     {
-        return *m_s_version_attr;
+        return *m_version_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -10439,6 +10619,77 @@ CT_Variant* CT_Variant::default_instance_ = NULL;
 CT_Vstream* CT_Vstream::default_instance_ = NULL;
 
     // variant_element
+    variant_element::variant_element()
+    :m_has_variant(false),
+    m_variant(NULL),
+    m_has_vector(false),
+    m_vector(NULL),
+    m_has_array(false),
+    m_array(NULL),
+    m_has_blob(false),
+    m_blob(""),
+    m_has_oblob(false),
+    m_oblob(""),
+    m_has_empty(false),
+    m_empty(NULL),
+    m_has_null(false),
+    m_null(NULL),
+    m_has_i1(false),
+    m_i1(0),
+    m_has_i2(false),
+    m_i2(0),
+    m_has_i4(false),
+    m_i4(0),
+    m_has_i8(false),
+    m_i8(0),
+    m_has_int(false),
+    m_int(0),
+    m_has_ui1(false),
+    m_ui1(0),
+    m_has_ui2(false),
+    m_ui2(0),
+    m_has_ui4(false),
+    m_ui4(0),
+    m_has_ui8(false),
+    m_ui8(0),
+    m_has_uint(false),
+    m_uint(0),
+    m_has_r4(false),
+    m_r4(0),
+    m_has_r8(false),
+    m_r8(0),
+    m_has_decimal(false),
+    m_decimal(0),
+    m_has_lpstr(false),
+    m_lpstr(""),
+    m_has_lpwstr(false),
+    m_lpwstr(""),
+    m_has_bstr(false),
+    m_bstr(""),
+    m_has_date(false),
+    m_date(""),
+    m_has_filetime(false),
+    m_filetime(""),
+    m_has_bool(false),
+    m_bool(false),
+    m_has_cy(false),
+    m_cy(NULL),
+    m_has_error(false),
+    m_error(NULL),
+    m_has_stream(false),
+    m_stream(""),
+    m_has_ostream(false),
+    m_ostream(""),
+    m_has_storage(false),
+    m_storage(""),
+    m_has_ostorage(false),
+    m_ostorage(""),
+    m_has_vstream(false),
+    m_vstream(NULL),
+    m_has_clsid(false),
+    m_clsid(NULL)
+    {
+    }
     bool variant_element::has_variant() const
     {    
     return m_has_variant;
@@ -10585,12 +10836,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -10757,12 +11008,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -10929,12 +11180,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -11107,12 +11358,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -11277,12 +11528,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -11441,12 +11692,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -11613,12 +11864,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -11791,12 +12042,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -11961,12 +12212,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -12131,12 +12382,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -12301,12 +12552,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -12471,12 +12722,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -12641,12 +12892,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -12811,12 +13062,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -12981,12 +13232,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -13151,12 +13402,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -13321,12 +13572,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -13491,12 +13742,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -13661,12 +13912,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -13831,12 +14082,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -14001,12 +14252,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -14171,12 +14422,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -14341,12 +14592,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -14511,12 +14762,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -14681,12 +14932,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -14851,12 +15102,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -15015,12 +15266,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -15187,12 +15438,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -15365,12 +15616,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -15535,12 +15786,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -15705,12 +15956,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -15875,12 +16126,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -16039,12 +16290,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     m_has_ostorage = false;
     m_ostorage.clear();;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -16065,12 +16316,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     return CT_Vstream::default_instance();
     }
 
-    bool variant_element::has_s_clsid() const
+    bool variant_element::has_clsid() const
     {    
-    return m_has_s_clsid;
+    return m_has_clsid;
     }
 
-    ns_s::ST_Guid* variant_element::mutable_s_clsid()
+    ns_s::ST_Guid* variant_element::mutable_clsid()
     {    
     
     m_has_variant = false;
@@ -16220,19 +16471,19 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = true;
-    if (!m_s_clsid)
+    m_has_clsid = true;
+    if (!m_clsid)
     {
-        m_s_clsid = new ns_s::ST_Guid();
+        m_clsid = new ns_s::ST_Guid();
     }
-    return m_s_clsid;
+    return m_clsid;
     }
 
-    const ns_s::ST_Guid& variant_element::get_s_clsid() const
+    const ns_s::ST_Guid& variant_element::get_clsid() const
     {    
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        return *m_s_clsid;
+        return *m_clsid;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -16242,7 +16493,7 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
 
     void variant_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<variant";
+    _outStream << "<vt:variant";
     
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -16251,17 +16502,17 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     
     if (m_has_variant)
     {
-        m_variant->toXmlElem("variant", "", _outStream);;
+        m_variant->toXmlElem("vt:variant", "", _outStream);;
     }
     
     if (m_has_vector)
     {
-        m_vector->toXmlElem("vector", "", _outStream);;
+        m_vector->toXmlElem("vt:vector", "", _outStream);;
     }
     
     if (m_has_array)
     {
-        m_array->toXmlElem("array", "", _outStream);;
+        m_array->toXmlElem("vt:array", "", _outStream);;
     }
     
     if (m_has_blob)
@@ -16276,12 +16527,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     
     if (m_has_empty)
     {
-        m_empty->toXmlElem("empty", "", _outStream);;
+        m_empty->toXmlElem("vt:empty", "", _outStream);;
     }
     
     if (m_has_null)
     {
-        m_null->toXmlElem("null", "", _outStream);;
+        m_null->toXmlElem("vt:null", "", _outStream);;
     }
     
     if (m_has_i1)
@@ -16381,12 +16632,12 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     
     if (m_has_cy)
     {
-        _outStream << "<cy>" << m_cy->toString() << "</cy>";;
+        _outStream << "<vt:cy>" << m_cy->toString() << "</vt:cy>";;
     }
     
     if (m_has_error)
     {
-        _outStream << "<error>" << m_error->toString() << "</error>";;
+        _outStream << "<vt:error>" << m_error->toString() << "</vt:error>";;
     }
     
     if (m_has_stream)
@@ -16411,15 +16662,15 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     
     if (m_has_vstream)
     {
-        m_vstream->toXmlElem("vstream", "", _outStream);;
+        m_vstream->toXmlElem("vt:vstream", "", _outStream);;
     }
     
-    if (m_has_s_clsid)
+    if (m_has_clsid)
     {
-        _outStream << "<s:clsid>" << m_s_clsid->toString() << "</s:clsid>";;
+        _outStream << "<vt:clsid>" << m_clsid->toString() << "</vt:clsid>";;
     }
     
-    _outStream << "</variant>";
+    _outStream << "</vt:variant>";
     }
 
     const variant_element& variant_element::default_instance()
@@ -16434,6 +16685,13 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
 variant_element* variant_element::default_instance_ = NULL;
 
     // vector_element
+    vector_element::vector_element()
+    :m_has_baseType_attr(false),
+    m_baseType_attr(NULL),
+    m_has_size_attr(false),
+    m_size_attr(0)
+    {
+    }
     CT_Variant* vector_element::add_variant()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -16570,10 +16828,10 @@ variant_element* variant_element::default_instance_ = NULL;
     return pNewChild;
     }
 
-    ns_s::ST_Guid* vector_element::add_s_clsid()
+    ns_s::ST_Guid* vector_element::add_clsid()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_Guid* pNewChild = pChildGroup->mutable_s_clsid();
+    ns_s::ST_Guid* pNewChild = pChildGroup->mutable_clsid();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -16604,7 +16862,7 @@ variant_element* variant_element::default_instance_ = NULL;
 
     void vector_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<vector";
+    _outStream << "<vt:vector";
     
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -16628,7 +16886,7 @@ variant_element* variant_element::default_instance_ = NULL;
         {
             if ((*iter)->has_variant())
             {
-                (*iter)->get_variant().toXmlElem("variant", "", _outStream);
+                (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
             }
             else if ((*iter)->has_i1())
             {
@@ -16696,20 +16954,20 @@ variant_element* variant_element::default_instance_ = NULL;
             }
             else if ((*iter)->has_cy())
             {
-                _outStream << "<cy>" << (*iter)->get_cy().toString() << "</cy>";
+                _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
             }
             else if ((*iter)->has_error())
             {
-                _outStream << "<error>" << (*iter)->get_error().toString() << "</error>";
+                _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
             }
-            else if ((*iter)->has_s_clsid())
+            else if ((*iter)->has_clsid())
             {
-                _outStream << "<s:clsid>" << (*iter)->get_s_clsid().toString() << "</s:clsid>";
+                _outStream << "<vt:clsid>" << (*iter)->get_clsid().toString() << "</vt:clsid>";
             }
         }
     }
     
-    _outStream << "</vector>";
+    _outStream << "</vt:vector>";
     }
 
     const vector_element& vector_element::default_instance()
@@ -16759,6 +17017,49 @@ variant_element* variant_element::default_instance_ = NULL;
 
 
     // vector_element::ChildGroup_1
+    vector_element::ChildGroup_1::ChildGroup_1()
+    :m_has_variant(false),
+    m_variant(NULL),
+    m_has_i1(false),
+    m_i1(0),
+    m_has_i2(false),
+    m_i2(0),
+    m_has_i4(false),
+    m_i4(0),
+    m_has_i8(false),
+    m_i8(0),
+    m_has_ui1(false),
+    m_ui1(0),
+    m_has_ui2(false),
+    m_ui2(0),
+    m_has_ui4(false),
+    m_ui4(0),
+    m_has_ui8(false),
+    m_ui8(0),
+    m_has_r4(false),
+    m_r4(0),
+    m_has_r8(false),
+    m_r8(0),
+    m_has_lpstr(false),
+    m_lpstr(""),
+    m_has_lpwstr(false),
+    m_lpwstr(""),
+    m_has_bstr(false),
+    m_bstr(""),
+    m_has_date(false),
+    m_date(""),
+    m_has_filetime(false),
+    m_filetime(""),
+    m_has_bool(false),
+    m_bool(false),
+    m_has_cy(false),
+    m_cy(NULL),
+    m_has_error(false),
+    m_error(NULL),
+    m_has_clsid(false),
+    m_clsid(NULL)
+    {
+    }
     bool vector_element::ChildGroup_1::has_variant() const
     {    
     return m_has_variant;
@@ -16833,12 +17134,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -16939,12 +17240,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -17037,12 +17338,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -17135,12 +17436,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -17233,12 +17534,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -17331,12 +17632,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -17429,12 +17730,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -17527,12 +17828,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -17625,12 +17926,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -17723,12 +18024,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -17821,12 +18122,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -17919,12 +18220,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -18017,12 +18318,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -18115,12 +18416,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -18213,12 +18514,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -18311,12 +18612,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -18409,12 +18710,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -18501,12 +18802,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -18601,12 +18902,12 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = false;
+    m_has_clsid = false;
     
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        delete m_s_clsid;
-        m_s_clsid = NULL;
+        delete m_clsid;
+        m_clsid = NULL;
     }
     ;
     
@@ -18627,12 +18928,12 @@ variant_element* variant_element::default_instance_ = NULL;
     return ST_Error::default_instance();
     }
 
-    bool vector_element::ChildGroup_1::has_s_clsid() const
+    bool vector_element::ChildGroup_1::has_clsid() const
     {    
-    return m_has_s_clsid;
+    return m_has_clsid;
     }
 
-    ns_s::ST_Guid* vector_element::ChildGroup_1::mutable_s_clsid()
+    ns_s::ST_Guid* vector_element::ChildGroup_1::mutable_clsid()
     {    
     
     m_has_variant = false;
@@ -18710,19 +19011,19 @@ variant_element* variant_element::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_clsid = true;
-    if (!m_s_clsid)
+    m_has_clsid = true;
+    if (!m_clsid)
     {
-        m_s_clsid = new ns_s::ST_Guid();
+        m_clsid = new ns_s::ST_Guid();
     }
-    return m_s_clsid;
+    return m_clsid;
     }
 
-    const ns_s::ST_Guid& vector_element::ChildGroup_1::get_s_clsid() const
+    const ns_s::ST_Guid& vector_element::ChildGroup_1::get_clsid() const
     {    
-    if (m_s_clsid)
+    if (m_clsid)
     {
-        return *m_s_clsid;
+        return *m_clsid;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -18730,6 +19031,15 @@ variant_element* variant_element::default_instance_ = NULL;
 vector_element* vector_element::default_instance_ = NULL;
 
     // array_element
+    array_element::array_element()
+    :m_has_lBounds_attr(false),
+    m_lBounds_attr(0),
+    m_has_uBounds_attr(false),
+    m_uBounds_attr(0),
+    m_has_baseType_attr(false),
+    m_baseType_attr(NULL)
+    {
+    }
     CT_Variant* array_element::add_variant()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -18881,7 +19191,7 @@ vector_element* vector_element::default_instance_ = NULL;
 
     void array_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<array";
+    _outStream << "<vt:array";
     
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -18911,7 +19221,7 @@ vector_element* vector_element::default_instance_ = NULL;
         {
             if ((*iter)->has_variant())
             {
-                (*iter)->get_variant().toXmlElem("variant", "", _outStream);
+                (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
             }
             else if ((*iter)->has_i1())
             {
@@ -18971,16 +19281,16 @@ vector_element* vector_element::default_instance_ = NULL;
             }
             else if ((*iter)->has_error())
             {
-                _outStream << "<error>" << (*iter)->get_error().toString() << "</error>";
+                _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
             }
             else if ((*iter)->has_cy())
             {
-                _outStream << "<cy>" << (*iter)->get_cy().toString() << "</cy>";
+                _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
             }
         }
     }
     
-    _outStream << "</array>";
+    _outStream << "</vt:array>";
     }
 
     const array_element& array_element::default_instance()
@@ -19046,6 +19356,43 @@ vector_element* vector_element::default_instance_ = NULL;
 
 
     // array_element::ChildGroup_1
+    array_element::ChildGroup_1::ChildGroup_1()
+    :m_has_variant(false),
+    m_variant(NULL),
+    m_has_i1(false),
+    m_i1(0),
+    m_has_i2(false),
+    m_i2(0),
+    m_has_i4(false),
+    m_i4(0),
+    m_has_int(false),
+    m_int(0),
+    m_has_ui1(false),
+    m_ui1(0),
+    m_has_ui2(false),
+    m_ui2(0),
+    m_has_ui4(false),
+    m_ui4(0),
+    m_has_uint(false),
+    m_uint(0),
+    m_has_r4(false),
+    m_r4(0),
+    m_has_r8(false),
+    m_r8(0),
+    m_has_decimal(false),
+    m_decimal(0),
+    m_has_bstr(false),
+    m_bstr(""),
+    m_has_date(false),
+    m_date(""),
+    m_has_bool(false),
+    m_bool(false),
+    m_has_error(false),
+    m_error(NULL),
+    m_has_cy(false),
+    m_cy(NULL)
+    {
+    }
     bool array_element::ChildGroup_1::has_variant() const
     {    
     return m_has_variant;
@@ -20470,19 +20817,23 @@ array_element* array_element::default_instance_ = NULL;
     // oblob_element
 
     // empty_element
+    empty_element::empty_element()
+
+    {
+    }
     void empty_element::clear()
     {    }
 
     void empty_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<empty";
+    _outStream << "<vt:empty";
     
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     
     _outStream << ">";
     
-    _outStream << "</empty>";
+    _outStream << "</vt:empty>";
     }
 
     const empty_element& empty_element::default_instance()
@@ -20497,19 +20848,23 @@ array_element* array_element::default_instance_ = NULL;
 empty_element* empty_element::default_instance_ = NULL;
 
     // null_element
+    null_element::null_element()
+
+    {
+    }
     void null_element::clear()
     {    }
 
     void null_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<null";
+    _outStream << "<vt:null";
     
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     
     _outStream << ">";
     
-    _outStream << "</null>";
+    _outStream << "</vt:null>";
     }
 
     const null_element& null_element::default_instance()
@@ -20574,33 +20929,38 @@ null_element* null_element::default_instance_ = NULL;
     // ostorage_element
 
     // vstream_element
+    vstream_element::vstream_element()
+    :m_has_version_attr(false),
+    m_version_attr(NULL)
+    {
+    }
     void vstream_element::clear()
     {    
-    m_has_s_version_attr = false;
+    m_has_version_attr = false;
     
-    if (m_s_version_attr)
+    if (m_version_attr)
     {
-        delete m_s_version_attr;
-        m_s_version_attr = NULL;
+        delete m_version_attr;
+        m_version_attr = NULL;
     }
     
     }
 
     void vstream_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<vstream";
+    _outStream << "<vt:vstream";
     
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     
-    if (m_has_s_version_attr)
+    if (m_has_version_attr)
     {
-        m_s_version_attr->toXmlAttr("version", _outStream);
+        m_version_attr->toXmlAttr("version", _outStream);
     }
     
     _outStream << ">";
     
-    _outStream << "</vstream>";
+    _outStream << "</vt:vstream>";
     }
 
     const vstream_element& vstream_element::default_instance()
@@ -20612,22 +20972,22 @@ null_element* null_element::default_instance_ = NULL;
     return *vstream_element::default_instance_;
     }
 
-    bool vstream_element::has_s_version_attr() const
+    bool vstream_element::has_version_attr() const
     {    
-    return m_has_s_version_attr;
+    return m_has_version_attr;
     }
 
-    void vstream_element::set_s_version_attr(const ns_s::ST_Guid& _s_version_attr)
+    void vstream_element::set_version_attr(const ns_s::ST_Guid& _version_attr)
     {    
-    m_has_s_version_attr = true;
-    m_s_version_attr = new ns_s::ST_Guid(_s_version_attr);
+    m_has_version_attr = true;
+    m_version_attr = new ns_s::ST_Guid(_version_attr);
     }
 
-    const ns_s::ST_Guid& vstream_element::get_s_version_attr() const
+    const ns_s::ST_Guid& vstream_element::get_version_attr() const
     {    
-    if (m_s_version_attr)
+    if (m_version_attr)
     {
-        return *m_s_version_attr;
+        return *m_version_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }

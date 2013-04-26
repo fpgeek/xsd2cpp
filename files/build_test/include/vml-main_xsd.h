@@ -418,6 +418,7 @@ namespace ns_v {
     class CT_Shape: public XSD::ComplexType
     {
     public:
+        CT_Shape();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -456,9 +457,9 @@ namespace ns_v {
         bool has_path_attr() const;
         void set_path_attr(const XSD::string_& _path_attr);
         const XSD::string_& get_path_attr() const;
-        bool has_gfxdata_attr() const;
-        void set_gfxdata_attr(const XSD::base64Binary_& _gfxdata_attr);
-        const XSD::base64Binary_& get_gfxdata_attr() const;
+        bool has_o_gfxdata_attr() const;
+        void set_o_gfxdata_attr(const XSD::base64Binary_& _o_gfxdata_attr);
+        const XSD::base64Binary_& get_o_gfxdata_attr() const;
         bool has_equationxml_attr() const;
         void set_equationxml_attr(const XSD::string_& _equationxml_attr);
         const XSD::string_& get_equationxml_attr() const;
@@ -467,6 +468,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -608,8 +610,8 @@ namespace ns_v {
         XSD::string_ m_adj_attr;
         bool m_has_path_attr;
         XSD::string_ m_path_attr;
-        bool m_has_gfxdata_attr;
-        XSD::base64Binary_ m_gfxdata_attr;
+        bool m_has_o_gfxdata_attr;
+        XSD::base64Binary_ m_o_gfxdata_attr;
         bool m_has_equationxml_attr;
         XSD::string_ m_equationxml_attr;
     };
@@ -617,6 +619,7 @@ namespace ns_v {
     class CT_Shapetype: public XSD::ComplexType
     {
     public:
+        CT_Shapetype();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -652,14 +655,15 @@ namespace ns_v {
         bool has_path_attr() const;
         void set_path_attr(const XSD::string_& _path_attr);
         const XSD::string_& get_path_attr() const;
-        bool has_master_attr() const;
-        void set_master_attr(const XSD::string_& _master_attr);
-        const XSD::string_& get_master_attr() const;
+        bool has_o_master_attr() const;
+        void set_o_master_attr(const XSD::string_& _o_master_attr);
+        const XSD::string_& get_o_master_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -786,13 +790,14 @@ namespace ns_v {
         XSD::string_ m_adj_attr;
         bool m_has_path_attr;
         XSD::string_ m_path_attr;
-        bool m_has_master_attr;
-        XSD::string_ m_master_attr;
+        bool m_has_o_master_attr;
+        XSD::string_ m_o_master_attr;
     };
 
     class CT_Group: public XSD::ComplexType
     {
     public:
+        CT_Group();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -831,26 +836,27 @@ namespace ns_v {
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Group& default_instance();
-        bool has_s_filled_attr() const;
-        void set_s_filled_attr(const ns_s::ST_TrueFalse& _s_filled_attr);
-        const ns_s::ST_TrueFalse& get_s_filled_attr() const;
-        bool has_s_fillcolor_attr() const;
-        void set_s_fillcolor_attr(const ns_s::ST_ColorType& _s_fillcolor_attr);
-        const ns_s::ST_ColorType& get_s_fillcolor_attr() const;
+        bool has_filled_attr() const;
+        void set_filled_attr(const ns_s::ST_TrueFalse& _filled_attr);
+        const ns_s::ST_TrueFalse& get_filled_attr() const;
+        bool has_fillcolor_attr() const;
+        void set_fillcolor_attr(const ns_s::ST_ColorType& _fillcolor_attr);
+        const ns_s::ST_ColorType& get_fillcolor_attr() const;
         bool has_editas_attr() const;
         void set_editas_attr(const ST_EditAs& _editas_attr);
         const ST_EditAs& get_editas_attr() const;
-        bool has_tableproperties_attr() const;
-        void set_tableproperties_attr(const XSD::string_& _tableproperties_attr);
-        const XSD::string_& get_tableproperties_attr() const;
-        bool has_tablelimits_attr() const;
-        void set_tablelimits_attr(const XSD::string_& _tablelimits_attr);
-        const XSD::string_& get_tablelimits_attr() const;
+        bool has_o_tableproperties_attr() const;
+        void set_o_tableproperties_attr(const XSD::string_& _o_tableproperties_attr);
+        const XSD::string_& get_o_tableproperties_attr() const;
+        bool has_o_tablelimits_attr() const;
+        void set_o_tablelimits_attr(const XSD::string_& _o_tablelimits_attr);
+        const XSD::string_& get_o_tablelimits_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -1031,21 +1037,22 @@ namespace ns_v {
         };
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_Group* default_instance_;
-        bool m_has_s_filled_attr;
-        ns_s::ST_TrueFalse* m_s_filled_attr;
-        bool m_has_s_fillcolor_attr;
-        ns_s::ST_ColorType* m_s_fillcolor_attr;
+        bool m_has_filled_attr;
+        ns_s::ST_TrueFalse* m_filled_attr;
+        bool m_has_fillcolor_attr;
+        ns_s::ST_ColorType* m_fillcolor_attr;
         bool m_has_editas_attr;
         ST_EditAs* m_editas_attr;
-        bool m_has_tableproperties_attr;
-        XSD::string_ m_tableproperties_attr;
-        bool m_has_tablelimits_attr;
-        XSD::string_ m_tablelimits_attr;
+        bool m_has_o_tableproperties_attr;
+        XSD::string_ m_o_tableproperties_attr;
+        bool m_has_o_tablelimits_attr;
+        XSD::string_ m_o_tablelimits_attr;
     };
 
     class CT_Background: public XSD::ComplexType
     {
     public:
+        CT_Background();
         bool has_fill() const;
         CT_Fill* mutable_fill();
         const CT_Fill& get_fill() const;
@@ -1055,12 +1062,12 @@ namespace ns_v {
         bool has_id_attr() const;
         void set_id_attr(const XSD::string_& _id_attr);
         const XSD::string_& get_id_attr() const;
-        bool has_s_filled_attr() const;
-        void set_s_filled_attr(const ns_s::ST_TrueFalse& _s_filled_attr);
-        const ns_s::ST_TrueFalse& get_s_filled_attr() const;
-        bool has_s_fillcolor_attr() const;
-        void set_s_fillcolor_attr(const ns_s::ST_ColorType& _s_fillcolor_attr);
-        const ns_s::ST_ColorType& get_s_fillcolor_attr() const;
+        bool has_filled_attr() const;
+        void set_filled_attr(const ns_s::ST_TrueFalse& _filled_attr);
+        const ns_s::ST_TrueFalse& get_filled_attr() const;
+        bool has_fillcolor_attr() const;
+        void set_fillcolor_attr(const ns_s::ST_ColorType& _fillcolor_attr);
+        const ns_s::ST_ColorType& get_fillcolor_attr() const;
         bool has_o_bwmode_attr() const;
         void set_o_bwmode_attr(const ns_o::ST_BWMode& _o_bwmode_attr);
         const ns_o::ST_BWMode& get_o_bwmode_attr() const;
@@ -1080,10 +1087,10 @@ namespace ns_v {
         static CT_Background* default_instance_;
         bool m_has_id_attr;
         XSD::string_ m_id_attr;
-        bool m_has_s_filled_attr;
-        ns_s::ST_TrueFalse* m_s_filled_attr;
-        bool m_has_s_fillcolor_attr;
-        ns_s::ST_ColorType* m_s_fillcolor_attr;
+        bool m_has_filled_attr;
+        ns_s::ST_TrueFalse* m_filled_attr;
+        bool m_has_fillcolor_attr;
+        ns_s::ST_ColorType* m_fillcolor_attr;
         bool m_has_o_bwmode_attr;
         ns_o::ST_BWMode* m_o_bwmode_attr;
         bool m_has_o_bwpure_attr;
@@ -1097,6 +1104,7 @@ namespace ns_v {
     class CT_Fill: public XSD::ComplexType
     {
     public:
+        CT_Fill();
         bool has_o_fill() const;
         ns_o::CT_Fill* mutable_o_fill();
         const ns_o::CT_Fill& get_o_fill() const;
@@ -1109,27 +1117,27 @@ namespace ns_v {
         bool has_type_attr() const;
         void set_type_attr(const ST_FillType& _type_attr);
         const ST_FillType& get_type_attr() const;
-        bool has_s_on_attr() const;
-        void set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr);
-        const ns_s::ST_TrueFalse& get_s_on_attr() const;
-        bool has_s_color_attr() const;
-        void set_s_color_attr(const ns_s::ST_ColorType& _s_color_attr);
-        const ns_s::ST_ColorType& get_s_color_attr() const;
+        bool has_on_attr() const;
+        void set_on_attr(const ns_s::ST_TrueFalse& _on_attr);
+        const ns_s::ST_TrueFalse& get_on_attr() const;
+        bool has_color_attr() const;
+        void set_color_attr(const ns_s::ST_ColorType& _color_attr);
+        const ns_s::ST_ColorType& get_color_attr() const;
         bool has_opacity_attr() const;
         void set_opacity_attr(const XSD::string_& _opacity_attr);
         const XSD::string_& get_opacity_attr() const;
-        bool has_s_color2_attr() const;
-        void set_s_color2_attr(const ns_s::ST_ColorType& _s_color2_attr);
-        const ns_s::ST_ColorType& get_s_color2_attr() const;
+        bool has_color2_attr() const;
+        void set_color2_attr(const ns_s::ST_ColorType& _color2_attr);
+        const ns_s::ST_ColorType& get_color2_attr() const;
         bool has_src_attr() const;
         void set_src_attr(const XSD::string_& _src_attr);
         const XSD::string_& get_src_attr() const;
-        bool has_href_attr() const;
-        void set_href_attr(const XSD::string_& _href_attr);
-        const XSD::string_& get_href_attr() const;
-        bool has_althref_attr() const;
-        void set_althref_attr(const XSD::string_& _althref_attr);
-        const XSD::string_& get_althref_attr() const;
+        bool has_o_href_attr() const;
+        void set_o_href_attr(const XSD::string_& _o_href_attr);
+        const XSD::string_& get_o_href_attr() const;
+        bool has_o_althref_attr() const;
+        void set_o_althref_attr(const XSD::string_& _o_althref_attr);
+        const XSD::string_& get_o_althref_attr() const;
         bool has_size_attr() const;
         void set_size_attr(const XSD::string_& _size_attr);
         const XSD::string_& get_size_attr() const;
@@ -1148,9 +1156,9 @@ namespace ns_v {
         bool has_angle_attr() const;
         void set_angle_attr(const XSD::decimal_& _angle_attr);
         const XSD::decimal_& get_angle_attr() const;
-        bool has_s_alignshape_attr() const;
-        void set_s_alignshape_attr(const ns_s::ST_TrueFalse& _s_alignshape_attr);
-        const ns_s::ST_TrueFalse& get_s_alignshape_attr() const;
+        bool has_alignshape_attr() const;
+        void set_alignshape_attr(const ns_s::ST_TrueFalse& _alignshape_attr);
+        const ns_s::ST_TrueFalse& get_alignshape_attr() const;
         bool has_focus_attr() const;
         void set_focus_attr(const XSD::string_& _focus_attr);
         const XSD::string_& get_focus_attr() const;
@@ -1163,27 +1171,27 @@ namespace ns_v {
         bool has_method_attr() const;
         void set_method_attr(const ST_FillMethod& _method_attr);
         const ST_FillMethod& get_method_attr() const;
-        bool has_s_detectmouseclick_attr() const;
-        void set_s_detectmouseclick_attr(const ns_s::ST_TrueFalse& _s_detectmouseclick_attr);
-        const ns_s::ST_TrueFalse& get_s_detectmouseclick_attr() const;
-        bool has_title_attr() const;
-        void set_title_attr(const XSD::string_& _title_attr);
-        const XSD::string_& get_title_attr() const;
-        bool has_opacity2_attr() const;
-        void set_opacity2_attr(const XSD::string_& _opacity2_attr);
-        const XSD::string_& get_opacity2_attr() const;
-        bool has_s_recolor_attr() const;
-        void set_s_recolor_attr(const ns_s::ST_TrueFalse& _s_recolor_attr);
-        const ns_s::ST_TrueFalse& get_s_recolor_attr() const;
-        bool has_s_rotate_attr() const;
-        void set_s_rotate_attr(const ns_s::ST_TrueFalse& _s_rotate_attr);
-        const ns_s::ST_TrueFalse& get_s_rotate_attr() const;
+        bool has_o_detectmouseclick_attr() const;
+        void set_o_detectmouseclick_attr(const ns_s::ST_TrueFalse& _o_detectmouseclick_attr);
+        const ns_s::ST_TrueFalse& get_o_detectmouseclick_attr() const;
+        bool has_o_title_attr() const;
+        void set_o_title_attr(const XSD::string_& _o_title_attr);
+        const XSD::string_& get_o_title_attr() const;
+        bool has_o_opacity2_attr() const;
+        void set_o_opacity2_attr(const XSD::string_& _o_opacity2_attr);
+        const XSD::string_& get_o_opacity2_attr() const;
+        bool has_recolor_attr() const;
+        void set_recolor_attr(const ns_s::ST_TrueFalse& _recolor_attr);
+        const ns_s::ST_TrueFalse& get_recolor_attr() const;
+        bool has_rotate_attr() const;
+        void set_rotate_attr(const ns_s::ST_TrueFalse& _rotate_attr);
+        const ns_s::ST_TrueFalse& get_rotate_attr() const;
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
-        bool has_r_relid_attr() const;
-        void set_r_relid_attr(const ns_r::ST_RelationshipId& _r_relid_attr);
-        const ns_r::ST_RelationshipId& get_r_relid_attr() const;
+        bool has_o_relid_attr() const;
+        void set_o_relid_attr(const ns_r::ST_RelationshipId& _o_relid_attr);
+        const ns_r::ST_RelationshipId& get_o_relid_attr() const;
     protected:
     private:
         bool m_has_o_fill;
@@ -1193,20 +1201,20 @@ namespace ns_v {
         XSD::string_ m_id_attr;
         bool m_has_type_attr;
         ST_FillType* m_type_attr;
-        bool m_has_s_on_attr;
-        ns_s::ST_TrueFalse* m_s_on_attr;
-        bool m_has_s_color_attr;
-        ns_s::ST_ColorType* m_s_color_attr;
+        bool m_has_on_attr;
+        ns_s::ST_TrueFalse* m_on_attr;
+        bool m_has_color_attr;
+        ns_s::ST_ColorType* m_color_attr;
         bool m_has_opacity_attr;
         XSD::string_ m_opacity_attr;
-        bool m_has_s_color2_attr;
-        ns_s::ST_ColorType* m_s_color2_attr;
+        bool m_has_color2_attr;
+        ns_s::ST_ColorType* m_color2_attr;
         bool m_has_src_attr;
         XSD::string_ m_src_attr;
-        bool m_has_href_attr;
-        XSD::string_ m_href_attr;
-        bool m_has_althref_attr;
-        XSD::string_ m_althref_attr;
+        bool m_has_o_href_attr;
+        XSD::string_ m_o_href_attr;
+        bool m_has_o_althref_attr;
+        XSD::string_ m_o_althref_attr;
         bool m_has_size_attr;
         XSD::string_ m_size_attr;
         bool m_has_origin_attr;
@@ -1219,8 +1227,8 @@ namespace ns_v {
         XSD::string_ m_colors_attr;
         bool m_has_angle_attr;
         XSD::decimal_ m_angle_attr;
-        bool m_has_s_alignshape_attr;
-        ns_s::ST_TrueFalse* m_s_alignshape_attr;
+        bool m_has_alignshape_attr;
+        ns_s::ST_TrueFalse* m_alignshape_attr;
         bool m_has_focus_attr;
         XSD::string_ m_focus_attr;
         bool m_has_focussize_attr;
@@ -1229,25 +1237,26 @@ namespace ns_v {
         XSD::string_ m_focusposition_attr;
         bool m_has_method_attr;
         ST_FillMethod* m_method_attr;
-        bool m_has_s_detectmouseclick_attr;
-        ns_s::ST_TrueFalse* m_s_detectmouseclick_attr;
-        bool m_has_title_attr;
-        XSD::string_ m_title_attr;
-        bool m_has_opacity2_attr;
-        XSD::string_ m_opacity2_attr;
-        bool m_has_s_recolor_attr;
-        ns_s::ST_TrueFalse* m_s_recolor_attr;
-        bool m_has_s_rotate_attr;
-        ns_s::ST_TrueFalse* m_s_rotate_attr;
+        bool m_has_o_detectmouseclick_attr;
+        ns_s::ST_TrueFalse* m_o_detectmouseclick_attr;
+        bool m_has_o_title_attr;
+        XSD::string_ m_o_title_attr;
+        bool m_has_o_opacity2_attr;
+        XSD::string_ m_o_opacity2_attr;
+        bool m_has_recolor_attr;
+        ns_s::ST_TrueFalse* m_recolor_attr;
+        bool m_has_rotate_attr;
+        ns_s::ST_TrueFalse* m_rotate_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
-        bool m_has_r_relid_attr;
-        ns_r::ST_RelationshipId* m_r_relid_attr;
+        bool m_has_o_relid_attr;
+        ns_r::ST_RelationshipId* m_o_relid_attr;
     };
 
     class CT_Formulas: public XSD::ComplexType
     {
     public:
+        CT_Formulas();
         CT_F* add_f();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -1257,6 +1266,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_f() const;
             CT_F* mutable_f();
             const CT_F& get_f() const;
@@ -1272,6 +1282,7 @@ namespace ns_v {
     class CT_F: public XSD::ComplexType
     {
     public:
+        CT_F();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_F& default_instance();
@@ -1288,6 +1299,7 @@ namespace ns_v {
     class CT_Handles: public XSD::ComplexType
     {
     public:
+        CT_Handles();
         CT_H* add_h();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -1297,6 +1309,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_h() const;
             CT_H* mutable_h();
             const CT_H& get_h() const;
@@ -1312,6 +1325,7 @@ namespace ns_v {
     class CT_H: public XSD::ComplexType
     {
     public:
+        CT_H();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_H& default_instance();
@@ -1324,15 +1338,15 @@ namespace ns_v {
         bool has_map_attr() const;
         void set_map_attr(const XSD::string_& _map_attr);
         const XSD::string_& get_map_attr() const;
-        bool has_s_invx_attr() const;
-        void set_s_invx_attr(const ns_s::ST_TrueFalse& _s_invx_attr);
-        const ns_s::ST_TrueFalse& get_s_invx_attr() const;
-        bool has_s_invy_attr() const;
-        void set_s_invy_attr(const ns_s::ST_TrueFalse& _s_invy_attr);
-        const ns_s::ST_TrueFalse& get_s_invy_attr() const;
-        bool has_s_switch_attr() const;
-        void set_s_switch_attr(const ns_s::ST_TrueFalseBlank& _s_switch_attr);
-        const ns_s::ST_TrueFalseBlank& get_s_switch_attr() const;
+        bool has_invx_attr() const;
+        void set_invx_attr(const ns_s::ST_TrueFalse& _invx_attr);
+        const ns_s::ST_TrueFalse& get_invx_attr() const;
+        bool has_invy_attr() const;
+        void set_invy_attr(const ns_s::ST_TrueFalse& _invy_attr);
+        const ns_s::ST_TrueFalse& get_invy_attr() const;
+        bool has_switch_attr() const;
+        void set_switch_attr(const ns_s::ST_TrueFalseBlank& _switch_attr);
+        const ns_s::ST_TrueFalseBlank& get_switch_attr() const;
         bool has_xrange_attr() const;
         void set_xrange_attr(const XSD::string_& _xrange_attr);
         const XSD::string_& get_xrange_attr() const;
@@ -1351,12 +1365,12 @@ namespace ns_v {
         XSD::string_ m_polar_attr;
         bool m_has_map_attr;
         XSD::string_ m_map_attr;
-        bool m_has_s_invx_attr;
-        ns_s::ST_TrueFalse* m_s_invx_attr;
-        bool m_has_s_invy_attr;
-        ns_s::ST_TrueFalse* m_s_invy_attr;
-        bool m_has_s_switch_attr;
-        ns_s::ST_TrueFalseBlank* m_s_switch_attr;
+        bool m_has_invx_attr;
+        ns_s::ST_TrueFalse* m_invx_attr;
+        bool m_has_invy_attr;
+        ns_s::ST_TrueFalse* m_invy_attr;
+        bool m_has_switch_attr;
+        ns_s::ST_TrueFalseBlank* m_switch_attr;
         bool m_has_xrange_attr;
         XSD::string_ m_xrange_attr;
         bool m_has_yrange_attr;
@@ -1368,6 +1382,7 @@ namespace ns_v {
     class CT_ImageData: public XSD::ComplexType
     {
     public:
+        CT_ImageData();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ImageData& default_instance();
@@ -1398,42 +1413,42 @@ namespace ns_v {
         bool has_gamma_attr() const;
         void set_gamma_attr(const XSD::string_& _gamma_attr);
         const XSD::string_& get_gamma_attr() const;
-        bool has_s_grayscale_attr() const;
-        void set_s_grayscale_attr(const ns_s::ST_TrueFalse& _s_grayscale_attr);
-        const ns_s::ST_TrueFalse& get_s_grayscale_attr() const;
-        bool has_s_bilevel_attr() const;
-        void set_s_bilevel_attr(const ns_s::ST_TrueFalse& _s_bilevel_attr);
-        const ns_s::ST_TrueFalse& get_s_bilevel_attr() const;
-        bool has_s_chromakey_attr() const;
-        void set_s_chromakey_attr(const ns_s::ST_ColorType& _s_chromakey_attr);
-        const ns_s::ST_ColorType& get_s_chromakey_attr() const;
-        bool has_s_embosscolor_attr() const;
-        void set_s_embosscolor_attr(const ns_s::ST_ColorType& _s_embosscolor_attr);
-        const ns_s::ST_ColorType& get_s_embosscolor_attr() const;
-        bool has_s_recolortarget_attr() const;
-        void set_s_recolortarget_attr(const ns_s::ST_ColorType& _s_recolortarget_attr);
-        const ns_s::ST_ColorType& get_s_recolortarget_attr() const;
-        bool has_href_attr() const;
-        void set_href_attr(const XSD::string_& _href_attr);
-        const XSD::string_& get_href_attr() const;
-        bool has_althref_attr() const;
-        void set_althref_attr(const XSD::string_& _althref_attr);
-        const XSD::string_& get_althref_attr() const;
-        bool has_title_attr() const;
-        void set_title_attr(const XSD::string_& _title_attr);
-        const XSD::string_& get_title_attr() const;
-        bool has_oleid_attr() const;
-        void set_oleid_attr(const XSD::float_& _oleid_attr);
-        const XSD::float_& get_oleid_attr() const;
-        bool has_s_detectmouseclick_attr() const;
-        void set_s_detectmouseclick_attr(const ns_s::ST_TrueFalse& _s_detectmouseclick_attr);
-        const ns_s::ST_TrueFalse& get_s_detectmouseclick_attr() const;
-        bool has_movie_attr() const;
-        void set_movie_attr(const XSD::float_& _movie_attr);
-        const XSD::float_& get_movie_attr() const;
-        bool has_r_relid_attr() const;
-        void set_r_relid_attr(const ns_r::ST_RelationshipId& _r_relid_attr);
-        const ns_r::ST_RelationshipId& get_r_relid_attr() const;
+        bool has_grayscale_attr() const;
+        void set_grayscale_attr(const ns_s::ST_TrueFalse& _grayscale_attr);
+        const ns_s::ST_TrueFalse& get_grayscale_attr() const;
+        bool has_bilevel_attr() const;
+        void set_bilevel_attr(const ns_s::ST_TrueFalse& _bilevel_attr);
+        const ns_s::ST_TrueFalse& get_bilevel_attr() const;
+        bool has_chromakey_attr() const;
+        void set_chromakey_attr(const ns_s::ST_ColorType& _chromakey_attr);
+        const ns_s::ST_ColorType& get_chromakey_attr() const;
+        bool has_embosscolor_attr() const;
+        void set_embosscolor_attr(const ns_s::ST_ColorType& _embosscolor_attr);
+        const ns_s::ST_ColorType& get_embosscolor_attr() const;
+        bool has_recolortarget_attr() const;
+        void set_recolortarget_attr(const ns_s::ST_ColorType& _recolortarget_attr);
+        const ns_s::ST_ColorType& get_recolortarget_attr() const;
+        bool has_o_href_attr() const;
+        void set_o_href_attr(const XSD::string_& _o_href_attr);
+        const XSD::string_& get_o_href_attr() const;
+        bool has_o_althref_attr() const;
+        void set_o_althref_attr(const XSD::string_& _o_althref_attr);
+        const XSD::string_& get_o_althref_attr() const;
+        bool has_o_title_attr() const;
+        void set_o_title_attr(const XSD::string_& _o_title_attr);
+        const XSD::string_& get_o_title_attr() const;
+        bool has_o_oleid_attr() const;
+        void set_o_oleid_attr(const XSD::float_& _o_oleid_attr);
+        const XSD::float_& get_o_oleid_attr() const;
+        bool has_o_detectmouseclick_attr() const;
+        void set_o_detectmouseclick_attr(const ns_s::ST_TrueFalse& _o_detectmouseclick_attr);
+        const ns_s::ST_TrueFalse& get_o_detectmouseclick_attr() const;
+        bool has_o_movie_attr() const;
+        void set_o_movie_attr(const XSD::float_& _o_movie_attr);
+        const XSD::float_& get_o_movie_attr() const;
+        bool has_o_relid_attr() const;
+        void set_o_relid_attr(const ns_r::ST_RelationshipId& _o_relid_attr);
+        const ns_r::ST_RelationshipId& get_o_relid_attr() const;
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
@@ -1464,30 +1479,30 @@ namespace ns_v {
         XSD::string_ m_blacklevel_attr;
         bool m_has_gamma_attr;
         XSD::string_ m_gamma_attr;
-        bool m_has_s_grayscale_attr;
-        ns_s::ST_TrueFalse* m_s_grayscale_attr;
-        bool m_has_s_bilevel_attr;
-        ns_s::ST_TrueFalse* m_s_bilevel_attr;
-        bool m_has_s_chromakey_attr;
-        ns_s::ST_ColorType* m_s_chromakey_attr;
-        bool m_has_s_embosscolor_attr;
-        ns_s::ST_ColorType* m_s_embosscolor_attr;
-        bool m_has_s_recolortarget_attr;
-        ns_s::ST_ColorType* m_s_recolortarget_attr;
-        bool m_has_href_attr;
-        XSD::string_ m_href_attr;
-        bool m_has_althref_attr;
-        XSD::string_ m_althref_attr;
-        bool m_has_title_attr;
-        XSD::string_ m_title_attr;
-        bool m_has_oleid_attr;
-        XSD::float_ m_oleid_attr;
-        bool m_has_s_detectmouseclick_attr;
-        ns_s::ST_TrueFalse* m_s_detectmouseclick_attr;
-        bool m_has_movie_attr;
-        XSD::float_ m_movie_attr;
-        bool m_has_r_relid_attr;
-        ns_r::ST_RelationshipId* m_r_relid_attr;
+        bool m_has_grayscale_attr;
+        ns_s::ST_TrueFalse* m_grayscale_attr;
+        bool m_has_bilevel_attr;
+        ns_s::ST_TrueFalse* m_bilevel_attr;
+        bool m_has_chromakey_attr;
+        ns_s::ST_ColorType* m_chromakey_attr;
+        bool m_has_embosscolor_attr;
+        ns_s::ST_ColorType* m_embosscolor_attr;
+        bool m_has_recolortarget_attr;
+        ns_s::ST_ColorType* m_recolortarget_attr;
+        bool m_has_o_href_attr;
+        XSD::string_ m_o_href_attr;
+        bool m_has_o_althref_attr;
+        XSD::string_ m_o_althref_attr;
+        bool m_has_o_title_attr;
+        XSD::string_ m_o_title_attr;
+        bool m_has_o_oleid_attr;
+        XSD::float_ m_o_oleid_attr;
+        bool m_has_o_detectmouseclick_attr;
+        ns_s::ST_TrueFalse* m_o_detectmouseclick_attr;
+        bool m_has_o_movie_attr;
+        XSD::float_ m_o_movie_attr;
+        bool m_has_o_relid_attr;
+        ns_r::ST_RelationshipId* m_o_relid_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
         bool m_has_r_pict_attr;
@@ -1499,6 +1514,7 @@ namespace ns_v {
     class CT_Path: public XSD::ComplexType
     {
     public:
+        CT_Path();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Path& default_instance();
@@ -1514,39 +1530,39 @@ namespace ns_v {
         bool has_textboxrect_attr() const;
         void set_textboxrect_attr(const XSD::string_& _textboxrect_attr);
         const XSD::string_& get_textboxrect_attr() const;
-        bool has_s_fillok_attr() const;
-        void set_s_fillok_attr(const ns_s::ST_TrueFalse& _s_fillok_attr);
-        const ns_s::ST_TrueFalse& get_s_fillok_attr() const;
-        bool has_s_strokeok_attr() const;
-        void set_s_strokeok_attr(const ns_s::ST_TrueFalse& _s_strokeok_attr);
-        const ns_s::ST_TrueFalse& get_s_strokeok_attr() const;
-        bool has_s_shadowok_attr() const;
-        void set_s_shadowok_attr(const ns_s::ST_TrueFalse& _s_shadowok_attr);
-        const ns_s::ST_TrueFalse& get_s_shadowok_attr() const;
-        bool has_s_arrowok_attr() const;
-        void set_s_arrowok_attr(const ns_s::ST_TrueFalse& _s_arrowok_attr);
-        const ns_s::ST_TrueFalse& get_s_arrowok_attr() const;
-        bool has_s_gradientshapeok_attr() const;
-        void set_s_gradientshapeok_attr(const ns_s::ST_TrueFalse& _s_gradientshapeok_attr);
-        const ns_s::ST_TrueFalse& get_s_gradientshapeok_attr() const;
-        bool has_s_textpathok_attr() const;
-        void set_s_textpathok_attr(const ns_s::ST_TrueFalse& _s_textpathok_attr);
-        const ns_s::ST_TrueFalse& get_s_textpathok_attr() const;
-        bool has_s_insetpenok_attr() const;
-        void set_s_insetpenok_attr(const ns_s::ST_TrueFalse& _s_insetpenok_attr);
-        const ns_s::ST_TrueFalse& get_s_insetpenok_attr() const;
+        bool has_fillok_attr() const;
+        void set_fillok_attr(const ns_s::ST_TrueFalse& _fillok_attr);
+        const ns_s::ST_TrueFalse& get_fillok_attr() const;
+        bool has_strokeok_attr() const;
+        void set_strokeok_attr(const ns_s::ST_TrueFalse& _strokeok_attr);
+        const ns_s::ST_TrueFalse& get_strokeok_attr() const;
+        bool has_shadowok_attr() const;
+        void set_shadowok_attr(const ns_s::ST_TrueFalse& _shadowok_attr);
+        const ns_s::ST_TrueFalse& get_shadowok_attr() const;
+        bool has_arrowok_attr() const;
+        void set_arrowok_attr(const ns_s::ST_TrueFalse& _arrowok_attr);
+        const ns_s::ST_TrueFalse& get_arrowok_attr() const;
+        bool has_gradientshapeok_attr() const;
+        void set_gradientshapeok_attr(const ns_s::ST_TrueFalse& _gradientshapeok_attr);
+        const ns_s::ST_TrueFalse& get_gradientshapeok_attr() const;
+        bool has_textpathok_attr() const;
+        void set_textpathok_attr(const ns_s::ST_TrueFalse& _textpathok_attr);
+        const ns_s::ST_TrueFalse& get_textpathok_attr() const;
+        bool has_insetpenok_attr() const;
+        void set_insetpenok_attr(const ns_s::ST_TrueFalse& _insetpenok_attr);
+        const ns_s::ST_TrueFalse& get_insetpenok_attr() const;
         bool has_o_connecttype_attr() const;
         void set_o_connecttype_attr(const ns_o::ST_ConnectType& _o_connecttype_attr);
         const ns_o::ST_ConnectType& get_o_connecttype_attr() const;
-        bool has_connectlocs_attr() const;
-        void set_connectlocs_attr(const XSD::string_& _connectlocs_attr);
-        const XSD::string_& get_connectlocs_attr() const;
-        bool has_connectangles_attr() const;
-        void set_connectangles_attr(const XSD::string_& _connectangles_attr);
-        const XSD::string_& get_connectangles_attr() const;
-        bool has_s_extrusionok_attr() const;
-        void set_s_extrusionok_attr(const ns_s::ST_TrueFalse& _s_extrusionok_attr);
-        const ns_s::ST_TrueFalse& get_s_extrusionok_attr() const;
+        bool has_o_connectlocs_attr() const;
+        void set_o_connectlocs_attr(const XSD::string_& _o_connectlocs_attr);
+        const XSD::string_& get_o_connectlocs_attr() const;
+        bool has_o_connectangles_attr() const;
+        void set_o_connectangles_attr(const XSD::string_& _o_connectangles_attr);
+        const XSD::string_& get_o_connectangles_attr() const;
+        bool has_o_extrusionok_attr() const;
+        void set_o_extrusionok_attr(const ns_s::ST_TrueFalse& _o_extrusionok_attr);
+        const ns_s::ST_TrueFalse& get_o_extrusionok_attr() const;
     protected:
     private:
         static CT_Path* default_instance_;
@@ -1558,60 +1574,61 @@ namespace ns_v {
         XSD::string_ m_limo_attr;
         bool m_has_textboxrect_attr;
         XSD::string_ m_textboxrect_attr;
-        bool m_has_s_fillok_attr;
-        ns_s::ST_TrueFalse* m_s_fillok_attr;
-        bool m_has_s_strokeok_attr;
-        ns_s::ST_TrueFalse* m_s_strokeok_attr;
-        bool m_has_s_shadowok_attr;
-        ns_s::ST_TrueFalse* m_s_shadowok_attr;
-        bool m_has_s_arrowok_attr;
-        ns_s::ST_TrueFalse* m_s_arrowok_attr;
-        bool m_has_s_gradientshapeok_attr;
-        ns_s::ST_TrueFalse* m_s_gradientshapeok_attr;
-        bool m_has_s_textpathok_attr;
-        ns_s::ST_TrueFalse* m_s_textpathok_attr;
-        bool m_has_s_insetpenok_attr;
-        ns_s::ST_TrueFalse* m_s_insetpenok_attr;
+        bool m_has_fillok_attr;
+        ns_s::ST_TrueFalse* m_fillok_attr;
+        bool m_has_strokeok_attr;
+        ns_s::ST_TrueFalse* m_strokeok_attr;
+        bool m_has_shadowok_attr;
+        ns_s::ST_TrueFalse* m_shadowok_attr;
+        bool m_has_arrowok_attr;
+        ns_s::ST_TrueFalse* m_arrowok_attr;
+        bool m_has_gradientshapeok_attr;
+        ns_s::ST_TrueFalse* m_gradientshapeok_attr;
+        bool m_has_textpathok_attr;
+        ns_s::ST_TrueFalse* m_textpathok_attr;
+        bool m_has_insetpenok_attr;
+        ns_s::ST_TrueFalse* m_insetpenok_attr;
         bool m_has_o_connecttype_attr;
         ns_o::ST_ConnectType* m_o_connecttype_attr;
-        bool m_has_connectlocs_attr;
-        XSD::string_ m_connectlocs_attr;
-        bool m_has_connectangles_attr;
-        XSD::string_ m_connectangles_attr;
-        bool m_has_s_extrusionok_attr;
-        ns_s::ST_TrueFalse* m_s_extrusionok_attr;
+        bool m_has_o_connectlocs_attr;
+        XSD::string_ m_o_connectlocs_attr;
+        bool m_has_o_connectangles_attr;
+        XSD::string_ m_o_connectangles_attr;
+        bool m_has_o_extrusionok_attr;
+        ns_s::ST_TrueFalse* m_o_extrusionok_attr;
     };
 
     class CT_Shadow: public XSD::ComplexType
     {
     public:
+        CT_Shadow();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Shadow& default_instance();
         bool has_id_attr() const;
         void set_id_attr(const XSD::string_& _id_attr);
         const XSD::string_& get_id_attr() const;
-        bool has_s_on_attr() const;
-        void set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr);
-        const ns_s::ST_TrueFalse& get_s_on_attr() const;
+        bool has_on_attr() const;
+        void set_on_attr(const ns_s::ST_TrueFalse& _on_attr);
+        const ns_s::ST_TrueFalse& get_on_attr() const;
         bool has_type_attr() const;
         void set_type_attr(const ST_ShadowType& _type_attr);
         const ST_ShadowType& get_type_attr() const;
-        bool has_s_obscured_attr() const;
-        void set_s_obscured_attr(const ns_s::ST_TrueFalse& _s_obscured_attr);
-        const ns_s::ST_TrueFalse& get_s_obscured_attr() const;
-        bool has_s_color_attr() const;
-        void set_s_color_attr(const ns_s::ST_ColorType& _s_color_attr);
-        const ns_s::ST_ColorType& get_s_color_attr() const;
+        bool has_obscured_attr() const;
+        void set_obscured_attr(const ns_s::ST_TrueFalse& _obscured_attr);
+        const ns_s::ST_TrueFalse& get_obscured_attr() const;
+        bool has_color_attr() const;
+        void set_color_attr(const ns_s::ST_ColorType& _color_attr);
+        const ns_s::ST_ColorType& get_color_attr() const;
         bool has_opacity_attr() const;
         void set_opacity_attr(const XSD::string_& _opacity_attr);
         const XSD::string_& get_opacity_attr() const;
         bool has_offset_attr() const;
         void set_offset_attr(const XSD::string_& _offset_attr);
         const XSD::string_& get_offset_attr() const;
-        bool has_s_color2_attr() const;
-        void set_s_color2_attr(const ns_s::ST_ColorType& _s_color2_attr);
-        const ns_s::ST_ColorType& get_s_color2_attr() const;
+        bool has_color2_attr() const;
+        void set_color2_attr(const ns_s::ST_ColorType& _color2_attr);
+        const ns_s::ST_ColorType& get_color2_attr() const;
         bool has_offset2_attr() const;
         void set_offset2_attr(const XSD::string_& _offset2_attr);
         const XSD::string_& get_offset2_attr() const;
@@ -1626,20 +1643,20 @@ namespace ns_v {
         static CT_Shadow* default_instance_;
         bool m_has_id_attr;
         XSD::string_ m_id_attr;
-        bool m_has_s_on_attr;
-        ns_s::ST_TrueFalse* m_s_on_attr;
+        bool m_has_on_attr;
+        ns_s::ST_TrueFalse* m_on_attr;
         bool m_has_type_attr;
         ST_ShadowType* m_type_attr;
-        bool m_has_s_obscured_attr;
-        ns_s::ST_TrueFalse* m_s_obscured_attr;
-        bool m_has_s_color_attr;
-        ns_s::ST_ColorType* m_s_color_attr;
+        bool m_has_obscured_attr;
+        ns_s::ST_TrueFalse* m_obscured_attr;
+        bool m_has_color_attr;
+        ns_s::ST_ColorType* m_color_attr;
         bool m_has_opacity_attr;
         XSD::string_ m_opacity_attr;
         bool m_has_offset_attr;
         XSD::string_ m_offset_attr;
-        bool m_has_s_color2_attr;
-        ns_s::ST_ColorType* m_s_color2_attr;
+        bool m_has_color2_attr;
+        ns_s::ST_ColorType* m_color2_attr;
         bool m_has_offset2_attr;
         XSD::string_ m_offset2_attr;
         bool m_has_origin_attr;
@@ -1651,6 +1668,7 @@ namespace ns_v {
     class CT_Stroke: public XSD::ComplexType
     {
     public:
+        CT_Stroke();
         bool has_o_left() const;
         ns_o::CT_StrokeChild* mutable_o_left();
         const ns_o::CT_StrokeChild& get_o_left() const;
@@ -1672,15 +1690,15 @@ namespace ns_v {
         bool has_id_attr() const;
         void set_id_attr(const XSD::string_& _id_attr);
         const XSD::string_& get_id_attr() const;
-        bool has_s_on_attr() const;
-        void set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr);
-        const ns_s::ST_TrueFalse& get_s_on_attr() const;
+        bool has_on_attr() const;
+        void set_on_attr(const ns_s::ST_TrueFalse& _on_attr);
+        const ns_s::ST_TrueFalse& get_on_attr() const;
         bool has_weight_attr() const;
         void set_weight_attr(const XSD::string_& _weight_attr);
         const XSD::string_& get_weight_attr() const;
-        bool has_s_color_attr() const;
-        void set_s_color_attr(const ns_s::ST_ColorType& _s_color_attr);
-        const ns_s::ST_ColorType& get_s_color_attr() const;
+        bool has_color_attr() const;
+        void set_color_attr(const ns_s::ST_ColorType& _color_attr);
+        const ns_s::ST_ColorType& get_color_attr() const;
         bool has_opacity_attr() const;
         void set_opacity_attr(const XSD::string_& _opacity_attr);
         const XSD::string_& get_opacity_attr() const;
@@ -1711,12 +1729,12 @@ namespace ns_v {
         bool has_imagesize_attr() const;
         void set_imagesize_attr(const XSD::string_& _imagesize_attr);
         const XSD::string_& get_imagesize_attr() const;
-        bool has_s_imagealignshape_attr() const;
-        void set_s_imagealignshape_attr(const ns_s::ST_TrueFalse& _s_imagealignshape_attr);
-        const ns_s::ST_TrueFalse& get_s_imagealignshape_attr() const;
-        bool has_s_color2_attr() const;
-        void set_s_color2_attr(const ns_s::ST_ColorType& _s_color2_attr);
-        const ns_s::ST_ColorType& get_s_color2_attr() const;
+        bool has_imagealignshape_attr() const;
+        void set_imagealignshape_attr(const ns_s::ST_TrueFalse& _imagealignshape_attr);
+        const ns_s::ST_TrueFalse& get_imagealignshape_attr() const;
+        bool has_color2_attr() const;
+        void set_color2_attr(const ns_s::ST_ColorType& _color2_attr);
+        const ns_s::ST_ColorType& get_color2_attr() const;
         bool has_startarrow_attr() const;
         void set_startarrow_attr(const ST_StrokeArrowType& _startarrow_attr);
         const ST_StrokeArrowType& get_startarrow_attr() const;
@@ -1735,27 +1753,27 @@ namespace ns_v {
         bool has_endarrowlength_attr() const;
         void set_endarrowlength_attr(const ST_StrokeArrowLength& _endarrowlength_attr);
         const ST_StrokeArrowLength& get_endarrowlength_attr() const;
-        bool has_href_attr() const;
-        void set_href_attr(const XSD::string_& _href_attr);
-        const XSD::string_& get_href_attr() const;
-        bool has_althref_attr() const;
-        void set_althref_attr(const XSD::string_& _althref_attr);
-        const XSD::string_& get_althref_attr() const;
-        bool has_title_attr() const;
-        void set_title_attr(const XSD::string_& _title_attr);
-        const XSD::string_& get_title_attr() const;
-        bool has_s_forcedash_attr() const;
-        void set_s_forcedash_attr(const ns_s::ST_TrueFalse& _s_forcedash_attr);
-        const ns_s::ST_TrueFalse& get_s_forcedash_attr() const;
+        bool has_o_href_attr() const;
+        void set_o_href_attr(const XSD::string_& _o_href_attr);
+        const XSD::string_& get_o_href_attr() const;
+        bool has_o_althref_attr() const;
+        void set_o_althref_attr(const XSD::string_& _o_althref_attr);
+        const XSD::string_& get_o_althref_attr() const;
+        bool has_o_title_attr() const;
+        void set_o_title_attr(const XSD::string_& _o_title_attr);
+        const XSD::string_& get_o_title_attr() const;
+        bool has_o_forcedash_attr() const;
+        void set_o_forcedash_attr(const ns_s::ST_TrueFalse& _o_forcedash_attr);
+        const ns_s::ST_TrueFalse& get_o_forcedash_attr() const;
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
-        bool has_s_insetpen_attr() const;
-        void set_s_insetpen_attr(const ns_s::ST_TrueFalse& _s_insetpen_attr);
-        const ns_s::ST_TrueFalse& get_s_insetpen_attr() const;
-        bool has_r_relid_attr() const;
-        void set_r_relid_attr(const ns_r::ST_RelationshipId& _r_relid_attr);
-        const ns_r::ST_RelationshipId& get_r_relid_attr() const;
+        bool has_insetpen_attr() const;
+        void set_insetpen_attr(const ns_s::ST_TrueFalse& _insetpen_attr);
+        const ns_s::ST_TrueFalse& get_insetpen_attr() const;
+        bool has_o_relid_attr() const;
+        void set_o_relid_attr(const ns_r::ST_RelationshipId& _o_relid_attr);
+        const ns_r::ST_RelationshipId& get_o_relid_attr() const;
     protected:
     private:
         bool m_has_o_left;
@@ -1771,12 +1789,12 @@ namespace ns_v {
         static CT_Stroke* default_instance_;
         bool m_has_id_attr;
         XSD::string_ m_id_attr;
-        bool m_has_s_on_attr;
-        ns_s::ST_TrueFalse* m_s_on_attr;
+        bool m_has_on_attr;
+        ns_s::ST_TrueFalse* m_on_attr;
         bool m_has_weight_attr;
         XSD::string_ m_weight_attr;
-        bool m_has_s_color_attr;
-        ns_s::ST_ColorType* m_s_color_attr;
+        bool m_has_color_attr;
+        ns_s::ST_ColorType* m_color_attr;
         bool m_has_opacity_attr;
         XSD::string_ m_opacity_attr;
         bool m_has_linestyle_attr;
@@ -1797,10 +1815,10 @@ namespace ns_v {
         ST_ImageAspect* m_imageaspect_attr;
         bool m_has_imagesize_attr;
         XSD::string_ m_imagesize_attr;
-        bool m_has_s_imagealignshape_attr;
-        ns_s::ST_TrueFalse* m_s_imagealignshape_attr;
-        bool m_has_s_color2_attr;
-        ns_s::ST_ColorType* m_s_color2_attr;
+        bool m_has_imagealignshape_attr;
+        ns_s::ST_TrueFalse* m_imagealignshape_attr;
+        bool m_has_color2_attr;
+        ns_s::ST_ColorType* m_color2_attr;
         bool m_has_startarrow_attr;
         ST_StrokeArrowType* m_startarrow_attr;
         bool m_has_startarrowwidth_attr;
@@ -1813,25 +1831,26 @@ namespace ns_v {
         ST_StrokeArrowWidth* m_endarrowwidth_attr;
         bool m_has_endarrowlength_attr;
         ST_StrokeArrowLength* m_endarrowlength_attr;
-        bool m_has_href_attr;
-        XSD::string_ m_href_attr;
-        bool m_has_althref_attr;
-        XSD::string_ m_althref_attr;
-        bool m_has_title_attr;
-        XSD::string_ m_title_attr;
-        bool m_has_s_forcedash_attr;
-        ns_s::ST_TrueFalse* m_s_forcedash_attr;
+        bool m_has_o_href_attr;
+        XSD::string_ m_o_href_attr;
+        bool m_has_o_althref_attr;
+        XSD::string_ m_o_althref_attr;
+        bool m_has_o_title_attr;
+        XSD::string_ m_o_title_attr;
+        bool m_has_o_forcedash_attr;
+        ns_s::ST_TrueFalse* m_o_forcedash_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
-        bool m_has_s_insetpen_attr;
-        ns_s::ST_TrueFalse* m_s_insetpen_attr;
-        bool m_has_r_relid_attr;
-        ns_r::ST_RelationshipId* m_r_relid_attr;
+        bool m_has_insetpen_attr;
+        ns_s::ST_TrueFalse* m_insetpen_attr;
+        bool m_has_o_relid_attr;
+        ns_r::ST_RelationshipId* m_o_relid_attr;
     };
 
     class CT_Textbox: public XSD::ComplexType
     {
     public:
+        CT_Textbox();
         bool has_w_txbxContent() const;
         ns_w::CT_TxbxContent* mutable_w_txbxContent();
         const ns_w::CT_TxbxContent& get_w_txbxContent() const;
@@ -1847,9 +1866,9 @@ namespace ns_v {
         bool has_inset_attr() const;
         void set_inset_attr(const XSD::string_& _inset_attr);
         const XSD::string_& get_inset_attr() const;
-        bool has_s_singleclick_attr() const;
-        void set_s_singleclick_attr(const ns_s::ST_TrueFalse& _s_singleclick_attr);
-        const ns_s::ST_TrueFalse& get_s_singleclick_attr() const;
+        bool has_o_singleclick_attr() const;
+        void set_o_singleclick_attr(const ns_s::ST_TrueFalse& _o_singleclick_attr);
+        const ns_s::ST_TrueFalse& get_o_singleclick_attr() const;
         bool has_o_insetmode_attr() const;
         void set_o_insetmode_attr(const ns_o::ST_InsetMode& _o_insetmode_attr);
         const ns_o::ST_InsetMode& get_o_insetmode_attr() const;
@@ -1857,8 +1876,8 @@ namespace ns_v {
     private:
         bool m_has_w_txbxContent;
         ns_w::CT_TxbxContent* m_w_txbxContent;
-        bool m_has_any;
-        XSD::Element* m_any;
+        bool m_has__any;
+        XSD::Element* m__any;
         static CT_Textbox* default_instance_;
         bool m_has_id_attr;
         XSD::string_ m_id_attr;
@@ -1866,8 +1885,8 @@ namespace ns_v {
         XSD::string_ m_style_attr;
         bool m_has_inset_attr;
         XSD::string_ m_inset_attr;
-        bool m_has_s_singleclick_attr;
-        ns_s::ST_TrueFalse* m_s_singleclick_attr;
+        bool m_has_o_singleclick_attr;
+        ns_s::ST_TrueFalse* m_o_singleclick_attr;
         bool m_has_o_insetmode_attr;
         ns_o::ST_InsetMode* m_o_insetmode_attr;
     };
@@ -1875,6 +1894,7 @@ namespace ns_v {
     class CT_TextPath: public XSD::ComplexType
     {
     public:
+        CT_TextPath();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextPath& default_instance();
@@ -1884,21 +1904,21 @@ namespace ns_v {
         bool has_style_attr() const;
         void set_style_attr(const XSD::string_& _style_attr);
         const XSD::string_& get_style_attr() const;
-        bool has_s_on_attr() const;
-        void set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr);
-        const ns_s::ST_TrueFalse& get_s_on_attr() const;
-        bool has_s_fitshape_attr() const;
-        void set_s_fitshape_attr(const ns_s::ST_TrueFalse& _s_fitshape_attr);
-        const ns_s::ST_TrueFalse& get_s_fitshape_attr() const;
-        bool has_s_fitpath_attr() const;
-        void set_s_fitpath_attr(const ns_s::ST_TrueFalse& _s_fitpath_attr);
-        const ns_s::ST_TrueFalse& get_s_fitpath_attr() const;
-        bool has_s_trim_attr() const;
-        void set_s_trim_attr(const ns_s::ST_TrueFalse& _s_trim_attr);
-        const ns_s::ST_TrueFalse& get_s_trim_attr() const;
-        bool has_s_xscale_attr() const;
-        void set_s_xscale_attr(const ns_s::ST_TrueFalse& _s_xscale_attr);
-        const ns_s::ST_TrueFalse& get_s_xscale_attr() const;
+        bool has_on_attr() const;
+        void set_on_attr(const ns_s::ST_TrueFalse& _on_attr);
+        const ns_s::ST_TrueFalse& get_on_attr() const;
+        bool has_fitshape_attr() const;
+        void set_fitshape_attr(const ns_s::ST_TrueFalse& _fitshape_attr);
+        const ns_s::ST_TrueFalse& get_fitshape_attr() const;
+        bool has_fitpath_attr() const;
+        void set_fitpath_attr(const ns_s::ST_TrueFalse& _fitpath_attr);
+        const ns_s::ST_TrueFalse& get_fitpath_attr() const;
+        bool has_trim_attr() const;
+        void set_trim_attr(const ns_s::ST_TrueFalse& _trim_attr);
+        const ns_s::ST_TrueFalse& get_trim_attr() const;
+        bool has_xscale_attr() const;
+        void set_xscale_attr(const ns_s::ST_TrueFalse& _xscale_attr);
+        const ns_s::ST_TrueFalse& get_xscale_attr() const;
         bool has_string_attr() const;
         void set_string_attr(const XSD::string_& _string_attr);
         const XSD::string_& get_string_attr() const;
@@ -1909,16 +1929,16 @@ namespace ns_v {
         XSD::string_ m_id_attr;
         bool m_has_style_attr;
         XSD::string_ m_style_attr;
-        bool m_has_s_on_attr;
-        ns_s::ST_TrueFalse* m_s_on_attr;
-        bool m_has_s_fitshape_attr;
-        ns_s::ST_TrueFalse* m_s_fitshape_attr;
-        bool m_has_s_fitpath_attr;
-        ns_s::ST_TrueFalse* m_s_fitpath_attr;
-        bool m_has_s_trim_attr;
-        ns_s::ST_TrueFalse* m_s_trim_attr;
-        bool m_has_s_xscale_attr;
-        ns_s::ST_TrueFalse* m_s_xscale_attr;
+        bool m_has_on_attr;
+        ns_s::ST_TrueFalse* m_on_attr;
+        bool m_has_fitshape_attr;
+        ns_s::ST_TrueFalse* m_fitshape_attr;
+        bool m_has_fitpath_attr;
+        ns_s::ST_TrueFalse* m_fitpath_attr;
+        bool m_has_trim_attr;
+        ns_s::ST_TrueFalse* m_trim_attr;
+        bool m_has_xscale_attr;
+        ns_s::ST_TrueFalse* m_xscale_attr;
         bool m_has_string_attr;
         XSD::string_ m_string_attr;
     };
@@ -1926,6 +1946,7 @@ namespace ns_v {
     class CT_Arc: public XSD::ComplexType
     {
     public:
+        CT_Arc();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -1963,6 +1984,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -2092,6 +2114,7 @@ namespace ns_v {
     class CT_Curve: public XSD::ComplexType
     {
     public:
+        CT_Curve();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -2135,6 +2158,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -2268,6 +2292,7 @@ namespace ns_v {
     class CT_Image: public XSD::ComplexType
     {
     public:
+        CT_Image();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -2318,17 +2343,18 @@ namespace ns_v {
         bool has_gamma_attr() const;
         void set_gamma_attr(const XSD::string_& _gamma_attr);
         const XSD::string_& get_gamma_attr() const;
-        bool has_s_grayscale_attr() const;
-        void set_s_grayscale_attr(const ns_s::ST_TrueFalse& _s_grayscale_attr);
-        const ns_s::ST_TrueFalse& get_s_grayscale_attr() const;
-        bool has_s_bilevel_attr() const;
-        void set_s_bilevel_attr(const ns_s::ST_TrueFalse& _s_bilevel_attr);
-        const ns_s::ST_TrueFalse& get_s_bilevel_attr() const;
+        bool has_grayscale_attr() const;
+        void set_grayscale_attr(const ns_s::ST_TrueFalse& _grayscale_attr);
+        const ns_s::ST_TrueFalse& get_grayscale_attr() const;
+        bool has_bilevel_attr() const;
+        void set_bilevel_attr(const ns_s::ST_TrueFalse& _bilevel_attr);
+        const ns_s::ST_TrueFalse& get_bilevel_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -2465,15 +2491,16 @@ namespace ns_v {
         XSD::string_ m_blacklevel_attr;
         bool m_has_gamma_attr;
         XSD::string_ m_gamma_attr;
-        bool m_has_s_grayscale_attr;
-        ns_s::ST_TrueFalse* m_s_grayscale_attr;
-        bool m_has_s_bilevel_attr;
-        ns_s::ST_TrueFalse* m_s_bilevel_attr;
+        bool m_has_grayscale_attr;
+        ns_s::ST_TrueFalse* m_grayscale_attr;
+        bool m_has_bilevel_attr;
+        ns_s::ST_TrueFalse* m_bilevel_attr;
     };
 
     class CT_Line: public XSD::ComplexType
     {
     public:
+        CT_Line();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -2511,6 +2538,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -2640,6 +2668,7 @@ namespace ns_v {
     class CT_Oval: public XSD::ComplexType
     {
     public:
+        CT_Oval();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -2671,6 +2700,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -2796,6 +2826,7 @@ namespace ns_v {
     class CT_PolyLine: public XSD::ComplexType
     {
     public:
+        CT_PolyLine();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -2831,6 +2862,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -2963,6 +2995,7 @@ namespace ns_v {
     class CT_Rect: public XSD::ComplexType
     {
     public:
+        CT_Rect();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -2994,6 +3027,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -3119,6 +3153,7 @@ namespace ns_v {
     class CT_RoundRect: public XSD::ComplexType
     {
     public:
+        CT_RoundRect();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -3153,6 +3188,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -3280,6 +3316,7 @@ namespace ns_v {
     class shape_element: public Element
     {
     public:
+        shape_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -3318,9 +3355,9 @@ namespace ns_v {
         bool has_path_attr() const;
         void set_path_attr(const XSD::string_& _path_attr);
         const XSD::string_& get_path_attr() const;
-        bool has_gfxdata_attr() const;
-        void set_gfxdata_attr(const XSD::base64Binary_& _gfxdata_attr);
-        const XSD::base64Binary_& get_gfxdata_attr() const;
+        bool has_o_gfxdata_attr() const;
+        void set_o_gfxdata_attr(const XSD::base64Binary_& _o_gfxdata_attr);
+        const XSD::base64Binary_& get_o_gfxdata_attr() const;
         bool has_equationxml_attr() const;
         void set_equationxml_attr(const XSD::string_& _equationxml_attr);
         const XSD::string_& get_equationxml_attr() const;
@@ -3329,6 +3366,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -3470,8 +3508,8 @@ namespace ns_v {
         XSD::string_ m_adj_attr;
         bool m_has_path_attr;
         XSD::string_ m_path_attr;
-        bool m_has_gfxdata_attr;
-        XSD::base64Binary_ m_gfxdata_attr;
+        bool m_has_o_gfxdata_attr;
+        XSD::base64Binary_ m_o_gfxdata_attr;
         bool m_has_equationxml_attr;
         XSD::string_ m_equationxml_attr;
     };
@@ -3479,6 +3517,7 @@ namespace ns_v {
     class shapetype_element: public Element
     {
     public:
+        shapetype_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -3514,14 +3553,15 @@ namespace ns_v {
         bool has_path_attr() const;
         void set_path_attr(const XSD::string_& _path_attr);
         const XSD::string_& get_path_attr() const;
-        bool has_master_attr() const;
-        void set_master_attr(const XSD::string_& _master_attr);
-        const XSD::string_& get_master_attr() const;
+        bool has_o_master_attr() const;
+        void set_o_master_attr(const XSD::string_& _o_master_attr);
+        const XSD::string_& get_o_master_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -3648,13 +3688,14 @@ namespace ns_v {
         XSD::string_ m_adj_attr;
         bool m_has_path_attr;
         XSD::string_ m_path_attr;
-        bool m_has_master_attr;
-        XSD::string_ m_master_attr;
+        bool m_has_o_master_attr;
+        XSD::string_ m_o_master_attr;
     };
 
     class group_element: public Element
     {
     public:
+        group_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -3693,26 +3734,27 @@ namespace ns_v {
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const group_element& default_instance();
-        bool has_s_filled_attr() const;
-        void set_s_filled_attr(const ns_s::ST_TrueFalse& _s_filled_attr);
-        const ns_s::ST_TrueFalse& get_s_filled_attr() const;
-        bool has_s_fillcolor_attr() const;
-        void set_s_fillcolor_attr(const ns_s::ST_ColorType& _s_fillcolor_attr);
-        const ns_s::ST_ColorType& get_s_fillcolor_attr() const;
+        bool has_filled_attr() const;
+        void set_filled_attr(const ns_s::ST_TrueFalse& _filled_attr);
+        const ns_s::ST_TrueFalse& get_filled_attr() const;
+        bool has_fillcolor_attr() const;
+        void set_fillcolor_attr(const ns_s::ST_ColorType& _fillcolor_attr);
+        const ns_s::ST_ColorType& get_fillcolor_attr() const;
         bool has_editas_attr() const;
         void set_editas_attr(const ST_EditAs& _editas_attr);
         const ST_EditAs& get_editas_attr() const;
-        bool has_tableproperties_attr() const;
-        void set_tableproperties_attr(const XSD::string_& _tableproperties_attr);
-        const XSD::string_& get_tableproperties_attr() const;
-        bool has_tablelimits_attr() const;
-        void set_tablelimits_attr(const XSD::string_& _tablelimits_attr);
-        const XSD::string_& get_tablelimits_attr() const;
+        bool has_o_tableproperties_attr() const;
+        void set_o_tableproperties_attr(const XSD::string_& _o_tableproperties_attr);
+        const XSD::string_& get_o_tableproperties_attr() const;
+        bool has_o_tablelimits_attr() const;
+        void set_o_tablelimits_attr(const XSD::string_& _o_tablelimits_attr);
+        const XSD::string_& get_o_tablelimits_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -3893,21 +3935,22 @@ namespace ns_v {
         };
         vector<ChildGroup_1*> m_childGroupList_1;
         static group_element* default_instance_;
-        bool m_has_s_filled_attr;
-        ns_s::ST_TrueFalse* m_s_filled_attr;
-        bool m_has_s_fillcolor_attr;
-        ns_s::ST_ColorType* m_s_fillcolor_attr;
+        bool m_has_filled_attr;
+        ns_s::ST_TrueFalse* m_filled_attr;
+        bool m_has_fillcolor_attr;
+        ns_s::ST_ColorType* m_fillcolor_attr;
         bool m_has_editas_attr;
         ST_EditAs* m_editas_attr;
-        bool m_has_tableproperties_attr;
-        XSD::string_ m_tableproperties_attr;
-        bool m_has_tablelimits_attr;
-        XSD::string_ m_tablelimits_attr;
+        bool m_has_o_tableproperties_attr;
+        XSD::string_ m_o_tableproperties_attr;
+        bool m_has_o_tablelimits_attr;
+        XSD::string_ m_o_tablelimits_attr;
     };
 
     class background_element: public Element
     {
     public:
+        background_element();
         bool has_fill() const;
         CT_Fill* mutable_fill();
         const CT_Fill& get_fill() const;
@@ -3917,12 +3960,12 @@ namespace ns_v {
         bool has_id_attr() const;
         void set_id_attr(const XSD::string_& _id_attr);
         const XSD::string_& get_id_attr() const;
-        bool has_s_filled_attr() const;
-        void set_s_filled_attr(const ns_s::ST_TrueFalse& _s_filled_attr);
-        const ns_s::ST_TrueFalse& get_s_filled_attr() const;
-        bool has_s_fillcolor_attr() const;
-        void set_s_fillcolor_attr(const ns_s::ST_ColorType& _s_fillcolor_attr);
-        const ns_s::ST_ColorType& get_s_fillcolor_attr() const;
+        bool has_filled_attr() const;
+        void set_filled_attr(const ns_s::ST_TrueFalse& _filled_attr);
+        const ns_s::ST_TrueFalse& get_filled_attr() const;
+        bool has_fillcolor_attr() const;
+        void set_fillcolor_attr(const ns_s::ST_ColorType& _fillcolor_attr);
+        const ns_s::ST_ColorType& get_fillcolor_attr() const;
         bool has_o_bwmode_attr() const;
         void set_o_bwmode_attr(const ns_o::ST_BWMode& _o_bwmode_attr);
         const ns_o::ST_BWMode& get_o_bwmode_attr() const;
@@ -3942,10 +3985,10 @@ namespace ns_v {
         static background_element* default_instance_;
         bool m_has_id_attr;
         XSD::string_ m_id_attr;
-        bool m_has_s_filled_attr;
-        ns_s::ST_TrueFalse* m_s_filled_attr;
-        bool m_has_s_fillcolor_attr;
-        ns_s::ST_ColorType* m_s_fillcolor_attr;
+        bool m_has_filled_attr;
+        ns_s::ST_TrueFalse* m_filled_attr;
+        bool m_has_fillcolor_attr;
+        ns_s::ST_ColorType* m_fillcolor_attr;
         bool m_has_o_bwmode_attr;
         ns_o::ST_BWMode* m_o_bwmode_attr;
         bool m_has_o_bwpure_attr;
@@ -3959,6 +4002,7 @@ namespace ns_v {
     class fill_element: public Element
     {
     public:
+        fill_element();
         bool has_o_fill() const;
         ns_o::CT_Fill* mutable_o_fill();
         const ns_o::CT_Fill& get_o_fill() const;
@@ -3971,27 +4015,27 @@ namespace ns_v {
         bool has_type_attr() const;
         void set_type_attr(const ST_FillType& _type_attr);
         const ST_FillType& get_type_attr() const;
-        bool has_s_on_attr() const;
-        void set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr);
-        const ns_s::ST_TrueFalse& get_s_on_attr() const;
-        bool has_s_color_attr() const;
-        void set_s_color_attr(const ns_s::ST_ColorType& _s_color_attr);
-        const ns_s::ST_ColorType& get_s_color_attr() const;
+        bool has_on_attr() const;
+        void set_on_attr(const ns_s::ST_TrueFalse& _on_attr);
+        const ns_s::ST_TrueFalse& get_on_attr() const;
+        bool has_color_attr() const;
+        void set_color_attr(const ns_s::ST_ColorType& _color_attr);
+        const ns_s::ST_ColorType& get_color_attr() const;
         bool has_opacity_attr() const;
         void set_opacity_attr(const XSD::string_& _opacity_attr);
         const XSD::string_& get_opacity_attr() const;
-        bool has_s_color2_attr() const;
-        void set_s_color2_attr(const ns_s::ST_ColorType& _s_color2_attr);
-        const ns_s::ST_ColorType& get_s_color2_attr() const;
+        bool has_color2_attr() const;
+        void set_color2_attr(const ns_s::ST_ColorType& _color2_attr);
+        const ns_s::ST_ColorType& get_color2_attr() const;
         bool has_src_attr() const;
         void set_src_attr(const XSD::string_& _src_attr);
         const XSD::string_& get_src_attr() const;
-        bool has_href_attr() const;
-        void set_href_attr(const XSD::string_& _href_attr);
-        const XSD::string_& get_href_attr() const;
-        bool has_althref_attr() const;
-        void set_althref_attr(const XSD::string_& _althref_attr);
-        const XSD::string_& get_althref_attr() const;
+        bool has_o_href_attr() const;
+        void set_o_href_attr(const XSD::string_& _o_href_attr);
+        const XSD::string_& get_o_href_attr() const;
+        bool has_o_althref_attr() const;
+        void set_o_althref_attr(const XSD::string_& _o_althref_attr);
+        const XSD::string_& get_o_althref_attr() const;
         bool has_size_attr() const;
         void set_size_attr(const XSD::string_& _size_attr);
         const XSD::string_& get_size_attr() const;
@@ -4010,9 +4054,9 @@ namespace ns_v {
         bool has_angle_attr() const;
         void set_angle_attr(const XSD::decimal_& _angle_attr);
         const XSD::decimal_& get_angle_attr() const;
-        bool has_s_alignshape_attr() const;
-        void set_s_alignshape_attr(const ns_s::ST_TrueFalse& _s_alignshape_attr);
-        const ns_s::ST_TrueFalse& get_s_alignshape_attr() const;
+        bool has_alignshape_attr() const;
+        void set_alignshape_attr(const ns_s::ST_TrueFalse& _alignshape_attr);
+        const ns_s::ST_TrueFalse& get_alignshape_attr() const;
         bool has_focus_attr() const;
         void set_focus_attr(const XSD::string_& _focus_attr);
         const XSD::string_& get_focus_attr() const;
@@ -4025,27 +4069,27 @@ namespace ns_v {
         bool has_method_attr() const;
         void set_method_attr(const ST_FillMethod& _method_attr);
         const ST_FillMethod& get_method_attr() const;
-        bool has_s_detectmouseclick_attr() const;
-        void set_s_detectmouseclick_attr(const ns_s::ST_TrueFalse& _s_detectmouseclick_attr);
-        const ns_s::ST_TrueFalse& get_s_detectmouseclick_attr() const;
-        bool has_title_attr() const;
-        void set_title_attr(const XSD::string_& _title_attr);
-        const XSD::string_& get_title_attr() const;
-        bool has_opacity2_attr() const;
-        void set_opacity2_attr(const XSD::string_& _opacity2_attr);
-        const XSD::string_& get_opacity2_attr() const;
-        bool has_s_recolor_attr() const;
-        void set_s_recolor_attr(const ns_s::ST_TrueFalse& _s_recolor_attr);
-        const ns_s::ST_TrueFalse& get_s_recolor_attr() const;
-        bool has_s_rotate_attr() const;
-        void set_s_rotate_attr(const ns_s::ST_TrueFalse& _s_rotate_attr);
-        const ns_s::ST_TrueFalse& get_s_rotate_attr() const;
+        bool has_o_detectmouseclick_attr() const;
+        void set_o_detectmouseclick_attr(const ns_s::ST_TrueFalse& _o_detectmouseclick_attr);
+        const ns_s::ST_TrueFalse& get_o_detectmouseclick_attr() const;
+        bool has_o_title_attr() const;
+        void set_o_title_attr(const XSD::string_& _o_title_attr);
+        const XSD::string_& get_o_title_attr() const;
+        bool has_o_opacity2_attr() const;
+        void set_o_opacity2_attr(const XSD::string_& _o_opacity2_attr);
+        const XSD::string_& get_o_opacity2_attr() const;
+        bool has_recolor_attr() const;
+        void set_recolor_attr(const ns_s::ST_TrueFalse& _recolor_attr);
+        const ns_s::ST_TrueFalse& get_recolor_attr() const;
+        bool has_rotate_attr() const;
+        void set_rotate_attr(const ns_s::ST_TrueFalse& _rotate_attr);
+        const ns_s::ST_TrueFalse& get_rotate_attr() const;
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
-        bool has_r_relid_attr() const;
-        void set_r_relid_attr(const ns_r::ST_RelationshipId& _r_relid_attr);
-        const ns_r::ST_RelationshipId& get_r_relid_attr() const;
+        bool has_o_relid_attr() const;
+        void set_o_relid_attr(const ns_r::ST_RelationshipId& _o_relid_attr);
+        const ns_r::ST_RelationshipId& get_o_relid_attr() const;
     protected:
     private:
         bool m_has_o_fill;
@@ -4055,20 +4099,20 @@ namespace ns_v {
         XSD::string_ m_id_attr;
         bool m_has_type_attr;
         ST_FillType* m_type_attr;
-        bool m_has_s_on_attr;
-        ns_s::ST_TrueFalse* m_s_on_attr;
-        bool m_has_s_color_attr;
-        ns_s::ST_ColorType* m_s_color_attr;
+        bool m_has_on_attr;
+        ns_s::ST_TrueFalse* m_on_attr;
+        bool m_has_color_attr;
+        ns_s::ST_ColorType* m_color_attr;
         bool m_has_opacity_attr;
         XSD::string_ m_opacity_attr;
-        bool m_has_s_color2_attr;
-        ns_s::ST_ColorType* m_s_color2_attr;
+        bool m_has_color2_attr;
+        ns_s::ST_ColorType* m_color2_attr;
         bool m_has_src_attr;
         XSD::string_ m_src_attr;
-        bool m_has_href_attr;
-        XSD::string_ m_href_attr;
-        bool m_has_althref_attr;
-        XSD::string_ m_althref_attr;
+        bool m_has_o_href_attr;
+        XSD::string_ m_o_href_attr;
+        bool m_has_o_althref_attr;
+        XSD::string_ m_o_althref_attr;
         bool m_has_size_attr;
         XSD::string_ m_size_attr;
         bool m_has_origin_attr;
@@ -4081,8 +4125,8 @@ namespace ns_v {
         XSD::string_ m_colors_attr;
         bool m_has_angle_attr;
         XSD::decimal_ m_angle_attr;
-        bool m_has_s_alignshape_attr;
-        ns_s::ST_TrueFalse* m_s_alignshape_attr;
+        bool m_has_alignshape_attr;
+        ns_s::ST_TrueFalse* m_alignshape_attr;
         bool m_has_focus_attr;
         XSD::string_ m_focus_attr;
         bool m_has_focussize_attr;
@@ -4091,25 +4135,26 @@ namespace ns_v {
         XSD::string_ m_focusposition_attr;
         bool m_has_method_attr;
         ST_FillMethod* m_method_attr;
-        bool m_has_s_detectmouseclick_attr;
-        ns_s::ST_TrueFalse* m_s_detectmouseclick_attr;
-        bool m_has_title_attr;
-        XSD::string_ m_title_attr;
-        bool m_has_opacity2_attr;
-        XSD::string_ m_opacity2_attr;
-        bool m_has_s_recolor_attr;
-        ns_s::ST_TrueFalse* m_s_recolor_attr;
-        bool m_has_s_rotate_attr;
-        ns_s::ST_TrueFalse* m_s_rotate_attr;
+        bool m_has_o_detectmouseclick_attr;
+        ns_s::ST_TrueFalse* m_o_detectmouseclick_attr;
+        bool m_has_o_title_attr;
+        XSD::string_ m_o_title_attr;
+        bool m_has_o_opacity2_attr;
+        XSD::string_ m_o_opacity2_attr;
+        bool m_has_recolor_attr;
+        ns_s::ST_TrueFalse* m_recolor_attr;
+        bool m_has_rotate_attr;
+        ns_s::ST_TrueFalse* m_rotate_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
-        bool m_has_r_relid_attr;
-        ns_r::ST_RelationshipId* m_r_relid_attr;
+        bool m_has_o_relid_attr;
+        ns_r::ST_RelationshipId* m_o_relid_attr;
     };
 
     class formulas_element: public Element
     {
     public:
+        formulas_element();
         CT_F* add_f();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -4119,6 +4164,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_f() const;
             CT_F* mutable_f();
             const CT_F& get_f() const;
@@ -4134,6 +4180,7 @@ namespace ns_v {
     class handles_element: public Element
     {
     public:
+        handles_element();
         CT_H* add_h();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -4143,6 +4190,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_h() const;
             CT_H* mutable_h();
             const CT_H& get_h() const;
@@ -4158,6 +4206,7 @@ namespace ns_v {
     class imagedata_element: public Element
     {
     public:
+        imagedata_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const imagedata_element& default_instance();
@@ -4188,42 +4237,42 @@ namespace ns_v {
         bool has_gamma_attr() const;
         void set_gamma_attr(const XSD::string_& _gamma_attr);
         const XSD::string_& get_gamma_attr() const;
-        bool has_s_grayscale_attr() const;
-        void set_s_grayscale_attr(const ns_s::ST_TrueFalse& _s_grayscale_attr);
-        const ns_s::ST_TrueFalse& get_s_grayscale_attr() const;
-        bool has_s_bilevel_attr() const;
-        void set_s_bilevel_attr(const ns_s::ST_TrueFalse& _s_bilevel_attr);
-        const ns_s::ST_TrueFalse& get_s_bilevel_attr() const;
-        bool has_s_chromakey_attr() const;
-        void set_s_chromakey_attr(const ns_s::ST_ColorType& _s_chromakey_attr);
-        const ns_s::ST_ColorType& get_s_chromakey_attr() const;
-        bool has_s_embosscolor_attr() const;
-        void set_s_embosscolor_attr(const ns_s::ST_ColorType& _s_embosscolor_attr);
-        const ns_s::ST_ColorType& get_s_embosscolor_attr() const;
-        bool has_s_recolortarget_attr() const;
-        void set_s_recolortarget_attr(const ns_s::ST_ColorType& _s_recolortarget_attr);
-        const ns_s::ST_ColorType& get_s_recolortarget_attr() const;
-        bool has_href_attr() const;
-        void set_href_attr(const XSD::string_& _href_attr);
-        const XSD::string_& get_href_attr() const;
-        bool has_althref_attr() const;
-        void set_althref_attr(const XSD::string_& _althref_attr);
-        const XSD::string_& get_althref_attr() const;
-        bool has_title_attr() const;
-        void set_title_attr(const XSD::string_& _title_attr);
-        const XSD::string_& get_title_attr() const;
-        bool has_oleid_attr() const;
-        void set_oleid_attr(const XSD::float_& _oleid_attr);
-        const XSD::float_& get_oleid_attr() const;
-        bool has_s_detectmouseclick_attr() const;
-        void set_s_detectmouseclick_attr(const ns_s::ST_TrueFalse& _s_detectmouseclick_attr);
-        const ns_s::ST_TrueFalse& get_s_detectmouseclick_attr() const;
-        bool has_movie_attr() const;
-        void set_movie_attr(const XSD::float_& _movie_attr);
-        const XSD::float_& get_movie_attr() const;
-        bool has_r_relid_attr() const;
-        void set_r_relid_attr(const ns_r::ST_RelationshipId& _r_relid_attr);
-        const ns_r::ST_RelationshipId& get_r_relid_attr() const;
+        bool has_grayscale_attr() const;
+        void set_grayscale_attr(const ns_s::ST_TrueFalse& _grayscale_attr);
+        const ns_s::ST_TrueFalse& get_grayscale_attr() const;
+        bool has_bilevel_attr() const;
+        void set_bilevel_attr(const ns_s::ST_TrueFalse& _bilevel_attr);
+        const ns_s::ST_TrueFalse& get_bilevel_attr() const;
+        bool has_chromakey_attr() const;
+        void set_chromakey_attr(const ns_s::ST_ColorType& _chromakey_attr);
+        const ns_s::ST_ColorType& get_chromakey_attr() const;
+        bool has_embosscolor_attr() const;
+        void set_embosscolor_attr(const ns_s::ST_ColorType& _embosscolor_attr);
+        const ns_s::ST_ColorType& get_embosscolor_attr() const;
+        bool has_recolortarget_attr() const;
+        void set_recolortarget_attr(const ns_s::ST_ColorType& _recolortarget_attr);
+        const ns_s::ST_ColorType& get_recolortarget_attr() const;
+        bool has_o_href_attr() const;
+        void set_o_href_attr(const XSD::string_& _o_href_attr);
+        const XSD::string_& get_o_href_attr() const;
+        bool has_o_althref_attr() const;
+        void set_o_althref_attr(const XSD::string_& _o_althref_attr);
+        const XSD::string_& get_o_althref_attr() const;
+        bool has_o_title_attr() const;
+        void set_o_title_attr(const XSD::string_& _o_title_attr);
+        const XSD::string_& get_o_title_attr() const;
+        bool has_o_oleid_attr() const;
+        void set_o_oleid_attr(const XSD::float_& _o_oleid_attr);
+        const XSD::float_& get_o_oleid_attr() const;
+        bool has_o_detectmouseclick_attr() const;
+        void set_o_detectmouseclick_attr(const ns_s::ST_TrueFalse& _o_detectmouseclick_attr);
+        const ns_s::ST_TrueFalse& get_o_detectmouseclick_attr() const;
+        bool has_o_movie_attr() const;
+        void set_o_movie_attr(const XSD::float_& _o_movie_attr);
+        const XSD::float_& get_o_movie_attr() const;
+        bool has_o_relid_attr() const;
+        void set_o_relid_attr(const ns_r::ST_RelationshipId& _o_relid_attr);
+        const ns_r::ST_RelationshipId& get_o_relid_attr() const;
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
@@ -4254,30 +4303,30 @@ namespace ns_v {
         XSD::string_ m_blacklevel_attr;
         bool m_has_gamma_attr;
         XSD::string_ m_gamma_attr;
-        bool m_has_s_grayscale_attr;
-        ns_s::ST_TrueFalse* m_s_grayscale_attr;
-        bool m_has_s_bilevel_attr;
-        ns_s::ST_TrueFalse* m_s_bilevel_attr;
-        bool m_has_s_chromakey_attr;
-        ns_s::ST_ColorType* m_s_chromakey_attr;
-        bool m_has_s_embosscolor_attr;
-        ns_s::ST_ColorType* m_s_embosscolor_attr;
-        bool m_has_s_recolortarget_attr;
-        ns_s::ST_ColorType* m_s_recolortarget_attr;
-        bool m_has_href_attr;
-        XSD::string_ m_href_attr;
-        bool m_has_althref_attr;
-        XSD::string_ m_althref_attr;
-        bool m_has_title_attr;
-        XSD::string_ m_title_attr;
-        bool m_has_oleid_attr;
-        XSD::float_ m_oleid_attr;
-        bool m_has_s_detectmouseclick_attr;
-        ns_s::ST_TrueFalse* m_s_detectmouseclick_attr;
-        bool m_has_movie_attr;
-        XSD::float_ m_movie_attr;
-        bool m_has_r_relid_attr;
-        ns_r::ST_RelationshipId* m_r_relid_attr;
+        bool m_has_grayscale_attr;
+        ns_s::ST_TrueFalse* m_grayscale_attr;
+        bool m_has_bilevel_attr;
+        ns_s::ST_TrueFalse* m_bilevel_attr;
+        bool m_has_chromakey_attr;
+        ns_s::ST_ColorType* m_chromakey_attr;
+        bool m_has_embosscolor_attr;
+        ns_s::ST_ColorType* m_embosscolor_attr;
+        bool m_has_recolortarget_attr;
+        ns_s::ST_ColorType* m_recolortarget_attr;
+        bool m_has_o_href_attr;
+        XSD::string_ m_o_href_attr;
+        bool m_has_o_althref_attr;
+        XSD::string_ m_o_althref_attr;
+        bool m_has_o_title_attr;
+        XSD::string_ m_o_title_attr;
+        bool m_has_o_oleid_attr;
+        XSD::float_ m_o_oleid_attr;
+        bool m_has_o_detectmouseclick_attr;
+        ns_s::ST_TrueFalse* m_o_detectmouseclick_attr;
+        bool m_has_o_movie_attr;
+        XSD::float_ m_o_movie_attr;
+        bool m_has_o_relid_attr;
+        ns_r::ST_RelationshipId* m_o_relid_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
         bool m_has_r_pict_attr;
@@ -4289,6 +4338,7 @@ namespace ns_v {
     class path_element: public Element
     {
     public:
+        path_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const path_element& default_instance();
@@ -4304,39 +4354,39 @@ namespace ns_v {
         bool has_textboxrect_attr() const;
         void set_textboxrect_attr(const XSD::string_& _textboxrect_attr);
         const XSD::string_& get_textboxrect_attr() const;
-        bool has_s_fillok_attr() const;
-        void set_s_fillok_attr(const ns_s::ST_TrueFalse& _s_fillok_attr);
-        const ns_s::ST_TrueFalse& get_s_fillok_attr() const;
-        bool has_s_strokeok_attr() const;
-        void set_s_strokeok_attr(const ns_s::ST_TrueFalse& _s_strokeok_attr);
-        const ns_s::ST_TrueFalse& get_s_strokeok_attr() const;
-        bool has_s_shadowok_attr() const;
-        void set_s_shadowok_attr(const ns_s::ST_TrueFalse& _s_shadowok_attr);
-        const ns_s::ST_TrueFalse& get_s_shadowok_attr() const;
-        bool has_s_arrowok_attr() const;
-        void set_s_arrowok_attr(const ns_s::ST_TrueFalse& _s_arrowok_attr);
-        const ns_s::ST_TrueFalse& get_s_arrowok_attr() const;
-        bool has_s_gradientshapeok_attr() const;
-        void set_s_gradientshapeok_attr(const ns_s::ST_TrueFalse& _s_gradientshapeok_attr);
-        const ns_s::ST_TrueFalse& get_s_gradientshapeok_attr() const;
-        bool has_s_textpathok_attr() const;
-        void set_s_textpathok_attr(const ns_s::ST_TrueFalse& _s_textpathok_attr);
-        const ns_s::ST_TrueFalse& get_s_textpathok_attr() const;
-        bool has_s_insetpenok_attr() const;
-        void set_s_insetpenok_attr(const ns_s::ST_TrueFalse& _s_insetpenok_attr);
-        const ns_s::ST_TrueFalse& get_s_insetpenok_attr() const;
+        bool has_fillok_attr() const;
+        void set_fillok_attr(const ns_s::ST_TrueFalse& _fillok_attr);
+        const ns_s::ST_TrueFalse& get_fillok_attr() const;
+        bool has_strokeok_attr() const;
+        void set_strokeok_attr(const ns_s::ST_TrueFalse& _strokeok_attr);
+        const ns_s::ST_TrueFalse& get_strokeok_attr() const;
+        bool has_shadowok_attr() const;
+        void set_shadowok_attr(const ns_s::ST_TrueFalse& _shadowok_attr);
+        const ns_s::ST_TrueFalse& get_shadowok_attr() const;
+        bool has_arrowok_attr() const;
+        void set_arrowok_attr(const ns_s::ST_TrueFalse& _arrowok_attr);
+        const ns_s::ST_TrueFalse& get_arrowok_attr() const;
+        bool has_gradientshapeok_attr() const;
+        void set_gradientshapeok_attr(const ns_s::ST_TrueFalse& _gradientshapeok_attr);
+        const ns_s::ST_TrueFalse& get_gradientshapeok_attr() const;
+        bool has_textpathok_attr() const;
+        void set_textpathok_attr(const ns_s::ST_TrueFalse& _textpathok_attr);
+        const ns_s::ST_TrueFalse& get_textpathok_attr() const;
+        bool has_insetpenok_attr() const;
+        void set_insetpenok_attr(const ns_s::ST_TrueFalse& _insetpenok_attr);
+        const ns_s::ST_TrueFalse& get_insetpenok_attr() const;
         bool has_o_connecttype_attr() const;
         void set_o_connecttype_attr(const ns_o::ST_ConnectType& _o_connecttype_attr);
         const ns_o::ST_ConnectType& get_o_connecttype_attr() const;
-        bool has_connectlocs_attr() const;
-        void set_connectlocs_attr(const XSD::string_& _connectlocs_attr);
-        const XSD::string_& get_connectlocs_attr() const;
-        bool has_connectangles_attr() const;
-        void set_connectangles_attr(const XSD::string_& _connectangles_attr);
-        const XSD::string_& get_connectangles_attr() const;
-        bool has_s_extrusionok_attr() const;
-        void set_s_extrusionok_attr(const ns_s::ST_TrueFalse& _s_extrusionok_attr);
-        const ns_s::ST_TrueFalse& get_s_extrusionok_attr() const;
+        bool has_o_connectlocs_attr() const;
+        void set_o_connectlocs_attr(const XSD::string_& _o_connectlocs_attr);
+        const XSD::string_& get_o_connectlocs_attr() const;
+        bool has_o_connectangles_attr() const;
+        void set_o_connectangles_attr(const XSD::string_& _o_connectangles_attr);
+        const XSD::string_& get_o_connectangles_attr() const;
+        bool has_o_extrusionok_attr() const;
+        void set_o_extrusionok_attr(const ns_s::ST_TrueFalse& _o_extrusionok_attr);
+        const ns_s::ST_TrueFalse& get_o_extrusionok_attr() const;
     protected:
     private:
         static path_element* default_instance_;
@@ -4348,33 +4398,34 @@ namespace ns_v {
         XSD::string_ m_limo_attr;
         bool m_has_textboxrect_attr;
         XSD::string_ m_textboxrect_attr;
-        bool m_has_s_fillok_attr;
-        ns_s::ST_TrueFalse* m_s_fillok_attr;
-        bool m_has_s_strokeok_attr;
-        ns_s::ST_TrueFalse* m_s_strokeok_attr;
-        bool m_has_s_shadowok_attr;
-        ns_s::ST_TrueFalse* m_s_shadowok_attr;
-        bool m_has_s_arrowok_attr;
-        ns_s::ST_TrueFalse* m_s_arrowok_attr;
-        bool m_has_s_gradientshapeok_attr;
-        ns_s::ST_TrueFalse* m_s_gradientshapeok_attr;
-        bool m_has_s_textpathok_attr;
-        ns_s::ST_TrueFalse* m_s_textpathok_attr;
-        bool m_has_s_insetpenok_attr;
-        ns_s::ST_TrueFalse* m_s_insetpenok_attr;
+        bool m_has_fillok_attr;
+        ns_s::ST_TrueFalse* m_fillok_attr;
+        bool m_has_strokeok_attr;
+        ns_s::ST_TrueFalse* m_strokeok_attr;
+        bool m_has_shadowok_attr;
+        ns_s::ST_TrueFalse* m_shadowok_attr;
+        bool m_has_arrowok_attr;
+        ns_s::ST_TrueFalse* m_arrowok_attr;
+        bool m_has_gradientshapeok_attr;
+        ns_s::ST_TrueFalse* m_gradientshapeok_attr;
+        bool m_has_textpathok_attr;
+        ns_s::ST_TrueFalse* m_textpathok_attr;
+        bool m_has_insetpenok_attr;
+        ns_s::ST_TrueFalse* m_insetpenok_attr;
         bool m_has_o_connecttype_attr;
         ns_o::ST_ConnectType* m_o_connecttype_attr;
-        bool m_has_connectlocs_attr;
-        XSD::string_ m_connectlocs_attr;
-        bool m_has_connectangles_attr;
-        XSD::string_ m_connectangles_attr;
-        bool m_has_s_extrusionok_attr;
-        ns_s::ST_TrueFalse* m_s_extrusionok_attr;
+        bool m_has_o_connectlocs_attr;
+        XSD::string_ m_o_connectlocs_attr;
+        bool m_has_o_connectangles_attr;
+        XSD::string_ m_o_connectangles_attr;
+        bool m_has_o_extrusionok_attr;
+        ns_s::ST_TrueFalse* m_o_extrusionok_attr;
     };
 
     class textbox_element: public Element
     {
     public:
+        textbox_element();
         bool has_w_txbxContent() const;
         ns_w::CT_TxbxContent* mutable_w_txbxContent();
         const ns_w::CT_TxbxContent& get_w_txbxContent() const;
@@ -4390,9 +4441,9 @@ namespace ns_v {
         bool has_inset_attr() const;
         void set_inset_attr(const XSD::string_& _inset_attr);
         const XSD::string_& get_inset_attr() const;
-        bool has_s_singleclick_attr() const;
-        void set_s_singleclick_attr(const ns_s::ST_TrueFalse& _s_singleclick_attr);
-        const ns_s::ST_TrueFalse& get_s_singleclick_attr() const;
+        bool has_o_singleclick_attr() const;
+        void set_o_singleclick_attr(const ns_s::ST_TrueFalse& _o_singleclick_attr);
+        const ns_s::ST_TrueFalse& get_o_singleclick_attr() const;
         bool has_o_insetmode_attr() const;
         void set_o_insetmode_attr(const ns_o::ST_InsetMode& _o_insetmode_attr);
         const ns_o::ST_InsetMode& get_o_insetmode_attr() const;
@@ -4400,8 +4451,8 @@ namespace ns_v {
     private:
         bool m_has_w_txbxContent;
         ns_w::CT_TxbxContent* m_w_txbxContent;
-        bool m_has_any;
-        XSD::Element* m_any;
+        bool m_has__any;
+        XSD::Element* m__any;
         static textbox_element* default_instance_;
         bool m_has_id_attr;
         XSD::string_ m_id_attr;
@@ -4409,8 +4460,8 @@ namespace ns_v {
         XSD::string_ m_style_attr;
         bool m_has_inset_attr;
         XSD::string_ m_inset_attr;
-        bool m_has_s_singleclick_attr;
-        ns_s::ST_TrueFalse* m_s_singleclick_attr;
+        bool m_has_o_singleclick_attr;
+        ns_s::ST_TrueFalse* m_o_singleclick_attr;
         bool m_has_o_insetmode_attr;
         ns_o::ST_InsetMode* m_o_insetmode_attr;
     };
@@ -4418,33 +4469,34 @@ namespace ns_v {
     class shadow_element: public Element
     {
     public:
+        shadow_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const shadow_element& default_instance();
         bool has_id_attr() const;
         void set_id_attr(const XSD::string_& _id_attr);
         const XSD::string_& get_id_attr() const;
-        bool has_s_on_attr() const;
-        void set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr);
-        const ns_s::ST_TrueFalse& get_s_on_attr() const;
+        bool has_on_attr() const;
+        void set_on_attr(const ns_s::ST_TrueFalse& _on_attr);
+        const ns_s::ST_TrueFalse& get_on_attr() const;
         bool has_type_attr() const;
         void set_type_attr(const ST_ShadowType& _type_attr);
         const ST_ShadowType& get_type_attr() const;
-        bool has_s_obscured_attr() const;
-        void set_s_obscured_attr(const ns_s::ST_TrueFalse& _s_obscured_attr);
-        const ns_s::ST_TrueFalse& get_s_obscured_attr() const;
-        bool has_s_color_attr() const;
-        void set_s_color_attr(const ns_s::ST_ColorType& _s_color_attr);
-        const ns_s::ST_ColorType& get_s_color_attr() const;
+        bool has_obscured_attr() const;
+        void set_obscured_attr(const ns_s::ST_TrueFalse& _obscured_attr);
+        const ns_s::ST_TrueFalse& get_obscured_attr() const;
+        bool has_color_attr() const;
+        void set_color_attr(const ns_s::ST_ColorType& _color_attr);
+        const ns_s::ST_ColorType& get_color_attr() const;
         bool has_opacity_attr() const;
         void set_opacity_attr(const XSD::string_& _opacity_attr);
         const XSD::string_& get_opacity_attr() const;
         bool has_offset_attr() const;
         void set_offset_attr(const XSD::string_& _offset_attr);
         const XSD::string_& get_offset_attr() const;
-        bool has_s_color2_attr() const;
-        void set_s_color2_attr(const ns_s::ST_ColorType& _s_color2_attr);
-        const ns_s::ST_ColorType& get_s_color2_attr() const;
+        bool has_color2_attr() const;
+        void set_color2_attr(const ns_s::ST_ColorType& _color2_attr);
+        const ns_s::ST_ColorType& get_color2_attr() const;
         bool has_offset2_attr() const;
         void set_offset2_attr(const XSD::string_& _offset2_attr);
         const XSD::string_& get_offset2_attr() const;
@@ -4459,20 +4511,20 @@ namespace ns_v {
         static shadow_element* default_instance_;
         bool m_has_id_attr;
         XSD::string_ m_id_attr;
-        bool m_has_s_on_attr;
-        ns_s::ST_TrueFalse* m_s_on_attr;
+        bool m_has_on_attr;
+        ns_s::ST_TrueFalse* m_on_attr;
         bool m_has_type_attr;
         ST_ShadowType* m_type_attr;
-        bool m_has_s_obscured_attr;
-        ns_s::ST_TrueFalse* m_s_obscured_attr;
-        bool m_has_s_color_attr;
-        ns_s::ST_ColorType* m_s_color_attr;
+        bool m_has_obscured_attr;
+        ns_s::ST_TrueFalse* m_obscured_attr;
+        bool m_has_color_attr;
+        ns_s::ST_ColorType* m_color_attr;
         bool m_has_opacity_attr;
         XSD::string_ m_opacity_attr;
         bool m_has_offset_attr;
         XSD::string_ m_offset_attr;
-        bool m_has_s_color2_attr;
-        ns_s::ST_ColorType* m_s_color2_attr;
+        bool m_has_color2_attr;
+        ns_s::ST_ColorType* m_color2_attr;
         bool m_has_offset2_attr;
         XSD::string_ m_offset2_attr;
         bool m_has_origin_attr;
@@ -4484,6 +4536,7 @@ namespace ns_v {
     class stroke_element: public Element
     {
     public:
+        stroke_element();
         bool has_o_left() const;
         ns_o::CT_StrokeChild* mutable_o_left();
         const ns_o::CT_StrokeChild& get_o_left() const;
@@ -4505,15 +4558,15 @@ namespace ns_v {
         bool has_id_attr() const;
         void set_id_attr(const XSD::string_& _id_attr);
         const XSD::string_& get_id_attr() const;
-        bool has_s_on_attr() const;
-        void set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr);
-        const ns_s::ST_TrueFalse& get_s_on_attr() const;
+        bool has_on_attr() const;
+        void set_on_attr(const ns_s::ST_TrueFalse& _on_attr);
+        const ns_s::ST_TrueFalse& get_on_attr() const;
         bool has_weight_attr() const;
         void set_weight_attr(const XSD::string_& _weight_attr);
         const XSD::string_& get_weight_attr() const;
-        bool has_s_color_attr() const;
-        void set_s_color_attr(const ns_s::ST_ColorType& _s_color_attr);
-        const ns_s::ST_ColorType& get_s_color_attr() const;
+        bool has_color_attr() const;
+        void set_color_attr(const ns_s::ST_ColorType& _color_attr);
+        const ns_s::ST_ColorType& get_color_attr() const;
         bool has_opacity_attr() const;
         void set_opacity_attr(const XSD::string_& _opacity_attr);
         const XSD::string_& get_opacity_attr() const;
@@ -4544,12 +4597,12 @@ namespace ns_v {
         bool has_imagesize_attr() const;
         void set_imagesize_attr(const XSD::string_& _imagesize_attr);
         const XSD::string_& get_imagesize_attr() const;
-        bool has_s_imagealignshape_attr() const;
-        void set_s_imagealignshape_attr(const ns_s::ST_TrueFalse& _s_imagealignshape_attr);
-        const ns_s::ST_TrueFalse& get_s_imagealignshape_attr() const;
-        bool has_s_color2_attr() const;
-        void set_s_color2_attr(const ns_s::ST_ColorType& _s_color2_attr);
-        const ns_s::ST_ColorType& get_s_color2_attr() const;
+        bool has_imagealignshape_attr() const;
+        void set_imagealignshape_attr(const ns_s::ST_TrueFalse& _imagealignshape_attr);
+        const ns_s::ST_TrueFalse& get_imagealignshape_attr() const;
+        bool has_color2_attr() const;
+        void set_color2_attr(const ns_s::ST_ColorType& _color2_attr);
+        const ns_s::ST_ColorType& get_color2_attr() const;
         bool has_startarrow_attr() const;
         void set_startarrow_attr(const ST_StrokeArrowType& _startarrow_attr);
         const ST_StrokeArrowType& get_startarrow_attr() const;
@@ -4568,27 +4621,27 @@ namespace ns_v {
         bool has_endarrowlength_attr() const;
         void set_endarrowlength_attr(const ST_StrokeArrowLength& _endarrowlength_attr);
         const ST_StrokeArrowLength& get_endarrowlength_attr() const;
-        bool has_href_attr() const;
-        void set_href_attr(const XSD::string_& _href_attr);
-        const XSD::string_& get_href_attr() const;
-        bool has_althref_attr() const;
-        void set_althref_attr(const XSD::string_& _althref_attr);
-        const XSD::string_& get_althref_attr() const;
-        bool has_title_attr() const;
-        void set_title_attr(const XSD::string_& _title_attr);
-        const XSD::string_& get_title_attr() const;
-        bool has_s_forcedash_attr() const;
-        void set_s_forcedash_attr(const ns_s::ST_TrueFalse& _s_forcedash_attr);
-        const ns_s::ST_TrueFalse& get_s_forcedash_attr() const;
+        bool has_o_href_attr() const;
+        void set_o_href_attr(const XSD::string_& _o_href_attr);
+        const XSD::string_& get_o_href_attr() const;
+        bool has_o_althref_attr() const;
+        void set_o_althref_attr(const XSD::string_& _o_althref_attr);
+        const XSD::string_& get_o_althref_attr() const;
+        bool has_o_title_attr() const;
+        void set_o_title_attr(const XSD::string_& _o_title_attr);
+        const XSD::string_& get_o_title_attr() const;
+        bool has_o_forcedash_attr() const;
+        void set_o_forcedash_attr(const ns_s::ST_TrueFalse& _o_forcedash_attr);
+        const ns_s::ST_TrueFalse& get_o_forcedash_attr() const;
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
-        bool has_s_insetpen_attr() const;
-        void set_s_insetpen_attr(const ns_s::ST_TrueFalse& _s_insetpen_attr);
-        const ns_s::ST_TrueFalse& get_s_insetpen_attr() const;
-        bool has_r_relid_attr() const;
-        void set_r_relid_attr(const ns_r::ST_RelationshipId& _r_relid_attr);
-        const ns_r::ST_RelationshipId& get_r_relid_attr() const;
+        bool has_insetpen_attr() const;
+        void set_insetpen_attr(const ns_s::ST_TrueFalse& _insetpen_attr);
+        const ns_s::ST_TrueFalse& get_insetpen_attr() const;
+        bool has_o_relid_attr() const;
+        void set_o_relid_attr(const ns_r::ST_RelationshipId& _o_relid_attr);
+        const ns_r::ST_RelationshipId& get_o_relid_attr() const;
     protected:
     private:
         bool m_has_o_left;
@@ -4604,12 +4657,12 @@ namespace ns_v {
         static stroke_element* default_instance_;
         bool m_has_id_attr;
         XSD::string_ m_id_attr;
-        bool m_has_s_on_attr;
-        ns_s::ST_TrueFalse* m_s_on_attr;
+        bool m_has_on_attr;
+        ns_s::ST_TrueFalse* m_on_attr;
         bool m_has_weight_attr;
         XSD::string_ m_weight_attr;
-        bool m_has_s_color_attr;
-        ns_s::ST_ColorType* m_s_color_attr;
+        bool m_has_color_attr;
+        ns_s::ST_ColorType* m_color_attr;
         bool m_has_opacity_attr;
         XSD::string_ m_opacity_attr;
         bool m_has_linestyle_attr;
@@ -4630,10 +4683,10 @@ namespace ns_v {
         ST_ImageAspect* m_imageaspect_attr;
         bool m_has_imagesize_attr;
         XSD::string_ m_imagesize_attr;
-        bool m_has_s_imagealignshape_attr;
-        ns_s::ST_TrueFalse* m_s_imagealignshape_attr;
-        bool m_has_s_color2_attr;
-        ns_s::ST_ColorType* m_s_color2_attr;
+        bool m_has_imagealignshape_attr;
+        ns_s::ST_TrueFalse* m_imagealignshape_attr;
+        bool m_has_color2_attr;
+        ns_s::ST_ColorType* m_color2_attr;
         bool m_has_startarrow_attr;
         ST_StrokeArrowType* m_startarrow_attr;
         bool m_has_startarrowwidth_attr;
@@ -4646,25 +4699,26 @@ namespace ns_v {
         ST_StrokeArrowWidth* m_endarrowwidth_attr;
         bool m_has_endarrowlength_attr;
         ST_StrokeArrowLength* m_endarrowlength_attr;
-        bool m_has_href_attr;
-        XSD::string_ m_href_attr;
-        bool m_has_althref_attr;
-        XSD::string_ m_althref_attr;
-        bool m_has_title_attr;
-        XSD::string_ m_title_attr;
-        bool m_has_s_forcedash_attr;
-        ns_s::ST_TrueFalse* m_s_forcedash_attr;
+        bool m_has_o_href_attr;
+        XSD::string_ m_o_href_attr;
+        bool m_has_o_althref_attr;
+        XSD::string_ m_o_althref_attr;
+        bool m_has_o_title_attr;
+        XSD::string_ m_o_title_attr;
+        bool m_has_o_forcedash_attr;
+        ns_s::ST_TrueFalse* m_o_forcedash_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
-        bool m_has_s_insetpen_attr;
-        ns_s::ST_TrueFalse* m_s_insetpen_attr;
-        bool m_has_r_relid_attr;
-        ns_r::ST_RelationshipId* m_r_relid_attr;
+        bool m_has_insetpen_attr;
+        ns_s::ST_TrueFalse* m_insetpen_attr;
+        bool m_has_o_relid_attr;
+        ns_r::ST_RelationshipId* m_o_relid_attr;
     };
 
     class textpath_element: public Element
     {
     public:
+        textpath_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const textpath_element& default_instance();
@@ -4674,21 +4728,21 @@ namespace ns_v {
         bool has_style_attr() const;
         void set_style_attr(const XSD::string_& _style_attr);
         const XSD::string_& get_style_attr() const;
-        bool has_s_on_attr() const;
-        void set_s_on_attr(const ns_s::ST_TrueFalse& _s_on_attr);
-        const ns_s::ST_TrueFalse& get_s_on_attr() const;
-        bool has_s_fitshape_attr() const;
-        void set_s_fitshape_attr(const ns_s::ST_TrueFalse& _s_fitshape_attr);
-        const ns_s::ST_TrueFalse& get_s_fitshape_attr() const;
-        bool has_s_fitpath_attr() const;
-        void set_s_fitpath_attr(const ns_s::ST_TrueFalse& _s_fitpath_attr);
-        const ns_s::ST_TrueFalse& get_s_fitpath_attr() const;
-        bool has_s_trim_attr() const;
-        void set_s_trim_attr(const ns_s::ST_TrueFalse& _s_trim_attr);
-        const ns_s::ST_TrueFalse& get_s_trim_attr() const;
-        bool has_s_xscale_attr() const;
-        void set_s_xscale_attr(const ns_s::ST_TrueFalse& _s_xscale_attr);
-        const ns_s::ST_TrueFalse& get_s_xscale_attr() const;
+        bool has_on_attr() const;
+        void set_on_attr(const ns_s::ST_TrueFalse& _on_attr);
+        const ns_s::ST_TrueFalse& get_on_attr() const;
+        bool has_fitshape_attr() const;
+        void set_fitshape_attr(const ns_s::ST_TrueFalse& _fitshape_attr);
+        const ns_s::ST_TrueFalse& get_fitshape_attr() const;
+        bool has_fitpath_attr() const;
+        void set_fitpath_attr(const ns_s::ST_TrueFalse& _fitpath_attr);
+        const ns_s::ST_TrueFalse& get_fitpath_attr() const;
+        bool has_trim_attr() const;
+        void set_trim_attr(const ns_s::ST_TrueFalse& _trim_attr);
+        const ns_s::ST_TrueFalse& get_trim_attr() const;
+        bool has_xscale_attr() const;
+        void set_xscale_attr(const ns_s::ST_TrueFalse& _xscale_attr);
+        const ns_s::ST_TrueFalse& get_xscale_attr() const;
         bool has_string_attr() const;
         void set_string_attr(const XSD::string_& _string_attr);
         const XSD::string_& get_string_attr() const;
@@ -4699,16 +4753,16 @@ namespace ns_v {
         XSD::string_ m_id_attr;
         bool m_has_style_attr;
         XSD::string_ m_style_attr;
-        bool m_has_s_on_attr;
-        ns_s::ST_TrueFalse* m_s_on_attr;
-        bool m_has_s_fitshape_attr;
-        ns_s::ST_TrueFalse* m_s_fitshape_attr;
-        bool m_has_s_fitpath_attr;
-        ns_s::ST_TrueFalse* m_s_fitpath_attr;
-        bool m_has_s_trim_attr;
-        ns_s::ST_TrueFalse* m_s_trim_attr;
-        bool m_has_s_xscale_attr;
-        ns_s::ST_TrueFalse* m_s_xscale_attr;
+        bool m_has_on_attr;
+        ns_s::ST_TrueFalse* m_on_attr;
+        bool m_has_fitshape_attr;
+        ns_s::ST_TrueFalse* m_fitshape_attr;
+        bool m_has_fitpath_attr;
+        ns_s::ST_TrueFalse* m_fitpath_attr;
+        bool m_has_trim_attr;
+        ns_s::ST_TrueFalse* m_trim_attr;
+        bool m_has_xscale_attr;
+        ns_s::ST_TrueFalse* m_xscale_attr;
         bool m_has_string_attr;
         XSD::string_ m_string_attr;
     };
@@ -4716,6 +4770,7 @@ namespace ns_v {
     class arc_element: public Element
     {
     public:
+        arc_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -4753,6 +4808,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -4882,6 +4938,7 @@ namespace ns_v {
     class curve_element: public Element
     {
     public:
+        curve_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -4925,6 +4982,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -5058,6 +5116,7 @@ namespace ns_v {
     class image_element: public Element
     {
     public:
+        image_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -5108,17 +5167,18 @@ namespace ns_v {
         bool has_gamma_attr() const;
         void set_gamma_attr(const XSD::string_& _gamma_attr);
         const XSD::string_& get_gamma_attr() const;
-        bool has_s_grayscale_attr() const;
-        void set_s_grayscale_attr(const ns_s::ST_TrueFalse& _s_grayscale_attr);
-        const ns_s::ST_TrueFalse& get_s_grayscale_attr() const;
-        bool has_s_bilevel_attr() const;
-        void set_s_bilevel_attr(const ns_s::ST_TrueFalse& _s_bilevel_attr);
-        const ns_s::ST_TrueFalse& get_s_bilevel_attr() const;
+        bool has_grayscale_attr() const;
+        void set_grayscale_attr(const ns_s::ST_TrueFalse& _grayscale_attr);
+        const ns_s::ST_TrueFalse& get_grayscale_attr() const;
+        bool has_bilevel_attr() const;
+        void set_bilevel_attr(const ns_s::ST_TrueFalse& _bilevel_attr);
+        const ns_s::ST_TrueFalse& get_bilevel_attr() const;
     protected:
     private:
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -5255,15 +5315,16 @@ namespace ns_v {
         XSD::string_ m_blacklevel_attr;
         bool m_has_gamma_attr;
         XSD::string_ m_gamma_attr;
-        bool m_has_s_grayscale_attr;
-        ns_s::ST_TrueFalse* m_s_grayscale_attr;
-        bool m_has_s_bilevel_attr;
-        ns_s::ST_TrueFalse* m_s_bilevel_attr;
+        bool m_has_grayscale_attr;
+        ns_s::ST_TrueFalse* m_grayscale_attr;
+        bool m_has_bilevel_attr;
+        ns_s::ST_TrueFalse* m_bilevel_attr;
     };
 
     class line_element: public Element
     {
     public:
+        line_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -5301,6 +5362,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -5430,6 +5492,7 @@ namespace ns_v {
     class oval_element: public Element
     {
     public:
+        oval_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -5461,6 +5524,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -5586,6 +5650,7 @@ namespace ns_v {
     class polyline_element: public Element
     {
     public:
+        polyline_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -5621,6 +5686,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -5753,6 +5819,7 @@ namespace ns_v {
     class rect_element: public Element
     {
     public:
+        rect_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -5784,6 +5851,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;
@@ -5909,6 +5977,7 @@ namespace ns_v {
     class roundrect_element: public Element
     {
     public:
+        roundrect_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -5943,6 +6012,7 @@ namespace ns_v {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_path() const;
             CT_Path* mutable_path();
             const CT_Path& get_path() const;

@@ -451,6 +451,7 @@ namespace ns_m {
     class CT_Integer255: public XSD::ComplexType
     {
     public:
+        CT_Integer255();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Integer255& default_instance();
@@ -467,6 +468,7 @@ namespace ns_m {
     class CT_Integer2: public XSD::ComplexType
     {
     public:
+        CT_Integer2();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Integer2& default_instance();
@@ -483,6 +485,7 @@ namespace ns_m {
     class CT_SpacingRule: public XSD::ComplexType
     {
     public:
+        CT_SpacingRule();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SpacingRule& default_instance();
@@ -499,6 +502,7 @@ namespace ns_m {
     class CT_UnSignedInteger: public XSD::ComplexType
     {
     public:
+        CT_UnSignedInteger();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_UnSignedInteger& default_instance();
@@ -515,6 +519,7 @@ namespace ns_m {
     class CT_Char: public XSD::ComplexType
     {
     public:
+        CT_Char();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Char& default_instance();
@@ -531,70 +536,75 @@ namespace ns_m {
     class CT_OnOff: public XSD::ComplexType
     {
     public:
+        CT_OnOff();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OnOff& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_OnOff& _s_val_attr);
-        const ns_s::ST_OnOff& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_OnOff& _val_attr);
+        const ns_s::ST_OnOff& get_val_attr() const;
     protected:
     private:
         static CT_OnOff* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_OnOff* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_OnOff* m_val_attr;
     };
 
     class CT_String: public XSD::ComplexType
     {
     public:
+        CT_String();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_String& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_String& _s_val_attr);
-        const ns_s::ST_String& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_String& _val_attr);
+        const ns_s::ST_String& get_val_attr() const;
     protected:
     private:
         static CT_String* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_String* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_String* m_val_attr;
     };
 
     class CT_XAlign: public XSD::ComplexType
     {
     public:
+        CT_XAlign();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_XAlign& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_XAlign& _s_val_attr);
-        const ns_s::ST_XAlign& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_XAlign& _val_attr);
+        const ns_s::ST_XAlign& get_val_attr() const;
     protected:
     private:
         static CT_XAlign* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_XAlign* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_XAlign* m_val_attr;
     };
 
     class CT_YAlign: public XSD::ComplexType
     {
     public:
+        CT_YAlign();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_YAlign& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_YAlign& _s_val_attr);
-        const ns_s::ST_YAlign& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_YAlign& _val_attr);
+        const ns_s::ST_YAlign& get_val_attr() const;
     protected:
     private:
         static CT_YAlign* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_YAlign* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_YAlign* m_val_attr;
     };
 
     class CT_Shp: public XSD::ComplexType
     {
     public:
+        CT_Shp();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Shp& default_instance();
@@ -611,6 +621,7 @@ namespace ns_m {
     class CT_FType: public XSD::ComplexType
     {
     public:
+        CT_FType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FType& default_instance();
@@ -627,6 +638,7 @@ namespace ns_m {
     class CT_LimLoc: public XSD::ComplexType
     {
     public:
+        CT_LimLoc();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LimLoc& default_instance();
@@ -643,6 +655,7 @@ namespace ns_m {
     class CT_TopBot: public XSD::ComplexType
     {
     public:
+        CT_TopBot();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TopBot& default_instance();
@@ -659,6 +672,7 @@ namespace ns_m {
     class CT_Script: public XSD::ComplexType
     {
     public:
+        CT_Script();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Script& default_instance();
@@ -675,6 +689,7 @@ namespace ns_m {
     class CT_Style: public XSD::ComplexType
     {
     public:
+        CT_Style();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Style& default_instance();
@@ -691,6 +706,7 @@ namespace ns_m {
     class CT_ManualBreak: public XSD::ComplexType
     {
     public:
+        CT_ManualBreak();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ManualBreak& default_instance();
@@ -707,6 +723,7 @@ namespace ns_m {
     class CT_RPR: public XSD::ComplexType
     {
     public:
+        CT_RPR();
         bool has_lit() const;
         CT_OnOff* mutable_lit();
         const CT_OnOff& get_lit() const;
@@ -738,6 +755,7 @@ namespace ns_m {
     class CT_Text: public XSD::ComplexType
     {
     public:
+        CT_Text();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Text& default_instance();
@@ -754,6 +772,7 @@ namespace ns_m {
     class CT_R: public XSD::ComplexType
     {
     public:
+        CT_R();
         bool has_rPr() const;
         CT_RPR* mutable_rPr();
         const CT_RPR& get_rPr() const;
@@ -802,6 +821,7 @@ namespace ns_m {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_w_br() const;
             ns_w::CT_Br* mutable_w_br();
             const ns_w::CT_Br& get_w_br() const;
@@ -986,6 +1006,7 @@ namespace ns_m {
     class CT_CtrlPr: public XSD::ComplexType
     {
     public:
+        CT_CtrlPr();
         bool has_w_ins() const;
         ns_w::CT_MathCtrlIns* mutable_w_ins();
         const ns_w::CT_MathCtrlIns& get_w_ins() const;
@@ -1007,6 +1028,7 @@ namespace ns_m {
     class CT_AccPr: public XSD::ComplexType
     {
     public:
+        CT_AccPr();
         bool has_chr() const;
         CT_Char* mutable_chr();
         const CT_Char& get_chr() const;
@@ -1028,6 +1050,7 @@ namespace ns_m {
     class CT_Acc: public XSD::ComplexType
     {
     public:
+        CT_Acc();
         bool has_accPr() const;
         CT_AccPr* mutable_accPr();
         const CT_AccPr& get_accPr() const;
@@ -1049,6 +1072,7 @@ namespace ns_m {
     class CT_BarPr: public XSD::ComplexType
     {
     public:
+        CT_BarPr();
         bool has_pos() const;
         CT_TopBot* mutable_pos();
         const CT_TopBot& get_pos() const;
@@ -1070,6 +1094,7 @@ namespace ns_m {
     class CT_Bar: public XSD::ComplexType
     {
     public:
+        CT_Bar();
         bool has_barPr() const;
         CT_BarPr* mutable_barPr();
         const CT_BarPr& get_barPr() const;
@@ -1091,6 +1116,7 @@ namespace ns_m {
     class CT_BoxPr: public XSD::ComplexType
     {
     public:
+        CT_BoxPr();
         bool has_opEmu() const;
         CT_OnOff* mutable_opEmu();
         const CT_OnOff& get_opEmu() const;
@@ -1132,6 +1158,7 @@ namespace ns_m {
     class CT_Box: public XSD::ComplexType
     {
     public:
+        CT_Box();
         bool has_boxPr() const;
         CT_BoxPr* mutable_boxPr();
         const CT_BoxPr& get_boxPr() const;
@@ -1153,6 +1180,7 @@ namespace ns_m {
     class CT_BorderBoxPr: public XSD::ComplexType
     {
     public:
+        CT_BorderBoxPr();
         bool has_hideTop() const;
         CT_OnOff* mutable_hideTop();
         const CT_OnOff& get_hideTop() const;
@@ -1209,6 +1237,7 @@ namespace ns_m {
     class CT_BorderBox: public XSD::ComplexType
     {
     public:
+        CT_BorderBox();
         bool has_borderBoxPr() const;
         CT_BorderBoxPr* mutable_borderBoxPr();
         const CT_BorderBoxPr& get_borderBoxPr() const;
@@ -1230,6 +1259,7 @@ namespace ns_m {
     class CT_DPr: public XSD::ComplexType
     {
     public:
+        CT_DPr();
         bool has_begChr() const;
         CT_Char* mutable_begChr();
         const CT_Char& get_begChr() const;
@@ -1271,6 +1301,7 @@ namespace ns_m {
     class CT_D: public XSD::ComplexType
     {
     public:
+        CT_D();
         bool has_dPr() const;
         CT_DPr* mutable_dPr();
         const CT_DPr& get_dPr() const;
@@ -1283,6 +1314,7 @@ namespace ns_m {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_e() const;
             CT_OMathArg* mutable_e();
             const CT_OMathArg& get_e() const;
@@ -1300,6 +1332,7 @@ namespace ns_m {
     class CT_EqArrPr: public XSD::ComplexType
     {
     public:
+        CT_EqArrPr();
         bool has_baseJc() const;
         CT_YAlign* mutable_baseJc();
         const CT_YAlign& get_baseJc() const;
@@ -1341,6 +1374,7 @@ namespace ns_m {
     class CT_EqArr: public XSD::ComplexType
     {
     public:
+        CT_EqArr();
         bool has_eqArrPr() const;
         CT_EqArrPr* mutable_eqArrPr();
         const CT_EqArrPr& get_eqArrPr() const;
@@ -1353,6 +1387,7 @@ namespace ns_m {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_e() const;
             CT_OMathArg* mutable_e();
             const CT_OMathArg& get_e() const;
@@ -1370,6 +1405,7 @@ namespace ns_m {
     class CT_FPr: public XSD::ComplexType
     {
     public:
+        CT_FPr();
         bool has_type() const;
         CT_FType* mutable_type();
         const CT_FType& get_type() const;
@@ -1391,6 +1427,7 @@ namespace ns_m {
     class CT_F: public XSD::ComplexType
     {
     public:
+        CT_F();
         bool has_fPr() const;
         CT_FPr* mutable_fPr();
         const CT_FPr& get_fPr() const;
@@ -1417,6 +1454,7 @@ namespace ns_m {
     class CT_FuncPr: public XSD::ComplexType
     {
     public:
+        CT_FuncPr();
         bool has_ctrlPr() const;
         CT_CtrlPr* mutable_ctrlPr();
         const CT_CtrlPr& get_ctrlPr() const;
@@ -1433,6 +1471,7 @@ namespace ns_m {
     class CT_Func: public XSD::ComplexType
     {
     public:
+        CT_Func();
         bool has_funcPr() const;
         CT_FuncPr* mutable_funcPr();
         const CT_FuncPr& get_funcPr() const;
@@ -1459,6 +1498,7 @@ namespace ns_m {
     class CT_GroupChrPr: public XSD::ComplexType
     {
     public:
+        CT_GroupChrPr();
         bool has_chr() const;
         CT_Char* mutable_chr();
         const CT_Char& get_chr() const;
@@ -1490,6 +1530,7 @@ namespace ns_m {
     class CT_GroupChr: public XSD::ComplexType
     {
     public:
+        CT_GroupChr();
         bool has_groupChrPr() const;
         CT_GroupChrPr* mutable_groupChrPr();
         const CT_GroupChrPr& get_groupChrPr() const;
@@ -1511,6 +1552,7 @@ namespace ns_m {
     class CT_LimLowPr: public XSD::ComplexType
     {
     public:
+        CT_LimLowPr();
         bool has_ctrlPr() const;
         CT_CtrlPr* mutable_ctrlPr();
         const CT_CtrlPr& get_ctrlPr() const;
@@ -1527,6 +1569,7 @@ namespace ns_m {
     class CT_LimLow: public XSD::ComplexType
     {
     public:
+        CT_LimLow();
         bool has_limLowPr() const;
         CT_LimLowPr* mutable_limLowPr();
         const CT_LimLowPr& get_limLowPr() const;
@@ -1553,6 +1596,7 @@ namespace ns_m {
     class CT_LimUppPr: public XSD::ComplexType
     {
     public:
+        CT_LimUppPr();
         bool has_ctrlPr() const;
         CT_CtrlPr* mutable_ctrlPr();
         const CT_CtrlPr& get_ctrlPr() const;
@@ -1569,6 +1613,7 @@ namespace ns_m {
     class CT_LimUpp: public XSD::ComplexType
     {
     public:
+        CT_LimUpp();
         bool has_limUppPr() const;
         CT_LimUppPr* mutable_limUppPr();
         const CT_LimUppPr& get_limUppPr() const;
@@ -1595,6 +1640,7 @@ namespace ns_m {
     class CT_MCPr: public XSD::ComplexType
     {
     public:
+        CT_MCPr();
         bool has_count() const;
         CT_Integer255* mutable_count();
         const CT_Integer255& get_count() const;
@@ -1616,6 +1662,7 @@ namespace ns_m {
     class CT_MC: public XSD::ComplexType
     {
     public:
+        CT_MC();
         bool has_mcPr() const;
         CT_MCPr* mutable_mcPr();
         const CT_MCPr& get_mcPr() const;
@@ -1632,6 +1679,7 @@ namespace ns_m {
     class CT_MCS: public XSD::ComplexType
     {
     public:
+        CT_MCS();
         CT_MC* add_mc();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -1641,6 +1689,7 @@ namespace ns_m {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_mc() const;
             CT_MC* mutable_mc();
             const CT_MC& get_mc() const;
@@ -1656,6 +1705,7 @@ namespace ns_m {
     class CT_MPr: public XSD::ComplexType
     {
     public:
+        CT_MPr();
         bool has_baseJc() const;
         CT_YAlign* mutable_baseJc();
         const CT_YAlign& get_baseJc() const;
@@ -1712,6 +1762,7 @@ namespace ns_m {
     class CT_MR: public XSD::ComplexType
     {
     public:
+        CT_MR();
         CT_OMathArg* add_e();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -1721,6 +1772,7 @@ namespace ns_m {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_e() const;
             CT_OMathArg* mutable_e();
             const CT_OMathArg& get_e() const;
@@ -1736,6 +1788,7 @@ namespace ns_m {
     class CT_M: public XSD::ComplexType
     {
     public:
+        CT_M();
         bool has_mPr() const;
         CT_MPr* mutable_mPr();
         const CT_MPr& get_mPr() const;
@@ -1748,6 +1801,7 @@ namespace ns_m {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_mr() const;
             CT_MR* mutable_mr();
             const CT_MR& get_mr() const;
@@ -1765,6 +1819,7 @@ namespace ns_m {
     class CT_NaryPr: public XSD::ComplexType
     {
     public:
+        CT_NaryPr();
         bool has_chr() const;
         CT_Char* mutable_chr();
         const CT_Char& get_chr() const;
@@ -1806,6 +1861,7 @@ namespace ns_m {
     class CT_Nary: public XSD::ComplexType
     {
     public:
+        CT_Nary();
         bool has_naryPr() const;
         CT_NaryPr* mutable_naryPr();
         const CT_NaryPr& get_naryPr() const;
@@ -1837,6 +1893,7 @@ namespace ns_m {
     class CT_PhantPr: public XSD::ComplexType
     {
     public:
+        CT_PhantPr();
         bool has_show() const;
         CT_OnOff* mutable_show();
         const CT_OnOff& get_show() const;
@@ -1878,6 +1935,7 @@ namespace ns_m {
     class CT_Phant: public XSD::ComplexType
     {
     public:
+        CT_Phant();
         bool has_phantPr() const;
         CT_PhantPr* mutable_phantPr();
         const CT_PhantPr& get_phantPr() const;
@@ -1899,6 +1957,7 @@ namespace ns_m {
     class CT_RadPr: public XSD::ComplexType
     {
     public:
+        CT_RadPr();
         bool has_degHide() const;
         CT_OnOff* mutable_degHide();
         const CT_OnOff& get_degHide() const;
@@ -1920,6 +1979,7 @@ namespace ns_m {
     class CT_Rad: public XSD::ComplexType
     {
     public:
+        CT_Rad();
         bool has_radPr() const;
         CT_RadPr* mutable_radPr();
         const CT_RadPr& get_radPr() const;
@@ -1946,6 +2006,7 @@ namespace ns_m {
     class CT_SPrePr: public XSD::ComplexType
     {
     public:
+        CT_SPrePr();
         bool has_ctrlPr() const;
         CT_CtrlPr* mutable_ctrlPr();
         const CT_CtrlPr& get_ctrlPr() const;
@@ -1962,6 +2023,7 @@ namespace ns_m {
     class CT_SPre: public XSD::ComplexType
     {
     public:
+        CT_SPre();
         bool has_sPrePr() const;
         CT_SPrePr* mutable_sPrePr();
         const CT_SPrePr& get_sPrePr() const;
@@ -1993,6 +2055,7 @@ namespace ns_m {
     class CT_SSubPr: public XSD::ComplexType
     {
     public:
+        CT_SSubPr();
         bool has_ctrlPr() const;
         CT_CtrlPr* mutable_ctrlPr();
         const CT_CtrlPr& get_ctrlPr() const;
@@ -2009,6 +2072,7 @@ namespace ns_m {
     class CT_SSub: public XSD::ComplexType
     {
     public:
+        CT_SSub();
         bool has_sSubPr() const;
         CT_SSubPr* mutable_sSubPr();
         const CT_SSubPr& get_sSubPr() const;
@@ -2035,6 +2099,7 @@ namespace ns_m {
     class CT_SSubSupPr: public XSD::ComplexType
     {
     public:
+        CT_SSubSupPr();
         bool has_alnScr() const;
         CT_OnOff* mutable_alnScr();
         const CT_OnOff& get_alnScr() const;
@@ -2056,6 +2121,7 @@ namespace ns_m {
     class CT_SSubSup: public XSD::ComplexType
     {
     public:
+        CT_SSubSup();
         bool has_sSubSupPr() const;
         CT_SSubSupPr* mutable_sSubSupPr();
         const CT_SSubSupPr& get_sSubSupPr() const;
@@ -2087,6 +2153,7 @@ namespace ns_m {
     class CT_SSupPr: public XSD::ComplexType
     {
     public:
+        CT_SSupPr();
         bool has_ctrlPr() const;
         CT_CtrlPr* mutable_ctrlPr();
         const CT_CtrlPr& get_ctrlPr() const;
@@ -2103,6 +2170,7 @@ namespace ns_m {
     class CT_SSup: public XSD::ComplexType
     {
     public:
+        CT_SSup();
         bool has_sSupPr() const;
         CT_SSupPr* mutable_sSupPr();
         const CT_SSupPr& get_sSupPr() const;
@@ -2129,6 +2197,7 @@ namespace ns_m {
     class CT_OMathArgPr: public XSD::ComplexType
     {
     public:
+        CT_OMathArgPr();
         bool has_argSz() const;
         CT_Integer2* mutable_argSz();
         const CT_Integer2& get_argSz() const;
@@ -2145,6 +2214,7 @@ namespace ns_m {
     class CT_OMathArg: public XSD::ComplexType
     {
     public:
+        CT_OMathArg();
         bool has_argPr() const;
         CT_OMathArgPr* mutable_argPr();
         const CT_OMathArgPr& get_argPr() const;
@@ -2209,6 +2279,7 @@ namespace ns_m {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_acc() const;
             CT_Acc* mutable_acc();
             const CT_Acc& get_acc() const;
@@ -2473,6 +2544,7 @@ namespace ns_m {
     class CT_OMathJc: public XSD::ComplexType
     {
     public:
+        CT_OMathJc();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OMathJc& default_instance();
@@ -2489,6 +2561,7 @@ namespace ns_m {
     class CT_OMathParaPr: public XSD::ComplexType
     {
     public:
+        CT_OMathParaPr();
         bool has_jc() const;
         CT_OMathJc* mutable_jc();
         const CT_OMathJc& get_jc() const;
@@ -2505,22 +2578,24 @@ namespace ns_m {
     class CT_TwipsMeasure: public XSD::ComplexType
     {
     public:
+        CT_TwipsMeasure();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TwipsMeasure& default_instance();
-        bool has_s_val_attr() const;
-        void set_s_val_attr(const ns_s::ST_TwipsMeasure& _s_val_attr);
-        const ns_s::ST_TwipsMeasure& get_s_val_attr() const;
+        bool has_val_attr() const;
+        void set_val_attr(const ns_s::ST_TwipsMeasure& _val_attr);
+        const ns_s::ST_TwipsMeasure& get_val_attr() const;
     protected:
     private:
         static CT_TwipsMeasure* default_instance_;
-        bool m_has_s_val_attr;
-        ns_s::ST_TwipsMeasure* m_s_val_attr;
+        bool m_has_val_attr;
+        ns_s::ST_TwipsMeasure* m_val_attr;
     };
 
     class CT_BreakBin: public XSD::ComplexType
     {
     public:
+        CT_BreakBin();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BreakBin& default_instance();
@@ -2537,6 +2612,7 @@ namespace ns_m {
     class CT_BreakBinSub: public XSD::ComplexType
     {
     public:
+        CT_BreakBinSub();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BreakBinSub& default_instance();
@@ -2553,6 +2629,7 @@ namespace ns_m {
     class CT_MathPr: public XSD::ComplexType
     {
     public:
+        CT_MathPr();
         bool has_mathFont() const;
         CT_String* mutable_mathFont();
         const CT_String& get_mathFont() const;
@@ -2644,6 +2721,7 @@ namespace ns_m {
     class CT_OMathPara: public XSD::ComplexType
     {
     public:
+        CT_OMathPara();
         bool has_oMathParaPr() const;
         CT_OMathParaPr* mutable_oMathParaPr();
         const CT_OMathParaPr& get_oMathParaPr() const;
@@ -2656,6 +2734,7 @@ namespace ns_m {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_oMath() const;
             CT_OMath* mutable_oMath();
             const CT_OMath& get_oMath() const;
@@ -2673,6 +2752,7 @@ namespace ns_m {
     class CT_OMath: public XSD::ComplexType
     {
     public:
+        CT_OMath();
         CT_Acc* add_acc();
         CT_Bar* add_bar();
         CT_Box* add_box();
@@ -2731,6 +2811,7 @@ namespace ns_m {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_acc() const;
             CT_Acc* mutable_acc();
             const CT_Acc& get_acc() const;
@@ -2991,6 +3072,7 @@ namespace ns_m {
     class mathPr_element: public Element
     {
     public:
+        mathPr_element();
         bool has_mathFont() const;
         CT_String* mutable_mathFont();
         const CT_String& get_mathFont() const;
@@ -3082,6 +3164,7 @@ namespace ns_m {
     class oMathPara_element: public Element
     {
     public:
+        oMathPara_element();
         bool has_oMathParaPr() const;
         CT_OMathParaPr* mutable_oMathParaPr();
         const CT_OMathParaPr& get_oMathParaPr() const;
@@ -3094,6 +3177,7 @@ namespace ns_m {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_oMath() const;
             CT_OMath* mutable_oMath();
             const CT_OMath& get_oMath() const;
@@ -3111,6 +3195,7 @@ namespace ns_m {
     class oMath_element: public Element
     {
     public:
+        oMath_element();
         CT_Acc* add_acc();
         CT_Bar* add_bar();
         CT_Box* add_box();
@@ -3169,6 +3254,7 @@ namespace ns_m {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_acc() const;
             CT_Acc* mutable_acc();
             const CT_Acc& get_acc() const;

@@ -229,6 +229,7 @@ namespace ns_w10 {
     class CT_Border: public XSD::ComplexType
     {
     public:
+        CT_Border();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Border& default_instance();
@@ -255,6 +256,7 @@ namespace ns_w10 {
     class CT_Wrap: public XSD::ComplexType
     {
     public:
+        CT_Wrap();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Wrap& default_instance();
@@ -286,6 +288,7 @@ namespace ns_w10 {
     class CT_AnchorLock: public XSD::ComplexType
     {
     public:
+        CT_AnchorLock();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AnchorLock& default_instance();
@@ -297,6 +300,7 @@ namespace ns_w10 {
     class bordertop_element: public Element
     {
     public:
+        bordertop_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const bordertop_element& default_instance();
@@ -323,6 +327,7 @@ namespace ns_w10 {
     class borderleft_element: public Element
     {
     public:
+        borderleft_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const borderleft_element& default_instance();
@@ -349,6 +354,7 @@ namespace ns_w10 {
     class borderright_element: public Element
     {
     public:
+        borderright_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const borderright_element& default_instance();
@@ -375,6 +381,7 @@ namespace ns_w10 {
     class borderbottom_element: public Element
     {
     public:
+        borderbottom_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const borderbottom_element& default_instance();
@@ -401,6 +408,7 @@ namespace ns_w10 {
     class wrap_element: public Element
     {
     public:
+        wrap_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const wrap_element& default_instance();
@@ -432,6 +440,7 @@ namespace ns_w10 {
     class anchorlock_element: public Element
     {
     public:
+        anchorlock_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const anchorlock_element& default_instance();

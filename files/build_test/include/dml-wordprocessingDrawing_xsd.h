@@ -247,49 +247,51 @@ namespace ns_wp {
     class CT_EffectExtent: public XSD::ComplexType
     {
     public:
+        CT_EffectExtent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_EffectExtent& default_instance();
-        bool has_a_l_attr() const;
-        void set_a_l_attr(const ns_a::ST_Coordinate& _a_l_attr);
-        const ns_a::ST_Coordinate& get_a_l_attr() const;
-        bool has_a_t_attr() const;
-        void set_a_t_attr(const ns_a::ST_Coordinate& _a_t_attr);
-        const ns_a::ST_Coordinate& get_a_t_attr() const;
-        bool has_a_r_attr() const;
-        void set_a_r_attr(const ns_a::ST_Coordinate& _a_r_attr);
-        const ns_a::ST_Coordinate& get_a_r_attr() const;
-        bool has_a_b_attr() const;
-        void set_a_b_attr(const ns_a::ST_Coordinate& _a_b_attr);
-        const ns_a::ST_Coordinate& get_a_b_attr() const;
+        bool has_l_attr() const;
+        void set_l_attr(const ns_a::ST_Coordinate& _l_attr);
+        const ns_a::ST_Coordinate& get_l_attr() const;
+        bool has_t_attr() const;
+        void set_t_attr(const ns_a::ST_Coordinate& _t_attr);
+        const ns_a::ST_Coordinate& get_t_attr() const;
+        bool has_r_attr() const;
+        void set_r_attr(const ns_a::ST_Coordinate& _r_attr);
+        const ns_a::ST_Coordinate& get_r_attr() const;
+        bool has_b_attr() const;
+        void set_b_attr(const ns_a::ST_Coordinate& _b_attr);
+        const ns_a::ST_Coordinate& get_b_attr() const;
     protected:
     private:
         static CT_EffectExtent* default_instance_;
-        bool m_has_a_l_attr;
-        ns_a::ST_Coordinate* m_a_l_attr;
-        bool m_has_a_t_attr;
-        ns_a::ST_Coordinate* m_a_t_attr;
-        bool m_has_a_r_attr;
-        ns_a::ST_Coordinate* m_a_r_attr;
-        bool m_has_a_b_attr;
-        ns_a::ST_Coordinate* m_a_b_attr;
+        bool m_has_l_attr;
+        ns_a::ST_Coordinate* m_l_attr;
+        bool m_has_t_attr;
+        ns_a::ST_Coordinate* m_t_attr;
+        bool m_has_r_attr;
+        ns_a::ST_Coordinate* m_r_attr;
+        bool m_has_b_attr;
+        ns_a::ST_Coordinate* m_b_attr;
     };
 
     class CT_Inline: public XSD::ComplexType
     {
     public:
-        bool has_a_extent() const;
-        ns_a::CT_PositiveSize2D* mutable_a_extent();
-        const ns_a::CT_PositiveSize2D& get_a_extent() const;
+        CT_Inline();
+        bool has_extent() const;
+        ns_a::CT_PositiveSize2D* mutable_extent();
+        const ns_a::CT_PositiveSize2D& get_extent() const;
         bool has_effectExtent() const;
         CT_EffectExtent* mutable_effectExtent();
         const CT_EffectExtent& get_effectExtent() const;
-        bool has_a_docPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_docPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_docPr() const;
-        bool has_a_cNvGraphicFramePr() const;
-        ns_a::CT_NonVisualGraphicFrameProperties* mutable_a_cNvGraphicFramePr();
-        const ns_a::CT_NonVisualGraphicFrameProperties& get_a_cNvGraphicFramePr() const;
+        bool has_docPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_docPr();
+        const ns_a::CT_NonVisualDrawingProps& get_docPr() const;
+        bool has_cNvGraphicFramePr() const;
+        ns_a::CT_NonVisualGraphicFrameProperties* mutable_cNvGraphicFramePr();
+        const ns_a::CT_NonVisualGraphicFrameProperties& get_cNvGraphicFramePr() const;
         bool has_a_graphic() const;
         ns_a::CT_GraphicalObject* mutable_a_graphic();
         const ns_a::CT_GraphicalObject& get_a_graphic() const;
@@ -310,14 +312,14 @@ namespace ns_wp {
         const ST_WrapDistance& get_distR_attr() const;
     protected:
     private:
-        bool m_has_a_extent;
-        ns_a::CT_PositiveSize2D* m_a_extent;
+        bool m_has_extent;
+        ns_a::CT_PositiveSize2D* m_extent;
         bool m_has_effectExtent;
         CT_EffectExtent* m_effectExtent;
-        bool m_has_a_docPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_docPr;
-        bool m_has_a_cNvGraphicFramePr;
-        ns_a::CT_NonVisualGraphicFrameProperties* m_a_cNvGraphicFramePr;
+        bool m_has_docPr;
+        ns_a::CT_NonVisualDrawingProps* m_docPr;
+        bool m_has_cNvGraphicFramePr;
+        ns_a::CT_NonVisualGraphicFrameProperties* m_cNvGraphicFramePr;
         bool m_has_a_graphic;
         ns_a::CT_GraphicalObject* m_a_graphic;
         static CT_Inline* default_instance_;
@@ -334,10 +336,11 @@ namespace ns_wp {
     class CT_WrapPath: public XSD::ComplexType
     {
     public:
-        bool has_a_start() const;
-        ns_a::CT_Point2D* mutable_a_start();
-        const ns_a::CT_Point2D& get_a_start() const;
-        ns_a::CT_Point2D* add_a_lineTo();
+        CT_WrapPath();
+        bool has_start() const;
+        ns_a::CT_Point2D* mutable_start();
+        const ns_a::CT_Point2D& get_start() const;
+        ns_a::CT_Point2D* add_lineTo();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WrapPath& default_instance();
@@ -349,16 +352,17 @@ namespace ns_wp {
         class ChildGroup_1
         {
         public:
-            bool has_a_lineTo() const;
-            ns_a::CT_Point2D* mutable_a_lineTo();
-            const ns_a::CT_Point2D& get_a_lineTo() const;
+            ChildGroup_1();
+            bool has_lineTo() const;
+            ns_a::CT_Point2D* mutable_lineTo();
+            const ns_a::CT_Point2D& get_lineTo() const;
         protected:
         private:
-            bool m_has_a_lineTo;
-            ns_a::CT_Point2D* m_a_lineTo;
+            bool m_has_lineTo;
+            ns_a::CT_Point2D* m_lineTo;
         };
-        bool m_has_a_start;
-        ns_a::CT_Point2D* m_a_start;
+        bool m_has_start;
+        ns_a::CT_Point2D* m_start;
         vector<ChildGroup_1*> m_childGroupList_1;
         static CT_WrapPath* default_instance_;
         bool m_has_edited_attr;
@@ -368,6 +372,7 @@ namespace ns_wp {
     class CT_WrapNone: public XSD::ComplexType
     {
     public:
+        CT_WrapNone();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WrapNone& default_instance();
@@ -379,6 +384,7 @@ namespace ns_wp {
     class CT_WrapSquare: public XSD::ComplexType
     {
     public:
+        CT_WrapSquare();
         bool has_effectExtent() const;
         CT_EffectExtent* mutable_effectExtent();
         const CT_EffectExtent& get_effectExtent() const;
@@ -420,6 +426,7 @@ namespace ns_wp {
     class CT_WrapTight: public XSD::ComplexType
     {
     public:
+        CT_WrapTight();
         bool has_wrapPolygon() const;
         CT_WrapPath* mutable_wrapPolygon();
         const CT_WrapPath& get_wrapPolygon() const;
@@ -451,6 +458,7 @@ namespace ns_wp {
     class CT_WrapThrough: public XSD::ComplexType
     {
     public:
+        CT_WrapThrough();
         bool has_wrapPolygon() const;
         CT_WrapPath* mutable_wrapPolygon();
         const CT_WrapPath& get_wrapPolygon() const;
@@ -482,6 +490,7 @@ namespace ns_wp {
     class CT_WrapTopBottom: public XSD::ComplexType
     {
     public:
+        CT_WrapTopBottom();
         bool has_effectExtent() const;
         CT_EffectExtent* mutable_effectExtent();
         const CT_EffectExtent& get_effectExtent() const;
@@ -508,6 +517,7 @@ namespace ns_wp {
     class CT_PosH: public XSD::ComplexType
     {
     public:
+        CT_PosH();
         bool has_align() const;
         ST_AlignH* mutable_align();
         const ST_AlignH& get_align() const;
@@ -534,6 +544,7 @@ namespace ns_wp {
     class CT_PosV: public XSD::ComplexType
     {
     public:
+        CT_PosV();
         bool has_align() const;
         ST_AlignV* mutable_align();
         const ST_AlignV& get_align() const;
@@ -560,18 +571,19 @@ namespace ns_wp {
     class CT_Anchor: public XSD::ComplexType
     {
     public:
-        bool has_a_simplePos() const;
-        ns_a::CT_Point2D* mutable_a_simplePos();
-        const ns_a::CT_Point2D& get_a_simplePos() const;
+        CT_Anchor();
+        bool has_simplePos() const;
+        ns_a::CT_Point2D* mutable_simplePos();
+        const ns_a::CT_Point2D& get_simplePos() const;
         bool has_positionH() const;
         CT_PosH* mutable_positionH();
         const CT_PosH& get_positionH() const;
         bool has_positionV() const;
         CT_PosV* mutable_positionV();
         const CT_PosV& get_positionV() const;
-        bool has_a_extent() const;
-        ns_a::CT_PositiveSize2D* mutable_a_extent();
-        const ns_a::CT_PositiveSize2D& get_a_extent() const;
+        bool has_extent() const;
+        ns_a::CT_PositiveSize2D* mutable_extent();
+        const ns_a::CT_PositiveSize2D& get_extent() const;
         bool has_effectExtent() const;
         CT_EffectExtent* mutable_effectExtent();
         const CT_EffectExtent& get_effectExtent() const;
@@ -590,12 +602,12 @@ namespace ns_wp {
         bool has_wrapTopAndBottom() const;
         CT_WrapTopBottom* mutable_wrapTopAndBottom();
         const CT_WrapTopBottom& get_wrapTopAndBottom() const;
-        bool has_a_docPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_docPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_docPr() const;
-        bool has_a_cNvGraphicFramePr() const;
-        ns_a::CT_NonVisualGraphicFrameProperties* mutable_a_cNvGraphicFramePr();
-        const ns_a::CT_NonVisualGraphicFrameProperties& get_a_cNvGraphicFramePr() const;
+        bool has_docPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_docPr();
+        const ns_a::CT_NonVisualDrawingProps& get_docPr() const;
+        bool has_cNvGraphicFramePr() const;
+        ns_a::CT_NonVisualGraphicFrameProperties* mutable_cNvGraphicFramePr();
+        const ns_a::CT_NonVisualGraphicFrameProperties& get_cNvGraphicFramePr() const;
         bool has_a_graphic() const;
         ns_a::CT_GraphicalObject* mutable_a_graphic();
         const ns_a::CT_GraphicalObject& get_a_graphic() const;
@@ -637,14 +649,14 @@ namespace ns_wp {
         const XSD::boolean_& get_allowOverlap_attr() const;
     protected:
     private:
-        bool m_has_a_simplePos;
-        ns_a::CT_Point2D* m_a_simplePos;
+        bool m_has_simplePos;
+        ns_a::CT_Point2D* m_simplePos;
         bool m_has_positionH;
         CT_PosH* m_positionH;
         bool m_has_positionV;
         CT_PosV* m_positionV;
-        bool m_has_a_extent;
-        ns_a::CT_PositiveSize2D* m_a_extent;
+        bool m_has_extent;
+        ns_a::CT_PositiveSize2D* m_extent;
         bool m_has_effectExtent;
         CT_EffectExtent* m_effectExtent;
         bool m_has_wrapNone;
@@ -657,10 +669,10 @@ namespace ns_wp {
         CT_WrapThrough* m_wrapThrough;
         bool m_has_wrapTopAndBottom;
         CT_WrapTopBottom* m_wrapTopAndBottom;
-        bool m_has_a_docPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_docPr;
-        bool m_has_a_cNvGraphicFramePr;
-        ns_a::CT_NonVisualGraphicFrameProperties* m_a_cNvGraphicFramePr;
+        bool m_has_docPr;
+        ns_a::CT_NonVisualDrawingProps* m_docPr;
+        bool m_has_cNvGraphicFramePr;
+        ns_a::CT_NonVisualGraphicFrameProperties* m_cNvGraphicFramePr;
         bool m_has_a_graphic;
         ns_a::CT_GraphicalObject* m_a_graphic;
         static CT_Anchor* default_instance_;
@@ -691,6 +703,7 @@ namespace ns_wp {
     class CT_TxbxContent: public XSD::ComplexType
     {
     public:
+        CT_TxbxContent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TxbxContent& default_instance();
@@ -702,12 +715,13 @@ namespace ns_wp {
     class CT_TextboxInfo: public XSD::ComplexType
     {
     public:
+        CT_TextboxInfo();
         bool has_txbxContent() const;
         CT_TxbxContent* mutable_txbxContent();
         const CT_TxbxContent& get_txbxContent() const;
-        bool has_a_extLst() const;
-        ns_a::CT_OfficeArtExtensionList* mutable_a_extLst();
-        const ns_a::CT_OfficeArtExtensionList& get_a_extLst() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextboxInfo& default_instance();
@@ -718,8 +732,8 @@ namespace ns_wp {
     private:
         bool m_has_txbxContent;
         CT_TxbxContent* m_txbxContent;
-        bool m_has_a_extLst;
-        ns_a::CT_OfficeArtExtensionList* m_a_extLst;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static CT_TextboxInfo* default_instance_;
         bool m_has_id_attr;
         XSD::unsignedShort_ m_id_attr;
@@ -728,9 +742,10 @@ namespace ns_wp {
     class CT_LinkedTextboxInformation: public XSD::ComplexType
     {
     public:
-        bool has_a_extLst() const;
-        ns_a::CT_OfficeArtExtensionList* mutable_a_extLst();
-        const ns_a::CT_OfficeArtExtensionList& get_a_extLst() const;
+        CT_LinkedTextboxInformation();
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LinkedTextboxInformation& default_instance();
@@ -742,8 +757,8 @@ namespace ns_wp {
         const XSD::unsignedShort_& get_seq_attr() const;
     protected:
     private:
-        bool m_has_a_extLst;
-        ns_a::CT_OfficeArtExtensionList* m_a_extLst;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static CT_LinkedTextboxInformation* default_instance_;
         bool m_has_id_attr;
         XSD::unsignedShort_ m_id_attr;
@@ -754,33 +769,34 @@ namespace ns_wp {
     class CT_WordprocessingShape: public XSD::ComplexType
     {
     public:
-        bool has_a_cNvPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_cNvPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_cNvPr() const;
-        bool has_a_cNvSpPr() const;
-        ns_a::CT_NonVisualDrawingShapeProps* mutable_a_cNvSpPr();
-        const ns_a::CT_NonVisualDrawingShapeProps& get_a_cNvSpPr() const;
-        bool has_a_cNvCnPr() const;
-        ns_a::CT_NonVisualConnectorProperties* mutable_a_cNvCnPr();
-        const ns_a::CT_NonVisualConnectorProperties& get_a_cNvCnPr() const;
-        bool has_a_spPr() const;
-        ns_a::CT_ShapeProperties* mutable_a_spPr();
-        const ns_a::CT_ShapeProperties& get_a_spPr() const;
-        bool has_a_style() const;
-        ns_a::CT_ShapeStyle* mutable_a_style();
-        const ns_a::CT_ShapeStyle& get_a_style() const;
-        bool has_a_extLst() const;
-        ns_a::CT_OfficeArtExtensionList* mutable_a_extLst();
-        const ns_a::CT_OfficeArtExtensionList& get_a_extLst() const;
+        CT_WordprocessingShape();
+        bool has_cNvPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
+        const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
+        bool has_cNvSpPr() const;
+        ns_a::CT_NonVisualDrawingShapeProps* mutable_cNvSpPr();
+        const ns_a::CT_NonVisualDrawingShapeProps& get_cNvSpPr() const;
+        bool has_cNvCnPr() const;
+        ns_a::CT_NonVisualConnectorProperties* mutable_cNvCnPr();
+        const ns_a::CT_NonVisualConnectorProperties& get_cNvCnPr() const;
+        bool has_spPr() const;
+        ns_a::CT_ShapeProperties* mutable_spPr();
+        const ns_a::CT_ShapeProperties& get_spPr() const;
+        bool has_style() const;
+        ns_a::CT_ShapeStyle* mutable_style();
+        const ns_a::CT_ShapeStyle& get_style() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         bool has_txbx() const;
         CT_TextboxInfo* mutable_txbx();
         const CT_TextboxInfo& get_txbx() const;
         bool has_linkedTxbx() const;
         CT_LinkedTextboxInformation* mutable_linkedTxbx();
         const CT_LinkedTextboxInformation& get_linkedTxbx() const;
-        bool has_a_bodyPr() const;
-        ns_a::CT_TextBodyProperties* mutable_a_bodyPr();
-        const ns_a::CT_TextBodyProperties& get_a_bodyPr() const;
+        bool has_bodyPr() const;
+        ns_a::CT_TextBodyProperties* mutable_bodyPr();
+        const ns_a::CT_TextBodyProperties& get_bodyPr() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WordprocessingShape& default_instance();
@@ -789,24 +805,24 @@ namespace ns_wp {
         const XSD::boolean_& get_normalEastAsianFlow_attr() const;
     protected:
     private:
-        bool m_has_a_cNvPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_cNvPr;
-        bool m_has_a_cNvSpPr;
-        ns_a::CT_NonVisualDrawingShapeProps* m_a_cNvSpPr;
-        bool m_has_a_cNvCnPr;
-        ns_a::CT_NonVisualConnectorProperties* m_a_cNvCnPr;
-        bool m_has_a_spPr;
-        ns_a::CT_ShapeProperties* m_a_spPr;
-        bool m_has_a_style;
-        ns_a::CT_ShapeStyle* m_a_style;
-        bool m_has_a_extLst;
-        ns_a::CT_OfficeArtExtensionList* m_a_extLst;
+        bool m_has_cNvPr;
+        ns_a::CT_NonVisualDrawingProps* m_cNvPr;
+        bool m_has_cNvSpPr;
+        ns_a::CT_NonVisualDrawingShapeProps* m_cNvSpPr;
+        bool m_has_cNvCnPr;
+        ns_a::CT_NonVisualConnectorProperties* m_cNvCnPr;
+        bool m_has_spPr;
+        ns_a::CT_ShapeProperties* m_spPr;
+        bool m_has_style;
+        ns_a::CT_ShapeStyle* m_style;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         bool m_has_txbx;
         CT_TextboxInfo* m_txbx;
         bool m_has_linkedTxbx;
         CT_LinkedTextboxInformation* m_linkedTxbx;
-        bool m_has_a_bodyPr;
-        ns_a::CT_TextBodyProperties* m_a_bodyPr;
+        bool m_has_bodyPr;
+        ns_a::CT_TextBodyProperties* m_bodyPr;
         static CT_WordprocessingShape* default_instance_;
         bool m_has_normalEastAsianFlow_attr;
         XSD::boolean_ m_normalEastAsianFlow_attr;
@@ -815,78 +831,81 @@ namespace ns_wp {
     class CT_GraphicFrame: public XSD::ComplexType
     {
     public:
-        bool has_a_cNvPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_cNvPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_cNvPr() const;
-        bool has_a_cNvFrPr() const;
-        ns_a::CT_NonVisualGraphicFrameProperties* mutable_a_cNvFrPr();
-        const ns_a::CT_NonVisualGraphicFrameProperties& get_a_cNvFrPr() const;
-        bool has_a_xfrm() const;
-        ns_a::CT_Transform2D* mutable_a_xfrm();
-        const ns_a::CT_Transform2D& get_a_xfrm() const;
+        CT_GraphicFrame();
+        bool has_cNvPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
+        const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
+        bool has_cNvFrPr() const;
+        ns_a::CT_NonVisualGraphicFrameProperties* mutable_cNvFrPr();
+        const ns_a::CT_NonVisualGraphicFrameProperties& get_cNvFrPr() const;
+        bool has_xfrm() const;
+        ns_a::CT_Transform2D* mutable_xfrm();
+        const ns_a::CT_Transform2D& get_xfrm() const;
         bool has_a_graphic() const;
         ns_a::CT_GraphicalObject* mutable_a_graphic();
         const ns_a::CT_GraphicalObject& get_a_graphic() const;
-        bool has_a_extLst() const;
-        ns_a::CT_OfficeArtExtensionList* mutable_a_extLst();
-        const ns_a::CT_OfficeArtExtensionList& get_a_extLst() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_GraphicFrame& default_instance();
     protected:
     private:
-        bool m_has_a_cNvPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_cNvPr;
-        bool m_has_a_cNvFrPr;
-        ns_a::CT_NonVisualGraphicFrameProperties* m_a_cNvFrPr;
-        bool m_has_a_xfrm;
-        ns_a::CT_Transform2D* m_a_xfrm;
+        bool m_has_cNvPr;
+        ns_a::CT_NonVisualDrawingProps* m_cNvPr;
+        bool m_has_cNvFrPr;
+        ns_a::CT_NonVisualGraphicFrameProperties* m_cNvFrPr;
+        bool m_has_xfrm;
+        ns_a::CT_Transform2D* m_xfrm;
         bool m_has_a_graphic;
         ns_a::CT_GraphicalObject* m_a_graphic;
-        bool m_has_a_extLst;
-        ns_a::CT_OfficeArtExtensionList* m_a_extLst;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static CT_GraphicFrame* default_instance_;
     };
 
     class CT_WordprocessingContentPartNonVisual: public XSD::ComplexType
     {
     public:
-        bool has_a_cNvPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_cNvPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_cNvPr() const;
-        bool has_a_cNvContentPartPr() const;
-        ns_a::CT_NonVisualContentPartProperties* mutable_a_cNvContentPartPr();
-        const ns_a::CT_NonVisualContentPartProperties& get_a_cNvContentPartPr() const;
+        CT_WordprocessingContentPartNonVisual();
+        bool has_cNvPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
+        const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
+        bool has_cNvContentPartPr() const;
+        ns_a::CT_NonVisualContentPartProperties* mutable_cNvContentPartPr();
+        const ns_a::CT_NonVisualContentPartProperties& get_cNvContentPartPr() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WordprocessingContentPartNonVisual& default_instance();
     protected:
     private:
-        bool m_has_a_cNvPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_cNvPr;
-        bool m_has_a_cNvContentPartPr;
-        ns_a::CT_NonVisualContentPartProperties* m_a_cNvContentPartPr;
+        bool m_has_cNvPr;
+        ns_a::CT_NonVisualDrawingProps* m_cNvPr;
+        bool m_has_cNvContentPartPr;
+        ns_a::CT_NonVisualContentPartProperties* m_cNvContentPartPr;
         static CT_WordprocessingContentPartNonVisual* default_instance_;
     };
 
     class CT_WordprocessingContentPart: public XSD::ComplexType
     {
     public:
+        CT_WordprocessingContentPart();
         bool has_nvContentPartPr() const;
         CT_WordprocessingContentPartNonVisual* mutable_nvContentPartPr();
         const CT_WordprocessingContentPartNonVisual& get_nvContentPartPr() const;
-        bool has_a_xfrm() const;
-        ns_a::CT_Transform2D* mutable_a_xfrm();
-        const ns_a::CT_Transform2D& get_a_xfrm() const;
-        bool has_a_extLst() const;
-        ns_a::CT_OfficeArtExtensionList* mutable_a_extLst();
-        const ns_a::CT_OfficeArtExtensionList& get_a_extLst() const;
+        bool has_xfrm() const;
+        ns_a::CT_Transform2D* mutable_xfrm();
+        const ns_a::CT_Transform2D& get_xfrm() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WordprocessingContentPart& default_instance();
-        bool has_a_bwMode_attr() const;
-        void set_a_bwMode_attr(const ns_a::ST_BlackWhiteMode& _a_bwMode_attr);
-        const ns_a::ST_BlackWhiteMode& get_a_bwMode_attr() const;
+        bool has_bwMode_attr() const;
+        void set_bwMode_attr(const ns_a::ST_BlackWhiteMode& _bwMode_attr);
+        const ns_a::ST_BlackWhiteMode& get_bwMode_attr() const;
         bool has_r_id_attr() const;
         void set_r_id_attr(const ns_r::ST_RelationshipId& _r_id_attr);
         const ns_r::ST_RelationshipId& get_r_id_attr() const;
@@ -894,13 +913,13 @@ namespace ns_wp {
     private:
         bool m_has_nvContentPartPr;
         CT_WordprocessingContentPartNonVisual* m_nvContentPartPr;
-        bool m_has_a_xfrm;
-        ns_a::CT_Transform2D* m_a_xfrm;
-        bool m_has_a_extLst;
-        ns_a::CT_OfficeArtExtensionList* m_a_extLst;
+        bool m_has_xfrm;
+        ns_a::CT_Transform2D* m_xfrm;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static CT_WordprocessingContentPart* default_instance_;
-        bool m_has_a_bwMode_attr;
-        ns_a::ST_BlackWhiteMode* m_a_bwMode_attr;
+        bool m_has_bwMode_attr;
+        ns_a::ST_BlackWhiteMode* m_bwMode_attr;
         bool m_has_r_id_attr;
         ns_r::ST_RelationshipId* m_r_id_attr;
     };
@@ -908,23 +927,24 @@ namespace ns_wp {
     class CT_WordprocessingGroup: public XSD::ComplexType
     {
     public:
-        bool has_a_cNvPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_cNvPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_cNvPr() const;
-        bool has_a_cNvGrpSpPr() const;
-        ns_a::CT_NonVisualGroupDrawingShapeProps* mutable_a_cNvGrpSpPr();
-        const ns_a::CT_NonVisualGroupDrawingShapeProps& get_a_cNvGrpSpPr() const;
-        bool has_a_grpSpPr() const;
-        ns_a::CT_GroupShapeProperties* mutable_a_grpSpPr();
-        const ns_a::CT_GroupShapeProperties& get_a_grpSpPr() const;
+        CT_WordprocessingGroup();
+        bool has_cNvPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
+        const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
+        bool has_cNvGrpSpPr() const;
+        ns_a::CT_NonVisualGroupDrawingShapeProps* mutable_cNvGrpSpPr();
+        const ns_a::CT_NonVisualGroupDrawingShapeProps& get_cNvGrpSpPr() const;
+        bool has_grpSpPr() const;
+        ns_a::CT_GroupShapeProperties* mutable_grpSpPr();
+        const ns_a::CT_GroupShapeProperties& get_grpSpPr() const;
         CT_WordprocessingShape* add_wsp();
         CT_WordprocessingGroup* add_grpSp();
         CT_GraphicFrame* add_graphicFrame();
         ns_dpct::CT_Picture* add_dpct_pic();
         CT_WordprocessingContentPart* add_contentPart();
-        bool has_a_extLst() const;
-        ns_a::CT_OfficeArtExtensionList* mutable_a_extLst();
-        const ns_a::CT_OfficeArtExtensionList& get_a_extLst() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WordprocessingGroup& default_instance();
@@ -933,6 +953,7 @@ namespace ns_wp {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_wsp() const;
             CT_WordprocessingShape* mutable_wsp();
             const CT_WordprocessingShape& get_wsp() const;
@@ -961,35 +982,36 @@ namespace ns_wp {
             bool m_has_contentPart;
             CT_WordprocessingContentPart* m_contentPart;
         };
-        bool m_has_a_cNvPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_cNvPr;
-        bool m_has_a_cNvGrpSpPr;
-        ns_a::CT_NonVisualGroupDrawingShapeProps* m_a_cNvGrpSpPr;
-        bool m_has_a_grpSpPr;
-        ns_a::CT_GroupShapeProperties* m_a_grpSpPr;
+        bool m_has_cNvPr;
+        ns_a::CT_NonVisualDrawingProps* m_cNvPr;
+        bool m_has_cNvGrpSpPr;
+        ns_a::CT_NonVisualGroupDrawingShapeProps* m_cNvGrpSpPr;
+        bool m_has_grpSpPr;
+        ns_a::CT_GroupShapeProperties* m_grpSpPr;
         vector<ChildGroup_1*> m_childGroupList_1;
-        bool m_has_a_extLst;
-        ns_a::CT_OfficeArtExtensionList* m_a_extLst;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static CT_WordprocessingGroup* default_instance_;
     };
 
     class CT_WordprocessingCanvas: public XSD::ComplexType
     {
     public:
-        bool has_a_bg() const;
-        ns_a::CT_BackgroundFormatting* mutable_a_bg();
-        const ns_a::CT_BackgroundFormatting& get_a_bg() const;
-        bool has_a_whole() const;
-        ns_a::CT_WholeE2oFormatting* mutable_a_whole();
-        const ns_a::CT_WholeE2oFormatting& get_a_whole() const;
+        CT_WordprocessingCanvas();
+        bool has_bg() const;
+        ns_a::CT_BackgroundFormatting* mutable_bg();
+        const ns_a::CT_BackgroundFormatting& get_bg() const;
+        bool has_whole() const;
+        ns_a::CT_WholeE2oFormatting* mutable_whole();
+        const ns_a::CT_WholeE2oFormatting& get_whole() const;
         CT_WordprocessingShape* add_wsp();
         ns_dpct::CT_Picture* add_dpct_pic();
         CT_WordprocessingContentPart* add_contentPart();
         CT_WordprocessingGroup* add_wgp();
         CT_GraphicFrame* add_graphicFrame();
-        bool has_a_extLst() const;
-        ns_a::CT_OfficeArtExtensionList* mutable_a_extLst();
-        const ns_a::CT_OfficeArtExtensionList& get_a_extLst() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WordprocessingCanvas& default_instance();
@@ -998,6 +1020,7 @@ namespace ns_wp {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_wsp() const;
             CT_WordprocessingShape* mutable_wsp();
             const CT_WordprocessingShape& get_wsp() const;
@@ -1026,33 +1049,34 @@ namespace ns_wp {
             bool m_has_graphicFrame;
             CT_GraphicFrame* m_graphicFrame;
         };
-        bool m_has_a_bg;
-        ns_a::CT_BackgroundFormatting* m_a_bg;
-        bool m_has_a_whole;
-        ns_a::CT_WholeE2oFormatting* m_a_whole;
+        bool m_has_bg;
+        ns_a::CT_BackgroundFormatting* m_bg;
+        bool m_has_whole;
+        ns_a::CT_WholeE2oFormatting* m_whole;
         vector<ChildGroup_1*> m_childGroupList_1;
-        bool m_has_a_extLst;
-        ns_a::CT_OfficeArtExtensionList* m_a_extLst;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static CT_WordprocessingCanvas* default_instance_;
     };
 
     class wpc_element: public Element
     {
     public:
-        bool has_a_bg() const;
-        ns_a::CT_BackgroundFormatting* mutable_a_bg();
-        const ns_a::CT_BackgroundFormatting& get_a_bg() const;
-        bool has_a_whole() const;
-        ns_a::CT_WholeE2oFormatting* mutable_a_whole();
-        const ns_a::CT_WholeE2oFormatting& get_a_whole() const;
+        wpc_element();
+        bool has_bg() const;
+        ns_a::CT_BackgroundFormatting* mutable_bg();
+        const ns_a::CT_BackgroundFormatting& get_bg() const;
+        bool has_whole() const;
+        ns_a::CT_WholeE2oFormatting* mutable_whole();
+        const ns_a::CT_WholeE2oFormatting& get_whole() const;
         CT_WordprocessingShape* add_wsp();
         ns_dpct::CT_Picture* add_dpct_pic();
         CT_WordprocessingContentPart* add_contentPart();
         CT_WordprocessingGroup* add_wgp();
         CT_GraphicFrame* add_graphicFrame();
-        bool has_a_extLst() const;
-        ns_a::CT_OfficeArtExtensionList* mutable_a_extLst();
-        const ns_a::CT_OfficeArtExtensionList& get_a_extLst() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const wpc_element& default_instance();
@@ -1061,6 +1085,7 @@ namespace ns_wp {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_wsp() const;
             CT_WordprocessingShape* mutable_wsp();
             const CT_WordprocessingShape& get_wsp() const;
@@ -1089,36 +1114,37 @@ namespace ns_wp {
             bool m_has_graphicFrame;
             CT_GraphicFrame* m_graphicFrame;
         };
-        bool m_has_a_bg;
-        ns_a::CT_BackgroundFormatting* m_a_bg;
-        bool m_has_a_whole;
-        ns_a::CT_WholeE2oFormatting* m_a_whole;
+        bool m_has_bg;
+        ns_a::CT_BackgroundFormatting* m_bg;
+        bool m_has_whole;
+        ns_a::CT_WholeE2oFormatting* m_whole;
         vector<ChildGroup_1*> m_childGroupList_1;
-        bool m_has_a_extLst;
-        ns_a::CT_OfficeArtExtensionList* m_a_extLst;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static wpc_element* default_instance_;
     };
 
     class wgp_element: public Element
     {
     public:
-        bool has_a_cNvPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_cNvPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_cNvPr() const;
-        bool has_a_cNvGrpSpPr() const;
-        ns_a::CT_NonVisualGroupDrawingShapeProps* mutable_a_cNvGrpSpPr();
-        const ns_a::CT_NonVisualGroupDrawingShapeProps& get_a_cNvGrpSpPr() const;
-        bool has_a_grpSpPr() const;
-        ns_a::CT_GroupShapeProperties* mutable_a_grpSpPr();
-        const ns_a::CT_GroupShapeProperties& get_a_grpSpPr() const;
+        wgp_element();
+        bool has_cNvPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
+        const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
+        bool has_cNvGrpSpPr() const;
+        ns_a::CT_NonVisualGroupDrawingShapeProps* mutable_cNvGrpSpPr();
+        const ns_a::CT_NonVisualGroupDrawingShapeProps& get_cNvGrpSpPr() const;
+        bool has_grpSpPr() const;
+        ns_a::CT_GroupShapeProperties* mutable_grpSpPr();
+        const ns_a::CT_GroupShapeProperties& get_grpSpPr() const;
         CT_WordprocessingShape* add_wsp();
         CT_WordprocessingGroup* add_grpSp();
         CT_GraphicFrame* add_graphicFrame();
         ns_dpct::CT_Picture* add_dpct_pic();
         CT_WordprocessingContentPart* add_contentPart();
-        bool has_a_extLst() const;
-        ns_a::CT_OfficeArtExtensionList* mutable_a_extLst();
-        const ns_a::CT_OfficeArtExtensionList& get_a_extLst() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const wgp_element& default_instance();
@@ -1127,6 +1153,7 @@ namespace ns_wp {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_wsp() const;
             CT_WordprocessingShape* mutable_wsp();
             const CT_WordprocessingShape& get_wsp() const;
@@ -1155,48 +1182,49 @@ namespace ns_wp {
             bool m_has_contentPart;
             CT_WordprocessingContentPart* m_contentPart;
         };
-        bool m_has_a_cNvPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_cNvPr;
-        bool m_has_a_cNvGrpSpPr;
-        ns_a::CT_NonVisualGroupDrawingShapeProps* m_a_cNvGrpSpPr;
-        bool m_has_a_grpSpPr;
-        ns_a::CT_GroupShapeProperties* m_a_grpSpPr;
+        bool m_has_cNvPr;
+        ns_a::CT_NonVisualDrawingProps* m_cNvPr;
+        bool m_has_cNvGrpSpPr;
+        ns_a::CT_NonVisualGroupDrawingShapeProps* m_cNvGrpSpPr;
+        bool m_has_grpSpPr;
+        ns_a::CT_GroupShapeProperties* m_grpSpPr;
         vector<ChildGroup_1*> m_childGroupList_1;
-        bool m_has_a_extLst;
-        ns_a::CT_OfficeArtExtensionList* m_a_extLst;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static wgp_element* default_instance_;
     };
 
     class wsp_element: public Element
     {
     public:
-        bool has_a_cNvPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_cNvPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_cNvPr() const;
-        bool has_a_cNvSpPr() const;
-        ns_a::CT_NonVisualDrawingShapeProps* mutable_a_cNvSpPr();
-        const ns_a::CT_NonVisualDrawingShapeProps& get_a_cNvSpPr() const;
-        bool has_a_cNvCnPr() const;
-        ns_a::CT_NonVisualConnectorProperties* mutable_a_cNvCnPr();
-        const ns_a::CT_NonVisualConnectorProperties& get_a_cNvCnPr() const;
-        bool has_a_spPr() const;
-        ns_a::CT_ShapeProperties* mutable_a_spPr();
-        const ns_a::CT_ShapeProperties& get_a_spPr() const;
-        bool has_a_style() const;
-        ns_a::CT_ShapeStyle* mutable_a_style();
-        const ns_a::CT_ShapeStyle& get_a_style() const;
-        bool has_a_extLst() const;
-        ns_a::CT_OfficeArtExtensionList* mutable_a_extLst();
-        const ns_a::CT_OfficeArtExtensionList& get_a_extLst() const;
+        wsp_element();
+        bool has_cNvPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
+        const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
+        bool has_cNvSpPr() const;
+        ns_a::CT_NonVisualDrawingShapeProps* mutable_cNvSpPr();
+        const ns_a::CT_NonVisualDrawingShapeProps& get_cNvSpPr() const;
+        bool has_cNvCnPr() const;
+        ns_a::CT_NonVisualConnectorProperties* mutable_cNvCnPr();
+        const ns_a::CT_NonVisualConnectorProperties& get_cNvCnPr() const;
+        bool has_spPr() const;
+        ns_a::CT_ShapeProperties* mutable_spPr();
+        const ns_a::CT_ShapeProperties& get_spPr() const;
+        bool has_style() const;
+        ns_a::CT_ShapeStyle* mutable_style();
+        const ns_a::CT_ShapeStyle& get_style() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         bool has_txbx() const;
         CT_TextboxInfo* mutable_txbx();
         const CT_TextboxInfo& get_txbx() const;
         bool has_linkedTxbx() const;
         CT_LinkedTextboxInformation* mutable_linkedTxbx();
         const CT_LinkedTextboxInformation& get_linkedTxbx() const;
-        bool has_a_bodyPr() const;
-        ns_a::CT_TextBodyProperties* mutable_a_bodyPr();
-        const ns_a::CT_TextBodyProperties& get_a_bodyPr() const;
+        bool has_bodyPr() const;
+        ns_a::CT_TextBodyProperties* mutable_bodyPr();
+        const ns_a::CT_TextBodyProperties& get_bodyPr() const;
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const wsp_element& default_instance();
@@ -1205,24 +1233,24 @@ namespace ns_wp {
         const XSD::boolean_& get_normalEastAsianFlow_attr() const;
     protected:
     private:
-        bool m_has_a_cNvPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_cNvPr;
-        bool m_has_a_cNvSpPr;
-        ns_a::CT_NonVisualDrawingShapeProps* m_a_cNvSpPr;
-        bool m_has_a_cNvCnPr;
-        ns_a::CT_NonVisualConnectorProperties* m_a_cNvCnPr;
-        bool m_has_a_spPr;
-        ns_a::CT_ShapeProperties* m_a_spPr;
-        bool m_has_a_style;
-        ns_a::CT_ShapeStyle* m_a_style;
-        bool m_has_a_extLst;
-        ns_a::CT_OfficeArtExtensionList* m_a_extLst;
+        bool m_has_cNvPr;
+        ns_a::CT_NonVisualDrawingProps* m_cNvPr;
+        bool m_has_cNvSpPr;
+        ns_a::CT_NonVisualDrawingShapeProps* m_cNvSpPr;
+        bool m_has_cNvCnPr;
+        ns_a::CT_NonVisualConnectorProperties* m_cNvCnPr;
+        bool m_has_spPr;
+        ns_a::CT_ShapeProperties* m_spPr;
+        bool m_has_style;
+        ns_a::CT_ShapeStyle* m_style;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         bool m_has_txbx;
         CT_TextboxInfo* m_txbx;
         bool m_has_linkedTxbx;
         CT_LinkedTextboxInformation* m_linkedTxbx;
-        bool m_has_a_bodyPr;
-        ns_a::CT_TextBodyProperties* m_a_bodyPr;
+        bool m_has_bodyPr;
+        ns_a::CT_TextBodyProperties* m_bodyPr;
         static wsp_element* default_instance_;
         bool m_has_normalEastAsianFlow_attr;
         XSD::boolean_ m_normalEastAsianFlow_attr;
@@ -1231,18 +1259,19 @@ namespace ns_wp {
     class inline_element: public Element
     {
     public:
-        bool has_a_extent() const;
-        ns_a::CT_PositiveSize2D* mutable_a_extent();
-        const ns_a::CT_PositiveSize2D& get_a_extent() const;
+        inline_element();
+        bool has_extent() const;
+        ns_a::CT_PositiveSize2D* mutable_extent();
+        const ns_a::CT_PositiveSize2D& get_extent() const;
         bool has_effectExtent() const;
         CT_EffectExtent* mutable_effectExtent();
         const CT_EffectExtent& get_effectExtent() const;
-        bool has_a_docPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_docPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_docPr() const;
-        bool has_a_cNvGraphicFramePr() const;
-        ns_a::CT_NonVisualGraphicFrameProperties* mutable_a_cNvGraphicFramePr();
-        const ns_a::CT_NonVisualGraphicFrameProperties& get_a_cNvGraphicFramePr() const;
+        bool has_docPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_docPr();
+        const ns_a::CT_NonVisualDrawingProps& get_docPr() const;
+        bool has_cNvGraphicFramePr() const;
+        ns_a::CT_NonVisualGraphicFrameProperties* mutable_cNvGraphicFramePr();
+        const ns_a::CT_NonVisualGraphicFrameProperties& get_cNvGraphicFramePr() const;
         bool has_a_graphic() const;
         ns_a::CT_GraphicalObject* mutable_a_graphic();
         const ns_a::CT_GraphicalObject& get_a_graphic() const;
@@ -1263,14 +1292,14 @@ namespace ns_wp {
         const ST_WrapDistance& get_distR_attr() const;
     protected:
     private:
-        bool m_has_a_extent;
-        ns_a::CT_PositiveSize2D* m_a_extent;
+        bool m_has_extent;
+        ns_a::CT_PositiveSize2D* m_extent;
         bool m_has_effectExtent;
         CT_EffectExtent* m_effectExtent;
-        bool m_has_a_docPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_docPr;
-        bool m_has_a_cNvGraphicFramePr;
-        ns_a::CT_NonVisualGraphicFrameProperties* m_a_cNvGraphicFramePr;
+        bool m_has_docPr;
+        ns_a::CT_NonVisualDrawingProps* m_docPr;
+        bool m_has_cNvGraphicFramePr;
+        ns_a::CT_NonVisualGraphicFrameProperties* m_cNvGraphicFramePr;
         bool m_has_a_graphic;
         ns_a::CT_GraphicalObject* m_a_graphic;
         static inline_element* default_instance_;
@@ -1287,18 +1316,19 @@ namespace ns_wp {
     class anchor_element: public Element
     {
     public:
-        bool has_a_simplePos() const;
-        ns_a::CT_Point2D* mutable_a_simplePos();
-        const ns_a::CT_Point2D& get_a_simplePos() const;
+        anchor_element();
+        bool has_simplePos() const;
+        ns_a::CT_Point2D* mutable_simplePos();
+        const ns_a::CT_Point2D& get_simplePos() const;
         bool has_positionH() const;
         CT_PosH* mutable_positionH();
         const CT_PosH& get_positionH() const;
         bool has_positionV() const;
         CT_PosV* mutable_positionV();
         const CT_PosV& get_positionV() const;
-        bool has_a_extent() const;
-        ns_a::CT_PositiveSize2D* mutable_a_extent();
-        const ns_a::CT_PositiveSize2D& get_a_extent() const;
+        bool has_extent() const;
+        ns_a::CT_PositiveSize2D* mutable_extent();
+        const ns_a::CT_PositiveSize2D& get_extent() const;
         bool has_effectExtent() const;
         CT_EffectExtent* mutable_effectExtent();
         const CT_EffectExtent& get_effectExtent() const;
@@ -1317,12 +1347,12 @@ namespace ns_wp {
         bool has_wrapTopAndBottom() const;
         CT_WrapTopBottom* mutable_wrapTopAndBottom();
         const CT_WrapTopBottom& get_wrapTopAndBottom() const;
-        bool has_a_docPr() const;
-        ns_a::CT_NonVisualDrawingProps* mutable_a_docPr();
-        const ns_a::CT_NonVisualDrawingProps& get_a_docPr() const;
-        bool has_a_cNvGraphicFramePr() const;
-        ns_a::CT_NonVisualGraphicFrameProperties* mutable_a_cNvGraphicFramePr();
-        const ns_a::CT_NonVisualGraphicFrameProperties& get_a_cNvGraphicFramePr() const;
+        bool has_docPr() const;
+        ns_a::CT_NonVisualDrawingProps* mutable_docPr();
+        const ns_a::CT_NonVisualDrawingProps& get_docPr() const;
+        bool has_cNvGraphicFramePr() const;
+        ns_a::CT_NonVisualGraphicFrameProperties* mutable_cNvGraphicFramePr();
+        const ns_a::CT_NonVisualGraphicFrameProperties& get_cNvGraphicFramePr() const;
         bool has_a_graphic() const;
         ns_a::CT_GraphicalObject* mutable_a_graphic();
         const ns_a::CT_GraphicalObject& get_a_graphic() const;
@@ -1364,14 +1394,14 @@ namespace ns_wp {
         const XSD::boolean_& get_allowOverlap_attr() const;
     protected:
     private:
-        bool m_has_a_simplePos;
-        ns_a::CT_Point2D* m_a_simplePos;
+        bool m_has_simplePos;
+        ns_a::CT_Point2D* m_simplePos;
         bool m_has_positionH;
         CT_PosH* m_positionH;
         bool m_has_positionV;
         CT_PosV* m_positionV;
-        bool m_has_a_extent;
-        ns_a::CT_PositiveSize2D* m_a_extent;
+        bool m_has_extent;
+        ns_a::CT_PositiveSize2D* m_extent;
         bool m_has_effectExtent;
         CT_EffectExtent* m_effectExtent;
         bool m_has_wrapNone;
@@ -1384,10 +1414,10 @@ namespace ns_wp {
         CT_WrapThrough* m_wrapThrough;
         bool m_has_wrapTopAndBottom;
         CT_WrapTopBottom* m_wrapTopAndBottom;
-        bool m_has_a_docPr;
-        ns_a::CT_NonVisualDrawingProps* m_a_docPr;
-        bool m_has_a_cNvGraphicFramePr;
-        ns_a::CT_NonVisualGraphicFrameProperties* m_a_cNvGraphicFramePr;
+        bool m_has_docPr;
+        ns_a::CT_NonVisualDrawingProps* m_docPr;
+        bool m_has_cNvGraphicFramePr;
+        ns_a::CT_NonVisualGraphicFrameProperties* m_cNvGraphicFramePr;
         bool m_has_a_graphic;
         ns_a::CT_GraphicalObject* m_a_graphic;
         static anchor_element* default_instance_;

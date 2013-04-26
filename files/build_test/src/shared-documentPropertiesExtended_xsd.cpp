@@ -12,6 +12,63 @@ namespace ns_extended_properties {
     // Attribute
 
     // CT_Properties
+    CT_Properties::CT_Properties()
+    :m_has_Template(false),
+    m_Template(""),
+    m_has_Manager(false),
+    m_Manager(""),
+    m_has_Company(false),
+    m_Company(""),
+    m_has_Pages(false),
+    m_Pages(0),
+    m_has_Words(false),
+    m_Words(0),
+    m_has_Characters(false),
+    m_Characters(0),
+    m_has_PresentationFormat(false),
+    m_PresentationFormat(""),
+    m_has_Lines(false),
+    m_Lines(0),
+    m_has_Paragraphs(false),
+    m_Paragraphs(0),
+    m_has_Slides(false),
+    m_Slides(0),
+    m_has_Notes(false),
+    m_Notes(0),
+    m_has_TotalTime(false),
+    m_TotalTime(0),
+    m_has_HiddenSlides(false),
+    m_HiddenSlides(0),
+    m_has_MMClips(false),
+    m_MMClips(0),
+    m_has_ScaleCrop(false),
+    m_ScaleCrop(false),
+    m_has_HeadingPairs(false),
+    m_HeadingPairs(NULL),
+    m_has_TitlesOfParts(false),
+    m_TitlesOfParts(NULL),
+    m_has_LinksUpToDate(false),
+    m_LinksUpToDate(false),
+    m_has_CharactersWithSpaces(false),
+    m_CharactersWithSpaces(0),
+    m_has_SharedDoc(false),
+    m_SharedDoc(false),
+    m_has_HyperlinkBase(false),
+    m_HyperlinkBase(""),
+    m_has_HLinks(false),
+    m_HLinks(NULL),
+    m_has_HyperlinksChanged(false),
+    m_HyperlinksChanged(false),
+    m_has_DigSig(false),
+    m_DigSig(NULL),
+    m_has_Application(false),
+    m_Application(""),
+    m_has_AppVersion(false),
+    m_AppVersion(""),
+    m_has_DocSecurity(false),
+    m_DocSecurity(0)
+    {
+    }
     bool CT_Properties::has_Template() const
     {    
     return m_has_Template;
@@ -492,137 +549,137 @@ namespace ns_extended_properties {
             
     if (m_has_Template)
     {
-        _outStream << "<Template>" << m_Template << "</Template>";;
+        _outStream << "<extended_properties:Template>" << m_Template << "</extended_properties:Template>";;
     }
     
     if (m_has_Manager)
     {
-        _outStream << "<Manager>" << m_Manager << "</Manager>";;
+        _outStream << "<extended_properties:Manager>" << m_Manager << "</extended_properties:Manager>";;
     }
     
     if (m_has_Company)
     {
-        _outStream << "<Company>" << m_Company << "</Company>";;
+        _outStream << "<extended_properties:Company>" << m_Company << "</extended_properties:Company>";;
     }
     
     if (m_has_Pages)
     {
-        _outStream << "<Pages>" << m_Pages << "</Pages>";;
+        _outStream << "<extended_properties:Pages>" << m_Pages << "</extended_properties:Pages>";;
     }
     
     if (m_has_Words)
     {
-        _outStream << "<Words>" << m_Words << "</Words>";;
+        _outStream << "<extended_properties:Words>" << m_Words << "</extended_properties:Words>";;
     }
     
     if (m_has_Characters)
     {
-        _outStream << "<Characters>" << m_Characters << "</Characters>";;
+        _outStream << "<extended_properties:Characters>" << m_Characters << "</extended_properties:Characters>";;
     }
     
     if (m_has_PresentationFormat)
     {
-        _outStream << "<PresentationFormat>" << m_PresentationFormat << "</PresentationFormat>";;
+        _outStream << "<extended_properties:PresentationFormat>" << m_PresentationFormat << "</extended_properties:PresentationFormat>";;
     }
     
     if (m_has_Lines)
     {
-        _outStream << "<Lines>" << m_Lines << "</Lines>";;
+        _outStream << "<extended_properties:Lines>" << m_Lines << "</extended_properties:Lines>";;
     }
     
     if (m_has_Paragraphs)
     {
-        _outStream << "<Paragraphs>" << m_Paragraphs << "</Paragraphs>";;
+        _outStream << "<extended_properties:Paragraphs>" << m_Paragraphs << "</extended_properties:Paragraphs>";;
     }
     
     if (m_has_Slides)
     {
-        _outStream << "<Slides>" << m_Slides << "</Slides>";;
+        _outStream << "<extended_properties:Slides>" << m_Slides << "</extended_properties:Slides>";;
     }
     
     if (m_has_Notes)
     {
-        _outStream << "<Notes>" << m_Notes << "</Notes>";;
+        _outStream << "<extended_properties:Notes>" << m_Notes << "</extended_properties:Notes>";;
     }
     
     if (m_has_TotalTime)
     {
-        _outStream << "<TotalTime>" << m_TotalTime << "</TotalTime>";;
+        _outStream << "<extended_properties:TotalTime>" << m_TotalTime << "</extended_properties:TotalTime>";;
     }
     
     if (m_has_HiddenSlides)
     {
-        _outStream << "<HiddenSlides>" << m_HiddenSlides << "</HiddenSlides>";;
+        _outStream << "<extended_properties:HiddenSlides>" << m_HiddenSlides << "</extended_properties:HiddenSlides>";;
     }
     
     if (m_has_MMClips)
     {
-        _outStream << "<MMClips>" << m_MMClips << "</MMClips>";;
+        _outStream << "<extended_properties:MMClips>" << m_MMClips << "</extended_properties:MMClips>";;
     }
     
     if (m_has_ScaleCrop)
     {
-        _outStream << "<ScaleCrop>" << m_ScaleCrop << "</ScaleCrop>";;
+        _outStream << "<extended_properties:ScaleCrop>" << m_ScaleCrop << "</extended_properties:ScaleCrop>";;
     }
     
     if (m_has_HeadingPairs)
     {
-        m_HeadingPairs->toXmlElem("HeadingPairs", "", _outStream);;
+        m_HeadingPairs->toXmlElem("extended_properties:HeadingPairs", "", _outStream);;
     }
     
     if (m_has_TitlesOfParts)
     {
-        m_TitlesOfParts->toXmlElem("TitlesOfParts", "", _outStream);;
+        m_TitlesOfParts->toXmlElem("extended_properties:TitlesOfParts", "", _outStream);;
     }
     
     if (m_has_LinksUpToDate)
     {
-        _outStream << "<LinksUpToDate>" << m_LinksUpToDate << "</LinksUpToDate>";;
+        _outStream << "<extended_properties:LinksUpToDate>" << m_LinksUpToDate << "</extended_properties:LinksUpToDate>";;
     }
     
     if (m_has_CharactersWithSpaces)
     {
-        _outStream << "<CharactersWithSpaces>" << m_CharactersWithSpaces << "</CharactersWithSpaces>";;
+        _outStream << "<extended_properties:CharactersWithSpaces>" << m_CharactersWithSpaces << "</extended_properties:CharactersWithSpaces>";;
     }
     
     if (m_has_SharedDoc)
     {
-        _outStream << "<SharedDoc>" << m_SharedDoc << "</SharedDoc>";;
+        _outStream << "<extended_properties:SharedDoc>" << m_SharedDoc << "</extended_properties:SharedDoc>";;
     }
     
     if (m_has_HyperlinkBase)
     {
-        _outStream << "<HyperlinkBase>" << m_HyperlinkBase << "</HyperlinkBase>";;
+        _outStream << "<extended_properties:HyperlinkBase>" << m_HyperlinkBase << "</extended_properties:HyperlinkBase>";;
     }
     
     if (m_has_HLinks)
     {
-        m_HLinks->toXmlElem("HLinks", "", _outStream);;
+        m_HLinks->toXmlElem("extended_properties:HLinks", "", _outStream);;
     }
     
     if (m_has_HyperlinksChanged)
     {
-        _outStream << "<HyperlinksChanged>" << m_HyperlinksChanged << "</HyperlinksChanged>";;
+        _outStream << "<extended_properties:HyperlinksChanged>" << m_HyperlinksChanged << "</extended_properties:HyperlinksChanged>";;
     }
     
     if (m_has_DigSig)
     {
-        m_DigSig->toXmlElem("DigSig", "", _outStream);;
+        m_DigSig->toXmlElem("extended_properties:DigSig", "", _outStream);;
     }
     
     if (m_has_Application)
     {
-        _outStream << "<Application>" << m_Application << "</Application>";;
+        _outStream << "<extended_properties:Application>" << m_Application << "</extended_properties:Application>";;
     }
     
     if (m_has_AppVersion)
     {
-        _outStream << "<AppVersion>" << m_AppVersion << "</AppVersion>";;
+        _outStream << "<extended_properties:AppVersion>" << m_AppVersion << "</extended_properties:AppVersion>";;
     }
     
     if (m_has_DocSecurity)
     {
-        _outStream << "<DocSecurity>" << m_DocSecurity << "</DocSecurity>";;
+        _outStream << "<extended_properties:DocSecurity>" << m_DocSecurity << "</extended_properties:DocSecurity>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -640,6 +697,11 @@ namespace ns_extended_properties {
 CT_Properties* CT_Properties::default_instance_ = NULL;
 
     // CT_VectorVariant
+    CT_VectorVariant::CT_VectorVariant()
+    :m_has_vt_vector(false),
+    m_vt_vector(NULL)
+    {
+    }
     bool CT_VectorVariant::has_vt_vector() const
     {    
     return m_has_vt_vector;
@@ -698,6 +760,11 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
 CT_VectorVariant* CT_VectorVariant::default_instance_ = NULL;
 
     // CT_VectorLpstr
+    CT_VectorLpstr::CT_VectorLpstr()
+    :m_has_vt_vector(false),
+    m_vt_vector(NULL)
+    {
+    }
     bool CT_VectorLpstr::has_vt_vector() const
     {    
     return m_has_vt_vector;
@@ -756,20 +823,25 @@ CT_VectorVariant* CT_VectorVariant::default_instance_ = NULL;
 CT_VectorLpstr* CT_VectorLpstr::default_instance_ = NULL;
 
     // CT_DigSigBlob
-    bool CT_DigSigBlob::has_blob() const
+    CT_DigSigBlob::CT_DigSigBlob()
+    :m_has_vt_blob(false),
+    m_vt_blob("")
+    {
+    }
+    bool CT_DigSigBlob::has_vt_blob() const
     {    
-    return m_has_blob;
+    return m_has_vt_blob;
     }
 
-    void CT_DigSigBlob::set_blob(const XSD::base64Binary_& _blob)
+    void CT_DigSigBlob::set_vt_blob(const XSD::base64Binary_& _vt_blob)
     {    
-    m_has_blob = true;
-    m_blob = _blob;
+    m_has_vt_blob = true;
+    m_vt_blob = _vt_blob;
     }
 
-    const XSD::base64Binary_& CT_DigSigBlob::get_blob() const
+    const XSD::base64Binary_& CT_DigSigBlob::get_vt_blob() const
     {    
-    return m_blob;
+    return m_vt_blob;
     }
 
     void CT_DigSigBlob::clear()
@@ -786,9 +858,9 @@ CT_VectorLpstr* CT_VectorLpstr::default_instance_ = NULL;
             
             _outStream << ">";
             
-    if (m_has_blob)
+    if (m_has_vt_blob)
     {
-        _outStream << "<blob>" << m_blob << "</blob>";;
+        _outStream << "<vt:blob>" << m_vt_blob << "</vt:blob>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -806,6 +878,63 @@ CT_VectorLpstr* CT_VectorLpstr::default_instance_ = NULL;
 CT_DigSigBlob* CT_DigSigBlob::default_instance_ = NULL;
 
     // Properties_element
+    Properties_element::Properties_element()
+    :m_has_Template(false),
+    m_Template(""),
+    m_has_Manager(false),
+    m_Manager(""),
+    m_has_Company(false),
+    m_Company(""),
+    m_has_Pages(false),
+    m_Pages(0),
+    m_has_Words(false),
+    m_Words(0),
+    m_has_Characters(false),
+    m_Characters(0),
+    m_has_PresentationFormat(false),
+    m_PresentationFormat(""),
+    m_has_Lines(false),
+    m_Lines(0),
+    m_has_Paragraphs(false),
+    m_Paragraphs(0),
+    m_has_Slides(false),
+    m_Slides(0),
+    m_has_Notes(false),
+    m_Notes(0),
+    m_has_TotalTime(false),
+    m_TotalTime(0),
+    m_has_HiddenSlides(false),
+    m_HiddenSlides(0),
+    m_has_MMClips(false),
+    m_MMClips(0),
+    m_has_ScaleCrop(false),
+    m_ScaleCrop(false),
+    m_has_HeadingPairs(false),
+    m_HeadingPairs(NULL),
+    m_has_TitlesOfParts(false),
+    m_TitlesOfParts(NULL),
+    m_has_LinksUpToDate(false),
+    m_LinksUpToDate(false),
+    m_has_CharactersWithSpaces(false),
+    m_CharactersWithSpaces(0),
+    m_has_SharedDoc(false),
+    m_SharedDoc(false),
+    m_has_HyperlinkBase(false),
+    m_HyperlinkBase(""),
+    m_has_HLinks(false),
+    m_HLinks(NULL),
+    m_has_HyperlinksChanged(false),
+    m_HyperlinksChanged(false),
+    m_has_DigSig(false),
+    m_DigSig(NULL),
+    m_has_Application(false),
+    m_Application(""),
+    m_has_AppVersion(false),
+    m_AppVersion(""),
+    m_has_DocSecurity(false),
+    m_DocSecurity(0)
+    {
+    }
     bool Properties_element::has_Template() const
     {    
     return m_has_Template;
@@ -1275,7 +1404,7 @@ CT_DigSigBlob* CT_DigSigBlob::default_instance_ = NULL;
 
     void Properties_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<Properties";
+    _outStream << "<extended_properties:Properties";
     
     _outStream << " " << "xmlns:extended_properties=\"http://schemas.openxmlformats.org/officeDocument/2006/extended-properties\"";
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
@@ -1284,140 +1413,140 @@ CT_DigSigBlob* CT_DigSigBlob::default_instance_ = NULL;
     
     if (m_has_Template)
     {
-        _outStream << "<Template>" << m_Template << "</Template>";;
+        _outStream << "<extended_properties:Template>" << m_Template << "</extended_properties:Template>";;
     }
     
     if (m_has_Manager)
     {
-        _outStream << "<Manager>" << m_Manager << "</Manager>";;
+        _outStream << "<extended_properties:Manager>" << m_Manager << "</extended_properties:Manager>";;
     }
     
     if (m_has_Company)
     {
-        _outStream << "<Company>" << m_Company << "</Company>";;
+        _outStream << "<extended_properties:Company>" << m_Company << "</extended_properties:Company>";;
     }
     
     if (m_has_Pages)
     {
-        _outStream << "<Pages>" << m_Pages << "</Pages>";;
+        _outStream << "<extended_properties:Pages>" << m_Pages << "</extended_properties:Pages>";;
     }
     
     if (m_has_Words)
     {
-        _outStream << "<Words>" << m_Words << "</Words>";;
+        _outStream << "<extended_properties:Words>" << m_Words << "</extended_properties:Words>";;
     }
     
     if (m_has_Characters)
     {
-        _outStream << "<Characters>" << m_Characters << "</Characters>";;
+        _outStream << "<extended_properties:Characters>" << m_Characters << "</extended_properties:Characters>";;
     }
     
     if (m_has_PresentationFormat)
     {
-        _outStream << "<PresentationFormat>" << m_PresentationFormat << "</PresentationFormat>";;
+        _outStream << "<extended_properties:PresentationFormat>" << m_PresentationFormat << "</extended_properties:PresentationFormat>";;
     }
     
     if (m_has_Lines)
     {
-        _outStream << "<Lines>" << m_Lines << "</Lines>";;
+        _outStream << "<extended_properties:Lines>" << m_Lines << "</extended_properties:Lines>";;
     }
     
     if (m_has_Paragraphs)
     {
-        _outStream << "<Paragraphs>" << m_Paragraphs << "</Paragraphs>";;
+        _outStream << "<extended_properties:Paragraphs>" << m_Paragraphs << "</extended_properties:Paragraphs>";;
     }
     
     if (m_has_Slides)
     {
-        _outStream << "<Slides>" << m_Slides << "</Slides>";;
+        _outStream << "<extended_properties:Slides>" << m_Slides << "</extended_properties:Slides>";;
     }
     
     if (m_has_Notes)
     {
-        _outStream << "<Notes>" << m_Notes << "</Notes>";;
+        _outStream << "<extended_properties:Notes>" << m_Notes << "</extended_properties:Notes>";;
     }
     
     if (m_has_TotalTime)
     {
-        _outStream << "<TotalTime>" << m_TotalTime << "</TotalTime>";;
+        _outStream << "<extended_properties:TotalTime>" << m_TotalTime << "</extended_properties:TotalTime>";;
     }
     
     if (m_has_HiddenSlides)
     {
-        _outStream << "<HiddenSlides>" << m_HiddenSlides << "</HiddenSlides>";;
+        _outStream << "<extended_properties:HiddenSlides>" << m_HiddenSlides << "</extended_properties:HiddenSlides>";;
     }
     
     if (m_has_MMClips)
     {
-        _outStream << "<MMClips>" << m_MMClips << "</MMClips>";;
+        _outStream << "<extended_properties:MMClips>" << m_MMClips << "</extended_properties:MMClips>";;
     }
     
     if (m_has_ScaleCrop)
     {
-        _outStream << "<ScaleCrop>" << m_ScaleCrop << "</ScaleCrop>";;
+        _outStream << "<extended_properties:ScaleCrop>" << m_ScaleCrop << "</extended_properties:ScaleCrop>";;
     }
     
     if (m_has_HeadingPairs)
     {
-        m_HeadingPairs->toXmlElem("HeadingPairs", "", _outStream);;
+        m_HeadingPairs->toXmlElem("extended_properties:HeadingPairs", "", _outStream);;
     }
     
     if (m_has_TitlesOfParts)
     {
-        m_TitlesOfParts->toXmlElem("TitlesOfParts", "", _outStream);;
+        m_TitlesOfParts->toXmlElem("extended_properties:TitlesOfParts", "", _outStream);;
     }
     
     if (m_has_LinksUpToDate)
     {
-        _outStream << "<LinksUpToDate>" << m_LinksUpToDate << "</LinksUpToDate>";;
+        _outStream << "<extended_properties:LinksUpToDate>" << m_LinksUpToDate << "</extended_properties:LinksUpToDate>";;
     }
     
     if (m_has_CharactersWithSpaces)
     {
-        _outStream << "<CharactersWithSpaces>" << m_CharactersWithSpaces << "</CharactersWithSpaces>";;
+        _outStream << "<extended_properties:CharactersWithSpaces>" << m_CharactersWithSpaces << "</extended_properties:CharactersWithSpaces>";;
     }
     
     if (m_has_SharedDoc)
     {
-        _outStream << "<SharedDoc>" << m_SharedDoc << "</SharedDoc>";;
+        _outStream << "<extended_properties:SharedDoc>" << m_SharedDoc << "</extended_properties:SharedDoc>";;
     }
     
     if (m_has_HyperlinkBase)
     {
-        _outStream << "<HyperlinkBase>" << m_HyperlinkBase << "</HyperlinkBase>";;
+        _outStream << "<extended_properties:HyperlinkBase>" << m_HyperlinkBase << "</extended_properties:HyperlinkBase>";;
     }
     
     if (m_has_HLinks)
     {
-        m_HLinks->toXmlElem("HLinks", "", _outStream);;
+        m_HLinks->toXmlElem("extended_properties:HLinks", "", _outStream);;
     }
     
     if (m_has_HyperlinksChanged)
     {
-        _outStream << "<HyperlinksChanged>" << m_HyperlinksChanged << "</HyperlinksChanged>";;
+        _outStream << "<extended_properties:HyperlinksChanged>" << m_HyperlinksChanged << "</extended_properties:HyperlinksChanged>";;
     }
     
     if (m_has_DigSig)
     {
-        m_DigSig->toXmlElem("DigSig", "", _outStream);;
+        m_DigSig->toXmlElem("extended_properties:DigSig", "", _outStream);;
     }
     
     if (m_has_Application)
     {
-        _outStream << "<Application>" << m_Application << "</Application>";;
+        _outStream << "<extended_properties:Application>" << m_Application << "</extended_properties:Application>";;
     }
     
     if (m_has_AppVersion)
     {
-        _outStream << "<AppVersion>" << m_AppVersion << "</AppVersion>";;
+        _outStream << "<extended_properties:AppVersion>" << m_AppVersion << "</extended_properties:AppVersion>";;
     }
     
     if (m_has_DocSecurity)
     {
-        _outStream << "<DocSecurity>" << m_DocSecurity << "</DocSecurity>";;
+        _outStream << "<extended_properties:DocSecurity>" << m_DocSecurity << "</extended_properties:DocSecurity>";;
     }
     
-    _outStream << "</Properties>";
+    _outStream << "</extended_properties:Properties>";
     }
 
     const Properties_element& Properties_element::default_instance()

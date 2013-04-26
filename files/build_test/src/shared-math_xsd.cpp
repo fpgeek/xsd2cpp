@@ -22,7 +22,7 @@ namespace ns_m {
     :m_has_integer(true)
     {
     
-    set_integer(m_integer);
+    set_integer(_integer);
     }
     bool ST_Integer255::has_integer() const
     {    
@@ -84,7 +84,7 @@ ST_Integer255* ST_Integer255::default_instance_ = NULL;
     :m_has_integer(true)
     {
     
-    set_integer(m_integer);
+    set_integer(_integer);
     }
     bool ST_Integer2::has_integer() const
     {    
@@ -146,7 +146,7 @@ ST_Integer2* ST_Integer2::default_instance_ = NULL;
     :m_has_integer(true)
     {
     
-    set_integer(m_integer);
+    set_integer(_integer);
     }
     bool ST_SpacingRule::has_integer() const
     {    
@@ -208,7 +208,7 @@ ST_SpacingRule* ST_SpacingRule::default_instance_ = NULL;
     :m_has_unsignedInt(true)
     {
     
-    set_unsignedInt(m_unsignedInt);
+    set_unsignedInt(_unsignedInt);
     }
     bool ST_UnSignedInteger::has_unsignedInt() const
     {    
@@ -268,7 +268,7 @@ ST_UnSignedInteger* ST_UnSignedInteger::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_Char::has_string() const
     {    
@@ -872,6 +872,11 @@ ST_BreakBin* ST_BreakBin::default_instance_ = NULL;
 ST_BreakBinSub* ST_BreakBinSub::default_instance_ = NULL;
 
     // CT_Integer255
+    CT_Integer255::CT_Integer255()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_Integer255::clear()
     {    
     m_has_val_attr = false;
@@ -935,6 +940,11 @@ ST_BreakBinSub* ST_BreakBinSub::default_instance_ = NULL;
 CT_Integer255* CT_Integer255::default_instance_ = NULL;
 
     // CT_Integer2
+    CT_Integer2::CT_Integer2()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_Integer2::clear()
     {    
     m_has_val_attr = false;
@@ -998,6 +1008,11 @@ CT_Integer255* CT_Integer255::default_instance_ = NULL;
 CT_Integer2* CT_Integer2::default_instance_ = NULL;
 
     // CT_SpacingRule
+    CT_SpacingRule::CT_SpacingRule()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_SpacingRule::clear()
     {    
     m_has_val_attr = false;
@@ -1061,6 +1076,11 @@ CT_Integer2* CT_Integer2::default_instance_ = NULL;
 CT_SpacingRule* CT_SpacingRule::default_instance_ = NULL;
 
     // CT_UnSignedInteger
+    CT_UnSignedInteger::CT_UnSignedInteger()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_UnSignedInteger::clear()
     {    
     m_has_val_attr = false;
@@ -1124,6 +1144,11 @@ CT_SpacingRule* CT_SpacingRule::default_instance_ = NULL;
 CT_UnSignedInteger* CT_UnSignedInteger::default_instance_ = NULL;
 
     // CT_Char
+    CT_Char::CT_Char()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_Char::clear()
     {    
     m_has_val_attr = false;
@@ -1187,14 +1212,19 @@ CT_UnSignedInteger* CT_UnSignedInteger::default_instance_ = NULL;
 CT_Char* CT_Char::default_instance_ = NULL;
 
     // CT_OnOff
+    CT_OnOff::CT_OnOff()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_OnOff::clear()
     {    
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     }
@@ -1208,9 +1238,9 @@ CT_Char* CT_Char::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("s:val", _outStream);
+        m_val_attr->toXmlAttr("m:val", _outStream);
     }
     
             _outStream << ">";
@@ -1227,22 +1257,22 @@ CT_Char* CT_Char::default_instance_ = NULL;
     return *CT_OnOff::default_instance_;
     }
 
-    bool CT_OnOff::has_s_val_attr() const
+    bool CT_OnOff::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_OnOff::set_s_val_attr(const ns_s::ST_OnOff& _s_val_attr)
+    void CT_OnOff::set_val_attr(const ns_s::ST_OnOff& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_OnOff(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_OnOff(_val_attr);
     }
 
-    const ns_s::ST_OnOff& CT_OnOff::get_s_val_attr() const
+    const ns_s::ST_OnOff& CT_OnOff::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_OnOff::default_instance();
     }
@@ -1250,14 +1280,19 @@ CT_Char* CT_Char::default_instance_ = NULL;
 CT_OnOff* CT_OnOff::default_instance_ = NULL;
 
     // CT_String
+    CT_String::CT_String()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_String::clear()
     {    
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     }
@@ -1271,9 +1306,9 @@ CT_OnOff* CT_OnOff::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("s:val", _outStream);
+        m_val_attr->toXmlAttr("m:val", _outStream);
     }
     
             _outStream << ">";
@@ -1290,22 +1325,22 @@ CT_OnOff* CT_OnOff::default_instance_ = NULL;
     return *CT_String::default_instance_;
     }
 
-    bool CT_String::has_s_val_attr() const
+    bool CT_String::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_String::set_s_val_attr(const ns_s::ST_String& _s_val_attr)
+    void CT_String::set_val_attr(const ns_s::ST_String& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_String(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_String(_val_attr);
     }
 
-    const ns_s::ST_String& CT_String::get_s_val_attr() const
+    const ns_s::ST_String& CT_String::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_String::default_instance();
     }
@@ -1313,14 +1348,19 @@ CT_OnOff* CT_OnOff::default_instance_ = NULL;
 CT_String* CT_String::default_instance_ = NULL;
 
     // CT_XAlign
+    CT_XAlign::CT_XAlign()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_XAlign::clear()
     {    
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     }
@@ -1334,9 +1374,9 @@ CT_String* CT_String::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("s:val", _outStream);
+        m_val_attr->toXmlAttr("m:val", _outStream);
     }
     
             _outStream << ">";
@@ -1353,22 +1393,22 @@ CT_String* CT_String::default_instance_ = NULL;
     return *CT_XAlign::default_instance_;
     }
 
-    bool CT_XAlign::has_s_val_attr() const
+    bool CT_XAlign::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_XAlign::set_s_val_attr(const ns_s::ST_XAlign& _s_val_attr)
+    void CT_XAlign::set_val_attr(const ns_s::ST_XAlign& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_XAlign(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_XAlign(_val_attr);
     }
 
-    const ns_s::ST_XAlign& CT_XAlign::get_s_val_attr() const
+    const ns_s::ST_XAlign& CT_XAlign::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_XAlign::default_instance();
     }
@@ -1376,14 +1416,19 @@ CT_String* CT_String::default_instance_ = NULL;
 CT_XAlign* CT_XAlign::default_instance_ = NULL;
 
     // CT_YAlign
+    CT_YAlign::CT_YAlign()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_YAlign::clear()
     {    
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     }
@@ -1397,9 +1442,9 @@ CT_XAlign* CT_XAlign::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("s:val", _outStream);
+        m_val_attr->toXmlAttr("m:val", _outStream);
     }
     
             _outStream << ">";
@@ -1416,22 +1461,22 @@ CT_XAlign* CT_XAlign::default_instance_ = NULL;
     return *CT_YAlign::default_instance_;
     }
 
-    bool CT_YAlign::has_s_val_attr() const
+    bool CT_YAlign::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_YAlign::set_s_val_attr(const ns_s::ST_YAlign& _s_val_attr)
+    void CT_YAlign::set_val_attr(const ns_s::ST_YAlign& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_YAlign(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_YAlign(_val_attr);
     }
 
-    const ns_s::ST_YAlign& CT_YAlign::get_s_val_attr() const
+    const ns_s::ST_YAlign& CT_YAlign::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_YAlign::default_instance();
     }
@@ -1439,6 +1484,11 @@ CT_XAlign* CT_XAlign::default_instance_ = NULL;
 CT_YAlign* CT_YAlign::default_instance_ = NULL;
 
     // CT_Shp
+    CT_Shp::CT_Shp()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_Shp::clear()
     {    
     m_has_val_attr = false;
@@ -1502,6 +1552,11 @@ CT_YAlign* CT_YAlign::default_instance_ = NULL;
 CT_Shp* CT_Shp::default_instance_ = NULL;
 
     // CT_FType
+    CT_FType::CT_FType()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_FType::clear()
     {    
     m_has_val_attr = false;
@@ -1565,6 +1620,11 @@ CT_Shp* CT_Shp::default_instance_ = NULL;
 CT_FType* CT_FType::default_instance_ = NULL;
 
     // CT_LimLoc
+    CT_LimLoc::CT_LimLoc()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_LimLoc::clear()
     {    
     m_has_val_attr = false;
@@ -1628,6 +1688,11 @@ CT_FType* CT_FType::default_instance_ = NULL;
 CT_LimLoc* CT_LimLoc::default_instance_ = NULL;
 
     // CT_TopBot
+    CT_TopBot::CT_TopBot()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_TopBot::clear()
     {    
     m_has_val_attr = false;
@@ -1691,6 +1756,11 @@ CT_LimLoc* CT_LimLoc::default_instance_ = NULL;
 CT_TopBot* CT_TopBot::default_instance_ = NULL;
 
     // CT_Script
+    CT_Script::CT_Script()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_Script::clear()
     {    
     m_has_val_attr = false;
@@ -1754,6 +1824,11 @@ CT_TopBot* CT_TopBot::default_instance_ = NULL;
 CT_Script* CT_Script::default_instance_ = NULL;
 
     // CT_Style
+    CT_Style::CT_Style()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_Style::clear()
     {    
     m_has_val_attr = false;
@@ -1817,6 +1892,11 @@ CT_Script* CT_Script::default_instance_ = NULL;
 CT_Style* CT_Style::default_instance_ = NULL;
 
     // CT_ManualBreak
+    CT_ManualBreak::CT_ManualBreak()
+    :m_has_alnAt_attr(false),
+    m_alnAt_attr(NULL)
+    {
+    }
     void CT_ManualBreak::clear()
     {    
     m_has_alnAt_attr = false;
@@ -1880,6 +1960,17 @@ CT_Style* CT_Style::default_instance_ = NULL;
 CT_ManualBreak* CT_ManualBreak::default_instance_ = NULL;
 
     // CT_RPR
+    CT_RPR::CT_RPR()
+    :m_has_lit(false),
+    m_lit(NULL),
+    m_has_nor(false),
+    m_nor(NULL),
+    m_has_brk(false),
+    m_brk(NULL),
+    m_has_aln(false),
+    m_aln(NULL)
+    {
+    }
     bool CT_RPR::has_lit() const
     {    
     return m_has_lit;
@@ -1993,22 +2084,22 @@ CT_ManualBreak* CT_ManualBreak::default_instance_ = NULL;
             
     if (m_has_lit)
     {
-        m_lit->toXmlElem("lit", "", _outStream);;
+        m_lit->toXmlElem("m:lit", "", _outStream);;
     }
      
     if (m_has_nor)
     {
-        m_nor->toXmlElem("nor", "", _outStream);;
+        m_nor->toXmlElem("m:nor", "", _outStream);;
     }
      
     if (m_has_brk)
     {
-        m_brk->toXmlElem("brk", "", _outStream);;
+        m_brk->toXmlElem("m:brk", "", _outStream);;
     }
     
     if (m_has_aln)
     {
-        m_aln->toXmlElem("aln", "", _outStream);;
+        m_aln->toXmlElem("m:aln", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2026,6 +2117,11 @@ CT_ManualBreak* CT_ManualBreak::default_instance_ = NULL;
 CT_RPR* CT_RPR::default_instance_ = NULL;
 
     // CT_Text
+    CT_Text::CT_Text()
+    :m_has__attr(false),
+    m__attr("")
+    {
+    }
     void CT_Text::clear()
     {    
     m_has__attr = false;
@@ -2079,6 +2175,13 @@ CT_RPR* CT_RPR::default_instance_ = NULL;
 CT_Text* CT_Text::default_instance_ = NULL;
 
     // CT_R
+    CT_R::CT_R()
+    :m_has_rPr(false),
+    m_rPr(NULL),
+    m_has_w_rPr(false),
+    m_w_rPr(NULL)
+    {
+    }
     bool CT_R::has_rPr() const
     {    
     return m_has_rPr;
@@ -2442,7 +2545,7 @@ CT_Text* CT_Text::default_instance_ = NULL;
             
     if (m_has_rPr)
     {
-        m_rPr->toXmlElem("rPr", "", _outStream);;
+        m_rPr->toXmlElem("m:rPr", "", _outStream);;
     }
     
     if (m_has_w_rPr)
@@ -2588,7 +2691,7 @@ CT_Text* CT_Text::default_instance_ = NULL;
             }
             else if ((*iter)->has_t())
             {
-                (*iter)->get_t().toXmlElem("t", "", _outStream);
+                (*iter)->get_t().toXmlElem("m:t", "", _outStream);
             }
         }
     }
@@ -2607,6 +2710,77 @@ CT_Text* CT_Text::default_instance_ = NULL;
 
 
     // CT_R::ChildGroup_1
+    CT_R::ChildGroup_1::ChildGroup_1()
+    :m_has_w_br(false),
+    m_w_br(NULL),
+    m_has_w_t(false),
+    m_w_t(NULL),
+    m_has_w_contentPart(false),
+    m_w_contentPart(NULL),
+    m_has_w_delText(false),
+    m_w_delText(NULL),
+    m_has_w_instrText(false),
+    m_w_instrText(NULL),
+    m_has_w_delInstrText(false),
+    m_w_delInstrText(NULL),
+    m_has_w_noBreakHyphen(false),
+    m_w_noBreakHyphen(NULL),
+    m_has_w_softHyphen(false),
+    m_w_softHyphen(NULL),
+    m_has_w_dayShort(false),
+    m_w_dayShort(NULL),
+    m_has_w_monthShort(false),
+    m_w_monthShort(NULL),
+    m_has_w_yearShort(false),
+    m_w_yearShort(NULL),
+    m_has_w_dayLong(false),
+    m_w_dayLong(NULL),
+    m_has_w_monthLong(false),
+    m_w_monthLong(NULL),
+    m_has_w_yearLong(false),
+    m_w_yearLong(NULL),
+    m_has_w_annotationRef(false),
+    m_w_annotationRef(NULL),
+    m_has_w_footnoteRef(false),
+    m_w_footnoteRef(NULL),
+    m_has_w_endnoteRef(false),
+    m_w_endnoteRef(NULL),
+    m_has_w_separator(false),
+    m_w_separator(NULL),
+    m_has_w_continuationSeparator(false),
+    m_w_continuationSeparator(NULL),
+    m_has_w_sym(false),
+    m_w_sym(NULL),
+    m_has_w_pgNum(false),
+    m_w_pgNum(NULL),
+    m_has_w_cr(false),
+    m_w_cr(NULL),
+    m_has_w_tab(false),
+    m_w_tab(NULL),
+    m_has_w_object(false),
+    m_w_object(NULL),
+    m_has_w_pict(false),
+    m_w_pict(NULL),
+    m_has_w_fldChar(false),
+    m_w_fldChar(NULL),
+    m_has_w_ruby(false),
+    m_w_ruby(NULL),
+    m_has_w_footnoteReference(false),
+    m_w_footnoteReference(NULL),
+    m_has_w_endnoteReference(false),
+    m_w_endnoteReference(NULL),
+    m_has_w_commentReference(false),
+    m_w_commentReference(NULL),
+    m_has_w_drawing(false),
+    m_w_drawing(NULL),
+    m_has_w_ptab(false),
+    m_w_ptab(NULL),
+    m_has_w_lastRenderedPageBreak(false),
+    m_w_lastRenderedPageBreak(NULL),
+    m_has_t(false),
+    m_t(NULL)
+    {
+    }
     bool CT_R::ChildGroup_1::has_w_br() const
     {    
     return m_has_w_br;
@@ -13558,6 +13732,13 @@ CT_Text* CT_Text::default_instance_ = NULL;
 CT_R* CT_R::default_instance_ = NULL;
 
     // CT_CtrlPr
+    CT_CtrlPr::CT_CtrlPr()
+    :m_has_w_ins(false),
+    m_w_ins(NULL),
+    m_has_w_del(false),
+    m_w_del(NULL)
+    {
+    }
     bool CT_CtrlPr::has_w_ins() const
     {    
     return m_has_w_ins;
@@ -13665,6 +13846,13 @@ CT_R* CT_R::default_instance_ = NULL;
 CT_CtrlPr* CT_CtrlPr::default_instance_ = NULL;
 
     // CT_AccPr
+    CT_AccPr::CT_AccPr()
+    :m_has_chr(false),
+    m_chr(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_AccPr::has_chr() const
     {    
     return m_has_chr;
@@ -13729,12 +13917,12 @@ CT_CtrlPr* CT_CtrlPr::default_instance_ = NULL;
             
     if (m_has_chr)
     {
-        m_chr->toXmlElem("chr", "", _outStream);;
+        m_chr->toXmlElem("m:chr", "", _outStream);;
     }
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -13752,6 +13940,13 @@ CT_CtrlPr* CT_CtrlPr::default_instance_ = NULL;
 CT_AccPr* CT_AccPr::default_instance_ = NULL;
 
     // CT_Acc
+    CT_Acc::CT_Acc()
+    :m_has_accPr(false),
+    m_accPr(NULL),
+    m_has_e(false),
+    m_e(NULL)
+    {
+    }
     bool CT_Acc::has_accPr() const
     {    
     return m_has_accPr;
@@ -13816,12 +14011,12 @@ CT_AccPr* CT_AccPr::default_instance_ = NULL;
             
     if (m_has_accPr)
     {
-        m_accPr->toXmlElem("accPr", "", _outStream);;
+        m_accPr->toXmlElem("m:accPr", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -13839,6 +14034,13 @@ CT_AccPr* CT_AccPr::default_instance_ = NULL;
 CT_Acc* CT_Acc::default_instance_ = NULL;
 
     // CT_BarPr
+    CT_BarPr::CT_BarPr()
+    :m_has_pos(false),
+    m_pos(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_BarPr::has_pos() const
     {    
     return m_has_pos;
@@ -13903,12 +14105,12 @@ CT_Acc* CT_Acc::default_instance_ = NULL;
             
     if (m_has_pos)
     {
-        m_pos->toXmlElem("pos", "", _outStream);;
+        m_pos->toXmlElem("m:pos", "", _outStream);;
     }
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -13926,6 +14128,13 @@ CT_Acc* CT_Acc::default_instance_ = NULL;
 CT_BarPr* CT_BarPr::default_instance_ = NULL;
 
     // CT_Bar
+    CT_Bar::CT_Bar()
+    :m_has_barPr(false),
+    m_barPr(NULL),
+    m_has_e(false),
+    m_e(NULL)
+    {
+    }
     bool CT_Bar::has_barPr() const
     {    
     return m_has_barPr;
@@ -13990,12 +14199,12 @@ CT_BarPr* CT_BarPr::default_instance_ = NULL;
             
     if (m_has_barPr)
     {
-        m_barPr->toXmlElem("barPr", "", _outStream);;
+        m_barPr->toXmlElem("m:barPr", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14013,6 +14222,21 @@ CT_BarPr* CT_BarPr::default_instance_ = NULL;
 CT_Bar* CT_Bar::default_instance_ = NULL;
 
     // CT_BoxPr
+    CT_BoxPr::CT_BoxPr()
+    :m_has_opEmu(false),
+    m_opEmu(NULL),
+    m_has_noBreak(false),
+    m_noBreak(NULL),
+    m_has_diff(false),
+    m_diff(NULL),
+    m_has_brk(false),
+    m_brk(NULL),
+    m_has_aln(false),
+    m_aln(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_BoxPr::has_opEmu() const
     {    
     return m_has_opEmu;
@@ -14173,32 +14397,32 @@ CT_Bar* CT_Bar::default_instance_ = NULL;
             
     if (m_has_opEmu)
     {
-        m_opEmu->toXmlElem("opEmu", "", _outStream);;
+        m_opEmu->toXmlElem("m:opEmu", "", _outStream);;
     }
     
     if (m_has_noBreak)
     {
-        m_noBreak->toXmlElem("noBreak", "", _outStream);;
+        m_noBreak->toXmlElem("m:noBreak", "", _outStream);;
     }
     
     if (m_has_diff)
     {
-        m_diff->toXmlElem("diff", "", _outStream);;
+        m_diff->toXmlElem("m:diff", "", _outStream);;
     }
     
     if (m_has_brk)
     {
-        m_brk->toXmlElem("brk", "", _outStream);;
+        m_brk->toXmlElem("m:brk", "", _outStream);;
     }
     
     if (m_has_aln)
     {
-        m_aln->toXmlElem("aln", "", _outStream);;
+        m_aln->toXmlElem("m:aln", "", _outStream);;
     }
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14216,6 +14440,13 @@ CT_Bar* CT_Bar::default_instance_ = NULL;
 CT_BoxPr* CT_BoxPr::default_instance_ = NULL;
 
     // CT_Box
+    CT_Box::CT_Box()
+    :m_has_boxPr(false),
+    m_boxPr(NULL),
+    m_has_e(false),
+    m_e(NULL)
+    {
+    }
     bool CT_Box::has_boxPr() const
     {    
     return m_has_boxPr;
@@ -14280,12 +14511,12 @@ CT_BoxPr* CT_BoxPr::default_instance_ = NULL;
             
     if (m_has_boxPr)
     {
-        m_boxPr->toXmlElem("boxPr", "", _outStream);;
+        m_boxPr->toXmlElem("m:boxPr", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14303,6 +14534,27 @@ CT_BoxPr* CT_BoxPr::default_instance_ = NULL;
 CT_Box* CT_Box::default_instance_ = NULL;
 
     // CT_BorderBoxPr
+    CT_BorderBoxPr::CT_BorderBoxPr()
+    :m_has_hideTop(false),
+    m_hideTop(NULL),
+    m_has_hideBot(false),
+    m_hideBot(NULL),
+    m_has_hideLeft(false),
+    m_hideLeft(NULL),
+    m_has_hideRight(false),
+    m_hideRight(NULL),
+    m_has_strikeH(false),
+    m_strikeH(NULL),
+    m_has_strikeV(false),
+    m_strikeV(NULL),
+    m_has_strikeBLTR(false),
+    m_strikeBLTR(NULL),
+    m_has_strikeTLBR(false),
+    m_strikeTLBR(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_BorderBoxPr::has_hideTop() const
     {    
     return m_has_hideTop;
@@ -14535,47 +14787,47 @@ CT_Box* CT_Box::default_instance_ = NULL;
             
     if (m_has_hideTop)
     {
-        m_hideTop->toXmlElem("hideTop", "", _outStream);;
+        m_hideTop->toXmlElem("m:hideTop", "", _outStream);;
     }
     
     if (m_has_hideBot)
     {
-        m_hideBot->toXmlElem("hideBot", "", _outStream);;
+        m_hideBot->toXmlElem("m:hideBot", "", _outStream);;
     }
     
     if (m_has_hideLeft)
     {
-        m_hideLeft->toXmlElem("hideLeft", "", _outStream);;
+        m_hideLeft->toXmlElem("m:hideLeft", "", _outStream);;
     }
     
     if (m_has_hideRight)
     {
-        m_hideRight->toXmlElem("hideRight", "", _outStream);;
+        m_hideRight->toXmlElem("m:hideRight", "", _outStream);;
     }
     
     if (m_has_strikeH)
     {
-        m_strikeH->toXmlElem("strikeH", "", _outStream);;
+        m_strikeH->toXmlElem("m:strikeH", "", _outStream);;
     }
     
     if (m_has_strikeV)
     {
-        m_strikeV->toXmlElem("strikeV", "", _outStream);;
+        m_strikeV->toXmlElem("m:strikeV", "", _outStream);;
     }
     
     if (m_has_strikeBLTR)
     {
-        m_strikeBLTR->toXmlElem("strikeBLTR", "", _outStream);;
+        m_strikeBLTR->toXmlElem("m:strikeBLTR", "", _outStream);;
     }
     
     if (m_has_strikeTLBR)
     {
-        m_strikeTLBR->toXmlElem("strikeTLBR", "", _outStream);;
+        m_strikeTLBR->toXmlElem("m:strikeTLBR", "", _outStream);;
     }
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14593,6 +14845,13 @@ CT_Box* CT_Box::default_instance_ = NULL;
 CT_BorderBoxPr* CT_BorderBoxPr::default_instance_ = NULL;
 
     // CT_BorderBox
+    CT_BorderBox::CT_BorderBox()
+    :m_has_borderBoxPr(false),
+    m_borderBoxPr(NULL),
+    m_has_e(false),
+    m_e(NULL)
+    {
+    }
     bool CT_BorderBox::has_borderBoxPr() const
     {    
     return m_has_borderBoxPr;
@@ -14657,12 +14916,12 @@ CT_BorderBoxPr* CT_BorderBoxPr::default_instance_ = NULL;
             
     if (m_has_borderBoxPr)
     {
-        m_borderBoxPr->toXmlElem("borderBoxPr", "", _outStream);;
+        m_borderBoxPr->toXmlElem("m:borderBoxPr", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14680,6 +14939,21 @@ CT_BorderBoxPr* CT_BorderBoxPr::default_instance_ = NULL;
 CT_BorderBox* CT_BorderBox::default_instance_ = NULL;
 
     // CT_DPr
+    CT_DPr::CT_DPr()
+    :m_has_begChr(false),
+    m_begChr(NULL),
+    m_has_sepChr(false),
+    m_sepChr(NULL),
+    m_has_endChr(false),
+    m_endChr(NULL),
+    m_has_grow(false),
+    m_grow(NULL),
+    m_has_shp(false),
+    m_shp(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_DPr::has_begChr() const
     {    
     return m_has_begChr;
@@ -14840,32 +15114,32 @@ CT_BorderBox* CT_BorderBox::default_instance_ = NULL;
             
     if (m_has_begChr)
     {
-        m_begChr->toXmlElem("begChr", "", _outStream);;
+        m_begChr->toXmlElem("m:begChr", "", _outStream);;
     }
     
     if (m_has_sepChr)
     {
-        m_sepChr->toXmlElem("sepChr", "", _outStream);;
+        m_sepChr->toXmlElem("m:sepChr", "", _outStream);;
     }
     
     if (m_has_endChr)
     {
-        m_endChr->toXmlElem("endChr", "", _outStream);;
+        m_endChr->toXmlElem("m:endChr", "", _outStream);;
     }
     
     if (m_has_grow)
     {
-        m_grow->toXmlElem("grow", "", _outStream);;
+        m_grow->toXmlElem("m:grow", "", _outStream);;
     }
     
     if (m_has_shp)
     {
-        m_shp->toXmlElem("shp", "", _outStream);;
+        m_shp->toXmlElem("m:shp", "", _outStream);;
     }
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14883,6 +15157,11 @@ CT_BorderBox* CT_BorderBox::default_instance_ = NULL;
 CT_DPr* CT_DPr::default_instance_ = NULL;
 
     // CT_D
+    CT_D::CT_D()
+    :m_has_dPr(false),
+    m_dPr(NULL)
+    {
+    }
     bool CT_D::has_dPr() const
     {    
     return m_has_dPr;
@@ -14949,7 +15228,7 @@ CT_DPr* CT_DPr::default_instance_ = NULL;
             
     if (m_has_dPr)
     {
-        m_dPr->toXmlElem("dPr", "", _outStream);;
+        m_dPr->toXmlElem("m:dPr", "", _outStream);;
     }
      
     {
@@ -14958,7 +15237,7 @@ CT_DPr* CT_DPr::default_instance_ = NULL;
         {
             if ((*iter)->has_e())
             {
-                (*iter)->get_e().toXmlElem("e", "", _outStream);
+                (*iter)->get_e().toXmlElem("m:e", "", _outStream);
             }
         }
     }
@@ -14977,6 +15256,11 @@ CT_DPr* CT_DPr::default_instance_ = NULL;
 
 
     // CT_D::ChildGroup_1
+    CT_D::ChildGroup_1::ChildGroup_1()
+    :m_has_e(false),
+    m_e(NULL)
+    {
+    }
     bool CT_D::ChildGroup_1::has_e() const
     {    
     return m_has_e;
@@ -15005,6 +15289,21 @@ CT_DPr* CT_DPr::default_instance_ = NULL;
 CT_D* CT_D::default_instance_ = NULL;
 
     // CT_EqArrPr
+    CT_EqArrPr::CT_EqArrPr()
+    :m_has_baseJc(false),
+    m_baseJc(NULL),
+    m_has_maxDist(false),
+    m_maxDist(NULL),
+    m_has_objDist(false),
+    m_objDist(NULL),
+    m_has_rSpRule(false),
+    m_rSpRule(NULL),
+    m_has_rSp(false),
+    m_rSp(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_EqArrPr::has_baseJc() const
     {    
     return m_has_baseJc;
@@ -15165,32 +15464,32 @@ CT_D* CT_D::default_instance_ = NULL;
             
     if (m_has_baseJc)
     {
-        m_baseJc->toXmlElem("baseJc", "", _outStream);;
+        m_baseJc->toXmlElem("m:baseJc", "", _outStream);;
     }
     
     if (m_has_maxDist)
     {
-        m_maxDist->toXmlElem("maxDist", "", _outStream);;
+        m_maxDist->toXmlElem("m:maxDist", "", _outStream);;
     }
     
     if (m_has_objDist)
     {
-        m_objDist->toXmlElem("objDist", "", _outStream);;
+        m_objDist->toXmlElem("m:objDist", "", _outStream);;
     }
     
     if (m_has_rSpRule)
     {
-        m_rSpRule->toXmlElem("rSpRule", "", _outStream);;
+        m_rSpRule->toXmlElem("m:rSpRule", "", _outStream);;
     }
     
     if (m_has_rSp)
     {
-        m_rSp->toXmlElem("rSp", "", _outStream);;
+        m_rSp->toXmlElem("m:rSp", "", _outStream);;
     }
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15208,6 +15507,11 @@ CT_D* CT_D::default_instance_ = NULL;
 CT_EqArrPr* CT_EqArrPr::default_instance_ = NULL;
 
     // CT_EqArr
+    CT_EqArr::CT_EqArr()
+    :m_has_eqArrPr(false),
+    m_eqArrPr(NULL)
+    {
+    }
     bool CT_EqArr::has_eqArrPr() const
     {    
     return m_has_eqArrPr;
@@ -15274,7 +15578,7 @@ CT_EqArrPr* CT_EqArrPr::default_instance_ = NULL;
             
     if (m_has_eqArrPr)
     {
-        m_eqArrPr->toXmlElem("eqArrPr", "", _outStream);;
+        m_eqArrPr->toXmlElem("m:eqArrPr", "", _outStream);;
     }
      
     {
@@ -15283,7 +15587,7 @@ CT_EqArrPr* CT_EqArrPr::default_instance_ = NULL;
         {
             if ((*iter)->has_e())
             {
-                (*iter)->get_e().toXmlElem("e", "", _outStream);
+                (*iter)->get_e().toXmlElem("m:e", "", _outStream);
             }
         }
     }
@@ -15302,6 +15606,11 @@ CT_EqArrPr* CT_EqArrPr::default_instance_ = NULL;
 
 
     // CT_EqArr::ChildGroup_1
+    CT_EqArr::ChildGroup_1::ChildGroup_1()
+    :m_has_e(false),
+    m_e(NULL)
+    {
+    }
     bool CT_EqArr::ChildGroup_1::has_e() const
     {    
     return m_has_e;
@@ -15330,6 +15639,13 @@ CT_EqArrPr* CT_EqArrPr::default_instance_ = NULL;
 CT_EqArr* CT_EqArr::default_instance_ = NULL;
 
     // CT_FPr
+    CT_FPr::CT_FPr()
+    :m_has_type(false),
+    m_type(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_FPr::has_type() const
     {    
     return m_has_type;
@@ -15394,12 +15710,12 @@ CT_EqArr* CT_EqArr::default_instance_ = NULL;
             
     if (m_has_type)
     {
-        m_type->toXmlElem("type", "", _outStream);;
+        m_type->toXmlElem("m:type", "", _outStream);;
     }
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15417,6 +15733,15 @@ CT_EqArr* CT_EqArr::default_instance_ = NULL;
 CT_FPr* CT_FPr::default_instance_ = NULL;
 
     // CT_F
+    CT_F::CT_F()
+    :m_has_fPr(false),
+    m_fPr(NULL),
+    m_has_num(false),
+    m_num(NULL),
+    m_has_den(false),
+    m_den(NULL)
+    {
+    }
     bool CT_F::has_fPr() const
     {    
     return m_has_fPr;
@@ -15505,17 +15830,17 @@ CT_FPr* CT_FPr::default_instance_ = NULL;
             
     if (m_has_fPr)
     {
-        m_fPr->toXmlElem("fPr", "", _outStream);;
+        m_fPr->toXmlElem("m:fPr", "", _outStream);;
     }
     
     if (m_has_num)
     {
-        m_num->toXmlElem("num", "", _outStream);;
+        m_num->toXmlElem("m:num", "", _outStream);;
     }
     
     if (m_has_den)
     {
-        m_den->toXmlElem("den", "", _outStream);;
+        m_den->toXmlElem("m:den", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15533,6 +15858,11 @@ CT_FPr* CT_FPr::default_instance_ = NULL;
 CT_F* CT_F::default_instance_ = NULL;
 
     // CT_FuncPr
+    CT_FuncPr::CT_FuncPr()
+    :m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_FuncPr::has_ctrlPr() const
     {    
     return m_has_ctrlPr;
@@ -15573,7 +15903,7 @@ CT_F* CT_F::default_instance_ = NULL;
             
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15591,6 +15921,15 @@ CT_F* CT_F::default_instance_ = NULL;
 CT_FuncPr* CT_FuncPr::default_instance_ = NULL;
 
     // CT_Func
+    CT_Func::CT_Func()
+    :m_has_funcPr(false),
+    m_funcPr(NULL),
+    m_has_fName(false),
+    m_fName(NULL),
+    m_has_e(false),
+    m_e(NULL)
+    {
+    }
     bool CT_Func::has_funcPr() const
     {    
     return m_has_funcPr;
@@ -15679,17 +16018,17 @@ CT_FuncPr* CT_FuncPr::default_instance_ = NULL;
             
     if (m_has_funcPr)
     {
-        m_funcPr->toXmlElem("funcPr", "", _outStream);;
+        m_funcPr->toXmlElem("m:funcPr", "", _outStream);;
     }
     
     if (m_has_fName)
     {
-        m_fName->toXmlElem("fName", "", _outStream);;
+        m_fName->toXmlElem("m:fName", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15707,6 +16046,17 @@ CT_FuncPr* CT_FuncPr::default_instance_ = NULL;
 CT_Func* CT_Func::default_instance_ = NULL;
 
     // CT_GroupChrPr
+    CT_GroupChrPr::CT_GroupChrPr()
+    :m_has_chr(false),
+    m_chr(NULL),
+    m_has_pos(false),
+    m_pos(NULL),
+    m_has_vertJc(false),
+    m_vertJc(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_GroupChrPr::has_chr() const
     {    
     return m_has_chr;
@@ -15819,22 +16169,22 @@ CT_Func* CT_Func::default_instance_ = NULL;
             
     if (m_has_chr)
     {
-        m_chr->toXmlElem("chr", "", _outStream);;
+        m_chr->toXmlElem("m:chr", "", _outStream);;
     }
     
     if (m_has_pos)
     {
-        m_pos->toXmlElem("pos", "", _outStream);;
+        m_pos->toXmlElem("m:pos", "", _outStream);;
     }
     
     if (m_has_vertJc)
     {
-        m_vertJc->toXmlElem("vertJc", "", _outStream);;
+        m_vertJc->toXmlElem("m:vertJc", "", _outStream);;
     }
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15852,6 +16202,13 @@ CT_Func* CT_Func::default_instance_ = NULL;
 CT_GroupChrPr* CT_GroupChrPr::default_instance_ = NULL;
 
     // CT_GroupChr
+    CT_GroupChr::CT_GroupChr()
+    :m_has_groupChrPr(false),
+    m_groupChrPr(NULL),
+    m_has_e(false),
+    m_e(NULL)
+    {
+    }
     bool CT_GroupChr::has_groupChrPr() const
     {    
     return m_has_groupChrPr;
@@ -15916,12 +16273,12 @@ CT_GroupChrPr* CT_GroupChrPr::default_instance_ = NULL;
             
     if (m_has_groupChrPr)
     {
-        m_groupChrPr->toXmlElem("groupChrPr", "", _outStream);;
+        m_groupChrPr->toXmlElem("m:groupChrPr", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15939,6 +16296,11 @@ CT_GroupChrPr* CT_GroupChrPr::default_instance_ = NULL;
 CT_GroupChr* CT_GroupChr::default_instance_ = NULL;
 
     // CT_LimLowPr
+    CT_LimLowPr::CT_LimLowPr()
+    :m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_LimLowPr::has_ctrlPr() const
     {    
     return m_has_ctrlPr;
@@ -15979,7 +16341,7 @@ CT_GroupChr* CT_GroupChr::default_instance_ = NULL;
             
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15997,6 +16359,15 @@ CT_GroupChr* CT_GroupChr::default_instance_ = NULL;
 CT_LimLowPr* CT_LimLowPr::default_instance_ = NULL;
 
     // CT_LimLow
+    CT_LimLow::CT_LimLow()
+    :m_has_limLowPr(false),
+    m_limLowPr(NULL),
+    m_has_e(false),
+    m_e(NULL),
+    m_has_lim(false),
+    m_lim(NULL)
+    {
+    }
     bool CT_LimLow::has_limLowPr() const
     {    
     return m_has_limLowPr;
@@ -16085,17 +16456,17 @@ CT_LimLowPr* CT_LimLowPr::default_instance_ = NULL;
             
     if (m_has_limLowPr)
     {
-        m_limLowPr->toXmlElem("limLowPr", "", _outStream);;
+        m_limLowPr->toXmlElem("m:limLowPr", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
     if (m_has_lim)
     {
-        m_lim->toXmlElem("lim", "", _outStream);;
+        m_lim->toXmlElem("m:lim", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16113,6 +16484,11 @@ CT_LimLowPr* CT_LimLowPr::default_instance_ = NULL;
 CT_LimLow* CT_LimLow::default_instance_ = NULL;
 
     // CT_LimUppPr
+    CT_LimUppPr::CT_LimUppPr()
+    :m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_LimUppPr::has_ctrlPr() const
     {    
     return m_has_ctrlPr;
@@ -16153,7 +16529,7 @@ CT_LimLow* CT_LimLow::default_instance_ = NULL;
             
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16171,6 +16547,15 @@ CT_LimLow* CT_LimLow::default_instance_ = NULL;
 CT_LimUppPr* CT_LimUppPr::default_instance_ = NULL;
 
     // CT_LimUpp
+    CT_LimUpp::CT_LimUpp()
+    :m_has_limUppPr(false),
+    m_limUppPr(NULL),
+    m_has_e(false),
+    m_e(NULL),
+    m_has_lim(false),
+    m_lim(NULL)
+    {
+    }
     bool CT_LimUpp::has_limUppPr() const
     {    
     return m_has_limUppPr;
@@ -16259,17 +16644,17 @@ CT_LimUppPr* CT_LimUppPr::default_instance_ = NULL;
             
     if (m_has_limUppPr)
     {
-        m_limUppPr->toXmlElem("limUppPr", "", _outStream);;
+        m_limUppPr->toXmlElem("m:limUppPr", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
     if (m_has_lim)
     {
-        m_lim->toXmlElem("lim", "", _outStream);;
+        m_lim->toXmlElem("m:lim", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16287,6 +16672,13 @@ CT_LimUppPr* CT_LimUppPr::default_instance_ = NULL;
 CT_LimUpp* CT_LimUpp::default_instance_ = NULL;
 
     // CT_MCPr
+    CT_MCPr::CT_MCPr()
+    :m_has_count(false),
+    m_count(NULL),
+    m_has_mcJc(false),
+    m_mcJc(NULL)
+    {
+    }
     bool CT_MCPr::has_count() const
     {    
     return m_has_count;
@@ -16351,12 +16743,12 @@ CT_LimUpp* CT_LimUpp::default_instance_ = NULL;
             
     if (m_has_count)
     {
-        m_count->toXmlElem("count", "", _outStream);;
+        m_count->toXmlElem("m:count", "", _outStream);;
     }
     
     if (m_has_mcJc)
     {
-        m_mcJc->toXmlElem("mcJc", "", _outStream);;
+        m_mcJc->toXmlElem("m:mcJc", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16374,6 +16766,11 @@ CT_LimUpp* CT_LimUpp::default_instance_ = NULL;
 CT_MCPr* CT_MCPr::default_instance_ = NULL;
 
     // CT_MC
+    CT_MC::CT_MC()
+    :m_has_mcPr(false),
+    m_mcPr(NULL)
+    {
+    }
     bool CT_MC::has_mcPr() const
     {    
     return m_has_mcPr;
@@ -16414,7 +16811,7 @@ CT_MCPr* CT_MCPr::default_instance_ = NULL;
             
     if (m_has_mcPr)
     {
-        m_mcPr->toXmlElem("mcPr", "", _outStream);;
+        m_mcPr->toXmlElem("m:mcPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16432,6 +16829,10 @@ CT_MCPr* CT_MCPr::default_instance_ = NULL;
 CT_MC* CT_MC::default_instance_ = NULL;
 
     // CT_MCS
+    CT_MCS::CT_MCS()
+
+    {
+    }
     CT_MC* CT_MCS::add_mc()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -16469,7 +16870,7 @@ CT_MC* CT_MC::default_instance_ = NULL;
         {
             if ((*iter)->has_mc())
             {
-                (*iter)->get_mc().toXmlElem("mc", "", _outStream);
+                (*iter)->get_mc().toXmlElem("m:mc", "", _outStream);
             }
         }
     }
@@ -16488,6 +16889,11 @@ CT_MC* CT_MC::default_instance_ = NULL;
 
 
     // CT_MCS::ChildGroup_1
+    CT_MCS::ChildGroup_1::ChildGroup_1()
+    :m_has_mc(false),
+    m_mc(NULL)
+    {
+    }
     bool CT_MCS::ChildGroup_1::has_mc() const
     {    
     return m_has_mc;
@@ -16516,6 +16922,27 @@ CT_MC* CT_MC::default_instance_ = NULL;
 CT_MCS* CT_MCS::default_instance_ = NULL;
 
     // CT_MPr
+    CT_MPr::CT_MPr()
+    :m_has_baseJc(false),
+    m_baseJc(NULL),
+    m_has_plcHide(false),
+    m_plcHide(NULL),
+    m_has_rSpRule(false),
+    m_rSpRule(NULL),
+    m_has_cGpRule(false),
+    m_cGpRule(NULL),
+    m_has_rSp(false),
+    m_rSp(NULL),
+    m_has_cSp(false),
+    m_cSp(NULL),
+    m_has_cGp(false),
+    m_cGp(NULL),
+    m_has_mcs(false),
+    m_mcs(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_MPr::has_baseJc() const
     {    
     return m_has_baseJc;
@@ -16748,47 +17175,47 @@ CT_MCS* CT_MCS::default_instance_ = NULL;
             
     if (m_has_baseJc)
     {
-        m_baseJc->toXmlElem("baseJc", "", _outStream);;
+        m_baseJc->toXmlElem("m:baseJc", "", _outStream);;
     }
     
     if (m_has_plcHide)
     {
-        m_plcHide->toXmlElem("plcHide", "", _outStream);;
+        m_plcHide->toXmlElem("m:plcHide", "", _outStream);;
     }
     
     if (m_has_rSpRule)
     {
-        m_rSpRule->toXmlElem("rSpRule", "", _outStream);;
+        m_rSpRule->toXmlElem("m:rSpRule", "", _outStream);;
     }
     
     if (m_has_cGpRule)
     {
-        m_cGpRule->toXmlElem("cGpRule", "", _outStream);;
+        m_cGpRule->toXmlElem("m:cGpRule", "", _outStream);;
     }
     
     if (m_has_rSp)
     {
-        m_rSp->toXmlElem("rSp", "", _outStream);;
+        m_rSp->toXmlElem("m:rSp", "", _outStream);;
     }
     
     if (m_has_cSp)
     {
-        m_cSp->toXmlElem("cSp", "", _outStream);;
+        m_cSp->toXmlElem("m:cSp", "", _outStream);;
     }
     
     if (m_has_cGp)
     {
-        m_cGp->toXmlElem("cGp", "", _outStream);;
+        m_cGp->toXmlElem("m:cGp", "", _outStream);;
     }
     
     if (m_has_mcs)
     {
-        m_mcs->toXmlElem("mcs", "", _outStream);;
+        m_mcs->toXmlElem("m:mcs", "", _outStream);;
     }
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16806,6 +17233,10 @@ CT_MCS* CT_MCS::default_instance_ = NULL;
 CT_MPr* CT_MPr::default_instance_ = NULL;
 
     // CT_MR
+    CT_MR::CT_MR()
+
+    {
+    }
     CT_OMathArg* CT_MR::add_e()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -16843,7 +17274,7 @@ CT_MPr* CT_MPr::default_instance_ = NULL;
         {
             if ((*iter)->has_e())
             {
-                (*iter)->get_e().toXmlElem("e", "", _outStream);
+                (*iter)->get_e().toXmlElem("m:e", "", _outStream);
             }
         }
     }
@@ -16862,6 +17293,11 @@ CT_MPr* CT_MPr::default_instance_ = NULL;
 
 
     // CT_MR::ChildGroup_1
+    CT_MR::ChildGroup_1::ChildGroup_1()
+    :m_has_e(false),
+    m_e(NULL)
+    {
+    }
     bool CT_MR::ChildGroup_1::has_e() const
     {    
     return m_has_e;
@@ -16890,6 +17326,11 @@ CT_MPr* CT_MPr::default_instance_ = NULL;
 CT_MR* CT_MR::default_instance_ = NULL;
 
     // CT_M
+    CT_M::CT_M()
+    :m_has_mPr(false),
+    m_mPr(NULL)
+    {
+    }
     bool CT_M::has_mPr() const
     {    
     return m_has_mPr;
@@ -16956,7 +17397,7 @@ CT_MR* CT_MR::default_instance_ = NULL;
             
     if (m_has_mPr)
     {
-        m_mPr->toXmlElem("mPr", "", _outStream);;
+        m_mPr->toXmlElem("m:mPr", "", _outStream);;
     }
      
     {
@@ -16965,7 +17406,7 @@ CT_MR* CT_MR::default_instance_ = NULL;
         {
             if ((*iter)->has_mr())
             {
-                (*iter)->get_mr().toXmlElem("mr", "", _outStream);
+                (*iter)->get_mr().toXmlElem("m:mr", "", _outStream);
             }
         }
     }
@@ -16984,6 +17425,11 @@ CT_MR* CT_MR::default_instance_ = NULL;
 
 
     // CT_M::ChildGroup_1
+    CT_M::ChildGroup_1::ChildGroup_1()
+    :m_has_mr(false),
+    m_mr(NULL)
+    {
+    }
     bool CT_M::ChildGroup_1::has_mr() const
     {    
     return m_has_mr;
@@ -17012,6 +17458,21 @@ CT_MR* CT_MR::default_instance_ = NULL;
 CT_M* CT_M::default_instance_ = NULL;
 
     // CT_NaryPr
+    CT_NaryPr::CT_NaryPr()
+    :m_has_chr(false),
+    m_chr(NULL),
+    m_has_limLoc(false),
+    m_limLoc(NULL),
+    m_has_grow(false),
+    m_grow(NULL),
+    m_has_subHide(false),
+    m_subHide(NULL),
+    m_has_supHide(false),
+    m_supHide(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_NaryPr::has_chr() const
     {    
     return m_has_chr;
@@ -17172,32 +17633,32 @@ CT_M* CT_M::default_instance_ = NULL;
             
     if (m_has_chr)
     {
-        m_chr->toXmlElem("chr", "", _outStream);;
+        m_chr->toXmlElem("m:chr", "", _outStream);;
     }
     
     if (m_has_limLoc)
     {
-        m_limLoc->toXmlElem("limLoc", "", _outStream);;
+        m_limLoc->toXmlElem("m:limLoc", "", _outStream);;
     }
     
     if (m_has_grow)
     {
-        m_grow->toXmlElem("grow", "", _outStream);;
+        m_grow->toXmlElem("m:grow", "", _outStream);;
     }
     
     if (m_has_subHide)
     {
-        m_subHide->toXmlElem("subHide", "", _outStream);;
+        m_subHide->toXmlElem("m:subHide", "", _outStream);;
     }
     
     if (m_has_supHide)
     {
-        m_supHide->toXmlElem("supHide", "", _outStream);;
+        m_supHide->toXmlElem("m:supHide", "", _outStream);;
     }
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17215,6 +17676,17 @@ CT_M* CT_M::default_instance_ = NULL;
 CT_NaryPr* CT_NaryPr::default_instance_ = NULL;
 
     // CT_Nary
+    CT_Nary::CT_Nary()
+    :m_has_naryPr(false),
+    m_naryPr(NULL),
+    m_has_sub(false),
+    m_sub(NULL),
+    m_has_sup(false),
+    m_sup(NULL),
+    m_has_e(false),
+    m_e(NULL)
+    {
+    }
     bool CT_Nary::has_naryPr() const
     {    
     return m_has_naryPr;
@@ -17327,22 +17799,22 @@ CT_NaryPr* CT_NaryPr::default_instance_ = NULL;
             
     if (m_has_naryPr)
     {
-        m_naryPr->toXmlElem("naryPr", "", _outStream);;
+        m_naryPr->toXmlElem("m:naryPr", "", _outStream);;
     }
     
     if (m_has_sub)
     {
-        m_sub->toXmlElem("sub", "", _outStream);;
+        m_sub->toXmlElem("m:sub", "", _outStream);;
     }
     
     if (m_has_sup)
     {
-        m_sup->toXmlElem("sup", "", _outStream);;
+        m_sup->toXmlElem("m:sup", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17360,6 +17832,21 @@ CT_NaryPr* CT_NaryPr::default_instance_ = NULL;
 CT_Nary* CT_Nary::default_instance_ = NULL;
 
     // CT_PhantPr
+    CT_PhantPr::CT_PhantPr()
+    :m_has_show(false),
+    m_show(NULL),
+    m_has_zeroWid(false),
+    m_zeroWid(NULL),
+    m_has_zeroAsc(false),
+    m_zeroAsc(NULL),
+    m_has_zeroDesc(false),
+    m_zeroDesc(NULL),
+    m_has_transp(false),
+    m_transp(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_PhantPr::has_show() const
     {    
     return m_has_show;
@@ -17520,32 +18007,32 @@ CT_Nary* CT_Nary::default_instance_ = NULL;
             
     if (m_has_show)
     {
-        m_show->toXmlElem("show", "", _outStream);;
+        m_show->toXmlElem("m:show", "", _outStream);;
     }
     
     if (m_has_zeroWid)
     {
-        m_zeroWid->toXmlElem("zeroWid", "", _outStream);;
+        m_zeroWid->toXmlElem("m:zeroWid", "", _outStream);;
     }
     
     if (m_has_zeroAsc)
     {
-        m_zeroAsc->toXmlElem("zeroAsc", "", _outStream);;
+        m_zeroAsc->toXmlElem("m:zeroAsc", "", _outStream);;
     }
     
     if (m_has_zeroDesc)
     {
-        m_zeroDesc->toXmlElem("zeroDesc", "", _outStream);;
+        m_zeroDesc->toXmlElem("m:zeroDesc", "", _outStream);;
     }
     
     if (m_has_transp)
     {
-        m_transp->toXmlElem("transp", "", _outStream);;
+        m_transp->toXmlElem("m:transp", "", _outStream);;
     }
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17563,6 +18050,13 @@ CT_Nary* CT_Nary::default_instance_ = NULL;
 CT_PhantPr* CT_PhantPr::default_instance_ = NULL;
 
     // CT_Phant
+    CT_Phant::CT_Phant()
+    :m_has_phantPr(false),
+    m_phantPr(NULL),
+    m_has_e(false),
+    m_e(NULL)
+    {
+    }
     bool CT_Phant::has_phantPr() const
     {    
     return m_has_phantPr;
@@ -17627,12 +18121,12 @@ CT_PhantPr* CT_PhantPr::default_instance_ = NULL;
             
     if (m_has_phantPr)
     {
-        m_phantPr->toXmlElem("phantPr", "", _outStream);;
+        m_phantPr->toXmlElem("m:phantPr", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17650,6 +18144,13 @@ CT_PhantPr* CT_PhantPr::default_instance_ = NULL;
 CT_Phant* CT_Phant::default_instance_ = NULL;
 
     // CT_RadPr
+    CT_RadPr::CT_RadPr()
+    :m_has_degHide(false),
+    m_degHide(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_RadPr::has_degHide() const
     {    
     return m_has_degHide;
@@ -17714,12 +18215,12 @@ CT_Phant* CT_Phant::default_instance_ = NULL;
             
     if (m_has_degHide)
     {
-        m_degHide->toXmlElem("degHide", "", _outStream);;
+        m_degHide->toXmlElem("m:degHide", "", _outStream);;
     }
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17737,6 +18238,15 @@ CT_Phant* CT_Phant::default_instance_ = NULL;
 CT_RadPr* CT_RadPr::default_instance_ = NULL;
 
     // CT_Rad
+    CT_Rad::CT_Rad()
+    :m_has_radPr(false),
+    m_radPr(NULL),
+    m_has_deg(false),
+    m_deg(NULL),
+    m_has_e(false),
+    m_e(NULL)
+    {
+    }
     bool CT_Rad::has_radPr() const
     {    
     return m_has_radPr;
@@ -17825,17 +18335,17 @@ CT_RadPr* CT_RadPr::default_instance_ = NULL;
             
     if (m_has_radPr)
     {
-        m_radPr->toXmlElem("radPr", "", _outStream);;
+        m_radPr->toXmlElem("m:radPr", "", _outStream);;
     }
     
     if (m_has_deg)
     {
-        m_deg->toXmlElem("deg", "", _outStream);;
+        m_deg->toXmlElem("m:deg", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17853,6 +18363,11 @@ CT_RadPr* CT_RadPr::default_instance_ = NULL;
 CT_Rad* CT_Rad::default_instance_ = NULL;
 
     // CT_SPrePr
+    CT_SPrePr::CT_SPrePr()
+    :m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_SPrePr::has_ctrlPr() const
     {    
     return m_has_ctrlPr;
@@ -17893,7 +18408,7 @@ CT_Rad* CT_Rad::default_instance_ = NULL;
             
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17911,6 +18426,17 @@ CT_Rad* CT_Rad::default_instance_ = NULL;
 CT_SPrePr* CT_SPrePr::default_instance_ = NULL;
 
     // CT_SPre
+    CT_SPre::CT_SPre()
+    :m_has_sPrePr(false),
+    m_sPrePr(NULL),
+    m_has_sub(false),
+    m_sub(NULL),
+    m_has_sup(false),
+    m_sup(NULL),
+    m_has_e(false),
+    m_e(NULL)
+    {
+    }
     bool CT_SPre::has_sPrePr() const
     {    
     return m_has_sPrePr;
@@ -18023,22 +18549,22 @@ CT_SPrePr* CT_SPrePr::default_instance_ = NULL;
             
     if (m_has_sPrePr)
     {
-        m_sPrePr->toXmlElem("sPrePr", "", _outStream);;
+        m_sPrePr->toXmlElem("m:sPrePr", "", _outStream);;
     }
     
     if (m_has_sub)
     {
-        m_sub->toXmlElem("sub", "", _outStream);;
+        m_sub->toXmlElem("m:sub", "", _outStream);;
     }
     
     if (m_has_sup)
     {
-        m_sup->toXmlElem("sup", "", _outStream);;
+        m_sup->toXmlElem("m:sup", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18056,6 +18582,11 @@ CT_SPrePr* CT_SPrePr::default_instance_ = NULL;
 CT_SPre* CT_SPre::default_instance_ = NULL;
 
     // CT_SSubPr
+    CT_SSubPr::CT_SSubPr()
+    :m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_SSubPr::has_ctrlPr() const
     {    
     return m_has_ctrlPr;
@@ -18096,7 +18627,7 @@ CT_SPre* CT_SPre::default_instance_ = NULL;
             
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18114,6 +18645,15 @@ CT_SPre* CT_SPre::default_instance_ = NULL;
 CT_SSubPr* CT_SSubPr::default_instance_ = NULL;
 
     // CT_SSub
+    CT_SSub::CT_SSub()
+    :m_has_sSubPr(false),
+    m_sSubPr(NULL),
+    m_has_e(false),
+    m_e(NULL),
+    m_has_sub(false),
+    m_sub(NULL)
+    {
+    }
     bool CT_SSub::has_sSubPr() const
     {    
     return m_has_sSubPr;
@@ -18202,17 +18742,17 @@ CT_SSubPr* CT_SSubPr::default_instance_ = NULL;
             
     if (m_has_sSubPr)
     {
-        m_sSubPr->toXmlElem("sSubPr", "", _outStream);;
+        m_sSubPr->toXmlElem("m:sSubPr", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
     if (m_has_sub)
     {
-        m_sub->toXmlElem("sub", "", _outStream);;
+        m_sub->toXmlElem("m:sub", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18230,6 +18770,13 @@ CT_SSubPr* CT_SSubPr::default_instance_ = NULL;
 CT_SSub* CT_SSub::default_instance_ = NULL;
 
     // CT_SSubSupPr
+    CT_SSubSupPr::CT_SSubSupPr()
+    :m_has_alnScr(false),
+    m_alnScr(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_SSubSupPr::has_alnScr() const
     {    
     return m_has_alnScr;
@@ -18294,12 +18841,12 @@ CT_SSub* CT_SSub::default_instance_ = NULL;
             
     if (m_has_alnScr)
     {
-        m_alnScr->toXmlElem("alnScr", "", _outStream);;
+        m_alnScr->toXmlElem("m:alnScr", "", _outStream);;
     }
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18317,6 +18864,17 @@ CT_SSub* CT_SSub::default_instance_ = NULL;
 CT_SSubSupPr* CT_SSubSupPr::default_instance_ = NULL;
 
     // CT_SSubSup
+    CT_SSubSup::CT_SSubSup()
+    :m_has_sSubSupPr(false),
+    m_sSubSupPr(NULL),
+    m_has_e(false),
+    m_e(NULL),
+    m_has_sub(false),
+    m_sub(NULL),
+    m_has_sup(false),
+    m_sup(NULL)
+    {
+    }
     bool CT_SSubSup::has_sSubSupPr() const
     {    
     return m_has_sSubSupPr;
@@ -18429,22 +18987,22 @@ CT_SSubSupPr* CT_SSubSupPr::default_instance_ = NULL;
             
     if (m_has_sSubSupPr)
     {
-        m_sSubSupPr->toXmlElem("sSubSupPr", "", _outStream);;
+        m_sSubSupPr->toXmlElem("m:sSubSupPr", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
     if (m_has_sub)
     {
-        m_sub->toXmlElem("sub", "", _outStream);;
+        m_sub->toXmlElem("m:sub", "", _outStream);;
     }
     
     if (m_has_sup)
     {
-        m_sup->toXmlElem("sup", "", _outStream);;
+        m_sup->toXmlElem("m:sup", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18462,6 +19020,11 @@ CT_SSubSupPr* CT_SSubSupPr::default_instance_ = NULL;
 CT_SSubSup* CT_SSubSup::default_instance_ = NULL;
 
     // CT_SSupPr
+    CT_SSupPr::CT_SSupPr()
+    :m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_SSupPr::has_ctrlPr() const
     {    
     return m_has_ctrlPr;
@@ -18502,7 +19065,7 @@ CT_SSubSup* CT_SSubSup::default_instance_ = NULL;
             
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18520,6 +19083,15 @@ CT_SSubSup* CT_SSubSup::default_instance_ = NULL;
 CT_SSupPr* CT_SSupPr::default_instance_ = NULL;
 
     // CT_SSup
+    CT_SSup::CT_SSup()
+    :m_has_sSupPr(false),
+    m_sSupPr(NULL),
+    m_has_e(false),
+    m_e(NULL),
+    m_has_sup(false),
+    m_sup(NULL)
+    {
+    }
     bool CT_SSup::has_sSupPr() const
     {    
     return m_has_sSupPr;
@@ -18608,17 +19180,17 @@ CT_SSupPr* CT_SSupPr::default_instance_ = NULL;
             
     if (m_has_sSupPr)
     {
-        m_sSupPr->toXmlElem("sSupPr", "", _outStream);;
+        m_sSupPr->toXmlElem("m:sSupPr", "", _outStream);;
     }
     
     if (m_has_e)
     {
-        m_e->toXmlElem("e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);;
     }
     
     if (m_has_sup)
     {
-        m_sup->toXmlElem("sup", "", _outStream);;
+        m_sup->toXmlElem("m:sup", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18636,6 +19208,11 @@ CT_SSupPr* CT_SSupPr::default_instance_ = NULL;
 CT_SSup* CT_SSup::default_instance_ = NULL;
 
     // CT_OMathArgPr
+    CT_OMathArgPr::CT_OMathArgPr()
+    :m_has_argSz(false),
+    m_argSz(NULL)
+    {
+    }
     bool CT_OMathArgPr::has_argSz() const
     {    
     return m_has_argSz;
@@ -18676,7 +19253,7 @@ CT_SSup* CT_SSup::default_instance_ = NULL;
             
     if (m_has_argSz)
     {
-        m_argSz->toXmlElem("argSz", "", _outStream);;
+        m_argSz->toXmlElem("m:argSz", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18694,6 +19271,13 @@ CT_SSup* CT_SSup::default_instance_ = NULL;
 CT_OMathArgPr* CT_OMathArgPr::default_instance_ = NULL;
 
     // CT_OMathArg
+    CT_OMathArg::CT_OMathArg()
+    :m_has_argPr(false),
+    m_argPr(NULL),
+    m_has_ctrlPr(false),
+    m_ctrlPr(NULL)
+    {
+    }
     bool CT_OMathArg::has_argPr() const
     {    
     return m_has_argPr;
@@ -19185,7 +19769,7 @@ CT_OMathArgPr* CT_OMathArgPr::default_instance_ = NULL;
             
     if (m_has_argPr)
     {
-        m_argPr->toXmlElem("argPr", "", _outStream);;
+        m_argPr->toXmlElem("m:argPr", "", _outStream);;
     }
      
     {
@@ -19194,83 +19778,83 @@ CT_OMathArgPr* CT_OMathArgPr::default_instance_ = NULL;
         {
             if ((*iter)->has_acc())
             {
-                (*iter)->get_acc().toXmlElem("acc", "", _outStream);
+                (*iter)->get_acc().toXmlElem("m:acc", "", _outStream);
             }
             else if ((*iter)->has_bar())
             {
-                (*iter)->get_bar().toXmlElem("bar", "", _outStream);
+                (*iter)->get_bar().toXmlElem("m:bar", "", _outStream);
             }
             else if ((*iter)->has_box())
             {
-                (*iter)->get_box().toXmlElem("box", "", _outStream);
+                (*iter)->get_box().toXmlElem("m:box", "", _outStream);
             }
             else if ((*iter)->has_borderBox())
             {
-                (*iter)->get_borderBox().toXmlElem("borderBox", "", _outStream);
+                (*iter)->get_borderBox().toXmlElem("m:borderBox", "", _outStream);
             }
             else if ((*iter)->has_d())
             {
-                (*iter)->get_d().toXmlElem("d", "", _outStream);
+                (*iter)->get_d().toXmlElem("m:d", "", _outStream);
             }
             else if ((*iter)->has_eqArr())
             {
-                (*iter)->get_eqArr().toXmlElem("eqArr", "", _outStream);
+                (*iter)->get_eqArr().toXmlElem("m:eqArr", "", _outStream);
             }
             else if ((*iter)->has_f())
             {
-                (*iter)->get_f().toXmlElem("f", "", _outStream);
+                (*iter)->get_f().toXmlElem("m:f", "", _outStream);
             }
             else if ((*iter)->has_func())
             {
-                (*iter)->get_func().toXmlElem("func", "", _outStream);
+                (*iter)->get_func().toXmlElem("m:func", "", _outStream);
             }
             else if ((*iter)->has_groupChr())
             {
-                (*iter)->get_groupChr().toXmlElem("groupChr", "", _outStream);
+                (*iter)->get_groupChr().toXmlElem("m:groupChr", "", _outStream);
             }
             else if ((*iter)->has_limLow())
             {
-                (*iter)->get_limLow().toXmlElem("limLow", "", _outStream);
+                (*iter)->get_limLow().toXmlElem("m:limLow", "", _outStream);
             }
             else if ((*iter)->has_limUpp())
             {
-                (*iter)->get_limUpp().toXmlElem("limUpp", "", _outStream);
+                (*iter)->get_limUpp().toXmlElem("m:limUpp", "", _outStream);
             }
             else if ((*iter)->has_m())
             {
-                (*iter)->get_m().toXmlElem("m", "", _outStream);
+                (*iter)->get_m().toXmlElem("m:m", "", _outStream);
             }
             else if ((*iter)->has_nary())
             {
-                (*iter)->get_nary().toXmlElem("nary", "", _outStream);
+                (*iter)->get_nary().toXmlElem("m:nary", "", _outStream);
             }
             else if ((*iter)->has_phant())
             {
-                (*iter)->get_phant().toXmlElem("phant", "", _outStream);
+                (*iter)->get_phant().toXmlElem("m:phant", "", _outStream);
             }
             else if ((*iter)->has_rad())
             {
-                (*iter)->get_rad().toXmlElem("rad", "", _outStream);
+                (*iter)->get_rad().toXmlElem("m:rad", "", _outStream);
             }
             else if ((*iter)->has_sPre())
             {
-                (*iter)->get_sPre().toXmlElem("sPre", "", _outStream);
+                (*iter)->get_sPre().toXmlElem("m:sPre", "", _outStream);
             }
             else if ((*iter)->has_sSub())
             {
-                (*iter)->get_sSub().toXmlElem("sSub", "", _outStream);
+                (*iter)->get_sSub().toXmlElem("m:sSub", "", _outStream);
             }
             else if ((*iter)->has_sSubSup())
             {
-                (*iter)->get_sSubSup().toXmlElem("sSubSup", "", _outStream);
+                (*iter)->get_sSubSup().toXmlElem("m:sSubSup", "", _outStream);
             }
             else if ((*iter)->has_sSup())
             {
-                (*iter)->get_sSup().toXmlElem("sSup", "", _outStream);
+                (*iter)->get_sSup().toXmlElem("m:sSup", "", _outStream);
             }
             else if ((*iter)->has_r())
             {
-                (*iter)->get_r().toXmlElem("r", "", _outStream);
+                (*iter)->get_r().toXmlElem("m:r", "", _outStream);
             }
             else if ((*iter)->has_w_customXml())
             {
@@ -19386,18 +19970,18 @@ CT_OMathArgPr* CT_OMathArgPr::default_instance_ = NULL;
             }
             else if ((*iter)->has_m_oMathPara())
             {
-                (*iter)->get_m_oMathPara().toXmlElem("oMathPara", "", _outStream);
+                (*iter)->get_m_oMathPara().toXmlElem("m:oMathPara", "", _outStream);
             }
             else if ((*iter)->has_m_oMath())
             {
-                (*iter)->get_m_oMath().toXmlElem("oMath", "", _outStream);
+                (*iter)->get_m_oMath().toXmlElem("m:oMath", "", _outStream);
             }
         }
     }
      
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19414,6 +19998,109 @@ CT_OMathArgPr* CT_OMathArgPr::default_instance_ = NULL;
 
 
     // CT_OMathArg::ChildGroup_1
+    CT_OMathArg::ChildGroup_1::ChildGroup_1()
+    :m_has_acc(false),
+    m_acc(NULL),
+    m_has_bar(false),
+    m_bar(NULL),
+    m_has_box(false),
+    m_box(NULL),
+    m_has_borderBox(false),
+    m_borderBox(NULL),
+    m_has_d(false),
+    m_d(NULL),
+    m_has_eqArr(false),
+    m_eqArr(NULL),
+    m_has_f(false),
+    m_f(NULL),
+    m_has_func(false),
+    m_func(NULL),
+    m_has_groupChr(false),
+    m_groupChr(NULL),
+    m_has_limLow(false),
+    m_limLow(NULL),
+    m_has_limUpp(false),
+    m_limUpp(NULL),
+    m_has_m(false),
+    m_m(NULL),
+    m_has_nary(false),
+    m_nary(NULL),
+    m_has_phant(false),
+    m_phant(NULL),
+    m_has_rad(false),
+    m_rad(NULL),
+    m_has_sPre(false),
+    m_sPre(NULL),
+    m_has_sSub(false),
+    m_sSub(NULL),
+    m_has_sSubSup(false),
+    m_sSubSup(NULL),
+    m_has_sSup(false),
+    m_sSup(NULL),
+    m_has_r(false),
+    m_r(NULL),
+    m_has_w_customXml(false),
+    m_w_customXml(NULL),
+    m_has_w_fldSimple(false),
+    m_w_fldSimple(NULL),
+    m_has_w_hyperlink(false),
+    m_w_hyperlink(NULL),
+    m_has_w_smartTag(false),
+    m_w_smartTag(NULL),
+    m_has_w_sdt(false),
+    m_w_sdt(NULL),
+    m_has_w_proofErr(false),
+    m_w_proofErr(NULL),
+    m_has_w_permStart(false),
+    m_w_permStart(NULL),
+    m_has_w_permEnd(false),
+    m_w_permEnd(NULL),
+    m_has_w_bookmarkStart(false),
+    m_w_bookmarkStart(NULL),
+    m_has_w_bookmarkEnd(false),
+    m_w_bookmarkEnd(NULL),
+    m_has_w_moveFromRangeStart(false),
+    m_w_moveFromRangeStart(NULL),
+    m_has_w_moveFromRangeEnd(false),
+    m_w_moveFromRangeEnd(NULL),
+    m_has_w_moveToRangeStart(false),
+    m_w_moveToRangeStart(NULL),
+    m_has_w_moveToRangeEnd(false),
+    m_w_moveToRangeEnd(NULL),
+    m_has_w_commentRangeStart(false),
+    m_w_commentRangeStart(NULL),
+    m_has_w_commentRangeEnd(false),
+    m_w_commentRangeEnd(NULL),
+    m_has_w_customXmlInsRangeStart(false),
+    m_w_customXmlInsRangeStart(NULL),
+    m_has_w_customXmlInsRangeEnd(false),
+    m_w_customXmlInsRangeEnd(NULL),
+    m_has_w_customXmlDelRangeStart(false),
+    m_w_customXmlDelRangeStart(NULL),
+    m_has_w_customXmlDelRangeEnd(false),
+    m_w_customXmlDelRangeEnd(NULL),
+    m_has_w_customXmlMoveFromRangeStart(false),
+    m_w_customXmlMoveFromRangeStart(NULL),
+    m_has_w_customXmlMoveFromRangeEnd(false),
+    m_w_customXmlMoveFromRangeEnd(NULL),
+    m_has_w_customXmlMoveToRangeStart(false),
+    m_w_customXmlMoveToRangeStart(NULL),
+    m_has_w_customXmlMoveToRangeEnd(false),
+    m_w_customXmlMoveToRangeEnd(NULL),
+    m_has_w_ins(false),
+    m_w_ins(NULL),
+    m_has_w_del(false),
+    m_w_del(NULL),
+    m_has_w_moveFrom(false),
+    m_w_moveFrom(NULL),
+    m_has_w_moveTo(false),
+    m_w_moveTo(NULL),
+    m_has_m_oMathPara(false),
+    m_m_oMathPara(NULL),
+    m_has_m_oMath(false),
+    m_m_oMath(NULL)
+    {
+    }
     bool CT_OMathArg::ChildGroup_1::has_acc() const
     {    
     return m_has_acc;
@@ -42717,6 +43404,11 @@ CT_OMathArgPr* CT_OMathArgPr::default_instance_ = NULL;
 CT_OMathArg* CT_OMathArg::default_instance_ = NULL;
 
     // CT_OMathJc
+    CT_OMathJc::CT_OMathJc()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_OMathJc::clear()
     {    
     m_has_val_attr = false;
@@ -42780,6 +43472,11 @@ CT_OMathArg* CT_OMathArg::default_instance_ = NULL;
 CT_OMathJc* CT_OMathJc::default_instance_ = NULL;
 
     // CT_OMathParaPr
+    CT_OMathParaPr::CT_OMathParaPr()
+    :m_has_jc(false),
+    m_jc(NULL)
+    {
+    }
     bool CT_OMathParaPr::has_jc() const
     {    
     return m_has_jc;
@@ -42820,7 +43517,7 @@ CT_OMathJc* CT_OMathJc::default_instance_ = NULL;
             
     if (m_has_jc)
     {
-        m_jc->toXmlElem("jc", "", _outStream);;
+        m_jc->toXmlElem("m:jc", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -42838,14 +43535,19 @@ CT_OMathJc* CT_OMathJc::default_instance_ = NULL;
 CT_OMathParaPr* CT_OMathParaPr::default_instance_ = NULL;
 
     // CT_TwipsMeasure
+    CT_TwipsMeasure::CT_TwipsMeasure()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_TwipsMeasure::clear()
     {    
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     }
@@ -42859,9 +43561,9 @@ CT_OMathParaPr* CT_OMathParaPr::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("s:val", _outStream);
+        m_val_attr->toXmlAttr("m:val", _outStream);
     }
     
             _outStream << ">";
@@ -42878,22 +43580,22 @@ CT_OMathParaPr* CT_OMathParaPr::default_instance_ = NULL;
     return *CT_TwipsMeasure::default_instance_;
     }
 
-    bool CT_TwipsMeasure::has_s_val_attr() const
+    bool CT_TwipsMeasure::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_TwipsMeasure::set_s_val_attr(const ns_s::ST_TwipsMeasure& _s_val_attr)
+    void CT_TwipsMeasure::set_val_attr(const ns_s::ST_TwipsMeasure& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_TwipsMeasure(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_TwipsMeasure(_val_attr);
     }
 
-    const ns_s::ST_TwipsMeasure& CT_TwipsMeasure::get_s_val_attr() const
+    const ns_s::ST_TwipsMeasure& CT_TwipsMeasure::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_TwipsMeasure::default_instance();
     }
@@ -42901,6 +43603,11 @@ CT_OMathParaPr* CT_OMathParaPr::default_instance_ = NULL;
 CT_TwipsMeasure* CT_TwipsMeasure::default_instance_ = NULL;
 
     // CT_BreakBin
+    CT_BreakBin::CT_BreakBin()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_BreakBin::clear()
     {    
     m_has_val_attr = false;
@@ -42964,6 +43671,11 @@ CT_TwipsMeasure* CT_TwipsMeasure::default_instance_ = NULL;
 CT_BreakBin* CT_BreakBin::default_instance_ = NULL;
 
     // CT_BreakBinSub
+    CT_BreakBinSub::CT_BreakBinSub()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_BreakBinSub::clear()
     {    
     m_has_val_attr = false;
@@ -43027,6 +43739,41 @@ CT_BreakBin* CT_BreakBin::default_instance_ = NULL;
 CT_BreakBinSub* CT_BreakBinSub::default_instance_ = NULL;
 
     // CT_MathPr
+    CT_MathPr::CT_MathPr()
+    :m_has_mathFont(false),
+    m_mathFont(NULL),
+    m_has_brkBin(false),
+    m_brkBin(NULL),
+    m_has_brkBinSub(false),
+    m_brkBinSub(NULL),
+    m_has_smallFrac(false),
+    m_smallFrac(NULL),
+    m_has_dispDef(false),
+    m_dispDef(NULL),
+    m_has_lMargin(false),
+    m_lMargin(NULL),
+    m_has_rMargin(false),
+    m_rMargin(NULL),
+    m_has_defJc(false),
+    m_defJc(NULL),
+    m_has_preSp(false),
+    m_preSp(NULL),
+    m_has_postSp(false),
+    m_postSp(NULL),
+    m_has_interSp(false),
+    m_interSp(NULL),
+    m_has_intraSp(false),
+    m_intraSp(NULL),
+    m_has_wrapIndent(false),
+    m_wrapIndent(NULL),
+    m_has_wrapRight(false),
+    m_wrapRight(NULL),
+    m_has_intLim(false),
+    m_intLim(NULL),
+    m_has_naryLim(false),
+    m_naryLim(NULL)
+    {
+    }
     bool CT_MathPr::has_mathFont() const
     {    
     return m_has_mathFont;
@@ -43447,82 +44194,82 @@ CT_BreakBinSub* CT_BreakBinSub::default_instance_ = NULL;
             
     if (m_has_mathFont)
     {
-        m_mathFont->toXmlElem("mathFont", "", _outStream);;
+        m_mathFont->toXmlElem("m:mathFont", "", _outStream);;
     }
     
     if (m_has_brkBin)
     {
-        m_brkBin->toXmlElem("brkBin", "", _outStream);;
+        m_brkBin->toXmlElem("m:brkBin", "", _outStream);;
     }
     
     if (m_has_brkBinSub)
     {
-        m_brkBinSub->toXmlElem("brkBinSub", "", _outStream);;
+        m_brkBinSub->toXmlElem("m:brkBinSub", "", _outStream);;
     }
     
     if (m_has_smallFrac)
     {
-        m_smallFrac->toXmlElem("smallFrac", "", _outStream);;
+        m_smallFrac->toXmlElem("m:smallFrac", "", _outStream);;
     }
     
     if (m_has_dispDef)
     {
-        m_dispDef->toXmlElem("dispDef", "", _outStream);;
+        m_dispDef->toXmlElem("m:dispDef", "", _outStream);;
     }
     
     if (m_has_lMargin)
     {
-        m_lMargin->toXmlElem("lMargin", "", _outStream);;
+        m_lMargin->toXmlElem("m:lMargin", "", _outStream);;
     }
     
     if (m_has_rMargin)
     {
-        m_rMargin->toXmlElem("rMargin", "", _outStream);;
+        m_rMargin->toXmlElem("m:rMargin", "", _outStream);;
     }
     
     if (m_has_defJc)
     {
-        m_defJc->toXmlElem("defJc", "", _outStream);;
+        m_defJc->toXmlElem("m:defJc", "", _outStream);;
     }
     
     if (m_has_preSp)
     {
-        m_preSp->toXmlElem("preSp", "", _outStream);;
+        m_preSp->toXmlElem("m:preSp", "", _outStream);;
     }
     
     if (m_has_postSp)
     {
-        m_postSp->toXmlElem("postSp", "", _outStream);;
+        m_postSp->toXmlElem("m:postSp", "", _outStream);;
     }
     
     if (m_has_interSp)
     {
-        m_interSp->toXmlElem("interSp", "", _outStream);;
+        m_interSp->toXmlElem("m:interSp", "", _outStream);;
     }
     
     if (m_has_intraSp)
     {
-        m_intraSp->toXmlElem("intraSp", "", _outStream);;
+        m_intraSp->toXmlElem("m:intraSp", "", _outStream);;
     }
      
     if (m_has_wrapIndent)
     {
-        m_wrapIndent->toXmlElem("wrapIndent", "", _outStream);;
+        m_wrapIndent->toXmlElem("m:wrapIndent", "", _outStream);;
     }
     
     if (m_has_wrapRight)
     {
-        m_wrapRight->toXmlElem("wrapRight", "", _outStream);;
+        m_wrapRight->toXmlElem("m:wrapRight", "", _outStream);;
     }
      
     if (m_has_intLim)
     {
-        m_intLim->toXmlElem("intLim", "", _outStream);;
+        m_intLim->toXmlElem("m:intLim", "", _outStream);;
     }
     
     if (m_has_naryLim)
     {
-        m_naryLim->toXmlElem("naryLim", "", _outStream);;
+        m_naryLim->toXmlElem("m:naryLim", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -43540,6 +44287,11 @@ CT_BreakBinSub* CT_BreakBinSub::default_instance_ = NULL;
 CT_MathPr* CT_MathPr::default_instance_ = NULL;
 
     // CT_OMathPara
+    CT_OMathPara::CT_OMathPara()
+    :m_has_oMathParaPr(false),
+    m_oMathParaPr(NULL)
+    {
+    }
     bool CT_OMathPara::has_oMathParaPr() const
     {    
     return m_has_oMathParaPr;
@@ -43606,7 +44358,7 @@ CT_MathPr* CT_MathPr::default_instance_ = NULL;
             
     if (m_has_oMathParaPr)
     {
-        m_oMathParaPr->toXmlElem("oMathParaPr", "", _outStream);;
+        m_oMathParaPr->toXmlElem("m:oMathParaPr", "", _outStream);;
     }
      
     {
@@ -43615,7 +44367,7 @@ CT_MathPr* CT_MathPr::default_instance_ = NULL;
         {
             if ((*iter)->has_oMath())
             {
-                (*iter)->get_oMath().toXmlElem("oMath", "", _outStream);
+                (*iter)->get_oMath().toXmlElem("m:oMath", "", _outStream);
             }
         }
     }
@@ -43634,6 +44386,11 @@ CT_MathPr* CT_MathPr::default_instance_ = NULL;
 
 
     // CT_OMathPara::ChildGroup_1
+    CT_OMathPara::ChildGroup_1::ChildGroup_1()
+    :m_has_oMath(false),
+    m_oMath(NULL)
+    {
+    }
     bool CT_OMathPara::ChildGroup_1::has_oMath() const
     {    
     return m_has_oMath;
@@ -43662,6 +44419,10 @@ CT_MathPr* CT_MathPr::default_instance_ = NULL;
 CT_OMathPara* CT_OMathPara::default_instance_ = NULL;
 
     // CT_OMath
+    CT_OMath::CT_OMath()
+
+    {
+    }
     CT_Acc* CT_OMath::add_acc()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -44091,83 +44852,83 @@ CT_OMathPara* CT_OMathPara::default_instance_ = NULL;
         {
             if ((*iter)->has_acc())
             {
-                (*iter)->get_acc().toXmlElem("acc", "", _outStream);
+                (*iter)->get_acc().toXmlElem("m:acc", "", _outStream);
             }
             else if ((*iter)->has_bar())
             {
-                (*iter)->get_bar().toXmlElem("bar", "", _outStream);
+                (*iter)->get_bar().toXmlElem("m:bar", "", _outStream);
             }
             else if ((*iter)->has_box())
             {
-                (*iter)->get_box().toXmlElem("box", "", _outStream);
+                (*iter)->get_box().toXmlElem("m:box", "", _outStream);
             }
             else if ((*iter)->has_borderBox())
             {
-                (*iter)->get_borderBox().toXmlElem("borderBox", "", _outStream);
+                (*iter)->get_borderBox().toXmlElem("m:borderBox", "", _outStream);
             }
             else if ((*iter)->has_d())
             {
-                (*iter)->get_d().toXmlElem("d", "", _outStream);
+                (*iter)->get_d().toXmlElem("m:d", "", _outStream);
             }
             else if ((*iter)->has_eqArr())
             {
-                (*iter)->get_eqArr().toXmlElem("eqArr", "", _outStream);
+                (*iter)->get_eqArr().toXmlElem("m:eqArr", "", _outStream);
             }
             else if ((*iter)->has_f())
             {
-                (*iter)->get_f().toXmlElem("f", "", _outStream);
+                (*iter)->get_f().toXmlElem("m:f", "", _outStream);
             }
             else if ((*iter)->has_func())
             {
-                (*iter)->get_func().toXmlElem("func", "", _outStream);
+                (*iter)->get_func().toXmlElem("m:func", "", _outStream);
             }
             else if ((*iter)->has_groupChr())
             {
-                (*iter)->get_groupChr().toXmlElem("groupChr", "", _outStream);
+                (*iter)->get_groupChr().toXmlElem("m:groupChr", "", _outStream);
             }
             else if ((*iter)->has_limLow())
             {
-                (*iter)->get_limLow().toXmlElem("limLow", "", _outStream);
+                (*iter)->get_limLow().toXmlElem("m:limLow", "", _outStream);
             }
             else if ((*iter)->has_limUpp())
             {
-                (*iter)->get_limUpp().toXmlElem("limUpp", "", _outStream);
+                (*iter)->get_limUpp().toXmlElem("m:limUpp", "", _outStream);
             }
             else if ((*iter)->has_m())
             {
-                (*iter)->get_m().toXmlElem("m", "", _outStream);
+                (*iter)->get_m().toXmlElem("m:m", "", _outStream);
             }
             else if ((*iter)->has_nary())
             {
-                (*iter)->get_nary().toXmlElem("nary", "", _outStream);
+                (*iter)->get_nary().toXmlElem("m:nary", "", _outStream);
             }
             else if ((*iter)->has_phant())
             {
-                (*iter)->get_phant().toXmlElem("phant", "", _outStream);
+                (*iter)->get_phant().toXmlElem("m:phant", "", _outStream);
             }
             else if ((*iter)->has_rad())
             {
-                (*iter)->get_rad().toXmlElem("rad", "", _outStream);
+                (*iter)->get_rad().toXmlElem("m:rad", "", _outStream);
             }
             else if ((*iter)->has_sPre())
             {
-                (*iter)->get_sPre().toXmlElem("sPre", "", _outStream);
+                (*iter)->get_sPre().toXmlElem("m:sPre", "", _outStream);
             }
             else if ((*iter)->has_sSub())
             {
-                (*iter)->get_sSub().toXmlElem("sSub", "", _outStream);
+                (*iter)->get_sSub().toXmlElem("m:sSub", "", _outStream);
             }
             else if ((*iter)->has_sSubSup())
             {
-                (*iter)->get_sSubSup().toXmlElem("sSubSup", "", _outStream);
+                (*iter)->get_sSubSup().toXmlElem("m:sSubSup", "", _outStream);
             }
             else if ((*iter)->has_sSup())
             {
-                (*iter)->get_sSup().toXmlElem("sSup", "", _outStream);
+                (*iter)->get_sSup().toXmlElem("m:sSup", "", _outStream);
             }
             else if ((*iter)->has_r())
             {
-                (*iter)->get_r().toXmlElem("r", "", _outStream);
+                (*iter)->get_r().toXmlElem("m:r", "", _outStream);
             }
             else if ((*iter)->has_w_customXml())
             {
@@ -44283,11 +45044,11 @@ CT_OMathPara* CT_OMathPara::default_instance_ = NULL;
             }
             else if ((*iter)->has_m_oMathPara())
             {
-                (*iter)->get_m_oMathPara().toXmlElem("oMathPara", "", _outStream);
+                (*iter)->get_m_oMathPara().toXmlElem("m:oMathPara", "", _outStream);
             }
             else if ((*iter)->has_m_oMath())
             {
-                (*iter)->get_m_oMath().toXmlElem("oMath", "", _outStream);
+                (*iter)->get_m_oMath().toXmlElem("m:oMath", "", _outStream);
             }
         }
     }
@@ -44306,6 +45067,109 @@ CT_OMathPara* CT_OMathPara::default_instance_ = NULL;
 
 
     // CT_OMath::ChildGroup_1
+    CT_OMath::ChildGroup_1::ChildGroup_1()
+    :m_has_acc(false),
+    m_acc(NULL),
+    m_has_bar(false),
+    m_bar(NULL),
+    m_has_box(false),
+    m_box(NULL),
+    m_has_borderBox(false),
+    m_borderBox(NULL),
+    m_has_d(false),
+    m_d(NULL),
+    m_has_eqArr(false),
+    m_eqArr(NULL),
+    m_has_f(false),
+    m_f(NULL),
+    m_has_func(false),
+    m_func(NULL),
+    m_has_groupChr(false),
+    m_groupChr(NULL),
+    m_has_limLow(false),
+    m_limLow(NULL),
+    m_has_limUpp(false),
+    m_limUpp(NULL),
+    m_has_m(false),
+    m_m(NULL),
+    m_has_nary(false),
+    m_nary(NULL),
+    m_has_phant(false),
+    m_phant(NULL),
+    m_has_rad(false),
+    m_rad(NULL),
+    m_has_sPre(false),
+    m_sPre(NULL),
+    m_has_sSub(false),
+    m_sSub(NULL),
+    m_has_sSubSup(false),
+    m_sSubSup(NULL),
+    m_has_sSup(false),
+    m_sSup(NULL),
+    m_has_r(false),
+    m_r(NULL),
+    m_has_w_customXml(false),
+    m_w_customXml(NULL),
+    m_has_w_fldSimple(false),
+    m_w_fldSimple(NULL),
+    m_has_w_hyperlink(false),
+    m_w_hyperlink(NULL),
+    m_has_w_smartTag(false),
+    m_w_smartTag(NULL),
+    m_has_w_sdt(false),
+    m_w_sdt(NULL),
+    m_has_w_proofErr(false),
+    m_w_proofErr(NULL),
+    m_has_w_permStart(false),
+    m_w_permStart(NULL),
+    m_has_w_permEnd(false),
+    m_w_permEnd(NULL),
+    m_has_w_bookmarkStart(false),
+    m_w_bookmarkStart(NULL),
+    m_has_w_bookmarkEnd(false),
+    m_w_bookmarkEnd(NULL),
+    m_has_w_moveFromRangeStart(false),
+    m_w_moveFromRangeStart(NULL),
+    m_has_w_moveFromRangeEnd(false),
+    m_w_moveFromRangeEnd(NULL),
+    m_has_w_moveToRangeStart(false),
+    m_w_moveToRangeStart(NULL),
+    m_has_w_moveToRangeEnd(false),
+    m_w_moveToRangeEnd(NULL),
+    m_has_w_commentRangeStart(false),
+    m_w_commentRangeStart(NULL),
+    m_has_w_commentRangeEnd(false),
+    m_w_commentRangeEnd(NULL),
+    m_has_w_customXmlInsRangeStart(false),
+    m_w_customXmlInsRangeStart(NULL),
+    m_has_w_customXmlInsRangeEnd(false),
+    m_w_customXmlInsRangeEnd(NULL),
+    m_has_w_customXmlDelRangeStart(false),
+    m_w_customXmlDelRangeStart(NULL),
+    m_has_w_customXmlDelRangeEnd(false),
+    m_w_customXmlDelRangeEnd(NULL),
+    m_has_w_customXmlMoveFromRangeStart(false),
+    m_w_customXmlMoveFromRangeStart(NULL),
+    m_has_w_customXmlMoveFromRangeEnd(false),
+    m_w_customXmlMoveFromRangeEnd(NULL),
+    m_has_w_customXmlMoveToRangeStart(false),
+    m_w_customXmlMoveToRangeStart(NULL),
+    m_has_w_customXmlMoveToRangeEnd(false),
+    m_w_customXmlMoveToRangeEnd(NULL),
+    m_has_w_ins(false),
+    m_w_ins(NULL),
+    m_has_w_del(false),
+    m_w_del(NULL),
+    m_has_w_moveFrom(false),
+    m_w_moveFrom(NULL),
+    m_has_w_moveTo(false),
+    m_w_moveTo(NULL),
+    m_has_m_oMathPara(false),
+    m_m_oMathPara(NULL),
+    m_has_m_oMath(false),
+    m_m_oMath(NULL)
+    {
+    }
     bool CT_OMath::ChildGroup_1::has_acc() const
     {    
     return m_has_acc;
@@ -67609,6 +68473,41 @@ CT_OMathPara* CT_OMathPara::default_instance_ = NULL;
 CT_OMath* CT_OMath::default_instance_ = NULL;
 
     // mathPr_element
+    mathPr_element::mathPr_element()
+    :m_has_mathFont(false),
+    m_mathFont(NULL),
+    m_has_brkBin(false),
+    m_brkBin(NULL),
+    m_has_brkBinSub(false),
+    m_brkBinSub(NULL),
+    m_has_smallFrac(false),
+    m_smallFrac(NULL),
+    m_has_dispDef(false),
+    m_dispDef(NULL),
+    m_has_lMargin(false),
+    m_lMargin(NULL),
+    m_has_rMargin(false),
+    m_rMargin(NULL),
+    m_has_defJc(false),
+    m_defJc(NULL),
+    m_has_preSp(false),
+    m_preSp(NULL),
+    m_has_postSp(false),
+    m_postSp(NULL),
+    m_has_interSp(false),
+    m_interSp(NULL),
+    m_has_intraSp(false),
+    m_intraSp(NULL),
+    m_has_wrapIndent(false),
+    m_wrapIndent(NULL),
+    m_has_wrapRight(false),
+    m_wrapRight(NULL),
+    m_has_intLim(false),
+    m_intLim(NULL),
+    m_has_naryLim(false),
+    m_naryLim(NULL)
+    {
+    }
     bool mathPr_element::has_mathFont() const
     {    
     return m_has_mathFont;
@@ -68018,7 +68917,7 @@ CT_OMath* CT_OMath::default_instance_ = NULL;
 
     void mathPr_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<mathPr";
+    _outStream << "<m:mathPr";
     
     _outStream << " " << "xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"";
     _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
@@ -68028,85 +68927,85 @@ CT_OMath* CT_OMath::default_instance_ = NULL;
     
     if (m_has_mathFont)
     {
-        m_mathFont->toXmlElem("mathFont", "", _outStream);;
+        m_mathFont->toXmlElem("m:mathFont", "", _outStream);;
     }
     
     if (m_has_brkBin)
     {
-        m_brkBin->toXmlElem("brkBin", "", _outStream);;
+        m_brkBin->toXmlElem("m:brkBin", "", _outStream);;
     }
     
     if (m_has_brkBinSub)
     {
-        m_brkBinSub->toXmlElem("brkBinSub", "", _outStream);;
+        m_brkBinSub->toXmlElem("m:brkBinSub", "", _outStream);;
     }
     
     if (m_has_smallFrac)
     {
-        m_smallFrac->toXmlElem("smallFrac", "", _outStream);;
+        m_smallFrac->toXmlElem("m:smallFrac", "", _outStream);;
     }
     
     if (m_has_dispDef)
     {
-        m_dispDef->toXmlElem("dispDef", "", _outStream);;
+        m_dispDef->toXmlElem("m:dispDef", "", _outStream);;
     }
     
     if (m_has_lMargin)
     {
-        m_lMargin->toXmlElem("lMargin", "", _outStream);;
+        m_lMargin->toXmlElem("m:lMargin", "", _outStream);;
     }
     
     if (m_has_rMargin)
     {
-        m_rMargin->toXmlElem("rMargin", "", _outStream);;
+        m_rMargin->toXmlElem("m:rMargin", "", _outStream);;
     }
     
     if (m_has_defJc)
     {
-        m_defJc->toXmlElem("defJc", "", _outStream);;
+        m_defJc->toXmlElem("m:defJc", "", _outStream);;
     }
     
     if (m_has_preSp)
     {
-        m_preSp->toXmlElem("preSp", "", _outStream);;
+        m_preSp->toXmlElem("m:preSp", "", _outStream);;
     }
     
     if (m_has_postSp)
     {
-        m_postSp->toXmlElem("postSp", "", _outStream);;
+        m_postSp->toXmlElem("m:postSp", "", _outStream);;
     }
     
     if (m_has_interSp)
     {
-        m_interSp->toXmlElem("interSp", "", _outStream);;
+        m_interSp->toXmlElem("m:interSp", "", _outStream);;
     }
     
     if (m_has_intraSp)
     {
-        m_intraSp->toXmlElem("intraSp", "", _outStream);;
+        m_intraSp->toXmlElem("m:intraSp", "", _outStream);;
     }
      
     if (m_has_wrapIndent)
     {
-        m_wrapIndent->toXmlElem("wrapIndent", "", _outStream);;
+        m_wrapIndent->toXmlElem("m:wrapIndent", "", _outStream);;
     }
     
     if (m_has_wrapRight)
     {
-        m_wrapRight->toXmlElem("wrapRight", "", _outStream);;
+        m_wrapRight->toXmlElem("m:wrapRight", "", _outStream);;
     }
      
     if (m_has_intLim)
     {
-        m_intLim->toXmlElem("intLim", "", _outStream);;
+        m_intLim->toXmlElem("m:intLim", "", _outStream);;
     }
     
     if (m_has_naryLim)
     {
-        m_naryLim->toXmlElem("naryLim", "", _outStream);;
+        m_naryLim->toXmlElem("m:naryLim", "", _outStream);;
     }
     
-    _outStream << "</mathPr>";
+    _outStream << "</m:mathPr>";
     }
 
     const mathPr_element& mathPr_element::default_instance()
@@ -68121,6 +69020,11 @@ CT_OMath* CT_OMath::default_instance_ = NULL;
 mathPr_element* mathPr_element::default_instance_ = NULL;
 
     // oMathPara_element
+    oMathPara_element::oMathPara_element()
+    :m_has_oMathParaPr(false),
+    m_oMathParaPr(NULL)
+    {
+    }
     bool oMathPara_element::has_oMathParaPr() const
     {    
     return m_has_oMathParaPr;
@@ -68176,7 +69080,7 @@ mathPr_element* mathPr_element::default_instance_ = NULL;
 
     void oMathPara_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<oMathPara";
+    _outStream << "<m:oMathPara";
     
     _outStream << " " << "xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"";
     _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
@@ -68186,7 +69090,7 @@ mathPr_element* mathPr_element::default_instance_ = NULL;
     
     if (m_has_oMathParaPr)
     {
-        m_oMathParaPr->toXmlElem("oMathParaPr", "", _outStream);;
+        m_oMathParaPr->toXmlElem("m:oMathParaPr", "", _outStream);;
     }
      
     {
@@ -68195,12 +69099,12 @@ mathPr_element* mathPr_element::default_instance_ = NULL;
         {
             if ((*iter)->has_oMath())
             {
-                (*iter)->get_oMath().toXmlElem("oMath", "", _outStream);
+                (*iter)->get_oMath().toXmlElem("m:oMath", "", _outStream);
             }
         }
     }
     
-    _outStream << "</oMathPara>";
+    _outStream << "</m:oMathPara>";
     }
 
     const oMathPara_element& oMathPara_element::default_instance()
@@ -68214,6 +69118,11 @@ mathPr_element* mathPr_element::default_instance_ = NULL;
 
 
     // oMathPara_element::ChildGroup_1
+    oMathPara_element::ChildGroup_1::ChildGroup_1()
+    :m_has_oMath(false),
+    m_oMath(NULL)
+    {
+    }
     bool oMathPara_element::ChildGroup_1::has_oMath() const
     {    
     return m_has_oMath;
@@ -68242,6 +69151,10 @@ mathPr_element* mathPr_element::default_instance_ = NULL;
 oMathPara_element* oMathPara_element::default_instance_ = NULL;
 
     // oMath_element
+    oMath_element::oMath_element()
+
+    {
+    }
     CT_Acc* oMath_element::add_acc()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -68656,7 +69569,7 @@ oMathPara_element* oMathPara_element::default_instance_ = NULL;
 
     void oMath_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<oMath";
+    _outStream << "<m:oMath";
     
     _outStream << " " << "xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"";
     _outStream << " " << "xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\"";
@@ -68670,83 +69583,83 @@ oMathPara_element* oMathPara_element::default_instance_ = NULL;
         {
             if ((*iter)->has_acc())
             {
-                (*iter)->get_acc().toXmlElem("acc", "", _outStream);
+                (*iter)->get_acc().toXmlElem("m:acc", "", _outStream);
             }
             else if ((*iter)->has_bar())
             {
-                (*iter)->get_bar().toXmlElem("bar", "", _outStream);
+                (*iter)->get_bar().toXmlElem("m:bar", "", _outStream);
             }
             else if ((*iter)->has_box())
             {
-                (*iter)->get_box().toXmlElem("box", "", _outStream);
+                (*iter)->get_box().toXmlElem("m:box", "", _outStream);
             }
             else if ((*iter)->has_borderBox())
             {
-                (*iter)->get_borderBox().toXmlElem("borderBox", "", _outStream);
+                (*iter)->get_borderBox().toXmlElem("m:borderBox", "", _outStream);
             }
             else if ((*iter)->has_d())
             {
-                (*iter)->get_d().toXmlElem("d", "", _outStream);
+                (*iter)->get_d().toXmlElem("m:d", "", _outStream);
             }
             else if ((*iter)->has_eqArr())
             {
-                (*iter)->get_eqArr().toXmlElem("eqArr", "", _outStream);
+                (*iter)->get_eqArr().toXmlElem("m:eqArr", "", _outStream);
             }
             else if ((*iter)->has_f())
             {
-                (*iter)->get_f().toXmlElem("f", "", _outStream);
+                (*iter)->get_f().toXmlElem("m:f", "", _outStream);
             }
             else if ((*iter)->has_func())
             {
-                (*iter)->get_func().toXmlElem("func", "", _outStream);
+                (*iter)->get_func().toXmlElem("m:func", "", _outStream);
             }
             else if ((*iter)->has_groupChr())
             {
-                (*iter)->get_groupChr().toXmlElem("groupChr", "", _outStream);
+                (*iter)->get_groupChr().toXmlElem("m:groupChr", "", _outStream);
             }
             else if ((*iter)->has_limLow())
             {
-                (*iter)->get_limLow().toXmlElem("limLow", "", _outStream);
+                (*iter)->get_limLow().toXmlElem("m:limLow", "", _outStream);
             }
             else if ((*iter)->has_limUpp())
             {
-                (*iter)->get_limUpp().toXmlElem("limUpp", "", _outStream);
+                (*iter)->get_limUpp().toXmlElem("m:limUpp", "", _outStream);
             }
             else if ((*iter)->has_m())
             {
-                (*iter)->get_m().toXmlElem("m", "", _outStream);
+                (*iter)->get_m().toXmlElem("m:m", "", _outStream);
             }
             else if ((*iter)->has_nary())
             {
-                (*iter)->get_nary().toXmlElem("nary", "", _outStream);
+                (*iter)->get_nary().toXmlElem("m:nary", "", _outStream);
             }
             else if ((*iter)->has_phant())
             {
-                (*iter)->get_phant().toXmlElem("phant", "", _outStream);
+                (*iter)->get_phant().toXmlElem("m:phant", "", _outStream);
             }
             else if ((*iter)->has_rad())
             {
-                (*iter)->get_rad().toXmlElem("rad", "", _outStream);
+                (*iter)->get_rad().toXmlElem("m:rad", "", _outStream);
             }
             else if ((*iter)->has_sPre())
             {
-                (*iter)->get_sPre().toXmlElem("sPre", "", _outStream);
+                (*iter)->get_sPre().toXmlElem("m:sPre", "", _outStream);
             }
             else if ((*iter)->has_sSub())
             {
-                (*iter)->get_sSub().toXmlElem("sSub", "", _outStream);
+                (*iter)->get_sSub().toXmlElem("m:sSub", "", _outStream);
             }
             else if ((*iter)->has_sSubSup())
             {
-                (*iter)->get_sSubSup().toXmlElem("sSubSup", "", _outStream);
+                (*iter)->get_sSubSup().toXmlElem("m:sSubSup", "", _outStream);
             }
             else if ((*iter)->has_sSup())
             {
-                (*iter)->get_sSup().toXmlElem("sSup", "", _outStream);
+                (*iter)->get_sSup().toXmlElem("m:sSup", "", _outStream);
             }
             else if ((*iter)->has_r())
             {
-                (*iter)->get_r().toXmlElem("r", "", _outStream);
+                (*iter)->get_r().toXmlElem("m:r", "", _outStream);
             }
             else if ((*iter)->has_w_customXml())
             {
@@ -68862,16 +69775,16 @@ oMathPara_element* oMathPara_element::default_instance_ = NULL;
             }
             else if ((*iter)->has_m_oMathPara())
             {
-                (*iter)->get_m_oMathPara().toXmlElem("oMathPara", "", _outStream);
+                (*iter)->get_m_oMathPara().toXmlElem("m:oMathPara", "", _outStream);
             }
             else if ((*iter)->has_m_oMath())
             {
-                (*iter)->get_m_oMath().toXmlElem("oMath", "", _outStream);
+                (*iter)->get_m_oMath().toXmlElem("m:oMath", "", _outStream);
             }
         }
     }
     
-    _outStream << "</oMath>";
+    _outStream << "</m:oMath>";
     }
 
     const oMath_element& oMath_element::default_instance()
@@ -68885,6 +69798,109 @@ oMathPara_element* oMathPara_element::default_instance_ = NULL;
 
 
     // oMath_element::ChildGroup_1
+    oMath_element::ChildGroup_1::ChildGroup_1()
+    :m_has_acc(false),
+    m_acc(NULL),
+    m_has_bar(false),
+    m_bar(NULL),
+    m_has_box(false),
+    m_box(NULL),
+    m_has_borderBox(false),
+    m_borderBox(NULL),
+    m_has_d(false),
+    m_d(NULL),
+    m_has_eqArr(false),
+    m_eqArr(NULL),
+    m_has_f(false),
+    m_f(NULL),
+    m_has_func(false),
+    m_func(NULL),
+    m_has_groupChr(false),
+    m_groupChr(NULL),
+    m_has_limLow(false),
+    m_limLow(NULL),
+    m_has_limUpp(false),
+    m_limUpp(NULL),
+    m_has_m(false),
+    m_m(NULL),
+    m_has_nary(false),
+    m_nary(NULL),
+    m_has_phant(false),
+    m_phant(NULL),
+    m_has_rad(false),
+    m_rad(NULL),
+    m_has_sPre(false),
+    m_sPre(NULL),
+    m_has_sSub(false),
+    m_sSub(NULL),
+    m_has_sSubSup(false),
+    m_sSubSup(NULL),
+    m_has_sSup(false),
+    m_sSup(NULL),
+    m_has_r(false),
+    m_r(NULL),
+    m_has_w_customXml(false),
+    m_w_customXml(NULL),
+    m_has_w_fldSimple(false),
+    m_w_fldSimple(NULL),
+    m_has_w_hyperlink(false),
+    m_w_hyperlink(NULL),
+    m_has_w_smartTag(false),
+    m_w_smartTag(NULL),
+    m_has_w_sdt(false),
+    m_w_sdt(NULL),
+    m_has_w_proofErr(false),
+    m_w_proofErr(NULL),
+    m_has_w_permStart(false),
+    m_w_permStart(NULL),
+    m_has_w_permEnd(false),
+    m_w_permEnd(NULL),
+    m_has_w_bookmarkStart(false),
+    m_w_bookmarkStart(NULL),
+    m_has_w_bookmarkEnd(false),
+    m_w_bookmarkEnd(NULL),
+    m_has_w_moveFromRangeStart(false),
+    m_w_moveFromRangeStart(NULL),
+    m_has_w_moveFromRangeEnd(false),
+    m_w_moveFromRangeEnd(NULL),
+    m_has_w_moveToRangeStart(false),
+    m_w_moveToRangeStart(NULL),
+    m_has_w_moveToRangeEnd(false),
+    m_w_moveToRangeEnd(NULL),
+    m_has_w_commentRangeStart(false),
+    m_w_commentRangeStart(NULL),
+    m_has_w_commentRangeEnd(false),
+    m_w_commentRangeEnd(NULL),
+    m_has_w_customXmlInsRangeStart(false),
+    m_w_customXmlInsRangeStart(NULL),
+    m_has_w_customXmlInsRangeEnd(false),
+    m_w_customXmlInsRangeEnd(NULL),
+    m_has_w_customXmlDelRangeStart(false),
+    m_w_customXmlDelRangeStart(NULL),
+    m_has_w_customXmlDelRangeEnd(false),
+    m_w_customXmlDelRangeEnd(NULL),
+    m_has_w_customXmlMoveFromRangeStart(false),
+    m_w_customXmlMoveFromRangeStart(NULL),
+    m_has_w_customXmlMoveFromRangeEnd(false),
+    m_w_customXmlMoveFromRangeEnd(NULL),
+    m_has_w_customXmlMoveToRangeStart(false),
+    m_w_customXmlMoveToRangeStart(NULL),
+    m_has_w_customXmlMoveToRangeEnd(false),
+    m_w_customXmlMoveToRangeEnd(NULL),
+    m_has_w_ins(false),
+    m_w_ins(NULL),
+    m_has_w_del(false),
+    m_w_del(NULL),
+    m_has_w_moveFrom(false),
+    m_w_moveFrom(NULL),
+    m_has_w_moveTo(false),
+    m_w_moveTo(NULL),
+    m_has_m_oMathPara(false),
+    m_m_oMathPara(NULL),
+    m_has_m_oMath(false),
+    m_m_oMath(NULL)
+    {
+    }
     bool oMath_element::ChildGroup_1::has_acc() const
     {    
     return m_has_acc;

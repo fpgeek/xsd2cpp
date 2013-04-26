@@ -20,7 +20,7 @@ namespace ns_s {
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_Lang::has_string() const
     {    
@@ -80,7 +80,7 @@ ST_Lang* ST_Lang::default_instance_ = NULL;
     :m_has_hexBinary(true)
     {
     
-    set_hexBinary(m_hexBinary);
+    set_hexBinary(_hexBinary);
     }
     bool ST_HexColorRGB::has_hexBinary() const
     {    
@@ -141,7 +141,7 @@ ST_HexColorRGB* ST_HexColorRGB::default_instance_ = NULL;
     :m_has_hexBinary(true)
     {
     
-    set_hexBinary(m_hexBinary);
+    set_hexBinary(_hexBinary);
     }
     bool ST_Panose::has_hexBinary() const
     {    
@@ -455,7 +455,7 @@ ST_AlgType* ST_AlgType::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_ColorType::has_string() const
     {    
@@ -515,7 +515,7 @@ ST_ColorType* ST_ColorType::default_instance_ = NULL;
     :m_has_token(true)
     {
     
-    set_token(m_token);
+    set_token(_token);
     }
     bool ST_Guid::has_token() const
     {    
@@ -566,6 +566,13 @@ ST_ColorType* ST_ColorType::default_instance_ = NULL;
 ST_Guid* ST_Guid::default_instance_ = NULL;
 
     // ST_OnOff
+    ST_OnOff::ST_OnOff()
+    :m_has_boolean(false),
+    m_boolean(false),
+    m_has_ST_OnOff1(false),
+    m_ST_OnOff1(NULL)
+    {
+    }
     bool ST_OnOff::has_boolean() const
     {    
     return m_has_boolean;
@@ -739,7 +746,7 @@ ST_OnOff1* ST_OnOff1::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_String::has_string() const
     {    
@@ -799,7 +806,7 @@ ST_String* ST_String::default_instance_ = NULL;
     :m_has_NCName(true)
     {
     
-    set_NCName(m_NCName);
+    set_NCName(_NCName);
     }
     bool ST_XmlName::has_NCName() const
     {    
@@ -988,7 +995,7 @@ ST_TrueFalseBlank* ST_TrueFalseBlank::default_instance_ = NULL;
     :m_has_unsignedLong(true)
     {
     
-    set_unsignedLong(m_unsignedLong);
+    set_unsignedLong(_unsignedLong);
     }
     bool ST_UnsignedDecimalNumber::has_unsignedLong() const
     {    
@@ -1039,6 +1046,13 @@ ST_TrueFalseBlank* ST_TrueFalseBlank::default_instance_ = NULL;
 ST_UnsignedDecimalNumber* ST_UnsignedDecimalNumber::default_instance_ = NULL;
 
     // ST_TwipsMeasure
+    ST_TwipsMeasure::ST_TwipsMeasure()
+    :m_has_ST_UnsignedDecimalNumber(false),
+    m_ST_UnsignedDecimalNumber(NULL),
+    m_has_ST_PositiveUniversalMeasure(false),
+    m_ST_PositiveUniversalMeasure(NULL)
+    {
+    }
     bool ST_TwipsMeasure::has_ST_UnsignedDecimalNumber() const
     {    
     return m_has_ST_UnsignedDecimalNumber;
@@ -1225,7 +1239,7 @@ ST_VerticalAlignRun* ST_VerticalAlignRun::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_Xstring::has_string() const
     {    
@@ -1472,7 +1486,7 @@ ST_ConformanceClass* ST_ConformanceClass::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_UniversalMeasure::has_string() const
     {    
@@ -1552,7 +1566,7 @@ ST_PositiveUniversalMeasure* ST_PositiveUniversalMeasure::default_instance_ = NU
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_Percentage::has_string() const
     {    

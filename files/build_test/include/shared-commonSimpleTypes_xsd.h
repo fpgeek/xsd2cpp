@@ -264,6 +264,7 @@ namespace ns_s {
     class ST_OnOff: public XSD::SimpleType
     {
     public:
+        ST_OnOff();
         bool has_boolean() const;
         void set_boolean(const XSD::boolean_& _boolean);
         const XSD::boolean_& get_boolean() const;
@@ -427,6 +428,7 @@ namespace ns_s {
     class ST_TwipsMeasure: public XSD::SimpleType
     {
     public:
+        ST_TwipsMeasure();
         bool has_ST_UnsignedDecimalNumber() const;
         ST_UnsignedDecimalNumber* mutable_ST_UnsignedDecimalNumber();
         const ST_UnsignedDecimalNumber& get_ST_UnsignedDecimalNumber() const;

@@ -442,7 +442,7 @@ ST_DateTimeGrouping* ST_DateTimeGrouping::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_CellRef::has_string() const
     {    
@@ -502,7 +502,7 @@ ST_CellRef* ST_CellRef::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_Ref::has_string() const
     {    
@@ -562,7 +562,7 @@ ST_Ref* ST_Ref::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_RefA::has_string() const
     {    
@@ -622,7 +622,7 @@ ST_RefA* ST_RefA::default_instance_ = NULL;
     :m_has_ENTITIES(true)
     {
     
-    set_ENTITIES(m_ENTITIES);
+    set_ENTITIES(_ENTITIES);
     }
     bool ST_Sqref::has_ENTITIES() const
     {    
@@ -702,7 +702,7 @@ ST_Formula* ST_Formula::default_instance_ = NULL;
     :m_has_hexBinary(true)
     {
     
-    set_hexBinary(m_hexBinary);
+    set_hexBinary(_hexBinary);
     }
     bool ST_UnsignedIntHex::has_hexBinary() const
     {    
@@ -763,7 +763,7 @@ ST_UnsignedIntHex* ST_UnsignedIntHex::default_instance_ = NULL;
     :m_has_hexBinary(true)
     {
     
-    set_hexBinary(m_hexBinary);
+    set_hexBinary(_hexBinary);
     }
     bool ST_UnsignedShortHex::has_hexBinary() const
     {    
@@ -2527,7 +2527,7 @@ ST_FormulaExpression* ST_FormulaExpression::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_CellSpan::has_string() const
     {    
@@ -2587,7 +2587,7 @@ ST_CellSpan* ST_CellSpan::default_instance_ = NULL;
     :m_has_ENTITIES(true)
     {
     
-    set_ENTITIES(m_ENTITIES);
+    set_ENTITIES(_ENTITIES);
     }
     bool ST_CellSpans::has_ENTITIES() const
     {    
@@ -4528,7 +4528,7 @@ ST_VerticalAlignment* ST_VerticalAlignment::default_instance_ = NULL;
     :m_has_unsignedInt(true)
     {
     
-    set_unsignedInt(m_unsignedInt);
+    set_unsignedInt(_unsignedInt);
     }
     bool ST_NumFmtId::has_unsignedInt() const
     {    
@@ -4588,7 +4588,7 @@ ST_NumFmtId* ST_NumFmtId::default_instance_ = NULL;
     :m_has_unsignedInt(true)
     {
     
-    set_unsignedInt(m_unsignedInt);
+    set_unsignedInt(_unsignedInt);
     }
     bool ST_FontId::has_unsignedInt() const
     {    
@@ -4648,7 +4648,7 @@ ST_FontId* ST_FontId::default_instance_ = NULL;
     :m_has_unsignedInt(true)
     {
     
-    set_unsignedInt(m_unsignedInt);
+    set_unsignedInt(_unsignedInt);
     }
     bool ST_FillId::has_unsignedInt() const
     {    
@@ -4708,7 +4708,7 @@ ST_FillId* ST_FillId::default_instance_ = NULL;
     :m_has_unsignedInt(true)
     {
     
-    set_unsignedInt(m_unsignedInt);
+    set_unsignedInt(_unsignedInt);
     }
     bool ST_BorderId::has_unsignedInt() const
     {    
@@ -4768,7 +4768,7 @@ ST_BorderId* ST_BorderId::default_instance_ = NULL;
     :m_has_unsignedInt(true)
     {
     
-    set_unsignedInt(m_unsignedInt);
+    set_unsignedInt(_unsignedInt);
     }
     bool ST_CellStyleXfId::has_unsignedInt() const
     {    
@@ -4828,7 +4828,7 @@ ST_CellStyleXfId* ST_CellStyleXfId::default_instance_ = NULL;
     :m_has_unsignedInt(true)
     {
     
-    set_unsignedInt(m_unsignedInt);
+    set_unsignedInt(_unsignedInt);
     }
     bool ST_DxfId::has_unsignedInt() const
     {    
@@ -5098,7 +5098,7 @@ ST_UnderlineValues* ST_UnderlineValues::default_instance_ = NULL;
     :m_has_integer(true)
     {
     
-    set_integer(m_integer);
+    set_integer(_integer);
     }
     bool ST_FontFamily::has_integer() const
     {    
@@ -5352,7 +5352,7 @@ ST_TotalsRowFunction* ST_TotalsRowFunction::default_instance_ = NULL;
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_XmlDataType::has_string() const
     {    
@@ -6081,6 +6081,11 @@ ST_RefMode* ST_RefMode::default_instance_ = NULL;
 ST_TargetScreenSize* ST_TargetScreenSize::default_instance_ = NULL;
 
     // CT_AutoFilter
+    CT_AutoFilter::CT_AutoFilter()
+    :m_has_ref_attr(false),
+    m_ref_attr(NULL)
+    {
+    }
     CT_FilterColumn* CT_AutoFilter::add_filterColumn()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -6148,15 +6153,15 @@ ST_TargetScreenSize* ST_TargetScreenSize::default_instance_ = NULL;
         {
             if ((*iter)->has_filterColumn())
             {
-                (*iter)->get_filterColumn().toXmlElem("filterColumn", "", _outStream);
+                (*iter)->get_filterColumn().toXmlElem("main:filterColumn", "", _outStream);
             }
             else if ((*iter)->has_sortState())
             {
-                (*iter)->get_sortState().toXmlElem("sortState", "", _outStream);
+                (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -6195,6 +6200,15 @@ ST_TargetScreenSize* ST_TargetScreenSize::default_instance_ = NULL;
 
 
     // CT_AutoFilter::ChildGroup_1
+    CT_AutoFilter::ChildGroup_1::ChildGroup_1()
+    :m_has_filterColumn(false),
+    m_filterColumn(NULL),
+    m_has_sortState(false),
+    m_sortState(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_AutoFilter::ChildGroup_1::has_filterColumn() const
     {    
     return m_has_filterColumn;
@@ -6327,6 +6341,29 @@ ST_TargetScreenSize* ST_TargetScreenSize::default_instance_ = NULL;
 CT_AutoFilter* CT_AutoFilter::default_instance_ = NULL;
 
     // CT_FilterColumn
+    CT_FilterColumn::CT_FilterColumn()
+    :m_has_filters(false),
+    m_filters(NULL),
+    m_has_top10(false),
+    m_top10(NULL),
+    m_has_customFilters(false),
+    m_customFilters(NULL),
+    m_has_dynamicFilter(false),
+    m_dynamicFilter(NULL),
+    m_has_colorFilter(false),
+    m_colorFilter(NULL),
+    m_has_iconFilter(false),
+    m_iconFilter(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_colId_attr(false),
+    m_colId_attr(0),
+    m_has_hiddenButton_attr(false),
+    m_hiddenButton_attr(false),
+    m_has_showButton_attr(false),
+    m_showButton_attr(false)
+    {
+    }
     bool CT_FilterColumn::has_filters() const
     {    
     return m_has_filters;
@@ -6922,37 +6959,37 @@ CT_AutoFilter* CT_AutoFilter::default_instance_ = NULL;
             
     if (m_has_filters)
     {
-        m_filters->toXmlElem("filters", "", _outStream);;
+        m_filters->toXmlElem("main:filters", "", _outStream);;
     }
     
     if (m_has_top10)
     {
-        m_top10->toXmlElem("top10", "", _outStream);;
+        m_top10->toXmlElem("main:top10", "", _outStream);;
     }
     
     if (m_has_customFilters)
     {
-        m_customFilters->toXmlElem("customFilters", "", _outStream);;
+        m_customFilters->toXmlElem("main:customFilters", "", _outStream);;
     }
     
     if (m_has_dynamicFilter)
     {
-        m_dynamicFilter->toXmlElem("dynamicFilter", "", _outStream);;
+        m_dynamicFilter->toXmlElem("main:dynamicFilter", "", _outStream);;
     }
     
     if (m_has_colorFilter)
     {
-        m_colorFilter->toXmlElem("colorFilter", "", _outStream);;
+        m_colorFilter->toXmlElem("main:colorFilter", "", _outStream);;
     }
     
     if (m_has_iconFilter)
     {
-        m_iconFilter->toXmlElem("iconFilter", "", _outStream);;
+        m_iconFilter->toXmlElem("main:iconFilter", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7018,6 +7055,13 @@ CT_AutoFilter* CT_AutoFilter::default_instance_ = NULL;
 CT_FilterColumn* CT_FilterColumn::default_instance_ = NULL;
 
     // CT_Filters
+    CT_Filters::CT_Filters()
+    :m_has_blank_attr(false),
+    m_blank_attr(false),
+    m_has_calendarType_attr(false),
+    m_calendarType_attr(NULL)
+    {
+    }
     CT_Filter* CT_Filters::add_filter()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -7039,12 +7083,12 @@ CT_FilterColumn* CT_FilterColumn::default_instance_ = NULL;
     m_has_blank_attr = false;
     m_blank_attr = false;
     
-    m_has_s_calendarType_attr = false;
+    m_has_calendarType_attr = false;
     
-    if (m_s_calendarType_attr)
+    if (m_calendarType_attr)
     {
-        delete m_s_calendarType_attr;
-        m_s_calendarType_attr = NULL;
+        delete m_calendarType_attr;
+        m_calendarType_attr = NULL;
     }
     
     
@@ -7073,9 +7117,9 @@ CT_FilterColumn* CT_FilterColumn::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_calendarType_attr)
+    if (m_has_calendarType_attr)
     {
-        m_s_calendarType_attr->toXmlAttr("calendarType", _outStream);
+        m_calendarType_attr->toXmlAttr("calendarType", _outStream);
     }
     
             _outStream << ">";
@@ -7086,11 +7130,11 @@ CT_FilterColumn* CT_FilterColumn::default_instance_ = NULL;
         {
             if ((*iter)->has_filter())
             {
-                (*iter)->get_filter().toXmlElem("filter", "", _outStream);
+                (*iter)->get_filter().toXmlElem("main:filter", "", _outStream);
             }
             else if ((*iter)->has_dateGroupItem())
             {
-                (*iter)->get_dateGroupItem().toXmlElem("dateGroupItem", "", _outStream);
+                (*iter)->get_dateGroupItem().toXmlElem("main:dateGroupItem", "", _outStream);
             }
         }
     }
@@ -7123,28 +7167,35 @@ CT_FilterColumn* CT_FilterColumn::default_instance_ = NULL;
     return m_blank_attr;
     }
 
-    bool CT_Filters::has_s_calendarType_attr() const
+    bool CT_Filters::has_calendarType_attr() const
     {    
-    return m_has_s_calendarType_attr;
+    return m_has_calendarType_attr;
     }
 
-    void CT_Filters::set_s_calendarType_attr(const ns_s::ST_CalendarType& _s_calendarType_attr)
+    void CT_Filters::set_calendarType_attr(const ns_s::ST_CalendarType& _calendarType_attr)
     {    
-    m_has_s_calendarType_attr = true;
-    m_s_calendarType_attr = new ns_s::ST_CalendarType(_s_calendarType_attr);
+    m_has_calendarType_attr = true;
+    m_calendarType_attr = new ns_s::ST_CalendarType(_calendarType_attr);
     }
 
-    const ns_s::ST_CalendarType& CT_Filters::get_s_calendarType_attr() const
+    const ns_s::ST_CalendarType& CT_Filters::get_calendarType_attr() const
     {    
-    if (m_s_calendarType_attr)
+    if (m_calendarType_attr)
     {
-        return *m_s_calendarType_attr;
+        return *m_calendarType_attr;
     }
     return ns_s::ST_CalendarType::default_instance();
     }
 
 
     // CT_Filters::ChildGroup_1
+    CT_Filters::ChildGroup_1::ChildGroup_1()
+    :m_has_filter(false),
+    m_filter(NULL),
+    m_has_dateGroupItem(false),
+    m_dateGroupItem(NULL)
+    {
+    }
     bool CT_Filters::ChildGroup_1::has_filter() const
     {    
     return m_has_filter;
@@ -7216,14 +7267,19 @@ CT_FilterColumn* CT_FilterColumn::default_instance_ = NULL;
 CT_Filters* CT_Filters::default_instance_ = NULL;
 
     // CT_Filter
+    CT_Filter::CT_Filter()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_Filter::clear()
     {    
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     }
@@ -7237,9 +7293,9 @@ CT_Filters* CT_Filters::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("val", _outStream);
+        m_val_attr->toXmlAttr("val", _outStream);
     }
     
             _outStream << ">";
@@ -7256,22 +7312,22 @@ CT_Filters* CT_Filters::default_instance_ = NULL;
     return *CT_Filter::default_instance_;
     }
 
-    bool CT_Filter::has_s_val_attr() const
+    bool CT_Filter::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_Filter::set_s_val_attr(const ns_s::ST_Xstring& _s_val_attr)
+    void CT_Filter::set_val_attr(const ns_s::ST_Xstring& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_Xstring(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_Xstring(_val_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Filter::get_s_val_attr() const
+    const ns_s::ST_Xstring& CT_Filter::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -7279,6 +7335,11 @@ CT_Filters* CT_Filters::default_instance_ = NULL;
 CT_Filter* CT_Filter::default_instance_ = NULL;
 
     // CT_CustomFilters
+    CT_CustomFilters::CT_CustomFilters()
+    :m_has_and_attr(false),
+    m_and_attr(false)
+    {
+    }
     CT_CustomFilter* CT_CustomFilters::add_customFilter()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -7324,7 +7385,7 @@ CT_Filter* CT_Filter::default_instance_ = NULL;
         {
             if ((*iter)->has_customFilter())
             {
-                (*iter)->get_customFilter().toXmlElem("customFilter", "", _outStream);
+                (*iter)->get_customFilter().toXmlElem("main:customFilter", "", _outStream);
             }
         }
     }
@@ -7359,6 +7420,11 @@ CT_Filter* CT_Filter::default_instance_ = NULL;
 
 
     // CT_CustomFilters::ChildGroup_1
+    CT_CustomFilters::ChildGroup_1::ChildGroup_1()
+    :m_has_customFilter(false),
+    m_customFilter(NULL)
+    {
+    }
     bool CT_CustomFilters::ChildGroup_1::has_customFilter() const
     {    
     return m_has_customFilter;
@@ -7387,6 +7453,13 @@ CT_Filter* CT_Filter::default_instance_ = NULL;
 CT_CustomFilters* CT_CustomFilters::default_instance_ = NULL;
 
     // CT_CustomFilter
+    CT_CustomFilter::CT_CustomFilter()
+    :m_has_operator_attr(false),
+    m_operator_attr(NULL),
+    m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_CustomFilter::clear()
     {    
     m_has_operator_attr = false;
@@ -7398,12 +7471,12 @@ CT_CustomFilters* CT_CustomFilters::default_instance_ = NULL;
     }
     
     
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     }
@@ -7423,9 +7496,9 @@ CT_CustomFilters* CT_CustomFilters::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("val", _outStream);
+        m_val_attr->toXmlAttr("val", _outStream);
     }
     
             _outStream << ">";
@@ -7462,22 +7535,22 @@ CT_CustomFilters* CT_CustomFilters::default_instance_ = NULL;
     return ST_FilterOperator::default_instance();
     }
 
-    bool CT_CustomFilter::has_s_val_attr() const
+    bool CT_CustomFilter::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_CustomFilter::set_s_val_attr(const ns_s::ST_Xstring& _s_val_attr)
+    void CT_CustomFilter::set_val_attr(const ns_s::ST_Xstring& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_Xstring(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_Xstring(_val_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CustomFilter::get_s_val_attr() const
+    const ns_s::ST_Xstring& CT_CustomFilter::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -7485,6 +7558,17 @@ CT_CustomFilters* CT_CustomFilters::default_instance_ = NULL;
 CT_CustomFilter* CT_CustomFilter::default_instance_ = NULL;
 
     // CT_Top10
+    CT_Top10::CT_Top10()
+    :m_has_top_attr(false),
+    m_top_attr(false),
+    m_has_percent_attr(false),
+    m_percent_attr(false),
+    m_has_val_attr(false),
+    m_val_attr(0),
+    m_has_filterVal_attr(false),
+    m_filterVal_attr(0)
+    {
+    }
     void CT_Top10::clear()
     {    
     m_has_top_attr = false;
@@ -7613,6 +7697,13 @@ CT_CustomFilter* CT_CustomFilter::default_instance_ = NULL;
 CT_Top10* CT_Top10::default_instance_ = NULL;
 
     // CT_ColorFilter
+    CT_ColorFilter::CT_ColorFilter()
+    :m_has_dxfId_attr(false),
+    m_dxfId_attr(NULL),
+    m_has_cellColor_attr(false),
+    m_cellColor_attr(false)
+    {
+    }
     void CT_ColorFilter::clear()
     {    
     m_has_dxfId_attr = false;
@@ -7701,6 +7792,13 @@ CT_Top10* CT_Top10::default_instance_ = NULL;
 CT_ColorFilter* CT_ColorFilter::default_instance_ = NULL;
 
     // CT_IconFilter
+    CT_IconFilter::CT_IconFilter()
+    :m_has_iconSet_attr(false),
+    m_iconSet_attr(NULL),
+    m_has_iconId_attr(false),
+    m_iconId_attr(0)
+    {
+    }
     void CT_IconFilter::clear()
     {    
     m_has_iconSet_attr = false;
@@ -7789,6 +7887,19 @@ CT_ColorFilter* CT_ColorFilter::default_instance_ = NULL;
 CT_IconFilter* CT_IconFilter::default_instance_ = NULL;
 
     // CT_DynamicFilter
+    CT_DynamicFilter::CT_DynamicFilter()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_val_attr(false),
+    m_val_attr(0),
+    m_has_valIso_attr(false),
+    m_valIso_attr(""),
+    m_has_maxVal_attr(false),
+    m_maxVal_attr(0),
+    m_has_maxValIso_attr(false),
+    m_maxValIso_attr("")
+    {
+    }
     void CT_DynamicFilter::clear()
     {    
     m_has_type_attr = false;
@@ -7952,6 +8063,17 @@ CT_IconFilter* CT_IconFilter::default_instance_ = NULL;
 CT_DynamicFilter* CT_DynamicFilter::default_instance_ = NULL;
 
     // CT_SortState
+    CT_SortState::CT_SortState()
+    :m_has_columnSort_attr(false),
+    m_columnSort_attr(false),
+    m_has_caseSensitive_attr(false),
+    m_caseSensitive_attr(false),
+    m_has_sortMethod_attr(false),
+    m_sortMethod_attr(NULL),
+    m_has_ref_attr(false),
+    m_ref_attr(NULL)
+    {
+    }
     CT_SortCondition* CT_SortState::add_sortCondition()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -8044,11 +8166,11 @@ CT_DynamicFilter* CT_DynamicFilter::default_instance_ = NULL;
         {
             if ((*iter)->has_sortCondition())
             {
-                (*iter)->get_sortCondition().toXmlElem("sortCondition", "", _outStream);
+                (*iter)->get_sortCondition().toXmlElem("main:sortCondition", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -8139,6 +8261,13 @@ CT_DynamicFilter* CT_DynamicFilter::default_instance_ = NULL;
 
 
     // CT_SortState::ChildGroup_1
+    CT_SortState::ChildGroup_1::ChildGroup_1()
+    :m_has_sortCondition(false),
+    m_sortCondition(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_SortState::ChildGroup_1::has_sortCondition() const
     {    
     return m_has_sortCondition;
@@ -8210,6 +8339,23 @@ CT_DynamicFilter* CT_DynamicFilter::default_instance_ = NULL;
 CT_SortState* CT_SortState::default_instance_ = NULL;
 
     // CT_SortCondition
+    CT_SortCondition::CT_SortCondition()
+    :m_has_descending_attr(false),
+    m_descending_attr(false),
+    m_has_sortBy_attr(false),
+    m_sortBy_attr(NULL),
+    m_has_ref_attr(false),
+    m_ref_attr(NULL),
+    m_has_customList_attr(false),
+    m_customList_attr(NULL),
+    m_has_dxfId_attr(false),
+    m_dxfId_attr(NULL),
+    m_has_iconSet_attr(false),
+    m_iconSet_attr(NULL),
+    m_has_iconId_attr(false),
+    m_iconId_attr(0)
+    {
+    }
     void CT_SortCondition::clear()
     {    
     m_has_descending_attr = false;
@@ -8233,12 +8379,12 @@ CT_SortState* CT_SortState::default_instance_ = NULL;
     }
     
     
-    m_has_s_customList_attr = false;
+    m_has_customList_attr = false;
     
-    if (m_s_customList_attr)
+    if (m_customList_attr)
     {
-        delete m_s_customList_attr;
-        m_s_customList_attr = NULL;
+        delete m_customList_attr;
+        m_customList_attr = NULL;
     }
     
     
@@ -8291,9 +8437,9 @@ CT_SortState* CT_SortState::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_customList_attr)
+    if (m_has_customList_attr)
     {
-        m_s_customList_attr->toXmlAttr("customList", _outStream);
+        m_customList_attr->toXmlAttr("customList", _outStream);
     }
     
     
@@ -8384,22 +8530,22 @@ CT_SortState* CT_SortState::default_instance_ = NULL;
     return ST_Ref::default_instance();
     }
 
-    bool CT_SortCondition::has_s_customList_attr() const
+    bool CT_SortCondition::has_customList_attr() const
     {    
-    return m_has_s_customList_attr;
+    return m_has_customList_attr;
     }
 
-    void CT_SortCondition::set_s_customList_attr(const ns_s::ST_Xstring& _s_customList_attr)
+    void CT_SortCondition::set_customList_attr(const ns_s::ST_Xstring& _customList_attr)
     {    
-    m_has_s_customList_attr = true;
-    m_s_customList_attr = new ns_s::ST_Xstring(_s_customList_attr);
+    m_has_customList_attr = true;
+    m_customList_attr = new ns_s::ST_Xstring(_customList_attr);
     }
 
-    const ns_s::ST_Xstring& CT_SortCondition::get_s_customList_attr() const
+    const ns_s::ST_Xstring& CT_SortCondition::get_customList_attr() const
     {    
-    if (m_s_customList_attr)
+    if (m_customList_attr)
     {
-        return *m_s_customList_attr;
+        return *m_customList_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -8463,6 +8609,23 @@ CT_SortState* CT_SortState::default_instance_ = NULL;
 CT_SortCondition* CT_SortCondition::default_instance_ = NULL;
 
     // CT_DateGroupItem
+    CT_DateGroupItem::CT_DateGroupItem()
+    :m_has_year_attr(false),
+    m_year_attr(0),
+    m_has_month_attr(false),
+    m_month_attr(0),
+    m_has_day_attr(false),
+    m_day_attr(0),
+    m_has_hour_attr(false),
+    m_hour_attr(0),
+    m_has_minute_attr(false),
+    m_minute_attr(0),
+    m_has_second_attr(false),
+    m_second_attr(0),
+    m_has_dateTimeGrouping_attr(false),
+    m_dateTimeGrouping_attr(NULL)
+    {
+    }
     void CT_DateGroupItem::clear()
     {    
     m_has_year_attr = false;
@@ -8676,14 +8839,19 @@ CT_SortCondition* CT_SortCondition::default_instance_ = NULL;
 CT_DateGroupItem* CT_DateGroupItem::default_instance_ = NULL;
 
     // CT_XStringElement
+    CT_XStringElement::CT_XStringElement()
+    :m_has_v_attr(false),
+    m_v_attr(NULL)
+    {
+    }
     void CT_XStringElement::clear()
     {    
-    m_has_s_v_attr = false;
+    m_has_v_attr = false;
     
-    if (m_s_v_attr)
+    if (m_v_attr)
     {
-        delete m_s_v_attr;
-        m_s_v_attr = NULL;
+        delete m_v_attr;
+        m_v_attr = NULL;
     }
     
     }
@@ -8697,9 +8865,9 @@ CT_DateGroupItem* CT_DateGroupItem::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_v_attr)
+    if (m_has_v_attr)
     {
-        m_s_v_attr->toXmlAttr("v", _outStream);
+        m_v_attr->toXmlAttr("v", _outStream);
     }
     
             _outStream << ">";
@@ -8716,22 +8884,22 @@ CT_DateGroupItem* CT_DateGroupItem::default_instance_ = NULL;
     return *CT_XStringElement::default_instance_;
     }
 
-    bool CT_XStringElement::has_s_v_attr() const
+    bool CT_XStringElement::has_v_attr() const
     {    
-    return m_has_s_v_attr;
+    return m_has_v_attr;
     }
 
-    void CT_XStringElement::set_s_v_attr(const ns_s::ST_Xstring& _s_v_attr)
+    void CT_XStringElement::set_v_attr(const ns_s::ST_Xstring& _v_attr)
     {    
-    m_has_s_v_attr = true;
-    m_s_v_attr = new ns_s::ST_Xstring(_s_v_attr);
+    m_has_v_attr = true;
+    m_v_attr = new ns_s::ST_Xstring(_v_attr);
     }
 
-    const ns_s::ST_Xstring& CT_XStringElement::get_s_v_attr() const
+    const ns_s::ST_Xstring& CT_XStringElement::get_v_attr() const
     {    
-    if (m_s_v_attr)
+    if (m_v_attr)
     {
-        return *m_s_v_attr;
+        return *m_v_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -8739,6 +8907,13 @@ CT_DateGroupItem* CT_DateGroupItem::default_instance_ = NULL;
 CT_XStringElement* CT_XStringElement::default_instance_ = NULL;
 
     // CT_Extension
+    CT_Extension::CT_Extension()
+    :m_has__any(false),
+    m__any(NULL),
+    m_has_uri_attr(false),
+    m_uri_attr("")
+    {
+    }
     void CT_Extension::clear()
     {    
     m_has_uri_attr = false;
@@ -8761,10 +8936,10 @@ CT_XStringElement* CT_XStringElement::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_any)
+    if (m_has__any)
     {
         
-    m_any->toXml(_outStream);
+    m__any->toXml(_outStream);
     ;
     }
     
@@ -8799,6 +8974,17 @@ CT_XStringElement* CT_XStringElement::default_instance_ = NULL;
 CT_Extension* CT_Extension::default_instance_ = NULL;
 
     // CT_ObjectAnchor
+    CT_ObjectAnchor::CT_ObjectAnchor()
+    :m_has_xdr_from(false),
+    m_xdr_from(NULL),
+    m_has_xdr_to(false),
+    m_xdr_to(NULL),
+    m_has_moveWithCells_attr(false),
+    m_moveWithCells_attr(false),
+    m_has_sizeWithCells_attr(false),
+    m_sizeWithCells_attr(false)
+    {
+    }
     bool CT_ObjectAnchor::has_xdr_from() const
     {    
     return m_has_xdr_from;
@@ -8935,6 +9121,10 @@ CT_Extension* CT_Extension::default_instance_ = NULL;
 CT_ObjectAnchor* CT_ObjectAnchor::default_instance_ = NULL;
 
     // CT_ExtensionList
+    CT_ExtensionList::CT_ExtensionList()
+
+    {
+    }
     CT_Extension* CT_ExtensionList::add_ext()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -8972,7 +9162,7 @@ CT_ObjectAnchor* CT_ObjectAnchor::default_instance_ = NULL;
         {
             if ((*iter)->has_ext())
             {
-                (*iter)->get_ext().toXmlElem("ext", "", _outStream);
+                (*iter)->get_ext().toXmlElem("main:ext", "", _outStream);
             }
         }
     }
@@ -8991,6 +9181,11 @@ CT_ObjectAnchor* CT_ObjectAnchor::default_instance_ = NULL;
 
 
     // CT_ExtensionList::ChildGroup_1
+    CT_ExtensionList::ChildGroup_1::ChildGroup_1()
+    :m_has_ext(false),
+    m_ext(NULL)
+    {
+    }
     bool CT_ExtensionList::ChildGroup_1::has_ext() const
     {    
     return m_has_ext;
@@ -9019,6 +9214,10 @@ CT_ObjectAnchor* CT_ObjectAnchor::default_instance_ = NULL;
 CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
 
     // CT_CalcChain
+    CT_CalcChain::CT_CalcChain()
+
+    {
+    }
     CT_CalcCell* CT_CalcChain::add_c()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9064,11 +9263,11 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
         {
             if ((*iter)->has_c())
             {
-                (*iter)->get_c().toXmlElem("c", "", _outStream);
+                (*iter)->get_c().toXmlElem("main:c", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -9087,6 +9286,13 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
 
 
     // CT_CalcChain::ChildGroup_1
+    CT_CalcChain::ChildGroup_1::ChildGroup_1()
+    :m_has_c(false),
+    m_c(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_CalcChain::ChildGroup_1::has_c() const
     {    
     return m_has_c;
@@ -9158,6 +9364,23 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
 CT_CalcChain* CT_CalcChain::default_instance_ = NULL;
 
     // CT_CalcCell
+    CT_CalcCell::CT_CalcCell()
+    :m_has_r_attr(false),
+    m_r_attr(NULL),
+    m_has_ref_attr(false),
+    m_ref_attr(NULL),
+    m_has_i_attr(false),
+    m_i_attr(0),
+    m_has_s_attr(false),
+    m_s_attr(false),
+    m_has_l_attr(false),
+    m_l_attr(false),
+    m_has_t_attr(false),
+    m_t_attr(false),
+    m_has_a_attr(false),
+    m_a_attr(false)
+    {
+    }
     void CT_CalcCell::clear()
     {    
     m_has_r_attr = false;
@@ -9381,6 +9604,15 @@ CT_CalcChain* CT_CalcChain::default_instance_ = NULL;
 CT_CalcCell* CT_CalcCell::default_instance_ = NULL;
 
     // CT_Comments
+    CT_Comments::CT_Comments()
+    :m_has_authors(false),
+    m_authors(NULL),
+    m_has_commentList(false),
+    m_commentList(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Comments::has_authors() const
     {    
     return m_has_authors;
@@ -9469,17 +9701,17 @@ CT_CalcCell* CT_CalcCell::default_instance_ = NULL;
             
     if (m_has_authors)
     {
-        m_authors->toXmlElem("authors", "", _outStream);;
+        m_authors->toXmlElem("main:authors", "", _outStream);;
     }
     
     if (m_has_commentList)
     {
-        m_commentList->toXmlElem("commentList", "", _outStream);;
+        m_commentList->toXmlElem("main:commentList", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9497,10 +9729,14 @@ CT_CalcCell* CT_CalcCell::default_instance_ = NULL;
 CT_Comments* CT_Comments::default_instance_ = NULL;
 
     // CT_Authors
-    ns_s::ST_Xstring* CT_Authors::add_s_author()
+    CT_Authors::CT_Authors()
+
+    {
+    }
+    ns_s::ST_Xstring* CT_Authors::add_author()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_Xstring* pNewChild = pChildGroup->mutable_s_author();
+    ns_s::ST_Xstring* pNewChild = pChildGroup->mutable_author();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -9532,9 +9768,9 @@ CT_Comments* CT_Comments::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_s_author())
+            if ((*iter)->has_author())
             {
-                _outStream << "<s:author>" << (*iter)->get_s_author().toString() << "</s:author>";
+                _outStream << "<main:author>" << (*iter)->get_author().toString() << "</main:author>";
             }
         }
     }
@@ -9553,27 +9789,32 @@ CT_Comments* CT_Comments::default_instance_ = NULL;
 
 
     // CT_Authors::ChildGroup_1
-    bool CT_Authors::ChildGroup_1::has_s_author() const
+    CT_Authors::ChildGroup_1::ChildGroup_1()
+    :m_has_author(false),
+    m_author(NULL)
+    {
+    }
+    bool CT_Authors::ChildGroup_1::has_author() const
     {    
-    return m_has_s_author;
+    return m_has_author;
     }
 
-    ns_s::ST_Xstring* CT_Authors::ChildGroup_1::mutable_s_author()
+    ns_s::ST_Xstring* CT_Authors::ChildGroup_1::mutable_author()
     {    
     
-    m_has_s_author = true;
-    if (!m_s_author)
+    m_has_author = true;
+    if (!m_author)
     {
-        m_s_author = new ns_s::ST_Xstring();
+        m_author = new ns_s::ST_Xstring();
     }
-    return m_s_author;
+    return m_author;
     }
 
-    const ns_s::ST_Xstring& CT_Authors::ChildGroup_1::get_s_author() const
+    const ns_s::ST_Xstring& CT_Authors::ChildGroup_1::get_author() const
     {    
-    if (m_s_author)
+    if (m_author)
     {
-        return *m_s_author;
+        return *m_author;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -9581,6 +9822,10 @@ CT_Comments* CT_Comments::default_instance_ = NULL;
 CT_Authors* CT_Authors::default_instance_ = NULL;
 
     // CT_CommentList
+    CT_CommentList::CT_CommentList()
+
+    {
+    }
     CT_Comment* CT_CommentList::add_comment()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9618,7 +9863,7 @@ CT_Authors* CT_Authors::default_instance_ = NULL;
         {
             if ((*iter)->has_comment())
             {
-                (*iter)->get_comment().toXmlElem("comment", "", _outStream);
+                (*iter)->get_comment().toXmlElem("main:comment", "", _outStream);
             }
         }
     }
@@ -9637,6 +9882,11 @@ CT_Authors* CT_Authors::default_instance_ = NULL;
 
 
     // CT_CommentList::ChildGroup_1
+    CT_CommentList::ChildGroup_1::ChildGroup_1()
+    :m_has_comment(false),
+    m_comment(NULL)
+    {
+    }
     bool CT_CommentList::ChildGroup_1::has_comment() const
     {    
     return m_has_comment;
@@ -9665,6 +9915,21 @@ CT_Authors* CT_Authors::default_instance_ = NULL;
 CT_CommentList* CT_CommentList::default_instance_ = NULL;
 
     // CT_Comment
+    CT_Comment::CT_Comment()
+    :m_has_text(false),
+    m_text(NULL),
+    m_has_commentPr(false),
+    m_commentPr(NULL),
+    m_has_ref_attr(false),
+    m_ref_attr(NULL),
+    m_has_authorId_attr(false),
+    m_authorId_attr(0),
+    m_has_guid_attr(false),
+    m_guid_attr(NULL),
+    m_has_shapeId_attr(false),
+    m_shapeId_attr(0)
+    {
+    }
     bool CT_Comment::has_text() const
     {    
     return m_has_text;
@@ -9727,12 +9992,12 @@ CT_CommentList* CT_CommentList::default_instance_ = NULL;
     m_has_authorId_attr = false;
     m_authorId_attr = 0;
     
-    m_has_s_guid_attr = false;
+    m_has_guid_attr = false;
     
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        delete m_s_guid_attr;
-        m_s_guid_attr = NULL;
+        delete m_guid_attr;
+        m_guid_attr = NULL;
     }
     
     
@@ -9761,9 +10026,9 @@ CT_CommentList* CT_CommentList::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_guid_attr)
+    if (m_has_guid_attr)
     {
-        m_s_guid_attr->toXmlAttr("guid", _outStream);
+        m_guid_attr->toXmlAttr("guid", _outStream);
     }
     
     
@@ -9776,12 +10041,12 @@ CT_CommentList* CT_CommentList::default_instance_ = NULL;
             
     if (m_has_text)
     {
-        m_text->toXmlElem("text", "", _outStream);;
+        m_text->toXmlElem("main:text", "", _outStream);;
     }
     
     if (m_has_commentPr)
     {
-        m_commentPr->toXmlElem("commentPr", "", _outStream);;
+        m_commentPr->toXmlElem("main:commentPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9832,22 +10097,22 @@ CT_CommentList* CT_CommentList::default_instance_ = NULL;
     return m_authorId_attr;
     }
 
-    bool CT_Comment::has_s_guid_attr() const
+    bool CT_Comment::has_guid_attr() const
     {    
-    return m_has_s_guid_attr;
+    return m_has_guid_attr;
     }
 
-    void CT_Comment::set_s_guid_attr(const ns_s::ST_Guid& _s_guid_attr)
+    void CT_Comment::set_guid_attr(const ns_s::ST_Guid& _guid_attr)
     {    
-    m_has_s_guid_attr = true;
-    m_s_guid_attr = new ns_s::ST_Guid(_s_guid_attr);
+    m_has_guid_attr = true;
+    m_guid_attr = new ns_s::ST_Guid(_guid_attr);
     }
 
-    const ns_s::ST_Guid& CT_Comment::get_s_guid_attr() const
+    const ns_s::ST_Guid& CT_Comment::get_guid_attr() const
     {    
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        return *m_s_guid_attr;
+        return *m_guid_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -9871,6 +10136,35 @@ CT_CommentList* CT_CommentList::default_instance_ = NULL;
 CT_Comment* CT_Comment::default_instance_ = NULL;
 
     // CT_CommentPr
+    CT_CommentPr::CT_CommentPr()
+    :m_has_anchor(false),
+    m_anchor(NULL),
+    m_has_locked_attr(false),
+    m_locked_attr(false),
+    m_has_defaultSize_attr(false),
+    m_defaultSize_attr(false),
+    m_has_print_attr(false),
+    m_print_attr(false),
+    m_has_disabled_attr(false),
+    m_disabled_attr(false),
+    m_has_autoFill_attr(false),
+    m_autoFill_attr(false),
+    m_has_autoLine_attr(false),
+    m_autoLine_attr(false),
+    m_has_altText_attr(false),
+    m_altText_attr(NULL),
+    m_has_textHAlign_attr(false),
+    m_textHAlign_attr(NULL),
+    m_has_textVAlign_attr(false),
+    m_textVAlign_attr(NULL),
+    m_has_lockText_attr(false),
+    m_lockText_attr(false),
+    m_has_justLastX_attr(false),
+    m_justLastX_attr(false),
+    m_has_autoScale_attr(false),
+    m_autoScale_attr(false)
+    {
+    }
     bool CT_CommentPr::has_anchor() const
     {    
     return m_has_anchor;
@@ -9915,12 +10209,12 @@ CT_Comment* CT_Comment::default_instance_ = NULL;
     m_has_autoLine_attr = false;
     m_autoLine_attr = false;
     
-    m_has_s_altText_attr = false;
+    m_has_altText_attr = false;
     
-    if (m_s_altText_attr)
+    if (m_altText_attr)
     {
-        delete m_s_altText_attr;
-        m_s_altText_attr = NULL;
+        delete m_altText_attr;
+        m_altText_attr = NULL;
     }
     
     
@@ -9997,9 +10291,9 @@ CT_Comment* CT_Comment::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_altText_attr)
+    if (m_has_altText_attr)
     {
-        m_s_altText_attr->toXmlAttr("altText", _outStream);
+        m_altText_attr->toXmlAttr("altText", _outStream);
     }
     
     
@@ -10036,7 +10330,7 @@ CT_Comment* CT_Comment::default_instance_ = NULL;
             
     if (m_has_anchor)
     {
-        m_anchor->toXmlElem("anchor", "", _outStream);;
+        m_anchor->toXmlElem("main:anchor", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10147,22 +10441,22 @@ CT_Comment* CT_Comment::default_instance_ = NULL;
     return m_autoLine_attr;
     }
 
-    bool CT_CommentPr::has_s_altText_attr() const
+    bool CT_CommentPr::has_altText_attr() const
     {    
-    return m_has_s_altText_attr;
+    return m_has_altText_attr;
     }
 
-    void CT_CommentPr::set_s_altText_attr(const ns_s::ST_Xstring& _s_altText_attr)
+    void CT_CommentPr::set_altText_attr(const ns_s::ST_Xstring& _altText_attr)
     {    
-    m_has_s_altText_attr = true;
-    m_s_altText_attr = new ns_s::ST_Xstring(_s_altText_attr);
+    m_has_altText_attr = true;
+    m_altText_attr = new ns_s::ST_Xstring(_altText_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CommentPr::get_s_altText_attr() const
+    const ns_s::ST_Xstring& CT_CommentPr::get_altText_attr() const
     {    
-    if (m_s_altText_attr)
+    if (m_altText_attr)
     {
-        return *m_s_altText_attr;
+        return *m_altText_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -10258,6 +10552,11 @@ CT_Comment* CT_Comment::default_instance_ = NULL;
 CT_CommentPr* CT_CommentPr::default_instance_ = NULL;
 
     // CT_MapInfo
+    CT_MapInfo::CT_MapInfo()
+    :m_has_SelectionNamespaces_attr(false),
+    m_SelectionNamespaces_attr("")
+    {
+    }
     CT_Schema* CT_MapInfo::add_Schema()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -10311,11 +10610,11 @@ CT_CommentPr* CT_CommentPr::default_instance_ = NULL;
         {
             if ((*iter)->has_Schema())
             {
-                (*iter)->get_Schema().toXmlElem("Schema", "", _outStream);
+                (*iter)->get_Schema().toXmlElem("main:Schema", "", _outStream);
             }
             else if ((*iter)->has_Map())
             {
-                (*iter)->get_Map().toXmlElem("Map", "", _outStream);
+                (*iter)->get_Map().toXmlElem("main:Map", "", _outStream);
             }
         }
     }
@@ -10350,6 +10649,13 @@ CT_CommentPr* CT_CommentPr::default_instance_ = NULL;
 
 
     // CT_MapInfo::ChildGroup_1
+    CT_MapInfo::ChildGroup_1::ChildGroup_1()
+    :m_has_Schema(false),
+    m_Schema(NULL),
+    m_has_Map(false),
+    m_Map(NULL)
+    {
+    }
     bool CT_MapInfo::ChildGroup_1::has_Schema() const
     {    
     return m_has_Schema;
@@ -10421,6 +10727,19 @@ CT_CommentPr* CT_CommentPr::default_instance_ = NULL;
 CT_MapInfo* CT_MapInfo::default_instance_ = NULL;
 
     // CT_Schema
+    CT_Schema::CT_Schema()
+    :m_has__any(false),
+    m__any(NULL),
+    m_has_ID_attr(false),
+    m_ID_attr(""),
+    m_has_SchemaRef_attr(false),
+    m_SchemaRef_attr(""),
+    m_has_Namespace_attr(false),
+    m_Namespace_attr(""),
+    m_has_SchemaLanguage_attr(false),
+    m_SchemaLanguage_attr("")
+    {
+    }
     void CT_Schema::clear()
     {    
     m_has_ID_attr = false;
@@ -10470,10 +10789,10 @@ CT_MapInfo* CT_MapInfo::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_any)
+    if (m_has__any)
     {
         
-    m_any->toXml(_outStream);
+    m__any->toXml(_outStream);
     ;
     }
     
@@ -10556,6 +10875,29 @@ CT_MapInfo* CT_MapInfo::default_instance_ = NULL;
 CT_Schema* CT_Schema::default_instance_ = NULL;
 
     // CT_Map
+    CT_Map::CT_Map()
+    :m_has_DataBinding(false),
+    m_DataBinding(NULL),
+    m_has_ID_attr(false),
+    m_ID_attr(0),
+    m_has_Name_attr(false),
+    m_Name_attr(""),
+    m_has_RootElement_attr(false),
+    m_RootElement_attr(""),
+    m_has_SchemaID_attr(false),
+    m_SchemaID_attr(""),
+    m_has_ShowImportExportValidationErrors_attr(false),
+    m_ShowImportExportValidationErrors_attr(false),
+    m_has_AutoFit_attr(false),
+    m_AutoFit_attr(false),
+    m_has_Append_attr(false),
+    m_Append_attr(false),
+    m_has_PreserveSortAFLayout_attr(false),
+    m_PreserveSortAFLayout_attr(false),
+    m_has_PreserveFormat_attr(false),
+    m_PreserveFormat_attr(false)
+    {
+    }
     bool CT_Map::has_DataBinding() const
     {    
     return m_has_DataBinding;
@@ -10676,7 +11018,7 @@ CT_Schema* CT_Schema::default_instance_ = NULL;
             
     if (m_has_DataBinding)
     {
-        m_DataBinding->toXmlElem("DataBinding", "", _outStream);;
+        m_DataBinding->toXmlElem("main:DataBinding", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10838,6 +11180,21 @@ CT_Schema* CT_Schema::default_instance_ = NULL;
 CT_Map* CT_Map::default_instance_ = NULL;
 
     // CT_DataBinding
+    CT_DataBinding::CT_DataBinding()
+    :m_has__any(false),
+    m__any(NULL),
+    m_has_DataBindingName_attr(false),
+    m_DataBindingName_attr(""),
+    m_has_FileBinding_attr(false),
+    m_FileBinding_attr(false),
+    m_has_ConnectionID_attr(false),
+    m_ConnectionID_attr(0),
+    m_has_FileBindingName_attr(false),
+    m_FileBindingName_attr(""),
+    m_has_DataBindingLoadMode_attr(false),
+    m_DataBindingLoadMode_attr(0)
+    {
+    }
     void CT_DataBinding::clear()
     {    
     m_has_DataBindingName_attr = false;
@@ -10896,10 +11253,10 @@ CT_Map* CT_Map::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_any)
+    if (m_has__any)
     {
         
-    m_any->toXml(_outStream);
+    m__any->toXml(_outStream);
     ;
     }
     
@@ -10998,6 +11355,10 @@ CT_Map* CT_Map::default_instance_ = NULL;
 CT_DataBinding* CT_DataBinding::default_instance_ = NULL;
 
     // CT_Connections
+    CT_Connections::CT_Connections()
+
+    {
+    }
     CT_Connection* CT_Connections::add_connection()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -11035,7 +11396,7 @@ CT_DataBinding* CT_DataBinding::default_instance_ = NULL;
         {
             if ((*iter)->has_connection())
             {
-                (*iter)->get_connection().toXmlElem("connection", "", _outStream);
+                (*iter)->get_connection().toXmlElem("main:connection", "", _outStream);
             }
         }
     }
@@ -11054,6 +11415,11 @@ CT_DataBinding* CT_DataBinding::default_instance_ = NULL;
 
 
     // CT_Connections::ChildGroup_1
+    CT_Connections::ChildGroup_1::ChildGroup_1()
+    :m_has_connection(false),
+    m_connection(NULL)
+    {
+    }
     bool CT_Connections::ChildGroup_1::has_connection() const
     {    
     return m_has_connection;
@@ -11082,6 +11448,61 @@ CT_DataBinding* CT_DataBinding::default_instance_ = NULL;
 CT_Connections* CT_Connections::default_instance_ = NULL;
 
     // CT_Connection
+    CT_Connection::CT_Connection()
+    :m_has_dbPr(false),
+    m_dbPr(NULL),
+    m_has_olapPr(false),
+    m_olapPr(NULL),
+    m_has_webPr(false),
+    m_webPr(NULL),
+    m_has_textPr(false),
+    m_textPr(NULL),
+    m_has_parameters(false),
+    m_parameters(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_id_attr(false),
+    m_id_attr(0),
+    m_has_sourceFile_attr(false),
+    m_sourceFile_attr(NULL),
+    m_has_odcFile_attr(false),
+    m_odcFile_attr(NULL),
+    m_has_keepAlive_attr(false),
+    m_keepAlive_attr(false),
+    m_has_interval_attr(false),
+    m_interval_attr(0),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_description_attr(false),
+    m_description_attr(NULL),
+    m_has_type_attr(false),
+    m_type_attr(0),
+    m_has_reconnectionMethod_attr(false),
+    m_reconnectionMethod_attr(0),
+    m_has_refreshedVersion_attr(false),
+    m_refreshedVersion_attr(0),
+    m_has_minRefreshableVersion_attr(false),
+    m_minRefreshableVersion_attr(0),
+    m_has_savePassword_attr(false),
+    m_savePassword_attr(false),
+    m_has_new_attr(false),
+    m_new_attr(false),
+    m_has_deleted_attr(false),
+    m_deleted_attr(false),
+    m_has_onlyUseConnectionFile_attr(false),
+    m_onlyUseConnectionFile_attr(false),
+    m_has_background_attr(false),
+    m_background_attr(false),
+    m_has_refreshOnLoad_attr(false),
+    m_refreshOnLoad_attr(false),
+    m_has_saveData_attr(false),
+    m_saveData_attr(false),
+    m_has_credentials_attr(false),
+    m_credentials_attr(NULL),
+    m_has_singleSignOnId_attr(false),
+    m_singleSignOnId_attr(NULL)
+    {
+    }
     bool CT_Connection::has_dbPr() const
     {    
     return m_has_dbPr;
@@ -11231,21 +11652,21 @@ CT_Connections* CT_Connections::default_instance_ = NULL;
     m_has_id_attr = false;
     m_id_attr = 0;
     
-    m_has_s_sourceFile_attr = false;
+    m_has_sourceFile_attr = false;
     
-    if (m_s_sourceFile_attr)
+    if (m_sourceFile_attr)
     {
-        delete m_s_sourceFile_attr;
-        m_s_sourceFile_attr = NULL;
+        delete m_sourceFile_attr;
+        m_sourceFile_attr = NULL;
     }
     
     
-    m_has_s_odcFile_attr = false;
+    m_has_odcFile_attr = false;
     
-    if (m_s_odcFile_attr)
+    if (m_odcFile_attr)
     {
-        delete m_s_odcFile_attr;
-        m_s_odcFile_attr = NULL;
+        delete m_odcFile_attr;
+        m_odcFile_attr = NULL;
     }
     
     
@@ -11255,21 +11676,21 @@ CT_Connections* CT_Connections::default_instance_ = NULL;
     m_has_interval_attr = false;
     m_interval_attr = 0;
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_description_attr = false;
+    m_has_description_attr = false;
     
-    if (m_s_description_attr)
+    if (m_description_attr)
     {
-        delete m_s_description_attr;
-        m_s_description_attr = NULL;
+        delete m_description_attr;
+        m_description_attr = NULL;
     }
     
     
@@ -11315,12 +11736,12 @@ CT_Connections* CT_Connections::default_instance_ = NULL;
     }
     
     
-    m_has_s_singleSignOnId_attr = false;
+    m_has_singleSignOnId_attr = false;
     
-    if (m_s_singleSignOnId_attr)
+    if (m_singleSignOnId_attr)
     {
-        delete m_s_singleSignOnId_attr;
-        m_s_singleSignOnId_attr = NULL;
+        delete m_singleSignOnId_attr;
+        m_singleSignOnId_attr = NULL;
     }
     
     }
@@ -11340,15 +11761,15 @@ CT_Connections* CT_Connections::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_sourceFile_attr)
+    if (m_has_sourceFile_attr)
     {
-        m_s_sourceFile_attr->toXmlAttr("sourceFile", _outStream);
+        m_sourceFile_attr->toXmlAttr("sourceFile", _outStream);
     }
     
     
-    if (m_has_s_odcFile_attr)
+    if (m_has_odcFile_attr)
     {
-        m_s_odcFile_attr->toXmlAttr("odcFile", _outStream);
+        m_odcFile_attr->toXmlAttr("odcFile", _outStream);
     }
     
     
@@ -11364,15 +11785,15 @@ CT_Connections* CT_Connections::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_description_attr)
+    if (m_has_description_attr)
     {
-        m_s_description_attr->toXmlAttr("description", _outStream);
+        m_description_attr->toXmlAttr("description", _outStream);
     }
     
     
@@ -11448,41 +11869,41 @@ CT_Connections* CT_Connections::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_singleSignOnId_attr)
+    if (m_has_singleSignOnId_attr)
     {
-        m_s_singleSignOnId_attr->toXmlAttr("singleSignOnId", _outStream);
+        m_singleSignOnId_attr->toXmlAttr("singleSignOnId", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_dbPr)
     {
-        m_dbPr->toXmlElem("dbPr", "", _outStream);;
+        m_dbPr->toXmlElem("main:dbPr", "", _outStream);;
     }
     
     if (m_has_olapPr)
     {
-        m_olapPr->toXmlElem("olapPr", "", _outStream);;
+        m_olapPr->toXmlElem("main:olapPr", "", _outStream);;
     }
     
     if (m_has_webPr)
     {
-        m_webPr->toXmlElem("webPr", "", _outStream);;
+        m_webPr->toXmlElem("main:webPr", "", _outStream);;
     }
     
     if (m_has_textPr)
     {
-        m_textPr->toXmlElem("textPr", "", _outStream);;
+        m_textPr->toXmlElem("main:textPr", "", _outStream);;
     }
     
     if (m_has_parameters)
     {
-        m_parameters->toXmlElem("parameters", "", _outStream);;
+        m_parameters->toXmlElem("main:parameters", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11513,42 +11934,42 @@ CT_Connections* CT_Connections::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool CT_Connection::has_s_sourceFile_attr() const
+    bool CT_Connection::has_sourceFile_attr() const
     {    
-    return m_has_s_sourceFile_attr;
+    return m_has_sourceFile_attr;
     }
 
-    void CT_Connection::set_s_sourceFile_attr(const ns_s::ST_Xstring& _s_sourceFile_attr)
+    void CT_Connection::set_sourceFile_attr(const ns_s::ST_Xstring& _sourceFile_attr)
     {    
-    m_has_s_sourceFile_attr = true;
-    m_s_sourceFile_attr = new ns_s::ST_Xstring(_s_sourceFile_attr);
+    m_has_sourceFile_attr = true;
+    m_sourceFile_attr = new ns_s::ST_Xstring(_sourceFile_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Connection::get_s_sourceFile_attr() const
+    const ns_s::ST_Xstring& CT_Connection::get_sourceFile_attr() const
     {    
-    if (m_s_sourceFile_attr)
+    if (m_sourceFile_attr)
     {
-        return *m_s_sourceFile_attr;
+        return *m_sourceFile_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_Connection::has_s_odcFile_attr() const
+    bool CT_Connection::has_odcFile_attr() const
     {    
-    return m_has_s_odcFile_attr;
+    return m_has_odcFile_attr;
     }
 
-    void CT_Connection::set_s_odcFile_attr(const ns_s::ST_Xstring& _s_odcFile_attr)
+    void CT_Connection::set_odcFile_attr(const ns_s::ST_Xstring& _odcFile_attr)
     {    
-    m_has_s_odcFile_attr = true;
-    m_s_odcFile_attr = new ns_s::ST_Xstring(_s_odcFile_attr);
+    m_has_odcFile_attr = true;
+    m_odcFile_attr = new ns_s::ST_Xstring(_odcFile_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Connection::get_s_odcFile_attr() const
+    const ns_s::ST_Xstring& CT_Connection::get_odcFile_attr() const
     {    
-    if (m_s_odcFile_attr)
+    if (m_odcFile_attr)
     {
-        return *m_s_odcFile_attr;
+        return *m_odcFile_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -11585,42 +12006,42 @@ CT_Connections* CT_Connections::default_instance_ = NULL;
     return m_interval_attr;
     }
 
-    bool CT_Connection::has_s_name_attr() const
+    bool CT_Connection::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_Connection::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_Connection::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Connection::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_Connection::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_Connection::has_s_description_attr() const
+    bool CT_Connection::has_description_attr() const
     {    
-    return m_has_s_description_attr;
+    return m_has_description_attr;
     }
 
-    void CT_Connection::set_s_description_attr(const ns_s::ST_Xstring& _s_description_attr)
+    void CT_Connection::set_description_attr(const ns_s::ST_Xstring& _description_attr)
     {    
-    m_has_s_description_attr = true;
-    m_s_description_attr = new ns_s::ST_Xstring(_s_description_attr);
+    m_has_description_attr = true;
+    m_description_attr = new ns_s::ST_Xstring(_description_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Connection::get_s_description_attr() const
+    const ns_s::ST_Xstring& CT_Connection::get_description_attr() const
     {    
-    if (m_s_description_attr)
+    if (m_description_attr)
     {
-        return *m_s_description_attr;
+        return *m_description_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -11821,22 +12242,22 @@ CT_Connections* CT_Connections::default_instance_ = NULL;
     return ST_CredMethod::default_instance();
     }
 
-    bool CT_Connection::has_s_singleSignOnId_attr() const
+    bool CT_Connection::has_singleSignOnId_attr() const
     {    
-    return m_has_s_singleSignOnId_attr;
+    return m_has_singleSignOnId_attr;
     }
 
-    void CT_Connection::set_s_singleSignOnId_attr(const ns_s::ST_Xstring& _s_singleSignOnId_attr)
+    void CT_Connection::set_singleSignOnId_attr(const ns_s::ST_Xstring& _singleSignOnId_attr)
     {    
-    m_has_s_singleSignOnId_attr = true;
-    m_s_singleSignOnId_attr = new ns_s::ST_Xstring(_s_singleSignOnId_attr);
+    m_has_singleSignOnId_attr = true;
+    m_singleSignOnId_attr = new ns_s::ST_Xstring(_singleSignOnId_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Connection::get_s_singleSignOnId_attr() const
+    const ns_s::ST_Xstring& CT_Connection::get_singleSignOnId_attr() const
     {    
-    if (m_s_singleSignOnId_attr)
+    if (m_singleSignOnId_attr)
     {
-        return *m_s_singleSignOnId_attr;
+        return *m_singleSignOnId_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -11844,32 +12265,43 @@ CT_Connections* CT_Connections::default_instance_ = NULL;
 CT_Connection* CT_Connection::default_instance_ = NULL;
 
     // CT_DbPr
+    CT_DbPr::CT_DbPr()
+    :m_has_connection_attr(false),
+    m_connection_attr(NULL),
+    m_has_command_attr(false),
+    m_command_attr(NULL),
+    m_has_serverCommand_attr(false),
+    m_serverCommand_attr(NULL),
+    m_has_commandType_attr(false),
+    m_commandType_attr(0)
+    {
+    }
     void CT_DbPr::clear()
     {    
-    m_has_s_connection_attr = false;
+    m_has_connection_attr = false;
     
-    if (m_s_connection_attr)
+    if (m_connection_attr)
     {
-        delete m_s_connection_attr;
-        m_s_connection_attr = NULL;
+        delete m_connection_attr;
+        m_connection_attr = NULL;
     }
     
     
-    m_has_s_command_attr = false;
+    m_has_command_attr = false;
     
-    if (m_s_command_attr)
+    if (m_command_attr)
     {
-        delete m_s_command_attr;
-        m_s_command_attr = NULL;
+        delete m_command_attr;
+        m_command_attr = NULL;
     }
     
     
-    m_has_s_serverCommand_attr = false;
+    m_has_serverCommand_attr = false;
     
-    if (m_s_serverCommand_attr)
+    if (m_serverCommand_attr)
     {
-        delete m_s_serverCommand_attr;
-        m_s_serverCommand_attr = NULL;
+        delete m_serverCommand_attr;
+        m_serverCommand_attr = NULL;
     }
     
     
@@ -11886,21 +12318,21 @@ CT_Connection* CT_Connection::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_connection_attr)
+    if (m_has_connection_attr)
     {
-        m_s_connection_attr->toXmlAttr("connection", _outStream);
+        m_connection_attr->toXmlAttr("connection", _outStream);
     }
     
     
-    if (m_has_s_command_attr)
+    if (m_has_command_attr)
     {
-        m_s_command_attr->toXmlAttr("command", _outStream);
+        m_command_attr->toXmlAttr("command", _outStream);
     }
     
     
-    if (m_has_s_serverCommand_attr)
+    if (m_has_serverCommand_attr)
     {
-        m_s_serverCommand_attr->toXmlAttr("serverCommand", _outStream);
+        m_serverCommand_attr->toXmlAttr("serverCommand", _outStream);
     }
     
     
@@ -11923,62 +12355,62 @@ CT_Connection* CT_Connection::default_instance_ = NULL;
     return *CT_DbPr::default_instance_;
     }
 
-    bool CT_DbPr::has_s_connection_attr() const
+    bool CT_DbPr::has_connection_attr() const
     {    
-    return m_has_s_connection_attr;
+    return m_has_connection_attr;
     }
 
-    void CT_DbPr::set_s_connection_attr(const ns_s::ST_Xstring& _s_connection_attr)
+    void CT_DbPr::set_connection_attr(const ns_s::ST_Xstring& _connection_attr)
     {    
-    m_has_s_connection_attr = true;
-    m_s_connection_attr = new ns_s::ST_Xstring(_s_connection_attr);
+    m_has_connection_attr = true;
+    m_connection_attr = new ns_s::ST_Xstring(_connection_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DbPr::get_s_connection_attr() const
+    const ns_s::ST_Xstring& CT_DbPr::get_connection_attr() const
     {    
-    if (m_s_connection_attr)
+    if (m_connection_attr)
     {
-        return *m_s_connection_attr;
+        return *m_connection_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_DbPr::has_s_command_attr() const
+    bool CT_DbPr::has_command_attr() const
     {    
-    return m_has_s_command_attr;
+    return m_has_command_attr;
     }
 
-    void CT_DbPr::set_s_command_attr(const ns_s::ST_Xstring& _s_command_attr)
+    void CT_DbPr::set_command_attr(const ns_s::ST_Xstring& _command_attr)
     {    
-    m_has_s_command_attr = true;
-    m_s_command_attr = new ns_s::ST_Xstring(_s_command_attr);
+    m_has_command_attr = true;
+    m_command_attr = new ns_s::ST_Xstring(_command_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DbPr::get_s_command_attr() const
+    const ns_s::ST_Xstring& CT_DbPr::get_command_attr() const
     {    
-    if (m_s_command_attr)
+    if (m_command_attr)
     {
-        return *m_s_command_attr;
+        return *m_command_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_DbPr::has_s_serverCommand_attr() const
+    bool CT_DbPr::has_serverCommand_attr() const
     {    
-    return m_has_s_serverCommand_attr;
+    return m_has_serverCommand_attr;
     }
 
-    void CT_DbPr::set_s_serverCommand_attr(const ns_s::ST_Xstring& _s_serverCommand_attr)
+    void CT_DbPr::set_serverCommand_attr(const ns_s::ST_Xstring& _serverCommand_attr)
     {    
-    m_has_s_serverCommand_attr = true;
-    m_s_serverCommand_attr = new ns_s::ST_Xstring(_s_serverCommand_attr);
+    m_has_serverCommand_attr = true;
+    m_serverCommand_attr = new ns_s::ST_Xstring(_serverCommand_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DbPr::get_s_serverCommand_attr() const
+    const ns_s::ST_Xstring& CT_DbPr::get_serverCommand_attr() const
     {    
-    if (m_s_serverCommand_attr)
+    if (m_serverCommand_attr)
     {
-        return *m_s_serverCommand_attr;
+        return *m_serverCommand_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -12002,17 +12434,38 @@ CT_Connection* CT_Connection::default_instance_ = NULL;
 CT_DbPr* CT_DbPr::default_instance_ = NULL;
 
     // CT_OlapPr
+    CT_OlapPr::CT_OlapPr()
+    :m_has_local_attr(false),
+    m_local_attr(false),
+    m_has_localConnection_attr(false),
+    m_localConnection_attr(NULL),
+    m_has_localRefresh_attr(false),
+    m_localRefresh_attr(false),
+    m_has_sendLocale_attr(false),
+    m_sendLocale_attr(false),
+    m_has_rowDrillCount_attr(false),
+    m_rowDrillCount_attr(0),
+    m_has_serverFill_attr(false),
+    m_serverFill_attr(false),
+    m_has_serverNumberFormat_attr(false),
+    m_serverNumberFormat_attr(false),
+    m_has_serverFont_attr(false),
+    m_serverFont_attr(false),
+    m_has_serverFontColor_attr(false),
+    m_serverFontColor_attr(false)
+    {
+    }
     void CT_OlapPr::clear()
     {    
     m_has_local_attr = false;
     m_local_attr = false;
     
-    m_has_s_localConnection_attr = false;
+    m_has_localConnection_attr = false;
     
-    if (m_s_localConnection_attr)
+    if (m_localConnection_attr)
     {
-        delete m_s_localConnection_attr;
-        m_s_localConnection_attr = NULL;
+        delete m_localConnection_attr;
+        m_localConnection_attr = NULL;
     }
     
     
@@ -12053,9 +12506,9 @@ CT_DbPr* CT_DbPr::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_localConnection_attr)
+    if (m_has_localConnection_attr)
     {
-        m_s_localConnection_attr->toXmlAttr("localConnection", _outStream);
+        m_localConnection_attr->toXmlAttr("localConnection", _outStream);
     }
     
     
@@ -12130,22 +12583,22 @@ CT_DbPr* CT_DbPr::default_instance_ = NULL;
     return m_local_attr;
     }
 
-    bool CT_OlapPr::has_s_localConnection_attr() const
+    bool CT_OlapPr::has_localConnection_attr() const
     {    
-    return m_has_s_localConnection_attr;
+    return m_has_localConnection_attr;
     }
 
-    void CT_OlapPr::set_s_localConnection_attr(const ns_s::ST_Xstring& _s_localConnection_attr)
+    void CT_OlapPr::set_localConnection_attr(const ns_s::ST_Xstring& _localConnection_attr)
     {    
-    m_has_s_localConnection_attr = true;
-    m_s_localConnection_attr = new ns_s::ST_Xstring(_s_localConnection_attr);
+    m_has_localConnection_attr = true;
+    m_localConnection_attr = new ns_s::ST_Xstring(_localConnection_attr);
     }
 
-    const ns_s::ST_Xstring& CT_OlapPr::get_s_localConnection_attr() const
+    const ns_s::ST_Xstring& CT_OlapPr::get_localConnection_attr() const
     {    
-    if (m_s_localConnection_attr)
+    if (m_localConnection_attr)
     {
-        return *m_s_localConnection_attr;
+        return *m_localConnection_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -12265,6 +12718,37 @@ CT_DbPr* CT_DbPr::default_instance_ = NULL;
 CT_OlapPr* CT_OlapPr::default_instance_ = NULL;
 
     // CT_WebPr
+    CT_WebPr::CT_WebPr()
+    :m_has_tables(false),
+    m_tables(NULL),
+    m_has_xml_attr(false),
+    m_xml_attr(false),
+    m_has_sourceData_attr(false),
+    m_sourceData_attr(false),
+    m_has_parsePre_attr(false),
+    m_parsePre_attr(false),
+    m_has_consecutive_attr(false),
+    m_consecutive_attr(false),
+    m_has_firstRow_attr(false),
+    m_firstRow_attr(false),
+    m_has_xl97_attr(false),
+    m_xl97_attr(false),
+    m_has_textDates_attr(false),
+    m_textDates_attr(false),
+    m_has_xl2000_attr(false),
+    m_xl2000_attr(false),
+    m_has_url_attr(false),
+    m_url_attr(NULL),
+    m_has_post_attr(false),
+    m_post_attr(NULL),
+    m_has_htmlTables_attr(false),
+    m_htmlTables_attr(false),
+    m_has_htmlFormat_attr(false),
+    m_htmlFormat_attr(NULL),
+    m_has_editPage_attr(false),
+    m_editPage_attr(NULL)
+    {
+    }
     bool CT_WebPr::has_tables() const
     {    
     return m_has_tables;
@@ -12315,21 +12799,21 @@ CT_OlapPr* CT_OlapPr::default_instance_ = NULL;
     m_has_xl2000_attr = false;
     m_xl2000_attr = false;
     
-    m_has_s_url_attr = false;
+    m_has_url_attr = false;
     
-    if (m_s_url_attr)
+    if (m_url_attr)
     {
-        delete m_s_url_attr;
-        m_s_url_attr = NULL;
+        delete m_url_attr;
+        m_url_attr = NULL;
     }
     
     
-    m_has_s_post_attr = false;
+    m_has_post_attr = false;
     
-    if (m_s_post_attr)
+    if (m_post_attr)
     {
-        delete m_s_post_attr;
-        m_s_post_attr = NULL;
+        delete m_post_attr;
+        m_post_attr = NULL;
     }
     
     
@@ -12345,12 +12829,12 @@ CT_OlapPr* CT_OlapPr::default_instance_ = NULL;
     }
     
     
-    m_has_s_editPage_attr = false;
+    m_has_editPage_attr = false;
     
-    if (m_s_editPage_attr)
+    if (m_editPage_attr)
     {
-        delete m_s_editPage_attr;
-        m_s_editPage_attr = NULL;
+        delete m_editPage_attr;
+        m_editPage_attr = NULL;
     }
     
     }
@@ -12412,15 +12896,15 @@ CT_OlapPr* CT_OlapPr::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_url_attr)
+    if (m_has_url_attr)
     {
-        m_s_url_attr->toXmlAttr("url", _outStream);
+        m_url_attr->toXmlAttr("url", _outStream);
     }
     
     
-    if (m_has_s_post_attr)
+    if (m_has_post_attr)
     {
-        m_s_post_attr->toXmlAttr("post", _outStream);
+        m_post_attr->toXmlAttr("post", _outStream);
     }
     
     
@@ -12436,16 +12920,16 @@ CT_OlapPr* CT_OlapPr::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_editPage_attr)
+    if (m_has_editPage_attr)
     {
-        m_s_editPage_attr->toXmlAttr("editPage", _outStream);
+        m_editPage_attr->toXmlAttr("editPage", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_tables)
     {
-        m_tables->toXmlElem("tables", "", _outStream);;
+        m_tables->toXmlElem("main:tables", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -12588,42 +13072,42 @@ CT_OlapPr* CT_OlapPr::default_instance_ = NULL;
     return m_xl2000_attr;
     }
 
-    bool CT_WebPr::has_s_url_attr() const
+    bool CT_WebPr::has_url_attr() const
     {    
-    return m_has_s_url_attr;
+    return m_has_url_attr;
     }
 
-    void CT_WebPr::set_s_url_attr(const ns_s::ST_Xstring& _s_url_attr)
+    void CT_WebPr::set_url_attr(const ns_s::ST_Xstring& _url_attr)
     {    
-    m_has_s_url_attr = true;
-    m_s_url_attr = new ns_s::ST_Xstring(_s_url_attr);
+    m_has_url_attr = true;
+    m_url_attr = new ns_s::ST_Xstring(_url_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WebPr::get_s_url_attr() const
+    const ns_s::ST_Xstring& CT_WebPr::get_url_attr() const
     {    
-    if (m_s_url_attr)
+    if (m_url_attr)
     {
-        return *m_s_url_attr;
+        return *m_url_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_WebPr::has_s_post_attr() const
+    bool CT_WebPr::has_post_attr() const
     {    
-    return m_has_s_post_attr;
+    return m_has_post_attr;
     }
 
-    void CT_WebPr::set_s_post_attr(const ns_s::ST_Xstring& _s_post_attr)
+    void CT_WebPr::set_post_attr(const ns_s::ST_Xstring& _post_attr)
     {    
-    m_has_s_post_attr = true;
-    m_s_post_attr = new ns_s::ST_Xstring(_s_post_attr);
+    m_has_post_attr = true;
+    m_post_attr = new ns_s::ST_Xstring(_post_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WebPr::get_s_post_attr() const
+    const ns_s::ST_Xstring& CT_WebPr::get_post_attr() const
     {    
-    if (m_s_post_attr)
+    if (m_post_attr)
     {
-        return *m_s_post_attr;
+        return *m_post_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -12664,22 +13148,22 @@ CT_OlapPr* CT_OlapPr::default_instance_ = NULL;
     return ST_HtmlFmt::default_instance();
     }
 
-    bool CT_WebPr::has_s_editPage_attr() const
+    bool CT_WebPr::has_editPage_attr() const
     {    
-    return m_has_s_editPage_attr;
+    return m_has_editPage_attr;
     }
 
-    void CT_WebPr::set_s_editPage_attr(const ns_s::ST_Xstring& _s_editPage_attr)
+    void CT_WebPr::set_editPage_attr(const ns_s::ST_Xstring& _editPage_attr)
     {    
-    m_has_s_editPage_attr = true;
-    m_s_editPage_attr = new ns_s::ST_Xstring(_s_editPage_attr);
+    m_has_editPage_attr = true;
+    m_editPage_attr = new ns_s::ST_Xstring(_editPage_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WebPr::get_s_editPage_attr() const
+    const ns_s::ST_Xstring& CT_WebPr::get_editPage_attr() const
     {    
-    if (m_s_editPage_attr)
+    if (m_editPage_attr)
     {
-        return *m_s_editPage_attr;
+        return *m_editPage_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -12687,6 +13171,11 @@ CT_OlapPr* CT_OlapPr::default_instance_ = NULL;
 CT_WebPr* CT_WebPr::default_instance_ = NULL;
 
     // CT_Parameters
+    CT_Parameters::CT_Parameters()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Parameter* CT_Parameters::add_parameter()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -12732,7 +13221,7 @@ CT_WebPr* CT_WebPr::default_instance_ = NULL;
         {
             if ((*iter)->has_parameter())
             {
-                (*iter)->get_parameter().toXmlElem("parameter", "", _outStream);
+                (*iter)->get_parameter().toXmlElem("main:parameter", "", _outStream);
             }
         }
     }
@@ -12767,6 +13256,11 @@ CT_WebPr* CT_WebPr::default_instance_ = NULL;
 
 
     // CT_Parameters::ChildGroup_1
+    CT_Parameters::ChildGroup_1::ChildGroup_1()
+    :m_has_parameter(false),
+    m_parameter(NULL)
+    {
+    }
     bool CT_Parameters::ChildGroup_1::has_parameter() const
     {    
     return m_has_parameter;
@@ -12795,14 +13289,37 @@ CT_WebPr* CT_WebPr::default_instance_ = NULL;
 CT_Parameters* CT_Parameters::default_instance_ = NULL;
 
     // CT_Parameter
+    CT_Parameter::CT_Parameter()
+    :m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_sqlType_attr(false),
+    m_sqlType_attr(0),
+    m_has_parameterType_attr(false),
+    m_parameterType_attr(NULL),
+    m_has_refreshOnChange_attr(false),
+    m_refreshOnChange_attr(false),
+    m_has_prompt_attr(false),
+    m_prompt_attr(NULL),
+    m_has_boolean_attr(false),
+    m_boolean_attr(false),
+    m_has_double_attr(false),
+    m_double_attr(0),
+    m_has_integer_attr(false),
+    m_integer_attr(0),
+    m_has_string_attr(false),
+    m_string_attr(NULL),
+    m_has_cell_attr(false),
+    m_cell_attr(NULL)
+    {
+    }
     void CT_Parameter::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -12821,12 +13338,12 @@ CT_Parameters* CT_Parameters::default_instance_ = NULL;
     m_has_refreshOnChange_attr = false;
     m_refreshOnChange_attr = false;
     
-    m_has_s_prompt_attr = false;
+    m_has_prompt_attr = false;
     
-    if (m_s_prompt_attr)
+    if (m_prompt_attr)
     {
-        delete m_s_prompt_attr;
-        m_s_prompt_attr = NULL;
+        delete m_prompt_attr;
+        m_prompt_attr = NULL;
     }
     
     
@@ -12839,21 +13356,21 @@ CT_Parameters* CT_Parameters::default_instance_ = NULL;
     m_has_integer_attr = false;
     m_integer_attr = 0;
     
-    m_has_s_string_attr = false;
+    m_has_string_attr = false;
     
-    if (m_s_string_attr)
+    if (m_string_attr)
     {
-        delete m_s_string_attr;
-        m_s_string_attr = NULL;
+        delete m_string_attr;
+        m_string_attr = NULL;
     }
     
     
-    m_has_s_cell_attr = false;
+    m_has_cell_attr = false;
     
-    if (m_s_cell_attr)
+    if (m_cell_attr)
     {
-        delete m_s_cell_attr;
-        m_s_cell_attr = NULL;
+        delete m_cell_attr;
+        m_cell_attr = NULL;
     }
     
     }
@@ -12867,9 +13384,9 @@ CT_Parameters* CT_Parameters::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -12891,9 +13408,9 @@ CT_Parameters* CT_Parameters::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_prompt_attr)
+    if (m_has_prompt_attr)
     {
-        m_s_prompt_attr->toXmlAttr("prompt", _outStream);
+        m_prompt_attr->toXmlAttr("prompt", _outStream);
     }
     
     
@@ -12915,15 +13432,15 @@ CT_Parameters* CT_Parameters::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_string_attr)
+    if (m_has_string_attr)
     {
-        m_s_string_attr->toXmlAttr("string", _outStream);
+        m_string_attr->toXmlAttr("string", _outStream);
     }
     
     
-    if (m_has_s_cell_attr)
+    if (m_has_cell_attr)
     {
-        m_s_cell_attr->toXmlAttr("cell", _outStream);
+        m_cell_attr->toXmlAttr("cell", _outStream);
     }
     
             _outStream << ">";
@@ -12940,22 +13457,22 @@ CT_Parameters* CT_Parameters::default_instance_ = NULL;
     return *CT_Parameter::default_instance_;
     }
 
-    bool CT_Parameter::has_s_name_attr() const
+    bool CT_Parameter::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_Parameter::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_Parameter::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Parameter::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_Parameter::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -13012,22 +13529,22 @@ CT_Parameters* CT_Parameters::default_instance_ = NULL;
     return m_refreshOnChange_attr;
     }
 
-    bool CT_Parameter::has_s_prompt_attr() const
+    bool CT_Parameter::has_prompt_attr() const
     {    
-    return m_has_s_prompt_attr;
+    return m_has_prompt_attr;
     }
 
-    void CT_Parameter::set_s_prompt_attr(const ns_s::ST_Xstring& _s_prompt_attr)
+    void CT_Parameter::set_prompt_attr(const ns_s::ST_Xstring& _prompt_attr)
     {    
-    m_has_s_prompt_attr = true;
-    m_s_prompt_attr = new ns_s::ST_Xstring(_s_prompt_attr);
+    m_has_prompt_attr = true;
+    m_prompt_attr = new ns_s::ST_Xstring(_prompt_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Parameter::get_s_prompt_attr() const
+    const ns_s::ST_Xstring& CT_Parameter::get_prompt_attr() const
     {    
-    if (m_s_prompt_attr)
+    if (m_prompt_attr)
     {
-        return *m_s_prompt_attr;
+        return *m_prompt_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -13080,42 +13597,42 @@ CT_Parameters* CT_Parameters::default_instance_ = NULL;
     return m_integer_attr;
     }
 
-    bool CT_Parameter::has_s_string_attr() const
+    bool CT_Parameter::has_string_attr() const
     {    
-    return m_has_s_string_attr;
+    return m_has_string_attr;
     }
 
-    void CT_Parameter::set_s_string_attr(const ns_s::ST_Xstring& _s_string_attr)
+    void CT_Parameter::set_string_attr(const ns_s::ST_Xstring& _string_attr)
     {    
-    m_has_s_string_attr = true;
-    m_s_string_attr = new ns_s::ST_Xstring(_s_string_attr);
+    m_has_string_attr = true;
+    m_string_attr = new ns_s::ST_Xstring(_string_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Parameter::get_s_string_attr() const
+    const ns_s::ST_Xstring& CT_Parameter::get_string_attr() const
     {    
-    if (m_s_string_attr)
+    if (m_string_attr)
     {
-        return *m_s_string_attr;
+        return *m_string_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_Parameter::has_s_cell_attr() const
+    bool CT_Parameter::has_cell_attr() const
     {    
-    return m_has_s_cell_attr;
+    return m_has_cell_attr;
     }
 
-    void CT_Parameter::set_s_cell_attr(const ns_s::ST_Xstring& _s_cell_attr)
+    void CT_Parameter::set_cell_attr(const ns_s::ST_Xstring& _cell_attr)
     {    
-    m_has_s_cell_attr = true;
-    m_s_cell_attr = new ns_s::ST_Xstring(_s_cell_attr);
+    m_has_cell_attr = true;
+    m_cell_attr = new ns_s::ST_Xstring(_cell_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Parameter::get_s_cell_attr() const
+    const ns_s::ST_Xstring& CT_Parameter::get_cell_attr() const
     {    
-    if (m_s_cell_attr)
+    if (m_cell_attr)
     {
-        return *m_s_cell_attr;
+        return *m_cell_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -13123,6 +13640,11 @@ CT_Parameters* CT_Parameters::default_instance_ = NULL;
 CT_Parameter* CT_Parameter::default_instance_ = NULL;
 
     // CT_Tables
+    CT_Tables::CT_Tables()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_TableMissing* CT_Tables::add_m()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -13184,15 +13706,15 @@ CT_Parameter* CT_Parameter::default_instance_ = NULL;
         {
             if ((*iter)->has_m())
             {
-                (*iter)->get_m().toXmlElem("m", "", _outStream);
+                (*iter)->get_m().toXmlElem("main:m", "", _outStream);
             }
             else if ((*iter)->has_s())
             {
-                (*iter)->get_s().toXmlElem("s", "", _outStream);
+                (*iter)->get_s().toXmlElem("main:s", "", _outStream);
             }
             else if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("x", "", _outStream);
+                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
             }
         }
     }
@@ -13227,6 +13749,15 @@ CT_Parameter* CT_Parameter::default_instance_ = NULL;
 
 
     // CT_Tables::ChildGroup_1
+    CT_Tables::ChildGroup_1::ChildGroup_1()
+    :m_has_m(false),
+    m_m(NULL),
+    m_has_s(false),
+    m_s(NULL),
+    m_has_x(false),
+    m_x(NULL)
+    {
+    }
     bool CT_Tables::ChildGroup_1::has_m() const
     {    
     return m_has_m;
@@ -13359,6 +13890,10 @@ CT_Parameter* CT_Parameter::default_instance_ = NULL;
 CT_Tables* CT_Tables::default_instance_ = NULL;
 
     // CT_TableMissing
+    CT_TableMissing::CT_TableMissing()
+
+    {
+    }
     void CT_TableMissing::clear()
     {    }
 
@@ -13388,6 +13923,43 @@ CT_Tables* CT_Tables::default_instance_ = NULL;
 CT_TableMissing* CT_TableMissing::default_instance_ = NULL;
 
     // CT_TextPr
+    CT_TextPr::CT_TextPr()
+    :m_has_textFields(false),
+    m_textFields(NULL),
+    m_has_prompt_attr(false),
+    m_prompt_attr(false),
+    m_has_fileType_attr(false),
+    m_fileType_attr(NULL),
+    m_has_codePage_attr(false),
+    m_codePage_attr(0),
+    m_has_characterSet_attr(false),
+    m_characterSet_attr(""),
+    m_has_firstRow_attr(false),
+    m_firstRow_attr(0),
+    m_has_sourceFile_attr(false),
+    m_sourceFile_attr(NULL),
+    m_has_delimited_attr(false),
+    m_delimited_attr(false),
+    m_has_decimal_attr(false),
+    m_decimal_attr(NULL),
+    m_has_thousands_attr(false),
+    m_thousands_attr(NULL),
+    m_has_tab_attr(false),
+    m_tab_attr(false),
+    m_has_space_attr(false),
+    m_space_attr(false),
+    m_has_comma_attr(false),
+    m_comma_attr(false),
+    m_has_semicolon_attr(false),
+    m_semicolon_attr(false),
+    m_has_consecutive_attr(false),
+    m_consecutive_attr(false),
+    m_has_qualifier_attr(false),
+    m_qualifier_attr(NULL),
+    m_has_delimiter_attr(false),
+    m_delimiter_attr(NULL)
+    {
+    }
     bool CT_TextPr::has_textFields() const
     {    
     return m_has_textFields;
@@ -13435,33 +14007,33 @@ CT_TableMissing* CT_TableMissing::default_instance_ = NULL;
     m_has_firstRow_attr = false;
     m_firstRow_attr = 0;
     
-    m_has_s_sourceFile_attr = false;
+    m_has_sourceFile_attr = false;
     
-    if (m_s_sourceFile_attr)
+    if (m_sourceFile_attr)
     {
-        delete m_s_sourceFile_attr;
-        m_s_sourceFile_attr = NULL;
+        delete m_sourceFile_attr;
+        m_sourceFile_attr = NULL;
     }
     
     
     m_has_delimited_attr = false;
     m_delimited_attr = false;
     
-    m_has_s_decimal_attr = false;
+    m_has_decimal_attr = false;
     
-    if (m_s_decimal_attr)
+    if (m_decimal_attr)
     {
-        delete m_s_decimal_attr;
-        m_s_decimal_attr = NULL;
+        delete m_decimal_attr;
+        m_decimal_attr = NULL;
     }
     
     
-    m_has_s_thousands_attr = false;
+    m_has_thousands_attr = false;
     
-    if (m_s_thousands_attr)
+    if (m_thousands_attr)
     {
-        delete m_s_thousands_attr;
-        m_s_thousands_attr = NULL;
+        delete m_thousands_attr;
+        m_thousands_attr = NULL;
     }
     
     
@@ -13489,12 +14061,12 @@ CT_TableMissing* CT_TableMissing::default_instance_ = NULL;
     }
     
     
-    m_has_s_delimiter_attr = false;
+    m_has_delimiter_attr = false;
     
-    if (m_s_delimiter_attr)
+    if (m_delimiter_attr)
     {
-        delete m_s_delimiter_attr;
-        m_s_delimiter_attr = NULL;
+        delete m_delimiter_attr;
+        m_delimiter_attr = NULL;
     }
     
     }
@@ -13538,9 +14110,9 @@ CT_TableMissing* CT_TableMissing::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_sourceFile_attr)
+    if (m_has_sourceFile_attr)
     {
-        m_s_sourceFile_attr->toXmlAttr("sourceFile", _outStream);
+        m_sourceFile_attr->toXmlAttr("sourceFile", _outStream);
     }
     
     
@@ -13550,15 +14122,15 @@ CT_TableMissing* CT_TableMissing::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_decimal_attr)
+    if (m_has_decimal_attr)
     {
-        m_s_decimal_attr->toXmlAttr("decimal", _outStream);
+        m_decimal_attr->toXmlAttr("decimal", _outStream);
     }
     
     
-    if (m_has_s_thousands_attr)
+    if (m_has_thousands_attr)
     {
-        m_s_thousands_attr->toXmlAttr("thousands", _outStream);
+        m_thousands_attr->toXmlAttr("thousands", _outStream);
     }
     
     
@@ -13598,16 +14170,16 @@ CT_TableMissing* CT_TableMissing::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_delimiter_attr)
+    if (m_has_delimiter_attr)
     {
-        m_s_delimiter_attr->toXmlAttr("delimiter", _outStream);
+        m_delimiter_attr->toXmlAttr("delimiter", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_textFields)
     {
-        m_textFields->toXmlElem("textFields", "", _outStream);;
+        m_textFields->toXmlElem("main:textFields", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -13706,22 +14278,22 @@ CT_TableMissing* CT_TableMissing::default_instance_ = NULL;
     return m_firstRow_attr;
     }
 
-    bool CT_TextPr::has_s_sourceFile_attr() const
+    bool CT_TextPr::has_sourceFile_attr() const
     {    
-    return m_has_s_sourceFile_attr;
+    return m_has_sourceFile_attr;
     }
 
-    void CT_TextPr::set_s_sourceFile_attr(const ns_s::ST_Xstring& _s_sourceFile_attr)
+    void CT_TextPr::set_sourceFile_attr(const ns_s::ST_Xstring& _sourceFile_attr)
     {    
-    m_has_s_sourceFile_attr = true;
-    m_s_sourceFile_attr = new ns_s::ST_Xstring(_s_sourceFile_attr);
+    m_has_sourceFile_attr = true;
+    m_sourceFile_attr = new ns_s::ST_Xstring(_sourceFile_attr);
     }
 
-    const ns_s::ST_Xstring& CT_TextPr::get_s_sourceFile_attr() const
+    const ns_s::ST_Xstring& CT_TextPr::get_sourceFile_attr() const
     {    
-    if (m_s_sourceFile_attr)
+    if (m_sourceFile_attr)
     {
-        return *m_s_sourceFile_attr;
+        return *m_sourceFile_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -13742,42 +14314,42 @@ CT_TableMissing* CT_TableMissing::default_instance_ = NULL;
     return m_delimited_attr;
     }
 
-    bool CT_TextPr::has_s_decimal_attr() const
+    bool CT_TextPr::has_decimal_attr() const
     {    
-    return m_has_s_decimal_attr;
+    return m_has_decimal_attr;
     }
 
-    void CT_TextPr::set_s_decimal_attr(const ns_s::ST_Xstring& _s_decimal_attr)
+    void CT_TextPr::set_decimal_attr(const ns_s::ST_Xstring& _decimal_attr)
     {    
-    m_has_s_decimal_attr = true;
-    m_s_decimal_attr = new ns_s::ST_Xstring(_s_decimal_attr);
+    m_has_decimal_attr = true;
+    m_decimal_attr = new ns_s::ST_Xstring(_decimal_attr);
     }
 
-    const ns_s::ST_Xstring& CT_TextPr::get_s_decimal_attr() const
+    const ns_s::ST_Xstring& CT_TextPr::get_decimal_attr() const
     {    
-    if (m_s_decimal_attr)
+    if (m_decimal_attr)
     {
-        return *m_s_decimal_attr;
+        return *m_decimal_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_TextPr::has_s_thousands_attr() const
+    bool CT_TextPr::has_thousands_attr() const
     {    
-    return m_has_s_thousands_attr;
+    return m_has_thousands_attr;
     }
 
-    void CT_TextPr::set_s_thousands_attr(const ns_s::ST_Xstring& _s_thousands_attr)
+    void CT_TextPr::set_thousands_attr(const ns_s::ST_Xstring& _thousands_attr)
     {    
-    m_has_s_thousands_attr = true;
-    m_s_thousands_attr = new ns_s::ST_Xstring(_s_thousands_attr);
+    m_has_thousands_attr = true;
+    m_thousands_attr = new ns_s::ST_Xstring(_thousands_attr);
     }
 
-    const ns_s::ST_Xstring& CT_TextPr::get_s_thousands_attr() const
+    const ns_s::ST_Xstring& CT_TextPr::get_thousands_attr() const
     {    
-    if (m_s_thousands_attr)
+    if (m_thousands_attr)
     {
-        return *m_s_thousands_attr;
+        return *m_thousands_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -13882,22 +14454,22 @@ CT_TableMissing* CT_TableMissing::default_instance_ = NULL;
     return ST_Qualifier::default_instance();
     }
 
-    bool CT_TextPr::has_s_delimiter_attr() const
+    bool CT_TextPr::has_delimiter_attr() const
     {    
-    return m_has_s_delimiter_attr;
+    return m_has_delimiter_attr;
     }
 
-    void CT_TextPr::set_s_delimiter_attr(const ns_s::ST_Xstring& _s_delimiter_attr)
+    void CT_TextPr::set_delimiter_attr(const ns_s::ST_Xstring& _delimiter_attr)
     {    
-    m_has_s_delimiter_attr = true;
-    m_s_delimiter_attr = new ns_s::ST_Xstring(_s_delimiter_attr);
+    m_has_delimiter_attr = true;
+    m_delimiter_attr = new ns_s::ST_Xstring(_delimiter_attr);
     }
 
-    const ns_s::ST_Xstring& CT_TextPr::get_s_delimiter_attr() const
+    const ns_s::ST_Xstring& CT_TextPr::get_delimiter_attr() const
     {    
-    if (m_s_delimiter_attr)
+    if (m_delimiter_attr)
     {
-        return *m_s_delimiter_attr;
+        return *m_delimiter_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -13905,6 +14477,11 @@ CT_TableMissing* CT_TableMissing::default_instance_ = NULL;
 CT_TextPr* CT_TextPr::default_instance_ = NULL;
 
     // CT_TextFields
+    CT_TextFields::CT_TextFields()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_TextField* CT_TextFields::add_textField()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -13950,7 +14527,7 @@ CT_TextPr* CT_TextPr::default_instance_ = NULL;
         {
             if ((*iter)->has_textField())
             {
-                (*iter)->get_textField().toXmlElem("textField", "", _outStream);
+                (*iter)->get_textField().toXmlElem("main:textField", "", _outStream);
             }
         }
     }
@@ -13985,6 +14562,11 @@ CT_TextPr* CT_TextPr::default_instance_ = NULL;
 
 
     // CT_TextFields::ChildGroup_1
+    CT_TextFields::ChildGroup_1::ChildGroup_1()
+    :m_has_textField(false),
+    m_textField(NULL)
+    {
+    }
     bool CT_TextFields::ChildGroup_1::has_textField() const
     {    
     return m_has_textField;
@@ -14013,6 +14595,13 @@ CT_TextPr* CT_TextPr::default_instance_ = NULL;
 CT_TextFields* CT_TextFields::default_instance_ = NULL;
 
     // CT_TextField
+    CT_TextField::CT_TextField()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_position_attr(false),
+    m_position_attr(0)
+    {
+    }
     void CT_TextField::clear()
     {    
     m_has_type_attr = false;
@@ -14101,6 +14690,69 @@ CT_TextFields* CT_TextFields::default_instance_ = NULL;
 CT_TextField* CT_TextField::default_instance_ = NULL;
 
     // CT_PivotCacheDefinition
+    CT_PivotCacheDefinition::CT_PivotCacheDefinition()
+    :m_has_cacheSource(false),
+    m_cacheSource(NULL),
+    m_has_cacheFields(false),
+    m_cacheFields(NULL),
+    m_has_cacheHierarchies(false),
+    m_cacheHierarchies(NULL),
+    m_has_kpis(false),
+    m_kpis(NULL),
+    m_has_tupleCache(false),
+    m_tupleCache(NULL),
+    m_has_calculatedItems(false),
+    m_calculatedItems(NULL),
+    m_has_calculatedMembers(false),
+    m_calculatedMembers(NULL),
+    m_has_dimensions(false),
+    m_dimensions(NULL),
+    m_has_measureGroups(false),
+    m_measureGroups(NULL),
+    m_has_maps(false),
+    m_maps(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_invalid_attr(false),
+    m_invalid_attr(false),
+    m_has_saveData_attr(false),
+    m_saveData_attr(false),
+    m_has_refreshOnLoad_attr(false),
+    m_refreshOnLoad_attr(false),
+    m_has_optimizeMemory_attr(false),
+    m_optimizeMemory_attr(false),
+    m_has_enableRefresh_attr(false),
+    m_enableRefresh_attr(false),
+    m_has_refreshedBy_attr(false),
+    m_refreshedBy_attr(NULL),
+    m_has_refreshedDate_attr(false),
+    m_refreshedDate_attr(0),
+    m_has_refreshedDateIso_attr(false),
+    m_refreshedDateIso_attr(""),
+    m_has_backgroundQuery_attr(false),
+    m_backgroundQuery_attr(false),
+    m_has_missingItemsLimit_attr(false),
+    m_missingItemsLimit_attr(0),
+    m_has_createdVersion_attr(false),
+    m_createdVersion_attr(0),
+    m_has_refreshedVersion_attr(false),
+    m_refreshedVersion_attr(0),
+    m_has_minRefreshableVersion_attr(false),
+    m_minRefreshableVersion_attr(0),
+    m_has_recordCount_attr(false),
+    m_recordCount_attr(0),
+    m_has_upgradeOnRefresh_attr(false),
+    m_upgradeOnRefresh_attr(false),
+    m_has_tupleCache_attr(false),
+    m_tupleCache_attr(false),
+    m_has_supportSubquery_attr(false),
+    m_supportSubquery_attr(false),
+    m_has_supportAdvancedDrill_attr(false),
+    m_supportAdvancedDrill_attr(false)
+    {
+    }
     bool CT_PivotCacheDefinition::has_cacheSource() const
     {    
     return m_has_cacheSource;
@@ -14391,12 +15043,12 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
     m_has_enableRefresh_attr = false;
     m_enableRefresh_attr = false;
     
-    m_has_s_refreshedBy_attr = false;
+    m_has_refreshedBy_attr = false;
     
-    if (m_s_refreshedBy_attr)
+    if (m_refreshedBy_attr)
     {
-        delete m_s_refreshedBy_attr;
-        m_s_refreshedBy_attr = NULL;
+        delete m_refreshedBy_attr;
+        m_refreshedBy_attr = NULL;
     }
     
     
@@ -14448,7 +15100,7 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
             
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
@@ -14482,9 +15134,9 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_refreshedBy_attr)
+    if (m_has_refreshedBy_attr)
     {
-        m_s_refreshedBy_attr->toXmlAttr("refreshedBy", _outStream);
+        m_refreshedBy_attr->toXmlAttr("refreshedBy", _outStream);
     }
     
     
@@ -14563,57 +15215,57 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
             
     if (m_has_cacheSource)
     {
-        m_cacheSource->toXmlElem("cacheSource", "", _outStream);;
+        m_cacheSource->toXmlElem("main:cacheSource", "", _outStream);;
     }
     
     if (m_has_cacheFields)
     {
-        m_cacheFields->toXmlElem("cacheFields", "", _outStream);;
+        m_cacheFields->toXmlElem("main:cacheFields", "", _outStream);;
     }
     
     if (m_has_cacheHierarchies)
     {
-        m_cacheHierarchies->toXmlElem("cacheHierarchies", "", _outStream);;
+        m_cacheHierarchies->toXmlElem("main:cacheHierarchies", "", _outStream);;
     }
     
     if (m_has_kpis)
     {
-        m_kpis->toXmlElem("kpis", "", _outStream);;
+        m_kpis->toXmlElem("main:kpis", "", _outStream);;
     }
     
     if (m_has_tupleCache)
     {
-        m_tupleCache->toXmlElem("tupleCache", "", _outStream);;
+        m_tupleCache->toXmlElem("main:tupleCache", "", _outStream);;
     }
     
     if (m_has_calculatedItems)
     {
-        m_calculatedItems->toXmlElem("calculatedItems", "", _outStream);;
+        m_calculatedItems->toXmlElem("main:calculatedItems", "", _outStream);;
     }
     
     if (m_has_calculatedMembers)
     {
-        m_calculatedMembers->toXmlElem("calculatedMembers", "", _outStream);;
+        m_calculatedMembers->toXmlElem("main:calculatedMembers", "", _outStream);;
     }
     
     if (m_has_dimensions)
     {
-        m_dimensions->toXmlElem("dimensions", "", _outStream);;
+        m_dimensions->toXmlElem("main:dimensions", "", _outStream);;
     }
     
     if (m_has_measureGroups)
     {
-        m_measureGroups->toXmlElem("measureGroups", "", _outStream);;
+        m_measureGroups->toXmlElem("main:measureGroups", "", _outStream);;
     }
     
     if (m_has_maps)
     {
-        m_maps->toXmlElem("maps", "", _outStream);;
+        m_maps->toXmlElem("main:maps", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14728,22 +15380,22 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
     return m_enableRefresh_attr;
     }
 
-    bool CT_PivotCacheDefinition::has_s_refreshedBy_attr() const
+    bool CT_PivotCacheDefinition::has_refreshedBy_attr() const
     {    
-    return m_has_s_refreshedBy_attr;
+    return m_has_refreshedBy_attr;
     }
 
-    void CT_PivotCacheDefinition::set_s_refreshedBy_attr(const ns_s::ST_Xstring& _s_refreshedBy_attr)
+    void CT_PivotCacheDefinition::set_refreshedBy_attr(const ns_s::ST_Xstring& _refreshedBy_attr)
     {    
-    m_has_s_refreshedBy_attr = true;
-    m_s_refreshedBy_attr = new ns_s::ST_Xstring(_s_refreshedBy_attr);
+    m_has_refreshedBy_attr = true;
+    m_refreshedBy_attr = new ns_s::ST_Xstring(_refreshedBy_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PivotCacheDefinition::get_s_refreshedBy_attr() const
+    const ns_s::ST_Xstring& CT_PivotCacheDefinition::get_refreshedBy_attr() const
     {    
-    if (m_s_refreshedBy_attr)
+    if (m_refreshedBy_attr)
     {
-        return *m_s_refreshedBy_attr;
+        return *m_refreshedBy_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -14943,6 +15595,11 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
 CT_PivotCacheDefinition* CT_PivotCacheDefinition::default_instance_ = NULL;
 
     // CT_CacheFields
+    CT_CacheFields::CT_CacheFields()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_CacheField* CT_CacheFields::add_cacheField()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -14988,7 +15645,7 @@ CT_PivotCacheDefinition* CT_PivotCacheDefinition::default_instance_ = NULL;
         {
             if ((*iter)->has_cacheField())
             {
-                (*iter)->get_cacheField().toXmlElem("cacheField", "", _outStream);
+                (*iter)->get_cacheField().toXmlElem("main:cacheField", "", _outStream);
             }
         }
     }
@@ -15023,6 +15680,11 @@ CT_PivotCacheDefinition* CT_PivotCacheDefinition::default_instance_ = NULL;
 
 
     // CT_CacheFields::ChildGroup_1
+    CT_CacheFields::ChildGroup_1::ChildGroup_1()
+    :m_has_cacheField(false),
+    m_cacheField(NULL)
+    {
+    }
     bool CT_CacheFields::ChildGroup_1::has_cacheField() const
     {    
     return m_has_cacheField;
@@ -15051,6 +15713,39 @@ CT_PivotCacheDefinition* CT_PivotCacheDefinition::default_instance_ = NULL;
 CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
 
     // CT_CacheField
+    CT_CacheField::CT_CacheField()
+    :m_has_sharedItems(false),
+    m_sharedItems(NULL),
+    m_has_fieldGroup(false),
+    m_fieldGroup(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_caption_attr(false),
+    m_caption_attr(NULL),
+    m_has_propertyName_attr(false),
+    m_propertyName_attr(NULL),
+    m_has_serverField_attr(false),
+    m_serverField_attr(false),
+    m_has_uniqueList_attr(false),
+    m_uniqueList_attr(false),
+    m_has_numFmtId_attr(false),
+    m_numFmtId_attr(NULL),
+    m_has_formula_attr(false),
+    m_formula_attr(NULL),
+    m_has_sqlType_attr(false),
+    m_sqlType_attr(0),
+    m_has_hierarchy_attr(false),
+    m_hierarchy_attr(0),
+    m_has_level_attr(false),
+    m_level_attr(0),
+    m_has_databaseField_attr(false),
+    m_databaseField_attr(false),
+    m_has_mappingCount_attr(false),
+    m_mappingCount_attr(0),
+    m_has_memberPropertyField_attr(false),
+    m_memberPropertyField_attr(false)
+    {
+    }
     bool CT_CacheField::has_sharedItems() const
     {    
     return m_has_sharedItems;
@@ -15117,30 +15812,30 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
 
     void CT_CacheField::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_caption_attr = false;
+    m_has_caption_attr = false;
     
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        delete m_s_caption_attr;
-        m_s_caption_attr = NULL;
+        delete m_caption_attr;
+        m_caption_attr = NULL;
     }
     
     
-    m_has_s_propertyName_attr = false;
+    m_has_propertyName_attr = false;
     
-    if (m_s_propertyName_attr)
+    if (m_propertyName_attr)
     {
-        delete m_s_propertyName_attr;
-        m_s_propertyName_attr = NULL;
+        delete m_propertyName_attr;
+        m_propertyName_attr = NULL;
     }
     
     
@@ -15159,12 +15854,12 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
     }
     
     
-    m_has_s_formula_attr = false;
+    m_has_formula_attr = false;
     
-    if (m_s_formula_attr)
+    if (m_formula_attr)
     {
-        delete m_s_formula_attr;
-        m_s_formula_attr = NULL;
+        delete m_formula_attr;
+        m_formula_attr = NULL;
     }
     
     
@@ -15223,21 +15918,21 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_caption_attr)
+    if (m_has_caption_attr)
     {
-        m_s_caption_attr->toXmlAttr("caption", _outStream);
+        m_caption_attr->toXmlAttr("caption", _outStream);
     }
     
     
-    if (m_has_s_propertyName_attr)
+    if (m_has_propertyName_attr)
     {
-        m_s_propertyName_attr->toXmlAttr("propertyName", _outStream);
+        m_propertyName_attr->toXmlAttr("propertyName", _outStream);
     }
     
     
@@ -15259,9 +15954,9 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_formula_attr)
+    if (m_has_formula_attr)
     {
-        m_s_formula_attr->toXmlAttr("formula", _outStream);
+        m_formula_attr->toXmlAttr("formula", _outStream);
     }
     
     
@@ -15304,12 +15999,12 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
             
     if (m_has_sharedItems)
     {
-        m_sharedItems->toXmlElem("sharedItems", "", _outStream);;
+        m_sharedItems->toXmlElem("main:sharedItems", "", _outStream);;
     }
     
     if (m_has_fieldGroup)
     {
-        m_fieldGroup->toXmlElem("fieldGroup", "", _outStream);;
+        m_fieldGroup->toXmlElem("main:fieldGroup", "", _outStream);;
     }
      
     {
@@ -15318,11 +16013,11 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
         {
             if ((*iter)->has_mpMap())
             {
-                (*iter)->get_mpMap().toXmlElem("mpMap", "", _outStream);
+                (*iter)->get_mpMap().toXmlElem("main:mpMap", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -15339,62 +16034,62 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
     return *CT_CacheField::default_instance_;
     }
 
-    bool CT_CacheField::has_s_name_attr() const
+    bool CT_CacheField::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_CacheField::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_CacheField::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CacheField::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_CacheField::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CacheField::has_s_caption_attr() const
+    bool CT_CacheField::has_caption_attr() const
     {    
-    return m_has_s_caption_attr;
+    return m_has_caption_attr;
     }
 
-    void CT_CacheField::set_s_caption_attr(const ns_s::ST_Xstring& _s_caption_attr)
+    void CT_CacheField::set_caption_attr(const ns_s::ST_Xstring& _caption_attr)
     {    
-    m_has_s_caption_attr = true;
-    m_s_caption_attr = new ns_s::ST_Xstring(_s_caption_attr);
+    m_has_caption_attr = true;
+    m_caption_attr = new ns_s::ST_Xstring(_caption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CacheField::get_s_caption_attr() const
+    const ns_s::ST_Xstring& CT_CacheField::get_caption_attr() const
     {    
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        return *m_s_caption_attr;
+        return *m_caption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CacheField::has_s_propertyName_attr() const
+    bool CT_CacheField::has_propertyName_attr() const
     {    
-    return m_has_s_propertyName_attr;
+    return m_has_propertyName_attr;
     }
 
-    void CT_CacheField::set_s_propertyName_attr(const ns_s::ST_Xstring& _s_propertyName_attr)
+    void CT_CacheField::set_propertyName_attr(const ns_s::ST_Xstring& _propertyName_attr)
     {    
-    m_has_s_propertyName_attr = true;
-    m_s_propertyName_attr = new ns_s::ST_Xstring(_s_propertyName_attr);
+    m_has_propertyName_attr = true;
+    m_propertyName_attr = new ns_s::ST_Xstring(_propertyName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CacheField::get_s_propertyName_attr() const
+    const ns_s::ST_Xstring& CT_CacheField::get_propertyName_attr() const
     {    
-    if (m_s_propertyName_attr)
+    if (m_propertyName_attr)
     {
-        return *m_s_propertyName_attr;
+        return *m_propertyName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -15451,22 +16146,22 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
     return ST_NumFmtId::default_instance();
     }
 
-    bool CT_CacheField::has_s_formula_attr() const
+    bool CT_CacheField::has_formula_attr() const
     {    
-    return m_has_s_formula_attr;
+    return m_has_formula_attr;
     }
 
-    void CT_CacheField::set_s_formula_attr(const ns_s::ST_Xstring& _s_formula_attr)
+    void CT_CacheField::set_formula_attr(const ns_s::ST_Xstring& _formula_attr)
     {    
-    m_has_s_formula_attr = true;
-    m_s_formula_attr = new ns_s::ST_Xstring(_s_formula_attr);
+    m_has_formula_attr = true;
+    m_formula_attr = new ns_s::ST_Xstring(_formula_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CacheField::get_s_formula_attr() const
+    const ns_s::ST_Xstring& CT_CacheField::get_formula_attr() const
     {    
-    if (m_s_formula_attr)
+    if (m_formula_attr)
     {
-        return *m_s_formula_attr;
+        return *m_formula_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -15569,6 +16264,13 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
 
 
     // CT_CacheField::ChildGroup_1
+    CT_CacheField::ChildGroup_1::ChildGroup_1()
+    :m_has_mpMap(false),
+    m_mpMap(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_CacheField::ChildGroup_1::has_mpMap() const
     {    
     return m_has_mpMap;
@@ -15640,6 +16342,19 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
 CT_CacheField* CT_CacheField::default_instance_ = NULL;
 
     // CT_CacheSource
+    CT_CacheSource::CT_CacheSource()
+    :m_has_worksheetSource(false),
+    m_worksheetSource(NULL),
+    m_has_consolidation(false),
+    m_consolidation(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_connectionId_attr(false),
+    m_connectionId_attr(0)
+    {
+    }
     bool CT_CacheSource::has_worksheetSource() const
     {    
     return m_has_worksheetSource;
@@ -15808,17 +16523,17 @@ CT_CacheField* CT_CacheField::default_instance_ = NULL;
             
     if (m_has_worksheetSource)
     {
-        m_worksheetSource->toXmlElem("worksheetSource", "", _outStream);;
+        m_worksheetSource->toXmlElem("main:worksheetSource", "", _outStream);;
     }
     
     if (m_has_consolidation)
     {
-        m_consolidation->toXmlElem("consolidation", "", _outStream);;
+        m_consolidation->toXmlElem("main:consolidation", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15872,6 +16587,17 @@ CT_CacheField* CT_CacheField::default_instance_ = NULL;
 CT_CacheSource* CT_CacheSource::default_instance_ = NULL;
 
     // CT_WorksheetSource
+    CT_WorksheetSource::CT_WorksheetSource()
+    :m_has_ref_attr(false),
+    m_ref_attr(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_sheet_attr(false),
+    m_sheet_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     void CT_WorksheetSource::clear()
     {    
     m_has_ref_attr = false;
@@ -15883,21 +16609,21 @@ CT_CacheSource* CT_CacheSource::default_instance_ = NULL;
     }
     
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_sheet_attr = false;
+    m_has_sheet_attr = false;
     
-    if (m_s_sheet_attr)
+    if (m_sheet_attr)
     {
-        delete m_s_sheet_attr;
-        m_s_sheet_attr = NULL;
+        delete m_sheet_attr;
+        m_sheet_attr = NULL;
     }
     
     
@@ -15926,21 +16652,21 @@ CT_CacheSource* CT_CacheSource::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_sheet_attr)
+    if (m_has_sheet_attr)
     {
-        m_s_sheet_attr->toXmlAttr("sheet", _outStream);
+        m_sheet_attr->toXmlAttr("sheet", _outStream);
     }
     
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
@@ -15977,42 +16703,42 @@ CT_CacheSource* CT_CacheSource::default_instance_ = NULL;
     return ST_Ref::default_instance();
     }
 
-    bool CT_WorksheetSource::has_s_name_attr() const
+    bool CT_WorksheetSource::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_WorksheetSource::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_WorksheetSource::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WorksheetSource::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_WorksheetSource::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_WorksheetSource::has_s_sheet_attr() const
+    bool CT_WorksheetSource::has_sheet_attr() const
     {    
-    return m_has_s_sheet_attr;
+    return m_has_sheet_attr;
     }
 
-    void CT_WorksheetSource::set_s_sheet_attr(const ns_s::ST_Xstring& _s_sheet_attr)
+    void CT_WorksheetSource::set_sheet_attr(const ns_s::ST_Xstring& _sheet_attr)
     {    
-    m_has_s_sheet_attr = true;
-    m_s_sheet_attr = new ns_s::ST_Xstring(_s_sheet_attr);
+    m_has_sheet_attr = true;
+    m_sheet_attr = new ns_s::ST_Xstring(_sheet_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WorksheetSource::get_s_sheet_attr() const
+    const ns_s::ST_Xstring& CT_WorksheetSource::get_sheet_attr() const
     {    
-    if (m_s_sheet_attr)
+    if (m_sheet_attr)
     {
-        return *m_s_sheet_attr;
+        return *m_sheet_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -16040,6 +16766,15 @@ CT_CacheSource* CT_CacheSource::default_instance_ = NULL;
 CT_WorksheetSource* CT_WorksheetSource::default_instance_ = NULL;
 
     // CT_Consolidation
+    CT_Consolidation::CT_Consolidation()
+    :m_has_pages(false),
+    m_pages(NULL),
+    m_has_rangeSets(false),
+    m_rangeSets(NULL),
+    m_has_autoPage_attr(false),
+    m_autoPage_attr(false)
+    {
+    }
     bool CT_Consolidation::has_pages() const
     {    
     return m_has_pages;
@@ -16112,12 +16847,12 @@ CT_WorksheetSource* CT_WorksheetSource::default_instance_ = NULL;
             
     if (m_has_pages)
     {
-        m_pages->toXmlElem("pages", "", _outStream);;
+        m_pages->toXmlElem("main:pages", "", _outStream);;
     }
     
     if (m_has_rangeSets)
     {
-        m_rangeSets->toXmlElem("rangeSets", "", _outStream);;
+        m_rangeSets->toXmlElem("main:rangeSets", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16151,6 +16886,11 @@ CT_WorksheetSource* CT_WorksheetSource::default_instance_ = NULL;
 CT_Consolidation* CT_Consolidation::default_instance_ = NULL;
 
     // CT_Pages
+    CT_Pages::CT_Pages()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_PCDSCPage* CT_Pages::add_page()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -16196,7 +16936,7 @@ CT_Consolidation* CT_Consolidation::default_instance_ = NULL;
         {
             if ((*iter)->has_page())
             {
-                (*iter)->get_page().toXmlElem("page", "", _outStream);
+                (*iter)->get_page().toXmlElem("main:page", "", _outStream);
             }
         }
     }
@@ -16231,6 +16971,11 @@ CT_Consolidation* CT_Consolidation::default_instance_ = NULL;
 
 
     // CT_Pages::ChildGroup_1
+    CT_Pages::ChildGroup_1::ChildGroup_1()
+    :m_has_page(false),
+    m_page(NULL)
+    {
+    }
     bool CT_Pages::ChildGroup_1::has_page() const
     {    
     return m_has_page;
@@ -16259,6 +17004,11 @@ CT_Consolidation* CT_Consolidation::default_instance_ = NULL;
 CT_Pages* CT_Pages::default_instance_ = NULL;
 
     // CT_PCDSCPage
+    CT_PCDSCPage::CT_PCDSCPage()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_PageItem* CT_PCDSCPage::add_pageItem()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -16304,7 +17054,7 @@ CT_Pages* CT_Pages::default_instance_ = NULL;
         {
             if ((*iter)->has_pageItem())
             {
-                (*iter)->get_pageItem().toXmlElem("pageItem", "", _outStream);
+                (*iter)->get_pageItem().toXmlElem("main:pageItem", "", _outStream);
             }
         }
     }
@@ -16339,6 +17089,11 @@ CT_Pages* CT_Pages::default_instance_ = NULL;
 
 
     // CT_PCDSCPage::ChildGroup_1
+    CT_PCDSCPage::ChildGroup_1::ChildGroup_1()
+    :m_has_pageItem(false),
+    m_pageItem(NULL)
+    {
+    }
     bool CT_PCDSCPage::ChildGroup_1::has_pageItem() const
     {    
     return m_has_pageItem;
@@ -16367,14 +17122,19 @@ CT_Pages* CT_Pages::default_instance_ = NULL;
 CT_PCDSCPage* CT_PCDSCPage::default_instance_ = NULL;
 
     // CT_PageItem
+    CT_PageItem::CT_PageItem()
+    :m_has_name_attr(false),
+    m_name_attr(NULL)
+    {
+    }
     void CT_PageItem::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     }
@@ -16388,9 +17148,9 @@ CT_PCDSCPage* CT_PCDSCPage::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
             _outStream << ">";
@@ -16407,22 +17167,22 @@ CT_PCDSCPage* CT_PCDSCPage::default_instance_ = NULL;
     return *CT_PageItem::default_instance_;
     }
 
-    bool CT_PageItem::has_s_name_attr() const
+    bool CT_PageItem::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_PageItem::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_PageItem::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PageItem::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_PageItem::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -16430,6 +17190,11 @@ CT_PCDSCPage* CT_PCDSCPage::default_instance_ = NULL;
 CT_PageItem* CT_PageItem::default_instance_ = NULL;
 
     // CT_RangeSets
+    CT_RangeSets::CT_RangeSets()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_RangeSet* CT_RangeSets::add_rangeSet()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -16475,7 +17240,7 @@ CT_PageItem* CT_PageItem::default_instance_ = NULL;
         {
             if ((*iter)->has_rangeSet())
             {
-                (*iter)->get_rangeSet().toXmlElem("rangeSet", "", _outStream);
+                (*iter)->get_rangeSet().toXmlElem("main:rangeSet", "", _outStream);
             }
         }
     }
@@ -16510,6 +17275,11 @@ CT_PageItem* CT_PageItem::default_instance_ = NULL;
 
 
     // CT_RangeSets::ChildGroup_1
+    CT_RangeSets::ChildGroup_1::ChildGroup_1()
+    :m_has_rangeSet(false),
+    m_rangeSet(NULL)
+    {
+    }
     bool CT_RangeSets::ChildGroup_1::has_rangeSet() const
     {    
     return m_has_rangeSet;
@@ -16538,6 +17308,25 @@ CT_PageItem* CT_PageItem::default_instance_ = NULL;
 CT_RangeSets* CT_RangeSets::default_instance_ = NULL;
 
     // CT_RangeSet
+    CT_RangeSet::CT_RangeSet()
+    :m_has_i1_attr(false),
+    m_i1_attr(0),
+    m_has_i2_attr(false),
+    m_i2_attr(0),
+    m_has_i3_attr(false),
+    m_i3_attr(0),
+    m_has_i4_attr(false),
+    m_i4_attr(0),
+    m_has_ref_attr(false),
+    m_ref_attr(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_sheet_attr(false),
+    m_sheet_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     void CT_RangeSet::clear()
     {    
     m_has_i1_attr = false;
@@ -16561,21 +17350,21 @@ CT_RangeSets* CT_RangeSets::default_instance_ = NULL;
     }
     
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_sheet_attr = false;
+    m_has_sheet_attr = false;
     
-    if (m_s_sheet_attr)
+    if (m_sheet_attr)
     {
-        delete m_s_sheet_attr;
-        m_s_sheet_attr = NULL;
+        delete m_sheet_attr;
+        m_sheet_attr = NULL;
     }
     
     
@@ -16628,21 +17417,21 @@ CT_RangeSets* CT_RangeSets::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_sheet_attr)
+    if (m_has_sheet_attr)
     {
-        m_s_sheet_attr->toXmlAttr("sheet", _outStream);
+        m_sheet_attr->toXmlAttr("sheet", _outStream);
     }
     
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
@@ -16743,42 +17532,42 @@ CT_RangeSets* CT_RangeSets::default_instance_ = NULL;
     return ST_Ref::default_instance();
     }
 
-    bool CT_RangeSet::has_s_name_attr() const
+    bool CT_RangeSet::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_RangeSet::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_RangeSet::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RangeSet::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_RangeSet::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_RangeSet::has_s_sheet_attr() const
+    bool CT_RangeSet::has_sheet_attr() const
     {    
-    return m_has_s_sheet_attr;
+    return m_has_sheet_attr;
     }
 
-    void CT_RangeSet::set_s_sheet_attr(const ns_s::ST_Xstring& _s_sheet_attr)
+    void CT_RangeSet::set_sheet_attr(const ns_s::ST_Xstring& _sheet_attr)
     {    
-    m_has_s_sheet_attr = true;
-    m_s_sheet_attr = new ns_s::ST_Xstring(_s_sheet_attr);
+    m_has_sheet_attr = true;
+    m_sheet_attr = new ns_s::ST_Xstring(_sheet_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RangeSet::get_s_sheet_attr() const
+    const ns_s::ST_Xstring& CT_RangeSet::get_sheet_attr() const
     {    
-    if (m_s_sheet_attr)
+    if (m_sheet_attr)
     {
-        return *m_s_sheet_attr;
+        return *m_sheet_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -16806,6 +17595,37 @@ CT_RangeSets* CT_RangeSets::default_instance_ = NULL;
 CT_RangeSet* CT_RangeSet::default_instance_ = NULL;
 
     // CT_SharedItems
+    CT_SharedItems::CT_SharedItems()
+    :m_has_containsSemiMixedTypes_attr(false),
+    m_containsSemiMixedTypes_attr(false),
+    m_has_containsNonDate_attr(false),
+    m_containsNonDate_attr(false),
+    m_has_containsDate_attr(false),
+    m_containsDate_attr(false),
+    m_has_containsString_attr(false),
+    m_containsString_attr(false),
+    m_has_containsBlank_attr(false),
+    m_containsBlank_attr(false),
+    m_has_containsMixedTypes_attr(false),
+    m_containsMixedTypes_attr(false),
+    m_has_containsNumber_attr(false),
+    m_containsNumber_attr(false),
+    m_has_containsInteger_attr(false),
+    m_containsInteger_attr(false),
+    m_has_minValue_attr(false),
+    m_minValue_attr(0),
+    m_has_maxValue_attr(false),
+    m_maxValue_attr(0),
+    m_has_minDate_attr(false),
+    m_minDate_attr(""),
+    m_has_maxDate_attr(false),
+    m_maxDate_attr(""),
+    m_has_count_attr(false),
+    m_count_attr(0),
+    m_has_longText_attr(false),
+    m_longText_attr(false)
+    {
+    }
     CT_Missing* CT_SharedItems::add_m()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -17008,27 +17828,27 @@ CT_RangeSet* CT_RangeSet::default_instance_ = NULL;
         {
             if ((*iter)->has_m())
             {
-                (*iter)->get_m().toXmlElem("m", "", _outStream);
+                (*iter)->get_m().toXmlElem("main:m", "", _outStream);
             }
             else if ((*iter)->has_n())
             {
-                (*iter)->get_n().toXmlElem("n", "", _outStream);
+                (*iter)->get_n().toXmlElem("main:n", "", _outStream);
             }
             else if ((*iter)->has_b())
             {
-                (*iter)->get_b().toXmlElem("b", "", _outStream);
+                (*iter)->get_b().toXmlElem("main:b", "", _outStream);
             }
             else if ((*iter)->has_e())
             {
-                (*iter)->get_e().toXmlElem("e", "", _outStream);
+                (*iter)->get_e().toXmlElem("main:e", "", _outStream);
             }
             else if ((*iter)->has_s())
             {
-                (*iter)->get_s().toXmlElem("s", "", _outStream);
+                (*iter)->get_s().toXmlElem("main:s", "", _outStream);
             }
             else if ((*iter)->has_d())
             {
-                (*iter)->get_d().toXmlElem("d", "", _outStream);
+                (*iter)->get_d().toXmlElem("main:d", "", _outStream);
             }
         }
     }
@@ -17271,6 +18091,21 @@ CT_RangeSet* CT_RangeSet::default_instance_ = NULL;
 
 
     // CT_SharedItems::ChildGroup_1
+    CT_SharedItems::ChildGroup_1::ChildGroup_1()
+    :m_has_m(false),
+    m_m(NULL),
+    m_has_n(false),
+    m_n(NULL),
+    m_has_b(false),
+    m_b(NULL),
+    m_has_e(false),
+    m_e(NULL),
+    m_has_s(false),
+    m_s(NULL),
+    m_has_d(false),
+    m_d(NULL)
+    {
+    }
     bool CT_SharedItems::ChildGroup_1::has_m() const
     {    
     return m_has_m;
@@ -17694,6 +18529,31 @@ CT_RangeSet* CT_RangeSet::default_instance_ = NULL;
 CT_SharedItems* CT_SharedItems::default_instance_ = NULL;
 
     // CT_Missing
+    CT_Missing::CT_Missing()
+    :m_has_u_attr(false),
+    m_u_attr(false),
+    m_has_f_attr(false),
+    m_f_attr(false),
+    m_has_c_attr(false),
+    m_c_attr(NULL),
+    m_has_cp_attr(false),
+    m_cp_attr(0),
+    m_has_in_attr(false),
+    m_in_attr(0),
+    m_has_bc_attr(false),
+    m_bc_attr(NULL),
+    m_has_fc_attr(false),
+    m_fc_attr(NULL),
+    m_has_i_attr(false),
+    m_i_attr(false),
+    m_has_un_attr(false),
+    m_un_attr(false),
+    m_has_st_attr(false),
+    m_st_attr(false),
+    m_has_b_attr(false),
+    m_b_attr(false)
+    {
+    }
     CT_Tuples* CT_Missing::add_tpls()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -17718,12 +18578,12 @@ CT_SharedItems* CT_SharedItems::default_instance_ = NULL;
     m_has_f_attr = false;
     m_f_attr = false;
     
-    m_has_s_c_attr = false;
+    m_has_c_attr = false;
     
-    if (m_s_c_attr)
+    if (m_c_attr)
     {
-        delete m_s_c_attr;
-        m_s_c_attr = NULL;
+        delete m_c_attr;
+        m_c_attr = NULL;
     }
     
     
@@ -17794,9 +18654,9 @@ CT_SharedItems* CT_SharedItems::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_c_attr)
+    if (m_has_c_attr)
     {
-        m_s_c_attr->toXmlAttr("c", _outStream);
+        m_c_attr->toXmlAttr("c", _outStream);
     }
     
     
@@ -17855,11 +18715,11 @@ CT_SharedItems* CT_SharedItems::default_instance_ = NULL;
         {
             if ((*iter)->has_tpls())
             {
-                (*iter)->get_tpls().toXmlElem("tpls", "", _outStream);
+                (*iter)->get_tpls().toXmlElem("main:tpls", "", _outStream);
             }
             else if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("x", "", _outStream);
+                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
             }
         }
     }
@@ -17908,22 +18768,22 @@ CT_SharedItems* CT_SharedItems::default_instance_ = NULL;
     return m_f_attr;
     }
 
-    bool CT_Missing::has_s_c_attr() const
+    bool CT_Missing::has_c_attr() const
     {    
-    return m_has_s_c_attr;
+    return m_has_c_attr;
     }
 
-    void CT_Missing::set_s_c_attr(const ns_s::ST_Xstring& _s_c_attr)
+    void CT_Missing::set_c_attr(const ns_s::ST_Xstring& _c_attr)
     {    
-    m_has_s_c_attr = true;
-    m_s_c_attr = new ns_s::ST_Xstring(_s_c_attr);
+    m_has_c_attr = true;
+    m_c_attr = new ns_s::ST_Xstring(_c_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Missing::get_s_c_attr() const
+    const ns_s::ST_Xstring& CT_Missing::get_c_attr() const
     {    
-    if (m_s_c_attr)
+    if (m_c_attr)
     {
-        return *m_s_c_attr;
+        return *m_c_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -18066,6 +18926,13 @@ CT_SharedItems* CT_SharedItems::default_instance_ = NULL;
 
 
     // CT_Missing::ChildGroup_1
+    CT_Missing::ChildGroup_1::ChildGroup_1()
+    :m_has_tpls(false),
+    m_tpls(NULL),
+    m_has_x(false),
+    m_x(NULL)
+    {
+    }
     bool CT_Missing::ChildGroup_1::has_tpls() const
     {    
     return m_has_tpls;
@@ -18137,6 +19004,33 @@ CT_SharedItems* CT_SharedItems::default_instance_ = NULL;
 CT_Missing* CT_Missing::default_instance_ = NULL;
 
     // CT_Number
+    CT_Number::CT_Number()
+    :m_has_v_attr(false),
+    m_v_attr(0),
+    m_has_u_attr(false),
+    m_u_attr(false),
+    m_has_f_attr(false),
+    m_f_attr(false),
+    m_has_c_attr(false),
+    m_c_attr(NULL),
+    m_has_cp_attr(false),
+    m_cp_attr(0),
+    m_has_in_attr(false),
+    m_in_attr(0),
+    m_has_bc_attr(false),
+    m_bc_attr(NULL),
+    m_has_fc_attr(false),
+    m_fc_attr(NULL),
+    m_has_i_attr(false),
+    m_i_attr(false),
+    m_has_un_attr(false),
+    m_un_attr(false),
+    m_has_st_attr(false),
+    m_st_attr(false),
+    m_has_b_attr(false),
+    m_b_attr(false)
+    {
+    }
     CT_Tuples* CT_Number::add_tpls()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -18164,12 +19058,12 @@ CT_Missing* CT_Missing::default_instance_ = NULL;
     m_has_f_attr = false;
     m_f_attr = false;
     
-    m_has_s_c_attr = false;
+    m_has_c_attr = false;
     
-    if (m_s_c_attr)
+    if (m_c_attr)
     {
-        delete m_s_c_attr;
-        m_s_c_attr = NULL;
+        delete m_c_attr;
+        m_c_attr = NULL;
     }
     
     
@@ -18246,9 +19140,9 @@ CT_Missing* CT_Missing::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_c_attr)
+    if (m_has_c_attr)
     {
-        m_s_c_attr->toXmlAttr("c", _outStream);
+        m_c_attr->toXmlAttr("c", _outStream);
     }
     
     
@@ -18307,11 +19201,11 @@ CT_Missing* CT_Missing::default_instance_ = NULL;
         {
             if ((*iter)->has_tpls())
             {
-                (*iter)->get_tpls().toXmlElem("tpls", "", _outStream);
+                (*iter)->get_tpls().toXmlElem("main:tpls", "", _outStream);
             }
             else if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("x", "", _outStream);
+                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
             }
         }
     }
@@ -18376,22 +19270,22 @@ CT_Missing* CT_Missing::default_instance_ = NULL;
     return m_f_attr;
     }
 
-    bool CT_Number::has_s_c_attr() const
+    bool CT_Number::has_c_attr() const
     {    
-    return m_has_s_c_attr;
+    return m_has_c_attr;
     }
 
-    void CT_Number::set_s_c_attr(const ns_s::ST_Xstring& _s_c_attr)
+    void CT_Number::set_c_attr(const ns_s::ST_Xstring& _c_attr)
     {    
-    m_has_s_c_attr = true;
-    m_s_c_attr = new ns_s::ST_Xstring(_s_c_attr);
+    m_has_c_attr = true;
+    m_c_attr = new ns_s::ST_Xstring(_c_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Number::get_s_c_attr() const
+    const ns_s::ST_Xstring& CT_Number::get_c_attr() const
     {    
-    if (m_s_c_attr)
+    if (m_c_attr)
     {
-        return *m_s_c_attr;
+        return *m_c_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -18534,6 +19428,13 @@ CT_Missing* CT_Missing::default_instance_ = NULL;
 
 
     // CT_Number::ChildGroup_1
+    CT_Number::ChildGroup_1::ChildGroup_1()
+    :m_has_tpls(false),
+    m_tpls(NULL),
+    m_has_x(false),
+    m_x(NULL)
+    {
+    }
     bool CT_Number::ChildGroup_1::has_tpls() const
     {    
     return m_has_tpls;
@@ -18605,6 +19506,19 @@ CT_Missing* CT_Missing::default_instance_ = NULL;
 CT_Number* CT_Number::default_instance_ = NULL;
 
     // CT_Boolean
+    CT_Boolean::CT_Boolean()
+    :m_has_v_attr(false),
+    m_v_attr(false),
+    m_has_u_attr(false),
+    m_u_attr(false),
+    m_has_f_attr(false),
+    m_f_attr(false),
+    m_has_c_attr(false),
+    m_c_attr(NULL),
+    m_has_cp_attr(false),
+    m_cp_attr(0)
+    {
+    }
     CT_X* CT_Boolean::add_x()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -18624,12 +19538,12 @@ CT_Number* CT_Number::default_instance_ = NULL;
     m_has_f_attr = false;
     m_f_attr = false;
     
-    m_has_s_c_attr = false;
+    m_has_c_attr = false;
     
-    if (m_s_c_attr)
+    if (m_c_attr)
     {
-        delete m_s_c_attr;
-        m_s_c_attr = NULL;
+        delete m_c_attr;
+        m_c_attr = NULL;
     }
     
     
@@ -18673,9 +19587,9 @@ CT_Number* CT_Number::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_c_attr)
+    if (m_has_c_attr)
     {
-        m_s_c_attr->toXmlAttr("c", _outStream);
+        m_c_attr->toXmlAttr("c", _outStream);
     }
     
     
@@ -18692,7 +19606,7 @@ CT_Number* CT_Number::default_instance_ = NULL;
         {
             if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("x", "", _outStream);
+                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
             }
         }
     }
@@ -18757,22 +19671,22 @@ CT_Number* CT_Number::default_instance_ = NULL;
     return m_f_attr;
     }
 
-    bool CT_Boolean::has_s_c_attr() const
+    bool CT_Boolean::has_c_attr() const
     {    
-    return m_has_s_c_attr;
+    return m_has_c_attr;
     }
 
-    void CT_Boolean::set_s_c_attr(const ns_s::ST_Xstring& _s_c_attr)
+    void CT_Boolean::set_c_attr(const ns_s::ST_Xstring& _c_attr)
     {    
-    m_has_s_c_attr = true;
-    m_s_c_attr = new ns_s::ST_Xstring(_s_c_attr);
+    m_has_c_attr = true;
+    m_c_attr = new ns_s::ST_Xstring(_c_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Boolean::get_s_c_attr() const
+    const ns_s::ST_Xstring& CT_Boolean::get_c_attr() const
     {    
-    if (m_s_c_attr)
+    if (m_c_attr)
     {
-        return *m_s_c_attr;
+        return *m_c_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -18795,6 +19709,11 @@ CT_Number* CT_Number::default_instance_ = NULL;
 
 
     // CT_Boolean::ChildGroup_1
+    CT_Boolean::ChildGroup_1::ChildGroup_1()
+    :m_has_x(false),
+    m_x(NULL)
+    {
+    }
     bool CT_Boolean::ChildGroup_1::has_x() const
     {    
     return m_has_x;
@@ -18823,6 +19742,35 @@ CT_Number* CT_Number::default_instance_ = NULL;
 CT_Boolean* CT_Boolean::default_instance_ = NULL;
 
     // CT_Error
+    CT_Error::CT_Error()
+    :m_has_tpls(false),
+    m_tpls(NULL),
+    m_has_v_attr(false),
+    m_v_attr(NULL),
+    m_has_u_attr(false),
+    m_u_attr(false),
+    m_has_f_attr(false),
+    m_f_attr(false),
+    m_has_c_attr(false),
+    m_c_attr(NULL),
+    m_has_cp_attr(false),
+    m_cp_attr(0),
+    m_has_in_attr(false),
+    m_in_attr(0),
+    m_has_bc_attr(false),
+    m_bc_attr(NULL),
+    m_has_fc_attr(false),
+    m_fc_attr(NULL),
+    m_has_i_attr(false),
+    m_i_attr(false),
+    m_has_un_attr(false),
+    m_un_attr(false),
+    m_has_st_attr(false),
+    m_st_attr(false),
+    m_has_b_attr(false),
+    m_b_attr(false)
+    {
+    }
     bool CT_Error::has_tpls() const
     {    
     return m_has_tpls;
@@ -18857,12 +19805,12 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
 
     void CT_Error::clear()
     {    
-    m_has_s_v_attr = false;
+    m_has_v_attr = false;
     
-    if (m_s_v_attr)
+    if (m_v_attr)
     {
-        delete m_s_v_attr;
-        m_s_v_attr = NULL;
+        delete m_v_attr;
+        m_v_attr = NULL;
     }
     
     
@@ -18872,12 +19820,12 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
     m_has_f_attr = false;
     m_f_attr = false;
     
-    m_has_s_c_attr = false;
+    m_has_c_attr = false;
     
-    if (m_s_c_attr)
+    if (m_c_attr)
     {
-        delete m_s_c_attr;
-        m_s_c_attr = NULL;
+        delete m_c_attr;
+        m_c_attr = NULL;
     }
     
     
@@ -18945,9 +19893,9 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_v_attr)
+    if (m_has_v_attr)
     {
-        m_s_v_attr->toXmlAttr("v", _outStream);
+        m_v_attr->toXmlAttr("v", _outStream);
     }
     
     
@@ -18963,9 +19911,9 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_c_attr)
+    if (m_has_c_attr)
     {
-        m_s_c_attr->toXmlAttr("c", _outStream);
+        m_c_attr->toXmlAttr("c", _outStream);
     }
     
     
@@ -19020,7 +19968,7 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
             
     if (m_has_tpls)
     {
-        m_tpls->toXmlElem("tpls", "", _outStream);;
+        m_tpls->toXmlElem("main:tpls", "", _outStream);;
     }
      
     {
@@ -19029,7 +19977,7 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
         {
             if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("x", "", _outStream);
+                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
             }
         }
     }
@@ -19046,22 +19994,22 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
     return *CT_Error::default_instance_;
     }
 
-    bool CT_Error::has_s_v_attr() const
+    bool CT_Error::has_v_attr() const
     {    
-    return m_has_s_v_attr;
+    return m_has_v_attr;
     }
 
-    void CT_Error::set_s_v_attr(const ns_s::ST_Xstring& _s_v_attr)
+    void CT_Error::set_v_attr(const ns_s::ST_Xstring& _v_attr)
     {    
-    m_has_s_v_attr = true;
-    m_s_v_attr = new ns_s::ST_Xstring(_s_v_attr);
+    m_has_v_attr = true;
+    m_v_attr = new ns_s::ST_Xstring(_v_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Error::get_s_v_attr() const
+    const ns_s::ST_Xstring& CT_Error::get_v_attr() const
     {    
-    if (m_s_v_attr)
+    if (m_v_attr)
     {
-        return *m_s_v_attr;
+        return *m_v_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -19098,22 +20046,22 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
     return m_f_attr;
     }
 
-    bool CT_Error::has_s_c_attr() const
+    bool CT_Error::has_c_attr() const
     {    
-    return m_has_s_c_attr;
+    return m_has_c_attr;
     }
 
-    void CT_Error::set_s_c_attr(const ns_s::ST_Xstring& _s_c_attr)
+    void CT_Error::set_c_attr(const ns_s::ST_Xstring& _c_attr)
     {    
-    m_has_s_c_attr = true;
-    m_s_c_attr = new ns_s::ST_Xstring(_s_c_attr);
+    m_has_c_attr = true;
+    m_c_attr = new ns_s::ST_Xstring(_c_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Error::get_s_c_attr() const
+    const ns_s::ST_Xstring& CT_Error::get_c_attr() const
     {    
-    if (m_s_c_attr)
+    if (m_c_attr)
     {
-        return *m_s_c_attr;
+        return *m_c_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -19256,6 +20204,11 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
 
 
     // CT_Error::ChildGroup_1
+    CT_Error::ChildGroup_1::ChildGroup_1()
+    :m_has_x(false),
+    m_x(NULL)
+    {
+    }
     bool CT_Error::ChildGroup_1::has_x() const
     {    
     return m_has_x;
@@ -19284,6 +20237,33 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
 CT_Error* CT_Error::default_instance_ = NULL;
 
     // CT_String
+    CT_String::CT_String()
+    :m_has_v_attr(false),
+    m_v_attr(NULL),
+    m_has_u_attr(false),
+    m_u_attr(false),
+    m_has_f_attr(false),
+    m_f_attr(false),
+    m_has_c_attr(false),
+    m_c_attr(NULL),
+    m_has_cp_attr(false),
+    m_cp_attr(0),
+    m_has_in_attr(false),
+    m_in_attr(0),
+    m_has_bc_attr(false),
+    m_bc_attr(NULL),
+    m_has_fc_attr(false),
+    m_fc_attr(NULL),
+    m_has_i_attr(false),
+    m_i_attr(false),
+    m_has_un_attr(false),
+    m_un_attr(false),
+    m_has_st_attr(false),
+    m_st_attr(false),
+    m_has_b_attr(false),
+    m_b_attr(false)
+    {
+    }
     CT_Tuples* CT_String::add_tpls()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -19302,12 +20282,12 @@ CT_Error* CT_Error::default_instance_ = NULL;
 
     void CT_String::clear()
     {    
-    m_has_s_v_attr = false;
+    m_has_v_attr = false;
     
-    if (m_s_v_attr)
+    if (m_v_attr)
     {
-        delete m_s_v_attr;
-        m_s_v_attr = NULL;
+        delete m_v_attr;
+        m_v_attr = NULL;
     }
     
     
@@ -19317,12 +20297,12 @@ CT_Error* CT_Error::default_instance_ = NULL;
     m_has_f_attr = false;
     m_f_attr = false;
     
-    m_has_s_c_attr = false;
+    m_has_c_attr = false;
     
-    if (m_s_c_attr)
+    if (m_c_attr)
     {
-        delete m_s_c_attr;
-        m_s_c_attr = NULL;
+        delete m_c_attr;
+        m_c_attr = NULL;
     }
     
     
@@ -19381,9 +20361,9 @@ CT_Error* CT_Error::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_v_attr)
+    if (m_has_v_attr)
     {
-        m_s_v_attr->toXmlAttr("v", _outStream);
+        m_v_attr->toXmlAttr("v", _outStream);
     }
     
     
@@ -19399,9 +20379,9 @@ CT_Error* CT_Error::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_c_attr)
+    if (m_has_c_attr)
     {
-        m_s_c_attr->toXmlAttr("c", _outStream);
+        m_c_attr->toXmlAttr("c", _outStream);
     }
     
     
@@ -19460,11 +20440,11 @@ CT_Error* CT_Error::default_instance_ = NULL;
         {
             if ((*iter)->has_tpls())
             {
-                (*iter)->get_tpls().toXmlElem("tpls", "", _outStream);
+                (*iter)->get_tpls().toXmlElem("main:tpls", "", _outStream);
             }
             else if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("x", "", _outStream);
+                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
             }
         }
     }
@@ -19481,22 +20461,22 @@ CT_Error* CT_Error::default_instance_ = NULL;
     return *CT_String::default_instance_;
     }
 
-    bool CT_String::has_s_v_attr() const
+    bool CT_String::has_v_attr() const
     {    
-    return m_has_s_v_attr;
+    return m_has_v_attr;
     }
 
-    void CT_String::set_s_v_attr(const ns_s::ST_Xstring& _s_v_attr)
+    void CT_String::set_v_attr(const ns_s::ST_Xstring& _v_attr)
     {    
-    m_has_s_v_attr = true;
-    m_s_v_attr = new ns_s::ST_Xstring(_s_v_attr);
+    m_has_v_attr = true;
+    m_v_attr = new ns_s::ST_Xstring(_v_attr);
     }
 
-    const ns_s::ST_Xstring& CT_String::get_s_v_attr() const
+    const ns_s::ST_Xstring& CT_String::get_v_attr() const
     {    
-    if (m_s_v_attr)
+    if (m_v_attr)
     {
-        return *m_s_v_attr;
+        return *m_v_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -19533,22 +20513,22 @@ CT_Error* CT_Error::default_instance_ = NULL;
     return m_f_attr;
     }
 
-    bool CT_String::has_s_c_attr() const
+    bool CT_String::has_c_attr() const
     {    
-    return m_has_s_c_attr;
+    return m_has_c_attr;
     }
 
-    void CT_String::set_s_c_attr(const ns_s::ST_Xstring& _s_c_attr)
+    void CT_String::set_c_attr(const ns_s::ST_Xstring& _c_attr)
     {    
-    m_has_s_c_attr = true;
-    m_s_c_attr = new ns_s::ST_Xstring(_s_c_attr);
+    m_has_c_attr = true;
+    m_c_attr = new ns_s::ST_Xstring(_c_attr);
     }
 
-    const ns_s::ST_Xstring& CT_String::get_s_c_attr() const
+    const ns_s::ST_Xstring& CT_String::get_c_attr() const
     {    
-    if (m_s_c_attr)
+    if (m_c_attr)
     {
-        return *m_s_c_attr;
+        return *m_c_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -19691,6 +20671,13 @@ CT_Error* CT_Error::default_instance_ = NULL;
 
 
     // CT_String::ChildGroup_1
+    CT_String::ChildGroup_1::ChildGroup_1()
+    :m_has_tpls(false),
+    m_tpls(NULL),
+    m_has_x(false),
+    m_x(NULL)
+    {
+    }
     bool CT_String::ChildGroup_1::has_tpls() const
     {    
     return m_has_tpls;
@@ -19762,6 +20749,19 @@ CT_Error* CT_Error::default_instance_ = NULL;
 CT_String* CT_String::default_instance_ = NULL;
 
     // CT_DateTime
+    CT_DateTime::CT_DateTime()
+    :m_has_v_attr(false),
+    m_v_attr(""),
+    m_has_u_attr(false),
+    m_u_attr(false),
+    m_has_f_attr(false),
+    m_f_attr(false),
+    m_has_c_attr(false),
+    m_c_attr(NULL),
+    m_has_cp_attr(false),
+    m_cp_attr(0)
+    {
+    }
     CT_X* CT_DateTime::add_x()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -19781,12 +20781,12 @@ CT_String* CT_String::default_instance_ = NULL;
     m_has_f_attr = false;
     m_f_attr = false;
     
-    m_has_s_c_attr = false;
+    m_has_c_attr = false;
     
-    if (m_s_c_attr)
+    if (m_c_attr)
     {
-        delete m_s_c_attr;
-        m_s_c_attr = NULL;
+        delete m_c_attr;
+        m_c_attr = NULL;
     }
     
     
@@ -19830,9 +20830,9 @@ CT_String* CT_String::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_c_attr)
+    if (m_has_c_attr)
     {
-        m_s_c_attr->toXmlAttr("c", _outStream);
+        m_c_attr->toXmlAttr("c", _outStream);
     }
     
     
@@ -19849,7 +20849,7 @@ CT_String* CT_String::default_instance_ = NULL;
         {
             if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("x", "", _outStream);
+                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
             }
         }
     }
@@ -19914,22 +20914,22 @@ CT_String* CT_String::default_instance_ = NULL;
     return m_f_attr;
     }
 
-    bool CT_DateTime::has_s_c_attr() const
+    bool CT_DateTime::has_c_attr() const
     {    
-    return m_has_s_c_attr;
+    return m_has_c_attr;
     }
 
-    void CT_DateTime::set_s_c_attr(const ns_s::ST_Xstring& _s_c_attr)
+    void CT_DateTime::set_c_attr(const ns_s::ST_Xstring& _c_attr)
     {    
-    m_has_s_c_attr = true;
-    m_s_c_attr = new ns_s::ST_Xstring(_s_c_attr);
+    m_has_c_attr = true;
+    m_c_attr = new ns_s::ST_Xstring(_c_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DateTime::get_s_c_attr() const
+    const ns_s::ST_Xstring& CT_DateTime::get_c_attr() const
     {    
-    if (m_s_c_attr)
+    if (m_c_attr)
     {
-        return *m_s_c_attr;
+        return *m_c_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -19952,6 +20952,11 @@ CT_String* CT_String::default_instance_ = NULL;
 
 
     // CT_DateTime::ChildGroup_1
+    CT_DateTime::ChildGroup_1::ChildGroup_1()
+    :m_has_x(false),
+    m_x(NULL)
+    {
+    }
     bool CT_DateTime::ChildGroup_1::has_x() const
     {    
     return m_has_x;
@@ -19980,6 +20985,19 @@ CT_String* CT_String::default_instance_ = NULL;
 CT_DateTime* CT_DateTime::default_instance_ = NULL;
 
     // CT_FieldGroup
+    CT_FieldGroup::CT_FieldGroup()
+    :m_has_rangePr(false),
+    m_rangePr(NULL),
+    m_has_discretePr(false),
+    m_discretePr(NULL),
+    m_has_groupItems(false),
+    m_groupItems(NULL),
+    m_has_par_attr(false),
+    m_par_attr(0),
+    m_has_base_attr(false),
+    m_base_attr(0)
+    {
+    }
     bool CT_FieldGroup::has_rangePr() const
     {    
     return m_has_rangePr;
@@ -20085,17 +21103,17 @@ CT_DateTime* CT_DateTime::default_instance_ = NULL;
             
     if (m_has_rangePr)
     {
-        m_rangePr->toXmlElem("rangePr", "", _outStream);;
+        m_rangePr->toXmlElem("main:rangePr", "", _outStream);;
     }
     
     if (m_has_discretePr)
     {
-        m_discretePr->toXmlElem("discretePr", "", _outStream);;
+        m_discretePr->toXmlElem("main:discretePr", "", _outStream);;
     }
     
     if (m_has_groupItems)
     {
-        m_groupItems->toXmlElem("groupItems", "", _outStream);;
+        m_groupItems->toXmlElem("main:groupItems", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20145,6 +21163,25 @@ CT_DateTime* CT_DateTime::default_instance_ = NULL;
 CT_FieldGroup* CT_FieldGroup::default_instance_ = NULL;
 
     // CT_RangePr
+    CT_RangePr::CT_RangePr()
+    :m_has_autoStart_attr(false),
+    m_autoStart_attr(false),
+    m_has_autoEnd_attr(false),
+    m_autoEnd_attr(false),
+    m_has_groupBy_attr(false),
+    m_groupBy_attr(NULL),
+    m_has_startNum_attr(false),
+    m_startNum_attr(0),
+    m_has_endNum_attr(false),
+    m_endNum_attr(0),
+    m_has_startDate_attr(false),
+    m_startDate_attr(""),
+    m_has_endDate_attr(false),
+    m_endDate_attr(""),
+    m_has_groupInterval_attr(false),
+    m_groupInterval_attr(0)
+    {
+    }
     void CT_RangePr::clear()
     {    
     m_has_autoStart_attr = false;
@@ -20383,6 +21420,11 @@ CT_FieldGroup* CT_FieldGroup::default_instance_ = NULL;
 CT_RangePr* CT_RangePr::default_instance_ = NULL;
 
     // CT_DiscretePr
+    CT_DiscretePr::CT_DiscretePr()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Index* CT_DiscretePr::add_x()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -20428,7 +21470,7 @@ CT_RangePr* CT_RangePr::default_instance_ = NULL;
         {
             if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("x", "", _outStream);
+                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
             }
         }
     }
@@ -20463,6 +21505,11 @@ CT_RangePr* CT_RangePr::default_instance_ = NULL;
 
 
     // CT_DiscretePr::ChildGroup_1
+    CT_DiscretePr::ChildGroup_1::ChildGroup_1()
+    :m_has_x(false),
+    m_x(NULL)
+    {
+    }
     bool CT_DiscretePr::ChildGroup_1::has_x() const
     {    
     return m_has_x;
@@ -20491,6 +21538,11 @@ CT_RangePr* CT_RangePr::default_instance_ = NULL;
 CT_DiscretePr* CT_DiscretePr::default_instance_ = NULL;
 
     // CT_GroupItems
+    CT_GroupItems::CT_GroupItems()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Missing* CT_GroupItems::add_m()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -20576,27 +21628,27 @@ CT_DiscretePr* CT_DiscretePr::default_instance_ = NULL;
         {
             if ((*iter)->has_m())
             {
-                (*iter)->get_m().toXmlElem("m", "", _outStream);
+                (*iter)->get_m().toXmlElem("main:m", "", _outStream);
             }
             else if ((*iter)->has_n())
             {
-                (*iter)->get_n().toXmlElem("n", "", _outStream);
+                (*iter)->get_n().toXmlElem("main:n", "", _outStream);
             }
             else if ((*iter)->has_b())
             {
-                (*iter)->get_b().toXmlElem("b", "", _outStream);
+                (*iter)->get_b().toXmlElem("main:b", "", _outStream);
             }
             else if ((*iter)->has_e())
             {
-                (*iter)->get_e().toXmlElem("e", "", _outStream);
+                (*iter)->get_e().toXmlElem("main:e", "", _outStream);
             }
             else if ((*iter)->has_s())
             {
-                (*iter)->get_s().toXmlElem("s", "", _outStream);
+                (*iter)->get_s().toXmlElem("main:s", "", _outStream);
             }
             else if ((*iter)->has_d())
             {
-                (*iter)->get_d().toXmlElem("d", "", _outStream);
+                (*iter)->get_d().toXmlElem("main:d", "", _outStream);
             }
         }
     }
@@ -20631,6 +21683,21 @@ CT_DiscretePr* CT_DiscretePr::default_instance_ = NULL;
 
 
     // CT_GroupItems::ChildGroup_1
+    CT_GroupItems::ChildGroup_1::ChildGroup_1()
+    :m_has_m(false),
+    m_m(NULL),
+    m_has_n(false),
+    m_n(NULL),
+    m_has_b(false),
+    m_b(NULL),
+    m_has_e(false),
+    m_e(NULL),
+    m_has_s(false),
+    m_s(NULL),
+    m_has_d(false),
+    m_d(NULL)
+    {
+    }
     bool CT_GroupItems::ChildGroup_1::has_m() const
     {    
     return m_has_m;
@@ -21054,6 +22121,11 @@ CT_DiscretePr* CT_DiscretePr::default_instance_ = NULL;
 CT_GroupItems* CT_GroupItems::default_instance_ = NULL;
 
     // CT_PivotCacheRecords
+    CT_PivotCacheRecords::CT_PivotCacheRecords()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Record* CT_PivotCacheRecords::add_r()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -21107,11 +22179,11 @@ CT_GroupItems* CT_GroupItems::default_instance_ = NULL;
         {
             if ((*iter)->has_r())
             {
-                (*iter)->get_r().toXmlElem("r", "", _outStream);
+                (*iter)->get_r().toXmlElem("main:r", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -21146,6 +22218,13 @@ CT_GroupItems* CT_GroupItems::default_instance_ = NULL;
 
 
     // CT_PivotCacheRecords::ChildGroup_1
+    CT_PivotCacheRecords::ChildGroup_1::ChildGroup_1()
+    :m_has_r(false),
+    m_r(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_PivotCacheRecords::ChildGroup_1::has_r() const
     {    
     return m_has_r;
@@ -21217,6 +22296,10 @@ CT_GroupItems* CT_GroupItems::default_instance_ = NULL;
 CT_PivotCacheRecords* CT_PivotCacheRecords::default_instance_ = NULL;
 
     // CT_Record
+    CT_Record::CT_Record()
+
+    {
+    }
     CT_Missing* CT_Record::add_m()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -21302,31 +22385,31 @@ CT_PivotCacheRecords* CT_PivotCacheRecords::default_instance_ = NULL;
         {
             if ((*iter)->has_m())
             {
-                (*iter)->get_m().toXmlElem("m", "", _outStream);
+                (*iter)->get_m().toXmlElem("main:m", "", _outStream);
             }
             else if ((*iter)->has_n())
             {
-                (*iter)->get_n().toXmlElem("n", "", _outStream);
+                (*iter)->get_n().toXmlElem("main:n", "", _outStream);
             }
             else if ((*iter)->has_b())
             {
-                (*iter)->get_b().toXmlElem("b", "", _outStream);
+                (*iter)->get_b().toXmlElem("main:b", "", _outStream);
             }
             else if ((*iter)->has_e())
             {
-                (*iter)->get_e().toXmlElem("e", "", _outStream);
+                (*iter)->get_e().toXmlElem("main:e", "", _outStream);
             }
             else if ((*iter)->has_s())
             {
-                (*iter)->get_s().toXmlElem("s", "", _outStream);
+                (*iter)->get_s().toXmlElem("main:s", "", _outStream);
             }
             else if ((*iter)->has_d())
             {
-                (*iter)->get_d().toXmlElem("d", "", _outStream);
+                (*iter)->get_d().toXmlElem("main:d", "", _outStream);
             }
             else if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("x", "", _outStream);
+                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
             }
         }
     }
@@ -21345,6 +22428,23 @@ CT_PivotCacheRecords* CT_PivotCacheRecords::default_instance_ = NULL;
 
 
     // CT_Record::ChildGroup_1
+    CT_Record::ChildGroup_1::ChildGroup_1()
+    :m_has_m(false),
+    m_m(NULL),
+    m_has_n(false),
+    m_n(NULL),
+    m_has_b(false),
+    m_b(NULL),
+    m_has_e(false),
+    m_e(NULL),
+    m_has_s(false),
+    m_s(NULL),
+    m_has_d(false),
+    m_d(NULL),
+    m_has_x(false),
+    m_x(NULL)
+    {
+    }
     bool CT_Record::ChildGroup_1::has_m() const
     {    
     return m_has_m;
@@ -21901,6 +23001,11 @@ CT_PivotCacheRecords* CT_PivotCacheRecords::default_instance_ = NULL;
 CT_Record* CT_Record::default_instance_ = NULL;
 
     // CT_PCDKPIs
+    CT_PCDKPIs::CT_PCDKPIs()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_PCDKPI* CT_PCDKPIs::add_kpi()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -21946,7 +23051,7 @@ CT_Record* CT_Record::default_instance_ = NULL;
         {
             if ((*iter)->has_kpi())
             {
-                (*iter)->get_kpi().toXmlElem("kpi", "", _outStream);
+                (*iter)->get_kpi().toXmlElem("main:kpi", "", _outStream);
             }
         }
     }
@@ -21981,6 +23086,11 @@ CT_Record* CT_Record::default_instance_ = NULL;
 
 
     // CT_PCDKPIs::ChildGroup_1
+    CT_PCDKPIs::ChildGroup_1::ChildGroup_1()
+    :m_has_kpi(false),
+    m_kpi(NULL)
+    {
+    }
     bool CT_PCDKPIs::ChildGroup_1::has_kpi() const
     {    
     return m_has_kpi;
@@ -22009,104 +23119,129 @@ CT_Record* CT_Record::default_instance_ = NULL;
 CT_PCDKPIs* CT_PCDKPIs::default_instance_ = NULL;
 
     // CT_PCDKPI
+    CT_PCDKPI::CT_PCDKPI()
+    :m_has_uniqueName_attr(false),
+    m_uniqueName_attr(NULL),
+    m_has_caption_attr(false),
+    m_caption_attr(NULL),
+    m_has_displayFolder_attr(false),
+    m_displayFolder_attr(NULL),
+    m_has_measureGroup_attr(false),
+    m_measureGroup_attr(NULL),
+    m_has_parent_attr(false),
+    m_parent_attr(NULL),
+    m_has_value_attr(false),
+    m_value_attr(NULL),
+    m_has_goal_attr(false),
+    m_goal_attr(NULL),
+    m_has_status_attr(false),
+    m_status_attr(NULL),
+    m_has_trend_attr(false),
+    m_trend_attr(NULL),
+    m_has_weight_attr(false),
+    m_weight_attr(NULL),
+    m_has_time_attr(false),
+    m_time_attr(NULL)
+    {
+    }
     void CT_PCDKPI::clear()
     {    
-    m_has_s_uniqueName_attr = false;
+    m_has_uniqueName_attr = false;
     
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        delete m_s_uniqueName_attr;
-        m_s_uniqueName_attr = NULL;
+        delete m_uniqueName_attr;
+        m_uniqueName_attr = NULL;
     }
     
     
-    m_has_s_caption_attr = false;
+    m_has_caption_attr = false;
     
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        delete m_s_caption_attr;
-        m_s_caption_attr = NULL;
+        delete m_caption_attr;
+        m_caption_attr = NULL;
     }
     
     
-    m_has_s_displayFolder_attr = false;
+    m_has_displayFolder_attr = false;
     
-    if (m_s_displayFolder_attr)
+    if (m_displayFolder_attr)
     {
-        delete m_s_displayFolder_attr;
-        m_s_displayFolder_attr = NULL;
+        delete m_displayFolder_attr;
+        m_displayFolder_attr = NULL;
     }
     
     
-    m_has_s_measureGroup_attr = false;
+    m_has_measureGroup_attr = false;
     
-    if (m_s_measureGroup_attr)
+    if (m_measureGroup_attr)
     {
-        delete m_s_measureGroup_attr;
-        m_s_measureGroup_attr = NULL;
+        delete m_measureGroup_attr;
+        m_measureGroup_attr = NULL;
     }
     
     
-    m_has_s_parent_attr = false;
+    m_has_parent_attr = false;
     
-    if (m_s_parent_attr)
+    if (m_parent_attr)
     {
-        delete m_s_parent_attr;
-        m_s_parent_attr = NULL;
+        delete m_parent_attr;
+        m_parent_attr = NULL;
     }
     
     
-    m_has_s_value_attr = false;
+    m_has_value_attr = false;
     
-    if (m_s_value_attr)
+    if (m_value_attr)
     {
-        delete m_s_value_attr;
-        m_s_value_attr = NULL;
+        delete m_value_attr;
+        m_value_attr = NULL;
     }
     
     
-    m_has_s_goal_attr = false;
+    m_has_goal_attr = false;
     
-    if (m_s_goal_attr)
+    if (m_goal_attr)
     {
-        delete m_s_goal_attr;
-        m_s_goal_attr = NULL;
+        delete m_goal_attr;
+        m_goal_attr = NULL;
     }
     
     
-    m_has_s_status_attr = false;
+    m_has_status_attr = false;
     
-    if (m_s_status_attr)
+    if (m_status_attr)
     {
-        delete m_s_status_attr;
-        m_s_status_attr = NULL;
+        delete m_status_attr;
+        m_status_attr = NULL;
     }
     
     
-    m_has_s_trend_attr = false;
+    m_has_trend_attr = false;
     
-    if (m_s_trend_attr)
+    if (m_trend_attr)
     {
-        delete m_s_trend_attr;
-        m_s_trend_attr = NULL;
+        delete m_trend_attr;
+        m_trend_attr = NULL;
     }
     
     
-    m_has_s_weight_attr = false;
+    m_has_weight_attr = false;
     
-    if (m_s_weight_attr)
+    if (m_weight_attr)
     {
-        delete m_s_weight_attr;
-        m_s_weight_attr = NULL;
+        delete m_weight_attr;
+        m_weight_attr = NULL;
     }
     
     
-    m_has_s_time_attr = false;
+    m_has_time_attr = false;
     
-    if (m_s_time_attr)
+    if (m_time_attr)
     {
-        delete m_s_time_attr;
-        m_s_time_attr = NULL;
+        delete m_time_attr;
+        m_time_attr = NULL;
     }
     
     }
@@ -22120,69 +23255,69 @@ CT_PCDKPIs* CT_PCDKPIs::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_uniqueName_attr)
+    if (m_has_uniqueName_attr)
     {
-        m_s_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
+        m_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
     }
     
     
-    if (m_has_s_caption_attr)
+    if (m_has_caption_attr)
     {
-        m_s_caption_attr->toXmlAttr("caption", _outStream);
+        m_caption_attr->toXmlAttr("caption", _outStream);
     }
     
     
-    if (m_has_s_displayFolder_attr)
+    if (m_has_displayFolder_attr)
     {
-        m_s_displayFolder_attr->toXmlAttr("displayFolder", _outStream);
+        m_displayFolder_attr->toXmlAttr("displayFolder", _outStream);
     }
     
     
-    if (m_has_s_measureGroup_attr)
+    if (m_has_measureGroup_attr)
     {
-        m_s_measureGroup_attr->toXmlAttr("measureGroup", _outStream);
+        m_measureGroup_attr->toXmlAttr("measureGroup", _outStream);
     }
     
     
-    if (m_has_s_parent_attr)
+    if (m_has_parent_attr)
     {
-        m_s_parent_attr->toXmlAttr("parent", _outStream);
+        m_parent_attr->toXmlAttr("parent", _outStream);
     }
     
     
-    if (m_has_s_value_attr)
+    if (m_has_value_attr)
     {
-        m_s_value_attr->toXmlAttr("value", _outStream);
+        m_value_attr->toXmlAttr("value", _outStream);
     }
     
     
-    if (m_has_s_goal_attr)
+    if (m_has_goal_attr)
     {
-        m_s_goal_attr->toXmlAttr("goal", _outStream);
+        m_goal_attr->toXmlAttr("goal", _outStream);
     }
     
     
-    if (m_has_s_status_attr)
+    if (m_has_status_attr)
     {
-        m_s_status_attr->toXmlAttr("status", _outStream);
+        m_status_attr->toXmlAttr("status", _outStream);
     }
     
     
-    if (m_has_s_trend_attr)
+    if (m_has_trend_attr)
     {
-        m_s_trend_attr->toXmlAttr("trend", _outStream);
+        m_trend_attr->toXmlAttr("trend", _outStream);
     }
     
     
-    if (m_has_s_weight_attr)
+    if (m_has_weight_attr)
     {
-        m_s_weight_attr->toXmlAttr("weight", _outStream);
+        m_weight_attr->toXmlAttr("weight", _outStream);
     }
     
     
-    if (m_has_s_time_attr)
+    if (m_has_time_attr)
     {
-        m_s_time_attr->toXmlAttr("time", _outStream);
+        m_time_attr->toXmlAttr("time", _outStream);
     }
     
             _outStream << ">";
@@ -22199,222 +23334,222 @@ CT_PCDKPIs* CT_PCDKPIs::default_instance_ = NULL;
     return *CT_PCDKPI::default_instance_;
     }
 
-    bool CT_PCDKPI::has_s_uniqueName_attr() const
+    bool CT_PCDKPI::has_uniqueName_attr() const
     {    
-    return m_has_s_uniqueName_attr;
+    return m_has_uniqueName_attr;
     }
 
-    void CT_PCDKPI::set_s_uniqueName_attr(const ns_s::ST_Xstring& _s_uniqueName_attr)
+    void CT_PCDKPI::set_uniqueName_attr(const ns_s::ST_Xstring& _uniqueName_attr)
     {    
-    m_has_s_uniqueName_attr = true;
-    m_s_uniqueName_attr = new ns_s::ST_Xstring(_s_uniqueName_attr);
+    m_has_uniqueName_attr = true;
+    m_uniqueName_attr = new ns_s::ST_Xstring(_uniqueName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PCDKPI::get_s_uniqueName_attr() const
+    const ns_s::ST_Xstring& CT_PCDKPI::get_uniqueName_attr() const
     {    
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        return *m_s_uniqueName_attr;
+        return *m_uniqueName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PCDKPI::has_s_caption_attr() const
+    bool CT_PCDKPI::has_caption_attr() const
     {    
-    return m_has_s_caption_attr;
+    return m_has_caption_attr;
     }
 
-    void CT_PCDKPI::set_s_caption_attr(const ns_s::ST_Xstring& _s_caption_attr)
+    void CT_PCDKPI::set_caption_attr(const ns_s::ST_Xstring& _caption_attr)
     {    
-    m_has_s_caption_attr = true;
-    m_s_caption_attr = new ns_s::ST_Xstring(_s_caption_attr);
+    m_has_caption_attr = true;
+    m_caption_attr = new ns_s::ST_Xstring(_caption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PCDKPI::get_s_caption_attr() const
+    const ns_s::ST_Xstring& CT_PCDKPI::get_caption_attr() const
     {    
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        return *m_s_caption_attr;
+        return *m_caption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PCDKPI::has_s_displayFolder_attr() const
+    bool CT_PCDKPI::has_displayFolder_attr() const
     {    
-    return m_has_s_displayFolder_attr;
+    return m_has_displayFolder_attr;
     }
 
-    void CT_PCDKPI::set_s_displayFolder_attr(const ns_s::ST_Xstring& _s_displayFolder_attr)
+    void CT_PCDKPI::set_displayFolder_attr(const ns_s::ST_Xstring& _displayFolder_attr)
     {    
-    m_has_s_displayFolder_attr = true;
-    m_s_displayFolder_attr = new ns_s::ST_Xstring(_s_displayFolder_attr);
+    m_has_displayFolder_attr = true;
+    m_displayFolder_attr = new ns_s::ST_Xstring(_displayFolder_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PCDKPI::get_s_displayFolder_attr() const
+    const ns_s::ST_Xstring& CT_PCDKPI::get_displayFolder_attr() const
     {    
-    if (m_s_displayFolder_attr)
+    if (m_displayFolder_attr)
     {
-        return *m_s_displayFolder_attr;
+        return *m_displayFolder_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PCDKPI::has_s_measureGroup_attr() const
+    bool CT_PCDKPI::has_measureGroup_attr() const
     {    
-    return m_has_s_measureGroup_attr;
+    return m_has_measureGroup_attr;
     }
 
-    void CT_PCDKPI::set_s_measureGroup_attr(const ns_s::ST_Xstring& _s_measureGroup_attr)
+    void CT_PCDKPI::set_measureGroup_attr(const ns_s::ST_Xstring& _measureGroup_attr)
     {    
-    m_has_s_measureGroup_attr = true;
-    m_s_measureGroup_attr = new ns_s::ST_Xstring(_s_measureGroup_attr);
+    m_has_measureGroup_attr = true;
+    m_measureGroup_attr = new ns_s::ST_Xstring(_measureGroup_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PCDKPI::get_s_measureGroup_attr() const
+    const ns_s::ST_Xstring& CT_PCDKPI::get_measureGroup_attr() const
     {    
-    if (m_s_measureGroup_attr)
+    if (m_measureGroup_attr)
     {
-        return *m_s_measureGroup_attr;
+        return *m_measureGroup_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PCDKPI::has_s_parent_attr() const
+    bool CT_PCDKPI::has_parent_attr() const
     {    
-    return m_has_s_parent_attr;
+    return m_has_parent_attr;
     }
 
-    void CT_PCDKPI::set_s_parent_attr(const ns_s::ST_Xstring& _s_parent_attr)
+    void CT_PCDKPI::set_parent_attr(const ns_s::ST_Xstring& _parent_attr)
     {    
-    m_has_s_parent_attr = true;
-    m_s_parent_attr = new ns_s::ST_Xstring(_s_parent_attr);
+    m_has_parent_attr = true;
+    m_parent_attr = new ns_s::ST_Xstring(_parent_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PCDKPI::get_s_parent_attr() const
+    const ns_s::ST_Xstring& CT_PCDKPI::get_parent_attr() const
     {    
-    if (m_s_parent_attr)
+    if (m_parent_attr)
     {
-        return *m_s_parent_attr;
+        return *m_parent_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PCDKPI::has_s_value_attr() const
+    bool CT_PCDKPI::has_value_attr() const
     {    
-    return m_has_s_value_attr;
+    return m_has_value_attr;
     }
 
-    void CT_PCDKPI::set_s_value_attr(const ns_s::ST_Xstring& _s_value_attr)
+    void CT_PCDKPI::set_value_attr(const ns_s::ST_Xstring& _value_attr)
     {    
-    m_has_s_value_attr = true;
-    m_s_value_attr = new ns_s::ST_Xstring(_s_value_attr);
+    m_has_value_attr = true;
+    m_value_attr = new ns_s::ST_Xstring(_value_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PCDKPI::get_s_value_attr() const
+    const ns_s::ST_Xstring& CT_PCDKPI::get_value_attr() const
     {    
-    if (m_s_value_attr)
+    if (m_value_attr)
     {
-        return *m_s_value_attr;
+        return *m_value_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PCDKPI::has_s_goal_attr() const
+    bool CT_PCDKPI::has_goal_attr() const
     {    
-    return m_has_s_goal_attr;
+    return m_has_goal_attr;
     }
 
-    void CT_PCDKPI::set_s_goal_attr(const ns_s::ST_Xstring& _s_goal_attr)
+    void CT_PCDKPI::set_goal_attr(const ns_s::ST_Xstring& _goal_attr)
     {    
-    m_has_s_goal_attr = true;
-    m_s_goal_attr = new ns_s::ST_Xstring(_s_goal_attr);
+    m_has_goal_attr = true;
+    m_goal_attr = new ns_s::ST_Xstring(_goal_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PCDKPI::get_s_goal_attr() const
+    const ns_s::ST_Xstring& CT_PCDKPI::get_goal_attr() const
     {    
-    if (m_s_goal_attr)
+    if (m_goal_attr)
     {
-        return *m_s_goal_attr;
+        return *m_goal_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PCDKPI::has_s_status_attr() const
+    bool CT_PCDKPI::has_status_attr() const
     {    
-    return m_has_s_status_attr;
+    return m_has_status_attr;
     }
 
-    void CT_PCDKPI::set_s_status_attr(const ns_s::ST_Xstring& _s_status_attr)
+    void CT_PCDKPI::set_status_attr(const ns_s::ST_Xstring& _status_attr)
     {    
-    m_has_s_status_attr = true;
-    m_s_status_attr = new ns_s::ST_Xstring(_s_status_attr);
+    m_has_status_attr = true;
+    m_status_attr = new ns_s::ST_Xstring(_status_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PCDKPI::get_s_status_attr() const
+    const ns_s::ST_Xstring& CT_PCDKPI::get_status_attr() const
     {    
-    if (m_s_status_attr)
+    if (m_status_attr)
     {
-        return *m_s_status_attr;
+        return *m_status_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PCDKPI::has_s_trend_attr() const
+    bool CT_PCDKPI::has_trend_attr() const
     {    
-    return m_has_s_trend_attr;
+    return m_has_trend_attr;
     }
 
-    void CT_PCDKPI::set_s_trend_attr(const ns_s::ST_Xstring& _s_trend_attr)
+    void CT_PCDKPI::set_trend_attr(const ns_s::ST_Xstring& _trend_attr)
     {    
-    m_has_s_trend_attr = true;
-    m_s_trend_attr = new ns_s::ST_Xstring(_s_trend_attr);
+    m_has_trend_attr = true;
+    m_trend_attr = new ns_s::ST_Xstring(_trend_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PCDKPI::get_s_trend_attr() const
+    const ns_s::ST_Xstring& CT_PCDKPI::get_trend_attr() const
     {    
-    if (m_s_trend_attr)
+    if (m_trend_attr)
     {
-        return *m_s_trend_attr;
+        return *m_trend_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PCDKPI::has_s_weight_attr() const
+    bool CT_PCDKPI::has_weight_attr() const
     {    
-    return m_has_s_weight_attr;
+    return m_has_weight_attr;
     }
 
-    void CT_PCDKPI::set_s_weight_attr(const ns_s::ST_Xstring& _s_weight_attr)
+    void CT_PCDKPI::set_weight_attr(const ns_s::ST_Xstring& _weight_attr)
     {    
-    m_has_s_weight_attr = true;
-    m_s_weight_attr = new ns_s::ST_Xstring(_s_weight_attr);
+    m_has_weight_attr = true;
+    m_weight_attr = new ns_s::ST_Xstring(_weight_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PCDKPI::get_s_weight_attr() const
+    const ns_s::ST_Xstring& CT_PCDKPI::get_weight_attr() const
     {    
-    if (m_s_weight_attr)
+    if (m_weight_attr)
     {
-        return *m_s_weight_attr;
+        return *m_weight_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PCDKPI::has_s_time_attr() const
+    bool CT_PCDKPI::has_time_attr() const
     {    
-    return m_has_s_time_attr;
+    return m_has_time_attr;
     }
 
-    void CT_PCDKPI::set_s_time_attr(const ns_s::ST_Xstring& _s_time_attr)
+    void CT_PCDKPI::set_time_attr(const ns_s::ST_Xstring& _time_attr)
     {    
-    m_has_s_time_attr = true;
-    m_s_time_attr = new ns_s::ST_Xstring(_s_time_attr);
+    m_has_time_attr = true;
+    m_time_attr = new ns_s::ST_Xstring(_time_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PCDKPI::get_s_time_attr() const
+    const ns_s::ST_Xstring& CT_PCDKPI::get_time_attr() const
     {    
-    if (m_s_time_attr)
+    if (m_time_attr)
     {
-        return *m_s_time_attr;
+        return *m_time_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -22422,6 +23557,11 @@ CT_PCDKPIs* CT_PCDKPIs::default_instance_ = NULL;
 CT_PCDKPI* CT_PCDKPI::default_instance_ = NULL;
 
     // CT_CacheHierarchies
+    CT_CacheHierarchies::CT_CacheHierarchies()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_CacheHierarchy* CT_CacheHierarchies::add_cacheHierarchy()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -22467,7 +23607,7 @@ CT_PCDKPI* CT_PCDKPI::default_instance_ = NULL;
         {
             if ((*iter)->has_cacheHierarchy())
             {
-                (*iter)->get_cacheHierarchy().toXmlElem("cacheHierarchy", "", _outStream);
+                (*iter)->get_cacheHierarchy().toXmlElem("main:cacheHierarchy", "", _outStream);
             }
         }
     }
@@ -22502,6 +23642,11 @@ CT_PCDKPI* CT_PCDKPI::default_instance_ = NULL;
 
 
     // CT_CacheHierarchies::ChildGroup_1
+    CT_CacheHierarchies::ChildGroup_1::ChildGroup_1()
+    :m_has_cacheHierarchy(false),
+    m_cacheHierarchy(NULL)
+    {
+    }
     bool CT_CacheHierarchies::ChildGroup_1::has_cacheHierarchy() const
     {    
     return m_has_cacheHierarchy;
@@ -22530,6 +23675,59 @@ CT_PCDKPI* CT_PCDKPI::default_instance_ = NULL;
 CT_CacheHierarchies* CT_CacheHierarchies::default_instance_ = NULL;
 
     // CT_CacheHierarchy
+    CT_CacheHierarchy::CT_CacheHierarchy()
+    :m_has_fieldsUsage(false),
+    m_fieldsUsage(NULL),
+    m_has_groupLevels(false),
+    m_groupLevels(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_uniqueName_attr(false),
+    m_uniqueName_attr(NULL),
+    m_has_caption_attr(false),
+    m_caption_attr(NULL),
+    m_has_measure_attr(false),
+    m_measure_attr(false),
+    m_has_set_attr(false),
+    m_set_attr(false),
+    m_has_parentSet_attr(false),
+    m_parentSet_attr(0),
+    m_has_iconSet_attr(false),
+    m_iconSet_attr(0),
+    m_has_attribute_attr(false),
+    m_attribute_attr(false),
+    m_has_time_attr(false),
+    m_time_attr(false),
+    m_has_keyAttribute_attr(false),
+    m_keyAttribute_attr(false),
+    m_has_defaultMemberUniqueName_attr(false),
+    m_defaultMemberUniqueName_attr(NULL),
+    m_has_allUniqueName_attr(false),
+    m_allUniqueName_attr(NULL),
+    m_has_allCaption_attr(false),
+    m_allCaption_attr(NULL),
+    m_has_dimensionUniqueName_attr(false),
+    m_dimensionUniqueName_attr(NULL),
+    m_has_displayFolder_attr(false),
+    m_displayFolder_attr(NULL),
+    m_has_measureGroup_attr(false),
+    m_measureGroup_attr(NULL),
+    m_has_measures_attr(false),
+    m_measures_attr(false),
+    m_has_count_attr(false),
+    m_count_attr(0),
+    m_has_oneField_attr(false),
+    m_oneField_attr(false),
+    m_has_memberValueDatatype_attr(false),
+    m_memberValueDatatype_attr(0),
+    m_has_unbalanced_attr(false),
+    m_unbalanced_attr(false),
+    m_has_unbalancedGroup_attr(false),
+    m_unbalancedGroup_attr(false),
+    m_has_hidden_attr(false),
+    m_hidden_attr(false)
+    {
+    }
     bool CT_CacheHierarchy::has_fieldsUsage() const
     {    
     return m_has_fieldsUsage;
@@ -22604,21 +23802,21 @@ CT_CacheHierarchies* CT_CacheHierarchies::default_instance_ = NULL;
 
     void CT_CacheHierarchy::clear()
     {    
-    m_has_s_uniqueName_attr = false;
+    m_has_uniqueName_attr = false;
     
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        delete m_s_uniqueName_attr;
-        m_s_uniqueName_attr = NULL;
+        delete m_uniqueName_attr;
+        m_uniqueName_attr = NULL;
     }
     
     
-    m_has_s_caption_attr = false;
+    m_has_caption_attr = false;
     
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        delete m_s_caption_attr;
-        m_s_caption_attr = NULL;
+        delete m_caption_attr;
+        m_caption_attr = NULL;
     }
     
     
@@ -22643,57 +23841,57 @@ CT_CacheHierarchies* CT_CacheHierarchies::default_instance_ = NULL;
     m_has_keyAttribute_attr = false;
     m_keyAttribute_attr = false;
     
-    m_has_s_defaultMemberUniqueName_attr = false;
+    m_has_defaultMemberUniqueName_attr = false;
     
-    if (m_s_defaultMemberUniqueName_attr)
+    if (m_defaultMemberUniqueName_attr)
     {
-        delete m_s_defaultMemberUniqueName_attr;
-        m_s_defaultMemberUniqueName_attr = NULL;
+        delete m_defaultMemberUniqueName_attr;
+        m_defaultMemberUniqueName_attr = NULL;
     }
     
     
-    m_has_s_allUniqueName_attr = false;
+    m_has_allUniqueName_attr = false;
     
-    if (m_s_allUniqueName_attr)
+    if (m_allUniqueName_attr)
     {
-        delete m_s_allUniqueName_attr;
-        m_s_allUniqueName_attr = NULL;
+        delete m_allUniqueName_attr;
+        m_allUniqueName_attr = NULL;
     }
     
     
-    m_has_s_allCaption_attr = false;
+    m_has_allCaption_attr = false;
     
-    if (m_s_allCaption_attr)
+    if (m_allCaption_attr)
     {
-        delete m_s_allCaption_attr;
-        m_s_allCaption_attr = NULL;
+        delete m_allCaption_attr;
+        m_allCaption_attr = NULL;
     }
     
     
-    m_has_s_dimensionUniqueName_attr = false;
+    m_has_dimensionUniqueName_attr = false;
     
-    if (m_s_dimensionUniqueName_attr)
+    if (m_dimensionUniqueName_attr)
     {
-        delete m_s_dimensionUniqueName_attr;
-        m_s_dimensionUniqueName_attr = NULL;
+        delete m_dimensionUniqueName_attr;
+        m_dimensionUniqueName_attr = NULL;
     }
     
     
-    m_has_s_displayFolder_attr = false;
+    m_has_displayFolder_attr = false;
     
-    if (m_s_displayFolder_attr)
+    if (m_displayFolder_attr)
     {
-        delete m_s_displayFolder_attr;
-        m_s_displayFolder_attr = NULL;
+        delete m_displayFolder_attr;
+        m_displayFolder_attr = NULL;
     }
     
     
-    m_has_s_measureGroup_attr = false;
+    m_has_measureGroup_attr = false;
     
-    if (m_s_measureGroup_attr)
+    if (m_measureGroup_attr)
     {
-        delete m_s_measureGroup_attr;
-        m_s_measureGroup_attr = NULL;
+        delete m_measureGroup_attr;
+        m_measureGroup_attr = NULL;
     }
     
     
@@ -22728,15 +23926,15 @@ CT_CacheHierarchies* CT_CacheHierarchies::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_uniqueName_attr)
+    if (m_has_uniqueName_attr)
     {
-        m_s_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
+        m_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
     }
     
     
-    if (m_has_s_caption_attr)
+    if (m_has_caption_attr)
     {
-        m_s_caption_attr->toXmlAttr("caption", _outStream);
+        m_caption_attr->toXmlAttr("caption", _outStream);
     }
     
     
@@ -22782,39 +23980,39 @@ CT_CacheHierarchies* CT_CacheHierarchies::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_defaultMemberUniqueName_attr)
+    if (m_has_defaultMemberUniqueName_attr)
     {
-        m_s_defaultMemberUniqueName_attr->toXmlAttr("defaultMemberUniqueName", _outStream);
+        m_defaultMemberUniqueName_attr->toXmlAttr("defaultMemberUniqueName", _outStream);
     }
     
     
-    if (m_has_s_allUniqueName_attr)
+    if (m_has_allUniqueName_attr)
     {
-        m_s_allUniqueName_attr->toXmlAttr("allUniqueName", _outStream);
+        m_allUniqueName_attr->toXmlAttr("allUniqueName", _outStream);
     }
     
     
-    if (m_has_s_allCaption_attr)
+    if (m_has_allCaption_attr)
     {
-        m_s_allCaption_attr->toXmlAttr("allCaption", _outStream);
+        m_allCaption_attr->toXmlAttr("allCaption", _outStream);
     }
     
     
-    if (m_has_s_dimensionUniqueName_attr)
+    if (m_has_dimensionUniqueName_attr)
     {
-        m_s_dimensionUniqueName_attr->toXmlAttr("dimensionUniqueName", _outStream);
+        m_dimensionUniqueName_attr->toXmlAttr("dimensionUniqueName", _outStream);
     }
     
     
-    if (m_has_s_displayFolder_attr)
+    if (m_has_displayFolder_attr)
     {
-        m_s_displayFolder_attr->toXmlAttr("displayFolder", _outStream);
+        m_displayFolder_attr->toXmlAttr("displayFolder", _outStream);
     }
     
     
-    if (m_has_s_measureGroup_attr)
+    if (m_has_measureGroup_attr)
     {
-        m_s_measureGroup_attr->toXmlAttr("measureGroup", _outStream);
+        m_measureGroup_attr->toXmlAttr("measureGroup", _outStream);
     }
     
     
@@ -22863,17 +24061,17 @@ CT_CacheHierarchies* CT_CacheHierarchies::default_instance_ = NULL;
             
     if (m_has_fieldsUsage)
     {
-        m_fieldsUsage->toXmlElem("fieldsUsage", "", _outStream);;
+        m_fieldsUsage->toXmlElem("main:fieldsUsage", "", _outStream);;
     }
     
     if (m_has_groupLevels)
     {
-        m_groupLevels->toXmlElem("groupLevels", "", _outStream);;
+        m_groupLevels->toXmlElem("main:groupLevels", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -22888,42 +24086,42 @@ CT_CacheHierarchies* CT_CacheHierarchies::default_instance_ = NULL;
     return *CT_CacheHierarchy::default_instance_;
     }
 
-    bool CT_CacheHierarchy::has_s_uniqueName_attr() const
+    bool CT_CacheHierarchy::has_uniqueName_attr() const
     {    
-    return m_has_s_uniqueName_attr;
+    return m_has_uniqueName_attr;
     }
 
-    void CT_CacheHierarchy::set_s_uniqueName_attr(const ns_s::ST_Xstring& _s_uniqueName_attr)
+    void CT_CacheHierarchy::set_uniqueName_attr(const ns_s::ST_Xstring& _uniqueName_attr)
     {    
-    m_has_s_uniqueName_attr = true;
-    m_s_uniqueName_attr = new ns_s::ST_Xstring(_s_uniqueName_attr);
+    m_has_uniqueName_attr = true;
+    m_uniqueName_attr = new ns_s::ST_Xstring(_uniqueName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CacheHierarchy::get_s_uniqueName_attr() const
+    const ns_s::ST_Xstring& CT_CacheHierarchy::get_uniqueName_attr() const
     {    
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        return *m_s_uniqueName_attr;
+        return *m_uniqueName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CacheHierarchy::has_s_caption_attr() const
+    bool CT_CacheHierarchy::has_caption_attr() const
     {    
-    return m_has_s_caption_attr;
+    return m_has_caption_attr;
     }
 
-    void CT_CacheHierarchy::set_s_caption_attr(const ns_s::ST_Xstring& _s_caption_attr)
+    void CT_CacheHierarchy::set_caption_attr(const ns_s::ST_Xstring& _caption_attr)
     {    
-    m_has_s_caption_attr = true;
-    m_s_caption_attr = new ns_s::ST_Xstring(_s_caption_attr);
+    m_has_caption_attr = true;
+    m_caption_attr = new ns_s::ST_Xstring(_caption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CacheHierarchy::get_s_caption_attr() const
+    const ns_s::ST_Xstring& CT_CacheHierarchy::get_caption_attr() const
     {    
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        return *m_s_caption_attr;
+        return *m_caption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -23040,122 +24238,122 @@ CT_CacheHierarchies* CT_CacheHierarchies::default_instance_ = NULL;
     return m_keyAttribute_attr;
     }
 
-    bool CT_CacheHierarchy::has_s_defaultMemberUniqueName_attr() const
+    bool CT_CacheHierarchy::has_defaultMemberUniqueName_attr() const
     {    
-    return m_has_s_defaultMemberUniqueName_attr;
+    return m_has_defaultMemberUniqueName_attr;
     }
 
-    void CT_CacheHierarchy::set_s_defaultMemberUniqueName_attr(const ns_s::ST_Xstring& _s_defaultMemberUniqueName_attr)
+    void CT_CacheHierarchy::set_defaultMemberUniqueName_attr(const ns_s::ST_Xstring& _defaultMemberUniqueName_attr)
     {    
-    m_has_s_defaultMemberUniqueName_attr = true;
-    m_s_defaultMemberUniqueName_attr = new ns_s::ST_Xstring(_s_defaultMemberUniqueName_attr);
+    m_has_defaultMemberUniqueName_attr = true;
+    m_defaultMemberUniqueName_attr = new ns_s::ST_Xstring(_defaultMemberUniqueName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CacheHierarchy::get_s_defaultMemberUniqueName_attr() const
+    const ns_s::ST_Xstring& CT_CacheHierarchy::get_defaultMemberUniqueName_attr() const
     {    
-    if (m_s_defaultMemberUniqueName_attr)
+    if (m_defaultMemberUniqueName_attr)
     {
-        return *m_s_defaultMemberUniqueName_attr;
+        return *m_defaultMemberUniqueName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CacheHierarchy::has_s_allUniqueName_attr() const
+    bool CT_CacheHierarchy::has_allUniqueName_attr() const
     {    
-    return m_has_s_allUniqueName_attr;
+    return m_has_allUniqueName_attr;
     }
 
-    void CT_CacheHierarchy::set_s_allUniqueName_attr(const ns_s::ST_Xstring& _s_allUniqueName_attr)
+    void CT_CacheHierarchy::set_allUniqueName_attr(const ns_s::ST_Xstring& _allUniqueName_attr)
     {    
-    m_has_s_allUniqueName_attr = true;
-    m_s_allUniqueName_attr = new ns_s::ST_Xstring(_s_allUniqueName_attr);
+    m_has_allUniqueName_attr = true;
+    m_allUniqueName_attr = new ns_s::ST_Xstring(_allUniqueName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CacheHierarchy::get_s_allUniqueName_attr() const
+    const ns_s::ST_Xstring& CT_CacheHierarchy::get_allUniqueName_attr() const
     {    
-    if (m_s_allUniqueName_attr)
+    if (m_allUniqueName_attr)
     {
-        return *m_s_allUniqueName_attr;
+        return *m_allUniqueName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CacheHierarchy::has_s_allCaption_attr() const
+    bool CT_CacheHierarchy::has_allCaption_attr() const
     {    
-    return m_has_s_allCaption_attr;
+    return m_has_allCaption_attr;
     }
 
-    void CT_CacheHierarchy::set_s_allCaption_attr(const ns_s::ST_Xstring& _s_allCaption_attr)
+    void CT_CacheHierarchy::set_allCaption_attr(const ns_s::ST_Xstring& _allCaption_attr)
     {    
-    m_has_s_allCaption_attr = true;
-    m_s_allCaption_attr = new ns_s::ST_Xstring(_s_allCaption_attr);
+    m_has_allCaption_attr = true;
+    m_allCaption_attr = new ns_s::ST_Xstring(_allCaption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CacheHierarchy::get_s_allCaption_attr() const
+    const ns_s::ST_Xstring& CT_CacheHierarchy::get_allCaption_attr() const
     {    
-    if (m_s_allCaption_attr)
+    if (m_allCaption_attr)
     {
-        return *m_s_allCaption_attr;
+        return *m_allCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CacheHierarchy::has_s_dimensionUniqueName_attr() const
+    bool CT_CacheHierarchy::has_dimensionUniqueName_attr() const
     {    
-    return m_has_s_dimensionUniqueName_attr;
+    return m_has_dimensionUniqueName_attr;
     }
 
-    void CT_CacheHierarchy::set_s_dimensionUniqueName_attr(const ns_s::ST_Xstring& _s_dimensionUniqueName_attr)
+    void CT_CacheHierarchy::set_dimensionUniqueName_attr(const ns_s::ST_Xstring& _dimensionUniqueName_attr)
     {    
-    m_has_s_dimensionUniqueName_attr = true;
-    m_s_dimensionUniqueName_attr = new ns_s::ST_Xstring(_s_dimensionUniqueName_attr);
+    m_has_dimensionUniqueName_attr = true;
+    m_dimensionUniqueName_attr = new ns_s::ST_Xstring(_dimensionUniqueName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CacheHierarchy::get_s_dimensionUniqueName_attr() const
+    const ns_s::ST_Xstring& CT_CacheHierarchy::get_dimensionUniqueName_attr() const
     {    
-    if (m_s_dimensionUniqueName_attr)
+    if (m_dimensionUniqueName_attr)
     {
-        return *m_s_dimensionUniqueName_attr;
+        return *m_dimensionUniqueName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CacheHierarchy::has_s_displayFolder_attr() const
+    bool CT_CacheHierarchy::has_displayFolder_attr() const
     {    
-    return m_has_s_displayFolder_attr;
+    return m_has_displayFolder_attr;
     }
 
-    void CT_CacheHierarchy::set_s_displayFolder_attr(const ns_s::ST_Xstring& _s_displayFolder_attr)
+    void CT_CacheHierarchy::set_displayFolder_attr(const ns_s::ST_Xstring& _displayFolder_attr)
     {    
-    m_has_s_displayFolder_attr = true;
-    m_s_displayFolder_attr = new ns_s::ST_Xstring(_s_displayFolder_attr);
+    m_has_displayFolder_attr = true;
+    m_displayFolder_attr = new ns_s::ST_Xstring(_displayFolder_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CacheHierarchy::get_s_displayFolder_attr() const
+    const ns_s::ST_Xstring& CT_CacheHierarchy::get_displayFolder_attr() const
     {    
-    if (m_s_displayFolder_attr)
+    if (m_displayFolder_attr)
     {
-        return *m_s_displayFolder_attr;
+        return *m_displayFolder_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CacheHierarchy::has_s_measureGroup_attr() const
+    bool CT_CacheHierarchy::has_measureGroup_attr() const
     {    
-    return m_has_s_measureGroup_attr;
+    return m_has_measureGroup_attr;
     }
 
-    void CT_CacheHierarchy::set_s_measureGroup_attr(const ns_s::ST_Xstring& _s_measureGroup_attr)
+    void CT_CacheHierarchy::set_measureGroup_attr(const ns_s::ST_Xstring& _measureGroup_attr)
     {    
-    m_has_s_measureGroup_attr = true;
-    m_s_measureGroup_attr = new ns_s::ST_Xstring(_s_measureGroup_attr);
+    m_has_measureGroup_attr = true;
+    m_measureGroup_attr = new ns_s::ST_Xstring(_measureGroup_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CacheHierarchy::get_s_measureGroup_attr() const
+    const ns_s::ST_Xstring& CT_CacheHierarchy::get_measureGroup_attr() const
     {    
-    if (m_s_measureGroup_attr)
+    if (m_measureGroup_attr)
     {
-        return *m_s_measureGroup_attr;
+        return *m_measureGroup_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -23275,6 +24473,11 @@ CT_CacheHierarchies* CT_CacheHierarchies::default_instance_ = NULL;
 CT_CacheHierarchy* CT_CacheHierarchy::default_instance_ = NULL;
 
     // CT_FieldsUsage
+    CT_FieldsUsage::CT_FieldsUsage()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_FieldUsage* CT_FieldsUsage::add_fieldUsage()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -23320,7 +24523,7 @@ CT_CacheHierarchy* CT_CacheHierarchy::default_instance_ = NULL;
         {
             if ((*iter)->has_fieldUsage())
             {
-                (*iter)->get_fieldUsage().toXmlElem("fieldUsage", "", _outStream);
+                (*iter)->get_fieldUsage().toXmlElem("main:fieldUsage", "", _outStream);
             }
         }
     }
@@ -23355,6 +24558,11 @@ CT_CacheHierarchy* CT_CacheHierarchy::default_instance_ = NULL;
 
 
     // CT_FieldsUsage::ChildGroup_1
+    CT_FieldsUsage::ChildGroup_1::ChildGroup_1()
+    :m_has_fieldUsage(false),
+    m_fieldUsage(NULL)
+    {
+    }
     bool CT_FieldsUsage::ChildGroup_1::has_fieldUsage() const
     {    
     return m_has_fieldUsage;
@@ -23383,6 +24591,11 @@ CT_CacheHierarchy* CT_CacheHierarchy::default_instance_ = NULL;
 CT_FieldsUsage* CT_FieldsUsage::default_instance_ = NULL;
 
     // CT_FieldUsage
+    CT_FieldUsage::CT_FieldUsage()
+    :m_has_x_attr(false),
+    m_x_attr(0)
+    {
+    }
     void CT_FieldUsage::clear()
     {    
     m_has_x_attr = false;
@@ -23436,6 +24649,11 @@ CT_FieldsUsage* CT_FieldsUsage::default_instance_ = NULL;
 CT_FieldUsage* CT_FieldUsage::default_instance_ = NULL;
 
     // CT_GroupLevels
+    CT_GroupLevels::CT_GroupLevels()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_GroupLevel* CT_GroupLevels::add_groupLevel()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -23481,7 +24699,7 @@ CT_FieldUsage* CT_FieldUsage::default_instance_ = NULL;
         {
             if ((*iter)->has_groupLevel())
             {
-                (*iter)->get_groupLevel().toXmlElem("groupLevel", "", _outStream);
+                (*iter)->get_groupLevel().toXmlElem("main:groupLevel", "", _outStream);
             }
         }
     }
@@ -23516,6 +24734,11 @@ CT_FieldUsage* CT_FieldUsage::default_instance_ = NULL;
 
 
     // CT_GroupLevels::ChildGroup_1
+    CT_GroupLevels::ChildGroup_1::ChildGroup_1()
+    :m_has_groupLevel(false),
+    m_groupLevel(NULL)
+    {
+    }
     bool CT_GroupLevels::ChildGroup_1::has_groupLevel() const
     {    
     return m_has_groupLevel;
@@ -23544,6 +24767,21 @@ CT_FieldUsage* CT_FieldUsage::default_instance_ = NULL;
 CT_GroupLevels* CT_GroupLevels::default_instance_ = NULL;
 
     // CT_GroupLevel
+    CT_GroupLevel::CT_GroupLevel()
+    :m_has_groups(false),
+    m_groups(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_uniqueName_attr(false),
+    m_uniqueName_attr(NULL),
+    m_has_caption_attr(false),
+    m_caption_attr(NULL),
+    m_has_user_attr(false),
+    m_user_attr(false),
+    m_has_customRollUp_attr(false),
+    m_customRollUp_attr(false)
+    {
+    }
     bool CT_GroupLevel::has_groups() const
     {    
     return m_has_groups;
@@ -23594,21 +24832,21 @@ CT_GroupLevels* CT_GroupLevels::default_instance_ = NULL;
 
     void CT_GroupLevel::clear()
     {    
-    m_has_s_uniqueName_attr = false;
+    m_has_uniqueName_attr = false;
     
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        delete m_s_uniqueName_attr;
-        m_s_uniqueName_attr = NULL;
+        delete m_uniqueName_attr;
+        m_uniqueName_attr = NULL;
     }
     
     
-    m_has_s_caption_attr = false;
+    m_has_caption_attr = false;
     
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        delete m_s_caption_attr;
-        m_s_caption_attr = NULL;
+        delete m_caption_attr;
+        m_caption_attr = NULL;
     }
     
     
@@ -23628,15 +24866,15 @@ CT_GroupLevels* CT_GroupLevels::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_uniqueName_attr)
+    if (m_has_uniqueName_attr)
     {
-        m_s_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
+        m_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
     }
     
     
-    if (m_has_s_caption_attr)
+    if (m_has_caption_attr)
     {
-        m_s_caption_attr->toXmlAttr("caption", _outStream);
+        m_caption_attr->toXmlAttr("caption", _outStream);
     }
     
     
@@ -23655,12 +24893,12 @@ CT_GroupLevels* CT_GroupLevels::default_instance_ = NULL;
             
     if (m_has_groups)
     {
-        m_groups->toXmlElem("groups", "", _outStream);;
+        m_groups->toXmlElem("main:groups", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -23675,42 +24913,42 @@ CT_GroupLevels* CT_GroupLevels::default_instance_ = NULL;
     return *CT_GroupLevel::default_instance_;
     }
 
-    bool CT_GroupLevel::has_s_uniqueName_attr() const
+    bool CT_GroupLevel::has_uniqueName_attr() const
     {    
-    return m_has_s_uniqueName_attr;
+    return m_has_uniqueName_attr;
     }
 
-    void CT_GroupLevel::set_s_uniqueName_attr(const ns_s::ST_Xstring& _s_uniqueName_attr)
+    void CT_GroupLevel::set_uniqueName_attr(const ns_s::ST_Xstring& _uniqueName_attr)
     {    
-    m_has_s_uniqueName_attr = true;
-    m_s_uniqueName_attr = new ns_s::ST_Xstring(_s_uniqueName_attr);
+    m_has_uniqueName_attr = true;
+    m_uniqueName_attr = new ns_s::ST_Xstring(_uniqueName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_GroupLevel::get_s_uniqueName_attr() const
+    const ns_s::ST_Xstring& CT_GroupLevel::get_uniqueName_attr() const
     {    
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        return *m_s_uniqueName_attr;
+        return *m_uniqueName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_GroupLevel::has_s_caption_attr() const
+    bool CT_GroupLevel::has_caption_attr() const
     {    
-    return m_has_s_caption_attr;
+    return m_has_caption_attr;
     }
 
-    void CT_GroupLevel::set_s_caption_attr(const ns_s::ST_Xstring& _s_caption_attr)
+    void CT_GroupLevel::set_caption_attr(const ns_s::ST_Xstring& _caption_attr)
     {    
-    m_has_s_caption_attr = true;
-    m_s_caption_attr = new ns_s::ST_Xstring(_s_caption_attr);
+    m_has_caption_attr = true;
+    m_caption_attr = new ns_s::ST_Xstring(_caption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_GroupLevel::get_s_caption_attr() const
+    const ns_s::ST_Xstring& CT_GroupLevel::get_caption_attr() const
     {    
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        return *m_s_caption_attr;
+        return *m_caption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -23750,6 +24988,11 @@ CT_GroupLevels* CT_GroupLevels::default_instance_ = NULL;
 CT_GroupLevel* CT_GroupLevel::default_instance_ = NULL;
 
     // CT_Groups
+    CT_Groups::CT_Groups()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_LevelGroup* CT_Groups::add_group()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -23795,7 +25038,7 @@ CT_GroupLevel* CT_GroupLevel::default_instance_ = NULL;
         {
             if ((*iter)->has_group())
             {
-                (*iter)->get_group().toXmlElem("group", "", _outStream);
+                (*iter)->get_group().toXmlElem("main:group", "", _outStream);
             }
         }
     }
@@ -23830,6 +25073,11 @@ CT_GroupLevel* CT_GroupLevel::default_instance_ = NULL;
 
 
     // CT_Groups::ChildGroup_1
+    CT_Groups::ChildGroup_1::ChildGroup_1()
+    :m_has_group(false),
+    m_group(NULL)
+    {
+    }
     bool CT_Groups::ChildGroup_1::has_group() const
     {    
     return m_has_group;
@@ -23858,6 +25106,21 @@ CT_GroupLevel* CT_GroupLevel::default_instance_ = NULL;
 CT_Groups* CT_Groups::default_instance_ = NULL;
 
     // CT_LevelGroup
+    CT_LevelGroup::CT_LevelGroup()
+    :m_has_groupMembers(false),
+    m_groupMembers(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_uniqueName_attr(false),
+    m_uniqueName_attr(NULL),
+    m_has_caption_attr(false),
+    m_caption_attr(NULL),
+    m_has_uniqueParent_attr(false),
+    m_uniqueParent_attr(NULL),
+    m_has_id_attr(false),
+    m_id_attr(0)
+    {
+    }
     bool CT_LevelGroup::has_groupMembers() const
     {    
     return m_has_groupMembers;
@@ -23884,39 +25147,39 @@ CT_Groups* CT_Groups::default_instance_ = NULL;
 
     void CT_LevelGroup::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_uniqueName_attr = false;
+    m_has_uniqueName_attr = false;
     
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        delete m_s_uniqueName_attr;
-        m_s_uniqueName_attr = NULL;
+        delete m_uniqueName_attr;
+        m_uniqueName_attr = NULL;
     }
     
     
-    m_has_s_caption_attr = false;
+    m_has_caption_attr = false;
     
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        delete m_s_caption_attr;
-        m_s_caption_attr = NULL;
+        delete m_caption_attr;
+        m_caption_attr = NULL;
     }
     
     
-    m_has_s_uniqueParent_attr = false;
+    m_has_uniqueParent_attr = false;
     
-    if (m_s_uniqueParent_attr)
+    if (m_uniqueParent_attr)
     {
-        delete m_s_uniqueParent_attr;
-        m_s_uniqueParent_attr = NULL;
+        delete m_uniqueParent_attr;
+        m_uniqueParent_attr = NULL;
     }
     
     
@@ -23933,27 +25196,27 @@ CT_Groups* CT_Groups::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_uniqueName_attr)
+    if (m_has_uniqueName_attr)
     {
-        m_s_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
+        m_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
     }
     
     
-    if (m_has_s_caption_attr)
+    if (m_has_caption_attr)
     {
-        m_s_caption_attr->toXmlAttr("caption", _outStream);
+        m_caption_attr->toXmlAttr("caption", _outStream);
     }
     
     
-    if (m_has_s_uniqueParent_attr)
+    if (m_has_uniqueParent_attr)
     {
-        m_s_uniqueParent_attr->toXmlAttr("uniqueParent", _outStream);
+        m_uniqueParent_attr->toXmlAttr("uniqueParent", _outStream);
     }
     
     
@@ -23966,7 +25229,7 @@ CT_Groups* CT_Groups::default_instance_ = NULL;
             
     if (m_has_groupMembers)
     {
-        m_groupMembers->toXmlElem("groupMembers", "", _outStream);;
+        m_groupMembers->toXmlElem("main:groupMembers", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -23981,82 +25244,82 @@ CT_Groups* CT_Groups::default_instance_ = NULL;
     return *CT_LevelGroup::default_instance_;
     }
 
-    bool CT_LevelGroup::has_s_name_attr() const
+    bool CT_LevelGroup::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_LevelGroup::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_LevelGroup::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_LevelGroup::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_LevelGroup::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_LevelGroup::has_s_uniqueName_attr() const
+    bool CT_LevelGroup::has_uniqueName_attr() const
     {    
-    return m_has_s_uniqueName_attr;
+    return m_has_uniqueName_attr;
     }
 
-    void CT_LevelGroup::set_s_uniqueName_attr(const ns_s::ST_Xstring& _s_uniqueName_attr)
+    void CT_LevelGroup::set_uniqueName_attr(const ns_s::ST_Xstring& _uniqueName_attr)
     {    
-    m_has_s_uniqueName_attr = true;
-    m_s_uniqueName_attr = new ns_s::ST_Xstring(_s_uniqueName_attr);
+    m_has_uniqueName_attr = true;
+    m_uniqueName_attr = new ns_s::ST_Xstring(_uniqueName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_LevelGroup::get_s_uniqueName_attr() const
+    const ns_s::ST_Xstring& CT_LevelGroup::get_uniqueName_attr() const
     {    
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        return *m_s_uniqueName_attr;
+        return *m_uniqueName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_LevelGroup::has_s_caption_attr() const
+    bool CT_LevelGroup::has_caption_attr() const
     {    
-    return m_has_s_caption_attr;
+    return m_has_caption_attr;
     }
 
-    void CT_LevelGroup::set_s_caption_attr(const ns_s::ST_Xstring& _s_caption_attr)
+    void CT_LevelGroup::set_caption_attr(const ns_s::ST_Xstring& _caption_attr)
     {    
-    m_has_s_caption_attr = true;
-    m_s_caption_attr = new ns_s::ST_Xstring(_s_caption_attr);
+    m_has_caption_attr = true;
+    m_caption_attr = new ns_s::ST_Xstring(_caption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_LevelGroup::get_s_caption_attr() const
+    const ns_s::ST_Xstring& CT_LevelGroup::get_caption_attr() const
     {    
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        return *m_s_caption_attr;
+        return *m_caption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_LevelGroup::has_s_uniqueParent_attr() const
+    bool CT_LevelGroup::has_uniqueParent_attr() const
     {    
-    return m_has_s_uniqueParent_attr;
+    return m_has_uniqueParent_attr;
     }
 
-    void CT_LevelGroup::set_s_uniqueParent_attr(const ns_s::ST_Xstring& _s_uniqueParent_attr)
+    void CT_LevelGroup::set_uniqueParent_attr(const ns_s::ST_Xstring& _uniqueParent_attr)
     {    
-    m_has_s_uniqueParent_attr = true;
-    m_s_uniqueParent_attr = new ns_s::ST_Xstring(_s_uniqueParent_attr);
+    m_has_uniqueParent_attr = true;
+    m_uniqueParent_attr = new ns_s::ST_Xstring(_uniqueParent_attr);
     }
 
-    const ns_s::ST_Xstring& CT_LevelGroup::get_s_uniqueParent_attr() const
+    const ns_s::ST_Xstring& CT_LevelGroup::get_uniqueParent_attr() const
     {    
-    if (m_s_uniqueParent_attr)
+    if (m_uniqueParent_attr)
     {
-        return *m_s_uniqueParent_attr;
+        return *m_uniqueParent_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -24080,6 +25343,11 @@ CT_Groups* CT_Groups::default_instance_ = NULL;
 CT_LevelGroup* CT_LevelGroup::default_instance_ = NULL;
 
     // CT_GroupMembers
+    CT_GroupMembers::CT_GroupMembers()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_GroupMember* CT_GroupMembers::add_groupMember()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -24125,7 +25393,7 @@ CT_LevelGroup* CT_LevelGroup::default_instance_ = NULL;
         {
             if ((*iter)->has_groupMember())
             {
-                (*iter)->get_groupMember().toXmlElem("groupMember", "", _outStream);
+                (*iter)->get_groupMember().toXmlElem("main:groupMember", "", _outStream);
             }
         }
     }
@@ -24160,6 +25428,11 @@ CT_LevelGroup* CT_LevelGroup::default_instance_ = NULL;
 
 
     // CT_GroupMembers::ChildGroup_1
+    CT_GroupMembers::ChildGroup_1::ChildGroup_1()
+    :m_has_groupMember(false),
+    m_groupMember(NULL)
+    {
+    }
     bool CT_GroupMembers::ChildGroup_1::has_groupMember() const
     {    
     return m_has_groupMember;
@@ -24188,14 +25461,21 @@ CT_LevelGroup* CT_LevelGroup::default_instance_ = NULL;
 CT_GroupMembers* CT_GroupMembers::default_instance_ = NULL;
 
     // CT_GroupMember
+    CT_GroupMember::CT_GroupMember()
+    :m_has_uniqueName_attr(false),
+    m_uniqueName_attr(NULL),
+    m_has_group_attr(false),
+    m_group_attr(false)
+    {
+    }
     void CT_GroupMember::clear()
     {    
-    m_has_s_uniqueName_attr = false;
+    m_has_uniqueName_attr = false;
     
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        delete m_s_uniqueName_attr;
-        m_s_uniqueName_attr = NULL;
+        delete m_uniqueName_attr;
+        m_uniqueName_attr = NULL;
     }
     
     
@@ -24212,9 +25492,9 @@ CT_GroupMembers* CT_GroupMembers::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_uniqueName_attr)
+    if (m_has_uniqueName_attr)
     {
-        m_s_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
+        m_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
     }
     
     
@@ -24237,22 +25517,22 @@ CT_GroupMembers* CT_GroupMembers::default_instance_ = NULL;
     return *CT_GroupMember::default_instance_;
     }
 
-    bool CT_GroupMember::has_s_uniqueName_attr() const
+    bool CT_GroupMember::has_uniqueName_attr() const
     {    
-    return m_has_s_uniqueName_attr;
+    return m_has_uniqueName_attr;
     }
 
-    void CT_GroupMember::set_s_uniqueName_attr(const ns_s::ST_Xstring& _s_uniqueName_attr)
+    void CT_GroupMember::set_uniqueName_attr(const ns_s::ST_Xstring& _uniqueName_attr)
     {    
-    m_has_s_uniqueName_attr = true;
-    m_s_uniqueName_attr = new ns_s::ST_Xstring(_s_uniqueName_attr);
+    m_has_uniqueName_attr = true;
+    m_uniqueName_attr = new ns_s::ST_Xstring(_uniqueName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_GroupMember::get_s_uniqueName_attr() const
+    const ns_s::ST_Xstring& CT_GroupMember::get_uniqueName_attr() const
     {    
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        return *m_s_uniqueName_attr;
+        return *m_uniqueName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -24276,6 +25556,19 @@ CT_GroupMembers* CT_GroupMembers::default_instance_ = NULL;
 CT_GroupMember* CT_GroupMember::default_instance_ = NULL;
 
     // CT_TupleCache
+    CT_TupleCache::CT_TupleCache()
+    :m_has_entries(false),
+    m_entries(NULL),
+    m_has_sets(false),
+    m_sets(NULL),
+    m_has_queryCache(false),
+    m_queryCache(NULL),
+    m_has_serverFormats(false),
+    m_serverFormats(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_TupleCache::has_entries() const
     {    
     return m_has_entries;
@@ -24412,27 +25705,27 @@ CT_GroupMember* CT_GroupMember::default_instance_ = NULL;
             
     if (m_has_entries)
     {
-        m_entries->toXmlElem("entries", "", _outStream);;
+        m_entries->toXmlElem("main:entries", "", _outStream);;
     }
     
     if (m_has_sets)
     {
-        m_sets->toXmlElem("sets", "", _outStream);;
+        m_sets->toXmlElem("main:sets", "", _outStream);;
     }
     
     if (m_has_queryCache)
     {
-        m_queryCache->toXmlElem("queryCache", "", _outStream);;
+        m_queryCache->toXmlElem("main:queryCache", "", _outStream);;
     }
     
     if (m_has_serverFormats)
     {
-        m_serverFormats->toXmlElem("serverFormats", "", _outStream);;
+        m_serverFormats->toXmlElem("main:serverFormats", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -24450,23 +25743,30 @@ CT_GroupMember* CT_GroupMember::default_instance_ = NULL;
 CT_TupleCache* CT_TupleCache::default_instance_ = NULL;
 
     // CT_ServerFormat
+    CT_ServerFormat::CT_ServerFormat()
+    :m_has_culture_attr(false),
+    m_culture_attr(NULL),
+    m_has_format_attr(false),
+    m_format_attr(NULL)
+    {
+    }
     void CT_ServerFormat::clear()
     {    
-    m_has_s_culture_attr = false;
+    m_has_culture_attr = false;
     
-    if (m_s_culture_attr)
+    if (m_culture_attr)
     {
-        delete m_s_culture_attr;
-        m_s_culture_attr = NULL;
+        delete m_culture_attr;
+        m_culture_attr = NULL;
     }
     
     
-    m_has_s_format_attr = false;
+    m_has_format_attr = false;
     
-    if (m_s_format_attr)
+    if (m_format_attr)
     {
-        delete m_s_format_attr;
-        m_s_format_attr = NULL;
+        delete m_format_attr;
+        m_format_attr = NULL;
     }
     
     }
@@ -24480,15 +25780,15 @@ CT_TupleCache* CT_TupleCache::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_culture_attr)
+    if (m_has_culture_attr)
     {
-        m_s_culture_attr->toXmlAttr("culture", _outStream);
+        m_culture_attr->toXmlAttr("culture", _outStream);
     }
     
     
-    if (m_has_s_format_attr)
+    if (m_has_format_attr)
     {
-        m_s_format_attr->toXmlAttr("format", _outStream);
+        m_format_attr->toXmlAttr("format", _outStream);
     }
     
             _outStream << ">";
@@ -24505,42 +25805,42 @@ CT_TupleCache* CT_TupleCache::default_instance_ = NULL;
     return *CT_ServerFormat::default_instance_;
     }
 
-    bool CT_ServerFormat::has_s_culture_attr() const
+    bool CT_ServerFormat::has_culture_attr() const
     {    
-    return m_has_s_culture_attr;
+    return m_has_culture_attr;
     }
 
-    void CT_ServerFormat::set_s_culture_attr(const ns_s::ST_Xstring& _s_culture_attr)
+    void CT_ServerFormat::set_culture_attr(const ns_s::ST_Xstring& _culture_attr)
     {    
-    m_has_s_culture_attr = true;
-    m_s_culture_attr = new ns_s::ST_Xstring(_s_culture_attr);
+    m_has_culture_attr = true;
+    m_culture_attr = new ns_s::ST_Xstring(_culture_attr);
     }
 
-    const ns_s::ST_Xstring& CT_ServerFormat::get_s_culture_attr() const
+    const ns_s::ST_Xstring& CT_ServerFormat::get_culture_attr() const
     {    
-    if (m_s_culture_attr)
+    if (m_culture_attr)
     {
-        return *m_s_culture_attr;
+        return *m_culture_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_ServerFormat::has_s_format_attr() const
+    bool CT_ServerFormat::has_format_attr() const
     {    
-    return m_has_s_format_attr;
+    return m_has_format_attr;
     }
 
-    void CT_ServerFormat::set_s_format_attr(const ns_s::ST_Xstring& _s_format_attr)
+    void CT_ServerFormat::set_format_attr(const ns_s::ST_Xstring& _format_attr)
     {    
-    m_has_s_format_attr = true;
-    m_s_format_attr = new ns_s::ST_Xstring(_s_format_attr);
+    m_has_format_attr = true;
+    m_format_attr = new ns_s::ST_Xstring(_format_attr);
     }
 
-    const ns_s::ST_Xstring& CT_ServerFormat::get_s_format_attr() const
+    const ns_s::ST_Xstring& CT_ServerFormat::get_format_attr() const
     {    
-    if (m_s_format_attr)
+    if (m_format_attr)
     {
-        return *m_s_format_attr;
+        return *m_format_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -24548,6 +25848,11 @@ CT_TupleCache* CT_TupleCache::default_instance_ = NULL;
 CT_ServerFormat* CT_ServerFormat::default_instance_ = NULL;
 
     // CT_ServerFormats
+    CT_ServerFormats::CT_ServerFormats()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_ServerFormat* CT_ServerFormats::add_serverFormat()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -24593,7 +25898,7 @@ CT_ServerFormat* CT_ServerFormat::default_instance_ = NULL;
         {
             if ((*iter)->has_serverFormat())
             {
-                (*iter)->get_serverFormat().toXmlElem("serverFormat", "", _outStream);
+                (*iter)->get_serverFormat().toXmlElem("main:serverFormat", "", _outStream);
             }
         }
     }
@@ -24628,6 +25933,11 @@ CT_ServerFormat* CT_ServerFormat::default_instance_ = NULL;
 
 
     // CT_ServerFormats::ChildGroup_1
+    CT_ServerFormats::ChildGroup_1::ChildGroup_1()
+    :m_has_serverFormat(false),
+    m_serverFormat(NULL)
+    {
+    }
     bool CT_ServerFormats::ChildGroup_1::has_serverFormat() const
     {    
     return m_has_serverFormat;
@@ -24656,6 +25966,11 @@ CT_ServerFormat* CT_ServerFormat::default_instance_ = NULL;
 CT_ServerFormats* CT_ServerFormats::default_instance_ = NULL;
 
     // CT_PCDSDTCEntries
+    CT_PCDSDTCEntries::CT_PCDSDTCEntries()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Missing* CT_PCDSDTCEntries::add_m()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -24725,19 +26040,19 @@ CT_ServerFormats* CT_ServerFormats::default_instance_ = NULL;
         {
             if ((*iter)->has_m())
             {
-                (*iter)->get_m().toXmlElem("m", "", _outStream);
+                (*iter)->get_m().toXmlElem("main:m", "", _outStream);
             }
             else if ((*iter)->has_n())
             {
-                (*iter)->get_n().toXmlElem("n", "", _outStream);
+                (*iter)->get_n().toXmlElem("main:n", "", _outStream);
             }
             else if ((*iter)->has_e())
             {
-                (*iter)->get_e().toXmlElem("e", "", _outStream);
+                (*iter)->get_e().toXmlElem("main:e", "", _outStream);
             }
             else if ((*iter)->has_s())
             {
-                (*iter)->get_s().toXmlElem("s", "", _outStream);
+                (*iter)->get_s().toXmlElem("main:s", "", _outStream);
             }
         }
     }
@@ -24772,6 +26087,17 @@ CT_ServerFormats* CT_ServerFormats::default_instance_ = NULL;
 
 
     // CT_PCDSDTCEntries::ChildGroup_1
+    CT_PCDSDTCEntries::ChildGroup_1::ChildGroup_1()
+    :m_has_m(false),
+    m_m(NULL),
+    m_has_n(false),
+    m_n(NULL),
+    m_has_e(false),
+    m_e(NULL),
+    m_has_s(false),
+    m_s(NULL)
+    {
+    }
     bool CT_PCDSDTCEntries::ChildGroup_1::has_m() const
     {    
     return m_has_m;
@@ -24983,6 +26309,11 @@ CT_ServerFormats* CT_ServerFormats::default_instance_ = NULL;
 CT_PCDSDTCEntries* CT_PCDSDTCEntries::default_instance_ = NULL;
 
     // CT_Tuples
+    CT_Tuples::CT_Tuples()
+    :m_has_c_attr(false),
+    m_c_attr(0)
+    {
+    }
     CT_Tuple* CT_Tuples::add_tpl()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -25028,7 +26359,7 @@ CT_PCDSDTCEntries* CT_PCDSDTCEntries::default_instance_ = NULL;
         {
             if ((*iter)->has_tpl())
             {
-                (*iter)->get_tpl().toXmlElem("tpl", "", _outStream);
+                (*iter)->get_tpl().toXmlElem("main:tpl", "", _outStream);
             }
         }
     }
@@ -25063,6 +26394,11 @@ CT_PCDSDTCEntries* CT_PCDSDTCEntries::default_instance_ = NULL;
 
 
     // CT_Tuples::ChildGroup_1
+    CT_Tuples::ChildGroup_1::ChildGroup_1()
+    :m_has_tpl(false),
+    m_tpl(NULL)
+    {
+    }
     bool CT_Tuples::ChildGroup_1::has_tpl() const
     {    
     return m_has_tpl;
@@ -25091,6 +26427,15 @@ CT_PCDSDTCEntries* CT_PCDSDTCEntries::default_instance_ = NULL;
 CT_Tuples* CT_Tuples::default_instance_ = NULL;
 
     // CT_Tuple
+    CT_Tuple::CT_Tuple()
+    :m_has_fld_attr(false),
+    m_fld_attr(0),
+    m_has_hier_attr(false),
+    m_hier_attr(0),
+    m_has_item_attr(false),
+    m_item_attr(0)
+    {
+    }
     void CT_Tuple::clear()
     {    
     m_has_fld_attr = false;
@@ -25194,6 +26539,11 @@ CT_Tuples* CT_Tuples::default_instance_ = NULL;
 CT_Tuple* CT_Tuple::default_instance_ = NULL;
 
     // CT_Sets
+    CT_Sets::CT_Sets()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Set* CT_Sets::add_set()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -25239,7 +26589,7 @@ CT_Tuple* CT_Tuple::default_instance_ = NULL;
         {
             if ((*iter)->has_set())
             {
-                (*iter)->get_set().toXmlElem("set", "", _outStream);
+                (*iter)->get_set().toXmlElem("main:set", "", _outStream);
             }
         }
     }
@@ -25274,6 +26624,11 @@ CT_Tuple* CT_Tuple::default_instance_ = NULL;
 
 
     // CT_Sets::ChildGroup_1
+    CT_Sets::ChildGroup_1::ChildGroup_1()
+    :m_has_set(false),
+    m_set(NULL)
+    {
+    }
     bool CT_Sets::ChildGroup_1::has_set() const
     {    
     return m_has_set;
@@ -25302,6 +26657,19 @@ CT_Tuple* CT_Tuple::default_instance_ = NULL;
 CT_Sets* CT_Sets::default_instance_ = NULL;
 
     // CT_Set
+    CT_Set::CT_Set()
+    :m_has_count_attr(false),
+    m_count_attr(0),
+    m_has_maxRank_attr(false),
+    m_maxRank_attr(0),
+    m_has_setDefinition_attr(false),
+    m_setDefinition_attr(NULL),
+    m_has_sortType_attr(false),
+    m_sortType_attr(NULL),
+    m_has_queryFailed_attr(false),
+    m_queryFailed_attr(false)
+    {
+    }
     CT_Tuples* CT_Set::add_tpls()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -25326,12 +26694,12 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
     m_has_maxRank_attr = false;
     m_maxRank_attr = 0;
     
-    m_has_s_setDefinition_attr = false;
+    m_has_setDefinition_attr = false;
     
-    if (m_s_setDefinition_attr)
+    if (m_setDefinition_attr)
     {
-        delete m_s_setDefinition_attr;
-        m_s_setDefinition_attr = NULL;
+        delete m_setDefinition_attr;
+        m_setDefinition_attr = NULL;
     }
     
     
@@ -25378,9 +26746,9 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_setDefinition_attr)
+    if (m_has_setDefinition_attr)
     {
-        m_s_setDefinition_attr->toXmlAttr("setDefinition", _outStream);
+        m_setDefinition_attr->toXmlAttr("setDefinition", _outStream);
     }
     
     
@@ -25403,11 +26771,11 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
         {
             if ((*iter)->has_tpls())
             {
-                (*iter)->get_tpls().toXmlElem("tpls", "", _outStream);
+                (*iter)->get_tpls().toXmlElem("main:tpls", "", _outStream);
             }
             else if ((*iter)->has_sortByTuple())
             {
-                (*iter)->get_sortByTuple().toXmlElem("sortByTuple", "", _outStream);
+                (*iter)->get_sortByTuple().toXmlElem("main:sortByTuple", "", _outStream);
             }
         }
     }
@@ -25456,22 +26824,22 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
     return m_maxRank_attr;
     }
 
-    bool CT_Set::has_s_setDefinition_attr() const
+    bool CT_Set::has_setDefinition_attr() const
     {    
-    return m_has_s_setDefinition_attr;
+    return m_has_setDefinition_attr;
     }
 
-    void CT_Set::set_s_setDefinition_attr(const ns_s::ST_Xstring& _s_setDefinition_attr)
+    void CT_Set::set_setDefinition_attr(const ns_s::ST_Xstring& _setDefinition_attr)
     {    
-    m_has_s_setDefinition_attr = true;
-    m_s_setDefinition_attr = new ns_s::ST_Xstring(_s_setDefinition_attr);
+    m_has_setDefinition_attr = true;
+    m_setDefinition_attr = new ns_s::ST_Xstring(_setDefinition_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Set::get_s_setDefinition_attr() const
+    const ns_s::ST_Xstring& CT_Set::get_setDefinition_attr() const
     {    
-    if (m_s_setDefinition_attr)
+    if (m_setDefinition_attr)
     {
-        return *m_s_setDefinition_attr;
+        return *m_setDefinition_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -25514,6 +26882,13 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
 
 
     // CT_Set::ChildGroup_1
+    CT_Set::ChildGroup_1::ChildGroup_1()
+    :m_has_tpls(false),
+    m_tpls(NULL),
+    m_has_sortByTuple(false),
+    m_sortByTuple(NULL)
+    {
+    }
     bool CT_Set::ChildGroup_1::has_tpls() const
     {    
     return m_has_tpls;
@@ -25585,6 +26960,11 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
 CT_Set* CT_Set::default_instance_ = NULL;
 
     // CT_QueryCache
+    CT_QueryCache::CT_QueryCache()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Query* CT_QueryCache::add_query()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -25630,7 +27010,7 @@ CT_Set* CT_Set::default_instance_ = NULL;
         {
             if ((*iter)->has_query())
             {
-                (*iter)->get_query().toXmlElem("query", "", _outStream);
+                (*iter)->get_query().toXmlElem("main:query", "", _outStream);
             }
         }
     }
@@ -25665,6 +27045,11 @@ CT_Set* CT_Set::default_instance_ = NULL;
 
 
     // CT_QueryCache::ChildGroup_1
+    CT_QueryCache::ChildGroup_1::ChildGroup_1()
+    :m_has_query(false),
+    m_query(NULL)
+    {
+    }
     bool CT_QueryCache::ChildGroup_1::has_query() const
     {    
     return m_has_query;
@@ -25693,6 +27078,13 @@ CT_Set* CT_Set::default_instance_ = NULL;
 CT_QueryCache* CT_QueryCache::default_instance_ = NULL;
 
     // CT_Query
+    CT_Query::CT_Query()
+    :m_has_tpls(false),
+    m_tpls(NULL),
+    m_has_mdx_attr(false),
+    m_mdx_attr(NULL)
+    {
+    }
     bool CT_Query::has_tpls() const
     {    
     return m_has_tpls;
@@ -25719,12 +27111,12 @@ CT_QueryCache* CT_QueryCache::default_instance_ = NULL;
 
     void CT_Query::clear()
     {    
-    m_has_s_mdx_attr = false;
+    m_has_mdx_attr = false;
     
-    if (m_s_mdx_attr)
+    if (m_mdx_attr)
     {
-        delete m_s_mdx_attr;
-        m_s_mdx_attr = NULL;
+        delete m_mdx_attr;
+        m_mdx_attr = NULL;
     }
     
     }
@@ -25738,16 +27130,16 @@ CT_QueryCache* CT_QueryCache::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_mdx_attr)
+    if (m_has_mdx_attr)
     {
-        m_s_mdx_attr->toXmlAttr("mdx", _outStream);
+        m_mdx_attr->toXmlAttr("mdx", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_tpls)
     {
-        m_tpls->toXmlElem("tpls", "", _outStream);;
+        m_tpls->toXmlElem("main:tpls", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -25762,22 +27154,22 @@ CT_QueryCache* CT_QueryCache::default_instance_ = NULL;
     return *CT_Query::default_instance_;
     }
 
-    bool CT_Query::has_s_mdx_attr() const
+    bool CT_Query::has_mdx_attr() const
     {    
-    return m_has_s_mdx_attr;
+    return m_has_mdx_attr;
     }
 
-    void CT_Query::set_s_mdx_attr(const ns_s::ST_Xstring& _s_mdx_attr)
+    void CT_Query::set_mdx_attr(const ns_s::ST_Xstring& _mdx_attr)
     {    
-    m_has_s_mdx_attr = true;
-    m_s_mdx_attr = new ns_s::ST_Xstring(_s_mdx_attr);
+    m_has_mdx_attr = true;
+    m_mdx_attr = new ns_s::ST_Xstring(_mdx_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Query::get_s_mdx_attr() const
+    const ns_s::ST_Xstring& CT_Query::get_mdx_attr() const
     {    
-    if (m_s_mdx_attr)
+    if (m_mdx_attr)
     {
-        return *m_s_mdx_attr;
+        return *m_mdx_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -25785,6 +27177,11 @@ CT_QueryCache* CT_QueryCache::default_instance_ = NULL;
 CT_Query* CT_Query::default_instance_ = NULL;
 
     // CT_CalculatedItems
+    CT_CalculatedItems::CT_CalculatedItems()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_CalculatedItem* CT_CalculatedItems::add_calculatedItem()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -25830,7 +27227,7 @@ CT_Query* CT_Query::default_instance_ = NULL;
         {
             if ((*iter)->has_calculatedItem())
             {
-                (*iter)->get_calculatedItem().toXmlElem("calculatedItem", "", _outStream);
+                (*iter)->get_calculatedItem().toXmlElem("main:calculatedItem", "", _outStream);
             }
         }
     }
@@ -25865,6 +27262,11 @@ CT_Query* CT_Query::default_instance_ = NULL;
 
 
     // CT_CalculatedItems::ChildGroup_1
+    CT_CalculatedItems::ChildGroup_1::ChildGroup_1()
+    :m_has_calculatedItem(false),
+    m_calculatedItem(NULL)
+    {
+    }
     bool CT_CalculatedItems::ChildGroup_1::has_calculatedItem() const
     {    
     return m_has_calculatedItem;
@@ -25893,6 +27295,17 @@ CT_Query* CT_Query::default_instance_ = NULL;
 CT_CalculatedItems* CT_CalculatedItems::default_instance_ = NULL;
 
     // CT_CalculatedItem
+    CT_CalculatedItem::CT_CalculatedItem()
+    :m_has_pivotArea(false),
+    m_pivotArea(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_field_attr(false),
+    m_field_attr(0),
+    m_has_formula_attr(false),
+    m_formula_attr(NULL)
+    {
+    }
     bool CT_CalculatedItem::has_pivotArea() const
     {    
     return m_has_pivotArea;
@@ -25946,12 +27359,12 @@ CT_CalculatedItems* CT_CalculatedItems::default_instance_ = NULL;
     m_has_field_attr = false;
     m_field_attr = 0;
     
-    m_has_s_formula_attr = false;
+    m_has_formula_attr = false;
     
-    if (m_s_formula_attr)
+    if (m_formula_attr)
     {
-        delete m_s_formula_attr;
-        m_s_formula_attr = NULL;
+        delete m_formula_attr;
+        m_formula_attr = NULL;
     }
     
     }
@@ -25971,21 +27384,21 @@ CT_CalculatedItems* CT_CalculatedItems::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_formula_attr)
+    if (m_has_formula_attr)
     {
-        m_s_formula_attr->toXmlAttr("formula", _outStream);
+        m_formula_attr->toXmlAttr("formula", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("pivotArea", "", _outStream);;
+        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -26016,22 +27429,22 @@ CT_CalculatedItems* CT_CalculatedItems::default_instance_ = NULL;
     return m_field_attr;
     }
 
-    bool CT_CalculatedItem::has_s_formula_attr() const
+    bool CT_CalculatedItem::has_formula_attr() const
     {    
-    return m_has_s_formula_attr;
+    return m_has_formula_attr;
     }
 
-    void CT_CalculatedItem::set_s_formula_attr(const ns_s::ST_Xstring& _s_formula_attr)
+    void CT_CalculatedItem::set_formula_attr(const ns_s::ST_Xstring& _formula_attr)
     {    
-    m_has_s_formula_attr = true;
-    m_s_formula_attr = new ns_s::ST_Xstring(_s_formula_attr);
+    m_has_formula_attr = true;
+    m_formula_attr = new ns_s::ST_Xstring(_formula_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CalculatedItem::get_s_formula_attr() const
+    const ns_s::ST_Xstring& CT_CalculatedItem::get_formula_attr() const
     {    
-    if (m_s_formula_attr)
+    if (m_formula_attr)
     {
-        return *m_s_formula_attr;
+        return *m_formula_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -26039,6 +27452,11 @@ CT_CalculatedItems* CT_CalculatedItems::default_instance_ = NULL;
 CT_CalculatedItem* CT_CalculatedItem::default_instance_ = NULL;
 
     // CT_CalculatedMembers
+    CT_CalculatedMembers::CT_CalculatedMembers()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_CalculatedMember* CT_CalculatedMembers::add_calculatedMember()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -26084,7 +27502,7 @@ CT_CalculatedItem* CT_CalculatedItem::default_instance_ = NULL;
         {
             if ((*iter)->has_calculatedMember())
             {
-                (*iter)->get_calculatedMember().toXmlElem("calculatedMember", "", _outStream);
+                (*iter)->get_calculatedMember().toXmlElem("main:calculatedMember", "", _outStream);
             }
         }
     }
@@ -26119,6 +27537,11 @@ CT_CalculatedItem* CT_CalculatedItem::default_instance_ = NULL;
 
 
     // CT_CalculatedMembers::ChildGroup_1
+    CT_CalculatedMembers::ChildGroup_1::ChildGroup_1()
+    :m_has_calculatedMember(false),
+    m_calculatedMember(NULL)
+    {
+    }
     bool CT_CalculatedMembers::ChildGroup_1::has_calculatedMember() const
     {    
     return m_has_calculatedMember;
@@ -26147,6 +27570,25 @@ CT_CalculatedItem* CT_CalculatedItem::default_instance_ = NULL;
 CT_CalculatedMembers* CT_CalculatedMembers::default_instance_ = NULL;
 
     // CT_CalculatedMember
+    CT_CalculatedMember::CT_CalculatedMember()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_mdx_attr(false),
+    m_mdx_attr(NULL),
+    m_has_memberName_attr(false),
+    m_memberName_attr(NULL),
+    m_has_hierarchy_attr(false),
+    m_hierarchy_attr(NULL),
+    m_has_parent_attr(false),
+    m_parent_attr(NULL),
+    m_has_solveOrder_attr(false),
+    m_solveOrder_attr(0),
+    m_has_set_attr(false),
+    m_set_attr(false)
+    {
+    }
     bool CT_CalculatedMember::has_extLst() const
     {    
     return m_has_extLst;
@@ -26173,48 +27615,48 @@ CT_CalculatedMembers* CT_CalculatedMembers::default_instance_ = NULL;
 
     void CT_CalculatedMember::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_mdx_attr = false;
+    m_has_mdx_attr = false;
     
-    if (m_s_mdx_attr)
+    if (m_mdx_attr)
     {
-        delete m_s_mdx_attr;
-        m_s_mdx_attr = NULL;
+        delete m_mdx_attr;
+        m_mdx_attr = NULL;
     }
     
     
-    m_has_s_memberName_attr = false;
+    m_has_memberName_attr = false;
     
-    if (m_s_memberName_attr)
+    if (m_memberName_attr)
     {
-        delete m_s_memberName_attr;
-        m_s_memberName_attr = NULL;
+        delete m_memberName_attr;
+        m_memberName_attr = NULL;
     }
     
     
-    m_has_s_hierarchy_attr = false;
+    m_has_hierarchy_attr = false;
     
-    if (m_s_hierarchy_attr)
+    if (m_hierarchy_attr)
     {
-        delete m_s_hierarchy_attr;
-        m_s_hierarchy_attr = NULL;
+        delete m_hierarchy_attr;
+        m_hierarchy_attr = NULL;
     }
     
     
-    m_has_s_parent_attr = false;
+    m_has_parent_attr = false;
     
-    if (m_s_parent_attr)
+    if (m_parent_attr)
     {
-        delete m_s_parent_attr;
-        m_s_parent_attr = NULL;
+        delete m_parent_attr;
+        m_parent_attr = NULL;
     }
     
     
@@ -26234,33 +27676,33 @@ CT_CalculatedMembers* CT_CalculatedMembers::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_mdx_attr)
+    if (m_has_mdx_attr)
     {
-        m_s_mdx_attr->toXmlAttr("mdx", _outStream);
+        m_mdx_attr->toXmlAttr("mdx", _outStream);
     }
     
     
-    if (m_has_s_memberName_attr)
+    if (m_has_memberName_attr)
     {
-        m_s_memberName_attr->toXmlAttr("memberName", _outStream);
+        m_memberName_attr->toXmlAttr("memberName", _outStream);
     }
     
     
-    if (m_has_s_hierarchy_attr)
+    if (m_has_hierarchy_attr)
     {
-        m_s_hierarchy_attr->toXmlAttr("hierarchy", _outStream);
+        m_hierarchy_attr->toXmlAttr("hierarchy", _outStream);
     }
     
     
-    if (m_has_s_parent_attr)
+    if (m_has_parent_attr)
     {
-        m_s_parent_attr->toXmlAttr("parent", _outStream);
+        m_parent_attr->toXmlAttr("parent", _outStream);
     }
     
     
@@ -26279,7 +27721,7 @@ CT_CalculatedMembers* CT_CalculatedMembers::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -26294,102 +27736,102 @@ CT_CalculatedMembers* CT_CalculatedMembers::default_instance_ = NULL;
     return *CT_CalculatedMember::default_instance_;
     }
 
-    bool CT_CalculatedMember::has_s_name_attr() const
+    bool CT_CalculatedMember::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_CalculatedMember::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_CalculatedMember::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CalculatedMember::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_CalculatedMember::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CalculatedMember::has_s_mdx_attr() const
+    bool CT_CalculatedMember::has_mdx_attr() const
     {    
-    return m_has_s_mdx_attr;
+    return m_has_mdx_attr;
     }
 
-    void CT_CalculatedMember::set_s_mdx_attr(const ns_s::ST_Xstring& _s_mdx_attr)
+    void CT_CalculatedMember::set_mdx_attr(const ns_s::ST_Xstring& _mdx_attr)
     {    
-    m_has_s_mdx_attr = true;
-    m_s_mdx_attr = new ns_s::ST_Xstring(_s_mdx_attr);
+    m_has_mdx_attr = true;
+    m_mdx_attr = new ns_s::ST_Xstring(_mdx_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CalculatedMember::get_s_mdx_attr() const
+    const ns_s::ST_Xstring& CT_CalculatedMember::get_mdx_attr() const
     {    
-    if (m_s_mdx_attr)
+    if (m_mdx_attr)
     {
-        return *m_s_mdx_attr;
+        return *m_mdx_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CalculatedMember::has_s_memberName_attr() const
+    bool CT_CalculatedMember::has_memberName_attr() const
     {    
-    return m_has_s_memberName_attr;
+    return m_has_memberName_attr;
     }
 
-    void CT_CalculatedMember::set_s_memberName_attr(const ns_s::ST_Xstring& _s_memberName_attr)
+    void CT_CalculatedMember::set_memberName_attr(const ns_s::ST_Xstring& _memberName_attr)
     {    
-    m_has_s_memberName_attr = true;
-    m_s_memberName_attr = new ns_s::ST_Xstring(_s_memberName_attr);
+    m_has_memberName_attr = true;
+    m_memberName_attr = new ns_s::ST_Xstring(_memberName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CalculatedMember::get_s_memberName_attr() const
+    const ns_s::ST_Xstring& CT_CalculatedMember::get_memberName_attr() const
     {    
-    if (m_s_memberName_attr)
+    if (m_memberName_attr)
     {
-        return *m_s_memberName_attr;
+        return *m_memberName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CalculatedMember::has_s_hierarchy_attr() const
+    bool CT_CalculatedMember::has_hierarchy_attr() const
     {    
-    return m_has_s_hierarchy_attr;
+    return m_has_hierarchy_attr;
     }
 
-    void CT_CalculatedMember::set_s_hierarchy_attr(const ns_s::ST_Xstring& _s_hierarchy_attr)
+    void CT_CalculatedMember::set_hierarchy_attr(const ns_s::ST_Xstring& _hierarchy_attr)
     {    
-    m_has_s_hierarchy_attr = true;
-    m_s_hierarchy_attr = new ns_s::ST_Xstring(_s_hierarchy_attr);
+    m_has_hierarchy_attr = true;
+    m_hierarchy_attr = new ns_s::ST_Xstring(_hierarchy_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CalculatedMember::get_s_hierarchy_attr() const
+    const ns_s::ST_Xstring& CT_CalculatedMember::get_hierarchy_attr() const
     {    
-    if (m_s_hierarchy_attr)
+    if (m_hierarchy_attr)
     {
-        return *m_s_hierarchy_attr;
+        return *m_hierarchy_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CalculatedMember::has_s_parent_attr() const
+    bool CT_CalculatedMember::has_parent_attr() const
     {    
-    return m_has_s_parent_attr;
+    return m_has_parent_attr;
     }
 
-    void CT_CalculatedMember::set_s_parent_attr(const ns_s::ST_Xstring& _s_parent_attr)
+    void CT_CalculatedMember::set_parent_attr(const ns_s::ST_Xstring& _parent_attr)
     {    
-    m_has_s_parent_attr = true;
-    m_s_parent_attr = new ns_s::ST_Xstring(_s_parent_attr);
+    m_has_parent_attr = true;
+    m_parent_attr = new ns_s::ST_Xstring(_parent_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CalculatedMember::get_s_parent_attr() const
+    const ns_s::ST_Xstring& CT_CalculatedMember::get_parent_attr() const
     {    
-    if (m_s_parent_attr)
+    if (m_parent_attr)
     {
-        return *m_s_parent_attr;
+        return *m_parent_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -26429,6 +27871,179 @@ CT_CalculatedMembers* CT_CalculatedMembers::default_instance_ = NULL;
 CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
 
     // CT_pivotTableDefinition
+    CT_pivotTableDefinition::CT_pivotTableDefinition()
+    :m_has_location(false),
+    m_location(NULL),
+    m_has_pivotFields(false),
+    m_pivotFields(NULL),
+    m_has_rowFields(false),
+    m_rowFields(NULL),
+    m_has_rowItems(false),
+    m_rowItems(NULL),
+    m_has_colFields(false),
+    m_colFields(NULL),
+    m_has_colItems(false),
+    m_colItems(NULL),
+    m_has_pageFields(false),
+    m_pageFields(NULL),
+    m_has_dataFields(false),
+    m_dataFields(NULL),
+    m_has_formats(false),
+    m_formats(NULL),
+    m_has_conditionalFormats(false),
+    m_conditionalFormats(NULL),
+    m_has_chartFormats(false),
+    m_chartFormats(NULL),
+    m_has_pivotHierarchies(false),
+    m_pivotHierarchies(NULL),
+    m_has_pivotTableStyleInfo(false),
+    m_pivotTableStyleInfo(NULL),
+    m_has_filters(false),
+    m_filters(NULL),
+    m_has_rowHierarchiesUsage(false),
+    m_rowHierarchiesUsage(NULL),
+    m_has_colHierarchiesUsage(false),
+    m_colHierarchiesUsage(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_cacheId_attr(false),
+    m_cacheId_attr(0),
+    m_has_dataOnRows_attr(false),
+    m_dataOnRows_attr(false),
+    m_has_dataPosition_attr(false),
+    m_dataPosition_attr(0),
+    m_has_autoFormatId_attr(false),
+    m_autoFormatId_attr(0),
+    m_has_applyNumberFormats_attr(false),
+    m_applyNumberFormats_attr(false),
+    m_has_applyBorderFormats_attr(false),
+    m_applyBorderFormats_attr(false),
+    m_has_applyFontFormats_attr(false),
+    m_applyFontFormats_attr(false),
+    m_has_applyPatternFormats_attr(false),
+    m_applyPatternFormats_attr(false),
+    m_has_applyAlignmentFormats_attr(false),
+    m_applyAlignmentFormats_attr(false),
+    m_has_applyWidthHeightFormats_attr(false),
+    m_applyWidthHeightFormats_attr(false),
+    m_has_dataCaption_attr(false),
+    m_dataCaption_attr(NULL),
+    m_has_grandTotalCaption_attr(false),
+    m_grandTotalCaption_attr(NULL),
+    m_has_errorCaption_attr(false),
+    m_errorCaption_attr(NULL),
+    m_has_showError_attr(false),
+    m_showError_attr(false),
+    m_has_missingCaption_attr(false),
+    m_missingCaption_attr(NULL),
+    m_has_showMissing_attr(false),
+    m_showMissing_attr(false),
+    m_has_pageStyle_attr(false),
+    m_pageStyle_attr(NULL),
+    m_has_pivotTableStyle_attr(false),
+    m_pivotTableStyle_attr(NULL),
+    m_has_vacatedStyle_attr(false),
+    m_vacatedStyle_attr(NULL),
+    m_has_tag_attr(false),
+    m_tag_attr(NULL),
+    m_has_updatedVersion_attr(false),
+    m_updatedVersion_attr(0),
+    m_has_minRefreshableVersion_attr(false),
+    m_minRefreshableVersion_attr(0),
+    m_has_asteriskTotals_attr(false),
+    m_asteriskTotals_attr(false),
+    m_has_showItems_attr(false),
+    m_showItems_attr(false),
+    m_has_editData_attr(false),
+    m_editData_attr(false),
+    m_has_disableFieldList_attr(false),
+    m_disableFieldList_attr(false),
+    m_has_showCalcMbrs_attr(false),
+    m_showCalcMbrs_attr(false),
+    m_has_visualTotals_attr(false),
+    m_visualTotals_attr(false),
+    m_has_showMultipleLabel_attr(false),
+    m_showMultipleLabel_attr(false),
+    m_has_showDataDropDown_attr(false),
+    m_showDataDropDown_attr(false),
+    m_has_showDrill_attr(false),
+    m_showDrill_attr(false),
+    m_has_printDrill_attr(false),
+    m_printDrill_attr(false),
+    m_has_showMemberPropertyTips_attr(false),
+    m_showMemberPropertyTips_attr(false),
+    m_has_showDataTips_attr(false),
+    m_showDataTips_attr(false),
+    m_has_enableWizard_attr(false),
+    m_enableWizard_attr(false),
+    m_has_enableDrill_attr(false),
+    m_enableDrill_attr(false),
+    m_has_enableFieldProperties_attr(false),
+    m_enableFieldProperties_attr(false),
+    m_has_preserveFormatting_attr(false),
+    m_preserveFormatting_attr(false),
+    m_has_useAutoFormatting_attr(false),
+    m_useAutoFormatting_attr(false),
+    m_has_pageWrap_attr(false),
+    m_pageWrap_attr(0),
+    m_has_pageOverThenDown_attr(false),
+    m_pageOverThenDown_attr(false),
+    m_has_subtotalHiddenItems_attr(false),
+    m_subtotalHiddenItems_attr(false),
+    m_has_rowGrandTotals_attr(false),
+    m_rowGrandTotals_attr(false),
+    m_has_colGrandTotals_attr(false),
+    m_colGrandTotals_attr(false),
+    m_has_fieldPrintTitles_attr(false),
+    m_fieldPrintTitles_attr(false),
+    m_has_itemPrintTitles_attr(false),
+    m_itemPrintTitles_attr(false),
+    m_has_mergeItem_attr(false),
+    m_mergeItem_attr(false),
+    m_has_showDropZones_attr(false),
+    m_showDropZones_attr(false),
+    m_has_createdVersion_attr(false),
+    m_createdVersion_attr(0),
+    m_has_indent_attr(false),
+    m_indent_attr(0),
+    m_has_showEmptyRow_attr(false),
+    m_showEmptyRow_attr(false),
+    m_has_showEmptyCol_attr(false),
+    m_showEmptyCol_attr(false),
+    m_has_showHeaders_attr(false),
+    m_showHeaders_attr(false),
+    m_has_compact_attr(false),
+    m_compact_attr(false),
+    m_has_outline_attr(false),
+    m_outline_attr(false),
+    m_has_outlineData_attr(false),
+    m_outlineData_attr(false),
+    m_has_compactData_attr(false),
+    m_compactData_attr(false),
+    m_has_published_attr(false),
+    m_published_attr(false),
+    m_has_gridDropZones_attr(false),
+    m_gridDropZones_attr(false),
+    m_has_immersive_attr(false),
+    m_immersive_attr(false),
+    m_has_multipleFieldFilters_attr(false),
+    m_multipleFieldFilters_attr(false),
+    m_has_chartFormat_attr(false),
+    m_chartFormat_attr(0),
+    m_has_rowHeaderCaption_attr(false),
+    m_rowHeaderCaption_attr(NULL),
+    m_has_colHeaderCaption_attr(false),
+    m_colHeaderCaption_attr(NULL),
+    m_has_fieldListSortAscending_attr(false),
+    m_fieldListSortAscending_attr(false),
+    m_has_mdxSubqueries_attr(false),
+    m_mdxSubqueries_attr(false),
+    m_has_customListSort_attr(false),
+    m_customListSort_attr(false)
+    {
+    }
     bool CT_pivotTableDefinition::has_location() const
     {    
     return m_has_location;
@@ -26839,12 +28454,12 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
 
     void CT_pivotTableDefinition::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -26878,81 +28493,81 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
     m_has_applyWidthHeightFormats_attr = false;
     m_applyWidthHeightFormats_attr = false;
     
-    m_has_s_dataCaption_attr = false;
+    m_has_dataCaption_attr = false;
     
-    if (m_s_dataCaption_attr)
+    if (m_dataCaption_attr)
     {
-        delete m_s_dataCaption_attr;
-        m_s_dataCaption_attr = NULL;
+        delete m_dataCaption_attr;
+        m_dataCaption_attr = NULL;
     }
     
     
-    m_has_s_grandTotalCaption_attr = false;
+    m_has_grandTotalCaption_attr = false;
     
-    if (m_s_grandTotalCaption_attr)
+    if (m_grandTotalCaption_attr)
     {
-        delete m_s_grandTotalCaption_attr;
-        m_s_grandTotalCaption_attr = NULL;
+        delete m_grandTotalCaption_attr;
+        m_grandTotalCaption_attr = NULL;
     }
     
     
-    m_has_s_errorCaption_attr = false;
+    m_has_errorCaption_attr = false;
     
-    if (m_s_errorCaption_attr)
+    if (m_errorCaption_attr)
     {
-        delete m_s_errorCaption_attr;
-        m_s_errorCaption_attr = NULL;
+        delete m_errorCaption_attr;
+        m_errorCaption_attr = NULL;
     }
     
     
     m_has_showError_attr = false;
     m_showError_attr = false;
     
-    m_has_s_missingCaption_attr = false;
+    m_has_missingCaption_attr = false;
     
-    if (m_s_missingCaption_attr)
+    if (m_missingCaption_attr)
     {
-        delete m_s_missingCaption_attr;
-        m_s_missingCaption_attr = NULL;
+        delete m_missingCaption_attr;
+        m_missingCaption_attr = NULL;
     }
     
     
     m_has_showMissing_attr = false;
     m_showMissing_attr = false;
     
-    m_has_s_pageStyle_attr = false;
+    m_has_pageStyle_attr = false;
     
-    if (m_s_pageStyle_attr)
+    if (m_pageStyle_attr)
     {
-        delete m_s_pageStyle_attr;
-        m_s_pageStyle_attr = NULL;
+        delete m_pageStyle_attr;
+        m_pageStyle_attr = NULL;
     }
     
     
-    m_has_s_pivotTableStyle_attr = false;
+    m_has_pivotTableStyle_attr = false;
     
-    if (m_s_pivotTableStyle_attr)
+    if (m_pivotTableStyle_attr)
     {
-        delete m_s_pivotTableStyle_attr;
-        m_s_pivotTableStyle_attr = NULL;
+        delete m_pivotTableStyle_attr;
+        m_pivotTableStyle_attr = NULL;
     }
     
     
-    m_has_s_vacatedStyle_attr = false;
+    m_has_vacatedStyle_attr = false;
     
-    if (m_s_vacatedStyle_attr)
+    if (m_vacatedStyle_attr)
     {
-        delete m_s_vacatedStyle_attr;
-        m_s_vacatedStyle_attr = NULL;
+        delete m_vacatedStyle_attr;
+        m_vacatedStyle_attr = NULL;
     }
     
     
-    m_has_s_tag_attr = false;
+    m_has_tag_attr = false;
     
-    if (m_s_tag_attr)
+    if (m_tag_attr)
     {
-        delete m_s_tag_attr;
-        m_s_tag_attr = NULL;
+        delete m_tag_attr;
+        m_tag_attr = NULL;
     }
     
     
@@ -27082,21 +28697,21 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
     m_has_chartFormat_attr = false;
     m_chartFormat_attr = 0;
     
-    m_has_s_rowHeaderCaption_attr = false;
+    m_has_rowHeaderCaption_attr = false;
     
-    if (m_s_rowHeaderCaption_attr)
+    if (m_rowHeaderCaption_attr)
     {
-        delete m_s_rowHeaderCaption_attr;
-        m_s_rowHeaderCaption_attr = NULL;
+        delete m_rowHeaderCaption_attr;
+        m_rowHeaderCaption_attr = NULL;
     }
     
     
-    m_has_s_colHeaderCaption_attr = false;
+    m_has_colHeaderCaption_attr = false;
     
-    if (m_s_colHeaderCaption_attr)
+    if (m_colHeaderCaption_attr)
     {
-        delete m_s_colHeaderCaption_attr;
-        m_s_colHeaderCaption_attr = NULL;
+        delete m_colHeaderCaption_attr;
+        m_colHeaderCaption_attr = NULL;
     }
     
     
@@ -27119,9 +28734,9 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -27185,21 +28800,21 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_dataCaption_attr)
+    if (m_has_dataCaption_attr)
     {
-        m_s_dataCaption_attr->toXmlAttr("dataCaption", _outStream);
+        m_dataCaption_attr->toXmlAttr("dataCaption", _outStream);
     }
     
     
-    if (m_has_s_grandTotalCaption_attr)
+    if (m_has_grandTotalCaption_attr)
     {
-        m_s_grandTotalCaption_attr->toXmlAttr("grandTotalCaption", _outStream);
+        m_grandTotalCaption_attr->toXmlAttr("grandTotalCaption", _outStream);
     }
     
     
-    if (m_has_s_errorCaption_attr)
+    if (m_has_errorCaption_attr)
     {
-        m_s_errorCaption_attr->toXmlAttr("errorCaption", _outStream);
+        m_errorCaption_attr->toXmlAttr("errorCaption", _outStream);
     }
     
     
@@ -27209,9 +28824,9 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_missingCaption_attr)
+    if (m_has_missingCaption_attr)
     {
-        m_s_missingCaption_attr->toXmlAttr("missingCaption", _outStream);
+        m_missingCaption_attr->toXmlAttr("missingCaption", _outStream);
     }
     
     
@@ -27221,27 +28836,27 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_pageStyle_attr)
+    if (m_has_pageStyle_attr)
     {
-        m_s_pageStyle_attr->toXmlAttr("pageStyle", _outStream);
+        m_pageStyle_attr->toXmlAttr("pageStyle", _outStream);
     }
     
     
-    if (m_has_s_pivotTableStyle_attr)
+    if (m_has_pivotTableStyle_attr)
     {
-        m_s_pivotTableStyle_attr->toXmlAttr("pivotTableStyle", _outStream);
+        m_pivotTableStyle_attr->toXmlAttr("pivotTableStyle", _outStream);
     }
     
     
-    if (m_has_s_vacatedStyle_attr)
+    if (m_has_vacatedStyle_attr)
     {
-        m_s_vacatedStyle_attr->toXmlAttr("vacatedStyle", _outStream);
+        m_vacatedStyle_attr->toXmlAttr("vacatedStyle", _outStream);
     }
     
     
-    if (m_has_s_tag_attr)
+    if (m_has_tag_attr)
     {
-        m_s_tag_attr->toXmlAttr("tag", _outStream);
+        m_tag_attr->toXmlAttr("tag", _outStream);
     }
     
     
@@ -27497,15 +29112,15 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_rowHeaderCaption_attr)
+    if (m_has_rowHeaderCaption_attr)
     {
-        m_s_rowHeaderCaption_attr->toXmlAttr("rowHeaderCaption", _outStream);
+        m_rowHeaderCaption_attr->toXmlAttr("rowHeaderCaption", _outStream);
     }
     
     
-    if (m_has_s_colHeaderCaption_attr)
+    if (m_has_colHeaderCaption_attr)
     {
-        m_s_colHeaderCaption_attr->toXmlAttr("colHeaderCaption", _outStream);
+        m_colHeaderCaption_attr->toXmlAttr("colHeaderCaption", _outStream);
     }
     
     
@@ -27530,87 +29145,87 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
             
     if (m_has_location)
     {
-        m_location->toXmlElem("location", "", _outStream);;
+        m_location->toXmlElem("main:location", "", _outStream);;
     }
     
     if (m_has_pivotFields)
     {
-        m_pivotFields->toXmlElem("pivotFields", "", _outStream);;
+        m_pivotFields->toXmlElem("main:pivotFields", "", _outStream);;
     }
     
     if (m_has_rowFields)
     {
-        m_rowFields->toXmlElem("rowFields", "", _outStream);;
+        m_rowFields->toXmlElem("main:rowFields", "", _outStream);;
     }
     
     if (m_has_rowItems)
     {
-        m_rowItems->toXmlElem("rowItems", "", _outStream);;
+        m_rowItems->toXmlElem("main:rowItems", "", _outStream);;
     }
     
     if (m_has_colFields)
     {
-        m_colFields->toXmlElem("colFields", "", _outStream);;
+        m_colFields->toXmlElem("main:colFields", "", _outStream);;
     }
     
     if (m_has_colItems)
     {
-        m_colItems->toXmlElem("colItems", "", _outStream);;
+        m_colItems->toXmlElem("main:colItems", "", _outStream);;
     }
     
     if (m_has_pageFields)
     {
-        m_pageFields->toXmlElem("pageFields", "", _outStream);;
+        m_pageFields->toXmlElem("main:pageFields", "", _outStream);;
     }
     
     if (m_has_dataFields)
     {
-        m_dataFields->toXmlElem("dataFields", "", _outStream);;
+        m_dataFields->toXmlElem("main:dataFields", "", _outStream);;
     }
     
     if (m_has_formats)
     {
-        m_formats->toXmlElem("formats", "", _outStream);;
+        m_formats->toXmlElem("main:formats", "", _outStream);;
     }
     
     if (m_has_conditionalFormats)
     {
-        m_conditionalFormats->toXmlElem("conditionalFormats", "", _outStream);;
+        m_conditionalFormats->toXmlElem("main:conditionalFormats", "", _outStream);;
     }
     
     if (m_has_chartFormats)
     {
-        m_chartFormats->toXmlElem("chartFormats", "", _outStream);;
+        m_chartFormats->toXmlElem("main:chartFormats", "", _outStream);;
     }
     
     if (m_has_pivotHierarchies)
     {
-        m_pivotHierarchies->toXmlElem("pivotHierarchies", "", _outStream);;
+        m_pivotHierarchies->toXmlElem("main:pivotHierarchies", "", _outStream);;
     }
     
     if (m_has_pivotTableStyleInfo)
     {
-        m_pivotTableStyleInfo->toXmlElem("pivotTableStyleInfo", "", _outStream);;
+        m_pivotTableStyleInfo->toXmlElem("main:pivotTableStyleInfo", "", _outStream);;
     }
     
     if (m_has_filters)
     {
-        m_filters->toXmlElem("filters", "", _outStream);;
+        m_filters->toXmlElem("main:filters", "", _outStream);;
     }
     
     if (m_has_rowHierarchiesUsage)
     {
-        m_rowHierarchiesUsage->toXmlElem("rowHierarchiesUsage", "", _outStream);;
+        m_rowHierarchiesUsage->toXmlElem("main:rowHierarchiesUsage", "", _outStream);;
     }
     
     if (m_has_colHierarchiesUsage)
     {
-        m_colHierarchiesUsage->toXmlElem("colHierarchiesUsage", "", _outStream);;
+        m_colHierarchiesUsage->toXmlElem("main:colHierarchiesUsage", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -27625,22 +29240,22 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
     return *CT_pivotTableDefinition::default_instance_;
     }
 
-    bool CT_pivotTableDefinition::has_s_name_attr() const
+    bool CT_pivotTableDefinition::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_pivotTableDefinition::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_pivotTableDefinition::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -27805,62 +29420,62 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
     return m_applyWidthHeightFormats_attr;
     }
 
-    bool CT_pivotTableDefinition::has_s_dataCaption_attr() const
+    bool CT_pivotTableDefinition::has_dataCaption_attr() const
     {    
-    return m_has_s_dataCaption_attr;
+    return m_has_dataCaption_attr;
     }
 
-    void CT_pivotTableDefinition::set_s_dataCaption_attr(const ns_s::ST_Xstring& _s_dataCaption_attr)
+    void CT_pivotTableDefinition::set_dataCaption_attr(const ns_s::ST_Xstring& _dataCaption_attr)
     {    
-    m_has_s_dataCaption_attr = true;
-    m_s_dataCaption_attr = new ns_s::ST_Xstring(_s_dataCaption_attr);
+    m_has_dataCaption_attr = true;
+    m_dataCaption_attr = new ns_s::ST_Xstring(_dataCaption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_s_dataCaption_attr() const
+    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_dataCaption_attr() const
     {    
-    if (m_s_dataCaption_attr)
+    if (m_dataCaption_attr)
     {
-        return *m_s_dataCaption_attr;
+        return *m_dataCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_pivotTableDefinition::has_s_grandTotalCaption_attr() const
+    bool CT_pivotTableDefinition::has_grandTotalCaption_attr() const
     {    
-    return m_has_s_grandTotalCaption_attr;
+    return m_has_grandTotalCaption_attr;
     }
 
-    void CT_pivotTableDefinition::set_s_grandTotalCaption_attr(const ns_s::ST_Xstring& _s_grandTotalCaption_attr)
+    void CT_pivotTableDefinition::set_grandTotalCaption_attr(const ns_s::ST_Xstring& _grandTotalCaption_attr)
     {    
-    m_has_s_grandTotalCaption_attr = true;
-    m_s_grandTotalCaption_attr = new ns_s::ST_Xstring(_s_grandTotalCaption_attr);
+    m_has_grandTotalCaption_attr = true;
+    m_grandTotalCaption_attr = new ns_s::ST_Xstring(_grandTotalCaption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_s_grandTotalCaption_attr() const
+    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_grandTotalCaption_attr() const
     {    
-    if (m_s_grandTotalCaption_attr)
+    if (m_grandTotalCaption_attr)
     {
-        return *m_s_grandTotalCaption_attr;
+        return *m_grandTotalCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_pivotTableDefinition::has_s_errorCaption_attr() const
+    bool CT_pivotTableDefinition::has_errorCaption_attr() const
     {    
-    return m_has_s_errorCaption_attr;
+    return m_has_errorCaption_attr;
     }
 
-    void CT_pivotTableDefinition::set_s_errorCaption_attr(const ns_s::ST_Xstring& _s_errorCaption_attr)
+    void CT_pivotTableDefinition::set_errorCaption_attr(const ns_s::ST_Xstring& _errorCaption_attr)
     {    
-    m_has_s_errorCaption_attr = true;
-    m_s_errorCaption_attr = new ns_s::ST_Xstring(_s_errorCaption_attr);
+    m_has_errorCaption_attr = true;
+    m_errorCaption_attr = new ns_s::ST_Xstring(_errorCaption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_s_errorCaption_attr() const
+    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_errorCaption_attr() const
     {    
-    if (m_s_errorCaption_attr)
+    if (m_errorCaption_attr)
     {
-        return *m_s_errorCaption_attr;
+        return *m_errorCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -27881,22 +29496,22 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
     return m_showError_attr;
     }
 
-    bool CT_pivotTableDefinition::has_s_missingCaption_attr() const
+    bool CT_pivotTableDefinition::has_missingCaption_attr() const
     {    
-    return m_has_s_missingCaption_attr;
+    return m_has_missingCaption_attr;
     }
 
-    void CT_pivotTableDefinition::set_s_missingCaption_attr(const ns_s::ST_Xstring& _s_missingCaption_attr)
+    void CT_pivotTableDefinition::set_missingCaption_attr(const ns_s::ST_Xstring& _missingCaption_attr)
     {    
-    m_has_s_missingCaption_attr = true;
-    m_s_missingCaption_attr = new ns_s::ST_Xstring(_s_missingCaption_attr);
+    m_has_missingCaption_attr = true;
+    m_missingCaption_attr = new ns_s::ST_Xstring(_missingCaption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_s_missingCaption_attr() const
+    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_missingCaption_attr() const
     {    
-    if (m_s_missingCaption_attr)
+    if (m_missingCaption_attr)
     {
-        return *m_s_missingCaption_attr;
+        return *m_missingCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -27917,82 +29532,82 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
     return m_showMissing_attr;
     }
 
-    bool CT_pivotTableDefinition::has_s_pageStyle_attr() const
+    bool CT_pivotTableDefinition::has_pageStyle_attr() const
     {    
-    return m_has_s_pageStyle_attr;
+    return m_has_pageStyle_attr;
     }
 
-    void CT_pivotTableDefinition::set_s_pageStyle_attr(const ns_s::ST_Xstring& _s_pageStyle_attr)
+    void CT_pivotTableDefinition::set_pageStyle_attr(const ns_s::ST_Xstring& _pageStyle_attr)
     {    
-    m_has_s_pageStyle_attr = true;
-    m_s_pageStyle_attr = new ns_s::ST_Xstring(_s_pageStyle_attr);
+    m_has_pageStyle_attr = true;
+    m_pageStyle_attr = new ns_s::ST_Xstring(_pageStyle_attr);
     }
 
-    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_s_pageStyle_attr() const
+    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_pageStyle_attr() const
     {    
-    if (m_s_pageStyle_attr)
+    if (m_pageStyle_attr)
     {
-        return *m_s_pageStyle_attr;
+        return *m_pageStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_pivotTableDefinition::has_s_pivotTableStyle_attr() const
+    bool CT_pivotTableDefinition::has_pivotTableStyle_attr() const
     {    
-    return m_has_s_pivotTableStyle_attr;
+    return m_has_pivotTableStyle_attr;
     }
 
-    void CT_pivotTableDefinition::set_s_pivotTableStyle_attr(const ns_s::ST_Xstring& _s_pivotTableStyle_attr)
+    void CT_pivotTableDefinition::set_pivotTableStyle_attr(const ns_s::ST_Xstring& _pivotTableStyle_attr)
     {    
-    m_has_s_pivotTableStyle_attr = true;
-    m_s_pivotTableStyle_attr = new ns_s::ST_Xstring(_s_pivotTableStyle_attr);
+    m_has_pivotTableStyle_attr = true;
+    m_pivotTableStyle_attr = new ns_s::ST_Xstring(_pivotTableStyle_attr);
     }
 
-    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_s_pivotTableStyle_attr() const
+    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_pivotTableStyle_attr() const
     {    
-    if (m_s_pivotTableStyle_attr)
+    if (m_pivotTableStyle_attr)
     {
-        return *m_s_pivotTableStyle_attr;
+        return *m_pivotTableStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_pivotTableDefinition::has_s_vacatedStyle_attr() const
+    bool CT_pivotTableDefinition::has_vacatedStyle_attr() const
     {    
-    return m_has_s_vacatedStyle_attr;
+    return m_has_vacatedStyle_attr;
     }
 
-    void CT_pivotTableDefinition::set_s_vacatedStyle_attr(const ns_s::ST_Xstring& _s_vacatedStyle_attr)
+    void CT_pivotTableDefinition::set_vacatedStyle_attr(const ns_s::ST_Xstring& _vacatedStyle_attr)
     {    
-    m_has_s_vacatedStyle_attr = true;
-    m_s_vacatedStyle_attr = new ns_s::ST_Xstring(_s_vacatedStyle_attr);
+    m_has_vacatedStyle_attr = true;
+    m_vacatedStyle_attr = new ns_s::ST_Xstring(_vacatedStyle_attr);
     }
 
-    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_s_vacatedStyle_attr() const
+    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_vacatedStyle_attr() const
     {    
-    if (m_s_vacatedStyle_attr)
+    if (m_vacatedStyle_attr)
     {
-        return *m_s_vacatedStyle_attr;
+        return *m_vacatedStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_pivotTableDefinition::has_s_tag_attr() const
+    bool CT_pivotTableDefinition::has_tag_attr() const
     {    
-    return m_has_s_tag_attr;
+    return m_has_tag_attr;
     }
 
-    void CT_pivotTableDefinition::set_s_tag_attr(const ns_s::ST_Xstring& _s_tag_attr)
+    void CT_pivotTableDefinition::set_tag_attr(const ns_s::ST_Xstring& _tag_attr)
     {    
-    m_has_s_tag_attr = true;
-    m_s_tag_attr = new ns_s::ST_Xstring(_s_tag_attr);
+    m_has_tag_attr = true;
+    m_tag_attr = new ns_s::ST_Xstring(_tag_attr);
     }
 
-    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_s_tag_attr() const
+    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_tag_attr() const
     {    
-    if (m_s_tag_attr)
+    if (m_tag_attr)
     {
-        return *m_s_tag_attr;
+        return *m_tag_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -28669,42 +30284,42 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
     return m_chartFormat_attr;
     }
 
-    bool CT_pivotTableDefinition::has_s_rowHeaderCaption_attr() const
+    bool CT_pivotTableDefinition::has_rowHeaderCaption_attr() const
     {    
-    return m_has_s_rowHeaderCaption_attr;
+    return m_has_rowHeaderCaption_attr;
     }
 
-    void CT_pivotTableDefinition::set_s_rowHeaderCaption_attr(const ns_s::ST_Xstring& _s_rowHeaderCaption_attr)
+    void CT_pivotTableDefinition::set_rowHeaderCaption_attr(const ns_s::ST_Xstring& _rowHeaderCaption_attr)
     {    
-    m_has_s_rowHeaderCaption_attr = true;
-    m_s_rowHeaderCaption_attr = new ns_s::ST_Xstring(_s_rowHeaderCaption_attr);
+    m_has_rowHeaderCaption_attr = true;
+    m_rowHeaderCaption_attr = new ns_s::ST_Xstring(_rowHeaderCaption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_s_rowHeaderCaption_attr() const
+    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_rowHeaderCaption_attr() const
     {    
-    if (m_s_rowHeaderCaption_attr)
+    if (m_rowHeaderCaption_attr)
     {
-        return *m_s_rowHeaderCaption_attr;
+        return *m_rowHeaderCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_pivotTableDefinition::has_s_colHeaderCaption_attr() const
+    bool CT_pivotTableDefinition::has_colHeaderCaption_attr() const
     {    
-    return m_has_s_colHeaderCaption_attr;
+    return m_has_colHeaderCaption_attr;
     }
 
-    void CT_pivotTableDefinition::set_s_colHeaderCaption_attr(const ns_s::ST_Xstring& _s_colHeaderCaption_attr)
+    void CT_pivotTableDefinition::set_colHeaderCaption_attr(const ns_s::ST_Xstring& _colHeaderCaption_attr)
     {    
-    m_has_s_colHeaderCaption_attr = true;
-    m_s_colHeaderCaption_attr = new ns_s::ST_Xstring(_s_colHeaderCaption_attr);
+    m_has_colHeaderCaption_attr = true;
+    m_colHeaderCaption_attr = new ns_s::ST_Xstring(_colHeaderCaption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_s_colHeaderCaption_attr() const
+    const ns_s::ST_Xstring& CT_pivotTableDefinition::get_colHeaderCaption_attr() const
     {    
-    if (m_s_colHeaderCaption_attr)
+    if (m_colHeaderCaption_attr)
     {
-        return *m_s_colHeaderCaption_attr;
+        return *m_colHeaderCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -28760,6 +30375,21 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
 CT_pivotTableDefinition* CT_pivotTableDefinition::default_instance_ = NULL;
 
     // CT_Location
+    CT_Location::CT_Location()
+    :m_has_ref_attr(false),
+    m_ref_attr(NULL),
+    m_has_firstHeaderRow_attr(false),
+    m_firstHeaderRow_attr(0),
+    m_has_firstDataRow_attr(false),
+    m_firstDataRow_attr(0),
+    m_has_firstDataCol_attr(false),
+    m_firstDataCol_attr(0),
+    m_has_rowPageCount_attr(false),
+    m_rowPageCount_attr(0),
+    m_has_colPageCount_attr(false),
+    m_colPageCount_attr(0)
+    {
+    }
     void CT_Location::clear()
     {    
     m_has_ref_attr = false;
@@ -28948,6 +30578,11 @@ CT_pivotTableDefinition* CT_pivotTableDefinition::default_instance_ = NULL;
 CT_Location* CT_Location::default_instance_ = NULL;
 
     // CT_PivotFields
+    CT_PivotFields::CT_PivotFields()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_PivotField* CT_PivotFields::add_pivotField()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -28993,7 +30628,7 @@ CT_Location* CT_Location::default_instance_ = NULL;
         {
             if ((*iter)->has_pivotField())
             {
-                (*iter)->get_pivotField().toXmlElem("pivotField", "", _outStream);
+                (*iter)->get_pivotField().toXmlElem("main:pivotField", "", _outStream);
             }
         }
     }
@@ -29028,6 +30663,11 @@ CT_Location* CT_Location::default_instance_ = NULL;
 
 
     // CT_PivotFields::ChildGroup_1
+    CT_PivotFields::ChildGroup_1::ChildGroup_1()
+    :m_has_pivotField(false),
+    m_pivotField(NULL)
+    {
+    }
     bool CT_PivotFields::ChildGroup_1::has_pivotField() const
     {    
     return m_has_pivotField;
@@ -29056,6 +30696,111 @@ CT_Location* CT_Location::default_instance_ = NULL;
 CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
 
     // CT_PivotField
+    CT_PivotField::CT_PivotField()
+    :m_has_items(false),
+    m_items(NULL),
+    m_has_autoSortScope(false),
+    m_autoSortScope(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_axis_attr(false),
+    m_axis_attr(NULL),
+    m_has_dataField_attr(false),
+    m_dataField_attr(false),
+    m_has_subtotalCaption_attr(false),
+    m_subtotalCaption_attr(NULL),
+    m_has_showDropDowns_attr(false),
+    m_showDropDowns_attr(false),
+    m_has_hiddenLevel_attr(false),
+    m_hiddenLevel_attr(false),
+    m_has_uniqueMemberProperty_attr(false),
+    m_uniqueMemberProperty_attr(NULL),
+    m_has_compact_attr(false),
+    m_compact_attr(false),
+    m_has_allDrilled_attr(false),
+    m_allDrilled_attr(false),
+    m_has_numFmtId_attr(false),
+    m_numFmtId_attr(NULL),
+    m_has_outline_attr(false),
+    m_outline_attr(false),
+    m_has_subtotalTop_attr(false),
+    m_subtotalTop_attr(false),
+    m_has_dragToRow_attr(false),
+    m_dragToRow_attr(false),
+    m_has_dragToCol_attr(false),
+    m_dragToCol_attr(false),
+    m_has_multipleItemSelectionAllowed_attr(false),
+    m_multipleItemSelectionAllowed_attr(false),
+    m_has_dragToPage_attr(false),
+    m_dragToPage_attr(false),
+    m_has_dragToData_attr(false),
+    m_dragToData_attr(false),
+    m_has_dragOff_attr(false),
+    m_dragOff_attr(false),
+    m_has_showAll_attr(false),
+    m_showAll_attr(false),
+    m_has_insertBlankRow_attr(false),
+    m_insertBlankRow_attr(false),
+    m_has_serverField_attr(false),
+    m_serverField_attr(false),
+    m_has_insertPageBreak_attr(false),
+    m_insertPageBreak_attr(false),
+    m_has_autoShow_attr(false),
+    m_autoShow_attr(false),
+    m_has_topAutoShow_attr(false),
+    m_topAutoShow_attr(false),
+    m_has_hideNewItems_attr(false),
+    m_hideNewItems_attr(false),
+    m_has_measureFilter_attr(false),
+    m_measureFilter_attr(false),
+    m_has_includeNewItemsInFilter_attr(false),
+    m_includeNewItemsInFilter_attr(false),
+    m_has_itemPageCount_attr(false),
+    m_itemPageCount_attr(0),
+    m_has_sortType_attr(false),
+    m_sortType_attr(NULL),
+    m_has_dataSourceSort_attr(false),
+    m_dataSourceSort_attr(false),
+    m_has_nonAutoSortDefault_attr(false),
+    m_nonAutoSortDefault_attr(false),
+    m_has_rankBy_attr(false),
+    m_rankBy_attr(0),
+    m_has_defaultSubtotal_attr(false),
+    m_defaultSubtotal_attr(false),
+    m_has_sumSubtotal_attr(false),
+    m_sumSubtotal_attr(false),
+    m_has_countASubtotal_attr(false),
+    m_countASubtotal_attr(false),
+    m_has_avgSubtotal_attr(false),
+    m_avgSubtotal_attr(false),
+    m_has_maxSubtotal_attr(false),
+    m_maxSubtotal_attr(false),
+    m_has_minSubtotal_attr(false),
+    m_minSubtotal_attr(false),
+    m_has_productSubtotal_attr(false),
+    m_productSubtotal_attr(false),
+    m_has_countSubtotal_attr(false),
+    m_countSubtotal_attr(false),
+    m_has_stdDevSubtotal_attr(false),
+    m_stdDevSubtotal_attr(false),
+    m_has_stdDevPSubtotal_attr(false),
+    m_stdDevPSubtotal_attr(false),
+    m_has_varSubtotal_attr(false),
+    m_varSubtotal_attr(false),
+    m_has_varPSubtotal_attr(false),
+    m_varPSubtotal_attr(false),
+    m_has_showPropCell_attr(false),
+    m_showPropCell_attr(false),
+    m_has_showPropTip_attr(false),
+    m_showPropTip_attr(false),
+    m_has_showPropAsCaption_attr(false),
+    m_showPropAsCaption_attr(false),
+    m_has_defaultAttributeDrillState_attr(false),
+    m_defaultAttributeDrillState_attr(false)
+    {
+    }
     bool CT_PivotField::has_items() const
     {    
     return m_has_items;
@@ -29130,12 +30875,12 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
 
     void CT_PivotField::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -29151,12 +30896,12 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
     m_has_dataField_attr = false;
     m_dataField_attr = false;
     
-    m_has_s_subtotalCaption_attr = false;
+    m_has_subtotalCaption_attr = false;
     
-    if (m_s_subtotalCaption_attr)
+    if (m_subtotalCaption_attr)
     {
-        delete m_s_subtotalCaption_attr;
-        m_s_subtotalCaption_attr = NULL;
+        delete m_subtotalCaption_attr;
+        m_subtotalCaption_attr = NULL;
     }
     
     
@@ -29166,12 +30911,12 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
     m_has_hiddenLevel_attr = false;
     m_hiddenLevel_attr = false;
     
-    m_has_s_uniqueMemberProperty_attr = false;
+    m_has_uniqueMemberProperty_attr = false;
     
-    if (m_s_uniqueMemberProperty_attr)
+    if (m_uniqueMemberProperty_attr)
     {
-        delete m_s_uniqueMemberProperty_attr;
-        m_s_uniqueMemberProperty_attr = NULL;
+        delete m_uniqueMemberProperty_attr;
+        m_uniqueMemberProperty_attr = NULL;
     }
     
     
@@ -29320,9 +31065,9 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -29338,9 +31083,9 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_subtotalCaption_attr)
+    if (m_has_subtotalCaption_attr)
     {
-        m_s_subtotalCaption_attr->toXmlAttr("subtotalCaption", _outStream);
+        m_subtotalCaption_attr->toXmlAttr("subtotalCaption", _outStream);
     }
     
     
@@ -29356,9 +31101,9 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_uniqueMemberProperty_attr)
+    if (m_has_uniqueMemberProperty_attr)
     {
-        m_s_uniqueMemberProperty_attr->toXmlAttr("uniqueMemberProperty", _outStream);
+        m_uniqueMemberProperty_attr->toXmlAttr("uniqueMemberProperty", _outStream);
     }
     
     
@@ -29611,17 +31356,17 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
             
     if (m_has_items)
     {
-        m_items->toXmlElem("items", "", _outStream);;
+        m_items->toXmlElem("main:items", "", _outStream);;
     }
     
     if (m_has_autoSortScope)
     {
-        m_autoSortScope->toXmlElem("autoSortScope", "", _outStream);;
+        m_autoSortScope->toXmlElem("main:autoSortScope", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -29636,22 +31381,22 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
     return *CT_PivotField::default_instance_;
     }
 
-    bool CT_PivotField::has_s_name_attr() const
+    bool CT_PivotField::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_PivotField::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_PivotField::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PivotField::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_PivotField::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -29692,22 +31437,22 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
     return m_dataField_attr;
     }
 
-    bool CT_PivotField::has_s_subtotalCaption_attr() const
+    bool CT_PivotField::has_subtotalCaption_attr() const
     {    
-    return m_has_s_subtotalCaption_attr;
+    return m_has_subtotalCaption_attr;
     }
 
-    void CT_PivotField::set_s_subtotalCaption_attr(const ns_s::ST_Xstring& _s_subtotalCaption_attr)
+    void CT_PivotField::set_subtotalCaption_attr(const ns_s::ST_Xstring& _subtotalCaption_attr)
     {    
-    m_has_s_subtotalCaption_attr = true;
-    m_s_subtotalCaption_attr = new ns_s::ST_Xstring(_s_subtotalCaption_attr);
+    m_has_subtotalCaption_attr = true;
+    m_subtotalCaption_attr = new ns_s::ST_Xstring(_subtotalCaption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PivotField::get_s_subtotalCaption_attr() const
+    const ns_s::ST_Xstring& CT_PivotField::get_subtotalCaption_attr() const
     {    
-    if (m_s_subtotalCaption_attr)
+    if (m_subtotalCaption_attr)
     {
-        return *m_s_subtotalCaption_attr;
+        return *m_subtotalCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -29744,22 +31489,22 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
     return m_hiddenLevel_attr;
     }
 
-    bool CT_PivotField::has_s_uniqueMemberProperty_attr() const
+    bool CT_PivotField::has_uniqueMemberProperty_attr() const
     {    
-    return m_has_s_uniqueMemberProperty_attr;
+    return m_has_uniqueMemberProperty_attr;
     }
 
-    void CT_PivotField::set_s_uniqueMemberProperty_attr(const ns_s::ST_Xstring& _s_uniqueMemberProperty_attr)
+    void CT_PivotField::set_uniqueMemberProperty_attr(const ns_s::ST_Xstring& _uniqueMemberProperty_attr)
     {    
-    m_has_s_uniqueMemberProperty_attr = true;
-    m_s_uniqueMemberProperty_attr = new ns_s::ST_Xstring(_s_uniqueMemberProperty_attr);
+    m_has_uniqueMemberProperty_attr = true;
+    m_uniqueMemberProperty_attr = new ns_s::ST_Xstring(_uniqueMemberProperty_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PivotField::get_s_uniqueMemberProperty_attr() const
+    const ns_s::ST_Xstring& CT_PivotField::get_uniqueMemberProperty_attr() const
     {    
-    if (m_s_uniqueMemberProperty_attr)
+    if (m_uniqueMemberProperty_attr)
     {
-        return *m_s_uniqueMemberProperty_attr;
+        return *m_uniqueMemberProperty_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -30431,6 +32176,11 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
 CT_PivotField* CT_PivotField::default_instance_ = NULL;
 
     // CT_AutoSortScope
+    CT_AutoSortScope::CT_AutoSortScope()
+    :m_has_pivotArea(false),
+    m_pivotArea(NULL)
+    {
+    }
     bool CT_AutoSortScope::has_pivotArea() const
     {    
     return m_has_pivotArea;
@@ -30471,7 +32221,7 @@ CT_PivotField* CT_PivotField::default_instance_ = NULL;
             
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("pivotArea", "", _outStream);;
+        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -30489,6 +32239,11 @@ CT_PivotField* CT_PivotField::default_instance_ = NULL;
 CT_AutoSortScope* CT_AutoSortScope::default_instance_ = NULL;
 
     // CT_Items
+    CT_Items::CT_Items()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Item* CT_Items::add_item()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -30534,7 +32289,7 @@ CT_AutoSortScope* CT_AutoSortScope::default_instance_ = NULL;
         {
             if ((*iter)->has_item())
             {
-                (*iter)->get_item().toXmlElem("item", "", _outStream);
+                (*iter)->get_item().toXmlElem("main:item", "", _outStream);
             }
         }
     }
@@ -30569,6 +32324,11 @@ CT_AutoSortScope* CT_AutoSortScope::default_instance_ = NULL;
 
 
     // CT_Items::ChildGroup_1
+    CT_Items::ChildGroup_1::ChildGroup_1()
+    :m_has_item(false),
+    m_item(NULL)
+    {
+    }
     bool CT_Items::ChildGroup_1::has_item() const
     {    
     return m_has_item;
@@ -30597,14 +32357,39 @@ CT_AutoSortScope* CT_AutoSortScope::default_instance_ = NULL;
 CT_Items* CT_Items::default_instance_ = NULL;
 
     // CT_Item
+    CT_Item::CT_Item()
+    :m_has_n_attr(false),
+    m_n_attr(NULL),
+    m_has_t_attr(false),
+    m_t_attr(NULL),
+    m_has_h_attr(false),
+    m_h_attr(false),
+    m_has_s_attr(false),
+    m_s_attr(false),
+    m_has_sd_attr(false),
+    m_sd_attr(false),
+    m_has_f_attr(false),
+    m_f_attr(false),
+    m_has_m_attr(false),
+    m_m_attr(false),
+    m_has_c_attr(false),
+    m_c_attr(false),
+    m_has_x_attr(false),
+    m_x_attr(0),
+    m_has_d_attr(false),
+    m_d_attr(false),
+    m_has_e_attr(false),
+    m_e_attr(false)
+    {
+    }
     void CT_Item::clear()
     {    
-    m_has_s_n_attr = false;
+    m_has_n_attr = false;
     
-    if (m_s_n_attr)
+    if (m_n_attr)
     {
-        delete m_s_n_attr;
-        m_s_n_attr = NULL;
+        delete m_n_attr;
+        m_n_attr = NULL;
     }
     
     
@@ -30654,9 +32439,9 @@ CT_Items* CT_Items::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_n_attr)
+    if (m_has_n_attr)
     {
-        m_s_n_attr->toXmlAttr("n", _outStream);
+        m_n_attr->toXmlAttr("n", _outStream);
     }
     
     
@@ -30733,22 +32518,22 @@ CT_Items* CT_Items::default_instance_ = NULL;
     return *CT_Item::default_instance_;
     }
 
-    bool CT_Item::has_s_n_attr() const
+    bool CT_Item::has_n_attr() const
     {    
-    return m_has_s_n_attr;
+    return m_has_n_attr;
     }
 
-    void CT_Item::set_s_n_attr(const ns_s::ST_Xstring& _s_n_attr)
+    void CT_Item::set_n_attr(const ns_s::ST_Xstring& _n_attr)
     {    
-    m_has_s_n_attr = true;
-    m_s_n_attr = new ns_s::ST_Xstring(_s_n_attr);
+    m_has_n_attr = true;
+    m_n_attr = new ns_s::ST_Xstring(_n_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Item::get_s_n_attr() const
+    const ns_s::ST_Xstring& CT_Item::get_n_attr() const
     {    
-    if (m_s_n_attr)
+    if (m_n_attr)
     {
-        return *m_s_n_attr;
+        return *m_n_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -30920,6 +32705,11 @@ CT_Items* CT_Items::default_instance_ = NULL;
 CT_Item* CT_Item::default_instance_ = NULL;
 
     // CT_PageFields
+    CT_PageFields::CT_PageFields()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_PageField* CT_PageFields::add_pageField()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -30965,7 +32755,7 @@ CT_Item* CT_Item::default_instance_ = NULL;
         {
             if ((*iter)->has_pageField())
             {
-                (*iter)->get_pageField().toXmlElem("pageField", "", _outStream);
+                (*iter)->get_pageField().toXmlElem("main:pageField", "", _outStream);
             }
         }
     }
@@ -31000,6 +32790,11 @@ CT_Item* CT_Item::default_instance_ = NULL;
 
 
     // CT_PageFields::ChildGroup_1
+    CT_PageFields::ChildGroup_1::ChildGroup_1()
+    :m_has_pageField(false),
+    m_pageField(NULL)
+    {
+    }
     bool CT_PageFields::ChildGroup_1::has_pageField() const
     {    
     return m_has_pageField;
@@ -31028,6 +32823,21 @@ CT_Item* CT_Item::default_instance_ = NULL;
 CT_PageFields* CT_PageFields::default_instance_ = NULL;
 
     // CT_PageField
+    CT_PageField::CT_PageField()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_fld_attr(false),
+    m_fld_attr(0),
+    m_has_item_attr(false),
+    m_item_attr(0),
+    m_has_hier_attr(false),
+    m_hier_attr(0),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_cap_attr(false),
+    m_cap_attr(NULL)
+    {
+    }
     bool CT_PageField::has_extLst() const
     {    
     return m_has_extLst;
@@ -31063,21 +32873,21 @@ CT_PageFields* CT_PageFields::default_instance_ = NULL;
     m_has_hier_attr = false;
     m_hier_attr = 0;
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_cap_attr = false;
+    m_has_cap_attr = false;
     
-    if (m_s_cap_attr)
+    if (m_cap_attr)
     {
-        delete m_s_cap_attr;
-        m_s_cap_attr = NULL;
+        delete m_cap_attr;
+        m_cap_attr = NULL;
     }
     
     }
@@ -31109,22 +32919,22 @@ CT_PageFields* CT_PageFields::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_cap_attr)
+    if (m_has_cap_attr)
     {
-        m_s_cap_attr->toXmlAttr("cap", _outStream);
+        m_cap_attr->toXmlAttr("cap", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -31187,42 +32997,42 @@ CT_PageFields* CT_PageFields::default_instance_ = NULL;
     return m_hier_attr;
     }
 
-    bool CT_PageField::has_s_name_attr() const
+    bool CT_PageField::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_PageField::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_PageField::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PageField::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_PageField::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PageField::has_s_cap_attr() const
+    bool CT_PageField::has_cap_attr() const
     {    
-    return m_has_s_cap_attr;
+    return m_has_cap_attr;
     }
 
-    void CT_PageField::set_s_cap_attr(const ns_s::ST_Xstring& _s_cap_attr)
+    void CT_PageField::set_cap_attr(const ns_s::ST_Xstring& _cap_attr)
     {    
-    m_has_s_cap_attr = true;
-    m_s_cap_attr = new ns_s::ST_Xstring(_s_cap_attr);
+    m_has_cap_attr = true;
+    m_cap_attr = new ns_s::ST_Xstring(_cap_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PageField::get_s_cap_attr() const
+    const ns_s::ST_Xstring& CT_PageField::get_cap_attr() const
     {    
-    if (m_s_cap_attr)
+    if (m_cap_attr)
     {
-        return *m_s_cap_attr;
+        return *m_cap_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -31230,6 +33040,11 @@ CT_PageFields* CT_PageFields::default_instance_ = NULL;
 CT_PageField* CT_PageField::default_instance_ = NULL;
 
     // CT_DataFields
+    CT_DataFields::CT_DataFields()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_DataField* CT_DataFields::add_dataField()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -31275,7 +33090,7 @@ CT_PageField* CT_PageField::default_instance_ = NULL;
         {
             if ((*iter)->has_dataField())
             {
-                (*iter)->get_dataField().toXmlElem("dataField", "", _outStream);
+                (*iter)->get_dataField().toXmlElem("main:dataField", "", _outStream);
             }
         }
     }
@@ -31310,6 +33125,11 @@ CT_PageField* CT_PageField::default_instance_ = NULL;
 
 
     // CT_DataFields::ChildGroup_1
+    CT_DataFields::ChildGroup_1::ChildGroup_1()
+    :m_has_dataField(false),
+    m_dataField(NULL)
+    {
+    }
     bool CT_DataFields::ChildGroup_1::has_dataField() const
     {    
     return m_has_dataField;
@@ -31338,6 +33158,25 @@ CT_PageField* CT_PageField::default_instance_ = NULL;
 CT_DataFields* CT_DataFields::default_instance_ = NULL;
 
     // CT_DataField
+    CT_DataField::CT_DataField()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_fld_attr(false),
+    m_fld_attr(0),
+    m_has_subtotal_attr(false),
+    m_subtotal_attr(NULL),
+    m_has_showDataAs_attr(false),
+    m_showDataAs_attr(NULL),
+    m_has_baseField_attr(false),
+    m_baseField_attr(0),
+    m_has_baseItem_attr(false),
+    m_baseItem_attr(0),
+    m_has_numFmtId_attr(false),
+    m_numFmtId_attr(NULL)
+    {
+    }
     bool CT_DataField::has_extLst() const
     {    
     return m_has_extLst;
@@ -31364,12 +33203,12 @@ CT_DataFields* CT_DataFields::default_instance_ = NULL;
 
     void CT_DataField::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -31419,9 +33258,9 @@ CT_DataFields* CT_DataFields::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -31464,7 +33303,7 @@ CT_DataFields* CT_DataFields::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -31479,22 +33318,22 @@ CT_DataFields* CT_DataFields::default_instance_ = NULL;
     return *CT_DataField::default_instance_;
     }
 
-    bool CT_DataField::has_s_name_attr() const
+    bool CT_DataField::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_DataField::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_DataField::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DataField::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_DataField::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -31610,6 +33449,11 @@ CT_DataFields* CT_DataFields::default_instance_ = NULL;
 CT_DataField* CT_DataField::default_instance_ = NULL;
 
     // CT_rowItems
+    CT_rowItems::CT_rowItems()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_I* CT_rowItems::add_i()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -31655,7 +33499,7 @@ CT_DataField* CT_DataField::default_instance_ = NULL;
         {
             if ((*iter)->has_i())
             {
-                (*iter)->get_i().toXmlElem("i", "", _outStream);
+                (*iter)->get_i().toXmlElem("main:i", "", _outStream);
             }
         }
     }
@@ -31690,6 +33534,11 @@ CT_DataField* CT_DataField::default_instance_ = NULL;
 
 
     // CT_rowItems::ChildGroup_1
+    CT_rowItems::ChildGroup_1::ChildGroup_1()
+    :m_has_i(false),
+    m_i(NULL)
+    {
+    }
     bool CT_rowItems::ChildGroup_1::has_i() const
     {    
     return m_has_i;
@@ -31718,6 +33567,11 @@ CT_DataField* CT_DataField::default_instance_ = NULL;
 CT_rowItems* CT_rowItems::default_instance_ = NULL;
 
     // CT_colItems
+    CT_colItems::CT_colItems()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_I* CT_colItems::add_i()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -31763,7 +33617,7 @@ CT_rowItems* CT_rowItems::default_instance_ = NULL;
         {
             if ((*iter)->has_i())
             {
-                (*iter)->get_i().toXmlElem("i", "", _outStream);
+                (*iter)->get_i().toXmlElem("main:i", "", _outStream);
             }
         }
     }
@@ -31798,6 +33652,11 @@ CT_rowItems* CT_rowItems::default_instance_ = NULL;
 
 
     // CT_colItems::ChildGroup_1
+    CT_colItems::ChildGroup_1::ChildGroup_1()
+    :m_has_i(false),
+    m_i(NULL)
+    {
+    }
     bool CT_colItems::ChildGroup_1::has_i() const
     {    
     return m_has_i;
@@ -31826,6 +33685,15 @@ CT_rowItems* CT_rowItems::default_instance_ = NULL;
 CT_colItems* CT_colItems::default_instance_ = NULL;
 
     // CT_I
+    CT_I::CT_I()
+    :m_has_t_attr(false),
+    m_t_attr(NULL),
+    m_has_r_attr(false),
+    m_r_attr(0),
+    m_has_i_attr(false),
+    m_i_attr(0)
+    {
+    }
     CT_X* CT_I::add_x()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -31895,7 +33763,7 @@ CT_colItems* CT_colItems::default_instance_ = NULL;
         {
             if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("x", "", _outStream);
+                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
             }
         }
     }
@@ -31966,6 +33834,11 @@ CT_colItems* CT_colItems::default_instance_ = NULL;
 
 
     // CT_I::ChildGroup_1
+    CT_I::ChildGroup_1::ChildGroup_1()
+    :m_has_x(false),
+    m_x(NULL)
+    {
+    }
     bool CT_I::ChildGroup_1::has_x() const
     {    
     return m_has_x;
@@ -31994,6 +33867,11 @@ CT_colItems* CT_colItems::default_instance_ = NULL;
 CT_I* CT_I::default_instance_ = NULL;
 
     // CT_X
+    CT_X::CT_X()
+    :m_has_v_attr(false),
+    m_v_attr(0)
+    {
+    }
     void CT_X::clear()
     {    
     m_has_v_attr = false;
@@ -32047,6 +33925,11 @@ CT_I* CT_I::default_instance_ = NULL;
 CT_X* CT_X::default_instance_ = NULL;
 
     // CT_RowFields
+    CT_RowFields::CT_RowFields()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Field* CT_RowFields::add_field()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -32092,7 +33975,7 @@ CT_X* CT_X::default_instance_ = NULL;
         {
             if ((*iter)->has_field())
             {
-                (*iter)->get_field().toXmlElem("field", "", _outStream);
+                (*iter)->get_field().toXmlElem("main:field", "", _outStream);
             }
         }
     }
@@ -32127,6 +34010,11 @@ CT_X* CT_X::default_instance_ = NULL;
 
 
     // CT_RowFields::ChildGroup_1
+    CT_RowFields::ChildGroup_1::ChildGroup_1()
+    :m_has_field(false),
+    m_field(NULL)
+    {
+    }
     bool CT_RowFields::ChildGroup_1::has_field() const
     {    
     return m_has_field;
@@ -32155,6 +34043,11 @@ CT_X* CT_X::default_instance_ = NULL;
 CT_RowFields* CT_RowFields::default_instance_ = NULL;
 
     // CT_ColFields
+    CT_ColFields::CT_ColFields()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Field* CT_ColFields::add_field()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -32200,7 +34093,7 @@ CT_RowFields* CT_RowFields::default_instance_ = NULL;
         {
             if ((*iter)->has_field())
             {
-                (*iter)->get_field().toXmlElem("field", "", _outStream);
+                (*iter)->get_field().toXmlElem("main:field", "", _outStream);
             }
         }
     }
@@ -32235,6 +34128,11 @@ CT_RowFields* CT_RowFields::default_instance_ = NULL;
 
 
     // CT_ColFields::ChildGroup_1
+    CT_ColFields::ChildGroup_1::ChildGroup_1()
+    :m_has_field(false),
+    m_field(NULL)
+    {
+    }
     bool CT_ColFields::ChildGroup_1::has_field() const
     {    
     return m_has_field;
@@ -32263,6 +34161,11 @@ CT_RowFields* CT_RowFields::default_instance_ = NULL;
 CT_ColFields* CT_ColFields::default_instance_ = NULL;
 
     // CT_Field
+    CT_Field::CT_Field()
+    :m_has_x_attr(false),
+    m_x_attr(0)
+    {
+    }
     void CT_Field::clear()
     {    
     m_has_x_attr = false;
@@ -32316,6 +34219,11 @@ CT_ColFields* CT_ColFields::default_instance_ = NULL;
 CT_Field* CT_Field::default_instance_ = NULL;
 
     // CT_Formats
+    CT_Formats::CT_Formats()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Format* CT_Formats::add_format()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -32361,7 +34269,7 @@ CT_Field* CT_Field::default_instance_ = NULL;
         {
             if ((*iter)->has_format())
             {
-                (*iter)->get_format().toXmlElem("format", "", _outStream);
+                (*iter)->get_format().toXmlElem("main:format", "", _outStream);
             }
         }
     }
@@ -32396,6 +34304,11 @@ CT_Field* CT_Field::default_instance_ = NULL;
 
 
     // CT_Formats::ChildGroup_1
+    CT_Formats::ChildGroup_1::ChildGroup_1()
+    :m_has_format(false),
+    m_format(NULL)
+    {
+    }
     bool CT_Formats::ChildGroup_1::has_format() const
     {    
     return m_has_format;
@@ -32424,6 +34337,17 @@ CT_Field* CT_Field::default_instance_ = NULL;
 CT_Formats* CT_Formats::default_instance_ = NULL;
 
     // CT_Format
+    CT_Format::CT_Format()
+    :m_has_pivotArea(false),
+    m_pivotArea(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_action_attr(false),
+    m_action_attr(NULL),
+    m_has_dxfId_attr(false),
+    m_dxfId_attr(NULL)
+    {
+    }
     bool CT_Format::has_pivotArea() const
     {    
     return m_has_pivotArea;
@@ -32517,12 +34441,12 @@ CT_Formats* CT_Formats::default_instance_ = NULL;
             
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("pivotArea", "", _outStream);;
+        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -32580,6 +34504,11 @@ CT_Formats* CT_Formats::default_instance_ = NULL;
 CT_Format* CT_Format::default_instance_ = NULL;
 
     // CT_ConditionalFormats
+    CT_ConditionalFormats::CT_ConditionalFormats()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_ConditionalFormat* CT_ConditionalFormats::add_conditionalFormat()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -32625,7 +34554,7 @@ CT_Format* CT_Format::default_instance_ = NULL;
         {
             if ((*iter)->has_conditionalFormat())
             {
-                (*iter)->get_conditionalFormat().toXmlElem("conditionalFormat", "", _outStream);
+                (*iter)->get_conditionalFormat().toXmlElem("main:conditionalFormat", "", _outStream);
             }
         }
     }
@@ -32660,6 +34589,11 @@ CT_Format* CT_Format::default_instance_ = NULL;
 
 
     // CT_ConditionalFormats::ChildGroup_1
+    CT_ConditionalFormats::ChildGroup_1::ChildGroup_1()
+    :m_has_conditionalFormat(false),
+    m_conditionalFormat(NULL)
+    {
+    }
     bool CT_ConditionalFormats::ChildGroup_1::has_conditionalFormat() const
     {    
     return m_has_conditionalFormat;
@@ -32688,6 +34622,19 @@ CT_Format* CT_Format::default_instance_ = NULL;
 CT_ConditionalFormats* CT_ConditionalFormats::default_instance_ = NULL;
 
     // CT_ConditionalFormat
+    CT_ConditionalFormat::CT_ConditionalFormat()
+    :m_has_pivotAreas(false),
+    m_pivotAreas(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_scope_attr(false),
+    m_scope_attr(NULL),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_priority_attr(false),
+    m_priority_attr(0)
+    {
+    }
     bool CT_ConditionalFormat::has_pivotAreas() const
     {    
     return m_has_pivotAreas;
@@ -32790,12 +34737,12 @@ CT_ConditionalFormats* CT_ConditionalFormats::default_instance_ = NULL;
             
     if (m_has_pivotAreas)
     {
-        m_pivotAreas->toXmlElem("pivotAreas", "", _outStream);;
+        m_pivotAreas->toXmlElem("main:pivotAreas", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -32869,6 +34816,11 @@ CT_ConditionalFormats* CT_ConditionalFormats::default_instance_ = NULL;
 CT_ConditionalFormat* CT_ConditionalFormat::default_instance_ = NULL;
 
     // CT_PivotAreas
+    CT_PivotAreas::CT_PivotAreas()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_PivotArea* CT_PivotAreas::add_pivotArea()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -32914,7 +34866,7 @@ CT_ConditionalFormat* CT_ConditionalFormat::default_instance_ = NULL;
         {
             if ((*iter)->has_pivotArea())
             {
-                (*iter)->get_pivotArea().toXmlElem("pivotArea", "", _outStream);
+                (*iter)->get_pivotArea().toXmlElem("main:pivotArea", "", _outStream);
             }
         }
     }
@@ -32949,6 +34901,11 @@ CT_ConditionalFormat* CT_ConditionalFormat::default_instance_ = NULL;
 
 
     // CT_PivotAreas::ChildGroup_1
+    CT_PivotAreas::ChildGroup_1::ChildGroup_1()
+    :m_has_pivotArea(false),
+    m_pivotArea(NULL)
+    {
+    }
     bool CT_PivotAreas::ChildGroup_1::has_pivotArea() const
     {    
     return m_has_pivotArea;
@@ -32977,6 +34934,11 @@ CT_ConditionalFormat* CT_ConditionalFormat::default_instance_ = NULL;
 CT_PivotAreas* CT_PivotAreas::default_instance_ = NULL;
 
     // CT_ChartFormats
+    CT_ChartFormats::CT_ChartFormats()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_ChartFormat* CT_ChartFormats::add_chartFormat()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -33022,7 +34984,7 @@ CT_PivotAreas* CT_PivotAreas::default_instance_ = NULL;
         {
             if ((*iter)->has_chartFormat())
             {
-                (*iter)->get_chartFormat().toXmlElem("chartFormat", "", _outStream);
+                (*iter)->get_chartFormat().toXmlElem("main:chartFormat", "", _outStream);
             }
         }
     }
@@ -33057,6 +35019,11 @@ CT_PivotAreas* CT_PivotAreas::default_instance_ = NULL;
 
 
     // CT_ChartFormats::ChildGroup_1
+    CT_ChartFormats::ChildGroup_1::ChildGroup_1()
+    :m_has_chartFormat(false),
+    m_chartFormat(NULL)
+    {
+    }
     bool CT_ChartFormats::ChildGroup_1::has_chartFormat() const
     {    
     return m_has_chartFormat;
@@ -33085,6 +35052,17 @@ CT_PivotAreas* CT_PivotAreas::default_instance_ = NULL;
 CT_ChartFormats* CT_ChartFormats::default_instance_ = NULL;
 
     // CT_ChartFormat
+    CT_ChartFormat::CT_ChartFormat()
+    :m_has_pivotArea(false),
+    m_pivotArea(NULL),
+    m_has_chart_attr(false),
+    m_chart_attr(0),
+    m_has_format_attr(false),
+    m_format_attr(0),
+    m_has_series_attr(false),
+    m_series_attr(false)
+    {
+    }
     bool CT_ChartFormat::has_pivotArea() const
     {    
     return m_has_pivotArea;
@@ -33151,7 +35129,7 @@ CT_ChartFormats* CT_ChartFormats::default_instance_ = NULL;
             
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("pivotArea", "", _outStream);;
+        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -33217,6 +35195,11 @@ CT_ChartFormats* CT_ChartFormats::default_instance_ = NULL;
 CT_ChartFormat* CT_ChartFormat::default_instance_ = NULL;
 
     // CT_PivotHierarchies
+    CT_PivotHierarchies::CT_PivotHierarchies()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_PivotHierarchy* CT_PivotHierarchies::add_pivotHierarchy()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -33262,7 +35245,7 @@ CT_ChartFormat* CT_ChartFormat::default_instance_ = NULL;
         {
             if ((*iter)->has_pivotHierarchy())
             {
-                (*iter)->get_pivotHierarchy().toXmlElem("pivotHierarchy", "", _outStream);
+                (*iter)->get_pivotHierarchy().toXmlElem("main:pivotHierarchy", "", _outStream);
             }
         }
     }
@@ -33297,6 +35280,11 @@ CT_ChartFormat* CT_ChartFormat::default_instance_ = NULL;
 
 
     // CT_PivotHierarchies::ChildGroup_1
+    CT_PivotHierarchies::ChildGroup_1::ChildGroup_1()
+    :m_has_pivotHierarchy(false),
+    m_pivotHierarchy(NULL)
+    {
+    }
     bool CT_PivotHierarchies::ChildGroup_1::has_pivotHierarchy() const
     {    
     return m_has_pivotHierarchy;
@@ -33325,6 +35313,33 @@ CT_ChartFormat* CT_ChartFormat::default_instance_ = NULL;
 CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
 
     // CT_PivotHierarchy
+    CT_PivotHierarchy::CT_PivotHierarchy()
+    :m_has_mps(false),
+    m_mps(NULL),
+    m_has_outline_attr(false),
+    m_outline_attr(false),
+    m_has_multipleItemSelectionAllowed_attr(false),
+    m_multipleItemSelectionAllowed_attr(false),
+    m_has_subtotalTop_attr(false),
+    m_subtotalTop_attr(false),
+    m_has_showInFieldList_attr(false),
+    m_showInFieldList_attr(false),
+    m_has_dragToRow_attr(false),
+    m_dragToRow_attr(false),
+    m_has_dragToCol_attr(false),
+    m_dragToCol_attr(false),
+    m_has_dragToPage_attr(false),
+    m_dragToPage_attr(false),
+    m_has_dragToData_attr(false),
+    m_dragToData_attr(false),
+    m_has_dragOff_attr(false),
+    m_dragOff_attr(false),
+    m_has_includeNewItemsInFilter_attr(false),
+    m_includeNewItemsInFilter_attr(false),
+    m_has_caption_attr(false),
+    m_caption_attr(NULL)
+    {
+    }
     bool CT_PivotHierarchy::has_mps() const
     {    
     return m_has_mps;
@@ -33397,12 +35412,12 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
     m_has_includeNewItemsInFilter_attr = false;
     m_includeNewItemsInFilter_attr = false;
     
-    m_has_s_caption_attr = false;
+    m_has_caption_attr = false;
     
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        delete m_s_caption_attr;
-        m_s_caption_attr = NULL;
+        delete m_caption_attr;
+        m_caption_attr = NULL;
     }
     
     
@@ -33494,16 +35509,16 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_caption_attr)
+    if (m_has_caption_attr)
     {
-        m_s_caption_attr->toXmlAttr("caption", _outStream);
+        m_caption_attr->toXmlAttr("caption", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_mps)
     {
-        m_mps->toXmlElem("mps", "", _outStream);;
+        m_mps->toXmlElem("main:mps", "", _outStream);;
     }
      
     {
@@ -33512,11 +35527,11 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
         {
             if ((*iter)->has_members())
             {
-                (*iter)->get_members().toXmlElem("members", "", _outStream);
+                (*iter)->get_members().toXmlElem("main:members", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -33693,28 +35708,35 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
     return m_includeNewItemsInFilter_attr;
     }
 
-    bool CT_PivotHierarchy::has_s_caption_attr() const
+    bool CT_PivotHierarchy::has_caption_attr() const
     {    
-    return m_has_s_caption_attr;
+    return m_has_caption_attr;
     }
 
-    void CT_PivotHierarchy::set_s_caption_attr(const ns_s::ST_Xstring& _s_caption_attr)
+    void CT_PivotHierarchy::set_caption_attr(const ns_s::ST_Xstring& _caption_attr)
     {    
-    m_has_s_caption_attr = true;
-    m_s_caption_attr = new ns_s::ST_Xstring(_s_caption_attr);
+    m_has_caption_attr = true;
+    m_caption_attr = new ns_s::ST_Xstring(_caption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PivotHierarchy::get_s_caption_attr() const
+    const ns_s::ST_Xstring& CT_PivotHierarchy::get_caption_attr() const
     {    
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        return *m_s_caption_attr;
+        return *m_caption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
 
     // CT_PivotHierarchy::ChildGroup_1
+    CT_PivotHierarchy::ChildGroup_1::ChildGroup_1()
+    :m_has_members(false),
+    m_members(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_PivotHierarchy::ChildGroup_1::has_members() const
     {    
     return m_has_members;
@@ -33786,6 +35808,11 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
 CT_PivotHierarchy* CT_PivotHierarchy::default_instance_ = NULL;
 
     // CT_RowHierarchiesUsage
+    CT_RowHierarchiesUsage::CT_RowHierarchiesUsage()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_HierarchyUsage* CT_RowHierarchiesUsage::add_rowHierarchyUsage()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -33831,7 +35858,7 @@ CT_PivotHierarchy* CT_PivotHierarchy::default_instance_ = NULL;
         {
             if ((*iter)->has_rowHierarchyUsage())
             {
-                (*iter)->get_rowHierarchyUsage().toXmlElem("rowHierarchyUsage", "", _outStream);
+                (*iter)->get_rowHierarchyUsage().toXmlElem("main:rowHierarchyUsage", "", _outStream);
             }
         }
     }
@@ -33866,6 +35893,11 @@ CT_PivotHierarchy* CT_PivotHierarchy::default_instance_ = NULL;
 
 
     // CT_RowHierarchiesUsage::ChildGroup_1
+    CT_RowHierarchiesUsage::ChildGroup_1::ChildGroup_1()
+    :m_has_rowHierarchyUsage(false),
+    m_rowHierarchyUsage(NULL)
+    {
+    }
     bool CT_RowHierarchiesUsage::ChildGroup_1::has_rowHierarchyUsage() const
     {    
     return m_has_rowHierarchyUsage;
@@ -33894,6 +35926,11 @@ CT_PivotHierarchy* CT_PivotHierarchy::default_instance_ = NULL;
 CT_RowHierarchiesUsage* CT_RowHierarchiesUsage::default_instance_ = NULL;
 
     // CT_ColHierarchiesUsage
+    CT_ColHierarchiesUsage::CT_ColHierarchiesUsage()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_HierarchyUsage* CT_ColHierarchiesUsage::add_colHierarchyUsage()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -33939,7 +35976,7 @@ CT_RowHierarchiesUsage* CT_RowHierarchiesUsage::default_instance_ = NULL;
         {
             if ((*iter)->has_colHierarchyUsage())
             {
-                (*iter)->get_colHierarchyUsage().toXmlElem("colHierarchyUsage", "", _outStream);
+                (*iter)->get_colHierarchyUsage().toXmlElem("main:colHierarchyUsage", "", _outStream);
             }
         }
     }
@@ -33974,6 +36011,11 @@ CT_RowHierarchiesUsage* CT_RowHierarchiesUsage::default_instance_ = NULL;
 
 
     // CT_ColHierarchiesUsage::ChildGroup_1
+    CT_ColHierarchiesUsage::ChildGroup_1::ChildGroup_1()
+    :m_has_colHierarchyUsage(false),
+    m_colHierarchyUsage(NULL)
+    {
+    }
     bool CT_ColHierarchiesUsage::ChildGroup_1::has_colHierarchyUsage() const
     {    
     return m_has_colHierarchyUsage;
@@ -34002,6 +36044,11 @@ CT_RowHierarchiesUsage* CT_RowHierarchiesUsage::default_instance_ = NULL;
 CT_ColHierarchiesUsage* CT_ColHierarchiesUsage::default_instance_ = NULL;
 
     // CT_HierarchyUsage
+    CT_HierarchyUsage::CT_HierarchyUsage()
+    :m_has_hierarchyUsage_attr(false),
+    m_hierarchyUsage_attr(0)
+    {
+    }
     void CT_HierarchyUsage::clear()
     {    
     m_has_hierarchyUsage_attr = false;
@@ -34055,6 +36102,11 @@ CT_ColHierarchiesUsage* CT_ColHierarchiesUsage::default_instance_ = NULL;
 CT_HierarchyUsage* CT_HierarchyUsage::default_instance_ = NULL;
 
     // CT_MemberProperties
+    CT_MemberProperties::CT_MemberProperties()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_MemberProperty* CT_MemberProperties::add_mp()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -34100,7 +36152,7 @@ CT_HierarchyUsage* CT_HierarchyUsage::default_instance_ = NULL;
         {
             if ((*iter)->has_mp())
             {
-                (*iter)->get_mp().toXmlElem("mp", "", _outStream);
+                (*iter)->get_mp().toXmlElem("main:mp", "", _outStream);
             }
         }
     }
@@ -34135,6 +36187,11 @@ CT_HierarchyUsage* CT_HierarchyUsage::default_instance_ = NULL;
 
 
     // CT_MemberProperties::ChildGroup_1
+    CT_MemberProperties::ChildGroup_1::ChildGroup_1()
+    :m_has_mp(false),
+    m_mp(NULL)
+    {
+    }
     bool CT_MemberProperties::ChildGroup_1::has_mp() const
     {    
     return m_has_mp;
@@ -34163,14 +36220,35 @@ CT_HierarchyUsage* CT_HierarchyUsage::default_instance_ = NULL;
 CT_MemberProperties* CT_MemberProperties::default_instance_ = NULL;
 
     // CT_MemberProperty
+    CT_MemberProperty::CT_MemberProperty()
+    :m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_showCell_attr(false),
+    m_showCell_attr(false),
+    m_has_showTip_attr(false),
+    m_showTip_attr(false),
+    m_has_showAsCaption_attr(false),
+    m_showAsCaption_attr(false),
+    m_has_nameLen_attr(false),
+    m_nameLen_attr(0),
+    m_has_pPos_attr(false),
+    m_pPos_attr(0),
+    m_has_pLen_attr(false),
+    m_pLen_attr(0),
+    m_has_level_attr(false),
+    m_level_attr(0),
+    m_has_field_attr(false),
+    m_field_attr(0)
+    {
+    }
     void CT_MemberProperty::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -34208,9 +36286,9 @@ CT_MemberProperties* CT_MemberProperties::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -34275,22 +36353,22 @@ CT_MemberProperties* CT_MemberProperties::default_instance_ = NULL;
     return *CT_MemberProperty::default_instance_;
     }
 
-    bool CT_MemberProperty::has_s_name_attr() const
+    bool CT_MemberProperty::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_MemberProperty::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_MemberProperty::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_MemberProperty::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_MemberProperty::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -34426,6 +36504,13 @@ CT_MemberProperties* CT_MemberProperties::default_instance_ = NULL;
 CT_MemberProperty* CT_MemberProperty::default_instance_ = NULL;
 
     // CT_Members
+    CT_Members::CT_Members()
+    :m_has_count_attr(false),
+    m_count_attr(0),
+    m_has_level_attr(false),
+    m_level_attr(0)
+    {
+    }
     CT_Member* CT_Members::add_member()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -34480,7 +36565,7 @@ CT_MemberProperty* CT_MemberProperty::default_instance_ = NULL;
         {
             if ((*iter)->has_member())
             {
-                (*iter)->get_member().toXmlElem("member", "", _outStream);
+                (*iter)->get_member().toXmlElem("main:member", "", _outStream);
             }
         }
     }
@@ -34531,6 +36616,11 @@ CT_MemberProperty* CT_MemberProperty::default_instance_ = NULL;
 
 
     // CT_Members::ChildGroup_1
+    CT_Members::ChildGroup_1::ChildGroup_1()
+    :m_has_member(false),
+    m_member(NULL)
+    {
+    }
     bool CT_Members::ChildGroup_1::has_member() const
     {    
     return m_has_member;
@@ -34559,14 +36649,19 @@ CT_MemberProperty* CT_MemberProperty::default_instance_ = NULL;
 CT_Members* CT_Members::default_instance_ = NULL;
 
     // CT_Member
+    CT_Member::CT_Member()
+    :m_has_name_attr(false),
+    m_name_attr(NULL)
+    {
+    }
     void CT_Member::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     }
@@ -34580,9 +36675,9 @@ CT_Members* CT_Members::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
             _outStream << ">";
@@ -34599,22 +36694,22 @@ CT_Members* CT_Members::default_instance_ = NULL;
     return *CT_Member::default_instance_;
     }
 
-    bool CT_Member::has_s_name_attr() const
+    bool CT_Member::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_Member::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_Member::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Member::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_Member::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -34622,6 +36717,11 @@ CT_Members* CT_Members::default_instance_ = NULL;
 CT_Member* CT_Member::default_instance_ = NULL;
 
     // CT_Dimensions
+    CT_Dimensions::CT_Dimensions()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_PivotDimension* CT_Dimensions::add_dimension()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -34667,7 +36767,7 @@ CT_Member* CT_Member::default_instance_ = NULL;
         {
             if ((*iter)->has_dimension())
             {
-                (*iter)->get_dimension().toXmlElem("dimension", "", _outStream);
+                (*iter)->get_dimension().toXmlElem("main:dimension", "", _outStream);
             }
         }
     }
@@ -34702,6 +36802,11 @@ CT_Member* CT_Member::default_instance_ = NULL;
 
 
     // CT_Dimensions::ChildGroup_1
+    CT_Dimensions::ChildGroup_1::ChildGroup_1()
+    :m_has_dimension(false),
+    m_dimension(NULL)
+    {
+    }
     bool CT_Dimensions::ChildGroup_1::has_dimension() const
     {    
     return m_has_dimension;
@@ -34730,35 +36835,46 @@ CT_Member* CT_Member::default_instance_ = NULL;
 CT_Dimensions* CT_Dimensions::default_instance_ = NULL;
 
     // CT_PivotDimension
+    CT_PivotDimension::CT_PivotDimension()
+    :m_has_measure_attr(false),
+    m_measure_attr(false),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_uniqueName_attr(false),
+    m_uniqueName_attr(NULL),
+    m_has_caption_attr(false),
+    m_caption_attr(NULL)
+    {
+    }
     void CT_PivotDimension::clear()
     {    
     m_has_measure_attr = false;
     m_measure_attr = false;
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_uniqueName_attr = false;
+    m_has_uniqueName_attr = false;
     
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        delete m_s_uniqueName_attr;
-        m_s_uniqueName_attr = NULL;
+        delete m_uniqueName_attr;
+        m_uniqueName_attr = NULL;
     }
     
     
-    m_has_s_caption_attr = false;
+    m_has_caption_attr = false;
     
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        delete m_s_caption_attr;
-        m_s_caption_attr = NULL;
+        delete m_caption_attr;
+        m_caption_attr = NULL;
     }
     
     }
@@ -34778,21 +36894,21 @@ CT_Dimensions* CT_Dimensions::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_uniqueName_attr)
+    if (m_has_uniqueName_attr)
     {
-        m_s_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
+        m_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
     }
     
     
-    if (m_has_s_caption_attr)
+    if (m_has_caption_attr)
     {
-        m_s_caption_attr->toXmlAttr("caption", _outStream);
+        m_caption_attr->toXmlAttr("caption", _outStream);
     }
     
             _outStream << ">";
@@ -34825,62 +36941,62 @@ CT_Dimensions* CT_Dimensions::default_instance_ = NULL;
     return m_measure_attr;
     }
 
-    bool CT_PivotDimension::has_s_name_attr() const
+    bool CT_PivotDimension::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_PivotDimension::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_PivotDimension::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PivotDimension::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_PivotDimension::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PivotDimension::has_s_uniqueName_attr() const
+    bool CT_PivotDimension::has_uniqueName_attr() const
     {    
-    return m_has_s_uniqueName_attr;
+    return m_has_uniqueName_attr;
     }
 
-    void CT_PivotDimension::set_s_uniqueName_attr(const ns_s::ST_Xstring& _s_uniqueName_attr)
+    void CT_PivotDimension::set_uniqueName_attr(const ns_s::ST_Xstring& _uniqueName_attr)
     {    
-    m_has_s_uniqueName_attr = true;
-    m_s_uniqueName_attr = new ns_s::ST_Xstring(_s_uniqueName_attr);
+    m_has_uniqueName_attr = true;
+    m_uniqueName_attr = new ns_s::ST_Xstring(_uniqueName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PivotDimension::get_s_uniqueName_attr() const
+    const ns_s::ST_Xstring& CT_PivotDimension::get_uniqueName_attr() const
     {    
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        return *m_s_uniqueName_attr;
+        return *m_uniqueName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PivotDimension::has_s_caption_attr() const
+    bool CT_PivotDimension::has_caption_attr() const
     {    
-    return m_has_s_caption_attr;
+    return m_has_caption_attr;
     }
 
-    void CT_PivotDimension::set_s_caption_attr(const ns_s::ST_Xstring& _s_caption_attr)
+    void CT_PivotDimension::set_caption_attr(const ns_s::ST_Xstring& _caption_attr)
     {    
-    m_has_s_caption_attr = true;
-    m_s_caption_attr = new ns_s::ST_Xstring(_s_caption_attr);
+    m_has_caption_attr = true;
+    m_caption_attr = new ns_s::ST_Xstring(_caption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PivotDimension::get_s_caption_attr() const
+    const ns_s::ST_Xstring& CT_PivotDimension::get_caption_attr() const
     {    
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        return *m_s_caption_attr;
+        return *m_caption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -34888,6 +37004,11 @@ CT_Dimensions* CT_Dimensions::default_instance_ = NULL;
 CT_PivotDimension* CT_PivotDimension::default_instance_ = NULL;
 
     // CT_MeasureGroups
+    CT_MeasureGroups::CT_MeasureGroups()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_MeasureGroup* CT_MeasureGroups::add_measureGroup()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -34933,7 +37054,7 @@ CT_PivotDimension* CT_PivotDimension::default_instance_ = NULL;
         {
             if ((*iter)->has_measureGroup())
             {
-                (*iter)->get_measureGroup().toXmlElem("measureGroup", "", _outStream);
+                (*iter)->get_measureGroup().toXmlElem("main:measureGroup", "", _outStream);
             }
         }
     }
@@ -34968,6 +37089,11 @@ CT_PivotDimension* CT_PivotDimension::default_instance_ = NULL;
 
 
     // CT_MeasureGroups::ChildGroup_1
+    CT_MeasureGroups::ChildGroup_1::ChildGroup_1()
+    :m_has_measureGroup(false),
+    m_measureGroup(NULL)
+    {
+    }
     bool CT_MeasureGroups::ChildGroup_1::has_measureGroup() const
     {    
     return m_has_measureGroup;
@@ -34996,6 +37122,11 @@ CT_PivotDimension* CT_PivotDimension::default_instance_ = NULL;
 CT_MeasureGroups* CT_MeasureGroups::default_instance_ = NULL;
 
     // CT_MeasureDimensionMaps
+    CT_MeasureDimensionMaps::CT_MeasureDimensionMaps()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_MeasureDimensionMap* CT_MeasureDimensionMaps::add_map()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -35041,7 +37172,7 @@ CT_MeasureGroups* CT_MeasureGroups::default_instance_ = NULL;
         {
             if ((*iter)->has_map())
             {
-                (*iter)->get_map().toXmlElem("map", "", _outStream);
+                (*iter)->get_map().toXmlElem("main:map", "", _outStream);
             }
         }
     }
@@ -35076,6 +37207,11 @@ CT_MeasureGroups* CT_MeasureGroups::default_instance_ = NULL;
 
 
     // CT_MeasureDimensionMaps::ChildGroup_1
+    CT_MeasureDimensionMaps::ChildGroup_1::ChildGroup_1()
+    :m_has_map(false),
+    m_map(NULL)
+    {
+    }
     bool CT_MeasureDimensionMaps::ChildGroup_1::has_map() const
     {    
     return m_has_map;
@@ -35104,23 +37240,30 @@ CT_MeasureGroups* CT_MeasureGroups::default_instance_ = NULL;
 CT_MeasureDimensionMaps* CT_MeasureDimensionMaps::default_instance_ = NULL;
 
     // CT_MeasureGroup
+    CT_MeasureGroup::CT_MeasureGroup()
+    :m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_caption_attr(false),
+    m_caption_attr(NULL)
+    {
+    }
     void CT_MeasureGroup::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_caption_attr = false;
+    m_has_caption_attr = false;
     
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        delete m_s_caption_attr;
-        m_s_caption_attr = NULL;
+        delete m_caption_attr;
+        m_caption_attr = NULL;
     }
     
     }
@@ -35134,15 +37277,15 @@ CT_MeasureDimensionMaps* CT_MeasureDimensionMaps::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_caption_attr)
+    if (m_has_caption_attr)
     {
-        m_s_caption_attr->toXmlAttr("caption", _outStream);
+        m_caption_attr->toXmlAttr("caption", _outStream);
     }
     
             _outStream << ">";
@@ -35159,42 +37302,42 @@ CT_MeasureDimensionMaps* CT_MeasureDimensionMaps::default_instance_ = NULL;
     return *CT_MeasureGroup::default_instance_;
     }
 
-    bool CT_MeasureGroup::has_s_name_attr() const
+    bool CT_MeasureGroup::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_MeasureGroup::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_MeasureGroup::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_MeasureGroup::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_MeasureGroup::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_MeasureGroup::has_s_caption_attr() const
+    bool CT_MeasureGroup::has_caption_attr() const
     {    
-    return m_has_s_caption_attr;
+    return m_has_caption_attr;
     }
 
-    void CT_MeasureGroup::set_s_caption_attr(const ns_s::ST_Xstring& _s_caption_attr)
+    void CT_MeasureGroup::set_caption_attr(const ns_s::ST_Xstring& _caption_attr)
     {    
-    m_has_s_caption_attr = true;
-    m_s_caption_attr = new ns_s::ST_Xstring(_s_caption_attr);
+    m_has_caption_attr = true;
+    m_caption_attr = new ns_s::ST_Xstring(_caption_attr);
     }
 
-    const ns_s::ST_Xstring& CT_MeasureGroup::get_s_caption_attr() const
+    const ns_s::ST_Xstring& CT_MeasureGroup::get_caption_attr() const
     {    
-    if (m_s_caption_attr)
+    if (m_caption_attr)
     {
-        return *m_s_caption_attr;
+        return *m_caption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -35202,6 +37345,13 @@ CT_MeasureDimensionMaps* CT_MeasureDimensionMaps::default_instance_ = NULL;
 CT_MeasureGroup* CT_MeasureGroup::default_instance_ = NULL;
 
     // CT_MeasureDimensionMap
+    CT_MeasureDimensionMap::CT_MeasureDimensionMap()
+    :m_has_measureGroup_attr(false),
+    m_measureGroup_attr(0),
+    m_has_dimension_attr(false),
+    m_dimension_attr(0)
+    {
+    }
     void CT_MeasureDimensionMap::clear()
     {    
     m_has_measureGroup_attr = false;
@@ -35280,6 +37430,21 @@ CT_MeasureGroup* CT_MeasureGroup::default_instance_ = NULL;
 CT_MeasureDimensionMap* CT_MeasureDimensionMap::default_instance_ = NULL;
 
     // CT_PivotTableStyle
+    CT_PivotTableStyle::CT_PivotTableStyle()
+    :m_has_name_attr(false),
+    m_name_attr(""),
+    m_has_showRowHeaders_attr(false),
+    m_showRowHeaders_attr(false),
+    m_has_showColHeaders_attr(false),
+    m_showColHeaders_attr(false),
+    m_has_showRowStripes_attr(false),
+    m_showRowStripes_attr(false),
+    m_has_showColStripes_attr(false),
+    m_showColStripes_attr(false),
+    m_has_showLastColumn_attr(false),
+    m_showLastColumn_attr(false)
+    {
+    }
     void CT_PivotTableStyle::clear()
     {    
     m_has_name_attr = false;
@@ -35458,6 +37623,11 @@ CT_MeasureDimensionMap* CT_MeasureDimensionMap::default_instance_ = NULL;
 CT_PivotTableStyle* CT_PivotTableStyle::default_instance_ = NULL;
 
     // CT_PivotFilters
+    CT_PivotFilters::CT_PivotFilters()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_PivotFilter* CT_PivotFilters::add_filter()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -35503,7 +37673,7 @@ CT_PivotTableStyle* CT_PivotTableStyle::default_instance_ = NULL;
         {
             if ((*iter)->has_filter())
             {
-                (*iter)->get_filter().toXmlElem("filter", "", _outStream);
+                (*iter)->get_filter().toXmlElem("main:filter", "", _outStream);
             }
         }
     }
@@ -35538,6 +37708,11 @@ CT_PivotTableStyle* CT_PivotTableStyle::default_instance_ = NULL;
 
 
     // CT_PivotFilters::ChildGroup_1
+    CT_PivotFilters::ChildGroup_1::ChildGroup_1()
+    :m_has_filter(false),
+    m_filter(NULL)
+    {
+    }
     bool CT_PivotFilters::ChildGroup_1::has_filter() const
     {    
     return m_has_filter;
@@ -35566,6 +37741,35 @@ CT_PivotTableStyle* CT_PivotTableStyle::default_instance_ = NULL;
 CT_PivotFilters* CT_PivotFilters::default_instance_ = NULL;
 
     // CT_PivotFilter
+    CT_PivotFilter::CT_PivotFilter()
+    :m_has_autoFilter(false),
+    m_autoFilter(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_fld_attr(false),
+    m_fld_attr(0),
+    m_has_mpFld_attr(false),
+    m_mpFld_attr(0),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_evalOrder_attr(false),
+    m_evalOrder_attr(0),
+    m_has_id_attr(false),
+    m_id_attr(0),
+    m_has_iMeasureHier_attr(false),
+    m_iMeasureHier_attr(0),
+    m_has_iMeasureFld_attr(false),
+    m_iMeasureFld_attr(0),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_description_attr(false),
+    m_description_attr(NULL),
+    m_has_stringValue1_attr(false),
+    m_stringValue1_attr(NULL),
+    m_has_stringValue2_attr(false),
+    m_stringValue2_attr(NULL)
+    {
+    }
     bool CT_PivotFilter::has_autoFilter() const
     {    
     return m_has_autoFilter;
@@ -35643,39 +37847,39 @@ CT_PivotFilters* CT_PivotFilters::default_instance_ = NULL;
     m_has_iMeasureFld_attr = false;
     m_iMeasureFld_attr = 0;
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_description_attr = false;
+    m_has_description_attr = false;
     
-    if (m_s_description_attr)
+    if (m_description_attr)
     {
-        delete m_s_description_attr;
-        m_s_description_attr = NULL;
+        delete m_description_attr;
+        m_description_attr = NULL;
     }
     
     
-    m_has_s_stringValue1_attr = false;
+    m_has_stringValue1_attr = false;
     
-    if (m_s_stringValue1_attr)
+    if (m_stringValue1_attr)
     {
-        delete m_s_stringValue1_attr;
-        m_s_stringValue1_attr = NULL;
+        delete m_stringValue1_attr;
+        m_stringValue1_attr = NULL;
     }
     
     
-    m_has_s_stringValue2_attr = false;
+    m_has_stringValue2_attr = false;
     
-    if (m_s_stringValue2_attr)
+    if (m_stringValue2_attr)
     {
-        delete m_s_stringValue2_attr;
-        m_s_stringValue2_attr = NULL;
+        delete m_stringValue2_attr;
+        m_stringValue2_attr = NULL;
     }
     
     }
@@ -35731,39 +37935,39 @@ CT_PivotFilters* CT_PivotFilters::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_description_attr)
+    if (m_has_description_attr)
     {
-        m_s_description_attr->toXmlAttr("description", _outStream);
+        m_description_attr->toXmlAttr("description", _outStream);
     }
     
     
-    if (m_has_s_stringValue1_attr)
+    if (m_has_stringValue1_attr)
     {
-        m_s_stringValue1_attr->toXmlAttr("stringValue1", _outStream);
+        m_stringValue1_attr->toXmlAttr("stringValue1", _outStream);
     }
     
     
-    if (m_has_s_stringValue2_attr)
+    if (m_has_stringValue2_attr)
     {
-        m_s_stringValue2_attr->toXmlAttr("stringValue2", _outStream);
+        m_stringValue2_attr->toXmlAttr("stringValue2", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("autoFilter", "", _outStream);;
+        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -35894,82 +38098,82 @@ CT_PivotFilters* CT_PivotFilters::default_instance_ = NULL;
     return m_iMeasureFld_attr;
     }
 
-    bool CT_PivotFilter::has_s_name_attr() const
+    bool CT_PivotFilter::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_PivotFilter::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_PivotFilter::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PivotFilter::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_PivotFilter::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PivotFilter::has_s_description_attr() const
+    bool CT_PivotFilter::has_description_attr() const
     {    
-    return m_has_s_description_attr;
+    return m_has_description_attr;
     }
 
-    void CT_PivotFilter::set_s_description_attr(const ns_s::ST_Xstring& _s_description_attr)
+    void CT_PivotFilter::set_description_attr(const ns_s::ST_Xstring& _description_attr)
     {    
-    m_has_s_description_attr = true;
-    m_s_description_attr = new ns_s::ST_Xstring(_s_description_attr);
+    m_has_description_attr = true;
+    m_description_attr = new ns_s::ST_Xstring(_description_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PivotFilter::get_s_description_attr() const
+    const ns_s::ST_Xstring& CT_PivotFilter::get_description_attr() const
     {    
-    if (m_s_description_attr)
+    if (m_description_attr)
     {
-        return *m_s_description_attr;
+        return *m_description_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PivotFilter::has_s_stringValue1_attr() const
+    bool CT_PivotFilter::has_stringValue1_attr() const
     {    
-    return m_has_s_stringValue1_attr;
+    return m_has_stringValue1_attr;
     }
 
-    void CT_PivotFilter::set_s_stringValue1_attr(const ns_s::ST_Xstring& _s_stringValue1_attr)
+    void CT_PivotFilter::set_stringValue1_attr(const ns_s::ST_Xstring& _stringValue1_attr)
     {    
-    m_has_s_stringValue1_attr = true;
-    m_s_stringValue1_attr = new ns_s::ST_Xstring(_s_stringValue1_attr);
+    m_has_stringValue1_attr = true;
+    m_stringValue1_attr = new ns_s::ST_Xstring(_stringValue1_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PivotFilter::get_s_stringValue1_attr() const
+    const ns_s::ST_Xstring& CT_PivotFilter::get_stringValue1_attr() const
     {    
-    if (m_s_stringValue1_attr)
+    if (m_stringValue1_attr)
     {
-        return *m_s_stringValue1_attr;
+        return *m_stringValue1_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_PivotFilter::has_s_stringValue2_attr() const
+    bool CT_PivotFilter::has_stringValue2_attr() const
     {    
-    return m_has_s_stringValue2_attr;
+    return m_has_stringValue2_attr;
     }
 
-    void CT_PivotFilter::set_s_stringValue2_attr(const ns_s::ST_Xstring& _s_stringValue2_attr)
+    void CT_PivotFilter::set_stringValue2_attr(const ns_s::ST_Xstring& _stringValue2_attr)
     {    
-    m_has_s_stringValue2_attr = true;
-    m_s_stringValue2_attr = new ns_s::ST_Xstring(_s_stringValue2_attr);
+    m_has_stringValue2_attr = true;
+    m_stringValue2_attr = new ns_s::ST_Xstring(_stringValue2_attr);
     }
 
-    const ns_s::ST_Xstring& CT_PivotFilter::get_s_stringValue2_attr() const
+    const ns_s::ST_Xstring& CT_PivotFilter::get_stringValue2_attr() const
     {    
-    if (m_s_stringValue2_attr)
+    if (m_stringValue2_attr)
     {
-        return *m_s_stringValue2_attr;
+        return *m_stringValue2_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -35977,6 +38181,37 @@ CT_PivotFilters* CT_PivotFilters::default_instance_ = NULL;
 CT_PivotFilter* CT_PivotFilter::default_instance_ = NULL;
 
     // CT_PivotArea
+    CT_PivotArea::CT_PivotArea()
+    :m_has_references(false),
+    m_references(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_field_attr(false),
+    m_field_attr(0),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_dataOnly_attr(false),
+    m_dataOnly_attr(false),
+    m_has_labelOnly_attr(false),
+    m_labelOnly_attr(false),
+    m_has_grandRow_attr(false),
+    m_grandRow_attr(false),
+    m_has_grandCol_attr(false),
+    m_grandCol_attr(false),
+    m_has_cacheIndex_attr(false),
+    m_cacheIndex_attr(false),
+    m_has_outline_attr(false),
+    m_outline_attr(false),
+    m_has_offset_attr(false),
+    m_offset_attr(NULL),
+    m_has_collapsedLevelsAreSubtotals_attr(false),
+    m_collapsedLevelsAreSubtotals_attr(false),
+    m_has_axis_attr(false),
+    m_axis_attr(NULL),
+    m_has_fieldPosition_attr(false),
+    m_fieldPosition_attr(0)
+    {
+    }
     bool CT_PivotArea::has_references() const
     {    
     return m_has_references;
@@ -36166,12 +38401,12 @@ CT_PivotFilter* CT_PivotFilter::default_instance_ = NULL;
             
     if (m_has_references)
     {
-        m_references->toXmlElem("references", "", _outStream);;
+        m_references->toXmlElem("main:references", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -36393,6 +38628,11 @@ CT_PivotFilter* CT_PivotFilter::default_instance_ = NULL;
 CT_PivotArea* CT_PivotArea::default_instance_ = NULL;
 
     // CT_PivotAreaReferences
+    CT_PivotAreaReferences::CT_PivotAreaReferences()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_PivotAreaReference* CT_PivotAreaReferences::add_reference()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -36438,7 +38678,7 @@ CT_PivotArea* CT_PivotArea::default_instance_ = NULL;
         {
             if ((*iter)->has_reference())
             {
-                (*iter)->get_reference().toXmlElem("reference", "", _outStream);
+                (*iter)->get_reference().toXmlElem("main:reference", "", _outStream);
             }
         }
     }
@@ -36473,6 +38713,11 @@ CT_PivotArea* CT_PivotArea::default_instance_ = NULL;
 
 
     // CT_PivotAreaReferences::ChildGroup_1
+    CT_PivotAreaReferences::ChildGroup_1::ChildGroup_1()
+    :m_has_reference(false),
+    m_reference(NULL)
+    {
+    }
     bool CT_PivotAreaReferences::ChildGroup_1::has_reference() const
     {    
     return m_has_reference;
@@ -36501,6 +38746,43 @@ CT_PivotArea* CT_PivotArea::default_instance_ = NULL;
 CT_PivotAreaReferences* CT_PivotAreaReferences::default_instance_ = NULL;
 
     // CT_PivotAreaReference
+    CT_PivotAreaReference::CT_PivotAreaReference()
+    :m_has_field_attr(false),
+    m_field_attr(0),
+    m_has_count_attr(false),
+    m_count_attr(0),
+    m_has_selected_attr(false),
+    m_selected_attr(false),
+    m_has_byPosition_attr(false),
+    m_byPosition_attr(false),
+    m_has_relative_attr(false),
+    m_relative_attr(false),
+    m_has_defaultSubtotal_attr(false),
+    m_defaultSubtotal_attr(false),
+    m_has_sumSubtotal_attr(false),
+    m_sumSubtotal_attr(false),
+    m_has_countASubtotal_attr(false),
+    m_countASubtotal_attr(false),
+    m_has_avgSubtotal_attr(false),
+    m_avgSubtotal_attr(false),
+    m_has_maxSubtotal_attr(false),
+    m_maxSubtotal_attr(false),
+    m_has_minSubtotal_attr(false),
+    m_minSubtotal_attr(false),
+    m_has_productSubtotal_attr(false),
+    m_productSubtotal_attr(false),
+    m_has_countSubtotal_attr(false),
+    m_countSubtotal_attr(false),
+    m_has_stdDevSubtotal_attr(false),
+    m_stdDevSubtotal_attr(false),
+    m_has_stdDevPSubtotal_attr(false),
+    m_stdDevPSubtotal_attr(false),
+    m_has_varSubtotal_attr(false),
+    m_varSubtotal_attr(false),
+    m_has_varPSubtotal_attr(false),
+    m_varPSubtotal_attr(false)
+    {
+    }
     CT_Index* CT_PivotAreaReference::add_x()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -36698,11 +38980,11 @@ CT_PivotAreaReferences* CT_PivotAreaReferences::default_instance_ = NULL;
         {
             if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("x", "", _outStream);
+                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -36993,6 +39275,13 @@ CT_PivotAreaReferences* CT_PivotAreaReferences::default_instance_ = NULL;
 
 
     // CT_PivotAreaReference::ChildGroup_1
+    CT_PivotAreaReference::ChildGroup_1::ChildGroup_1()
+    :m_has_x(false),
+    m_x(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_PivotAreaReference::ChildGroup_1::has_x() const
     {    
     return m_has_x;
@@ -37064,6 +39353,11 @@ CT_PivotAreaReferences* CT_PivotAreaReferences::default_instance_ = NULL;
 CT_PivotAreaReference* CT_PivotAreaReference::default_instance_ = NULL;
 
     // CT_Index
+    CT_Index::CT_Index()
+    :m_has_v_attr(false),
+    m_v_attr(0)
+    {
+    }
     void CT_Index::clear()
     {    
     m_has_v_attr = false;
@@ -37117,6 +39411,57 @@ CT_PivotAreaReference* CT_PivotAreaReference::default_instance_ = NULL;
 CT_Index* CT_Index::default_instance_ = NULL;
 
     // CT_QueryTable
+    CT_QueryTable::CT_QueryTable()
+    :m_has_queryTableRefresh(false),
+    m_queryTableRefresh(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_headers_attr(false),
+    m_headers_attr(false),
+    m_has_rowNumbers_attr(false),
+    m_rowNumbers_attr(false),
+    m_has_disableRefresh_attr(false),
+    m_disableRefresh_attr(false),
+    m_has_backgroundRefresh_attr(false),
+    m_backgroundRefresh_attr(false),
+    m_has_firstBackgroundRefresh_attr(false),
+    m_firstBackgroundRefresh_attr(false),
+    m_has_refreshOnLoad_attr(false),
+    m_refreshOnLoad_attr(false),
+    m_has_growShrinkType_attr(false),
+    m_growShrinkType_attr(NULL),
+    m_has_fillFormulas_attr(false),
+    m_fillFormulas_attr(false),
+    m_has_removeDataOnSave_attr(false),
+    m_removeDataOnSave_attr(false),
+    m_has_disableEdit_attr(false),
+    m_disableEdit_attr(false),
+    m_has_preserveFormatting_attr(false),
+    m_preserveFormatting_attr(false),
+    m_has_adjustColumnWidth_attr(false),
+    m_adjustColumnWidth_attr(false),
+    m_has_intermediate_attr(false),
+    m_intermediate_attr(false),
+    m_has_connectionId_attr(false),
+    m_connectionId_attr(0),
+    m_has_autoFormatId_attr(false),
+    m_autoFormatId_attr(0),
+    m_has_applyNumberFormats_attr(false),
+    m_applyNumberFormats_attr(false),
+    m_has_applyBorderFormats_attr(false),
+    m_applyBorderFormats_attr(false),
+    m_has_applyFontFormats_attr(false),
+    m_applyFontFormats_attr(false),
+    m_has_applyPatternFormats_attr(false),
+    m_applyPatternFormats_attr(false),
+    m_has_applyAlignmentFormats_attr(false),
+    m_applyAlignmentFormats_attr(false),
+    m_has_applyWidthHeightFormats_attr(false),
+    m_applyWidthHeightFormats_attr(false)
+    {
+    }
     bool CT_QueryTable::has_queryTableRefresh() const
     {    
     return m_has_queryTableRefresh;
@@ -37167,12 +39512,12 @@ CT_Index* CT_Index::default_instance_ = NULL;
 
     void CT_QueryTable::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -37255,9 +39600,9 @@ CT_Index* CT_Index::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -37390,12 +39735,12 @@ CT_Index* CT_Index::default_instance_ = NULL;
             
     if (m_has_queryTableRefresh)
     {
-        m_queryTableRefresh->toXmlElem("queryTableRefresh", "", _outStream);;
+        m_queryTableRefresh->toXmlElem("main:queryTableRefresh", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -37410,22 +39755,22 @@ CT_Index* CT_Index::default_instance_ = NULL;
     return *CT_QueryTable::default_instance_;
     }
 
-    bool CT_QueryTable::has_s_name_attr() const
+    bool CT_QueryTable::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_QueryTable::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_QueryTable::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_QueryTable::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_QueryTable::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -37773,6 +40118,31 @@ CT_Index* CT_Index::default_instance_ = NULL;
 CT_QueryTable* CT_QueryTable::default_instance_ = NULL;
 
     // CT_QueryTableRefresh
+    CT_QueryTableRefresh::CT_QueryTableRefresh()
+    :m_has_queryTableFields(false),
+    m_queryTableFields(NULL),
+    m_has_queryTableDeletedFields(false),
+    m_queryTableDeletedFields(NULL),
+    m_has_sortState(false),
+    m_sortState(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_preserveSortFilterLayout_attr(false),
+    m_preserveSortFilterLayout_attr(false),
+    m_has_fieldIdWrapped_attr(false),
+    m_fieldIdWrapped_attr(false),
+    m_has_headersInLastRefresh_attr(false),
+    m_headersInLastRefresh_attr(false),
+    m_has_minimumVersion_attr(false),
+    m_minimumVersion_attr(0),
+    m_has_nextId_attr(false),
+    m_nextId_attr(0),
+    m_has_unboundColumnsLeft_attr(false),
+    m_unboundColumnsLeft_attr(0),
+    m_has_unboundColumnsRight_attr(false),
+    m_unboundColumnsRight_attr(0)
+    {
+    }
     bool CT_QueryTableRefresh::has_queryTableFields() const
     {    
     return m_has_queryTableFields;
@@ -37947,22 +40317,22 @@ CT_QueryTable* CT_QueryTable::default_instance_ = NULL;
             
     if (m_has_queryTableFields)
     {
-        m_queryTableFields->toXmlElem("queryTableFields", "", _outStream);;
+        m_queryTableFields->toXmlElem("main:queryTableFields", "", _outStream);;
     }
     
     if (m_has_queryTableDeletedFields)
     {
-        m_queryTableDeletedFields->toXmlElem("queryTableDeletedFields", "", _outStream);;
+        m_queryTableDeletedFields->toXmlElem("main:queryTableDeletedFields", "", _outStream);;
     }
     
     if (m_has_sortState)
     {
-        m_sortState->toXmlElem("sortState", "", _outStream);;
+        m_sortState->toXmlElem("main:sortState", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -38092,6 +40462,11 @@ CT_QueryTable* CT_QueryTable::default_instance_ = NULL;
 CT_QueryTableRefresh* CT_QueryTableRefresh::default_instance_ = NULL;
 
     // CT_QueryTableDeletedFields
+    CT_QueryTableDeletedFields::CT_QueryTableDeletedFields()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_DeletedField* CT_QueryTableDeletedFields::add_deletedField()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -38137,7 +40512,7 @@ CT_QueryTableRefresh* CT_QueryTableRefresh::default_instance_ = NULL;
         {
             if ((*iter)->has_deletedField())
             {
-                (*iter)->get_deletedField().toXmlElem("deletedField", "", _outStream);
+                (*iter)->get_deletedField().toXmlElem("main:deletedField", "", _outStream);
             }
         }
     }
@@ -38172,6 +40547,11 @@ CT_QueryTableRefresh* CT_QueryTableRefresh::default_instance_ = NULL;
 
 
     // CT_QueryTableDeletedFields::ChildGroup_1
+    CT_QueryTableDeletedFields::ChildGroup_1::ChildGroup_1()
+    :m_has_deletedField(false),
+    m_deletedField(NULL)
+    {
+    }
     bool CT_QueryTableDeletedFields::ChildGroup_1::has_deletedField() const
     {    
     return m_has_deletedField;
@@ -38200,14 +40580,19 @@ CT_QueryTableRefresh* CT_QueryTableRefresh::default_instance_ = NULL;
 CT_QueryTableDeletedFields* CT_QueryTableDeletedFields::default_instance_ = NULL;
 
     // CT_DeletedField
+    CT_DeletedField::CT_DeletedField()
+    :m_has_name_attr(false),
+    m_name_attr(NULL)
+    {
+    }
     void CT_DeletedField::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     }
@@ -38221,9 +40606,9 @@ CT_QueryTableDeletedFields* CT_QueryTableDeletedFields::default_instance_ = NULL
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
             _outStream << ">";
@@ -38240,22 +40625,22 @@ CT_QueryTableDeletedFields* CT_QueryTableDeletedFields::default_instance_ = NULL
     return *CT_DeletedField::default_instance_;
     }
 
-    bool CT_DeletedField::has_s_name_attr() const
+    bool CT_DeletedField::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_DeletedField::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_DeletedField::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DeletedField::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_DeletedField::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -38263,6 +40648,11 @@ CT_QueryTableDeletedFields* CT_QueryTableDeletedFields::default_instance_ = NULL
 CT_DeletedField* CT_DeletedField::default_instance_ = NULL;
 
     // CT_QueryTableFields
+    CT_QueryTableFields::CT_QueryTableFields()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_QueryTableField* CT_QueryTableFields::add_queryTableField()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -38308,7 +40698,7 @@ CT_DeletedField* CT_DeletedField::default_instance_ = NULL;
         {
             if ((*iter)->has_queryTableField())
             {
-                (*iter)->get_queryTableField().toXmlElem("queryTableField", "", _outStream);
+                (*iter)->get_queryTableField().toXmlElem("main:queryTableField", "", _outStream);
             }
         }
     }
@@ -38343,6 +40733,11 @@ CT_DeletedField* CT_DeletedField::default_instance_ = NULL;
 
 
     // CT_QueryTableFields::ChildGroup_1
+    CT_QueryTableFields::ChildGroup_1::ChildGroup_1()
+    :m_has_queryTableField(false),
+    m_queryTableField(NULL)
+    {
+    }
     bool CT_QueryTableFields::ChildGroup_1::has_queryTableField() const
     {    
     return m_has_queryTableField;
@@ -38371,6 +40766,25 @@ CT_DeletedField* CT_DeletedField::default_instance_ = NULL;
 CT_QueryTableFields* CT_QueryTableFields::default_instance_ = NULL;
 
     // CT_QueryTableField
+    CT_QueryTableField::CT_QueryTableField()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_id_attr(false),
+    m_id_attr(0),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_dataBound_attr(false),
+    m_dataBound_attr(false),
+    m_has_rowNumbers_attr(false),
+    m_rowNumbers_attr(false),
+    m_has_fillFormulas_attr(false),
+    m_fillFormulas_attr(false),
+    m_has_clipped_attr(false),
+    m_clipped_attr(false),
+    m_has_tableColumnId_attr(false),
+    m_tableColumnId_attr(0)
+    {
+    }
     bool CT_QueryTableField::has_extLst() const
     {    
     return m_has_extLst;
@@ -38400,12 +40814,12 @@ CT_QueryTableFields* CT_QueryTableFields::default_instance_ = NULL;
     m_has_id_attr = false;
     m_id_attr = 0;
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -38440,9 +40854,9 @@ CT_QueryTableFields* CT_QueryTableFields::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -38479,7 +40893,7 @@ CT_QueryTableFields* CT_QueryTableFields::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -38510,22 +40924,22 @@ CT_QueryTableFields* CT_QueryTableFields::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool CT_QueryTableField::has_s_name_attr() const
+    bool CT_QueryTableField::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_QueryTableField::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_QueryTableField::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_QueryTableField::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_QueryTableField::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -38613,6 +41027,13 @@ CT_QueryTableFields* CT_QueryTableFields::default_instance_ = NULL;
 CT_QueryTableField* CT_QueryTableField::default_instance_ = NULL;
 
     // CT_Sst
+    CT_Sst::CT_Sst()
+    :m_has_count_attr(false),
+    m_count_attr(0),
+    m_has_uniqueCount_attr(false),
+    m_uniqueCount_attr(0)
+    {
+    }
     CT_Rst* CT_Sst::add_si()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -38675,11 +41096,11 @@ CT_QueryTableField* CT_QueryTableField::default_instance_ = NULL;
         {
             if ((*iter)->has_si())
             {
-                (*iter)->get_si().toXmlElem("si", "", _outStream);
+                (*iter)->get_si().toXmlElem("main:si", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -38730,6 +41151,13 @@ CT_QueryTableField* CT_QueryTableField::default_instance_ = NULL;
 
 
     // CT_Sst::ChildGroup_1
+    CT_Sst::ChildGroup_1::ChildGroup_1()
+    :m_has_si(false),
+    m_si(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Sst::ChildGroup_1::has_si() const
     {    
     return m_has_si;
@@ -38801,26 +41229,35 @@ CT_QueryTableField* CT_QueryTableField::default_instance_ = NULL;
 CT_Sst* CT_Sst::default_instance_ = NULL;
 
     // CT_PhoneticRun
-    bool CT_PhoneticRun::has_s_t() const
+    CT_PhoneticRun::CT_PhoneticRun()
+    :m_has_t(false),
+    m_t(NULL),
+    m_has_sb_attr(false),
+    m_sb_attr(0),
+    m_has_eb_attr(false),
+    m_eb_attr(0)
+    {
+    }
+    bool CT_PhoneticRun::has_t() const
     {    
-    return m_has_s_t;
+    return m_has_t;
     }
 
-    ns_s::ST_Xstring* CT_PhoneticRun::mutable_s_t()
+    ns_s::ST_Xstring* CT_PhoneticRun::mutable_t()
     {    
-    m_has_s_t = true;
-    if (!m_s_t)
+    m_has_t = true;
+    if (!m_t)
     {
-        m_s_t = new ns_s::ST_Xstring();
+        m_t = new ns_s::ST_Xstring();
     }
-    return m_s_t;
+    return m_t;
     }
 
-    const ns_s::ST_Xstring& CT_PhoneticRun::get_s_t() const
+    const ns_s::ST_Xstring& CT_PhoneticRun::get_t() const
     {    
-    if (m_s_t)
+    if (m_t)
     {
-        return *m_s_t;
+        return *m_t;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -38856,9 +41293,9 @@ CT_Sst* CT_Sst::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_s_t)
+    if (m_has_t)
     {
-        _outStream << "<s:t>" << m_s_t->toString() << "</s:t>";;
+        _outStream << "<main:t>" << m_t->toString() << "</main:t>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -38908,6 +41345,13 @@ CT_Sst* CT_Sst::default_instance_ = NULL;
 CT_PhoneticRun* CT_PhoneticRun::default_instance_ = NULL;
 
     // CT_RElt
+    CT_RElt::CT_RElt()
+    :m_has_rPr(false),
+    m_rPr(NULL),
+    m_has_t(false),
+    m_t(NULL)
+    {
+    }
     bool CT_RElt::has_rPr() const
     {    
     return m_has_rPr;
@@ -38932,26 +41376,26 @@ CT_PhoneticRun* CT_PhoneticRun::default_instance_ = NULL;
     return CT_RPrElt::default_instance();
     }
 
-    bool CT_RElt::has_s_t() const
+    bool CT_RElt::has_t() const
     {    
-    return m_has_s_t;
+    return m_has_t;
     }
 
-    ns_s::ST_Xstring* CT_RElt::mutable_s_t()
+    ns_s::ST_Xstring* CT_RElt::mutable_t()
     {    
-    m_has_s_t = true;
-    if (!m_s_t)
+    m_has_t = true;
+    if (!m_t)
     {
-        m_s_t = new ns_s::ST_Xstring();
+        m_t = new ns_s::ST_Xstring();
     }
-    return m_s_t;
+    return m_t;
     }
 
-    const ns_s::ST_Xstring& CT_RElt::get_s_t() const
+    const ns_s::ST_Xstring& CT_RElt::get_t() const
     {    
-    if (m_s_t)
+    if (m_t)
     {
-        return *m_s_t;
+        return *m_t;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -38972,12 +41416,12 @@ CT_PhoneticRun* CT_PhoneticRun::default_instance_ = NULL;
             
     if (m_has_rPr)
     {
-        m_rPr->toXmlElem("rPr", "", _outStream);;
+        m_rPr->toXmlElem("main:rPr", "", _outStream);;
     }
     
-    if (m_has_s_t)
+    if (m_has_t)
     {
-        _outStream << "<s:t>" << m_s_t->toString() << "</s:t>";;
+        _outStream << "<main:t>" << m_t->toString() << "</main:t>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -38995,6 +41439,10 @@ CT_PhoneticRun* CT_PhoneticRun::default_instance_ = NULL;
 CT_RElt* CT_RElt::default_instance_ = NULL;
 
     // CT_RPrElt
+    CT_RPrElt::CT_RPrElt()
+
+    {
+    }
     CT_FontName* CT_RPrElt::add_rFont()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -39144,63 +41592,63 @@ CT_RElt* CT_RElt::default_instance_ = NULL;
         {
             if ((*iter)->has_rFont())
             {
-                (*iter)->get_rFont().toXmlElem("rFont", "", _outStream);
+                (*iter)->get_rFont().toXmlElem("main:rFont", "", _outStream);
             }
             else if ((*iter)->has_charset())
             {
-                (*iter)->get_charset().toXmlElem("charset", "", _outStream);
+                (*iter)->get_charset().toXmlElem("main:charset", "", _outStream);
             }
             else if ((*iter)->has_family())
             {
-                (*iter)->get_family().toXmlElem("family", "", _outStream);
+                (*iter)->get_family().toXmlElem("main:family", "", _outStream);
             }
             else if ((*iter)->has_b())
             {
-                (*iter)->get_b().toXmlElem("b", "", _outStream);
+                (*iter)->get_b().toXmlElem("main:b", "", _outStream);
             }
             else if ((*iter)->has_i())
             {
-                (*iter)->get_i().toXmlElem("i", "", _outStream);
+                (*iter)->get_i().toXmlElem("main:i", "", _outStream);
             }
             else if ((*iter)->has_strike())
             {
-                (*iter)->get_strike().toXmlElem("strike", "", _outStream);
+                (*iter)->get_strike().toXmlElem("main:strike", "", _outStream);
             }
             else if ((*iter)->has_outline())
             {
-                (*iter)->get_outline().toXmlElem("outline", "", _outStream);
+                (*iter)->get_outline().toXmlElem("main:outline", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("main:shadow", "", _outStream);
             }
             else if ((*iter)->has_condense())
             {
-                (*iter)->get_condense().toXmlElem("condense", "", _outStream);
+                (*iter)->get_condense().toXmlElem("main:condense", "", _outStream);
             }
             else if ((*iter)->has_extend())
             {
-                (*iter)->get_extend().toXmlElem("extend", "", _outStream);
+                (*iter)->get_extend().toXmlElem("main:extend", "", _outStream);
             }
             else if ((*iter)->has_color())
             {
-                (*iter)->get_color().toXmlElem("color", "", _outStream);
+                (*iter)->get_color().toXmlElem("main:color", "", _outStream);
             }
             else if ((*iter)->has_sz())
             {
-                (*iter)->get_sz().toXmlElem("sz", "", _outStream);
+                (*iter)->get_sz().toXmlElem("main:sz", "", _outStream);
             }
             else if ((*iter)->has_u())
             {
-                (*iter)->get_u().toXmlElem("u", "", _outStream);
+                (*iter)->get_u().toXmlElem("main:u", "", _outStream);
             }
             else if ((*iter)->has_vertAlign())
             {
-                (*iter)->get_vertAlign().toXmlElem("vertAlign", "", _outStream);
+                (*iter)->get_vertAlign().toXmlElem("main:vertAlign", "", _outStream);
             }
             else if ((*iter)->has_scheme())
             {
-                (*iter)->get_scheme().toXmlElem("scheme", "", _outStream);
+                (*iter)->get_scheme().toXmlElem("main:scheme", "", _outStream);
             }
         }
     }
@@ -39219,6 +41667,39 @@ CT_RElt* CT_RElt::default_instance_ = NULL;
 
 
     // CT_RPrElt::ChildGroup_1
+    CT_RPrElt::ChildGroup_1::ChildGroup_1()
+    :m_has_rFont(false),
+    m_rFont(NULL),
+    m_has_charset(false),
+    m_charset(NULL),
+    m_has_family(false),
+    m_family(NULL),
+    m_has_b(false),
+    m_b(NULL),
+    m_has_i(false),
+    m_i(NULL),
+    m_has_strike(false),
+    m_strike(NULL),
+    m_has_outline(false),
+    m_outline(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_condense(false),
+    m_condense(NULL),
+    m_has_extend(false),
+    m_extend(NULL),
+    m_has_color(false),
+    m_color(NULL),
+    m_has_sz(false),
+    m_sz(NULL),
+    m_has_u(false),
+    m_u(NULL),
+    m_has_vertAlign(false),
+    m_vertAlign(NULL),
+    m_has_scheme(false),
+    m_scheme(NULL)
+    {
+    }
     bool CT_RPrElt::ChildGroup_1::has_rFont() const
     {    
     return m_has_rFont;
@@ -41487,26 +43968,31 @@ CT_RElt* CT_RElt::default_instance_ = NULL;
 CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
 
     // CT_Rst
-    bool CT_Rst::has_s_t() const
+    CT_Rst::CT_Rst()
+    :m_has_t(false),
+    m_t(NULL)
+    {
+    }
+    bool CT_Rst::has_t() const
     {    
-    return m_has_s_t;
+    return m_has_t;
     }
 
-    ns_s::ST_Xstring* CT_Rst::mutable_s_t()
+    ns_s::ST_Xstring* CT_Rst::mutable_t()
     {    
-    m_has_s_t = true;
-    if (!m_s_t)
+    m_has_t = true;
+    if (!m_t)
     {
-        m_s_t = new ns_s::ST_Xstring();
+        m_t = new ns_s::ST_Xstring();
     }
-    return m_s_t;
+    return m_t;
     }
 
-    const ns_s::ST_Xstring& CT_Rst::get_s_t() const
+    const ns_s::ST_Xstring& CT_Rst::get_t() const
     {    
-    if (m_s_t)
+    if (m_t)
     {
-        return *m_s_t;
+        return *m_t;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -41537,12 +44023,12 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
 
     void CT_Rst::clear()
     {    
-    m_has_s_t = false;
+    m_has_t = false;
     
-    if (m_s_t)
+    if (m_t)
     {
-        delete m_s_t;
-        m_s_t = NULL;
+        delete m_t;
+        m_t = NULL;
     }
     
      
@@ -41567,9 +44053,9 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
             
             _outStream << ">";
             
-    if (m_has_s_t)
+    if (m_has_t)
     {
-        _outStream << "<s:t>" << m_s_t->toString() << "</s:t>";;
+        _outStream << "<main:t>" << m_t->toString() << "</main:t>";;
     }
      
     {
@@ -41578,15 +44064,15 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
         {
             if ((*iter)->has_r())
             {
-                (*iter)->get_r().toXmlElem("r", "", _outStream);
+                (*iter)->get_r().toXmlElem("main:r", "", _outStream);
             }
             else if ((*iter)->has_rPh())
             {
-                (*iter)->get_rPh().toXmlElem("rPh", "", _outStream);
+                (*iter)->get_rPh().toXmlElem("main:rPh", "", _outStream);
             }
             else if ((*iter)->has_phoneticPr())
             {
-                (*iter)->get_phoneticPr().toXmlElem("phoneticPr", "", _outStream);
+                (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
             }
         }
     }
@@ -41605,6 +44091,15 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
 
 
     // CT_Rst::ChildGroup_1
+    CT_Rst::ChildGroup_1::ChildGroup_1()
+    :m_has_r(false),
+    m_r(NULL),
+    m_has_rPh(false),
+    m_rPh(NULL),
+    m_has_phoneticPr(false),
+    m_phoneticPr(NULL)
+    {
+    }
     bool CT_Rst::ChildGroup_1::has_r() const
     {    
     return m_has_r;
@@ -41737,6 +44232,15 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
 CT_Rst* CT_Rst::default_instance_ = NULL;
 
     // CT_PhoneticPr
+    CT_PhoneticPr::CT_PhoneticPr()
+    :m_has_fontId_attr(false),
+    m_fontId_attr(NULL),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_alignment_attr(false),
+    m_alignment_attr(NULL)
+    {
+    }
     void CT_PhoneticPr::clear()
     {    
     m_has_fontId_attr = false;
@@ -41870,6 +44374,33 @@ CT_Rst* CT_Rst::default_instance_ = NULL;
 CT_PhoneticPr* CT_PhoneticPr::default_instance_ = NULL;
 
     // CT_RevisionHeaders
+    CT_RevisionHeaders::CT_RevisionHeaders()
+    :m_has_guid_attr(false),
+    m_guid_attr(NULL),
+    m_has_lastGuid_attr(false),
+    m_lastGuid_attr(NULL),
+    m_has_shared_attr(false),
+    m_shared_attr(false),
+    m_has_diskRevisions_attr(false),
+    m_diskRevisions_attr(false),
+    m_has_history_attr(false),
+    m_history_attr(false),
+    m_has_trackRevisions_attr(false),
+    m_trackRevisions_attr(false),
+    m_has_exclusive_attr(false),
+    m_exclusive_attr(false),
+    m_has_revisionId_attr(false),
+    m_revisionId_attr(0),
+    m_has_version_attr(false),
+    m_version_attr(0),
+    m_has_keepChangeHistory_attr(false),
+    m_keepChangeHistory_attr(false),
+    m_has_protected_attr(false),
+    m_protected_attr(false),
+    m_has_preserveHistory_attr(false),
+    m_preserveHistory_attr(0)
+    {
+    }
     CT_RevisionHeader* CT_RevisionHeaders::add_header()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -41880,21 +44411,21 @@ CT_PhoneticPr* CT_PhoneticPr::default_instance_ = NULL;
 
     void CT_RevisionHeaders::clear()
     {    
-    m_has_s_guid_attr = false;
+    m_has_guid_attr = false;
     
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        delete m_s_guid_attr;
-        m_s_guid_attr = NULL;
+        delete m_guid_attr;
+        m_guid_attr = NULL;
     }
     
     
-    m_has_s_lastGuid_attr = false;
+    m_has_lastGuid_attr = false;
     
-    if (m_s_lastGuid_attr)
+    if (m_lastGuid_attr)
     {
-        delete m_s_lastGuid_attr;
-        m_s_lastGuid_attr = NULL;
+        delete m_lastGuid_attr;
+        m_lastGuid_attr = NULL;
     }
     
     
@@ -41947,15 +44478,15 @@ CT_PhoneticPr* CT_PhoneticPr::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_guid_attr)
+    if (m_has_guid_attr)
     {
-        m_s_guid_attr->toXmlAttr("guid", _outStream);
+        m_guid_attr->toXmlAttr("guid", _outStream);
     }
     
     
-    if (m_has_s_lastGuid_attr)
+    if (m_has_lastGuid_attr)
     {
-        m_s_lastGuid_attr->toXmlAttr("lastGuid", _outStream);
+        m_lastGuid_attr->toXmlAttr("lastGuid", _outStream);
     }
     
     
@@ -42026,7 +44557,7 @@ CT_PhoneticPr* CT_PhoneticPr::default_instance_ = NULL;
         {
             if ((*iter)->has_header())
             {
-                (*iter)->get_header().toXmlElem("header", "", _outStream);
+                (*iter)->get_header().toXmlElem("main:header", "", _outStream);
             }
         }
     }
@@ -42043,42 +44574,42 @@ CT_PhoneticPr* CT_PhoneticPr::default_instance_ = NULL;
     return *CT_RevisionHeaders::default_instance_;
     }
 
-    bool CT_RevisionHeaders::has_s_guid_attr() const
+    bool CT_RevisionHeaders::has_guid_attr() const
     {    
-    return m_has_s_guid_attr;
+    return m_has_guid_attr;
     }
 
-    void CT_RevisionHeaders::set_s_guid_attr(const ns_s::ST_Guid& _s_guid_attr)
+    void CT_RevisionHeaders::set_guid_attr(const ns_s::ST_Guid& _guid_attr)
     {    
-    m_has_s_guid_attr = true;
-    m_s_guid_attr = new ns_s::ST_Guid(_s_guid_attr);
+    m_has_guid_attr = true;
+    m_guid_attr = new ns_s::ST_Guid(_guid_attr);
     }
 
-    const ns_s::ST_Guid& CT_RevisionHeaders::get_s_guid_attr() const
+    const ns_s::ST_Guid& CT_RevisionHeaders::get_guid_attr() const
     {    
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        return *m_s_guid_attr;
+        return *m_guid_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
 
-    bool CT_RevisionHeaders::has_s_lastGuid_attr() const
+    bool CT_RevisionHeaders::has_lastGuid_attr() const
     {    
-    return m_has_s_lastGuid_attr;
+    return m_has_lastGuid_attr;
     }
 
-    void CT_RevisionHeaders::set_s_lastGuid_attr(const ns_s::ST_Guid& _s_lastGuid_attr)
+    void CT_RevisionHeaders::set_lastGuid_attr(const ns_s::ST_Guid& _lastGuid_attr)
     {    
-    m_has_s_lastGuid_attr = true;
-    m_s_lastGuid_attr = new ns_s::ST_Guid(_s_lastGuid_attr);
+    m_has_lastGuid_attr = true;
+    m_lastGuid_attr = new ns_s::ST_Guid(_lastGuid_attr);
     }
 
-    const ns_s::ST_Guid& CT_RevisionHeaders::get_s_lastGuid_attr() const
+    const ns_s::ST_Guid& CT_RevisionHeaders::get_lastGuid_attr() const
     {    
-    if (m_s_lastGuid_attr)
+    if (m_lastGuid_attr)
     {
-        return *m_s_lastGuid_attr;
+        return *m_lastGuid_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -42245,6 +44776,11 @@ CT_PhoneticPr* CT_PhoneticPr::default_instance_ = NULL;
 
 
     // CT_RevisionHeaders::ChildGroup_1
+    CT_RevisionHeaders::ChildGroup_1::ChildGroup_1()
+    :m_has_header(false),
+    m_header(NULL)
+    {
+    }
     bool CT_RevisionHeaders::ChildGroup_1::has_header() const
     {    
     return m_has_header;
@@ -42273,6 +44809,10 @@ CT_PhoneticPr* CT_PhoneticPr::default_instance_ = NULL;
 CT_RevisionHeaders* CT_RevisionHeaders::default_instance_ = NULL;
 
     // CT_Revisions
+    CT_Revisions::CT_Revisions()
+
+    {
+    }
     CT_RevisionRowColumn* CT_Revisions::add_rrc()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -42398,51 +44938,51 @@ CT_RevisionHeaders* CT_RevisionHeaders::default_instance_ = NULL;
         {
             if ((*iter)->has_rrc())
             {
-                (*iter)->get_rrc().toXmlElem("rrc", "", _outStream);
+                (*iter)->get_rrc().toXmlElem("main:rrc", "", _outStream);
             }
             else if ((*iter)->has_rm())
             {
-                (*iter)->get_rm().toXmlElem("rm", "", _outStream);
+                (*iter)->get_rm().toXmlElem("main:rm", "", _outStream);
             }
             else if ((*iter)->has_rcv())
             {
-                (*iter)->get_rcv().toXmlElem("rcv", "", _outStream);
+                (*iter)->get_rcv().toXmlElem("main:rcv", "", _outStream);
             }
             else if ((*iter)->has_rsnm())
             {
-                (*iter)->get_rsnm().toXmlElem("rsnm", "", _outStream);
+                (*iter)->get_rsnm().toXmlElem("main:rsnm", "", _outStream);
             }
             else if ((*iter)->has_ris())
             {
-                (*iter)->get_ris().toXmlElem("ris", "", _outStream);
+                (*iter)->get_ris().toXmlElem("main:ris", "", _outStream);
             }
             else if ((*iter)->has_rcc())
             {
-                (*iter)->get_rcc().toXmlElem("rcc", "", _outStream);
+                (*iter)->get_rcc().toXmlElem("main:rcc", "", _outStream);
             }
             else if ((*iter)->has_rfmt())
             {
-                (*iter)->get_rfmt().toXmlElem("rfmt", "", _outStream);
+                (*iter)->get_rfmt().toXmlElem("main:rfmt", "", _outStream);
             }
             else if ((*iter)->has_raf())
             {
-                (*iter)->get_raf().toXmlElem("raf", "", _outStream);
+                (*iter)->get_raf().toXmlElem("main:raf", "", _outStream);
             }
             else if ((*iter)->has_rdn())
             {
-                (*iter)->get_rdn().toXmlElem("rdn", "", _outStream);
+                (*iter)->get_rdn().toXmlElem("main:rdn", "", _outStream);
             }
             else if ((*iter)->has_rcmt())
             {
-                (*iter)->get_rcmt().toXmlElem("rcmt", "", _outStream);
+                (*iter)->get_rcmt().toXmlElem("main:rcmt", "", _outStream);
             }
             else if ((*iter)->has_rqt())
             {
-                (*iter)->get_rqt().toXmlElem("rqt", "", _outStream);
+                (*iter)->get_rqt().toXmlElem("main:rqt", "", _outStream);
             }
             else if ((*iter)->has_rcft())
             {
-                (*iter)->get_rcft().toXmlElem("rcft", "", _outStream);
+                (*iter)->get_rcft().toXmlElem("main:rcft", "", _outStream);
             }
         }
     }
@@ -42461,6 +45001,33 @@ CT_RevisionHeaders* CT_RevisionHeaders::default_instance_ = NULL;
 
 
     // CT_Revisions::ChildGroup_1
+    CT_Revisions::ChildGroup_1::ChildGroup_1()
+    :m_has_rrc(false),
+    m_rrc(NULL),
+    m_has_rm(false),
+    m_rm(NULL),
+    m_has_rcv(false),
+    m_rcv(NULL),
+    m_has_rsnm(false),
+    m_rsnm(NULL),
+    m_has_ris(false),
+    m_ris(NULL),
+    m_has_rcc(false),
+    m_rcc(NULL),
+    m_has_rfmt(false),
+    m_rfmt(NULL),
+    m_has_raf(false),
+    m_raf(NULL),
+    m_has_rdn(false),
+    m_rdn(NULL),
+    m_has_rcmt(false),
+    m_rcmt(NULL),
+    m_has_rqt(false),
+    m_rqt(NULL),
+    m_has_rcft(false),
+    m_rcft(NULL)
+    {
+    }
     bool CT_Revisions::ChildGroup_1::has_rrc() const
     {    
     return m_has_rrc;
@@ -43952,6 +46519,29 @@ CT_RevisionHeaders* CT_RevisionHeaders::default_instance_ = NULL;
 CT_Revisions* CT_Revisions::default_instance_ = NULL;
 
     // CT_RevisionHeader
+    CT_RevisionHeader::CT_RevisionHeader()
+    :m_has_sheetIdMap(false),
+    m_sheetIdMap(NULL),
+    m_has_reviewedList(false),
+    m_reviewedList(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_guid_attr(false),
+    m_guid_attr(NULL),
+    m_has_dateTime_attr(false),
+    m_dateTime_attr(""),
+    m_has_maxSheetId_attr(false),
+    m_maxSheetId_attr(0),
+    m_has_userName_attr(false),
+    m_userName_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_minRId_attr(false),
+    m_minRId_attr(0),
+    m_has_maxRId_attr(false),
+    m_maxRId_attr(0)
+    {
+    }
     bool CT_RevisionHeader::has_sheetIdMap() const
     {    
     return m_has_sheetIdMap;
@@ -44026,12 +46616,12 @@ CT_Revisions* CT_Revisions::default_instance_ = NULL;
 
     void CT_RevisionHeader::clear()
     {    
-    m_has_s_guid_attr = false;
+    m_has_guid_attr = false;
     
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        delete m_s_guid_attr;
-        m_s_guid_attr = NULL;
+        delete m_guid_attr;
+        m_guid_attr = NULL;
     }
     
     
@@ -44041,12 +46631,12 @@ CT_Revisions* CT_Revisions::default_instance_ = NULL;
     m_has_maxSheetId_attr = false;
     m_maxSheetId_attr = 0;
     
-    m_has_s_userName_attr = false;
+    m_has_userName_attr = false;
     
-    if (m_s_userName_attr)
+    if (m_userName_attr)
     {
-        delete m_s_userName_attr;
-        m_s_userName_attr = NULL;
+        delete m_userName_attr;
+        m_userName_attr = NULL;
     }
     
     
@@ -44075,9 +46665,9 @@ CT_Revisions* CT_Revisions::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_guid_attr)
+    if (m_has_guid_attr)
     {
-        m_s_guid_attr->toXmlAttr("guid", _outStream);
+        m_guid_attr->toXmlAttr("guid", _outStream);
     }
     
     
@@ -44093,15 +46683,15 @@ CT_Revisions* CT_Revisions::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_userName_attr)
+    if (m_has_userName_attr)
     {
-        m_s_userName_attr->toXmlAttr("userName", _outStream);
+        m_userName_attr->toXmlAttr("userName", _outStream);
     }
     
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
@@ -44120,17 +46710,17 @@ CT_Revisions* CT_Revisions::default_instance_ = NULL;
             
     if (m_has_sheetIdMap)
     {
-        m_sheetIdMap->toXmlElem("sheetIdMap", "", _outStream);;
+        m_sheetIdMap->toXmlElem("main:sheetIdMap", "", _outStream);;
     }
     
     if (m_has_reviewedList)
     {
-        m_reviewedList->toXmlElem("reviewedList", "", _outStream);;
+        m_reviewedList->toXmlElem("main:reviewedList", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -44145,22 +46735,22 @@ CT_Revisions* CT_Revisions::default_instance_ = NULL;
     return *CT_RevisionHeader::default_instance_;
     }
 
-    bool CT_RevisionHeader::has_s_guid_attr() const
+    bool CT_RevisionHeader::has_guid_attr() const
     {    
-    return m_has_s_guid_attr;
+    return m_has_guid_attr;
     }
 
-    void CT_RevisionHeader::set_s_guid_attr(const ns_s::ST_Guid& _s_guid_attr)
+    void CT_RevisionHeader::set_guid_attr(const ns_s::ST_Guid& _guid_attr)
     {    
-    m_has_s_guid_attr = true;
-    m_s_guid_attr = new ns_s::ST_Guid(_s_guid_attr);
+    m_has_guid_attr = true;
+    m_guid_attr = new ns_s::ST_Guid(_guid_attr);
     }
 
-    const ns_s::ST_Guid& CT_RevisionHeader::get_s_guid_attr() const
+    const ns_s::ST_Guid& CT_RevisionHeader::get_guid_attr() const
     {    
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        return *m_s_guid_attr;
+        return *m_guid_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -44197,22 +46787,22 @@ CT_Revisions* CT_Revisions::default_instance_ = NULL;
     return m_maxSheetId_attr;
     }
 
-    bool CT_RevisionHeader::has_s_userName_attr() const
+    bool CT_RevisionHeader::has_userName_attr() const
     {    
-    return m_has_s_userName_attr;
+    return m_has_userName_attr;
     }
 
-    void CT_RevisionHeader::set_s_userName_attr(const ns_s::ST_Xstring& _s_userName_attr)
+    void CT_RevisionHeader::set_userName_attr(const ns_s::ST_Xstring& _userName_attr)
     {    
-    m_has_s_userName_attr = true;
-    m_s_userName_attr = new ns_s::ST_Xstring(_s_userName_attr);
+    m_has_userName_attr = true;
+    m_userName_attr = new ns_s::ST_Xstring(_userName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionHeader::get_s_userName_attr() const
+    const ns_s::ST_Xstring& CT_RevisionHeader::get_userName_attr() const
     {    
-    if (m_s_userName_attr)
+    if (m_userName_attr)
     {
-        return *m_s_userName_attr;
+        return *m_userName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -44272,6 +46862,11 @@ CT_Revisions* CT_Revisions::default_instance_ = NULL;
 CT_RevisionHeader* CT_RevisionHeader::default_instance_ = NULL;
 
     // CT_SheetIdMap
+    CT_SheetIdMap::CT_SheetIdMap()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_SheetId* CT_SheetIdMap::add_sheetId()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -44317,7 +46912,7 @@ CT_RevisionHeader* CT_RevisionHeader::default_instance_ = NULL;
         {
             if ((*iter)->has_sheetId())
             {
-                (*iter)->get_sheetId().toXmlElem("sheetId", "", _outStream);
+                (*iter)->get_sheetId().toXmlElem("main:sheetId", "", _outStream);
             }
         }
     }
@@ -44352,6 +46947,11 @@ CT_RevisionHeader* CT_RevisionHeader::default_instance_ = NULL;
 
 
     // CT_SheetIdMap::ChildGroup_1
+    CT_SheetIdMap::ChildGroup_1::ChildGroup_1()
+    :m_has_sheetId(false),
+    m_sheetId(NULL)
+    {
+    }
     bool CT_SheetIdMap::ChildGroup_1::has_sheetId() const
     {    
     return m_has_sheetId;
@@ -44380,6 +46980,11 @@ CT_RevisionHeader* CT_RevisionHeader::default_instance_ = NULL;
 CT_SheetIdMap* CT_SheetIdMap::default_instance_ = NULL;
 
     // CT_SheetId
+    CT_SheetId::CT_SheetId()
+    :m_has_val_attr(false),
+    m_val_attr(0)
+    {
+    }
     void CT_SheetId::clear()
     {    
     m_has_val_attr = false;
@@ -44433,6 +47038,11 @@ CT_SheetIdMap* CT_SheetIdMap::default_instance_ = NULL;
 CT_SheetId* CT_SheetId::default_instance_ = NULL;
 
     // CT_ReviewedRevisions
+    CT_ReviewedRevisions::CT_ReviewedRevisions()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Reviewed* CT_ReviewedRevisions::add_reviewed()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -44478,7 +47088,7 @@ CT_SheetId* CT_SheetId::default_instance_ = NULL;
         {
             if ((*iter)->has_reviewed())
             {
-                (*iter)->get_reviewed().toXmlElem("reviewed", "", _outStream);
+                (*iter)->get_reviewed().toXmlElem("main:reviewed", "", _outStream);
             }
         }
     }
@@ -44513,6 +47123,11 @@ CT_SheetId* CT_SheetId::default_instance_ = NULL;
 
 
     // CT_ReviewedRevisions::ChildGroup_1
+    CT_ReviewedRevisions::ChildGroup_1::ChildGroup_1()
+    :m_has_reviewed(false),
+    m_reviewed(NULL)
+    {
+    }
     bool CT_ReviewedRevisions::ChildGroup_1::has_reviewed() const
     {    
     return m_has_reviewed;
@@ -44541,6 +47156,11 @@ CT_SheetId* CT_SheetId::default_instance_ = NULL;
 CT_ReviewedRevisions* CT_ReviewedRevisions::default_instance_ = NULL;
 
     // CT_Reviewed
+    CT_Reviewed::CT_Reviewed()
+    :m_has_rId_attr(false),
+    m_rId_attr(0)
+    {
+    }
     void CT_Reviewed::clear()
     {    
     m_has_rId_attr = false;
@@ -44594,6 +47214,31 @@ CT_ReviewedRevisions* CT_ReviewedRevisions::default_instance_ = NULL;
 CT_Reviewed* CT_Reviewed::default_instance_ = NULL;
 
     // CT_UndoInfo
+    CT_UndoInfo::CT_UndoInfo()
+    :m_has_index_attr(false),
+    m_index_attr(0),
+    m_has_exp_attr(false),
+    m_exp_attr(NULL),
+    m_has_ref3D_attr(false),
+    m_ref3D_attr(false),
+    m_has_array_attr(false),
+    m_array_attr(false),
+    m_has_v_attr(false),
+    m_v_attr(false),
+    m_has_nf_attr(false),
+    m_nf_attr(false),
+    m_has_cs_attr(false),
+    m_cs_attr(false),
+    m_has_dr_attr(false),
+    m_dr_attr(NULL),
+    m_has_dn_attr(false),
+    m_dn_attr(NULL),
+    m_has_r_attr(false),
+    m_r_attr(NULL),
+    m_has_sId_attr(false),
+    m_sId_attr(0)
+    {
+    }
     void CT_UndoInfo::clear()
     {    
     m_has_index_attr = false;
@@ -44632,12 +47277,12 @@ CT_Reviewed* CT_Reviewed::default_instance_ = NULL;
     }
     
     
-    m_has_s_dn_attr = false;
+    m_has_dn_attr = false;
     
-    if (m_s_dn_attr)
+    if (m_dn_attr)
     {
-        delete m_s_dn_attr;
-        m_s_dn_attr = NULL;
+        delete m_dn_attr;
+        m_dn_attr = NULL;
     }
     
     
@@ -44711,9 +47356,9 @@ CT_Reviewed* CT_Reviewed::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_dn_attr)
+    if (m_has_dn_attr)
     {
-        m_s_dn_attr->toXmlAttr("dn", _outStream);
+        m_dn_attr->toXmlAttr("dn", _outStream);
     }
     
     
@@ -44878,22 +47523,22 @@ CT_Reviewed* CT_Reviewed::default_instance_ = NULL;
     return ST_RefA::default_instance();
     }
 
-    bool CT_UndoInfo::has_s_dn_attr() const
+    bool CT_UndoInfo::has_dn_attr() const
     {    
-    return m_has_s_dn_attr;
+    return m_has_dn_attr;
     }
 
-    void CT_UndoInfo::set_s_dn_attr(const ns_s::ST_Xstring& _s_dn_attr)
+    void CT_UndoInfo::set_dn_attr(const ns_s::ST_Xstring& _dn_attr)
     {    
-    m_has_s_dn_attr = true;
-    m_s_dn_attr = new ns_s::ST_Xstring(_s_dn_attr);
+    m_has_dn_attr = true;
+    m_dn_attr = new ns_s::ST_Xstring(_dn_attr);
     }
 
-    const ns_s::ST_Xstring& CT_UndoInfo::get_s_dn_attr() const
+    const ns_s::ST_Xstring& CT_UndoInfo::get_dn_attr() const
     {    
-    if (m_s_dn_attr)
+    if (m_dn_attr)
     {
-        return *m_s_dn_attr;
+        return *m_dn_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -44937,6 +47582,25 @@ CT_Reviewed* CT_Reviewed::default_instance_ = NULL;
 CT_UndoInfo* CT_UndoInfo::default_instance_ = NULL;
 
     // CT_RevisionRowColumn
+    CT_RevisionRowColumn::CT_RevisionRowColumn()
+    :m_has_rId_attr(false),
+    m_rId_attr(0),
+    m_has_ua_attr(false),
+    m_ua_attr(false),
+    m_has_ra_attr(false),
+    m_ra_attr(false),
+    m_has_sId_attr(false),
+    m_sId_attr(0),
+    m_has_eol_attr(false),
+    m_eol_attr(false),
+    m_has_ref_attr(false),
+    m_ref_attr(NULL),
+    m_has_action_attr(false),
+    m_action_attr(NULL),
+    m_has_edge_attr(false),
+    m_edge_attr(false)
+    {
+    }
     CT_UndoInfo* CT_RevisionRowColumn::add_undo()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -45073,15 +47737,15 @@ CT_UndoInfo* CT_UndoInfo::default_instance_ = NULL;
         {
             if ((*iter)->has_undo())
             {
-                (*iter)->get_undo().toXmlElem("undo", "", _outStream);
+                (*iter)->get_undo().toXmlElem("main:undo", "", _outStream);
             }
             else if ((*iter)->has_rcc())
             {
-                (*iter)->get_rcc().toXmlElem("rcc", "", _outStream);
+                (*iter)->get_rcc().toXmlElem("main:rcc", "", _outStream);
             }
             else if ((*iter)->has_rfmt())
             {
-                (*iter)->get_rfmt().toXmlElem("rfmt", "", _outStream);
+                (*iter)->get_rfmt().toXmlElem("main:rfmt", "", _outStream);
             }
         }
     }
@@ -45236,6 +47900,15 @@ CT_UndoInfo* CT_UndoInfo::default_instance_ = NULL;
 
 
     // CT_RevisionRowColumn::ChildGroup_1
+    CT_RevisionRowColumn::ChildGroup_1::ChildGroup_1()
+    :m_has_undo(false),
+    m_undo(NULL),
+    m_has_rcc(false),
+    m_rcc(NULL),
+    m_has_rfmt(false),
+    m_rfmt(NULL)
+    {
+    }
     bool CT_RevisionRowColumn::ChildGroup_1::has_undo() const
     {    
     return m_has_undo;
@@ -45368,6 +48041,23 @@ CT_UndoInfo* CT_UndoInfo::default_instance_ = NULL;
 CT_RevisionRowColumn* CT_RevisionRowColumn::default_instance_ = NULL;
 
     // CT_RevisionMove
+    CT_RevisionMove::CT_RevisionMove()
+    :m_has_rId_attr(false),
+    m_rId_attr(0),
+    m_has_ua_attr(false),
+    m_ua_attr(false),
+    m_has_ra_attr(false),
+    m_ra_attr(false),
+    m_has_sheetId_attr(false),
+    m_sheetId_attr(0),
+    m_has_source_attr(false),
+    m_source_attr(NULL),
+    m_has_destination_attr(false),
+    m_destination_attr(NULL),
+    m_has_sourceSheetId_attr(false),
+    m_sourceSheetId_attr(0)
+    {
+    }
     CT_UndoInfo* CT_RevisionMove::add_undo()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -45495,15 +48185,15 @@ CT_RevisionRowColumn* CT_RevisionRowColumn::default_instance_ = NULL;
         {
             if ((*iter)->has_undo())
             {
-                (*iter)->get_undo().toXmlElem("undo", "", _outStream);
+                (*iter)->get_undo().toXmlElem("main:undo", "", _outStream);
             }
             else if ((*iter)->has_rcc())
             {
-                (*iter)->get_rcc().toXmlElem("rcc", "", _outStream);
+                (*iter)->get_rcc().toXmlElem("main:rcc", "", _outStream);
             }
             else if ((*iter)->has_rfmt())
             {
-                (*iter)->get_rfmt().toXmlElem("rfmt", "", _outStream);
+                (*iter)->get_rfmt().toXmlElem("main:rfmt", "", _outStream);
             }
         }
     }
@@ -45642,6 +48332,15 @@ CT_RevisionRowColumn* CT_RevisionRowColumn::default_instance_ = NULL;
 
 
     // CT_RevisionMove::ChildGroup_1
+    CT_RevisionMove::ChildGroup_1::ChildGroup_1()
+    :m_has_undo(false),
+    m_undo(NULL),
+    m_has_rcc(false),
+    m_rcc(NULL),
+    m_has_rfmt(false),
+    m_rfmt(NULL)
+    {
+    }
     bool CT_RevisionMove::ChildGroup_1::has_undo() const
     {    
     return m_has_undo;
@@ -45774,14 +48473,21 @@ CT_RevisionRowColumn* CT_RevisionRowColumn::default_instance_ = NULL;
 CT_RevisionMove* CT_RevisionMove::default_instance_ = NULL;
 
     // CT_RevisionCustomView
+    CT_RevisionCustomView::CT_RevisionCustomView()
+    :m_has_guid_attr(false),
+    m_guid_attr(NULL),
+    m_has_action_attr(false),
+    m_action_attr(NULL)
+    {
+    }
     void CT_RevisionCustomView::clear()
     {    
-    m_has_s_guid_attr = false;
+    m_has_guid_attr = false;
     
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        delete m_s_guid_attr;
-        m_s_guid_attr = NULL;
+        delete m_guid_attr;
+        m_guid_attr = NULL;
     }
     
     
@@ -45804,9 +48510,9 @@ CT_RevisionMove* CT_RevisionMove::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_guid_attr)
+    if (m_has_guid_attr)
     {
-        m_s_guid_attr->toXmlAttr("guid", _outStream);
+        m_guid_attr->toXmlAttr("guid", _outStream);
     }
     
     
@@ -45829,22 +48535,22 @@ CT_RevisionMove* CT_RevisionMove::default_instance_ = NULL;
     return *CT_RevisionCustomView::default_instance_;
     }
 
-    bool CT_RevisionCustomView::has_s_guid_attr() const
+    bool CT_RevisionCustomView::has_guid_attr() const
     {    
-    return m_has_s_guid_attr;
+    return m_has_guid_attr;
     }
 
-    void CT_RevisionCustomView::set_s_guid_attr(const ns_s::ST_Guid& _s_guid_attr)
+    void CT_RevisionCustomView::set_guid_attr(const ns_s::ST_Guid& _guid_attr)
     {    
-    m_has_s_guid_attr = true;
-    m_s_guid_attr = new ns_s::ST_Guid(_s_guid_attr);
+    m_has_guid_attr = true;
+    m_guid_attr = new ns_s::ST_Guid(_guid_attr);
     }
 
-    const ns_s::ST_Guid& CT_RevisionCustomView::get_s_guid_attr() const
+    const ns_s::ST_Guid& CT_RevisionCustomView::get_guid_attr() const
     {    
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        return *m_s_guid_attr;
+        return *m_guid_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -45872,6 +48578,23 @@ CT_RevisionMove* CT_RevisionMove::default_instance_ = NULL;
 CT_RevisionCustomView* CT_RevisionCustomView::default_instance_ = NULL;
 
     // CT_RevisionSheetRename
+    CT_RevisionSheetRename::CT_RevisionSheetRename()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_rId_attr(false),
+    m_rId_attr(0),
+    m_has_ua_attr(false),
+    m_ua_attr(false),
+    m_has_ra_attr(false),
+    m_ra_attr(false),
+    m_has_sheetId_attr(false),
+    m_sheetId_attr(0),
+    m_has_oldName_attr(false),
+    m_oldName_attr(NULL),
+    m_has_newName_attr(false),
+    m_newName_attr(NULL)
+    {
+    }
     bool CT_RevisionSheetRename::has_extLst() const
     {    
     return m_has_extLst;
@@ -45910,21 +48633,21 @@ CT_RevisionCustomView* CT_RevisionCustomView::default_instance_ = NULL;
     m_has_sheetId_attr = false;
     m_sheetId_attr = 0;
     
-    m_has_s_oldName_attr = false;
+    m_has_oldName_attr = false;
     
-    if (m_s_oldName_attr)
+    if (m_oldName_attr)
     {
-        delete m_s_oldName_attr;
-        m_s_oldName_attr = NULL;
+        delete m_oldName_attr;
+        m_oldName_attr = NULL;
     }
     
     
-    m_has_s_newName_attr = false;
+    m_has_newName_attr = false;
     
-    if (m_s_newName_attr)
+    if (m_newName_attr)
     {
-        delete m_s_newName_attr;
-        m_s_newName_attr = NULL;
+        delete m_newName_attr;
+        m_newName_attr = NULL;
     }
     
     }
@@ -45962,22 +48685,22 @@ CT_RevisionCustomView* CT_RevisionCustomView::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_oldName_attr)
+    if (m_has_oldName_attr)
     {
-        m_s_oldName_attr->toXmlAttr("oldName", _outStream);
+        m_oldName_attr->toXmlAttr("oldName", _outStream);
     }
     
     
-    if (m_has_s_newName_attr)
+    if (m_has_newName_attr)
     {
-        m_s_newName_attr->toXmlAttr("newName", _outStream);
+        m_newName_attr->toXmlAttr("newName", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -46056,42 +48779,42 @@ CT_RevisionCustomView* CT_RevisionCustomView::default_instance_ = NULL;
     return m_sheetId_attr;
     }
 
-    bool CT_RevisionSheetRename::has_s_oldName_attr() const
+    bool CT_RevisionSheetRename::has_oldName_attr() const
     {    
-    return m_has_s_oldName_attr;
+    return m_has_oldName_attr;
     }
 
-    void CT_RevisionSheetRename::set_s_oldName_attr(const ns_s::ST_Xstring& _s_oldName_attr)
+    void CT_RevisionSheetRename::set_oldName_attr(const ns_s::ST_Xstring& _oldName_attr)
     {    
-    m_has_s_oldName_attr = true;
-    m_s_oldName_attr = new ns_s::ST_Xstring(_s_oldName_attr);
+    m_has_oldName_attr = true;
+    m_oldName_attr = new ns_s::ST_Xstring(_oldName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionSheetRename::get_s_oldName_attr() const
+    const ns_s::ST_Xstring& CT_RevisionSheetRename::get_oldName_attr() const
     {    
-    if (m_s_oldName_attr)
+    if (m_oldName_attr)
     {
-        return *m_s_oldName_attr;
+        return *m_oldName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_RevisionSheetRename::has_s_newName_attr() const
+    bool CT_RevisionSheetRename::has_newName_attr() const
     {    
-    return m_has_s_newName_attr;
+    return m_has_newName_attr;
     }
 
-    void CT_RevisionSheetRename::set_s_newName_attr(const ns_s::ST_Xstring& _s_newName_attr)
+    void CT_RevisionSheetRename::set_newName_attr(const ns_s::ST_Xstring& _newName_attr)
     {    
-    m_has_s_newName_attr = true;
-    m_s_newName_attr = new ns_s::ST_Xstring(_s_newName_attr);
+    m_has_newName_attr = true;
+    m_newName_attr = new ns_s::ST_Xstring(_newName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionSheetRename::get_s_newName_attr() const
+    const ns_s::ST_Xstring& CT_RevisionSheetRename::get_newName_attr() const
     {    
-    if (m_s_newName_attr)
+    if (m_newName_attr)
     {
-        return *m_s_newName_attr;
+        return *m_newName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -46099,6 +48822,21 @@ CT_RevisionCustomView* CT_RevisionCustomView::default_instance_ = NULL;
 CT_RevisionSheetRename* CT_RevisionSheetRename::default_instance_ = NULL;
 
     // CT_RevisionInsertSheet
+    CT_RevisionInsertSheet::CT_RevisionInsertSheet()
+    :m_has_rId_attr(false),
+    m_rId_attr(0),
+    m_has_ua_attr(false),
+    m_ua_attr(false),
+    m_has_ra_attr(false),
+    m_ra_attr(false),
+    m_has_sheetId_attr(false),
+    m_sheetId_attr(0),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_sheetPosition_attr(false),
+    m_sheetPosition_attr(0)
+    {
+    }
     void CT_RevisionInsertSheet::clear()
     {    
     m_has_rId_attr = false;
@@ -46113,12 +48851,12 @@ CT_RevisionSheetRename* CT_RevisionSheetRename::default_instance_ = NULL;
     m_has_sheetId_attr = false;
     m_sheetId_attr = 0;
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -46159,9 +48897,9 @@ CT_RevisionSheetRename* CT_RevisionSheetRename::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -46248,22 +48986,22 @@ CT_RevisionSheetRename* CT_RevisionSheetRename::default_instance_ = NULL;
     return m_sheetId_attr;
     }
 
-    bool CT_RevisionInsertSheet::has_s_name_attr() const
+    bool CT_RevisionInsertSheet::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_RevisionInsertSheet::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_RevisionInsertSheet::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionInsertSheet::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_RevisionInsertSheet::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -46287,6 +49025,47 @@ CT_RevisionSheetRename* CT_RevisionSheetRename::default_instance_ = NULL;
 CT_RevisionInsertSheet* CT_RevisionInsertSheet::default_instance_ = NULL;
 
     // CT_RevisionCellChange
+    CT_RevisionCellChange::CT_RevisionCellChange()
+    :m_has_oc(false),
+    m_oc(NULL),
+    m_has_nc(false),
+    m_nc(NULL),
+    m_has_odxf(false),
+    m_odxf(NULL),
+    m_has_ndxf(false),
+    m_ndxf(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_rId_attr(false),
+    m_rId_attr(0),
+    m_has_ua_attr(false),
+    m_ua_attr(false),
+    m_has_ra_attr(false),
+    m_ra_attr(false),
+    m_has_sId_attr(false),
+    m_sId_attr(0),
+    m_has_odxf_attr(false),
+    m_odxf_attr(false),
+    m_has_xfDxf_attr(false),
+    m_xfDxf_attr(false),
+    m_has_s_attr(false),
+    m_s_attr(false),
+    m_has_dxf_attr(false),
+    m_dxf_attr(false),
+    m_has_numFmtId_attr(false),
+    m_numFmtId_attr(NULL),
+    m_has_quotePrefix_attr(false),
+    m_quotePrefix_attr(false),
+    m_has_oldQuotePrefix_attr(false),
+    m_oldQuotePrefix_attr(false),
+    m_has_ph_attr(false),
+    m_ph_attr(false),
+    m_has_oldPh_attr(false),
+    m_oldPh_attr(false),
+    m_has_endOfListFormulaUpdate_attr(false),
+    m_endOfListFormulaUpdate_attr(false)
+    {
+    }
     bool CT_RevisionCellChange::has_oc() const
     {    
     return m_has_oc;
@@ -46554,27 +49333,27 @@ CT_RevisionInsertSheet* CT_RevisionInsertSheet::default_instance_ = NULL;
             
     if (m_has_oc)
     {
-        m_oc->toXmlElem("oc", "", _outStream);;
+        m_oc->toXmlElem("main:oc", "", _outStream);;
     }
     
     if (m_has_nc)
     {
-        m_nc->toXmlElem("nc", "", _outStream);;
+        m_nc->toXmlElem("main:nc", "", _outStream);;
     }
     
     if (m_has_odxf)
     {
-        m_odxf->toXmlElem("odxf", "", _outStream);;
+        m_odxf->toXmlElem("main:odxf", "", _outStream);;
     }
     
     if (m_has_ndxf)
     {
-        m_ndxf->toXmlElem("ndxf", "", _outStream);;
+        m_ndxf->toXmlElem("main:ndxf", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -46820,6 +49599,25 @@ CT_RevisionInsertSheet* CT_RevisionInsertSheet::default_instance_ = NULL;
 CT_RevisionCellChange* CT_RevisionCellChange::default_instance_ = NULL;
 
     // CT_RevisionFormatting
+    CT_RevisionFormatting::CT_RevisionFormatting()
+    :m_has_dxf(false),
+    m_dxf(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_sheetId_attr(false),
+    m_sheetId_attr(0),
+    m_has_xfDxf_attr(false),
+    m_xfDxf_attr(false),
+    m_has_s_attr(false),
+    m_s_attr(false),
+    m_has_sqref_attr(false),
+    m_sqref_attr(NULL),
+    m_has_start_attr(false),
+    m_start_attr(0),
+    m_has_length_attr(false),
+    m_length_attr(0)
+    {
+    }
     bool CT_RevisionFormatting::has_dxf() const
     {    
     return m_has_dxf;
@@ -46943,12 +49741,12 @@ CT_RevisionCellChange* CT_RevisionCellChange::default_instance_ = NULL;
             
     if (m_has_dxf)
     {
-        m_dxf->toXmlElem("dxf", "", _outStream);;
+        m_dxf->toXmlElem("main:dxf", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -47066,6 +49864,27 @@ CT_RevisionCellChange* CT_RevisionCellChange::default_instance_ = NULL;
 CT_RevisionFormatting* CT_RevisionFormatting::default_instance_ = NULL;
 
     // CT_RevisionAutoFormatting
+    CT_RevisionAutoFormatting::CT_RevisionAutoFormatting()
+    :m_has_sheetId_attr(false),
+    m_sheetId_attr(0),
+    m_has_autoFormatId_attr(false),
+    m_autoFormatId_attr(0),
+    m_has_applyNumberFormats_attr(false),
+    m_applyNumberFormats_attr(false),
+    m_has_applyBorderFormats_attr(false),
+    m_applyBorderFormats_attr(false),
+    m_has_applyFontFormats_attr(false),
+    m_applyFontFormats_attr(false),
+    m_has_applyPatternFormats_attr(false),
+    m_applyPatternFormats_attr(false),
+    m_has_applyAlignmentFormats_attr(false),
+    m_applyAlignmentFormats_attr(false),
+    m_has_applyWidthHeightFormats_attr(false),
+    m_applyWidthHeightFormats_attr(false),
+    m_has_ref_attr(false),
+    m_ref_attr(NULL)
+    {
+    }
     void CT_RevisionAutoFormatting::clear()
     {    
     m_has_sheetId_attr = false;
@@ -47329,6 +50148,31 @@ CT_RevisionFormatting* CT_RevisionFormatting::default_instance_ = NULL;
 CT_RevisionAutoFormatting* CT_RevisionAutoFormatting::default_instance_ = NULL;
 
     // CT_RevisionComment
+    CT_RevisionComment::CT_RevisionComment()
+    :m_has_sheetId_attr(false),
+    m_sheetId_attr(0),
+    m_has_cell_attr(false),
+    m_cell_attr(NULL),
+    m_has_guid_attr(false),
+    m_guid_attr(NULL),
+    m_has_action_attr(false),
+    m_action_attr(NULL),
+    m_has_alwaysShow_attr(false),
+    m_alwaysShow_attr(false),
+    m_has_old_attr(false),
+    m_old_attr(false),
+    m_has_hiddenRow_attr(false),
+    m_hiddenRow_attr(false),
+    m_has_hiddenColumn_attr(false),
+    m_hiddenColumn_attr(false),
+    m_has_author_attr(false),
+    m_author_attr(NULL),
+    m_has_oldLength_attr(false),
+    m_oldLength_attr(0),
+    m_has_newLength_attr(false),
+    m_newLength_attr(0)
+    {
+    }
     void CT_RevisionComment::clear()
     {    
     m_has_sheetId_attr = false;
@@ -47343,12 +50187,12 @@ CT_RevisionAutoFormatting* CT_RevisionAutoFormatting::default_instance_ = NULL;
     }
     
     
-    m_has_s_guid_attr = false;
+    m_has_guid_attr = false;
     
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        delete m_s_guid_attr;
-        m_s_guid_attr = NULL;
+        delete m_guid_attr;
+        m_guid_attr = NULL;
     }
     
     
@@ -47373,12 +50217,12 @@ CT_RevisionAutoFormatting* CT_RevisionAutoFormatting::default_instance_ = NULL;
     m_has_hiddenColumn_attr = false;
     m_hiddenColumn_attr = false;
     
-    m_has_s_author_attr = false;
+    m_has_author_attr = false;
     
-    if (m_s_author_attr)
+    if (m_author_attr)
     {
-        delete m_s_author_attr;
-        m_s_author_attr = NULL;
+        delete m_author_attr;
+        m_author_attr = NULL;
     }
     
     
@@ -47410,9 +50254,9 @@ CT_RevisionAutoFormatting* CT_RevisionAutoFormatting::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_guid_attr)
+    if (m_has_guid_attr)
     {
-        m_s_guid_attr->toXmlAttr("guid", _outStream);
+        m_guid_attr->toXmlAttr("guid", _outStream);
     }
     
     
@@ -47446,9 +50290,9 @@ CT_RevisionAutoFormatting* CT_RevisionAutoFormatting::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_author_attr)
+    if (m_has_author_attr)
     {
-        m_s_author_attr->toXmlAttr("author", _outStream);
+        m_author_attr->toXmlAttr("author", _outStream);
     }
     
     
@@ -47513,22 +50357,22 @@ CT_RevisionAutoFormatting* CT_RevisionAutoFormatting::default_instance_ = NULL;
     return ST_CellRef::default_instance();
     }
 
-    bool CT_RevisionComment::has_s_guid_attr() const
+    bool CT_RevisionComment::has_guid_attr() const
     {    
-    return m_has_s_guid_attr;
+    return m_has_guid_attr;
     }
 
-    void CT_RevisionComment::set_s_guid_attr(const ns_s::ST_Guid& _s_guid_attr)
+    void CT_RevisionComment::set_guid_attr(const ns_s::ST_Guid& _guid_attr)
     {    
-    m_has_s_guid_attr = true;
-    m_s_guid_attr = new ns_s::ST_Guid(_s_guid_attr);
+    m_has_guid_attr = true;
+    m_guid_attr = new ns_s::ST_Guid(_guid_attr);
     }
 
-    const ns_s::ST_Guid& CT_RevisionComment::get_s_guid_attr() const
+    const ns_s::ST_Guid& CT_RevisionComment::get_guid_attr() const
     {    
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        return *m_s_guid_attr;
+        return *m_guid_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -47617,22 +50461,22 @@ CT_RevisionAutoFormatting* CT_RevisionAutoFormatting::default_instance_ = NULL;
     return m_hiddenColumn_attr;
     }
 
-    bool CT_RevisionComment::has_s_author_attr() const
+    bool CT_RevisionComment::has_author_attr() const
     {    
-    return m_has_s_author_attr;
+    return m_has_author_attr;
     }
 
-    void CT_RevisionComment::set_s_author_attr(const ns_s::ST_Xstring& _s_author_attr)
+    void CT_RevisionComment::set_author_attr(const ns_s::ST_Xstring& _author_attr)
     {    
-    m_has_s_author_attr = true;
-    m_s_author_attr = new ns_s::ST_Xstring(_s_author_attr);
+    m_has_author_attr = true;
+    m_author_attr = new ns_s::ST_Xstring(_author_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionComment::get_s_author_attr() const
+    const ns_s::ST_Xstring& CT_RevisionComment::get_author_attr() const
     {    
-    if (m_s_author_attr)
+    if (m_author_attr)
     {
-        return *m_s_author_attr;
+        return *m_author_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -47672,6 +50516,63 @@ CT_RevisionAutoFormatting* CT_RevisionAutoFormatting::default_instance_ = NULL;
 CT_RevisionComment* CT_RevisionComment::default_instance_ = NULL;
 
     // CT_RevisionDefinedName
+    CT_RevisionDefinedName::CT_RevisionDefinedName()
+    :m_has_formula(false),
+    m_formula(NULL),
+    m_has_oldFormula(false),
+    m_oldFormula(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_rId_attr(false),
+    m_rId_attr(0),
+    m_has_ua_attr(false),
+    m_ua_attr(false),
+    m_has_ra_attr(false),
+    m_ra_attr(false),
+    m_has_localSheetId_attr(false),
+    m_localSheetId_attr(0),
+    m_has_customView_attr(false),
+    m_customView_attr(false),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_function_attr(false),
+    m_function_attr(false),
+    m_has_oldFunction_attr(false),
+    m_oldFunction_attr(false),
+    m_has_functionGroupId_attr(false),
+    m_functionGroupId_attr(0),
+    m_has_oldFunctionGroupId_attr(false),
+    m_oldFunctionGroupId_attr(0),
+    m_has_shortcutKey_attr(false),
+    m_shortcutKey_attr(0),
+    m_has_oldShortcutKey_attr(false),
+    m_oldShortcutKey_attr(0),
+    m_has_hidden_attr(false),
+    m_hidden_attr(false),
+    m_has_oldHidden_attr(false),
+    m_oldHidden_attr(false),
+    m_has_customMenu_attr(false),
+    m_customMenu_attr(NULL),
+    m_has_oldCustomMenu_attr(false),
+    m_oldCustomMenu_attr(NULL),
+    m_has_description_attr(false),
+    m_description_attr(NULL),
+    m_has_oldDescription_attr(false),
+    m_oldDescription_attr(NULL),
+    m_has_help_attr(false),
+    m_help_attr(NULL),
+    m_has_oldHelp_attr(false),
+    m_oldHelp_attr(NULL),
+    m_has_statusBar_attr(false),
+    m_statusBar_attr(NULL),
+    m_has_oldStatusBar_attr(false),
+    m_oldStatusBar_attr(NULL),
+    m_has_comment_attr(false),
+    m_comment_attr(NULL),
+    m_has_oldComment_attr(false),
+    m_oldComment_attr(NULL)
+    {
+    }
     bool CT_RevisionDefinedName::has_formula() const
     {    
     return m_has_formula;
@@ -47761,12 +50662,12 @@ CT_RevisionComment* CT_RevisionComment::default_instance_ = NULL;
     m_has_customView_attr = false;
     m_customView_attr = false;
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -47794,93 +50695,93 @@ CT_RevisionComment* CT_RevisionComment::default_instance_ = NULL;
     m_has_oldHidden_attr = false;
     m_oldHidden_attr = false;
     
-    m_has_s_customMenu_attr = false;
+    m_has_customMenu_attr = false;
     
-    if (m_s_customMenu_attr)
+    if (m_customMenu_attr)
     {
-        delete m_s_customMenu_attr;
-        m_s_customMenu_attr = NULL;
+        delete m_customMenu_attr;
+        m_customMenu_attr = NULL;
     }
     
     
-    m_has_s_oldCustomMenu_attr = false;
+    m_has_oldCustomMenu_attr = false;
     
-    if (m_s_oldCustomMenu_attr)
+    if (m_oldCustomMenu_attr)
     {
-        delete m_s_oldCustomMenu_attr;
-        m_s_oldCustomMenu_attr = NULL;
+        delete m_oldCustomMenu_attr;
+        m_oldCustomMenu_attr = NULL;
     }
     
     
-    m_has_s_description_attr = false;
+    m_has_description_attr = false;
     
-    if (m_s_description_attr)
+    if (m_description_attr)
     {
-        delete m_s_description_attr;
-        m_s_description_attr = NULL;
+        delete m_description_attr;
+        m_description_attr = NULL;
     }
     
     
-    m_has_s_oldDescription_attr = false;
+    m_has_oldDescription_attr = false;
     
-    if (m_s_oldDescription_attr)
+    if (m_oldDescription_attr)
     {
-        delete m_s_oldDescription_attr;
-        m_s_oldDescription_attr = NULL;
+        delete m_oldDescription_attr;
+        m_oldDescription_attr = NULL;
     }
     
     
-    m_has_s_help_attr = false;
+    m_has_help_attr = false;
     
-    if (m_s_help_attr)
+    if (m_help_attr)
     {
-        delete m_s_help_attr;
-        m_s_help_attr = NULL;
+        delete m_help_attr;
+        m_help_attr = NULL;
     }
     
     
-    m_has_s_oldHelp_attr = false;
+    m_has_oldHelp_attr = false;
     
-    if (m_s_oldHelp_attr)
+    if (m_oldHelp_attr)
     {
-        delete m_s_oldHelp_attr;
-        m_s_oldHelp_attr = NULL;
+        delete m_oldHelp_attr;
+        m_oldHelp_attr = NULL;
     }
     
     
-    m_has_s_statusBar_attr = false;
+    m_has_statusBar_attr = false;
     
-    if (m_s_statusBar_attr)
+    if (m_statusBar_attr)
     {
-        delete m_s_statusBar_attr;
-        m_s_statusBar_attr = NULL;
+        delete m_statusBar_attr;
+        m_statusBar_attr = NULL;
     }
     
     
-    m_has_s_oldStatusBar_attr = false;
+    m_has_oldStatusBar_attr = false;
     
-    if (m_s_oldStatusBar_attr)
+    if (m_oldStatusBar_attr)
     {
-        delete m_s_oldStatusBar_attr;
-        m_s_oldStatusBar_attr = NULL;
+        delete m_oldStatusBar_attr;
+        m_oldStatusBar_attr = NULL;
     }
     
     
-    m_has_s_comment_attr = false;
+    m_has_comment_attr = false;
     
-    if (m_s_comment_attr)
+    if (m_comment_attr)
     {
-        delete m_s_comment_attr;
-        m_s_comment_attr = NULL;
+        delete m_comment_attr;
+        m_comment_attr = NULL;
     }
     
     
-    m_has_s_oldComment_attr = false;
+    m_has_oldComment_attr = false;
     
-    if (m_s_oldComment_attr)
+    if (m_oldComment_attr)
     {
-        delete m_s_oldComment_attr;
-        m_s_oldComment_attr = NULL;
+        delete m_oldComment_attr;
+        m_oldComment_attr = NULL;
     }
     
     }
@@ -47924,9 +50825,9 @@ CT_RevisionComment* CT_RevisionComment::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -47978,80 +50879,80 @@ CT_RevisionComment* CT_RevisionComment::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_customMenu_attr)
+    if (m_has_customMenu_attr)
     {
-        m_s_customMenu_attr->toXmlAttr("customMenu", _outStream);
+        m_customMenu_attr->toXmlAttr("customMenu", _outStream);
     }
     
     
-    if (m_has_s_oldCustomMenu_attr)
+    if (m_has_oldCustomMenu_attr)
     {
-        m_s_oldCustomMenu_attr->toXmlAttr("oldCustomMenu", _outStream);
+        m_oldCustomMenu_attr->toXmlAttr("oldCustomMenu", _outStream);
     }
     
     
-    if (m_has_s_description_attr)
+    if (m_has_description_attr)
     {
-        m_s_description_attr->toXmlAttr("description", _outStream);
+        m_description_attr->toXmlAttr("description", _outStream);
     }
     
     
-    if (m_has_s_oldDescription_attr)
+    if (m_has_oldDescription_attr)
     {
-        m_s_oldDescription_attr->toXmlAttr("oldDescription", _outStream);
+        m_oldDescription_attr->toXmlAttr("oldDescription", _outStream);
     }
     
     
-    if (m_has_s_help_attr)
+    if (m_has_help_attr)
     {
-        m_s_help_attr->toXmlAttr("help", _outStream);
+        m_help_attr->toXmlAttr("help", _outStream);
     }
     
     
-    if (m_has_s_oldHelp_attr)
+    if (m_has_oldHelp_attr)
     {
-        m_s_oldHelp_attr->toXmlAttr("oldHelp", _outStream);
+        m_oldHelp_attr->toXmlAttr("oldHelp", _outStream);
     }
     
     
-    if (m_has_s_statusBar_attr)
+    if (m_has_statusBar_attr)
     {
-        m_s_statusBar_attr->toXmlAttr("statusBar", _outStream);
+        m_statusBar_attr->toXmlAttr("statusBar", _outStream);
     }
     
     
-    if (m_has_s_oldStatusBar_attr)
+    if (m_has_oldStatusBar_attr)
     {
-        m_s_oldStatusBar_attr->toXmlAttr("oldStatusBar", _outStream);
+        m_oldStatusBar_attr->toXmlAttr("oldStatusBar", _outStream);
     }
     
     
-    if (m_has_s_comment_attr)
+    if (m_has_comment_attr)
     {
-        m_s_comment_attr->toXmlAttr("comment", _outStream);
+        m_comment_attr->toXmlAttr("comment", _outStream);
     }
     
     
-    if (m_has_s_oldComment_attr)
+    if (m_has_oldComment_attr)
     {
-        m_s_oldComment_attr->toXmlAttr("oldComment", _outStream);
+        m_oldComment_attr->toXmlAttr("oldComment", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_formula)
     {
-        _outStream << "<formula>" << m_formula->toString() << "</formula>";;
+        _outStream << "<main:formula>" << m_formula->toString() << "</main:formula>";;
     }
     
     if (m_has_oldFormula)
     {
-        _outStream << "<oldFormula>" << m_oldFormula->toString() << "</oldFormula>";;
+        _outStream << "<main:oldFormula>" << m_oldFormula->toString() << "</main:oldFormula>";;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -48146,22 +51047,22 @@ CT_RevisionComment* CT_RevisionComment::default_instance_ = NULL;
     return m_customView_attr;
     }
 
-    bool CT_RevisionDefinedName::has_s_name_attr() const
+    bool CT_RevisionDefinedName::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_RevisionDefinedName::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_RevisionDefinedName::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -48294,202 +51195,202 @@ CT_RevisionComment* CT_RevisionComment::default_instance_ = NULL;
     return m_oldHidden_attr;
     }
 
-    bool CT_RevisionDefinedName::has_s_customMenu_attr() const
+    bool CT_RevisionDefinedName::has_customMenu_attr() const
     {    
-    return m_has_s_customMenu_attr;
+    return m_has_customMenu_attr;
     }
 
-    void CT_RevisionDefinedName::set_s_customMenu_attr(const ns_s::ST_Xstring& _s_customMenu_attr)
+    void CT_RevisionDefinedName::set_customMenu_attr(const ns_s::ST_Xstring& _customMenu_attr)
     {    
-    m_has_s_customMenu_attr = true;
-    m_s_customMenu_attr = new ns_s::ST_Xstring(_s_customMenu_attr);
+    m_has_customMenu_attr = true;
+    m_customMenu_attr = new ns_s::ST_Xstring(_customMenu_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_s_customMenu_attr() const
+    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_customMenu_attr() const
     {    
-    if (m_s_customMenu_attr)
+    if (m_customMenu_attr)
     {
-        return *m_s_customMenu_attr;
+        return *m_customMenu_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_RevisionDefinedName::has_s_oldCustomMenu_attr() const
+    bool CT_RevisionDefinedName::has_oldCustomMenu_attr() const
     {    
-    return m_has_s_oldCustomMenu_attr;
+    return m_has_oldCustomMenu_attr;
     }
 
-    void CT_RevisionDefinedName::set_s_oldCustomMenu_attr(const ns_s::ST_Xstring& _s_oldCustomMenu_attr)
+    void CT_RevisionDefinedName::set_oldCustomMenu_attr(const ns_s::ST_Xstring& _oldCustomMenu_attr)
     {    
-    m_has_s_oldCustomMenu_attr = true;
-    m_s_oldCustomMenu_attr = new ns_s::ST_Xstring(_s_oldCustomMenu_attr);
+    m_has_oldCustomMenu_attr = true;
+    m_oldCustomMenu_attr = new ns_s::ST_Xstring(_oldCustomMenu_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_s_oldCustomMenu_attr() const
+    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_oldCustomMenu_attr() const
     {    
-    if (m_s_oldCustomMenu_attr)
+    if (m_oldCustomMenu_attr)
     {
-        return *m_s_oldCustomMenu_attr;
+        return *m_oldCustomMenu_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_RevisionDefinedName::has_s_description_attr() const
+    bool CT_RevisionDefinedName::has_description_attr() const
     {    
-    return m_has_s_description_attr;
+    return m_has_description_attr;
     }
 
-    void CT_RevisionDefinedName::set_s_description_attr(const ns_s::ST_Xstring& _s_description_attr)
+    void CT_RevisionDefinedName::set_description_attr(const ns_s::ST_Xstring& _description_attr)
     {    
-    m_has_s_description_attr = true;
-    m_s_description_attr = new ns_s::ST_Xstring(_s_description_attr);
+    m_has_description_attr = true;
+    m_description_attr = new ns_s::ST_Xstring(_description_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_s_description_attr() const
+    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_description_attr() const
     {    
-    if (m_s_description_attr)
+    if (m_description_attr)
     {
-        return *m_s_description_attr;
+        return *m_description_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_RevisionDefinedName::has_s_oldDescription_attr() const
+    bool CT_RevisionDefinedName::has_oldDescription_attr() const
     {    
-    return m_has_s_oldDescription_attr;
+    return m_has_oldDescription_attr;
     }
 
-    void CT_RevisionDefinedName::set_s_oldDescription_attr(const ns_s::ST_Xstring& _s_oldDescription_attr)
+    void CT_RevisionDefinedName::set_oldDescription_attr(const ns_s::ST_Xstring& _oldDescription_attr)
     {    
-    m_has_s_oldDescription_attr = true;
-    m_s_oldDescription_attr = new ns_s::ST_Xstring(_s_oldDescription_attr);
+    m_has_oldDescription_attr = true;
+    m_oldDescription_attr = new ns_s::ST_Xstring(_oldDescription_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_s_oldDescription_attr() const
+    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_oldDescription_attr() const
     {    
-    if (m_s_oldDescription_attr)
+    if (m_oldDescription_attr)
     {
-        return *m_s_oldDescription_attr;
+        return *m_oldDescription_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_RevisionDefinedName::has_s_help_attr() const
+    bool CT_RevisionDefinedName::has_help_attr() const
     {    
-    return m_has_s_help_attr;
+    return m_has_help_attr;
     }
 
-    void CT_RevisionDefinedName::set_s_help_attr(const ns_s::ST_Xstring& _s_help_attr)
+    void CT_RevisionDefinedName::set_help_attr(const ns_s::ST_Xstring& _help_attr)
     {    
-    m_has_s_help_attr = true;
-    m_s_help_attr = new ns_s::ST_Xstring(_s_help_attr);
+    m_has_help_attr = true;
+    m_help_attr = new ns_s::ST_Xstring(_help_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_s_help_attr() const
+    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_help_attr() const
     {    
-    if (m_s_help_attr)
+    if (m_help_attr)
     {
-        return *m_s_help_attr;
+        return *m_help_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_RevisionDefinedName::has_s_oldHelp_attr() const
+    bool CT_RevisionDefinedName::has_oldHelp_attr() const
     {    
-    return m_has_s_oldHelp_attr;
+    return m_has_oldHelp_attr;
     }
 
-    void CT_RevisionDefinedName::set_s_oldHelp_attr(const ns_s::ST_Xstring& _s_oldHelp_attr)
+    void CT_RevisionDefinedName::set_oldHelp_attr(const ns_s::ST_Xstring& _oldHelp_attr)
     {    
-    m_has_s_oldHelp_attr = true;
-    m_s_oldHelp_attr = new ns_s::ST_Xstring(_s_oldHelp_attr);
+    m_has_oldHelp_attr = true;
+    m_oldHelp_attr = new ns_s::ST_Xstring(_oldHelp_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_s_oldHelp_attr() const
+    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_oldHelp_attr() const
     {    
-    if (m_s_oldHelp_attr)
+    if (m_oldHelp_attr)
     {
-        return *m_s_oldHelp_attr;
+        return *m_oldHelp_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_RevisionDefinedName::has_s_statusBar_attr() const
+    bool CT_RevisionDefinedName::has_statusBar_attr() const
     {    
-    return m_has_s_statusBar_attr;
+    return m_has_statusBar_attr;
     }
 
-    void CT_RevisionDefinedName::set_s_statusBar_attr(const ns_s::ST_Xstring& _s_statusBar_attr)
+    void CT_RevisionDefinedName::set_statusBar_attr(const ns_s::ST_Xstring& _statusBar_attr)
     {    
-    m_has_s_statusBar_attr = true;
-    m_s_statusBar_attr = new ns_s::ST_Xstring(_s_statusBar_attr);
+    m_has_statusBar_attr = true;
+    m_statusBar_attr = new ns_s::ST_Xstring(_statusBar_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_s_statusBar_attr() const
+    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_statusBar_attr() const
     {    
-    if (m_s_statusBar_attr)
+    if (m_statusBar_attr)
     {
-        return *m_s_statusBar_attr;
+        return *m_statusBar_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_RevisionDefinedName::has_s_oldStatusBar_attr() const
+    bool CT_RevisionDefinedName::has_oldStatusBar_attr() const
     {    
-    return m_has_s_oldStatusBar_attr;
+    return m_has_oldStatusBar_attr;
     }
 
-    void CT_RevisionDefinedName::set_s_oldStatusBar_attr(const ns_s::ST_Xstring& _s_oldStatusBar_attr)
+    void CT_RevisionDefinedName::set_oldStatusBar_attr(const ns_s::ST_Xstring& _oldStatusBar_attr)
     {    
-    m_has_s_oldStatusBar_attr = true;
-    m_s_oldStatusBar_attr = new ns_s::ST_Xstring(_s_oldStatusBar_attr);
+    m_has_oldStatusBar_attr = true;
+    m_oldStatusBar_attr = new ns_s::ST_Xstring(_oldStatusBar_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_s_oldStatusBar_attr() const
+    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_oldStatusBar_attr() const
     {    
-    if (m_s_oldStatusBar_attr)
+    if (m_oldStatusBar_attr)
     {
-        return *m_s_oldStatusBar_attr;
+        return *m_oldStatusBar_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_RevisionDefinedName::has_s_comment_attr() const
+    bool CT_RevisionDefinedName::has_comment_attr() const
     {    
-    return m_has_s_comment_attr;
+    return m_has_comment_attr;
     }
 
-    void CT_RevisionDefinedName::set_s_comment_attr(const ns_s::ST_Xstring& _s_comment_attr)
+    void CT_RevisionDefinedName::set_comment_attr(const ns_s::ST_Xstring& _comment_attr)
     {    
-    m_has_s_comment_attr = true;
-    m_s_comment_attr = new ns_s::ST_Xstring(_s_comment_attr);
+    m_has_comment_attr = true;
+    m_comment_attr = new ns_s::ST_Xstring(_comment_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_s_comment_attr() const
+    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_comment_attr() const
     {    
-    if (m_s_comment_attr)
+    if (m_comment_attr)
     {
-        return *m_s_comment_attr;
+        return *m_comment_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_RevisionDefinedName::has_s_oldComment_attr() const
+    bool CT_RevisionDefinedName::has_oldComment_attr() const
     {    
-    return m_has_s_oldComment_attr;
+    return m_has_oldComment_attr;
     }
 
-    void CT_RevisionDefinedName::set_s_oldComment_attr(const ns_s::ST_Xstring& _s_oldComment_attr)
+    void CT_RevisionDefinedName::set_oldComment_attr(const ns_s::ST_Xstring& _oldComment_attr)
     {    
-    m_has_s_oldComment_attr = true;
-    m_s_oldComment_attr = new ns_s::ST_Xstring(_s_oldComment_attr);
+    m_has_oldComment_attr = true;
+    m_oldComment_attr = new ns_s::ST_Xstring(_oldComment_attr);
     }
 
-    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_s_oldComment_attr() const
+    const ns_s::ST_Xstring& CT_RevisionDefinedName::get_oldComment_attr() const
     {    
-    if (m_s_oldComment_attr)
+    if (m_oldComment_attr)
     {
-        return *m_s_oldComment_attr;
+        return *m_oldComment_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -48497,6 +51398,17 @@ CT_RevisionComment* CT_RevisionComment::default_instance_ = NULL;
 CT_RevisionDefinedName* CT_RevisionDefinedName::default_instance_ = NULL;
 
     // CT_RevisionConflict
+    CT_RevisionConflict::CT_RevisionConflict()
+    :m_has_rId_attr(false),
+    m_rId_attr(0),
+    m_has_ua_attr(false),
+    m_ua_attr(false),
+    m_has_ra_attr(false),
+    m_ra_attr(false),
+    m_has_sheetId_attr(false),
+    m_sheetId_attr(0)
+    {
+    }
     void CT_RevisionConflict::clear()
     {    
     m_has_rId_attr = false;
@@ -48625,6 +51537,15 @@ CT_RevisionDefinedName* CT_RevisionDefinedName::default_instance_ = NULL;
 CT_RevisionConflict* CT_RevisionConflict::default_instance_ = NULL;
 
     // CT_RevisionQueryTableField
+    CT_RevisionQueryTableField::CT_RevisionQueryTableField()
+    :m_has_sheetId_attr(false),
+    m_sheetId_attr(0),
+    m_has_ref_attr(false),
+    m_ref_attr(NULL),
+    m_has_fieldId_attr(false),
+    m_fieldId_attr(0)
+    {
+    }
     void CT_RevisionQueryTableField::clear()
     {    
     m_has_sheetId_attr = false;
@@ -48738,6 +51659,11 @@ CT_RevisionConflict* CT_RevisionConflict::default_instance_ = NULL;
 CT_RevisionQueryTableField* CT_RevisionQueryTableField::default_instance_ = NULL;
 
     // CT_Users
+    CT_Users::CT_Users()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_SharedUser* CT_Users::add_userInfo()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -48783,7 +51709,7 @@ CT_RevisionQueryTableField* CT_RevisionQueryTableField::default_instance_ = NULL
         {
             if ((*iter)->has_userInfo())
             {
-                (*iter)->get_userInfo().toXmlElem("userInfo", "", _outStream);
+                (*iter)->get_userInfo().toXmlElem("main:userInfo", "", _outStream);
             }
         }
     }
@@ -48818,6 +51744,11 @@ CT_RevisionQueryTableField* CT_RevisionQueryTableField::default_instance_ = NULL
 
 
     // CT_Users::ChildGroup_1
+    CT_Users::ChildGroup_1::ChildGroup_1()
+    :m_has_userInfo(false),
+    m_userInfo(NULL)
+    {
+    }
     bool CT_Users::ChildGroup_1::has_userInfo() const
     {    
     return m_has_userInfo;
@@ -48846,6 +51777,19 @@ CT_RevisionQueryTableField* CT_RevisionQueryTableField::default_instance_ = NULL
 CT_Users* CT_Users::default_instance_ = NULL;
 
     // CT_SharedUser
+    CT_SharedUser::CT_SharedUser()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_guid_attr(false),
+    m_guid_attr(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_id_attr(false),
+    m_id_attr(0),
+    m_has_dateTime_attr(false),
+    m_dateTime_attr("")
+    {
+    }
     bool CT_SharedUser::has_extLst() const
     {    
     return m_has_extLst;
@@ -48872,21 +51816,21 @@ CT_Users* CT_Users::default_instance_ = NULL;
 
     void CT_SharedUser::clear()
     {    
-    m_has_s_guid_attr = false;
+    m_has_guid_attr = false;
     
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        delete m_s_guid_attr;
-        m_s_guid_attr = NULL;
+        delete m_guid_attr;
+        m_guid_attr = NULL;
     }
     
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -48906,15 +51850,15 @@ CT_Users* CT_Users::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_guid_attr)
+    if (m_has_guid_attr)
     {
-        m_s_guid_attr->toXmlAttr("guid", _outStream);
+        m_guid_attr->toXmlAttr("guid", _outStream);
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -48933,7 +51877,7 @@ CT_Users* CT_Users::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -48948,42 +51892,42 @@ CT_Users* CT_Users::default_instance_ = NULL;
     return *CT_SharedUser::default_instance_;
     }
 
-    bool CT_SharedUser::has_s_guid_attr() const
+    bool CT_SharedUser::has_guid_attr() const
     {    
-    return m_has_s_guid_attr;
+    return m_has_guid_attr;
     }
 
-    void CT_SharedUser::set_s_guid_attr(const ns_s::ST_Guid& _s_guid_attr)
+    void CT_SharedUser::set_guid_attr(const ns_s::ST_Guid& _guid_attr)
     {    
-    m_has_s_guid_attr = true;
-    m_s_guid_attr = new ns_s::ST_Guid(_s_guid_attr);
+    m_has_guid_attr = true;
+    m_guid_attr = new ns_s::ST_Guid(_guid_attr);
     }
 
-    const ns_s::ST_Guid& CT_SharedUser::get_s_guid_attr() const
+    const ns_s::ST_Guid& CT_SharedUser::get_guid_attr() const
     {    
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        return *m_s_guid_attr;
+        return *m_guid_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
 
-    bool CT_SharedUser::has_s_name_attr() const
+    bool CT_SharedUser::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_SharedUser::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_SharedUser::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_SharedUser::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_SharedUser::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -49023,6 +51967,17 @@ CT_Users* CT_Users::default_instance_ = NULL;
 CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
 
     // CT_Macrosheet
+    CT_Macrosheet::CT_Macrosheet()
+    :m_has_sheetPr(false),
+    m_sheetPr(NULL),
+    m_has_dimension(false),
+    m_dimension(NULL),
+    m_has_sheetViews(false),
+    m_sheetViews(NULL),
+    m_has_sheetFormatPr(false),
+    m_sheetFormatPr(NULL)
+    {
+    }
     bool CT_Macrosheet::has_sheetPr() const
     {    
     return m_has_sheetPr;
@@ -49364,22 +52319,22 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
             
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
     }
     
     if (m_has_dimension)
     {
-        m_dimension->toXmlElem("dimension", "", _outStream);;
+        m_dimension->toXmlElem("main:dimension", "", _outStream);;
     }
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
     }
     
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("sheetFormatPr", "", _outStream);;
+        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);;
     }
      
     {
@@ -49388,95 +52343,95 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
         {
             if ((*iter)->has_cols())
             {
-                (*iter)->get_cols().toXmlElem("cols", "", _outStream);
+                (*iter)->get_cols().toXmlElem("main:cols", "", _outStream);
             }
             else if ((*iter)->has_sheetData())
             {
-                (*iter)->get_sheetData().toXmlElem("sheetData", "", _outStream);
+                (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
             }
             else if ((*iter)->has_sheetProtection())
             {
-                (*iter)->get_sheetProtection().toXmlElem("sheetProtection", "", _outStream);
+                (*iter)->get_sheetProtection().toXmlElem("main:sheetProtection", "", _outStream);
             }
             else if ((*iter)->has_autoFilter())
             {
-                (*iter)->get_autoFilter().toXmlElem("autoFilter", "", _outStream);
+                (*iter)->get_autoFilter().toXmlElem("main:autoFilter", "", _outStream);
             }
             else if ((*iter)->has_sortState())
             {
-                (*iter)->get_sortState().toXmlElem("sortState", "", _outStream);
+                (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
             }
             else if ((*iter)->has_dataConsolidate())
             {
-                (*iter)->get_dataConsolidate().toXmlElem("dataConsolidate", "", _outStream);
+                (*iter)->get_dataConsolidate().toXmlElem("main:dataConsolidate", "", _outStream);
             }
             else if ((*iter)->has_customSheetViews())
             {
-                (*iter)->get_customSheetViews().toXmlElem("customSheetViews", "", _outStream);
+                (*iter)->get_customSheetViews().toXmlElem("main:customSheetViews", "", _outStream);
             }
             else if ((*iter)->has_phoneticPr())
             {
-                (*iter)->get_phoneticPr().toXmlElem("phoneticPr", "", _outStream);
+                (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
             }
             else if ((*iter)->has_conditionalFormatting())
             {
-                (*iter)->get_conditionalFormatting().toXmlElem("conditionalFormatting", "", _outStream);
+                (*iter)->get_conditionalFormatting().toXmlElem("main:conditionalFormatting", "", _outStream);
             }
             else if ((*iter)->has_printOptions())
             {
-                (*iter)->get_printOptions().toXmlElem("printOptions", "", _outStream);
+                (*iter)->get_printOptions().toXmlElem("main:printOptions", "", _outStream);
             }
             else if ((*iter)->has_pageMargins())
             {
-                (*iter)->get_pageMargins().toXmlElem("pageMargins", "", _outStream);
+                (*iter)->get_pageMargins().toXmlElem("main:pageMargins", "", _outStream);
             }
             else if ((*iter)->has_pageSetup())
             {
-                (*iter)->get_pageSetup().toXmlElem("pageSetup", "", _outStream);
+                (*iter)->get_pageSetup().toXmlElem("main:pageSetup", "", _outStream);
             }
             else if ((*iter)->has_headerFooter())
             {
-                (*iter)->get_headerFooter().toXmlElem("headerFooter", "", _outStream);
+                (*iter)->get_headerFooter().toXmlElem("main:headerFooter", "", _outStream);
             }
             else if ((*iter)->has_rowBreaks())
             {
-                (*iter)->get_rowBreaks().toXmlElem("rowBreaks", "", _outStream);
+                (*iter)->get_rowBreaks().toXmlElem("main:rowBreaks", "", _outStream);
             }
             else if ((*iter)->has_colBreaks())
             {
-                (*iter)->get_colBreaks().toXmlElem("colBreaks", "", _outStream);
+                (*iter)->get_colBreaks().toXmlElem("main:colBreaks", "", _outStream);
             }
             else if ((*iter)->has_customProperties())
             {
-                (*iter)->get_customProperties().toXmlElem("customProperties", "", _outStream);
+                (*iter)->get_customProperties().toXmlElem("main:customProperties", "", _outStream);
             }
             else if ((*iter)->has_drawing())
             {
-                (*iter)->get_drawing().toXmlElem("drawing", "", _outStream);
+                (*iter)->get_drawing().toXmlElem("main:drawing", "", _outStream);
             }
             else if ((*iter)->has_legacyDrawing())
             {
-                (*iter)->get_legacyDrawing().toXmlElem("legacyDrawing", "", _outStream);
+                (*iter)->get_legacyDrawing().toXmlElem("main:legacyDrawing", "", _outStream);
             }
             else if ((*iter)->has_legacyDrawingHF())
             {
-                (*iter)->get_legacyDrawingHF().toXmlElem("legacyDrawingHF", "", _outStream);
+                (*iter)->get_legacyDrawingHF().toXmlElem("main:legacyDrawingHF", "", _outStream);
             }
             else if ((*iter)->has_drawingHF())
             {
-                (*iter)->get_drawingHF().toXmlElem("drawingHF", "", _outStream);
+                (*iter)->get_drawingHF().toXmlElem("main:drawingHF", "", _outStream);
             }
             else if ((*iter)->has_picture())
             {
-                (*iter)->get_picture().toXmlElem("picture", "", _outStream);
+                (*iter)->get_picture().toXmlElem("main:picture", "", _outStream);
             }
             else if ((*iter)->has_oleObjects())
             {
-                (*iter)->get_oleObjects().toXmlElem("oleObjects", "", _outStream);
+                (*iter)->get_oleObjects().toXmlElem("main:oleObjects", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -49495,6 +52450,55 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
 
 
     // CT_Macrosheet::ChildGroup_1
+    CT_Macrosheet::ChildGroup_1::ChildGroup_1()
+    :m_has_cols(false),
+    m_cols(NULL),
+    m_has_sheetData(false),
+    m_sheetData(NULL),
+    m_has_sheetProtection(false),
+    m_sheetProtection(NULL),
+    m_has_autoFilter(false),
+    m_autoFilter(NULL),
+    m_has_sortState(false),
+    m_sortState(NULL),
+    m_has_dataConsolidate(false),
+    m_dataConsolidate(NULL),
+    m_has_customSheetViews(false),
+    m_customSheetViews(NULL),
+    m_has_phoneticPr(false),
+    m_phoneticPr(NULL),
+    m_has_conditionalFormatting(false),
+    m_conditionalFormatting(NULL),
+    m_has_printOptions(false),
+    m_printOptions(NULL),
+    m_has_pageMargins(false),
+    m_pageMargins(NULL),
+    m_has_pageSetup(false),
+    m_pageSetup(NULL),
+    m_has_headerFooter(false),
+    m_headerFooter(NULL),
+    m_has_rowBreaks(false),
+    m_rowBreaks(NULL),
+    m_has_colBreaks(false),
+    m_colBreaks(NULL),
+    m_has_customProperties(false),
+    m_customProperties(NULL),
+    m_has_drawing(false),
+    m_drawing(NULL),
+    m_has_legacyDrawing(false),
+    m_legacyDrawing(NULL),
+    m_has_legacyDrawingHF(false),
+    m_legacyDrawingHF(NULL),
+    m_has_drawingHF(false),
+    m_drawingHF(NULL),
+    m_has_picture(false),
+    m_picture(NULL),
+    m_has_oleObjects(false),
+    m_oleObjects(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Macrosheet::ChildGroup_1::has_cols() const
     {    
     return m_has_cols;
@@ -54627,6 +57631,41 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
 CT_Macrosheet* CT_Macrosheet::default_instance_ = NULL;
 
     // CT_Dialogsheet
+    CT_Dialogsheet::CT_Dialogsheet()
+    :m_has_sheetPr(false),
+    m_sheetPr(NULL),
+    m_has_sheetViews(false),
+    m_sheetViews(NULL),
+    m_has_sheetFormatPr(false),
+    m_sheetFormatPr(NULL),
+    m_has_sheetProtection(false),
+    m_sheetProtection(NULL),
+    m_has_customSheetViews(false),
+    m_customSheetViews(NULL),
+    m_has_printOptions(false),
+    m_printOptions(NULL),
+    m_has_pageMargins(false),
+    m_pageMargins(NULL),
+    m_has_pageSetup(false),
+    m_pageSetup(NULL),
+    m_has_headerFooter(false),
+    m_headerFooter(NULL),
+    m_has_drawing(false),
+    m_drawing(NULL),
+    m_has_legacyDrawing(false),
+    m_legacyDrawing(NULL),
+    m_has_legacyDrawingHF(false),
+    m_legacyDrawingHF(NULL),
+    m_has_drawingHF(false),
+    m_drawingHF(NULL),
+    m_has_oleObjects(false),
+    m_oleObjects(NULL),
+    m_has_controls(false),
+    m_controls(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Dialogsheet::has_sheetPr() const
     {    
     return m_has_sheetPr;
@@ -55027,82 +58066,82 @@ CT_Macrosheet* CT_Macrosheet::default_instance_ = NULL;
             
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
     }
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
     }
     
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("sheetFormatPr", "", _outStream);;
+        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);;
     }
     
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("sheetProtection", "", _outStream);;
+        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);;
     }
     
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("customSheetViews", "", _outStream);;
+        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);;
     }
     
     if (m_has_printOptions)
     {
-        m_printOptions->toXmlElem("printOptions", "", _outStream);;
+        m_printOptions->toXmlElem("main:printOptions", "", _outStream);;
     }
     
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);;
     }
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);;
     }
     
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);;
     }
     
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("drawing", "", _outStream);;
+        m_drawing->toXmlElem("main:drawing", "", _outStream);;
     }
     
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("legacyDrawing", "", _outStream);;
+        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);;
     }
     
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("legacyDrawingHF", "", _outStream);;
+        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);;
     }
     
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("drawingHF", "", _outStream);;
+        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);;
     }
     
     if (m_has_oleObjects)
     {
-        m_oleObjects->toXmlElem("oleObjects", "", _outStream);;
+        m_oleObjects->toXmlElem("main:oleObjects", "", _outStream);;
     }
     
     if (m_has_controls)
     {
-        m_controls->toXmlElem("controls", "", _outStream);;
+        m_controls->toXmlElem("main:controls", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -55120,6 +58159,17 @@ CT_Macrosheet* CT_Macrosheet::default_instance_ = NULL;
 CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
 
     // CT_Worksheet
+    CT_Worksheet::CT_Worksheet()
+    :m_has_sheetPr(false),
+    m_sheetPr(NULL),
+    m_has_dimension(false),
+    m_dimension(NULL),
+    m_has_sheetViews(false),
+    m_sheetViews(NULL),
+    m_has_sheetFormatPr(false),
+    m_sheetFormatPr(NULL)
+    {
+    }
     bool CT_Worksheet::has_sheetPr() const
     {    
     return m_has_sheetPr;
@@ -55557,22 +58607,22 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
             
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
     }
     
     if (m_has_dimension)
     {
-        m_dimension->toXmlElem("dimension", "", _outStream);;
+        m_dimension->toXmlElem("main:dimension", "", _outStream);;
     }
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
     }
     
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("sheetFormatPr", "", _outStream);;
+        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);;
     }
      
     {
@@ -55581,143 +58631,143 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
         {
             if ((*iter)->has_cols())
             {
-                (*iter)->get_cols().toXmlElem("cols", "", _outStream);
+                (*iter)->get_cols().toXmlElem("main:cols", "", _outStream);
             }
             else if ((*iter)->has_sheetData())
             {
-                (*iter)->get_sheetData().toXmlElem("sheetData", "", _outStream);
+                (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
             }
             else if ((*iter)->has_sheetCalcPr())
             {
-                (*iter)->get_sheetCalcPr().toXmlElem("sheetCalcPr", "", _outStream);
+                (*iter)->get_sheetCalcPr().toXmlElem("main:sheetCalcPr", "", _outStream);
             }
             else if ((*iter)->has_sheetProtection())
             {
-                (*iter)->get_sheetProtection().toXmlElem("sheetProtection", "", _outStream);
+                (*iter)->get_sheetProtection().toXmlElem("main:sheetProtection", "", _outStream);
             }
             else if ((*iter)->has_protectedRanges())
             {
-                (*iter)->get_protectedRanges().toXmlElem("protectedRanges", "", _outStream);
+                (*iter)->get_protectedRanges().toXmlElem("main:protectedRanges", "", _outStream);
             }
             else if ((*iter)->has_scenarios())
             {
-                (*iter)->get_scenarios().toXmlElem("scenarios", "", _outStream);
+                (*iter)->get_scenarios().toXmlElem("main:scenarios", "", _outStream);
             }
             else if ((*iter)->has_autoFilter())
             {
-                (*iter)->get_autoFilter().toXmlElem("autoFilter", "", _outStream);
+                (*iter)->get_autoFilter().toXmlElem("main:autoFilter", "", _outStream);
             }
             else if ((*iter)->has_sortState())
             {
-                (*iter)->get_sortState().toXmlElem("sortState", "", _outStream);
+                (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
             }
             else if ((*iter)->has_dataConsolidate())
             {
-                (*iter)->get_dataConsolidate().toXmlElem("dataConsolidate", "", _outStream);
+                (*iter)->get_dataConsolidate().toXmlElem("main:dataConsolidate", "", _outStream);
             }
             else if ((*iter)->has_customSheetViews())
             {
-                (*iter)->get_customSheetViews().toXmlElem("customSheetViews", "", _outStream);
+                (*iter)->get_customSheetViews().toXmlElem("main:customSheetViews", "", _outStream);
             }
             else if ((*iter)->has_mergeCells())
             {
-                (*iter)->get_mergeCells().toXmlElem("mergeCells", "", _outStream);
+                (*iter)->get_mergeCells().toXmlElem("main:mergeCells", "", _outStream);
             }
             else if ((*iter)->has_phoneticPr())
             {
-                (*iter)->get_phoneticPr().toXmlElem("phoneticPr", "", _outStream);
+                (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
             }
             else if ((*iter)->has_conditionalFormatting())
             {
-                (*iter)->get_conditionalFormatting().toXmlElem("conditionalFormatting", "", _outStream);
+                (*iter)->get_conditionalFormatting().toXmlElem("main:conditionalFormatting", "", _outStream);
             }
             else if ((*iter)->has_dataValidations())
             {
-                (*iter)->get_dataValidations().toXmlElem("dataValidations", "", _outStream);
+                (*iter)->get_dataValidations().toXmlElem("main:dataValidations", "", _outStream);
             }
             else if ((*iter)->has_hyperlinks())
             {
-                (*iter)->get_hyperlinks().toXmlElem("hyperlinks", "", _outStream);
+                (*iter)->get_hyperlinks().toXmlElem("main:hyperlinks", "", _outStream);
             }
             else if ((*iter)->has_printOptions())
             {
-                (*iter)->get_printOptions().toXmlElem("printOptions", "", _outStream);
+                (*iter)->get_printOptions().toXmlElem("main:printOptions", "", _outStream);
             }
             else if ((*iter)->has_pageMargins())
             {
-                (*iter)->get_pageMargins().toXmlElem("pageMargins", "", _outStream);
+                (*iter)->get_pageMargins().toXmlElem("main:pageMargins", "", _outStream);
             }
             else if ((*iter)->has_pageSetup())
             {
-                (*iter)->get_pageSetup().toXmlElem("pageSetup", "", _outStream);
+                (*iter)->get_pageSetup().toXmlElem("main:pageSetup", "", _outStream);
             }
             else if ((*iter)->has_headerFooter())
             {
-                (*iter)->get_headerFooter().toXmlElem("headerFooter", "", _outStream);
+                (*iter)->get_headerFooter().toXmlElem("main:headerFooter", "", _outStream);
             }
             else if ((*iter)->has_rowBreaks())
             {
-                (*iter)->get_rowBreaks().toXmlElem("rowBreaks", "", _outStream);
+                (*iter)->get_rowBreaks().toXmlElem("main:rowBreaks", "", _outStream);
             }
             else if ((*iter)->has_colBreaks())
             {
-                (*iter)->get_colBreaks().toXmlElem("colBreaks", "", _outStream);
+                (*iter)->get_colBreaks().toXmlElem("main:colBreaks", "", _outStream);
             }
             else if ((*iter)->has_customProperties())
             {
-                (*iter)->get_customProperties().toXmlElem("customProperties", "", _outStream);
+                (*iter)->get_customProperties().toXmlElem("main:customProperties", "", _outStream);
             }
             else if ((*iter)->has_cellWatches())
             {
-                (*iter)->get_cellWatches().toXmlElem("cellWatches", "", _outStream);
+                (*iter)->get_cellWatches().toXmlElem("main:cellWatches", "", _outStream);
             }
             else if ((*iter)->has_ignoredErrors())
             {
-                (*iter)->get_ignoredErrors().toXmlElem("ignoredErrors", "", _outStream);
+                (*iter)->get_ignoredErrors().toXmlElem("main:ignoredErrors", "", _outStream);
             }
             else if ((*iter)->has_smartTags())
             {
-                (*iter)->get_smartTags().toXmlElem("smartTags", "", _outStream);
+                (*iter)->get_smartTags().toXmlElem("main:smartTags", "", _outStream);
             }
             else if ((*iter)->has_drawing())
             {
-                (*iter)->get_drawing().toXmlElem("drawing", "", _outStream);
+                (*iter)->get_drawing().toXmlElem("main:drawing", "", _outStream);
             }
             else if ((*iter)->has_legacyDrawing())
             {
-                (*iter)->get_legacyDrawing().toXmlElem("legacyDrawing", "", _outStream);
+                (*iter)->get_legacyDrawing().toXmlElem("main:legacyDrawing", "", _outStream);
             }
             else if ((*iter)->has_legacyDrawingHF())
             {
-                (*iter)->get_legacyDrawingHF().toXmlElem("legacyDrawingHF", "", _outStream);
+                (*iter)->get_legacyDrawingHF().toXmlElem("main:legacyDrawingHF", "", _outStream);
             }
             else if ((*iter)->has_drawingHF())
             {
-                (*iter)->get_drawingHF().toXmlElem("drawingHF", "", _outStream);
+                (*iter)->get_drawingHF().toXmlElem("main:drawingHF", "", _outStream);
             }
             else if ((*iter)->has_picture())
             {
-                (*iter)->get_picture().toXmlElem("picture", "", _outStream);
+                (*iter)->get_picture().toXmlElem("main:picture", "", _outStream);
             }
             else if ((*iter)->has_oleObjects())
             {
-                (*iter)->get_oleObjects().toXmlElem("oleObjects", "", _outStream);
+                (*iter)->get_oleObjects().toXmlElem("main:oleObjects", "", _outStream);
             }
             else if ((*iter)->has_controls())
             {
-                (*iter)->get_controls().toXmlElem("controls", "", _outStream);
+                (*iter)->get_controls().toXmlElem("main:controls", "", _outStream);
             }
             else if ((*iter)->has_webPublishItems())
             {
-                (*iter)->get_webPublishItems().toXmlElem("webPublishItems", "", _outStream);
+                (*iter)->get_webPublishItems().toXmlElem("main:webPublishItems", "", _outStream);
             }
             else if ((*iter)->has_tableParts())
             {
-                (*iter)->get_tableParts().toXmlElem("tableParts", "", _outStream);
+                (*iter)->get_tableParts().toXmlElem("main:tableParts", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -55736,6 +58786,79 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
 
 
     // CT_Worksheet::ChildGroup_1
+    CT_Worksheet::ChildGroup_1::ChildGroup_1()
+    :m_has_cols(false),
+    m_cols(NULL),
+    m_has_sheetData(false),
+    m_sheetData(NULL),
+    m_has_sheetCalcPr(false),
+    m_sheetCalcPr(NULL),
+    m_has_sheetProtection(false),
+    m_sheetProtection(NULL),
+    m_has_protectedRanges(false),
+    m_protectedRanges(NULL),
+    m_has_scenarios(false),
+    m_scenarios(NULL),
+    m_has_autoFilter(false),
+    m_autoFilter(NULL),
+    m_has_sortState(false),
+    m_sortState(NULL),
+    m_has_dataConsolidate(false),
+    m_dataConsolidate(NULL),
+    m_has_customSheetViews(false),
+    m_customSheetViews(NULL),
+    m_has_mergeCells(false),
+    m_mergeCells(NULL),
+    m_has_phoneticPr(false),
+    m_phoneticPr(NULL),
+    m_has_conditionalFormatting(false),
+    m_conditionalFormatting(NULL),
+    m_has_dataValidations(false),
+    m_dataValidations(NULL),
+    m_has_hyperlinks(false),
+    m_hyperlinks(NULL),
+    m_has_printOptions(false),
+    m_printOptions(NULL),
+    m_has_pageMargins(false),
+    m_pageMargins(NULL),
+    m_has_pageSetup(false),
+    m_pageSetup(NULL),
+    m_has_headerFooter(false),
+    m_headerFooter(NULL),
+    m_has_rowBreaks(false),
+    m_rowBreaks(NULL),
+    m_has_colBreaks(false),
+    m_colBreaks(NULL),
+    m_has_customProperties(false),
+    m_customProperties(NULL),
+    m_has_cellWatches(false),
+    m_cellWatches(NULL),
+    m_has_ignoredErrors(false),
+    m_ignoredErrors(NULL),
+    m_has_smartTags(false),
+    m_smartTags(NULL),
+    m_has_drawing(false),
+    m_drawing(NULL),
+    m_has_legacyDrawing(false),
+    m_legacyDrawing(NULL),
+    m_has_legacyDrawingHF(false),
+    m_legacyDrawingHF(NULL),
+    m_has_drawingHF(false),
+    m_drawingHF(NULL),
+    m_has_picture(false),
+    m_picture(NULL),
+    m_has_oleObjects(false),
+    m_oleObjects(NULL),
+    m_has_controls(false),
+    m_controls(NULL),
+    m_has_webPublishItems(false),
+    m_webPublishItems(NULL),
+    m_has_tableParts(false),
+    m_tableParts(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Worksheet::ChildGroup_1::has_cols() const
     {    
     return m_has_cols;
@@ -67324,6 +70447,10 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
 CT_Worksheet* CT_Worksheet::default_instance_ = NULL;
 
     // CT_SheetData
+    CT_SheetData::CT_SheetData()
+
+    {
+    }
     CT_Row* CT_SheetData::add_row()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -67361,7 +70488,7 @@ CT_Worksheet* CT_Worksheet::default_instance_ = NULL;
         {
             if ((*iter)->has_row())
             {
-                (*iter)->get_row().toXmlElem("row", "", _outStream);
+                (*iter)->get_row().toXmlElem("main:row", "", _outStream);
             }
         }
     }
@@ -67380,6 +70507,11 @@ CT_Worksheet* CT_Worksheet::default_instance_ = NULL;
 
 
     // CT_SheetData::ChildGroup_1
+    CT_SheetData::ChildGroup_1::ChildGroup_1()
+    :m_has_row(false),
+    m_row(NULL)
+    {
+    }
     bool CT_SheetData::ChildGroup_1::has_row() const
     {    
     return m_has_row;
@@ -67408,6 +70540,11 @@ CT_Worksheet* CT_Worksheet::default_instance_ = NULL;
 CT_SheetData* CT_SheetData::default_instance_ = NULL;
 
     // CT_SheetCalcPr
+    CT_SheetCalcPr::CT_SheetCalcPr()
+    :m_has_fullCalcOnLoad_attr(false),
+    m_fullCalcOnLoad_attr(false)
+    {
+    }
     void CT_SheetCalcPr::clear()
     {    
     m_has_fullCalcOnLoad_attr = false;
@@ -67461,6 +70598,27 @@ CT_SheetData* CT_SheetData::default_instance_ = NULL;
 CT_SheetCalcPr* CT_SheetCalcPr::default_instance_ = NULL;
 
     // CT_SheetFormatPr
+    CT_SheetFormatPr::CT_SheetFormatPr()
+    :m_has_baseColWidth_attr(false),
+    m_baseColWidth_attr(0),
+    m_has_defaultColWidth_attr(false),
+    m_defaultColWidth_attr(0),
+    m_has_defaultRowHeight_attr(false),
+    m_defaultRowHeight_attr(0),
+    m_has_customHeight_attr(false),
+    m_customHeight_attr(false),
+    m_has_zeroHeight_attr(false),
+    m_zeroHeight_attr(false),
+    m_has_thickTop_attr(false),
+    m_thickTop_attr(false),
+    m_has_thickBottom_attr(false),
+    m_thickBottom_attr(false),
+    m_has_outlineLevelRow_attr(false),
+    m_outlineLevelRow_attr(0),
+    m_has_outlineLevelCol_attr(false),
+    m_outlineLevelCol_attr(0)
+    {
+    }
     void CT_SheetFormatPr::clear()
     {    
     m_has_baseColWidth_attr = false;
@@ -67714,6 +70872,10 @@ CT_SheetCalcPr* CT_SheetCalcPr::default_instance_ = NULL;
 CT_SheetFormatPr* CT_SheetFormatPr::default_instance_ = NULL;
 
     // CT_Cols
+    CT_Cols::CT_Cols()
+
+    {
+    }
     CT_Col* CT_Cols::add_col()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -67751,7 +70913,7 @@ CT_SheetFormatPr* CT_SheetFormatPr::default_instance_ = NULL;
         {
             if ((*iter)->has_col())
             {
-                (*iter)->get_col().toXmlElem("col", "", _outStream);
+                (*iter)->get_col().toXmlElem("main:col", "", _outStream);
             }
         }
     }
@@ -67770,6 +70932,11 @@ CT_SheetFormatPr* CT_SheetFormatPr::default_instance_ = NULL;
 
 
     // CT_Cols::ChildGroup_1
+    CT_Cols::ChildGroup_1::ChildGroup_1()
+    :m_has_col(false),
+    m_col(NULL)
+    {
+    }
     bool CT_Cols::ChildGroup_1::has_col() const
     {    
     return m_has_col;
@@ -67798,6 +70965,29 @@ CT_SheetFormatPr* CT_SheetFormatPr::default_instance_ = NULL;
 CT_Cols* CT_Cols::default_instance_ = NULL;
 
     // CT_Col
+    CT_Col::CT_Col()
+    :m_has_min_attr(false),
+    m_min_attr(0),
+    m_has_max_attr(false),
+    m_max_attr(0),
+    m_has_width_attr(false),
+    m_width_attr(0),
+    m_has_style_attr(false),
+    m_style_attr(0),
+    m_has_hidden_attr(false),
+    m_hidden_attr(false),
+    m_has_bestFit_attr(false),
+    m_bestFit_attr(false),
+    m_has_customWidth_attr(false),
+    m_customWidth_attr(false),
+    m_has_phonetic_attr(false),
+    m_phonetic_attr(false),
+    m_has_outlineLevel_attr(false),
+    m_outlineLevel_attr(0),
+    m_has_collapsed_attr(false),
+    m_collapsed_attr(false)
+    {
+    }
     void CT_Col::clear()
     {    
     m_has_min_attr = false;
@@ -68076,6 +71266,33 @@ CT_Cols* CT_Cols::default_instance_ = NULL;
 CT_Col* CT_Col::default_instance_ = NULL;
 
     // CT_Row
+    CT_Row::CT_Row()
+    :m_has_r_attr(false),
+    m_r_attr(0),
+    m_has_spans_attr(false),
+    m_spans_attr(NULL),
+    m_has_s_attr(false),
+    m_s_attr(0),
+    m_has_customFormat_attr(false),
+    m_customFormat_attr(false),
+    m_has_ht_attr(false),
+    m_ht_attr(0),
+    m_has_hidden_attr(false),
+    m_hidden_attr(false),
+    m_has_customHeight_attr(false),
+    m_customHeight_attr(false),
+    m_has_outlineLevel_attr(false),
+    m_outlineLevel_attr(0),
+    m_has_collapsed_attr(false),
+    m_collapsed_attr(false),
+    m_has_thickTop_attr(false),
+    m_thickTop_attr(false),
+    m_has_thickBot_attr(false),
+    m_thickBot_attr(false),
+    m_has_ph_attr(false),
+    m_ph_attr(false)
+    {
+    }
     CT_Cell* CT_Row::add_c()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -68234,11 +71451,11 @@ CT_Col* CT_Col::default_instance_ = NULL;
         {
             if ((*iter)->has_c())
             {
-                (*iter)->get_c().toXmlElem("c", "", _outStream);
+                (*iter)->get_c().toXmlElem("main:c", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -68453,6 +71670,13 @@ CT_Col* CT_Col::default_instance_ = NULL;
 
 
     // CT_Row::ChildGroup_1
+    CT_Row::ChildGroup_1::ChildGroup_1()
+    :m_has_c(false),
+    m_c(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Row::ChildGroup_1::has_c() const
     {    
     return m_has_c;
@@ -68524,6 +71748,29 @@ CT_Col* CT_Col::default_instance_ = NULL;
 CT_Row* CT_Row::default_instance_ = NULL;
 
     // CT_Cell
+    CT_Cell::CT_Cell()
+    :m_has_f(false),
+    m_f(NULL),
+    m_has_v(false),
+    m_v(NULL),
+    m_has_is(false),
+    m_is(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_r_attr(false),
+    m_r_attr(NULL),
+    m_has_s_attr(false),
+    m_s_attr(0),
+    m_has_t_attr(false),
+    m_t_attr(NULL),
+    m_has_cm_attr(false),
+    m_cm_attr(0),
+    m_has_vm_attr(false),
+    m_vm_attr(0),
+    m_has_ph_attr(false),
+    m_ph_attr(false)
+    {
+    }
     bool CT_Cell::has_f() const
     {    
     return m_has_f;
@@ -68548,26 +71795,26 @@ CT_Row* CT_Row::default_instance_ = NULL;
     return CT_CellFormula::default_instance();
     }
 
-    bool CT_Cell::has_s_v() const
+    bool CT_Cell::has_v() const
     {    
-    return m_has_s_v;
+    return m_has_v;
     }
 
-    ns_s::ST_Xstring* CT_Cell::mutable_s_v()
+    ns_s::ST_Xstring* CT_Cell::mutable_v()
     {    
-    m_has_s_v = true;
-    if (!m_s_v)
+    m_has_v = true;
+    if (!m_v)
     {
-        m_s_v = new ns_s::ST_Xstring();
+        m_v = new ns_s::ST_Xstring();
     }
-    return m_s_v;
+    return m_v;
     }
 
-    const ns_s::ST_Xstring& CT_Cell::get_s_v() const
+    const ns_s::ST_Xstring& CT_Cell::get_v() const
     {    
-    if (m_s_v)
+    if (m_v)
     {
-        return *m_s_v;
+        return *m_v;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -68701,22 +71948,22 @@ CT_Row* CT_Row::default_instance_ = NULL;
             
     if (m_has_f)
     {
-        m_f->toXmlElem("f", "", _outStream);;
+        m_f->toXmlElem("main:f", "", _outStream);;
     }
     
-    if (m_has_s_v)
+    if (m_has_v)
     {
-        _outStream << "<s:v>" << m_s_v->toString() << "</s:v>";;
+        _outStream << "<main:v>" << m_v->toString() << "</main:v>";;
     }
     
     if (m_has_is)
     {
-        m_is->toXmlElem("is", "", _outStream);;
+        m_is->toXmlElem("main:is", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -68838,6 +72085,33 @@ CT_Row* CT_Row::default_instance_ = NULL;
 CT_Cell* CT_Cell::default_instance_ = NULL;
 
     // CT_SheetPr
+    CT_SheetPr::CT_SheetPr()
+    :m_has_tabColor(false),
+    m_tabColor(NULL),
+    m_has_outlinePr(false),
+    m_outlinePr(NULL),
+    m_has_pageSetUpPr(false),
+    m_pageSetUpPr(NULL),
+    m_has_syncHorizontal_attr(false),
+    m_syncHorizontal_attr(false),
+    m_has_syncVertical_attr(false),
+    m_syncVertical_attr(false),
+    m_has_syncRef_attr(false),
+    m_syncRef_attr(NULL),
+    m_has_transitionEvaluation_attr(false),
+    m_transitionEvaluation_attr(false),
+    m_has_transitionEntry_attr(false),
+    m_transitionEntry_attr(false),
+    m_has_published_attr(false),
+    m_published_attr(false),
+    m_has_codeName_attr(false),
+    m_codeName_attr(""),
+    m_has_filterMode_attr(false),
+    m_filterMode_attr(false),
+    m_has_enableFormatConditionsCalculation_attr(false),
+    m_enableFormatConditionsCalculation_attr(false)
+    {
+    }
     bool CT_SheetPr::has_tabColor() const
     {    
     return m_has_tabColor;
@@ -69012,17 +72286,17 @@ CT_Cell* CT_Cell::default_instance_ = NULL;
             
     if (m_has_tabColor)
     {
-        m_tabColor->toXmlElem("tabColor", "", _outStream);;
+        m_tabColor->toXmlElem("main:tabColor", "", _outStream);;
     }
     
     if (m_has_outlinePr)
     {
-        m_outlinePr->toXmlElem("outlinePr", "", _outStream);;
+        m_outlinePr->toXmlElem("main:outlinePr", "", _outStream);;
     }
     
     if (m_has_pageSetUpPr)
     {
-        m_pageSetUpPr->toXmlElem("pageSetUpPr", "", _outStream);;
+        m_pageSetUpPr->toXmlElem("main:pageSetUpPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -69188,6 +72462,11 @@ CT_Cell* CT_Cell::default_instance_ = NULL;
 CT_SheetPr* CT_SheetPr::default_instance_ = NULL;
 
     // CT_SheetDimension
+    CT_SheetDimension::CT_SheetDimension()
+    :m_has_ref_attr(false),
+    m_ref_attr(NULL)
+    {
+    }
     void CT_SheetDimension::clear()
     {    
     m_has_ref_attr = false;
@@ -69251,6 +72530,10 @@ CT_SheetPr* CT_SheetPr::default_instance_ = NULL;
 CT_SheetDimension* CT_SheetDimension::default_instance_ = NULL;
 
     // CT_SheetViews
+    CT_SheetViews::CT_SheetViews()
+
+    {
+    }
     CT_SheetView* CT_SheetViews::add_sheetView()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -69296,11 +72579,11 @@ CT_SheetDimension* CT_SheetDimension::default_instance_ = NULL;
         {
             if ((*iter)->has_sheetView())
             {
-                (*iter)->get_sheetView().toXmlElem("sheetView", "", _outStream);
+                (*iter)->get_sheetView().toXmlElem("main:sheetView", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -69319,6 +72602,13 @@ CT_SheetDimension* CT_SheetDimension::default_instance_ = NULL;
 
 
     // CT_SheetViews::ChildGroup_1
+    CT_SheetViews::ChildGroup_1::ChildGroup_1()
+    :m_has_sheetView(false),
+    m_sheetView(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_SheetViews::ChildGroup_1::has_sheetView() const
     {    
     return m_has_sheetView;
@@ -69390,6 +72680,49 @@ CT_SheetDimension* CT_SheetDimension::default_instance_ = NULL;
 CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
 
     // CT_SheetView
+    CT_SheetView::CT_SheetView()
+    :m_has_pane(false),
+    m_pane(NULL),
+    m_has_windowProtection_attr(false),
+    m_windowProtection_attr(false),
+    m_has_showFormulas_attr(false),
+    m_showFormulas_attr(false),
+    m_has_showGridLines_attr(false),
+    m_showGridLines_attr(false),
+    m_has_showRowColHeaders_attr(false),
+    m_showRowColHeaders_attr(false),
+    m_has_showZeros_attr(false),
+    m_showZeros_attr(false),
+    m_has_rightToLeft_attr(false),
+    m_rightToLeft_attr(false),
+    m_has_tabSelected_attr(false),
+    m_tabSelected_attr(false),
+    m_has_showRuler_attr(false),
+    m_showRuler_attr(false),
+    m_has_showOutlineSymbols_attr(false),
+    m_showOutlineSymbols_attr(false),
+    m_has_defaultGridColor_attr(false),
+    m_defaultGridColor_attr(false),
+    m_has_showWhiteSpace_attr(false),
+    m_showWhiteSpace_attr(false),
+    m_has_view_attr(false),
+    m_view_attr(NULL),
+    m_has_topLeftCell_attr(false),
+    m_topLeftCell_attr(NULL),
+    m_has_colorId_attr(false),
+    m_colorId_attr(0),
+    m_has_zoomScale_attr(false),
+    m_zoomScale_attr(0),
+    m_has_zoomScaleNormal_attr(false),
+    m_zoomScaleNormal_attr(0),
+    m_has_zoomScaleSheetLayoutView_attr(false),
+    m_zoomScaleSheetLayoutView_attr(0),
+    m_has_zoomScalePageLayoutView_attr(false),
+    m_zoomScalePageLayoutView_attr(0),
+    m_has_workbookViewId_attr(false),
+    m_workbookViewId_attr(0)
+    {
+    }
     bool CT_SheetView::has_pane() const
     {    
     return m_has_pane;
@@ -69654,7 +72987,7 @@ CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
             
     if (m_has_pane)
     {
-        m_pane->toXmlElem("pane", "", _outStream);;
+        m_pane->toXmlElem("main:pane", "", _outStream);;
     }
      
     {
@@ -69663,15 +72996,15 @@ CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
         {
             if ((*iter)->has_selection())
             {
-                (*iter)->get_selection().toXmlElem("selection", "", _outStream);
+                (*iter)->get_selection().toXmlElem("main:selection", "", _outStream);
             }
             else if ((*iter)->has_pivotSelection())
             {
-                (*iter)->get_pivotSelection().toXmlElem("pivotSelection", "", _outStream);
+                (*iter)->get_pivotSelection().toXmlElem("main:pivotSelection", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -70002,6 +73335,15 @@ CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
 
 
     // CT_SheetView::ChildGroup_1
+    CT_SheetView::ChildGroup_1::ChildGroup_1()
+    :m_has_selection(false),
+    m_selection(NULL),
+    m_has_pivotSelection(false),
+    m_pivotSelection(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_SheetView::ChildGroup_1::has_selection() const
     {    
     return m_has_selection;
@@ -70134,6 +73476,19 @@ CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
 CT_SheetView* CT_SheetView::default_instance_ = NULL;
 
     // CT_Pane
+    CT_Pane::CT_Pane()
+    :m_has_xSplit_attr(false),
+    m_xSplit_attr(0),
+    m_has_ySplit_attr(false),
+    m_ySplit_attr(0),
+    m_has_topLeftCell_attr(false),
+    m_topLeftCell_attr(NULL),
+    m_has_activePane_attr(false),
+    m_activePane_attr(NULL),
+    m_has_state_attr(false),
+    m_state_attr(NULL)
+    {
+    }
     void CT_Pane::clear()
     {    
     m_has_xSplit_attr = false;
@@ -70317,6 +73672,45 @@ CT_SheetView* CT_SheetView::default_instance_ = NULL;
 CT_Pane* CT_Pane::default_instance_ = NULL;
 
     // CT_PivotSelection
+    CT_PivotSelection::CT_PivotSelection()
+    :m_has_pivotArea(false),
+    m_pivotArea(NULL),
+    m_has_pane_attr(false),
+    m_pane_attr(NULL),
+    m_has_showHeader_attr(false),
+    m_showHeader_attr(false),
+    m_has_label_attr(false),
+    m_label_attr(false),
+    m_has_data_attr(false),
+    m_data_attr(false),
+    m_has_extendable_attr(false),
+    m_extendable_attr(false),
+    m_has_count_attr(false),
+    m_count_attr(0),
+    m_has_axis_attr(false),
+    m_axis_attr(NULL),
+    m_has_dimension_attr(false),
+    m_dimension_attr(0),
+    m_has_start_attr(false),
+    m_start_attr(0),
+    m_has_min_attr(false),
+    m_min_attr(0),
+    m_has_max_attr(false),
+    m_max_attr(0),
+    m_has_activeRow_attr(false),
+    m_activeRow_attr(0),
+    m_has_activeCol_attr(false),
+    m_activeCol_attr(0),
+    m_has_previousRow_attr(false),
+    m_previousRow_attr(0),
+    m_has_previousCol_attr(false),
+    m_previousCol_attr(0),
+    m_has_click_attr(false),
+    m_click_attr(0),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     bool CT_PivotSelection::has_pivotArea() const
     {    
     return m_has_pivotArea;
@@ -70520,14 +73914,14 @@ CT_Pane* CT_Pane::default_instance_ = NULL;
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("pivotArea", "", _outStream);;
+        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -70829,6 +74223,17 @@ CT_Pane* CT_Pane::default_instance_ = NULL;
 CT_PivotSelection* CT_PivotSelection::default_instance_ = NULL;
 
     // CT_Selection
+    CT_Selection::CT_Selection()
+    :m_has_pane_attr(false),
+    m_pane_attr(NULL),
+    m_has_activeCell_attr(false),
+    m_activeCell_attr(NULL),
+    m_has_activeCellId_attr(false),
+    m_activeCellId_attr(0),
+    m_has_sqref_attr(false),
+    m_sqref_attr(NULL)
+    {
+    }
     void CT_Selection::clear()
     {    
     m_has_pane_attr = false;
@@ -70987,6 +74392,13 @@ CT_PivotSelection* CT_PivotSelection::default_instance_ = NULL;
 CT_Selection* CT_Selection::default_instance_ = NULL;
 
     // CT_PageBreak
+    CT_PageBreak::CT_PageBreak()
+    :m_has_count_attr(false),
+    m_count_attr(0),
+    m_has_manualBreakCount_attr(false),
+    m_manualBreakCount_attr(0)
+    {
+    }
     CT_Break* CT_PageBreak::add_brk()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -71041,7 +74453,7 @@ CT_Selection* CT_Selection::default_instance_ = NULL;
         {
             if ((*iter)->has_brk())
             {
-                (*iter)->get_brk().toXmlElem("brk", "", _outStream);
+                (*iter)->get_brk().toXmlElem("main:brk", "", _outStream);
             }
         }
     }
@@ -71092,6 +74504,11 @@ CT_Selection* CT_Selection::default_instance_ = NULL;
 
 
     // CT_PageBreak::ChildGroup_1
+    CT_PageBreak::ChildGroup_1::ChildGroup_1()
+    :m_has_brk(false),
+    m_brk(NULL)
+    {
+    }
     bool CT_PageBreak::ChildGroup_1::has_brk() const
     {    
     return m_has_brk;
@@ -71120,6 +74537,19 @@ CT_Selection* CT_Selection::default_instance_ = NULL;
 CT_PageBreak* CT_PageBreak::default_instance_ = NULL;
 
     // CT_Break
+    CT_Break::CT_Break()
+    :m_has_id_attr(false),
+    m_id_attr(0),
+    m_has_min_attr(false),
+    m_min_attr(0),
+    m_has_max_attr(false),
+    m_max_attr(0),
+    m_has_man_attr(false),
+    m_man_attr(false),
+    m_has_pt_attr(false),
+    m_pt_attr(false)
+    {
+    }
     void CT_Break::clear()
     {    
     m_has_id_attr = false;
@@ -71273,6 +74703,17 @@ CT_PageBreak* CT_PageBreak::default_instance_ = NULL;
 CT_Break* CT_Break::default_instance_ = NULL;
 
     // CT_OutlinePr
+    CT_OutlinePr::CT_OutlinePr()
+    :m_has_applyStyles_attr(false),
+    m_applyStyles_attr(false),
+    m_has_summaryBelow_attr(false),
+    m_summaryBelow_attr(false),
+    m_has_summaryRight_attr(false),
+    m_summaryRight_attr(false),
+    m_has_showOutlineSymbols_attr(false),
+    m_showOutlineSymbols_attr(false)
+    {
+    }
     void CT_OutlinePr::clear()
     {    
     m_has_applyStyles_attr = false;
@@ -71401,6 +74842,13 @@ CT_Break* CT_Break::default_instance_ = NULL;
 CT_OutlinePr* CT_OutlinePr::default_instance_ = NULL;
 
     // CT_PageSetUpPr
+    CT_PageSetUpPr::CT_PageSetUpPr()
+    :m_has_autoPageBreaks_attr(false),
+    m_autoPageBreaks_attr(false),
+    m_has_fitToPage_attr(false),
+    m_fitToPage_attr(false)
+    {
+    }
     void CT_PageSetUpPr::clear()
     {    
     m_has_autoPageBreaks_attr = false;
@@ -71479,6 +74927,21 @@ CT_OutlinePr* CT_OutlinePr::default_instance_ = NULL;
 CT_PageSetUpPr* CT_PageSetUpPr::default_instance_ = NULL;
 
     // CT_DataConsolidate
+    CT_DataConsolidate::CT_DataConsolidate()
+    :m_has_dataRefs(false),
+    m_dataRefs(NULL),
+    m_has_function_attr(false),
+    m_function_attr(NULL),
+    m_has_startLabels_attr(false),
+    m_startLabels_attr(false),
+    m_has_leftLabels_attr(false),
+    m_leftLabels_attr(false),
+    m_has_topLabels_attr(false),
+    m_topLabels_attr(false),
+    m_has_link_attr(false),
+    m_link_attr(false)
+    {
+    }
     bool CT_DataConsolidate::has_dataRefs() const
     {    
     return m_has_dataRefs;
@@ -71569,7 +75032,7 @@ CT_PageSetUpPr* CT_PageSetUpPr::default_instance_ = NULL;
             
     if (m_has_dataRefs)
     {
-        m_dataRefs->toXmlElem("dataRefs", "", _outStream);;
+        m_dataRefs->toXmlElem("main:dataRefs", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -71671,6 +75134,11 @@ CT_PageSetUpPr* CT_PageSetUpPr::default_instance_ = NULL;
 CT_DataConsolidate* CT_DataConsolidate::default_instance_ = NULL;
 
     // CT_DataRefs
+    CT_DataRefs::CT_DataRefs()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_DataRef* CT_DataRefs::add_dataRef()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -71716,7 +75184,7 @@ CT_DataConsolidate* CT_DataConsolidate::default_instance_ = NULL;
         {
             if ((*iter)->has_dataRef())
             {
-                (*iter)->get_dataRef().toXmlElem("dataRef", "", _outStream);
+                (*iter)->get_dataRef().toXmlElem("main:dataRef", "", _outStream);
             }
         }
     }
@@ -71751,6 +75219,11 @@ CT_DataConsolidate* CT_DataConsolidate::default_instance_ = NULL;
 
 
     // CT_DataRefs::ChildGroup_1
+    CT_DataRefs::ChildGroup_1::ChildGroup_1()
+    :m_has_dataRef(false),
+    m_dataRef(NULL)
+    {
+    }
     bool CT_DataRefs::ChildGroup_1::has_dataRef() const
     {    
     return m_has_dataRef;
@@ -71779,6 +75252,17 @@ CT_DataConsolidate* CT_DataConsolidate::default_instance_ = NULL;
 CT_DataRefs* CT_DataRefs::default_instance_ = NULL;
 
     // CT_DataRef
+    CT_DataRef::CT_DataRef()
+    :m_has_ref_attr(false),
+    m_ref_attr(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_sheet_attr(false),
+    m_sheet_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     void CT_DataRef::clear()
     {    
     m_has_ref_attr = false;
@@ -71790,21 +75274,21 @@ CT_DataRefs* CT_DataRefs::default_instance_ = NULL;
     }
     
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_sheet_attr = false;
+    m_has_sheet_attr = false;
     
-    if (m_s_sheet_attr)
+    if (m_sheet_attr)
     {
-        delete m_s_sheet_attr;
-        m_s_sheet_attr = NULL;
+        delete m_sheet_attr;
+        m_sheet_attr = NULL;
     }
     
     
@@ -71833,21 +75317,21 @@ CT_DataRefs* CT_DataRefs::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_sheet_attr)
+    if (m_has_sheet_attr)
     {
-        m_s_sheet_attr->toXmlAttr("sheet", _outStream);
+        m_sheet_attr->toXmlAttr("sheet", _outStream);
     }
     
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
@@ -71884,42 +75368,42 @@ CT_DataRefs* CT_DataRefs::default_instance_ = NULL;
     return ST_Ref::default_instance();
     }
 
-    bool CT_DataRef::has_s_name_attr() const
+    bool CT_DataRef::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_DataRef::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_DataRef::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DataRef::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_DataRef::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_DataRef::has_s_sheet_attr() const
+    bool CT_DataRef::has_sheet_attr() const
     {    
-    return m_has_s_sheet_attr;
+    return m_has_sheet_attr;
     }
 
-    void CT_DataRef::set_s_sheet_attr(const ns_s::ST_Xstring& _s_sheet_attr)
+    void CT_DataRef::set_sheet_attr(const ns_s::ST_Xstring& _sheet_attr)
     {    
-    m_has_s_sheet_attr = true;
-    m_s_sheet_attr = new ns_s::ST_Xstring(_s_sheet_attr);
+    m_has_sheet_attr = true;
+    m_sheet_attr = new ns_s::ST_Xstring(_sheet_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DataRef::get_s_sheet_attr() const
+    const ns_s::ST_Xstring& CT_DataRef::get_sheet_attr() const
     {    
-    if (m_s_sheet_attr)
+    if (m_sheet_attr)
     {
-        return *m_s_sheet_attr;
+        return *m_sheet_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -71947,6 +75431,11 @@ CT_DataRefs* CT_DataRefs::default_instance_ = NULL;
 CT_DataRef* CT_DataRef::default_instance_ = NULL;
 
     // CT_MergeCells
+    CT_MergeCells::CT_MergeCells()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_MergeCell* CT_MergeCells::add_mergeCell()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -71992,7 +75481,7 @@ CT_DataRef* CT_DataRef::default_instance_ = NULL;
         {
             if ((*iter)->has_mergeCell())
             {
-                (*iter)->get_mergeCell().toXmlElem("mergeCell", "", _outStream);
+                (*iter)->get_mergeCell().toXmlElem("main:mergeCell", "", _outStream);
             }
         }
     }
@@ -72027,6 +75516,11 @@ CT_DataRef* CT_DataRef::default_instance_ = NULL;
 
 
     // CT_MergeCells::ChildGroup_1
+    CT_MergeCells::ChildGroup_1::ChildGroup_1()
+    :m_has_mergeCell(false),
+    m_mergeCell(NULL)
+    {
+    }
     bool CT_MergeCells::ChildGroup_1::has_mergeCell() const
     {    
     return m_has_mergeCell;
@@ -72055,6 +75549,11 @@ CT_DataRef* CT_DataRef::default_instance_ = NULL;
 CT_MergeCells* CT_MergeCells::default_instance_ = NULL;
 
     // CT_MergeCell
+    CT_MergeCell::CT_MergeCell()
+    :m_has_ref_attr(false),
+    m_ref_attr(NULL)
+    {
+    }
     void CT_MergeCell::clear()
     {    
     m_has_ref_attr = false;
@@ -72118,6 +75617,10 @@ CT_MergeCells* CT_MergeCells::default_instance_ = NULL;
 CT_MergeCell* CT_MergeCell::default_instance_ = NULL;
 
     // CT_SmartTags
+    CT_SmartTags::CT_SmartTags()
+
+    {
+    }
     CT_CellSmartTags* CT_SmartTags::add_cellSmartTags()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -72155,7 +75658,7 @@ CT_MergeCell* CT_MergeCell::default_instance_ = NULL;
         {
             if ((*iter)->has_cellSmartTags())
             {
-                (*iter)->get_cellSmartTags().toXmlElem("cellSmartTags", "", _outStream);
+                (*iter)->get_cellSmartTags().toXmlElem("main:cellSmartTags", "", _outStream);
             }
         }
     }
@@ -72174,6 +75677,11 @@ CT_MergeCell* CT_MergeCell::default_instance_ = NULL;
 
 
     // CT_SmartTags::ChildGroup_1
+    CT_SmartTags::ChildGroup_1::ChildGroup_1()
+    :m_has_cellSmartTags(false),
+    m_cellSmartTags(NULL)
+    {
+    }
     bool CT_SmartTags::ChildGroup_1::has_cellSmartTags() const
     {    
     return m_has_cellSmartTags;
@@ -72202,6 +75710,11 @@ CT_MergeCell* CT_MergeCell::default_instance_ = NULL;
 CT_SmartTags* CT_SmartTags::default_instance_ = NULL;
 
     // CT_CellSmartTags
+    CT_CellSmartTags::CT_CellSmartTags()
+    :m_has_r_attr(false),
+    m_r_attr(NULL)
+    {
+    }
     CT_CellSmartTag* CT_CellSmartTags::add_cellSmartTag()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -72253,7 +75766,7 @@ CT_SmartTags* CT_SmartTags::default_instance_ = NULL;
         {
             if ((*iter)->has_cellSmartTag())
             {
-                (*iter)->get_cellSmartTag().toXmlElem("cellSmartTag", "", _outStream);
+                (*iter)->get_cellSmartTag().toXmlElem("main:cellSmartTag", "", _outStream);
             }
         }
     }
@@ -72292,6 +75805,11 @@ CT_SmartTags* CT_SmartTags::default_instance_ = NULL;
 
 
     // CT_CellSmartTags::ChildGroup_1
+    CT_CellSmartTags::ChildGroup_1::ChildGroup_1()
+    :m_has_cellSmartTag(false),
+    m_cellSmartTag(NULL)
+    {
+    }
     bool CT_CellSmartTags::ChildGroup_1::has_cellSmartTag() const
     {    
     return m_has_cellSmartTag;
@@ -72320,6 +75838,15 @@ CT_SmartTags* CT_SmartTags::default_instance_ = NULL;
 CT_CellSmartTags* CT_CellSmartTags::default_instance_ = NULL;
 
     // CT_CellSmartTag
+    CT_CellSmartTag::CT_CellSmartTag()
+    :m_has_type_attr(false),
+    m_type_attr(0),
+    m_has_deleted_attr(false),
+    m_deleted_attr(false),
+    m_has_xmlBased_attr(false),
+    m_xmlBased_attr(false)
+    {
+    }
     CT_CellSmartTagPr* CT_CellSmartTag::add_cellSmartTagPr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -72383,7 +75910,7 @@ CT_CellSmartTags* CT_CellSmartTags::default_instance_ = NULL;
         {
             if ((*iter)->has_cellSmartTagPr())
             {
-                (*iter)->get_cellSmartTagPr().toXmlElem("cellSmartTagPr", "", _outStream);
+                (*iter)->get_cellSmartTagPr().toXmlElem("main:cellSmartTagPr", "", _outStream);
             }
         }
     }
@@ -72450,6 +75977,11 @@ CT_CellSmartTags* CT_CellSmartTags::default_instance_ = NULL;
 
 
     // CT_CellSmartTag::ChildGroup_1
+    CT_CellSmartTag::ChildGroup_1::ChildGroup_1()
+    :m_has_cellSmartTagPr(false),
+    m_cellSmartTagPr(NULL)
+    {
+    }
     bool CT_CellSmartTag::ChildGroup_1::has_cellSmartTagPr() const
     {    
     return m_has_cellSmartTagPr;
@@ -72478,23 +76010,30 @@ CT_CellSmartTags* CT_CellSmartTags::default_instance_ = NULL;
 CT_CellSmartTag* CT_CellSmartTag::default_instance_ = NULL;
 
     // CT_CellSmartTagPr
+    CT_CellSmartTagPr::CT_CellSmartTagPr()
+    :m_has_key_attr(false),
+    m_key_attr(NULL),
+    m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_CellSmartTagPr::clear()
     {    
-    m_has_s_key_attr = false;
+    m_has_key_attr = false;
     
-    if (m_s_key_attr)
+    if (m_key_attr)
     {
-        delete m_s_key_attr;
-        m_s_key_attr = NULL;
+        delete m_key_attr;
+        m_key_attr = NULL;
     }
     
     
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     }
@@ -72508,15 +76047,15 @@ CT_CellSmartTag* CT_CellSmartTag::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_key_attr)
+    if (m_has_key_attr)
     {
-        m_s_key_attr->toXmlAttr("key", _outStream);
+        m_key_attr->toXmlAttr("key", _outStream);
     }
     
     
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("val", _outStream);
+        m_val_attr->toXmlAttr("val", _outStream);
     }
     
             _outStream << ">";
@@ -72533,42 +76072,42 @@ CT_CellSmartTag* CT_CellSmartTag::default_instance_ = NULL;
     return *CT_CellSmartTagPr::default_instance_;
     }
 
-    bool CT_CellSmartTagPr::has_s_key_attr() const
+    bool CT_CellSmartTagPr::has_key_attr() const
     {    
-    return m_has_s_key_attr;
+    return m_has_key_attr;
     }
 
-    void CT_CellSmartTagPr::set_s_key_attr(const ns_s::ST_Xstring& _s_key_attr)
+    void CT_CellSmartTagPr::set_key_attr(const ns_s::ST_Xstring& _key_attr)
     {    
-    m_has_s_key_attr = true;
-    m_s_key_attr = new ns_s::ST_Xstring(_s_key_attr);
+    m_has_key_attr = true;
+    m_key_attr = new ns_s::ST_Xstring(_key_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CellSmartTagPr::get_s_key_attr() const
+    const ns_s::ST_Xstring& CT_CellSmartTagPr::get_key_attr() const
     {    
-    if (m_s_key_attr)
+    if (m_key_attr)
     {
-        return *m_s_key_attr;
+        return *m_key_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CellSmartTagPr::has_s_val_attr() const
+    bool CT_CellSmartTagPr::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_CellSmartTagPr::set_s_val_attr(const ns_s::ST_Xstring& _s_val_attr)
+    void CT_CellSmartTagPr::set_val_attr(const ns_s::ST_Xstring& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_Xstring(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_Xstring(_val_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CellSmartTagPr::get_s_val_attr() const
+    const ns_s::ST_Xstring& CT_CellSmartTagPr::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -72576,6 +76115,11 @@ CT_CellSmartTag* CT_CellSmartTag::default_instance_ = NULL;
 CT_CellSmartTagPr* CT_CellSmartTagPr::default_instance_ = NULL;
 
     // CT_Drawing
+    CT_Drawing::CT_Drawing()
+    :m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     void CT_Drawing::clear()
     {    
     m_has_r_id_attr = false;
@@ -72599,7 +76143,7 @@ CT_CellSmartTagPr* CT_CellSmartTagPr::default_instance_ = NULL;
             
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
@@ -72639,6 +76183,11 @@ CT_CellSmartTagPr* CT_CellSmartTagPr::default_instance_ = NULL;
 CT_Drawing* CT_Drawing::default_instance_ = NULL;
 
     // CT_LegacyDrawing
+    CT_LegacyDrawing::CT_LegacyDrawing()
+    :m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     void CT_LegacyDrawing::clear()
     {    
     m_has_r_id_attr = false;
@@ -72662,7 +76211,7 @@ CT_Drawing* CT_Drawing::default_instance_ = NULL;
             
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
@@ -72702,6 +76251,47 @@ CT_Drawing* CT_Drawing::default_instance_ = NULL;
 CT_LegacyDrawing* CT_LegacyDrawing::default_instance_ = NULL;
 
     // CT_DrawingHF
+    CT_DrawingHF::CT_DrawingHF()
+    :m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_lho_attr(false),
+    m_lho_attr(0),
+    m_has_lhe_attr(false),
+    m_lhe_attr(0),
+    m_has_lhf_attr(false),
+    m_lhf_attr(0),
+    m_has_cho_attr(false),
+    m_cho_attr(0),
+    m_has_che_attr(false),
+    m_che_attr(0),
+    m_has_chf_attr(false),
+    m_chf_attr(0),
+    m_has_rho_attr(false),
+    m_rho_attr(0),
+    m_has_rhe_attr(false),
+    m_rhe_attr(0),
+    m_has_rhf_attr(false),
+    m_rhf_attr(0),
+    m_has_lfo_attr(false),
+    m_lfo_attr(0),
+    m_has_lfe_attr(false),
+    m_lfe_attr(0),
+    m_has_lff_attr(false),
+    m_lff_attr(0),
+    m_has_cfo_attr(false),
+    m_cfo_attr(0),
+    m_has_cfe_attr(false),
+    m_cfe_attr(0),
+    m_has_cff_attr(false),
+    m_cff_attr(0),
+    m_has_rfo_attr(false),
+    m_rfo_attr(0),
+    m_has_rfe_attr(false),
+    m_rfe_attr(0),
+    m_has_rff_attr(false),
+    m_rff_attr(0)
+    {
+    }
     void CT_DrawingHF::clear()
     {    
     m_has_r_id_attr = false;
@@ -72779,7 +76369,7 @@ CT_LegacyDrawing* CT_LegacyDrawing::default_instance_ = NULL;
             
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
@@ -73215,6 +76805,10 @@ CT_LegacyDrawing* CT_LegacyDrawing::default_instance_ = NULL;
 CT_DrawingHF* CT_DrawingHF::default_instance_ = NULL;
 
     // CT_CustomSheetViews
+    CT_CustomSheetViews::CT_CustomSheetViews()
+
+    {
+    }
     CT_CustomSheetView* CT_CustomSheetViews::add_customSheetView()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -73252,7 +76846,7 @@ CT_DrawingHF* CT_DrawingHF::default_instance_ = NULL;
         {
             if ((*iter)->has_customSheetView())
             {
-                (*iter)->get_customSheetView().toXmlElem("customSheetView", "", _outStream);
+                (*iter)->get_customSheetView().toXmlElem("main:customSheetView", "", _outStream);
             }
         }
     }
@@ -73271,6 +76865,11 @@ CT_DrawingHF* CT_DrawingHF::default_instance_ = NULL;
 
 
     // CT_CustomSheetViews::ChildGroup_1
+    CT_CustomSheetViews::ChildGroup_1::ChildGroup_1()
+    :m_has_customSheetView(false),
+    m_customSheetView(NULL)
+    {
+    }
     bool CT_CustomSheetViews::ChildGroup_1::has_customSheetView() const
     {    
     return m_has_customSheetView;
@@ -73299,6 +76898,69 @@ CT_DrawingHF* CT_DrawingHF::default_instance_ = NULL;
 CT_CustomSheetViews* CT_CustomSheetViews::default_instance_ = NULL;
 
     // CT_CustomSheetView
+    CT_CustomSheetView::CT_CustomSheetView()
+    :m_has_pane(false),
+    m_pane(NULL),
+    m_has_selection(false),
+    m_selection(NULL),
+    m_has_rowBreaks(false),
+    m_rowBreaks(NULL),
+    m_has_colBreaks(false),
+    m_colBreaks(NULL),
+    m_has_pageMargins(false),
+    m_pageMargins(NULL),
+    m_has_printOptions(false),
+    m_printOptions(NULL),
+    m_has_pageSetup(false),
+    m_pageSetup(NULL),
+    m_has_headerFooter(false),
+    m_headerFooter(NULL),
+    m_has_autoFilter(false),
+    m_autoFilter(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_guid_attr(false),
+    m_guid_attr(NULL),
+    m_has_scale_attr(false),
+    m_scale_attr(0),
+    m_has_colorId_attr(false),
+    m_colorId_attr(0),
+    m_has_showPageBreaks_attr(false),
+    m_showPageBreaks_attr(false),
+    m_has_showFormulas_attr(false),
+    m_showFormulas_attr(false),
+    m_has_showGridLines_attr(false),
+    m_showGridLines_attr(false),
+    m_has_showRowCol_attr(false),
+    m_showRowCol_attr(false),
+    m_has_outlineSymbols_attr(false),
+    m_outlineSymbols_attr(false),
+    m_has_zeroValues_attr(false),
+    m_zeroValues_attr(false),
+    m_has_fitToPage_attr(false),
+    m_fitToPage_attr(false),
+    m_has_printArea_attr(false),
+    m_printArea_attr(false),
+    m_has_filter_attr(false),
+    m_filter_attr(false),
+    m_has_showAutoFilter_attr(false),
+    m_showAutoFilter_attr(false),
+    m_has_hiddenRows_attr(false),
+    m_hiddenRows_attr(false),
+    m_has_hiddenColumns_attr(false),
+    m_hiddenColumns_attr(false),
+    m_has_state_attr(false),
+    m_state_attr(NULL),
+    m_has_filterUnique_attr(false),
+    m_filterUnique_attr(false),
+    m_has_view_attr(false),
+    m_view_attr(NULL),
+    m_has_showRuler_attr(false),
+    m_showRuler_attr(false),
+    m_has_topLeftCell_attr(false),
+    m_topLeftCell_attr(NULL)
+    {
+    }
     bool CT_CustomSheetView::has_pane() const
     {    
     return m_has_pane;
@@ -73541,12 +77203,12 @@ CT_CustomSheetViews* CT_CustomSheetViews::default_instance_ = NULL;
 
     void CT_CustomSheetView::clear()
     {    
-    m_has_s_guid_attr = false;
+    m_has_guid_attr = false;
     
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        delete m_s_guid_attr;
-        m_s_guid_attr = NULL;
+        delete m_guid_attr;
+        m_guid_attr = NULL;
     }
     
     
@@ -73635,9 +77297,9 @@ CT_CustomSheetViews* CT_CustomSheetViews::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_guid_attr)
+    if (m_has_guid_attr)
     {
-        m_s_guid_attr->toXmlAttr("guid", _outStream);
+        m_guid_attr->toXmlAttr("guid", _outStream);
     }
     
     
@@ -73758,52 +77420,52 @@ CT_CustomSheetViews* CT_CustomSheetViews::default_instance_ = NULL;
             
     if (m_has_pane)
     {
-        m_pane->toXmlElem("pane", "", _outStream);;
+        m_pane->toXmlElem("main:pane", "", _outStream);;
     }
     
     if (m_has_selection)
     {
-        m_selection->toXmlElem("selection", "", _outStream);;
+        m_selection->toXmlElem("main:selection", "", _outStream);;
     }
     
     if (m_has_rowBreaks)
     {
-        m_rowBreaks->toXmlElem("rowBreaks", "", _outStream);;
+        m_rowBreaks->toXmlElem("main:rowBreaks", "", _outStream);;
     }
     
     if (m_has_colBreaks)
     {
-        m_colBreaks->toXmlElem("colBreaks", "", _outStream);;
+        m_colBreaks->toXmlElem("main:colBreaks", "", _outStream);;
     }
     
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);;
     }
     
     if (m_has_printOptions)
     {
-        m_printOptions->toXmlElem("printOptions", "", _outStream);;
+        m_printOptions->toXmlElem("main:printOptions", "", _outStream);;
     }
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);;
     }
     
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);;
     }
     
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("autoFilter", "", _outStream);;
+        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -73818,22 +77480,22 @@ CT_CustomSheetViews* CT_CustomSheetViews::default_instance_ = NULL;
     return *CT_CustomSheetView::default_instance_;
     }
 
-    bool CT_CustomSheetView::has_s_guid_attr() const
+    bool CT_CustomSheetView::has_guid_attr() const
     {    
-    return m_has_s_guid_attr;
+    return m_has_guid_attr;
     }
 
-    void CT_CustomSheetView::set_s_guid_attr(const ns_s::ST_Guid& _s_guid_attr)
+    void CT_CustomSheetView::set_guid_attr(const ns_s::ST_Guid& _guid_attr)
     {    
-    m_has_s_guid_attr = true;
-    m_s_guid_attr = new ns_s::ST_Guid(_s_guid_attr);
+    m_has_guid_attr = true;
+    m_guid_attr = new ns_s::ST_Guid(_guid_attr);
     }
 
-    const ns_s::ST_Guid& CT_CustomSheetView::get_s_guid_attr() const
+    const ns_s::ST_Guid& CT_CustomSheetView::get_guid_attr() const
     {    
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        return *m_s_guid_attr;
+        return *m_guid_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -74157,6 +77819,17 @@ CT_CustomSheetViews* CT_CustomSheetViews::default_instance_ = NULL;
 CT_CustomSheetView* CT_CustomSheetView::default_instance_ = NULL;
 
     // CT_DataValidations
+    CT_DataValidations::CT_DataValidations()
+    :m_has_disablePrompts_attr(false),
+    m_disablePrompts_attr(false),
+    m_has_xWindow_attr(false),
+    m_xWindow_attr(0),
+    m_has_yWindow_attr(false),
+    m_yWindow_attr(0),
+    m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_DataValidation* CT_DataValidations::add_dataValidation()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -74229,7 +77902,7 @@ CT_CustomSheetView* CT_CustomSheetView::default_instance_ = NULL;
         {
             if ((*iter)->has_dataValidation())
             {
-                (*iter)->get_dataValidation().toXmlElem("dataValidation", "", _outStream);
+                (*iter)->get_dataValidation().toXmlElem("main:dataValidation", "", _outStream);
             }
         }
     }
@@ -74312,6 +77985,11 @@ CT_CustomSheetView* CT_CustomSheetView::default_instance_ = NULL;
 
 
     // CT_DataValidations::ChildGroup_1
+    CT_DataValidations::ChildGroup_1::ChildGroup_1()
+    :m_has_dataValidation(false),
+    m_dataValidation(NULL)
+    {
+    }
     bool CT_DataValidations::ChildGroup_1::has_dataValidation() const
     {    
     return m_has_dataValidation;
@@ -74340,6 +78018,39 @@ CT_CustomSheetView* CT_CustomSheetView::default_instance_ = NULL;
 CT_DataValidations* CT_DataValidations::default_instance_ = NULL;
 
     // CT_DataValidation
+    CT_DataValidation::CT_DataValidation()
+    :m_has_formula1(false),
+    m_formula1(NULL),
+    m_has_formula2(false),
+    m_formula2(NULL),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_errorStyle_attr(false),
+    m_errorStyle_attr(NULL),
+    m_has_imeMode_attr(false),
+    m_imeMode_attr(NULL),
+    m_has_operator_attr(false),
+    m_operator_attr(NULL),
+    m_has_allowBlank_attr(false),
+    m_allowBlank_attr(false),
+    m_has_showDropDown_attr(false),
+    m_showDropDown_attr(false),
+    m_has_showInputMessage_attr(false),
+    m_showInputMessage_attr(false),
+    m_has_showErrorMessage_attr(false),
+    m_showErrorMessage_attr(false),
+    m_has_errorTitle_attr(false),
+    m_errorTitle_attr(NULL),
+    m_has_error_attr(false),
+    m_error_attr(NULL),
+    m_has_promptTitle_attr(false),
+    m_promptTitle_attr(NULL),
+    m_has_prompt_attr(false),
+    m_prompt_attr(NULL),
+    m_has_sqref_attr(false),
+    m_sqref_attr(NULL)
+    {
+    }
     bool CT_DataValidation::has_formula1() const
     {    
     return m_has_formula1;
@@ -74438,39 +78149,39 @@ CT_DataValidations* CT_DataValidations::default_instance_ = NULL;
     m_has_showErrorMessage_attr = false;
     m_showErrorMessage_attr = false;
     
-    m_has_s_errorTitle_attr = false;
+    m_has_errorTitle_attr = false;
     
-    if (m_s_errorTitle_attr)
+    if (m_errorTitle_attr)
     {
-        delete m_s_errorTitle_attr;
-        m_s_errorTitle_attr = NULL;
+        delete m_errorTitle_attr;
+        m_errorTitle_attr = NULL;
     }
     
     
-    m_has_s_error_attr = false;
+    m_has_error_attr = false;
     
-    if (m_s_error_attr)
+    if (m_error_attr)
     {
-        delete m_s_error_attr;
-        m_s_error_attr = NULL;
+        delete m_error_attr;
+        m_error_attr = NULL;
     }
     
     
-    m_has_s_promptTitle_attr = false;
+    m_has_promptTitle_attr = false;
     
-    if (m_s_promptTitle_attr)
+    if (m_promptTitle_attr)
     {
-        delete m_s_promptTitle_attr;
-        m_s_promptTitle_attr = NULL;
+        delete m_promptTitle_attr;
+        m_promptTitle_attr = NULL;
     }
     
     
-    m_has_s_prompt_attr = false;
+    m_has_prompt_attr = false;
     
-    if (m_s_prompt_attr)
+    if (m_prompt_attr)
     {
-        delete m_s_prompt_attr;
-        m_s_prompt_attr = NULL;
+        delete m_prompt_attr;
+        m_prompt_attr = NULL;
     }
     
     
@@ -74541,27 +78252,27 @@ CT_DataValidations* CT_DataValidations::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_errorTitle_attr)
+    if (m_has_errorTitle_attr)
     {
-        m_s_errorTitle_attr->toXmlAttr("errorTitle", _outStream);
+        m_errorTitle_attr->toXmlAttr("errorTitle", _outStream);
     }
     
     
-    if (m_has_s_error_attr)
+    if (m_has_error_attr)
     {
-        m_s_error_attr->toXmlAttr("error", _outStream);
+        m_error_attr->toXmlAttr("error", _outStream);
     }
     
     
-    if (m_has_s_promptTitle_attr)
+    if (m_has_promptTitle_attr)
     {
-        m_s_promptTitle_attr->toXmlAttr("promptTitle", _outStream);
+        m_promptTitle_attr->toXmlAttr("promptTitle", _outStream);
     }
     
     
-    if (m_has_s_prompt_attr)
+    if (m_has_prompt_attr)
     {
-        m_s_prompt_attr->toXmlAttr("prompt", _outStream);
+        m_prompt_attr->toXmlAttr("prompt", _outStream);
     }
     
     
@@ -74574,12 +78285,12 @@ CT_DataValidations* CT_DataValidations::default_instance_ = NULL;
             
     if (m_has_formula1)
     {
-        _outStream << "<formula1>" << m_formula1->toString() << "</formula1>";;
+        _outStream << "<main:formula1>" << m_formula1->toString() << "</main:formula1>";;
     }
     
     if (m_has_formula2)
     {
-        _outStream << "<formula2>" << m_formula2->toString() << "</formula2>";;
+        _outStream << "<main:formula2>" << m_formula2->toString() << "</main:formula2>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -74738,82 +78449,82 @@ CT_DataValidations* CT_DataValidations::default_instance_ = NULL;
     return m_showErrorMessage_attr;
     }
 
-    bool CT_DataValidation::has_s_errorTitle_attr() const
+    bool CT_DataValidation::has_errorTitle_attr() const
     {    
-    return m_has_s_errorTitle_attr;
+    return m_has_errorTitle_attr;
     }
 
-    void CT_DataValidation::set_s_errorTitle_attr(const ns_s::ST_Xstring& _s_errorTitle_attr)
+    void CT_DataValidation::set_errorTitle_attr(const ns_s::ST_Xstring& _errorTitle_attr)
     {    
-    m_has_s_errorTitle_attr = true;
-    m_s_errorTitle_attr = new ns_s::ST_Xstring(_s_errorTitle_attr);
+    m_has_errorTitle_attr = true;
+    m_errorTitle_attr = new ns_s::ST_Xstring(_errorTitle_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DataValidation::get_s_errorTitle_attr() const
+    const ns_s::ST_Xstring& CT_DataValidation::get_errorTitle_attr() const
     {    
-    if (m_s_errorTitle_attr)
+    if (m_errorTitle_attr)
     {
-        return *m_s_errorTitle_attr;
+        return *m_errorTitle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_DataValidation::has_s_error_attr() const
+    bool CT_DataValidation::has_error_attr() const
     {    
-    return m_has_s_error_attr;
+    return m_has_error_attr;
     }
 
-    void CT_DataValidation::set_s_error_attr(const ns_s::ST_Xstring& _s_error_attr)
+    void CT_DataValidation::set_error_attr(const ns_s::ST_Xstring& _error_attr)
     {    
-    m_has_s_error_attr = true;
-    m_s_error_attr = new ns_s::ST_Xstring(_s_error_attr);
+    m_has_error_attr = true;
+    m_error_attr = new ns_s::ST_Xstring(_error_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DataValidation::get_s_error_attr() const
+    const ns_s::ST_Xstring& CT_DataValidation::get_error_attr() const
     {    
-    if (m_s_error_attr)
+    if (m_error_attr)
     {
-        return *m_s_error_attr;
+        return *m_error_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_DataValidation::has_s_promptTitle_attr() const
+    bool CT_DataValidation::has_promptTitle_attr() const
     {    
-    return m_has_s_promptTitle_attr;
+    return m_has_promptTitle_attr;
     }
 
-    void CT_DataValidation::set_s_promptTitle_attr(const ns_s::ST_Xstring& _s_promptTitle_attr)
+    void CT_DataValidation::set_promptTitle_attr(const ns_s::ST_Xstring& _promptTitle_attr)
     {    
-    m_has_s_promptTitle_attr = true;
-    m_s_promptTitle_attr = new ns_s::ST_Xstring(_s_promptTitle_attr);
+    m_has_promptTitle_attr = true;
+    m_promptTitle_attr = new ns_s::ST_Xstring(_promptTitle_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DataValidation::get_s_promptTitle_attr() const
+    const ns_s::ST_Xstring& CT_DataValidation::get_promptTitle_attr() const
     {    
-    if (m_s_promptTitle_attr)
+    if (m_promptTitle_attr)
     {
-        return *m_s_promptTitle_attr;
+        return *m_promptTitle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_DataValidation::has_s_prompt_attr() const
+    bool CT_DataValidation::has_prompt_attr() const
     {    
-    return m_has_s_prompt_attr;
+    return m_has_prompt_attr;
     }
 
-    void CT_DataValidation::set_s_prompt_attr(const ns_s::ST_Xstring& _s_prompt_attr)
+    void CT_DataValidation::set_prompt_attr(const ns_s::ST_Xstring& _prompt_attr)
     {    
-    m_has_s_prompt_attr = true;
-    m_s_prompt_attr = new ns_s::ST_Xstring(_s_prompt_attr);
+    m_has_prompt_attr = true;
+    m_prompt_attr = new ns_s::ST_Xstring(_prompt_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DataValidation::get_s_prompt_attr() const
+    const ns_s::ST_Xstring& CT_DataValidation::get_prompt_attr() const
     {    
-    if (m_s_prompt_attr)
+    if (m_prompt_attr)
     {
-        return *m_s_prompt_attr;
+        return *m_prompt_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -74841,6 +78552,13 @@ CT_DataValidations* CT_DataValidations::default_instance_ = NULL;
 CT_DataValidation* CT_DataValidation::default_instance_ = NULL;
 
     // CT_ConditionalFormatting
+    CT_ConditionalFormatting::CT_ConditionalFormatting()
+    :m_has_pivot_attr(false),
+    m_pivot_attr(false),
+    m_has_sqref_attr(false),
+    m_sqref_attr(NULL)
+    {
+    }
     CT_CfRule* CT_ConditionalFormatting::add_cfRule()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -74909,11 +78627,11 @@ CT_DataValidation* CT_DataValidation::default_instance_ = NULL;
         {
             if ((*iter)->has_cfRule())
             {
-                (*iter)->get_cfRule().toXmlElem("cfRule", "", _outStream);
+                (*iter)->get_cfRule().toXmlElem("main:cfRule", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -74968,6 +78686,13 @@ CT_DataValidation* CT_DataValidation::default_instance_ = NULL;
 
 
     // CT_ConditionalFormatting::ChildGroup_1
+    CT_ConditionalFormatting::ChildGroup_1::ChildGroup_1()
+    :m_has_cfRule(false),
+    m_cfRule(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_ConditionalFormatting::ChildGroup_1::has_cfRule() const
     {    
     return m_has_cfRule;
@@ -75039,6 +78764,35 @@ CT_DataValidation* CT_DataValidation::default_instance_ = NULL;
 CT_ConditionalFormatting* CT_ConditionalFormatting::default_instance_ = NULL;
 
     // CT_CfRule
+    CT_CfRule::CT_CfRule()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_dxfId_attr(false),
+    m_dxfId_attr(NULL),
+    m_has_priority_attr(false),
+    m_priority_attr(0),
+    m_has_stopIfTrue_attr(false),
+    m_stopIfTrue_attr(false),
+    m_has_aboveAverage_attr(false),
+    m_aboveAverage_attr(false),
+    m_has_percent_attr(false),
+    m_percent_attr(false),
+    m_has_bottom_attr(false),
+    m_bottom_attr(false),
+    m_has_operator_attr(false),
+    m_operator_attr(NULL),
+    m_has_text_attr(false),
+    m_text_attr(""),
+    m_has_timePeriod_attr(false),
+    m_timePeriod_attr(NULL),
+    m_has_rank_attr(false),
+    m_rank_attr(0),
+    m_has_stdDev_attr(false),
+    m_stdDev_attr(0),
+    m_has_equalAverage_attr(false),
+    m_equalAverage_attr(false)
+    {
+    }
     ST_Formula* CT_CfRule::add_formula()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -75248,23 +79002,23 @@ CT_ConditionalFormatting* CT_ConditionalFormatting::default_instance_ = NULL;
         {
             if ((*iter)->has_formula())
             {
-                _outStream << "<formula>" << (*iter)->get_formula().toString() << "</formula>";
+                _outStream << "<main:formula>" << (*iter)->get_formula().toString() << "</main:formula>";
             }
             else if ((*iter)->has_colorScale())
             {
-                (*iter)->get_colorScale().toXmlElem("colorScale", "", _outStream);
+                (*iter)->get_colorScale().toXmlElem("main:colorScale", "", _outStream);
             }
             else if ((*iter)->has_dataBar())
             {
-                (*iter)->get_dataBar().toXmlElem("dataBar", "", _outStream);
+                (*iter)->get_dataBar().toXmlElem("main:dataBar", "", _outStream);
             }
             else if ((*iter)->has_iconSet())
             {
-                (*iter)->get_iconSet().toXmlElem("iconSet", "", _outStream);
+                (*iter)->get_iconSet().toXmlElem("main:iconSet", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -75507,6 +79261,19 @@ CT_ConditionalFormatting* CT_ConditionalFormatting::default_instance_ = NULL;
 
 
     // CT_CfRule::ChildGroup_1
+    CT_CfRule::ChildGroup_1::ChildGroup_1()
+    :m_has_formula(false),
+    m_formula(NULL),
+    m_has_colorScale(false),
+    m_colorScale(NULL),
+    m_has_dataBar(false),
+    m_dataBar(NULL),
+    m_has_iconSet(false),
+    m_iconSet(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_CfRule::ChildGroup_1::has_formula() const
     {    
     return m_has_formula;
@@ -75815,6 +79582,10 @@ CT_ConditionalFormatting* CT_ConditionalFormatting::default_instance_ = NULL;
 CT_CfRule* CT_CfRule::default_instance_ = NULL;
 
     // CT_Hyperlinks
+    CT_Hyperlinks::CT_Hyperlinks()
+
+    {
+    }
     CT_Hyperlink* CT_Hyperlinks::add_hyperlink()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -75852,7 +79623,7 @@ CT_CfRule* CT_CfRule::default_instance_ = NULL;
         {
             if ((*iter)->has_hyperlink())
             {
-                (*iter)->get_hyperlink().toXmlElem("hyperlink", "", _outStream);
+                (*iter)->get_hyperlink().toXmlElem("main:hyperlink", "", _outStream);
             }
         }
     }
@@ -75871,6 +79642,11 @@ CT_CfRule* CT_CfRule::default_instance_ = NULL;
 
 
     // CT_Hyperlinks::ChildGroup_1
+    CT_Hyperlinks::ChildGroup_1::ChildGroup_1()
+    :m_has_hyperlink(false),
+    m_hyperlink(NULL)
+    {
+    }
     bool CT_Hyperlinks::ChildGroup_1::has_hyperlink() const
     {    
     return m_has_hyperlink;
@@ -75899,6 +79675,19 @@ CT_CfRule* CT_CfRule::default_instance_ = NULL;
 CT_Hyperlinks* CT_Hyperlinks::default_instance_ = NULL;
 
     // CT_Hyperlink
+    CT_Hyperlink::CT_Hyperlink()
+    :m_has_ref_attr(false),
+    m_ref_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_location_attr(false),
+    m_location_attr(NULL),
+    m_has_tooltip_attr(false),
+    m_tooltip_attr(NULL),
+    m_has_display_attr(false),
+    m_display_attr(NULL)
+    {
+    }
     void CT_Hyperlink::clear()
     {    
     m_has_ref_attr = false;
@@ -75919,30 +79708,30 @@ CT_Hyperlinks* CT_Hyperlinks::default_instance_ = NULL;
     }
     
     
-    m_has_s_location_attr = false;
+    m_has_location_attr = false;
     
-    if (m_s_location_attr)
+    if (m_location_attr)
     {
-        delete m_s_location_attr;
-        m_s_location_attr = NULL;
+        delete m_location_attr;
+        m_location_attr = NULL;
     }
     
     
-    m_has_s_tooltip_attr = false;
+    m_has_tooltip_attr = false;
     
-    if (m_s_tooltip_attr)
+    if (m_tooltip_attr)
     {
-        delete m_s_tooltip_attr;
-        m_s_tooltip_attr = NULL;
+        delete m_tooltip_attr;
+        m_tooltip_attr = NULL;
     }
     
     
-    m_has_s_display_attr = false;
+    m_has_display_attr = false;
     
-    if (m_s_display_attr)
+    if (m_display_attr)
     {
-        delete m_s_display_attr;
-        m_s_display_attr = NULL;
+        delete m_display_attr;
+        m_display_attr = NULL;
     }
     
     }
@@ -75964,25 +79753,25 @@ CT_Hyperlinks* CT_Hyperlinks::default_instance_ = NULL;
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
-    if (m_has_s_location_attr)
+    if (m_has_location_attr)
     {
-        m_s_location_attr->toXmlAttr("location", _outStream);
+        m_location_attr->toXmlAttr("location", _outStream);
     }
     
     
-    if (m_has_s_tooltip_attr)
+    if (m_has_tooltip_attr)
     {
-        m_s_tooltip_attr->toXmlAttr("tooltip", _outStream);
+        m_tooltip_attr->toXmlAttr("tooltip", _outStream);
     }
     
     
-    if (m_has_s_display_attr)
+    if (m_has_display_attr)
     {
-        m_s_display_attr->toXmlAttr("display", _outStream);
+        m_display_attr->toXmlAttr("display", _outStream);
     }
     
             _outStream << ">";
@@ -76039,62 +79828,62 @@ CT_Hyperlinks* CT_Hyperlinks::default_instance_ = NULL;
     return ns_r::ST_RelationshipId::default_instance();
     }
 
-    bool CT_Hyperlink::has_s_location_attr() const
+    bool CT_Hyperlink::has_location_attr() const
     {    
-    return m_has_s_location_attr;
+    return m_has_location_attr;
     }
 
-    void CT_Hyperlink::set_s_location_attr(const ns_s::ST_Xstring& _s_location_attr)
+    void CT_Hyperlink::set_location_attr(const ns_s::ST_Xstring& _location_attr)
     {    
-    m_has_s_location_attr = true;
-    m_s_location_attr = new ns_s::ST_Xstring(_s_location_attr);
+    m_has_location_attr = true;
+    m_location_attr = new ns_s::ST_Xstring(_location_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Hyperlink::get_s_location_attr() const
+    const ns_s::ST_Xstring& CT_Hyperlink::get_location_attr() const
     {    
-    if (m_s_location_attr)
+    if (m_location_attr)
     {
-        return *m_s_location_attr;
+        return *m_location_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_Hyperlink::has_s_tooltip_attr() const
+    bool CT_Hyperlink::has_tooltip_attr() const
     {    
-    return m_has_s_tooltip_attr;
+    return m_has_tooltip_attr;
     }
 
-    void CT_Hyperlink::set_s_tooltip_attr(const ns_s::ST_Xstring& _s_tooltip_attr)
+    void CT_Hyperlink::set_tooltip_attr(const ns_s::ST_Xstring& _tooltip_attr)
     {    
-    m_has_s_tooltip_attr = true;
-    m_s_tooltip_attr = new ns_s::ST_Xstring(_s_tooltip_attr);
+    m_has_tooltip_attr = true;
+    m_tooltip_attr = new ns_s::ST_Xstring(_tooltip_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Hyperlink::get_s_tooltip_attr() const
+    const ns_s::ST_Xstring& CT_Hyperlink::get_tooltip_attr() const
     {    
-    if (m_s_tooltip_attr)
+    if (m_tooltip_attr)
     {
-        return *m_s_tooltip_attr;
+        return *m_tooltip_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_Hyperlink::has_s_display_attr() const
+    bool CT_Hyperlink::has_display_attr() const
     {    
-    return m_has_s_display_attr;
+    return m_has_display_attr;
     }
 
-    void CT_Hyperlink::set_s_display_attr(const ns_s::ST_Xstring& _s_display_attr)
+    void CT_Hyperlink::set_display_attr(const ns_s::ST_Xstring& _display_attr)
     {    
-    m_has_s_display_attr = true;
-    m_s_display_attr = new ns_s::ST_Xstring(_s_display_attr);
+    m_has_display_attr = true;
+    m_display_attr = new ns_s::ST_Xstring(_display_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Hyperlink::get_s_display_attr() const
+    const ns_s::ST_Xstring& CT_Hyperlink::get_display_attr() const
     {    
-    if (m_s_display_attr)
+    if (m_display_attr)
     {
-        return *m_s_display_attr;
+        return *m_display_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -76102,6 +79891,33 @@ CT_Hyperlinks* CT_Hyperlinks::default_instance_ = NULL;
 CT_Hyperlink* CT_Hyperlink::default_instance_ = NULL;
 
     // CT_CellFormula
+    CT_CellFormula::CT_CellFormula()
+    :m_has_t_attr(false),
+    m_t_attr(NULL),
+    m_has_aca_attr(false),
+    m_aca_attr(false),
+    m_has_ref_attr(false),
+    m_ref_attr(NULL),
+    m_has_dt2D_attr(false),
+    m_dt2D_attr(false),
+    m_has_dtr_attr(false),
+    m_dtr_attr(false),
+    m_has_del1_attr(false),
+    m_del1_attr(false),
+    m_has_del2_attr(false),
+    m_del2_attr(false),
+    m_has_r1_attr(false),
+    m_r1_attr(NULL),
+    m_has_r2_attr(false),
+    m_r2_attr(NULL),
+    m_has_ca_attr(false),
+    m_ca_attr(false),
+    m_has_si_attr(false),
+    m_si_attr(0),
+    m_has_bx_attr(false),
+    m_bx_attr(false)
+    {
+    }
     void CT_CellFormula::clear()
     {    
     m_has_t_attr = false;
@@ -76470,6 +80286,10 @@ CT_Hyperlink* CT_Hyperlink::default_instance_ = NULL;
 CT_CellFormula* CT_CellFormula::default_instance_ = NULL;
 
     // CT_ColorScale
+    CT_ColorScale::CT_ColorScale()
+
+    {
+    }
     CT_Cfvo* CT_ColorScale::add_cfvo()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -76515,11 +80335,11 @@ CT_CellFormula* CT_CellFormula::default_instance_ = NULL;
         {
             if ((*iter)->has_cfvo())
             {
-                (*iter)->get_cfvo().toXmlElem("cfvo", "", _outStream);
+                (*iter)->get_cfvo().toXmlElem("main:cfvo", "", _outStream);
             }
             else if ((*iter)->has_color())
             {
-                (*iter)->get_color().toXmlElem("color", "", _outStream);
+                (*iter)->get_color().toXmlElem("main:color", "", _outStream);
             }
         }
     }
@@ -76538,6 +80358,13 @@ CT_CellFormula* CT_CellFormula::default_instance_ = NULL;
 
 
     // CT_ColorScale::ChildGroup_1
+    CT_ColorScale::ChildGroup_1::ChildGroup_1()
+    :m_has_cfvo(false),
+    m_cfvo(NULL),
+    m_has_color(false),
+    m_color(NULL)
+    {
+    }
     bool CT_ColorScale::ChildGroup_1::has_cfvo() const
     {    
     return m_has_cfvo;
@@ -76609,6 +80436,15 @@ CT_CellFormula* CT_CellFormula::default_instance_ = NULL;
 CT_ColorScale* CT_ColorScale::default_instance_ = NULL;
 
     // CT_DataBar
+    CT_DataBar::CT_DataBar()
+    :m_has_minLength_attr(false),
+    m_minLength_attr(0),
+    m_has_maxLength_attr(false),
+    m_maxLength_attr(0),
+    m_has_showValue_attr(false),
+    m_showValue_attr(false)
+    {
+    }
     CT_Cfvo* CT_DataBar::add_cfvo()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -76680,11 +80516,11 @@ CT_ColorScale* CT_ColorScale::default_instance_ = NULL;
         {
             if ((*iter)->has_cfvo())
             {
-                (*iter)->get_cfvo().toXmlElem("cfvo", "", _outStream);
+                (*iter)->get_cfvo().toXmlElem("main:cfvo", "", _outStream);
             }
             else if ((*iter)->has_color())
             {
-                (*iter)->get_color().toXmlElem("color", "", _outStream);
+                (*iter)->get_color().toXmlElem("main:color", "", _outStream);
             }
         }
     }
@@ -76751,6 +80587,13 @@ CT_ColorScale* CT_ColorScale::default_instance_ = NULL;
 
 
     // CT_DataBar::ChildGroup_1
+    CT_DataBar::ChildGroup_1::ChildGroup_1()
+    :m_has_cfvo(false),
+    m_cfvo(NULL),
+    m_has_color(false),
+    m_color(NULL)
+    {
+    }
     bool CT_DataBar::ChildGroup_1::has_cfvo() const
     {    
     return m_has_cfvo;
@@ -76822,6 +80665,17 @@ CT_ColorScale* CT_ColorScale::default_instance_ = NULL;
 CT_DataBar* CT_DataBar::default_instance_ = NULL;
 
     // CT_IconSet
+    CT_IconSet::CT_IconSet()
+    :m_has_iconSet_attr(false),
+    m_iconSet_attr(NULL),
+    m_has_showValue_attr(false),
+    m_showValue_attr(false),
+    m_has_percent_attr(false),
+    m_percent_attr(false),
+    m_has_reverse_attr(false),
+    m_reverse_attr(false)
+    {
+    }
     CT_Cfvo* CT_IconSet::add_cfvo()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -76900,7 +80754,7 @@ CT_DataBar* CT_DataBar::default_instance_ = NULL;
         {
             if ((*iter)->has_cfvo())
             {
-                (*iter)->get_cfvo().toXmlElem("cfvo", "", _outStream);
+                (*iter)->get_cfvo().toXmlElem("main:cfvo", "", _outStream);
             }
         }
     }
@@ -76987,6 +80841,11 @@ CT_DataBar* CT_DataBar::default_instance_ = NULL;
 
 
     // CT_IconSet::ChildGroup_1
+    CT_IconSet::ChildGroup_1::ChildGroup_1()
+    :m_has_cfvo(false),
+    m_cfvo(NULL)
+    {
+    }
     bool CT_IconSet::ChildGroup_1::has_cfvo() const
     {    
     return m_has_cfvo;
@@ -77015,6 +80874,17 @@ CT_DataBar* CT_DataBar::default_instance_ = NULL;
 CT_IconSet* CT_IconSet::default_instance_ = NULL;
 
     // CT_Cfvo
+    CT_Cfvo::CT_Cfvo()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_val_attr(false),
+    m_val_attr(NULL),
+    m_has_gte_attr(false),
+    m_gte_attr(false)
+    {
+    }
     bool CT_Cfvo::has_extLst() const
     {    
     return m_has_extLst;
@@ -77050,12 +80920,12 @@ CT_IconSet* CT_IconSet::default_instance_ = NULL;
     }
     
     
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     
@@ -77078,9 +80948,9 @@ CT_IconSet* CT_IconSet::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("val", _outStream);
+        m_val_attr->toXmlAttr("val", _outStream);
     }
     
     
@@ -77093,7 +80963,7 @@ CT_IconSet* CT_IconSet::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -77128,22 +80998,22 @@ CT_IconSet* CT_IconSet::default_instance_ = NULL;
     return ST_CfvoType::default_instance();
     }
 
-    bool CT_Cfvo::has_s_val_attr() const
+    bool CT_Cfvo::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_Cfvo::set_s_val_attr(const ns_s::ST_Xstring& _s_val_attr)
+    void CT_Cfvo::set_val_attr(const ns_s::ST_Xstring& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_Xstring(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_Xstring(_val_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Cfvo::get_s_val_attr() const
+    const ns_s::ST_Xstring& CT_Cfvo::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -77167,6 +81037,21 @@ CT_IconSet* CT_IconSet::default_instance_ = NULL;
 CT_Cfvo* CT_Cfvo::default_instance_ = NULL;
 
     // CT_PageMargins
+    CT_PageMargins::CT_PageMargins()
+    :m_has_left_attr(false),
+    m_left_attr(0),
+    m_has_right_attr(false),
+    m_right_attr(0),
+    m_has_top_attr(false),
+    m_top_attr(0),
+    m_has_bottom_attr(false),
+    m_bottom_attr(0),
+    m_has_header_attr(false),
+    m_header_attr(0),
+    m_has_footer_attr(false),
+    m_footer_attr(0)
+    {
+    }
     void CT_PageMargins::clear()
     {    
     m_has_left_attr = false;
@@ -77345,6 +81230,19 @@ CT_Cfvo* CT_Cfvo::default_instance_ = NULL;
 CT_PageMargins* CT_PageMargins::default_instance_ = NULL;
 
     // CT_PrintOptions
+    CT_PrintOptions::CT_PrintOptions()
+    :m_has_horizontalCentered_attr(false),
+    m_horizontalCentered_attr(false),
+    m_has_verticalCentered_attr(false),
+    m_verticalCentered_attr(false),
+    m_has_headings_attr(false),
+    m_headings_attr(false),
+    m_has_gridLines_attr(false),
+    m_gridLines_attr(false),
+    m_has_gridLinesSet_attr(false),
+    m_gridLinesSet_attr(false)
+    {
+    }
     void CT_PrintOptions::clear()
     {    
     m_has_horizontalCentered_attr = false;
@@ -77498,26 +81396,67 @@ CT_PageMargins* CT_PageMargins::default_instance_ = NULL;
 CT_PrintOptions* CT_PrintOptions::default_instance_ = NULL;
 
     // CT_PageSetup
+    CT_PageSetup::CT_PageSetup()
+    :m_has_paperSize_attr(false),
+    m_paperSize_attr(0),
+    m_has_paperHeight_attr(false),
+    m_paperHeight_attr(NULL),
+    m_has_paperWidth_attr(false),
+    m_paperWidth_attr(NULL),
+    m_has_scale_attr(false),
+    m_scale_attr(0),
+    m_has_firstPageNumber_attr(false),
+    m_firstPageNumber_attr(0),
+    m_has_fitToWidth_attr(false),
+    m_fitToWidth_attr(0),
+    m_has_fitToHeight_attr(false),
+    m_fitToHeight_attr(0),
+    m_has_pageOrder_attr(false),
+    m_pageOrder_attr(NULL),
+    m_has_orientation_attr(false),
+    m_orientation_attr(NULL),
+    m_has_usePrinterDefaults_attr(false),
+    m_usePrinterDefaults_attr(false),
+    m_has_blackAndWhite_attr(false),
+    m_blackAndWhite_attr(false),
+    m_has_draft_attr(false),
+    m_draft_attr(false),
+    m_has_cellComments_attr(false),
+    m_cellComments_attr(NULL),
+    m_has_useFirstPageNumber_attr(false),
+    m_useFirstPageNumber_attr(false),
+    m_has_errors_attr(false),
+    m_errors_attr(NULL),
+    m_has_horizontalDpi_attr(false),
+    m_horizontalDpi_attr(0),
+    m_has_verticalDpi_attr(false),
+    m_verticalDpi_attr(0),
+    m_has_copies_attr(false),
+    m_copies_attr(0),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     void CT_PageSetup::clear()
     {    
     m_has_paperSize_attr = false;
     m_paperSize_attr = 0;
     
-    m_has_s_paperHeight_attr = false;
+    m_has_paperHeight_attr = false;
     
-    if (m_s_paperHeight_attr)
+    if (m_paperHeight_attr)
     {
-        delete m_s_paperHeight_attr;
-        m_s_paperHeight_attr = NULL;
+        delete m_paperHeight_attr;
+        m_paperHeight_attr = NULL;
     }
     
     
-    m_has_s_paperWidth_attr = false;
+    m_has_paperWidth_attr = false;
     
-    if (m_s_paperWidth_attr)
+    if (m_paperWidth_attr)
     {
-        delete m_s_paperWidth_attr;
-        m_s_paperWidth_attr = NULL;
+        delete m_paperWidth_attr;
+        m_paperWidth_attr = NULL;
     }
     
     
@@ -77615,15 +81554,15 @@ CT_PrintOptions* CT_PrintOptions::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_paperHeight_attr)
+    if (m_has_paperHeight_attr)
     {
-        m_s_paperHeight_attr->toXmlAttr("paperHeight", _outStream);
+        m_paperHeight_attr->toXmlAttr("paperHeight", _outStream);
     }
     
     
-    if (m_has_s_paperWidth_attr)
+    if (m_has_paperWidth_attr)
     {
-        m_s_paperWidth_attr->toXmlAttr("paperWidth", _outStream);
+        m_paperWidth_attr->toXmlAttr("paperWidth", _outStream);
     }
     
     
@@ -77719,7 +81658,7 @@ CT_PrintOptions* CT_PrintOptions::default_instance_ = NULL;
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
@@ -77752,42 +81691,42 @@ CT_PrintOptions* CT_PrintOptions::default_instance_ = NULL;
     return m_paperSize_attr;
     }
 
-    bool CT_PageSetup::has_s_paperHeight_attr() const
+    bool CT_PageSetup::has_paperHeight_attr() const
     {    
-    return m_has_s_paperHeight_attr;
+    return m_has_paperHeight_attr;
     }
 
-    void CT_PageSetup::set_s_paperHeight_attr(const ns_s::ST_PositiveUniversalMeasure& _s_paperHeight_attr)
+    void CT_PageSetup::set_paperHeight_attr(const ns_s::ST_PositiveUniversalMeasure& _paperHeight_attr)
     {    
-    m_has_s_paperHeight_attr = true;
-    m_s_paperHeight_attr = new ns_s::ST_PositiveUniversalMeasure(_s_paperHeight_attr);
+    m_has_paperHeight_attr = true;
+    m_paperHeight_attr = new ns_s::ST_PositiveUniversalMeasure(_paperHeight_attr);
     }
 
-    const ns_s::ST_PositiveUniversalMeasure& CT_PageSetup::get_s_paperHeight_attr() const
+    const ns_s::ST_PositiveUniversalMeasure& CT_PageSetup::get_paperHeight_attr() const
     {    
-    if (m_s_paperHeight_attr)
+    if (m_paperHeight_attr)
     {
-        return *m_s_paperHeight_attr;
+        return *m_paperHeight_attr;
     }
     return ns_s::ST_PositiveUniversalMeasure::default_instance();
     }
 
-    bool CT_PageSetup::has_s_paperWidth_attr() const
+    bool CT_PageSetup::has_paperWidth_attr() const
     {    
-    return m_has_s_paperWidth_attr;
+    return m_has_paperWidth_attr;
     }
 
-    void CT_PageSetup::set_s_paperWidth_attr(const ns_s::ST_PositiveUniversalMeasure& _s_paperWidth_attr)
+    void CT_PageSetup::set_paperWidth_attr(const ns_s::ST_PositiveUniversalMeasure& _paperWidth_attr)
     {    
-    m_has_s_paperWidth_attr = true;
-    m_s_paperWidth_attr = new ns_s::ST_PositiveUniversalMeasure(_s_paperWidth_attr);
+    m_has_paperWidth_attr = true;
+    m_paperWidth_attr = new ns_s::ST_PositiveUniversalMeasure(_paperWidth_attr);
     }
 
-    const ns_s::ST_PositiveUniversalMeasure& CT_PageSetup::get_s_paperWidth_attr() const
+    const ns_s::ST_PositiveUniversalMeasure& CT_PageSetup::get_paperWidth_attr() const
     {    
-    if (m_s_paperWidth_attr)
+    if (m_paperWidth_attr)
     {
-        return *m_s_paperWidth_attr;
+        return *m_paperWidth_attr;
     }
     return ns_s::ST_PositiveUniversalMeasure::default_instance();
     }
@@ -78071,146 +82010,169 @@ CT_PrintOptions* CT_PrintOptions::default_instance_ = NULL;
 CT_PageSetup* CT_PageSetup::default_instance_ = NULL;
 
     // CT_HeaderFooter
-    bool CT_HeaderFooter::has_s_oddHeader() const
+    CT_HeaderFooter::CT_HeaderFooter()
+    :m_has_oddHeader(false),
+    m_oddHeader(NULL),
+    m_has_oddFooter(false),
+    m_oddFooter(NULL),
+    m_has_evenHeader(false),
+    m_evenHeader(NULL),
+    m_has_evenFooter(false),
+    m_evenFooter(NULL),
+    m_has_firstHeader(false),
+    m_firstHeader(NULL),
+    m_has_firstFooter(false),
+    m_firstFooter(NULL),
+    m_has_differentOddEven_attr(false),
+    m_differentOddEven_attr(false),
+    m_has_differentFirst_attr(false),
+    m_differentFirst_attr(false),
+    m_has_scaleWithDoc_attr(false),
+    m_scaleWithDoc_attr(false),
+    m_has_alignWithMargins_attr(false),
+    m_alignWithMargins_attr(false)
+    {
+    }
+    bool CT_HeaderFooter::has_oddHeader() const
     {    
-    return m_has_s_oddHeader;
+    return m_has_oddHeader;
     }
 
-    ns_s::ST_Xstring* CT_HeaderFooter::mutable_s_oddHeader()
+    ns_s::ST_Xstring* CT_HeaderFooter::mutable_oddHeader()
     {    
-    m_has_s_oddHeader = true;
-    if (!m_s_oddHeader)
+    m_has_oddHeader = true;
+    if (!m_oddHeader)
     {
-        m_s_oddHeader = new ns_s::ST_Xstring();
+        m_oddHeader = new ns_s::ST_Xstring();
     }
-    return m_s_oddHeader;
+    return m_oddHeader;
     }
 
-    const ns_s::ST_Xstring& CT_HeaderFooter::get_s_oddHeader() const
+    const ns_s::ST_Xstring& CT_HeaderFooter::get_oddHeader() const
     {    
-    if (m_s_oddHeader)
+    if (m_oddHeader)
     {
-        return *m_s_oddHeader;
+        return *m_oddHeader;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_HeaderFooter::has_s_oddFooter() const
+    bool CT_HeaderFooter::has_oddFooter() const
     {    
-    return m_has_s_oddFooter;
+    return m_has_oddFooter;
     }
 
-    ns_s::ST_Xstring* CT_HeaderFooter::mutable_s_oddFooter()
+    ns_s::ST_Xstring* CT_HeaderFooter::mutable_oddFooter()
     {    
-    m_has_s_oddFooter = true;
-    if (!m_s_oddFooter)
+    m_has_oddFooter = true;
+    if (!m_oddFooter)
     {
-        m_s_oddFooter = new ns_s::ST_Xstring();
+        m_oddFooter = new ns_s::ST_Xstring();
     }
-    return m_s_oddFooter;
+    return m_oddFooter;
     }
 
-    const ns_s::ST_Xstring& CT_HeaderFooter::get_s_oddFooter() const
+    const ns_s::ST_Xstring& CT_HeaderFooter::get_oddFooter() const
     {    
-    if (m_s_oddFooter)
+    if (m_oddFooter)
     {
-        return *m_s_oddFooter;
+        return *m_oddFooter;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_HeaderFooter::has_s_evenHeader() const
+    bool CT_HeaderFooter::has_evenHeader() const
     {    
-    return m_has_s_evenHeader;
+    return m_has_evenHeader;
     }
 
-    ns_s::ST_Xstring* CT_HeaderFooter::mutable_s_evenHeader()
+    ns_s::ST_Xstring* CT_HeaderFooter::mutable_evenHeader()
     {    
-    m_has_s_evenHeader = true;
-    if (!m_s_evenHeader)
+    m_has_evenHeader = true;
+    if (!m_evenHeader)
     {
-        m_s_evenHeader = new ns_s::ST_Xstring();
+        m_evenHeader = new ns_s::ST_Xstring();
     }
-    return m_s_evenHeader;
+    return m_evenHeader;
     }
 
-    const ns_s::ST_Xstring& CT_HeaderFooter::get_s_evenHeader() const
+    const ns_s::ST_Xstring& CT_HeaderFooter::get_evenHeader() const
     {    
-    if (m_s_evenHeader)
+    if (m_evenHeader)
     {
-        return *m_s_evenHeader;
+        return *m_evenHeader;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_HeaderFooter::has_s_evenFooter() const
+    bool CT_HeaderFooter::has_evenFooter() const
     {    
-    return m_has_s_evenFooter;
+    return m_has_evenFooter;
     }
 
-    ns_s::ST_Xstring* CT_HeaderFooter::mutable_s_evenFooter()
+    ns_s::ST_Xstring* CT_HeaderFooter::mutable_evenFooter()
     {    
-    m_has_s_evenFooter = true;
-    if (!m_s_evenFooter)
+    m_has_evenFooter = true;
+    if (!m_evenFooter)
     {
-        m_s_evenFooter = new ns_s::ST_Xstring();
+        m_evenFooter = new ns_s::ST_Xstring();
     }
-    return m_s_evenFooter;
+    return m_evenFooter;
     }
 
-    const ns_s::ST_Xstring& CT_HeaderFooter::get_s_evenFooter() const
+    const ns_s::ST_Xstring& CT_HeaderFooter::get_evenFooter() const
     {    
-    if (m_s_evenFooter)
+    if (m_evenFooter)
     {
-        return *m_s_evenFooter;
+        return *m_evenFooter;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_HeaderFooter::has_s_firstHeader() const
+    bool CT_HeaderFooter::has_firstHeader() const
     {    
-    return m_has_s_firstHeader;
+    return m_has_firstHeader;
     }
 
-    ns_s::ST_Xstring* CT_HeaderFooter::mutable_s_firstHeader()
+    ns_s::ST_Xstring* CT_HeaderFooter::mutable_firstHeader()
     {    
-    m_has_s_firstHeader = true;
-    if (!m_s_firstHeader)
+    m_has_firstHeader = true;
+    if (!m_firstHeader)
     {
-        m_s_firstHeader = new ns_s::ST_Xstring();
+        m_firstHeader = new ns_s::ST_Xstring();
     }
-    return m_s_firstHeader;
+    return m_firstHeader;
     }
 
-    const ns_s::ST_Xstring& CT_HeaderFooter::get_s_firstHeader() const
+    const ns_s::ST_Xstring& CT_HeaderFooter::get_firstHeader() const
     {    
-    if (m_s_firstHeader)
+    if (m_firstHeader)
     {
-        return *m_s_firstHeader;
+        return *m_firstHeader;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_HeaderFooter::has_s_firstFooter() const
+    bool CT_HeaderFooter::has_firstFooter() const
     {    
-    return m_has_s_firstFooter;
+    return m_has_firstFooter;
     }
 
-    ns_s::ST_Xstring* CT_HeaderFooter::mutable_s_firstFooter()
+    ns_s::ST_Xstring* CT_HeaderFooter::mutable_firstFooter()
     {    
-    m_has_s_firstFooter = true;
-    if (!m_s_firstFooter)
+    m_has_firstFooter = true;
+    if (!m_firstFooter)
     {
-        m_s_firstFooter = new ns_s::ST_Xstring();
+        m_firstFooter = new ns_s::ST_Xstring();
     }
-    return m_s_firstFooter;
+    return m_firstFooter;
     }
 
-    const ns_s::ST_Xstring& CT_HeaderFooter::get_s_firstFooter() const
+    const ns_s::ST_Xstring& CT_HeaderFooter::get_firstFooter() const
     {    
-    if (m_s_firstFooter)
+    if (m_firstFooter)
     {
-        return *m_s_firstFooter;
+        return *m_firstFooter;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -78264,34 +82226,34 @@ CT_PageSetup* CT_PageSetup::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_s_oddHeader)
+    if (m_has_oddHeader)
     {
-        _outStream << "<s:oddHeader>" << m_s_oddHeader->toString() << "</s:oddHeader>";;
+        _outStream << "<main:oddHeader>" << m_oddHeader->toString() << "</main:oddHeader>";;
     }
     
-    if (m_has_s_oddFooter)
+    if (m_has_oddFooter)
     {
-        _outStream << "<s:oddFooter>" << m_s_oddFooter->toString() << "</s:oddFooter>";;
+        _outStream << "<main:oddFooter>" << m_oddFooter->toString() << "</main:oddFooter>";;
     }
     
-    if (m_has_s_evenHeader)
+    if (m_has_evenHeader)
     {
-        _outStream << "<s:evenHeader>" << m_s_evenHeader->toString() << "</s:evenHeader>";;
+        _outStream << "<main:evenHeader>" << m_evenHeader->toString() << "</main:evenHeader>";;
     }
     
-    if (m_has_s_evenFooter)
+    if (m_has_evenFooter)
     {
-        _outStream << "<s:evenFooter>" << m_s_evenFooter->toString() << "</s:evenFooter>";;
+        _outStream << "<main:evenFooter>" << m_evenFooter->toString() << "</main:evenFooter>";;
     }
     
-    if (m_has_s_firstHeader)
+    if (m_has_firstHeader)
     {
-        _outStream << "<s:firstHeader>" << m_s_firstHeader->toString() << "</s:firstHeader>";;
+        _outStream << "<main:firstHeader>" << m_firstHeader->toString() << "</main:firstHeader>";;
     }
     
-    if (m_has_s_firstFooter)
+    if (m_has_firstFooter)
     {
-        _outStream << "<s:firstFooter>" << m_s_firstFooter->toString() << "</s:firstFooter>";;
+        _outStream << "<main:firstFooter>" << m_firstFooter->toString() << "</main:firstFooter>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -78373,6 +82335,15 @@ CT_PageSetup* CT_PageSetup::default_instance_ = NULL;
 CT_HeaderFooter* CT_HeaderFooter::default_instance_ = NULL;
 
     // CT_Scenarios
+    CT_Scenarios::CT_Scenarios()
+    :m_has_current_attr(false),
+    m_current_attr(0),
+    m_has_show_attr(false),
+    m_show_attr(0),
+    m_has_sqref_attr(false),
+    m_sqref_attr(NULL)
+    {
+    }
     CT_Scenario* CT_Scenarios::add_scenario()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -78442,7 +82413,7 @@ CT_HeaderFooter* CT_HeaderFooter::default_instance_ = NULL;
         {
             if ((*iter)->has_scenario())
             {
-                (*iter)->get_scenario().toXmlElem("scenario", "", _outStream);
+                (*iter)->get_scenario().toXmlElem("main:scenario", "", _outStream);
             }
         }
     }
@@ -78513,6 +82484,11 @@ CT_HeaderFooter* CT_HeaderFooter::default_instance_ = NULL;
 
 
     // CT_Scenarios::ChildGroup_1
+    CT_Scenarios::ChildGroup_1::ChildGroup_1()
+    :m_has_scenario(false),
+    m_scenario(NULL)
+    {
+    }
     bool CT_Scenarios::ChildGroup_1::has_scenario() const
     {    
     return m_has_scenario;
@@ -78541,6 +82517,51 @@ CT_HeaderFooter* CT_HeaderFooter::default_instance_ = NULL;
 CT_Scenarios* CT_Scenarios::default_instance_ = NULL;
 
     // CT_SheetProtection
+    CT_SheetProtection::CT_SheetProtection()
+    :m_has_password_attr(false),
+    m_password_attr(NULL),
+    m_has_algorithmName_attr(false),
+    m_algorithmName_attr(NULL),
+    m_has_hashValue_attr(false),
+    m_hashValue_attr(""),
+    m_has_saltValue_attr(false),
+    m_saltValue_attr(""),
+    m_has_spinCount_attr(false),
+    m_spinCount_attr(0),
+    m_has_sheet_attr(false),
+    m_sheet_attr(false),
+    m_has_objects_attr(false),
+    m_objects_attr(false),
+    m_has_scenarios_attr(false),
+    m_scenarios_attr(false),
+    m_has_formatCells_attr(false),
+    m_formatCells_attr(false),
+    m_has_formatColumns_attr(false),
+    m_formatColumns_attr(false),
+    m_has_formatRows_attr(false),
+    m_formatRows_attr(false),
+    m_has_insertColumns_attr(false),
+    m_insertColumns_attr(false),
+    m_has_insertRows_attr(false),
+    m_insertRows_attr(false),
+    m_has_insertHyperlinks_attr(false),
+    m_insertHyperlinks_attr(false),
+    m_has_deleteColumns_attr(false),
+    m_deleteColumns_attr(false),
+    m_has_deleteRows_attr(false),
+    m_deleteRows_attr(false),
+    m_has_selectLockedCells_attr(false),
+    m_selectLockedCells_attr(false),
+    m_has_sort_attr(false),
+    m_sort_attr(false),
+    m_has_autoFilter_attr(false),
+    m_autoFilter_attr(false),
+    m_has_pivotTables_attr(false),
+    m_pivotTables_attr(false),
+    m_has_selectUnlockedCells_attr(false),
+    m_selectUnlockedCells_attr(false)
+    {
+    }
     void CT_SheetProtection::clear()
     {    
     m_has_password_attr = false;
@@ -78552,12 +82573,12 @@ CT_Scenarios* CT_Scenarios::default_instance_ = NULL;
     }
     
     
-    m_has_s_algorithmName_attr = false;
+    m_has_algorithmName_attr = false;
     
-    if (m_s_algorithmName_attr)
+    if (m_algorithmName_attr)
     {
-        delete m_s_algorithmName_attr;
-        m_s_algorithmName_attr = NULL;
+        delete m_algorithmName_attr;
+        m_algorithmName_attr = NULL;
     }
     
     
@@ -78634,9 +82655,9 @@ CT_Scenarios* CT_Scenarios::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_algorithmName_attr)
+    if (m_has_algorithmName_attr)
     {
-        m_s_algorithmName_attr->toXmlAttr("algorithmName", _outStream);
+        m_algorithmName_attr->toXmlAttr("algorithmName", _outStream);
     }
     
     
@@ -78787,22 +82808,22 @@ CT_Scenarios* CT_Scenarios::default_instance_ = NULL;
     return ST_UnsignedShortHex::default_instance();
     }
 
-    bool CT_SheetProtection::has_s_algorithmName_attr() const
+    bool CT_SheetProtection::has_algorithmName_attr() const
     {    
-    return m_has_s_algorithmName_attr;
+    return m_has_algorithmName_attr;
     }
 
-    void CT_SheetProtection::set_s_algorithmName_attr(const ns_s::ST_Xstring& _s_algorithmName_attr)
+    void CT_SheetProtection::set_algorithmName_attr(const ns_s::ST_Xstring& _algorithmName_attr)
     {    
-    m_has_s_algorithmName_attr = true;
-    m_s_algorithmName_attr = new ns_s::ST_Xstring(_s_algorithmName_attr);
+    m_has_algorithmName_attr = true;
+    m_algorithmName_attr = new ns_s::ST_Xstring(_algorithmName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_SheetProtection::get_s_algorithmName_attr() const
+    const ns_s::ST_Xstring& CT_SheetProtection::get_algorithmName_attr() const
     {    
-    if (m_s_algorithmName_attr)
+    if (m_algorithmName_attr)
     {
-        return *m_s_algorithmName_attr;
+        return *m_algorithmName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -79114,6 +83135,10 @@ CT_Scenarios* CT_Scenarios::default_instance_ = NULL;
 CT_SheetProtection* CT_SheetProtection::default_instance_ = NULL;
 
     // CT_ProtectedRanges
+    CT_ProtectedRanges::CT_ProtectedRanges()
+
+    {
+    }
     CT_ProtectedRange* CT_ProtectedRanges::add_protectedRange()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -79151,7 +83176,7 @@ CT_SheetProtection* CT_SheetProtection::default_instance_ = NULL;
         {
             if ((*iter)->has_protectedRange())
             {
-                (*iter)->get_protectedRange().toXmlElem("protectedRange", "", _outStream);
+                (*iter)->get_protectedRange().toXmlElem("main:protectedRange", "", _outStream);
             }
         }
     }
@@ -79170,6 +83195,11 @@ CT_SheetProtection* CT_SheetProtection::default_instance_ = NULL;
 
 
     // CT_ProtectedRanges::ChildGroup_1
+    CT_ProtectedRanges::ChildGroup_1::ChildGroup_1()
+    :m_has_protectedRange(false),
+    m_protectedRange(NULL)
+    {
+    }
     bool CT_ProtectedRanges::ChildGroup_1::has_protectedRange() const
     {    
     return m_has_protectedRange;
@@ -79198,6 +83228,25 @@ CT_SheetProtection* CT_SheetProtection::default_instance_ = NULL;
 CT_ProtectedRanges* CT_ProtectedRanges::default_instance_ = NULL;
 
     // CT_ProtectedRange
+    CT_ProtectedRange::CT_ProtectedRange()
+    :m_has_password_attr(false),
+    m_password_attr(NULL),
+    m_has_sqref_attr(false),
+    m_sqref_attr(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_securityDescriptor_attr(false),
+    m_securityDescriptor_attr(""),
+    m_has_algorithmName_attr(false),
+    m_algorithmName_attr(NULL),
+    m_has_hashValue_attr(false),
+    m_hashValue_attr(""),
+    m_has_saltValue_attr(false),
+    m_saltValue_attr(""),
+    m_has_spinCount_attr(false),
+    m_spinCount_attr(0)
+    {
+    }
     void CT_ProtectedRange::add_securityDescriptor(const XSD::string_& _securityDescriptor)
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -79225,24 +83274,24 @@ CT_ProtectedRanges* CT_ProtectedRanges::default_instance_ = NULL;
     }
     
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
     m_has_securityDescriptor_attr = false;
     m_securityDescriptor_attr.clear();
     
-    m_has_s_algorithmName_attr = false;
+    m_has_algorithmName_attr = false;
     
-    if (m_s_algorithmName_attr)
+    if (m_algorithmName_attr)
     {
-        delete m_s_algorithmName_attr;
-        m_s_algorithmName_attr = NULL;
+        delete m_algorithmName_attr;
+        m_algorithmName_attr = NULL;
     }
     
     
@@ -79286,9 +83335,9 @@ CT_ProtectedRanges* CT_ProtectedRanges::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -79298,9 +83347,9 @@ CT_ProtectedRanges* CT_ProtectedRanges::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_algorithmName_attr)
+    if (m_has_algorithmName_attr)
     {
-        m_s_algorithmName_attr->toXmlAttr("algorithmName", _outStream);
+        m_algorithmName_attr->toXmlAttr("algorithmName", _outStream);
     }
     
     
@@ -79329,7 +83378,7 @@ CT_ProtectedRanges* CT_ProtectedRanges::default_instance_ = NULL;
         {
             if ((*iter)->has_securityDescriptor())
             {
-                _outStream << "<securityDescriptor>" << (*iter)->get_securityDescriptor() << "</securityDescriptor>";
+                _outStream << "<main:securityDescriptor>" << (*iter)->get_securityDescriptor() << "</main:securityDescriptor>";
             }
         }
     }
@@ -79386,22 +83435,22 @@ CT_ProtectedRanges* CT_ProtectedRanges::default_instance_ = NULL;
     return ST_Sqref::default_instance();
     }
 
-    bool CT_ProtectedRange::has_s_name_attr() const
+    bool CT_ProtectedRange::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_ProtectedRange::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_ProtectedRange::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_ProtectedRange::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_ProtectedRange::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -79422,22 +83471,22 @@ CT_ProtectedRanges* CT_ProtectedRanges::default_instance_ = NULL;
     return m_securityDescriptor_attr;
     }
 
-    bool CT_ProtectedRange::has_s_algorithmName_attr() const
+    bool CT_ProtectedRange::has_algorithmName_attr() const
     {    
-    return m_has_s_algorithmName_attr;
+    return m_has_algorithmName_attr;
     }
 
-    void CT_ProtectedRange::set_s_algorithmName_attr(const ns_s::ST_Xstring& _s_algorithmName_attr)
+    void CT_ProtectedRange::set_algorithmName_attr(const ns_s::ST_Xstring& _algorithmName_attr)
     {    
-    m_has_s_algorithmName_attr = true;
-    m_s_algorithmName_attr = new ns_s::ST_Xstring(_s_algorithmName_attr);
+    m_has_algorithmName_attr = true;
+    m_algorithmName_attr = new ns_s::ST_Xstring(_algorithmName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_ProtectedRange::get_s_algorithmName_attr() const
+    const ns_s::ST_Xstring& CT_ProtectedRange::get_algorithmName_attr() const
     {    
-    if (m_s_algorithmName_attr)
+    if (m_algorithmName_attr)
     {
-        return *m_s_algorithmName_attr;
+        return *m_algorithmName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -79492,6 +83541,11 @@ CT_ProtectedRanges* CT_ProtectedRanges::default_instance_ = NULL;
 
 
     // CT_ProtectedRange::ChildGroup_1
+    CT_ProtectedRange::ChildGroup_1::ChildGroup_1()
+    :m_has_securityDescriptor(false),
+    m_securityDescriptor("")
+    {
+    }
     bool CT_ProtectedRange::ChildGroup_1::has_securityDescriptor() const
     {    
     return m_has_securityDescriptor;
@@ -79512,6 +83566,21 @@ CT_ProtectedRanges* CT_ProtectedRanges::default_instance_ = NULL;
 CT_ProtectedRange* CT_ProtectedRange::default_instance_ = NULL;
 
     // CT_Scenario
+    CT_Scenario::CT_Scenario()
+    :m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_locked_attr(false),
+    m_locked_attr(false),
+    m_has_hidden_attr(false),
+    m_hidden_attr(false),
+    m_has_count_attr(false),
+    m_count_attr(0),
+    m_has_user_attr(false),
+    m_user_attr(NULL),
+    m_has_comment_attr(false),
+    m_comment_attr(NULL)
+    {
+    }
     CT_InputCells* CT_Scenario::add_inputCells()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -79522,12 +83591,12 @@ CT_ProtectedRange* CT_ProtectedRange::default_instance_ = NULL;
 
     void CT_Scenario::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -79540,21 +83609,21 @@ CT_ProtectedRange* CT_ProtectedRange::default_instance_ = NULL;
     m_has_count_attr = false;
     m_count_attr = 0;
     
-    m_has_s_user_attr = false;
+    m_has_user_attr = false;
     
-    if (m_s_user_attr)
+    if (m_user_attr)
     {
-        delete m_s_user_attr;
-        m_s_user_attr = NULL;
+        delete m_user_attr;
+        m_user_attr = NULL;
     }
     
     
-    m_has_s_comment_attr = false;
+    m_has_comment_attr = false;
     
-    if (m_s_comment_attr)
+    if (m_comment_attr)
     {
-        delete m_s_comment_attr;
-        m_s_comment_attr = NULL;
+        delete m_comment_attr;
+        m_comment_attr = NULL;
     }
     
     
@@ -79577,9 +83646,9 @@ CT_ProtectedRange* CT_ProtectedRange::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -79601,15 +83670,15 @@ CT_ProtectedRange* CT_ProtectedRange::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_user_attr)
+    if (m_has_user_attr)
     {
-        m_s_user_attr->toXmlAttr("user", _outStream);
+        m_user_attr->toXmlAttr("user", _outStream);
     }
     
     
-    if (m_has_s_comment_attr)
+    if (m_has_comment_attr)
     {
-        m_s_comment_attr->toXmlAttr("comment", _outStream);
+        m_comment_attr->toXmlAttr("comment", _outStream);
     }
     
             _outStream << ">";
@@ -79620,7 +83689,7 @@ CT_ProtectedRange* CT_ProtectedRange::default_instance_ = NULL;
         {
             if ((*iter)->has_inputCells())
             {
-                (*iter)->get_inputCells().toXmlElem("inputCells", "", _outStream);
+                (*iter)->get_inputCells().toXmlElem("main:inputCells", "", _outStream);
             }
         }
     }
@@ -79637,22 +83706,22 @@ CT_ProtectedRange* CT_ProtectedRange::default_instance_ = NULL;
     return *CT_Scenario::default_instance_;
     }
 
-    bool CT_Scenario::has_s_name_attr() const
+    bool CT_Scenario::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_Scenario::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_Scenario::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Scenario::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_Scenario::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -79705,48 +83774,53 @@ CT_ProtectedRange* CT_ProtectedRange::default_instance_ = NULL;
     return m_count_attr;
     }
 
-    bool CT_Scenario::has_s_user_attr() const
+    bool CT_Scenario::has_user_attr() const
     {    
-    return m_has_s_user_attr;
+    return m_has_user_attr;
     }
 
-    void CT_Scenario::set_s_user_attr(const ns_s::ST_Xstring& _s_user_attr)
+    void CT_Scenario::set_user_attr(const ns_s::ST_Xstring& _user_attr)
     {    
-    m_has_s_user_attr = true;
-    m_s_user_attr = new ns_s::ST_Xstring(_s_user_attr);
+    m_has_user_attr = true;
+    m_user_attr = new ns_s::ST_Xstring(_user_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Scenario::get_s_user_attr() const
+    const ns_s::ST_Xstring& CT_Scenario::get_user_attr() const
     {    
-    if (m_s_user_attr)
+    if (m_user_attr)
     {
-        return *m_s_user_attr;
+        return *m_user_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_Scenario::has_s_comment_attr() const
+    bool CT_Scenario::has_comment_attr() const
     {    
-    return m_has_s_comment_attr;
+    return m_has_comment_attr;
     }
 
-    void CT_Scenario::set_s_comment_attr(const ns_s::ST_Xstring& _s_comment_attr)
+    void CT_Scenario::set_comment_attr(const ns_s::ST_Xstring& _comment_attr)
     {    
-    m_has_s_comment_attr = true;
-    m_s_comment_attr = new ns_s::ST_Xstring(_s_comment_attr);
+    m_has_comment_attr = true;
+    m_comment_attr = new ns_s::ST_Xstring(_comment_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Scenario::get_s_comment_attr() const
+    const ns_s::ST_Xstring& CT_Scenario::get_comment_attr() const
     {    
-    if (m_s_comment_attr)
+    if (m_comment_attr)
     {
-        return *m_s_comment_attr;
+        return *m_comment_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
 
     // CT_Scenario::ChildGroup_1
+    CT_Scenario::ChildGroup_1::ChildGroup_1()
+    :m_has_inputCells(false),
+    m_inputCells(NULL)
+    {
+    }
     bool CT_Scenario::ChildGroup_1::has_inputCells() const
     {    
     return m_has_inputCells;
@@ -79775,6 +83849,19 @@ CT_ProtectedRange* CT_ProtectedRange::default_instance_ = NULL;
 CT_Scenario* CT_Scenario::default_instance_ = NULL;
 
     // CT_InputCells
+    CT_InputCells::CT_InputCells()
+    :m_has_r_attr(false),
+    m_r_attr(NULL),
+    m_has_deleted_attr(false),
+    m_deleted_attr(false),
+    m_has_undone_attr(false),
+    m_undone_attr(false),
+    m_has_val_attr(false),
+    m_val_attr(NULL),
+    m_has_numFmtId_attr(false),
+    m_numFmtId_attr(NULL)
+    {
+    }
     void CT_InputCells::clear()
     {    
     m_has_r_attr = false;
@@ -79792,12 +83879,12 @@ CT_Scenario* CT_Scenario::default_instance_ = NULL;
     m_has_undone_attr = false;
     m_undone_attr = false;
     
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     
@@ -79838,9 +83925,9 @@ CT_Scenario* CT_Scenario::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("val", _outStream);
+        m_val_attr->toXmlAttr("val", _outStream);
     }
     
     
@@ -79915,22 +84002,22 @@ CT_Scenario* CT_Scenario::default_instance_ = NULL;
     return m_undone_attr;
     }
 
-    bool CT_InputCells::has_s_val_attr() const
+    bool CT_InputCells::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_InputCells::set_s_val_attr(const ns_s::ST_Xstring& _s_val_attr)
+    void CT_InputCells::set_val_attr(const ns_s::ST_Xstring& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_Xstring(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_Xstring(_val_attr);
     }
 
-    const ns_s::ST_Xstring& CT_InputCells::get_s_val_attr() const
+    const ns_s::ST_Xstring& CT_InputCells::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -79958,6 +84045,10 @@ CT_Scenario* CT_Scenario::default_instance_ = NULL;
 CT_InputCells* CT_InputCells::default_instance_ = NULL;
 
     // CT_CellWatches
+    CT_CellWatches::CT_CellWatches()
+
+    {
+    }
     CT_CellWatch* CT_CellWatches::add_cellWatch()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -79995,7 +84086,7 @@ CT_InputCells* CT_InputCells::default_instance_ = NULL;
         {
             if ((*iter)->has_cellWatch())
             {
-                (*iter)->get_cellWatch().toXmlElem("cellWatch", "", _outStream);
+                (*iter)->get_cellWatch().toXmlElem("main:cellWatch", "", _outStream);
             }
         }
     }
@@ -80014,6 +84105,11 @@ CT_InputCells* CT_InputCells::default_instance_ = NULL;
 
 
     // CT_CellWatches::ChildGroup_1
+    CT_CellWatches::ChildGroup_1::ChildGroup_1()
+    :m_has_cellWatch(false),
+    m_cellWatch(NULL)
+    {
+    }
     bool CT_CellWatches::ChildGroup_1::has_cellWatch() const
     {    
     return m_has_cellWatch;
@@ -80042,6 +84138,11 @@ CT_InputCells* CT_InputCells::default_instance_ = NULL;
 CT_CellWatches* CT_CellWatches::default_instance_ = NULL;
 
     // CT_CellWatch
+    CT_CellWatch::CT_CellWatch()
+    :m_has_r_attr(false),
+    m_r_attr(NULL)
+    {
+    }
     void CT_CellWatch::clear()
     {    
     m_has_r_attr = false;
@@ -80105,6 +84206,37 @@ CT_CellWatches* CT_CellWatches::default_instance_ = NULL;
 CT_CellWatch* CT_CellWatch::default_instance_ = NULL;
 
     // CT_Chartsheet
+    CT_Chartsheet::CT_Chartsheet()
+    :m_has_sheetPr(false),
+    m_sheetPr(NULL),
+    m_has_sheetViews(false),
+    m_sheetViews(NULL),
+    m_has_sheetProtection(false),
+    m_sheetProtection(NULL),
+    m_has_customSheetViews(false),
+    m_customSheetViews(NULL),
+    m_has_pageMargins(false),
+    m_pageMargins(NULL),
+    m_has_pageSetup(false),
+    m_pageSetup(NULL),
+    m_has_headerFooter(false),
+    m_headerFooter(NULL),
+    m_has_drawing(false),
+    m_drawing(NULL),
+    m_has_legacyDrawing(false),
+    m_legacyDrawing(NULL),
+    m_has_legacyDrawingHF(false),
+    m_legacyDrawingHF(NULL),
+    m_has_drawingHF(false),
+    m_drawingHF(NULL),
+    m_has_picture(false),
+    m_picture(NULL),
+    m_has_webPublishItems(false),
+    m_webPublishItems(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Chartsheet::has_sheetPr() const
     {    
     return m_has_sheetPr;
@@ -80457,72 +84589,72 @@ CT_CellWatch* CT_CellWatch::default_instance_ = NULL;
             
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
     }
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
     }
     
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("sheetProtection", "", _outStream);;
+        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);;
     }
     
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("customSheetViews", "", _outStream);;
+        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);;
     }
     
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);;
     }
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);;
     }
     
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);;
     }
     
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("drawing", "", _outStream);;
+        m_drawing->toXmlElem("main:drawing", "", _outStream);;
     }
     
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("legacyDrawing", "", _outStream);;
+        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);;
     }
     
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("legacyDrawingHF", "", _outStream);;
+        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);;
     }
     
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("drawingHF", "", _outStream);;
+        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);;
     }
     
     if (m_has_picture)
     {
-        m_picture->toXmlElem("picture", "", _outStream);;
+        m_picture->toXmlElem("main:picture", "", _outStream);;
     }
     
     if (m_has_webPublishItems)
     {
-        m_webPublishItems->toXmlElem("webPublishItems", "", _outStream);;
+        m_webPublishItems->toXmlElem("main:webPublishItems", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -80540,6 +84672,15 @@ CT_CellWatch* CT_CellWatch::default_instance_ = NULL;
 CT_Chartsheet* CT_Chartsheet::default_instance_ = NULL;
 
     // CT_ChartsheetPr
+    CT_ChartsheetPr::CT_ChartsheetPr()
+    :m_has_tabColor(false),
+    m_tabColor(NULL),
+    m_has_published_attr(false),
+    m_published_attr(false),
+    m_has_codeName_attr(false),
+    m_codeName_attr("")
+    {
+    }
     bool CT_ChartsheetPr::has_tabColor() const
     {    
     return m_has_tabColor;
@@ -80597,7 +84738,7 @@ CT_Chartsheet* CT_Chartsheet::default_instance_ = NULL;
             
     if (m_has_tabColor)
     {
-        m_tabColor->toXmlElem("tabColor", "", _outStream);;
+        m_tabColor->toXmlElem("main:tabColor", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -80647,6 +84788,10 @@ CT_Chartsheet* CT_Chartsheet::default_instance_ = NULL;
 CT_ChartsheetPr* CT_ChartsheetPr::default_instance_ = NULL;
 
     // CT_ChartsheetViews
+    CT_ChartsheetViews::CT_ChartsheetViews()
+
+    {
+    }
     CT_ChartsheetView* CT_ChartsheetViews::add_sheetView()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -80692,11 +84837,11 @@ CT_ChartsheetPr* CT_ChartsheetPr::default_instance_ = NULL;
         {
             if ((*iter)->has_sheetView())
             {
-                (*iter)->get_sheetView().toXmlElem("sheetView", "", _outStream);
+                (*iter)->get_sheetView().toXmlElem("main:sheetView", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -80715,6 +84860,13 @@ CT_ChartsheetPr* CT_ChartsheetPr::default_instance_ = NULL;
 
 
     // CT_ChartsheetViews::ChildGroup_1
+    CT_ChartsheetViews::ChildGroup_1::ChildGroup_1()
+    :m_has_sheetView(false),
+    m_sheetView(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_ChartsheetViews::ChildGroup_1::has_sheetView() const
     {    
     return m_has_sheetView;
@@ -80786,6 +84938,19 @@ CT_ChartsheetPr* CT_ChartsheetPr::default_instance_ = NULL;
 CT_ChartsheetViews* CT_ChartsheetViews::default_instance_ = NULL;
 
     // CT_ChartsheetView
+    CT_ChartsheetView::CT_ChartsheetView()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_tabSelected_attr(false),
+    m_tabSelected_attr(false),
+    m_has_zoomScale_attr(false),
+    m_zoomScale_attr(0),
+    m_has_workbookViewId_attr(false),
+    m_workbookViewId_attr(0),
+    m_has_zoomToFit_attr(false),
+    m_zoomToFit_attr(false)
+    {
+    }
     bool CT_ChartsheetView::has_extLst() const
     {    
     return m_has_extLst;
@@ -80861,7 +85026,7 @@ CT_ChartsheetViews* CT_ChartsheetViews::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -80943,6 +85108,23 @@ CT_ChartsheetViews* CT_ChartsheetViews::default_instance_ = NULL;
 CT_ChartsheetView* CT_ChartsheetView::default_instance_ = NULL;
 
     // CT_ChartsheetProtection
+    CT_ChartsheetProtection::CT_ChartsheetProtection()
+    :m_has_password_attr(false),
+    m_password_attr(NULL),
+    m_has_algorithmName_attr(false),
+    m_algorithmName_attr(NULL),
+    m_has_hashValue_attr(false),
+    m_hashValue_attr(""),
+    m_has_saltValue_attr(false),
+    m_saltValue_attr(""),
+    m_has_spinCount_attr(false),
+    m_spinCount_attr(0),
+    m_has_content_attr(false),
+    m_content_attr(false),
+    m_has_objects_attr(false),
+    m_objects_attr(false)
+    {
+    }
     void CT_ChartsheetProtection::clear()
     {    
     m_has_password_attr = false;
@@ -80954,12 +85136,12 @@ CT_ChartsheetView* CT_ChartsheetView::default_instance_ = NULL;
     }
     
     
-    m_has_s_algorithmName_attr = false;
+    m_has_algorithmName_attr = false;
     
-    if (m_s_algorithmName_attr)
+    if (m_algorithmName_attr)
     {
-        delete m_s_algorithmName_attr;
-        m_s_algorithmName_attr = NULL;
+        delete m_algorithmName_attr;
+        m_algorithmName_attr = NULL;
     }
     
     
@@ -80994,9 +85176,9 @@ CT_ChartsheetView* CT_ChartsheetView::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_algorithmName_attr)
+    if (m_has_algorithmName_attr)
     {
-        m_s_algorithmName_attr->toXmlAttr("algorithmName", _outStream);
+        m_algorithmName_attr->toXmlAttr("algorithmName", _outStream);
     }
     
     
@@ -81063,22 +85245,22 @@ CT_ChartsheetView* CT_ChartsheetView::default_instance_ = NULL;
     return ST_UnsignedShortHex::default_instance();
     }
 
-    bool CT_ChartsheetProtection::has_s_algorithmName_attr() const
+    bool CT_ChartsheetProtection::has_algorithmName_attr() const
     {    
-    return m_has_s_algorithmName_attr;
+    return m_has_algorithmName_attr;
     }
 
-    void CT_ChartsheetProtection::set_s_algorithmName_attr(const ns_s::ST_Xstring& _s_algorithmName_attr)
+    void CT_ChartsheetProtection::set_algorithmName_attr(const ns_s::ST_Xstring& _algorithmName_attr)
     {    
-    m_has_s_algorithmName_attr = true;
-    m_s_algorithmName_attr = new ns_s::ST_Xstring(_s_algorithmName_attr);
+    m_has_algorithmName_attr = true;
+    m_algorithmName_attr = new ns_s::ST_Xstring(_algorithmName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_ChartsheetProtection::get_s_algorithmName_attr() const
+    const ns_s::ST_Xstring& CT_ChartsheetProtection::get_algorithmName_attr() const
     {    
-    if (m_s_algorithmName_attr)
+    if (m_algorithmName_attr)
     {
-        return *m_s_algorithmName_attr;
+        return *m_algorithmName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -81166,26 +85348,55 @@ CT_ChartsheetView* CT_ChartsheetView::default_instance_ = NULL;
 CT_ChartsheetProtection* CT_ChartsheetProtection::default_instance_ = NULL;
 
     // CT_CsPageSetup
+    CT_CsPageSetup::CT_CsPageSetup()
+    :m_has_paperSize_attr(false),
+    m_paperSize_attr(0),
+    m_has_paperHeight_attr(false),
+    m_paperHeight_attr(NULL),
+    m_has_paperWidth_attr(false),
+    m_paperWidth_attr(NULL),
+    m_has_firstPageNumber_attr(false),
+    m_firstPageNumber_attr(0),
+    m_has_orientation_attr(false),
+    m_orientation_attr(NULL),
+    m_has_usePrinterDefaults_attr(false),
+    m_usePrinterDefaults_attr(false),
+    m_has_blackAndWhite_attr(false),
+    m_blackAndWhite_attr(false),
+    m_has_draft_attr(false),
+    m_draft_attr(false),
+    m_has_useFirstPageNumber_attr(false),
+    m_useFirstPageNumber_attr(false),
+    m_has_horizontalDpi_attr(false),
+    m_horizontalDpi_attr(0),
+    m_has_verticalDpi_attr(false),
+    m_verticalDpi_attr(0),
+    m_has_copies_attr(false),
+    m_copies_attr(0),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     void CT_CsPageSetup::clear()
     {    
     m_has_paperSize_attr = false;
     m_paperSize_attr = 0;
     
-    m_has_s_paperHeight_attr = false;
+    m_has_paperHeight_attr = false;
     
-    if (m_s_paperHeight_attr)
+    if (m_paperHeight_attr)
     {
-        delete m_s_paperHeight_attr;
-        m_s_paperHeight_attr = NULL;
+        delete m_paperHeight_attr;
+        m_paperHeight_attr = NULL;
     }
     
     
-    m_has_s_paperWidth_attr = false;
+    m_has_paperWidth_attr = false;
     
-    if (m_s_paperWidth_attr)
+    if (m_paperWidth_attr)
     {
-        delete m_s_paperWidth_attr;
-        m_s_paperWidth_attr = NULL;
+        delete m_paperWidth_attr;
+        m_paperWidth_attr = NULL;
     }
     
     
@@ -81247,15 +85458,15 @@ CT_ChartsheetProtection* CT_ChartsheetProtection::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_paperHeight_attr)
+    if (m_has_paperHeight_attr)
     {
-        m_s_paperHeight_attr->toXmlAttr("paperHeight", _outStream);
+        m_paperHeight_attr->toXmlAttr("paperHeight", _outStream);
     }
     
     
-    if (m_has_s_paperWidth_attr)
+    if (m_has_paperWidth_attr)
     {
-        m_s_paperWidth_attr->toXmlAttr("paperWidth", _outStream);
+        m_paperWidth_attr->toXmlAttr("paperWidth", _outStream);
     }
     
     
@@ -81315,7 +85526,7 @@ CT_ChartsheetProtection* CT_ChartsheetProtection::default_instance_ = NULL;
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
@@ -81348,42 +85559,42 @@ CT_ChartsheetProtection* CT_ChartsheetProtection::default_instance_ = NULL;
     return m_paperSize_attr;
     }
 
-    bool CT_CsPageSetup::has_s_paperHeight_attr() const
+    bool CT_CsPageSetup::has_paperHeight_attr() const
     {    
-    return m_has_s_paperHeight_attr;
+    return m_has_paperHeight_attr;
     }
 
-    void CT_CsPageSetup::set_s_paperHeight_attr(const ns_s::ST_PositiveUniversalMeasure& _s_paperHeight_attr)
+    void CT_CsPageSetup::set_paperHeight_attr(const ns_s::ST_PositiveUniversalMeasure& _paperHeight_attr)
     {    
-    m_has_s_paperHeight_attr = true;
-    m_s_paperHeight_attr = new ns_s::ST_PositiveUniversalMeasure(_s_paperHeight_attr);
+    m_has_paperHeight_attr = true;
+    m_paperHeight_attr = new ns_s::ST_PositiveUniversalMeasure(_paperHeight_attr);
     }
 
-    const ns_s::ST_PositiveUniversalMeasure& CT_CsPageSetup::get_s_paperHeight_attr() const
+    const ns_s::ST_PositiveUniversalMeasure& CT_CsPageSetup::get_paperHeight_attr() const
     {    
-    if (m_s_paperHeight_attr)
+    if (m_paperHeight_attr)
     {
-        return *m_s_paperHeight_attr;
+        return *m_paperHeight_attr;
     }
     return ns_s::ST_PositiveUniversalMeasure::default_instance();
     }
 
-    bool CT_CsPageSetup::has_s_paperWidth_attr() const
+    bool CT_CsPageSetup::has_paperWidth_attr() const
     {    
-    return m_has_s_paperWidth_attr;
+    return m_has_paperWidth_attr;
     }
 
-    void CT_CsPageSetup::set_s_paperWidth_attr(const ns_s::ST_PositiveUniversalMeasure& _s_paperWidth_attr)
+    void CT_CsPageSetup::set_paperWidth_attr(const ns_s::ST_PositiveUniversalMeasure& _paperWidth_attr)
     {    
-    m_has_s_paperWidth_attr = true;
-    m_s_paperWidth_attr = new ns_s::ST_PositiveUniversalMeasure(_s_paperWidth_attr);
+    m_has_paperWidth_attr = true;
+    m_paperWidth_attr = new ns_s::ST_PositiveUniversalMeasure(_paperWidth_attr);
     }
 
-    const ns_s::ST_PositiveUniversalMeasure& CT_CsPageSetup::get_s_paperWidth_attr() const
+    const ns_s::ST_PositiveUniversalMeasure& CT_CsPageSetup::get_paperWidth_attr() const
     {    
-    if (m_s_paperWidth_attr)
+    if (m_paperWidth_attr)
     {
-        return *m_s_paperWidth_attr;
+        return *m_paperWidth_attr;
     }
     return ns_s::ST_PositiveUniversalMeasure::default_instance();
     }
@@ -81559,6 +85770,10 @@ CT_ChartsheetProtection* CT_ChartsheetProtection::default_instance_ = NULL;
 CT_CsPageSetup* CT_CsPageSetup::default_instance_ = NULL;
 
     // CT_CustomChartsheetViews
+    CT_CustomChartsheetViews::CT_CustomChartsheetViews()
+
+    {
+    }
     CT_CustomChartsheetView* CT_CustomChartsheetViews::add_customSheetView()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -81596,7 +85811,7 @@ CT_CsPageSetup* CT_CsPageSetup::default_instance_ = NULL;
         {
             if ((*iter)->has_customSheetView())
             {
-                (*iter)->get_customSheetView().toXmlElem("customSheetView", "", _outStream);
+                (*iter)->get_customSheetView().toXmlElem("main:customSheetView", "", _outStream);
             }
         }
     }
@@ -81615,6 +85830,11 @@ CT_CsPageSetup* CT_CsPageSetup::default_instance_ = NULL;
 
 
     // CT_CustomChartsheetViews::ChildGroup_1
+    CT_CustomChartsheetViews::ChildGroup_1::ChildGroup_1()
+    :m_has_customSheetView(false),
+    m_customSheetView(NULL)
+    {
+    }
     bool CT_CustomChartsheetViews::ChildGroup_1::has_customSheetView() const
     {    
     return m_has_customSheetView;
@@ -81643,6 +85863,23 @@ CT_CsPageSetup* CT_CsPageSetup::default_instance_ = NULL;
 CT_CustomChartsheetViews* CT_CustomChartsheetViews::default_instance_ = NULL;
 
     // CT_CustomChartsheetView
+    CT_CustomChartsheetView::CT_CustomChartsheetView()
+    :m_has_pageMargins(false),
+    m_pageMargins(NULL),
+    m_has_pageSetup(false),
+    m_pageSetup(NULL),
+    m_has_headerFooter(false),
+    m_headerFooter(NULL),
+    m_has_guid_attr(false),
+    m_guid_attr(NULL),
+    m_has_scale_attr(false),
+    m_scale_attr(0),
+    m_has_state_attr(false),
+    m_state_attr(NULL),
+    m_has_zoomToFit_attr(false),
+    m_zoomToFit_attr(false)
+    {
+    }
     bool CT_CustomChartsheetView::has_pageMargins() const
     {    
     return m_has_pageMargins;
@@ -81717,12 +85954,12 @@ CT_CustomChartsheetViews* CT_CustomChartsheetViews::default_instance_ = NULL;
 
     void CT_CustomChartsheetView::clear()
     {    
-    m_has_s_guid_attr = false;
+    m_has_guid_attr = false;
     
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        delete m_s_guid_attr;
-        m_s_guid_attr = NULL;
+        delete m_guid_attr;
+        m_guid_attr = NULL;
     }
     
     
@@ -81751,9 +85988,9 @@ CT_CustomChartsheetViews* CT_CustomChartsheetViews::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_guid_attr)
+    if (m_has_guid_attr)
     {
-        m_s_guid_attr->toXmlAttr("guid", _outStream);
+        m_guid_attr->toXmlAttr("guid", _outStream);
     }
     
     
@@ -81778,17 +86015,17 @@ CT_CustomChartsheetViews* CT_CustomChartsheetViews::default_instance_ = NULL;
             
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);;
     }
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);;
     }
     
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -81803,22 +86040,22 @@ CT_CustomChartsheetViews* CT_CustomChartsheetViews::default_instance_ = NULL;
     return *CT_CustomChartsheetView::default_instance_;
     }
 
-    bool CT_CustomChartsheetView::has_s_guid_attr() const
+    bool CT_CustomChartsheetView::has_guid_attr() const
     {    
-    return m_has_s_guid_attr;
+    return m_has_guid_attr;
     }
 
-    void CT_CustomChartsheetView::set_s_guid_attr(const ns_s::ST_Guid& _s_guid_attr)
+    void CT_CustomChartsheetView::set_guid_attr(const ns_s::ST_Guid& _guid_attr)
     {    
-    m_has_s_guid_attr = true;
-    m_s_guid_attr = new ns_s::ST_Guid(_s_guid_attr);
+    m_has_guid_attr = true;
+    m_guid_attr = new ns_s::ST_Guid(_guid_attr);
     }
 
-    const ns_s::ST_Guid& CT_CustomChartsheetView::get_s_guid_attr() const
+    const ns_s::ST_Guid& CT_CustomChartsheetView::get_guid_attr() const
     {    
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        return *m_s_guid_attr;
+        return *m_guid_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -81878,6 +86115,10 @@ CT_CustomChartsheetViews* CT_CustomChartsheetViews::default_instance_ = NULL;
 CT_CustomChartsheetView* CT_CustomChartsheetView::default_instance_ = NULL;
 
     // CT_CustomProperties
+    CT_CustomProperties::CT_CustomProperties()
+
+    {
+    }
     CT_CustomProperty* CT_CustomProperties::add_customPr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -81915,7 +86156,7 @@ CT_CustomChartsheetView* CT_CustomChartsheetView::default_instance_ = NULL;
         {
             if ((*iter)->has_customPr())
             {
-                (*iter)->get_customPr().toXmlElem("customPr", "", _outStream);
+                (*iter)->get_customPr().toXmlElem("main:customPr", "", _outStream);
             }
         }
     }
@@ -81934,6 +86175,11 @@ CT_CustomChartsheetView* CT_CustomChartsheetView::default_instance_ = NULL;
 
 
     // CT_CustomProperties::ChildGroup_1
+    CT_CustomProperties::ChildGroup_1::ChildGroup_1()
+    :m_has_customPr(false),
+    m_customPr(NULL)
+    {
+    }
     bool CT_CustomProperties::ChildGroup_1::has_customPr() const
     {    
     return m_has_customPr;
@@ -81962,14 +86208,21 @@ CT_CustomChartsheetView* CT_CustomChartsheetView::default_instance_ = NULL;
 CT_CustomProperties* CT_CustomProperties::default_instance_ = NULL;
 
     // CT_CustomProperty
+    CT_CustomProperty::CT_CustomProperty()
+    :m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     void CT_CustomProperty::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -81992,15 +86245,15 @@ CT_CustomProperties* CT_CustomProperties::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
@@ -82017,22 +86270,22 @@ CT_CustomProperties* CT_CustomProperties::default_instance_ = NULL;
     return *CT_CustomProperty::default_instance_;
     }
 
-    bool CT_CustomProperty::has_s_name_attr() const
+    bool CT_CustomProperty::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_CustomProperty::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_CustomProperty::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CustomProperty::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_CustomProperty::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -82060,6 +86313,10 @@ CT_CustomProperties* CT_CustomProperties::default_instance_ = NULL;
 CT_CustomProperty* CT_CustomProperty::default_instance_ = NULL;
 
     // CT_OleObjects
+    CT_OleObjects::CT_OleObjects()
+
+    {
+    }
     CT_OleObject* CT_OleObjects::add_oleObject()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -82097,7 +86354,7 @@ CT_CustomProperty* CT_CustomProperty::default_instance_ = NULL;
         {
             if ((*iter)->has_oleObject())
             {
-                (*iter)->get_oleObject().toXmlElem("oleObject", "", _outStream);
+                (*iter)->get_oleObject().toXmlElem("main:oleObject", "", _outStream);
             }
         }
     }
@@ -82116,6 +86373,11 @@ CT_CustomProperty* CT_CustomProperty::default_instance_ = NULL;
 
 
     // CT_OleObjects::ChildGroup_1
+    CT_OleObjects::ChildGroup_1::ChildGroup_1()
+    :m_has_oleObject(false),
+    m_oleObject(NULL)
+    {
+    }
     bool CT_OleObjects::ChildGroup_1::has_oleObject() const
     {    
     return m_has_oleObject;
@@ -82144,6 +86406,25 @@ CT_CustomProperty* CT_CustomProperty::default_instance_ = NULL;
 CT_OleObjects* CT_OleObjects::default_instance_ = NULL;
 
     // CT_OleObject
+    CT_OleObject::CT_OleObject()
+    :m_has_objectPr(false),
+    m_objectPr(NULL),
+    m_has_progId_attr(false),
+    m_progId_attr(""),
+    m_has_dvAspect_attr(false),
+    m_dvAspect_attr(NULL),
+    m_has_link_attr(false),
+    m_link_attr(NULL),
+    m_has_oleUpdate_attr(false),
+    m_oleUpdate_attr(NULL),
+    m_has_autoLoad_attr(false),
+    m_autoLoad_attr(false),
+    m_has_shapeId_attr(false),
+    m_shapeId_attr(0),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     bool CT_OleObject::has_objectPr() const
     {    
     return m_has_objectPr;
@@ -82182,12 +86463,12 @@ CT_OleObjects* CT_OleObjects::default_instance_ = NULL;
     }
     
     
-    m_has_s_link_attr = false;
+    m_has_link_attr = false;
     
-    if (m_s_link_attr)
+    if (m_link_attr)
     {
-        delete m_s_link_attr;
-        m_s_link_attr = NULL;
+        delete m_link_attr;
+        m_link_attr = NULL;
     }
     
     
@@ -82237,9 +86518,9 @@ CT_OleObjects* CT_OleObjects::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_link_attr)
+    if (m_has_link_attr)
     {
-        m_s_link_attr->toXmlAttr("link", _outStream);
+        m_link_attr->toXmlAttr("link", _outStream);
     }
     
     
@@ -82263,14 +86544,14 @@ CT_OleObjects* CT_OleObjects::default_instance_ = NULL;
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_objectPr)
     {
-        m_objectPr->toXmlElem("objectPr", "", _outStream);;
+        m_objectPr->toXmlElem("main:objectPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -82321,22 +86602,22 @@ CT_OleObjects* CT_OleObjects::default_instance_ = NULL;
     return ST_DvAspect::default_instance();
     }
 
-    bool CT_OleObject::has_s_link_attr() const
+    bool CT_OleObject::has_link_attr() const
     {    
-    return m_has_s_link_attr;
+    return m_has_link_attr;
     }
 
-    void CT_OleObject::set_s_link_attr(const ns_s::ST_Xstring& _s_link_attr)
+    void CT_OleObject::set_link_attr(const ns_s::ST_Xstring& _link_attr)
     {    
-    m_has_s_link_attr = true;
-    m_s_link_attr = new ns_s::ST_Xstring(_s_link_attr);
+    m_has_link_attr = true;
+    m_link_attr = new ns_s::ST_Xstring(_link_attr);
     }
 
-    const ns_s::ST_Xstring& CT_OleObject::get_s_link_attr() const
+    const ns_s::ST_Xstring& CT_OleObject::get_link_attr() const
     {    
-    if (m_s_link_attr)
+    if (m_link_attr)
     {
-        return *m_s_link_attr;
+        return *m_link_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -82416,6 +86697,35 @@ CT_OleObjects* CT_OleObjects::default_instance_ = NULL;
 CT_OleObject* CT_OleObject::default_instance_ = NULL;
 
     // CT_ObjectPr
+    CT_ObjectPr::CT_ObjectPr()
+    :m_has_anchor(false),
+    m_anchor(NULL),
+    m_has_locked_attr(false),
+    m_locked_attr(false),
+    m_has_defaultSize_attr(false),
+    m_defaultSize_attr(false),
+    m_has_print_attr(false),
+    m_print_attr(false),
+    m_has_disabled_attr(false),
+    m_disabled_attr(false),
+    m_has_uiObject_attr(false),
+    m_uiObject_attr(false),
+    m_has_autoFill_attr(false),
+    m_autoFill_attr(false),
+    m_has_autoLine_attr(false),
+    m_autoLine_attr(false),
+    m_has_autoPict_attr(false),
+    m_autoPict_attr(false),
+    m_has_macro_attr(false),
+    m_macro_attr(NULL),
+    m_has_altText_attr(false),
+    m_altText_attr(NULL),
+    m_has_dde_attr(false),
+    m_dde_attr(false),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     bool CT_ObjectPr::has_anchor() const
     {    
     return m_has_anchor;
@@ -82475,12 +86785,12 @@ CT_OleObject* CT_OleObject::default_instance_ = NULL;
     }
     
     
-    m_has_s_altText_attr = false;
+    m_has_altText_attr = false;
     
-    if (m_s_altText_attr)
+    if (m_altText_attr)
     {
-        delete m_s_altText_attr;
-        m_s_altText_attr = NULL;
+        delete m_altText_attr;
+        m_altText_attr = NULL;
     }
     
     
@@ -82560,9 +86870,9 @@ CT_OleObject* CT_OleObject::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_altText_attr)
+    if (m_has_altText_attr)
     {
-        m_s_altText_attr->toXmlAttr("altText", _outStream);
+        m_altText_attr->toXmlAttr("altText", _outStream);
     }
     
     
@@ -82574,14 +86884,14 @@ CT_OleObject* CT_OleObject::default_instance_ = NULL;
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_anchor)
     {
-        m_anchor->toXmlElem("anchor", "", _outStream);;
+        m_anchor->toXmlElem("main:anchor", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -82744,22 +87054,22 @@ CT_OleObject* CT_OleObject::default_instance_ = NULL;
     return ST_Formula::default_instance();
     }
 
-    bool CT_ObjectPr::has_s_altText_attr() const
+    bool CT_ObjectPr::has_altText_attr() const
     {    
-    return m_has_s_altText_attr;
+    return m_has_altText_attr;
     }
 
-    void CT_ObjectPr::set_s_altText_attr(const ns_s::ST_Xstring& _s_altText_attr)
+    void CT_ObjectPr::set_altText_attr(const ns_s::ST_Xstring& _altText_attr)
     {    
-    m_has_s_altText_attr = true;
-    m_s_altText_attr = new ns_s::ST_Xstring(_s_altText_attr);
+    m_has_altText_attr = true;
+    m_altText_attr = new ns_s::ST_Xstring(_altText_attr);
     }
 
-    const ns_s::ST_Xstring& CT_ObjectPr::get_s_altText_attr() const
+    const ns_s::ST_Xstring& CT_ObjectPr::get_altText_attr() const
     {    
-    if (m_s_altText_attr)
+    if (m_altText_attr)
     {
-        return *m_s_altText_attr;
+        return *m_altText_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -82803,6 +87113,11 @@ CT_OleObject* CT_OleObject::default_instance_ = NULL;
 CT_ObjectPr* CT_ObjectPr::default_instance_ = NULL;
 
     // CT_WebPublishItems
+    CT_WebPublishItems::CT_WebPublishItems()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_WebPublishItem* CT_WebPublishItems::add_webPublishItem()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -82848,7 +87163,7 @@ CT_ObjectPr* CT_ObjectPr::default_instance_ = NULL;
         {
             if ((*iter)->has_webPublishItem())
             {
-                (*iter)->get_webPublishItem().toXmlElem("webPublishItem", "", _outStream);
+                (*iter)->get_webPublishItem().toXmlElem("main:webPublishItem", "", _outStream);
             }
         }
     }
@@ -82883,6 +87198,11 @@ CT_ObjectPr* CT_ObjectPr::default_instance_ = NULL;
 
 
     // CT_WebPublishItems::ChildGroup_1
+    CT_WebPublishItems::ChildGroup_1::ChildGroup_1()
+    :m_has_webPublishItem(false),
+    m_webPublishItem(NULL)
+    {
+    }
     bool CT_WebPublishItems::ChildGroup_1::has_webPublishItem() const
     {    
     return m_has_webPublishItem;
@@ -82911,17 +87231,36 @@ CT_ObjectPr* CT_ObjectPr::default_instance_ = NULL;
 CT_WebPublishItems* CT_WebPublishItems::default_instance_ = NULL;
 
     // CT_WebPublishItem
+    CT_WebPublishItem::CT_WebPublishItem()
+    :m_has_id_attr(false),
+    m_id_attr(0),
+    m_has_divId_attr(false),
+    m_divId_attr(NULL),
+    m_has_sourceType_attr(false),
+    m_sourceType_attr(NULL),
+    m_has_sourceRef_attr(false),
+    m_sourceRef_attr(NULL),
+    m_has_sourceObject_attr(false),
+    m_sourceObject_attr(NULL),
+    m_has_destinationFile_attr(false),
+    m_destinationFile_attr(NULL),
+    m_has_title_attr(false),
+    m_title_attr(NULL),
+    m_has_autoRepublish_attr(false),
+    m_autoRepublish_attr(false)
+    {
+    }
     void CT_WebPublishItem::clear()
     {    
     m_has_id_attr = false;
     m_id_attr = 0;
     
-    m_has_s_divId_attr = false;
+    m_has_divId_attr = false;
     
-    if (m_s_divId_attr)
+    if (m_divId_attr)
     {
-        delete m_s_divId_attr;
-        m_s_divId_attr = NULL;
+        delete m_divId_attr;
+        m_divId_attr = NULL;
     }
     
     
@@ -82943,30 +87282,30 @@ CT_WebPublishItems* CT_WebPublishItems::default_instance_ = NULL;
     }
     
     
-    m_has_s_sourceObject_attr = false;
+    m_has_sourceObject_attr = false;
     
-    if (m_s_sourceObject_attr)
+    if (m_sourceObject_attr)
     {
-        delete m_s_sourceObject_attr;
-        m_s_sourceObject_attr = NULL;
+        delete m_sourceObject_attr;
+        m_sourceObject_attr = NULL;
     }
     
     
-    m_has_s_destinationFile_attr = false;
+    m_has_destinationFile_attr = false;
     
-    if (m_s_destinationFile_attr)
+    if (m_destinationFile_attr)
     {
-        delete m_s_destinationFile_attr;
-        m_s_destinationFile_attr = NULL;
+        delete m_destinationFile_attr;
+        m_destinationFile_attr = NULL;
     }
     
     
-    m_has_s_title_attr = false;
+    m_has_title_attr = false;
     
-    if (m_s_title_attr)
+    if (m_title_attr)
     {
-        delete m_s_title_attr;
-        m_s_title_attr = NULL;
+        delete m_title_attr;
+        m_title_attr = NULL;
     }
     
     
@@ -82989,9 +87328,9 @@ CT_WebPublishItems* CT_WebPublishItems::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_divId_attr)
+    if (m_has_divId_attr)
     {
-        m_s_divId_attr->toXmlAttr("divId", _outStream);
+        m_divId_attr->toXmlAttr("divId", _outStream);
     }
     
     
@@ -83007,21 +87346,21 @@ CT_WebPublishItems* CT_WebPublishItems::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_sourceObject_attr)
+    if (m_has_sourceObject_attr)
     {
-        m_s_sourceObject_attr->toXmlAttr("sourceObject", _outStream);
+        m_sourceObject_attr->toXmlAttr("sourceObject", _outStream);
     }
     
     
-    if (m_has_s_destinationFile_attr)
+    if (m_has_destinationFile_attr)
     {
-        m_s_destinationFile_attr->toXmlAttr("destinationFile", _outStream);
+        m_destinationFile_attr->toXmlAttr("destinationFile", _outStream);
     }
     
     
-    if (m_has_s_title_attr)
+    if (m_has_title_attr)
     {
-        m_s_title_attr->toXmlAttr("title", _outStream);
+        m_title_attr->toXmlAttr("title", _outStream);
     }
     
     
@@ -83060,22 +87399,22 @@ CT_WebPublishItems* CT_WebPublishItems::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool CT_WebPublishItem::has_s_divId_attr() const
+    bool CT_WebPublishItem::has_divId_attr() const
     {    
-    return m_has_s_divId_attr;
+    return m_has_divId_attr;
     }
 
-    void CT_WebPublishItem::set_s_divId_attr(const ns_s::ST_Xstring& _s_divId_attr)
+    void CT_WebPublishItem::set_divId_attr(const ns_s::ST_Xstring& _divId_attr)
     {    
-    m_has_s_divId_attr = true;
-    m_s_divId_attr = new ns_s::ST_Xstring(_s_divId_attr);
+    m_has_divId_attr = true;
+    m_divId_attr = new ns_s::ST_Xstring(_divId_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WebPublishItem::get_s_divId_attr() const
+    const ns_s::ST_Xstring& CT_WebPublishItem::get_divId_attr() const
     {    
-    if (m_s_divId_attr)
+    if (m_divId_attr)
     {
-        return *m_s_divId_attr;
+        return *m_divId_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -83120,62 +87459,62 @@ CT_WebPublishItems* CT_WebPublishItems::default_instance_ = NULL;
     return ST_Ref::default_instance();
     }
 
-    bool CT_WebPublishItem::has_s_sourceObject_attr() const
+    bool CT_WebPublishItem::has_sourceObject_attr() const
     {    
-    return m_has_s_sourceObject_attr;
+    return m_has_sourceObject_attr;
     }
 
-    void CT_WebPublishItem::set_s_sourceObject_attr(const ns_s::ST_Xstring& _s_sourceObject_attr)
+    void CT_WebPublishItem::set_sourceObject_attr(const ns_s::ST_Xstring& _sourceObject_attr)
     {    
-    m_has_s_sourceObject_attr = true;
-    m_s_sourceObject_attr = new ns_s::ST_Xstring(_s_sourceObject_attr);
+    m_has_sourceObject_attr = true;
+    m_sourceObject_attr = new ns_s::ST_Xstring(_sourceObject_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WebPublishItem::get_s_sourceObject_attr() const
+    const ns_s::ST_Xstring& CT_WebPublishItem::get_sourceObject_attr() const
     {    
-    if (m_s_sourceObject_attr)
+    if (m_sourceObject_attr)
     {
-        return *m_s_sourceObject_attr;
+        return *m_sourceObject_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_WebPublishItem::has_s_destinationFile_attr() const
+    bool CT_WebPublishItem::has_destinationFile_attr() const
     {    
-    return m_has_s_destinationFile_attr;
+    return m_has_destinationFile_attr;
     }
 
-    void CT_WebPublishItem::set_s_destinationFile_attr(const ns_s::ST_Xstring& _s_destinationFile_attr)
+    void CT_WebPublishItem::set_destinationFile_attr(const ns_s::ST_Xstring& _destinationFile_attr)
     {    
-    m_has_s_destinationFile_attr = true;
-    m_s_destinationFile_attr = new ns_s::ST_Xstring(_s_destinationFile_attr);
+    m_has_destinationFile_attr = true;
+    m_destinationFile_attr = new ns_s::ST_Xstring(_destinationFile_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WebPublishItem::get_s_destinationFile_attr() const
+    const ns_s::ST_Xstring& CT_WebPublishItem::get_destinationFile_attr() const
     {    
-    if (m_s_destinationFile_attr)
+    if (m_destinationFile_attr)
     {
-        return *m_s_destinationFile_attr;
+        return *m_destinationFile_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_WebPublishItem::has_s_title_attr() const
+    bool CT_WebPublishItem::has_title_attr() const
     {    
-    return m_has_s_title_attr;
+    return m_has_title_attr;
     }
 
-    void CT_WebPublishItem::set_s_title_attr(const ns_s::ST_Xstring& _s_title_attr)
+    void CT_WebPublishItem::set_title_attr(const ns_s::ST_Xstring& _title_attr)
     {    
-    m_has_s_title_attr = true;
-    m_s_title_attr = new ns_s::ST_Xstring(_s_title_attr);
+    m_has_title_attr = true;
+    m_title_attr = new ns_s::ST_Xstring(_title_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WebPublishItem::get_s_title_attr() const
+    const ns_s::ST_Xstring& CT_WebPublishItem::get_title_attr() const
     {    
-    if (m_s_title_attr)
+    if (m_title_attr)
     {
-        return *m_s_title_attr;
+        return *m_title_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -83199,6 +87538,10 @@ CT_WebPublishItems* CT_WebPublishItems::default_instance_ = NULL;
 CT_WebPublishItem* CT_WebPublishItem::default_instance_ = NULL;
 
     // CT_Controls
+    CT_Controls::CT_Controls()
+
+    {
+    }
     CT_Control* CT_Controls::add_control()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -83236,7 +87579,7 @@ CT_WebPublishItem* CT_WebPublishItem::default_instance_ = NULL;
         {
             if ((*iter)->has_control())
             {
-                (*iter)->get_control().toXmlElem("control", "", _outStream);
+                (*iter)->get_control().toXmlElem("main:control", "", _outStream);
             }
         }
     }
@@ -83255,6 +87598,11 @@ CT_WebPublishItem* CT_WebPublishItem::default_instance_ = NULL;
 
 
     // CT_Controls::ChildGroup_1
+    CT_Controls::ChildGroup_1::ChildGroup_1()
+    :m_has_control(false),
+    m_control(NULL)
+    {
+    }
     bool CT_Controls::ChildGroup_1::has_control() const
     {    
     return m_has_control;
@@ -83283,6 +87631,17 @@ CT_WebPublishItem* CT_WebPublishItem::default_instance_ = NULL;
 CT_Controls* CT_Controls::default_instance_ = NULL;
 
     // CT_Control
+    CT_Control::CT_Control()
+    :m_has_controlPr(false),
+    m_controlPr(NULL),
+    m_has_shapeId_attr(false),
+    m_shapeId_attr(0),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_name_attr(false),
+    m_name_attr("")
+    {
+    }
     bool CT_Control::has_controlPr() const
     {    
     return m_has_controlPr;
@@ -83342,7 +87701,7 @@ CT_Controls* CT_Controls::default_instance_ = NULL;
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
@@ -83355,7 +87714,7 @@ CT_Controls* CT_Controls::default_instance_ = NULL;
             
     if (m_has_controlPr)
     {
-        m_controlPr->toXmlElem("controlPr", "", _outStream);;
+        m_controlPr->toXmlElem("main:controlPr", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -83425,6 +87784,41 @@ CT_Controls* CT_Controls::default_instance_ = NULL;
 CT_Control* CT_Control::default_instance_ = NULL;
 
     // CT_ControlPr
+    CT_ControlPr::CT_ControlPr()
+    :m_has_anchor(false),
+    m_anchor(NULL),
+    m_has_locked_attr(false),
+    m_locked_attr(false),
+    m_has_defaultSize_attr(false),
+    m_defaultSize_attr(false),
+    m_has_print_attr(false),
+    m_print_attr(false),
+    m_has_disabled_attr(false),
+    m_disabled_attr(false),
+    m_has_recalcAlways_attr(false),
+    m_recalcAlways_attr(false),
+    m_has_uiObject_attr(false),
+    m_uiObject_attr(false),
+    m_has_autoFill_attr(false),
+    m_autoFill_attr(false),
+    m_has_autoLine_attr(false),
+    m_autoLine_attr(false),
+    m_has_autoPict_attr(false),
+    m_autoPict_attr(false),
+    m_has_macro_attr(false),
+    m_macro_attr(NULL),
+    m_has_altText_attr(false),
+    m_altText_attr(NULL),
+    m_has_linkedCell_attr(false),
+    m_linkedCell_attr(NULL),
+    m_has_listFillRange_attr(false),
+    m_listFillRange_attr(NULL),
+    m_has_cf_attr(false),
+    m_cf_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     bool CT_ControlPr::has_anchor() const
     {    
     return m_has_anchor;
@@ -83487,12 +87881,12 @@ CT_Control* CT_Control::default_instance_ = NULL;
     }
     
     
-    m_has_s_altText_attr = false;
+    m_has_altText_attr = false;
     
-    if (m_s_altText_attr)
+    if (m_altText_attr)
     {
-        delete m_s_altText_attr;
-        m_s_altText_attr = NULL;
+        delete m_altText_attr;
+        m_altText_attr = NULL;
     }
     
     
@@ -83514,12 +87908,12 @@ CT_Control* CT_Control::default_instance_ = NULL;
     }
     
     
-    m_has_s_cf_attr = false;
+    m_has_cf_attr = false;
     
-    if (m_s_cf_attr)
+    if (m_cf_attr)
     {
-        delete m_s_cf_attr;
-        m_s_cf_attr = NULL;
+        delete m_cf_attr;
+        m_cf_attr = NULL;
     }
     
     
@@ -83602,9 +87996,9 @@ CT_Control* CT_Control::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_altText_attr)
+    if (m_has_altText_attr)
     {
-        m_s_altText_attr->toXmlAttr("altText", _outStream);
+        m_altText_attr->toXmlAttr("altText", _outStream);
     }
     
     
@@ -83620,22 +88014,22 @@ CT_Control* CT_Control::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_cf_attr)
+    if (m_has_cf_attr)
     {
-        m_s_cf_attr->toXmlAttr("cf", _outStream);
+        m_cf_attr->toXmlAttr("cf", _outStream);
     }
     
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_anchor)
     {
-        m_anchor->toXmlElem("anchor", "", _outStream);;
+        m_anchor->toXmlElem("main:anchor", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -83814,22 +88208,22 @@ CT_Control* CT_Control::default_instance_ = NULL;
     return ST_Formula::default_instance();
     }
 
-    bool CT_ControlPr::has_s_altText_attr() const
+    bool CT_ControlPr::has_altText_attr() const
     {    
-    return m_has_s_altText_attr;
+    return m_has_altText_attr;
     }
 
-    void CT_ControlPr::set_s_altText_attr(const ns_s::ST_Xstring& _s_altText_attr)
+    void CT_ControlPr::set_altText_attr(const ns_s::ST_Xstring& _altText_attr)
     {    
-    m_has_s_altText_attr = true;
-    m_s_altText_attr = new ns_s::ST_Xstring(_s_altText_attr);
+    m_has_altText_attr = true;
+    m_altText_attr = new ns_s::ST_Xstring(_altText_attr);
     }
 
-    const ns_s::ST_Xstring& CT_ControlPr::get_s_altText_attr() const
+    const ns_s::ST_Xstring& CT_ControlPr::get_altText_attr() const
     {    
-    if (m_s_altText_attr)
+    if (m_altText_attr)
     {
-        return *m_s_altText_attr;
+        return *m_altText_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -83874,22 +88268,22 @@ CT_Control* CT_Control::default_instance_ = NULL;
     return ST_Formula::default_instance();
     }
 
-    bool CT_ControlPr::has_s_cf_attr() const
+    bool CT_ControlPr::has_cf_attr() const
     {    
-    return m_has_s_cf_attr;
+    return m_has_cf_attr;
     }
 
-    void CT_ControlPr::set_s_cf_attr(const ns_s::ST_Xstring& _s_cf_attr)
+    void CT_ControlPr::set_cf_attr(const ns_s::ST_Xstring& _cf_attr)
     {    
-    m_has_s_cf_attr = true;
-    m_s_cf_attr = new ns_s::ST_Xstring(_s_cf_attr);
+    m_has_cf_attr = true;
+    m_cf_attr = new ns_s::ST_Xstring(_cf_attr);
     }
 
-    const ns_s::ST_Xstring& CT_ControlPr::get_s_cf_attr() const
+    const ns_s::ST_Xstring& CT_ControlPr::get_cf_attr() const
     {    
-    if (m_s_cf_attr)
+    if (m_cf_attr)
     {
-        return *m_s_cf_attr;
+        return *m_cf_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -83917,6 +88311,10 @@ CT_Control* CT_Control::default_instance_ = NULL;
 CT_ControlPr* CT_ControlPr::default_instance_ = NULL;
 
     // CT_IgnoredErrors
+    CT_IgnoredErrors::CT_IgnoredErrors()
+
+    {
+    }
     CT_IgnoredError* CT_IgnoredErrors::add_ignoredError()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -83962,11 +88360,11 @@ CT_ControlPr* CT_ControlPr::default_instance_ = NULL;
         {
             if ((*iter)->has_ignoredError())
             {
-                (*iter)->get_ignoredError().toXmlElem("ignoredError", "", _outStream);
+                (*iter)->get_ignoredError().toXmlElem("main:ignoredError", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -83985,6 +88383,13 @@ CT_ControlPr* CT_ControlPr::default_instance_ = NULL;
 
 
     // CT_IgnoredErrors::ChildGroup_1
+    CT_IgnoredErrors::ChildGroup_1::ChildGroup_1()
+    :m_has_ignoredError(false),
+    m_ignoredError(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_IgnoredErrors::ChildGroup_1::has_ignoredError() const
     {    
     return m_has_ignoredError;
@@ -84056,6 +88461,29 @@ CT_ControlPr* CT_ControlPr::default_instance_ = NULL;
 CT_IgnoredErrors* CT_IgnoredErrors::default_instance_ = NULL;
 
     // CT_IgnoredError
+    CT_IgnoredError::CT_IgnoredError()
+    :m_has_sqref_attr(false),
+    m_sqref_attr(NULL),
+    m_has_evalError_attr(false),
+    m_evalError_attr(false),
+    m_has_twoDigitTextYear_attr(false),
+    m_twoDigitTextYear_attr(false),
+    m_has_numberStoredAsText_attr(false),
+    m_numberStoredAsText_attr(false),
+    m_has_formula_attr(false),
+    m_formula_attr(false),
+    m_has_formulaRange_attr(false),
+    m_formulaRange_attr(false),
+    m_has_unlockedFormula_attr(false),
+    m_unlockedFormula_attr(false),
+    m_has_emptyCellReference_attr(false),
+    m_emptyCellReference_attr(false),
+    m_has_listDataValidation_attr(false),
+    m_listDataValidation_attr(false),
+    m_has_calculatedColumn_attr(false),
+    m_calculatedColumn_attr(false)
+    {
+    }
     void CT_IgnoredError::clear()
     {    
     m_has_sqref_attr = false;
@@ -84344,6 +88772,11 @@ CT_IgnoredErrors* CT_IgnoredErrors::default_instance_ = NULL;
 CT_IgnoredError* CT_IgnoredError::default_instance_ = NULL;
 
     // CT_TableParts
+    CT_TableParts::CT_TableParts()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_TablePart* CT_TableParts::add_tablePart()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -84389,7 +88822,7 @@ CT_IgnoredError* CT_IgnoredError::default_instance_ = NULL;
         {
             if ((*iter)->has_tablePart())
             {
-                (*iter)->get_tablePart().toXmlElem("tablePart", "", _outStream);
+                (*iter)->get_tablePart().toXmlElem("main:tablePart", "", _outStream);
             }
         }
     }
@@ -84424,6 +88857,11 @@ CT_IgnoredError* CT_IgnoredError::default_instance_ = NULL;
 
 
     // CT_TableParts::ChildGroup_1
+    CT_TableParts::ChildGroup_1::ChildGroup_1()
+    :m_has_tablePart(false),
+    m_tablePart(NULL)
+    {
+    }
     bool CT_TableParts::ChildGroup_1::has_tablePart() const
     {    
     return m_has_tablePart;
@@ -84452,6 +88890,11 @@ CT_IgnoredError* CT_IgnoredError::default_instance_ = NULL;
 CT_TableParts* CT_TableParts::default_instance_ = NULL;
 
     // CT_TablePart
+    CT_TablePart::CT_TablePart()
+    :m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     void CT_TablePart::clear()
     {    
     m_has_r_id_attr = false;
@@ -84475,7 +88918,7 @@ CT_TableParts* CT_TableParts::default_instance_ = NULL;
             
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
@@ -84515,6 +88958,15 @@ CT_TableParts* CT_TableParts::default_instance_ = NULL;
 CT_TablePart* CT_TablePart::default_instance_ = NULL;
 
     // CT_Metadata
+    CT_Metadata::CT_Metadata()
+    :m_has_metadataTypes(false),
+    m_metadataTypes(NULL),
+    m_has_metadataStrings(false),
+    m_metadataStrings(NULL),
+    m_has_mdxMetadata(false),
+    m_mdxMetadata(NULL)
+    {
+    }
     bool CT_Metadata::has_metadataTypes() const
     {    
     return m_has_metadataTypes;
@@ -84671,17 +89123,17 @@ CT_TablePart* CT_TablePart::default_instance_ = NULL;
             
     if (m_has_metadataTypes)
     {
-        m_metadataTypes->toXmlElem("metadataTypes", "", _outStream);;
+        m_metadataTypes->toXmlElem("main:metadataTypes", "", _outStream);;
     }
     
     if (m_has_metadataStrings)
     {
-        m_metadataStrings->toXmlElem("metadataStrings", "", _outStream);;
+        m_metadataStrings->toXmlElem("main:metadataStrings", "", _outStream);;
     }
     
     if (m_has_mdxMetadata)
     {
-        m_mdxMetadata->toXmlElem("mdxMetadata", "", _outStream);;
+        m_mdxMetadata->toXmlElem("main:mdxMetadata", "", _outStream);;
     }
      
     {
@@ -84690,19 +89142,19 @@ CT_TablePart* CT_TablePart::default_instance_ = NULL;
         {
             if ((*iter)->has_futureMetadata())
             {
-                (*iter)->get_futureMetadata().toXmlElem("futureMetadata", "", _outStream);
+                (*iter)->get_futureMetadata().toXmlElem("main:futureMetadata", "", _outStream);
             }
             else if ((*iter)->has_cellMetadata())
             {
-                (*iter)->get_cellMetadata().toXmlElem("cellMetadata", "", _outStream);
+                (*iter)->get_cellMetadata().toXmlElem("main:cellMetadata", "", _outStream);
             }
             else if ((*iter)->has_valueMetadata())
             {
-                (*iter)->get_valueMetadata().toXmlElem("valueMetadata", "", _outStream);
+                (*iter)->get_valueMetadata().toXmlElem("main:valueMetadata", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -84721,6 +89173,17 @@ CT_TablePart* CT_TablePart::default_instance_ = NULL;
 
 
     // CT_Metadata::ChildGroup_1
+    CT_Metadata::ChildGroup_1::ChildGroup_1()
+    :m_has_futureMetadata(false),
+    m_futureMetadata(NULL),
+    m_has_cellMetadata(false),
+    m_cellMetadata(NULL),
+    m_has_valueMetadata(false),
+    m_valueMetadata(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Metadata::ChildGroup_1::has_futureMetadata() const
     {    
     return m_has_futureMetadata;
@@ -84932,6 +89395,11 @@ CT_TablePart* CT_TablePart::default_instance_ = NULL;
 CT_Metadata* CT_Metadata::default_instance_ = NULL;
 
     // CT_MetadataTypes
+    CT_MetadataTypes::CT_MetadataTypes()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_MetadataType* CT_MetadataTypes::add_metadataType()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -84977,7 +89445,7 @@ CT_Metadata* CT_Metadata::default_instance_ = NULL;
         {
             if ((*iter)->has_metadataType())
             {
-                (*iter)->get_metadataType().toXmlElem("metadataType", "", _outStream);
+                (*iter)->get_metadataType().toXmlElem("main:metadataType", "", _outStream);
             }
         }
     }
@@ -85012,6 +89480,11 @@ CT_Metadata* CT_Metadata::default_instance_ = NULL;
 
 
     // CT_MetadataTypes::ChildGroup_1
+    CT_MetadataTypes::ChildGroup_1::ChildGroup_1()
+    :m_has_metadataType(false),
+    m_metadataType(NULL)
+    {
+    }
     bool CT_MetadataTypes::ChildGroup_1::has_metadataType() const
     {    
     return m_has_metadataType;
@@ -85040,14 +89513,73 @@ CT_Metadata* CT_Metadata::default_instance_ = NULL;
 CT_MetadataTypes* CT_MetadataTypes::default_instance_ = NULL;
 
     // CT_MetadataType
+    CT_MetadataType::CT_MetadataType()
+    :m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_minSupportedVersion_attr(false),
+    m_minSupportedVersion_attr(0),
+    m_has_ghostRow_attr(false),
+    m_ghostRow_attr(false),
+    m_has_ghostCol_attr(false),
+    m_ghostCol_attr(false),
+    m_has_edit_attr(false),
+    m_edit_attr(false),
+    m_has_delete_attr(false),
+    m_delete_attr(false),
+    m_has_copy_attr(false),
+    m_copy_attr(false),
+    m_has_pasteAll_attr(false),
+    m_pasteAll_attr(false),
+    m_has_pasteFormulas_attr(false),
+    m_pasteFormulas_attr(false),
+    m_has_pasteValues_attr(false),
+    m_pasteValues_attr(false),
+    m_has_pasteFormats_attr(false),
+    m_pasteFormats_attr(false),
+    m_has_pasteComments_attr(false),
+    m_pasteComments_attr(false),
+    m_has_pasteDataValidation_attr(false),
+    m_pasteDataValidation_attr(false),
+    m_has_pasteBorders_attr(false),
+    m_pasteBorders_attr(false),
+    m_has_pasteColWidths_attr(false),
+    m_pasteColWidths_attr(false),
+    m_has_pasteNumberFormats_attr(false),
+    m_pasteNumberFormats_attr(false),
+    m_has_merge_attr(false),
+    m_merge_attr(false),
+    m_has_splitFirst_attr(false),
+    m_splitFirst_attr(false),
+    m_has_splitAll_attr(false),
+    m_splitAll_attr(false),
+    m_has_rowColShift_attr(false),
+    m_rowColShift_attr(false),
+    m_has_clearAll_attr(false),
+    m_clearAll_attr(false),
+    m_has_clearFormats_attr(false),
+    m_clearFormats_attr(false),
+    m_has_clearContents_attr(false),
+    m_clearContents_attr(false),
+    m_has_clearComments_attr(false),
+    m_clearComments_attr(false),
+    m_has_assign_attr(false),
+    m_assign_attr(false),
+    m_has_coerce_attr(false),
+    m_coerce_attr(false),
+    m_has_adjust_attr(false),
+    m_adjust_attr(false),
+    m_has_cellMeta_attr(false),
+    m_cellMeta_attr(false)
+    {
+    }
     void CT_MetadataType::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -85142,9 +89674,9 @@ CT_MetadataTypes* CT_MetadataTypes::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -85323,22 +89855,22 @@ CT_MetadataTypes* CT_MetadataTypes::default_instance_ = NULL;
     return *CT_MetadataType::default_instance_;
     }
 
-    bool CT_MetadataType::has_s_name_attr() const
+    bool CT_MetadataType::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_MetadataType::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_MetadataType::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_MetadataType::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_MetadataType::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -85778,6 +90310,11 @@ CT_MetadataTypes* CT_MetadataTypes::default_instance_ = NULL;
 CT_MetadataType* CT_MetadataType::default_instance_ = NULL;
 
     // CT_MetadataBlocks
+    CT_MetadataBlocks::CT_MetadataBlocks()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_MetadataBlock* CT_MetadataBlocks::add_bk()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -85823,7 +90360,7 @@ CT_MetadataType* CT_MetadataType::default_instance_ = NULL;
         {
             if ((*iter)->has_bk())
             {
-                (*iter)->get_bk().toXmlElem("bk", "", _outStream);
+                (*iter)->get_bk().toXmlElem("main:bk", "", _outStream);
             }
         }
     }
@@ -85858,6 +90395,11 @@ CT_MetadataType* CT_MetadataType::default_instance_ = NULL;
 
 
     // CT_MetadataBlocks::ChildGroup_1
+    CT_MetadataBlocks::ChildGroup_1::ChildGroup_1()
+    :m_has_bk(false),
+    m_bk(NULL)
+    {
+    }
     bool CT_MetadataBlocks::ChildGroup_1::has_bk() const
     {    
     return m_has_bk;
@@ -85886,6 +90428,10 @@ CT_MetadataType* CT_MetadataType::default_instance_ = NULL;
 CT_MetadataBlocks* CT_MetadataBlocks::default_instance_ = NULL;
 
     // CT_MetadataBlock
+    CT_MetadataBlock::CT_MetadataBlock()
+
+    {
+    }
     CT_MetadataRecord* CT_MetadataBlock::add_rc()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -85923,7 +90469,7 @@ CT_MetadataBlocks* CT_MetadataBlocks::default_instance_ = NULL;
         {
             if ((*iter)->has_rc())
             {
-                (*iter)->get_rc().toXmlElem("rc", "", _outStream);
+                (*iter)->get_rc().toXmlElem("main:rc", "", _outStream);
             }
         }
     }
@@ -85942,6 +90488,11 @@ CT_MetadataBlocks* CT_MetadataBlocks::default_instance_ = NULL;
 
 
     // CT_MetadataBlock::ChildGroup_1
+    CT_MetadataBlock::ChildGroup_1::ChildGroup_1()
+    :m_has_rc(false),
+    m_rc(NULL)
+    {
+    }
     bool CT_MetadataBlock::ChildGroup_1::has_rc() const
     {    
     return m_has_rc;
@@ -85970,6 +90521,13 @@ CT_MetadataBlocks* CT_MetadataBlocks::default_instance_ = NULL;
 CT_MetadataBlock* CT_MetadataBlock::default_instance_ = NULL;
 
     // CT_MetadataRecord
+    CT_MetadataRecord::CT_MetadataRecord()
+    :m_has_t_attr(false),
+    m_t_attr(0),
+    m_has_v_attr(false),
+    m_v_attr(0)
+    {
+    }
     void CT_MetadataRecord::clear()
     {    
     m_has_t_attr = false;
@@ -86048,6 +90606,13 @@ CT_MetadataBlock* CT_MetadataBlock::default_instance_ = NULL;
 CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
 
     // CT_FutureMetadata
+    CT_FutureMetadata::CT_FutureMetadata()
+    :m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_FutureMetadataBlock* CT_FutureMetadata::add_bk()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -86066,12 +90631,12 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
 
     void CT_FutureMetadata::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -86097,9 +90662,9 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -86116,11 +90681,11 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
         {
             if ((*iter)->has_bk())
             {
-                (*iter)->get_bk().toXmlElem("bk", "", _outStream);
+                (*iter)->get_bk().toXmlElem("main:bk", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -86137,22 +90702,22 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
     return *CT_FutureMetadata::default_instance_;
     }
 
-    bool CT_FutureMetadata::has_s_name_attr() const
+    bool CT_FutureMetadata::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_FutureMetadata::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_FutureMetadata::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_FutureMetadata::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_FutureMetadata::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -86175,6 +90740,13 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
 
 
     // CT_FutureMetadata::ChildGroup_1
+    CT_FutureMetadata::ChildGroup_1::ChildGroup_1()
+    :m_has_bk(false),
+    m_bk(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_FutureMetadata::ChildGroup_1::has_bk() const
     {    
     return m_has_bk;
@@ -86246,6 +90818,11 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
 CT_FutureMetadata* CT_FutureMetadata::default_instance_ = NULL;
 
     // CT_FutureMetadataBlock
+    CT_FutureMetadataBlock::CT_FutureMetadataBlock()
+    :m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_FutureMetadataBlock::has_extLst() const
     {    
     return m_has_extLst;
@@ -86286,7 +90863,7 @@ CT_FutureMetadata* CT_FutureMetadata::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -86304,6 +90881,11 @@ CT_FutureMetadata* CT_FutureMetadata::default_instance_ = NULL;
 CT_FutureMetadataBlock* CT_FutureMetadataBlock::default_instance_ = NULL;
 
     // CT_MdxMetadata
+    CT_MdxMetadata::CT_MdxMetadata()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Mdx* CT_MdxMetadata::add_mdx()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -86349,7 +90931,7 @@ CT_FutureMetadataBlock* CT_FutureMetadataBlock::default_instance_ = NULL;
         {
             if ((*iter)->has_mdx())
             {
-                (*iter)->get_mdx().toXmlElem("mdx", "", _outStream);
+                (*iter)->get_mdx().toXmlElem("main:mdx", "", _outStream);
             }
         }
     }
@@ -86384,6 +90966,11 @@ CT_FutureMetadataBlock* CT_FutureMetadataBlock::default_instance_ = NULL;
 
 
     // CT_MdxMetadata::ChildGroup_1
+    CT_MdxMetadata::ChildGroup_1::ChildGroup_1()
+    :m_has_mdx(false),
+    m_mdx(NULL)
+    {
+    }
     bool CT_MdxMetadata::ChildGroup_1::has_mdx() const
     {    
     return m_has_mdx;
@@ -86412,6 +90999,21 @@ CT_FutureMetadataBlock* CT_FutureMetadataBlock::default_instance_ = NULL;
 CT_MdxMetadata* CT_MdxMetadata::default_instance_ = NULL;
 
     // CT_Mdx
+    CT_Mdx::CT_Mdx()
+    :m_has_t(false),
+    m_t(NULL),
+    m_has_ms(false),
+    m_ms(NULL),
+    m_has_p(false),
+    m_p(NULL),
+    m_has_k(false),
+    m_k(NULL),
+    m_has_n_attr(false),
+    m_n_attr(0),
+    m_has_f_attr(false),
+    m_f_attr(NULL)
+    {
+    }
     bool CT_Mdx::has_t() const
     {    
     return m_has_t;
@@ -86659,22 +91261,22 @@ CT_MdxMetadata* CT_MdxMetadata::default_instance_ = NULL;
             
     if (m_has_t)
     {
-        m_t->toXmlElem("t", "", _outStream);;
+        m_t->toXmlElem("main:t", "", _outStream);;
     }
     
     if (m_has_ms)
     {
-        m_ms->toXmlElem("ms", "", _outStream);;
+        m_ms->toXmlElem("main:ms", "", _outStream);;
     }
     
     if (m_has_p)
     {
-        m_p->toXmlElem("p", "", _outStream);;
+        m_p->toXmlElem("main:p", "", _outStream);;
     }
     
     if (m_has_k)
     {
-        m_k->toXmlElem("k", "", _outStream);;
+        m_k->toXmlElem("main:k", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -86728,6 +91330,29 @@ CT_MdxMetadata* CT_MdxMetadata::default_instance_ = NULL;
 CT_Mdx* CT_Mdx::default_instance_ = NULL;
 
     // CT_MdxTuple
+    CT_MdxTuple::CT_MdxTuple()
+    :m_has_c_attr(false),
+    m_c_attr(0),
+    m_has_ct_attr(false),
+    m_ct_attr(NULL),
+    m_has_si_attr(false),
+    m_si_attr(0),
+    m_has_fi_attr(false),
+    m_fi_attr(0),
+    m_has_bc_attr(false),
+    m_bc_attr(NULL),
+    m_has_fc_attr(false),
+    m_fc_attr(NULL),
+    m_has_i_attr(false),
+    m_i_attr(false),
+    m_has_u_attr(false),
+    m_u_attr(false),
+    m_has_st_attr(false),
+    m_st_attr(false),
+    m_has_b_attr(false),
+    m_b_attr(false)
+    {
+    }
     CT_MetadataStringIndex* CT_MdxTuple::add_n()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -86741,12 +91366,12 @@ CT_Mdx* CT_Mdx::default_instance_ = NULL;
     m_has_c_attr = false;
     m_c_attr = 0;
     
-    m_has_s_ct_attr = false;
+    m_has_ct_attr = false;
     
-    if (m_s_ct_attr)
+    if (m_ct_attr)
     {
-        delete m_s_ct_attr;
-        m_s_ct_attr = NULL;
+        delete m_ct_attr;
+        m_ct_attr = NULL;
     }
     
     
@@ -86811,9 +91436,9 @@ CT_Mdx* CT_Mdx::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_ct_attr)
+    if (m_has_ct_attr)
     {
-        m_s_ct_attr->toXmlAttr("ct", _outStream);
+        m_ct_attr->toXmlAttr("ct", _outStream);
     }
     
     
@@ -86872,7 +91497,7 @@ CT_Mdx* CT_Mdx::default_instance_ = NULL;
         {
             if ((*iter)->has_n())
             {
-                (*iter)->get_n().toXmlElem("n", "", _outStream);
+                (*iter)->get_n().toXmlElem("main:n", "", _outStream);
             }
         }
     }
@@ -86905,22 +91530,22 @@ CT_Mdx* CT_Mdx::default_instance_ = NULL;
     return m_c_attr;
     }
 
-    bool CT_MdxTuple::has_s_ct_attr() const
+    bool CT_MdxTuple::has_ct_attr() const
     {    
-    return m_has_s_ct_attr;
+    return m_has_ct_attr;
     }
 
-    void CT_MdxTuple::set_s_ct_attr(const ns_s::ST_Xstring& _s_ct_attr)
+    void CT_MdxTuple::set_ct_attr(const ns_s::ST_Xstring& _ct_attr)
     {    
-    m_has_s_ct_attr = true;
-    m_s_ct_attr = new ns_s::ST_Xstring(_s_ct_attr);
+    m_has_ct_attr = true;
+    m_ct_attr = new ns_s::ST_Xstring(_ct_attr);
     }
 
-    const ns_s::ST_Xstring& CT_MdxTuple::get_s_ct_attr() const
+    const ns_s::ST_Xstring& CT_MdxTuple::get_ct_attr() const
     {    
-    if (m_s_ct_attr)
+    if (m_ct_attr)
     {
-        return *m_s_ct_attr;
+        return *m_ct_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -87063,6 +91688,11 @@ CT_Mdx* CT_Mdx::default_instance_ = NULL;
 
 
     // CT_MdxTuple::ChildGroup_1
+    CT_MdxTuple::ChildGroup_1::ChildGroup_1()
+    :m_has_n(false),
+    m_n(NULL)
+    {
+    }
     bool CT_MdxTuple::ChildGroup_1::has_n() const
     {    
     return m_has_n;
@@ -87091,6 +91721,15 @@ CT_Mdx* CT_Mdx::default_instance_ = NULL;
 CT_MdxTuple* CT_MdxTuple::default_instance_ = NULL;
 
     // CT_MdxSet
+    CT_MdxSet::CT_MdxSet()
+    :m_has_ns_attr(false),
+    m_ns_attr(0),
+    m_has_c_attr(false),
+    m_c_attr(0),
+    m_has_o_attr(false),
+    m_o_attr(NULL)
+    {
+    }
     CT_MetadataStringIndex* CT_MdxSet::add_n()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -87160,7 +91799,7 @@ CT_MdxTuple* CT_MdxTuple::default_instance_ = NULL;
         {
             if ((*iter)->has_n())
             {
-                (*iter)->get_n().toXmlElem("n", "", _outStream);
+                (*iter)->get_n().toXmlElem("main:n", "", _outStream);
             }
         }
     }
@@ -87231,6 +91870,11 @@ CT_MdxTuple* CT_MdxTuple::default_instance_ = NULL;
 
 
     // CT_MdxSet::ChildGroup_1
+    CT_MdxSet::ChildGroup_1::ChildGroup_1()
+    :m_has_n(false),
+    m_n(NULL)
+    {
+    }
     bool CT_MdxSet::ChildGroup_1::has_n() const
     {    
     return m_has_n;
@@ -87259,6 +91903,13 @@ CT_MdxTuple* CT_MdxTuple::default_instance_ = NULL;
 CT_MdxSet* CT_MdxSet::default_instance_ = NULL;
 
     // CT_MdxMemeberProp
+    CT_MdxMemeberProp::CT_MdxMemeberProp()
+    :m_has_n_attr(false),
+    m_n_attr(0),
+    m_has_np_attr(false),
+    m_np_attr(0)
+    {
+    }
     void CT_MdxMemeberProp::clear()
     {    
     m_has_n_attr = false;
@@ -87337,6 +91988,15 @@ CT_MdxSet* CT_MdxSet::default_instance_ = NULL;
 CT_MdxMemeberProp* CT_MdxMemeberProp::default_instance_ = NULL;
 
     // CT_MdxKPI
+    CT_MdxKPI::CT_MdxKPI()
+    :m_has_n_attr(false),
+    m_n_attr(0),
+    m_has_np_attr(false),
+    m_np_attr(0),
+    m_has_p_attr(false),
+    m_p_attr(NULL)
+    {
+    }
     void CT_MdxKPI::clear()
     {    
     m_has_n_attr = false;
@@ -87450,6 +92110,13 @@ CT_MdxMemeberProp* CT_MdxMemeberProp::default_instance_ = NULL;
 CT_MdxKPI* CT_MdxKPI::default_instance_ = NULL;
 
     // CT_MetadataStringIndex
+    CT_MetadataStringIndex::CT_MetadataStringIndex()
+    :m_has_x_attr(false),
+    m_x_attr(0),
+    m_has_s_attr(false),
+    m_s_attr(false)
+    {
+    }
     void CT_MetadataStringIndex::clear()
     {    
     m_has_x_attr = false;
@@ -87528,6 +92195,11 @@ CT_MdxKPI* CT_MdxKPI::default_instance_ = NULL;
 CT_MetadataStringIndex* CT_MetadataStringIndex::default_instance_ = NULL;
 
     // CT_MetadataStrings
+    CT_MetadataStrings::CT_MetadataStrings()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_XStringElement* CT_MetadataStrings::add_s()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -87573,7 +92245,7 @@ CT_MetadataStringIndex* CT_MetadataStringIndex::default_instance_ = NULL;
         {
             if ((*iter)->has_s())
             {
-                (*iter)->get_s().toXmlElem("s", "", _outStream);
+                (*iter)->get_s().toXmlElem("main:s", "", _outStream);
             }
         }
     }
@@ -87608,6 +92280,11 @@ CT_MetadataStringIndex* CT_MetadataStringIndex::default_instance_ = NULL;
 
 
     // CT_MetadataStrings::ChildGroup_1
+    CT_MetadataStrings::ChildGroup_1::ChildGroup_1()
+    :m_has_s(false),
+    m_s(NULL)
+    {
+    }
     bool CT_MetadataStrings::ChildGroup_1::has_s() const
     {    
     return m_has_s;
@@ -87636,6 +92313,10 @@ CT_MetadataStringIndex* CT_MetadataStringIndex::default_instance_ = NULL;
 CT_MetadataStrings* CT_MetadataStrings::default_instance_ = NULL;
 
     // CT_SingleXmlCells
+    CT_SingleXmlCells::CT_SingleXmlCells()
+
+    {
+    }
     CT_SingleXmlCell* CT_SingleXmlCells::add_singleXmlCell()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -87673,7 +92354,7 @@ CT_MetadataStrings* CT_MetadataStrings::default_instance_ = NULL;
         {
             if ((*iter)->has_singleXmlCell())
             {
-                (*iter)->get_singleXmlCell().toXmlElem("singleXmlCell", "", _outStream);
+                (*iter)->get_singleXmlCell().toXmlElem("main:singleXmlCell", "", _outStream);
             }
         }
     }
@@ -87692,6 +92373,11 @@ CT_MetadataStrings* CT_MetadataStrings::default_instance_ = NULL;
 
 
     // CT_SingleXmlCells::ChildGroup_1
+    CT_SingleXmlCells::ChildGroup_1::ChildGroup_1()
+    :m_has_singleXmlCell(false),
+    m_singleXmlCell(NULL)
+    {
+    }
     bool CT_SingleXmlCells::ChildGroup_1::has_singleXmlCell() const
     {    
     return m_has_singleXmlCell;
@@ -87720,6 +92406,19 @@ CT_MetadataStrings* CT_MetadataStrings::default_instance_ = NULL;
 CT_SingleXmlCells* CT_SingleXmlCells::default_instance_ = NULL;
 
     // CT_SingleXmlCell
+    CT_SingleXmlCell::CT_SingleXmlCell()
+    :m_has_xmlCellPr(false),
+    m_xmlCellPr(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_id_attr(false),
+    m_id_attr(0),
+    m_has_r_attr(false),
+    m_r_attr(NULL),
+    m_has_connectionId_attr(false),
+    m_connectionId_attr(0)
+    {
+    }
     bool CT_SingleXmlCell::has_xmlCellPr() const
     {    
     return m_has_xmlCellPr;
@@ -87816,12 +92515,12 @@ CT_SingleXmlCells* CT_SingleXmlCells::default_instance_ = NULL;
             
     if (m_has_xmlCellPr)
     {
-        m_xmlCellPr->toXmlElem("xmlCellPr", "", _outStream);;
+        m_xmlCellPr->toXmlElem("main:xmlCellPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -87891,6 +92590,17 @@ CT_SingleXmlCells* CT_SingleXmlCells::default_instance_ = NULL;
 CT_SingleXmlCell* CT_SingleXmlCell::default_instance_ = NULL;
 
     // CT_XmlCellPr
+    CT_XmlCellPr::CT_XmlCellPr()
+    :m_has_xmlPr(false),
+    m_xmlPr(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_id_attr(false),
+    m_id_attr(0),
+    m_has_uniqueName_attr(false),
+    m_uniqueName_attr(NULL)
+    {
+    }
     bool CT_XmlCellPr::has_xmlPr() const
     {    
     return m_has_xmlPr;
@@ -87944,12 +92654,12 @@ CT_SingleXmlCell* CT_SingleXmlCell::default_instance_ = NULL;
     m_has_id_attr = false;
     m_id_attr = 0;
     
-    m_has_s_uniqueName_attr = false;
+    m_has_uniqueName_attr = false;
     
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        delete m_s_uniqueName_attr;
-        m_s_uniqueName_attr = NULL;
+        delete m_uniqueName_attr;
+        m_uniqueName_attr = NULL;
     }
     
     }
@@ -87969,21 +92679,21 @@ CT_SingleXmlCell* CT_SingleXmlCell::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_uniqueName_attr)
+    if (m_has_uniqueName_attr)
     {
-        m_s_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
+        m_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_xmlPr)
     {
-        m_xmlPr->toXmlElem("xmlPr", "", _outStream);;
+        m_xmlPr->toXmlElem("main:xmlPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -88014,22 +92724,22 @@ CT_SingleXmlCell* CT_SingleXmlCell::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool CT_XmlCellPr::has_s_uniqueName_attr() const
+    bool CT_XmlCellPr::has_uniqueName_attr() const
     {    
-    return m_has_s_uniqueName_attr;
+    return m_has_uniqueName_attr;
     }
 
-    void CT_XmlCellPr::set_s_uniqueName_attr(const ns_s::ST_Xstring& _s_uniqueName_attr)
+    void CT_XmlCellPr::set_uniqueName_attr(const ns_s::ST_Xstring& _uniqueName_attr)
     {    
-    m_has_s_uniqueName_attr = true;
-    m_s_uniqueName_attr = new ns_s::ST_Xstring(_s_uniqueName_attr);
+    m_has_uniqueName_attr = true;
+    m_uniqueName_attr = new ns_s::ST_Xstring(_uniqueName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_XmlCellPr::get_s_uniqueName_attr() const
+    const ns_s::ST_Xstring& CT_XmlCellPr::get_uniqueName_attr() const
     {    
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        return *m_s_uniqueName_attr;
+        return *m_uniqueName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -88037,6 +92747,17 @@ CT_SingleXmlCell* CT_SingleXmlCell::default_instance_ = NULL;
 CT_XmlCellPr* CT_XmlCellPr::default_instance_ = NULL;
 
     // CT_XmlPr
+    CT_XmlPr::CT_XmlPr()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_mapId_attr(false),
+    m_mapId_attr(0),
+    m_has_xpath_attr(false),
+    m_xpath_attr(NULL),
+    m_has_xmlDataType_attr(false),
+    m_xmlDataType_attr(NULL)
+    {
+    }
     bool CT_XmlPr::has_extLst() const
     {    
     return m_has_extLst;
@@ -88066,12 +92787,12 @@ CT_XmlCellPr* CT_XmlCellPr::default_instance_ = NULL;
     m_has_mapId_attr = false;
     m_mapId_attr = 0;
     
-    m_has_s_xpath_attr = false;
+    m_has_xpath_attr = false;
     
-    if (m_s_xpath_attr)
+    if (m_xpath_attr)
     {
-        delete m_s_xpath_attr;
-        m_s_xpath_attr = NULL;
+        delete m_xpath_attr;
+        m_xpath_attr = NULL;
     }
     
     
@@ -88100,9 +92821,9 @@ CT_XmlCellPr* CT_XmlCellPr::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_xpath_attr)
+    if (m_has_xpath_attr)
     {
-        m_s_xpath_attr->toXmlAttr("xpath", _outStream);
+        m_xpath_attr->toXmlAttr("xpath", _outStream);
     }
     
     
@@ -88115,7 +92836,7 @@ CT_XmlCellPr* CT_XmlCellPr::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -88146,22 +92867,22 @@ CT_XmlCellPr* CT_XmlCellPr::default_instance_ = NULL;
     return m_mapId_attr;
     }
 
-    bool CT_XmlPr::has_s_xpath_attr() const
+    bool CT_XmlPr::has_xpath_attr() const
     {    
-    return m_has_s_xpath_attr;
+    return m_has_xpath_attr;
     }
 
-    void CT_XmlPr::set_s_xpath_attr(const ns_s::ST_Xstring& _s_xpath_attr)
+    void CT_XmlPr::set_xpath_attr(const ns_s::ST_Xstring& _xpath_attr)
     {    
-    m_has_s_xpath_attr = true;
-    m_s_xpath_attr = new ns_s::ST_Xstring(_s_xpath_attr);
+    m_has_xpath_attr = true;
+    m_xpath_attr = new ns_s::ST_Xstring(_xpath_attr);
     }
 
-    const ns_s::ST_Xstring& CT_XmlPr::get_s_xpath_attr() const
+    const ns_s::ST_Xstring& CT_XmlPr::get_xpath_attr() const
     {    
-    if (m_s_xpath_attr)
+    if (m_xpath_attr)
     {
-        return *m_s_xpath_attr;
+        return *m_xpath_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -88189,6 +92910,31 @@ CT_XmlCellPr* CT_XmlCellPr::default_instance_ = NULL;
 CT_XmlPr* CT_XmlPr::default_instance_ = NULL;
 
     // CT_Stylesheet
+    CT_Stylesheet::CT_Stylesheet()
+    :m_has_numFmts(false),
+    m_numFmts(NULL),
+    m_has_fonts(false),
+    m_fonts(NULL),
+    m_has_fills(false),
+    m_fills(NULL),
+    m_has_borders(false),
+    m_borders(NULL),
+    m_has_cellStyleXfs(false),
+    m_cellStyleXfs(NULL),
+    m_has_cellXfs(false),
+    m_cellXfs(NULL),
+    m_has_cellStyles(false),
+    m_cellStyles(NULL),
+    m_has_dxfs(false),
+    m_dxfs(NULL),
+    m_has_tableStyles(false),
+    m_tableStyles(NULL),
+    m_has_colors(false),
+    m_colors(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Stylesheet::has_numFmts() const
     {    
     return m_has_numFmts;
@@ -88469,57 +93215,57 @@ CT_XmlPr* CT_XmlPr::default_instance_ = NULL;
             
     if (m_has_numFmts)
     {
-        m_numFmts->toXmlElem("numFmts", "", _outStream);;
+        m_numFmts->toXmlElem("main:numFmts", "", _outStream);;
     }
     
     if (m_has_fonts)
     {
-        m_fonts->toXmlElem("fonts", "", _outStream);;
+        m_fonts->toXmlElem("main:fonts", "", _outStream);;
     }
     
     if (m_has_fills)
     {
-        m_fills->toXmlElem("fills", "", _outStream);;
+        m_fills->toXmlElem("main:fills", "", _outStream);;
     }
     
     if (m_has_borders)
     {
-        m_borders->toXmlElem("borders", "", _outStream);;
+        m_borders->toXmlElem("main:borders", "", _outStream);;
     }
     
     if (m_has_cellStyleXfs)
     {
-        m_cellStyleXfs->toXmlElem("cellStyleXfs", "", _outStream);;
+        m_cellStyleXfs->toXmlElem("main:cellStyleXfs", "", _outStream);;
     }
     
     if (m_has_cellXfs)
     {
-        m_cellXfs->toXmlElem("cellXfs", "", _outStream);;
+        m_cellXfs->toXmlElem("main:cellXfs", "", _outStream);;
     }
     
     if (m_has_cellStyles)
     {
-        m_cellStyles->toXmlElem("cellStyles", "", _outStream);;
+        m_cellStyles->toXmlElem("main:cellStyles", "", _outStream);;
     }
     
     if (m_has_dxfs)
     {
-        m_dxfs->toXmlElem("dxfs", "", _outStream);;
+        m_dxfs->toXmlElem("main:dxfs", "", _outStream);;
     }
     
     if (m_has_tableStyles)
     {
-        m_tableStyles->toXmlElem("tableStyles", "", _outStream);;
+        m_tableStyles->toXmlElem("main:tableStyles", "", _outStream);;
     }
     
     if (m_has_colors)
     {
-        m_colors->toXmlElem("colors", "", _outStream);;
+        m_colors->toXmlElem("main:colors", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -88537,6 +93283,27 @@ CT_XmlPr* CT_XmlPr::default_instance_ = NULL;
 CT_Stylesheet* CT_Stylesheet::default_instance_ = NULL;
 
     // CT_CellAlignment
+    CT_CellAlignment::CT_CellAlignment()
+    :m_has_horizontal_attr(false),
+    m_horizontal_attr(NULL),
+    m_has_vertical_attr(false),
+    m_vertical_attr(NULL),
+    m_has_textRotation_attr(false),
+    m_textRotation_attr(0),
+    m_has_wrapText_attr(false),
+    m_wrapText_attr(false),
+    m_has_indent_attr(false),
+    m_indent_attr(0),
+    m_has_relativeIndent_attr(false),
+    m_relativeIndent_attr(0),
+    m_has_justifyLastLine_attr(false),
+    m_justifyLastLine_attr(false),
+    m_has_shrinkToFit_attr(false),
+    m_shrinkToFit_attr(false),
+    m_has_readingOrder_attr(false),
+    m_readingOrder_attr(0)
+    {
+    }
     void CT_CellAlignment::clear()
     {    
     m_has_horizontal_attr = false;
@@ -88810,6 +93577,11 @@ CT_Stylesheet* CT_Stylesheet::default_instance_ = NULL;
 CT_CellAlignment* CT_CellAlignment::default_instance_ = NULL;
 
     // CT_Borders
+    CT_Borders::CT_Borders()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Border* CT_Borders::add_border()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -88855,7 +93627,7 @@ CT_CellAlignment* CT_CellAlignment::default_instance_ = NULL;
         {
             if ((*iter)->has_border())
             {
-                (*iter)->get_border().toXmlElem("border", "", _outStream);
+                (*iter)->get_border().toXmlElem("main:border", "", _outStream);
             }
         }
     }
@@ -88890,6 +93662,11 @@ CT_CellAlignment* CT_CellAlignment::default_instance_ = NULL;
 
 
     // CT_Borders::ChildGroup_1
+    CT_Borders::ChildGroup_1::ChildGroup_1()
+    :m_has_border(false),
+    m_border(NULL)
+    {
+    }
     bool CT_Borders::ChildGroup_1::has_border() const
     {    
     return m_has_border;
@@ -88918,6 +93695,33 @@ CT_CellAlignment* CT_CellAlignment::default_instance_ = NULL;
 CT_Borders* CT_Borders::default_instance_ = NULL;
 
     // CT_Border
+    CT_Border::CT_Border()
+    :m_has_start(false),
+    m_start(NULL),
+    m_has_end(false),
+    m_end(NULL),
+    m_has_left(false),
+    m_left(NULL),
+    m_has_right(false),
+    m_right(NULL),
+    m_has_top(false),
+    m_top(NULL),
+    m_has_bottom(false),
+    m_bottom(NULL),
+    m_has_diagonal(false),
+    m_diagonal(NULL),
+    m_has_vertical(false),
+    m_vertical(NULL),
+    m_has_horizontal(false),
+    m_horizontal(NULL),
+    m_has_diagonalUp_attr(false),
+    m_diagonalUp_attr(false),
+    m_has_diagonalDown_attr(false),
+    m_diagonalDown_attr(false),
+    m_has_outline_attr(false),
+    m_outline_attr(false)
+    {
+    }
     bool CT_Border::has_start() const
     {    
     return m_has_start;
@@ -89176,47 +93980,47 @@ CT_Borders* CT_Borders::default_instance_ = NULL;
             
     if (m_has_start)
     {
-        m_start->toXmlElem("start", "", _outStream);;
+        m_start->toXmlElem("main:start", "", _outStream);;
     }
     
     if (m_has_end)
     {
-        m_end->toXmlElem("end", "", _outStream);;
+        m_end->toXmlElem("main:end", "", _outStream);;
     }
     
     if (m_has_left)
     {
-        m_left->toXmlElem("left", "", _outStream);;
+        m_left->toXmlElem("main:left", "", _outStream);;
     }
     
     if (m_has_right)
     {
-        m_right->toXmlElem("right", "", _outStream);;
+        m_right->toXmlElem("main:right", "", _outStream);;
     }
     
     if (m_has_top)
     {
-        m_top->toXmlElem("top", "", _outStream);;
+        m_top->toXmlElem("main:top", "", _outStream);;
     }
     
     if (m_has_bottom)
     {
-        m_bottom->toXmlElem("bottom", "", _outStream);;
+        m_bottom->toXmlElem("main:bottom", "", _outStream);;
     }
     
     if (m_has_diagonal)
     {
-        m_diagonal->toXmlElem("diagonal", "", _outStream);;
+        m_diagonal->toXmlElem("main:diagonal", "", _outStream);;
     }
     
     if (m_has_vertical)
     {
-        m_vertical->toXmlElem("vertical", "", _outStream);;
+        m_vertical->toXmlElem("main:vertical", "", _outStream);;
     }
     
     if (m_has_horizontal)
     {
-        m_horizontal->toXmlElem("horizontal", "", _outStream);;
+        m_horizontal->toXmlElem("main:horizontal", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -89282,6 +94086,13 @@ CT_Borders* CT_Borders::default_instance_ = NULL;
 CT_Border* CT_Border::default_instance_ = NULL;
 
     // CT_BorderPr
+    CT_BorderPr::CT_BorderPr()
+    :m_has_color(false),
+    m_color(NULL),
+    m_has_style_attr(false),
+    m_style_attr(NULL)
+    {
+    }
     bool CT_BorderPr::has_color() const
     {    
     return m_has_color;
@@ -89336,7 +94147,7 @@ CT_Border* CT_Border::default_instance_ = NULL;
             
     if (m_has_color)
     {
-        m_color->toXmlElem("color", "", _outStream);;
+        m_color->toXmlElem("main:color", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -89374,6 +94185,13 @@ CT_Border* CT_Border::default_instance_ = NULL;
 CT_BorderPr* CT_BorderPr::default_instance_ = NULL;
 
     // CT_CellProtection
+    CT_CellProtection::CT_CellProtection()
+    :m_has_locked_attr(false),
+    m_locked_attr(false),
+    m_has_hidden_attr(false),
+    m_hidden_attr(false)
+    {
+    }
     void CT_CellProtection::clear()
     {    
     m_has_locked_attr = false;
@@ -89452,6 +94270,11 @@ CT_BorderPr* CT_BorderPr::default_instance_ = NULL;
 CT_CellProtection* CT_CellProtection::default_instance_ = NULL;
 
     // CT_Fonts
+    CT_Fonts::CT_Fonts()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Font* CT_Fonts::add_font()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -89497,7 +94320,7 @@ CT_CellProtection* CT_CellProtection::default_instance_ = NULL;
         {
             if ((*iter)->has_font())
             {
-                (*iter)->get_font().toXmlElem("font", "", _outStream);
+                (*iter)->get_font().toXmlElem("main:font", "", _outStream);
             }
         }
     }
@@ -89532,6 +94355,11 @@ CT_CellProtection* CT_CellProtection::default_instance_ = NULL;
 
 
     // CT_Fonts::ChildGroup_1
+    CT_Fonts::ChildGroup_1::ChildGroup_1()
+    :m_has_font(false),
+    m_font(NULL)
+    {
+    }
     bool CT_Fonts::ChildGroup_1::has_font() const
     {    
     return m_has_font;
@@ -89560,6 +94388,11 @@ CT_CellProtection* CT_CellProtection::default_instance_ = NULL;
 CT_Fonts* CT_Fonts::default_instance_ = NULL;
 
     // CT_Fills
+    CT_Fills::CT_Fills()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Fill* CT_Fills::add_fill()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -89605,7 +94438,7 @@ CT_Fonts* CT_Fonts::default_instance_ = NULL;
         {
             if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("main:fill", "", _outStream);
             }
         }
     }
@@ -89640,6 +94473,11 @@ CT_Fonts* CT_Fonts::default_instance_ = NULL;
 
 
     // CT_Fills::ChildGroup_1
+    CT_Fills::ChildGroup_1::ChildGroup_1()
+    :m_has_fill(false),
+    m_fill(NULL)
+    {
+    }
     bool CT_Fills::ChildGroup_1::has_fill() const
     {    
     return m_has_fill;
@@ -89668,6 +94506,13 @@ CT_Fonts* CT_Fonts::default_instance_ = NULL;
 CT_Fills* CT_Fills::default_instance_ = NULL;
 
     // CT_Fill
+    CT_Fill::CT_Fill()
+    :m_has_patternFill(false),
+    m_patternFill(NULL),
+    m_has_gradientFill(false),
+    m_gradientFill(NULL)
+    {
+    }
     bool CT_Fill::has_patternFill() const
     {    
     return m_has_patternFill;
@@ -89752,12 +94597,12 @@ CT_Fills* CT_Fills::default_instance_ = NULL;
             
     if (m_has_patternFill)
     {
-        m_patternFill->toXmlElem("patternFill", "", _outStream);;
+        m_patternFill->toXmlElem("main:patternFill", "", _outStream);;
     }
     
     if (m_has_gradientFill)
     {
-        m_gradientFill->toXmlElem("gradientFill", "", _outStream);;
+        m_gradientFill->toXmlElem("main:gradientFill", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -89775,6 +94620,15 @@ CT_Fills* CT_Fills::default_instance_ = NULL;
 CT_Fill* CT_Fill::default_instance_ = NULL;
 
     // CT_PatternFill
+    CT_PatternFill::CT_PatternFill()
+    :m_has_fgColor(false),
+    m_fgColor(NULL),
+    m_has_bgColor(false),
+    m_bgColor(NULL),
+    m_has_patternType_attr(false),
+    m_patternType_attr(NULL)
+    {
+    }
     bool CT_PatternFill::has_fgColor() const
     {    
     return m_has_fgColor;
@@ -89853,12 +94707,12 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
             
     if (m_has_fgColor)
     {
-        m_fgColor->toXmlElem("fgColor", "", _outStream);;
+        m_fgColor->toXmlElem("main:fgColor", "", _outStream);;
     }
     
     if (m_has_bgColor)
     {
-        m_bgColor->toXmlElem("bgColor", "", _outStream);;
+        m_bgColor->toXmlElem("main:bgColor", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -89896,6 +94750,19 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
 CT_PatternFill* CT_PatternFill::default_instance_ = NULL;
 
     // CT_Color
+    CT_Color::CT_Color()
+    :m_has_auto_attr(false),
+    m_auto_attr(false),
+    m_has_indexed_attr(false),
+    m_indexed_attr(0),
+    m_has_rgb_attr(false),
+    m_rgb_attr(NULL),
+    m_has_theme_attr(false),
+    m_theme_attr(0),
+    m_has_tint_attr(false),
+    m_tint_attr(0)
+    {
+    }
     void CT_Color::clear()
     {    
     m_has_auto_attr = false;
@@ -90059,6 +94926,21 @@ CT_PatternFill* CT_PatternFill::default_instance_ = NULL;
 CT_Color* CT_Color::default_instance_ = NULL;
 
     // CT_GradientFill
+    CT_GradientFill::CT_GradientFill()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_degree_attr(false),
+    m_degree_attr(0),
+    m_has_left_attr(false),
+    m_left_attr(0),
+    m_has_right_attr(false),
+    m_right_attr(0),
+    m_has_top_attr(false),
+    m_top_attr(0),
+    m_has_bottom_attr(false),
+    m_bottom_attr(0)
+    {
+    }
     CT_GradientStop* CT_GradientFill::add_stop()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -90155,7 +95037,7 @@ CT_Color* CT_Color::default_instance_ = NULL;
         {
             if ((*iter)->has_stop())
             {
-                (*iter)->get_stop().toXmlElem("stop", "", _outStream);
+                (*iter)->get_stop().toXmlElem("main:stop", "", _outStream);
             }
         }
     }
@@ -90274,6 +95156,11 @@ CT_Color* CT_Color::default_instance_ = NULL;
 
 
     // CT_GradientFill::ChildGroup_1
+    CT_GradientFill::ChildGroup_1::ChildGroup_1()
+    :m_has_stop(false),
+    m_stop(NULL)
+    {
+    }
     bool CT_GradientFill::ChildGroup_1::has_stop() const
     {    
     return m_has_stop;
@@ -90302,6 +95189,13 @@ CT_Color* CT_Color::default_instance_ = NULL;
 CT_GradientFill* CT_GradientFill::default_instance_ = NULL;
 
     // CT_GradientStop
+    CT_GradientStop::CT_GradientStop()
+    :m_has_color(false),
+    m_color(NULL),
+    m_has_position_attr(false),
+    m_position_attr(0)
+    {
+    }
     bool CT_GradientStop::has_color() const
     {    
     return m_has_color;
@@ -90350,7 +95244,7 @@ CT_GradientFill* CT_GradientFill::default_instance_ = NULL;
             
     if (m_has_color)
     {
-        m_color->toXmlElem("color", "", _outStream);;
+        m_color->toXmlElem("main:color", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -90384,6 +95278,11 @@ CT_GradientFill* CT_GradientFill::default_instance_ = NULL;
 CT_GradientStop* CT_GradientStop::default_instance_ = NULL;
 
     // CT_NumFmts
+    CT_NumFmts::CT_NumFmts()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_NumFmt* CT_NumFmts::add_numFmt()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -90429,7 +95328,7 @@ CT_GradientStop* CT_GradientStop::default_instance_ = NULL;
         {
             if ((*iter)->has_numFmt())
             {
-                (*iter)->get_numFmt().toXmlElem("numFmt", "", _outStream);
+                (*iter)->get_numFmt().toXmlElem("main:numFmt", "", _outStream);
             }
         }
     }
@@ -90464,6 +95363,11 @@ CT_GradientStop* CT_GradientStop::default_instance_ = NULL;
 
 
     // CT_NumFmts::ChildGroup_1
+    CT_NumFmts::ChildGroup_1::ChildGroup_1()
+    :m_has_numFmt(false),
+    m_numFmt(NULL)
+    {
+    }
     bool CT_NumFmts::ChildGroup_1::has_numFmt() const
     {    
     return m_has_numFmt;
@@ -90492,6 +95396,13 @@ CT_GradientStop* CT_GradientStop::default_instance_ = NULL;
 CT_NumFmts* CT_NumFmts::default_instance_ = NULL;
 
     // CT_NumFmt
+    CT_NumFmt::CT_NumFmt()
+    :m_has_numFmtId_attr(false),
+    m_numFmtId_attr(NULL),
+    m_has_formatCode_attr(false),
+    m_formatCode_attr(NULL)
+    {
+    }
     void CT_NumFmt::clear()
     {    
     m_has_numFmtId_attr = false;
@@ -90503,12 +95414,12 @@ CT_NumFmts* CT_NumFmts::default_instance_ = NULL;
     }
     
     
-    m_has_s_formatCode_attr = false;
+    m_has_formatCode_attr = false;
     
-    if (m_s_formatCode_attr)
+    if (m_formatCode_attr)
     {
-        delete m_s_formatCode_attr;
-        m_s_formatCode_attr = NULL;
+        delete m_formatCode_attr;
+        m_formatCode_attr = NULL;
     }
     
     }
@@ -90528,9 +95439,9 @@ CT_NumFmts* CT_NumFmts::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_formatCode_attr)
+    if (m_has_formatCode_attr)
     {
-        m_s_formatCode_attr->toXmlAttr("formatCode", _outStream);
+        m_formatCode_attr->toXmlAttr("formatCode", _outStream);
     }
     
             _outStream << ">";
@@ -90567,22 +95478,22 @@ CT_NumFmts* CT_NumFmts::default_instance_ = NULL;
     return ST_NumFmtId::default_instance();
     }
 
-    bool CT_NumFmt::has_s_formatCode_attr() const
+    bool CT_NumFmt::has_formatCode_attr() const
     {    
-    return m_has_s_formatCode_attr;
+    return m_has_formatCode_attr;
     }
 
-    void CT_NumFmt::set_s_formatCode_attr(const ns_s::ST_Xstring& _s_formatCode_attr)
+    void CT_NumFmt::set_formatCode_attr(const ns_s::ST_Xstring& _formatCode_attr)
     {    
-    m_has_s_formatCode_attr = true;
-    m_s_formatCode_attr = new ns_s::ST_Xstring(_s_formatCode_attr);
+    m_has_formatCode_attr = true;
+    m_formatCode_attr = new ns_s::ST_Xstring(_formatCode_attr);
     }
 
-    const ns_s::ST_Xstring& CT_NumFmt::get_s_formatCode_attr() const
+    const ns_s::ST_Xstring& CT_NumFmt::get_formatCode_attr() const
     {    
-    if (m_s_formatCode_attr)
+    if (m_formatCode_attr)
     {
-        return *m_s_formatCode_attr;
+        return *m_formatCode_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -90590,6 +95501,11 @@ CT_NumFmts* CT_NumFmts::default_instance_ = NULL;
 CT_NumFmt* CT_NumFmt::default_instance_ = NULL;
 
     // CT_CellStyleXfs
+    CT_CellStyleXfs::CT_CellStyleXfs()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Xf* CT_CellStyleXfs::add_xf()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -90635,7 +95551,7 @@ CT_NumFmt* CT_NumFmt::default_instance_ = NULL;
         {
             if ((*iter)->has_xf())
             {
-                (*iter)->get_xf().toXmlElem("xf", "", _outStream);
+                (*iter)->get_xf().toXmlElem("main:xf", "", _outStream);
             }
         }
     }
@@ -90670,6 +95586,11 @@ CT_NumFmt* CT_NumFmt::default_instance_ = NULL;
 
 
     // CT_CellStyleXfs::ChildGroup_1
+    CT_CellStyleXfs::ChildGroup_1::ChildGroup_1()
+    :m_has_xf(false),
+    m_xf(NULL)
+    {
+    }
     bool CT_CellStyleXfs::ChildGroup_1::has_xf() const
     {    
     return m_has_xf;
@@ -90698,6 +95619,11 @@ CT_NumFmt* CT_NumFmt::default_instance_ = NULL;
 CT_CellStyleXfs* CT_CellStyleXfs::default_instance_ = NULL;
 
     // CT_CellXfs
+    CT_CellXfs::CT_CellXfs()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Xf* CT_CellXfs::add_xf()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -90743,7 +95669,7 @@ CT_CellStyleXfs* CT_CellStyleXfs::default_instance_ = NULL;
         {
             if ((*iter)->has_xf())
             {
-                (*iter)->get_xf().toXmlElem("xf", "", _outStream);
+                (*iter)->get_xf().toXmlElem("main:xf", "", _outStream);
             }
         }
     }
@@ -90778,6 +95704,11 @@ CT_CellStyleXfs* CT_CellStyleXfs::default_instance_ = NULL;
 
 
     // CT_CellXfs::ChildGroup_1
+    CT_CellXfs::ChildGroup_1::ChildGroup_1()
+    :m_has_xf(false),
+    m_xf(NULL)
+    {
+    }
     bool CT_CellXfs::ChildGroup_1::has_xf() const
     {    
     return m_has_xf;
@@ -90806,6 +95737,41 @@ CT_CellStyleXfs* CT_CellStyleXfs::default_instance_ = NULL;
 CT_CellXfs* CT_CellXfs::default_instance_ = NULL;
 
     // CT_Xf
+    CT_Xf::CT_Xf()
+    :m_has_alignment(false),
+    m_alignment(NULL),
+    m_has_protection(false),
+    m_protection(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_numFmtId_attr(false),
+    m_numFmtId_attr(NULL),
+    m_has_fontId_attr(false),
+    m_fontId_attr(NULL),
+    m_has_fillId_attr(false),
+    m_fillId_attr(NULL),
+    m_has_borderId_attr(false),
+    m_borderId_attr(NULL),
+    m_has_xfId_attr(false),
+    m_xfId_attr(NULL),
+    m_has_quotePrefix_attr(false),
+    m_quotePrefix_attr(false),
+    m_has_pivotButton_attr(false),
+    m_pivotButton_attr(false),
+    m_has_applyNumberFormat_attr(false),
+    m_applyNumberFormat_attr(false),
+    m_has_applyFont_attr(false),
+    m_applyFont_attr(false),
+    m_has_applyFill_attr(false),
+    m_applyFill_attr(false),
+    m_has_applyBorder_attr(false),
+    m_applyBorder_attr(false),
+    m_has_applyAlignment_attr(false),
+    m_applyAlignment_attr(false),
+    m_has_applyProtection_attr(false),
+    m_applyProtection_attr(false)
+    {
+    }
     bool CT_Xf::has_alignment() const
     {    
     return m_has_alignment;
@@ -91040,17 +96006,17 @@ CT_CellXfs* CT_CellXfs::default_instance_ = NULL;
             
     if (m_has_alignment)
     {
-        m_alignment->toXmlElem("alignment", "", _outStream);;
+        m_alignment->toXmlElem("main:alignment", "", _outStream);;
     }
     
     if (m_has_protection)
     {
-        m_protection->toXmlElem("protection", "", _outStream);;
+        m_protection->toXmlElem("main:protection", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -91296,6 +96262,11 @@ CT_CellXfs* CT_CellXfs::default_instance_ = NULL;
 CT_Xf* CT_Xf::default_instance_ = NULL;
 
     // CT_CellStyles
+    CT_CellStyles::CT_CellStyles()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_CellStyle* CT_CellStyles::add_cellStyle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -91341,7 +96312,7 @@ CT_Xf* CT_Xf::default_instance_ = NULL;
         {
             if ((*iter)->has_cellStyle())
             {
-                (*iter)->get_cellStyle().toXmlElem("cellStyle", "", _outStream);
+                (*iter)->get_cellStyle().toXmlElem("main:cellStyle", "", _outStream);
             }
         }
     }
@@ -91376,6 +96347,11 @@ CT_Xf* CT_Xf::default_instance_ = NULL;
 
 
     // CT_CellStyles::ChildGroup_1
+    CT_CellStyles::ChildGroup_1::ChildGroup_1()
+    :m_has_cellStyle(false),
+    m_cellStyle(NULL)
+    {
+    }
     bool CT_CellStyles::ChildGroup_1::has_cellStyle() const
     {    
     return m_has_cellStyle;
@@ -91404,6 +96380,23 @@ CT_Xf* CT_Xf::default_instance_ = NULL;
 CT_CellStyles* CT_CellStyles::default_instance_ = NULL;
 
     // CT_CellStyle
+    CT_CellStyle::CT_CellStyle()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_xfId_attr(false),
+    m_xfId_attr(NULL),
+    m_has_builtinId_attr(false),
+    m_builtinId_attr(0),
+    m_has_iLevel_attr(false),
+    m_iLevel_attr(0),
+    m_has_hidden_attr(false),
+    m_hidden_attr(false),
+    m_has_customBuiltin_attr(false),
+    m_customBuiltin_attr(false)
+    {
+    }
     bool CT_CellStyle::has_extLst() const
     {    
     return m_has_extLst;
@@ -91430,12 +96423,12 @@ CT_CellStyles* CT_CellStyles::default_instance_ = NULL;
 
     void CT_CellStyle::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -91470,9 +96463,9 @@ CT_CellStyles* CT_CellStyles::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -91509,7 +96502,7 @@ CT_CellStyles* CT_CellStyles::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -91524,22 +96517,22 @@ CT_CellStyles* CT_CellStyles::default_instance_ = NULL;
     return *CT_CellStyle::default_instance_;
     }
 
-    bool CT_CellStyle::has_s_name_attr() const
+    bool CT_CellStyle::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_CellStyle::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_CellStyle::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CellStyle::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_CellStyle::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -91631,6 +96624,11 @@ CT_CellStyles* CT_CellStyles::default_instance_ = NULL;
 CT_CellStyle* CT_CellStyle::default_instance_ = NULL;
 
     // CT_Dxfs
+    CT_Dxfs::CT_Dxfs()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Dxf* CT_Dxfs::add_dxf()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -91676,7 +96674,7 @@ CT_CellStyle* CT_CellStyle::default_instance_ = NULL;
         {
             if ((*iter)->has_dxf())
             {
-                (*iter)->get_dxf().toXmlElem("dxf", "", _outStream);
+                (*iter)->get_dxf().toXmlElem("main:dxf", "", _outStream);
             }
         }
     }
@@ -91711,6 +96709,11 @@ CT_CellStyle* CT_CellStyle::default_instance_ = NULL;
 
 
     // CT_Dxfs::ChildGroup_1
+    CT_Dxfs::ChildGroup_1::ChildGroup_1()
+    :m_has_dxf(false),
+    m_dxf(NULL)
+    {
+    }
     bool CT_Dxfs::ChildGroup_1::has_dxf() const
     {    
     return m_has_dxf;
@@ -91739,6 +96742,23 @@ CT_CellStyle* CT_CellStyle::default_instance_ = NULL;
 CT_Dxfs* CT_Dxfs::default_instance_ = NULL;
 
     // CT_Dxf
+    CT_Dxf::CT_Dxf()
+    :m_has_font(false),
+    m_font(NULL),
+    m_has_numFmt(false),
+    m_numFmt(NULL),
+    m_has_fill(false),
+    m_fill(NULL),
+    m_has_alignment(false),
+    m_alignment(NULL),
+    m_has_border(false),
+    m_border(NULL),
+    m_has_protection(false),
+    m_protection(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Dxf::has_font() const
     {    
     return m_has_font;
@@ -91923,37 +96943,37 @@ CT_Dxfs* CT_Dxfs::default_instance_ = NULL;
             
     if (m_has_font)
     {
-        m_font->toXmlElem("font", "", _outStream);;
+        m_font->toXmlElem("main:font", "", _outStream);;
     }
     
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("numFmt", "", _outStream);;
+        m_numFmt->toXmlElem("main:numFmt", "", _outStream);;
     }
     
     if (m_has_fill)
     {
-        m_fill->toXmlElem("fill", "", _outStream);;
+        m_fill->toXmlElem("main:fill", "", _outStream);;
     }
     
     if (m_has_alignment)
     {
-        m_alignment->toXmlElem("alignment", "", _outStream);;
+        m_alignment->toXmlElem("main:alignment", "", _outStream);;
     }
     
     if (m_has_border)
     {
-        m_border->toXmlElem("border", "", _outStream);;
+        m_border->toXmlElem("main:border", "", _outStream);;
     }
     
     if (m_has_protection)
     {
-        m_protection->toXmlElem("protection", "", _outStream);;
+        m_protection->toXmlElem("main:protection", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -91971,6 +96991,13 @@ CT_Dxfs* CT_Dxfs::default_instance_ = NULL;
 CT_Dxf* CT_Dxf::default_instance_ = NULL;
 
     // CT_Colors
+    CT_Colors::CT_Colors()
+    :m_has_indexedColors(false),
+    m_indexedColors(NULL),
+    m_has_mruColors(false),
+    m_mruColors(NULL)
+    {
+    }
     bool CT_Colors::has_indexedColors() const
     {    
     return m_has_indexedColors;
@@ -92035,12 +97062,12 @@ CT_Dxf* CT_Dxf::default_instance_ = NULL;
             
     if (m_has_indexedColors)
     {
-        m_indexedColors->toXmlElem("indexedColors", "", _outStream);;
+        m_indexedColors->toXmlElem("main:indexedColors", "", _outStream);;
     }
     
     if (m_has_mruColors)
     {
-        m_mruColors->toXmlElem("mruColors", "", _outStream);;
+        m_mruColors->toXmlElem("main:mruColors", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -92058,6 +97085,10 @@ CT_Dxf* CT_Dxf::default_instance_ = NULL;
 CT_Colors* CT_Colors::default_instance_ = NULL;
 
     // CT_IndexedColors
+    CT_IndexedColors::CT_IndexedColors()
+
+    {
+    }
     CT_RgbColor* CT_IndexedColors::add_rgbColor()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -92095,7 +97126,7 @@ CT_Colors* CT_Colors::default_instance_ = NULL;
         {
             if ((*iter)->has_rgbColor())
             {
-                (*iter)->get_rgbColor().toXmlElem("rgbColor", "", _outStream);
+                (*iter)->get_rgbColor().toXmlElem("main:rgbColor", "", _outStream);
             }
         }
     }
@@ -92114,6 +97145,11 @@ CT_Colors* CT_Colors::default_instance_ = NULL;
 
 
     // CT_IndexedColors::ChildGroup_1
+    CT_IndexedColors::ChildGroup_1::ChildGroup_1()
+    :m_has_rgbColor(false),
+    m_rgbColor(NULL)
+    {
+    }
     bool CT_IndexedColors::ChildGroup_1::has_rgbColor() const
     {    
     return m_has_rgbColor;
@@ -92142,6 +97178,10 @@ CT_Colors* CT_Colors::default_instance_ = NULL;
 CT_IndexedColors* CT_IndexedColors::default_instance_ = NULL;
 
     // CT_MRUColors
+    CT_MRUColors::CT_MRUColors()
+
+    {
+    }
     CT_Color* CT_MRUColors::add_color()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -92179,7 +97219,7 @@ CT_IndexedColors* CT_IndexedColors::default_instance_ = NULL;
         {
             if ((*iter)->has_color())
             {
-                (*iter)->get_color().toXmlElem("color", "", _outStream);
+                (*iter)->get_color().toXmlElem("main:color", "", _outStream);
             }
         }
     }
@@ -92198,6 +97238,11 @@ CT_IndexedColors* CT_IndexedColors::default_instance_ = NULL;
 
 
     // CT_MRUColors::ChildGroup_1
+    CT_MRUColors::ChildGroup_1::ChildGroup_1()
+    :m_has_color(false),
+    m_color(NULL)
+    {
+    }
     bool CT_MRUColors::ChildGroup_1::has_color() const
     {    
     return m_has_color;
@@ -92226,6 +97271,11 @@ CT_IndexedColors* CT_IndexedColors::default_instance_ = NULL;
 CT_MRUColors* CT_MRUColors::default_instance_ = NULL;
 
     // CT_RgbColor
+    CT_RgbColor::CT_RgbColor()
+    :m_has_rgb_attr(false),
+    m_rgb_attr(NULL)
+    {
+    }
     void CT_RgbColor::clear()
     {    
     m_has_rgb_attr = false;
@@ -92289,6 +97339,15 @@ CT_MRUColors* CT_MRUColors::default_instance_ = NULL;
 CT_RgbColor* CT_RgbColor::default_instance_ = NULL;
 
     // CT_TableStyles
+    CT_TableStyles::CT_TableStyles()
+    :m_has_count_attr(false),
+    m_count_attr(0),
+    m_has_defaultTableStyle_attr(false),
+    m_defaultTableStyle_attr(""),
+    m_has_defaultPivotStyle_attr(false),
+    m_defaultPivotStyle_attr("")
+    {
+    }
     CT_TableStyle* CT_TableStyles::add_tableStyle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -92352,7 +97411,7 @@ CT_RgbColor* CT_RgbColor::default_instance_ = NULL;
         {
             if ((*iter)->has_tableStyle())
             {
-                (*iter)->get_tableStyle().toXmlElem("tableStyle", "", _outStream);
+                (*iter)->get_tableStyle().toXmlElem("main:tableStyle", "", _outStream);
             }
         }
     }
@@ -92419,6 +97478,11 @@ CT_RgbColor* CT_RgbColor::default_instance_ = NULL;
 
 
     // CT_TableStyles::ChildGroup_1
+    CT_TableStyles::ChildGroup_1::ChildGroup_1()
+    :m_has_tableStyle(false),
+    m_tableStyle(NULL)
+    {
+    }
     bool CT_TableStyles::ChildGroup_1::has_tableStyle() const
     {    
     return m_has_tableStyle;
@@ -92447,6 +97511,17 @@ CT_RgbColor* CT_RgbColor::default_instance_ = NULL;
 CT_TableStyles* CT_TableStyles::default_instance_ = NULL;
 
     // CT_TableStyle
+    CT_TableStyle::CT_TableStyle()
+    :m_has_name_attr(false),
+    m_name_attr(""),
+    m_has_pivot_attr(false),
+    m_pivot_attr(false),
+    m_has_table_attr(false),
+    m_table_attr(false),
+    m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_TableStyleElement* CT_TableStyle::add_tableStyleElement()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -92519,7 +97594,7 @@ CT_TableStyles* CT_TableStyles::default_instance_ = NULL;
         {
             if ((*iter)->has_tableStyleElement())
             {
-                (*iter)->get_tableStyleElement().toXmlElem("tableStyleElement", "", _outStream);
+                (*iter)->get_tableStyleElement().toXmlElem("main:tableStyleElement", "", _outStream);
             }
         }
     }
@@ -92602,6 +97677,11 @@ CT_TableStyles* CT_TableStyles::default_instance_ = NULL;
 
 
     // CT_TableStyle::ChildGroup_1
+    CT_TableStyle::ChildGroup_1::ChildGroup_1()
+    :m_has_tableStyleElement(false),
+    m_tableStyleElement(NULL)
+    {
+    }
     bool CT_TableStyle::ChildGroup_1::has_tableStyleElement() const
     {    
     return m_has_tableStyleElement;
@@ -92630,6 +97710,15 @@ CT_TableStyles* CT_TableStyles::default_instance_ = NULL;
 CT_TableStyle* CT_TableStyle::default_instance_ = NULL;
 
     // CT_TableStyleElement
+    CT_TableStyleElement::CT_TableStyleElement()
+    :m_has_type_attr(false),
+    m_type_attr(NULL),
+    m_has_size_attr(false),
+    m_size_attr(0),
+    m_has_dxfId_attr(false),
+    m_dxfId_attr(NULL)
+    {
+    }
     void CT_TableStyleElement::clear()
     {    
     m_has_type_attr = false;
@@ -92753,6 +97842,11 @@ CT_TableStyle* CT_TableStyle::default_instance_ = NULL;
 CT_TableStyleElement* CT_TableStyleElement::default_instance_ = NULL;
 
     // CT_BooleanProperty
+    CT_BooleanProperty::CT_BooleanProperty()
+    :m_has_val_attr(false),
+    m_val_attr(false)
+    {
+    }
     void CT_BooleanProperty::clear()
     {    
     m_has_val_attr = false;
@@ -92806,6 +97900,11 @@ CT_TableStyleElement* CT_TableStyleElement::default_instance_ = NULL;
 CT_BooleanProperty* CT_BooleanProperty::default_instance_ = NULL;
 
     // CT_FontSize
+    CT_FontSize::CT_FontSize()
+    :m_has_val_attr(false),
+    m_val_attr(0)
+    {
+    }
     void CT_FontSize::clear()
     {    
     m_has_val_attr = false;
@@ -92859,6 +97958,11 @@ CT_BooleanProperty* CT_BooleanProperty::default_instance_ = NULL;
 CT_FontSize* CT_FontSize::default_instance_ = NULL;
 
     // CT_IntProperty
+    CT_IntProperty::CT_IntProperty()
+    :m_has_val_attr(false),
+    m_val_attr(0)
+    {
+    }
     void CT_IntProperty::clear()
     {    
     m_has_val_attr = false;
@@ -92912,14 +98016,19 @@ CT_FontSize* CT_FontSize::default_instance_ = NULL;
 CT_IntProperty* CT_IntProperty::default_instance_ = NULL;
 
     // CT_FontName
+    CT_FontName::CT_FontName()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_FontName::clear()
     {    
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     }
@@ -92933,9 +98042,9 @@ CT_IntProperty* CT_IntProperty::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("val", _outStream);
+        m_val_attr->toXmlAttr("val", _outStream);
     }
     
             _outStream << ">";
@@ -92952,22 +98061,22 @@ CT_IntProperty* CT_IntProperty::default_instance_ = NULL;
     return *CT_FontName::default_instance_;
     }
 
-    bool CT_FontName::has_s_val_attr() const
+    bool CT_FontName::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_FontName::set_s_val_attr(const ns_s::ST_Xstring& _s_val_attr)
+    void CT_FontName::set_val_attr(const ns_s::ST_Xstring& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_Xstring(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_Xstring(_val_attr);
     }
 
-    const ns_s::ST_Xstring& CT_FontName::get_s_val_attr() const
+    const ns_s::ST_Xstring& CT_FontName::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -92975,14 +98084,19 @@ CT_IntProperty* CT_IntProperty::default_instance_ = NULL;
 CT_FontName* CT_FontName::default_instance_ = NULL;
 
     // CT_VerticalAlignFontProperty
+    CT_VerticalAlignFontProperty::CT_VerticalAlignFontProperty()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_VerticalAlignFontProperty::clear()
     {    
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     }
@@ -92996,9 +98110,9 @@ CT_FontName* CT_FontName::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("val", _outStream);
+        m_val_attr->toXmlAttr("val", _outStream);
     }
     
             _outStream << ">";
@@ -93015,22 +98129,22 @@ CT_FontName* CT_FontName::default_instance_ = NULL;
     return *CT_VerticalAlignFontProperty::default_instance_;
     }
 
-    bool CT_VerticalAlignFontProperty::has_s_val_attr() const
+    bool CT_VerticalAlignFontProperty::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_VerticalAlignFontProperty::set_s_val_attr(const ns_s::ST_VerticalAlignRun& _s_val_attr)
+    void CT_VerticalAlignFontProperty::set_val_attr(const ns_s::ST_VerticalAlignRun& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_VerticalAlignRun(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_VerticalAlignRun(_val_attr);
     }
 
-    const ns_s::ST_VerticalAlignRun& CT_VerticalAlignFontProperty::get_s_val_attr() const
+    const ns_s::ST_VerticalAlignRun& CT_VerticalAlignFontProperty::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_VerticalAlignRun::default_instance();
     }
@@ -93038,6 +98152,11 @@ CT_FontName* CT_FontName::default_instance_ = NULL;
 CT_VerticalAlignFontProperty* CT_VerticalAlignFontProperty::default_instance_ = NULL;
 
     // CT_FontScheme
+    CT_FontScheme::CT_FontScheme()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_FontScheme::clear()
     {    
     m_has_val_attr = false;
@@ -93101,6 +98220,11 @@ CT_VerticalAlignFontProperty* CT_VerticalAlignFontProperty::default_instance_ = 
 CT_FontScheme* CT_FontScheme::default_instance_ = NULL;
 
     // CT_UnderlineProperty
+    CT_UnderlineProperty::CT_UnderlineProperty()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_UnderlineProperty::clear()
     {    
     m_has_val_attr = false;
@@ -93164,6 +98288,10 @@ CT_FontScheme* CT_FontScheme::default_instance_ = NULL;
 CT_UnderlineProperty* CT_UnderlineProperty::default_instance_ = NULL;
 
     // CT_Font
+    CT_Font::CT_Font()
+
+    {
+    }
     CT_FontName* CT_Font::add_name()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -93313,63 +98441,63 @@ CT_UnderlineProperty* CT_UnderlineProperty::default_instance_ = NULL;
         {
             if ((*iter)->has_name())
             {
-                (*iter)->get_name().toXmlElem("name", "", _outStream);
+                (*iter)->get_name().toXmlElem("main:name", "", _outStream);
             }
             else if ((*iter)->has_charset())
             {
-                (*iter)->get_charset().toXmlElem("charset", "", _outStream);
+                (*iter)->get_charset().toXmlElem("main:charset", "", _outStream);
             }
             else if ((*iter)->has_family())
             {
-                (*iter)->get_family().toXmlElem("family", "", _outStream);
+                (*iter)->get_family().toXmlElem("main:family", "", _outStream);
             }
             else if ((*iter)->has_b())
             {
-                (*iter)->get_b().toXmlElem("b", "", _outStream);
+                (*iter)->get_b().toXmlElem("main:b", "", _outStream);
             }
             else if ((*iter)->has_i())
             {
-                (*iter)->get_i().toXmlElem("i", "", _outStream);
+                (*iter)->get_i().toXmlElem("main:i", "", _outStream);
             }
             else if ((*iter)->has_strike())
             {
-                (*iter)->get_strike().toXmlElem("strike", "", _outStream);
+                (*iter)->get_strike().toXmlElem("main:strike", "", _outStream);
             }
             else if ((*iter)->has_outline())
             {
-                (*iter)->get_outline().toXmlElem("outline", "", _outStream);
+                (*iter)->get_outline().toXmlElem("main:outline", "", _outStream);
             }
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("main:shadow", "", _outStream);
             }
             else if ((*iter)->has_condense())
             {
-                (*iter)->get_condense().toXmlElem("condense", "", _outStream);
+                (*iter)->get_condense().toXmlElem("main:condense", "", _outStream);
             }
             else if ((*iter)->has_extend())
             {
-                (*iter)->get_extend().toXmlElem("extend", "", _outStream);
+                (*iter)->get_extend().toXmlElem("main:extend", "", _outStream);
             }
             else if ((*iter)->has_color())
             {
-                (*iter)->get_color().toXmlElem("color", "", _outStream);
+                (*iter)->get_color().toXmlElem("main:color", "", _outStream);
             }
             else if ((*iter)->has_sz())
             {
-                (*iter)->get_sz().toXmlElem("sz", "", _outStream);
+                (*iter)->get_sz().toXmlElem("main:sz", "", _outStream);
             }
             else if ((*iter)->has_u())
             {
-                (*iter)->get_u().toXmlElem("u", "", _outStream);
+                (*iter)->get_u().toXmlElem("main:u", "", _outStream);
             }
             else if ((*iter)->has_vertAlign())
             {
-                (*iter)->get_vertAlign().toXmlElem("vertAlign", "", _outStream);
+                (*iter)->get_vertAlign().toXmlElem("main:vertAlign", "", _outStream);
             }
             else if ((*iter)->has_scheme())
             {
-                (*iter)->get_scheme().toXmlElem("scheme", "", _outStream);
+                (*iter)->get_scheme().toXmlElem("main:scheme", "", _outStream);
             }
         }
     }
@@ -93388,6 +98516,39 @@ CT_UnderlineProperty* CT_UnderlineProperty::default_instance_ = NULL;
 
 
     // CT_Font::ChildGroup_1
+    CT_Font::ChildGroup_1::ChildGroup_1()
+    :m_has_name(false),
+    m_name(NULL),
+    m_has_charset(false),
+    m_charset(NULL),
+    m_has_family(false),
+    m_family(NULL),
+    m_has_b(false),
+    m_b(NULL),
+    m_has_i(false),
+    m_i(NULL),
+    m_has_strike(false),
+    m_strike(NULL),
+    m_has_outline(false),
+    m_outline(NULL),
+    m_has_shadow(false),
+    m_shadow(NULL),
+    m_has_condense(false),
+    m_condense(NULL),
+    m_has_extend(false),
+    m_extend(NULL),
+    m_has_color(false),
+    m_color(NULL),
+    m_has_sz(false),
+    m_sz(NULL),
+    m_has_u(false),
+    m_u(NULL),
+    m_has_vertAlign(false),
+    m_vertAlign(NULL),
+    m_has_scheme(false),
+    m_scheme(NULL)
+    {
+    }
     bool CT_Font::ChildGroup_1::has_name() const
     {    
     return m_has_name;
@@ -95656,6 +100817,11 @@ CT_UnderlineProperty* CT_UnderlineProperty::default_instance_ = NULL;
 CT_Font* CT_Font::default_instance_ = NULL;
 
     // CT_FontFamily
+    CT_FontFamily::CT_FontFamily()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_FontFamily::clear()
     {    
     m_has_val_attr = false;
@@ -95719,6 +100885,17 @@ CT_Font* CT_Font::default_instance_ = NULL;
 CT_FontFamily* CT_FontFamily::default_instance_ = NULL;
 
     // CT_ExternalLink
+    CT_ExternalLink::CT_ExternalLink()
+    :m_has_externalBook(false),
+    m_externalBook(NULL),
+    m_has_ddeLink(false),
+    m_ddeLink(NULL),
+    m_has_oleLink(false),
+    m_oleLink(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_ExternalLink::has_externalBook() const
     {    
     return m_has_externalBook;
@@ -95888,22 +101065,22 @@ CT_FontFamily* CT_FontFamily::default_instance_ = NULL;
             
     if (m_has_externalBook)
     {
-        m_externalBook->toXmlElem("externalBook", "", _outStream);;
+        m_externalBook->toXmlElem("main:externalBook", "", _outStream);;
     }
     
     if (m_has_ddeLink)
     {
-        m_ddeLink->toXmlElem("ddeLink", "", _outStream);;
+        m_ddeLink->toXmlElem("main:ddeLink", "", _outStream);;
     }
     
     if (m_has_oleLink)
     {
-        m_oleLink->toXmlElem("oleLink", "", _outStream);;
+        m_oleLink->toXmlElem("main:oleLink", "", _outStream);;
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -95921,6 +101098,17 @@ CT_FontFamily* CT_FontFamily::default_instance_ = NULL;
 CT_ExternalLink* CT_ExternalLink::default_instance_ = NULL;
 
     // CT_ExternalBook
+    CT_ExternalBook::CT_ExternalBook()
+    :m_has_sheetNames(false),
+    m_sheetNames(NULL),
+    m_has_definedNames(false),
+    m_definedNames(NULL),
+    m_has_sheetDataSet(false),
+    m_sheetDataSet(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     bool CT_ExternalBook::has_sheetNames() const
     {    
     return m_has_sheetNames;
@@ -96016,24 +101204,24 @@ CT_ExternalLink* CT_ExternalLink::default_instance_ = NULL;
             
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_sheetNames)
     {
-        m_sheetNames->toXmlElem("sheetNames", "", _outStream);;
+        m_sheetNames->toXmlElem("main:sheetNames", "", _outStream);;
     }
     
     if (m_has_definedNames)
     {
-        m_definedNames->toXmlElem("definedNames", "", _outStream);;
+        m_definedNames->toXmlElem("main:definedNames", "", _outStream);;
     }
     
     if (m_has_sheetDataSet)
     {
-        m_sheetDataSet->toXmlElem("sheetDataSet", "", _outStream);;
+        m_sheetDataSet->toXmlElem("main:sheetDataSet", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -96071,6 +101259,10 @@ CT_ExternalLink* CT_ExternalLink::default_instance_ = NULL;
 CT_ExternalBook* CT_ExternalBook::default_instance_ = NULL;
 
     // CT_ExternalSheetNames
+    CT_ExternalSheetNames::CT_ExternalSheetNames()
+
+    {
+    }
     CT_ExternalSheetName* CT_ExternalSheetNames::add_sheetName()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -96108,7 +101300,7 @@ CT_ExternalBook* CT_ExternalBook::default_instance_ = NULL;
         {
             if ((*iter)->has_sheetName())
             {
-                (*iter)->get_sheetName().toXmlElem("sheetName", "", _outStream);
+                (*iter)->get_sheetName().toXmlElem("main:sheetName", "", _outStream);
             }
         }
     }
@@ -96127,6 +101319,11 @@ CT_ExternalBook* CT_ExternalBook::default_instance_ = NULL;
 
 
     // CT_ExternalSheetNames::ChildGroup_1
+    CT_ExternalSheetNames::ChildGroup_1::ChildGroup_1()
+    :m_has_sheetName(false),
+    m_sheetName(NULL)
+    {
+    }
     bool CT_ExternalSheetNames::ChildGroup_1::has_sheetName() const
     {    
     return m_has_sheetName;
@@ -96155,14 +101352,19 @@ CT_ExternalBook* CT_ExternalBook::default_instance_ = NULL;
 CT_ExternalSheetNames* CT_ExternalSheetNames::default_instance_ = NULL;
 
     // CT_ExternalSheetName
+    CT_ExternalSheetName::CT_ExternalSheetName()
+    :m_has_val_attr(false),
+    m_val_attr(NULL)
+    {
+    }
     void CT_ExternalSheetName::clear()
     {    
-    m_has_s_val_attr = false;
+    m_has_val_attr = false;
     
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        delete m_s_val_attr;
-        m_s_val_attr = NULL;
+        delete m_val_attr;
+        m_val_attr = NULL;
     }
     
     }
@@ -96176,9 +101378,9 @@ CT_ExternalSheetNames* CT_ExternalSheetNames::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_val_attr)
+    if (m_has_val_attr)
     {
-        m_s_val_attr->toXmlAttr("val", _outStream);
+        m_val_attr->toXmlAttr("val", _outStream);
     }
     
             _outStream << ">";
@@ -96195,22 +101397,22 @@ CT_ExternalSheetNames* CT_ExternalSheetNames::default_instance_ = NULL;
     return *CT_ExternalSheetName::default_instance_;
     }
 
-    bool CT_ExternalSheetName::has_s_val_attr() const
+    bool CT_ExternalSheetName::has_val_attr() const
     {    
-    return m_has_s_val_attr;
+    return m_has_val_attr;
     }
 
-    void CT_ExternalSheetName::set_s_val_attr(const ns_s::ST_Xstring& _s_val_attr)
+    void CT_ExternalSheetName::set_val_attr(const ns_s::ST_Xstring& _val_attr)
     {    
-    m_has_s_val_attr = true;
-    m_s_val_attr = new ns_s::ST_Xstring(_s_val_attr);
+    m_has_val_attr = true;
+    m_val_attr = new ns_s::ST_Xstring(_val_attr);
     }
 
-    const ns_s::ST_Xstring& CT_ExternalSheetName::get_s_val_attr() const
+    const ns_s::ST_Xstring& CT_ExternalSheetName::get_val_attr() const
     {    
-    if (m_s_val_attr)
+    if (m_val_attr)
     {
-        return *m_s_val_attr;
+        return *m_val_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -96218,6 +101420,10 @@ CT_ExternalSheetNames* CT_ExternalSheetNames::default_instance_ = NULL;
 CT_ExternalSheetName* CT_ExternalSheetName::default_instance_ = NULL;
 
     // CT_ExternalDefinedNames
+    CT_ExternalDefinedNames::CT_ExternalDefinedNames()
+
+    {
+    }
     CT_ExternalDefinedName* CT_ExternalDefinedNames::add_definedName()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -96255,7 +101461,7 @@ CT_ExternalSheetName* CT_ExternalSheetName::default_instance_ = NULL;
         {
             if ((*iter)->has_definedName())
             {
-                (*iter)->get_definedName().toXmlElem("definedName", "", _outStream);
+                (*iter)->get_definedName().toXmlElem("main:definedName", "", _outStream);
             }
         }
     }
@@ -96274,6 +101480,11 @@ CT_ExternalSheetName* CT_ExternalSheetName::default_instance_ = NULL;
 
 
     // CT_ExternalDefinedNames::ChildGroup_1
+    CT_ExternalDefinedNames::ChildGroup_1::ChildGroup_1()
+    :m_has_definedName(false),
+    m_definedName(NULL)
+    {
+    }
     bool CT_ExternalDefinedNames::ChildGroup_1::has_definedName() const
     {    
     return m_has_definedName;
@@ -96302,23 +101513,32 @@ CT_ExternalSheetName* CT_ExternalSheetName::default_instance_ = NULL;
 CT_ExternalDefinedNames* CT_ExternalDefinedNames::default_instance_ = NULL;
 
     // CT_ExternalDefinedName
+    CT_ExternalDefinedName::CT_ExternalDefinedName()
+    :m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_refersTo_attr(false),
+    m_refersTo_attr(NULL),
+    m_has_sheetId_attr(false),
+    m_sheetId_attr(0)
+    {
+    }
     void CT_ExternalDefinedName::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_refersTo_attr = false;
+    m_has_refersTo_attr = false;
     
-    if (m_s_refersTo_attr)
+    if (m_refersTo_attr)
     {
-        delete m_s_refersTo_attr;
-        m_s_refersTo_attr = NULL;
+        delete m_refersTo_attr;
+        m_refersTo_attr = NULL;
     }
     
     
@@ -96335,15 +101555,15 @@ CT_ExternalDefinedNames* CT_ExternalDefinedNames::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_refersTo_attr)
+    if (m_has_refersTo_attr)
     {
-        m_s_refersTo_attr->toXmlAttr("refersTo", _outStream);
+        m_refersTo_attr->toXmlAttr("refersTo", _outStream);
     }
     
     
@@ -96366,42 +101586,42 @@ CT_ExternalDefinedNames* CT_ExternalDefinedNames::default_instance_ = NULL;
     return *CT_ExternalDefinedName::default_instance_;
     }
 
-    bool CT_ExternalDefinedName::has_s_name_attr() const
+    bool CT_ExternalDefinedName::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_ExternalDefinedName::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_ExternalDefinedName::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_ExternalDefinedName::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_ExternalDefinedName::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_ExternalDefinedName::has_s_refersTo_attr() const
+    bool CT_ExternalDefinedName::has_refersTo_attr() const
     {    
-    return m_has_s_refersTo_attr;
+    return m_has_refersTo_attr;
     }
 
-    void CT_ExternalDefinedName::set_s_refersTo_attr(const ns_s::ST_Xstring& _s_refersTo_attr)
+    void CT_ExternalDefinedName::set_refersTo_attr(const ns_s::ST_Xstring& _refersTo_attr)
     {    
-    m_has_s_refersTo_attr = true;
-    m_s_refersTo_attr = new ns_s::ST_Xstring(_s_refersTo_attr);
+    m_has_refersTo_attr = true;
+    m_refersTo_attr = new ns_s::ST_Xstring(_refersTo_attr);
     }
 
-    const ns_s::ST_Xstring& CT_ExternalDefinedName::get_s_refersTo_attr() const
+    const ns_s::ST_Xstring& CT_ExternalDefinedName::get_refersTo_attr() const
     {    
-    if (m_s_refersTo_attr)
+    if (m_refersTo_attr)
     {
-        return *m_s_refersTo_attr;
+        return *m_refersTo_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -96425,6 +101645,10 @@ CT_ExternalDefinedNames* CT_ExternalDefinedNames::default_instance_ = NULL;
 CT_ExternalDefinedName* CT_ExternalDefinedName::default_instance_ = NULL;
 
     // CT_ExternalSheetDataSet
+    CT_ExternalSheetDataSet::CT_ExternalSheetDataSet()
+
+    {
+    }
     CT_ExternalSheetData* CT_ExternalSheetDataSet::add_sheetData()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -96462,7 +101686,7 @@ CT_ExternalDefinedName* CT_ExternalDefinedName::default_instance_ = NULL;
         {
             if ((*iter)->has_sheetData())
             {
-                (*iter)->get_sheetData().toXmlElem("sheetData", "", _outStream);
+                (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
             }
         }
     }
@@ -96481,6 +101705,11 @@ CT_ExternalDefinedName* CT_ExternalDefinedName::default_instance_ = NULL;
 
 
     // CT_ExternalSheetDataSet::ChildGroup_1
+    CT_ExternalSheetDataSet::ChildGroup_1::ChildGroup_1()
+    :m_has_sheetData(false),
+    m_sheetData(NULL)
+    {
+    }
     bool CT_ExternalSheetDataSet::ChildGroup_1::has_sheetData() const
     {    
     return m_has_sheetData;
@@ -96509,6 +101738,13 @@ CT_ExternalDefinedName* CT_ExternalDefinedName::default_instance_ = NULL;
 CT_ExternalSheetDataSet* CT_ExternalSheetDataSet::default_instance_ = NULL;
 
     // CT_ExternalSheetData
+    CT_ExternalSheetData::CT_ExternalSheetData()
+    :m_has_sheetId_attr(false),
+    m_sheetId_attr(0),
+    m_has_refreshError_attr(false),
+    m_refreshError_attr(false)
+    {
+    }
     CT_ExternalRow* CT_ExternalSheetData::add_row()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -96563,7 +101799,7 @@ CT_ExternalSheetDataSet* CT_ExternalSheetDataSet::default_instance_ = NULL;
         {
             if ((*iter)->has_row())
             {
-                (*iter)->get_row().toXmlElem("row", "", _outStream);
+                (*iter)->get_row().toXmlElem("main:row", "", _outStream);
             }
         }
     }
@@ -96614,6 +101850,11 @@ CT_ExternalSheetDataSet* CT_ExternalSheetDataSet::default_instance_ = NULL;
 
 
     // CT_ExternalSheetData::ChildGroup_1
+    CT_ExternalSheetData::ChildGroup_1::ChildGroup_1()
+    :m_has_row(false),
+    m_row(NULL)
+    {
+    }
     bool CT_ExternalSheetData::ChildGroup_1::has_row() const
     {    
     return m_has_row;
@@ -96642,6 +101883,11 @@ CT_ExternalSheetDataSet* CT_ExternalSheetDataSet::default_instance_ = NULL;
 CT_ExternalSheetData* CT_ExternalSheetData::default_instance_ = NULL;
 
     // CT_ExternalRow
+    CT_ExternalRow::CT_ExternalRow()
+    :m_has_r_attr(false),
+    m_r_attr(0)
+    {
+    }
     CT_ExternalCell* CT_ExternalRow::add_cell()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -96687,7 +101933,7 @@ CT_ExternalSheetData* CT_ExternalSheetData::default_instance_ = NULL;
         {
             if ((*iter)->has_cell())
             {
-                (*iter)->get_cell().toXmlElem("cell", "", _outStream);
+                (*iter)->get_cell().toXmlElem("main:cell", "", _outStream);
             }
         }
     }
@@ -96722,6 +101968,11 @@ CT_ExternalSheetData* CT_ExternalSheetData::default_instance_ = NULL;
 
 
     // CT_ExternalRow::ChildGroup_1
+    CT_ExternalRow::ChildGroup_1::ChildGroup_1()
+    :m_has_cell(false),
+    m_cell(NULL)
+    {
+    }
     bool CT_ExternalRow::ChildGroup_1::has_cell() const
     {    
     return m_has_cell;
@@ -96750,26 +102001,37 @@ CT_ExternalSheetData* CT_ExternalSheetData::default_instance_ = NULL;
 CT_ExternalRow* CT_ExternalRow::default_instance_ = NULL;
 
     // CT_ExternalCell
-    bool CT_ExternalCell::has_s_v() const
+    CT_ExternalCell::CT_ExternalCell()
+    :m_has_v(false),
+    m_v(NULL),
+    m_has_r_attr(false),
+    m_r_attr(NULL),
+    m_has_t_attr(false),
+    m_t_attr(NULL),
+    m_has_vm_attr(false),
+    m_vm_attr(0)
+    {
+    }
+    bool CT_ExternalCell::has_v() const
     {    
-    return m_has_s_v;
+    return m_has_v;
     }
 
-    ns_s::ST_Xstring* CT_ExternalCell::mutable_s_v()
+    ns_s::ST_Xstring* CT_ExternalCell::mutable_v()
     {    
-    m_has_s_v = true;
-    if (!m_s_v)
+    m_has_v = true;
+    if (!m_v)
     {
-        m_s_v = new ns_s::ST_Xstring();
+        m_v = new ns_s::ST_Xstring();
     }
-    return m_s_v;
+    return m_v;
     }
 
-    const ns_s::ST_Xstring& CT_ExternalCell::get_s_v() const
+    const ns_s::ST_Xstring& CT_ExternalCell::get_v() const
     {    
-    if (m_s_v)
+    if (m_v)
     {
-        return *m_s_v;
+        return *m_v;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -96826,9 +102088,9 @@ CT_ExternalRow* CT_ExternalRow::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_s_v)
+    if (m_has_v)
     {
-        _outStream << "<s:v>" << m_s_v->toString() << "</s:v>";;
+        _outStream << "<main:v>" << m_v->toString() << "</main:v>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -96902,6 +102164,15 @@ CT_ExternalRow* CT_ExternalRow::default_instance_ = NULL;
 CT_ExternalCell* CT_ExternalCell::default_instance_ = NULL;
 
     // CT_DdeLink
+    CT_DdeLink::CT_DdeLink()
+    :m_has_ddeItems(false),
+    m_ddeItems(NULL),
+    m_has_ddeService_attr(false),
+    m_ddeService_attr(NULL),
+    m_has_ddeTopic_attr(false),
+    m_ddeTopic_attr(NULL)
+    {
+    }
     bool CT_DdeLink::has_ddeItems() const
     {    
     return m_has_ddeItems;
@@ -96928,21 +102199,21 @@ CT_ExternalCell* CT_ExternalCell::default_instance_ = NULL;
 
     void CT_DdeLink::clear()
     {    
-    m_has_s_ddeService_attr = false;
+    m_has_ddeService_attr = false;
     
-    if (m_s_ddeService_attr)
+    if (m_ddeService_attr)
     {
-        delete m_s_ddeService_attr;
-        m_s_ddeService_attr = NULL;
+        delete m_ddeService_attr;
+        m_ddeService_attr = NULL;
     }
     
     
-    m_has_s_ddeTopic_attr = false;
+    m_has_ddeTopic_attr = false;
     
-    if (m_s_ddeTopic_attr)
+    if (m_ddeTopic_attr)
     {
-        delete m_s_ddeTopic_attr;
-        m_s_ddeTopic_attr = NULL;
+        delete m_ddeTopic_attr;
+        m_ddeTopic_attr = NULL;
     }
     
     }
@@ -96956,22 +102227,22 @@ CT_ExternalCell* CT_ExternalCell::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_ddeService_attr)
+    if (m_has_ddeService_attr)
     {
-        m_s_ddeService_attr->toXmlAttr("ddeService", _outStream);
+        m_ddeService_attr->toXmlAttr("ddeService", _outStream);
     }
     
     
-    if (m_has_s_ddeTopic_attr)
+    if (m_has_ddeTopic_attr)
     {
-        m_s_ddeTopic_attr->toXmlAttr("ddeTopic", _outStream);
+        m_ddeTopic_attr->toXmlAttr("ddeTopic", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_ddeItems)
     {
-        m_ddeItems->toXmlElem("ddeItems", "", _outStream);;
+        m_ddeItems->toXmlElem("main:ddeItems", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -96986,42 +102257,42 @@ CT_ExternalCell* CT_ExternalCell::default_instance_ = NULL;
     return *CT_DdeLink::default_instance_;
     }
 
-    bool CT_DdeLink::has_s_ddeService_attr() const
+    bool CT_DdeLink::has_ddeService_attr() const
     {    
-    return m_has_s_ddeService_attr;
+    return m_has_ddeService_attr;
     }
 
-    void CT_DdeLink::set_s_ddeService_attr(const ns_s::ST_Xstring& _s_ddeService_attr)
+    void CT_DdeLink::set_ddeService_attr(const ns_s::ST_Xstring& _ddeService_attr)
     {    
-    m_has_s_ddeService_attr = true;
-    m_s_ddeService_attr = new ns_s::ST_Xstring(_s_ddeService_attr);
+    m_has_ddeService_attr = true;
+    m_ddeService_attr = new ns_s::ST_Xstring(_ddeService_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DdeLink::get_s_ddeService_attr() const
+    const ns_s::ST_Xstring& CT_DdeLink::get_ddeService_attr() const
     {    
-    if (m_s_ddeService_attr)
+    if (m_ddeService_attr)
     {
-        return *m_s_ddeService_attr;
+        return *m_ddeService_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_DdeLink::has_s_ddeTopic_attr() const
+    bool CT_DdeLink::has_ddeTopic_attr() const
     {    
-    return m_has_s_ddeTopic_attr;
+    return m_has_ddeTopic_attr;
     }
 
-    void CT_DdeLink::set_s_ddeTopic_attr(const ns_s::ST_Xstring& _s_ddeTopic_attr)
+    void CT_DdeLink::set_ddeTopic_attr(const ns_s::ST_Xstring& _ddeTopic_attr)
     {    
-    m_has_s_ddeTopic_attr = true;
-    m_s_ddeTopic_attr = new ns_s::ST_Xstring(_s_ddeTopic_attr);
+    m_has_ddeTopic_attr = true;
+    m_ddeTopic_attr = new ns_s::ST_Xstring(_ddeTopic_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DdeLink::get_s_ddeTopic_attr() const
+    const ns_s::ST_Xstring& CT_DdeLink::get_ddeTopic_attr() const
     {    
-    if (m_s_ddeTopic_attr)
+    if (m_ddeTopic_attr)
     {
-        return *m_s_ddeTopic_attr;
+        return *m_ddeTopic_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -97029,6 +102300,10 @@ CT_ExternalCell* CT_ExternalCell::default_instance_ = NULL;
 CT_DdeLink* CT_DdeLink::default_instance_ = NULL;
 
     // CT_DdeItems
+    CT_DdeItems::CT_DdeItems()
+
+    {
+    }
     CT_DdeItem* CT_DdeItems::add_ddeItem()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -97066,7 +102341,7 @@ CT_DdeLink* CT_DdeLink::default_instance_ = NULL;
         {
             if ((*iter)->has_ddeItem())
             {
-                (*iter)->get_ddeItem().toXmlElem("ddeItem", "", _outStream);
+                (*iter)->get_ddeItem().toXmlElem("main:ddeItem", "", _outStream);
             }
         }
     }
@@ -97085,6 +102360,11 @@ CT_DdeLink* CT_DdeLink::default_instance_ = NULL;
 
 
     // CT_DdeItems::ChildGroup_1
+    CT_DdeItems::ChildGroup_1::ChildGroup_1()
+    :m_has_ddeItem(false),
+    m_ddeItem(NULL)
+    {
+    }
     bool CT_DdeItems::ChildGroup_1::has_ddeItem() const
     {    
     return m_has_ddeItem;
@@ -97113,6 +102393,19 @@ CT_DdeLink* CT_DdeLink::default_instance_ = NULL;
 CT_DdeItems* CT_DdeItems::default_instance_ = NULL;
 
     // CT_DdeItem
+    CT_DdeItem::CT_DdeItem()
+    :m_has_values(false),
+    m_values(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_ole_attr(false),
+    m_ole_attr(false),
+    m_has_advise_attr(false),
+    m_advise_attr(false),
+    m_has_preferPic_attr(false),
+    m_preferPic_attr(false)
+    {
+    }
     bool CT_DdeItem::has_values() const
     {    
     return m_has_values;
@@ -97139,12 +102432,12 @@ CT_DdeItems* CT_DdeItems::default_instance_ = NULL;
 
     void CT_DdeItem::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -97167,9 +102460,9 @@ CT_DdeItems* CT_DdeItems::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -97194,7 +102487,7 @@ CT_DdeItems* CT_DdeItems::default_instance_ = NULL;
             
     if (m_has_values)
     {
-        m_values->toXmlElem("values", "", _outStream);;
+        m_values->toXmlElem("main:values", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -97209,22 +102502,22 @@ CT_DdeItems* CT_DdeItems::default_instance_ = NULL;
     return *CT_DdeItem::default_instance_;
     }
 
-    bool CT_DdeItem::has_s_name_attr() const
+    bool CT_DdeItem::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_DdeItem::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_DdeItem::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DdeItem::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_DdeItem::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -97280,6 +102573,13 @@ CT_DdeItems* CT_DdeItems::default_instance_ = NULL;
 CT_DdeItem* CT_DdeItem::default_instance_ = NULL;
 
     // CT_DdeValues
+    CT_DdeValues::CT_DdeValues()
+    :m_has_rows_attr(false),
+    m_rows_attr(0),
+    m_has_cols_attr(false),
+    m_cols_attr(0)
+    {
+    }
     CT_DdeValue* CT_DdeValues::add_value()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -97334,7 +102634,7 @@ CT_DdeItem* CT_DdeItem::default_instance_ = NULL;
         {
             if ((*iter)->has_value())
             {
-                (*iter)->get_value().toXmlElem("value", "", _outStream);
+                (*iter)->get_value().toXmlElem("main:value", "", _outStream);
             }
         }
     }
@@ -97385,6 +102685,11 @@ CT_DdeItem* CT_DdeItem::default_instance_ = NULL;
 
 
     // CT_DdeValues::ChildGroup_1
+    CT_DdeValues::ChildGroup_1::ChildGroup_1()
+    :m_has_value(false),
+    m_value(NULL)
+    {
+    }
     bool CT_DdeValues::ChildGroup_1::has_value() const
     {    
     return m_has_value;
@@ -97413,26 +102718,33 @@ CT_DdeItem* CT_DdeItem::default_instance_ = NULL;
 CT_DdeValues* CT_DdeValues::default_instance_ = NULL;
 
     // CT_DdeValue
-    bool CT_DdeValue::has_s_val() const
+    CT_DdeValue::CT_DdeValue()
+    :m_has_val(false),
+    m_val(NULL),
+    m_has_t_attr(false),
+    m_t_attr(NULL)
+    {
+    }
+    bool CT_DdeValue::has_val() const
     {    
-    return m_has_s_val;
+    return m_has_val;
     }
 
-    ns_s::ST_Xstring* CT_DdeValue::mutable_s_val()
+    ns_s::ST_Xstring* CT_DdeValue::mutable_val()
     {    
-    m_has_s_val = true;
-    if (!m_s_val)
+    m_has_val = true;
+    if (!m_val)
     {
-        m_s_val = new ns_s::ST_Xstring();
+        m_val = new ns_s::ST_Xstring();
     }
-    return m_s_val;
+    return m_val;
     }
 
-    const ns_s::ST_Xstring& CT_DdeValue::get_s_val() const
+    const ns_s::ST_Xstring& CT_DdeValue::get_val() const
     {    
-    if (m_s_val)
+    if (m_val)
     {
-        return *m_s_val;
+        return *m_val;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -97465,9 +102777,9 @@ CT_DdeValues* CT_DdeValues::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_s_val)
+    if (m_has_val)
     {
-        _outStream << "<s:val>" << m_s_val->toString() << "</s:val>";;
+        _outStream << "<main:val>" << m_val->toString() << "</main:val>";;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -97505,6 +102817,15 @@ CT_DdeValues* CT_DdeValues::default_instance_ = NULL;
 CT_DdeValue* CT_DdeValue::default_instance_ = NULL;
 
     // CT_OleLink
+    CT_OleLink::CT_OleLink()
+    :m_has_oleItems(false),
+    m_oleItems(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_progId_attr(false),
+    m_progId_attr(NULL)
+    {
+    }
     bool CT_OleLink::has_oleItems() const
     {    
     return m_has_oleItems;
@@ -97540,12 +102861,12 @@ CT_DdeValue* CT_DdeValue::default_instance_ = NULL;
     }
     
     
-    m_has_s_progId_attr = false;
+    m_has_progId_attr = false;
     
-    if (m_s_progId_attr)
+    if (m_progId_attr)
     {
-        delete m_s_progId_attr;
-        m_s_progId_attr = NULL;
+        delete m_progId_attr;
+        m_progId_attr = NULL;
     }
     
     }
@@ -97561,20 +102882,20 @@ CT_DdeValue* CT_DdeValue::default_instance_ = NULL;
             
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
-    if (m_has_s_progId_attr)
+    if (m_has_progId_attr)
     {
-        m_s_progId_attr->toXmlAttr("progId", _outStream);
+        m_progId_attr->toXmlAttr("progId", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_oleItems)
     {
-        m_oleItems->toXmlElem("oleItems", "", _outStream);;
+        m_oleItems->toXmlElem("main:oleItems", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -97609,22 +102930,22 @@ CT_DdeValue* CT_DdeValue::default_instance_ = NULL;
     return ns_r::ST_RelationshipId::default_instance();
     }
 
-    bool CT_OleLink::has_s_progId_attr() const
+    bool CT_OleLink::has_progId_attr() const
     {    
-    return m_has_s_progId_attr;
+    return m_has_progId_attr;
     }
 
-    void CT_OleLink::set_s_progId_attr(const ns_s::ST_Xstring& _s_progId_attr)
+    void CT_OleLink::set_progId_attr(const ns_s::ST_Xstring& _progId_attr)
     {    
-    m_has_s_progId_attr = true;
-    m_s_progId_attr = new ns_s::ST_Xstring(_s_progId_attr);
+    m_has_progId_attr = true;
+    m_progId_attr = new ns_s::ST_Xstring(_progId_attr);
     }
 
-    const ns_s::ST_Xstring& CT_OleLink::get_s_progId_attr() const
+    const ns_s::ST_Xstring& CT_OleLink::get_progId_attr() const
     {    
-    if (m_s_progId_attr)
+    if (m_progId_attr)
     {
-        return *m_s_progId_attr;
+        return *m_progId_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -97632,6 +102953,10 @@ CT_DdeValue* CT_DdeValue::default_instance_ = NULL;
 CT_OleLink* CT_OleLink::default_instance_ = NULL;
 
     // CT_OleItems
+    CT_OleItems::CT_OleItems()
+
+    {
+    }
     CT_OleItem* CT_OleItems::add_oleItem()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -97669,7 +102994,7 @@ CT_OleLink* CT_OleLink::default_instance_ = NULL;
         {
             if ((*iter)->has_oleItem())
             {
-                (*iter)->get_oleItem().toXmlElem("oleItem", "", _outStream);
+                (*iter)->get_oleItem().toXmlElem("main:oleItem", "", _outStream);
             }
         }
     }
@@ -97688,6 +103013,11 @@ CT_OleLink* CT_OleLink::default_instance_ = NULL;
 
 
     // CT_OleItems::ChildGroup_1
+    CT_OleItems::ChildGroup_1::ChildGroup_1()
+    :m_has_oleItem(false),
+    m_oleItem(NULL)
+    {
+    }
     bool CT_OleItems::ChildGroup_1::has_oleItem() const
     {    
     return m_has_oleItem;
@@ -97716,14 +103046,25 @@ CT_OleLink* CT_OleLink::default_instance_ = NULL;
 CT_OleItems* CT_OleItems::default_instance_ = NULL;
 
     // CT_OleItem
+    CT_OleItem::CT_OleItem()
+    :m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_icon_attr(false),
+    m_icon_attr(false),
+    m_has_advise_attr(false),
+    m_advise_attr(false),
+    m_has_preferPic_attr(false),
+    m_preferPic_attr(false)
+    {
+    }
     void CT_OleItem::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -97746,9 +103087,9 @@ CT_OleItems* CT_OleItems::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -97783,22 +103124,22 @@ CT_OleItems* CT_OleItems::default_instance_ = NULL;
     return *CT_OleItem::default_instance_;
     }
 
-    bool CT_OleItem::has_s_name_attr() const
+    bool CT_OleItem::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_OleItem::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_OleItem::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_OleItem::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_OleItem::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -97854,6 +103195,63 @@ CT_OleItems* CT_OleItems::default_instance_ = NULL;
 CT_OleItem* CT_OleItem::default_instance_ = NULL;
 
     // CT_Table
+    CT_Table::CT_Table()
+    :m_has_autoFilter(false),
+    m_autoFilter(NULL),
+    m_has_sortState(false),
+    m_sortState(NULL),
+    m_has_tableColumns(false),
+    m_tableColumns(NULL),
+    m_has_tableStyleInfo(false),
+    m_tableStyleInfo(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_id_attr(false),
+    m_id_attr(0),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_displayName_attr(false),
+    m_displayName_attr(NULL),
+    m_has_comment_attr(false),
+    m_comment_attr(NULL),
+    m_has_ref_attr(false),
+    m_ref_attr(NULL),
+    m_has_tableType_attr(false),
+    m_tableType_attr(NULL),
+    m_has_headerRowCount_attr(false),
+    m_headerRowCount_attr(0),
+    m_has_insertRow_attr(false),
+    m_insertRow_attr(false),
+    m_has_insertRowShift_attr(false),
+    m_insertRowShift_attr(false),
+    m_has_totalsRowCount_attr(false),
+    m_totalsRowCount_attr(0),
+    m_has_totalsRowShown_attr(false),
+    m_totalsRowShown_attr(false),
+    m_has_published_attr(false),
+    m_published_attr(false),
+    m_has_headerRowDxfId_attr(false),
+    m_headerRowDxfId_attr(NULL),
+    m_has_dataDxfId_attr(false),
+    m_dataDxfId_attr(NULL),
+    m_has_totalsRowDxfId_attr(false),
+    m_totalsRowDxfId_attr(NULL),
+    m_has_headerRowBorderDxfId_attr(false),
+    m_headerRowBorderDxfId_attr(NULL),
+    m_has_tableBorderDxfId_attr(false),
+    m_tableBorderDxfId_attr(NULL),
+    m_has_totalsRowBorderDxfId_attr(false),
+    m_totalsRowBorderDxfId_attr(NULL),
+    m_has_headerRowCellStyle_attr(false),
+    m_headerRowCellStyle_attr(NULL),
+    m_has_dataCellStyle_attr(false),
+    m_dataCellStyle_attr(NULL),
+    m_has_totalsRowCellStyle_attr(false),
+    m_totalsRowCellStyle_attr(NULL),
+    m_has_connectionId_attr(false),
+    m_connectionId_attr(0)
+    {
+    }
     bool CT_Table::has_autoFilter() const
     {    
     return m_has_autoFilter;
@@ -97979,30 +103377,30 @@ CT_OleItem* CT_OleItem::default_instance_ = NULL;
     m_has_id_attr = false;
     m_id_attr = 0;
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_displayName_attr = false;
+    m_has_displayName_attr = false;
     
-    if (m_s_displayName_attr)
+    if (m_displayName_attr)
     {
-        delete m_s_displayName_attr;
-        m_s_displayName_attr = NULL;
+        delete m_displayName_attr;
+        m_displayName_attr = NULL;
     }
     
     
-    m_has_s_comment_attr = false;
+    m_has_comment_attr = false;
     
-    if (m_s_comment_attr)
+    if (m_comment_attr)
     {
-        delete m_s_comment_attr;
-        m_s_comment_attr = NULL;
+        delete m_comment_attr;
+        m_comment_attr = NULL;
     }
     
     
@@ -98096,30 +103494,30 @@ CT_OleItem* CT_OleItem::default_instance_ = NULL;
     }
     
     
-    m_has_s_headerRowCellStyle_attr = false;
+    m_has_headerRowCellStyle_attr = false;
     
-    if (m_s_headerRowCellStyle_attr)
+    if (m_headerRowCellStyle_attr)
     {
-        delete m_s_headerRowCellStyle_attr;
-        m_s_headerRowCellStyle_attr = NULL;
+        delete m_headerRowCellStyle_attr;
+        m_headerRowCellStyle_attr = NULL;
     }
     
     
-    m_has_s_dataCellStyle_attr = false;
+    m_has_dataCellStyle_attr = false;
     
-    if (m_s_dataCellStyle_attr)
+    if (m_dataCellStyle_attr)
     {
-        delete m_s_dataCellStyle_attr;
-        m_s_dataCellStyle_attr = NULL;
+        delete m_dataCellStyle_attr;
+        m_dataCellStyle_attr = NULL;
     }
     
     
-    m_has_s_totalsRowCellStyle_attr = false;
+    m_has_totalsRowCellStyle_attr = false;
     
-    if (m_s_totalsRowCellStyle_attr)
+    if (m_totalsRowCellStyle_attr)
     {
-        delete m_s_totalsRowCellStyle_attr;
-        m_s_totalsRowCellStyle_attr = NULL;
+        delete m_totalsRowCellStyle_attr;
+        m_totalsRowCellStyle_attr = NULL;
     }
     
     
@@ -98142,21 +103540,21 @@ CT_OleItem* CT_OleItem::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_displayName_attr)
+    if (m_has_displayName_attr)
     {
-        m_s_displayName_attr->toXmlAttr("displayName", _outStream);
+        m_displayName_attr->toXmlAttr("displayName", _outStream);
     }
     
     
-    if (m_has_s_comment_attr)
+    if (m_has_comment_attr)
     {
-        m_s_comment_attr->toXmlAttr("comment", _outStream);
+        m_comment_attr->toXmlAttr("comment", _outStream);
     }
     
     
@@ -98244,21 +103642,21 @@ CT_OleItem* CT_OleItem::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_headerRowCellStyle_attr)
+    if (m_has_headerRowCellStyle_attr)
     {
-        m_s_headerRowCellStyle_attr->toXmlAttr("headerRowCellStyle", _outStream);
+        m_headerRowCellStyle_attr->toXmlAttr("headerRowCellStyle", _outStream);
     }
     
     
-    if (m_has_s_dataCellStyle_attr)
+    if (m_has_dataCellStyle_attr)
     {
-        m_s_dataCellStyle_attr->toXmlAttr("dataCellStyle", _outStream);
+        m_dataCellStyle_attr->toXmlAttr("dataCellStyle", _outStream);
     }
     
     
-    if (m_has_s_totalsRowCellStyle_attr)
+    if (m_has_totalsRowCellStyle_attr)
     {
-        m_s_totalsRowCellStyle_attr->toXmlAttr("totalsRowCellStyle", _outStream);
+        m_totalsRowCellStyle_attr->toXmlAttr("totalsRowCellStyle", _outStream);
     }
     
     
@@ -98271,27 +103669,27 @@ CT_OleItem* CT_OleItem::default_instance_ = NULL;
             
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("autoFilter", "", _outStream);;
+        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);;
     }
     
     if (m_has_sortState)
     {
-        m_sortState->toXmlElem("sortState", "", _outStream);;
+        m_sortState->toXmlElem("main:sortState", "", _outStream);;
     }
     
     if (m_has_tableColumns)
     {
-        m_tableColumns->toXmlElem("tableColumns", "", _outStream);;
+        m_tableColumns->toXmlElem("main:tableColumns", "", _outStream);;
     }
     
     if (m_has_tableStyleInfo)
     {
-        m_tableStyleInfo->toXmlElem("tableStyleInfo", "", _outStream);;
+        m_tableStyleInfo->toXmlElem("main:tableStyleInfo", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -98322,62 +103720,62 @@ CT_OleItem* CT_OleItem::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool CT_Table::has_s_name_attr() const
+    bool CT_Table::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_Table::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_Table::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Table::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_Table::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_Table::has_s_displayName_attr() const
+    bool CT_Table::has_displayName_attr() const
     {    
-    return m_has_s_displayName_attr;
+    return m_has_displayName_attr;
     }
 
-    void CT_Table::set_s_displayName_attr(const ns_s::ST_Xstring& _s_displayName_attr)
+    void CT_Table::set_displayName_attr(const ns_s::ST_Xstring& _displayName_attr)
     {    
-    m_has_s_displayName_attr = true;
-    m_s_displayName_attr = new ns_s::ST_Xstring(_s_displayName_attr);
+    m_has_displayName_attr = true;
+    m_displayName_attr = new ns_s::ST_Xstring(_displayName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Table::get_s_displayName_attr() const
+    const ns_s::ST_Xstring& CT_Table::get_displayName_attr() const
     {    
-    if (m_s_displayName_attr)
+    if (m_displayName_attr)
     {
-        return *m_s_displayName_attr;
+        return *m_displayName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_Table::has_s_comment_attr() const
+    bool CT_Table::has_comment_attr() const
     {    
-    return m_has_s_comment_attr;
+    return m_has_comment_attr;
     }
 
-    void CT_Table::set_s_comment_attr(const ns_s::ST_Xstring& _s_comment_attr)
+    void CT_Table::set_comment_attr(const ns_s::ST_Xstring& _comment_attr)
     {    
-    m_has_s_comment_attr = true;
-    m_s_comment_attr = new ns_s::ST_Xstring(_s_comment_attr);
+    m_has_comment_attr = true;
+    m_comment_attr = new ns_s::ST_Xstring(_comment_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Table::get_s_comment_attr() const
+    const ns_s::ST_Xstring& CT_Table::get_comment_attr() const
     {    
-    if (m_s_comment_attr)
+    if (m_comment_attr)
     {
-        return *m_s_comment_attr;
+        return *m_comment_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -98638,62 +104036,62 @@ CT_OleItem* CT_OleItem::default_instance_ = NULL;
     return ST_DxfId::default_instance();
     }
 
-    bool CT_Table::has_s_headerRowCellStyle_attr() const
+    bool CT_Table::has_headerRowCellStyle_attr() const
     {    
-    return m_has_s_headerRowCellStyle_attr;
+    return m_has_headerRowCellStyle_attr;
     }
 
-    void CT_Table::set_s_headerRowCellStyle_attr(const ns_s::ST_Xstring& _s_headerRowCellStyle_attr)
+    void CT_Table::set_headerRowCellStyle_attr(const ns_s::ST_Xstring& _headerRowCellStyle_attr)
     {    
-    m_has_s_headerRowCellStyle_attr = true;
-    m_s_headerRowCellStyle_attr = new ns_s::ST_Xstring(_s_headerRowCellStyle_attr);
+    m_has_headerRowCellStyle_attr = true;
+    m_headerRowCellStyle_attr = new ns_s::ST_Xstring(_headerRowCellStyle_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Table::get_s_headerRowCellStyle_attr() const
+    const ns_s::ST_Xstring& CT_Table::get_headerRowCellStyle_attr() const
     {    
-    if (m_s_headerRowCellStyle_attr)
+    if (m_headerRowCellStyle_attr)
     {
-        return *m_s_headerRowCellStyle_attr;
+        return *m_headerRowCellStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_Table::has_s_dataCellStyle_attr() const
+    bool CT_Table::has_dataCellStyle_attr() const
     {    
-    return m_has_s_dataCellStyle_attr;
+    return m_has_dataCellStyle_attr;
     }
 
-    void CT_Table::set_s_dataCellStyle_attr(const ns_s::ST_Xstring& _s_dataCellStyle_attr)
+    void CT_Table::set_dataCellStyle_attr(const ns_s::ST_Xstring& _dataCellStyle_attr)
     {    
-    m_has_s_dataCellStyle_attr = true;
-    m_s_dataCellStyle_attr = new ns_s::ST_Xstring(_s_dataCellStyle_attr);
+    m_has_dataCellStyle_attr = true;
+    m_dataCellStyle_attr = new ns_s::ST_Xstring(_dataCellStyle_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Table::get_s_dataCellStyle_attr() const
+    const ns_s::ST_Xstring& CT_Table::get_dataCellStyle_attr() const
     {    
-    if (m_s_dataCellStyle_attr)
+    if (m_dataCellStyle_attr)
     {
-        return *m_s_dataCellStyle_attr;
+        return *m_dataCellStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_Table::has_s_totalsRowCellStyle_attr() const
+    bool CT_Table::has_totalsRowCellStyle_attr() const
     {    
-    return m_has_s_totalsRowCellStyle_attr;
+    return m_has_totalsRowCellStyle_attr;
     }
 
-    void CT_Table::set_s_totalsRowCellStyle_attr(const ns_s::ST_Xstring& _s_totalsRowCellStyle_attr)
+    void CT_Table::set_totalsRowCellStyle_attr(const ns_s::ST_Xstring& _totalsRowCellStyle_attr)
     {    
-    m_has_s_totalsRowCellStyle_attr = true;
-    m_s_totalsRowCellStyle_attr = new ns_s::ST_Xstring(_s_totalsRowCellStyle_attr);
+    m_has_totalsRowCellStyle_attr = true;
+    m_totalsRowCellStyle_attr = new ns_s::ST_Xstring(_totalsRowCellStyle_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Table::get_s_totalsRowCellStyle_attr() const
+    const ns_s::ST_Xstring& CT_Table::get_totalsRowCellStyle_attr() const
     {    
-    if (m_s_totalsRowCellStyle_attr)
+    if (m_totalsRowCellStyle_attr)
     {
-        return *m_s_totalsRowCellStyle_attr;
+        return *m_totalsRowCellStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -98717,14 +104115,27 @@ CT_OleItem* CT_OleItem::default_instance_ = NULL;
 CT_Table* CT_Table::default_instance_ = NULL;
 
     // CT_TableStyleInfo
+    CT_TableStyleInfo::CT_TableStyleInfo()
+    :m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_showFirstColumn_attr(false),
+    m_showFirstColumn_attr(false),
+    m_has_showLastColumn_attr(false),
+    m_showLastColumn_attr(false),
+    m_has_showRowStripes_attr(false),
+    m_showRowStripes_attr(false),
+    m_has_showColumnStripes_attr(false),
+    m_showColumnStripes_attr(false)
+    {
+    }
     void CT_TableStyleInfo::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -98750,9 +104161,9 @@ CT_Table* CT_Table::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -98793,22 +104204,22 @@ CT_Table* CT_Table::default_instance_ = NULL;
     return *CT_TableStyleInfo::default_instance_;
     }
 
-    bool CT_TableStyleInfo::has_s_name_attr() const
+    bool CT_TableStyleInfo::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_TableStyleInfo::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_TableStyleInfo::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_TableStyleInfo::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_TableStyleInfo::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -98880,6 +104291,11 @@ CT_Table* CT_Table::default_instance_ = NULL;
 CT_TableStyleInfo* CT_TableStyleInfo::default_instance_ = NULL;
 
     // CT_TableColumns
+    CT_TableColumns::CT_TableColumns()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_TableColumn* CT_TableColumns::add_tableColumn()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -98925,7 +104341,7 @@ CT_TableStyleInfo* CT_TableStyleInfo::default_instance_ = NULL;
         {
             if ((*iter)->has_tableColumn())
             {
-                (*iter)->get_tableColumn().toXmlElem("tableColumn", "", _outStream);
+                (*iter)->get_tableColumn().toXmlElem("main:tableColumn", "", _outStream);
             }
         }
     }
@@ -98960,6 +104376,11 @@ CT_TableStyleInfo* CT_TableStyleInfo::default_instance_ = NULL;
 
 
     // CT_TableColumns::ChildGroup_1
+    CT_TableColumns::ChildGroup_1::ChildGroup_1()
+    :m_has_tableColumn(false),
+    m_tableColumn(NULL)
+    {
+    }
     bool CT_TableColumns::ChildGroup_1::has_tableColumn() const
     {    
     return m_has_tableColumn;
@@ -98988,6 +104409,41 @@ CT_TableStyleInfo* CT_TableStyleInfo::default_instance_ = NULL;
 CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
 
     // CT_TableColumn
+    CT_TableColumn::CT_TableColumn()
+    :m_has_calculatedColumnFormula(false),
+    m_calculatedColumnFormula(NULL),
+    m_has_totalsRowFormula(false),
+    m_totalsRowFormula(NULL),
+    m_has_xmlColumnPr(false),
+    m_xmlColumnPr(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_id_attr(false),
+    m_id_attr(0),
+    m_has_uniqueName_attr(false),
+    m_uniqueName_attr(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_totalsRowFunction_attr(false),
+    m_totalsRowFunction_attr(NULL),
+    m_has_totalsRowLabel_attr(false),
+    m_totalsRowLabel_attr(NULL),
+    m_has_queryTableFieldId_attr(false),
+    m_queryTableFieldId_attr(0),
+    m_has_headerRowDxfId_attr(false),
+    m_headerRowDxfId_attr(NULL),
+    m_has_dataDxfId_attr(false),
+    m_dataDxfId_attr(NULL),
+    m_has_totalsRowDxfId_attr(false),
+    m_totalsRowDxfId_attr(NULL),
+    m_has_headerRowCellStyle_attr(false),
+    m_headerRowCellStyle_attr(NULL),
+    m_has_dataCellStyle_attr(false),
+    m_dataCellStyle_attr(NULL),
+    m_has_totalsRowCellStyle_attr(false),
+    m_totalsRowCellStyle_attr(NULL)
+    {
+    }
     bool CT_TableColumn::has_calculatedColumnFormula() const
     {    
     return m_has_calculatedColumnFormula;
@@ -99089,21 +104545,21 @@ CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
     m_has_id_attr = false;
     m_id_attr = 0;
     
-    m_has_s_uniqueName_attr = false;
+    m_has_uniqueName_attr = false;
     
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        delete m_s_uniqueName_attr;
-        m_s_uniqueName_attr = NULL;
+        delete m_uniqueName_attr;
+        m_uniqueName_attr = NULL;
     }
     
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -99116,12 +104572,12 @@ CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
     }
     
     
-    m_has_s_totalsRowLabel_attr = false;
+    m_has_totalsRowLabel_attr = false;
     
-    if (m_s_totalsRowLabel_attr)
+    if (m_totalsRowLabel_attr)
     {
-        delete m_s_totalsRowLabel_attr;
-        m_s_totalsRowLabel_attr = NULL;
+        delete m_totalsRowLabel_attr;
+        m_totalsRowLabel_attr = NULL;
     }
     
     
@@ -99155,30 +104611,30 @@ CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
     }
     
     
-    m_has_s_headerRowCellStyle_attr = false;
+    m_has_headerRowCellStyle_attr = false;
     
-    if (m_s_headerRowCellStyle_attr)
+    if (m_headerRowCellStyle_attr)
     {
-        delete m_s_headerRowCellStyle_attr;
-        m_s_headerRowCellStyle_attr = NULL;
+        delete m_headerRowCellStyle_attr;
+        m_headerRowCellStyle_attr = NULL;
     }
     
     
-    m_has_s_dataCellStyle_attr = false;
+    m_has_dataCellStyle_attr = false;
     
-    if (m_s_dataCellStyle_attr)
+    if (m_dataCellStyle_attr)
     {
-        delete m_s_dataCellStyle_attr;
-        m_s_dataCellStyle_attr = NULL;
+        delete m_dataCellStyle_attr;
+        m_dataCellStyle_attr = NULL;
     }
     
     
-    m_has_s_totalsRowCellStyle_attr = false;
+    m_has_totalsRowCellStyle_attr = false;
     
-    if (m_s_totalsRowCellStyle_attr)
+    if (m_totalsRowCellStyle_attr)
     {
-        delete m_s_totalsRowCellStyle_attr;
-        m_s_totalsRowCellStyle_attr = NULL;
+        delete m_totalsRowCellStyle_attr;
+        m_totalsRowCellStyle_attr = NULL;
     }
     
     }
@@ -99198,15 +104654,15 @@ CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_uniqueName_attr)
+    if (m_has_uniqueName_attr)
     {
-        m_s_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
+        m_uniqueName_attr->toXmlAttr("uniqueName", _outStream);
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -99216,9 +104672,9 @@ CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_totalsRowLabel_attr)
+    if (m_has_totalsRowLabel_attr)
     {
-        m_s_totalsRowLabel_attr->toXmlAttr("totalsRowLabel", _outStream);
+        m_totalsRowLabel_attr->toXmlAttr("totalsRowLabel", _outStream);
     }
     
     
@@ -99246,43 +104702,43 @@ CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_headerRowCellStyle_attr)
+    if (m_has_headerRowCellStyle_attr)
     {
-        m_s_headerRowCellStyle_attr->toXmlAttr("headerRowCellStyle", _outStream);
+        m_headerRowCellStyle_attr->toXmlAttr("headerRowCellStyle", _outStream);
     }
     
     
-    if (m_has_s_dataCellStyle_attr)
+    if (m_has_dataCellStyle_attr)
     {
-        m_s_dataCellStyle_attr->toXmlAttr("dataCellStyle", _outStream);
+        m_dataCellStyle_attr->toXmlAttr("dataCellStyle", _outStream);
     }
     
     
-    if (m_has_s_totalsRowCellStyle_attr)
+    if (m_has_totalsRowCellStyle_attr)
     {
-        m_s_totalsRowCellStyle_attr->toXmlAttr("totalsRowCellStyle", _outStream);
+        m_totalsRowCellStyle_attr->toXmlAttr("totalsRowCellStyle", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_calculatedColumnFormula)
     {
-        m_calculatedColumnFormula->toXmlElem("calculatedColumnFormula", "", _outStream);;
+        m_calculatedColumnFormula->toXmlElem("main:calculatedColumnFormula", "", _outStream);;
     }
     
     if (m_has_totalsRowFormula)
     {
-        m_totalsRowFormula->toXmlElem("totalsRowFormula", "", _outStream);;
+        m_totalsRowFormula->toXmlElem("main:totalsRowFormula", "", _outStream);;
     }
     
     if (m_has_xmlColumnPr)
     {
-        m_xmlColumnPr->toXmlElem("xmlColumnPr", "", _outStream);;
+        m_xmlColumnPr->toXmlElem("main:xmlColumnPr", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -99313,42 +104769,42 @@ CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool CT_TableColumn::has_s_uniqueName_attr() const
+    bool CT_TableColumn::has_uniqueName_attr() const
     {    
-    return m_has_s_uniqueName_attr;
+    return m_has_uniqueName_attr;
     }
 
-    void CT_TableColumn::set_s_uniqueName_attr(const ns_s::ST_Xstring& _s_uniqueName_attr)
+    void CT_TableColumn::set_uniqueName_attr(const ns_s::ST_Xstring& _uniqueName_attr)
     {    
-    m_has_s_uniqueName_attr = true;
-    m_s_uniqueName_attr = new ns_s::ST_Xstring(_s_uniqueName_attr);
+    m_has_uniqueName_attr = true;
+    m_uniqueName_attr = new ns_s::ST_Xstring(_uniqueName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_TableColumn::get_s_uniqueName_attr() const
+    const ns_s::ST_Xstring& CT_TableColumn::get_uniqueName_attr() const
     {    
-    if (m_s_uniqueName_attr)
+    if (m_uniqueName_attr)
     {
-        return *m_s_uniqueName_attr;
+        return *m_uniqueName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_TableColumn::has_s_name_attr() const
+    bool CT_TableColumn::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_TableColumn::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_TableColumn::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_TableColumn::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_TableColumn::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -99373,22 +104829,22 @@ CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
     return ST_TotalsRowFunction::default_instance();
     }
 
-    bool CT_TableColumn::has_s_totalsRowLabel_attr() const
+    bool CT_TableColumn::has_totalsRowLabel_attr() const
     {    
-    return m_has_s_totalsRowLabel_attr;
+    return m_has_totalsRowLabel_attr;
     }
 
-    void CT_TableColumn::set_s_totalsRowLabel_attr(const ns_s::ST_Xstring& _s_totalsRowLabel_attr)
+    void CT_TableColumn::set_totalsRowLabel_attr(const ns_s::ST_Xstring& _totalsRowLabel_attr)
     {    
-    m_has_s_totalsRowLabel_attr = true;
-    m_s_totalsRowLabel_attr = new ns_s::ST_Xstring(_s_totalsRowLabel_attr);
+    m_has_totalsRowLabel_attr = true;
+    m_totalsRowLabel_attr = new ns_s::ST_Xstring(_totalsRowLabel_attr);
     }
 
-    const ns_s::ST_Xstring& CT_TableColumn::get_s_totalsRowLabel_attr() const
+    const ns_s::ST_Xstring& CT_TableColumn::get_totalsRowLabel_attr() const
     {    
-    if (m_s_totalsRowLabel_attr)
+    if (m_totalsRowLabel_attr)
     {
-        return *m_s_totalsRowLabel_attr;
+        return *m_totalsRowLabel_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -99469,62 +104925,62 @@ CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
     return ST_DxfId::default_instance();
     }
 
-    bool CT_TableColumn::has_s_headerRowCellStyle_attr() const
+    bool CT_TableColumn::has_headerRowCellStyle_attr() const
     {    
-    return m_has_s_headerRowCellStyle_attr;
+    return m_has_headerRowCellStyle_attr;
     }
 
-    void CT_TableColumn::set_s_headerRowCellStyle_attr(const ns_s::ST_Xstring& _s_headerRowCellStyle_attr)
+    void CT_TableColumn::set_headerRowCellStyle_attr(const ns_s::ST_Xstring& _headerRowCellStyle_attr)
     {    
-    m_has_s_headerRowCellStyle_attr = true;
-    m_s_headerRowCellStyle_attr = new ns_s::ST_Xstring(_s_headerRowCellStyle_attr);
+    m_has_headerRowCellStyle_attr = true;
+    m_headerRowCellStyle_attr = new ns_s::ST_Xstring(_headerRowCellStyle_attr);
     }
 
-    const ns_s::ST_Xstring& CT_TableColumn::get_s_headerRowCellStyle_attr() const
+    const ns_s::ST_Xstring& CT_TableColumn::get_headerRowCellStyle_attr() const
     {    
-    if (m_s_headerRowCellStyle_attr)
+    if (m_headerRowCellStyle_attr)
     {
-        return *m_s_headerRowCellStyle_attr;
+        return *m_headerRowCellStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_TableColumn::has_s_dataCellStyle_attr() const
+    bool CT_TableColumn::has_dataCellStyle_attr() const
     {    
-    return m_has_s_dataCellStyle_attr;
+    return m_has_dataCellStyle_attr;
     }
 
-    void CT_TableColumn::set_s_dataCellStyle_attr(const ns_s::ST_Xstring& _s_dataCellStyle_attr)
+    void CT_TableColumn::set_dataCellStyle_attr(const ns_s::ST_Xstring& _dataCellStyle_attr)
     {    
-    m_has_s_dataCellStyle_attr = true;
-    m_s_dataCellStyle_attr = new ns_s::ST_Xstring(_s_dataCellStyle_attr);
+    m_has_dataCellStyle_attr = true;
+    m_dataCellStyle_attr = new ns_s::ST_Xstring(_dataCellStyle_attr);
     }
 
-    const ns_s::ST_Xstring& CT_TableColumn::get_s_dataCellStyle_attr() const
+    const ns_s::ST_Xstring& CT_TableColumn::get_dataCellStyle_attr() const
     {    
-    if (m_s_dataCellStyle_attr)
+    if (m_dataCellStyle_attr)
     {
-        return *m_s_dataCellStyle_attr;
+        return *m_dataCellStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_TableColumn::has_s_totalsRowCellStyle_attr() const
+    bool CT_TableColumn::has_totalsRowCellStyle_attr() const
     {    
-    return m_has_s_totalsRowCellStyle_attr;
+    return m_has_totalsRowCellStyle_attr;
     }
 
-    void CT_TableColumn::set_s_totalsRowCellStyle_attr(const ns_s::ST_Xstring& _s_totalsRowCellStyle_attr)
+    void CT_TableColumn::set_totalsRowCellStyle_attr(const ns_s::ST_Xstring& _totalsRowCellStyle_attr)
     {    
-    m_has_s_totalsRowCellStyle_attr = true;
-    m_s_totalsRowCellStyle_attr = new ns_s::ST_Xstring(_s_totalsRowCellStyle_attr);
+    m_has_totalsRowCellStyle_attr = true;
+    m_totalsRowCellStyle_attr = new ns_s::ST_Xstring(_totalsRowCellStyle_attr);
     }
 
-    const ns_s::ST_Xstring& CT_TableColumn::get_s_totalsRowCellStyle_attr() const
+    const ns_s::ST_Xstring& CT_TableColumn::get_totalsRowCellStyle_attr() const
     {    
-    if (m_s_totalsRowCellStyle_attr)
+    if (m_totalsRowCellStyle_attr)
     {
-        return *m_s_totalsRowCellStyle_attr;
+        return *m_totalsRowCellStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -99532,6 +104988,11 @@ CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
 CT_TableColumn* CT_TableColumn::default_instance_ = NULL;
 
     // CT_TableFormula
+    CT_TableFormula::CT_TableFormula()
+    :m_has_array_attr(false),
+    m_array_attr(false)
+    {
+    }
     void CT_TableFormula::clear()
     {    
     m_has_array_attr = false;
@@ -99585,6 +105046,19 @@ CT_TableColumn* CT_TableColumn::default_instance_ = NULL;
 CT_TableFormula* CT_TableFormula::default_instance_ = NULL;
 
     // CT_XmlColumnPr
+    CT_XmlColumnPr::CT_XmlColumnPr()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_mapId_attr(false),
+    m_mapId_attr(0),
+    m_has_xpath_attr(false),
+    m_xpath_attr(NULL),
+    m_has_denormalized_attr(false),
+    m_denormalized_attr(false),
+    m_has_xmlDataType_attr(false),
+    m_xmlDataType_attr(NULL)
+    {
+    }
     bool CT_XmlColumnPr::has_extLst() const
     {    
     return m_has_extLst;
@@ -99614,12 +105088,12 @@ CT_TableFormula* CT_TableFormula::default_instance_ = NULL;
     m_has_mapId_attr = false;
     m_mapId_attr = 0;
     
-    m_has_s_xpath_attr = false;
+    m_has_xpath_attr = false;
     
-    if (m_s_xpath_attr)
+    if (m_xpath_attr)
     {
-        delete m_s_xpath_attr;
-        m_s_xpath_attr = NULL;
+        delete m_xpath_attr;
+        m_xpath_attr = NULL;
     }
     
     
@@ -99651,9 +105125,9 @@ CT_TableFormula* CT_TableFormula::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_xpath_attr)
+    if (m_has_xpath_attr)
     {
-        m_s_xpath_attr->toXmlAttr("xpath", _outStream);
+        m_xpath_attr->toXmlAttr("xpath", _outStream);
     }
     
     
@@ -99672,7 +105146,7 @@ CT_TableFormula* CT_TableFormula::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -99703,22 +105177,22 @@ CT_TableFormula* CT_TableFormula::default_instance_ = NULL;
     return m_mapId_attr;
     }
 
-    bool CT_XmlColumnPr::has_s_xpath_attr() const
+    bool CT_XmlColumnPr::has_xpath_attr() const
     {    
-    return m_has_s_xpath_attr;
+    return m_has_xpath_attr;
     }
 
-    void CT_XmlColumnPr::set_s_xpath_attr(const ns_s::ST_Xstring& _s_xpath_attr)
+    void CT_XmlColumnPr::set_xpath_attr(const ns_s::ST_Xstring& _xpath_attr)
     {    
-    m_has_s_xpath_attr = true;
-    m_s_xpath_attr = new ns_s::ST_Xstring(_s_xpath_attr);
+    m_has_xpath_attr = true;
+    m_xpath_attr = new ns_s::ST_Xstring(_xpath_attr);
     }
 
-    const ns_s::ST_Xstring& CT_XmlColumnPr::get_s_xpath_attr() const
+    const ns_s::ST_Xstring& CT_XmlColumnPr::get_xpath_attr() const
     {    
-    if (m_s_xpath_attr)
+    if (m_xpath_attr)
     {
-        return *m_s_xpath_attr;
+        return *m_xpath_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -99762,6 +105236,10 @@ CT_TableFormula* CT_TableFormula::default_instance_ = NULL;
 CT_XmlColumnPr* CT_XmlColumnPr::default_instance_ = NULL;
 
     // CT_VolTypes
+    CT_VolTypes::CT_VolTypes()
+
+    {
+    }
     CT_VolType* CT_VolTypes::add_volType()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -99807,11 +105285,11 @@ CT_XmlColumnPr* CT_XmlColumnPr::default_instance_ = NULL;
         {
             if ((*iter)->has_volType())
             {
-                (*iter)->get_volType().toXmlElem("volType", "", _outStream);
+                (*iter)->get_volType().toXmlElem("main:volType", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -99830,6 +105308,13 @@ CT_XmlColumnPr* CT_XmlColumnPr::default_instance_ = NULL;
 
 
     // CT_VolTypes::ChildGroup_1
+    CT_VolTypes::ChildGroup_1::ChildGroup_1()
+    :m_has_volType(false),
+    m_volType(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_VolTypes::ChildGroup_1::has_volType() const
     {    
     return m_has_volType;
@@ -99901,6 +105386,11 @@ CT_XmlColumnPr* CT_XmlColumnPr::default_instance_ = NULL;
 CT_VolTypes* CT_VolTypes::default_instance_ = NULL;
 
     // CT_VolType
+    CT_VolType::CT_VolType()
+    :m_has_type_attr(false),
+    m_type_attr(NULL)
+    {
+    }
     CT_VolMain* CT_VolType::add_main()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -99952,7 +105442,7 @@ CT_VolTypes* CT_VolTypes::default_instance_ = NULL;
         {
             if ((*iter)->has_main())
             {
-                (*iter)->get_main().toXmlElem("main", "", _outStream);
+                (*iter)->get_main().toXmlElem("main:main", "", _outStream);
             }
         }
     }
@@ -99991,6 +105481,11 @@ CT_VolTypes* CT_VolTypes::default_instance_ = NULL;
 
 
     // CT_VolType::ChildGroup_1
+    CT_VolType::ChildGroup_1::ChildGroup_1()
+    :m_has_main(false),
+    m_main(NULL)
+    {
+    }
     bool CT_VolType::ChildGroup_1::has_main() const
     {    
     return m_has_main;
@@ -100019,6 +105514,11 @@ CT_VolTypes* CT_VolTypes::default_instance_ = NULL;
 CT_VolType* CT_VolType::default_instance_ = NULL;
 
     // CT_VolMain
+    CT_VolMain::CT_VolMain()
+    :m_has_first_attr(false),
+    m_first_attr(NULL)
+    {
+    }
     CT_VolTopic* CT_VolMain::add_tp()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -100029,12 +105529,12 @@ CT_VolType* CT_VolType::default_instance_ = NULL;
 
     void CT_VolMain::clear()
     {    
-    m_has_s_first_attr = false;
+    m_has_first_attr = false;
     
-    if (m_s_first_attr)
+    if (m_first_attr)
     {
-        delete m_s_first_attr;
-        m_s_first_attr = NULL;
+        delete m_first_attr;
+        m_first_attr = NULL;
     }
     
     
@@ -100057,9 +105557,9 @@ CT_VolType* CT_VolType::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_first_attr)
+    if (m_has_first_attr)
     {
-        m_s_first_attr->toXmlAttr("first", _outStream);
+        m_first_attr->toXmlAttr("first", _outStream);
     }
     
             _outStream << ">";
@@ -100070,7 +105570,7 @@ CT_VolType* CT_VolType::default_instance_ = NULL;
         {
             if ((*iter)->has_tp())
             {
-                (*iter)->get_tp().toXmlElem("tp", "", _outStream);
+                (*iter)->get_tp().toXmlElem("main:tp", "", _outStream);
             }
         }
     }
@@ -100087,28 +105587,33 @@ CT_VolType* CT_VolType::default_instance_ = NULL;
     return *CT_VolMain::default_instance_;
     }
 
-    bool CT_VolMain::has_s_first_attr() const
+    bool CT_VolMain::has_first_attr() const
     {    
-    return m_has_s_first_attr;
+    return m_has_first_attr;
     }
 
-    void CT_VolMain::set_s_first_attr(const ns_s::ST_Xstring& _s_first_attr)
+    void CT_VolMain::set_first_attr(const ns_s::ST_Xstring& _first_attr)
     {    
-    m_has_s_first_attr = true;
-    m_s_first_attr = new ns_s::ST_Xstring(_s_first_attr);
+    m_has_first_attr = true;
+    m_first_attr = new ns_s::ST_Xstring(_first_attr);
     }
 
-    const ns_s::ST_Xstring& CT_VolMain::get_s_first_attr() const
+    const ns_s::ST_Xstring& CT_VolMain::get_first_attr() const
     {    
-    if (m_s_first_attr)
+    if (m_first_attr)
     {
-        return *m_s_first_attr;
+        return *m_first_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
 
     // CT_VolMain::ChildGroup_1
+    CT_VolMain::ChildGroup_1::ChildGroup_1()
+    :m_has_tp(false),
+    m_tp(NULL)
+    {
+    }
     bool CT_VolMain::ChildGroup_1::has_tp() const
     {    
     return m_has_tp;
@@ -100137,34 +105642,41 @@ CT_VolType* CT_VolType::default_instance_ = NULL;
 CT_VolMain* CT_VolMain::default_instance_ = NULL;
 
     // CT_VolTopic
-    bool CT_VolTopic::has_s_v() const
+    CT_VolTopic::CT_VolTopic()
+    :m_has_v(false),
+    m_v(NULL),
+    m_has_t_attr(false),
+    m_t_attr(NULL)
+    {
+    }
+    bool CT_VolTopic::has_v() const
     {    
-    return m_has_s_v;
+    return m_has_v;
     }
 
-    ns_s::ST_Xstring* CT_VolTopic::mutable_s_v()
+    ns_s::ST_Xstring* CT_VolTopic::mutable_v()
     {    
-    m_has_s_v = true;
-    if (!m_s_v)
+    m_has_v = true;
+    if (!m_v)
     {
-        m_s_v = new ns_s::ST_Xstring();
+        m_v = new ns_s::ST_Xstring();
     }
-    return m_s_v;
+    return m_v;
     }
 
-    const ns_s::ST_Xstring& CT_VolTopic::get_s_v() const
+    const ns_s::ST_Xstring& CT_VolTopic::get_v() const
     {    
-    if (m_s_v)
+    if (m_v)
     {
-        return *m_s_v;
+        return *m_v;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    ns_s::ST_Xstring* CT_VolTopic::add_s_stp()
+    ns_s::ST_Xstring* CT_VolTopic::add_stp()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    ns_s::ST_Xstring* pNewChild = pChildGroup->mutable_s_stp();
+    ns_s::ST_Xstring* pNewChild = pChildGroup->mutable_stp();
     m_childGroupList_1.push_back(pChildGroup);
     return pNewChild;
     }
@@ -100188,12 +105700,12 @@ CT_VolMain* CT_VolMain::default_instance_ = NULL;
     }
     
     
-    m_has_s_v = false;
+    m_has_v = false;
     
-    if (m_s_v)
+    if (m_v)
     {
-        delete m_s_v;
-        m_s_v = NULL;
+        delete m_v;
+        m_v = NULL;
     }
     
      
@@ -100223,22 +105735,22 @@ CT_VolMain* CT_VolMain::default_instance_ = NULL;
     
             _outStream << ">";
             
-    if (m_has_s_v)
+    if (m_has_v)
     {
-        _outStream << "<s:v>" << m_s_v->toString() << "</s:v>";;
+        _outStream << "<main:v>" << m_v->toString() << "</main:v>";;
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_s_stp())
+            if ((*iter)->has_stp())
             {
-                _outStream << "<s:stp>" << (*iter)->get_s_stp().toString() << "</s:stp>";
+                _outStream << "<main:stp>" << (*iter)->get_stp().toString() << "</main:stp>";
             }
             else if ((*iter)->has_tr())
             {
-                (*iter)->get_tr().toXmlElem("tr", "", _outStream);
+                (*iter)->get_tr().toXmlElem("main:tr", "", _outStream);
             }
         }
     }
@@ -100277,12 +105789,19 @@ CT_VolMain* CT_VolMain::default_instance_ = NULL;
 
 
     // CT_VolTopic::ChildGroup_1
-    bool CT_VolTopic::ChildGroup_1::has_s_stp() const
+    CT_VolTopic::ChildGroup_1::ChildGroup_1()
+    :m_has_stp(false),
+    m_stp(NULL),
+    m_has_tr(false),
+    m_tr(NULL)
+    {
+    }
+    bool CT_VolTopic::ChildGroup_1::has_stp() const
     {    
-    return m_has_s_stp;
+    return m_has_stp;
     }
 
-    ns_s::ST_Xstring* CT_VolTopic::ChildGroup_1::mutable_s_stp()
+    ns_s::ST_Xstring* CT_VolTopic::ChildGroup_1::mutable_stp()
     {    
     
     m_has_tr = false;
@@ -100294,19 +105813,19 @@ CT_VolMain* CT_VolMain::default_instance_ = NULL;
     }
     ;
     
-    m_has_s_stp = true;
-    if (!m_s_stp)
+    m_has_stp = true;
+    if (!m_stp)
     {
-        m_s_stp = new ns_s::ST_Xstring();
+        m_stp = new ns_s::ST_Xstring();
     }
-    return m_s_stp;
+    return m_stp;
     }
 
-    const ns_s::ST_Xstring& CT_VolTopic::ChildGroup_1::get_s_stp() const
+    const ns_s::ST_Xstring& CT_VolTopic::ChildGroup_1::get_stp() const
     {    
-    if (m_s_stp)
+    if (m_stp)
     {
-        return *m_s_stp;
+        return *m_stp;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -100319,12 +105838,12 @@ CT_VolMain* CT_VolMain::default_instance_ = NULL;
     CT_VolTopicRef* CT_VolTopic::ChildGroup_1::mutable_tr()
     {    
     
-    m_has_s_stp = false;
+    m_has_stp = false;
     
-    if (m_s_stp)
+    if (m_stp)
     {
-        delete m_s_stp;
-        m_s_stp = NULL;
+        delete m_stp;
+        m_stp = NULL;
     }
     ;
     
@@ -100348,6 +105867,13 @@ CT_VolMain* CT_VolMain::default_instance_ = NULL;
 CT_VolTopic* CT_VolTopic::default_instance_ = NULL;
 
     // CT_VolTopicRef
+    CT_VolTopicRef::CT_VolTopicRef()
+    :m_has_r_attr(false),
+    m_r_attr(NULL),
+    m_has_s_attr(false),
+    m_s_attr(0)
+    {
+    }
     void CT_VolTopicRef::clear()
     {    
     m_has_r_attr = false;
@@ -100436,6 +105962,43 @@ CT_VolTopic* CT_VolTopic::default_instance_ = NULL;
 CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
 
     // CT_Workbook
+    CT_Workbook::CT_Workbook()
+    :m_has_fileVersion(false),
+    m_fileVersion(NULL),
+    m_has_fileSharing(false),
+    m_fileSharing(NULL),
+    m_has_workbookPr(false),
+    m_workbookPr(NULL),
+    m_has_workbookProtection(false),
+    m_workbookProtection(NULL),
+    m_has_bookViews(false),
+    m_bookViews(NULL),
+    m_has_sheets(false),
+    m_sheets(NULL),
+    m_has_functionGroups(false),
+    m_functionGroups(NULL),
+    m_has_externalReferences(false),
+    m_externalReferences(NULL),
+    m_has_definedNames(false),
+    m_definedNames(NULL),
+    m_has_calcPr(false),
+    m_calcPr(NULL),
+    m_has_oleSize(false),
+    m_oleSize(NULL),
+    m_has_customWorkbookViews(false),
+    m_customWorkbookViews(NULL),
+    m_has_pivotCaches(false),
+    m_pivotCaches(NULL),
+    m_has_smartTagPr(false),
+    m_smartTagPr(NULL),
+    m_has_smartTagTypes(false),
+    m_smartTagTypes(NULL),
+    m_has_webPublishing(false),
+    m_webPublishing(NULL),
+    m_has_conformance_attr(false),
+    m_conformance_attr(NULL)
+    {
+    }
     bool CT_Workbook::has_fileVersion() const
     {    
     return m_has_fileVersion;
@@ -100846,12 +106409,12 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
 
     void CT_Workbook::clear()
     {    
-    m_has_s_conformance_attr = false;
+    m_has_conformance_attr = false;
     
-    if (m_s_conformance_attr)
+    if (m_conformance_attr)
     {
-        delete m_s_conformance_attr;
-        m_s_conformance_attr = NULL;
+        delete m_conformance_attr;
+        m_conformance_attr = NULL;
     }
     
     
@@ -101018,91 +106581,91 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_conformance_attr)
+    if (m_has_conformance_attr)
     {
-        m_s_conformance_attr->toXmlAttr("conformance", _outStream);
+        m_conformance_attr->toXmlAttr("conformance", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_fileVersion)
     {
-        m_fileVersion->toXmlElem("fileVersion", "", _outStream);;
+        m_fileVersion->toXmlElem("main:fileVersion", "", _outStream);;
     }
     
     if (m_has_fileSharing)
     {
-        m_fileSharing->toXmlElem("fileSharing", "", _outStream);;
+        m_fileSharing->toXmlElem("main:fileSharing", "", _outStream);;
     }
     
     if (m_has_workbookPr)
     {
-        m_workbookPr->toXmlElem("workbookPr", "", _outStream);;
+        m_workbookPr->toXmlElem("main:workbookPr", "", _outStream);;
     }
     
     if (m_has_workbookProtection)
     {
-        m_workbookProtection->toXmlElem("workbookProtection", "", _outStream);;
+        m_workbookProtection->toXmlElem("main:workbookProtection", "", _outStream);;
     }
     
     if (m_has_bookViews)
     {
-        m_bookViews->toXmlElem("bookViews", "", _outStream);;
+        m_bookViews->toXmlElem("main:bookViews", "", _outStream);;
     }
     
     if (m_has_sheets)
     {
-        m_sheets->toXmlElem("sheets", "", _outStream);;
+        m_sheets->toXmlElem("main:sheets", "", _outStream);;
     }
     
     if (m_has_functionGroups)
     {
-        m_functionGroups->toXmlElem("functionGroups", "", _outStream);;
+        m_functionGroups->toXmlElem("main:functionGroups", "", _outStream);;
     }
     
     if (m_has_externalReferences)
     {
-        m_externalReferences->toXmlElem("externalReferences", "", _outStream);;
+        m_externalReferences->toXmlElem("main:externalReferences", "", _outStream);;
     }
     
     if (m_has_definedNames)
     {
-        m_definedNames->toXmlElem("definedNames", "", _outStream);;
+        m_definedNames->toXmlElem("main:definedNames", "", _outStream);;
     }
     
     if (m_has_calcPr)
     {
-        m_calcPr->toXmlElem("calcPr", "", _outStream);;
+        m_calcPr->toXmlElem("main:calcPr", "", _outStream);;
     }
     
     if (m_has_oleSize)
     {
-        m_oleSize->toXmlElem("oleSize", "", _outStream);;
+        m_oleSize->toXmlElem("main:oleSize", "", _outStream);;
     }
     
     if (m_has_customWorkbookViews)
     {
-        m_customWorkbookViews->toXmlElem("customWorkbookViews", "", _outStream);;
+        m_customWorkbookViews->toXmlElem("main:customWorkbookViews", "", _outStream);;
     }
     
     if (m_has_pivotCaches)
     {
-        m_pivotCaches->toXmlElem("pivotCaches", "", _outStream);;
+        m_pivotCaches->toXmlElem("main:pivotCaches", "", _outStream);;
     }
     
     if (m_has_smartTagPr)
     {
-        m_smartTagPr->toXmlElem("smartTagPr", "", _outStream);;
+        m_smartTagPr->toXmlElem("main:smartTagPr", "", _outStream);;
     }
     
     if (m_has_smartTagTypes)
     {
-        m_smartTagTypes->toXmlElem("smartTagTypes", "", _outStream);;
+        m_smartTagTypes->toXmlElem("main:smartTagTypes", "", _outStream);;
     }
     
     if (m_has_webPublishing)
     {
-        m_webPublishing->toXmlElem("webPublishing", "", _outStream);;
+        m_webPublishing->toXmlElem("main:webPublishing", "", _outStream);;
     }
      
     {
@@ -101111,15 +106674,15 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
         {
             if ((*iter)->has_fileRecoveryPr())
             {
-                (*iter)->get_fileRecoveryPr().toXmlElem("fileRecoveryPr", "", _outStream);
+                (*iter)->get_fileRecoveryPr().toXmlElem("main:fileRecoveryPr", "", _outStream);
             }
             else if ((*iter)->has_webPublishObjects())
             {
-                (*iter)->get_webPublishObjects().toXmlElem("webPublishObjects", "", _outStream);
+                (*iter)->get_webPublishObjects().toXmlElem("main:webPublishObjects", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
@@ -101136,28 +106699,37 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
     return *CT_Workbook::default_instance_;
     }
 
-    bool CT_Workbook::has_s_conformance_attr() const
+    bool CT_Workbook::has_conformance_attr() const
     {    
-    return m_has_s_conformance_attr;
+    return m_has_conformance_attr;
     }
 
-    void CT_Workbook::set_s_conformance_attr(const ns_s::ST_ConformanceClass& _s_conformance_attr)
+    void CT_Workbook::set_conformance_attr(const ns_s::ST_ConformanceClass& _conformance_attr)
     {    
-    m_has_s_conformance_attr = true;
-    m_s_conformance_attr = new ns_s::ST_ConformanceClass(_s_conformance_attr);
+    m_has_conformance_attr = true;
+    m_conformance_attr = new ns_s::ST_ConformanceClass(_conformance_attr);
     }
 
-    const ns_s::ST_ConformanceClass& CT_Workbook::get_s_conformance_attr() const
+    const ns_s::ST_ConformanceClass& CT_Workbook::get_conformance_attr() const
     {    
-    if (m_s_conformance_attr)
+    if (m_conformance_attr)
     {
-        return *m_s_conformance_attr;
+        return *m_conformance_attr;
     }
     return ns_s::ST_ConformanceClass::default_instance();
     }
 
 
     // CT_Workbook::ChildGroup_1
+    CT_Workbook::ChildGroup_1::ChildGroup_1()
+    :m_has_fileRecoveryPr(false),
+    m_fileRecoveryPr(NULL),
+    m_has_webPublishObjects(false),
+    m_webPublishObjects(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool CT_Workbook::ChildGroup_1::has_fileRecoveryPr() const
     {    
     return m_has_fileRecoveryPr;
@@ -101290,6 +106862,19 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
 CT_Workbook* CT_Workbook::default_instance_ = NULL;
 
     // CT_FileVersion
+    CT_FileVersion::CT_FileVersion()
+    :m_has_appName_attr(false),
+    m_appName_attr(""),
+    m_has_lastEdited_attr(false),
+    m_lastEdited_attr(""),
+    m_has_lowestEdited_attr(false),
+    m_lowestEdited_attr(""),
+    m_has_rupBuild_attr(false),
+    m_rupBuild_attr(""),
+    m_has_codeName_attr(false),
+    m_codeName_attr(NULL)
+    {
+    }
     void CT_FileVersion::clear()
     {    
     m_has_appName_attr = false;
@@ -101304,12 +106889,12 @@ CT_Workbook* CT_Workbook::default_instance_ = NULL;
     m_has_rupBuild_attr = false;
     m_rupBuild_attr.clear();
     
-    m_has_s_codeName_attr = false;
+    m_has_codeName_attr = false;
     
-    if (m_s_codeName_attr)
+    if (m_codeName_attr)
     {
-        delete m_s_codeName_attr;
-        m_s_codeName_attr = NULL;
+        delete m_codeName_attr;
+        m_codeName_attr = NULL;
     }
     
     }
@@ -101347,9 +106932,9 @@ CT_Workbook* CT_Workbook::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_codeName_attr)
+    if (m_has_codeName_attr)
     {
-        m_s_codeName_attr->toXmlAttr("codeName", _outStream);
+        m_codeName_attr->toXmlAttr("codeName", _outStream);
     }
     
             _outStream << ">";
@@ -101430,22 +107015,22 @@ CT_Workbook* CT_Workbook::default_instance_ = NULL;
     return m_rupBuild_attr;
     }
 
-    bool CT_FileVersion::has_s_codeName_attr() const
+    bool CT_FileVersion::has_codeName_attr() const
     {    
-    return m_has_s_codeName_attr;
+    return m_has_codeName_attr;
     }
 
-    void CT_FileVersion::set_s_codeName_attr(const ns_s::ST_Guid& _s_codeName_attr)
+    void CT_FileVersion::set_codeName_attr(const ns_s::ST_Guid& _codeName_attr)
     {    
-    m_has_s_codeName_attr = true;
-    m_s_codeName_attr = new ns_s::ST_Guid(_s_codeName_attr);
+    m_has_codeName_attr = true;
+    m_codeName_attr = new ns_s::ST_Guid(_codeName_attr);
     }
 
-    const ns_s::ST_Guid& CT_FileVersion::get_s_codeName_attr() const
+    const ns_s::ST_Guid& CT_FileVersion::get_codeName_attr() const
     {    
-    if (m_s_codeName_attr)
+    if (m_codeName_attr)
     {
-        return *m_s_codeName_attr;
+        return *m_codeName_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -101453,6 +107038,10 @@ CT_Workbook* CT_Workbook::default_instance_ = NULL;
 CT_FileVersion* CT_FileVersion::default_instance_ = NULL;
 
     // CT_BookViews
+    CT_BookViews::CT_BookViews()
+
+    {
+    }
     CT_BookView* CT_BookViews::add_workbookView()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -101490,7 +107079,7 @@ CT_FileVersion* CT_FileVersion::default_instance_ = NULL;
         {
             if ((*iter)->has_workbookView())
             {
-                (*iter)->get_workbookView().toXmlElem("workbookView", "", _outStream);
+                (*iter)->get_workbookView().toXmlElem("main:workbookView", "", _outStream);
             }
         }
     }
@@ -101509,6 +107098,11 @@ CT_FileVersion* CT_FileVersion::default_instance_ = NULL;
 
 
     // CT_BookViews::ChildGroup_1
+    CT_BookViews::ChildGroup_1::ChildGroup_1()
+    :m_has_workbookView(false),
+    m_workbookView(NULL)
+    {
+    }
     bool CT_BookViews::ChildGroup_1::has_workbookView() const
     {    
     return m_has_workbookView;
@@ -101537,6 +107131,37 @@ CT_FileVersion* CT_FileVersion::default_instance_ = NULL;
 CT_BookViews* CT_BookViews::default_instance_ = NULL;
 
     // CT_BookView
+    CT_BookView::CT_BookView()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_visibility_attr(false),
+    m_visibility_attr(NULL),
+    m_has_minimized_attr(false),
+    m_minimized_attr(false),
+    m_has_showHorizontalScroll_attr(false),
+    m_showHorizontalScroll_attr(false),
+    m_has_showVerticalScroll_attr(false),
+    m_showVerticalScroll_attr(false),
+    m_has_showSheetTabs_attr(false),
+    m_showSheetTabs_attr(false),
+    m_has_xWindow_attr(false),
+    m_xWindow_attr(0),
+    m_has_yWindow_attr(false),
+    m_yWindow_attr(0),
+    m_has_windowWidth_attr(false),
+    m_windowWidth_attr(0),
+    m_has_windowHeight_attr(false),
+    m_windowHeight_attr(0),
+    m_has_tabRatio_attr(false),
+    m_tabRatio_attr(0),
+    m_has_firstSheet_attr(false),
+    m_firstSheet_attr(0),
+    m_has_activeTab_attr(false),
+    m_activeTab_attr(0),
+    m_has_autoFilterDateGrouping_attr(false),
+    m_autoFilterDateGrouping_attr(false)
+    {
+    }
     bool CT_BookView::has_extLst() const
     {    
     return m_has_extLst;
@@ -101699,7 +107324,7 @@ CT_BookViews* CT_BookViews::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -101929,6 +107554,10 @@ CT_BookViews* CT_BookViews::default_instance_ = NULL;
 CT_BookView* CT_BookView::default_instance_ = NULL;
 
     // CT_CustomWorkbookViews
+    CT_CustomWorkbookViews::CT_CustomWorkbookViews()
+
+    {
+    }
     CT_CustomWorkbookView* CT_CustomWorkbookViews::add_customWorkbookView()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -101966,7 +107595,7 @@ CT_BookView* CT_BookView::default_instance_ = NULL;
         {
             if ((*iter)->has_customWorkbookView())
             {
-                (*iter)->get_customWorkbookView().toXmlElem("customWorkbookView", "", _outStream);
+                (*iter)->get_customWorkbookView().toXmlElem("main:customWorkbookView", "", _outStream);
             }
         }
     }
@@ -101985,6 +107614,11 @@ CT_BookView* CT_BookView::default_instance_ = NULL;
 
 
     // CT_CustomWorkbookViews::ChildGroup_1
+    CT_CustomWorkbookViews::ChildGroup_1::ChildGroup_1()
+    :m_has_customWorkbookView(false),
+    m_customWorkbookView(NULL)
+    {
+    }
     bool CT_CustomWorkbookViews::ChildGroup_1::has_customWorkbookView() const
     {    
     return m_has_customWorkbookView;
@@ -102013,6 +107647,59 @@ CT_BookView* CT_BookView::default_instance_ = NULL;
 CT_CustomWorkbookViews* CT_CustomWorkbookViews::default_instance_ = NULL;
 
     // CT_CustomWorkbookView
+    CT_CustomWorkbookView::CT_CustomWorkbookView()
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_guid_attr(false),
+    m_guid_attr(NULL),
+    m_has_autoUpdate_attr(false),
+    m_autoUpdate_attr(false),
+    m_has_mergeInterval_attr(false),
+    m_mergeInterval_attr(0),
+    m_has_changesSavedWin_attr(false),
+    m_changesSavedWin_attr(false),
+    m_has_onlySync_attr(false),
+    m_onlySync_attr(false),
+    m_has_personalView_attr(false),
+    m_personalView_attr(false),
+    m_has_includePrintSettings_attr(false),
+    m_includePrintSettings_attr(false),
+    m_has_includeHiddenRowCol_attr(false),
+    m_includeHiddenRowCol_attr(false),
+    m_has_maximized_attr(false),
+    m_maximized_attr(false),
+    m_has_minimized_attr(false),
+    m_minimized_attr(false),
+    m_has_showHorizontalScroll_attr(false),
+    m_showHorizontalScroll_attr(false),
+    m_has_showVerticalScroll_attr(false),
+    m_showVerticalScroll_attr(false),
+    m_has_showSheetTabs_attr(false),
+    m_showSheetTabs_attr(false),
+    m_has_xWindow_attr(false),
+    m_xWindow_attr(0),
+    m_has_yWindow_attr(false),
+    m_yWindow_attr(0),
+    m_has_windowWidth_attr(false),
+    m_windowWidth_attr(0),
+    m_has_windowHeight_attr(false),
+    m_windowHeight_attr(0),
+    m_has_tabRatio_attr(false),
+    m_tabRatio_attr(0),
+    m_has_activeSheetId_attr(false),
+    m_activeSheetId_attr(0),
+    m_has_showFormulaBar_attr(false),
+    m_showFormulaBar_attr(false),
+    m_has_showStatusbar_attr(false),
+    m_showStatusbar_attr(false),
+    m_has_showComments_attr(false),
+    m_showComments_attr(NULL),
+    m_has_showObjects_attr(false),
+    m_showObjects_attr(NULL)
+    {
+    }
     bool CT_CustomWorkbookView::has_extLst() const
     {    
     return m_has_extLst;
@@ -102039,21 +107726,21 @@ CT_CustomWorkbookViews* CT_CustomWorkbookViews::default_instance_ = NULL;
 
     void CT_CustomWorkbookView::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_guid_attr = false;
+    m_has_guid_attr = false;
     
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        delete m_s_guid_attr;
-        m_s_guid_attr = NULL;
+        delete m_guid_attr;
+        m_guid_attr = NULL;
     }
     
     
@@ -102145,15 +107832,15 @@ CT_CustomWorkbookViews* CT_CustomWorkbookViews::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_guid_attr)
+    if (m_has_guid_attr)
     {
-        m_s_guid_attr->toXmlAttr("guid", _outStream);
+        m_guid_attr->toXmlAttr("guid", _outStream);
     }
     
     
@@ -102292,7 +107979,7 @@ CT_CustomWorkbookViews* CT_CustomWorkbookViews::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -102307,42 +107994,42 @@ CT_CustomWorkbookViews* CT_CustomWorkbookViews::default_instance_ = NULL;
     return *CT_CustomWorkbookView::default_instance_;
     }
 
-    bool CT_CustomWorkbookView::has_s_name_attr() const
+    bool CT_CustomWorkbookView::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_CustomWorkbookView::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_CustomWorkbookView::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_CustomWorkbookView::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_CustomWorkbookView::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_CustomWorkbookView::has_s_guid_attr() const
+    bool CT_CustomWorkbookView::has_guid_attr() const
     {    
-    return m_has_s_guid_attr;
+    return m_has_guid_attr;
     }
 
-    void CT_CustomWorkbookView::set_s_guid_attr(const ns_s::ST_Guid& _s_guid_attr)
+    void CT_CustomWorkbookView::set_guid_attr(const ns_s::ST_Guid& _guid_attr)
     {    
-    m_has_s_guid_attr = true;
-    m_s_guid_attr = new ns_s::ST_Guid(_s_guid_attr);
+    m_has_guid_attr = true;
+    m_guid_attr = new ns_s::ST_Guid(_guid_attr);
     }
 
-    const ns_s::ST_Guid& CT_CustomWorkbookView::get_s_guid_attr() const
+    const ns_s::ST_Guid& CT_CustomWorkbookView::get_guid_attr() const
     {    
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        return *m_s_guid_attr;
+        return *m_guid_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -102710,6 +108397,10 @@ CT_CustomWorkbookViews* CT_CustomWorkbookViews::default_instance_ = NULL;
 CT_CustomWorkbookView* CT_CustomWorkbookView::default_instance_ = NULL;
 
     // CT_Sheets
+    CT_Sheets::CT_Sheets()
+
+    {
+    }
     CT_Sheet* CT_Sheets::add_sheet()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -102747,7 +108438,7 @@ CT_CustomWorkbookView* CT_CustomWorkbookView::default_instance_ = NULL;
         {
             if ((*iter)->has_sheet())
             {
-                (*iter)->get_sheet().toXmlElem("sheet", "", _outStream);
+                (*iter)->get_sheet().toXmlElem("main:sheet", "", _outStream);
             }
         }
     }
@@ -102766,6 +108457,11 @@ CT_CustomWorkbookView* CT_CustomWorkbookView::default_instance_ = NULL;
 
 
     // CT_Sheets::ChildGroup_1
+    CT_Sheets::ChildGroup_1::ChildGroup_1()
+    :m_has_sheet(false),
+    m_sheet(NULL)
+    {
+    }
     bool CT_Sheets::ChildGroup_1::has_sheet() const
     {    
     return m_has_sheet;
@@ -102794,14 +108490,25 @@ CT_CustomWorkbookView* CT_CustomWorkbookView::default_instance_ = NULL;
 CT_Sheets* CT_Sheets::default_instance_ = NULL;
 
     // CT_Sheet
+    CT_Sheet::CT_Sheet()
+    :m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_sheetId_attr(false),
+    m_sheetId_attr(0),
+    m_has_state_attr(false),
+    m_state_attr(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     void CT_Sheet::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -102836,9 +108543,9 @@ CT_Sheets* CT_Sheets::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -102856,7 +108563,7 @@ CT_Sheets* CT_Sheets::default_instance_ = NULL;
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
@@ -102873,22 +108580,22 @@ CT_Sheets* CT_Sheets::default_instance_ = NULL;
     return *CT_Sheet::default_instance_;
     }
 
-    bool CT_Sheet::has_s_name_attr() const
+    bool CT_Sheet::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_Sheet::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_Sheet::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_Sheet::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_Sheet::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -102952,6 +108659,45 @@ CT_Sheets* CT_Sheets::default_instance_ = NULL;
 CT_Sheet* CT_Sheet::default_instance_ = NULL;
 
     // CT_WorkbookPr
+    CT_WorkbookPr::CT_WorkbookPr()
+    :m_has_date1904_attr(false),
+    m_date1904_attr(false),
+    m_has_showObjects_attr(false),
+    m_showObjects_attr(NULL),
+    m_has_showBorderUnselectedTables_attr(false),
+    m_showBorderUnselectedTables_attr(false),
+    m_has_filterPrivacy_attr(false),
+    m_filterPrivacy_attr(false),
+    m_has_promptedSolutions_attr(false),
+    m_promptedSolutions_attr(false),
+    m_has_showInkAnnotation_attr(false),
+    m_showInkAnnotation_attr(false),
+    m_has_backupFile_attr(false),
+    m_backupFile_attr(false),
+    m_has_saveExternalLinkValues_attr(false),
+    m_saveExternalLinkValues_attr(false),
+    m_has_updateLinks_attr(false),
+    m_updateLinks_attr(NULL),
+    m_has_codeName_attr(false),
+    m_codeName_attr(""),
+    m_has_hidePivotFieldList_attr(false),
+    m_hidePivotFieldList_attr(false),
+    m_has_showPivotChartFilter_attr(false),
+    m_showPivotChartFilter_attr(false),
+    m_has_allowRefreshQuery_attr(false),
+    m_allowRefreshQuery_attr(false),
+    m_has_publishItems_attr(false),
+    m_publishItems_attr(false),
+    m_has_checkCompatibility_attr(false),
+    m_checkCompatibility_attr(false),
+    m_has_autoCompressPictures_attr(false),
+    m_autoCompressPictures_attr(false),
+    m_has_refreshAllConnections_attr(false),
+    m_refreshAllConnections_attr(false),
+    m_has_defaultThemeVersion_attr(false),
+    m_defaultThemeVersion_attr(0)
+    {
+    }
     void CT_WorkbookPr::clear()
     {    
     m_has_date1904_attr = false;
@@ -103450,6 +109196,13 @@ CT_Sheet* CT_Sheet::default_instance_ = NULL;
 CT_WorkbookPr* CT_WorkbookPr::default_instance_ = NULL;
 
     // CT_SmartTagPr
+    CT_SmartTagPr::CT_SmartTagPr()
+    :m_has_embed_attr(false),
+    m_embed_attr(false),
+    m_has_show_attr(false),
+    m_show_attr(NULL)
+    {
+    }
     void CT_SmartTagPr::clear()
     {    
     m_has_embed_attr = false;
@@ -103538,6 +109291,10 @@ CT_WorkbookPr* CT_WorkbookPr::default_instance_ = NULL;
 CT_SmartTagPr* CT_SmartTagPr::default_instance_ = NULL;
 
     // CT_SmartTagTypes
+    CT_SmartTagTypes::CT_SmartTagTypes()
+
+    {
+    }
     CT_SmartTagType* CT_SmartTagTypes::add_smartTagType()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -103575,7 +109332,7 @@ CT_SmartTagPr* CT_SmartTagPr::default_instance_ = NULL;
         {
             if ((*iter)->has_smartTagType())
             {
-                (*iter)->get_smartTagType().toXmlElem("smartTagType", "", _outStream);
+                (*iter)->get_smartTagType().toXmlElem("main:smartTagType", "", _outStream);
             }
         }
     }
@@ -103594,6 +109351,11 @@ CT_SmartTagPr* CT_SmartTagPr::default_instance_ = NULL;
 
 
     // CT_SmartTagTypes::ChildGroup_1
+    CT_SmartTagTypes::ChildGroup_1::ChildGroup_1()
+    :m_has_smartTagType(false),
+    m_smartTagType(NULL)
+    {
+    }
     bool CT_SmartTagTypes::ChildGroup_1::has_smartTagType() const
     {    
     return m_has_smartTagType;
@@ -103622,32 +109384,41 @@ CT_SmartTagPr* CT_SmartTagPr::default_instance_ = NULL;
 CT_SmartTagTypes* CT_SmartTagTypes::default_instance_ = NULL;
 
     // CT_SmartTagType
+    CT_SmartTagType::CT_SmartTagType()
+    :m_has_namespaceUri_attr(false),
+    m_namespaceUri_attr(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_url_attr(false),
+    m_url_attr(NULL)
+    {
+    }
     void CT_SmartTagType::clear()
     {    
-    m_has_s_namespaceUri_attr = false;
+    m_has_namespaceUri_attr = false;
     
-    if (m_s_namespaceUri_attr)
+    if (m_namespaceUri_attr)
     {
-        delete m_s_namespaceUri_attr;
-        m_s_namespaceUri_attr = NULL;
+        delete m_namespaceUri_attr;
+        m_namespaceUri_attr = NULL;
     }
     
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_url_attr = false;
+    m_has_url_attr = false;
     
-    if (m_s_url_attr)
+    if (m_url_attr)
     {
-        delete m_s_url_attr;
-        m_s_url_attr = NULL;
+        delete m_url_attr;
+        m_url_attr = NULL;
     }
     
     }
@@ -103661,21 +109432,21 @@ CT_SmartTagTypes* CT_SmartTagTypes::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_namespaceUri_attr)
+    if (m_has_namespaceUri_attr)
     {
-        m_s_namespaceUri_attr->toXmlAttr("namespaceUri", _outStream);
+        m_namespaceUri_attr->toXmlAttr("namespaceUri", _outStream);
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_url_attr)
+    if (m_has_url_attr)
     {
-        m_s_url_attr->toXmlAttr("url", _outStream);
+        m_url_attr->toXmlAttr("url", _outStream);
     }
     
             _outStream << ">";
@@ -103692,62 +109463,62 @@ CT_SmartTagTypes* CT_SmartTagTypes::default_instance_ = NULL;
     return *CT_SmartTagType::default_instance_;
     }
 
-    bool CT_SmartTagType::has_s_namespaceUri_attr() const
+    bool CT_SmartTagType::has_namespaceUri_attr() const
     {    
-    return m_has_s_namespaceUri_attr;
+    return m_has_namespaceUri_attr;
     }
 
-    void CT_SmartTagType::set_s_namespaceUri_attr(const ns_s::ST_Xstring& _s_namespaceUri_attr)
+    void CT_SmartTagType::set_namespaceUri_attr(const ns_s::ST_Xstring& _namespaceUri_attr)
     {    
-    m_has_s_namespaceUri_attr = true;
-    m_s_namespaceUri_attr = new ns_s::ST_Xstring(_s_namespaceUri_attr);
+    m_has_namespaceUri_attr = true;
+    m_namespaceUri_attr = new ns_s::ST_Xstring(_namespaceUri_attr);
     }
 
-    const ns_s::ST_Xstring& CT_SmartTagType::get_s_namespaceUri_attr() const
+    const ns_s::ST_Xstring& CT_SmartTagType::get_namespaceUri_attr() const
     {    
-    if (m_s_namespaceUri_attr)
+    if (m_namespaceUri_attr)
     {
-        return *m_s_namespaceUri_attr;
+        return *m_namespaceUri_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_SmartTagType::has_s_name_attr() const
+    bool CT_SmartTagType::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_SmartTagType::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_SmartTagType::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_SmartTagType::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_SmartTagType::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_SmartTagType::has_s_url_attr() const
+    bool CT_SmartTagType::has_url_attr() const
     {    
-    return m_has_s_url_attr;
+    return m_has_url_attr;
     }
 
-    void CT_SmartTagType::set_s_url_attr(const ns_s::ST_Xstring& _s_url_attr)
+    void CT_SmartTagType::set_url_attr(const ns_s::ST_Xstring& _url_attr)
     {    
-    m_has_s_url_attr = true;
-    m_s_url_attr = new ns_s::ST_Xstring(_s_url_attr);
+    m_has_url_attr = true;
+    m_url_attr = new ns_s::ST_Xstring(_url_attr);
     }
 
-    const ns_s::ST_Xstring& CT_SmartTagType::get_s_url_attr() const
+    const ns_s::ST_Xstring& CT_SmartTagType::get_url_attr() const
     {    
-    if (m_s_url_attr)
+    if (m_url_attr)
     {
-        return *m_s_url_attr;
+        return *m_url_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -103755,6 +109526,17 @@ CT_SmartTagTypes* CT_SmartTagTypes::default_instance_ = NULL;
 CT_SmartTagType* CT_SmartTagType::default_instance_ = NULL;
 
     // CT_FileRecoveryPr
+    CT_FileRecoveryPr::CT_FileRecoveryPr()
+    :m_has_autoRecover_attr(false),
+    m_autoRecover_attr(false),
+    m_has_crashSave_attr(false),
+    m_crashSave_attr(false),
+    m_has_dataExtractLoad_attr(false),
+    m_dataExtractLoad_attr(false),
+    m_has_repairLoad_attr(false),
+    m_repairLoad_attr(false)
+    {
+    }
     void CT_FileRecoveryPr::clear()
     {    
     m_has_autoRecover_attr = false;
@@ -103883,6 +109665,35 @@ CT_SmartTagType* CT_SmartTagType::default_instance_ = NULL;
 CT_FileRecoveryPr* CT_FileRecoveryPr::default_instance_ = NULL;
 
     // CT_CalcPr
+    CT_CalcPr::CT_CalcPr()
+    :m_has_calcId_attr(false),
+    m_calcId_attr(0),
+    m_has_calcMode_attr(false),
+    m_calcMode_attr(NULL),
+    m_has_fullCalcOnLoad_attr(false),
+    m_fullCalcOnLoad_attr(false),
+    m_has_refMode_attr(false),
+    m_refMode_attr(NULL),
+    m_has_iterate_attr(false),
+    m_iterate_attr(false),
+    m_has_iterateCount_attr(false),
+    m_iterateCount_attr(0),
+    m_has_iterateDelta_attr(false),
+    m_iterateDelta_attr(0),
+    m_has_fullPrecision_attr(false),
+    m_fullPrecision_attr(false),
+    m_has_calcCompleted_attr(false),
+    m_calcCompleted_attr(false),
+    m_has_calcOnSave_attr(false),
+    m_calcOnSave_attr(false),
+    m_has_concurrentCalc_attr(false),
+    m_concurrentCalc_attr(false),
+    m_has_concurrentManualCount_attr(false),
+    m_concurrentManualCount_attr(0),
+    m_has_forceFullCalc_attr(false),
+    m_forceFullCalc_attr(false)
+    {
+    }
     void CT_CalcPr::clear()
     {    
     m_has_calcId_attr = false;
@@ -104256,6 +110067,10 @@ CT_FileRecoveryPr* CT_FileRecoveryPr::default_instance_ = NULL;
 CT_CalcPr* CT_CalcPr::default_instance_ = NULL;
 
     // CT_DefinedNames
+    CT_DefinedNames::CT_DefinedNames()
+
+    {
+    }
     CT_DefinedName* CT_DefinedNames::add_definedName()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -104293,7 +110108,7 @@ CT_CalcPr* CT_CalcPr::default_instance_ = NULL;
         {
             if ((*iter)->has_definedName())
             {
-                (*iter)->get_definedName().toXmlElem("definedName", "", _outStream);
+                (*iter)->get_definedName().toXmlElem("main:definedName", "", _outStream);
             }
         }
     }
@@ -104312,6 +110127,11 @@ CT_CalcPr* CT_CalcPr::default_instance_ = NULL;
 
 
     // CT_DefinedNames::ChildGroup_1
+    CT_DefinedNames::ChildGroup_1::ChildGroup_1()
+    :m_has_definedName(false),
+    m_definedName(NULL)
+    {
+    }
     bool CT_DefinedNames::ChildGroup_1::has_definedName() const
     {    
     return m_has_definedName;
@@ -104340,59 +110160,92 @@ CT_CalcPr* CT_CalcPr::default_instance_ = NULL;
 CT_DefinedNames* CT_DefinedNames::default_instance_ = NULL;
 
     // CT_DefinedName
+    CT_DefinedName::CT_DefinedName()
+    :m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_comment_attr(false),
+    m_comment_attr(NULL),
+    m_has_customMenu_attr(false),
+    m_customMenu_attr(NULL),
+    m_has_description_attr(false),
+    m_description_attr(NULL),
+    m_has_help_attr(false),
+    m_help_attr(NULL),
+    m_has_statusBar_attr(false),
+    m_statusBar_attr(NULL),
+    m_has_localSheetId_attr(false),
+    m_localSheetId_attr(0),
+    m_has_hidden_attr(false),
+    m_hidden_attr(false),
+    m_has_function_attr(false),
+    m_function_attr(false),
+    m_has_vbProcedure_attr(false),
+    m_vbProcedure_attr(false),
+    m_has_xlm_attr(false),
+    m_xlm_attr(false),
+    m_has_functionGroupId_attr(false),
+    m_functionGroupId_attr(0),
+    m_has_shortcutKey_attr(false),
+    m_shortcutKey_attr(NULL),
+    m_has_publishToServer_attr(false),
+    m_publishToServer_attr(false),
+    m_has_workbookParameter_attr(false),
+    m_workbookParameter_attr(false)
+    {
+    }
     void CT_DefinedName::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_comment_attr = false;
+    m_has_comment_attr = false;
     
-    if (m_s_comment_attr)
+    if (m_comment_attr)
     {
-        delete m_s_comment_attr;
-        m_s_comment_attr = NULL;
+        delete m_comment_attr;
+        m_comment_attr = NULL;
     }
     
     
-    m_has_s_customMenu_attr = false;
+    m_has_customMenu_attr = false;
     
-    if (m_s_customMenu_attr)
+    if (m_customMenu_attr)
     {
-        delete m_s_customMenu_attr;
-        m_s_customMenu_attr = NULL;
+        delete m_customMenu_attr;
+        m_customMenu_attr = NULL;
     }
     
     
-    m_has_s_description_attr = false;
+    m_has_description_attr = false;
     
-    if (m_s_description_attr)
+    if (m_description_attr)
     {
-        delete m_s_description_attr;
-        m_s_description_attr = NULL;
+        delete m_description_attr;
+        m_description_attr = NULL;
     }
     
     
-    m_has_s_help_attr = false;
+    m_has_help_attr = false;
     
-    if (m_s_help_attr)
+    if (m_help_attr)
     {
-        delete m_s_help_attr;
-        m_s_help_attr = NULL;
+        delete m_help_attr;
+        m_help_attr = NULL;
     }
     
     
-    m_has_s_statusBar_attr = false;
+    m_has_statusBar_attr = false;
     
-    if (m_s_statusBar_attr)
+    if (m_statusBar_attr)
     {
-        delete m_s_statusBar_attr;
-        m_s_statusBar_attr = NULL;
+        delete m_statusBar_attr;
+        m_statusBar_attr = NULL;
     }
     
     
@@ -104414,12 +110267,12 @@ CT_DefinedNames* CT_DefinedNames::default_instance_ = NULL;
     m_has_functionGroupId_attr = false;
     m_functionGroupId_attr = 0;
     
-    m_has_s_shortcutKey_attr = false;
+    m_has_shortcutKey_attr = false;
     
-    if (m_s_shortcutKey_attr)
+    if (m_shortcutKey_attr)
     {
-        delete m_s_shortcutKey_attr;
-        m_s_shortcutKey_attr = NULL;
+        delete m_shortcutKey_attr;
+        m_shortcutKey_attr = NULL;
     }
     
     
@@ -104439,39 +110292,39 @@ CT_DefinedNames* CT_DefinedNames::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_comment_attr)
+    if (m_has_comment_attr)
     {
-        m_s_comment_attr->toXmlAttr("comment", _outStream);
+        m_comment_attr->toXmlAttr("comment", _outStream);
     }
     
     
-    if (m_has_s_customMenu_attr)
+    if (m_has_customMenu_attr)
     {
-        m_s_customMenu_attr->toXmlAttr("customMenu", _outStream);
+        m_customMenu_attr->toXmlAttr("customMenu", _outStream);
     }
     
     
-    if (m_has_s_description_attr)
+    if (m_has_description_attr)
     {
-        m_s_description_attr->toXmlAttr("description", _outStream);
+        m_description_attr->toXmlAttr("description", _outStream);
     }
     
     
-    if (m_has_s_help_attr)
+    if (m_has_help_attr)
     {
-        m_s_help_attr->toXmlAttr("help", _outStream);
+        m_help_attr->toXmlAttr("help", _outStream);
     }
     
     
-    if (m_has_s_statusBar_attr)
+    if (m_has_statusBar_attr)
     {
-        m_s_statusBar_attr->toXmlAttr("statusBar", _outStream);
+        m_statusBar_attr->toXmlAttr("statusBar", _outStream);
     }
     
     
@@ -104511,9 +110364,9 @@ CT_DefinedNames* CT_DefinedNames::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_shortcutKey_attr)
+    if (m_has_shortcutKey_attr)
     {
-        m_s_shortcutKey_attr->toXmlAttr("shortcutKey", _outStream);
+        m_shortcutKey_attr->toXmlAttr("shortcutKey", _outStream);
     }
     
     
@@ -104542,122 +110395,122 @@ CT_DefinedNames* CT_DefinedNames::default_instance_ = NULL;
     return *CT_DefinedName::default_instance_;
     }
 
-    bool CT_DefinedName::has_s_name_attr() const
+    bool CT_DefinedName::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_DefinedName::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_DefinedName::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DefinedName::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_DefinedName::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_DefinedName::has_s_comment_attr() const
+    bool CT_DefinedName::has_comment_attr() const
     {    
-    return m_has_s_comment_attr;
+    return m_has_comment_attr;
     }
 
-    void CT_DefinedName::set_s_comment_attr(const ns_s::ST_Xstring& _s_comment_attr)
+    void CT_DefinedName::set_comment_attr(const ns_s::ST_Xstring& _comment_attr)
     {    
-    m_has_s_comment_attr = true;
-    m_s_comment_attr = new ns_s::ST_Xstring(_s_comment_attr);
+    m_has_comment_attr = true;
+    m_comment_attr = new ns_s::ST_Xstring(_comment_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DefinedName::get_s_comment_attr() const
+    const ns_s::ST_Xstring& CT_DefinedName::get_comment_attr() const
     {    
-    if (m_s_comment_attr)
+    if (m_comment_attr)
     {
-        return *m_s_comment_attr;
+        return *m_comment_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_DefinedName::has_s_customMenu_attr() const
+    bool CT_DefinedName::has_customMenu_attr() const
     {    
-    return m_has_s_customMenu_attr;
+    return m_has_customMenu_attr;
     }
 
-    void CT_DefinedName::set_s_customMenu_attr(const ns_s::ST_Xstring& _s_customMenu_attr)
+    void CT_DefinedName::set_customMenu_attr(const ns_s::ST_Xstring& _customMenu_attr)
     {    
-    m_has_s_customMenu_attr = true;
-    m_s_customMenu_attr = new ns_s::ST_Xstring(_s_customMenu_attr);
+    m_has_customMenu_attr = true;
+    m_customMenu_attr = new ns_s::ST_Xstring(_customMenu_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DefinedName::get_s_customMenu_attr() const
+    const ns_s::ST_Xstring& CT_DefinedName::get_customMenu_attr() const
     {    
-    if (m_s_customMenu_attr)
+    if (m_customMenu_attr)
     {
-        return *m_s_customMenu_attr;
+        return *m_customMenu_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_DefinedName::has_s_description_attr() const
+    bool CT_DefinedName::has_description_attr() const
     {    
-    return m_has_s_description_attr;
+    return m_has_description_attr;
     }
 
-    void CT_DefinedName::set_s_description_attr(const ns_s::ST_Xstring& _s_description_attr)
+    void CT_DefinedName::set_description_attr(const ns_s::ST_Xstring& _description_attr)
     {    
-    m_has_s_description_attr = true;
-    m_s_description_attr = new ns_s::ST_Xstring(_s_description_attr);
+    m_has_description_attr = true;
+    m_description_attr = new ns_s::ST_Xstring(_description_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DefinedName::get_s_description_attr() const
+    const ns_s::ST_Xstring& CT_DefinedName::get_description_attr() const
     {    
-    if (m_s_description_attr)
+    if (m_description_attr)
     {
-        return *m_s_description_attr;
+        return *m_description_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_DefinedName::has_s_help_attr() const
+    bool CT_DefinedName::has_help_attr() const
     {    
-    return m_has_s_help_attr;
+    return m_has_help_attr;
     }
 
-    void CT_DefinedName::set_s_help_attr(const ns_s::ST_Xstring& _s_help_attr)
+    void CT_DefinedName::set_help_attr(const ns_s::ST_Xstring& _help_attr)
     {    
-    m_has_s_help_attr = true;
-    m_s_help_attr = new ns_s::ST_Xstring(_s_help_attr);
+    m_has_help_attr = true;
+    m_help_attr = new ns_s::ST_Xstring(_help_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DefinedName::get_s_help_attr() const
+    const ns_s::ST_Xstring& CT_DefinedName::get_help_attr() const
     {    
-    if (m_s_help_attr)
+    if (m_help_attr)
     {
-        return *m_s_help_attr;
+        return *m_help_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_DefinedName::has_s_statusBar_attr() const
+    bool CT_DefinedName::has_statusBar_attr() const
     {    
-    return m_has_s_statusBar_attr;
+    return m_has_statusBar_attr;
     }
 
-    void CT_DefinedName::set_s_statusBar_attr(const ns_s::ST_Xstring& _s_statusBar_attr)
+    void CT_DefinedName::set_statusBar_attr(const ns_s::ST_Xstring& _statusBar_attr)
     {    
-    m_has_s_statusBar_attr = true;
-    m_s_statusBar_attr = new ns_s::ST_Xstring(_s_statusBar_attr);
+    m_has_statusBar_attr = true;
+    m_statusBar_attr = new ns_s::ST_Xstring(_statusBar_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DefinedName::get_s_statusBar_attr() const
+    const ns_s::ST_Xstring& CT_DefinedName::get_statusBar_attr() const
     {    
-    if (m_s_statusBar_attr)
+    if (m_statusBar_attr)
     {
-        return *m_s_statusBar_attr;
+        return *m_statusBar_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -104758,22 +110611,22 @@ CT_DefinedNames* CT_DefinedNames::default_instance_ = NULL;
     return m_functionGroupId_attr;
     }
 
-    bool CT_DefinedName::has_s_shortcutKey_attr() const
+    bool CT_DefinedName::has_shortcutKey_attr() const
     {    
-    return m_has_s_shortcutKey_attr;
+    return m_has_shortcutKey_attr;
     }
 
-    void CT_DefinedName::set_s_shortcutKey_attr(const ns_s::ST_Xstring& _s_shortcutKey_attr)
+    void CT_DefinedName::set_shortcutKey_attr(const ns_s::ST_Xstring& _shortcutKey_attr)
     {    
-    m_has_s_shortcutKey_attr = true;
-    m_s_shortcutKey_attr = new ns_s::ST_Xstring(_s_shortcutKey_attr);
+    m_has_shortcutKey_attr = true;
+    m_shortcutKey_attr = new ns_s::ST_Xstring(_shortcutKey_attr);
     }
 
-    const ns_s::ST_Xstring& CT_DefinedName::get_s_shortcutKey_attr() const
+    const ns_s::ST_Xstring& CT_DefinedName::get_shortcutKey_attr() const
     {    
-    if (m_s_shortcutKey_attr)
+    if (m_shortcutKey_attr)
     {
-        return *m_s_shortcutKey_attr;
+        return *m_shortcutKey_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -104813,6 +110666,10 @@ CT_DefinedNames* CT_DefinedNames::default_instance_ = NULL;
 CT_DefinedName* CT_DefinedName::default_instance_ = NULL;
 
     // CT_ExternalReferences
+    CT_ExternalReferences::CT_ExternalReferences()
+
+    {
+    }
     CT_ExternalReference* CT_ExternalReferences::add_externalReference()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -104850,7 +110707,7 @@ CT_DefinedName* CT_DefinedName::default_instance_ = NULL;
         {
             if ((*iter)->has_externalReference())
             {
-                (*iter)->get_externalReference().toXmlElem("externalReference", "", _outStream);
+                (*iter)->get_externalReference().toXmlElem("main:externalReference", "", _outStream);
             }
         }
     }
@@ -104869,6 +110726,11 @@ CT_DefinedName* CT_DefinedName::default_instance_ = NULL;
 
 
     // CT_ExternalReferences::ChildGroup_1
+    CT_ExternalReferences::ChildGroup_1::ChildGroup_1()
+    :m_has_externalReference(false),
+    m_externalReference(NULL)
+    {
+    }
     bool CT_ExternalReferences::ChildGroup_1::has_externalReference() const
     {    
     return m_has_externalReference;
@@ -104897,6 +110759,11 @@ CT_DefinedName* CT_DefinedName::default_instance_ = NULL;
 CT_ExternalReferences* CT_ExternalReferences::default_instance_ = NULL;
 
     // CT_ExternalReference
+    CT_ExternalReference::CT_ExternalReference()
+    :m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     void CT_ExternalReference::clear()
     {    
     m_has_r_id_attr = false;
@@ -104920,7 +110787,7 @@ CT_ExternalReferences* CT_ExternalReferences::default_instance_ = NULL;
             
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
@@ -104960,6 +110827,11 @@ CT_ExternalReferences* CT_ExternalReferences::default_instance_ = NULL;
 CT_ExternalReference* CT_ExternalReference::default_instance_ = NULL;
 
     // CT_SheetBackgroundPicture
+    CT_SheetBackgroundPicture::CT_SheetBackgroundPicture()
+    :m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     void CT_SheetBackgroundPicture::clear()
     {    
     m_has_r_id_attr = false;
@@ -104983,7 +110855,7 @@ CT_ExternalReference* CT_ExternalReference::default_instance_ = NULL;
             
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
@@ -105023,6 +110895,10 @@ CT_ExternalReference* CT_ExternalReference::default_instance_ = NULL;
 CT_SheetBackgroundPicture* CT_SheetBackgroundPicture::default_instance_ = NULL;
 
     // CT_PivotCaches
+    CT_PivotCaches::CT_PivotCaches()
+
+    {
+    }
     CT_PivotCache* CT_PivotCaches::add_pivotCache()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -105060,7 +110936,7 @@ CT_SheetBackgroundPicture* CT_SheetBackgroundPicture::default_instance_ = NULL;
         {
             if ((*iter)->has_pivotCache())
             {
-                (*iter)->get_pivotCache().toXmlElem("pivotCache", "", _outStream);
+                (*iter)->get_pivotCache().toXmlElem("main:pivotCache", "", _outStream);
             }
         }
     }
@@ -105079,6 +110955,11 @@ CT_SheetBackgroundPicture* CT_SheetBackgroundPicture::default_instance_ = NULL;
 
 
     // CT_PivotCaches::ChildGroup_1
+    CT_PivotCaches::ChildGroup_1::ChildGroup_1()
+    :m_has_pivotCache(false),
+    m_pivotCache(NULL)
+    {
+    }
     bool CT_PivotCaches::ChildGroup_1::has_pivotCache() const
     {    
     return m_has_pivotCache;
@@ -105107,6 +110988,13 @@ CT_SheetBackgroundPicture* CT_SheetBackgroundPicture::default_instance_ = NULL;
 CT_PivotCaches* CT_PivotCaches::default_instance_ = NULL;
 
     // CT_PivotCache
+    CT_PivotCache::CT_PivotCache()
+    :m_has_cacheId_attr(false),
+    m_cacheId_attr(0),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL)
+    {
+    }
     void CT_PivotCache::clear()
     {    
     m_has_cacheId_attr = false;
@@ -105139,7 +111027,7 @@ CT_PivotCaches* CT_PivotCaches::default_instance_ = NULL;
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
             _outStream << ">";
@@ -105195,17 +111083,34 @@ CT_PivotCaches* CT_PivotCaches::default_instance_ = NULL;
 CT_PivotCache* CT_PivotCache::default_instance_ = NULL;
 
     // CT_FileSharing
+    CT_FileSharing::CT_FileSharing()
+    :m_has_readOnlyRecommended_attr(false),
+    m_readOnlyRecommended_attr(false),
+    m_has_userName_attr(false),
+    m_userName_attr(NULL),
+    m_has_reservationPassword_attr(false),
+    m_reservationPassword_attr(NULL),
+    m_has_algorithmName_attr(false),
+    m_algorithmName_attr(NULL),
+    m_has_hashValue_attr(false),
+    m_hashValue_attr(""),
+    m_has_saltValue_attr(false),
+    m_saltValue_attr(""),
+    m_has_spinCount_attr(false),
+    m_spinCount_attr(0)
+    {
+    }
     void CT_FileSharing::clear()
     {    
     m_has_readOnlyRecommended_attr = false;
     m_readOnlyRecommended_attr = false;
     
-    m_has_s_userName_attr = false;
+    m_has_userName_attr = false;
     
-    if (m_s_userName_attr)
+    if (m_userName_attr)
     {
-        delete m_s_userName_attr;
-        m_s_userName_attr = NULL;
+        delete m_userName_attr;
+        m_userName_attr = NULL;
     }
     
     
@@ -105218,12 +111123,12 @@ CT_PivotCache* CT_PivotCache::default_instance_ = NULL;
     }
     
     
-    m_has_s_algorithmName_attr = false;
+    m_has_algorithmName_attr = false;
     
-    if (m_s_algorithmName_attr)
+    if (m_algorithmName_attr)
     {
-        delete m_s_algorithmName_attr;
-        m_s_algorithmName_attr = NULL;
+        delete m_algorithmName_attr;
+        m_algorithmName_attr = NULL;
     }
     
     
@@ -105252,9 +111157,9 @@ CT_PivotCache* CT_PivotCache::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_userName_attr)
+    if (m_has_userName_attr)
     {
-        m_s_userName_attr->toXmlAttr("userName", _outStream);
+        m_userName_attr->toXmlAttr("userName", _outStream);
     }
     
     
@@ -105264,9 +111169,9 @@ CT_PivotCache* CT_PivotCache::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_algorithmName_attr)
+    if (m_has_algorithmName_attr)
     {
-        m_s_algorithmName_attr->toXmlAttr("algorithmName", _outStream);
+        m_algorithmName_attr->toXmlAttr("algorithmName", _outStream);
     }
     
     
@@ -105317,22 +111222,22 @@ CT_PivotCache* CT_PivotCache::default_instance_ = NULL;
     return m_readOnlyRecommended_attr;
     }
 
-    bool CT_FileSharing::has_s_userName_attr() const
+    bool CT_FileSharing::has_userName_attr() const
     {    
-    return m_has_s_userName_attr;
+    return m_has_userName_attr;
     }
 
-    void CT_FileSharing::set_s_userName_attr(const ns_s::ST_Xstring& _s_userName_attr)
+    void CT_FileSharing::set_userName_attr(const ns_s::ST_Xstring& _userName_attr)
     {    
-    m_has_s_userName_attr = true;
-    m_s_userName_attr = new ns_s::ST_Xstring(_s_userName_attr);
+    m_has_userName_attr = true;
+    m_userName_attr = new ns_s::ST_Xstring(_userName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_FileSharing::get_s_userName_attr() const
+    const ns_s::ST_Xstring& CT_FileSharing::get_userName_attr() const
     {    
-    if (m_s_userName_attr)
+    if (m_userName_attr)
     {
-        return *m_s_userName_attr;
+        return *m_userName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -105357,22 +111262,22 @@ CT_PivotCache* CT_PivotCache::default_instance_ = NULL;
     return ST_UnsignedShortHex::default_instance();
     }
 
-    bool CT_FileSharing::has_s_algorithmName_attr() const
+    bool CT_FileSharing::has_algorithmName_attr() const
     {    
-    return m_has_s_algorithmName_attr;
+    return m_has_algorithmName_attr;
     }
 
-    void CT_FileSharing::set_s_algorithmName_attr(const ns_s::ST_Xstring& _s_algorithmName_attr)
+    void CT_FileSharing::set_algorithmName_attr(const ns_s::ST_Xstring& _algorithmName_attr)
     {    
-    m_has_s_algorithmName_attr = true;
-    m_s_algorithmName_attr = new ns_s::ST_Xstring(_s_algorithmName_attr);
+    m_has_algorithmName_attr = true;
+    m_algorithmName_attr = new ns_s::ST_Xstring(_algorithmName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_FileSharing::get_s_algorithmName_attr() const
+    const ns_s::ST_Xstring& CT_FileSharing::get_algorithmName_attr() const
     {    
-    if (m_s_algorithmName_attr)
+    if (m_algorithmName_attr)
     {
-        return *m_s_algorithmName_attr;
+        return *m_algorithmName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -105428,6 +111333,11 @@ CT_PivotCache* CT_PivotCache::default_instance_ = NULL;
 CT_FileSharing* CT_FileSharing::default_instance_ = NULL;
 
     // CT_OleSize
+    CT_OleSize::CT_OleSize()
+    :m_has_ref_attr(false),
+    m_ref_attr(NULL)
+    {
+    }
     void CT_OleSize::clear()
     {    
     m_has_ref_attr = false;
@@ -105491,6 +111401,39 @@ CT_FileSharing* CT_FileSharing::default_instance_ = NULL;
 CT_OleSize* CT_OleSize::default_instance_ = NULL;
 
     // CT_WorkbookProtection
+    CT_WorkbookProtection::CT_WorkbookProtection()
+    :m_has_workbookPassword_attr(false),
+    m_workbookPassword_attr(NULL),
+    m_has_workbookPasswordCharacterSet_attr(false),
+    m_workbookPasswordCharacterSet_attr(""),
+    m_has_revisionsPassword_attr(false),
+    m_revisionsPassword_attr(NULL),
+    m_has_revisionsPasswordCharacterSet_attr(false),
+    m_revisionsPasswordCharacterSet_attr(""),
+    m_has_lockStructure_attr(false),
+    m_lockStructure_attr(false),
+    m_has_lockWindows_attr(false),
+    m_lockWindows_attr(false),
+    m_has_lockRevision_attr(false),
+    m_lockRevision_attr(false),
+    m_has_revisionsAlgorithmName_attr(false),
+    m_revisionsAlgorithmName_attr(NULL),
+    m_has_revisionsHashValue_attr(false),
+    m_revisionsHashValue_attr(""),
+    m_has_revisionsSaltValue_attr(false),
+    m_revisionsSaltValue_attr(""),
+    m_has_revisionsSpinCount_attr(false),
+    m_revisionsSpinCount_attr(0),
+    m_has_workbookAlgorithmName_attr(false),
+    m_workbookAlgorithmName_attr(NULL),
+    m_has_workbookHashValue_attr(false),
+    m_workbookHashValue_attr(""),
+    m_has_workbookSaltValue_attr(false),
+    m_workbookSaltValue_attr(""),
+    m_has_workbookSpinCount_attr(false),
+    m_workbookSpinCount_attr(0)
+    {
+    }
     void CT_WorkbookProtection::clear()
     {    
     m_has_workbookPassword_attr = false;
@@ -105526,12 +111469,12 @@ CT_OleSize* CT_OleSize::default_instance_ = NULL;
     m_has_lockRevision_attr = false;
     m_lockRevision_attr = false;
     
-    m_has_s_revisionsAlgorithmName_attr = false;
+    m_has_revisionsAlgorithmName_attr = false;
     
-    if (m_s_revisionsAlgorithmName_attr)
+    if (m_revisionsAlgorithmName_attr)
     {
-        delete m_s_revisionsAlgorithmName_attr;
-        m_s_revisionsAlgorithmName_attr = NULL;
+        delete m_revisionsAlgorithmName_attr;
+        m_revisionsAlgorithmName_attr = NULL;
     }
     
     
@@ -105544,12 +111487,12 @@ CT_OleSize* CT_OleSize::default_instance_ = NULL;
     m_has_revisionsSpinCount_attr = false;
     m_revisionsSpinCount_attr = 0;
     
-    m_has_s_workbookAlgorithmName_attr = false;
+    m_has_workbookAlgorithmName_attr = false;
     
-    if (m_s_workbookAlgorithmName_attr)
+    if (m_workbookAlgorithmName_attr)
     {
-        delete m_s_workbookAlgorithmName_attr;
-        m_s_workbookAlgorithmName_attr = NULL;
+        delete m_workbookAlgorithmName_attr;
+        m_workbookAlgorithmName_attr = NULL;
     }
     
     
@@ -105614,9 +111557,9 @@ CT_OleSize* CT_OleSize::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_revisionsAlgorithmName_attr)
+    if (m_has_revisionsAlgorithmName_attr)
     {
-        m_s_revisionsAlgorithmName_attr->toXmlAttr("revisionsAlgorithmName", _outStream);
+        m_revisionsAlgorithmName_attr->toXmlAttr("revisionsAlgorithmName", _outStream);
     }
     
     
@@ -105638,9 +111581,9 @@ CT_OleSize* CT_OleSize::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_workbookAlgorithmName_attr)
+    if (m_has_workbookAlgorithmName_attr)
     {
-        m_s_workbookAlgorithmName_attr->toXmlAttr("workbookAlgorithmName", _outStream);
+        m_workbookAlgorithmName_attr->toXmlAttr("workbookAlgorithmName", _outStream);
     }
     
     
@@ -105795,22 +111738,22 @@ CT_OleSize* CT_OleSize::default_instance_ = NULL;
     return m_lockRevision_attr;
     }
 
-    bool CT_WorkbookProtection::has_s_revisionsAlgorithmName_attr() const
+    bool CT_WorkbookProtection::has_revisionsAlgorithmName_attr() const
     {    
-    return m_has_s_revisionsAlgorithmName_attr;
+    return m_has_revisionsAlgorithmName_attr;
     }
 
-    void CT_WorkbookProtection::set_s_revisionsAlgorithmName_attr(const ns_s::ST_Xstring& _s_revisionsAlgorithmName_attr)
+    void CT_WorkbookProtection::set_revisionsAlgorithmName_attr(const ns_s::ST_Xstring& _revisionsAlgorithmName_attr)
     {    
-    m_has_s_revisionsAlgorithmName_attr = true;
-    m_s_revisionsAlgorithmName_attr = new ns_s::ST_Xstring(_s_revisionsAlgorithmName_attr);
+    m_has_revisionsAlgorithmName_attr = true;
+    m_revisionsAlgorithmName_attr = new ns_s::ST_Xstring(_revisionsAlgorithmName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WorkbookProtection::get_s_revisionsAlgorithmName_attr() const
+    const ns_s::ST_Xstring& CT_WorkbookProtection::get_revisionsAlgorithmName_attr() const
     {    
-    if (m_s_revisionsAlgorithmName_attr)
+    if (m_revisionsAlgorithmName_attr)
     {
-        return *m_s_revisionsAlgorithmName_attr;
+        return *m_revisionsAlgorithmName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -105863,22 +111806,22 @@ CT_OleSize* CT_OleSize::default_instance_ = NULL;
     return m_revisionsSpinCount_attr;
     }
 
-    bool CT_WorkbookProtection::has_s_workbookAlgorithmName_attr() const
+    bool CT_WorkbookProtection::has_workbookAlgorithmName_attr() const
     {    
-    return m_has_s_workbookAlgorithmName_attr;
+    return m_has_workbookAlgorithmName_attr;
     }
 
-    void CT_WorkbookProtection::set_s_workbookAlgorithmName_attr(const ns_s::ST_Xstring& _s_workbookAlgorithmName_attr)
+    void CT_WorkbookProtection::set_workbookAlgorithmName_attr(const ns_s::ST_Xstring& _workbookAlgorithmName_attr)
     {    
-    m_has_s_workbookAlgorithmName_attr = true;
-    m_s_workbookAlgorithmName_attr = new ns_s::ST_Xstring(_s_workbookAlgorithmName_attr);
+    m_has_workbookAlgorithmName_attr = true;
+    m_workbookAlgorithmName_attr = new ns_s::ST_Xstring(_workbookAlgorithmName_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WorkbookProtection::get_s_workbookAlgorithmName_attr() const
+    const ns_s::ST_Xstring& CT_WorkbookProtection::get_workbookAlgorithmName_attr() const
     {    
-    if (m_s_workbookAlgorithmName_attr)
+    if (m_workbookAlgorithmName_attr)
     {
-        return *m_s_workbookAlgorithmName_attr;
+        return *m_workbookAlgorithmName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -105934,6 +111877,27 @@ CT_OleSize* CT_OleSize::default_instance_ = NULL;
 CT_WorkbookProtection* CT_WorkbookProtection::default_instance_ = NULL;
 
     // CT_WebPublishing
+    CT_WebPublishing::CT_WebPublishing()
+    :m_has_css_attr(false),
+    m_css_attr(false),
+    m_has_thicket_attr(false),
+    m_thicket_attr(false),
+    m_has_longFileNames_attr(false),
+    m_longFileNames_attr(false),
+    m_has_vml_attr(false),
+    m_vml_attr(false),
+    m_has_allowPng_attr(false),
+    m_allowPng_attr(false),
+    m_has_targetScreenSize_attr(false),
+    m_targetScreenSize_attr(NULL),
+    m_has_dpi_attr(false),
+    m_dpi_attr(0),
+    m_has_codePage_attr(false),
+    m_codePage_attr(0),
+    m_has_characterSet_attr(false),
+    m_characterSet_attr("")
+    {
+    }
     void CT_WebPublishing::clear()
     {    
     m_has_css_attr = false;
@@ -106197,6 +112161,11 @@ CT_WorkbookProtection* CT_WorkbookProtection::default_instance_ = NULL;
 CT_WebPublishing* CT_WebPublishing::default_instance_ = NULL;
 
     // CT_FunctionGroups
+    CT_FunctionGroups::CT_FunctionGroups()
+    :m_has_builtInGroupCount_attr(false),
+    m_builtInGroupCount_attr(0)
+    {
+    }
     CT_FunctionGroup* CT_FunctionGroups::add_functionGroup()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -106242,7 +112211,7 @@ CT_WebPublishing* CT_WebPublishing::default_instance_ = NULL;
         {
             if ((*iter)->has_functionGroup())
             {
-                (*iter)->get_functionGroup().toXmlElem("functionGroup", "", _outStream);
+                (*iter)->get_functionGroup().toXmlElem("main:functionGroup", "", _outStream);
             }
         }
     }
@@ -106277,6 +112246,11 @@ CT_WebPublishing* CT_WebPublishing::default_instance_ = NULL;
 
 
     // CT_FunctionGroups::ChildGroup_1
+    CT_FunctionGroups::ChildGroup_1::ChildGroup_1()
+    :m_has_functionGroup(false),
+    m_functionGroup(NULL)
+    {
+    }
     bool CT_FunctionGroups::ChildGroup_1::has_functionGroup() const
     {    
     return m_has_functionGroup;
@@ -106305,14 +112279,19 @@ CT_WebPublishing* CT_WebPublishing::default_instance_ = NULL;
 CT_FunctionGroups* CT_FunctionGroups::default_instance_ = NULL;
 
     // CT_FunctionGroup
+    CT_FunctionGroup::CT_FunctionGroup()
+    :m_has_name_attr(false),
+    m_name_attr(NULL)
+    {
+    }
     void CT_FunctionGroup::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     }
@@ -106326,9 +112305,9 @@ CT_FunctionGroups* CT_FunctionGroups::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
             _outStream << ">";
@@ -106345,22 +112324,22 @@ CT_FunctionGroups* CT_FunctionGroups::default_instance_ = NULL;
     return *CT_FunctionGroup::default_instance_;
     }
 
-    bool CT_FunctionGroup::has_s_name_attr() const
+    bool CT_FunctionGroup::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void CT_FunctionGroup::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void CT_FunctionGroup::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& CT_FunctionGroup::get_s_name_attr() const
+    const ns_s::ST_Xstring& CT_FunctionGroup::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -106368,6 +112347,11 @@ CT_FunctionGroups* CT_FunctionGroups::default_instance_ = NULL;
 CT_FunctionGroup* CT_FunctionGroup::default_instance_ = NULL;
 
     // CT_WebPublishObjects
+    CT_WebPublishObjects::CT_WebPublishObjects()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_WebPublishObject* CT_WebPublishObjects::add_webPublishObject()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -106413,7 +112397,7 @@ CT_FunctionGroup* CT_FunctionGroup::default_instance_ = NULL;
         {
             if ((*iter)->has_webPublishObject())
             {
-                (*iter)->get_webPublishObject().toXmlElem("webPublishObject", "", _outStream);
+                (*iter)->get_webPublishObject().toXmlElem("main:webPublishObject", "", _outStream);
             }
         }
     }
@@ -106448,6 +112432,11 @@ CT_FunctionGroup* CT_FunctionGroup::default_instance_ = NULL;
 
 
     // CT_WebPublishObjects::ChildGroup_1
+    CT_WebPublishObjects::ChildGroup_1::ChildGroup_1()
+    :m_has_webPublishObject(false),
+    m_webPublishObject(NULL)
+    {
+    }
     bool CT_WebPublishObjects::ChildGroup_1::has_webPublishObject() const
     {    
     return m_has_webPublishObject;
@@ -106476,44 +112465,59 @@ CT_FunctionGroup* CT_FunctionGroup::default_instance_ = NULL;
 CT_WebPublishObjects* CT_WebPublishObjects::default_instance_ = NULL;
 
     // CT_WebPublishObject
+    CT_WebPublishObject::CT_WebPublishObject()
+    :m_has_id_attr(false),
+    m_id_attr(0),
+    m_has_divId_attr(false),
+    m_divId_attr(NULL),
+    m_has_sourceObject_attr(false),
+    m_sourceObject_attr(NULL),
+    m_has_destinationFile_attr(false),
+    m_destinationFile_attr(NULL),
+    m_has_title_attr(false),
+    m_title_attr(NULL),
+    m_has_autoRepublish_attr(false),
+    m_autoRepublish_attr(false)
+    {
+    }
     void CT_WebPublishObject::clear()
     {    
     m_has_id_attr = false;
     m_id_attr = 0;
     
-    m_has_s_divId_attr = false;
+    m_has_divId_attr = false;
     
-    if (m_s_divId_attr)
+    if (m_divId_attr)
     {
-        delete m_s_divId_attr;
-        m_s_divId_attr = NULL;
+        delete m_divId_attr;
+        m_divId_attr = NULL;
     }
     
     
-    m_has_s_sourceObject_attr = false;
+    m_has_sourceObject_attr = false;
     
-    if (m_s_sourceObject_attr)
+    if (m_sourceObject_attr)
     {
-        delete m_s_sourceObject_attr;
-        m_s_sourceObject_attr = NULL;
+        delete m_sourceObject_attr;
+        m_sourceObject_attr = NULL;
     }
     
     
-    m_has_s_destinationFile_attr = false;
+    m_has_destinationFile_attr = false;
     
-    if (m_s_destinationFile_attr)
+    if (m_destinationFile_attr)
     {
-        delete m_s_destinationFile_attr;
-        m_s_destinationFile_attr = NULL;
+        delete m_destinationFile_attr;
+        m_destinationFile_attr = NULL;
     }
     
     
-    m_has_s_title_attr = false;
+    m_has_title_attr = false;
     
-    if (m_s_title_attr)
+    if (m_title_attr)
     {
-        delete m_s_title_attr;
-        m_s_title_attr = NULL;
+        delete m_title_attr;
+        m_title_attr = NULL;
     }
     
     
@@ -106536,27 +112540,27 @@ CT_WebPublishObjects* CT_WebPublishObjects::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_divId_attr)
+    if (m_has_divId_attr)
     {
-        m_s_divId_attr->toXmlAttr("divId", _outStream);
+        m_divId_attr->toXmlAttr("divId", _outStream);
     }
     
     
-    if (m_has_s_sourceObject_attr)
+    if (m_has_sourceObject_attr)
     {
-        m_s_sourceObject_attr->toXmlAttr("sourceObject", _outStream);
+        m_sourceObject_attr->toXmlAttr("sourceObject", _outStream);
     }
     
     
-    if (m_has_s_destinationFile_attr)
+    if (m_has_destinationFile_attr)
     {
-        m_s_destinationFile_attr->toXmlAttr("destinationFile", _outStream);
+        m_destinationFile_attr->toXmlAttr("destinationFile", _outStream);
     }
     
     
-    if (m_has_s_title_attr)
+    if (m_has_title_attr)
     {
-        m_s_title_attr->toXmlAttr("title", _outStream);
+        m_title_attr->toXmlAttr("title", _outStream);
     }
     
     
@@ -106595,82 +112599,82 @@ CT_WebPublishObjects* CT_WebPublishObjects::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool CT_WebPublishObject::has_s_divId_attr() const
+    bool CT_WebPublishObject::has_divId_attr() const
     {    
-    return m_has_s_divId_attr;
+    return m_has_divId_attr;
     }
 
-    void CT_WebPublishObject::set_s_divId_attr(const ns_s::ST_Xstring& _s_divId_attr)
+    void CT_WebPublishObject::set_divId_attr(const ns_s::ST_Xstring& _divId_attr)
     {    
-    m_has_s_divId_attr = true;
-    m_s_divId_attr = new ns_s::ST_Xstring(_s_divId_attr);
+    m_has_divId_attr = true;
+    m_divId_attr = new ns_s::ST_Xstring(_divId_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WebPublishObject::get_s_divId_attr() const
+    const ns_s::ST_Xstring& CT_WebPublishObject::get_divId_attr() const
     {    
-    if (m_s_divId_attr)
+    if (m_divId_attr)
     {
-        return *m_s_divId_attr;
+        return *m_divId_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_WebPublishObject::has_s_sourceObject_attr() const
+    bool CT_WebPublishObject::has_sourceObject_attr() const
     {    
-    return m_has_s_sourceObject_attr;
+    return m_has_sourceObject_attr;
     }
 
-    void CT_WebPublishObject::set_s_sourceObject_attr(const ns_s::ST_Xstring& _s_sourceObject_attr)
+    void CT_WebPublishObject::set_sourceObject_attr(const ns_s::ST_Xstring& _sourceObject_attr)
     {    
-    m_has_s_sourceObject_attr = true;
-    m_s_sourceObject_attr = new ns_s::ST_Xstring(_s_sourceObject_attr);
+    m_has_sourceObject_attr = true;
+    m_sourceObject_attr = new ns_s::ST_Xstring(_sourceObject_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WebPublishObject::get_s_sourceObject_attr() const
+    const ns_s::ST_Xstring& CT_WebPublishObject::get_sourceObject_attr() const
     {    
-    if (m_s_sourceObject_attr)
+    if (m_sourceObject_attr)
     {
-        return *m_s_sourceObject_attr;
+        return *m_sourceObject_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_WebPublishObject::has_s_destinationFile_attr() const
+    bool CT_WebPublishObject::has_destinationFile_attr() const
     {    
-    return m_has_s_destinationFile_attr;
+    return m_has_destinationFile_attr;
     }
 
-    void CT_WebPublishObject::set_s_destinationFile_attr(const ns_s::ST_Xstring& _s_destinationFile_attr)
+    void CT_WebPublishObject::set_destinationFile_attr(const ns_s::ST_Xstring& _destinationFile_attr)
     {    
-    m_has_s_destinationFile_attr = true;
-    m_s_destinationFile_attr = new ns_s::ST_Xstring(_s_destinationFile_attr);
+    m_has_destinationFile_attr = true;
+    m_destinationFile_attr = new ns_s::ST_Xstring(_destinationFile_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WebPublishObject::get_s_destinationFile_attr() const
+    const ns_s::ST_Xstring& CT_WebPublishObject::get_destinationFile_attr() const
     {    
-    if (m_s_destinationFile_attr)
+    if (m_destinationFile_attr)
     {
-        return *m_s_destinationFile_attr;
+        return *m_destinationFile_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool CT_WebPublishObject::has_s_title_attr() const
+    bool CT_WebPublishObject::has_title_attr() const
     {    
-    return m_has_s_title_attr;
+    return m_has_title_attr;
     }
 
-    void CT_WebPublishObject::set_s_title_attr(const ns_s::ST_Xstring& _s_title_attr)
+    void CT_WebPublishObject::set_title_attr(const ns_s::ST_Xstring& _title_attr)
     {    
-    m_has_s_title_attr = true;
-    m_s_title_attr = new ns_s::ST_Xstring(_s_title_attr);
+    m_has_title_attr = true;
+    m_title_attr = new ns_s::ST_Xstring(_title_attr);
     }
 
-    const ns_s::ST_Xstring& CT_WebPublishObject::get_s_title_attr() const
+    const ns_s::ST_Xstring& CT_WebPublishObject::get_title_attr() const
     {    
-    if (m_s_title_attr)
+    if (m_title_attr)
     {
-        return *m_s_title_attr;
+        return *m_title_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -106694,6 +112698,10 @@ CT_WebPublishObjects* CT_WebPublishObjects::default_instance_ = NULL;
 CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
 
     // calcChain_element
+    calcChain_element::calcChain_element()
+
+    {
+    }
     CT_CalcCell* calcChain_element::add_c()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -106724,7 +112732,7 @@ CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
 
     void calcChain_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<calcChain";
+    _outStream << "<main:calcChain";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -106739,16 +112747,16 @@ CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
         {
             if ((*iter)->has_c())
             {
-                (*iter)->get_c().toXmlElem("c", "", _outStream);
+                (*iter)->get_c().toXmlElem("main:c", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
     
-    _outStream << "</calcChain>";
+    _outStream << "</main:calcChain>";
     }
 
     const calcChain_element& calcChain_element::default_instance()
@@ -106762,6 +112770,13 @@ CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
 
 
     // calcChain_element::ChildGroup_1
+    calcChain_element::ChildGroup_1::ChildGroup_1()
+    :m_has_c(false),
+    m_c(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool calcChain_element::ChildGroup_1::has_c() const
     {    
     return m_has_c;
@@ -106833,6 +112848,15 @@ CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
 calcChain_element* calcChain_element::default_instance_ = NULL;
 
     // comments_element
+    comments_element::comments_element()
+    :m_has_authors(false),
+    m_authors(NULL),
+    m_has_commentList(false),
+    m_commentList(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool comments_element::has_authors() const
     {    
     return m_has_authors;
@@ -106910,7 +112934,7 @@ calcChain_element* calcChain_element::default_instance_ = NULL;
 
     void comments_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<comments";
+    _outStream << "<main:comments";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -106921,20 +112945,20 @@ calcChain_element* calcChain_element::default_instance_ = NULL;
     
     if (m_has_authors)
     {
-        m_authors->toXmlElem("authors", "", _outStream);;
+        m_authors->toXmlElem("main:authors", "", _outStream);;
     }
     
     if (m_has_commentList)
     {
-        m_commentList->toXmlElem("commentList", "", _outStream);;
+        m_commentList->toXmlElem("main:commentList", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
-    _outStream << "</comments>";
+    _outStream << "</main:comments>";
     }
 
     const comments_element& comments_element::default_instance()
@@ -106949,6 +112973,11 @@ calcChain_element* calcChain_element::default_instance_ = NULL;
 comments_element* comments_element::default_instance_ = NULL;
 
     // MapInfo_element
+    MapInfo_element::MapInfo_element()
+    :m_has_SelectionNamespaces_attr(false),
+    m_SelectionNamespaces_attr("")
+    {
+    }
     CT_Schema* MapInfo_element::add_Schema()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -106982,7 +113011,7 @@ comments_element* comments_element::default_instance_ = NULL;
 
     void MapInfo_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<MapInfo";
+    _outStream << "<main:MapInfo";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -107002,16 +113031,16 @@ comments_element* comments_element::default_instance_ = NULL;
         {
             if ((*iter)->has_Schema())
             {
-                (*iter)->get_Schema().toXmlElem("Schema", "", _outStream);
+                (*iter)->get_Schema().toXmlElem("main:Schema", "", _outStream);
             }
             else if ((*iter)->has_Map())
             {
-                (*iter)->get_Map().toXmlElem("Map", "", _outStream);
+                (*iter)->get_Map().toXmlElem("main:Map", "", _outStream);
             }
         }
     }
     
-    _outStream << "</MapInfo>";
+    _outStream << "</main:MapInfo>";
     }
 
     const MapInfo_element& MapInfo_element::default_instance()
@@ -107041,6 +113070,13 @@ comments_element* comments_element::default_instance_ = NULL;
 
 
     // MapInfo_element::ChildGroup_1
+    MapInfo_element::ChildGroup_1::ChildGroup_1()
+    :m_has_Schema(false),
+    m_Schema(NULL),
+    m_has_Map(false),
+    m_Map(NULL)
+    {
+    }
     bool MapInfo_element::ChildGroup_1::has_Schema() const
     {    
     return m_has_Schema;
@@ -107112,6 +113148,10 @@ comments_element* comments_element::default_instance_ = NULL;
 MapInfo_element* MapInfo_element::default_instance_ = NULL;
 
     // connections_element
+    connections_element::connections_element()
+
+    {
+    }
     CT_Connection* connections_element::add_connection()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -107134,7 +113174,7 @@ MapInfo_element* MapInfo_element::default_instance_ = NULL;
 
     void connections_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<connections";
+    _outStream << "<main:connections";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -107149,12 +113189,12 @@ MapInfo_element* MapInfo_element::default_instance_ = NULL;
         {
             if ((*iter)->has_connection())
             {
-                (*iter)->get_connection().toXmlElem("connection", "", _outStream);
+                (*iter)->get_connection().toXmlElem("main:connection", "", _outStream);
             }
         }
     }
     
-    _outStream << "</connections>";
+    _outStream << "</main:connections>";
     }
 
     const connections_element& connections_element::default_instance()
@@ -107168,6 +113208,11 @@ MapInfo_element* MapInfo_element::default_instance_ = NULL;
 
 
     // connections_element::ChildGroup_1
+    connections_element::ChildGroup_1::ChildGroup_1()
+    :m_has_connection(false),
+    m_connection(NULL)
+    {
+    }
     bool connections_element::ChildGroup_1::has_connection() const
     {    
     return m_has_connection;
@@ -107196,6 +113241,69 @@ MapInfo_element* MapInfo_element::default_instance_ = NULL;
 connections_element* connections_element::default_instance_ = NULL;
 
     // pivotCacheDefinition_element
+    pivotCacheDefinition_element::pivotCacheDefinition_element()
+    :m_has_cacheSource(false),
+    m_cacheSource(NULL),
+    m_has_cacheFields(false),
+    m_cacheFields(NULL),
+    m_has_cacheHierarchies(false),
+    m_cacheHierarchies(NULL),
+    m_has_kpis(false),
+    m_kpis(NULL),
+    m_has_tupleCache(false),
+    m_tupleCache(NULL),
+    m_has_calculatedItems(false),
+    m_calculatedItems(NULL),
+    m_has_calculatedMembers(false),
+    m_calculatedMembers(NULL),
+    m_has_dimensions(false),
+    m_dimensions(NULL),
+    m_has_measureGroups(false),
+    m_measureGroups(NULL),
+    m_has_maps(false),
+    m_maps(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_r_id_attr(false),
+    m_r_id_attr(NULL),
+    m_has_invalid_attr(false),
+    m_invalid_attr(false),
+    m_has_saveData_attr(false),
+    m_saveData_attr(false),
+    m_has_refreshOnLoad_attr(false),
+    m_refreshOnLoad_attr(false),
+    m_has_optimizeMemory_attr(false),
+    m_optimizeMemory_attr(false),
+    m_has_enableRefresh_attr(false),
+    m_enableRefresh_attr(false),
+    m_has_refreshedBy_attr(false),
+    m_refreshedBy_attr(NULL),
+    m_has_refreshedDate_attr(false),
+    m_refreshedDate_attr(0),
+    m_has_refreshedDateIso_attr(false),
+    m_refreshedDateIso_attr(""),
+    m_has_backgroundQuery_attr(false),
+    m_backgroundQuery_attr(false),
+    m_has_missingItemsLimit_attr(false),
+    m_missingItemsLimit_attr(0),
+    m_has_createdVersion_attr(false),
+    m_createdVersion_attr(0),
+    m_has_refreshedVersion_attr(false),
+    m_refreshedVersion_attr(0),
+    m_has_minRefreshableVersion_attr(false),
+    m_minRefreshableVersion_attr(0),
+    m_has_recordCount_attr(false),
+    m_recordCount_attr(0),
+    m_has_upgradeOnRefresh_attr(false),
+    m_upgradeOnRefresh_attr(false),
+    m_has_tupleCache_attr(false),
+    m_tupleCache_attr(false),
+    m_has_supportSubquery_attr(false),
+    m_supportSubquery_attr(false),
+    m_has_supportAdvancedDrill_attr(false),
+    m_supportAdvancedDrill_attr(false)
+    {
+    }
     bool pivotCacheDefinition_element::has_cacheSource() const
     {    
     return m_has_cacheSource;
@@ -107486,12 +113594,12 @@ connections_element* connections_element::default_instance_ = NULL;
     m_has_enableRefresh_attr = false;
     m_enableRefresh_attr = false;
     
-    m_has_s_refreshedBy_attr = false;
+    m_has_refreshedBy_attr = false;
     
-    if (m_s_refreshedBy_attr)
+    if (m_refreshedBy_attr)
     {
-        delete m_s_refreshedBy_attr;
-        m_s_refreshedBy_attr = NULL;
+        delete m_refreshedBy_attr;
+        m_refreshedBy_attr = NULL;
     }
     
     
@@ -107534,7 +113642,7 @@ connections_element* connections_element::default_instance_ = NULL;
 
     void pivotCacheDefinition_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<pivotCacheDefinition";
+    _outStream << "<main:pivotCacheDefinition";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -107543,7 +113651,7 @@ connections_element* connections_element::default_instance_ = NULL;
     
     if (m_has_r_id_attr)
     {
-        m_r_id_attr->toXmlAttr("id", _outStream);
+        m_r_id_attr->toXmlAttr("r:id", _outStream);
     }
     
     
@@ -107577,9 +113685,9 @@ connections_element* connections_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_refreshedBy_attr)
+    if (m_has_refreshedBy_attr)
     {
-        m_s_refreshedBy_attr->toXmlAttr("refreshedBy", _outStream);
+        m_refreshedBy_attr->toXmlAttr("refreshedBy", _outStream);
     }
     
     
@@ -107658,60 +113766,60 @@ connections_element* connections_element::default_instance_ = NULL;
     
     if (m_has_cacheSource)
     {
-        m_cacheSource->toXmlElem("cacheSource", "", _outStream);;
+        m_cacheSource->toXmlElem("main:cacheSource", "", _outStream);;
     }
     
     if (m_has_cacheFields)
     {
-        m_cacheFields->toXmlElem("cacheFields", "", _outStream);;
+        m_cacheFields->toXmlElem("main:cacheFields", "", _outStream);;
     }
     
     if (m_has_cacheHierarchies)
     {
-        m_cacheHierarchies->toXmlElem("cacheHierarchies", "", _outStream);;
+        m_cacheHierarchies->toXmlElem("main:cacheHierarchies", "", _outStream);;
     }
     
     if (m_has_kpis)
     {
-        m_kpis->toXmlElem("kpis", "", _outStream);;
+        m_kpis->toXmlElem("main:kpis", "", _outStream);;
     }
     
     if (m_has_tupleCache)
     {
-        m_tupleCache->toXmlElem("tupleCache", "", _outStream);;
+        m_tupleCache->toXmlElem("main:tupleCache", "", _outStream);;
     }
     
     if (m_has_calculatedItems)
     {
-        m_calculatedItems->toXmlElem("calculatedItems", "", _outStream);;
+        m_calculatedItems->toXmlElem("main:calculatedItems", "", _outStream);;
     }
     
     if (m_has_calculatedMembers)
     {
-        m_calculatedMembers->toXmlElem("calculatedMembers", "", _outStream);;
+        m_calculatedMembers->toXmlElem("main:calculatedMembers", "", _outStream);;
     }
     
     if (m_has_dimensions)
     {
-        m_dimensions->toXmlElem("dimensions", "", _outStream);;
+        m_dimensions->toXmlElem("main:dimensions", "", _outStream);;
     }
     
     if (m_has_measureGroups)
     {
-        m_measureGroups->toXmlElem("measureGroups", "", _outStream);;
+        m_measureGroups->toXmlElem("main:measureGroups", "", _outStream);;
     }
     
     if (m_has_maps)
     {
-        m_maps->toXmlElem("maps", "", _outStream);;
+        m_maps->toXmlElem("main:maps", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
-    _outStream << "</pivotCacheDefinition>";
+    _outStream << "</main:pivotCacheDefinition>";
     }
 
     const pivotCacheDefinition_element& pivotCacheDefinition_element::default_instance()
@@ -107823,22 +113931,22 @@ connections_element* connections_element::default_instance_ = NULL;
     return m_enableRefresh_attr;
     }
 
-    bool pivotCacheDefinition_element::has_s_refreshedBy_attr() const
+    bool pivotCacheDefinition_element::has_refreshedBy_attr() const
     {    
-    return m_has_s_refreshedBy_attr;
+    return m_has_refreshedBy_attr;
     }
 
-    void pivotCacheDefinition_element::set_s_refreshedBy_attr(const ns_s::ST_Xstring& _s_refreshedBy_attr)
+    void pivotCacheDefinition_element::set_refreshedBy_attr(const ns_s::ST_Xstring& _refreshedBy_attr)
     {    
-    m_has_s_refreshedBy_attr = true;
-    m_s_refreshedBy_attr = new ns_s::ST_Xstring(_s_refreshedBy_attr);
+    m_has_refreshedBy_attr = true;
+    m_refreshedBy_attr = new ns_s::ST_Xstring(_refreshedBy_attr);
     }
 
-    const ns_s::ST_Xstring& pivotCacheDefinition_element::get_s_refreshedBy_attr() const
+    const ns_s::ST_Xstring& pivotCacheDefinition_element::get_refreshedBy_attr() const
     {    
-    if (m_s_refreshedBy_attr)
+    if (m_refreshedBy_attr)
     {
-        return *m_s_refreshedBy_attr;
+        return *m_refreshedBy_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -108038,6 +114146,11 @@ connections_element* connections_element::default_instance_ = NULL;
 pivotCacheDefinition_element* pivotCacheDefinition_element::default_instance_ = NULL;
 
     // pivotCacheRecords_element
+    pivotCacheRecords_element::pivotCacheRecords_element()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_Record* pivotCacheRecords_element::add_r()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -108071,7 +114184,7 @@ pivotCacheDefinition_element* pivotCacheDefinition_element::default_instance_ = 
 
     void pivotCacheRecords_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<pivotCacheRecords";
+    _outStream << "<main:pivotCacheRecords";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -108091,16 +114204,16 @@ pivotCacheDefinition_element* pivotCacheDefinition_element::default_instance_ = 
         {
             if ((*iter)->has_r())
             {
-                (*iter)->get_r().toXmlElem("r", "", _outStream);
+                (*iter)->get_r().toXmlElem("main:r", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
     
-    _outStream << "</pivotCacheRecords>";
+    _outStream << "</main:pivotCacheRecords>";
     }
 
     const pivotCacheRecords_element& pivotCacheRecords_element::default_instance()
@@ -108130,6 +114243,13 @@ pivotCacheDefinition_element* pivotCacheDefinition_element::default_instance_ = 
 
 
     // pivotCacheRecords_element::ChildGroup_1
+    pivotCacheRecords_element::ChildGroup_1::ChildGroup_1()
+    :m_has_r(false),
+    m_r(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool pivotCacheRecords_element::ChildGroup_1::has_r() const
     {    
     return m_has_r;
@@ -108201,6 +114321,179 @@ pivotCacheDefinition_element* pivotCacheDefinition_element::default_instance_ = 
 pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
 
     // pivotTableDefinition_element
+    pivotTableDefinition_element::pivotTableDefinition_element()
+    :m_has_location(false),
+    m_location(NULL),
+    m_has_pivotFields(false),
+    m_pivotFields(NULL),
+    m_has_rowFields(false),
+    m_rowFields(NULL),
+    m_has_rowItems(false),
+    m_rowItems(NULL),
+    m_has_colFields(false),
+    m_colFields(NULL),
+    m_has_colItems(false),
+    m_colItems(NULL),
+    m_has_pageFields(false),
+    m_pageFields(NULL),
+    m_has_dataFields(false),
+    m_dataFields(NULL),
+    m_has_formats(false),
+    m_formats(NULL),
+    m_has_conditionalFormats(false),
+    m_conditionalFormats(NULL),
+    m_has_chartFormats(false),
+    m_chartFormats(NULL),
+    m_has_pivotHierarchies(false),
+    m_pivotHierarchies(NULL),
+    m_has_pivotTableStyleInfo(false),
+    m_pivotTableStyleInfo(NULL),
+    m_has_filters(false),
+    m_filters(NULL),
+    m_has_rowHierarchiesUsage(false),
+    m_rowHierarchiesUsage(NULL),
+    m_has_colHierarchiesUsage(false),
+    m_colHierarchiesUsage(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_cacheId_attr(false),
+    m_cacheId_attr(0),
+    m_has_dataOnRows_attr(false),
+    m_dataOnRows_attr(false),
+    m_has_dataPosition_attr(false),
+    m_dataPosition_attr(0),
+    m_has_autoFormatId_attr(false),
+    m_autoFormatId_attr(0),
+    m_has_applyNumberFormats_attr(false),
+    m_applyNumberFormats_attr(false),
+    m_has_applyBorderFormats_attr(false),
+    m_applyBorderFormats_attr(false),
+    m_has_applyFontFormats_attr(false),
+    m_applyFontFormats_attr(false),
+    m_has_applyPatternFormats_attr(false),
+    m_applyPatternFormats_attr(false),
+    m_has_applyAlignmentFormats_attr(false),
+    m_applyAlignmentFormats_attr(false),
+    m_has_applyWidthHeightFormats_attr(false),
+    m_applyWidthHeightFormats_attr(false),
+    m_has_dataCaption_attr(false),
+    m_dataCaption_attr(NULL),
+    m_has_grandTotalCaption_attr(false),
+    m_grandTotalCaption_attr(NULL),
+    m_has_errorCaption_attr(false),
+    m_errorCaption_attr(NULL),
+    m_has_showError_attr(false),
+    m_showError_attr(false),
+    m_has_missingCaption_attr(false),
+    m_missingCaption_attr(NULL),
+    m_has_showMissing_attr(false),
+    m_showMissing_attr(false),
+    m_has_pageStyle_attr(false),
+    m_pageStyle_attr(NULL),
+    m_has_pivotTableStyle_attr(false),
+    m_pivotTableStyle_attr(NULL),
+    m_has_vacatedStyle_attr(false),
+    m_vacatedStyle_attr(NULL),
+    m_has_tag_attr(false),
+    m_tag_attr(NULL),
+    m_has_updatedVersion_attr(false),
+    m_updatedVersion_attr(0),
+    m_has_minRefreshableVersion_attr(false),
+    m_minRefreshableVersion_attr(0),
+    m_has_asteriskTotals_attr(false),
+    m_asteriskTotals_attr(false),
+    m_has_showItems_attr(false),
+    m_showItems_attr(false),
+    m_has_editData_attr(false),
+    m_editData_attr(false),
+    m_has_disableFieldList_attr(false),
+    m_disableFieldList_attr(false),
+    m_has_showCalcMbrs_attr(false),
+    m_showCalcMbrs_attr(false),
+    m_has_visualTotals_attr(false),
+    m_visualTotals_attr(false),
+    m_has_showMultipleLabel_attr(false),
+    m_showMultipleLabel_attr(false),
+    m_has_showDataDropDown_attr(false),
+    m_showDataDropDown_attr(false),
+    m_has_showDrill_attr(false),
+    m_showDrill_attr(false),
+    m_has_printDrill_attr(false),
+    m_printDrill_attr(false),
+    m_has_showMemberPropertyTips_attr(false),
+    m_showMemberPropertyTips_attr(false),
+    m_has_showDataTips_attr(false),
+    m_showDataTips_attr(false),
+    m_has_enableWizard_attr(false),
+    m_enableWizard_attr(false),
+    m_has_enableDrill_attr(false),
+    m_enableDrill_attr(false),
+    m_has_enableFieldProperties_attr(false),
+    m_enableFieldProperties_attr(false),
+    m_has_preserveFormatting_attr(false),
+    m_preserveFormatting_attr(false),
+    m_has_useAutoFormatting_attr(false),
+    m_useAutoFormatting_attr(false),
+    m_has_pageWrap_attr(false),
+    m_pageWrap_attr(0),
+    m_has_pageOverThenDown_attr(false),
+    m_pageOverThenDown_attr(false),
+    m_has_subtotalHiddenItems_attr(false),
+    m_subtotalHiddenItems_attr(false),
+    m_has_rowGrandTotals_attr(false),
+    m_rowGrandTotals_attr(false),
+    m_has_colGrandTotals_attr(false),
+    m_colGrandTotals_attr(false),
+    m_has_fieldPrintTitles_attr(false),
+    m_fieldPrintTitles_attr(false),
+    m_has_itemPrintTitles_attr(false),
+    m_itemPrintTitles_attr(false),
+    m_has_mergeItem_attr(false),
+    m_mergeItem_attr(false),
+    m_has_showDropZones_attr(false),
+    m_showDropZones_attr(false),
+    m_has_createdVersion_attr(false),
+    m_createdVersion_attr(0),
+    m_has_indent_attr(false),
+    m_indent_attr(0),
+    m_has_showEmptyRow_attr(false),
+    m_showEmptyRow_attr(false),
+    m_has_showEmptyCol_attr(false),
+    m_showEmptyCol_attr(false),
+    m_has_showHeaders_attr(false),
+    m_showHeaders_attr(false),
+    m_has_compact_attr(false),
+    m_compact_attr(false),
+    m_has_outline_attr(false),
+    m_outline_attr(false),
+    m_has_outlineData_attr(false),
+    m_outlineData_attr(false),
+    m_has_compactData_attr(false),
+    m_compactData_attr(false),
+    m_has_published_attr(false),
+    m_published_attr(false),
+    m_has_gridDropZones_attr(false),
+    m_gridDropZones_attr(false),
+    m_has_immersive_attr(false),
+    m_immersive_attr(false),
+    m_has_multipleFieldFilters_attr(false),
+    m_multipleFieldFilters_attr(false),
+    m_has_chartFormat_attr(false),
+    m_chartFormat_attr(0),
+    m_has_rowHeaderCaption_attr(false),
+    m_rowHeaderCaption_attr(NULL),
+    m_has_colHeaderCaption_attr(false),
+    m_colHeaderCaption_attr(NULL),
+    m_has_fieldListSortAscending_attr(false),
+    m_fieldListSortAscending_attr(false),
+    m_has_mdxSubqueries_attr(false),
+    m_mdxSubqueries_attr(false),
+    m_has_customListSort_attr(false),
+    m_customListSort_attr(false)
+    {
+    }
     bool pivotTableDefinition_element::has_location() const
     {    
     return m_has_location;
@@ -108611,12 +114904,12 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
 
     void pivotTableDefinition_element::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -108650,81 +114943,81 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     m_has_applyWidthHeightFormats_attr = false;
     m_applyWidthHeightFormats_attr = false;
     
-    m_has_s_dataCaption_attr = false;
+    m_has_dataCaption_attr = false;
     
-    if (m_s_dataCaption_attr)
+    if (m_dataCaption_attr)
     {
-        delete m_s_dataCaption_attr;
-        m_s_dataCaption_attr = NULL;
+        delete m_dataCaption_attr;
+        m_dataCaption_attr = NULL;
     }
     
     
-    m_has_s_grandTotalCaption_attr = false;
+    m_has_grandTotalCaption_attr = false;
     
-    if (m_s_grandTotalCaption_attr)
+    if (m_grandTotalCaption_attr)
     {
-        delete m_s_grandTotalCaption_attr;
-        m_s_grandTotalCaption_attr = NULL;
+        delete m_grandTotalCaption_attr;
+        m_grandTotalCaption_attr = NULL;
     }
     
     
-    m_has_s_errorCaption_attr = false;
+    m_has_errorCaption_attr = false;
     
-    if (m_s_errorCaption_attr)
+    if (m_errorCaption_attr)
     {
-        delete m_s_errorCaption_attr;
-        m_s_errorCaption_attr = NULL;
+        delete m_errorCaption_attr;
+        m_errorCaption_attr = NULL;
     }
     
     
     m_has_showError_attr = false;
     m_showError_attr = false;
     
-    m_has_s_missingCaption_attr = false;
+    m_has_missingCaption_attr = false;
     
-    if (m_s_missingCaption_attr)
+    if (m_missingCaption_attr)
     {
-        delete m_s_missingCaption_attr;
-        m_s_missingCaption_attr = NULL;
+        delete m_missingCaption_attr;
+        m_missingCaption_attr = NULL;
     }
     
     
     m_has_showMissing_attr = false;
     m_showMissing_attr = false;
     
-    m_has_s_pageStyle_attr = false;
+    m_has_pageStyle_attr = false;
     
-    if (m_s_pageStyle_attr)
+    if (m_pageStyle_attr)
     {
-        delete m_s_pageStyle_attr;
-        m_s_pageStyle_attr = NULL;
+        delete m_pageStyle_attr;
+        m_pageStyle_attr = NULL;
     }
     
     
-    m_has_s_pivotTableStyle_attr = false;
+    m_has_pivotTableStyle_attr = false;
     
-    if (m_s_pivotTableStyle_attr)
+    if (m_pivotTableStyle_attr)
     {
-        delete m_s_pivotTableStyle_attr;
-        m_s_pivotTableStyle_attr = NULL;
+        delete m_pivotTableStyle_attr;
+        m_pivotTableStyle_attr = NULL;
     }
     
     
-    m_has_s_vacatedStyle_attr = false;
+    m_has_vacatedStyle_attr = false;
     
-    if (m_s_vacatedStyle_attr)
+    if (m_vacatedStyle_attr)
     {
-        delete m_s_vacatedStyle_attr;
-        m_s_vacatedStyle_attr = NULL;
+        delete m_vacatedStyle_attr;
+        m_vacatedStyle_attr = NULL;
     }
     
     
-    m_has_s_tag_attr = false;
+    m_has_tag_attr = false;
     
-    if (m_s_tag_attr)
+    if (m_tag_attr)
     {
-        delete m_s_tag_attr;
-        m_s_tag_attr = NULL;
+        delete m_tag_attr;
+        m_tag_attr = NULL;
     }
     
     
@@ -108854,21 +115147,21 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     m_has_chartFormat_attr = false;
     m_chartFormat_attr = 0;
     
-    m_has_s_rowHeaderCaption_attr = false;
+    m_has_rowHeaderCaption_attr = false;
     
-    if (m_s_rowHeaderCaption_attr)
+    if (m_rowHeaderCaption_attr)
     {
-        delete m_s_rowHeaderCaption_attr;
-        m_s_rowHeaderCaption_attr = NULL;
+        delete m_rowHeaderCaption_attr;
+        m_rowHeaderCaption_attr = NULL;
     }
     
     
-    m_has_s_colHeaderCaption_attr = false;
+    m_has_colHeaderCaption_attr = false;
     
-    if (m_s_colHeaderCaption_attr)
+    if (m_colHeaderCaption_attr)
     {
-        delete m_s_colHeaderCaption_attr;
-        m_s_colHeaderCaption_attr = NULL;
+        delete m_colHeaderCaption_attr;
+        m_colHeaderCaption_attr = NULL;
     }
     
     
@@ -108884,16 +115177,16 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
 
     void pivotTableDefinition_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<pivotTableDefinition";
+    _outStream << "<main:pivotTableDefinition";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -108957,21 +115250,21 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_dataCaption_attr)
+    if (m_has_dataCaption_attr)
     {
-        m_s_dataCaption_attr->toXmlAttr("dataCaption", _outStream);
+        m_dataCaption_attr->toXmlAttr("dataCaption", _outStream);
     }
     
     
-    if (m_has_s_grandTotalCaption_attr)
+    if (m_has_grandTotalCaption_attr)
     {
-        m_s_grandTotalCaption_attr->toXmlAttr("grandTotalCaption", _outStream);
+        m_grandTotalCaption_attr->toXmlAttr("grandTotalCaption", _outStream);
     }
     
     
-    if (m_has_s_errorCaption_attr)
+    if (m_has_errorCaption_attr)
     {
-        m_s_errorCaption_attr->toXmlAttr("errorCaption", _outStream);
+        m_errorCaption_attr->toXmlAttr("errorCaption", _outStream);
     }
     
     
@@ -108981,9 +115274,9 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_missingCaption_attr)
+    if (m_has_missingCaption_attr)
     {
-        m_s_missingCaption_attr->toXmlAttr("missingCaption", _outStream);
+        m_missingCaption_attr->toXmlAttr("missingCaption", _outStream);
     }
     
     
@@ -108993,27 +115286,27 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_pageStyle_attr)
+    if (m_has_pageStyle_attr)
     {
-        m_s_pageStyle_attr->toXmlAttr("pageStyle", _outStream);
+        m_pageStyle_attr->toXmlAttr("pageStyle", _outStream);
     }
     
     
-    if (m_has_s_pivotTableStyle_attr)
+    if (m_has_pivotTableStyle_attr)
     {
-        m_s_pivotTableStyle_attr->toXmlAttr("pivotTableStyle", _outStream);
+        m_pivotTableStyle_attr->toXmlAttr("pivotTableStyle", _outStream);
     }
     
     
-    if (m_has_s_vacatedStyle_attr)
+    if (m_has_vacatedStyle_attr)
     {
-        m_s_vacatedStyle_attr->toXmlAttr("vacatedStyle", _outStream);
+        m_vacatedStyle_attr->toXmlAttr("vacatedStyle", _outStream);
     }
     
     
-    if (m_has_s_tag_attr)
+    if (m_has_tag_attr)
     {
-        m_s_tag_attr->toXmlAttr("tag", _outStream);
+        m_tag_attr->toXmlAttr("tag", _outStream);
     }
     
     
@@ -109269,15 +115562,15 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_rowHeaderCaption_attr)
+    if (m_has_rowHeaderCaption_attr)
     {
-        m_s_rowHeaderCaption_attr->toXmlAttr("rowHeaderCaption", _outStream);
+        m_rowHeaderCaption_attr->toXmlAttr("rowHeaderCaption", _outStream);
     }
     
     
-    if (m_has_s_colHeaderCaption_attr)
+    if (m_has_colHeaderCaption_attr)
     {
-        m_s_colHeaderCaption_attr->toXmlAttr("colHeaderCaption", _outStream);
+        m_colHeaderCaption_attr->toXmlAttr("colHeaderCaption", _outStream);
     }
     
     
@@ -109302,90 +115595,90 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     
     if (m_has_location)
     {
-        m_location->toXmlElem("location", "", _outStream);;
+        m_location->toXmlElem("main:location", "", _outStream);;
     }
     
     if (m_has_pivotFields)
     {
-        m_pivotFields->toXmlElem("pivotFields", "", _outStream);;
+        m_pivotFields->toXmlElem("main:pivotFields", "", _outStream);;
     }
     
     if (m_has_rowFields)
     {
-        m_rowFields->toXmlElem("rowFields", "", _outStream);;
+        m_rowFields->toXmlElem("main:rowFields", "", _outStream);;
     }
     
     if (m_has_rowItems)
     {
-        m_rowItems->toXmlElem("rowItems", "", _outStream);;
+        m_rowItems->toXmlElem("main:rowItems", "", _outStream);;
     }
     
     if (m_has_colFields)
     {
-        m_colFields->toXmlElem("colFields", "", _outStream);;
+        m_colFields->toXmlElem("main:colFields", "", _outStream);;
     }
     
     if (m_has_colItems)
     {
-        m_colItems->toXmlElem("colItems", "", _outStream);;
+        m_colItems->toXmlElem("main:colItems", "", _outStream);;
     }
     
     if (m_has_pageFields)
     {
-        m_pageFields->toXmlElem("pageFields", "", _outStream);;
+        m_pageFields->toXmlElem("main:pageFields", "", _outStream);;
     }
     
     if (m_has_dataFields)
     {
-        m_dataFields->toXmlElem("dataFields", "", _outStream);;
+        m_dataFields->toXmlElem("main:dataFields", "", _outStream);;
     }
     
     if (m_has_formats)
     {
-        m_formats->toXmlElem("formats", "", _outStream);;
+        m_formats->toXmlElem("main:formats", "", _outStream);;
     }
     
     if (m_has_conditionalFormats)
     {
-        m_conditionalFormats->toXmlElem("conditionalFormats", "", _outStream);;
+        m_conditionalFormats->toXmlElem("main:conditionalFormats", "", _outStream);;
     }
     
     if (m_has_chartFormats)
     {
-        m_chartFormats->toXmlElem("chartFormats", "", _outStream);;
+        m_chartFormats->toXmlElem("main:chartFormats", "", _outStream);;
     }
     
     if (m_has_pivotHierarchies)
     {
-        m_pivotHierarchies->toXmlElem("pivotHierarchies", "", _outStream);;
+        m_pivotHierarchies->toXmlElem("main:pivotHierarchies", "", _outStream);;
     }
     
     if (m_has_pivotTableStyleInfo)
     {
-        m_pivotTableStyleInfo->toXmlElem("pivotTableStyleInfo", "", _outStream);;
+        m_pivotTableStyleInfo->toXmlElem("main:pivotTableStyleInfo", "", _outStream);;
     }
     
     if (m_has_filters)
     {
-        m_filters->toXmlElem("filters", "", _outStream);;
+        m_filters->toXmlElem("main:filters", "", _outStream);;
     }
     
     if (m_has_rowHierarchiesUsage)
     {
-        m_rowHierarchiesUsage->toXmlElem("rowHierarchiesUsage", "", _outStream);;
+        m_rowHierarchiesUsage->toXmlElem("main:rowHierarchiesUsage", "", _outStream);;
     }
     
     if (m_has_colHierarchiesUsage)
     {
-        m_colHierarchiesUsage->toXmlElem("colHierarchiesUsage", "", _outStream);;
+        m_colHierarchiesUsage->toXmlElem("main:colHierarchiesUsage", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
-    _outStream << "</pivotTableDefinition>";
+    _outStream << "</main:pivotTableDefinition>";
     }
 
     const pivotTableDefinition_element& pivotTableDefinition_element::default_instance()
@@ -109397,22 +115690,22 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     return *pivotTableDefinition_element::default_instance_;
     }
 
-    bool pivotTableDefinition_element::has_s_name_attr() const
+    bool pivotTableDefinition_element::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void pivotTableDefinition_element::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void pivotTableDefinition_element::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& pivotTableDefinition_element::get_s_name_attr() const
+    const ns_s::ST_Xstring& pivotTableDefinition_element::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -109577,62 +115870,62 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     return m_applyWidthHeightFormats_attr;
     }
 
-    bool pivotTableDefinition_element::has_s_dataCaption_attr() const
+    bool pivotTableDefinition_element::has_dataCaption_attr() const
     {    
-    return m_has_s_dataCaption_attr;
+    return m_has_dataCaption_attr;
     }
 
-    void pivotTableDefinition_element::set_s_dataCaption_attr(const ns_s::ST_Xstring& _s_dataCaption_attr)
+    void pivotTableDefinition_element::set_dataCaption_attr(const ns_s::ST_Xstring& _dataCaption_attr)
     {    
-    m_has_s_dataCaption_attr = true;
-    m_s_dataCaption_attr = new ns_s::ST_Xstring(_s_dataCaption_attr);
+    m_has_dataCaption_attr = true;
+    m_dataCaption_attr = new ns_s::ST_Xstring(_dataCaption_attr);
     }
 
-    const ns_s::ST_Xstring& pivotTableDefinition_element::get_s_dataCaption_attr() const
+    const ns_s::ST_Xstring& pivotTableDefinition_element::get_dataCaption_attr() const
     {    
-    if (m_s_dataCaption_attr)
+    if (m_dataCaption_attr)
     {
-        return *m_s_dataCaption_attr;
+        return *m_dataCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool pivotTableDefinition_element::has_s_grandTotalCaption_attr() const
+    bool pivotTableDefinition_element::has_grandTotalCaption_attr() const
     {    
-    return m_has_s_grandTotalCaption_attr;
+    return m_has_grandTotalCaption_attr;
     }
 
-    void pivotTableDefinition_element::set_s_grandTotalCaption_attr(const ns_s::ST_Xstring& _s_grandTotalCaption_attr)
+    void pivotTableDefinition_element::set_grandTotalCaption_attr(const ns_s::ST_Xstring& _grandTotalCaption_attr)
     {    
-    m_has_s_grandTotalCaption_attr = true;
-    m_s_grandTotalCaption_attr = new ns_s::ST_Xstring(_s_grandTotalCaption_attr);
+    m_has_grandTotalCaption_attr = true;
+    m_grandTotalCaption_attr = new ns_s::ST_Xstring(_grandTotalCaption_attr);
     }
 
-    const ns_s::ST_Xstring& pivotTableDefinition_element::get_s_grandTotalCaption_attr() const
+    const ns_s::ST_Xstring& pivotTableDefinition_element::get_grandTotalCaption_attr() const
     {    
-    if (m_s_grandTotalCaption_attr)
+    if (m_grandTotalCaption_attr)
     {
-        return *m_s_grandTotalCaption_attr;
+        return *m_grandTotalCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool pivotTableDefinition_element::has_s_errorCaption_attr() const
+    bool pivotTableDefinition_element::has_errorCaption_attr() const
     {    
-    return m_has_s_errorCaption_attr;
+    return m_has_errorCaption_attr;
     }
 
-    void pivotTableDefinition_element::set_s_errorCaption_attr(const ns_s::ST_Xstring& _s_errorCaption_attr)
+    void pivotTableDefinition_element::set_errorCaption_attr(const ns_s::ST_Xstring& _errorCaption_attr)
     {    
-    m_has_s_errorCaption_attr = true;
-    m_s_errorCaption_attr = new ns_s::ST_Xstring(_s_errorCaption_attr);
+    m_has_errorCaption_attr = true;
+    m_errorCaption_attr = new ns_s::ST_Xstring(_errorCaption_attr);
     }
 
-    const ns_s::ST_Xstring& pivotTableDefinition_element::get_s_errorCaption_attr() const
+    const ns_s::ST_Xstring& pivotTableDefinition_element::get_errorCaption_attr() const
     {    
-    if (m_s_errorCaption_attr)
+    if (m_errorCaption_attr)
     {
-        return *m_s_errorCaption_attr;
+        return *m_errorCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -109653,22 +115946,22 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     return m_showError_attr;
     }
 
-    bool pivotTableDefinition_element::has_s_missingCaption_attr() const
+    bool pivotTableDefinition_element::has_missingCaption_attr() const
     {    
-    return m_has_s_missingCaption_attr;
+    return m_has_missingCaption_attr;
     }
 
-    void pivotTableDefinition_element::set_s_missingCaption_attr(const ns_s::ST_Xstring& _s_missingCaption_attr)
+    void pivotTableDefinition_element::set_missingCaption_attr(const ns_s::ST_Xstring& _missingCaption_attr)
     {    
-    m_has_s_missingCaption_attr = true;
-    m_s_missingCaption_attr = new ns_s::ST_Xstring(_s_missingCaption_attr);
+    m_has_missingCaption_attr = true;
+    m_missingCaption_attr = new ns_s::ST_Xstring(_missingCaption_attr);
     }
 
-    const ns_s::ST_Xstring& pivotTableDefinition_element::get_s_missingCaption_attr() const
+    const ns_s::ST_Xstring& pivotTableDefinition_element::get_missingCaption_attr() const
     {    
-    if (m_s_missingCaption_attr)
+    if (m_missingCaption_attr)
     {
-        return *m_s_missingCaption_attr;
+        return *m_missingCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -109689,82 +115982,82 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     return m_showMissing_attr;
     }
 
-    bool pivotTableDefinition_element::has_s_pageStyle_attr() const
+    bool pivotTableDefinition_element::has_pageStyle_attr() const
     {    
-    return m_has_s_pageStyle_attr;
+    return m_has_pageStyle_attr;
     }
 
-    void pivotTableDefinition_element::set_s_pageStyle_attr(const ns_s::ST_Xstring& _s_pageStyle_attr)
+    void pivotTableDefinition_element::set_pageStyle_attr(const ns_s::ST_Xstring& _pageStyle_attr)
     {    
-    m_has_s_pageStyle_attr = true;
-    m_s_pageStyle_attr = new ns_s::ST_Xstring(_s_pageStyle_attr);
+    m_has_pageStyle_attr = true;
+    m_pageStyle_attr = new ns_s::ST_Xstring(_pageStyle_attr);
     }
 
-    const ns_s::ST_Xstring& pivotTableDefinition_element::get_s_pageStyle_attr() const
+    const ns_s::ST_Xstring& pivotTableDefinition_element::get_pageStyle_attr() const
     {    
-    if (m_s_pageStyle_attr)
+    if (m_pageStyle_attr)
     {
-        return *m_s_pageStyle_attr;
+        return *m_pageStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool pivotTableDefinition_element::has_s_pivotTableStyle_attr() const
+    bool pivotTableDefinition_element::has_pivotTableStyle_attr() const
     {    
-    return m_has_s_pivotTableStyle_attr;
+    return m_has_pivotTableStyle_attr;
     }
 
-    void pivotTableDefinition_element::set_s_pivotTableStyle_attr(const ns_s::ST_Xstring& _s_pivotTableStyle_attr)
+    void pivotTableDefinition_element::set_pivotTableStyle_attr(const ns_s::ST_Xstring& _pivotTableStyle_attr)
     {    
-    m_has_s_pivotTableStyle_attr = true;
-    m_s_pivotTableStyle_attr = new ns_s::ST_Xstring(_s_pivotTableStyle_attr);
+    m_has_pivotTableStyle_attr = true;
+    m_pivotTableStyle_attr = new ns_s::ST_Xstring(_pivotTableStyle_attr);
     }
 
-    const ns_s::ST_Xstring& pivotTableDefinition_element::get_s_pivotTableStyle_attr() const
+    const ns_s::ST_Xstring& pivotTableDefinition_element::get_pivotTableStyle_attr() const
     {    
-    if (m_s_pivotTableStyle_attr)
+    if (m_pivotTableStyle_attr)
     {
-        return *m_s_pivotTableStyle_attr;
+        return *m_pivotTableStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool pivotTableDefinition_element::has_s_vacatedStyle_attr() const
+    bool pivotTableDefinition_element::has_vacatedStyle_attr() const
     {    
-    return m_has_s_vacatedStyle_attr;
+    return m_has_vacatedStyle_attr;
     }
 
-    void pivotTableDefinition_element::set_s_vacatedStyle_attr(const ns_s::ST_Xstring& _s_vacatedStyle_attr)
+    void pivotTableDefinition_element::set_vacatedStyle_attr(const ns_s::ST_Xstring& _vacatedStyle_attr)
     {    
-    m_has_s_vacatedStyle_attr = true;
-    m_s_vacatedStyle_attr = new ns_s::ST_Xstring(_s_vacatedStyle_attr);
+    m_has_vacatedStyle_attr = true;
+    m_vacatedStyle_attr = new ns_s::ST_Xstring(_vacatedStyle_attr);
     }
 
-    const ns_s::ST_Xstring& pivotTableDefinition_element::get_s_vacatedStyle_attr() const
+    const ns_s::ST_Xstring& pivotTableDefinition_element::get_vacatedStyle_attr() const
     {    
-    if (m_s_vacatedStyle_attr)
+    if (m_vacatedStyle_attr)
     {
-        return *m_s_vacatedStyle_attr;
+        return *m_vacatedStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool pivotTableDefinition_element::has_s_tag_attr() const
+    bool pivotTableDefinition_element::has_tag_attr() const
     {    
-    return m_has_s_tag_attr;
+    return m_has_tag_attr;
     }
 
-    void pivotTableDefinition_element::set_s_tag_attr(const ns_s::ST_Xstring& _s_tag_attr)
+    void pivotTableDefinition_element::set_tag_attr(const ns_s::ST_Xstring& _tag_attr)
     {    
-    m_has_s_tag_attr = true;
-    m_s_tag_attr = new ns_s::ST_Xstring(_s_tag_attr);
+    m_has_tag_attr = true;
+    m_tag_attr = new ns_s::ST_Xstring(_tag_attr);
     }
 
-    const ns_s::ST_Xstring& pivotTableDefinition_element::get_s_tag_attr() const
+    const ns_s::ST_Xstring& pivotTableDefinition_element::get_tag_attr() const
     {    
-    if (m_s_tag_attr)
+    if (m_tag_attr)
     {
-        return *m_s_tag_attr;
+        return *m_tag_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -110441,42 +116734,42 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     return m_chartFormat_attr;
     }
 
-    bool pivotTableDefinition_element::has_s_rowHeaderCaption_attr() const
+    bool pivotTableDefinition_element::has_rowHeaderCaption_attr() const
     {    
-    return m_has_s_rowHeaderCaption_attr;
+    return m_has_rowHeaderCaption_attr;
     }
 
-    void pivotTableDefinition_element::set_s_rowHeaderCaption_attr(const ns_s::ST_Xstring& _s_rowHeaderCaption_attr)
+    void pivotTableDefinition_element::set_rowHeaderCaption_attr(const ns_s::ST_Xstring& _rowHeaderCaption_attr)
     {    
-    m_has_s_rowHeaderCaption_attr = true;
-    m_s_rowHeaderCaption_attr = new ns_s::ST_Xstring(_s_rowHeaderCaption_attr);
+    m_has_rowHeaderCaption_attr = true;
+    m_rowHeaderCaption_attr = new ns_s::ST_Xstring(_rowHeaderCaption_attr);
     }
 
-    const ns_s::ST_Xstring& pivotTableDefinition_element::get_s_rowHeaderCaption_attr() const
+    const ns_s::ST_Xstring& pivotTableDefinition_element::get_rowHeaderCaption_attr() const
     {    
-    if (m_s_rowHeaderCaption_attr)
+    if (m_rowHeaderCaption_attr)
     {
-        return *m_s_rowHeaderCaption_attr;
+        return *m_rowHeaderCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool pivotTableDefinition_element::has_s_colHeaderCaption_attr() const
+    bool pivotTableDefinition_element::has_colHeaderCaption_attr() const
     {    
-    return m_has_s_colHeaderCaption_attr;
+    return m_has_colHeaderCaption_attr;
     }
 
-    void pivotTableDefinition_element::set_s_colHeaderCaption_attr(const ns_s::ST_Xstring& _s_colHeaderCaption_attr)
+    void pivotTableDefinition_element::set_colHeaderCaption_attr(const ns_s::ST_Xstring& _colHeaderCaption_attr)
     {    
-    m_has_s_colHeaderCaption_attr = true;
-    m_s_colHeaderCaption_attr = new ns_s::ST_Xstring(_s_colHeaderCaption_attr);
+    m_has_colHeaderCaption_attr = true;
+    m_colHeaderCaption_attr = new ns_s::ST_Xstring(_colHeaderCaption_attr);
     }
 
-    const ns_s::ST_Xstring& pivotTableDefinition_element::get_s_colHeaderCaption_attr() const
+    const ns_s::ST_Xstring& pivotTableDefinition_element::get_colHeaderCaption_attr() const
     {    
-    if (m_s_colHeaderCaption_attr)
+    if (m_colHeaderCaption_attr)
     {
-        return *m_s_colHeaderCaption_attr;
+        return *m_colHeaderCaption_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -110532,6 +116825,57 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
 pivotTableDefinition_element* pivotTableDefinition_element::default_instance_ = NULL;
 
     // queryTable_element
+    queryTable_element::queryTable_element()
+    :m_has_queryTableRefresh(false),
+    m_queryTableRefresh(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_headers_attr(false),
+    m_headers_attr(false),
+    m_has_rowNumbers_attr(false),
+    m_rowNumbers_attr(false),
+    m_has_disableRefresh_attr(false),
+    m_disableRefresh_attr(false),
+    m_has_backgroundRefresh_attr(false),
+    m_backgroundRefresh_attr(false),
+    m_has_firstBackgroundRefresh_attr(false),
+    m_firstBackgroundRefresh_attr(false),
+    m_has_refreshOnLoad_attr(false),
+    m_refreshOnLoad_attr(false),
+    m_has_growShrinkType_attr(false),
+    m_growShrinkType_attr(NULL),
+    m_has_fillFormulas_attr(false),
+    m_fillFormulas_attr(false),
+    m_has_removeDataOnSave_attr(false),
+    m_removeDataOnSave_attr(false),
+    m_has_disableEdit_attr(false),
+    m_disableEdit_attr(false),
+    m_has_preserveFormatting_attr(false),
+    m_preserveFormatting_attr(false),
+    m_has_adjustColumnWidth_attr(false),
+    m_adjustColumnWidth_attr(false),
+    m_has_intermediate_attr(false),
+    m_intermediate_attr(false),
+    m_has_connectionId_attr(false),
+    m_connectionId_attr(0),
+    m_has_autoFormatId_attr(false),
+    m_autoFormatId_attr(0),
+    m_has_applyNumberFormats_attr(false),
+    m_applyNumberFormats_attr(false),
+    m_has_applyBorderFormats_attr(false),
+    m_applyBorderFormats_attr(false),
+    m_has_applyFontFormats_attr(false),
+    m_applyFontFormats_attr(false),
+    m_has_applyPatternFormats_attr(false),
+    m_applyPatternFormats_attr(false),
+    m_has_applyAlignmentFormats_attr(false),
+    m_applyAlignmentFormats_attr(false),
+    m_has_applyWidthHeightFormats_attr(false),
+    m_applyWidthHeightFormats_attr(false)
+    {
+    }
     bool queryTable_element::has_queryTableRefresh() const
     {    
     return m_has_queryTableRefresh;
@@ -110582,12 +116926,12 @@ pivotTableDefinition_element* pivotTableDefinition_element::default_instance_ = 
 
     void queryTable_element::clear()
     {    
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
@@ -110663,16 +117007,16 @@ pivotTableDefinition_element* pivotTableDefinition_element::default_instance_ = 
 
     void queryTable_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<queryTable";
+    _outStream << "<main:queryTable";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
@@ -110805,15 +117149,15 @@ pivotTableDefinition_element* pivotTableDefinition_element::default_instance_ = 
     
     if (m_has_queryTableRefresh)
     {
-        m_queryTableRefresh->toXmlElem("queryTableRefresh", "", _outStream);;
+        m_queryTableRefresh->toXmlElem("main:queryTableRefresh", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
-    _outStream << "</queryTable>";
+    _outStream << "</main:queryTable>";
     }
 
     const queryTable_element& queryTable_element::default_instance()
@@ -110825,22 +117169,22 @@ pivotTableDefinition_element* pivotTableDefinition_element::default_instance_ = 
     return *queryTable_element::default_instance_;
     }
 
-    bool queryTable_element::has_s_name_attr() const
+    bool queryTable_element::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void queryTable_element::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void queryTable_element::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& queryTable_element::get_s_name_attr() const
+    const ns_s::ST_Xstring& queryTable_element::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -111188,6 +117532,13 @@ pivotTableDefinition_element* pivotTableDefinition_element::default_instance_ = 
 queryTable_element* queryTable_element::default_instance_ = NULL;
 
     // sst_element
+    sst_element::sst_element()
+    :m_has_count_attr(false),
+    m_count_attr(0),
+    m_has_uniqueCount_attr(false),
+    m_uniqueCount_attr(0)
+    {
+    }
     CT_Rst* sst_element::add_si()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -111224,7 +117575,7 @@ queryTable_element* queryTable_element::default_instance_ = NULL;
 
     void sst_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<sst";
+    _outStream << "<main:sst";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -111250,16 +117601,16 @@ queryTable_element* queryTable_element::default_instance_ = NULL;
         {
             if ((*iter)->has_si())
             {
-                (*iter)->get_si().toXmlElem("si", "", _outStream);
+                (*iter)->get_si().toXmlElem("main:si", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
     
-    _outStream << "</sst>";
+    _outStream << "</main:sst>";
     }
 
     const sst_element& sst_element::default_instance()
@@ -111305,6 +117656,13 @@ queryTable_element* queryTable_element::default_instance_ = NULL;
 
 
     // sst_element::ChildGroup_1
+    sst_element::ChildGroup_1::ChildGroup_1()
+    :m_has_si(false),
+    m_si(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool sst_element::ChildGroup_1::has_si() const
     {    
     return m_has_si;
@@ -111376,6 +117734,33 @@ queryTable_element* queryTable_element::default_instance_ = NULL;
 sst_element* sst_element::default_instance_ = NULL;
 
     // headers_element
+    headers_element::headers_element()
+    :m_has_guid_attr(false),
+    m_guid_attr(NULL),
+    m_has_lastGuid_attr(false),
+    m_lastGuid_attr(NULL),
+    m_has_shared_attr(false),
+    m_shared_attr(false),
+    m_has_diskRevisions_attr(false),
+    m_diskRevisions_attr(false),
+    m_has_history_attr(false),
+    m_history_attr(false),
+    m_has_trackRevisions_attr(false),
+    m_trackRevisions_attr(false),
+    m_has_exclusive_attr(false),
+    m_exclusive_attr(false),
+    m_has_revisionId_attr(false),
+    m_revisionId_attr(0),
+    m_has_version_attr(false),
+    m_version_attr(0),
+    m_has_keepChangeHistory_attr(false),
+    m_keepChangeHistory_attr(false),
+    m_has_protected_attr(false),
+    m_protected_attr(false),
+    m_has_preserveHistory_attr(false),
+    m_preserveHistory_attr(0)
+    {
+    }
     CT_RevisionHeader* headers_element::add_header()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -111386,21 +117771,21 @@ sst_element* sst_element::default_instance_ = NULL;
 
     void headers_element::clear()
     {    
-    m_has_s_guid_attr = false;
+    m_has_guid_attr = false;
     
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        delete m_s_guid_attr;
-        m_s_guid_attr = NULL;
+        delete m_guid_attr;
+        m_guid_attr = NULL;
     }
     
     
-    m_has_s_lastGuid_attr = false;
+    m_has_lastGuid_attr = false;
     
-    if (m_s_lastGuid_attr)
+    if (m_lastGuid_attr)
     {
-        delete m_s_lastGuid_attr;
-        m_s_lastGuid_attr = NULL;
+        delete m_lastGuid_attr;
+        m_lastGuid_attr = NULL;
     }
     
     
@@ -111446,22 +117831,22 @@ sst_element* sst_element::default_instance_ = NULL;
 
     void headers_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<headers";
+    _outStream << "<main:headers";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
     
-    if (m_has_s_guid_attr)
+    if (m_has_guid_attr)
     {
-        m_s_guid_attr->toXmlAttr("guid", _outStream);
+        m_guid_attr->toXmlAttr("guid", _outStream);
     }
     
     
-    if (m_has_s_lastGuid_attr)
+    if (m_has_lastGuid_attr)
     {
-        m_s_lastGuid_attr->toXmlAttr("lastGuid", _outStream);
+        m_lastGuid_attr->toXmlAttr("lastGuid", _outStream);
     }
     
     
@@ -111532,12 +117917,12 @@ sst_element* sst_element::default_instance_ = NULL;
         {
             if ((*iter)->has_header())
             {
-                (*iter)->get_header().toXmlElem("header", "", _outStream);
+                (*iter)->get_header().toXmlElem("main:header", "", _outStream);
             }
         }
     }
     
-    _outStream << "</headers>";
+    _outStream << "</main:headers>";
     }
 
     const headers_element& headers_element::default_instance()
@@ -111549,42 +117934,42 @@ sst_element* sst_element::default_instance_ = NULL;
     return *headers_element::default_instance_;
     }
 
-    bool headers_element::has_s_guid_attr() const
+    bool headers_element::has_guid_attr() const
     {    
-    return m_has_s_guid_attr;
+    return m_has_guid_attr;
     }
 
-    void headers_element::set_s_guid_attr(const ns_s::ST_Guid& _s_guid_attr)
+    void headers_element::set_guid_attr(const ns_s::ST_Guid& _guid_attr)
     {    
-    m_has_s_guid_attr = true;
-    m_s_guid_attr = new ns_s::ST_Guid(_s_guid_attr);
+    m_has_guid_attr = true;
+    m_guid_attr = new ns_s::ST_Guid(_guid_attr);
     }
 
-    const ns_s::ST_Guid& headers_element::get_s_guid_attr() const
+    const ns_s::ST_Guid& headers_element::get_guid_attr() const
     {    
-    if (m_s_guid_attr)
+    if (m_guid_attr)
     {
-        return *m_s_guid_attr;
+        return *m_guid_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
 
-    bool headers_element::has_s_lastGuid_attr() const
+    bool headers_element::has_lastGuid_attr() const
     {    
-    return m_has_s_lastGuid_attr;
+    return m_has_lastGuid_attr;
     }
 
-    void headers_element::set_s_lastGuid_attr(const ns_s::ST_Guid& _s_lastGuid_attr)
+    void headers_element::set_lastGuid_attr(const ns_s::ST_Guid& _lastGuid_attr)
     {    
-    m_has_s_lastGuid_attr = true;
-    m_s_lastGuid_attr = new ns_s::ST_Guid(_s_lastGuid_attr);
+    m_has_lastGuid_attr = true;
+    m_lastGuid_attr = new ns_s::ST_Guid(_lastGuid_attr);
     }
 
-    const ns_s::ST_Guid& headers_element::get_s_lastGuid_attr() const
+    const ns_s::ST_Guid& headers_element::get_lastGuid_attr() const
     {    
-    if (m_s_lastGuid_attr)
+    if (m_lastGuid_attr)
     {
-        return *m_s_lastGuid_attr;
+        return *m_lastGuid_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -111751,6 +118136,11 @@ sst_element* sst_element::default_instance_ = NULL;
 
 
     // headers_element::ChildGroup_1
+    headers_element::ChildGroup_1::ChildGroup_1()
+    :m_has_header(false),
+    m_header(NULL)
+    {
+    }
     bool headers_element::ChildGroup_1::has_header() const
     {    
     return m_has_header;
@@ -111779,6 +118169,10 @@ sst_element* sst_element::default_instance_ = NULL;
 headers_element* headers_element::default_instance_ = NULL;
 
     // revisions_element
+    revisions_element::revisions_element()
+
+    {
+    }
     CT_RevisionRowColumn* revisions_element::add_rrc()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -111889,7 +118283,7 @@ headers_element* headers_element::default_instance_ = NULL;
 
     void revisions_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<revisions";
+    _outStream << "<main:revisions";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -111904,56 +118298,56 @@ headers_element* headers_element::default_instance_ = NULL;
         {
             if ((*iter)->has_rrc())
             {
-                (*iter)->get_rrc().toXmlElem("rrc", "", _outStream);
+                (*iter)->get_rrc().toXmlElem("main:rrc", "", _outStream);
             }
             else if ((*iter)->has_rm())
             {
-                (*iter)->get_rm().toXmlElem("rm", "", _outStream);
+                (*iter)->get_rm().toXmlElem("main:rm", "", _outStream);
             }
             else if ((*iter)->has_rcv())
             {
-                (*iter)->get_rcv().toXmlElem("rcv", "", _outStream);
+                (*iter)->get_rcv().toXmlElem("main:rcv", "", _outStream);
             }
             else if ((*iter)->has_rsnm())
             {
-                (*iter)->get_rsnm().toXmlElem("rsnm", "", _outStream);
+                (*iter)->get_rsnm().toXmlElem("main:rsnm", "", _outStream);
             }
             else if ((*iter)->has_ris())
             {
-                (*iter)->get_ris().toXmlElem("ris", "", _outStream);
+                (*iter)->get_ris().toXmlElem("main:ris", "", _outStream);
             }
             else if ((*iter)->has_rcc())
             {
-                (*iter)->get_rcc().toXmlElem("rcc", "", _outStream);
+                (*iter)->get_rcc().toXmlElem("main:rcc", "", _outStream);
             }
             else if ((*iter)->has_rfmt())
             {
-                (*iter)->get_rfmt().toXmlElem("rfmt", "", _outStream);
+                (*iter)->get_rfmt().toXmlElem("main:rfmt", "", _outStream);
             }
             else if ((*iter)->has_raf())
             {
-                (*iter)->get_raf().toXmlElem("raf", "", _outStream);
+                (*iter)->get_raf().toXmlElem("main:raf", "", _outStream);
             }
             else if ((*iter)->has_rdn())
             {
-                (*iter)->get_rdn().toXmlElem("rdn", "", _outStream);
+                (*iter)->get_rdn().toXmlElem("main:rdn", "", _outStream);
             }
             else if ((*iter)->has_rcmt())
             {
-                (*iter)->get_rcmt().toXmlElem("rcmt", "", _outStream);
+                (*iter)->get_rcmt().toXmlElem("main:rcmt", "", _outStream);
             }
             else if ((*iter)->has_rqt())
             {
-                (*iter)->get_rqt().toXmlElem("rqt", "", _outStream);
+                (*iter)->get_rqt().toXmlElem("main:rqt", "", _outStream);
             }
             else if ((*iter)->has_rcft())
             {
-                (*iter)->get_rcft().toXmlElem("rcft", "", _outStream);
+                (*iter)->get_rcft().toXmlElem("main:rcft", "", _outStream);
             }
         }
     }
     
-    _outStream << "</revisions>";
+    _outStream << "</main:revisions>";
     }
 
     const revisions_element& revisions_element::default_instance()
@@ -111967,6 +118361,33 @@ headers_element* headers_element::default_instance_ = NULL;
 
 
     // revisions_element::ChildGroup_1
+    revisions_element::ChildGroup_1::ChildGroup_1()
+    :m_has_rrc(false),
+    m_rrc(NULL),
+    m_has_rm(false),
+    m_rm(NULL),
+    m_has_rcv(false),
+    m_rcv(NULL),
+    m_has_rsnm(false),
+    m_rsnm(NULL),
+    m_has_ris(false),
+    m_ris(NULL),
+    m_has_rcc(false),
+    m_rcc(NULL),
+    m_has_rfmt(false),
+    m_rfmt(NULL),
+    m_has_raf(false),
+    m_raf(NULL),
+    m_has_rdn(false),
+    m_rdn(NULL),
+    m_has_rcmt(false),
+    m_rcmt(NULL),
+    m_has_rqt(false),
+    m_rqt(NULL),
+    m_has_rcft(false),
+    m_rcft(NULL)
+    {
+    }
     bool revisions_element::ChildGroup_1::has_rrc() const
     {    
     return m_has_rrc;
@@ -113458,6 +119879,11 @@ headers_element* headers_element::default_instance_ = NULL;
 revisions_element* revisions_element::default_instance_ = NULL;
 
     // users_element
+    users_element::users_element()
+    :m_has_count_attr(false),
+    m_count_attr(0)
+    {
+    }
     CT_SharedUser* users_element::add_userInfo()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -113483,7 +119909,7 @@ revisions_element* revisions_element::default_instance_ = NULL;
 
     void users_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<users";
+    _outStream << "<main:users";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -113503,12 +119929,12 @@ revisions_element* revisions_element::default_instance_ = NULL;
         {
             if ((*iter)->has_userInfo())
             {
-                (*iter)->get_userInfo().toXmlElem("userInfo", "", _outStream);
+                (*iter)->get_userInfo().toXmlElem("main:userInfo", "", _outStream);
             }
         }
     }
     
-    _outStream << "</users>";
+    _outStream << "</main:users>";
     }
 
     const users_element& users_element::default_instance()
@@ -113538,6 +119964,11 @@ revisions_element* revisions_element::default_instance_ = NULL;
 
 
     // users_element::ChildGroup_1
+    users_element::ChildGroup_1::ChildGroup_1()
+    :m_has_userInfo(false),
+    m_userInfo(NULL)
+    {
+    }
     bool users_element::ChildGroup_1::has_userInfo() const
     {    
     return m_has_userInfo;
@@ -113566,6 +119997,17 @@ revisions_element* revisions_element::default_instance_ = NULL;
 users_element* users_element::default_instance_ = NULL;
 
     // worksheet_element
+    worksheet_element::worksheet_element()
+    :m_has_sheetPr(false),
+    m_sheetPr(NULL),
+    m_has_dimension(false),
+    m_dimension(NULL),
+    m_has_sheetViews(false),
+    m_sheetViews(NULL),
+    m_has_sheetFormatPr(false),
+    m_sheetFormatPr(NULL)
+    {
+    }
     bool worksheet_element::has_sheetPr() const
     {    
     return m_has_sheetPr;
@@ -113992,7 +120434,7 @@ users_element* users_element::default_instance_ = NULL;
 
     void worksheet_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<worksheet";
+    _outStream << "<main:worksheet";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -114003,22 +120445,22 @@ users_element* users_element::default_instance_ = NULL;
     
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
     }
     
     if (m_has_dimension)
     {
-        m_dimension->toXmlElem("dimension", "", _outStream);;
+        m_dimension->toXmlElem("main:dimension", "", _outStream);;
     }
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
     }
     
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("sheetFormatPr", "", _outStream);;
+        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);;
     }
      
     {
@@ -114027,148 +120469,148 @@ users_element* users_element::default_instance_ = NULL;
         {
             if ((*iter)->has_cols())
             {
-                (*iter)->get_cols().toXmlElem("cols", "", _outStream);
+                (*iter)->get_cols().toXmlElem("main:cols", "", _outStream);
             }
             else if ((*iter)->has_sheetData())
             {
-                (*iter)->get_sheetData().toXmlElem("sheetData", "", _outStream);
+                (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
             }
             else if ((*iter)->has_sheetCalcPr())
             {
-                (*iter)->get_sheetCalcPr().toXmlElem("sheetCalcPr", "", _outStream);
+                (*iter)->get_sheetCalcPr().toXmlElem("main:sheetCalcPr", "", _outStream);
             }
             else if ((*iter)->has_sheetProtection())
             {
-                (*iter)->get_sheetProtection().toXmlElem("sheetProtection", "", _outStream);
+                (*iter)->get_sheetProtection().toXmlElem("main:sheetProtection", "", _outStream);
             }
             else if ((*iter)->has_protectedRanges())
             {
-                (*iter)->get_protectedRanges().toXmlElem("protectedRanges", "", _outStream);
+                (*iter)->get_protectedRanges().toXmlElem("main:protectedRanges", "", _outStream);
             }
             else if ((*iter)->has_scenarios())
             {
-                (*iter)->get_scenarios().toXmlElem("scenarios", "", _outStream);
+                (*iter)->get_scenarios().toXmlElem("main:scenarios", "", _outStream);
             }
             else if ((*iter)->has_autoFilter())
             {
-                (*iter)->get_autoFilter().toXmlElem("autoFilter", "", _outStream);
+                (*iter)->get_autoFilter().toXmlElem("main:autoFilter", "", _outStream);
             }
             else if ((*iter)->has_sortState())
             {
-                (*iter)->get_sortState().toXmlElem("sortState", "", _outStream);
+                (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
             }
             else if ((*iter)->has_dataConsolidate())
             {
-                (*iter)->get_dataConsolidate().toXmlElem("dataConsolidate", "", _outStream);
+                (*iter)->get_dataConsolidate().toXmlElem("main:dataConsolidate", "", _outStream);
             }
             else if ((*iter)->has_customSheetViews())
             {
-                (*iter)->get_customSheetViews().toXmlElem("customSheetViews", "", _outStream);
+                (*iter)->get_customSheetViews().toXmlElem("main:customSheetViews", "", _outStream);
             }
             else if ((*iter)->has_mergeCells())
             {
-                (*iter)->get_mergeCells().toXmlElem("mergeCells", "", _outStream);
+                (*iter)->get_mergeCells().toXmlElem("main:mergeCells", "", _outStream);
             }
             else if ((*iter)->has_phoneticPr())
             {
-                (*iter)->get_phoneticPr().toXmlElem("phoneticPr", "", _outStream);
+                (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
             }
             else if ((*iter)->has_conditionalFormatting())
             {
-                (*iter)->get_conditionalFormatting().toXmlElem("conditionalFormatting", "", _outStream);
+                (*iter)->get_conditionalFormatting().toXmlElem("main:conditionalFormatting", "", _outStream);
             }
             else if ((*iter)->has_dataValidations())
             {
-                (*iter)->get_dataValidations().toXmlElem("dataValidations", "", _outStream);
+                (*iter)->get_dataValidations().toXmlElem("main:dataValidations", "", _outStream);
             }
             else if ((*iter)->has_hyperlinks())
             {
-                (*iter)->get_hyperlinks().toXmlElem("hyperlinks", "", _outStream);
+                (*iter)->get_hyperlinks().toXmlElem("main:hyperlinks", "", _outStream);
             }
             else if ((*iter)->has_printOptions())
             {
-                (*iter)->get_printOptions().toXmlElem("printOptions", "", _outStream);
+                (*iter)->get_printOptions().toXmlElem("main:printOptions", "", _outStream);
             }
             else if ((*iter)->has_pageMargins())
             {
-                (*iter)->get_pageMargins().toXmlElem("pageMargins", "", _outStream);
+                (*iter)->get_pageMargins().toXmlElem("main:pageMargins", "", _outStream);
             }
             else if ((*iter)->has_pageSetup())
             {
-                (*iter)->get_pageSetup().toXmlElem("pageSetup", "", _outStream);
+                (*iter)->get_pageSetup().toXmlElem("main:pageSetup", "", _outStream);
             }
             else if ((*iter)->has_headerFooter())
             {
-                (*iter)->get_headerFooter().toXmlElem("headerFooter", "", _outStream);
+                (*iter)->get_headerFooter().toXmlElem("main:headerFooter", "", _outStream);
             }
             else if ((*iter)->has_rowBreaks())
             {
-                (*iter)->get_rowBreaks().toXmlElem("rowBreaks", "", _outStream);
+                (*iter)->get_rowBreaks().toXmlElem("main:rowBreaks", "", _outStream);
             }
             else if ((*iter)->has_colBreaks())
             {
-                (*iter)->get_colBreaks().toXmlElem("colBreaks", "", _outStream);
+                (*iter)->get_colBreaks().toXmlElem("main:colBreaks", "", _outStream);
             }
             else if ((*iter)->has_customProperties())
             {
-                (*iter)->get_customProperties().toXmlElem("customProperties", "", _outStream);
+                (*iter)->get_customProperties().toXmlElem("main:customProperties", "", _outStream);
             }
             else if ((*iter)->has_cellWatches())
             {
-                (*iter)->get_cellWatches().toXmlElem("cellWatches", "", _outStream);
+                (*iter)->get_cellWatches().toXmlElem("main:cellWatches", "", _outStream);
             }
             else if ((*iter)->has_ignoredErrors())
             {
-                (*iter)->get_ignoredErrors().toXmlElem("ignoredErrors", "", _outStream);
+                (*iter)->get_ignoredErrors().toXmlElem("main:ignoredErrors", "", _outStream);
             }
             else if ((*iter)->has_smartTags())
             {
-                (*iter)->get_smartTags().toXmlElem("smartTags", "", _outStream);
+                (*iter)->get_smartTags().toXmlElem("main:smartTags", "", _outStream);
             }
             else if ((*iter)->has_drawing())
             {
-                (*iter)->get_drawing().toXmlElem("drawing", "", _outStream);
+                (*iter)->get_drawing().toXmlElem("main:drawing", "", _outStream);
             }
             else if ((*iter)->has_legacyDrawing())
             {
-                (*iter)->get_legacyDrawing().toXmlElem("legacyDrawing", "", _outStream);
+                (*iter)->get_legacyDrawing().toXmlElem("main:legacyDrawing", "", _outStream);
             }
             else if ((*iter)->has_legacyDrawingHF())
             {
-                (*iter)->get_legacyDrawingHF().toXmlElem("legacyDrawingHF", "", _outStream);
+                (*iter)->get_legacyDrawingHF().toXmlElem("main:legacyDrawingHF", "", _outStream);
             }
             else if ((*iter)->has_drawingHF())
             {
-                (*iter)->get_drawingHF().toXmlElem("drawingHF", "", _outStream);
+                (*iter)->get_drawingHF().toXmlElem("main:drawingHF", "", _outStream);
             }
             else if ((*iter)->has_picture())
             {
-                (*iter)->get_picture().toXmlElem("picture", "", _outStream);
+                (*iter)->get_picture().toXmlElem("main:picture", "", _outStream);
             }
             else if ((*iter)->has_oleObjects())
             {
-                (*iter)->get_oleObjects().toXmlElem("oleObjects", "", _outStream);
+                (*iter)->get_oleObjects().toXmlElem("main:oleObjects", "", _outStream);
             }
             else if ((*iter)->has_controls())
             {
-                (*iter)->get_controls().toXmlElem("controls", "", _outStream);
+                (*iter)->get_controls().toXmlElem("main:controls", "", _outStream);
             }
             else if ((*iter)->has_webPublishItems())
             {
-                (*iter)->get_webPublishItems().toXmlElem("webPublishItems", "", _outStream);
+                (*iter)->get_webPublishItems().toXmlElem("main:webPublishItems", "", _outStream);
             }
             else if ((*iter)->has_tableParts())
             {
-                (*iter)->get_tableParts().toXmlElem("tableParts", "", _outStream);
+                (*iter)->get_tableParts().toXmlElem("main:tableParts", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
     
-    _outStream << "</worksheet>";
+    _outStream << "</main:worksheet>";
     }
 
     const worksheet_element& worksheet_element::default_instance()
@@ -114182,6 +120624,79 @@ users_element* users_element::default_instance_ = NULL;
 
 
     // worksheet_element::ChildGroup_1
+    worksheet_element::ChildGroup_1::ChildGroup_1()
+    :m_has_cols(false),
+    m_cols(NULL),
+    m_has_sheetData(false),
+    m_sheetData(NULL),
+    m_has_sheetCalcPr(false),
+    m_sheetCalcPr(NULL),
+    m_has_sheetProtection(false),
+    m_sheetProtection(NULL),
+    m_has_protectedRanges(false),
+    m_protectedRanges(NULL),
+    m_has_scenarios(false),
+    m_scenarios(NULL),
+    m_has_autoFilter(false),
+    m_autoFilter(NULL),
+    m_has_sortState(false),
+    m_sortState(NULL),
+    m_has_dataConsolidate(false),
+    m_dataConsolidate(NULL),
+    m_has_customSheetViews(false),
+    m_customSheetViews(NULL),
+    m_has_mergeCells(false),
+    m_mergeCells(NULL),
+    m_has_phoneticPr(false),
+    m_phoneticPr(NULL),
+    m_has_conditionalFormatting(false),
+    m_conditionalFormatting(NULL),
+    m_has_dataValidations(false),
+    m_dataValidations(NULL),
+    m_has_hyperlinks(false),
+    m_hyperlinks(NULL),
+    m_has_printOptions(false),
+    m_printOptions(NULL),
+    m_has_pageMargins(false),
+    m_pageMargins(NULL),
+    m_has_pageSetup(false),
+    m_pageSetup(NULL),
+    m_has_headerFooter(false),
+    m_headerFooter(NULL),
+    m_has_rowBreaks(false),
+    m_rowBreaks(NULL),
+    m_has_colBreaks(false),
+    m_colBreaks(NULL),
+    m_has_customProperties(false),
+    m_customProperties(NULL),
+    m_has_cellWatches(false),
+    m_cellWatches(NULL),
+    m_has_ignoredErrors(false),
+    m_ignoredErrors(NULL),
+    m_has_smartTags(false),
+    m_smartTags(NULL),
+    m_has_drawing(false),
+    m_drawing(NULL),
+    m_has_legacyDrawing(false),
+    m_legacyDrawing(NULL),
+    m_has_legacyDrawingHF(false),
+    m_legacyDrawingHF(NULL),
+    m_has_drawingHF(false),
+    m_drawingHF(NULL),
+    m_has_picture(false),
+    m_picture(NULL),
+    m_has_oleObjects(false),
+    m_oleObjects(NULL),
+    m_has_controls(false),
+    m_controls(NULL),
+    m_has_webPublishItems(false),
+    m_webPublishItems(NULL),
+    m_has_tableParts(false),
+    m_tableParts(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool worksheet_element::ChildGroup_1::has_cols() const
     {    
     return m_has_cols;
@@ -125770,6 +132285,37 @@ users_element* users_element::default_instance_ = NULL;
 worksheet_element* worksheet_element::default_instance_ = NULL;
 
     // chartsheet_element
+    chartsheet_element::chartsheet_element()
+    :m_has_sheetPr(false),
+    m_sheetPr(NULL),
+    m_has_sheetViews(false),
+    m_sheetViews(NULL),
+    m_has_sheetProtection(false),
+    m_sheetProtection(NULL),
+    m_has_customSheetViews(false),
+    m_customSheetViews(NULL),
+    m_has_pageMargins(false),
+    m_pageMargins(NULL),
+    m_has_pageSetup(false),
+    m_pageSetup(NULL),
+    m_has_headerFooter(false),
+    m_headerFooter(NULL),
+    m_has_drawing(false),
+    m_drawing(NULL),
+    m_has_legacyDrawing(false),
+    m_legacyDrawing(NULL),
+    m_has_legacyDrawingHF(false),
+    m_legacyDrawingHF(NULL),
+    m_has_drawingHF(false),
+    m_drawingHF(NULL),
+    m_has_picture(false),
+    m_picture(NULL),
+    m_has_webPublishItems(false),
+    m_webPublishItems(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool chartsheet_element::has_sheetPr() const
     {    
     return m_has_sheetPr;
@@ -126111,7 +132657,7 @@ worksheet_element* worksheet_element::default_instance_ = NULL;
 
     void chartsheet_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<chartsheet";
+    _outStream << "<main:chartsheet";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -126122,75 +132668,75 @@ worksheet_element* worksheet_element::default_instance_ = NULL;
     
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
     }
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
     }
     
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("sheetProtection", "", _outStream);;
+        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);;
     }
     
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("customSheetViews", "", _outStream);;
+        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);;
     }
     
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);;
     }
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);;
     }
     
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);;
     }
     
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("drawing", "", _outStream);;
+        m_drawing->toXmlElem("main:drawing", "", _outStream);;
     }
     
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("legacyDrawing", "", _outStream);;
+        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);;
     }
     
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("legacyDrawingHF", "", _outStream);;
+        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);;
     }
     
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("drawingHF", "", _outStream);;
+        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);;
     }
     
     if (m_has_picture)
     {
-        m_picture->toXmlElem("picture", "", _outStream);;
+        m_picture->toXmlElem("main:picture", "", _outStream);;
     }
     
     if (m_has_webPublishItems)
     {
-        m_webPublishItems->toXmlElem("webPublishItems", "", _outStream);;
+        m_webPublishItems->toXmlElem("main:webPublishItems", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
-    _outStream << "</chartsheet>";
+    _outStream << "</main:chartsheet>";
     }
 
     const chartsheet_element& chartsheet_element::default_instance()
@@ -126205,6 +132751,41 @@ worksheet_element* worksheet_element::default_instance_ = NULL;
 chartsheet_element* chartsheet_element::default_instance_ = NULL;
 
     // dialogsheet_element
+    dialogsheet_element::dialogsheet_element()
+    :m_has_sheetPr(false),
+    m_sheetPr(NULL),
+    m_has_sheetViews(false),
+    m_sheetViews(NULL),
+    m_has_sheetFormatPr(false),
+    m_sheetFormatPr(NULL),
+    m_has_sheetProtection(false),
+    m_sheetProtection(NULL),
+    m_has_customSheetViews(false),
+    m_customSheetViews(NULL),
+    m_has_printOptions(false),
+    m_printOptions(NULL),
+    m_has_pageMargins(false),
+    m_pageMargins(NULL),
+    m_has_pageSetup(false),
+    m_pageSetup(NULL),
+    m_has_headerFooter(false),
+    m_headerFooter(NULL),
+    m_has_drawing(false),
+    m_drawing(NULL),
+    m_has_legacyDrawing(false),
+    m_legacyDrawing(NULL),
+    m_has_legacyDrawingHF(false),
+    m_legacyDrawingHF(NULL),
+    m_has_drawingHF(false),
+    m_drawingHF(NULL),
+    m_has_oleObjects(false),
+    m_oleObjects(NULL),
+    m_has_controls(false),
+    m_controls(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool dialogsheet_element::has_sheetPr() const
     {    
     return m_has_sheetPr;
@@ -126594,7 +133175,7 @@ chartsheet_element* chartsheet_element::default_instance_ = NULL;
 
     void dialogsheet_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<dialogsheet";
+    _outStream << "<main:dialogsheet";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -126605,85 +133186,85 @@ chartsheet_element* chartsheet_element::default_instance_ = NULL;
     
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
     }
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
     }
     
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("sheetFormatPr", "", _outStream);;
+        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);;
     }
     
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("sheetProtection", "", _outStream);;
+        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);;
     }
     
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("customSheetViews", "", _outStream);;
+        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);;
     }
     
     if (m_has_printOptions)
     {
-        m_printOptions->toXmlElem("printOptions", "", _outStream);;
+        m_printOptions->toXmlElem("main:printOptions", "", _outStream);;
     }
     
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);;
     }
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);;
     }
     
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);;
     }
     
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("drawing", "", _outStream);;
+        m_drawing->toXmlElem("main:drawing", "", _outStream);;
     }
     
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("legacyDrawing", "", _outStream);;
+        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);;
     }
     
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("legacyDrawingHF", "", _outStream);;
+        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);;
     }
     
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("drawingHF", "", _outStream);;
+        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);;
     }
     
     if (m_has_oleObjects)
     {
-        m_oleObjects->toXmlElem("oleObjects", "", _outStream);;
+        m_oleObjects->toXmlElem("main:oleObjects", "", _outStream);;
     }
     
     if (m_has_controls)
     {
-        m_controls->toXmlElem("controls", "", _outStream);;
+        m_controls->toXmlElem("main:controls", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
-    _outStream << "</dialogsheet>";
+    _outStream << "</main:dialogsheet>";
     }
 
     const dialogsheet_element& dialogsheet_element::default_instance()
@@ -126698,6 +133279,15 @@ chartsheet_element* chartsheet_element::default_instance_ = NULL;
 dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
 
     // metadata_element
+    metadata_element::metadata_element()
+    :m_has_metadataTypes(false),
+    m_metadataTypes(NULL),
+    m_has_metadataStrings(false),
+    m_metadataStrings(NULL),
+    m_has_mdxMetadata(false),
+    m_mdxMetadata(NULL)
+    {
+    }
     bool metadata_element::has_metadataTypes() const
     {    
     return m_has_metadataTypes;
@@ -126843,7 +133433,7 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
 
     void metadata_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<metadata";
+    _outStream << "<main:metadata";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -126854,17 +133444,17 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
     
     if (m_has_metadataTypes)
     {
-        m_metadataTypes->toXmlElem("metadataTypes", "", _outStream);;
+        m_metadataTypes->toXmlElem("main:metadataTypes", "", _outStream);;
     }
     
     if (m_has_metadataStrings)
     {
-        m_metadataStrings->toXmlElem("metadataStrings", "", _outStream);;
+        m_metadataStrings->toXmlElem("main:metadataStrings", "", _outStream);;
     }
     
     if (m_has_mdxMetadata)
     {
-        m_mdxMetadata->toXmlElem("mdxMetadata", "", _outStream);;
+        m_mdxMetadata->toXmlElem("main:mdxMetadata", "", _outStream);;
     }
      
     {
@@ -126873,24 +133463,24 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
         {
             if ((*iter)->has_futureMetadata())
             {
-                (*iter)->get_futureMetadata().toXmlElem("futureMetadata", "", _outStream);
+                (*iter)->get_futureMetadata().toXmlElem("main:futureMetadata", "", _outStream);
             }
             else if ((*iter)->has_cellMetadata())
             {
-                (*iter)->get_cellMetadata().toXmlElem("cellMetadata", "", _outStream);
+                (*iter)->get_cellMetadata().toXmlElem("main:cellMetadata", "", _outStream);
             }
             else if ((*iter)->has_valueMetadata())
             {
-                (*iter)->get_valueMetadata().toXmlElem("valueMetadata", "", _outStream);
+                (*iter)->get_valueMetadata().toXmlElem("main:valueMetadata", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
     
-    _outStream << "</metadata>";
+    _outStream << "</main:metadata>";
     }
 
     const metadata_element& metadata_element::default_instance()
@@ -126904,6 +133494,17 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
 
 
     // metadata_element::ChildGroup_1
+    metadata_element::ChildGroup_1::ChildGroup_1()
+    :m_has_futureMetadata(false),
+    m_futureMetadata(NULL),
+    m_has_cellMetadata(false),
+    m_cellMetadata(NULL),
+    m_has_valueMetadata(false),
+    m_valueMetadata(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool metadata_element::ChildGroup_1::has_futureMetadata() const
     {    
     return m_has_futureMetadata;
@@ -127115,6 +133716,10 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
 metadata_element* metadata_element::default_instance_ = NULL;
 
     // singleXmlCells_element
+    singleXmlCells_element::singleXmlCells_element()
+
+    {
+    }
     CT_SingleXmlCell* singleXmlCells_element::add_singleXmlCell()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -127137,7 +133742,7 @@ metadata_element* metadata_element::default_instance_ = NULL;
 
     void singleXmlCells_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<singleXmlCells";
+    _outStream << "<main:singleXmlCells";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -127152,12 +133757,12 @@ metadata_element* metadata_element::default_instance_ = NULL;
         {
             if ((*iter)->has_singleXmlCell())
             {
-                (*iter)->get_singleXmlCell().toXmlElem("singleXmlCell", "", _outStream);
+                (*iter)->get_singleXmlCell().toXmlElem("main:singleXmlCell", "", _outStream);
             }
         }
     }
     
-    _outStream << "</singleXmlCells>";
+    _outStream << "</main:singleXmlCells>";
     }
 
     const singleXmlCells_element& singleXmlCells_element::default_instance()
@@ -127171,6 +133776,11 @@ metadata_element* metadata_element::default_instance_ = NULL;
 
 
     // singleXmlCells_element::ChildGroup_1
+    singleXmlCells_element::ChildGroup_1::ChildGroup_1()
+    :m_has_singleXmlCell(false),
+    m_singleXmlCell(NULL)
+    {
+    }
     bool singleXmlCells_element::ChildGroup_1::has_singleXmlCell() const
     {    
     return m_has_singleXmlCell;
@@ -127199,6 +133809,31 @@ metadata_element* metadata_element::default_instance_ = NULL;
 singleXmlCells_element* singleXmlCells_element::default_instance_ = NULL;
 
     // styleSheet_element
+    styleSheet_element::styleSheet_element()
+    :m_has_numFmts(false),
+    m_numFmts(NULL),
+    m_has_fonts(false),
+    m_fonts(NULL),
+    m_has_fills(false),
+    m_fills(NULL),
+    m_has_borders(false),
+    m_borders(NULL),
+    m_has_cellStyleXfs(false),
+    m_cellStyleXfs(NULL),
+    m_has_cellXfs(false),
+    m_cellXfs(NULL),
+    m_has_cellStyles(false),
+    m_cellStyles(NULL),
+    m_has_dxfs(false),
+    m_dxfs(NULL),
+    m_has_tableStyles(false),
+    m_tableStyles(NULL),
+    m_has_colors(false),
+    m_colors(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool styleSheet_element::has_numFmts() const
     {    
     return m_has_numFmts;
@@ -127468,7 +134103,7 @@ singleXmlCells_element* singleXmlCells_element::default_instance_ = NULL;
 
     void styleSheet_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<styleSheet";
+    _outStream << "<main:styleSheet";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -127479,60 +134114,60 @@ singleXmlCells_element* singleXmlCells_element::default_instance_ = NULL;
     
     if (m_has_numFmts)
     {
-        m_numFmts->toXmlElem("numFmts", "", _outStream);;
+        m_numFmts->toXmlElem("main:numFmts", "", _outStream);;
     }
     
     if (m_has_fonts)
     {
-        m_fonts->toXmlElem("fonts", "", _outStream);;
+        m_fonts->toXmlElem("main:fonts", "", _outStream);;
     }
     
     if (m_has_fills)
     {
-        m_fills->toXmlElem("fills", "", _outStream);;
+        m_fills->toXmlElem("main:fills", "", _outStream);;
     }
     
     if (m_has_borders)
     {
-        m_borders->toXmlElem("borders", "", _outStream);;
+        m_borders->toXmlElem("main:borders", "", _outStream);;
     }
     
     if (m_has_cellStyleXfs)
     {
-        m_cellStyleXfs->toXmlElem("cellStyleXfs", "", _outStream);;
+        m_cellStyleXfs->toXmlElem("main:cellStyleXfs", "", _outStream);;
     }
     
     if (m_has_cellXfs)
     {
-        m_cellXfs->toXmlElem("cellXfs", "", _outStream);;
+        m_cellXfs->toXmlElem("main:cellXfs", "", _outStream);;
     }
     
     if (m_has_cellStyles)
     {
-        m_cellStyles->toXmlElem("cellStyles", "", _outStream);;
+        m_cellStyles->toXmlElem("main:cellStyles", "", _outStream);;
     }
     
     if (m_has_dxfs)
     {
-        m_dxfs->toXmlElem("dxfs", "", _outStream);;
+        m_dxfs->toXmlElem("main:dxfs", "", _outStream);;
     }
     
     if (m_has_tableStyles)
     {
-        m_tableStyles->toXmlElem("tableStyles", "", _outStream);;
+        m_tableStyles->toXmlElem("main:tableStyles", "", _outStream);;
     }
     
     if (m_has_colors)
     {
-        m_colors->toXmlElem("colors", "", _outStream);;
+        m_colors->toXmlElem("main:colors", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
-    _outStream << "</styleSheet>";
+    _outStream << "</main:styleSheet>";
     }
 
     const styleSheet_element& styleSheet_element::default_instance()
@@ -127547,6 +134182,17 @@ singleXmlCells_element* singleXmlCells_element::default_instance_ = NULL;
 styleSheet_element* styleSheet_element::default_instance_ = NULL;
 
     // externalLink_element
+    externalLink_element::externalLink_element()
+    :m_has_externalBook(false),
+    m_externalBook(NULL),
+    m_has_ddeLink(false),
+    m_ddeLink(NULL),
+    m_has_oleLink(false),
+    m_oleLink(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool externalLink_element::has_externalBook() const
     {    
     return m_has_externalBook;
@@ -127705,7 +134351,7 @@ styleSheet_element* styleSheet_element::default_instance_ = NULL;
 
     void externalLink_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<externalLink";
+    _outStream << "<main:externalLink";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -127716,25 +134362,25 @@ styleSheet_element* styleSheet_element::default_instance_ = NULL;
     
     if (m_has_externalBook)
     {
-        m_externalBook->toXmlElem("externalBook", "", _outStream);;
+        m_externalBook->toXmlElem("main:externalBook", "", _outStream);;
     }
     
     if (m_has_ddeLink)
     {
-        m_ddeLink->toXmlElem("ddeLink", "", _outStream);;
+        m_ddeLink->toXmlElem("main:ddeLink", "", _outStream);;
     }
     
     if (m_has_oleLink)
     {
-        m_oleLink->toXmlElem("oleLink", "", _outStream);;
+        m_oleLink->toXmlElem("main:oleLink", "", _outStream);;
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
-    _outStream << "</externalLink>";
+    _outStream << "</main:externalLink>";
     }
 
     const externalLink_element& externalLink_element::default_instance()
@@ -127749,6 +134395,63 @@ styleSheet_element* styleSheet_element::default_instance_ = NULL;
 externalLink_element* externalLink_element::default_instance_ = NULL;
 
     // table_element
+    table_element::table_element()
+    :m_has_autoFilter(false),
+    m_autoFilter(NULL),
+    m_has_sortState(false),
+    m_sortState(NULL),
+    m_has_tableColumns(false),
+    m_tableColumns(NULL),
+    m_has_tableStyleInfo(false),
+    m_tableStyleInfo(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_id_attr(false),
+    m_id_attr(0),
+    m_has_name_attr(false),
+    m_name_attr(NULL),
+    m_has_displayName_attr(false),
+    m_displayName_attr(NULL),
+    m_has_comment_attr(false),
+    m_comment_attr(NULL),
+    m_has_ref_attr(false),
+    m_ref_attr(NULL),
+    m_has_tableType_attr(false),
+    m_tableType_attr(NULL),
+    m_has_headerRowCount_attr(false),
+    m_headerRowCount_attr(0),
+    m_has_insertRow_attr(false),
+    m_insertRow_attr(false),
+    m_has_insertRowShift_attr(false),
+    m_insertRowShift_attr(false),
+    m_has_totalsRowCount_attr(false),
+    m_totalsRowCount_attr(0),
+    m_has_totalsRowShown_attr(false),
+    m_totalsRowShown_attr(false),
+    m_has_published_attr(false),
+    m_published_attr(false),
+    m_has_headerRowDxfId_attr(false),
+    m_headerRowDxfId_attr(NULL),
+    m_has_dataDxfId_attr(false),
+    m_dataDxfId_attr(NULL),
+    m_has_totalsRowDxfId_attr(false),
+    m_totalsRowDxfId_attr(NULL),
+    m_has_headerRowBorderDxfId_attr(false),
+    m_headerRowBorderDxfId_attr(NULL),
+    m_has_tableBorderDxfId_attr(false),
+    m_tableBorderDxfId_attr(NULL),
+    m_has_totalsRowBorderDxfId_attr(false),
+    m_totalsRowBorderDxfId_attr(NULL),
+    m_has_headerRowCellStyle_attr(false),
+    m_headerRowCellStyle_attr(NULL),
+    m_has_dataCellStyle_attr(false),
+    m_dataCellStyle_attr(NULL),
+    m_has_totalsRowCellStyle_attr(false),
+    m_totalsRowCellStyle_attr(NULL),
+    m_has_connectionId_attr(false),
+    m_connectionId_attr(0)
+    {
+    }
     bool table_element::has_autoFilter() const
     {    
     return m_has_autoFilter;
@@ -127874,30 +134577,30 @@ externalLink_element* externalLink_element::default_instance_ = NULL;
     m_has_id_attr = false;
     m_id_attr = 0;
     
-    m_has_s_name_attr = false;
+    m_has_name_attr = false;
     
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        delete m_s_name_attr;
-        m_s_name_attr = NULL;
+        delete m_name_attr;
+        m_name_attr = NULL;
     }
     
     
-    m_has_s_displayName_attr = false;
+    m_has_displayName_attr = false;
     
-    if (m_s_displayName_attr)
+    if (m_displayName_attr)
     {
-        delete m_s_displayName_attr;
-        m_s_displayName_attr = NULL;
+        delete m_displayName_attr;
+        m_displayName_attr = NULL;
     }
     
     
-    m_has_s_comment_attr = false;
+    m_has_comment_attr = false;
     
-    if (m_s_comment_attr)
+    if (m_comment_attr)
     {
-        delete m_s_comment_attr;
-        m_s_comment_attr = NULL;
+        delete m_comment_attr;
+        m_comment_attr = NULL;
     }
     
     
@@ -127991,30 +134694,30 @@ externalLink_element* externalLink_element::default_instance_ = NULL;
     }
     
     
-    m_has_s_headerRowCellStyle_attr = false;
+    m_has_headerRowCellStyle_attr = false;
     
-    if (m_s_headerRowCellStyle_attr)
+    if (m_headerRowCellStyle_attr)
     {
-        delete m_s_headerRowCellStyle_attr;
-        m_s_headerRowCellStyle_attr = NULL;
+        delete m_headerRowCellStyle_attr;
+        m_headerRowCellStyle_attr = NULL;
     }
     
     
-    m_has_s_dataCellStyle_attr = false;
+    m_has_dataCellStyle_attr = false;
     
-    if (m_s_dataCellStyle_attr)
+    if (m_dataCellStyle_attr)
     {
-        delete m_s_dataCellStyle_attr;
-        m_s_dataCellStyle_attr = NULL;
+        delete m_dataCellStyle_attr;
+        m_dataCellStyle_attr = NULL;
     }
     
     
-    m_has_s_totalsRowCellStyle_attr = false;
+    m_has_totalsRowCellStyle_attr = false;
     
-    if (m_s_totalsRowCellStyle_attr)
+    if (m_totalsRowCellStyle_attr)
     {
-        delete m_s_totalsRowCellStyle_attr;
-        m_s_totalsRowCellStyle_attr = NULL;
+        delete m_totalsRowCellStyle_attr;
+        m_totalsRowCellStyle_attr = NULL;
     }
     
     
@@ -128024,7 +134727,7 @@ externalLink_element* externalLink_element::default_instance_ = NULL;
 
     void table_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<table";
+    _outStream << "<main:table";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -128037,21 +134740,21 @@ externalLink_element* externalLink_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_name_attr)
+    if (m_has_name_attr)
     {
-        m_s_name_attr->toXmlAttr("name", _outStream);
+        m_name_attr->toXmlAttr("name", _outStream);
     }
     
     
-    if (m_has_s_displayName_attr)
+    if (m_has_displayName_attr)
     {
-        m_s_displayName_attr->toXmlAttr("displayName", _outStream);
+        m_displayName_attr->toXmlAttr("displayName", _outStream);
     }
     
     
-    if (m_has_s_comment_attr)
+    if (m_has_comment_attr)
     {
-        m_s_comment_attr->toXmlAttr("comment", _outStream);
+        m_comment_attr->toXmlAttr("comment", _outStream);
     }
     
     
@@ -128139,21 +134842,21 @@ externalLink_element* externalLink_element::default_instance_ = NULL;
     }
     
     
-    if (m_has_s_headerRowCellStyle_attr)
+    if (m_has_headerRowCellStyle_attr)
     {
-        m_s_headerRowCellStyle_attr->toXmlAttr("headerRowCellStyle", _outStream);
+        m_headerRowCellStyle_attr->toXmlAttr("headerRowCellStyle", _outStream);
     }
     
     
-    if (m_has_s_dataCellStyle_attr)
+    if (m_has_dataCellStyle_attr)
     {
-        m_s_dataCellStyle_attr->toXmlAttr("dataCellStyle", _outStream);
+        m_dataCellStyle_attr->toXmlAttr("dataCellStyle", _outStream);
     }
     
     
-    if (m_has_s_totalsRowCellStyle_attr)
+    if (m_has_totalsRowCellStyle_attr)
     {
-        m_s_totalsRowCellStyle_attr->toXmlAttr("totalsRowCellStyle", _outStream);
+        m_totalsRowCellStyle_attr->toXmlAttr("totalsRowCellStyle", _outStream);
     }
     
     
@@ -128166,30 +134869,30 @@ externalLink_element* externalLink_element::default_instance_ = NULL;
     
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("autoFilter", "", _outStream);;
+        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);;
     }
     
     if (m_has_sortState)
     {
-        m_sortState->toXmlElem("sortState", "", _outStream);;
+        m_sortState->toXmlElem("main:sortState", "", _outStream);;
     }
     
     if (m_has_tableColumns)
     {
-        m_tableColumns->toXmlElem("tableColumns", "", _outStream);;
+        m_tableColumns->toXmlElem("main:tableColumns", "", _outStream);;
     }
     
     if (m_has_tableStyleInfo)
     {
-        m_tableStyleInfo->toXmlElem("tableStyleInfo", "", _outStream);;
+        m_tableStyleInfo->toXmlElem("main:tableStyleInfo", "", _outStream);;
     }
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);;
     }
     
-    _outStream << "</table>";
+    _outStream << "</main:table>";
     }
 
     const table_element& table_element::default_instance()
@@ -128217,62 +134920,62 @@ externalLink_element* externalLink_element::default_instance_ = NULL;
     return m_id_attr;
     }
 
-    bool table_element::has_s_name_attr() const
+    bool table_element::has_name_attr() const
     {    
-    return m_has_s_name_attr;
+    return m_has_name_attr;
     }
 
-    void table_element::set_s_name_attr(const ns_s::ST_Xstring& _s_name_attr)
+    void table_element::set_name_attr(const ns_s::ST_Xstring& _name_attr)
     {    
-    m_has_s_name_attr = true;
-    m_s_name_attr = new ns_s::ST_Xstring(_s_name_attr);
+    m_has_name_attr = true;
+    m_name_attr = new ns_s::ST_Xstring(_name_attr);
     }
 
-    const ns_s::ST_Xstring& table_element::get_s_name_attr() const
+    const ns_s::ST_Xstring& table_element::get_name_attr() const
     {    
-    if (m_s_name_attr)
+    if (m_name_attr)
     {
-        return *m_s_name_attr;
+        return *m_name_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool table_element::has_s_displayName_attr() const
+    bool table_element::has_displayName_attr() const
     {    
-    return m_has_s_displayName_attr;
+    return m_has_displayName_attr;
     }
 
-    void table_element::set_s_displayName_attr(const ns_s::ST_Xstring& _s_displayName_attr)
+    void table_element::set_displayName_attr(const ns_s::ST_Xstring& _displayName_attr)
     {    
-    m_has_s_displayName_attr = true;
-    m_s_displayName_attr = new ns_s::ST_Xstring(_s_displayName_attr);
+    m_has_displayName_attr = true;
+    m_displayName_attr = new ns_s::ST_Xstring(_displayName_attr);
     }
 
-    const ns_s::ST_Xstring& table_element::get_s_displayName_attr() const
+    const ns_s::ST_Xstring& table_element::get_displayName_attr() const
     {    
-    if (m_s_displayName_attr)
+    if (m_displayName_attr)
     {
-        return *m_s_displayName_attr;
+        return *m_displayName_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool table_element::has_s_comment_attr() const
+    bool table_element::has_comment_attr() const
     {    
-    return m_has_s_comment_attr;
+    return m_has_comment_attr;
     }
 
-    void table_element::set_s_comment_attr(const ns_s::ST_Xstring& _s_comment_attr)
+    void table_element::set_comment_attr(const ns_s::ST_Xstring& _comment_attr)
     {    
-    m_has_s_comment_attr = true;
-    m_s_comment_attr = new ns_s::ST_Xstring(_s_comment_attr);
+    m_has_comment_attr = true;
+    m_comment_attr = new ns_s::ST_Xstring(_comment_attr);
     }
 
-    const ns_s::ST_Xstring& table_element::get_s_comment_attr() const
+    const ns_s::ST_Xstring& table_element::get_comment_attr() const
     {    
-    if (m_s_comment_attr)
+    if (m_comment_attr)
     {
-        return *m_s_comment_attr;
+        return *m_comment_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -128533,62 +135236,62 @@ externalLink_element* externalLink_element::default_instance_ = NULL;
     return ST_DxfId::default_instance();
     }
 
-    bool table_element::has_s_headerRowCellStyle_attr() const
+    bool table_element::has_headerRowCellStyle_attr() const
     {    
-    return m_has_s_headerRowCellStyle_attr;
+    return m_has_headerRowCellStyle_attr;
     }
 
-    void table_element::set_s_headerRowCellStyle_attr(const ns_s::ST_Xstring& _s_headerRowCellStyle_attr)
+    void table_element::set_headerRowCellStyle_attr(const ns_s::ST_Xstring& _headerRowCellStyle_attr)
     {    
-    m_has_s_headerRowCellStyle_attr = true;
-    m_s_headerRowCellStyle_attr = new ns_s::ST_Xstring(_s_headerRowCellStyle_attr);
+    m_has_headerRowCellStyle_attr = true;
+    m_headerRowCellStyle_attr = new ns_s::ST_Xstring(_headerRowCellStyle_attr);
     }
 
-    const ns_s::ST_Xstring& table_element::get_s_headerRowCellStyle_attr() const
+    const ns_s::ST_Xstring& table_element::get_headerRowCellStyle_attr() const
     {    
-    if (m_s_headerRowCellStyle_attr)
+    if (m_headerRowCellStyle_attr)
     {
-        return *m_s_headerRowCellStyle_attr;
+        return *m_headerRowCellStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool table_element::has_s_dataCellStyle_attr() const
+    bool table_element::has_dataCellStyle_attr() const
     {    
-    return m_has_s_dataCellStyle_attr;
+    return m_has_dataCellStyle_attr;
     }
 
-    void table_element::set_s_dataCellStyle_attr(const ns_s::ST_Xstring& _s_dataCellStyle_attr)
+    void table_element::set_dataCellStyle_attr(const ns_s::ST_Xstring& _dataCellStyle_attr)
     {    
-    m_has_s_dataCellStyle_attr = true;
-    m_s_dataCellStyle_attr = new ns_s::ST_Xstring(_s_dataCellStyle_attr);
+    m_has_dataCellStyle_attr = true;
+    m_dataCellStyle_attr = new ns_s::ST_Xstring(_dataCellStyle_attr);
     }
 
-    const ns_s::ST_Xstring& table_element::get_s_dataCellStyle_attr() const
+    const ns_s::ST_Xstring& table_element::get_dataCellStyle_attr() const
     {    
-    if (m_s_dataCellStyle_attr)
+    if (m_dataCellStyle_attr)
     {
-        return *m_s_dataCellStyle_attr;
+        return *m_dataCellStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
 
-    bool table_element::has_s_totalsRowCellStyle_attr() const
+    bool table_element::has_totalsRowCellStyle_attr() const
     {    
-    return m_has_s_totalsRowCellStyle_attr;
+    return m_has_totalsRowCellStyle_attr;
     }
 
-    void table_element::set_s_totalsRowCellStyle_attr(const ns_s::ST_Xstring& _s_totalsRowCellStyle_attr)
+    void table_element::set_totalsRowCellStyle_attr(const ns_s::ST_Xstring& _totalsRowCellStyle_attr)
     {    
-    m_has_s_totalsRowCellStyle_attr = true;
-    m_s_totalsRowCellStyle_attr = new ns_s::ST_Xstring(_s_totalsRowCellStyle_attr);
+    m_has_totalsRowCellStyle_attr = true;
+    m_totalsRowCellStyle_attr = new ns_s::ST_Xstring(_totalsRowCellStyle_attr);
     }
 
-    const ns_s::ST_Xstring& table_element::get_s_totalsRowCellStyle_attr() const
+    const ns_s::ST_Xstring& table_element::get_totalsRowCellStyle_attr() const
     {    
-    if (m_s_totalsRowCellStyle_attr)
+    if (m_totalsRowCellStyle_attr)
     {
-        return *m_s_totalsRowCellStyle_attr;
+        return *m_totalsRowCellStyle_attr;
     }
     return ns_s::ST_Xstring::default_instance();
     }
@@ -128612,6 +135315,10 @@ externalLink_element* externalLink_element::default_instance_ = NULL;
 table_element* table_element::default_instance_ = NULL;
 
     // volTypes_element
+    volTypes_element::volTypes_element()
+
+    {
+    }
     CT_VolType* volTypes_element::add_volType()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -128642,7 +135349,7 @@ table_element* table_element::default_instance_ = NULL;
 
     void volTypes_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<volTypes";
+    _outStream << "<main:volTypes";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
@@ -128657,16 +135364,16 @@ table_element* table_element::default_instance_ = NULL;
         {
             if ((*iter)->has_volType())
             {
-                (*iter)->get_volType().toXmlElem("volType", "", _outStream);
+                (*iter)->get_volType().toXmlElem("main:volType", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
     
-    _outStream << "</volTypes>";
+    _outStream << "</main:volTypes>";
     }
 
     const volTypes_element& volTypes_element::default_instance()
@@ -128680,6 +135387,13 @@ table_element* table_element::default_instance_ = NULL;
 
 
     // volTypes_element::ChildGroup_1
+    volTypes_element::ChildGroup_1::ChildGroup_1()
+    :m_has_volType(false),
+    m_volType(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool volTypes_element::ChildGroup_1::has_volType() const
     {    
     return m_has_volType;
@@ -128751,6 +135465,43 @@ table_element* table_element::default_instance_ = NULL;
 volTypes_element* volTypes_element::default_instance_ = NULL;
 
     // workbook_element
+    workbook_element::workbook_element()
+    :m_has_fileVersion(false),
+    m_fileVersion(NULL),
+    m_has_fileSharing(false),
+    m_fileSharing(NULL),
+    m_has_workbookPr(false),
+    m_workbookPr(NULL),
+    m_has_workbookProtection(false),
+    m_workbookProtection(NULL),
+    m_has_bookViews(false),
+    m_bookViews(NULL),
+    m_has_sheets(false),
+    m_sheets(NULL),
+    m_has_functionGroups(false),
+    m_functionGroups(NULL),
+    m_has_externalReferences(false),
+    m_externalReferences(NULL),
+    m_has_definedNames(false),
+    m_definedNames(NULL),
+    m_has_calcPr(false),
+    m_calcPr(NULL),
+    m_has_oleSize(false),
+    m_oleSize(NULL),
+    m_has_customWorkbookViews(false),
+    m_customWorkbookViews(NULL),
+    m_has_pivotCaches(false),
+    m_pivotCaches(NULL),
+    m_has_smartTagPr(false),
+    m_smartTagPr(NULL),
+    m_has_smartTagTypes(false),
+    m_smartTagTypes(NULL),
+    m_has_webPublishing(false),
+    m_webPublishing(NULL),
+    m_has_conformance_attr(false),
+    m_conformance_attr(NULL)
+    {
+    }
     bool workbook_element::has_fileVersion() const
     {    
     return m_has_fileVersion;
@@ -129161,12 +135912,12 @@ volTypes_element* volTypes_element::default_instance_ = NULL;
 
     void workbook_element::clear()
     {    
-    m_has_s_conformance_attr = false;
+    m_has_conformance_attr = false;
     
-    if (m_s_conformance_attr)
+    if (m_conformance_attr)
     {
-        delete m_s_conformance_attr;
-        m_s_conformance_attr = NULL;
+        delete m_conformance_attr;
+        m_conformance_attr = NULL;
     }
     
     
@@ -129326,98 +136077,98 @@ volTypes_element* volTypes_element::default_instance_ = NULL;
 
     void workbook_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<workbook";
+    _outStream << "<main:workbook";
     
     _outStream << " " << "xmlns:main=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
     
-    if (m_has_s_conformance_attr)
+    if (m_has_conformance_attr)
     {
-        m_s_conformance_attr->toXmlAttr("conformance", _outStream);
+        m_conformance_attr->toXmlAttr("conformance", _outStream);
     }
     
     _outStream << ">";
     
     if (m_has_fileVersion)
     {
-        m_fileVersion->toXmlElem("fileVersion", "", _outStream);;
+        m_fileVersion->toXmlElem("main:fileVersion", "", _outStream);;
     }
     
     if (m_has_fileSharing)
     {
-        m_fileSharing->toXmlElem("fileSharing", "", _outStream);;
+        m_fileSharing->toXmlElem("main:fileSharing", "", _outStream);;
     }
     
     if (m_has_workbookPr)
     {
-        m_workbookPr->toXmlElem("workbookPr", "", _outStream);;
+        m_workbookPr->toXmlElem("main:workbookPr", "", _outStream);;
     }
     
     if (m_has_workbookProtection)
     {
-        m_workbookProtection->toXmlElem("workbookProtection", "", _outStream);;
+        m_workbookProtection->toXmlElem("main:workbookProtection", "", _outStream);;
     }
     
     if (m_has_bookViews)
     {
-        m_bookViews->toXmlElem("bookViews", "", _outStream);;
+        m_bookViews->toXmlElem("main:bookViews", "", _outStream);;
     }
     
     if (m_has_sheets)
     {
-        m_sheets->toXmlElem("sheets", "", _outStream);;
+        m_sheets->toXmlElem("main:sheets", "", _outStream);;
     }
     
     if (m_has_functionGroups)
     {
-        m_functionGroups->toXmlElem("functionGroups", "", _outStream);;
+        m_functionGroups->toXmlElem("main:functionGroups", "", _outStream);;
     }
     
     if (m_has_externalReferences)
     {
-        m_externalReferences->toXmlElem("externalReferences", "", _outStream);;
+        m_externalReferences->toXmlElem("main:externalReferences", "", _outStream);;
     }
     
     if (m_has_definedNames)
     {
-        m_definedNames->toXmlElem("definedNames", "", _outStream);;
+        m_definedNames->toXmlElem("main:definedNames", "", _outStream);;
     }
     
     if (m_has_calcPr)
     {
-        m_calcPr->toXmlElem("calcPr", "", _outStream);;
+        m_calcPr->toXmlElem("main:calcPr", "", _outStream);;
     }
     
     if (m_has_oleSize)
     {
-        m_oleSize->toXmlElem("oleSize", "", _outStream);;
+        m_oleSize->toXmlElem("main:oleSize", "", _outStream);;
     }
     
     if (m_has_customWorkbookViews)
     {
-        m_customWorkbookViews->toXmlElem("customWorkbookViews", "", _outStream);;
+        m_customWorkbookViews->toXmlElem("main:customWorkbookViews", "", _outStream);;
     }
     
     if (m_has_pivotCaches)
     {
-        m_pivotCaches->toXmlElem("pivotCaches", "", _outStream);;
+        m_pivotCaches->toXmlElem("main:pivotCaches", "", _outStream);;
     }
     
     if (m_has_smartTagPr)
     {
-        m_smartTagPr->toXmlElem("smartTagPr", "", _outStream);;
+        m_smartTagPr->toXmlElem("main:smartTagPr", "", _outStream);;
     }
     
     if (m_has_smartTagTypes)
     {
-        m_smartTagTypes->toXmlElem("smartTagTypes", "", _outStream);;
+        m_smartTagTypes->toXmlElem("main:smartTagTypes", "", _outStream);;
     }
     
     if (m_has_webPublishing)
     {
-        m_webPublishing->toXmlElem("webPublishing", "", _outStream);;
+        m_webPublishing->toXmlElem("main:webPublishing", "", _outStream);;
     }
      
     {
@@ -129426,20 +136177,20 @@ volTypes_element* volTypes_element::default_instance_ = NULL;
         {
             if ((*iter)->has_fileRecoveryPr())
             {
-                (*iter)->get_fileRecoveryPr().toXmlElem("fileRecoveryPr", "", _outStream);
+                (*iter)->get_fileRecoveryPr().toXmlElem("main:fileRecoveryPr", "", _outStream);
             }
             else if ((*iter)->has_webPublishObjects())
             {
-                (*iter)->get_webPublishObjects().toXmlElem("webPublishObjects", "", _outStream);
+                (*iter)->get_webPublishObjects().toXmlElem("main:webPublishObjects", "", _outStream);
             }
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
             }
         }
     }
     
-    _outStream << "</workbook>";
+    _outStream << "</main:workbook>";
     }
 
     const workbook_element& workbook_element::default_instance()
@@ -129451,28 +136202,37 @@ volTypes_element* volTypes_element::default_instance_ = NULL;
     return *workbook_element::default_instance_;
     }
 
-    bool workbook_element::has_s_conformance_attr() const
+    bool workbook_element::has_conformance_attr() const
     {    
-    return m_has_s_conformance_attr;
+    return m_has_conformance_attr;
     }
 
-    void workbook_element::set_s_conformance_attr(const ns_s::ST_ConformanceClass& _s_conformance_attr)
+    void workbook_element::set_conformance_attr(const ns_s::ST_ConformanceClass& _conformance_attr)
     {    
-    m_has_s_conformance_attr = true;
-    m_s_conformance_attr = new ns_s::ST_ConformanceClass(_s_conformance_attr);
+    m_has_conformance_attr = true;
+    m_conformance_attr = new ns_s::ST_ConformanceClass(_conformance_attr);
     }
 
-    const ns_s::ST_ConformanceClass& workbook_element::get_s_conformance_attr() const
+    const ns_s::ST_ConformanceClass& workbook_element::get_conformance_attr() const
     {    
-    if (m_s_conformance_attr)
+    if (m_conformance_attr)
     {
-        return *m_s_conformance_attr;
+        return *m_conformance_attr;
     }
     return ns_s::ST_ConformanceClass::default_instance();
     }
 
 
     // workbook_element::ChildGroup_1
+    workbook_element::ChildGroup_1::ChildGroup_1()
+    :m_has_fileRecoveryPr(false),
+    m_fileRecoveryPr(NULL),
+    m_has_webPublishObjects(false),
+    m_webPublishObjects(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
+    {
+    }
     bool workbook_element::ChildGroup_1::has_fileRecoveryPr() const
     {    
     return m_has_fileRecoveryPr;

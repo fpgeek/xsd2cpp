@@ -163,6 +163,7 @@ message Element {
 	optional string default_value = 5;
 	optional string fixed_value = 6;
 	optional Form.Type form = 7;
+	optional string ref_ns_prefix = 8;
 }
 
 message Any {
@@ -202,6 +203,7 @@ message Attribute {
 	optional string default_value = 4;
 	optional string fixed_value = 5;
 	optional Form.Type form = 6;
+	optional string ref_ns_prefix = 7;
 }
 
 message AnyAttribute {

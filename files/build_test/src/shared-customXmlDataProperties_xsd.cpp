@@ -12,6 +12,11 @@ namespace ns_customXml {
     // Attribute
 
     // CT_DatastoreSchemaRef
+    CT_DatastoreSchemaRef::CT_DatastoreSchemaRef()
+    :m_has_uri_attr(false),
+    m_uri_attr("")
+    {
+    }
     void CT_DatastoreSchemaRef::clear()
     {    
     m_has_uri_attr = false;
@@ -29,7 +34,7 @@ namespace ns_customXml {
             
     if (m_has_uri_attr)
     {
-        _outStream << " " << "uri" << "=\"" << m_uri_attr << "\"";
+        _outStream << " " << "customXml:uri" << "=\"" << m_uri_attr << "\"";
     }
     
             _outStream << ">";
@@ -65,6 +70,10 @@ namespace ns_customXml {
 CT_DatastoreSchemaRef* CT_DatastoreSchemaRef::default_instance_ = NULL;
 
     // CT_DatastoreSchemaRefs
+    CT_DatastoreSchemaRefs::CT_DatastoreSchemaRefs()
+
+    {
+    }
     CT_DatastoreSchemaRef* CT_DatastoreSchemaRefs::add_schemaRef()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -102,7 +111,7 @@ CT_DatastoreSchemaRef* CT_DatastoreSchemaRef::default_instance_ = NULL;
         {
             if ((*iter)->has_schemaRef())
             {
-                (*iter)->get_schemaRef().toXmlElem("schemaRef", "", _outStream);
+                (*iter)->get_schemaRef().toXmlElem("customXml:schemaRef", "", _outStream);
             }
         }
     }
@@ -121,6 +130,11 @@ CT_DatastoreSchemaRef* CT_DatastoreSchemaRef::default_instance_ = NULL;
 
 
     // CT_DatastoreSchemaRefs::ChildGroup_1
+    CT_DatastoreSchemaRefs::ChildGroup_1::ChildGroup_1()
+    :m_has_schemaRef(false),
+    m_schemaRef(NULL)
+    {
+    }
     bool CT_DatastoreSchemaRefs::ChildGroup_1::has_schemaRef() const
     {    
     return m_has_schemaRef;
@@ -149,6 +163,13 @@ CT_DatastoreSchemaRef* CT_DatastoreSchemaRef::default_instance_ = NULL;
 CT_DatastoreSchemaRefs* CT_DatastoreSchemaRefs::default_instance_ = NULL;
 
     // CT_DatastoreItem
+    CT_DatastoreItem::CT_DatastoreItem()
+    :m_has_schemaRefs(false),
+    m_schemaRefs(NULL),
+    m_has_itemID_attr(false),
+    m_itemID_attr(NULL)
+    {
+    }
     bool CT_DatastoreItem::has_schemaRefs() const
     {    
     return m_has_schemaRefs;
@@ -175,12 +196,12 @@ CT_DatastoreSchemaRefs* CT_DatastoreSchemaRefs::default_instance_ = NULL;
 
     void CT_DatastoreItem::clear()
     {    
-    m_has_s_itemID_attr = false;
+    m_has_itemID_attr = false;
     
-    if (m_s_itemID_attr)
+    if (m_itemID_attr)
     {
-        delete m_s_itemID_attr;
-        m_s_itemID_attr = NULL;
+        delete m_itemID_attr;
+        m_itemID_attr = NULL;
     }
     
     }
@@ -194,16 +215,16 @@ CT_DatastoreSchemaRefs* CT_DatastoreSchemaRefs::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has_s_itemID_attr)
+    if (m_has_itemID_attr)
     {
-        m_s_itemID_attr->toXmlAttr("s:itemID", _outStream);
+        m_itemID_attr->toXmlAttr("customXml:itemID", _outStream);
     }
     
             _outStream << ">";
             
     if (m_has_schemaRefs)
     {
-        m_schemaRefs->toXmlElem("schemaRefs", "", _outStream);;
+        m_schemaRefs->toXmlElem("customXml:schemaRefs", "", _outStream);;
     }
     
             _outStream << "</" << _elemName << ">";
@@ -218,22 +239,22 @@ CT_DatastoreSchemaRefs* CT_DatastoreSchemaRefs::default_instance_ = NULL;
     return *CT_DatastoreItem::default_instance_;
     }
 
-    bool CT_DatastoreItem::has_s_itemID_attr() const
+    bool CT_DatastoreItem::has_itemID_attr() const
     {    
-    return m_has_s_itemID_attr;
+    return m_has_itemID_attr;
     }
 
-    void CT_DatastoreItem::set_s_itemID_attr(const ns_s::ST_Guid& _s_itemID_attr)
+    void CT_DatastoreItem::set_itemID_attr(const ns_s::ST_Guid& _itemID_attr)
     {    
-    m_has_s_itemID_attr = true;
-    m_s_itemID_attr = new ns_s::ST_Guid(_s_itemID_attr);
+    m_has_itemID_attr = true;
+    m_itemID_attr = new ns_s::ST_Guid(_itemID_attr);
     }
 
-    const ns_s::ST_Guid& CT_DatastoreItem::get_s_itemID_attr() const
+    const ns_s::ST_Guid& CT_DatastoreItem::get_itemID_attr() const
     {    
-    if (m_s_itemID_attr)
+    if (m_itemID_attr)
     {
-        return *m_s_itemID_attr;
+        return *m_itemID_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }
@@ -241,6 +262,13 @@ CT_DatastoreSchemaRefs* CT_DatastoreSchemaRefs::default_instance_ = NULL;
 CT_DatastoreItem* CT_DatastoreItem::default_instance_ = NULL;
 
     // datastoreItem_element
+    datastoreItem_element::datastoreItem_element()
+    :m_has_schemaRefs(false),
+    m_schemaRefs(NULL),
+    m_has_itemID_attr(false),
+    m_itemID_attr(NULL)
+    {
+    }
     bool datastoreItem_element::has_schemaRefs() const
     {    
     return m_has_schemaRefs;
@@ -267,36 +295,36 @@ CT_DatastoreItem* CT_DatastoreItem::default_instance_ = NULL;
 
     void datastoreItem_element::clear()
     {    
-    m_has_s_itemID_attr = false;
+    m_has_itemID_attr = false;
     
-    if (m_s_itemID_attr)
+    if (m_itemID_attr)
     {
-        delete m_s_itemID_attr;
-        m_s_itemID_attr = NULL;
+        delete m_itemID_attr;
+        m_itemID_attr = NULL;
     }
     
     }
 
     void datastoreItem_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<datastoreItem";
+    _outStream << "<customXml:datastoreItem";
     
     _outStream << " " << "xmlns:customXml=\"http://schemas.openxmlformats.org/officeDocument/2006/customXml\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     
-    if (m_has_s_itemID_attr)
+    if (m_has_itemID_attr)
     {
-        m_s_itemID_attr->toXmlAttr("s:itemID", _outStream);
+        m_itemID_attr->toXmlAttr("customXml:itemID", _outStream);
     }
     
     _outStream << ">";
     
     if (m_has_schemaRefs)
     {
-        m_schemaRefs->toXmlElem("schemaRefs", "", _outStream);;
+        m_schemaRefs->toXmlElem("customXml:schemaRefs", "", _outStream);;
     }
     
-    _outStream << "</datastoreItem>";
+    _outStream << "</customXml:datastoreItem>";
     }
 
     const datastoreItem_element& datastoreItem_element::default_instance()
@@ -308,22 +336,22 @@ CT_DatastoreItem* CT_DatastoreItem::default_instance_ = NULL;
     return *datastoreItem_element::default_instance_;
     }
 
-    bool datastoreItem_element::has_s_itemID_attr() const
+    bool datastoreItem_element::has_itemID_attr() const
     {    
-    return m_has_s_itemID_attr;
+    return m_has_itemID_attr;
     }
 
-    void datastoreItem_element::set_s_itemID_attr(const ns_s::ST_Guid& _s_itemID_attr)
+    void datastoreItem_element::set_itemID_attr(const ns_s::ST_Guid& _itemID_attr)
     {    
-    m_has_s_itemID_attr = true;
-    m_s_itemID_attr = new ns_s::ST_Guid(_s_itemID_attr);
+    m_has_itemID_attr = true;
+    m_itemID_attr = new ns_s::ST_Guid(_itemID_attr);
     }
 
-    const ns_s::ST_Guid& datastoreItem_element::get_s_itemID_attr() const
+    const ns_s::ST_Guid& datastoreItem_element::get_itemID_attr() const
     {    
-    if (m_s_itemID_attr)
+    if (m_itemID_attr)
     {
-        return *m_s_itemID_attr;
+        return *m_itemID_attr;
     }
     return ns_s::ST_Guid::default_instance();
     }

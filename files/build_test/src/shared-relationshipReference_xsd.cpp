@@ -20,7 +20,7 @@ namespace ns_r {
     :m_has_string(true)
     {
     
-    set_string(m_string);
+    set_string(_string);
     }
     bool ST_RelationshipId::has_string() const
     {    

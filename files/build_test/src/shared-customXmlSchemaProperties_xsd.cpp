@@ -11,6 +11,17 @@ namespace ns_sl {
     // Attribute
 
     // CT_Schema
+    CT_Schema::CT_Schema()
+    :m_has_uri_attr(false),
+    m_uri_attr(""),
+    m_has_manifestLocation_attr(false),
+    m_manifestLocation_attr(""),
+    m_has_schemaLocation_attr(false),
+    m_schemaLocation_attr(""),
+    m_has_schemaLanguage_attr(false),
+    m_schemaLanguage_attr("")
+    {
+    }
     void CT_Schema::clear()
     {    
     m_has_uri_attr = false;
@@ -139,6 +150,10 @@ namespace ns_sl {
 CT_Schema* CT_Schema::default_instance_ = NULL;
 
     // CT_SchemaLibrary
+    CT_SchemaLibrary::CT_SchemaLibrary()
+
+    {
+    }
     CT_Schema* CT_SchemaLibrary::add_schema()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -176,7 +191,7 @@ CT_Schema* CT_Schema::default_instance_ = NULL;
         {
             if ((*iter)->has_schema())
             {
-                (*iter)->get_schema().toXmlElem("schema", "", _outStream);
+                (*iter)->get_schema().toXmlElem("sl:schema", "", _outStream);
             }
         }
     }
@@ -195,6 +210,11 @@ CT_Schema* CT_Schema::default_instance_ = NULL;
 
 
     // CT_SchemaLibrary::ChildGroup_1
+    CT_SchemaLibrary::ChildGroup_1::ChildGroup_1()
+    :m_has_schema(false),
+    m_schema(NULL)
+    {
+    }
     bool CT_SchemaLibrary::ChildGroup_1::has_schema() const
     {    
     return m_has_schema;
@@ -223,6 +243,10 @@ CT_Schema* CT_Schema::default_instance_ = NULL;
 CT_SchemaLibrary* CT_SchemaLibrary::default_instance_ = NULL;
 
     // schemaLibrary_element
+    schemaLibrary_element::schemaLibrary_element()
+
+    {
+    }
     CT_Schema* schemaLibrary_element::add_schema()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -245,7 +269,7 @@ CT_SchemaLibrary* CT_SchemaLibrary::default_instance_ = NULL;
 
     void schemaLibrary_element::toXml(std::ostream& _outStream) const
     {    
-    _outStream << "<schemaLibrary";
+    _outStream << "<sl:schemaLibrary";
     
     _outStream << " " << "xmlns:sl=\"http://schemas.openxmlformats.org/schemaLibrary/2006/main\"";
     
@@ -257,12 +281,12 @@ CT_SchemaLibrary* CT_SchemaLibrary::default_instance_ = NULL;
         {
             if ((*iter)->has_schema())
             {
-                (*iter)->get_schema().toXmlElem("schema", "", _outStream);
+                (*iter)->get_schema().toXmlElem("sl:schema", "", _outStream);
             }
         }
     }
     
-    _outStream << "</schemaLibrary>";
+    _outStream << "</sl:schemaLibrary>";
     }
 
     const schemaLibrary_element& schemaLibrary_element::default_instance()
@@ -276,6 +300,11 @@ CT_SchemaLibrary* CT_SchemaLibrary::default_instance_ = NULL;
 
 
     // schemaLibrary_element::ChildGroup_1
+    schemaLibrary_element::ChildGroup_1::ChildGroup_1()
+    :m_has_schema(false),
+    m_schema(NULL)
+    {
+    }
     bool schemaLibrary_element::ChildGroup_1::has_schema() const
     {    
     return m_has_schema;

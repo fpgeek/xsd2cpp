@@ -12,12 +12,12 @@ t1366634950
 s170
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/xsd2cpp_build_test_exe
-t1366905549
-s19589504
+t2
+s0
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.o
-t1366905548
-s272828
+t1366950424
+s762016
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/xsd2cpp_build_test_exe.LinkFileList
 c00000000517952CB000000000000009E
@@ -30,89 +30,94 @@ t1366905547
 s233
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chartDrawing_xsd.h
-c00000000517952470000000000004D5C
-t1366905415
-s19804
+c00000000517A02A90000000000004E3E
+t1366950569
+s20030
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-chart_xsd.h
-c0000000051795247000000000003BA67
-t1366905415
-s244327
+c00000000517A02A9000000000003CA21
+t1366950569
+s248353
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-diagram_xsd.h
-c0000000051795248000000000002C8A6
-t1366905416
-s182438
+c00000000517A02AA000000000002D263
+t1366950570
+s184931
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-lockedCanvas_xsd.h
-c00000000517952480000000000000270
-t1366905416
+c00000000517A02AA0000000000000270
+t1366950570
 s624
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-main_xsd.h
-c000000005179524B000000000006F27F
-t1366905419
-s455295
+c00000000517A02B00000000000071463
+t1366950576
+s463971
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-picture_xsd.h
-c000000005179524B0000000000000D17
-t1366905419
-s3351
+c00000000517A02B00000000000000D27
+t1366950576
+s3367
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/dml-wordprocessingDrawing_xsd.h
-c000000005179524B000000000000DC98
-t1366905419
-s56472
+c00000000517A02B1000000000000DD79
+t1366950577
+s56697
+
+N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/pml_xsd.h
+c00000000517A02B400000000000469C2
+t1366950580
+s289218
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-commonSimpleTypes_xsd.h
-c000000005179524D0000000000005013
-t1366905421
-s20499
+c00000000517A02B50000000000005042
+t1366950581
+s20546
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-customXmlSchemaProperties_xsd.h
-c000000005179524D0000000000000CF8
-t1366905421
-s3320
+c00000000517A02B50000000000000D82
+t1366950581
+s3458
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-math_xsd.h
-c000000005179524F000000000001E197
-t1366905423
-s123287
+c00000000517A02B9000000000001E8C0
+t1366950585
+s125120
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/shared-relationshipReference_xsd.h
-c000000005179524F0000000000000D8F
-t1366905423
+c00000000517A02B90000000000000D8F
+t1366950585
 s3471
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-main_xsd.h
-c0000000051795259000000000003E441
-t1366905433
-s255041
+c00000000517A02CA000000000003E91C
+t1366950602
+s256284
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-officeDrawing_xsd.h
-c00000000517952590000000000026377
-t1366905433
-s156535
+c00000000517A02CB0000000000025F10
+t1366950603
+s155408
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-presentationDrawing_xsd.h
-c00000000517952590000000000000883
-t1366905433
-s2179
+c00000000517A02CB00000000000008E2
+t1366950603
+s2274
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-spreadsheetDrawing_xsd.h
-c000000005179525A000000000000A639
-t1366905434
-s42553
+c00000000517A02CD000000000000A390
+t1366950605
+s41872
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-wordprocessingDrawing_xsd.h
-c000000005179525A0000000000003881
-t1366905434
-s14465
+c00000000517A02CD0000000000003972
+t1366950605
+s14706
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/wml_xsd.h
-c000000005179526200000000000B3FF9
-t1366905442
-s737273
+c00000000517A02DE00000000000B5989
+t1366950622
+s743817
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype/xsdtype.h
 c00000000517029840000000000000AD5
@@ -120,11 +125,12 @@ t1366305156
 s2773
 
 N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp
-c00000000517944D1000000000000015B
-t1366901969
-s347
+c00000000517A021600000000000006A7
+t1366950422
+s1703
 i<iostream>
 i<sstream>
+i<fstream>
 i"wml_xsd.h"
 
 CBuild AST from /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp
@@ -132,11 +138,11 @@ r0
 
 CCheck dependencies
 r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesf0fd11558a29b741^183e12558a29b741^---0#1#0#--18"Check dependencies36"E580D500-5311-46A3-A5C6-60F4A61F2361-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies08c883983a2ab741^da7484983a2ab741^---0#1#0#--18"Check dependencies36"E8B6ACF3-EA6A-4033-A0E2-5E85B8AC3FE9-
 
 CCompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s388598347.766005
-e388598348.764982
+s388643480.519748
+e388643481.626010
 r1
 xCompileC
 xbuild/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.o
@@ -145,21 +151,21 @@ xnormal
 xx86_64
 xc++
 xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cppb130c44b8a29b741^e1d4c34c8a29b741^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp0000000000000000^2521"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.o src/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.o36"AD1E19A3-B25A-4328-8310-9AF8392CEAB6-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compile /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cppfd2d85983a2ab741^9a41a0993a2ab741^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp0000000000000000^2521"CompileC build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.o src/main.cpp normal x86_64 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch x86_64 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-enum-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions "-DCMAKE_INTDIR=\"Debug\"" -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -fstrict-aliasing -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -Wno-sign-conversion -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/xsdtype -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/DerivedSources/x86_64 -I/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/DerivedSources -Wmost -Wno-four-char-constants -Wno-unknown-pragmas -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -MMD -MT dependencies -MF /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.d --serialize-diagnostics /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.dia -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/src/main.cpp -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.o36"1B9ED1E0-A350-4E4A-A8B0-EA8E23F1209B-
 
 CLd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/xsd2cpp_build_test_exe normal x86_64
-s388598348.771401
-e388598349.874887
+s388643481.632618
+e388643483.222381
 r1
 xLd
 x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/xsd2cpp_build_test_exe
 xnormal
 xx86_64
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"Link /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/xsd2cpp_build_test_exe3e93c54c8a29b741^77f8df4d8a29b741^---0#0#0#--1018"Ld build/Debug/xsd2cpp_build_test_exe normal x86_64    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -filelist /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/xsd2cpp_build_test_exe.LinkFileList -mmacosx-version-min=10.8 -Wl,-search_paths_first -Wl,-headerpad_max_install_names /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/libxsd2cpp_build_test.a -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/xsd2cpp_build_test_exe36"68A4028B-FF5E-4E7D-B770-0B20ABD824F3-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"Link /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/xsd2cpp_build_test_exed507a2993a2ab741^28ee389b3a2ab741^---0#0#0#--1018"Ld build/Debug/xsd2cpp_build_test_exe normal x86_64    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -F/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug -filelist /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/xsd2cpp_build_test_exe.LinkFileList -mmacosx-version-min=10.8 -Wl,-search_paths_first -Wl,-headerpad_max_install_names /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/libxsd2cpp_build_test.a -o /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/Debug/xsd2cpp_build_test_exe36"DAE2244E-2A46-41C8-9127-5F84C37E1560-
 
 CPhaseScriptExecution "CMake PostBuild Rules" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Script-F5D9111B7AB64E2DB22DBDB7.sh
-s388598357.087764
-e388598357.143871
+s388643483.230627
+e388643483.264067
 r1
 xPhaseScriptExecution
 xCMake PostBuild Rules
@@ -168,5 +174,5 @@ oecho "Depend check for xcode"
 oDepend check for xcode
 ocd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build && make -C /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.xsd2cpp_build_test_exe.Debug
 omake[1]: Nothing to be done for `PostBuild.xsd2cpp_build_test_exe.Debug'.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Run custom shell script 'CMake PostBuild Rules'7bd916558a29b741^663026558a29b741^-428"echo "Depend check for xcode"Depend check for xcodecd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build && make -C /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.xsd2cpp_build_test_exe.Debugmake[1]: Nothing to be done for `PostBuild.xsd2cpp_build_test_exe.Debug'.4(21%IDEActivityLogMessage2@30"echo "Depend check for xcode"-388598357#0#30#-0#-----2@23"Depend check for xcode-388598357#30#23#-0#-----2@301"cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build && make -C /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.xsd2cpp_build_test_exe.Debug-388598357#53#301#-0#-----2@74"make[1]: Nothing to be done for `PostBuild.xsd2cpp_build_test_exe.Debug'.-388598357#354#74#-0#-----0#0#0#--395"PhaseScriptExecution "CMake PostBuild Rules" build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Script-F5D9111B7AB64E2DB22DBDB7.sh    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    /bin/sh -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Script-F5D9111B7AB64E2DB22DBDB7.sh36"6C69CEDD-619B-47EE-9F61-766266D5B1E3-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection47"Run custom shell script 'CMake PostBuild Rules'2f6e3b9b3a2ab741^8099439b3a2ab741^-428"echo "Depend check for xcode"Depend check for xcodecd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build && make -C /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.xsd2cpp_build_test_exe.Debugmake[1]: Nothing to be done for `PostBuild.xsd2cpp_build_test_exe.Debug'.4(21%IDEActivityLogMessage2@30"echo "Depend check for xcode"-388643483#0#30#-0#-----2@23"Depend check for xcode-388643483#30#23#-0#-----2@301"cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build && make -C /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/XCODE_DEPEND_HELPER.make PostBuild.xsd2cpp_build_test_exe.Debug-388643483#53#301#-0#-----2@74"make[1]: Nothing to be done for `PostBuild.xsd2cpp_build_test_exe.Debug'.-388643483#354#74#-0#-----0#0#0#--395"PhaseScriptExecution "CMake PostBuild Rules" build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Script-F5D9111B7AB64E2DB22DBDB7.sh    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    /bin/sh -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Script-F5D9111B7AB64E2DB22DBDB7.sh36"1794E26C-CD2B-48B0-A1B7-3C50189A2DFC-
 

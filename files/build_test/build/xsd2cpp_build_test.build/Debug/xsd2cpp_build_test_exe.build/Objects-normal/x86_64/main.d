@@ -17,4 +17,5 @@ dependencies: \
   /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-officeDrawing_xsd.h \
   /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-wordprocessingDrawing_xsd.h \
   /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-spreadsheetDrawing_xsd.h \
-  /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-presentationDrawing_xsd.h
+  /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/vml-presentationDrawing_xsd.h \
+  /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/include/pml_xsd.h

@@ -33,6 +33,7 @@ namespace ns_customXml {
     class CT_DatastoreSchemaRef: public XSD::ComplexType
     {
     public:
+        CT_DatastoreSchemaRef();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DatastoreSchemaRef& default_instance();
@@ -49,6 +50,7 @@ namespace ns_customXml {
     class CT_DatastoreSchemaRefs: public XSD::ComplexType
     {
     public:
+        CT_DatastoreSchemaRefs();
         CT_DatastoreSchemaRef* add_schemaRef();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -58,6 +60,7 @@ namespace ns_customXml {
         class ChildGroup_1
         {
         public:
+            ChildGroup_1();
             bool has_schemaRef() const;
             CT_DatastoreSchemaRef* mutable_schemaRef();
             const CT_DatastoreSchemaRef& get_schemaRef() const;
@@ -73,43 +76,45 @@ namespace ns_customXml {
     class CT_DatastoreItem: public XSD::ComplexType
     {
     public:
+        CT_DatastoreItem();
         bool has_schemaRefs() const;
         CT_DatastoreSchemaRefs* mutable_schemaRefs();
         const CT_DatastoreSchemaRefs& get_schemaRefs() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DatastoreItem& default_instance();
-        bool has_s_itemID_attr() const;
-        void set_s_itemID_attr(const ns_s::ST_Guid& _s_itemID_attr);
-        const ns_s::ST_Guid& get_s_itemID_attr() const;
+        bool has_itemID_attr() const;
+        void set_itemID_attr(const ns_s::ST_Guid& _itemID_attr);
+        const ns_s::ST_Guid& get_itemID_attr() const;
     protected:
     private:
         bool m_has_schemaRefs;
         CT_DatastoreSchemaRefs* m_schemaRefs;
         static CT_DatastoreItem* default_instance_;
-        bool m_has_s_itemID_attr;
-        ns_s::ST_Guid* m_s_itemID_attr;
+        bool m_has_itemID_attr;
+        ns_s::ST_Guid* m_itemID_attr;
     };
 
     class datastoreItem_element: public Element
     {
     public:
+        datastoreItem_element();
         bool has_schemaRefs() const;
         CT_DatastoreSchemaRefs* mutable_schemaRefs();
         const CT_DatastoreSchemaRefs& get_schemaRefs() const;
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const datastoreItem_element& default_instance();
-        bool has_s_itemID_attr() const;
-        void set_s_itemID_attr(const ns_s::ST_Guid& _s_itemID_attr);
-        const ns_s::ST_Guid& get_s_itemID_attr() const;
+        bool has_itemID_attr() const;
+        void set_itemID_attr(const ns_s::ST_Guid& _itemID_attr);
+        const ns_s::ST_Guid& get_itemID_attr() const;
     protected:
     private:
         bool m_has_schemaRefs;
         CT_DatastoreSchemaRefs* m_schemaRefs;
         static datastoreItem_element* default_instance_;
-        bool m_has_s_itemID_attr;
-        ns_s::ST_Guid* m_s_itemID_attr;
+        bool m_has_itemID_attr;
+        ns_s::ST_Guid* m_itemID_attr;
     };
 
 }
