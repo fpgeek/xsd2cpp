@@ -1,4 +1,0 @@
-/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/ALL_BUILD.dir
-/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/ZERO_CHECK.dir
-/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/xsd2cpp_build_test.dir
-/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeFiles/xsd2cpp_build_test_exe.dir

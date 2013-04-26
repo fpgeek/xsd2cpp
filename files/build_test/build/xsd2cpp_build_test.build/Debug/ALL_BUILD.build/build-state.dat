@@ -1,28 +1,0 @@
-TALL_BUILD
-v5
-r1
-cCheck dependencies
-cPhaseScriptExecution "CMake Rules" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ALL_BUILD.build/Script-712A203F14274197AE28C810.sh
-
-N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ALL_BUILD.build/Script-712A203F14274197AE28C810.sh
-c00000000517952CD00000000000000E2
-t1366905549
-s226
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies1d05f04d8a29b741^0c56f04d8a29b741^---0#1#0#--18"Check dependencies36"25BBEB8B-3F60-4FB9-A848-A0B530BC4647-
-
-CPhaseScriptExecution "CMake Rules" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ALL_BUILD.build/Script-712A203F14274197AE28C810.sh
-s388598349.940274
-e388598349.967597
-r1
-xPhaseScriptExecution
-xCMake Rules
-x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ALL_BUILD.build/Script-712A203F14274197AE28C810.sh
-oecho ""
-o
-oecho Build\ all\ projects
-oBuild all projects
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'664cf14d8a29b741^b7b3f74d8a29b741^-54"echo ""echo Build\ all\ projectsBuild all projects3(21%IDEActivityLogMessage2@8"echo ""-388598349#0#8#-0#-----2@26"echo Build\ all\ projects-388598349#9#26#-0#-----2@19"Build all projects-388598349#35#19#-0#-----0#0#0#--359"PhaseScriptExecution "CMake Rules" build/xsd2cpp_build_test.build/Debug/ALL_BUILD.build/Script-712A203F14274197AE28C810.sh    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    /bin/sh -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ALL_BUILD.build/Script-712A203F14274197AE28C810.sh36"BFF3CF7A-596C-4C34-8C8D-009F5A35E6B8-
-

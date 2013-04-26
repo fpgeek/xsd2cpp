@@ -1,28 +1,0 @@
-TZERO_CHECK
-v5
-r1
-cCheck dependencies
-cPhaseScriptExecution "CMake Rules" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-8063ABCDE28D4D4CBFB6956A.sh
-
-N/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-8063ABCDE28D4D4CBFB6956A.sh
-c00000000517952A400000000000000E3
-t1366905508
-s227
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies817bb616662ab741^11c3b616662ab741^---0#1#0#--18"Check dependencies36"A6BD9870-A1A4-4090-93EE-B6EF30B8D974-
-
-CPhaseScriptExecution "CMake Rules" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-8063ABCDE28D4D4CBFB6956A.sh
-s388654614.715307
-e388654614.757221
-r1
-xPhaseScriptExecution
-xCMake Rules
-x/Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-8063ABCDE28D4D4CBFB6956A.sh
-oecho ""
-o
-omake -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.make
-omake[1]: `CMakeFiles/cmake.check_cache' is up to date.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'5f7ab716662ab741^e8d8c116662ab741^-170"echo ""make -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.makemake[1]: `CMakeFiles/cmake.check_cache' is up to date.3(21%IDEActivityLogMessage2@8"echo ""-388654614#0#8#-0#-----2@106"make -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.make-388654614#9#106#-0#-----2@55"make[1]: `CMakeFiles/cmake.check_cache' is up to date.-388654614#115#55#-0#-----0#0#0#--361"PhaseScriptExecution "CMake Rules" build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-8063ABCDE28D4D4CBFB6956A.sh    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    /bin/sh -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-8063ABCDE28D4D4CBFB6956A.sh36"253EA4D5-3561-45FD-9ADF-908A34277CF9-
-

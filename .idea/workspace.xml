@@ -2,6 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6651581d-8f63-42fd-bdbc-22e2c035dc44" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeCache.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CMakeCCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CMakeCXXCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CMakeDetermineCompilerABI_C.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CMakeSystem.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdC/CompilerIdC" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.dep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/CompilerIdC.hmap" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CMakeCCompilerId.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Objects-normal/i386/CompilerIdC.LinkFileList" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdC/CompilerIdC.build/Debug/CompilerIdC.build/build-state.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdC/CompilerIdC.xcodeproj/project.pbxproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CompilerIdCXX" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.dep" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/CompilerIdCXX.hmap" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Objects-normal/i386/CMakeCXXCompilerId.d" afterPath="" />
@@ -11,11 +30,101 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/Script-2C8FEB8E15DC1A1A00E56A5D.sh" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CompilerIdCXX.build/Debug/CompilerIdCXX.build/build-state.dat" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/2.8.10.2/CompilerIdCXX/CompilerIdCXX.xcodeproj/project.pbxproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/CMakeOutput.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/TargetDirectories.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeFiles/cmake.check_cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeDebug" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeMinSizeRel" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeRelWithDebInfo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.makeRelease" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/ReRunCMake.make" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/XCODE_DEPEND_HELPER.make" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeDebug" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeMinSizeRel" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeRelWithDebInfo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.makeRelease" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/xsd2cpp_build_test_exe_postBuildPhase.makeDebug" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/xsd2cpp_build_test_exe_postBuildPhase.makeMinSizeRel" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/xsd2cpp_build_test_exe_postBuildPhase.makeRelWithDebInfo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/xsd2cpp_build_test_exe_postBuildPhase.makeRelease" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/xsd2cpp_build_test_postBuildPhase.makeDebug" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/xsd2cpp_build_test_postBuildPhase.makeMinSizeRel" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/xsd2cpp_build_test_postBuildPhase.makeRelWithDebInfo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/CMakeScripts/xsd2cpp_build_test_postBuildPhase.makeRelease" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/Debug/libxsd2cpp_build_test.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/Debug/xsd2cpp_build_test_exe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/cmake_install.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/ALL_BUILD.build/ALL_BUILD.dep" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/ALL_BUILD.build/ALL_BUILD~.dep" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/ALL_BUILD.build/Script-2C1A34E2CE254D4FBAF3824F.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/ALL_BUILD.build/build-state.dat" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/ALL_BUILD.build/build-state~.dat" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-0637A98708C8483DB2345761.sh" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-2E86861F37334E049D24CC78.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/ZERO_CHECK.dep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/ZERO_CHECK~.dep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/build-state.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/build-state~.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-lockedCanvas_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-additionalCharacteristics_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-additionalCharacteristics_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-additionalCharacteristics_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-commonSimpleTypes_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-commonSimpleTypes_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-commonSimpleTypes_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlSchemaProperties_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlSchemaProperties_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlSchemaProperties_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-relationshipReference_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-relationshipReference_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-relationshipReference_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o-06be04c0" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o-0dc2df3f" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o-0f063ab3" afterPath="" />
@@ -49,65 +158,54 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o-cc74baae" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o-f6ac0a89" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o-f6bb0f31" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-presentationDrawing_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-presentationDrawing_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-presentationDrawing_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-spreadsheetDrawing_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-spreadsheetDrawing_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-spreadsheetDrawing_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-wordprocessingDrawing_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-wordprocessingDrawing_xsd.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-wordprocessingDrawing_xsd.o" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.dia" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsd2cpp_build_test.LinkFileList" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsdtype.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsdtype.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/xsdtype.o" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Script-6D5F06B5483048E39F702983.sh" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Script-D5B3CEC0E13D4A8BA318DB6C.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/build-state.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/build-state~.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/xsd2cpp_build_test.dep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/xsd2cpp_build_test~.dep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.dia" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/xsd2cpp_build_test_exe.LinkFileList" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Script-EC47081453F74D1886FB67D5.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/build-state.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/build-state~.dat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/xsd2cpp_build_test_exe.dep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/xsd2cpp_build_test_exe~.dep" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/project.pbxproj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/project.xcworkspace/contents.xcworkspacedata" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/project.xcworkspace/xcuserdata/fpgeek.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/project.xcworkspace/xcuserdata/fpgeek.xcuserdatad/WorkspaceSettings.xcsettings" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/xcuserdata/fpgeek.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/xcuserdata/fpgeek.xcuserdatad/xcschemes/ALL_BUILD.xcscheme" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/xcuserdata/fpgeek.xcuserdatad/xcschemes/ZERO_CHECK.xcscheme" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/xcuserdata/fpgeek.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/xcuserdata/fpgeek.xcuserdatad/xcschemes/xsd2cpp_build_test.xcscheme" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/xcuserdata/fpgeek.xcuserdatad/xcschemes/xsd2cpp_build_test_exe.xcscheme" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/project.xcworkspace/xcuserdata/fpgeek.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/project.xcworkspace/xcuserdata/fpgeek.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chartDrawing_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-chart_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-diagram_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-main_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-picture_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-spreadsheetDrawing_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/dml-wordprocessingDrawing_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/Objects-normal/x86_64/main.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/pml_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-bibliography_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-customXmlDataProperties_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesCustom_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesExtended_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-documentPropertiesVariantTypes_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/shared-math_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/sml_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-main_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.o" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/vml-officeDrawing_xsd.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.dia" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/Objects-normal/x86_64/wml_xsd.dia" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/Debug/xsd2cpp_build_test_exe" afterPath="$PROJECT_DIR$/files/build_test/build/Debug/xsd2cpp_build_test_exe" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/xcuserdata/fpgeek.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.xcodeproj/xcuserdata/fpgeek.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/build-state.dat" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/build-state.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/build-state.dat" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/build-state.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/build-state.dat" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/build-state.dat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py" afterPath="$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-chartDrawing_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-chartDrawing_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-chart_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-chart_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-diagram_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-diagram_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-main_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-main_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-picture_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-picture_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/main.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/main.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/pml_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/pml_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-bibliography_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-bibliography_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-customXmlDataProperties_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-customXmlDataProperties_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-math_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-math_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/sml_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/sml_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/vml-main_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/vml-main_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/vml-officeDrawing_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/vml-officeDrawing_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/wml_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/wml_xsd.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/xsd2cpp_build_test.dep" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test.build/xsd2cpp_build_test.dep" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/xsd2cpp_build_test_exe.dep" afterPath="$PROJECT_DIR$/files/build_test/build/xsd2cpp_build_test.build/Debug/xsd2cpp_build_test_exe.build/xsd2cpp_build_test_exe.dep" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsd/xsd_to_cpp.py" afterPath="$PROJECT_DIR$/src/xsd/xsd_to_cpp.py" />
     </list>
     <ignored path="xsd2cpp.iws" />
     <ignored path=".idea/workspace.xml" />
