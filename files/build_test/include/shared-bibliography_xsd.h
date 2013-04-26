@@ -50,6 +50,7 @@ namespace ns_bibliography {
     {
     public:
         CT_NameListType();
+        ~CT_NameListType();
         CT_PersonType* add_Person();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -76,6 +77,7 @@ namespace ns_bibliography {
     {
     public:
         CT_PersonType();
+        ~CT_PersonType();
         ns_s::ST_String* add_Last();
         ns_s::ST_String* add_First();
         ns_s::ST_String* add_Middle();
@@ -114,6 +116,7 @@ namespace ns_bibliography {
     {
     public:
         CT_NameType();
+        ~CT_NameType();
         bool has_NameList() const;
         CT_NameListType* mutable_NameList();
         const CT_NameListType& get_NameList() const;
@@ -131,6 +134,7 @@ namespace ns_bibliography {
     {
     public:
         CT_NameOrCorporateType();
+        ~CT_NameOrCorporateType();
         bool has_NameList() const;
         CT_NameListType* mutable_NameList();
         const CT_NameListType& get_NameList() const;
@@ -153,6 +157,7 @@ namespace ns_bibliography {
     {
     public:
         CT_AuthorType();
+        ~CT_AuthorType();
         CT_NameType* add_Artist();
         CT_NameOrCorporateType* add_Author();
         CT_NameType* add_BookAuthor();
@@ -269,6 +274,7 @@ namespace ns_bibliography {
     {
     public:
         CT_SourceType();
+        ~CT_SourceType();
         ns_s::ST_String* add_AbbreviatedCaseNumber();
         ns_s::ST_String* add_AlbumTitle();
         CT_AuthorType* add_Author();
@@ -601,6 +607,7 @@ namespace ns_bibliography {
     {
     public:
         CT_Sources();
+        ~CT_Sources();
         CT_SourceType* add_Source();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -642,6 +649,7 @@ namespace ns_bibliography {
     {
     public:
         Sources_element();
+        ~Sources_element();
         CT_SourceType* add_Source();
         void clear();
         void toXml(std::ostream& _outStream) const;

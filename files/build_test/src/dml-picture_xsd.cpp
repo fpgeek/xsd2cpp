@@ -19,6 +19,9 @@ namespace ns_dpct {
     m_cNvPicPr(NULL)
     {
     }
+    CT_PictureNonVisual::~CT_PictureNonVisual()
+{
+    clear();    }
     bool CT_PictureNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -115,6 +118,9 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
     m_spPr(NULL)
     {
     }
+    CT_Picture::~CT_Picture()
+{
+    clear();    }
     bool CT_Picture::has_nvPicPr() const
     {    
     return m_has_nvPicPr;
@@ -240,6 +246,9 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
     m_spPr(NULL)
     {
     }
+    pic_element::~pic_element()
+{
+    clear();    }
     bool pic_element::has_nvPicPr() const
     {    
     return m_has_nvPicPr;

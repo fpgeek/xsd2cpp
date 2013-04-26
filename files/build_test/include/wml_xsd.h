@@ -3627,6 +3627,7 @@ namespace ns_w {
     {
     public:
         CT_Empty();
+        ~CT_Empty();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Empty& default_instance();
@@ -3639,6 +3640,7 @@ namespace ns_w {
     {
     public:
         CT_OnOff();
+        ~CT_OnOff();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OnOff& default_instance();
@@ -3656,6 +3658,7 @@ namespace ns_w {
     {
     public:
         CT_LongHexNumber();
+        ~CT_LongHexNumber();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LongHexNumber& default_instance();
@@ -3673,6 +3676,7 @@ namespace ns_w {
     {
     public:
         CT_Charset();
+        ~CT_Charset();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Charset& default_instance();
@@ -3695,6 +3699,7 @@ namespace ns_w {
     {
     public:
         CT_DecimalNumber();
+        ~CT_DecimalNumber();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DecimalNumber& default_instance();
@@ -3712,6 +3717,7 @@ namespace ns_w {
     {
     public:
         CT_UnsignedDecimalNumber();
+        ~CT_UnsignedDecimalNumber();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_UnsignedDecimalNumber& default_instance();
@@ -3729,6 +3735,7 @@ namespace ns_w {
     {
     public:
         CT_DecimalNumberOrPrecent();
+        ~CT_DecimalNumberOrPrecent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DecimalNumberOrPrecent& default_instance();
@@ -3746,6 +3753,7 @@ namespace ns_w {
     {
     public:
         CT_TwipsMeasure();
+        ~CT_TwipsMeasure();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TwipsMeasure& default_instance();
@@ -3763,6 +3771,7 @@ namespace ns_w {
     {
     public:
         CT_SignedTwipsMeasure();
+        ~CT_SignedTwipsMeasure();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SignedTwipsMeasure& default_instance();
@@ -3780,6 +3789,7 @@ namespace ns_w {
     {
     public:
         CT_PixelsMeasure();
+        ~CT_PixelsMeasure();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PixelsMeasure& default_instance();
@@ -3797,6 +3807,7 @@ namespace ns_w {
     {
     public:
         CT_HpsMeasure();
+        ~CT_HpsMeasure();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_HpsMeasure& default_instance();
@@ -3814,6 +3825,7 @@ namespace ns_w {
     {
     public:
         CT_SignedHpsMeasure();
+        ~CT_SignedHpsMeasure();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SignedHpsMeasure& default_instance();
@@ -3831,6 +3843,7 @@ namespace ns_w {
     {
     public:
         CT_MacroName();
+        ~CT_MacroName();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MacroName& default_instance();
@@ -3848,6 +3861,7 @@ namespace ns_w {
     {
     public:
         CT_String();
+        ~CT_String();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_String& default_instance();
@@ -3865,6 +3879,7 @@ namespace ns_w {
     {
     public:
         CT_TextScale();
+        ~CT_TextScale();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextScale& default_instance();
@@ -3882,6 +3897,7 @@ namespace ns_w {
     {
     public:
         CT_Highlight();
+        ~CT_Highlight();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Highlight& default_instance();
@@ -3899,6 +3915,7 @@ namespace ns_w {
     {
     public:
         CT_Color();
+        ~CT_Color();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Color& default_instance();
@@ -3931,6 +3948,7 @@ namespace ns_w {
     {
     public:
         CT_Lang();
+        ~CT_Lang();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Lang& default_instance();
@@ -3948,6 +3966,7 @@ namespace ns_w {
     {
     public:
         CT_Guid();
+        ~CT_Guid();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Guid& default_instance();
@@ -3965,6 +3984,7 @@ namespace ns_w {
     {
     public:
         CT_Underline();
+        ~CT_Underline();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Underline& default_instance();
@@ -4002,6 +4022,7 @@ namespace ns_w {
     {
     public:
         CT_TextEffect();
+        ~CT_TextEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextEffect& default_instance();
@@ -4019,6 +4040,7 @@ namespace ns_w {
     {
     public:
         CT_Border();
+        ~CT_Border();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Border& default_instance();
@@ -4076,6 +4098,7 @@ namespace ns_w {
     {
     public:
         CT_Shd();
+        ~CT_Shd();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Shd& default_instance();
@@ -4133,6 +4156,7 @@ namespace ns_w {
     {
     public:
         CT_VerticalAlignRun();
+        ~CT_VerticalAlignRun();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_VerticalAlignRun& default_instance();
@@ -4150,6 +4174,7 @@ namespace ns_w {
     {
     public:
         CT_FitText();
+        ~CT_FitText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FitText& default_instance();
@@ -4172,6 +4197,7 @@ namespace ns_w {
     {
     public:
         CT_Em();
+        ~CT_Em();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Em& default_instance();
@@ -4189,6 +4215,7 @@ namespace ns_w {
     {
     public:
         CT_Language();
+        ~CT_Language();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Language& default_instance();
@@ -4216,6 +4243,7 @@ namespace ns_w {
     {
     public:
         CT_EastAsianLayout();
+        ~CT_EastAsianLayout();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_EastAsianLayout& default_instance();
@@ -4253,6 +4281,7 @@ namespace ns_w {
     {
     public:
         CT_FramePr();
+        ~CT_FramePr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FramePr& default_instance();
@@ -4340,6 +4369,7 @@ namespace ns_w {
     {
     public:
         CT_TabStop();
+        ~CT_TabStop();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TabStop& default_instance();
@@ -4367,6 +4397,7 @@ namespace ns_w {
     {
     public:
         CT_Spacing();
+        ~CT_Spacing();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Spacing& default_instance();
@@ -4419,6 +4450,7 @@ namespace ns_w {
     {
     public:
         CT_Ind();
+        ~CT_Ind();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Ind& default_instance();
@@ -4491,6 +4523,7 @@ namespace ns_w {
     {
     public:
         CT_Jc();
+        ~CT_Jc();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Jc& default_instance();
@@ -4508,6 +4541,7 @@ namespace ns_w {
     {
     public:
         CT_JcTable();
+        ~CT_JcTable();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_JcTable& default_instance();
@@ -4525,6 +4559,7 @@ namespace ns_w {
     {
     public:
         CT_View();
+        ~CT_View();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_View& default_instance();
@@ -4542,6 +4577,7 @@ namespace ns_w {
     {
     public:
         CT_Zoom();
+        ~CT_Zoom();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Zoom& default_instance();
@@ -4564,6 +4600,7 @@ namespace ns_w {
     {
     public:
         CT_WritingStyle();
+        ~CT_WritingStyle();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WritingStyle& default_instance();
@@ -4606,6 +4643,7 @@ namespace ns_w {
     {
     public:
         CT_Proof();
+        ~CT_Proof();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Proof& default_instance();
@@ -4628,6 +4666,7 @@ namespace ns_w {
     {
     public:
         CT_DocType();
+        ~CT_DocType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocType& default_instance();
@@ -4645,6 +4684,7 @@ namespace ns_w {
     {
     public:
         CT_DocProtect();
+        ~CT_DocProtect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocProtect& default_instance();
@@ -4752,6 +4792,7 @@ namespace ns_w {
     {
     public:
         CT_MailMergeDocType();
+        ~CT_MailMergeDocType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MailMergeDocType& default_instance();
@@ -4769,6 +4810,7 @@ namespace ns_w {
     {
     public:
         CT_MailMergeDataType();
+        ~CT_MailMergeDataType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MailMergeDataType& default_instance();
@@ -4786,6 +4828,7 @@ namespace ns_w {
     {
     public:
         CT_MailMergeDest();
+        ~CT_MailMergeDest();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MailMergeDest& default_instance();
@@ -4803,6 +4846,7 @@ namespace ns_w {
     {
     public:
         CT_MailMergeOdsoFMDFieldType();
+        ~CT_MailMergeOdsoFMDFieldType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MailMergeOdsoFMDFieldType& default_instance();
@@ -4820,6 +4864,7 @@ namespace ns_w {
     {
     public:
         CT_TrackChangesView();
+        ~CT_TrackChangesView();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TrackChangesView& default_instance();
@@ -4857,6 +4902,7 @@ namespace ns_w {
     {
     public:
         CT_Kinsoku();
+        ~CT_Kinsoku();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Kinsoku& default_instance();
@@ -4879,6 +4925,7 @@ namespace ns_w {
     {
     public:
         CT_TextDirection();
+        ~CT_TextDirection();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextDirection& default_instance();
@@ -4896,6 +4943,7 @@ namespace ns_w {
     {
     public:
         CT_TextAlignment();
+        ~CT_TextAlignment();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextAlignment& default_instance();
@@ -4913,6 +4961,7 @@ namespace ns_w {
     {
     public:
         CT_Markup();
+        ~CT_Markup();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Markup& default_instance();
@@ -4930,6 +4979,7 @@ namespace ns_w {
     {
     public:
         CT_TrackChange();
+        ~CT_TrackChange();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TrackChange& default_instance();
@@ -4957,6 +5007,7 @@ namespace ns_w {
     {
     public:
         CT_CellMergeTrackChange();
+        ~CT_CellMergeTrackChange();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CellMergeTrackChange& default_instance();
@@ -4994,6 +5045,7 @@ namespace ns_w {
     {
     public:
         CT_TrackChangeRange();
+        ~CT_TrackChangeRange();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TrackChangeRange& default_instance();
@@ -5026,6 +5078,7 @@ namespace ns_w {
     {
     public:
         CT_MarkupRange();
+        ~CT_MarkupRange();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MarkupRange& default_instance();
@@ -5048,6 +5101,7 @@ namespace ns_w {
     {
     public:
         CT_BookmarkRange();
+        ~CT_BookmarkRange();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BookmarkRange& default_instance();
@@ -5080,6 +5134,7 @@ namespace ns_w {
     {
     public:
         CT_Bookmark();
+        ~CT_Bookmark();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Bookmark& default_instance();
@@ -5117,6 +5172,7 @@ namespace ns_w {
     {
     public:
         CT_MoveBookmark();
+        ~CT_MoveBookmark();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MoveBookmark& default_instance();
@@ -5164,6 +5220,7 @@ namespace ns_w {
     {
     public:
         CT_Comment();
+        ~CT_Comment();
         CT_CustomXmlBlock* add_customXml();
         CT_SdtBlock* add_sdt();
         CT_P* add_p();
@@ -5384,6 +5441,7 @@ namespace ns_w {
     {
     public:
         CT_TrackChangeNumbering();
+        ~CT_TrackChangeNumbering();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TrackChangeNumbering& default_instance();
@@ -5416,6 +5474,7 @@ namespace ns_w {
     {
     public:
         CT_TblPrExChange();
+        ~CT_TblPrExChange();
         bool has_tblPrEx() const;
         CT_TblPrExBase* mutable_tblPrEx();
         const CT_TblPrExBase& get_tblPrEx() const;
@@ -5448,6 +5507,7 @@ namespace ns_w {
     {
     public:
         CT_TcPrChange();
+        ~CT_TcPrChange();
         bool has_tcPr() const;
         CT_TcPrInner* mutable_tcPr();
         const CT_TcPrInner& get_tcPr() const;
@@ -5480,6 +5540,7 @@ namespace ns_w {
     {
     public:
         CT_TrPrChange();
+        ~CT_TrPrChange();
         bool has_trPr() const;
         CT_TrPrBase* mutable_trPr();
         const CT_TrPrBase& get_trPr() const;
@@ -5512,6 +5573,7 @@ namespace ns_w {
     {
     public:
         CT_TblGridChange();
+        ~CT_TblGridChange();
         bool has_tblGrid() const;
         CT_TblGridBase* mutable_tblGrid();
         const CT_TblGridBase& get_tblGrid() const;
@@ -5534,6 +5596,7 @@ namespace ns_w {
     {
     public:
         CT_TblPrChange();
+        ~CT_TblPrChange();
         bool has_tblPr() const;
         CT_TblPrBase* mutable_tblPr();
         const CT_TblPrBase& get_tblPr() const;
@@ -5566,6 +5629,7 @@ namespace ns_w {
     {
     public:
         CT_SectPrChange();
+        ~CT_SectPrChange();
         bool has_sectPr() const;
         CT_SectPrBase* mutable_sectPr();
         const CT_SectPrBase& get_sectPr() const;
@@ -5598,6 +5662,7 @@ namespace ns_w {
     {
     public:
         CT_PPrChange();
+        ~CT_PPrChange();
         bool has_pPr() const;
         CT_PPrBase* mutable_pPr();
         const CT_PPrBase& get_pPr() const;
@@ -5630,6 +5695,7 @@ namespace ns_w {
     {
     public:
         CT_RPrChange();
+        ~CT_RPrChange();
         bool has_rPr() const;
         CT_RPrOriginal* mutable_rPr();
         const CT_RPrOriginal& get_rPr() const;
@@ -5662,6 +5728,7 @@ namespace ns_w {
     {
     public:
         CT_ParaRPrChange();
+        ~CT_ParaRPrChange();
         bool has_rPr() const;
         CT_ParaRPrOriginal* mutable_rPr();
         const CT_ParaRPrOriginal& get_rPr() const;
@@ -5694,6 +5761,7 @@ namespace ns_w {
     {
     public:
         CT_RunTrackChange();
+        ~CT_RunTrackChange();
         CT_CustomXmlRun* add_customXml();
         CT_SmartTagRun* add_smartTag();
         CT_SdtRun* add_sdt();
@@ -6035,6 +6103,7 @@ namespace ns_w {
     {
     public:
         CT_NumPr();
+        ~CT_NumPr();
         bool has_ilvl() const;
         CT_DecimalNumber* mutable_ilvl();
         const CT_DecimalNumber& get_ilvl() const;
@@ -6067,6 +6136,7 @@ namespace ns_w {
     {
     public:
         CT_PBdr();
+        ~CT_PBdr();
         bool has_top() const;
         CT_Border* mutable_top();
         const CT_Border& get_top() const;
@@ -6109,6 +6179,7 @@ namespace ns_w {
     {
     public:
         CT_Tabs();
+        ~CT_Tabs();
         CT_TabStop* add_tab();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6135,6 +6206,7 @@ namespace ns_w {
     {
     public:
         CT_TextboxTightWrap();
+        ~CT_TextboxTightWrap();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextboxTightWrap& default_instance();
@@ -6152,6 +6224,7 @@ namespace ns_w {
     {
     public:
         CT_PPr();
+        ~CT_PPr();
         bool has_pStyle() const;
         CT_String* mutable_pStyle();
         const CT_String& get_pStyle() const;
@@ -6344,6 +6417,7 @@ namespace ns_w {
     {
     public:
         CT_PPrBase();
+        ~CT_PPrBase();
         bool has_pStyle() const;
         CT_String* mutable_pStyle();
         const CT_String& get_pStyle() const;
@@ -6521,6 +6595,7 @@ namespace ns_w {
     {
     public:
         CT_PPrGeneral();
+        ~CT_PPrGeneral();
         bool has_pStyle() const;
         CT_String* mutable_pStyle();
         const CT_String& get_pStyle() const;
@@ -6703,6 +6778,7 @@ namespace ns_w {
     {
     public:
         CT_Control();
+        ~CT_Control();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Control& default_instance();
@@ -6730,6 +6806,7 @@ namespace ns_w {
     {
     public:
         CT_Background();
+        ~CT_Background();
         void append_v_any(ns_v::Element* _v_any);
         void append_o_any(ns_o::Element* _o_any);
         bool has_drawing() const;
@@ -6771,6 +6848,7 @@ namespace ns_w {
     {
     public:
         CT_Rel();
+        ~CT_Rel();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Rel& default_instance();
@@ -6788,6 +6866,7 @@ namespace ns_w {
     {
     public:
         CT_Object();
+        ~CT_Object();
         void append_v_any(ns_v::Element* _v_any);
         void append_o_any(ns_o::Element* _o_any);
         bool has_drawing() const;
@@ -6839,6 +6918,7 @@ namespace ns_w {
     {
     public:
         CT_Picture();
+        ~CT_Picture();
         void append_v_any(ns_v::Element* _v_any);
         void append_o_any(ns_o::Element* _o_any);
         bool has_movie() const;
@@ -6865,6 +6945,7 @@ namespace ns_w {
     {
     public:
         CT_ObjectEmbed();
+        ~CT_ObjectEmbed();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ObjectEmbed& default_instance();
@@ -6902,6 +6983,7 @@ namespace ns_w {
     {
     public:
         CT_ObjectLink();
+        ~CT_ObjectLink();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ObjectLink& default_instance();
@@ -6949,6 +7031,7 @@ namespace ns_w {
     {
     public:
         CT_Drawing();
+        ~CT_Drawing();
         ns_wp::CT_Anchor* add_wp_anchor();
         ns_wp::CT_Inline* add_wp_inline();
         void clear();
@@ -6981,6 +7064,7 @@ namespace ns_w {
     {
     public:
         CT_SimpleField();
+        ~CT_SimpleField();
         bool has_fldData() const;
         CT_Text* mutable_fldData();
         const CT_Text& get_fldData() const;
@@ -7225,6 +7309,7 @@ namespace ns_w {
     {
     public:
         CT_FFTextType();
+        ~CT_FFTextType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FFTextType& default_instance();
@@ -7242,6 +7327,7 @@ namespace ns_w {
     {
     public:
         CT_FFName();
+        ~CT_FFName();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FFName& default_instance();
@@ -7259,6 +7345,7 @@ namespace ns_w {
     {
     public:
         CT_FldChar();
+        ~CT_FldChar();
         bool has_fldData() const;
         CT_Text* mutable_fldData();
         const CT_Text& get_fldData() const;
@@ -7301,6 +7388,7 @@ namespace ns_w {
     {
     public:
         CT_Hyperlink();
+        ~CT_Hyperlink();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Hyperlink& default_instance();
@@ -7343,6 +7431,7 @@ namespace ns_w {
     {
     public:
         CT_FFData();
+        ~CT_FFData();
         CT_FFName* add_name();
         CT_DecimalNumber* add_label();
         CT_UnsignedDecimalNumber* add_tabIndex();
@@ -7435,6 +7524,7 @@ namespace ns_w {
     {
     public:
         CT_FFHelpText();
+        ~CT_FFHelpText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FFHelpText& default_instance();
@@ -7457,6 +7547,7 @@ namespace ns_w {
     {
     public:
         CT_FFStatusText();
+        ~CT_FFStatusText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FFStatusText& default_instance();
@@ -7479,6 +7570,7 @@ namespace ns_w {
     {
     public:
         CT_FFCheckBox();
+        ~CT_FFCheckBox();
         bool has_size() const;
         CT_HpsMeasure* mutable_size();
         const CT_HpsMeasure& get_size() const;
@@ -7511,6 +7603,7 @@ namespace ns_w {
     {
     public:
         CT_FFDDList();
+        ~CT_FFDDList();
         bool has_result() const;
         CT_DecimalNumber* mutable_result();
         const CT_DecimalNumber& get_result() const;
@@ -7547,6 +7640,7 @@ namespace ns_w {
     {
     public:
         CT_FFTextInput();
+        ~CT_FFTextInput();
         bool has_type() const;
         CT_FFTextType* mutable_type();
         const CT_FFTextType& get_type() const;
@@ -7579,6 +7673,7 @@ namespace ns_w {
     {
     public:
         CT_SectType();
+        ~CT_SectType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SectType& default_instance();
@@ -7596,6 +7691,7 @@ namespace ns_w {
     {
     public:
         CT_PaperSource();
+        ~CT_PaperSource();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PaperSource& default_instance();
@@ -7618,6 +7714,7 @@ namespace ns_w {
     {
     public:
         CT_PageSz();
+        ~CT_PageSz();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageSz& default_instance();
@@ -7650,6 +7747,7 @@ namespace ns_w {
     {
     public:
         CT_PageMar();
+        ~CT_PageMar();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageMar& default_instance();
@@ -7697,6 +7795,7 @@ namespace ns_w {
     {
     public:
         CT_PageBorders();
+        ~CT_PageBorders();
         bool has_top() const;
         CT_TopPageBorder* mutable_top();
         const CT_TopPageBorder& get_top() const;
@@ -7744,6 +7843,7 @@ namespace ns_w {
     {
     public:
         CT_PageBorder();
+        ~CT_PageBorder();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageBorder& default_instance();
@@ -7806,6 +7906,7 @@ namespace ns_w {
     {
     public:
         CT_BottomPageBorder();
+        ~CT_BottomPageBorder();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BottomPageBorder& default_instance();
@@ -7878,6 +7979,7 @@ namespace ns_w {
     {
     public:
         CT_TopPageBorder();
+        ~CT_TopPageBorder();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TopPageBorder& default_instance();
@@ -7950,6 +8052,7 @@ namespace ns_w {
     {
     public:
         CT_LineNumber();
+        ~CT_LineNumber();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LineNumber& default_instance();
@@ -7982,6 +8085,7 @@ namespace ns_w {
     {
     public:
         CT_PageNumber();
+        ~CT_PageNumber();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageNumber& default_instance();
@@ -8014,6 +8118,7 @@ namespace ns_w {
     {
     public:
         CT_Column();
+        ~CT_Column();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Column& default_instance();
@@ -8036,6 +8141,7 @@ namespace ns_w {
     {
     public:
         CT_Columns();
+        ~CT_Columns();
         CT_Column* add_col();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8082,6 +8188,7 @@ namespace ns_w {
     {
     public:
         CT_VerticalJc();
+        ~CT_VerticalJc();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_VerticalJc& default_instance();
@@ -8099,6 +8206,7 @@ namespace ns_w {
     {
     public:
         CT_DocGrid();
+        ~CT_DocGrid();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocGrid& default_instance();
@@ -8126,6 +8234,7 @@ namespace ns_w {
     {
     public:
         CT_HdrFtrRef();
+        ~CT_HdrFtrRef();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_HdrFtrRef& default_instance();
@@ -8148,6 +8257,7 @@ namespace ns_w {
     {
     public:
         CT_HdrFtr();
+        ~CT_HdrFtr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_HdrFtr& default_instance();
@@ -8160,6 +8270,7 @@ namespace ns_w {
     {
     public:
         CT_SectPrBase();
+        ~CT_SectPrBase();
         bool has_footnotePr() const;
         CT_FtnProps* mutable_footnotePr();
         const CT_FtnProps& get_footnotePr() const;
@@ -8287,6 +8398,7 @@ namespace ns_w {
     {
     public:
         CT_SectPr();
+        ~CT_SectPr();
         CT_HdrFtrRef* add_headerReference();
         CT_HdrFtrRef* add_footerReference();
         bool has_footnotePr() const;
@@ -8439,6 +8551,7 @@ namespace ns_w {
     {
     public:
         CT_Br();
+        ~CT_Br();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Br& default_instance();
@@ -8461,6 +8574,7 @@ namespace ns_w {
     {
     public:
         CT_PTab();
+        ~CT_PTab();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PTab& default_instance();
@@ -8488,6 +8602,7 @@ namespace ns_w {
     {
     public:
         CT_Sym();
+        ~CT_Sym();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Sym& default_instance();
@@ -8510,6 +8625,7 @@ namespace ns_w {
     {
     public:
         CT_ProofErr();
+        ~CT_ProofErr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ProofErr& default_instance();
@@ -8527,6 +8643,7 @@ namespace ns_w {
     {
     public:
         CT_Perm();
+        ~CT_Perm();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Perm& default_instance();
@@ -8549,6 +8666,7 @@ namespace ns_w {
     {
     public:
         CT_PermStart();
+        ~CT_PermStart();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PermStart& default_instance();
@@ -8591,6 +8709,7 @@ namespace ns_w {
     {
     public:
         CT_Text();
+        ~CT_Text();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Text& default_instance();
@@ -8608,6 +8727,7 @@ namespace ns_w {
     {
     public:
         CT_R();
+        ~CT_R();
         bool has_rPr() const;
         CT_RPr* mutable_rPr();
         const CT_RPr& get_rPr() const;
@@ -8846,6 +8966,7 @@ namespace ns_w {
     {
     public:
         CT_Fonts();
+        ~CT_Fonts();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Fonts& default_instance();
@@ -8903,6 +9024,7 @@ namespace ns_w {
     {
     public:
         CT_RPr();
+        ~CT_RPr();
         CT_String* add_rStyle();
         CT_Fonts* add_rFonts();
         CT_OnOff* add_b();
@@ -9162,6 +9284,7 @@ namespace ns_w {
     {
     public:
         CT_MathCtrlIns();
+        ~CT_MathCtrlIns();
         bool has_del() const;
         CT_RPrChange* mutable_del();
         const CT_RPrChange& get_del() const;
@@ -9199,6 +9322,7 @@ namespace ns_w {
     {
     public:
         CT_MathCtrlDel();
+        ~CT_MathCtrlDel();
         bool has_rPr() const;
         CT_RPr* mutable_rPr();
         const CT_RPr& get_rPr() const;
@@ -9231,6 +9355,7 @@ namespace ns_w {
     {
     public:
         CT_RPrOriginal();
+        ~CT_RPrOriginal();
         CT_String* add_rStyle();
         CT_Fonts* add_rFonts();
         CT_OnOff* add_b();
@@ -9485,6 +9610,7 @@ namespace ns_w {
     {
     public:
         CT_ParaRPrOriginal();
+        ~CT_ParaRPrOriginal();
         bool has_ins() const;
         CT_TrackChange* mutable_ins();
         const CT_TrackChange& get_ins() const;
@@ -9759,6 +9885,7 @@ namespace ns_w {
     {
     public:
         CT_ParaRPr();
+        ~CT_ParaRPr();
         bool has_ins() const;
         CT_TrackChange* mutable_ins();
         const CT_TrackChange& get_ins() const;
@@ -10038,6 +10165,7 @@ namespace ns_w {
     {
     public:
         CT_AltChunk();
+        ~CT_AltChunk();
         bool has_altChunkPr() const;
         CT_AltChunkPr* mutable_altChunkPr();
         const CT_AltChunkPr& get_altChunkPr() const;
@@ -10060,6 +10188,7 @@ namespace ns_w {
     {
     public:
         CT_AltChunkPr();
+        ~CT_AltChunkPr();
         bool has_matchSrc() const;
         CT_OnOff* mutable_matchSrc();
         const CT_OnOff& get_matchSrc() const;
@@ -10077,6 +10206,7 @@ namespace ns_w {
     {
     public:
         CT_RubyAlign();
+        ~CT_RubyAlign();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RubyAlign& default_instance();
@@ -10094,6 +10224,7 @@ namespace ns_w {
     {
     public:
         CT_RubyPr();
+        ~CT_RubyPr();
         bool has_rubyAlign() const;
         CT_RubyAlign* mutable_rubyAlign();
         const CT_RubyAlign& get_rubyAlign() const;
@@ -10136,6 +10267,7 @@ namespace ns_w {
     {
     public:
         CT_RubyContent();
+        ~CT_RubyContent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RubyContent& default_instance();
@@ -10148,6 +10280,7 @@ namespace ns_w {
     {
     public:
         CT_Ruby();
+        ~CT_Ruby();
         bool has_rubyPr() const;
         CT_RubyPr* mutable_rubyPr();
         const CT_RubyPr& get_rubyPr() const;
@@ -10175,6 +10308,7 @@ namespace ns_w {
     {
     public:
         CT_Lock();
+        ~CT_Lock();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Lock& default_instance();
@@ -10192,6 +10326,7 @@ namespace ns_w {
     {
     public:
         CT_SdtListItem();
+        ~CT_SdtListItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtListItem& default_instance();
@@ -10214,6 +10349,7 @@ namespace ns_w {
     {
     public:
         CT_SdtDateMappingType();
+        ~CT_SdtDateMappingType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtDateMappingType& default_instance();
@@ -10231,6 +10367,7 @@ namespace ns_w {
     {
     public:
         CT_CalendarType();
+        ~CT_CalendarType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CalendarType& default_instance();
@@ -10248,6 +10385,7 @@ namespace ns_w {
     {
     public:
         CT_SdtDate();
+        ~CT_SdtDate();
         bool has_dateFormat() const;
         CT_String* mutable_dateFormat();
         const CT_String& get_dateFormat() const;
@@ -10285,6 +10423,7 @@ namespace ns_w {
     {
     public:
         CT_SdtComboBox();
+        ~CT_SdtComboBox();
         CT_SdtListItem* add_listItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -10316,6 +10455,7 @@ namespace ns_w {
     {
     public:
         CT_SdtDocPart();
+        ~CT_SdtDocPart();
         bool has_docPartGallery() const;
         CT_String* mutable_docPartGallery();
         const CT_String& get_docPartGallery() const;
@@ -10343,6 +10483,7 @@ namespace ns_w {
     {
     public:
         CT_SdtDropDownList();
+        ~CT_SdtDropDownList();
         CT_SdtListItem* add_listItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -10374,6 +10515,7 @@ namespace ns_w {
     {
     public:
         CT_Placeholder();
+        ~CT_Placeholder();
         bool has_docPart() const;
         CT_String* mutable_docPart();
         const CT_String& get_docPart() const;
@@ -10391,6 +10533,7 @@ namespace ns_w {
     {
     public:
         CT_SdtText();
+        ~CT_SdtText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtText& default_instance();
@@ -10408,6 +10551,7 @@ namespace ns_w {
     {
     public:
         CT_DataBinding();
+        ~CT_DataBinding();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DataBinding& default_instance();
@@ -10435,6 +10579,7 @@ namespace ns_w {
     {
     public:
         CT_SdtPr();
+        ~CT_SdtPr();
         bool has_rPr() const;
         CT_RPr* mutable_rPr();
         const CT_RPr& get_rPr() const;
@@ -10562,6 +10707,7 @@ namespace ns_w {
     {
     public:
         CT_SdtEndPr();
+        ~CT_SdtEndPr();
         CT_RPr* add_rPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -10588,6 +10734,7 @@ namespace ns_w {
     {
     public:
         CT_DirContentRun();
+        ~CT_DirContentRun();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DirContentRun& default_instance();
@@ -10605,6 +10752,7 @@ namespace ns_w {
     {
     public:
         CT_BdoContentRun();
+        ~CT_BdoContentRun();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BdoContentRun& default_instance();
@@ -10622,6 +10770,7 @@ namespace ns_w {
     {
     public:
         CT_SdtContentRun();
+        ~CT_SdtContentRun();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtContentRun& default_instance();
@@ -10634,6 +10783,7 @@ namespace ns_w {
     {
     public:
         CT_SdtContentBlock();
+        ~CT_SdtContentBlock();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtContentBlock& default_instance();
@@ -10646,6 +10796,7 @@ namespace ns_w {
     {
     public:
         CT_SdtContentRow();
+        ~CT_SdtContentRow();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtContentRow& default_instance();
@@ -10658,6 +10809,7 @@ namespace ns_w {
     {
     public:
         CT_SdtContentCell();
+        ~CT_SdtContentCell();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SdtContentCell& default_instance();
@@ -10670,6 +10822,7 @@ namespace ns_w {
     {
     public:
         CT_SdtBlock();
+        ~CT_SdtBlock();
         bool has_sdtPr() const;
         CT_SdtPr* mutable_sdtPr();
         const CT_SdtPr& get_sdtPr() const;
@@ -10697,6 +10850,7 @@ namespace ns_w {
     {
     public:
         CT_SdtRun();
+        ~CT_SdtRun();
         bool has_sdtPr() const;
         CT_SdtPr* mutable_sdtPr();
         const CT_SdtPr& get_sdtPr() const;
@@ -10724,6 +10878,7 @@ namespace ns_w {
     {
     public:
         CT_SdtCell();
+        ~CT_SdtCell();
         bool has_sdtPr() const;
         CT_SdtPr* mutable_sdtPr();
         const CT_SdtPr& get_sdtPr() const;
@@ -10751,6 +10906,7 @@ namespace ns_w {
     {
     public:
         CT_SdtRow();
+        ~CT_SdtRow();
         bool has_sdtPr() const;
         CT_SdtPr* mutable_sdtPr();
         const CT_SdtPr& get_sdtPr() const;
@@ -10778,6 +10934,7 @@ namespace ns_w {
     {
     public:
         CT_Attr();
+        ~CT_Attr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Attr& default_instance();
@@ -10805,6 +10962,7 @@ namespace ns_w {
     {
     public:
         CT_CustomXmlRun();
+        ~CT_CustomXmlRun();
         bool has_customXmlPr() const;
         CT_CustomXmlPr* mutable_customXmlPr();
         const CT_CustomXmlPr& get_customXmlPr() const;
@@ -11044,6 +11202,7 @@ namespace ns_w {
     {
     public:
         CT_SmartTagRun();
+        ~CT_SmartTagRun();
         bool has_smartTagPr() const;
         CT_SmartTagPr* mutable_smartTagPr();
         const CT_SmartTagPr& get_smartTagPr() const;
@@ -11283,6 +11442,7 @@ namespace ns_w {
     {
     public:
         CT_CustomXmlBlock();
+        ~CT_CustomXmlBlock();
         bool has_customXmlPr() const;
         CT_CustomXmlPr* mutable_customXmlPr();
         const CT_CustomXmlPr& get_customXmlPr() const;
@@ -11492,6 +11652,7 @@ namespace ns_w {
     {
     public:
         CT_CustomXmlPr();
+        ~CT_CustomXmlPr();
         bool has_placeholder() const;
         CT_String* mutable_placeholder();
         const CT_String& get_placeholder() const;
@@ -11523,6 +11684,7 @@ namespace ns_w {
     {
     public:
         CT_CustomXmlRow();
+        ~CT_CustomXmlRow();
         bool has_customXmlPr() const;
         CT_CustomXmlPr* mutable_customXmlPr();
         const CT_CustomXmlPr& get_customXmlPr() const;
@@ -11726,6 +11888,7 @@ namespace ns_w {
     {
     public:
         CT_CustomXmlCell();
+        ~CT_CustomXmlCell();
         bool has_customXmlPr() const;
         CT_CustomXmlPr* mutable_customXmlPr();
         const CT_CustomXmlPr& get_customXmlPr() const;
@@ -11929,6 +12092,7 @@ namespace ns_w {
     {
     public:
         CT_SmartTagPr();
+        ~CT_SmartTagPr();
         CT_Attr* add_attr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -11955,6 +12119,7 @@ namespace ns_w {
     {
     public:
         CT_P();
+        ~CT_P();
         bool has_pPr() const;
         CT_PPr* mutable_pPr();
         const CT_PPr& get_pPr() const;
@@ -12209,6 +12374,7 @@ namespace ns_w {
     {
     public:
         CT_Height();
+        ~CT_Height();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Height& default_instance();
@@ -12231,6 +12397,7 @@ namespace ns_w {
     {
     public:
         CT_TblWidth();
+        ~CT_TblWidth();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TblWidth& default_instance();
@@ -12253,6 +12420,7 @@ namespace ns_w {
     {
     public:
         CT_TblGridCol();
+        ~CT_TblGridCol();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TblGridCol& default_instance();
@@ -12270,6 +12438,7 @@ namespace ns_w {
     {
     public:
         CT_TblGridBase();
+        ~CT_TblGridBase();
         CT_TblGridCol* add_gridCol();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -12296,6 +12465,7 @@ namespace ns_w {
     {
     public:
         CT_TblGrid();
+        ~CT_TblGrid();
         CT_TblGridCol* add_gridCol();
         bool has_tblGridChange() const;
         CT_TblGridChange* mutable_tblGridChange();
@@ -12327,6 +12497,7 @@ namespace ns_w {
     {
     public:
         CT_TcBorders();
+        ~CT_TcBorders();
         bool has_top() const;
         CT_Border* mutable_top();
         const CT_Border& get_top() const;
@@ -12389,6 +12560,7 @@ namespace ns_w {
     {
     public:
         CT_TcMar();
+        ~CT_TcMar();
         bool has_top() const;
         CT_TblWidth* mutable_top();
         const CT_TblWidth& get_top() const;
@@ -12431,6 +12603,7 @@ namespace ns_w {
     {
     public:
         CT_VMerge();
+        ~CT_VMerge();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_VMerge& default_instance();
@@ -12448,6 +12621,7 @@ namespace ns_w {
     {
     public:
         CT_HMerge();
+        ~CT_HMerge();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_HMerge& default_instance();
@@ -12465,6 +12639,7 @@ namespace ns_w {
     {
     public:
         CT_TcPrBase();
+        ~CT_TcPrBase();
         bool has_cnfStyle() const;
         CT_Cnf* mutable_cnfStyle();
         const CT_Cnf& get_cnfStyle() const;
@@ -12547,6 +12722,7 @@ namespace ns_w {
     {
     public:
         CT_TcPr();
+        ~CT_TcPr();
         bool has_cnfStyle() const;
         CT_Cnf* mutable_cnfStyle();
         const CT_Cnf& get_cnfStyle() const;
@@ -12649,6 +12825,7 @@ namespace ns_w {
     {
     public:
         CT_TcPrInner();
+        ~CT_TcPrInner();
         bool has_cnfStyle() const;
         CT_Cnf* mutable_cnfStyle();
         const CT_Cnf& get_cnfStyle() const;
@@ -12746,6 +12923,7 @@ namespace ns_w {
     {
     public:
         CT_Tc();
+        ~CT_Tc();
         bool has_tcPr() const;
         CT_TcPr* mutable_tcPr();
         const CT_TcPr& get_tcPr() const;
@@ -12956,6 +13134,7 @@ namespace ns_w {
     {
     public:
         CT_Cnf();
+        ~CT_Cnf();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Cnf& default_instance();
@@ -13033,6 +13212,7 @@ namespace ns_w {
     {
     public:
         CT_Headers();
+        ~CT_Headers();
         CT_String* add_header();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -13059,6 +13239,7 @@ namespace ns_w {
     {
     public:
         CT_TrPrBase();
+        ~CT_TrPrBase();
         CT_Cnf* add_cnfStyle();
         CT_DecimalNumber* add_divId();
         CT_DecimalNumber* add_gridBefore();
@@ -13151,6 +13332,7 @@ namespace ns_w {
     {
     public:
         CT_TrPr();
+        ~CT_TrPr();
         CT_Cnf* add_cnfStyle();
         CT_DecimalNumber* add_divId();
         CT_DecimalNumber* add_gridBefore();
@@ -13258,6 +13440,7 @@ namespace ns_w {
     {
     public:
         CT_Row();
+        ~CT_Row();
         bool has_tblPrEx() const;
         CT_TblPrEx* mutable_tblPrEx();
         const CT_TblPrEx& get_tblPrEx() const;
@@ -13476,6 +13659,7 @@ namespace ns_w {
     {
     public:
         CT_TblLayoutType();
+        ~CT_TblLayoutType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TblLayoutType& default_instance();
@@ -13493,6 +13677,7 @@ namespace ns_w {
     {
     public:
         CT_TblOverlap();
+        ~CT_TblOverlap();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TblOverlap& default_instance();
@@ -13510,6 +13695,7 @@ namespace ns_w {
     {
     public:
         CT_TblPPr();
+        ~CT_TblPPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TblPPr& default_instance();
@@ -13572,6 +13758,7 @@ namespace ns_w {
     {
     public:
         CT_TblCellMar();
+        ~CT_TblCellMar();
         bool has_top() const;
         CT_TblWidth* mutable_top();
         const CT_TblWidth& get_top() const;
@@ -13614,6 +13801,7 @@ namespace ns_w {
     {
     public:
         CT_TblBorders();
+        ~CT_TblBorders();
         bool has_top() const;
         CT_Border* mutable_top();
         const CT_Border& get_top() const;
@@ -13666,6 +13854,7 @@ namespace ns_w {
     {
     public:
         CT_TblPrBase();
+        ~CT_TblPrBase();
         bool has_tblStyle() const;
         CT_String* mutable_tblStyle();
         const CT_String& get_tblStyle() const;
@@ -13763,6 +13952,7 @@ namespace ns_w {
     {
     public:
         CT_TblPr();
+        ~CT_TblPr();
         bool has_tblStyle() const;
         CT_String* mutable_tblStyle();
         const CT_String& get_tblStyle() const;
@@ -13865,6 +14055,7 @@ namespace ns_w {
     {
     public:
         CT_TblPrExBase();
+        ~CT_TblPrExBase();
         bool has_tblW() const;
         CT_TblWidth* mutable_tblW();
         const CT_TblWidth& get_tblW() const;
@@ -13922,6 +14113,7 @@ namespace ns_w {
     {
     public:
         CT_TblPrEx();
+        ~CT_TblPrEx();
         bool has_tblW() const;
         CT_TblWidth* mutable_tblW();
         const CT_TblWidth& get_tblW() const;
@@ -13984,6 +14176,7 @@ namespace ns_w {
     {
     public:
         CT_Tbl();
+        ~CT_Tbl();
         bool has_tblPr() const;
         CT_TblPr* mutable_tblPr();
         const CT_TblPr& get_tblPr() const;
@@ -14182,6 +14375,7 @@ namespace ns_w {
     {
     public:
         CT_TblLook();
+        ~CT_TblLook();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TblLook& default_instance();
@@ -14229,6 +14423,7 @@ namespace ns_w {
     {
     public:
         CT_FtnPos();
+        ~CT_FtnPos();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FtnPos& default_instance();
@@ -14246,6 +14441,7 @@ namespace ns_w {
     {
     public:
         CT_EdnPos();
+        ~CT_EdnPos();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_EdnPos& default_instance();
@@ -14263,6 +14459,7 @@ namespace ns_w {
     {
     public:
         CT_NumFmt();
+        ~CT_NumFmt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_NumFmt& default_instance();
@@ -14285,6 +14482,7 @@ namespace ns_w {
     {
     public:
         CT_NumRestart();
+        ~CT_NumRestart();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_NumRestart& default_instance();
@@ -14302,6 +14500,7 @@ namespace ns_w {
     {
     public:
         CT_FtnEdnRef();
+        ~CT_FtnEdnRef();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FtnEdnRef& default_instance();
@@ -14324,6 +14523,7 @@ namespace ns_w {
     {
     public:
         CT_FtnEdnSepRef();
+        ~CT_FtnEdnSepRef();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FtnEdnSepRef& default_instance();
@@ -14341,6 +14541,7 @@ namespace ns_w {
     {
     public:
         CT_FtnEdn();
+        ~CT_FtnEdn();
         CT_CustomXmlBlock* add_customXml();
         CT_SdtBlock* add_sdt();
         CT_P* add_p();
@@ -14551,6 +14752,7 @@ namespace ns_w {
     {
     public:
         CT_FtnProps();
+        ~CT_FtnProps();
         bool has_pos() const;
         CT_FtnPos* mutable_pos();
         const CT_FtnPos& get_pos() const;
@@ -14583,6 +14785,7 @@ namespace ns_w {
     {
     public:
         CT_EdnProps();
+        ~CT_EdnProps();
         bool has_pos() const;
         CT_EdnPos* mutable_pos();
         const CT_EdnPos& get_pos() const;
@@ -14615,6 +14818,7 @@ namespace ns_w {
     {
     public:
         CT_FtnDocProps();
+        ~CT_FtnDocProps();
         bool has_pos() const;
         CT_FtnPos* mutable_pos();
         const CT_FtnPos& get_pos() const;
@@ -14661,6 +14865,7 @@ namespace ns_w {
     {
     public:
         CT_EdnDocProps();
+        ~CT_EdnDocProps();
         bool has_pos() const;
         CT_EdnPos* mutable_pos();
         const CT_EdnPos& get_pos() const;
@@ -14707,6 +14912,7 @@ namespace ns_w {
     {
     public:
         CT_RecipientData();
+        ~CT_RecipientData();
         bool has_active() const;
         CT_OnOff* mutable_active();
         const CT_OnOff& get_active() const;
@@ -14734,6 +14940,7 @@ namespace ns_w {
     {
     public:
         CT_Base64Binary();
+        ~CT_Base64Binary();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Base64Binary& default_instance();
@@ -14751,6 +14958,7 @@ namespace ns_w {
     {
     public:
         CT_Recipients();
+        ~CT_Recipients();
         CT_RecipientData* add_recipientData();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -14777,6 +14985,7 @@ namespace ns_w {
     {
     public:
         CT_OdsoFieldMapData();
+        ~CT_OdsoFieldMapData();
         bool has_type() const;
         CT_MailMergeOdsoFMDFieldType* mutable_type();
         const CT_MailMergeOdsoFMDFieldType& get_type() const;
@@ -14819,6 +15028,7 @@ namespace ns_w {
     {
     public:
         CT_MailMergeSourceType();
+        ~CT_MailMergeSourceType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MailMergeSourceType& default_instance();
@@ -14836,6 +15046,7 @@ namespace ns_w {
     {
     public:
         CT_Odso();
+        ~CT_Odso();
         bool has_udl() const;
         CT_String* mutable_udl();
         const CT_String& get_udl() const;
@@ -14898,6 +15109,7 @@ namespace ns_w {
     {
     public:
         CT_MailMerge();
+        ~CT_MailMerge();
         bool has_mainDocumentType() const;
         CT_MailMergeDocType* mutable_mainDocumentType();
         const CT_MailMergeDocType& get_mainDocumentType() const;
@@ -14990,6 +15202,7 @@ namespace ns_w {
     {
     public:
         CT_TargetScreenSz();
+        ~CT_TargetScreenSz();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TargetScreenSz& default_instance();
@@ -15007,6 +15220,7 @@ namespace ns_w {
     {
     public:
         CT_Compat();
+        ~CT_Compat();
         bool has_useSingleBorderforContiguousCells() const;
         CT_OnOff* mutable_useSingleBorderforContiguousCells();
         const CT_OnOff& get_useSingleBorderforContiguousCells() const;
@@ -15358,6 +15572,7 @@ namespace ns_w {
     {
     public:
         CT_CompatSetting();
+        ~CT_CompatSetting();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CompatSetting& default_instance();
@@ -15385,6 +15600,7 @@ namespace ns_w {
     {
     public:
         CT_DocVar();
+        ~CT_DocVar();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocVar& default_instance();
@@ -15407,6 +15623,7 @@ namespace ns_w {
     {
     public:
         CT_DocVars();
+        ~CT_DocVars();
         CT_DocVar* add_docVar();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -15433,6 +15650,7 @@ namespace ns_w {
     {
     public:
         CT_DocRsids();
+        ~CT_DocRsids();
         bool has_rsidRoot() const;
         CT_LongHexNumber* mutable_rsidRoot();
         const CT_LongHexNumber& get_rsidRoot() const;
@@ -15464,6 +15682,7 @@ namespace ns_w {
     {
     public:
         CT_CharacterSpacing();
+        ~CT_CharacterSpacing();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CharacterSpacing& default_instance();
@@ -15481,6 +15700,7 @@ namespace ns_w {
     {
     public:
         CT_SaveThroughXslt();
+        ~CT_SaveThroughXslt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SaveThroughXslt& default_instance();
@@ -15503,6 +15723,7 @@ namespace ns_w {
     {
     public:
         CT_RPrDefault();
+        ~CT_RPrDefault();
         bool has_rPr() const;
         CT_RPr* mutable_rPr();
         const CT_RPr& get_rPr() const;
@@ -15520,6 +15741,7 @@ namespace ns_w {
     {
     public:
         CT_PPrDefault();
+        ~CT_PPrDefault();
         bool has_pPr() const;
         CT_PPrGeneral* mutable_pPr();
         const CT_PPrGeneral& get_pPr() const;
@@ -15537,6 +15759,7 @@ namespace ns_w {
     {
     public:
         CT_DocDefaults();
+        ~CT_DocDefaults();
         bool has_rPrDefault() const;
         CT_RPrDefault* mutable_rPrDefault();
         const CT_RPrDefault& get_rPrDefault() const;
@@ -15559,6 +15782,7 @@ namespace ns_w {
     {
     public:
         CT_ColorSchemeMapping();
+        ~CT_ColorSchemeMapping();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ColorSchemeMapping& default_instance();
@@ -15631,6 +15855,7 @@ namespace ns_w {
     {
     public:
         CT_ReadingModeInkLockDown();
+        ~CT_ReadingModeInkLockDown();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ReadingModeInkLockDown& default_instance();
@@ -15663,6 +15888,7 @@ namespace ns_w {
     {
     public:
         CT_WriteProtection();
+        ~CT_WriteProtection();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WriteProtection& default_instance();
@@ -15760,6 +15986,7 @@ namespace ns_w {
     {
     public:
         CT_Settings();
+        ~CT_Settings();
         bool has_writeProtection() const;
         CT_WriteProtection* mutable_writeProtection();
         const CT_WriteProtection& get_writeProtection() const;
@@ -16347,6 +16574,7 @@ namespace ns_w {
     {
     public:
         CT_StyleSort();
+        ~CT_StyleSort();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_StyleSort& default_instance();
@@ -16364,6 +16592,7 @@ namespace ns_w {
     {
     public:
         CT_StylePaneFilter();
+        ~CT_StylePaneFilter();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_StylePaneFilter& default_instance();
@@ -16456,6 +16685,7 @@ namespace ns_w {
     {
     public:
         CT_WebSettings();
+        ~CT_WebSettings();
         bool has_frameset() const;
         CT_Frameset* mutable_frameset();
         const CT_Frameset& get_frameset() const;
@@ -16533,6 +16763,7 @@ namespace ns_w {
     {
     public:
         CT_FrameScrollbar();
+        ~CT_FrameScrollbar();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FrameScrollbar& default_instance();
@@ -16550,6 +16781,7 @@ namespace ns_w {
     {
     public:
         CT_OptimizeForBrowser();
+        ~CT_OptimizeForBrowser();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OptimizeForBrowser& default_instance();
@@ -16572,6 +16804,7 @@ namespace ns_w {
     {
     public:
         CT_Frame();
+        ~CT_Frame();
         bool has_sz() const;
         CT_String* mutable_sz();
         const CT_String& get_sz() const;
@@ -16634,6 +16867,7 @@ namespace ns_w {
     {
     public:
         CT_FrameLayout();
+        ~CT_FrameLayout();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FrameLayout& default_instance();
@@ -16651,6 +16885,7 @@ namespace ns_w {
     {
     public:
         CT_FramesetSplitbar();
+        ~CT_FramesetSplitbar();
         bool has_w() const;
         CT_TwipsMeasure* mutable_w();
         const CT_TwipsMeasure& get_w() const;
@@ -16683,6 +16918,7 @@ namespace ns_w {
     {
     public:
         CT_Frameset();
+        ~CT_Frameset();
         bool has_sz() const;
         CT_String* mutable_sz();
         const CT_String& get_sz() const;
@@ -16735,6 +16971,7 @@ namespace ns_w {
     {
     public:
         CT_NumPicBullet();
+        ~CT_NumPicBullet();
         bool has_pict() const;
         CT_Picture* mutable_pict();
         const CT_Picture& get_pict() const;
@@ -16762,6 +16999,7 @@ namespace ns_w {
     {
     public:
         CT_LevelSuffix();
+        ~CT_LevelSuffix();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LevelSuffix& default_instance();
@@ -16779,6 +17017,7 @@ namespace ns_w {
     {
     public:
         CT_LevelText();
+        ~CT_LevelText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LevelText& default_instance();
@@ -16801,6 +17040,7 @@ namespace ns_w {
     {
     public:
         CT_LvlLegacy();
+        ~CT_LvlLegacy();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LvlLegacy& default_instance();
@@ -16828,6 +17068,7 @@ namespace ns_w {
     {
     public:
         CT_Lvl();
+        ~CT_Lvl();
         bool has_start() const;
         CT_DecimalNumber* mutable_start();
         const CT_DecimalNumber& get_start() const;
@@ -16915,6 +17156,7 @@ namespace ns_w {
     {
     public:
         CT_MultiLevelType();
+        ~CT_MultiLevelType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MultiLevelType& default_instance();
@@ -16932,6 +17174,7 @@ namespace ns_w {
     {
     public:
         CT_AbstractNum();
+        ~CT_AbstractNum();
         bool has_nsid() const;
         CT_LongHexNumber* mutable_nsid();
         const CT_LongHexNumber& get_nsid() const;
@@ -16993,6 +17236,7 @@ namespace ns_w {
     {
     public:
         CT_NumLvl();
+        ~CT_NumLvl();
         bool has_startOverride() const;
         CT_DecimalNumber* mutable_startOverride();
         const CT_DecimalNumber& get_startOverride() const;
@@ -17020,6 +17264,7 @@ namespace ns_w {
     {
     public:
         CT_Num();
+        ~CT_Num();
         bool has_abstractNumId() const;
         CT_DecimalNumber* mutable_abstractNumId();
         const CT_DecimalNumber& get_abstractNumId() const;
@@ -17056,6 +17301,7 @@ namespace ns_w {
     {
     public:
         CT_Numbering();
+        ~CT_Numbering();
         CT_NumPicBullet* add_numPicBullet();
         CT_AbstractNum* add_abstractNum();
         CT_Num* add_num();
@@ -17100,6 +17346,7 @@ namespace ns_w {
     {
     public:
         CT_TblStylePr();
+        ~CT_TblStylePr();
         bool has_pPr() const;
         CT_PPrGeneral* mutable_pPr();
         const CT_PPrGeneral& get_pPr() const;
@@ -17142,6 +17389,7 @@ namespace ns_w {
     {
     public:
         CT_Style();
+        ~CT_Style();
         bool has_name() const;
         CT_String* mutable_name();
         const CT_String& get_name() const;
@@ -17293,6 +17541,7 @@ namespace ns_w {
     {
     public:
         CT_LsdException();
+        ~CT_LsdException();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LsdException& default_instance();
@@ -17335,6 +17584,7 @@ namespace ns_w {
     {
     public:
         CT_LatentStyles();
+        ~CT_LatentStyles();
         CT_LsdException* add_lsdException();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17391,6 +17641,7 @@ namespace ns_w {
     {
     public:
         CT_Styles();
+        ~CT_Styles();
         bool has_docDefaults() const;
         CT_DocDefaults* mutable_docDefaults();
         const CT_DocDefaults& get_docDefaults() const;
@@ -17427,6 +17678,7 @@ namespace ns_w {
     {
     public:
         CT_Panose();
+        ~CT_Panose();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Panose& default_instance();
@@ -17444,6 +17696,7 @@ namespace ns_w {
     {
     public:
         CT_FontFamily();
+        ~CT_FontFamily();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FontFamily& default_instance();
@@ -17461,6 +17714,7 @@ namespace ns_w {
     {
     public:
         CT_Pitch();
+        ~CT_Pitch();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Pitch& default_instance();
@@ -17478,6 +17732,7 @@ namespace ns_w {
     {
     public:
         CT_FontSig();
+        ~CT_FontSig();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FontSig& default_instance();
@@ -17520,6 +17775,7 @@ namespace ns_w {
     {
     public:
         CT_FontRel();
+        ~CT_FontRel();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FontRel& default_instance();
@@ -17547,6 +17803,7 @@ namespace ns_w {
     {
     public:
         CT_Font();
+        ~CT_Font();
         bool has_altName() const;
         CT_String* mutable_altName();
         const CT_String& get_altName() const;
@@ -17619,6 +17876,7 @@ namespace ns_w {
     {
     public:
         CT_FontsList();
+        ~CT_FontsList();
         CT_Font* add_font();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17645,6 +17903,7 @@ namespace ns_w {
     {
     public:
         CT_DivBdr();
+        ~CT_DivBdr();
         bool has_top() const;
         CT_Border* mutable_top();
         const CT_Border& get_top() const;
@@ -17677,6 +17936,7 @@ namespace ns_w {
     {
     public:
         CT_Div();
+        ~CT_Div();
         bool has_blockQuote() const;
         CT_OnOff* mutable_blockQuote();
         const CT_OnOff& get_blockQuote() const;
@@ -17743,6 +18003,7 @@ namespace ns_w {
     {
     public:
         CT_Divs();
+        ~CT_Divs();
         CT_Div* add_div();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17769,6 +18030,7 @@ namespace ns_w {
     {
     public:
         CT_TxbxContent();
+        ~CT_TxbxContent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TxbxContent& default_instance();
@@ -17781,6 +18043,7 @@ namespace ns_w {
     {
     public:
         CT_Body();
+        ~CT_Body();
         CT_CustomXmlBlock* add_customXml();
         CT_SdtBlock* add_sdt();
         CT_P* add_p();
@@ -17986,6 +18249,7 @@ namespace ns_w {
     {
     public:
         CT_ShapeDefaults();
+        ~CT_ShapeDefaults();
         void append_o_any(ns_o::Element* _o_any);
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18000,6 +18264,7 @@ namespace ns_w {
     {
     public:
         CT_Comments();
+        ~CT_Comments();
         CT_Comment* add_comment();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18026,6 +18291,7 @@ namespace ns_w {
     {
     public:
         CT_Footnotes();
+        ~CT_Footnotes();
         CT_FtnEdn* add_footnote();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18052,6 +18318,7 @@ namespace ns_w {
     {
     public:
         CT_Endnotes();
+        ~CT_Endnotes();
         CT_FtnEdn* add_endnote();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18078,6 +18345,7 @@ namespace ns_w {
     {
     public:
         CT_SmartTagType();
+        ~CT_SmartTagType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SmartTagType& default_instance();
@@ -18105,6 +18373,7 @@ namespace ns_w {
     {
     public:
         CT_DocPartBehavior();
+        ~CT_DocPartBehavior();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocPartBehavior& default_instance();
@@ -18122,6 +18391,7 @@ namespace ns_w {
     {
     public:
         CT_DocPartBehaviors();
+        ~CT_DocPartBehaviors();
         bool has_behavior() const;
         CT_DocPartBehavior* mutable_behavior();
         const CT_DocPartBehavior& get_behavior() const;
@@ -18139,6 +18409,7 @@ namespace ns_w {
     {
     public:
         CT_DocPartType();
+        ~CT_DocPartType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocPartType& default_instance();
@@ -18156,6 +18427,7 @@ namespace ns_w {
     {
     public:
         CT_DocPartTypes();
+        ~CT_DocPartTypes();
         bool has_type() const;
         CT_DocPartType* mutable_type();
         const CT_DocPartType& get_type() const;
@@ -18178,6 +18450,7 @@ namespace ns_w {
     {
     public:
         CT_DocPartGallery();
+        ~CT_DocPartGallery();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocPartGallery& default_instance();
@@ -18195,6 +18468,7 @@ namespace ns_w {
     {
     public:
         CT_DocPartCategory();
+        ~CT_DocPartCategory();
         bool has_name() const;
         CT_String* mutable_name();
         const CT_String& get_name() const;
@@ -18217,6 +18491,7 @@ namespace ns_w {
     {
     public:
         CT_DocPartName();
+        ~CT_DocPartName();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DocPartName& default_instance();
@@ -18239,6 +18514,7 @@ namespace ns_w {
     {
     public:
         CT_DocPartPr();
+        ~CT_DocPartPr();
         bool has_name() const;
         CT_DocPartName* mutable_name();
         const CT_DocPartName& get_name() const;
@@ -18286,6 +18562,7 @@ namespace ns_w {
     {
     public:
         CT_DocPart();
+        ~CT_DocPart();
         bool has_docPartPr() const;
         CT_DocPartPr* mutable_docPartPr();
         const CT_DocPartPr& get_docPartPr() const;
@@ -18308,6 +18585,7 @@ namespace ns_w {
     {
     public:
         CT_DocParts();
+        ~CT_DocParts();
         bool has_docPart() const;
         CT_DocPart* mutable_docPart();
         const CT_DocPart& get_docPart() const;
@@ -18325,6 +18603,7 @@ namespace ns_w {
     {
     public:
         CT_Caption();
+        ~CT_Caption();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Caption& default_instance();
@@ -18372,6 +18651,7 @@ namespace ns_w {
     {
     public:
         CT_AutoCaption();
+        ~CT_AutoCaption();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AutoCaption& default_instance();
@@ -18394,6 +18674,7 @@ namespace ns_w {
     {
     public:
         CT_AutoCaptions();
+        ~CT_AutoCaptions();
         CT_AutoCaption* add_autoCaption();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18420,6 +18701,7 @@ namespace ns_w {
     {
     public:
         CT_Captions();
+        ~CT_Captions();
         CT_Caption* add_caption();
         CT_AutoCaptions* add_autoCaptions();
         void clear();
@@ -18452,6 +18734,7 @@ namespace ns_w {
     {
     public:
         CT_DocumentBase();
+        ~CT_DocumentBase();
         bool has_background() const;
         CT_Background* mutable_background();
         const CT_Background& get_background() const;
@@ -18469,6 +18752,7 @@ namespace ns_w {
     {
     public:
         CT_Document();
+        ~CT_Document();
         bool has_background() const;
         CT_Background* mutable_background();
         const CT_Background& get_background() const;
@@ -18496,6 +18780,7 @@ namespace ns_w {
     {
     public:
         CT_GlossaryDocument();
+        ~CT_GlossaryDocument();
         bool has_background() const;
         CT_Background* mutable_background();
         const CT_Background& get_background() const;
@@ -18518,6 +18803,7 @@ namespace ns_w {
     {
     public:
         recipients_element();
+        ~recipients_element();
         CT_RecipientData* add_recipientData();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -18544,6 +18830,7 @@ namespace ns_w {
     {
     public:
         txbxContent_element();
+        ~txbxContent_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const txbxContent_element& default_instance();
@@ -18556,6 +18843,7 @@ namespace ns_w {
     {
     public:
         comments_element();
+        ~comments_element();
         CT_Comment* add_comment();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -18582,6 +18870,7 @@ namespace ns_w {
     {
     public:
         footnotes_element();
+        ~footnotes_element();
         CT_FtnEdn* add_footnote();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -18608,6 +18897,7 @@ namespace ns_w {
     {
     public:
         endnotes_element();
+        ~endnotes_element();
         CT_FtnEdn* add_endnote();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -18634,6 +18924,7 @@ namespace ns_w {
     {
     public:
         hdr_element();
+        ~hdr_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const hdr_element& default_instance();
@@ -18646,6 +18937,7 @@ namespace ns_w {
     {
     public:
         ftr_element();
+        ~ftr_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const ftr_element& default_instance();
@@ -18658,6 +18950,7 @@ namespace ns_w {
     {
     public:
         settings_element();
+        ~settings_element();
         bool has_writeProtection() const;
         CT_WriteProtection* mutable_writeProtection();
         const CT_WriteProtection& get_writeProtection() const;
@@ -19245,6 +19538,7 @@ namespace ns_w {
     {
     public:
         webSettings_element();
+        ~webSettings_element();
         bool has_frameset() const;
         CT_Frameset* mutable_frameset();
         const CT_Frameset& get_frameset() const;
@@ -19322,6 +19616,7 @@ namespace ns_w {
     {
     public:
         fonts_element();
+        ~fonts_element();
         CT_Font* add_font();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -19348,6 +19643,7 @@ namespace ns_w {
     {
     public:
         numbering_element();
+        ~numbering_element();
         CT_NumPicBullet* add_numPicBullet();
         CT_AbstractNum* add_abstractNum();
         CT_Num* add_num();
@@ -19392,6 +19688,7 @@ namespace ns_w {
     {
     public:
         styles_element();
+        ~styles_element();
         bool has_docDefaults() const;
         CT_DocDefaults* mutable_docDefaults();
         const CT_DocDefaults& get_docDefaults() const;
@@ -19428,6 +19725,7 @@ namespace ns_w {
     {
     public:
         document_element();
+        ~document_element();
         bool has_background() const;
         CT_Background* mutable_background();
         const CT_Background& get_background() const;
@@ -19455,6 +19753,7 @@ namespace ns_w {
     {
     public:
         glossaryDocument_element();
+        ~glossaryDocument_element();
         bool has_background() const;
         CT_Background* mutable_background();
         const CT_Background& get_background() const;

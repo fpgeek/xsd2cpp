@@ -530,7 +530,7 @@ return %s::%s[%s];
 """
 if (%s)
 {
-_outStream << _attrName << "=\\\\"" << %s() << "\\\\"";
+_outStream << " " << _attrName << "=\\\\"" << %s() << "\\\\"";
 }
 """ % (hasVarName, toStringMethod.name)
     makeToXmlAttrMethod(toXmlMethodBody, cppClass)

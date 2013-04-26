@@ -33,6 +33,7 @@ namespace ns_pvml {
     {
     public:
         CT_Empty();
+        ~CT_Empty();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Empty& default_instance();
@@ -45,6 +46,7 @@ namespace ns_pvml {
     {
     public:
         CT_Rel();
+        ~CT_Rel();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Rel& default_instance();
@@ -62,6 +64,7 @@ namespace ns_pvml {
     {
     public:
         iscomment_element();
+        ~iscomment_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const iscomment_element& default_instance();
@@ -74,6 +77,7 @@ namespace ns_pvml {
     {
     public:
         textdata_element();
+        ~textdata_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const textdata_element& default_instance();

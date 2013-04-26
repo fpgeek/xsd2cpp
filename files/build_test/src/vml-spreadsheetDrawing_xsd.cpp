@@ -111,7 +111,7 @@ ST_CF* ST_CF::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -154,6 +154,9 @@ ST_ObjectType* ST_ObjectType::default_instance_ = NULL;
     m_ObjectType_attr(NULL)
     {
     }
+    CT_ClientData::~CT_ClientData()
+{
+    clear();    }
     ns_s::ST_TrueFalseBlank* CT_ClientData::add_MoveWithCells()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -29289,6 +29292,9 @@ CT_ClientData* CT_ClientData::default_instance_ = NULL;
     m_ObjectType_attr(NULL)
     {
     }
+    ClientData_element::~ClientData_element()
+{
+    clear();    }
     ns_s::ST_TrueFalseBlank* ClientData_element::add_MoveWithCells()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();

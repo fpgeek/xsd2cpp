@@ -211,9 +211,12 @@ def _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass, toXmlMethodB
             CPP_FUNC.complexType_repeated(elemCont.repeated_choice, cppClass, repeatedIdx)
             repeatedIdx += 1
 
+    cppClass.destructor.body = 'clear();'
+
     clearMethodBodyStr = CPP_FUNC.getClaerMethodBodyStrFromAttrs(pbComplexType.attribute)
     if len(cppClass.inner_class) > 0:
         clearMethodBodyStr += CPP_FUNC.getClearMethodBodyStrFromElemCont(pbComplexType.element_container)
+
     CPP_FUNC.makeClearMethod(clearMethodBodyStr, cppClass)
 
     toXmlMethodBodyFunc(pbSchema, pbComplexType, cppClass)

@@ -3220,6 +3220,7 @@ namespace ns_a {
     {
     public:
         CT_AudioFile();
+        ~CT_AudioFile();
         bool has_extLst() const;
         CT_OfficeArtExtensionList* mutable_extLst();
         const CT_OfficeArtExtensionList& get_extLst() const;
@@ -3247,6 +3248,7 @@ namespace ns_a {
     {
     public:
         CT_VideoFile();
+        ~CT_VideoFile();
         bool has_extLst() const;
         CT_OfficeArtExtensionList* mutable_extLst();
         const CT_OfficeArtExtensionList& get_extLst() const;
@@ -3274,6 +3276,7 @@ namespace ns_a {
     {
     public:
         CT_QuickTimeFile();
+        ~CT_QuickTimeFile();
         bool has_extLst() const;
         CT_OfficeArtExtensionList* mutable_extLst();
         const CT_OfficeArtExtensionList& get_extLst() const;
@@ -3296,6 +3299,7 @@ namespace ns_a {
     {
     public:
         CT_AudioCDTime();
+        ~CT_AudioCDTime();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AudioCDTime& default_instance();
@@ -3318,6 +3322,7 @@ namespace ns_a {
     {
     public:
         CT_AudioCD();
+        ~CT_AudioCD();
         bool has_st() const;
         CT_AudioCDTime* mutable_st();
         const CT_AudioCDTime& get_st() const;
@@ -3345,6 +3350,7 @@ namespace ns_a {
     {
     public:
         CT_ColorScheme();
+        ~CT_ColorScheme();
         bool has_dk1() const;
         CT_Color* mutable_dk1();
         const CT_Color& get_dk1() const;
@@ -3427,6 +3433,7 @@ namespace ns_a {
     {
     public:
         CT_CustomColor();
+        ~CT_CustomColor();
         bool has_scrgbClr() const;
         CT_ScRgbColor* mutable_scrgbClr();
         const CT_ScRgbColor& get_scrgbClr() const;
@@ -3474,6 +3481,7 @@ namespace ns_a {
     {
     public:
         CT_SupplementalFont();
+        ~CT_SupplementalFont();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SupplementalFont& default_instance();
@@ -3496,6 +3504,7 @@ namespace ns_a {
     {
     public:
         CT_CustomColorList();
+        ~CT_CustomColorList();
         CT_CustomColor* add_custClr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -3522,6 +3531,7 @@ namespace ns_a {
     {
     public:
         CT_FontCollection();
+        ~CT_FontCollection();
         bool has_latin() const;
         CT_TextFont* mutable_latin();
         const CT_TextFont& get_latin() const;
@@ -3569,6 +3579,7 @@ namespace ns_a {
     {
     public:
         CT_EffectStyleItem();
+        ~CT_EffectStyleItem();
         bool has_effectLst() const;
         CT_EffectList* mutable_effectLst();
         const CT_EffectList& get_effectLst() const;
@@ -3601,6 +3612,7 @@ namespace ns_a {
     {
     public:
         CT_FontScheme();
+        ~CT_FontScheme();
         bool has_majorFont() const;
         CT_FontCollection* mutable_majorFont();
         const CT_FontCollection& get_majorFont() const;
@@ -3633,6 +3645,7 @@ namespace ns_a {
     {
     public:
         CT_FillStyleList();
+        ~CT_FillStyleList();
         CT_NoFillProperties* add_noFill();
         CT_SolidColorFillProperties* add_solidFill();
         CT_GradientFillProperties* add_gradFill();
@@ -3689,6 +3702,7 @@ namespace ns_a {
     {
     public:
         CT_LineStyleList();
+        ~CT_LineStyleList();
         CT_LineProperties* add_ln();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -3715,6 +3729,7 @@ namespace ns_a {
     {
     public:
         CT_EffectStyleList();
+        ~CT_EffectStyleList();
         CT_EffectStyleItem* add_effectStyle();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -3741,6 +3756,7 @@ namespace ns_a {
     {
     public:
         CT_BackgroundFillStyleList();
+        ~CT_BackgroundFillStyleList();
         CT_NoFillProperties* add_noFill();
         CT_SolidColorFillProperties* add_solidFill();
         CT_GradientFillProperties* add_gradFill();
@@ -3797,6 +3813,7 @@ namespace ns_a {
     {
     public:
         CT_StyleMatrix();
+        ~CT_StyleMatrix();
         bool has_fillStyleLst() const;
         CT_FillStyleList* mutable_fillStyleLst();
         const CT_FillStyleList& get_fillStyleLst() const;
@@ -3834,6 +3851,7 @@ namespace ns_a {
     {
     public:
         CT_BaseStyles();
+        ~CT_BaseStyles();
         bool has_clrScheme() const;
         CT_ColorScheme* mutable_clrScheme();
         const CT_ColorScheme& get_clrScheme() const;
@@ -3866,6 +3884,7 @@ namespace ns_a {
     {
     public:
         CT_OfficeArtExtension();
+        ~CT_OfficeArtExtension();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OfficeArtExtension& default_instance();
@@ -3885,6 +3904,7 @@ namespace ns_a {
     {
     public:
         CT_Angle();
+        ~CT_Angle();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Angle& default_instance();
@@ -3902,6 +3922,7 @@ namespace ns_a {
     {
     public:
         CT_PositiveFixedAngle();
+        ~CT_PositiveFixedAngle();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PositiveFixedAngle& default_instance();
@@ -3919,6 +3940,7 @@ namespace ns_a {
     {
     public:
         CT_Percentage();
+        ~CT_Percentage();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Percentage& default_instance();
@@ -3936,6 +3958,7 @@ namespace ns_a {
     {
     public:
         CT_PositivePercentage();
+        ~CT_PositivePercentage();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PositivePercentage& default_instance();
@@ -3953,6 +3976,7 @@ namespace ns_a {
     {
     public:
         CT_FixedPercentage();
+        ~CT_FixedPercentage();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FixedPercentage& default_instance();
@@ -3970,6 +3994,7 @@ namespace ns_a {
     {
     public:
         CT_PositiveFixedPercentage();
+        ~CT_PositiveFixedPercentage();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PositiveFixedPercentage& default_instance();
@@ -3987,6 +4012,7 @@ namespace ns_a {
     {
     public:
         CT_Ratio();
+        ~CT_Ratio();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Ratio& default_instance();
@@ -4009,6 +4035,7 @@ namespace ns_a {
     {
     public:
         CT_Point2D();
+        ~CT_Point2D();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Point2D& default_instance();
@@ -4031,6 +4058,7 @@ namespace ns_a {
     {
     public:
         CT_PositiveSize2D();
+        ~CT_PositiveSize2D();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PositiveSize2D& default_instance();
@@ -4053,6 +4081,7 @@ namespace ns_a {
     {
     public:
         CT_ComplementTransform();
+        ~CT_ComplementTransform();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ComplementTransform& default_instance();
@@ -4065,6 +4094,7 @@ namespace ns_a {
     {
     public:
         CT_InverseTransform();
+        ~CT_InverseTransform();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_InverseTransform& default_instance();
@@ -4077,6 +4107,7 @@ namespace ns_a {
     {
     public:
         CT_GrayscaleTransform();
+        ~CT_GrayscaleTransform();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_GrayscaleTransform& default_instance();
@@ -4089,6 +4120,7 @@ namespace ns_a {
     {
     public:
         CT_GammaTransform();
+        ~CT_GammaTransform();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_GammaTransform& default_instance();
@@ -4101,6 +4133,7 @@ namespace ns_a {
     {
     public:
         CT_InverseGammaTransform();
+        ~CT_InverseGammaTransform();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_InverseGammaTransform& default_instance();
@@ -4113,6 +4146,7 @@ namespace ns_a {
     {
     public:
         CT_ScRgbColor();
+        ~CT_ScRgbColor();
         CT_PositiveFixedPercentage* add_tint();
         CT_PositiveFixedPercentage* add_shade();
         CT_ComplementTransform* add_comp();
@@ -4316,6 +4350,7 @@ namespace ns_a {
     {
     public:
         CT_SRgbColor();
+        ~CT_SRgbColor();
         CT_PositiveFixedPercentage* add_tint();
         CT_PositiveFixedPercentage* add_shade();
         CT_ComplementTransform* add_comp();
@@ -4509,6 +4544,7 @@ namespace ns_a {
     {
     public:
         CT_HslColor();
+        ~CT_HslColor();
         CT_PositiveFixedPercentage* add_tint();
         CT_PositiveFixedPercentage* add_shade();
         CT_ComplementTransform* add_comp();
@@ -4712,6 +4748,7 @@ namespace ns_a {
     {
     public:
         CT_SystemColor();
+        ~CT_SystemColor();
         CT_PositiveFixedPercentage* add_tint();
         CT_PositiveFixedPercentage* add_shade();
         CT_ComplementTransform* add_comp();
@@ -4910,6 +4947,7 @@ namespace ns_a {
     {
     public:
         CT_SchemeColor();
+        ~CT_SchemeColor();
         CT_PositiveFixedPercentage* add_tint();
         CT_PositiveFixedPercentage* add_shade();
         CT_ComplementTransform* add_comp();
@@ -5103,6 +5141,7 @@ namespace ns_a {
     {
     public:
         CT_PresetColor();
+        ~CT_PresetColor();
         CT_PositiveFixedPercentage* add_tint();
         CT_PositiveFixedPercentage* add_shade();
         CT_ComplementTransform* add_comp();
@@ -5296,6 +5335,7 @@ namespace ns_a {
     {
     public:
         CT_OfficeArtExtensionList();
+        ~CT_OfficeArtExtensionList();
         CT_OfficeArtExtension* add_ext();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -5322,6 +5362,7 @@ namespace ns_a {
     {
     public:
         CT_Scale2D();
+        ~CT_Scale2D();
         bool has_sx() const;
         CT_Ratio* mutable_sx();
         const CT_Ratio& get_sx() const;
@@ -5344,6 +5385,7 @@ namespace ns_a {
     {
     public:
         CT_Transform2D();
+        ~CT_Transform2D();
         bool has_off() const;
         CT_Point2D* mutable_off();
         const CT_Point2D& get_off() const;
@@ -5381,6 +5423,7 @@ namespace ns_a {
     {
     public:
         CT_GroupTransform2D();
+        ~CT_GroupTransform2D();
         bool has_off() const;
         CT_Point2D* mutable_off();
         const CT_Point2D& get_off() const;
@@ -5428,6 +5471,7 @@ namespace ns_a {
     {
     public:
         CT_Point3D();
+        ~CT_Point3D();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Point3D& default_instance();
@@ -5455,6 +5499,7 @@ namespace ns_a {
     {
     public:
         CT_Vector3D();
+        ~CT_Vector3D();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Vector3D& default_instance();
@@ -5482,6 +5527,7 @@ namespace ns_a {
     {
     public:
         CT_SphereCoords();
+        ~CT_SphereCoords();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SphereCoords& default_instance();
@@ -5509,6 +5555,7 @@ namespace ns_a {
     {
     public:
         CT_RelativeRect();
+        ~CT_RelativeRect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RelativeRect& default_instance();
@@ -5541,6 +5588,7 @@ namespace ns_a {
     {
     public:
         CT_Color();
+        ~CT_Color();
         bool has_scrgbClr() const;
         CT_ScRgbColor* mutable_scrgbClr();
         const CT_ScRgbColor& get_scrgbClr() const;
@@ -5583,6 +5631,7 @@ namespace ns_a {
     {
     public:
         CT_ColorMRU();
+        ~CT_ColorMRU();
         CT_ScRgbColor* add_scrgbClr();
         CT_SRgbColor* add_srgbClr();
         CT_HslColor* add_hslClr();
@@ -5639,6 +5688,7 @@ namespace ns_a {
     {
     public:
         CT_EmbeddedWAVAudioFile();
+        ~CT_EmbeddedWAVAudioFile();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_EmbeddedWAVAudioFile& default_instance();
@@ -5661,6 +5711,7 @@ namespace ns_a {
     {
     public:
         CT_Hyperlink();
+        ~CT_Hyperlink();
         bool has_snd() const;
         CT_EmbeddedWAVAudioFile* mutable_snd();
         const CT_EmbeddedWAVAudioFile& get_snd() const;
@@ -5723,6 +5774,7 @@ namespace ns_a {
     {
     public:
         CT_ConnectorLocking();
+        ~CT_ConnectorLocking();
         bool has_extLst() const;
         CT_OfficeArtExtensionList* mutable_extLst();
         const CT_OfficeArtExtensionList& get_extLst() const;
@@ -5790,6 +5842,7 @@ namespace ns_a {
     {
     public:
         CT_ShapeLocking();
+        ~CT_ShapeLocking();
         bool has_extLst() const;
         CT_OfficeArtExtensionList* mutable_extLst();
         const CT_OfficeArtExtensionList& get_extLst() const;
@@ -5862,6 +5915,7 @@ namespace ns_a {
     {
     public:
         CT_PictureLocking();
+        ~CT_PictureLocking();
         bool has_extLst() const;
         CT_OfficeArtExtensionList* mutable_extLst();
         const CT_OfficeArtExtensionList& get_extLst() const;
@@ -5934,6 +5988,7 @@ namespace ns_a {
     {
     public:
         CT_GroupLocking();
+        ~CT_GroupLocking();
         bool has_extLst() const;
         CT_OfficeArtExtensionList* mutable_extLst();
         const CT_OfficeArtExtensionList& get_extLst() const;
@@ -5986,6 +6041,7 @@ namespace ns_a {
     {
     public:
         CT_GraphicalObjectFrameLocking();
+        ~CT_GraphicalObjectFrameLocking();
         bool has_extLst() const;
         CT_OfficeArtExtensionList* mutable_extLst();
         const CT_OfficeArtExtensionList& get_extLst() const;
@@ -6033,6 +6089,7 @@ namespace ns_a {
     {
     public:
         CT_ContentPartLocking();
+        ~CT_ContentPartLocking();
         bool has_extLst() const;
         CT_OfficeArtExtensionList* mutable_extLst();
         const CT_OfficeArtExtensionList& get_extLst() const;
@@ -6100,6 +6157,7 @@ namespace ns_a {
     {
     public:
         CT_NonVisualDrawingProps();
+        ~CT_NonVisualDrawingProps();
         bool has_hlinkClick() const;
         CT_Hyperlink* mutable_hlinkClick();
         const CT_Hyperlink& get_hlinkClick() const;
@@ -6152,6 +6210,7 @@ namespace ns_a {
     {
     public:
         CT_NonVisualDrawingShapeProps();
+        ~CT_NonVisualDrawingShapeProps();
         bool has_spLocks() const;
         CT_ShapeLocking* mutable_spLocks();
         const CT_ShapeLocking& get_spLocks() const;
@@ -6179,6 +6238,7 @@ namespace ns_a {
     {
     public:
         CT_NonVisualConnectorProperties();
+        ~CT_NonVisualConnectorProperties();
         bool has_cxnSpLocks() const;
         CT_ConnectorLocking* mutable_cxnSpLocks();
         const CT_ConnectorLocking& get_cxnSpLocks() const;
@@ -6211,6 +6271,7 @@ namespace ns_a {
     {
     public:
         CT_NonVisualPictureProperties();
+        ~CT_NonVisualPictureProperties();
         bool has_picLocks() const;
         CT_PictureLocking* mutable_picLocks();
         const CT_PictureLocking& get_picLocks() const;
@@ -6238,6 +6299,7 @@ namespace ns_a {
     {
     public:
         CT_NonVisualGroupDrawingShapeProps();
+        ~CT_NonVisualGroupDrawingShapeProps();
         bool has_grpSpLocks() const;
         CT_GroupLocking* mutable_grpSpLocks();
         const CT_GroupLocking& get_grpSpLocks() const;
@@ -6260,6 +6322,7 @@ namespace ns_a {
     {
     public:
         CT_NonVisualGraphicFrameProperties();
+        ~CT_NonVisualGraphicFrameProperties();
         bool has_graphicFrameLocks() const;
         CT_GraphicalObjectFrameLocking* mutable_graphicFrameLocks();
         const CT_GraphicalObjectFrameLocking& get_graphicFrameLocks() const;
@@ -6282,6 +6345,7 @@ namespace ns_a {
     {
     public:
         CT_NonVisualContentPartProperties();
+        ~CT_NonVisualContentPartProperties();
         bool has_cpLocks() const;
         CT_ContentPartLocking* mutable_cpLocks();
         const CT_ContentPartLocking& get_cpLocks() const;
@@ -6309,6 +6373,7 @@ namespace ns_a {
     {
     public:
         CT_GraphicalObjectData();
+        ~CT_GraphicalObjectData();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_GraphicalObjectData& default_instance();
@@ -6328,6 +6393,7 @@ namespace ns_a {
     {
     public:
         CT_GraphicalObject();
+        ~CT_GraphicalObject();
         bool has_graphicData() const;
         CT_GraphicalObjectData* mutable_graphicData();
         const CT_GraphicalObjectData& get_graphicData() const;
@@ -6345,6 +6411,7 @@ namespace ns_a {
     {
     public:
         CT_AnimationDgmElement();
+        ~CT_AnimationDgmElement();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AnimationDgmElement& default_instance();
@@ -6367,6 +6434,7 @@ namespace ns_a {
     {
     public:
         CT_AnimationChartElement();
+        ~CT_AnimationChartElement();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AnimationChartElement& default_instance();
@@ -6394,6 +6462,7 @@ namespace ns_a {
     {
     public:
         CT_AnimationElementChoice();
+        ~CT_AnimationElementChoice();
         bool has_dgm() const;
         CT_AnimationDgmElement* mutable_dgm();
         const CT_AnimationDgmElement& get_dgm() const;
@@ -6416,6 +6485,7 @@ namespace ns_a {
     {
     public:
         CT_AnimationDgmBuildProperties();
+        ~CT_AnimationDgmBuildProperties();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AnimationDgmBuildProperties& default_instance();
@@ -6438,6 +6508,7 @@ namespace ns_a {
     {
     public:
         CT_AnimationChartBuildProperties();
+        ~CT_AnimationChartBuildProperties();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AnimationChartBuildProperties& default_instance();
@@ -6460,6 +6531,7 @@ namespace ns_a {
     {
     public:
         CT_AnimationGraphicalObjectBuildProperties();
+        ~CT_AnimationGraphicalObjectBuildProperties();
         bool has_bldDgm() const;
         CT_AnimationDgmBuildProperties* mutable_bldDgm();
         const CT_AnimationDgmBuildProperties& get_bldDgm() const;
@@ -6482,6 +6554,7 @@ namespace ns_a {
     {
     public:
         CT_BackgrCT_TextEffectoundFormatting();
+        ~CT_BackgrCT_TextEffectoundFormatting();
         bool has_noFill() const;
         CT_NoFillProperties* mutable_noFill();
         const CT_NoFillProperties& get_noFill() const;
@@ -6534,6 +6607,7 @@ namespace ns_a {
     {
     public:
         CT_WholeE2oFormatting();
+        ~CT_WholeE2oFormatting();
         bool has_ln() const;
         CT_LineProperties* mutable_ln();
         const CT_LineProperties& get_ln() const;
@@ -6561,6 +6635,7 @@ namespace ns_a {
     {
     public:
         CT_GvmlUseShapeRectangle();
+        ~CT_GvmlUseShapeRectangle();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_GvmlUseShapeRectangle& default_instance();
@@ -6573,6 +6648,7 @@ namespace ns_a {
     {
     public:
         CT_GvmlTextShape();
+        ~CT_GvmlTextShape();
         bool has_txBody() const;
         CT_TextBody* mutable_txBody();
         const CT_TextBody& get_txBody() const;
@@ -6605,6 +6681,7 @@ namespace ns_a {
     {
     public:
         CT_GvmlShapeNonVisual();
+        ~CT_GvmlShapeNonVisual();
         bool has_cNvPr() const;
         CT_NonVisualDrawingProps* mutable_cNvPr();
         const CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -6627,6 +6704,7 @@ namespace ns_a {
     {
     public:
         CT_GvmlShape();
+        ~CT_GvmlShape();
         bool has_nvSpPr() const;
         CT_GvmlShapeNonVisual* mutable_nvSpPr();
         const CT_GvmlShapeNonVisual& get_nvSpPr() const;
@@ -6664,6 +6742,7 @@ namespace ns_a {
     {
     public:
         CT_GvmlConnectorNonVisual();
+        ~CT_GvmlConnectorNonVisual();
         bool has_cNvPr() const;
         CT_NonVisualDrawingProps* mutable_cNvPr();
         const CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -6686,6 +6765,7 @@ namespace ns_a {
     {
     public:
         CT_GvmlConnector();
+        ~CT_GvmlConnector();
         bool has_nvCxnSpPr() const;
         CT_GvmlConnectorNonVisual* mutable_nvCxnSpPr();
         const CT_GvmlConnectorNonVisual& get_nvCxnSpPr() const;
@@ -6718,6 +6798,7 @@ namespace ns_a {
     {
     public:
         CT_GvmlPictureNonVisual();
+        ~CT_GvmlPictureNonVisual();
         bool has_cNvPr() const;
         CT_NonVisualDrawingProps* mutable_cNvPr();
         const CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -6740,6 +6821,7 @@ namespace ns_a {
     {
     public:
         CT_GvmlPicture();
+        ~CT_GvmlPicture();
         bool has_nvPicPr() const;
         CT_GvmlPictureNonVisual* mutable_nvPicPr();
         const CT_GvmlPictureNonVisual& get_nvPicPr() const;
@@ -6777,6 +6859,7 @@ namespace ns_a {
     {
     public:
         CT_GvmlGraphicFrameNonVisual();
+        ~CT_GvmlGraphicFrameNonVisual();
         bool has_cNvPr() const;
         CT_NonVisualDrawingProps* mutable_cNvPr();
         const CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -6799,6 +6882,7 @@ namespace ns_a {
     {
     public:
         CT_GvmlGraphicalObjectFrame();
+        ~CT_GvmlGraphicalObjectFrame();
         bool has_nvGraphicFramePr() const;
         CT_GvmlGraphicFrameNonVisual* mutable_nvGraphicFramePr();
         const CT_GvmlGraphicFrameNonVisual& get_nvGraphicFramePr() const;
@@ -6831,6 +6915,7 @@ namespace ns_a {
     {
     public:
         CT_GvmlGroupShapeNonVisual();
+        ~CT_GvmlGroupShapeNonVisual();
         bool has_cNvPr() const;
         CT_NonVisualDrawingProps* mutable_cNvPr();
         const CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -6853,6 +6938,7 @@ namespace ns_a {
     {
     public:
         CT_GvmlGroupShape();
+        ~CT_GvmlGroupShape();
         bool has_nvGrpSpPr() const;
         CT_GvmlGroupShapeNonVisual* mutable_nvGrpSpPr();
         const CT_GvmlGroupShapeNonVisual& get_nvGrpSpPr() const;
@@ -6924,6 +7010,7 @@ namespace ns_a {
     {
     public:
         CT_Camera();
+        ~CT_Camera();
         bool has_rot() const;
         CT_SphereCoords* mutable_rot();
         const CT_SphereCoords& get_rot() const;
@@ -6956,6 +7043,7 @@ namespace ns_a {
     {
     public:
         CT_LightRig();
+        ~CT_LightRig();
         bool has_rot() const;
         CT_SphereCoords* mutable_rot();
         const CT_SphereCoords& get_rot() const;
@@ -6983,6 +7071,7 @@ namespace ns_a {
     {
     public:
         CT_Scene3D();
+        ~CT_Scene3D();
         bool has_camera() const;
         CT_Camera* mutable_camera();
         const CT_Camera& get_camera() const;
@@ -7015,6 +7104,7 @@ namespace ns_a {
     {
     public:
         CT_Backdrop();
+        ~CT_Backdrop();
         bool has_anchor() const;
         CT_Point3D* mutable_anchor();
         const CT_Point3D& get_anchor() const;
@@ -7047,6 +7137,7 @@ namespace ns_a {
     {
     public:
         CT_Bevel();
+        ~CT_Bevel();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Bevel& default_instance();
@@ -7074,6 +7165,7 @@ namespace ns_a {
     {
     public:
         CT_Shape3D();
+        ~CT_Shape3D();
         bool has_bevelT() const;
         CT_Bevel* mutable_bevelT();
         const CT_Bevel& get_bevelT() const;
@@ -7131,6 +7223,7 @@ namespace ns_a {
     {
     public:
         CT_FlatText();
+        ~CT_FlatText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FlatText& default_instance();
@@ -7148,6 +7241,7 @@ namespace ns_a {
     {
     public:
         CT_AlphaBiLevelEffect();
+        ~CT_AlphaBiLevelEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AlphaBiLevelEffect& default_instance();
@@ -7165,6 +7259,7 @@ namespace ns_a {
     {
     public:
         CT_AlphaCeilingEffect();
+        ~CT_AlphaCeilingEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AlphaCeilingEffect& default_instance();
@@ -7177,6 +7272,7 @@ namespace ns_a {
     {
     public:
         CT_AlphaFloorEffect();
+        ~CT_AlphaFloorEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AlphaFloorEffect& default_instance();
@@ -7189,6 +7285,7 @@ namespace ns_a {
     {
     public:
         CT_AlphaInverseEffect();
+        ~CT_AlphaInverseEffect();
         bool has_scrgbClr() const;
         CT_ScRgbColor* mutable_scrgbClr();
         const CT_ScRgbColor& get_scrgbClr() const;
@@ -7231,6 +7328,7 @@ namespace ns_a {
     {
     public:
         CT_AlphaModulateFixedEffect();
+        ~CT_AlphaModulateFixedEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AlphaModulateFixedEffect& default_instance();
@@ -7248,6 +7346,7 @@ namespace ns_a {
     {
     public:
         CT_AlphaOutsetEffect();
+        ~CT_AlphaOutsetEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AlphaOutsetEffect& default_instance();
@@ -7265,6 +7364,7 @@ namespace ns_a {
     {
     public:
         CT_AlphaReplaceEffect();
+        ~CT_AlphaReplaceEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AlphaReplaceEffect& default_instance();
@@ -7282,6 +7382,7 @@ namespace ns_a {
     {
     public:
         CT_BiLevelEffect();
+        ~CT_BiLevelEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BiLevelEffect& default_instance();
@@ -7299,6 +7400,7 @@ namespace ns_a {
     {
     public:
         CT_BlurEffect();
+        ~CT_BlurEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BlurEffect& default_instance();
@@ -7321,6 +7423,7 @@ namespace ns_a {
     {
     public:
         CT_ColorChangeEffect();
+        ~CT_ColorChangeEffect();
         bool has_clrFrom() const;
         CT_Color* mutable_clrFrom();
         const CT_Color& get_clrFrom() const;
@@ -7348,6 +7451,7 @@ namespace ns_a {
     {
     public:
         CT_ColorReplaceEffect();
+        ~CT_ColorReplaceEffect();
         bool has_scrgbClr() const;
         CT_ScRgbColor* mutable_scrgbClr();
         const CT_ScRgbColor& get_scrgbClr() const;
@@ -7390,6 +7494,7 @@ namespace ns_a {
     {
     public:
         CT_DuotoneEffect();
+        ~CT_DuotoneEffect();
         CT_ScRgbColor* add_scrgbClr();
         CT_SRgbColor* add_srgbClr();
         CT_HslColor* add_hslClr();
@@ -7446,6 +7551,7 @@ namespace ns_a {
     {
     public:
         CT_GlowEffect();
+        ~CT_GlowEffect();
         bool has_scrgbClr() const;
         CT_ScRgbColor* mutable_scrgbClr();
         const CT_ScRgbColor& get_scrgbClr() const;
@@ -7493,6 +7599,7 @@ namespace ns_a {
     {
     public:
         CT_GrayscaleEffect();
+        ~CT_GrayscaleEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_GrayscaleEffect& default_instance();
@@ -7505,6 +7612,7 @@ namespace ns_a {
     {
     public:
         CT_HSLEffect();
+        ~CT_HSLEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_HSLEffect& default_instance();
@@ -7532,6 +7640,7 @@ namespace ns_a {
     {
     public:
         CT_InnerShadowEffect();
+        ~CT_InnerShadowEffect();
         bool has_scrgbClr() const;
         CT_ScRgbColor* mutable_scrgbClr();
         const CT_ScRgbColor& get_scrgbClr() const;
@@ -7589,6 +7698,7 @@ namespace ns_a {
     {
     public:
         CT_LuminanceEffect();
+        ~CT_LuminanceEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LuminanceEffect& default_instance();
@@ -7611,6 +7721,7 @@ namespace ns_a {
     {
     public:
         CT_OuterShadowEffect();
+        ~CT_OuterShadowEffect();
         bool has_scrgbClr() const;
         CT_ScRgbColor* mutable_scrgbClr();
         const CT_ScRgbColor& get_scrgbClr() const;
@@ -7698,6 +7809,7 @@ namespace ns_a {
     {
     public:
         CT_PresetShadowEffect();
+        ~CT_PresetShadowEffect();
         bool has_scrgbClr() const;
         CT_ScRgbColor* mutable_scrgbClr();
         const CT_ScRgbColor& get_scrgbClr() const;
@@ -7755,6 +7867,7 @@ namespace ns_a {
     {
     public:
         CT_ReflectionEffect();
+        ~CT_ReflectionEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ReflectionEffect& default_instance();
@@ -7837,6 +7950,7 @@ namespace ns_a {
     {
     public:
         CT_RelativeOffsetEffect();
+        ~CT_RelativeOffsetEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RelativeOffsetEffect& default_instance();
@@ -7859,6 +7973,7 @@ namespace ns_a {
     {
     public:
         CT_SoftEdgesEffect();
+        ~CT_SoftEdgesEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SoftEdgesEffect& default_instance();
@@ -7876,6 +7991,7 @@ namespace ns_a {
     {
     public:
         CT_TintEffect();
+        ~CT_TintEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TintEffect& default_instance();
@@ -7898,6 +8014,7 @@ namespace ns_a {
     {
     public:
         CT_TransformEffect();
+        ~CT_TransformEffect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TransformEffect& default_instance();
@@ -7940,6 +8057,7 @@ namespace ns_a {
     {
     public:
         CT_NoFillProperties();
+        ~CT_NoFillProperties();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_NoFillProperties& default_instance();
@@ -7952,6 +8070,7 @@ namespace ns_a {
     {
     public:
         CT_SolidColorFillProperties();
+        ~CT_SolidColorFillProperties();
         bool has_scrgbClr() const;
         CT_ScRgbColor* mutable_scrgbClr();
         const CT_ScRgbColor& get_scrgbClr() const;
@@ -7994,6 +8113,7 @@ namespace ns_a {
     {
     public:
         CT_LinearShadeProperties();
+        ~CT_LinearShadeProperties();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LinearShadeProperties& default_instance();
@@ -8016,6 +8136,7 @@ namespace ns_a {
     {
     public:
         CT_PathShadeProperties();
+        ~CT_PathShadeProperties();
         bool has_fillToRect() const;
         CT_RelativeRect* mutable_fillToRect();
         const CT_RelativeRect& get_fillToRect() const;
@@ -8038,6 +8159,7 @@ namespace ns_a {
     {
     public:
         CT_GradientStop();
+        ~CT_GradientStop();
         bool has_scrgbClr() const;
         CT_ScRgbColor* mutable_scrgbClr();
         const CT_ScRgbColor& get_scrgbClr() const;
@@ -8085,6 +8207,7 @@ namespace ns_a {
     {
     public:
         CT_GradientStopList();
+        ~CT_GradientStopList();
         CT_GradientStop* add_gs();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8111,6 +8234,7 @@ namespace ns_a {
     {
     public:
         CT_GradientFillProperties();
+        ~CT_GradientFillProperties();
         bool has_gsLst() const;
         CT_GradientStopList* mutable_gsLst();
         const CT_GradientStopList& get_gsLst() const;
@@ -8153,6 +8277,7 @@ namespace ns_a {
     {
     public:
         CT_TileInfoProperties();
+        ~CT_TileInfoProperties();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TileInfoProperties& default_instance();
@@ -8195,6 +8320,7 @@ namespace ns_a {
     {
     public:
         CT_StretchInfoProperties();
+        ~CT_StretchInfoProperties();
         bool has_fillRect() const;
         CT_RelativeRect* mutable_fillRect();
         const CT_RelativeRect& get_fillRect() const;
@@ -8212,6 +8338,7 @@ namespace ns_a {
     {
     public:
         CT_Blip();
+        ~CT_Blip();
         CT_AlphaBiLevelEffect* add_alphaBiLevel();
         CT_AlphaCeilingEffect* add_alphaCeiling();
         CT_AlphaFloorEffect* add_alphaFloor();
@@ -8354,6 +8481,7 @@ namespace ns_a {
     {
     public:
         CT_BlipFillProperties();
+        ~CT_BlipFillProperties();
         bool has_blip() const;
         CT_Blip* mutable_blip();
         const CT_Blip& get_blip() const;
@@ -8396,6 +8524,7 @@ namespace ns_a {
     {
     public:
         CT_PatternFillProperties();
+        ~CT_PatternFillProperties();
         bool has_fgClr() const;
         CT_Color* mutable_fgClr();
         const CT_Color& get_fgClr() const;
@@ -8423,6 +8552,7 @@ namespace ns_a {
     {
     public:
         CT_GroupFillProperties();
+        ~CT_GroupFillProperties();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_GroupFillProperties& default_instance();
@@ -8435,6 +8565,7 @@ namespace ns_a {
     {
     public:
         CT_FillProperties();
+        ~CT_FillProperties();
         bool has_noFill() const;
         CT_NoFillProperties* mutable_noFill();
         const CT_NoFillProperties& get_noFill() const;
@@ -8477,6 +8608,7 @@ namespace ns_a {
     {
     public:
         CT_FillEffect();
+        ~CT_FillEffect();
         bool has_noFill() const;
         CT_NoFillProperties* mutable_noFill();
         const CT_NoFillProperties& get_noFill() const;
@@ -8519,6 +8651,7 @@ namespace ns_a {
     {
     public:
         CT_FillOverlayEffect();
+        ~CT_FillOverlayEffect();
         bool has_noFill() const;
         CT_NoFillProperties* mutable_noFill();
         const CT_NoFillProperties& get_noFill() const;
@@ -8566,6 +8699,7 @@ namespace ns_a {
     {
     public:
         CT_EffectReference();
+        ~CT_EffectReference();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_EffectReference& default_instance();
@@ -8583,6 +8717,7 @@ namespace ns_a {
     {
     public:
         CT_EffectContainer();
+        ~CT_EffectContainer();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_EffectContainer& default_instance();
@@ -8605,6 +8740,7 @@ namespace ns_a {
     {
     public:
         CT_AlphaModulateEffect();
+        ~CT_AlphaModulateEffect();
         bool has_cont() const;
         CT_EffectContainer* mutable_cont();
         const CT_EffectContainer& get_cont() const;
@@ -8622,6 +8758,7 @@ namespace ns_a {
     {
     public:
         CT_BlendEffect();
+        ~CT_BlendEffect();
         bool has_cont() const;
         CT_EffectContainer* mutable_cont();
         const CT_EffectContainer& get_cont() const;
@@ -8644,6 +8781,7 @@ namespace ns_a {
     {
     public:
         CT_EffectList();
+        ~CT_EffectList();
         bool has_blur() const;
         CT_BlurEffect* mutable_blur();
         const CT_BlurEffect& get_blur() const;
@@ -8696,6 +8834,7 @@ namespace ns_a {
     {
     public:
         CT_EffectProperties();
+        ~CT_EffectProperties();
         bool has_effectLst() const;
         CT_EffectList* mutable_effectLst();
         const CT_EffectList& get_effectLst() const;
@@ -8718,6 +8857,7 @@ namespace ns_a {
     {
     public:
         CT_GeomGuide();
+        ~CT_GeomGuide();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_GeomGuide& default_instance();
@@ -8740,6 +8880,7 @@ namespace ns_a {
     {
     public:
         CT_GeomGuideList();
+        ~CT_GeomGuideList();
         CT_GeomGuide* add_gd();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8766,6 +8907,7 @@ namespace ns_a {
     {
     public:
         CT_AdjPoint2D();
+        ~CT_AdjPoint2D();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AdjPoint2D& default_instance();
@@ -8788,6 +8930,7 @@ namespace ns_a {
     {
     public:
         CT_GeomRect();
+        ~CT_GeomRect();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_GeomRect& default_instance();
@@ -8820,6 +8963,7 @@ namespace ns_a {
     {
     public:
         CT_XYAdjustHandle();
+        ~CT_XYAdjustHandle();
         bool has_pos() const;
         CT_AdjPoint2D* mutable_pos();
         const CT_AdjPoint2D& get_pos() const;
@@ -8867,6 +9011,7 @@ namespace ns_a {
     {
     public:
         CT_PolarAdjustHandle();
+        ~CT_PolarAdjustHandle();
         bool has_pos() const;
         CT_AdjPoint2D* mutable_pos();
         const CT_AdjPoint2D& get_pos() const;
@@ -8914,6 +9059,7 @@ namespace ns_a {
     {
     public:
         CT_ConnectionSite();
+        ~CT_ConnectionSite();
         bool has_pos() const;
         CT_AdjPoint2D* mutable_pos();
         const CT_AdjPoint2D& get_pos() const;
@@ -8936,6 +9082,7 @@ namespace ns_a {
     {
     public:
         CT_AdjustHandleList();
+        ~CT_AdjustHandleList();
         CT_XYAdjustHandle* add_ahXY();
         CT_PolarAdjustHandle* add_ahPolar();
         void clear();
@@ -8968,6 +9115,7 @@ namespace ns_a {
     {
     public:
         CT_ConnectionSiteList();
+        ~CT_ConnectionSiteList();
         CT_ConnectionSite* add_cxn();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8994,6 +9142,7 @@ namespace ns_a {
     {
     public:
         CT_Connection();
+        ~CT_Connection();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Connection& default_instance();
@@ -9016,6 +9165,7 @@ namespace ns_a {
     {
     public:
         CT_Path2DMoveTo();
+        ~CT_Path2DMoveTo();
         bool has_pt() const;
         CT_AdjPoint2D* mutable_pt();
         const CT_AdjPoint2D& get_pt() const;
@@ -9033,6 +9183,7 @@ namespace ns_a {
     {
     public:
         CT_Path2DLineTo();
+        ~CT_Path2DLineTo();
         bool has_pt() const;
         CT_AdjPoint2D* mutable_pt();
         const CT_AdjPoint2D& get_pt() const;
@@ -9050,6 +9201,7 @@ namespace ns_a {
     {
     public:
         CT_Path2DArcTo();
+        ~CT_Path2DArcTo();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Path2DArcTo& default_instance();
@@ -9082,6 +9234,7 @@ namespace ns_a {
     {
     public:
         CT_Path2DQuadBezierTo();
+        ~CT_Path2DQuadBezierTo();
         CT_AdjPoint2D* add_pt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -9108,6 +9261,7 @@ namespace ns_a {
     {
     public:
         CT_Path2DCubicBezierTo();
+        ~CT_Path2DCubicBezierTo();
         CT_AdjPoint2D* add_pt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -9134,6 +9288,7 @@ namespace ns_a {
     {
     public:
         CT_Path2DClose();
+        ~CT_Path2DClose();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Path2DClose& default_instance();
@@ -9146,6 +9301,7 @@ namespace ns_a {
     {
     public:
         CT_Path2D();
+        ~CT_Path2D();
         CT_Path2DClose* add_close();
         CT_Path2DMoveTo* add_moveTo();
         CT_Path2DLineTo* add_lnTo();
@@ -9227,6 +9383,7 @@ namespace ns_a {
     {
     public:
         CT_Path2DList();
+        ~CT_Path2DList();
         CT_Path2D* add_path();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -9253,6 +9410,7 @@ namespace ns_a {
     {
     public:
         CT_PresetGeometry2D();
+        ~CT_PresetGeometry2D();
         bool has_avLst() const;
         CT_GeomGuideList* mutable_avLst();
         const CT_GeomGuideList& get_avLst() const;
@@ -9275,6 +9433,7 @@ namespace ns_a {
     {
     public:
         CT_PresetTextShape();
+        ~CT_PresetTextShape();
         bool has_avLst() const;
         CT_GeomGuideList* mutable_avLst();
         const CT_GeomGuideList& get_avLst() const;
@@ -9297,6 +9456,7 @@ namespace ns_a {
     {
     public:
         CT_CustomGeometry2D();
+        ~CT_CustomGeometry2D();
         bool has_avLst() const;
         CT_GeomGuideList* mutable_avLst();
         const CT_GeomGuideList& get_avLst() const;
@@ -9339,6 +9499,7 @@ namespace ns_a {
     {
     public:
         CT_LineEndProperties();
+        ~CT_LineEndProperties();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LineEndProperties& default_instance();
@@ -9366,6 +9527,7 @@ namespace ns_a {
     {
     public:
         CT_LineJoinBevel();
+        ~CT_LineJoinBevel();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LineJoinBevel& default_instance();
@@ -9378,6 +9540,7 @@ namespace ns_a {
     {
     public:
         CT_LineJoinRound();
+        ~CT_LineJoinRound();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LineJoinRound& default_instance();
@@ -9390,6 +9553,7 @@ namespace ns_a {
     {
     public:
         CT_LineJoinMiterProperties();
+        ~CT_LineJoinMiterProperties();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LineJoinMiterProperties& default_instance();
@@ -9407,6 +9571,7 @@ namespace ns_a {
     {
     public:
         CT_PresetLineDashProperties();
+        ~CT_PresetLineDashProperties();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PresetLineDashProperties& default_instance();
@@ -9424,6 +9589,7 @@ namespace ns_a {
     {
     public:
         CT_DashStop();
+        ~CT_DashStop();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DashStop& default_instance();
@@ -9446,6 +9612,7 @@ namespace ns_a {
     {
     public:
         CT_DashStopList();
+        ~CT_DashStopList();
         CT_DashStop* add_ds();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -9472,6 +9639,7 @@ namespace ns_a {
     {
     public:
         CT_LineProperties();
+        ~CT_LineProperties();
         bool has_noFill() const;
         CT_NoFillProperties* mutable_noFill();
         const CT_NoFillProperties& get_noFill() const;
@@ -9564,6 +9732,7 @@ namespace ns_a {
     {
     public:
         CT_ShapeProperties();
+        ~CT_ShapeProperties();
         bool has_xfrm() const;
         CT_Transform2D* mutable_xfrm();
         const CT_Transform2D& get_xfrm() const;
@@ -9656,6 +9825,7 @@ namespace ns_a {
     {
     public:
         CT_GroupShapeProperties();
+        ~CT_GroupShapeProperties();
         bool has_xfrm() const;
         CT_GroupTransform2D* mutable_xfrm();
         const CT_GroupTransform2D& get_xfrm() const;
@@ -9728,6 +9898,7 @@ namespace ns_a {
     {
     public:
         CT_StyleMatrixReference();
+        ~CT_StyleMatrixReference();
         bool has_scrgbClr() const;
         CT_ScRgbColor* mutable_scrgbClr();
         const CT_ScRgbColor& get_scrgbClr() const;
@@ -9775,6 +9946,7 @@ namespace ns_a {
     {
     public:
         CT_FontReference();
+        ~CT_FontReference();
         bool has_scrgbClr() const;
         CT_ScRgbColor* mutable_scrgbClr();
         const CT_ScRgbColor& get_scrgbClr() const;
@@ -9822,6 +9994,7 @@ namespace ns_a {
     {
     public:
         CT_ShapeStyle();
+        ~CT_ShapeStyle();
         bool has_lnRef() const;
         CT_StyleMatrixReference* mutable_lnRef();
         const CT_StyleMatrixReference& get_lnRef() const;
@@ -9854,6 +10027,7 @@ namespace ns_a {
     {
     public:
         CT_DefaultShapeDefinition();
+        ~CT_DefaultShapeDefinition();
         bool has_spPr() const;
         CT_ShapeProperties* mutable_spPr();
         const CT_ShapeProperties& get_spPr() const;
@@ -9891,6 +10065,7 @@ namespace ns_a {
     {
     public:
         CT_ObjectStyleDefaults();
+        ~CT_ObjectStyleDefaults();
         bool has_spDef() const;
         CT_DefaultShapeDefinition* mutable_spDef();
         const CT_DefaultShapeDefinition& get_spDef() const;
@@ -9923,6 +10098,7 @@ namespace ns_a {
     {
     public:
         CT_EmptyElement();
+        ~CT_EmptyElement();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_EmptyElement& default_instance();
@@ -9935,6 +10111,7 @@ namespace ns_a {
     {
     public:
         CT_ColorMapping();
+        ~CT_ColorMapping();
         bool has_extLst() const;
         CT_OfficeArtExtensionList* mutable_extLst();
         const CT_OfficeArtExtensionList& get_extLst() const;
@@ -10012,6 +10189,7 @@ namespace ns_a {
     {
     public:
         CT_ColorMappingOverride();
+        ~CT_ColorMappingOverride();
         bool has_masterClrMapping() const;
         CT_EmptyElement* mutable_masterClrMapping();
         const CT_EmptyElement& get_masterClrMapping() const;
@@ -10034,6 +10212,7 @@ namespace ns_a {
     {
     public:
         CT_ColorSchemeAndMapping();
+        ~CT_ColorSchemeAndMapping();
         bool has_clrScheme() const;
         CT_ColorScheme* mutable_clrScheme();
         const CT_ColorScheme& get_clrScheme() const;
@@ -10056,6 +10235,7 @@ namespace ns_a {
     {
     public:
         CT_ColorSchemeList();
+        ~CT_ColorSchemeList();
         CT_ColorSchemeAndMapping* add_extraClrScheme();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -10082,6 +10262,7 @@ namespace ns_a {
     {
     public:
         CT_OfficeStyleSheet();
+        ~CT_OfficeStyleSheet();
         bool has_themeElements() const;
         CT_BaseStyles* mutable_themeElements();
         const CT_BaseStyles& get_themeElements() const;
@@ -10124,6 +10305,7 @@ namespace ns_a {
     {
     public:
         CT_BaseStylesOverride();
+        ~CT_BaseStylesOverride();
         bool has_clrScheme() const;
         CT_ColorScheme* mutable_clrScheme();
         const CT_ColorScheme& get_clrScheme() const;
@@ -10151,6 +10333,7 @@ namespace ns_a {
     {
     public:
         CT_ClipboardStyleSheet();
+        ~CT_ClipboardStyleSheet();
         bool has_themeElements() const;
         CT_BaseStyles* mutable_themeElements();
         const CT_BaseStyles& get_themeElements() const;
@@ -10173,6 +10356,7 @@ namespace ns_a {
     {
     public:
         CT_TableCellProperties();
+        ~CT_TableCellProperties();
         bool has_lnL() const;
         CT_LineProperties* mutable_lnL();
         const CT_LineProperties& get_lnL() const;
@@ -10300,6 +10484,7 @@ namespace ns_a {
     {
     public:
         CT_Headers();
+        ~CT_Headers();
         void add_header(const XSD::string_& _header);
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -10326,6 +10511,7 @@ namespace ns_a {
     {
     public:
         CT_TableCol();
+        ~CT_TableCol();
         bool has_extLst() const;
         CT_OfficeArtExtensionList* mutable_extLst();
         const CT_OfficeArtExtensionList& get_extLst() const;
@@ -10348,6 +10534,7 @@ namespace ns_a {
     {
     public:
         CT_TableGrid();
+        ~CT_TableGrid();
         CT_TableCol* add_gridCol();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -10374,6 +10561,7 @@ namespace ns_a {
     {
     public:
         CT_TableCell();
+        ~CT_TableCell();
         bool has_txBody() const;
         CT_TextBody* mutable_txBody();
         const CT_TextBody& get_txBody() const;
@@ -10426,6 +10614,7 @@ namespace ns_a {
     {
     public:
         CT_TableRow();
+        ~CT_TableRow();
         CT_TableCell* add_tc();
         CT_OfficeArtExtensionList* add_extLst();
         void clear();
@@ -10463,6 +10652,7 @@ namespace ns_a {
     {
     public:
         CT_TableProperties();
+        ~CT_TableProperties();
         bool has_noFill() const;
         CT_NoFillProperties* mutable_noFill();
         const CT_NoFillProperties& get_noFill() const;
@@ -10565,6 +10755,7 @@ namespace ns_a {
     {
     public:
         CT_Table();
+        ~CT_Table();
         bool has_tblPr() const;
         CT_TableProperties* mutable_tblPr();
         const CT_TableProperties& get_tblPr() const;
@@ -10601,6 +10792,7 @@ namespace ns_a {
     {
     public:
         CT_Cell3D();
+        ~CT_Cell3D();
         bool has_bevel() const;
         CT_Bevel* mutable_bevel();
         const CT_Bevel& get_bevel() const;
@@ -10633,6 +10825,7 @@ namespace ns_a {
     {
     public:
         CT_ThemeableLineStyle();
+        ~CT_ThemeableLineStyle();
         bool has_ln() const;
         CT_LineProperties* mutable_ln();
         const CT_LineProperties& get_ln() const;
@@ -10655,6 +10848,7 @@ namespace ns_a {
     {
     public:
         CT_TableStyleTextStyle();
+        ~CT_TableStyleTextStyle();
         bool has_font() const;
         CT_FontCollection* mutable_font();
         const CT_FontCollection& get_font() const;
@@ -10722,6 +10916,7 @@ namespace ns_a {
     {
     public:
         CT_TableCellBorderStyle();
+        ~CT_TableCellBorderStyle();
         bool has_left() const;
         CT_ThemeableLineStyle* mutable_left();
         const CT_ThemeableLineStyle& get_left() const;
@@ -10779,6 +10974,7 @@ namespace ns_a {
     {
     public:
         CT_TableBackgroundStyle();
+        ~CT_TableBackgroundStyle();
         bool has_fill() const;
         CT_FillProperties* mutable_fill();
         const CT_FillProperties& get_fill() const;
@@ -10811,6 +11007,7 @@ namespace ns_a {
     {
     public:
         CT_TableStyleCellStyle();
+        ~CT_TableStyleCellStyle();
         bool has_tcBdr() const;
         CT_TableCellBorderStyle* mutable_tcBdr();
         const CT_TableCellBorderStyle& get_tcBdr() const;
@@ -10843,6 +11040,7 @@ namespace ns_a {
     {
     public:
         CT_TablePartStyle();
+        ~CT_TablePartStyle();
         bool has_tcTxStyle() const;
         CT_TableStyleTextStyle* mutable_tcTxStyle();
         const CT_TableStyleTextStyle& get_tcTxStyle() const;
@@ -10865,6 +11063,7 @@ namespace ns_a {
     {
     public:
         CT_TableStyle();
+        ~CT_TableStyle();
         bool has_tblBg() const;
         CT_TableBackgroundStyle* mutable_tblBg();
         const CT_TableBackgroundStyle& get_tblBg() const;
@@ -10962,6 +11161,7 @@ namespace ns_a {
     {
     public:
         CT_TableStyleList();
+        ~CT_TableStyleList();
         CT_TableStyle* add_tblStyle();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -10993,6 +11193,7 @@ namespace ns_a {
     {
     public:
         CT_TextParagraph();
+        ~CT_TextParagraph();
         bool has_pPr() const;
         CT_TextParagraphProperties* mutable_pPr();
         const CT_TextParagraphProperties& get_pPr() const;
@@ -11041,6 +11242,7 @@ namespace ns_a {
     {
     public:
         CT_TextListStyle();
+        ~CT_TextListStyle();
         bool has_defPPr() const;
         CT_TextParagraphProperties* mutable_defPPr();
         const CT_TextParagraphProperties& get_defPPr() const;
@@ -11108,6 +11310,7 @@ namespace ns_a {
     {
     public:
         CT_TextNormalAutofit();
+        ~CT_TextNormalAutofit();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextNormalAutofit& default_instance();
@@ -11130,6 +11333,7 @@ namespace ns_a {
     {
     public:
         CT_TextShapeAutofit();
+        ~CT_TextShapeAutofit();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextShapeAutofit& default_instance();
@@ -11142,6 +11346,7 @@ namespace ns_a {
     {
     public:
         CT_TextNoAutofit();
+        ~CT_TextNoAutofit();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextNoAutofit& default_instance();
@@ -11154,6 +11359,7 @@ namespace ns_a {
     {
     public:
         CT_TextBodyProperties();
+        ~CT_TextBodyProperties();
         bool has_prstTxWarp() const;
         CT_PresetTextShape* mutable_prstTxWarp();
         const CT_PresetTextShape& get_prstTxWarp() const;
@@ -11301,6 +11507,7 @@ namespace ns_a {
     {
     public:
         CT_TextBody();
+        ~CT_TextBody();
         bool has_bodyPr() const;
         CT_TextBodyProperties* mutable_bodyPr();
         const CT_TextBodyProperties& get_bodyPr() const;
@@ -11337,6 +11544,7 @@ namespace ns_a {
     {
     public:
         CT_TextBulletColorFollowText();
+        ~CT_TextBulletColorFollowText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextBulletColorFollowText& default_instance();
@@ -11349,6 +11557,7 @@ namespace ns_a {
     {
     public:
         CT_TextBulletSizeFollowText();
+        ~CT_TextBulletSizeFollowText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextBulletSizeFollowText& default_instance();
@@ -11361,6 +11570,7 @@ namespace ns_a {
     {
     public:
         CT_TextBulletSizePercent();
+        ~CT_TextBulletSizePercent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextBulletSizePercent& default_instance();
@@ -11378,6 +11588,7 @@ namespace ns_a {
     {
     public:
         CT_TextBulletSizePoint();
+        ~CT_TextBulletSizePoint();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextBulletSizePoint& default_instance();
@@ -11395,6 +11606,7 @@ namespace ns_a {
     {
     public:
         CT_TextBulletTypefaceFollowText();
+        ~CT_TextBulletTypefaceFollowText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextBulletTypefaceFollowText& default_instance();
@@ -11407,6 +11619,7 @@ namespace ns_a {
     {
     public:
         CT_TextAutonumberBullet();
+        ~CT_TextAutonumberBullet();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextAutonumberBullet& default_instance();
@@ -11429,6 +11642,7 @@ namespace ns_a {
     {
     public:
         CT_TextCharBullet();
+        ~CT_TextCharBullet();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextCharBullet& default_instance();
@@ -11446,6 +11660,7 @@ namespace ns_a {
     {
     public:
         CT_TextBlipBullet();
+        ~CT_TextBlipBullet();
         bool has_blip() const;
         CT_Blip* mutable_blip();
         const CT_Blip& get_blip() const;
@@ -11463,6 +11678,7 @@ namespace ns_a {
     {
     public:
         CT_TextNoBullet();
+        ~CT_TextNoBullet();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextNoBullet& default_instance();
@@ -11475,6 +11691,7 @@ namespace ns_a {
     {
     public:
         CT_TextFont();
+        ~CT_TextFont();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextFont& default_instance();
@@ -11507,6 +11724,7 @@ namespace ns_a {
     {
     public:
         CT_TextUnderlineLineFollowText();
+        ~CT_TextUnderlineLineFollowText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextUnderlineLineFollowText& default_instance();
@@ -11519,6 +11737,7 @@ namespace ns_a {
     {
     public:
         CT_TextUnderlineFillFollowText();
+        ~CT_TextUnderlineFillFollowText();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextUnderlineFillFollowText& default_instance();
@@ -11531,6 +11750,7 @@ namespace ns_a {
     {
     public:
         CT_TextUnderlineFillGroupWrapper();
+        ~CT_TextUnderlineFillGroupWrapper();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextUnderlineFillGroupWrapper& default_instance();
@@ -11543,6 +11763,7 @@ namespace ns_a {
     {
     public:
         CT_TextCharacterProperties();
+        ~CT_TextCharacterProperties();
         bool has_ln() const;
         CT_LineProperties* mutable_ln();
         const CT_LineProperties& get_ln() const;
@@ -11760,6 +11981,7 @@ namespace ns_a {
     {
     public:
         CT_Boolean();
+        ~CT_Boolean();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Boolean& default_instance();
@@ -11777,6 +11999,7 @@ namespace ns_a {
     {
     public:
         CT_TextSpacingPercent();
+        ~CT_TextSpacingPercent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextSpacingPercent& default_instance();
@@ -11794,6 +12017,7 @@ namespace ns_a {
     {
     public:
         CT_TextSpacingPoint();
+        ~CT_TextSpacingPoint();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextSpacingPoint& default_instance();
@@ -11811,6 +12035,7 @@ namespace ns_a {
     {
     public:
         CT_TextTabStop();
+        ~CT_TextTabStop();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextTabStop& default_instance();
@@ -11833,6 +12058,7 @@ namespace ns_a {
     {
     public:
         CT_TextTabStopList();
+        ~CT_TextTabStopList();
         CT_TextTabStop* add_tab();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -11859,6 +12085,7 @@ namespace ns_a {
     {
     public:
         CT_TextLineBreak();
+        ~CT_TextLineBreak();
         bool has_rPr() const;
         CT_TextCharacterProperties* mutable_rPr();
         const CT_TextCharacterProperties& get_rPr() const;
@@ -11876,6 +12103,7 @@ namespace ns_a {
     {
     public:
         CT_TextSpacing();
+        ~CT_TextSpacing();
         bool has_spcPct() const;
         CT_TextSpacingPercent* mutable_spcPct();
         const CT_TextSpacingPercent& get_spcPct() const;
@@ -11898,6 +12126,7 @@ namespace ns_a {
     {
     public:
         CT_TextParagraphProperties();
+        ~CT_TextParagraphProperties();
         bool has_lnSpc() const;
         CT_TextSpacing* mutable_lnSpc();
         const CT_TextSpacing& get_lnSpc() const;
@@ -12050,6 +12279,7 @@ namespace ns_a {
     {
     public:
         CT_TextField();
+        ~CT_TextField();
         bool has_rPr() const;
         CT_TextCharacterProperties* mutable_rPr();
         const CT_TextCharacterProperties& get_rPr() const;
@@ -12087,6 +12317,7 @@ namespace ns_a {
     {
     public:
         CT_RegularTextRun();
+        ~CT_RegularTextRun();
         bool has_rPr() const;
         CT_TextCharacterProperties* mutable_rPr();
         const CT_TextCharacterProperties& get_rPr() const;
@@ -12109,6 +12340,7 @@ namespace ns_a {
     {
     public:
         CT_BackgroundFormatting();
+        ~CT_BackgroundFormatting();
         bool has_noFill() const;
         CT_NoFillProperties* mutable_noFill();
         const CT_NoFillProperties& get_noFill() const;
@@ -12161,6 +12393,7 @@ namespace ns_a {
     {
     public:
         videoFile_element();
+        ~videoFile_element();
         bool has_extLst() const;
         CT_OfficeArtExtensionList* mutable_extLst();
         const CT_OfficeArtExtensionList& get_extLst() const;
@@ -12188,6 +12421,7 @@ namespace ns_a {
     {
     public:
         graphic_element();
+        ~graphic_element();
         bool has_graphicData() const;
         CT_GraphicalObjectData* mutable_graphicData();
         const CT_GraphicalObjectData& get_graphicData() const;
@@ -12205,6 +12439,7 @@ namespace ns_a {
     {
     public:
         blip_element();
+        ~blip_element();
         CT_AlphaBiLevelEffect* add_alphaBiLevel();
         CT_AlphaCeilingEffect* add_alphaCeiling();
         CT_AlphaFloorEffect* add_alphaFloor();
@@ -12347,6 +12582,7 @@ namespace ns_a {
     {
     public:
         theme_element();
+        ~theme_element();
         bool has_themeElements() const;
         CT_BaseStyles* mutable_themeElements();
         const CT_BaseStyles& get_themeElements() const;
@@ -12389,6 +12625,7 @@ namespace ns_a {
     {
     public:
         themeOverride_element();
+        ~themeOverride_element();
         bool has_clrScheme() const;
         CT_ColorScheme* mutable_clrScheme();
         const CT_ColorScheme& get_clrScheme() const;
@@ -12416,6 +12653,7 @@ namespace ns_a {
     {
     public:
         themeManager_element();
+        ~themeManager_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const themeManager_element& default_instance();
@@ -12428,6 +12666,7 @@ namespace ns_a {
     {
     public:
         tbl_element();
+        ~tbl_element();
         bool has_tblPr() const;
         CT_TableProperties* mutable_tblPr();
         const CT_TableProperties& get_tblPr() const;
@@ -12464,6 +12703,7 @@ namespace ns_a {
     {
     public:
         tblStyleLst_element();
+        ~tblStyleLst_element();
         CT_TableStyle* add_tblStyle();
         void clear();
         void toXml(std::ostream& _outStream) const;

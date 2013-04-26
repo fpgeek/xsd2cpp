@@ -15,6 +15,9 @@ namespace ns_pvml {
 
     {
     }
+    CT_Empty::~CT_Empty()
+{
+    clear();    }
     void CT_Empty::clear()
     {    }
 
@@ -49,6 +52,9 @@ CT_Empty* CT_Empty::default_instance_ = NULL;
     m_id_attr("")
     {
     }
+    CT_Rel::~CT_Rel()
+{
+    clear();    }
     void CT_Rel::clear()
     {    
     m_has_id_attr = false;
@@ -106,6 +112,9 @@ CT_Rel* CT_Rel::default_instance_ = NULL;
 
     {
     }
+    iscomment_element::~iscomment_element()
+{
+    clear();    }
     void iscomment_element::clear()
     {    }
 
@@ -137,6 +146,9 @@ iscomment_element* iscomment_element::default_instance_ = NULL;
     m_id_attr("")
     {
     }
+    textdata_element::~textdata_element()
+{
+    clear();    }
     void textdata_element::clear()
     {    
     m_has_id_attr = false;

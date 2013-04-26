@@ -22,6 +22,9 @@ namespace ns_sl {
     m_schemaLanguage_attr("")
     {
     }
+    CT_Schema::~CT_Schema()
+{
+    clear();    }
     void CT_Schema::clear()
     {    
     m_has_uri_attr = false;
@@ -154,6 +157,9 @@ CT_Schema* CT_Schema::default_instance_ = NULL;
 
     {
     }
+    CT_SchemaLibrary::~CT_SchemaLibrary()
+{
+    clear();    }
     CT_Schema* CT_SchemaLibrary::add_schema()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -247,6 +253,9 @@ CT_SchemaLibrary* CT_SchemaLibrary::default_instance_ = NULL;
 
     {
     }
+    schemaLibrary_element::~schemaLibrary_element()
+{
+    clear();    }
     CT_Schema* schemaLibrary_element::add_schema()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();

@@ -50,7 +50,7 @@ namespace ns_w10 {
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -135,7 +135,7 @@ ST_BorderType* ST_BorderType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -197,7 +197,7 @@ ST_BorderShadow* ST_BorderShadow::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -260,7 +260,7 @@ ST_WrapType* ST_WrapType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -322,7 +322,7 @@ ST_WrapSide* ST_WrapSide::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -384,7 +384,7 @@ ST_HorizontalAnchor* ST_HorizontalAnchor::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -416,6 +416,9 @@ ST_VerticalAnchor* ST_VerticalAnchor::default_instance_ = NULL;
     m_shadow_attr(NULL)
     {
     }
+    CT_Border::~CT_Border()
+{
+    clear();    }
     void CT_Border::clear()
     {    
     m_has_type_attr = false;
@@ -550,6 +553,9 @@ CT_Border* CT_Border::default_instance_ = NULL;
     m_anchory_attr(NULL)
     {
     }
+    CT_Wrap::~CT_Wrap()
+{
+    clear();    }
     void CT_Wrap::clear()
     {    
     m_has_type_attr = false;
@@ -722,6 +728,9 @@ CT_Wrap* CT_Wrap::default_instance_ = NULL;
 
     {
     }
+    CT_AnchorLock::~CT_AnchorLock()
+{
+    clear();    }
     void CT_AnchorLock::clear()
     {    }
 
@@ -760,6 +769,9 @@ CT_AnchorLock* CT_AnchorLock::default_instance_ = NULL;
     m_shadow_attr(NULL)
     {
     }
+    bordertop_element::~bordertop_element()
+{
+    clear();    }
     void bordertop_element::clear()
     {    
     m_has_type_attr = false;
@@ -889,6 +901,9 @@ bordertop_element* bordertop_element::default_instance_ = NULL;
     m_shadow_attr(NULL)
     {
     }
+    borderleft_element::~borderleft_element()
+{
+    clear();    }
     void borderleft_element::clear()
     {    
     m_has_type_attr = false;
@@ -1018,6 +1033,9 @@ borderleft_element* borderleft_element::default_instance_ = NULL;
     m_shadow_attr(NULL)
     {
     }
+    borderright_element::~borderright_element()
+{
+    clear();    }
     void borderright_element::clear()
     {    
     m_has_type_attr = false;
@@ -1147,6 +1165,9 @@ borderright_element* borderright_element::default_instance_ = NULL;
     m_shadow_attr(NULL)
     {
     }
+    borderbottom_element::~borderbottom_element()
+{
+    clear();    }
     void borderbottom_element::clear()
     {    
     m_has_type_attr = false;
@@ -1278,6 +1299,9 @@ borderbottom_element* borderbottom_element::default_instance_ = NULL;
     m_anchory_attr(NULL)
     {
     }
+    wrap_element::~wrap_element()
+{
+    clear();    }
     void wrap_element::clear()
     {    
     m_has_type_attr = false;
@@ -1447,6 +1471,9 @@ wrap_element* wrap_element::default_instance_ = NULL;
 
     {
     }
+    anchorlock_element::~anchorlock_element()
+{
+    clear();    }
     void anchorlock_element::clear()
     {    }
 

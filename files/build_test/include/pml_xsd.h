@@ -1803,6 +1803,7 @@ namespace ns_p {
     {
     public:
         CT_SideDirectionTransition();
+        ~CT_SideDirectionTransition();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SideDirectionTransition& default_instance();
@@ -1820,6 +1821,7 @@ namespace ns_p {
     {
     public:
         CT_CornerDirectionTransition();
+        ~CT_CornerDirectionTransition();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CornerDirectionTransition& default_instance();
@@ -1837,6 +1839,7 @@ namespace ns_p {
     {
     public:
         CT_EightDirectionTransition();
+        ~CT_EightDirectionTransition();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_EightDirectionTransition& default_instance();
@@ -1854,6 +1857,7 @@ namespace ns_p {
     {
     public:
         CT_OrientationTransition();
+        ~CT_OrientationTransition();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OrientationTransition& default_instance();
@@ -1871,6 +1875,7 @@ namespace ns_p {
     {
     public:
         CT_InOutTransition();
+        ~CT_InOutTransition();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_InOutTransition& default_instance();
@@ -1888,6 +1893,7 @@ namespace ns_p {
     {
     public:
         CT_OptionalBlackTransition();
+        ~CT_OptionalBlackTransition();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OptionalBlackTransition& default_instance();
@@ -1905,6 +1911,7 @@ namespace ns_p {
     {
     public:
         CT_SplitTransition();
+        ~CT_SplitTransition();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SplitTransition& default_instance();
@@ -1927,6 +1934,7 @@ namespace ns_p {
     {
     public:
         CT_WheelTransition();
+        ~CT_WheelTransition();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WheelTransition& default_instance();
@@ -1944,6 +1952,7 @@ namespace ns_p {
     {
     public:
         CT_TransitionStartSoundAction();
+        ~CT_TransitionStartSoundAction();
         bool has_snd() const;
         ns_a::CT_EmbeddedWAVAudioFile* mutable_snd();
         const ns_a::CT_EmbeddedWAVAudioFile& get_snd() const;
@@ -1966,6 +1975,7 @@ namespace ns_p {
     {
     public:
         CT_TransitionSoundAction();
+        ~CT_TransitionSoundAction();
         bool has_stSnd() const;
         CT_TransitionStartSoundAction* mutable_stSnd();
         const CT_TransitionStartSoundAction& get_stSnd() const;
@@ -1988,6 +1998,7 @@ namespace ns_p {
     {
     public:
         CT_SlideTransition();
+        ~CT_SlideTransition();
         bool has_blinds() const;
         CT_OrientationTransition* mutable_blinds();
         const CT_OrientationTransition& get_blinds() const;
@@ -2130,6 +2141,7 @@ namespace ns_p {
     {
     public:
         CT_TLIterateIntervalTime();
+        ~CT_TLIterateIntervalTime();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLIterateIntervalTime& default_instance();
@@ -2147,6 +2159,7 @@ namespace ns_p {
     {
     public:
         CT_TLIterateIntervalPercentage();
+        ~CT_TLIterateIntervalPercentage();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLIterateIntervalPercentage& default_instance();
@@ -2164,6 +2177,7 @@ namespace ns_p {
     {
     public:
         CT_TLIterateData();
+        ~CT_TLIterateData();
         bool has_tmAbs() const;
         CT_TLIterateIntervalTime* mutable_tmAbs();
         const CT_TLIterateIntervalTime& get_tmAbs() const;
@@ -2196,6 +2210,7 @@ namespace ns_p {
     {
     public:
         CT_TLSubShapeId();
+        ~CT_TLSubShapeId();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLSubShapeId& default_instance();
@@ -2213,6 +2228,7 @@ namespace ns_p {
     {
     public:
         CT_TLTextTargetElement();
+        ~CT_TLTextTargetElement();
         bool has_charRg() const;
         CT_IndexRange* mutable_charRg();
         const CT_IndexRange& get_charRg() const;
@@ -2235,6 +2251,7 @@ namespace ns_p {
     {
     public:
         CT_TLOleChartTargetElement();
+        ~CT_TLOleChartTargetElement();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLOleChartTargetElement& default_instance();
@@ -2257,6 +2274,7 @@ namespace ns_p {
     {
     public:
         CT_TLShapeTargetElement();
+        ~CT_TLShapeTargetElement();
         bool has_bg() const;
         CT_Empty* mutable_bg();
         const CT_Empty& get_bg() const;
@@ -2299,6 +2317,7 @@ namespace ns_p {
     {
     public:
         CT_TLTimeTargetElement();
+        ~CT_TLTimeTargetElement();
         bool has_sldTgt() const;
         CT_Empty* mutable_sldTgt();
         const CT_Empty& get_sldTgt() const;
@@ -2331,6 +2350,7 @@ namespace ns_p {
     {
     public:
         CT_TLTriggerTimeNodeID();
+        ~CT_TLTriggerTimeNodeID();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLTriggerTimeNodeID& default_instance();
@@ -2348,6 +2368,7 @@ namespace ns_p {
     {
     public:
         CT_TLTriggerRuntimeNode();
+        ~CT_TLTriggerRuntimeNode();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLTriggerRuntimeNode& default_instance();
@@ -2365,6 +2386,7 @@ namespace ns_p {
     {
     public:
         CT_TLTimeCondition();
+        ~CT_TLTimeCondition();
         bool has_tgtEl() const;
         CT_TLTimeTargetElement* mutable_tgtEl();
         const CT_TLTimeTargetElement& get_tgtEl() const;
@@ -2402,6 +2424,7 @@ namespace ns_p {
     {
     public:
         CT_TLTimeConditionList();
+        ~CT_TLTimeConditionList();
         CT_TLTimeCondition* add_cond();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -2428,6 +2451,7 @@ namespace ns_p {
     {
     public:
         CT_TimeNodeList();
+        ~CT_TimeNodeList();
         CT_TLTimeNodeParallel* add_par();
         CT_TLTimeNodeSequence* add_seq();
         CT_TLTimeNodeExclusive* add_excl();
@@ -2526,6 +2550,7 @@ namespace ns_p {
     {
     public:
         CT_TLCommonTimeNodeData();
+        ~CT_TLCommonTimeNodeData();
         bool has_stCondLst() const;
         CT_TLTimeConditionList* mutable_stCondLst();
         const CT_TLTimeConditionList& get_stCondLst() const;
@@ -2683,6 +2708,7 @@ namespace ns_p {
     {
     public:
         CT_TLTimeNodeParallel();
+        ~CT_TLTimeNodeParallel();
         bool has_cTn() const;
         CT_TLCommonTimeNodeData* mutable_cTn();
         const CT_TLCommonTimeNodeData& get_cTn() const;
@@ -2700,6 +2726,7 @@ namespace ns_p {
     {
     public:
         CT_TLTimeNodeSequence();
+        ~CT_TLTimeNodeSequence();
         bool has_cTn() const;
         CT_TLCommonTimeNodeData* mutable_cTn();
         const CT_TLCommonTimeNodeData& get_cTn() const;
@@ -2742,6 +2769,7 @@ namespace ns_p {
     {
     public:
         CT_TLTimeNodeExclusive();
+        ~CT_TLTimeNodeExclusive();
         bool has_cTn() const;
         CT_TLCommonTimeNodeData* mutable_cTn();
         const CT_TLCommonTimeNodeData& get_cTn() const;
@@ -2759,6 +2787,7 @@ namespace ns_p {
     {
     public:
         CT_TLBehaviorAttributeNameList();
+        ~CT_TLBehaviorAttributeNameList();
         void add_attrName(const XSD::string_& _attrName);
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -2785,6 +2814,7 @@ namespace ns_p {
     {
     public:
         CT_TLCommonBehaviorData();
+        ~CT_TLCommonBehaviorData();
         bool has_cTn() const;
         CT_TLCommonTimeNodeData* mutable_cTn();
         const CT_TLCommonTimeNodeData& get_cTn() const;
@@ -2852,6 +2882,7 @@ namespace ns_p {
     {
     public:
         CT_TLAnimVariantBooleanVal();
+        ~CT_TLAnimVariantBooleanVal();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLAnimVariantBooleanVal& default_instance();
@@ -2869,6 +2900,7 @@ namespace ns_p {
     {
     public:
         CT_TLAnimVariantIntegerVal();
+        ~CT_TLAnimVariantIntegerVal();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLAnimVariantIntegerVal& default_instance();
@@ -2886,6 +2918,7 @@ namespace ns_p {
     {
     public:
         CT_TLAnimVariantFloatVal();
+        ~CT_TLAnimVariantFloatVal();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLAnimVariantFloatVal& default_instance();
@@ -2903,6 +2936,7 @@ namespace ns_p {
     {
     public:
         CT_TLAnimVariantStringVal();
+        ~CT_TLAnimVariantStringVal();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLAnimVariantStringVal& default_instance();
@@ -2920,6 +2954,7 @@ namespace ns_p {
     {
     public:
         CT_TLAnimVariant();
+        ~CT_TLAnimVariant();
         bool has_boolVal() const;
         CT_TLAnimVariantBooleanVal* mutable_boolVal();
         const CT_TLAnimVariantBooleanVal& get_boolVal() const;
@@ -2957,6 +2992,7 @@ namespace ns_p {
     {
     public:
         CT_TLTimeAnimateValue();
+        ~CT_TLTimeAnimateValue();
         bool has_val() const;
         CT_TLAnimVariant* mutable_val();
         const CT_TLAnimVariant& get_val() const;
@@ -2984,6 +3020,7 @@ namespace ns_p {
     {
     public:
         CT_TLTimeAnimateValueList();
+        ~CT_TLTimeAnimateValueList();
         CT_TLTimeAnimateValue* add_tav();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -3010,6 +3047,7 @@ namespace ns_p {
     {
     public:
         CT_TLAnimateBehavior();
+        ~CT_TLAnimateBehavior();
         bool has_cBhvr() const;
         CT_TLCommonBehaviorData* mutable_cBhvr();
         const CT_TLCommonBehaviorData& get_cBhvr() const;
@@ -3057,6 +3095,7 @@ namespace ns_p {
     {
     public:
         CT_TLByRgbColorTransform();
+        ~CT_TLByRgbColorTransform();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLByRgbColorTransform& default_instance();
@@ -3084,6 +3123,7 @@ namespace ns_p {
     {
     public:
         CT_TLByHslColorTransform();
+        ~CT_TLByHslColorTransform();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLByHslColorTransform& default_instance();
@@ -3111,6 +3151,7 @@ namespace ns_p {
     {
     public:
         CT_TLByAnimateColorTransform();
+        ~CT_TLByAnimateColorTransform();
         bool has_rgb() const;
         CT_TLByRgbColorTransform* mutable_rgb();
         const CT_TLByRgbColorTransform& get_rgb() const;
@@ -3133,6 +3174,7 @@ namespace ns_p {
     {
     public:
         CT_TLAnimateColorBehavior();
+        ~CT_TLAnimateColorBehavior();
         bool has_cBhvr() const;
         CT_TLCommonBehaviorData* mutable_cBhvr();
         const CT_TLCommonBehaviorData& get_cBhvr() const;
@@ -3175,6 +3217,7 @@ namespace ns_p {
     {
     public:
         CT_TLAnimateEffectBehavior();
+        ~CT_TLAnimateEffectBehavior();
         bool has_cBhvr() const;
         CT_TLCommonBehaviorData* mutable_cBhvr();
         const CT_TLCommonBehaviorData& get_cBhvr() const;
@@ -3212,6 +3255,7 @@ namespace ns_p {
     {
     public:
         CT_TLPoint();
+        ~CT_TLPoint();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLPoint& default_instance();
@@ -3234,6 +3278,7 @@ namespace ns_p {
     {
     public:
         CT_TLAnimateMotionBehavior();
+        ~CT_TLAnimateMotionBehavior();
         bool has_cBhvr() const;
         CT_TLCommonBehaviorData* mutable_cBhvr();
         const CT_TLCommonBehaviorData& get_cBhvr() const;
@@ -3296,6 +3341,7 @@ namespace ns_p {
     {
     public:
         CT_TLAnimateRotationBehavior();
+        ~CT_TLAnimateRotationBehavior();
         bool has_cBhvr() const;
         CT_TLCommonBehaviorData* mutable_cBhvr();
         const CT_TLCommonBehaviorData& get_cBhvr() const;
@@ -3328,6 +3374,7 @@ namespace ns_p {
     {
     public:
         CT_TLAnimateScaleBehavior();
+        ~CT_TLAnimateScaleBehavior();
         bool has_cBhvr() const;
         CT_TLCommonBehaviorData* mutable_cBhvr();
         const CT_TLCommonBehaviorData& get_cBhvr() const;
@@ -3365,6 +3412,7 @@ namespace ns_p {
     {
     public:
         CT_TLCommandBehavior();
+        ~CT_TLCommandBehavior();
         bool has_cBhvr() const;
         CT_TLCommonBehaviorData* mutable_cBhvr();
         const CT_TLCommonBehaviorData& get_cBhvr() const;
@@ -3392,6 +3440,7 @@ namespace ns_p {
     {
     public:
         CT_TLSetBehavior();
+        ~CT_TLSetBehavior();
         bool has_cBhvr() const;
         CT_TLCommonBehaviorData* mutable_cBhvr();
         const CT_TLCommonBehaviorData& get_cBhvr() const;
@@ -3414,6 +3463,7 @@ namespace ns_p {
     {
     public:
         CT_TLCommonMediaNodeData();
+        ~CT_TLCommonMediaNodeData();
         bool has_cTn() const;
         CT_TLCommonTimeNodeData* mutable_cTn();
         const CT_TLCommonTimeNodeData& get_cTn() const;
@@ -3456,6 +3506,7 @@ namespace ns_p {
     {
     public:
         CT_TLMediaNodeAudio();
+        ~CT_TLMediaNodeAudio();
         bool has_cMediaNode() const;
         CT_TLCommonMediaNodeData* mutable_cMediaNode();
         const CT_TLCommonMediaNodeData& get_cMediaNode() const;
@@ -3478,6 +3529,7 @@ namespace ns_p {
     {
     public:
         CT_TLMediaNodeVideo();
+        ~CT_TLMediaNodeVideo();
         bool has_cMediaNode() const;
         CT_TLCommonMediaNodeData* mutable_cMediaNode();
         const CT_TLCommonMediaNodeData& get_cMediaNode() const;
@@ -3500,6 +3552,7 @@ namespace ns_p {
     {
     public:
         CT_TLTemplate();
+        ~CT_TLTemplate();
         bool has_tnLst() const;
         CT_TimeNodeList* mutable_tnLst();
         const CT_TimeNodeList& get_tnLst() const;
@@ -3522,6 +3575,7 @@ namespace ns_p {
     {
     public:
         CT_TLTemplateList();
+        ~CT_TLTemplateList();
         CT_TLTemplate* add_tmpl();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -3548,6 +3602,7 @@ namespace ns_p {
     {
     public:
         CT_TLBuildParagraph();
+        ~CT_TLBuildParagraph();
         bool has_tmplLst() const;
         CT_TLTemplateList* mutable_tmplLst();
         const CT_TLTemplateList& get_tmplLst() const;
@@ -3610,6 +3665,7 @@ namespace ns_p {
     {
     public:
         CT_TLBuildDiagram();
+        ~CT_TLBuildDiagram();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLBuildDiagram& default_instance();
@@ -3642,6 +3698,7 @@ namespace ns_p {
     {
     public:
         CT_TLOleBuildChart();
+        ~CT_TLOleBuildChart();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TLOleBuildChart& default_instance();
@@ -3679,6 +3736,7 @@ namespace ns_p {
     {
     public:
         CT_TLGraphicalObjectBuild();
+        ~CT_TLGraphicalObjectBuild();
         bool has_bldAsOne() const;
         CT_Empty* mutable_bldAsOne();
         const CT_Empty& get_bldAsOne() const;
@@ -3716,6 +3774,7 @@ namespace ns_p {
     {
     public:
         CT_BuildList();
+        ~CT_BuildList();
         CT_TLBuildParagraph* add_bldP();
         CT_TLBuildDiagram* add_bldDgm();
         CT_TLOleBuildChart* add_bldOleChart();
@@ -3760,6 +3819,7 @@ namespace ns_p {
     {
     public:
         CT_SlideTiming();
+        ~CT_SlideTiming();
         bool has_tnLst() const;
         CT_TimeNodeList* mutable_tnLst();
         const CT_TimeNodeList& get_tnLst() const;
@@ -3787,6 +3847,7 @@ namespace ns_p {
     {
     public:
         CT_Empty();
+        ~CT_Empty();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Empty& default_instance();
@@ -3799,6 +3860,7 @@ namespace ns_p {
     {
     public:
         CT_IndexRange();
+        ~CT_IndexRange();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_IndexRange& default_instance();
@@ -3821,6 +3883,7 @@ namespace ns_p {
     {
     public:
         CT_SlideRelationshipListEntry();
+        ~CT_SlideRelationshipListEntry();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SlideRelationshipListEntry& default_instance();
@@ -3838,6 +3901,7 @@ namespace ns_p {
     {
     public:
         CT_SlideRelationshipList();
+        ~CT_SlideRelationshipList();
         CT_SlideRelationshipListEntry* add_sld();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -3864,6 +3928,7 @@ namespace ns_p {
     {
     public:
         CT_CustomShowId();
+        ~CT_CustomShowId();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CustomShowId& default_instance();
@@ -3881,6 +3946,7 @@ namespace ns_p {
     {
     public:
         CT_CustomerData();
+        ~CT_CustomerData();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CustomerData& default_instance();
@@ -3898,6 +3964,7 @@ namespace ns_p {
     {
     public:
         CT_TagsData();
+        ~CT_TagsData();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TagsData& default_instance();
@@ -3915,6 +3982,7 @@ namespace ns_p {
     {
     public:
         CT_CustomerDataList();
+        ~CT_CustomerDataList();
         CT_CustomerData* add_custData();
         CT_TagsData* add_tags();
         void clear();
@@ -3947,6 +4015,7 @@ namespace ns_p {
     {
     public:
         CT_Extension();
+        ~CT_Extension();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Extension& default_instance();
@@ -3966,6 +4035,7 @@ namespace ns_p {
     {
     public:
         CT_ExtensionList();
+        ~CT_ExtensionList();
         CT_Extension* add_ext();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -3992,6 +4062,7 @@ namespace ns_p {
     {
     public:
         CT_ExtensionListModify();
+        ~CT_ExtensionListModify();
         CT_Extension* add_ext();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -4023,6 +4094,7 @@ namespace ns_p {
     {
     public:
         CT_CommentAuthor();
+        ~CT_CommentAuthor();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -4065,6 +4137,7 @@ namespace ns_p {
     {
     public:
         CT_CommentAuthorList();
+        ~CT_CommentAuthorList();
         CT_CommentAuthor* add_cmAuthor();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -4091,6 +4164,7 @@ namespace ns_p {
     {
     public:
         CT_Comment();
+        ~CT_Comment();
         bool has_pos() const;
         ns_a::CT_Point2D* mutable_pos();
         const ns_a::CT_Point2D& get_pos() const;
@@ -4133,6 +4207,7 @@ namespace ns_p {
     {
     public:
         CT_CommentList();
+        ~CT_CommentList();
         CT_Comment* add_cm();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -4159,6 +4234,7 @@ namespace ns_p {
     {
     public:
         CT_OleObjectEmbed();
+        ~CT_OleObjectEmbed();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -4181,6 +4257,7 @@ namespace ns_p {
     {
     public:
         CT_OleObjectLink();
+        ~CT_OleObjectLink();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -4203,6 +4280,7 @@ namespace ns_p {
     {
     public:
         CT_OleObject();
+        ~CT_OleObject();
         bool has_embed() const;
         CT_OleObjectEmbed* mutable_embed();
         const CT_OleObjectEmbed& get_embed() const;
@@ -4265,6 +4343,7 @@ namespace ns_p {
     {
     public:
         CT_Control();
+        ~CT_Control();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -4317,6 +4396,7 @@ namespace ns_p {
     {
     public:
         CT_ControlList();
+        ~CT_ControlList();
         CT_Control* add_control();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -4343,6 +4423,7 @@ namespace ns_p {
     {
     public:
         CT_SlideIdListEntry();
+        ~CT_SlideIdListEntry();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -4370,6 +4451,7 @@ namespace ns_p {
     {
     public:
         CT_SlideIdList();
+        ~CT_SlideIdList();
         CT_SlideIdListEntry* add_sldId();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -4396,6 +4478,7 @@ namespace ns_p {
     {
     public:
         CT_SlideMasterIdListEntry();
+        ~CT_SlideMasterIdListEntry();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -4423,6 +4506,7 @@ namespace ns_p {
     {
     public:
         CT_SlideMasterIdList();
+        ~CT_SlideMasterIdList();
         CT_SlideMasterIdListEntry* add_sldMasterId();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -4449,6 +4533,7 @@ namespace ns_p {
     {
     public:
         CT_NotesMasterIdListEntry();
+        ~CT_NotesMasterIdListEntry();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -4471,6 +4556,7 @@ namespace ns_p {
     {
     public:
         CT_NotesMasterIdList();
+        ~CT_NotesMasterIdList();
         bool has_notesMasterId() const;
         CT_NotesMasterIdListEntry* mutable_notesMasterId();
         const CT_NotesMasterIdListEntry& get_notesMasterId() const;
@@ -4488,6 +4574,7 @@ namespace ns_p {
     {
     public:
         CT_HandoutMasterIdListEntry();
+        ~CT_HandoutMasterIdListEntry();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -4510,6 +4597,7 @@ namespace ns_p {
     {
     public:
         CT_HandoutMasterIdList();
+        ~CT_HandoutMasterIdList();
         bool has_handoutMasterId() const;
         CT_HandoutMasterIdListEntry* mutable_handoutMasterId();
         const CT_HandoutMasterIdListEntry& get_handoutMasterId() const;
@@ -4527,6 +4615,7 @@ namespace ns_p {
     {
     public:
         CT_EmbeddedFontDataId();
+        ~CT_EmbeddedFontDataId();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_EmbeddedFontDataId& default_instance();
@@ -4544,6 +4633,7 @@ namespace ns_p {
     {
     public:
         CT_EmbeddedFontListEntry();
+        ~CT_EmbeddedFontListEntry();
         bool has_font() const;
         ns_a::CT_TextFont* mutable_font();
         const ns_a::CT_TextFont& get_font() const;
@@ -4581,6 +4671,7 @@ namespace ns_p {
     {
     public:
         CT_EmbeddedFontList();
+        ~CT_EmbeddedFontList();
         CT_EmbeddedFontListEntry* add_embeddedFont();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -4607,6 +4698,7 @@ namespace ns_p {
     {
     public:
         CT_SmartTags();
+        ~CT_SmartTags();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SmartTags& default_instance();
@@ -4624,6 +4716,7 @@ namespace ns_p {
     {
     public:
         CT_CustomShow();
+        ~CT_CustomShow();
         bool has_sldLst() const;
         CT_SlideRelationshipList* mutable_sldLst();
         const CT_SlideRelationshipList& get_sldLst() const;
@@ -4656,6 +4749,7 @@ namespace ns_p {
     {
     public:
         CT_CustomShowList();
+        ~CT_CustomShowList();
         CT_CustomShow* add_custShow();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -4682,6 +4776,7 @@ namespace ns_p {
     {
     public:
         CT_PhotoAlbum();
+        ~CT_PhotoAlbum();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -4719,6 +4814,7 @@ namespace ns_p {
     {
     public:
         CT_SlideSize();
+        ~CT_SlideSize();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SlideSize& default_instance();
@@ -4746,6 +4842,7 @@ namespace ns_p {
     {
     public:
         CT_Kinsoku();
+        ~CT_Kinsoku();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Kinsoku& default_instance();
@@ -4773,6 +4870,7 @@ namespace ns_p {
     {
     public:
         CT_ModifyVerifier();
+        ~CT_ModifyVerifier();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ModifyVerifier& default_instance();
@@ -4865,6 +4963,7 @@ namespace ns_p {
     {
     public:
         CT_Presentation();
+        ~CT_Presentation();
         bool has_sldMasterIdLst() const;
         CT_SlideMasterIdList* mutable_sldMasterIdLst();
         const CT_SlideMasterIdList& get_sldMasterIdLst() const;
@@ -5012,6 +5111,7 @@ namespace ns_p {
     {
     public:
         CT_HtmlPublishProperties();
+        ~CT_HtmlPublishProperties();
         bool has_sldAll() const;
         CT_Empty* mutable_sldAll();
         const CT_Empty& get_sldAll() const;
@@ -5064,6 +5164,7 @@ namespace ns_p {
     {
     public:
         CT_WebProperties();
+        ~CT_WebProperties();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -5126,6 +5227,7 @@ namespace ns_p {
     {
     public:
         CT_PrintProperties();
+        ~CT_PrintProperties();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -5168,6 +5270,7 @@ namespace ns_p {
     {
     public:
         CT_ShowInfoBrowse();
+        ~CT_ShowInfoBrowse();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ShowInfoBrowse& default_instance();
@@ -5185,6 +5288,7 @@ namespace ns_p {
     {
     public:
         CT_ShowInfoKiosk();
+        ~CT_ShowInfoKiosk();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ShowInfoKiosk& default_instance();
@@ -5202,6 +5306,7 @@ namespace ns_p {
     {
     public:
         CT_ShowProperties();
+        ~CT_ShowProperties();
         bool has_present() const;
         CT_Empty* mutable_present();
         const CT_Empty& get_present() const;
@@ -5274,6 +5379,7 @@ namespace ns_p {
     {
     public:
         CT_PresentationProperties();
+        ~CT_PresentationProperties();
         bool has_htmlPubPr() const;
         CT_HtmlPublishProperties* mutable_htmlPubPr();
         const CT_HtmlPublishProperties& get_htmlPubPr() const;
@@ -5316,6 +5422,7 @@ namespace ns_p {
     {
     public:
         CT_HeaderFooter();
+        ~CT_HeaderFooter();
         bool has_extLst() const;
         CT_ExtensionListModify* mutable_extLst();
         const CT_ExtensionListModify& get_extLst() const;
@@ -5353,6 +5460,7 @@ namespace ns_p {
     {
     public:
         CT_Placeholder();
+        ~CT_Placeholder();
         bool has_extLst() const;
         CT_ExtensionListModify* mutable_extLst();
         const CT_ExtensionListModify& get_extLst() const;
@@ -5395,6 +5503,7 @@ namespace ns_p {
     {
     public:
         CT_ApplicationNonVisualDrawingProps();
+        ~CT_ApplicationNonVisualDrawingProps();
         bool has_ph() const;
         CT_Placeholder* mutable_ph();
         const CT_Placeholder& get_ph() const;
@@ -5457,6 +5566,7 @@ namespace ns_p {
     {
     public:
         CT_ShapeNonVisual();
+        ~CT_ShapeNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -5484,6 +5594,7 @@ namespace ns_p {
     {
     public:
         CT_Shape();
+        ~CT_Shape();
         bool has_nvSpPr() const;
         CT_ShapeNonVisual* mutable_nvSpPr();
         const CT_ShapeNonVisual& get_nvSpPr() const;
@@ -5526,6 +5637,7 @@ namespace ns_p {
     {
     public:
         CT_ConnectorNonVisual();
+        ~CT_ConnectorNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -5553,6 +5665,7 @@ namespace ns_p {
     {
     public:
         CT_Connector();
+        ~CT_Connector();
         bool has_nvCxnSpPr() const;
         CT_ConnectorNonVisual* mutable_nvCxnSpPr();
         const CT_ConnectorNonVisual& get_nvCxnSpPr() const;
@@ -5585,6 +5698,7 @@ namespace ns_p {
     {
     public:
         CT_PictureNonVisual();
+        ~CT_PictureNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -5612,6 +5726,7 @@ namespace ns_p {
     {
     public:
         CT_Picture();
+        ~CT_Picture();
         bool has_nvPicPr() const;
         CT_PictureNonVisual* mutable_nvPicPr();
         const CT_PictureNonVisual& get_nvPicPr() const;
@@ -5649,6 +5764,7 @@ namespace ns_p {
     {
     public:
         CT_GraphicalObjectFrameNonVisual();
+        ~CT_GraphicalObjectFrameNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -5676,6 +5792,7 @@ namespace ns_p {
     {
     public:
         CT_GraphicalObjectFrame();
+        ~CT_GraphicalObjectFrame();
         bool has_nvGraphicFramePr() const;
         CT_GraphicalObjectFrameNonVisual* mutable_nvGraphicFramePr();
         const CT_GraphicalObjectFrameNonVisual& get_nvGraphicFramePr() const;
@@ -5713,6 +5830,7 @@ namespace ns_p {
     {
     public:
         CT_GroupShapeNonVisual();
+        ~CT_GroupShapeNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -5740,6 +5858,7 @@ namespace ns_p {
     {
     public:
         CT_GroupShape();
+        ~CT_GroupShape();
         bool has_nvGrpSpPr() const;
         CT_GroupShapeNonVisual* mutable_nvGrpSpPr();
         const CT_GroupShapeNonVisual& get_nvGrpSpPr() const;
@@ -5811,6 +5930,7 @@ namespace ns_p {
     {
     public:
         CT_Rel();
+        ~CT_Rel();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Rel& default_instance();
@@ -5828,6 +5948,7 @@ namespace ns_p {
     {
     public:
         CT_BackgroundProperties();
+        ~CT_BackgroundProperties();
         bool has_a_noFill() const;
         ns_a::CT_NoFillProperties* mutable_a_noFill();
         const ns_a::CT_NoFillProperties& get_a_noFill() const;
@@ -5890,6 +6011,7 @@ namespace ns_p {
     {
     public:
         CT_Background();
+        ~CT_Background();
         bool has_bgPr() const;
         CT_BackgroundProperties* mutable_bgPr();
         const CT_BackgroundProperties& get_bgPr() const;
@@ -5917,6 +6039,7 @@ namespace ns_p {
     {
     public:
         CT_CommonSlideData();
+        ~CT_CommonSlideData();
         bool has_bg() const;
         CT_Background* mutable_bg();
         const CT_Background& get_bg() const;
@@ -5959,6 +6082,7 @@ namespace ns_p {
     {
     public:
         CT_Slide();
+        ~CT_Slide();
         bool has_cSld() const;
         CT_CommonSlideData* mutable_cSld();
         const CT_CommonSlideData& get_cSld() const;
@@ -6011,6 +6135,7 @@ namespace ns_p {
     {
     public:
         CT_SlideLayout();
+        ~CT_SlideLayout();
         bool has_cSld() const;
         CT_CommonSlideData* mutable_cSld();
         const CT_CommonSlideData& get_cSld() const;
@@ -6083,6 +6208,7 @@ namespace ns_p {
     {
     public:
         CT_SlideMasterTextStyles();
+        ~CT_SlideMasterTextStyles();
         bool has_titleStyle() const;
         ns_a::CT_TextListStyle* mutable_titleStyle();
         const ns_a::CT_TextListStyle& get_titleStyle() const;
@@ -6115,6 +6241,7 @@ namespace ns_p {
     {
     public:
         CT_SlideLayoutIdListEntry();
+        ~CT_SlideLayoutIdListEntry();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -6142,6 +6269,7 @@ namespace ns_p {
     {
     public:
         CT_SlideLayoutIdList();
+        ~CT_SlideLayoutIdList();
         CT_SlideLayoutIdListEntry* add_sldLayoutId();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6168,6 +6296,7 @@ namespace ns_p {
     {
     public:
         CT_SlideMaster();
+        ~CT_SlideMaster();
         bool has_cSld() const;
         CT_CommonSlideData* mutable_cSld();
         const CT_CommonSlideData& get_cSld() const;
@@ -6225,6 +6354,7 @@ namespace ns_p {
     {
     public:
         CT_HandoutMaster();
+        ~CT_HandoutMaster();
         bool has_cSld() const;
         CT_CommonSlideData* mutable_cSld();
         const CT_CommonSlideData& get_cSld() const;
@@ -6257,6 +6387,7 @@ namespace ns_p {
     {
     public:
         CT_NotesMaster();
+        ~CT_NotesMaster();
         bool has_cSld() const;
         CT_CommonSlideData* mutable_cSld();
         const CT_CommonSlideData& get_cSld() const;
@@ -6294,6 +6425,7 @@ namespace ns_p {
     {
     public:
         CT_NotesSlide();
+        ~CT_NotesSlide();
         bool has_cSld() const;
         CT_CommonSlideData* mutable_cSld();
         const CT_CommonSlideData& get_cSld() const;
@@ -6331,6 +6463,7 @@ namespace ns_p {
     {
     public:
         CT_SlideSyncProperties();
+        ~CT_SlideSyncProperties();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -6363,6 +6496,7 @@ namespace ns_p {
     {
     public:
         CT_StringTag();
+        ~CT_StringTag();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_StringTag& default_instance();
@@ -6385,6 +6519,7 @@ namespace ns_p {
     {
     public:
         CT_TagList();
+        ~CT_TagList();
         CT_StringTag* add_tag();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6411,6 +6546,7 @@ namespace ns_p {
     {
     public:
         CT_NormalViewPortion();
+        ~CT_NormalViewPortion();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_NormalViewPortion& default_instance();
@@ -6433,6 +6569,7 @@ namespace ns_p {
     {
     public:
         CT_NormalViewProperties();
+        ~CT_NormalViewProperties();
         bool has_restoredLeft() const;
         CT_NormalViewPortion* mutable_restoredLeft();
         const CT_NormalViewPortion& get_restoredLeft() const;
@@ -6485,6 +6622,7 @@ namespace ns_p {
     {
     public:
         CT_CommonViewProperties();
+        ~CT_CommonViewProperties();
         bool has_scale() const;
         ns_a::CT_Scale2D* mutable_scale();
         const ns_a::CT_Scale2D& get_scale() const;
@@ -6512,6 +6650,7 @@ namespace ns_p {
     {
     public:
         CT_NotesTextViewProperties();
+        ~CT_NotesTextViewProperties();
         bool has_cViewPr() const;
         CT_CommonViewProperties* mutable_cViewPr();
         const CT_CommonViewProperties& get_cViewPr() const;
@@ -6534,6 +6673,7 @@ namespace ns_p {
     {
     public:
         CT_OutlineViewSlideEntry();
+        ~CT_OutlineViewSlideEntry();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OutlineViewSlideEntry& default_instance();
@@ -6556,6 +6696,7 @@ namespace ns_p {
     {
     public:
         CT_OutlineViewSlideList();
+        ~CT_OutlineViewSlideList();
         CT_OutlineViewSlideEntry* add_sld();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6582,6 +6723,7 @@ namespace ns_p {
     {
     public:
         CT_OutlineViewProperties();
+        ~CT_OutlineViewProperties();
         bool has_cViewPr() const;
         CT_CommonViewProperties* mutable_cViewPr();
         const CT_CommonViewProperties& get_cViewPr() const;
@@ -6609,6 +6751,7 @@ namespace ns_p {
     {
     public:
         CT_SlideSorterViewProperties();
+        ~CT_SlideSorterViewProperties();
         bool has_cViewPr() const;
         CT_CommonViewProperties* mutable_cViewPr();
         const CT_CommonViewProperties& get_cViewPr() const;
@@ -6636,6 +6779,7 @@ namespace ns_p {
     {
     public:
         CT_Guide();
+        ~CT_Guide();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Guide& default_instance();
@@ -6658,6 +6802,7 @@ namespace ns_p {
     {
     public:
         CT_GuideList();
+        ~CT_GuideList();
         CT_Guide* add_guide();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6684,6 +6829,7 @@ namespace ns_p {
     {
     public:
         CT_CommonSlideViewProperties();
+        ~CT_CommonSlideViewProperties();
         bool has_cViewPr() const;
         CT_CommonViewProperties* mutable_cViewPr();
         const CT_CommonViewProperties& get_cViewPr() const;
@@ -6721,6 +6867,7 @@ namespace ns_p {
     {
     public:
         CT_SlideViewProperties();
+        ~CT_SlideViewProperties();
         bool has_cSldViewPr() const;
         CT_CommonSlideViewProperties* mutable_cSldViewPr();
         const CT_CommonSlideViewProperties& get_cSldViewPr() const;
@@ -6743,6 +6890,7 @@ namespace ns_p {
     {
     public:
         CT_NotesViewProperties();
+        ~CT_NotesViewProperties();
         bool has_cSldViewPr() const;
         CT_CommonSlideViewProperties* mutable_cSldViewPr();
         const CT_CommonSlideViewProperties& get_cSldViewPr() const;
@@ -6765,6 +6913,7 @@ namespace ns_p {
     {
     public:
         CT_ViewProperties();
+        ~CT_ViewProperties();
         bool has_normalViewPr() const;
         CT_NormalViewProperties* mutable_normalViewPr();
         const CT_NormalViewProperties& get_normalViewPr() const;
@@ -6827,6 +6976,7 @@ namespace ns_p {
     {
     public:
         cmAuthorLst_element();
+        ~cmAuthorLst_element();
         CT_CommentAuthor* add_cmAuthor();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -6853,6 +7003,7 @@ namespace ns_p {
     {
     public:
         cmLst_element();
+        ~cmLst_element();
         CT_Comment* add_cm();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -6879,6 +7030,7 @@ namespace ns_p {
     {
     public:
         oleObj_element();
+        ~oleObj_element();
         bool has_embed() const;
         CT_OleObjectEmbed* mutable_embed();
         const CT_OleObjectEmbed& get_embed() const;
@@ -6941,6 +7093,7 @@ namespace ns_p {
     {
     public:
         presentation_element();
+        ~presentation_element();
         bool has_sldMasterIdLst() const;
         CT_SlideMasterIdList* mutable_sldMasterIdLst();
         const CT_SlideMasterIdList& get_sldMasterIdLst() const;
@@ -7088,6 +7241,7 @@ namespace ns_p {
     {
     public:
         presentationPr_element();
+        ~presentationPr_element();
         bool has_htmlPubPr() const;
         CT_HtmlPublishProperties* mutable_htmlPubPr();
         const CT_HtmlPublishProperties& get_htmlPubPr() const;
@@ -7130,6 +7284,7 @@ namespace ns_p {
     {
     public:
         sld_element();
+        ~sld_element();
         bool has_cSld() const;
         CT_CommonSlideData* mutable_cSld();
         const CT_CommonSlideData& get_cSld() const;
@@ -7182,6 +7337,7 @@ namespace ns_p {
     {
     public:
         sldLayout_element();
+        ~sldLayout_element();
         bool has_cSld() const;
         CT_CommonSlideData* mutable_cSld();
         const CT_CommonSlideData& get_cSld() const;
@@ -7254,6 +7410,7 @@ namespace ns_p {
     {
     public:
         sldMaster_element();
+        ~sldMaster_element();
         bool has_cSld() const;
         CT_CommonSlideData* mutable_cSld();
         const CT_CommonSlideData& get_cSld() const;
@@ -7311,6 +7468,7 @@ namespace ns_p {
     {
     public:
         handoutMaster_element();
+        ~handoutMaster_element();
         bool has_cSld() const;
         CT_CommonSlideData* mutable_cSld();
         const CT_CommonSlideData& get_cSld() const;
@@ -7343,6 +7501,7 @@ namespace ns_p {
     {
     public:
         notesMaster_element();
+        ~notesMaster_element();
         bool has_cSld() const;
         CT_CommonSlideData* mutable_cSld();
         const CT_CommonSlideData& get_cSld() const;
@@ -7380,6 +7539,7 @@ namespace ns_p {
     {
     public:
         notes_element();
+        ~notes_element();
         bool has_cSld() const;
         CT_CommonSlideData* mutable_cSld();
         const CT_CommonSlideData& get_cSld() const;
@@ -7417,6 +7577,7 @@ namespace ns_p {
     {
     public:
         sldSyncPr_element();
+        ~sldSyncPr_element();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -7449,6 +7610,7 @@ namespace ns_p {
     {
     public:
         tagLst_element();
+        ~tagLst_element();
         CT_StringTag* add_tag();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -7475,6 +7637,7 @@ namespace ns_p {
     {
     public:
         viewPr_element();
+        ~viewPr_element();
         bool has_normalViewPr() const;
         CT_NormalViewProperties* mutable_normalViewPr();
         const CT_NormalViewProperties& get_normalViewPr() const;

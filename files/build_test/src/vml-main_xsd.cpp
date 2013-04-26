@@ -57,7 +57,7 @@ namespace ns_v {
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -118,7 +118,7 @@ ST_Ext* ST_Ext::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -182,7 +182,7 @@ ST_FillType* ST_FillType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -245,7 +245,7 @@ ST_FillMethod* ST_FillMethod::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -307,7 +307,7 @@ ST_ShadowType* ST_ShadowType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -370,7 +370,7 @@ ST_StrokeLineStyle* ST_StrokeLineStyle::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -431,7 +431,7 @@ ST_StrokeJoinStyle* ST_StrokeJoinStyle::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -492,7 +492,7 @@ ST_StrokeEndCap* ST_StrokeEndCap::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -553,7 +553,7 @@ ST_StrokeArrowLength* ST_StrokeArrowLength::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -614,7 +614,7 @@ ST_StrokeArrowWidth* ST_StrokeArrowWidth::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -678,7 +678,7 @@ ST_StrokeArrowType* ST_StrokeArrowType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -739,7 +739,7 @@ ST_ImageAspect* ST_ImageAspect::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -778,6 +778,9 @@ ST_EditAs* ST_EditAs::default_instance_ = NULL;
     m_equationxml_attr("")
     {
     }
+    CT_Shape::~CT_Shape()
+{
+    clear();    }
     CT_Path* CT_Shape::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -7827,6 +7830,9 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
     m_o_master_attr("")
     {
     }
+    CT_Shapetype::~CT_Shapetype()
+{
+    clear();    }
     CT_Path* CT_Shapetype::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -13453,6 +13459,9 @@ CT_Shapetype* CT_Shapetype::default_instance_ = NULL;
     m_o_tablelimits_attr("")
     {
     }
+    CT_Group::~CT_Group()
+{
+    clear();    }
     CT_Path* CT_Group::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -25751,6 +25760,9 @@ CT_Group* CT_Group::default_instance_ = NULL;
     m_o_targetscreensize_attr(NULL)
     {
     }
+    CT_Background::~CT_Background()
+{
+    clear();    }
     bool CT_Background::has_fill() const
     {    
     return m_has_fill;
@@ -26102,6 +26114,9 @@ CT_Background* CT_Background::default_instance_ = NULL;
     m_o_relid_attr(NULL)
     {
     }
+    CT_Fill::~CT_Fill()
+{
+    clear();    }
     bool CT_Fill::has_o_fill() const
     {    
     return m_has_o_fill;
@@ -26958,6 +26973,9 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
 
     {
     }
+    CT_Formulas::~CT_Formulas()
+{
+    clear();    }
     CT_F* CT_Formulas::add_f()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -27052,6 +27070,9 @@ CT_Formulas* CT_Formulas::default_instance_ = NULL;
     m_eqn_attr("")
     {
     }
+    CT_F::~CT_F()
+{
+    clear();    }
     void CT_F::clear()
     {    
     m_has_eqn_attr = false;
@@ -27109,6 +27130,9 @@ CT_F* CT_F::default_instance_ = NULL;
 
     {
     }
+    CT_Handles::~CT_Handles()
+{
+    clear();    }
     CT_H* CT_Handles::add_h()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -27219,6 +27243,9 @@ CT_Handles* CT_Handles::default_instance_ = NULL;
     m_radiusrange_attr("")
     {
     }
+    CT_H::~CT_H()
+{
+    clear();    }
     void CT_H::clear()
     {    
     m_has_position_attr = false;
@@ -27553,6 +27580,9 @@ CT_H* CT_H::default_instance_ = NULL;
     m_r_href_attr(NULL)
     {
     }
+    CT_ImageData::~CT_ImageData()
+{
+    clear();    }
     void CT_ImageData::clear()
     {    
     m_has_id_attr = false;
@@ -28314,6 +28344,9 @@ CT_ImageData* CT_ImageData::default_instance_ = NULL;
     m_o_extrusionok_attr(NULL)
     {
     }
+    CT_Path::~CT_Path()
+{
+    clear();    }
     void CT_Path::clear()
     {    
     m_has_id_attr = false;
@@ -28832,6 +28865,9 @@ CT_Path* CT_Path::default_instance_ = NULL;
     m_matrix_attr("")
     {
     }
+    CT_Shadow::~CT_Shadow()
+{
+    clear();    }
     void CT_Shadow::clear()
     {    
     m_has_id_attr = false;
@@ -29256,6 +29292,9 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     m_o_relid_attr(NULL)
     {
     }
+    CT_Stroke::~CT_Stroke()
+{
+    clear();    }
     bool CT_Stroke::has_o_left() const
     {    
     return m_has_o_left;
@@ -30361,6 +30400,9 @@ CT_Stroke* CT_Stroke::default_instance_ = NULL;
     m_o_insetmode_attr(NULL)
     {
     }
+    CT_Textbox::~CT_Textbox()
+{
+    clear();    }
     bool CT_Textbox::has_w_txbxContent() const
     {    
     return m_has_w_txbxContent;
@@ -30590,6 +30632,9 @@ CT_Textbox* CT_Textbox::default_instance_ = NULL;
     m_string_attr("")
     {
     }
+    CT_TextPath::~CT_TextPath()
+{
+    clear();    }
     void CT_TextPath::clear()
     {    
     m_has_id_attr = false;
@@ -30875,6 +30920,9 @@ CT_TextPath* CT_TextPath::default_instance_ = NULL;
     m_endAngle_attr(0)
     {
     }
+    CT_Arc::~CT_Arc()
+{
+    clear();    }
     CT_Path* CT_Arc::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -36436,6 +36484,9 @@ CT_Arc* CT_Arc::default_instance_ = NULL;
     m_to_attr("")
     {
     }
+    CT_Curve::~CT_Curve()
+{
+    clear();    }
     CT_Path* CT_Curve::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -42059,6 +42110,9 @@ CT_Curve* CT_Curve::default_instance_ = NULL;
     m_bilevel_attr(NULL)
     {
     }
+    CT_Image::~CT_Image()
+{
+    clear();    }
     CT_Path* CT_Image::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -47836,6 +47890,9 @@ CT_Image* CT_Image::default_instance_ = NULL;
     m_to_attr("")
     {
     }
+    CT_Line::~CT_Line()
+{
+    clear();    }
     CT_Path* CT_Line::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -53390,6 +53447,9 @@ CT_Line* CT_Line::default_instance_ = NULL;
 
     {
     }
+    CT_Oval::~CT_Oval()
+{
+    clear();    }
     CT_Path* CT_Oval::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -58896,6 +58956,9 @@ CT_Oval* CT_Oval::default_instance_ = NULL;
     m_points_attr("")
     {
     }
+    CT_PolyLine::~CT_PolyLine()
+{
+    clear();    }
     CT_Path* CT_PolyLine::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -64878,6 +64941,9 @@ CT_PolyLine* CT_PolyLine::default_instance_ = NULL;
 
     {
     }
+    CT_Rect::~CT_Rect()
+{
+    clear();    }
     CT_Path* CT_Rect::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -70384,6 +70450,9 @@ CT_Rect* CT_Rect::default_instance_ = NULL;
     m_arcsize_attr("")
     {
     }
+    CT_RoundRect::~CT_RoundRect()
+{
+    clear();    }
     CT_Path* CT_RoundRect::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -75922,6 +75991,9 @@ CT_RoundRect* CT_RoundRect::default_instance_ = NULL;
     m_equationxml_attr("")
     {
     }
+    shape_element::~shape_element()
+{
+    clear();    }
     CT_Path* shape_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -82975,6 +83047,9 @@ shape_element* shape_element::default_instance_ = NULL;
     m_o_master_attr("")
     {
     }
+    shapetype_element::~shapetype_element()
+{
+    clear();    }
     CT_Path* shapetype_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -88605,6 +88680,9 @@ shapetype_element* shapetype_element::default_instance_ = NULL;
     m_o_tablelimits_attr("")
     {
     }
+    group_element::~group_element()
+{
+    clear();    }
     CT_Path* group_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -100907,6 +100985,9 @@ group_element* group_element::default_instance_ = NULL;
     m_o_targetscreensize_attr(NULL)
     {
     }
+    background_element::~background_element()
+{
+    clear();    }
     bool background_element::has_fill() const
     {    
     return m_has_fill;
@@ -101262,6 +101343,9 @@ background_element* background_element::default_instance_ = NULL;
     m_o_relid_attr(NULL)
     {
     }
+    fill_element::~fill_element()
+{
+    clear();    }
     bool fill_element::has_o_fill() const
     {    
     return m_has_o_fill;
@@ -102122,6 +102206,9 @@ fill_element* fill_element::default_instance_ = NULL;
 
     {
     }
+    formulas_element::~formulas_element()
+{
+    clear();    }
     CT_F* formulas_element::add_f()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -102219,6 +102306,9 @@ formulas_element* formulas_element::default_instance_ = NULL;
 
     {
     }
+    handles_element::~handles_element()
+{
+    clear();    }
     CT_H* handles_element::add_h()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -102363,6 +102453,9 @@ handles_element* handles_element::default_instance_ = NULL;
     m_r_href_attr(NULL)
     {
     }
+    imagedata_element::~imagedata_element()
+{
+    clear();    }
     void imagedata_element::clear()
     {    
     m_has_id_attr = false;
@@ -103128,6 +103221,9 @@ imagedata_element* imagedata_element::default_instance_ = NULL;
     m_o_extrusionok_attr(NULL)
     {
     }
+    path_element::~path_element()
+{
+    clear();    }
     void path_element::clear()
     {    
     m_has_id_attr = false;
@@ -103642,6 +103738,9 @@ path_element* path_element::default_instance_ = NULL;
     m_o_insetmode_attr(NULL)
     {
     }
+    textbox_element::~textbox_element()
+{
+    clear();    }
     bool textbox_element::has_w_txbxContent() const
     {    
     return m_has_w_txbxContent;
@@ -103881,6 +103980,9 @@ textbox_element* textbox_element::default_instance_ = NULL;
     m_matrix_attr("")
     {
     }
+    shadow_element::~shadow_element()
+{
+    clear();    }
     void shadow_element::clear()
     {    
     m_has_id_attr = false;
@@ -104309,6 +104411,9 @@ shadow_element* shadow_element::default_instance_ = NULL;
     m_o_relid_attr(NULL)
     {
     }
+    stroke_element::~stroke_element()
+{
+    clear();    }
     bool stroke_element::has_o_left() const
     {    
     return m_has_o_left;
@@ -105420,6 +105525,9 @@ stroke_element* stroke_element::default_instance_ = NULL;
     m_string_attr("")
     {
     }
+    textpath_element::~textpath_element()
+{
+    clear();    }
     void textpath_element::clear()
     {    
     m_has_id_attr = false;
@@ -105709,6 +105817,9 @@ textpath_element* textpath_element::default_instance_ = NULL;
     m_endAngle_attr(0)
     {
     }
+    arc_element::~arc_element()
+{
+    clear();    }
     CT_Path* arc_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -111274,6 +111385,9 @@ arc_element* arc_element::default_instance_ = NULL;
     m_to_attr("")
     {
     }
+    curve_element::~curve_element()
+{
+    clear();    }
     CT_Path* curve_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -116901,6 +117015,9 @@ curve_element* curve_element::default_instance_ = NULL;
     m_bilevel_attr(NULL)
     {
     }
+    image_element::~image_element()
+{
+    clear();    }
     CT_Path* image_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -122682,6 +122799,9 @@ image_element* image_element::default_instance_ = NULL;
     m_to_attr("")
     {
     }
+    line_element::~line_element()
+{
+    clear();    }
     CT_Path* line_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -128240,6 +128360,9 @@ line_element* line_element::default_instance_ = NULL;
 
     {
     }
+    oval_element::~oval_element()
+{
+    clear();    }
     CT_Path* oval_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -133750,6 +133873,9 @@ oval_element* oval_element::default_instance_ = NULL;
     m_points_attr("")
     {
     }
+    polyline_element::~polyline_element()
+{
+    clear();    }
     CT_Path* polyline_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -139736,6 +139862,9 @@ polyline_element* polyline_element::default_instance_ = NULL;
 
     {
     }
+    rect_element::~rect_element()
+{
+    clear();    }
     CT_Path* rect_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -145246,6 +145375,9 @@ rect_element* rect_element::default_instance_ = NULL;
     m_arcsize_attr("")
     {
     }
+    roundrect_element::~roundrect_element()
+{
+    clear();    }
     CT_Path* roundrect_element::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();

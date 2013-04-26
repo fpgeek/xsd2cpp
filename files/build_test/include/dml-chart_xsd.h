@@ -1828,6 +1828,7 @@ namespace ns_chart {
     {
     public:
         CT_Boolean();
+        ~CT_Boolean();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Boolean& default_instance();
@@ -1845,6 +1846,7 @@ namespace ns_chart {
     {
     public:
         CT_Double();
+        ~CT_Double();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Double& default_instance();
@@ -1862,6 +1864,7 @@ namespace ns_chart {
     {
     public:
         CT_UnsignedInt();
+        ~CT_UnsignedInt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_UnsignedInt& default_instance();
@@ -1879,6 +1882,7 @@ namespace ns_chart {
     {
     public:
         CT_RelId();
+        ~CT_RelId();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RelId& default_instance();
@@ -1896,6 +1900,7 @@ namespace ns_chart {
     {
     public:
         CT_Extension();
+        ~CT_Extension();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Extension& default_instance();
@@ -1915,6 +1920,7 @@ namespace ns_chart {
     {
     public:
         CT_ExtensionList();
+        ~CT_ExtensionList();
         CT_Extension* add_ext();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -1941,6 +1947,7 @@ namespace ns_chart {
     {
     public:
         CT_NumVal();
+        ~CT_NumVal();
         bool has_v() const;
         ns_s::ST_Xstring* mutable_v();
         const ns_s::ST_Xstring& get_v() const;
@@ -1968,6 +1975,7 @@ namespace ns_chart {
     {
     public:
         CT_NumData();
+        ~CT_NumData();
         bool has_formatCode() const;
         ns_s::ST_Xstring* mutable_formatCode();
         const ns_s::ST_Xstring& get_formatCode() const;
@@ -2010,6 +2018,7 @@ namespace ns_chart {
     {
     public:
         CT_NumRef();
+        ~CT_NumRef();
         bool has_f() const;
         void set_f(const XSD::string_& _f);
         const XSD::string_& get_f() const;
@@ -2037,6 +2046,7 @@ namespace ns_chart {
     {
     public:
         CT_NumDataSource();
+        ~CT_NumDataSource();
         bool has_numRef() const;
         CT_NumRef* mutable_numRef();
         const CT_NumRef& get_numRef() const;
@@ -2059,6 +2069,7 @@ namespace ns_chart {
     {
     public:
         CT_StrVal();
+        ~CT_StrVal();
         bool has_v() const;
         ns_s::ST_Xstring* mutable_v();
         const ns_s::ST_Xstring& get_v() const;
@@ -2081,6 +2092,7 @@ namespace ns_chart {
     {
     public:
         CT_StrData();
+        ~CT_StrData();
         bool has_ptCount() const;
         CT_UnsignedInt* mutable_ptCount();
         const CT_UnsignedInt& get_ptCount() const;
@@ -2118,6 +2130,7 @@ namespace ns_chart {
     {
     public:
         CT_StrRef();
+        ~CT_StrRef();
         bool has_f() const;
         void set_f(const XSD::string_& _f);
         const XSD::string_& get_f() const;
@@ -2145,6 +2158,7 @@ namespace ns_chart {
     {
     public:
         CT_Tx();
+        ~CT_Tx();
         bool has_strRef() const;
         CT_StrRef* mutable_strRef();
         const CT_StrRef& get_strRef() const;
@@ -2167,6 +2181,7 @@ namespace ns_chart {
     {
     public:
         CT_TextLanguageID();
+        ~CT_TextLanguageID();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextLanguageID& default_instance();
@@ -2184,6 +2199,7 @@ namespace ns_chart {
     {
     public:
         CT_Lvl();
+        ~CT_Lvl();
         CT_StrVal* add_pt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -2210,6 +2226,7 @@ namespace ns_chart {
     {
     public:
         CT_MultiLvlStrData();
+        ~CT_MultiLvlStrData();
         bool has_ptCount() const;
         CT_UnsignedInt* mutable_ptCount();
         const CT_UnsignedInt& get_ptCount() const;
@@ -2247,6 +2264,7 @@ namespace ns_chart {
     {
     public:
         CT_MultiLvlStrRef();
+        ~CT_MultiLvlStrRef();
         bool has_f() const;
         void set_f(const XSD::string_& _f);
         const XSD::string_& get_f() const;
@@ -2274,6 +2292,7 @@ namespace ns_chart {
     {
     public:
         CT_AxDataSource();
+        ~CT_AxDataSource();
         bool has_multiLvlStrRef() const;
         CT_MultiLvlStrRef* mutable_multiLvlStrRef();
         const CT_MultiLvlStrRef& get_multiLvlStrRef() const;
@@ -2311,6 +2330,7 @@ namespace ns_chart {
     {
     public:
         CT_SerTx();
+        ~CT_SerTx();
         bool has_strRef() const;
         CT_StrRef* mutable_strRef();
         const CT_StrRef& get_strRef() const;
@@ -2333,6 +2353,7 @@ namespace ns_chart {
     {
     public:
         CT_LayoutTarget();
+        ~CT_LayoutTarget();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LayoutTarget& default_instance();
@@ -2350,6 +2371,7 @@ namespace ns_chart {
     {
     public:
         CT_LayoutMode();
+        ~CT_LayoutMode();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LayoutMode& default_instance();
@@ -2367,6 +2389,7 @@ namespace ns_chart {
     {
     public:
         CT_ManualLayout();
+        ~CT_ManualLayout();
         bool has_layoutTarget() const;
         CT_LayoutTarget* mutable_layoutTarget();
         const CT_LayoutTarget& get_layoutTarget() const;
@@ -2429,6 +2452,7 @@ namespace ns_chart {
     {
     public:
         CT_Layout();
+        ~CT_Layout();
         bool has_manualLayout() const;
         CT_ManualLayout* mutable_manualLayout();
         const CT_ManualLayout& get_manualLayout() const;
@@ -2451,6 +2475,7 @@ namespace ns_chart {
     {
     public:
         CT_Title();
+        ~CT_Title();
         bool has_tx() const;
         CT_Tx* mutable_tx();
         const CT_Tx& get_tx() const;
@@ -2493,6 +2518,7 @@ namespace ns_chart {
     {
     public:
         CT_RotX();
+        ~CT_RotX();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RotX& default_instance();
@@ -2510,6 +2536,7 @@ namespace ns_chart {
     {
     public:
         CT_HPercent();
+        ~CT_HPercent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_HPercent& default_instance();
@@ -2527,6 +2554,7 @@ namespace ns_chart {
     {
     public:
         CT_RotY();
+        ~CT_RotY();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RotY& default_instance();
@@ -2544,6 +2572,7 @@ namespace ns_chart {
     {
     public:
         CT_DepthPercent();
+        ~CT_DepthPercent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DepthPercent& default_instance();
@@ -2561,6 +2590,7 @@ namespace ns_chart {
     {
     public:
         CT_Perspective();
+        ~CT_Perspective();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Perspective& default_instance();
@@ -2578,6 +2608,7 @@ namespace ns_chart {
     {
     public:
         CT_View3D();
+        ~CT_View3D();
         bool has_rotX() const;
         CT_RotX* mutable_rotX();
         const CT_RotX& get_rotX() const;
@@ -2625,6 +2656,7 @@ namespace ns_chart {
     {
     public:
         CT_Surface();
+        ~CT_Surface();
         bool has_thickness() const;
         CT_Thickness* mutable_thickness();
         const CT_Thickness& get_thickness() const;
@@ -2657,6 +2689,7 @@ namespace ns_chart {
     {
     public:
         CT_Thickness();
+        ~CT_Thickness();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Thickness& default_instance();
@@ -2674,6 +2707,7 @@ namespace ns_chart {
     {
     public:
         CT_DTable();
+        ~CT_DTable();
         bool has_showHorzBorder() const;
         CT_Boolean* mutable_showHorzBorder();
         const CT_Boolean& get_showHorzBorder() const;
@@ -2721,6 +2755,7 @@ namespace ns_chart {
     {
     public:
         CT_GapAmount();
+        ~CT_GapAmount();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_GapAmount& default_instance();
@@ -2738,6 +2773,7 @@ namespace ns_chart {
     {
     public:
         CT_Overlap();
+        ~CT_Overlap();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Overlap& default_instance();
@@ -2755,6 +2791,7 @@ namespace ns_chart {
     {
     public:
         CT_BubbleScale();
+        ~CT_BubbleScale();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BubbleScale& default_instance();
@@ -2772,6 +2809,7 @@ namespace ns_chart {
     {
     public:
         CT_SizeRepresents();
+        ~CT_SizeRepresents();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SizeRepresents& default_instance();
@@ -2789,6 +2827,7 @@ namespace ns_chart {
     {
     public:
         CT_FirstSliceAng();
+        ~CT_FirstSliceAng();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FirstSliceAng& default_instance();
@@ -2806,6 +2845,7 @@ namespace ns_chart {
     {
     public:
         CT_HoleSize();
+        ~CT_HoleSize();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_HoleSize& default_instance();
@@ -2823,6 +2863,7 @@ namespace ns_chart {
     {
     public:
         CT_SplitType();
+        ~CT_SplitType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SplitType& default_instance();
@@ -2840,6 +2881,7 @@ namespace ns_chart {
     {
     public:
         CT_CustSplit();
+        ~CT_CustSplit();
         CT_UnsignedInt* add_secondPiePt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -2866,6 +2908,7 @@ namespace ns_chart {
     {
     public:
         CT_SecondPieSize();
+        ~CT_SecondPieSize();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SecondPieSize& default_instance();
@@ -2883,6 +2926,7 @@ namespace ns_chart {
     {
     public:
         CT_NumFmt();
+        ~CT_NumFmt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_NumFmt& default_instance();
@@ -2905,6 +2949,7 @@ namespace ns_chart {
     {
     public:
         CT_LblAlgn();
+        ~CT_LblAlgn();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LblAlgn& default_instance();
@@ -2922,6 +2967,7 @@ namespace ns_chart {
     {
     public:
         CT_DLblPos();
+        ~CT_DLblPos();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DLblPos& default_instance();
@@ -2939,6 +2985,7 @@ namespace ns_chart {
     {
     public:
         CT_DLbl();
+        ~CT_DLbl();
         bool has_idx() const;
         CT_UnsignedInt* mutable_idx();
         const CT_UnsignedInt& get_idx() const;
@@ -2966,6 +3013,7 @@ namespace ns_chart {
     {
     public:
         CT_DLbls();
+        ~CT_DLbls();
         CT_DLbl* add_dLbl();
         CT_Boolean* add_delete();
         CT_NumFmt* add_numFmt();
@@ -3082,6 +3130,7 @@ namespace ns_chart {
     {
     public:
         CT_MarkerStyle();
+        ~CT_MarkerStyle();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MarkerStyle& default_instance();
@@ -3099,6 +3148,7 @@ namespace ns_chart {
     {
     public:
         CT_MarkerSize();
+        ~CT_MarkerSize();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MarkerSize& default_instance();
@@ -3116,6 +3166,7 @@ namespace ns_chart {
     {
     public:
         CT_Marker();
+        ~CT_Marker();
         bool has_symbol() const;
         CT_MarkerStyle* mutable_symbol();
         const CT_MarkerStyle& get_symbol() const;
@@ -3148,6 +3199,7 @@ namespace ns_chart {
     {
     public:
         CT_DPt();
+        ~CT_DPt();
         bool has_idx() const;
         CT_UnsignedInt* mutable_idx();
         const CT_UnsignedInt& get_idx() const;
@@ -3200,6 +3252,7 @@ namespace ns_chart {
     {
     public:
         CT_TrendlineType();
+        ~CT_TrendlineType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TrendlineType& default_instance();
@@ -3217,6 +3270,7 @@ namespace ns_chart {
     {
     public:
         CT_Order();
+        ~CT_Order();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Order& default_instance();
@@ -3234,6 +3288,7 @@ namespace ns_chart {
     {
     public:
         CT_Period();
+        ~CT_Period();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Period& default_instance();
@@ -3251,6 +3306,7 @@ namespace ns_chart {
     {
     public:
         CT_TrendlineLbl();
+        ~CT_TrendlineLbl();
         bool has_layout() const;
         CT_Layout* mutable_layout();
         const CT_Layout& get_layout() const;
@@ -3293,6 +3349,7 @@ namespace ns_chart {
     {
     public:
         CT_Trendline();
+        ~CT_Trendline();
         bool has_name() const;
         void set_name(const XSD::string_& _name);
         const XSD::string_& get_name() const;
@@ -3365,6 +3422,7 @@ namespace ns_chart {
     {
     public:
         CT_ErrDir();
+        ~CT_ErrDir();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ErrDir& default_instance();
@@ -3382,6 +3440,7 @@ namespace ns_chart {
     {
     public:
         CT_ErrBarType();
+        ~CT_ErrBarType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ErrBarType& default_instance();
@@ -3399,6 +3458,7 @@ namespace ns_chart {
     {
     public:
         CT_ErrValType();
+        ~CT_ErrValType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ErrValType& default_instance();
@@ -3416,6 +3476,7 @@ namespace ns_chart {
     {
     public:
         CT_ErrBars();
+        ~CT_ErrBars();
         bool has_errDir() const;
         CT_ErrDir* mutable_errDir();
         const CT_ErrDir& get_errDir() const;
@@ -3473,6 +3534,7 @@ namespace ns_chart {
     {
     public:
         CT_UpDownBar();
+        ~CT_UpDownBar();
         bool has_spPr() const;
         ns_a::CT_ShapeProperties* mutable_spPr();
         const ns_a::CT_ShapeProperties& get_spPr() const;
@@ -3490,6 +3552,7 @@ namespace ns_chart {
     {
     public:
         CT_UpDownBars();
+        ~CT_UpDownBars();
         bool has_gapWidth() const;
         CT_GapAmount* mutable_gapWidth();
         const CT_GapAmount& get_gapWidth() const;
@@ -3522,6 +3585,7 @@ namespace ns_chart {
     {
     public:
         CT_LineSer();
+        ~CT_LineSer();
         bool has_idx() const;
         CT_UnsignedInt* mutable_idx();
         const CT_UnsignedInt& get_idx() const;
@@ -3615,6 +3679,7 @@ namespace ns_chart {
     {
     public:
         CT_ScatterSer();
+        ~CT_ScatterSer();
         bool has_idx() const;
         CT_UnsignedInt* mutable_idx();
         const CT_UnsignedInt& get_idx() const;
@@ -3708,6 +3773,7 @@ namespace ns_chart {
     {
     public:
         CT_RadarSer();
+        ~CT_RadarSer();
         bool has_idx() const;
         CT_UnsignedInt* mutable_idx();
         const CT_UnsignedInt& get_idx() const;
@@ -3783,6 +3849,7 @@ namespace ns_chart {
     {
     public:
         CT_BarSer();
+        ~CT_BarSer();
         bool has_idx() const;
         CT_UnsignedInt* mutable_idx();
         const CT_UnsignedInt& get_idx() const;
@@ -3881,6 +3948,7 @@ namespace ns_chart {
     {
     public:
         CT_AreaSer();
+        ~CT_AreaSer();
         bool has_idx() const;
         CT_UnsignedInt* mutable_idx();
         const CT_UnsignedInt& get_idx() const;
@@ -3968,6 +4036,7 @@ namespace ns_chart {
     {
     public:
         CT_PieSer();
+        ~CT_PieSer();
         bool has_idx() const;
         CT_UnsignedInt* mutable_idx();
         const CT_UnsignedInt& get_idx() const;
@@ -4043,6 +4112,7 @@ namespace ns_chart {
     {
     public:
         CT_BubbleSer();
+        ~CT_BubbleSer();
         bool has_idx() const;
         CT_UnsignedInt* mutable_idx();
         const CT_UnsignedInt& get_idx() const;
@@ -4142,6 +4212,7 @@ namespace ns_chart {
     {
     public:
         CT_SurfaceSer();
+        ~CT_SurfaceSer();
         bool has_idx() const;
         CT_UnsignedInt* mutable_idx();
         const CT_UnsignedInt& get_idx() const;
@@ -4189,6 +4260,7 @@ namespace ns_chart {
     {
     public:
         CT_Grouping();
+        ~CT_Grouping();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Grouping& default_instance();
@@ -4206,6 +4278,7 @@ namespace ns_chart {
     {
     public:
         CT_ChartLines();
+        ~CT_ChartLines();
         bool has_spPr() const;
         ns_a::CT_ShapeProperties* mutable_spPr();
         const ns_a::CT_ShapeProperties& get_spPr() const;
@@ -4223,6 +4296,7 @@ namespace ns_chart {
     {
     public:
         CT_LineChart();
+        ~CT_LineChart();
         bool has_grouping() const;
         CT_Grouping* mutable_grouping();
         const CT_Grouping& get_grouping() const;
@@ -4311,6 +4385,7 @@ namespace ns_chart {
     {
     public:
         CT_Line3DChart();
+        ~CT_Line3DChart();
         bool has_grouping() const;
         CT_Grouping* mutable_grouping();
         const CT_Grouping& get_grouping() const;
@@ -4384,6 +4459,7 @@ namespace ns_chart {
     {
     public:
         CT_StockChart();
+        ~CT_StockChart();
         CT_LineSer* add_ser();
         CT_DLbls* add_dLbls();
         CT_ChartLines* add_dropLines();
@@ -4446,6 +4522,7 @@ namespace ns_chart {
     {
     public:
         CT_ScatterStyle();
+        ~CT_ScatterStyle();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ScatterStyle& default_instance();
@@ -4463,6 +4540,7 @@ namespace ns_chart {
     {
     public:
         CT_ScatterChart();
+        ~CT_ScatterChart();
         bool has_scatterStyle() const;
         CT_ScatterStyle* mutable_scatterStyle();
         const CT_ScatterStyle& get_scatterStyle() const;
@@ -4517,6 +4595,7 @@ namespace ns_chart {
     {
     public:
         CT_RadarStyle();
+        ~CT_RadarStyle();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RadarStyle& default_instance();
@@ -4534,6 +4613,7 @@ namespace ns_chart {
     {
     public:
         CT_RadarChart();
+        ~CT_RadarChart();
         bool has_radarStyle() const;
         CT_RadarStyle* mutable_radarStyle();
         const CT_RadarStyle& get_radarStyle() const;
@@ -4588,6 +4668,7 @@ namespace ns_chart {
     {
     public:
         CT_BarGrouping();
+        ~CT_BarGrouping();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BarGrouping& default_instance();
@@ -4605,6 +4686,7 @@ namespace ns_chart {
     {
     public:
         CT_BarDir();
+        ~CT_BarDir();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BarDir& default_instance();
@@ -4622,6 +4704,7 @@ namespace ns_chart {
     {
     public:
         CT_Shape();
+        ~CT_Shape();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Shape& default_instance();
@@ -4639,6 +4722,7 @@ namespace ns_chart {
     {
     public:
         CT_BarChart();
+        ~CT_BarChart();
         bool has_barDir() const;
         CT_BarDir* mutable_barDir();
         const CT_BarDir& get_barDir() const;
@@ -4722,6 +4806,7 @@ namespace ns_chart {
     {
     public:
         CT_Bar3DChart();
+        ~CT_Bar3DChart();
         bool has_barDir() const;
         CT_BarDir* mutable_barDir();
         const CT_BarDir& get_barDir() const;
@@ -4804,6 +4889,7 @@ namespace ns_chart {
     {
     public:
         CT_AreaChart();
+        ~CT_AreaChart();
         bool has_grouping() const;
         CT_Grouping* mutable_grouping();
         const CT_Grouping& get_grouping() const;
@@ -4864,6 +4950,7 @@ namespace ns_chart {
     {
     public:
         CT_Area3DChart();
+        ~CT_Area3DChart();
         bool has_grouping() const;
         CT_Grouping* mutable_grouping();
         const CT_Grouping& get_grouping() const;
@@ -4937,6 +5024,7 @@ namespace ns_chart {
     {
     public:
         CT_PieChart();
+        ~CT_PieChart();
         bool has_varyColors() const;
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
@@ -4984,6 +5072,7 @@ namespace ns_chart {
     {
     public:
         CT_Pie3DChart();
+        ~CT_Pie3DChart();
         bool has_varyColors() const;
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
@@ -5026,6 +5115,7 @@ namespace ns_chart {
     {
     public:
         CT_DoughnutChart();
+        ~CT_DoughnutChart();
         bool has_varyColors() const;
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
@@ -5078,6 +5168,7 @@ namespace ns_chart {
     {
     public:
         CT_OfPieType();
+        ~CT_OfPieType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OfPieType& default_instance();
@@ -5095,6 +5186,7 @@ namespace ns_chart {
     {
     public:
         CT_OfPieChart();
+        ~CT_OfPieChart();
         bool has_ofPieType() const;
         CT_OfPieType* mutable_ofPieType();
         const CT_OfPieType& get_ofPieType() const;
@@ -5182,6 +5274,7 @@ namespace ns_chart {
     {
     public:
         CT_BubbleChart();
+        ~CT_BubbleChart();
         bool has_varyColors() const;
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
@@ -5255,6 +5348,7 @@ namespace ns_chart {
     {
     public:
         CT_BandFmt();
+        ~CT_BandFmt();
         bool has_idx() const;
         CT_UnsignedInt* mutable_idx();
         const CT_UnsignedInt& get_idx() const;
@@ -5277,6 +5371,7 @@ namespace ns_chart {
     {
     public:
         CT_BandFmts();
+        ~CT_BandFmts();
         CT_BandFmt* add_bandFmt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -5303,6 +5398,7 @@ namespace ns_chart {
     {
     public:
         CT_SurfaceChart();
+        ~CT_SurfaceChart();
         bool has_wireframe() const;
         CT_Boolean* mutable_wireframe();
         const CT_Boolean& get_wireframe() const;
@@ -5352,6 +5448,7 @@ namespace ns_chart {
     {
     public:
         CT_Surface3DChart();
+        ~CT_Surface3DChart();
         bool has_wireframe() const;
         CT_Boolean* mutable_wireframe();
         const CT_Boolean& get_wireframe() const;
@@ -5401,6 +5498,7 @@ namespace ns_chart {
     {
     public:
         CT_AxPos();
+        ~CT_AxPos();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AxPos& default_instance();
@@ -5418,6 +5516,7 @@ namespace ns_chart {
     {
     public:
         CT_Crosses();
+        ~CT_Crosses();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Crosses& default_instance();
@@ -5435,6 +5534,7 @@ namespace ns_chart {
     {
     public:
         CT_CrossBetween();
+        ~CT_CrossBetween();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CrossBetween& default_instance();
@@ -5452,6 +5552,7 @@ namespace ns_chart {
     {
     public:
         CT_TickMark();
+        ~CT_TickMark();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TickMark& default_instance();
@@ -5469,6 +5570,7 @@ namespace ns_chart {
     {
     public:
         CT_TickLblPos();
+        ~CT_TickLblPos();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TickLblPos& default_instance();
@@ -5486,6 +5588,7 @@ namespace ns_chart {
     {
     public:
         CT_Skip();
+        ~CT_Skip();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Skip& default_instance();
@@ -5503,6 +5606,7 @@ namespace ns_chart {
     {
     public:
         CT_TimeUnit();
+        ~CT_TimeUnit();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TimeUnit& default_instance();
@@ -5520,6 +5624,7 @@ namespace ns_chart {
     {
     public:
         CT_AxisUnit();
+        ~CT_AxisUnit();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AxisUnit& default_instance();
@@ -5537,6 +5642,7 @@ namespace ns_chart {
     {
     public:
         CT_BuiltInUnit();
+        ~CT_BuiltInUnit();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BuiltInUnit& default_instance();
@@ -5554,6 +5660,7 @@ namespace ns_chart {
     {
     public:
         CT_PictureFormat();
+        ~CT_PictureFormat();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PictureFormat& default_instance();
@@ -5571,6 +5678,7 @@ namespace ns_chart {
     {
     public:
         CT_PictureStackUnit();
+        ~CT_PictureStackUnit();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PictureStackUnit& default_instance();
@@ -5588,6 +5696,7 @@ namespace ns_chart {
     {
     public:
         CT_PictureOptions();
+        ~CT_PictureOptions();
         bool has_applyToFront() const;
         CT_Boolean* mutable_applyToFront();
         const CT_Boolean& get_applyToFront() const;
@@ -5625,6 +5734,7 @@ namespace ns_chart {
     {
     public:
         CT_DispUnitsLbl();
+        ~CT_DispUnitsLbl();
         bool has_layout() const;
         CT_Layout* mutable_layout();
         const CT_Layout& get_layout() const;
@@ -5657,6 +5767,7 @@ namespace ns_chart {
     {
     public:
         CT_DispUnits();
+        ~CT_DispUnits();
         bool has_custUnit() const;
         CT_Double* mutable_custUnit();
         const CT_Double& get_custUnit() const;
@@ -5689,6 +5800,7 @@ namespace ns_chart {
     {
     public:
         CT_Orientation();
+        ~CT_Orientation();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Orientation& default_instance();
@@ -5706,6 +5818,7 @@ namespace ns_chart {
     {
     public:
         CT_LogBase();
+        ~CT_LogBase();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LogBase& default_instance();
@@ -5723,6 +5836,7 @@ namespace ns_chart {
     {
     public:
         CT_Scaling();
+        ~CT_Scaling();
         bool has_logBase() const;
         CT_LogBase* mutable_logBase();
         const CT_LogBase& get_logBase() const;
@@ -5760,6 +5874,7 @@ namespace ns_chart {
     {
     public:
         CT_LblOffset();
+        ~CT_LblOffset();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LblOffset& default_instance();
@@ -5777,6 +5892,7 @@ namespace ns_chart {
     {
     public:
         CT_CatAx();
+        ~CT_CatAx();
         bool has_axId() const;
         CT_UnsignedInt* mutable_axId();
         const CT_UnsignedInt& get_axId() const;
@@ -5904,6 +6020,7 @@ namespace ns_chart {
     {
     public:
         CT_DateAx();
+        ~CT_DateAx();
         bool has_axId() const;
         CT_UnsignedInt* mutable_axId();
         const CT_UnsignedInt& get_axId() const;
@@ -6036,6 +6153,7 @@ namespace ns_chart {
     {
     public:
         CT_SerAx();
+        ~CT_SerAx();
         bool has_axId() const;
         CT_UnsignedInt* mutable_axId();
         const CT_UnsignedInt& get_axId() const;
@@ -6143,6 +6261,7 @@ namespace ns_chart {
     {
     public:
         CT_ValAx();
+        ~CT_ValAx();
         bool has_axId() const;
         CT_UnsignedInt* mutable_axId();
         const CT_UnsignedInt& get_axId() const;
@@ -6260,6 +6379,7 @@ namespace ns_chart {
     {
     public:
         CT_PlotArea();
+        ~CT_PlotArea();
         bool has_layout() const;
         CT_Layout* mutable_layout();
         const CT_Layout& get_layout() const;
@@ -6420,6 +6540,7 @@ namespace ns_chart {
     {
     public:
         CT_PivotFmt();
+        ~CT_PivotFmt();
         bool has_idx() const;
         CT_UnsignedInt* mutable_idx();
         const CT_UnsignedInt& get_idx() const;
@@ -6462,6 +6583,7 @@ namespace ns_chart {
     {
     public:
         CT_PivotFmts();
+        ~CT_PivotFmts();
         CT_PivotFmt* add_pivotFmt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6488,6 +6610,7 @@ namespace ns_chart {
     {
     public:
         CT_LegendPos();
+        ~CT_LegendPos();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LegendPos& default_instance();
@@ -6505,6 +6628,7 @@ namespace ns_chart {
     {
     public:
         CT_LegendEntry();
+        ~CT_LegendEntry();
         bool has_idx() const;
         CT_UnsignedInt* mutable_idx();
         const CT_UnsignedInt& get_idx() const;
@@ -6532,6 +6656,7 @@ namespace ns_chart {
     {
     public:
         CT_Legend();
+        ~CT_Legend();
         bool has_legendPos() const;
         CT_LegendPos* mutable_legendPos();
         const CT_LegendPos& get_legendPos() const;
@@ -6593,6 +6718,7 @@ namespace ns_chart {
     {
     public:
         CT_DispBlanksAs();
+        ~CT_DispBlanksAs();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DispBlanksAs& default_instance();
@@ -6610,6 +6736,7 @@ namespace ns_chart {
     {
     public:
         CT_Chart();
+        ~CT_Chart();
         bool has_title() const;
         CT_Title* mutable_title();
         const CT_Title& get_title() const;
@@ -6687,6 +6814,7 @@ namespace ns_chart {
     {
     public:
         CT_Style();
+        ~CT_Style();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Style& default_instance();
@@ -6704,6 +6832,7 @@ namespace ns_chart {
     {
     public:
         CT_PivotSource();
+        ~CT_PivotSource();
         bool has_name() const;
         ns_s::ST_Xstring* mutable_name();
         const ns_s::ST_Xstring& get_name() const;
@@ -6740,6 +6869,7 @@ namespace ns_chart {
     {
     public:
         CT_Protection();
+        ~CT_Protection();
         bool has_chartObject() const;
         CT_Boolean* mutable_chartObject();
         const CT_Boolean& get_chartObject() const;
@@ -6777,6 +6907,7 @@ namespace ns_chart {
     {
     public:
         CT_HeaderFooter();
+        ~CT_HeaderFooter();
         bool has_oddHeader() const;
         ns_s::ST_Xstring* mutable_oddHeader();
         const ns_s::ST_Xstring& get_oddHeader() const;
@@ -6834,6 +6965,7 @@ namespace ns_chart {
     {
     public:
         CT_PageMargins();
+        ~CT_PageMargins();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageMargins& default_instance();
@@ -6876,6 +7008,7 @@ namespace ns_chart {
     {
     public:
         CT_ExternalData();
+        ~CT_ExternalData();
         bool has_autoUpdate() const;
         CT_Boolean* mutable_autoUpdate();
         const CT_Boolean& get_autoUpdate() const;
@@ -6898,6 +7031,7 @@ namespace ns_chart {
     {
     public:
         CT_PageSetup();
+        ~CT_PageSetup();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageSetup& default_instance();
@@ -6965,6 +7099,7 @@ namespace ns_chart {
     {
     public:
         CT_PrintSettings();
+        ~CT_PrintSettings();
         bool has_headerFooter() const;
         CT_HeaderFooter* mutable_headerFooter();
         const CT_HeaderFooter& get_headerFooter() const;
@@ -6997,6 +7132,7 @@ namespace ns_chart {
     {
     public:
         CT_ChartSpace();
+        ~CT_ChartSpace();
         bool has_date1904() const;
         CT_Boolean* mutable_date1904();
         const CT_Boolean& get_date1904() const;
@@ -7079,6 +7215,7 @@ namespace ns_chart {
     {
     public:
         chartSpace_element();
+        ~chartSpace_element();
         bool has_date1904() const;
         CT_Boolean* mutable_date1904();
         const CT_Boolean& get_date1904() const;
@@ -7168,6 +7305,7 @@ namespace ns_chart {
     {
     public:
         chart_element();
+        ~chart_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const chart_element& default_instance();

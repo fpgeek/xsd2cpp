@@ -81,6 +81,9 @@ ST_MarkerCoordinate* ST_MarkerCoordinate::default_instance_ = NULL;
     m_cNvSpPr(NULL)
     {
     }
+    CT_ShapeNonVisual::~CT_ShapeNonVisual()
+{
+    clear();    }
     bool CT_ShapeNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -187,6 +190,9 @@ CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
     m_fPublished_attr(false)
     {
     }
+    CT_Shape::~CT_Shape()
+{
+    clear();    }
     bool CT_Shape::has_nvSpPr() const
     {    
     return m_has_nvSpPr;
@@ -438,6 +444,9 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
     m_cNvCxnSpPr(NULL)
     {
     }
+    CT_ConnectorNonVisual::~CT_ConnectorNonVisual()
+{
+    clear();    }
     bool CT_ConnectorNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -538,6 +547,9 @@ CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
     m_fPublished_attr(false)
     {
     }
+    CT_Connector::~CT_Connector()
+{
+    clear();    }
     bool CT_Connector::has_nvCxnSpPr() const
     {    
     return m_has_nvCxnSpPr;
@@ -710,6 +722,9 @@ CT_Connector* CT_Connector::default_instance_ = NULL;
     m_cNvPicPr(NULL)
     {
     }
+    CT_PictureNonVisual::~CT_PictureNonVisual()
+{
+    clear();    }
     bool CT_PictureNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -812,6 +827,9 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
     m_fPublished_attr(false)
     {
     }
+    CT_Picture::~CT_Picture()
+{
+    clear();    }
     bool CT_Picture::has_nvPicPr() const
     {    
     return m_has_nvPicPr;
@@ -1013,6 +1031,9 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
     m_cNvGraphicFramePr(NULL)
     {
     }
+    CT_GraphicFrameNonVisual::~CT_GraphicFrameNonVisual()
+{
+    clear();    }
     bool CT_GraphicFrameNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -1113,6 +1134,9 @@ CT_GraphicFrameNonVisual* CT_GraphicFrameNonVisual::default_instance_ = NULL;
     m_fPublished_attr(false)
     {
     }
+    CT_GraphicFrame::~CT_GraphicFrame()
+{
+    clear();    }
     bool CT_GraphicFrame::has_nvGraphicFramePr() const
     {    
     return m_has_nvGraphicFramePr;
@@ -1285,6 +1309,9 @@ CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
     m_cNvGrpSpPr(NULL)
     {
     }
+    CT_GroupShapeNonVisual::~CT_GroupShapeNonVisual()
+{
+    clear();    }
     bool CT_GroupShapeNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -1379,6 +1406,9 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
     m_grpSpPr(NULL)
     {
     }
+    CT_GroupShape::~CT_GroupShape()
+{
+    clear();    }
     bool CT_GroupShape::has_nvGrpSpPr() const
     {    
     return m_has_nvGrpSpPr;
@@ -1887,6 +1917,9 @@ CT_GroupShape* CT_GroupShape::default_instance_ = NULL;
     m_y(NULL)
     {
     }
+    CT_Marker::~CT_Marker()
+{
+    clear();    }
     bool CT_Marker::has_x() const
     {    
     return m_has_x;
@@ -1991,6 +2024,9 @@ CT_Marker* CT_Marker::default_instance_ = NULL;
     m_pic(NULL)
     {
     }
+    CT_RelSizeAnchor::~CT_RelSizeAnchor()
+{
+    clear();    }
     bool CT_RelSizeAnchor::has_from() const
     {    
     return m_has_from;
@@ -2425,6 +2461,9 @@ CT_RelSizeAnchor* CT_RelSizeAnchor::default_instance_ = NULL;
     m_pic(NULL)
     {
     }
+    CT_AbsSizeAnchor::~CT_AbsSizeAnchor()
+{
+    clear();    }
     bool CT_AbsSizeAnchor::has_from() const
     {    
     return m_has_from;
@@ -2846,6 +2885,9 @@ CT_AbsSizeAnchor* CT_AbsSizeAnchor::default_instance_ = NULL;
 
     {
     }
+    CT_Drawing::~CT_Drawing()
+{
+    clear();    }
     CT_RelSizeAnchor* CT_Drawing::add_relSizeAnchor()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();

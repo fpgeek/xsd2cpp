@@ -64,6 +64,7 @@ namespace ns_cdr {
     {
     public:
         CT_ShapeNonVisual();
+        ~CT_ShapeNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -86,6 +87,7 @@ namespace ns_cdr {
     {
     public:
         CT_Shape();
+        ~CT_Shape();
         bool has_nvSpPr() const;
         CT_ShapeNonVisual* mutable_nvSpPr();
         const CT_ShapeNonVisual& get_nvSpPr() const;
@@ -138,6 +140,7 @@ namespace ns_cdr {
     {
     public:
         CT_ConnectorNonVisual();
+        ~CT_ConnectorNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -160,6 +163,7 @@ namespace ns_cdr {
     {
     public:
         CT_Connector();
+        ~CT_Connector();
         bool has_nvCxnSpPr() const;
         CT_ConnectorNonVisual* mutable_nvCxnSpPr();
         const CT_ConnectorNonVisual& get_nvCxnSpPr() const;
@@ -197,6 +201,7 @@ namespace ns_cdr {
     {
     public:
         CT_PictureNonVisual();
+        ~CT_PictureNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -219,6 +224,7 @@ namespace ns_cdr {
     {
     public:
         CT_Picture();
+        ~CT_Picture();
         bool has_nvPicPr() const;
         CT_PictureNonVisual* mutable_nvPicPr();
         const CT_PictureNonVisual& get_nvPicPr() const;
@@ -261,6 +267,7 @@ namespace ns_cdr {
     {
     public:
         CT_GraphicFrameNonVisual();
+        ~CT_GraphicFrameNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -283,6 +290,7 @@ namespace ns_cdr {
     {
     public:
         CT_GraphicFrame();
+        ~CT_GraphicFrame();
         bool has_nvGraphicFramePr() const;
         CT_GraphicFrameNonVisual* mutable_nvGraphicFramePr();
         const CT_GraphicFrameNonVisual& get_nvGraphicFramePr() const;
@@ -320,6 +328,7 @@ namespace ns_cdr {
     {
     public:
         CT_GroupShapeNonVisual();
+        ~CT_GroupShapeNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -342,6 +351,7 @@ namespace ns_cdr {
     {
     public:
         CT_GroupShape();
+        ~CT_GroupShape();
         bool has_nvGrpSpPr() const;
         CT_GroupShapeNonVisual* mutable_nvGrpSpPr();
         const CT_GroupShapeNonVisual& get_nvGrpSpPr() const;
@@ -402,6 +412,7 @@ namespace ns_cdr {
     {
     public:
         CT_Marker();
+        ~CT_Marker();
         bool has_x() const;
         ST_MarkerCoordinate* mutable_x();
         const ST_MarkerCoordinate& get_x() const;
@@ -424,6 +435,7 @@ namespace ns_cdr {
     {
     public:
         CT_RelSizeAnchor();
+        ~CT_RelSizeAnchor();
         bool has_from() const;
         CT_Marker* mutable_from();
         const CT_Marker& get_from() const;
@@ -471,6 +483,7 @@ namespace ns_cdr {
     {
     public:
         CT_AbsSizeAnchor();
+        ~CT_AbsSizeAnchor();
         bool has_from() const;
         CT_Marker* mutable_from();
         const CT_Marker& get_from() const;
@@ -518,6 +531,7 @@ namespace ns_cdr {
     {
     public:
         CT_Drawing();
+        ~CT_Drawing();
         CT_RelSizeAnchor* add_relSizeAnchor();
         CT_AbsSizeAnchor* add_absSizeAnchor();
         void clear();

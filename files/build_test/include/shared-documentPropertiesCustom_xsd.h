@@ -34,6 +34,7 @@ namespace ns_custom_properties {
     {
     public:
         CT_Properties();
+        ~CT_Properties();
         CT_Property* add_property();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -60,6 +61,7 @@ namespace ns_custom_properties {
     {
     public:
         CT_Property();
+        ~CT_Property();
         bool has_vt_vector() const;
         ns_vt::CT_Vector* mutable_vt_vector();
         const ns_vt::CT_Vector& get_vt_vector() const;
@@ -257,6 +259,7 @@ namespace ns_custom_properties {
     {
     public:
         Properties_element();
+        ~Properties_element();
         CT_Property* add_property();
         void clear();
         void toXml(std::ostream& _outStream) const;

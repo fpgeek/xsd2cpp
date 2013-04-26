@@ -36,6 +36,9 @@ ST_SourceType* ST_SourceType::default_instance_ = NULL;
 
     {
     }
+    CT_NameListType::~CT_NameListType()
+{
+    clear();    }
     CT_PersonType* CT_NameListType::add_Person()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -129,6 +132,9 @@ CT_NameListType* CT_NameListType::default_instance_ = NULL;
 
     {
     }
+    CT_PersonType::~CT_PersonType()
+{
+    clear();    }
     ns_s::ST_String* CT_PersonType::add_Last()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -355,6 +361,9 @@ CT_PersonType* CT_PersonType::default_instance_ = NULL;
     m_NameList(NULL)
     {
     }
+    CT_NameType::~CT_NameType()
+{
+    clear();    }
     bool CT_NameType::has_NameList() const
     {    
     return m_has_NameList;
@@ -420,6 +429,9 @@ CT_NameType* CT_NameType::default_instance_ = NULL;
     m_Corporate(NULL)
     {
     }
+    CT_NameOrCorporateType::~CT_NameOrCorporateType()
+{
+    clear();    }
     bool CT_NameOrCorporateType::has_NameList() const
     {    
     return m_has_NameList;
@@ -531,6 +543,9 @@ CT_NameOrCorporateType* CT_NameOrCorporateType::default_instance_ = NULL;
 
     {
     }
+    CT_AuthorType::~CT_AuthorType()
+{
+    clear();    }
     CT_NameType* CT_AuthorType::add_Artist()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -3369,6 +3384,9 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
 
     {
     }
+    CT_SourceType::~CT_SourceType()
+{
+    clear();    }
     ns_s::ST_String* CT_SourceType::add_AbbreviatedCaseNumber()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -29324,6 +29342,9 @@ CT_SourceType* CT_SourceType::default_instance_ = NULL;
     m_URI_attr(NULL)
     {
     }
+    CT_Sources::~CT_Sources()
+{
+    clear();    }
     CT_SourceType* CT_Sources::add_Source()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -29526,6 +29547,9 @@ CT_Sources* CT_Sources::default_instance_ = NULL;
     m_URI_attr(NULL)
     {
     }
+    Sources_element::~Sources_element()
+{
+    clear();    }
     CT_SourceType* Sources_element::add_Source()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();

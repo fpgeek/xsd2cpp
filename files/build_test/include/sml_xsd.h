@@ -3184,6 +3184,7 @@ namespace ns_main {
     {
     public:
         CT_AutoFilter();
+        ~CT_AutoFilter();
         CT_FilterColumn* add_filterColumn();
         CT_SortState* add_sortState();
         CT_ExtensionList* add_extLst();
@@ -3227,6 +3228,7 @@ namespace ns_main {
     {
     public:
         CT_FilterColumn();
+        ~CT_FilterColumn();
         bool has_filters() const;
         CT_Filters* mutable_filters();
         const CT_Filters& get_filters() const;
@@ -3289,6 +3291,7 @@ namespace ns_main {
     {
     public:
         CT_Filters();
+        ~CT_Filters();
         CT_Filter* add_filter();
         CT_DateGroupItem* add_dateGroupItem();
         void clear();
@@ -3331,6 +3334,7 @@ namespace ns_main {
     {
     public:
         CT_Filter();
+        ~CT_Filter();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Filter& default_instance();
@@ -3348,6 +3352,7 @@ namespace ns_main {
     {
     public:
         CT_CustomFilters();
+        ~CT_CustomFilters();
         CT_CustomFilter* add_customFilter();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -3379,6 +3384,7 @@ namespace ns_main {
     {
     public:
         CT_CustomFilter();
+        ~CT_CustomFilter();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CustomFilter& default_instance();
@@ -3401,6 +3407,7 @@ namespace ns_main {
     {
     public:
         CT_Top10();
+        ~CT_Top10();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Top10& default_instance();
@@ -3433,6 +3440,7 @@ namespace ns_main {
     {
     public:
         CT_ColorFilter();
+        ~CT_ColorFilter();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ColorFilter& default_instance();
@@ -3455,6 +3463,7 @@ namespace ns_main {
     {
     public:
         CT_IconFilter();
+        ~CT_IconFilter();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_IconFilter& default_instance();
@@ -3477,6 +3486,7 @@ namespace ns_main {
     {
     public:
         CT_DynamicFilter();
+        ~CT_DynamicFilter();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DynamicFilter& default_instance();
@@ -3514,6 +3524,7 @@ namespace ns_main {
     {
     public:
         CT_SortState();
+        ~CT_SortState();
         CT_SortCondition* add_sortCondition();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -3566,6 +3577,7 @@ namespace ns_main {
     {
     public:
         CT_SortCondition();
+        ~CT_SortCondition();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SortCondition& default_instance();
@@ -3613,6 +3625,7 @@ namespace ns_main {
     {
     public:
         CT_DateGroupItem();
+        ~CT_DateGroupItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DateGroupItem& default_instance();
@@ -3660,6 +3673,7 @@ namespace ns_main {
     {
     public:
         CT_XStringElement();
+        ~CT_XStringElement();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_XStringElement& default_instance();
@@ -3677,6 +3691,7 @@ namespace ns_main {
     {
     public:
         CT_Extension();
+        ~CT_Extension();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Extension& default_instance();
@@ -3696,6 +3711,7 @@ namespace ns_main {
     {
     public:
         CT_ObjectAnchor();
+        ~CT_ObjectAnchor();
         bool has_xdr_from() const;
         ns_xdr::CT_Marker* mutable_xdr_from();
         const ns_xdr::CT_Marker& get_xdr_from() const;
@@ -3728,6 +3744,7 @@ namespace ns_main {
     {
     public:
         CT_ExtensionList();
+        ~CT_ExtensionList();
         CT_Extension* add_ext();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -3754,6 +3771,7 @@ namespace ns_main {
     {
     public:
         CT_CalcChain();
+        ~CT_CalcChain();
         CT_CalcCell* add_c();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -3786,6 +3804,7 @@ namespace ns_main {
     {
     public:
         CT_CalcCell();
+        ~CT_CalcCell();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CalcCell& default_instance();
@@ -3833,6 +3852,7 @@ namespace ns_main {
     {
     public:
         CT_Comments();
+        ~CT_Comments();
         bool has_authors() const;
         CT_Authors* mutable_authors();
         const CT_Authors& get_authors() const;
@@ -3860,6 +3880,7 @@ namespace ns_main {
     {
     public:
         CT_Authors();
+        ~CT_Authors();
         ns_s::ST_Xstring* add_author();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -3886,6 +3907,7 @@ namespace ns_main {
     {
     public:
         CT_CommentList();
+        ~CT_CommentList();
         CT_Comment* add_comment();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -3912,6 +3934,7 @@ namespace ns_main {
     {
     public:
         CT_Comment();
+        ~CT_Comment();
         bool has_text() const;
         CT_Rst* mutable_text();
         const CT_Rst& get_text() const;
@@ -3954,6 +3977,7 @@ namespace ns_main {
     {
     public:
         CT_CommentPr();
+        ~CT_CommentPr();
         bool has_anchor() const;
         CT_ObjectAnchor* mutable_anchor();
         const CT_ObjectAnchor& get_anchor() const;
@@ -4031,6 +4055,7 @@ namespace ns_main {
     {
     public:
         CT_MapInfo();
+        ~CT_MapInfo();
         CT_Schema* add_Schema();
         CT_Map* add_Map();
         void clear();
@@ -4068,6 +4093,7 @@ namespace ns_main {
     {
     public:
         CT_Schema();
+        ~CT_Schema();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Schema& default_instance();
@@ -4102,6 +4128,7 @@ namespace ns_main {
     {
     public:
         CT_Map();
+        ~CT_Map();
         bool has_DataBinding() const;
         CT_DataBinding* mutable_DataBinding();
         const CT_DataBinding& get_DataBinding() const;
@@ -4164,6 +4191,7 @@ namespace ns_main {
     {
     public:
         CT_DataBinding();
+        ~CT_DataBinding();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DataBinding& default_instance();
@@ -4203,6 +4231,7 @@ namespace ns_main {
     {
     public:
         CT_Connections();
+        ~CT_Connections();
         CT_Connection* add_connection();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -4229,6 +4258,7 @@ namespace ns_main {
     {
     public:
         CT_Connection();
+        ~CT_Connection();
         bool has_dbPr() const;
         CT_DbPr* mutable_dbPr();
         const CT_DbPr& get_dbPr() const;
@@ -4371,6 +4401,7 @@ namespace ns_main {
     {
     public:
         CT_DbPr();
+        ~CT_DbPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DbPr& default_instance();
@@ -4403,6 +4434,7 @@ namespace ns_main {
     {
     public:
         CT_OlapPr();
+        ~CT_OlapPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OlapPr& default_instance();
@@ -4460,6 +4492,7 @@ namespace ns_main {
     {
     public:
         CT_WebPr();
+        ~CT_WebPr();
         bool has_tables() const;
         CT_Tables* mutable_tables();
         const CT_Tables& get_tables() const;
@@ -4542,6 +4575,7 @@ namespace ns_main {
     {
     public:
         CT_Parameters();
+        ~CT_Parameters();
         CT_Parameter* add_parameter();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -4573,6 +4607,7 @@ namespace ns_main {
     {
     public:
         CT_Parameter();
+        ~CT_Parameter();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Parameter& default_instance();
@@ -4635,6 +4670,7 @@ namespace ns_main {
     {
     public:
         CT_Tables();
+        ~CT_Tables();
         CT_TableMissing* add_m();
         CT_XStringElement* add_s();
         CT_Index* add_x();
@@ -4678,6 +4714,7 @@ namespace ns_main {
     {
     public:
         CT_TableMissing();
+        ~CT_TableMissing();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TableMissing& default_instance();
@@ -4690,6 +4727,7 @@ namespace ns_main {
     {
     public:
         CT_TextPr();
+        ~CT_TextPr();
         bool has_textFields() const;
         CT_TextFields* mutable_textFields();
         const CT_TextFields& get_textFields() const;
@@ -4787,6 +4825,7 @@ namespace ns_main {
     {
     public:
         CT_TextFields();
+        ~CT_TextFields();
         CT_TextField* add_textField();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -4818,6 +4857,7 @@ namespace ns_main {
     {
     public:
         CT_TextField();
+        ~CT_TextField();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextField& default_instance();
@@ -4840,6 +4880,7 @@ namespace ns_main {
     {
     public:
         CT_PivotCacheDefinition();
+        ~CT_PivotCacheDefinition();
         bool has_cacheSource() const;
         CT_CacheSource* mutable_cacheSource();
         const CT_CacheSource& get_cacheSource() const;
@@ -5002,6 +5043,7 @@ namespace ns_main {
     {
     public:
         CT_CacheFields();
+        ~CT_CacheFields();
         CT_CacheField* add_cacheField();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -5033,6 +5075,7 @@ namespace ns_main {
     {
     public:
         CT_CacheField();
+        ~CT_CacheField();
         bool has_sharedItems() const;
         CT_SharedItems* mutable_sharedItems();
         const CT_SharedItems& get_sharedItems() const;
@@ -5140,6 +5183,7 @@ namespace ns_main {
     {
     public:
         CT_CacheSource();
+        ~CT_CacheSource();
         bool has_worksheetSource() const;
         CT_WorksheetSource* mutable_worksheetSource();
         const CT_WorksheetSource& get_worksheetSource() const;
@@ -5177,6 +5221,7 @@ namespace ns_main {
     {
     public:
         CT_WorksheetSource();
+        ~CT_WorksheetSource();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WorksheetSource& default_instance();
@@ -5209,6 +5254,7 @@ namespace ns_main {
     {
     public:
         CT_Consolidation();
+        ~CT_Consolidation();
         bool has_pages() const;
         CT_Pages* mutable_pages();
         const CT_Pages& get_pages() const;
@@ -5236,6 +5282,7 @@ namespace ns_main {
     {
     public:
         CT_Pages();
+        ~CT_Pages();
         CT_PCDSCPage* add_page();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -5267,6 +5314,7 @@ namespace ns_main {
     {
     public:
         CT_PCDSCPage();
+        ~CT_PCDSCPage();
         CT_PageItem* add_pageItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -5298,6 +5346,7 @@ namespace ns_main {
     {
     public:
         CT_PageItem();
+        ~CT_PageItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageItem& default_instance();
@@ -5315,6 +5364,7 @@ namespace ns_main {
     {
     public:
         CT_RangeSets();
+        ~CT_RangeSets();
         CT_RangeSet* add_rangeSet();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -5346,6 +5396,7 @@ namespace ns_main {
     {
     public:
         CT_RangeSet();
+        ~CT_RangeSet();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RangeSet& default_instance();
@@ -5398,6 +5449,7 @@ namespace ns_main {
     {
     public:
         CT_SharedItems();
+        ~CT_SharedItems();
         CT_Missing* add_m();
         CT_Number* add_n();
         CT_Boolean* add_b();
@@ -5524,6 +5576,7 @@ namespace ns_main {
     {
     public:
         CT_Missing();
+        ~CT_Missing();
         CT_Tuples* add_tpls();
         CT_X* add_x();
         void clear();
@@ -5611,6 +5664,7 @@ namespace ns_main {
     {
     public:
         CT_Number();
+        ~CT_Number();
         CT_Tuples* add_tpls();
         CT_X* add_x();
         void clear();
@@ -5703,6 +5757,7 @@ namespace ns_main {
     {
     public:
         CT_Boolean();
+        ~CT_Boolean();
         CT_X* add_x();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -5754,6 +5809,7 @@ namespace ns_main {
     {
     public:
         CT_Error();
+        ~CT_Error();
         bool has_tpls() const;
         CT_Tuples* mutable_tpls();
         const CT_Tuples& get_tpls() const;
@@ -5845,6 +5901,7 @@ namespace ns_main {
     {
     public:
         CT_String();
+        ~CT_String();
         CT_Tuples* add_tpls();
         CT_X* add_x();
         void clear();
@@ -5937,6 +5994,7 @@ namespace ns_main {
     {
     public:
         CT_DateTime();
+        ~CT_DateTime();
         CT_X* add_x();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -5988,6 +6046,7 @@ namespace ns_main {
     {
     public:
         CT_FieldGroup();
+        ~CT_FieldGroup();
         bool has_rangePr() const;
         CT_RangePr* mutable_rangePr();
         const CT_RangePr& get_rangePr() const;
@@ -6025,6 +6084,7 @@ namespace ns_main {
     {
     public:
         CT_RangePr();
+        ~CT_RangePr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RangePr& default_instance();
@@ -6077,6 +6137,7 @@ namespace ns_main {
     {
     public:
         CT_DiscretePr();
+        ~CT_DiscretePr();
         CT_Index* add_x();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6108,6 +6169,7 @@ namespace ns_main {
     {
     public:
         CT_GroupItems();
+        ~CT_GroupItems();
         CT_Missing* add_m();
         CT_Number* add_n();
         CT_Boolean* add_b();
@@ -6169,6 +6231,7 @@ namespace ns_main {
     {
     public:
         CT_PivotCacheRecords();
+        ~CT_PivotCacheRecords();
         CT_Record* add_r();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -6206,6 +6269,7 @@ namespace ns_main {
     {
     public:
         CT_Record();
+        ~CT_Record();
         CT_Missing* add_m();
         CT_Number* add_n();
         CT_Boolean* add_b();
@@ -6268,6 +6332,7 @@ namespace ns_main {
     {
     public:
         CT_PCDKPIs();
+        ~CT_PCDKPIs();
         CT_PCDKPI* add_kpi();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6299,6 +6364,7 @@ namespace ns_main {
     {
     public:
         CT_PCDKPI();
+        ~CT_PCDKPI();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PCDKPI& default_instance();
@@ -6366,6 +6432,7 @@ namespace ns_main {
     {
     public:
         CT_CacheHierarchies();
+        ~CT_CacheHierarchies();
         CT_CacheHierarchy* add_cacheHierarchy();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6397,6 +6464,7 @@ namespace ns_main {
     {
     public:
         CT_CacheHierarchy();
+        ~CT_CacheHierarchy();
         bool has_fieldsUsage() const;
         CT_FieldsUsage* mutable_fieldsUsage();
         const CT_FieldsUsage& get_fieldsUsage() const;
@@ -6534,6 +6602,7 @@ namespace ns_main {
     {
     public:
         CT_FieldsUsage();
+        ~CT_FieldsUsage();
         CT_FieldUsage* add_fieldUsage();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6565,6 +6634,7 @@ namespace ns_main {
     {
     public:
         CT_FieldUsage();
+        ~CT_FieldUsage();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FieldUsage& default_instance();
@@ -6582,6 +6652,7 @@ namespace ns_main {
     {
     public:
         CT_GroupLevels();
+        ~CT_GroupLevels();
         CT_GroupLevel* add_groupLevel();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6613,6 +6684,7 @@ namespace ns_main {
     {
     public:
         CT_GroupLevel();
+        ~CT_GroupLevel();
         bool has_groups() const;
         CT_Groups* mutable_groups();
         const CT_Groups& get_groups() const;
@@ -6655,6 +6727,7 @@ namespace ns_main {
     {
     public:
         CT_Groups();
+        ~CT_Groups();
         CT_LevelGroup* add_group();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6686,6 +6759,7 @@ namespace ns_main {
     {
     public:
         CT_LevelGroup();
+        ~CT_LevelGroup();
         bool has_groupMembers() const;
         CT_GroupMembers* mutable_groupMembers();
         const CT_GroupMembers& get_groupMembers() const;
@@ -6728,6 +6802,7 @@ namespace ns_main {
     {
     public:
         CT_GroupMembers();
+        ~CT_GroupMembers();
         CT_GroupMember* add_groupMember();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6759,6 +6834,7 @@ namespace ns_main {
     {
     public:
         CT_GroupMember();
+        ~CT_GroupMember();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_GroupMember& default_instance();
@@ -6781,6 +6857,7 @@ namespace ns_main {
     {
     public:
         CT_TupleCache();
+        ~CT_TupleCache();
         bool has_entries() const;
         CT_PCDSDTCEntries* mutable_entries();
         const CT_PCDSDTCEntries& get_entries() const;
@@ -6818,6 +6895,7 @@ namespace ns_main {
     {
     public:
         CT_ServerFormat();
+        ~CT_ServerFormat();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ServerFormat& default_instance();
@@ -6840,6 +6918,7 @@ namespace ns_main {
     {
     public:
         CT_ServerFormats();
+        ~CT_ServerFormats();
         CT_ServerFormat* add_serverFormat();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6871,6 +6950,7 @@ namespace ns_main {
     {
     public:
         CT_PCDSDTCEntries();
+        ~CT_PCDSDTCEntries();
         CT_Missing* add_m();
         CT_Number* add_n();
         CT_Error* add_e();
@@ -6920,6 +7000,7 @@ namespace ns_main {
     {
     public:
         CT_Tuples();
+        ~CT_Tuples();
         CT_Tuple* add_tpl();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -6951,6 +7032,7 @@ namespace ns_main {
     {
     public:
         CT_Tuple();
+        ~CT_Tuple();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Tuple& default_instance();
@@ -6978,6 +7060,7 @@ namespace ns_main {
     {
     public:
         CT_Sets();
+        ~CT_Sets();
         CT_Set* add_set();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -7009,6 +7092,7 @@ namespace ns_main {
     {
     public:
         CT_Set();
+        ~CT_Set();
         CT_Tuples* add_tpls();
         CT_Tuples* add_sortByTuple();
         void clear();
@@ -7066,6 +7150,7 @@ namespace ns_main {
     {
     public:
         CT_QueryCache();
+        ~CT_QueryCache();
         CT_Query* add_query();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -7097,6 +7182,7 @@ namespace ns_main {
     {
     public:
         CT_Query();
+        ~CT_Query();
         bool has_tpls() const;
         CT_Tuples* mutable_tpls();
         const CT_Tuples& get_tpls() const;
@@ -7119,6 +7205,7 @@ namespace ns_main {
     {
     public:
         CT_CalculatedItems();
+        ~CT_CalculatedItems();
         CT_CalculatedItem* add_calculatedItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -7150,6 +7237,7 @@ namespace ns_main {
     {
     public:
         CT_CalculatedItem();
+        ~CT_CalculatedItem();
         bool has_pivotArea() const;
         CT_PivotArea* mutable_pivotArea();
         const CT_PivotArea& get_pivotArea() const;
@@ -7182,6 +7270,7 @@ namespace ns_main {
     {
     public:
         CT_CalculatedMembers();
+        ~CT_CalculatedMembers();
         CT_CalculatedMember* add_calculatedMember();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -7213,6 +7302,7 @@ namespace ns_main {
     {
     public:
         CT_CalculatedMember();
+        ~CT_CalculatedMember();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -7265,6 +7355,7 @@ namespace ns_main {
     {
     public:
         CT_pivotTableDefinition();
+        ~CT_pivotTableDefinition();
         bool has_location() const;
         CT_Location* mutable_location();
         const CT_Location& get_location() const;
@@ -7702,6 +7793,7 @@ namespace ns_main {
     {
     public:
         CT_Location();
+        ~CT_Location();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Location& default_instance();
@@ -7744,6 +7836,7 @@ namespace ns_main {
     {
     public:
         CT_PivotFields();
+        ~CT_PivotFields();
         CT_PivotField* add_pivotField();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -7775,6 +7868,7 @@ namespace ns_main {
     {
     public:
         CT_PivotField();
+        ~CT_PivotField();
         bool has_items() const;
         CT_Items* mutable_items();
         const CT_Items& get_items() const;
@@ -8042,6 +8136,7 @@ namespace ns_main {
     {
     public:
         CT_AutoSortScope();
+        ~CT_AutoSortScope();
         bool has_pivotArea() const;
         CT_PivotArea* mutable_pivotArea();
         const CT_PivotArea& get_pivotArea() const;
@@ -8059,6 +8154,7 @@ namespace ns_main {
     {
     public:
         CT_Items();
+        ~CT_Items();
         CT_Item* add_item();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8090,6 +8186,7 @@ namespace ns_main {
     {
     public:
         CT_Item();
+        ~CT_Item();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Item& default_instance();
@@ -8157,6 +8254,7 @@ namespace ns_main {
     {
     public:
         CT_PageFields();
+        ~CT_PageFields();
         CT_PageField* add_pageField();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8188,6 +8286,7 @@ namespace ns_main {
     {
     public:
         CT_PageField();
+        ~CT_PageField();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -8230,6 +8329,7 @@ namespace ns_main {
     {
     public:
         CT_DataFields();
+        ~CT_DataFields();
         CT_DataField* add_dataField();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8261,6 +8361,7 @@ namespace ns_main {
     {
     public:
         CT_DataField();
+        ~CT_DataField();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -8313,6 +8414,7 @@ namespace ns_main {
     {
     public:
         CT_rowItems();
+        ~CT_rowItems();
         CT_I* add_i();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8344,6 +8446,7 @@ namespace ns_main {
     {
     public:
         CT_colItems();
+        ~CT_colItems();
         CT_I* add_i();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8375,6 +8478,7 @@ namespace ns_main {
     {
     public:
         CT_I();
+        ~CT_I();
         CT_X* add_x();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8416,6 +8520,7 @@ namespace ns_main {
     {
     public:
         CT_X();
+        ~CT_X();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_X& default_instance();
@@ -8433,6 +8538,7 @@ namespace ns_main {
     {
     public:
         CT_RowFields();
+        ~CT_RowFields();
         CT_Field* add_field();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8464,6 +8570,7 @@ namespace ns_main {
     {
     public:
         CT_ColFields();
+        ~CT_ColFields();
         CT_Field* add_field();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8495,6 +8602,7 @@ namespace ns_main {
     {
     public:
         CT_Field();
+        ~CT_Field();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Field& default_instance();
@@ -8512,6 +8620,7 @@ namespace ns_main {
     {
     public:
         CT_Formats();
+        ~CT_Formats();
         CT_Format* add_format();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8543,6 +8652,7 @@ namespace ns_main {
     {
     public:
         CT_Format();
+        ~CT_Format();
         bool has_pivotArea() const;
         CT_PivotArea* mutable_pivotArea();
         const CT_PivotArea& get_pivotArea() const;
@@ -8575,6 +8685,7 @@ namespace ns_main {
     {
     public:
         CT_ConditionalFormats();
+        ~CT_ConditionalFormats();
         CT_ConditionalFormat* add_conditionalFormat();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8606,6 +8717,7 @@ namespace ns_main {
     {
     public:
         CT_ConditionalFormat();
+        ~CT_ConditionalFormat();
         bool has_pivotAreas() const;
         CT_PivotAreas* mutable_pivotAreas();
         const CT_PivotAreas& get_pivotAreas() const;
@@ -8643,6 +8755,7 @@ namespace ns_main {
     {
     public:
         CT_PivotAreas();
+        ~CT_PivotAreas();
         CT_PivotArea* add_pivotArea();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8674,6 +8787,7 @@ namespace ns_main {
     {
     public:
         CT_ChartFormats();
+        ~CT_ChartFormats();
         CT_ChartFormat* add_chartFormat();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8705,6 +8819,7 @@ namespace ns_main {
     {
     public:
         CT_ChartFormat();
+        ~CT_ChartFormat();
         bool has_pivotArea() const;
         CT_PivotArea* mutable_pivotArea();
         const CT_PivotArea& get_pivotArea() const;
@@ -8737,6 +8852,7 @@ namespace ns_main {
     {
     public:
         CT_PivotHierarchies();
+        ~CT_PivotHierarchies();
         CT_PivotHierarchy* add_pivotHierarchy();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8768,6 +8884,7 @@ namespace ns_main {
     {
     public:
         CT_PivotHierarchy();
+        ~CT_PivotHierarchy();
         bool has_mps() const;
         CT_MemberProperties* mutable_mps();
         const CT_MemberProperties& get_mps() const;
@@ -8860,6 +8977,7 @@ namespace ns_main {
     {
     public:
         CT_RowHierarchiesUsage();
+        ~CT_RowHierarchiesUsage();
         CT_HierarchyUsage* add_rowHierarchyUsage();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8891,6 +9009,7 @@ namespace ns_main {
     {
     public:
         CT_ColHierarchiesUsage();
+        ~CT_ColHierarchiesUsage();
         CT_HierarchyUsage* add_colHierarchyUsage();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8922,6 +9041,7 @@ namespace ns_main {
     {
     public:
         CT_HierarchyUsage();
+        ~CT_HierarchyUsage();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_HierarchyUsage& default_instance();
@@ -8939,6 +9059,7 @@ namespace ns_main {
     {
     public:
         CT_MemberProperties();
+        ~CT_MemberProperties();
         CT_MemberProperty* add_mp();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -8970,6 +9091,7 @@ namespace ns_main {
     {
     public:
         CT_MemberProperty();
+        ~CT_MemberProperty();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MemberProperty& default_instance();
@@ -9027,6 +9149,7 @@ namespace ns_main {
     {
     public:
         CT_Members();
+        ~CT_Members();
         CT_Member* add_member();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -9063,6 +9186,7 @@ namespace ns_main {
     {
     public:
         CT_Member();
+        ~CT_Member();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Member& default_instance();
@@ -9080,6 +9204,7 @@ namespace ns_main {
     {
     public:
         CT_Dimensions();
+        ~CT_Dimensions();
         CT_PivotDimension* add_dimension();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -9111,6 +9236,7 @@ namespace ns_main {
     {
     public:
         CT_PivotDimension();
+        ~CT_PivotDimension();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PivotDimension& default_instance();
@@ -9143,6 +9269,7 @@ namespace ns_main {
     {
     public:
         CT_MeasureGroups();
+        ~CT_MeasureGroups();
         CT_MeasureGroup* add_measureGroup();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -9174,6 +9301,7 @@ namespace ns_main {
     {
     public:
         CT_MeasureDimensionMaps();
+        ~CT_MeasureDimensionMaps();
         CT_MeasureDimensionMap* add_map();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -9205,6 +9333,7 @@ namespace ns_main {
     {
     public:
         CT_MeasureGroup();
+        ~CT_MeasureGroup();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MeasureGroup& default_instance();
@@ -9227,6 +9356,7 @@ namespace ns_main {
     {
     public:
         CT_MeasureDimensionMap();
+        ~CT_MeasureDimensionMap();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MeasureDimensionMap& default_instance();
@@ -9249,6 +9379,7 @@ namespace ns_main {
     {
     public:
         CT_PivotTableStyle();
+        ~CT_PivotTableStyle();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PivotTableStyle& default_instance();
@@ -9291,6 +9422,7 @@ namespace ns_main {
     {
     public:
         CT_PivotFilters();
+        ~CT_PivotFilters();
         CT_PivotFilter* add_filter();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -9322,6 +9454,7 @@ namespace ns_main {
     {
     public:
         CT_PivotFilter();
+        ~CT_PivotFilter();
         bool has_autoFilter() const;
         CT_AutoFilter* mutable_autoFilter();
         const CT_AutoFilter& get_autoFilter() const;
@@ -9399,6 +9532,7 @@ namespace ns_main {
     {
     public:
         CT_PivotArea();
+        ~CT_PivotArea();
         bool has_references() const;
         CT_PivotAreaReferences* mutable_references();
         const CT_PivotAreaReferences& get_references() const;
@@ -9481,6 +9615,7 @@ namespace ns_main {
     {
     public:
         CT_PivotAreaReferences();
+        ~CT_PivotAreaReferences();
         CT_PivotAreaReference* add_reference();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -9512,6 +9647,7 @@ namespace ns_main {
     {
     public:
         CT_PivotAreaReference();
+        ~CT_PivotAreaReference();
         CT_Index* add_x();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -9629,6 +9765,7 @@ namespace ns_main {
     {
     public:
         CT_Index();
+        ~CT_Index();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Index& default_instance();
@@ -9646,6 +9783,7 @@ namespace ns_main {
     {
     public:
         CT_QueryTable();
+        ~CT_QueryTable();
         bool has_queryTableRefresh() const;
         CT_QueryTableRefresh* mutable_queryTableRefresh();
         const CT_QueryTableRefresh& get_queryTableRefresh() const;
@@ -9778,6 +9916,7 @@ namespace ns_main {
     {
     public:
         CT_QueryTableRefresh();
+        ~CT_QueryTableRefresh();
         bool has_queryTableFields() const;
         CT_QueryTableFields* mutable_queryTableFields();
         const CT_QueryTableFields& get_queryTableFields() const;
@@ -9845,6 +9984,7 @@ namespace ns_main {
     {
     public:
         CT_QueryTableDeletedFields();
+        ~CT_QueryTableDeletedFields();
         CT_DeletedField* add_deletedField();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -9876,6 +10016,7 @@ namespace ns_main {
     {
     public:
         CT_DeletedField();
+        ~CT_DeletedField();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DeletedField& default_instance();
@@ -9893,6 +10034,7 @@ namespace ns_main {
     {
     public:
         CT_QueryTableFields();
+        ~CT_QueryTableFields();
         CT_QueryTableField* add_queryTableField();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -9924,6 +10066,7 @@ namespace ns_main {
     {
     public:
         CT_QueryTableField();
+        ~CT_QueryTableField();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -9976,6 +10119,7 @@ namespace ns_main {
     {
     public:
         CT_Sst();
+        ~CT_Sst();
         CT_Rst* add_si();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -10018,6 +10162,7 @@ namespace ns_main {
     {
     public:
         CT_PhoneticRun();
+        ~CT_PhoneticRun();
         bool has_t() const;
         ns_s::ST_Xstring* mutable_t();
         const ns_s::ST_Xstring& get_t() const;
@@ -10045,6 +10190,7 @@ namespace ns_main {
     {
     public:
         CT_RElt();
+        ~CT_RElt();
         bool has_rPr() const;
         CT_RPrElt* mutable_rPr();
         const CT_RPrElt& get_rPr() const;
@@ -10067,6 +10213,7 @@ namespace ns_main {
     {
     public:
         CT_RPrElt();
+        ~CT_RPrElt();
         CT_FontName* add_rFont();
         CT_IntProperty* add_charset();
         CT_IntProperty* add_family();
@@ -10177,6 +10324,7 @@ namespace ns_main {
     {
     public:
         CT_Rst();
+        ~CT_Rst();
         bool has_t() const;
         ns_s::ST_Xstring* mutable_t();
         const ns_s::ST_Xstring& get_t() const;
@@ -10220,6 +10368,7 @@ namespace ns_main {
     {
     public:
         CT_PhoneticPr();
+        ~CT_PhoneticPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PhoneticPr& default_instance();
@@ -10247,6 +10396,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionHeaders();
+        ~CT_RevisionHeaders();
         CT_RevisionHeader* add_header();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -10333,6 +10483,7 @@ namespace ns_main {
     {
     public:
         CT_Revisions();
+        ~CT_Revisions();
         CT_RevisionRowColumn* add_rrc();
         CT_RevisionMove* add_rm();
         CT_RevisionCustomView* add_rcv();
@@ -10425,6 +10576,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionHeader();
+        ~CT_RevisionHeader();
         bool has_sheetIdMap() const;
         CT_SheetIdMap* mutable_sheetIdMap();
         const CT_SheetIdMap& get_sheetIdMap() const;
@@ -10487,6 +10639,7 @@ namespace ns_main {
     {
     public:
         CT_SheetIdMap();
+        ~CT_SheetIdMap();
         CT_SheetId* add_sheetId();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -10518,6 +10671,7 @@ namespace ns_main {
     {
     public:
         CT_SheetId();
+        ~CT_SheetId();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SheetId& default_instance();
@@ -10535,6 +10689,7 @@ namespace ns_main {
     {
     public:
         CT_ReviewedRevisions();
+        ~CT_ReviewedRevisions();
         CT_Reviewed* add_reviewed();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -10566,6 +10721,7 @@ namespace ns_main {
     {
     public:
         CT_Reviewed();
+        ~CT_Reviewed();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Reviewed& default_instance();
@@ -10583,6 +10739,7 @@ namespace ns_main {
     {
     public:
         CT_UndoInfo();
+        ~CT_UndoInfo();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_UndoInfo& default_instance();
@@ -10650,6 +10807,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionRowColumn();
+        ~CT_RevisionRowColumn();
         CT_UndoInfo* add_undo();
         CT_RevisionCellChange* add_rcc();
         CT_RevisionFormatting* add_rfmt();
@@ -10728,6 +10886,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionMove();
+        ~CT_RevisionMove();
         CT_UndoInfo* add_undo();
         CT_RevisionCellChange* add_rcc();
         CT_RevisionFormatting* add_rfmt();
@@ -10801,6 +10960,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionCustomView();
+        ~CT_RevisionCustomView();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RevisionCustomView& default_instance();
@@ -10823,6 +10983,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionSheetRename();
+        ~CT_RevisionSheetRename();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -10870,6 +11031,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionInsertSheet();
+        ~CT_RevisionInsertSheet();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RevisionInsertSheet& default_instance();
@@ -10912,6 +11074,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionCellChange();
+        ~CT_RevisionCellChange();
         bool has_oc() const;
         CT_Cell* mutable_oc();
         const CT_Cell& get_oc() const;
@@ -11019,6 +11182,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionFormatting();
+        ~CT_RevisionFormatting();
         bool has_dxf() const;
         CT_Dxf* mutable_dxf();
         const CT_Dxf& get_dxf() const;
@@ -11071,6 +11235,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionAutoFormatting();
+        ~CT_RevisionAutoFormatting();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RevisionAutoFormatting& default_instance();
@@ -11128,6 +11293,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionComment();
+        ~CT_RevisionComment();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RevisionComment& default_instance();
@@ -11195,6 +11361,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionDefinedName();
+        ~CT_RevisionDefinedName();
         bool has_formula() const;
         ST_Formula* mutable_formula();
         const ST_Formula& get_formula() const;
@@ -11342,6 +11509,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionConflict();
+        ~CT_RevisionConflict();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RevisionConflict& default_instance();
@@ -11374,6 +11542,7 @@ namespace ns_main {
     {
     public:
         CT_RevisionQueryTableField();
+        ~CT_RevisionQueryTableField();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RevisionQueryTableField& default_instance();
@@ -11401,6 +11570,7 @@ namespace ns_main {
     {
     public:
         CT_Users();
+        ~CT_Users();
         CT_SharedUser* add_userInfo();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -11432,6 +11602,7 @@ namespace ns_main {
     {
     public:
         CT_SharedUser();
+        ~CT_SharedUser();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -11469,6 +11640,7 @@ namespace ns_main {
     {
     public:
         CT_Macrosheet();
+        ~CT_Macrosheet();
         bool has_sheetPr() const;
         CT_SheetPr* mutable_sheetPr();
         const CT_SheetPr& get_sheetPr() const;
@@ -11647,6 +11819,7 @@ namespace ns_main {
     {
     public:
         CT_Dialogsheet();
+        ~CT_Dialogsheet();
         bool has_sheetPr() const;
         CT_SheetPr* mutable_sheetPr();
         const CT_SheetPr& get_sheetPr() const;
@@ -11739,6 +11912,7 @@ namespace ns_main {
     {
     public:
         CT_Worksheet();
+        ~CT_Worksheet();
         bool has_sheetPr() const;
         CT_SheetPr* mutable_sheetPr();
         const CT_SheetPr& get_sheetPr() const;
@@ -11989,6 +12163,7 @@ namespace ns_main {
     {
     public:
         CT_SheetData();
+        ~CT_SheetData();
         CT_Row* add_row();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -12015,6 +12190,7 @@ namespace ns_main {
     {
     public:
         CT_SheetCalcPr();
+        ~CT_SheetCalcPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SheetCalcPr& default_instance();
@@ -12032,6 +12208,7 @@ namespace ns_main {
     {
     public:
         CT_SheetFormatPr();
+        ~CT_SheetFormatPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SheetFormatPr& default_instance();
@@ -12089,6 +12266,7 @@ namespace ns_main {
     {
     public:
         CT_Cols();
+        ~CT_Cols();
         CT_Col* add_col();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -12115,6 +12293,7 @@ namespace ns_main {
     {
     public:
         CT_Col();
+        ~CT_Col();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Col& default_instance();
@@ -12177,6 +12356,7 @@ namespace ns_main {
     {
     public:
         CT_Row();
+        ~CT_Row();
         CT_Cell* add_c();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -12269,6 +12449,7 @@ namespace ns_main {
     {
     public:
         CT_Cell();
+        ~CT_Cell();
         bool has_f() const;
         CT_CellFormula* mutable_f();
         const CT_CellFormula& get_f() const;
@@ -12331,6 +12512,7 @@ namespace ns_main {
     {
     public:
         CT_SheetPr();
+        ~CT_SheetPr();
         bool has_tabColor() const;
         CT_Color* mutable_tabColor();
         const CT_Color& get_tabColor() const;
@@ -12403,6 +12585,7 @@ namespace ns_main {
     {
     public:
         CT_SheetDimension();
+        ~CT_SheetDimension();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SheetDimension& default_instance();
@@ -12420,6 +12603,7 @@ namespace ns_main {
     {
     public:
         CT_SheetViews();
+        ~CT_SheetViews();
         CT_SheetView* add_sheetView();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -12452,6 +12636,7 @@ namespace ns_main {
     {
     public:
         CT_SheetView();
+        ~CT_SheetView();
         bool has_pane() const;
         CT_Pane* mutable_pane();
         const CT_Pane& get_pane() const;
@@ -12590,6 +12775,7 @@ namespace ns_main {
     {
     public:
         CT_Pane();
+        ~CT_Pane();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Pane& default_instance();
@@ -12627,6 +12813,7 @@ namespace ns_main {
     {
     public:
         CT_PivotSelection();
+        ~CT_PivotSelection();
         bool has_pivotArea() const;
         CT_PivotArea* mutable_pivotArea();
         const CT_PivotArea& get_pivotArea() const;
@@ -12729,6 +12916,7 @@ namespace ns_main {
     {
     public:
         CT_Selection();
+        ~CT_Selection();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Selection& default_instance();
@@ -12761,6 +12949,7 @@ namespace ns_main {
     {
     public:
         CT_PageBreak();
+        ~CT_PageBreak();
         CT_Break* add_brk();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -12797,6 +12986,7 @@ namespace ns_main {
     {
     public:
         CT_Break();
+        ~CT_Break();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Break& default_instance();
@@ -12834,6 +13024,7 @@ namespace ns_main {
     {
     public:
         CT_OutlinePr();
+        ~CT_OutlinePr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OutlinePr& default_instance();
@@ -12866,6 +13057,7 @@ namespace ns_main {
     {
     public:
         CT_PageSetUpPr();
+        ~CT_PageSetUpPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageSetUpPr& default_instance();
@@ -12888,6 +13080,7 @@ namespace ns_main {
     {
     public:
         CT_DataConsolidate();
+        ~CT_DataConsolidate();
         bool has_dataRefs() const;
         CT_DataRefs* mutable_dataRefs();
         const CT_DataRefs& get_dataRefs() const;
@@ -12930,6 +13123,7 @@ namespace ns_main {
     {
     public:
         CT_DataRefs();
+        ~CT_DataRefs();
         CT_DataRef* add_dataRef();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -12961,6 +13155,7 @@ namespace ns_main {
     {
     public:
         CT_DataRef();
+        ~CT_DataRef();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DataRef& default_instance();
@@ -12993,6 +13188,7 @@ namespace ns_main {
     {
     public:
         CT_MergeCells();
+        ~CT_MergeCells();
         CT_MergeCell* add_mergeCell();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -13024,6 +13220,7 @@ namespace ns_main {
     {
     public:
         CT_MergeCell();
+        ~CT_MergeCell();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MergeCell& default_instance();
@@ -13041,6 +13238,7 @@ namespace ns_main {
     {
     public:
         CT_SmartTags();
+        ~CT_SmartTags();
         CT_CellSmartTags* add_cellSmartTags();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -13067,6 +13265,7 @@ namespace ns_main {
     {
     public:
         CT_CellSmartTags();
+        ~CT_CellSmartTags();
         CT_CellSmartTag* add_cellSmartTag();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -13098,6 +13297,7 @@ namespace ns_main {
     {
     public:
         CT_CellSmartTag();
+        ~CT_CellSmartTag();
         CT_CellSmartTagPr* add_cellSmartTagPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -13139,6 +13339,7 @@ namespace ns_main {
     {
     public:
         CT_CellSmartTagPr();
+        ~CT_CellSmartTagPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CellSmartTagPr& default_instance();
@@ -13161,6 +13362,7 @@ namespace ns_main {
     {
     public:
         CT_Drawing();
+        ~CT_Drawing();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Drawing& default_instance();
@@ -13178,6 +13380,7 @@ namespace ns_main {
     {
     public:
         CT_LegacyDrawing();
+        ~CT_LegacyDrawing();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LegacyDrawing& default_instance();
@@ -13195,6 +13398,7 @@ namespace ns_main {
     {
     public:
         CT_DrawingHF();
+        ~CT_DrawingHF();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DrawingHF& default_instance();
@@ -13302,6 +13506,7 @@ namespace ns_main {
     {
     public:
         CT_CustomSheetViews();
+        ~CT_CustomSheetViews();
         CT_CustomSheetView* add_customSheetView();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -13328,6 +13533,7 @@ namespace ns_main {
     {
     public:
         CT_CustomSheetView();
+        ~CT_CustomSheetView();
         bool has_pane() const;
         CT_Pane* mutable_pane();
         const CT_Pane& get_pane() const;
@@ -13490,6 +13696,7 @@ namespace ns_main {
     {
     public:
         CT_DataValidations();
+        ~CT_DataValidations();
         CT_DataValidation* add_dataValidation();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -13536,6 +13743,7 @@ namespace ns_main {
     {
     public:
         CT_DataValidation();
+        ~CT_DataValidation();
         bool has_formula1() const;
         ST_Formula* mutable_formula1();
         const ST_Formula& get_formula1() const;
@@ -13623,6 +13831,7 @@ namespace ns_main {
     {
     public:
         CT_ConditionalFormatting();
+        ~CT_ConditionalFormatting();
         CT_CfRule* add_cfRule();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -13665,6 +13874,7 @@ namespace ns_main {
     {
     public:
         CT_CfRule();
+        ~CT_CfRule();
         ST_Formula* add_formula();
         CT_ColorScale* add_colorScale();
         CT_DataBar* add_dataBar();
@@ -13780,6 +13990,7 @@ namespace ns_main {
     {
     public:
         CT_Hyperlinks();
+        ~CT_Hyperlinks();
         CT_Hyperlink* add_hyperlink();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -13806,6 +14017,7 @@ namespace ns_main {
     {
     public:
         CT_Hyperlink();
+        ~CT_Hyperlink();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Hyperlink& default_instance();
@@ -13843,6 +14055,7 @@ namespace ns_main {
     {
     public:
         CT_CellFormula();
+        ~CT_CellFormula();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CellFormula& default_instance();
@@ -13915,6 +14128,7 @@ namespace ns_main {
     {
     public:
         CT_ColorScale();
+        ~CT_ColorScale();
         CT_Cfvo* add_cfvo();
         CT_Color* add_color();
         void clear();
@@ -13947,6 +14161,7 @@ namespace ns_main {
     {
     public:
         CT_DataBar();
+        ~CT_DataBar();
         CT_Cfvo* add_cfvo();
         CT_Color* add_color();
         void clear();
@@ -13994,6 +14209,7 @@ namespace ns_main {
     {
     public:
         CT_IconSet();
+        ~CT_IconSet();
         CT_Cfvo* add_cfvo();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -14040,6 +14256,7 @@ namespace ns_main {
     {
     public:
         CT_Cfvo();
+        ~CT_Cfvo();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -14072,6 +14289,7 @@ namespace ns_main {
     {
     public:
         CT_PageMargins();
+        ~CT_PageMargins();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageMargins& default_instance();
@@ -14114,6 +14332,7 @@ namespace ns_main {
     {
     public:
         CT_PrintOptions();
+        ~CT_PrintOptions();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PrintOptions& default_instance();
@@ -14151,6 +14370,7 @@ namespace ns_main {
     {
     public:
         CT_PageSetup();
+        ~CT_PageSetup();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PageSetup& default_instance();
@@ -14258,6 +14478,7 @@ namespace ns_main {
     {
     public:
         CT_HeaderFooter();
+        ~CT_HeaderFooter();
         bool has_oddHeader() const;
         ns_s::ST_Xstring* mutable_oddHeader();
         const ns_s::ST_Xstring& get_oddHeader() const;
@@ -14320,6 +14541,7 @@ namespace ns_main {
     {
     public:
         CT_Scenarios();
+        ~CT_Scenarios();
         CT_Scenario* add_scenario();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -14361,6 +14583,7 @@ namespace ns_main {
     {
     public:
         CT_SheetProtection();
+        ~CT_SheetProtection();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SheetProtection& default_instance();
@@ -14478,6 +14701,7 @@ namespace ns_main {
     {
     public:
         CT_ProtectedRanges();
+        ~CT_ProtectedRanges();
         CT_ProtectedRange* add_protectedRange();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -14504,6 +14728,7 @@ namespace ns_main {
     {
     public:
         CT_ProtectedRange();
+        ~CT_ProtectedRange();
         void add_securityDescriptor(const XSD::string_& _securityDescriptor);
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -14570,6 +14795,7 @@ namespace ns_main {
     {
     public:
         CT_Scenario();
+        ~CT_Scenario();
         CT_InputCells* add_inputCells();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -14626,6 +14852,7 @@ namespace ns_main {
     {
     public:
         CT_InputCells();
+        ~CT_InputCells();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_InputCells& default_instance();
@@ -14663,6 +14890,7 @@ namespace ns_main {
     {
     public:
         CT_CellWatches();
+        ~CT_CellWatches();
         CT_CellWatch* add_cellWatch();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -14689,6 +14917,7 @@ namespace ns_main {
     {
     public:
         CT_CellWatch();
+        ~CT_CellWatch();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CellWatch& default_instance();
@@ -14706,6 +14935,7 @@ namespace ns_main {
     {
     public:
         CT_Chartsheet();
+        ~CT_Chartsheet();
         bool has_sheetPr() const;
         CT_ChartsheetPr* mutable_sheetPr();
         const CT_ChartsheetPr& get_sheetPr() const;
@@ -14788,6 +15018,7 @@ namespace ns_main {
     {
     public:
         CT_ChartsheetPr();
+        ~CT_ChartsheetPr();
         bool has_tabColor() const;
         CT_Color* mutable_tabColor();
         const CT_Color& get_tabColor() const;
@@ -14815,6 +15046,7 @@ namespace ns_main {
     {
     public:
         CT_ChartsheetViews();
+        ~CT_ChartsheetViews();
         CT_ChartsheetView* add_sheetView();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -14847,6 +15079,7 @@ namespace ns_main {
     {
     public:
         CT_ChartsheetView();
+        ~CT_ChartsheetView();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -14884,6 +15117,7 @@ namespace ns_main {
     {
     public:
         CT_ChartsheetProtection();
+        ~CT_ChartsheetProtection();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ChartsheetProtection& default_instance();
@@ -14931,6 +15165,7 @@ namespace ns_main {
     {
     public:
         CT_CsPageSetup();
+        ~CT_CsPageSetup();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CsPageSetup& default_instance();
@@ -15008,6 +15243,7 @@ namespace ns_main {
     {
     public:
         CT_CustomChartsheetViews();
+        ~CT_CustomChartsheetViews();
         CT_CustomChartsheetView* add_customSheetView();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -15034,6 +15270,7 @@ namespace ns_main {
     {
     public:
         CT_CustomChartsheetView();
+        ~CT_CustomChartsheetView();
         bool has_pageMargins() const;
         CT_PageMargins* mutable_pageMargins();
         const CT_PageMargins& get_pageMargins() const;
@@ -15081,6 +15318,7 @@ namespace ns_main {
     {
     public:
         CT_CustomProperties();
+        ~CT_CustomProperties();
         CT_CustomProperty* add_customPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -15107,6 +15345,7 @@ namespace ns_main {
     {
     public:
         CT_CustomProperty();
+        ~CT_CustomProperty();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CustomProperty& default_instance();
@@ -15129,6 +15368,7 @@ namespace ns_main {
     {
     public:
         CT_OleObjects();
+        ~CT_OleObjects();
         CT_OleObject* add_oleObject();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -15155,6 +15395,7 @@ namespace ns_main {
     {
     public:
         CT_OleObject();
+        ~CT_OleObject();
         bool has_objectPr() const;
         CT_ObjectPr* mutable_objectPr();
         const CT_ObjectPr& get_objectPr() const;
@@ -15207,6 +15448,7 @@ namespace ns_main {
     {
     public:
         CT_ObjectPr();
+        ~CT_ObjectPr();
         bool has_anchor() const;
         CT_ObjectAnchor* mutable_anchor();
         const CT_ObjectAnchor& get_anchor() const;
@@ -15284,6 +15526,7 @@ namespace ns_main {
     {
     public:
         CT_WebPublishItems();
+        ~CT_WebPublishItems();
         CT_WebPublishItem* add_webPublishItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -15315,6 +15558,7 @@ namespace ns_main {
     {
     public:
         CT_WebPublishItem();
+        ~CT_WebPublishItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WebPublishItem& default_instance();
@@ -15367,6 +15611,7 @@ namespace ns_main {
     {
     public:
         CT_Controls();
+        ~CT_Controls();
         CT_Control* add_control();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -15393,6 +15638,7 @@ namespace ns_main {
     {
     public:
         CT_Control();
+        ~CT_Control();
         bool has_controlPr() const;
         CT_ControlPr* mutable_controlPr();
         const CT_ControlPr& get_controlPr() const;
@@ -15425,6 +15671,7 @@ namespace ns_main {
     {
     public:
         CT_ControlPr();
+        ~CT_ControlPr();
         bool has_anchor() const;
         CT_ObjectAnchor* mutable_anchor();
         const CT_ObjectAnchor& get_anchor() const;
@@ -15517,6 +15764,7 @@ namespace ns_main {
     {
     public:
         CT_IgnoredErrors();
+        ~CT_IgnoredErrors();
         CT_IgnoredError* add_ignoredError();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -15549,6 +15797,7 @@ namespace ns_main {
     {
     public:
         CT_IgnoredError();
+        ~CT_IgnoredError();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_IgnoredError& default_instance();
@@ -15611,6 +15860,7 @@ namespace ns_main {
     {
     public:
         CT_TableParts();
+        ~CT_TableParts();
         CT_TablePart* add_tablePart();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -15642,6 +15892,7 @@ namespace ns_main {
     {
     public:
         CT_TablePart();
+        ~CT_TablePart();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TablePart& default_instance();
@@ -15659,6 +15910,7 @@ namespace ns_main {
     {
     public:
         CT_Metadata();
+        ~CT_Metadata();
         bool has_metadataTypes() const;
         CT_MetadataTypes* mutable_metadataTypes();
         const CT_MetadataTypes& get_metadataTypes() const;
@@ -15718,6 +15970,7 @@ namespace ns_main {
     {
     public:
         CT_MetadataTypes();
+        ~CT_MetadataTypes();
         CT_MetadataType* add_metadataType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -15749,6 +16002,7 @@ namespace ns_main {
     {
     public:
         CT_MetadataType();
+        ~CT_MetadataType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MetadataType& default_instance();
@@ -15901,6 +16155,7 @@ namespace ns_main {
     {
     public:
         CT_MetadataBlocks();
+        ~CT_MetadataBlocks();
         CT_MetadataBlock* add_bk();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -15932,6 +16187,7 @@ namespace ns_main {
     {
     public:
         CT_MetadataBlock();
+        ~CT_MetadataBlock();
         CT_MetadataRecord* add_rc();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -15958,6 +16214,7 @@ namespace ns_main {
     {
     public:
         CT_MetadataRecord();
+        ~CT_MetadataRecord();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MetadataRecord& default_instance();
@@ -15980,6 +16237,7 @@ namespace ns_main {
     {
     public:
         CT_FutureMetadata();
+        ~CT_FutureMetadata();
         CT_FutureMetadataBlock* add_bk();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -16022,6 +16280,7 @@ namespace ns_main {
     {
     public:
         CT_FutureMetadataBlock();
+        ~CT_FutureMetadataBlock();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -16039,6 +16298,7 @@ namespace ns_main {
     {
     public:
         CT_MdxMetadata();
+        ~CT_MdxMetadata();
         CT_Mdx* add_mdx();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -16070,6 +16330,7 @@ namespace ns_main {
     {
     public:
         CT_Mdx();
+        ~CT_Mdx();
         bool has_t() const;
         CT_MdxTuple* mutable_t();
         const CT_MdxTuple& get_t() const;
@@ -16112,6 +16373,7 @@ namespace ns_main {
     {
     public:
         CT_MdxTuple();
+        ~CT_MdxTuple();
         CT_MetadataStringIndex* add_n();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -16188,6 +16450,7 @@ namespace ns_main {
     {
     public:
         CT_MdxSet();
+        ~CT_MdxSet();
         CT_MetadataStringIndex* add_n();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -16229,6 +16492,7 @@ namespace ns_main {
     {
     public:
         CT_MdxMemeberProp();
+        ~CT_MdxMemeberProp();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MdxMemeberProp& default_instance();
@@ -16251,6 +16515,7 @@ namespace ns_main {
     {
     public:
         CT_MdxKPI();
+        ~CT_MdxKPI();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MdxKPI& default_instance();
@@ -16278,6 +16543,7 @@ namespace ns_main {
     {
     public:
         CT_MetadataStringIndex();
+        ~CT_MetadataStringIndex();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MetadataStringIndex& default_instance();
@@ -16300,6 +16566,7 @@ namespace ns_main {
     {
     public:
         CT_MetadataStrings();
+        ~CT_MetadataStrings();
         CT_XStringElement* add_s();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -16331,6 +16598,7 @@ namespace ns_main {
     {
     public:
         CT_SingleXmlCells();
+        ~CT_SingleXmlCells();
         CT_SingleXmlCell* add_singleXmlCell();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -16357,6 +16625,7 @@ namespace ns_main {
     {
     public:
         CT_SingleXmlCell();
+        ~CT_SingleXmlCell();
         bool has_xmlCellPr() const;
         CT_XmlCellPr* mutable_xmlCellPr();
         const CT_XmlCellPr& get_xmlCellPr() const;
@@ -16394,6 +16663,7 @@ namespace ns_main {
     {
     public:
         CT_XmlCellPr();
+        ~CT_XmlCellPr();
         bool has_xmlPr() const;
         CT_XmlPr* mutable_xmlPr();
         const CT_XmlPr& get_xmlPr() const;
@@ -16426,6 +16696,7 @@ namespace ns_main {
     {
     public:
         CT_XmlPr();
+        ~CT_XmlPr();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -16458,6 +16729,7 @@ namespace ns_main {
     {
     public:
         CT_Stylesheet();
+        ~CT_Stylesheet();
         bool has_numFmts() const;
         CT_NumFmts* mutable_numFmts();
         const CT_NumFmts& get_numFmts() const;
@@ -16525,6 +16797,7 @@ namespace ns_main {
     {
     public:
         CT_CellAlignment();
+        ~CT_CellAlignment();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CellAlignment& default_instance();
@@ -16582,6 +16855,7 @@ namespace ns_main {
     {
     public:
         CT_Borders();
+        ~CT_Borders();
         CT_Border* add_border();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -16613,6 +16887,7 @@ namespace ns_main {
     {
     public:
         CT_Border();
+        ~CT_Border();
         bool has_start() const;
         CT_BorderPr* mutable_start();
         const CT_BorderPr& get_start() const;
@@ -16685,6 +16960,7 @@ namespace ns_main {
     {
     public:
         CT_BorderPr();
+        ~CT_BorderPr();
         bool has_color() const;
         CT_Color* mutable_color();
         const CT_Color& get_color() const;
@@ -16707,6 +16983,7 @@ namespace ns_main {
     {
     public:
         CT_CellProtection();
+        ~CT_CellProtection();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CellProtection& default_instance();
@@ -16729,6 +17006,7 @@ namespace ns_main {
     {
     public:
         CT_Fonts();
+        ~CT_Fonts();
         CT_Font* add_font();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -16760,6 +17038,7 @@ namespace ns_main {
     {
     public:
         CT_Fills();
+        ~CT_Fills();
         CT_Fill* add_fill();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -16791,6 +17070,7 @@ namespace ns_main {
     {
     public:
         CT_Fill();
+        ~CT_Fill();
         bool has_patternFill() const;
         CT_PatternFill* mutable_patternFill();
         const CT_PatternFill& get_patternFill() const;
@@ -16813,6 +17093,7 @@ namespace ns_main {
     {
     public:
         CT_PatternFill();
+        ~CT_PatternFill();
         bool has_fgColor() const;
         CT_Color* mutable_fgColor();
         const CT_Color& get_fgColor() const;
@@ -16840,6 +17121,7 @@ namespace ns_main {
     {
     public:
         CT_Color();
+        ~CT_Color();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Color& default_instance();
@@ -16877,6 +17159,7 @@ namespace ns_main {
     {
     public:
         CT_GradientFill();
+        ~CT_GradientFill();
         CT_GradientStop* add_stop();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -16933,6 +17216,7 @@ namespace ns_main {
     {
     public:
         CT_GradientStop();
+        ~CT_GradientStop();
         bool has_color() const;
         CT_Color* mutable_color();
         const CT_Color& get_color() const;
@@ -16955,6 +17239,7 @@ namespace ns_main {
     {
     public:
         CT_NumFmts();
+        ~CT_NumFmts();
         CT_NumFmt* add_numFmt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -16986,6 +17271,7 @@ namespace ns_main {
     {
     public:
         CT_NumFmt();
+        ~CT_NumFmt();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_NumFmt& default_instance();
@@ -17008,6 +17294,7 @@ namespace ns_main {
     {
     public:
         CT_CellStyleXfs();
+        ~CT_CellStyleXfs();
         CT_Xf* add_xf();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17039,6 +17326,7 @@ namespace ns_main {
     {
     public:
         CT_CellXfs();
+        ~CT_CellXfs();
         CT_Xf* add_xf();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17070,6 +17358,7 @@ namespace ns_main {
     {
     public:
         CT_Xf();
+        ~CT_Xf();
         bool has_alignment() const;
         CT_CellAlignment* mutable_alignment();
         const CT_CellAlignment& get_alignment() const;
@@ -17162,6 +17451,7 @@ namespace ns_main {
     {
     public:
         CT_CellStyles();
+        ~CT_CellStyles();
         CT_CellStyle* add_cellStyle();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17193,6 +17483,7 @@ namespace ns_main {
     {
     public:
         CT_CellStyle();
+        ~CT_CellStyle();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -17240,6 +17531,7 @@ namespace ns_main {
     {
     public:
         CT_Dxfs();
+        ~CT_Dxfs();
         CT_Dxf* add_dxf();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17271,6 +17563,7 @@ namespace ns_main {
     {
     public:
         CT_Dxf();
+        ~CT_Dxf();
         bool has_font() const;
         CT_Font* mutable_font();
         const CT_Font& get_font() const;
@@ -17318,6 +17611,7 @@ namespace ns_main {
     {
     public:
         CT_Colors();
+        ~CT_Colors();
         bool has_indexedColors() const;
         CT_IndexedColors* mutable_indexedColors();
         const CT_IndexedColors& get_indexedColors() const;
@@ -17340,6 +17634,7 @@ namespace ns_main {
     {
     public:
         CT_IndexedColors();
+        ~CT_IndexedColors();
         CT_RgbColor* add_rgbColor();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17366,6 +17661,7 @@ namespace ns_main {
     {
     public:
         CT_MRUColors();
+        ~CT_MRUColors();
         CT_Color* add_color();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17392,6 +17688,7 @@ namespace ns_main {
     {
     public:
         CT_RgbColor();
+        ~CT_RgbColor();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RgbColor& default_instance();
@@ -17409,6 +17706,7 @@ namespace ns_main {
     {
     public:
         CT_TableStyles();
+        ~CT_TableStyles();
         CT_TableStyle* add_tableStyle();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17450,6 +17748,7 @@ namespace ns_main {
     {
     public:
         CT_TableStyle();
+        ~CT_TableStyle();
         CT_TableStyleElement* add_tableStyleElement();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17496,6 +17795,7 @@ namespace ns_main {
     {
     public:
         CT_TableStyleElement();
+        ~CT_TableStyleElement();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TableStyleElement& default_instance();
@@ -17523,6 +17823,7 @@ namespace ns_main {
     {
     public:
         CT_BooleanProperty();
+        ~CT_BooleanProperty();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BooleanProperty& default_instance();
@@ -17540,6 +17841,7 @@ namespace ns_main {
     {
     public:
         CT_FontSize();
+        ~CT_FontSize();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FontSize& default_instance();
@@ -17557,6 +17859,7 @@ namespace ns_main {
     {
     public:
         CT_IntProperty();
+        ~CT_IntProperty();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_IntProperty& default_instance();
@@ -17574,6 +17877,7 @@ namespace ns_main {
     {
     public:
         CT_FontName();
+        ~CT_FontName();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FontName& default_instance();
@@ -17591,6 +17895,7 @@ namespace ns_main {
     {
     public:
         CT_VerticalAlignFontProperty();
+        ~CT_VerticalAlignFontProperty();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_VerticalAlignFontProperty& default_instance();
@@ -17608,6 +17913,7 @@ namespace ns_main {
     {
     public:
         CT_FontScheme();
+        ~CT_FontScheme();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FontScheme& default_instance();
@@ -17625,6 +17931,7 @@ namespace ns_main {
     {
     public:
         CT_UnderlineProperty();
+        ~CT_UnderlineProperty();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_UnderlineProperty& default_instance();
@@ -17642,6 +17949,7 @@ namespace ns_main {
     {
     public:
         CT_Font();
+        ~CT_Font();
         CT_FontName* add_name();
         CT_IntProperty* add_charset();
         CT_FontFamily* add_family();
@@ -17752,6 +18060,7 @@ namespace ns_main {
     {
     public:
         CT_FontFamily();
+        ~CT_FontFamily();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FontFamily& default_instance();
@@ -17769,6 +18078,7 @@ namespace ns_main {
     {
     public:
         CT_ExternalLink();
+        ~CT_ExternalLink();
         bool has_externalBook() const;
         CT_ExternalBook* mutable_externalBook();
         const CT_ExternalBook& get_externalBook() const;
@@ -17801,6 +18111,7 @@ namespace ns_main {
     {
     public:
         CT_ExternalBook();
+        ~CT_ExternalBook();
         bool has_sheetNames() const;
         CT_ExternalSheetNames* mutable_sheetNames();
         const CT_ExternalSheetNames& get_sheetNames() const;
@@ -17833,6 +18144,7 @@ namespace ns_main {
     {
     public:
         CT_ExternalSheetNames();
+        ~CT_ExternalSheetNames();
         CT_ExternalSheetName* add_sheetName();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17859,6 +18171,7 @@ namespace ns_main {
     {
     public:
         CT_ExternalSheetName();
+        ~CT_ExternalSheetName();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ExternalSheetName& default_instance();
@@ -17876,6 +18189,7 @@ namespace ns_main {
     {
     public:
         CT_ExternalDefinedNames();
+        ~CT_ExternalDefinedNames();
         CT_ExternalDefinedName* add_definedName();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17902,6 +18216,7 @@ namespace ns_main {
     {
     public:
         CT_ExternalDefinedName();
+        ~CT_ExternalDefinedName();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ExternalDefinedName& default_instance();
@@ -17929,6 +18244,7 @@ namespace ns_main {
     {
     public:
         CT_ExternalSheetDataSet();
+        ~CT_ExternalSheetDataSet();
         CT_ExternalSheetData* add_sheetData();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17955,6 +18271,7 @@ namespace ns_main {
     {
     public:
         CT_ExternalSheetData();
+        ~CT_ExternalSheetData();
         CT_ExternalRow* add_row();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -17991,6 +18308,7 @@ namespace ns_main {
     {
     public:
         CT_ExternalRow();
+        ~CT_ExternalRow();
         CT_ExternalCell* add_cell();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18022,6 +18340,7 @@ namespace ns_main {
     {
     public:
         CT_ExternalCell();
+        ~CT_ExternalCell();
         bool has_v() const;
         ns_s::ST_Xstring* mutable_v();
         const ns_s::ST_Xstring& get_v() const;
@@ -18054,6 +18373,7 @@ namespace ns_main {
     {
     public:
         CT_DdeLink();
+        ~CT_DdeLink();
         bool has_ddeItems() const;
         CT_DdeItems* mutable_ddeItems();
         const CT_DdeItems& get_ddeItems() const;
@@ -18081,6 +18401,7 @@ namespace ns_main {
     {
     public:
         CT_DdeItems();
+        ~CT_DdeItems();
         CT_DdeItem* add_ddeItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18107,6 +18428,7 @@ namespace ns_main {
     {
     public:
         CT_DdeItem();
+        ~CT_DdeItem();
         bool has_values() const;
         CT_DdeValues* mutable_values();
         const CT_DdeValues& get_values() const;
@@ -18144,6 +18466,7 @@ namespace ns_main {
     {
     public:
         CT_DdeValues();
+        ~CT_DdeValues();
         CT_DdeValue* add_value();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18180,6 +18503,7 @@ namespace ns_main {
     {
     public:
         CT_DdeValue();
+        ~CT_DdeValue();
         bool has_val() const;
         ns_s::ST_Xstring* mutable_val();
         const ns_s::ST_Xstring& get_val() const;
@@ -18202,6 +18526,7 @@ namespace ns_main {
     {
     public:
         CT_OleLink();
+        ~CT_OleLink();
         bool has_oleItems() const;
         CT_OleItems* mutable_oleItems();
         const CT_OleItems& get_oleItems() const;
@@ -18229,6 +18554,7 @@ namespace ns_main {
     {
     public:
         CT_OleItems();
+        ~CT_OleItems();
         CT_OleItem* add_oleItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18255,6 +18581,7 @@ namespace ns_main {
     {
     public:
         CT_OleItem();
+        ~CT_OleItem();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OleItem& default_instance();
@@ -18287,6 +18614,7 @@ namespace ns_main {
     {
     public:
         CT_Table();
+        ~CT_Table();
         bool has_autoFilter() const;
         CT_AutoFilter* mutable_autoFilter();
         const CT_AutoFilter& get_autoFilter() const;
@@ -18434,6 +18762,7 @@ namespace ns_main {
     {
     public:
         CT_TableStyleInfo();
+        ~CT_TableStyleInfo();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TableStyleInfo& default_instance();
@@ -18471,6 +18800,7 @@ namespace ns_main {
     {
     public:
         CT_TableColumns();
+        ~CT_TableColumns();
         CT_TableColumn* add_tableColumn();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18502,6 +18832,7 @@ namespace ns_main {
     {
     public:
         CT_TableColumn();
+        ~CT_TableColumn();
         bool has_calculatedColumnFormula() const;
         CT_TableFormula* mutable_calculatedColumnFormula();
         const CT_TableFormula& get_calculatedColumnFormula() const;
@@ -18594,6 +18925,7 @@ namespace ns_main {
     {
     public:
         CT_TableFormula();
+        ~CT_TableFormula();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TableFormula& default_instance();
@@ -18611,6 +18943,7 @@ namespace ns_main {
     {
     public:
         CT_XmlColumnPr();
+        ~CT_XmlColumnPr();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -18648,6 +18981,7 @@ namespace ns_main {
     {
     public:
         CT_VolTypes();
+        ~CT_VolTypes();
         CT_VolType* add_volType();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -18680,6 +19014,7 @@ namespace ns_main {
     {
     public:
         CT_VolType();
+        ~CT_VolType();
         CT_VolMain* add_main();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18711,6 +19046,7 @@ namespace ns_main {
     {
     public:
         CT_VolMain();
+        ~CT_VolMain();
         CT_VolTopic* add_tp();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18742,6 +19078,7 @@ namespace ns_main {
     {
     public:
         CT_VolTopic();
+        ~CT_VolTopic();
         bool has_v() const;
         ns_s::ST_Xstring* mutable_v();
         const ns_s::ST_Xstring& get_v() const;
@@ -18784,6 +19121,7 @@ namespace ns_main {
     {
     public:
         CT_VolTopicRef();
+        ~CT_VolTopicRef();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_VolTopicRef& default_instance();
@@ -18806,6 +19144,7 @@ namespace ns_main {
     {
     public:
         CT_Workbook();
+        ~CT_Workbook();
         bool has_fileVersion() const;
         CT_FileVersion* mutable_fileVersion();
         const CT_FileVersion& get_fileVersion() const;
@@ -18929,6 +19268,7 @@ namespace ns_main {
     {
     public:
         CT_FileVersion();
+        ~CT_FileVersion();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FileVersion& default_instance();
@@ -18966,6 +19306,7 @@ namespace ns_main {
     {
     public:
         CT_BookViews();
+        ~CT_BookViews();
         CT_BookView* add_workbookView();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -18992,6 +19333,7 @@ namespace ns_main {
     {
     public:
         CT_BookView();
+        ~CT_BookView();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -19074,6 +19416,7 @@ namespace ns_main {
     {
     public:
         CT_CustomWorkbookViews();
+        ~CT_CustomWorkbookViews();
         CT_CustomWorkbookView* add_customWorkbookView();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -19100,6 +19443,7 @@ namespace ns_main {
     {
     public:
         CT_CustomWorkbookView();
+        ~CT_CustomWorkbookView();
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -19237,6 +19581,7 @@ namespace ns_main {
     {
     public:
         CT_Sheets();
+        ~CT_Sheets();
         CT_Sheet* add_sheet();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -19263,6 +19608,7 @@ namespace ns_main {
     {
     public:
         CT_Sheet();
+        ~CT_Sheet();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Sheet& default_instance();
@@ -19295,6 +19641,7 @@ namespace ns_main {
     {
     public:
         CT_WorkbookPr();
+        ~CT_WorkbookPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WorkbookPr& default_instance();
@@ -19397,6 +19744,7 @@ namespace ns_main {
     {
     public:
         CT_SmartTagPr();
+        ~CT_SmartTagPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SmartTagPr& default_instance();
@@ -19419,6 +19767,7 @@ namespace ns_main {
     {
     public:
         CT_SmartTagTypes();
+        ~CT_SmartTagTypes();
         CT_SmartTagType* add_smartTagType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -19445,6 +19794,7 @@ namespace ns_main {
     {
     public:
         CT_SmartTagType();
+        ~CT_SmartTagType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SmartTagType& default_instance();
@@ -19472,6 +19822,7 @@ namespace ns_main {
     {
     public:
         CT_FileRecoveryPr();
+        ~CT_FileRecoveryPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FileRecoveryPr& default_instance();
@@ -19504,6 +19855,7 @@ namespace ns_main {
     {
     public:
         CT_CalcPr();
+        ~CT_CalcPr();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CalcPr& default_instance();
@@ -19581,6 +19933,7 @@ namespace ns_main {
     {
     public:
         CT_DefinedNames();
+        ~CT_DefinedNames();
         CT_DefinedName* add_definedName();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -19607,6 +19960,7 @@ namespace ns_main {
     {
     public:
         CT_DefinedName();
+        ~CT_DefinedName();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DefinedName& default_instance();
@@ -19694,6 +20048,7 @@ namespace ns_main {
     {
     public:
         CT_ExternalReferences();
+        ~CT_ExternalReferences();
         CT_ExternalReference* add_externalReference();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -19720,6 +20075,7 @@ namespace ns_main {
     {
     public:
         CT_ExternalReference();
+        ~CT_ExternalReference();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ExternalReference& default_instance();
@@ -19737,6 +20093,7 @@ namespace ns_main {
     {
     public:
         CT_SheetBackgroundPicture();
+        ~CT_SheetBackgroundPicture();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SheetBackgroundPicture& default_instance();
@@ -19754,6 +20111,7 @@ namespace ns_main {
     {
     public:
         CT_PivotCaches();
+        ~CT_PivotCaches();
         CT_PivotCache* add_pivotCache();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -19780,6 +20138,7 @@ namespace ns_main {
     {
     public:
         CT_PivotCache();
+        ~CT_PivotCache();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PivotCache& default_instance();
@@ -19802,6 +20161,7 @@ namespace ns_main {
     {
     public:
         CT_FileSharing();
+        ~CT_FileSharing();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FileSharing& default_instance();
@@ -19849,6 +20209,7 @@ namespace ns_main {
     {
     public:
         CT_OleSize();
+        ~CT_OleSize();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OleSize& default_instance();
@@ -19866,6 +20227,7 @@ namespace ns_main {
     {
     public:
         CT_WorkbookProtection();
+        ~CT_WorkbookProtection();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WorkbookProtection& default_instance();
@@ -19953,6 +20315,7 @@ namespace ns_main {
     {
     public:
         CT_WebPublishing();
+        ~CT_WebPublishing();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WebPublishing& default_instance();
@@ -20010,6 +20373,7 @@ namespace ns_main {
     {
     public:
         CT_FunctionGroups();
+        ~CT_FunctionGroups();
         CT_FunctionGroup* add_functionGroup();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -20041,6 +20405,7 @@ namespace ns_main {
     {
     public:
         CT_FunctionGroup();
+        ~CT_FunctionGroup();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FunctionGroup& default_instance();
@@ -20058,6 +20423,7 @@ namespace ns_main {
     {
     public:
         CT_WebPublishObjects();
+        ~CT_WebPublishObjects();
         CT_WebPublishObject* add_webPublishObject();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -20089,6 +20455,7 @@ namespace ns_main {
     {
     public:
         CT_WebPublishObject();
+        ~CT_WebPublishObject();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WebPublishObject& default_instance();
@@ -20131,6 +20498,7 @@ namespace ns_main {
     {
     public:
         calcChain_element();
+        ~calcChain_element();
         CT_CalcCell* add_c();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -20163,6 +20531,7 @@ namespace ns_main {
     {
     public:
         comments_element();
+        ~comments_element();
         bool has_authors() const;
         CT_Authors* mutable_authors();
         const CT_Authors& get_authors() const;
@@ -20190,6 +20559,7 @@ namespace ns_main {
     {
     public:
         MapInfo_element();
+        ~MapInfo_element();
         CT_Schema* add_Schema();
         CT_Map* add_Map();
         void clear();
@@ -20227,6 +20597,7 @@ namespace ns_main {
     {
     public:
         connections_element();
+        ~connections_element();
         CT_Connection* add_connection();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -20253,6 +20624,7 @@ namespace ns_main {
     {
     public:
         pivotCacheDefinition_element();
+        ~pivotCacheDefinition_element();
         bool has_cacheSource() const;
         CT_CacheSource* mutable_cacheSource();
         const CT_CacheSource& get_cacheSource() const;
@@ -20415,6 +20787,7 @@ namespace ns_main {
     {
     public:
         pivotCacheRecords_element();
+        ~pivotCacheRecords_element();
         CT_Record* add_r();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -20452,6 +20825,7 @@ namespace ns_main {
     {
     public:
         pivotTableDefinition_element();
+        ~pivotTableDefinition_element();
         bool has_location() const;
         CT_Location* mutable_location();
         const CT_Location& get_location() const;
@@ -20889,6 +21263,7 @@ namespace ns_main {
     {
     public:
         queryTable_element();
+        ~queryTable_element();
         bool has_queryTableRefresh() const;
         CT_QueryTableRefresh* mutable_queryTableRefresh();
         const CT_QueryTableRefresh& get_queryTableRefresh() const;
@@ -21021,6 +21396,7 @@ namespace ns_main {
     {
     public:
         sst_element();
+        ~sst_element();
         CT_Rst* add_si();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -21063,6 +21439,7 @@ namespace ns_main {
     {
     public:
         headers_element();
+        ~headers_element();
         CT_RevisionHeader* add_header();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -21149,6 +21526,7 @@ namespace ns_main {
     {
     public:
         revisions_element();
+        ~revisions_element();
         CT_RevisionRowColumn* add_rrc();
         CT_RevisionMove* add_rm();
         CT_RevisionCustomView* add_rcv();
@@ -21241,6 +21619,7 @@ namespace ns_main {
     {
     public:
         users_element();
+        ~users_element();
         CT_SharedUser* add_userInfo();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -21272,6 +21651,7 @@ namespace ns_main {
     {
     public:
         worksheet_element();
+        ~worksheet_element();
         bool has_sheetPr() const;
         CT_SheetPr* mutable_sheetPr();
         const CT_SheetPr& get_sheetPr() const;
@@ -21522,6 +21902,7 @@ namespace ns_main {
     {
     public:
         chartsheet_element();
+        ~chartsheet_element();
         bool has_sheetPr() const;
         CT_ChartsheetPr* mutable_sheetPr();
         const CT_ChartsheetPr& get_sheetPr() const;
@@ -21604,6 +21985,7 @@ namespace ns_main {
     {
     public:
         dialogsheet_element();
+        ~dialogsheet_element();
         bool has_sheetPr() const;
         CT_SheetPr* mutable_sheetPr();
         const CT_SheetPr& get_sheetPr() const;
@@ -21696,6 +22078,7 @@ namespace ns_main {
     {
     public:
         metadata_element();
+        ~metadata_element();
         bool has_metadataTypes() const;
         CT_MetadataTypes* mutable_metadataTypes();
         const CT_MetadataTypes& get_metadataTypes() const;
@@ -21755,6 +22138,7 @@ namespace ns_main {
     {
     public:
         singleXmlCells_element();
+        ~singleXmlCells_element();
         CT_SingleXmlCell* add_singleXmlCell();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -21781,6 +22165,7 @@ namespace ns_main {
     {
     public:
         styleSheet_element();
+        ~styleSheet_element();
         bool has_numFmts() const;
         CT_NumFmts* mutable_numFmts();
         const CT_NumFmts& get_numFmts() const;
@@ -21848,6 +22233,7 @@ namespace ns_main {
     {
     public:
         externalLink_element();
+        ~externalLink_element();
         bool has_externalBook() const;
         CT_ExternalBook* mutable_externalBook();
         const CT_ExternalBook& get_externalBook() const;
@@ -21880,6 +22266,7 @@ namespace ns_main {
     {
     public:
         table_element();
+        ~table_element();
         bool has_autoFilter() const;
         CT_AutoFilter* mutable_autoFilter();
         const CT_AutoFilter& get_autoFilter() const;
@@ -22027,6 +22414,7 @@ namespace ns_main {
     {
     public:
         volTypes_element();
+        ~volTypes_element();
         CT_VolType* add_volType();
         CT_ExtensionList* add_extLst();
         void clear();
@@ -22059,6 +22447,7 @@ namespace ns_main {
     {
     public:
         workbook_element();
+        ~workbook_element();
         bool has_fileVersion() const;
         CT_FileVersion* mutable_fileVersion();
         const CT_FileVersion& get_fileVersion() const;

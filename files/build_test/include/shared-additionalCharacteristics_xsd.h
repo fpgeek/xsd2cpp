@@ -61,6 +61,7 @@ namespace ns_characteristics {
     {
     public:
         CT_AdditionalCharacteristics();
+        ~CT_AdditionalCharacteristics();
         CT_Characteristic* add_characteristic();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -87,6 +88,7 @@ namespace ns_characteristics {
     {
     public:
         CT_Characteristic();
+        ~CT_Characteristic();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Characteristic& default_instance();
@@ -119,6 +121,7 @@ namespace ns_characteristics {
     {
     public:
         additionalCharacteristics_element();
+        ~additionalCharacteristics_element();
         CT_Characteristic* add_characteristic();
         void clear();
         void toXml(std::ostream& _outStream) const;

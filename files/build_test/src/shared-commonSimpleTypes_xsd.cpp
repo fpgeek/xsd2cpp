@@ -232,7 +232,7 @@ ST_Panose* ST_Panose::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -304,7 +304,7 @@ ST_CalendarType* ST_CalendarType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -364,7 +364,7 @@ ST_AlgClass* ST_AlgClass::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -425,7 +425,7 @@ ST_CryptProv* ST_CryptProv::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -716,7 +716,7 @@ ST_OnOff* ST_OnOff::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -898,7 +898,7 @@ ST_XmlName* ST_XmlName::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -960,7 +960,7 @@ ST_TrueFalse* ST_TrueFalse::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1208,7 +1208,7 @@ ST_TwipsMeasure* ST_TwipsMeasure::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1329,7 +1329,7 @@ ST_Xstring* ST_Xstring::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1392,7 +1392,7 @@ ST_XAlign* ST_XAlign::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1456,7 +1456,7 @@ ST_YAlign* ST_YAlign::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 

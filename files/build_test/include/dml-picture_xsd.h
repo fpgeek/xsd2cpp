@@ -33,6 +33,7 @@ namespace ns_dpct {
     {
     public:
         CT_PictureNonVisual();
+        ~CT_PictureNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -55,6 +56,7 @@ namespace ns_dpct {
     {
     public:
         CT_Picture();
+        ~CT_Picture();
         bool has_nvPicPr() const;
         CT_PictureNonVisual* mutable_nvPicPr();
         const CT_PictureNonVisual& get_nvPicPr() const;
@@ -82,6 +84,7 @@ namespace ns_dpct {
     {
     public:
         pic_element();
+        ~pic_element();
         bool has_nvPicPr() const;
         CT_PictureNonVisual* mutable_nvPicPr();
         const CT_PictureNonVisual& get_nvPicPr() const;

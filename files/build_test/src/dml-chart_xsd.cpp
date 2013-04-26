@@ -54,7 +54,7 @@ namespace ns_chart {
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -114,7 +114,7 @@ ST_LayoutTarget* ST_LayoutTarget::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1760,7 +1760,7 @@ ST_BubbleScaleUInt* ST_BubbleScaleUInt::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2127,7 +2127,7 @@ ST_HoleSizeUByte* ST_HoleSizeUByte::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2435,7 +2435,7 @@ ST_SecondPieSizeUShort* ST_SecondPieSizeUShort::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2496,7 +2496,7 @@ ST_LblAlgn* ST_LblAlgn::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2563,7 +2563,7 @@ ST_DLblPos* ST_DLblPos::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2695,7 +2695,7 @@ ST_MarkerSize* ST_MarkerSize::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2882,7 +2882,7 @@ ST_Period* ST_Period::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2942,7 +2942,7 @@ ST_ErrDir* ST_ErrDir::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3003,7 +3003,7 @@ ST_ErrBarType* ST_ErrBarType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3066,7 +3066,7 @@ ST_ErrValType* ST_ErrValType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3127,7 +3127,7 @@ ST_Grouping* ST_Grouping::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3191,7 +3191,7 @@ ST_ScatterStyle* ST_ScatterStyle::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3252,7 +3252,7 @@ ST_RadarStyle* ST_RadarStyle::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3314,7 +3314,7 @@ ST_BarGrouping* ST_BarGrouping::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3374,7 +3374,7 @@ ST_BarDir* ST_BarDir::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3438,7 +3438,7 @@ ST_Shape* ST_Shape::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3498,7 +3498,7 @@ ST_OfPieType* ST_OfPieType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3560,7 +3560,7 @@ ST_AxPos* ST_AxPos::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3621,7 +3621,7 @@ ST_Crosses* ST_Crosses::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3681,7 +3681,7 @@ ST_CrossBetween* ST_CrossBetween::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3743,7 +3743,7 @@ ST_TickMark* ST_TickMark::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3866,7 +3866,7 @@ ST_Skip* ST_Skip::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3988,7 +3988,7 @@ ST_AxisUnit* ST_AxisUnit::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4055,7 +4055,7 @@ ST_BuiltInUnit* ST_BuiltInUnit::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4177,7 +4177,7 @@ ST_PictureStackUnit* ST_PictureStackUnit::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4544,7 +4544,7 @@ ST_LblOffsetUShort* ST_LblOffsetUShort::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4607,7 +4607,7 @@ ST_LegendPos* ST_LegendPos::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4730,7 +4730,7 @@ ST_Style* ST_Style::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4757,6 +4757,9 @@ ST_PageSetupOrientation* ST_PageSetupOrientation::default_instance_ = NULL;
     m_val_attr(false)
     {
     }
+    CT_Boolean::~CT_Boolean()
+{
+    clear();    }
     void CT_Boolean::clear()
     {    
     m_has_val_attr = false;
@@ -4815,6 +4818,9 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
     m_val_attr(0)
     {
     }
+    CT_Double::~CT_Double()
+{
+    clear();    }
     void CT_Double::clear()
     {    
     m_has_val_attr = false;
@@ -4873,6 +4879,9 @@ CT_Double* CT_Double::default_instance_ = NULL;
     m_val_attr(0)
     {
     }
+    CT_UnsignedInt::~CT_UnsignedInt()
+{
+    clear();    }
     void CT_UnsignedInt::clear()
     {    
     m_has_val_attr = false;
@@ -4931,6 +4940,9 @@ CT_UnsignedInt* CT_UnsignedInt::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_RelId::~CT_RelId()
+{
+    clear();    }
     void CT_RelId::clear()
     {    
     m_has_r_id_attr = false;
@@ -5001,6 +5013,9 @@ CT_RelId* CT_RelId::default_instance_ = NULL;
     m_uri_attr("")
     {
     }
+    CT_Extension::~CT_Extension()
+{
+    clear();    }
     void CT_Extension::clear()
     {    
     m_has_uri_attr = false;
@@ -5065,6 +5080,9 @@ CT_Extension* CT_Extension::default_instance_ = NULL;
 
     {
     }
+    CT_ExtensionList::~CT_ExtensionList()
+{
+    clear();    }
     CT_Extension* CT_ExtensionList::add_ext()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -5163,6 +5181,9 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
     m_formatCode_attr(NULL)
     {
     }
+    CT_NumVal::~CT_NumVal()
+{
+    clear();    }
     bool CT_NumVal::has_v() const
     {    
     return m_has_v;
@@ -5287,6 +5308,9 @@ CT_NumVal* CT_NumVal::default_instance_ = NULL;
     m_ptCount(NULL)
     {
     }
+    CT_NumData::~CT_NumData()
+{
+    clear();    }
     bool CT_NumData::has_formatCode() const
     {    
     return m_has_formatCode;
@@ -5518,6 +5542,9 @@ CT_NumData* CT_NumData::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_NumRef::~CT_NumRef()
+{
+    clear();    }
     bool CT_NumRef::has_f() const
     {    
     return m_has_f;
@@ -5633,6 +5660,9 @@ CT_NumRef* CT_NumRef::default_instance_ = NULL;
     m_numLit(NULL)
     {
     }
+    CT_NumDataSource::~CT_NumDataSource()
+{
+    clear();    }
     bool CT_NumDataSource::has_numRef() const
     {    
     return m_has_numRef;
@@ -5747,6 +5777,9 @@ CT_NumDataSource* CT_NumDataSource::default_instance_ = NULL;
     m_idx_attr(0)
     {
     }
+    CT_StrVal::~CT_StrVal()
+{
+    clear();    }
     bool CT_StrVal::has_v() const
     {    
     return m_has_v;
@@ -5834,6 +5867,9 @@ CT_StrVal* CT_StrVal::default_instance_ = NULL;
     m_ptCount(NULL)
     {
     }
+    CT_StrData::~CT_StrData()
+{
+    clear();    }
     bool CT_StrData::has_ptCount() const
     {    
     return m_has_ptCount;
@@ -6027,6 +6063,9 @@ CT_StrData* CT_StrData::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_StrRef::~CT_StrRef()
+{
+    clear();    }
     bool CT_StrRef::has_f() const
     {    
     return m_has_f;
@@ -6142,6 +6181,9 @@ CT_StrRef* CT_StrRef::default_instance_ = NULL;
     m_rich(NULL)
     {
     }
+    CT_Tx::~CT_Tx()
+{
+    clear();    }
     bool CT_Tx::has_strRef() const
     {    
     return m_has_strRef;
@@ -6254,6 +6296,9 @@ CT_Tx* CT_Tx::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TextLanguageID::~CT_TextLanguageID()
+{
+    clear();    }
     void CT_TextLanguageID::clear()
     {    
     m_has_val_attr = false;
@@ -6321,6 +6366,9 @@ CT_TextLanguageID* CT_TextLanguageID::default_instance_ = NULL;
 
     {
     }
+    CT_Lvl::~CT_Lvl()
+{
+    clear();    }
     CT_StrVal* CT_Lvl::add_pt()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -6415,6 +6463,9 @@ CT_Lvl* CT_Lvl::default_instance_ = NULL;
     m_ptCount(NULL)
     {
     }
+    CT_MultiLvlStrData::~CT_MultiLvlStrData()
+{
+    clear();    }
     bool CT_MultiLvlStrData::has_ptCount() const
     {    
     return m_has_ptCount;
@@ -6608,6 +6659,9 @@ CT_MultiLvlStrData* CT_MultiLvlStrData::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_MultiLvlStrRef::~CT_MultiLvlStrRef()
+{
+    clear();    }
     bool CT_MultiLvlStrRef::has_f() const
     {    
     return m_has_f;
@@ -6729,6 +6783,9 @@ CT_MultiLvlStrRef* CT_MultiLvlStrRef::default_instance_ = NULL;
     m_strLit(NULL)
     {
     }
+    CT_AxDataSource::~CT_AxDataSource()
+{
+    clear();    }
     bool CT_AxDataSource::has_multiLvlStrRef() const
     {    
     return m_has_multiLvlStrRef;
@@ -7095,6 +7152,9 @@ CT_AxDataSource* CT_AxDataSource::default_instance_ = NULL;
     m_v(NULL)
     {
     }
+    CT_SerTx::~CT_SerTx()
+{
+    clear();    }
     bool CT_SerTx::has_strRef() const
     {    
     return m_has_strRef;
@@ -7207,6 +7267,9 @@ CT_SerTx* CT_SerTx::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_LayoutTarget::~CT_LayoutTarget()
+{
+    clear();    }
     void CT_LayoutTarget::clear()
     {    
     m_has_val_attr = false;
@@ -7275,6 +7338,9 @@ CT_LayoutTarget* CT_LayoutTarget::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_LayoutMode::~CT_LayoutMode()
+{
+    clear();    }
     void CT_LayoutMode::clear()
     {    
     m_has_val_attr = false;
@@ -7361,6 +7427,9 @@ CT_LayoutMode* CT_LayoutMode::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_ManualLayout::~CT_ManualLayout()
+{
+    clear();    }
     bool CT_ManualLayout::has_layoutTarget() const
     {    
     return m_has_layoutTarget;
@@ -7687,6 +7756,9 @@ CT_ManualLayout* CT_ManualLayout::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_Layout::~CT_Layout()
+{
+    clear();    }
     bool CT_Layout::has_manualLayout() const
     {    
     return m_has_manualLayout;
@@ -7789,6 +7861,9 @@ CT_Layout* CT_Layout::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_Title::~CT_Title()
+{
+    clear();    }
     bool CT_Title::has_tx() const
     {    
     return m_has_tx;
@@ -7997,6 +8072,9 @@ CT_Title* CT_Title::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_RotX::~CT_RotX()
+{
+    clear();    }
     void CT_RotX::clear()
     {    
     m_has_val_attr = false;
@@ -8065,6 +8143,9 @@ CT_RotX* CT_RotX::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_HPercent::~CT_HPercent()
+{
+    clear();    }
     void CT_HPercent::clear()
     {    
     m_has_val_attr = false;
@@ -8133,6 +8214,9 @@ CT_HPercent* CT_HPercent::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_RotY::~CT_RotY()
+{
+    clear();    }
     void CT_RotY::clear()
     {    
     m_has_val_attr = false;
@@ -8201,6 +8285,9 @@ CT_RotY* CT_RotY::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_DepthPercent::~CT_DepthPercent()
+{
+    clear();    }
     void CT_DepthPercent::clear()
     {    
     m_has_val_attr = false;
@@ -8269,6 +8356,9 @@ CT_DepthPercent* CT_DepthPercent::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Perspective::~CT_Perspective()
+{
+    clear();    }
     void CT_Perspective::clear()
     {    
     m_has_val_attr = false;
@@ -8349,6 +8439,9 @@ CT_Perspective* CT_Perspective::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_View3D::~CT_View3D()
+{
+    clear();    }
     bool CT_View3D::has_rotX() const
     {    
     return m_has_rotX;
@@ -8592,6 +8685,9 @@ CT_View3D* CT_View3D::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_Surface::~CT_Surface()
+{
+    clear();    }
     bool CT_Surface::has_thickness() const
     {    
     return m_has_thickness;
@@ -8742,6 +8838,9 @@ CT_Surface* CT_Surface::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Thickness::~CT_Thickness()
+{
+    clear();    }
     void CT_Thickness::clear()
     {    
     m_has_val_attr = false;
@@ -8822,6 +8921,9 @@ CT_Thickness* CT_Thickness::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_DTable::~CT_DTable()
+{
+    clear();    }
     bool CT_DTable::has_showHorzBorder() const
     {    
     return m_has_showHorzBorder;
@@ -9059,6 +9161,9 @@ CT_DTable* CT_DTable::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_GapAmount::~CT_GapAmount()
+{
+    clear();    }
     void CT_GapAmount::clear()
     {    
     m_has_val_attr = false;
@@ -9127,6 +9232,9 @@ CT_GapAmount* CT_GapAmount::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Overlap::~CT_Overlap()
+{
+    clear();    }
     void CT_Overlap::clear()
     {    
     m_has_val_attr = false;
@@ -9195,6 +9303,9 @@ CT_Overlap* CT_Overlap::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_BubbleScale::~CT_BubbleScale()
+{
+    clear();    }
     void CT_BubbleScale::clear()
     {    
     m_has_val_attr = false;
@@ -9263,6 +9374,9 @@ CT_BubbleScale* CT_BubbleScale::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_SizeRepresents::~CT_SizeRepresents()
+{
+    clear();    }
     void CT_SizeRepresents::clear()
     {    
     m_has_val_attr = false;
@@ -9331,6 +9445,9 @@ CT_SizeRepresents* CT_SizeRepresents::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_FirstSliceAng::~CT_FirstSliceAng()
+{
+    clear();    }
     void CT_FirstSliceAng::clear()
     {    
     m_has_val_attr = false;
@@ -9399,6 +9516,9 @@ CT_FirstSliceAng* CT_FirstSliceAng::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_HoleSize::~CT_HoleSize()
+{
+    clear();    }
     void CT_HoleSize::clear()
     {    
     m_has_val_attr = false;
@@ -9467,6 +9587,9 @@ CT_HoleSize* CT_HoleSize::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_SplitType::~CT_SplitType()
+{
+    clear();    }
     void CT_SplitType::clear()
     {    
     m_has_val_attr = false;
@@ -9534,6 +9657,9 @@ CT_SplitType* CT_SplitType::default_instance_ = NULL;
 
     {
     }
+    CT_CustSplit::~CT_CustSplit()
+{
+    clear();    }
     CT_UnsignedInt* CT_CustSplit::add_secondPiePt()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9628,6 +9754,9 @@ CT_CustSplit* CT_CustSplit::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_SecondPieSize::~CT_SecondPieSize()
+{
+    clear();    }
     void CT_SecondPieSize::clear()
     {    
     m_has_val_attr = false;
@@ -9698,6 +9827,9 @@ CT_SecondPieSize* CT_SecondPieSize::default_instance_ = NULL;
     m_sourceLinked_attr(false)
     {
     }
+    CT_NumFmt::~CT_NumFmt()
+{
+    clear();    }
     void CT_NumFmt::clear()
     {    
     m_has_formatCode_attr = false;
@@ -9791,6 +9923,9 @@ CT_NumFmt* CT_NumFmt::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_LblAlgn::~CT_LblAlgn()
+{
+    clear();    }
     void CT_LblAlgn::clear()
     {    
     m_has_val_attr = false;
@@ -9859,6 +9994,9 @@ CT_LblAlgn* CT_LblAlgn::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_DLblPos::~CT_DLblPos()
+{
+    clear();    }
     void CT_DLblPos::clear()
     {    
     m_has_val_attr = false;
@@ -9931,6 +10069,9 @@ CT_DLblPos* CT_DLblPos::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_DLbl::~CT_DLbl()
+{
+    clear();    }
     bool CT_DLbl::has_idx() const
     {    
     return m_has_idx;
@@ -10052,6 +10193,9 @@ CT_DLbl* CT_DLbl::default_instance_ = NULL;
 
     {
     }
+    CT_DLbls::~CT_DLbls()
+{
+    clear();    }
     CT_DLbl* CT_DLbls::add_dLbl()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -12792,6 +12936,9 @@ CT_DLbls* CT_DLbls::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_MarkerStyle::~CT_MarkerStyle()
+{
+    clear();    }
     void CT_MarkerStyle::clear()
     {    
     m_has_val_attr = false;
@@ -12860,6 +13007,9 @@ CT_MarkerStyle* CT_MarkerStyle::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_MarkerSize::~CT_MarkerSize()
+{
+    clear();    }
     void CT_MarkerSize::clear()
     {    
     m_has_val_attr = false;
@@ -12934,6 +13084,9 @@ CT_MarkerSize* CT_MarkerSize::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_Marker::~CT_Marker()
+{
+    clear();    }
     bool CT_Marker::has_symbol() const
     {    
     return m_has_symbol;
@@ -13098,6 +13251,9 @@ CT_Marker* CT_Marker::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_DPt::~CT_DPt()
+{
+    clear();    }
     bool CT_DPt::has_idx() const
     {    
     return m_has_idx;
@@ -13364,6 +13520,9 @@ CT_DPt* CT_DPt::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TrendlineType::~CT_TrendlineType()
+{
+    clear();    }
     void CT_TrendlineType::clear()
     {    
     m_has_val_attr = false;
@@ -13432,6 +13591,9 @@ CT_TrendlineType* CT_TrendlineType::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Order::~CT_Order()
+{
+    clear();    }
     void CT_Order::clear()
     {    
     m_has_val_attr = false;
@@ -13500,6 +13662,9 @@ CT_Order* CT_Order::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Period::~CT_Period()
+{
+    clear();    }
     void CT_Period::clear()
     {    
     m_has_val_attr = false;
@@ -13578,6 +13743,9 @@ CT_Period* CT_Period::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_TrendlineLbl::~CT_TrendlineLbl()
+{
+    clear();    }
     bool CT_TrendlineLbl::has_layout() const
     {    
     return m_has_layout;
@@ -13808,6 +13976,9 @@ CT_TrendlineLbl* CT_TrendlineLbl::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_Trendline::~CT_Trendline()
+{
+    clear();    }
     bool CT_Trendline::has_name() const
     {    
     return m_has_name;
@@ -14182,6 +14353,9 @@ CT_Trendline* CT_Trendline::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_ErrDir::~CT_ErrDir()
+{
+    clear();    }
     void CT_ErrDir::clear()
     {    
     m_has_val_attr = false;
@@ -14250,6 +14424,9 @@ CT_ErrDir* CT_ErrDir::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_ErrBarType::~CT_ErrBarType()
+{
+    clear();    }
     void CT_ErrBarType::clear()
     {    
     m_has_val_attr = false;
@@ -14318,6 +14495,9 @@ CT_ErrBarType* CT_ErrBarType::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_ErrValType::~CT_ErrValType()
+{
+    clear();    }
     void CT_ErrValType::clear()
     {    
     m_has_val_attr = false;
@@ -14402,6 +14582,9 @@ CT_ErrValType* CT_ErrValType::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_ErrBars::~CT_ErrBars()
+{
+    clear();    }
     bool CT_ErrBars::has_errDir() const
     {    
     return m_has_errDir;
@@ -14697,6 +14880,9 @@ CT_ErrBars* CT_ErrBars::default_instance_ = NULL;
     m_spPr(NULL)
     {
     }
+    CT_UpDownBar::~CT_UpDownBar()
+{
+    clear();    }
     bool CT_UpDownBar::has_spPr() const
     {    
     return m_has_spPr;
@@ -14766,6 +14952,9 @@ CT_UpDownBar* CT_UpDownBar::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_UpDownBars::~CT_UpDownBars()
+{
+    clear();    }
     bool CT_UpDownBars::has_gapWidth() const
     {    
     return m_has_gapWidth;
@@ -14924,6 +15113,9 @@ CT_UpDownBars* CT_UpDownBars::default_instance_ = NULL;
     m_marker(NULL)
     {
     }
+    CT_LineSer::~CT_LineSer()
+{
+    clear();    }
     bool CT_LineSer::has_idx() const
     {    
     return m_has_idx;
@@ -15993,6 +16185,9 @@ CT_LineSer* CT_LineSer::default_instance_ = NULL;
     m_marker(NULL)
     {
     }
+    CT_ScatterSer::~CT_ScatterSer()
+{
+    clear();    }
     bool CT_ScatterSer::has_idx() const
     {    
     return m_has_idx;
@@ -17062,6 +17257,9 @@ CT_ScatterSer* CT_ScatterSer::default_instance_ = NULL;
     m_marker(NULL)
     {
     }
+    CT_RadarSer::~CT_RadarSer()
+{
+    clear();    }
     bool CT_RadarSer::has_idx() const
     {    
     return m_has_idx;
@@ -17692,6 +17890,9 @@ CT_RadarSer* CT_RadarSer::default_instance_ = NULL;
     m_pictureOptions(NULL)
     {
     }
+    CT_BarSer::~CT_BarSer()
+{
+    clear();    }
     bool CT_BarSer::has_idx() const
     {    
     return m_has_idx;
@@ -18799,6 +19000,9 @@ CT_BarSer* CT_BarSer::default_instance_ = NULL;
     m_pictureOptions(NULL)
     {
     }
+    CT_AreaSer::~CT_AreaSer()
+{
+    clear();    }
     bool CT_AreaSer::has_idx() const
     {    
     return m_has_idx;
@@ -19703,6 +19907,9 @@ CT_AreaSer* CT_AreaSer::default_instance_ = NULL;
     m_explosion(NULL)
     {
     }
+    CT_PieSer::~CT_PieSer()
+{
+    clear();    }
     bool CT_PieSer::has_idx() const
     {    
     return m_has_idx;
@@ -20331,6 +20538,9 @@ CT_PieSer* CT_PieSer::default_instance_ = NULL;
     m_invertIfNegative(NULL)
     {
     }
+    CT_BubbleSer::~CT_BubbleSer()
+{
+    clear();    }
     bool CT_BubbleSer::has_idx() const
     {    
     return m_has_idx;
@@ -21587,6 +21797,9 @@ CT_BubbleSer* CT_BubbleSer::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_SurfaceSer::~CT_SurfaceSer()
+{
+    clear();    }
     bool CT_SurfaceSer::has_idx() const
     {    
     return m_has_idx;
@@ -21824,6 +22037,9 @@ CT_SurfaceSer* CT_SurfaceSer::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Grouping::~CT_Grouping()
+{
+    clear();    }
     void CT_Grouping::clear()
     {    
     m_has_val_attr = false;
@@ -21892,6 +22108,9 @@ CT_Grouping* CT_Grouping::default_instance_ = NULL;
     m_spPr(NULL)
     {
     }
+    CT_ChartLines::~CT_ChartLines()
+{
+    clear();    }
     bool CT_ChartLines::has_spPr() const
     {    
     return m_has_spPr;
@@ -21965,6 +22184,9 @@ CT_ChartLines* CT_ChartLines::default_instance_ = NULL;
     m_smooth(NULL)
     {
     }
+    CT_LineChart::~CT_LineChart()
+{
+    clear();    }
     bool CT_LineChart::has_grouping() const
     {    
     return m_has_grouping;
@@ -22540,6 +22762,9 @@ CT_LineChart* CT_LineChart::default_instance_ = NULL;
     m_gapDepth(NULL)
     {
     }
+    CT_Line3DChart::~CT_Line3DChart()
+{
+    clear();    }
     bool CT_Line3DChart::has_grouping() const
     {    
     return m_has_grouping;
@@ -22996,6 +23221,9 @@ CT_Line3DChart* CT_Line3DChart::default_instance_ = NULL;
 
     {
     }
+    CT_StockChart::~CT_StockChart()
+{
+    clear();    }
     CT_LineSer* CT_StockChart::add_ser()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -23702,6 +23930,9 @@ CT_StockChart* CT_StockChart::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_ScatterStyle::~CT_ScatterStyle()
+{
+    clear();    }
     void CT_ScatterStyle::clear()
     {    
     m_has_val_attr = false;
@@ -23772,6 +24003,9 @@ CT_ScatterStyle* CT_ScatterStyle::default_instance_ = NULL;
     m_varyColors(NULL)
     {
     }
+    CT_ScatterChart::~CT_ScatterChart()
+{
+    clear();    }
     bool CT_ScatterChart::has_scatterStyle() const
     {    
     return m_has_scatterStyle;
@@ -24167,6 +24401,9 @@ CT_ScatterChart* CT_ScatterChart::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_RadarStyle::~CT_RadarStyle()
+{
+    clear();    }
     void CT_RadarStyle::clear()
     {    
     m_has_val_attr = false;
@@ -24237,6 +24474,9 @@ CT_RadarStyle* CT_RadarStyle::default_instance_ = NULL;
     m_varyColors(NULL)
     {
     }
+    CT_RadarChart::~CT_RadarChart()
+{
+    clear();    }
     bool CT_RadarChart::has_radarStyle() const
     {    
     return m_has_radarStyle;
@@ -24632,6 +24872,9 @@ CT_RadarChart* CT_RadarChart::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_BarGrouping::~CT_BarGrouping()
+{
+    clear();    }
     void CT_BarGrouping::clear()
     {    
     m_has_val_attr = false;
@@ -24700,6 +24943,9 @@ CT_BarGrouping* CT_BarGrouping::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_BarDir::~CT_BarDir()
+{
+    clear();    }
     void CT_BarDir::clear()
     {    
     m_has_val_attr = false;
@@ -24768,6 +25014,9 @@ CT_BarDir* CT_BarDir::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Shape::~CT_Shape()
+{
+    clear();    }
     void CT_Shape::clear()
     {    
     m_has_val_attr = false;
@@ -24844,6 +25093,9 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
     m_overlap(NULL)
     {
     }
+    CT_BarChart::~CT_BarChart()
+{
+    clear();    }
     bool CT_BarChart::has_barDir() const
     {    
     return m_has_barDir;
@@ -25387,6 +25639,9 @@ CT_BarChart* CT_BarChart::default_instance_ = NULL;
     m_shape(NULL)
     {
     }
+    CT_Bar3DChart::~CT_Bar3DChart()
+{
+    clear();    }
     bool CT_Bar3DChart::has_barDir() const
     {    
     return m_has_barDir;
@@ -25885,6 +26140,9 @@ CT_Bar3DChart* CT_Bar3DChart::default_instance_ = NULL;
     m_varyColors(NULL)
     {
     }
+    CT_AreaChart::~CT_AreaChart()
+{
+    clear();    }
     bool CT_AreaChart::has_grouping() const
     {    
     return m_has_grouping;
@@ -26395,6 +26653,9 @@ CT_AreaChart* CT_AreaChart::default_instance_ = NULL;
     m_gapDepth(NULL)
     {
     }
+    CT_Area3DChart::~CT_Area3DChart()
+{
+    clear();    }
     bool CT_Area3DChart::has_grouping() const
     {    
     return m_has_grouping;
@@ -26856,6 +27117,9 @@ CT_Area3DChart* CT_Area3DChart::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_PieChart::~CT_PieChart()
+{
+    clear();    }
     bool CT_PieChart::has_varyColors() const
     {    
     return m_has_varyColors;
@@ -27123,6 +27387,9 @@ CT_PieChart* CT_PieChart::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_Pie3DChart::~CT_Pie3DChart()
+{
+    clear();    }
     bool CT_Pie3DChart::has_varyColors() const
     {    
     return m_has_varyColors;
@@ -27356,6 +27623,9 @@ CT_Pie3DChart* CT_Pie3DChart::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_DoughnutChart::~CT_DoughnutChart()
+{
+    clear();    }
     bool CT_DoughnutChart::has_varyColors() const
     {    
     return m_has_varyColors;
@@ -27659,6 +27929,9 @@ CT_DoughnutChart* CT_DoughnutChart::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_OfPieType::~CT_OfPieType()
+{
+    clear();    }
     void CT_OfPieType::clear()
     {    
     m_has_val_attr = false;
@@ -27739,6 +28012,9 @@ CT_OfPieType* CT_OfPieType::default_instance_ = NULL;
     m_secondPieSize(NULL)
     {
     }
+    CT_OfPieChart::~CT_OfPieChart()
+{
+    clear();    }
     bool CT_OfPieChart::has_ofPieType() const
     {    
     return m_has_ofPieType;
@@ -28273,6 +28549,9 @@ CT_OfPieChart* CT_OfPieChart::default_instance_ = NULL;
     m_varyColors(NULL)
     {
     }
+    CT_BubbleChart::~CT_BubbleChart()
+{
+    clear();    }
     bool CT_BubbleChart::has_varyColors() const
     {    
     return m_has_varyColors;
@@ -29184,6 +29463,9 @@ CT_BubbleChart* CT_BubbleChart::default_instance_ = NULL;
     m_spPr(NULL)
     {
     }
+    CT_BandFmt::~CT_BandFmt()
+{
+    clear();    }
     bool CT_BandFmt::has_idx() const
     {    
     return m_has_idx;
@@ -29275,6 +29557,9 @@ CT_BandFmt* CT_BandFmt::default_instance_ = NULL;
 
     {
     }
+    CT_BandFmts::~CT_BandFmts()
+{
+    clear();    }
     CT_BandFmt* CT_BandFmts::add_bandFmt()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -29369,6 +29654,9 @@ CT_BandFmts* CT_BandFmts::default_instance_ = NULL;
     m_wireframe(NULL)
     {
     }
+    CT_SurfaceChart::~CT_SurfaceChart()
+{
+    clear();    }
     bool CT_SurfaceChart::has_wireframe() const
     {    
     return m_has_wireframe;
@@ -29726,6 +30014,9 @@ CT_SurfaceChart* CT_SurfaceChart::default_instance_ = NULL;
     m_wireframe(NULL)
     {
     }
+    CT_Surface3DChart::~CT_Surface3DChart()
+{
+    clear();    }
     bool CT_Surface3DChart::has_wireframe() const
     {    
     return m_has_wireframe;
@@ -30083,6 +30374,9 @@ CT_Surface3DChart* CT_Surface3DChart::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_AxPos::~CT_AxPos()
+{
+    clear();    }
     void CT_AxPos::clear()
     {    
     m_has_val_attr = false;
@@ -30151,6 +30445,9 @@ CT_AxPos* CT_AxPos::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Crosses::~CT_Crosses()
+{
+    clear();    }
     void CT_Crosses::clear()
     {    
     m_has_val_attr = false;
@@ -30219,6 +30516,9 @@ CT_Crosses* CT_Crosses::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_CrossBetween::~CT_CrossBetween()
+{
+    clear();    }
     void CT_CrossBetween::clear()
     {    
     m_has_val_attr = false;
@@ -30287,6 +30587,9 @@ CT_CrossBetween* CT_CrossBetween::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TickMark::~CT_TickMark()
+{
+    clear();    }
     void CT_TickMark::clear()
     {    
     m_has_val_attr = false;
@@ -30355,6 +30658,9 @@ CT_TickMark* CT_TickMark::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TickLblPos::~CT_TickLblPos()
+{
+    clear();    }
     void CT_TickLblPos::clear()
     {    
     m_has_val_attr = false;
@@ -30423,6 +30729,9 @@ CT_TickLblPos* CT_TickLblPos::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Skip::~CT_Skip()
+{
+    clear();    }
     void CT_Skip::clear()
     {    
     m_has_val_attr = false;
@@ -30491,6 +30800,9 @@ CT_Skip* CT_Skip::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TimeUnit::~CT_TimeUnit()
+{
+    clear();    }
     void CT_TimeUnit::clear()
     {    
     m_has_val_attr = false;
@@ -30559,6 +30871,9 @@ CT_TimeUnit* CT_TimeUnit::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_AxisUnit::~CT_AxisUnit()
+{
+    clear();    }
     void CT_AxisUnit::clear()
     {    
     m_has_val_attr = false;
@@ -30627,6 +30942,9 @@ CT_AxisUnit* CT_AxisUnit::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_BuiltInUnit::~CT_BuiltInUnit()
+{
+    clear();    }
     void CT_BuiltInUnit::clear()
     {    
     m_has_val_attr = false;
@@ -30695,6 +31013,9 @@ CT_BuiltInUnit* CT_BuiltInUnit::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_PictureFormat::~CT_PictureFormat()
+{
+    clear();    }
     void CT_PictureFormat::clear()
     {    
     m_has_val_attr = false;
@@ -30763,6 +31084,9 @@ CT_PictureFormat* CT_PictureFormat::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_PictureStackUnit::~CT_PictureStackUnit()
+{
+    clear();    }
     void CT_PictureStackUnit::clear()
     {    
     m_has_val_attr = false;
@@ -30839,6 +31163,9 @@ CT_PictureStackUnit* CT_PictureStackUnit::default_instance_ = NULL;
     m_pictureStackUnit(NULL)
     {
     }
+    CT_PictureOptions::~CT_PictureOptions()
+{
+    clear();    }
     bool CT_PictureOptions::has_applyToFront() const
     {    
     return m_has_applyToFront;
@@ -31024,6 +31351,9 @@ CT_PictureOptions* CT_PictureOptions::default_instance_ = NULL;
     m_txPr(NULL)
     {
     }
+    CT_DispUnitsLbl::~CT_DispUnitsLbl()
+{
+    clear();    }
     bool CT_DispUnitsLbl::has_layout() const
     {    
     return m_has_layout;
@@ -31180,6 +31510,9 @@ CT_DispUnitsLbl* CT_DispUnitsLbl::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_DispUnits::~CT_DispUnits()
+{
+    clear();    }
     bool CT_DispUnits::has_custUnit() const
     {    
     return m_has_custUnit;
@@ -31350,6 +31683,9 @@ CT_DispUnits* CT_DispUnits::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Orientation::~CT_Orientation()
+{
+    clear();    }
     void CT_Orientation::clear()
     {    
     m_has_val_attr = false;
@@ -31418,6 +31754,9 @@ CT_Orientation* CT_Orientation::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_LogBase::~CT_LogBase()
+{
+    clear();    }
     void CT_LogBase::clear()
     {    
     m_has_val_attr = false;
@@ -31494,6 +31833,9 @@ CT_LogBase* CT_LogBase::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_Scaling::~CT_Scaling()
+{
+    clear();    }
     bool CT_Scaling::has_logBase() const
     {    
     return m_has_logBase;
@@ -31673,6 +32015,9 @@ CT_Scaling* CT_Scaling::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_LblOffset::~CT_LblOffset()
+{
+    clear();    }
     void CT_LblOffset::clear()
     {    
     m_has_val_attr = false;
@@ -31785,6 +32130,9 @@ CT_LblOffset* CT_LblOffset::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_CatAx::~CT_CatAx()
+{
+    clear();    }
     bool CT_CatAx::has_axId() const
     {    
     return m_has_axId;
@@ -32552,6 +32900,9 @@ CT_CatAx* CT_CatAx::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_DateAx::~CT_DateAx()
+{
+    clear();    }
     bool CT_DateAx::has_axId() const
     {    
     return m_has_axId;
@@ -33338,6 +33689,9 @@ CT_DateAx* CT_DateAx::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_SerAx::~CT_SerAx()
+{
+    clear();    }
     bool CT_SerAx::has_axId() const
     {    
     return m_has_axId;
@@ -33983,6 +34337,9 @@ CT_SerAx* CT_SerAx::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_ValAx::~CT_ValAx()
+{
+    clear();    }
     bool CT_ValAx::has_axId() const
     {    
     return m_has_axId;
@@ -34652,6 +35009,9 @@ CT_ValAx* CT_ValAx::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_PlotArea::~CT_PlotArea()
+{
+    clear();    }
     bool CT_PlotArea::has_layout() const
     {    
     return m_has_layout;
@@ -39069,6 +39429,9 @@ CT_PlotArea* CT_PlotArea::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_PivotFmt::~CT_PivotFmt()
+{
+    clear();    }
     bool CT_PivotFmt::has_idx() const
     {    
     return m_has_idx;
@@ -39276,6 +39639,9 @@ CT_PivotFmt* CT_PivotFmt::default_instance_ = NULL;
 
     {
     }
+    CT_PivotFmts::~CT_PivotFmts()
+{
+    clear();    }
     CT_PivotFmt* CT_PivotFmts::add_pivotFmt()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -39370,6 +39736,9 @@ CT_PivotFmts* CT_PivotFmts::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_LegendPos::~CT_LegendPos()
+{
+    clear();    }
     void CT_LegendPos::clear()
     {    
     m_has_val_attr = false;
@@ -39442,6 +39811,9 @@ CT_LegendPos* CT_LegendPos::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_LegendEntry::~CT_LegendEntry()
+{
+    clear();    }
     bool CT_LegendEntry::has_idx() const
     {    
     return m_has_idx;
@@ -39564,6 +39936,9 @@ CT_LegendEntry* CT_LegendEntry::default_instance_ = NULL;
     m_legendPos(NULL)
     {
     }
+    CT_Legend::~CT_Legend()
+{
+    clear();    }
     bool CT_Legend::has_legendPos() const
     {    
     return m_has_legendPos;
@@ -40161,6 +40536,9 @@ CT_Legend* CT_Legend::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_DispBlanksAs::~CT_DispBlanksAs()
+{
+    clear();    }
     void CT_DispBlanksAs::clear()
     {    
     m_has_val_attr = false;
@@ -40253,6 +40631,9 @@ CT_DispBlanksAs* CT_DispBlanksAs::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_Chart::~CT_Chart()
+{
+    clear();    }
     bool CT_Chart::has_title() const
     {    
     return m_has_title;
@@ -40664,6 +41045,9 @@ CT_Chart* CT_Chart::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Style::~CT_Style()
+{
+    clear();    }
     void CT_Style::clear()
     {    
     m_has_val_attr = false;
@@ -40734,6 +41118,9 @@ CT_Style* CT_Style::default_instance_ = NULL;
     m_fmtId(NULL)
     {
     }
+    CT_PivotSource::~CT_PivotSource()
+{
+    clear();    }
     bool CT_PivotSource::has_name() const
     {    
     return m_has_name;
@@ -40912,6 +41299,9 @@ CT_PivotSource* CT_PivotSource::default_instance_ = NULL;
     m_userInterface(NULL)
     {
     }
+    CT_Protection::~CT_Protection()
+{
+    clear();    }
     bool CT_Protection::has_chartObject() const
     {    
     return m_has_chartObject;
@@ -41107,6 +41497,9 @@ CT_Protection* CT_Protection::default_instance_ = NULL;
     m_differentFirst_attr(false)
     {
     }
+    CT_HeaderFooter::~CT_HeaderFooter()
+{
+    clear();    }
     bool CT_HeaderFooter::has_oddHeader() const
     {    
     return m_has_oddHeader;
@@ -41399,6 +41792,9 @@ CT_HeaderFooter* CT_HeaderFooter::default_instance_ = NULL;
     m_footer_attr(0)
     {
     }
+    CT_PageMargins::~CT_PageMargins()
+{
+    clear();    }
     void CT_PageMargins::clear()
     {    
     m_has_l_attr = false;
@@ -41584,6 +41980,9 @@ CT_PageMargins* CT_PageMargins::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_ExternalData::~CT_ExternalData()
+{
+    clear();    }
     bool CT_ExternalData::has_autoUpdate() const
     {    
     return m_has_autoUpdate;
@@ -41701,6 +42100,9 @@ CT_ExternalData* CT_ExternalData::default_instance_ = NULL;
     m_copies_attr(0)
     {
     }
+    CT_PageSetup::~CT_PageSetup()
+{
+    clear();    }
     void CT_PageSetup::clear()
     {    
     m_has_paperSize_attr = false;
@@ -42045,6 +42447,9 @@ CT_PageSetup* CT_PageSetup::default_instance_ = NULL;
     m_legacyDrawingHF(NULL)
     {
     }
+    CT_PrintSettings::~CT_PrintSettings()
+{
+    clear();    }
     bool CT_PrintSettings::has_headerFooter() const
     {    
     return m_has_headerFooter;
@@ -42221,6 +42626,9 @@ CT_PrintSettings* CT_PrintSettings::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_ChartSpace::~CT_ChartSpace()
+{
+    clear();    }
     bool CT_ChartSpace::has_date1904() const
     {    
     return m_has_date1904;
@@ -42687,6 +43095,9 @@ CT_ChartSpace* CT_ChartSpace::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    chartSpace_element::~chartSpace_element()
+{
+    clear();    }
     bool chartSpace_element::has_date1904() const
     {    
     return m_has_date1904;
@@ -43130,6 +43541,9 @@ chartSpace_element* chartSpace_element::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    chart_element::~chart_element()
+{
+    clear();    }
     void chart_element::clear()
     {    
     m_has_r_id_attr = false;

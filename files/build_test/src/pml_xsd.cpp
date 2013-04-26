@@ -53,7 +53,7 @@ namespace ns_p {
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -115,7 +115,7 @@ ST_TransitionSideDirectionType* ST_TransitionSideDirectionType::default_instance
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -177,7 +177,7 @@ ST_TransitionCornerDirectionType* ST_TransitionCornerDirectionType::default_inst
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -360,7 +360,7 @@ ST_TransitionEightDirectionType* ST_TransitionEightDirectionType::default_instan
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -421,7 +421,7 @@ ST_TransitionSpeed* ST_TransitionSpeed::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -655,7 +655,7 @@ ST_TLTimeNodeID* ST_TLTimeNodeID::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -716,7 +716,7 @@ ST_IterateType* ST_IterateType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -779,7 +779,7 @@ ST_TLChartSubelementType* ST_TLChartSubelementType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -840,7 +840,7 @@ ST_TLTriggerRuntimeNode* ST_TLTriggerRuntimeNode::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -909,7 +909,7 @@ ST_TLTriggerEvent* ST_TLTriggerEvent::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -973,7 +973,7 @@ ST_TLTimeNodePresetClassType* ST_TLTimeNodePresetClassType::default_instance_ = 
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1034,7 +1034,7 @@ ST_TLTimeNodeRestartType* ST_TLTimeNodeRestartType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1096,7 +1096,7 @@ ST_TLTimeNodeFillType* ST_TLTimeNodeFillType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1156,7 +1156,7 @@ ST_TLTimeNodeSyncType* ST_TLTimeNodeSyncType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1217,7 +1217,7 @@ ST_TLTimeNodeMasterRelation* ST_TLTimeNodeMasterRelation::default_instance_ = NU
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1284,7 +1284,7 @@ ST_TLTimeNodeType* ST_TLTimeNodeType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1344,7 +1344,7 @@ ST_TLNextActionType* ST_TLNextActionType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1404,7 +1404,7 @@ ST_TLPreviousActionType* ST_TLPreviousActionType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1467,7 +1467,7 @@ ST_TLBehaviorAdditiveType* ST_TLBehaviorAdditiveType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1527,7 +1527,7 @@ ST_TLBehaviorAccumulateType* ST_TLBehaviorAccumulateType::default_instance_ = NU
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1587,7 +1587,7 @@ ST_TLBehaviorTransformType* ST_TLBehaviorTransformType::default_instance_ = NULL
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1770,7 +1770,7 @@ ST_TLTimeAnimateValueTime* ST_TLTimeAnimateValueTime::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1831,7 +1831,7 @@ ST_TLAnimateBehaviorCalcMode* ST_TLAnimateBehaviorCalcMode::default_instance_ = 
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1892,7 +1892,7 @@ ST_TLAnimateBehaviorValueType* ST_TLAnimateBehaviorValueType::default_instance_ 
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1952,7 +1952,7 @@ ST_TLAnimateColorSpace* ST_TLAnimateColorSpace::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2012,7 +2012,7 @@ ST_TLAnimateColorDirection* ST_TLAnimateColorDirection::default_instance_ = NULL
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2073,7 +2073,7 @@ ST_TLAnimateEffectTransition* ST_TLAnimateEffectTransition::default_instance_ = 
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2133,7 +2133,7 @@ ST_TLAnimateMotionBehaviorOrigin* ST_TLAnimateMotionBehaviorOrigin::default_inst
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2193,7 +2193,7 @@ ST_TLAnimateMotionPathEditMode* ST_TLAnimateMotionPathEditMode::default_instance
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2254,7 +2254,7 @@ ST_TLCommandType* ST_TLCommandType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2316,7 +2316,7 @@ ST_TLParaBuildType* ST_TLParaBuildType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2391,7 +2391,7 @@ ST_TLDiagramBuildType* ST_TLDiagramBuildType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2514,7 +2514,7 @@ ST_Name* ST_Name::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2634,7 +2634,7 @@ ST_Index* ST_Index::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2818,7 +2818,7 @@ ST_SlideMasterId* ST_SlideMasterId::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2883,7 +2883,7 @@ ST_PhotoAlbumLayout* ST_PhotoAlbumLayout::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2968,7 +2968,7 @@ ST_SlideSizeCoordinate* ST_SlideSizeCoordinate::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3104,7 +3104,7 @@ ST_BookmarkIdSeed* ST_BookmarkIdSeed::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3168,7 +3168,7 @@ ST_WebColorType* ST_WebColorType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3297,7 +3297,7 @@ ST_WebEncoding* ST_WebEncoding::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3364,7 +3364,7 @@ ST_PrintWhat* ST_PrintWhat::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3425,7 +3425,7 @@ ST_PrintColorMode* ST_PrintColorMode::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3499,7 +3499,7 @@ ST_PlaceholderType* ST_PlaceholderType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3560,7 +3560,7 @@ ST_PlaceholderSize* ST_PlaceholderSize::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3715,7 +3715,7 @@ ST_SlideLayoutId* ST_SlideLayoutId::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3776,7 +3776,7 @@ ST_SplitterBarState* ST_SplitterBarState::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3808,6 +3808,9 @@ ST_ViewType* ST_ViewType::default_instance_ = NULL;
     m_dir_attr(NULL)
     {
     }
+    CT_SideDirectionTransition::~CT_SideDirectionTransition()
+{
+    clear();    }
     void CT_SideDirectionTransition::clear()
     {    
     m_has_dir_attr = false;
@@ -3876,6 +3879,9 @@ CT_SideDirectionTransition* CT_SideDirectionTransition::default_instance_ = NULL
     m_dir_attr(NULL)
     {
     }
+    CT_CornerDirectionTransition::~CT_CornerDirectionTransition()
+{
+    clear();    }
     void CT_CornerDirectionTransition::clear()
     {    
     m_has_dir_attr = false;
@@ -3944,6 +3950,9 @@ CT_CornerDirectionTransition* CT_CornerDirectionTransition::default_instance_ = 
     m_dir_attr(NULL)
     {
     }
+    CT_EightDirectionTransition::~CT_EightDirectionTransition()
+{
+    clear();    }
     void CT_EightDirectionTransition::clear()
     {    
     m_has_dir_attr = false;
@@ -4012,6 +4021,9 @@ CT_EightDirectionTransition* CT_EightDirectionTransition::default_instance_ = NU
     m_dir_attr(NULL)
     {
     }
+    CT_OrientationTransition::~CT_OrientationTransition()
+{
+    clear();    }
     void CT_OrientationTransition::clear()
     {    
     m_has_dir_attr = false;
@@ -4080,6 +4092,9 @@ CT_OrientationTransition* CT_OrientationTransition::default_instance_ = NULL;
     m_dir_attr(NULL)
     {
     }
+    CT_InOutTransition::~CT_InOutTransition()
+{
+    clear();    }
     void CT_InOutTransition::clear()
     {    
     m_has_dir_attr = false;
@@ -4148,6 +4163,9 @@ CT_InOutTransition* CT_InOutTransition::default_instance_ = NULL;
     m_thruBlk_attr(false)
     {
     }
+    CT_OptionalBlackTransition::~CT_OptionalBlackTransition()
+{
+    clear();    }
     void CT_OptionalBlackTransition::clear()
     {    
     m_has_thruBlk_attr = false;
@@ -4208,6 +4226,9 @@ CT_OptionalBlackTransition* CT_OptionalBlackTransition::default_instance_ = NULL
     m_dir_attr(NULL)
     {
     }
+    CT_SplitTransition::~CT_SplitTransition()
+{
+    clear();    }
     void CT_SplitTransition::clear()
     {    
     m_has_orient_attr = false;
@@ -4311,6 +4332,9 @@ CT_SplitTransition* CT_SplitTransition::default_instance_ = NULL;
     m_spokes_attr(0)
     {
     }
+    CT_WheelTransition::~CT_WheelTransition()
+{
+    clear();    }
     void CT_WheelTransition::clear()
     {    
     m_has_spokes_attr = false;
@@ -4371,6 +4395,9 @@ CT_WheelTransition* CT_WheelTransition::default_instance_ = NULL;
     m_loop_attr(false)
     {
     }
+    CT_TransitionStartSoundAction::~CT_TransitionStartSoundAction()
+{
+    clear();    }
     bool CT_TransitionStartSoundAction::has_snd() const
     {    
     return m_has_snd;
@@ -4460,6 +4487,9 @@ CT_TransitionStartSoundAction* CT_TransitionStartSoundAction::default_instance_ 
     m_endSnd(NULL)
     {
     }
+    CT_TransitionSoundAction::~CT_TransitionSoundAction()
+{
+    clear();    }
     bool CT_TransitionSoundAction::has_stSnd() const
     {    
     return m_has_stSnd;
@@ -4622,6 +4652,9 @@ CT_TransitionSoundAction* CT_TransitionSoundAction::default_instance_ = NULL;
     m_advTm_attr(0)
     {
     }
+    CT_SlideTransition::~CT_SlideTransition()
+{
+    clear();    }
     bool CT_SlideTransition::has_blinds() const
     {    
     return m_has_blinds;
@@ -9208,6 +9241,9 @@ CT_SlideTransition* CT_SlideTransition::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TLIterateIntervalTime::~CT_TLIterateIntervalTime()
+{
+    clear();    }
     void CT_TLIterateIntervalTime::clear()
     {    
     m_has_val_attr = false;
@@ -9276,6 +9312,9 @@ CT_TLIterateIntervalTime* CT_TLIterateIntervalTime::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TLIterateIntervalPercentage::~CT_TLIterateIntervalPercentage()
+{
+    clear();    }
     void CT_TLIterateIntervalPercentage::clear()
     {    
     m_has_val_attr = false;
@@ -9350,6 +9389,9 @@ CT_TLIterateIntervalPercentage* CT_TLIterateIntervalPercentage::default_instance
     m_backwards_attr(false)
     {
     }
+    CT_TLIterateData::~CT_TLIterateData()
+{
+    clear();    }
     bool CT_TLIterateData::has_tmAbs() const
     {    
     return m_has_tmAbs;
@@ -9521,6 +9563,9 @@ CT_TLIterateData* CT_TLIterateData::default_instance_ = NULL;
     m_spid_attr(NULL)
     {
     }
+    CT_TLSubShapeId::~CT_TLSubShapeId()
+{
+    clear();    }
     void CT_TLSubShapeId::clear()
     {    
     m_has_spid_attr = false;
@@ -9591,6 +9636,9 @@ CT_TLSubShapeId* CT_TLSubShapeId::default_instance_ = NULL;
     m_pRg(NULL)
     {
     }
+    CT_TLTextTargetElement::~CT_TLTextTargetElement()
+{
+    clear();    }
     bool CT_TLTextTargetElement::has_charRg() const
     {    
     return m_has_charRg;
@@ -9705,6 +9753,9 @@ CT_TLTextTargetElement* CT_TLTextTargetElement::default_instance_ = NULL;
     m_lvl_attr(0)
     {
     }
+    CT_TLOleChartTargetElement::~CT_TLOleChartTargetElement()
+{
+    clear();    }
     void CT_TLOleChartTargetElement::clear()
     {    
     m_has_type_attr = false;
@@ -9808,6 +9859,9 @@ CT_TLOleChartTargetElement* CT_TLOleChartTargetElement::default_instance_ = NULL
     m_spid_attr(NULL)
     {
     }
+    CT_TLShapeTargetElement::~CT_TLShapeTargetElement()
+{
+    clear();    }
     bool CT_TLShapeTargetElement::has_bg() const
     {    
     return m_has_bg;
@@ -10212,6 +10266,9 @@ CT_TLShapeTargetElement* CT_TLShapeTargetElement::default_instance_ = NULL;
     m_inkTgt(NULL)
     {
     }
+    CT_TLTimeTargetElement::~CT_TLTimeTargetElement()
+{
+    clear();    }
     bool CT_TLTimeTargetElement::has_sldTgt() const
     {    
     return m_has_sldTgt;
@@ -10474,6 +10531,9 @@ CT_TLTimeTargetElement* CT_TLTimeTargetElement::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TLTriggerTimeNodeID::~CT_TLTriggerTimeNodeID()
+{
+    clear();    }
     void CT_TLTriggerTimeNodeID::clear()
     {    
     m_has_val_attr = false;
@@ -10542,6 +10602,9 @@ CT_TLTriggerTimeNodeID* CT_TLTriggerTimeNodeID::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TLTriggerRuntimeNode::~CT_TLTriggerRuntimeNode()
+{
+    clear();    }
     void CT_TLTriggerRuntimeNode::clear()
     {    
     m_has_val_attr = false;
@@ -10618,6 +10681,9 @@ CT_TLTriggerRuntimeNode* CT_TLTriggerRuntimeNode::default_instance_ = NULL;
     m_delay_attr(NULL)
     {
     }
+    CT_TLTimeCondition::~CT_TLTimeCondition()
+{
+    clear();    }
     bool CT_TLTimeCondition::has_tgtEl() const
     {    
     return m_has_tgtEl;
@@ -10864,6 +10930,9 @@ CT_TLTimeCondition* CT_TLTimeCondition::default_instance_ = NULL;
 
     {
     }
+    CT_TLTimeConditionList::~CT_TLTimeConditionList()
+{
+    clear();    }
     CT_TLTimeCondition* CT_TLTimeConditionList::add_cond()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -10957,6 +11026,9 @@ CT_TLTimeConditionList* CT_TLTimeConditionList::default_instance_ = NULL;
 
     {
     }
+    CT_TimeNodeList::~CT_TimeNodeList()
+{
+    clear();    }
     CT_TLTimeNodeParallel* CT_TimeNodeList::add_par()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -12979,6 +13051,9 @@ CT_TimeNodeList* CT_TimeNodeList::default_instance_ = NULL;
     m_nodePh_attr(false)
     {
     }
+    CT_TLCommonTimeNodeData::~CT_TLCommonTimeNodeData()
+{
+    clear();    }
     bool CT_TLCommonTimeNodeData::has_stCondLst() const
     {    
     return m_has_stCondLst;
@@ -13891,6 +13966,9 @@ CT_TLCommonTimeNodeData* CT_TLCommonTimeNodeData::default_instance_ = NULL;
     m_cTn(NULL)
     {
     }
+    CT_TLTimeNodeParallel::~CT_TLTimeNodeParallel()
+{
+    clear();    }
     bool CT_TLTimeNodeParallel::has_cTn() const
     {    
     return m_has_cTn;
@@ -13964,6 +14042,9 @@ CT_TLTimeNodeParallel* CT_TLTimeNodeParallel::default_instance_ = NULL;
     m_nextAc_attr(NULL)
     {
     }
+    CT_TLTimeNodeSequence::~CT_TLTimeNodeSequence()
+{
+    clear();    }
     bool CT_TLTimeNodeSequence::has_cTn() const
     {    
     return m_has_cTn;
@@ -14179,6 +14260,9 @@ CT_TLTimeNodeSequence* CT_TLTimeNodeSequence::default_instance_ = NULL;
     m_cTn(NULL)
     {
     }
+    CT_TLTimeNodeExclusive::~CT_TLTimeNodeExclusive()
+{
+    clear();    }
     bool CT_TLTimeNodeExclusive::has_cTn() const
     {    
     return m_has_cTn;
@@ -14241,6 +14325,9 @@ CT_TLTimeNodeExclusive* CT_TLTimeNodeExclusive::default_instance_ = NULL;
 
     {
     }
+    CT_TLBehaviorAttributeNameList::~CT_TLBehaviorAttributeNameList()
+{
+    clear();    }
     void CT_TLBehaviorAttributeNameList::add_attrName(const XSD::string_& _attrName)
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -14346,6 +14433,9 @@ CT_TLBehaviorAttributeNameList* CT_TLBehaviorAttributeNameList::default_instance
     m_override_attr(NULL)
     {
     }
+    CT_TLCommonBehaviorData::~CT_TLCommonBehaviorData()
+{
+    clear();    }
     bool CT_TLCommonBehaviorData::has_cTn() const
     {    
     return m_has_cTn;
@@ -14706,6 +14796,9 @@ CT_TLCommonBehaviorData* CT_TLCommonBehaviorData::default_instance_ = NULL;
     m_val_attr(false)
     {
     }
+    CT_TLAnimVariantBooleanVal::~CT_TLAnimVariantBooleanVal()
+{
+    clear();    }
     void CT_TLAnimVariantBooleanVal::clear()
     {    
     m_has_val_attr = false;
@@ -14764,6 +14857,9 @@ CT_TLAnimVariantBooleanVal* CT_TLAnimVariantBooleanVal::default_instance_ = NULL
     m_val_attr(0)
     {
     }
+    CT_TLAnimVariantIntegerVal::~CT_TLAnimVariantIntegerVal()
+{
+    clear();    }
     void CT_TLAnimVariantIntegerVal::clear()
     {    
     m_has_val_attr = false;
@@ -14822,6 +14918,9 @@ CT_TLAnimVariantIntegerVal* CT_TLAnimVariantIntegerVal::default_instance_ = NULL
     m_val_attr(0)
     {
     }
+    CT_TLAnimVariantFloatVal::~CT_TLAnimVariantFloatVal()
+{
+    clear();    }
     void CT_TLAnimVariantFloatVal::clear()
     {    
     m_has_val_attr = false;
@@ -14880,6 +14979,9 @@ CT_TLAnimVariantFloatVal* CT_TLAnimVariantFloatVal::default_instance_ = NULL;
     m_val_attr("")
     {
     }
+    CT_TLAnimVariantStringVal::~CT_TLAnimVariantStringVal()
+{
+    clear();    }
     void CT_TLAnimVariantStringVal::clear()
     {    
     m_has_val_attr = false;
@@ -14946,6 +15048,9 @@ CT_TLAnimVariantStringVal* CT_TLAnimVariantStringVal::default_instance_ = NULL;
     m_clrVal(NULL)
     {
     }
+    CT_TLAnimVariant::~CT_TLAnimVariant()
+{
+    clear();    }
     bool CT_TLAnimVariant::has_boolVal() const
     {    
     return m_has_boolVal;
@@ -15314,6 +15419,9 @@ CT_TLAnimVariant* CT_TLAnimVariant::default_instance_ = NULL;
     m_fmla_attr("")
     {
     }
+    CT_TLTimeAnimateValue::~CT_TLTimeAnimateValue()
+{
+    clear();    }
     bool CT_TLTimeAnimateValue::has_val() const
     {    
     return m_has_val;
@@ -15435,6 +15543,9 @@ CT_TLTimeAnimateValue* CT_TLTimeAnimateValue::default_instance_ = NULL;
 
     {
     }
+    CT_TLTimeAnimateValueList::~CT_TLTimeAnimateValueList()
+{
+    clear();    }
     CT_TLTimeAnimateValue* CT_TLTimeAnimateValueList::add_tav()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -15541,6 +15652,9 @@ CT_TLTimeAnimateValueList* CT_TLTimeAnimateValueList::default_instance_ = NULL;
     m_valueType_attr(NULL)
     {
     }
+    CT_TLAnimateBehavior::~CT_TLAnimateBehavior()
+{
+    clear();    }
     bool CT_TLAnimateBehavior::has_cBhvr() const
     {    
     return m_has_cBhvr;
@@ -15781,6 +15895,9 @@ CT_TLAnimateBehavior* CT_TLAnimateBehavior::default_instance_ = NULL;
     m_b_attr(NULL)
     {
     }
+    CT_TLByRgbColorTransform::~CT_TLByRgbColorTransform()
+{
+    clear();    }
     void CT_TLByRgbColorTransform::clear()
     {    
     m_has_r_attr = false;
@@ -15923,6 +16040,9 @@ CT_TLByRgbColorTransform* CT_TLByRgbColorTransform::default_instance_ = NULL;
     m_l_attr(NULL)
     {
     }
+    CT_TLByHslColorTransform::~CT_TLByHslColorTransform()
+{
+    clear();    }
     void CT_TLByHslColorTransform::clear()
     {    
     m_has_h_attr = false;
@@ -16063,6 +16183,9 @@ CT_TLByHslColorTransform* CT_TLByHslColorTransform::default_instance_ = NULL;
     m_hsl(NULL)
     {
     }
+    CT_TLByAnimateColorTransform::~CT_TLByAnimateColorTransform()
+{
+    clear();    }
     bool CT_TLByAnimateColorTransform::has_rgb() const
     {    
     return m_has_rgb;
@@ -16185,6 +16308,9 @@ CT_TLByAnimateColorTransform* CT_TLByAnimateColorTransform::default_instance_ = 
     m_dir_attr(NULL)
     {
     }
+    CT_TLAnimateColorBehavior::~CT_TLAnimateColorBehavior()
+{
+    clear();    }
     bool CT_TLAnimateColorBehavior::has_cBhvr() const
     {    
     return m_has_cBhvr;
@@ -16412,6 +16538,9 @@ CT_TLAnimateColorBehavior* CT_TLAnimateColorBehavior::default_instance_ = NULL;
     m_prLst_attr("")
     {
     }
+    CT_TLAnimateEffectBehavior::~CT_TLAnimateEffectBehavior()
+{
+    clear();    }
     bool CT_TLAnimateEffectBehavior::has_cBhvr() const
     {    
     return m_has_cBhvr;
@@ -16590,6 +16719,9 @@ CT_TLAnimateEffectBehavior* CT_TLAnimateEffectBehavior::default_instance_ = NULL
     m_y_attr(NULL)
     {
     }
+    CT_TLPoint::~CT_TLPoint()
+{
+    clear();    }
     void CT_TLPoint::clear()
     {    
     m_has_x_attr = false;
@@ -16711,6 +16843,9 @@ CT_TLPoint* CT_TLPoint::default_instance_ = NULL;
     m_ptsTypes_attr("")
     {
     }
+    CT_TLAnimateMotionBehavior::~CT_TLAnimateMotionBehavior()
+{
+    clear();    }
     bool CT_TLAnimateMotionBehavior::has_cBhvr() const
     {    
     return m_has_cBhvr;
@@ -17050,6 +17185,9 @@ CT_TLAnimateMotionBehavior* CT_TLAnimateMotionBehavior::default_instance_ = NULL
     m_to_attr(NULL)
     {
     }
+    CT_TLAnimateRotationBehavior::~CT_TLAnimateRotationBehavior()
+{
+    clear();    }
     bool CT_TLAnimateRotationBehavior::has_cBhvr() const
     {    
     return m_has_cBhvr;
@@ -17225,6 +17363,9 @@ CT_TLAnimateRotationBehavior* CT_TLAnimateRotationBehavior::default_instance_ = 
     m_zoomContents_attr(false)
     {
     }
+    CT_TLAnimateScaleBehavior::~CT_TLAnimateScaleBehavior()
+{
+    clear();    }
     bool CT_TLAnimateScaleBehavior::has_cBhvr() const
     {    
     return m_has_cBhvr;
@@ -17403,6 +17544,9 @@ CT_TLAnimateScaleBehavior* CT_TLAnimateScaleBehavior::default_instance_ = NULL;
     m_cmd_attr("")
     {
     }
+    CT_TLCommandBehavior::~CT_TLCommandBehavior()
+{
+    clear();    }
     bool CT_TLCommandBehavior::has_cBhvr() const
     {    
     return m_has_cBhvr;
@@ -17527,6 +17671,9 @@ CT_TLCommandBehavior* CT_TLCommandBehavior::default_instance_ = NULL;
     m_to(NULL)
     {
     }
+    CT_TLSetBehavior::~CT_TLSetBehavior()
+{
+    clear();    }
     bool CT_TLSetBehavior::has_cBhvr() const
     {    
     return m_has_cBhvr;
@@ -17629,6 +17776,9 @@ CT_TLSetBehavior* CT_TLSetBehavior::default_instance_ = NULL;
     m_showWhenStopped_attr(false)
     {
     }
+    CT_TLCommonMediaNodeData::~CT_TLCommonMediaNodeData()
+{
+    clear();    }
     bool CT_TLCommonMediaNodeData::has_cTn() const
     {    
     return m_has_cTn;
@@ -17832,6 +17982,9 @@ CT_TLCommonMediaNodeData* CT_TLCommonMediaNodeData::default_instance_ = NULL;
     m_isNarration_attr(false)
     {
     }
+    CT_TLMediaNodeAudio::~CT_TLMediaNodeAudio()
+{
+    clear();    }
     bool CT_TLMediaNodeAudio::has_cMediaNode() const
     {    
     return m_has_cMediaNode;
@@ -17921,6 +18074,9 @@ CT_TLMediaNodeAudio* CT_TLMediaNodeAudio::default_instance_ = NULL;
     m_fullScrn_attr(false)
     {
     }
+    CT_TLMediaNodeVideo::~CT_TLMediaNodeVideo()
+{
+    clear();    }
     bool CT_TLMediaNodeVideo::has_cMediaNode() const
     {    
     return m_has_cMediaNode;
@@ -18010,6 +18166,9 @@ CT_TLMediaNodeVideo* CT_TLMediaNodeVideo::default_instance_ = NULL;
     m_lvl_attr(0)
     {
     }
+    CT_TLTemplate::~CT_TLTemplate()
+{
+    clear();    }
     bool CT_TLTemplate::has_tnLst() const
     {    
     return m_has_tnLst;
@@ -18096,6 +18255,9 @@ CT_TLTemplate* CT_TLTemplate::default_instance_ = NULL;
 
     {
     }
+    CT_TLTemplateList::~CT_TLTemplateList()
+{
+    clear();    }
     CT_TLTemplate* CT_TLTemplateList::add_tmpl()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -18208,6 +18370,9 @@ CT_TLTemplateList* CT_TLTemplateList::default_instance_ = NULL;
     m_advAuto_attr(NULL)
     {
     }
+    CT_TLBuildParagraph::~CT_TLBuildParagraph()
+{
+    clear();    }
     bool CT_TLBuildParagraph::has_tmplLst() const
     {    
     return m_has_tmplLst;
@@ -18531,6 +18696,9 @@ CT_TLBuildParagraph* CT_TLBuildParagraph::default_instance_ = NULL;
     m_bld_attr(NULL)
     {
     }
+    CT_TLBuildDiagram::~CT_TLBuildDiagram()
+{
+    clear();    }
     void CT_TLBuildDiagram::clear()
     {    
     m_has_spid_attr = false;
@@ -18692,6 +18860,9 @@ CT_TLBuildDiagram* CT_TLBuildDiagram::default_instance_ = NULL;
     m_animBg_attr(false)
     {
     }
+    CT_TLOleBuildChart::~CT_TLOleBuildChart()
+{
+    clear();    }
     void CT_TLOleBuildChart::clear()
     {    
     m_has_spid_attr = false;
@@ -18878,6 +19049,9 @@ CT_TLOleBuildChart* CT_TLOleBuildChart::default_instance_ = NULL;
     m_uiExpand_attr(false)
     {
     }
+    CT_TLGraphicalObjectBuild::~CT_TLGraphicalObjectBuild()
+{
+    clear();    }
     bool CT_TLGraphicalObjectBuild::has_bldAsOne() const
     {    
     return m_has_bldAsOne;
@@ -19073,6 +19247,9 @@ CT_TLGraphicalObjectBuild* CT_TLGraphicalObjectBuild::default_instance_ = NULL;
 
     {
     }
+    CT_BuildList::~CT_BuildList()
+{
+    clear();    }
     CT_TLBuildParagraph* CT_BuildList::add_bldP()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -19396,6 +19573,9 @@ CT_BuildList* CT_BuildList::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_SlideTiming::~CT_SlideTiming()
+{
+    clear();    }
     bool CT_SlideTiming::has_tnLst() const
     {    
     return m_has_tnLst;
@@ -19516,6 +19696,9 @@ CT_SlideTiming* CT_SlideTiming::default_instance_ = NULL;
 
     {
     }
+    CT_Empty::~CT_Empty()
+{
+    clear();    }
     void CT_Empty::clear()
     {    }
 
@@ -19552,6 +19735,9 @@ CT_Empty* CT_Empty::default_instance_ = NULL;
     m_end_attr(NULL)
     {
     }
+    CT_IndexRange::~CT_IndexRange()
+{
+    clear();    }
     void CT_IndexRange::clear()
     {    
     m_has_st_attr = false;
@@ -19655,6 +19841,9 @@ CT_IndexRange* CT_IndexRange::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_SlideRelationshipListEntry::~CT_SlideRelationshipListEntry()
+{
+    clear();    }
     void CT_SlideRelationshipListEntry::clear()
     {    
     m_has_r_id_attr = false;
@@ -19722,6 +19911,9 @@ CT_SlideRelationshipListEntry* CT_SlideRelationshipListEntry::default_instance_ 
 
     {
     }
+    CT_SlideRelationshipList::~CT_SlideRelationshipList()
+{
+    clear();    }
     CT_SlideRelationshipListEntry* CT_SlideRelationshipList::add_sld()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -19816,6 +20008,9 @@ CT_SlideRelationshipList* CT_SlideRelationshipList::default_instance_ = NULL;
     m_id_attr(0)
     {
     }
+    CT_CustomShowId::~CT_CustomShowId()
+{
+    clear();    }
     void CT_CustomShowId::clear()
     {    
     m_has_id_attr = false;
@@ -19874,6 +20069,9 @@ CT_CustomShowId* CT_CustomShowId::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_CustomerData::~CT_CustomerData()
+{
+    clear();    }
     void CT_CustomerData::clear()
     {    
     m_has_r_id_attr = false;
@@ -19942,6 +20140,9 @@ CT_CustomerData* CT_CustomerData::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_TagsData::~CT_TagsData()
+{
+    clear();    }
     void CT_TagsData::clear()
     {    
     m_has_r_id_attr = false;
@@ -20009,6 +20210,9 @@ CT_TagsData* CT_TagsData::default_instance_ = NULL;
 
     {
     }
+    CT_CustomerDataList::~CT_CustomerDataList()
+{
+    clear();    }
     CT_CustomerData* CT_CustomerDataList::add_custData()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -20162,6 +20366,9 @@ CT_CustomerDataList* CT_CustomerDataList::default_instance_ = NULL;
     m_uri_attr("")
     {
     }
+    CT_Extension::~CT_Extension()
+{
+    clear();    }
     void CT_Extension::clear()
     {    
     m_has_uri_attr = false;
@@ -20226,6 +20433,9 @@ CT_Extension* CT_Extension::default_instance_ = NULL;
 
     {
     }
+    CT_ExtensionList::~CT_ExtensionList()
+{
+    clear();    }
     CT_Extension* CT_ExtensionList::add_ext()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -20320,6 +20530,9 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
     m_mod_attr(false)
     {
     }
+    CT_ExtensionListModify::~CT_ExtensionListModify()
+{
+    clear();    }
     CT_Extension* CT_ExtensionListModify::add_ext()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -20448,6 +20661,9 @@ CT_ExtensionListModify* CT_ExtensionListModify::default_instance_ = NULL;
     m_clrIdx_attr(0)
     {
     }
+    CT_CommentAuthor::~CT_CommentAuthor()
+{
+    clear();    }
     bool CT_CommentAuthor::has_extLst() const
     {    
     return m_has_extLst;
@@ -20654,6 +20870,9 @@ CT_CommentAuthor* CT_CommentAuthor::default_instance_ = NULL;
 
     {
     }
+    CT_CommentAuthorList::~CT_CommentAuthorList()
+{
+    clear();    }
     CT_CommentAuthor* CT_CommentAuthorList::add_cmAuthor()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -20758,6 +20977,9 @@ CT_CommentAuthorList* CT_CommentAuthorList::default_instance_ = NULL;
     m_idx_attr(NULL)
     {
     }
+    CT_Comment::~CT_Comment()
+{
+    clear();    }
     bool CT_Comment::has_pos() const
     {    
     return m_has_pos;
@@ -20954,6 +21176,9 @@ CT_Comment* CT_Comment::default_instance_ = NULL;
 
     {
     }
+    CT_CommentList::~CT_CommentList()
+{
+    clear();    }
     CT_Comment* CT_CommentList::add_cm()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -21050,6 +21275,9 @@ CT_CommentList* CT_CommentList::default_instance_ = NULL;
     m_followColorScheme_attr(NULL)
     {
     }
+    CT_OleObjectEmbed::~CT_OleObjectEmbed()
+{
+    clear();    }
     bool CT_OleObjectEmbed::has_extLst() const
     {    
     return m_has_extLst;
@@ -21149,6 +21377,9 @@ CT_OleObjectEmbed* CT_OleObjectEmbed::default_instance_ = NULL;
     m_updateAutomatic_attr(false)
     {
     }
+    CT_OleObjectLink::~CT_OleObjectLink()
+{
+    clear();    }
     bool CT_OleObjectLink::has_extLst() const
     {    
     return m_has_extLst;
@@ -21254,6 +21485,9 @@ CT_OleObjectLink* CT_OleObjectLink::default_instance_ = NULL;
     m_progId_attr("")
     {
     }
+    CT_OleObject::~CT_OleObject()
+{
+    clear();    }
     bool CT_OleObject::has_embed() const
     {    
     return m_has_embed;
@@ -21623,6 +21857,9 @@ CT_OleObject* CT_OleObject::default_instance_ = NULL;
     m_imgH_attr(NULL)
     {
     }
+    CT_Control::~CT_Control()
+{
+    clear();    }
     bool CT_Control::has_extLst() const
     {    
     return m_has_extLst;
@@ -21903,6 +22140,9 @@ CT_Control* CT_Control::default_instance_ = NULL;
 
     {
     }
+    CT_ControlList::~CT_ControlList()
+{
+    clear();    }
     CT_Control* CT_ControlList::add_control()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -22001,6 +22241,9 @@ CT_ControlList* CT_ControlList::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_SlideIdListEntry::~CT_SlideIdListEntry()
+{
+    clear();    }
     bool CT_SlideIdListEntry::has_extLst() const
     {    
     return m_has_extLst;
@@ -22132,6 +22375,9 @@ CT_SlideIdListEntry* CT_SlideIdListEntry::default_instance_ = NULL;
 
     {
     }
+    CT_SlideIdList::~CT_SlideIdList()
+{
+    clear();    }
     CT_SlideIdListEntry* CT_SlideIdList::add_sldId()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -22230,6 +22476,9 @@ CT_SlideIdList* CT_SlideIdList::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_SlideMasterIdListEntry::~CT_SlideMasterIdListEntry()
+{
+    clear();    }
     bool CT_SlideMasterIdListEntry::has_extLst() const
     {    
     return m_has_extLst;
@@ -22361,6 +22610,9 @@ CT_SlideMasterIdListEntry* CT_SlideMasterIdListEntry::default_instance_ = NULL;
 
     {
     }
+    CT_SlideMasterIdList::~CT_SlideMasterIdList()
+{
+    clear();    }
     CT_SlideMasterIdListEntry* CT_SlideMasterIdList::add_sldMasterId()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -22457,6 +22709,9 @@ CT_SlideMasterIdList* CT_SlideMasterIdList::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_NotesMasterIdListEntry::~CT_NotesMasterIdListEntry()
+{
+    clear();    }
     bool CT_NotesMasterIdListEntry::has_extLst() const
     {    
     return m_has_extLst;
@@ -22554,6 +22809,9 @@ CT_NotesMasterIdListEntry* CT_NotesMasterIdListEntry::default_instance_ = NULL;
     m_notesMasterId(NULL)
     {
     }
+    CT_NotesMasterIdList::~CT_NotesMasterIdList()
+{
+    clear();    }
     bool CT_NotesMasterIdList::has_notesMasterId() const
     {    
     return m_has_notesMasterId;
@@ -22619,6 +22877,9 @@ CT_NotesMasterIdList* CT_NotesMasterIdList::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_HandoutMasterIdListEntry::~CT_HandoutMasterIdListEntry()
+{
+    clear();    }
     bool CT_HandoutMasterIdListEntry::has_extLst() const
     {    
     return m_has_extLst;
@@ -22716,6 +22977,9 @@ CT_HandoutMasterIdListEntry* CT_HandoutMasterIdListEntry::default_instance_ = NU
     m_handoutMasterId(NULL)
     {
     }
+    CT_HandoutMasterIdList::~CT_HandoutMasterIdList()
+{
+    clear();    }
     bool CT_HandoutMasterIdList::has_handoutMasterId() const
     {    
     return m_has_handoutMasterId;
@@ -22779,6 +23043,9 @@ CT_HandoutMasterIdList* CT_HandoutMasterIdList::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_EmbeddedFontDataId::~CT_EmbeddedFontDataId()
+{
+    clear();    }
     void CT_EmbeddedFontDataId::clear()
     {    
     m_has_r_id_attr = false;
@@ -22855,6 +23122,9 @@ CT_EmbeddedFontDataId* CT_EmbeddedFontDataId::default_instance_ = NULL;
     m_boldItalic(NULL)
     {
     }
+    CT_EmbeddedFontListEntry::~CT_EmbeddedFontListEntry()
+{
+    clear();    }
     bool CT_EmbeddedFontListEntry::has_font() const
     {    
     return m_has_font;
@@ -23033,6 +23303,9 @@ CT_EmbeddedFontListEntry* CT_EmbeddedFontListEntry::default_instance_ = NULL;
 
     {
     }
+    CT_EmbeddedFontList::~CT_EmbeddedFontList()
+{
+    clear();    }
     CT_EmbeddedFontListEntry* CT_EmbeddedFontList::add_embeddedFont()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -23127,6 +23400,9 @@ CT_EmbeddedFontList* CT_EmbeddedFontList::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_SmartTags::~CT_SmartTags()
+{
+    clear();    }
     void CT_SmartTags::clear()
     {    
     m_has_r_id_attr = false;
@@ -23201,6 +23477,9 @@ CT_SmartTags* CT_SmartTags::default_instance_ = NULL;
     m_id_attr(0)
     {
     }
+    CT_CustomShow::~CT_CustomShow()
+{
+    clear();    }
     bool CT_CustomShow::has_sldLst() const
     {    
     return m_has_sldLst;
@@ -23351,6 +23630,9 @@ CT_CustomShow* CT_CustomShow::default_instance_ = NULL;
 
     {
     }
+    CT_CustomShowList::~CT_CustomShowList()
+{
+    clear();    }
     CT_CustomShow* CT_CustomShowList::add_custShow()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -23453,6 +23735,9 @@ CT_CustomShowList* CT_CustomShowList::default_instance_ = NULL;
     m_frame_attr(NULL)
     {
     }
+    CT_PhotoAlbum::~CT_PhotoAlbum()
+{
+    clear();    }
     bool CT_PhotoAlbum::has_extLst() const
     {    
     return m_has_extLst;
@@ -23639,6 +23924,9 @@ CT_PhotoAlbum* CT_PhotoAlbum::default_instance_ = NULL;
     m_type_attr(NULL)
     {
     }
+    CT_SlideSize::~CT_SlideSize()
+{
+    clear();    }
     void CT_SlideSize::clear()
     {    
     m_has_cx_attr = false;
@@ -23781,6 +24069,9 @@ CT_SlideSize* CT_SlideSize::default_instance_ = NULL;
     m_invalEndChars_attr("")
     {
     }
+    CT_Kinsoku::~CT_Kinsoku()
+{
+    clear();    }
     void CT_Kinsoku::clear()
     {    
     m_has_lang_attr = false;
@@ -23919,6 +24210,9 @@ CT_Kinsoku* CT_Kinsoku::default_instance_ = NULL;
     m_cryptProviderTypeExtSource_attr("")
     {
     }
+    CT_ModifyVerifier::~CT_ModifyVerifier()
+{
+    clear();    }
     void CT_ModifyVerifier::clear()
     {    
     m_has_algorithmName_attr = false;
@@ -24434,6 +24728,9 @@ CT_ModifyVerifier* CT_ModifyVerifier::default_instance_ = NULL;
     m_conformance_attr(NULL)
     {
     }
+    CT_Presentation::~CT_Presentation()
+{
+    clear();    }
     bool CT_Presentation::has_sldMasterIdLst() const
     {    
     return m_has_sldMasterIdLst;
@@ -25246,6 +25543,9 @@ CT_Presentation* CT_Presentation::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_HtmlPublishProperties::~CT_HtmlPublishProperties()
+{
+    clear();    }
     bool CT_HtmlPublishProperties::has_sldAll() const
     {    
     return m_has_sldAll;
@@ -25580,6 +25880,9 @@ CT_HtmlPublishProperties* CT_HtmlPublishProperties::default_instance_ = NULL;
     m_clr_attr(NULL)
     {
     }
+    CT_WebProperties::~CT_WebProperties()
+{
+    clear();    }
     bool CT_WebProperties::has_extLst() const
     {    
     return m_has_extLst;
@@ -25907,6 +26210,9 @@ CT_WebProperties* CT_WebProperties::default_instance_ = NULL;
     m_frameSlides_attr(false)
     {
     }
+    CT_PrintProperties::~CT_PrintProperties()
+{
+    clear();    }
     bool CT_PrintProperties::has_extLst() const
     {    
     return m_has_extLst;
@@ -26114,6 +26420,9 @@ CT_PrintProperties* CT_PrintProperties::default_instance_ = NULL;
     m_showScrollbar_attr(false)
     {
     }
+    CT_ShowInfoBrowse::~CT_ShowInfoBrowse()
+{
+    clear();    }
     void CT_ShowInfoBrowse::clear()
     {    
     m_has_showScrollbar_attr = false;
@@ -26172,6 +26481,9 @@ CT_ShowInfoBrowse* CT_ShowInfoBrowse::default_instance_ = NULL;
     m_restart_attr(0)
     {
     }
+    CT_ShowInfoKiosk::~CT_ShowInfoKiosk()
+{
+    clear();    }
     void CT_ShowInfoKiosk::clear()
     {    
     m_has_restart_attr = false;
@@ -26252,6 +26564,9 @@ CT_ShowInfoKiosk* CT_ShowInfoKiosk::default_instance_ = NULL;
     m_useTimings_attr(false)
     {
     }
+    CT_ShowProperties::~CT_ShowProperties()
+{
+    clear();    }
     bool CT_ShowProperties::has_present() const
     {    
     return m_has_present;
@@ -26903,6 +27218,9 @@ CT_ShowProperties* CT_ShowProperties::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_PresentationProperties::~CT_PresentationProperties()
+{
+    clear();    }
     bool CT_PresentationProperties::has_htmlPubPr() const
     {    
     return m_has_htmlPubPr;
@@ -27119,6 +27437,9 @@ CT_PresentationProperties* CT_PresentationProperties::default_instance_ = NULL;
     m_dt_attr(false)
     {
     }
+    CT_HeaderFooter::~CT_HeaderFooter()
+{
+    clear();    }
     bool CT_HeaderFooter::has_extLst() const
     {    
     return m_has_extLst;
@@ -27291,6 +27612,9 @@ CT_HeaderFooter* CT_HeaderFooter::default_instance_ = NULL;
     m_hasCustomPrompt_attr(false)
     {
     }
+    CT_Placeholder::~CT_Placeholder()
+{
+    clear();    }
     bool CT_Placeholder::has_extLst() const
     {    
     return m_has_extLst;
@@ -27526,6 +27850,9 @@ CT_Placeholder* CT_Placeholder::default_instance_ = NULL;
     m_userDrawn_attr(false)
     {
     }
+    CT_ApplicationNonVisualDrawingProps::~CT_ApplicationNonVisualDrawingProps()
+{
+    clear();    }
     bool CT_ApplicationNonVisualDrawingProps::has_ph() const
     {    
     return m_has_ph;
@@ -28030,6 +28357,9 @@ CT_ApplicationNonVisualDrawingProps* CT_ApplicationNonVisualDrawingProps::defaul
     m_nvPr(NULL)
     {
     }
+    CT_ShapeNonVisual::~CT_ShapeNonVisual()
+{
+    clear();    }
     bool CT_ShapeNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -28161,6 +28491,9 @@ CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
     m_useBgFill_attr(false)
     {
     }
+    CT_Shape::~CT_Shape()
+{
+    clear();    }
     bool CT_Shape::has_nvSpPr() const
     {    
     return m_has_nvSpPr;
@@ -28368,6 +28701,9 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
     m_nvPr(NULL)
     {
     }
+    CT_ConnectorNonVisual::~CT_ConnectorNonVisual()
+{
+    clear();    }
     bool CT_ConnectorNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -28495,6 +28831,9 @@ CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_Connector::~CT_Connector()
+{
+    clear();    }
     bool CT_Connector::has_nvCxnSpPr() const
     {    
     return m_has_nvCxnSpPr;
@@ -28649,6 +28988,9 @@ CT_Connector* CT_Connector::default_instance_ = NULL;
     m_nvPr(NULL)
     {
     }
+    CT_PictureNonVisual::~CT_PictureNonVisual()
+{
+    clear();    }
     bool CT_PictureNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -28778,6 +29120,9 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_Picture::~CT_Picture()
+{
+    clear();    }
     bool CT_Picture::has_nvPicPr() const
     {    
     return m_has_nvPicPr;
@@ -28961,6 +29306,9 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
     m_nvPr(NULL)
     {
     }
+    CT_GraphicalObjectFrameNonVisual::~CT_GraphicalObjectFrameNonVisual()
+{
+    clear();    }
     bool CT_GraphicalObjectFrameNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -29090,6 +29438,9 @@ CT_GraphicalObjectFrameNonVisual* CT_GraphicalObjectFrameNonVisual::default_inst
     m_bwMode_attr(NULL)
     {
     }
+    CT_GraphicalObjectFrame::~CT_GraphicalObjectFrame()
+{
+    clear();    }
     bool CT_GraphicalObjectFrame::has_nvGraphicFramePr() const
     {    
     return m_has_nvGraphicFramePr;
@@ -29278,6 +29629,9 @@ CT_GraphicalObjectFrame* CT_GraphicalObjectFrame::default_instance_ = NULL;
     m_nvPr(NULL)
     {
     }
+    CT_GroupShapeNonVisual::~CT_GroupShapeNonVisual()
+{
+    clear();    }
     bool CT_GroupShapeNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -29403,6 +29757,9 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_GroupShape::~CT_GroupShape()
+{
+    clear();    }
     bool CT_GroupShape::has_nvGrpSpPr() const
     {    
     return m_has_nvGrpSpPr;
@@ -30076,6 +30433,9 @@ CT_GroupShape* CT_GroupShape::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_Rel::~CT_Rel()
+{
+    clear();    }
     void CT_Rel::clear()
     {    
     m_has_r_id_attr = false;
@@ -30162,6 +30522,9 @@ CT_Rel* CT_Rel::default_instance_ = NULL;
     m_shadeToTitle_attr(false)
     {
     }
+    CT_BackgroundProperties::~CT_BackgroundProperties()
+{
+    clear();    }
     bool CT_BackgroundProperties::has_a_noFill() const
     {    
     return m_has_a_noFill;
@@ -30997,6 +31360,9 @@ CT_BackgroundProperties* CT_BackgroundProperties::default_instance_ = NULL;
     m_bwMode_attr(NULL)
     {
     }
+    CT_Background::~CT_Background()
+{
+    clear();    }
     bool CT_Background::has_bgPr() const
     {    
     return m_has_bgPr;
@@ -31153,6 +31519,9 @@ CT_Background* CT_Background::default_instance_ = NULL;
     m_name_attr("")
     {
     }
+    CT_CommonSlideData::~CT_CommonSlideData()
+{
+    clear();    }
     bool CT_CommonSlideData::has_bg() const
     {    
     return m_has_bg;
@@ -31370,6 +31739,9 @@ CT_CommonSlideData* CT_CommonSlideData::default_instance_ = NULL;
     m_show_attr(false)
     {
     }
+    CT_Slide::~CT_Slide()
+{
+    clear();    }
     bool CT_Slide::has_cSld() const
     {    
     return m_has_cSld;
@@ -31645,6 +32017,9 @@ CT_Slide* CT_Slide::default_instance_ = NULL;
     m_userDrawn_attr(false)
     {
     }
+    CT_SlideLayout::~CT_SlideLayout()
+{
+    clear();    }
     bool CT_SlideLayout::has_cSld() const
     {    
     return m_has_cSld;
@@ -32018,6 +32393,9 @@ CT_SlideLayout* CT_SlideLayout::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_SlideMasterTextStyles::~CT_SlideMasterTextStyles()
+{
+    clear();    }
     bool CT_SlideMasterTextStyles::has_titleStyle() const
     {    
     return m_has_titleStyle;
@@ -32172,6 +32550,9 @@ CT_SlideMasterTextStyles* CT_SlideMasterTextStyles::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_SlideLayoutIdListEntry::~CT_SlideLayoutIdListEntry()
+{
+    clear();    }
     bool CT_SlideLayoutIdListEntry::has_extLst() const
     {    
     return m_has_extLst;
@@ -32303,6 +32684,9 @@ CT_SlideLayoutIdListEntry* CT_SlideLayoutIdListEntry::default_instance_ = NULL;
 
     {
     }
+    CT_SlideLayoutIdList::~CT_SlideLayoutIdList()
+{
+    clear();    }
     CT_SlideLayoutIdListEntry* CT_SlideLayoutIdList::add_sldLayoutId()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -32413,6 +32797,9 @@ CT_SlideLayoutIdList* CT_SlideLayoutIdList::default_instance_ = NULL;
     m_preserve_attr(false)
     {
     }
+    CT_SlideMaster::~CT_SlideMaster()
+{
+    clear();    }
     bool CT_SlideMaster::has_cSld() const
     {    
     return m_has_cSld;
@@ -32709,6 +33096,9 @@ CT_SlideMaster* CT_SlideMaster::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_HandoutMaster::~CT_HandoutMaster()
+{
+    clear();    }
     bool CT_HandoutMaster::has_cSld() const
     {    
     return m_has_cSld;
@@ -32867,6 +33257,9 @@ CT_HandoutMaster* CT_HandoutMaster::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_NotesMaster::~CT_NotesMaster()
+{
+    clear();    }
     bool CT_NotesMaster::has_cSld() const
     {    
     return m_has_cSld;
@@ -33054,6 +33447,9 @@ CT_NotesMaster* CT_NotesMaster::default_instance_ = NULL;
     m_showMasterPhAnim_attr(false)
     {
     }
+    CT_NotesSlide::~CT_NotesSlide()
+{
+    clear();    }
     bool CT_NotesSlide::has_cSld() const
     {    
     return m_has_cSld;
@@ -33230,6 +33626,9 @@ CT_NotesSlide* CT_NotesSlide::default_instance_ = NULL;
     m_clientInsertedTime_attr("")
     {
     }
+    CT_SlideSyncProperties::~CT_SlideSyncProperties()
+{
+    clear();    }
     bool CT_SlideSyncProperties::has_extLst() const
     {    
     return m_has_extLst;
@@ -33369,6 +33768,9 @@ CT_SlideSyncProperties* CT_SlideSyncProperties::default_instance_ = NULL;
     m_val_attr("")
     {
     }
+    CT_StringTag::~CT_StringTag()
+{
+    clear();    }
     void CT_StringTag::clear()
     {    
     m_has_name_attr = false;
@@ -33451,6 +33853,9 @@ CT_StringTag* CT_StringTag::default_instance_ = NULL;
 
     {
     }
+    CT_TagList::~CT_TagList()
+{
+    clear();    }
     CT_StringTag* CT_TagList::add_tag()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -33547,6 +33952,9 @@ CT_TagList* CT_TagList::default_instance_ = NULL;
     m_autoAdjust_attr(false)
     {
     }
+    CT_NormalViewPortion::~CT_NormalViewPortion()
+{
+    clear();    }
     void CT_NormalViewPortion::clear()
     {    
     m_has_sz_attr = false;
@@ -33654,6 +34062,9 @@ CT_NormalViewPortion* CT_NormalViewPortion::default_instance_ = NULL;
     m_preferSingleView_attr(false)
     {
     }
+    CT_NormalViewProperties::~CT_NormalViewProperties()
+{
+    clear();    }
     bool CT_NormalViewProperties::has_restoredLeft() const
     {    
     return m_has_restoredLeft;
@@ -33923,6 +34334,9 @@ CT_NormalViewProperties* CT_NormalViewProperties::default_instance_ = NULL;
     m_varScale_attr(false)
     {
     }
+    CT_CommonViewProperties::~CT_CommonViewProperties()
+{
+    clear();    }
     bool CT_CommonViewProperties::has_scale() const
     {    
     return m_has_scale;
@@ -34041,6 +34455,9 @@ CT_CommonViewProperties* CT_CommonViewProperties::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_NotesTextViewProperties::~CT_NotesTextViewProperties()
+{
+    clear();    }
     bool CT_NotesTextViewProperties::has_cViewPr() const
     {    
     return m_has_cViewPr;
@@ -34135,6 +34552,9 @@ CT_NotesTextViewProperties* CT_NotesTextViewProperties::default_instance_ = NULL
     m_collapse_attr(false)
     {
     }
+    CT_OutlineViewSlideEntry::~CT_OutlineViewSlideEntry()
+{
+    clear();    }
     void CT_OutlineViewSlideEntry::clear()
     {    
     m_has_r_id_attr = false;
@@ -34227,6 +34647,9 @@ CT_OutlineViewSlideEntry* CT_OutlineViewSlideEntry::default_instance_ = NULL;
 
     {
     }
+    CT_OutlineViewSlideList::~CT_OutlineViewSlideList()
+{
+    clear();    }
     CT_OutlineViewSlideEntry* CT_OutlineViewSlideList::add_sld()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -34325,6 +34748,9 @@ CT_OutlineViewSlideList* CT_OutlineViewSlideList::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_OutlineViewProperties::~CT_OutlineViewProperties()
+{
+    clear();    }
     bool CT_OutlineViewProperties::has_cViewPr() const
     {    
     return m_has_cViewPr;
@@ -34450,6 +34876,9 @@ CT_OutlineViewProperties* CT_OutlineViewProperties::default_instance_ = NULL;
     m_showFormatting_attr(false)
     {
     }
+    CT_SlideSorterViewProperties::~CT_SlideSorterViewProperties()
+{
+    clear();    }
     bool CT_SlideSorterViewProperties::has_cViewPr() const
     {    
     return m_has_cViewPr;
@@ -34568,6 +34997,9 @@ CT_SlideSorterViewProperties* CT_SlideSorterViewProperties::default_instance_ = 
     m_pos_attr(NULL)
     {
     }
+    CT_Guide::~CT_Guide()
+{
+    clear();    }
     void CT_Guide::clear()
     {    
     m_has_orient_attr = false;
@@ -34670,6 +35102,9 @@ CT_Guide* CT_Guide::default_instance_ = NULL;
 
     {
     }
+    CT_GuideList::~CT_GuideList()
+{
+    clear();    }
     CT_Guide* CT_GuideList::add_guide()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -34772,6 +35207,9 @@ CT_GuideList* CT_GuideList::default_instance_ = NULL;
     m_showGuides_attr(false)
     {
     }
+    CT_CommonSlideViewProperties::~CT_CommonSlideViewProperties()
+{
+    clear();    }
     bool CT_CommonSlideViewProperties::has_cViewPr() const
     {    
     return m_has_cViewPr;
@@ -34940,6 +35378,9 @@ CT_CommonSlideViewProperties* CT_CommonSlideViewProperties::default_instance_ = 
     m_extLst(NULL)
     {
     }
+    CT_SlideViewProperties::~CT_SlideViewProperties()
+{
+    clear();    }
     bool CT_SlideViewProperties::has_cSldViewPr() const
     {    
     return m_has_cSldViewPr;
@@ -35034,6 +35475,9 @@ CT_SlideViewProperties* CT_SlideViewProperties::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_NotesViewProperties::~CT_NotesViewProperties()
+{
+    clear();    }
     bool CT_NotesViewProperties::has_cSldViewPr() const
     {    
     return m_has_cSldViewPr;
@@ -35144,6 +35588,9 @@ CT_NotesViewProperties* CT_NotesViewProperties::default_instance_ = NULL;
     m_showComments_attr(false)
     {
     }
+    CT_ViewProperties::~CT_ViewProperties()
+{
+    clear();    }
     bool CT_ViewProperties::has_normalViewPr() const
     {    
     return m_has_normalViewPr;
@@ -35468,6 +35915,9 @@ CT_ViewProperties* CT_ViewProperties::default_instance_ = NULL;
 
     {
     }
+    cmAuthorLst_element::~cmAuthorLst_element()
+{
+    clear();    }
     CT_CommentAuthor* cmAuthorLst_element::add_cmAuthor()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -35561,6 +36011,9 @@ cmAuthorLst_element* cmAuthorLst_element::default_instance_ = NULL;
 
     {
     }
+    cmLst_element::~cmLst_element()
+{
+    clear();    }
     CT_Comment* cmLst_element::add_cm()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -35673,6 +36126,9 @@ cmLst_element* cmLst_element::default_instance_ = NULL;
     m_progId_attr("")
     {
     }
+    oleObj_element::~oleObj_element()
+{
+    clear();    }
     bool oleObj_element::has_embed() const
     {    
     return m_has_embed;
@@ -36080,6 +36536,9 @@ oleObj_element* oleObj_element::default_instance_ = NULL;
     m_conformance_attr(NULL)
     {
     }
+    presentation_element::~presentation_element()
+{
+    clear();    }
     bool presentation_element::has_sldMasterIdLst() const
     {    
     return m_has_sldMasterIdLst;
@@ -36888,6 +37347,9 @@ presentation_element* presentation_element::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    presentationPr_element::~presentationPr_element()
+{
+    clear();    }
     bool presentationPr_element::has_htmlPubPr() const
     {    
     return m_has_htmlPubPr;
@@ -37110,6 +37572,9 @@ presentationPr_element* presentationPr_element::default_instance_ = NULL;
     m_show_attr(false)
     {
     }
+    sld_element::~sld_element()
+{
+    clear();    }
     bool sld_element::has_cSld() const
     {    
     return m_has_cSld;
@@ -37385,6 +37850,9 @@ sld_element* sld_element::default_instance_ = NULL;
     m_userDrawn_attr(false)
     {
     }
+    sldLayout_element::~sldLayout_element()
+{
+    clear();    }
     bool sldLayout_element::has_cSld() const
     {    
     return m_has_cSld;
@@ -37768,6 +38236,9 @@ sldLayout_element* sldLayout_element::default_instance_ = NULL;
     m_preserve_attr(false)
     {
     }
+    sldMaster_element::~sldMaster_element()
+{
+    clear();    }
     bool sldMaster_element::has_cSld() const
     {    
     return m_has_cSld;
@@ -38064,6 +38535,9 @@ sldMaster_element* sldMaster_element::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    handoutMaster_element::~handoutMaster_element()
+{
+    clear();    }
     bool handoutMaster_element::has_cSld() const
     {    
     return m_has_cSld;
@@ -38222,6 +38696,9 @@ handoutMaster_element* handoutMaster_element::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    notesMaster_element::~notesMaster_element()
+{
+    clear();    }
     bool notesMaster_element::has_cSld() const
     {    
     return m_has_cSld;
@@ -38409,6 +38886,9 @@ notesMaster_element* notesMaster_element::default_instance_ = NULL;
     m_showMasterPhAnim_attr(false)
     {
     }
+    notes_element::~notes_element()
+{
+    clear();    }
     bool notes_element::has_cSld() const
     {    
     return m_has_cSld;
@@ -38585,6 +39065,9 @@ notes_element* notes_element::default_instance_ = NULL;
     m_clientInsertedTime_attr("")
     {
     }
+    sldSyncPr_element::~sldSyncPr_element()
+{
+    clear();    }
     bool sldSyncPr_element::has_extLst() const
     {    
     return m_has_extLst;
@@ -38721,6 +39204,9 @@ sldSyncPr_element* sldSyncPr_element::default_instance_ = NULL;
 
     {
     }
+    tagLst_element::~tagLst_element()
+{
+    clear();    }
     CT_StringTag* tagLst_element::add_tag()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -38833,6 +39319,9 @@ tagLst_element* tagLst_element::default_instance_ = NULL;
     m_showComments_attr(false)
     {
     }
+    viewPr_element::~viewPr_element()
+{
+    clear();    }
     bool viewPr_element::has_normalViewPr() const
     {    
     return m_has_normalViewPr;

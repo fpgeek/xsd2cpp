@@ -69,6 +69,9 @@ namespace ns_extended_properties {
     m_DocSecurity(0)
     {
     }
+    CT_Properties::~CT_Properties()
+{
+    clear();    }
     bool CT_Properties::has_Template() const
     {    
     return m_has_Template;
@@ -702,6 +705,9 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     m_vt_vector(NULL)
     {
     }
+    CT_VectorVariant::~CT_VectorVariant()
+{
+    clear();    }
     bool CT_VectorVariant::has_vt_vector() const
     {    
     return m_has_vt_vector;
@@ -765,6 +771,9 @@ CT_VectorVariant* CT_VectorVariant::default_instance_ = NULL;
     m_vt_vector(NULL)
     {
     }
+    CT_VectorLpstr::~CT_VectorLpstr()
+{
+    clear();    }
     bool CT_VectorLpstr::has_vt_vector() const
     {    
     return m_has_vt_vector;
@@ -828,6 +837,9 @@ CT_VectorLpstr* CT_VectorLpstr::default_instance_ = NULL;
     m_vt_blob("")
     {
     }
+    CT_DigSigBlob::~CT_DigSigBlob()
+{
+    clear();    }
     bool CT_DigSigBlob::has_vt_blob() const
     {    
     return m_has_vt_blob;
@@ -935,6 +947,9 @@ CT_DigSigBlob* CT_DigSigBlob::default_instance_ = NULL;
     m_DocSecurity(0)
     {
     }
+    Properties_element::~Properties_element()
+{
+    clear();    }
     bool Properties_element::has_Template() const
     {    
     return m_has_Template;

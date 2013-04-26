@@ -118,6 +118,7 @@ namespace ns_xdr {
     {
     public:
         CT_AnchorClientData();
+        ~CT_AnchorClientData();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AnchorClientData& default_instance();
@@ -140,6 +141,7 @@ namespace ns_xdr {
     {
     public:
         CT_ShapeNonVisual();
+        ~CT_ShapeNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -162,6 +164,7 @@ namespace ns_xdr {
     {
     public:
         CT_Shape();
+        ~CT_Shape();
         bool has_nvSpPr() const;
         CT_ShapeNonVisual* mutable_nvSpPr();
         const CT_ShapeNonVisual& get_nvSpPr() const;
@@ -214,6 +217,7 @@ namespace ns_xdr {
     {
     public:
         CT_ConnectorNonVisual();
+        ~CT_ConnectorNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -236,6 +240,7 @@ namespace ns_xdr {
     {
     public:
         CT_Connector();
+        ~CT_Connector();
         bool has_nvCxnSpPr() const;
         CT_ConnectorNonVisual* mutable_nvCxnSpPr();
         const CT_ConnectorNonVisual& get_nvCxnSpPr() const;
@@ -273,6 +278,7 @@ namespace ns_xdr {
     {
     public:
         CT_PictureNonVisual();
+        ~CT_PictureNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -295,6 +301,7 @@ namespace ns_xdr {
     {
     public:
         CT_Picture();
+        ~CT_Picture();
         bool has_nvPicPr() const;
         CT_PictureNonVisual* mutable_nvPicPr();
         const CT_PictureNonVisual& get_nvPicPr() const;
@@ -337,6 +344,7 @@ namespace ns_xdr {
     {
     public:
         CT_GraphicalObjectFrameNonVisual();
+        ~CT_GraphicalObjectFrameNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -359,6 +367,7 @@ namespace ns_xdr {
     {
     public:
         CT_GraphicalObjectFrame();
+        ~CT_GraphicalObjectFrame();
         bool has_nvGraphicFramePr() const;
         CT_GraphicalObjectFrameNonVisual* mutable_nvGraphicFramePr();
         const CT_GraphicalObjectFrameNonVisual& get_nvGraphicFramePr() const;
@@ -396,6 +405,7 @@ namespace ns_xdr {
     {
     public:
         CT_GroupShapeNonVisual();
+        ~CT_GroupShapeNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -418,6 +428,7 @@ namespace ns_xdr {
     {
     public:
         CT_GroupShape();
+        ~CT_GroupShape();
         bool has_nvGrpSpPr() const;
         CT_GroupShapeNonVisual* mutable_nvGrpSpPr();
         const CT_GroupShapeNonVisual& get_nvGrpSpPr() const;
@@ -478,6 +489,7 @@ namespace ns_xdr {
     {
     public:
         CT_Rel();
+        ~CT_Rel();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Rel& default_instance();
@@ -495,6 +507,7 @@ namespace ns_xdr {
     {
     public:
         CT_Marker();
+        ~CT_Marker();
         bool has_col() const;
         ST_ColID* mutable_col();
         const ST_ColID& get_col() const;
@@ -527,6 +540,7 @@ namespace ns_xdr {
     {
     public:
         CT_TwoCellAnchor();
+        ~CT_TwoCellAnchor();
         bool has_from() const;
         CT_Marker* mutable_from();
         const CT_Marker& get_from() const;
@@ -589,6 +603,7 @@ namespace ns_xdr {
     {
     public:
         CT_OneCellAnchor();
+        ~CT_OneCellAnchor();
         bool has_from() const;
         CT_Marker* mutable_from();
         const CT_Marker& get_from() const;
@@ -646,6 +661,7 @@ namespace ns_xdr {
     {
     public:
         CT_AbsoluteAnchor();
+        ~CT_AbsoluteAnchor();
         bool has_pos() const;
         ns_a::CT_Point2D* mutable_pos();
         const ns_a::CT_Point2D& get_pos() const;
@@ -703,6 +719,7 @@ namespace ns_xdr {
     {
     public:
         CT_Drawing();
+        ~CT_Drawing();
         CT_TwoCellAnchor* add_twoCellAnchor();
         CT_OneCellAnchor* add_oneCellAnchor();
         CT_AbsoluteAnchor* add_absoluteAnchor();
@@ -741,6 +758,7 @@ namespace ns_xdr {
     {
     public:
         from_element();
+        ~from_element();
         bool has_col() const;
         ST_ColID* mutable_col();
         const ST_ColID& get_col() const;
@@ -773,6 +791,7 @@ namespace ns_xdr {
     {
     public:
         to_element();
+        ~to_element();
         bool has_col() const;
         ST_ColID* mutable_col();
         const ST_ColID& get_col() const;
@@ -805,6 +824,7 @@ namespace ns_xdr {
     {
     public:
         wsDr_element();
+        ~wsDr_element();
         CT_TwoCellAnchor* add_twoCellAnchor();
         CT_OneCellAnchor* add_oneCellAnchor();
         CT_AbsoluteAnchor* add_absoluteAnchor();

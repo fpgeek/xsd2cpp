@@ -745,6 +745,7 @@ namespace ns_o {
     {
     public:
         CT_ShapeDefaults();
+        ~CT_ShapeDefaults();
         bool has_v_fill() const;
         ns_v::CT_Fill* mutable_v_fill();
         const ns_v::CT_Fill& get_v_fill() const;
@@ -847,6 +848,7 @@ namespace ns_o {
     {
     public:
         CT_Ink();
+        ~CT_Ink();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Ink& default_instance();
@@ -874,6 +876,7 @@ namespace ns_o {
     {
     public:
         CT_SignatureLine();
+        ~CT_SignatureLine();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SignatureLine& default_instance();
@@ -951,6 +954,7 @@ namespace ns_o {
     {
     public:
         CT_ShapeLayout();
+        ~CT_ShapeLayout();
         bool has_idmap() const;
         CT_IdMap* mutable_idmap();
         const CT_IdMap& get_idmap() const;
@@ -983,6 +987,7 @@ namespace ns_o {
     {
     public:
         CT_IdMap();
+        ~CT_IdMap();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_IdMap& default_instance();
@@ -1005,6 +1010,7 @@ namespace ns_o {
     {
     public:
         CT_RegroupTable();
+        ~CT_RegroupTable();
         CT_Entry* add_entry();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -1036,6 +1042,7 @@ namespace ns_o {
     {
     public:
         CT_Entry();
+        ~CT_Entry();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Entry& default_instance();
@@ -1058,6 +1065,7 @@ namespace ns_o {
     {
     public:
         CT_Rules();
+        ~CT_Rules();
         CT_R* add_r();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -1089,6 +1097,7 @@ namespace ns_o {
     {
     public:
         CT_R();
+        ~CT_R();
         CT_Proxy* add_proxy();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -1135,6 +1144,7 @@ namespace ns_o {
     {
     public:
         CT_Proxy();
+        ~CT_Proxy();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Proxy& default_instance();
@@ -1167,6 +1177,7 @@ namespace ns_o {
     {
     public:
         CT_Diagram();
+        ~CT_Diagram();
         bool has_relationtable() const;
         CT_RelationTable* mutable_relationtable();
         const CT_RelationTable& get_relationtable() const;
@@ -1234,6 +1245,7 @@ namespace ns_o {
     {
     public:
         CT_EquationXml();
+        ~CT_EquationXml();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_EquationXml& default_instance();
@@ -1253,6 +1265,7 @@ namespace ns_o {
     {
     public:
         CT_RelationTable();
+        ~CT_RelationTable();
         CT_Relation* add_rel();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -1284,6 +1297,7 @@ namespace ns_o {
     {
     public:
         CT_Relation();
+        ~CT_Relation();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Relation& default_instance();
@@ -1316,6 +1330,7 @@ namespace ns_o {
     {
     public:
         CT_ColorMru();
+        ~CT_ColorMru();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ColorMru& default_instance();
@@ -1338,6 +1353,7 @@ namespace ns_o {
     {
     public:
         CT_ColorMenu();
+        ~CT_ColorMenu();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ColorMenu& default_instance();
@@ -1375,6 +1391,7 @@ namespace ns_o {
     {
     public:
         CT_Skew();
+        ~CT_Skew();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Skew& default_instance();
@@ -1417,6 +1434,7 @@ namespace ns_o {
     {
     public:
         CT_Extrusion();
+        ~CT_Extrusion();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Extrusion& default_instance();
@@ -1594,6 +1612,7 @@ namespace ns_o {
     {
     public:
         CT_Callout();
+        ~CT_Callout();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Callout& default_instance();
@@ -1676,6 +1695,7 @@ namespace ns_o {
     {
     public:
         CT_Lock();
+        ~CT_Lock();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Lock& default_instance();
@@ -1748,6 +1768,7 @@ namespace ns_o {
     {
     public:
         CT_OLEObject();
+        ~CT_OLEObject();
         bool has_LinkType() const;
         ST_OLELinkType* mutable_LinkType();
         const ST_OLELinkType& get_LinkType() const;
@@ -1810,6 +1831,7 @@ namespace ns_o {
     {
     public:
         CT_Complex();
+        ~CT_Complex();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Complex& default_instance();
@@ -1827,6 +1849,7 @@ namespace ns_o {
     {
     public:
         CT_StrokeChild();
+        ~CT_StrokeChild();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_StrokeChild& default_instance();
@@ -1974,6 +1997,7 @@ namespace ns_o {
     {
     public:
         CT_ClipPath();
+        ~CT_ClipPath();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ClipPath& default_instance();
@@ -1991,6 +2015,7 @@ namespace ns_o {
     {
     public:
         CT_Fill();
+        ~CT_Fill();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Fill& default_instance();
@@ -2013,6 +2038,7 @@ namespace ns_o {
     {
     public:
         shapedefaults_element();
+        ~shapedefaults_element();
         bool has_v_fill() const;
         ns_v::CT_Fill* mutable_v_fill();
         const ns_v::CT_Fill& get_v_fill() const;
@@ -2115,6 +2141,7 @@ namespace ns_o {
     {
     public:
         shapelayout_element();
+        ~shapelayout_element();
         bool has_idmap() const;
         CT_IdMap* mutable_idmap();
         const CT_IdMap& get_idmap() const;
@@ -2147,6 +2174,7 @@ namespace ns_o {
     {
     public:
         signatureline_element();
+        ~signatureline_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const signatureline_element& default_instance();
@@ -2224,6 +2252,7 @@ namespace ns_o {
     {
     public:
         ink_element();
+        ~ink_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const ink_element& default_instance();
@@ -2251,6 +2280,7 @@ namespace ns_o {
     {
     public:
         diagram_element();
+        ~diagram_element();
         bool has_relationtable() const;
         CT_RelationTable* mutable_relationtable();
         const CT_RelationTable& get_relationtable() const;
@@ -2318,6 +2348,7 @@ namespace ns_o {
     {
     public:
         equationxml_element();
+        ~equationxml_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const equationxml_element& default_instance();
@@ -2337,6 +2368,7 @@ namespace ns_o {
     {
     public:
         skew_element();
+        ~skew_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const skew_element& default_instance();
@@ -2379,6 +2411,7 @@ namespace ns_o {
     {
     public:
         extrusion_element();
+        ~extrusion_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const extrusion_element& default_instance();
@@ -2556,6 +2589,7 @@ namespace ns_o {
     {
     public:
         callout_element();
+        ~callout_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const callout_element& default_instance();
@@ -2638,6 +2672,7 @@ namespace ns_o {
     {
     public:
         lock_element();
+        ~lock_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const lock_element& default_instance();
@@ -2710,6 +2745,7 @@ namespace ns_o {
     {
     public:
         OLEObject_element();
+        ~OLEObject_element();
         bool has_LinkType() const;
         ST_OLELinkType* mutable_LinkType();
         const ST_OLELinkType& get_LinkType() const;
@@ -2772,6 +2808,7 @@ namespace ns_o {
     {
     public:
         complex_element();
+        ~complex_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const complex_element& default_instance();
@@ -2789,6 +2826,7 @@ namespace ns_o {
     {
     public:
         left_element();
+        ~left_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const left_element& default_instance();
@@ -2936,6 +2974,7 @@ namespace ns_o {
     {
     public:
         top_element();
+        ~top_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const top_element& default_instance();
@@ -3083,6 +3122,7 @@ namespace ns_o {
     {
     public:
         right_element();
+        ~right_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const right_element& default_instance();
@@ -3230,6 +3270,7 @@ namespace ns_o {
     {
     public:
         bottom_element();
+        ~bottom_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const bottom_element& default_instance();
@@ -3377,6 +3418,7 @@ namespace ns_o {
     {
     public:
         column_element();
+        ~column_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const column_element& default_instance();
@@ -3524,6 +3566,7 @@ namespace ns_o {
     {
     public:
         clippath_element();
+        ~clippath_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const clippath_element& default_instance();
@@ -3541,6 +3584,7 @@ namespace ns_o {
     {
     public:
         fill_element();
+        ~fill_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const fill_element& default_instance();

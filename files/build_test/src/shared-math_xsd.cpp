@@ -359,7 +359,7 @@ ST_Char* ST_Char::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -419,7 +419,7 @@ ST_Shp* ST_Shp::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -481,7 +481,7 @@ ST_FType* ST_FType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -541,7 +541,7 @@ ST_LimLoc* ST_LimLoc::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -601,7 +601,7 @@ ST_TopBot* ST_TopBot::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -665,7 +665,7 @@ ST_Script* ST_Script::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -727,7 +727,7 @@ ST_Style* ST_Style::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -789,7 +789,7 @@ ST_Jc* ST_Jc::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -850,7 +850,7 @@ ST_BreakBin* ST_BreakBin::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -877,6 +877,9 @@ ST_BreakBinSub* ST_BreakBinSub::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Integer255::~CT_Integer255()
+{
+    clear();    }
     void CT_Integer255::clear()
     {    
     m_has_val_attr = false;
@@ -945,6 +948,9 @@ CT_Integer255* CT_Integer255::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Integer2::~CT_Integer2()
+{
+    clear();    }
     void CT_Integer2::clear()
     {    
     m_has_val_attr = false;
@@ -1013,6 +1019,9 @@ CT_Integer2* CT_Integer2::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_SpacingRule::~CT_SpacingRule()
+{
+    clear();    }
     void CT_SpacingRule::clear()
     {    
     m_has_val_attr = false;
@@ -1081,6 +1090,9 @@ CT_SpacingRule* CT_SpacingRule::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_UnSignedInteger::~CT_UnSignedInteger()
+{
+    clear();    }
     void CT_UnSignedInteger::clear()
     {    
     m_has_val_attr = false;
@@ -1149,6 +1161,9 @@ CT_UnSignedInteger* CT_UnSignedInteger::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Char::~CT_Char()
+{
+    clear();    }
     void CT_Char::clear()
     {    
     m_has_val_attr = false;
@@ -1217,6 +1232,9 @@ CT_Char* CT_Char::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_OnOff::~CT_OnOff()
+{
+    clear();    }
     void CT_OnOff::clear()
     {    
     m_has_val_attr = false;
@@ -1285,6 +1303,9 @@ CT_OnOff* CT_OnOff::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_String::~CT_String()
+{
+    clear();    }
     void CT_String::clear()
     {    
     m_has_val_attr = false;
@@ -1353,6 +1374,9 @@ CT_String* CT_String::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_XAlign::~CT_XAlign()
+{
+    clear();    }
     void CT_XAlign::clear()
     {    
     m_has_val_attr = false;
@@ -1421,6 +1445,9 @@ CT_XAlign* CT_XAlign::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_YAlign::~CT_YAlign()
+{
+    clear();    }
     void CT_YAlign::clear()
     {    
     m_has_val_attr = false;
@@ -1489,6 +1516,9 @@ CT_YAlign* CT_YAlign::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Shp::~CT_Shp()
+{
+    clear();    }
     void CT_Shp::clear()
     {    
     m_has_val_attr = false;
@@ -1557,6 +1587,9 @@ CT_Shp* CT_Shp::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_FType::~CT_FType()
+{
+    clear();    }
     void CT_FType::clear()
     {    
     m_has_val_attr = false;
@@ -1625,6 +1658,9 @@ CT_FType* CT_FType::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_LimLoc::~CT_LimLoc()
+{
+    clear();    }
     void CT_LimLoc::clear()
     {    
     m_has_val_attr = false;
@@ -1693,6 +1729,9 @@ CT_LimLoc* CT_LimLoc::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TopBot::~CT_TopBot()
+{
+    clear();    }
     void CT_TopBot::clear()
     {    
     m_has_val_attr = false;
@@ -1761,6 +1800,9 @@ CT_TopBot* CT_TopBot::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Script::~CT_Script()
+{
+    clear();    }
     void CT_Script::clear()
     {    
     m_has_val_attr = false;
@@ -1829,6 +1871,9 @@ CT_Script* CT_Script::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Style::~CT_Style()
+{
+    clear();    }
     void CT_Style::clear()
     {    
     m_has_val_attr = false;
@@ -1897,6 +1942,9 @@ CT_Style* CT_Style::default_instance_ = NULL;
     m_alnAt_attr(NULL)
     {
     }
+    CT_ManualBreak::~CT_ManualBreak()
+{
+    clear();    }
     void CT_ManualBreak::clear()
     {    
     m_has_alnAt_attr = false;
@@ -1971,6 +2019,9 @@ CT_ManualBreak* CT_ManualBreak::default_instance_ = NULL;
     m_aln(NULL)
     {
     }
+    CT_RPR::~CT_RPR()
+{
+    clear();    }
     bool CT_RPR::has_lit() const
     {    
     return m_has_lit;
@@ -2122,6 +2173,9 @@ CT_RPR* CT_RPR::default_instance_ = NULL;
     m__attr("")
     {
     }
+    CT_Text::~CT_Text()
+{
+    clear();    }
     void CT_Text::clear()
     {    
     m_has__attr = false;
@@ -2182,6 +2236,9 @@ CT_Text* CT_Text::default_instance_ = NULL;
     m_w_rPr(NULL)
     {
     }
+    CT_R::~CT_R()
+{
+    clear();    }
     bool CT_R::has_rPr() const
     {    
     return m_has_rPr;
@@ -13739,6 +13796,9 @@ CT_R* CT_R::default_instance_ = NULL;
     m_w_del(NULL)
     {
     }
+    CT_CtrlPr::~CT_CtrlPr()
+{
+    clear();    }
     bool CT_CtrlPr::has_w_ins() const
     {    
     return m_has_w_ins;
@@ -13853,6 +13913,9 @@ CT_CtrlPr* CT_CtrlPr::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_AccPr::~CT_AccPr()
+{
+    clear();    }
     bool CT_AccPr::has_chr() const
     {    
     return m_has_chr;
@@ -13947,6 +14010,9 @@ CT_AccPr* CT_AccPr::default_instance_ = NULL;
     m_e(NULL)
     {
     }
+    CT_Acc::~CT_Acc()
+{
+    clear();    }
     bool CT_Acc::has_accPr() const
     {    
     return m_has_accPr;
@@ -14041,6 +14107,9 @@ CT_Acc* CT_Acc::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_BarPr::~CT_BarPr()
+{
+    clear();    }
     bool CT_BarPr::has_pos() const
     {    
     return m_has_pos;
@@ -14135,6 +14204,9 @@ CT_BarPr* CT_BarPr::default_instance_ = NULL;
     m_e(NULL)
     {
     }
+    CT_Bar::~CT_Bar()
+{
+    clear();    }
     bool CT_Bar::has_barPr() const
     {    
     return m_has_barPr;
@@ -14237,6 +14309,9 @@ CT_Bar* CT_Bar::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_BoxPr::~CT_BoxPr()
+{
+    clear();    }
     bool CT_BoxPr::has_opEmu() const
     {    
     return m_has_opEmu;
@@ -14447,6 +14522,9 @@ CT_BoxPr* CT_BoxPr::default_instance_ = NULL;
     m_e(NULL)
     {
     }
+    CT_Box::~CT_Box()
+{
+    clear();    }
     bool CT_Box::has_boxPr() const
     {    
     return m_has_boxPr;
@@ -14555,6 +14633,9 @@ CT_Box* CT_Box::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_BorderBoxPr::~CT_BorderBoxPr()
+{
+    clear();    }
     bool CT_BorderBoxPr::has_hideTop() const
     {    
     return m_has_hideTop;
@@ -14852,6 +14933,9 @@ CT_BorderBoxPr* CT_BorderBoxPr::default_instance_ = NULL;
     m_e(NULL)
     {
     }
+    CT_BorderBox::~CT_BorderBox()
+{
+    clear();    }
     bool CT_BorderBox::has_borderBoxPr() const
     {    
     return m_has_borderBoxPr;
@@ -14954,6 +15038,9 @@ CT_BorderBox* CT_BorderBox::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_DPr::~CT_DPr()
+{
+    clear();    }
     bool CT_DPr::has_begChr() const
     {    
     return m_has_begChr;
@@ -15162,6 +15249,9 @@ CT_DPr* CT_DPr::default_instance_ = NULL;
     m_dPr(NULL)
     {
     }
+    CT_D::~CT_D()
+{
+    clear();    }
     bool CT_D::has_dPr() const
     {    
     return m_has_dPr;
@@ -15304,6 +15394,9 @@ CT_D* CT_D::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_EqArrPr::~CT_EqArrPr()
+{
+    clear();    }
     bool CT_EqArrPr::has_baseJc() const
     {    
     return m_has_baseJc;
@@ -15512,6 +15605,9 @@ CT_EqArrPr* CT_EqArrPr::default_instance_ = NULL;
     m_eqArrPr(NULL)
     {
     }
+    CT_EqArr::~CT_EqArr()
+{
+    clear();    }
     bool CT_EqArr::has_eqArrPr() const
     {    
     return m_has_eqArrPr;
@@ -15646,6 +15742,9 @@ CT_EqArr* CT_EqArr::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_FPr::~CT_FPr()
+{
+    clear();    }
     bool CT_FPr::has_type() const
     {    
     return m_has_type;
@@ -15742,6 +15841,9 @@ CT_FPr* CT_FPr::default_instance_ = NULL;
     m_den(NULL)
     {
     }
+    CT_F::~CT_F()
+{
+    clear();    }
     bool CT_F::has_fPr() const
     {    
     return m_has_fPr;
@@ -15863,6 +15965,9 @@ CT_F* CT_F::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_FuncPr::~CT_FuncPr()
+{
+    clear();    }
     bool CT_FuncPr::has_ctrlPr() const
     {    
     return m_has_ctrlPr;
@@ -15930,6 +16035,9 @@ CT_FuncPr* CT_FuncPr::default_instance_ = NULL;
     m_e(NULL)
     {
     }
+    CT_Func::~CT_Func()
+{
+    clear();    }
     bool CT_Func::has_funcPr() const
     {    
     return m_has_funcPr;
@@ -16057,6 +16165,9 @@ CT_Func* CT_Func::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_GroupChrPr::~CT_GroupChrPr()
+{
+    clear();    }
     bool CT_GroupChrPr::has_chr() const
     {    
     return m_has_chr;
@@ -16209,6 +16320,9 @@ CT_GroupChrPr* CT_GroupChrPr::default_instance_ = NULL;
     m_e(NULL)
     {
     }
+    CT_GroupChr::~CT_GroupChr()
+{
+    clear();    }
     bool CT_GroupChr::has_groupChrPr() const
     {    
     return m_has_groupChrPr;
@@ -16301,6 +16415,9 @@ CT_GroupChr* CT_GroupChr::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_LimLowPr::~CT_LimLowPr()
+{
+    clear();    }
     bool CT_LimLowPr::has_ctrlPr() const
     {    
     return m_has_ctrlPr;
@@ -16368,6 +16485,9 @@ CT_LimLowPr* CT_LimLowPr::default_instance_ = NULL;
     m_lim(NULL)
     {
     }
+    CT_LimLow::~CT_LimLow()
+{
+    clear();    }
     bool CT_LimLow::has_limLowPr() const
     {    
     return m_has_limLowPr;
@@ -16489,6 +16609,9 @@ CT_LimLow* CT_LimLow::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_LimUppPr::~CT_LimUppPr()
+{
+    clear();    }
     bool CT_LimUppPr::has_ctrlPr() const
     {    
     return m_has_ctrlPr;
@@ -16556,6 +16679,9 @@ CT_LimUppPr* CT_LimUppPr::default_instance_ = NULL;
     m_lim(NULL)
     {
     }
+    CT_LimUpp::~CT_LimUpp()
+{
+    clear();    }
     bool CT_LimUpp::has_limUppPr() const
     {    
     return m_has_limUppPr;
@@ -16679,6 +16805,9 @@ CT_LimUpp* CT_LimUpp::default_instance_ = NULL;
     m_mcJc(NULL)
     {
     }
+    CT_MCPr::~CT_MCPr()
+{
+    clear();    }
     bool CT_MCPr::has_count() const
     {    
     return m_has_count;
@@ -16771,6 +16900,9 @@ CT_MCPr* CT_MCPr::default_instance_ = NULL;
     m_mcPr(NULL)
     {
     }
+    CT_MC::~CT_MC()
+{
+    clear();    }
     bool CT_MC::has_mcPr() const
     {    
     return m_has_mcPr;
@@ -16833,6 +16965,9 @@ CT_MC* CT_MC::default_instance_ = NULL;
 
     {
     }
+    CT_MCS::~CT_MCS()
+{
+    clear();    }
     CT_MC* CT_MCS::add_mc()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -16943,6 +17078,9 @@ CT_MCS* CT_MCS::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_MPr::~CT_MPr()
+{
+    clear();    }
     bool CT_MPr::has_baseJc() const
     {    
     return m_has_baseJc;
@@ -17237,6 +17375,9 @@ CT_MPr* CT_MPr::default_instance_ = NULL;
 
     {
     }
+    CT_MR::~CT_MR()
+{
+    clear();    }
     CT_OMathArg* CT_MR::add_e()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -17331,6 +17472,9 @@ CT_MR* CT_MR::default_instance_ = NULL;
     m_mPr(NULL)
     {
     }
+    CT_M::~CT_M()
+{
+    clear();    }
     bool CT_M::has_mPr() const
     {    
     return m_has_mPr;
@@ -17473,6 +17617,9 @@ CT_M* CT_M::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_NaryPr::~CT_NaryPr()
+{
+    clear();    }
     bool CT_NaryPr::has_chr() const
     {    
     return m_has_chr;
@@ -17687,6 +17834,9 @@ CT_NaryPr* CT_NaryPr::default_instance_ = NULL;
     m_e(NULL)
     {
     }
+    CT_Nary::~CT_Nary()
+{
+    clear();    }
     bool CT_Nary::has_naryPr() const
     {    
     return m_has_naryPr;
@@ -17847,6 +17997,9 @@ CT_Nary* CT_Nary::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_PhantPr::~CT_PhantPr()
+{
+    clear();    }
     bool CT_PhantPr::has_show() const
     {    
     return m_has_show;
@@ -18057,6 +18210,9 @@ CT_PhantPr* CT_PhantPr::default_instance_ = NULL;
     m_e(NULL)
     {
     }
+    CT_Phant::~CT_Phant()
+{
+    clear();    }
     bool CT_Phant::has_phantPr() const
     {    
     return m_has_phantPr;
@@ -18151,6 +18307,9 @@ CT_Phant* CT_Phant::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_RadPr::~CT_RadPr()
+{
+    clear();    }
     bool CT_RadPr::has_degHide() const
     {    
     return m_has_degHide;
@@ -18247,6 +18406,9 @@ CT_RadPr* CT_RadPr::default_instance_ = NULL;
     m_e(NULL)
     {
     }
+    CT_Rad::~CT_Rad()
+{
+    clear();    }
     bool CT_Rad::has_radPr() const
     {    
     return m_has_radPr;
@@ -18368,6 +18530,9 @@ CT_Rad* CT_Rad::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_SPrePr::~CT_SPrePr()
+{
+    clear();    }
     bool CT_SPrePr::has_ctrlPr() const
     {    
     return m_has_ctrlPr;
@@ -18437,6 +18602,9 @@ CT_SPrePr* CT_SPrePr::default_instance_ = NULL;
     m_e(NULL)
     {
     }
+    CT_SPre::~CT_SPre()
+{
+    clear();    }
     bool CT_SPre::has_sPrePr() const
     {    
     return m_has_sPrePr;
@@ -18587,6 +18755,9 @@ CT_SPre* CT_SPre::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_SSubPr::~CT_SSubPr()
+{
+    clear();    }
     bool CT_SSubPr::has_ctrlPr() const
     {    
     return m_has_ctrlPr;
@@ -18654,6 +18825,9 @@ CT_SSubPr* CT_SSubPr::default_instance_ = NULL;
     m_sub(NULL)
     {
     }
+    CT_SSub::~CT_SSub()
+{
+    clear();    }
     bool CT_SSub::has_sSubPr() const
     {    
     return m_has_sSubPr;
@@ -18777,6 +18951,9 @@ CT_SSub* CT_SSub::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_SSubSupPr::~CT_SSubSupPr()
+{
+    clear();    }
     bool CT_SSubSupPr::has_alnScr() const
     {    
     return m_has_alnScr;
@@ -18875,6 +19052,9 @@ CT_SSubSupPr* CT_SSubSupPr::default_instance_ = NULL;
     m_sup(NULL)
     {
     }
+    CT_SSubSup::~CT_SSubSup()
+{
+    clear();    }
     bool CT_SSubSup::has_sSubSupPr() const
     {    
     return m_has_sSubSupPr;
@@ -19025,6 +19205,9 @@ CT_SSubSup* CT_SSubSup::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_SSupPr::~CT_SSupPr()
+{
+    clear();    }
     bool CT_SSupPr::has_ctrlPr() const
     {    
     return m_has_ctrlPr;
@@ -19092,6 +19275,9 @@ CT_SSupPr* CT_SSupPr::default_instance_ = NULL;
     m_sup(NULL)
     {
     }
+    CT_SSup::~CT_SSup()
+{
+    clear();    }
     bool CT_SSup::has_sSupPr() const
     {    
     return m_has_sSupPr;
@@ -19213,6 +19399,9 @@ CT_SSup* CT_SSup::default_instance_ = NULL;
     m_argSz(NULL)
     {
     }
+    CT_OMathArgPr::~CT_OMathArgPr()
+{
+    clear();    }
     bool CT_OMathArgPr::has_argSz() const
     {    
     return m_has_argSz;
@@ -19278,6 +19467,9 @@ CT_OMathArgPr* CT_OMathArgPr::default_instance_ = NULL;
     m_ctrlPr(NULL)
     {
     }
+    CT_OMathArg::~CT_OMathArg()
+{
+    clear();    }
     bool CT_OMathArg::has_argPr() const
     {    
     return m_has_argPr;
@@ -43409,6 +43601,9 @@ CT_OMathArg* CT_OMathArg::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_OMathJc::~CT_OMathJc()
+{
+    clear();    }
     void CT_OMathJc::clear()
     {    
     m_has_val_attr = false;
@@ -43477,6 +43672,9 @@ CT_OMathJc* CT_OMathJc::default_instance_ = NULL;
     m_jc(NULL)
     {
     }
+    CT_OMathParaPr::~CT_OMathParaPr()
+{
+    clear();    }
     bool CT_OMathParaPr::has_jc() const
     {    
     return m_has_jc;
@@ -43540,6 +43738,9 @@ CT_OMathParaPr* CT_OMathParaPr::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TwipsMeasure::~CT_TwipsMeasure()
+{
+    clear();    }
     void CT_TwipsMeasure::clear()
     {    
     m_has_val_attr = false;
@@ -43608,6 +43809,9 @@ CT_TwipsMeasure* CT_TwipsMeasure::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_BreakBin::~CT_BreakBin()
+{
+    clear();    }
     void CT_BreakBin::clear()
     {    
     m_has_val_attr = false;
@@ -43676,6 +43880,9 @@ CT_BreakBin* CT_BreakBin::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_BreakBinSub::~CT_BreakBinSub()
+{
+    clear();    }
     void CT_BreakBinSub::clear()
     {    
     m_has_val_attr = false;
@@ -43774,6 +43981,9 @@ CT_BreakBinSub* CT_BreakBinSub::default_instance_ = NULL;
     m_naryLim(NULL)
     {
     }
+    CT_MathPr::~CT_MathPr()
+{
+    clear();    }
     bool CT_MathPr::has_mathFont() const
     {    
     return m_has_mathFont;
@@ -44292,6 +44502,9 @@ CT_MathPr* CT_MathPr::default_instance_ = NULL;
     m_oMathParaPr(NULL)
     {
     }
+    CT_OMathPara::~CT_OMathPara()
+{
+    clear();    }
     bool CT_OMathPara::has_oMathParaPr() const
     {    
     return m_has_oMathParaPr;
@@ -44423,6 +44636,9 @@ CT_OMathPara* CT_OMathPara::default_instance_ = NULL;
 
     {
     }
+    CT_OMath::~CT_OMath()
+{
+    clear();    }
     CT_Acc* CT_OMath::add_acc()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -68508,6 +68724,9 @@ CT_OMath* CT_OMath::default_instance_ = NULL;
     m_naryLim(NULL)
     {
     }
+    mathPr_element::~mathPr_element()
+{
+    clear();    }
     bool mathPr_element::has_mathFont() const
     {    
     return m_has_mathFont;
@@ -69025,6 +69244,9 @@ mathPr_element* mathPr_element::default_instance_ = NULL;
     m_oMathParaPr(NULL)
     {
     }
+    oMathPara_element::~oMathPara_element()
+{
+    clear();    }
     bool oMathPara_element::has_oMathParaPr() const
     {    
     return m_has_oMathParaPr;
@@ -69155,6 +69377,9 @@ oMathPara_element* oMathPara_element::default_instance_ = NULL;
 
     {
     }
+    oMath_element::~oMath_element()
+{
+    clear();    }
     CT_Acc* oMath_element::add_acc()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();

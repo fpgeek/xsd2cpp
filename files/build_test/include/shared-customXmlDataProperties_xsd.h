@@ -34,6 +34,7 @@ namespace ns_customXml {
     {
     public:
         CT_DatastoreSchemaRef();
+        ~CT_DatastoreSchemaRef();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DatastoreSchemaRef& default_instance();
@@ -51,6 +52,7 @@ namespace ns_customXml {
     {
     public:
         CT_DatastoreSchemaRefs();
+        ~CT_DatastoreSchemaRefs();
         CT_DatastoreSchemaRef* add_schemaRef();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -77,6 +79,7 @@ namespace ns_customXml {
     {
     public:
         CT_DatastoreItem();
+        ~CT_DatastoreItem();
         bool has_schemaRefs() const;
         CT_DatastoreSchemaRefs* mutable_schemaRefs();
         const CT_DatastoreSchemaRefs& get_schemaRefs() const;
@@ -99,6 +102,7 @@ namespace ns_customXml {
     {
     public:
         datastoreItem_element();
+        ~datastoreItem_element();
         bool has_schemaRefs() const;
         CT_DatastoreSchemaRefs* mutable_schemaRefs();
         const CT_DatastoreSchemaRefs& get_schemaRefs() const;

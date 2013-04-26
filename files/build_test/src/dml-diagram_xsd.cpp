@@ -53,7 +53,7 @@ namespace ns_diagram {
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -114,7 +114,7 @@ ST_ClrAppMethod* ST_ClrAppMethod::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -174,7 +174,7 @@ ST_HueDir* ST_HueDir::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -238,7 +238,7 @@ ST_PtType* ST_PtType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3691,7 +3691,7 @@ ST_PrSetCustVal* ST_PrSetCustVal::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3751,7 +3751,7 @@ ST_Direction* ST_Direction::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3814,7 +3814,7 @@ ST_HierBranchStyle* ST_HierBranchStyle::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3875,7 +3875,7 @@ ST_AnimOneStr* ST_AnimOneStr::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3997,7 +3997,7 @@ ST_NodeCount* ST_NodeCount::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4057,7 +4057,7 @@ ST_ResizeHandlesStr* ST_ResizeHandlesStr::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4125,7 +4125,7 @@ ST_AlgorithmType* ST_AlgorithmType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4256,7 +4256,7 @@ ST_AxisTypes* ST_AxisTypes::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4318,7 +4318,7 @@ ST_BoolOperator* ST_BoolOperator::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4378,7 +4378,7 @@ ST_ChildOrderType* ST_ChildOrderType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4500,7 +4500,7 @@ ST_ConstraintType* ST_ConstraintType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4561,7 +4561,7 @@ ST_ConstraintRelationship* ST_ConstraintRelationship::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4689,7 +4689,7 @@ ST_ElementTypes* ST_ElementTypes::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4982,7 +4982,7 @@ ST_Booleans* ST_Booleans::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5048,7 +5048,7 @@ ST_FunctionType* ST_FunctionType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5112,7 +5112,7 @@ ST_FunctionOperator* ST_FunctionOperator::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5174,7 +5174,7 @@ ST_DiagramHorizontalAlignment* ST_DiagramHorizontalAlignment::default_instance_ 
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5236,7 +5236,7 @@ ST_VerticalAlignment* ST_VerticalAlignment::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5296,7 +5296,7 @@ ST_ChildDirection* ST_ChildDirection::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5358,7 +5358,7 @@ ST_ChildAlignment* ST_ChildAlignment::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5421,7 +5421,7 @@ ST_SecondaryChildAlignment* ST_SecondaryChildAlignment::default_instance_ = NULL
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5483,7 +5483,7 @@ ST_LinearDirection* ST_LinearDirection::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5546,7 +5546,7 @@ ST_SecondaryLinearDirection* ST_SecondaryLinearDirection::default_instance_ = NU
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5606,7 +5606,7 @@ ST_StartingElement* ST_StartingElement::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5666,7 +5666,7 @@ ST_RotationPath* ST_RotationPath::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5726,7 +5726,7 @@ ST_CenterShapeMapping* ST_CenterShapeMapping::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5787,7 +5787,7 @@ ST_BendPoint* ST_BendPoint::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5849,7 +5849,7 @@ ST_ConnectorRouting* ST_ConnectorRouting::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5910,7 +5910,7 @@ ST_ArrowheadStyle* ST_ArrowheadStyle::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5971,7 +5971,7 @@ ST_ConnectorDimension* ST_ConnectorDimension::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6040,7 +6040,7 @@ ST_ConnectorPoint* ST_ConnectorPoint::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6101,7 +6101,7 @@ ST_NodeHorizontalAlignment* ST_NodeHorizontalAlignment::default_instance_ = NULL
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6162,7 +6162,7 @@ ST_NodeVerticalAlignment* ST_NodeVerticalAlignment::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6222,7 +6222,7 @@ ST_FallbackDimension* ST_FallbackDimension::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6282,7 +6282,7 @@ ST_TextDirection* ST_TextDirection::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6342,7 +6342,7 @@ ST_PyramidAccentPosition* ST_PyramidAccentPosition::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6402,7 +6402,7 @@ ST_PyramidAccentTextMargin* ST_PyramidAccentTextMargin::default_instance_ = NULL
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6462,7 +6462,7 @@ ST_TextBlockDirection* ST_TextBlockDirection::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6522,7 +6522,7 @@ ST_TextAnchorHorizontal* ST_TextAnchorHorizontal::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6583,7 +6583,7 @@ ST_TextAnchorVertical* ST_TextAnchorVertical::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6644,7 +6644,7 @@ ST_DiagramTextAlignment* ST_DiagramTextAlignment::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6705,7 +6705,7 @@ ST_AutoTextRotation* ST_AutoTextRotation::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6767,7 +6767,7 @@ ST_GrowDirection* ST_GrowDirection::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6827,7 +6827,7 @@ ST_FlowDirection* ST_FlowDirection::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6887,7 +6887,7 @@ ST_ContinueDirection* ST_ContinueDirection::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6948,7 +6948,7 @@ ST_Breakpoint* ST_Breakpoint::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -7008,7 +7008,7 @@ ST_Offset* ST_Offset::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -7465,7 +7465,7 @@ ST_FunctionValue* ST_FunctionValue::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -7607,7 +7607,7 @@ ST_FunctionArgument* ST_FunctionArgument::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -7635,6 +7635,9 @@ ST_OutputShapeType* ST_OutputShapeType::default_instance_ = NULL;
     m_val_attr("")
     {
     }
+    CT_CTName::~CT_CTName()
+{
+    clear();    }
     void CT_CTName::clear()
     {    
     m_has_lang_attr = false;
@@ -7720,6 +7723,9 @@ CT_CTName* CT_CTName::default_instance_ = NULL;
     m_val_attr("")
     {
     }
+    CT_CTDescription::~CT_CTDescription()
+{
+    clear();    }
     void CT_CTDescription::clear()
     {    
     m_has_lang_attr = false;
@@ -7805,6 +7811,9 @@ CT_CTDescription* CT_CTDescription::default_instance_ = NULL;
     m_pri_attr(0)
     {
     }
+    CT_CTCategory::~CT_CTCategory()
+{
+    clear();    }
     void CT_CTCategory::clear()
     {    
     m_has_type_attr = false;
@@ -7887,6 +7896,9 @@ CT_CTCategory* CT_CTCategory::default_instance_ = NULL;
 
     {
     }
+    CT_CTCategories::~CT_CTCategories()
+{
+    clear();    }
     CT_CTCategory* CT_CTCategories::add_cat()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -7983,6 +7995,9 @@ CT_CTCategories* CT_CTCategories::default_instance_ = NULL;
     m_hueDir_attr(NULL)
     {
     }
+    CT_Colors::~CT_Colors()
+{
+    clear();    }
     ns_a::CT_ScRgbColor* CT_Colors::add_a_scrgbClr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -8625,6 +8640,9 @@ CT_Colors* CT_Colors::default_instance_ = NULL;
     m_name_attr("")
     {
     }
+    CT_CTStyleLabel::~CT_CTStyleLabel()
+{
+    clear();    }
     bool CT_CTStyleLabel::has_fillClrLst() const
     {    
     return m_has_fillClrLst;
@@ -8888,6 +8906,9 @@ CT_CTStyleLabel* CT_CTStyleLabel::default_instance_ = NULL;
     m_minVer_attr("")
     {
     }
+    CT_ColorTransform::~CT_ColorTransform()
+{
+    clear();    }
     CT_CTName* CT_ColorTransform::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9371,6 +9392,9 @@ CT_ColorTransform* CT_ColorTransform::default_instance_ = NULL;
     m_resId_attr(0)
     {
     }
+    CT_ColorTransformHeader::~CT_ColorTransformHeader()
+{
+    clear();    }
     CT_CTName* CT_ColorTransformHeader::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9763,6 +9787,9 @@ CT_ColorTransformHeader* CT_ColorTransformHeader::default_instance_ = NULL;
 
     {
     }
+    CT_ColorTransformHeaderLst::~CT_ColorTransformHeaderLst()
+{
+    clear();    }
     CT_ColorTransformHeader* CT_ColorTransformHeaderLst::add_colorsDefHdr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9869,6 +9896,9 @@ CT_ColorTransformHeaderLst* CT_ColorTransformHeaderLst::default_instance_ = NULL
     m_cxnId_attr(NULL)
     {
     }
+    CT_Pt::~CT_Pt()
+{
+    clear();    }
     bool CT_Pt::has_prSet() const
     {    
     return m_has_prSet;
@@ -10122,6 +10152,9 @@ CT_Pt* CT_Pt::default_instance_ = NULL;
 
     {
     }
+    CT_PtList::~CT_PtList()
+{
+    clear();    }
     CT_Pt* CT_PtList::add_pt()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -10234,6 +10267,9 @@ CT_PtList* CT_PtList::default_instance_ = NULL;
     m_presId_attr("")
     {
     }
+    CT_Cxn::~CT_Cxn()
+{
+    clear();    }
     bool CT_Cxn::has_extLst() const
     {    
     return m_has_extLst;
@@ -10580,6 +10616,9 @@ CT_Cxn* CT_Cxn::default_instance_ = NULL;
 
     {
     }
+    CT_CxnList::~CT_CxnList()
+{
+    clear();    }
     CT_Cxn* CT_CxnList::add_cxn()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -10682,6 +10721,9 @@ CT_CxnList* CT_CxnList::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_DataModel::~CT_DataModel()
+{
+    clear();    }
     bool CT_DataModel::has_ptLst() const
     {    
     return m_has_ptLst;
@@ -10883,6 +10925,9 @@ CT_DataModel* CT_DataModel::default_instance_ = NULL;
     m_fact_attr(0)
     {
     }
+    CT_Constraint::~CT_Constraint()
+{
+    clear();    }
     bool CT_Constraint::has_extLst() const
     {    
     return m_has_extLst;
@@ -11289,6 +11334,9 @@ CT_Constraint* CT_Constraint::default_instance_ = NULL;
 
     {
     }
+    CT_Constraints::~CT_Constraints()
+{
+    clear();    }
     CT_Constraint* CT_Constraints::add_constr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -11397,6 +11445,9 @@ CT_Constraints* CT_Constraints::default_instance_ = NULL;
     m_max_attr(0)
     {
     }
+    CT_NumericRule::~CT_NumericRule()
+{
+    clear();    }
     bool CT_NumericRule::has_extLst() const
     {    
     return m_has_extLst;
@@ -11663,6 +11714,9 @@ CT_NumericRule* CT_NumericRule::default_instance_ = NULL;
 
     {
     }
+    CT_Rules::~CT_Rules()
+{
+    clear();    }
     CT_NumericRule* CT_Rules::add_rule()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -11769,6 +11823,9 @@ CT_Rules* CT_Rules::default_instance_ = NULL;
     m_step_attr(NULL)
     {
     }
+    CT_PresentationOf::~CT_PresentationOf()
+{
+    clear();    }
     bool CT_PresentationOf::has_extLst() const
     {    
     return m_has_extLst;
@@ -12043,6 +12100,9 @@ CT_PresentationOf* CT_PresentationOf::default_instance_ = NULL;
     m_val_attr(0)
     {
     }
+    CT_Adj::~CT_Adj()
+{
+    clear();    }
     void CT_Adj::clear()
     {    
     m_has_idx_attr = false;
@@ -12135,6 +12195,9 @@ CT_Adj* CT_Adj::default_instance_ = NULL;
 
     {
     }
+    CT_AdjLst::~CT_AdjLst()
+{
+    clear();    }
     CT_Adj* CT_AdjLst::add_adj()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -12245,6 +12308,9 @@ CT_AdjLst* CT_AdjLst::default_instance_ = NULL;
     m_blipPhldr_attr(false)
     {
     }
+    CT_Shape::~CT_Shape()
+{
+    clear();    }
     bool CT_Shape::has_adjLst() const
     {    
     return m_has_adjLst;
@@ -12533,6 +12599,9 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Parameter::~CT_Parameter()
+{
+    clear();    }
     void CT_Parameter::clear()
     {    
     m_has_type_attr = false;
@@ -12638,6 +12707,9 @@ CT_Parameter* CT_Parameter::default_instance_ = NULL;
     m_rev_attr(0)
     {
     }
+    CT_Algorithm::~CT_Algorithm()
+{
+    clear();    }
     CT_Parameter* CT_Algorithm::add_param()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -12854,6 +12926,9 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
     m_moveWith_attr("")
     {
     }
+    CT_LayoutNode::~CT_LayoutNode()
+{
+    clear();    }
     CT_Algorithm* CT_LayoutNode::add_alg()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -14232,6 +14307,9 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
     m_step_attr(NULL)
     {
     }
+    CT_ForEach::~CT_ForEach()
+{
+    clear();    }
     CT_Algorithm* CT_ForEach::add_alg()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -15565,6 +15643,9 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_When::~CT_When()
+{
+    clear();    }
     CT_Algorithm* CT_When::add_alg()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -16993,6 +17074,9 @@ CT_When* CT_When::default_instance_ = NULL;
     m_name_attr("")
     {
     }
+    CT_Otherwise::~CT_Otherwise()
+{
+    clear();    }
     CT_Algorithm* CT_Otherwise::add_alg()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -18071,6 +18155,9 @@ CT_Otherwise* CT_Otherwise::default_instance_ = NULL;
     m_name_attr("")
     {
     }
+    CT_Choose::~CT_Choose()
+{
+    clear();    }
     CT_When* CT_Choose::add_if()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -18248,6 +18335,9 @@ CT_Choose* CT_Choose::default_instance_ = NULL;
     m_useDef_attr(false)
     {
     }
+    CT_SampleData::~CT_SampleData()
+{
+    clear();    }
     bool CT_SampleData::has_dataModel() const
     {    
     return m_has_dataModel;
@@ -18337,6 +18427,9 @@ CT_SampleData* CT_SampleData::default_instance_ = NULL;
     m_pri_attr(0)
     {
     }
+    CT_Category::~CT_Category()
+{
+    clear();    }
     void CT_Category::clear()
     {    
     m_has_type_attr = false;
@@ -18419,6 +18512,9 @@ CT_Category* CT_Category::default_instance_ = NULL;
 
     {
     }
+    CT_Categories::~CT_Categories()
+{
+    clear();    }
     CT_Category* CT_Categories::add_cat()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -18515,6 +18611,9 @@ CT_Categories* CT_Categories::default_instance_ = NULL;
     m_val_attr("")
     {
     }
+    CT_Name::~CT_Name()
+{
+    clear();    }
     void CT_Name::clear()
     {    
     m_has_lang_attr = false;
@@ -18600,6 +18699,9 @@ CT_Name* CT_Name::default_instance_ = NULL;
     m_val_attr("")
     {
     }
+    CT_Description::~CT_Description()
+{
+    clear();    }
     void CT_Description::clear()
     {    
     m_has_lang_attr = false;
@@ -18687,6 +18789,9 @@ CT_Description* CT_Description::default_instance_ = NULL;
     m_defStyle_attr("")
     {
     }
+    CT_DiagramDefinition::~CT_DiagramDefinition()
+{
+    clear();    }
     CT_Name* CT_DiagramDefinition::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -19638,6 +19743,9 @@ CT_DiagramDefinition* CT_DiagramDefinition::default_instance_ = NULL;
     m_resId_attr(0)
     {
     }
+    CT_DiagramDefinitionHeader::~CT_DiagramDefinitionHeader()
+{
+    clear();    }
     CT_Name* CT_DiagramDefinitionHeader::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -20055,6 +20163,9 @@ CT_DiagramDefinitionHeader* CT_DiagramDefinitionHeader::default_instance_ = NULL
 
     {
     }
+    CT_DiagramDefinitionHeaderLst::~CT_DiagramDefinitionHeaderLst()
+{
+    clear();    }
     CT_DiagramDefinitionHeader* CT_DiagramDefinitionHeaderLst::add_layoutDefHdr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -20155,6 +20266,9 @@ CT_DiagramDefinitionHeaderLst* CT_DiagramDefinitionHeaderLst::default_instance_ 
     m_r_cs_attr(NULL)
     {
     }
+    CT_RelIds::~CT_RelIds()
+{
+    clear();    }
     void CT_RelIds::clear()
     {    
     m_has_r_dm_attr = false;
@@ -20386,6 +20500,9 @@ CT_RelIds* CT_RelIds::default_instance_ = NULL;
     m_custRadScaleInc_attr(NULL)
     {
     }
+    CT_ElemPropSet::~CT_ElemPropSet()
+{
+    clear();    }
     bool CT_ElemPropSet::has_presLayoutVars() const
     {    
     return m_has_presLayoutVars;
@@ -21267,6 +21384,9 @@ CT_ElemPropSet* CT_ElemPropSet::default_instance_ = NULL;
     m_val_attr(false)
     {
     }
+    CT_OrgChart::~CT_OrgChart()
+{
+    clear();    }
     void CT_OrgChart::clear()
     {    
     m_has_val_attr = false;
@@ -21325,6 +21445,9 @@ CT_OrgChart* CT_OrgChart::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_ChildMax::~CT_ChildMax()
+{
+    clear();    }
     void CT_ChildMax::clear()
     {    
     m_has_val_attr = false;
@@ -21393,6 +21516,9 @@ CT_ChildMax* CT_ChildMax::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_ChildPref::~CT_ChildPref()
+{
+    clear();    }
     void CT_ChildPref::clear()
     {    
     m_has_val_attr = false;
@@ -21461,6 +21587,9 @@ CT_ChildPref* CT_ChildPref::default_instance_ = NULL;
     m_val_attr(false)
     {
     }
+    CT_BulletEnabled::~CT_BulletEnabled()
+{
+    clear();    }
     void CT_BulletEnabled::clear()
     {    
     m_has_val_attr = false;
@@ -21519,6 +21648,9 @@ CT_BulletEnabled* CT_BulletEnabled::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Direction::~CT_Direction()
+{
+    clear();    }
     void CT_Direction::clear()
     {    
     m_has_val_attr = false;
@@ -21587,6 +21719,9 @@ CT_Direction* CT_Direction::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_HierBranchStyle::~CT_HierBranchStyle()
+{
+    clear();    }
     void CT_HierBranchStyle::clear()
     {    
     m_has_val_attr = false;
@@ -21655,6 +21790,9 @@ CT_HierBranchStyle* CT_HierBranchStyle::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_AnimOne::~CT_AnimOne()
+{
+    clear();    }
     void CT_AnimOne::clear()
     {    
     m_has_val_attr = false;
@@ -21723,6 +21861,9 @@ CT_AnimOne* CT_AnimOne::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_AnimLvl::~CT_AnimLvl()
+{
+    clear();    }
     void CT_AnimLvl::clear()
     {    
     m_has_val_attr = false;
@@ -21791,6 +21932,9 @@ CT_AnimLvl* CT_AnimLvl::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_ResizeHandles::~CT_ResizeHandles()
+{
+    clear();    }
     void CT_ResizeHandles::clear()
     {    
     m_has_val_attr = false;
@@ -21875,6 +22019,9 @@ CT_ResizeHandles* CT_ResizeHandles::default_instance_ = NULL;
     m_resizeHandles(NULL)
     {
     }
+    CT_LayoutVariablePropertySet::~CT_LayoutVariablePropertySet()
+{
+    clear();    }
     bool CT_LayoutVariablePropertySet::has_orgChart() const
     {    
     return m_has_orgChart;
@@ -22172,6 +22319,9 @@ CT_LayoutVariablePropertySet* CT_LayoutVariablePropertySet::default_instance_ = 
     m_val_attr("")
     {
     }
+    CT_SDName::~CT_SDName()
+{
+    clear();    }
     void CT_SDName::clear()
     {    
     m_has_lang_attr = false;
@@ -22257,6 +22407,9 @@ CT_SDName* CT_SDName::default_instance_ = NULL;
     m_val_attr("")
     {
     }
+    CT_SDDescription::~CT_SDDescription()
+{
+    clear();    }
     void CT_SDDescription::clear()
     {    
     m_has_lang_attr = false;
@@ -22342,6 +22495,9 @@ CT_SDDescription* CT_SDDescription::default_instance_ = NULL;
     m_pri_attr(0)
     {
     }
+    CT_SDCategory::~CT_SDCategory()
+{
+    clear();    }
     void CT_SDCategory::clear()
     {    
     m_has_type_attr = false;
@@ -22424,6 +22580,9 @@ CT_SDCategory* CT_SDCategory::default_instance_ = NULL;
 
     {
     }
+    CT_SDCategories::~CT_SDCategories()
+{
+    clear();    }
     CT_SDCategory* CT_SDCategories::add_cat()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -22520,6 +22679,9 @@ CT_SDCategories* CT_SDCategories::default_instance_ = NULL;
     m_a_flatTx(NULL)
     {
     }
+    CT_TextProps::~CT_TextProps()
+{
+    clear();    }
     bool CT_TextProps::has_a_sp3d() const
     {    
     return m_has_a_sp3d;
@@ -22642,6 +22804,9 @@ CT_TextProps* CT_TextProps::default_instance_ = NULL;
     m_name_attr("")
     {
     }
+    CT_StyleLabel::~CT_StyleLabel()
+{
+    clear();    }
     bool CT_StyleLabel::has_scene3d() const
     {    
     return m_has_scene3d;
@@ -22847,6 +23012,9 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
     m_minVer_attr("")
     {
     }
+    CT_StyleDefinition::~CT_StyleDefinition()
+{
+    clear();    }
     CT_SDName* CT_StyleDefinition::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -23459,6 +23627,9 @@ CT_StyleDefinition* CT_StyleDefinition::default_instance_ = NULL;
     m_resId_attr(0)
     {
     }
+    CT_StyleDefinitionHeader::~CT_StyleDefinitionHeader()
+{
+    clear();    }
     CT_SDName* CT_StyleDefinitionHeader::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -23851,6 +24022,9 @@ CT_StyleDefinitionHeader* CT_StyleDefinitionHeader::default_instance_ = NULL;
 
     {
     }
+    CT_StyleDefinitionHeaderLst::~CT_StyleDefinitionHeaderLst()
+{
+    clear();    }
     CT_StyleDefinitionHeader* CT_StyleDefinitionHeaderLst::add_styleDefHdr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -23947,6 +24121,9 @@ CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NU
     m_minVer_attr("")
     {
     }
+    colorsDef_element::~colorsDef_element()
+{
+    clear();    }
     CT_CTName* colorsDef_element::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -24430,6 +24607,9 @@ colorsDef_element* colorsDef_element::default_instance_ = NULL;
     m_resId_attr(0)
     {
     }
+    colorsDefHdr_element::~colorsDefHdr_element()
+{
+    clear();    }
     CT_CTName* colorsDefHdr_element::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -24822,6 +25002,9 @@ colorsDefHdr_element* colorsDefHdr_element::default_instance_ = NULL;
 
     {
     }
+    colorsDefHdrLst_element::~colorsDefHdrLst_element()
+{
+    clear();    }
     CT_ColorTransformHeader* colorsDefHdrLst_element::add_colorsDefHdr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -24924,6 +25107,9 @@ colorsDefHdrLst_element* colorsDefHdrLst_element::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    dataModel_element::~dataModel_element()
+{
+    clear();    }
     bool dataModel_element::has_ptLst() const
     {    
     return m_has_ptLst;
@@ -25107,6 +25293,9 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
     m_defStyle_attr("")
     {
     }
+    layoutDef_element::~layoutDef_element()
+{
+    clear();    }
     CT_Name* layoutDef_element::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -26058,6 +26247,9 @@ layoutDef_element* layoutDef_element::default_instance_ = NULL;
     m_resId_attr(0)
     {
     }
+    layoutDefHdr_element::~layoutDefHdr_element()
+{
+    clear();    }
     CT_Name* layoutDefHdr_element::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -26475,6 +26667,9 @@ layoutDefHdr_element* layoutDefHdr_element::default_instance_ = NULL;
 
     {
     }
+    layoutDefHdrLst_element::~layoutDefHdrLst_element()
+{
+    clear();    }
     CT_DiagramDefinitionHeader* layoutDefHdrLst_element::add_layoutDefHdr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -26575,6 +26770,9 @@ layoutDefHdrLst_element* layoutDefHdrLst_element::default_instance_ = NULL;
     m_r_cs_attr(NULL)
     {
     }
+    relIds_element::~relIds_element()
+{
+    clear();    }
     void relIds_element::clear()
     {    
     m_has_r_dm_attr = false;
@@ -26750,6 +26948,9 @@ relIds_element* relIds_element::default_instance_ = NULL;
     m_minVer_attr("")
     {
     }
+    styleDef_element::~styleDef_element()
+{
+    clear();    }
     CT_SDName* styleDef_element::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -27362,6 +27563,9 @@ styleDef_element* styleDef_element::default_instance_ = NULL;
     m_resId_attr(0)
     {
     }
+    styleDefHdr_element::~styleDefHdr_element()
+{
+    clear();    }
     CT_SDName* styleDefHdr_element::add_title()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -27754,6 +27958,9 @@ styleDefHdr_element* styleDefHdr_element::default_instance_ = NULL;
 
     {
     }
+    styleDefHdrLst_element::~styleDefHdrLst_element()
+{
+    clear();    }
     CT_StyleDefinitionHeader* styleDefHdrLst_element::add_styleDefHdr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();

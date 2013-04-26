@@ -116,7 +116,7 @@ ST_StyleMatrixColumnIndex* ST_StyleMatrixColumnIndex::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -177,7 +177,7 @@ ST_FontCollectionIndex* ST_FontCollectionIndex::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1409,7 +1409,7 @@ ST_PositiveFixedPercentageDecimal* ST_PositiveFixedPercentageDecimal::default_in
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1497,7 +1497,7 @@ ST_SystemColorVal* ST_SystemColorVal::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1572,7 +1572,7 @@ ST_SchemeColorVal* ST_SchemeColorVal::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1820,7 +1820,7 @@ ST_PresetColorVal* ST_PresetColorVal::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1887,7 +1887,7 @@ ST_RectAlignment* ST_RectAlignment::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2016,7 +2016,7 @@ ST_DrawingElementId* ST_DrawingElementId::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2080,7 +2080,7 @@ ST_ChartBuildStep* ST_ChartBuildStep::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2140,7 +2140,7 @@ ST_DgmBuildStep* ST_DgmBuildStep::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2199,7 +2199,7 @@ ST_AnimationBuildType* ST_AnimationBuildType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2383,7 +2383,7 @@ ST_AnimationDgmBuildType* ST_AnimationDgmBuildType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2568,7 +2568,7 @@ ST_AnimationChartBuildType* ST_AnimationChartBuildType::default_instance_ = NULL
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2708,7 +2708,7 @@ ST_FOVAngle* ST_FOVAngle::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2774,7 +2774,7 @@ ST_LightRigDirection* ST_LightRigDirection::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2859,7 +2859,7 @@ ST_LightRigType* ST_LightRigType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2929,7 +2929,7 @@ ST_BevelPresetType* ST_BevelPresetType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3002,7 +3002,7 @@ ST_PresetMaterialType* ST_PresetMaterialType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3080,7 +3080,7 @@ ST_PresetShadowVal* ST_PresetShadowVal::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3141,7 +3141,7 @@ ST_PathShadeType* ST_PathShadeType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3203,7 +3203,7 @@ ST_TileFlipMode* ST_TileFlipMode::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3266,7 +3266,7 @@ ST_BlipCompression* ST_BlipCompression::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3378,7 +3378,7 @@ ST_PresetPatternVal* ST_PresetPatternVal::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3441,7 +3441,7 @@ ST_BlendMode* ST_BlendMode::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3501,7 +3501,7 @@ ST_EffectContainerType* ST_EffectContainerType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -3746,7 +3746,7 @@ ST_ShapeType* ST_ShapeType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4211,7 +4211,7 @@ ST_AdjAngle* ST_AdjAngle::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4275,7 +4275,7 @@ ST_PathFillMode* ST_PathFillMode::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4339,7 +4339,7 @@ ST_LineEndType* ST_LineEndType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4400,7 +4400,7 @@ ST_LineEndWidth* ST_LineEndWidth::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4461,7 +4461,7 @@ ST_LineEndLength* ST_LineEndLength::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4530,7 +4530,7 @@ ST_PresetLineDashVal* ST_PresetLineDashVal::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4611,7 +4611,7 @@ ST_LineWidth* ST_LineWidth::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4671,7 +4671,7 @@ ST_PenAlignment* ST_PenAlignment::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4794,7 +4794,7 @@ ST_ShapeID* ST_ShapeID::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4855,7 +4855,7 @@ ST_OnOffStyleType* ST_OnOffStyleType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4918,7 +4918,7 @@ ST_TextAnchoringType* ST_TextAnchoringType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4979,7 +4979,7 @@ ST_TextVertOverflowType* ST_TextVertOverflowType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5039,7 +5039,7 @@ ST_TextHorzOverflowType* ST_TextHorzOverflowType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5104,7 +5104,7 @@ ST_TextVerticalType* ST_TextVerticalType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -5431,7 +5431,7 @@ ST_TextBulletStartAtNum* ST_TextBulletStartAtNum::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6102,7 +6102,7 @@ ST_TextTypeface* ST_TextTypeface::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6178,7 +6178,7 @@ ST_PitchFamily* ST_PitchFamily::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6254,7 +6254,7 @@ ST_TextUnderlineType* ST_TextUnderlineType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6315,7 +6315,7 @@ ST_TextStrikeType* ST_TextStrikeType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6621,7 +6621,7 @@ ST_TextIndent* ST_TextIndent::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6683,7 +6683,7 @@ ST_TextTabAlignType* ST_TextTabAlignType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6748,7 +6748,7 @@ ST_TextAlignType* ST_TextAlignType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -6843,6 +6843,9 @@ ST_TextIndentLevelType* ST_TextIndentLevelType::default_instance_ = NULL;
     m_contentType_attr("")
     {
     }
+    CT_AudioFile::~CT_AudioFile()
+{
+    clear();    }
     bool CT_AudioFile::has_extLst() const
     {    
     return m_has_extLst;
@@ -6969,6 +6972,9 @@ CT_AudioFile* CT_AudioFile::default_instance_ = NULL;
     m_contentType_attr("")
     {
     }
+    CT_VideoFile::~CT_VideoFile()
+{
+    clear();    }
     bool CT_VideoFile::has_extLst() const
     {    
     return m_has_extLst;
@@ -7093,6 +7099,9 @@ CT_VideoFile* CT_VideoFile::default_instance_ = NULL;
     m_r_link_attr(NULL)
     {
     }
+    CT_QuickTimeFile::~CT_QuickTimeFile()
+{
+    clear();    }
     bool CT_QuickTimeFile::has_extLst() const
     {    
     return m_has_extLst;
@@ -7192,6 +7201,9 @@ CT_QuickTimeFile* CT_QuickTimeFile::default_instance_ = NULL;
     m_time_attr(0)
     {
     }
+    CT_AudioCDTime::~CT_AudioCDTime()
+{
+    clear();    }
     void CT_AudioCDTime::clear()
     {    
     m_has_track_attr = false;
@@ -7279,6 +7291,9 @@ CT_AudioCDTime* CT_AudioCDTime::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_AudioCD::~CT_AudioCD()
+{
+    clear();    }
     bool CT_AudioCD::has_st() const
     {    
     return m_has_st;
@@ -7426,6 +7441,9 @@ CT_AudioCD* CT_AudioCD::default_instance_ = NULL;
     m_name_attr("")
     {
     }
+    CT_ColorScheme::~CT_ColorScheme()
+{
+    clear();    }
     bool CT_ColorScheme::has_dk1() const
     {    
     return m_has_dk1;
@@ -7873,6 +7891,9 @@ CT_ColorScheme* CT_ColorScheme::default_instance_ = NULL;
     m_name_attr("")
     {
     }
+    CT_CustomColor::~CT_CustomColor()
+{
+    clear();    }
     bool CT_CustomColor::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -8383,6 +8404,9 @@ CT_CustomColor* CT_CustomColor::default_instance_ = NULL;
     m_typeface_attr(NULL)
     {
     }
+    CT_SupplementalFont::~CT_SupplementalFont()
+{
+    clear();    }
     void CT_SupplementalFont::clear()
     {    
     m_has_script_attr = false;
@@ -8475,6 +8499,9 @@ CT_SupplementalFont* CT_SupplementalFont::default_instance_ = NULL;
 
     {
     }
+    CT_CustomColorList::~CT_CustomColorList()
+{
+    clear();    }
     CT_CustomColor* CT_CustomColorList::add_custClr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -8573,6 +8600,9 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
     m_cs(NULL)
     {
     }
+    CT_FontCollection::~CT_FontCollection()
+{
+    clear();    }
     bool CT_FontCollection::has_latin() const
     {    
     return m_has_latin;
@@ -8844,6 +8874,9 @@ CT_FontCollection* CT_FontCollection::default_instance_ = NULL;
     m_sp3d(NULL)
     {
     }
+    CT_EffectStyleItem::~CT_EffectStyleItem()
+{
+    clear();    }
     bool CT_EffectStyleItem::has_effectLst() const
     {    
     return m_has_effectLst;
@@ -9020,6 +9053,9 @@ CT_EffectStyleItem* CT_EffectStyleItem::default_instance_ = NULL;
     m_name_attr("")
     {
     }
+    CT_FontScheme::~CT_FontScheme()
+{
+    clear();    }
     bool CT_FontScheme::has_majorFont() const
     {    
     return m_has_majorFont;
@@ -9164,6 +9200,9 @@ CT_FontScheme* CT_FontScheme::default_instance_ = NULL;
 
     {
     }
+    CT_FillStyleList::~CT_FillStyleList()
+{
+    clear();    }
     CT_NoFillProperties* CT_FillStyleList::add_noFill()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9722,6 +9761,9 @@ CT_FillStyleList* CT_FillStyleList::default_instance_ = NULL;
 
     {
     }
+    CT_LineStyleList::~CT_LineStyleList()
+{
+    clear();    }
     CT_LineProperties* CT_LineStyleList::add_ln()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9815,6 +9857,9 @@ CT_LineStyleList* CT_LineStyleList::default_instance_ = NULL;
 
     {
     }
+    CT_EffectStyleList::~CT_EffectStyleList()
+{
+    clear();    }
     CT_EffectStyleItem* CT_EffectStyleList::add_effectStyle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -9908,6 +9953,9 @@ CT_EffectStyleList* CT_EffectStyleList::default_instance_ = NULL;
 
     {
     }
+    CT_BackgroundFillStyleList::~CT_BackgroundFillStyleList()
+{
+    clear();    }
     CT_NoFillProperties* CT_BackgroundFillStyleList::add_noFill()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -10475,6 +10523,9 @@ CT_BackgroundFillStyleList* CT_BackgroundFillStyleList::default_instance_ = NULL
     m_name_attr("")
     {
     }
+    CT_StyleMatrix::~CT_StyleMatrix()
+{
+    clear();    }
     bool CT_StyleMatrix::has_fillStyleLst() const
     {    
     return m_has_fillStyleLst;
@@ -10655,6 +10706,9 @@ CT_StyleMatrix* CT_StyleMatrix::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_BaseStyles::~CT_BaseStyles()
+{
+    clear();    }
     bool CT_BaseStyles::has_clrScheme() const
     {    
     return m_has_clrScheme;
@@ -10807,6 +10861,9 @@ CT_BaseStyles* CT_BaseStyles::default_instance_ = NULL;
     m_uri_attr("")
     {
     }
+    CT_OfficeArtExtension::~CT_OfficeArtExtension()
+{
+    clear();    }
     void CT_OfficeArtExtension::clear()
     {    
     m_has_uri_attr = false;
@@ -10872,6 +10929,9 @@ CT_OfficeArtExtension* CT_OfficeArtExtension::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Angle::~CT_Angle()
+{
+    clear();    }
     void CT_Angle::clear()
     {    
     m_has_val_attr = false;
@@ -10940,6 +11000,9 @@ CT_Angle* CT_Angle::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_PositiveFixedAngle::~CT_PositiveFixedAngle()
+{
+    clear();    }
     void CT_PositiveFixedAngle::clear()
     {    
     m_has_val_attr = false;
@@ -11008,6 +11071,9 @@ CT_PositiveFixedAngle* CT_PositiveFixedAngle::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_Percentage::~CT_Percentage()
+{
+    clear();    }
     void CT_Percentage::clear()
     {    
     m_has_val_attr = false;
@@ -11076,6 +11142,9 @@ CT_Percentage* CT_Percentage::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_PositivePercentage::~CT_PositivePercentage()
+{
+    clear();    }
     void CT_PositivePercentage::clear()
     {    
     m_has_val_attr = false;
@@ -11144,6 +11213,9 @@ CT_PositivePercentage* CT_PositivePercentage::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_FixedPercentage::~CT_FixedPercentage()
+{
+    clear();    }
     void CT_FixedPercentage::clear()
     {    
     m_has_val_attr = false;
@@ -11212,6 +11284,9 @@ CT_FixedPercentage* CT_FixedPercentage::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_PositiveFixedPercentage::~CT_PositiveFixedPercentage()
+{
+    clear();    }
     void CT_PositiveFixedPercentage::clear()
     {    
     m_has_val_attr = false;
@@ -11282,6 +11357,9 @@ CT_PositiveFixedPercentage* CT_PositiveFixedPercentage::default_instance_ = NULL
     m_d_attr(0)
     {
     }
+    CT_Ratio::~CT_Ratio()
+{
+    clear();    }
     void CT_Ratio::clear()
     {    
     m_has_n_attr = false;
@@ -11367,6 +11445,9 @@ CT_Ratio* CT_Ratio::default_instance_ = NULL;
     m_y_attr(NULL)
     {
     }
+    CT_Point2D::~CT_Point2D()
+{
+    clear();    }
     void CT_Point2D::clear()
     {    
     m_has_x_attr = false;
@@ -11472,6 +11553,9 @@ CT_Point2D* CT_Point2D::default_instance_ = NULL;
     m_cy_attr(NULL)
     {
     }
+    CT_PositiveSize2D::~CT_PositiveSize2D()
+{
+    clear();    }
     void CT_PositiveSize2D::clear()
     {    
     m_has_cx_attr = false;
@@ -11574,6 +11658,9 @@ CT_PositiveSize2D* CT_PositiveSize2D::default_instance_ = NULL;
 
     {
     }
+    CT_ComplementTransform::~CT_ComplementTransform()
+{
+    clear();    }
     void CT_ComplementTransform::clear()
     {    }
 
@@ -11607,6 +11694,9 @@ CT_ComplementTransform* CT_ComplementTransform::default_instance_ = NULL;
 
     {
     }
+    CT_InverseTransform::~CT_InverseTransform()
+{
+    clear();    }
     void CT_InverseTransform::clear()
     {    }
 
@@ -11640,6 +11730,9 @@ CT_InverseTransform* CT_InverseTransform::default_instance_ = NULL;
 
     {
     }
+    CT_GrayscaleTransform::~CT_GrayscaleTransform()
+{
+    clear();    }
     void CT_GrayscaleTransform::clear()
     {    }
 
@@ -11673,6 +11766,9 @@ CT_GrayscaleTransform* CT_GrayscaleTransform::default_instance_ = NULL;
 
     {
     }
+    CT_GammaTransform::~CT_GammaTransform()
+{
+    clear();    }
     void CT_GammaTransform::clear()
     {    }
 
@@ -11706,6 +11802,9 @@ CT_GammaTransform* CT_GammaTransform::default_instance_ = NULL;
 
     {
     }
+    CT_InverseGammaTransform::~CT_InverseGammaTransform()
+{
+    clear();    }
     void CT_InverseGammaTransform::clear()
     {    }
 
@@ -11744,6 +11843,9 @@ CT_InverseGammaTransform* CT_InverseGammaTransform::default_instance_ = NULL;
     m_b_attr(NULL)
     {
     }
+    CT_ScRgbColor::~CT_ScRgbColor()
+{
+    clear();    }
     CT_PositiveFixedPercentage* CT_ScRgbColor::add_tint()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -19799,6 +19901,9 @@ CT_ScRgbColor* CT_ScRgbColor::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_SRgbColor::~CT_SRgbColor()
+{
+    clear();    }
     CT_PositiveFixedPercentage* CT_SRgbColor::add_tint()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -27788,6 +27893,9 @@ CT_SRgbColor* CT_SRgbColor::default_instance_ = NULL;
     m_lum_attr(NULL)
     {
     }
+    CT_HslColor::~CT_HslColor()
+{
+    clear();    }
     CT_PositiveFixedPercentage* CT_HslColor::add_tint()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -35845,6 +35953,9 @@ CT_HslColor* CT_HslColor::default_instance_ = NULL;
     m_lastClr_attr(NULL)
     {
     }
+    CT_SystemColor::~CT_SystemColor()
+{
+    clear();    }
     CT_PositiveFixedPercentage* CT_SystemColor::add_tint()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -43865,6 +43976,9 @@ CT_SystemColor* CT_SystemColor::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_SchemeColor::~CT_SchemeColor()
+{
+    clear();    }
     CT_PositiveFixedPercentage* CT_SchemeColor::add_tint()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -51850,6 +51964,9 @@ CT_SchemeColor* CT_SchemeColor::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_PresetColor::~CT_PresetColor()
+{
+    clear();    }
     CT_PositiveFixedPercentage* CT_PresetColor::add_tint()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -59834,6 +59951,9 @@ CT_PresetColor* CT_PresetColor::default_instance_ = NULL;
 
     {
     }
+    CT_OfficeArtExtensionList::~CT_OfficeArtExtensionList()
+{
+    clear();    }
     CT_OfficeArtExtension* CT_OfficeArtExtensionList::add_ext()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -59930,6 +60050,9 @@ CT_OfficeArtExtensionList* CT_OfficeArtExtensionList::default_instance_ = NULL;
     m_sy(NULL)
     {
     }
+    CT_Scale2D::~CT_Scale2D()
+{
+    clear();    }
     bool CT_Scale2D::has_sx() const
     {    
     return m_has_sx;
@@ -60030,6 +60153,9 @@ CT_Scale2D* CT_Scale2D::default_instance_ = NULL;
     m_flipV_attr(false)
     {
     }
+    CT_Transform2D::~CT_Transform2D()
+{
+    clear();    }
     bool CT_Transform2D::has_off() const
     {    
     return m_has_off;
@@ -60218,6 +60344,9 @@ CT_Transform2D* CT_Transform2D::default_instance_ = NULL;
     m_flipV_attr(false)
     {
     }
+    CT_GroupTransform2D::~CT_GroupTransform2D()
+{
+    clear();    }
     bool CT_GroupTransform2D::has_off() const
     {    
     return m_has_off;
@@ -60456,6 +60585,9 @@ CT_GroupTransform2D* CT_GroupTransform2D::default_instance_ = NULL;
     m_z_attr(NULL)
     {
     }
+    CT_Point3D::~CT_Point3D()
+{
+    clear();    }
     void CT_Point3D::clear()
     {    
     m_has_x_attr = false;
@@ -60598,6 +60730,9 @@ CT_Point3D* CT_Point3D::default_instance_ = NULL;
     m_dz_attr(NULL)
     {
     }
+    CT_Vector3D::~CT_Vector3D()
+{
+    clear();    }
     void CT_Vector3D::clear()
     {    
     m_has_dx_attr = false;
@@ -60740,6 +60875,9 @@ CT_Vector3D* CT_Vector3D::default_instance_ = NULL;
     m_rev_attr(NULL)
     {
     }
+    CT_SphereCoords::~CT_SphereCoords()
+{
+    clear();    }
     void CT_SphereCoords::clear()
     {    
     m_has_lat_attr = false;
@@ -60884,6 +61022,9 @@ CT_SphereCoords* CT_SphereCoords::default_instance_ = NULL;
     m_b_attr(NULL)
     {
     }
+    CT_RelativeRect::~CT_RelativeRect()
+{
+    clear();    }
     void CT_RelativeRect::clear()
     {    
     m_has_l_attr = false;
@@ -61067,6 +61208,9 @@ CT_RelativeRect* CT_RelativeRect::default_instance_ = NULL;
     m_prstClr(NULL)
     {
     }
+    CT_Color::~CT_Color()
+{
+    clear();    }
     bool CT_Color::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -61550,6 +61694,9 @@ CT_Color* CT_Color::default_instance_ = NULL;
 
     {
     }
+    CT_ColorMRU::~CT_ColorMRU()
+{
+    clear();    }
     CT_ScRgbColor* CT_ColorMRU::add_scrgbClr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -62111,6 +62258,9 @@ CT_ColorMRU* CT_ColorMRU::default_instance_ = NULL;
     m_name_attr("")
     {
     }
+    CT_EmbeddedWAVAudioFile::~CT_EmbeddedWAVAudioFile()
+{
+    clear();    }
     void CT_EmbeddedWAVAudioFile::clear()
     {    
     m_has_r_embed_attr = false;
@@ -62222,6 +62372,9 @@ CT_EmbeddedWAVAudioFile* CT_EmbeddedWAVAudioFile::default_instance_ = NULL;
     m_endSnd_attr(false)
     {
     }
+    CT_Hyperlink::~CT_Hyperlink()
+{
+    clear();    }
     bool CT_Hyperlink::has_snd() const
     {    
     return m_has_snd;
@@ -62543,6 +62696,9 @@ CT_Hyperlink* CT_Hyperlink::default_instance_ = NULL;
     m_noChangeShapeType_attr(false)
     {
     }
+    CT_ConnectorLocking::~CT_ConnectorLocking()
+{
+    clear();    }
     bool CT_ConnectorLocking::has_extLst() const
     {    
     return m_has_extLst;
@@ -62877,6 +63033,9 @@ CT_ConnectorLocking* CT_ConnectorLocking::default_instance_ = NULL;
     m_noTextEdit_attr(false)
     {
     }
+    CT_ShapeLocking::~CT_ShapeLocking()
+{
+    clear();    }
     bool CT_ShapeLocking::has_extLst() const
     {    
     return m_has_extLst;
@@ -63236,6 +63395,9 @@ CT_ShapeLocking* CT_ShapeLocking::default_instance_ = NULL;
     m_noCrop_attr(false)
     {
     }
+    CT_PictureLocking::~CT_PictureLocking()
+{
+    clear();    }
     bool CT_PictureLocking::has_extLst() const
     {    
     return m_has_extLst;
@@ -63587,6 +63749,9 @@ CT_PictureLocking* CT_PictureLocking::default_instance_ = NULL;
     m_noResize_attr(false)
     {
     }
+    CT_GroupLocking::~CT_GroupLocking()
+{
+    clear();    }
     bool CT_GroupLocking::has_extLst() const
     {    
     return m_has_extLst;
@@ -63836,6 +64001,9 @@ CT_GroupLocking* CT_GroupLocking::default_instance_ = NULL;
     m_noResize_attr(false)
     {
     }
+    CT_GraphicalObjectFrameLocking::~CT_GraphicalObjectFrameLocking()
+{
+    clear();    }
     bool CT_GraphicalObjectFrameLocking::has_extLst() const
     {    
     return m_has_extLst;
@@ -64068,6 +64236,9 @@ CT_GraphicalObjectFrameLocking* CT_GraphicalObjectFrameLocking::default_instance
     m_noChangeShapeType_attr(false)
     {
     }
+    CT_ContentPartLocking::~CT_ContentPartLocking()
+{
+    clear();    }
     bool CT_ContentPartLocking::has_extLst() const
     {    
     return m_has_extLst;
@@ -64394,6 +64565,9 @@ CT_ContentPartLocking* CT_ContentPartLocking::default_instance_ = NULL;
     m_title_attr("")
     {
     }
+    CT_NonVisualDrawingProps::~CT_NonVisualDrawingProps()
+{
+    clear();    }
     bool CT_NonVisualDrawingProps::has_hlinkClick() const
     {    
     return m_has_hlinkClick;
@@ -64653,6 +64827,9 @@ CT_NonVisualDrawingProps* CT_NonVisualDrawingProps::default_instance_ = NULL;
     m_txBox_attr(false)
     {
     }
+    CT_NonVisualDrawingShapeProps::~CT_NonVisualDrawingShapeProps()
+{
+    clear();    }
     bool CT_NonVisualDrawingShapeProps::has_spLocks() const
     {    
     return m_has_spLocks;
@@ -64775,6 +64952,9 @@ CT_NonVisualDrawingShapeProps* CT_NonVisualDrawingShapeProps::default_instance_ 
     m_extLst(NULL)
     {
     }
+    CT_NonVisualConnectorProperties::~CT_NonVisualConnectorProperties()
+{
+    clear();    }
     bool CT_NonVisualConnectorProperties::has_cxnSpLocks() const
     {    
     return m_has_cxnSpLocks;
@@ -64929,6 +65109,9 @@ CT_NonVisualConnectorProperties* CT_NonVisualConnectorProperties::default_instan
     m_preferRelativeResize_attr(false)
     {
     }
+    CT_NonVisualPictureProperties::~CT_NonVisualPictureProperties()
+{
+    clear();    }
     bool CT_NonVisualPictureProperties::has_picLocks() const
     {    
     return m_has_picLocks;
@@ -65047,6 +65230,9 @@ CT_NonVisualPictureProperties* CT_NonVisualPictureProperties::default_instance_ 
     m_extLst(NULL)
     {
     }
+    CT_NonVisualGroupDrawingShapeProps::~CT_NonVisualGroupDrawingShapeProps()
+{
+    clear();    }
     bool CT_NonVisualGroupDrawingShapeProps::has_grpSpLocks() const
     {    
     return m_has_grpSpLocks;
@@ -65141,6 +65327,9 @@ CT_NonVisualGroupDrawingShapeProps* CT_NonVisualGroupDrawingShapeProps::default_
     m_extLst(NULL)
     {
     }
+    CT_NonVisualGraphicFrameProperties::~CT_NonVisualGraphicFrameProperties()
+{
+    clear();    }
     bool CT_NonVisualGraphicFrameProperties::has_graphicFrameLocks() const
     {    
     return m_has_graphicFrameLocks;
@@ -65237,6 +65426,9 @@ CT_NonVisualGraphicFrameProperties* CT_NonVisualGraphicFrameProperties::default_
     m_isComment_attr(false)
     {
     }
+    CT_NonVisualContentPartProperties::~CT_NonVisualContentPartProperties()
+{
+    clear();    }
     bool CT_NonVisualContentPartProperties::has_cpLocks() const
     {    
     return m_has_cpLocks;
@@ -65355,6 +65547,9 @@ CT_NonVisualContentPartProperties* CT_NonVisualContentPartProperties::default_in
     m_uri_attr("")
     {
     }
+    CT_GraphicalObjectData::~CT_GraphicalObjectData()
+{
+    clear();    }
     void CT_GraphicalObjectData::clear()
     {    
     m_has_uri_attr = false;
@@ -65420,6 +65615,9 @@ CT_GraphicalObjectData* CT_GraphicalObjectData::default_instance_ = NULL;
     m_graphicData(NULL)
     {
     }
+    CT_GraphicalObject::~CT_GraphicalObject()
+{
+    clear();    }
     bool CT_GraphicalObject::has_graphicData() const
     {    
     return m_has_graphicData;
@@ -65485,6 +65683,9 @@ CT_GraphicalObject* CT_GraphicalObject::default_instance_ = NULL;
     m_bldStep_attr(NULL)
     {
     }
+    CT_AnimationDgmElement::~CT_AnimationDgmElement()
+{
+    clear();    }
     void CT_AnimationDgmElement::clear()
     {    
     m_has_id_attr = false;
@@ -65592,6 +65793,9 @@ CT_AnimationDgmElement* CT_AnimationDgmElement::default_instance_ = NULL;
     m_bldStep_attr(NULL)
     {
     }
+    CT_AnimationChartElement::~CT_AnimationChartElement()
+{
+    clear();    }
     void CT_AnimationChartElement::clear()
     {    
     m_has_seriesIdx_attr = false;
@@ -65712,6 +65916,9 @@ CT_AnimationChartElement* CT_AnimationChartElement::default_instance_ = NULL;
     m_chart(NULL)
     {
     }
+    CT_AnimationElementChoice::~CT_AnimationElementChoice()
+{
+    clear();    }
     bool CT_AnimationElementChoice::has_dgm() const
     {    
     return m_has_dgm;
@@ -65826,6 +66033,9 @@ CT_AnimationElementChoice* CT_AnimationElementChoice::default_instance_ = NULL;
     m_rev_attr(false)
     {
     }
+    CT_AnimationDgmBuildProperties::~CT_AnimationDgmBuildProperties()
+{
+    clear();    }
     void CT_AnimationDgmBuildProperties::clear()
     {    
     m_has_bld_attr = false;
@@ -65921,6 +66131,9 @@ CT_AnimationDgmBuildProperties* CT_AnimationDgmBuildProperties::default_instance
     m_animBg_attr(false)
     {
     }
+    CT_AnimationChartBuildProperties::~CT_AnimationChartBuildProperties()
+{
+    clear();    }
     void CT_AnimationChartBuildProperties::clear()
     {    
     m_has_bld_attr = false;
@@ -66016,6 +66229,9 @@ CT_AnimationChartBuildProperties* CT_AnimationChartBuildProperties::default_inst
     m_bldChart(NULL)
     {
     }
+    CT_AnimationGraphicalObjectBuildProperties::~CT_AnimationGraphicalObjectBuildProperties()
+{
+    clear();    }
     bool CT_AnimationGraphicalObjectBuildProperties::has_bldDgm() const
     {    
     return m_has_bldDgm;
@@ -66142,6 +66358,9 @@ CT_AnimationGraphicalObjectBuildProperties* CT_AnimationGraphicalObjectBuildProp
     m_effectDag(NULL)
     {
     }
+    CT_BackgrCT_TextEffectoundFormatting::~CT_BackgrCT_TextEffectoundFormatting()
+{
+    clear();    }
     bool CT_BackgrCT_TextEffectoundFormatting::has_noFill() const
     {    
     return m_has_noFill;
@@ -66924,6 +67143,9 @@ CT_BackgrCT_TextEffectoundFormatting* CT_BackgrCT_TextEffectoundFormatting::defa
     m_effectDag(NULL)
     {
     }
+    CT_WholeE2oFormatting::~CT_WholeE2oFormatting()
+{
+    clear();    }
     bool CT_WholeE2oFormatting::has_ln() const
     {    
     return m_has_ln;
@@ -67064,6 +67286,9 @@ CT_WholeE2oFormatting* CT_WholeE2oFormatting::default_instance_ = NULL;
 
     {
     }
+    CT_GvmlUseShapeRectangle::~CT_GvmlUseShapeRectangle()
+{
+    clear();    }
     void CT_GvmlUseShapeRectangle::clear()
     {    }
 
@@ -67104,6 +67329,9 @@ CT_GvmlUseShapeRectangle* CT_GvmlUseShapeRectangle::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_GvmlTextShape::~CT_GvmlTextShape()
+{
+    clear();    }
     bool CT_GvmlTextShape::has_txBody() const
     {    
     return m_has_txBody;
@@ -67276,6 +67504,9 @@ CT_GvmlTextShape* CT_GvmlTextShape::default_instance_ = NULL;
     m_cNvSpPr(NULL)
     {
     }
+    CT_GvmlShapeNonVisual::~CT_GvmlShapeNonVisual()
+{
+    clear();    }
     bool CT_GvmlShapeNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -67376,6 +67607,9 @@ CT_GvmlShapeNonVisual* CT_GvmlShapeNonVisual::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_GvmlShape::~CT_GvmlShape()
+{
+    clear();    }
     bool CT_GvmlShape::has_nvSpPr() const
     {    
     return m_has_nvSpPr;
@@ -67557,6 +67791,9 @@ CT_GvmlShape* CT_GvmlShape::default_instance_ = NULL;
     m_cNvCxnSpPr(NULL)
     {
     }
+    CT_GvmlConnectorNonVisual::~CT_GvmlConnectorNonVisual()
+{
+    clear();    }
     bool CT_GvmlConnectorNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -67655,6 +67892,9 @@ CT_GvmlConnectorNonVisual* CT_GvmlConnectorNonVisual::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_GvmlConnector::~CT_GvmlConnector()
+{
+    clear();    }
     bool CT_GvmlConnector::has_nvCxnSpPr() const
     {    
     return m_has_nvCxnSpPr;
@@ -67807,6 +68047,9 @@ CT_GvmlConnector* CT_GvmlConnector::default_instance_ = NULL;
     m_cNvPicPr(NULL)
     {
     }
+    CT_GvmlPictureNonVisual::~CT_GvmlPictureNonVisual()
+{
+    clear();    }
     bool CT_GvmlPictureNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -67907,6 +68150,9 @@ CT_GvmlPictureNonVisual* CT_GvmlPictureNonVisual::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_GvmlPicture::~CT_GvmlPicture()
+{
+    clear();    }
     bool CT_GvmlPicture::has_nvPicPr() const
     {    
     return m_has_nvPicPr;
@@ -68088,6 +68334,9 @@ CT_GvmlPicture* CT_GvmlPicture::default_instance_ = NULL;
     m_cNvGraphicFramePr(NULL)
     {
     }
+    CT_GvmlGraphicFrameNonVisual::~CT_GvmlGraphicFrameNonVisual()
+{
+    clear();    }
     bool CT_GvmlGraphicFrameNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -68186,6 +68435,9 @@ CT_GvmlGraphicFrameNonVisual* CT_GvmlGraphicFrameNonVisual::default_instance_ = 
     m_extLst(NULL)
     {
     }
+    CT_GvmlGraphicalObjectFrame::~CT_GvmlGraphicalObjectFrame()
+{
+    clear();    }
     bool CT_GvmlGraphicalObjectFrame::has_nvGraphicFramePr() const
     {    
     return m_has_nvGraphicFramePr;
@@ -68338,6 +68590,9 @@ CT_GvmlGraphicalObjectFrame* CT_GvmlGraphicalObjectFrame::default_instance_ = NU
     m_cNvGrpSpPr(NULL)
     {
     }
+    CT_GvmlGroupShapeNonVisual::~CT_GvmlGroupShapeNonVisual()
+{
+    clear();    }
     bool CT_GvmlGroupShapeNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -68434,6 +68689,9 @@ CT_GvmlGroupShapeNonVisual* CT_GvmlGroupShapeNonVisual::default_instance_ = NULL
     m_extLst(NULL)
     {
     }
+    CT_GvmlGroupShape::~CT_GvmlGroupShape()
+{
+    clear();    }
     bool CT_GvmlGroupShape::has_nvGrpSpPr() const
     {    
     return m_has_nvGrpSpPr;
@@ -69113,6 +69371,9 @@ CT_GvmlGroupShape* CT_GvmlGroupShape::default_instance_ = NULL;
     m_zoom_attr(NULL)
     {
     }
+    CT_Camera::~CT_Camera()
+{
+    clear();    }
     bool CT_Camera::has_rot() const
     {    
     return m_has_rot;
@@ -69284,6 +69545,9 @@ CT_Camera* CT_Camera::default_instance_ = NULL;
     m_dir_attr(NULL)
     {
     }
+    CT_LightRig::~CT_LightRig()
+{
+    clear();    }
     bool CT_LightRig::has_rot() const
     {    
     return m_has_rot;
@@ -69422,6 +69686,9 @@ CT_LightRig* CT_LightRig::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_Scene3D::~CT_Scene3D()
+{
+    clear();    }
     bool CT_Scene3D::has_camera() const
     {    
     return m_has_camera;
@@ -69578,6 +69845,9 @@ CT_Scene3D* CT_Scene3D::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_Backdrop::~CT_Backdrop()
+{
+    clear();    }
     bool CT_Backdrop::has_anchor() const
     {    
     return m_has_anchor;
@@ -69732,6 +70002,9 @@ CT_Backdrop* CT_Backdrop::default_instance_ = NULL;
     m_prst_attr(NULL)
     {
     }
+    CT_Bevel::~CT_Bevel()
+{
+    clear();    }
     void CT_Bevel::clear()
     {    
     m_has_w_attr = false;
@@ -69886,6 +70159,9 @@ CT_Bevel* CT_Bevel::default_instance_ = NULL;
     m_prstMaterial_attr(NULL)
     {
     }
+    CT_Shape3D::~CT_Shape3D()
+{
+    clear();    }
     bool CT_Shape3D::has_bevelT() const
     {    
     return m_has_bevelT;
@@ -70204,6 +70480,9 @@ CT_Shape3D* CT_Shape3D::default_instance_ = NULL;
     m_z_attr(NULL)
     {
     }
+    CT_FlatText::~CT_FlatText()
+{
+    clear();    }
     void CT_FlatText::clear()
     {    
     m_has_z_attr = false;
@@ -70272,6 +70551,9 @@ CT_FlatText* CT_FlatText::default_instance_ = NULL;
     m_thresh_attr(NULL)
     {
     }
+    CT_AlphaBiLevelEffect::~CT_AlphaBiLevelEffect()
+{
+    clear();    }
     void CT_AlphaBiLevelEffect::clear()
     {    
     m_has_thresh_attr = false;
@@ -70339,6 +70621,9 @@ CT_AlphaBiLevelEffect* CT_AlphaBiLevelEffect::default_instance_ = NULL;
 
     {
     }
+    CT_AlphaCeilingEffect::~CT_AlphaCeilingEffect()
+{
+    clear();    }
     void CT_AlphaCeilingEffect::clear()
     {    }
 
@@ -70372,6 +70657,9 @@ CT_AlphaCeilingEffect* CT_AlphaCeilingEffect::default_instance_ = NULL;
 
     {
     }
+    CT_AlphaFloorEffect::~CT_AlphaFloorEffect()
+{
+    clear();    }
     void CT_AlphaFloorEffect::clear()
     {    }
 
@@ -70416,6 +70704,9 @@ CT_AlphaFloorEffect* CT_AlphaFloorEffect::default_instance_ = NULL;
     m_prstClr(NULL)
     {
     }
+    CT_AlphaInverseEffect::~CT_AlphaInverseEffect()
+{
+    clear();    }
     bool CT_AlphaInverseEffect::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -70900,6 +71191,9 @@ CT_AlphaInverseEffect* CT_AlphaInverseEffect::default_instance_ = NULL;
     m_amt_attr(NULL)
     {
     }
+    CT_AlphaModulateFixedEffect::~CT_AlphaModulateFixedEffect()
+{
+    clear();    }
     void CT_AlphaModulateFixedEffect::clear()
     {    
     m_has_amt_attr = false;
@@ -70968,6 +71262,9 @@ CT_AlphaModulateFixedEffect* CT_AlphaModulateFixedEffect::default_instance_ = NU
     m_rad_attr(NULL)
     {
     }
+    CT_AlphaOutsetEffect::~CT_AlphaOutsetEffect()
+{
+    clear();    }
     void CT_AlphaOutsetEffect::clear()
     {    
     m_has_rad_attr = false;
@@ -71036,6 +71333,9 @@ CT_AlphaOutsetEffect* CT_AlphaOutsetEffect::default_instance_ = NULL;
     m_a_attr(NULL)
     {
     }
+    CT_AlphaReplaceEffect::~CT_AlphaReplaceEffect()
+{
+    clear();    }
     void CT_AlphaReplaceEffect::clear()
     {    
     m_has_a_attr = false;
@@ -71104,6 +71404,9 @@ CT_AlphaReplaceEffect* CT_AlphaReplaceEffect::default_instance_ = NULL;
     m_thresh_attr(NULL)
     {
     }
+    CT_BiLevelEffect::~CT_BiLevelEffect()
+{
+    clear();    }
     void CT_BiLevelEffect::clear()
     {    
     m_has_thresh_attr = false;
@@ -71174,6 +71477,9 @@ CT_BiLevelEffect* CT_BiLevelEffect::default_instance_ = NULL;
     m_grow_attr(false)
     {
     }
+    CT_BlurEffect::~CT_BlurEffect()
+{
+    clear();    }
     void CT_BlurEffect::clear()
     {    
     m_has_rad_attr = false;
@@ -71271,6 +71577,9 @@ CT_BlurEffect* CT_BlurEffect::default_instance_ = NULL;
     m_useA_attr(false)
     {
     }
+    CT_ColorChangeEffect::~CT_ColorChangeEffect()
+{
+    clear();    }
     bool CT_ColorChangeEffect::has_clrFrom() const
     {    
     return m_has_clrFrom;
@@ -71397,6 +71706,9 @@ CT_ColorChangeEffect* CT_ColorChangeEffect::default_instance_ = NULL;
     m_prstClr(NULL)
     {
     }
+    CT_ColorReplaceEffect::~CT_ColorReplaceEffect()
+{
+    clear();    }
     bool CT_ColorReplaceEffect::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -71880,6 +72192,9 @@ CT_ColorReplaceEffect* CT_ColorReplaceEffect::default_instance_ = NULL;
 
     {
     }
+    CT_DuotoneEffect::~CT_DuotoneEffect()
+{
+    clear();    }
     CT_ScRgbColor* CT_DuotoneEffect::add_scrgbClr()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -72451,6 +72766,9 @@ CT_DuotoneEffect* CT_DuotoneEffect::default_instance_ = NULL;
     m_rad_attr(NULL)
     {
     }
+    CT_GlowEffect::~CT_GlowEffect()
+{
+    clear();    }
     bool CT_GlowEffect::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -72968,6 +73286,9 @@ CT_GlowEffect* CT_GlowEffect::default_instance_ = NULL;
 
     {
     }
+    CT_GrayscaleEffect::~CT_GrayscaleEffect()
+{
+    clear();    }
     void CT_GrayscaleEffect::clear()
     {    }
 
@@ -73006,6 +73327,9 @@ CT_GrayscaleEffect* CT_GrayscaleEffect::default_instance_ = NULL;
     m_lum_attr(NULL)
     {
     }
+    CT_HSLEffect::~CT_HSLEffect()
+{
+    clear();    }
     void CT_HSLEffect::clear()
     {    
     m_has_hue_attr = false;
@@ -73160,6 +73484,9 @@ CT_HSLEffect* CT_HSLEffect::default_instance_ = NULL;
     m_dir_attr(NULL)
     {
     }
+    CT_InnerShadowEffect::~CT_InnerShadowEffect()
+{
+    clear();    }
     bool CT_InnerShadowEffect::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -73750,6 +74077,9 @@ CT_InnerShadowEffect* CT_InnerShadowEffect::default_instance_ = NULL;
     m_contrast_attr(NULL)
     {
     }
+    CT_LuminanceEffect::~CT_LuminanceEffect()
+{
+    clear();    }
     void CT_LuminanceEffect::clear()
     {    
     m_has_bright_attr = false;
@@ -73881,6 +74211,9 @@ CT_LuminanceEffect* CT_LuminanceEffect::default_instance_ = NULL;
     m_rotWithShape_attr(false)
     {
     }
+    CT_OuterShadowEffect::~CT_OuterShadowEffect()
+{
+    clear();    }
     bool CT_OuterShadowEffect::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -74685,6 +75018,9 @@ CT_OuterShadowEffect* CT_OuterShadowEffect::default_instance_ = NULL;
     m_dir_attr(NULL)
     {
     }
+    CT_PresetShadowEffect::~CT_PresetShadowEffect()
+{
+    clear();    }
     bool CT_PresetShadowEffect::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -75299,6 +75635,9 @@ CT_PresetShadowEffect* CT_PresetShadowEffect::default_instance_ = NULL;
     m_rotWithShape_attr(false)
     {
     }
+    CT_ReflectionEffect::~CT_ReflectionEffect()
+{
+    clear();    }
     void CT_ReflectionEffect::clear()
     {    
     m_has_blurRad_attr = false;
@@ -75814,6 +76153,9 @@ CT_ReflectionEffect* CT_ReflectionEffect::default_instance_ = NULL;
     m_ty_attr(NULL)
     {
     }
+    CT_RelativeOffsetEffect::~CT_RelativeOffsetEffect()
+{
+    clear();    }
     void CT_RelativeOffsetEffect::clear()
     {    
     m_has_tx_attr = false;
@@ -75917,6 +76259,9 @@ CT_RelativeOffsetEffect* CT_RelativeOffsetEffect::default_instance_ = NULL;
     m_rad_attr(NULL)
     {
     }
+    CT_SoftEdgesEffect::~CT_SoftEdgesEffect()
+{
+    clear();    }
     void CT_SoftEdgesEffect::clear()
     {    
     m_has_rad_attr = false;
@@ -75987,6 +76332,9 @@ CT_SoftEdgesEffect* CT_SoftEdgesEffect::default_instance_ = NULL;
     m_amt_attr(NULL)
     {
     }
+    CT_TintEffect::~CT_TintEffect()
+{
+    clear();    }
     void CT_TintEffect::clear()
     {    
     m_has_hue_attr = false;
@@ -76100,6 +76448,9 @@ CT_TintEffect* CT_TintEffect::default_instance_ = NULL;
     m_ty_attr(NULL)
     {
     }
+    CT_TransformEffect::~CT_TransformEffect()
+{
+    clear();    }
     void CT_TransformEffect::clear()
     {    
     m_has_sx_attr = false;
@@ -76342,6 +76693,9 @@ CT_TransformEffect* CT_TransformEffect::default_instance_ = NULL;
 
     {
     }
+    CT_NoFillProperties::~CT_NoFillProperties()
+{
+    clear();    }
     void CT_NoFillProperties::clear()
     {    }
 
@@ -76386,6 +76740,9 @@ CT_NoFillProperties* CT_NoFillProperties::default_instance_ = NULL;
     m_prstClr(NULL)
     {
     }
+    CT_SolidColorFillProperties::~CT_SolidColorFillProperties()
+{
+    clear();    }
     bool CT_SolidColorFillProperties::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -76872,6 +77229,9 @@ CT_SolidColorFillProperties* CT_SolidColorFillProperties::default_instance_ = NU
     m_scaled_attr(false)
     {
     }
+    CT_LinearShadeProperties::~CT_LinearShadeProperties()
+{
+    clear();    }
     void CT_LinearShadeProperties::clear()
     {    
     m_has_ang_attr = false;
@@ -76967,6 +77327,9 @@ CT_LinearShadeProperties* CT_LinearShadeProperties::default_instance_ = NULL;
     m_path_attr(NULL)
     {
     }
+    CT_PathShadeProperties::~CT_PathShadeProperties()
+{
+    clear();    }
     bool CT_PathShadeProperties::has_fillToRect() const
     {    
     return m_has_fillToRect;
@@ -77076,6 +77439,9 @@ CT_PathShadeProperties* CT_PathShadeProperties::default_instance_ = NULL;
     m_pos_attr(NULL)
     {
     }
+    CT_GradientStop::~CT_GradientStop()
+{
+    clear();    }
     bool CT_GradientStop::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -77593,6 +77959,9 @@ CT_GradientStop* CT_GradientStop::default_instance_ = NULL;
 
     {
     }
+    CT_GradientStopList::~CT_GradientStopList()
+{
+    clear();    }
     CT_GradientStop* CT_GradientStopList::add_gs()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -77697,6 +78066,9 @@ CT_GradientStopList* CT_GradientStopList::default_instance_ = NULL;
     m_rotWithShape_attr(false)
     {
     }
+    CT_GradientFillProperties::~CT_GradientFillProperties()
+{
+    clear();    }
     bool CT_GradientFillProperties::has_gsLst() const
     {    
     return m_has_gsLst;
@@ -77936,6 +78308,9 @@ CT_GradientFillProperties* CT_GradientFillProperties::default_instance_ = NULL;
     m_algn_attr(NULL)
     {
     }
+    CT_TileInfoProperties::~CT_TileInfoProperties()
+{
+    clear();    }
     void CT_TileInfoProperties::clear()
     {    
     m_has_tx_attr = false;
@@ -78179,6 +78554,9 @@ CT_TileInfoProperties* CT_TileInfoProperties::default_instance_ = NULL;
     m_fillRect(NULL)
     {
     }
+    CT_StretchInfoProperties::~CT_StretchInfoProperties()
+{
+    clear();    }
     bool CT_StretchInfoProperties::has_fillRect() const
     {    
     return m_has_fillRect;
@@ -78248,6 +78626,9 @@ CT_StretchInfoProperties* CT_StretchInfoProperties::default_instance_ = NULL;
     m_cstate_attr(NULL)
     {
     }
+    CT_Blip::~CT_Blip()
+{
+    clear();    }
     CT_AlphaBiLevelEffect* CT_Blip::add_alphaBiLevel()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -81566,6 +81947,9 @@ CT_Blip* CT_Blip::default_instance_ = NULL;
     m_rotWithShape_attr(false)
     {
     }
+    CT_BlipFillProperties::~CT_BlipFillProperties()
+{
+    clear();    }
     bool CT_BlipFillProperties::has_blip() const
     {    
     return m_has_blip;
@@ -81789,6 +82173,9 @@ CT_BlipFillProperties* CT_BlipFillProperties::default_instance_ = NULL;
     m_prst_attr(NULL)
     {
     }
+    CT_PatternFillProperties::~CT_PatternFillProperties()
+{
+    clear();    }
     bool CT_PatternFillProperties::has_fgClr() const
     {    
     return m_has_fgClr;
@@ -81914,6 +82301,9 @@ CT_PatternFillProperties* CT_PatternFillProperties::default_instance_ = NULL;
 
     {
     }
+    CT_GroupFillProperties::~CT_GroupFillProperties()
+{
+    clear();    }
     void CT_GroupFillProperties::clear()
     {    }
 
@@ -81958,6 +82348,9 @@ CT_GroupFillProperties* CT_GroupFillProperties::default_instance_ = NULL;
     m_grpFill(NULL)
     {
     }
+    CT_FillProperties::~CT_FillProperties()
+{
+    clear();    }
     bool CT_FillProperties::has_noFill() const
     {    
     return m_has_noFill;
@@ -82452,6 +82845,9 @@ CT_FillProperties* CT_FillProperties::default_instance_ = NULL;
     m_grpFill(NULL)
     {
     }
+    CT_FillEffect::~CT_FillEffect()
+{
+    clear();    }
     bool CT_FillEffect::has_noFill() const
     {    
     return m_has_noFill;
@@ -82948,6 +83344,9 @@ CT_FillEffect* CT_FillEffect::default_instance_ = NULL;
     m_blend_attr(NULL)
     {
     }
+    CT_FillOverlayEffect::~CT_FillOverlayEffect()
+{
+    clear();    }
     bool CT_FillOverlayEffect::has_noFill() const
     {    
     return m_has_noFill;
@@ -83466,6 +83865,9 @@ CT_FillOverlayEffect* CT_FillOverlayEffect::default_instance_ = NULL;
     m_ref_attr("")
     {
     }
+    CT_EffectReference::~CT_EffectReference()
+{
+    clear();    }
     void CT_EffectReference::clear()
     {    
     m_has_ref_attr = false;
@@ -83526,6 +83928,9 @@ CT_EffectReference* CT_EffectReference::default_instance_ = NULL;
     m_name_attr("")
     {
     }
+    CT_EffectContainer::~CT_EffectContainer()
+{
+    clear();    }
     void CT_EffectContainer::clear()
     {    
     m_has_type_attr = false;
@@ -83619,6 +84024,9 @@ CT_EffectContainer* CT_EffectContainer::default_instance_ = NULL;
     m_cont(NULL)
     {
     }
+    CT_AlphaModulateEffect::~CT_AlphaModulateEffect()
+{
+    clear();    }
     bool CT_AlphaModulateEffect::has_cont() const
     {    
     return m_has_cont;
@@ -83684,6 +84092,9 @@ CT_AlphaModulateEffect* CT_AlphaModulateEffect::default_instance_ = NULL;
     m_blend_attr(NULL)
     {
     }
+    CT_BlendEffect::~CT_BlendEffect()
+{
+    clear();    }
     bool CT_BlendEffect::has_cont() const
     {    
     return m_has_cont;
@@ -83795,6 +84206,9 @@ CT_BlendEffect* CT_BlendEffect::default_instance_ = NULL;
     m_softEdge(NULL)
     {
     }
+    CT_EffectList::~CT_EffectList()
+{
+    clear();    }
     bool CT_EffectList::has_blur() const
     {    
     return m_has_blur;
@@ -84063,6 +84477,9 @@ CT_EffectList* CT_EffectList::default_instance_ = NULL;
     m_effectDag(NULL)
     {
     }
+    CT_EffectProperties::~CT_EffectProperties()
+{
+    clear();    }
     bool CT_EffectProperties::has_effectLst() const
     {    
     return m_has_effectLst;
@@ -84177,6 +84594,9 @@ CT_EffectProperties* CT_EffectProperties::default_instance_ = NULL;
     m_fmla_attr(NULL)
     {
     }
+    CT_GeomGuide::~CT_GeomGuide()
+{
+    clear();    }
     void CT_GeomGuide::clear()
     {    
     m_has_name_attr = false;
@@ -84279,6 +84699,9 @@ CT_GeomGuide* CT_GeomGuide::default_instance_ = NULL;
 
     {
     }
+    CT_GeomGuideList::~CT_GeomGuideList()
+{
+    clear();    }
     CT_GeomGuide* CT_GeomGuideList::add_gd()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -84375,6 +84798,9 @@ CT_GeomGuideList* CT_GeomGuideList::default_instance_ = NULL;
     m_y_attr(NULL)
     {
     }
+    CT_AdjPoint2D::~CT_AdjPoint2D()
+{
+    clear();    }
     void CT_AdjPoint2D::clear()
     {    
     m_has_x_attr = false;
@@ -84484,6 +84910,9 @@ CT_AdjPoint2D* CT_AdjPoint2D::default_instance_ = NULL;
     m_b_attr(NULL)
     {
     }
+    CT_GeomRect::~CT_GeomRect()
+{
+    clear();    }
     void CT_GeomRect::clear()
     {    
     m_has_l_attr = false;
@@ -84669,6 +85098,9 @@ CT_GeomRect* CT_GeomRect::default_instance_ = NULL;
     m_maxY_attr(NULL)
     {
     }
+    CT_XYAdjustHandle::~CT_XYAdjustHandle()
+{
+    clear();    }
     bool CT_XYAdjustHandle::has_pos() const
     {    
     return m_has_pos;
@@ -84953,6 +85385,9 @@ CT_XYAdjustHandle* CT_XYAdjustHandle::default_instance_ = NULL;
     m_maxAng_attr(NULL)
     {
     }
+    CT_PolarAdjustHandle::~CT_PolarAdjustHandle()
+{
+    clear();    }
     bool CT_PolarAdjustHandle::has_pos() const
     {    
     return m_has_pos;
@@ -85227,6 +85662,9 @@ CT_PolarAdjustHandle* CT_PolarAdjustHandle::default_instance_ = NULL;
     m_ang_attr(NULL)
     {
     }
+    CT_ConnectionSite::~CT_ConnectionSite()
+{
+    clear();    }
     bool CT_ConnectionSite::has_pos() const
     {    
     return m_has_pos;
@@ -85323,6 +85761,9 @@ CT_ConnectionSite* CT_ConnectionSite::default_instance_ = NULL;
 
     {
     }
+    CT_AdjustHandleList::~CT_AdjustHandleList()
+{
+    clear();    }
     CT_XYAdjustHandle* CT_AdjustHandleList::add_ahXY()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -85473,6 +85914,9 @@ CT_AdjustHandleList* CT_AdjustHandleList::default_instance_ = NULL;
 
     {
     }
+    CT_ConnectionSiteList::~CT_ConnectionSiteList()
+{
+    clear();    }
     CT_ConnectionSite* CT_ConnectionSiteList::add_cxn()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -85569,6 +86013,9 @@ CT_ConnectionSiteList* CT_ConnectionSiteList::default_instance_ = NULL;
     m_idx_attr(0)
     {
     }
+    CT_Connection::~CT_Connection()
+{
+    clear();    }
     void CT_Connection::clear()
     {    
     m_has_id_attr = false;
@@ -85662,6 +86109,9 @@ CT_Connection* CT_Connection::default_instance_ = NULL;
     m_pt(NULL)
     {
     }
+    CT_Path2DMoveTo::~CT_Path2DMoveTo()
+{
+    clear();    }
     bool CT_Path2DMoveTo::has_pt() const
     {    
     return m_has_pt;
@@ -85725,6 +86175,9 @@ CT_Path2DMoveTo* CT_Path2DMoveTo::default_instance_ = NULL;
     m_pt(NULL)
     {
     }
+    CT_Path2DLineTo::~CT_Path2DLineTo()
+{
+    clear();    }
     bool CT_Path2DLineTo::has_pt() const
     {    
     return m_has_pt;
@@ -85794,6 +86247,9 @@ CT_Path2DLineTo* CT_Path2DLineTo::default_instance_ = NULL;
     m_swAng_attr(NULL)
     {
     }
+    CT_Path2DArcTo::~CT_Path2DArcTo()
+{
+    clear();    }
     void CT_Path2DArcTo::clear()
     {    
     m_has_wR_attr = false;
@@ -85966,6 +86422,9 @@ CT_Path2DArcTo* CT_Path2DArcTo::default_instance_ = NULL;
 
     {
     }
+    CT_Path2DQuadBezierTo::~CT_Path2DQuadBezierTo()
+{
+    clear();    }
     CT_AdjPoint2D* CT_Path2DQuadBezierTo::add_pt()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -86059,6 +86518,9 @@ CT_Path2DQuadBezierTo* CT_Path2DQuadBezierTo::default_instance_ = NULL;
 
     {
     }
+    CT_Path2DCubicBezierTo::~CT_Path2DCubicBezierTo()
+{
+    clear();    }
     CT_AdjPoint2D* CT_Path2DCubicBezierTo::add_pt()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -86152,6 +86614,9 @@ CT_Path2DCubicBezierTo* CT_Path2DCubicBezierTo::default_instance_ = NULL;
 
     {
     }
+    CT_Path2DClose::~CT_Path2DClose()
+{
+    clear();    }
     void CT_Path2DClose::clear()
     {    }
 
@@ -86194,6 +86659,9 @@ CT_Path2DClose* CT_Path2DClose::default_instance_ = NULL;
     m_extrusionOk_attr(false)
     {
     }
+    CT_Path2D::~CT_Path2D()
+{
+    clear();    }
     CT_Path2DClose* CT_Path2D::add_close()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -86906,6 +87374,9 @@ CT_Path2D* CT_Path2D::default_instance_ = NULL;
 
     {
     }
+    CT_Path2DList::~CT_Path2DList()
+{
+    clear();    }
     CT_Path2D* CT_Path2DList::add_path()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -87002,6 +87473,9 @@ CT_Path2DList* CT_Path2DList::default_instance_ = NULL;
     m_prst_attr(NULL)
     {
     }
+    CT_PresetGeometry2D::~CT_PresetGeometry2D()
+{
+    clear();    }
     bool CT_PresetGeometry2D::has_avLst() const
     {    
     return m_has_avLst;
@@ -87101,6 +87575,9 @@ CT_PresetGeometry2D* CT_PresetGeometry2D::default_instance_ = NULL;
     m_prst_attr(NULL)
     {
     }
+    CT_PresetTextShape::~CT_PresetTextShape()
+{
+    clear();    }
     bool CT_PresetTextShape::has_avLst() const
     {    
     return m_has_avLst;
@@ -87208,6 +87685,9 @@ CT_PresetTextShape* CT_PresetTextShape::default_instance_ = NULL;
     m_pathLst(NULL)
     {
     }
+    CT_CustomGeometry2D::~CT_CustomGeometry2D()
+{
+    clear();    }
     bool CT_CustomGeometry2D::has_avLst() const
     {    
     return m_has_avLst;
@@ -87420,6 +87900,9 @@ CT_CustomGeometry2D* CT_CustomGeometry2D::default_instance_ = NULL;
     m_len_attr(NULL)
     {
     }
+    CT_LineEndProperties::~CT_LineEndProperties()
+{
+    clear();    }
     void CT_LineEndProperties::clear()
     {    
     m_has_type_attr = false;
@@ -87557,6 +88040,9 @@ CT_LineEndProperties* CT_LineEndProperties::default_instance_ = NULL;
 
     {
     }
+    CT_LineJoinBevel::~CT_LineJoinBevel()
+{
+    clear();    }
     void CT_LineJoinBevel::clear()
     {    }
 
@@ -87590,6 +88076,9 @@ CT_LineJoinBevel* CT_LineJoinBevel::default_instance_ = NULL;
 
     {
     }
+    CT_LineJoinRound::~CT_LineJoinRound()
+{
+    clear();    }
     void CT_LineJoinRound::clear()
     {    }
 
@@ -87624,6 +88113,9 @@ CT_LineJoinRound* CT_LineJoinRound::default_instance_ = NULL;
     m_lim_attr(NULL)
     {
     }
+    CT_LineJoinMiterProperties::~CT_LineJoinMiterProperties()
+{
+    clear();    }
     void CT_LineJoinMiterProperties::clear()
     {    
     m_has_lim_attr = false;
@@ -87692,6 +88184,9 @@ CT_LineJoinMiterProperties* CT_LineJoinMiterProperties::default_instance_ = NULL
     m_val_attr(NULL)
     {
     }
+    CT_PresetLineDashProperties::~CT_PresetLineDashProperties()
+{
+    clear();    }
     void CT_PresetLineDashProperties::clear()
     {    
     m_has_val_attr = false;
@@ -87762,6 +88257,9 @@ CT_PresetLineDashProperties* CT_PresetLineDashProperties::default_instance_ = NU
     m_sp_attr(NULL)
     {
     }
+    CT_DashStop::~CT_DashStop()
+{
+    clear();    }
     void CT_DashStop::clear()
     {    
     m_has_d_attr = false;
@@ -87864,6 +88362,9 @@ CT_DashStop* CT_DashStop::default_instance_ = NULL;
 
     {
     }
+    CT_DashStopList::~CT_DashStopList()
+{
+    clear();    }
     CT_DashStop* CT_DashStopList::add_ds()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -87988,6 +88489,9 @@ CT_DashStopList* CT_DashStopList::default_instance_ = NULL;
     m_algn_attr(NULL)
     {
     }
+    CT_LineProperties::~CT_LineProperties()
+{
+    clear();    }
     bool CT_LineProperties::has_noFill() const
     {    
     return m_has_noFill;
@@ -89196,6 +89700,9 @@ CT_LineProperties* CT_LineProperties::default_instance_ = NULL;
     m_bwMode_attr(NULL)
     {
     }
+    CT_ShapeProperties::~CT_ShapeProperties()
+{
+    clear();    }
     bool CT_ShapeProperties::has_xfrm() const
     {    
     return m_has_xfrm;
@@ -90253,6 +90760,9 @@ CT_ShapeProperties* CT_ShapeProperties::default_instance_ = NULL;
     m_bwMode_attr(NULL)
     {
     }
+    CT_GroupShapeProperties::~CT_GroupShapeProperties()
+{
+    clear();    }
     bool CT_GroupShapeProperties::has_xfrm() const
     {    
     return m_has_xfrm;
@@ -91164,6 +91674,9 @@ CT_GroupShapeProperties* CT_GroupShapeProperties::default_instance_ = NULL;
     m_idx_attr(NULL)
     {
     }
+    CT_StyleMatrixReference::~CT_StyleMatrixReference()
+{
+    clear();    }
     bool CT_StyleMatrixReference::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -91694,6 +92207,9 @@ CT_StyleMatrixReference* CT_StyleMatrixReference::default_instance_ = NULL;
     m_idx_attr(NULL)
     {
     }
+    CT_FontReference::~CT_FontReference()
+{
+    clear();    }
     bool CT_FontReference::has_scrgbClr() const
     {    
     return m_has_scrgbClr;
@@ -92218,6 +92734,9 @@ CT_FontReference* CT_FontReference::default_instance_ = NULL;
     m_fontRef(NULL)
     {
     }
+    CT_ShapeStyle::~CT_ShapeStyle()
+{
+    clear();    }
     bool CT_ShapeStyle::has_lnRef() const
     {    
     return m_has_lnRef;
@@ -92376,6 +92895,9 @@ CT_ShapeStyle* CT_ShapeStyle::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_DefaultShapeDefinition::~CT_DefaultShapeDefinition()
+{
+    clear();    }
     bool CT_DefaultShapeDefinition::has_spPr() const
     {    
     return m_has_spPr;
@@ -92561,6 +93083,9 @@ CT_DefaultShapeDefinition* CT_DefaultShapeDefinition::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_ObjectStyleDefaults::~CT_ObjectStyleDefaults()
+{
+    clear();    }
     bool CT_ObjectStyleDefaults::has_spDef() const
     {    
     return m_has_spDef;
@@ -92710,6 +93235,9 @@ CT_ObjectStyleDefaults* CT_ObjectStyleDefaults::default_instance_ = NULL;
 
     {
     }
+    CT_EmptyElement::~CT_EmptyElement()
+{
+    clear();    }
     void CT_EmptyElement::clear()
     {    }
 
@@ -92768,6 +93296,9 @@ CT_EmptyElement* CT_EmptyElement::default_instance_ = NULL;
     m_folHlink_attr(NULL)
     {
     }
+    CT_ColorMapping::~CT_ColorMapping()
+{
+    clear();    }
     bool CT_ColorMapping::has_extLst() const
     {    
     return m_has_extLst;
@@ -93252,6 +93783,9 @@ CT_ColorMapping* CT_ColorMapping::default_instance_ = NULL;
     m_overrideClrMapping(NULL)
     {
     }
+    CT_ColorMappingOverride::~CT_ColorMappingOverride()
+{
+    clear();    }
     bool CT_ColorMappingOverride::has_masterClrMapping() const
     {    
     return m_has_masterClrMapping;
@@ -93366,6 +93900,9 @@ CT_ColorMappingOverride* CT_ColorMappingOverride::default_instance_ = NULL;
     m_clrMap(NULL)
     {
     }
+    CT_ColorSchemeAndMapping::~CT_ColorSchemeAndMapping()
+{
+    clear();    }
     bool CT_ColorSchemeAndMapping::has_clrScheme() const
     {    
     return m_has_clrScheme;
@@ -93457,6 +93994,9 @@ CT_ColorSchemeAndMapping* CT_ColorSchemeAndMapping::default_instance_ = NULL;
 
     {
     }
+    CT_ColorSchemeList::~CT_ColorSchemeList()
+{
+    clear();    }
     CT_ColorSchemeAndMapping* CT_ColorSchemeList::add_extraClrScheme()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -93561,6 +94101,9 @@ CT_ColorSchemeList* CT_ColorSchemeList::default_instance_ = NULL;
     m_name_attr("")
     {
     }
+    CT_OfficeStyleSheet::~CT_OfficeStyleSheet()
+{
+    clear();    }
     bool CT_OfficeStyleSheet::has_themeElements() const
     {    
     return m_has_themeElements;
@@ -93768,6 +94311,9 @@ CT_OfficeStyleSheet* CT_OfficeStyleSheet::default_instance_ = NULL;
     m_fmtScheme(NULL)
     {
     }
+    CT_BaseStylesOverride::~CT_BaseStylesOverride()
+{
+    clear();    }
     bool CT_BaseStylesOverride::has_clrScheme() const
     {    
     return m_has_clrScheme;
@@ -93891,6 +94437,9 @@ CT_BaseStylesOverride* CT_BaseStylesOverride::default_instance_ = NULL;
     m_clrMap(NULL)
     {
     }
+    CT_ClipboardStyleSheet::~CT_ClipboardStyleSheet()
+{
+    clear();    }
     bool CT_ClipboardStyleSheet::has_themeElements() const
     {    
     return m_has_themeElements;
@@ -94027,6 +94576,9 @@ CT_ClipboardStyleSheet* CT_ClipboardStyleSheet::default_instance_ = NULL;
     m_horzOverflow_attr(NULL)
     {
     }
+    CT_TableCellProperties::~CT_TableCellProperties()
+{
+    clear();    }
     bool CT_TableCellProperties::has_lnL() const
     {    
     return m_has_lnL;
@@ -95040,6 +95592,9 @@ CT_TableCellProperties* CT_TableCellProperties::default_instance_ = NULL;
 
     {
     }
+    CT_Headers::~CT_Headers()
+{
+    clear();    }
     void CT_Headers::add_header(const XSD::string_& _header)
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -95127,6 +95682,9 @@ CT_Headers* CT_Headers::default_instance_ = NULL;
     m_w_attr(NULL)
     {
     }
+    CT_TableCol::~CT_TableCol()
+{
+    clear();    }
     bool CT_TableCol::has_extLst() const
     {    
     return m_has_extLst;
@@ -95223,6 +95781,9 @@ CT_TableCol* CT_TableCol::default_instance_ = NULL;
 
     {
     }
+    CT_TableGrid::~CT_TableGrid()
+{
+    clear();    }
     CT_TableCol* CT_TableGrid::add_gridCol()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -95331,6 +95892,9 @@ CT_TableGrid* CT_TableGrid::default_instance_ = NULL;
     m_id_attr("")
     {
     }
+    CT_TableCell::~CT_TableCell()
+{
+    clear();    }
     bool CT_TableCell::has_txBody() const
     {    
     return m_has_txBody;
@@ -95576,6 +96140,9 @@ CT_TableCell* CT_TableCell::default_instance_ = NULL;
     m_h_attr(NULL)
     {
     }
+    CT_TableRow::~CT_TableRow()
+{
+    clear();    }
     CT_TableCell* CT_TableRow::add_tc()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -95795,6 +96362,9 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
     m_bandCol_attr(false)
     {
     }
+    CT_TableProperties::~CT_TableProperties()
+{
+    clear();    }
     bool CT_TableProperties::has_noFill() const
     {    
     return m_has_noFill;
@@ -97144,6 +97714,9 @@ CT_TableProperties* CT_TableProperties::default_instance_ = NULL;
     m_tblGrid(NULL)
     {
     }
+    CT_Table::~CT_Table()
+{
+    clear();    }
     bool CT_Table::has_tblPr() const
     {    
     return m_has_tblPr;
@@ -97320,6 +97893,9 @@ CT_Table* CT_Table::default_instance_ = NULL;
     m_prstMaterial_attr(NULL)
     {
     }
+    CT_Cell3D::~CT_Cell3D()
+{
+    clear();    }
     bool CT_Cell3D::has_bevel() const
     {    
     return m_has_bevel;
@@ -97477,6 +98053,9 @@ CT_Cell3D* CT_Cell3D::default_instance_ = NULL;
     m_lnRef(NULL)
     {
     }
+    CT_ThemeableLineStyle::~CT_ThemeableLineStyle()
+{
+    clear();    }
     bool CT_ThemeableLineStyle::has_ln() const
     {    
     return m_has_ln;
@@ -97609,6 +98188,9 @@ CT_ThemeableLineStyle* CT_ThemeableLineStyle::default_instance_ = NULL;
     m_i_attr(NULL)
     {
     }
+    CT_TableStyleTextStyle::~CT_TableStyleTextStyle()
+{
+    clear();    }
     bool CT_TableStyleTextStyle::has_font() const
     {    
     return m_has_font;
@@ -98501,6 +99083,9 @@ CT_TableStyleTextStyle* CT_TableStyleTextStyle::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_TableCellBorderStyle::~CT_TableCellBorderStyle()
+{
+    clear();    }
     bool CT_TableCellBorderStyle::has_left() const
     {    
     return m_has_left;
@@ -98802,6 +99387,9 @@ CT_TableCellBorderStyle* CT_TableCellBorderStyle::default_instance_ = NULL;
     m_effectRef(NULL)
     {
     }
+    CT_TableBackgroundStyle::~CT_TableBackgroundStyle()
+{
+    clear();    }
     bool CT_TableBackgroundStyle::has_fill() const
     {    
     return m_has_fill;
@@ -99070,6 +99658,9 @@ CT_TableBackgroundStyle* CT_TableBackgroundStyle::default_instance_ = NULL;
     m_cell3D(NULL)
     {
     }
+    CT_TableStyleCellStyle::~CT_TableStyleCellStyle()
+{
+    clear();    }
     bool CT_TableStyleCellStyle::has_tcBdr() const
     {    
     return m_has_tcBdr;
@@ -99242,6 +99833,9 @@ CT_TableStyleCellStyle* CT_TableStyleCellStyle::default_instance_ = NULL;
     m_tcStyle(NULL)
     {
     }
+    CT_TablePartStyle::~CT_TablePartStyle()
+{
+    clear();    }
     bool CT_TablePartStyle::has_tcTxStyle() const
     {    
     return m_has_tcTxStyle;
@@ -99366,6 +99960,9 @@ CT_TablePartStyle* CT_TablePartStyle::default_instance_ = NULL;
     m_styleName_attr("")
     {
     }
+    CT_TableStyle::~CT_TableStyle()
+{
+    clear();    }
     bool CT_TableStyle::has_tblBg() const
     {    
     return m_has_tblBg;
@@ -99894,6 +100491,9 @@ CT_TableStyle* CT_TableStyle::default_instance_ = NULL;
     m_def_attr(NULL)
     {
     }
+    CT_TableStyleList::~CT_TableStyleList()
+{
+    clear();    }
     CT_TableStyle* CT_TableStyleList::add_tblStyle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -100024,6 +100624,9 @@ CT_TableStyleList* CT_TableStyleList::default_instance_ = NULL;
     m_endParaRPr(NULL)
     {
     }
+    CT_TextParagraph::~CT_TextParagraph()
+{
+    clear();    }
     bool CT_TextParagraph::has_pPr() const
     {    
     return m_has_pPr;
@@ -100346,6 +100949,9 @@ CT_TextParagraph* CT_TextParagraph::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_TextListStyle::~CT_TextListStyle()
+{
+    clear();    }
     bool CT_TextListStyle::has_defPPr() const
     {    
     return m_has_defPPr;
@@ -100701,6 +101307,9 @@ CT_TextListStyle* CT_TextListStyle::default_instance_ = NULL;
     m_lnSpcReduction_attr(NULL)
     {
     }
+    CT_TextNormalAutofit::~CT_TextNormalAutofit()
+{
+    clear();    }
     void CT_TextNormalAutofit::clear()
     {    
     m_has_fontScale_attr = false;
@@ -100803,6 +101412,9 @@ CT_TextNormalAutofit* CT_TextNormalAutofit::default_instance_ = NULL;
 
     {
     }
+    CT_TextShapeAutofit::~CT_TextShapeAutofit()
+{
+    clear();    }
     void CT_TextShapeAutofit::clear()
     {    }
 
@@ -100836,6 +101448,9 @@ CT_TextShapeAutofit* CT_TextShapeAutofit::default_instance_ = NULL;
 
     {
     }
+    CT_TextNoAutofit::~CT_TextNoAutofit()
+{
+    clear();    }
     void CT_TextNoAutofit::clear()
     {    }
 
@@ -100922,6 +101537,9 @@ CT_TextNoAutofit* CT_TextNoAutofit::default_instance_ = NULL;
     m_compatLnSpc_attr(false)
     {
     }
+    CT_TextBodyProperties::~CT_TextBodyProperties()
+{
+    clear();    }
     bool CT_TextBodyProperties::has_prstTxWarp() const
     {    
     return m_has_prstTxWarp;
@@ -101861,6 +102479,9 @@ CT_TextBodyProperties* CT_TextBodyProperties::default_instance_ = NULL;
     m_lstStyle(NULL)
     {
     }
+    CT_TextBody::~CT_TextBody()
+{
+    clear();    }
     bool CT_TextBody::has_bodyPr() const
     {    
     return m_has_bodyPr;
@@ -102030,6 +102651,9 @@ CT_TextBody* CT_TextBody::default_instance_ = NULL;
 
     {
     }
+    CT_TextBulletColorFollowText::~CT_TextBulletColorFollowText()
+{
+    clear();    }
     void CT_TextBulletColorFollowText::clear()
     {    }
 
@@ -102063,6 +102687,9 @@ CT_TextBulletColorFollowText* CT_TextBulletColorFollowText::default_instance_ = 
 
     {
     }
+    CT_TextBulletSizeFollowText::~CT_TextBulletSizeFollowText()
+{
+    clear();    }
     void CT_TextBulletSizeFollowText::clear()
     {    }
 
@@ -102097,6 +102724,9 @@ CT_TextBulletSizeFollowText* CT_TextBulletSizeFollowText::default_instance_ = NU
     m_val_attr(NULL)
     {
     }
+    CT_TextBulletSizePercent::~CT_TextBulletSizePercent()
+{
+    clear();    }
     void CT_TextBulletSizePercent::clear()
     {    
     m_has_val_attr = false;
@@ -102165,6 +102795,9 @@ CT_TextBulletSizePercent* CT_TextBulletSizePercent::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TextBulletSizePoint::~CT_TextBulletSizePoint()
+{
+    clear();    }
     void CT_TextBulletSizePoint::clear()
     {    
     m_has_val_attr = false;
@@ -102232,6 +102865,9 @@ CT_TextBulletSizePoint* CT_TextBulletSizePoint::default_instance_ = NULL;
 
     {
     }
+    CT_TextBulletTypefaceFollowText::~CT_TextBulletTypefaceFollowText()
+{
+    clear();    }
     void CT_TextBulletTypefaceFollowText::clear()
     {    }
 
@@ -102268,6 +102904,9 @@ CT_TextBulletTypefaceFollowText* CT_TextBulletTypefaceFollowText::default_instan
     m_startAt_attr(NULL)
     {
     }
+    CT_TextAutonumberBullet::~CT_TextAutonumberBullet()
+{
+    clear();    }
     void CT_TextAutonumberBullet::clear()
     {    
     m_has_type_attr = false;
@@ -102371,6 +103010,9 @@ CT_TextAutonumberBullet* CT_TextAutonumberBullet::default_instance_ = NULL;
     m_char_attr("")
     {
     }
+    CT_TextCharBullet::~CT_TextCharBullet()
+{
+    clear();    }
     void CT_TextCharBullet::clear()
     {    
     m_has_char_attr = false;
@@ -102429,6 +103071,9 @@ CT_TextCharBullet* CT_TextCharBullet::default_instance_ = NULL;
     m_blip(NULL)
     {
     }
+    CT_TextBlipBullet::~CT_TextBlipBullet()
+{
+    clear();    }
     bool CT_TextBlipBullet::has_blip() const
     {    
     return m_has_blip;
@@ -102491,6 +103136,9 @@ CT_TextBlipBullet* CT_TextBlipBullet::default_instance_ = NULL;
 
     {
     }
+    CT_TextNoBullet::~CT_TextNoBullet()
+{
+    clear();    }
     void CT_TextNoBullet::clear()
     {    }
 
@@ -102531,6 +103179,9 @@ CT_TextNoBullet* CT_TextNoBullet::default_instance_ = NULL;
     m_charset_attr(0)
     {
     }
+    CT_TextFont::~CT_TextFont()
+{
+    clear();    }
     void CT_TextFont::clear()
     {    
     m_has_typeface_attr = false;
@@ -102693,6 +103344,9 @@ CT_TextFont* CT_TextFont::default_instance_ = NULL;
 
     {
     }
+    CT_TextUnderlineLineFollowText::~CT_TextUnderlineLineFollowText()
+{
+    clear();    }
     void CT_TextUnderlineLineFollowText::clear()
     {    }
 
@@ -102726,6 +103380,9 @@ CT_TextUnderlineLineFollowText* CT_TextUnderlineLineFollowText::default_instance
 
     {
     }
+    CT_TextUnderlineFillFollowText::~CT_TextUnderlineFillFollowText()
+{
+    clear();    }
     void CT_TextUnderlineFillFollowText::clear()
     {    }
 
@@ -102759,6 +103416,9 @@ CT_TextUnderlineFillFollowText* CT_TextUnderlineFillFollowText::default_instance
 
     {
     }
+    CT_TextUnderlineFillGroupWrapper::~CT_TextUnderlineFillGroupWrapper()
+{
+    clear();    }
     void CT_TextUnderlineFillGroupWrapper::clear()
     {    }
 
@@ -102873,6 +103533,9 @@ CT_TextUnderlineFillGroupWrapper* CT_TextUnderlineFillGroupWrapper::default_inst
     m_bmk_attr("")
     {
     }
+    CT_TextCharacterProperties::~CT_TextCharacterProperties()
+{
+    clear();    }
     bool CT_TextCharacterProperties::has_ln() const
     {    
     return m_has_ln;
@@ -104733,6 +105396,9 @@ CT_TextCharacterProperties* CT_TextCharacterProperties::default_instance_ = NULL
     m_val_attr(NULL)
     {
     }
+    CT_Boolean::~CT_Boolean()
+{
+    clear();    }
     void CT_Boolean::clear()
     {    
     m_has_val_attr = false;
@@ -104801,6 +105467,9 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TextSpacingPercent::~CT_TextSpacingPercent()
+{
+    clear();    }
     void CT_TextSpacingPercent::clear()
     {    
     m_has_val_attr = false;
@@ -104869,6 +105538,9 @@ CT_TextSpacingPercent* CT_TextSpacingPercent::default_instance_ = NULL;
     m_val_attr(NULL)
     {
     }
+    CT_TextSpacingPoint::~CT_TextSpacingPoint()
+{
+    clear();    }
     void CT_TextSpacingPoint::clear()
     {    
     m_has_val_attr = false;
@@ -104939,6 +105611,9 @@ CT_TextSpacingPoint* CT_TextSpacingPoint::default_instance_ = NULL;
     m_algn_attr(NULL)
     {
     }
+    CT_TextTabStop::~CT_TextTabStop()
+{
+    clear();    }
     void CT_TextTabStop::clear()
     {    
     m_has_pos_attr = false;
@@ -105041,6 +105716,9 @@ CT_TextTabStop* CT_TextTabStop::default_instance_ = NULL;
 
     {
     }
+    CT_TextTabStopList::~CT_TextTabStopList()
+{
+    clear();    }
     CT_TextTabStop* CT_TextTabStopList::add_tab()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -105135,6 +105813,9 @@ CT_TextTabStopList* CT_TextTabStopList::default_instance_ = NULL;
     m_rPr(NULL)
     {
     }
+    CT_TextLineBreak::~CT_TextLineBreak()
+{
+    clear();    }
     bool CT_TextLineBreak::has_rPr() const
     {    
     return m_has_rPr;
@@ -105200,6 +105881,9 @@ CT_TextLineBreak* CT_TextLineBreak::default_instance_ = NULL;
     m_spcPts(NULL)
     {
     }
+    CT_TextSpacing::~CT_TextSpacing()
+{
+    clear();    }
     bool CT_TextSpacing::has_spcPct() const
     {    
     return m_has_spcPct;
@@ -105366,6 +106050,9 @@ CT_TextSpacing* CT_TextSpacing::default_instance_ = NULL;
     m_hangingPunct_attr(false)
     {
     }
+    CT_TextParagraphProperties::~CT_TextParagraphProperties()
+{
+    clear();    }
     bool CT_TextParagraphProperties::has_lnSpc() const
     {    
     return m_has_lnSpc;
@@ -107246,6 +107933,9 @@ CT_TextParagraphProperties* CT_TextParagraphProperties::default_instance_ = NULL
     m_type_attr("")
     {
     }
+    CT_TextField::~CT_TextField()
+{
+    clear();    }
     bool CT_TextField::has_rPr() const
     {    
     return m_has_rPr;
@@ -107420,6 +108110,9 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
     m_t("")
     {
     }
+    CT_RegularTextRun::~CT_RegularTextRun()
+{
+    clear();    }
     bool CT_RegularTextRun::has_rPr() const
     {    
     return m_has_rPr;
@@ -107518,6 +108211,9 @@ CT_RegularTextRun* CT_RegularTextRun::default_instance_ = NULL;
     m_effectDag(NULL)
     {
     }
+    CT_BackgroundFormatting::~CT_BackgroundFormatting()
+{
+    clear();    }
     bool CT_BackgroundFormatting::has_noFill() const
     {    
     return m_has_noFill;
@@ -108300,6 +108996,9 @@ CT_BackgroundFormatting* CT_BackgroundFormatting::default_instance_ = NULL;
     m_contentType_attr("")
     {
     }
+    videoFile_element::~videoFile_element()
+{
+    clear();    }
     bool videoFile_element::has_extLst() const
     {    
     return m_has_extLst;
@@ -108421,6 +109120,9 @@ videoFile_element* videoFile_element::default_instance_ = NULL;
     m_graphicData(NULL)
     {
     }
+    graphic_element::~graphic_element()
+{
+    clear();    }
     bool graphic_element::has_graphicData() const
     {    
     return m_has_graphicData;
@@ -108489,6 +109191,9 @@ graphic_element* graphic_element::default_instance_ = NULL;
     m_cstate_attr(NULL)
     {
     }
+    blip_element::~blip_element()
+{
+    clear();    }
     CT_AlphaBiLevelEffect* blip_element::add_alphaBiLevel()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -111806,6 +112511,9 @@ blip_element* blip_element::default_instance_ = NULL;
     m_name_attr("")
     {
     }
+    theme_element::~theme_element()
+{
+    clear();    }
     bool theme_element::has_themeElements() const
     {    
     return m_has_themeElements;
@@ -112012,6 +112720,9 @@ theme_element* theme_element::default_instance_ = NULL;
     m_fmtScheme(NULL)
     {
     }
+    themeOverride_element::~themeOverride_element()
+{
+    clear();    }
     bool themeOverride_element::has_clrScheme() const
     {    
     return m_has_clrScheme;
@@ -112131,6 +112842,9 @@ themeOverride_element* themeOverride_element::default_instance_ = NULL;
 
     {
     }
+    themeManager_element::~themeManager_element()
+{
+    clear();    }
     void themeManager_element::clear()
     {    }
 
@@ -112166,6 +112880,9 @@ themeManager_element* themeManager_element::default_instance_ = NULL;
     m_tblGrid(NULL)
     {
     }
+    tbl_element::~tbl_element()
+{
+    clear();    }
     bool tbl_element::has_tblPr() const
     {    
     return m_has_tblPr;
@@ -112335,6 +113052,9 @@ tbl_element* tbl_element::default_instance_ = NULL;
     m_def_attr(NULL)
     {
     }
+    tblStyleLst_element::~tblStyleLst_element()
+{
+    clear();    }
     CT_TableStyle* tblStyleLst_element::add_tblStyle()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();

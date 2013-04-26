@@ -17,8 +17,11 @@ int main()
         CT_Body* pBodyElem = docElement.mutable_body();
         ns_s::ST_OnOff valAttr;
         valAttr.set_boolean(true);
+        pBodyElem->add_p()->add_r()->get_rPr().has_rPrChange();
         pBodyElem->add_p()->add_r()->mutable_rPr()->add_dstrike()->set_val_attr(valAttr);
         pBodyElem->add_p()->add_r()->mutable_rPr()->add_b();
+        pBodyElem->add_p()->add_r()->mutable_rPr()->add_vertAlign()->set_val_attr(ns_s::ST_VerticalAlignRun::_baseline_);
+        pBodyElem->add_ins();
         CT_P *pPElem = pBodyElem->add_p();
         pPElem->add_bookmarkStart()->set_id_attr(0);
         pPElem->add_bookmarkStart()->set_colFirst_attr(100);

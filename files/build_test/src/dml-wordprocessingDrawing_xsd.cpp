@@ -114,7 +114,7 @@ ST_WrapDistance* ST_WrapDistance::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -236,7 +236,7 @@ ST_PositionOffset* ST_PositionOffset::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -299,7 +299,7 @@ ST_AlignH* ST_AlignH::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -365,7 +365,7 @@ ST_RelFromH* ST_RelFromH::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -428,7 +428,7 @@ ST_AlignV* ST_AlignV::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -466,6 +466,9 @@ ST_RelFromV* ST_RelFromV::default_instance_ = NULL;
     m_b_attr(NULL)
     {
     }
+    CT_EffectExtent::~CT_EffectExtent()
+{
+    clear();    }
     void CT_EffectExtent::clear()
     {    
     m_has_l_attr = false;
@@ -655,6 +658,9 @@ CT_EffectExtent* CT_EffectExtent::default_instance_ = NULL;
     m_distR_attr(NULL)
     {
     }
+    CT_Inline::~CT_Inline()
+{
+    clear();    }
     bool CT_Inline::has_extent() const
     {    
     return m_has_extent;
@@ -975,6 +981,9 @@ CT_Inline* CT_Inline::default_instance_ = NULL;
     m_edited_attr(false)
     {
     }
+    CT_WrapPath::~CT_WrapPath()
+{
+    clear();    }
     bool CT_WrapPath::has_start() const
     {    
     return m_has_start;
@@ -1130,6 +1139,9 @@ CT_WrapPath* CT_WrapPath::default_instance_ = NULL;
 
     {
     }
+    CT_WrapNone::~CT_WrapNone()
+{
+    clear();    }
     void CT_WrapNone::clear()
     {    }
 
@@ -1174,6 +1186,9 @@ CT_WrapNone* CT_WrapNone::default_instance_ = NULL;
     m_distR_attr(NULL)
     {
     }
+    CT_WrapSquare::~CT_WrapSquare()
+{
+    clear();    }
     bool CT_WrapSquare::has_effectExtent() const
     {    
     return m_has_effectExtent;
@@ -1417,6 +1432,9 @@ CT_WrapSquare* CT_WrapSquare::default_instance_ = NULL;
     m_distR_attr(NULL)
     {
     }
+    CT_WrapTight::~CT_WrapTight()
+{
+    clear();    }
     bool CT_WrapTight::has_wrapPolygon() const
     {    
     return m_has_wrapPolygon;
@@ -1590,6 +1608,9 @@ CT_WrapTight* CT_WrapTight::default_instance_ = NULL;
     m_distR_attr(NULL)
     {
     }
+    CT_WrapThrough::~CT_WrapThrough()
+{
+    clear();    }
     bool CT_WrapThrough::has_wrapPolygon() const
     {    
     return m_has_wrapPolygon;
@@ -1761,6 +1782,9 @@ CT_WrapThrough* CT_WrapThrough::default_instance_ = NULL;
     m_distB_attr(NULL)
     {
     }
+    CT_WrapTopBottom::~CT_WrapTopBottom()
+{
+    clear();    }
     bool CT_WrapTopBottom::has_effectExtent() const
     {    
     return m_has_effectExtent;
@@ -1897,6 +1921,9 @@ CT_WrapTopBottom* CT_WrapTopBottom::default_instance_ = NULL;
     m_relativeFrom_attr(NULL)
     {
     }
+    CT_PosH::~CT_PosH()
+{
+    clear();    }
     bool CT_PosH::has_align() const
     {    
     return m_has_align;
@@ -2047,6 +2074,9 @@ CT_PosH* CT_PosH::default_instance_ = NULL;
     m_relativeFrom_attr(NULL)
     {
     }
+    CT_PosV::~CT_PosV()
+{
+    clear();    }
     bool CT_PosV::has_align() const
     {    
     return m_has_align;
@@ -2239,6 +2269,9 @@ CT_PosV* CT_PosV::default_instance_ = NULL;
     m_allowOverlap_attr(false)
     {
     }
+    CT_Anchor::~CT_Anchor()
+{
+    clear();    }
     bool CT_Anchor::has_simplePos() const
     {    
     return m_has_simplePos;
@@ -3148,6 +3181,9 @@ CT_Anchor* CT_Anchor::default_instance_ = NULL;
 
     {
     }
+    CT_TxbxContent::~CT_TxbxContent()
+{
+    clear();    }
     void CT_TxbxContent::clear()
     {    }
 
@@ -3186,6 +3222,9 @@ CT_TxbxContent* CT_TxbxContent::default_instance_ = NULL;
     m_id_attr(0)
     {
     }
+    CT_TextboxInfo::~CT_TextboxInfo()
+{
+    clear();    }
     bool CT_TextboxInfo::has_txbxContent() const
     {    
     return m_has_txbxContent;
@@ -3306,6 +3345,9 @@ CT_TextboxInfo* CT_TextboxInfo::default_instance_ = NULL;
     m_seq_attr(0)
     {
     }
+    CT_LinkedTextboxInformation::~CT_LinkedTextboxInformation()
+{
+    clear();    }
     bool CT_LinkedTextboxInformation::has_extLst() const
     {    
     return m_has_extLst;
@@ -3436,6 +3478,9 @@ CT_LinkedTextboxInformation* CT_LinkedTextboxInformation::default_instance_ = NU
     m_normalEastAsianFlow_attr(false)
     {
     }
+    CT_WordprocessingShape::~CT_WordprocessingShape()
+{
+    clear();    }
     bool CT_WordprocessingShape::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -3803,6 +3848,9 @@ CT_WordprocessingShape* CT_WordprocessingShape::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_GraphicFrame::~CT_GraphicFrame()
+{
+    clear();    }
     bool CT_GraphicFrame::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -3984,6 +4032,9 @@ CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
     m_cNvContentPartPr(NULL)
     {
     }
+    CT_WordprocessingContentPartNonVisual::~CT_WordprocessingContentPartNonVisual()
+{
+    clear();    }
     bool CT_WordprocessingContentPartNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -4084,6 +4135,9 @@ CT_WordprocessingContentPartNonVisual* CT_WordprocessingContentPartNonVisual::de
     m_r_id_attr(NULL)
     {
     }
+    CT_WordprocessingContentPart::~CT_WordprocessingContentPart()
+{
+    clear();    }
     bool CT_WordprocessingContentPart::has_nvContentPartPr() const
     {    
     return m_has_nvContentPartPr;
@@ -4280,6 +4334,9 @@ CT_WordprocessingContentPart* CT_WordprocessingContentPart::default_instance_ = 
     m_extLst(NULL)
     {
     }
+    CT_WordprocessingGroup::~CT_WordprocessingGroup()
+{
+    clear();    }
     bool CT_WordprocessingGroup::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -4866,6 +4923,9 @@ CT_WordprocessingGroup* CT_WordprocessingGroup::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    CT_WordprocessingCanvas::~CT_WordprocessingCanvas()
+{
+    clear();    }
     bool CT_WordprocessingCanvas::has_bg() const
     {    
     return m_has_bg;
@@ -5414,6 +5474,9 @@ CT_WordprocessingCanvas* CT_WordprocessingCanvas::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    wpc_element::~wpc_element()
+{
+    clear();    }
     bool wpc_element::has_bg() const
     {    
     return m_has_bg;
@@ -5965,6 +6028,9 @@ wpc_element* wpc_element::default_instance_ = NULL;
     m_extLst(NULL)
     {
     }
+    wgp_element::~wgp_element()
+{
+    clear();    }
     bool wgp_element::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -6566,6 +6632,9 @@ wgp_element* wgp_element::default_instance_ = NULL;
     m_normalEastAsianFlow_attr(false)
     {
     }
+    wsp_element::~wsp_element()
+{
+    clear();    }
     bool wsp_element::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -6942,6 +7011,9 @@ wsp_element* wsp_element::default_instance_ = NULL;
     m_distR_attr(NULL)
     {
     }
+    inline_element::~inline_element()
+{
+    clear();    }
     bool inline_element::has_extent() const
     {    
     return m_has_extent;
@@ -7307,6 +7379,9 @@ inline_element* inline_element::default_instance_ = NULL;
     m_allowOverlap_attr(false)
     {
     }
+    anchor_element::~anchor_element()
+{
+    clear();    }
     bool anchor_element::has_simplePos() const
     {    
     return m_has_simplePos;

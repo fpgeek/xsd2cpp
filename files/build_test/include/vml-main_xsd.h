@@ -419,6 +419,7 @@ namespace ns_v {
     {
     public:
         CT_Shape();
+        ~CT_Shape();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -620,6 +621,7 @@ namespace ns_v {
     {
     public:
         CT_Shapetype();
+        ~CT_Shapetype();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -798,6 +800,7 @@ namespace ns_v {
     {
     public:
         CT_Group();
+        ~CT_Group();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -1053,6 +1056,7 @@ namespace ns_v {
     {
     public:
         CT_Background();
+        ~CT_Background();
         bool has_fill() const;
         CT_Fill* mutable_fill();
         const CT_Fill& get_fill() const;
@@ -1105,6 +1109,7 @@ namespace ns_v {
     {
     public:
         CT_Fill();
+        ~CT_Fill();
         bool has_o_fill() const;
         ns_o::CT_Fill* mutable_o_fill();
         const ns_o::CT_Fill& get_o_fill() const;
@@ -1257,6 +1262,7 @@ namespace ns_v {
     {
     public:
         CT_Formulas();
+        ~CT_Formulas();
         CT_F* add_f();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -1283,6 +1289,7 @@ namespace ns_v {
     {
     public:
         CT_F();
+        ~CT_F();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_F& default_instance();
@@ -1300,6 +1307,7 @@ namespace ns_v {
     {
     public:
         CT_Handles();
+        ~CT_Handles();
         CT_H* add_h();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -1326,6 +1334,7 @@ namespace ns_v {
     {
     public:
         CT_H();
+        ~CT_H();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_H& default_instance();
@@ -1383,6 +1392,7 @@ namespace ns_v {
     {
     public:
         CT_ImageData();
+        ~CT_ImageData();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ImageData& default_instance();
@@ -1515,6 +1525,7 @@ namespace ns_v {
     {
     public:
         CT_Path();
+        ~CT_Path();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Path& default_instance();
@@ -1602,6 +1613,7 @@ namespace ns_v {
     {
     public:
         CT_Shadow();
+        ~CT_Shadow();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Shadow& default_instance();
@@ -1669,6 +1681,7 @@ namespace ns_v {
     {
     public:
         CT_Stroke();
+        ~CT_Stroke();
         bool has_o_left() const;
         ns_o::CT_StrokeChild* mutable_o_left();
         const ns_o::CT_StrokeChild& get_o_left() const;
@@ -1851,6 +1864,7 @@ namespace ns_v {
     {
     public:
         CT_Textbox();
+        ~CT_Textbox();
         bool has_w_txbxContent() const;
         ns_w::CT_TxbxContent* mutable_w_txbxContent();
         const ns_w::CT_TxbxContent& get_w_txbxContent() const;
@@ -1895,6 +1909,7 @@ namespace ns_v {
     {
     public:
         CT_TextPath();
+        ~CT_TextPath();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TextPath& default_instance();
@@ -1947,6 +1962,7 @@ namespace ns_v {
     {
     public:
         CT_Arc();
+        ~CT_Arc();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -2115,6 +2131,7 @@ namespace ns_v {
     {
     public:
         CT_Curve();
+        ~CT_Curve();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -2293,6 +2310,7 @@ namespace ns_v {
     {
     public:
         CT_Image();
+        ~CT_Image();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -2501,6 +2519,7 @@ namespace ns_v {
     {
     public:
         CT_Line();
+        ~CT_Line();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -2669,6 +2688,7 @@ namespace ns_v {
     {
     public:
         CT_Oval();
+        ~CT_Oval();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -2827,6 +2847,7 @@ namespace ns_v {
     {
     public:
         CT_PolyLine();
+        ~CT_PolyLine();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -2996,6 +3017,7 @@ namespace ns_v {
     {
     public:
         CT_Rect();
+        ~CT_Rect();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -3154,6 +3176,7 @@ namespace ns_v {
     {
     public:
         CT_RoundRect();
+        ~CT_RoundRect();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -3317,6 +3340,7 @@ namespace ns_v {
     {
     public:
         shape_element();
+        ~shape_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -3518,6 +3542,7 @@ namespace ns_v {
     {
     public:
         shapetype_element();
+        ~shapetype_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -3696,6 +3721,7 @@ namespace ns_v {
     {
     public:
         group_element();
+        ~group_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -3951,6 +3977,7 @@ namespace ns_v {
     {
     public:
         background_element();
+        ~background_element();
         bool has_fill() const;
         CT_Fill* mutable_fill();
         const CT_Fill& get_fill() const;
@@ -4003,6 +4030,7 @@ namespace ns_v {
     {
     public:
         fill_element();
+        ~fill_element();
         bool has_o_fill() const;
         ns_o::CT_Fill* mutable_o_fill();
         const ns_o::CT_Fill& get_o_fill() const;
@@ -4155,6 +4183,7 @@ namespace ns_v {
     {
     public:
         formulas_element();
+        ~formulas_element();
         CT_F* add_f();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -4181,6 +4210,7 @@ namespace ns_v {
     {
     public:
         handles_element();
+        ~handles_element();
         CT_H* add_h();
         void clear();
         void toXml(std::ostream& _outStream) const;
@@ -4207,6 +4237,7 @@ namespace ns_v {
     {
     public:
         imagedata_element();
+        ~imagedata_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const imagedata_element& default_instance();
@@ -4339,6 +4370,7 @@ namespace ns_v {
     {
     public:
         path_element();
+        ~path_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const path_element& default_instance();
@@ -4426,6 +4458,7 @@ namespace ns_v {
     {
     public:
         textbox_element();
+        ~textbox_element();
         bool has_w_txbxContent() const;
         ns_w::CT_TxbxContent* mutable_w_txbxContent();
         const ns_w::CT_TxbxContent& get_w_txbxContent() const;
@@ -4470,6 +4503,7 @@ namespace ns_v {
     {
     public:
         shadow_element();
+        ~shadow_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const shadow_element& default_instance();
@@ -4537,6 +4571,7 @@ namespace ns_v {
     {
     public:
         stroke_element();
+        ~stroke_element();
         bool has_o_left() const;
         ns_o::CT_StrokeChild* mutable_o_left();
         const ns_o::CT_StrokeChild& get_o_left() const;
@@ -4719,6 +4754,7 @@ namespace ns_v {
     {
     public:
         textpath_element();
+        ~textpath_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const textpath_element& default_instance();
@@ -4771,6 +4807,7 @@ namespace ns_v {
     {
     public:
         arc_element();
+        ~arc_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -4939,6 +4976,7 @@ namespace ns_v {
     {
     public:
         curve_element();
+        ~curve_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -5117,6 +5155,7 @@ namespace ns_v {
     {
     public:
         image_element();
+        ~image_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -5325,6 +5364,7 @@ namespace ns_v {
     {
     public:
         line_element();
+        ~line_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -5493,6 +5533,7 @@ namespace ns_v {
     {
     public:
         oval_element();
+        ~oval_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -5651,6 +5692,7 @@ namespace ns_v {
     {
     public:
         polyline_element();
+        ~polyline_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -5820,6 +5862,7 @@ namespace ns_v {
     {
     public:
         rect_element();
+        ~rect_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();
@@ -5978,6 +6021,7 @@ namespace ns_v {
     {
     public:
         roundrect_element();
+        ~roundrect_element();
         CT_Path* add_path();
         CT_Formulas* add_formulas();
         CT_Handles* add_handles();

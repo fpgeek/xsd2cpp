@@ -17,6 +17,9 @@ namespace ns_custom_properties {
 
     {
     }
+    CT_Properties::~CT_Properties()
+{
+    clear();    }
     CT_Property* CT_Properties::add_property()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -183,6 +186,9 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
     m_linkTarget_attr("")
     {
     }
+    CT_Property::~CT_Property()
+{
+    clear();    }
     bool CT_Property::has_vt_vector() const
     {    
     return m_has_vt_vector;
@@ -5819,6 +5825,9 @@ CT_Property* CT_Property::default_instance_ = NULL;
 
     {
     }
+    Properties_element::~Properties_element()
+{
+    clear();    }
     CT_Property* Properties_element::add_property()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();

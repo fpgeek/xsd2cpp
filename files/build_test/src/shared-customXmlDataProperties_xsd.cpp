@@ -17,6 +17,9 @@ namespace ns_customXml {
     m_uri_attr("")
     {
     }
+    CT_DatastoreSchemaRef::~CT_DatastoreSchemaRef()
+{
+    clear();    }
     void CT_DatastoreSchemaRef::clear()
     {    
     m_has_uri_attr = false;
@@ -74,6 +77,9 @@ CT_DatastoreSchemaRef* CT_DatastoreSchemaRef::default_instance_ = NULL;
 
     {
     }
+    CT_DatastoreSchemaRefs::~CT_DatastoreSchemaRefs()
+{
+    clear();    }
     CT_DatastoreSchemaRef* CT_DatastoreSchemaRefs::add_schemaRef()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -170,6 +176,9 @@ CT_DatastoreSchemaRefs* CT_DatastoreSchemaRefs::default_instance_ = NULL;
     m_itemID_attr(NULL)
     {
     }
+    CT_DatastoreItem::~CT_DatastoreItem()
+{
+    clear();    }
     bool CT_DatastoreItem::has_schemaRefs() const
     {    
     return m_has_schemaRefs;
@@ -269,6 +278,9 @@ CT_DatastoreItem* CT_DatastoreItem::default_instance_ = NULL;
     m_itemID_attr(NULL)
     {
     }
+    datastoreItem_element::~datastoreItem_element()
+{
+    clear();    }
     bool datastoreItem_element::has_schemaRefs() const
     {    
     return m_has_schemaRefs;

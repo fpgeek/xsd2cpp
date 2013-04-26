@@ -50,7 +50,7 @@ namespace ns_characteristics {
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -78,6 +78,9 @@ ST_Relation* ST_Relation::default_instance_ = NULL;
 
     {
     }
+    CT_AdditionalCharacteristics::~CT_AdditionalCharacteristics()
+{
+    clear();    }
     CT_Characteristic* CT_AdditionalCharacteristics::add_characteristic()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -178,6 +181,9 @@ CT_AdditionalCharacteristics* CT_AdditionalCharacteristics::default_instance_ = 
     m_vocabulary_attr("")
     {
     }
+    CT_Characteristic::~CT_Characteristic()
+{
+    clear();    }
     void CT_Characteristic::clear()
     {    
     m_has_name_attr = false;
@@ -320,6 +326,9 @@ CT_Characteristic* CT_Characteristic::default_instance_ = NULL;
 
     {
     }
+    additionalCharacteristics_element::~additionalCharacteristics_element()
+{
+    clear();    }
     CT_Characteristic* additionalCharacteristics_element::add_characteristic()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();

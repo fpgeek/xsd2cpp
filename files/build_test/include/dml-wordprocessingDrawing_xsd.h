@@ -248,6 +248,7 @@ namespace ns_wp {
     {
     public:
         CT_EffectExtent();
+        ~CT_EffectExtent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_EffectExtent& default_instance();
@@ -280,6 +281,7 @@ namespace ns_wp {
     {
     public:
         CT_Inline();
+        ~CT_Inline();
         bool has_extent() const;
         ns_a::CT_PositiveSize2D* mutable_extent();
         const ns_a::CT_PositiveSize2D& get_extent() const;
@@ -337,6 +339,7 @@ namespace ns_wp {
     {
     public:
         CT_WrapPath();
+        ~CT_WrapPath();
         bool has_start() const;
         ns_a::CT_Point2D* mutable_start();
         const ns_a::CT_Point2D& get_start() const;
@@ -373,6 +376,7 @@ namespace ns_wp {
     {
     public:
         CT_WrapNone();
+        ~CT_WrapNone();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_WrapNone& default_instance();
@@ -385,6 +389,7 @@ namespace ns_wp {
     {
     public:
         CT_WrapSquare();
+        ~CT_WrapSquare();
         bool has_effectExtent() const;
         CT_EffectExtent* mutable_effectExtent();
         const CT_EffectExtent& get_effectExtent() const;
@@ -427,6 +432,7 @@ namespace ns_wp {
     {
     public:
         CT_WrapTight();
+        ~CT_WrapTight();
         bool has_wrapPolygon() const;
         CT_WrapPath* mutable_wrapPolygon();
         const CT_WrapPath& get_wrapPolygon() const;
@@ -459,6 +465,7 @@ namespace ns_wp {
     {
     public:
         CT_WrapThrough();
+        ~CT_WrapThrough();
         bool has_wrapPolygon() const;
         CT_WrapPath* mutable_wrapPolygon();
         const CT_WrapPath& get_wrapPolygon() const;
@@ -491,6 +498,7 @@ namespace ns_wp {
     {
     public:
         CT_WrapTopBottom();
+        ~CT_WrapTopBottom();
         bool has_effectExtent() const;
         CT_EffectExtent* mutable_effectExtent();
         const CT_EffectExtent& get_effectExtent() const;
@@ -518,6 +526,7 @@ namespace ns_wp {
     {
     public:
         CT_PosH();
+        ~CT_PosH();
         bool has_align() const;
         ST_AlignH* mutable_align();
         const ST_AlignH& get_align() const;
@@ -545,6 +554,7 @@ namespace ns_wp {
     {
     public:
         CT_PosV();
+        ~CT_PosV();
         bool has_align() const;
         ST_AlignV* mutable_align();
         const ST_AlignV& get_align() const;
@@ -572,6 +582,7 @@ namespace ns_wp {
     {
     public:
         CT_Anchor();
+        ~CT_Anchor();
         bool has_simplePos() const;
         ns_a::CT_Point2D* mutable_simplePos();
         const ns_a::CT_Point2D& get_simplePos() const;
@@ -704,6 +715,7 @@ namespace ns_wp {
     {
     public:
         CT_TxbxContent();
+        ~CT_TxbxContent();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TxbxContent& default_instance();
@@ -716,6 +728,7 @@ namespace ns_wp {
     {
     public:
         CT_TextboxInfo();
+        ~CT_TextboxInfo();
         bool has_txbxContent() const;
         CT_TxbxContent* mutable_txbxContent();
         const CT_TxbxContent& get_txbxContent() const;
@@ -743,6 +756,7 @@ namespace ns_wp {
     {
     public:
         CT_LinkedTextboxInformation();
+        ~CT_LinkedTextboxInformation();
         bool has_extLst() const;
         ns_a::CT_OfficeArtExtensionList* mutable_extLst();
         const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
@@ -770,6 +784,7 @@ namespace ns_wp {
     {
     public:
         CT_WordprocessingShape();
+        ~CT_WordprocessingShape();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -832,6 +847,7 @@ namespace ns_wp {
     {
     public:
         CT_GraphicFrame();
+        ~CT_GraphicFrame();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -869,6 +885,7 @@ namespace ns_wp {
     {
     public:
         CT_WordprocessingContentPartNonVisual();
+        ~CT_WordprocessingContentPartNonVisual();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -891,6 +908,7 @@ namespace ns_wp {
     {
     public:
         CT_WordprocessingContentPart();
+        ~CT_WordprocessingContentPart();
         bool has_nvContentPartPr() const;
         CT_WordprocessingContentPartNonVisual* mutable_nvContentPartPr();
         const CT_WordprocessingContentPartNonVisual& get_nvContentPartPr() const;
@@ -928,6 +946,7 @@ namespace ns_wp {
     {
     public:
         CT_WordprocessingGroup();
+        ~CT_WordprocessingGroup();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -998,6 +1017,7 @@ namespace ns_wp {
     {
     public:
         CT_WordprocessingCanvas();
+        ~CT_WordprocessingCanvas();
         bool has_bg() const;
         ns_a::CT_BackgroundFormatting* mutable_bg();
         const ns_a::CT_BackgroundFormatting& get_bg() const;
@@ -1063,6 +1083,7 @@ namespace ns_wp {
     {
     public:
         wpc_element();
+        ~wpc_element();
         bool has_bg() const;
         ns_a::CT_BackgroundFormatting* mutable_bg();
         const ns_a::CT_BackgroundFormatting& get_bg() const;
@@ -1128,6 +1149,7 @@ namespace ns_wp {
     {
     public:
         wgp_element();
+        ~wgp_element();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -1198,6 +1220,7 @@ namespace ns_wp {
     {
     public:
         wsp_element();
+        ~wsp_element();
         bool has_cNvPr() const;
         ns_a::CT_NonVisualDrawingProps* mutable_cNvPr();
         const ns_a::CT_NonVisualDrawingProps& get_cNvPr() const;
@@ -1260,6 +1283,7 @@ namespace ns_wp {
     {
     public:
         inline_element();
+        ~inline_element();
         bool has_extent() const;
         ns_a::CT_PositiveSize2D* mutable_extent();
         const ns_a::CT_PositiveSize2D& get_extent() const;
@@ -1317,6 +1341,7 @@ namespace ns_wp {
     {
     public:
         anchor_element();
+        ~anchor_element();
         bool has_simplePos() const;
         ns_a::CT_Point2D* mutable_simplePos();
         const ns_a::CT_Point2D& get_simplePos() const;

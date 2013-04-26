@@ -113,7 +113,7 @@ ST_AlternateMathContentType* ST_AlternateMathContentType::default_instance_ = NU
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -175,7 +175,7 @@ ST_RType* ST_RType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -239,7 +239,7 @@ ST_How* ST_How::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -309,7 +309,7 @@ ST_BWMode* ST_BWMode::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -373,7 +373,7 @@ ST_ScreenSize* ST_ScreenSize::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -433,7 +433,7 @@ ST_InsetMode* ST_InsetMode::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -553,7 +553,7 @@ ST_ContentType* ST_ContentType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -615,7 +615,7 @@ ST_DiagramLayout* ST_DiagramLayout::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -675,7 +675,7 @@ ST_ExtrusionType* ST_ExtrusionType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -736,7 +736,7 @@ ST_ExtrusionRender* ST_ExtrusionRender::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -797,7 +797,7 @@ ST_ExtrusionPlane* ST_ExtrusionPlane::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -921,7 +921,7 @@ ST_CalloutDrop* ST_CalloutDrop::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -983,7 +983,7 @@ ST_CalloutPlacement* ST_CalloutPlacement::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1045,7 +1045,7 @@ ST_ConnectorType* ST_ConnectorType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1106,7 +1106,7 @@ ST_HrAlign* ST_HrAlign::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1228,7 +1228,7 @@ ST_OLELinkType* ST_OLELinkType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1288,7 +1288,7 @@ ST_OLEType* ST_OLEType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1348,7 +1348,7 @@ ST_OLEDrawAspect* ST_OLEDrawAspect::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1408,7 +1408,7 @@ ST_OLEUpdateMode* ST_OLEUpdateMode::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -1475,6 +1475,9 @@ ST_FillType* ST_FillType::default_instance_ = NULL;
     m_allowincell_attr(NULL)
     {
     }
+    CT_ShapeDefaults::~CT_ShapeDefaults()
+{
+    clear();    }
     bool CT_ShapeDefaults::has_v_fill() const
     {    
     return m_has_v_fill;
@@ -2062,6 +2065,9 @@ CT_ShapeDefaults* CT_ShapeDefaults::default_instance_ = NULL;
     m_contentType_attr(NULL)
     {
     }
+    CT_Ink::~CT_Ink()
+{
+    clear();    }
     void CT_Ink::clear()
     {    
     m_has_i_attr = false;
@@ -2214,6 +2220,9 @@ CT_Ink* CT_Ink::default_instance_ = NULL;
     m_sigprovurl_attr("")
     {
     }
+    CT_SignatureLine::~CT_SignatureLine()
+{
+    clear();    }
     void CT_SignatureLine::clear()
     {    
     m_has_v_ext_attr = false;
@@ -2648,6 +2657,9 @@ CT_SignatureLine* CT_SignatureLine::default_instance_ = NULL;
     m_v_ext_attr(NULL)
     {
     }
+    CT_ShapeLayout::~CT_ShapeLayout()
+{
+    clear();    }
     bool CT_ShapeLayout::has_idmap() const
     {    
     return m_has_idmap;
@@ -2805,6 +2817,9 @@ CT_ShapeLayout* CT_ShapeLayout::default_instance_ = NULL;
     m_data_attr("")
     {
     }
+    CT_IdMap::~CT_IdMap()
+{
+    clear();    }
     void CT_IdMap::clear()
     {    
     m_has_v_ext_attr = false;
@@ -2898,6 +2913,9 @@ CT_IdMap* CT_IdMap::default_instance_ = NULL;
     m_v_ext_attr(NULL)
     {
     }
+    CT_RegroupTable::~CT_RegroupTable()
+{
+    clear();    }
     CT_Entry* CT_RegroupTable::add_entry()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -3028,6 +3046,9 @@ CT_RegroupTable* CT_RegroupTable::default_instance_ = NULL;
     m_old_attr(0)
     {
     }
+    CT_Entry::~CT_Entry()
+{
+    clear();    }
     void CT_Entry::clear()
     {    
     m_has_new_attr = false;
@@ -3111,6 +3132,9 @@ CT_Entry* CT_Entry::default_instance_ = NULL;
     m_v_ext_attr(NULL)
     {
     }
+    CT_Rules::~CT_Rules()
+{
+    clear();    }
     CT_R* CT_Rules::add_r()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -3245,6 +3269,9 @@ CT_Rules* CT_Rules::default_instance_ = NULL;
     m_idref_attr("")
     {
     }
+    CT_R::~CT_R()
+{
+    clear();    }
     CT_Proxy* CT_R::add_proxy()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -3464,6 +3491,9 @@ CT_R* CT_R::default_instance_ = NULL;
     m_connectloc_attr(0)
     {
     }
+    CT_Proxy::~CT_Proxy()
+{
+    clear();    }
     void CT_Proxy::clear()
     {    
     m_has_start_attr = false;
@@ -3637,6 +3667,9 @@ CT_Proxy* CT_Proxy::default_instance_ = NULL;
     m_dgmbasetextscale_attr(0)
     {
     }
+    CT_Diagram::~CT_Diagram()
+{
+    clear();    }
     bool CT_Diagram::has_relationtable() const
     {    
     return m_has_relationtable;
@@ -3991,6 +4024,9 @@ CT_Diagram* CT_Diagram::default_instance_ = NULL;
     m_contentType_attr(NULL)
     {
     }
+    CT_EquationXml::~CT_EquationXml()
+{
+    clear();    }
     void CT_EquationXml::clear()
     {    
     m_has_contentType_attr = false;
@@ -4066,6 +4102,9 @@ CT_EquationXml* CT_EquationXml::default_instance_ = NULL;
     m_v_ext_attr(NULL)
     {
     }
+    CT_RelationTable::~CT_RelationTable()
+{
+    clear();    }
     CT_Relation* CT_RelationTable::add_rel()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -4200,6 +4239,9 @@ CT_RelationTable* CT_RelationTable::default_instance_ = NULL;
     m_idcntr_attr("")
     {
     }
+    CT_Relation::~CT_Relation()
+{
+    clear();    }
     void CT_Relation::clear()
     {    
     m_has_v_ext_attr = false;
@@ -4345,6 +4387,9 @@ CT_Relation* CT_Relation::default_instance_ = NULL;
     m_colors_attr("")
     {
     }
+    CT_ColorMru::~CT_ColorMru()
+{
+    clear();    }
     void CT_ColorMru::clear()
     {    
     m_has_v_ext_attr = false;
@@ -4446,6 +4491,9 @@ CT_ColorMru* CT_ColorMru::default_instance_ = NULL;
     m_extrusioncolor_attr(NULL)
     {
     }
+    CT_ColorMenu::~CT_ColorMenu()
+{
+    clear();    }
     void CT_ColorMenu::clear()
     {    
     m_has_v_ext_attr = false;
@@ -4664,6 +4712,9 @@ CT_ColorMenu* CT_ColorMenu::default_instance_ = NULL;
     m_matrix_attr("")
     {
     }
+    CT_Skew::~CT_Skew()
+{
+    clear();    }
     void CT_Skew::clear()
     {    
     m_has_v_ext_attr = false;
@@ -4931,6 +4982,9 @@ CT_Skew* CT_Skew::default_instance_ = NULL;
     m_lightharsh2_attr(NULL)
     {
     }
+    CT_Extrusion::~CT_Extrusion()
+{
+    clear();    }
     void CT_Extrusion::clear()
     {    
     m_has_v_ext_attr = false;
@@ -5945,6 +5999,9 @@ CT_Extrusion* CT_Extrusion::default_instance_ = NULL;
     m_minusy_attr(NULL)
     {
     }
+    CT_Callout::~CT_Callout()
+{
+    clear();    }
     void CT_Callout::clear()
     {    
     m_has_v_ext_attr = false;
@@ -6450,6 +6507,9 @@ CT_Callout* CT_Callout::default_instance_ = NULL;
     m_shapetype_attr(NULL)
     {
     }
+    CT_Lock::~CT_Lock()
+{
+    clear();    }
     void CT_Lock::clear()
     {    
     m_has_v_ext_attr = false;
@@ -6921,6 +6981,9 @@ CT_Lock* CT_Lock::default_instance_ = NULL;
     m_UpdateMode_attr(NULL)
     {
     }
+    CT_OLEObject::~CT_OLEObject()
+{
+    clear();    }
     bool CT_OLEObject::has_LinkType() const
     {    
     return m_has_LinkType;
@@ -7248,6 +7311,9 @@ CT_OLEObject* CT_OLEObject::default_instance_ = NULL;
     m_v_ext_attr(NULL)
     {
     }
+    CT_Complex::~CT_Complex()
+{
+    clear();    }
     void CT_Complex::clear()
     {    
     m_has_v_ext_attr = false;
@@ -7368,6 +7434,9 @@ CT_Complex* CT_Complex::default_instance_ = NULL;
     m_forcedash_attr(NULL)
     {
     }
+    CT_StrokeChild::~CT_StrokeChild()
+{
+    clear();    }
     void CT_StrokeChild::clear()
     {    
     m_has_v_ext_attr = false;
@@ -8256,6 +8325,9 @@ CT_StrokeChild* CT_StrokeChild::default_instance_ = NULL;
     m_v_attr("")
     {
     }
+    CT_ClipPath::~CT_ClipPath()
+{
+    clear();    }
     void CT_ClipPath::clear()
     {    
     m_has_v_attr = false;
@@ -8316,6 +8388,9 @@ CT_ClipPath* CT_ClipPath::default_instance_ = NULL;
     m_type_attr(NULL)
     {
     }
+    CT_Fill::~CT_Fill()
+{
+    clear();    }
     void CT_Fill::clear()
     {    
     m_has_v_ext_attr = false;
@@ -8453,6 +8528,9 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
     m_allowincell_attr(NULL)
     {
     }
+    shapedefaults_element::~shapedefaults_element()
+{
+    clear();    }
     bool shapedefaults_element::has_v_fill() const
     {    
     return m_has_v_fill;
@@ -9042,6 +9120,9 @@ shapedefaults_element* shapedefaults_element::default_instance_ = NULL;
     m_v_ext_attr(NULL)
     {
     }
+    shapelayout_element::~shapelayout_element()
+{
+    clear();    }
     bool shapelayout_element::has_idmap() const
     {    
     return m_has_idmap;
@@ -9221,6 +9302,9 @@ shapelayout_element* shapelayout_element::default_instance_ = NULL;
     m_sigprovurl_attr("")
     {
     }
+    signatureline_element::~signatureline_element()
+{
+    clear();    }
     void signatureline_element::clear()
     {    
     m_has_v_ext_attr = false;
@@ -9653,6 +9737,9 @@ signatureline_element* signatureline_element::default_instance_ = NULL;
     m_contentType_attr(NULL)
     {
     }
+    ink_element::~ink_element()
+{
+    clear();    }
     void ink_element::clear()
     {    
     m_has_i_attr = false;
@@ -9801,6 +9888,9 @@ ink_element* ink_element::default_instance_ = NULL;
     m_dgmbasetextscale_attr(0)
     {
     }
+    diagram_element::~diagram_element()
+{
+    clear();    }
     bool diagram_element::has_relationtable() const
     {    
     return m_has_relationtable;
@@ -10155,6 +10245,9 @@ diagram_element* diagram_element::default_instance_ = NULL;
     m_contentType_attr(NULL)
     {
     }
+    equationxml_element::~equationxml_element()
+{
+    clear();    }
     void equationxml_element::clear()
     {    
     m_has_contentType_attr = false;
@@ -10240,6 +10333,9 @@ equationxml_element* equationxml_element::default_instance_ = NULL;
     m_matrix_attr("")
     {
     }
+    skew_element::~skew_element()
+{
+    clear();    }
     void skew_element::clear()
     {    
     m_has_v_ext_attr = false;
@@ -10507,6 +10603,9 @@ skew_element* skew_element::default_instance_ = NULL;
     m_lightharsh2_attr(NULL)
     {
     }
+    extrusion_element::~extrusion_element()
+{
+    clear();    }
     void extrusion_element::clear()
     {    
     m_has_v_ext_attr = false;
@@ -11521,6 +11620,9 @@ extrusion_element* extrusion_element::default_instance_ = NULL;
     m_minusy_attr(NULL)
     {
     }
+    callout_element::~callout_element()
+{
+    clear();    }
     void callout_element::clear()
     {    
     m_has_v_ext_attr = false;
@@ -12026,6 +12128,9 @@ callout_element* callout_element::default_instance_ = NULL;
     m_shapetype_attr(NULL)
     {
     }
+    lock_element::~lock_element()
+{
+    clear();    }
     void lock_element::clear()
     {    
     m_has_v_ext_attr = false;
@@ -12497,6 +12602,9 @@ lock_element* lock_element::default_instance_ = NULL;
     m_UpdateMode_attr(NULL)
     {
     }
+    OLEObject_element::~OLEObject_element()
+{
+    clear();    }
     bool OLEObject_element::has_LinkType() const
     {    
     return m_has_LinkType;
@@ -12824,6 +12932,9 @@ OLEObject_element* OLEObject_element::default_instance_ = NULL;
     m_v_ext_attr(NULL)
     {
     }
+    complex_element::~complex_element()
+{
+    clear();    }
     void complex_element::clear()
     {    
     m_has_v_ext_attr = false;
@@ -12944,6 +13055,9 @@ complex_element* complex_element::default_instance_ = NULL;
     m_forcedash_attr(NULL)
     {
     }
+    left_element::~left_element()
+{
+    clear();    }
     void left_element::clear()
     {    
     m_has_v_ext_attr = false;
@@ -13884,6 +13998,9 @@ left_element* left_element::default_instance_ = NULL;
     m_forcedash_attr(NULL)
     {
     }
+    top_element::~top_element()
+{
+    clear();    }
     void top_element::clear()
     {    
     m_has_v_ext_attr = false;
@@ -14824,6 +14941,9 @@ top_element* top_element::default_instance_ = NULL;
     m_forcedash_attr(NULL)
     {
     }
+    right_element::~right_element()
+{
+    clear();    }
     void right_element::clear()
     {    
     m_has_v_ext_attr = false;
@@ -15764,6 +15884,9 @@ right_element* right_element::default_instance_ = NULL;
     m_forcedash_attr(NULL)
     {
     }
+    bottom_element::~bottom_element()
+{
+    clear();    }
     void bottom_element::clear()
     {    
     m_has_v_ext_attr = false;
@@ -16704,6 +16827,9 @@ bottom_element* bottom_element::default_instance_ = NULL;
     m_forcedash_attr(NULL)
     {
     }
+    column_element::~column_element()
+{
+    clear();    }
     void column_element::clear()
     {    
     m_has_v_ext_attr = false;
@@ -17592,6 +17718,9 @@ column_element* column_element::default_instance_ = NULL;
     m_v_attr("")
     {
     }
+    clippath_element::~clippath_element()
+{
+    clear();    }
     void clippath_element::clear()
     {    
     m_has_v_attr = false;
@@ -17652,6 +17781,9 @@ clippath_element* clippath_element::default_instance_ = NULL;
     m_type_attr(NULL)
     {
     }
+    fill_element::~fill_element()
+{
+    clear();    }
     void fill_element::clear()
     {    
     m_has_v_ext_attr = false;

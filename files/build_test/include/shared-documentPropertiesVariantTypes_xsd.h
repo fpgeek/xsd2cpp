@@ -195,6 +195,7 @@ namespace ns_vt {
     {
     public:
         CT_Empty();
+        ~CT_Empty();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Empty& default_instance();
@@ -207,6 +208,7 @@ namespace ns_vt {
     {
     public:
         CT_Null();
+        ~CT_Null();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Null& default_instance();
@@ -219,6 +221,7 @@ namespace ns_vt {
     {
     public:
         CT_Vector();
+        ~CT_Vector();
         CT_Variant* add_variant();
         void add_i1(const XSD::byte_& _i1);
         void add_i2(const XSD::short_& _i2);
@@ -369,6 +372,7 @@ namespace ns_vt {
     {
     public:
         CT_Array();
+        ~CT_Array();
         CT_Variant* add_variant();
         void add_i1(const XSD::byte_& _i1);
         void add_i2(const XSD::short_& _i2);
@@ -506,6 +510,7 @@ namespace ns_vt {
     {
     public:
         CT_Variant();
+        ~CT_Variant();
         bool has_variant() const;
         CT_Variant* mutable_variant();
         const CT_Variant& get_variant() const;
@@ -688,6 +693,7 @@ namespace ns_vt {
     {
     public:
         CT_Vstream();
+        ~CT_Vstream();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Vstream& default_instance();
@@ -705,6 +711,7 @@ namespace ns_vt {
     {
     public:
         variant_element();
+        ~variant_element();
         bool has_variant() const;
         CT_Variant* mutable_variant();
         const CT_Variant& get_variant() const;
@@ -887,6 +894,7 @@ namespace ns_vt {
     {
     public:
         vector_element();
+        ~vector_element();
         CT_Variant* add_variant();
         void add_i1(const XSD::byte_& _i1);
         void add_i2(const XSD::short_& _i2);
@@ -1037,6 +1045,7 @@ namespace ns_vt {
     {
     public:
         array_element();
+        ~array_element();
         CT_Variant* add_variant();
         void add_i1(const XSD::byte_& _i1);
         void add_i2(const XSD::short_& _i2);
@@ -1188,6 +1197,7 @@ namespace ns_vt {
     {
     public:
         empty_element();
+        ~empty_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const empty_element& default_instance();
@@ -1200,6 +1210,7 @@ namespace ns_vt {
     {
     public:
         null_element();
+        ~null_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const null_element& default_instance();
@@ -1387,6 +1398,7 @@ namespace ns_vt {
     {
     public:
         vstream_element();
+        ~vstream_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const vstream_element& default_instance();

@@ -11,11 +11,11 @@ s227
 
 CCheck dependencies
 r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies1cce94723a2ab741^1b1095723a2ab741^---0#1#0#--18"Check dependencies36"C9ABCD9A-DF9F-4CF8-AD8A-6D4547E0FDD9-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciese63f48e2572ab741^3a9548e2572ab741^---0#1#0#--18"Check dependencies36"0E012855-9F56-44DD-BBD3-FFCC9885F5E2-
 
 CPhaseScriptExecution "CMake Rules" /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-8063ABCDE28D4D4CBFB6956A.sh
-s388643442.583439
-e388643442.635246
+s388650978.284222
+e388650978.330177
 r1
 xPhaseScriptExecution
 xCMake Rules
@@ -24,5 +24,5 @@ oecho ""
 o
 omake -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.make
 omake[1]: `CMakeFiles/cmake.check_cache' is up to date.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'b6f395723a2ab741^4d9ea2723a2ab741^-170"echo ""make -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.makemake[1]: `CMakeFiles/cmake.check_cache' is up to date.3(21%IDEActivityLogMessage2@8"echo ""-388643442#0#8#-0#-----2@106"make -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.make-388643442#9#106#-0#-----2@55"make[1]: `CMakeFiles/cmake.check_cache' is up to date.-388643442#115#55#-0#-----0#0#0#--361"PhaseScriptExecution "CMake Rules" build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-8063ABCDE28D4D4CBFB6956A.sh    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    /bin/sh -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-8063ABCDE28D4D4CBFB6956A.sh36"8B84D818-E991-49F2-B374-1140BF6C14A2-
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection37"Run custom shell script 'CMake Rules'b82249e2572ab741^dc7e55e2572ab741^-170"echo ""make -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.makemake[1]: `CMakeFiles/cmake.check_cache' is up to date.3(21%IDEActivityLogMessage2@8"echo ""-388650978#0#8#-0#-----2@106"make -f /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/CMakeScripts/ReRunCMake.make-388650978#9#106#-0#-----2@55"make[1]: `CMakeFiles/cmake.check_cache' is up to date.-388650978#115#55#-0#-----0#0#0#--361"PhaseScriptExecution "CMake Rules" build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-8063ABCDE28D4D4CBFB6956A.sh    cd /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test    /bin/sh -c /Users/fpgeek/Develop/pycharm_project/xsd2cpp/files/build_test/build/xsd2cpp_build_test.build/Debug/ZERO_CHECK.build/Script-8063ABCDE28D4D4CBFB6956A.sh36"DDC47B76-367D-4D50-975F-35CBE4B10A14-
 

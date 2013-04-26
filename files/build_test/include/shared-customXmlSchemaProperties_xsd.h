@@ -32,6 +32,7 @@ namespace ns_sl {
     {
     public:
         CT_Schema();
+        ~CT_Schema();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Schema& default_instance();
@@ -64,6 +65,7 @@ namespace ns_sl {
     {
     public:
         CT_SchemaLibrary();
+        ~CT_SchemaLibrary();
         CT_Schema* add_schema();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -90,6 +92,7 @@ namespace ns_sl {
     {
     public:
         schemaLibrary_element();
+        ~schemaLibrary_element();
         CT_Schema* add_schema();
         void clear();
         void toXml(std::ostream& _outStream) const;

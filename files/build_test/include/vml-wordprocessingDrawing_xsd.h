@@ -230,6 +230,7 @@ namespace ns_w10 {
     {
     public:
         CT_Border();
+        ~CT_Border();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Border& default_instance();
@@ -257,6 +258,7 @@ namespace ns_w10 {
     {
     public:
         CT_Wrap();
+        ~CT_Wrap();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Wrap& default_instance();
@@ -289,6 +291,7 @@ namespace ns_w10 {
     {
     public:
         CT_AnchorLock();
+        ~CT_AnchorLock();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AnchorLock& default_instance();
@@ -301,6 +304,7 @@ namespace ns_w10 {
     {
     public:
         bordertop_element();
+        ~bordertop_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const bordertop_element& default_instance();
@@ -328,6 +332,7 @@ namespace ns_w10 {
     {
     public:
         borderleft_element();
+        ~borderleft_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const borderleft_element& default_instance();
@@ -355,6 +360,7 @@ namespace ns_w10 {
     {
     public:
         borderright_element();
+        ~borderright_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const borderright_element& default_instance();
@@ -382,6 +388,7 @@ namespace ns_w10 {
     {
     public:
         borderbottom_element();
+        ~borderbottom_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const borderbottom_element& default_instance();
@@ -409,6 +416,7 @@ namespace ns_w10 {
     {
     public:
         wrap_element();
+        ~wrap_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const wrap_element& default_instance();
@@ -441,6 +449,7 @@ namespace ns_w10 {
     {
     public:
         anchorlock_element();
+        ~anchorlock_element();
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const anchorlock_element& default_instance();

@@ -452,6 +452,7 @@ namespace ns_m {
     {
     public:
         CT_Integer255();
+        ~CT_Integer255();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Integer255& default_instance();
@@ -469,6 +470,7 @@ namespace ns_m {
     {
     public:
         CT_Integer2();
+        ~CT_Integer2();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Integer2& default_instance();
@@ -486,6 +488,7 @@ namespace ns_m {
     {
     public:
         CT_SpacingRule();
+        ~CT_SpacingRule();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SpacingRule& default_instance();
@@ -503,6 +506,7 @@ namespace ns_m {
     {
     public:
         CT_UnSignedInteger();
+        ~CT_UnSignedInteger();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_UnSignedInteger& default_instance();
@@ -520,6 +524,7 @@ namespace ns_m {
     {
     public:
         CT_Char();
+        ~CT_Char();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Char& default_instance();
@@ -537,6 +542,7 @@ namespace ns_m {
     {
     public:
         CT_OnOff();
+        ~CT_OnOff();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OnOff& default_instance();
@@ -554,6 +560,7 @@ namespace ns_m {
     {
     public:
         CT_String();
+        ~CT_String();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_String& default_instance();
@@ -571,6 +578,7 @@ namespace ns_m {
     {
     public:
         CT_XAlign();
+        ~CT_XAlign();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_XAlign& default_instance();
@@ -588,6 +596,7 @@ namespace ns_m {
     {
     public:
         CT_YAlign();
+        ~CT_YAlign();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_YAlign& default_instance();
@@ -605,6 +614,7 @@ namespace ns_m {
     {
     public:
         CT_Shp();
+        ~CT_Shp();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Shp& default_instance();
@@ -622,6 +632,7 @@ namespace ns_m {
     {
     public:
         CT_FType();
+        ~CT_FType();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FType& default_instance();
@@ -639,6 +650,7 @@ namespace ns_m {
     {
     public:
         CT_LimLoc();
+        ~CT_LimLoc();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LimLoc& default_instance();
@@ -656,6 +668,7 @@ namespace ns_m {
     {
     public:
         CT_TopBot();
+        ~CT_TopBot();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TopBot& default_instance();
@@ -673,6 +686,7 @@ namespace ns_m {
     {
     public:
         CT_Script();
+        ~CT_Script();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Script& default_instance();
@@ -690,6 +704,7 @@ namespace ns_m {
     {
     public:
         CT_Style();
+        ~CT_Style();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Style& default_instance();
@@ -707,6 +722,7 @@ namespace ns_m {
     {
     public:
         CT_ManualBreak();
+        ~CT_ManualBreak();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ManualBreak& default_instance();
@@ -724,6 +740,7 @@ namespace ns_m {
     {
     public:
         CT_RPR();
+        ~CT_RPR();
         bool has_lit() const;
         CT_OnOff* mutable_lit();
         const CT_OnOff& get_lit() const;
@@ -756,6 +773,7 @@ namespace ns_m {
     {
     public:
         CT_Text();
+        ~CT_Text();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Text& default_instance();
@@ -773,6 +791,7 @@ namespace ns_m {
     {
     public:
         CT_R();
+        ~CT_R();
         bool has_rPr() const;
         CT_RPR* mutable_rPr();
         const CT_RPR& get_rPr() const;
@@ -1007,6 +1026,7 @@ namespace ns_m {
     {
     public:
         CT_CtrlPr();
+        ~CT_CtrlPr();
         bool has_w_ins() const;
         ns_w::CT_MathCtrlIns* mutable_w_ins();
         const ns_w::CT_MathCtrlIns& get_w_ins() const;
@@ -1029,6 +1049,7 @@ namespace ns_m {
     {
     public:
         CT_AccPr();
+        ~CT_AccPr();
         bool has_chr() const;
         CT_Char* mutable_chr();
         const CT_Char& get_chr() const;
@@ -1051,6 +1072,7 @@ namespace ns_m {
     {
     public:
         CT_Acc();
+        ~CT_Acc();
         bool has_accPr() const;
         CT_AccPr* mutable_accPr();
         const CT_AccPr& get_accPr() const;
@@ -1073,6 +1095,7 @@ namespace ns_m {
     {
     public:
         CT_BarPr();
+        ~CT_BarPr();
         bool has_pos() const;
         CT_TopBot* mutable_pos();
         const CT_TopBot& get_pos() const;
@@ -1095,6 +1118,7 @@ namespace ns_m {
     {
     public:
         CT_Bar();
+        ~CT_Bar();
         bool has_barPr() const;
         CT_BarPr* mutable_barPr();
         const CT_BarPr& get_barPr() const;
@@ -1117,6 +1141,7 @@ namespace ns_m {
     {
     public:
         CT_BoxPr();
+        ~CT_BoxPr();
         bool has_opEmu() const;
         CT_OnOff* mutable_opEmu();
         const CT_OnOff& get_opEmu() const;
@@ -1159,6 +1184,7 @@ namespace ns_m {
     {
     public:
         CT_Box();
+        ~CT_Box();
         bool has_boxPr() const;
         CT_BoxPr* mutable_boxPr();
         const CT_BoxPr& get_boxPr() const;
@@ -1181,6 +1207,7 @@ namespace ns_m {
     {
     public:
         CT_BorderBoxPr();
+        ~CT_BorderBoxPr();
         bool has_hideTop() const;
         CT_OnOff* mutable_hideTop();
         const CT_OnOff& get_hideTop() const;
@@ -1238,6 +1265,7 @@ namespace ns_m {
     {
     public:
         CT_BorderBox();
+        ~CT_BorderBox();
         bool has_borderBoxPr() const;
         CT_BorderBoxPr* mutable_borderBoxPr();
         const CT_BorderBoxPr& get_borderBoxPr() const;
@@ -1260,6 +1288,7 @@ namespace ns_m {
     {
     public:
         CT_DPr();
+        ~CT_DPr();
         bool has_begChr() const;
         CT_Char* mutable_begChr();
         const CT_Char& get_begChr() const;
@@ -1302,6 +1331,7 @@ namespace ns_m {
     {
     public:
         CT_D();
+        ~CT_D();
         bool has_dPr() const;
         CT_DPr* mutable_dPr();
         const CT_DPr& get_dPr() const;
@@ -1333,6 +1363,7 @@ namespace ns_m {
     {
     public:
         CT_EqArrPr();
+        ~CT_EqArrPr();
         bool has_baseJc() const;
         CT_YAlign* mutable_baseJc();
         const CT_YAlign& get_baseJc() const;
@@ -1375,6 +1406,7 @@ namespace ns_m {
     {
     public:
         CT_EqArr();
+        ~CT_EqArr();
         bool has_eqArrPr() const;
         CT_EqArrPr* mutable_eqArrPr();
         const CT_EqArrPr& get_eqArrPr() const;
@@ -1406,6 +1438,7 @@ namespace ns_m {
     {
     public:
         CT_FPr();
+        ~CT_FPr();
         bool has_type() const;
         CT_FType* mutable_type();
         const CT_FType& get_type() const;
@@ -1428,6 +1461,7 @@ namespace ns_m {
     {
     public:
         CT_F();
+        ~CT_F();
         bool has_fPr() const;
         CT_FPr* mutable_fPr();
         const CT_FPr& get_fPr() const;
@@ -1455,6 +1489,7 @@ namespace ns_m {
     {
     public:
         CT_FuncPr();
+        ~CT_FuncPr();
         bool has_ctrlPr() const;
         CT_CtrlPr* mutable_ctrlPr();
         const CT_CtrlPr& get_ctrlPr() const;
@@ -1472,6 +1507,7 @@ namespace ns_m {
     {
     public:
         CT_Func();
+        ~CT_Func();
         bool has_funcPr() const;
         CT_FuncPr* mutable_funcPr();
         const CT_FuncPr& get_funcPr() const;
@@ -1499,6 +1535,7 @@ namespace ns_m {
     {
     public:
         CT_GroupChrPr();
+        ~CT_GroupChrPr();
         bool has_chr() const;
         CT_Char* mutable_chr();
         const CT_Char& get_chr() const;
@@ -1531,6 +1568,7 @@ namespace ns_m {
     {
     public:
         CT_GroupChr();
+        ~CT_GroupChr();
         bool has_groupChrPr() const;
         CT_GroupChrPr* mutable_groupChrPr();
         const CT_GroupChrPr& get_groupChrPr() const;
@@ -1553,6 +1591,7 @@ namespace ns_m {
     {
     public:
         CT_LimLowPr();
+        ~CT_LimLowPr();
         bool has_ctrlPr() const;
         CT_CtrlPr* mutable_ctrlPr();
         const CT_CtrlPr& get_ctrlPr() const;
@@ -1570,6 +1609,7 @@ namespace ns_m {
     {
     public:
         CT_LimLow();
+        ~CT_LimLow();
         bool has_limLowPr() const;
         CT_LimLowPr* mutable_limLowPr();
         const CT_LimLowPr& get_limLowPr() const;
@@ -1597,6 +1637,7 @@ namespace ns_m {
     {
     public:
         CT_LimUppPr();
+        ~CT_LimUppPr();
         bool has_ctrlPr() const;
         CT_CtrlPr* mutable_ctrlPr();
         const CT_CtrlPr& get_ctrlPr() const;
@@ -1614,6 +1655,7 @@ namespace ns_m {
     {
     public:
         CT_LimUpp();
+        ~CT_LimUpp();
         bool has_limUppPr() const;
         CT_LimUppPr* mutable_limUppPr();
         const CT_LimUppPr& get_limUppPr() const;
@@ -1641,6 +1683,7 @@ namespace ns_m {
     {
     public:
         CT_MCPr();
+        ~CT_MCPr();
         bool has_count() const;
         CT_Integer255* mutable_count();
         const CT_Integer255& get_count() const;
@@ -1663,6 +1706,7 @@ namespace ns_m {
     {
     public:
         CT_MC();
+        ~CT_MC();
         bool has_mcPr() const;
         CT_MCPr* mutable_mcPr();
         const CT_MCPr& get_mcPr() const;
@@ -1680,6 +1724,7 @@ namespace ns_m {
     {
     public:
         CT_MCS();
+        ~CT_MCS();
         CT_MC* add_mc();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -1706,6 +1751,7 @@ namespace ns_m {
     {
     public:
         CT_MPr();
+        ~CT_MPr();
         bool has_baseJc() const;
         CT_YAlign* mutable_baseJc();
         const CT_YAlign& get_baseJc() const;
@@ -1763,6 +1809,7 @@ namespace ns_m {
     {
     public:
         CT_MR();
+        ~CT_MR();
         CT_OMathArg* add_e();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
@@ -1789,6 +1836,7 @@ namespace ns_m {
     {
     public:
         CT_M();
+        ~CT_M();
         bool has_mPr() const;
         CT_MPr* mutable_mPr();
         const CT_MPr& get_mPr() const;
@@ -1820,6 +1868,7 @@ namespace ns_m {
     {
     public:
         CT_NaryPr();
+        ~CT_NaryPr();
         bool has_chr() const;
         CT_Char* mutable_chr();
         const CT_Char& get_chr() const;
@@ -1862,6 +1911,7 @@ namespace ns_m {
     {
     public:
         CT_Nary();
+        ~CT_Nary();
         bool has_naryPr() const;
         CT_NaryPr* mutable_naryPr();
         const CT_NaryPr& get_naryPr() const;
@@ -1894,6 +1944,7 @@ namespace ns_m {
     {
     public:
         CT_PhantPr();
+        ~CT_PhantPr();
         bool has_show() const;
         CT_OnOff* mutable_show();
         const CT_OnOff& get_show() const;
@@ -1936,6 +1987,7 @@ namespace ns_m {
     {
     public:
         CT_Phant();
+        ~CT_Phant();
         bool has_phantPr() const;
         CT_PhantPr* mutable_phantPr();
         const CT_PhantPr& get_phantPr() const;
@@ -1958,6 +2010,7 @@ namespace ns_m {
     {
     public:
         CT_RadPr();
+        ~CT_RadPr();
         bool has_degHide() const;
         CT_OnOff* mutable_degHide();
         const CT_OnOff& get_degHide() const;
@@ -1980,6 +2033,7 @@ namespace ns_m {
     {
     public:
         CT_Rad();
+        ~CT_Rad();
         bool has_radPr() const;
         CT_RadPr* mutable_radPr();
         const CT_RadPr& get_radPr() const;
@@ -2007,6 +2061,7 @@ namespace ns_m {
     {
     public:
         CT_SPrePr();
+        ~CT_SPrePr();
         bool has_ctrlPr() const;
         CT_CtrlPr* mutable_ctrlPr();
         const CT_CtrlPr& get_ctrlPr() const;
@@ -2024,6 +2079,7 @@ namespace ns_m {
     {
     public:
         CT_SPre();
+        ~CT_SPre();
         bool has_sPrePr() const;
         CT_SPrePr* mutable_sPrePr();
         const CT_SPrePr& get_sPrePr() const;
@@ -2056,6 +2112,7 @@ namespace ns_m {
     {
     public:
         CT_SSubPr();
+        ~CT_SSubPr();
         bool has_ctrlPr() const;
         CT_CtrlPr* mutable_ctrlPr();
         const CT_CtrlPr& get_ctrlPr() const;
@@ -2073,6 +2130,7 @@ namespace ns_m {
     {
     public:
         CT_SSub();
+        ~CT_SSub();
         bool has_sSubPr() const;
         CT_SSubPr* mutable_sSubPr();
         const CT_SSubPr& get_sSubPr() const;
@@ -2100,6 +2158,7 @@ namespace ns_m {
     {
     public:
         CT_SSubSupPr();
+        ~CT_SSubSupPr();
         bool has_alnScr() const;
         CT_OnOff* mutable_alnScr();
         const CT_OnOff& get_alnScr() const;
@@ -2122,6 +2181,7 @@ namespace ns_m {
     {
     public:
         CT_SSubSup();
+        ~CT_SSubSup();
         bool has_sSubSupPr() const;
         CT_SSubSupPr* mutable_sSubSupPr();
         const CT_SSubSupPr& get_sSubSupPr() const;
@@ -2154,6 +2214,7 @@ namespace ns_m {
     {
     public:
         CT_SSupPr();
+        ~CT_SSupPr();
         bool has_ctrlPr() const;
         CT_CtrlPr* mutable_ctrlPr();
         const CT_CtrlPr& get_ctrlPr() const;
@@ -2171,6 +2232,7 @@ namespace ns_m {
     {
     public:
         CT_SSup();
+        ~CT_SSup();
         bool has_sSupPr() const;
         CT_SSupPr* mutable_sSupPr();
         const CT_SSupPr& get_sSupPr() const;
@@ -2198,6 +2260,7 @@ namespace ns_m {
     {
     public:
         CT_OMathArgPr();
+        ~CT_OMathArgPr();
         bool has_argSz() const;
         CT_Integer2* mutable_argSz();
         const CT_Integer2& get_argSz() const;
@@ -2215,6 +2278,7 @@ namespace ns_m {
     {
     public:
         CT_OMathArg();
+        ~CT_OMathArg();
         bool has_argPr() const;
         CT_OMathArgPr* mutable_argPr();
         const CT_OMathArgPr& get_argPr() const;
@@ -2545,6 +2609,7 @@ namespace ns_m {
     {
     public:
         CT_OMathJc();
+        ~CT_OMathJc();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OMathJc& default_instance();
@@ -2562,6 +2627,7 @@ namespace ns_m {
     {
     public:
         CT_OMathParaPr();
+        ~CT_OMathParaPr();
         bool has_jc() const;
         CT_OMathJc* mutable_jc();
         const CT_OMathJc& get_jc() const;
@@ -2579,6 +2645,7 @@ namespace ns_m {
     {
     public:
         CT_TwipsMeasure();
+        ~CT_TwipsMeasure();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TwipsMeasure& default_instance();
@@ -2596,6 +2663,7 @@ namespace ns_m {
     {
     public:
         CT_BreakBin();
+        ~CT_BreakBin();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BreakBin& default_instance();
@@ -2613,6 +2681,7 @@ namespace ns_m {
     {
     public:
         CT_BreakBinSub();
+        ~CT_BreakBinSub();
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BreakBinSub& default_instance();
@@ -2630,6 +2699,7 @@ namespace ns_m {
     {
     public:
         CT_MathPr();
+        ~CT_MathPr();
         bool has_mathFont() const;
         CT_String* mutable_mathFont();
         const CT_String& get_mathFont() const;
@@ -2722,6 +2792,7 @@ namespace ns_m {
     {
     public:
         CT_OMathPara();
+        ~CT_OMathPara();
         bool has_oMathParaPr() const;
         CT_OMathParaPr* mutable_oMathParaPr();
         const CT_OMathParaPr& get_oMathParaPr() const;
@@ -2753,6 +2824,7 @@ namespace ns_m {
     {
     public:
         CT_OMath();
+        ~CT_OMath();
         CT_Acc* add_acc();
         CT_Bar* add_bar();
         CT_Box* add_box();
@@ -3073,6 +3145,7 @@ namespace ns_m {
     {
     public:
         mathPr_element();
+        ~mathPr_element();
         bool has_mathFont() const;
         CT_String* mutable_mathFont();
         const CT_String& get_mathFont() const;
@@ -3165,6 +3238,7 @@ namespace ns_m {
     {
     public:
         oMathPara_element();
+        ~oMathPara_element();
         bool has_oMathParaPr() const;
         CT_OMathParaPr* mutable_oMathParaPr();
         const CT_OMathParaPr& get_oMathParaPr() const;
@@ -3196,6 +3270,7 @@ namespace ns_m {
     {
     public:
         oMath_element();
+        ~oMath_element();
         CT_Acc* add_acc();
         CT_Bar* add_bar();
         CT_Box* add_box();

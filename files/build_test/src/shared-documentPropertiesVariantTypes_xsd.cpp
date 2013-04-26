@@ -51,7 +51,7 @@ namespace ns_vt {
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -129,7 +129,7 @@ ST_VectorBaseType* ST_VectorBaseType::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -289,6 +289,9 @@ ST_Error* ST_Error::default_instance_ = NULL;
 
     {
     }
+    CT_Empty::~CT_Empty()
+{
+    clear();    }
     void CT_Empty::clear()
     {    }
 
@@ -322,6 +325,9 @@ CT_Empty* CT_Empty::default_instance_ = NULL;
 
     {
     }
+    CT_Null::~CT_Null()
+{
+    clear();    }
     void CT_Null::clear()
     {    }
 
@@ -358,6 +364,9 @@ CT_Null* CT_Null::default_instance_ = NULL;
     m_size_attr(0)
     {
     }
+    CT_Vector::~CT_Vector()
+{
+    clear();    }
     CT_Variant* CT_Vector::add_variant()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -2708,6 +2717,9 @@ CT_Vector* CT_Vector::default_instance_ = NULL;
     m_baseType_attr(NULL)
     {
     }
+    CT_Array::~CT_Array()
+{
+    clear();    }
     CT_Variant* CT_Array::add_variant()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -4554,6 +4566,9 @@ CT_Array* CT_Array::default_instance_ = NULL;
     m_clsid(NULL)
     {
     }
+    CT_Variant::~CT_Variant()
+{
+    clear();    }
     bool CT_Variant::has_variant() const
     {    
     return m_has_variant;
@@ -10556,6 +10571,9 @@ CT_Variant* CT_Variant::default_instance_ = NULL;
     m_version_attr(NULL)
     {
     }
+    CT_Vstream::~CT_Vstream()
+{
+    clear();    }
     void CT_Vstream::clear()
     {    
     m_has_version_attr = false;
@@ -10690,6 +10708,9 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     m_clsid(NULL)
     {
     }
+    variant_element::~variant_element()
+{
+    clear();    }
     bool variant_element::has_variant() const
     {    
     return m_has_variant;
@@ -16692,6 +16713,9 @@ variant_element* variant_element::default_instance_ = NULL;
     m_size_attr(0)
     {
     }
+    vector_element::~vector_element()
+{
+    clear();    }
     CT_Variant* vector_element::add_variant()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -19040,6 +19064,9 @@ vector_element* vector_element::default_instance_ = NULL;
     m_baseType_attr(NULL)
     {
     }
+    array_element::~array_element()
+{
+    clear();    }
     CT_Variant* array_element::add_variant()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -20821,6 +20848,9 @@ array_element* array_element::default_instance_ = NULL;
 
     {
     }
+    empty_element::~empty_element()
+{
+    clear();    }
     void empty_element::clear()
     {    }
 
@@ -20852,6 +20882,9 @@ empty_element* empty_element::default_instance_ = NULL;
 
     {
     }
+    null_element::~null_element()
+{
+    clear();    }
     void null_element::clear()
     {    }
 
@@ -20934,6 +20967,9 @@ null_element* null_element::default_instance_ = NULL;
     m_version_attr(NULL)
     {
     }
+    vstream_element::~vstream_element()
+{
+    clear();    }
     void vstream_element::clear()
     {    
     m_has_version_attr = false;

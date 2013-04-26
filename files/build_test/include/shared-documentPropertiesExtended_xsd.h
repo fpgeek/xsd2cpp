@@ -35,6 +35,7 @@ namespace ns_extended_properties {
     {
     public:
         CT_Properties();
+        ~CT_Properties();
         bool has_Template() const;
         void set_Template(const XSD::string_& _Template);
         const XSD::string_& get_Template() const;
@@ -182,6 +183,7 @@ namespace ns_extended_properties {
     {
     public:
         CT_VectorVariant();
+        ~CT_VectorVariant();
         bool has_vt_vector() const;
         ns_vt::CT_Vector* mutable_vt_vector();
         const ns_vt::CT_Vector& get_vt_vector() const;
@@ -199,6 +201,7 @@ namespace ns_extended_properties {
     {
     public:
         CT_VectorLpstr();
+        ~CT_VectorLpstr();
         bool has_vt_vector() const;
         ns_vt::CT_Vector* mutable_vt_vector();
         const ns_vt::CT_Vector& get_vt_vector() const;
@@ -216,6 +219,7 @@ namespace ns_extended_properties {
     {
     public:
         CT_DigSigBlob();
+        ~CT_DigSigBlob();
         bool has_vt_blob() const;
         void set_vt_blob(const XSD::base64Binary_& _vt_blob);
         const XSD::base64Binary_& get_vt_blob() const;
@@ -233,6 +237,7 @@ namespace ns_extended_properties {
     {
     public:
         Properties_element();
+        ~Properties_element();
         bool has_Template() const;
         void set_Template(const XSD::string_& _Template);
         const XSD::string_& get_Template() const;

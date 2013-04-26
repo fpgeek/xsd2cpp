@@ -95,6 +95,7 @@ namespace ns_x {
     {
     public:
         CT_ClientData();
+        ~CT_ClientData();
         ns_s::ST_TrueFalseBlank* add_MoveWithCells();
         ns_s::ST_TrueFalseBlank* add_SizeWithCells();
         void add_Anchor(const XSD::string_& _Anchor);
@@ -522,6 +523,7 @@ namespace ns_x {
     {
     public:
         ClientData_element();
+        ~ClientData_element();
         ns_s::ST_TrueFalseBlank* add_MoveWithCells();
         ns_s::ST_TrueFalseBlank* add_SizeWithCells();
         void add_Anchor(const XSD::string_& _Anchor);

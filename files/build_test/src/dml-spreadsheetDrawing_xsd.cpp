@@ -174,7 +174,7 @@ ST_RowID* ST_RowID::default_instance_ = NULL;
     {    
     if (m_has_type)
     {
-    _outStream << _attrName << "=\"" << toString() << "\"";
+    _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -203,6 +203,9 @@ ST_EditAs* ST_EditAs::default_instance_ = NULL;
     m_fPrintsWithSheet_attr(false)
     {
     }
+    CT_AnchorClientData::~CT_AnchorClientData()
+{
+    clear();    }
     void CT_AnchorClientData::clear()
     {    
     m_has_fLocksWithSheet_attr = false;
@@ -288,6 +291,9 @@ CT_AnchorClientData* CT_AnchorClientData::default_instance_ = NULL;
     m_cNvSpPr(NULL)
     {
     }
+    CT_ShapeNonVisual::~CT_ShapeNonVisual()
+{
+    clear();    }
     bool CT_ShapeNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -394,6 +400,9 @@ CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
     m_fPublished_attr(false)
     {
     }
+    CT_Shape::~CT_Shape()
+{
+    clear();    }
     bool CT_Shape::has_nvSpPr() const
     {    
     return m_has_nvSpPr;
@@ -645,6 +654,9 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
     m_cNvCxnSpPr(NULL)
     {
     }
+    CT_ConnectorNonVisual::~CT_ConnectorNonVisual()
+{
+    clear();    }
     bool CT_ConnectorNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -745,6 +757,9 @@ CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
     m_fPublished_attr(false)
     {
     }
+    CT_Connector::~CT_Connector()
+{
+    clear();    }
     bool CT_Connector::has_nvCxnSpPr() const
     {    
     return m_has_nvCxnSpPr;
@@ -917,6 +932,9 @@ CT_Connector* CT_Connector::default_instance_ = NULL;
     m_cNvPicPr(NULL)
     {
     }
+    CT_PictureNonVisual::~CT_PictureNonVisual()
+{
+    clear();    }
     bool CT_PictureNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -1019,6 +1037,9 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
     m_fPublished_attr(false)
     {
     }
+    CT_Picture::~CT_Picture()
+{
+    clear();    }
     bool CT_Picture::has_nvPicPr() const
     {    
     return m_has_nvPicPr;
@@ -1220,6 +1241,9 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
     m_cNvGraphicFramePr(NULL)
     {
     }
+    CT_GraphicalObjectFrameNonVisual::~CT_GraphicalObjectFrameNonVisual()
+{
+    clear();    }
     bool CT_GraphicalObjectFrameNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -1320,6 +1344,9 @@ CT_GraphicalObjectFrameNonVisual* CT_GraphicalObjectFrameNonVisual::default_inst
     m_fPublished_attr(false)
     {
     }
+    CT_GraphicalObjectFrame::~CT_GraphicalObjectFrame()
+{
+    clear();    }
     bool CT_GraphicalObjectFrame::has_nvGraphicFramePr() const
     {    
     return m_has_nvGraphicFramePr;
@@ -1492,6 +1519,9 @@ CT_GraphicalObjectFrame* CT_GraphicalObjectFrame::default_instance_ = NULL;
     m_cNvGrpSpPr(NULL)
     {
     }
+    CT_GroupShapeNonVisual::~CT_GroupShapeNonVisual()
+{
+    clear();    }
     bool CT_GroupShapeNonVisual::has_cNvPr() const
     {    
     return m_has_cNvPr;
@@ -1586,6 +1616,9 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
     m_grpSpPr(NULL)
     {
     }
+    CT_GroupShape::~CT_GroupShape()
+{
+    clear();    }
     bool CT_GroupShape::has_nvGrpSpPr() const
     {    
     return m_has_nvGrpSpPr;
@@ -2092,6 +2125,9 @@ CT_GroupShape* CT_GroupShape::default_instance_ = NULL;
     m_r_id_attr(NULL)
     {
     }
+    CT_Rel::~CT_Rel()
+{
+    clear();    }
     void CT_Rel::clear()
     {    
     m_has_r_id_attr = false;
@@ -2166,6 +2202,9 @@ CT_Rel* CT_Rel::default_instance_ = NULL;
     m_rowOff(NULL)
     {
     }
+    CT_Marker::~CT_Marker()
+{
+    clear();    }
     bool CT_Marker::has_col() const
     {    
     return m_has_col;
@@ -2334,6 +2373,9 @@ CT_Marker* CT_Marker::default_instance_ = NULL;
     m_editAs_attr(NULL)
     {
     }
+    CT_TwoCellAnchor::~CT_TwoCellAnchor()
+{
+    clear();    }
     bool CT_TwoCellAnchor::has_from() const
     {    
     return m_has_from;
@@ -2955,6 +2997,9 @@ CT_TwoCellAnchor* CT_TwoCellAnchor::default_instance_ = NULL;
     m_clientData(NULL)
     {
     }
+    CT_OneCellAnchor::~CT_OneCellAnchor()
+{
+    clear();    }
     bool CT_OneCellAnchor::has_from() const
     {    
     return m_has_from;
@@ -3542,6 +3587,9 @@ CT_OneCellAnchor* CT_OneCellAnchor::default_instance_ = NULL;
     m_clientData(NULL)
     {
     }
+    CT_AbsoluteAnchor::~CT_AbsoluteAnchor()
+{
+    clear();    }
     bool CT_AbsoluteAnchor::has_pos() const
     {    
     return m_has_pos;
@@ -4112,6 +4160,9 @@ CT_AbsoluteAnchor* CT_AbsoluteAnchor::default_instance_ = NULL;
 
     {
     }
+    CT_Drawing::~CT_Drawing()
+{
+    clear();    }
     CT_TwoCellAnchor* CT_Drawing::add_twoCellAnchor()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
@@ -4344,6 +4395,9 @@ CT_Drawing* CT_Drawing::default_instance_ = NULL;
     m_rowOff(NULL)
     {
     }
+    from_element::~from_element()
+{
+    clear();    }
     bool from_element::has_col() const
     {    
     return m_has_col;
@@ -4499,6 +4553,9 @@ from_element* from_element::default_instance_ = NULL;
     m_rowOff(NULL)
     {
     }
+    to_element::~to_element()
+{
+    clear();    }
     bool to_element::has_col() const
     {    
     return m_has_col;
@@ -4647,6 +4704,9 @@ to_element* to_element::default_instance_ = NULL;
 
     {
     }
+    wsDr_element::~wsDr_element()
+{
+    clear();    }
     CT_TwoCellAnchor* wsDr_element::add_twoCellAnchor()
     {    
     ChildGroup_1 *pChildGroup = new ChildGroup_1();
