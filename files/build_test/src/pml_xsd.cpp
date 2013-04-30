@@ -23,6 +23,9 @@ namespace ns_p {
     m_type(_type)
     {
     }
+    ST_TransitionSideDirectionType::~ST_TransitionSideDirectionType()
+{
+    clear();    }
     bool ST_TransitionSideDirectionType::has_type() const
     {    
     return m_has_type;
@@ -85,6 +88,9 @@ ST_TransitionSideDirectionType* ST_TransitionSideDirectionType::default_instance
     m_type(_type)
     {
     }
+    ST_TransitionCornerDirectionType::~ST_TransitionCornerDirectionType()
+{
+    clear();    }
     bool ST_TransitionCornerDirectionType::has_type() const
     {    
     return m_has_type;
@@ -147,6 +153,9 @@ ST_TransitionCornerDirectionType* ST_TransitionCornerDirectionType::default_inst
     m_type(_type)
     {
     }
+    ST_TransitionInOutDirectionType::~ST_TransitionInOutDirectionType()
+{
+    clear();    }
     bool ST_TransitionInOutDirectionType::has_type() const
     {    
     return m_has_type;
@@ -205,6 +214,9 @@ ST_TransitionInOutDirectionType* ST_TransitionInOutDirectionType::default_instan
     m_ST_TransitionCornerDirectionType(NULL)
     {
     }
+    ST_TransitionEightDirectionType::~ST_TransitionEightDirectionType()
+{
+    clear();    }
     bool ST_TransitionEightDirectionType::has_ST_TransitionSideDirectionType() const
     {    
     return m_has_ST_TransitionSideDirectionType;
@@ -330,6 +342,9 @@ ST_TransitionEightDirectionType* ST_TransitionEightDirectionType::default_instan
     m_type(_type)
     {
     }
+    ST_TransitionSpeed::~ST_TransitionSpeed()
+{
+    clear();    }
     bool ST_TransitionSpeed::has_type() const
     {    
     return m_has_type;
@@ -391,6 +406,9 @@ ST_TransitionSpeed* ST_TransitionSpeed::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLTimeIndefinite::~ST_TLTimeIndefinite()
+{
+    clear();    }
     bool ST_TLTimeIndefinite::has_type() const
     {    
     return m_has_type;
@@ -448,6 +466,9 @@ ST_TLTimeIndefinite* ST_TLTimeIndefinite::default_instance_ = NULL;
     m_ST_TLTimeIndefinite(NULL)
     {
     }
+    ST_TLTime::~ST_TLTime()
+{
+    clear();    }
     bool ST_TLTime::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -567,6 +588,9 @@ ST_TLTime* ST_TLTime::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_TLTimeNodeID::~ST_TLTimeNodeID()
+{
+    clear();    }
     bool ST_TLTimeNodeID::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -625,6 +649,9 @@ ST_TLTimeNodeID* ST_TLTimeNodeID::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_IterateType::~ST_IterateType()
+{
+    clear();    }
     bool ST_IterateType::has_type() const
     {    
     return m_has_type;
@@ -686,6 +713,9 @@ ST_IterateType* ST_IterateType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLChartSubelementType::~ST_TLChartSubelementType()
+{
+    clear();    }
     bool ST_TLChartSubelementType::has_type() const
     {    
     return m_has_type;
@@ -749,6 +779,9 @@ ST_TLChartSubelementType* ST_TLChartSubelementType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLTriggerRuntimeNode::~ST_TLTriggerRuntimeNode()
+{
+    clear();    }
     bool ST_TLTriggerRuntimeNode::has_type() const
     {    
     return m_has_type;
@@ -810,6 +843,9 @@ ST_TLTriggerRuntimeNode* ST_TLTriggerRuntimeNode::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLTriggerEvent::~ST_TLTriggerEvent()
+{
+    clear();    }
     bool ST_TLTriggerEvent::has_type() const
     {    
     return m_has_type;
@@ -879,6 +915,9 @@ ST_TLTriggerEvent* ST_TLTriggerEvent::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLTimeNodePresetClassType::~ST_TLTimeNodePresetClassType()
+{
+    clear();    }
     bool ST_TLTimeNodePresetClassType::has_type() const
     {    
     return m_has_type;
@@ -943,6 +982,9 @@ ST_TLTimeNodePresetClassType* ST_TLTimeNodePresetClassType::default_instance_ = 
     m_type(_type)
     {
     }
+    ST_TLTimeNodeRestartType::~ST_TLTimeNodeRestartType()
+{
+    clear();    }
     bool ST_TLTimeNodeRestartType::has_type() const
     {    
     return m_has_type;
@@ -1004,6 +1046,9 @@ ST_TLTimeNodeRestartType* ST_TLTimeNodeRestartType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLTimeNodeFillType::~ST_TLTimeNodeFillType()
+{
+    clear();    }
     bool ST_TLTimeNodeFillType::has_type() const
     {    
     return m_has_type;
@@ -1066,6 +1111,9 @@ ST_TLTimeNodeFillType* ST_TLTimeNodeFillType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLTimeNodeSyncType::~ST_TLTimeNodeSyncType()
+{
+    clear();    }
     bool ST_TLTimeNodeSyncType::has_type() const
     {    
     return m_has_type;
@@ -1126,6 +1174,9 @@ ST_TLTimeNodeSyncType* ST_TLTimeNodeSyncType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLTimeNodeMasterRelation::~ST_TLTimeNodeMasterRelation()
+{
+    clear();    }
     bool ST_TLTimeNodeMasterRelation::has_type() const
     {    
     return m_has_type;
@@ -1187,6 +1238,9 @@ ST_TLTimeNodeMasterRelation* ST_TLTimeNodeMasterRelation::default_instance_ = NU
     m_type(_type)
     {
     }
+    ST_TLTimeNodeType::~ST_TLTimeNodeType()
+{
+    clear();    }
     bool ST_TLTimeNodeType::has_type() const
     {    
     return m_has_type;
@@ -1254,6 +1308,9 @@ ST_TLTimeNodeType* ST_TLTimeNodeType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLNextActionType::~ST_TLNextActionType()
+{
+    clear();    }
     bool ST_TLNextActionType::has_type() const
     {    
     return m_has_type;
@@ -1314,6 +1371,9 @@ ST_TLNextActionType* ST_TLNextActionType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLPreviousActionType::~ST_TLPreviousActionType()
+{
+    clear();    }
     bool ST_TLPreviousActionType::has_type() const
     {    
     return m_has_type;
@@ -1374,6 +1434,9 @@ ST_TLPreviousActionType* ST_TLPreviousActionType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLBehaviorAdditiveType::~ST_TLBehaviorAdditiveType()
+{
+    clear();    }
     bool ST_TLBehaviorAdditiveType::has_type() const
     {    
     return m_has_type;
@@ -1437,6 +1500,9 @@ ST_TLBehaviorAdditiveType* ST_TLBehaviorAdditiveType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLBehaviorAccumulateType::~ST_TLBehaviorAccumulateType()
+{
+    clear();    }
     bool ST_TLBehaviorAccumulateType::has_type() const
     {    
     return m_has_type;
@@ -1497,6 +1563,9 @@ ST_TLBehaviorAccumulateType* ST_TLBehaviorAccumulateType::default_instance_ = NU
     m_type(_type)
     {
     }
+    ST_TLBehaviorTransformType::~ST_TLBehaviorTransformType()
+{
+    clear();    }
     bool ST_TLBehaviorTransformType::has_type() const
     {    
     return m_has_type;
@@ -1557,6 +1626,9 @@ ST_TLBehaviorTransformType* ST_TLBehaviorTransformType::default_instance_ = NULL
     m_type(_type)
     {
     }
+    ST_TLBehaviorOverrideType::~ST_TLBehaviorOverrideType()
+{
+    clear();    }
     bool ST_TLBehaviorOverrideType::has_type() const
     {    
     return m_has_type;
@@ -1615,6 +1687,9 @@ ST_TLBehaviorOverrideType* ST_TLBehaviorOverrideType::default_instance_ = NULL;
     m_ST_TLTimeIndefinite(NULL)
     {
     }
+    ST_TLTimeAnimateValueTime::~ST_TLTimeAnimateValueTime()
+{
+    clear();    }
     bool ST_TLTimeAnimateValueTime::has_ST_PositiveFixedPercentage() const
     {    
     return m_has_ST_PositiveFixedPercentage;
@@ -1740,6 +1815,9 @@ ST_TLTimeAnimateValueTime* ST_TLTimeAnimateValueTime::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLAnimateBehaviorCalcMode::~ST_TLAnimateBehaviorCalcMode()
+{
+    clear();    }
     bool ST_TLAnimateBehaviorCalcMode::has_type() const
     {    
     return m_has_type;
@@ -1801,6 +1879,9 @@ ST_TLAnimateBehaviorCalcMode* ST_TLAnimateBehaviorCalcMode::default_instance_ = 
     m_type(_type)
     {
     }
+    ST_TLAnimateBehaviorValueType::~ST_TLAnimateBehaviorValueType()
+{
+    clear();    }
     bool ST_TLAnimateBehaviorValueType::has_type() const
     {    
     return m_has_type;
@@ -1862,6 +1943,9 @@ ST_TLAnimateBehaviorValueType* ST_TLAnimateBehaviorValueType::default_instance_ 
     m_type(_type)
     {
     }
+    ST_TLAnimateColorSpace::~ST_TLAnimateColorSpace()
+{
+    clear();    }
     bool ST_TLAnimateColorSpace::has_type() const
     {    
     return m_has_type;
@@ -1922,6 +2006,9 @@ ST_TLAnimateColorSpace* ST_TLAnimateColorSpace::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLAnimateColorDirection::~ST_TLAnimateColorDirection()
+{
+    clear();    }
     bool ST_TLAnimateColorDirection::has_type() const
     {    
     return m_has_type;
@@ -1982,6 +2069,9 @@ ST_TLAnimateColorDirection* ST_TLAnimateColorDirection::default_instance_ = NULL
     m_type(_type)
     {
     }
+    ST_TLAnimateEffectTransition::~ST_TLAnimateEffectTransition()
+{
+    clear();    }
     bool ST_TLAnimateEffectTransition::has_type() const
     {    
     return m_has_type;
@@ -2043,6 +2133,9 @@ ST_TLAnimateEffectTransition* ST_TLAnimateEffectTransition::default_instance_ = 
     m_type(_type)
     {
     }
+    ST_TLAnimateMotionBehaviorOrigin::~ST_TLAnimateMotionBehaviorOrigin()
+{
+    clear();    }
     bool ST_TLAnimateMotionBehaviorOrigin::has_type() const
     {    
     return m_has_type;
@@ -2103,6 +2196,9 @@ ST_TLAnimateMotionBehaviorOrigin* ST_TLAnimateMotionBehaviorOrigin::default_inst
     m_type(_type)
     {
     }
+    ST_TLAnimateMotionPathEditMode::~ST_TLAnimateMotionPathEditMode()
+{
+    clear();    }
     bool ST_TLAnimateMotionPathEditMode::has_type() const
     {    
     return m_has_type;
@@ -2163,6 +2259,9 @@ ST_TLAnimateMotionPathEditMode* ST_TLAnimateMotionPathEditMode::default_instance
     m_type(_type)
     {
     }
+    ST_TLCommandType::~ST_TLCommandType()
+{
+    clear();    }
     bool ST_TLCommandType::has_type() const
     {    
     return m_has_type;
@@ -2224,6 +2323,9 @@ ST_TLCommandType* ST_TLCommandType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLParaBuildType::~ST_TLParaBuildType()
+{
+    clear();    }
     bool ST_TLParaBuildType::has_type() const
     {    
     return m_has_type;
@@ -2286,6 +2388,9 @@ ST_TLParaBuildType* ST_TLParaBuildType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLDiagramBuildType::~ST_TLDiagramBuildType()
+{
+    clear();    }
     bool ST_TLDiagramBuildType::has_type() const
     {    
     return m_has_type;
@@ -2361,6 +2466,9 @@ ST_TLDiagramBuildType* ST_TLDiagramBuildType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TLOleChartBuildType::~ST_TLOleChartBuildType()
+{
+    clear();    }
     bool ST_TLOleChartBuildType::has_type() const
     {    
     return m_has_type;
@@ -2426,6 +2534,9 @@ ST_TLOleChartBuildType* ST_TLOleChartBuildType::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_Name::~ST_Name()
+{
+    clear();    }
     bool ST_Name::has_string() const
     {    
     return m_has_string;
@@ -2484,6 +2595,9 @@ ST_Name* ST_Name::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Direction::~ST_Direction()
+{
+    clear();    }
     bool ST_Direction::has_type() const
     {    
     return m_has_type;
@@ -2546,6 +2660,9 @@ ST_Direction* ST_Direction::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_Index::~ST_Index()
+{
+    clear();    }
     bool ST_Index::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -2604,6 +2721,9 @@ ST_Index* ST_Index::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_OleObjectFollowColorScheme::~ST_OleObjectFollowColorScheme()
+{
+    clear();    }
     bool ST_OleObjectFollowColorScheme::has_type() const
     {    
     return m_has_type;
@@ -2667,6 +2787,9 @@ ST_OleObjectFollowColorScheme* ST_OleObjectFollowColorScheme::default_instance_ 
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_SlideId::~ST_SlideId()
+{
+    clear();    }
     bool ST_SlideId::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -2729,6 +2852,9 @@ ST_SlideId* ST_SlideId::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_SlideMasterId::~ST_SlideMasterId()
+{
+    clear();    }
     bool ST_SlideMasterId::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -2788,6 +2914,9 @@ ST_SlideMasterId* ST_SlideMasterId::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PhotoAlbumLayout::~ST_PhotoAlbumLayout()
+{
+    clear();    }
     bool ST_PhotoAlbumLayout::has_type() const
     {    
     return m_has_type;
@@ -2853,6 +2982,9 @@ ST_PhotoAlbumLayout* ST_PhotoAlbumLayout::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PhotoAlbumFrameShape::~ST_PhotoAlbumFrameShape()
+{
+    clear();    }
     bool ST_PhotoAlbumFrameShape::has_type() const
     {    
     return m_has_type;
@@ -2917,6 +3049,9 @@ ST_PhotoAlbumFrameShape* ST_PhotoAlbumFrameShape::default_instance_ = NULL;
 
     {
     }
+    ST_SlideSizeCoordinate::~ST_SlideSizeCoordinate()
+{
+    clear();    }
     const ST_SlideSizeCoordinate& ST_SlideSizeCoordinate::default_instance()
     {    
     if (!ST_SlideSizeCoordinate::default_instance_)
@@ -2938,6 +3073,9 @@ ST_SlideSizeCoordinate* ST_SlideSizeCoordinate::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SlideSizeType::~ST_SlideSizeType()
+{
+    clear();    }
     bool ST_SlideSizeType::has_type() const
     {    
     return m_has_type;
@@ -3014,6 +3152,9 @@ ST_SlideSizeType* ST_SlideSizeType::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_BookmarkIdSeed::~ST_BookmarkIdSeed()
+{
+    clear();    }
     bool ST_BookmarkIdSeed::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -3074,6 +3215,9 @@ ST_BookmarkIdSeed* ST_BookmarkIdSeed::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_WebColorType::~ST_WebColorType()
+{
+    clear();    }
     bool ST_WebColorType::has_type() const
     {    
     return m_has_type;
@@ -3138,6 +3282,9 @@ ST_WebColorType* ST_WebColorType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_WebScreenSize::~ST_WebScreenSize()
+{
+    clear();    }
     bool ST_WebScreenSize::has_type() const
     {    
     return m_has_type;
@@ -3209,6 +3356,9 @@ ST_WebScreenSize* ST_WebScreenSize::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_WebEncoding::~ST_WebEncoding()
+{
+    clear();    }
     bool ST_WebEncoding::has_string() const
     {    
     return m_has_string;
@@ -3267,6 +3417,9 @@ ST_WebEncoding* ST_WebEncoding::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PrintWhat::~ST_PrintWhat()
+{
+    clear();    }
     bool ST_PrintWhat::has_type() const
     {    
     return m_has_type;
@@ -3334,6 +3487,9 @@ ST_PrintWhat* ST_PrintWhat::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PrintColorMode::~ST_PrintColorMode()
+{
+    clear();    }
     bool ST_PrintColorMode::has_type() const
     {    
     return m_has_type;
@@ -3395,6 +3551,9 @@ ST_PrintColorMode* ST_PrintColorMode::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PlaceholderType::~ST_PlaceholderType()
+{
+    clear();    }
     bool ST_PlaceholderType::has_type() const
     {    
     return m_has_type;
@@ -3469,6 +3628,9 @@ ST_PlaceholderType* ST_PlaceholderType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PlaceholderSize::~ST_PlaceholderSize()
+{
+    clear();    }
     bool ST_PlaceholderSize::has_type() const
     {    
     return m_has_type;
@@ -3530,6 +3692,9 @@ ST_PlaceholderSize* ST_PlaceholderSize::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SlideLayoutType::~ST_SlideLayoutType()
+{
+    clear();    }
     bool ST_SlideLayoutType::has_type() const
     {    
     return m_has_type;
@@ -3626,6 +3791,9 @@ ST_SlideLayoutType* ST_SlideLayoutType::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_SlideLayoutId::~ST_SlideLayoutId()
+{
+    clear();    }
     bool ST_SlideLayoutId::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -3685,6 +3853,9 @@ ST_SlideLayoutId* ST_SlideLayoutId::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SplitterBarState::~ST_SplitterBarState()
+{
+    clear();    }
     bool ST_SplitterBarState::has_type() const
     {    
     return m_has_type;
@@ -3746,6 +3917,9 @@ ST_SplitterBarState* ST_SplitterBarState::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ViewType::~ST_ViewType()
+{
+    clear();    }
     bool ST_ViewType::has_type() const
     {    
     return m_has_type;

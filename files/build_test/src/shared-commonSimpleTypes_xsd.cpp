@@ -22,6 +22,9 @@ namespace ns_s {
     
     set_string(_string);
     }
+    ST_Lang::~ST_Lang()
+{
+    clear();    }
     bool ST_Lang::has_string() const
     {    
     return m_has_string;
@@ -82,6 +85,9 @@ ST_Lang* ST_Lang::default_instance_ = NULL;
     
     set_hexBinary(_hexBinary);
     }
+    ST_HexColorRGB::~ST_HexColorRGB()
+{
+    clear();    }
     bool ST_HexColorRGB::has_hexBinary() const
     {    
     return m_has_hexBinary;
@@ -143,6 +149,9 @@ ST_HexColorRGB* ST_HexColorRGB::default_instance_ = NULL;
     
     set_hexBinary(_hexBinary);
     }
+    ST_Panose::~ST_Panose()
+{
+    clear();    }
     bool ST_Panose::has_hexBinary() const
     {    
     return m_has_hexBinary;
@@ -202,6 +211,9 @@ ST_Panose* ST_Panose::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_CalendarType::~ST_CalendarType()
+{
+    clear();    }
     bool ST_CalendarType::has_type() const
     {    
     return m_has_type;
@@ -274,6 +286,9 @@ ST_CalendarType* ST_CalendarType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_AlgClass::~ST_AlgClass()
+{
+    clear();    }
     bool ST_AlgClass::has_type() const
     {    
     return m_has_type;
@@ -334,6 +349,9 @@ ST_AlgClass* ST_AlgClass::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_CryptProv::~ST_CryptProv()
+{
+    clear();    }
     bool ST_CryptProv::has_type() const
     {    
     return m_has_type;
@@ -395,6 +413,9 @@ ST_CryptProv* ST_CryptProv::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_AlgType::~ST_AlgType()
+{
+    clear();    }
     bool ST_AlgType::has_type() const
     {    
     return m_has_type;
@@ -457,6 +478,9 @@ ST_AlgType* ST_AlgType::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_ColorType::~ST_ColorType()
+{
+    clear();    }
     bool ST_ColorType::has_string() const
     {    
     return m_has_string;
@@ -517,6 +541,9 @@ ST_ColorType* ST_ColorType::default_instance_ = NULL;
     
     set_token(_token);
     }
+    ST_Guid::~ST_Guid()
+{
+    clear();    }
     bool ST_Guid::has_token() const
     {    
     return m_has_token;
@@ -573,6 +600,9 @@ ST_Guid* ST_Guid::default_instance_ = NULL;
     m_ST_OnOff1(NULL)
     {
     }
+    ST_OnOff::~ST_OnOff()
+{
+    clear();    }
     bool ST_OnOff::has_boolean() const
     {    
     return m_has_boolean;
@@ -686,6 +716,9 @@ ST_OnOff* ST_OnOff::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_OnOff1::~ST_OnOff1()
+{
+    clear();    }
     bool ST_OnOff1::has_type() const
     {    
     return m_has_type;
@@ -748,6 +781,9 @@ ST_OnOff1* ST_OnOff1::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_String::~ST_String()
+{
+    clear();    }
     bool ST_String::has_string() const
     {    
     return m_has_string;
@@ -808,6 +844,9 @@ ST_String* ST_String::default_instance_ = NULL;
     
     set_NCName(_NCName);
     }
+    ST_XmlName::~ST_XmlName()
+{
+    clear();    }
     bool ST_XmlName::has_NCName() const
     {    
     return m_has_NCName;
@@ -868,6 +907,9 @@ ST_XmlName* ST_XmlName::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TrueFalse::~ST_TrueFalse()
+{
+    clear();    }
     bool ST_TrueFalse::has_type() const
     {    
     return m_has_type;
@@ -930,6 +972,9 @@ ST_TrueFalse* ST_TrueFalse::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TrueFalseBlank::~ST_TrueFalseBlank()
+{
+    clear();    }
     bool ST_TrueFalseBlank::has_type() const
     {    
     return m_has_type;
@@ -997,6 +1042,9 @@ ST_TrueFalseBlank* ST_TrueFalseBlank::default_instance_ = NULL;
     
     set_unsignedLong(_unsignedLong);
     }
+    ST_UnsignedDecimalNumber::~ST_UnsignedDecimalNumber()
+{
+    clear();    }
     bool ST_UnsignedDecimalNumber::has_unsignedLong() const
     {    
     return m_has_unsignedLong;
@@ -1053,6 +1101,9 @@ ST_UnsignedDecimalNumber* ST_UnsignedDecimalNumber::default_instance_ = NULL;
     m_ST_PositiveUniversalMeasure(NULL)
     {
     }
+    ST_TwipsMeasure::~ST_TwipsMeasure()
+{
+    clear();    }
     bool ST_TwipsMeasure::has_ST_UnsignedDecimalNumber() const
     {    
     return m_has_ST_UnsignedDecimalNumber;
@@ -1178,6 +1229,9 @@ ST_TwipsMeasure* ST_TwipsMeasure::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_VerticalAlignRun::~ST_VerticalAlignRun()
+{
+    clear();    }
     bool ST_VerticalAlignRun::has_type() const
     {    
     return m_has_type;
@@ -1241,6 +1295,9 @@ ST_VerticalAlignRun* ST_VerticalAlignRun::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_Xstring::~ST_Xstring()
+{
+    clear();    }
     bool ST_Xstring::has_string() const
     {    
     return m_has_string;
@@ -1299,6 +1356,9 @@ ST_Xstring* ST_Xstring::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_XAlign::~ST_XAlign()
+{
+    clear();    }
     bool ST_XAlign::has_type() const
     {    
     return m_has_type;
@@ -1362,6 +1422,9 @@ ST_XAlign* ST_XAlign::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_YAlign::~ST_YAlign()
+{
+    clear();    }
     bool ST_YAlign::has_type() const
     {    
     return m_has_type;
@@ -1426,6 +1489,9 @@ ST_YAlign* ST_YAlign::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ConformanceClass::~ST_ConformanceClass()
+{
+    clear();    }
     bool ST_ConformanceClass::has_type() const
     {    
     return m_has_type;
@@ -1488,6 +1554,9 @@ ST_ConformanceClass* ST_ConformanceClass::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_UniversalMeasure::~ST_UniversalMeasure()
+{
+    clear();    }
     bool ST_UniversalMeasure::has_string() const
     {    
     return m_has_string;
@@ -1545,6 +1614,9 @@ ST_UniversalMeasure* ST_UniversalMeasure::default_instance_ = NULL;
 
     {
     }
+    ST_PositiveUniversalMeasure::~ST_PositiveUniversalMeasure()
+{
+    clear();    }
     const ST_PositiveUniversalMeasure& ST_PositiveUniversalMeasure::default_instance()
     {    
     if (!ST_PositiveUniversalMeasure::default_instance_)
@@ -1568,6 +1640,9 @@ ST_PositiveUniversalMeasure* ST_PositiveUniversalMeasure::default_instance_ = NU
     
     set_string(_string);
     }
+    ST_Percentage::~ST_Percentage()
+{
+    clear();    }
     bool ST_Percentage::has_string() const
     {    
     return m_has_string;
@@ -1625,6 +1700,9 @@ ST_Percentage* ST_Percentage::default_instance_ = NULL;
 
     {
     }
+    ST_FixedPercentage::~ST_FixedPercentage()
+{
+    clear();    }
     const ST_FixedPercentage& ST_FixedPercentage::default_instance()
     {    
     if (!ST_FixedPercentage::default_instance_)
@@ -1645,6 +1723,9 @@ ST_FixedPercentage* ST_FixedPercentage::default_instance_ = NULL;
 
     {
     }
+    ST_PositivePercentage::~ST_PositivePercentage()
+{
+    clear();    }
     const ST_PositivePercentage& ST_PositivePercentage::default_instance()
     {    
     if (!ST_PositivePercentage::default_instance_)
@@ -1665,6 +1746,9 @@ ST_PositivePercentage* ST_PositivePercentage::default_instance_ = NULL;
 
     {
     }
+    ST_PositiveFixedPercentage::~ST_PositiveFixedPercentage()
+{
+    clear();    }
     const ST_PositiveFixedPercentage& ST_PositiveFixedPercentage::default_instance()
     {    
     if (!ST_PositiveFixedPercentage::default_instance_)

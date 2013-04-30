@@ -246,6 +246,7 @@ namespace ns_chart {
         };
         ST_LayoutTarget();
         ST_LayoutTarget(const ST_LayoutTarget::Type& _type);
+        ~ST_LayoutTarget();
         bool has_type() const;
         void set_type(const ST_LayoutTarget::Type& _type);
         const ST_LayoutTarget::Type& get_type() const;
@@ -271,6 +272,7 @@ namespace ns_chart {
         };
         ST_LayoutMode();
         ST_LayoutMode(const ST_LayoutMode::Type& _type);
+        ~ST_LayoutMode();
         bool has_type() const;
         void set_type(const ST_LayoutMode::Type& _type);
         const ST_LayoutMode::Type& get_type() const;
@@ -291,6 +293,7 @@ namespace ns_chart {
     public:
         ST_RotX();
         ST_RotX(const XSD::byte_& _byte);
+        ~ST_RotX();
         bool has_byte() const;
         void set_byte(const XSD::byte_& _byte);
         const XSD::byte_& get_byte() const;
@@ -309,6 +312,7 @@ namespace ns_chart {
     {
     public:
         ST_HPercent();
+        ~ST_HPercent();
         bool has_ST_HPercentWithSymbol() const;
         ST_HPercentWithSymbol* mutable_ST_HPercentWithSymbol();
         const ST_HPercentWithSymbol& get_ST_HPercentWithSymbol() const;
@@ -335,6 +339,7 @@ namespace ns_chart {
     public:
         ST_HPercentWithSymbol();
         ST_HPercentWithSymbol(const XSD::string_& _string);
+        ~ST_HPercentWithSymbol();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -354,6 +359,7 @@ namespace ns_chart {
     public:
         ST_HPercentUShort();
         ST_HPercentUShort(const XSD::unsignedShort_& _unsignedShort);
+        ~ST_HPercentUShort();
         bool has_unsignedShort() const;
         void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
         const XSD::unsignedShort_& get_unsignedShort() const;
@@ -373,6 +379,7 @@ namespace ns_chart {
     public:
         ST_RotY();
         ST_RotY(const XSD::unsignedShort_& _unsignedShort);
+        ~ST_RotY();
         bool has_unsignedShort() const;
         void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
         const XSD::unsignedShort_& get_unsignedShort() const;
@@ -391,6 +398,7 @@ namespace ns_chart {
     {
     public:
         ST_DepthPercent();
+        ~ST_DepthPercent();
         bool has_ST_DepthPercentWithSymbol() const;
         ST_DepthPercentWithSymbol* mutable_ST_DepthPercentWithSymbol();
         const ST_DepthPercentWithSymbol& get_ST_DepthPercentWithSymbol() const;
@@ -417,6 +425,7 @@ namespace ns_chart {
     public:
         ST_DepthPercentWithSymbol();
         ST_DepthPercentWithSymbol(const XSD::string_& _string);
+        ~ST_DepthPercentWithSymbol();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -436,6 +445,7 @@ namespace ns_chart {
     public:
         ST_DepthPercentUShort();
         ST_DepthPercentUShort(const XSD::unsignedShort_& _unsignedShort);
+        ~ST_DepthPercentUShort();
         bool has_unsignedShort() const;
         void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
         const XSD::unsignedShort_& get_unsignedShort() const;
@@ -455,6 +465,7 @@ namespace ns_chart {
     public:
         ST_Perspective();
         ST_Perspective(const XSD::unsignedByte_& _unsignedByte);
+        ~ST_Perspective();
         bool has_unsignedByte() const;
         void set_unsignedByte(const XSD::unsignedByte_& _unsignedByte);
         const XSD::unsignedByte_& get_unsignedByte() const;
@@ -473,6 +484,7 @@ namespace ns_chart {
     {
     public:
         ST_Thickness();
+        ~ST_Thickness();
         bool has_ST_ThicknessPercent() const;
         ST_ThicknessPercent* mutable_ST_ThicknessPercent();
         const ST_ThicknessPercent& get_ST_ThicknessPercent() const;
@@ -499,6 +511,7 @@ namespace ns_chart {
     public:
         ST_ThicknessPercent();
         ST_ThicknessPercent(const XSD::string_& _string);
+        ~ST_ThicknessPercent();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -517,6 +530,7 @@ namespace ns_chart {
     {
     public:
         ST_GapAmount();
+        ~ST_GapAmount();
         bool has_ST_GapAmountPercent() const;
         ST_GapAmountPercent* mutable_ST_GapAmountPercent();
         const ST_GapAmountPercent& get_ST_GapAmountPercent() const;
@@ -543,6 +557,7 @@ namespace ns_chart {
     public:
         ST_GapAmountPercent();
         ST_GapAmountPercent(const XSD::string_& _string);
+        ~ST_GapAmountPercent();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -562,6 +577,7 @@ namespace ns_chart {
     public:
         ST_GapAmountUShort();
         ST_GapAmountUShort(const XSD::unsignedShort_& _unsignedShort);
+        ~ST_GapAmountUShort();
         bool has_unsignedShort() const;
         void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
         const XSD::unsignedShort_& get_unsignedShort() const;
@@ -580,6 +596,7 @@ namespace ns_chart {
     {
     public:
         ST_Overlap();
+        ~ST_Overlap();
         bool has_ST_OverlapPercent() const;
         ST_OverlapPercent* mutable_ST_OverlapPercent();
         const ST_OverlapPercent& get_ST_OverlapPercent() const;
@@ -606,6 +623,7 @@ namespace ns_chart {
     public:
         ST_OverlapPercent();
         ST_OverlapPercent(const XSD::string_& _string);
+        ~ST_OverlapPercent();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -625,6 +643,7 @@ namespace ns_chart {
     public:
         ST_OverlapByte();
         ST_OverlapByte(const XSD::byte_& _byte);
+        ~ST_OverlapByte();
         bool has_byte() const;
         void set_byte(const XSD::byte_& _byte);
         const XSD::byte_& get_byte() const;
@@ -643,6 +662,7 @@ namespace ns_chart {
     {
     public:
         ST_BubbleScale();
+        ~ST_BubbleScale();
         bool has_ST_BubbleScalePercent() const;
         ST_BubbleScalePercent* mutable_ST_BubbleScalePercent();
         const ST_BubbleScalePercent& get_ST_BubbleScalePercent() const;
@@ -669,6 +689,7 @@ namespace ns_chart {
     public:
         ST_BubbleScalePercent();
         ST_BubbleScalePercent(const XSD::string_& _string);
+        ~ST_BubbleScalePercent();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -688,6 +709,7 @@ namespace ns_chart {
     public:
         ST_BubbleScaleUInt();
         ST_BubbleScaleUInt(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_BubbleScaleUInt();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -712,6 +734,7 @@ namespace ns_chart {
         };
         ST_SizeRepresents();
         ST_SizeRepresents(const ST_SizeRepresents::Type& _type);
+        ~ST_SizeRepresents();
         bool has_type() const;
         void set_type(const ST_SizeRepresents::Type& _type);
         const ST_SizeRepresents::Type& get_type() const;
@@ -732,6 +755,7 @@ namespace ns_chart {
     public:
         ST_FirstSliceAng();
         ST_FirstSliceAng(const XSD::unsignedShort_& _unsignedShort);
+        ~ST_FirstSliceAng();
         bool has_unsignedShort() const;
         void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
         const XSD::unsignedShort_& get_unsignedShort() const;
@@ -750,6 +774,7 @@ namespace ns_chart {
     {
     public:
         ST_HoleSize();
+        ~ST_HoleSize();
         bool has_ST_HoleSizePercent() const;
         ST_HoleSizePercent* mutable_ST_HoleSizePercent();
         const ST_HoleSizePercent& get_ST_HoleSizePercent() const;
@@ -776,6 +801,7 @@ namespace ns_chart {
     public:
         ST_HoleSizePercent();
         ST_HoleSizePercent(const XSD::string_& _string);
+        ~ST_HoleSizePercent();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -795,6 +821,7 @@ namespace ns_chart {
     public:
         ST_HoleSizeUByte();
         ST_HoleSizeUByte(const XSD::unsignedByte_& _unsignedByte);
+        ~ST_HoleSizeUByte();
         bool has_unsignedByte() const;
         void set_unsignedByte(const XSD::unsignedByte_& _unsignedByte);
         const XSD::unsignedByte_& get_unsignedByte() const;
@@ -822,6 +849,7 @@ namespace ns_chart {
         };
         ST_SplitType();
         ST_SplitType(const ST_SplitType::Type& _type);
+        ~ST_SplitType();
         bool has_type() const;
         void set_type(const ST_SplitType::Type& _type);
         const ST_SplitType::Type& get_type() const;
@@ -841,6 +869,7 @@ namespace ns_chart {
     {
     public:
         ST_SecondPieSize();
+        ~ST_SecondPieSize();
         bool has_ST_SecondPieSizePercent() const;
         ST_SecondPieSizePercent* mutable_ST_SecondPieSizePercent();
         const ST_SecondPieSizePercent& get_ST_SecondPieSizePercent() const;
@@ -867,6 +896,7 @@ namespace ns_chart {
     public:
         ST_SecondPieSizePercent();
         ST_SecondPieSizePercent(const XSD::string_& _string);
+        ~ST_SecondPieSizePercent();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -886,6 +916,7 @@ namespace ns_chart {
     public:
         ST_SecondPieSizeUShort();
         ST_SecondPieSizeUShort(const XSD::unsignedShort_& _unsignedShort);
+        ~ST_SecondPieSizeUShort();
         bool has_unsignedShort() const;
         void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
         const XSD::unsignedShort_& get_unsignedShort() const;
@@ -911,6 +942,7 @@ namespace ns_chart {
         };
         ST_LblAlgn();
         ST_LblAlgn(const ST_LblAlgn::Type& _type);
+        ~ST_LblAlgn();
         bool has_type() const;
         void set_type(const ST_LblAlgn::Type& _type);
         const ST_LblAlgn::Type& get_type() const;
@@ -943,6 +975,7 @@ namespace ns_chart {
         };
         ST_DLblPos();
         ST_DLblPos(const ST_DLblPos::Type& _type);
+        ~ST_DLblPos();
         bool has_type() const;
         void set_type(const ST_DLblPos::Type& _type);
         const ST_DLblPos::Type& get_type() const;
@@ -978,6 +1011,7 @@ namespace ns_chart {
         };
         ST_MarkerStyle();
         ST_MarkerStyle(const ST_MarkerStyle::Type& _type);
+        ~ST_MarkerStyle();
         bool has_type() const;
         void set_type(const ST_MarkerStyle::Type& _type);
         const ST_MarkerStyle::Type& get_type() const;
@@ -998,6 +1032,7 @@ namespace ns_chart {
     public:
         ST_MarkerSize();
         ST_MarkerSize(const XSD::unsignedByte_& _unsignedByte);
+        ~ST_MarkerSize();
         bool has_unsignedByte() const;
         void set_unsignedByte(const XSD::unsignedByte_& _unsignedByte);
         const XSD::unsignedByte_& get_unsignedByte() const;
@@ -1026,6 +1061,7 @@ namespace ns_chart {
         };
         ST_TrendlineType();
         ST_TrendlineType(const ST_TrendlineType::Type& _type);
+        ~ST_TrendlineType();
         bool has_type() const;
         void set_type(const ST_TrendlineType::Type& _type);
         const ST_TrendlineType::Type& get_type() const;
@@ -1046,6 +1082,7 @@ namespace ns_chart {
     public:
         ST_Order();
         ST_Order(const XSD::unsignedByte_& _unsignedByte);
+        ~ST_Order();
         bool has_unsignedByte() const;
         void set_unsignedByte(const XSD::unsignedByte_& _unsignedByte);
         const XSD::unsignedByte_& get_unsignedByte() const;
@@ -1065,6 +1102,7 @@ namespace ns_chart {
     public:
         ST_Period();
         ST_Period(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_Period();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -1089,6 +1127,7 @@ namespace ns_chart {
         };
         ST_ErrDir();
         ST_ErrDir(const ST_ErrDir::Type& _type);
+        ~ST_ErrDir();
         bool has_type() const;
         void set_type(const ST_ErrDir::Type& _type);
         const ST_ErrDir::Type& get_type() const;
@@ -1115,6 +1154,7 @@ namespace ns_chart {
         };
         ST_ErrBarType();
         ST_ErrBarType(const ST_ErrBarType::Type& _type);
+        ~ST_ErrBarType();
         bool has_type() const;
         void set_type(const ST_ErrBarType::Type& _type);
         const ST_ErrBarType::Type& get_type() const;
@@ -1143,6 +1183,7 @@ namespace ns_chart {
         };
         ST_ErrValType();
         ST_ErrValType(const ST_ErrValType::Type& _type);
+        ~ST_ErrValType();
         bool has_type() const;
         void set_type(const ST_ErrValType::Type& _type);
         const ST_ErrValType::Type& get_type() const;
@@ -1169,6 +1210,7 @@ namespace ns_chart {
         };
         ST_Grouping();
         ST_Grouping(const ST_Grouping::Type& _type);
+        ~ST_Grouping();
         bool has_type() const;
         void set_type(const ST_Grouping::Type& _type);
         const ST_Grouping::Type& get_type() const;
@@ -1198,6 +1240,7 @@ namespace ns_chart {
         };
         ST_ScatterStyle();
         ST_ScatterStyle(const ST_ScatterStyle::Type& _type);
+        ~ST_ScatterStyle();
         bool has_type() const;
         void set_type(const ST_ScatterStyle::Type& _type);
         const ST_ScatterStyle::Type& get_type() const;
@@ -1224,6 +1267,7 @@ namespace ns_chart {
         };
         ST_RadarStyle();
         ST_RadarStyle(const ST_RadarStyle::Type& _type);
+        ~ST_RadarStyle();
         bool has_type() const;
         void set_type(const ST_RadarStyle::Type& _type);
         const ST_RadarStyle::Type& get_type() const;
@@ -1251,6 +1295,7 @@ namespace ns_chart {
         };
         ST_BarGrouping();
         ST_BarGrouping(const ST_BarGrouping::Type& _type);
+        ~ST_BarGrouping();
         bool has_type() const;
         void set_type(const ST_BarGrouping::Type& _type);
         const ST_BarGrouping::Type& get_type() const;
@@ -1276,6 +1321,7 @@ namespace ns_chart {
         };
         ST_BarDir();
         ST_BarDir(const ST_BarDir::Type& _type);
+        ~ST_BarDir();
         bool has_type() const;
         void set_type(const ST_BarDir::Type& _type);
         const ST_BarDir::Type& get_type() const;
@@ -1305,6 +1351,7 @@ namespace ns_chart {
         };
         ST_Shape();
         ST_Shape(const ST_Shape::Type& _type);
+        ~ST_Shape();
         bool has_type() const;
         void set_type(const ST_Shape::Type& _type);
         const ST_Shape::Type& get_type() const;
@@ -1330,6 +1377,7 @@ namespace ns_chart {
         };
         ST_OfPieType();
         ST_OfPieType(const ST_OfPieType::Type& _type);
+        ~ST_OfPieType();
         bool has_type() const;
         void set_type(const ST_OfPieType::Type& _type);
         const ST_OfPieType::Type& get_type() const;
@@ -1357,6 +1405,7 @@ namespace ns_chart {
         };
         ST_AxPos();
         ST_AxPos(const ST_AxPos::Type& _type);
+        ~ST_AxPos();
         bool has_type() const;
         void set_type(const ST_AxPos::Type& _type);
         const ST_AxPos::Type& get_type() const;
@@ -1383,6 +1432,7 @@ namespace ns_chart {
         };
         ST_Crosses();
         ST_Crosses(const ST_Crosses::Type& _type);
+        ~ST_Crosses();
         bool has_type() const;
         void set_type(const ST_Crosses::Type& _type);
         const ST_Crosses::Type& get_type() const;
@@ -1408,6 +1458,7 @@ namespace ns_chart {
         };
         ST_CrossBetween();
         ST_CrossBetween(const ST_CrossBetween::Type& _type);
+        ~ST_CrossBetween();
         bool has_type() const;
         void set_type(const ST_CrossBetween::Type& _type);
         const ST_CrossBetween::Type& get_type() const;
@@ -1435,6 +1486,7 @@ namespace ns_chart {
         };
         ST_TickMark();
         ST_TickMark(const ST_TickMark::Type& _type);
+        ~ST_TickMark();
         bool has_type() const;
         void set_type(const ST_TickMark::Type& _type);
         const ST_TickMark::Type& get_type() const;
@@ -1462,6 +1514,7 @@ namespace ns_chart {
         };
         ST_TickLblPos();
         ST_TickLblPos(const ST_TickLblPos::Type& _type);
+        ~ST_TickLblPos();
         bool has_type() const;
         void set_type(const ST_TickLblPos::Type& _type);
         const ST_TickLblPos::Type& get_type() const;
@@ -1482,6 +1535,7 @@ namespace ns_chart {
     public:
         ST_Skip();
         ST_Skip(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_Skip();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -1507,6 +1561,7 @@ namespace ns_chart {
         };
         ST_TimeUnit();
         ST_TimeUnit(const ST_TimeUnit::Type& _type);
+        ~ST_TimeUnit();
         bool has_type() const;
         void set_type(const ST_TimeUnit::Type& _type);
         const ST_TimeUnit::Type& get_type() const;
@@ -1527,6 +1582,7 @@ namespace ns_chart {
     public:
         ST_AxisUnit();
         ST_AxisUnit(const XSD::double_& _double);
+        ~ST_AxisUnit();
         bool has_double() const;
         void set_double(const XSD::double_& _double);
         const XSD::double_& get_double() const;
@@ -1558,6 +1614,7 @@ namespace ns_chart {
         };
         ST_BuiltInUnit();
         ST_BuiltInUnit(const ST_BuiltInUnit::Type& _type);
+        ~ST_BuiltInUnit();
         bool has_type() const;
         void set_type(const ST_BuiltInUnit::Type& _type);
         const ST_BuiltInUnit::Type& get_type() const;
@@ -1584,6 +1641,7 @@ namespace ns_chart {
         };
         ST_PictureFormat();
         ST_PictureFormat(const ST_PictureFormat::Type& _type);
+        ~ST_PictureFormat();
         bool has_type() const;
         void set_type(const ST_PictureFormat::Type& _type);
         const ST_PictureFormat::Type& get_type() const;
@@ -1604,6 +1662,7 @@ namespace ns_chart {
     public:
         ST_PictureStackUnit();
         ST_PictureStackUnit(const XSD::double_& _double);
+        ~ST_PictureStackUnit();
         bool has_double() const;
         void set_double(const XSD::double_& _double);
         const XSD::double_& get_double() const;
@@ -1628,6 +1687,7 @@ namespace ns_chart {
         };
         ST_Orientation();
         ST_Orientation(const ST_Orientation::Type& _type);
+        ~ST_Orientation();
         bool has_type() const;
         void set_type(const ST_Orientation::Type& _type);
         const ST_Orientation::Type& get_type() const;
@@ -1648,6 +1708,7 @@ namespace ns_chart {
     public:
         ST_LogBase();
         ST_LogBase(const XSD::double_& _double);
+        ~ST_LogBase();
         bool has_double() const;
         void set_double(const XSD::double_& _double);
         const XSD::double_& get_double() const;
@@ -1666,6 +1727,7 @@ namespace ns_chart {
     {
     public:
         ST_LblOffset();
+        ~ST_LblOffset();
         bool has_ST_LblOffsetPercent() const;
         ST_LblOffsetPercent* mutable_ST_LblOffsetPercent();
         const ST_LblOffsetPercent& get_ST_LblOffsetPercent() const;
@@ -1692,6 +1754,7 @@ namespace ns_chart {
     public:
         ST_LblOffsetPercent();
         ST_LblOffsetPercent(const XSD::string_& _string);
+        ~ST_LblOffsetPercent();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -1711,6 +1774,7 @@ namespace ns_chart {
     public:
         ST_LblOffsetUShort();
         ST_LblOffsetUShort(const XSD::unsignedShort_& _unsignedShort);
+        ~ST_LblOffsetUShort();
         bool has_unsignedShort() const;
         void set_unsignedShort(const XSD::unsignedShort_& _unsignedShort);
         const XSD::unsignedShort_& get_unsignedShort() const;
@@ -1738,6 +1802,7 @@ namespace ns_chart {
         };
         ST_LegendPos();
         ST_LegendPos(const ST_LegendPos::Type& _type);
+        ~ST_LegendPos();
         bool has_type() const;
         void set_type(const ST_LegendPos::Type& _type);
         const ST_LegendPos::Type& get_type() const;
@@ -1764,6 +1829,7 @@ namespace ns_chart {
         };
         ST_DispBlanksAs();
         ST_DispBlanksAs(const ST_DispBlanksAs::Type& _type);
+        ~ST_DispBlanksAs();
         bool has_type() const;
         void set_type(const ST_DispBlanksAs::Type& _type);
         const ST_DispBlanksAs::Type& get_type() const;
@@ -1784,6 +1850,7 @@ namespace ns_chart {
     public:
         ST_Style();
         ST_Style(const XSD::unsignedByte_& _unsignedByte);
+        ~ST_Style();
         bool has_unsignedByte() const;
         void set_unsignedByte(const XSD::unsignedByte_& _unsignedByte);
         const XSD::unsignedByte_& get_unsignedByte() const;
@@ -1809,6 +1876,7 @@ namespace ns_chart {
         };
         ST_PageSetupOrientation();
         ST_PageSetupOrientation(const ST_PageSetupOrientation::Type& _type);
+        ~ST_PageSetupOrientation();
         bool has_type() const;
         void set_type(const ST_PageSetupOrientation::Type& _type);
         const ST_PageSetupOrientation::Type& get_type() const;

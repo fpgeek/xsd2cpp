@@ -20,6 +20,9 @@ namespace ns_bibliography {
 
     {
     }
+    ST_SourceType::~ST_SourceType()
+{
+    clear();    }
     const ST_SourceType& ST_SourceType::default_instance()
     {    
     if (!ST_SourceType::default_instance_)

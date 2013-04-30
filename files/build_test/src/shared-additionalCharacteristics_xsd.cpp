@@ -20,6 +20,9 @@ namespace ns_characteristics {
     m_type(_type)
     {
     }
+    ST_Relation::~ST_Relation()
+{
+    clear();    }
     bool ST_Relation::has_type() const
     {    
     return m_has_type;

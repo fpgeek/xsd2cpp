@@ -40,6 +40,7 @@ namespace ns_bibliography {
     public:
         ST_SourceType();
         ST_SourceType(const ns_s::ST_String& _ST_String);
+        ~ST_SourceType();
         static const ST_SourceType& default_instance();
     protected:
     private:

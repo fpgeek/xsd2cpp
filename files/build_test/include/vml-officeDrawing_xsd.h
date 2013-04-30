@@ -153,6 +153,7 @@ namespace ns_o {
     public:
         ST_AlternateMathContentType();
         ST_AlternateMathContentType(const XSD::string_& _string);
+        ~ST_AlternateMathContentType();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -179,6 +180,7 @@ namespace ns_o {
         };
         ST_RType();
         ST_RType(const ST_RType::Type& _type);
+        ~ST_RType();
         bool has_type() const;
         void set_type(const ST_RType::Type& _type);
         const ST_RType::Type& get_type() const;
@@ -208,6 +210,7 @@ namespace ns_o {
         };
         ST_How();
         ST_How(const ST_How::Type& _type);
+        ~ST_How();
         bool has_type() const;
         void set_type(const ST_How::Type& _type);
         const ST_How::Type& get_type() const;
@@ -243,6 +246,7 @@ namespace ns_o {
         };
         ST_BWMode();
         ST_BWMode(const ST_BWMode::Type& _type);
+        ~ST_BWMode();
         bool has_type() const;
         void set_type(const ST_BWMode::Type& _type);
         const ST_BWMode::Type& get_type() const;
@@ -272,6 +276,7 @@ namespace ns_o {
         };
         ST_ScreenSize();
         ST_ScreenSize(const ST_ScreenSize::Type& _type);
+        ~ST_ScreenSize();
         bool has_type() const;
         void set_type(const ST_ScreenSize::Type& _type);
         const ST_ScreenSize::Type& get_type() const;
@@ -297,6 +302,7 @@ namespace ns_o {
         };
         ST_InsetMode();
         ST_InsetMode(const ST_InsetMode::Type& _type);
+        ~ST_InsetMode();
         bool has_type() const;
         void set_type(const ST_InsetMode::Type& _type);
         const ST_InsetMode::Type& get_type() const;
@@ -322,6 +328,7 @@ namespace ns_o {
         };
         ST_ColorMode();
         ST_ColorMode(const ST_ColorMode::Type& _type);
+        ~ST_ColorMode();
         bool has_type() const;
         void set_type(const ST_ColorMode::Type& _type);
         const ST_ColorMode::Type& get_type() const;
@@ -342,6 +349,7 @@ namespace ns_o {
     public:
         ST_ContentType();
         ST_ContentType(const XSD::string_& _string);
+        ~ST_ContentType();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -368,6 +376,7 @@ namespace ns_o {
         };
         ST_DiagramLayout();
         ST_DiagramLayout(const ST_DiagramLayout::Type& _type);
+        ~ST_DiagramLayout();
         bool has_type() const;
         void set_type(const ST_DiagramLayout::Type& _type);
         const ST_DiagramLayout::Type& get_type() const;
@@ -393,6 +402,7 @@ namespace ns_o {
         };
         ST_ExtrusionType();
         ST_ExtrusionType(const ST_ExtrusionType::Type& _type);
+        ~ST_ExtrusionType();
         bool has_type() const;
         void set_type(const ST_ExtrusionType::Type& _type);
         const ST_ExtrusionType::Type& get_type() const;
@@ -419,6 +429,7 @@ namespace ns_o {
         };
         ST_ExtrusionRender();
         ST_ExtrusionRender(const ST_ExtrusionRender::Type& _type);
+        ~ST_ExtrusionRender();
         bool has_type() const;
         void set_type(const ST_ExtrusionRender::Type& _type);
         const ST_ExtrusionRender::Type& get_type() const;
@@ -445,6 +456,7 @@ namespace ns_o {
         };
         ST_ExtrusionPlane();
         ST_ExtrusionPlane(const ST_ExtrusionPlane::Type& _type);
+        ~ST_ExtrusionPlane();
         bool has_type() const;
         void set_type(const ST_ExtrusionPlane::Type& _type);
         const ST_ExtrusionPlane::Type& get_type() const;
@@ -474,6 +486,7 @@ namespace ns_o {
         };
         ST_Angle();
         ST_Angle(const ST_Angle::Type& _type);
+        ~ST_Angle();
         bool has_type() const;
         void set_type(const ST_Angle::Type& _type);
         const ST_Angle::Type& get_type() const;
@@ -494,6 +507,7 @@ namespace ns_o {
     public:
         ST_CalloutDrop();
         ST_CalloutDrop(const XSD::string_& _string);
+        ~ST_CalloutDrop();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -520,6 +534,7 @@ namespace ns_o {
         };
         ST_CalloutPlacement();
         ST_CalloutPlacement(const ST_CalloutPlacement::Type& _type);
+        ~ST_CalloutPlacement();
         bool has_type() const;
         void set_type(const ST_CalloutPlacement::Type& _type);
         const ST_CalloutPlacement::Type& get_type() const;
@@ -547,6 +562,7 @@ namespace ns_o {
         };
         ST_ConnectorType();
         ST_ConnectorType(const ST_ConnectorType::Type& _type);
+        ~ST_ConnectorType();
         bool has_type() const;
         void set_type(const ST_ConnectorType::Type& _type);
         const ST_ConnectorType::Type& get_type() const;
@@ -573,6 +589,7 @@ namespace ns_o {
         };
         ST_HrAlign();
         ST_HrAlign(const ST_HrAlign::Type& _type);
+        ~ST_HrAlign();
         bool has_type() const;
         void set_type(const ST_HrAlign::Type& _type);
         const ST_HrAlign::Type& get_type() const;
@@ -600,6 +617,7 @@ namespace ns_o {
         };
         ST_ConnectType();
         ST_ConnectType(const ST_ConnectType::Type& _type);
+        ~ST_ConnectType();
         bool has_type() const;
         void set_type(const ST_ConnectType::Type& _type);
         const ST_ConnectType::Type& get_type() const;
@@ -620,6 +638,7 @@ namespace ns_o {
     public:
         ST_OLELinkType();
         ST_OLELinkType(const XSD::string_& _string);
+        ~ST_OLELinkType();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -644,6 +663,7 @@ namespace ns_o {
         };
         ST_OLEType();
         ST_OLEType(const ST_OLEType::Type& _type);
+        ~ST_OLEType();
         bool has_type() const;
         void set_type(const ST_OLEType::Type& _type);
         const ST_OLEType::Type& get_type() const;
@@ -669,6 +689,7 @@ namespace ns_o {
         };
         ST_OLEDrawAspect();
         ST_OLEDrawAspect(const ST_OLEDrawAspect::Type& _type);
+        ~ST_OLEDrawAspect();
         bool has_type() const;
         void set_type(const ST_OLEDrawAspect::Type& _type);
         const ST_OLEDrawAspect::Type& get_type() const;
@@ -694,6 +715,7 @@ namespace ns_o {
         };
         ST_OLEUpdateMode();
         ST_OLEUpdateMode(const ST_OLEUpdateMode::Type& _type);
+        ~ST_OLEUpdateMode();
         bool has_type() const;
         void set_type(const ST_OLEUpdateMode::Type& _type);
         const ST_OLEUpdateMode::Type& get_type() const;
@@ -726,6 +748,7 @@ namespace ns_o {
         };
         ST_FillType();
         ST_FillType(const ST_FillType::Type& _type);
+        ~ST_FillType();
         bool has_type() const;
         void set_type(const ST_FillType::Type& _type);
         const ST_FillType::Type& get_type() const;

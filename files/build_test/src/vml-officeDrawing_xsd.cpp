@@ -25,6 +25,9 @@ namespace ns_o {
     
     set_string(_string);
     }
+    ST_AlternateMathContentType::~ST_AlternateMathContentType()
+{
+    clear();    }
     bool ST_AlternateMathContentType::has_string() const
     {    
     return m_has_string;
@@ -83,6 +86,9 @@ ST_AlternateMathContentType* ST_AlternateMathContentType::default_instance_ = NU
     m_type(_type)
     {
     }
+    ST_RType::~ST_RType()
+{
+    clear();    }
     bool ST_RType::has_type() const
     {    
     return m_has_type;
@@ -145,6 +151,9 @@ ST_RType* ST_RType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_How::~ST_How()
+{
+    clear();    }
     bool ST_How::has_type() const
     {    
     return m_has_type;
@@ -209,6 +218,9 @@ ST_How* ST_How::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BWMode::~ST_BWMode()
+{
+    clear();    }
     bool ST_BWMode::has_type() const
     {    
     return m_has_type;
@@ -279,6 +291,9 @@ ST_BWMode* ST_BWMode::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ScreenSize::~ST_ScreenSize()
+{
+    clear();    }
     bool ST_ScreenSize::has_type() const
     {    
     return m_has_type;
@@ -343,6 +358,9 @@ ST_ScreenSize* ST_ScreenSize::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_InsetMode::~ST_InsetMode()
+{
+    clear();    }
     bool ST_InsetMode::has_type() const
     {    
     return m_has_type;
@@ -403,6 +421,9 @@ ST_InsetMode* ST_InsetMode::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ColorMode::~ST_ColorMode()
+{
+    clear();    }
     bool ST_ColorMode::has_type() const
     {    
     return m_has_type;
@@ -465,6 +486,9 @@ ST_ColorMode* ST_ColorMode::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_ContentType::~ST_ContentType()
+{
+    clear();    }
     bool ST_ContentType::has_string() const
     {    
     return m_has_string;
@@ -523,6 +547,9 @@ ST_ContentType* ST_ContentType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_DiagramLayout::~ST_DiagramLayout()
+{
+    clear();    }
     bool ST_DiagramLayout::has_type() const
     {    
     return m_has_type;
@@ -585,6 +612,9 @@ ST_DiagramLayout* ST_DiagramLayout::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ExtrusionType::~ST_ExtrusionType()
+{
+    clear();    }
     bool ST_ExtrusionType::has_type() const
     {    
     return m_has_type;
@@ -645,6 +675,9 @@ ST_ExtrusionType* ST_ExtrusionType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ExtrusionRender::~ST_ExtrusionRender()
+{
+    clear();    }
     bool ST_ExtrusionRender::has_type() const
     {    
     return m_has_type;
@@ -706,6 +739,9 @@ ST_ExtrusionRender* ST_ExtrusionRender::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ExtrusionPlane::~ST_ExtrusionPlane()
+{
+    clear();    }
     bool ST_ExtrusionPlane::has_type() const
     {    
     return m_has_type;
@@ -767,6 +803,9 @@ ST_ExtrusionPlane* ST_ExtrusionPlane::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Angle::~ST_Angle()
+{
+    clear();    }
     bool ST_Angle::has_type() const
     {    
     return m_has_type;
@@ -833,6 +872,9 @@ ST_Angle* ST_Angle::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_CalloutDrop::~ST_CalloutDrop()
+{
+    clear();    }
     bool ST_CalloutDrop::has_string() const
     {    
     return m_has_string;
@@ -891,6 +933,9 @@ ST_CalloutDrop* ST_CalloutDrop::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_CalloutPlacement::~ST_CalloutPlacement()
+{
+    clear();    }
     bool ST_CalloutPlacement::has_type() const
     {    
     return m_has_type;
@@ -953,6 +998,9 @@ ST_CalloutPlacement* ST_CalloutPlacement::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ConnectorType::~ST_ConnectorType()
+{
+    clear();    }
     bool ST_ConnectorType::has_type() const
     {    
     return m_has_type;
@@ -1015,6 +1063,9 @@ ST_ConnectorType* ST_ConnectorType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_HrAlign::~ST_HrAlign()
+{
+    clear();    }
     bool ST_HrAlign::has_type() const
     {    
     return m_has_type;
@@ -1076,6 +1127,9 @@ ST_HrAlign* ST_HrAlign::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ConnectType::~ST_ConnectType()
+{
+    clear();    }
     bool ST_ConnectType::has_type() const
     {    
     return m_has_type;
@@ -1140,6 +1194,9 @@ ST_ConnectType* ST_ConnectType::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_OLELinkType::~ST_OLELinkType()
+{
+    clear();    }
     bool ST_OLELinkType::has_string() const
     {    
     return m_has_string;
@@ -1198,6 +1255,9 @@ ST_OLELinkType* ST_OLELinkType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_OLEType::~ST_OLEType()
+{
+    clear();    }
     bool ST_OLEType::has_type() const
     {    
     return m_has_type;
@@ -1258,6 +1318,9 @@ ST_OLEType* ST_OLEType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_OLEDrawAspect::~ST_OLEDrawAspect()
+{
+    clear();    }
     bool ST_OLEDrawAspect::has_type() const
     {    
     return m_has_type;
@@ -1318,6 +1381,9 @@ ST_OLEDrawAspect* ST_OLEDrawAspect::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_OLEUpdateMode::~ST_OLEUpdateMode()
+{
+    clear();    }
     bool ST_OLEUpdateMode::has_type() const
     {    
     return m_has_type;
@@ -1378,6 +1444,9 @@ ST_OLEUpdateMode* ST_OLEUpdateMode::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FillType::~ST_FillType()
+{
+    clear();    }
     bool ST_FillType::has_type() const
     {    
     return m_has_type;

@@ -28,6 +28,9 @@ namespace ns_a {
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_StyleMatrixColumnIndex::~ST_StyleMatrixColumnIndex()
+{
+    clear();    }
     bool ST_StyleMatrixColumnIndex::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -86,6 +89,9 @@ ST_StyleMatrixColumnIndex* ST_StyleMatrixColumnIndex::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FontCollectionIndex::~ST_FontCollectionIndex()
+{
+    clear();    }
     bool ST_FontCollectionIndex::has_type() const
     {    
     return m_has_type;
@@ -147,6 +153,9 @@ ST_FontCollectionIndex* ST_FontCollectionIndex::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ColorSchemeIndex::~ST_ColorSchemeIndex()
+{
+    clear();    }
     bool ST_ColorSchemeIndex::has_type() const
     {    
     return m_has_type;
@@ -215,6 +224,9 @@ ST_ColorSchemeIndex* ST_ColorSchemeIndex::default_instance_ = NULL;
     m_ST_UniversalMeasure(NULL)
     {
     }
+    ST_Coordinate::~ST_Coordinate()
+{
+    clear();    }
     bool ST_Coordinate::has_ST_CoordinateUnqualified() const
     {    
     return m_has_ST_CoordinateUnqualified;
@@ -342,6 +354,9 @@ ST_Coordinate* ST_Coordinate::default_instance_ = NULL;
     
     set_long(_long);
     }
+    ST_CoordinateUnqualified::~ST_CoordinateUnqualified()
+{
+    clear();    }
     bool ST_CoordinateUnqualified::has_long() const
     {    
     return m_has_long;
@@ -400,6 +415,9 @@ ST_CoordinateUnqualified* ST_CoordinateUnqualified::default_instance_ = NULL;
     m_ST_UniversalMeasure(NULL)
     {
     }
+    ST_Coordinate32::~ST_Coordinate32()
+{
+    clear();    }
     bool ST_Coordinate32::has_ST_Coordinate32Unqualified() const
     {    
     return m_has_ST_Coordinate32Unqualified;
@@ -527,6 +545,9 @@ ST_Coordinate32* ST_Coordinate32::default_instance_ = NULL;
     
     set_int(_int);
     }
+    ST_Coordinate32Unqualified::~ST_Coordinate32Unqualified()
+{
+    clear();    }
     bool ST_Coordinate32Unqualified::has_int() const
     {    
     return m_has_int;
@@ -587,6 +608,9 @@ ST_Coordinate32Unqualified* ST_Coordinate32Unqualified::default_instance_ = NULL
     
     set_long(_long);
     }
+    ST_PositiveCoordinate::~ST_PositiveCoordinate()
+{
+    clear();    }
     bool ST_PositiveCoordinate::has_long() const
     {    
     return m_has_long;
@@ -646,6 +670,9 @@ ST_PositiveCoordinate* ST_PositiveCoordinate::default_instance_ = NULL;
 
     {
     }
+    ST_PositiveCoordinate32::~ST_PositiveCoordinate32()
+{
+    clear();    }
     const ST_PositiveCoordinate32& ST_PositiveCoordinate32::default_instance()
     {    
     if (!ST_PositiveCoordinate32::default_instance_)
@@ -669,6 +696,9 @@ ST_PositiveCoordinate32* ST_PositiveCoordinate32::default_instance_ = NULL;
     
     set_int(_int);
     }
+    ST_Angle::~ST_Angle()
+{
+    clear();    }
     bool ST_Angle::has_int() const
     {    
     return m_has_int;
@@ -726,6 +756,9 @@ ST_Angle* ST_Angle::default_instance_ = NULL;
 
     {
     }
+    ST_FixedAngle::~ST_FixedAngle()
+{
+    clear();    }
     const ST_FixedAngle& ST_FixedAngle::default_instance()
     {    
     if (!ST_FixedAngle::default_instance_)
@@ -746,6 +779,9 @@ ST_FixedAngle* ST_FixedAngle::default_instance_ = NULL;
 
     {
     }
+    ST_PositiveFixedAngle::~ST_PositiveFixedAngle()
+{
+    clear();    }
     const ST_PositiveFixedAngle& ST_PositiveFixedAngle::default_instance()
     {    
     if (!ST_PositiveFixedAngle::default_instance_)
@@ -765,6 +801,9 @@ ST_PositiveFixedAngle* ST_PositiveFixedAngle::default_instance_ = NULL;
     m_ST_Percentage(NULL)
     {
     }
+    ST_Percentage::~ST_Percentage()
+{
+    clear();    }
     bool ST_Percentage::has_ST_PercentageDecimal() const
     {    
     return m_has_ST_PercentageDecimal;
@@ -892,6 +931,9 @@ ST_Percentage* ST_Percentage::default_instance_ = NULL;
     
     set_int(_int);
     }
+    ST_PercentageDecimal::~ST_PercentageDecimal()
+{
+    clear();    }
     bool ST_PercentageDecimal::has_int() const
     {    
     return m_has_int;
@@ -948,6 +990,9 @@ ST_PercentageDecimal* ST_PercentageDecimal::default_instance_ = NULL;
     m_ST_PositivePercentage(NULL)
     {
     }
+    ST_PositivePercentage::~ST_PositivePercentage()
+{
+    clear();    }
     bool ST_PositivePercentage::has_ST_PositivePercentageDecimal() const
     {    
     return m_has_ST_PositivePercentageDecimal;
@@ -1072,6 +1117,9 @@ ST_PositivePercentage* ST_PositivePercentage::default_instance_ = NULL;
 
     {
     }
+    ST_PositivePercentageDecimal::~ST_PositivePercentageDecimal()
+{
+    clear();    }
     const ST_PositivePercentageDecimal& ST_PositivePercentageDecimal::default_instance()
     {    
     if (!ST_PositivePercentageDecimal::default_instance_)
@@ -1091,6 +1139,9 @@ ST_PositivePercentageDecimal* ST_PositivePercentageDecimal::default_instance_ = 
     m_ST_FixedPercentage(NULL)
     {
     }
+    ST_FixedPercentage::~ST_FixedPercentage()
+{
+    clear();    }
     bool ST_FixedPercentage::has_ST_FixedPercentageDecimal() const
     {    
     return m_has_ST_FixedPercentageDecimal;
@@ -1215,6 +1266,9 @@ ST_FixedPercentage* ST_FixedPercentage::default_instance_ = NULL;
 
     {
     }
+    ST_FixedPercentageDecimal::~ST_FixedPercentageDecimal()
+{
+    clear();    }
     const ST_FixedPercentageDecimal& ST_FixedPercentageDecimal::default_instance()
     {    
     if (!ST_FixedPercentageDecimal::default_instance_)
@@ -1234,6 +1288,9 @@ ST_FixedPercentageDecimal* ST_FixedPercentageDecimal::default_instance_ = NULL;
     m_ST_PositiveFixedPercentage(NULL)
     {
     }
+    ST_PositiveFixedPercentage::~ST_PositiveFixedPercentage()
+{
+    clear();    }
     bool ST_PositiveFixedPercentage::has_ST_PositiveFixedPercentageDecimal() const
     {    
     return m_has_ST_PositiveFixedPercentageDecimal;
@@ -1358,6 +1415,9 @@ ST_PositiveFixedPercentage* ST_PositiveFixedPercentage::default_instance_ = NULL
 
     {
     }
+    ST_PositiveFixedPercentageDecimal::~ST_PositiveFixedPercentageDecimal()
+{
+    clear();    }
     const ST_PositiveFixedPercentageDecimal& ST_PositiveFixedPercentageDecimal::default_instance()
     {    
     if (!ST_PositiveFixedPercentageDecimal::default_instance_)
@@ -1379,6 +1439,9 @@ ST_PositiveFixedPercentageDecimal* ST_PositiveFixedPercentageDecimal::default_in
     m_type(_type)
     {
     }
+    ST_SystemColorVal::~ST_SystemColorVal()
+{
+    clear();    }
     bool ST_SystemColorVal::has_type() const
     {    
     return m_has_type;
@@ -1467,6 +1530,9 @@ ST_SystemColorVal* ST_SystemColorVal::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SchemeColorVal::~ST_SchemeColorVal()
+{
+    clear();    }
     bool ST_SchemeColorVal::has_type() const
     {    
     return m_has_type;
@@ -1542,6 +1608,9 @@ ST_SchemeColorVal* ST_SchemeColorVal::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PresetColorVal::~ST_PresetColorVal()
+{
+    clear();    }
     bool ST_PresetColorVal::has_type() const
     {    
     return m_has_type;
@@ -1790,6 +1859,9 @@ ST_PresetColorVal* ST_PresetColorVal::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_RectAlignment::~ST_RectAlignment()
+{
+    clear();    }
     bool ST_RectAlignment::has_type() const
     {    
     return m_has_type;
@@ -1857,6 +1929,9 @@ ST_RectAlignment* ST_RectAlignment::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BlackWhiteMode::~ST_BlackWhiteMode()
+{
+    clear();    }
     bool ST_BlackWhiteMode::has_type() const
     {    
     return m_has_type;
@@ -1928,6 +2003,9 @@ ST_BlackWhiteMode* ST_BlackWhiteMode::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_DrawingElementId::~ST_DrawingElementId()
+{
+    clear();    }
     bool ST_DrawingElementId::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -1986,6 +2064,9 @@ ST_DrawingElementId* ST_DrawingElementId::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ChartBuildStep::~ST_ChartBuildStep()
+{
+    clear();    }
     bool ST_ChartBuildStep::has_type() const
     {    
     return m_has_type;
@@ -2050,6 +2131,9 @@ ST_ChartBuildStep* ST_ChartBuildStep::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_DgmBuildStep::~ST_DgmBuildStep()
+{
+    clear();    }
     bool ST_DgmBuildStep::has_type() const
     {    
     return m_has_type;
@@ -2110,6 +2194,9 @@ ST_DgmBuildStep* ST_DgmBuildStep::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_AnimationBuildType::~ST_AnimationBuildType()
+{
+    clear();    }
     bool ST_AnimationBuildType::has_type() const
     {    
     return m_has_type;
@@ -2169,6 +2256,9 @@ ST_AnimationBuildType* ST_AnimationBuildType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_AnimationDgmOnlyBuildType::~ST_AnimationDgmOnlyBuildType()
+{
+    clear();    }
     bool ST_AnimationDgmOnlyBuildType::has_type() const
     {    
     return m_has_type;
@@ -2228,6 +2318,9 @@ ST_AnimationDgmOnlyBuildType* ST_AnimationDgmOnlyBuildType::default_instance_ = 
     m_ST_AnimationDgmOnlyBuildType(NULL)
     {
     }
+    ST_AnimationDgmBuildType::~ST_AnimationDgmBuildType()
+{
+    clear();    }
     bool ST_AnimationDgmBuildType::has_ST_AnimationBuildType() const
     {    
     return m_has_ST_AnimationBuildType;
@@ -2353,6 +2446,9 @@ ST_AnimationDgmBuildType* ST_AnimationDgmBuildType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_AnimationChartOnlyBuildType::~ST_AnimationChartOnlyBuildType()
+{
+    clear();    }
     bool ST_AnimationChartOnlyBuildType::has_type() const
     {    
     return m_has_type;
@@ -2413,6 +2509,9 @@ ST_AnimationChartOnlyBuildType* ST_AnimationChartOnlyBuildType::default_instance
     m_ST_AnimationChartOnlyBuildType(NULL)
     {
     }
+    ST_AnimationChartBuildType::~ST_AnimationChartBuildType()
+{
+    clear();    }
     bool ST_AnimationChartBuildType::has_ST_AnimationBuildType() const
     {    
     return m_has_ST_AnimationBuildType;
@@ -2538,6 +2637,9 @@ ST_AnimationChartBuildType* ST_AnimationChartBuildType::default_instance_ = NULL
     m_type(_type)
     {
     }
+    ST_PresetCameraType::~ST_PresetCameraType()
+{
+    clear();    }
     bool ST_PresetCameraType::has_type() const
     {    
     return m_has_type;
@@ -2657,6 +2759,9 @@ ST_PresetCameraType* ST_PresetCameraType::default_instance_ = NULL;
 
     {
     }
+    ST_FOVAngle::~ST_FOVAngle()
+{
+    clear();    }
     const ST_FOVAngle& ST_FOVAngle::default_instance()
     {    
     if (!ST_FOVAngle::default_instance_)
@@ -2678,6 +2783,9 @@ ST_FOVAngle* ST_FOVAngle::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_LightRigDirection::~ST_LightRigDirection()
+{
+    clear();    }
     bool ST_LightRigDirection::has_type() const
     {    
     return m_has_type;
@@ -2744,6 +2852,9 @@ ST_LightRigDirection* ST_LightRigDirection::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_LightRigType::~ST_LightRigType()
+{
+    clear();    }
     bool ST_LightRigType::has_type() const
     {    
     return m_has_type;
@@ -2829,6 +2940,9 @@ ST_LightRigType* ST_LightRigType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BevelPresetType::~ST_BevelPresetType()
+{
+    clear();    }
     bool ST_BevelPresetType::has_type() const
     {    
     return m_has_type;
@@ -2899,6 +3013,9 @@ ST_BevelPresetType* ST_BevelPresetType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PresetMaterialType::~ST_PresetMaterialType()
+{
+    clear();    }
     bool ST_PresetMaterialType::has_type() const
     {    
     return m_has_type;
@@ -2972,6 +3089,9 @@ ST_PresetMaterialType* ST_PresetMaterialType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PresetShadowVal::~ST_PresetShadowVal()
+{
+    clear();    }
     bool ST_PresetShadowVal::has_type() const
     {    
     return m_has_type;
@@ -3050,6 +3170,9 @@ ST_PresetShadowVal* ST_PresetShadowVal::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PathShadeType::~ST_PathShadeType()
+{
+    clear();    }
     bool ST_PathShadeType::has_type() const
     {    
     return m_has_type;
@@ -3111,6 +3234,9 @@ ST_PathShadeType* ST_PathShadeType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TileFlipMode::~ST_TileFlipMode()
+{
+    clear();    }
     bool ST_TileFlipMode::has_type() const
     {    
     return m_has_type;
@@ -3173,6 +3299,9 @@ ST_TileFlipMode* ST_TileFlipMode::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BlipCompression::~ST_BlipCompression()
+{
+    clear();    }
     bool ST_BlipCompression::has_type() const
     {    
     return m_has_type;
@@ -3236,6 +3365,9 @@ ST_BlipCompression* ST_BlipCompression::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PresetPatternVal::~ST_PresetPatternVal()
+{
+    clear();    }
     bool ST_PresetPatternVal::has_type() const
     {    
     return m_has_type;
@@ -3348,6 +3480,9 @@ ST_PresetPatternVal* ST_PresetPatternVal::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BlendMode::~ST_BlendMode()
+{
+    clear();    }
     bool ST_BlendMode::has_type() const
     {    
     return m_has_type;
@@ -3411,6 +3546,9 @@ ST_BlendMode* ST_BlendMode::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_EffectContainerType::~ST_EffectContainerType()
+{
+    clear();    }
     bool ST_EffectContainerType::has_type() const
     {    
     return m_has_type;
@@ -3471,6 +3609,9 @@ ST_EffectContainerType* ST_EffectContainerType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ShapeType::~ST_ShapeType()
+{
+    clear();    }
     bool ST_ShapeType::has_type() const
     {    
     return m_has_type;
@@ -3716,6 +3857,9 @@ ST_ShapeType* ST_ShapeType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextShapeType::~ST_TextShapeType()
+{
+    clear();    }
     bool ST_TextShapeType::has_type() const
     {    
     return m_has_type;
@@ -3817,6 +3961,9 @@ ST_TextShapeType* ST_TextShapeType::default_instance_ = NULL;
     
     set_token(_token);
     }
+    ST_GeomGuideName::~ST_GeomGuideName()
+{
+    clear();    }
     bool ST_GeomGuideName::has_token() const
     {    
     return m_has_token;
@@ -3877,6 +4024,9 @@ ST_GeomGuideName* ST_GeomGuideName::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_GeomGuideFormula::~ST_GeomGuideFormula()
+{
+    clear();    }
     bool ST_GeomGuideFormula::has_string() const
     {    
     return m_has_string;
@@ -3933,6 +4083,9 @@ ST_GeomGuideFormula* ST_GeomGuideFormula::default_instance_ = NULL;
     m_ST_GeomGuideName(NULL)
     {
     }
+    ST_AdjCoordinate::~ST_AdjCoordinate()
+{
+    clear();    }
     bool ST_AdjCoordinate::has_ST_Coordinate() const
     {    
     return m_has_ST_Coordinate;
@@ -4056,6 +4209,9 @@ ST_AdjCoordinate* ST_AdjCoordinate::default_instance_ = NULL;
     m_ST_GeomGuideName(NULL)
     {
     }
+    ST_AdjAngle::~ST_AdjAngle()
+{
+    clear();    }
     bool ST_AdjAngle::has_ST_Angle() const
     {    
     return m_has_ST_Angle;
@@ -4181,6 +4337,9 @@ ST_AdjAngle* ST_AdjAngle::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PathFillMode::~ST_PathFillMode()
+{
+    clear();    }
     bool ST_PathFillMode::has_type() const
     {    
     return m_has_type;
@@ -4245,6 +4404,9 @@ ST_PathFillMode* ST_PathFillMode::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_LineEndType::~ST_LineEndType()
+{
+    clear();    }
     bool ST_LineEndType::has_type() const
     {    
     return m_has_type;
@@ -4309,6 +4471,9 @@ ST_LineEndType* ST_LineEndType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_LineEndWidth::~ST_LineEndWidth()
+{
+    clear();    }
     bool ST_LineEndWidth::has_type() const
     {    
     return m_has_type;
@@ -4370,6 +4535,9 @@ ST_LineEndWidth* ST_LineEndWidth::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_LineEndLength::~ST_LineEndLength()
+{
+    clear();    }
     bool ST_LineEndLength::has_type() const
     {    
     return m_has_type;
@@ -4431,6 +4599,9 @@ ST_LineEndLength* ST_LineEndLength::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PresetLineDashVal::~ST_PresetLineDashVal()
+{
+    clear();    }
     bool ST_PresetLineDashVal::has_type() const
     {    
     return m_has_type;
@@ -4500,6 +4671,9 @@ ST_PresetLineDashVal* ST_PresetLineDashVal::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_LineCap::~ST_LineCap()
+{
+    clear();    }
     bool ST_LineCap::has_type() const
     {    
     return m_has_type;
@@ -4560,6 +4734,9 @@ ST_LineCap* ST_LineCap::default_instance_ = NULL;
 
     {
     }
+    ST_LineWidth::~ST_LineWidth()
+{
+    clear();    }
     const ST_LineWidth& ST_LineWidth::default_instance()
     {    
     if (!ST_LineWidth::default_instance_)
@@ -4581,6 +4758,9 @@ ST_LineWidth* ST_LineWidth::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PenAlignment::~ST_PenAlignment()
+{
+    clear();    }
     bool ST_PenAlignment::has_type() const
     {    
     return m_has_type;
@@ -4641,6 +4821,9 @@ ST_PenAlignment* ST_PenAlignment::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_CompoundLine::~ST_CompoundLine()
+{
+    clear();    }
     bool ST_CompoundLine::has_type() const
     {    
     return m_has_type;
@@ -4706,6 +4889,9 @@ ST_CompoundLine* ST_CompoundLine::default_instance_ = NULL;
     
     set_token(_token);
     }
+    ST_ShapeID::~ST_ShapeID()
+{
+    clear();    }
     bool ST_ShapeID::has_token() const
     {    
     return m_has_token;
@@ -4764,6 +4950,9 @@ ST_ShapeID* ST_ShapeID::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_OnOffStyleType::~ST_OnOffStyleType()
+{
+    clear();    }
     bool ST_OnOffStyleType::has_type() const
     {    
     return m_has_type;
@@ -4825,6 +5014,9 @@ ST_OnOffStyleType* ST_OnOffStyleType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextAnchoringType::~ST_TextAnchoringType()
+{
+    clear();    }
     bool ST_TextAnchoringType::has_type() const
     {    
     return m_has_type;
@@ -4888,6 +5080,9 @@ ST_TextAnchoringType* ST_TextAnchoringType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextVertOverflowType::~ST_TextVertOverflowType()
+{
+    clear();    }
     bool ST_TextVertOverflowType::has_type() const
     {    
     return m_has_type;
@@ -4949,6 +5144,9 @@ ST_TextVertOverflowType* ST_TextVertOverflowType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextHorzOverflowType::~ST_TextHorzOverflowType()
+{
+    clear();    }
     bool ST_TextHorzOverflowType::has_type() const
     {    
     return m_has_type;
@@ -5009,6 +5207,9 @@ ST_TextHorzOverflowType* ST_TextHorzOverflowType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextVerticalType::~ST_TextVerticalType()
+{
+    clear();    }
     bool ST_TextVerticalType::has_type() const
     {    
     return m_has_type;
@@ -5074,6 +5275,9 @@ ST_TextVerticalType* ST_TextVerticalType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextWrappingType::~ST_TextWrappingType()
+{
+    clear();    }
     bool ST_TextWrappingType::has_type() const
     {    
     return m_has_type;
@@ -5136,6 +5340,9 @@ ST_TextWrappingType* ST_TextWrappingType::default_instance_ = NULL;
     
     set_int(_int);
     }
+    ST_TextColumnCount::~ST_TextColumnCount()
+{
+    clear();    }
     bool ST_TextColumnCount::has_int() const
     {    
     return m_has_int;
@@ -5194,6 +5401,9 @@ ST_TextColumnCount* ST_TextColumnCount::default_instance_ = NULL;
     m_ST_Percentage(NULL)
     {
     }
+    ST_TextFontScalePercentOrPercentString::~ST_TextFontScalePercentOrPercentString()
+{
+    clear();    }
     bool ST_TextFontScalePercentOrPercentString::has_ST_TextFontScalePercent() const
     {    
     return m_has_ST_TextFontScalePercent;
@@ -5318,6 +5528,9 @@ ST_TextFontScalePercentOrPercentString* ST_TextFontScalePercentOrPercentString::
 
     {
     }
+    ST_TextFontScalePercent::~ST_TextFontScalePercent()
+{
+    clear();    }
     const ST_TextFontScalePercent& ST_TextFontScalePercent::default_instance()
     {    
     if (!ST_TextFontScalePercent::default_instance_)
@@ -5341,6 +5554,9 @@ ST_TextFontScalePercent* ST_TextFontScalePercent::default_instance_ = NULL;
     
     set_int(_int);
     }
+    ST_TextBulletStartAtNum::~ST_TextBulletStartAtNum()
+{
+    clear();    }
     bool ST_TextBulletStartAtNum::has_int() const
     {    
     return m_has_int;
@@ -5401,6 +5617,9 @@ ST_TextBulletStartAtNum* ST_TextBulletStartAtNum::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextAutonumberScheme::~ST_TextAutonumberScheme()
+{
+    clear();    }
     bool ST_TextAutonumberScheme::has_type() const
     {    
     return m_has_type;
@@ -5498,6 +5717,9 @@ ST_TextAutonumberScheme* ST_TextAutonumberScheme::default_instance_ = NULL;
     m_ST_TextBulletSizeDecimal(NULL)
     {
     }
+    ST_TextBulletSize::~ST_TextBulletSize()
+{
+    clear();    }
     bool ST_TextBulletSize::has_ST_TextBulletSizePercent() const
     {    
     return m_has_ST_TextBulletSizePercent;
@@ -5625,6 +5847,9 @@ ST_TextBulletSize* ST_TextBulletSize::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_TextBulletSizePercent::~ST_TextBulletSizePercent()
+{
+    clear();    }
     bool ST_TextBulletSizePercent::has_string() const
     {    
     return m_has_string;
@@ -5682,6 +5907,9 @@ ST_TextBulletSizePercent* ST_TextBulletSizePercent::default_instance_ = NULL;
 
     {
     }
+    ST_TextBulletSizeDecimal::~ST_TextBulletSizeDecimal()
+{
+    clear();    }
     const ST_TextBulletSizeDecimal& ST_TextBulletSizeDecimal::default_instance()
     {    
     if (!ST_TextBulletSizeDecimal::default_instance_)
@@ -5701,6 +5929,9 @@ ST_TextBulletSizeDecimal* ST_TextBulletSizeDecimal::default_instance_ = NULL;
     m_ST_UniversalMeasure(NULL)
     {
     }
+    ST_TextPoint::~ST_TextPoint()
+{
+    clear();    }
     bool ST_TextPoint::has_ST_TextPointUnqualified() const
     {    
     return m_has_ST_TextPointUnqualified;
@@ -5828,6 +6059,9 @@ ST_TextPoint* ST_TextPoint::default_instance_ = NULL;
     
     set_int(_int);
     }
+    ST_TextPointUnqualified::~ST_TextPointUnqualified()
+{
+    clear();    }
     bool ST_TextPointUnqualified::has_int() const
     {    
     return m_has_int;
@@ -5890,6 +6124,9 @@ ST_TextPointUnqualified* ST_TextPointUnqualified::default_instance_ = NULL;
     
     set_int(_int);
     }
+    ST_TextNonNegativePoint::~ST_TextNonNegativePoint()
+{
+    clear();    }
     bool ST_TextNonNegativePoint::has_int() const
     {    
     return m_has_int;
@@ -5952,6 +6189,9 @@ ST_TextNonNegativePoint* ST_TextNonNegativePoint::default_instance_ = NULL;
     
     set_int(_int);
     }
+    ST_TextFontSize::~ST_TextFontSize()
+{
+    clear();    }
     bool ST_TextFontSize::has_int() const
     {    
     return m_has_int;
@@ -6014,6 +6254,9 @@ ST_TextFontSize* ST_TextFontSize::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_TextTypeface::~ST_TextTypeface()
+{
+    clear();    }
     bool ST_TextTypeface::has_string() const
     {    
     return m_has_string;
@@ -6072,6 +6315,9 @@ ST_TextTypeface* ST_TextTypeface::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PitchFamily::~ST_PitchFamily()
+{
+    clear();    }
     bool ST_PitchFamily::has_type() const
     {    
     return m_has_type;
@@ -6148,6 +6394,9 @@ ST_PitchFamily* ST_PitchFamily::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextUnderlineType::~ST_TextUnderlineType()
+{
+    clear();    }
     bool ST_TextUnderlineType::has_type() const
     {    
     return m_has_type;
@@ -6224,6 +6473,9 @@ ST_TextUnderlineType* ST_TextUnderlineType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextStrikeType::~ST_TextStrikeType()
+{
+    clear();    }
     bool ST_TextStrikeType::has_type() const
     {    
     return m_has_type;
@@ -6285,6 +6537,9 @@ ST_TextStrikeType* ST_TextStrikeType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextCapsType::~ST_TextCapsType()
+{
+    clear();    }
     bool ST_TextCapsType::has_type() const
     {    
     return m_has_type;
@@ -6348,6 +6603,9 @@ ST_TextCapsType* ST_TextCapsType::default_instance_ = NULL;
     
     set_int(_int);
     }
+    ST_TextSpacingPoint::~ST_TextSpacingPoint()
+{
+    clear();    }
     bool ST_TextSpacingPoint::has_int() const
     {    
     return m_has_int;
@@ -6406,6 +6664,9 @@ ST_TextSpacingPoint* ST_TextSpacingPoint::default_instance_ = NULL;
     m_ST_Percentage(NULL)
     {
     }
+    ST_TextSpacingPercentOrPercentString::~ST_TextSpacingPercentOrPercentString()
+{
+    clear();    }
     bool ST_TextSpacingPercentOrPercentString::has_ST_TextSpacingPercent() const
     {    
     return m_has_ST_TextSpacingPercent;
@@ -6530,6 +6791,9 @@ ST_TextSpacingPercentOrPercentString* ST_TextSpacingPercentOrPercentString::defa
 
     {
     }
+    ST_TextSpacingPercent::~ST_TextSpacingPercent()
+{
+    clear();    }
     const ST_TextSpacingPercent& ST_TextSpacingPercent::default_instance()
     {    
     if (!ST_TextSpacingPercent::default_instance_)
@@ -6550,6 +6814,9 @@ ST_TextSpacingPercent* ST_TextSpacingPercent::default_instance_ = NULL;
 
     {
     }
+    ST_TextMargin::~ST_TextMargin()
+{
+    clear();    }
     const ST_TextMargin& ST_TextMargin::default_instance()
     {    
     if (!ST_TextMargin::default_instance_)
@@ -6570,6 +6837,9 @@ ST_TextMargin* ST_TextMargin::default_instance_ = NULL;
 
     {
     }
+    ST_TextIndent::~ST_TextIndent()
+{
+    clear();    }
     const ST_TextIndent& ST_TextIndent::default_instance()
     {    
     if (!ST_TextIndent::default_instance_)
@@ -6591,6 +6861,9 @@ ST_TextIndent* ST_TextIndent::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextTabAlignType::~ST_TextTabAlignType()
+{
+    clear();    }
     bool ST_TextTabAlignType::has_type() const
     {    
     return m_has_type;
@@ -6653,6 +6926,9 @@ ST_TextTabAlignType* ST_TextTabAlignType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextAlignType::~ST_TextAlignType()
+{
+    clear();    }
     bool ST_TextAlignType::has_type() const
     {    
     return m_has_type;
@@ -6718,6 +6994,9 @@ ST_TextAlignType* ST_TextAlignType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextFontAlignType::~ST_TextFontAlignType()
+{
+    clear();    }
     bool ST_TextFontAlignType::has_type() const
     {    
     return m_has_type;
@@ -6783,6 +7062,9 @@ ST_TextFontAlignType* ST_TextFontAlignType::default_instance_ = NULL;
     
     set_int(_int);
     }
+    ST_TextIndentLevelType::~ST_TextIndentLevelType()
+{
+    clear();    }
     bool ST_TextIndentLevelType::has_int() const
     {    
     return m_has_int;

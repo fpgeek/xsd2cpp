@@ -24,6 +24,9 @@ namespace ns_m {
     
     set_integer(_integer);
     }
+    ST_Integer255::~ST_Integer255()
+{
+    clear();    }
     bool ST_Integer255::has_integer() const
     {    
     return m_has_integer;
@@ -86,6 +89,9 @@ ST_Integer255* ST_Integer255::default_instance_ = NULL;
     
     set_integer(_integer);
     }
+    ST_Integer2::~ST_Integer2()
+{
+    clear();    }
     bool ST_Integer2::has_integer() const
     {    
     return m_has_integer;
@@ -148,6 +154,9 @@ ST_Integer2* ST_Integer2::default_instance_ = NULL;
     
     set_integer(_integer);
     }
+    ST_SpacingRule::~ST_SpacingRule()
+{
+    clear();    }
     bool ST_SpacingRule::has_integer() const
     {    
     return m_has_integer;
@@ -210,6 +219,9 @@ ST_SpacingRule* ST_SpacingRule::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_UnSignedInteger::~ST_UnSignedInteger()
+{
+    clear();    }
     bool ST_UnSignedInteger::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -270,6 +282,9 @@ ST_UnSignedInteger* ST_UnSignedInteger::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_Char::~ST_Char()
+{
+    clear();    }
     bool ST_Char::has_string() const
     {    
     return m_has_string;
@@ -329,6 +344,9 @@ ST_Char* ST_Char::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Shp::~ST_Shp()
+{
+    clear();    }
     bool ST_Shp::has_type() const
     {    
     return m_has_type;
@@ -389,6 +407,9 @@ ST_Shp* ST_Shp::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FType::~ST_FType()
+{
+    clear();    }
     bool ST_FType::has_type() const
     {    
     return m_has_type;
@@ -451,6 +472,9 @@ ST_FType* ST_FType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_LimLoc::~ST_LimLoc()
+{
+    clear();    }
     bool ST_LimLoc::has_type() const
     {    
     return m_has_type;
@@ -511,6 +535,9 @@ ST_LimLoc* ST_LimLoc::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TopBot::~ST_TopBot()
+{
+    clear();    }
     bool ST_TopBot::has_type() const
     {    
     return m_has_type;
@@ -571,6 +598,9 @@ ST_TopBot* ST_TopBot::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Script::~ST_Script()
+{
+    clear();    }
     bool ST_Script::has_type() const
     {    
     return m_has_type;
@@ -635,6 +665,9 @@ ST_Script* ST_Script::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Style::~ST_Style()
+{
+    clear();    }
     bool ST_Style::has_type() const
     {    
     return m_has_type;
@@ -697,6 +730,9 @@ ST_Style* ST_Style::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Jc::~ST_Jc()
+{
+    clear();    }
     bool ST_Jc::has_type() const
     {    
     return m_has_type;
@@ -759,6 +795,9 @@ ST_Jc* ST_Jc::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BreakBin::~ST_BreakBin()
+{
+    clear();    }
     bool ST_BreakBin::has_type() const
     {    
     return m_has_type;
@@ -820,6 +859,9 @@ ST_BreakBin* ST_BreakBin::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BreakBinSub::~ST_BreakBinSub()
+{
+    clear();    }
     bool ST_BreakBinSub::has_type() const
     {    
     return m_has_type;

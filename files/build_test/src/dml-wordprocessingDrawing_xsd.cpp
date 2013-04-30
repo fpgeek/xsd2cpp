@@ -26,6 +26,9 @@ namespace ns_wp {
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_WrapDistance::~ST_WrapDistance()
+{
+    clear();    }
     bool ST_WrapDistance::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -84,6 +87,9 @@ ST_WrapDistance* ST_WrapDistance::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_WrapText::~ST_WrapText()
+{
+    clear();    }
     bool ST_WrapText::has_type() const
     {    
     return m_has_type;
@@ -148,6 +154,9 @@ ST_WrapText* ST_WrapText::default_instance_ = NULL;
     
     set_int(_int);
     }
+    ST_PositionOffset::~ST_PositionOffset()
+{
+    clear();    }
     bool ST_PositionOffset::has_int() const
     {    
     return m_has_int;
@@ -206,6 +215,9 @@ ST_PositionOffset* ST_PositionOffset::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_AlignH::~ST_AlignH()
+{
+    clear();    }
     bool ST_AlignH::has_type() const
     {    
     return m_has_type;
@@ -269,6 +281,9 @@ ST_AlignH* ST_AlignH::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_RelFromH::~ST_RelFromH()
+{
+    clear();    }
     bool ST_RelFromH::has_type() const
     {    
     return m_has_type;
@@ -335,6 +350,9 @@ ST_RelFromH* ST_RelFromH::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_AlignV::~ST_AlignV()
+{
+    clear();    }
     bool ST_AlignV::has_type() const
     {    
     return m_has_type;
@@ -398,6 +416,9 @@ ST_AlignV* ST_AlignV::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_RelFromV::~ST_RelFromV()
+{
+    clear();    }
     bool ST_RelFromV::has_type() const
     {    
     return m_has_type;

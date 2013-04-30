@@ -22,6 +22,9 @@ namespace ns_r {
     
     set_string(_string);
     }
+    ST_RelationshipId::~ST_RelationshipId()
+{
+    clear();    }
     bool ST_RelationshipId::has_string() const
     {    
     return m_has_string;

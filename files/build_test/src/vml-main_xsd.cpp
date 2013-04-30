@@ -27,6 +27,9 @@ namespace ns_v {
     m_type(_type)
     {
     }
+    ST_Ext::~ST_Ext()
+{
+    clear();    }
     bool ST_Ext::has_type() const
     {    
     return m_has_type;
@@ -88,6 +91,9 @@ ST_Ext* ST_Ext::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FillType::~ST_FillType()
+{
+    clear();    }
     bool ST_FillType::has_type() const
     {    
     return m_has_type;
@@ -152,6 +158,9 @@ ST_FillType* ST_FillType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FillMethod::~ST_FillMethod()
+{
+    clear();    }
     bool ST_FillMethod::has_type() const
     {    
     return m_has_type;
@@ -215,6 +224,9 @@ ST_FillMethod* ST_FillMethod::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ShadowType::~ST_ShadowType()
+{
+    clear();    }
     bool ST_ShadowType::has_type() const
     {    
     return m_has_type;
@@ -277,6 +289,9 @@ ST_ShadowType* ST_ShadowType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_StrokeLineStyle::~ST_StrokeLineStyle()
+{
+    clear();    }
     bool ST_StrokeLineStyle::has_type() const
     {    
     return m_has_type;
@@ -340,6 +355,9 @@ ST_StrokeLineStyle* ST_StrokeLineStyle::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_StrokeJoinStyle::~ST_StrokeJoinStyle()
+{
+    clear();    }
     bool ST_StrokeJoinStyle::has_type() const
     {    
     return m_has_type;
@@ -401,6 +419,9 @@ ST_StrokeJoinStyle* ST_StrokeJoinStyle::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_StrokeEndCap::~ST_StrokeEndCap()
+{
+    clear();    }
     bool ST_StrokeEndCap::has_type() const
     {    
     return m_has_type;
@@ -462,6 +483,9 @@ ST_StrokeEndCap* ST_StrokeEndCap::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_StrokeArrowLength::~ST_StrokeArrowLength()
+{
+    clear();    }
     bool ST_StrokeArrowLength::has_type() const
     {    
     return m_has_type;
@@ -523,6 +547,9 @@ ST_StrokeArrowLength* ST_StrokeArrowLength::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_StrokeArrowWidth::~ST_StrokeArrowWidth()
+{
+    clear();    }
     bool ST_StrokeArrowWidth::has_type() const
     {    
     return m_has_type;
@@ -584,6 +611,9 @@ ST_StrokeArrowWidth* ST_StrokeArrowWidth::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_StrokeArrowType::~ST_StrokeArrowType()
+{
+    clear();    }
     bool ST_StrokeArrowType::has_type() const
     {    
     return m_has_type;
@@ -648,6 +678,9 @@ ST_StrokeArrowType* ST_StrokeArrowType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ImageAspect::~ST_ImageAspect()
+{
+    clear();    }
     bool ST_ImageAspect::has_type() const
     {    
     return m_has_type;
@@ -709,6 +742,9 @@ ST_ImageAspect* ST_ImageAspect::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_EditAs::~ST_EditAs()
+{
+    clear();    }
     bool ST_EditAs::has_type() const
     {    
     return m_has_type;

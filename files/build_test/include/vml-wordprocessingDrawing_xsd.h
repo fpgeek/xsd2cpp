@@ -75,6 +75,7 @@ namespace ns_w10 {
         };
         ST_BorderType();
         ST_BorderType(const ST_BorderType::Type& _type);
+        ~ST_BorderType();
         bool has_type() const;
         void set_type(const ST_BorderType::Type& _type);
         const ST_BorderType::Type& get_type() const;
@@ -102,6 +103,7 @@ namespace ns_w10 {
         };
         ST_BorderShadow();
         ST_BorderShadow(const ST_BorderShadow::Type& _type);
+        ~ST_BorderShadow();
         bool has_type() const;
         void set_type(const ST_BorderShadow::Type& _type);
         const ST_BorderShadow::Type& get_type() const;
@@ -130,6 +132,7 @@ namespace ns_w10 {
         };
         ST_WrapType();
         ST_WrapType(const ST_WrapType::Type& _type);
+        ~ST_WrapType();
         bool has_type() const;
         void set_type(const ST_WrapType::Type& _type);
         const ST_WrapType::Type& get_type() const;
@@ -157,6 +160,7 @@ namespace ns_w10 {
         };
         ST_WrapSide();
         ST_WrapSide(const ST_WrapSide::Type& _type);
+        ~ST_WrapSide();
         bool has_type() const;
         void set_type(const ST_WrapSide::Type& _type);
         const ST_WrapSide::Type& get_type() const;
@@ -184,6 +188,7 @@ namespace ns_w10 {
         };
         ST_HorizontalAnchor();
         ST_HorizontalAnchor(const ST_HorizontalAnchor::Type& _type);
+        ~ST_HorizontalAnchor();
         bool has_type() const;
         void set_type(const ST_HorizontalAnchor::Type& _type);
         const ST_HorizontalAnchor::Type& get_type() const;
@@ -211,6 +216,7 @@ namespace ns_w10 {
         };
         ST_VerticalAnchor();
         ST_VerticalAnchor(const ST_VerticalAnchor::Type& _type);
+        ~ST_VerticalAnchor();
         bool has_type() const;
         void set_type(const ST_VerticalAnchor::Type& _type);
         const ST_VerticalAnchor::Type& get_type() const;

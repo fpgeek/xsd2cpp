@@ -42,6 +42,7 @@ namespace ns_characteristics {
         };
         ST_Relation();
         ST_Relation(const ST_Relation::Type& _type);
+        ~ST_Relation();
         bool has_type() const;
         void set_type(const ST_Relation::Type& _type);
         const ST_Relation::Type& get_type() const;

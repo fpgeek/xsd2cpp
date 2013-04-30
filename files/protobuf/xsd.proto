@@ -96,7 +96,7 @@ message List {
 		optional string simple_type_name = 3;
 		optional SimpleType simple_type = 4;
 	}
-	repeated ItemType item_type = 1;
+	optional ItemType item_type = 1;
 }
 
 message Union {

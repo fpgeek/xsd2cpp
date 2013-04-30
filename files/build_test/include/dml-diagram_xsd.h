@@ -174,6 +174,7 @@ namespace ns_diagram {
         };
         ST_ClrAppMethod();
         ST_ClrAppMethod(const ST_ClrAppMethod::Type& _type);
+        ~ST_ClrAppMethod();
         bool has_type() const;
         void set_type(const ST_ClrAppMethod::Type& _type);
         const ST_ClrAppMethod::Type& get_type() const;
@@ -199,6 +200,7 @@ namespace ns_diagram {
         };
         ST_HueDir();
         ST_HueDir(const ST_HueDir::Type& _type);
+        ~ST_HueDir();
         bool has_type() const;
         void set_type(const ST_HueDir::Type& _type);
         const ST_HueDir::Type& get_type() const;
@@ -228,6 +230,7 @@ namespace ns_diagram {
         };
         ST_PtType();
         ST_PtType(const ST_PtType::Type& _type);
+        ~ST_PtType();
         bool has_type() const;
         void set_type(const ST_PtType::Type& _type);
         const ST_PtType::Type& get_type() const;
@@ -255,6 +258,7 @@ namespace ns_diagram {
         };
         ST_CxnType();
         ST_CxnType(const ST_CxnType::Type& _type);
+        ~ST_CxnType();
         bool has_type() const;
         void set_type(const ST_CxnType::Type& _type);
         const ST_CxnType::Type& get_type() const;
@@ -274,6 +278,7 @@ namespace ns_diagram {
     {
     public:
         ST_LayoutShapeType();
+        ~ST_LayoutShapeType();
         bool has_ST_ShapeType() const;
         ns_a::ST_ShapeType* mutable_ST_ShapeType();
         const ns_a::ST_ShapeType& get_ST_ShapeType() const;
@@ -300,6 +305,7 @@ namespace ns_diagram {
     public:
         ST_Index1();
         ST_Index1(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_Index1();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -318,6 +324,7 @@ namespace ns_diagram {
     {
     public:
         ST_ParameterVal();
+        ~ST_ParameterVal();
         bool has_ST_DiagramHorizontalAlignment() const;
         ST_DiagramHorizontalAlignment* mutable_ST_DiagramHorizontalAlignment();
         const ST_DiagramHorizontalAlignment& get_ST_DiagramHorizontalAlignment() const;
@@ -547,6 +554,7 @@ namespace ns_diagram {
     {
     public:
         ST_ModelId();
+        ~ST_ModelId();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -572,6 +580,7 @@ namespace ns_diagram {
     {
     public:
         ST_PrSetCustVal();
+        ~ST_PrSetCustVal();
         bool has_ST_Percentage() const;
         ns_s::ST_Percentage* mutable_ST_Percentage();
         const ns_s::ST_Percentage& get_ST_Percentage() const;
@@ -603,6 +612,7 @@ namespace ns_diagram {
         };
         ST_Direction();
         ST_Direction(const ST_Direction::Type& _type);
+        ~ST_Direction();
         bool has_type() const;
         void set_type(const ST_Direction::Type& _type);
         const ST_Direction::Type& get_type() const;
@@ -631,6 +641,7 @@ namespace ns_diagram {
         };
         ST_HierBranchStyle();
         ST_HierBranchStyle(const ST_HierBranchStyle::Type& _type);
+        ~ST_HierBranchStyle();
         bool has_type() const;
         void set_type(const ST_HierBranchStyle::Type& _type);
         const ST_HierBranchStyle::Type& get_type() const;
@@ -657,6 +668,7 @@ namespace ns_diagram {
         };
         ST_AnimOneStr();
         ST_AnimOneStr(const ST_AnimOneStr::Type& _type);
+        ~ST_AnimOneStr();
         bool has_type() const;
         void set_type(const ST_AnimOneStr::Type& _type);
         const ST_AnimOneStr::Type& get_type() const;
@@ -683,6 +695,7 @@ namespace ns_diagram {
         };
         ST_AnimLvlStr();
         ST_AnimLvlStr(const ST_AnimLvlStr::Type& _type);
+        ~ST_AnimLvlStr();
         bool has_type() const;
         void set_type(const ST_AnimLvlStr::Type& _type);
         const ST_AnimLvlStr::Type& get_type() const;
@@ -703,6 +716,7 @@ namespace ns_diagram {
     public:
         ST_NodeCount();
         ST_NodeCount(const XSD::int_& _int);
+        ~ST_NodeCount();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -727,6 +741,7 @@ namespace ns_diagram {
         };
         ST_ResizeHandlesStr();
         ST_ResizeHandlesStr(const ST_ResizeHandlesStr::Type& _type);
+        ~ST_ResizeHandlesStr();
         bool has_type() const;
         void set_type(const ST_ResizeHandlesStr::Type& _type);
         const ST_ResizeHandlesStr::Type& get_type() const;
@@ -760,6 +775,7 @@ namespace ns_diagram {
         };
         ST_AlgorithmType();
         ST_AlgorithmType(const ST_AlgorithmType::Type& _type);
+        ~ST_AlgorithmType();
         bool has_type() const;
         void set_type(const ST_AlgorithmType::Type& _type);
         const ST_AlgorithmType::Type& get_type() const;
@@ -796,6 +812,7 @@ namespace ns_diagram {
         };
         ST_AxisType();
         ST_AxisType(const ST_AxisType::Type& _type);
+        ~ST_AxisType();
         bool has_type() const;
         void set_type(const ST_AxisType::Type& _type);
         const ST_AxisType::Type& get_type() const;
@@ -814,20 +831,19 @@ namespace ns_diagram {
     class ST_AxisTypes: public XSD::SimpleType
     {
     public:
-        ST_AxisTypes();
-        ST_AxisTypes(const XSD::ENTITIES_& _ENTITIES);
-        bool has_ENTITIES() const;
-        void set_ENTITIES(const XSD::ENTITIES_& _ENTITIES);
-        const XSD::ENTITIES_& get_ENTITIES() const;
+        ~ST_AxisTypes();
+        bool has_ST_AxisType_list() const;
+        ST_AxisType* add_ST_AxisType();
+        const vector<ST_AxisType*>& get_ST_AxisType_list() const;
         void clear();
+        std::string toString() const;
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_AxisTypes& default_instance();
-        std::string toString() const;
     protected:
     private:
+        bool m_has_ST_AxisType_list;
+        vector<ST_AxisType*> m_ST_AxisType_list;
         static ST_AxisTypes* default_instance_;
-        bool m_has_ENTITIES;
-        XSD::ENTITIES_ m_ENTITIES;
     };
 
     class ST_BoolOperator: public XSD::SimpleType
@@ -842,6 +858,7 @@ namespace ns_diagram {
         };
         ST_BoolOperator();
         ST_BoolOperator(const ST_BoolOperator::Type& _type);
+        ~ST_BoolOperator();
         bool has_type() const;
         void set_type(const ST_BoolOperator::Type& _type);
         const ST_BoolOperator::Type& get_type() const;
@@ -867,6 +884,7 @@ namespace ns_diagram {
         };
         ST_ChildOrderType();
         ST_ChildOrderType(const ST_ChildOrderType::Type& _type);
+        ~ST_ChildOrderType();
         bool has_type() const;
         void set_type(const ST_ChildOrderType::Type& _type);
         const ST_ChildOrderType::Type& get_type() const;
@@ -954,6 +972,7 @@ namespace ns_diagram {
         };
         ST_ConstraintType();
         ST_ConstraintType(const ST_ConstraintType::Type& _type);
+        ~ST_ConstraintType();
         bool has_type() const;
         void set_type(const ST_ConstraintType::Type& _type);
         const ST_ConstraintType::Type& get_type() const;
@@ -980,6 +999,7 @@ namespace ns_diagram {
         };
         ST_ConstraintRelationship();
         ST_ConstraintRelationship(const ST_ConstraintRelationship::Type& _type);
+        ~ST_ConstraintRelationship();
         bool has_type() const;
         void set_type(const ST_ConstraintRelationship::Type& _type);
         const ST_ConstraintRelationship::Type& get_type() const;
@@ -1013,6 +1033,7 @@ namespace ns_diagram {
         };
         ST_ElementType();
         ST_ElementType(const ST_ElementType::Type& _type);
+        ~ST_ElementType();
         bool has_type() const;
         void set_type(const ST_ElementType::Type& _type);
         const ST_ElementType::Type& get_type() const;
@@ -1031,20 +1052,19 @@ namespace ns_diagram {
     class ST_ElementTypes: public XSD::SimpleType
     {
     public:
-        ST_ElementTypes();
-        ST_ElementTypes(const XSD::ENTITIES_& _ENTITIES);
-        bool has_ENTITIES() const;
-        void set_ENTITIES(const XSD::ENTITIES_& _ENTITIES);
-        const XSD::ENTITIES_& get_ENTITIES() const;
+        ~ST_ElementTypes();
+        bool has_ST_ElementType_list() const;
+        ST_ElementType* add_ST_ElementType();
+        const vector<ST_ElementType*>& get_ST_ElementType_list() const;
         void clear();
+        std::string toString() const;
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_ElementTypes& default_instance();
-        std::string toString() const;
     protected:
     private:
+        bool m_has_ST_ElementType_list;
+        vector<ST_ElementType*> m_ST_ElementType_list;
         static ST_ElementTypes* default_instance_;
-        bool m_has_ENTITIES;
-        XSD::ENTITIES_ m_ENTITIES;
     };
 
     class ST_ParameterId: public XSD::SimpleType
@@ -1110,6 +1130,7 @@ namespace ns_diagram {
         };
         ST_ParameterId();
         ST_ParameterId(const ST_ParameterId::Type& _type);
+        ~ST_ParameterId();
         bool has_type() const;
         void set_type(const ST_ParameterId::Type& _type);
         const ST_ParameterId::Type& get_type() const;
@@ -1128,58 +1149,55 @@ namespace ns_diagram {
     class ST_Ints: public XSD::SimpleType
     {
     public:
-        ST_Ints();
-        ST_Ints(const XSD::ENTITIES_& _ENTITIES);
-        bool has_ENTITIES() const;
-        void set_ENTITIES(const XSD::ENTITIES_& _ENTITIES);
-        const XSD::ENTITIES_& get_ENTITIES() const;
+        ~ST_Ints();
+        bool has_int_list() const;
+        void add_int(const XSD::int_& _int);
+        const vector<XSD::int_>& get_int_list() const;
         void clear();
+        std::string toString() const;
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_Ints& default_instance();
-        std::string toString() const;
     protected:
     private:
+        bool m_has_int_list;
+        vector<XSD::int_> m_int_list;
         static ST_Ints* default_instance_;
-        bool m_has_ENTITIES;
-        XSD::ENTITIES_ m_ENTITIES;
     };
 
     class ST_UnsignedInts: public XSD::SimpleType
     {
     public:
-        ST_UnsignedInts();
-        ST_UnsignedInts(const XSD::ENTITIES_& _ENTITIES);
-        bool has_ENTITIES() const;
-        void set_ENTITIES(const XSD::ENTITIES_& _ENTITIES);
-        const XSD::ENTITIES_& get_ENTITIES() const;
+        ~ST_UnsignedInts();
+        bool has_unsignedInt_list() const;
+        void add_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
+        const vector<XSD::unsignedInt_>& get_unsignedInt_list() const;
         void clear();
+        std::string toString() const;
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_UnsignedInts& default_instance();
-        std::string toString() const;
     protected:
     private:
+        bool m_has_unsignedInt_list;
+        vector<XSD::unsignedInt_> m_unsignedInt_list;
         static ST_UnsignedInts* default_instance_;
-        bool m_has_ENTITIES;
-        XSD::ENTITIES_ m_ENTITIES;
     };
 
     class ST_Booleans: public XSD::SimpleType
     {
     public:
-        ST_Booleans();
-        ST_Booleans(const XSD::ENTITIES_& _ENTITIES);
-        bool has_ENTITIES() const;
-        void set_ENTITIES(const XSD::ENTITIES_& _ENTITIES);
-        const XSD::ENTITIES_& get_ENTITIES() const;
+        ~ST_Booleans();
+        bool has_boolean_list() const;
+        void add_boolean(const XSD::boolean_& _boolean);
+        const vector<XSD::boolean_>& get_boolean_list() const;
         void clear();
+        std::string toString() const;
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_Booleans& default_instance();
-        std::string toString() const;
     protected:
     private:
+        bool m_has_boolean_list;
+        vector<XSD::boolean_> m_boolean_list;
         static ST_Booleans* default_instance_;
-        bool m_has_ENTITIES;
-        XSD::ENTITIES_ m_ENTITIES;
     };
 
     class ST_FunctionType: public XSD::SimpleType
@@ -1198,6 +1216,7 @@ namespace ns_diagram {
         };
         ST_FunctionType();
         ST_FunctionType(const ST_FunctionType::Type& _type);
+        ~ST_FunctionType();
         bool has_type() const;
         void set_type(const ST_FunctionType::Type& _type);
         const ST_FunctionType::Type& get_type() const;
@@ -1227,6 +1246,7 @@ namespace ns_diagram {
         };
         ST_FunctionOperator();
         ST_FunctionOperator(const ST_FunctionOperator::Type& _type);
+        ~ST_FunctionOperator();
         bool has_type() const;
         void set_type(const ST_FunctionOperator::Type& _type);
         const ST_FunctionOperator::Type& get_type() const;
@@ -1254,6 +1274,7 @@ namespace ns_diagram {
         };
         ST_DiagramHorizontalAlignment();
         ST_DiagramHorizontalAlignment(const ST_DiagramHorizontalAlignment::Type& _type);
+        ~ST_DiagramHorizontalAlignment();
         bool has_type() const;
         void set_type(const ST_DiagramHorizontalAlignment::Type& _type);
         const ST_DiagramHorizontalAlignment::Type& get_type() const;
@@ -1281,6 +1302,7 @@ namespace ns_diagram {
         };
         ST_VerticalAlignment();
         ST_VerticalAlignment(const ST_VerticalAlignment::Type& _type);
+        ~ST_VerticalAlignment();
         bool has_type() const;
         void set_type(const ST_VerticalAlignment::Type& _type);
         const ST_VerticalAlignment::Type& get_type() const;
@@ -1306,6 +1328,7 @@ namespace ns_diagram {
         };
         ST_ChildDirection();
         ST_ChildDirection(const ST_ChildDirection::Type& _type);
+        ~ST_ChildDirection();
         bool has_type() const;
         void set_type(const ST_ChildDirection::Type& _type);
         const ST_ChildDirection::Type& get_type() const;
@@ -1333,6 +1356,7 @@ namespace ns_diagram {
         };
         ST_ChildAlignment();
         ST_ChildAlignment(const ST_ChildAlignment::Type& _type);
+        ~ST_ChildAlignment();
         bool has_type() const;
         void set_type(const ST_ChildAlignment::Type& _type);
         const ST_ChildAlignment::Type& get_type() const;
@@ -1361,6 +1385,7 @@ namespace ns_diagram {
         };
         ST_SecondaryChildAlignment();
         ST_SecondaryChildAlignment(const ST_SecondaryChildAlignment::Type& _type);
+        ~ST_SecondaryChildAlignment();
         bool has_type() const;
         void set_type(const ST_SecondaryChildAlignment::Type& _type);
         const ST_SecondaryChildAlignment::Type& get_type() const;
@@ -1388,6 +1413,7 @@ namespace ns_diagram {
         };
         ST_LinearDirection();
         ST_LinearDirection(const ST_LinearDirection::Type& _type);
+        ~ST_LinearDirection();
         bool has_type() const;
         void set_type(const ST_LinearDirection::Type& _type);
         const ST_LinearDirection::Type& get_type() const;
@@ -1416,6 +1442,7 @@ namespace ns_diagram {
         };
         ST_SecondaryLinearDirection();
         ST_SecondaryLinearDirection(const ST_SecondaryLinearDirection::Type& _type);
+        ~ST_SecondaryLinearDirection();
         bool has_type() const;
         void set_type(const ST_SecondaryLinearDirection::Type& _type);
         const ST_SecondaryLinearDirection::Type& get_type() const;
@@ -1441,6 +1468,7 @@ namespace ns_diagram {
         };
         ST_StartingElement();
         ST_StartingElement(const ST_StartingElement::Type& _type);
+        ~ST_StartingElement();
         bool has_type() const;
         void set_type(const ST_StartingElement::Type& _type);
         const ST_StartingElement::Type& get_type() const;
@@ -1466,6 +1494,7 @@ namespace ns_diagram {
         };
         ST_RotationPath();
         ST_RotationPath(const ST_RotationPath::Type& _type);
+        ~ST_RotationPath();
         bool has_type() const;
         void set_type(const ST_RotationPath::Type& _type);
         const ST_RotationPath::Type& get_type() const;
@@ -1491,6 +1520,7 @@ namespace ns_diagram {
         };
         ST_CenterShapeMapping();
         ST_CenterShapeMapping(const ST_CenterShapeMapping::Type& _type);
+        ~ST_CenterShapeMapping();
         bool has_type() const;
         void set_type(const ST_CenterShapeMapping::Type& _type);
         const ST_CenterShapeMapping::Type& get_type() const;
@@ -1517,6 +1547,7 @@ namespace ns_diagram {
         };
         ST_BendPoint();
         ST_BendPoint(const ST_BendPoint::Type& _type);
+        ~ST_BendPoint();
         bool has_type() const;
         void set_type(const ST_BendPoint::Type& _type);
         const ST_BendPoint::Type& get_type() const;
@@ -1544,6 +1575,7 @@ namespace ns_diagram {
         };
         ST_ConnectorRouting();
         ST_ConnectorRouting(const ST_ConnectorRouting::Type& _type);
+        ~ST_ConnectorRouting();
         bool has_type() const;
         void set_type(const ST_ConnectorRouting::Type& _type);
         const ST_ConnectorRouting::Type& get_type() const;
@@ -1570,6 +1602,7 @@ namespace ns_diagram {
         };
         ST_ArrowheadStyle();
         ST_ArrowheadStyle(const ST_ArrowheadStyle::Type& _type);
+        ~ST_ArrowheadStyle();
         bool has_type() const;
         void set_type(const ST_ArrowheadStyle::Type& _type);
         const ST_ArrowheadStyle::Type& get_type() const;
@@ -1596,6 +1629,7 @@ namespace ns_diagram {
         };
         ST_ConnectorDimension();
         ST_ConnectorDimension(const ST_ConnectorDimension::Type& _type);
+        ~ST_ConnectorDimension();
         bool has_type() const;
         void set_type(const ST_ConnectorDimension::Type& _type);
         const ST_ConnectorDimension::Type& get_type() const;
@@ -1630,6 +1664,7 @@ namespace ns_diagram {
         };
         ST_ConnectorPoint();
         ST_ConnectorPoint(const ST_ConnectorPoint::Type& _type);
+        ~ST_ConnectorPoint();
         bool has_type() const;
         void set_type(const ST_ConnectorPoint::Type& _type);
         const ST_ConnectorPoint::Type& get_type() const;
@@ -1656,6 +1691,7 @@ namespace ns_diagram {
         };
         ST_NodeHorizontalAlignment();
         ST_NodeHorizontalAlignment(const ST_NodeHorizontalAlignment::Type& _type);
+        ~ST_NodeHorizontalAlignment();
         bool has_type() const;
         void set_type(const ST_NodeHorizontalAlignment::Type& _type);
         const ST_NodeHorizontalAlignment::Type& get_type() const;
@@ -1682,6 +1718,7 @@ namespace ns_diagram {
         };
         ST_NodeVerticalAlignment();
         ST_NodeVerticalAlignment(const ST_NodeVerticalAlignment::Type& _type);
+        ~ST_NodeVerticalAlignment();
         bool has_type() const;
         void set_type(const ST_NodeVerticalAlignment::Type& _type);
         const ST_NodeVerticalAlignment::Type& get_type() const;
@@ -1707,6 +1744,7 @@ namespace ns_diagram {
         };
         ST_FallbackDimension();
         ST_FallbackDimension(const ST_FallbackDimension::Type& _type);
+        ~ST_FallbackDimension();
         bool has_type() const;
         void set_type(const ST_FallbackDimension::Type& _type);
         const ST_FallbackDimension::Type& get_type() const;
@@ -1732,6 +1770,7 @@ namespace ns_diagram {
         };
         ST_TextDirection();
         ST_TextDirection(const ST_TextDirection::Type& _type);
+        ~ST_TextDirection();
         bool has_type() const;
         void set_type(const ST_TextDirection::Type& _type);
         const ST_TextDirection::Type& get_type() const;
@@ -1757,6 +1796,7 @@ namespace ns_diagram {
         };
         ST_PyramidAccentPosition();
         ST_PyramidAccentPosition(const ST_PyramidAccentPosition::Type& _type);
+        ~ST_PyramidAccentPosition();
         bool has_type() const;
         void set_type(const ST_PyramidAccentPosition::Type& _type);
         const ST_PyramidAccentPosition::Type& get_type() const;
@@ -1782,6 +1822,7 @@ namespace ns_diagram {
         };
         ST_PyramidAccentTextMargin();
         ST_PyramidAccentTextMargin(const ST_PyramidAccentTextMargin::Type& _type);
+        ~ST_PyramidAccentTextMargin();
         bool has_type() const;
         void set_type(const ST_PyramidAccentTextMargin::Type& _type);
         const ST_PyramidAccentTextMargin::Type& get_type() const;
@@ -1807,6 +1848,7 @@ namespace ns_diagram {
         };
         ST_TextBlockDirection();
         ST_TextBlockDirection(const ST_TextBlockDirection::Type& _type);
+        ~ST_TextBlockDirection();
         bool has_type() const;
         void set_type(const ST_TextBlockDirection::Type& _type);
         const ST_TextBlockDirection::Type& get_type() const;
@@ -1832,6 +1874,7 @@ namespace ns_diagram {
         };
         ST_TextAnchorHorizontal();
         ST_TextAnchorHorizontal(const ST_TextAnchorHorizontal::Type& _type);
+        ~ST_TextAnchorHorizontal();
         bool has_type() const;
         void set_type(const ST_TextAnchorHorizontal::Type& _type);
         const ST_TextAnchorHorizontal::Type& get_type() const;
@@ -1858,6 +1901,7 @@ namespace ns_diagram {
         };
         ST_TextAnchorVertical();
         ST_TextAnchorVertical(const ST_TextAnchorVertical::Type& _type);
+        ~ST_TextAnchorVertical();
         bool has_type() const;
         void set_type(const ST_TextAnchorVertical::Type& _type);
         const ST_TextAnchorVertical::Type& get_type() const;
@@ -1884,6 +1928,7 @@ namespace ns_diagram {
         };
         ST_DiagramTextAlignment();
         ST_DiagramTextAlignment(const ST_DiagramTextAlignment::Type& _type);
+        ~ST_DiagramTextAlignment();
         bool has_type() const;
         void set_type(const ST_DiagramTextAlignment::Type& _type);
         const ST_DiagramTextAlignment::Type& get_type() const;
@@ -1910,6 +1955,7 @@ namespace ns_diagram {
         };
         ST_AutoTextRotation();
         ST_AutoTextRotation(const ST_AutoTextRotation::Type& _type);
+        ~ST_AutoTextRotation();
         bool has_type() const;
         void set_type(const ST_AutoTextRotation::Type& _type);
         const ST_AutoTextRotation::Type& get_type() const;
@@ -1937,6 +1983,7 @@ namespace ns_diagram {
         };
         ST_GrowDirection();
         ST_GrowDirection(const ST_GrowDirection::Type& _type);
+        ~ST_GrowDirection();
         bool has_type() const;
         void set_type(const ST_GrowDirection::Type& _type);
         const ST_GrowDirection::Type& get_type() const;
@@ -1962,6 +2009,7 @@ namespace ns_diagram {
         };
         ST_FlowDirection();
         ST_FlowDirection(const ST_FlowDirection::Type& _type);
+        ~ST_FlowDirection();
         bool has_type() const;
         void set_type(const ST_FlowDirection::Type& _type);
         const ST_FlowDirection::Type& get_type() const;
@@ -1987,6 +2035,7 @@ namespace ns_diagram {
         };
         ST_ContinueDirection();
         ST_ContinueDirection(const ST_ContinueDirection::Type& _type);
+        ~ST_ContinueDirection();
         bool has_type() const;
         void set_type(const ST_ContinueDirection::Type& _type);
         const ST_ContinueDirection::Type& get_type() const;
@@ -2013,6 +2062,7 @@ namespace ns_diagram {
         };
         ST_Breakpoint();
         ST_Breakpoint(const ST_Breakpoint::Type& _type);
+        ~ST_Breakpoint();
         bool has_type() const;
         void set_type(const ST_Breakpoint::Type& _type);
         const ST_Breakpoint::Type& get_type() const;
@@ -2038,6 +2088,7 @@ namespace ns_diagram {
         };
         ST_Offset();
         ST_Offset(const ST_Offset::Type& _type);
+        ~ST_Offset();
         bool has_type() const;
         void set_type(const ST_Offset::Type& _type);
         const ST_Offset::Type& get_type() const;
@@ -2077,6 +2128,7 @@ namespace ns_diagram {
         };
         ST_HierarchyAlignment();
         ST_HierarchyAlignment(const ST_HierarchyAlignment::Type& _type);
+        ~ST_HierarchyAlignment();
         bool has_type() const;
         void set_type(const ST_HierarchyAlignment::Type& _type);
         const ST_HierarchyAlignment::Type& get_type() const;
@@ -2096,6 +2148,7 @@ namespace ns_diagram {
     {
     public:
         ST_FunctionValue();
+        ~ST_FunctionValue();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -2165,6 +2218,7 @@ namespace ns_diagram {
         };
         ST_VariableType();
         ST_VariableType(const ST_VariableType::Type& _type);
+        ~ST_VariableType();
         bool has_type() const;
         void set_type(const ST_VariableType::Type& _type);
         const ST_VariableType::Type& get_type() const;
@@ -2184,6 +2238,7 @@ namespace ns_diagram {
     {
     public:
         ST_FunctionArgument();
+        ~ST_FunctionArgument();
         bool has_ST_VariableType() const;
         ST_VariableType* mutable_ST_VariableType();
         const ST_VariableType& get_ST_VariableType() const;
@@ -2209,6 +2264,7 @@ namespace ns_diagram {
         };
         ST_OutputShapeType();
         ST_OutputShapeType(const ST_OutputShapeType::Type& _type);
+        ~ST_OutputShapeType();
         bool has_type() const;
         void set_type(const ST_OutputShapeType::Type& _type);
         const ST_OutputShapeType::Type& get_type() const;

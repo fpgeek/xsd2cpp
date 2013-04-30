@@ -45,6 +45,7 @@ namespace ns_r {
     public:
         ST_RelationshipId();
         ST_RelationshipId(const XSD::string_& _string);
+        ~ST_RelationshipId();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;

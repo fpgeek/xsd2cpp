@@ -540,7 +540,8 @@ class ALL_SCHEMA:
                 pbSimpleType.type.kind = PB.SimpleType.Type.Restriction
                 self._parseRestriction(xmlSchema, childElem, pbSimpleType.type.restriction)
             elif childElem.tag == '{%s}list' % XSD_URI:
-                pass # TODO - list 처리
+                pbSimpleType.type.kind = PB.SimpleType.Type.List
+                self._parseList(xmlSchema, childElem, pbSimpleType.type.list)
             elif childElem.tag == '{%s}union' % XSD_URI:
                 pbSimpleType.type.kind = PB.SimpleType.Type.Union
                 self._parseUnion(xmlSchema, childElem, pbSimpleType.type.union)
@@ -683,6 +684,16 @@ class ALL_SCHEMA:
                 pass # TODO
             elif childElem.tag == '{%s}attributeGroup' % XSD_URI:
                 pass # TODO
+
+    def _parseList(self, xmlSchema, listElem, pbList):
+        itemType = listElem.attrib.get('itemType')
+        if itemType:
+            if isBuiltInType(itemType, xmlSchema.builtInTypeMap):
+                pbList.item_type.kind = PB.List.ItemType.BuiltIn
+                pbList.item_type.built_in = xmlSchema.builtInTypeMap.get(itemType)
+            else:
+                pbList.item_type.kind = PB.List.ItemType.SimpleTypeName
+                pbList.item_type.simple_type_name = itemType
 
     def _parseUnion(self, xmlSchema, unionElem, pbUnion):
         memberTypes = unionElem.attrib.get('memberTypes')

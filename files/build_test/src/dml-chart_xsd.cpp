@@ -24,6 +24,9 @@ namespace ns_chart {
     m_type(_type)
     {
     }
+    ST_LayoutTarget::~ST_LayoutTarget()
+{
+    clear();    }
     bool ST_LayoutTarget::has_type() const
     {    
     return m_has_type;
@@ -84,6 +87,9 @@ ST_LayoutTarget* ST_LayoutTarget::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_LayoutMode::~ST_LayoutMode()
+{
+    clear();    }
     bool ST_LayoutMode::has_type() const
     {    
     return m_has_type;
@@ -146,6 +152,9 @@ ST_LayoutMode* ST_LayoutMode::default_instance_ = NULL;
     
     set_byte(_byte);
     }
+    ST_RotX::~ST_RotX()
+{
+    clear();    }
     bool ST_RotX::has_byte() const
     {    
     return m_has_byte;
@@ -204,6 +213,9 @@ ST_RotX* ST_RotX::default_instance_ = NULL;
     m_ST_HPercentUShort(NULL)
     {
     }
+    ST_HPercent::~ST_HPercent()
+{
+    clear();    }
     bool ST_HPercent::has_ST_HPercentWithSymbol() const
     {    
     return m_has_ST_HPercentWithSymbol;
@@ -331,6 +343,9 @@ ST_HPercent* ST_HPercent::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_HPercentWithSymbol::~ST_HPercentWithSymbol()
+{
+    clear();    }
     bool ST_HPercentWithSymbol::has_string() const
     {    
     return m_has_string;
@@ -391,6 +406,9 @@ ST_HPercentWithSymbol* ST_HPercentWithSymbol::default_instance_ = NULL;
     
     set_unsignedShort(_unsignedShort);
     }
+    ST_HPercentUShort::~ST_HPercentUShort()
+{
+    clear();    }
     bool ST_HPercentUShort::has_unsignedShort() const
     {    
     return m_has_unsignedShort;
@@ -453,6 +471,9 @@ ST_HPercentUShort* ST_HPercentUShort::default_instance_ = NULL;
     
     set_unsignedShort(_unsignedShort);
     }
+    ST_RotY::~ST_RotY()
+{
+    clear();    }
     bool ST_RotY::has_unsignedShort() const
     {    
     return m_has_unsignedShort;
@@ -511,6 +532,9 @@ ST_RotY* ST_RotY::default_instance_ = NULL;
     m_ST_DepthPercentUShort(NULL)
     {
     }
+    ST_DepthPercent::~ST_DepthPercent()
+{
+    clear();    }
     bool ST_DepthPercent::has_ST_DepthPercentWithSymbol() const
     {    
     return m_has_ST_DepthPercentWithSymbol;
@@ -638,6 +662,9 @@ ST_DepthPercent* ST_DepthPercent::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_DepthPercentWithSymbol::~ST_DepthPercentWithSymbol()
+{
+    clear();    }
     bool ST_DepthPercentWithSymbol::has_string() const
     {    
     return m_has_string;
@@ -698,6 +725,9 @@ ST_DepthPercentWithSymbol* ST_DepthPercentWithSymbol::default_instance_ = NULL;
     
     set_unsignedShort(_unsignedShort);
     }
+    ST_DepthPercentUShort::~ST_DepthPercentUShort()
+{
+    clear();    }
     bool ST_DepthPercentUShort::has_unsignedShort() const
     {    
     return m_has_unsignedShort;
@@ -760,6 +790,9 @@ ST_DepthPercentUShort* ST_DepthPercentUShort::default_instance_ = NULL;
     
     set_unsignedByte(_unsignedByte);
     }
+    ST_Perspective::~ST_Perspective()
+{
+    clear();    }
     bool ST_Perspective::has_unsignedByte() const
     {    
     return m_has_unsignedByte;
@@ -818,6 +851,9 @@ ST_Perspective* ST_Perspective::default_instance_ = NULL;
     m_unsignedInt(0)
     {
     }
+    ST_Thickness::~ST_Thickness()
+{
+    clear();    }
     bool ST_Thickness::has_ST_ThicknessPercent() const
     {    
     return m_has_ST_ThicknessPercent;
@@ -937,6 +973,9 @@ ST_Thickness* ST_Thickness::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_ThicknessPercent::~ST_ThicknessPercent()
+{
+    clear();    }
     bool ST_ThicknessPercent::has_string() const
     {    
     return m_has_string;
@@ -993,6 +1032,9 @@ ST_ThicknessPercent* ST_ThicknessPercent::default_instance_ = NULL;
     m_ST_GapAmountUShort(NULL)
     {
     }
+    ST_GapAmount::~ST_GapAmount()
+{
+    clear();    }
     bool ST_GapAmount::has_ST_GapAmountPercent() const
     {    
     return m_has_ST_GapAmountPercent;
@@ -1120,6 +1162,9 @@ ST_GapAmount* ST_GapAmount::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_GapAmountPercent::~ST_GapAmountPercent()
+{
+    clear();    }
     bool ST_GapAmountPercent::has_string() const
     {    
     return m_has_string;
@@ -1180,6 +1225,9 @@ ST_GapAmountPercent* ST_GapAmountPercent::default_instance_ = NULL;
     
     set_unsignedShort(_unsignedShort);
     }
+    ST_GapAmountUShort::~ST_GapAmountUShort()
+{
+    clear();    }
     bool ST_GapAmountUShort::has_unsignedShort() const
     {    
     return m_has_unsignedShort;
@@ -1238,6 +1286,9 @@ ST_GapAmountUShort* ST_GapAmountUShort::default_instance_ = NULL;
     m_ST_OverlapByte(NULL)
     {
     }
+    ST_Overlap::~ST_Overlap()
+{
+    clear();    }
     bool ST_Overlap::has_ST_OverlapPercent() const
     {    
     return m_has_ST_OverlapPercent;
@@ -1365,6 +1416,9 @@ ST_Overlap* ST_Overlap::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_OverlapPercent::~ST_OverlapPercent()
+{
+    clear();    }
     bool ST_OverlapPercent::has_string() const
     {    
     return m_has_string;
@@ -1425,6 +1479,9 @@ ST_OverlapPercent* ST_OverlapPercent::default_instance_ = NULL;
     
     set_byte(_byte);
     }
+    ST_OverlapByte::~ST_OverlapByte()
+{
+    clear();    }
     bool ST_OverlapByte::has_byte() const
     {    
     return m_has_byte;
@@ -1483,6 +1540,9 @@ ST_OverlapByte* ST_OverlapByte::default_instance_ = NULL;
     m_ST_BubbleScaleUInt(NULL)
     {
     }
+    ST_BubbleScale::~ST_BubbleScale()
+{
+    clear();    }
     bool ST_BubbleScale::has_ST_BubbleScalePercent() const
     {    
     return m_has_ST_BubbleScalePercent;
@@ -1610,6 +1670,9 @@ ST_BubbleScale* ST_BubbleScale::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_BubbleScalePercent::~ST_BubbleScalePercent()
+{
+    clear();    }
     bool ST_BubbleScalePercent::has_string() const
     {    
     return m_has_string;
@@ -1670,6 +1733,9 @@ ST_BubbleScalePercent* ST_BubbleScalePercent::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_BubbleScaleUInt::~ST_BubbleScaleUInt()
+{
+    clear();    }
     bool ST_BubbleScaleUInt::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -1730,6 +1796,9 @@ ST_BubbleScaleUInt* ST_BubbleScaleUInt::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SizeRepresents::~ST_SizeRepresents()
+{
+    clear();    }
     bool ST_SizeRepresents::has_type() const
     {    
     return m_has_type;
@@ -1792,6 +1861,9 @@ ST_SizeRepresents* ST_SizeRepresents::default_instance_ = NULL;
     
     set_unsignedShort(_unsignedShort);
     }
+    ST_FirstSliceAng::~ST_FirstSliceAng()
+{
+    clear();    }
     bool ST_FirstSliceAng::has_unsignedShort() const
     {    
     return m_has_unsignedShort;
@@ -1850,6 +1922,9 @@ ST_FirstSliceAng* ST_FirstSliceAng::default_instance_ = NULL;
     m_ST_HoleSizeUByte(NULL)
     {
     }
+    ST_HoleSize::~ST_HoleSize()
+{
+    clear();    }
     bool ST_HoleSize::has_ST_HoleSizePercent() const
     {    
     return m_has_ST_HoleSizePercent;
@@ -1977,6 +2052,9 @@ ST_HoleSize* ST_HoleSize::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_HoleSizePercent::~ST_HoleSizePercent()
+{
+    clear();    }
     bool ST_HoleSizePercent::has_string() const
     {    
     return m_has_string;
@@ -2037,6 +2115,9 @@ ST_HoleSizePercent* ST_HoleSizePercent::default_instance_ = NULL;
     
     set_unsignedByte(_unsignedByte);
     }
+    ST_HoleSizeUByte::~ST_HoleSizeUByte()
+{
+    clear();    }
     bool ST_HoleSizeUByte::has_unsignedByte() const
     {    
     return m_has_unsignedByte;
@@ -2097,6 +2178,9 @@ ST_HoleSizeUByte* ST_HoleSizeUByte::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SplitType::~ST_SplitType()
+{
+    clear();    }
     bool ST_SplitType::has_type() const
     {    
     return m_has_type;
@@ -2158,6 +2242,9 @@ ST_SplitType* ST_SplitType::default_instance_ = NULL;
     m_ST_SecondPieSizeUShort(NULL)
     {
     }
+    ST_SecondPieSize::~ST_SecondPieSize()
+{
+    clear();    }
     bool ST_SecondPieSize::has_ST_SecondPieSizePercent() const
     {    
     return m_has_ST_SecondPieSizePercent;
@@ -2285,6 +2372,9 @@ ST_SecondPieSize* ST_SecondPieSize::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_SecondPieSizePercent::~ST_SecondPieSizePercent()
+{
+    clear();    }
     bool ST_SecondPieSizePercent::has_string() const
     {    
     return m_has_string;
@@ -2345,6 +2435,9 @@ ST_SecondPieSizePercent* ST_SecondPieSizePercent::default_instance_ = NULL;
     
     set_unsignedShort(_unsignedShort);
     }
+    ST_SecondPieSizeUShort::~ST_SecondPieSizeUShort()
+{
+    clear();    }
     bool ST_SecondPieSizeUShort::has_unsignedShort() const
     {    
     return m_has_unsignedShort;
@@ -2405,6 +2498,9 @@ ST_SecondPieSizeUShort* ST_SecondPieSizeUShort::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_LblAlgn::~ST_LblAlgn()
+{
+    clear();    }
     bool ST_LblAlgn::has_type() const
     {    
     return m_has_type;
@@ -2466,6 +2562,9 @@ ST_LblAlgn* ST_LblAlgn::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_DLblPos::~ST_DLblPos()
+{
+    clear();    }
     bool ST_DLblPos::has_type() const
     {    
     return m_has_type;
@@ -2533,6 +2632,9 @@ ST_DLblPos* ST_DLblPos::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_MarkerStyle::~ST_MarkerStyle()
+{
+    clear();    }
     bool ST_MarkerStyle::has_type() const
     {    
     return m_has_type;
@@ -2605,6 +2707,9 @@ ST_MarkerStyle* ST_MarkerStyle::default_instance_ = NULL;
     
     set_unsignedByte(_unsignedByte);
     }
+    ST_MarkerSize::~ST_MarkerSize()
+{
+    clear();    }
     bool ST_MarkerSize::has_unsignedByte() const
     {    
     return m_has_unsignedByte;
@@ -2665,6 +2770,9 @@ ST_MarkerSize* ST_MarkerSize::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TrendlineType::~ST_TrendlineType()
+{
+    clear();    }
     bool ST_TrendlineType::has_type() const
     {    
     return m_has_type;
@@ -2731,6 +2839,9 @@ ST_TrendlineType* ST_TrendlineType::default_instance_ = NULL;
     
     set_unsignedByte(_unsignedByte);
     }
+    ST_Order::~ST_Order()
+{
+    clear();    }
     bool ST_Order::has_unsignedByte() const
     {    
     return m_has_unsignedByte;
@@ -2793,6 +2904,9 @@ ST_Order* ST_Order::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_Period::~ST_Period()
+{
+    clear();    }
     bool ST_Period::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -2852,6 +2966,9 @@ ST_Period* ST_Period::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ErrDir::~ST_ErrDir()
+{
+    clear();    }
     bool ST_ErrDir::has_type() const
     {    
     return m_has_type;
@@ -2912,6 +3029,9 @@ ST_ErrDir* ST_ErrDir::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ErrBarType::~ST_ErrBarType()
+{
+    clear();    }
     bool ST_ErrBarType::has_type() const
     {    
     return m_has_type;
@@ -2973,6 +3093,9 @@ ST_ErrBarType* ST_ErrBarType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ErrValType::~ST_ErrValType()
+{
+    clear();    }
     bool ST_ErrValType::has_type() const
     {    
     return m_has_type;
@@ -3036,6 +3159,9 @@ ST_ErrValType* ST_ErrValType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Grouping::~ST_Grouping()
+{
+    clear();    }
     bool ST_Grouping::has_type() const
     {    
     return m_has_type;
@@ -3097,6 +3223,9 @@ ST_Grouping* ST_Grouping::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ScatterStyle::~ST_ScatterStyle()
+{
+    clear();    }
     bool ST_ScatterStyle::has_type() const
     {    
     return m_has_type;
@@ -3161,6 +3290,9 @@ ST_ScatterStyle* ST_ScatterStyle::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_RadarStyle::~ST_RadarStyle()
+{
+    clear();    }
     bool ST_RadarStyle::has_type() const
     {    
     return m_has_type;
@@ -3222,6 +3354,9 @@ ST_RadarStyle* ST_RadarStyle::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BarGrouping::~ST_BarGrouping()
+{
+    clear();    }
     bool ST_BarGrouping::has_type() const
     {    
     return m_has_type;
@@ -3284,6 +3419,9 @@ ST_BarGrouping* ST_BarGrouping::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BarDir::~ST_BarDir()
+{
+    clear();    }
     bool ST_BarDir::has_type() const
     {    
     return m_has_type;
@@ -3344,6 +3482,9 @@ ST_BarDir* ST_BarDir::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Shape::~ST_Shape()
+{
+    clear();    }
     bool ST_Shape::has_type() const
     {    
     return m_has_type;
@@ -3408,6 +3549,9 @@ ST_Shape* ST_Shape::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_OfPieType::~ST_OfPieType()
+{
+    clear();    }
     bool ST_OfPieType::has_type() const
     {    
     return m_has_type;
@@ -3468,6 +3612,9 @@ ST_OfPieType* ST_OfPieType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_AxPos::~ST_AxPos()
+{
+    clear();    }
     bool ST_AxPos::has_type() const
     {    
     return m_has_type;
@@ -3530,6 +3677,9 @@ ST_AxPos* ST_AxPos::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Crosses::~ST_Crosses()
+{
+    clear();    }
     bool ST_Crosses::has_type() const
     {    
     return m_has_type;
@@ -3591,6 +3741,9 @@ ST_Crosses* ST_Crosses::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_CrossBetween::~ST_CrossBetween()
+{
+    clear();    }
     bool ST_CrossBetween::has_type() const
     {    
     return m_has_type;
@@ -3651,6 +3804,9 @@ ST_CrossBetween* ST_CrossBetween::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TickMark::~ST_TickMark()
+{
+    clear();    }
     bool ST_TickMark::has_type() const
     {    
     return m_has_type;
@@ -3713,6 +3869,9 @@ ST_TickMark* ST_TickMark::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TickLblPos::~ST_TickLblPos()
+{
+    clear();    }
     bool ST_TickLblPos::has_type() const
     {    
     return m_has_type;
@@ -3777,6 +3936,9 @@ ST_TickLblPos* ST_TickLblPos::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_Skip::~ST_Skip()
+{
+    clear();    }
     bool ST_Skip::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -3836,6 +3998,9 @@ ST_Skip* ST_Skip::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TimeUnit::~ST_TimeUnit()
+{
+    clear();    }
     bool ST_TimeUnit::has_type() const
     {    
     return m_has_type;
@@ -3899,6 +4064,9 @@ ST_TimeUnit* ST_TimeUnit::default_instance_ = NULL;
     
     set_double(_double);
     }
+    ST_AxisUnit::~ST_AxisUnit()
+{
+    clear();    }
     bool ST_AxisUnit::has_double() const
     {    
     return m_has_double;
@@ -3958,6 +4126,9 @@ ST_AxisUnit* ST_AxisUnit::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BuiltInUnit::~ST_BuiltInUnit()
+{
+    clear();    }
     bool ST_BuiltInUnit::has_type() const
     {    
     return m_has_type;
@@ -4025,6 +4196,9 @@ ST_BuiltInUnit* ST_BuiltInUnit::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PictureFormat::~ST_PictureFormat()
+{
+    clear();    }
     bool ST_PictureFormat::has_type() const
     {    
     return m_has_type;
@@ -4088,6 +4262,9 @@ ST_PictureFormat* ST_PictureFormat::default_instance_ = NULL;
     
     set_double(_double);
     }
+    ST_PictureStackUnit::~ST_PictureStackUnit()
+{
+    clear();    }
     bool ST_PictureStackUnit::has_double() const
     {    
     return m_has_double;
@@ -4147,6 +4324,9 @@ ST_PictureStackUnit* ST_PictureStackUnit::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Orientation::~ST_Orientation()
+{
+    clear();    }
     bool ST_Orientation::has_type() const
     {    
     return m_has_type;
@@ -4209,6 +4389,9 @@ ST_Orientation* ST_Orientation::default_instance_ = NULL;
     
     set_double(_double);
     }
+    ST_LogBase::~ST_LogBase()
+{
+    clear();    }
     bool ST_LogBase::has_double() const
     {    
     return m_has_double;
@@ -4267,6 +4450,9 @@ ST_LogBase* ST_LogBase::default_instance_ = NULL;
     m_ST_LblOffsetUShort(NULL)
     {
     }
+    ST_LblOffset::~ST_LblOffset()
+{
+    clear();    }
     bool ST_LblOffset::has_ST_LblOffsetPercent() const
     {    
     return m_has_ST_LblOffsetPercent;
@@ -4394,6 +4580,9 @@ ST_LblOffset* ST_LblOffset::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_LblOffsetPercent::~ST_LblOffsetPercent()
+{
+    clear();    }
     bool ST_LblOffsetPercent::has_string() const
     {    
     return m_has_string;
@@ -4454,6 +4643,9 @@ ST_LblOffsetPercent* ST_LblOffsetPercent::default_instance_ = NULL;
     
     set_unsignedShort(_unsignedShort);
     }
+    ST_LblOffsetUShort::~ST_LblOffsetUShort()
+{
+    clear();    }
     bool ST_LblOffsetUShort::has_unsignedShort() const
     {    
     return m_has_unsignedShort;
@@ -4514,6 +4706,9 @@ ST_LblOffsetUShort* ST_LblOffsetUShort::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_LegendPos::~ST_LegendPos()
+{
+    clear();    }
     bool ST_LegendPos::has_type() const
     {    
     return m_has_type;
@@ -4577,6 +4772,9 @@ ST_LegendPos* ST_LegendPos::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_DispBlanksAs::~ST_DispBlanksAs()
+{
+    clear();    }
     bool ST_DispBlanksAs::has_type() const
     {    
     return m_has_type;
@@ -4640,6 +4838,9 @@ ST_DispBlanksAs* ST_DispBlanksAs::default_instance_ = NULL;
     
     set_unsignedByte(_unsignedByte);
     }
+    ST_Style::~ST_Style()
+{
+    clear();    }
     bool ST_Style::has_unsignedByte() const
     {    
     return m_has_unsignedByte;
@@ -4700,6 +4901,9 @@ ST_Style* ST_Style::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PageSetupOrientation::~ST_PageSetupOrientation()
+{
+    clear();    }
     bool ST_PageSetupOrientation::has_type() const
     {    
     return m_has_type;

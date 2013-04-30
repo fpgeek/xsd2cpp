@@ -240,6 +240,7 @@ def _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass, toXmlMethodB
 def _makeCppClassFromSimpleType(pbSchema, pbSimpleType, cppClass):
     cppClass.name = pbSimpleType.name
     cppClass.parent_class.append('XSD::SimpleType')
+    cppClass.destructor.body = 'clear();'
     _makeCppMethodFromSimpleType(pbSchema, pbSimpleType, cppClass)
 
 
@@ -248,7 +249,7 @@ def _makeCppMethodFromSimpleType(pbSchema, pbSimpleType, cppClass):
     if pbSimpleType.type.kind == PB.SimpleType.Type.Restriction:
         _makeCppMethodFromRestriction(pbSimpleType.type.restriction, cppClass)
     elif pbSimpleType.type.kind == PB.SimpleType.Type.List:
-        pass # TODO - list
+        CPP_FUNC.simpleType_list(pbSchema, pbSimpleType.type.list, cppClass)
     elif pbSimpleType.type.kind == PB.SimpleType.Type.Union:
         CPP_FUNC.simpleType_union(pbSchema, pbSimpleType.type.union, cppClass)
 

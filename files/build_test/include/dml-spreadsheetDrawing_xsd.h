@@ -55,6 +55,7 @@ namespace ns_xdr {
     public:
         ST_ColID();
         ST_ColID(const XSD::int_& _int);
+        ~ST_ColID();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -74,6 +75,7 @@ namespace ns_xdr {
     public:
         ST_RowID();
         ST_RowID(const XSD::int_& _int);
+        ~ST_RowID();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -99,6 +101,7 @@ namespace ns_xdr {
         };
         ST_EditAs();
         ST_EditAs(const ST_EditAs::Type& _type);
+        ~ST_EditAs();
         bool has_type() const;
         void set_type(const ST_EditAs::Type& _type);
         const ST_EditAs::Type& get_type() const;

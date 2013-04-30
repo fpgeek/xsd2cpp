@@ -58,6 +58,7 @@ namespace ns_s {
     public:
         ST_Lang();
         ST_Lang(const XSD::string_& _string);
+        ~ST_Lang();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -77,6 +78,7 @@ namespace ns_s {
     public:
         ST_HexColorRGB();
         ST_HexColorRGB(const XSD::hexBinary_& _hexBinary);
+        ~ST_HexColorRGB();
         bool has_hexBinary() const;
         void set_hexBinary(const XSD::hexBinary_& _hexBinary);
         const XSD::hexBinary_& get_hexBinary() const;
@@ -96,6 +98,7 @@ namespace ns_s {
     public:
         ST_Panose();
         ST_Panose(const XSD::hexBinary_& _hexBinary);
+        ~ST_Panose();
         bool has_hexBinary() const;
         void set_hexBinary(const XSD::hexBinary_& _hexBinary);
         const XSD::hexBinary_& get_hexBinary() const;
@@ -132,6 +135,7 @@ namespace ns_s {
         };
         ST_CalendarType();
         ST_CalendarType(const ST_CalendarType::Type& _type);
+        ~ST_CalendarType();
         bool has_type() const;
         void set_type(const ST_CalendarType::Type& _type);
         const ST_CalendarType::Type& get_type() const;
@@ -157,6 +161,7 @@ namespace ns_s {
         };
         ST_AlgClass();
         ST_AlgClass(const ST_AlgClass::Type& _type);
+        ~ST_AlgClass();
         bool has_type() const;
         void set_type(const ST_AlgClass::Type& _type);
         const ST_AlgClass::Type& get_type() const;
@@ -183,6 +188,7 @@ namespace ns_s {
         };
         ST_CryptProv();
         ST_CryptProv(const ST_CryptProv::Type& _type);
+        ~ST_CryptProv();
         bool has_type() const;
         void set_type(const ST_CryptProv::Type& _type);
         const ST_CryptProv::Type& get_type() const;
@@ -208,6 +214,7 @@ namespace ns_s {
         };
         ST_AlgType();
         ST_AlgType(const ST_AlgType::Type& _type);
+        ~ST_AlgType();
         bool has_type() const;
         void set_type(const ST_AlgType::Type& _type);
         const ST_AlgType::Type& get_type() const;
@@ -228,6 +235,7 @@ namespace ns_s {
     public:
         ST_ColorType();
         ST_ColorType(const XSD::string_& _string);
+        ~ST_ColorType();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -247,6 +255,7 @@ namespace ns_s {
     public:
         ST_Guid();
         ST_Guid(const XSD::token_& _token);
+        ~ST_Guid();
         bool has_token() const;
         void set_token(const XSD::token_& _token);
         const XSD::token_& get_token() const;
@@ -265,6 +274,7 @@ namespace ns_s {
     {
     public:
         ST_OnOff();
+        ~ST_OnOff();
         bool has_boolean() const;
         void set_boolean(const XSD::boolean_& _boolean);
         const XSD::boolean_& get_boolean() const;
@@ -296,6 +306,7 @@ namespace ns_s {
         };
         ST_OnOff1();
         ST_OnOff1(const ST_OnOff1::Type& _type);
+        ~ST_OnOff1();
         bool has_type() const;
         void set_type(const ST_OnOff1::Type& _type);
         const ST_OnOff1::Type& get_type() const;
@@ -316,6 +327,7 @@ namespace ns_s {
     public:
         ST_String();
         ST_String(const XSD::string_& _string);
+        ~ST_String();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -335,6 +347,7 @@ namespace ns_s {
     public:
         ST_XmlName();
         ST_XmlName(const XSD::NCName_& _NCName);
+        ~ST_XmlName();
         bool has_NCName() const;
         void set_NCName(const XSD::NCName_& _NCName);
         const XSD::NCName_& get_NCName() const;
@@ -361,6 +374,7 @@ namespace ns_s {
         };
         ST_TrueFalse();
         ST_TrueFalse(const ST_TrueFalse::Type& _type);
+        ~ST_TrueFalse();
         bool has_type() const;
         void set_type(const ST_TrueFalse::Type& _type);
         const ST_TrueFalse::Type& get_type() const;
@@ -391,6 +405,7 @@ namespace ns_s {
         };
         ST_TrueFalseBlank();
         ST_TrueFalseBlank(const ST_TrueFalseBlank::Type& _type);
+        ~ST_TrueFalseBlank();
         bool has_type() const;
         void set_type(const ST_TrueFalseBlank::Type& _type);
         const ST_TrueFalseBlank::Type& get_type() const;
@@ -411,6 +426,7 @@ namespace ns_s {
     public:
         ST_UnsignedDecimalNumber();
         ST_UnsignedDecimalNumber(const XSD::unsignedLong_& _unsignedLong);
+        ~ST_UnsignedDecimalNumber();
         bool has_unsignedLong() const;
         void set_unsignedLong(const XSD::unsignedLong_& _unsignedLong);
         const XSD::unsignedLong_& get_unsignedLong() const;
@@ -429,6 +445,7 @@ namespace ns_s {
     {
     public:
         ST_TwipsMeasure();
+        ~ST_TwipsMeasure();
         bool has_ST_UnsignedDecimalNumber() const;
         ST_UnsignedDecimalNumber* mutable_ST_UnsignedDecimalNumber();
         const ST_UnsignedDecimalNumber& get_ST_UnsignedDecimalNumber() const;
@@ -461,6 +478,7 @@ namespace ns_s {
         };
         ST_VerticalAlignRun();
         ST_VerticalAlignRun(const ST_VerticalAlignRun::Type& _type);
+        ~ST_VerticalAlignRun();
         bool has_type() const;
         void set_type(const ST_VerticalAlignRun::Type& _type);
         const ST_VerticalAlignRun::Type& get_type() const;
@@ -481,6 +499,7 @@ namespace ns_s {
     public:
         ST_Xstring();
         ST_Xstring(const XSD::string_& _string);
+        ~ST_Xstring();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -508,6 +527,7 @@ namespace ns_s {
         };
         ST_XAlign();
         ST_XAlign(const ST_XAlign::Type& _type);
+        ~ST_XAlign();
         bool has_type() const;
         void set_type(const ST_XAlign::Type& _type);
         const ST_XAlign::Type& get_type() const;
@@ -537,6 +557,7 @@ namespace ns_s {
         };
         ST_YAlign();
         ST_YAlign(const ST_YAlign::Type& _type);
+        ~ST_YAlign();
         bool has_type() const;
         void set_type(const ST_YAlign::Type& _type);
         const ST_YAlign::Type& get_type() const;
@@ -562,6 +583,7 @@ namespace ns_s {
         };
         ST_ConformanceClass();
         ST_ConformanceClass(const ST_ConformanceClass::Type& _type);
+        ~ST_ConformanceClass();
         bool has_type() const;
         void set_type(const ST_ConformanceClass::Type& _type);
         const ST_ConformanceClass::Type& get_type() const;
@@ -582,6 +604,7 @@ namespace ns_s {
     public:
         ST_UniversalMeasure();
         ST_UniversalMeasure(const XSD::string_& _string);
+        ~ST_UniversalMeasure();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -601,6 +624,7 @@ namespace ns_s {
     public:
         ST_PositiveUniversalMeasure();
         ST_PositiveUniversalMeasure(const ST_UniversalMeasure& _ST_UniversalMeasure);
+        ~ST_PositiveUniversalMeasure();
         static const ST_PositiveUniversalMeasure& default_instance();
     protected:
     private:
@@ -612,6 +636,7 @@ namespace ns_s {
     public:
         ST_Percentage();
         ST_Percentage(const XSD::string_& _string);
+        ~ST_Percentage();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -631,6 +656,7 @@ namespace ns_s {
     public:
         ST_FixedPercentage();
         ST_FixedPercentage(const ST_Percentage& _ST_Percentage);
+        ~ST_FixedPercentage();
         static const ST_FixedPercentage& default_instance();
     protected:
     private:
@@ -642,6 +668,7 @@ namespace ns_s {
     public:
         ST_PositivePercentage();
         ST_PositivePercentage(const ST_Percentage& _ST_Percentage);
+        ~ST_PositivePercentage();
         static const ST_PositivePercentage& default_instance();
     protected:
     private:
@@ -653,6 +680,7 @@ namespace ns_s {
     public:
         ST_PositiveFixedPercentage();
         ST_PositiveFixedPercentage(const ST_Percentage& _ST_Percentage);
+        ~ST_PositiveFixedPercentage();
         static const ST_PositiveFixedPercentage& default_instance();
     protected:
     private:

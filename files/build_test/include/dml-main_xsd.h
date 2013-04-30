@@ -370,6 +370,7 @@ namespace ns_a {
     public:
         ST_StyleMatrixColumnIndex();
         ST_StyleMatrixColumnIndex(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_StyleMatrixColumnIndex();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -395,6 +396,7 @@ namespace ns_a {
         };
         ST_FontCollectionIndex();
         ST_FontCollectionIndex(const ST_FontCollectionIndex::Type& _type);
+        ~ST_FontCollectionIndex();
         bool has_type() const;
         void set_type(const ST_FontCollectionIndex::Type& _type);
         const ST_FontCollectionIndex::Type& get_type() const;
@@ -430,6 +432,7 @@ namespace ns_a {
         };
         ST_ColorSchemeIndex();
         ST_ColorSchemeIndex(const ST_ColorSchemeIndex::Type& _type);
+        ~ST_ColorSchemeIndex();
         bool has_type() const;
         void set_type(const ST_ColorSchemeIndex::Type& _type);
         const ST_ColorSchemeIndex::Type& get_type() const;
@@ -449,6 +452,7 @@ namespace ns_a {
     {
     public:
         ST_Coordinate();
+        ~ST_Coordinate();
         bool has_ST_CoordinateUnqualified() const;
         ST_CoordinateUnqualified* mutable_ST_CoordinateUnqualified();
         const ST_CoordinateUnqualified& get_ST_CoordinateUnqualified() const;
@@ -475,6 +479,7 @@ namespace ns_a {
     public:
         ST_CoordinateUnqualified();
         ST_CoordinateUnqualified(const XSD::long_& _long);
+        ~ST_CoordinateUnqualified();
         bool has_long() const;
         void set_long(const XSD::long_& _long);
         const XSD::long_& get_long() const;
@@ -493,6 +498,7 @@ namespace ns_a {
     {
     public:
         ST_Coordinate32();
+        ~ST_Coordinate32();
         bool has_ST_Coordinate32Unqualified() const;
         ST_Coordinate32Unqualified* mutable_ST_Coordinate32Unqualified();
         const ST_Coordinate32Unqualified& get_ST_Coordinate32Unqualified() const;
@@ -519,6 +525,7 @@ namespace ns_a {
     public:
         ST_Coordinate32Unqualified();
         ST_Coordinate32Unqualified(const XSD::int_& _int);
+        ~ST_Coordinate32Unqualified();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -538,6 +545,7 @@ namespace ns_a {
     public:
         ST_PositiveCoordinate();
         ST_PositiveCoordinate(const XSD::long_& _long);
+        ~ST_PositiveCoordinate();
         bool has_long() const;
         void set_long(const XSD::long_& _long);
         const XSD::long_& get_long() const;
@@ -557,6 +565,7 @@ namespace ns_a {
     public:
         ST_PositiveCoordinate32();
         ST_PositiveCoordinate32(const ST_Coordinate32Unqualified& _ST_Coordinate32Unqualified);
+        ~ST_PositiveCoordinate32();
         static const ST_PositiveCoordinate32& default_instance();
     protected:
     private:
@@ -568,6 +577,7 @@ namespace ns_a {
     public:
         ST_Angle();
         ST_Angle(const XSD::int_& _int);
+        ~ST_Angle();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -587,6 +597,7 @@ namespace ns_a {
     public:
         ST_FixedAngle();
         ST_FixedAngle(const ST_Angle& _ST_Angle);
+        ~ST_FixedAngle();
         static const ST_FixedAngle& default_instance();
     protected:
     private:
@@ -598,6 +609,7 @@ namespace ns_a {
     public:
         ST_PositiveFixedAngle();
         ST_PositiveFixedAngle(const ST_Angle& _ST_Angle);
+        ~ST_PositiveFixedAngle();
         static const ST_PositiveFixedAngle& default_instance();
     protected:
     private:
@@ -608,6 +620,7 @@ namespace ns_a {
     {
     public:
         ST_Percentage();
+        ~ST_Percentage();
         bool has_ST_PercentageDecimal() const;
         ST_PercentageDecimal* mutable_ST_PercentageDecimal();
         const ST_PercentageDecimal& get_ST_PercentageDecimal() const;
@@ -634,6 +647,7 @@ namespace ns_a {
     public:
         ST_PercentageDecimal();
         ST_PercentageDecimal(const XSD::int_& _int);
+        ~ST_PercentageDecimal();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -652,6 +666,7 @@ namespace ns_a {
     {
     public:
         ST_PositivePercentage();
+        ~ST_PositivePercentage();
         bool has_ST_PositivePercentageDecimal() const;
         ST_PositivePercentageDecimal* mutable_ST_PositivePercentageDecimal();
         const ST_PositivePercentageDecimal& get_ST_PositivePercentageDecimal() const;
@@ -678,6 +693,7 @@ namespace ns_a {
     public:
         ST_PositivePercentageDecimal();
         ST_PositivePercentageDecimal(const ST_PercentageDecimal& _ST_PercentageDecimal);
+        ~ST_PositivePercentageDecimal();
         static const ST_PositivePercentageDecimal& default_instance();
     protected:
     private:
@@ -688,6 +704,7 @@ namespace ns_a {
     {
     public:
         ST_FixedPercentage();
+        ~ST_FixedPercentage();
         bool has_ST_FixedPercentageDecimal() const;
         ST_FixedPercentageDecimal* mutable_ST_FixedPercentageDecimal();
         const ST_FixedPercentageDecimal& get_ST_FixedPercentageDecimal() const;
@@ -714,6 +731,7 @@ namespace ns_a {
     public:
         ST_FixedPercentageDecimal();
         ST_FixedPercentageDecimal(const ST_PercentageDecimal& _ST_PercentageDecimal);
+        ~ST_FixedPercentageDecimal();
         static const ST_FixedPercentageDecimal& default_instance();
     protected:
     private:
@@ -724,6 +742,7 @@ namespace ns_a {
     {
     public:
         ST_PositiveFixedPercentage();
+        ~ST_PositiveFixedPercentage();
         bool has_ST_PositiveFixedPercentageDecimal() const;
         ST_PositiveFixedPercentageDecimal* mutable_ST_PositiveFixedPercentageDecimal();
         const ST_PositiveFixedPercentageDecimal& get_ST_PositiveFixedPercentageDecimal() const;
@@ -750,6 +769,7 @@ namespace ns_a {
     public:
         ST_PositiveFixedPercentageDecimal();
         ST_PositiveFixedPercentageDecimal(const ST_PercentageDecimal& _ST_PercentageDecimal);
+        ~ST_PositiveFixedPercentageDecimal();
         static const ST_PositiveFixedPercentageDecimal& default_instance();
     protected:
     private:
@@ -794,6 +814,7 @@ namespace ns_a {
         };
         ST_SystemColorVal();
         ST_SystemColorVal(const ST_SystemColorVal::Type& _type);
+        ~ST_SystemColorVal();
         bool has_type() const;
         void set_type(const ST_SystemColorVal::Type& _type);
         const ST_SystemColorVal::Type& get_type() const;
@@ -834,6 +855,7 @@ namespace ns_a {
         };
         ST_SchemeColorVal();
         ST_SchemeColorVal(const ST_SchemeColorVal::Type& _type);
+        ~ST_SchemeColorVal();
         bool has_type() const;
         void set_type(const ST_SchemeColorVal::Type& _type);
         const ST_SchemeColorVal::Type& get_type() const;
@@ -1047,6 +1069,7 @@ namespace ns_a {
         };
         ST_PresetColorVal();
         ST_PresetColorVal(const ST_PresetColorVal::Type& _type);
+        ~ST_PresetColorVal();
         bool has_type() const;
         void set_type(const ST_PresetColorVal::Type& _type);
         const ST_PresetColorVal::Type& get_type() const;
@@ -1079,6 +1102,7 @@ namespace ns_a {
         };
         ST_RectAlignment();
         ST_RectAlignment(const ST_RectAlignment::Type& _type);
+        ~ST_RectAlignment();
         bool has_type() const;
         void set_type(const ST_RectAlignment::Type& _type);
         const ST_RectAlignment::Type& get_type() const;
@@ -1113,6 +1137,7 @@ namespace ns_a {
         };
         ST_BlackWhiteMode();
         ST_BlackWhiteMode(const ST_BlackWhiteMode::Type& _type);
+        ~ST_BlackWhiteMode();
         bool has_type() const;
         void set_type(const ST_BlackWhiteMode::Type& _type);
         const ST_BlackWhiteMode::Type& get_type() const;
@@ -1133,6 +1158,7 @@ namespace ns_a {
     public:
         ST_DrawingElementId();
         ST_DrawingElementId(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_DrawingElementId();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -1161,6 +1187,7 @@ namespace ns_a {
         };
         ST_ChartBuildStep();
         ST_ChartBuildStep(const ST_ChartBuildStep::Type& _type);
+        ~ST_ChartBuildStep();
         bool has_type() const;
         void set_type(const ST_ChartBuildStep::Type& _type);
         const ST_ChartBuildStep::Type& get_type() const;
@@ -1186,6 +1213,7 @@ namespace ns_a {
         };
         ST_DgmBuildStep();
         ST_DgmBuildStep(const ST_DgmBuildStep::Type& _type);
+        ~ST_DgmBuildStep();
         bool has_type() const;
         void set_type(const ST_DgmBuildStep::Type& _type);
         const ST_DgmBuildStep::Type& get_type() const;
@@ -1210,6 +1238,7 @@ namespace ns_a {
         };
         ST_AnimationBuildType();
         ST_AnimationBuildType(const ST_AnimationBuildType::Type& _type);
+        ~ST_AnimationBuildType();
         bool has_type() const;
         void set_type(const ST_AnimationBuildType::Type& _type);
         const ST_AnimationBuildType::Type& get_type() const;
@@ -1236,6 +1265,7 @@ namespace ns_a {
         };
         ST_AnimationDgmOnlyBuildType();
         ST_AnimationDgmOnlyBuildType(const ST_AnimationDgmOnlyBuildType::Type& _type);
+        ~ST_AnimationDgmOnlyBuildType();
         bool has_type() const;
         void set_type(const ST_AnimationDgmOnlyBuildType::Type& _type);
         const ST_AnimationDgmOnlyBuildType::Type& get_type() const;
@@ -1255,6 +1285,7 @@ namespace ns_a {
     {
     public:
         ST_AnimationDgmBuildType();
+        ~ST_AnimationDgmBuildType();
         bool has_ST_AnimationBuildType() const;
         ST_AnimationBuildType* mutable_ST_AnimationBuildType();
         const ST_AnimationBuildType& get_ST_AnimationBuildType() const;
@@ -1288,6 +1319,7 @@ namespace ns_a {
         };
         ST_AnimationChartOnlyBuildType();
         ST_AnimationChartOnlyBuildType(const ST_AnimationChartOnlyBuildType::Type& _type);
+        ~ST_AnimationChartOnlyBuildType();
         bool has_type() const;
         void set_type(const ST_AnimationChartOnlyBuildType::Type& _type);
         const ST_AnimationChartOnlyBuildType::Type& get_type() const;
@@ -1307,6 +1339,7 @@ namespace ns_a {
     {
     public:
         ST_AnimationChartBuildType();
+        ~ST_AnimationChartBuildType();
         bool has_ST_AnimationBuildType() const;
         ST_AnimationBuildType* mutable_ST_AnimationBuildType();
         const ST_AnimationBuildType& get_ST_AnimationBuildType() const;
@@ -1398,6 +1431,7 @@ namespace ns_a {
         };
         ST_PresetCameraType();
         ST_PresetCameraType(const ST_PresetCameraType::Type& _type);
+        ~ST_PresetCameraType();
         bool has_type() const;
         void set_type(const ST_PresetCameraType::Type& _type);
         const ST_PresetCameraType::Type& get_type() const;
@@ -1418,6 +1452,7 @@ namespace ns_a {
     public:
         ST_FOVAngle();
         ST_FOVAngle(const ST_Angle& _ST_Angle);
+        ~ST_FOVAngle();
         static const ST_FOVAngle& default_instance();
     protected:
     private:
@@ -1440,6 +1475,7 @@ namespace ns_a {
         };
         ST_LightRigDirection();
         ST_LightRigDirection(const ST_LightRigDirection::Type& _type);
+        ~ST_LightRigDirection();
         bool has_type() const;
         void set_type(const ST_LightRigDirection::Type& _type);
         const ST_LightRigDirection::Type& get_type() const;
@@ -1490,6 +1526,7 @@ namespace ns_a {
         };
         ST_LightRigType();
         ST_LightRigType(const ST_LightRigType::Type& _type);
+        ~ST_LightRigType();
         bool has_type() const;
         void set_type(const ST_LightRigType::Type& _type);
         const ST_LightRigType::Type& get_type() const;
@@ -1525,6 +1562,7 @@ namespace ns_a {
         };
         ST_BevelPresetType();
         ST_BevelPresetType(const ST_BevelPresetType::Type& _type);
+        ~ST_BevelPresetType();
         bool has_type() const;
         void set_type(const ST_BevelPresetType::Type& _type);
         const ST_BevelPresetType::Type& get_type() const;
@@ -1563,6 +1601,7 @@ namespace ns_a {
         };
         ST_PresetMaterialType();
         ST_PresetMaterialType(const ST_PresetMaterialType::Type& _type);
+        ~ST_PresetMaterialType();
         bool has_type() const;
         void set_type(const ST_PresetMaterialType::Type& _type);
         const ST_PresetMaterialType::Type& get_type() const;
@@ -1606,6 +1645,7 @@ namespace ns_a {
         };
         ST_PresetShadowVal();
         ST_PresetShadowVal(const ST_PresetShadowVal::Type& _type);
+        ~ST_PresetShadowVal();
         bool has_type() const;
         void set_type(const ST_PresetShadowVal::Type& _type);
         const ST_PresetShadowVal::Type& get_type() const;
@@ -1632,6 +1672,7 @@ namespace ns_a {
         };
         ST_PathShadeType();
         ST_PathShadeType(const ST_PathShadeType::Type& _type);
+        ~ST_PathShadeType();
         bool has_type() const;
         void set_type(const ST_PathShadeType::Type& _type);
         const ST_PathShadeType::Type& get_type() const;
@@ -1659,6 +1700,7 @@ namespace ns_a {
         };
         ST_TileFlipMode();
         ST_TileFlipMode(const ST_TileFlipMode::Type& _type);
+        ~ST_TileFlipMode();
         bool has_type() const;
         void set_type(const ST_TileFlipMode::Type& _type);
         const ST_TileFlipMode::Type& get_type() const;
@@ -1687,6 +1729,7 @@ namespace ns_a {
         };
         ST_BlipCompression();
         ST_BlipCompression(const ST_BlipCompression::Type& _type);
+        ~ST_BlipCompression();
         bool has_type() const;
         void set_type(const ST_BlipCompression::Type& _type);
         const ST_BlipCompression::Type& get_type() const;
@@ -1764,6 +1807,7 @@ namespace ns_a {
         };
         ST_PresetPatternVal();
         ST_PresetPatternVal(const ST_PresetPatternVal::Type& _type);
+        ~ST_PresetPatternVal();
         bool has_type() const;
         void set_type(const ST_PresetPatternVal::Type& _type);
         const ST_PresetPatternVal::Type& get_type() const;
@@ -1792,6 +1836,7 @@ namespace ns_a {
         };
         ST_BlendMode();
         ST_BlendMode(const ST_BlendMode::Type& _type);
+        ~ST_BlendMode();
         bool has_type() const;
         void set_type(const ST_BlendMode::Type& _type);
         const ST_BlendMode::Type& get_type() const;
@@ -1817,6 +1862,7 @@ namespace ns_a {
         };
         ST_EffectContainerType();
         ST_EffectContainerType(const ST_EffectContainerType::Type& _type);
+        ~ST_EffectContainerType();
         bool has_type() const;
         void set_type(const ST_EffectContainerType::Type& _type);
         const ST_EffectContainerType::Type& get_type() const;
@@ -2027,6 +2073,7 @@ namespace ns_a {
         };
         ST_ShapeType();
         ST_ShapeType(const ST_ShapeType::Type& _type);
+        ~ST_ShapeType();
         bool has_type() const;
         void set_type(const ST_ShapeType::Type& _type);
         const ST_ShapeType::Type& get_type() const;
@@ -2091,6 +2138,7 @@ namespace ns_a {
         };
         ST_TextShapeType();
         ST_TextShapeType(const ST_TextShapeType::Type& _type);
+        ~ST_TextShapeType();
         bool has_type() const;
         void set_type(const ST_TextShapeType::Type& _type);
         const ST_TextShapeType::Type& get_type() const;
@@ -2111,6 +2159,7 @@ namespace ns_a {
     public:
         ST_GeomGuideName();
         ST_GeomGuideName(const XSD::token_& _token);
+        ~ST_GeomGuideName();
         bool has_token() const;
         void set_token(const XSD::token_& _token);
         const XSD::token_& get_token() const;
@@ -2130,6 +2179,7 @@ namespace ns_a {
     public:
         ST_GeomGuideFormula();
         ST_GeomGuideFormula(const XSD::string_& _string);
+        ~ST_GeomGuideFormula();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -2148,6 +2198,7 @@ namespace ns_a {
     {
     public:
         ST_AdjCoordinate();
+        ~ST_AdjCoordinate();
         bool has_ST_Coordinate() const;
         ST_Coordinate* mutable_ST_Coordinate();
         const ST_Coordinate& get_ST_Coordinate() const;
@@ -2173,6 +2224,7 @@ namespace ns_a {
     {
     public:
         ST_AdjAngle();
+        ~ST_AdjAngle();
         bool has_ST_Angle() const;
         ST_Angle* mutable_ST_Angle();
         const ST_Angle& get_ST_Angle() const;
@@ -2208,6 +2260,7 @@ namespace ns_a {
         };
         ST_PathFillMode();
         ST_PathFillMode(const ST_PathFillMode::Type& _type);
+        ~ST_PathFillMode();
         bool has_type() const;
         void set_type(const ST_PathFillMode::Type& _type);
         const ST_PathFillMode::Type& get_type() const;
@@ -2237,6 +2290,7 @@ namespace ns_a {
         };
         ST_LineEndType();
         ST_LineEndType(const ST_LineEndType::Type& _type);
+        ~ST_LineEndType();
         bool has_type() const;
         void set_type(const ST_LineEndType::Type& _type);
         const ST_LineEndType::Type& get_type() const;
@@ -2263,6 +2317,7 @@ namespace ns_a {
         };
         ST_LineEndWidth();
         ST_LineEndWidth(const ST_LineEndWidth::Type& _type);
+        ~ST_LineEndWidth();
         bool has_type() const;
         void set_type(const ST_LineEndWidth::Type& _type);
         const ST_LineEndWidth::Type& get_type() const;
@@ -2289,6 +2344,7 @@ namespace ns_a {
         };
         ST_LineEndLength();
         ST_LineEndLength(const ST_LineEndLength::Type& _type);
+        ~ST_LineEndLength();
         bool has_type() const;
         void set_type(const ST_LineEndLength::Type& _type);
         const ST_LineEndLength::Type& get_type() const;
@@ -2323,6 +2379,7 @@ namespace ns_a {
         };
         ST_PresetLineDashVal();
         ST_PresetLineDashVal(const ST_PresetLineDashVal::Type& _type);
+        ~ST_PresetLineDashVal();
         bool has_type() const;
         void set_type(const ST_PresetLineDashVal::Type& _type);
         const ST_PresetLineDashVal::Type& get_type() const;
@@ -2349,6 +2406,7 @@ namespace ns_a {
         };
         ST_LineCap();
         ST_LineCap(const ST_LineCap::Type& _type);
+        ~ST_LineCap();
         bool has_type() const;
         void set_type(const ST_LineCap::Type& _type);
         const ST_LineCap::Type& get_type() const;
@@ -2369,6 +2427,7 @@ namespace ns_a {
     public:
         ST_LineWidth();
         ST_LineWidth(const ST_Coordinate32Unqualified& _ST_Coordinate32Unqualified);
+        ~ST_LineWidth();
         static const ST_LineWidth& default_instance();
     protected:
     private:
@@ -2385,6 +2444,7 @@ namespace ns_a {
         };
         ST_PenAlignment();
         ST_PenAlignment(const ST_PenAlignment::Type& _type);
+        ~ST_PenAlignment();
         bool has_type() const;
         void set_type(const ST_PenAlignment::Type& _type);
         const ST_PenAlignment::Type& get_type() const;
@@ -2413,6 +2473,7 @@ namespace ns_a {
         };
         ST_CompoundLine();
         ST_CompoundLine(const ST_CompoundLine::Type& _type);
+        ~ST_CompoundLine();
         bool has_type() const;
         void set_type(const ST_CompoundLine::Type& _type);
         const ST_CompoundLine::Type& get_type() const;
@@ -2433,6 +2494,7 @@ namespace ns_a {
     public:
         ST_ShapeID();
         ST_ShapeID(const XSD::token_& _token);
+        ~ST_ShapeID();
         bool has_token() const;
         void set_token(const XSD::token_& _token);
         const XSD::token_& get_token() const;
@@ -2458,6 +2520,7 @@ namespace ns_a {
         };
         ST_OnOffStyleType();
         ST_OnOffStyleType(const ST_OnOffStyleType::Type& _type);
+        ~ST_OnOffStyleType();
         bool has_type() const;
         void set_type(const ST_OnOffStyleType::Type& _type);
         const ST_OnOffStyleType::Type& get_type() const;
@@ -2486,6 +2549,7 @@ namespace ns_a {
         };
         ST_TextAnchoringType();
         ST_TextAnchoringType(const ST_TextAnchoringType::Type& _type);
+        ~ST_TextAnchoringType();
         bool has_type() const;
         void set_type(const ST_TextAnchoringType::Type& _type);
         const ST_TextAnchoringType::Type& get_type() const;
@@ -2512,6 +2576,7 @@ namespace ns_a {
         };
         ST_TextVertOverflowType();
         ST_TextVertOverflowType(const ST_TextVertOverflowType::Type& _type);
+        ~ST_TextVertOverflowType();
         bool has_type() const;
         void set_type(const ST_TextVertOverflowType::Type& _type);
         const ST_TextVertOverflowType::Type& get_type() const;
@@ -2537,6 +2602,7 @@ namespace ns_a {
         };
         ST_TextHorzOverflowType();
         ST_TextHorzOverflowType(const ST_TextHorzOverflowType::Type& _type);
+        ~ST_TextHorzOverflowType();
         bool has_type() const;
         void set_type(const ST_TextHorzOverflowType::Type& _type);
         const ST_TextHorzOverflowType::Type& get_type() const;
@@ -2567,6 +2633,7 @@ namespace ns_a {
         };
         ST_TextVerticalType();
         ST_TextVerticalType(const ST_TextVerticalType::Type& _type);
+        ~ST_TextVerticalType();
         bool has_type() const;
         void set_type(const ST_TextVerticalType::Type& _type);
         const ST_TextVerticalType::Type& get_type() const;
@@ -2592,6 +2659,7 @@ namespace ns_a {
         };
         ST_TextWrappingType();
         ST_TextWrappingType(const ST_TextWrappingType::Type& _type);
+        ~ST_TextWrappingType();
         bool has_type() const;
         void set_type(const ST_TextWrappingType::Type& _type);
         const ST_TextWrappingType::Type& get_type() const;
@@ -2612,6 +2680,7 @@ namespace ns_a {
     public:
         ST_TextColumnCount();
         ST_TextColumnCount(const XSD::int_& _int);
+        ~ST_TextColumnCount();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -2630,6 +2699,7 @@ namespace ns_a {
     {
     public:
         ST_TextFontScalePercentOrPercentString();
+        ~ST_TextFontScalePercentOrPercentString();
         bool has_ST_TextFontScalePercent() const;
         ST_TextFontScalePercent* mutable_ST_TextFontScalePercent();
         const ST_TextFontScalePercent& get_ST_TextFontScalePercent() const;
@@ -2656,6 +2726,7 @@ namespace ns_a {
     public:
         ST_TextFontScalePercent();
         ST_TextFontScalePercent(const ST_PercentageDecimal& _ST_PercentageDecimal);
+        ~ST_TextFontScalePercent();
         static const ST_TextFontScalePercent& default_instance();
     protected:
     private:
@@ -2667,6 +2738,7 @@ namespace ns_a {
     public:
         ST_TextBulletStartAtNum();
         ST_TextBulletStartAtNum(const XSD::int_& _int);
+        ~ST_TextBulletStartAtNum();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -2730,6 +2802,7 @@ namespace ns_a {
         };
         ST_TextAutonumberScheme();
         ST_TextAutonumberScheme(const ST_TextAutonumberScheme::Type& _type);
+        ~ST_TextAutonumberScheme();
         bool has_type() const;
         void set_type(const ST_TextAutonumberScheme::Type& _type);
         const ST_TextAutonumberScheme::Type& get_type() const;
@@ -2749,6 +2822,7 @@ namespace ns_a {
     {
     public:
         ST_TextBulletSize();
+        ~ST_TextBulletSize();
         bool has_ST_TextBulletSizePercent() const;
         ST_TextBulletSizePercent* mutable_ST_TextBulletSizePercent();
         const ST_TextBulletSizePercent& get_ST_TextBulletSizePercent() const;
@@ -2775,6 +2849,7 @@ namespace ns_a {
     public:
         ST_TextBulletSizePercent();
         ST_TextBulletSizePercent(const XSD::string_& _string);
+        ~ST_TextBulletSizePercent();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -2794,6 +2869,7 @@ namespace ns_a {
     public:
         ST_TextBulletSizeDecimal();
         ST_TextBulletSizeDecimal(const ST_PercentageDecimal& _ST_PercentageDecimal);
+        ~ST_TextBulletSizeDecimal();
         static const ST_TextBulletSizeDecimal& default_instance();
     protected:
     private:
@@ -2804,6 +2880,7 @@ namespace ns_a {
     {
     public:
         ST_TextPoint();
+        ~ST_TextPoint();
         bool has_ST_TextPointUnqualified() const;
         ST_TextPointUnqualified* mutable_ST_TextPointUnqualified();
         const ST_TextPointUnqualified& get_ST_TextPointUnqualified() const;
@@ -2830,6 +2907,7 @@ namespace ns_a {
     public:
         ST_TextPointUnqualified();
         ST_TextPointUnqualified(const XSD::int_& _int);
+        ~ST_TextPointUnqualified();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -2849,6 +2927,7 @@ namespace ns_a {
     public:
         ST_TextNonNegativePoint();
         ST_TextNonNegativePoint(const XSD::int_& _int);
+        ~ST_TextNonNegativePoint();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -2868,6 +2947,7 @@ namespace ns_a {
     public:
         ST_TextFontSize();
         ST_TextFontSize(const XSD::int_& _int);
+        ~ST_TextFontSize();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -2887,6 +2967,7 @@ namespace ns_a {
     public:
         ST_TextTypeface();
         ST_TextTypeface(const XSD::string_& _string);
+        ~ST_TextTypeface();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -2927,6 +3008,7 @@ namespace ns_a {
         };
         ST_PitchFamily();
         ST_PitchFamily(const ST_PitchFamily::Type& _type);
+        ~ST_PitchFamily();
         bool has_type() const;
         void set_type(const ST_PitchFamily::Type& _type);
         const ST_PitchFamily::Type& get_type() const;
@@ -2968,6 +3050,7 @@ namespace ns_a {
         };
         ST_TextUnderlineType();
         ST_TextUnderlineType(const ST_TextUnderlineType::Type& _type);
+        ~ST_TextUnderlineType();
         bool has_type() const;
         void set_type(const ST_TextUnderlineType::Type& _type);
         const ST_TextUnderlineType::Type& get_type() const;
@@ -2994,6 +3077,7 @@ namespace ns_a {
         };
         ST_TextStrikeType();
         ST_TextStrikeType(const ST_TextStrikeType::Type& _type);
+        ~ST_TextStrikeType();
         bool has_type() const;
         void set_type(const ST_TextStrikeType::Type& _type);
         const ST_TextStrikeType::Type& get_type() const;
@@ -3020,6 +3104,7 @@ namespace ns_a {
         };
         ST_TextCapsType();
         ST_TextCapsType(const ST_TextCapsType::Type& _type);
+        ~ST_TextCapsType();
         bool has_type() const;
         void set_type(const ST_TextCapsType::Type& _type);
         const ST_TextCapsType::Type& get_type() const;
@@ -3040,6 +3125,7 @@ namespace ns_a {
     public:
         ST_TextSpacingPoint();
         ST_TextSpacingPoint(const XSD::int_& _int);
+        ~ST_TextSpacingPoint();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -3058,6 +3144,7 @@ namespace ns_a {
     {
     public:
         ST_TextSpacingPercentOrPercentString();
+        ~ST_TextSpacingPercentOrPercentString();
         bool has_ST_TextSpacingPercent() const;
         ST_TextSpacingPercent* mutable_ST_TextSpacingPercent();
         const ST_TextSpacingPercent& get_ST_TextSpacingPercent() const;
@@ -3084,6 +3171,7 @@ namespace ns_a {
     public:
         ST_TextSpacingPercent();
         ST_TextSpacingPercent(const ST_PercentageDecimal& _ST_PercentageDecimal);
+        ~ST_TextSpacingPercent();
         static const ST_TextSpacingPercent& default_instance();
     protected:
     private:
@@ -3095,6 +3183,7 @@ namespace ns_a {
     public:
         ST_TextMargin();
         ST_TextMargin(const ST_Coordinate32Unqualified& _ST_Coordinate32Unqualified);
+        ~ST_TextMargin();
         static const ST_TextMargin& default_instance();
     protected:
     private:
@@ -3106,6 +3195,7 @@ namespace ns_a {
     public:
         ST_TextIndent();
         ST_TextIndent(const ST_Coordinate32Unqualified& _ST_Coordinate32Unqualified);
+        ~ST_TextIndent();
         static const ST_TextIndent& default_instance();
     protected:
     private:
@@ -3124,6 +3214,7 @@ namespace ns_a {
         };
         ST_TextTabAlignType();
         ST_TextTabAlignType(const ST_TextTabAlignType::Type& _type);
+        ~ST_TextTabAlignType();
         bool has_type() const;
         void set_type(const ST_TextTabAlignType::Type& _type);
         const ST_TextTabAlignType::Type& get_type() const;
@@ -3154,6 +3245,7 @@ namespace ns_a {
         };
         ST_TextAlignType();
         ST_TextAlignType(const ST_TextAlignType::Type& _type);
+        ~ST_TextAlignType();
         bool has_type() const;
         void set_type(const ST_TextAlignType::Type& _type);
         const ST_TextAlignType::Type& get_type() const;
@@ -3182,6 +3274,7 @@ namespace ns_a {
         };
         ST_TextFontAlignType();
         ST_TextFontAlignType(const ST_TextFontAlignType::Type& _type);
+        ~ST_TextFontAlignType();
         bool has_type() const;
         void set_type(const ST_TextFontAlignType::Type& _type);
         const ST_TextFontAlignType::Type& get_type() const;
@@ -3202,6 +3295,7 @@ namespace ns_a {
     public:
         ST_TextIndentLevelType();
         ST_TextIndentLevelType(const XSD::int_& _int);
+        ~ST_TextIndentLevelType();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;

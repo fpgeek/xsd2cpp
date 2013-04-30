@@ -98,6 +98,7 @@ namespace ns_vt {
         };
         ST_VectorBaseType();
         ST_VectorBaseType(const ST_VectorBaseType::Type& _type);
+        ~ST_VectorBaseType();
         bool has_type() const;
         void set_type(const ST_VectorBaseType::Type& _type);
         const ST_VectorBaseType::Type& get_type() const;
@@ -138,6 +139,7 @@ namespace ns_vt {
         };
         ST_ArrayBaseType();
         ST_ArrayBaseType(const ST_ArrayBaseType::Type& _type);
+        ~ST_ArrayBaseType();
         bool has_type() const;
         void set_type(const ST_ArrayBaseType::Type& _type);
         const ST_ArrayBaseType::Type& get_type() const;
@@ -158,6 +160,7 @@ namespace ns_vt {
     public:
         ST_Cy();
         ST_Cy(const XSD::string_& _string);
+        ~ST_Cy();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -177,6 +180,7 @@ namespace ns_vt {
     public:
         ST_Error();
         ST_Error(const XSD::string_& _string);
+        ~ST_Error();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;

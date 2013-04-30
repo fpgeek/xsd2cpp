@@ -23,6 +23,9 @@ namespace ns_diagram {
     m_type(_type)
     {
     }
+    ST_ClrAppMethod::~ST_ClrAppMethod()
+{
+    clear();    }
     bool ST_ClrAppMethod::has_type() const
     {    
     return m_has_type;
@@ -84,6 +87,9 @@ ST_ClrAppMethod* ST_ClrAppMethod::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_HueDir::~ST_HueDir()
+{
+    clear();    }
     bool ST_HueDir::has_type() const
     {    
     return m_has_type;
@@ -144,6 +150,9 @@ ST_HueDir* ST_HueDir::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PtType::~ST_PtType()
+{
+    clear();    }
     bool ST_PtType::has_type() const
     {    
     return m_has_type;
@@ -208,6 +217,9 @@ ST_PtType* ST_PtType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_CxnType::~ST_CxnType()
+{
+    clear();    }
     bool ST_CxnType::has_type() const
     {    
     return m_has_type;
@@ -268,6 +280,9 @@ ST_CxnType* ST_CxnType::default_instance_ = NULL;
     m_ST_OutputShapeType(NULL)
     {
     }
+    ST_LayoutShapeType::~ST_LayoutShapeType()
+{
+    clear();    }
     bool ST_LayoutShapeType::has_ST_ShapeType() const
     {    
     return m_has_ST_ShapeType;
@@ -395,6 +410,9 @@ ST_LayoutShapeType* ST_LayoutShapeType::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_Index1::~ST_Index1()
+{
+    clear();    }
     bool ST_Index1::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -520,6 +538,9 @@ ST_Index1* ST_Index1::default_instance_ = NULL;
     m_ST_ConnectorPoint(NULL)
     {
     }
+    ST_ParameterVal::~ST_ParameterVal()
+{
+    clear();    }
     bool ST_ParameterVal::has_ST_DiagramHorizontalAlignment() const
     {    
     return m_has_ST_DiagramHorizontalAlignment;
@@ -3429,6 +3450,9 @@ ST_ParameterVal* ST_ParameterVal::default_instance_ = NULL;
     m_ST_Guid(NULL)
     {
     }
+    ST_ModelId::~ST_ModelId()
+{
+    clear();    }
     bool ST_ModelId::has_int() const
     {    
     return m_has_int;
@@ -3544,6 +3568,9 @@ ST_ModelId* ST_ModelId::default_instance_ = NULL;
     m_int(0)
     {
     }
+    ST_PrSetCustVal::~ST_PrSetCustVal()
+{
+    clear();    }
     bool ST_PrSetCustVal::has_ST_Percentage() const
     {    
     return m_has_ST_Percentage;
@@ -3661,6 +3688,9 @@ ST_PrSetCustVal* ST_PrSetCustVal::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Direction::~ST_Direction()
+{
+    clear();    }
     bool ST_Direction::has_type() const
     {    
     return m_has_type;
@@ -3721,6 +3751,9 @@ ST_Direction* ST_Direction::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_HierBranchStyle::~ST_HierBranchStyle()
+{
+    clear();    }
     bool ST_HierBranchStyle::has_type() const
     {    
     return m_has_type;
@@ -3784,6 +3817,9 @@ ST_HierBranchStyle* ST_HierBranchStyle::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_AnimOneStr::~ST_AnimOneStr()
+{
+    clear();    }
     bool ST_AnimOneStr::has_type() const
     {    
     return m_has_type;
@@ -3845,6 +3881,9 @@ ST_AnimOneStr* ST_AnimOneStr::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_AnimLvlStr::~ST_AnimLvlStr()
+{
+    clear();    }
     bool ST_AnimLvlStr::has_type() const
     {    
     return m_has_type;
@@ -3908,6 +3947,9 @@ ST_AnimLvlStr* ST_AnimLvlStr::default_instance_ = NULL;
     
     set_int(_int);
     }
+    ST_NodeCount::~ST_NodeCount()
+{
+    clear();    }
     bool ST_NodeCount::has_int() const
     {    
     return m_has_int;
@@ -3967,6 +4009,9 @@ ST_NodeCount* ST_NodeCount::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ResizeHandlesStr::~ST_ResizeHandlesStr()
+{
+    clear();    }
     bool ST_ResizeHandlesStr::has_type() const
     {    
     return m_has_type;
@@ -4027,6 +4072,9 @@ ST_ResizeHandlesStr* ST_ResizeHandlesStr::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_AlgorithmType::~ST_AlgorithmType()
+{
+    clear();    }
     bool ST_AlgorithmType::has_type() const
     {    
     return m_has_type;
@@ -4095,6 +4143,9 @@ ST_AlgorithmType* ST_AlgorithmType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_AxisType::~ST_AxisType()
+{
+    clear();    }
     bool ST_AxisType::has_type() const
     {    
     return m_has_type;
@@ -4157,44 +4208,58 @@ ST_AlgorithmType* ST_AlgorithmType::default_instance_ = NULL;
 ST_AxisType* ST_AxisType::default_instance_ = NULL;
 
     // ST_AxisTypes
-    ST_AxisTypes::ST_AxisTypes()
-    :m_has_ENTITIES(false),
-    m_ENTITIES("")
-    {
-    }
-    ST_AxisTypes::ST_AxisTypes(const XSD::ENTITIES_& _ENTITIES)
-    :m_has_ENTITIES(true)
-    {
-    
-    set_ENTITIES(_ENTITIES);
-    }
-    bool ST_AxisTypes::has_ENTITIES() const
+    ST_AxisTypes::~ST_AxisTypes()
+{
+    clear();    }
+    bool ST_AxisTypes::has_ST_AxisType_list() const
     {    
-    return m_has_ENTITIES;
+    return m_has_ST_AxisType_list;
     }
 
-    void ST_AxisTypes::set_ENTITIES(const XSD::ENTITIES_& _ENTITIES)
+    ST_AxisType* ST_AxisTypes::add_ST_AxisType()
     {    
-    m_has_ENTITIES = true;
-    m_ENTITIES = _ENTITIES;
+    m_has_ST_AxisType_list = true;
+    ST_AxisType *pChild = new ST_AxisType();
+    m_ST_AxisType_list.push_back(pChild);
+    return pChild;
     }
 
-    const XSD::ENTITIES_& ST_AxisTypes::get_ENTITIES() const
+    const vector<ST_AxisType*>& ST_AxisTypes::get_ST_AxisType_list() const
     {    
-    return m_ENTITIES;
+    return m_ST_AxisType_list;
     }
 
     void ST_AxisTypes::clear()
     {    
-    m_has_ENTITIES = false;
-    m_ENTITIES.clear();;
+    m_has_ST_AxisType_list = false;
+    vector<ST_AxisType*>::iterator iter = m_ST_AxisType_list.begin();
+    for (; iter != m_ST_AxisType_list.end(); ++iter)
+    {
+        delete *iter;
+    }
+    m_ST_AxisType_list.clear();
+    }
+
+    std::string ST_AxisTypes::toString() const
+    {    
+    stringstream strStream;
+    const size_t vectorSize = m_ST_AxisType_list.size();
+    for(size_t i = 0; i < vectorSize; ++i)
+    {
+        if (i != 0)
+        {
+            strStream << ' ';
+        }
+        strStream << m_ST_AxisType_list[i]->toString();
+    }
+    return strStream.str();
     }
 
     void ST_AxisTypes::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
     {    
-    if (m_has_ENTITIES)
+    if (m_has_ST_AxisType_list)
     {
-        _outStream << " " << _attrName << "=\"" << m_ENTITIES << "\"";;
+        _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4205,13 +4270,6 @@ ST_AxisType* ST_AxisType::default_instance_ = NULL;
         ST_AxisTypes::default_instance_ = new ST_AxisTypes();
     }
     return *ST_AxisTypes::default_instance_;
-    }
-
-    std::string ST_AxisTypes::toString() const
-    {    
-    std::stringstream strStream;
-    strStream << get_ENTITIES();
-    return strStream.str();
     }
 
 ST_AxisTypes* ST_AxisTypes::default_instance_ = NULL;
@@ -4226,6 +4284,9 @@ ST_AxisTypes* ST_AxisTypes::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BoolOperator::~ST_BoolOperator()
+{
+    clear();    }
     bool ST_BoolOperator::has_type() const
     {    
     return m_has_type;
@@ -4288,6 +4349,9 @@ ST_BoolOperator* ST_BoolOperator::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ChildOrderType::~ST_ChildOrderType()
+{
+    clear();    }
     bool ST_ChildOrderType::has_type() const
     {    
     return m_has_type;
@@ -4348,6 +4412,9 @@ ST_ChildOrderType* ST_ChildOrderType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ConstraintType::~ST_ConstraintType()
+{
+    clear();    }
     bool ST_ConstraintType::has_type() const
     {    
     return m_has_type;
@@ -4470,6 +4537,9 @@ ST_ConstraintType* ST_ConstraintType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ConstraintRelationship::~ST_ConstraintRelationship()
+{
+    clear();    }
     bool ST_ConstraintRelationship::has_type() const
     {    
     return m_has_type;
@@ -4531,6 +4601,9 @@ ST_ConstraintRelationship* ST_ConstraintRelationship::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ElementType::~ST_ElementType()
+{
+    clear();    }
     bool ST_ElementType::has_type() const
     {    
     return m_has_type;
@@ -4590,44 +4663,58 @@ ST_ConstraintRelationship* ST_ConstraintRelationship::default_instance_ = NULL;
 ST_ElementType* ST_ElementType::default_instance_ = NULL;
 
     // ST_ElementTypes
-    ST_ElementTypes::ST_ElementTypes()
-    :m_has_ENTITIES(false),
-    m_ENTITIES("")
-    {
-    }
-    ST_ElementTypes::ST_ElementTypes(const XSD::ENTITIES_& _ENTITIES)
-    :m_has_ENTITIES(true)
-    {
-    
-    set_ENTITIES(_ENTITIES);
-    }
-    bool ST_ElementTypes::has_ENTITIES() const
+    ST_ElementTypes::~ST_ElementTypes()
+{
+    clear();    }
+    bool ST_ElementTypes::has_ST_ElementType_list() const
     {    
-    return m_has_ENTITIES;
+    return m_has_ST_ElementType_list;
     }
 
-    void ST_ElementTypes::set_ENTITIES(const XSD::ENTITIES_& _ENTITIES)
+    ST_ElementType* ST_ElementTypes::add_ST_ElementType()
     {    
-    m_has_ENTITIES = true;
-    m_ENTITIES = _ENTITIES;
+    m_has_ST_ElementType_list = true;
+    ST_ElementType *pChild = new ST_ElementType();
+    m_ST_ElementType_list.push_back(pChild);
+    return pChild;
     }
 
-    const XSD::ENTITIES_& ST_ElementTypes::get_ENTITIES() const
+    const vector<ST_ElementType*>& ST_ElementTypes::get_ST_ElementType_list() const
     {    
-    return m_ENTITIES;
+    return m_ST_ElementType_list;
     }
 
     void ST_ElementTypes::clear()
     {    
-    m_has_ENTITIES = false;
-    m_ENTITIES.clear();;
+    m_has_ST_ElementType_list = false;
+    vector<ST_ElementType*>::iterator iter = m_ST_ElementType_list.begin();
+    for (; iter != m_ST_ElementType_list.end(); ++iter)
+    {
+        delete *iter;
+    }
+    m_ST_ElementType_list.clear();
+    }
+
+    std::string ST_ElementTypes::toString() const
+    {    
+    stringstream strStream;
+    const size_t vectorSize = m_ST_ElementType_list.size();
+    for(size_t i = 0; i < vectorSize; ++i)
+    {
+        if (i != 0)
+        {
+            strStream << ' ';
+        }
+        strStream << m_ST_ElementType_list[i]->toString();
+    }
+    return strStream.str();
     }
 
     void ST_ElementTypes::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
     {    
-    if (m_has_ENTITIES)
+    if (m_has_ST_ElementType_list)
     {
-        _outStream << " " << _attrName << "=\"" << m_ENTITIES << "\"";;
+        _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4638,13 +4725,6 @@ ST_ElementType* ST_ElementType::default_instance_ = NULL;
         ST_ElementTypes::default_instance_ = new ST_ElementTypes();
     }
     return *ST_ElementTypes::default_instance_;
-    }
-
-    std::string ST_ElementTypes::toString() const
-    {    
-    std::stringstream strStream;
-    strStream << get_ENTITIES();
-    return strStream.str();
     }
 
 ST_ElementTypes* ST_ElementTypes::default_instance_ = NULL;
@@ -4659,6 +4739,9 @@ ST_ElementTypes* ST_ElementTypes::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ParameterId::~ST_ParameterId()
+{
+    clear();    }
     bool ST_ParameterId::has_type() const
     {    
     return m_has_type;
@@ -4763,44 +4846,51 @@ ST_ElementTypes* ST_ElementTypes::default_instance_ = NULL;
 ST_ParameterId* ST_ParameterId::default_instance_ = NULL;
 
     // ST_Ints
-    ST_Ints::ST_Ints()
-    :m_has_ENTITIES(false),
-    m_ENTITIES("")
-    {
-    }
-    ST_Ints::ST_Ints(const XSD::ENTITIES_& _ENTITIES)
-    :m_has_ENTITIES(true)
-    {
-    
-    set_ENTITIES(_ENTITIES);
-    }
-    bool ST_Ints::has_ENTITIES() const
+    ST_Ints::~ST_Ints()
+{
+    clear();    }
+    bool ST_Ints::has_int_list() const
     {    
-    return m_has_ENTITIES;
+    return m_has_int_list;
     }
 
-    void ST_Ints::set_ENTITIES(const XSD::ENTITIES_& _ENTITIES)
+    void ST_Ints::add_int(const XSD::int_& _int)
     {    
-    m_has_ENTITIES = true;
-    m_ENTITIES = _ENTITIES;
+    m_has_int_list = true;
+    m_int_list.push_back(_int);
     }
 
-    const XSD::ENTITIES_& ST_Ints::get_ENTITIES() const
+    const vector<XSD::int_>& ST_Ints::get_int_list() const
     {    
-    return m_ENTITIES;
+    return m_int_list;
     }
 
     void ST_Ints::clear()
     {    
-    m_has_ENTITIES = false;
-    m_ENTITIES.clear();;
+    m_has_int_list = false;
+    m_int_list.clear();
+    }
+
+    std::string ST_Ints::toString() const
+    {    
+    stringstream strStream;
+    const size_t vectorSize = m_int_list.size();
+    for(size_t i = 0; i < vectorSize; ++i)
+    {
+        if (i != 0)
+        {
+            strStream << ' ';
+        }
+        strStream << m_int_list[i];
+    }
+    return strStream.str();
     }
 
     void ST_Ints::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
     {    
-    if (m_has_ENTITIES)
+    if (m_has_int_list)
     {
-        _outStream << " " << _attrName << "=\"" << m_ENTITIES << "\"";;
+        _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4813,54 +4903,54 @@ ST_ParameterId* ST_ParameterId::default_instance_ = NULL;
     return *ST_Ints::default_instance_;
     }
 
-    std::string ST_Ints::toString() const
-    {    
-    std::stringstream strStream;
-    strStream << get_ENTITIES();
-    return strStream.str();
-    }
-
 ST_Ints* ST_Ints::default_instance_ = NULL;
 
     // ST_UnsignedInts
-    ST_UnsignedInts::ST_UnsignedInts()
-    :m_has_ENTITIES(false),
-    m_ENTITIES("")
-    {
-    }
-    ST_UnsignedInts::ST_UnsignedInts(const XSD::ENTITIES_& _ENTITIES)
-    :m_has_ENTITIES(true)
-    {
-    
-    set_ENTITIES(_ENTITIES);
-    }
-    bool ST_UnsignedInts::has_ENTITIES() const
+    ST_UnsignedInts::~ST_UnsignedInts()
+{
+    clear();    }
+    bool ST_UnsignedInts::has_unsignedInt_list() const
     {    
-    return m_has_ENTITIES;
+    return m_has_unsignedInt_list;
     }
 
-    void ST_UnsignedInts::set_ENTITIES(const XSD::ENTITIES_& _ENTITIES)
+    void ST_UnsignedInts::add_unsignedInt(const XSD::unsignedInt_& _unsignedInt)
     {    
-    m_has_ENTITIES = true;
-    m_ENTITIES = _ENTITIES;
+    m_has_unsignedInt_list = true;
+    m_unsignedInt_list.push_back(_unsignedInt);
     }
 
-    const XSD::ENTITIES_& ST_UnsignedInts::get_ENTITIES() const
+    const vector<XSD::unsignedInt_>& ST_UnsignedInts::get_unsignedInt_list() const
     {    
-    return m_ENTITIES;
+    return m_unsignedInt_list;
     }
 
     void ST_UnsignedInts::clear()
     {    
-    m_has_ENTITIES = false;
-    m_ENTITIES.clear();;
+    m_has_unsignedInt_list = false;
+    m_unsignedInt_list.clear();
+    }
+
+    std::string ST_UnsignedInts::toString() const
+    {    
+    stringstream strStream;
+    const size_t vectorSize = m_unsignedInt_list.size();
+    for(size_t i = 0; i < vectorSize; ++i)
+    {
+        if (i != 0)
+        {
+            strStream << ' ';
+        }
+        strStream << m_unsignedInt_list[i];
+    }
+    return strStream.str();
     }
 
     void ST_UnsignedInts::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
     {    
-    if (m_has_ENTITIES)
+    if (m_has_unsignedInt_list)
     {
-        _outStream << " " << _attrName << "=\"" << m_ENTITIES << "\"";;
+        _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4873,54 +4963,54 @@ ST_Ints* ST_Ints::default_instance_ = NULL;
     return *ST_UnsignedInts::default_instance_;
     }
 
-    std::string ST_UnsignedInts::toString() const
-    {    
-    std::stringstream strStream;
-    strStream << get_ENTITIES();
-    return strStream.str();
-    }
-
 ST_UnsignedInts* ST_UnsignedInts::default_instance_ = NULL;
 
     // ST_Booleans
-    ST_Booleans::ST_Booleans()
-    :m_has_ENTITIES(false),
-    m_ENTITIES("")
-    {
-    }
-    ST_Booleans::ST_Booleans(const XSD::ENTITIES_& _ENTITIES)
-    :m_has_ENTITIES(true)
-    {
-    
-    set_ENTITIES(_ENTITIES);
-    }
-    bool ST_Booleans::has_ENTITIES() const
+    ST_Booleans::~ST_Booleans()
+{
+    clear();    }
+    bool ST_Booleans::has_boolean_list() const
     {    
-    return m_has_ENTITIES;
+    return m_has_boolean_list;
     }
 
-    void ST_Booleans::set_ENTITIES(const XSD::ENTITIES_& _ENTITIES)
+    void ST_Booleans::add_boolean(const XSD::boolean_& _boolean)
     {    
-    m_has_ENTITIES = true;
-    m_ENTITIES = _ENTITIES;
+    m_has_boolean_list = true;
+    m_boolean_list.push_back(_boolean);
     }
 
-    const XSD::ENTITIES_& ST_Booleans::get_ENTITIES() const
+    const vector<XSD::boolean_>& ST_Booleans::get_boolean_list() const
     {    
-    return m_ENTITIES;
+    return m_boolean_list;
     }
 
     void ST_Booleans::clear()
     {    
-    m_has_ENTITIES = false;
-    m_ENTITIES.clear();;
+    m_has_boolean_list = false;
+    m_boolean_list.clear();
+    }
+
+    std::string ST_Booleans::toString() const
+    {    
+    stringstream strStream;
+    const size_t vectorSize = m_boolean_list.size();
+    for(size_t i = 0; i < vectorSize; ++i)
+    {
+        if (i != 0)
+        {
+            strStream << ' ';
+        }
+        strStream << m_boolean_list[i];
+    }
+    return strStream.str();
     }
 
     void ST_Booleans::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
     {    
-    if (m_has_ENTITIES)
+    if (m_has_boolean_list)
     {
-        _outStream << " " << _attrName << "=\"" << m_ENTITIES << "\"";;
+        _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -4931,13 +5021,6 @@ ST_UnsignedInts* ST_UnsignedInts::default_instance_ = NULL;
         ST_Booleans::default_instance_ = new ST_Booleans();
     }
     return *ST_Booleans::default_instance_;
-    }
-
-    std::string ST_Booleans::toString() const
-    {    
-    std::stringstream strStream;
-    strStream << get_ENTITIES();
-    return strStream.str();
     }
 
 ST_Booleans* ST_Booleans::default_instance_ = NULL;
@@ -4952,6 +5035,9 @@ ST_Booleans* ST_Booleans::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FunctionType::~ST_FunctionType()
+{
+    clear();    }
     bool ST_FunctionType::has_type() const
     {    
     return m_has_type;
@@ -5018,6 +5104,9 @@ ST_FunctionType* ST_FunctionType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FunctionOperator::~ST_FunctionOperator()
+{
+    clear();    }
     bool ST_FunctionOperator::has_type() const
     {    
     return m_has_type;
@@ -5082,6 +5171,9 @@ ST_FunctionOperator* ST_FunctionOperator::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_DiagramHorizontalAlignment::~ST_DiagramHorizontalAlignment()
+{
+    clear();    }
     bool ST_DiagramHorizontalAlignment::has_type() const
     {    
     return m_has_type;
@@ -5144,6 +5236,9 @@ ST_DiagramHorizontalAlignment* ST_DiagramHorizontalAlignment::default_instance_ 
     m_type(_type)
     {
     }
+    ST_VerticalAlignment::~ST_VerticalAlignment()
+{
+    clear();    }
     bool ST_VerticalAlignment::has_type() const
     {    
     return m_has_type;
@@ -5206,6 +5301,9 @@ ST_VerticalAlignment* ST_VerticalAlignment::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ChildDirection::~ST_ChildDirection()
+{
+    clear();    }
     bool ST_ChildDirection::has_type() const
     {    
     return m_has_type;
@@ -5266,6 +5364,9 @@ ST_ChildDirection* ST_ChildDirection::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ChildAlignment::~ST_ChildAlignment()
+{
+    clear();    }
     bool ST_ChildAlignment::has_type() const
     {    
     return m_has_type;
@@ -5328,6 +5429,9 @@ ST_ChildAlignment* ST_ChildAlignment::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SecondaryChildAlignment::~ST_SecondaryChildAlignment()
+{
+    clear();    }
     bool ST_SecondaryChildAlignment::has_type() const
     {    
     return m_has_type;
@@ -5391,6 +5495,9 @@ ST_SecondaryChildAlignment* ST_SecondaryChildAlignment::default_instance_ = NULL
     m_type(_type)
     {
     }
+    ST_LinearDirection::~ST_LinearDirection()
+{
+    clear();    }
     bool ST_LinearDirection::has_type() const
     {    
     return m_has_type;
@@ -5453,6 +5560,9 @@ ST_LinearDirection* ST_LinearDirection::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SecondaryLinearDirection::~ST_SecondaryLinearDirection()
+{
+    clear();    }
     bool ST_SecondaryLinearDirection::has_type() const
     {    
     return m_has_type;
@@ -5516,6 +5626,9 @@ ST_SecondaryLinearDirection* ST_SecondaryLinearDirection::default_instance_ = NU
     m_type(_type)
     {
     }
+    ST_StartingElement::~ST_StartingElement()
+{
+    clear();    }
     bool ST_StartingElement::has_type() const
     {    
     return m_has_type;
@@ -5576,6 +5689,9 @@ ST_StartingElement* ST_StartingElement::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_RotationPath::~ST_RotationPath()
+{
+    clear();    }
     bool ST_RotationPath::has_type() const
     {    
     return m_has_type;
@@ -5636,6 +5752,9 @@ ST_RotationPath* ST_RotationPath::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_CenterShapeMapping::~ST_CenterShapeMapping()
+{
+    clear();    }
     bool ST_CenterShapeMapping::has_type() const
     {    
     return m_has_type;
@@ -5696,6 +5815,9 @@ ST_CenterShapeMapping* ST_CenterShapeMapping::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BendPoint::~ST_BendPoint()
+{
+    clear();    }
     bool ST_BendPoint::has_type() const
     {    
     return m_has_type;
@@ -5757,6 +5879,9 @@ ST_BendPoint* ST_BendPoint::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ConnectorRouting::~ST_ConnectorRouting()
+{
+    clear();    }
     bool ST_ConnectorRouting::has_type() const
     {    
     return m_has_type;
@@ -5819,6 +5944,9 @@ ST_ConnectorRouting* ST_ConnectorRouting::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ArrowheadStyle::~ST_ArrowheadStyle()
+{
+    clear();    }
     bool ST_ArrowheadStyle::has_type() const
     {    
     return m_has_type;
@@ -5880,6 +6008,9 @@ ST_ArrowheadStyle* ST_ArrowheadStyle::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ConnectorDimension::~ST_ConnectorDimension()
+{
+    clear();    }
     bool ST_ConnectorDimension::has_type() const
     {    
     return m_has_type;
@@ -5941,6 +6072,9 @@ ST_ConnectorDimension* ST_ConnectorDimension::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ConnectorPoint::~ST_ConnectorPoint()
+{
+    clear();    }
     bool ST_ConnectorPoint::has_type() const
     {    
     return m_has_type;
@@ -6010,6 +6144,9 @@ ST_ConnectorPoint* ST_ConnectorPoint::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_NodeHorizontalAlignment::~ST_NodeHorizontalAlignment()
+{
+    clear();    }
     bool ST_NodeHorizontalAlignment::has_type() const
     {    
     return m_has_type;
@@ -6071,6 +6208,9 @@ ST_NodeHorizontalAlignment* ST_NodeHorizontalAlignment::default_instance_ = NULL
     m_type(_type)
     {
     }
+    ST_NodeVerticalAlignment::~ST_NodeVerticalAlignment()
+{
+    clear();    }
     bool ST_NodeVerticalAlignment::has_type() const
     {    
     return m_has_type;
@@ -6132,6 +6272,9 @@ ST_NodeVerticalAlignment* ST_NodeVerticalAlignment::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FallbackDimension::~ST_FallbackDimension()
+{
+    clear();    }
     bool ST_FallbackDimension::has_type() const
     {    
     return m_has_type;
@@ -6192,6 +6335,9 @@ ST_FallbackDimension* ST_FallbackDimension::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextDirection::~ST_TextDirection()
+{
+    clear();    }
     bool ST_TextDirection::has_type() const
     {    
     return m_has_type;
@@ -6252,6 +6398,9 @@ ST_TextDirection* ST_TextDirection::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PyramidAccentPosition::~ST_PyramidAccentPosition()
+{
+    clear();    }
     bool ST_PyramidAccentPosition::has_type() const
     {    
     return m_has_type;
@@ -6312,6 +6461,9 @@ ST_PyramidAccentPosition* ST_PyramidAccentPosition::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PyramidAccentTextMargin::~ST_PyramidAccentTextMargin()
+{
+    clear();    }
     bool ST_PyramidAccentTextMargin::has_type() const
     {    
     return m_has_type;
@@ -6372,6 +6524,9 @@ ST_PyramidAccentTextMargin* ST_PyramidAccentTextMargin::default_instance_ = NULL
     m_type(_type)
     {
     }
+    ST_TextBlockDirection::~ST_TextBlockDirection()
+{
+    clear();    }
     bool ST_TextBlockDirection::has_type() const
     {    
     return m_has_type;
@@ -6432,6 +6587,9 @@ ST_TextBlockDirection* ST_TextBlockDirection::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextAnchorHorizontal::~ST_TextAnchorHorizontal()
+{
+    clear();    }
     bool ST_TextAnchorHorizontal::has_type() const
     {    
     return m_has_type;
@@ -6492,6 +6650,9 @@ ST_TextAnchorHorizontal* ST_TextAnchorHorizontal::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextAnchorVertical::~ST_TextAnchorVertical()
+{
+    clear();    }
     bool ST_TextAnchorVertical::has_type() const
     {    
     return m_has_type;
@@ -6553,6 +6714,9 @@ ST_TextAnchorVertical* ST_TextAnchorVertical::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_DiagramTextAlignment::~ST_DiagramTextAlignment()
+{
+    clear();    }
     bool ST_DiagramTextAlignment::has_type() const
     {    
     return m_has_type;
@@ -6614,6 +6778,9 @@ ST_DiagramTextAlignment* ST_DiagramTextAlignment::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_AutoTextRotation::~ST_AutoTextRotation()
+{
+    clear();    }
     bool ST_AutoTextRotation::has_type() const
     {    
     return m_has_type;
@@ -6675,6 +6842,9 @@ ST_AutoTextRotation* ST_AutoTextRotation::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_GrowDirection::~ST_GrowDirection()
+{
+    clear();    }
     bool ST_GrowDirection::has_type() const
     {    
     return m_has_type;
@@ -6737,6 +6907,9 @@ ST_GrowDirection* ST_GrowDirection::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FlowDirection::~ST_FlowDirection()
+{
+    clear();    }
     bool ST_FlowDirection::has_type() const
     {    
     return m_has_type;
@@ -6797,6 +6970,9 @@ ST_FlowDirection* ST_FlowDirection::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ContinueDirection::~ST_ContinueDirection()
+{
+    clear();    }
     bool ST_ContinueDirection::has_type() const
     {    
     return m_has_type;
@@ -6857,6 +7033,9 @@ ST_ContinueDirection* ST_ContinueDirection::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Breakpoint::~ST_Breakpoint()
+{
+    clear();    }
     bool ST_Breakpoint::has_type() const
     {    
     return m_has_type;
@@ -6918,6 +7097,9 @@ ST_Breakpoint* ST_Breakpoint::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Offset::~ST_Offset()
+{
+    clear();    }
     bool ST_Offset::has_type() const
     {    
     return m_has_type;
@@ -6978,6 +7160,9 @@ ST_Offset* ST_Offset::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_HierarchyAlignment::~ST_HierarchyAlignment()
+{
+    clear();    }
     bool ST_HierarchyAlignment::has_type() const
     {    
     return m_has_type;
@@ -7060,6 +7245,9 @@ ST_HierarchyAlignment* ST_HierarchyAlignment::default_instance_ = NULL;
     m_ST_ResizeHandlesStr(NULL)
     {
     }
+    ST_FunctionValue::~ST_FunctionValue()
+{
+    clear();    }
     bool ST_FunctionValue::has_int() const
     {    
     return m_has_int;
@@ -7435,6 +7623,9 @@ ST_FunctionValue* ST_FunctionValue::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_VariableType::~ST_VariableType()
+{
+    clear();    }
     bool ST_VariableType::has_type() const
     {    
     return m_has_type;
@@ -7499,6 +7690,9 @@ ST_VariableType* ST_VariableType::default_instance_ = NULL;
     m_ST_VariableType(NULL)
     {
     }
+    ST_FunctionArgument::~ST_FunctionArgument()
+{
+    clear();    }
     bool ST_FunctionArgument::has_ST_VariableType() const
     {    
     return m_has_ST_VariableType;
@@ -7577,6 +7771,9 @@ ST_FunctionArgument* ST_FunctionArgument::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_OutputShapeType::~ST_OutputShapeType()
+{
+    clear();    }
     bool ST_OutputShapeType::has_type() const
     {    
     return m_has_type;

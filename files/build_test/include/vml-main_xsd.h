@@ -99,6 +99,7 @@ namespace ns_v {
         };
         ST_Ext();
         ST_Ext(const ST_Ext::Type& _type);
+        ~ST_Ext();
         bool has_type() const;
         void set_type(const ST_Ext::Type& _type);
         const ST_Ext::Type& get_type() const;
@@ -128,6 +129,7 @@ namespace ns_v {
         };
         ST_FillType();
         ST_FillType(const ST_FillType::Type& _type);
+        ~ST_FillType();
         bool has_type() const;
         void set_type(const ST_FillType::Type& _type);
         const ST_FillType::Type& get_type() const;
@@ -156,6 +158,7 @@ namespace ns_v {
         };
         ST_FillMethod();
         ST_FillMethod(const ST_FillMethod::Type& _type);
+        ~ST_FillMethod();
         bool has_type() const;
         void set_type(const ST_FillMethod::Type& _type);
         const ST_FillMethod::Type& get_type() const;
@@ -183,6 +186,7 @@ namespace ns_v {
         };
         ST_ShadowType();
         ST_ShadowType(const ST_ShadowType::Type& _type);
+        ~ST_ShadowType();
         bool has_type() const;
         void set_type(const ST_ShadowType::Type& _type);
         const ST_ShadowType::Type& get_type() const;
@@ -211,6 +215,7 @@ namespace ns_v {
         };
         ST_StrokeLineStyle();
         ST_StrokeLineStyle(const ST_StrokeLineStyle::Type& _type);
+        ~ST_StrokeLineStyle();
         bool has_type() const;
         void set_type(const ST_StrokeLineStyle::Type& _type);
         const ST_StrokeLineStyle::Type& get_type() const;
@@ -237,6 +242,7 @@ namespace ns_v {
         };
         ST_StrokeJoinStyle();
         ST_StrokeJoinStyle(const ST_StrokeJoinStyle::Type& _type);
+        ~ST_StrokeJoinStyle();
         bool has_type() const;
         void set_type(const ST_StrokeJoinStyle::Type& _type);
         const ST_StrokeJoinStyle::Type& get_type() const;
@@ -263,6 +269,7 @@ namespace ns_v {
         };
         ST_StrokeEndCap();
         ST_StrokeEndCap(const ST_StrokeEndCap::Type& _type);
+        ~ST_StrokeEndCap();
         bool has_type() const;
         void set_type(const ST_StrokeEndCap::Type& _type);
         const ST_StrokeEndCap::Type& get_type() const;
@@ -289,6 +296,7 @@ namespace ns_v {
         };
         ST_StrokeArrowLength();
         ST_StrokeArrowLength(const ST_StrokeArrowLength::Type& _type);
+        ~ST_StrokeArrowLength();
         bool has_type() const;
         void set_type(const ST_StrokeArrowLength::Type& _type);
         const ST_StrokeArrowLength::Type& get_type() const;
@@ -315,6 +323,7 @@ namespace ns_v {
         };
         ST_StrokeArrowWidth();
         ST_StrokeArrowWidth(const ST_StrokeArrowWidth::Type& _type);
+        ~ST_StrokeArrowWidth();
         bool has_type() const;
         void set_type(const ST_StrokeArrowWidth::Type& _type);
         const ST_StrokeArrowWidth::Type& get_type() const;
@@ -344,6 +353,7 @@ namespace ns_v {
         };
         ST_StrokeArrowType();
         ST_StrokeArrowType(const ST_StrokeArrowType::Type& _type);
+        ~ST_StrokeArrowType();
         bool has_type() const;
         void set_type(const ST_StrokeArrowType::Type& _type);
         const ST_StrokeArrowType::Type& get_type() const;
@@ -370,6 +380,7 @@ namespace ns_v {
         };
         ST_ImageAspect();
         ST_ImageAspect(const ST_ImageAspect::Type& _type);
+        ~ST_ImageAspect();
         bool has_type() const;
         void set_type(const ST_ImageAspect::Type& _type);
         const ST_ImageAspect::Type& get_type() const;
@@ -400,6 +411,7 @@ namespace ns_v {
         };
         ST_EditAs();
         ST_EditAs(const ST_EditAs::Type& _type);
+        ~ST_EditAs();
         bool has_type() const;
         void set_type(const ST_EditAs::Type& _type);
         const ST_EditAs::Type& get_type() const;

@@ -20,6 +20,9 @@ namespace ns_w10 {
     m_type(_type)
     {
     }
+    ST_BorderType::~ST_BorderType()
+{
+    clear();    }
     bool ST_BorderType::has_type() const
     {    
     return m_has_type;
@@ -105,6 +108,9 @@ ST_BorderType* ST_BorderType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BorderShadow::~ST_BorderShadow()
+{
+    clear();    }
     bool ST_BorderShadow::has_type() const
     {    
     return m_has_type;
@@ -167,6 +173,9 @@ ST_BorderShadow* ST_BorderShadow::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_WrapType::~ST_WrapType()
+{
+    clear();    }
     bool ST_WrapType::has_type() const
     {    
     return m_has_type;
@@ -230,6 +239,9 @@ ST_WrapType* ST_WrapType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_WrapSide::~ST_WrapSide()
+{
+    clear();    }
     bool ST_WrapSide::has_type() const
     {    
     return m_has_type;
@@ -292,6 +304,9 @@ ST_WrapSide* ST_WrapSide::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_HorizontalAnchor::~ST_HorizontalAnchor()
+{
+    clear();    }
     bool ST_HorizontalAnchor::has_type() const
     {    
     return m_has_type;
@@ -354,6 +369,9 @@ ST_HorizontalAnchor* ST_HorizontalAnchor::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_VerticalAnchor::~ST_VerticalAnchor()
+{
+    clear();    }
     bool ST_VerticalAnchor::has_type() const
     {    
     return m_has_type;

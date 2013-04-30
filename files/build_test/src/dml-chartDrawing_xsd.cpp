@@ -23,6 +23,9 @@ namespace ns_cdr {
     
     set_double(_double);
     }
+    ST_MarkerCoordinate::~ST_MarkerCoordinate()
+{
+    clear();    }
     bool ST_MarkerCoordinate::has_double() const
     {    
     return m_has_double;

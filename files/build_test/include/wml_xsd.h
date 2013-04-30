@@ -446,6 +446,7 @@ namespace ns_w {
     public:
         ST_LongHexNumber();
         ST_LongHexNumber(const XSD::hexBinary_& _hexBinary);
+        ~ST_LongHexNumber();
         bool has_hexBinary() const;
         void set_hexBinary(const XSD::hexBinary_& _hexBinary);
         const XSD::hexBinary_& get_hexBinary() const;
@@ -465,6 +466,7 @@ namespace ns_w {
     public:
         ST_ShortHexNumber();
         ST_ShortHexNumber(const XSD::hexBinary_& _hexBinary);
+        ~ST_ShortHexNumber();
         bool has_hexBinary() const;
         void set_hexBinary(const XSD::hexBinary_& _hexBinary);
         const XSD::hexBinary_& get_hexBinary() const;
@@ -484,6 +486,7 @@ namespace ns_w {
     public:
         ST_UcharHexNumber();
         ST_UcharHexNumber(const XSD::hexBinary_& _hexBinary);
+        ~ST_UcharHexNumber();
         bool has_hexBinary() const;
         void set_hexBinary(const XSD::hexBinary_& _hexBinary);
         const XSD::hexBinary_& get_hexBinary() const;
@@ -502,6 +505,7 @@ namespace ns_w {
     {
     public:
         ST_DecimalNumberOrPercent();
+        ~ST_DecimalNumberOrPercent();
         bool has_ST_UnqualifiedPercentage() const;
         ST_UnqualifiedPercentage* mutable_ST_UnqualifiedPercentage();
         const ST_UnqualifiedPercentage& get_ST_UnqualifiedPercentage() const;
@@ -528,6 +532,7 @@ namespace ns_w {
     public:
         ST_UnqualifiedPercentage();
         ST_UnqualifiedPercentage(const XSD::integer_& _integer);
+        ~ST_UnqualifiedPercentage();
         bool has_integer() const;
         void set_integer(const XSD::integer_& _integer);
         const XSD::integer_& get_integer() const;
@@ -547,6 +552,7 @@ namespace ns_w {
     public:
         ST_DecimalNumber();
         ST_DecimalNumber(const XSD::integer_& _integer);
+        ~ST_DecimalNumber();
         bool has_integer() const;
         void set_integer(const XSD::integer_& _integer);
         const XSD::integer_& get_integer() const;
@@ -565,6 +571,7 @@ namespace ns_w {
     {
     public:
         ST_SignedTwipsMeasure();
+        ~ST_SignedTwipsMeasure();
         bool has_integer() const;
         void set_integer(const XSD::integer_& _integer);
         const XSD::integer_& get_integer() const;
@@ -591,6 +598,7 @@ namespace ns_w {
     public:
         ST_PixelsMeasure();
         ST_PixelsMeasure(const ns_s::ST_UnsignedDecimalNumber& _ST_UnsignedDecimalNumber);
+        ~ST_PixelsMeasure();
         static const ST_PixelsMeasure& default_instance();
     protected:
     private:
@@ -601,6 +609,7 @@ namespace ns_w {
     {
     public:
         ST_HpsMeasure();
+        ~ST_HpsMeasure();
         bool has_ST_UnsignedDecimalNumber() const;
         ns_s::ST_UnsignedDecimalNumber* mutable_ST_UnsignedDecimalNumber();
         const ns_s::ST_UnsignedDecimalNumber& get_ST_UnsignedDecimalNumber() const;
@@ -626,6 +635,7 @@ namespace ns_w {
     {
     public:
         ST_SignedHpsMeasure();
+        ~ST_SignedHpsMeasure();
         bool has_integer() const;
         void set_integer(const XSD::integer_& _integer);
         const XSD::integer_& get_integer() const;
@@ -652,6 +662,7 @@ namespace ns_w {
     public:
         ST_DateTime();
         ST_DateTime(const XSD::dateTime_& _dateTime);
+        ~ST_DateTime();
         bool has_dateTime() const;
         void set_dateTime(const XSD::dateTime_& _dateTime);
         const XSD::dateTime_& get_dateTime() const;
@@ -671,6 +682,7 @@ namespace ns_w {
     public:
         ST_MacroName();
         ST_MacroName(const XSD::string_& _string);
+        ~ST_MacroName();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -690,6 +702,7 @@ namespace ns_w {
     public:
         ST_EighthPointMeasure();
         ST_EighthPointMeasure(const ns_s::ST_UnsignedDecimalNumber& _ST_UnsignedDecimalNumber);
+        ~ST_EighthPointMeasure();
         static const ST_EighthPointMeasure& default_instance();
     protected:
     private:
@@ -701,6 +714,7 @@ namespace ns_w {
     public:
         ST_PointMeasure();
         ST_PointMeasure(const ns_s::ST_UnsignedDecimalNumber& _ST_UnsignedDecimalNumber);
+        ~ST_PointMeasure();
         static const ST_PointMeasure& default_instance();
     protected:
     private:
@@ -711,6 +725,7 @@ namespace ns_w {
     {
     public:
         ST_TextScale();
+        ~ST_TextScale();
         bool has_ST_TextScalePercent() const;
         ST_TextScalePercent* mutable_ST_TextScalePercent();
         const ST_TextScalePercent& get_ST_TextScalePercent() const;
@@ -737,6 +752,7 @@ namespace ns_w {
     public:
         ST_TextScalePercent();
         ST_TextScalePercent(const XSD::string_& _string);
+        ~ST_TextScalePercent();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -756,6 +772,7 @@ namespace ns_w {
     public:
         ST_TextScaleDecimal();
         ST_TextScaleDecimal(const XSD::integer_& _integer);
+        ~ST_TextScaleDecimal();
         bool has_integer() const;
         void set_integer(const XSD::integer_& _integer);
         const XSD::integer_& get_integer() const;
@@ -795,6 +812,7 @@ namespace ns_w {
         };
         ST_HighlightColor();
         ST_HighlightColor(const ST_HighlightColor::Type& _type);
+        ~ST_HighlightColor();
         bool has_type() const;
         void set_type(const ST_HighlightColor::Type& _type);
         const ST_HighlightColor::Type& get_type() const;
@@ -819,6 +837,7 @@ namespace ns_w {
         };
         ST_HexColorAuto();
         ST_HexColorAuto(const ST_HexColorAuto::Type& _type);
+        ~ST_HexColorAuto();
         bool has_type() const;
         void set_type(const ST_HexColorAuto::Type& _type);
         const ST_HexColorAuto::Type& get_type() const;
@@ -838,6 +857,7 @@ namespace ns_w {
     {
     public:
         ST_HexColor();
+        ~ST_HexColor();
         bool has_ST_HexColorAuto() const;
         ST_HexColorAuto* mutable_ST_HexColorAuto();
         const ST_HexColorAuto& get_ST_HexColorAuto() const;
@@ -885,6 +905,7 @@ namespace ns_w {
         };
         ST_Underline();
         ST_Underline(const ST_Underline::Type& _type);
+        ~ST_Underline();
         bool has_type() const;
         void set_type(const ST_Underline::Type& _type);
         const ST_Underline::Type& get_type() const;
@@ -915,6 +936,7 @@ namespace ns_w {
         };
         ST_TextEffect();
         ST_TextEffect(const ST_TextEffect::Type& _type);
+        ~ST_TextEffect();
         bool has_type() const;
         void set_type(const ST_TextEffect::Type& _type);
         const ST_TextEffect::Type& get_type() const;
@@ -1131,6 +1153,7 @@ namespace ns_w {
         };
         ST_Border();
         ST_Border(const ST_Border::Type& _type);
+        ~ST_Border();
         bool has_type() const;
         void set_type(const ST_Border::Type& _type);
         const ST_Border::Type& get_type() const;
@@ -1192,6 +1215,7 @@ namespace ns_w {
         };
         ST_Shd();
         ST_Shd(const ST_Shd::Type& _type);
+        ~ST_Shd();
         bool has_type() const;
         void set_type(const ST_Shd::Type& _type);
         const ST_Shd::Type& get_type() const;
@@ -1220,6 +1244,7 @@ namespace ns_w {
         };
         ST_Em();
         ST_Em(const ST_Em::Type& _type);
+        ~ST_Em();
         bool has_type() const;
         void set_type(const ST_Em::Type& _type);
         const ST_Em::Type& get_type() const;
@@ -1248,6 +1273,7 @@ namespace ns_w {
         };
         ST_CombineBrackets();
         ST_CombineBrackets(const ST_CombineBrackets::Type& _type);
+        ~ST_CombineBrackets();
         bool has_type() const;
         void set_type(const ST_CombineBrackets::Type& _type);
         const ST_CombineBrackets::Type& get_type() const;
@@ -1274,6 +1300,7 @@ namespace ns_w {
         };
         ST_HeightRule();
         ST_HeightRule(const ST_HeightRule::Type& _type);
+        ~ST_HeightRule();
         bool has_type() const;
         void set_type(const ST_HeightRule::Type& _type);
         const ST_HeightRule::Type& get_type() const;
@@ -1303,6 +1330,7 @@ namespace ns_w {
         };
         ST_Wrap();
         ST_Wrap(const ST_Wrap::Type& _type);
+        ~ST_Wrap();
         bool has_type() const;
         void set_type(const ST_Wrap::Type& _type);
         const ST_Wrap::Type& get_type() const;
@@ -1329,6 +1357,7 @@ namespace ns_w {
         };
         ST_VAnchor();
         ST_VAnchor(const ST_VAnchor::Type& _type);
+        ~ST_VAnchor();
         bool has_type() const;
         void set_type(const ST_VAnchor::Type& _type);
         const ST_VAnchor::Type& get_type() const;
@@ -1355,6 +1384,7 @@ namespace ns_w {
         };
         ST_HAnchor();
         ST_HAnchor(const ST_HAnchor::Type& _type);
+        ~ST_HAnchor();
         bool has_type() const;
         void set_type(const ST_HAnchor::Type& _type);
         const ST_HAnchor::Type& get_type() const;
@@ -1381,6 +1411,7 @@ namespace ns_w {
         };
         ST_DropCap();
         ST_DropCap(const ST_DropCap::Type& _type);
+        ~ST_DropCap();
         bool has_type() const;
         void set_type(const ST_DropCap::Type& _type);
         const ST_DropCap::Type& get_type() const;
@@ -1413,6 +1444,7 @@ namespace ns_w {
         };
         ST_TabJc();
         ST_TabJc(const ST_TabJc::Type& _type);
+        ~ST_TabJc();
         bool has_type() const;
         void set_type(const ST_TabJc::Type& _type);
         const ST_TabJc::Type& get_type() const;
@@ -1442,6 +1474,7 @@ namespace ns_w {
         };
         ST_TabTlc();
         ST_TabTlc(const ST_TabTlc::Type& _type);
+        ~ST_TabTlc();
         bool has_type() const;
         void set_type(const ST_TabTlc::Type& _type);
         const ST_TabTlc::Type& get_type() const;
@@ -1468,6 +1501,7 @@ namespace ns_w {
         };
         ST_LineSpacingRule();
         ST_LineSpacingRule(const ST_LineSpacingRule::Type& _type);
+        ~ST_LineSpacingRule();
         bool has_type() const;
         void set_type(const ST_LineSpacingRule::Type& _type);
         const ST_LineSpacingRule::Type& get_type() const;
@@ -1503,6 +1537,7 @@ namespace ns_w {
         };
         ST_Jc();
         ST_Jc(const ST_Jc::Type& _type);
+        ~ST_Jc();
         bool has_type() const;
         void set_type(const ST_Jc::Type& _type);
         const ST_Jc::Type& get_type() const;
@@ -1531,6 +1566,7 @@ namespace ns_w {
         };
         ST_JcTable();
         ST_JcTable(const ST_JcTable::Type& _type);
+        ~ST_JcTable();
         bool has_type() const;
         void set_type(const ST_JcTable::Type& _type);
         const ST_JcTable::Type& get_type() const;
@@ -1560,6 +1596,7 @@ namespace ns_w {
         };
         ST_View();
         ST_View(const ST_View::Type& _type);
+        ~ST_View();
         bool has_type() const;
         void set_type(const ST_View::Type& _type);
         const ST_View::Type& get_type() const;
@@ -1587,6 +1624,7 @@ namespace ns_w {
         };
         ST_Zoom();
         ST_Zoom(const ST_Zoom::Type& _type);
+        ~ST_Zoom();
         bool has_type() const;
         void set_type(const ST_Zoom::Type& _type);
         const ST_Zoom::Type& get_type() const;
@@ -1612,6 +1650,7 @@ namespace ns_w {
         };
         ST_Proof();
         ST_Proof(const ST_Proof::Type& _type);
+        ~ST_Proof();
         bool has_type() const;
         void set_type(const ST_Proof::Type& _type);
         const ST_Proof::Type& get_type() const;
@@ -1632,6 +1671,7 @@ namespace ns_w {
     public:
         ST_DocType();
         ST_DocType(const XSD::string_& _string);
+        ~ST_DocType();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -1659,6 +1699,7 @@ namespace ns_w {
         };
         ST_DocProtect();
         ST_DocProtect(const ST_DocProtect::Type& _type);
+        ~ST_DocProtect();
         bool has_type() const;
         void set_type(const ST_DocProtect::Type& _type);
         const ST_DocProtect::Type& get_type() const;
@@ -1688,6 +1729,7 @@ namespace ns_w {
         };
         ST_MailMergeDocType();
         ST_MailMergeDocType(const ST_MailMergeDocType::Type& _type);
+        ~ST_MailMergeDocType();
         bool has_type() const;
         void set_type(const ST_MailMergeDocType::Type& _type);
         const ST_MailMergeDocType::Type& get_type() const;
@@ -1708,6 +1750,7 @@ namespace ns_w {
     public:
         ST_MailMergeDataType();
         ST_MailMergeDataType(const XSD::string_& _string);
+        ~ST_MailMergeDataType();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -1734,6 +1777,7 @@ namespace ns_w {
         };
         ST_MailMergeDest();
         ST_MailMergeDest(const ST_MailMergeDest::Type& _type);
+        ~ST_MailMergeDest();
         bool has_type() const;
         void set_type(const ST_MailMergeDest::Type& _type);
         const ST_MailMergeDest::Type& get_type() const;
@@ -1759,6 +1803,7 @@ namespace ns_w {
         };
         ST_MailMergeOdsoFMDFieldType();
         ST_MailMergeOdsoFMDFieldType(const ST_MailMergeOdsoFMDFieldType::Type& _type);
+        ~ST_MailMergeOdsoFMDFieldType();
         bool has_type() const;
         void set_type(const ST_MailMergeOdsoFMDFieldType::Type& _type);
         const ST_MailMergeOdsoFMDFieldType::Type& get_type() const;
@@ -1794,6 +1839,7 @@ namespace ns_w {
         };
         ST_TextDirection();
         ST_TextDirection(const ST_TextDirection::Type& _type);
+        ~ST_TextDirection();
         bool has_type() const;
         void set_type(const ST_TextDirection::Type& _type);
         const ST_TextDirection::Type& get_type() const;
@@ -1822,6 +1868,7 @@ namespace ns_w {
         };
         ST_TextAlignment();
         ST_TextAlignment(const ST_TextAlignment::Type& _type);
+        ~ST_TextAlignment();
         bool has_type() const;
         void set_type(const ST_TextAlignment::Type& _type);
         const ST_TextAlignment::Type& get_type() const;
@@ -1847,6 +1894,7 @@ namespace ns_w {
         };
         ST_DisplacedByCustomXml();
         ST_DisplacedByCustomXml(const ST_DisplacedByCustomXml::Type& _type);
+        ~ST_DisplacedByCustomXml();
         bool has_type() const;
         void set_type(const ST_DisplacedByCustomXml::Type& _type);
         const ST_DisplacedByCustomXml::Type& get_type() const;
@@ -1872,6 +1920,7 @@ namespace ns_w {
         };
         ST_AnnotationVMerge();
         ST_AnnotationVMerge(const ST_AnnotationVMerge::Type& _type);
+        ~ST_AnnotationVMerge();
         bool has_type() const;
         void set_type(const ST_AnnotationVMerge::Type& _type);
         const ST_AnnotationVMerge::Type& get_type() const;
@@ -1900,6 +1949,7 @@ namespace ns_w {
         };
         ST_TextboxTightWrap();
         ST_TextboxTightWrap(const ST_TextboxTightWrap::Type& _type);
+        ~ST_TextboxTightWrap();
         bool has_type() const;
         void set_type(const ST_TextboxTightWrap::Type& _type);
         const ST_TextboxTightWrap::Type& get_type() const;
@@ -1925,6 +1975,7 @@ namespace ns_w {
         };
         ST_ObjectDrawAspect();
         ST_ObjectDrawAspect(const ST_ObjectDrawAspect::Type& _type);
+        ~ST_ObjectDrawAspect();
         bool has_type() const;
         void set_type(const ST_ObjectDrawAspect::Type& _type);
         const ST_ObjectDrawAspect::Type& get_type() const;
@@ -1950,6 +2001,7 @@ namespace ns_w {
         };
         ST_ObjectUpdateMode();
         ST_ObjectUpdateMode(const ST_ObjectUpdateMode::Type& _type);
+        ~ST_ObjectUpdateMode();
         bool has_type() const;
         void set_type(const ST_ObjectUpdateMode::Type& _type);
         const ST_ObjectUpdateMode::Type& get_type() const;
@@ -1976,6 +2028,7 @@ namespace ns_w {
         };
         ST_FldCharType();
         ST_FldCharType(const ST_FldCharType::Type& _type);
+        ~ST_FldCharType();
         bool has_type() const;
         void set_type(const ST_FldCharType::Type& _type);
         const ST_FldCharType::Type& get_type() const;
@@ -2001,6 +2054,7 @@ namespace ns_w {
         };
         ST_InfoTextType();
         ST_InfoTextType(const ST_InfoTextType::Type& _type);
+        ~ST_InfoTextType();
         bool has_type() const;
         void set_type(const ST_InfoTextType::Type& _type);
         const ST_InfoTextType::Type& get_type() const;
@@ -2021,6 +2075,7 @@ namespace ns_w {
     public:
         ST_FFHelpTextVal();
         ST_FFHelpTextVal(const XSD::string_& _string);
+        ~ST_FFHelpTextVal();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -2040,6 +2095,7 @@ namespace ns_w {
     public:
         ST_FFStatusTextVal();
         ST_FFStatusTextVal(const XSD::string_& _string);
+        ~ST_FFStatusTextVal();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -2059,6 +2115,7 @@ namespace ns_w {
     public:
         ST_FFName();
         ST_FFName(const XSD::string_& _string);
+        ~ST_FFName();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -2087,6 +2144,7 @@ namespace ns_w {
         };
         ST_FFTextType();
         ST_FFTextType(const ST_FFTextType::Type& _type);
+        ~ST_FFTextType();
         bool has_type() const;
         void set_type(const ST_FFTextType::Type& _type);
         const ST_FFTextType::Type& get_type() const;
@@ -2115,6 +2173,7 @@ namespace ns_w {
         };
         ST_SectionMark();
         ST_SectionMark(const ST_SectionMark::Type& _type);
+        ~ST_SectionMark();
         bool has_type() const;
         void set_type(const ST_SectionMark::Type& _type);
         const ST_SectionMark::Type& get_type() const;
@@ -2201,6 +2260,7 @@ namespace ns_w {
         };
         ST_NumberFormat();
         ST_NumberFormat(const ST_NumberFormat::Type& _type);
+        ~ST_NumberFormat();
         bool has_type() const;
         void set_type(const ST_NumberFormat::Type& _type);
         const ST_NumberFormat::Type& get_type() const;
@@ -2226,6 +2286,7 @@ namespace ns_w {
         };
         ST_PageOrientation();
         ST_PageOrientation(const ST_PageOrientation::Type& _type);
+        ~ST_PageOrientation();
         bool has_type() const;
         void set_type(const ST_PageOrientation::Type& _type);
         const ST_PageOrientation::Type& get_type() const;
@@ -2251,6 +2312,7 @@ namespace ns_w {
         };
         ST_PageBorderZOrder();
         ST_PageBorderZOrder(const ST_PageBorderZOrder::Type& _type);
+        ~ST_PageBorderZOrder();
         bool has_type() const;
         void set_type(const ST_PageBorderZOrder::Type& _type);
         const ST_PageBorderZOrder::Type& get_type() const;
@@ -2277,6 +2339,7 @@ namespace ns_w {
         };
         ST_PageBorderDisplay();
         ST_PageBorderDisplay(const ST_PageBorderDisplay::Type& _type);
+        ~ST_PageBorderDisplay();
         bool has_type() const;
         void set_type(const ST_PageBorderDisplay::Type& _type);
         const ST_PageBorderDisplay::Type& get_type() const;
@@ -2302,6 +2365,7 @@ namespace ns_w {
         };
         ST_PageBorderOffset();
         ST_PageBorderOffset(const ST_PageBorderOffset::Type& _type);
+        ~ST_PageBorderOffset();
         bool has_type() const;
         void set_type(const ST_PageBorderOffset::Type& _type);
         const ST_PageBorderOffset::Type& get_type() const;
@@ -2330,6 +2394,7 @@ namespace ns_w {
         };
         ST_ChapterSep();
         ST_ChapterSep(const ST_ChapterSep::Type& _type);
+        ~ST_ChapterSep();
         bool has_type() const;
         void set_type(const ST_ChapterSep::Type& _type);
         const ST_ChapterSep::Type& get_type() const;
@@ -2356,6 +2421,7 @@ namespace ns_w {
         };
         ST_LineNumberRestart();
         ST_LineNumberRestart(const ST_LineNumberRestart::Type& _type);
+        ~ST_LineNumberRestart();
         bool has_type() const;
         void set_type(const ST_LineNumberRestart::Type& _type);
         const ST_LineNumberRestart::Type& get_type() const;
@@ -2383,6 +2449,7 @@ namespace ns_w {
         };
         ST_VerticalJc();
         ST_VerticalJc(const ST_VerticalJc::Type& _type);
+        ~ST_VerticalJc();
         bool has_type() const;
         void set_type(const ST_VerticalJc::Type& _type);
         const ST_VerticalJc::Type& get_type() const;
@@ -2410,6 +2477,7 @@ namespace ns_w {
         };
         ST_DocGrid();
         ST_DocGrid(const ST_DocGrid::Type& _type);
+        ~ST_DocGrid();
         bool has_type() const;
         void set_type(const ST_DocGrid::Type& _type);
         const ST_DocGrid::Type& get_type() const;
@@ -2436,6 +2504,7 @@ namespace ns_w {
         };
         ST_HdrFtr();
         ST_HdrFtr(const ST_HdrFtr::Type& _type);
+        ~ST_HdrFtr();
         bool has_type() const;
         void set_type(const ST_HdrFtr::Type& _type);
         const ST_HdrFtr::Type& get_type() const;
@@ -2463,6 +2532,7 @@ namespace ns_w {
         };
         ST_FtnEdn();
         ST_FtnEdn(const ST_FtnEdn::Type& _type);
+        ~ST_FtnEdn();
         bool has_type() const;
         void set_type(const ST_FtnEdn::Type& _type);
         const ST_FtnEdn::Type& get_type() const;
@@ -2489,6 +2559,7 @@ namespace ns_w {
         };
         ST_BrType();
         ST_BrType(const ST_BrType::Type& _type);
+        ~ST_BrType();
         bool has_type() const;
         void set_type(const ST_BrType::Type& _type);
         const ST_BrType::Type& get_type() const;
@@ -2516,6 +2587,7 @@ namespace ns_w {
         };
         ST_BrClear();
         ST_BrClear(const ST_BrClear::Type& _type);
+        ~ST_BrClear();
         bool has_type() const;
         void set_type(const ST_BrClear::Type& _type);
         const ST_BrClear::Type& get_type() const;
@@ -2542,6 +2614,7 @@ namespace ns_w {
         };
         ST_PTabAlignment();
         ST_PTabAlignment(const ST_PTabAlignment::Type& _type);
+        ~ST_PTabAlignment();
         bool has_type() const;
         void set_type(const ST_PTabAlignment::Type& _type);
         const ST_PTabAlignment::Type& get_type() const;
@@ -2567,6 +2640,7 @@ namespace ns_w {
         };
         ST_PTabRelativeTo();
         ST_PTabRelativeTo(const ST_PTabRelativeTo::Type& _type);
+        ~ST_PTabRelativeTo();
         bool has_type() const;
         void set_type(const ST_PTabRelativeTo::Type& _type);
         const ST_PTabRelativeTo::Type& get_type() const;
@@ -2595,6 +2669,7 @@ namespace ns_w {
         };
         ST_PTabLeader();
         ST_PTabLeader(const ST_PTabLeader::Type& _type);
+        ~ST_PTabLeader();
         bool has_type() const;
         void set_type(const ST_PTabLeader::Type& _type);
         const ST_PTabLeader::Type& get_type() const;
@@ -2622,6 +2697,7 @@ namespace ns_w {
         };
         ST_ProofErr();
         ST_ProofErr(const ST_ProofErr::Type& _type);
+        ~ST_ProofErr();
         bool has_type() const;
         void set_type(const ST_ProofErr::Type& _type);
         const ST_ProofErr::Type& get_type() const;
@@ -2652,6 +2728,7 @@ namespace ns_w {
         };
         ST_EdGrp();
         ST_EdGrp(const ST_EdGrp::Type& _type);
+        ~ST_EdGrp();
         bool has_type() const;
         void set_type(const ST_EdGrp::Type& _type);
         const ST_EdGrp::Type& get_type() const;
@@ -2678,6 +2755,7 @@ namespace ns_w {
         };
         ST_Hint();
         ST_Hint(const ST_Hint::Type& _type);
+        ~ST_Hint();
         bool has_type() const;
         void set_type(const ST_Hint::Type& _type);
         const ST_Hint::Type& get_type() const;
@@ -2709,6 +2787,7 @@ namespace ns_w {
         };
         ST_Theme();
         ST_Theme(const ST_Theme::Type& _type);
+        ~ST_Theme();
         bool has_type() const;
         void set_type(const ST_Theme::Type& _type);
         const ST_Theme::Type& get_type() const;
@@ -2738,6 +2817,7 @@ namespace ns_w {
         };
         ST_RubyAlign();
         ST_RubyAlign(const ST_RubyAlign::Type& _type);
+        ~ST_RubyAlign();
         bool has_type() const;
         void set_type(const ST_RubyAlign::Type& _type);
         const ST_RubyAlign::Type& get_type() const;
@@ -2765,6 +2845,7 @@ namespace ns_w {
         };
         ST_Lock();
         ST_Lock(const ST_Lock::Type& _type);
+        ~ST_Lock();
         bool has_type() const;
         void set_type(const ST_Lock::Type& _type);
         const ST_Lock::Type& get_type() const;
@@ -2791,6 +2872,7 @@ namespace ns_w {
         };
         ST_SdtDateMappingType();
         ST_SdtDateMappingType(const ST_SdtDateMappingType::Type& _type);
+        ~ST_SdtDateMappingType();
         bool has_type() const;
         void set_type(const ST_SdtDateMappingType::Type& _type);
         const ST_SdtDateMappingType::Type& get_type() const;
@@ -2816,6 +2898,7 @@ namespace ns_w {
         };
         ST_Direction();
         ST_Direction(const ST_Direction::Type& _type);
+        ~ST_Direction();
         bool has_type() const;
         void set_type(const ST_Direction::Type& _type);
         const ST_Direction::Type& get_type() const;
@@ -2843,6 +2926,7 @@ namespace ns_w {
         };
         ST_TblWidth();
         ST_TblWidth(const ST_TblWidth::Type& _type);
+        ~ST_TblWidth();
         bool has_type() const;
         void set_type(const ST_TblWidth::Type& _type);
         const ST_TblWidth::Type& get_type() const;
@@ -2862,6 +2946,7 @@ namespace ns_w {
     {
     public:
         ST_MeasurementOrPercent();
+        ~ST_MeasurementOrPercent();
         bool has_ST_DecimalNumberOrPercent() const;
         ST_DecimalNumberOrPercent* mutable_ST_DecimalNumberOrPercent();
         const ST_DecimalNumberOrPercent& get_ST_DecimalNumberOrPercent() const;
@@ -2893,6 +2978,7 @@ namespace ns_w {
         };
         ST_Merge();
         ST_Merge(const ST_Merge::Type& _type);
+        ~ST_Merge();
         bool has_type() const;
         void set_type(const ST_Merge::Type& _type);
         const ST_Merge::Type& get_type() const;
@@ -2913,6 +2999,7 @@ namespace ns_w {
     public:
         ST_Cnf();
         ST_Cnf(const XSD::string_& _string);
+        ~ST_Cnf();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -2937,6 +3024,7 @@ namespace ns_w {
         };
         ST_TblLayoutType();
         ST_TblLayoutType(const ST_TblLayoutType::Type& _type);
+        ~ST_TblLayoutType();
         bool has_type() const;
         void set_type(const ST_TblLayoutType::Type& _type);
         const ST_TblLayoutType::Type& get_type() const;
@@ -2962,6 +3050,7 @@ namespace ns_w {
         };
         ST_TblOverlap();
         ST_TblOverlap(const ST_TblOverlap::Type& _type);
+        ~ST_TblOverlap();
         bool has_type() const;
         void set_type(const ST_TblOverlap::Type& _type);
         const ST_TblOverlap::Type& get_type() const;
@@ -2989,6 +3078,7 @@ namespace ns_w {
         };
         ST_FtnPos();
         ST_FtnPos(const ST_FtnPos::Type& _type);
+        ~ST_FtnPos();
         bool has_type() const;
         void set_type(const ST_FtnPos::Type& _type);
         const ST_FtnPos::Type& get_type() const;
@@ -3014,6 +3104,7 @@ namespace ns_w {
         };
         ST_EdnPos();
         ST_EdnPos(const ST_EdnPos::Type& _type);
+        ~ST_EdnPos();
         bool has_type() const;
         void set_type(const ST_EdnPos::Type& _type);
         const ST_EdnPos::Type& get_type() const;
@@ -3040,6 +3131,7 @@ namespace ns_w {
         };
         ST_RestartNumber();
         ST_RestartNumber(const ST_RestartNumber::Type& _type);
+        ~ST_RestartNumber();
         bool has_type() const;
         void set_type(const ST_RestartNumber::Type& _type);
         const ST_RestartNumber::Type& get_type() const;
@@ -3072,6 +3164,7 @@ namespace ns_w {
         };
         ST_MailMergeSourceType();
         ST_MailMergeSourceType(const ST_MailMergeSourceType::Type& _type);
+        ~ST_MailMergeSourceType();
         bool has_type() const;
         void set_type(const ST_MailMergeSourceType::Type& _type);
         const ST_MailMergeSourceType::Type& get_type() const;
@@ -3106,6 +3199,7 @@ namespace ns_w {
         };
         ST_TargetScreenSz();
         ST_TargetScreenSz(const ST_TargetScreenSz::Type& _type);
+        ~ST_TargetScreenSz();
         bool has_type() const;
         void set_type(const ST_TargetScreenSz::Type& _type);
         const ST_TargetScreenSz::Type& get_type() const;
@@ -3132,6 +3226,7 @@ namespace ns_w {
         };
         ST_CharacterSpacing();
         ST_CharacterSpacing(const ST_CharacterSpacing::Type& _type);
+        ~ST_CharacterSpacing();
         bool has_type() const;
         void set_type(const ST_CharacterSpacing::Type& _type);
         const ST_CharacterSpacing::Type& get_type() const;
@@ -3167,6 +3262,7 @@ namespace ns_w {
         };
         ST_WmlColorSchemeIndex();
         ST_WmlColorSchemeIndex(const ST_WmlColorSchemeIndex::Type& _type);
+        ~ST_WmlColorSchemeIndex();
         bool has_type() const;
         void set_type(const ST_WmlColorSchemeIndex::Type& _type);
         const ST_WmlColorSchemeIndex::Type& get_type() const;
@@ -3202,6 +3298,7 @@ namespace ns_w {
         };
         ST_StyleSort();
         ST_StyleSort(const ST_StyleSort::Type& _type);
+        ~ST_StyleSort();
         bool has_type() const;
         void set_type(const ST_StyleSort::Type& _type);
         const ST_StyleSort::Type& get_type() const;
@@ -3228,6 +3325,7 @@ namespace ns_w {
         };
         ST_FrameScrollbar();
         ST_FrameScrollbar(const ST_FrameScrollbar::Type& _type);
+        ~ST_FrameScrollbar();
         bool has_type() const;
         void set_type(const ST_FrameScrollbar::Type& _type);
         const ST_FrameScrollbar::Type& get_type() const;
@@ -3254,6 +3352,7 @@ namespace ns_w {
         };
         ST_FrameLayout();
         ST_FrameLayout(const ST_FrameLayout::Type& _type);
+        ~ST_FrameLayout();
         bool has_type() const;
         void set_type(const ST_FrameLayout::Type& _type);
         const ST_FrameLayout::Type& get_type() const;
@@ -3280,6 +3379,7 @@ namespace ns_w {
         };
         ST_LevelSuffix();
         ST_LevelSuffix(const ST_LevelSuffix::Type& _type);
+        ~ST_LevelSuffix();
         bool has_type() const;
         void set_type(const ST_LevelSuffix::Type& _type);
         const ST_LevelSuffix::Type& get_type() const;
@@ -3306,6 +3406,7 @@ namespace ns_w {
         };
         ST_MultiLevelType();
         ST_MultiLevelType(const ST_MultiLevelType::Type& _type);
+        ~ST_MultiLevelType();
         bool has_type() const;
         void set_type(const ST_MultiLevelType::Type& _type);
         const ST_MultiLevelType::Type& get_type() const;
@@ -3342,6 +3443,7 @@ namespace ns_w {
         };
         ST_TblStyleOverrideType();
         ST_TblStyleOverrideType(const ST_TblStyleOverrideType::Type& _type);
+        ~ST_TblStyleOverrideType();
         bool has_type() const;
         void set_type(const ST_TblStyleOverrideType::Type& _type);
         const ST_TblStyleOverrideType::Type& get_type() const;
@@ -3369,6 +3471,7 @@ namespace ns_w {
         };
         ST_StyleType();
         ST_StyleType(const ST_StyleType::Type& _type);
+        ~ST_StyleType();
         bool has_type() const;
         void set_type(const ST_StyleType::Type& _type);
         const ST_StyleType::Type& get_type() const;
@@ -3398,6 +3501,7 @@ namespace ns_w {
         };
         ST_FontFamily();
         ST_FontFamily(const ST_FontFamily::Type& _type);
+        ~ST_FontFamily();
         bool has_type() const;
         void set_type(const ST_FontFamily::Type& _type);
         const ST_FontFamily::Type& get_type() const;
@@ -3424,6 +3528,7 @@ namespace ns_w {
         };
         ST_Pitch();
         ST_Pitch(const ST_Pitch::Type& _type);
+        ~ST_Pitch();
         bool has_type() const;
         void set_type(const ST_Pitch::Type& _type);
         const ST_Pitch::Type& get_type() const;
@@ -3464,6 +3569,7 @@ namespace ns_w {
         };
         ST_ThemeColor();
         ST_ThemeColor(const ST_ThemeColor::Type& _type);
+        ~ST_ThemeColor();
         bool has_type() const;
         void set_type(const ST_ThemeColor::Type& _type);
         const ST_ThemeColor::Type& get_type() const;
@@ -3490,6 +3596,7 @@ namespace ns_w {
         };
         ST_DocPartBehavior();
         ST_DocPartBehavior(const ST_DocPartBehavior::Type& _type);
+        ~ST_DocPartBehavior();
         bool has_type() const;
         void set_type(const ST_DocPartBehavior::Type& _type);
         const ST_DocPartBehavior::Type& get_type() const;
@@ -3520,6 +3627,7 @@ namespace ns_w {
         };
         ST_DocPartType();
         ST_DocPartType(const ST_DocPartType::Type& _type);
+        ~ST_DocPartType();
         bool has_type() const;
         void set_type(const ST_DocPartType::Type& _type);
         const ST_DocPartType::Type& get_type() const;
@@ -3581,6 +3689,7 @@ namespace ns_w {
         };
         ST_DocPartGallery();
         ST_DocPartGallery(const ST_DocPartGallery::Type& _type);
+        ~ST_DocPartGallery();
         bool has_type() const;
         void set_type(const ST_DocPartGallery::Type& _type);
         const ST_DocPartGallery::Type& get_type() const;
@@ -3608,6 +3717,7 @@ namespace ns_w {
         };
         ST_CaptionPos();
         ST_CaptionPos(const ST_CaptionPos::Type& _type);
+        ~ST_CaptionPos();
         bool has_type() const;
         void set_type(const ST_CaptionPos::Type& _type);
         const ST_CaptionPos::Type& get_type() const;

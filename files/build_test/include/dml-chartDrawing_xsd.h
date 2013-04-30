@@ -46,6 +46,7 @@ namespace ns_cdr {
     public:
         ST_MarkerCoordinate();
         ST_MarkerCoordinate(const XSD::double_& _double);
+        ~ST_MarkerCoordinate();
         bool has_double() const;
         void set_double(const XSD::double_& _double);
         const XSD::double_& get_double() const;

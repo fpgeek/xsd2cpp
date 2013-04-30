@@ -673,6 +673,16 @@ def simpleType_restriction_simpleTypeName(pbRestriction, cppClass):
 def simpleType_restriction_complexTypeName(pbRestriction, cppClass):
     pass #TODO - 아직은 여기로 오지 않아서 처리하지 않음
 
+
+def simpleType_list(pbSchema, pbList, cppClass):
+    if pbList.item_type.kind == PB.List.ItemType.BuiltIn:
+        simpleType_list_builtIn(pbList.item_type.built_in, cppClass)
+    elif pbList.item_type.kind == PB.List.ItemType.SimpleTypeName:
+        simpleType_list_simpleTypeName(pbList.item_type.simple_type_name, cppClass)
+    elif pbList.item_type.kind == PB.List.ItemType.SimpleType:
+        assert(False) # 추후 구현 예정
+
+
 def simpleType_union(pbSchema, pbUnion, cppClass):
     pbUnionMemberNames = _getUnionMemberNames(pbUnion.member_type)
 
@@ -825,6 +835,7 @@ return %s;
     memberVar2.type = '%s' % cppVarType
     memberVar2.name = varName
 
+
 def simpleType_union_simpleTypeName(pbSimpleTypeName, pbUnionMemberNames, cppClass):
     cppVarName = _getCppVarName(pbSimpleTypeName)
     cppVarType = _getCppVarType(pbSimpleTypeName)
@@ -894,6 +905,193 @@ if (%(var)s)
     memberVar2 = cppClass.member_var.add()
     memberVar2.type = '%s*' % cppVarType
     memberVar2.name = varName
+
+
+def simpleType_list_builtIn(pbBuiltIn, cppClass):
+    cppVarName = getBuiltInStr(pbBuiltIn)
+    cppVarType = 'XSD::%s_' % cppVarName
+
+    hasVarName = 'm_has_%s_list' % cppVarName
+    varName = 'm_%s_list' % cppVarName
+
+    hasMemberVar = cppClass.member_var.add()
+    hasMemberVar.type = 'bool'
+    hasMemberVar.name = hasVarName
+
+    vectorMemberVar = cppClass.member_var.add()
+    vectorMemberVar.type = 'vector<%s>' % cppVarType
+    vectorMemberVar.name = varName
+
+    method1 = cppClass.method.add()
+    method1.return_type = 'bool'
+    method1.name = 'has_%s_list' % cppVarName
+    method1.const = True
+    method1.body = \
+"""
+return %s;
+""" % hasVarName
+
+    method2 = cppClass.method.add()
+    method2.return_type = 'void'
+    method2.name = 'add_%s' % cppVarName
+    method2_var1 = method2.argument.add()
+    method2_var1.type = '%s&' % cppVarType
+    method2_var1.name = '_%s' % cppVarName
+    method2_var1.const = True
+    method2.body = \
+"""
+%(has_var)s = true;
+%(var)s.push_back(%(arg)s);
+""" % {
+    'has_var':hasVarName,
+    'var':varName,
+    'arg':method2_var1.name
+    }
+
+    method3 = cppClass.method.add()
+    method3.return_type = 'const %s&' % vectorMemberVar.type
+    method3.name = 'get_%s_list' % cppVarName
+    method3.const = True
+    method3.body = \
+"""
+return %s;
+""" % varName
+
+    method4 = cppClass.method.add()
+    method4.access_qf = CPB.AccessQualified.private
+    method4.return_type = 'void'
+    method4.name = 'clear'
+    method4.body = \
+"""
+%s = false;
+%s.clear();
+""" % (hasVarName, varName)
+
+    toStringMethod = cppClass.method.add()
+    toStringMethod.return_type = 'std::string'
+    toStringMethod.name = 'toString'
+    toStringMethod.const = True
+    toStringMethod.body = \
+"""
+stringstream strStream;
+const size_t vectorSize = %(vectorVarName)s.size();
+for(size_t i = 0; i < vectorSize; ++i)
+{
+    if (i != 0)
+    {
+        strStream << ' ';
+    }
+    strStream << %(vectorVarName)s[i];
+}
+return strStream.str();
+""" % {'vectorVarName':vectorMemberVar.name}
+
+    toXmlMethodBody = \
+"""
+if (%(hasVarName)s)
+{
+    _outStream << " " << _attrName << "=\\\\"" << toString() << "\\\\"";
+}
+""" % {'hasVarName': hasVarName}
+    makeToXmlAttrMethod(toXmlMethodBody, cppClass)
+
+    makeDefaultInstanceMethod(cppClass)
+    makeDefaultInstanceMember(cppClass)
+
+
+def simpleType_list_simpleTypeName(pbSimpleTypeName, cppClass):
+    cppVarName = _getCppVarName(pbSimpleTypeName)
+    cppVarType = _getCppVarType(pbSimpleTypeName)
+
+    hasVarName = 'm_has_%s_list' % cppVarName
+    varName = 'm_%s_list' % cppVarName
+
+    hasMemberVar = cppClass.member_var.add()
+    hasMemberVar.type = 'bool'
+    hasMemberVar.name = hasVarName
+
+    vectorMemberVar = cppClass.member_var.add()
+    vectorMemberVar.type = 'vector<%s*>' % cppVarType
+    vectorMemberVar.name = varName
+
+    method1 = cppClass.method.add()
+    method1.return_type = 'bool'
+    method1.name = 'has_%s_list' % cppVarName
+    method1.const = True
+    method1.body = \
+"""
+return %s;
+""" % hasVarName
+
+    method2 = cppClass.method.add()
+    method2.return_type = '%s*' % cppVarType
+    method2.name = 'add_%s' % cppVarName
+    method2.body = \
+"""
+%(has_var)s = true;
+%(newObjType)s *pChild = new %(newObjType)s();
+%(var)s.push_back(pChild);
+return pChild;
+""" % {
+    'has_var':hasVarName,
+    'var':varName,
+    'newObjType':cppVarType
+    }
+
+    method3 = cppClass.method.add()
+    method3.return_type = 'const %s&' % vectorMemberVar.type
+    method3.name = 'get_%s_list' % cppVarName
+    method3.const = True
+    method3.body = \
+"""
+return %s;
+""" % varName
+
+    method4 = cppClass.method.add()
+    method4.access_qf = CPB.AccessQualified.private
+    method4.return_type = 'void'
+    method4.name = 'clear'
+    method4.body = \
+"""
+%(hasVarName)s = false;
+%(varType)s::iterator iter = %(varName)s.begin();
+for (; iter != %(varName)s.end(); ++iter)
+{
+    delete *iter;
+}
+%(varName)s.clear();
+""" % {'hasVarName': hasVarName, 'varName':vectorMemberVar.name, 'varType':vectorMemberVar.type}
+
+    toStringMethod = cppClass.method.add()
+    toStringMethod.return_type = 'std::string'
+    toStringMethod.name = 'toString'
+    toStringMethod.const = True
+    toStringMethod.body = \
+"""
+stringstream strStream;
+const size_t vectorSize = %(vectorVarName)s.size();
+for(size_t i = 0; i < vectorSize; ++i)
+{
+    if (i != 0)
+    {
+        strStream << ' ';
+    }
+    strStream << %(vectorVarName)s[i]->toString();
+}
+return strStream.str();
+""" % {'vectorVarName':vectorMemberVar.name}
+
+    toXmlMethodBody = \
+"""
+if (%(hasVarName)s)
+{
+    _outStream << " " << _attrName << "=\\\\"" << toString() << "\\\\"";
+}
+""" % {'hasVarName': hasVarName}
+    makeToXmlAttrMethod(toXmlMethodBody, cppClass)
+
+    makeDefaultInstanceMethod(cppClass)
+    makeDefaultInstanceMember(cppClass)
 
 
 def _getUnionMemberNames(pbUnionMemberTypes):

@@ -23,6 +23,9 @@ namespace ns_main {
     m_type(_type)
     {
     }
+    ST_FilterOperator::~ST_FilterOperator()
+{
+    clear();    }
     bool ST_FilterOperator::has_type() const
     {    
     return m_has_type;
@@ -87,6 +90,9 @@ ST_FilterOperator* ST_FilterOperator::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_DynamicFilterType::~ST_DynamicFilterType()
+{
+    clear();    }
     bool ST_DynamicFilterType::has_type() const
     {    
     return m_has_type;
@@ -180,6 +186,9 @@ ST_DynamicFilterType* ST_DynamicFilterType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_IconSetType::~ST_IconSetType()
+{
+    clear();    }
     bool ST_IconSetType::has_type() const
     {    
     return m_has_type;
@@ -255,6 +264,9 @@ ST_IconSetType* ST_IconSetType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SortBy::~ST_SortBy()
+{
+    clear();    }
     bool ST_SortBy::has_type() const
     {    
     return m_has_type;
@@ -317,6 +329,9 @@ ST_SortBy* ST_SortBy::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SortMethod::~ST_SortMethod()
+{
+    clear();    }
     bool ST_SortMethod::has_type() const
     {    
     return m_has_type;
@@ -378,6 +393,9 @@ ST_SortMethod* ST_SortMethod::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_DateTimeGrouping::~ST_DateTimeGrouping()
+{
+    clear();    }
     bool ST_DateTimeGrouping::has_type() const
     {    
     return m_has_type;
@@ -444,6 +462,9 @@ ST_DateTimeGrouping* ST_DateTimeGrouping::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_CellRef::~ST_CellRef()
+{
+    clear();    }
     bool ST_CellRef::has_string() const
     {    
     return m_has_string;
@@ -504,6 +525,9 @@ ST_CellRef* ST_CellRef::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_Ref::~ST_Ref()
+{
+    clear();    }
     bool ST_Ref::has_string() const
     {    
     return m_has_string;
@@ -564,6 +588,9 @@ ST_Ref* ST_Ref::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_RefA::~ST_RefA()
+{
+    clear();    }
     bool ST_RefA::has_string() const
     {    
     return m_has_string;
@@ -613,44 +640,58 @@ ST_Ref* ST_Ref::default_instance_ = NULL;
 ST_RefA* ST_RefA::default_instance_ = NULL;
 
     // ST_Sqref
-    ST_Sqref::ST_Sqref()
-    :m_has_ENTITIES(false),
-    m_ENTITIES("")
-    {
-    }
-    ST_Sqref::ST_Sqref(const XSD::ENTITIES_& _ENTITIES)
-    :m_has_ENTITIES(true)
-    {
-    
-    set_ENTITIES(_ENTITIES);
-    }
-    bool ST_Sqref::has_ENTITIES() const
+    ST_Sqref::~ST_Sqref()
+{
+    clear();    }
+    bool ST_Sqref::has_ST_Ref_list() const
     {    
-    return m_has_ENTITIES;
+    return m_has_ST_Ref_list;
     }
 
-    void ST_Sqref::set_ENTITIES(const XSD::ENTITIES_& _ENTITIES)
+    ST_Ref* ST_Sqref::add_ST_Ref()
     {    
-    m_has_ENTITIES = true;
-    m_ENTITIES = _ENTITIES;
+    m_has_ST_Ref_list = true;
+    ST_Ref *pChild = new ST_Ref();
+    m_ST_Ref_list.push_back(pChild);
+    return pChild;
     }
 
-    const XSD::ENTITIES_& ST_Sqref::get_ENTITIES() const
+    const vector<ST_Ref*>& ST_Sqref::get_ST_Ref_list() const
     {    
-    return m_ENTITIES;
+    return m_ST_Ref_list;
     }
 
     void ST_Sqref::clear()
     {    
-    m_has_ENTITIES = false;
-    m_ENTITIES.clear();;
+    m_has_ST_Ref_list = false;
+    vector<ST_Ref*>::iterator iter = m_ST_Ref_list.begin();
+    for (; iter != m_ST_Ref_list.end(); ++iter)
+    {
+        delete *iter;
+    }
+    m_ST_Ref_list.clear();
+    }
+
+    std::string ST_Sqref::toString() const
+    {    
+    stringstream strStream;
+    const size_t vectorSize = m_ST_Ref_list.size();
+    for(size_t i = 0; i < vectorSize; ++i)
+    {
+        if (i != 0)
+        {
+            strStream << ' ';
+        }
+        strStream << m_ST_Ref_list[i]->toString();
+    }
+    return strStream.str();
     }
 
     void ST_Sqref::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
     {    
-    if (m_has_ENTITIES)
+    if (m_has_ST_Ref_list)
     {
-        _outStream << " " << _attrName << "=\"" << m_ENTITIES << "\"";;
+        _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -661,13 +702,6 @@ ST_RefA* ST_RefA::default_instance_ = NULL;
         ST_Sqref::default_instance_ = new ST_Sqref();
     }
     return *ST_Sqref::default_instance_;
-    }
-
-    std::string ST_Sqref::toString() const
-    {    
-    std::stringstream strStream;
-    strStream << get_ENTITIES();
-    return strStream.str();
     }
 
 ST_Sqref* ST_Sqref::default_instance_ = NULL;
@@ -681,6 +715,9 @@ ST_Sqref* ST_Sqref::default_instance_ = NULL;
 
     {
     }
+    ST_Formula::~ST_Formula()
+{
+    clear();    }
     const ST_Formula& ST_Formula::default_instance()
     {    
     if (!ST_Formula::default_instance_)
@@ -704,6 +741,9 @@ ST_Formula* ST_Formula::default_instance_ = NULL;
     
     set_hexBinary(_hexBinary);
     }
+    ST_UnsignedIntHex::~ST_UnsignedIntHex()
+{
+    clear();    }
     bool ST_UnsignedIntHex::has_hexBinary() const
     {    
     return m_has_hexBinary;
@@ -765,6 +805,9 @@ ST_UnsignedIntHex* ST_UnsignedIntHex::default_instance_ = NULL;
     
     set_hexBinary(_hexBinary);
     }
+    ST_UnsignedShortHex::~ST_UnsignedShortHex()
+{
+    clear();    }
     bool ST_UnsignedShortHex::has_hexBinary() const
     {    
     return m_has_hexBinary;
@@ -824,6 +867,9 @@ ST_UnsignedShortHex* ST_UnsignedShortHex::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextHAlign::~ST_TextHAlign()
+{
+    clear();    }
     bool ST_TextHAlign::has_type() const
     {    
     return m_has_type;
@@ -887,6 +933,9 @@ ST_TextHAlign* ST_TextHAlign::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TextVAlign::~ST_TextVAlign()
+{
+    clear();    }
     bool ST_TextVAlign::has_type() const
     {    
     return m_has_type;
@@ -950,6 +999,9 @@ ST_TextVAlign* ST_TextVAlign::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_CredMethod::~ST_CredMethod()
+{
+    clear();    }
     bool ST_CredMethod::has_type() const
     {    
     return m_has_type;
@@ -1012,6 +1064,9 @@ ST_CredMethod* ST_CredMethod::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_HtmlFmt::~ST_HtmlFmt()
+{
+    clear();    }
     bool ST_HtmlFmt::has_type() const
     {    
     return m_has_type;
@@ -1073,6 +1128,9 @@ ST_HtmlFmt* ST_HtmlFmt::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ParameterType::~ST_ParameterType()
+{
+    clear();    }
     bool ST_ParameterType::has_type() const
     {    
     return m_has_type;
@@ -1134,6 +1192,9 @@ ST_ParameterType* ST_ParameterType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FileType::~ST_FileType()
+{
+    clear();    }
     bool ST_FileType::has_type() const
     {    
     return m_has_type;
@@ -1197,6 +1258,9 @@ ST_FileType* ST_FileType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Qualifier::~ST_Qualifier()
+{
+    clear();    }
     bool ST_Qualifier::has_type() const
     {    
     return m_has_type;
@@ -1258,6 +1322,9 @@ ST_Qualifier* ST_Qualifier::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ExternalConnectionType::~ST_ExternalConnectionType()
+{
+    clear();    }
     bool ST_ExternalConnectionType::has_type() const
     {    
     return m_has_type;
@@ -1326,6 +1393,9 @@ ST_ExternalConnectionType* ST_ExternalConnectionType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SourceType::~ST_SourceType()
+{
+    clear();    }
     bool ST_SourceType::has_type() const
     {    
     return m_has_type;
@@ -1388,6 +1458,9 @@ ST_SourceType* ST_SourceType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_GroupBy::~ST_GroupBy()
+{
+    clear();    }
     bool ST_GroupBy::has_type() const
     {    
     return m_has_type;
@@ -1454,6 +1527,9 @@ ST_GroupBy* ST_GroupBy::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SortType::~ST_SortType()
+{
+    clear();    }
     bool ST_SortType::has_type() const
     {    
     return m_has_type;
@@ -1519,6 +1595,9 @@ ST_SortType* ST_SortType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Scope::~ST_Scope()
+{
+    clear();    }
     bool ST_Scope::has_type() const
     {    
     return m_has_type;
@@ -1580,6 +1659,9 @@ ST_Scope* ST_Scope::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Type::~ST_Type()
+{
+    clear();    }
     bool ST_Type::has_type() const
     {    
     return m_has_type;
@@ -1642,6 +1724,9 @@ ST_Type* ST_Type::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ShowDataAs::~ST_ShowDataAs()
+{
+    clear();    }
     bool ST_ShowDataAs::has_type() const
     {    
     return m_has_type;
@@ -1709,6 +1794,9 @@ ST_ShowDataAs* ST_ShowDataAs::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ItemType::~ST_ItemType()
+{
+    clear();    }
     bool ST_ItemType::has_type() const
     {    
     return m_has_type;
@@ -1782,6 +1870,9 @@ ST_ItemType* ST_ItemType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FormatAction::~ST_FormatAction()
+{
+    clear();    }
     bool ST_FormatAction::has_type() const
     {    
     return m_has_type;
@@ -1844,6 +1935,9 @@ ST_FormatAction* ST_FormatAction::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FieldSortType::~ST_FieldSortType()
+{
+    clear();    }
     bool ST_FieldSortType::has_type() const
     {    
     return m_has_type;
@@ -1905,6 +1999,9 @@ ST_FieldSortType* ST_FieldSortType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PivotFilterType::~ST_PivotFilterType()
+{
+    clear();    }
     bool ST_PivotFilterType::has_type() const
     {    
     return m_has_type;
@@ -2029,6 +2126,9 @@ ST_PivotFilterType* ST_PivotFilterType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PivotAreaType::~ST_PivotAreaType()
+{
+    clear();    }
     bool ST_PivotAreaType::has_type() const
     {    
     return m_has_type;
@@ -2095,6 +2195,9 @@ ST_PivotAreaType* ST_PivotAreaType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Axis::~ST_Axis()
+{
+    clear();    }
     bool ST_Axis::has_type() const
     {    
     return m_has_type;
@@ -2157,6 +2260,9 @@ ST_Axis* ST_Axis::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_GrowShrinkType::~ST_GrowShrinkType()
+{
+    clear();    }
     bool ST_GrowShrinkType::has_type() const
     {    
     return m_has_type;
@@ -2218,6 +2324,9 @@ ST_GrowShrinkType* ST_GrowShrinkType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PhoneticType::~ST_PhoneticType()
+{
+    clear();    }
     bool ST_PhoneticType::has_type() const
     {    
     return m_has_type;
@@ -2280,6 +2389,9 @@ ST_PhoneticType* ST_PhoneticType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PhoneticAlignment::~ST_PhoneticAlignment()
+{
+    clear();    }
     bool ST_PhoneticAlignment::has_type() const
     {    
     return m_has_type;
@@ -2342,6 +2454,9 @@ ST_PhoneticAlignment* ST_PhoneticAlignment::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_rwColActionType::~ST_rwColActionType()
+{
+    clear();    }
     bool ST_rwColActionType::has_type() const
     {    
     return m_has_type;
@@ -2404,6 +2519,9 @@ ST_rwColActionType* ST_rwColActionType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_RevisionAction::~ST_RevisionAction()
+{
+    clear();    }
     bool ST_RevisionAction::has_type() const
     {    
     return m_has_type;
@@ -2464,6 +2582,9 @@ ST_RevisionAction* ST_RevisionAction::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FormulaExpression::~ST_FormulaExpression()
+{
+    clear();    }
     bool ST_FormulaExpression::has_type() const
     {    
     return m_has_type;
@@ -2529,6 +2650,9 @@ ST_FormulaExpression* ST_FormulaExpression::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_CellSpan::~ST_CellSpan()
+{
+    clear();    }
     bool ST_CellSpan::has_string() const
     {    
     return m_has_string;
@@ -2578,44 +2702,58 @@ ST_FormulaExpression* ST_FormulaExpression::default_instance_ = NULL;
 ST_CellSpan* ST_CellSpan::default_instance_ = NULL;
 
     // ST_CellSpans
-    ST_CellSpans::ST_CellSpans()
-    :m_has_ENTITIES(false),
-    m_ENTITIES("")
-    {
-    }
-    ST_CellSpans::ST_CellSpans(const XSD::ENTITIES_& _ENTITIES)
-    :m_has_ENTITIES(true)
-    {
-    
-    set_ENTITIES(_ENTITIES);
-    }
-    bool ST_CellSpans::has_ENTITIES() const
+    ST_CellSpans::~ST_CellSpans()
+{
+    clear();    }
+    bool ST_CellSpans::has_ST_CellSpan_list() const
     {    
-    return m_has_ENTITIES;
+    return m_has_ST_CellSpan_list;
     }
 
-    void ST_CellSpans::set_ENTITIES(const XSD::ENTITIES_& _ENTITIES)
+    ST_CellSpan* ST_CellSpans::add_ST_CellSpan()
     {    
-    m_has_ENTITIES = true;
-    m_ENTITIES = _ENTITIES;
+    m_has_ST_CellSpan_list = true;
+    ST_CellSpan *pChild = new ST_CellSpan();
+    m_ST_CellSpan_list.push_back(pChild);
+    return pChild;
     }
 
-    const XSD::ENTITIES_& ST_CellSpans::get_ENTITIES() const
+    const vector<ST_CellSpan*>& ST_CellSpans::get_ST_CellSpan_list() const
     {    
-    return m_ENTITIES;
+    return m_ST_CellSpan_list;
     }
 
     void ST_CellSpans::clear()
     {    
-    m_has_ENTITIES = false;
-    m_ENTITIES.clear();;
+    m_has_ST_CellSpan_list = false;
+    vector<ST_CellSpan*>::iterator iter = m_ST_CellSpan_list.begin();
+    for (; iter != m_ST_CellSpan_list.end(); ++iter)
+    {
+        delete *iter;
+    }
+    m_ST_CellSpan_list.clear();
+    }
+
+    std::string ST_CellSpans::toString() const
+    {    
+    stringstream strStream;
+    const size_t vectorSize = m_ST_CellSpan_list.size();
+    for(size_t i = 0; i < vectorSize; ++i)
+    {
+        if (i != 0)
+        {
+            strStream << ' ';
+        }
+        strStream << m_ST_CellSpan_list[i]->toString();
+    }
+    return strStream.str();
     }
 
     void ST_CellSpans::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
     {    
-    if (m_has_ENTITIES)
+    if (m_has_ST_CellSpan_list)
     {
-        _outStream << " " << _attrName << "=\"" << m_ENTITIES << "\"";;
+        _outStream << " " << _attrName << "=\"" << toString() << "\"";
     }
     }
 
@@ -2626,13 +2764,6 @@ ST_CellSpan* ST_CellSpan::default_instance_ = NULL;
         ST_CellSpans::default_instance_ = new ST_CellSpans();
     }
     return *ST_CellSpans::default_instance_;
-    }
-
-    std::string ST_CellSpans::toString() const
-    {    
-    std::stringstream strStream;
-    strStream << get_ENTITIES();
-    return strStream.str();
     }
 
 ST_CellSpans* ST_CellSpans::default_instance_ = NULL;
@@ -2647,6 +2778,9 @@ ST_CellSpans* ST_CellSpans::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_CellType::~ST_CellType()
+{
+    clear();    }
     bool ST_CellType::has_type() const
     {    
     return m_has_type;
@@ -2711,6 +2845,9 @@ ST_CellType* ST_CellType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_CellFormulaType::~ST_CellFormulaType()
+{
+    clear();    }
     bool ST_CellFormulaType::has_type() const
     {    
     return m_has_type;
@@ -2773,6 +2910,9 @@ ST_CellFormulaType* ST_CellFormulaType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Pane::~ST_Pane()
+{
+    clear();    }
     bool ST_Pane::has_type() const
     {    
     return m_has_type;
@@ -2835,6 +2975,9 @@ ST_Pane* ST_Pane::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SheetViewType::~ST_SheetViewType()
+{
+    clear();    }
     bool ST_SheetViewType::has_type() const
     {    
     return m_has_type;
@@ -2896,6 +3039,9 @@ ST_SheetViewType* ST_SheetViewType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_DataConsolidateFunction::~ST_DataConsolidateFunction()
+{
+    clear();    }
     bool ST_DataConsolidateFunction::has_type() const
     {    
     return m_has_type;
@@ -2965,6 +3111,9 @@ ST_DataConsolidateFunction* ST_DataConsolidateFunction::default_instance_ = NULL
     m_type(_type)
     {
     }
+    ST_DataValidationType::~ST_DataValidationType()
+{
+    clear();    }
     bool ST_DataValidationType::has_type() const
     {    
     return m_has_type;
@@ -3031,6 +3180,9 @@ ST_DataValidationType* ST_DataValidationType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_DataValidationOperator::~ST_DataValidationOperator()
+{
+    clear();    }
     bool ST_DataValidationOperator::has_type() const
     {    
     return m_has_type;
@@ -3097,6 +3249,9 @@ ST_DataValidationOperator* ST_DataValidationOperator::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_DataValidationErrorStyle::~ST_DataValidationErrorStyle()
+{
+    clear();    }
     bool ST_DataValidationErrorStyle::has_type() const
     {    
     return m_has_type;
@@ -3158,6 +3313,9 @@ ST_DataValidationErrorStyle* ST_DataValidationErrorStyle::default_instance_ = NU
     m_type(_type)
     {
     }
+    ST_DataValidationImeMode::~ST_DataValidationImeMode()
+{
+    clear();    }
     bool ST_DataValidationImeMode::has_type() const
     {    
     return m_has_type;
@@ -3227,6 +3385,9 @@ ST_DataValidationImeMode* ST_DataValidationImeMode::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_CfType::~ST_CfType()
+{
+    clear();    }
     bool ST_CfType::has_type() const
     {    
     return m_has_type;
@@ -3303,6 +3464,9 @@ ST_CfType* ST_CfType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TimePeriod::~ST_TimePeriod()
+{
+    clear();    }
     bool ST_TimePeriod::has_type() const
     {    
     return m_has_type;
@@ -3371,6 +3535,9 @@ ST_TimePeriod* ST_TimePeriod::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ConditionalFormattingOperator::~ST_ConditionalFormattingOperator()
+{
+    clear();    }
     bool ST_ConditionalFormattingOperator::has_type() const
     {    
     return m_has_type;
@@ -3441,6 +3608,9 @@ ST_ConditionalFormattingOperator* ST_ConditionalFormattingOperator::default_inst
     m_type(_type)
     {
     }
+    ST_CfvoType::~ST_CfvoType()
+{
+    clear();    }
     bool ST_CfvoType::has_type() const
     {    
     return m_has_type;
@@ -3505,6 +3675,9 @@ ST_CfvoType* ST_CfvoType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PageOrder::~ST_PageOrder()
+{
+    clear();    }
     bool ST_PageOrder::has_type() const
     {    
     return m_has_type;
@@ -3565,6 +3738,9 @@ ST_PageOrder* ST_PageOrder::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Orientation::~ST_Orientation()
+{
+    clear();    }
     bool ST_Orientation::has_type() const
     {    
     return m_has_type;
@@ -3626,6 +3802,9 @@ ST_Orientation* ST_Orientation::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_CellComments::~ST_CellComments()
+{
+    clear();    }
     bool ST_CellComments::has_type() const
     {    
     return m_has_type;
@@ -3687,6 +3866,9 @@ ST_CellComments* ST_CellComments::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PrintError::~ST_PrintError()
+{
+    clear();    }
     bool ST_PrintError::has_type() const
     {    
     return m_has_type;
@@ -3749,6 +3931,9 @@ ST_PrintError* ST_PrintError::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_DvAspect::~ST_DvAspect()
+{
+    clear();    }
     bool ST_DvAspect::has_type() const
     {    
     return m_has_type;
@@ -3809,6 +3994,9 @@ ST_DvAspect* ST_DvAspect::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_OleUpdate::~ST_OleUpdate()
+{
+    clear();    }
     bool ST_OleUpdate::has_type() const
     {    
     return m_has_type;
@@ -3869,6 +4057,9 @@ ST_OleUpdate* ST_OleUpdate::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_WebSourceType::~ST_WebSourceType()
+{
+    clear();    }
     bool ST_WebSourceType::has_type() const
     {    
     return m_has_type;
@@ -3935,6 +4126,9 @@ ST_WebSourceType* ST_WebSourceType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PaneState::~ST_PaneState()
+{
+    clear();    }
     bool ST_PaneState::has_type() const
     {    
     return m_has_type;
@@ -3996,6 +4190,9 @@ ST_PaneState* ST_PaneState::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_MdxFunctionType::~ST_MdxFunctionType()
+{
+    clear();    }
     bool ST_MdxFunctionType::has_type() const
     {    
     return m_has_type;
@@ -4061,6 +4258,9 @@ ST_MdxFunctionType* ST_MdxFunctionType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_MdxSetOrder::~ST_MdxSetOrder()
+{
+    clear();    }
     bool ST_MdxSetOrder::has_type() const
     {    
     return m_has_type;
@@ -4126,6 +4326,9 @@ ST_MdxSetOrder* ST_MdxSetOrder::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_MdxKPIProperty::~ST_MdxKPIProperty()
+{
+    clear();    }
     bool ST_MdxKPIProperty::has_type() const
     {    
     return m_has_type;
@@ -4190,6 +4393,9 @@ ST_MdxKPIProperty* ST_MdxKPIProperty::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_BorderStyle::~ST_BorderStyle()
+{
+    clear();    }
     bool ST_BorderStyle::has_type() const
     {    
     return m_has_type;
@@ -4262,6 +4468,9 @@ ST_BorderStyle* ST_BorderStyle::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_PatternType::~ST_PatternType()
+{
+    clear();    }
     bool ST_PatternType::has_type() const
     {    
     return m_has_type;
@@ -4339,6 +4548,9 @@ ST_PatternType* ST_PatternType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_GradientType::~ST_GradientType()
+{
+    clear();    }
     bool ST_GradientType::has_type() const
     {    
     return m_has_type;
@@ -4399,6 +4611,9 @@ ST_GradientType* ST_GradientType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_HorizontalAlignment::~ST_HorizontalAlignment()
+{
+    clear();    }
     bool ST_HorizontalAlignment::has_type() const
     {    
     return m_has_type;
@@ -4465,6 +4680,9 @@ ST_HorizontalAlignment* ST_HorizontalAlignment::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_VerticalAlignment::~ST_VerticalAlignment()
+{
+    clear();    }
     bool ST_VerticalAlignment::has_type() const
     {    
     return m_has_type;
@@ -4530,6 +4748,9 @@ ST_VerticalAlignment* ST_VerticalAlignment::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_NumFmtId::~ST_NumFmtId()
+{
+    clear();    }
     bool ST_NumFmtId::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -4590,6 +4811,9 @@ ST_NumFmtId* ST_NumFmtId::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_FontId::~ST_FontId()
+{
+    clear();    }
     bool ST_FontId::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -4650,6 +4874,9 @@ ST_FontId* ST_FontId::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_FillId::~ST_FillId()
+{
+    clear();    }
     bool ST_FillId::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -4710,6 +4937,9 @@ ST_FillId* ST_FillId::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_BorderId::~ST_BorderId()
+{
+    clear();    }
     bool ST_BorderId::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -4770,6 +5000,9 @@ ST_BorderId* ST_BorderId::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_CellStyleXfId::~ST_CellStyleXfId()
+{
+    clear();    }
     bool ST_CellStyleXfId::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -4830,6 +5063,9 @@ ST_CellStyleXfId* ST_CellStyleXfId::default_instance_ = NULL;
     
     set_unsignedInt(_unsignedInt);
     }
+    ST_DxfId::~ST_DxfId()
+{
+    clear();    }
     bool ST_DxfId::has_unsignedInt() const
     {    
     return m_has_unsignedInt;
@@ -4888,6 +5124,9 @@ ST_DxfId* ST_DxfId::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TableStyleType::~ST_TableStyleType()
+{
+    clear();    }
     bool ST_TableStyleType::has_type() const
     {    
     return m_has_type;
@@ -4974,6 +5213,9 @@ ST_TableStyleType* ST_TableStyleType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_FontScheme::~ST_FontScheme()
+{
+    clear();    }
     bool ST_FontScheme::has_type() const
     {    
     return m_has_type;
@@ -5035,6 +5277,9 @@ ST_FontScheme* ST_FontScheme::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_UnderlineValues::~ST_UnderlineValues()
+{
+    clear();    }
     bool ST_UnderlineValues::has_type() const
     {    
     return m_has_type;
@@ -5100,6 +5345,9 @@ ST_UnderlineValues* ST_UnderlineValues::default_instance_ = NULL;
     
     set_integer(_integer);
     }
+    ST_FontFamily::~ST_FontFamily()
+{
+    clear();    }
     bool ST_FontFamily::has_integer() const
     {    
     return m_has_integer;
@@ -5160,6 +5408,9 @@ ST_FontFamily* ST_FontFamily::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_DdeValueType::~ST_DdeValueType()
+{
+    clear();    }
     bool ST_DdeValueType::has_type() const
     {    
     return m_has_type;
@@ -5223,6 +5474,9 @@ ST_DdeValueType* ST_DdeValueType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TableType::~ST_TableType()
+{
+    clear();    }
     bool ST_TableType::has_type() const
     {    
     return m_has_type;
@@ -5284,6 +5538,9 @@ ST_TableType* ST_TableType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TotalsRowFunction::~ST_TotalsRowFunction()
+{
+    clear();    }
     bool ST_TotalsRowFunction::has_type() const
     {    
     return m_has_type;
@@ -5354,6 +5611,9 @@ ST_TotalsRowFunction* ST_TotalsRowFunction::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_XmlDataType::~ST_XmlDataType()
+{
+    clear();    }
     bool ST_XmlDataType::has_string() const
     {    
     return m_has_string;
@@ -5412,6 +5672,9 @@ ST_XmlDataType* ST_XmlDataType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_VolDepType::~ST_VolDepType()
+{
+    clear();    }
     bool ST_VolDepType::has_type() const
     {    
     return m_has_type;
@@ -5472,6 +5735,9 @@ ST_VolDepType* ST_VolDepType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_VolValueType::~ST_VolValueType()
+{
+    clear();    }
     bool ST_VolValueType::has_type() const
     {    
     return m_has_type;
@@ -5534,6 +5800,9 @@ ST_VolValueType* ST_VolValueType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Visibility::~ST_Visibility()
+{
+    clear();    }
     bool ST_Visibility::has_type() const
     {    
     return m_has_type;
@@ -5595,6 +5864,9 @@ ST_Visibility* ST_Visibility::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Comments::~ST_Comments()
+{
+    clear();    }
     bool ST_Comments::has_type() const
     {    
     return m_has_type;
@@ -5656,6 +5928,9 @@ ST_Comments* ST_Comments::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_Objects::~ST_Objects()
+{
+    clear();    }
     bool ST_Objects::has_type() const
     {    
     return m_has_type;
@@ -5717,6 +5992,9 @@ ST_Objects* ST_Objects::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SheetState::~ST_SheetState()
+{
+    clear();    }
     bool ST_SheetState::has_type() const
     {    
     return m_has_type;
@@ -5778,6 +6056,9 @@ ST_SheetState* ST_SheetState::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_UpdateLinks::~ST_UpdateLinks()
+{
+    clear();    }
     bool ST_UpdateLinks::has_type() const
     {    
     return m_has_type;
@@ -5839,6 +6120,9 @@ ST_UpdateLinks* ST_UpdateLinks::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_SmartTagShow::~ST_SmartTagShow()
+{
+    clear();    }
     bool ST_SmartTagShow::has_type() const
     {    
     return m_has_type;
@@ -5900,6 +6184,9 @@ ST_SmartTagShow* ST_SmartTagShow::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_CalcMode::~ST_CalcMode()
+{
+    clear();    }
     bool ST_CalcMode::has_type() const
     {    
     return m_has_type;
@@ -5961,6 +6248,9 @@ ST_CalcMode* ST_CalcMode::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_RefMode::~ST_RefMode()
+{
+    clear();    }
     bool ST_RefMode::has_type() const
     {    
     return m_has_type;
@@ -6021,6 +6311,9 @@ ST_RefMode* ST_RefMode::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_TargetScreenSize::~ST_TargetScreenSize()
+{
+    clear();    }
     bool ST_TargetScreenSize::has_type() const
     {    
     return m_has_type;

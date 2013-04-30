@@ -21,6 +21,9 @@ namespace ns_vt {
     m_type(_type)
     {
     }
+    ST_VectorBaseType::~ST_VectorBaseType()
+{
+    clear();    }
     bool ST_VectorBaseType::has_type() const
     {    
     return m_has_type;
@@ -99,6 +102,9 @@ ST_VectorBaseType* ST_VectorBaseType::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ArrayBaseType::~ST_ArrayBaseType()
+{
+    clear();    }
     bool ST_ArrayBaseType::has_type() const
     {    
     return m_has_type;
@@ -176,6 +182,9 @@ ST_ArrayBaseType* ST_ArrayBaseType::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_Cy::~ST_Cy()
+{
+    clear();    }
     bool ST_Cy::has_string() const
     {    
     return m_has_string;
@@ -236,6 +245,9 @@ ST_Cy* ST_Cy::default_instance_ = NULL;
     
     set_string(_string);
     }
+    ST_Error::~ST_Error()
+{
+    clear();    }
     bool ST_Error::has_string() const
     {    
     return m_has_string;

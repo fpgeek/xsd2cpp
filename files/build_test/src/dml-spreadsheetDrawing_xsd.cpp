@@ -24,6 +24,9 @@ namespace ns_xdr {
     
     set_int(_int);
     }
+    ST_ColID::~ST_ColID()
+{
+    clear();    }
     bool ST_ColID::has_int() const
     {    
     return m_has_int;
@@ -85,6 +88,9 @@ ST_ColID* ST_ColID::default_instance_ = NULL;
     
     set_int(_int);
     }
+    ST_RowID::~ST_RowID()
+{
+    clear();    }
     bool ST_RowID::has_int() const
     {    
     return m_has_int;
@@ -144,6 +150,9 @@ ST_RowID* ST_RowID::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_EditAs::~ST_EditAs()
+{
+    clear();    }
     bool ST_EditAs::has_type() const
     {    
     return m_has_type;

@@ -526,6 +526,7 @@ namespace ns_main {
         };
         ST_FilterOperator();
         ST_FilterOperator(const ST_FilterOperator::Type& _type);
+        ~ST_FilterOperator();
         bool has_type() const;
         void set_type(const ST_FilterOperator::Type& _type);
         const ST_FilterOperator::Type& get_type() const;
@@ -584,6 +585,7 @@ namespace ns_main {
         };
         ST_DynamicFilterType();
         ST_DynamicFilterType(const ST_DynamicFilterType::Type& _type);
+        ~ST_DynamicFilterType();
         bool has_type() const;
         void set_type(const ST_DynamicFilterType::Type& _type);
         const ST_DynamicFilterType::Type& get_type() const;
@@ -624,6 +626,7 @@ namespace ns_main {
         };
         ST_IconSetType();
         ST_IconSetType(const ST_IconSetType::Type& _type);
+        ~ST_IconSetType();
         bool has_type() const;
         void set_type(const ST_IconSetType::Type& _type);
         const ST_IconSetType::Type& get_type() const;
@@ -651,6 +654,7 @@ namespace ns_main {
         };
         ST_SortBy();
         ST_SortBy(const ST_SortBy::Type& _type);
+        ~ST_SortBy();
         bool has_type() const;
         void set_type(const ST_SortBy::Type& _type);
         const ST_SortBy::Type& get_type() const;
@@ -677,6 +681,7 @@ namespace ns_main {
         };
         ST_SortMethod();
         ST_SortMethod(const ST_SortMethod::Type& _type);
+        ~ST_SortMethod();
         bool has_type() const;
         void set_type(const ST_SortMethod::Type& _type);
         const ST_SortMethod::Type& get_type() const;
@@ -706,6 +711,7 @@ namespace ns_main {
         };
         ST_DateTimeGrouping();
         ST_DateTimeGrouping(const ST_DateTimeGrouping::Type& _type);
+        ~ST_DateTimeGrouping();
         bool has_type() const;
         void set_type(const ST_DateTimeGrouping::Type& _type);
         const ST_DateTimeGrouping::Type& get_type() const;
@@ -726,6 +732,7 @@ namespace ns_main {
     public:
         ST_CellRef();
         ST_CellRef(const XSD::string_& _string);
+        ~ST_CellRef();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -745,6 +752,7 @@ namespace ns_main {
     public:
         ST_Ref();
         ST_Ref(const XSD::string_& _string);
+        ~ST_Ref();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -764,6 +772,7 @@ namespace ns_main {
     public:
         ST_RefA();
         ST_RefA(const XSD::string_& _string);
+        ~ST_RefA();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -781,20 +790,19 @@ namespace ns_main {
     class ST_Sqref: public XSD::SimpleType
     {
     public:
-        ST_Sqref();
-        ST_Sqref(const XSD::ENTITIES_& _ENTITIES);
-        bool has_ENTITIES() const;
-        void set_ENTITIES(const XSD::ENTITIES_& _ENTITIES);
-        const XSD::ENTITIES_& get_ENTITIES() const;
+        ~ST_Sqref();
+        bool has_ST_Ref_list() const;
+        ST_Ref* add_ST_Ref();
+        const vector<ST_Ref*>& get_ST_Ref_list() const;
         void clear();
+        std::string toString() const;
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_Sqref& default_instance();
-        std::string toString() const;
     protected:
     private:
+        bool m_has_ST_Ref_list;
+        vector<ST_Ref*> m_ST_Ref_list;
         static ST_Sqref* default_instance_;
-        bool m_has_ENTITIES;
-        XSD::ENTITIES_ m_ENTITIES;
     };
 
     class ST_Formula: public ns_s::ST_Xstring
@@ -802,6 +810,7 @@ namespace ns_main {
     public:
         ST_Formula();
         ST_Formula(const ns_s::ST_Xstring& _ST_Xstring);
+        ~ST_Formula();
         static const ST_Formula& default_instance();
     protected:
     private:
@@ -813,6 +822,7 @@ namespace ns_main {
     public:
         ST_UnsignedIntHex();
         ST_UnsignedIntHex(const XSD::hexBinary_& _hexBinary);
+        ~ST_UnsignedIntHex();
         bool has_hexBinary() const;
         void set_hexBinary(const XSD::hexBinary_& _hexBinary);
         const XSD::hexBinary_& get_hexBinary() const;
@@ -832,6 +842,7 @@ namespace ns_main {
     public:
         ST_UnsignedShortHex();
         ST_UnsignedShortHex(const XSD::hexBinary_& _hexBinary);
+        ~ST_UnsignedShortHex();
         bool has_hexBinary() const;
         void set_hexBinary(const XSD::hexBinary_& _hexBinary);
         const XSD::hexBinary_& get_hexBinary() const;
@@ -859,6 +870,7 @@ namespace ns_main {
         };
         ST_TextHAlign();
         ST_TextHAlign(const ST_TextHAlign::Type& _type);
+        ~ST_TextHAlign();
         bool has_type() const;
         void set_type(const ST_TextHAlign::Type& _type);
         const ST_TextHAlign::Type& get_type() const;
@@ -887,6 +899,7 @@ namespace ns_main {
         };
         ST_TextVAlign();
         ST_TextVAlign(const ST_TextVAlign::Type& _type);
+        ~ST_TextVAlign();
         bool has_type() const;
         void set_type(const ST_TextVAlign::Type& _type);
         const ST_TextVAlign::Type& get_type() const;
@@ -914,6 +927,7 @@ namespace ns_main {
         };
         ST_CredMethod();
         ST_CredMethod(const ST_CredMethod::Type& _type);
+        ~ST_CredMethod();
         bool has_type() const;
         void set_type(const ST_CredMethod::Type& _type);
         const ST_CredMethod::Type& get_type() const;
@@ -940,6 +954,7 @@ namespace ns_main {
         };
         ST_HtmlFmt();
         ST_HtmlFmt(const ST_HtmlFmt::Type& _type);
+        ~ST_HtmlFmt();
         bool has_type() const;
         void set_type(const ST_HtmlFmt::Type& _type);
         const ST_HtmlFmt::Type& get_type() const;
@@ -966,6 +981,7 @@ namespace ns_main {
         };
         ST_ParameterType();
         ST_ParameterType(const ST_ParameterType::Type& _type);
+        ~ST_ParameterType();
         bool has_type() const;
         void set_type(const ST_ParameterType::Type& _type);
         const ST_ParameterType::Type& get_type() const;
@@ -994,6 +1010,7 @@ namespace ns_main {
         };
         ST_FileType();
         ST_FileType(const ST_FileType::Type& _type);
+        ~ST_FileType();
         bool has_type() const;
         void set_type(const ST_FileType::Type& _type);
         const ST_FileType::Type& get_type() const;
@@ -1020,6 +1037,7 @@ namespace ns_main {
         };
         ST_Qualifier();
         ST_Qualifier(const ST_Qualifier::Type& _type);
+        ~ST_Qualifier();
         bool has_type() const;
         void set_type(const ST_Qualifier::Type& _type);
         const ST_Qualifier::Type& get_type() const;
@@ -1053,6 +1071,7 @@ namespace ns_main {
         };
         ST_ExternalConnectionType();
         ST_ExternalConnectionType(const ST_ExternalConnectionType::Type& _type);
+        ~ST_ExternalConnectionType();
         bool has_type() const;
         void set_type(const ST_ExternalConnectionType::Type& _type);
         const ST_ExternalConnectionType::Type& get_type() const;
@@ -1080,6 +1099,7 @@ namespace ns_main {
         };
         ST_SourceType();
         ST_SourceType(const ST_SourceType::Type& _type);
+        ~ST_SourceType();
         bool has_type() const;
         void set_type(const ST_SourceType::Type& _type);
         const ST_SourceType::Type& get_type() const;
@@ -1111,6 +1131,7 @@ namespace ns_main {
         };
         ST_GroupBy();
         ST_GroupBy(const ST_GroupBy::Type& _type);
+        ~ST_GroupBy();
         bool has_type() const;
         void set_type(const ST_GroupBy::Type& _type);
         const ST_GroupBy::Type& get_type() const;
@@ -1141,6 +1162,7 @@ namespace ns_main {
         };
         ST_SortType();
         ST_SortType(const ST_SortType::Type& _type);
+        ~ST_SortType();
         bool has_type() const;
         void set_type(const ST_SortType::Type& _type);
         const ST_SortType::Type& get_type() const;
@@ -1167,6 +1189,7 @@ namespace ns_main {
         };
         ST_Scope();
         ST_Scope(const ST_Scope::Type& _type);
+        ~ST_Scope();
         bool has_type() const;
         void set_type(const ST_Scope::Type& _type);
         const ST_Scope::Type& get_type() const;
@@ -1194,6 +1217,7 @@ namespace ns_main {
         };
         ST_Type();
         ST_Type(const ST_Type::Type& _type);
+        ~ST_Type();
         bool has_type() const;
         void set_type(const ST_Type::Type& _type);
         const ST_Type::Type& get_type() const;
@@ -1226,6 +1250,7 @@ namespace ns_main {
         };
         ST_ShowDataAs();
         ST_ShowDataAs(const ST_ShowDataAs::Type& _type);
+        ~ST_ShowDataAs();
         bool has_type() const;
         void set_type(const ST_ShowDataAs::Type& _type);
         const ST_ShowDataAs::Type& get_type() const;
@@ -1264,6 +1289,7 @@ namespace ns_main {
         };
         ST_ItemType();
         ST_ItemType(const ST_ItemType::Type& _type);
+        ~ST_ItemType();
         bool has_type() const;
         void set_type(const ST_ItemType::Type& _type);
         const ST_ItemType::Type& get_type() const;
@@ -1291,6 +1317,7 @@ namespace ns_main {
         };
         ST_FormatAction();
         ST_FormatAction(const ST_FormatAction::Type& _type);
+        ~ST_FormatAction();
         bool has_type() const;
         void set_type(const ST_FormatAction::Type& _type);
         const ST_FormatAction::Type& get_type() const;
@@ -1317,6 +1344,7 @@ namespace ns_main {
         };
         ST_FieldSortType();
         ST_FieldSortType(const ST_FieldSortType::Type& _type);
+        ~ST_FieldSortType();
         bool has_type() const;
         void set_type(const ST_FieldSortType::Type& _type);
         const ST_FieldSortType::Type& get_type() const;
@@ -1406,6 +1434,7 @@ namespace ns_main {
         };
         ST_PivotFilterType();
         ST_PivotFilterType(const ST_PivotFilterType::Type& _type);
+        ~ST_PivotFilterType();
         bool has_type() const;
         void set_type(const ST_PivotFilterType::Type& _type);
         const ST_PivotFilterType::Type& get_type() const;
@@ -1437,6 +1466,7 @@ namespace ns_main {
         };
         ST_PivotAreaType();
         ST_PivotAreaType(const ST_PivotAreaType::Type& _type);
+        ~ST_PivotAreaType();
         bool has_type() const;
         void set_type(const ST_PivotAreaType::Type& _type);
         const ST_PivotAreaType::Type& get_type() const;
@@ -1464,6 +1494,7 @@ namespace ns_main {
         };
         ST_Axis();
         ST_Axis(const ST_Axis::Type& _type);
+        ~ST_Axis();
         bool has_type() const;
         void set_type(const ST_Axis::Type& _type);
         const ST_Axis::Type& get_type() const;
@@ -1490,6 +1521,7 @@ namespace ns_main {
         };
         ST_GrowShrinkType();
         ST_GrowShrinkType(const ST_GrowShrinkType::Type& _type);
+        ~ST_GrowShrinkType();
         bool has_type() const;
         void set_type(const ST_GrowShrinkType::Type& _type);
         const ST_GrowShrinkType::Type& get_type() const;
@@ -1517,6 +1549,7 @@ namespace ns_main {
         };
         ST_PhoneticType();
         ST_PhoneticType(const ST_PhoneticType::Type& _type);
+        ~ST_PhoneticType();
         bool has_type() const;
         void set_type(const ST_PhoneticType::Type& _type);
         const ST_PhoneticType::Type& get_type() const;
@@ -1544,6 +1577,7 @@ namespace ns_main {
         };
         ST_PhoneticAlignment();
         ST_PhoneticAlignment(const ST_PhoneticAlignment::Type& _type);
+        ~ST_PhoneticAlignment();
         bool has_type() const;
         void set_type(const ST_PhoneticAlignment::Type& _type);
         const ST_PhoneticAlignment::Type& get_type() const;
@@ -1571,6 +1605,7 @@ namespace ns_main {
         };
         ST_rwColActionType();
         ST_rwColActionType(const ST_rwColActionType::Type& _type);
+        ~ST_rwColActionType();
         bool has_type() const;
         void set_type(const ST_rwColActionType::Type& _type);
         const ST_rwColActionType::Type& get_type() const;
@@ -1596,6 +1631,7 @@ namespace ns_main {
         };
         ST_RevisionAction();
         ST_RevisionAction(const ST_RevisionAction::Type& _type);
+        ~ST_RevisionAction();
         bool has_type() const;
         void set_type(const ST_RevisionAction::Type& _type);
         const ST_RevisionAction::Type& get_type() const;
@@ -1624,6 +1660,7 @@ namespace ns_main {
         };
         ST_FormulaExpression();
         ST_FormulaExpression(const ST_FormulaExpression::Type& _type);
+        ~ST_FormulaExpression();
         bool has_type() const;
         void set_type(const ST_FormulaExpression::Type& _type);
         const ST_FormulaExpression::Type& get_type() const;
@@ -1644,6 +1681,7 @@ namespace ns_main {
     public:
         ST_CellSpan();
         ST_CellSpan(const XSD::string_& _string);
+        ~ST_CellSpan();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -1661,20 +1699,19 @@ namespace ns_main {
     class ST_CellSpans: public XSD::SimpleType
     {
     public:
-        ST_CellSpans();
-        ST_CellSpans(const XSD::ENTITIES_& _ENTITIES);
-        bool has_ENTITIES() const;
-        void set_ENTITIES(const XSD::ENTITIES_& _ENTITIES);
-        const XSD::ENTITIES_& get_ENTITIES() const;
+        ~ST_CellSpans();
+        bool has_ST_CellSpan_list() const;
+        ST_CellSpan* add_ST_CellSpan();
+        const vector<ST_CellSpan*>& get_ST_CellSpan_list() const;
         void clear();
+        std::string toString() const;
         void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
         static const ST_CellSpans& default_instance();
-        std::string toString() const;
     protected:
     private:
+        bool m_has_ST_CellSpan_list;
+        vector<ST_CellSpan*> m_ST_CellSpan_list;
         static ST_CellSpans* default_instance_;
-        bool m_has_ENTITIES;
-        XSD::ENTITIES_ m_ENTITIES;
     };
 
     class ST_CellType: public XSD::SimpleType
@@ -1691,6 +1728,7 @@ namespace ns_main {
         };
         ST_CellType();
         ST_CellType(const ST_CellType::Type& _type);
+        ~ST_CellType();
         bool has_type() const;
         void set_type(const ST_CellType::Type& _type);
         const ST_CellType::Type& get_type() const;
@@ -1718,6 +1756,7 @@ namespace ns_main {
         };
         ST_CellFormulaType();
         ST_CellFormulaType(const ST_CellFormulaType::Type& _type);
+        ~ST_CellFormulaType();
         bool has_type() const;
         void set_type(const ST_CellFormulaType::Type& _type);
         const ST_CellFormulaType::Type& get_type() const;
@@ -1745,6 +1784,7 @@ namespace ns_main {
         };
         ST_Pane();
         ST_Pane(const ST_Pane::Type& _type);
+        ~ST_Pane();
         bool has_type() const;
         void set_type(const ST_Pane::Type& _type);
         const ST_Pane::Type& get_type() const;
@@ -1771,6 +1811,7 @@ namespace ns_main {
         };
         ST_SheetViewType();
         ST_SheetViewType(const ST_SheetViewType::Type& _type);
+        ~ST_SheetViewType();
         bool has_type() const;
         void set_type(const ST_SheetViewType::Type& _type);
         const ST_SheetViewType::Type& get_type() const;
@@ -1805,6 +1846,7 @@ namespace ns_main {
         };
         ST_DataConsolidateFunction();
         ST_DataConsolidateFunction(const ST_DataConsolidateFunction::Type& _type);
+        ~ST_DataConsolidateFunction();
         bool has_type() const;
         void set_type(const ST_DataConsolidateFunction::Type& _type);
         const ST_DataConsolidateFunction::Type& get_type() const;
@@ -1836,6 +1878,7 @@ namespace ns_main {
         };
         ST_DataValidationType();
         ST_DataValidationType(const ST_DataValidationType::Type& _type);
+        ~ST_DataValidationType();
         bool has_type() const;
         void set_type(const ST_DataValidationType::Type& _type);
         const ST_DataValidationType::Type& get_type() const;
@@ -1867,6 +1910,7 @@ namespace ns_main {
         };
         ST_DataValidationOperator();
         ST_DataValidationOperator(const ST_DataValidationOperator::Type& _type);
+        ~ST_DataValidationOperator();
         bool has_type() const;
         void set_type(const ST_DataValidationOperator::Type& _type);
         const ST_DataValidationOperator::Type& get_type() const;
@@ -1893,6 +1937,7 @@ namespace ns_main {
         };
         ST_DataValidationErrorStyle();
         ST_DataValidationErrorStyle(const ST_DataValidationErrorStyle::Type& _type);
+        ~ST_DataValidationErrorStyle();
         bool has_type() const;
         void set_type(const ST_DataValidationErrorStyle::Type& _type);
         const ST_DataValidationErrorStyle::Type& get_type() const;
@@ -1927,6 +1972,7 @@ namespace ns_main {
         };
         ST_DataValidationImeMode();
         ST_DataValidationImeMode(const ST_DataValidationImeMode::Type& _type);
+        ~ST_DataValidationImeMode();
         bool has_type() const;
         void set_type(const ST_DataValidationImeMode::Type& _type);
         const ST_DataValidationImeMode::Type& get_type() const;
@@ -1968,6 +2014,7 @@ namespace ns_main {
         };
         ST_CfType();
         ST_CfType(const ST_CfType::Type& _type);
+        ~ST_CfType();
         bool has_type() const;
         void set_type(const ST_CfType::Type& _type);
         const ST_CfType::Type& get_type() const;
@@ -2001,6 +2048,7 @@ namespace ns_main {
         };
         ST_TimePeriod();
         ST_TimePeriod(const ST_TimePeriod::Type& _type);
+        ~ST_TimePeriod();
         bool has_type() const;
         void set_type(const ST_TimePeriod::Type& _type);
         const ST_TimePeriod::Type& get_type() const;
@@ -2036,6 +2084,7 @@ namespace ns_main {
         };
         ST_ConditionalFormattingOperator();
         ST_ConditionalFormattingOperator(const ST_ConditionalFormattingOperator::Type& _type);
+        ~ST_ConditionalFormattingOperator();
         bool has_type() const;
         void set_type(const ST_ConditionalFormattingOperator::Type& _type);
         const ST_ConditionalFormattingOperator::Type& get_type() const;
@@ -2065,6 +2114,7 @@ namespace ns_main {
         };
         ST_CfvoType();
         ST_CfvoType(const ST_CfvoType::Type& _type);
+        ~ST_CfvoType();
         bool has_type() const;
         void set_type(const ST_CfvoType::Type& _type);
         const ST_CfvoType::Type& get_type() const;
@@ -2090,6 +2140,7 @@ namespace ns_main {
         };
         ST_PageOrder();
         ST_PageOrder(const ST_PageOrder::Type& _type);
+        ~ST_PageOrder();
         bool has_type() const;
         void set_type(const ST_PageOrder::Type& _type);
         const ST_PageOrder::Type& get_type() const;
@@ -2116,6 +2167,7 @@ namespace ns_main {
         };
         ST_Orientation();
         ST_Orientation(const ST_Orientation::Type& _type);
+        ~ST_Orientation();
         bool has_type() const;
         void set_type(const ST_Orientation::Type& _type);
         const ST_Orientation::Type& get_type() const;
@@ -2142,6 +2194,7 @@ namespace ns_main {
         };
         ST_CellComments();
         ST_CellComments(const ST_CellComments::Type& _type);
+        ~ST_CellComments();
         bool has_type() const;
         void set_type(const ST_CellComments::Type& _type);
         const ST_CellComments::Type& get_type() const;
@@ -2169,6 +2222,7 @@ namespace ns_main {
         };
         ST_PrintError();
         ST_PrintError(const ST_PrintError::Type& _type);
+        ~ST_PrintError();
         bool has_type() const;
         void set_type(const ST_PrintError::Type& _type);
         const ST_PrintError::Type& get_type() const;
@@ -2194,6 +2248,7 @@ namespace ns_main {
         };
         ST_DvAspect();
         ST_DvAspect(const ST_DvAspect::Type& _type);
+        ~ST_DvAspect();
         bool has_type() const;
         void set_type(const ST_DvAspect::Type& _type);
         const ST_DvAspect::Type& get_type() const;
@@ -2219,6 +2274,7 @@ namespace ns_main {
         };
         ST_OleUpdate();
         ST_OleUpdate(const ST_OleUpdate::Type& _type);
+        ~ST_OleUpdate();
         bool has_type() const;
         void set_type(const ST_OleUpdate::Type& _type);
         const ST_OleUpdate::Type& get_type() const;
@@ -2250,6 +2306,7 @@ namespace ns_main {
         };
         ST_WebSourceType();
         ST_WebSourceType(const ST_WebSourceType::Type& _type);
+        ~ST_WebSourceType();
         bool has_type() const;
         void set_type(const ST_WebSourceType::Type& _type);
         const ST_WebSourceType::Type& get_type() const;
@@ -2276,6 +2333,7 @@ namespace ns_main {
         };
         ST_PaneState();
         ST_PaneState(const ST_PaneState::Type& _type);
+        ~ST_PaneState();
         bool has_type() const;
         void set_type(const ST_PaneState::Type& _type);
         const ST_PaneState::Type& get_type() const;
@@ -2306,6 +2364,7 @@ namespace ns_main {
         };
         ST_MdxFunctionType();
         ST_MdxFunctionType(const ST_MdxFunctionType::Type& _type);
+        ~ST_MdxFunctionType();
         bool has_type() const;
         void set_type(const ST_MdxFunctionType::Type& _type);
         const ST_MdxFunctionType::Type& get_type() const;
@@ -2336,6 +2395,7 @@ namespace ns_main {
         };
         ST_MdxSetOrder();
         ST_MdxSetOrder(const ST_MdxSetOrder::Type& _type);
+        ~ST_MdxSetOrder();
         bool has_type() const;
         void set_type(const ST_MdxSetOrder::Type& _type);
         const ST_MdxSetOrder::Type& get_type() const;
@@ -2365,6 +2425,7 @@ namespace ns_main {
         };
         ST_MdxKPIProperty();
         ST_MdxKPIProperty(const ST_MdxKPIProperty::Type& _type);
+        ~ST_MdxKPIProperty();
         bool has_type() const;
         void set_type(const ST_MdxKPIProperty::Type& _type);
         const ST_MdxKPIProperty::Type& get_type() const;
@@ -2402,6 +2463,7 @@ namespace ns_main {
         };
         ST_BorderStyle();
         ST_BorderStyle(const ST_BorderStyle::Type& _type);
+        ~ST_BorderStyle();
         bool has_type() const;
         void set_type(const ST_BorderStyle::Type& _type);
         const ST_BorderStyle::Type& get_type() const;
@@ -2444,6 +2506,7 @@ namespace ns_main {
         };
         ST_PatternType();
         ST_PatternType(const ST_PatternType::Type& _type);
+        ~ST_PatternType();
         bool has_type() const;
         void set_type(const ST_PatternType::Type& _type);
         const ST_PatternType::Type& get_type() const;
@@ -2469,6 +2532,7 @@ namespace ns_main {
         };
         ST_GradientType();
         ST_GradientType(const ST_GradientType::Type& _type);
+        ~ST_GradientType();
         bool has_type() const;
         void set_type(const ST_GradientType::Type& _type);
         const ST_GradientType::Type& get_type() const;
@@ -2500,6 +2564,7 @@ namespace ns_main {
         };
         ST_HorizontalAlignment();
         ST_HorizontalAlignment(const ST_HorizontalAlignment::Type& _type);
+        ~ST_HorizontalAlignment();
         bool has_type() const;
         void set_type(const ST_HorizontalAlignment::Type& _type);
         const ST_HorizontalAlignment::Type& get_type() const;
@@ -2528,6 +2593,7 @@ namespace ns_main {
         };
         ST_VerticalAlignment();
         ST_VerticalAlignment(const ST_VerticalAlignment::Type& _type);
+        ~ST_VerticalAlignment();
         bool has_type() const;
         void set_type(const ST_VerticalAlignment::Type& _type);
         const ST_VerticalAlignment::Type& get_type() const;
@@ -2548,6 +2614,7 @@ namespace ns_main {
     public:
         ST_NumFmtId();
         ST_NumFmtId(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_NumFmtId();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -2567,6 +2634,7 @@ namespace ns_main {
     public:
         ST_FontId();
         ST_FontId(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_FontId();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -2586,6 +2654,7 @@ namespace ns_main {
     public:
         ST_FillId();
         ST_FillId(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_FillId();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -2605,6 +2674,7 @@ namespace ns_main {
     public:
         ST_BorderId();
         ST_BorderId(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_BorderId();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -2624,6 +2694,7 @@ namespace ns_main {
     public:
         ST_CellStyleXfId();
         ST_CellStyleXfId(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_CellStyleXfId();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -2643,6 +2714,7 @@ namespace ns_main {
     public:
         ST_DxfId();
         ST_DxfId(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_DxfId();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -2693,6 +2765,7 @@ namespace ns_main {
         };
         ST_TableStyleType();
         ST_TableStyleType(const ST_TableStyleType::Type& _type);
+        ~ST_TableStyleType();
         bool has_type() const;
         void set_type(const ST_TableStyleType::Type& _type);
         const ST_TableStyleType::Type& get_type() const;
@@ -2719,6 +2792,7 @@ namespace ns_main {
         };
         ST_FontScheme();
         ST_FontScheme(const ST_FontScheme::Type& _type);
+        ~ST_FontScheme();
         bool has_type() const;
         void set_type(const ST_FontScheme::Type& _type);
         const ST_FontScheme::Type& get_type() const;
@@ -2747,6 +2821,7 @@ namespace ns_main {
         };
         ST_UnderlineValues();
         ST_UnderlineValues(const ST_UnderlineValues::Type& _type);
+        ~ST_UnderlineValues();
         bool has_type() const;
         void set_type(const ST_UnderlineValues::Type& _type);
         const ST_UnderlineValues::Type& get_type() const;
@@ -2767,6 +2842,7 @@ namespace ns_main {
     public:
         ST_FontFamily();
         ST_FontFamily(const XSD::integer_& _integer);
+        ~ST_FontFamily();
         bool has_integer() const;
         void set_integer(const XSD::integer_& _integer);
         const XSD::integer_& get_integer() const;
@@ -2794,6 +2870,7 @@ namespace ns_main {
         };
         ST_DdeValueType();
         ST_DdeValueType(const ST_DdeValueType::Type& _type);
+        ~ST_DdeValueType();
         bool has_type() const;
         void set_type(const ST_DdeValueType::Type& _type);
         const ST_DdeValueType::Type& get_type() const;
@@ -2820,6 +2897,7 @@ namespace ns_main {
         };
         ST_TableType();
         ST_TableType(const ST_TableType::Type& _type);
+        ~ST_TableType();
         bool has_type() const;
         void set_type(const ST_TableType::Type& _type);
         const ST_TableType::Type& get_type() const;
@@ -2853,6 +2931,7 @@ namespace ns_main {
         };
         ST_TotalsRowFunction();
         ST_TotalsRowFunction(const ST_TotalsRowFunction::Type& _type);
+        ~ST_TotalsRowFunction();
         bool has_type() const;
         void set_type(const ST_TotalsRowFunction::Type& _type);
         const ST_TotalsRowFunction::Type& get_type() const;
@@ -2873,6 +2952,7 @@ namespace ns_main {
     public:
         ST_XmlDataType();
         ST_XmlDataType(const XSD::string_& _string);
+        ~ST_XmlDataType();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -2897,6 +2977,7 @@ namespace ns_main {
         };
         ST_VolDepType();
         ST_VolDepType(const ST_VolDepType::Type& _type);
+        ~ST_VolDepType();
         bool has_type() const;
         void set_type(const ST_VolDepType::Type& _type);
         const ST_VolDepType::Type& get_type() const;
@@ -2924,6 +3005,7 @@ namespace ns_main {
         };
         ST_VolValueType();
         ST_VolValueType(const ST_VolValueType::Type& _type);
+        ~ST_VolValueType();
         bool has_type() const;
         void set_type(const ST_VolValueType::Type& _type);
         const ST_VolValueType::Type& get_type() const;
@@ -2950,6 +3032,7 @@ namespace ns_main {
         };
         ST_Visibility();
         ST_Visibility(const ST_Visibility::Type& _type);
+        ~ST_Visibility();
         bool has_type() const;
         void set_type(const ST_Visibility::Type& _type);
         const ST_Visibility::Type& get_type() const;
@@ -2976,6 +3059,7 @@ namespace ns_main {
         };
         ST_Comments();
         ST_Comments(const ST_Comments::Type& _type);
+        ~ST_Comments();
         bool has_type() const;
         void set_type(const ST_Comments::Type& _type);
         const ST_Comments::Type& get_type() const;
@@ -3002,6 +3086,7 @@ namespace ns_main {
         };
         ST_Objects();
         ST_Objects(const ST_Objects::Type& _type);
+        ~ST_Objects();
         bool has_type() const;
         void set_type(const ST_Objects::Type& _type);
         const ST_Objects::Type& get_type() const;
@@ -3028,6 +3113,7 @@ namespace ns_main {
         };
         ST_SheetState();
         ST_SheetState(const ST_SheetState::Type& _type);
+        ~ST_SheetState();
         bool has_type() const;
         void set_type(const ST_SheetState::Type& _type);
         const ST_SheetState::Type& get_type() const;
@@ -3054,6 +3140,7 @@ namespace ns_main {
         };
         ST_UpdateLinks();
         ST_UpdateLinks(const ST_UpdateLinks::Type& _type);
+        ~ST_UpdateLinks();
         bool has_type() const;
         void set_type(const ST_UpdateLinks::Type& _type);
         const ST_UpdateLinks::Type& get_type() const;
@@ -3080,6 +3167,7 @@ namespace ns_main {
         };
         ST_SmartTagShow();
         ST_SmartTagShow(const ST_SmartTagShow::Type& _type);
+        ~ST_SmartTagShow();
         bool has_type() const;
         void set_type(const ST_SmartTagShow::Type& _type);
         const ST_SmartTagShow::Type& get_type() const;
@@ -3106,6 +3194,7 @@ namespace ns_main {
         };
         ST_CalcMode();
         ST_CalcMode(const ST_CalcMode::Type& _type);
+        ~ST_CalcMode();
         bool has_type() const;
         void set_type(const ST_CalcMode::Type& _type);
         const ST_CalcMode::Type& get_type() const;
@@ -3131,6 +3220,7 @@ namespace ns_main {
         };
         ST_RefMode();
         ST_RefMode(const ST_RefMode::Type& _type);
+        ~ST_RefMode();
         bool has_type() const;
         void set_type(const ST_RefMode::Type& _type);
         const ST_RefMode::Type& get_type() const;
@@ -3165,6 +3255,7 @@ namespace ns_main {
         };
         ST_TargetScreenSize();
         ST_TargetScreenSize(const ST_TargetScreenSize::Type& _type);
+        ~ST_TargetScreenSize();
         bool has_type() const;
         void set_type(const ST_TargetScreenSize::Type& _type);
         const ST_TargetScreenSize::Type& get_type() const;

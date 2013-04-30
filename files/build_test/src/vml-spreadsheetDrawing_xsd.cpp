@@ -23,6 +23,9 @@ namespace ns_x {
     
     set_string(_string);
     }
+    ST_CF::~ST_CF()
+{
+    clear();    }
     bool ST_CF::has_string() const
     {    
     return m_has_string;
@@ -81,6 +84,9 @@ ST_CF* ST_CF::default_instance_ = NULL;
     m_type(_type)
     {
     }
+    ST_ObjectType::~ST_ObjectType()
+{
+    clear();    }
     bool ST_ObjectType::has_type() const
     {    
     return m_has_type;

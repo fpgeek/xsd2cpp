@@ -261,6 +261,7 @@ namespace ns_p {
         };
         ST_TransitionSideDirectionType();
         ST_TransitionSideDirectionType(const ST_TransitionSideDirectionType::Type& _type);
+        ~ST_TransitionSideDirectionType();
         bool has_type() const;
         void set_type(const ST_TransitionSideDirectionType::Type& _type);
         const ST_TransitionSideDirectionType::Type& get_type() const;
@@ -288,6 +289,7 @@ namespace ns_p {
         };
         ST_TransitionCornerDirectionType();
         ST_TransitionCornerDirectionType(const ST_TransitionCornerDirectionType::Type& _type);
+        ~ST_TransitionCornerDirectionType();
         bool has_type() const;
         void set_type(const ST_TransitionCornerDirectionType::Type& _type);
         const ST_TransitionCornerDirectionType::Type& get_type() const;
@@ -313,6 +315,7 @@ namespace ns_p {
         };
         ST_TransitionInOutDirectionType();
         ST_TransitionInOutDirectionType(const ST_TransitionInOutDirectionType::Type& _type);
+        ~ST_TransitionInOutDirectionType();
         bool has_type() const;
         void set_type(const ST_TransitionInOutDirectionType::Type& _type);
         const ST_TransitionInOutDirectionType::Type& get_type() const;
@@ -332,6 +335,7 @@ namespace ns_p {
     {
     public:
         ST_TransitionEightDirectionType();
+        ~ST_TransitionEightDirectionType();
         bool has_ST_TransitionSideDirectionType() const;
         ST_TransitionSideDirectionType* mutable_ST_TransitionSideDirectionType();
         const ST_TransitionSideDirectionType& get_ST_TransitionSideDirectionType() const;
@@ -364,6 +368,7 @@ namespace ns_p {
         };
         ST_TransitionSpeed();
         ST_TransitionSpeed(const ST_TransitionSpeed::Type& _type);
+        ~ST_TransitionSpeed();
         bool has_type() const;
         void set_type(const ST_TransitionSpeed::Type& _type);
         const ST_TransitionSpeed::Type& get_type() const;
@@ -388,6 +393,7 @@ namespace ns_p {
         };
         ST_TLTimeIndefinite();
         ST_TLTimeIndefinite(const ST_TLTimeIndefinite::Type& _type);
+        ~ST_TLTimeIndefinite();
         bool has_type() const;
         void set_type(const ST_TLTimeIndefinite::Type& _type);
         const ST_TLTimeIndefinite::Type& get_type() const;
@@ -407,6 +413,7 @@ namespace ns_p {
     {
     public:
         ST_TLTime();
+        ~ST_TLTime();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -433,6 +440,7 @@ namespace ns_p {
     public:
         ST_TLTimeNodeID();
         ST_TLTimeNodeID(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_TLTimeNodeID();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -458,6 +466,7 @@ namespace ns_p {
         };
         ST_IterateType();
         ST_IterateType(const ST_IterateType::Type& _type);
+        ~ST_IterateType();
         bool has_type() const;
         void set_type(const ST_IterateType::Type& _type);
         const ST_IterateType::Type& get_type() const;
@@ -486,6 +495,7 @@ namespace ns_p {
         };
         ST_TLChartSubelementType();
         ST_TLChartSubelementType(const ST_TLChartSubelementType::Type& _type);
+        ~ST_TLChartSubelementType();
         bool has_type() const;
         void set_type(const ST_TLChartSubelementType::Type& _type);
         const ST_TLChartSubelementType::Type& get_type() const;
@@ -512,6 +522,7 @@ namespace ns_p {
         };
         ST_TLTriggerRuntimeNode();
         ST_TLTriggerRuntimeNode(const ST_TLTriggerRuntimeNode::Type& _type);
+        ~ST_TLTriggerRuntimeNode();
         bool has_type() const;
         void set_type(const ST_TLTriggerRuntimeNode::Type& _type);
         const ST_TLTriggerRuntimeNode::Type& get_type() const;
@@ -546,6 +557,7 @@ namespace ns_p {
         };
         ST_TLTriggerEvent();
         ST_TLTriggerEvent(const ST_TLTriggerEvent::Type& _type);
+        ~ST_TLTriggerEvent();
         bool has_type() const;
         void set_type(const ST_TLTriggerEvent::Type& _type);
         const ST_TLTriggerEvent::Type& get_type() const;
@@ -575,6 +587,7 @@ namespace ns_p {
         };
         ST_TLTimeNodePresetClassType();
         ST_TLTimeNodePresetClassType(const ST_TLTimeNodePresetClassType::Type& _type);
+        ~ST_TLTimeNodePresetClassType();
         bool has_type() const;
         void set_type(const ST_TLTimeNodePresetClassType::Type& _type);
         const ST_TLTimeNodePresetClassType::Type& get_type() const;
@@ -601,6 +614,7 @@ namespace ns_p {
         };
         ST_TLTimeNodeRestartType();
         ST_TLTimeNodeRestartType(const ST_TLTimeNodeRestartType::Type& _type);
+        ~ST_TLTimeNodeRestartType();
         bool has_type() const;
         void set_type(const ST_TLTimeNodeRestartType::Type& _type);
         const ST_TLTimeNodeRestartType::Type& get_type() const;
@@ -628,6 +642,7 @@ namespace ns_p {
         };
         ST_TLTimeNodeFillType();
         ST_TLTimeNodeFillType(const ST_TLTimeNodeFillType::Type& _type);
+        ~ST_TLTimeNodeFillType();
         bool has_type() const;
         void set_type(const ST_TLTimeNodeFillType::Type& _type);
         const ST_TLTimeNodeFillType::Type& get_type() const;
@@ -653,6 +668,7 @@ namespace ns_p {
         };
         ST_TLTimeNodeSyncType();
         ST_TLTimeNodeSyncType(const ST_TLTimeNodeSyncType::Type& _type);
+        ~ST_TLTimeNodeSyncType();
         bool has_type() const;
         void set_type(const ST_TLTimeNodeSyncType::Type& _type);
         const ST_TLTimeNodeSyncType::Type& get_type() const;
@@ -679,6 +695,7 @@ namespace ns_p {
         };
         ST_TLTimeNodeMasterRelation();
         ST_TLTimeNodeMasterRelation(const ST_TLTimeNodeMasterRelation::Type& _type);
+        ~ST_TLTimeNodeMasterRelation();
         bool has_type() const;
         void set_type(const ST_TLTimeNodeMasterRelation::Type& _type);
         const ST_TLTimeNodeMasterRelation::Type& get_type() const;
@@ -711,6 +728,7 @@ namespace ns_p {
         };
         ST_TLTimeNodeType();
         ST_TLTimeNodeType(const ST_TLTimeNodeType::Type& _type);
+        ~ST_TLTimeNodeType();
         bool has_type() const;
         void set_type(const ST_TLTimeNodeType::Type& _type);
         const ST_TLTimeNodeType::Type& get_type() const;
@@ -736,6 +754,7 @@ namespace ns_p {
         };
         ST_TLNextActionType();
         ST_TLNextActionType(const ST_TLNextActionType::Type& _type);
+        ~ST_TLNextActionType();
         bool has_type() const;
         void set_type(const ST_TLNextActionType::Type& _type);
         const ST_TLNextActionType::Type& get_type() const;
@@ -761,6 +780,7 @@ namespace ns_p {
         };
         ST_TLPreviousActionType();
         ST_TLPreviousActionType(const ST_TLPreviousActionType::Type& _type);
+        ~ST_TLPreviousActionType();
         bool has_type() const;
         void set_type(const ST_TLPreviousActionType::Type& _type);
         const ST_TLPreviousActionType::Type& get_type() const;
@@ -789,6 +809,7 @@ namespace ns_p {
         };
         ST_TLBehaviorAdditiveType();
         ST_TLBehaviorAdditiveType(const ST_TLBehaviorAdditiveType::Type& _type);
+        ~ST_TLBehaviorAdditiveType();
         bool has_type() const;
         void set_type(const ST_TLBehaviorAdditiveType::Type& _type);
         const ST_TLBehaviorAdditiveType::Type& get_type() const;
@@ -814,6 +835,7 @@ namespace ns_p {
         };
         ST_TLBehaviorAccumulateType();
         ST_TLBehaviorAccumulateType(const ST_TLBehaviorAccumulateType::Type& _type);
+        ~ST_TLBehaviorAccumulateType();
         bool has_type() const;
         void set_type(const ST_TLBehaviorAccumulateType::Type& _type);
         const ST_TLBehaviorAccumulateType::Type& get_type() const;
@@ -839,6 +861,7 @@ namespace ns_p {
         };
         ST_TLBehaviorTransformType();
         ST_TLBehaviorTransformType(const ST_TLBehaviorTransformType::Type& _type);
+        ~ST_TLBehaviorTransformType();
         bool has_type() const;
         void set_type(const ST_TLBehaviorTransformType::Type& _type);
         const ST_TLBehaviorTransformType::Type& get_type() const;
@@ -864,6 +887,7 @@ namespace ns_p {
         };
         ST_TLBehaviorOverrideType();
         ST_TLBehaviorOverrideType(const ST_TLBehaviorOverrideType::Type& _type);
+        ~ST_TLBehaviorOverrideType();
         bool has_type() const;
         void set_type(const ST_TLBehaviorOverrideType::Type& _type);
         const ST_TLBehaviorOverrideType::Type& get_type() const;
@@ -883,6 +907,7 @@ namespace ns_p {
     {
     public:
         ST_TLTimeAnimateValueTime();
+        ~ST_TLTimeAnimateValueTime();
         bool has_ST_PositiveFixedPercentage() const;
         ns_a::ST_PositiveFixedPercentage* mutable_ST_PositiveFixedPercentage();
         const ns_a::ST_PositiveFixedPercentage& get_ST_PositiveFixedPercentage() const;
@@ -915,6 +940,7 @@ namespace ns_p {
         };
         ST_TLAnimateBehaviorCalcMode();
         ST_TLAnimateBehaviorCalcMode(const ST_TLAnimateBehaviorCalcMode::Type& _type);
+        ~ST_TLAnimateBehaviorCalcMode();
         bool has_type() const;
         void set_type(const ST_TLAnimateBehaviorCalcMode::Type& _type);
         const ST_TLAnimateBehaviorCalcMode::Type& get_type() const;
@@ -941,6 +967,7 @@ namespace ns_p {
         };
         ST_TLAnimateBehaviorValueType();
         ST_TLAnimateBehaviorValueType(const ST_TLAnimateBehaviorValueType::Type& _type);
+        ~ST_TLAnimateBehaviorValueType();
         bool has_type() const;
         void set_type(const ST_TLAnimateBehaviorValueType::Type& _type);
         const ST_TLAnimateBehaviorValueType::Type& get_type() const;
@@ -966,6 +993,7 @@ namespace ns_p {
         };
         ST_TLAnimateColorSpace();
         ST_TLAnimateColorSpace(const ST_TLAnimateColorSpace::Type& _type);
+        ~ST_TLAnimateColorSpace();
         bool has_type() const;
         void set_type(const ST_TLAnimateColorSpace::Type& _type);
         const ST_TLAnimateColorSpace::Type& get_type() const;
@@ -991,6 +1019,7 @@ namespace ns_p {
         };
         ST_TLAnimateColorDirection();
         ST_TLAnimateColorDirection(const ST_TLAnimateColorDirection::Type& _type);
+        ~ST_TLAnimateColorDirection();
         bool has_type() const;
         void set_type(const ST_TLAnimateColorDirection::Type& _type);
         const ST_TLAnimateColorDirection::Type& get_type() const;
@@ -1017,6 +1046,7 @@ namespace ns_p {
         };
         ST_TLAnimateEffectTransition();
         ST_TLAnimateEffectTransition(const ST_TLAnimateEffectTransition::Type& _type);
+        ~ST_TLAnimateEffectTransition();
         bool has_type() const;
         void set_type(const ST_TLAnimateEffectTransition::Type& _type);
         const ST_TLAnimateEffectTransition::Type& get_type() const;
@@ -1042,6 +1072,7 @@ namespace ns_p {
         };
         ST_TLAnimateMotionBehaviorOrigin();
         ST_TLAnimateMotionBehaviorOrigin(const ST_TLAnimateMotionBehaviorOrigin::Type& _type);
+        ~ST_TLAnimateMotionBehaviorOrigin();
         bool has_type() const;
         void set_type(const ST_TLAnimateMotionBehaviorOrigin::Type& _type);
         const ST_TLAnimateMotionBehaviorOrigin::Type& get_type() const;
@@ -1067,6 +1098,7 @@ namespace ns_p {
         };
         ST_TLAnimateMotionPathEditMode();
         ST_TLAnimateMotionPathEditMode(const ST_TLAnimateMotionPathEditMode::Type& _type);
+        ~ST_TLAnimateMotionPathEditMode();
         bool has_type() const;
         void set_type(const ST_TLAnimateMotionPathEditMode::Type& _type);
         const ST_TLAnimateMotionPathEditMode::Type& get_type() const;
@@ -1093,6 +1125,7 @@ namespace ns_p {
         };
         ST_TLCommandType();
         ST_TLCommandType(const ST_TLCommandType::Type& _type);
+        ~ST_TLCommandType();
         bool has_type() const;
         void set_type(const ST_TLCommandType::Type& _type);
         const ST_TLCommandType::Type& get_type() const;
@@ -1120,6 +1153,7 @@ namespace ns_p {
         };
         ST_TLParaBuildType();
         ST_TLParaBuildType(const ST_TLParaBuildType::Type& _type);
+        ~ST_TLParaBuildType();
         bool has_type() const;
         void set_type(const ST_TLParaBuildType::Type& _type);
         const ST_TLParaBuildType::Type& get_type() const;
@@ -1160,6 +1194,7 @@ namespace ns_p {
         };
         ST_TLDiagramBuildType();
         ST_TLDiagramBuildType(const ST_TLDiagramBuildType::Type& _type);
+        ~ST_TLDiagramBuildType();
         bool has_type() const;
         void set_type(const ST_TLDiagramBuildType::Type& _type);
         const ST_TLDiagramBuildType::Type& get_type() const;
@@ -1188,6 +1223,7 @@ namespace ns_p {
         };
         ST_TLOleChartBuildType();
         ST_TLOleChartBuildType(const ST_TLOleChartBuildType::Type& _type);
+        ~ST_TLOleChartBuildType();
         bool has_type() const;
         void set_type(const ST_TLOleChartBuildType::Type& _type);
         const ST_TLOleChartBuildType::Type& get_type() const;
@@ -1208,6 +1244,7 @@ namespace ns_p {
     public:
         ST_Name();
         ST_Name(const XSD::string_& _string);
+        ~ST_Name();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -1232,6 +1269,7 @@ namespace ns_p {
         };
         ST_Direction();
         ST_Direction(const ST_Direction::Type& _type);
+        ~ST_Direction();
         bool has_type() const;
         void set_type(const ST_Direction::Type& _type);
         const ST_Direction::Type& get_type() const;
@@ -1252,6 +1290,7 @@ namespace ns_p {
     public:
         ST_Index();
         ST_Index(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_Index();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -1277,6 +1316,7 @@ namespace ns_p {
         };
         ST_OleObjectFollowColorScheme();
         ST_OleObjectFollowColorScheme(const ST_OleObjectFollowColorScheme::Type& _type);
+        ~ST_OleObjectFollowColorScheme();
         bool has_type() const;
         void set_type(const ST_OleObjectFollowColorScheme::Type& _type);
         const ST_OleObjectFollowColorScheme::Type& get_type() const;
@@ -1297,6 +1337,7 @@ namespace ns_p {
     public:
         ST_SlideId();
         ST_SlideId(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_SlideId();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -1316,6 +1357,7 @@ namespace ns_p {
     public:
         ST_SlideMasterId();
         ST_SlideMasterId(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_SlideMasterId();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -1345,6 +1387,7 @@ namespace ns_p {
         };
         ST_PhotoAlbumLayout();
         ST_PhotoAlbumLayout(const ST_PhotoAlbumLayout::Type& _type);
+        ~ST_PhotoAlbumLayout();
         bool has_type() const;
         void set_type(const ST_PhotoAlbumLayout::Type& _type);
         const ST_PhotoAlbumLayout::Type& get_type() const;
@@ -1375,6 +1418,7 @@ namespace ns_p {
         };
         ST_PhotoAlbumFrameShape();
         ST_PhotoAlbumFrameShape(const ST_PhotoAlbumFrameShape::Type& _type);
+        ~ST_PhotoAlbumFrameShape();
         bool has_type() const;
         void set_type(const ST_PhotoAlbumFrameShape::Type& _type);
         const ST_PhotoAlbumFrameShape::Type& get_type() const;
@@ -1395,6 +1439,7 @@ namespace ns_p {
     public:
         ST_SlideSizeCoordinate();
         ST_SlideSizeCoordinate(const ns_a::ST_PositiveCoordinate32& _ST_PositiveCoordinate32);
+        ~ST_SlideSizeCoordinate();
         static const ST_SlideSizeCoordinate& default_instance();
     protected:
     private:
@@ -1425,6 +1470,7 @@ namespace ns_p {
         };
         ST_SlideSizeType();
         ST_SlideSizeType(const ST_SlideSizeType::Type& _type);
+        ~ST_SlideSizeType();
         bool has_type() const;
         void set_type(const ST_SlideSizeType::Type& _type);
         const ST_SlideSizeType::Type& get_type() const;
@@ -1445,6 +1491,7 @@ namespace ns_p {
     public:
         ST_BookmarkIdSeed();
         ST_BookmarkIdSeed(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_BookmarkIdSeed();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -1473,6 +1520,7 @@ namespace ns_p {
         };
         ST_WebColorType();
         ST_WebColorType(const ST_WebColorType::Type& _type);
+        ~ST_WebColorType();
         bool has_type() const;
         void set_type(const ST_WebColorType::Type& _type);
         const ST_WebColorType::Type& get_type() const;
@@ -1507,6 +1555,7 @@ namespace ns_p {
         };
         ST_WebScreenSize();
         ST_WebScreenSize(const ST_WebScreenSize::Type& _type);
+        ~ST_WebScreenSize();
         bool has_type() const;
         void set_type(const ST_WebScreenSize::Type& _type);
         const ST_WebScreenSize::Type& get_type() const;
@@ -1527,6 +1576,7 @@ namespace ns_p {
     public:
         ST_WebEncoding();
         ST_WebEncoding(const XSD::string_& _string);
+        ~ST_WebEncoding();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -1558,6 +1608,7 @@ namespace ns_p {
         };
         ST_PrintWhat();
         ST_PrintWhat(const ST_PrintWhat::Type& _type);
+        ~ST_PrintWhat();
         bool has_type() const;
         void set_type(const ST_PrintWhat::Type& _type);
         const ST_PrintWhat::Type& get_type() const;
@@ -1584,6 +1635,7 @@ namespace ns_p {
         };
         ST_PrintColorMode();
         ST_PrintColorMode(const ST_PrintColorMode::Type& _type);
+        ~ST_PrintColorMode();
         bool has_type() const;
         void set_type(const ST_PrintColorMode::Type& _type);
         const ST_PrintColorMode::Type& get_type() const;
@@ -1623,6 +1675,7 @@ namespace ns_p {
         };
         ST_PlaceholderType();
         ST_PlaceholderType(const ST_PlaceholderType::Type& _type);
+        ~ST_PlaceholderType();
         bool has_type() const;
         void set_type(const ST_PlaceholderType::Type& _type);
         const ST_PlaceholderType::Type& get_type() const;
@@ -1649,6 +1702,7 @@ namespace ns_p {
         };
         ST_PlaceholderSize();
         ST_PlaceholderSize(const ST_PlaceholderSize::Type& _type);
+        ~ST_PlaceholderSize();
         bool has_type() const;
         void set_type(const ST_PlaceholderSize::Type& _type);
         const ST_PlaceholderSize::Type& get_type() const;
@@ -1708,6 +1762,7 @@ namespace ns_p {
         };
         ST_SlideLayoutType();
         ST_SlideLayoutType(const ST_SlideLayoutType::Type& _type);
+        ~ST_SlideLayoutType();
         bool has_type() const;
         void set_type(const ST_SlideLayoutType::Type& _type);
         const ST_SlideLayoutType::Type& get_type() const;
@@ -1728,6 +1783,7 @@ namespace ns_p {
     public:
         ST_SlideLayoutId();
         ST_SlideLayoutId(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_SlideLayoutId();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -1753,6 +1809,7 @@ namespace ns_p {
         };
         ST_SplitterBarState();
         ST_SplitterBarState(const ST_SplitterBarState::Type& _type);
+        ~ST_SplitterBarState();
         bool has_type() const;
         void set_type(const ST_SplitterBarState::Type& _type);
         const ST_SplitterBarState::Type& get_type() const;
@@ -1784,6 +1841,7 @@ namespace ns_p {
         };
         ST_ViewType();
         ST_ViewType(const ST_ViewType::Type& _type);
+        ~ST_ViewType();
         bool has_type() const;
         void set_type(const ST_ViewType::Type& _type);
         const ST_ViewType::Type& get_type() const;

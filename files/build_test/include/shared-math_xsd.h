@@ -121,6 +121,7 @@ namespace ns_m {
     public:
         ST_Integer255();
         ST_Integer255(const XSD::integer_& _integer);
+        ~ST_Integer255();
         bool has_integer() const;
         void set_integer(const XSD::integer_& _integer);
         const XSD::integer_& get_integer() const;
@@ -140,6 +141,7 @@ namespace ns_m {
     public:
         ST_Integer2();
         ST_Integer2(const XSD::integer_& _integer);
+        ~ST_Integer2();
         bool has_integer() const;
         void set_integer(const XSD::integer_& _integer);
         const XSD::integer_& get_integer() const;
@@ -159,6 +161,7 @@ namespace ns_m {
     public:
         ST_SpacingRule();
         ST_SpacingRule(const XSD::integer_& _integer);
+        ~ST_SpacingRule();
         bool has_integer() const;
         void set_integer(const XSD::integer_& _integer);
         const XSD::integer_& get_integer() const;
@@ -178,6 +181,7 @@ namespace ns_m {
     public:
         ST_UnSignedInteger();
         ST_UnSignedInteger(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_UnSignedInteger();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -197,6 +201,7 @@ namespace ns_m {
     public:
         ST_Char();
         ST_Char(const XSD::string_& _string);
+        ~ST_Char();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -221,6 +226,7 @@ namespace ns_m {
         };
         ST_Shp();
         ST_Shp(const ST_Shp::Type& _type);
+        ~ST_Shp();
         bool has_type() const;
         void set_type(const ST_Shp::Type& _type);
         const ST_Shp::Type& get_type() const;
@@ -248,6 +254,7 @@ namespace ns_m {
         };
         ST_FType();
         ST_FType(const ST_FType::Type& _type);
+        ~ST_FType();
         bool has_type() const;
         void set_type(const ST_FType::Type& _type);
         const ST_FType::Type& get_type() const;
@@ -273,6 +280,7 @@ namespace ns_m {
         };
         ST_LimLoc();
         ST_LimLoc(const ST_LimLoc::Type& _type);
+        ~ST_LimLoc();
         bool has_type() const;
         void set_type(const ST_LimLoc::Type& _type);
         const ST_LimLoc::Type& get_type() const;
@@ -298,6 +306,7 @@ namespace ns_m {
         };
         ST_TopBot();
         ST_TopBot(const ST_TopBot::Type& _type);
+        ~ST_TopBot();
         bool has_type() const;
         void set_type(const ST_TopBot::Type& _type);
         const ST_TopBot::Type& get_type() const;
@@ -327,6 +336,7 @@ namespace ns_m {
         };
         ST_Script();
         ST_Script(const ST_Script::Type& _type);
+        ~ST_Script();
         bool has_type() const;
         void set_type(const ST_Script::Type& _type);
         const ST_Script::Type& get_type() const;
@@ -354,6 +364,7 @@ namespace ns_m {
         };
         ST_Style();
         ST_Style(const ST_Style::Type& _type);
+        ~ST_Style();
         bool has_type() const;
         void set_type(const ST_Style::Type& _type);
         const ST_Style::Type& get_type() const;
@@ -381,6 +392,7 @@ namespace ns_m {
         };
         ST_Jc();
         ST_Jc(const ST_Jc::Type& _type);
+        ~ST_Jc();
         bool has_type() const;
         void set_type(const ST_Jc::Type& _type);
         const ST_Jc::Type& get_type() const;
@@ -407,6 +419,7 @@ namespace ns_m {
         };
         ST_BreakBin();
         ST_BreakBin(const ST_BreakBin::Type& _type);
+        ~ST_BreakBin();
         bool has_type() const;
         void set_type(const ST_BreakBin::Type& _type);
         const ST_BreakBin::Type& get_type() const;
@@ -433,6 +446,7 @@ namespace ns_m {
         };
         ST_BreakBinSub();
         ST_BreakBinSub(const ST_BreakBinSub::Type& _type);
+        ~ST_BreakBinSub();
         bool has_type() const;
         void set_type(const ST_BreakBinSub::Type& _type);
         const ST_BreakBinSub::Type& get_type() const;

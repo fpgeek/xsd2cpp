@@ -66,6 +66,7 @@ namespace ns_wp {
     public:
         ST_WrapDistance();
         ST_WrapDistance(const XSD::unsignedInt_& _unsignedInt);
+        ~ST_WrapDistance();
         bool has_unsignedInt() const;
         void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
         const XSD::unsignedInt_& get_unsignedInt() const;
@@ -92,6 +93,7 @@ namespace ns_wp {
         };
         ST_WrapText();
         ST_WrapText(const ST_WrapText::Type& _type);
+        ~ST_WrapText();
         bool has_type() const;
         void set_type(const ST_WrapText::Type& _type);
         const ST_WrapText::Type& get_type() const;
@@ -112,6 +114,7 @@ namespace ns_wp {
     public:
         ST_PositionOffset();
         ST_PositionOffset(const XSD::int_& _int);
+        ~ST_PositionOffset();
         bool has_int() const;
         void set_int(const XSD::int_& _int);
         const XSD::int_& get_int() const;
@@ -139,6 +142,7 @@ namespace ns_wp {
         };
         ST_AlignH();
         ST_AlignH(const ST_AlignH::Type& _type);
+        ~ST_AlignH();
         bool has_type() const;
         void set_type(const ST_AlignH::Type& _type);
         const ST_AlignH::Type& get_type() const;
@@ -170,6 +174,7 @@ namespace ns_wp {
         };
         ST_RelFromH();
         ST_RelFromH(const ST_RelFromH::Type& _type);
+        ~ST_RelFromH();
         bool has_type() const;
         void set_type(const ST_RelFromH::Type& _type);
         const ST_RelFromH::Type& get_type() const;
@@ -198,6 +203,7 @@ namespace ns_wp {
         };
         ST_AlignV();
         ST_AlignV(const ST_AlignV::Type& _type);
+        ~ST_AlignV();
         bool has_type() const;
         void set_type(const ST_AlignV::Type& _type);
         const ST_AlignV::Type& get_type() const;
@@ -229,6 +235,7 @@ namespace ns_wp {
         };
         ST_RelFromV();
         ST_RelFromV(const ST_RelFromV::Type& _type);
+        ~ST_RelFromV();
         bool has_type() const;
         void set_type(const ST_RelFromV::Type& _type);
         const ST_RelFromV::Type& get_type() const;

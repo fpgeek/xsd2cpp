@@ -35,6 +35,7 @@ namespace ns_x {
     public:
         ST_CF();
         ST_CF(const XSD::string_& _string);
+        ~ST_CF();
         bool has_string() const;
         void set_string(const XSD::string_& _string);
         const XSD::string_& get_string() const;
@@ -76,6 +77,7 @@ namespace ns_x {
         };
         ST_ObjectType();
         ST_ObjectType(const ST_ObjectType::Type& _type);
+        ~ST_ObjectType();
         bool has_type() const;
         void set_type(const ST_ObjectType::Type& _type);
         const ST_ObjectType::Type& get_type() const;
