@@ -82279,7 +82279,7 @@ CT_Hyperlink* CT_Hyperlink::default_instance_ = NULL;
     
     m_has_bx_attr = false;
     m_bx_attr = false;
-    }
+    ST_Formula::clear();    }
 
     void CT_CellFormula::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -82362,7 +82362,7 @@ CT_Hyperlink* CT_Hyperlink::default_instance_ = NULL;
     }
     
             _outStream << ">";
-            
+            _outStream << toString();
             _outStream << "</" << _elemName << ">";
                 }
 
@@ -108554,7 +108554,7 @@ CT_TableColumn* CT_TableColumn::default_instance_ = NULL;
     {    
     m_has_array_attr = false;
     m_array_attr = false;
-    }
+    ST_Formula::clear();    }
 
     void CT_TableFormula::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -108571,7 +108571,7 @@ CT_TableColumn* CT_TableColumn::default_instance_ = NULL;
     }
     
             _outStream << ">";
-            
+            _outStream << toString();
             _outStream << "</" << _elemName << ">";
                 }
 
@@ -113931,7 +113931,7 @@ CT_DefinedNames* CT_DefinedNames::default_instance_ = NULL;
     
     m_has_workbookParameter_attr = false;
     m_workbookParameter_attr = false;
-    }
+    ST_Formula::clear();    }
 
     void CT_DefinedName::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -114032,7 +114032,7 @@ CT_DefinedNames* CT_DefinedNames::default_instance_ = NULL;
     }
     
             _outStream << ">";
-            
+            _outStream << toString();
             _outStream << "</" << _elemName << ">";
                 }
 

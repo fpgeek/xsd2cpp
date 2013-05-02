@@ -2247,8 +2247,8 @@ CT_RPR* CT_RPR::default_instance_ = NULL;
 
     // CT_Text
     CT_Text::CT_Text()
-    :m_has__attr(false),
-    m__attr("")
+    :m_has_xml_space_attr(false),
+    m_xml_space_attr(NULL)
     {
     }
     CT_Text::~CT_Text()
@@ -2256,9 +2256,15 @@ CT_RPR* CT_RPR::default_instance_ = NULL;
     clear();    }
     void CT_Text::clear()
     {    
-    m_has__attr = false;
-    m__attr.clear();
+    m_has_xml_space_attr = false;
+    
+    if (m_xml_space_attr)
+    {
+        delete m_xml_space_attr;
+        m_xml_space_attr = NULL;
     }
+    
+    ns_s::ST_String::clear();    }
 
     void CT_Text::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -2269,13 +2275,13 @@ CT_RPR* CT_RPR::default_instance_ = NULL;
                 _outStream << _xmlNsStr;
             }
             
-    if (m_has__attr)
+    if (m_has_xml_space_attr)
     {
-        _outStream << " " << "m:" << "=\"" << m__attr << "\"";
+        m_xml_space_attr->toXmlAttr("xml:space", _outStream);
     }
     
             _outStream << ">";
-            
+            _outStream << toString();
             _outStream << "</" << _elemName << ">";
                 }
 
@@ -2288,20 +2294,24 @@ CT_RPR* CT_RPR::default_instance_ = NULL;
     return *CT_Text::default_instance_;
     }
 
-    bool CT_Text::has__attr() const
+    bool CT_Text::has_xml_space_attr() const
     {    
-    return m_has__attr;
+    return m_has_xml_space_attr;
     }
 
-    void CT_Text::set__attr(const XSD::ENTITIES_& __attr)
+    void CT_Text::set_xml_space_attr(const ns_xml::space& _xml_space_attr)
     {    
-    m_has__attr = true;
-    m__attr = __attr;
+    m_has_xml_space_attr = true;
+    m_xml_space_attr = new ns_xml::space(_xml_space_attr);
     }
 
-    const XSD::ENTITIES_& CT_Text::get__attr() const
+    const ns_xml::space& CT_Text::get_xml_space_attr() const
     {    
-    return m__attr;
+    if (m_xml_space_attr)
+    {
+        return *m_xml_space_attr;
+    }
+    return ns_xml::space::default_instance();
     }
 
 CT_Text* CT_Text::default_instance_ = NULL;

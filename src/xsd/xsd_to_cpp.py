@@ -43,11 +43,28 @@ def _makeToXmlElemMethodBody(pbSchema, pbComplexType, cppClass):
         _outStream << ">";
         """
     toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromElemCont(pbSchema, pbComplexType.element_container)
+
+    if pbComplexType.HasField('extension'):
+        if pbComplexType.extension.base.kind == PB.Base.BuiltIn:
+            toXmlMethodBodyStr += '_outStream << %s;' % getToStringVarNameFromBuiltIn(pbComplexType.extension.base.built_in)
+        elif pbComplexType.extension.base.kind == PB.Base.SimpleTypeName:
+            toXmlMethodBodyStr += '_outStream << toString();'
+        elif pbComplexType.extension.base.kind == PB.Base.ComplexTypeName:
+            pass # xsd_parser 쪽에서 처리
+
     toXmlMethodBodyStr += \
         """
         _outStream << "</" << _elemName << ">";
         """
     CPP_FUNC.makeToXmlElemMethod(toXmlMethodBodyStr, cppClass)
+
+
+def getToStringVarNameFromBuiltIn(pbBuiltIn):
+    builtInStr = CPP_FUNC.getBuiltInStr(pbBuiltIn)
+    if builtInStr == 'boolean':
+        return 'XSD::XMLBooleanStr(m_%s)' % CPP_FUNC.getCppVarName(builtInStr)
+    else:
+        return 'm_%s' % CPP_FUNC.getCppVarName(builtInStr)
 
 
 def _makeToXmlMethodBodyForElem(pbSchema, pbComplexType, cppClass, pbElem):
@@ -214,8 +231,9 @@ def _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass, toXmlMethodB
     cppClass.destructor.body = 'clear();'
 
     clearMethodBodyStr = CPP_FUNC.getClaerMethodBodyStrFromAttrs(pbComplexType.attribute)
-    # if len(cppClass.inner_class) > 0 or len(cppClass.member_var) > 0:
     clearMethodBodyStr += CPP_FUNC.getClearMethodBodyStrFromElemCont(pbComplexType.element_container)
+    if pbComplexType.HasField('extension'):
+        clearMethodBodyStr += CPP_FUNC.getClearMethodBodyStrFromExtension(pbComplexType.extension)
 
     CPP_FUNC.makeClearMethod(clearMethodBodyStr, cppClass)
 
@@ -234,6 +252,15 @@ def _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass, toXmlMethodB
         elif pbAttr.type.kind == PB.Attribute.Type.AnyAttribute:
             pass # TODO
             # CPP_FUNC.complexType_attr_anyAttribute(pbAttr.type.any, cppClass)
+
+    # extension 처리
+    if pbComplexType.HasField('extension'):
+        if pbComplexType.extension.base.kind == PB.Base.BuiltIn:
+            CPP_FUNC.simpleType_extension_builtIn(pbComplexType.extension, cppClass)
+        elif pbComplexType.extension.base.kind == PB.Base.SimpleTypeName:
+            cppClass.parent_class.append(_getCppVarType(pbComplexType.extension.base.simple_type_name))
+        elif pbComplexType.extension.base.kind == PB.Base.ComplexTypeName:
+            pass
 
 
 # SimpleType을 class로 만들기

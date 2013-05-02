@@ -198,6 +198,9 @@ class ALL_SCHEMA:
     def _findComplexType(self, xmlSchema, complexTypeName):
         return self._findXsdElement(xmlSchema, complexTypeName, xmlSchema.complexTypeElems, self._findComplexType)
 
+    def _findSimpleType(self, xmlSchema, simpleTypeName):
+        return self._findXsdElement(xmlSchema, simpleTypeName, xmlSchema.simpleTypeElems, self._findSimpleType)
+
     def _findAttributeGroup(self, xmlSchema, refVal):
         return self._findXsdElement(xmlSchema, refVal, xmlSchema.attributeGroupElems, self._findAttributeGroup)
 
@@ -258,6 +261,7 @@ class ALL_SCHEMA:
         base = extensionElem.attrib.get('base')
         if base:
             pbBase = self._parseBaseAttr(xmlSchema, base)
+            pbComplexType.extension.base.CopyFrom(pbBase)
             if pbBase.kind == PB.Base.ComplexTypeName:
                 findComplexTypeElem, otherXmlSchema = self._findComplexType(xmlSchema, pbBase.complex_type_name)
                 pbBaseComplexType = PB.ComplexType()
@@ -552,20 +556,26 @@ class ALL_SCHEMA:
 
         ref = attributeElem.attrib.get('ref')
         if ref:
-            attrNsPrefix = getPrefixFromName(ref)
-            if attrNsPrefix:
-                nsPrefix = attrNsPrefix
-                if nsPrefix != 'xml':
-                    pbAttribute.ref_ns_prefix = nsPrefix
-            otherAttrElem, otherSchema = self._findAttribute(xmlSchema, ref)
-            if otherAttrElem is not None:
-                self._parseAttribute(otherSchema, otherAttrElem, pbAttribute, nsPrefix)
-            elif nsPrefix == 'xml':
-                pass # TODO
+            if ref == 'xml:space':
+                pbAttribute.type.kind = PB.Attribute.Type.SimpleTypeName
+                pbAttribute.name = 'space'
+                pbAttribute.type.simple_type_name = 'xml:space'
+                pbAttribute.ref_ns_prefix = 'xml'
             else:
-                print attributeElem
-                print ref
-                assert(False)
+                attrNsPrefix = getPrefixFromName(ref)
+                if attrNsPrefix:
+                    nsPrefix = attrNsPrefix
+                    if nsPrefix != 'xml':
+                        pbAttribute.ref_ns_prefix = nsPrefix
+                otherAttrElem, otherSchema = self._findAttribute(xmlSchema, ref)
+                if otherAttrElem is not None:
+                    self._parseAttribute(otherSchema, otherAttrElem, pbAttribute, nsPrefix)
+                elif nsPrefix == 'xml':
+                    pass # TODO
+                else:
+                    print attributeElem
+                    print ref
+                    assert(False)
 
         name = attributeElem.attrib.get('name')
         if name: pbAttribute.name = name
@@ -762,11 +772,14 @@ def applyBaseToComplexType(pbSource, pbDest):
         pbDest.attribute.add().CopyFrom(attr)
     pbDest.restriction.CopyFrom(pbSource.restriction)
 
+
 def isBuiltInType(typeName, builtInTypeMap):
     return (typeName in builtInTypeMap.keys())
 
+
 def hasNamespace(typeName):
     return (':' in typeName)
+
 
 def getPrefixFromNs(namespace):
     if namespace is None:
@@ -775,6 +788,7 @@ def getPrefixFromNs(namespace):
         return namespace.split(':')[1]
     else:
         return ''
+
 
 def getNameExceptNsPrefix(name):
     if name is None:

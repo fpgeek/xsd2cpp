@@ -14142,7 +14142,7 @@ namespace ns_main {
         ns_s::ST_Xstring* m_display_attr;
     };
 
-    class CT_CellFormula: public XSD::ComplexType
+    class CT_CellFormula: public XSD::ComplexType, public ST_Formula
     {
     public:
         CT_CellFormula();
@@ -19012,7 +19012,7 @@ namespace ns_main {
         ns_s::ST_Xstring* m_totalsRowCellStyle_attr;
     };
 
-    class CT_TableFormula: public XSD::ComplexType
+    class CT_TableFormula: public XSD::ComplexType, public ST_Formula
     {
     public:
         CT_TableFormula();
@@ -20047,7 +20047,7 @@ namespace ns_main {
         static CT_DefinedNames* default_instance_;
     };
 
-    class CT_DefinedName: public XSD::ComplexType
+    class CT_DefinedName: public XSD::ComplexType, public ST_Formula
     {
     public:
         CT_DefinedName();

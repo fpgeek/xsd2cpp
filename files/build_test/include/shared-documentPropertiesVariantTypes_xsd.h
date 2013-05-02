@@ -704,11 +704,17 @@ namespace ns_vt {
         bool has_version_attr() const;
         void set_version_attr(const ns_s::ST_Guid& _version_attr);
         const ns_s::ST_Guid& get_version_attr() const;
+        bool has_base64Binary() const;
+        void set_base64Binary(const XSD::base64Binary_& _base64Binary);
+        const XSD::base64Binary_& get_base64Binary() const;
+        std::string toString() const;
     protected:
     private:
         static CT_Vstream* default_instance_;
         bool m_has_version_attr;
         ns_s::ST_Guid* m_version_attr;
+        bool m_has_base64Binary;
+        XSD::base64Binary_ m_base64Binary;
     };
 
     class variant_element: public Element
@@ -1409,11 +1415,17 @@ namespace ns_vt {
         bool has_version_attr() const;
         void set_version_attr(const ns_s::ST_Guid& _version_attr);
         const ns_s::ST_Guid& get_version_attr() const;
+        bool has_base64Binary() const;
+        void set_base64Binary(const XSD::base64Binary_& _base64Binary);
+        const XSD::base64Binary_& get_base64Binary() const;
+        std::string toString() const;
     protected:
     private:
         static vstream_element* default_instance_;
         bool m_has_version_attr;
         ns_s::ST_Guid* m_version_attr;
+        bool m_has_base64Binary;
+        XSD::base64Binary_ m_base64Binary;
     };
 
     class clsid_element: public Element

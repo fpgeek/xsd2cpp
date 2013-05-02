@@ -8815,7 +8815,7 @@ namespace ns_w {
         ST_DecimalNumber* m_colLast_attr;
     };
 
-    class CT_Text: public XSD::ComplexType
+    class CT_Text: public XSD::ComplexType, public ns_s::ST_String
     {
     public:
         CT_Text();
@@ -8823,14 +8823,14 @@ namespace ns_w {
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Text& default_instance();
-        bool has__attr() const;
-        void set__attr(const XSD::ENTITIES_& __attr);
-        const XSD::ENTITIES_& get__attr() const;
+        bool has_xml_space_attr() const;
+        void set_xml_space_attr(const ns_xml::space& _xml_space_attr);
+        const ns_xml::space& get_xml_space_attr() const;
     protected:
     private:
         static CT_Text* default_instance_;
-        bool m_has__attr;
-        XSD::ENTITIES_ m__attr;
+        bool m_has_xml_space_attr;
+        ns_xml::space* m_xml_space_attr;
     };
 
     class CT_R: public XSD::ComplexType

@@ -37,6 +37,7 @@ message ComplexType {
 	repeated ElementContainer element_container = 2;
 	repeated Attribute attribute = 3;
 	optional Restriction restriction = 4;
+	optional Extension extension = 5;
 }
 
 message SimpleType {
@@ -66,6 +67,10 @@ message Base {
 	optional BuiltIn.Type built_in = 2;
 	optional string simple_type_name = 3;
 	optional string complex_type_name = 4;
+}
+
+message Extension {
+    required Base base = 1;
 }
 
 message Restriction {	
@@ -263,34 +268,3 @@ message BuiltIn {
 		NOTATION = 43;
 	}
 }
-
-//////////////////////
-/*message CT_Document {
-	optional CT_Background background = 1;
-	optional CT_Body body = 2;
-	optional s.ST_ConformanceClass conformance = 3;
-}
-
-message CT_Body {
-	message Choice {
-		optional CT_CustomXmlBlock customXml = 1;
-		optional CT_SdtBlock sdt = 2;
-		optional CT_P p = 3;
-		optional CT_Tbl tbl = 4;
-		//...
-	}
-	repeated Choice choice_1 = 1;
-	optional CT_SectPr sectPr = 2; 
-}
-
-message CT_P {
-	optional CT_PPr pPr = 1;
-	message Choice {
-		CT_CustomXmlRun customXml = 1;
-		// ...
-		CT_R r = 2;
-	}
-	repeated Choice choice_1 = 2;
-	optional ST_LongHexNumber rsidRPr = 3;
-	// ...
-}*/

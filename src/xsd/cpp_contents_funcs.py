@@ -4,6 +4,7 @@ __author__ = 'fpgeek'
 
 import xsd_pb2 as PB
 import cpp_pb2 as CPB
+import functools
 
 SEQUENCE = 0
 CHOICE = 1
@@ -158,7 +159,7 @@ def _getCppVarType(pbSTName):
 
 
 # cpp 변수명 가져오기
-def _getCppVarName(pbSTName):
+def getCppVarName(pbSTName):
     cppVarName = pbSTName
     if ':' in cppVarName:
         ns, name = cppVarName.split(':')
@@ -363,7 +364,7 @@ def _getCppVarTypeFromElem(pbElem):
 # Element로 부터 cpp var type 가져오기
 def _getCppVarNameFromElem(pbElem):
 
-    varName = _getCppVarName(pbElem.name)
+    varName = getCppVarName(pbElem.name)
     if pbElem.type.kind == PB.Element.Type.Any:
         return '%s_%s' % (pbElem.type.any.ns_prefix, varName)
     elif pbElem.ref_ns_prefix:
@@ -396,13 +397,13 @@ def _getCppNsPrefixFromAttr(pbAttr):
 
 # Element로 부터 cpp var type 가져오기
 def _getCppVarNameFromAttr(pbAttr):
-    varName = _getCppVarName(pbAttr.name)
+    varName = getCppVarName(pbAttr.name)
     if pbAttr.ref_ns_prefix:
         return '%s_%s' % (pbAttr.ref_ns_prefix, varName)
 
     return varName
 
-def _makeRestrictionSetMethodCode(pbRestriction, argName):
+def _makeRestrictionSetMethodCode(argName, pbRestriction):
     codeList = []
     if pbRestriction.HasField('min_exclusive'):
         codeList.append('assert(%(rest)s < %(arg)s);' % {'rest':pbRestriction.min_exclusive, 'arg':argName})
@@ -546,8 +547,8 @@ _outStream << " " << _attrName << "=\\\\"" << %s() << "\\\\"";
     memberVar2.type = '%s' % cppVarType
     memberVar2.name = varName
 
-def simpleType_restriction_builtIn(pbRestriction, cppClass):
-    pbBuiltIn = pbRestriction.base.built_in
+
+def _simpleType_base_builtIn(pbBuiltIn, cppClass, makeSetMethodAssertCode=None):
 
     cppVarName = getBuiltInStr(pbBuiltIn)
     cppVarType = 'XSD::%s_' % cppVarName
@@ -597,9 +598,10 @@ return %s;
     method2_var1.const = True
     method2.body = ''
 
-    restSetMethodCode = _makeRestrictionSetMethodCode(pbRestriction, method2_var1.name)
-    if restSetMethodCode != '':
-        method2.body += restSetMethodCode + '\n'
+    if makeSetMethodAssertCode:
+        restSetMethodCode = makeSetMethodAssertCode(method2_var1.name)
+        if restSetMethodCode != '':
+            method2.body += restSetMethodCode + '\n'
 
     method2.body += \
 """
@@ -654,6 +656,98 @@ strStream << %s();
 return strStream.str();
 """ % getMethod.name
 
+
+def simpleType_restriction_builtIn(pbRestriction, cppClass):
+    makeSetMethodAssertCode = functools.partial(_makeRestrictionSetMethodCode, pbRestriction=pbRestriction)
+    _simpleType_base_builtIn(pbRestriction.base.built_in, cppClass, makeSetMethodAssertCode)
+
+
+def simpleType_extension_builtIn(pbExtension, cppClass):
+    pbBuiltIn = pbExtension.base.built_in
+    cppVarName = getBuiltInStr(pbBuiltIn)
+    cppVarType = 'XSD::%s_' % cppVarName
+
+    hasVarName = 'm_has_%s' % cppVarName
+    varName = 'm_%s' % cppVarName
+
+    for cppConst in cppClass.constructor:
+        constInit1 = cppConst.const_init.add()
+        constInit1.name = hasVarName
+        constInit1.value = 'false'
+        constInit2 = cppConst.const_init.add()
+        constInit2.name = varName
+        constInit2.value = _getInitValueFromBuiltIn(pbBuiltIn)
+
+    method1 = cppClass.method.add()
+    method1.return_type = 'bool'
+    method1.name = 'has_%s' % cppVarName
+    method1.const = True
+    method1.body = \
+"""
+return %s;
+""" % hasVarName
+
+    method2 = cppClass.method.add()
+    method2.return_type = 'void'
+    method2.name = 'set_%s' % cppVarName
+    method2_var1 =  method2.argument.add()
+    method2_var1.type = '%s&' % cppVarType
+    method2_var1.name = '_%s' % cppVarName
+    method2_var1.const = True
+    method2.body = \
+"""
+%s = true;
+%s = %s;
+""" % (hasVarName, varName, method2_var1.name)
+
+    getMethod = cppClass.method.add()
+    getMethod.return_type = 'const %s&' % cppVarType
+    getMethod.name = 'get_%s' % cppVarName
+    getMethod.const = True
+    getMethod.body = \
+"""
+return %s;
+""" % varName
+
+#     clearMethodBody = \
+# """
+# %s = false;
+# %s;
+# """ % (hasVarName, _makeClearMethodStrFromBuiltIn(varName, pbBuiltIn))
+#     makeClearMethod(clearMethodBody, cppClass)
+
+#     toXmlMethodBody = \
+# """
+# if (%s)
+# {
+#     %s;
+# }
+# """ % (hasVarName, _makeToXmlMethodBodyFromAttrBuiltIn(cppVarType, varName))
+#     makeToXmlAttrMethod(toXmlMethodBody, cppClass)
+
+    # makeDefaultInstanceMethod(cppClass)
+    # makeDefaultInstanceMember(cppClass)
+
+    memberVar1 = cppClass.member_var.add()
+    memberVar1.type = 'bool'
+    memberVar1.name = hasVarName
+
+    memberVar2 = cppClass.member_var.add()
+    memberVar2.type = '%s' % cppVarType
+    memberVar2.name = varName
+
+    toStringMethod = cppClass.method.add()
+    toStringMethod.return_type = 'std::string'
+    toStringMethod.name = 'toString'
+    toStringMethod.const = True
+    toStringMethod.body = \
+"""
+std::stringstream strStream;
+strStream << %s();
+return strStream.str();
+""" % getMethod.name
+
+
 def simpleType_restriction_simpleTypeName(pbRestriction, cppClass):
     pbSTName = pbRestriction.base.simple_type_name
 
@@ -661,7 +755,7 @@ def simpleType_restriction_simpleTypeName(pbRestriction, cppClass):
 
     argument = cppClass.constructor.add().argument.add()
     argument.type = '%s&' % _getCppVarType(pbSTName)
-    argument.name = '_%s' % _getCppVarName(pbSTName)
+    argument.name = '_%s' % getCppVarName(pbSTName)
     argument.const = True
 
     cppClass.parent_class.remove('XSD::SimpleType')
@@ -709,8 +803,8 @@ def simpleType_union(pbSchema, pbUnion, cppClass):
 
         elif pbMemberType.kind == PB.Union.MemberType.SimpleTypeName:
             simpleType_union_simpleTypeName(pbMemberType.simple_type_name, pbUnionMemberNames, cppClass)
-            varName = 'm_%s' % _getCppVarName(pbMemberType.simple_type_name)
-            hasVarName = 'm_has_%s' % _getCppVarName(pbMemberType.simple_type_name)
+            varName = 'm_%s' % getCppVarName(pbMemberType.simple_type_name)
+            hasVarName = 'm_has_%s' % getCppVarName(pbMemberType.simple_type_name)
             toXmlMethodBodyList.append((hasVarName, _makeToXmlMethodBodyFromUnion(varName)))
             toStringBodyList.append((hasVarName, _makeToStringUnionFromAttrST(varName)))
 
@@ -837,7 +931,7 @@ return %s;
 
 
 def simpleType_union_simpleTypeName(pbSimpleTypeName, pbUnionMemberNames, cppClass):
-    cppVarName = _getCppVarName(pbSimpleTypeName)
+    cppVarName = getCppVarName(pbSimpleTypeName)
     cppVarType = _getCppVarType(pbSimpleTypeName)
 
     hasVarName = 'm_has_%s' % cppVarName
@@ -1000,7 +1094,7 @@ if (%(hasVarName)s)
 
 
 def simpleType_list_simpleTypeName(pbSimpleTypeName, cppClass):
-    cppVarName = _getCppVarName(pbSimpleTypeName)
+    cppVarName = getCppVarName(pbSimpleTypeName)
     cppVarType = _getCppVarType(pbSimpleTypeName)
 
     hasVarName = 'm_has_%s_list' % cppVarName
@@ -1098,9 +1192,9 @@ def _getUnionMemberNames(pbUnionMemberTypes):
     pbUnionMemberName = []
     for pbMemberType in pbUnionMemberTypes:
         if pbMemberType.kind == PB.Union.MemberType.BuiltIn:
-            pbUnionMemberName.append(_getCppVarName(getBuiltInStr(pbMemberType.built_in)))
+            pbUnionMemberName.append(getCppVarName(getBuiltInStr(pbMemberType.built_in)))
         elif pbMemberType.kind == PB.Union.MemberType.SimpleTypeName:
-            pbUnionMemberName.append(_getCppVarName(pbMemberType.simple_type_name))
+            pbUnionMemberName.append(getCppVarName(pbMemberType.simple_type_name))
     return pbUnionMemberName
 
 def _getClearMethodBodyStrFromElemList(pbElemList):
@@ -1347,7 +1441,7 @@ def complexType_choice(pbElemList, cppClass):
 def _addMethodFromBuiltIn(pbElem, cppClass, innerClass, choiceMember):
 
     cppVarType = 'XSD::%s_' % getBuiltInStr(pbElem.type.built_in)
-    cppVarName = _getCppVarName(pbElem.name)
+    cppVarName = getCppVarName(pbElem.name)
     addMethod = cppClass.method.add()
     addMethod.return_type = 'void'
     addMethod.name = 'add_%s' % cppVarName
@@ -1762,6 +1856,19 @@ def getClearMethodBodyStrFromElemCont(pbElemCont):
             clearMethodBodyStrList.append(_getClearMethodBodyStrFromRepeated(elemCont.repeated_choice, repeatedIdx))
             repeatedIdx += 1
     return " ".join(clearMethodBodyStrList)
+
+
+def getClearMethodBodyStrFromExtension(pbExtension):
+    clearMethodBodyStrList = []
+    if pbExtension.base.kind == PB.Base.BuiltIn:
+        varName = 'm_%s' % getCppVarName( getBuiltInStr(pbExtension.base.built_in) )
+        clearMethodBodyStrList.append(_makeClearMethodStrFromBuiltIn(varName, pbExtension.base.built_in))
+    elif pbExtension.base.kind == PB.Base.SimpleTypeName:
+        clearMethodBodyStrList.append('%s::clear();' % _getCppVarType(pbExtension.base.simple_type_name))
+    elif pbExtension.base.kind == PB.Base.ComplexTypeName:
+        pass # xsd_parser 쪽에서 처리함 - TODO - 리팩토링
+
+    return '\n'.join(clearMethodBodyStrList)
 
 
 def getClaerMethodBodyStrFromAttrs(pbAttrList):

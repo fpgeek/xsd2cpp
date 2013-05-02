@@ -78,7 +78,7 @@ namespace XSD
         ComplexType();
         virtual ~ComplexType();
         
-        string toXmlElem(const string& _elementName) const;
+        virtual string toXmlElemStr(const string& _elementName) const;
         virtual void toXmlElem(const string& _elementName, const string& xmlNsStr, ostream& _outStream) const = 0;
     };
     
@@ -88,7 +88,7 @@ namespace XSD
         SimpleType();
         virtual ~SimpleType();
       
-        string toXmlAttr(const string& _elementName) const;
+        virtual string toXmlAttrStr(const string& _elementName) const;
         virtual void toXmlAttr(const string& _attrName, ostream& _outStream) const = 0;
     };
     
@@ -98,7 +98,7 @@ namespace XSD
         Element();
         virtual ~Element();
         
-        string toXml() const;
+        virtual string toXmlStr() const;
         virtual void toXml(ostream& _outStream) const = 0;
 	};
     
@@ -108,9 +108,37 @@ namespace XSD
         Attribute();
         virtual ~Attribute();
         
-        string toXml() const;
+        virtual string toXmlStr() const;
         virtual void toXml(ostream& _outStream) const = 0;
 	};
+}
+
+namespace ns_xml {
+    class space: public XSD::SimpleType
+    {
+    public:
+        enum  Type
+        {
+            _default_ = 0,
+            _preserve_
+        };
+        space();
+        space(const space::Type& _type);
+        ~space();
+        bool has_type() const;
+        void set_type(const space::Type& _type);
+        const space::Type& get_type() const;
+        std::string toString() const;
+        void clear();
+        void toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const;
+        static const space& default_instance();
+    protected:
+    private:
+        static const std::string TypeStrList[];
+        static space* default_instance_;
+        bool m_has_type;
+        space::Type m_type;
+    };
 }
 
 #endif

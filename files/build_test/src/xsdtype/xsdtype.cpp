@@ -41,7 +41,7 @@ namespace XSD {
 
     }
 
-    std::string ComplexType::toXmlElem(const string& _elementName) const
+    std::string ComplexType::toXmlElemStr(const string& _elementName) const
     {
         stringstream xmlStr;
         toXmlElem(_elementName, "", xmlStr);
@@ -60,7 +60,7 @@ namespace XSD {
         
     }
     
-    std::string SimpleType::toXmlAttr(const string& _attrName) const
+    std::string SimpleType::toXmlAttrStr(const string& _attrName) const
     {
         stringstream xmlStr;
         toXmlAttr(_attrName, xmlStr);
@@ -79,7 +79,7 @@ namespace XSD {
 
     }
 
-    std::string Element::toXml() const
+    std::string Element::toXmlStr() const
     {
         stringstream xmlStr;
         toXml(xmlStr);
@@ -98,10 +98,80 @@ namespace XSD {
 
     }
 
-    std::string Attribute::toXml() const
+    std::string Attribute::toXmlStr() const
     {
         stringstream xmlStr;
         toXml(xmlStr);
         return xmlStr.str();
     }
+}
+
+namespace ns_xml
+{
+    // space
+    space::space()
+    :m_has_type(false)
+    {
+    }
+    
+    space::space(const space::Type& _type)
+    :m_has_type(true),
+    m_type(_type)
+    {
+    }
+    
+    space::~space()
+    {
+        clear();
+    }
+    
+    bool space::has_type() const
+    {
+        return m_has_type;
+    }
+    
+    void space::set_type(const space::Type& _type)
+    {
+        m_has_type = true;
+        m_type = _type;
+    }
+    
+    const space::Type& space::get_type() const
+    {
+        return m_type;
+    }
+    
+    std::string space::toString() const
+    {
+        return space::TypeStrList[m_type];
+    }
+    
+    void space::clear()
+    {
+        m_has_type = false;
+    }
+    
+    void space::toXmlAttr(const std::string& _attrName, std::ostream& _outStream) const
+    {
+        if (m_has_type)
+        {
+            _outStream << " " << _attrName << "=\"" << toString() << "\"";
+        }
+    }
+    
+    const space& space::default_instance()
+    {
+        if (!space::default_instance_)
+        {
+            space::default_instance_ = new space();
+        }
+        return *space::default_instance_;
+    }
+    
+    const std::string space::TypeStrList[] =
+    {
+        "default",
+        "preserve"
+    };
+    space* space::default_instance_ = NULL;
 }

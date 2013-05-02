@@ -10736,7 +10736,9 @@ CT_Variant* CT_Variant::default_instance_ = NULL;
     // CT_Vstream
     CT_Vstream::CT_Vstream()
     :m_has_version_attr(false),
-    m_version_attr(NULL)
+    m_version_attr(NULL),
+    m_has_base64Binary(false),
+    m_base64Binary("")
     {
     }
     CT_Vstream::~CT_Vstream()
@@ -10752,7 +10754,7 @@ CT_Variant* CT_Variant::default_instance_ = NULL;
         m_version_attr = NULL;
     }
     
-    }
+    m_base64Binary.clear();    }
 
     void CT_Vstream::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
     {    
@@ -10769,7 +10771,7 @@ CT_Variant* CT_Variant::default_instance_ = NULL;
     }
     
             _outStream << ">";
-            
+            _outStream << m_base64Binary;
             _outStream << "</" << _elemName << ">";
                 }
 
@@ -10800,6 +10802,29 @@ CT_Variant* CT_Variant::default_instance_ = NULL;
         return *m_version_attr;
     }
     return ns_s::ST_Guid::default_instance();
+    }
+
+    bool CT_Vstream::has_base64Binary() const
+    {    
+    return m_has_base64Binary;
+    }
+
+    void CT_Vstream::set_base64Binary(const XSD::base64Binary_& _base64Binary)
+    {    
+    m_has_base64Binary = true;
+    m_base64Binary = _base64Binary;
+    }
+
+    const XSD::base64Binary_& CT_Vstream::get_base64Binary() const
+    {    
+    return m_base64Binary;
+    }
+
+    std::string CT_Vstream::toString() const
+    {    
+    std::stringstream strStream;
+    strStream << get_base64Binary();
+    return strStream.str();
     }
 
 CT_Vstream* CT_Vstream::default_instance_ = NULL;
@@ -21288,7 +21313,9 @@ null_element* null_element::default_instance_ = NULL;
     // vstream_element
     vstream_element::vstream_element()
     :m_has_version_attr(false),
-    m_version_attr(NULL)
+    m_version_attr(NULL),
+    m_has_base64Binary(false),
+    m_base64Binary("")
     {
     }
     vstream_element::~vstream_element()
@@ -21304,7 +21331,7 @@ null_element* null_element::default_instance_ = NULL;
         m_version_attr = NULL;
     }
     
-    }
+    m_base64Binary.clear();    }
 
     void vstream_element::toXml(std::ostream& _outStream) const
     {    
@@ -21350,6 +21377,29 @@ null_element* null_element::default_instance_ = NULL;
         return *m_version_attr;
     }
     return ns_s::ST_Guid::default_instance();
+    }
+
+    bool vstream_element::has_base64Binary() const
+    {    
+    return m_has_base64Binary;
+    }
+
+    void vstream_element::set_base64Binary(const XSD::base64Binary_& _base64Binary)
+    {    
+    m_has_base64Binary = true;
+    m_base64Binary = _base64Binary;
+    }
+
+    const XSD::base64Binary_& vstream_element::get_base64Binary() const
+    {    
+    return m_base64Binary;
+    }
+
+    std::string vstream_element::toString() const
+    {    
+    std::stringstream strStream;
+    strStream << get_base64Binary();
+    return strStream.str();
     }
 
 vstream_element* vstream_element::default_instance_ = NULL;
