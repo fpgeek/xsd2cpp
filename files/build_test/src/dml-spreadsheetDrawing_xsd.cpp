@@ -385,12 +385,13 @@ CT_AnchorClientData* CT_AnchorClientData::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvSpPr)
     {
-        m_cNvSpPr->toXmlElem("xdr:cNvSpPr", "", _outStream);;
+        m_cNvSpPr->toXmlElem("xdr:cNvSpPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -613,22 +614,25 @@ CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
             
     if (m_has_nvSpPr)
     {
-        m_nvSpPr->toXmlElem("xdr:nvSpPr", "", _outStream);;
+        m_nvSpPr->toXmlElem("xdr:nvSpPr", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("xdr:spPr", "", _outStream);;
+        m_spPr->toXmlElem("xdr:spPr", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("xdr:style", "", _outStream);;
+        m_style->toXmlElem("xdr:style", "", _outStream);
     }
+    
     
     if (m_has_txBody)
     {
-        m_txBody->toXmlElem("xdr:txBody", "", _outStream);;
+        m_txBody->toXmlElem("xdr:txBody", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -802,12 +806,13 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvCxnSpPr)
     {
-        m_cNvCxnSpPr->toXmlElem("xdr:cNvCxnSpPr", "", _outStream);;
+        m_cNvCxnSpPr->toXmlElem("xdr:cNvCxnSpPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -973,17 +978,19 @@ CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
             
     if (m_has_nvCxnSpPr)
     {
-        m_nvCxnSpPr->toXmlElem("xdr:nvCxnSpPr", "", _outStream);;
+        m_nvCxnSpPr->toXmlElem("xdr:nvCxnSpPr", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("xdr:spPr", "", _outStream);;
+        m_spPr->toXmlElem("xdr:spPr", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("xdr:style", "", _outStream);;
+        m_style->toXmlElem("xdr:style", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1125,12 +1132,13 @@ CT_Connector* CT_Connector::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvPicPr)
     {
-        m_cNvPicPr->toXmlElem("xdr:cNvPicPr", "", _outStream);;
+        m_cNvPicPr->toXmlElem("xdr:cNvPicPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1331,22 +1339,25 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
             
     if (m_has_nvPicPr)
     {
-        m_nvPicPr->toXmlElem("xdr:nvPicPr", "", _outStream);;
+        m_nvPicPr->toXmlElem("xdr:nvPicPr", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("xdr:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("xdr:blipFill", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("xdr:spPr", "", _outStream);;
+        m_spPr->toXmlElem("xdr:spPr", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("xdr:style", "", _outStream);;
+        m_style->toXmlElem("xdr:style", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1488,12 +1499,13 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvGraphicFramePr)
     {
-        m_cNvGraphicFramePr->toXmlElem("xdr:cNvGraphicFramePr", "", _outStream);;
+        m_cNvGraphicFramePr->toXmlElem("xdr:cNvGraphicFramePr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1659,17 +1671,19 @@ CT_GraphicalObjectFrameNonVisual* CT_GraphicalObjectFrameNonVisual::default_inst
             
     if (m_has_nvGraphicFramePr)
     {
-        m_nvGraphicFramePr->toXmlElem("xdr:nvGraphicFramePr", "", _outStream);;
+        m_nvGraphicFramePr->toXmlElem("xdr:nvGraphicFramePr", "", _outStream);
     }
+    
     
     if (m_has_xfrm)
     {
-        m_xfrm->toXmlElem("xdr:xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("xdr:xfrm", "", _outStream);
     }
+    
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1811,12 +1825,13 @@ CT_GraphicalObjectFrame* CT_GraphicalObjectFrame::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvGrpSpPr)
     {
-        m_cNvGrpSpPr->toXmlElem("xdr:cNvGrpSpPr", "", _outStream);;
+        m_cNvGrpSpPr->toXmlElem("xdr:cNvGrpSpPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1975,38 +1990,54 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
             
     if (m_has_nvGrpSpPr)
     {
-        m_nvGrpSpPr->toXmlElem("xdr:nvGrpSpPr", "", _outStream);;
+        m_nvGrpSpPr->toXmlElem("xdr:nvGrpSpPr", "", _outStream);
     }
+    
     
     if (m_has_grpSpPr)
     {
-        m_grpSpPr->toXmlElem("xdr:grpSpPr", "", _outStream);;
+        m_grpSpPr->toXmlElem("xdr:grpSpPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_sp())
-            {
-                (*iter)->get_sp().toXmlElem("xdr:sp", "", _outStream);
-            }
-            else if ((*iter)->has_grpSp())
-            {
-                (*iter)->get_grpSp().toXmlElem("xdr:grpSp", "", _outStream);
-            }
-            else if ((*iter)->has_graphicFrame())
-            {
-                (*iter)->get_graphicFrame().toXmlElem("xdr:graphicFrame", "", _outStream);
-            }
-            else if ((*iter)->has_cxnSp())
-            {
-                (*iter)->get_cxnSp().toXmlElem("xdr:cxnSp", "", _outStream);
-            }
-            else if ((*iter)->has_pic())
-            {
-                (*iter)->get_pic().toXmlElem("xdr:pic", "", _outStream);
-            }
+    
+    if ((*iter)->has_sp())
+    {
+        (*iter)->get_sp().toXmlElem("xdr:sp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_grpSp())
+    {
+        (*iter)->get_grpSp().toXmlElem("xdr:grpSp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_graphicFrame())
+    {
+        (*iter)->get_graphicFrame().toXmlElem("xdr:graphicFrame", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_cxnSp())
+    {
+        (*iter)->get_cxnSp().toXmlElem("xdr:cxnSp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pic())
+    {
+        (*iter)->get_pic().toXmlElem("xdr:pic", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -2578,22 +2609,25 @@ CT_Rel* CT_Rel::default_instance_ = NULL;
             
     if (m_has_col)
     {
-        _outStream << "<xdr:col>" << m_col->toString() << "</xdr:col>";;
+        _outStream << "<xdr:col>" << m_col->toString() << "</xdr:col>";
     }
+    
     
     if (m_has_colOff)
     {
-        _outStream << "<xdr:colOff>" << m_colOff->toString() << "</xdr:colOff>";;
+        _outStream << "<xdr:colOff>" << m_colOff->toString() << "</xdr:colOff>";
     }
+    
     
     if (m_has_row)
     {
-        _outStream << "<xdr:row>" << m_row->toString() << "</xdr:row>";;
+        _outStream << "<xdr:row>" << m_row->toString() << "</xdr:row>";
     }
+    
     
     if (m_has_rowOff)
     {
-        _outStream << "<xdr:rowOff>" << m_rowOff->toString() << "</xdr:rowOff>";;
+        _outStream << "<xdr:rowOff>" << m_rowOff->toString() << "</xdr:rowOff>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3240,47 +3274,53 @@ CT_Marker* CT_Marker::default_instance_ = NULL;
             
     if (m_has_from)
     {
-        m_from->toXmlElem("xdr:from", "", _outStream);;
+        m_from->toXmlElem("xdr:from", "", _outStream);
     }
+    
     
     if (m_has_to)
     {
-        m_to->toXmlElem("xdr:to", "", _outStream);;
+        m_to->toXmlElem("xdr:to", "", _outStream);
     }
      
     if (m_has_sp)
     {
-        m_sp->toXmlElem("xdr:sp", "", _outStream);;
+        m_sp->toXmlElem("xdr:sp", "", _outStream);
     }
+    
     
     if (m_has_grpSp)
     {
-        m_grpSp->toXmlElem("xdr:grpSp", "", _outStream);;
+        m_grpSp->toXmlElem("xdr:grpSp", "", _outStream);
     }
+    
     
     if (m_has_graphicFrame)
     {
-        m_graphicFrame->toXmlElem("xdr:graphicFrame", "", _outStream);;
+        m_graphicFrame->toXmlElem("xdr:graphicFrame", "", _outStream);
     }
+    
     
     if (m_has_cxnSp)
     {
-        m_cxnSp->toXmlElem("xdr:cxnSp", "", _outStream);;
+        m_cxnSp->toXmlElem("xdr:cxnSp", "", _outStream);
     }
+    
     
     if (m_has_pic)
     {
-        m_pic->toXmlElem("xdr:pic", "", _outStream);;
+        m_pic->toXmlElem("xdr:pic", "", _outStream);
     }
+    
     
     if (m_has_contentPart)
     {
-        m_contentPart->toXmlElem("xdr:contentPart", "", _outStream);;
+        m_contentPart->toXmlElem("xdr:contentPart", "", _outStream);
     }
      
     if (m_has_clientData)
     {
-        m_clientData->toXmlElem("xdr:clientData", "", _outStream);;
+        m_clientData->toXmlElem("xdr:clientData", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3931,47 +3971,53 @@ CT_TwoCellAnchor* CT_TwoCellAnchor::default_instance_ = NULL;
             
     if (m_has_from)
     {
-        m_from->toXmlElem("xdr:from", "", _outStream);;
+        m_from->toXmlElem("xdr:from", "", _outStream);
     }
+    
     
     if (m_has_ext)
     {
-        m_ext->toXmlElem("xdr:ext", "", _outStream);;
+        m_ext->toXmlElem("xdr:ext", "", _outStream);
     }
      
     if (m_has_sp)
     {
-        m_sp->toXmlElem("xdr:sp", "", _outStream);;
+        m_sp->toXmlElem("xdr:sp", "", _outStream);
     }
+    
     
     if (m_has_grpSp)
     {
-        m_grpSp->toXmlElem("xdr:grpSp", "", _outStream);;
+        m_grpSp->toXmlElem("xdr:grpSp", "", _outStream);
     }
+    
     
     if (m_has_graphicFrame)
     {
-        m_graphicFrame->toXmlElem("xdr:graphicFrame", "", _outStream);;
+        m_graphicFrame->toXmlElem("xdr:graphicFrame", "", _outStream);
     }
+    
     
     if (m_has_cxnSp)
     {
-        m_cxnSp->toXmlElem("xdr:cxnSp", "", _outStream);;
+        m_cxnSp->toXmlElem("xdr:cxnSp", "", _outStream);
     }
+    
     
     if (m_has_pic)
     {
-        m_pic->toXmlElem("xdr:pic", "", _outStream);;
+        m_pic->toXmlElem("xdr:pic", "", _outStream);
     }
+    
     
     if (m_has_contentPart)
     {
-        m_contentPart->toXmlElem("xdr:contentPart", "", _outStream);;
+        m_contentPart->toXmlElem("xdr:contentPart", "", _outStream);
     }
      
     if (m_has_clientData)
     {
-        m_clientData->toXmlElem("xdr:clientData", "", _outStream);;
+        m_clientData->toXmlElem("xdr:clientData", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4602,47 +4648,53 @@ CT_OneCellAnchor* CT_OneCellAnchor::default_instance_ = NULL;
             
     if (m_has_pos)
     {
-        m_pos->toXmlElem("xdr:pos", "", _outStream);;
+        m_pos->toXmlElem("xdr:pos", "", _outStream);
     }
+    
     
     if (m_has_ext)
     {
-        m_ext->toXmlElem("xdr:ext", "", _outStream);;
+        m_ext->toXmlElem("xdr:ext", "", _outStream);
     }
      
     if (m_has_sp)
     {
-        m_sp->toXmlElem("xdr:sp", "", _outStream);;
+        m_sp->toXmlElem("xdr:sp", "", _outStream);
     }
+    
     
     if (m_has_grpSp)
     {
-        m_grpSp->toXmlElem("xdr:grpSp", "", _outStream);;
+        m_grpSp->toXmlElem("xdr:grpSp", "", _outStream);
     }
+    
     
     if (m_has_graphicFrame)
     {
-        m_graphicFrame->toXmlElem("xdr:graphicFrame", "", _outStream);;
+        m_graphicFrame->toXmlElem("xdr:graphicFrame", "", _outStream);
     }
+    
     
     if (m_has_cxnSp)
     {
-        m_cxnSp->toXmlElem("xdr:cxnSp", "", _outStream);;
+        m_cxnSp->toXmlElem("xdr:cxnSp", "", _outStream);
     }
+    
     
     if (m_has_pic)
     {
-        m_pic->toXmlElem("xdr:pic", "", _outStream);;
+        m_pic->toXmlElem("xdr:pic", "", _outStream);
     }
+    
     
     if (m_has_contentPart)
     {
-        m_contentPart->toXmlElem("xdr:contentPart", "", _outStream);;
+        m_contentPart->toXmlElem("xdr:contentPart", "", _outStream);
     }
      
     if (m_has_clientData)
     {
-        m_clientData->toXmlElem("xdr:clientData", "", _outStream);;
+        m_clientData->toXmlElem("xdr:clientData", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4718,18 +4770,27 @@ CT_AbsoluteAnchor* CT_AbsoluteAnchor::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_twoCellAnchor())
-            {
-                (*iter)->get_twoCellAnchor().toXmlElem("xdr:twoCellAnchor", "", _outStream);
-            }
-            else if ((*iter)->has_oneCellAnchor())
-            {
-                (*iter)->get_oneCellAnchor().toXmlElem("xdr:oneCellAnchor", "", _outStream);
-            }
-            else if ((*iter)->has_absoluteAnchor())
-            {
-                (*iter)->get_absoluteAnchor().toXmlElem("xdr:absoluteAnchor", "", _outStream);
-            }
+    
+    if ((*iter)->has_twoCellAnchor())
+    {
+        (*iter)->get_twoCellAnchor().toXmlElem("xdr:twoCellAnchor", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_oneCellAnchor())
+    {
+        (*iter)->get_oneCellAnchor().toXmlElem("xdr:oneCellAnchor", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_absoluteAnchor())
+    {
+        (*iter)->get_absoluteAnchor().toXmlElem("xdr:absoluteAnchor", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -5049,22 +5110,25 @@ CT_Drawing* CT_Drawing::default_instance_ = NULL;
     
     if (m_has_col)
     {
-        _outStream << "<xdr:col>" << m_col->toString() << "</xdr:col>";;
+        _outStream << "<xdr:col>" << m_col->toString() << "</xdr:col>";
     }
+    
     
     if (m_has_colOff)
     {
-        _outStream << "<xdr:colOff>" << m_colOff->toString() << "</xdr:colOff>";;
+        _outStream << "<xdr:colOff>" << m_colOff->toString() << "</xdr:colOff>";
     }
+    
     
     if (m_has_row)
     {
-        _outStream << "<xdr:row>" << m_row->toString() << "</xdr:row>";;
+        _outStream << "<xdr:row>" << m_row->toString() << "</xdr:row>";
     }
+    
     
     if (m_has_rowOff)
     {
-        _outStream << "<xdr:rowOff>" << m_rowOff->toString() << "</xdr:rowOff>";;
+        _outStream << "<xdr:rowOff>" << m_rowOff->toString() << "</xdr:rowOff>";
     }
     
     _outStream << "</xdr:from>";
@@ -5243,22 +5307,25 @@ from_element* from_element::default_instance_ = NULL;
     
     if (m_has_col)
     {
-        _outStream << "<xdr:col>" << m_col->toString() << "</xdr:col>";;
+        _outStream << "<xdr:col>" << m_col->toString() << "</xdr:col>";
     }
+    
     
     if (m_has_colOff)
     {
-        _outStream << "<xdr:colOff>" << m_colOff->toString() << "</xdr:colOff>";;
+        _outStream << "<xdr:colOff>" << m_colOff->toString() << "</xdr:colOff>";
     }
+    
     
     if (m_has_row)
     {
-        _outStream << "<xdr:row>" << m_row->toString() << "</xdr:row>";;
+        _outStream << "<xdr:row>" << m_row->toString() << "</xdr:row>";
     }
+    
     
     if (m_has_rowOff)
     {
-        _outStream << "<xdr:rowOff>" << m_rowOff->toString() << "</xdr:rowOff>";;
+        _outStream << "<xdr:rowOff>" << m_rowOff->toString() << "</xdr:rowOff>";
     }
     
     _outStream << "</xdr:to>";
@@ -5333,18 +5400,27 @@ to_element* to_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_twoCellAnchor())
-            {
-                (*iter)->get_twoCellAnchor().toXmlElem("xdr:twoCellAnchor", "", _outStream);
-            }
-            else if ((*iter)->has_oneCellAnchor())
-            {
-                (*iter)->get_oneCellAnchor().toXmlElem("xdr:oneCellAnchor", "", _outStream);
-            }
-            else if ((*iter)->has_absoluteAnchor())
-            {
-                (*iter)->get_absoluteAnchor().toXmlElem("xdr:absoluteAnchor", "", _outStream);
-            }
+    
+    if ((*iter)->has_twoCellAnchor())
+    {
+        (*iter)->get_twoCellAnchor().toXmlElem("xdr:twoCellAnchor", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_oneCellAnchor())
+    {
+        (*iter)->get_oneCellAnchor().toXmlElem("xdr:oneCellAnchor", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_absoluteAnchor())
+    {
+        (*iter)->get_absoluteAnchor().toXmlElem("xdr:absoluteAnchor", "", _outStream);
+    }
+    
+    
         }
     }
     

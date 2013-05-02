@@ -286,32 +286,32 @@ def _makeToStringUnionFromAttrST(varName):
     return 'return %(varName)s->toString();' % {'varName':varName}
 
 
-def _makeToXmlMethodBodyFromElemBuiltIn(pbSchema, pbElem):
-    return '_outStream << "<%(elemName)s>" << %(varName)s << "</%(elemName)s>";' % {
-        'elemName':getXmlElementName(pbSchema, pbElem),
-        'varName': 'm_%s' % _getCppVarNameFromElem(pbElem)
-    }
+# def _makeToXmlMethodBodyFromElemBuiltIn(pbSchema, pbElem):
+#     return '_outStream << "<%(elemName)s>" << %(varName)s << "</%(elemName)s>";' % {
+#         'elemName':getXmlElementName(pbSchema, pbElem),
+#         'varName': 'm_%s' % _getCppVarNameFromElem(pbElem)
+#     }
 
 
-def _makeToXmlMethodBodyFromElemSTName(pbSchema, pbElem):
-    return '_outStream << "<%(elemName)s>" << %(varName)s->toString() << "</%(elemName)s>";' % {
-        'elemName':getXmlElementName(pbSchema, pbElem),
-        'varName': 'm_%s' % _getCppVarNameFromElem(pbElem)
-    }
+# def _makeToXmlMethodBodyFromElemSTName(pbSchema, pbElem):
+#     return '_outStream << "<%(elemName)s>" << %(varName)s->toString() << "</%(elemName)s>";' % {
+#         'elemName':getXmlElementName(pbSchema, pbElem),
+#         'varName': 'm_%s' % _getCppVarNameFromElem(pbElem)
+#     }
 
 
-def _makeToXmlMethodBodyFromElemCTName(pbSchema, pbElem):
-    return '%(varName)s->toXmlElem("%(elemName)s", "", _outStream);' % {
-        'elemName': getXmlElementName(pbSchema, pbElem),
-        'varName': 'm_%s' % _getCppVarNameFromElem(pbElem)
-    }
+# def _makeToXmlMethodBodyFromElemCTName(pbSchema, pbElem):
+#     return '%(varName)s->toXmlElem("%(elemName)s", "", _outStream);' % {
+#         'elemName': getXmlElementName(pbSchema, pbElem),
+#         'varName': 'm_%s' % _getCppVarNameFromElem(pbElem)
+#     }
 
 
-def _makeToXmlMethodBodyFromElemAny(pbSchema, pbElem):
-    return \
-"""
-%s->toXml(_outStream);
-""" % 'm_%s' % _getCppVarNameFromElem(pbElem)
+# def _makeToXmlMethodBodyFromElemAny(pbSchema, pbElem):
+#     return \
+# """
+# %s->toXml(_outStream);
+# """ % 'm_%s' % _getCppVarNameFromElem(pbElem)
 
 
 def _getCppNsPrefix(pbTypeName):
@@ -1294,47 +1294,67 @@ def _toClearMethodBodyStr(clearMethodBodyList):
 """ % (mBody[0], mBody[1])
     return clearMethodBodyStr
 
+
 def _getToXmlMethodBodyList(pbSchema, pbElemList, makeToXmlMethodBodyFunc=None):
-    toXmlMethodBodyList = []
-
-    innerMethodBodyFunc = makeToXmlMethodBodyFunc
-
-    for pbElem in pbElemList:
-        if makeToXmlMethodBodyFunc is None:
-            if pbElem.type.kind == PB.Element.Type.BuiltIn:
-                innerMethodBodyFunc = _makeToXmlMethodBodyFromElemBuiltIn
-            elif pbElem.type.kind == PB.Element.Type.SimpleTypeName:
-                innerMethodBodyFunc = _makeToXmlMethodBodyFromElemSTName
-            elif pbElem.type.kind == PB.Element.Type.ComplexTypeName:
-                innerMethodBodyFunc = _makeToXmlMethodBodyFromElemCTName
-            elif pbElem.type.kind == PB.Element.Type.SimpleType:
-                innerMethodBodyFunc = None # TODO - 현재는 여기로 오는 것이 없음, 추후 구현 예정
-            elif pbElem.type.kind == PB.Element.Type.ComplexType:
-                innerMethodBodyFunc = None # TODO - 현재는 여기로 오는 것이 없음, 추후 구현 예정
-            elif pbElem.type.kind == PB.Element.Type.Any:
-                innerMethodBodyFunc = _makeToXmlMethodBodyFromElemAny
-                # _setCppClassFromAny(pbElem, cppClass)
-            else:
-                innerMethodBodyFunc = None
-
-        if innerMethodBodyFunc is not None:
-            toXmlMethodBodyList.append((pbElem, innerMethodBodyFunc(pbSchema, pbElem)))
-
-    return toXmlMethodBodyList
+    return [makeToXmlMethodBodyFunc(pbSchema, pbElem) for pbElem in pbElemList]
 
 def _getToXmlMethodBodyStr(pbSchema, pbElemList):
-    toXmlMethodBody = ""
 
-    mBodyList = _getToXmlMethodBodyList(pbSchema, pbElemList)
-    for mBody in mBodyList:
-        toXmlMethodBody += \
+    def makeToXmlMethodBodyFunc(pbSchema, pbElem):
+        hasVarName = 'm_has_%s' % _getCppVarNameFromElem(pbElem)
+        if pbElem.type.kind == PB.Element.Type.BuiltIn:
+            return \
 """
-if (%s)
+if (%(hasVarName)s)
 {
-    %s;
+    _outStream << "<%(elemName)s>" << %(varName)s << "</%(elemName)s>";
 }
-""" % ('m_has_%s' % _getCppVarNameFromElem(mBody[0]), mBody[1])
-    return toXmlMethodBody
+""" % {
+                'hasVarName':hasVarName,
+                'elemName': getXmlElementName(pbSchema, pbElem),
+                'varName': 'm_%s' % _getCppVarNameFromElem(pbElem)
+            }
+
+        elif pbElem.type.kind == PB.Element.Type.SimpleTypeName:
+            return \
+"""
+if (%(hasVarName)s)
+{
+    _outStream << "<%(elemName)s>" << %(varName)s->toString() << "</%(elemName)s>";
+}
+""" % {
+                'hasVarName':hasVarName,
+                'elemName':getXmlElementName(pbSchema, pbElem),
+                'varName': 'm_%s' % _getCppVarNameFromElem(pbElem)
+            }
+
+        elif pbElem.type.kind == PB.Element.Type.ComplexTypeName:
+            return \
+"""
+if (%(hasVarName)s)
+{
+    %(varName)s->toXmlElem("%(elemName)s", "", _outStream);
+}
+""" % {
+                'hasVarName':hasVarName,
+                'elemName': getXmlElementName(pbSchema, pbElem),
+                'varName': 'm_%s' % _getCppVarNameFromElem(pbElem)
+            }
+        elif pbElem.type.kind == PB.Element.Type.Any:
+            return \
+"""
+if (%(hasVarName)s)
+{
+    %(varName)s->toXml(_outStream);
+}
+""" % {
+                'hasVarName':hasVarName,
+                'varName': 'm_%s' % _getCppVarNameFromElem(pbElem)
+            }
+
+    mBodyList = _getToXmlMethodBodyList(pbSchema, pbElemList, makeToXmlMethodBodyFunc)
+    return '\n'.join(mBodyList)
+
 
 def _getToXmlMethodBodyStrFromRepeated(pbSchema, pbElemList, idx):
 
@@ -1363,18 +1383,40 @@ def _getToXmlMethodBodyStrFromRepeated(pbSchema, pbElemList, idx):
     vector_name = 'm_childGroupList_%d' % idx
 
     def makeToXmlMethodBodyFunc(pbSchema, pbElem):
+        hasVarCode = '(*iter)->%(has_method)s()' % {'has_method':'has_%s' % _getCppVarNameFromElem(pbElem)}
         if pbElem.type.kind == PB.Element.Type.BuiltIn:
-            return '_outStream << "<%(elemName)s>" << (*iter)->%(getMethod)s << "</%(elemName)s>";' % {
+            return \
+"""
+if (%(hasVarCode)s)
+{
+    _outStream << "<%(elemName)s>" << (*iter)->%(getMethod)s << "</%(elemName)s>";
+}
+""" % {
+                'hasVarCode': hasVarCode,
                 'elemName': getXmlElementName(pbSchema, pbElem),
                 'getMethod': 'get_%s()' % _getCppVarNameFromElem(pbElem)
             }
         elif pbElem.type.kind == PB.Element.Type.SimpleTypeName:
-            return '_outStream << "<%(elemName)s>" << (*iter)->%(getMethod)s.toString() << "</%(elemName)s>";' % {
+            return \
+"""
+if (%(hasVarCode)s)
+{
+    _outStream << "<%(elemName)s>" << (*iter)->%(getMethod)s.toString() << "</%(elemName)s>";
+}
+""" % {
+                'hasVarCode': hasVarCode,
                 'elemName': getXmlElementName(pbSchema, pbElem),
                 'getMethod': 'get_%s()' % _getCppVarNameFromElem(pbElem)
             }
         else:
-            return '(*iter)->%(getMethod)s.toXmlElem("%(elemName)s", "", _outStream);' % {
+            return \
+"""
+if (%(hasVarCode)s)
+{
+    (*iter)->%(getMethod)s.toXmlElem("%(elemName)s", "", _outStream);
+}
+""" % {
+                'hasVarCode': hasVarCode,
                 'elemName': getXmlElementName(pbSchema, pbElem),
                 'getMethod': 'get_%s()' % _getCppVarNameFromElem(pbElem)
         }
@@ -1392,17 +1434,14 @@ def _getToXmlMethodBodyStrFromRepeated(pbSchema, pbElemList, idx):
         if bodyIdx == 0:
             toXmlMethodBody += \
 """
-        if ((*iter)->%(has_method)s())
-        {
-            %(body)s
-        }""" % {'has_method':'has_%s' % _getCppVarNameFromElem(mBody[0]), 'body':mBody[1]}
+%(body)s
+""" % {'body':mBody}
         else:
             toXmlMethodBody += \
 """
-        else if ((*iter)->%(has_method)s())
-        {
-            %(body)s
-        }""" % {'has_method':'has_%s' % _getCppVarNameFromElem(mBody[0]), 'body':mBody[1]}
+else %(body)s
+""" % {'body':mBody}
+
     toXmlMethodBody += \
 """
     }

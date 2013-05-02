@@ -707,274 +707,475 @@ ST_ObjectType* ST_ObjectType::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_MoveWithCells())
-            {
-                _outStream << "<x:MoveWithCells>" << (*iter)->get_MoveWithCells().toString() << "</x:MoveWithCells>";
-            }
-            else if ((*iter)->has_SizeWithCells())
-            {
-                _outStream << "<x:SizeWithCells>" << (*iter)->get_SizeWithCells().toString() << "</x:SizeWithCells>";
-            }
-            else if ((*iter)->has_Anchor())
-            {
-                _outStream << "<x:Anchor>" << (*iter)->get_Anchor() << "</x:Anchor>";
-            }
-            else if ((*iter)->has_Locked())
-            {
-                _outStream << "<x:Locked>" << (*iter)->get_Locked().toString() << "</x:Locked>";
-            }
-            else if ((*iter)->has_DefaultSize())
-            {
-                _outStream << "<x:DefaultSize>" << (*iter)->get_DefaultSize().toString() << "</x:DefaultSize>";
-            }
-            else if ((*iter)->has_PrintObject())
-            {
-                _outStream << "<x:PrintObject>" << (*iter)->get_PrintObject().toString() << "</x:PrintObject>";
-            }
-            else if ((*iter)->has_Disabled())
-            {
-                _outStream << "<x:Disabled>" << (*iter)->get_Disabled().toString() << "</x:Disabled>";
-            }
-            else if ((*iter)->has_AutoFill())
-            {
-                _outStream << "<x:AutoFill>" << (*iter)->get_AutoFill().toString() << "</x:AutoFill>";
-            }
-            else if ((*iter)->has_AutoLine())
-            {
-                _outStream << "<x:AutoLine>" << (*iter)->get_AutoLine().toString() << "</x:AutoLine>";
-            }
-            else if ((*iter)->has_AutoPict())
-            {
-                _outStream << "<x:AutoPict>" << (*iter)->get_AutoPict().toString() << "</x:AutoPict>";
-            }
-            else if ((*iter)->has_FmlaMacro())
-            {
-                _outStream << "<x:FmlaMacro>" << (*iter)->get_FmlaMacro() << "</x:FmlaMacro>";
-            }
-            else if ((*iter)->has_TextHAlign())
-            {
-                _outStream << "<x:TextHAlign>" << (*iter)->get_TextHAlign() << "</x:TextHAlign>";
-            }
-            else if ((*iter)->has_TextVAlign())
-            {
-                _outStream << "<x:TextVAlign>" << (*iter)->get_TextVAlign() << "</x:TextVAlign>";
-            }
-            else if ((*iter)->has_x())
-            {
-                _outStream << "<x:x>" << (*iter)->get_x().toString() << "</x:x>";
-            }
-            else if ((*iter)->has_JustLastX())
-            {
-                _outStream << "<x:JustLastX>" << (*iter)->get_JustLastX().toString() << "</x:JustLastX>";
-            }
-            else if ((*iter)->has_SecretEdit())
-            {
-                _outStream << "<x:SecretEdit>" << (*iter)->get_SecretEdit().toString() << "</x:SecretEdit>";
-            }
-            else if ((*iter)->has_Default())
-            {
-                _outStream << "<x:Default>" << (*iter)->get_Default().toString() << "</x:Default>";
-            }
-            else if ((*iter)->has_Help())
-            {
-                _outStream << "<x:Help>" << (*iter)->get_Help().toString() << "</x:Help>";
-            }
-            else if ((*iter)->has_Cancel())
-            {
-                _outStream << "<x:Cancel>" << (*iter)->get_Cancel().toString() << "</x:Cancel>";
-            }
-            else if ((*iter)->has_Dismiss())
-            {
-                _outStream << "<x:Dismiss>" << (*iter)->get_Dismiss().toString() << "</x:Dismiss>";
-            }
-            else if ((*iter)->has_Accel())
-            {
-                _outStream << "<x:Accel>" << (*iter)->get_Accel() << "</x:Accel>";
-            }
-            else if ((*iter)->has_Accel2())
-            {
-                _outStream << "<x:Accel2>" << (*iter)->get_Accel2() << "</x:Accel2>";
-            }
-            else if ((*iter)->has_Row())
-            {
-                _outStream << "<x:Row>" << (*iter)->get_Row() << "</x:Row>";
-            }
-            else if ((*iter)->has_Column())
-            {
-                _outStream << "<x:Column>" << (*iter)->get_Column() << "</x:Column>";
-            }
-            else if ((*iter)->has_Visible())
-            {
-                _outStream << "<x:Visible>" << (*iter)->get_Visible().toString() << "</x:Visible>";
-            }
-            else if ((*iter)->has_RowHidden())
-            {
-                _outStream << "<x:RowHidden>" << (*iter)->get_RowHidden().toString() << "</x:RowHidden>";
-            }
-            else if ((*iter)->has_ColHidden())
-            {
-                _outStream << "<x:ColHidden>" << (*iter)->get_ColHidden().toString() << "</x:ColHidden>";
-            }
-            else if ((*iter)->has_VTEdit())
-            {
-                _outStream << "<x:VTEdit>" << (*iter)->get_VTEdit() << "</x:VTEdit>";
-            }
-            else if ((*iter)->has_MultiLine())
-            {
-                _outStream << "<x:MultiLine>" << (*iter)->get_MultiLine().toString() << "</x:MultiLine>";
-            }
-            else if ((*iter)->has_VScroll())
-            {
-                _outStream << "<x:VScroll>" << (*iter)->get_VScroll().toString() << "</x:VScroll>";
-            }
-            else if ((*iter)->has_ValidIds())
-            {
-                _outStream << "<x:ValidIds>" << (*iter)->get_ValidIds().toString() << "</x:ValidIds>";
-            }
-            else if ((*iter)->has_FmlaRange())
-            {
-                _outStream << "<x:FmlaRange>" << (*iter)->get_FmlaRange() << "</x:FmlaRange>";
-            }
-            else if ((*iter)->has_WidthMin())
-            {
-                _outStream << "<x:WidthMin>" << (*iter)->get_WidthMin() << "</x:WidthMin>";
-            }
-            else if ((*iter)->has_Sel())
-            {
-                _outStream << "<x:Sel>" << (*iter)->get_Sel() << "</x:Sel>";
-            }
-            else if ((*iter)->has_NoThreeD2())
-            {
-                _outStream << "<x:NoThreeD2>" << (*iter)->get_NoThreeD2().toString() << "</x:NoThreeD2>";
-            }
-            else if ((*iter)->has_SelType())
-            {
-                _outStream << "<x:SelType>" << (*iter)->get_SelType() << "</x:SelType>";
-            }
-            else if ((*iter)->has_MultiSel())
-            {
-                _outStream << "<x:MultiSel>" << (*iter)->get_MultiSel() << "</x:MultiSel>";
-            }
-            else if ((*iter)->has_LCT())
-            {
-                _outStream << "<x:LCT>" << (*iter)->get_LCT() << "</x:LCT>";
-            }
-            else if ((*iter)->has_st())
-            {
-                _outStream << "<x:st>" << (*iter)->get_st() << "</x:st>";
-            }
-            else if ((*iter)->has_DropStyle())
-            {
-                _outStream << "<x:DropStyle>" << (*iter)->get_DropStyle() << "</x:DropStyle>";
-            }
-            else if ((*iter)->has_Colored())
-            {
-                _outStream << "<x:Colored>" << (*iter)->get_Colored().toString() << "</x:Colored>";
-            }
-            else if ((*iter)->has_DropLines())
-            {
-                _outStream << "<x:DropLines>" << (*iter)->get_DropLines() << "</x:DropLines>";
-            }
-            else if ((*iter)->has_Checked())
-            {
-                _outStream << "<x:Checked>" << (*iter)->get_Checked() << "</x:Checked>";
-            }
-            else if ((*iter)->has_FmlaLink())
-            {
-                _outStream << "<x:FmlaLink>" << (*iter)->get_FmlaLink() << "</x:FmlaLink>";
-            }
-            else if ((*iter)->has_FmlaPict())
-            {
-                _outStream << "<x:FmlaPict>" << (*iter)->get_FmlaPict() << "</x:FmlaPict>";
-            }
-            else if ((*iter)->has_NoThreeD())
-            {
-                _outStream << "<x:NoThreeD>" << (*iter)->get_NoThreeD().toString() << "</x:NoThreeD>";
-            }
-            else if ((*iter)->has_FirstButton())
-            {
-                _outStream << "<x:FirstButton>" << (*iter)->get_FirstButton().toString() << "</x:FirstButton>";
-            }
-            else if ((*iter)->has_FmlaGroup())
-            {
-                _outStream << "<x:FmlaGroup>" << (*iter)->get_FmlaGroup() << "</x:FmlaGroup>";
-            }
-            else if ((*iter)->has_Val())
-            {
-                _outStream << "<x:Val>" << (*iter)->get_Val() << "</x:Val>";
-            }
-            else if ((*iter)->has_Min())
-            {
-                _outStream << "<x:Min>" << (*iter)->get_Min() << "</x:Min>";
-            }
-            else if ((*iter)->has_Max())
-            {
-                _outStream << "<x:Max>" << (*iter)->get_Max() << "</x:Max>";
-            }
-            else if ((*iter)->has_Inc())
-            {
-                _outStream << "<x:Inc>" << (*iter)->get_Inc() << "</x:Inc>";
-            }
-            else if ((*iter)->has_Page())
-            {
-                _outStream << "<x:Page>" << (*iter)->get_Page() << "</x:Page>";
-            }
-            else if ((*iter)->has_Horiz())
-            {
-                _outStream << "<x:Horiz>" << (*iter)->get_Horiz().toString() << "</x:Horiz>";
-            }
-            else if ((*iter)->has_Dx())
-            {
-                _outStream << "<x:Dx>" << (*iter)->get_Dx() << "</x:Dx>";
-            }
-            else if ((*iter)->has_MapOCX())
-            {
-                _outStream << "<x:MapOCX>" << (*iter)->get_MapOCX().toString() << "</x:MapOCX>";
-            }
-            else if ((*iter)->has_CF())
-            {
-                _outStream << "<x:CF>" << (*iter)->get_CF().toString() << "</x:CF>";
-            }
-            else if ((*iter)->has_Camera())
-            {
-                _outStream << "<x:Camera>" << (*iter)->get_Camera().toString() << "</x:Camera>";
-            }
-            else if ((*iter)->has_RecalcAlways())
-            {
-                _outStream << "<x:RecalcAlways>" << (*iter)->get_RecalcAlways().toString() << "</x:RecalcAlways>";
-            }
-            else if ((*iter)->has_AutoScale())
-            {
-                _outStream << "<x:AutoScale>" << (*iter)->get_AutoScale().toString() << "</x:AutoScale>";
-            }
-            else if ((*iter)->has_DDE())
-            {
-                _outStream << "<x:DDE>" << (*iter)->get_DDE().toString() << "</x:DDE>";
-            }
-            else if ((*iter)->has_UIObj())
-            {
-                _outStream << "<x:UIObj>" << (*iter)->get_UIObj().toString() << "</x:UIObj>";
-            }
-            else if ((*iter)->has_ScriptText())
-            {
-                _outStream << "<x:ScriptText>" << (*iter)->get_ScriptText() << "</x:ScriptText>";
-            }
-            else if ((*iter)->has_ScriptExtended())
-            {
-                _outStream << "<x:ScriptExtended>" << (*iter)->get_ScriptExtended() << "</x:ScriptExtended>";
-            }
-            else if ((*iter)->has_ScriptLanguage())
-            {
-                _outStream << "<x:ScriptLanguage>" << (*iter)->get_ScriptLanguage() << "</x:ScriptLanguage>";
-            }
-            else if ((*iter)->has_ScriptLocation())
-            {
-                _outStream << "<x:ScriptLocation>" << (*iter)->get_ScriptLocation() << "</x:ScriptLocation>";
-            }
-            else if ((*iter)->has_FmlaTxbx())
-            {
-                _outStream << "<x:FmlaTxbx>" << (*iter)->get_FmlaTxbx() << "</x:FmlaTxbx>";
-            }
+    
+    if ((*iter)->has_MoveWithCells())
+    {
+        _outStream << "<x:MoveWithCells>" << (*iter)->get_MoveWithCells().toString() << "</x:MoveWithCells>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_SizeWithCells())
+    {
+        _outStream << "<x:SizeWithCells>" << (*iter)->get_SizeWithCells().toString() << "</x:SizeWithCells>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Anchor())
+    {
+        _outStream << "<x:Anchor>" << (*iter)->get_Anchor() << "</x:Anchor>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Locked())
+    {
+        _outStream << "<x:Locked>" << (*iter)->get_Locked().toString() << "</x:Locked>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_DefaultSize())
+    {
+        _outStream << "<x:DefaultSize>" << (*iter)->get_DefaultSize().toString() << "</x:DefaultSize>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_PrintObject())
+    {
+        _outStream << "<x:PrintObject>" << (*iter)->get_PrintObject().toString() << "</x:PrintObject>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Disabled())
+    {
+        _outStream << "<x:Disabled>" << (*iter)->get_Disabled().toString() << "</x:Disabled>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_AutoFill())
+    {
+        _outStream << "<x:AutoFill>" << (*iter)->get_AutoFill().toString() << "</x:AutoFill>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_AutoLine())
+    {
+        _outStream << "<x:AutoLine>" << (*iter)->get_AutoLine().toString() << "</x:AutoLine>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_AutoPict())
+    {
+        _outStream << "<x:AutoPict>" << (*iter)->get_AutoPict().toString() << "</x:AutoPict>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FmlaMacro())
+    {
+        _outStream << "<x:FmlaMacro>" << (*iter)->get_FmlaMacro() << "</x:FmlaMacro>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_TextHAlign())
+    {
+        _outStream << "<x:TextHAlign>" << (*iter)->get_TextHAlign() << "</x:TextHAlign>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_TextVAlign())
+    {
+        _outStream << "<x:TextVAlign>" << (*iter)->get_TextVAlign() << "</x:TextVAlign>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_x())
+    {
+        _outStream << "<x:x>" << (*iter)->get_x().toString() << "</x:x>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_JustLastX())
+    {
+        _outStream << "<x:JustLastX>" << (*iter)->get_JustLastX().toString() << "</x:JustLastX>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_SecretEdit())
+    {
+        _outStream << "<x:SecretEdit>" << (*iter)->get_SecretEdit().toString() << "</x:SecretEdit>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Default())
+    {
+        _outStream << "<x:Default>" << (*iter)->get_Default().toString() << "</x:Default>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Help())
+    {
+        _outStream << "<x:Help>" << (*iter)->get_Help().toString() << "</x:Help>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Cancel())
+    {
+        _outStream << "<x:Cancel>" << (*iter)->get_Cancel().toString() << "</x:Cancel>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Dismiss())
+    {
+        _outStream << "<x:Dismiss>" << (*iter)->get_Dismiss().toString() << "</x:Dismiss>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Accel())
+    {
+        _outStream << "<x:Accel>" << (*iter)->get_Accel() << "</x:Accel>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Accel2())
+    {
+        _outStream << "<x:Accel2>" << (*iter)->get_Accel2() << "</x:Accel2>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Row())
+    {
+        _outStream << "<x:Row>" << (*iter)->get_Row() << "</x:Row>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Column())
+    {
+        _outStream << "<x:Column>" << (*iter)->get_Column() << "</x:Column>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Visible())
+    {
+        _outStream << "<x:Visible>" << (*iter)->get_Visible().toString() << "</x:Visible>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_RowHidden())
+    {
+        _outStream << "<x:RowHidden>" << (*iter)->get_RowHidden().toString() << "</x:RowHidden>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ColHidden())
+    {
+        _outStream << "<x:ColHidden>" << (*iter)->get_ColHidden().toString() << "</x:ColHidden>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_VTEdit())
+    {
+        _outStream << "<x:VTEdit>" << (*iter)->get_VTEdit() << "</x:VTEdit>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_MultiLine())
+    {
+        _outStream << "<x:MultiLine>" << (*iter)->get_MultiLine().toString() << "</x:MultiLine>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_VScroll())
+    {
+        _outStream << "<x:VScroll>" << (*iter)->get_VScroll().toString() << "</x:VScroll>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ValidIds())
+    {
+        _outStream << "<x:ValidIds>" << (*iter)->get_ValidIds().toString() << "</x:ValidIds>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FmlaRange())
+    {
+        _outStream << "<x:FmlaRange>" << (*iter)->get_FmlaRange() << "</x:FmlaRange>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_WidthMin())
+    {
+        _outStream << "<x:WidthMin>" << (*iter)->get_WidthMin() << "</x:WidthMin>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Sel())
+    {
+        _outStream << "<x:Sel>" << (*iter)->get_Sel() << "</x:Sel>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_NoThreeD2())
+    {
+        _outStream << "<x:NoThreeD2>" << (*iter)->get_NoThreeD2().toString() << "</x:NoThreeD2>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_SelType())
+    {
+        _outStream << "<x:SelType>" << (*iter)->get_SelType() << "</x:SelType>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_MultiSel())
+    {
+        _outStream << "<x:MultiSel>" << (*iter)->get_MultiSel() << "</x:MultiSel>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_LCT())
+    {
+        _outStream << "<x:LCT>" << (*iter)->get_LCT() << "</x:LCT>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_st())
+    {
+        _outStream << "<x:st>" << (*iter)->get_st() << "</x:st>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_DropStyle())
+    {
+        _outStream << "<x:DropStyle>" << (*iter)->get_DropStyle() << "</x:DropStyle>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Colored())
+    {
+        _outStream << "<x:Colored>" << (*iter)->get_Colored().toString() << "</x:Colored>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_DropLines())
+    {
+        _outStream << "<x:DropLines>" << (*iter)->get_DropLines() << "</x:DropLines>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Checked())
+    {
+        _outStream << "<x:Checked>" << (*iter)->get_Checked() << "</x:Checked>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FmlaLink())
+    {
+        _outStream << "<x:FmlaLink>" << (*iter)->get_FmlaLink() << "</x:FmlaLink>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FmlaPict())
+    {
+        _outStream << "<x:FmlaPict>" << (*iter)->get_FmlaPict() << "</x:FmlaPict>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_NoThreeD())
+    {
+        _outStream << "<x:NoThreeD>" << (*iter)->get_NoThreeD().toString() << "</x:NoThreeD>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FirstButton())
+    {
+        _outStream << "<x:FirstButton>" << (*iter)->get_FirstButton().toString() << "</x:FirstButton>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FmlaGroup())
+    {
+        _outStream << "<x:FmlaGroup>" << (*iter)->get_FmlaGroup() << "</x:FmlaGroup>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Val())
+    {
+        _outStream << "<x:Val>" << (*iter)->get_Val() << "</x:Val>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Min())
+    {
+        _outStream << "<x:Min>" << (*iter)->get_Min() << "</x:Min>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Max())
+    {
+        _outStream << "<x:Max>" << (*iter)->get_Max() << "</x:Max>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Inc())
+    {
+        _outStream << "<x:Inc>" << (*iter)->get_Inc() << "</x:Inc>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Page())
+    {
+        _outStream << "<x:Page>" << (*iter)->get_Page() << "</x:Page>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Horiz())
+    {
+        _outStream << "<x:Horiz>" << (*iter)->get_Horiz().toString() << "</x:Horiz>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Dx())
+    {
+        _outStream << "<x:Dx>" << (*iter)->get_Dx() << "</x:Dx>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_MapOCX())
+    {
+        _outStream << "<x:MapOCX>" << (*iter)->get_MapOCX().toString() << "</x:MapOCX>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_CF())
+    {
+        _outStream << "<x:CF>" << (*iter)->get_CF().toString() << "</x:CF>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Camera())
+    {
+        _outStream << "<x:Camera>" << (*iter)->get_Camera().toString() << "</x:Camera>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_RecalcAlways())
+    {
+        _outStream << "<x:RecalcAlways>" << (*iter)->get_RecalcAlways().toString() << "</x:RecalcAlways>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_AutoScale())
+    {
+        _outStream << "<x:AutoScale>" << (*iter)->get_AutoScale().toString() << "</x:AutoScale>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_DDE())
+    {
+        _outStream << "<x:DDE>" << (*iter)->get_DDE().toString() << "</x:DDE>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_UIObj())
+    {
+        _outStream << "<x:UIObj>" << (*iter)->get_UIObj().toString() << "</x:UIObj>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ScriptText())
+    {
+        _outStream << "<x:ScriptText>" << (*iter)->get_ScriptText() << "</x:ScriptText>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ScriptExtended())
+    {
+        _outStream << "<x:ScriptExtended>" << (*iter)->get_ScriptExtended() << "</x:ScriptExtended>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ScriptLanguage())
+    {
+        _outStream << "<x:ScriptLanguage>" << (*iter)->get_ScriptLanguage() << "</x:ScriptLanguage>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ScriptLocation())
+    {
+        _outStream << "<x:ScriptLocation>" << (*iter)->get_ScriptLocation() << "</x:ScriptLocation>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FmlaTxbx())
+    {
+        _outStream << "<x:FmlaTxbx>" << (*iter)->get_FmlaTxbx() << "</x:FmlaTxbx>";
+    }
+    
+    
         }
     }
     
@@ -29843,274 +30044,475 @@ CT_ClientData* CT_ClientData::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_MoveWithCells())
-            {
-                _outStream << "<x:MoveWithCells>" << (*iter)->get_MoveWithCells().toString() << "</x:MoveWithCells>";
-            }
-            else if ((*iter)->has_SizeWithCells())
-            {
-                _outStream << "<x:SizeWithCells>" << (*iter)->get_SizeWithCells().toString() << "</x:SizeWithCells>";
-            }
-            else if ((*iter)->has_Anchor())
-            {
-                _outStream << "<x:Anchor>" << (*iter)->get_Anchor() << "</x:Anchor>";
-            }
-            else if ((*iter)->has_Locked())
-            {
-                _outStream << "<x:Locked>" << (*iter)->get_Locked().toString() << "</x:Locked>";
-            }
-            else if ((*iter)->has_DefaultSize())
-            {
-                _outStream << "<x:DefaultSize>" << (*iter)->get_DefaultSize().toString() << "</x:DefaultSize>";
-            }
-            else if ((*iter)->has_PrintObject())
-            {
-                _outStream << "<x:PrintObject>" << (*iter)->get_PrintObject().toString() << "</x:PrintObject>";
-            }
-            else if ((*iter)->has_Disabled())
-            {
-                _outStream << "<x:Disabled>" << (*iter)->get_Disabled().toString() << "</x:Disabled>";
-            }
-            else if ((*iter)->has_AutoFill())
-            {
-                _outStream << "<x:AutoFill>" << (*iter)->get_AutoFill().toString() << "</x:AutoFill>";
-            }
-            else if ((*iter)->has_AutoLine())
-            {
-                _outStream << "<x:AutoLine>" << (*iter)->get_AutoLine().toString() << "</x:AutoLine>";
-            }
-            else if ((*iter)->has_AutoPict())
-            {
-                _outStream << "<x:AutoPict>" << (*iter)->get_AutoPict().toString() << "</x:AutoPict>";
-            }
-            else if ((*iter)->has_FmlaMacro())
-            {
-                _outStream << "<x:FmlaMacro>" << (*iter)->get_FmlaMacro() << "</x:FmlaMacro>";
-            }
-            else if ((*iter)->has_TextHAlign())
-            {
-                _outStream << "<x:TextHAlign>" << (*iter)->get_TextHAlign() << "</x:TextHAlign>";
-            }
-            else if ((*iter)->has_TextVAlign())
-            {
-                _outStream << "<x:TextVAlign>" << (*iter)->get_TextVAlign() << "</x:TextVAlign>";
-            }
-            else if ((*iter)->has_x())
-            {
-                _outStream << "<x:x>" << (*iter)->get_x().toString() << "</x:x>";
-            }
-            else if ((*iter)->has_JustLastX())
-            {
-                _outStream << "<x:JustLastX>" << (*iter)->get_JustLastX().toString() << "</x:JustLastX>";
-            }
-            else if ((*iter)->has_SecretEdit())
-            {
-                _outStream << "<x:SecretEdit>" << (*iter)->get_SecretEdit().toString() << "</x:SecretEdit>";
-            }
-            else if ((*iter)->has_Default())
-            {
-                _outStream << "<x:Default>" << (*iter)->get_Default().toString() << "</x:Default>";
-            }
-            else if ((*iter)->has_Help())
-            {
-                _outStream << "<x:Help>" << (*iter)->get_Help().toString() << "</x:Help>";
-            }
-            else if ((*iter)->has_Cancel())
-            {
-                _outStream << "<x:Cancel>" << (*iter)->get_Cancel().toString() << "</x:Cancel>";
-            }
-            else if ((*iter)->has_Dismiss())
-            {
-                _outStream << "<x:Dismiss>" << (*iter)->get_Dismiss().toString() << "</x:Dismiss>";
-            }
-            else if ((*iter)->has_Accel())
-            {
-                _outStream << "<x:Accel>" << (*iter)->get_Accel() << "</x:Accel>";
-            }
-            else if ((*iter)->has_Accel2())
-            {
-                _outStream << "<x:Accel2>" << (*iter)->get_Accel2() << "</x:Accel2>";
-            }
-            else if ((*iter)->has_Row())
-            {
-                _outStream << "<x:Row>" << (*iter)->get_Row() << "</x:Row>";
-            }
-            else if ((*iter)->has_Column())
-            {
-                _outStream << "<x:Column>" << (*iter)->get_Column() << "</x:Column>";
-            }
-            else if ((*iter)->has_Visible())
-            {
-                _outStream << "<x:Visible>" << (*iter)->get_Visible().toString() << "</x:Visible>";
-            }
-            else if ((*iter)->has_RowHidden())
-            {
-                _outStream << "<x:RowHidden>" << (*iter)->get_RowHidden().toString() << "</x:RowHidden>";
-            }
-            else if ((*iter)->has_ColHidden())
-            {
-                _outStream << "<x:ColHidden>" << (*iter)->get_ColHidden().toString() << "</x:ColHidden>";
-            }
-            else if ((*iter)->has_VTEdit())
-            {
-                _outStream << "<x:VTEdit>" << (*iter)->get_VTEdit() << "</x:VTEdit>";
-            }
-            else if ((*iter)->has_MultiLine())
-            {
-                _outStream << "<x:MultiLine>" << (*iter)->get_MultiLine().toString() << "</x:MultiLine>";
-            }
-            else if ((*iter)->has_VScroll())
-            {
-                _outStream << "<x:VScroll>" << (*iter)->get_VScroll().toString() << "</x:VScroll>";
-            }
-            else if ((*iter)->has_ValidIds())
-            {
-                _outStream << "<x:ValidIds>" << (*iter)->get_ValidIds().toString() << "</x:ValidIds>";
-            }
-            else if ((*iter)->has_FmlaRange())
-            {
-                _outStream << "<x:FmlaRange>" << (*iter)->get_FmlaRange() << "</x:FmlaRange>";
-            }
-            else if ((*iter)->has_WidthMin())
-            {
-                _outStream << "<x:WidthMin>" << (*iter)->get_WidthMin() << "</x:WidthMin>";
-            }
-            else if ((*iter)->has_Sel())
-            {
-                _outStream << "<x:Sel>" << (*iter)->get_Sel() << "</x:Sel>";
-            }
-            else if ((*iter)->has_NoThreeD2())
-            {
-                _outStream << "<x:NoThreeD2>" << (*iter)->get_NoThreeD2().toString() << "</x:NoThreeD2>";
-            }
-            else if ((*iter)->has_SelType())
-            {
-                _outStream << "<x:SelType>" << (*iter)->get_SelType() << "</x:SelType>";
-            }
-            else if ((*iter)->has_MultiSel())
-            {
-                _outStream << "<x:MultiSel>" << (*iter)->get_MultiSel() << "</x:MultiSel>";
-            }
-            else if ((*iter)->has_LCT())
-            {
-                _outStream << "<x:LCT>" << (*iter)->get_LCT() << "</x:LCT>";
-            }
-            else if ((*iter)->has_st())
-            {
-                _outStream << "<x:st>" << (*iter)->get_st() << "</x:st>";
-            }
-            else if ((*iter)->has_DropStyle())
-            {
-                _outStream << "<x:DropStyle>" << (*iter)->get_DropStyle() << "</x:DropStyle>";
-            }
-            else if ((*iter)->has_Colored())
-            {
-                _outStream << "<x:Colored>" << (*iter)->get_Colored().toString() << "</x:Colored>";
-            }
-            else if ((*iter)->has_DropLines())
-            {
-                _outStream << "<x:DropLines>" << (*iter)->get_DropLines() << "</x:DropLines>";
-            }
-            else if ((*iter)->has_Checked())
-            {
-                _outStream << "<x:Checked>" << (*iter)->get_Checked() << "</x:Checked>";
-            }
-            else if ((*iter)->has_FmlaLink())
-            {
-                _outStream << "<x:FmlaLink>" << (*iter)->get_FmlaLink() << "</x:FmlaLink>";
-            }
-            else if ((*iter)->has_FmlaPict())
-            {
-                _outStream << "<x:FmlaPict>" << (*iter)->get_FmlaPict() << "</x:FmlaPict>";
-            }
-            else if ((*iter)->has_NoThreeD())
-            {
-                _outStream << "<x:NoThreeD>" << (*iter)->get_NoThreeD().toString() << "</x:NoThreeD>";
-            }
-            else if ((*iter)->has_FirstButton())
-            {
-                _outStream << "<x:FirstButton>" << (*iter)->get_FirstButton().toString() << "</x:FirstButton>";
-            }
-            else if ((*iter)->has_FmlaGroup())
-            {
-                _outStream << "<x:FmlaGroup>" << (*iter)->get_FmlaGroup() << "</x:FmlaGroup>";
-            }
-            else if ((*iter)->has_Val())
-            {
-                _outStream << "<x:Val>" << (*iter)->get_Val() << "</x:Val>";
-            }
-            else if ((*iter)->has_Min())
-            {
-                _outStream << "<x:Min>" << (*iter)->get_Min() << "</x:Min>";
-            }
-            else if ((*iter)->has_Max())
-            {
-                _outStream << "<x:Max>" << (*iter)->get_Max() << "</x:Max>";
-            }
-            else if ((*iter)->has_Inc())
-            {
-                _outStream << "<x:Inc>" << (*iter)->get_Inc() << "</x:Inc>";
-            }
-            else if ((*iter)->has_Page())
-            {
-                _outStream << "<x:Page>" << (*iter)->get_Page() << "</x:Page>";
-            }
-            else if ((*iter)->has_Horiz())
-            {
-                _outStream << "<x:Horiz>" << (*iter)->get_Horiz().toString() << "</x:Horiz>";
-            }
-            else if ((*iter)->has_Dx())
-            {
-                _outStream << "<x:Dx>" << (*iter)->get_Dx() << "</x:Dx>";
-            }
-            else if ((*iter)->has_MapOCX())
-            {
-                _outStream << "<x:MapOCX>" << (*iter)->get_MapOCX().toString() << "</x:MapOCX>";
-            }
-            else if ((*iter)->has_CF())
-            {
-                _outStream << "<x:CF>" << (*iter)->get_CF().toString() << "</x:CF>";
-            }
-            else if ((*iter)->has_Camera())
-            {
-                _outStream << "<x:Camera>" << (*iter)->get_Camera().toString() << "</x:Camera>";
-            }
-            else if ((*iter)->has_RecalcAlways())
-            {
-                _outStream << "<x:RecalcAlways>" << (*iter)->get_RecalcAlways().toString() << "</x:RecalcAlways>";
-            }
-            else if ((*iter)->has_AutoScale())
-            {
-                _outStream << "<x:AutoScale>" << (*iter)->get_AutoScale().toString() << "</x:AutoScale>";
-            }
-            else if ((*iter)->has_DDE())
-            {
-                _outStream << "<x:DDE>" << (*iter)->get_DDE().toString() << "</x:DDE>";
-            }
-            else if ((*iter)->has_UIObj())
-            {
-                _outStream << "<x:UIObj>" << (*iter)->get_UIObj().toString() << "</x:UIObj>";
-            }
-            else if ((*iter)->has_ScriptText())
-            {
-                _outStream << "<x:ScriptText>" << (*iter)->get_ScriptText() << "</x:ScriptText>";
-            }
-            else if ((*iter)->has_ScriptExtended())
-            {
-                _outStream << "<x:ScriptExtended>" << (*iter)->get_ScriptExtended() << "</x:ScriptExtended>";
-            }
-            else if ((*iter)->has_ScriptLanguage())
-            {
-                _outStream << "<x:ScriptLanguage>" << (*iter)->get_ScriptLanguage() << "</x:ScriptLanguage>";
-            }
-            else if ((*iter)->has_ScriptLocation())
-            {
-                _outStream << "<x:ScriptLocation>" << (*iter)->get_ScriptLocation() << "</x:ScriptLocation>";
-            }
-            else if ((*iter)->has_FmlaTxbx())
-            {
-                _outStream << "<x:FmlaTxbx>" << (*iter)->get_FmlaTxbx() << "</x:FmlaTxbx>";
-            }
+    
+    if ((*iter)->has_MoveWithCells())
+    {
+        _outStream << "<x:MoveWithCells>" << (*iter)->get_MoveWithCells().toString() << "</x:MoveWithCells>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_SizeWithCells())
+    {
+        _outStream << "<x:SizeWithCells>" << (*iter)->get_SizeWithCells().toString() << "</x:SizeWithCells>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Anchor())
+    {
+        _outStream << "<x:Anchor>" << (*iter)->get_Anchor() << "</x:Anchor>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Locked())
+    {
+        _outStream << "<x:Locked>" << (*iter)->get_Locked().toString() << "</x:Locked>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_DefaultSize())
+    {
+        _outStream << "<x:DefaultSize>" << (*iter)->get_DefaultSize().toString() << "</x:DefaultSize>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_PrintObject())
+    {
+        _outStream << "<x:PrintObject>" << (*iter)->get_PrintObject().toString() << "</x:PrintObject>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Disabled())
+    {
+        _outStream << "<x:Disabled>" << (*iter)->get_Disabled().toString() << "</x:Disabled>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_AutoFill())
+    {
+        _outStream << "<x:AutoFill>" << (*iter)->get_AutoFill().toString() << "</x:AutoFill>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_AutoLine())
+    {
+        _outStream << "<x:AutoLine>" << (*iter)->get_AutoLine().toString() << "</x:AutoLine>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_AutoPict())
+    {
+        _outStream << "<x:AutoPict>" << (*iter)->get_AutoPict().toString() << "</x:AutoPict>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FmlaMacro())
+    {
+        _outStream << "<x:FmlaMacro>" << (*iter)->get_FmlaMacro() << "</x:FmlaMacro>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_TextHAlign())
+    {
+        _outStream << "<x:TextHAlign>" << (*iter)->get_TextHAlign() << "</x:TextHAlign>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_TextVAlign())
+    {
+        _outStream << "<x:TextVAlign>" << (*iter)->get_TextVAlign() << "</x:TextVAlign>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_x())
+    {
+        _outStream << "<x:x>" << (*iter)->get_x().toString() << "</x:x>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_JustLastX())
+    {
+        _outStream << "<x:JustLastX>" << (*iter)->get_JustLastX().toString() << "</x:JustLastX>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_SecretEdit())
+    {
+        _outStream << "<x:SecretEdit>" << (*iter)->get_SecretEdit().toString() << "</x:SecretEdit>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Default())
+    {
+        _outStream << "<x:Default>" << (*iter)->get_Default().toString() << "</x:Default>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Help())
+    {
+        _outStream << "<x:Help>" << (*iter)->get_Help().toString() << "</x:Help>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Cancel())
+    {
+        _outStream << "<x:Cancel>" << (*iter)->get_Cancel().toString() << "</x:Cancel>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Dismiss())
+    {
+        _outStream << "<x:Dismiss>" << (*iter)->get_Dismiss().toString() << "</x:Dismiss>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Accel())
+    {
+        _outStream << "<x:Accel>" << (*iter)->get_Accel() << "</x:Accel>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Accel2())
+    {
+        _outStream << "<x:Accel2>" << (*iter)->get_Accel2() << "</x:Accel2>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Row())
+    {
+        _outStream << "<x:Row>" << (*iter)->get_Row() << "</x:Row>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Column())
+    {
+        _outStream << "<x:Column>" << (*iter)->get_Column() << "</x:Column>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Visible())
+    {
+        _outStream << "<x:Visible>" << (*iter)->get_Visible().toString() << "</x:Visible>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_RowHidden())
+    {
+        _outStream << "<x:RowHidden>" << (*iter)->get_RowHidden().toString() << "</x:RowHidden>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ColHidden())
+    {
+        _outStream << "<x:ColHidden>" << (*iter)->get_ColHidden().toString() << "</x:ColHidden>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_VTEdit())
+    {
+        _outStream << "<x:VTEdit>" << (*iter)->get_VTEdit() << "</x:VTEdit>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_MultiLine())
+    {
+        _outStream << "<x:MultiLine>" << (*iter)->get_MultiLine().toString() << "</x:MultiLine>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_VScroll())
+    {
+        _outStream << "<x:VScroll>" << (*iter)->get_VScroll().toString() << "</x:VScroll>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ValidIds())
+    {
+        _outStream << "<x:ValidIds>" << (*iter)->get_ValidIds().toString() << "</x:ValidIds>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FmlaRange())
+    {
+        _outStream << "<x:FmlaRange>" << (*iter)->get_FmlaRange() << "</x:FmlaRange>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_WidthMin())
+    {
+        _outStream << "<x:WidthMin>" << (*iter)->get_WidthMin() << "</x:WidthMin>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Sel())
+    {
+        _outStream << "<x:Sel>" << (*iter)->get_Sel() << "</x:Sel>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_NoThreeD2())
+    {
+        _outStream << "<x:NoThreeD2>" << (*iter)->get_NoThreeD2().toString() << "</x:NoThreeD2>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_SelType())
+    {
+        _outStream << "<x:SelType>" << (*iter)->get_SelType() << "</x:SelType>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_MultiSel())
+    {
+        _outStream << "<x:MultiSel>" << (*iter)->get_MultiSel() << "</x:MultiSel>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_LCT())
+    {
+        _outStream << "<x:LCT>" << (*iter)->get_LCT() << "</x:LCT>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_st())
+    {
+        _outStream << "<x:st>" << (*iter)->get_st() << "</x:st>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_DropStyle())
+    {
+        _outStream << "<x:DropStyle>" << (*iter)->get_DropStyle() << "</x:DropStyle>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Colored())
+    {
+        _outStream << "<x:Colored>" << (*iter)->get_Colored().toString() << "</x:Colored>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_DropLines())
+    {
+        _outStream << "<x:DropLines>" << (*iter)->get_DropLines() << "</x:DropLines>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Checked())
+    {
+        _outStream << "<x:Checked>" << (*iter)->get_Checked() << "</x:Checked>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FmlaLink())
+    {
+        _outStream << "<x:FmlaLink>" << (*iter)->get_FmlaLink() << "</x:FmlaLink>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FmlaPict())
+    {
+        _outStream << "<x:FmlaPict>" << (*iter)->get_FmlaPict() << "</x:FmlaPict>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_NoThreeD())
+    {
+        _outStream << "<x:NoThreeD>" << (*iter)->get_NoThreeD().toString() << "</x:NoThreeD>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FirstButton())
+    {
+        _outStream << "<x:FirstButton>" << (*iter)->get_FirstButton().toString() << "</x:FirstButton>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FmlaGroup())
+    {
+        _outStream << "<x:FmlaGroup>" << (*iter)->get_FmlaGroup() << "</x:FmlaGroup>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Val())
+    {
+        _outStream << "<x:Val>" << (*iter)->get_Val() << "</x:Val>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Min())
+    {
+        _outStream << "<x:Min>" << (*iter)->get_Min() << "</x:Min>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Max())
+    {
+        _outStream << "<x:Max>" << (*iter)->get_Max() << "</x:Max>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Inc())
+    {
+        _outStream << "<x:Inc>" << (*iter)->get_Inc() << "</x:Inc>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Page())
+    {
+        _outStream << "<x:Page>" << (*iter)->get_Page() << "</x:Page>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Horiz())
+    {
+        _outStream << "<x:Horiz>" << (*iter)->get_Horiz().toString() << "</x:Horiz>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Dx())
+    {
+        _outStream << "<x:Dx>" << (*iter)->get_Dx() << "</x:Dx>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_MapOCX())
+    {
+        _outStream << "<x:MapOCX>" << (*iter)->get_MapOCX().toString() << "</x:MapOCX>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_CF())
+    {
+        _outStream << "<x:CF>" << (*iter)->get_CF().toString() << "</x:CF>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Camera())
+    {
+        _outStream << "<x:Camera>" << (*iter)->get_Camera().toString() << "</x:Camera>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_RecalcAlways())
+    {
+        _outStream << "<x:RecalcAlways>" << (*iter)->get_RecalcAlways().toString() << "</x:RecalcAlways>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_AutoScale())
+    {
+        _outStream << "<x:AutoScale>" << (*iter)->get_AutoScale().toString() << "</x:AutoScale>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_DDE())
+    {
+        _outStream << "<x:DDE>" << (*iter)->get_DDE().toString() << "</x:DDE>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_UIObj())
+    {
+        _outStream << "<x:UIObj>" << (*iter)->get_UIObj().toString() << "</x:UIObj>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ScriptText())
+    {
+        _outStream << "<x:ScriptText>" << (*iter)->get_ScriptText() << "</x:ScriptText>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ScriptExtended())
+    {
+        _outStream << "<x:ScriptExtended>" << (*iter)->get_ScriptExtended() << "</x:ScriptExtended>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ScriptLanguage())
+    {
+        _outStream << "<x:ScriptLanguage>" << (*iter)->get_ScriptLanguage() << "</x:ScriptLanguage>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ScriptLocation())
+    {
+        _outStream << "<x:ScriptLocation>" << (*iter)->get_ScriptLocation() << "</x:ScriptLocation>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_FmlaTxbx())
+    {
+        _outStream << "<x:FmlaTxbx>" << (*iter)->get_FmlaTxbx() << "</x:FmlaTxbx>";
+    }
+    
+    
         }
     }
     

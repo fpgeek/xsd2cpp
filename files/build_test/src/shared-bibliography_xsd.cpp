@@ -77,10 +77,13 @@ ST_SourceType* ST_SourceType::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_Person())
-            {
-                (*iter)->get_Person().toXmlElem("bibliography:Person", "", _outStream);
-            }
+    
+    if ((*iter)->has_Person())
+    {
+        (*iter)->get_Person().toXmlElem("bibliography:Person", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -189,18 +192,27 @@ CT_NameListType* CT_NameListType::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_Last())
-            {
-                _outStream << "<bibliography:Last>" << (*iter)->get_Last().toString() << "</bibliography:Last>";
-            }
-            else if ((*iter)->has_First())
-            {
-                _outStream << "<bibliography:First>" << (*iter)->get_First().toString() << "</bibliography:First>";
-            }
-            else if ((*iter)->has_Middle())
-            {
-                _outStream << "<bibliography:Middle>" << (*iter)->get_Middle().toString() << "</bibliography:Middle>";
-            }
+    
+    if ((*iter)->has_Last())
+    {
+        _outStream << "<bibliography:Last>" << (*iter)->get_Last().toString() << "</bibliography:Last>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_First())
+    {
+        _outStream << "<bibliography:First>" << (*iter)->get_First().toString() << "</bibliography:First>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Middle())
+    {
+        _outStream << "<bibliography:Middle>" << (*iter)->get_Middle().toString() << "</bibliography:Middle>";
+    }
+    
+    
         }
     }
     
@@ -416,7 +428,7 @@ CT_PersonType* CT_PersonType::default_instance_ = NULL;
             
     if (m_has_NameList)
     {
-        m_NameList->toXmlElem("bibliography:NameList", "", _outStream);;
+        m_NameList->toXmlElem("bibliography:NameList", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -546,12 +558,13 @@ CT_NameType* CT_NameType::default_instance_ = NULL;
             
     if (m_has_NameList)
     {
-        m_NameList->toXmlElem("bibliography:NameList", "", _outStream);;
+        m_NameList->toXmlElem("bibliography:NameList", "", _outStream);
     }
+    
     
     if (m_has_Corporate)
     {
-        _outStream << "<bibliography:Corporate>" << m_Corporate->toString() << "</bibliography:Corporate>";;
+        _outStream << "<bibliography:Corporate>" << m_Corporate->toString() << "</bibliography:Corporate>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -731,70 +744,118 @@ CT_NameOrCorporateType* CT_NameOrCorporateType::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_Artist())
-            {
-                (*iter)->get_Artist().toXmlElem("bibliography:Artist", "", _outStream);
-            }
-            else if ((*iter)->has_Author())
-            {
-                (*iter)->get_Author().toXmlElem("bibliography:Author", "", _outStream);
-            }
-            else if ((*iter)->has_BookAuthor())
-            {
-                (*iter)->get_BookAuthor().toXmlElem("bibliography:BookAuthor", "", _outStream);
-            }
-            else if ((*iter)->has_Compiler())
-            {
-                (*iter)->get_Compiler().toXmlElem("bibliography:Compiler", "", _outStream);
-            }
-            else if ((*iter)->has_Composer())
-            {
-                (*iter)->get_Composer().toXmlElem("bibliography:Composer", "", _outStream);
-            }
-            else if ((*iter)->has_Conductor())
-            {
-                (*iter)->get_Conductor().toXmlElem("bibliography:Conductor", "", _outStream);
-            }
-            else if ((*iter)->has_Counsel())
-            {
-                (*iter)->get_Counsel().toXmlElem("bibliography:Counsel", "", _outStream);
-            }
-            else if ((*iter)->has_Director())
-            {
-                (*iter)->get_Director().toXmlElem("bibliography:Director", "", _outStream);
-            }
-            else if ((*iter)->has_Editor())
-            {
-                (*iter)->get_Editor().toXmlElem("bibliography:Editor", "", _outStream);
-            }
-            else if ((*iter)->has_Interviewee())
-            {
-                (*iter)->get_Interviewee().toXmlElem("bibliography:Interviewee", "", _outStream);
-            }
-            else if ((*iter)->has_Interviewer())
-            {
-                (*iter)->get_Interviewer().toXmlElem("bibliography:Interviewer", "", _outStream);
-            }
-            else if ((*iter)->has_Inventor())
-            {
-                (*iter)->get_Inventor().toXmlElem("bibliography:Inventor", "", _outStream);
-            }
-            else if ((*iter)->has_Performer())
-            {
-                (*iter)->get_Performer().toXmlElem("bibliography:Performer", "", _outStream);
-            }
-            else if ((*iter)->has_ProducerName())
-            {
-                (*iter)->get_ProducerName().toXmlElem("bibliography:ProducerName", "", _outStream);
-            }
-            else if ((*iter)->has_Translator())
-            {
-                (*iter)->get_Translator().toXmlElem("bibliography:Translator", "", _outStream);
-            }
-            else if ((*iter)->has_Writer())
-            {
-                (*iter)->get_Writer().toXmlElem("bibliography:Writer", "", _outStream);
-            }
+    
+    if ((*iter)->has_Artist())
+    {
+        (*iter)->get_Artist().toXmlElem("bibliography:Artist", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Author())
+    {
+        (*iter)->get_Author().toXmlElem("bibliography:Author", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_BookAuthor())
+    {
+        (*iter)->get_BookAuthor().toXmlElem("bibliography:BookAuthor", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Compiler())
+    {
+        (*iter)->get_Compiler().toXmlElem("bibliography:Compiler", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Composer())
+    {
+        (*iter)->get_Composer().toXmlElem("bibliography:Composer", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Conductor())
+    {
+        (*iter)->get_Conductor().toXmlElem("bibliography:Conductor", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Counsel())
+    {
+        (*iter)->get_Counsel().toXmlElem("bibliography:Counsel", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Director())
+    {
+        (*iter)->get_Director().toXmlElem("bibliography:Director", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Editor())
+    {
+        (*iter)->get_Editor().toXmlElem("bibliography:Editor", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Interviewee())
+    {
+        (*iter)->get_Interviewee().toXmlElem("bibliography:Interviewee", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Interviewer())
+    {
+        (*iter)->get_Interviewer().toXmlElem("bibliography:Interviewer", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Inventor())
+    {
+        (*iter)->get_Inventor().toXmlElem("bibliography:Inventor", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Performer())
+    {
+        (*iter)->get_Performer().toXmlElem("bibliography:Performer", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_ProducerName())
+    {
+        (*iter)->get_ProducerName().toXmlElem("bibliography:ProducerName", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Translator())
+    {
+        (*iter)->get_Translator().toXmlElem("bibliography:Translator", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Writer())
+    {
+        (*iter)->get_Writer().toXmlElem("bibliography:Writer", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -3860,214 +3921,370 @@ CT_AuthorType* CT_AuthorType::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_AbbreviatedCaseNumber())
-            {
-                _outStream << "<bibliography:AbbreviatedCaseNumber>" << (*iter)->get_AbbreviatedCaseNumber().toString() << "</bibliography:AbbreviatedCaseNumber>";
-            }
-            else if ((*iter)->has_AlbumTitle())
-            {
-                _outStream << "<bibliography:AlbumTitle>" << (*iter)->get_AlbumTitle().toString() << "</bibliography:AlbumTitle>";
-            }
-            else if ((*iter)->has_Author())
-            {
-                (*iter)->get_Author().toXmlElem("bibliography:Author", "", _outStream);
-            }
-            else if ((*iter)->has_BookTitle())
-            {
-                _outStream << "<bibliography:BookTitle>" << (*iter)->get_BookTitle().toString() << "</bibliography:BookTitle>";
-            }
-            else if ((*iter)->has_Broadcaster())
-            {
-                _outStream << "<bibliography:Broadcaster>" << (*iter)->get_Broadcaster().toString() << "</bibliography:Broadcaster>";
-            }
-            else if ((*iter)->has_BroadcastTitle())
-            {
-                _outStream << "<bibliography:BroadcastTitle>" << (*iter)->get_BroadcastTitle().toString() << "</bibliography:BroadcastTitle>";
-            }
-            else if ((*iter)->has_CaseNumber())
-            {
-                _outStream << "<bibliography:CaseNumber>" << (*iter)->get_CaseNumber().toString() << "</bibliography:CaseNumber>";
-            }
-            else if ((*iter)->has_ChapterNumber())
-            {
-                _outStream << "<bibliography:ChapterNumber>" << (*iter)->get_ChapterNumber().toString() << "</bibliography:ChapterNumber>";
-            }
-            else if ((*iter)->has_City())
-            {
-                _outStream << "<bibliography:City>" << (*iter)->get_City().toString() << "</bibliography:City>";
-            }
-            else if ((*iter)->has_Comments())
-            {
-                _outStream << "<bibliography:Comments>" << (*iter)->get_Comments().toString() << "</bibliography:Comments>";
-            }
-            else if ((*iter)->has_ConferenceName())
-            {
-                _outStream << "<bibliography:ConferenceName>" << (*iter)->get_ConferenceName().toString() << "</bibliography:ConferenceName>";
-            }
-            else if ((*iter)->has_CountryRegion())
-            {
-                _outStream << "<bibliography:CountryRegion>" << (*iter)->get_CountryRegion().toString() << "</bibliography:CountryRegion>";
-            }
-            else if ((*iter)->has_Court())
-            {
-                _outStream << "<bibliography:Court>" << (*iter)->get_Court().toString() << "</bibliography:Court>";
-            }
-            else if ((*iter)->has_Day())
-            {
-                _outStream << "<bibliography:Day>" << (*iter)->get_Day().toString() << "</bibliography:Day>";
-            }
-            else if ((*iter)->has_DayAccessed())
-            {
-                _outStream << "<bibliography:DayAccessed>" << (*iter)->get_DayAccessed().toString() << "</bibliography:DayAccessed>";
-            }
-            else if ((*iter)->has_Department())
-            {
-                _outStream << "<bibliography:Department>" << (*iter)->get_Department().toString() << "</bibliography:Department>";
-            }
-            else if ((*iter)->has_Distributor())
-            {
-                _outStream << "<bibliography:Distributor>" << (*iter)->get_Distributor().toString() << "</bibliography:Distributor>";
-            }
-            else if ((*iter)->has_Edition())
-            {
-                _outStream << "<bibliography:Edition>" << (*iter)->get_Edition().toString() << "</bibliography:Edition>";
-            }
-            else if ((*iter)->has_Guid())
-            {
-                _outStream << "<bibliography:Guid>" << (*iter)->get_Guid().toString() << "</bibliography:Guid>";
-            }
-            else if ((*iter)->has_Institution())
-            {
-                _outStream << "<bibliography:Institution>" << (*iter)->get_Institution().toString() << "</bibliography:Institution>";
-            }
-            else if ((*iter)->has_InternetSiteTitle())
-            {
-                _outStream << "<bibliography:InternetSiteTitle>" << (*iter)->get_InternetSiteTitle().toString() << "</bibliography:InternetSiteTitle>";
-            }
-            else if ((*iter)->has_Issue())
-            {
-                _outStream << "<bibliography:Issue>" << (*iter)->get_Issue().toString() << "</bibliography:Issue>";
-            }
-            else if ((*iter)->has_JournalName())
-            {
-                _outStream << "<bibliography:JournalName>" << (*iter)->get_JournalName().toString() << "</bibliography:JournalName>";
-            }
-            else if ((*iter)->has_LCID())
-            {
-                _outStream << "<bibliography:LCID>" << (*iter)->get_LCID().toString() << "</bibliography:LCID>";
-            }
-            else if ((*iter)->has_Medium())
-            {
-                _outStream << "<bibliography:Medium>" << (*iter)->get_Medium().toString() << "</bibliography:Medium>";
-            }
-            else if ((*iter)->has_Month())
-            {
-                _outStream << "<bibliography:Month>" << (*iter)->get_Month().toString() << "</bibliography:Month>";
-            }
-            else if ((*iter)->has_MonthAccessed())
-            {
-                _outStream << "<bibliography:MonthAccessed>" << (*iter)->get_MonthAccessed().toString() << "</bibliography:MonthAccessed>";
-            }
-            else if ((*iter)->has_NumberVolumes())
-            {
-                _outStream << "<bibliography:NumberVolumes>" << (*iter)->get_NumberVolumes().toString() << "</bibliography:NumberVolumes>";
-            }
-            else if ((*iter)->has_Pages())
-            {
-                _outStream << "<bibliography:Pages>" << (*iter)->get_Pages().toString() << "</bibliography:Pages>";
-            }
-            else if ((*iter)->has_PatentNumber())
-            {
-                _outStream << "<bibliography:PatentNumber>" << (*iter)->get_PatentNumber().toString() << "</bibliography:PatentNumber>";
-            }
-            else if ((*iter)->has_PeriodicalTitle())
-            {
-                _outStream << "<bibliography:PeriodicalTitle>" << (*iter)->get_PeriodicalTitle().toString() << "</bibliography:PeriodicalTitle>";
-            }
-            else if ((*iter)->has_ProductionCompany())
-            {
-                _outStream << "<bibliography:ProductionCompany>" << (*iter)->get_ProductionCompany().toString() << "</bibliography:ProductionCompany>";
-            }
-            else if ((*iter)->has_PublicationTitle())
-            {
-                _outStream << "<bibliography:PublicationTitle>" << (*iter)->get_PublicationTitle().toString() << "</bibliography:PublicationTitle>";
-            }
-            else if ((*iter)->has_Publisher())
-            {
-                _outStream << "<bibliography:Publisher>" << (*iter)->get_Publisher().toString() << "</bibliography:Publisher>";
-            }
-            else if ((*iter)->has_RecordingNumber())
-            {
-                _outStream << "<bibliography:RecordingNumber>" << (*iter)->get_RecordingNumber().toString() << "</bibliography:RecordingNumber>";
-            }
-            else if ((*iter)->has_RefOrder())
-            {
-                _outStream << "<bibliography:RefOrder>" << (*iter)->get_RefOrder().toString() << "</bibliography:RefOrder>";
-            }
-            else if ((*iter)->has_Reporter())
-            {
-                _outStream << "<bibliography:Reporter>" << (*iter)->get_Reporter().toString() << "</bibliography:Reporter>";
-            }
-            else if ((*iter)->has_SourceType())
-            {
-                _outStream << "<bibliography:SourceType>" << (*iter)->get_SourceType().toString() << "</bibliography:SourceType>";
-            }
-            else if ((*iter)->has_ShortTitle())
-            {
-                _outStream << "<bibliography:ShortTitle>" << (*iter)->get_ShortTitle().toString() << "</bibliography:ShortTitle>";
-            }
-            else if ((*iter)->has_StandardNumber())
-            {
-                _outStream << "<bibliography:StandardNumber>" << (*iter)->get_StandardNumber().toString() << "</bibliography:StandardNumber>";
-            }
-            else if ((*iter)->has_StateProvince())
-            {
-                _outStream << "<bibliography:StateProvince>" << (*iter)->get_StateProvince().toString() << "</bibliography:StateProvince>";
-            }
-            else if ((*iter)->has_Station())
-            {
-                _outStream << "<bibliography:Station>" << (*iter)->get_Station().toString() << "</bibliography:Station>";
-            }
-            else if ((*iter)->has_Tag())
-            {
-                _outStream << "<bibliography:Tag>" << (*iter)->get_Tag().toString() << "</bibliography:Tag>";
-            }
-            else if ((*iter)->has_Theater())
-            {
-                _outStream << "<bibliography:Theater>" << (*iter)->get_Theater().toString() << "</bibliography:Theater>";
-            }
-            else if ((*iter)->has_ThesisType())
-            {
-                _outStream << "<bibliography:ThesisType>" << (*iter)->get_ThesisType().toString() << "</bibliography:ThesisType>";
-            }
-            else if ((*iter)->has_Title())
-            {
-                _outStream << "<bibliography:Title>" << (*iter)->get_Title().toString() << "</bibliography:Title>";
-            }
-            else if ((*iter)->has_Type())
-            {
-                _outStream << "<bibliography:Type>" << (*iter)->get_Type().toString() << "</bibliography:Type>";
-            }
-            else if ((*iter)->has_URL())
-            {
-                _outStream << "<bibliography:URL>" << (*iter)->get_URL().toString() << "</bibliography:URL>";
-            }
-            else if ((*iter)->has_Version())
-            {
-                _outStream << "<bibliography:Version>" << (*iter)->get_Version().toString() << "</bibliography:Version>";
-            }
-            else if ((*iter)->has_Volume())
-            {
-                _outStream << "<bibliography:Volume>" << (*iter)->get_Volume().toString() << "</bibliography:Volume>";
-            }
-            else if ((*iter)->has_Year())
-            {
-                _outStream << "<bibliography:Year>" << (*iter)->get_Year().toString() << "</bibliography:Year>";
-            }
-            else if ((*iter)->has_YearAccessed())
-            {
-                _outStream << "<bibliography:YearAccessed>" << (*iter)->get_YearAccessed().toString() << "</bibliography:YearAccessed>";
-            }
+    
+    if ((*iter)->has_AbbreviatedCaseNumber())
+    {
+        _outStream << "<bibliography:AbbreviatedCaseNumber>" << (*iter)->get_AbbreviatedCaseNumber().toString() << "</bibliography:AbbreviatedCaseNumber>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_AlbumTitle())
+    {
+        _outStream << "<bibliography:AlbumTitle>" << (*iter)->get_AlbumTitle().toString() << "</bibliography:AlbumTitle>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Author())
+    {
+        (*iter)->get_Author().toXmlElem("bibliography:Author", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_BookTitle())
+    {
+        _outStream << "<bibliography:BookTitle>" << (*iter)->get_BookTitle().toString() << "</bibliography:BookTitle>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Broadcaster())
+    {
+        _outStream << "<bibliography:Broadcaster>" << (*iter)->get_Broadcaster().toString() << "</bibliography:Broadcaster>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_BroadcastTitle())
+    {
+        _outStream << "<bibliography:BroadcastTitle>" << (*iter)->get_BroadcastTitle().toString() << "</bibliography:BroadcastTitle>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_CaseNumber())
+    {
+        _outStream << "<bibliography:CaseNumber>" << (*iter)->get_CaseNumber().toString() << "</bibliography:CaseNumber>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ChapterNumber())
+    {
+        _outStream << "<bibliography:ChapterNumber>" << (*iter)->get_ChapterNumber().toString() << "</bibliography:ChapterNumber>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_City())
+    {
+        _outStream << "<bibliography:City>" << (*iter)->get_City().toString() << "</bibliography:City>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Comments())
+    {
+        _outStream << "<bibliography:Comments>" << (*iter)->get_Comments().toString() << "</bibliography:Comments>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ConferenceName())
+    {
+        _outStream << "<bibliography:ConferenceName>" << (*iter)->get_ConferenceName().toString() << "</bibliography:ConferenceName>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_CountryRegion())
+    {
+        _outStream << "<bibliography:CountryRegion>" << (*iter)->get_CountryRegion().toString() << "</bibliography:CountryRegion>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Court())
+    {
+        _outStream << "<bibliography:Court>" << (*iter)->get_Court().toString() << "</bibliography:Court>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Day())
+    {
+        _outStream << "<bibliography:Day>" << (*iter)->get_Day().toString() << "</bibliography:Day>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_DayAccessed())
+    {
+        _outStream << "<bibliography:DayAccessed>" << (*iter)->get_DayAccessed().toString() << "</bibliography:DayAccessed>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Department())
+    {
+        _outStream << "<bibliography:Department>" << (*iter)->get_Department().toString() << "</bibliography:Department>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Distributor())
+    {
+        _outStream << "<bibliography:Distributor>" << (*iter)->get_Distributor().toString() << "</bibliography:Distributor>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Edition())
+    {
+        _outStream << "<bibliography:Edition>" << (*iter)->get_Edition().toString() << "</bibliography:Edition>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Guid())
+    {
+        _outStream << "<bibliography:Guid>" << (*iter)->get_Guid().toString() << "</bibliography:Guid>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Institution())
+    {
+        _outStream << "<bibliography:Institution>" << (*iter)->get_Institution().toString() << "</bibliography:Institution>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_InternetSiteTitle())
+    {
+        _outStream << "<bibliography:InternetSiteTitle>" << (*iter)->get_InternetSiteTitle().toString() << "</bibliography:InternetSiteTitle>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Issue())
+    {
+        _outStream << "<bibliography:Issue>" << (*iter)->get_Issue().toString() << "</bibliography:Issue>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_JournalName())
+    {
+        _outStream << "<bibliography:JournalName>" << (*iter)->get_JournalName().toString() << "</bibliography:JournalName>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_LCID())
+    {
+        _outStream << "<bibliography:LCID>" << (*iter)->get_LCID().toString() << "</bibliography:LCID>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Medium())
+    {
+        _outStream << "<bibliography:Medium>" << (*iter)->get_Medium().toString() << "</bibliography:Medium>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Month())
+    {
+        _outStream << "<bibliography:Month>" << (*iter)->get_Month().toString() << "</bibliography:Month>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_MonthAccessed())
+    {
+        _outStream << "<bibliography:MonthAccessed>" << (*iter)->get_MonthAccessed().toString() << "</bibliography:MonthAccessed>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_NumberVolumes())
+    {
+        _outStream << "<bibliography:NumberVolumes>" << (*iter)->get_NumberVolumes().toString() << "</bibliography:NumberVolumes>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Pages())
+    {
+        _outStream << "<bibliography:Pages>" << (*iter)->get_Pages().toString() << "</bibliography:Pages>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_PatentNumber())
+    {
+        _outStream << "<bibliography:PatentNumber>" << (*iter)->get_PatentNumber().toString() << "</bibliography:PatentNumber>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_PeriodicalTitle())
+    {
+        _outStream << "<bibliography:PeriodicalTitle>" << (*iter)->get_PeriodicalTitle().toString() << "</bibliography:PeriodicalTitle>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ProductionCompany())
+    {
+        _outStream << "<bibliography:ProductionCompany>" << (*iter)->get_ProductionCompany().toString() << "</bibliography:ProductionCompany>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_PublicationTitle())
+    {
+        _outStream << "<bibliography:PublicationTitle>" << (*iter)->get_PublicationTitle().toString() << "</bibliography:PublicationTitle>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Publisher())
+    {
+        _outStream << "<bibliography:Publisher>" << (*iter)->get_Publisher().toString() << "</bibliography:Publisher>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_RecordingNumber())
+    {
+        _outStream << "<bibliography:RecordingNumber>" << (*iter)->get_RecordingNumber().toString() << "</bibliography:RecordingNumber>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_RefOrder())
+    {
+        _outStream << "<bibliography:RefOrder>" << (*iter)->get_RefOrder().toString() << "</bibliography:RefOrder>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Reporter())
+    {
+        _outStream << "<bibliography:Reporter>" << (*iter)->get_Reporter().toString() << "</bibliography:Reporter>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_SourceType())
+    {
+        _outStream << "<bibliography:SourceType>" << (*iter)->get_SourceType().toString() << "</bibliography:SourceType>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ShortTitle())
+    {
+        _outStream << "<bibliography:ShortTitle>" << (*iter)->get_ShortTitle().toString() << "</bibliography:ShortTitle>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_StandardNumber())
+    {
+        _outStream << "<bibliography:StandardNumber>" << (*iter)->get_StandardNumber().toString() << "</bibliography:StandardNumber>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_StateProvince())
+    {
+        _outStream << "<bibliography:StateProvince>" << (*iter)->get_StateProvince().toString() << "</bibliography:StateProvince>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Station())
+    {
+        _outStream << "<bibliography:Station>" << (*iter)->get_Station().toString() << "</bibliography:Station>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Tag())
+    {
+        _outStream << "<bibliography:Tag>" << (*iter)->get_Tag().toString() << "</bibliography:Tag>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Theater())
+    {
+        _outStream << "<bibliography:Theater>" << (*iter)->get_Theater().toString() << "</bibliography:Theater>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ThesisType())
+    {
+        _outStream << "<bibliography:ThesisType>" << (*iter)->get_ThesisType().toString() << "</bibliography:ThesisType>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Title())
+    {
+        _outStream << "<bibliography:Title>" << (*iter)->get_Title().toString() << "</bibliography:Title>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Type())
+    {
+        _outStream << "<bibliography:Type>" << (*iter)->get_Type().toString() << "</bibliography:Type>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_URL())
+    {
+        _outStream << "<bibliography:URL>" << (*iter)->get_URL().toString() << "</bibliography:URL>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Version())
+    {
+        _outStream << "<bibliography:Version>" << (*iter)->get_Version().toString() << "</bibliography:Version>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Volume())
+    {
+        _outStream << "<bibliography:Volume>" << (*iter)->get_Volume().toString() << "</bibliography:Volume>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_Year())
+    {
+        _outStream << "<bibliography:Year>" << (*iter)->get_Year().toString() << "</bibliography:Year>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_YearAccessed())
+    {
+        _outStream << "<bibliography:YearAccessed>" << (*iter)->get_YearAccessed().toString() << "</bibliography:YearAccessed>";
+    }
+    
+    
         }
     }
     
@@ -29454,10 +29671,13 @@ CT_SourceType* CT_SourceType::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_Source())
-            {
-                (*iter)->get_Source().toXmlElem("bibliography:Source", "", _outStream);
-            }
+    
+    if ((*iter)->has_Source())
+    {
+        (*iter)->get_Source().toXmlElem("bibliography:Source", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -29657,10 +29877,13 @@ CT_Sources* CT_Sources::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_Source())
-            {
-                (*iter)->get_Source().toXmlElem("bibliography:Source", "", _outStream);
-            }
+    
+    if ((*iter)->has_Source())
+    {
+        (*iter)->get_Source().toXmlElem("bibliography:Source", "", _outStream);
+    }
+    
+    
         }
     }
     

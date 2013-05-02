@@ -104,12 +104,13 @@ namespace ns_dpct {
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("dpct:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("dpct:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvPicPr)
     {
-        m_cNvPicPr->toXmlElem("dpct:cNvPicPr", "", _outStream);;
+        m_cNvPicPr->toXmlElem("dpct:cNvPicPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -254,17 +255,19 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
             
     if (m_has_nvPicPr)
     {
-        m_nvPicPr->toXmlElem("dpct:nvPicPr", "", _outStream);;
+        m_nvPicPr->toXmlElem("dpct:nvPicPr", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("dpct:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("dpct:blipFill", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("dpct:spPr", "", _outStream);;
+        m_spPr->toXmlElem("dpct:spPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -407,17 +410,19 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
     
     if (m_has_nvPicPr)
     {
-        m_nvPicPr->toXmlElem("dpct:nvPicPr", "", _outStream);;
+        m_nvPicPr->toXmlElem("dpct:nvPicPr", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("dpct:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("dpct:blipFill", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("dpct:spPr", "", _outStream);;
+        m_spPr->toXmlElem("dpct:spPr", "", _outStream);
     }
     
     _outStream << "</dpct:pic>";

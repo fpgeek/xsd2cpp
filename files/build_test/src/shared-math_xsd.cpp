@@ -2213,22 +2213,23 @@ CT_ManualBreak* CT_ManualBreak::default_instance_ = NULL;
             
     if (m_has_lit)
     {
-        m_lit->toXmlElem("m:lit", "", _outStream);;
+        m_lit->toXmlElem("m:lit", "", _outStream);
     }
      
     if (m_has_nor)
     {
-        m_nor->toXmlElem("m:nor", "", _outStream);;
+        m_nor->toXmlElem("m:nor", "", _outStream);
     }
      
     if (m_has_brk)
     {
-        m_brk->toXmlElem("m:brk", "", _outStream);;
+        m_brk->toXmlElem("m:brk", "", _outStream);
     }
+    
     
     if (m_has_aln)
     {
-        m_aln->toXmlElem("m:aln", "", _outStream);;
+        m_aln->toXmlElem("m:aln", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2690,154 +2691,257 @@ CT_Text* CT_Text::default_instance_ = NULL;
             
     if (m_has_rPr)
     {
-        m_rPr->toXmlElem("m:rPr", "", _outStream);;
+        m_rPr->toXmlElem("m:rPr", "", _outStream);
     }
+    
     
     if (m_has_w_rPr)
     {
-        m_w_rPr->toXmlElem("w:rPr", "", _outStream);;
+        m_w_rPr->toXmlElem("w:rPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_w_br())
-            {
-                (*iter)->get_w_br().toXmlElem("w:br", "", _outStream);
-            }
-            else if ((*iter)->has_w_t())
-            {
-                (*iter)->get_w_t().toXmlElem("w:t", "", _outStream);
-            }
-            else if ((*iter)->has_w_contentPart())
-            {
-                (*iter)->get_w_contentPart().toXmlElem("w:contentPart", "", _outStream);
-            }
-            else if ((*iter)->has_w_delText())
-            {
-                (*iter)->get_w_delText().toXmlElem("w:delText", "", _outStream);
-            }
-            else if ((*iter)->has_w_instrText())
-            {
-                (*iter)->get_w_instrText().toXmlElem("w:instrText", "", _outStream);
-            }
-            else if ((*iter)->has_w_delInstrText())
-            {
-                (*iter)->get_w_delInstrText().toXmlElem("w:delInstrText", "", _outStream);
-            }
-            else if ((*iter)->has_w_noBreakHyphen())
-            {
-                (*iter)->get_w_noBreakHyphen().toXmlElem("w:noBreakHyphen", "", _outStream);
-            }
-            else if ((*iter)->has_w_softHyphen())
-            {
-                (*iter)->get_w_softHyphen().toXmlElem("w:softHyphen", "", _outStream);
-            }
-            else if ((*iter)->has_w_dayShort())
-            {
-                (*iter)->get_w_dayShort().toXmlElem("w:dayShort", "", _outStream);
-            }
-            else if ((*iter)->has_w_monthShort())
-            {
-                (*iter)->get_w_monthShort().toXmlElem("w:monthShort", "", _outStream);
-            }
-            else if ((*iter)->has_w_yearShort())
-            {
-                (*iter)->get_w_yearShort().toXmlElem("w:yearShort", "", _outStream);
-            }
-            else if ((*iter)->has_w_dayLong())
-            {
-                (*iter)->get_w_dayLong().toXmlElem("w:dayLong", "", _outStream);
-            }
-            else if ((*iter)->has_w_monthLong())
-            {
-                (*iter)->get_w_monthLong().toXmlElem("w:monthLong", "", _outStream);
-            }
-            else if ((*iter)->has_w_yearLong())
-            {
-                (*iter)->get_w_yearLong().toXmlElem("w:yearLong", "", _outStream);
-            }
-            else if ((*iter)->has_w_annotationRef())
-            {
-                (*iter)->get_w_annotationRef().toXmlElem("w:annotationRef", "", _outStream);
-            }
-            else if ((*iter)->has_w_footnoteRef())
-            {
-                (*iter)->get_w_footnoteRef().toXmlElem("w:footnoteRef", "", _outStream);
-            }
-            else if ((*iter)->has_w_endnoteRef())
-            {
-                (*iter)->get_w_endnoteRef().toXmlElem("w:endnoteRef", "", _outStream);
-            }
-            else if ((*iter)->has_w_separator())
-            {
-                (*iter)->get_w_separator().toXmlElem("w:separator", "", _outStream);
-            }
-            else if ((*iter)->has_w_continuationSeparator())
-            {
-                (*iter)->get_w_continuationSeparator().toXmlElem("w:continuationSeparator", "", _outStream);
-            }
-            else if ((*iter)->has_w_sym())
-            {
-                (*iter)->get_w_sym().toXmlElem("w:sym", "", _outStream);
-            }
-            else if ((*iter)->has_w_pgNum())
-            {
-                (*iter)->get_w_pgNum().toXmlElem("w:pgNum", "", _outStream);
-            }
-            else if ((*iter)->has_w_cr())
-            {
-                (*iter)->get_w_cr().toXmlElem("w:cr", "", _outStream);
-            }
-            else if ((*iter)->has_w_tab())
-            {
-                (*iter)->get_w_tab().toXmlElem("w:tab", "", _outStream);
-            }
-            else if ((*iter)->has_w_object())
-            {
-                (*iter)->get_w_object().toXmlElem("w:object", "", _outStream);
-            }
-            else if ((*iter)->has_w_pict())
-            {
-                (*iter)->get_w_pict().toXmlElem("w:pict", "", _outStream);
-            }
-            else if ((*iter)->has_w_fldChar())
-            {
-                (*iter)->get_w_fldChar().toXmlElem("w:fldChar", "", _outStream);
-            }
-            else if ((*iter)->has_w_ruby())
-            {
-                (*iter)->get_w_ruby().toXmlElem("w:ruby", "", _outStream);
-            }
-            else if ((*iter)->has_w_footnoteReference())
-            {
-                (*iter)->get_w_footnoteReference().toXmlElem("w:footnoteReference", "", _outStream);
-            }
-            else if ((*iter)->has_w_endnoteReference())
-            {
-                (*iter)->get_w_endnoteReference().toXmlElem("w:endnoteReference", "", _outStream);
-            }
-            else if ((*iter)->has_w_commentReference())
-            {
-                (*iter)->get_w_commentReference().toXmlElem("w:commentReference", "", _outStream);
-            }
-            else if ((*iter)->has_w_drawing())
-            {
-                (*iter)->get_w_drawing().toXmlElem("w:drawing", "", _outStream);
-            }
-            else if ((*iter)->has_w_ptab())
-            {
-                (*iter)->get_w_ptab().toXmlElem("w:ptab", "", _outStream);
-            }
-            else if ((*iter)->has_w_lastRenderedPageBreak())
-            {
-                (*iter)->get_w_lastRenderedPageBreak().toXmlElem("w:lastRenderedPageBreak", "", _outStream);
-            }
-            else if ((*iter)->has_t())
-            {
-                (*iter)->get_t().toXmlElem("m:t", "", _outStream);
-            }
+    
+    if ((*iter)->has_w_br())
+    {
+        (*iter)->get_w_br().toXmlElem("w:br", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_t())
+    {
+        (*iter)->get_w_t().toXmlElem("w:t", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_contentPart())
+    {
+        (*iter)->get_w_contentPart().toXmlElem("w:contentPart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_delText())
+    {
+        (*iter)->get_w_delText().toXmlElem("w:delText", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_instrText())
+    {
+        (*iter)->get_w_instrText().toXmlElem("w:instrText", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_delInstrText())
+    {
+        (*iter)->get_w_delInstrText().toXmlElem("w:delInstrText", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_noBreakHyphen())
+    {
+        (*iter)->get_w_noBreakHyphen().toXmlElem("w:noBreakHyphen", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_softHyphen())
+    {
+        (*iter)->get_w_softHyphen().toXmlElem("w:softHyphen", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_dayShort())
+    {
+        (*iter)->get_w_dayShort().toXmlElem("w:dayShort", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_monthShort())
+    {
+        (*iter)->get_w_monthShort().toXmlElem("w:monthShort", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_yearShort())
+    {
+        (*iter)->get_w_yearShort().toXmlElem("w:yearShort", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_dayLong())
+    {
+        (*iter)->get_w_dayLong().toXmlElem("w:dayLong", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_monthLong())
+    {
+        (*iter)->get_w_monthLong().toXmlElem("w:monthLong", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_yearLong())
+    {
+        (*iter)->get_w_yearLong().toXmlElem("w:yearLong", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_annotationRef())
+    {
+        (*iter)->get_w_annotationRef().toXmlElem("w:annotationRef", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_footnoteRef())
+    {
+        (*iter)->get_w_footnoteRef().toXmlElem("w:footnoteRef", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_endnoteRef())
+    {
+        (*iter)->get_w_endnoteRef().toXmlElem("w:endnoteRef", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_separator())
+    {
+        (*iter)->get_w_separator().toXmlElem("w:separator", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_continuationSeparator())
+    {
+        (*iter)->get_w_continuationSeparator().toXmlElem("w:continuationSeparator", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_sym())
+    {
+        (*iter)->get_w_sym().toXmlElem("w:sym", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_pgNum())
+    {
+        (*iter)->get_w_pgNum().toXmlElem("w:pgNum", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_cr())
+    {
+        (*iter)->get_w_cr().toXmlElem("w:cr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_tab())
+    {
+        (*iter)->get_w_tab().toXmlElem("w:tab", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_object())
+    {
+        (*iter)->get_w_object().toXmlElem("w:object", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_pict())
+    {
+        (*iter)->get_w_pict().toXmlElem("w:pict", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_fldChar())
+    {
+        (*iter)->get_w_fldChar().toXmlElem("w:fldChar", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_ruby())
+    {
+        (*iter)->get_w_ruby().toXmlElem("w:ruby", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_footnoteReference())
+    {
+        (*iter)->get_w_footnoteReference().toXmlElem("w:footnoteReference", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_endnoteReference())
+    {
+        (*iter)->get_w_endnoteReference().toXmlElem("w:endnoteReference", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_commentReference())
+    {
+        (*iter)->get_w_commentReference().toXmlElem("w:commentReference", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_drawing())
+    {
+        (*iter)->get_w_drawing().toXmlElem("w:drawing", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_ptab())
+    {
+        (*iter)->get_w_ptab().toXmlElem("w:ptab", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_lastRenderedPageBreak())
+    {
+        (*iter)->get_w_lastRenderedPageBreak().toXmlElem("w:lastRenderedPageBreak", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_t())
+    {
+        (*iter)->get_t().toXmlElem("m:t", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -13989,12 +14093,13 @@ CT_R* CT_R::default_instance_ = NULL;
              
     if (m_has_w_ins)
     {
-        m_w_ins->toXmlElem("w:ins", "", _outStream);;
+        m_w_ins->toXmlElem("w:ins", "", _outStream);
     }
+    
     
     if (m_has_w_del)
     {
-        m_w_del->toXmlElem("w:del", "", _outStream);;
+        m_w_del->toXmlElem("w:del", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14104,12 +14209,13 @@ CT_CtrlPr* CT_CtrlPr::default_instance_ = NULL;
             
     if (m_has_chr)
     {
-        m_chr->toXmlElem("m:chr", "", _outStream);;
+        m_chr->toXmlElem("m:chr", "", _outStream);
     }
+    
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14219,12 +14325,13 @@ CT_AccPr* CT_AccPr::default_instance_ = NULL;
             
     if (m_has_accPr)
     {
-        m_accPr->toXmlElem("m:accPr", "", _outStream);;
+        m_accPr->toXmlElem("m:accPr", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14334,12 +14441,13 @@ CT_Acc* CT_Acc::default_instance_ = NULL;
             
     if (m_has_pos)
     {
-        m_pos->toXmlElem("m:pos", "", _outStream);;
+        m_pos->toXmlElem("m:pos", "", _outStream);
     }
+    
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14449,12 +14557,13 @@ CT_BarPr* CT_BarPr::default_instance_ = NULL;
             
     if (m_has_barPr)
     {
-        m_barPr->toXmlElem("m:barPr", "", _outStream);;
+        m_barPr->toXmlElem("m:barPr", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14704,32 +14813,37 @@ CT_Bar* CT_Bar::default_instance_ = NULL;
             
     if (m_has_opEmu)
     {
-        m_opEmu->toXmlElem("m:opEmu", "", _outStream);;
+        m_opEmu->toXmlElem("m:opEmu", "", _outStream);
     }
+    
     
     if (m_has_noBreak)
     {
-        m_noBreak->toXmlElem("m:noBreak", "", _outStream);;
+        m_noBreak->toXmlElem("m:noBreak", "", _outStream);
     }
+    
     
     if (m_has_diff)
     {
-        m_diff->toXmlElem("m:diff", "", _outStream);;
+        m_diff->toXmlElem("m:diff", "", _outStream);
     }
+    
     
     if (m_has_brk)
     {
-        m_brk->toXmlElem("m:brk", "", _outStream);;
+        m_brk->toXmlElem("m:brk", "", _outStream);
     }
+    
     
     if (m_has_aln)
     {
-        m_aln->toXmlElem("m:aln", "", _outStream);;
+        m_aln->toXmlElem("m:aln", "", _outStream);
     }
+    
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14839,12 +14953,13 @@ CT_BoxPr* CT_BoxPr::default_instance_ = NULL;
             
     if (m_has_boxPr)
     {
-        m_boxPr->toXmlElem("m:boxPr", "", _outStream);;
+        m_boxPr->toXmlElem("m:boxPr", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15199,47 +15314,55 @@ CT_Box* CT_Box::default_instance_ = NULL;
             
     if (m_has_hideTop)
     {
-        m_hideTop->toXmlElem("m:hideTop", "", _outStream);;
+        m_hideTop->toXmlElem("m:hideTop", "", _outStream);
     }
+    
     
     if (m_has_hideBot)
     {
-        m_hideBot->toXmlElem("m:hideBot", "", _outStream);;
+        m_hideBot->toXmlElem("m:hideBot", "", _outStream);
     }
+    
     
     if (m_has_hideLeft)
     {
-        m_hideLeft->toXmlElem("m:hideLeft", "", _outStream);;
+        m_hideLeft->toXmlElem("m:hideLeft", "", _outStream);
     }
+    
     
     if (m_has_hideRight)
     {
-        m_hideRight->toXmlElem("m:hideRight", "", _outStream);;
+        m_hideRight->toXmlElem("m:hideRight", "", _outStream);
     }
+    
     
     if (m_has_strikeH)
     {
-        m_strikeH->toXmlElem("m:strikeH", "", _outStream);;
+        m_strikeH->toXmlElem("m:strikeH", "", _outStream);
     }
+    
     
     if (m_has_strikeV)
     {
-        m_strikeV->toXmlElem("m:strikeV", "", _outStream);;
+        m_strikeV->toXmlElem("m:strikeV", "", _outStream);
     }
+    
     
     if (m_has_strikeBLTR)
     {
-        m_strikeBLTR->toXmlElem("m:strikeBLTR", "", _outStream);;
+        m_strikeBLTR->toXmlElem("m:strikeBLTR", "", _outStream);
     }
+    
     
     if (m_has_strikeTLBR)
     {
-        m_strikeTLBR->toXmlElem("m:strikeTLBR", "", _outStream);;
+        m_strikeTLBR->toXmlElem("m:strikeTLBR", "", _outStream);
     }
+    
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15349,12 +15472,13 @@ CT_BorderBoxPr* CT_BorderBoxPr::default_instance_ = NULL;
             
     if (m_has_borderBoxPr)
     {
-        m_borderBoxPr->toXmlElem("m:borderBoxPr", "", _outStream);;
+        m_borderBoxPr->toXmlElem("m:borderBoxPr", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15604,32 +15728,37 @@ CT_BorderBox* CT_BorderBox::default_instance_ = NULL;
             
     if (m_has_begChr)
     {
-        m_begChr->toXmlElem("m:begChr", "", _outStream);;
+        m_begChr->toXmlElem("m:begChr", "", _outStream);
     }
+    
     
     if (m_has_sepChr)
     {
-        m_sepChr->toXmlElem("m:sepChr", "", _outStream);;
+        m_sepChr->toXmlElem("m:sepChr", "", _outStream);
     }
+    
     
     if (m_has_endChr)
     {
-        m_endChr->toXmlElem("m:endChr", "", _outStream);;
+        m_endChr->toXmlElem("m:endChr", "", _outStream);
     }
+    
     
     if (m_has_grow)
     {
-        m_grow->toXmlElem("m:grow", "", _outStream);;
+        m_grow->toXmlElem("m:grow", "", _outStream);
     }
+    
     
     if (m_has_shp)
     {
-        m_shp->toXmlElem("m:shp", "", _outStream);;
+        m_shp->toXmlElem("m:shp", "", _outStream);
     }
+    
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15721,17 +15850,20 @@ CT_DPr* CT_DPr::default_instance_ = NULL;
             
     if (m_has_dPr)
     {
-        m_dPr->toXmlElem("m:dPr", "", _outStream);;
+        m_dPr->toXmlElem("m:dPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_e())
-            {
-                (*iter)->get_e().toXmlElem("m:e", "", _outStream);
-            }
+    
+    if ((*iter)->has_e())
+    {
+        (*iter)->get_e().toXmlElem("m:e", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -16014,32 +16146,37 @@ CT_D* CT_D::default_instance_ = NULL;
             
     if (m_has_baseJc)
     {
-        m_baseJc->toXmlElem("m:baseJc", "", _outStream);;
+        m_baseJc->toXmlElem("m:baseJc", "", _outStream);
     }
+    
     
     if (m_has_maxDist)
     {
-        m_maxDist->toXmlElem("m:maxDist", "", _outStream);;
+        m_maxDist->toXmlElem("m:maxDist", "", _outStream);
     }
+    
     
     if (m_has_objDist)
     {
-        m_objDist->toXmlElem("m:objDist", "", _outStream);;
+        m_objDist->toXmlElem("m:objDist", "", _outStream);
     }
+    
     
     if (m_has_rSpRule)
     {
-        m_rSpRule->toXmlElem("m:rSpRule", "", _outStream);;
+        m_rSpRule->toXmlElem("m:rSpRule", "", _outStream);
     }
+    
     
     if (m_has_rSp)
     {
-        m_rSp->toXmlElem("m:rSp", "", _outStream);;
+        m_rSp->toXmlElem("m:rSp", "", _outStream);
     }
+    
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16131,17 +16268,20 @@ CT_EqArrPr* CT_EqArrPr::default_instance_ = NULL;
             
     if (m_has_eqArrPr)
     {
-        m_eqArrPr->toXmlElem("m:eqArrPr", "", _outStream);;
+        m_eqArrPr->toXmlElem("m:eqArrPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_e())
-            {
-                (*iter)->get_e().toXmlElem("m:e", "", _outStream);
-            }
+    
+    if ((*iter)->has_e())
+    {
+        (*iter)->get_e().toXmlElem("m:e", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -16284,12 +16424,13 @@ CT_EqArr* CT_EqArr::default_instance_ = NULL;
             
     if (m_has_type)
     {
-        m_type->toXmlElem("m:type", "", _outStream);;
+        m_type->toXmlElem("m:type", "", _outStream);
     }
+    
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16434,17 +16575,19 @@ CT_FPr* CT_FPr::default_instance_ = NULL;
             
     if (m_has_fPr)
     {
-        m_fPr->toXmlElem("m:fPr", "", _outStream);;
+        m_fPr->toXmlElem("m:fPr", "", _outStream);
     }
+    
     
     if (m_has_num)
     {
-        m_num->toXmlElem("m:num", "", _outStream);;
+        m_num->toXmlElem("m:num", "", _outStream);
     }
+    
     
     if (m_has_den)
     {
-        m_den->toXmlElem("m:den", "", _outStream);;
+        m_den->toXmlElem("m:den", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16519,7 +16662,7 @@ CT_F* CT_F::default_instance_ = NULL;
             
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16664,17 +16807,19 @@ CT_FuncPr* CT_FuncPr::default_instance_ = NULL;
             
     if (m_has_funcPr)
     {
-        m_funcPr->toXmlElem("m:funcPr", "", _outStream);;
+        m_funcPr->toXmlElem("m:funcPr", "", _outStream);
     }
+    
     
     if (m_has_fName)
     {
-        m_fName->toXmlElem("m:fName", "", _outStream);;
+        m_fName->toXmlElem("m:fName", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16854,22 +16999,25 @@ CT_Func* CT_Func::default_instance_ = NULL;
             
     if (m_has_chr)
     {
-        m_chr->toXmlElem("m:chr", "", _outStream);;
+        m_chr->toXmlElem("m:chr", "", _outStream);
     }
+    
     
     if (m_has_pos)
     {
-        m_pos->toXmlElem("m:pos", "", _outStream);;
+        m_pos->toXmlElem("m:pos", "", _outStream);
     }
+    
     
     if (m_has_vertJc)
     {
-        m_vertJc->toXmlElem("m:vertJc", "", _outStream);;
+        m_vertJc->toXmlElem("m:vertJc", "", _outStream);
     }
+    
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16979,12 +17127,13 @@ CT_GroupChrPr* CT_GroupChrPr::default_instance_ = NULL;
             
     if (m_has_groupChrPr)
     {
-        m_groupChrPr->toXmlElem("m:groupChrPr", "", _outStream);;
+        m_groupChrPr->toXmlElem("m:groupChrPr", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17059,7 +17208,7 @@ CT_GroupChr* CT_GroupChr::default_instance_ = NULL;
             
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17204,17 +17353,19 @@ CT_LimLowPr* CT_LimLowPr::default_instance_ = NULL;
             
     if (m_has_limLowPr)
     {
-        m_limLowPr->toXmlElem("m:limLowPr", "", _outStream);;
+        m_limLowPr->toXmlElem("m:limLowPr", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
+    
     
     if (m_has_lim)
     {
-        m_lim->toXmlElem("m:lim", "", _outStream);;
+        m_lim->toXmlElem("m:lim", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17289,7 +17440,7 @@ CT_LimLow* CT_LimLow::default_instance_ = NULL;
             
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17434,17 +17585,19 @@ CT_LimUppPr* CT_LimUppPr::default_instance_ = NULL;
             
     if (m_has_limUppPr)
     {
-        m_limUppPr->toXmlElem("m:limUppPr", "", _outStream);;
+        m_limUppPr->toXmlElem("m:limUppPr", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
+    
     
     if (m_has_lim)
     {
-        m_lim->toXmlElem("m:lim", "", _outStream);;
+        m_lim->toXmlElem("m:lim", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17554,12 +17707,13 @@ CT_LimUpp* CT_LimUpp::default_instance_ = NULL;
             
     if (m_has_count)
     {
-        m_count->toXmlElem("m:count", "", _outStream);;
+        m_count->toXmlElem("m:count", "", _outStream);
     }
+    
     
     if (m_has_mcJc)
     {
-        m_mcJc->toXmlElem("m:mcJc", "", _outStream);;
+        m_mcJc->toXmlElem("m:mcJc", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17634,7 +17788,7 @@ CT_MCPr* CT_MCPr::default_instance_ = NULL;
             
     if (m_has_mcPr)
     {
-        m_mcPr->toXmlElem("m:mcPr", "", _outStream);;
+        m_mcPr->toXmlElem("m:mcPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17694,10 +17848,13 @@ CT_MC* CT_MC::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_mc())
-            {
-                (*iter)->get_mc().toXmlElem("m:mc", "", _outStream);
-            }
+    
+    if ((*iter)->has_mc())
+    {
+        (*iter)->get_mc().toXmlElem("m:mc", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -18085,47 +18242,55 @@ CT_MCS* CT_MCS::default_instance_ = NULL;
             
     if (m_has_baseJc)
     {
-        m_baseJc->toXmlElem("m:baseJc", "", _outStream);;
+        m_baseJc->toXmlElem("m:baseJc", "", _outStream);
     }
+    
     
     if (m_has_plcHide)
     {
-        m_plcHide->toXmlElem("m:plcHide", "", _outStream);;
+        m_plcHide->toXmlElem("m:plcHide", "", _outStream);
     }
+    
     
     if (m_has_rSpRule)
     {
-        m_rSpRule->toXmlElem("m:rSpRule", "", _outStream);;
+        m_rSpRule->toXmlElem("m:rSpRule", "", _outStream);
     }
+    
     
     if (m_has_cGpRule)
     {
-        m_cGpRule->toXmlElem("m:cGpRule", "", _outStream);;
+        m_cGpRule->toXmlElem("m:cGpRule", "", _outStream);
     }
+    
     
     if (m_has_rSp)
     {
-        m_rSp->toXmlElem("m:rSp", "", _outStream);;
+        m_rSp->toXmlElem("m:rSp", "", _outStream);
     }
+    
     
     if (m_has_cSp)
     {
-        m_cSp->toXmlElem("m:cSp", "", _outStream);;
+        m_cSp->toXmlElem("m:cSp", "", _outStream);
     }
+    
     
     if (m_has_cGp)
     {
-        m_cGp->toXmlElem("m:cGp", "", _outStream);;
+        m_cGp->toXmlElem("m:cGp", "", _outStream);
     }
+    
     
     if (m_has_mcs)
     {
-        m_mcs->toXmlElem("m:mcs", "", _outStream);;
+        m_mcs->toXmlElem("m:mcs", "", _outStream);
     }
+    
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18185,10 +18350,13 @@ CT_MPr* CT_MPr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_e())
-            {
-                (*iter)->get_e().toXmlElem("m:e", "", _outStream);
-            }
+    
+    if ((*iter)->has_e())
+    {
+        (*iter)->get_e().toXmlElem("m:e", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -18313,17 +18481,20 @@ CT_MR* CT_MR::default_instance_ = NULL;
             
     if (m_has_mPr)
     {
-        m_mPr->toXmlElem("m:mPr", "", _outStream);;
+        m_mPr->toXmlElem("m:mPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_mr())
-            {
-                (*iter)->get_mr().toXmlElem("m:mr", "", _outStream);
-            }
+    
+    if ((*iter)->has_mr())
+    {
+        (*iter)->get_mr().toXmlElem("m:mr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -18606,32 +18777,37 @@ CT_M* CT_M::default_instance_ = NULL;
             
     if (m_has_chr)
     {
-        m_chr->toXmlElem("m:chr", "", _outStream);;
+        m_chr->toXmlElem("m:chr", "", _outStream);
     }
+    
     
     if (m_has_limLoc)
     {
-        m_limLoc->toXmlElem("m:limLoc", "", _outStream);;
+        m_limLoc->toXmlElem("m:limLoc", "", _outStream);
     }
+    
     
     if (m_has_grow)
     {
-        m_grow->toXmlElem("m:grow", "", _outStream);;
+        m_grow->toXmlElem("m:grow", "", _outStream);
     }
+    
     
     if (m_has_subHide)
     {
-        m_subHide->toXmlElem("m:subHide", "", _outStream);;
+        m_subHide->toXmlElem("m:subHide", "", _outStream);
     }
+    
     
     if (m_has_supHide)
     {
-        m_supHide->toXmlElem("m:supHide", "", _outStream);;
+        m_supHide->toXmlElem("m:supHide", "", _outStream);
     }
+    
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18811,22 +18987,25 @@ CT_NaryPr* CT_NaryPr::default_instance_ = NULL;
             
     if (m_has_naryPr)
     {
-        m_naryPr->toXmlElem("m:naryPr", "", _outStream);;
+        m_naryPr->toXmlElem("m:naryPr", "", _outStream);
     }
+    
     
     if (m_has_sub)
     {
-        m_sub->toXmlElem("m:sub", "", _outStream);;
+        m_sub->toXmlElem("m:sub", "", _outStream);
     }
+    
     
     if (m_has_sup)
     {
-        m_sup->toXmlElem("m:sup", "", _outStream);;
+        m_sup->toXmlElem("m:sup", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19076,32 +19255,37 @@ CT_Nary* CT_Nary::default_instance_ = NULL;
             
     if (m_has_show)
     {
-        m_show->toXmlElem("m:show", "", _outStream);;
+        m_show->toXmlElem("m:show", "", _outStream);
     }
+    
     
     if (m_has_zeroWid)
     {
-        m_zeroWid->toXmlElem("m:zeroWid", "", _outStream);;
+        m_zeroWid->toXmlElem("m:zeroWid", "", _outStream);
     }
+    
     
     if (m_has_zeroAsc)
     {
-        m_zeroAsc->toXmlElem("m:zeroAsc", "", _outStream);;
+        m_zeroAsc->toXmlElem("m:zeroAsc", "", _outStream);
     }
+    
     
     if (m_has_zeroDesc)
     {
-        m_zeroDesc->toXmlElem("m:zeroDesc", "", _outStream);;
+        m_zeroDesc->toXmlElem("m:zeroDesc", "", _outStream);
     }
+    
     
     if (m_has_transp)
     {
-        m_transp->toXmlElem("m:transp", "", _outStream);;
+        m_transp->toXmlElem("m:transp", "", _outStream);
     }
+    
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19211,12 +19395,13 @@ CT_PhantPr* CT_PhantPr::default_instance_ = NULL;
             
     if (m_has_phantPr)
     {
-        m_phantPr->toXmlElem("m:phantPr", "", _outStream);;
+        m_phantPr->toXmlElem("m:phantPr", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19326,12 +19511,13 @@ CT_Phant* CT_Phant::default_instance_ = NULL;
             
     if (m_has_degHide)
     {
-        m_degHide->toXmlElem("m:degHide", "", _outStream);;
+        m_degHide->toXmlElem("m:degHide", "", _outStream);
     }
+    
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19476,17 +19662,19 @@ CT_RadPr* CT_RadPr::default_instance_ = NULL;
             
     if (m_has_radPr)
     {
-        m_radPr->toXmlElem("m:radPr", "", _outStream);;
+        m_radPr->toXmlElem("m:radPr", "", _outStream);
     }
+    
     
     if (m_has_deg)
     {
-        m_deg->toXmlElem("m:deg", "", _outStream);;
+        m_deg->toXmlElem("m:deg", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19561,7 +19749,7 @@ CT_Rad* CT_Rad::default_instance_ = NULL;
             
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19741,22 +19929,25 @@ CT_SPrePr* CT_SPrePr::default_instance_ = NULL;
             
     if (m_has_sPrePr)
     {
-        m_sPrePr->toXmlElem("m:sPrePr", "", _outStream);;
+        m_sPrePr->toXmlElem("m:sPrePr", "", _outStream);
     }
+    
     
     if (m_has_sub)
     {
-        m_sub->toXmlElem("m:sub", "", _outStream);;
+        m_sub->toXmlElem("m:sub", "", _outStream);
     }
+    
     
     if (m_has_sup)
     {
-        m_sup->toXmlElem("m:sup", "", _outStream);;
+        m_sup->toXmlElem("m:sup", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19831,7 +20022,7 @@ CT_SPre* CT_SPre::default_instance_ = NULL;
             
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -19976,17 +20167,19 @@ CT_SSubPr* CT_SSubPr::default_instance_ = NULL;
             
     if (m_has_sSubPr)
     {
-        m_sSubPr->toXmlElem("m:sSubPr", "", _outStream);;
+        m_sSubPr->toXmlElem("m:sSubPr", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
+    
     
     if (m_has_sub)
     {
-        m_sub->toXmlElem("m:sub", "", _outStream);;
+        m_sub->toXmlElem("m:sub", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20096,12 +20289,13 @@ CT_SSub* CT_SSub::default_instance_ = NULL;
             
     if (m_has_alnScr)
     {
-        m_alnScr->toXmlElem("m:alnScr", "", _outStream);;
+        m_alnScr->toXmlElem("m:alnScr", "", _outStream);
     }
+    
     
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20281,22 +20475,25 @@ CT_SSubSupPr* CT_SSubSupPr::default_instance_ = NULL;
             
     if (m_has_sSubSupPr)
     {
-        m_sSubSupPr->toXmlElem("m:sSubSupPr", "", _outStream);;
+        m_sSubSupPr->toXmlElem("m:sSubSupPr", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
+    
     
     if (m_has_sub)
     {
-        m_sub->toXmlElem("m:sub", "", _outStream);;
+        m_sub->toXmlElem("m:sub", "", _outStream);
     }
+    
     
     if (m_has_sup)
     {
-        m_sup->toXmlElem("m:sup", "", _outStream);;
+        m_sup->toXmlElem("m:sup", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20371,7 +20568,7 @@ CT_SSubSup* CT_SSubSup::default_instance_ = NULL;
             
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20516,17 +20713,19 @@ CT_SSupPr* CT_SSupPr::default_instance_ = NULL;
             
     if (m_has_sSupPr)
     {
-        m_sSupPr->toXmlElem("m:sSupPr", "", _outStream);;
+        m_sSupPr->toXmlElem("m:sSupPr", "", _outStream);
     }
+    
     
     if (m_has_e)
     {
-        m_e->toXmlElem("m:e", "", _outStream);;
+        m_e->toXmlElem("m:e", "", _outStream);
     }
+    
     
     if (m_has_sup)
     {
-        m_sup->toXmlElem("m:sup", "", _outStream);;
+        m_sup->toXmlElem("m:sup", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -20601,7 +20800,7 @@ CT_SSup* CT_SSup::default_instance_ = NULL;
             
     if (m_has_argSz)
     {
-        m_argSz->toXmlElem("m:argSz", "", _outStream);;
+        m_argSz->toXmlElem("m:argSz", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -21120,219 +21319,369 @@ CT_OMathArgPr* CT_OMathArgPr::default_instance_ = NULL;
             
     if (m_has_argPr)
     {
-        m_argPr->toXmlElem("m:argPr", "", _outStream);;
+        m_argPr->toXmlElem("m:argPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_acc())
-            {
-                (*iter)->get_acc().toXmlElem("m:acc", "", _outStream);
-            }
-            else if ((*iter)->has_bar())
-            {
-                (*iter)->get_bar().toXmlElem("m:bar", "", _outStream);
-            }
-            else if ((*iter)->has_box())
-            {
-                (*iter)->get_box().toXmlElem("m:box", "", _outStream);
-            }
-            else if ((*iter)->has_borderBox())
-            {
-                (*iter)->get_borderBox().toXmlElem("m:borderBox", "", _outStream);
-            }
-            else if ((*iter)->has_d())
-            {
-                (*iter)->get_d().toXmlElem("m:d", "", _outStream);
-            }
-            else if ((*iter)->has_eqArr())
-            {
-                (*iter)->get_eqArr().toXmlElem("m:eqArr", "", _outStream);
-            }
-            else if ((*iter)->has_f())
-            {
-                (*iter)->get_f().toXmlElem("m:f", "", _outStream);
-            }
-            else if ((*iter)->has_func())
-            {
-                (*iter)->get_func().toXmlElem("m:func", "", _outStream);
-            }
-            else if ((*iter)->has_groupChr())
-            {
-                (*iter)->get_groupChr().toXmlElem("m:groupChr", "", _outStream);
-            }
-            else if ((*iter)->has_limLow())
-            {
-                (*iter)->get_limLow().toXmlElem("m:limLow", "", _outStream);
-            }
-            else if ((*iter)->has_limUpp())
-            {
-                (*iter)->get_limUpp().toXmlElem("m:limUpp", "", _outStream);
-            }
-            else if ((*iter)->has_m())
-            {
-                (*iter)->get_m().toXmlElem("m:m", "", _outStream);
-            }
-            else if ((*iter)->has_nary())
-            {
-                (*iter)->get_nary().toXmlElem("m:nary", "", _outStream);
-            }
-            else if ((*iter)->has_phant())
-            {
-                (*iter)->get_phant().toXmlElem("m:phant", "", _outStream);
-            }
-            else if ((*iter)->has_rad())
-            {
-                (*iter)->get_rad().toXmlElem("m:rad", "", _outStream);
-            }
-            else if ((*iter)->has_sPre())
-            {
-                (*iter)->get_sPre().toXmlElem("m:sPre", "", _outStream);
-            }
-            else if ((*iter)->has_sSub())
-            {
-                (*iter)->get_sSub().toXmlElem("m:sSub", "", _outStream);
-            }
-            else if ((*iter)->has_sSubSup())
-            {
-                (*iter)->get_sSubSup().toXmlElem("m:sSubSup", "", _outStream);
-            }
-            else if ((*iter)->has_sSup())
-            {
-                (*iter)->get_sSup().toXmlElem("m:sSup", "", _outStream);
-            }
-            else if ((*iter)->has_r())
-            {
-                (*iter)->get_r().toXmlElem("m:r", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXml())
-            {
-                (*iter)->get_w_customXml().toXmlElem("w:customXml", "", _outStream);
-            }
-            else if ((*iter)->has_w_fldSimple())
-            {
-                (*iter)->get_w_fldSimple().toXmlElem("w:fldSimple", "", _outStream);
-            }
-            else if ((*iter)->has_w_hyperlink())
-            {
-                (*iter)->get_w_hyperlink().toXmlElem("w:hyperlink", "", _outStream);
-            }
-            else if ((*iter)->has_w_smartTag())
-            {
-                (*iter)->get_w_smartTag().toXmlElem("w:smartTag", "", _outStream);
-            }
-            else if ((*iter)->has_w_sdt())
-            {
-                (*iter)->get_w_sdt().toXmlElem("w:sdt", "", _outStream);
-            }
-            else if ((*iter)->has_w_proofErr())
-            {
-                (*iter)->get_w_proofErr().toXmlElem("w:proofErr", "", _outStream);
-            }
-            else if ((*iter)->has_w_permStart())
-            {
-                (*iter)->get_w_permStart().toXmlElem("w:permStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_permEnd())
-            {
-                (*iter)->get_w_permEnd().toXmlElem("w:permEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_bookmarkStart())
-            {
-                (*iter)->get_w_bookmarkStart().toXmlElem("w:bookmarkStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_bookmarkEnd())
-            {
-                (*iter)->get_w_bookmarkEnd().toXmlElem("w:bookmarkEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveFromRangeStart())
-            {
-                (*iter)->get_w_moveFromRangeStart().toXmlElem("w:moveFromRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveFromRangeEnd())
-            {
-                (*iter)->get_w_moveFromRangeEnd().toXmlElem("w:moveFromRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveToRangeStart())
-            {
-                (*iter)->get_w_moveToRangeStart().toXmlElem("w:moveToRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveToRangeEnd())
-            {
-                (*iter)->get_w_moveToRangeEnd().toXmlElem("w:moveToRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_commentRangeStart())
-            {
-                (*iter)->get_w_commentRangeStart().toXmlElem("w:commentRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_commentRangeEnd())
-            {
-                (*iter)->get_w_commentRangeEnd().toXmlElem("w:commentRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlInsRangeStart())
-            {
-                (*iter)->get_w_customXmlInsRangeStart().toXmlElem("w:customXmlInsRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlInsRangeEnd())
-            {
-                (*iter)->get_w_customXmlInsRangeEnd().toXmlElem("w:customXmlInsRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlDelRangeStart())
-            {
-                (*iter)->get_w_customXmlDelRangeStart().toXmlElem("w:customXmlDelRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlDelRangeEnd())
-            {
-                (*iter)->get_w_customXmlDelRangeEnd().toXmlElem("w:customXmlDelRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlMoveFromRangeStart())
-            {
-                (*iter)->get_w_customXmlMoveFromRangeStart().toXmlElem("w:customXmlMoveFromRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlMoveFromRangeEnd())
-            {
-                (*iter)->get_w_customXmlMoveFromRangeEnd().toXmlElem("w:customXmlMoveFromRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlMoveToRangeStart())
-            {
-                (*iter)->get_w_customXmlMoveToRangeStart().toXmlElem("w:customXmlMoveToRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlMoveToRangeEnd())
-            {
-                (*iter)->get_w_customXmlMoveToRangeEnd().toXmlElem("w:customXmlMoveToRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_ins())
-            {
-                (*iter)->get_w_ins().toXmlElem("w:ins", "", _outStream);
-            }
-            else if ((*iter)->has_w_del())
-            {
-                (*iter)->get_w_del().toXmlElem("w:del", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveFrom())
-            {
-                (*iter)->get_w_moveFrom().toXmlElem("w:moveFrom", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveTo())
-            {
-                (*iter)->get_w_moveTo().toXmlElem("w:moveTo", "", _outStream);
-            }
-            else if ((*iter)->has_m_oMathPara())
-            {
-                (*iter)->get_m_oMathPara().toXmlElem("m:oMathPara", "", _outStream);
-            }
-            else if ((*iter)->has_m_oMath())
-            {
-                (*iter)->get_m_oMath().toXmlElem("m:oMath", "", _outStream);
-            }
+    
+    if ((*iter)->has_acc())
+    {
+        (*iter)->get_acc().toXmlElem("m:acc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_bar())
+    {
+        (*iter)->get_bar().toXmlElem("m:bar", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_box())
+    {
+        (*iter)->get_box().toXmlElem("m:box", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_borderBox())
+    {
+        (*iter)->get_borderBox().toXmlElem("m:borderBox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_d())
+    {
+        (*iter)->get_d().toXmlElem("m:d", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_eqArr())
+    {
+        (*iter)->get_eqArr().toXmlElem("m:eqArr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_f())
+    {
+        (*iter)->get_f().toXmlElem("m:f", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_func())
+    {
+        (*iter)->get_func().toXmlElem("m:func", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_groupChr())
+    {
+        (*iter)->get_groupChr().toXmlElem("m:groupChr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_limLow())
+    {
+        (*iter)->get_limLow().toXmlElem("m:limLow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_limUpp())
+    {
+        (*iter)->get_limUpp().toXmlElem("m:limUpp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_m())
+    {
+        (*iter)->get_m().toXmlElem("m:m", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_nary())
+    {
+        (*iter)->get_nary().toXmlElem("m:nary", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_phant())
+    {
+        (*iter)->get_phant().toXmlElem("m:phant", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rad())
+    {
+        (*iter)->get_rad().toXmlElem("m:rad", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sPre())
+    {
+        (*iter)->get_sPre().toXmlElem("m:sPre", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sSub())
+    {
+        (*iter)->get_sSub().toXmlElem("m:sSub", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sSubSup())
+    {
+        (*iter)->get_sSubSup().toXmlElem("m:sSubSup", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sSup())
+    {
+        (*iter)->get_sSup().toXmlElem("m:sSup", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_r())
+    {
+        (*iter)->get_r().toXmlElem("m:r", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXml())
+    {
+        (*iter)->get_w_customXml().toXmlElem("w:customXml", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_fldSimple())
+    {
+        (*iter)->get_w_fldSimple().toXmlElem("w:fldSimple", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_hyperlink())
+    {
+        (*iter)->get_w_hyperlink().toXmlElem("w:hyperlink", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_smartTag())
+    {
+        (*iter)->get_w_smartTag().toXmlElem("w:smartTag", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_sdt())
+    {
+        (*iter)->get_w_sdt().toXmlElem("w:sdt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_proofErr())
+    {
+        (*iter)->get_w_proofErr().toXmlElem("w:proofErr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_permStart())
+    {
+        (*iter)->get_w_permStart().toXmlElem("w:permStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_permEnd())
+    {
+        (*iter)->get_w_permEnd().toXmlElem("w:permEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_bookmarkStart())
+    {
+        (*iter)->get_w_bookmarkStart().toXmlElem("w:bookmarkStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_bookmarkEnd())
+    {
+        (*iter)->get_w_bookmarkEnd().toXmlElem("w:bookmarkEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveFromRangeStart())
+    {
+        (*iter)->get_w_moveFromRangeStart().toXmlElem("w:moveFromRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveFromRangeEnd())
+    {
+        (*iter)->get_w_moveFromRangeEnd().toXmlElem("w:moveFromRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveToRangeStart())
+    {
+        (*iter)->get_w_moveToRangeStart().toXmlElem("w:moveToRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveToRangeEnd())
+    {
+        (*iter)->get_w_moveToRangeEnd().toXmlElem("w:moveToRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_commentRangeStart())
+    {
+        (*iter)->get_w_commentRangeStart().toXmlElem("w:commentRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_commentRangeEnd())
+    {
+        (*iter)->get_w_commentRangeEnd().toXmlElem("w:commentRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlInsRangeStart())
+    {
+        (*iter)->get_w_customXmlInsRangeStart().toXmlElem("w:customXmlInsRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlInsRangeEnd())
+    {
+        (*iter)->get_w_customXmlInsRangeEnd().toXmlElem("w:customXmlInsRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlDelRangeStart())
+    {
+        (*iter)->get_w_customXmlDelRangeStart().toXmlElem("w:customXmlDelRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlDelRangeEnd())
+    {
+        (*iter)->get_w_customXmlDelRangeEnd().toXmlElem("w:customXmlDelRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlMoveFromRangeStart())
+    {
+        (*iter)->get_w_customXmlMoveFromRangeStart().toXmlElem("w:customXmlMoveFromRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlMoveFromRangeEnd())
+    {
+        (*iter)->get_w_customXmlMoveFromRangeEnd().toXmlElem("w:customXmlMoveFromRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlMoveToRangeStart())
+    {
+        (*iter)->get_w_customXmlMoveToRangeStart().toXmlElem("w:customXmlMoveToRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlMoveToRangeEnd())
+    {
+        (*iter)->get_w_customXmlMoveToRangeEnd().toXmlElem("w:customXmlMoveToRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_ins())
+    {
+        (*iter)->get_w_ins().toXmlElem("w:ins", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_del())
+    {
+        (*iter)->get_w_del().toXmlElem("w:del", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveFrom())
+    {
+        (*iter)->get_w_moveFrom().toXmlElem("w:moveFrom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveTo())
+    {
+        (*iter)->get_w_moveTo().toXmlElem("w:moveTo", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_m_oMathPara())
+    {
+        (*iter)->get_m_oMathPara().toXmlElem("m:oMathPara", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_m_oMath())
+    {
+        (*iter)->get_m_oMath().toXmlElem("m:oMath", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_ctrlPr)
     {
-        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);;
+        m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -44883,7 +45232,7 @@ CT_OMathJc* CT_OMathJc::default_instance_ = NULL;
             
     if (m_has_jc)
     {
-        m_jc->toXmlElem("m:jc", "", _outStream);;
+        m_jc->toXmlElem("m:jc", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -45716,82 +46065,95 @@ CT_BreakBinSub* CT_BreakBinSub::default_instance_ = NULL;
             
     if (m_has_mathFont)
     {
-        m_mathFont->toXmlElem("m:mathFont", "", _outStream);;
+        m_mathFont->toXmlElem("m:mathFont", "", _outStream);
     }
+    
     
     if (m_has_brkBin)
     {
-        m_brkBin->toXmlElem("m:brkBin", "", _outStream);;
+        m_brkBin->toXmlElem("m:brkBin", "", _outStream);
     }
+    
     
     if (m_has_brkBinSub)
     {
-        m_brkBinSub->toXmlElem("m:brkBinSub", "", _outStream);;
+        m_brkBinSub->toXmlElem("m:brkBinSub", "", _outStream);
     }
+    
     
     if (m_has_smallFrac)
     {
-        m_smallFrac->toXmlElem("m:smallFrac", "", _outStream);;
+        m_smallFrac->toXmlElem("m:smallFrac", "", _outStream);
     }
+    
     
     if (m_has_dispDef)
     {
-        m_dispDef->toXmlElem("m:dispDef", "", _outStream);;
+        m_dispDef->toXmlElem("m:dispDef", "", _outStream);
     }
+    
     
     if (m_has_lMargin)
     {
-        m_lMargin->toXmlElem("m:lMargin", "", _outStream);;
+        m_lMargin->toXmlElem("m:lMargin", "", _outStream);
     }
+    
     
     if (m_has_rMargin)
     {
-        m_rMargin->toXmlElem("m:rMargin", "", _outStream);;
+        m_rMargin->toXmlElem("m:rMargin", "", _outStream);
     }
+    
     
     if (m_has_defJc)
     {
-        m_defJc->toXmlElem("m:defJc", "", _outStream);;
+        m_defJc->toXmlElem("m:defJc", "", _outStream);
     }
+    
     
     if (m_has_preSp)
     {
-        m_preSp->toXmlElem("m:preSp", "", _outStream);;
+        m_preSp->toXmlElem("m:preSp", "", _outStream);
     }
+    
     
     if (m_has_postSp)
     {
-        m_postSp->toXmlElem("m:postSp", "", _outStream);;
+        m_postSp->toXmlElem("m:postSp", "", _outStream);
     }
+    
     
     if (m_has_interSp)
     {
-        m_interSp->toXmlElem("m:interSp", "", _outStream);;
+        m_interSp->toXmlElem("m:interSp", "", _outStream);
     }
+    
     
     if (m_has_intraSp)
     {
-        m_intraSp->toXmlElem("m:intraSp", "", _outStream);;
+        m_intraSp->toXmlElem("m:intraSp", "", _outStream);
     }
      
     if (m_has_wrapIndent)
     {
-        m_wrapIndent->toXmlElem("m:wrapIndent", "", _outStream);;
+        m_wrapIndent->toXmlElem("m:wrapIndent", "", _outStream);
     }
+    
     
     if (m_has_wrapRight)
     {
-        m_wrapRight->toXmlElem("m:wrapRight", "", _outStream);;
+        m_wrapRight->toXmlElem("m:wrapRight", "", _outStream);
     }
      
     if (m_has_intLim)
     {
-        m_intLim->toXmlElem("m:intLim", "", _outStream);;
+        m_intLim->toXmlElem("m:intLim", "", _outStream);
     }
+    
     
     if (m_has_naryLim)
     {
-        m_naryLim->toXmlElem("m:naryLim", "", _outStream);;
+        m_naryLim->toXmlElem("m:naryLim", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -45883,17 +46245,20 @@ CT_MathPr* CT_MathPr::default_instance_ = NULL;
             
     if (m_has_oMathParaPr)
     {
-        m_oMathParaPr->toXmlElem("m:oMathParaPr", "", _outStream);;
+        m_oMathParaPr->toXmlElem("m:oMathParaPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_oMath())
-            {
-                (*iter)->get_oMath().toXmlElem("m:oMath", "", _outStream);
-            }
+    
+    if ((*iter)->has_oMath())
+    {
+        (*iter)->get_oMath().toXmlElem("m:oMath", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -46378,206 +46743,356 @@ CT_OMathPara* CT_OMathPara::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_acc())
-            {
-                (*iter)->get_acc().toXmlElem("m:acc", "", _outStream);
-            }
-            else if ((*iter)->has_bar())
-            {
-                (*iter)->get_bar().toXmlElem("m:bar", "", _outStream);
-            }
-            else if ((*iter)->has_box())
-            {
-                (*iter)->get_box().toXmlElem("m:box", "", _outStream);
-            }
-            else if ((*iter)->has_borderBox())
-            {
-                (*iter)->get_borderBox().toXmlElem("m:borderBox", "", _outStream);
-            }
-            else if ((*iter)->has_d())
-            {
-                (*iter)->get_d().toXmlElem("m:d", "", _outStream);
-            }
-            else if ((*iter)->has_eqArr())
-            {
-                (*iter)->get_eqArr().toXmlElem("m:eqArr", "", _outStream);
-            }
-            else if ((*iter)->has_f())
-            {
-                (*iter)->get_f().toXmlElem("m:f", "", _outStream);
-            }
-            else if ((*iter)->has_func())
-            {
-                (*iter)->get_func().toXmlElem("m:func", "", _outStream);
-            }
-            else if ((*iter)->has_groupChr())
-            {
-                (*iter)->get_groupChr().toXmlElem("m:groupChr", "", _outStream);
-            }
-            else if ((*iter)->has_limLow())
-            {
-                (*iter)->get_limLow().toXmlElem("m:limLow", "", _outStream);
-            }
-            else if ((*iter)->has_limUpp())
-            {
-                (*iter)->get_limUpp().toXmlElem("m:limUpp", "", _outStream);
-            }
-            else if ((*iter)->has_m())
-            {
-                (*iter)->get_m().toXmlElem("m:m", "", _outStream);
-            }
-            else if ((*iter)->has_nary())
-            {
-                (*iter)->get_nary().toXmlElem("m:nary", "", _outStream);
-            }
-            else if ((*iter)->has_phant())
-            {
-                (*iter)->get_phant().toXmlElem("m:phant", "", _outStream);
-            }
-            else if ((*iter)->has_rad())
-            {
-                (*iter)->get_rad().toXmlElem("m:rad", "", _outStream);
-            }
-            else if ((*iter)->has_sPre())
-            {
-                (*iter)->get_sPre().toXmlElem("m:sPre", "", _outStream);
-            }
-            else if ((*iter)->has_sSub())
-            {
-                (*iter)->get_sSub().toXmlElem("m:sSub", "", _outStream);
-            }
-            else if ((*iter)->has_sSubSup())
-            {
-                (*iter)->get_sSubSup().toXmlElem("m:sSubSup", "", _outStream);
-            }
-            else if ((*iter)->has_sSup())
-            {
-                (*iter)->get_sSup().toXmlElem("m:sSup", "", _outStream);
-            }
-            else if ((*iter)->has_r())
-            {
-                (*iter)->get_r().toXmlElem("m:r", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXml())
-            {
-                (*iter)->get_w_customXml().toXmlElem("w:customXml", "", _outStream);
-            }
-            else if ((*iter)->has_w_fldSimple())
-            {
-                (*iter)->get_w_fldSimple().toXmlElem("w:fldSimple", "", _outStream);
-            }
-            else if ((*iter)->has_w_hyperlink())
-            {
-                (*iter)->get_w_hyperlink().toXmlElem("w:hyperlink", "", _outStream);
-            }
-            else if ((*iter)->has_w_smartTag())
-            {
-                (*iter)->get_w_smartTag().toXmlElem("w:smartTag", "", _outStream);
-            }
-            else if ((*iter)->has_w_sdt())
-            {
-                (*iter)->get_w_sdt().toXmlElem("w:sdt", "", _outStream);
-            }
-            else if ((*iter)->has_w_proofErr())
-            {
-                (*iter)->get_w_proofErr().toXmlElem("w:proofErr", "", _outStream);
-            }
-            else if ((*iter)->has_w_permStart())
-            {
-                (*iter)->get_w_permStart().toXmlElem("w:permStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_permEnd())
-            {
-                (*iter)->get_w_permEnd().toXmlElem("w:permEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_bookmarkStart())
-            {
-                (*iter)->get_w_bookmarkStart().toXmlElem("w:bookmarkStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_bookmarkEnd())
-            {
-                (*iter)->get_w_bookmarkEnd().toXmlElem("w:bookmarkEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveFromRangeStart())
-            {
-                (*iter)->get_w_moveFromRangeStart().toXmlElem("w:moveFromRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveFromRangeEnd())
-            {
-                (*iter)->get_w_moveFromRangeEnd().toXmlElem("w:moveFromRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveToRangeStart())
-            {
-                (*iter)->get_w_moveToRangeStart().toXmlElem("w:moveToRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveToRangeEnd())
-            {
-                (*iter)->get_w_moveToRangeEnd().toXmlElem("w:moveToRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_commentRangeStart())
-            {
-                (*iter)->get_w_commentRangeStart().toXmlElem("w:commentRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_commentRangeEnd())
-            {
-                (*iter)->get_w_commentRangeEnd().toXmlElem("w:commentRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlInsRangeStart())
-            {
-                (*iter)->get_w_customXmlInsRangeStart().toXmlElem("w:customXmlInsRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlInsRangeEnd())
-            {
-                (*iter)->get_w_customXmlInsRangeEnd().toXmlElem("w:customXmlInsRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlDelRangeStart())
-            {
-                (*iter)->get_w_customXmlDelRangeStart().toXmlElem("w:customXmlDelRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlDelRangeEnd())
-            {
-                (*iter)->get_w_customXmlDelRangeEnd().toXmlElem("w:customXmlDelRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlMoveFromRangeStart())
-            {
-                (*iter)->get_w_customXmlMoveFromRangeStart().toXmlElem("w:customXmlMoveFromRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlMoveFromRangeEnd())
-            {
-                (*iter)->get_w_customXmlMoveFromRangeEnd().toXmlElem("w:customXmlMoveFromRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlMoveToRangeStart())
-            {
-                (*iter)->get_w_customXmlMoveToRangeStart().toXmlElem("w:customXmlMoveToRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlMoveToRangeEnd())
-            {
-                (*iter)->get_w_customXmlMoveToRangeEnd().toXmlElem("w:customXmlMoveToRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_ins())
-            {
-                (*iter)->get_w_ins().toXmlElem("w:ins", "", _outStream);
-            }
-            else if ((*iter)->has_w_del())
-            {
-                (*iter)->get_w_del().toXmlElem("w:del", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveFrom())
-            {
-                (*iter)->get_w_moveFrom().toXmlElem("w:moveFrom", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveTo())
-            {
-                (*iter)->get_w_moveTo().toXmlElem("w:moveTo", "", _outStream);
-            }
-            else if ((*iter)->has_m_oMathPara())
-            {
-                (*iter)->get_m_oMathPara().toXmlElem("m:oMathPara", "", _outStream);
-            }
-            else if ((*iter)->has_m_oMath())
-            {
-                (*iter)->get_m_oMath().toXmlElem("m:oMath", "", _outStream);
-            }
+    
+    if ((*iter)->has_acc())
+    {
+        (*iter)->get_acc().toXmlElem("m:acc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_bar())
+    {
+        (*iter)->get_bar().toXmlElem("m:bar", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_box())
+    {
+        (*iter)->get_box().toXmlElem("m:box", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_borderBox())
+    {
+        (*iter)->get_borderBox().toXmlElem("m:borderBox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_d())
+    {
+        (*iter)->get_d().toXmlElem("m:d", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_eqArr())
+    {
+        (*iter)->get_eqArr().toXmlElem("m:eqArr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_f())
+    {
+        (*iter)->get_f().toXmlElem("m:f", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_func())
+    {
+        (*iter)->get_func().toXmlElem("m:func", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_groupChr())
+    {
+        (*iter)->get_groupChr().toXmlElem("m:groupChr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_limLow())
+    {
+        (*iter)->get_limLow().toXmlElem("m:limLow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_limUpp())
+    {
+        (*iter)->get_limUpp().toXmlElem("m:limUpp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_m())
+    {
+        (*iter)->get_m().toXmlElem("m:m", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_nary())
+    {
+        (*iter)->get_nary().toXmlElem("m:nary", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_phant())
+    {
+        (*iter)->get_phant().toXmlElem("m:phant", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rad())
+    {
+        (*iter)->get_rad().toXmlElem("m:rad", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sPre())
+    {
+        (*iter)->get_sPre().toXmlElem("m:sPre", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sSub())
+    {
+        (*iter)->get_sSub().toXmlElem("m:sSub", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sSubSup())
+    {
+        (*iter)->get_sSubSup().toXmlElem("m:sSubSup", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sSup())
+    {
+        (*iter)->get_sSup().toXmlElem("m:sSup", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_r())
+    {
+        (*iter)->get_r().toXmlElem("m:r", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXml())
+    {
+        (*iter)->get_w_customXml().toXmlElem("w:customXml", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_fldSimple())
+    {
+        (*iter)->get_w_fldSimple().toXmlElem("w:fldSimple", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_hyperlink())
+    {
+        (*iter)->get_w_hyperlink().toXmlElem("w:hyperlink", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_smartTag())
+    {
+        (*iter)->get_w_smartTag().toXmlElem("w:smartTag", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_sdt())
+    {
+        (*iter)->get_w_sdt().toXmlElem("w:sdt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_proofErr())
+    {
+        (*iter)->get_w_proofErr().toXmlElem("w:proofErr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_permStart())
+    {
+        (*iter)->get_w_permStart().toXmlElem("w:permStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_permEnd())
+    {
+        (*iter)->get_w_permEnd().toXmlElem("w:permEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_bookmarkStart())
+    {
+        (*iter)->get_w_bookmarkStart().toXmlElem("w:bookmarkStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_bookmarkEnd())
+    {
+        (*iter)->get_w_bookmarkEnd().toXmlElem("w:bookmarkEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveFromRangeStart())
+    {
+        (*iter)->get_w_moveFromRangeStart().toXmlElem("w:moveFromRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveFromRangeEnd())
+    {
+        (*iter)->get_w_moveFromRangeEnd().toXmlElem("w:moveFromRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveToRangeStart())
+    {
+        (*iter)->get_w_moveToRangeStart().toXmlElem("w:moveToRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveToRangeEnd())
+    {
+        (*iter)->get_w_moveToRangeEnd().toXmlElem("w:moveToRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_commentRangeStart())
+    {
+        (*iter)->get_w_commentRangeStart().toXmlElem("w:commentRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_commentRangeEnd())
+    {
+        (*iter)->get_w_commentRangeEnd().toXmlElem("w:commentRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlInsRangeStart())
+    {
+        (*iter)->get_w_customXmlInsRangeStart().toXmlElem("w:customXmlInsRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlInsRangeEnd())
+    {
+        (*iter)->get_w_customXmlInsRangeEnd().toXmlElem("w:customXmlInsRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlDelRangeStart())
+    {
+        (*iter)->get_w_customXmlDelRangeStart().toXmlElem("w:customXmlDelRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlDelRangeEnd())
+    {
+        (*iter)->get_w_customXmlDelRangeEnd().toXmlElem("w:customXmlDelRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlMoveFromRangeStart())
+    {
+        (*iter)->get_w_customXmlMoveFromRangeStart().toXmlElem("w:customXmlMoveFromRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlMoveFromRangeEnd())
+    {
+        (*iter)->get_w_customXmlMoveFromRangeEnd().toXmlElem("w:customXmlMoveFromRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlMoveToRangeStart())
+    {
+        (*iter)->get_w_customXmlMoveToRangeStart().toXmlElem("w:customXmlMoveToRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlMoveToRangeEnd())
+    {
+        (*iter)->get_w_customXmlMoveToRangeEnd().toXmlElem("w:customXmlMoveToRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_ins())
+    {
+        (*iter)->get_w_ins().toXmlElem("w:ins", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_del())
+    {
+        (*iter)->get_w_del().toXmlElem("w:del", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveFrom())
+    {
+        (*iter)->get_w_moveFrom().toXmlElem("w:moveFrom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveTo())
+    {
+        (*iter)->get_w_moveTo().toXmlElem("w:moveTo", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_m_oMathPara())
+    {
+        (*iter)->get_m_oMathPara().toXmlElem("m:oMathPara", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_m_oMath())
+    {
+        (*iter)->get_m_oMath().toXmlElem("m:oMath", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -70602,82 +71117,95 @@ CT_OMath* CT_OMath::default_instance_ = NULL;
     
     if (m_has_mathFont)
     {
-        m_mathFont->toXmlElem("m:mathFont", "", _outStream);;
+        m_mathFont->toXmlElem("m:mathFont", "", _outStream);
     }
+    
     
     if (m_has_brkBin)
     {
-        m_brkBin->toXmlElem("m:brkBin", "", _outStream);;
+        m_brkBin->toXmlElem("m:brkBin", "", _outStream);
     }
+    
     
     if (m_has_brkBinSub)
     {
-        m_brkBinSub->toXmlElem("m:brkBinSub", "", _outStream);;
+        m_brkBinSub->toXmlElem("m:brkBinSub", "", _outStream);
     }
+    
     
     if (m_has_smallFrac)
     {
-        m_smallFrac->toXmlElem("m:smallFrac", "", _outStream);;
+        m_smallFrac->toXmlElem("m:smallFrac", "", _outStream);
     }
+    
     
     if (m_has_dispDef)
     {
-        m_dispDef->toXmlElem("m:dispDef", "", _outStream);;
+        m_dispDef->toXmlElem("m:dispDef", "", _outStream);
     }
+    
     
     if (m_has_lMargin)
     {
-        m_lMargin->toXmlElem("m:lMargin", "", _outStream);;
+        m_lMargin->toXmlElem("m:lMargin", "", _outStream);
     }
+    
     
     if (m_has_rMargin)
     {
-        m_rMargin->toXmlElem("m:rMargin", "", _outStream);;
+        m_rMargin->toXmlElem("m:rMargin", "", _outStream);
     }
+    
     
     if (m_has_defJc)
     {
-        m_defJc->toXmlElem("m:defJc", "", _outStream);;
+        m_defJc->toXmlElem("m:defJc", "", _outStream);
     }
+    
     
     if (m_has_preSp)
     {
-        m_preSp->toXmlElem("m:preSp", "", _outStream);;
+        m_preSp->toXmlElem("m:preSp", "", _outStream);
     }
+    
     
     if (m_has_postSp)
     {
-        m_postSp->toXmlElem("m:postSp", "", _outStream);;
+        m_postSp->toXmlElem("m:postSp", "", _outStream);
     }
+    
     
     if (m_has_interSp)
     {
-        m_interSp->toXmlElem("m:interSp", "", _outStream);;
+        m_interSp->toXmlElem("m:interSp", "", _outStream);
     }
+    
     
     if (m_has_intraSp)
     {
-        m_intraSp->toXmlElem("m:intraSp", "", _outStream);;
+        m_intraSp->toXmlElem("m:intraSp", "", _outStream);
     }
      
     if (m_has_wrapIndent)
     {
-        m_wrapIndent->toXmlElem("m:wrapIndent", "", _outStream);;
+        m_wrapIndent->toXmlElem("m:wrapIndent", "", _outStream);
     }
+    
     
     if (m_has_wrapRight)
     {
-        m_wrapRight->toXmlElem("m:wrapRight", "", _outStream);;
+        m_wrapRight->toXmlElem("m:wrapRight", "", _outStream);
     }
      
     if (m_has_intLim)
     {
-        m_intLim->toXmlElem("m:intLim", "", _outStream);;
+        m_intLim->toXmlElem("m:intLim", "", _outStream);
     }
+    
     
     if (m_has_naryLim)
     {
-        m_naryLim->toXmlElem("m:naryLim", "", _outStream);;
+        m_naryLim->toXmlElem("m:naryLim", "", _outStream);
     }
     
     _outStream << "</m:mathPr>";
@@ -70768,17 +71296,20 @@ mathPr_element* mathPr_element::default_instance_ = NULL;
     
     if (m_has_oMathParaPr)
     {
-        m_oMathParaPr->toXmlElem("m:oMathParaPr", "", _outStream);;
+        m_oMathParaPr->toXmlElem("m:oMathParaPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_oMath())
-            {
-                (*iter)->get_oMath().toXmlElem("m:oMath", "", _outStream);
-            }
+    
+    if ((*iter)->has_oMath())
+    {
+        (*iter)->get_oMath().toXmlElem("m:oMath", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -71262,206 +71793,356 @@ oMathPara_element* oMathPara_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_acc())
-            {
-                (*iter)->get_acc().toXmlElem("m:acc", "", _outStream);
-            }
-            else if ((*iter)->has_bar())
-            {
-                (*iter)->get_bar().toXmlElem("m:bar", "", _outStream);
-            }
-            else if ((*iter)->has_box())
-            {
-                (*iter)->get_box().toXmlElem("m:box", "", _outStream);
-            }
-            else if ((*iter)->has_borderBox())
-            {
-                (*iter)->get_borderBox().toXmlElem("m:borderBox", "", _outStream);
-            }
-            else if ((*iter)->has_d())
-            {
-                (*iter)->get_d().toXmlElem("m:d", "", _outStream);
-            }
-            else if ((*iter)->has_eqArr())
-            {
-                (*iter)->get_eqArr().toXmlElem("m:eqArr", "", _outStream);
-            }
-            else if ((*iter)->has_f())
-            {
-                (*iter)->get_f().toXmlElem("m:f", "", _outStream);
-            }
-            else if ((*iter)->has_func())
-            {
-                (*iter)->get_func().toXmlElem("m:func", "", _outStream);
-            }
-            else if ((*iter)->has_groupChr())
-            {
-                (*iter)->get_groupChr().toXmlElem("m:groupChr", "", _outStream);
-            }
-            else if ((*iter)->has_limLow())
-            {
-                (*iter)->get_limLow().toXmlElem("m:limLow", "", _outStream);
-            }
-            else if ((*iter)->has_limUpp())
-            {
-                (*iter)->get_limUpp().toXmlElem("m:limUpp", "", _outStream);
-            }
-            else if ((*iter)->has_m())
-            {
-                (*iter)->get_m().toXmlElem("m:m", "", _outStream);
-            }
-            else if ((*iter)->has_nary())
-            {
-                (*iter)->get_nary().toXmlElem("m:nary", "", _outStream);
-            }
-            else if ((*iter)->has_phant())
-            {
-                (*iter)->get_phant().toXmlElem("m:phant", "", _outStream);
-            }
-            else if ((*iter)->has_rad())
-            {
-                (*iter)->get_rad().toXmlElem("m:rad", "", _outStream);
-            }
-            else if ((*iter)->has_sPre())
-            {
-                (*iter)->get_sPre().toXmlElem("m:sPre", "", _outStream);
-            }
-            else if ((*iter)->has_sSub())
-            {
-                (*iter)->get_sSub().toXmlElem("m:sSub", "", _outStream);
-            }
-            else if ((*iter)->has_sSubSup())
-            {
-                (*iter)->get_sSubSup().toXmlElem("m:sSubSup", "", _outStream);
-            }
-            else if ((*iter)->has_sSup())
-            {
-                (*iter)->get_sSup().toXmlElem("m:sSup", "", _outStream);
-            }
-            else if ((*iter)->has_r())
-            {
-                (*iter)->get_r().toXmlElem("m:r", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXml())
-            {
-                (*iter)->get_w_customXml().toXmlElem("w:customXml", "", _outStream);
-            }
-            else if ((*iter)->has_w_fldSimple())
-            {
-                (*iter)->get_w_fldSimple().toXmlElem("w:fldSimple", "", _outStream);
-            }
-            else if ((*iter)->has_w_hyperlink())
-            {
-                (*iter)->get_w_hyperlink().toXmlElem("w:hyperlink", "", _outStream);
-            }
-            else if ((*iter)->has_w_smartTag())
-            {
-                (*iter)->get_w_smartTag().toXmlElem("w:smartTag", "", _outStream);
-            }
-            else if ((*iter)->has_w_sdt())
-            {
-                (*iter)->get_w_sdt().toXmlElem("w:sdt", "", _outStream);
-            }
-            else if ((*iter)->has_w_proofErr())
-            {
-                (*iter)->get_w_proofErr().toXmlElem("w:proofErr", "", _outStream);
-            }
-            else if ((*iter)->has_w_permStart())
-            {
-                (*iter)->get_w_permStart().toXmlElem("w:permStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_permEnd())
-            {
-                (*iter)->get_w_permEnd().toXmlElem("w:permEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_bookmarkStart())
-            {
-                (*iter)->get_w_bookmarkStart().toXmlElem("w:bookmarkStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_bookmarkEnd())
-            {
-                (*iter)->get_w_bookmarkEnd().toXmlElem("w:bookmarkEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveFromRangeStart())
-            {
-                (*iter)->get_w_moveFromRangeStart().toXmlElem("w:moveFromRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveFromRangeEnd())
-            {
-                (*iter)->get_w_moveFromRangeEnd().toXmlElem("w:moveFromRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveToRangeStart())
-            {
-                (*iter)->get_w_moveToRangeStart().toXmlElem("w:moveToRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveToRangeEnd())
-            {
-                (*iter)->get_w_moveToRangeEnd().toXmlElem("w:moveToRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_commentRangeStart())
-            {
-                (*iter)->get_w_commentRangeStart().toXmlElem("w:commentRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_commentRangeEnd())
-            {
-                (*iter)->get_w_commentRangeEnd().toXmlElem("w:commentRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlInsRangeStart())
-            {
-                (*iter)->get_w_customXmlInsRangeStart().toXmlElem("w:customXmlInsRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlInsRangeEnd())
-            {
-                (*iter)->get_w_customXmlInsRangeEnd().toXmlElem("w:customXmlInsRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlDelRangeStart())
-            {
-                (*iter)->get_w_customXmlDelRangeStart().toXmlElem("w:customXmlDelRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlDelRangeEnd())
-            {
-                (*iter)->get_w_customXmlDelRangeEnd().toXmlElem("w:customXmlDelRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlMoveFromRangeStart())
-            {
-                (*iter)->get_w_customXmlMoveFromRangeStart().toXmlElem("w:customXmlMoveFromRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlMoveFromRangeEnd())
-            {
-                (*iter)->get_w_customXmlMoveFromRangeEnd().toXmlElem("w:customXmlMoveFromRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlMoveToRangeStart())
-            {
-                (*iter)->get_w_customXmlMoveToRangeStart().toXmlElem("w:customXmlMoveToRangeStart", "", _outStream);
-            }
-            else if ((*iter)->has_w_customXmlMoveToRangeEnd())
-            {
-                (*iter)->get_w_customXmlMoveToRangeEnd().toXmlElem("w:customXmlMoveToRangeEnd", "", _outStream);
-            }
-            else if ((*iter)->has_w_ins())
-            {
-                (*iter)->get_w_ins().toXmlElem("w:ins", "", _outStream);
-            }
-            else if ((*iter)->has_w_del())
-            {
-                (*iter)->get_w_del().toXmlElem("w:del", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveFrom())
-            {
-                (*iter)->get_w_moveFrom().toXmlElem("w:moveFrom", "", _outStream);
-            }
-            else if ((*iter)->has_w_moveTo())
-            {
-                (*iter)->get_w_moveTo().toXmlElem("w:moveTo", "", _outStream);
-            }
-            else if ((*iter)->has_m_oMathPara())
-            {
-                (*iter)->get_m_oMathPara().toXmlElem("m:oMathPara", "", _outStream);
-            }
-            else if ((*iter)->has_m_oMath())
-            {
-                (*iter)->get_m_oMath().toXmlElem("m:oMath", "", _outStream);
-            }
+    
+    if ((*iter)->has_acc())
+    {
+        (*iter)->get_acc().toXmlElem("m:acc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_bar())
+    {
+        (*iter)->get_bar().toXmlElem("m:bar", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_box())
+    {
+        (*iter)->get_box().toXmlElem("m:box", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_borderBox())
+    {
+        (*iter)->get_borderBox().toXmlElem("m:borderBox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_d())
+    {
+        (*iter)->get_d().toXmlElem("m:d", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_eqArr())
+    {
+        (*iter)->get_eqArr().toXmlElem("m:eqArr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_f())
+    {
+        (*iter)->get_f().toXmlElem("m:f", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_func())
+    {
+        (*iter)->get_func().toXmlElem("m:func", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_groupChr())
+    {
+        (*iter)->get_groupChr().toXmlElem("m:groupChr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_limLow())
+    {
+        (*iter)->get_limLow().toXmlElem("m:limLow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_limUpp())
+    {
+        (*iter)->get_limUpp().toXmlElem("m:limUpp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_m())
+    {
+        (*iter)->get_m().toXmlElem("m:m", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_nary())
+    {
+        (*iter)->get_nary().toXmlElem("m:nary", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_phant())
+    {
+        (*iter)->get_phant().toXmlElem("m:phant", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rad())
+    {
+        (*iter)->get_rad().toXmlElem("m:rad", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sPre())
+    {
+        (*iter)->get_sPre().toXmlElem("m:sPre", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sSub())
+    {
+        (*iter)->get_sSub().toXmlElem("m:sSub", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sSubSup())
+    {
+        (*iter)->get_sSubSup().toXmlElem("m:sSubSup", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sSup())
+    {
+        (*iter)->get_sSup().toXmlElem("m:sSup", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_r())
+    {
+        (*iter)->get_r().toXmlElem("m:r", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXml())
+    {
+        (*iter)->get_w_customXml().toXmlElem("w:customXml", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_fldSimple())
+    {
+        (*iter)->get_w_fldSimple().toXmlElem("w:fldSimple", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_hyperlink())
+    {
+        (*iter)->get_w_hyperlink().toXmlElem("w:hyperlink", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_smartTag())
+    {
+        (*iter)->get_w_smartTag().toXmlElem("w:smartTag", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_sdt())
+    {
+        (*iter)->get_w_sdt().toXmlElem("w:sdt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_proofErr())
+    {
+        (*iter)->get_w_proofErr().toXmlElem("w:proofErr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_permStart())
+    {
+        (*iter)->get_w_permStart().toXmlElem("w:permStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_permEnd())
+    {
+        (*iter)->get_w_permEnd().toXmlElem("w:permEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_bookmarkStart())
+    {
+        (*iter)->get_w_bookmarkStart().toXmlElem("w:bookmarkStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_bookmarkEnd())
+    {
+        (*iter)->get_w_bookmarkEnd().toXmlElem("w:bookmarkEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveFromRangeStart())
+    {
+        (*iter)->get_w_moveFromRangeStart().toXmlElem("w:moveFromRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveFromRangeEnd())
+    {
+        (*iter)->get_w_moveFromRangeEnd().toXmlElem("w:moveFromRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveToRangeStart())
+    {
+        (*iter)->get_w_moveToRangeStart().toXmlElem("w:moveToRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveToRangeEnd())
+    {
+        (*iter)->get_w_moveToRangeEnd().toXmlElem("w:moveToRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_commentRangeStart())
+    {
+        (*iter)->get_w_commentRangeStart().toXmlElem("w:commentRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_commentRangeEnd())
+    {
+        (*iter)->get_w_commentRangeEnd().toXmlElem("w:commentRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlInsRangeStart())
+    {
+        (*iter)->get_w_customXmlInsRangeStart().toXmlElem("w:customXmlInsRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlInsRangeEnd())
+    {
+        (*iter)->get_w_customXmlInsRangeEnd().toXmlElem("w:customXmlInsRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlDelRangeStart())
+    {
+        (*iter)->get_w_customXmlDelRangeStart().toXmlElem("w:customXmlDelRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlDelRangeEnd())
+    {
+        (*iter)->get_w_customXmlDelRangeEnd().toXmlElem("w:customXmlDelRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlMoveFromRangeStart())
+    {
+        (*iter)->get_w_customXmlMoveFromRangeStart().toXmlElem("w:customXmlMoveFromRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlMoveFromRangeEnd())
+    {
+        (*iter)->get_w_customXmlMoveFromRangeEnd().toXmlElem("w:customXmlMoveFromRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlMoveToRangeStart())
+    {
+        (*iter)->get_w_customXmlMoveToRangeStart().toXmlElem("w:customXmlMoveToRangeStart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_customXmlMoveToRangeEnd())
+    {
+        (*iter)->get_w_customXmlMoveToRangeEnd().toXmlElem("w:customXmlMoveToRangeEnd", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_ins())
+    {
+        (*iter)->get_w_ins().toXmlElem("w:ins", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_del())
+    {
+        (*iter)->get_w_del().toXmlElem("w:del", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveFrom())
+    {
+        (*iter)->get_w_moveFrom().toXmlElem("w:moveFrom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w_moveTo())
+    {
+        (*iter)->get_w_moveTo().toXmlElem("w:moveTo", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_m_oMathPara())
+    {
+        (*iter)->get_m_oMathPara().toXmlElem("m:oMathPara", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_m_oMath())
+    {
+        (*iter)->get_m_oMath().toXmlElem("m:oMath", "", _outStream);
+    }
+    
+    
         }
     }
     

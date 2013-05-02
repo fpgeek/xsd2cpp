@@ -1096,110 +1096,188 @@ ST_EditAs* ST_EditAs::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
-            else if ((*iter)->has_o_ink())
-            {
-                (*iter)->get_o_ink().toXmlElem("o:ink", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_iscomment())
-            {
-                (*iter)->get_pvml_iscomment().toXmlElem("pvml:iscomment", "", _outStream);
-            }
-            else if ((*iter)->has_o_equationxml())
-            {
-                (*iter)->get_o_equationxml().toXmlElem("o:equationxml", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_ink())
+    {
+        (*iter)->get_o_ink().toXmlElem("o:ink", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_iscomment())
+    {
+        (*iter)->get_pvml_iscomment().toXmlElem("pvml:iscomment", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_equationxml())
+    {
+        (*iter)->get_o_equationxml().toXmlElem("o:equationxml", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -8139,104 +8217,173 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_o_complex)
     {
-        m_o_complex->toXmlElem("o:complex", "", _outStream);;
+        m_o_complex->toXmlElem("o:complex", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -13867,146 +14014,251 @@ CT_Shapetype* CT_Shapetype::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
-            else if ((*iter)->has_group())
-            {
-                (*iter)->get_group().toXmlElem("v:group", "", _outStream);
-            }
-            else if ((*iter)->has_shape())
-            {
-                (*iter)->get_shape().toXmlElem("v:shape", "", _outStream);
-            }
-            else if ((*iter)->has_shapetype())
-            {
-                (*iter)->get_shapetype().toXmlElem("v:shapetype", "", _outStream);
-            }
-            else if ((*iter)->has_arc())
-            {
-                (*iter)->get_arc().toXmlElem("v:arc", "", _outStream);
-            }
-            else if ((*iter)->has_curve())
-            {
-                (*iter)->get_curve().toXmlElem("v:curve", "", _outStream);
-            }
-            else if ((*iter)->has_image())
-            {
-                (*iter)->get_image().toXmlElem("v:image", "", _outStream);
-            }
-            else if ((*iter)->has_line())
-            {
-                (*iter)->get_line().toXmlElem("v:line", "", _outStream);
-            }
-            else if ((*iter)->has_oval())
-            {
-                (*iter)->get_oval().toXmlElem("v:oval", "", _outStream);
-            }
-            else if ((*iter)->has_polyline())
-            {
-                (*iter)->get_polyline().toXmlElem("v:polyline", "", _outStream);
-            }
-            else if ((*iter)->has_rect())
-            {
-                (*iter)->get_rect().toXmlElem("v:rect", "", _outStream);
-            }
-            else if ((*iter)->has_roundrect())
-            {
-                (*iter)->get_roundrect().toXmlElem("v:roundrect", "", _outStream);
-            }
-            else if ((*iter)->has_o_diagram())
-            {
-                (*iter)->get_o_diagram().toXmlElem("o:diagram", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_group())
+    {
+        (*iter)->get_group().toXmlElem("v:group", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shape())
+    {
+        (*iter)->get_shape().toXmlElem("v:shape", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shapetype())
+    {
+        (*iter)->get_shapetype().toXmlElem("v:shapetype", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_arc())
+    {
+        (*iter)->get_arc().toXmlElem("v:arc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_curve())
+    {
+        (*iter)->get_curve().toXmlElem("v:curve", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_image())
+    {
+        (*iter)->get_image().toXmlElem("v:image", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_line())
+    {
+        (*iter)->get_line().toXmlElem("v:line", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_oval())
+    {
+        (*iter)->get_oval().toXmlElem("v:oval", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_polyline())
+    {
+        (*iter)->get_polyline().toXmlElem("v:polyline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rect())
+    {
+        (*iter)->get_rect().toXmlElem("v:rect", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_roundrect())
+    {
+        (*iter)->get_roundrect().toXmlElem("v:roundrect", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_diagram())
+    {
+        (*iter)->get_o_diagram().toXmlElem("o:diagram", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -25946,7 +26198,7 @@ CT_Group* CT_Group::default_instance_ = NULL;
             
     if (m_has_fill)
     {
-        m_fill->toXmlElem("v:fill", "", _outStream);;
+        m_fill->toXmlElem("v:fill", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -26525,7 +26777,7 @@ CT_Background* CT_Background::default_instance_ = NULL;
             
     if (m_has_o_fill)
     {
-        m_o_fill->toXmlElem("o:fill", "", _outStream);;
+        m_o_fill->toXmlElem("o:fill", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -27065,10 +27317,13 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_f())
-            {
-                (*iter)->get_f().toXmlElem("v:f", "", _outStream);
-            }
+    
+    if ((*iter)->has_f())
+    {
+        (*iter)->get_f().toXmlElem("v:f", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -27222,10 +27477,13 @@ CT_F* CT_F::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_h())
-            {
-                (*iter)->get_h().toXmlElem("v:h", "", _outStream);
-            }
+    
+    if ((*iter)->has_h())
+    {
+        (*iter)->get_h().toXmlElem("v:h", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -29904,27 +30162,31 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
             
     if (m_has_o_left)
     {
-        m_o_left->toXmlElem("o:left", "", _outStream);;
+        m_o_left->toXmlElem("o:left", "", _outStream);
     }
+    
     
     if (m_has_o_top)
     {
-        m_o_top->toXmlElem("o:top", "", _outStream);;
+        m_o_top->toXmlElem("o:top", "", _outStream);
     }
+    
     
     if (m_has_o_right)
     {
-        m_o_right->toXmlElem("o:right", "", _outStream);;
+        m_o_right->toXmlElem("o:right", "", _outStream);
     }
+    
     
     if (m_has_o_bottom)
     {
-        m_o_bottom->toXmlElem("o:bottom", "", _outStream);;
+        m_o_bottom->toXmlElem("o:bottom", "", _outStream);
     }
+    
     
     if (m_has_o_column)
     {
-        m_o_column->toXmlElem("o:column", "", _outStream);;
+        m_o_column->toXmlElem("o:column", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -30608,14 +30870,13 @@ CT_Stroke* CT_Stroke::default_instance_ = NULL;
             
     if (m_has_w_txbxContent)
     {
-        m_w_txbxContent->toXmlElem("w:txbxContent", "", _outStream);;
+        m_w_txbxContent->toXmlElem("w:txbxContent", "", _outStream);
     }
+    
     
     if (m_has__any)
     {
-        
-    m__any->toXml(_outStream);
-    ;
+        m__any->toXml(_outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -31259,98 +31520,167 @@ CT_TextPath* CT_TextPath::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -36841,98 +37171,167 @@ CT_Arc* CT_Arc::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -42533,98 +42932,167 @@ CT_Curve* CT_Curve::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -48229,98 +48697,167 @@ CT_Image* CT_Image::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -53769,98 +54306,167 @@ CT_Line* CT_Line::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -59294,102 +59900,174 @@ CT_Oval* CT_Oval::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
-            else if ((*iter)->has_o_ink())
-            {
-                (*iter)->get_o_ink().toXmlElem("o:ink", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_ink())
+    {
+        (*iter)->get_o_ink().toXmlElem("o:ink", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -65263,98 +65941,167 @@ CT_PolyLine* CT_PolyLine::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -70780,98 +71527,167 @@ CT_Rect* CT_Rect::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -76385,110 +77201,188 @@ CT_RoundRect* CT_RoundRect::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
-            else if ((*iter)->has_o_ink())
-            {
-                (*iter)->get_o_ink().toXmlElem("o:ink", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_iscomment())
-            {
-                (*iter)->get_pvml_iscomment().toXmlElem("pvml:iscomment", "", _outStream);
-            }
-            else if ((*iter)->has_o_equationxml())
-            {
-                (*iter)->get_o_equationxml().toXmlElem("o:equationxml", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_ink())
+    {
+        (*iter)->get_o_ink().toXmlElem("o:ink", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_iscomment())
+    {
+        (*iter)->get_pvml_iscomment().toXmlElem("pvml:iscomment", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_equationxml())
+    {
+        (*iter)->get_o_equationxml().toXmlElem("o:equationxml", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -83432,104 +84326,173 @@ shape_element* shape_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_o_complex)
     {
-        m_o_complex->toXmlElem("o:complex", "", _outStream);;
+        m_o_complex->toXmlElem("o:complex", "", _outStream);
     }
     
     _outStream << "</v:shapetype>";
@@ -89164,146 +90127,251 @@ shapetype_element* shapetype_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
-            else if ((*iter)->has_group())
-            {
-                (*iter)->get_group().toXmlElem("v:group", "", _outStream);
-            }
-            else if ((*iter)->has_shape())
-            {
-                (*iter)->get_shape().toXmlElem("v:shape", "", _outStream);
-            }
-            else if ((*iter)->has_shapetype())
-            {
-                (*iter)->get_shapetype().toXmlElem("v:shapetype", "", _outStream);
-            }
-            else if ((*iter)->has_arc())
-            {
-                (*iter)->get_arc().toXmlElem("v:arc", "", _outStream);
-            }
-            else if ((*iter)->has_curve())
-            {
-                (*iter)->get_curve().toXmlElem("v:curve", "", _outStream);
-            }
-            else if ((*iter)->has_image())
-            {
-                (*iter)->get_image().toXmlElem("v:image", "", _outStream);
-            }
-            else if ((*iter)->has_line())
-            {
-                (*iter)->get_line().toXmlElem("v:line", "", _outStream);
-            }
-            else if ((*iter)->has_oval())
-            {
-                (*iter)->get_oval().toXmlElem("v:oval", "", _outStream);
-            }
-            else if ((*iter)->has_polyline())
-            {
-                (*iter)->get_polyline().toXmlElem("v:polyline", "", _outStream);
-            }
-            else if ((*iter)->has_rect())
-            {
-                (*iter)->get_rect().toXmlElem("v:rect", "", _outStream);
-            }
-            else if ((*iter)->has_roundrect())
-            {
-                (*iter)->get_roundrect().toXmlElem("v:roundrect", "", _outStream);
-            }
-            else if ((*iter)->has_o_diagram())
-            {
-                (*iter)->get_o_diagram().toXmlElem("o:diagram", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_group())
+    {
+        (*iter)->get_group().toXmlElem("v:group", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shape())
+    {
+        (*iter)->get_shape().toXmlElem("v:shape", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shapetype())
+    {
+        (*iter)->get_shapetype().toXmlElem("v:shapetype", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_arc())
+    {
+        (*iter)->get_arc().toXmlElem("v:arc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_curve())
+    {
+        (*iter)->get_curve().toXmlElem("v:curve", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_image())
+    {
+        (*iter)->get_image().toXmlElem("v:image", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_line())
+    {
+        (*iter)->get_line().toXmlElem("v:line", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_oval())
+    {
+        (*iter)->get_oval().toXmlElem("v:oval", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_polyline())
+    {
+        (*iter)->get_polyline().toXmlElem("v:polyline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rect())
+    {
+        (*iter)->get_rect().toXmlElem("v:rect", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_roundrect())
+    {
+        (*iter)->get_roundrect().toXmlElem("v:roundrect", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_diagram())
+    {
+        (*iter)->get_o_diagram().toXmlElem("o:diagram", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -101247,7 +102315,7 @@ group_element* group_element::default_instance_ = NULL;
     
     if (m_has_fill)
     {
-        m_fill->toXmlElem("v:fill", "", _outStream);;
+        m_fill->toXmlElem("v:fill", "", _outStream);
     }
     
     _outStream << "</v:background>";
@@ -101830,7 +102898,7 @@ background_element* background_element::default_instance_ = NULL;
     
     if (m_has_o_fill)
     {
-        m_o_fill->toXmlElem("o:fill", "", _outStream);;
+        m_o_fill->toXmlElem("o:fill", "", _outStream);
     }
     
     _outStream << "</v:fill>";
@@ -102374,10 +103442,13 @@ fill_element* fill_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_f())
-            {
-                (*iter)->get_f().toXmlElem("v:f", "", _outStream);
-            }
+    
+    if ((*iter)->has_f())
+    {
+        (*iter)->get_f().toXmlElem("v:f", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -102474,10 +103545,13 @@ formulas_element* formulas_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_h())
-            {
-                (*iter)->get_h().toXmlElem("v:h", "", _outStream);
-            }
+    
+    if ((*iter)->has_h())
+    {
+        (*iter)->get_h().toXmlElem("v:h", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -103977,14 +105051,13 @@ path_element* path_element::default_instance_ = NULL;
     
     if (m_has_w_txbxContent)
     {
-        m_w_txbxContent->toXmlElem("w:txbxContent", "", _outStream);;
+        m_w_txbxContent->toXmlElem("w:txbxContent", "", _outStream);
     }
+    
     
     if (m_has__any)
     {
-        
-    m__any->toXml(_outStream);
-    ;
+        m__any->toXml(_outStream);
     }
     
     _outStream << "</v:textbox>";
@@ -105108,27 +106181,31 @@ shadow_element* shadow_element::default_instance_ = NULL;
     
     if (m_has_o_left)
     {
-        m_o_left->toXmlElem("o:left", "", _outStream);;
+        m_o_left->toXmlElem("o:left", "", _outStream);
     }
+    
     
     if (m_has_o_top)
     {
-        m_o_top->toXmlElem("o:top", "", _outStream);;
+        m_o_top->toXmlElem("o:top", "", _outStream);
     }
+    
     
     if (m_has_o_right)
     {
-        m_o_right->toXmlElem("o:right", "", _outStream);;
+        m_o_right->toXmlElem("o:right", "", _outStream);
     }
+    
     
     if (m_has_o_bottom)
     {
-        m_o_bottom->toXmlElem("o:bottom", "", _outStream);;
+        m_o_bottom->toXmlElem("o:bottom", "", _outStream);
     }
+    
     
     if (m_has_o_column)
     {
-        m_o_column->toXmlElem("o:column", "", _outStream);;
+        m_o_column->toXmlElem("o:column", "", _outStream);
     }
     
     _outStream << "</v:stroke>";
@@ -106232,98 +107309,167 @@ textpath_element* textpath_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -111818,98 +112964,167 @@ arc_element* arc_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -117514,98 +118729,167 @@ curve_element* curve_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -123214,98 +124498,167 @@ image_element* image_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -128758,98 +130111,167 @@ line_element* line_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -134287,102 +135709,174 @@ oval_element* oval_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
-            else if ((*iter)->has_o_ink())
-            {
-                (*iter)->get_o_ink().toXmlElem("o:ink", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_ink())
+    {
+        (*iter)->get_o_ink().toXmlElem("o:ink", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -140260,98 +141754,167 @@ polyline_element* polyline_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -145781,98 +147344,167 @@ rect_element* rect_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("v:path", "", _outStream);
-            }
-            else if ((*iter)->has_formulas())
-            {
-                (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
-            }
-            else if ((*iter)->has_handles())
-            {
-                (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
-            }
-            else if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
-            }
-            else if ((*iter)->has_stroke())
-            {
-                (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_textbox())
-            {
-                (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
-            }
-            else if ((*iter)->has_textpath())
-            {
-                (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
-            }
-            else if ((*iter)->has_imagedata())
-            {
-                (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
-            }
-            else if ((*iter)->has_o_skew())
-            {
-                (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
-            }
-            else if ((*iter)->has_o_extrusion())
-            {
-                (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
-            }
-            else if ((*iter)->has_o_callout())
-            {
-                (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
-            }
-            else if ((*iter)->has_o_lock())
-            {
-                (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
-            }
-            else if ((*iter)->has_o_clippath())
-            {
-                (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
-            }
-            else if ((*iter)->has_o_signatureline())
-            {
-                (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
-            }
-            else if ((*iter)->has_w10_wrap())
-            {
-                (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
-            }
-            else if ((*iter)->has_w10_anchorlock())
-            {
-                (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
-            }
-            else if ((*iter)->has_w10_bordertop())
-            {
-                (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderbottom())
-            {
-                (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderleft())
-            {
-                (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
-            }
-            else if ((*iter)->has_w10_borderright())
-            {
-                (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
-            }
-            else if ((*iter)->has_x_ClientData())
-            {
-                (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
-            }
-            else if ((*iter)->has_pvml_textdata())
-            {
-                (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("v:path", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_formulas())
+    {
+        (*iter)->get_formulas().toXmlElem("v:formulas", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_handles())
+    {
+        (*iter)->get_handles().toXmlElem("v:handles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("v:fill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stroke())
+    {
+        (*iter)->get_stroke().toXmlElem("v:stroke", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("v:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textbox())
+    {
+        (*iter)->get_textbox().toXmlElem("v:textbox", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_textpath())
+    {
+        (*iter)->get_textpath().toXmlElem("v:textpath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_imagedata())
+    {
+        (*iter)->get_imagedata().toXmlElem("v:imagedata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_skew())
+    {
+        (*iter)->get_o_skew().toXmlElem("o:skew", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_extrusion())
+    {
+        (*iter)->get_o_extrusion().toXmlElem("o:extrusion", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_callout())
+    {
+        (*iter)->get_o_callout().toXmlElem("o:callout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_lock())
+    {
+        (*iter)->get_o_lock().toXmlElem("o:lock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_clippath())
+    {
+        (*iter)->get_o_clippath().toXmlElem("o:clippath", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_o_signatureline())
+    {
+        (*iter)->get_o_signatureline().toXmlElem("o:signatureline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_wrap())
+    {
+        (*iter)->get_w10_wrap().toXmlElem("w10:wrap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_anchorlock())
+    {
+        (*iter)->get_w10_anchorlock().toXmlElem("w10:anchorlock", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_bordertop())
+    {
+        (*iter)->get_w10_bordertop().toXmlElem("w10:bordertop", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderbottom())
+    {
+        (*iter)->get_w10_borderbottom().toXmlElem("w10:borderbottom", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderleft())
+    {
+        (*iter)->get_w10_borderleft().toXmlElem("w10:borderleft", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_w10_borderright())
+    {
+        (*iter)->get_w10_borderright().toXmlElem("w10:borderright", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x_ClientData())
+    {
+        (*iter)->get_x_ClientData().toXmlElem("x:ClientData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pvml_textdata())
+    {
+        (*iter)->get_pvml_textdata().toXmlElem("pvml:textdata", "", _outStream);
+    }
+    
+    
         }
     }
     

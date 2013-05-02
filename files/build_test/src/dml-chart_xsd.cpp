@@ -5244,9 +5244,7 @@ CT_RelId* CT_RelId::default_instance_ = NULL;
             
     if (m_has__any)
     {
-        
-    m__any->toXml(_outStream);
-    ;
+        m__any->toXml(_outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -5322,10 +5320,13 @@ CT_Extension* CT_Extension::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ext())
-            {
-                (*iter)->get_ext().toXmlElem("chart:ext", "", _outStream);
-            }
+    
+    if ((*iter)->has_ext())
+    {
+        (*iter)->get_ext().toXmlElem("chart:ext", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -5460,7 +5461,7 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
             
     if (m_has_v)
     {
-        _outStream << "<chart:v>" << m_v->toString() << "</chart:v>";;
+        _outStream << "<chart:v>" << m_v->toString() << "</chart:v>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -5631,26 +5632,33 @@ CT_NumVal* CT_NumVal::default_instance_ = NULL;
             
     if (m_has_formatCode)
     {
-        _outStream << "<chart:formatCode>" << m_formatCode->toString() << "</chart:formatCode>";;
+        _outStream << "<chart:formatCode>" << m_formatCode->toString() << "</chart:formatCode>";
     }
+    
     
     if (m_has_ptCount)
     {
-        m_ptCount->toXmlElem("chart:ptCount", "", _outStream);;
+        m_ptCount->toXmlElem("chart:ptCount", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_pt())
-            {
-                (*iter)->get_pt().toXmlElem("chart:pt", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_pt())
+    {
+        (*iter)->get_pt().toXmlElem("chart:pt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -5859,17 +5867,19 @@ CT_NumData* CT_NumData::default_instance_ = NULL;
             
     if (m_has_f)
     {
-        _outStream << "<chart:f>" << m_f << "</chart:f>";;
+        _outStream << "<chart:f>" << m_f << "</chart:f>";
     }
+    
     
     if (m_has_numCache)
     {
-        m_numCache->toXmlElem("chart:numCache", "", _outStream);;
+        m_numCache->toXmlElem("chart:numCache", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -5999,12 +6009,13 @@ CT_NumRef* CT_NumRef::default_instance_ = NULL;
             
     if (m_has_numRef)
     {
-        m_numRef->toXmlElem("chart:numRef", "", _outStream);;
+        m_numRef->toXmlElem("chart:numRef", "", _outStream);
     }
+    
     
     if (m_has_numLit)
     {
-        m_numLit->toXmlElem("chart:numLit", "", _outStream);;
+        m_numLit->toXmlElem("chart:numLit", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -6089,7 +6100,7 @@ CT_NumDataSource* CT_NumDataSource::default_instance_ = NULL;
             
     if (m_has_v)
     {
-        _outStream << "<chart:v>" << m_v->toString() << "</chart:v>";;
+        _outStream << "<chart:v>" << m_v->toString() << "</chart:v>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -6205,21 +6216,27 @@ CT_StrVal* CT_StrVal::default_instance_ = NULL;
             
     if (m_has_ptCount)
     {
-        m_ptCount->toXmlElem("chart:ptCount", "", _outStream);;
+        m_ptCount->toXmlElem("chart:ptCount", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_pt())
-            {
-                (*iter)->get_pt().toXmlElem("chart:pt", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_pt())
+    {
+        (*iter)->get_pt().toXmlElem("chart:pt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -6428,17 +6445,19 @@ CT_StrData* CT_StrData::default_instance_ = NULL;
             
     if (m_has_f)
     {
-        _outStream << "<chart:f>" << m_f << "</chart:f>";;
+        _outStream << "<chart:f>" << m_f << "</chart:f>";
     }
+    
     
     if (m_has_strCache)
     {
-        m_strCache->toXmlElem("chart:strCache", "", _outStream);;
+        m_strCache->toXmlElem("chart:strCache", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -6568,12 +6587,13 @@ CT_StrRef* CT_StrRef::default_instance_ = NULL;
             
     if (m_has_strRef)
     {
-        m_strRef->toXmlElem("chart:strRef", "", _outStream);;
+        m_strRef->toXmlElem("chart:strRef", "", _outStream);
     }
+    
     
     if (m_has_rich)
     {
-        m_rich->toXmlElem("chart:rich", "", _outStream);;
+        m_rich->toXmlElem("chart:rich", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -6704,10 +6724,13 @@ CT_TextLanguageID* CT_TextLanguageID::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_pt())
-            {
-                (*iter)->get_pt().toXmlElem("chart:pt", "", _outStream);
-            }
+    
+    if ((*iter)->has_pt())
+    {
+        (*iter)->get_pt().toXmlElem("chart:pt", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -6840,21 +6863,27 @@ CT_Lvl* CT_Lvl::default_instance_ = NULL;
             
     if (m_has_ptCount)
     {
-        m_ptCount->toXmlElem("chart:ptCount", "", _outStream);;
+        m_ptCount->toXmlElem("chart:ptCount", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_lvl())
-            {
-                (*iter)->get_lvl().toXmlElem("chart:lvl", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_lvl())
+    {
+        (*iter)->get_lvl().toXmlElem("chart:lvl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -7063,17 +7092,19 @@ CT_MultiLvlStrData* CT_MultiLvlStrData::default_instance_ = NULL;
             
     if (m_has_f)
     {
-        _outStream << "<chart:f>" << m_f << "</chart:f>";;
+        _outStream << "<chart:f>" << m_f << "</chart:f>";
     }
+    
     
     if (m_has_multiLvlStrCache)
     {
-        m_multiLvlStrCache->toXmlElem("chart:multiLvlStrCache", "", _outStream);;
+        m_multiLvlStrCache->toXmlElem("chart:multiLvlStrCache", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7473,27 +7504,31 @@ CT_MultiLvlStrRef* CT_MultiLvlStrRef::default_instance_ = NULL;
             
     if (m_has_multiLvlStrRef)
     {
-        m_multiLvlStrRef->toXmlElem("chart:multiLvlStrRef", "", _outStream);;
+        m_multiLvlStrRef->toXmlElem("chart:multiLvlStrRef", "", _outStream);
     }
+    
     
     if (m_has_numRef)
     {
-        m_numRef->toXmlElem("chart:numRef", "", _outStream);;
+        m_numRef->toXmlElem("chart:numRef", "", _outStream);
     }
+    
     
     if (m_has_numLit)
     {
-        m_numLit->toXmlElem("chart:numLit", "", _outStream);;
+        m_numLit->toXmlElem("chart:numLit", "", _outStream);
     }
+    
     
     if (m_has_strRef)
     {
-        m_strRef->toXmlElem("chart:strRef", "", _outStream);;
+        m_strRef->toXmlElem("chart:strRef", "", _outStream);
     }
+    
     
     if (m_has_strLit)
     {
-        m_strLit->toXmlElem("chart:strLit", "", _outStream);;
+        m_strLit->toXmlElem("chart:strLit", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7623,12 +7658,13 @@ CT_AxDataSource* CT_AxDataSource::default_instance_ = NULL;
             
     if (m_has_strRef)
     {
-        m_strRef->toXmlElem("chart:strRef", "", _outStream);;
+        m_strRef->toXmlElem("chart:strRef", "", _outStream);
     }
+    
     
     if (m_has_v)
     {
-        _outStream << "<chart:v>" << m_v->toString() << "</chart:v>";;
+        _outStream << "<chart:v>" << m_v->toString() << "</chart:v>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -8160,52 +8196,61 @@ CT_LayoutMode* CT_LayoutMode::default_instance_ = NULL;
             
     if (m_has_layoutTarget)
     {
-        m_layoutTarget->toXmlElem("chart:layoutTarget", "", _outStream);;
+        m_layoutTarget->toXmlElem("chart:layoutTarget", "", _outStream);
     }
+    
     
     if (m_has_xMode)
     {
-        m_xMode->toXmlElem("chart:xMode", "", _outStream);;
+        m_xMode->toXmlElem("chart:xMode", "", _outStream);
     }
+    
     
     if (m_has_yMode)
     {
-        m_yMode->toXmlElem("chart:yMode", "", _outStream);;
+        m_yMode->toXmlElem("chart:yMode", "", _outStream);
     }
+    
     
     if (m_has_wMode)
     {
-        m_wMode->toXmlElem("chart:wMode", "", _outStream);;
+        m_wMode->toXmlElem("chart:wMode", "", _outStream);
     }
+    
     
     if (m_has_hMode)
     {
-        m_hMode->toXmlElem("chart:hMode", "", _outStream);;
+        m_hMode->toXmlElem("chart:hMode", "", _outStream);
     }
+    
     
     if (m_has_x)
     {
-        m_x->toXmlElem("chart:x", "", _outStream);;
+        m_x->toXmlElem("chart:x", "", _outStream);
     }
+    
     
     if (m_has_y)
     {
-        m_y->toXmlElem("chart:y", "", _outStream);;
+        m_y->toXmlElem("chart:y", "", _outStream);
     }
+    
     
     if (m_has_w)
     {
-        m_w->toXmlElem("chart:w", "", _outStream);;
+        m_w->toXmlElem("chart:w", "", _outStream);
     }
+    
     
     if (m_has_h)
     {
-        m_h->toXmlElem("chart:h", "", _outStream);;
+        m_h->toXmlElem("chart:h", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -8315,12 +8360,13 @@ CT_ManualLayout* CT_ManualLayout::default_instance_ = NULL;
             
     if (m_has_manualLayout)
     {
-        m_manualLayout->toXmlElem("chart:manualLayout", "", _outStream);;
+        m_manualLayout->toXmlElem("chart:manualLayout", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -8570,32 +8616,37 @@ CT_Layout* CT_Layout::default_instance_ = NULL;
             
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("chart:tx", "", _outStream);
     }
+    
     
     if (m_has_layout)
     {
-        m_layout->toXmlElem("chart:layout", "", _outStream);;
+        m_layout->toXmlElem("chart:layout", "", _outStream);
     }
+    
     
     if (m_has_overlay)
     {
-        m_overlay->toXmlElem("chart:overlay", "", _outStream);;
+        m_overlay->toXmlElem("chart:overlay", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_txPr->toXmlElem("chart:txPr", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9235,37 +9286,43 @@ CT_Perspective* CT_Perspective::default_instance_ = NULL;
             
     if (m_has_rotX)
     {
-        m_rotX->toXmlElem("chart:rotX", "", _outStream);;
+        m_rotX->toXmlElem("chart:rotX", "", _outStream);
     }
+    
     
     if (m_has_hPercent)
     {
-        m_hPercent->toXmlElem("chart:hPercent", "", _outStream);;
+        m_hPercent->toXmlElem("chart:hPercent", "", _outStream);
     }
+    
     
     if (m_has_rotY)
     {
-        m_rotY->toXmlElem("chart:rotY", "", _outStream);;
+        m_rotY->toXmlElem("chart:rotY", "", _outStream);
     }
+    
     
     if (m_has_depthPercent)
     {
-        m_depthPercent->toXmlElem("chart:depthPercent", "", _outStream);;
+        m_depthPercent->toXmlElem("chart:depthPercent", "", _outStream);
     }
+    
     
     if (m_has_rAngAx)
     {
-        m_rAngAx->toXmlElem("chart:rAngAx", "", _outStream);;
+        m_rAngAx->toXmlElem("chart:rAngAx", "", _outStream);
     }
+    
     
     if (m_has_perspective)
     {
-        m_perspective->toXmlElem("chart:perspective", "", _outStream);;
+        m_perspective->toXmlElem("chart:perspective", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9445,22 +9502,25 @@ CT_View3D* CT_View3D::default_instance_ = NULL;
             
     if (m_has_thickness)
     {
-        m_thickness->toXmlElem("chart:thickness", "", _outStream);;
+        m_thickness->toXmlElem("chart:thickness", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_pictureOptions)
     {
-        m_pictureOptions->toXmlElem("chart:pictureOptions", "", _outStream);;
+        m_pictureOptions->toXmlElem("chart:pictureOptions", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9816,37 +9876,43 @@ CT_Thickness* CT_Thickness::default_instance_ = NULL;
             
     if (m_has_showHorzBorder)
     {
-        m_showHorzBorder->toXmlElem("chart:showHorzBorder", "", _outStream);;
+        m_showHorzBorder->toXmlElem("chart:showHorzBorder", "", _outStream);
     }
+    
     
     if (m_has_showVertBorder)
     {
-        m_showVertBorder->toXmlElem("chart:showVertBorder", "", _outStream);;
+        m_showVertBorder->toXmlElem("chart:showVertBorder", "", _outStream);
     }
+    
     
     if (m_has_showOutline)
     {
-        m_showOutline->toXmlElem("chart:showOutline", "", _outStream);;
+        m_showOutline->toXmlElem("chart:showOutline", "", _outStream);
     }
+    
     
     if (m_has_showKeys)
     {
-        m_showKeys->toXmlElem("chart:showKeys", "", _outStream);;
+        m_showKeys->toXmlElem("chart:showKeys", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_txPr->toXmlElem("chart:txPr", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10403,10 +10469,13 @@ CT_SplitType* CT_SplitType::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_secondPiePt())
-            {
-                (*iter)->get_secondPiePt().toXmlElem("chart:secondPiePt", "", _outStream);
-            }
+    
+    if ((*iter)->has_secondPiePt())
+    {
+        (*iter)->get_secondPiePt().toXmlElem("chart:secondPiePt", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -10896,17 +10965,17 @@ CT_DLblPos* CT_DLblPos::default_instance_ = NULL;
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("chart:idx", "", _outStream);
     }
      
     if (m_has_delete)
     {
-        m_delete->toXmlElem("chart:delete", "", _outStream);;
+        m_delete->toXmlElem("chart:delete", "", _outStream);
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11085,70 +11154,118 @@ CT_DLbl* CT_DLbl::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_dLbl())
-            {
-                (*iter)->get_dLbl().toXmlElem("chart:dLbl", "", _outStream);
-            }
-            else if ((*iter)->has_delete())
-            {
-                (*iter)->get_delete().toXmlElem("chart:delete", "", _outStream);
-            }
-            else if ((*iter)->has_numFmt())
-            {
-                (*iter)->get_numFmt().toXmlElem("chart:numFmt", "", _outStream);
-            }
-            else if ((*iter)->has_spPr())
-            {
-                (*iter)->get_spPr().toXmlElem("chart:spPr", "", _outStream);
-            }
-            else if ((*iter)->has_txPr())
-            {
-                (*iter)->get_txPr().toXmlElem("chart:txPr", "", _outStream);
-            }
-            else if ((*iter)->has_dLblPos())
-            {
-                (*iter)->get_dLblPos().toXmlElem("chart:dLblPos", "", _outStream);
-            }
-            else if ((*iter)->has_showLegendKey())
-            {
-                (*iter)->get_showLegendKey().toXmlElem("chart:showLegendKey", "", _outStream);
-            }
-            else if ((*iter)->has_showVal())
-            {
-                (*iter)->get_showVal().toXmlElem("chart:showVal", "", _outStream);
-            }
-            else if ((*iter)->has_showCatName())
-            {
-                (*iter)->get_showCatName().toXmlElem("chart:showCatName", "", _outStream);
-            }
-            else if ((*iter)->has_showSerName())
-            {
-                (*iter)->get_showSerName().toXmlElem("chart:showSerName", "", _outStream);
-            }
-            else if ((*iter)->has_showPercent())
-            {
-                (*iter)->get_showPercent().toXmlElem("chart:showPercent", "", _outStream);
-            }
-            else if ((*iter)->has_showBubbleSize())
-            {
-                (*iter)->get_showBubbleSize().toXmlElem("chart:showBubbleSize", "", _outStream);
-            }
-            else if ((*iter)->has_separator())
-            {
-                _outStream << "<chart:separator>" << (*iter)->get_separator() << "</chart:separator>";
-            }
-            else if ((*iter)->has_showLeaderLines())
-            {
-                (*iter)->get_showLeaderLines().toXmlElem("chart:showLeaderLines", "", _outStream);
-            }
-            else if ((*iter)->has_leaderLines())
-            {
-                (*iter)->get_leaderLines().toXmlElem("chart:leaderLines", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_dLbl())
+    {
+        (*iter)->get_dLbl().toXmlElem("chart:dLbl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_delete())
+    {
+        (*iter)->get_delete().toXmlElem("chart:delete", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_numFmt())
+    {
+        (*iter)->get_numFmt().toXmlElem("chart:numFmt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_spPr())
+    {
+        (*iter)->get_spPr().toXmlElem("chart:spPr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_txPr())
+    {
+        (*iter)->get_txPr().toXmlElem("chart:txPr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLblPos())
+    {
+        (*iter)->get_dLblPos().toXmlElem("chart:dLblPos", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_showLegendKey())
+    {
+        (*iter)->get_showLegendKey().toXmlElem("chart:showLegendKey", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_showVal())
+    {
+        (*iter)->get_showVal().toXmlElem("chart:showVal", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_showCatName())
+    {
+        (*iter)->get_showCatName().toXmlElem("chart:showCatName", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_showSerName())
+    {
+        (*iter)->get_showSerName().toXmlElem("chart:showSerName", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_showPercent())
+    {
+        (*iter)->get_showPercent().toXmlElem("chart:showPercent", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_showBubbleSize())
+    {
+        (*iter)->get_showBubbleSize().toXmlElem("chart:showBubbleSize", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_separator())
+    {
+        _outStream << "<chart:separator>" << (*iter)->get_separator() << "</chart:separator>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_showLeaderLines())
+    {
+        (*iter)->get_showLeaderLines().toXmlElem("chart:showLeaderLines", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_leaderLines())
+    {
+        (*iter)->get_leaderLines().toXmlElem("chart:leaderLines", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -13970,22 +14087,25 @@ CT_MarkerSize* CT_MarkerSize::default_instance_ = NULL;
             
     if (m_has_symbol)
     {
-        m_symbol->toXmlElem("chart:symbol", "", _outStream);;
+        m_symbol->toXmlElem("chart:symbol", "", _outStream);
     }
+    
     
     if (m_has_size)
     {
-        m_size->toXmlElem("chart:size", "", _outStream);;
+        m_size->toXmlElem("chart:size", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14305,42 +14425,49 @@ CT_Marker* CT_Marker::default_instance_ = NULL;
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("chart:idx", "", _outStream);
     }
+    
     
     if (m_has_invertIfNegative)
     {
-        m_invertIfNegative->toXmlElem("chart:invertIfNegative", "", _outStream);;
+        m_invertIfNegative->toXmlElem("chart:invertIfNegative", "", _outStream);
     }
+    
     
     if (m_has_marker)
     {
-        m_marker->toXmlElem("chart:marker", "", _outStream);;
+        m_marker->toXmlElem("chart:marker", "", _outStream);
     }
+    
     
     if (m_has_bubble3D)
     {
-        m_bubble3D->toXmlElem("chart:bubble3D", "", _outStream);;
+        m_bubble3D->toXmlElem("chart:bubble3D", "", _outStream);
     }
+    
     
     if (m_has_explosion)
     {
-        m_explosion->toXmlElem("chart:explosion", "", _outStream);;
+        m_explosion->toXmlElem("chart:explosion", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_pictureOptions)
     {
-        m_pictureOptions->toXmlElem("chart:pictureOptions", "", _outStream);;
+        m_pictureOptions->toXmlElem("chart:pictureOptions", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -14803,32 +14930,37 @@ CT_Period* CT_Period::default_instance_ = NULL;
             
     if (m_has_layout)
     {
-        m_layout->toXmlElem("chart:layout", "", _outStream);;
+        m_layout->toXmlElem("chart:layout", "", _outStream);
     }
+    
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("chart:tx", "", _outStream);
     }
+    
     
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);;
+        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_txPr->toXmlElem("chart:txPr", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15274,62 +15406,73 @@ CT_TrendlineLbl* CT_TrendlineLbl::default_instance_ = NULL;
             
     if (m_has_name)
     {
-        _outStream << "<chart:name>" << m_name << "</chart:name>";;
+        _outStream << "<chart:name>" << m_name << "</chart:name>";
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_trendlineType)
     {
-        m_trendlineType->toXmlElem("chart:trendlineType", "", _outStream);;
+        m_trendlineType->toXmlElem("chart:trendlineType", "", _outStream);
     }
+    
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("chart:order", "", _outStream);
     }
+    
     
     if (m_has_period)
     {
-        m_period->toXmlElem("chart:period", "", _outStream);;
+        m_period->toXmlElem("chart:period", "", _outStream);
     }
+    
     
     if (m_has_forward)
     {
-        m_forward->toXmlElem("chart:forward", "", _outStream);;
+        m_forward->toXmlElem("chart:forward", "", _outStream);
     }
+    
     
     if (m_has_backward)
     {
-        m_backward->toXmlElem("chart:backward", "", _outStream);;
+        m_backward->toXmlElem("chart:backward", "", _outStream);
     }
+    
     
     if (m_has_intercept)
     {
-        m_intercept->toXmlElem("chart:intercept", "", _outStream);;
+        m_intercept->toXmlElem("chart:intercept", "", _outStream);
     }
+    
     
     if (m_has_dispRSqr)
     {
-        m_dispRSqr->toXmlElem("chart:dispRSqr", "", _outStream);;
+        m_dispRSqr->toXmlElem("chart:dispRSqr", "", _outStream);
     }
+    
     
     if (m_has_dispEq)
     {
-        m_dispEq->toXmlElem("chart:dispEq", "", _outStream);;
+        m_dispEq->toXmlElem("chart:dispEq", "", _outStream);
     }
+    
     
     if (m_has_trendlineLbl)
     {
-        m_trendlineLbl->toXmlElem("chart:trendlineLbl", "", _outStream);;
+        m_trendlineLbl->toXmlElem("chart:trendlineLbl", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15897,47 +16040,55 @@ CT_ErrValType* CT_ErrValType::default_instance_ = NULL;
             
     if (m_has_errDir)
     {
-        m_errDir->toXmlElem("chart:errDir", "", _outStream);;
+        m_errDir->toXmlElem("chart:errDir", "", _outStream);
     }
+    
     
     if (m_has_errBarType)
     {
-        m_errBarType->toXmlElem("chart:errBarType", "", _outStream);;
+        m_errBarType->toXmlElem("chart:errBarType", "", _outStream);
     }
+    
     
     if (m_has_errValType)
     {
-        m_errValType->toXmlElem("chart:errValType", "", _outStream);;
+        m_errValType->toXmlElem("chart:errValType", "", _outStream);
     }
+    
     
     if (m_has_noEndCap)
     {
-        m_noEndCap->toXmlElem("chart:noEndCap", "", _outStream);;
+        m_noEndCap->toXmlElem("chart:noEndCap", "", _outStream);
     }
+    
     
     if (m_has_plus)
     {
-        m_plus->toXmlElem("chart:plus", "", _outStream);;
+        m_plus->toXmlElem("chart:plus", "", _outStream);
     }
+    
     
     if (m_has_minus)
     {
-        m_minus->toXmlElem("chart:minus", "", _outStream);;
+        m_minus->toXmlElem("chart:minus", "", _outStream);
     }
+    
     
     if (m_has_val)
     {
-        m_val->toXmlElem("chart:val", "", _outStream);;
+        m_val->toXmlElem("chart:val", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16012,7 +16163,7 @@ CT_ErrBars* CT_ErrBars::default_instance_ = NULL;
             
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16192,22 +16343,25 @@ CT_UpDownBar* CT_UpDownBar::default_instance_ = NULL;
             
     if (m_has_gapWidth)
     {
-        m_gapWidth->toXmlElem("chart:gapWidth", "", _outStream);;
+        m_gapWidth->toXmlElem("chart:gapWidth", "", _outStream);
     }
+    
     
     if (m_has_upBars)
     {
-        m_upBars->toXmlElem("chart:upBars", "", _outStream);;
+        m_upBars->toXmlElem("chart:upBars", "", _outStream);
     }
+    
     
     if (m_has_downBars)
     {
-        m_downBars->toXmlElem("chart:downBars", "", _outStream);;
+        m_downBars->toXmlElem("chart:downBars", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16495,65 +16649,93 @@ CT_UpDownBars* CT_UpDownBars::default_instance_ = NULL;
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("chart:idx", "", _outStream);
     }
+    
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("chart:order", "", _outStream);
     }
+    
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("chart:tx", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_marker)
     {
-        m_marker->toXmlElem("chart:marker", "", _outStream);;
+        m_marker->toXmlElem("chart:marker", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_dPt())
-            {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_trendline())
-            {
-                (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
-            }
-            else if ((*iter)->has_errBars())
-            {
-                (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
-            }
-            else if ((*iter)->has_cat())
-            {
-                (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
-            }
-            else if ((*iter)->has_val())
-            {
-                (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
-            }
-            else if ((*iter)->has_smooth())
-            {
-                (*iter)->get_smooth().toXmlElem("chart:smooth", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_dPt())
+    {
+        (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_trendline())
+    {
+        (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_errBars())
+    {
+        (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_cat())
+    {
+        (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_val())
+    {
+        (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_smooth())
+    {
+        (*iter)->get_smooth().toXmlElem("chart:smooth", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -17567,65 +17749,93 @@ CT_LineSer* CT_LineSer::default_instance_ = NULL;
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("chart:idx", "", _outStream);
     }
+    
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("chart:order", "", _outStream);
     }
+    
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("chart:tx", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_marker)
     {
-        m_marker->toXmlElem("chart:marker", "", _outStream);;
+        m_marker->toXmlElem("chart:marker", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_dPt())
-            {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_trendline())
-            {
-                (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
-            }
-            else if ((*iter)->has_errBars())
-            {
-                (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
-            }
-            else if ((*iter)->has_xVal())
-            {
-                (*iter)->get_xVal().toXmlElem("chart:xVal", "", _outStream);
-            }
-            else if ((*iter)->has_yVal())
-            {
-                (*iter)->get_yVal().toXmlElem("chart:yVal", "", _outStream);
-            }
-            else if ((*iter)->has_smooth())
-            {
-                (*iter)->get_smooth().toXmlElem("chart:smooth", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_dPt())
+    {
+        (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_trendline())
+    {
+        (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_errBars())
+    {
+        (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_xVal())
+    {
+        (*iter)->get_xVal().toXmlElem("chart:xVal", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_yVal())
+    {
+        (*iter)->get_yVal().toXmlElem("chart:yVal", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_smooth())
+    {
+        (*iter)->get_smooth().toXmlElem("chart:smooth", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -18615,53 +18825,72 @@ CT_ScatterSer* CT_ScatterSer::default_instance_ = NULL;
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("chart:idx", "", _outStream);
     }
+    
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("chart:order", "", _outStream);
     }
+    
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("chart:tx", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_marker)
     {
-        m_marker->toXmlElem("chart:marker", "", _outStream);;
+        m_marker->toXmlElem("chart:marker", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_dPt())
-            {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_cat())
-            {
-                (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
-            }
-            else if ((*iter)->has_val())
-            {
-                (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_dPt())
+    {
+        (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_cat())
+    {
+        (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_val())
+    {
+        (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -19305,70 +19534,99 @@ CT_RadarSer* CT_RadarSer::default_instance_ = NULL;
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("chart:idx", "", _outStream);
     }
+    
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("chart:order", "", _outStream);
     }
+    
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("chart:tx", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_invertIfNegative)
     {
-        m_invertIfNegative->toXmlElem("chart:invertIfNegative", "", _outStream);;
+        m_invertIfNegative->toXmlElem("chart:invertIfNegative", "", _outStream);
     }
+    
     
     if (m_has_pictureOptions)
     {
-        m_pictureOptions->toXmlElem("chart:pictureOptions", "", _outStream);;
+        m_pictureOptions->toXmlElem("chart:pictureOptions", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_dPt())
-            {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_trendline())
-            {
-                (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
-            }
-            else if ((*iter)->has_errBars())
-            {
-                (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
-            }
-            else if ((*iter)->has_cat())
-            {
-                (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
-            }
-            else if ((*iter)->has_val())
-            {
-                (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
-            }
-            else if ((*iter)->has_shape())
-            {
-                (*iter)->get_shape().toXmlElem("chart:shape", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_dPt())
+    {
+        (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_trendline())
+    {
+        (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_errBars())
+    {
+        (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_cat())
+    {
+        (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_val())
+    {
+        (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shape())
+    {
+        (*iter)->get_shape().toXmlElem("chart:shape", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -20374,61 +20632,86 @@ CT_BarSer* CT_BarSer::default_instance_ = NULL;
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("chart:idx", "", _outStream);
     }
+    
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("chart:order", "", _outStream);
     }
+    
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("chart:tx", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_pictureOptions)
     {
-        m_pictureOptions->toXmlElem("chart:pictureOptions", "", _outStream);;
+        m_pictureOptions->toXmlElem("chart:pictureOptions", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_dPt())
-            {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_trendline())
-            {
-                (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
-            }
-            else if ((*iter)->has_errBars())
-            {
-                (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
-            }
-            else if ((*iter)->has_cat())
-            {
-                (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
-            }
-            else if ((*iter)->has_val())
-            {
-                (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_dPt())
+    {
+        (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_trendline())
+    {
+        (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_errBars())
+    {
+        (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_cat())
+    {
+        (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_val())
+    {
+        (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -21265,53 +21548,72 @@ CT_AreaSer* CT_AreaSer::default_instance_ = NULL;
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("chart:idx", "", _outStream);
     }
+    
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("chart:order", "", _outStream);
     }
+    
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("chart:tx", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_explosion)
     {
-        m_explosion->toXmlElem("chart:explosion", "", _outStream);;
+        m_explosion->toXmlElem("chart:explosion", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_dPt())
-            {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_cat())
-            {
-                (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
-            }
-            else if ((*iter)->has_val())
-            {
-                (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_dPt())
+    {
+        (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_cat())
+    {
+        (*iter)->get_cat().toXmlElem("chart:cat", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_val())
+    {
+        (*iter)->get_val().toXmlElem("chart:val", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -21928,69 +22230,100 @@ CT_PieSer* CT_PieSer::default_instance_ = NULL;
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("chart:idx", "", _outStream);
     }
+    
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("chart:order", "", _outStream);
     }
+    
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("chart:tx", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_invertIfNegative)
     {
-        m_invertIfNegative->toXmlElem("chart:invertIfNegative", "", _outStream);;
+        m_invertIfNegative->toXmlElem("chart:invertIfNegative", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_dPt())
-            {
-                (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_trendline())
-            {
-                (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
-            }
-            else if ((*iter)->has_errBars())
-            {
-                (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
-            }
-            else if ((*iter)->has_xVal())
-            {
-                (*iter)->get_xVal().toXmlElem("chart:xVal", "", _outStream);
-            }
-            else if ((*iter)->has_yVal())
-            {
-                (*iter)->get_yVal().toXmlElem("chart:yVal", "", _outStream);
-            }
-            else if ((*iter)->has_bubbleSize())
-            {
-                (*iter)->get_bubbleSize().toXmlElem("chart:bubbleSize", "", _outStream);
-            }
-            else if ((*iter)->has_bubble3D())
-            {
-                (*iter)->get_bubble3D().toXmlElem("chart:bubble3D", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_dPt())
+    {
+        (*iter)->get_dPt().toXmlElem("chart:dPt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_trendline())
+    {
+        (*iter)->get_trendline().toXmlElem("chart:trendline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_errBars())
+    {
+        (*iter)->get_errBars().toXmlElem("chart:errBars", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_xVal())
+    {
+        (*iter)->get_xVal().toXmlElem("chart:xVal", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_yVal())
+    {
+        (*iter)->get_yVal().toXmlElem("chart:yVal", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_bubbleSize())
+    {
+        (*iter)->get_bubbleSize().toXmlElem("chart:bubbleSize", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_bubble3D())
+    {
+        (*iter)->get_bubble3D().toXmlElem("chart:bubble3D", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -23172,37 +23505,43 @@ CT_BubbleSer* CT_BubbleSer::default_instance_ = NULL;
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("chart:idx", "", _outStream);
     }
+    
     
     if (m_has_order)
     {
-        m_order->toXmlElem("chart:order", "", _outStream);;
+        m_order->toXmlElem("chart:order", "", _outStream);
     }
+    
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("chart:tx", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_cat)
     {
-        m_cat->toXmlElem("chart:cat", "", _outStream);;
+        m_cat->toXmlElem("chart:cat", "", _outStream);
     }
+    
     
     if (m_has_val)
     {
-        m_val->toXmlElem("chart:val", "", _outStream);;
+        m_val->toXmlElem("chart:val", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -23348,7 +23687,7 @@ CT_Grouping* CT_Grouping::default_instance_ = NULL;
             
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -23656,65 +23995,84 @@ CT_ChartLines* CT_ChartLines::default_instance_ = NULL;
             
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("chart:grouping", "", _outStream);;
+        m_grouping->toXmlElem("chart:grouping", "", _outStream);
     }
+    
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_dropLines())
-            {
-                (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dropLines())
+    {
+        (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_hiLowLines)
     {
-        m_hiLowLines->toXmlElem("chart:hiLowLines", "", _outStream);;
+        m_hiLowLines->toXmlElem("chart:hiLowLines", "", _outStream);
     }
+    
     
     if (m_has_upDownBars)
     {
-        m_upDownBars->toXmlElem("chart:upDownBars", "", _outStream);;
+        m_upDownBars->toXmlElem("chart:upDownBars", "", _outStream);
     }
+    
     
     if (m_has_marker)
     {
-        m_marker->toXmlElem("chart:marker", "", _outStream);;
+        m_marker->toXmlElem("chart:marker", "", _outStream);
     }
+    
     
     if (m_has_smooth)
     {
-        m_smooth->toXmlElem("chart:smooth", "", _outStream);;
+        m_smooth->toXmlElem("chart:smooth", "", _outStream);
     }
      
     {
         vector<ChildGroup_2*>::const_iterator iter;
         for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
         {
-            if ((*iter)->has_axId())
-            {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_axId())
+    {
+        (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -24135,50 +24493,66 @@ CT_LineChart* CT_LineChart::default_instance_ = NULL;
             
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("chart:grouping", "", _outStream);;
+        m_grouping->toXmlElem("chart:grouping", "", _outStream);
     }
+    
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_dropLines())
-            {
-                (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dropLines())
+    {
+        (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_gapDepth)
     {
-        m_gapDepth->toXmlElem("chart:gapDepth", "", _outStream);;
+        m_gapDepth->toXmlElem("chart:gapDepth", "", _outStream);
     }
      
     {
         vector<ChildGroup_2*>::const_iterator iter;
         for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
         {
-            if ((*iter)->has_axId())
-            {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_axId())
+    {
+        (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -24504,34 +24878,55 @@ CT_Line3DChart* CT_Line3DChart::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_dropLines())
-            {
-                (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
-            }
-            else if ((*iter)->has_hiLowLines())
-            {
-                (*iter)->get_hiLowLines().toXmlElem("chart:hiLowLines", "", _outStream);
-            }
-            else if ((*iter)->has_upDownBars())
-            {
-                (*iter)->get_upDownBars().toXmlElem("chart:upDownBars", "", _outStream);
-            }
-            else if ((*iter)->has_axId())
-            {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dropLines())
+    {
+        (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hiLowLines())
+    {
+        (*iter)->get_hiLowLines().toXmlElem("chart:hiLowLines", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_upDownBars())
+    {
+        (*iter)->get_upDownBars().toXmlElem("chart:upDownBars", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_axId())
+    {
+        (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -25326,34 +25721,47 @@ CT_ScatterStyle* CT_ScatterStyle::default_instance_ = NULL;
             
     if (m_has_scatterStyle)
     {
-        m_scatterStyle->toXmlElem("chart:scatterStyle", "", _outStream);;
+        m_scatterStyle->toXmlElem("chart:scatterStyle", "", _outStream);
     }
+    
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_axId())
-            {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_axId())
+    {
+        (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -25797,34 +26205,47 @@ CT_RadarStyle* CT_RadarStyle::default_instance_ = NULL;
             
     if (m_has_radarStyle)
     {
-        m_radarStyle->toXmlElem("chart:radarStyle", "", _outStream);;
+        m_radarStyle->toXmlElem("chart:radarStyle", "", _outStream);
     }
+    
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_axId())
-            {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_axId())
+    {
+        (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -26532,60 +26953,78 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
             
     if (m_has_barDir)
     {
-        m_barDir->toXmlElem("chart:barDir", "", _outStream);;
+        m_barDir->toXmlElem("chart:barDir", "", _outStream);
     }
+    
     
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("chart:grouping", "", _outStream);;
+        m_grouping->toXmlElem("chart:grouping", "", _outStream);
     }
+    
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_gapWidth)
     {
-        m_gapWidth->toXmlElem("chart:gapWidth", "", _outStream);;
+        m_gapWidth->toXmlElem("chart:gapWidth", "", _outStream);
     }
+    
     
     if (m_has_overlap)
     {
-        m_overlap->toXmlElem("chart:overlap", "", _outStream);;
+        m_overlap->toXmlElem("chart:overlap", "", _outStream);
     }
      
     {
         vector<ChildGroup_2*>::const_iterator iter;
         for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
         {
-            if ((*iter)->has_serLines())
-            {
-                (*iter)->get_serLines().toXmlElem("chart:serLines", "", _outStream);
-            }
-            else if ((*iter)->has_axId())
-            {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_serLines())
+    {
+        (*iter)->get_serLines().toXmlElem("chart:serLines", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_axId())
+    {
+        (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -27103,61 +27542,77 @@ CT_BarChart* CT_BarChart::default_instance_ = NULL;
             
     if (m_has_barDir)
     {
-        m_barDir->toXmlElem("chart:barDir", "", _outStream);;
+        m_barDir->toXmlElem("chart:barDir", "", _outStream);
     }
+    
     
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("chart:grouping", "", _outStream);;
+        m_grouping->toXmlElem("chart:grouping", "", _outStream);
     }
+    
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_gapWidth)
     {
-        m_gapWidth->toXmlElem("chart:gapWidth", "", _outStream);;
+        m_gapWidth->toXmlElem("chart:gapWidth", "", _outStream);
     }
+    
     
     if (m_has_gapDepth)
     {
-        m_gapDepth->toXmlElem("chart:gapDepth", "", _outStream);;
+        m_gapDepth->toXmlElem("chart:gapDepth", "", _outStream);
     }
+    
     
     if (m_has_shape)
     {
-        m_shape->toXmlElem("chart:shape", "", _outStream);;
+        m_shape->toXmlElem("chart:shape", "", _outStream);
     }
      
     {
         vector<ChildGroup_2*>::const_iterator iter;
         for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
         {
-            if ((*iter)->has_axId())
-            {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_axId())
+    {
+        (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -27471,38 +27926,54 @@ CT_Bar3DChart* CT_Bar3DChart::default_instance_ = NULL;
             
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("chart:grouping", "", _outStream);;
+        m_grouping->toXmlElem("chart:grouping", "", _outStream);
     }
+    
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_dropLines())
-            {
-                (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
-            }
-            else if ((*iter)->has_axId())
-            {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dropLines())
+    {
+        (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_axId())
+    {
+        (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -28026,50 +28497,66 @@ CT_AreaChart* CT_AreaChart::default_instance_ = NULL;
             
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("chart:grouping", "", _outStream);;
+        m_grouping->toXmlElem("chart:grouping", "", _outStream);
     }
+    
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_dropLines())
-            {
-                (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dropLines())
+    {
+        (*iter)->get_dropLines().toXmlElem("chart:dropLines", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_gapDepth)
     {
-        m_gapDepth->toXmlElem("chart:gapDepth", "", _outStream);;
+        m_gapDepth->toXmlElem("chart:gapDepth", "", _outStream);
     }
      
     {
         vector<ChildGroup_2*>::const_iterator iter;
         for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
         {
-            if ((*iter)->has_axId())
-            {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_axId())
+    {
+        (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -28457,32 +28944,39 @@ CT_Area3DChart* CT_Area3DChart::default_instance_ = NULL;
             
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_firstSliceAng)
     {
-        m_firstSliceAng->toXmlElem("chart:firstSliceAng", "", _outStream);;
+        m_firstSliceAng->toXmlElem("chart:firstSliceAng", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -28694,27 +29188,33 @@ CT_PieChart* CT_PieChart::default_instance_ = NULL;
             
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -28996,37 +29496,45 @@ CT_Pie3DChart* CT_Pie3DChart::default_instance_ = NULL;
             
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_firstSliceAng)
     {
-        m_firstSliceAng->toXmlElem("chart:firstSliceAng", "", _outStream);;
+        m_firstSliceAng->toXmlElem("chart:firstSliceAng", "", _outStream);
     }
+    
     
     if (m_has_holeSize)
     {
-        m_holeSize->toXmlElem("chart:holeSize", "", _outStream);;
+        m_holeSize->toXmlElem("chart:holeSize", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -29509,66 +30017,83 @@ CT_OfPieType* CT_OfPieType::default_instance_ = NULL;
             
     if (m_has_ofPieType)
     {
-        m_ofPieType->toXmlElem("chart:ofPieType", "", _outStream);;
+        m_ofPieType->toXmlElem("chart:ofPieType", "", _outStream);
     }
+    
     
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_gapWidth)
     {
-        m_gapWidth->toXmlElem("chart:gapWidth", "", _outStream);;
+        m_gapWidth->toXmlElem("chart:gapWidth", "", _outStream);
     }
+    
     
     if (m_has_splitType)
     {
-        m_splitType->toXmlElem("chart:splitType", "", _outStream);;
+        m_splitType->toXmlElem("chart:splitType", "", _outStream);
     }
+    
     
     if (m_has_splitPos)
     {
-        m_splitPos->toXmlElem("chart:splitPos", "", _outStream);;
+        m_splitPos->toXmlElem("chart:splitPos", "", _outStream);
     }
+    
     
     if (m_has_custSplit)
     {
-        m_custSplit->toXmlElem("chart:custSplit", "", _outStream);;
+        m_custSplit->toXmlElem("chart:custSplit", "", _outStream);
     }
+    
     
     if (m_has_secondPieSize)
     {
-        m_secondPieSize->toXmlElem("chart:secondPieSize", "", _outStream);;
+        m_secondPieSize->toXmlElem("chart:secondPieSize", "", _outStream);
     }
      
     {
         vector<ChildGroup_2*>::const_iterator iter;
         for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
         {
-            if ((*iter)->has_serLines())
-            {
-                (*iter)->get_serLines().toXmlElem("chart:serLines", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_serLines())
+    {
+        (*iter)->get_serLines().toXmlElem("chart:serLines", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -29871,45 +30396,69 @@ CT_OfPieChart* CT_OfPieChart::default_instance_ = NULL;
             
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);;
+        m_varyColors->toXmlElem("chart:varyColors", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_dLbls())
-            {
-                (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
-            }
-            else if ((*iter)->has_bubble3D())
-            {
-                (*iter)->get_bubble3D().toXmlElem("chart:bubble3D", "", _outStream);
-            }
-            else if ((*iter)->has_bubbleScale())
-            {
-                (*iter)->get_bubbleScale().toXmlElem("chart:bubbleScale", "", _outStream);
-            }
-            else if ((*iter)->has_showNegBubbles())
-            {
-                (*iter)->get_showNegBubbles().toXmlElem("chart:showNegBubbles", "", _outStream);
-            }
-            else if ((*iter)->has_sizeRepresents())
-            {
-                (*iter)->get_sizeRepresents().toXmlElem("chart:sizeRepresents", "", _outStream);
-            }
-            else if ((*iter)->has_axId())
-            {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dLbls())
+    {
+        (*iter)->get_dLbls().toXmlElem("chart:dLbls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_bubble3D())
+    {
+        (*iter)->get_bubble3D().toXmlElem("chart:bubble3D", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_bubbleScale())
+    {
+        (*iter)->get_bubbleScale().toXmlElem("chart:bubbleScale", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_showNegBubbles())
+    {
+        (*iter)->get_showNegBubbles().toXmlElem("chart:showNegBubbles", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sizeRepresents())
+    {
+        (*iter)->get_sizeRepresents().toXmlElem("chart:sizeRepresents", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_axId())
+    {
+        (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -30745,12 +31294,13 @@ CT_BubbleChart* CT_BubbleChart::default_instance_ = NULL;
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("chart:idx", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -30810,10 +31360,13 @@ CT_BandFmt* CT_BandFmt::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_bandFmt())
-            {
-                (*iter)->get_bandFmt().toXmlElem("chart:bandFmt", "", _outStream);
-            }
+    
+    if ((*iter)->has_bandFmt())
+    {
+        (*iter)->get_bandFmt().toXmlElem("chart:bandFmt", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -30962,29 +31515,41 @@ CT_BandFmts* CT_BandFmts::default_instance_ = NULL;
             
     if (m_has_wireframe)
     {
-        m_wireframe->toXmlElem("chart:wireframe", "", _outStream);;
+        m_wireframe->toXmlElem("chart:wireframe", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_bandFmts())
-            {
-                (*iter)->get_bandFmts().toXmlElem("chart:bandFmts", "", _outStream);
-            }
-            else if ((*iter)->has_axId())
-            {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_bandFmts())
+    {
+        (*iter)->get_bandFmts().toXmlElem("chart:bandFmts", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_axId())
+    {
+        (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -31322,29 +31887,41 @@ CT_SurfaceChart* CT_SurfaceChart::default_instance_ = NULL;
             
     if (m_has_wireframe)
     {
-        m_wireframe->toXmlElem("chart:wireframe", "", _outStream);;
+        m_wireframe->toXmlElem("chart:wireframe", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ser())
-            {
-                (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
-            }
-            else if ((*iter)->has_bandFmts())
-            {
-                (*iter)->get_bandFmts().toXmlElem("chart:bandFmts", "", _outStream);
-            }
-            else if ((*iter)->has_axId())
-            {
-                (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_ser())
+    {
+        (*iter)->get_ser().toXmlElem("chart:ser", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_bandFmts())
+    {
+        (*iter)->get_bandFmts().toXmlElem("chart:bandFmts", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_axId())
+    {
+        (*iter)->get_axId().toXmlElem("chart:axId", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -32562,27 +33139,31 @@ CT_PictureStackUnit* CT_PictureStackUnit::default_instance_ = NULL;
             
     if (m_has_applyToFront)
     {
-        m_applyToFront->toXmlElem("chart:applyToFront", "", _outStream);;
+        m_applyToFront->toXmlElem("chart:applyToFront", "", _outStream);
     }
+    
     
     if (m_has_applyToSides)
     {
-        m_applyToSides->toXmlElem("chart:applyToSides", "", _outStream);;
+        m_applyToSides->toXmlElem("chart:applyToSides", "", _outStream);
     }
+    
     
     if (m_has_applyToEnd)
     {
-        m_applyToEnd->toXmlElem("chart:applyToEnd", "", _outStream);;
+        m_applyToEnd->toXmlElem("chart:applyToEnd", "", _outStream);
     }
+    
     
     if (m_has_pictureFormat)
     {
-        m_pictureFormat->toXmlElem("chart:pictureFormat", "", _outStream);;
+        m_pictureFormat->toXmlElem("chart:pictureFormat", "", _outStream);
     }
+    
     
     if (m_has_pictureStackUnit)
     {
-        m_pictureStackUnit->toXmlElem("chart:pictureStackUnit", "", _outStream);;
+        m_pictureStackUnit->toXmlElem("chart:pictureStackUnit", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -32762,22 +33343,25 @@ CT_PictureOptions* CT_PictureOptions::default_instance_ = NULL;
             
     if (m_has_layout)
     {
-        m_layout->toXmlElem("chart:layout", "", _outStream);;
+        m_layout->toXmlElem("chart:layout", "", _outStream);
     }
+    
     
     if (m_has_tx)
     {
-        m_tx->toXmlElem("chart:tx", "", _outStream);;
+        m_tx->toXmlElem("chart:tx", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_txPr->toXmlElem("chart:txPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -32977,22 +33561,24 @@ CT_DispUnitsLbl* CT_DispUnitsLbl::default_instance_ = NULL;
             
     if (m_has_custUnit)
     {
-        m_custUnit->toXmlElem("chart:custUnit", "", _outStream);;
+        m_custUnit->toXmlElem("chart:custUnit", "", _outStream);
     }
+    
     
     if (m_has_builtInUnit)
     {
-        m_builtInUnit->toXmlElem("chart:builtInUnit", "", _outStream);;
+        m_builtInUnit->toXmlElem("chart:builtInUnit", "", _outStream);
     }
      
     if (m_has_dispUnitsLbl)
     {
-        m_dispUnitsLbl->toXmlElem("chart:dispUnitsLbl", "", _outStream);;
+        m_dispUnitsLbl->toXmlElem("chart:dispUnitsLbl", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -33349,27 +33935,31 @@ CT_LogBase* CT_LogBase::default_instance_ = NULL;
             
     if (m_has_logBase)
     {
-        m_logBase->toXmlElem("chart:logBase", "", _outStream);;
+        m_logBase->toXmlElem("chart:logBase", "", _outStream);
     }
+    
     
     if (m_has_orientation)
     {
-        m_orientation->toXmlElem("chart:orientation", "", _outStream);;
+        m_orientation->toXmlElem("chart:orientation", "", _outStream);
     }
+    
     
     if (m_has_max)
     {
-        m_max->toXmlElem("chart:max", "", _outStream);;
+        m_max->toXmlElem("chart:max", "", _outStream);
     }
+    
     
     if (m_has_min)
     {
-        m_min->toXmlElem("chart:min", "", _outStream);;
+        m_min->toXmlElem("chart:min", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -34305,117 +34895,137 @@ CT_LblOffset* CT_LblOffset::default_instance_ = NULL;
             
     if (m_has_axId)
     {
-        m_axId->toXmlElem("chart:axId", "", _outStream);;
+        m_axId->toXmlElem("chart:axId", "", _outStream);
     }
+    
     
     if (m_has_scaling)
     {
-        m_scaling->toXmlElem("chart:scaling", "", _outStream);;
+        m_scaling->toXmlElem("chart:scaling", "", _outStream);
     }
+    
     
     if (m_has_delete)
     {
-        m_delete->toXmlElem("chart:delete", "", _outStream);;
+        m_delete->toXmlElem("chart:delete", "", _outStream);
     }
+    
     
     if (m_has_axPos)
     {
-        m_axPos->toXmlElem("chart:axPos", "", _outStream);;
+        m_axPos->toXmlElem("chart:axPos", "", _outStream);
     }
+    
     
     if (m_has_majorGridlines)
     {
-        m_majorGridlines->toXmlElem("chart:majorGridlines", "", _outStream);;
+        m_majorGridlines->toXmlElem("chart:majorGridlines", "", _outStream);
     }
+    
     
     if (m_has_minorGridlines)
     {
-        m_minorGridlines->toXmlElem("chart:minorGridlines", "", _outStream);;
+        m_minorGridlines->toXmlElem("chart:minorGridlines", "", _outStream);
     }
+    
     
     if (m_has_title)
     {
-        m_title->toXmlElem("chart:title", "", _outStream);;
+        m_title->toXmlElem("chart:title", "", _outStream);
     }
+    
     
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);;
+        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);
     }
+    
     
     if (m_has_majorTickMark)
     {
-        m_majorTickMark->toXmlElem("chart:majorTickMark", "", _outStream);;
+        m_majorTickMark->toXmlElem("chart:majorTickMark", "", _outStream);
     }
+    
     
     if (m_has_minorTickMark)
     {
-        m_minorTickMark->toXmlElem("chart:minorTickMark", "", _outStream);;
+        m_minorTickMark->toXmlElem("chart:minorTickMark", "", _outStream);
     }
+    
     
     if (m_has_tickLblPos)
     {
-        m_tickLblPos->toXmlElem("chart:tickLblPos", "", _outStream);;
+        m_tickLblPos->toXmlElem("chart:tickLblPos", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_txPr->toXmlElem("chart:txPr", "", _outStream);
     }
+    
     
     if (m_has_crossAx)
     {
-        m_crossAx->toXmlElem("chart:crossAx", "", _outStream);;
+        m_crossAx->toXmlElem("chart:crossAx", "", _outStream);
     }
      
     if (m_has_crosses)
     {
-        m_crosses->toXmlElem("chart:crosses", "", _outStream);;
+        m_crosses->toXmlElem("chart:crosses", "", _outStream);
     }
+    
     
     if (m_has_crossesAt)
     {
-        m_crossesAt->toXmlElem("chart:crossesAt", "", _outStream);;
+        m_crossesAt->toXmlElem("chart:crossesAt", "", _outStream);
     }
      
     if (m_has_auto)
     {
-        m_auto->toXmlElem("chart:auto", "", _outStream);;
+        m_auto->toXmlElem("chart:auto", "", _outStream);
     }
+    
     
     if (m_has_lblAlgn)
     {
-        m_lblAlgn->toXmlElem("chart:lblAlgn", "", _outStream);;
+        m_lblAlgn->toXmlElem("chart:lblAlgn", "", _outStream);
     }
+    
     
     if (m_has_lblOffset)
     {
-        m_lblOffset->toXmlElem("chart:lblOffset", "", _outStream);;
+        m_lblOffset->toXmlElem("chart:lblOffset", "", _outStream);
     }
+    
     
     if (m_has_tickLblSkip)
     {
-        m_tickLblSkip->toXmlElem("chart:tickLblSkip", "", _outStream);;
+        m_tickLblSkip->toXmlElem("chart:tickLblSkip", "", _outStream);
     }
+    
     
     if (m_has_tickMarkSkip)
     {
-        m_tickMarkSkip->toXmlElem("chart:tickMarkSkip", "", _outStream);;
+        m_tickMarkSkip->toXmlElem("chart:tickMarkSkip", "", _outStream);
     }
+    
     
     if (m_has_noMultiLvlLbl)
     {
-        m_noMultiLvlLbl->toXmlElem("chart:noMultiLvlLbl", "", _outStream);;
+        m_noMultiLvlLbl->toXmlElem("chart:noMultiLvlLbl", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -35315,122 +35925,143 @@ CT_CatAx* CT_CatAx::default_instance_ = NULL;
             
     if (m_has_axId)
     {
-        m_axId->toXmlElem("chart:axId", "", _outStream);;
+        m_axId->toXmlElem("chart:axId", "", _outStream);
     }
+    
     
     if (m_has_scaling)
     {
-        m_scaling->toXmlElem("chart:scaling", "", _outStream);;
+        m_scaling->toXmlElem("chart:scaling", "", _outStream);
     }
+    
     
     if (m_has_delete)
     {
-        m_delete->toXmlElem("chart:delete", "", _outStream);;
+        m_delete->toXmlElem("chart:delete", "", _outStream);
     }
+    
     
     if (m_has_axPos)
     {
-        m_axPos->toXmlElem("chart:axPos", "", _outStream);;
+        m_axPos->toXmlElem("chart:axPos", "", _outStream);
     }
+    
     
     if (m_has_majorGridlines)
     {
-        m_majorGridlines->toXmlElem("chart:majorGridlines", "", _outStream);;
+        m_majorGridlines->toXmlElem("chart:majorGridlines", "", _outStream);
     }
+    
     
     if (m_has_minorGridlines)
     {
-        m_minorGridlines->toXmlElem("chart:minorGridlines", "", _outStream);;
+        m_minorGridlines->toXmlElem("chart:minorGridlines", "", _outStream);
     }
+    
     
     if (m_has_title)
     {
-        m_title->toXmlElem("chart:title", "", _outStream);;
+        m_title->toXmlElem("chart:title", "", _outStream);
     }
+    
     
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);;
+        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);
     }
+    
     
     if (m_has_majorTickMark)
     {
-        m_majorTickMark->toXmlElem("chart:majorTickMark", "", _outStream);;
+        m_majorTickMark->toXmlElem("chart:majorTickMark", "", _outStream);
     }
+    
     
     if (m_has_minorTickMark)
     {
-        m_minorTickMark->toXmlElem("chart:minorTickMark", "", _outStream);;
+        m_minorTickMark->toXmlElem("chart:minorTickMark", "", _outStream);
     }
+    
     
     if (m_has_tickLblPos)
     {
-        m_tickLblPos->toXmlElem("chart:tickLblPos", "", _outStream);;
+        m_tickLblPos->toXmlElem("chart:tickLblPos", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_txPr->toXmlElem("chart:txPr", "", _outStream);
     }
+    
     
     if (m_has_crossAx)
     {
-        m_crossAx->toXmlElem("chart:crossAx", "", _outStream);;
+        m_crossAx->toXmlElem("chart:crossAx", "", _outStream);
     }
      
     if (m_has_crosses)
     {
-        m_crosses->toXmlElem("chart:crosses", "", _outStream);;
+        m_crosses->toXmlElem("chart:crosses", "", _outStream);
     }
+    
     
     if (m_has_crossesAt)
     {
-        m_crossesAt->toXmlElem("chart:crossesAt", "", _outStream);;
+        m_crossesAt->toXmlElem("chart:crossesAt", "", _outStream);
     }
      
     if (m_has_auto)
     {
-        m_auto->toXmlElem("chart:auto", "", _outStream);;
+        m_auto->toXmlElem("chart:auto", "", _outStream);
     }
+    
     
     if (m_has_lblOffset)
     {
-        m_lblOffset->toXmlElem("chart:lblOffset", "", _outStream);;
+        m_lblOffset->toXmlElem("chart:lblOffset", "", _outStream);
     }
+    
     
     if (m_has_baseTimeUnit)
     {
-        m_baseTimeUnit->toXmlElem("chart:baseTimeUnit", "", _outStream);;
+        m_baseTimeUnit->toXmlElem("chart:baseTimeUnit", "", _outStream);
     }
+    
     
     if (m_has_majorUnit)
     {
-        m_majorUnit->toXmlElem("chart:majorUnit", "", _outStream);;
+        m_majorUnit->toXmlElem("chart:majorUnit", "", _outStream);
     }
+    
     
     if (m_has_majorTimeUnit)
     {
-        m_majorTimeUnit->toXmlElem("chart:majorTimeUnit", "", _outStream);;
+        m_majorTimeUnit->toXmlElem("chart:majorTimeUnit", "", _outStream);
     }
+    
     
     if (m_has_minorUnit)
     {
-        m_minorUnit->toXmlElem("chart:minorUnit", "", _outStream);;
+        m_minorUnit->toXmlElem("chart:minorUnit", "", _outStream);
     }
+    
     
     if (m_has_minorTimeUnit)
     {
-        m_minorTimeUnit->toXmlElem("chart:minorTimeUnit", "", _outStream);;
+        m_minorTimeUnit->toXmlElem("chart:minorTimeUnit", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -36155,97 +36786,113 @@ CT_DateAx* CT_DateAx::default_instance_ = NULL;
             
     if (m_has_axId)
     {
-        m_axId->toXmlElem("chart:axId", "", _outStream);;
+        m_axId->toXmlElem("chart:axId", "", _outStream);
     }
+    
     
     if (m_has_scaling)
     {
-        m_scaling->toXmlElem("chart:scaling", "", _outStream);;
+        m_scaling->toXmlElem("chart:scaling", "", _outStream);
     }
+    
     
     if (m_has_delete)
     {
-        m_delete->toXmlElem("chart:delete", "", _outStream);;
+        m_delete->toXmlElem("chart:delete", "", _outStream);
     }
+    
     
     if (m_has_axPos)
     {
-        m_axPos->toXmlElem("chart:axPos", "", _outStream);;
+        m_axPos->toXmlElem("chart:axPos", "", _outStream);
     }
+    
     
     if (m_has_majorGridlines)
     {
-        m_majorGridlines->toXmlElem("chart:majorGridlines", "", _outStream);;
+        m_majorGridlines->toXmlElem("chart:majorGridlines", "", _outStream);
     }
+    
     
     if (m_has_minorGridlines)
     {
-        m_minorGridlines->toXmlElem("chart:minorGridlines", "", _outStream);;
+        m_minorGridlines->toXmlElem("chart:minorGridlines", "", _outStream);
     }
+    
     
     if (m_has_title)
     {
-        m_title->toXmlElem("chart:title", "", _outStream);;
+        m_title->toXmlElem("chart:title", "", _outStream);
     }
+    
     
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);;
+        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);
     }
+    
     
     if (m_has_majorTickMark)
     {
-        m_majorTickMark->toXmlElem("chart:majorTickMark", "", _outStream);;
+        m_majorTickMark->toXmlElem("chart:majorTickMark", "", _outStream);
     }
+    
     
     if (m_has_minorTickMark)
     {
-        m_minorTickMark->toXmlElem("chart:minorTickMark", "", _outStream);;
+        m_minorTickMark->toXmlElem("chart:minorTickMark", "", _outStream);
     }
+    
     
     if (m_has_tickLblPos)
     {
-        m_tickLblPos->toXmlElem("chart:tickLblPos", "", _outStream);;
+        m_tickLblPos->toXmlElem("chart:tickLblPos", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_txPr->toXmlElem("chart:txPr", "", _outStream);
     }
+    
     
     if (m_has_crossAx)
     {
-        m_crossAx->toXmlElem("chart:crossAx", "", _outStream);;
+        m_crossAx->toXmlElem("chart:crossAx", "", _outStream);
     }
      
     if (m_has_crosses)
     {
-        m_crosses->toXmlElem("chart:crosses", "", _outStream);;
+        m_crosses->toXmlElem("chart:crosses", "", _outStream);
     }
+    
     
     if (m_has_crossesAt)
     {
-        m_crossesAt->toXmlElem("chart:crossesAt", "", _outStream);;
+        m_crossesAt->toXmlElem("chart:crossesAt", "", _outStream);
     }
      
     if (m_has_tickLblSkip)
     {
-        m_tickLblSkip->toXmlElem("chart:tickLblSkip", "", _outStream);;
+        m_tickLblSkip->toXmlElem("chart:tickLblSkip", "", _outStream);
     }
+    
     
     if (m_has_tickMarkSkip)
     {
-        m_tickMarkSkip->toXmlElem("chart:tickMarkSkip", "", _outStream);;
+        m_tickMarkSkip->toXmlElem("chart:tickMarkSkip", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -37040,107 +37687,125 @@ CT_SerAx* CT_SerAx::default_instance_ = NULL;
             
     if (m_has_axId)
     {
-        m_axId->toXmlElem("chart:axId", "", _outStream);;
+        m_axId->toXmlElem("chart:axId", "", _outStream);
     }
+    
     
     if (m_has_scaling)
     {
-        m_scaling->toXmlElem("chart:scaling", "", _outStream);;
+        m_scaling->toXmlElem("chart:scaling", "", _outStream);
     }
+    
     
     if (m_has_delete)
     {
-        m_delete->toXmlElem("chart:delete", "", _outStream);;
+        m_delete->toXmlElem("chart:delete", "", _outStream);
     }
+    
     
     if (m_has_axPos)
     {
-        m_axPos->toXmlElem("chart:axPos", "", _outStream);;
+        m_axPos->toXmlElem("chart:axPos", "", _outStream);
     }
+    
     
     if (m_has_majorGridlines)
     {
-        m_majorGridlines->toXmlElem("chart:majorGridlines", "", _outStream);;
+        m_majorGridlines->toXmlElem("chart:majorGridlines", "", _outStream);
     }
+    
     
     if (m_has_minorGridlines)
     {
-        m_minorGridlines->toXmlElem("chart:minorGridlines", "", _outStream);;
+        m_minorGridlines->toXmlElem("chart:minorGridlines", "", _outStream);
     }
+    
     
     if (m_has_title)
     {
-        m_title->toXmlElem("chart:title", "", _outStream);;
+        m_title->toXmlElem("chart:title", "", _outStream);
     }
+    
     
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);;
+        m_numFmt->toXmlElem("chart:numFmt", "", _outStream);
     }
+    
     
     if (m_has_majorTickMark)
     {
-        m_majorTickMark->toXmlElem("chart:majorTickMark", "", _outStream);;
+        m_majorTickMark->toXmlElem("chart:majorTickMark", "", _outStream);
     }
+    
     
     if (m_has_minorTickMark)
     {
-        m_minorTickMark->toXmlElem("chart:minorTickMark", "", _outStream);;
+        m_minorTickMark->toXmlElem("chart:minorTickMark", "", _outStream);
     }
+    
     
     if (m_has_tickLblPos)
     {
-        m_tickLblPos->toXmlElem("chart:tickLblPos", "", _outStream);;
+        m_tickLblPos->toXmlElem("chart:tickLblPos", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_txPr->toXmlElem("chart:txPr", "", _outStream);
     }
+    
     
     if (m_has_crossAx)
     {
-        m_crossAx->toXmlElem("chart:crossAx", "", _outStream);;
+        m_crossAx->toXmlElem("chart:crossAx", "", _outStream);
     }
      
     if (m_has_crosses)
     {
-        m_crosses->toXmlElem("chart:crosses", "", _outStream);;
+        m_crosses->toXmlElem("chart:crosses", "", _outStream);
     }
+    
     
     if (m_has_crossesAt)
     {
-        m_crossesAt->toXmlElem("chart:crossesAt", "", _outStream);;
+        m_crossesAt->toXmlElem("chart:crossesAt", "", _outStream);
     }
      
     if (m_has_crossBetween)
     {
-        m_crossBetween->toXmlElem("chart:crossBetween", "", _outStream);;
+        m_crossBetween->toXmlElem("chart:crossBetween", "", _outStream);
     }
+    
     
     if (m_has_majorUnit)
     {
-        m_majorUnit->toXmlElem("chart:majorUnit", "", _outStream);;
+        m_majorUnit->toXmlElem("chart:majorUnit", "", _outStream);
     }
+    
     
     if (m_has_minorUnit)
     {
-        m_minorUnit->toXmlElem("chart:minorUnit", "", _outStream);;
+        m_minorUnit->toXmlElem("chart:minorUnit", "", _outStream);
     }
+    
     
     if (m_has_dispUnits)
     {
-        m_dispUnits->toXmlElem("chart:dispUnits", "", _outStream);;
+        m_dispUnits->toXmlElem("chart:dispUnits", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -37489,109 +38154,171 @@ CT_ValAx* CT_ValAx::default_instance_ = NULL;
             
     if (m_has_layout)
     {
-        m_layout->toXmlElem("chart:layout", "", _outStream);;
+        m_layout->toXmlElem("chart:layout", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_areaChart())
-            {
-                (*iter)->get_areaChart().toXmlElem("chart:areaChart", "", _outStream);
-            }
-            else if ((*iter)->has_area3DChart())
-            {
-                (*iter)->get_area3DChart().toXmlElem("chart:area3DChart", "", _outStream);
-            }
-            else if ((*iter)->has_lineChart())
-            {
-                (*iter)->get_lineChart().toXmlElem("chart:lineChart", "", _outStream);
-            }
-            else if ((*iter)->has_line3DChart())
-            {
-                (*iter)->get_line3DChart().toXmlElem("chart:line3DChart", "", _outStream);
-            }
-            else if ((*iter)->has_stockChart())
-            {
-                (*iter)->get_stockChart().toXmlElem("chart:stockChart", "", _outStream);
-            }
-            else if ((*iter)->has_radarChart())
-            {
-                (*iter)->get_radarChart().toXmlElem("chart:radarChart", "", _outStream);
-            }
-            else if ((*iter)->has_scatterChart())
-            {
-                (*iter)->get_scatterChart().toXmlElem("chart:scatterChart", "", _outStream);
-            }
-            else if ((*iter)->has_pieChart())
-            {
-                (*iter)->get_pieChart().toXmlElem("chart:pieChart", "", _outStream);
-            }
-            else if ((*iter)->has_pie3DChart())
-            {
-                (*iter)->get_pie3DChart().toXmlElem("chart:pie3DChart", "", _outStream);
-            }
-            else if ((*iter)->has_doughnutChart())
-            {
-                (*iter)->get_doughnutChart().toXmlElem("chart:doughnutChart", "", _outStream);
-            }
-            else if ((*iter)->has_barChart())
-            {
-                (*iter)->get_barChart().toXmlElem("chart:barChart", "", _outStream);
-            }
-            else if ((*iter)->has_bar3DChart())
-            {
-                (*iter)->get_bar3DChart().toXmlElem("chart:bar3DChart", "", _outStream);
-            }
-            else if ((*iter)->has_ofPieChart())
-            {
-                (*iter)->get_ofPieChart().toXmlElem("chart:ofPieChart", "", _outStream);
-            }
-            else if ((*iter)->has_surfaceChart())
-            {
-                (*iter)->get_surfaceChart().toXmlElem("chart:surfaceChart", "", _outStream);
-            }
-            else if ((*iter)->has_surface3DChart())
-            {
-                (*iter)->get_surface3DChart().toXmlElem("chart:surface3DChart", "", _outStream);
-            }
-            else if ((*iter)->has_bubbleChart())
-            {
-                (*iter)->get_bubbleChart().toXmlElem("chart:bubbleChart", "", _outStream);
-            }
-            else if ((*iter)->has_valAx())
-            {
-                (*iter)->get_valAx().toXmlElem("chart:valAx", "", _outStream);
-            }
-            else if ((*iter)->has_catAx())
-            {
-                (*iter)->get_catAx().toXmlElem("chart:catAx", "", _outStream);
-            }
-            else if ((*iter)->has_dateAx())
-            {
-                (*iter)->get_dateAx().toXmlElem("chart:dateAx", "", _outStream);
-            }
-            else if ((*iter)->has_serAx())
-            {
-                (*iter)->get_serAx().toXmlElem("chart:serAx", "", _outStream);
-            }
+    
+    if ((*iter)->has_areaChart())
+    {
+        (*iter)->get_areaChart().toXmlElem("chart:areaChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_area3DChart())
+    {
+        (*iter)->get_area3DChart().toXmlElem("chart:area3DChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lineChart())
+    {
+        (*iter)->get_lineChart().toXmlElem("chart:lineChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_line3DChart())
+    {
+        (*iter)->get_line3DChart().toXmlElem("chart:line3DChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_stockChart())
+    {
+        (*iter)->get_stockChart().toXmlElem("chart:stockChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_radarChart())
+    {
+        (*iter)->get_radarChart().toXmlElem("chart:radarChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_scatterChart())
+    {
+        (*iter)->get_scatterChart().toXmlElem("chart:scatterChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pieChart())
+    {
+        (*iter)->get_pieChart().toXmlElem("chart:pieChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pie3DChart())
+    {
+        (*iter)->get_pie3DChart().toXmlElem("chart:pie3DChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_doughnutChart())
+    {
+        (*iter)->get_doughnutChart().toXmlElem("chart:doughnutChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_barChart())
+    {
+        (*iter)->get_barChart().toXmlElem("chart:barChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_bar3DChart())
+    {
+        (*iter)->get_bar3DChart().toXmlElem("chart:bar3DChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_ofPieChart())
+    {
+        (*iter)->get_ofPieChart().toXmlElem("chart:ofPieChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_surfaceChart())
+    {
+        (*iter)->get_surfaceChart().toXmlElem("chart:surfaceChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_surface3DChart())
+    {
+        (*iter)->get_surface3DChart().toXmlElem("chart:surface3DChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_bubbleChart())
+    {
+        (*iter)->get_bubbleChart().toXmlElem("chart:bubbleChart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_valAx())
+    {
+        (*iter)->get_valAx().toXmlElem("chart:valAx", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_catAx())
+    {
+        (*iter)->get_catAx().toXmlElem("chart:catAx", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dateAx())
+    {
+        (*iter)->get_dateAx().toXmlElem("chart:dateAx", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_serAx())
+    {
+        (*iter)->get_serAx().toXmlElem("chart:serAx", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_dTable)
     {
-        m_dTable->toXmlElem("chart:dTable", "", _outStream);;
+        m_dTable->toXmlElem("chart:dTable", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -41806,32 +42533,37 @@ CT_PlotArea* CT_PlotArea::default_instance_ = NULL;
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("chart:idx", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_txPr->toXmlElem("chart:txPr", "", _outStream);
     }
+    
     
     if (m_has_marker)
     {
-        m_marker->toXmlElem("chart:marker", "", _outStream);;
+        m_marker->toXmlElem("chart:marker", "", _outStream);
     }
+    
     
     if (m_has_dLbl)
     {
-        m_dLbl->toXmlElem("chart:dLbl", "", _outStream);;
+        m_dLbl->toXmlElem("chart:dLbl", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -41891,10 +42623,13 @@ CT_PivotFmt* CT_PivotFmt::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_pivotFmt())
-            {
-                (*iter)->get_pivotFmt().toXmlElem("chart:pivotFmt", "", _outStream);
-            }
+    
+    if ((*iter)->has_pivotFmt())
+    {
+        (*iter)->get_pivotFmt().toXmlElem("chart:pivotFmt", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -42144,17 +42879,17 @@ CT_LegendPos* CT_LegendPos::default_instance_ = NULL;
             
     if (m_has_idx)
     {
-        m_idx->toXmlElem("chart:idx", "", _outStream);;
+        m_idx->toXmlElem("chart:idx", "", _outStream);
     }
      
     if (m_has_delete)
     {
-        m_delete->toXmlElem("chart:delete", "", _outStream);;
+        m_delete->toXmlElem("chart:delete", "", _outStream);
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -42286,37 +43021,55 @@ CT_LegendEntry* CT_LegendEntry::default_instance_ = NULL;
             
     if (m_has_legendPos)
     {
-        m_legendPos->toXmlElem("chart:legendPos", "", _outStream);;
+        m_legendPos->toXmlElem("chart:legendPos", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_legendEntry())
-            {
-                (*iter)->get_legendEntry().toXmlElem("chart:legendEntry", "", _outStream);
-            }
-            else if ((*iter)->has_layout())
-            {
-                (*iter)->get_layout().toXmlElem("chart:layout", "", _outStream);
-            }
-            else if ((*iter)->has_overlay())
-            {
-                (*iter)->get_overlay().toXmlElem("chart:overlay", "", _outStream);
-            }
-            else if ((*iter)->has_spPr())
-            {
-                (*iter)->get_spPr().toXmlElem("chart:spPr", "", _outStream);
-            }
-            else if ((*iter)->has_txPr())
-            {
-                (*iter)->get_txPr().toXmlElem("chart:txPr", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_legendEntry())
+    {
+        (*iter)->get_legendEntry().toXmlElem("chart:legendEntry", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_layout())
+    {
+        (*iter)->get_layout().toXmlElem("chart:layout", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_overlay())
+    {
+        (*iter)->get_overlay().toXmlElem("chart:overlay", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_spPr())
+    {
+        (*iter)->get_spPr().toXmlElem("chart:spPr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_txPr())
+    {
+        (*iter)->get_txPr().toXmlElem("chart:txPr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -43320,67 +44073,79 @@ CT_DispBlanksAs* CT_DispBlanksAs::default_instance_ = NULL;
             
     if (m_has_title)
     {
-        m_title->toXmlElem("chart:title", "", _outStream);;
+        m_title->toXmlElem("chart:title", "", _outStream);
     }
+    
     
     if (m_has_autoTitleDeleted)
     {
-        m_autoTitleDeleted->toXmlElem("chart:autoTitleDeleted", "", _outStream);;
+        m_autoTitleDeleted->toXmlElem("chart:autoTitleDeleted", "", _outStream);
     }
+    
     
     if (m_has_pivotFmts)
     {
-        m_pivotFmts->toXmlElem("chart:pivotFmts", "", _outStream);;
+        m_pivotFmts->toXmlElem("chart:pivotFmts", "", _outStream);
     }
+    
     
     if (m_has_view3D)
     {
-        m_view3D->toXmlElem("chart:view3D", "", _outStream);;
+        m_view3D->toXmlElem("chart:view3D", "", _outStream);
     }
+    
     
     if (m_has_floor)
     {
-        m_floor->toXmlElem("chart:floor", "", _outStream);;
+        m_floor->toXmlElem("chart:floor", "", _outStream);
     }
+    
     
     if (m_has_sideWall)
     {
-        m_sideWall->toXmlElem("chart:sideWall", "", _outStream);;
+        m_sideWall->toXmlElem("chart:sideWall", "", _outStream);
     }
+    
     
     if (m_has_backWall)
     {
-        m_backWall->toXmlElem("chart:backWall", "", _outStream);;
+        m_backWall->toXmlElem("chart:backWall", "", _outStream);
     }
+    
     
     if (m_has_plotArea)
     {
-        m_plotArea->toXmlElem("chart:plotArea", "", _outStream);;
+        m_plotArea->toXmlElem("chart:plotArea", "", _outStream);
     }
+    
     
     if (m_has_legend)
     {
-        m_legend->toXmlElem("chart:legend", "", _outStream);;
+        m_legend->toXmlElem("chart:legend", "", _outStream);
     }
+    
     
     if (m_has_plotVisOnly)
     {
-        m_plotVisOnly->toXmlElem("chart:plotVisOnly", "", _outStream);;
+        m_plotVisOnly->toXmlElem("chart:plotVisOnly", "", _outStream);
     }
+    
     
     if (m_has_dispBlanksAs)
     {
-        m_dispBlanksAs->toXmlElem("chart:dispBlanksAs", "", _outStream);;
+        m_dispBlanksAs->toXmlElem("chart:dispBlanksAs", "", _outStream);
     }
+    
     
     if (m_has_showDLblsOverMax)
     {
-        m_showDLblsOverMax->toXmlElem("chart:showDLblsOverMax", "", _outStream);;
+        m_showDLblsOverMax->toXmlElem("chart:showDLblsOverMax", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -43578,22 +44343,26 @@ CT_Style* CT_Style::default_instance_ = NULL;
             
     if (m_has_name)
     {
-        _outStream << "<chart:name>" << m_name->toString() << "</chart:name>";;
+        _outStream << "<chart:name>" << m_name->toString() << "</chart:name>";
     }
+    
     
     if (m_has_fmtId)
     {
-        m_fmtId->toXmlElem("chart:fmtId", "", _outStream);;
+        m_fmtId->toXmlElem("chart:fmtId", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("chart:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -43841,27 +44610,31 @@ CT_PivotSource* CT_PivotSource::default_instance_ = NULL;
             
     if (m_has_chartObject)
     {
-        m_chartObject->toXmlElem("chart:chartObject", "", _outStream);;
+        m_chartObject->toXmlElem("chart:chartObject", "", _outStream);
     }
+    
     
     if (m_has_data)
     {
-        m_data->toXmlElem("chart:data", "", _outStream);;
+        m_data->toXmlElem("chart:data", "", _outStream);
     }
+    
     
     if (m_has_formatting)
     {
-        m_formatting->toXmlElem("chart:formatting", "", _outStream);;
+        m_formatting->toXmlElem("chart:formatting", "", _outStream);
     }
+    
     
     if (m_has_selection)
     {
-        m_selection->toXmlElem("chart:selection", "", _outStream);;
+        m_selection->toXmlElem("chart:selection", "", _outStream);
     }
+    
     
     if (m_has_userInterface)
     {
-        m_userInterface->toXmlElem("chart:userInterface", "", _outStream);;
+        m_userInterface->toXmlElem("chart:userInterface", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -44143,32 +44916,37 @@ CT_Protection* CT_Protection::default_instance_ = NULL;
             
     if (m_has_oddHeader)
     {
-        _outStream << "<chart:oddHeader>" << m_oddHeader->toString() << "</chart:oddHeader>";;
+        _outStream << "<chart:oddHeader>" << m_oddHeader->toString() << "</chart:oddHeader>";
     }
+    
     
     if (m_has_oddFooter)
     {
-        _outStream << "<chart:oddFooter>" << m_oddFooter->toString() << "</chart:oddFooter>";;
+        _outStream << "<chart:oddFooter>" << m_oddFooter->toString() << "</chart:oddFooter>";
     }
+    
     
     if (m_has_evenHeader)
     {
-        _outStream << "<chart:evenHeader>" << m_evenHeader->toString() << "</chart:evenHeader>";;
+        _outStream << "<chart:evenHeader>" << m_evenHeader->toString() << "</chart:evenHeader>";
     }
+    
     
     if (m_has_evenFooter)
     {
-        _outStream << "<chart:evenFooter>" << m_evenFooter->toString() << "</chart:evenFooter>";;
+        _outStream << "<chart:evenFooter>" << m_evenFooter->toString() << "</chart:evenFooter>";
     }
+    
     
     if (m_has_firstHeader)
     {
-        _outStream << "<chart:firstHeader>" << m_firstHeader->toString() << "</chart:firstHeader>";;
+        _outStream << "<chart:firstHeader>" << m_firstHeader->toString() << "</chart:firstHeader>";
     }
+    
     
     if (m_has_firstFooter)
     {
-        _outStream << "<chart:firstFooter>" << m_firstFooter->toString() << "</chart:firstFooter>";;
+        _outStream << "<chart:firstFooter>" << m_firstFooter->toString() << "</chart:firstFooter>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -44503,7 +45281,7 @@ CT_PageMargins* CT_PageMargins::default_instance_ = NULL;
             
     if (m_has_autoUpdate)
     {
-        m_autoUpdate->toXmlElem("chart:autoUpdate", "", _outStream);;
+        m_autoUpdate->toXmlElem("chart:autoUpdate", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -45064,22 +45842,25 @@ CT_PageSetup* CT_PageSetup::default_instance_ = NULL;
             
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("chart:headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("chart:headerFooter", "", _outStream);
     }
+    
     
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("chart:pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("chart:pageMargins", "", _outStream);
     }
+    
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("chart:pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("chart:pageSetup", "", _outStream);
     }
+    
     
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("chart:legacyDrawingHF", "", _outStream);;
+        m_legacyDrawingHF->toXmlElem("chart:legacyDrawingHF", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -45609,72 +46390,85 @@ CT_PrintSettings* CT_PrintSettings::default_instance_ = NULL;
             
     if (m_has_date1904)
     {
-        m_date1904->toXmlElem("chart:date1904", "", _outStream);;
+        m_date1904->toXmlElem("chart:date1904", "", _outStream);
     }
+    
     
     if (m_has_lang)
     {
-        m_lang->toXmlElem("chart:lang", "", _outStream);;
+        m_lang->toXmlElem("chart:lang", "", _outStream);
     }
+    
     
     if (m_has_roundedCorners)
     {
-        m_roundedCorners->toXmlElem("chart:roundedCorners", "", _outStream);;
+        m_roundedCorners->toXmlElem("chart:roundedCorners", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("chart:style", "", _outStream);;
+        m_style->toXmlElem("chart:style", "", _outStream);
     }
+    
     
     if (m_has_clrMapOvr)
     {
-        m_clrMapOvr->toXmlElem("chart:clrMapOvr", "", _outStream);;
+        m_clrMapOvr->toXmlElem("chart:clrMapOvr", "", _outStream);
     }
+    
     
     if (m_has_pivotSource)
     {
-        m_pivotSource->toXmlElem("chart:pivotSource", "", _outStream);;
+        m_pivotSource->toXmlElem("chart:pivotSource", "", _outStream);
     }
+    
     
     if (m_has_protection)
     {
-        m_protection->toXmlElem("chart:protection", "", _outStream);;
+        m_protection->toXmlElem("chart:protection", "", _outStream);
     }
+    
     
     if (m_has_chart)
     {
-        m_chart->toXmlElem("chart:chart", "", _outStream);;
+        m_chart->toXmlElem("chart:chart", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_txPr->toXmlElem("chart:txPr", "", _outStream);
     }
+    
     
     if (m_has_externalData)
     {
-        m_externalData->toXmlElem("chart:externalData", "", _outStream);;
+        m_externalData->toXmlElem("chart:externalData", "", _outStream);
     }
+    
     
     if (m_has_printSettings)
     {
-        m_printSettings->toXmlElem("chart:printSettings", "", _outStream);;
+        m_printSettings->toXmlElem("chart:printSettings", "", _outStream);
     }
+    
     
     if (m_has_userShapes)
     {
-        m_userShapes->toXmlElem("chart:userShapes", "", _outStream);;
+        m_userShapes->toXmlElem("chart:userShapes", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -46205,72 +46999,85 @@ CT_ChartSpace* CT_ChartSpace::default_instance_ = NULL;
     
     if (m_has_date1904)
     {
-        m_date1904->toXmlElem("chart:date1904", "", _outStream);;
+        m_date1904->toXmlElem("chart:date1904", "", _outStream);
     }
+    
     
     if (m_has_lang)
     {
-        m_lang->toXmlElem("chart:lang", "", _outStream);;
+        m_lang->toXmlElem("chart:lang", "", _outStream);
     }
+    
     
     if (m_has_roundedCorners)
     {
-        m_roundedCorners->toXmlElem("chart:roundedCorners", "", _outStream);;
+        m_roundedCorners->toXmlElem("chart:roundedCorners", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("chart:style", "", _outStream);;
+        m_style->toXmlElem("chart:style", "", _outStream);
     }
+    
     
     if (m_has_clrMapOvr)
     {
-        m_clrMapOvr->toXmlElem("chart:clrMapOvr", "", _outStream);;
+        m_clrMapOvr->toXmlElem("chart:clrMapOvr", "", _outStream);
     }
+    
     
     if (m_has_pivotSource)
     {
-        m_pivotSource->toXmlElem("chart:pivotSource", "", _outStream);;
+        m_pivotSource->toXmlElem("chart:pivotSource", "", _outStream);
     }
+    
     
     if (m_has_protection)
     {
-        m_protection->toXmlElem("chart:protection", "", _outStream);;
+        m_protection->toXmlElem("chart:protection", "", _outStream);
     }
+    
     
     if (m_has_chart)
     {
-        m_chart->toXmlElem("chart:chart", "", _outStream);;
+        m_chart->toXmlElem("chart:chart", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("chart:spPr", "", _outStream);;
+        m_spPr->toXmlElem("chart:spPr", "", _outStream);
     }
+    
     
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("chart:txPr", "", _outStream);;
+        m_txPr->toXmlElem("chart:txPr", "", _outStream);
     }
+    
     
     if (m_has_externalData)
     {
-        m_externalData->toXmlElem("chart:externalData", "", _outStream);;
+        m_externalData->toXmlElem("chart:externalData", "", _outStream);
     }
+    
     
     if (m_has_printSettings)
     {
-        m_printSettings->toXmlElem("chart:printSettings", "", _outStream);;
+        m_printSettings->toXmlElem("chart:printSettings", "", _outStream);
     }
+    
     
     if (m_has_userShapes)
     {
-        m_userShapes->toXmlElem("chart:userShapes", "", _outStream);;
+        m_userShapes->toXmlElem("chart:userShapes", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("chart:extLst", "", _outStream);;
+        m_extLst->toXmlElem("chart:extLst", "", _outStream);
     }
     
     _outStream << "</chart:chartSpace>";

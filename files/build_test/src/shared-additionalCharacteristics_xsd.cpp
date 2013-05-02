@@ -119,10 +119,13 @@ ST_Relation* ST_Relation::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_characteristic())
-            {
-                (*iter)->get_characteristic().toXmlElem("characteristics:characteristic", "", _outStream);
-            }
+    
+    if ((*iter)->has_characteristic())
+    {
+        (*iter)->get_characteristic().toXmlElem("characteristics:characteristic", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -364,10 +367,13 @@ CT_Characteristic* CT_Characteristic::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_characteristic())
-            {
-                (*iter)->get_characteristic().toXmlElem("characteristics:characteristic", "", _outStream);
-            }
+    
+    if ((*iter)->has_characteristic())
+    {
+        (*iter)->get_characteristic().toXmlElem("characteristics:characteristic", "", _outStream);
+    }
+    
+    
         }
     }
     

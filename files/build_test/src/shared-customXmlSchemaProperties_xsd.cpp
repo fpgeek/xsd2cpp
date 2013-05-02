@@ -195,10 +195,13 @@ CT_Schema* CT_Schema::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_schema())
-            {
-                (*iter)->get_schema().toXmlElem("sl:schema", "", _outStream);
-            }
+    
+    if ((*iter)->has_schema())
+    {
+        (*iter)->get_schema().toXmlElem("sl:schema", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -288,10 +291,13 @@ CT_SchemaLibrary* CT_SchemaLibrary::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_schema())
-            {
-                (*iter)->get_schema().toXmlElem("sl:schema", "", _outStream);
-            }
+    
+    if ((*iter)->has_schema())
+    {
+        (*iter)->get_schema().toXmlElem("sl:schema", "", _outStream);
+    }
+    
+    
         }
     }
     

@@ -2000,52 +2000,61 @@ ST_FillType* ST_FillType::default_instance_ = NULL;
             
     if (m_has_v_fill)
     {
-        m_v_fill->toXmlElem("v:fill", "", _outStream);;
+        m_v_fill->toXmlElem("v:fill", "", _outStream);
     }
+    
     
     if (m_has_v_stroke)
     {
-        m_v_stroke->toXmlElem("v:stroke", "", _outStream);;
+        m_v_stroke->toXmlElem("v:stroke", "", _outStream);
     }
+    
     
     if (m_has_v_textbox)
     {
-        m_v_textbox->toXmlElem("v:textbox", "", _outStream);;
+        m_v_textbox->toXmlElem("v:textbox", "", _outStream);
     }
+    
     
     if (m_has_v_shadow)
     {
-        m_v_shadow->toXmlElem("v:shadow", "", _outStream);;
+        m_v_shadow->toXmlElem("v:shadow", "", _outStream);
     }
+    
     
     if (m_has_skew)
     {
-        m_skew->toXmlElem("o:skew", "", _outStream);;
+        m_skew->toXmlElem("o:skew", "", _outStream);
     }
+    
     
     if (m_has_extrusion)
     {
-        m_extrusion->toXmlElem("o:extrusion", "", _outStream);;
+        m_extrusion->toXmlElem("o:extrusion", "", _outStream);
     }
+    
     
     if (m_has_callout)
     {
-        m_callout->toXmlElem("o:callout", "", _outStream);;
+        m_callout->toXmlElem("o:callout", "", _outStream);
     }
+    
     
     if (m_has_lock)
     {
-        m_lock->toXmlElem("o:lock", "", _outStream);;
+        m_lock->toXmlElem("o:lock", "", _outStream);
     }
+    
     
     if (m_has_colormru)
     {
-        m_colormru->toXmlElem("o:colormru", "", _outStream);;
+        m_colormru->toXmlElem("o:colormru", "", _outStream);
     }
+    
     
     if (m_has_colormenu)
     {
-        m_colormenu->toXmlElem("o:colormenu", "", _outStream);;
+        m_colormenu->toXmlElem("o:colormenu", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2948,17 +2957,19 @@ CT_SignatureLine* CT_SignatureLine::default_instance_ = NULL;
             
     if (m_has_idmap)
     {
-        m_idmap->toXmlElem("o:idmap", "", _outStream);;
+        m_idmap->toXmlElem("o:idmap", "", _outStream);
     }
+    
     
     if (m_has_regrouptable)
     {
-        m_regrouptable->toXmlElem("o:regrouptable", "", _outStream);;
+        m_regrouptable->toXmlElem("o:regrouptable", "", _outStream);
     }
+    
     
     if (m_has_rules)
     {
-        m_rules->toXmlElem("o:rules", "", _outStream);;
+        m_rules->toXmlElem("o:rules", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3151,10 +3162,13 @@ CT_IdMap* CT_IdMap::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_entry())
-            {
-                (*iter)->get_entry().toXmlElem("o:entry", "", _outStream);
-            }
+    
+    if ((*iter)->has_entry())
+    {
+        (*iter)->get_entry().toXmlElem("o:entry", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -3370,10 +3384,13 @@ CT_Entry* CT_Entry::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_r())
-            {
-                (*iter)->get_r().toXmlElem("o:r", "", _outStream);
-            }
+    
+    if ((*iter)->has_r())
+    {
+        (*iter)->get_r().toXmlElem("o:r", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -3540,10 +3557,13 @@ CT_Rules* CT_Rules::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_proxy())
-            {
-                (*iter)->get_proxy().toXmlElem("o:proxy", "", _outStream);
-            }
+    
+    if ((*iter)->has_proxy())
+    {
+        (*iter)->get_proxy().toXmlElem("o:proxy", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -4018,7 +4038,7 @@ CT_Proxy* CT_Proxy::default_instance_ = NULL;
             
     if (m_has_relationtable)
     {
-        m_relationtable->toXmlElem("o:relationtable", "", _outStream);;
+        m_relationtable->toXmlElem("o:relationtable", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4252,9 +4272,7 @@ CT_Diagram* CT_Diagram::default_instance_ = NULL;
             
     if (m_has__any)
     {
-        
-    m__any->toXml(_outStream);
-    ;
+        m__any->toXml(_outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4349,10 +4367,13 @@ CT_EquationXml* CT_EquationXml::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_rel())
-            {
-                (*iter)->get_rel().toXmlElem("o:rel", "", _outStream);
-            }
+    
+    if ((*iter)->has_rel())
+    {
+        (*iter)->get_rel().toXmlElem("o:rel", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -7366,17 +7387,19 @@ CT_Lock* CT_Lock::default_instance_ = NULL;
             
     if (m_has_LinkType)
     {
-        _outStream << "<o:LinkType>" << m_LinkType->toString() << "</o:LinkType>";;
+        _outStream << "<o:LinkType>" << m_LinkType->toString() << "</o:LinkType>";
     }
+    
     
     if (m_has_LockedField)
     {
-        _outStream << "<o:LockedField>" << m_LockedField->toString() << "</o:LockedField>";;
+        _outStream << "<o:LockedField>" << m_LockedField->toString() << "</o:LockedField>";
     }
+    
     
     if (m_has_FieldCodes)
     {
-        _outStream << "<o:FieldCodes>" << m_FieldCodes << "</o:FieldCodes>";;
+        _outStream << "<o:FieldCodes>" << m_FieldCodes << "</o:FieldCodes>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9200,52 +9223,61 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
     
     if (m_has_v_fill)
     {
-        m_v_fill->toXmlElem("v:fill", "", _outStream);;
+        m_v_fill->toXmlElem("v:fill", "", _outStream);
     }
+    
     
     if (m_has_v_stroke)
     {
-        m_v_stroke->toXmlElem("v:stroke", "", _outStream);;
+        m_v_stroke->toXmlElem("v:stroke", "", _outStream);
     }
+    
     
     if (m_has_v_textbox)
     {
-        m_v_textbox->toXmlElem("v:textbox", "", _outStream);;
+        m_v_textbox->toXmlElem("v:textbox", "", _outStream);
     }
+    
     
     if (m_has_v_shadow)
     {
-        m_v_shadow->toXmlElem("v:shadow", "", _outStream);;
+        m_v_shadow->toXmlElem("v:shadow", "", _outStream);
     }
+    
     
     if (m_has_skew)
     {
-        m_skew->toXmlElem("o:skew", "", _outStream);;
+        m_skew->toXmlElem("o:skew", "", _outStream);
     }
+    
     
     if (m_has_extrusion)
     {
-        m_extrusion->toXmlElem("o:extrusion", "", _outStream);;
+        m_extrusion->toXmlElem("o:extrusion", "", _outStream);
     }
+    
     
     if (m_has_callout)
     {
-        m_callout->toXmlElem("o:callout", "", _outStream);;
+        m_callout->toXmlElem("o:callout", "", _outStream);
     }
+    
     
     if (m_has_lock)
     {
-        m_lock->toXmlElem("o:lock", "", _outStream);;
+        m_lock->toXmlElem("o:lock", "", _outStream);
     }
+    
     
     if (m_has_colormru)
     {
-        m_colormru->toXmlElem("o:colormru", "", _outStream);;
+        m_colormru->toXmlElem("o:colormru", "", _outStream);
     }
+    
     
     if (m_has_colormenu)
     {
-        m_colormenu->toXmlElem("o:colormenu", "", _outStream);;
+        m_colormenu->toXmlElem("o:colormenu", "", _outStream);
     }
     
     _outStream << "</o:shapedefaults>";
@@ -9558,17 +9590,19 @@ shapedefaults_element* shapedefaults_element::default_instance_ = NULL;
     
     if (m_has_idmap)
     {
-        m_idmap->toXmlElem("o:idmap", "", _outStream);;
+        m_idmap->toXmlElem("o:idmap", "", _outStream);
     }
+    
     
     if (m_has_regrouptable)
     {
-        m_regrouptable->toXmlElem("o:regrouptable", "", _outStream);;
+        m_regrouptable->toXmlElem("o:regrouptable", "", _outStream);
     }
+    
     
     if (m_has_rules)
     {
-        m_rules->toXmlElem("o:rules", "", _outStream);;
+        m_rules->toXmlElem("o:rules", "", _outStream);
     }
     
     _outStream << "</o:shapelayout>";
@@ -10386,7 +10420,7 @@ ink_element* ink_element::default_instance_ = NULL;
     
     if (m_has_relationtable)
     {
-        m_relationtable->toXmlElem("o:relationtable", "", _outStream);;
+        m_relationtable->toXmlElem("o:relationtable", "", _outStream);
     }
     
     _outStream << "</o:diagram>";
@@ -10620,9 +10654,7 @@ diagram_element* diagram_element::default_instance_ = NULL;
     
     if (m_has__any)
     {
-        
-    m__any->toXml(_outStream);
-    ;
+        m__any->toXml(_outStream);
     }
     
     _outStream << "</o:equationxml>";
@@ -13134,17 +13166,19 @@ lock_element* lock_element::default_instance_ = NULL;
     
     if (m_has_LinkType)
     {
-        _outStream << "<o:LinkType>" << m_LinkType->toString() << "</o:LinkType>";;
+        _outStream << "<o:LinkType>" << m_LinkType->toString() << "</o:LinkType>";
     }
+    
     
     if (m_has_LockedField)
     {
-        _outStream << "<o:LockedField>" << m_LockedField->toString() << "</o:LockedField>";;
+        _outStream << "<o:LockedField>" << m_LockedField->toString() << "</o:LockedField>";
     }
+    
     
     if (m_has_FieldCodes)
     {
-        _outStream << "<o:FieldCodes>" << m_FieldCodes << "</o:FieldCodes>";;
+        _outStream << "<o:FieldCodes>" << m_FieldCodes << "</o:FieldCodes>";
     }
     
     _outStream << "</o:OLEObject>";

@@ -922,27 +922,31 @@ CT_EffectExtent* CT_EffectExtent::default_instance_ = NULL;
             
     if (m_has_extent)
     {
-        m_extent->toXmlElem("wp:extent", "", _outStream);;
+        m_extent->toXmlElem("wp:extent", "", _outStream);
     }
+    
     
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);
     }
+    
     
     if (m_has_docPr)
     {
-        m_docPr->toXmlElem("wp:docPr", "", _outStream);;
+        m_docPr->toXmlElem("wp:docPr", "", _outStream);
     }
+    
     
     if (m_has_cNvGraphicFramePr)
     {
-        m_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);;
+        m_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);
     }
+    
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1124,17 +1128,20 @@ CT_Inline* CT_Inline::default_instance_ = NULL;
             
     if (m_has_start)
     {
-        m_start->toXmlElem("wp:start", "", _outStream);;
+        m_start->toXmlElem("wp:start", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_lineTo())
-            {
-                (*iter)->get_lineTo().toXmlElem("wp:lineTo", "", _outStream);
-            }
+    
+    if ((*iter)->has_lineTo())
+    {
+        (*iter)->get_lineTo().toXmlElem("wp:lineTo", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -1378,7 +1385,7 @@ CT_WrapNone* CT_WrapNone::default_instance_ = NULL;
             
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1603,7 +1610,7 @@ CT_WrapSquare* CT_WrapSquare::default_instance_ = NULL;
             
     if (m_has_wrapPolygon)
     {
-        m_wrapPolygon->toXmlElem("wp:wrapPolygon", "", _outStream);;
+        m_wrapPolygon->toXmlElem("wp:wrapPolygon", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1788,7 +1795,7 @@ CT_WrapTight* CT_WrapTight::default_instance_ = NULL;
             
     if (m_has_wrapPolygon)
     {
-        m_wrapPolygon->toXmlElem("wp:wrapPolygon", "", _outStream);;
+        m_wrapPolygon->toXmlElem("wp:wrapPolygon", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1956,7 +1963,7 @@ CT_WrapThrough* CT_WrapThrough::default_instance_ = NULL;
             
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2142,12 +2149,13 @@ CT_WrapTopBottom* CT_WrapTopBottom::default_instance_ = NULL;
             
     if (m_has_align)
     {
-        _outStream << "<wp:align>" << m_align->toString() << "</wp:align>";;
+        _outStream << "<wp:align>" << m_align->toString() << "</wp:align>";
     }
+    
     
     if (m_has_posOffset)
     {
-        _outStream << "<wp:posOffset>" << m_posOffset->toString() << "</wp:posOffset>";;
+        _outStream << "<wp:posOffset>" << m_posOffset->toString() << "</wp:posOffset>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2313,12 +2321,13 @@ CT_PosH* CT_PosH::default_instance_ = NULL;
             
     if (m_has_align)
     {
-        _outStream << "<wp:align>" << m_align->toString() << "</wp:align>";;
+        _outStream << "<wp:align>" << m_align->toString() << "</wp:align>";
     }
+    
     
     if (m_has_posOffset)
     {
-        _outStream << "<wp:posOffset>" << m_posOffset->toString() << "</wp:posOffset>";;
+        _outStream << "<wp:posOffset>" << m_posOffset->toString() << "</wp:posOffset>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3162,67 +3171,77 @@ CT_PosV* CT_PosV::default_instance_ = NULL;
             
     if (m_has_simplePos)
     {
-        m_simplePos->toXmlElem("wp:simplePos", "", _outStream);;
+        m_simplePos->toXmlElem("wp:simplePos", "", _outStream);
     }
+    
     
     if (m_has_positionH)
     {
-        m_positionH->toXmlElem("wp:positionH", "", _outStream);;
+        m_positionH->toXmlElem("wp:positionH", "", _outStream);
     }
+    
     
     if (m_has_positionV)
     {
-        m_positionV->toXmlElem("wp:positionV", "", _outStream);;
+        m_positionV->toXmlElem("wp:positionV", "", _outStream);
     }
+    
     
     if (m_has_extent)
     {
-        m_extent->toXmlElem("wp:extent", "", _outStream);;
+        m_extent->toXmlElem("wp:extent", "", _outStream);
     }
+    
     
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);
     }
      
     if (m_has_wrapNone)
     {
-        m_wrapNone->toXmlElem("wp:wrapNone", "", _outStream);;
+        m_wrapNone->toXmlElem("wp:wrapNone", "", _outStream);
     }
+    
     
     if (m_has_wrapSquare)
     {
-        m_wrapSquare->toXmlElem("wp:wrapSquare", "", _outStream);;
+        m_wrapSquare->toXmlElem("wp:wrapSquare", "", _outStream);
     }
+    
     
     if (m_has_wrapTight)
     {
-        m_wrapTight->toXmlElem("wp:wrapTight", "", _outStream);;
+        m_wrapTight->toXmlElem("wp:wrapTight", "", _outStream);
     }
+    
     
     if (m_has_wrapThrough)
     {
-        m_wrapThrough->toXmlElem("wp:wrapThrough", "", _outStream);;
+        m_wrapThrough->toXmlElem("wp:wrapThrough", "", _outStream);
     }
+    
     
     if (m_has_wrapTopAndBottom)
     {
-        m_wrapTopAndBottom->toXmlElem("wp:wrapTopAndBottom", "", _outStream);;
+        m_wrapTopAndBottom->toXmlElem("wp:wrapTopAndBottom", "", _outStream);
     }
      
     if (m_has_docPr)
     {
-        m_docPr->toXmlElem("wp:docPr", "", _outStream);;
+        m_docPr->toXmlElem("wp:docPr", "", _outStream);
     }
+    
     
     if (m_has_cNvGraphicFramePr)
     {
-        m_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);;
+        m_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);
     }
+    
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3570,12 +3589,13 @@ CT_TxbxContent* CT_TxbxContent::default_instance_ = NULL;
             
     if (m_has_txbxContent)
     {
-        m_txbxContent->toXmlElem("wp:txbxContent", "", _outStream);;
+        m_txbxContent->toXmlElem("wp:txbxContent", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3687,7 +3707,7 @@ CT_TextboxInfo* CT_TextboxInfo::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4124,47 +4144,51 @@ CT_LinkedTextboxInformation* CT_LinkedTextboxInformation::default_instance_ = NU
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);
     }
      
     if (m_has_cNvSpPr)
     {
-        m_cNvSpPr->toXmlElem("wp:cNvSpPr", "", _outStream);;
+        m_cNvSpPr->toXmlElem("wp:cNvSpPr", "", _outStream);
     }
+    
     
     if (m_has_cNvCnPr)
     {
-        m_cNvCnPr->toXmlElem("wp:cNvCnPr", "", _outStream);;
+        m_cNvCnPr->toXmlElem("wp:cNvCnPr", "", _outStream);
     }
      
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("wp:spPr", "", _outStream);;
+        m_spPr->toXmlElem("wp:spPr", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("wp:style", "", _outStream);;
+        m_style->toXmlElem("wp:style", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);
     }
      
     if (m_has_txbx)
     {
-        m_txbx->toXmlElem("wp:txbx", "", _outStream);;
+        m_txbx->toXmlElem("wp:txbx", "", _outStream);
     }
+    
     
     if (m_has_linkedTxbx)
     {
-        m_linkedTxbx->toXmlElem("wp:linkedTxbx", "", _outStream);;
+        m_linkedTxbx->toXmlElem("wp:linkedTxbx", "", _outStream);
     }
      
     if (m_has_bodyPr)
     {
-        m_bodyPr->toXmlElem("wp:bodyPr", "", _outStream);;
+        m_bodyPr->toXmlElem("wp:bodyPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4395,27 +4419,31 @@ CT_WordprocessingShape* CT_WordprocessingShape::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvFrPr)
     {
-        m_cNvFrPr->toXmlElem("wp:cNvFrPr", "", _outStream);;
+        m_cNvFrPr->toXmlElem("wp:cNvFrPr", "", _outStream);
     }
+    
     
     if (m_has_xfrm)
     {
-        m_xfrm->toXmlElem("wp:xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("wp:xfrm", "", _outStream);
     }
+    
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4525,12 +4553,13 @@ CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvContentPartPr)
     {
-        m_cNvContentPartPr->toXmlElem("wp:cNvContentPartPr", "", _outStream);;
+        m_cNvContentPartPr->toXmlElem("wp:cNvContentPartPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4708,17 +4737,19 @@ CT_WordprocessingContentPartNonVisual* CT_WordprocessingContentPartNonVisual::de
             
     if (m_has_nvContentPartPr)
     {
-        m_nvContentPartPr->toXmlElem("wp:nvContentPartPr", "", _outStream);;
+        m_nvContentPartPr->toXmlElem("wp:nvContentPartPr", "", _outStream);
     }
+    
     
     if (m_has_xfrm)
     {
-        m_xfrm->toXmlElem("wp:xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("wp:xfrm", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -4987,49 +5018,66 @@ CT_WordprocessingContentPart* CT_WordprocessingContentPart::default_instance_ = 
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvGrpSpPr)
     {
-        m_cNvGrpSpPr->toXmlElem("wp:cNvGrpSpPr", "", _outStream);;
+        m_cNvGrpSpPr->toXmlElem("wp:cNvGrpSpPr", "", _outStream);
     }
+    
     
     if (m_has_grpSpPr)
     {
-        m_grpSpPr->toXmlElem("wp:grpSpPr", "", _outStream);;
+        m_grpSpPr->toXmlElem("wp:grpSpPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_wsp())
-            {
-                (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
-            }
-            else if ((*iter)->has_grpSp())
-            {
-                (*iter)->get_grpSp().toXmlElem("wp:grpSp", "", _outStream);
-            }
-            else if ((*iter)->has_graphicFrame())
-            {
-                (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
-            }
-            else if ((*iter)->has_dpct_pic())
-            {
-                (*iter)->get_dpct_pic().toXmlElem("dpct:pic", "", _outStream);
-            }
-            else if ((*iter)->has_contentPart())
-            {
-                (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
-            }
+    
+    if ((*iter)->has_wsp())
+    {
+        (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_grpSp())
+    {
+        (*iter)->get_grpSp().toXmlElem("wp:grpSp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_graphicFrame())
+    {
+        (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dpct_pic())
+    {
+        (*iter)->get_dpct_pic().toXmlElem("dpct:pic", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_contentPart())
+    {
+        (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -5543,44 +5591,60 @@ CT_WordprocessingGroup* CT_WordprocessingGroup::default_instance_ = NULL;
             
     if (m_has_bg)
     {
-        m_bg->toXmlElem("wp:bg", "", _outStream);;
+        m_bg->toXmlElem("wp:bg", "", _outStream);
     }
+    
     
     if (m_has_whole)
     {
-        m_whole->toXmlElem("wp:whole", "", _outStream);;
+        m_whole->toXmlElem("wp:whole", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_wsp())
-            {
-                (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
-            }
-            else if ((*iter)->has_dpct_pic())
-            {
-                (*iter)->get_dpct_pic().toXmlElem("dpct:pic", "", _outStream);
-            }
-            else if ((*iter)->has_contentPart())
-            {
-                (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
-            }
-            else if ((*iter)->has_wgp())
-            {
-                (*iter)->get_wgp().toXmlElem("wp:wgp", "", _outStream);
-            }
-            else if ((*iter)->has_graphicFrame())
-            {
-                (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
-            }
+    
+    if ((*iter)->has_wsp())
+    {
+        (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dpct_pic())
+    {
+        (*iter)->get_dpct_pic().toXmlElem("dpct:pic", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_contentPart())
+    {
+        (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_wgp())
+    {
+        (*iter)->get_wgp().toXmlElem("wp:wgp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_graphicFrame())
+    {
+        (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -6095,44 +6159,60 @@ CT_WordprocessingCanvas* CT_WordprocessingCanvas::default_instance_ = NULL;
     
     if (m_has_bg)
     {
-        m_bg->toXmlElem("wp:bg", "", _outStream);;
+        m_bg->toXmlElem("wp:bg", "", _outStream);
     }
+    
     
     if (m_has_whole)
     {
-        m_whole->toXmlElem("wp:whole", "", _outStream);;
+        m_whole->toXmlElem("wp:whole", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_wsp())
-            {
-                (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
-            }
-            else if ((*iter)->has_dpct_pic())
-            {
-                (*iter)->get_dpct_pic().toXmlElem("dpct:pic", "", _outStream);
-            }
-            else if ((*iter)->has_contentPart())
-            {
-                (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
-            }
-            else if ((*iter)->has_wgp())
-            {
-                (*iter)->get_wgp().toXmlElem("wp:wgp", "", _outStream);
-            }
-            else if ((*iter)->has_graphicFrame())
-            {
-                (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
-            }
+    
+    if ((*iter)->has_wsp())
+    {
+        (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dpct_pic())
+    {
+        (*iter)->get_dpct_pic().toXmlElem("dpct:pic", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_contentPart())
+    {
+        (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_wgp())
+    {
+        (*iter)->get_wgp().toXmlElem("wp:wgp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_graphicFrame())
+    {
+        (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);
     }
     
     _outStream << "</wp:wpc>";
@@ -6682,49 +6762,66 @@ wpc_element* wpc_element::default_instance_ = NULL;
     
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvGrpSpPr)
     {
-        m_cNvGrpSpPr->toXmlElem("wp:cNvGrpSpPr", "", _outStream);;
+        m_cNvGrpSpPr->toXmlElem("wp:cNvGrpSpPr", "", _outStream);
     }
+    
     
     if (m_has_grpSpPr)
     {
-        m_grpSpPr->toXmlElem("wp:grpSpPr", "", _outStream);;
+        m_grpSpPr->toXmlElem("wp:grpSpPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_wsp())
-            {
-                (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
-            }
-            else if ((*iter)->has_grpSp())
-            {
-                (*iter)->get_grpSp().toXmlElem("wp:grpSp", "", _outStream);
-            }
-            else if ((*iter)->has_graphicFrame())
-            {
-                (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
-            }
-            else if ((*iter)->has_dpct_pic())
-            {
-                (*iter)->get_dpct_pic().toXmlElem("dpct:pic", "", _outStream);
-            }
-            else if ((*iter)->has_contentPart())
-            {
-                (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
-            }
+    
+    if ((*iter)->has_wsp())
+    {
+        (*iter)->get_wsp().toXmlElem("wp:wsp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_grpSp())
+    {
+        (*iter)->get_grpSp().toXmlElem("wp:grpSp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_graphicFrame())
+    {
+        (*iter)->get_graphicFrame().toXmlElem("wp:graphicFrame", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dpct_pic())
+    {
+        (*iter)->get_dpct_pic().toXmlElem("dpct:pic", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_contentPart())
+    {
+        (*iter)->get_contentPart().toXmlElem("wp:contentPart", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);
     }
     
     _outStream << "</wp:wgp>";
@@ -7450,47 +7547,51 @@ wgp_element* wgp_element::default_instance_ = NULL;
     
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);
     }
      
     if (m_has_cNvSpPr)
     {
-        m_cNvSpPr->toXmlElem("wp:cNvSpPr", "", _outStream);;
+        m_cNvSpPr->toXmlElem("wp:cNvSpPr", "", _outStream);
     }
+    
     
     if (m_has_cNvCnPr)
     {
-        m_cNvCnPr->toXmlElem("wp:cNvCnPr", "", _outStream);;
+        m_cNvCnPr->toXmlElem("wp:cNvCnPr", "", _outStream);
     }
      
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("wp:spPr", "", _outStream);;
+        m_spPr->toXmlElem("wp:spPr", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("wp:style", "", _outStream);;
+        m_style->toXmlElem("wp:style", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("wp:extLst", "", _outStream);;
+        m_extLst->toXmlElem("wp:extLst", "", _outStream);
     }
      
     if (m_has_txbx)
     {
-        m_txbx->toXmlElem("wp:txbx", "", _outStream);;
+        m_txbx->toXmlElem("wp:txbx", "", _outStream);
     }
+    
     
     if (m_has_linkedTxbx)
     {
-        m_linkedTxbx->toXmlElem("wp:linkedTxbx", "", _outStream);;
+        m_linkedTxbx->toXmlElem("wp:linkedTxbx", "", _outStream);
     }
      
     if (m_has_bodyPr)
     {
-        m_bodyPr->toXmlElem("wp:bodyPr", "", _outStream);;
+        m_bodyPr->toXmlElem("wp:bodyPr", "", _outStream);
     }
     
     _outStream << "</wp:wsp>";
@@ -7789,27 +7890,31 @@ wsp_element* wsp_element::default_instance_ = NULL;
     
     if (m_has_extent)
     {
-        m_extent->toXmlElem("wp:extent", "", _outStream);;
+        m_extent->toXmlElem("wp:extent", "", _outStream);
     }
+    
     
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);
     }
+    
     
     if (m_has_docPr)
     {
-        m_docPr->toXmlElem("wp:docPr", "", _outStream);;
+        m_docPr->toXmlElem("wp:docPr", "", _outStream);
     }
+    
     
     if (m_has_cNvGraphicFramePr)
     {
-        m_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);;
+        m_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);
     }
+    
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);
     }
     
     _outStream << "</wp:inline>";
@@ -8714,67 +8819,77 @@ inline_element* inline_element::default_instance_ = NULL;
     
     if (m_has_simplePos)
     {
-        m_simplePos->toXmlElem("wp:simplePos", "", _outStream);;
+        m_simplePos->toXmlElem("wp:simplePos", "", _outStream);
     }
+    
     
     if (m_has_positionH)
     {
-        m_positionH->toXmlElem("wp:positionH", "", _outStream);;
+        m_positionH->toXmlElem("wp:positionH", "", _outStream);
     }
+    
     
     if (m_has_positionV)
     {
-        m_positionV->toXmlElem("wp:positionV", "", _outStream);;
+        m_positionV->toXmlElem("wp:positionV", "", _outStream);
     }
+    
     
     if (m_has_extent)
     {
-        m_extent->toXmlElem("wp:extent", "", _outStream);;
+        m_extent->toXmlElem("wp:extent", "", _outStream);
     }
+    
     
     if (m_has_effectExtent)
     {
-        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);;
+        m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);
     }
      
     if (m_has_wrapNone)
     {
-        m_wrapNone->toXmlElem("wp:wrapNone", "", _outStream);;
+        m_wrapNone->toXmlElem("wp:wrapNone", "", _outStream);
     }
+    
     
     if (m_has_wrapSquare)
     {
-        m_wrapSquare->toXmlElem("wp:wrapSquare", "", _outStream);;
+        m_wrapSquare->toXmlElem("wp:wrapSquare", "", _outStream);
     }
+    
     
     if (m_has_wrapTight)
     {
-        m_wrapTight->toXmlElem("wp:wrapTight", "", _outStream);;
+        m_wrapTight->toXmlElem("wp:wrapTight", "", _outStream);
     }
+    
     
     if (m_has_wrapThrough)
     {
-        m_wrapThrough->toXmlElem("wp:wrapThrough", "", _outStream);;
+        m_wrapThrough->toXmlElem("wp:wrapThrough", "", _outStream);
     }
+    
     
     if (m_has_wrapTopAndBottom)
     {
-        m_wrapTopAndBottom->toXmlElem("wp:wrapTopAndBottom", "", _outStream);;
+        m_wrapTopAndBottom->toXmlElem("wp:wrapTopAndBottom", "", _outStream);
     }
      
     if (m_has_docPr)
     {
-        m_docPr->toXmlElem("wp:docPr", "", _outStream);;
+        m_docPr->toXmlElem("wp:docPr", "", _outStream);
     }
+    
     
     if (m_has_cNvGraphicFramePr)
     {
-        m_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);;
+        m_cNvGraphicFramePr->toXmlElem("wp:cNvGraphicFramePr", "", _outStream);
     }
+    
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);
     }
     
     _outStream << "</wp:anchor>";

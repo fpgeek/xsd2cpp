@@ -7200,7 +7200,7 @@ ST_TextIndentLevelType* ST_TextIndentLevelType::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7338,7 +7338,7 @@ CT_AudioFile* CT_AudioFile::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7465,7 +7465,7 @@ CT_VideoFile* CT_VideoFile::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7718,17 +7718,19 @@ CT_AudioCDTime* CT_AudioCDTime::default_instance_ = NULL;
             
     if (m_has_st)
     {
-        m_st->toXmlElem("a:st", "", _outStream);;
+        m_st->toXmlElem("a:st", "", _outStream);
     }
+    
     
     if (m_has_end)
     {
-        m_end->toXmlElem("a:end", "", _outStream);;
+        m_end->toXmlElem("a:end", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -8233,67 +8235,79 @@ CT_AudioCD* CT_AudioCD::default_instance_ = NULL;
             
     if (m_has_dk1)
     {
-        m_dk1->toXmlElem("a:dk1", "", _outStream);;
+        m_dk1->toXmlElem("a:dk1", "", _outStream);
     }
+    
     
     if (m_has_lt1)
     {
-        m_lt1->toXmlElem("a:lt1", "", _outStream);;
+        m_lt1->toXmlElem("a:lt1", "", _outStream);
     }
+    
     
     if (m_has_dk2)
     {
-        m_dk2->toXmlElem("a:dk2", "", _outStream);;
+        m_dk2->toXmlElem("a:dk2", "", _outStream);
     }
+    
     
     if (m_has_lt2)
     {
-        m_lt2->toXmlElem("a:lt2", "", _outStream);;
+        m_lt2->toXmlElem("a:lt2", "", _outStream);
     }
+    
     
     if (m_has_accent1)
     {
-        m_accent1->toXmlElem("a:accent1", "", _outStream);;
+        m_accent1->toXmlElem("a:accent1", "", _outStream);
     }
+    
     
     if (m_has_accent2)
     {
-        m_accent2->toXmlElem("a:accent2", "", _outStream);;
+        m_accent2->toXmlElem("a:accent2", "", _outStream);
     }
+    
     
     if (m_has_accent3)
     {
-        m_accent3->toXmlElem("a:accent3", "", _outStream);;
+        m_accent3->toXmlElem("a:accent3", "", _outStream);
     }
+    
     
     if (m_has_accent4)
     {
-        m_accent4->toXmlElem("a:accent4", "", _outStream);;
+        m_accent4->toXmlElem("a:accent4", "", _outStream);
     }
+    
     
     if (m_has_accent5)
     {
-        m_accent5->toXmlElem("a:accent5", "", _outStream);;
+        m_accent5->toXmlElem("a:accent5", "", _outStream);
     }
+    
     
     if (m_has_accent6)
     {
-        m_accent6->toXmlElem("a:accent6", "", _outStream);;
+        m_accent6->toXmlElem("a:accent6", "", _outStream);
     }
+    
     
     if (m_has_hlink)
     {
-        m_hlink->toXmlElem("a:hlink", "", _outStream);;
+        m_hlink->toXmlElem("a:hlink", "", _outStream);
     }
+    
     
     if (m_has_folHlink)
     {
-        m_folHlink->toXmlElem("a:folHlink", "", _outStream);;
+        m_folHlink->toXmlElem("a:folHlink", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -8845,32 +8859,37 @@ CT_ColorScheme* CT_ColorScheme::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
     }
+    
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);
     }
+    
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);
     }
+    
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);
     }
+    
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);
     }
+    
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9044,10 +9063,13 @@ CT_SupplementalFont* CT_SupplementalFont::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_custClr())
-            {
-                (*iter)->get_custClr().toXmlElem("a:custClr", "", _outStream);
-            }
+    
+    if ((*iter)->has_custClr())
+    {
+        (*iter)->get_custClr().toXmlElem("a:custClr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -9250,31 +9272,39 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
             
     if (m_has_latin)
     {
-        m_latin->toXmlElem("a:latin", "", _outStream);;
+        m_latin->toXmlElem("a:latin", "", _outStream);
     }
+    
     
     if (m_has_ea)
     {
-        m_ea->toXmlElem("a:ea", "", _outStream);;
+        m_ea->toXmlElem("a:ea", "", _outStream);
     }
+    
     
     if (m_has_cs)
     {
-        m_cs->toXmlElem("a:cs", "", _outStream);;
+        m_cs->toXmlElem("a:cs", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_font())
-            {
-                (*iter)->get_font().toXmlElem("a:font", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("a:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_font())
+    {
+        (*iter)->get_font().toXmlElem("a:font", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("a:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -9552,22 +9582,24 @@ CT_FontCollection* CT_FontCollection::default_instance_ = NULL;
             
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);
     }
+    
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
      
     if (m_has_scene3d)
     {
-        m_scene3d->toXmlElem("a:scene3d", "", _outStream);;
+        m_scene3d->toXmlElem("a:scene3d", "", _outStream);
     }
+    
     
     if (m_has_sp3d)
     {
-        m_sp3d->toXmlElem("a:sp3d", "", _outStream);;
+        m_sp3d->toXmlElem("a:sp3d", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9722,17 +9754,19 @@ CT_EffectStyleItem* CT_EffectStyleItem::default_instance_ = NULL;
             
     if (m_has_majorFont)
     {
-        m_majorFont->toXmlElem("a:majorFont", "", _outStream);;
+        m_majorFont->toXmlElem("a:majorFont", "", _outStream);
     }
+    
     
     if (m_has_minorFont)
     {
-        m_minorFont->toXmlElem("a:minorFont", "", _outStream);;
+        m_minorFont->toXmlElem("a:minorFont", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9848,30 +9882,48 @@ CT_FontScheme* CT_FontScheme::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_noFill())
-            {
-                (*iter)->get_noFill().toXmlElem("a:noFill", "", _outStream);
-            }
-            else if ((*iter)->has_solidFill())
-            {
-                (*iter)->get_solidFill().toXmlElem("a:solidFill", "", _outStream);
-            }
-            else if ((*iter)->has_gradFill())
-            {
-                (*iter)->get_gradFill().toXmlElem("a:gradFill", "", _outStream);
-            }
-            else if ((*iter)->has_blipFill())
-            {
-                (*iter)->get_blipFill().toXmlElem("a:blipFill", "", _outStream);
-            }
-            else if ((*iter)->has_pattFill())
-            {
-                (*iter)->get_pattFill().toXmlElem("a:pattFill", "", _outStream);
-            }
-            else if ((*iter)->has_grpFill())
-            {
-                (*iter)->get_grpFill().toXmlElem("a:grpFill", "", _outStream);
-            }
+    
+    if ((*iter)->has_noFill())
+    {
+        (*iter)->get_noFill().toXmlElem("a:noFill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_solidFill())
+    {
+        (*iter)->get_solidFill().toXmlElem("a:solidFill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gradFill())
+    {
+        (*iter)->get_gradFill().toXmlElem("a:gradFill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blipFill())
+    {
+        (*iter)->get_blipFill().toXmlElem("a:blipFill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pattFill())
+    {
+        (*iter)->get_pattFill().toXmlElem("a:pattFill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_grpFill())
+    {
+        (*iter)->get_grpFill().toXmlElem("a:grpFill", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -10369,10 +10421,13 @@ CT_FillStyleList* CT_FillStyleList::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ln())
-            {
-                (*iter)->get_ln().toXmlElem("a:ln", "", _outStream);
-            }
+    
+    if ((*iter)->has_ln())
+    {
+        (*iter)->get_ln().toXmlElem("a:ln", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -10465,10 +10520,13 @@ CT_LineStyleList* CT_LineStyleList::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_effectStyle())
-            {
-                (*iter)->get_effectStyle().toXmlElem("a:effectStyle", "", _outStream);
-            }
+    
+    if ((*iter)->has_effectStyle())
+    {
+        (*iter)->get_effectStyle().toXmlElem("a:effectStyle", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -10601,30 +10659,48 @@ CT_EffectStyleList* CT_EffectStyleList::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_noFill())
-            {
-                (*iter)->get_noFill().toXmlElem("a:noFill", "", _outStream);
-            }
-            else if ((*iter)->has_solidFill())
-            {
-                (*iter)->get_solidFill().toXmlElem("a:solidFill", "", _outStream);
-            }
-            else if ((*iter)->has_gradFill())
-            {
-                (*iter)->get_gradFill().toXmlElem("a:gradFill", "", _outStream);
-            }
-            else if ((*iter)->has_blipFill())
-            {
-                (*iter)->get_blipFill().toXmlElem("a:blipFill", "", _outStream);
-            }
-            else if ((*iter)->has_pattFill())
-            {
-                (*iter)->get_pattFill().toXmlElem("a:pattFill", "", _outStream);
-            }
-            else if ((*iter)->has_grpFill())
-            {
-                (*iter)->get_grpFill().toXmlElem("a:grpFill", "", _outStream);
-            }
+    
+    if ((*iter)->has_noFill())
+    {
+        (*iter)->get_noFill().toXmlElem("a:noFill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_solidFill())
+    {
+        (*iter)->get_solidFill().toXmlElem("a:solidFill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gradFill())
+    {
+        (*iter)->get_gradFill().toXmlElem("a:gradFill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blipFill())
+    {
+        (*iter)->get_blipFill().toXmlElem("a:blipFill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pattFill())
+    {
+        (*iter)->get_pattFill().toXmlElem("a:pattFill", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_grpFill())
+    {
+        (*iter)->get_grpFill().toXmlElem("a:grpFill", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -11252,22 +11328,25 @@ CT_BackgroundFillStyleList* CT_BackgroundFillStyleList::default_instance_ = NULL
             
     if (m_has_fillStyleLst)
     {
-        m_fillStyleLst->toXmlElem("a:fillStyleLst", "", _outStream);;
+        m_fillStyleLst->toXmlElem("a:fillStyleLst", "", _outStream);
     }
+    
     
     if (m_has_lnStyleLst)
     {
-        m_lnStyleLst->toXmlElem("a:lnStyleLst", "", _outStream);;
+        m_lnStyleLst->toXmlElem("a:lnStyleLst", "", _outStream);
     }
+    
     
     if (m_has_effectStyleLst)
     {
-        m_effectStyleLst->toXmlElem("a:effectStyleLst", "", _outStream);;
+        m_effectStyleLst->toXmlElem("a:effectStyleLst", "", _outStream);
     }
+    
     
     if (m_has_bgFillStyleLst)
     {
-        m_bgFillStyleLst->toXmlElem("a:bgFillStyleLst", "", _outStream);;
+        m_bgFillStyleLst->toXmlElem("a:bgFillStyleLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11463,22 +11542,25 @@ CT_StyleMatrix* CT_StyleMatrix::default_instance_ = NULL;
             
     if (m_has_clrScheme)
     {
-        m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);;
+        m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);
     }
+    
     
     if (m_has_fontScheme)
     {
-        m_fontScheme->toXmlElem("a:fontScheme", "", _outStream);;
+        m_fontScheme->toXmlElem("a:fontScheme", "", _outStream);
     }
+    
     
     if (m_has_fmtScheme)
     {
-        m_fmtScheme->toXmlElem("a:fmtScheme", "", _outStream);;
+        m_fmtScheme->toXmlElem("a:fmtScheme", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11530,9 +11612,7 @@ CT_BaseStyles* CT_BaseStyles::default_instance_ = NULL;
             
     if (m_has__any)
     {
-        
-    m__any->toXml(_outStream);
-    ;
+        m__any->toXml(_outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -12783,118 +12863,202 @@ CT_InverseGammaTransform* CT_InverseGammaTransform::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tint())
-            {
-                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
-            }
-            else if ((*iter)->has_shade())
-            {
-                (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
-            }
-            else if ((*iter)->has_comp())
-            {
-                (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
-            }
-            else if ((*iter)->has_inv())
-            {
-                (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
-            }
-            else if ((*iter)->has_gray())
-            {
-                (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
-            }
-            else if ((*iter)->has_alpha())
-            {
-                (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
-            }
-            else if ((*iter)->has_alphaOff())
-            {
-                (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
-            }
-            else if ((*iter)->has_alphaMod())
-            {
-                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
-            }
-            else if ((*iter)->has_hue())
-            {
-                (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
-            }
-            else if ((*iter)->has_hueOff())
-            {
-                (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
-            }
-            else if ((*iter)->has_hueMod())
-            {
-                (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
-            }
-            else if ((*iter)->has_sat())
-            {
-                (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
-            }
-            else if ((*iter)->has_satOff())
-            {
-                (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
-            }
-            else if ((*iter)->has_satMod())
-            {
-                (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
-            }
-            else if ((*iter)->has_lum())
-            {
-                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
-            }
-            else if ((*iter)->has_lumOff())
-            {
-                (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
-            }
-            else if ((*iter)->has_lumMod())
-            {
-                (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
-            }
-            else if ((*iter)->has_red())
-            {
-                (*iter)->get_red().toXmlElem("a:red", "", _outStream);
-            }
-            else if ((*iter)->has_redOff())
-            {
-                (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
-            }
-            else if ((*iter)->has_redMod())
-            {
-                (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
-            }
-            else if ((*iter)->has_green())
-            {
-                (*iter)->get_green().toXmlElem("a:green", "", _outStream);
-            }
-            else if ((*iter)->has_greenOff())
-            {
-                (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
-            }
-            else if ((*iter)->has_greenMod())
-            {
-                (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
-            }
-            else if ((*iter)->has_blue())
-            {
-                (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
-            }
-            else if ((*iter)->has_blueOff())
-            {
-                (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
-            }
-            else if ((*iter)->has_blueMod())
-            {
-                (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
-            }
-            else if ((*iter)->has_gamma())
-            {
-                (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
-            }
-            else if ((*iter)->has_invGamma())
-            {
-                (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
-            }
+    
+    if ((*iter)->has_tint())
+    {
+        (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shade())
+    {
+        (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_comp())
+    {
+        (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_inv())
+    {
+        (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gray())
+    {
+        (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alpha())
+    {
+        (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaOff())
+    {
+        (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaMod())
+    {
+        (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hue())
+    {
+        (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hueOff())
+    {
+        (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hueMod())
+    {
+        (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sat())
+    {
+        (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_satOff())
+    {
+        (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_satMod())
+    {
+        (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lum())
+    {
+        (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lumOff())
+    {
+        (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lumMod())
+    {
+        (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_red())
+    {
+        (*iter)->get_red().toXmlElem("a:red", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_redOff())
+    {
+        (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_redMod())
+    {
+        (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_green())
+    {
+        (*iter)->get_green().toXmlElem("a:green", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_greenOff())
+    {
+        (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_greenMod())
+    {
+        (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blue())
+    {
+        (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blueOff())
+    {
+        (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blueMod())
+    {
+        (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gamma())
+    {
+        (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_invGamma())
+    {
+        (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -20811,118 +20975,202 @@ CT_ScRgbColor* CT_ScRgbColor::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tint())
-            {
-                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
-            }
-            else if ((*iter)->has_shade())
-            {
-                (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
-            }
-            else if ((*iter)->has_comp())
-            {
-                (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
-            }
-            else if ((*iter)->has_inv())
-            {
-                (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
-            }
-            else if ((*iter)->has_gray())
-            {
-                (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
-            }
-            else if ((*iter)->has_alpha())
-            {
-                (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
-            }
-            else if ((*iter)->has_alphaOff())
-            {
-                (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
-            }
-            else if ((*iter)->has_alphaMod())
-            {
-                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
-            }
-            else if ((*iter)->has_hue())
-            {
-                (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
-            }
-            else if ((*iter)->has_hueOff())
-            {
-                (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
-            }
-            else if ((*iter)->has_hueMod())
-            {
-                (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
-            }
-            else if ((*iter)->has_sat())
-            {
-                (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
-            }
-            else if ((*iter)->has_satOff())
-            {
-                (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
-            }
-            else if ((*iter)->has_satMod())
-            {
-                (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
-            }
-            else if ((*iter)->has_lum())
-            {
-                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
-            }
-            else if ((*iter)->has_lumOff())
-            {
-                (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
-            }
-            else if ((*iter)->has_lumMod())
-            {
-                (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
-            }
-            else if ((*iter)->has_red())
-            {
-                (*iter)->get_red().toXmlElem("a:red", "", _outStream);
-            }
-            else if ((*iter)->has_redOff())
-            {
-                (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
-            }
-            else if ((*iter)->has_redMod())
-            {
-                (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
-            }
-            else if ((*iter)->has_green())
-            {
-                (*iter)->get_green().toXmlElem("a:green", "", _outStream);
-            }
-            else if ((*iter)->has_greenOff())
-            {
-                (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
-            }
-            else if ((*iter)->has_greenMod())
-            {
-                (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
-            }
-            else if ((*iter)->has_blue())
-            {
-                (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
-            }
-            else if ((*iter)->has_blueOff())
-            {
-                (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
-            }
-            else if ((*iter)->has_blueMod())
-            {
-                (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
-            }
-            else if ((*iter)->has_gamma())
-            {
-                (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
-            }
-            else if ((*iter)->has_invGamma())
-            {
-                (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
-            }
+    
+    if ((*iter)->has_tint())
+    {
+        (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shade())
+    {
+        (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_comp())
+    {
+        (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_inv())
+    {
+        (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gray())
+    {
+        (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alpha())
+    {
+        (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaOff())
+    {
+        (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaMod())
+    {
+        (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hue())
+    {
+        (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hueOff())
+    {
+        (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hueMod())
+    {
+        (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sat())
+    {
+        (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_satOff())
+    {
+        (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_satMod())
+    {
+        (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lum())
+    {
+        (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lumOff())
+    {
+        (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lumMod())
+    {
+        (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_red())
+    {
+        (*iter)->get_red().toXmlElem("a:red", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_redOff())
+    {
+        (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_redMod())
+    {
+        (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_green())
+    {
+        (*iter)->get_green().toXmlElem("a:green", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_greenOff())
+    {
+        (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_greenMod())
+    {
+        (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blue())
+    {
+        (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blueOff())
+    {
+        (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blueMod())
+    {
+        (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gamma())
+    {
+        (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_invGamma())
+    {
+        (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -28833,118 +29081,202 @@ CT_SRgbColor* CT_SRgbColor::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tint())
-            {
-                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
-            }
-            else if ((*iter)->has_shade())
-            {
-                (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
-            }
-            else if ((*iter)->has_comp())
-            {
-                (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
-            }
-            else if ((*iter)->has_inv())
-            {
-                (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
-            }
-            else if ((*iter)->has_gray())
-            {
-                (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
-            }
-            else if ((*iter)->has_alpha())
-            {
-                (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
-            }
-            else if ((*iter)->has_alphaOff())
-            {
-                (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
-            }
-            else if ((*iter)->has_alphaMod())
-            {
-                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
-            }
-            else if ((*iter)->has_hue())
-            {
-                (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
-            }
-            else if ((*iter)->has_hueOff())
-            {
-                (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
-            }
-            else if ((*iter)->has_hueMod())
-            {
-                (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
-            }
-            else if ((*iter)->has_sat())
-            {
-                (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
-            }
-            else if ((*iter)->has_satOff())
-            {
-                (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
-            }
-            else if ((*iter)->has_satMod())
-            {
-                (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
-            }
-            else if ((*iter)->has_lum())
-            {
-                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
-            }
-            else if ((*iter)->has_lumOff())
-            {
-                (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
-            }
-            else if ((*iter)->has_lumMod())
-            {
-                (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
-            }
-            else if ((*iter)->has_red())
-            {
-                (*iter)->get_red().toXmlElem("a:red", "", _outStream);
-            }
-            else if ((*iter)->has_redOff())
-            {
-                (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
-            }
-            else if ((*iter)->has_redMod())
-            {
-                (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
-            }
-            else if ((*iter)->has_green())
-            {
-                (*iter)->get_green().toXmlElem("a:green", "", _outStream);
-            }
-            else if ((*iter)->has_greenOff())
-            {
-                (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
-            }
-            else if ((*iter)->has_greenMod())
-            {
-                (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
-            }
-            else if ((*iter)->has_blue())
-            {
-                (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
-            }
-            else if ((*iter)->has_blueOff())
-            {
-                (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
-            }
-            else if ((*iter)->has_blueMod())
-            {
-                (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
-            }
-            else if ((*iter)->has_gamma())
-            {
-                (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
-            }
-            else if ((*iter)->has_invGamma())
-            {
-                (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
-            }
+    
+    if ((*iter)->has_tint())
+    {
+        (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shade())
+    {
+        (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_comp())
+    {
+        (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_inv())
+    {
+        (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gray())
+    {
+        (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alpha())
+    {
+        (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaOff())
+    {
+        (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaMod())
+    {
+        (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hue())
+    {
+        (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hueOff())
+    {
+        (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hueMod())
+    {
+        (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sat())
+    {
+        (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_satOff())
+    {
+        (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_satMod())
+    {
+        (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lum())
+    {
+        (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lumOff())
+    {
+        (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lumMod())
+    {
+        (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_red())
+    {
+        (*iter)->get_red().toXmlElem("a:red", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_redOff())
+    {
+        (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_redMod())
+    {
+        (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_green())
+    {
+        (*iter)->get_green().toXmlElem("a:green", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_greenOff())
+    {
+        (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_greenMod())
+    {
+        (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blue())
+    {
+        (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blueOff())
+    {
+        (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blueMod())
+    {
+        (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gamma())
+    {
+        (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_invGamma())
+    {
+        (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -36878,118 +37210,202 @@ CT_HslColor* CT_HslColor::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tint())
-            {
-                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
-            }
-            else if ((*iter)->has_shade())
-            {
-                (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
-            }
-            else if ((*iter)->has_comp())
-            {
-                (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
-            }
-            else if ((*iter)->has_inv())
-            {
-                (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
-            }
-            else if ((*iter)->has_gray())
-            {
-                (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
-            }
-            else if ((*iter)->has_alpha())
-            {
-                (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
-            }
-            else if ((*iter)->has_alphaOff())
-            {
-                (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
-            }
-            else if ((*iter)->has_alphaMod())
-            {
-                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
-            }
-            else if ((*iter)->has_hue())
-            {
-                (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
-            }
-            else if ((*iter)->has_hueOff())
-            {
-                (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
-            }
-            else if ((*iter)->has_hueMod())
-            {
-                (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
-            }
-            else if ((*iter)->has_sat())
-            {
-                (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
-            }
-            else if ((*iter)->has_satOff())
-            {
-                (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
-            }
-            else if ((*iter)->has_satMod())
-            {
-                (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
-            }
-            else if ((*iter)->has_lum())
-            {
-                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
-            }
-            else if ((*iter)->has_lumOff())
-            {
-                (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
-            }
-            else if ((*iter)->has_lumMod())
-            {
-                (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
-            }
-            else if ((*iter)->has_red())
-            {
-                (*iter)->get_red().toXmlElem("a:red", "", _outStream);
-            }
-            else if ((*iter)->has_redOff())
-            {
-                (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
-            }
-            else if ((*iter)->has_redMod())
-            {
-                (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
-            }
-            else if ((*iter)->has_green())
-            {
-                (*iter)->get_green().toXmlElem("a:green", "", _outStream);
-            }
-            else if ((*iter)->has_greenOff())
-            {
-                (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
-            }
-            else if ((*iter)->has_greenMod())
-            {
-                (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
-            }
-            else if ((*iter)->has_blue())
-            {
-                (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
-            }
-            else if ((*iter)->has_blueOff())
-            {
-                (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
-            }
-            else if ((*iter)->has_blueMod())
-            {
-                (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
-            }
-            else if ((*iter)->has_gamma())
-            {
-                (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
-            }
-            else if ((*iter)->has_invGamma())
-            {
-                (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
-            }
+    
+    if ((*iter)->has_tint())
+    {
+        (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shade())
+    {
+        (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_comp())
+    {
+        (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_inv())
+    {
+        (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gray())
+    {
+        (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alpha())
+    {
+        (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaOff())
+    {
+        (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaMod())
+    {
+        (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hue())
+    {
+        (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hueOff())
+    {
+        (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hueMod())
+    {
+        (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sat())
+    {
+        (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_satOff())
+    {
+        (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_satMod())
+    {
+        (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lum())
+    {
+        (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lumOff())
+    {
+        (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lumMod())
+    {
+        (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_red())
+    {
+        (*iter)->get_red().toXmlElem("a:red", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_redOff())
+    {
+        (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_redMod())
+    {
+        (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_green())
+    {
+        (*iter)->get_green().toXmlElem("a:green", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_greenOff())
+    {
+        (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_greenMod())
+    {
+        (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blue())
+    {
+        (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blueOff())
+    {
+        (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blueMod())
+    {
+        (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gamma())
+    {
+        (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_invGamma())
+    {
+        (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -44886,118 +45302,202 @@ CT_SystemColor* CT_SystemColor::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tint())
-            {
-                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
-            }
-            else if ((*iter)->has_shade())
-            {
-                (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
-            }
-            else if ((*iter)->has_comp())
-            {
-                (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
-            }
-            else if ((*iter)->has_inv())
-            {
-                (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
-            }
-            else if ((*iter)->has_gray())
-            {
-                (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
-            }
-            else if ((*iter)->has_alpha())
-            {
-                (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
-            }
-            else if ((*iter)->has_alphaOff())
-            {
-                (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
-            }
-            else if ((*iter)->has_alphaMod())
-            {
-                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
-            }
-            else if ((*iter)->has_hue())
-            {
-                (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
-            }
-            else if ((*iter)->has_hueOff())
-            {
-                (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
-            }
-            else if ((*iter)->has_hueMod())
-            {
-                (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
-            }
-            else if ((*iter)->has_sat())
-            {
-                (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
-            }
-            else if ((*iter)->has_satOff())
-            {
-                (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
-            }
-            else if ((*iter)->has_satMod())
-            {
-                (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
-            }
-            else if ((*iter)->has_lum())
-            {
-                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
-            }
-            else if ((*iter)->has_lumOff())
-            {
-                (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
-            }
-            else if ((*iter)->has_lumMod())
-            {
-                (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
-            }
-            else if ((*iter)->has_red())
-            {
-                (*iter)->get_red().toXmlElem("a:red", "", _outStream);
-            }
-            else if ((*iter)->has_redOff())
-            {
-                (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
-            }
-            else if ((*iter)->has_redMod())
-            {
-                (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
-            }
-            else if ((*iter)->has_green())
-            {
-                (*iter)->get_green().toXmlElem("a:green", "", _outStream);
-            }
-            else if ((*iter)->has_greenOff())
-            {
-                (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
-            }
-            else if ((*iter)->has_greenMod())
-            {
-                (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
-            }
-            else if ((*iter)->has_blue())
-            {
-                (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
-            }
-            else if ((*iter)->has_blueOff())
-            {
-                (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
-            }
-            else if ((*iter)->has_blueMod())
-            {
-                (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
-            }
-            else if ((*iter)->has_gamma())
-            {
-                (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
-            }
-            else if ((*iter)->has_invGamma())
-            {
-                (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
-            }
+    
+    if ((*iter)->has_tint())
+    {
+        (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shade())
+    {
+        (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_comp())
+    {
+        (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_inv())
+    {
+        (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gray())
+    {
+        (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alpha())
+    {
+        (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaOff())
+    {
+        (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaMod())
+    {
+        (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hue())
+    {
+        (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hueOff())
+    {
+        (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hueMod())
+    {
+        (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sat())
+    {
+        (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_satOff())
+    {
+        (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_satMod())
+    {
+        (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lum())
+    {
+        (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lumOff())
+    {
+        (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lumMod())
+    {
+        (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_red())
+    {
+        (*iter)->get_red().toXmlElem("a:red", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_redOff())
+    {
+        (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_redMod())
+    {
+        (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_green())
+    {
+        (*iter)->get_green().toXmlElem("a:green", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_greenOff())
+    {
+        (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_greenMod())
+    {
+        (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blue())
+    {
+        (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blueOff())
+    {
+        (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blueMod())
+    {
+        (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gamma())
+    {
+        (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_invGamma())
+    {
+        (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -52874,118 +53374,202 @@ CT_SchemeColor* CT_SchemeColor::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tint())
-            {
-                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
-            }
-            else if ((*iter)->has_shade())
-            {
-                (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
-            }
-            else if ((*iter)->has_comp())
-            {
-                (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
-            }
-            else if ((*iter)->has_inv())
-            {
-                (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
-            }
-            else if ((*iter)->has_gray())
-            {
-                (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
-            }
-            else if ((*iter)->has_alpha())
-            {
-                (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
-            }
-            else if ((*iter)->has_alphaOff())
-            {
-                (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
-            }
-            else if ((*iter)->has_alphaMod())
-            {
-                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
-            }
-            else if ((*iter)->has_hue())
-            {
-                (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
-            }
-            else if ((*iter)->has_hueOff())
-            {
-                (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
-            }
-            else if ((*iter)->has_hueMod())
-            {
-                (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
-            }
-            else if ((*iter)->has_sat())
-            {
-                (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
-            }
-            else if ((*iter)->has_satOff())
-            {
-                (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
-            }
-            else if ((*iter)->has_satMod())
-            {
-                (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
-            }
-            else if ((*iter)->has_lum())
-            {
-                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
-            }
-            else if ((*iter)->has_lumOff())
-            {
-                (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
-            }
-            else if ((*iter)->has_lumMod())
-            {
-                (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
-            }
-            else if ((*iter)->has_red())
-            {
-                (*iter)->get_red().toXmlElem("a:red", "", _outStream);
-            }
-            else if ((*iter)->has_redOff())
-            {
-                (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
-            }
-            else if ((*iter)->has_redMod())
-            {
-                (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
-            }
-            else if ((*iter)->has_green())
-            {
-                (*iter)->get_green().toXmlElem("a:green", "", _outStream);
-            }
-            else if ((*iter)->has_greenOff())
-            {
-                (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
-            }
-            else if ((*iter)->has_greenMod())
-            {
-                (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
-            }
-            else if ((*iter)->has_blue())
-            {
-                (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
-            }
-            else if ((*iter)->has_blueOff())
-            {
-                (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
-            }
-            else if ((*iter)->has_blueMod())
-            {
-                (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
-            }
-            else if ((*iter)->has_gamma())
-            {
-                (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
-            }
-            else if ((*iter)->has_invGamma())
-            {
-                (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
-            }
+    
+    if ((*iter)->has_tint())
+    {
+        (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shade())
+    {
+        (*iter)->get_shade().toXmlElem("a:shade", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_comp())
+    {
+        (*iter)->get_comp().toXmlElem("a:comp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_inv())
+    {
+        (*iter)->get_inv().toXmlElem("a:inv", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gray())
+    {
+        (*iter)->get_gray().toXmlElem("a:gray", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alpha())
+    {
+        (*iter)->get_alpha().toXmlElem("a:alpha", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaOff())
+    {
+        (*iter)->get_alphaOff().toXmlElem("a:alphaOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaMod())
+    {
+        (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hue())
+    {
+        (*iter)->get_hue().toXmlElem("a:hue", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hueOff())
+    {
+        (*iter)->get_hueOff().toXmlElem("a:hueOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hueMod())
+    {
+        (*iter)->get_hueMod().toXmlElem("a:hueMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sat())
+    {
+        (*iter)->get_sat().toXmlElem("a:sat", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_satOff())
+    {
+        (*iter)->get_satOff().toXmlElem("a:satOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_satMod())
+    {
+        (*iter)->get_satMod().toXmlElem("a:satMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lum())
+    {
+        (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lumOff())
+    {
+        (*iter)->get_lumOff().toXmlElem("a:lumOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lumMod())
+    {
+        (*iter)->get_lumMod().toXmlElem("a:lumMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_red())
+    {
+        (*iter)->get_red().toXmlElem("a:red", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_redOff())
+    {
+        (*iter)->get_redOff().toXmlElem("a:redOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_redMod())
+    {
+        (*iter)->get_redMod().toXmlElem("a:redMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_green())
+    {
+        (*iter)->get_green().toXmlElem("a:green", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_greenOff())
+    {
+        (*iter)->get_greenOff().toXmlElem("a:greenOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_greenMod())
+    {
+        (*iter)->get_greenMod().toXmlElem("a:greenMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blue())
+    {
+        (*iter)->get_blue().toXmlElem("a:blue", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blueOff())
+    {
+        (*iter)->get_blueOff().toXmlElem("a:blueOff", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blueMod())
+    {
+        (*iter)->get_blueMod().toXmlElem("a:blueMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_gamma())
+    {
+        (*iter)->get_gamma().toXmlElem("a:gamma", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_invGamma())
+    {
+        (*iter)->get_invGamma().toXmlElem("a:invGamma", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -60631,10 +61215,13 @@ CT_PresetColor* CT_PresetColor::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ext())
-            {
-                (*iter)->get_ext().toXmlElem("a:ext", "", _outStream);
-            }
+    
+    if ((*iter)->has_ext())
+    {
+        (*iter)->get_ext().toXmlElem("a:ext", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -60777,12 +61364,13 @@ CT_OfficeArtExtensionList* CT_OfficeArtExtensionList::default_instance_ = NULL;
             
     if (m_has_sx)
     {
-        m_sx->toXmlElem("a:sx", "", _outStream);;
+        m_sx->toXmlElem("a:sx", "", _outStream);
     }
+    
     
     if (m_has_sy)
     {
-        m_sy->toXmlElem("a:sy", "", _outStream);;
+        m_sy->toXmlElem("a:sy", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -60930,12 +61518,13 @@ CT_Scale2D* CT_Scale2D::default_instance_ = NULL;
             
     if (m_has_off)
     {
-        m_off->toXmlElem("a:off", "", _outStream);;
+        m_off->toXmlElem("a:off", "", _outStream);
     }
+    
     
     if (m_has_ext)
     {
-        m_ext->toXmlElem("a:ext", "", _outStream);;
+        m_ext->toXmlElem("a:ext", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -61205,22 +61794,25 @@ CT_Transform2D* CT_Transform2D::default_instance_ = NULL;
             
     if (m_has_off)
     {
-        m_off->toXmlElem("a:off", "", _outStream);;
+        m_off->toXmlElem("a:off", "", _outStream);
     }
+    
     
     if (m_has_ext)
     {
-        m_ext->toXmlElem("a:ext", "", _outStream);;
+        m_ext->toXmlElem("a:ext", "", _outStream);
     }
+    
     
     if (m_has_chOff)
     {
-        m_chOff->toXmlElem("a:chOff", "", _outStream);;
+        m_chOff->toXmlElem("a:chOff", "", _outStream);
     }
+    
     
     if (m_has_chExt)
     {
-        m_chExt->toXmlElem("a:chExt", "", _outStream);;
+        m_chExt->toXmlElem("a:chExt", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -62415,32 +63007,37 @@ CT_RelativeRect* CT_RelativeRect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
     }
+    
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);
     }
+    
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);
     }
+    
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);
     }
+    
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);
     }
+    
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -62540,30 +63137,48 @@ CT_Color* CT_Color::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_scrgbClr())
-            {
-                (*iter)->get_scrgbClr().toXmlElem("a:scrgbClr", "", _outStream);
-            }
-            else if ((*iter)->has_srgbClr())
-            {
-                (*iter)->get_srgbClr().toXmlElem("a:srgbClr", "", _outStream);
-            }
-            else if ((*iter)->has_hslClr())
-            {
-                (*iter)->get_hslClr().toXmlElem("a:hslClr", "", _outStream);
-            }
-            else if ((*iter)->has_sysClr())
-            {
-                (*iter)->get_sysClr().toXmlElem("a:sysClr", "", _outStream);
-            }
-            else if ((*iter)->has_schemeClr())
-            {
-                (*iter)->get_schemeClr().toXmlElem("a:schemeClr", "", _outStream);
-            }
-            else if ((*iter)->has_prstClr())
-            {
-                (*iter)->get_prstClr().toXmlElem("a:prstClr", "", _outStream);
-            }
+    
+    if ((*iter)->has_scrgbClr())
+    {
+        (*iter)->get_scrgbClr().toXmlElem("a:scrgbClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_srgbClr())
+    {
+        (*iter)->get_srgbClr().toXmlElem("a:srgbClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hslClr())
+    {
+        (*iter)->get_hslClr().toXmlElem("a:hslClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sysClr())
+    {
+        (*iter)->get_sysClr().toXmlElem("a:sysClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_schemeClr())
+    {
+        (*iter)->get_schemeClr().toXmlElem("a:schemeClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_prstClr())
+    {
+        (*iter)->get_prstClr().toXmlElem("a:prstClr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -63302,12 +63917,13 @@ CT_EmbeddedWAVAudioFile* CT_EmbeddedWAVAudioFile::default_instance_ = NULL;
             
     if (m_has_snd)
     {
-        m_snd->toXmlElem("a:snd", "", _outStream);;
+        m_snd->toXmlElem("a:snd", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -63623,7 +64239,7 @@ CT_Hyperlink* CT_Hyperlink::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -63978,7 +64594,7 @@ CT_ConnectorLocking* CT_ConnectorLocking::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -64349,7 +64965,7 @@ CT_ShapeLocking* CT_ShapeLocking::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -64676,7 +65292,7 @@ CT_PictureLocking* CT_PictureLocking::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -64928,7 +65544,7 @@ CT_GroupLocking* CT_GroupLocking::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -65208,7 +65824,7 @@ CT_GraphicalObjectFrameLocking* CT_GraphicalObjectFrameLocking::default_instance
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -65573,17 +66189,19 @@ CT_ContentPartLocking* CT_ContentPartLocking::default_instance_ = NULL;
             
     if (m_has_hlinkClick)
     {
-        m_hlinkClick->toXmlElem("a:hlinkClick", "", _outStream);;
+        m_hlinkClick->toXmlElem("a:hlinkClick", "", _outStream);
     }
+    
     
     if (m_has_hlinkHover)
     {
-        m_hlinkHover->toXmlElem("a:hlinkHover", "", _outStream);;
+        m_hlinkHover->toXmlElem("a:hlinkHover", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -65787,12 +66405,13 @@ CT_NonVisualDrawingProps* CT_NonVisualDrawingProps::default_instance_ = NULL;
             
     if (m_has_spLocks)
     {
-        m_spLocks->toXmlElem("a:spLocks", "", _outStream);;
+        m_spLocks->toXmlElem("a:spLocks", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -65988,22 +66607,25 @@ CT_NonVisualDrawingShapeProps* CT_NonVisualDrawingShapeProps::default_instance_ 
             
     if (m_has_cxnSpLocks)
     {
-        m_cxnSpLocks->toXmlElem("a:cxnSpLocks", "", _outStream);;
+        m_cxnSpLocks->toXmlElem("a:cxnSpLocks", "", _outStream);
     }
+    
     
     if (m_has_stCxn)
     {
-        m_stCxn->toXmlElem("a:stCxn", "", _outStream);;
+        m_stCxn->toXmlElem("a:stCxn", "", _outStream);
     }
+    
     
     if (m_has_endCxn)
     {
-        m_endCxn->toXmlElem("a:endCxn", "", _outStream);;
+        m_endCxn->toXmlElem("a:endCxn", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66123,12 +66745,13 @@ CT_NonVisualConnectorProperties* CT_NonVisualConnectorProperties::default_instan
             
     if (m_has_picLocks)
     {
-        m_picLocks->toXmlElem("a:picLocks", "", _outStream);;
+        m_picLocks->toXmlElem("a:picLocks", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66254,12 +66877,13 @@ CT_NonVisualPictureProperties* CT_NonVisualPictureProperties::default_instance_ 
             
     if (m_has_grpSpLocks)
     {
-        m_grpSpLocks->toXmlElem("a:grpSpLocks", "", _outStream);;
+        m_grpSpLocks->toXmlElem("a:grpSpLocks", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66369,12 +66993,13 @@ CT_NonVisualGroupDrawingShapeProps* CT_NonVisualGroupDrawingShapeProps::default_
             
     if (m_has_graphicFrameLocks)
     {
-        m_graphicFrameLocks->toXmlElem("a:graphicFrameLocks", "", _outStream);;
+        m_graphicFrameLocks->toXmlElem("a:graphicFrameLocks", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66494,12 +67119,13 @@ CT_NonVisualGraphicFrameProperties* CT_NonVisualGraphicFrameProperties::default_
             
     if (m_has_cpLocks)
     {
-        m_cpLocks->toXmlElem("a:cpLocks", "", _outStream);;
+        m_cpLocks->toXmlElem("a:cpLocks", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66567,9 +67193,7 @@ CT_NonVisualContentPartProperties* CT_NonVisualContentPartProperties::default_in
             
     if (m_has__any)
     {
-        
-    m__any->toXml(_outStream);
-    ;
+        m__any->toXml(_outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -66660,7 +67284,7 @@ CT_GraphicalObjectData* CT_GraphicalObjectData::default_instance_ = NULL;
             
     if (m_has_graphicData)
     {
-        m_graphicData->toXmlElem("a:graphicData", "", _outStream);;
+        m_graphicData->toXmlElem("a:graphicData", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -67023,12 +67647,13 @@ CT_AnimationChartElement* CT_AnimationChartElement::default_instance_ = NULL;
             
     if (m_has_dgm)
     {
-        m_dgm->toXmlElem("a:dgm", "", _outStream);;
+        m_dgm->toXmlElem("a:dgm", "", _outStream);
     }
+    
     
     if (m_has_chart)
     {
-        m_chart->toXmlElem("a:chart", "", _outStream);;
+        m_chart->toXmlElem("a:chart", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -67354,12 +67979,13 @@ CT_AnimationChartBuildProperties* CT_AnimationChartBuildProperties::default_inst
             
     if (m_has_bldDgm)
     {
-        m_bldDgm->toXmlElem("a:bldDgm", "", _outStream);;
+        m_bldDgm->toXmlElem("a:bldDgm", "", _outStream);
     }
+    
     
     if (m_has_bldChart)
     {
-        m_bldChart->toXmlElem("a:bldChart", "", _outStream);;
+        m_bldChart->toXmlElem("a:bldChart", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -68191,42 +68817,49 @@ CT_AnimationGraphicalObjectBuildProperties* CT_AnimationGraphicalObjectBuildProp
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("a:noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);
     }
+    
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);
     }
+    
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);
     }
+    
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);
     }
+    
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);
     }
+    
     
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);
     }
+    
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -68391,17 +69024,18 @@ CT_BackgrCT_TextEffectoundFormatting* CT_BackgrCT_TextEffectoundFormatting::defa
             
     if (m_has_ln)
     {
-        m_ln->toXmlElem("a:ln", "", _outStream);;
+        m_ln->toXmlElem("a:ln", "", _outStream);
     }
      
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);
     }
+    
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -68637,22 +69271,23 @@ CT_GvmlUseShapeRectangle* CT_GvmlUseShapeRectangle::default_instance_ = NULL;
             
     if (m_has_txBody)
     {
-        m_txBody->toXmlElem("a:txBody", "", _outStream);;
+        m_txBody->toXmlElem("a:txBody", "", _outStream);
     }
      
     if (m_has_useSpRect)
     {
-        m_useSpRect->toXmlElem("a:useSpRect", "", _outStream);;
+        m_useSpRect->toXmlElem("a:useSpRect", "", _outStream);
     }
+    
     
     if (m_has_xfrm)
     {
-        m_xfrm->toXmlElem("a:xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("a:xfrm", "", _outStream);
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -68762,12 +69397,13 @@ CT_GvmlTextShape* CT_GvmlTextShape::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvSpPr)
     {
-        m_cNvSpPr->toXmlElem("a:cNvSpPr", "", _outStream);;
+        m_cNvSpPr->toXmlElem("a:cNvSpPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -68982,27 +69618,31 @@ CT_GvmlShapeNonVisual* CT_GvmlShapeNonVisual::default_instance_ = NULL;
             
     if (m_has_nvSpPr)
     {
-        m_nvSpPr->toXmlElem("a:nvSpPr", "", _outStream);;
+        m_nvSpPr->toXmlElem("a:nvSpPr", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("a:spPr", "", _outStream);;
+        m_spPr->toXmlElem("a:spPr", "", _outStream);
     }
+    
     
     if (m_has_txSp)
     {
-        m_txSp->toXmlElem("a:txSp", "", _outStream);;
+        m_txSp->toXmlElem("a:txSp", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("a:style", "", _outStream);;
+        m_style->toXmlElem("a:style", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -69112,12 +69752,13 @@ CT_GvmlShape* CT_GvmlShape::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvCxnSpPr)
     {
-        m_cNvCxnSpPr->toXmlElem("a:cNvCxnSpPr", "", _outStream);;
+        m_cNvCxnSpPr->toXmlElem("a:cNvCxnSpPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -69297,22 +69938,25 @@ CT_GvmlConnectorNonVisual* CT_GvmlConnectorNonVisual::default_instance_ = NULL;
             
     if (m_has_nvCxnSpPr)
     {
-        m_nvCxnSpPr->toXmlElem("a:nvCxnSpPr", "", _outStream);;
+        m_nvCxnSpPr->toXmlElem("a:nvCxnSpPr", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("a:spPr", "", _outStream);;
+        m_spPr->toXmlElem("a:spPr", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("a:style", "", _outStream);;
+        m_style->toXmlElem("a:style", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -69422,12 +70066,13 @@ CT_GvmlConnector* CT_GvmlConnector::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvPicPr)
     {
-        m_cNvPicPr->toXmlElem("a:cNvPicPr", "", _outStream);;
+        m_cNvPicPr->toXmlElem("a:cNvPicPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -69642,27 +70287,31 @@ CT_GvmlPictureNonVisual* CT_GvmlPictureNonVisual::default_instance_ = NULL;
             
     if (m_has_nvPicPr)
     {
-        m_nvPicPr->toXmlElem("a:nvPicPr", "", _outStream);;
+        m_nvPicPr->toXmlElem("a:nvPicPr", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("a:spPr", "", _outStream);;
+        m_spPr->toXmlElem("a:spPr", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("a:style", "", _outStream);;
+        m_style->toXmlElem("a:style", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -69772,12 +70421,13 @@ CT_GvmlPicture* CT_GvmlPicture::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvGraphicFramePr)
     {
-        m_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);;
+        m_cNvGraphicFramePr->toXmlElem("a:cNvGraphicFramePr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -69957,22 +70607,25 @@ CT_GvmlGraphicFrameNonVisual* CT_GvmlGraphicFrameNonVisual::default_instance_ = 
             
     if (m_has_nvGraphicFramePr)
     {
-        m_nvGraphicFramePr->toXmlElem("a:nvGraphicFramePr", "", _outStream);;
+        m_nvGraphicFramePr->toXmlElem("a:nvGraphicFramePr", "", _outStream);
     }
+    
     
     if (m_has_graphic)
     {
-        m_graphic->toXmlElem("a:graphic", "", _outStream);;
+        m_graphic->toXmlElem("a:graphic", "", _outStream);
     }
+    
     
     if (m_has_xfrm)
     {
-        m_xfrm->toXmlElem("a:xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("a:xfrm", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -70082,12 +70735,13 @@ CT_GvmlGraphicalObjectFrame* CT_GvmlGraphicalObjectFrame::default_instance_ = NU
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvGrpSpPr)
     {
-        m_cNvGrpSpPr->toXmlElem("a:cNvGrpSpPr", "", _outStream);;
+        m_cNvGrpSpPr->toXmlElem("a:cNvGrpSpPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -70289,48 +70943,67 @@ CT_GvmlGroupShapeNonVisual* CT_GvmlGroupShapeNonVisual::default_instance_ = NULL
             
     if (m_has_nvGrpSpPr)
     {
-        m_nvGrpSpPr->toXmlElem("a:nvGrpSpPr", "", _outStream);;
+        m_nvGrpSpPr->toXmlElem("a:nvGrpSpPr", "", _outStream);
     }
+    
     
     if (m_has_grpSpPr)
     {
-        m_grpSpPr->toXmlElem("a:grpSpPr", "", _outStream);;
+        m_grpSpPr->toXmlElem("a:grpSpPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_txSp())
-            {
-                (*iter)->get_txSp().toXmlElem("a:txSp", "", _outStream);
-            }
-            else if ((*iter)->has_sp())
-            {
-                (*iter)->get_sp().toXmlElem("a:sp", "", _outStream);
-            }
-            else if ((*iter)->has_cxnSp())
-            {
-                (*iter)->get_cxnSp().toXmlElem("a:cxnSp", "", _outStream);
-            }
-            else if ((*iter)->has_pic())
-            {
-                (*iter)->get_pic().toXmlElem("a:pic", "", _outStream);
-            }
-            else if ((*iter)->has_graphicFrame())
-            {
-                (*iter)->get_graphicFrame().toXmlElem("a:graphicFrame", "", _outStream);
-            }
-            else if ((*iter)->has_grpSp())
-            {
-                (*iter)->get_grpSp().toXmlElem("a:grpSp", "", _outStream);
-            }
+    
+    if ((*iter)->has_txSp())
+    {
+        (*iter)->get_txSp().toXmlElem("a:txSp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sp())
+    {
+        (*iter)->get_sp().toXmlElem("a:sp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_cxnSp())
+    {
+        (*iter)->get_cxnSp().toXmlElem("a:cxnSp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pic())
+    {
+        (*iter)->get_pic().toXmlElem("a:pic", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_graphicFrame())
+    {
+        (*iter)->get_graphicFrame().toXmlElem("a:graphicFrame", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_grpSp())
+    {
+        (*iter)->get_grpSp().toXmlElem("a:grpSp", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -70892,7 +71565,7 @@ CT_GvmlGroupShape* CT_GvmlGroupShape::default_instance_ = NULL;
             
     if (m_has_rot)
     {
-        m_rot->toXmlElem("a:rot", "", _outStream);;
+        m_rot->toXmlElem("a:rot", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -71060,7 +71733,7 @@ CT_Camera* CT_Camera::default_instance_ = NULL;
             
     if (m_has_rot)
     {
-        m_rot->toXmlElem("a:rot", "", _outStream);;
+        m_rot->toXmlElem("a:rot", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -71280,22 +71953,25 @@ CT_LightRig* CT_LightRig::default_instance_ = NULL;
             
     if (m_has_camera)
     {
-        m_camera->toXmlElem("a:camera", "", _outStream);;
+        m_camera->toXmlElem("a:camera", "", _outStream);
     }
+    
     
     if (m_has_lightRig)
     {
-        m_lightRig->toXmlElem("a:lightRig", "", _outStream);;
+        m_lightRig->toXmlElem("a:lightRig", "", _outStream);
     }
+    
     
     if (m_has_backdrop)
     {
-        m_backdrop->toXmlElem("a:backdrop", "", _outStream);;
+        m_backdrop->toXmlElem("a:backdrop", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -71475,22 +72151,25 @@ CT_Scene3D* CT_Scene3D::default_instance_ = NULL;
             
     if (m_has_anchor)
     {
-        m_anchor->toXmlElem("a:anchor", "", _outStream);;
+        m_anchor->toXmlElem("a:anchor", "", _outStream);
     }
+    
     
     if (m_has_norm)
     {
-        m_norm->toXmlElem("a:norm", "", _outStream);;
+        m_norm->toXmlElem("a:norm", "", _outStream);
     }
+    
     
     if (m_has_up)
     {
-        m_up->toXmlElem("a:up", "", _outStream);;
+        m_up->toXmlElem("a:up", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -71917,27 +72596,31 @@ CT_Bevel* CT_Bevel::default_instance_ = NULL;
             
     if (m_has_bevelT)
     {
-        m_bevelT->toXmlElem("a:bevelT", "", _outStream);;
+        m_bevelT->toXmlElem("a:bevelT", "", _outStream);
     }
+    
     
     if (m_has_bevelB)
     {
-        m_bevelB->toXmlElem("a:bevelB", "", _outStream);;
+        m_bevelB->toXmlElem("a:bevelB", "", _outStream);
     }
+    
     
     if (m_has_extrusionClr)
     {
-        m_extrusionClr->toXmlElem("a:extrusionClr", "", _outStream);;
+        m_extrusionClr->toXmlElem("a:extrusionClr", "", _outStream);
     }
+    
     
     if (m_has_contourClr)
     {
-        m_contourClr->toXmlElem("a:contourClr", "", _outStream);;
+        m_contourClr->toXmlElem("a:contourClr", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -72757,32 +73440,37 @@ CT_AlphaFloorEffect* CT_AlphaFloorEffect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
     }
+    
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);
     }
+    
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);
     }
+    
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);
     }
+    
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);
     }
+    
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -73284,12 +73972,13 @@ CT_BlurEffect* CT_BlurEffect::default_instance_ = NULL;
             
     if (m_has_clrFrom)
     {
-        m_clrFrom->toXmlElem("a:clrFrom", "", _outStream);;
+        m_clrFrom->toXmlElem("a:clrFrom", "", _outStream);
     }
+    
     
     if (m_has_clrTo)
     {
-        m_clrTo->toXmlElem("a:clrTo", "", _outStream);;
+        m_clrTo->toXmlElem("a:clrTo", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -73831,32 +74520,37 @@ CT_ColorChangeEffect* CT_ColorChangeEffect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
     }
+    
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);
     }
+    
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);
     }
+    
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);
     }
+    
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);
     }
+    
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -73956,30 +74650,48 @@ CT_ColorReplaceEffect* CT_ColorReplaceEffect::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_scrgbClr())
-            {
-                (*iter)->get_scrgbClr().toXmlElem("a:scrgbClr", "", _outStream);
-            }
-            else if ((*iter)->has_srgbClr())
-            {
-                (*iter)->get_srgbClr().toXmlElem("a:srgbClr", "", _outStream);
-            }
-            else if ((*iter)->has_hslClr())
-            {
-                (*iter)->get_hslClr().toXmlElem("a:hslClr", "", _outStream);
-            }
-            else if ((*iter)->has_sysClr())
-            {
-                (*iter)->get_sysClr().toXmlElem("a:sysClr", "", _outStream);
-            }
-            else if ((*iter)->has_schemeClr())
-            {
-                (*iter)->get_schemeClr().toXmlElem("a:schemeClr", "", _outStream);
-            }
-            else if ((*iter)->has_prstClr())
-            {
-                (*iter)->get_prstClr().toXmlElem("a:prstClr", "", _outStream);
-            }
+    
+    if ((*iter)->has_scrgbClr())
+    {
+        (*iter)->get_scrgbClr().toXmlElem("a:scrgbClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_srgbClr())
+    {
+        (*iter)->get_srgbClr().toXmlElem("a:srgbClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hslClr())
+    {
+        (*iter)->get_hslClr().toXmlElem("a:hslClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sysClr())
+    {
+        (*iter)->get_sysClr().toXmlElem("a:sysClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_schemeClr())
+    {
+        (*iter)->get_schemeClr().toXmlElem("a:schemeClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_prstClr())
+    {
+        (*iter)->get_prstClr().toXmlElem("a:prstClr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -74959,32 +75671,37 @@ CT_DuotoneEffect* CT_DuotoneEffect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
     }
+    
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);
     }
+    
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);
     }
+    
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);
     }
+    
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);
     }
+    
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -75761,32 +76478,37 @@ CT_HSLEffect* CT_HSLEffect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
     }
+    
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);
     }
+    
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);
     }
+    
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);
     }
+    
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);
     }
+    
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -76626,32 +77348,37 @@ CT_LuminanceEffect* CT_LuminanceEffect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
     }
+    
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);
     }
+    
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);
     }
+    
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);
     }
+    
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);
     }
+    
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -77403,32 +78130,37 @@ CT_OuterShadowEffect* CT_OuterShadowEffect::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
     }
+    
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);
     }
+    
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);
     }
+    
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);
     }
+    
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);
     }
+    
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -79135,32 +79867,37 @@ CT_NoFillProperties* CT_NoFillProperties::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
     }
+    
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);
     }
+    
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);
     }
+    
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);
     }
+    
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);
     }
+    
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -79349,7 +80086,7 @@ CT_LinearShadeProperties* CT_LinearShadeProperties::default_instance_ = NULL;
             
     if (m_has_fillToRect)
     {
-        m_fillToRect->toXmlElem("a:fillToRect", "", _outStream);;
+        m_fillToRect->toXmlElem("a:fillToRect", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -79911,32 +80648,37 @@ CT_PathShadeProperties* CT_PathShadeProperties::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
     }
+    
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);
     }
+    
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);
     }
+    
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);
     }
+    
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);
     }
+    
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -80016,10 +80758,13 @@ CT_GradientStop* CT_GradientStop::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_gs())
-            {
-                (*iter)->get_gs().toXmlElem("a:gs", "", _outStream);
-            }
+    
+    if ((*iter)->has_gs())
+    {
+        (*iter)->get_gs().toXmlElem("a:gs", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -80279,22 +81024,23 @@ CT_GradientStopList* CT_GradientStopList::default_instance_ = NULL;
             
     if (m_has_gsLst)
     {
-        m_gsLst->toXmlElem("a:gsLst", "", _outStream);;
+        m_gsLst->toXmlElem("a:gsLst", "", _outStream);
     }
      
     if (m_has_lin)
     {
-        m_lin->toXmlElem("a:lin", "", _outStream);;
+        m_lin->toXmlElem("a:lin", "", _outStream);
     }
+    
     
     if (m_has_path)
     {
-        m_path->toXmlElem("a:path", "", _outStream);;
+        m_path->toXmlElem("a:path", "", _outStream);
     }
      
     if (m_has_tileRect)
     {
-        m_tileRect->toXmlElem("a:tileRect", "", _outStream);;
+        m_tileRect->toXmlElem("a:tileRect", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -80661,7 +81407,7 @@ CT_TileInfoProperties* CT_TileInfoProperties::default_instance_ = NULL;
             
     if (m_has_fillRect)
     {
-        m_fillRect->toXmlElem("a:fillRect", "", _outStream);;
+        m_fillRect->toXmlElem("a:fillRect", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -80933,80 +81679,131 @@ CT_StretchInfoProperties* CT_StretchInfoProperties::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_alphaBiLevel())
-            {
-                (*iter)->get_alphaBiLevel().toXmlElem("a:alphaBiLevel", "", _outStream);
-            }
-            else if ((*iter)->has_alphaCeiling())
-            {
-                (*iter)->get_alphaCeiling().toXmlElem("a:alphaCeiling", "", _outStream);
-            }
-            else if ((*iter)->has_alphaFloor())
-            {
-                (*iter)->get_alphaFloor().toXmlElem("a:alphaFloor", "", _outStream);
-            }
-            else if ((*iter)->has_alphaInv())
-            {
-                (*iter)->get_alphaInv().toXmlElem("a:alphaInv", "", _outStream);
-            }
-            else if ((*iter)->has_alphaMod())
-            {
-                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
-            }
-            else if ((*iter)->has_alphaModFix())
-            {
-                (*iter)->get_alphaModFix().toXmlElem("a:alphaModFix", "", _outStream);
-            }
-            else if ((*iter)->has_alphaRepl())
-            {
-                (*iter)->get_alphaRepl().toXmlElem("a:alphaRepl", "", _outStream);
-            }
-            else if ((*iter)->has_biLevel())
-            {
-                (*iter)->get_biLevel().toXmlElem("a:biLevel", "", _outStream);
-            }
-            else if ((*iter)->has_blur())
-            {
-                (*iter)->get_blur().toXmlElem("a:blur", "", _outStream);
-            }
-            else if ((*iter)->has_clrChange())
-            {
-                (*iter)->get_clrChange().toXmlElem("a:clrChange", "", _outStream);
-            }
-            else if ((*iter)->has_clrRepl())
-            {
-                (*iter)->get_clrRepl().toXmlElem("a:clrRepl", "", _outStream);
-            }
-            else if ((*iter)->has_duotone())
-            {
-                (*iter)->get_duotone().toXmlElem("a:duotone", "", _outStream);
-            }
-            else if ((*iter)->has_fillOverlay())
-            {
-                (*iter)->get_fillOverlay().toXmlElem("a:fillOverlay", "", _outStream);
-            }
-            else if ((*iter)->has_grayscl())
-            {
-                (*iter)->get_grayscl().toXmlElem("a:grayscl", "", _outStream);
-            }
-            else if ((*iter)->has_hsl())
-            {
-                (*iter)->get_hsl().toXmlElem("a:hsl", "", _outStream);
-            }
-            else if ((*iter)->has_lum())
-            {
-                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
-            }
-            else if ((*iter)->has_tint())
-            {
-                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
-            }
+    
+    if ((*iter)->has_alphaBiLevel())
+    {
+        (*iter)->get_alphaBiLevel().toXmlElem("a:alphaBiLevel", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaCeiling())
+    {
+        (*iter)->get_alphaCeiling().toXmlElem("a:alphaCeiling", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaFloor())
+    {
+        (*iter)->get_alphaFloor().toXmlElem("a:alphaFloor", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaInv())
+    {
+        (*iter)->get_alphaInv().toXmlElem("a:alphaInv", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaMod())
+    {
+        (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaModFix())
+    {
+        (*iter)->get_alphaModFix().toXmlElem("a:alphaModFix", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaRepl())
+    {
+        (*iter)->get_alphaRepl().toXmlElem("a:alphaRepl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_biLevel())
+    {
+        (*iter)->get_biLevel().toXmlElem("a:biLevel", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blur())
+    {
+        (*iter)->get_blur().toXmlElem("a:blur", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_clrChange())
+    {
+        (*iter)->get_clrChange().toXmlElem("a:clrChange", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_clrRepl())
+    {
+        (*iter)->get_clrRepl().toXmlElem("a:clrRepl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_duotone())
+    {
+        (*iter)->get_duotone().toXmlElem("a:duotone", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fillOverlay())
+    {
+        (*iter)->get_fillOverlay().toXmlElem("a:fillOverlay", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_grayscl())
+    {
+        (*iter)->get_grayscl().toXmlElem("a:grayscl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hsl())
+    {
+        (*iter)->get_hsl().toXmlElem("a:hsl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lum())
+    {
+        (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_tint())
+    {
+        (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -84199,22 +84996,24 @@ CT_Blip* CT_Blip::default_instance_ = NULL;
             
     if (m_has_blip)
     {
-        m_blip->toXmlElem("a:blip", "", _outStream);;
+        m_blip->toXmlElem("a:blip", "", _outStream);
     }
+    
     
     if (m_has_srcRect)
     {
-        m_srcRect->toXmlElem("a:srcRect", "", _outStream);;
+        m_srcRect->toXmlElem("a:srcRect", "", _outStream);
     }
      
     if (m_has_tile)
     {
-        m_tile->toXmlElem("a:tile", "", _outStream);;
+        m_tile->toXmlElem("a:tile", "", _outStream);
     }
+    
     
     if (m_has_stretch)
     {
-        m_stretch->toXmlElem("a:stretch", "", _outStream);;
+        m_stretch->toXmlElem("a:stretch", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -84372,12 +85171,13 @@ CT_BlipFillProperties* CT_BlipFillProperties::default_instance_ = NULL;
             
     if (m_has_fgClr)
     {
-        m_fgClr->toXmlElem("a:fgClr", "", _outStream);;
+        m_fgClr->toXmlElem("a:fgClr", "", _outStream);
     }
+    
     
     if (m_has_bgClr)
     {
-        m_bgClr->toXmlElem("a:bgClr", "", _outStream);;
+        m_bgClr->toXmlElem("a:bgClr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -84959,32 +85759,37 @@ CT_GroupFillProperties* CT_GroupFillProperties::default_instance_ = NULL;
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("a:noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);
     }
+    
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);
     }
+    
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);
     }
+    
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);
     }
+    
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -85510,32 +86315,37 @@ CT_FillProperties* CT_FillProperties::default_instance_ = NULL;
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("a:noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);
     }
+    
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);
     }
+    
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);
     }
+    
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);
     }
+    
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -86077,32 +86887,37 @@ CT_FillEffect* CT_FillEffect::default_instance_ = NULL;
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("a:noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);
     }
+    
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);
     }
+    
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);
     }
+    
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);
     }
+    
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -86356,7 +87171,7 @@ CT_EffectContainer* CT_EffectContainer::default_instance_ = NULL;
             
     if (m_has_cont)
     {
-        m_cont->toXmlElem("a:cont", "", _outStream);;
+        m_cont->toXmlElem("a:cont", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -86447,7 +87262,7 @@ CT_AlphaModulateEffect* CT_AlphaModulateEffect::default_instance_ = NULL;
             
     if (m_has_cont)
     {
-        m_cont->toXmlElem("a:cont", "", _outStream);;
+        m_cont->toXmlElem("a:cont", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -86787,42 +87602,49 @@ CT_BlendEffect* CT_BlendEffect::default_instance_ = NULL;
             
     if (m_has_blur)
     {
-        m_blur->toXmlElem("a:blur", "", _outStream);;
+        m_blur->toXmlElem("a:blur", "", _outStream);
     }
+    
     
     if (m_has_fillOverlay)
     {
-        m_fillOverlay->toXmlElem("a:fillOverlay", "", _outStream);;
+        m_fillOverlay->toXmlElem("a:fillOverlay", "", _outStream);
     }
+    
     
     if (m_has_glow)
     {
-        m_glow->toXmlElem("a:glow", "", _outStream);;
+        m_glow->toXmlElem("a:glow", "", _outStream);
     }
+    
     
     if (m_has_innerShdw)
     {
-        m_innerShdw->toXmlElem("a:innerShdw", "", _outStream);;
+        m_innerShdw->toXmlElem("a:innerShdw", "", _outStream);
     }
+    
     
     if (m_has_outerShdw)
     {
-        m_outerShdw->toXmlElem("a:outerShdw", "", _outStream);;
+        m_outerShdw->toXmlElem("a:outerShdw", "", _outStream);
     }
+    
     
     if (m_has_prstShdw)
     {
-        m_prstShdw->toXmlElem("a:prstShdw", "", _outStream);;
+        m_prstShdw->toXmlElem("a:prstShdw", "", _outStream);
     }
+    
     
     if (m_has_reflection)
     {
-        m_reflection->toXmlElem("a:reflection", "", _outStream);;
+        m_reflection->toXmlElem("a:reflection", "", _outStream);
     }
+    
     
     if (m_has_softEdge)
     {
-        m_softEdge->toXmlElem("a:softEdge", "", _outStream);;
+        m_softEdge->toXmlElem("a:softEdge", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -86952,12 +87774,13 @@ CT_EffectList* CT_EffectList::default_instance_ = NULL;
             
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);
     }
+    
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -87125,10 +87948,13 @@ CT_GeomGuide* CT_GeomGuide::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_gd())
-            {
-                (*iter)->get_gd().toXmlElem("a:gd", "", _outStream);
-            }
+    
+    if ((*iter)->has_gd())
+    {
+        (*iter)->get_gd().toXmlElem("a:gd", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -87627,7 +88453,7 @@ CT_GeomRect* CT_GeomRect::default_instance_ = NULL;
             
     if (m_has_pos)
     {
-        m_pos->toXmlElem("a:pos", "", _outStream);;
+        m_pos->toXmlElem("a:pos", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -87923,7 +88749,7 @@ CT_XYAdjustHandle* CT_XYAdjustHandle::default_instance_ = NULL;
             
     if (m_has_pos)
     {
-        m_pos->toXmlElem("a:pos", "", _outStream);;
+        m_pos->toXmlElem("a:pos", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -88134,7 +88960,7 @@ CT_PolarAdjustHandle* CT_PolarAdjustHandle::default_instance_ = NULL;
             
     if (m_has_pos)
     {
-        m_pos->toXmlElem("a:pos", "", _outStream);;
+        m_pos->toXmlElem("a:pos", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -88222,14 +89048,20 @@ CT_ConnectionSite* CT_ConnectionSite::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ahXY())
-            {
-                (*iter)->get_ahXY().toXmlElem("a:ahXY", "", _outStream);
-            }
-            else if ((*iter)->has_ahPolar())
-            {
-                (*iter)->get_ahPolar().toXmlElem("a:ahPolar", "", _outStream);
-            }
+    
+    if ((*iter)->has_ahXY())
+    {
+        (*iter)->get_ahXY().toXmlElem("a:ahXY", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_ahPolar())
+    {
+        (*iter)->get_ahPolar().toXmlElem("a:ahPolar", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -88367,10 +89199,13 @@ CT_AdjustHandleList* CT_AdjustHandleList::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cxn())
-            {
-                (*iter)->get_cxn().toXmlElem("a:cxn", "", _outStream);
-            }
+    
+    if ((*iter)->has_cxn())
+    {
+        (*iter)->get_cxn().toXmlElem("a:cxn", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -88576,7 +89411,7 @@ CT_Connection* CT_Connection::default_instance_ = NULL;
             
     if (m_has_pt)
     {
-        m_pt->toXmlElem("a:pt", "", _outStream);;
+        m_pt->toXmlElem("a:pt", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -88651,7 +89486,7 @@ CT_Path2DMoveTo* CT_Path2DMoveTo::default_instance_ = NULL;
             
     if (m_has_pt)
     {
-        m_pt->toXmlElem("a:pt", "", _outStream);;
+        m_pt->toXmlElem("a:pt", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -88893,10 +89728,13 @@ CT_Path2DArcTo* CT_Path2DArcTo::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_pt())
-            {
-                (*iter)->get_pt().toXmlElem("a:pt", "", _outStream);
-            }
+    
+    if ((*iter)->has_pt())
+    {
+        (*iter)->get_pt().toXmlElem("a:pt", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -88989,10 +89827,13 @@ CT_Path2DQuadBezierTo* CT_Path2DQuadBezierTo::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_pt())
-            {
-                (*iter)->get_pt().toXmlElem("a:pt", "", _outStream);
-            }
+    
+    if ((*iter)->has_pt())
+    {
+        (*iter)->get_pt().toXmlElem("a:pt", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -89232,30 +90073,48 @@ CT_Path2DClose* CT_Path2DClose::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_close())
-            {
-                (*iter)->get_close().toXmlElem("a:close", "", _outStream);
-            }
-            else if ((*iter)->has_moveTo())
-            {
-                (*iter)->get_moveTo().toXmlElem("a:moveTo", "", _outStream);
-            }
-            else if ((*iter)->has_lnTo())
-            {
-                (*iter)->get_lnTo().toXmlElem("a:lnTo", "", _outStream);
-            }
-            else if ((*iter)->has_arcTo())
-            {
-                (*iter)->get_arcTo().toXmlElem("a:arcTo", "", _outStream);
-            }
-            else if ((*iter)->has_quadBezTo())
-            {
-                (*iter)->get_quadBezTo().toXmlElem("a:quadBezTo", "", _outStream);
-            }
-            else if ((*iter)->has_cubicBezTo())
-            {
-                (*iter)->get_cubicBezTo().toXmlElem("a:cubicBezTo", "", _outStream);
-            }
+    
+    if ((*iter)->has_close())
+    {
+        (*iter)->get_close().toXmlElem("a:close", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_moveTo())
+    {
+        (*iter)->get_moveTo().toXmlElem("a:moveTo", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lnTo())
+    {
+        (*iter)->get_lnTo().toXmlElem("a:lnTo", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_arcTo())
+    {
+        (*iter)->get_arcTo().toXmlElem("a:arcTo", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_quadBezTo())
+    {
+        (*iter)->get_quadBezTo().toXmlElem("a:quadBezTo", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_cubicBezTo())
+    {
+        (*iter)->get_cubicBezTo().toXmlElem("a:cubicBezTo", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -89845,10 +90704,13 @@ CT_Path2D* CT_Path2D::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_path())
-            {
-                (*iter)->get_path().toXmlElem("a:path", "", _outStream);
-            }
+    
+    if ((*iter)->has_path())
+    {
+        (*iter)->get_path().toXmlElem("a:path", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -89972,7 +90834,7 @@ CT_Path2DList* CT_Path2DList::default_instance_ = NULL;
             
     if (m_has_avLst)
     {
-        m_avLst->toXmlElem("a:avLst", "", _outStream);;
+        m_avLst->toXmlElem("a:avLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -90083,7 +90945,7 @@ CT_PresetGeometry2D* CT_PresetGeometry2D::default_instance_ = NULL;
             
     if (m_has_avLst)
     {
-        m_avLst->toXmlElem("a:avLst", "", _outStream);;
+        m_avLst->toXmlElem("a:avLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -90353,32 +91215,37 @@ CT_PresetTextShape* CT_PresetTextShape::default_instance_ = NULL;
             
     if (m_has_avLst)
     {
-        m_avLst->toXmlElem("a:avLst", "", _outStream);;
+        m_avLst->toXmlElem("a:avLst", "", _outStream);
     }
+    
     
     if (m_has_gdLst)
     {
-        m_gdLst->toXmlElem("a:gdLst", "", _outStream);;
+        m_gdLst->toXmlElem("a:gdLst", "", _outStream);
     }
+    
     
     if (m_has_ahLst)
     {
-        m_ahLst->toXmlElem("a:ahLst", "", _outStream);;
+        m_ahLst->toXmlElem("a:ahLst", "", _outStream);
     }
+    
     
     if (m_has_cxnLst)
     {
-        m_cxnLst->toXmlElem("a:cxnLst", "", _outStream);;
+        m_cxnLst->toXmlElem("a:cxnLst", "", _outStream);
     }
+    
     
     if (m_has_rect)
     {
-        m_rect->toXmlElem("a:rect", "", _outStream);;
+        m_rect->toXmlElem("a:rect", "", _outStream);
     }
+    
     
     if (m_has_pathLst)
     {
-        m_pathLst->toXmlElem("a:pathLst", "", _outStream);;
+        m_pathLst->toXmlElem("a:pathLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -90905,10 +91772,13 @@ CT_DashStop* CT_DashStop::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ds())
-            {
-                (*iter)->get_ds().toXmlElem("a:ds", "", _outStream);
-            }
+    
+    if ((*iter)->has_ds())
+    {
+        (*iter)->get_ds().toXmlElem("a:ds", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -92125,62 +92995,72 @@ CT_DashStopList* CT_DashStopList::default_instance_ = NULL;
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("a:noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);
     }
+    
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);
     }
+    
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);
     }
+    
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);
     }
+    
     
     if (m_has_prstDash)
     {
-        m_prstDash->toXmlElem("a:prstDash", "", _outStream);;
+        m_prstDash->toXmlElem("a:prstDash", "", _outStream);
     }
+    
     
     if (m_has_custDash)
     {
-        m_custDash->toXmlElem("a:custDash", "", _outStream);;
+        m_custDash->toXmlElem("a:custDash", "", _outStream);
     }
+    
     
     if (m_has_round)
     {
-        m_round->toXmlElem("a:round", "", _outStream);;
+        m_round->toXmlElem("a:round", "", _outStream);
     }
+    
     
     if (m_has_bevel)
     {
-        m_bevel->toXmlElem("a:bevel", "", _outStream);;
+        m_bevel->toXmlElem("a:bevel", "", _outStream);
     }
+    
     
     if (m_has_miter)
     {
-        m_miter->toXmlElem("a:miter", "", _outStream);;
+        m_miter->toXmlElem("a:miter", "", _outStream);
     }
      
     if (m_has_headEnd)
     {
-        m_headEnd->toXmlElem("a:headEnd", "", _outStream);;
+        m_headEnd->toXmlElem("a:headEnd", "", _outStream);
     }
+    
     
     if (m_has_tailEnd)
     {
-        m_tailEnd->toXmlElem("a:tailEnd", "", _outStream);;
+        m_tailEnd->toXmlElem("a:tailEnd", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -93373,77 +94253,87 @@ CT_LineProperties* CT_LineProperties::default_instance_ = NULL;
             
     if (m_has_xfrm)
     {
-        m_xfrm->toXmlElem("a:xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("a:xfrm", "", _outStream);
     }
      
     if (m_has_custGeom)
     {
-        m_custGeom->toXmlElem("a:custGeom", "", _outStream);;
+        m_custGeom->toXmlElem("a:custGeom", "", _outStream);
     }
+    
     
     if (m_has_prstGeom)
     {
-        m_prstGeom->toXmlElem("a:prstGeom", "", _outStream);;
+        m_prstGeom->toXmlElem("a:prstGeom", "", _outStream);
     }
+    
     
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("a:noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);
     }
+    
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);
     }
+    
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);
     }
+    
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);
     }
+    
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);
     }
      
     if (m_has_ln)
     {
-        m_ln->toXmlElem("a:ln", "", _outStream);;
+        m_ln->toXmlElem("a:ln", "", _outStream);
     }
      
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);
     }
+    
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
      
     if (m_has_scene3d)
     {
-        m_scene3d->toXmlElem("a:scene3d", "", _outStream);;
+        m_scene3d->toXmlElem("a:scene3d", "", _outStream);
     }
+    
     
     if (m_has_sp3d)
     {
-        m_sp3d->toXmlElem("a:sp3d", "", _outStream);;
+        m_sp3d->toXmlElem("a:sp3d", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -94416,57 +95306,65 @@ CT_ShapeProperties* CT_ShapeProperties::default_instance_ = NULL;
             
     if (m_has_xfrm)
     {
-        m_xfrm->toXmlElem("a:xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("a:xfrm", "", _outStream);
     }
      
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("a:noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);
     }
+    
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);
     }
+    
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);
     }
+    
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);
     }
+    
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);
     }
+    
     
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);
     }
+    
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
      
     if (m_has_scene3d)
     {
-        m_scene3d->toXmlElem("a:scene3d", "", _outStream);;
+        m_scene3d->toXmlElem("a:scene3d", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -95028,32 +95926,37 @@ CT_GroupShapeProperties* CT_GroupShapeProperties::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
     }
+    
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);
     }
+    
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);
     }
+    
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);
     }
+    
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);
     }
+    
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -95615,32 +96518,37 @@ CT_StyleMatrixReference* CT_StyleMatrixReference::default_instance_ = NULL;
             
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
     }
+    
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);
     }
+    
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);
     }
+    
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);
     }
+    
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);
     }
+    
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -95840,22 +96748,25 @@ CT_FontReference* CT_FontReference::default_instance_ = NULL;
             
     if (m_has_lnRef)
     {
-        m_lnRef->toXmlElem("a:lnRef", "", _outStream);;
+        m_lnRef->toXmlElem("a:lnRef", "", _outStream);
     }
+    
     
     if (m_has_fillRef)
     {
-        m_fillRef->toXmlElem("a:fillRef", "", _outStream);;
+        m_fillRef->toXmlElem("a:fillRef", "", _outStream);
     }
+    
     
     if (m_has_effectRef)
     {
-        m_effectRef->toXmlElem("a:effectRef", "", _outStream);;
+        m_effectRef->toXmlElem("a:effectRef", "", _outStream);
     }
+    
     
     if (m_has_fontRef)
     {
-        m_fontRef->toXmlElem("a:fontRef", "", _outStream);;
+        m_fontRef->toXmlElem("a:fontRef", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -96070,27 +96981,31 @@ CT_ShapeStyle* CT_ShapeStyle::default_instance_ = NULL;
             
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("a:spPr", "", _outStream);;
+        m_spPr->toXmlElem("a:spPr", "", _outStream);
     }
+    
     
     if (m_has_bodyPr)
     {
-        m_bodyPr->toXmlElem("a:bodyPr", "", _outStream);;
+        m_bodyPr->toXmlElem("a:bodyPr", "", _outStream);
     }
+    
     
     if (m_has_lstStyle)
     {
-        m_lstStyle->toXmlElem("a:lstStyle", "", _outStream);;
+        m_lstStyle->toXmlElem("a:lstStyle", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("a:style", "", _outStream);;
+        m_style->toXmlElem("a:style", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -96270,22 +97185,25 @@ CT_DefaultShapeDefinition* CT_DefaultShapeDefinition::default_instance_ = NULL;
             
     if (m_has_spDef)
     {
-        m_spDef->toXmlElem("a:spDef", "", _outStream);;
+        m_spDef->toXmlElem("a:spDef", "", _outStream);
     }
+    
     
     if (m_has_lnDef)
     {
-        m_lnDef->toXmlElem("a:lnDef", "", _outStream);;
+        m_lnDef->toXmlElem("a:lnDef", "", _outStream);
     }
+    
     
     if (m_has_txDef)
     {
-        m_txDef->toXmlElem("a:txDef", "", _outStream);;
+        m_txDef->toXmlElem("a:txDef", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -96599,7 +97517,7 @@ CT_EmptyElement* CT_EmptyElement::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -96969,12 +97887,13 @@ CT_ColorMapping* CT_ColorMapping::default_instance_ = NULL;
             
     if (m_has_masterClrMapping)
     {
-        m_masterClrMapping->toXmlElem("a:masterClrMapping", "", _outStream);;
+        m_masterClrMapping->toXmlElem("a:masterClrMapping", "", _outStream);
     }
+    
     
     if (m_has_overrideClrMapping)
     {
-        m_overrideClrMapping->toXmlElem("a:overrideClrMapping", "", _outStream);;
+        m_overrideClrMapping->toXmlElem("a:overrideClrMapping", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -97084,12 +98003,13 @@ CT_ColorMappingOverride* CT_ColorMappingOverride::default_instance_ = NULL;
             
     if (m_has_clrScheme)
     {
-        m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);;
+        m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);
     }
+    
     
     if (m_has_clrMap)
     {
-        m_clrMap->toXmlElem("a:clrMap", "", _outStream);;
+        m_clrMap->toXmlElem("a:clrMap", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -97149,10 +98069,13 @@ CT_ColorSchemeAndMapping* CT_ColorSchemeAndMapping::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_extraClrScheme())
-            {
-                (*iter)->get_extraClrScheme().toXmlElem("a:extraClrScheme", "", _outStream);
-            }
+    
+    if ((*iter)->has_extraClrScheme())
+    {
+        (*iter)->get_extraClrScheme().toXmlElem("a:extraClrScheme", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -97410,27 +98333,31 @@ CT_ColorSchemeList* CT_ColorSchemeList::default_instance_ = NULL;
             
     if (m_has_themeElements)
     {
-        m_themeElements->toXmlElem("a:themeElements", "", _outStream);;
+        m_themeElements->toXmlElem("a:themeElements", "", _outStream);
     }
+    
     
     if (m_has_objectDefaults)
     {
-        m_objectDefaults->toXmlElem("a:objectDefaults", "", _outStream);;
+        m_objectDefaults->toXmlElem("a:objectDefaults", "", _outStream);
     }
+    
     
     if (m_has_extraClrSchemeLst)
     {
-        m_extraClrSchemeLst->toXmlElem("a:extraClrSchemeLst", "", _outStream);;
+        m_extraClrSchemeLst->toXmlElem("a:extraClrSchemeLst", "", _outStream);
     }
+    
     
     if (m_has_custClrLst)
     {
-        m_custClrLst->toXmlElem("a:custClrLst", "", _outStream);;
+        m_custClrLst->toXmlElem("a:custClrLst", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -97591,17 +98518,19 @@ CT_OfficeStyleSheet* CT_OfficeStyleSheet::default_instance_ = NULL;
             
     if (m_has_clrScheme)
     {
-        m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);;
+        m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);
     }
+    
     
     if (m_has_fontScheme)
     {
-        m_fontScheme->toXmlElem("a:fontScheme", "", _outStream);;
+        m_fontScheme->toXmlElem("a:fontScheme", "", _outStream);
     }
+    
     
     if (m_has_fmtScheme)
     {
-        m_fmtScheme->toXmlElem("a:fmtScheme", "", _outStream);;
+        m_fmtScheme->toXmlElem("a:fmtScheme", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -97711,12 +98640,13 @@ CT_BaseStylesOverride* CT_BaseStylesOverride::default_instance_ = NULL;
             
     if (m_has_themeElements)
     {
-        m_themeElements->toXmlElem("a:themeElements", "", _outStream);;
+        m_themeElements->toXmlElem("a:themeElements", "", _outStream);
     }
+    
     
     if (m_has_clrMap)
     {
-        m_clrMap->toXmlElem("a:clrMap", "", _outStream);;
+        m_clrMap->toXmlElem("a:clrMap", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -98686,77 +99616,89 @@ CT_ClipboardStyleSheet* CT_ClipboardStyleSheet::default_instance_ = NULL;
             
     if (m_has_lnL)
     {
-        m_lnL->toXmlElem("a:lnL", "", _outStream);;
+        m_lnL->toXmlElem("a:lnL", "", _outStream);
     }
+    
     
     if (m_has_lnR)
     {
-        m_lnR->toXmlElem("a:lnR", "", _outStream);;
+        m_lnR->toXmlElem("a:lnR", "", _outStream);
     }
+    
     
     if (m_has_lnT)
     {
-        m_lnT->toXmlElem("a:lnT", "", _outStream);;
+        m_lnT->toXmlElem("a:lnT", "", _outStream);
     }
+    
     
     if (m_has_lnB)
     {
-        m_lnB->toXmlElem("a:lnB", "", _outStream);;
+        m_lnB->toXmlElem("a:lnB", "", _outStream);
     }
+    
     
     if (m_has_lnTlToBr)
     {
-        m_lnTlToBr->toXmlElem("a:lnTlToBr", "", _outStream);;
+        m_lnTlToBr->toXmlElem("a:lnTlToBr", "", _outStream);
     }
+    
     
     if (m_has_lnBlToTr)
     {
-        m_lnBlToTr->toXmlElem("a:lnBlToTr", "", _outStream);;
+        m_lnBlToTr->toXmlElem("a:lnBlToTr", "", _outStream);
     }
+    
     
     if (m_has_cell3D)
     {
-        m_cell3D->toXmlElem("a:cell3D", "", _outStream);;
+        m_cell3D->toXmlElem("a:cell3D", "", _outStream);
     }
      
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("a:noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);
     }
+    
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);
     }
+    
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);
     }
+    
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);
     }
+    
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);
     }
      
     if (m_has_headers)
     {
-        m_headers->toXmlElem("a:headers", "", _outStream);;
+        m_headers->toXmlElem("a:headers", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -98971,10 +99913,13 @@ CT_TableCellProperties* CT_TableCellProperties::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_header())
-            {
-                _outStream << "<a:header>" << (*iter)->get_header() << "</a:header>";
-            }
+    
+    if ((*iter)->has_header())
+    {
+        _outStream << "<a:header>" << (*iter)->get_header() << "</a:header>";
+    }
+    
+    
         }
     }
     
@@ -99090,7 +100035,7 @@ CT_Headers* CT_Headers::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -99170,10 +100115,13 @@ CT_TableCol* CT_TableCol::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_gridCol())
-            {
-                (*iter)->get_gridCol().toXmlElem("a:gridCol", "", _outStream);
-            }
+    
+    if ((*iter)->has_gridCol())
+    {
+        (*iter)->get_gridCol().toXmlElem("a:gridCol", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -99405,17 +100353,19 @@ CT_TableGrid* CT_TableGrid::default_instance_ = NULL;
             
     if (m_has_txBody)
     {
-        m_txBody->toXmlElem("a:txBody", "", _outStream);;
+        m_txBody->toXmlElem("a:txBody", "", _outStream);
     }
+    
     
     if (m_has_tcPr)
     {
-        m_tcPr->toXmlElem("a:tcPr", "", _outStream);;
+        m_tcPr->toXmlElem("a:tcPr", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -99578,14 +100528,20 @@ CT_TableCell* CT_TableCell::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tc())
-            {
-                (*iter)->get_tc().toXmlElem("a:tc", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("a:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_tc())
+    {
+        (*iter)->get_tc().toXmlElem("a:tc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("a:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -101004,57 +101960,66 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("a:noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);
     }
+    
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);
     }
+    
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);
     }
+    
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);
     }
+    
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);
     }
+    
     
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);
     }
+    
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
+    
     
     if (m_has_tableStyle)
     {
-        m_tableStyle->toXmlElem("a:tableStyle", "", _outStream);;
+        m_tableStyle->toXmlElem("a:tableStyle", "", _outStream);
     }
+    
     
     if (m_has_tableStyleId)
     {
-        _outStream << "<a:tableStyleId>" << m_tableStyleId->toString() << "</a:tableStyleId>";;
+        _outStream << "<a:tableStyleId>" << m_tableStyleId->toString() << "</a:tableStyleId>";
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -101293,22 +102258,26 @@ CT_TableProperties* CT_TableProperties::default_instance_ = NULL;
             
     if (m_has_tblPr)
     {
-        m_tblPr->toXmlElem("a:tblPr", "", _outStream);;
+        m_tblPr->toXmlElem("a:tblPr", "", _outStream);
     }
+    
     
     if (m_has_tblGrid)
     {
-        m_tblGrid->toXmlElem("a:tblGrid", "", _outStream);;
+        m_tblGrid->toXmlElem("a:tblGrid", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tr())
-            {
-                (*iter)->get_tr().toXmlElem("a:tr", "", _outStream);
-            }
+    
+    if ((*iter)->has_tr())
+    {
+        (*iter)->get_tr().toXmlElem("a:tr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -101502,17 +102471,19 @@ CT_Table* CT_Table::default_instance_ = NULL;
             
     if (m_has_bevel)
     {
-        m_bevel->toXmlElem("a:bevel", "", _outStream);;
+        m_bevel->toXmlElem("a:bevel", "", _outStream);
     }
+    
     
     if (m_has_lightRig)
     {
-        m_lightRig->toXmlElem("a:lightRig", "", _outStream);;
+        m_lightRig->toXmlElem("a:lightRig", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -101662,12 +102633,13 @@ CT_Cell3D* CT_Cell3D::default_instance_ = NULL;
             
     if (m_has_ln)
     {
-        m_ln->toXmlElem("a:ln", "", _outStream);;
+        m_ln->toXmlElem("a:ln", "", _outStream);
     }
+    
     
     if (m_has_lnRef)
     {
-        m_lnRef->toXmlElem("a:lnRef", "", _outStream);;
+        m_lnRef->toXmlElem("a:lnRef", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -102567,47 +103539,54 @@ CT_ThemeableLineStyle* CT_ThemeableLineStyle::default_instance_ = NULL;
             
     if (m_has_font)
     {
-        m_font->toXmlElem("a:font", "", _outStream);;
+        m_font->toXmlElem("a:font", "", _outStream);
     }
+    
     
     if (m_has_fontRef)
     {
-        m_fontRef->toXmlElem("a:fontRef", "", _outStream);;
+        m_fontRef->toXmlElem("a:fontRef", "", _outStream);
     }
+    
     
     if (m_has_scrgbClr)
     {
-        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);;
+        m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
     }
+    
     
     if (m_has_srgbClr)
     {
-        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);;
+        m_srgbClr->toXmlElem("a:srgbClr", "", _outStream);
     }
+    
     
     if (m_has_hslClr)
     {
-        m_hslClr->toXmlElem("a:hslClr", "", _outStream);;
+        m_hslClr->toXmlElem("a:hslClr", "", _outStream);
     }
+    
     
     if (m_has_sysClr)
     {
-        m_sysClr->toXmlElem("a:sysClr", "", _outStream);;
+        m_sysClr->toXmlElem("a:sysClr", "", _outStream);
     }
+    
     
     if (m_has_schemeClr)
     {
-        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);;
+        m_schemeClr->toXmlElem("a:schemeClr", "", _outStream);
     }
+    
     
     if (m_has_prstClr)
     {
-        m_prstClr->toXmlElem("a:prstClr", "", _outStream);;
+        m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -103002,47 +103981,55 @@ CT_TableStyleTextStyle* CT_TableStyleTextStyle::default_instance_ = NULL;
             
     if (m_has_left)
     {
-        m_left->toXmlElem("a:left", "", _outStream);;
+        m_left->toXmlElem("a:left", "", _outStream);
     }
+    
     
     if (m_has_right)
     {
-        m_right->toXmlElem("a:right", "", _outStream);;
+        m_right->toXmlElem("a:right", "", _outStream);
     }
+    
     
     if (m_has_top)
     {
-        m_top->toXmlElem("a:top", "", _outStream);;
+        m_top->toXmlElem("a:top", "", _outStream);
     }
+    
     
     if (m_has_bottom)
     {
-        m_bottom->toXmlElem("a:bottom", "", _outStream);;
+        m_bottom->toXmlElem("a:bottom", "", _outStream);
     }
+    
     
     if (m_has_insideH)
     {
-        m_insideH->toXmlElem("a:insideH", "", _outStream);;
+        m_insideH->toXmlElem("a:insideH", "", _outStream);
     }
+    
     
     if (m_has_insideV)
     {
-        m_insideV->toXmlElem("a:insideV", "", _outStream);;
+        m_insideV->toXmlElem("a:insideV", "", _outStream);
     }
+    
     
     if (m_has_tl2br)
     {
-        m_tl2br->toXmlElem("a:tl2br", "", _outStream);;
+        m_tl2br->toXmlElem("a:tl2br", "", _outStream);
     }
+    
     
     if (m_has_tr2bl)
     {
-        m_tr2bl->toXmlElem("a:tr2bl", "", _outStream);;
+        m_tr2bl->toXmlElem("a:tr2bl", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -103334,22 +104321,25 @@ CT_TableCellBorderStyle* CT_TableCellBorderStyle::default_instance_ = NULL;
             
     if (m_has_fill)
     {
-        m_fill->toXmlElem("a:fill", "", _outStream);;
+        m_fill->toXmlElem("a:fill", "", _outStream);
     }
+    
     
     if (m_has_fillRef)
     {
-        m_fillRef->toXmlElem("a:fillRef", "", _outStream);;
+        m_fillRef->toXmlElem("a:fillRef", "", _outStream);
     }
+    
     
     if (m_has_effect)
     {
-        m_effect->toXmlElem("a:effect", "", _outStream);;
+        m_effect->toXmlElem("a:effect", "", _outStream);
     }
+    
     
     if (m_has_effectRef)
     {
-        m_effectRef->toXmlElem("a:effectRef", "", _outStream);;
+        m_effectRef->toXmlElem("a:effectRef", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -103549,22 +104539,23 @@ CT_TableBackgroundStyle* CT_TableBackgroundStyle::default_instance_ = NULL;
             
     if (m_has_tcBdr)
     {
-        m_tcBdr->toXmlElem("a:tcBdr", "", _outStream);;
+        m_tcBdr->toXmlElem("a:tcBdr", "", _outStream);
     }
      
     if (m_has_fill)
     {
-        m_fill->toXmlElem("a:fill", "", _outStream);;
+        m_fill->toXmlElem("a:fill", "", _outStream);
     }
+    
     
     if (m_has_fillRef)
     {
-        m_fillRef->toXmlElem("a:fillRef", "", _outStream);;
+        m_fillRef->toXmlElem("a:fillRef", "", _outStream);
     }
      
     if (m_has_cell3D)
     {
-        m_cell3D->toXmlElem("a:cell3D", "", _outStream);;
+        m_cell3D->toXmlElem("a:cell3D", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -103674,12 +104665,13 @@ CT_TableStyleCellStyle* CT_TableStyleCellStyle::default_instance_ = NULL;
             
     if (m_has_tcTxStyle)
     {
-        m_tcTxStyle->toXmlElem("a:tcTxStyle", "", _outStream);;
+        m_tcTxStyle->toXmlElem("a:tcTxStyle", "", _outStream);
     }
+    
     
     if (m_has_tcStyle)
     {
-        m_tcStyle->toXmlElem("a:tcStyle", "", _outStream);;
+        m_tcStyle->toXmlElem("a:tcStyle", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -104271,77 +105263,91 @@ CT_TablePartStyle* CT_TablePartStyle::default_instance_ = NULL;
             
     if (m_has_tblBg)
     {
-        m_tblBg->toXmlElem("a:tblBg", "", _outStream);;
+        m_tblBg->toXmlElem("a:tblBg", "", _outStream);
     }
+    
     
     if (m_has_wholeTbl)
     {
-        m_wholeTbl->toXmlElem("a:wholeTbl", "", _outStream);;
+        m_wholeTbl->toXmlElem("a:wholeTbl", "", _outStream);
     }
+    
     
     if (m_has_band1H)
     {
-        m_band1H->toXmlElem("a:band1H", "", _outStream);;
+        m_band1H->toXmlElem("a:band1H", "", _outStream);
     }
+    
     
     if (m_has_band2H)
     {
-        m_band2H->toXmlElem("a:band2H", "", _outStream);;
+        m_band2H->toXmlElem("a:band2H", "", _outStream);
     }
+    
     
     if (m_has_band1V)
     {
-        m_band1V->toXmlElem("a:band1V", "", _outStream);;
+        m_band1V->toXmlElem("a:band1V", "", _outStream);
     }
+    
     
     if (m_has_band2V)
     {
-        m_band2V->toXmlElem("a:band2V", "", _outStream);;
+        m_band2V->toXmlElem("a:band2V", "", _outStream);
     }
+    
     
     if (m_has_lastCol)
     {
-        m_lastCol->toXmlElem("a:lastCol", "", _outStream);;
+        m_lastCol->toXmlElem("a:lastCol", "", _outStream);
     }
+    
     
     if (m_has_firstCol)
     {
-        m_firstCol->toXmlElem("a:firstCol", "", _outStream);;
+        m_firstCol->toXmlElem("a:firstCol", "", _outStream);
     }
+    
     
     if (m_has_lastRow)
     {
-        m_lastRow->toXmlElem("a:lastRow", "", _outStream);;
+        m_lastRow->toXmlElem("a:lastRow", "", _outStream);
     }
+    
     
     if (m_has_seCell)
     {
-        m_seCell->toXmlElem("a:seCell", "", _outStream);;
+        m_seCell->toXmlElem("a:seCell", "", _outStream);
     }
+    
     
     if (m_has_swCell)
     {
-        m_swCell->toXmlElem("a:swCell", "", _outStream);;
+        m_swCell->toXmlElem("a:swCell", "", _outStream);
     }
+    
     
     if (m_has_firstRow)
     {
-        m_firstRow->toXmlElem("a:firstRow", "", _outStream);;
+        m_firstRow->toXmlElem("a:firstRow", "", _outStream);
     }
+    
     
     if (m_has_neCell)
     {
-        m_neCell->toXmlElem("a:neCell", "", _outStream);;
+        m_neCell->toXmlElem("a:neCell", "", _outStream);
     }
+    
     
     if (m_has_nwCell)
     {
-        m_nwCell->toXmlElem("a:nwCell", "", _outStream);;
+        m_nwCell->toXmlElem("a:nwCell", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -104452,10 +105458,13 @@ CT_TableStyle* CT_TableStyle::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tblStyle())
-            {
-                (*iter)->get_tblStyle().toXmlElem("a:tblStyle", "", _outStream);
-            }
+    
+    if ((*iter)->has_tblStyle())
+    {
+        (*iter)->get_tblStyle().toXmlElem("a:tblStyle", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -104651,31 +105660,40 @@ CT_TableStyleList* CT_TableStyleList::default_instance_ = NULL;
             
     if (m_has_pPr)
     {
-        m_pPr->toXmlElem("a:pPr", "", _outStream);;
+        m_pPr->toXmlElem("a:pPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_r())
-            {
-                (*iter)->get_r().toXmlElem("a:r", "", _outStream);
-            }
-            else if ((*iter)->has_br())
-            {
-                (*iter)->get_br().toXmlElem("a:br", "", _outStream);
-            }
-            else if ((*iter)->has_fld())
-            {
-                (*iter)->get_fld().toXmlElem("a:fld", "", _outStream);
-            }
+    
+    if ((*iter)->has_r())
+    {
+        (*iter)->get_r().toXmlElem("a:r", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_br())
+    {
+        (*iter)->get_br().toXmlElem("a:br", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fld())
+    {
+        (*iter)->get_fld().toXmlElem("a:fld", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_endParaRPr)
     {
-        m_endParaRPr->toXmlElem("a:endParaRPr", "", _outStream);;
+        m_endParaRPr->toXmlElem("a:endParaRPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -105240,57 +106258,67 @@ CT_TextParagraph* CT_TextParagraph::default_instance_ = NULL;
             
     if (m_has_defPPr)
     {
-        m_defPPr->toXmlElem("a:defPPr", "", _outStream);;
+        m_defPPr->toXmlElem("a:defPPr", "", _outStream);
     }
+    
     
     if (m_has_lvl1pPr)
     {
-        m_lvl1pPr->toXmlElem("a:lvl1pPr", "", _outStream);;
+        m_lvl1pPr->toXmlElem("a:lvl1pPr", "", _outStream);
     }
+    
     
     if (m_has_lvl2pPr)
     {
-        m_lvl2pPr->toXmlElem("a:lvl2pPr", "", _outStream);;
+        m_lvl2pPr->toXmlElem("a:lvl2pPr", "", _outStream);
     }
+    
     
     if (m_has_lvl3pPr)
     {
-        m_lvl3pPr->toXmlElem("a:lvl3pPr", "", _outStream);;
+        m_lvl3pPr->toXmlElem("a:lvl3pPr", "", _outStream);
     }
+    
     
     if (m_has_lvl4pPr)
     {
-        m_lvl4pPr->toXmlElem("a:lvl4pPr", "", _outStream);;
+        m_lvl4pPr->toXmlElem("a:lvl4pPr", "", _outStream);
     }
+    
     
     if (m_has_lvl5pPr)
     {
-        m_lvl5pPr->toXmlElem("a:lvl5pPr", "", _outStream);;
+        m_lvl5pPr->toXmlElem("a:lvl5pPr", "", _outStream);
     }
+    
     
     if (m_has_lvl6pPr)
     {
-        m_lvl6pPr->toXmlElem("a:lvl6pPr", "", _outStream);;
+        m_lvl6pPr->toXmlElem("a:lvl6pPr", "", _outStream);
     }
+    
     
     if (m_has_lvl7pPr)
     {
-        m_lvl7pPr->toXmlElem("a:lvl7pPr", "", _outStream);;
+        m_lvl7pPr->toXmlElem("a:lvl7pPr", "", _outStream);
     }
+    
     
     if (m_has_lvl8pPr)
     {
-        m_lvl8pPr->toXmlElem("a:lvl8pPr", "", _outStream);;
+        m_lvl8pPr->toXmlElem("a:lvl8pPr", "", _outStream);
     }
+    
     
     if (m_has_lvl9pPr)
     {
-        m_lvl9pPr->toXmlElem("a:lvl9pPr", "", _outStream);;
+        m_lvl9pPr->toXmlElem("a:lvl9pPr", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -106147,42 +107175,45 @@ CT_TextNoAutofit* CT_TextNoAutofit::default_instance_ = NULL;
             
     if (m_has_prstTxWarp)
     {
-        m_prstTxWarp->toXmlElem("a:prstTxWarp", "", _outStream);;
+        m_prstTxWarp->toXmlElem("a:prstTxWarp", "", _outStream);
     }
      
     if (m_has_noAutofit)
     {
-        m_noAutofit->toXmlElem("a:noAutofit", "", _outStream);;
+        m_noAutofit->toXmlElem("a:noAutofit", "", _outStream);
     }
+    
     
     if (m_has_normAutofit)
     {
-        m_normAutofit->toXmlElem("a:normAutofit", "", _outStream);;
+        m_normAutofit->toXmlElem("a:normAutofit", "", _outStream);
     }
+    
     
     if (m_has_spAutoFit)
     {
-        m_spAutoFit->toXmlElem("a:spAutoFit", "", _outStream);;
+        m_spAutoFit->toXmlElem("a:spAutoFit", "", _outStream);
     }
      
     if (m_has_scene3d)
     {
-        m_scene3d->toXmlElem("a:scene3d", "", _outStream);;
+        m_scene3d->toXmlElem("a:scene3d", "", _outStream);
     }
      
     if (m_has_sp3d)
     {
-        m_sp3d->toXmlElem("a:sp3d", "", _outStream);;
+        m_sp3d->toXmlElem("a:sp3d", "", _outStream);
     }
+    
     
     if (m_has_flatTx)
     {
-        m_flatTx->toXmlElem("a:flatTx", "", _outStream);;
+        m_flatTx->toXmlElem("a:flatTx", "", _outStream);
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -106661,22 +107692,26 @@ CT_TextBodyProperties* CT_TextBodyProperties::default_instance_ = NULL;
             
     if (m_has_bodyPr)
     {
-        m_bodyPr->toXmlElem("a:bodyPr", "", _outStream);;
+        m_bodyPr->toXmlElem("a:bodyPr", "", _outStream);
     }
+    
     
     if (m_has_lstStyle)
     {
-        m_lstStyle->toXmlElem("a:lstStyle", "", _outStream);;
+        m_lstStyle->toXmlElem("a:lstStyle", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_p())
-            {
-                (*iter)->get_p().toXmlElem("a:p", "", _outStream);
-            }
+    
+    if ((*iter)->has_p())
+    {
+        (*iter)->get_p().toXmlElem("a:p", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -107203,7 +108238,7 @@ CT_TextCharBullet* CT_TextCharBullet::default_instance_ = NULL;
             
     if (m_has_blip)
     {
-        m_blip->toXmlElem("a:blip", "", _outStream);;
+        m_blip->toXmlElem("a:blip", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -109215,112 +110250,129 @@ CT_TextUnderlineFillGroupWrapper* CT_TextUnderlineFillGroupWrapper::default_inst
             
     if (m_has_ln)
     {
-        m_ln->toXmlElem("a:ln", "", _outStream);;
+        m_ln->toXmlElem("a:ln", "", _outStream);
     }
      
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("a:noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);
     }
+    
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);
     }
+    
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);
     }
+    
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);
     }
+    
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);
     }
+    
     
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);
     }
+    
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
      
     if (m_has_highlight)
     {
-        m_highlight->toXmlElem("a:highlight", "", _outStream);;
+        m_highlight->toXmlElem("a:highlight", "", _outStream);
     }
      
     if (m_has_uLnTx)
     {
-        m_uLnTx->toXmlElem("a:uLnTx", "", _outStream);;
+        m_uLnTx->toXmlElem("a:uLnTx", "", _outStream);
     }
+    
     
     if (m_has_uLn)
     {
-        m_uLn->toXmlElem("a:uLn", "", _outStream);;
+        m_uLn->toXmlElem("a:uLn", "", _outStream);
     }
+    
     
     if (m_has_uFillTx)
     {
-        m_uFillTx->toXmlElem("a:uFillTx", "", _outStream);;
+        m_uFillTx->toXmlElem("a:uFillTx", "", _outStream);
     }
+    
     
     if (m_has_uFill)
     {
-        m_uFill->toXmlElem("a:uFill", "", _outStream);;
+        m_uFill->toXmlElem("a:uFill", "", _outStream);
     }
      
     if (m_has_latin)
     {
-        m_latin->toXmlElem("a:latin", "", _outStream);;
+        m_latin->toXmlElem("a:latin", "", _outStream);
     }
+    
     
     if (m_has_ea)
     {
-        m_ea->toXmlElem("a:ea", "", _outStream);;
+        m_ea->toXmlElem("a:ea", "", _outStream);
     }
+    
     
     if (m_has_cs)
     {
-        m_cs->toXmlElem("a:cs", "", _outStream);;
+        m_cs->toXmlElem("a:cs", "", _outStream);
     }
+    
     
     if (m_has_sym)
     {
-        m_sym->toXmlElem("a:sym", "", _outStream);;
+        m_sym->toXmlElem("a:sym", "", _outStream);
     }
+    
     
     if (m_has_hlinkClick)
     {
-        m_hlinkClick->toXmlElem("a:hlinkClick", "", _outStream);;
+        m_hlinkClick->toXmlElem("a:hlinkClick", "", _outStream);
     }
+    
     
     if (m_has_hlinkMouseOver)
     {
-        m_hlinkMouseOver->toXmlElem("a:hlinkMouseOver", "", _outStream);;
+        m_hlinkMouseOver->toXmlElem("a:hlinkMouseOver", "", _outStream);
     }
+    
     
     if (m_has_rtl)
     {
-        m_rtl->toXmlElem("a:rtl", "", _outStream);;
+        m_rtl->toXmlElem("a:rtl", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -110041,10 +111093,13 @@ CT_TextTabStop* CT_TextTabStop::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tab())
-            {
-                (*iter)->get_tab().toXmlElem("a:tab", "", _outStream);
-            }
+    
+    if ((*iter)->has_tab())
+    {
+        (*iter)->get_tab().toXmlElem("a:tab", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -110152,7 +111207,7 @@ CT_TextTabStopList* CT_TextTabStopList::default_instance_ = NULL;
             
     if (m_has_rPr)
     {
-        m_rPr->toXmlElem("a:rPr", "", _outStream);;
+        m_rPr->toXmlElem("a:rPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -110282,12 +111337,13 @@ CT_TextLineBreak* CT_TextLineBreak::default_instance_ = NULL;
             
     if (m_has_spcPct)
     {
-        m_spcPct->toXmlElem("a:spcPct", "", _outStream);;
+        m_spcPct->toXmlElem("a:spcPct", "", _outStream);
     }
+    
     
     if (m_has_spcPts)
     {
-        m_spcPts->toXmlElem("a:spcPts", "", _outStream);;
+        m_spcPts->toXmlElem("a:spcPts", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -112085,87 +113141,101 @@ CT_TextSpacing* CT_TextSpacing::default_instance_ = NULL;
             
     if (m_has_lnSpc)
     {
-        m_lnSpc->toXmlElem("a:lnSpc", "", _outStream);;
+        m_lnSpc->toXmlElem("a:lnSpc", "", _outStream);
     }
+    
     
     if (m_has_spcBef)
     {
-        m_spcBef->toXmlElem("a:spcBef", "", _outStream);;
+        m_spcBef->toXmlElem("a:spcBef", "", _outStream);
     }
+    
     
     if (m_has_spcAft)
     {
-        m_spcAft->toXmlElem("a:spcAft", "", _outStream);;
+        m_spcAft->toXmlElem("a:spcAft", "", _outStream);
     }
      
     if (m_has_buClrTx)
     {
-        m_buClrTx->toXmlElem("a:buClrTx", "", _outStream);;
+        m_buClrTx->toXmlElem("a:buClrTx", "", _outStream);
     }
+    
     
     if (m_has_buClr)
     {
-        m_buClr->toXmlElem("a:buClr", "", _outStream);;
+        m_buClr->toXmlElem("a:buClr", "", _outStream);
     }
+    
     
     if (m_has_buSzTx)
     {
-        m_buSzTx->toXmlElem("a:buSzTx", "", _outStream);;
+        m_buSzTx->toXmlElem("a:buSzTx", "", _outStream);
     }
+    
     
     if (m_has_buSzPct)
     {
-        m_buSzPct->toXmlElem("a:buSzPct", "", _outStream);;
+        m_buSzPct->toXmlElem("a:buSzPct", "", _outStream);
     }
+    
     
     if (m_has_buSzPts)
     {
-        m_buSzPts->toXmlElem("a:buSzPts", "", _outStream);;
+        m_buSzPts->toXmlElem("a:buSzPts", "", _outStream);
     }
+    
     
     if (m_has_buFontTx)
     {
-        m_buFontTx->toXmlElem("a:buFontTx", "", _outStream);;
+        m_buFontTx->toXmlElem("a:buFontTx", "", _outStream);
     }
+    
     
     if (m_has_buFont)
     {
-        m_buFont->toXmlElem("a:buFont", "", _outStream);;
+        m_buFont->toXmlElem("a:buFont", "", _outStream);
     }
+    
     
     if (m_has_buNone)
     {
-        m_buNone->toXmlElem("a:buNone", "", _outStream);;
+        m_buNone->toXmlElem("a:buNone", "", _outStream);
     }
+    
     
     if (m_has_buAutoNum)
     {
-        m_buAutoNum->toXmlElem("a:buAutoNum", "", _outStream);;
+        m_buAutoNum->toXmlElem("a:buAutoNum", "", _outStream);
     }
+    
     
     if (m_has_buChar)
     {
-        m_buChar->toXmlElem("a:buChar", "", _outStream);;
+        m_buChar->toXmlElem("a:buChar", "", _outStream);
     }
+    
     
     if (m_has_buBlip)
     {
-        m_buBlip->toXmlElem("a:buBlip", "", _outStream);;
+        m_buBlip->toXmlElem("a:buBlip", "", _outStream);
     }
      
     if (m_has_tabLst)
     {
-        m_tabLst->toXmlElem("a:tabLst", "", _outStream);;
+        m_tabLst->toXmlElem("a:tabLst", "", _outStream);
     }
+    
     
     if (m_has_defRPr)
     {
-        m_defRPr->toXmlElem("a:defRPr", "", _outStream);;
+        m_defRPr->toXmlElem("a:defRPr", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -112527,17 +113597,19 @@ CT_TextParagraphProperties* CT_TextParagraphProperties::default_instance_ = NULL
             
     if (m_has_rPr)
     {
-        m_rPr->toXmlElem("a:rPr", "", _outStream);;
+        m_rPr->toXmlElem("a:rPr", "", _outStream);
     }
+    
     
     if (m_has_pPr)
     {
-        m_pPr->toXmlElem("a:pPr", "", _outStream);;
+        m_pPr->toXmlElem("a:pPr", "", _outStream);
     }
+    
     
     if (m_has_t)
     {
-        _outStream << "<a:t>" << m_t << "</a:t>";;
+        _outStream << "<a:t>" << m_t << "</a:t>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -112669,12 +113741,13 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
             
     if (m_has_rPr)
     {
-        m_rPr->toXmlElem("a:rPr", "", _outStream);;
+        m_rPr->toXmlElem("a:rPr", "", _outStream);
     }
+    
     
     if (m_has_t)
     {
-        _outStream << "<a:t>" << m_t << "</a:t>";;
+        _outStream << "<a:t>" << m_t << "</a:t>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -113506,42 +114579,49 @@ CT_RegularTextRun* CT_RegularTextRun::default_instance_ = NULL;
             
     if (m_has_noFill)
     {
-        m_noFill->toXmlElem("a:noFill", "", _outStream);;
+        m_noFill->toXmlElem("a:noFill", "", _outStream);
     }
+    
     
     if (m_has_solidFill)
     {
-        m_solidFill->toXmlElem("a:solidFill", "", _outStream);;
+        m_solidFill->toXmlElem("a:solidFill", "", _outStream);
     }
+    
     
     if (m_has_gradFill)
     {
-        m_gradFill->toXmlElem("a:gradFill", "", _outStream);;
+        m_gradFill->toXmlElem("a:gradFill", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("a:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("a:blipFill", "", _outStream);
     }
+    
     
     if (m_has_pattFill)
     {
-        m_pattFill->toXmlElem("a:pattFill", "", _outStream);;
+        m_pattFill->toXmlElem("a:pattFill", "", _outStream);
     }
+    
     
     if (m_has_grpFill)
     {
-        m_grpFill->toXmlElem("a:grpFill", "", _outStream);;
+        m_grpFill->toXmlElem("a:grpFill", "", _outStream);
     }
+    
     
     if (m_has_effectLst)
     {
-        m_effectLst->toXmlElem("a:effectLst", "", _outStream);;
+        m_effectLst->toXmlElem("a:effectLst", "", _outStream);
     }
+    
     
     if (m_has_effectDag)
     {
-        m_effectDag->toXmlElem("a:effectDag", "", _outStream);;
+        m_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -113642,7 +114722,7 @@ CT_BackgroundFormatting* CT_BackgroundFormatting::default_instance_ = NULL;
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
     _outStream << "</a:videoFile>";
@@ -113752,7 +114832,7 @@ videoFile_element* videoFile_element::default_instance_ = NULL;
     
     if (m_has_graphicData)
     {
-        m_graphicData->toXmlElem("a:graphicData", "", _outStream);;
+        m_graphicData->toXmlElem("a:graphicData", "", _outStream);
     }
     
     _outStream << "</a:graphic>";
@@ -114023,80 +115103,131 @@ graphic_element* graphic_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_alphaBiLevel())
-            {
-                (*iter)->get_alphaBiLevel().toXmlElem("a:alphaBiLevel", "", _outStream);
-            }
-            else if ((*iter)->has_alphaCeiling())
-            {
-                (*iter)->get_alphaCeiling().toXmlElem("a:alphaCeiling", "", _outStream);
-            }
-            else if ((*iter)->has_alphaFloor())
-            {
-                (*iter)->get_alphaFloor().toXmlElem("a:alphaFloor", "", _outStream);
-            }
-            else if ((*iter)->has_alphaInv())
-            {
-                (*iter)->get_alphaInv().toXmlElem("a:alphaInv", "", _outStream);
-            }
-            else if ((*iter)->has_alphaMod())
-            {
-                (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
-            }
-            else if ((*iter)->has_alphaModFix())
-            {
-                (*iter)->get_alphaModFix().toXmlElem("a:alphaModFix", "", _outStream);
-            }
-            else if ((*iter)->has_alphaRepl())
-            {
-                (*iter)->get_alphaRepl().toXmlElem("a:alphaRepl", "", _outStream);
-            }
-            else if ((*iter)->has_biLevel())
-            {
-                (*iter)->get_biLevel().toXmlElem("a:biLevel", "", _outStream);
-            }
-            else if ((*iter)->has_blur())
-            {
-                (*iter)->get_blur().toXmlElem("a:blur", "", _outStream);
-            }
-            else if ((*iter)->has_clrChange())
-            {
-                (*iter)->get_clrChange().toXmlElem("a:clrChange", "", _outStream);
-            }
-            else if ((*iter)->has_clrRepl())
-            {
-                (*iter)->get_clrRepl().toXmlElem("a:clrRepl", "", _outStream);
-            }
-            else if ((*iter)->has_duotone())
-            {
-                (*iter)->get_duotone().toXmlElem("a:duotone", "", _outStream);
-            }
-            else if ((*iter)->has_fillOverlay())
-            {
-                (*iter)->get_fillOverlay().toXmlElem("a:fillOverlay", "", _outStream);
-            }
-            else if ((*iter)->has_grayscl())
-            {
-                (*iter)->get_grayscl().toXmlElem("a:grayscl", "", _outStream);
-            }
-            else if ((*iter)->has_hsl())
-            {
-                (*iter)->get_hsl().toXmlElem("a:hsl", "", _outStream);
-            }
-            else if ((*iter)->has_lum())
-            {
-                (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
-            }
-            else if ((*iter)->has_tint())
-            {
-                (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
-            }
+    
+    if ((*iter)->has_alphaBiLevel())
+    {
+        (*iter)->get_alphaBiLevel().toXmlElem("a:alphaBiLevel", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaCeiling())
+    {
+        (*iter)->get_alphaCeiling().toXmlElem("a:alphaCeiling", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaFloor())
+    {
+        (*iter)->get_alphaFloor().toXmlElem("a:alphaFloor", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaInv())
+    {
+        (*iter)->get_alphaInv().toXmlElem("a:alphaInv", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaMod())
+    {
+        (*iter)->get_alphaMod().toXmlElem("a:alphaMod", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaModFix())
+    {
+        (*iter)->get_alphaModFix().toXmlElem("a:alphaModFix", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_alphaRepl())
+    {
+        (*iter)->get_alphaRepl().toXmlElem("a:alphaRepl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_biLevel())
+    {
+        (*iter)->get_biLevel().toXmlElem("a:biLevel", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_blur())
+    {
+        (*iter)->get_blur().toXmlElem("a:blur", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_clrChange())
+    {
+        (*iter)->get_clrChange().toXmlElem("a:clrChange", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_clrRepl())
+    {
+        (*iter)->get_clrRepl().toXmlElem("a:clrRepl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_duotone())
+    {
+        (*iter)->get_duotone().toXmlElem("a:duotone", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_fillOverlay())
+    {
+        (*iter)->get_fillOverlay().toXmlElem("a:fillOverlay", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_grayscl())
+    {
+        (*iter)->get_grayscl().toXmlElem("a:grayscl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hsl())
+    {
+        (*iter)->get_hsl().toXmlElem("a:hsl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_lum())
+    {
+        (*iter)->get_lum().toXmlElem("a:lum", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_tint())
+    {
+        (*iter)->get_tint().toXmlElem("a:tint", "", _outStream);
+    }
+    
+    
         }
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
     _outStream << "</a:blip>";
@@ -117292,27 +118423,31 @@ blip_element* blip_element::default_instance_ = NULL;
     
     if (m_has_themeElements)
     {
-        m_themeElements->toXmlElem("a:themeElements", "", _outStream);;
+        m_themeElements->toXmlElem("a:themeElements", "", _outStream);
     }
+    
     
     if (m_has_objectDefaults)
     {
-        m_objectDefaults->toXmlElem("a:objectDefaults", "", _outStream);;
+        m_objectDefaults->toXmlElem("a:objectDefaults", "", _outStream);
     }
+    
     
     if (m_has_extraClrSchemeLst)
     {
-        m_extraClrSchemeLst->toXmlElem("a:extraClrSchemeLst", "", _outStream);;
+        m_extraClrSchemeLst->toXmlElem("a:extraClrSchemeLst", "", _outStream);
     }
+    
     
     if (m_has_custClrLst)
     {
-        m_custClrLst->toXmlElem("a:custClrLst", "", _outStream);;
+        m_custClrLst->toXmlElem("a:custClrLst", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("a:extLst", "", _outStream);;
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
     _outStream << "</a:theme>";
@@ -117472,17 +118607,19 @@ theme_element* theme_element::default_instance_ = NULL;
     
     if (m_has_clrScheme)
     {
-        m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);;
+        m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);
     }
+    
     
     if (m_has_fontScheme)
     {
-        m_fontScheme->toXmlElem("a:fontScheme", "", _outStream);;
+        m_fontScheme->toXmlElem("a:fontScheme", "", _outStream);
     }
+    
     
     if (m_has_fmtScheme)
     {
-        m_fmtScheme->toXmlElem("a:fmtScheme", "", _outStream);;
+        m_fmtScheme->toXmlElem("a:fmtScheme", "", _outStream);
     }
     
     _outStream << "</a:themeOverride>";
@@ -117643,22 +118780,26 @@ themeManager_element* themeManager_element::default_instance_ = NULL;
     
     if (m_has_tblPr)
     {
-        m_tblPr->toXmlElem("a:tblPr", "", _outStream);;
+        m_tblPr->toXmlElem("a:tblPr", "", _outStream);
     }
+    
     
     if (m_has_tblGrid)
     {
-        m_tblGrid->toXmlElem("a:tblGrid", "", _outStream);;
+        m_tblGrid->toXmlElem("a:tblGrid", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tr())
-            {
-                (*iter)->get_tr().toXmlElem("a:tr", "", _outStream);
-            }
+    
+    if ((*iter)->has_tr())
+    {
+        (*iter)->get_tr().toXmlElem("a:tr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -117765,10 +118906,13 @@ tbl_element* tbl_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tblStyle())
-            {
-                (*iter)->get_tblStyle().toXmlElem("a:tblStyle", "", _outStream);
-            }
+    
+    if ((*iter)->has_tblStyle())
+    {
+        (*iter)->get_tblStyle().toXmlElem("a:tblStyle", "", _outStream);
+    }
+    
+    
         }
     }
     

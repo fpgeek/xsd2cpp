@@ -55,10 +55,13 @@ namespace ns_custom_properties {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_property())
-            {
-                (*iter)->get_property().toXmlElem("custom_properties:property", "", _outStream);
-            }
+    
+    if ((*iter)->has_property())
+    {
+        (*iter)->get_property().toXmlElem("custom_properties:property", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -5722,167 +5725,199 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
             
     if (m_has_vt_vector)
     {
-        m_vt_vector->toXmlElem("vt:vector", "", _outStream);;
+        m_vt_vector->toXmlElem("vt:vector", "", _outStream);
     }
+    
     
     if (m_has_vt_array)
     {
-        m_vt_array->toXmlElem("vt:array", "", _outStream);;
+        m_vt_array->toXmlElem("vt:array", "", _outStream);
     }
+    
     
     if (m_has_vt_blob)
     {
-        _outStream << "<vt:blob>" << m_vt_blob << "</vt:blob>";;
+        _outStream << "<vt:blob>" << m_vt_blob << "</vt:blob>";
     }
+    
     
     if (m_has_vt_oblob)
     {
-        _outStream << "<vt:oblob>" << m_vt_oblob << "</vt:oblob>";;
+        _outStream << "<vt:oblob>" << m_vt_oblob << "</vt:oblob>";
     }
+    
     
     if (m_has_vt_empty)
     {
-        m_vt_empty->toXmlElem("vt:empty", "", _outStream);;
+        m_vt_empty->toXmlElem("vt:empty", "", _outStream);
     }
+    
     
     if (m_has_vt_null)
     {
-        m_vt_null->toXmlElem("vt:null", "", _outStream);;
+        m_vt_null->toXmlElem("vt:null", "", _outStream);
     }
+    
     
     if (m_has_vt_i1)
     {
-        _outStream << "<vt:i1>" << m_vt_i1 << "</vt:i1>";;
+        _outStream << "<vt:i1>" << m_vt_i1 << "</vt:i1>";
     }
+    
     
     if (m_has_vt_i2)
     {
-        _outStream << "<vt:i2>" << m_vt_i2 << "</vt:i2>";;
+        _outStream << "<vt:i2>" << m_vt_i2 << "</vt:i2>";
     }
+    
     
     if (m_has_vt_i4)
     {
-        _outStream << "<vt:i4>" << m_vt_i4 << "</vt:i4>";;
+        _outStream << "<vt:i4>" << m_vt_i4 << "</vt:i4>";
     }
+    
     
     if (m_has_vt_i8)
     {
-        _outStream << "<vt:i8>" << m_vt_i8 << "</vt:i8>";;
+        _outStream << "<vt:i8>" << m_vt_i8 << "</vt:i8>";
     }
+    
     
     if (m_has_vt_int)
     {
-        _outStream << "<vt:int>" << m_vt_int << "</vt:int>";;
+        _outStream << "<vt:int>" << m_vt_int << "</vt:int>";
     }
+    
     
     if (m_has_vt_ui1)
     {
-        _outStream << "<vt:ui1>" << m_vt_ui1 << "</vt:ui1>";;
+        _outStream << "<vt:ui1>" << m_vt_ui1 << "</vt:ui1>";
     }
+    
     
     if (m_has_vt_ui2)
     {
-        _outStream << "<vt:ui2>" << m_vt_ui2 << "</vt:ui2>";;
+        _outStream << "<vt:ui2>" << m_vt_ui2 << "</vt:ui2>";
     }
+    
     
     if (m_has_vt_ui4)
     {
-        _outStream << "<vt:ui4>" << m_vt_ui4 << "</vt:ui4>";;
+        _outStream << "<vt:ui4>" << m_vt_ui4 << "</vt:ui4>";
     }
+    
     
     if (m_has_vt_ui8)
     {
-        _outStream << "<vt:ui8>" << m_vt_ui8 << "</vt:ui8>";;
+        _outStream << "<vt:ui8>" << m_vt_ui8 << "</vt:ui8>";
     }
+    
     
     if (m_has_vt_uint)
     {
-        _outStream << "<vt:uint>" << m_vt_uint << "</vt:uint>";;
+        _outStream << "<vt:uint>" << m_vt_uint << "</vt:uint>";
     }
+    
     
     if (m_has_vt_r4)
     {
-        _outStream << "<vt:r4>" << m_vt_r4 << "</vt:r4>";;
+        _outStream << "<vt:r4>" << m_vt_r4 << "</vt:r4>";
     }
+    
     
     if (m_has_vt_r8)
     {
-        _outStream << "<vt:r8>" << m_vt_r8 << "</vt:r8>";;
+        _outStream << "<vt:r8>" << m_vt_r8 << "</vt:r8>";
     }
+    
     
     if (m_has_vt_decimal)
     {
-        _outStream << "<vt:decimal>" << m_vt_decimal << "</vt:decimal>";;
+        _outStream << "<vt:decimal>" << m_vt_decimal << "</vt:decimal>";
     }
+    
     
     if (m_has_vt_lpstr)
     {
-        _outStream << "<vt:lpstr>" << m_vt_lpstr << "</vt:lpstr>";;
+        _outStream << "<vt:lpstr>" << m_vt_lpstr << "</vt:lpstr>";
     }
+    
     
     if (m_has_vt_lpwstr)
     {
-        _outStream << "<vt:lpwstr>" << m_vt_lpwstr << "</vt:lpwstr>";;
+        _outStream << "<vt:lpwstr>" << m_vt_lpwstr << "</vt:lpwstr>";
     }
+    
     
     if (m_has_vt_bstr)
     {
-        _outStream << "<vt:bstr>" << m_vt_bstr << "</vt:bstr>";;
+        _outStream << "<vt:bstr>" << m_vt_bstr << "</vt:bstr>";
     }
+    
     
     if (m_has_vt_date)
     {
-        _outStream << "<vt:date>" << m_vt_date << "</vt:date>";;
+        _outStream << "<vt:date>" << m_vt_date << "</vt:date>";
     }
+    
     
     if (m_has_vt_filetime)
     {
-        _outStream << "<vt:filetime>" << m_vt_filetime << "</vt:filetime>";;
+        _outStream << "<vt:filetime>" << m_vt_filetime << "</vt:filetime>";
     }
+    
     
     if (m_has_vt_bool)
     {
-        _outStream << "<vt:bool>" << m_vt_bool << "</vt:bool>";;
+        _outStream << "<vt:bool>" << m_vt_bool << "</vt:bool>";
     }
+    
     
     if (m_has_vt_cy)
     {
-        _outStream << "<vt:cy>" << m_vt_cy->toString() << "</vt:cy>";;
+        _outStream << "<vt:cy>" << m_vt_cy->toString() << "</vt:cy>";
     }
+    
     
     if (m_has_vt_error)
     {
-        _outStream << "<vt:error>" << m_vt_error->toString() << "</vt:error>";;
+        _outStream << "<vt:error>" << m_vt_error->toString() << "</vt:error>";
     }
+    
     
     if (m_has_vt_stream)
     {
-        _outStream << "<vt:stream>" << m_vt_stream << "</vt:stream>";;
+        _outStream << "<vt:stream>" << m_vt_stream << "</vt:stream>";
     }
+    
     
     if (m_has_vt_ostream)
     {
-        _outStream << "<vt:ostream>" << m_vt_ostream << "</vt:ostream>";;
+        _outStream << "<vt:ostream>" << m_vt_ostream << "</vt:ostream>";
     }
+    
     
     if (m_has_vt_storage)
     {
-        _outStream << "<vt:storage>" << m_vt_storage << "</vt:storage>";;
+        _outStream << "<vt:storage>" << m_vt_storage << "</vt:storage>";
     }
+    
     
     if (m_has_vt_ostorage)
     {
-        _outStream << "<vt:ostorage>" << m_vt_ostorage << "</vt:ostorage>";;
+        _outStream << "<vt:ostorage>" << m_vt_ostorage << "</vt:ostorage>";
     }
+    
     
     if (m_has_vt_vstream)
     {
-        m_vt_vstream->toXmlElem("vt:vstream", "", _outStream);;
+        m_vt_vstream->toXmlElem("vt:vstream", "", _outStream);
     }
+    
     
     if (m_has_vt_clsid)
     {
-        _outStream << "<vt:clsid>" << m_vt_clsid->toString() << "</vt:clsid>";;
+        _outStream << "<vt:clsid>" << m_vt_clsid->toString() << "</vt:clsid>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -6009,10 +6044,13 @@ CT_Property* CT_Property::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_property())
-            {
-                (*iter)->get_property().toXmlElem("custom_properties:property", "", _outStream);
-            }
+    
+    if ((*iter)->has_property())
+    {
+        (*iter)->get_property().toXmlElem("custom_properties:property", "", _outStream);
+    }
+    
+    
         }
     }
     

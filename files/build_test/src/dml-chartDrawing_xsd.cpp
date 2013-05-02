@@ -169,12 +169,13 @@ ST_MarkerCoordinate* ST_MarkerCoordinate::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvSpPr)
     {
-        m_cNvSpPr->toXmlElem("cdr:cNvSpPr", "", _outStream);;
+        m_cNvSpPr->toXmlElem("cdr:cNvSpPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -397,22 +398,25 @@ CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
             
     if (m_has_nvSpPr)
     {
-        m_nvSpPr->toXmlElem("cdr:nvSpPr", "", _outStream);;
+        m_nvSpPr->toXmlElem("cdr:nvSpPr", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("cdr:spPr", "", _outStream);;
+        m_spPr->toXmlElem("cdr:spPr", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("cdr:style", "", _outStream);;
+        m_style->toXmlElem("cdr:style", "", _outStream);
     }
+    
     
     if (m_has_txBody)
     {
-        m_txBody->toXmlElem("cdr:txBody", "", _outStream);;
+        m_txBody->toXmlElem("cdr:txBody", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -586,12 +590,13 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvCxnSpPr)
     {
-        m_cNvCxnSpPr->toXmlElem("cdr:cNvCxnSpPr", "", _outStream);;
+        m_cNvCxnSpPr->toXmlElem("cdr:cNvCxnSpPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -757,17 +762,19 @@ CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
             
     if (m_has_nvCxnSpPr)
     {
-        m_nvCxnSpPr->toXmlElem("cdr:nvCxnSpPr", "", _outStream);;
+        m_nvCxnSpPr->toXmlElem("cdr:nvCxnSpPr", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("cdr:spPr", "", _outStream);;
+        m_spPr->toXmlElem("cdr:spPr", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("cdr:style", "", _outStream);;
+        m_style->toXmlElem("cdr:style", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -909,12 +916,13 @@ CT_Connector* CT_Connector::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvPicPr)
     {
-        m_cNvPicPr->toXmlElem("cdr:cNvPicPr", "", _outStream);;
+        m_cNvPicPr->toXmlElem("cdr:cNvPicPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1115,22 +1123,25 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
             
     if (m_has_nvPicPr)
     {
-        m_nvPicPr->toXmlElem("cdr:nvPicPr", "", _outStream);;
+        m_nvPicPr->toXmlElem("cdr:nvPicPr", "", _outStream);
     }
+    
     
     if (m_has_blipFill)
     {
-        m_blipFill->toXmlElem("cdr:blipFill", "", _outStream);;
+        m_blipFill->toXmlElem("cdr:blipFill", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("cdr:spPr", "", _outStream);;
+        m_spPr->toXmlElem("cdr:spPr", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("cdr:style", "", _outStream);;
+        m_style->toXmlElem("cdr:style", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1272,12 +1283,13 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvGraphicFramePr)
     {
-        m_cNvGraphicFramePr->toXmlElem("cdr:cNvGraphicFramePr", "", _outStream);;
+        m_cNvGraphicFramePr->toXmlElem("cdr:cNvGraphicFramePr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1443,17 +1455,19 @@ CT_GraphicFrameNonVisual* CT_GraphicFrameNonVisual::default_instance_ = NULL;
             
     if (m_has_nvGraphicFramePr)
     {
-        m_nvGraphicFramePr->toXmlElem("cdr:nvGraphicFramePr", "", _outStream);;
+        m_nvGraphicFramePr->toXmlElem("cdr:nvGraphicFramePr", "", _outStream);
     }
+    
     
     if (m_has_xfrm)
     {
-        m_xfrm->toXmlElem("cdr:xfrm", "", _outStream);;
+        m_xfrm->toXmlElem("cdr:xfrm", "", _outStream);
     }
+    
     
     if (m_has_a_graphic)
     {
-        m_a_graphic->toXmlElem("a:graphic", "", _outStream);;
+        m_a_graphic->toXmlElem("a:graphic", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1595,12 +1609,13 @@ CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
             
     if (m_has_cNvPr)
     {
-        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);;
+        m_cNvPr->toXmlElem("cdr:cNvPr", "", _outStream);
     }
+    
     
     if (m_has_cNvGrpSpPr)
     {
-        m_cNvGrpSpPr->toXmlElem("cdr:cNvGrpSpPr", "", _outStream);;
+        m_cNvGrpSpPr->toXmlElem("cdr:cNvGrpSpPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -1759,38 +1774,54 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
             
     if (m_has_nvGrpSpPr)
     {
-        m_nvGrpSpPr->toXmlElem("cdr:nvGrpSpPr", "", _outStream);;
+        m_nvGrpSpPr->toXmlElem("cdr:nvGrpSpPr", "", _outStream);
     }
+    
     
     if (m_has_grpSpPr)
     {
-        m_grpSpPr->toXmlElem("cdr:grpSpPr", "", _outStream);;
+        m_grpSpPr->toXmlElem("cdr:grpSpPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_sp())
-            {
-                (*iter)->get_sp().toXmlElem("cdr:sp", "", _outStream);
-            }
-            else if ((*iter)->has_grpSp())
-            {
-                (*iter)->get_grpSp().toXmlElem("cdr:grpSp", "", _outStream);
-            }
-            else if ((*iter)->has_graphicFrame())
-            {
-                (*iter)->get_graphicFrame().toXmlElem("cdr:graphicFrame", "", _outStream);
-            }
-            else if ((*iter)->has_cxnSp())
-            {
-                (*iter)->get_cxnSp().toXmlElem("cdr:cxnSp", "", _outStream);
-            }
-            else if ((*iter)->has_pic())
-            {
-                (*iter)->get_pic().toXmlElem("cdr:pic", "", _outStream);
-            }
+    
+    if ((*iter)->has_sp())
+    {
+        (*iter)->get_sp().toXmlElem("cdr:sp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_grpSp())
+    {
+        (*iter)->get_grpSp().toXmlElem("cdr:grpSp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_graphicFrame())
+    {
+        (*iter)->get_graphicFrame().toXmlElem("cdr:graphicFrame", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_cxnSp())
+    {
+        (*iter)->get_cxnSp().toXmlElem("cdr:cxnSp", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pic())
+    {
+        (*iter)->get_pic().toXmlElem("cdr:pic", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -2221,12 +2252,13 @@ CT_GroupShape* CT_GroupShape::default_instance_ = NULL;
             
     if (m_has_x)
     {
-        _outStream << "<cdr:x>" << m_x->toString() << "</cdr:x>";;
+        _outStream << "<cdr:x>" << m_x->toString() << "</cdr:x>";
     }
+    
     
     if (m_has_y)
     {
-        _outStream << "<cdr:y>" << m_y->toString() << "</cdr:y>";;
+        _outStream << "<cdr:y>" << m_y->toString() << "</cdr:y>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -2696,37 +2728,42 @@ CT_Marker* CT_Marker::default_instance_ = NULL;
             
     if (m_has_from)
     {
-        m_from->toXmlElem("cdr:from", "", _outStream);;
+        m_from->toXmlElem("cdr:from", "", _outStream);
     }
+    
     
     if (m_has_to)
     {
-        m_to->toXmlElem("cdr:to", "", _outStream);;
+        m_to->toXmlElem("cdr:to", "", _outStream);
     }
      
     if (m_has_sp)
     {
-        m_sp->toXmlElem("cdr:sp", "", _outStream);;
+        m_sp->toXmlElem("cdr:sp", "", _outStream);
     }
+    
     
     if (m_has_grpSp)
     {
-        m_grpSp->toXmlElem("cdr:grpSp", "", _outStream);;
+        m_grpSp->toXmlElem("cdr:grpSp", "", _outStream);
     }
+    
     
     if (m_has_graphicFrame)
     {
-        m_graphicFrame->toXmlElem("cdr:graphicFrame", "", _outStream);;
+        m_graphicFrame->toXmlElem("cdr:graphicFrame", "", _outStream);
     }
+    
     
     if (m_has_cxnSp)
     {
-        m_cxnSp->toXmlElem("cdr:cxnSp", "", _outStream);;
+        m_cxnSp->toXmlElem("cdr:cxnSp", "", _outStream);
     }
+    
     
     if (m_has_pic)
     {
-        m_pic->toXmlElem("cdr:pic", "", _outStream);;
+        m_pic->toXmlElem("cdr:pic", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3196,37 +3233,42 @@ CT_RelSizeAnchor* CT_RelSizeAnchor::default_instance_ = NULL;
             
     if (m_has_from)
     {
-        m_from->toXmlElem("cdr:from", "", _outStream);;
+        m_from->toXmlElem("cdr:from", "", _outStream);
     }
+    
     
     if (m_has_ext)
     {
-        m_ext->toXmlElem("cdr:ext", "", _outStream);;
+        m_ext->toXmlElem("cdr:ext", "", _outStream);
     }
      
     if (m_has_sp)
     {
-        m_sp->toXmlElem("cdr:sp", "", _outStream);;
+        m_sp->toXmlElem("cdr:sp", "", _outStream);
     }
+    
     
     if (m_has_grpSp)
     {
-        m_grpSp->toXmlElem("cdr:grpSp", "", _outStream);;
+        m_grpSp->toXmlElem("cdr:grpSp", "", _outStream);
     }
+    
     
     if (m_has_graphicFrame)
     {
-        m_graphicFrame->toXmlElem("cdr:graphicFrame", "", _outStream);;
+        m_graphicFrame->toXmlElem("cdr:graphicFrame", "", _outStream);
     }
+    
     
     if (m_has_cxnSp)
     {
-        m_cxnSp->toXmlElem("cdr:cxnSp", "", _outStream);;
+        m_cxnSp->toXmlElem("cdr:cxnSp", "", _outStream);
     }
+    
     
     if (m_has_pic)
     {
-        m_pic->toXmlElem("cdr:pic", "", _outStream);;
+        m_pic->toXmlElem("cdr:pic", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -3294,14 +3336,20 @@ CT_AbsSizeAnchor* CT_AbsSizeAnchor::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_relSizeAnchor())
-            {
-                (*iter)->get_relSizeAnchor().toXmlElem("cdr:relSizeAnchor", "", _outStream);
-            }
-            else if ((*iter)->has_absSizeAnchor())
-            {
-                (*iter)->get_absSizeAnchor().toXmlElem("cdr:absSizeAnchor", "", _outStream);
-            }
+    
+    if ((*iter)->has_relSizeAnchor())
+    {
+        (*iter)->get_relSizeAnchor().toXmlElem("cdr:relSizeAnchor", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_absSizeAnchor())
+    {
+        (*iter)->get_absSizeAnchor().toXmlElem("cdr:absSizeAnchor", "", _outStream);
+    }
+    
+    
         }
     }
     

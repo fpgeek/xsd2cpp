@@ -115,10 +115,13 @@ CT_DatastoreSchemaRef* CT_DatastoreSchemaRef::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_schemaRef())
-            {
-                (*iter)->get_schemaRef().toXmlElem("customXml:schemaRef", "", _outStream);
-            }
+    
+    if ((*iter)->has_schemaRef())
+    {
+        (*iter)->get_schemaRef().toXmlElem("customXml:schemaRef", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -242,7 +245,7 @@ CT_DatastoreSchemaRefs* CT_DatastoreSchemaRefs::default_instance_ = NULL;
             
     if (m_has_schemaRefs)
     {
-        m_schemaRefs->toXmlElem("customXml:schemaRefs", "", _outStream);;
+        m_schemaRefs->toXmlElem("customXml:schemaRefs", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -351,7 +354,7 @@ CT_DatastoreItem* CT_DatastoreItem::default_instance_ = NULL;
     
     if (m_has_schemaRefs)
     {
-        m_schemaRefs->toXmlElem("customXml:schemaRefs", "", _outStream);;
+        m_schemaRefs->toXmlElem("customXml:schemaRefs", "", _outStream);
     }
     
     _outStream << "</customXml:datastoreItem>";

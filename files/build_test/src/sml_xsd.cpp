@@ -6447,18 +6447,27 @@ ST_TargetScreenSize* ST_TargetScreenSize::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_filterColumn())
-            {
-                (*iter)->get_filterColumn().toXmlElem("main:filterColumn", "", _outStream);
-            }
-            else if ((*iter)->has_sortState())
-            {
-                (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_filterColumn())
+    {
+        (*iter)->get_filterColumn().toXmlElem("main:filterColumn", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sortState())
+    {
+        (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -7321,37 +7330,43 @@ CT_AutoFilter* CT_AutoFilter::default_instance_ = NULL;
             
     if (m_has_filters)
     {
-        m_filters->toXmlElem("main:filters", "", _outStream);;
+        m_filters->toXmlElem("main:filters", "", _outStream);
     }
+    
     
     if (m_has_top10)
     {
-        m_top10->toXmlElem("main:top10", "", _outStream);;
+        m_top10->toXmlElem("main:top10", "", _outStream);
     }
+    
     
     if (m_has_customFilters)
     {
-        m_customFilters->toXmlElem("main:customFilters", "", _outStream);;
+        m_customFilters->toXmlElem("main:customFilters", "", _outStream);
     }
+    
     
     if (m_has_dynamicFilter)
     {
-        m_dynamicFilter->toXmlElem("main:dynamicFilter", "", _outStream);;
+        m_dynamicFilter->toXmlElem("main:dynamicFilter", "", _outStream);
     }
+    
     
     if (m_has_colorFilter)
     {
-        m_colorFilter->toXmlElem("main:colorFilter", "", _outStream);;
+        m_colorFilter->toXmlElem("main:colorFilter", "", _outStream);
     }
+    
     
     if (m_has_iconFilter)
     {
-        m_iconFilter->toXmlElem("main:iconFilter", "", _outStream);;
+        m_iconFilter->toXmlElem("main:iconFilter", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -7493,14 +7508,20 @@ CT_FilterColumn* CT_FilterColumn::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_filter())
-            {
-                (*iter)->get_filter().toXmlElem("main:filter", "", _outStream);
-            }
-            else if ((*iter)->has_dateGroupItem())
-            {
-                (*iter)->get_dateGroupItem().toXmlElem("main:dateGroupItem", "", _outStream);
-            }
+    
+    if ((*iter)->has_filter())
+    {
+        (*iter)->get_filter().toXmlElem("main:filter", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dateGroupItem())
+    {
+        (*iter)->get_dateGroupItem().toXmlElem("main:dateGroupItem", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -7754,10 +7775,13 @@ CT_Filter* CT_Filter::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_customFilter())
-            {
-                (*iter)->get_customFilter().toXmlElem("main:customFilter", "", _outStream);
-            }
+    
+    if ((*iter)->has_customFilter())
+    {
+        (*iter)->get_customFilter().toXmlElem("main:customFilter", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -8553,14 +8577,20 @@ CT_DynamicFilter* CT_DynamicFilter::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_sortCondition())
-            {
-                (*iter)->get_sortCondition().toXmlElem("main:sortCondition", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_sortCondition())
+    {
+        (*iter)->get_sortCondition().toXmlElem("main:sortCondition", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -9339,9 +9369,7 @@ CT_XStringElement* CT_XStringElement::default_instance_ = NULL;
             
     if (m_has__any)
     {
-        
-    m__any->toXml(_outStream);
-    ;
+        m__any->toXml(_outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9488,12 +9516,13 @@ CT_Extension* CT_Extension::default_instance_ = NULL;
             
     if (m_has_xdr_from)
     {
-        m_xdr_from->toXmlElem("xdr:from", "", _outStream);;
+        m_xdr_from->toXmlElem("xdr:from", "", _outStream);
     }
+    
     
     if (m_has_xdr_to)
     {
-        m_xdr_to->toXmlElem("xdr:to", "", _outStream);;
+        m_xdr_to->toXmlElem("xdr:to", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9585,10 +9614,13 @@ CT_ObjectAnchor* CT_ObjectAnchor::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ext())
-            {
-                (*iter)->get_ext().toXmlElem("main:ext", "", _outStream);
-            }
+    
+    if ((*iter)->has_ext())
+    {
+        (*iter)->get_ext().toXmlElem("main:ext", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -9689,14 +9721,20 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_c())
-            {
-                (*iter)->get_c().toXmlElem("main:c", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_c())
+    {
+        (*iter)->get_c().toXmlElem("main:c", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -10162,17 +10200,19 @@ CT_CalcCell* CT_CalcCell::default_instance_ = NULL;
             
     if (m_has_authors)
     {
-        m_authors->toXmlElem("main:authors", "", _outStream);;
+        m_authors->toXmlElem("main:authors", "", _outStream);
     }
+    
     
     if (m_has_commentList)
     {
-        m_commentList->toXmlElem("main:commentList", "", _outStream);;
+        m_commentList->toXmlElem("main:commentList", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10232,10 +10272,13 @@ CT_Comments* CT_Comments::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_author())
-            {
-                _outStream << "<main:author>" << (*iter)->get_author().toString() << "</main:author>";
-            }
+    
+    if ((*iter)->has_author())
+    {
+        _outStream << "<main:author>" << (*iter)->get_author().toString() << "</main:author>";
+    }
+    
+    
         }
     }
     
@@ -10328,10 +10371,13 @@ CT_Authors* CT_Authors::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_comment())
-            {
-                (*iter)->get_comment().toXmlElem("main:comment", "", _outStream);
-            }
+    
+    if ((*iter)->has_comment())
+    {
+        (*iter)->get_comment().toXmlElem("main:comment", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -10529,12 +10575,13 @@ CT_CommentList* CT_CommentList::default_instance_ = NULL;
             
     if (m_has_text)
     {
-        m_text->toXmlElem("main:text", "", _outStream);;
+        m_text->toXmlElem("main:text", "", _outStream);
     }
+    
     
     if (m_has_commentPr)
     {
-        m_commentPr->toXmlElem("main:commentPr", "", _outStream);;
+        m_commentPr->toXmlElem("main:commentPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10830,7 +10877,7 @@ CT_Comment* CT_Comment::default_instance_ = NULL;
             
     if (m_has_anchor)
     {
-        m_anchor->toXmlElem("main:anchor", "", _outStream);;
+        m_anchor->toXmlElem("main:anchor", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11111,14 +11158,20 @@ CT_CommentPr* CT_CommentPr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_Schema())
-            {
-                (*iter)->get_Schema().toXmlElem("main:Schema", "", _outStream);
-            }
-            else if ((*iter)->has_Map())
-            {
-                (*iter)->get_Map().toXmlElem("main:Map", "", _outStream);
-            }
+    
+    if ((*iter)->has_Schema())
+    {
+        (*iter)->get_Schema().toXmlElem("main:Schema", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Map())
+    {
+        (*iter)->get_Map().toXmlElem("main:Map", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -11297,9 +11350,7 @@ CT_MapInfo* CT_MapInfo::default_instance_ = NULL;
             
     if (m_has__any)
     {
-        
-    m__any->toXml(_outStream);
-    ;
+        m__any->toXml(_outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11536,7 +11587,7 @@ CT_Schema* CT_Schema::default_instance_ = NULL;
             
     if (m_has_DataBinding)
     {
-        m_DataBinding->toXmlElem("main:DataBinding", "", _outStream);;
+        m_DataBinding->toXmlElem("main:DataBinding", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11776,9 +11827,7 @@ CT_Map* CT_Map::default_instance_ = NULL;
             
     if (m_has__any)
     {
-        
-    m__any->toXml(_outStream);
-    ;
+        m__any->toXml(_outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11918,10 +11967,13 @@ CT_DataBinding* CT_DataBinding::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_connection())
-            {
-                (*iter)->get_connection().toXmlElem("main:connection", "", _outStream);
-            }
+    
+    if ((*iter)->has_connection())
+    {
+        (*iter)->get_connection().toXmlElem("main:connection", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -12459,32 +12511,37 @@ CT_Connections* CT_Connections::default_instance_ = NULL;
             
     if (m_has_dbPr)
     {
-        m_dbPr->toXmlElem("main:dbPr", "", _outStream);;
+        m_dbPr->toXmlElem("main:dbPr", "", _outStream);
     }
+    
     
     if (m_has_olapPr)
     {
-        m_olapPr->toXmlElem("main:olapPr", "", _outStream);;
+        m_olapPr->toXmlElem("main:olapPr", "", _outStream);
     }
+    
     
     if (m_has_webPr)
     {
-        m_webPr->toXmlElem("main:webPr", "", _outStream);;
+        m_webPr->toXmlElem("main:webPr", "", _outStream);
     }
+    
     
     if (m_has_textPr)
     {
-        m_textPr->toXmlElem("main:textPr", "", _outStream);;
+        m_textPr->toXmlElem("main:textPr", "", _outStream);
     }
+    
     
     if (m_has_parameters)
     {
-        m_parameters->toXmlElem("main:parameters", "", _outStream);;
+        m_parameters->toXmlElem("main:parameters", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -13528,7 +13585,7 @@ CT_OlapPr* CT_OlapPr::default_instance_ = NULL;
             
     if (m_has_tables)
     {
-        m_tables->toXmlElem("main:tables", "", _outStream);;
+        m_tables->toXmlElem("main:tables", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -13821,10 +13878,13 @@ CT_WebPr* CT_WebPr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_parameter())
-            {
-                (*iter)->get_parameter().toXmlElem("main:parameter", "", _outStream);
-            }
+    
+    if ((*iter)->has_parameter())
+    {
+        (*iter)->get_parameter().toXmlElem("main:parameter", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -14312,18 +14372,27 @@ CT_Parameter* CT_Parameter::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_m())
-            {
-                (*iter)->get_m().toXmlElem("main:m", "", _outStream);
-            }
-            else if ((*iter)->has_s())
-            {
-                (*iter)->get_s().toXmlElem("main:s", "", _outStream);
-            }
-            else if ((*iter)->has_x())
-            {
-                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
-            }
+    
+    if ((*iter)->has_m())
+    {
+        (*iter)->get_m().toXmlElem("main:m", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_s())
+    {
+        (*iter)->get_s().toXmlElem("main:s", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x())
+    {
+        (*iter)->get_x().toXmlElem("main:x", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -14802,7 +14871,7 @@ CT_TableMissing* CT_TableMissing::default_instance_ = NULL;
             
     if (m_has_textFields)
     {
-        m_textFields->toXmlElem("main:textFields", "", _outStream);;
+        m_textFields->toXmlElem("main:textFields", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -15151,10 +15220,13 @@ CT_TextPr* CT_TextPr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_textField())
-            {
-                (*iter)->get_textField().toXmlElem("main:textField", "", _outStream);
-            }
+    
+    if ((*iter)->has_textField())
+    {
+        (*iter)->get_textField().toXmlElem("main:textField", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -15946,57 +16018,67 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
             
     if (m_has_cacheSource)
     {
-        m_cacheSource->toXmlElem("main:cacheSource", "", _outStream);;
+        m_cacheSource->toXmlElem("main:cacheSource", "", _outStream);
     }
+    
     
     if (m_has_cacheFields)
     {
-        m_cacheFields->toXmlElem("main:cacheFields", "", _outStream);;
+        m_cacheFields->toXmlElem("main:cacheFields", "", _outStream);
     }
+    
     
     if (m_has_cacheHierarchies)
     {
-        m_cacheHierarchies->toXmlElem("main:cacheHierarchies", "", _outStream);;
+        m_cacheHierarchies->toXmlElem("main:cacheHierarchies", "", _outStream);
     }
+    
     
     if (m_has_kpis)
     {
-        m_kpis->toXmlElem("main:kpis", "", _outStream);;
+        m_kpis->toXmlElem("main:kpis", "", _outStream);
     }
+    
     
     if (m_has_tupleCache)
     {
-        m_tupleCache->toXmlElem("main:tupleCache", "", _outStream);;
+        m_tupleCache->toXmlElem("main:tupleCache", "", _outStream);
     }
+    
     
     if (m_has_calculatedItems)
     {
-        m_calculatedItems->toXmlElem("main:calculatedItems", "", _outStream);;
+        m_calculatedItems->toXmlElem("main:calculatedItems", "", _outStream);
     }
+    
     
     if (m_has_calculatedMembers)
     {
-        m_calculatedMembers->toXmlElem("main:calculatedMembers", "", _outStream);;
+        m_calculatedMembers->toXmlElem("main:calculatedMembers", "", _outStream);
     }
+    
     
     if (m_has_dimensions)
     {
-        m_dimensions->toXmlElem("main:dimensions", "", _outStream);;
+        m_dimensions->toXmlElem("main:dimensions", "", _outStream);
     }
+    
     
     if (m_has_measureGroups)
     {
-        m_measureGroups->toXmlElem("main:measureGroups", "", _outStream);;
+        m_measureGroups->toXmlElem("main:measureGroups", "", _outStream);
     }
+    
     
     if (m_has_maps)
     {
-        m_maps->toXmlElem("main:maps", "", _outStream);;
+        m_maps->toXmlElem("main:maps", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16377,10 +16459,13 @@ CT_PivotCacheDefinition* CT_PivotCacheDefinition::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cacheField())
-            {
-                (*iter)->get_cacheField().toXmlElem("main:cacheField", "", _outStream);
-            }
+    
+    if ((*iter)->has_cacheField())
+    {
+        (*iter)->get_cacheField().toXmlElem("main:cacheField", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -16736,26 +16821,33 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
             
     if (m_has_sharedItems)
     {
-        m_sharedItems->toXmlElem("main:sharedItems", "", _outStream);;
+        m_sharedItems->toXmlElem("main:sharedItems", "", _outStream);
     }
+    
     
     if (m_has_fieldGroup)
     {
-        m_fieldGroup->toXmlElem("main:fieldGroup", "", _outStream);;
+        m_fieldGroup->toXmlElem("main:fieldGroup", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_mpMap())
-            {
-                (*iter)->get_mpMap().toXmlElem("main:mpMap", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_mpMap())
+    {
+        (*iter)->get_mpMap().toXmlElem("main:mpMap", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -17290,17 +17382,19 @@ CT_CacheField* CT_CacheField::default_instance_ = NULL;
             
     if (m_has_worksheetSource)
     {
-        m_worksheetSource->toXmlElem("main:worksheetSource", "", _outStream);;
+        m_worksheetSource->toXmlElem("main:worksheetSource", "", _outStream);
     }
+    
     
     if (m_has_consolidation)
     {
-        m_consolidation->toXmlElem("main:consolidation", "", _outStream);;
+        m_consolidation->toXmlElem("main:consolidation", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17638,12 +17732,13 @@ CT_WorksheetSource* CT_WorksheetSource::default_instance_ = NULL;
             
     if (m_has_pages)
     {
-        m_pages->toXmlElem("main:pages", "", _outStream);;
+        m_pages->toXmlElem("main:pages", "", _outStream);
     }
+    
     
     if (m_has_rangeSets)
     {
-        m_rangeSets->toXmlElem("main:rangeSets", "", _outStream);;
+        m_rangeSets->toXmlElem("main:rangeSets", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17728,10 +17823,13 @@ CT_Consolidation* CT_Consolidation::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_page())
-            {
-                (*iter)->get_page().toXmlElem("main:page", "", _outStream);
-            }
+    
+    if ((*iter)->has_page())
+    {
+        (*iter)->get_page().toXmlElem("main:page", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -17849,10 +17947,13 @@ CT_Pages* CT_Pages::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_pageItem())
-            {
-                (*iter)->get_pageItem().toXmlElem("main:pageItem", "", _outStream);
-            }
+    
+    if ((*iter)->has_pageItem())
+    {
+        (*iter)->get_pageItem().toXmlElem("main:pageItem", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -18041,10 +18142,13 @@ CT_PageItem* CT_PageItem::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_rangeSet())
-            {
-                (*iter)->get_rangeSet().toXmlElem("main:rangeSet", "", _outStream);
-            }
+    
+    if ((*iter)->has_rangeSet())
+    {
+        (*iter)->get_rangeSet().toXmlElem("main:rangeSet", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -18635,30 +18739,48 @@ CT_RangeSet* CT_RangeSet::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_m())
-            {
-                (*iter)->get_m().toXmlElem("main:m", "", _outStream);
-            }
-            else if ((*iter)->has_n())
-            {
-                (*iter)->get_n().toXmlElem("main:n", "", _outStream);
-            }
-            else if ((*iter)->has_b())
-            {
-                (*iter)->get_b().toXmlElem("main:b", "", _outStream);
-            }
-            else if ((*iter)->has_e())
-            {
-                (*iter)->get_e().toXmlElem("main:e", "", _outStream);
-            }
-            else if ((*iter)->has_s())
-            {
-                (*iter)->get_s().toXmlElem("main:s", "", _outStream);
-            }
-            else if ((*iter)->has_d())
-            {
-                (*iter)->get_d().toXmlElem("main:d", "", _outStream);
-            }
+    
+    if ((*iter)->has_m())
+    {
+        (*iter)->get_m().toXmlElem("main:m", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_n())
+    {
+        (*iter)->get_n().toXmlElem("main:n", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_b())
+    {
+        (*iter)->get_b().toXmlElem("main:b", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_e())
+    {
+        (*iter)->get_e().toXmlElem("main:e", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_s())
+    {
+        (*iter)->get_s().toXmlElem("main:s", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_d())
+    {
+        (*iter)->get_d().toXmlElem("main:d", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -19525,14 +19647,20 @@ CT_SharedItems* CT_SharedItems::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tpls())
-            {
-                (*iter)->get_tpls().toXmlElem("main:tpls", "", _outStream);
-            }
-            else if ((*iter)->has_x())
-            {
-                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
-            }
+    
+    if ((*iter)->has_tpls())
+    {
+        (*iter)->get_tpls().toXmlElem("main:tpls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x())
+    {
+        (*iter)->get_x().toXmlElem("main:x", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -20014,14 +20142,20 @@ CT_Missing* CT_Missing::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tpls())
-            {
-                (*iter)->get_tpls().toXmlElem("main:tpls", "", _outStream);
-            }
-            else if ((*iter)->has_x())
-            {
-                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
-            }
+    
+    if ((*iter)->has_tpls())
+    {
+        (*iter)->get_tpls().toXmlElem("main:tpls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x())
+    {
+        (*iter)->get_x().toXmlElem("main:x", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -20422,10 +20556,13 @@ CT_Number* CT_Number::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_x())
-            {
-                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
-            }
+    
+    if ((*iter)->has_x())
+    {
+        (*iter)->get_x().toXmlElem("main:x", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -20789,17 +20926,20 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
             
     if (m_has_tpls)
     {
-        m_tpls->toXmlElem("main:tpls", "", _outStream);;
+        m_tpls->toXmlElem("main:tpls", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_x())
-            {
-                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
-            }
+    
+    if ((*iter)->has_x())
+    {
+        (*iter)->get_x().toXmlElem("main:x", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -21262,14 +21402,20 @@ CT_Error* CT_Error::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tpls())
-            {
-                (*iter)->get_tpls().toXmlElem("main:tpls", "", _outStream);
-            }
-            else if ((*iter)->has_x())
-            {
-                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
-            }
+    
+    if ((*iter)->has_tpls())
+    {
+        (*iter)->get_tpls().toXmlElem("main:tpls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x())
+    {
+        (*iter)->get_x().toXmlElem("main:x", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -21674,10 +21820,13 @@ CT_String* CT_String::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_x())
-            {
-                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
-            }
+    
+    if ((*iter)->has_x())
+    {
+        (*iter)->get_x().toXmlElem("main:x", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -21960,17 +22109,19 @@ CT_DateTime* CT_DateTime::default_instance_ = NULL;
             
     if (m_has_rangePr)
     {
-        m_rangePr->toXmlElem("main:rangePr", "", _outStream);;
+        m_rangePr->toXmlElem("main:rangePr", "", _outStream);
     }
+    
     
     if (m_has_discretePr)
     {
-        m_discretePr->toXmlElem("main:discretePr", "", _outStream);;
+        m_discretePr->toXmlElem("main:discretePr", "", _outStream);
     }
+    
     
     if (m_has_groupItems)
     {
-        m_groupItems->toXmlElem("main:groupItems", "", _outStream);;
+        m_groupItems->toXmlElem("main:groupItems", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -22331,10 +22482,13 @@ CT_RangePr* CT_RangePr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_x())
-            {
-                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
-            }
+    
+    if ((*iter)->has_x())
+    {
+        (*iter)->get_x().toXmlElem("main:x", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -22492,30 +22646,48 @@ CT_DiscretePr* CT_DiscretePr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_m())
-            {
-                (*iter)->get_m().toXmlElem("main:m", "", _outStream);
-            }
-            else if ((*iter)->has_n())
-            {
-                (*iter)->get_n().toXmlElem("main:n", "", _outStream);
-            }
-            else if ((*iter)->has_b())
-            {
-                (*iter)->get_b().toXmlElem("main:b", "", _outStream);
-            }
-            else if ((*iter)->has_e())
-            {
-                (*iter)->get_e().toXmlElem("main:e", "", _outStream);
-            }
-            else if ((*iter)->has_s())
-            {
-                (*iter)->get_s().toXmlElem("main:s", "", _outStream);
-            }
-            else if ((*iter)->has_d())
-            {
-                (*iter)->get_d().toXmlElem("main:d", "", _outStream);
-            }
+    
+    if ((*iter)->has_m())
+    {
+        (*iter)->get_m().toXmlElem("main:m", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_n())
+    {
+        (*iter)->get_n().toXmlElem("main:n", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_b())
+    {
+        (*iter)->get_b().toXmlElem("main:b", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_e())
+    {
+        (*iter)->get_e().toXmlElem("main:e", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_s())
+    {
+        (*iter)->get_s().toXmlElem("main:s", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_d())
+    {
+        (*iter)->get_d().toXmlElem("main:d", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -23046,14 +23218,20 @@ CT_GroupItems* CT_GroupItems::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_r())
-            {
-                (*iter)->get_r().toXmlElem("main:r", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_r())
+    {
+        (*iter)->get_r().toXmlElem("main:r", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -23255,34 +23433,55 @@ CT_PivotCacheRecords* CT_PivotCacheRecords::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_m())
-            {
-                (*iter)->get_m().toXmlElem("main:m", "", _outStream);
-            }
-            else if ((*iter)->has_n())
-            {
-                (*iter)->get_n().toXmlElem("main:n", "", _outStream);
-            }
-            else if ((*iter)->has_b())
-            {
-                (*iter)->get_b().toXmlElem("main:b", "", _outStream);
-            }
-            else if ((*iter)->has_e())
-            {
-                (*iter)->get_e().toXmlElem("main:e", "", _outStream);
-            }
-            else if ((*iter)->has_s())
-            {
-                (*iter)->get_s().toXmlElem("main:s", "", _outStream);
-            }
-            else if ((*iter)->has_d())
-            {
-                (*iter)->get_d().toXmlElem("main:d", "", _outStream);
-            }
-            else if ((*iter)->has_x())
-            {
-                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
-            }
+    
+    if ((*iter)->has_m())
+    {
+        (*iter)->get_m().toXmlElem("main:m", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_n())
+    {
+        (*iter)->get_n().toXmlElem("main:n", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_b())
+    {
+        (*iter)->get_b().toXmlElem("main:b", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_e())
+    {
+        (*iter)->get_e().toXmlElem("main:e", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_s())
+    {
+        (*iter)->get_s().toXmlElem("main:s", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_d())
+    {
+        (*iter)->get_d().toXmlElem("main:d", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_x())
+    {
+        (*iter)->get_x().toXmlElem("main:x", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -23924,10 +24123,13 @@ CT_Record* CT_Record::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_kpi())
-            {
-                (*iter)->get_kpi().toXmlElem("main:kpi", "", _outStream);
-            }
+    
+    if ((*iter)->has_kpi())
+    {
+        (*iter)->get_kpi().toXmlElem("main:kpi", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -24486,10 +24688,13 @@ CT_PCDKPI* CT_PCDKPI::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cacheHierarchy())
-            {
-                (*iter)->get_cacheHierarchy().toXmlElem("main:cacheHierarchy", "", _outStream);
-            }
+    
+    if ((*iter)->has_cacheHierarchy())
+    {
+        (*iter)->get_cacheHierarchy().toXmlElem("main:cacheHierarchy", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -24972,17 +25177,19 @@ CT_CacheHierarchies* CT_CacheHierarchies::default_instance_ = NULL;
             
     if (m_has_fieldsUsage)
     {
-        m_fieldsUsage->toXmlElem("main:fieldsUsage", "", _outStream);;
+        m_fieldsUsage->toXmlElem("main:fieldsUsage", "", _outStream);
     }
+    
     
     if (m_has_groupLevels)
     {
-        m_groupLevels->toXmlElem("main:groupLevels", "", _outStream);;
+        m_groupLevels->toXmlElem("main:groupLevels", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -25435,10 +25642,13 @@ CT_CacheHierarchy* CT_CacheHierarchy::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_fieldUsage())
-            {
-                (*iter)->get_fieldUsage().toXmlElem("main:fieldUsage", "", _outStream);
-            }
+    
+    if ((*iter)->has_fieldUsage())
+    {
+        (*iter)->get_fieldUsage().toXmlElem("main:fieldUsage", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -25617,10 +25827,13 @@ CT_FieldUsage* CT_FieldUsage::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_groupLevel())
-            {
-                (*iter)->get_groupLevel().toXmlElem("main:groupLevel", "", _outStream);
-            }
+    
+    if ((*iter)->has_groupLevel())
+    {
+        (*iter)->get_groupLevel().toXmlElem("main:groupLevel", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -25834,12 +26047,13 @@ CT_GroupLevels* CT_GroupLevels::default_instance_ = NULL;
             
     if (m_has_groups)
     {
-        m_groups->toXmlElem("main:groups", "", _outStream);;
+        m_groups->toXmlElem("main:groups", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -25980,10 +26194,13 @@ CT_GroupLevel* CT_GroupLevel::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_group())
-            {
-                (*iter)->get_group().toXmlElem("main:group", "", _outStream);
-            }
+    
+    if ((*iter)->has_group())
+    {
+        (*iter)->get_group().toXmlElem("main:group", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -26185,7 +26402,7 @@ CT_Groups* CT_Groups::default_instance_ = NULL;
             
     if (m_has_groupMembers)
     {
-        m_groupMembers->toXmlElem("main:groupMembers", "", _outStream);;
+        m_groupMembers->toXmlElem("main:groupMembers", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -26350,10 +26567,13 @@ CT_LevelGroup* CT_LevelGroup::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_groupMember())
-            {
-                (*iter)->get_groupMember().toXmlElem("main:groupMember", "", _outStream);
-            }
+    
+    if ((*iter)->has_groupMember())
+    {
+        (*iter)->get_groupMember().toXmlElem("main:groupMember", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -26715,27 +26935,31 @@ CT_GroupMember* CT_GroupMember::default_instance_ = NULL;
             
     if (m_has_entries)
     {
-        m_entries->toXmlElem("main:entries", "", _outStream);;
+        m_entries->toXmlElem("main:entries", "", _outStream);
     }
+    
     
     if (m_has_sets)
     {
-        m_sets->toXmlElem("main:sets", "", _outStream);;
+        m_sets->toXmlElem("main:sets", "", _outStream);
     }
+    
     
     if (m_has_queryCache)
     {
-        m_queryCache->toXmlElem("main:queryCache", "", _outStream);;
+        m_queryCache->toXmlElem("main:queryCache", "", _outStream);
     }
+    
     
     if (m_has_serverFormats)
     {
-        m_serverFormats->toXmlElem("main:serverFormats", "", _outStream);;
+        m_serverFormats->toXmlElem("main:serverFormats", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -26912,10 +27136,13 @@ CT_ServerFormat* CT_ServerFormat::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_serverFormat())
-            {
-                (*iter)->get_serverFormat().toXmlElem("main:serverFormat", "", _outStream);
-            }
+    
+    if ((*iter)->has_serverFormat())
+    {
+        (*iter)->get_serverFormat().toXmlElem("main:serverFormat", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -27057,22 +27284,34 @@ CT_ServerFormats* CT_ServerFormats::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_m())
-            {
-                (*iter)->get_m().toXmlElem("main:m", "", _outStream);
-            }
-            else if ((*iter)->has_n())
-            {
-                (*iter)->get_n().toXmlElem("main:n", "", _outStream);
-            }
-            else if ((*iter)->has_e())
-            {
-                (*iter)->get_e().toXmlElem("main:e", "", _outStream);
-            }
-            else if ((*iter)->has_s())
-            {
-                (*iter)->get_s().toXmlElem("main:s", "", _outStream);
-            }
+    
+    if ((*iter)->has_m())
+    {
+        (*iter)->get_m().toXmlElem("main:m", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_n())
+    {
+        (*iter)->get_n().toXmlElem("main:n", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_e())
+    {
+        (*iter)->get_e().toXmlElem("main:e", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_s())
+    {
+        (*iter)->get_s().toXmlElem("main:s", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -27379,10 +27618,13 @@ CT_PCDSDTCEntries* CT_PCDSDTCEntries::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tpl())
-            {
-                (*iter)->get_tpl().toXmlElem("main:tpl", "", _outStream);
-            }
+    
+    if ((*iter)->has_tpl())
+    {
+        (*iter)->get_tpl().toXmlElem("main:tpl", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -27615,10 +27857,13 @@ CT_Tuple* CT_Tuple::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_set())
-            {
-                (*iter)->get_set().toXmlElem("main:set", "", _outStream);
-            }
+    
+    if ((*iter)->has_set())
+    {
+        (*iter)->get_set().toXmlElem("main:set", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -27800,14 +28045,20 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tpls())
-            {
-                (*iter)->get_tpls().toXmlElem("main:tpls", "", _outStream);
-            }
-            else if ((*iter)->has_sortByTuple())
-            {
-                (*iter)->get_sortByTuple().toXmlElem("main:sortByTuple", "", _outStream);
-            }
+    
+    if ((*iter)->has_tpls())
+    {
+        (*iter)->get_tpls().toXmlElem("main:tpls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sortByTuple())
+    {
+        (*iter)->get_sortByTuple().toXmlElem("main:sortByTuple", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -28042,10 +28293,13 @@ CT_Set* CT_Set::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_query())
-            {
-                (*iter)->get_query().toXmlElem("main:query", "", _outStream);
-            }
+    
+    if ((*iter)->has_query())
+    {
+        (*iter)->get_query().toXmlElem("main:query", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -28185,7 +28439,7 @@ CT_QueryCache* CT_QueryCache::default_instance_ = NULL;
             
     if (m_has_tpls)
     {
-        m_tpls->toXmlElem("main:tpls", "", _outStream);;
+        m_tpls->toXmlElem("main:tpls", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -28274,10 +28528,13 @@ CT_Query* CT_Query::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_calculatedItem())
-            {
-                (*iter)->get_calculatedItem().toXmlElem("main:calculatedItem", "", _outStream);
-            }
+    
+    if ((*iter)->has_calculatedItem())
+    {
+        (*iter)->get_calculatedItem().toXmlElem("main:calculatedItem", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -28463,12 +28720,13 @@ CT_CalculatedItems* CT_CalculatedItems::default_instance_ = NULL;
             
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);;
+        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -28573,10 +28831,13 @@ CT_CalculatedItem* CT_CalculatedItem::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_calculatedMember())
-            {
-                (*iter)->get_calculatedMember().toXmlElem("main:calculatedMember", "", _outStream);
-            }
+    
+    if ((*iter)->has_calculatedMember())
+    {
+        (*iter)->get_calculatedMember().toXmlElem("main:calculatedMember", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -28806,7 +29067,7 @@ CT_CalculatedMembers* CT_CalculatedMembers::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -30386,87 +30647,103 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
             
     if (m_has_location)
     {
-        m_location->toXmlElem("main:location", "", _outStream);;
+        m_location->toXmlElem("main:location", "", _outStream);
     }
+    
     
     if (m_has_pivotFields)
     {
-        m_pivotFields->toXmlElem("main:pivotFields", "", _outStream);;
+        m_pivotFields->toXmlElem("main:pivotFields", "", _outStream);
     }
+    
     
     if (m_has_rowFields)
     {
-        m_rowFields->toXmlElem("main:rowFields", "", _outStream);;
+        m_rowFields->toXmlElem("main:rowFields", "", _outStream);
     }
+    
     
     if (m_has_rowItems)
     {
-        m_rowItems->toXmlElem("main:rowItems", "", _outStream);;
+        m_rowItems->toXmlElem("main:rowItems", "", _outStream);
     }
+    
     
     if (m_has_colFields)
     {
-        m_colFields->toXmlElem("main:colFields", "", _outStream);;
+        m_colFields->toXmlElem("main:colFields", "", _outStream);
     }
+    
     
     if (m_has_colItems)
     {
-        m_colItems->toXmlElem("main:colItems", "", _outStream);;
+        m_colItems->toXmlElem("main:colItems", "", _outStream);
     }
+    
     
     if (m_has_pageFields)
     {
-        m_pageFields->toXmlElem("main:pageFields", "", _outStream);;
+        m_pageFields->toXmlElem("main:pageFields", "", _outStream);
     }
+    
     
     if (m_has_dataFields)
     {
-        m_dataFields->toXmlElem("main:dataFields", "", _outStream);;
+        m_dataFields->toXmlElem("main:dataFields", "", _outStream);
     }
+    
     
     if (m_has_formats)
     {
-        m_formats->toXmlElem("main:formats", "", _outStream);;
+        m_formats->toXmlElem("main:formats", "", _outStream);
     }
+    
     
     if (m_has_conditionalFormats)
     {
-        m_conditionalFormats->toXmlElem("main:conditionalFormats", "", _outStream);;
+        m_conditionalFormats->toXmlElem("main:conditionalFormats", "", _outStream);
     }
+    
     
     if (m_has_chartFormats)
     {
-        m_chartFormats->toXmlElem("main:chartFormats", "", _outStream);;
+        m_chartFormats->toXmlElem("main:chartFormats", "", _outStream);
     }
+    
     
     if (m_has_pivotHierarchies)
     {
-        m_pivotHierarchies->toXmlElem("main:pivotHierarchies", "", _outStream);;
+        m_pivotHierarchies->toXmlElem("main:pivotHierarchies", "", _outStream);
     }
+    
     
     if (m_has_pivotTableStyleInfo)
     {
-        m_pivotTableStyleInfo->toXmlElem("main:pivotTableStyleInfo", "", _outStream);;
+        m_pivotTableStyleInfo->toXmlElem("main:pivotTableStyleInfo", "", _outStream);
     }
+    
     
     if (m_has_filters)
     {
-        m_filters->toXmlElem("main:filters", "", _outStream);;
+        m_filters->toXmlElem("main:filters", "", _outStream);
     }
+    
     
     if (m_has_rowHierarchiesUsage)
     {
-        m_rowHierarchiesUsage->toXmlElem("main:rowHierarchiesUsage", "", _outStream);;
+        m_rowHierarchiesUsage->toXmlElem("main:rowHierarchiesUsage", "", _outStream);
     }
+    
     
     if (m_has_colHierarchiesUsage)
     {
-        m_colHierarchiesUsage->toXmlElem("main:colHierarchiesUsage", "", _outStream);;
+        m_colHierarchiesUsage->toXmlElem("main:colHierarchiesUsage", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -31873,10 +32150,13 @@ CT_Location* CT_Location::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_pivotField())
-            {
-                (*iter)->get_pivotField().toXmlElem("main:pivotField", "", _outStream);
-            }
+    
+    if ((*iter)->has_pivotField())
+    {
+        (*iter)->get_pivotField().toXmlElem("main:pivotField", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -32633,17 +32913,19 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
             
     if (m_has_items)
     {
-        m_items->toXmlElem("main:items", "", _outStream);;
+        m_items->toXmlElem("main:items", "", _outStream);
     }
+    
     
     if (m_has_autoSortScope)
     {
-        m_autoSortScope->toXmlElem("main:autoSortScope", "", _outStream);;
+        m_autoSortScope->toXmlElem("main:autoSortScope", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -33510,7 +33792,7 @@ CT_PivotField* CT_PivotField::default_instance_ = NULL;
             
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);;
+        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -33579,10 +33861,13 @@ CT_AutoSortScope* CT_AutoSortScope::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_item())
-            {
-                (*iter)->get_item().toXmlElem("main:item", "", _outStream);
-            }
+    
+    if ((*iter)->has_item())
+    {
+        (*iter)->get_item().toXmlElem("main:item", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -34051,10 +34336,13 @@ CT_Item* CT_Item::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_pageField())
-            {
-                (*iter)->get_pageField().toXmlElem("main:pageField", "", _outStream);
-            }
+    
+    if ((*iter)->has_pageField())
+    {
+        (*iter)->get_pageField().toXmlElem("main:pageField", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -34244,7 +34532,7 @@ CT_PageFields* CT_PageFields::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -34401,10 +34689,13 @@ CT_PageField* CT_PageField::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_dataField())
-            {
-                (*iter)->get_dataField().toXmlElem("main:dataField", "", _outStream);
-            }
+    
+    if ((*iter)->has_dataField())
+    {
+        (*iter)->get_dataField().toXmlElem("main:dataField", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -34628,7 +34919,7 @@ CT_DataFields* CT_DataFields::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -34825,10 +35116,13 @@ CT_DataField* CT_DataField::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_i())
-            {
-                (*iter)->get_i().toXmlElem("main:i", "", _outStream);
-            }
+    
+    if ((*iter)->has_i())
+    {
+        (*iter)->get_i().toXmlElem("main:i", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -34946,10 +35240,13 @@ CT_rowItems* CT_rowItems::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_i())
-            {
-                (*iter)->get_i().toXmlElem("main:i", "", _outStream);
-            }
+    
+    if ((*iter)->has_i())
+    {
+        (*iter)->get_i().toXmlElem("main:i", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -35095,10 +35392,13 @@ CT_colItems* CT_colItems::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_x())
-            {
-                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
-            }
+    
+    if ((*iter)->has_x())
+    {
+        (*iter)->get_x().toXmlElem("main:x", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -35313,10 +35613,13 @@ CT_X* CT_X::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_field())
-            {
-                (*iter)->get_field().toXmlElem("main:field", "", _outStream);
-            }
+    
+    if ((*iter)->has_field())
+    {
+        (*iter)->get_field().toXmlElem("main:field", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -35434,10 +35737,13 @@ CT_RowFields* CT_RowFields::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_field())
-            {
-                (*iter)->get_field().toXmlElem("main:field", "", _outStream);
-            }
+    
+    if ((*iter)->has_field())
+    {
+        (*iter)->get_field().toXmlElem("main:field", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -35616,10 +35922,13 @@ CT_Field* CT_Field::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_format())
-            {
-                (*iter)->get_format().toXmlElem("main:format", "", _outStream);
-            }
+    
+    if ((*iter)->has_format())
+    {
+        (*iter)->get_format().toXmlElem("main:format", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -35811,12 +36120,13 @@ CT_Formats* CT_Formats::default_instance_ = NULL;
             
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);;
+        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -35925,10 +36235,13 @@ CT_Format* CT_Format::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_conditionalFormat())
-            {
-                (*iter)->get_conditionalFormat().toXmlElem("main:conditionalFormat", "", _outStream);
-            }
+    
+    if ((*iter)->has_conditionalFormat())
+    {
+        (*iter)->get_conditionalFormat().toXmlElem("main:conditionalFormat", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -36131,12 +36444,13 @@ CT_ConditionalFormats* CT_ConditionalFormats::default_instance_ = NULL;
             
     if (m_has_pivotAreas)
     {
-        m_pivotAreas->toXmlElem("main:pivotAreas", "", _outStream);;
+        m_pivotAreas->toXmlElem("main:pivotAreas", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -36261,10 +36575,13 @@ CT_ConditionalFormat* CT_ConditionalFormat::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_pivotArea())
-            {
-                (*iter)->get_pivotArea().toXmlElem("main:pivotArea", "", _outStream);
-            }
+    
+    if ((*iter)->has_pivotArea())
+    {
+        (*iter)->get_pivotArea().toXmlElem("main:pivotArea", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -36382,10 +36699,13 @@ CT_PivotAreas* CT_PivotAreas::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_chartFormat())
-            {
-                (*iter)->get_chartFormat().toXmlElem("main:chartFormat", "", _outStream);
-            }
+    
+    if ((*iter)->has_chartFormat())
+    {
+        (*iter)->get_chartFormat().toXmlElem("main:chartFormat", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -36541,7 +36861,7 @@ CT_ChartFormats* CT_ChartFormats::default_instance_ = NULL;
             
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);;
+        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -36658,10 +36978,13 @@ CT_ChartFormat* CT_ChartFormat::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_pivotHierarchy())
-            {
-                (*iter)->get_pivotHierarchy().toXmlElem("main:pivotHierarchy", "", _outStream);
-            }
+    
+    if ((*iter)->has_pivotHierarchy())
+    {
+        (*iter)->get_pivotHierarchy().toXmlElem("main:pivotHierarchy", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -36936,21 +37259,27 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
             
     if (m_has_mps)
     {
-        m_mps->toXmlElem("main:mps", "", _outStream);;
+        m_mps->toXmlElem("main:mps", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_members())
-            {
-                (*iter)->get_members().toXmlElem("main:members", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_members())
+    {
+        (*iter)->get_members().toXmlElem("main:members", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -37277,10 +37606,13 @@ CT_PivotHierarchy* CT_PivotHierarchy::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_rowHierarchyUsage())
-            {
-                (*iter)->get_rowHierarchyUsage().toXmlElem("main:rowHierarchyUsage", "", _outStream);
-            }
+    
+    if ((*iter)->has_rowHierarchyUsage())
+    {
+        (*iter)->get_rowHierarchyUsage().toXmlElem("main:rowHierarchyUsage", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -37398,10 +37730,13 @@ CT_RowHierarchiesUsage* CT_RowHierarchiesUsage::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_colHierarchyUsage())
-            {
-                (*iter)->get_colHierarchyUsage().toXmlElem("main:colHierarchyUsage", "", _outStream);
-            }
+    
+    if ((*iter)->has_colHierarchyUsage())
+    {
+        (*iter)->get_colHierarchyUsage().toXmlElem("main:colHierarchyUsage", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -37580,10 +37915,13 @@ CT_HierarchyUsage* CT_HierarchyUsage::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_mp())
-            {
-                (*iter)->get_mp().toXmlElem("main:mp", "", _outStream);
-            }
+    
+    if ((*iter)->has_mp())
+    {
+        (*iter)->get_mp().toXmlElem("main:mp", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -37999,10 +38337,13 @@ CT_MemberProperty* CT_MemberProperty::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_member())
-            {
-                (*iter)->get_member().toXmlElem("main:member", "", _outStream);
-            }
+    
+    if ((*iter)->has_member())
+    {
+        (*iter)->get_member().toXmlElem("main:member", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -38207,10 +38548,13 @@ CT_Member* CT_Member::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_dimension())
-            {
-                (*iter)->get_dimension().toXmlElem("main:dimension", "", _outStream);
-            }
+    
+    if ((*iter)->has_dimension())
+    {
+        (*iter)->get_dimension().toXmlElem("main:dimension", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -38500,10 +38844,13 @@ CT_PivotDimension* CT_PivotDimension::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_measureGroup())
-            {
-                (*iter)->get_measureGroup().toXmlElem("main:measureGroup", "", _outStream);
-            }
+    
+    if ((*iter)->has_measureGroup())
+    {
+        (*iter)->get_measureGroup().toXmlElem("main:measureGroup", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -38621,10 +38968,13 @@ CT_MeasureGroups* CT_MeasureGroups::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_map())
-            {
-                (*iter)->get_map().toXmlElem("main:map", "", _outStream);
-            }
+    
+    if ((*iter)->has_map())
+    {
+        (*iter)->get_map().toXmlElem("main:map", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -39134,10 +39484,13 @@ CT_PivotTableStyle* CT_PivotTableStyle::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_filter())
-            {
-                (*iter)->get_filter().toXmlElem("main:filter", "", _outStream);
-            }
+    
+    if ((*iter)->has_filter())
+    {
+        (*iter)->get_filter().toXmlElem("main:filter", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -39446,12 +39799,13 @@ CT_PivotFilters* CT_PivotFilters::default_instance_ = NULL;
             
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);;
+        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -39906,12 +40260,13 @@ CT_PivotFilter* CT_PivotFilter::default_instance_ = NULL;
             
     if (m_has_references)
     {
-        m_references->toXmlElem("main:references", "", _outStream);;
+        m_references->toXmlElem("main:references", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -40184,10 +40539,13 @@ CT_PivotArea* CT_PivotArea::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_reference())
-            {
-                (*iter)->get_reference().toXmlElem("main:reference", "", _outStream);
-            }
+    
+    if ((*iter)->has_reference())
+    {
+        (*iter)->get_reference().toXmlElem("main:reference", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -40489,14 +40847,20 @@ CT_PivotAreaReferences* CT_PivotAreaReferences::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_x())
-            {
-                (*iter)->get_x().toXmlElem("main:x", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_x())
+    {
+        (*iter)->get_x().toXmlElem("main:x", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -41270,12 +41634,13 @@ CT_Index* CT_Index::default_instance_ = NULL;
             
     if (m_has_queryTableRefresh)
     {
-        m_queryTableRefresh->toXmlElem("main:queryTableRefresh", "", _outStream);;
+        m_queryTableRefresh->toXmlElem("main:queryTableRefresh", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -41891,22 +42256,25 @@ CT_QueryTable* CT_QueryTable::default_instance_ = NULL;
             
     if (m_has_queryTableFields)
     {
-        m_queryTableFields->toXmlElem("main:queryTableFields", "", _outStream);;
+        m_queryTableFields->toXmlElem("main:queryTableFields", "", _outStream);
     }
+    
     
     if (m_has_queryTableDeletedFields)
     {
-        m_queryTableDeletedFields->toXmlElem("main:queryTableDeletedFields", "", _outStream);;
+        m_queryTableDeletedFields->toXmlElem("main:queryTableDeletedFields", "", _outStream);
     }
+    
     
     if (m_has_sortState)
     {
-        m_sortState->toXmlElem("main:sortState", "", _outStream);;
+        m_sortState->toXmlElem("main:sortState", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -42087,10 +42455,13 @@ CT_QueryTableRefresh* CT_QueryTableRefresh::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_deletedField())
-            {
-                (*iter)->get_deletedField().toXmlElem("main:deletedField", "", _outStream);
-            }
+    
+    if ((*iter)->has_deletedField())
+    {
+        (*iter)->get_deletedField().toXmlElem("main:deletedField", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -42279,10 +42650,13 @@ CT_DeletedField* CT_DeletedField::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_queryTableField())
-            {
-                (*iter)->get_queryTableField().toXmlElem("main:queryTableField", "", _outStream);
-            }
+    
+    if ((*iter)->has_queryTableField())
+    {
+        (*iter)->get_queryTableField().toXmlElem("main:queryTableField", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -42488,7 +42862,7 @@ CT_QueryTableFields* CT_QueryTableFields::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -42692,14 +43066,20 @@ CT_QueryTableField* CT_QueryTableField::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_si())
-            {
-                (*iter)->get_si().toXmlElem("main:si", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_si())
+    {
+        (*iter)->get_si().toXmlElem("main:si", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -42905,7 +43285,7 @@ CT_Sst* CT_Sst::default_instance_ = NULL;
             
     if (m_has_t)
     {
-        _outStream << "<main:t>" << m_t->toString() << "</main:t>";;
+        _outStream << "<main:t>" << m_t->toString() << "</main:t>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -43047,12 +43427,13 @@ CT_PhoneticRun* CT_PhoneticRun::default_instance_ = NULL;
             
     if (m_has_rPr)
     {
-        m_rPr->toXmlElem("main:rPr", "", _outStream);;
+        m_rPr->toXmlElem("main:rPr", "", _outStream);
     }
+    
     
     if (m_has_t)
     {
-        _outStream << "<main:t>" << m_t->toString() << "</main:t>";;
+        _outStream << "<main:t>" << m_t->toString() << "</main:t>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -43224,66 +43605,111 @@ CT_RElt* CT_RElt::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_rFont())
-            {
-                (*iter)->get_rFont().toXmlElem("main:rFont", "", _outStream);
-            }
-            else if ((*iter)->has_charset())
-            {
-                (*iter)->get_charset().toXmlElem("main:charset", "", _outStream);
-            }
-            else if ((*iter)->has_family())
-            {
-                (*iter)->get_family().toXmlElem("main:family", "", _outStream);
-            }
-            else if ((*iter)->has_b())
-            {
-                (*iter)->get_b().toXmlElem("main:b", "", _outStream);
-            }
-            else if ((*iter)->has_i())
-            {
-                (*iter)->get_i().toXmlElem("main:i", "", _outStream);
-            }
-            else if ((*iter)->has_strike())
-            {
-                (*iter)->get_strike().toXmlElem("main:strike", "", _outStream);
-            }
-            else if ((*iter)->has_outline())
-            {
-                (*iter)->get_outline().toXmlElem("main:outline", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("main:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_condense())
-            {
-                (*iter)->get_condense().toXmlElem("main:condense", "", _outStream);
-            }
-            else if ((*iter)->has_extend())
-            {
-                (*iter)->get_extend().toXmlElem("main:extend", "", _outStream);
-            }
-            else if ((*iter)->has_color())
-            {
-                (*iter)->get_color().toXmlElem("main:color", "", _outStream);
-            }
-            else if ((*iter)->has_sz())
-            {
-                (*iter)->get_sz().toXmlElem("main:sz", "", _outStream);
-            }
-            else if ((*iter)->has_u())
-            {
-                (*iter)->get_u().toXmlElem("main:u", "", _outStream);
-            }
-            else if ((*iter)->has_vertAlign())
-            {
-                (*iter)->get_vertAlign().toXmlElem("main:vertAlign", "", _outStream);
-            }
-            else if ((*iter)->has_scheme())
-            {
-                (*iter)->get_scheme().toXmlElem("main:scheme", "", _outStream);
-            }
+    
+    if ((*iter)->has_rFont())
+    {
+        (*iter)->get_rFont().toXmlElem("main:rFont", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_charset())
+    {
+        (*iter)->get_charset().toXmlElem("main:charset", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_family())
+    {
+        (*iter)->get_family().toXmlElem("main:family", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_b())
+    {
+        (*iter)->get_b().toXmlElem("main:b", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_i())
+    {
+        (*iter)->get_i().toXmlElem("main:i", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_strike())
+    {
+        (*iter)->get_strike().toXmlElem("main:strike", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_outline())
+    {
+        (*iter)->get_outline().toXmlElem("main:outline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("main:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_condense())
+    {
+        (*iter)->get_condense().toXmlElem("main:condense", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extend())
+    {
+        (*iter)->get_extend().toXmlElem("main:extend", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_color())
+    {
+        (*iter)->get_color().toXmlElem("main:color", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sz())
+    {
+        (*iter)->get_sz().toXmlElem("main:sz", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_u())
+    {
+        (*iter)->get_u().toXmlElem("main:u", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_vertAlign())
+    {
+        (*iter)->get_vertAlign().toXmlElem("main:vertAlign", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_scheme())
+    {
+        (*iter)->get_scheme().toXmlElem("main:scheme", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -45692,25 +46118,34 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
             
     if (m_has_t)
     {
-        _outStream << "<main:t>" << m_t->toString() << "</main:t>";;
+        _outStream << "<main:t>" << m_t->toString() << "</main:t>";
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_r())
-            {
-                (*iter)->get_r().toXmlElem("main:r", "", _outStream);
-            }
-            else if ((*iter)->has_rPh())
-            {
-                (*iter)->get_rPh().toXmlElem("main:rPh", "", _outStream);
-            }
-            else if ((*iter)->has_phoneticPr())
-            {
-                (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
-            }
+    
+    if ((*iter)->has_r())
+    {
+        (*iter)->get_r().toXmlElem("main:r", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rPh())
+    {
+        (*iter)->get_rPh().toXmlElem("main:rPh", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_phoneticPr())
+    {
+        (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -46198,10 +46633,13 @@ CT_PhoneticPr* CT_PhoneticPr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_header())
-            {
-                (*iter)->get_header().toXmlElem("main:header", "", _outStream);
-            }
+    
+    if ((*iter)->has_header())
+    {
+        (*iter)->get_header().toXmlElem("main:header", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -46582,54 +47020,90 @@ CT_RevisionHeaders* CT_RevisionHeaders::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_rrc())
-            {
-                (*iter)->get_rrc().toXmlElem("main:rrc", "", _outStream);
-            }
-            else if ((*iter)->has_rm())
-            {
-                (*iter)->get_rm().toXmlElem("main:rm", "", _outStream);
-            }
-            else if ((*iter)->has_rcv())
-            {
-                (*iter)->get_rcv().toXmlElem("main:rcv", "", _outStream);
-            }
-            else if ((*iter)->has_rsnm())
-            {
-                (*iter)->get_rsnm().toXmlElem("main:rsnm", "", _outStream);
-            }
-            else if ((*iter)->has_ris())
-            {
-                (*iter)->get_ris().toXmlElem("main:ris", "", _outStream);
-            }
-            else if ((*iter)->has_rcc())
-            {
-                (*iter)->get_rcc().toXmlElem("main:rcc", "", _outStream);
-            }
-            else if ((*iter)->has_rfmt())
-            {
-                (*iter)->get_rfmt().toXmlElem("main:rfmt", "", _outStream);
-            }
-            else if ((*iter)->has_raf())
-            {
-                (*iter)->get_raf().toXmlElem("main:raf", "", _outStream);
-            }
-            else if ((*iter)->has_rdn())
-            {
-                (*iter)->get_rdn().toXmlElem("main:rdn", "", _outStream);
-            }
-            else if ((*iter)->has_rcmt())
-            {
-                (*iter)->get_rcmt().toXmlElem("main:rcmt", "", _outStream);
-            }
-            else if ((*iter)->has_rqt())
-            {
-                (*iter)->get_rqt().toXmlElem("main:rqt", "", _outStream);
-            }
-            else if ((*iter)->has_rcft())
-            {
-                (*iter)->get_rcft().toXmlElem("main:rcft", "", _outStream);
-            }
+    
+    if ((*iter)->has_rrc())
+    {
+        (*iter)->get_rrc().toXmlElem("main:rrc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rm())
+    {
+        (*iter)->get_rm().toXmlElem("main:rm", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rcv())
+    {
+        (*iter)->get_rcv().toXmlElem("main:rcv", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rsnm())
+    {
+        (*iter)->get_rsnm().toXmlElem("main:rsnm", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_ris())
+    {
+        (*iter)->get_ris().toXmlElem("main:ris", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rcc())
+    {
+        (*iter)->get_rcc().toXmlElem("main:rcc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rfmt())
+    {
+        (*iter)->get_rfmt().toXmlElem("main:rfmt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_raf())
+    {
+        (*iter)->get_raf().toXmlElem("main:raf", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rdn())
+    {
+        (*iter)->get_rdn().toXmlElem("main:rdn", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rcmt())
+    {
+        (*iter)->get_rcmt().toXmlElem("main:rcmt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rqt())
+    {
+        (*iter)->get_rqt().toXmlElem("main:rqt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rcft())
+    {
+        (*iter)->get_rcft().toXmlElem("main:rcft", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -48386,17 +48860,19 @@ CT_Revisions* CT_Revisions::default_instance_ = NULL;
             
     if (m_has_sheetIdMap)
     {
-        m_sheetIdMap->toXmlElem("main:sheetIdMap", "", _outStream);;
+        m_sheetIdMap->toXmlElem("main:sheetIdMap", "", _outStream);
     }
+    
     
     if (m_has_reviewedList)
     {
-        m_reviewedList->toXmlElem("main:reviewedList", "", _outStream);;
+        m_reviewedList->toXmlElem("main:reviewedList", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -48589,10 +49065,13 @@ CT_RevisionHeader* CT_RevisionHeader::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_sheetId())
-            {
-                (*iter)->get_sheetId().toXmlElem("main:sheetId", "", _outStream);
-            }
+    
+    if ((*iter)->has_sheetId())
+    {
+        (*iter)->get_sheetId().toXmlElem("main:sheetId", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -48771,10 +49250,13 @@ CT_SheetId* CT_SheetId::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_reviewed())
-            {
-                (*iter)->get_reviewed().toXmlElem("main:reviewed", "", _outStream);
-            }
+    
+    if ((*iter)->has_reviewed())
+    {
+        (*iter)->get_reviewed().toXmlElem("main:reviewed", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -49429,18 +49911,27 @@ CT_UndoInfo* CT_UndoInfo::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_undo())
-            {
-                (*iter)->get_undo().toXmlElem("main:undo", "", _outStream);
-            }
-            else if ((*iter)->has_rcc())
-            {
-                (*iter)->get_rcc().toXmlElem("main:rcc", "", _outStream);
-            }
-            else if ((*iter)->has_rfmt())
-            {
-                (*iter)->get_rfmt().toXmlElem("main:rfmt", "", _outStream);
-            }
+    
+    if ((*iter)->has_undo())
+    {
+        (*iter)->get_undo().toXmlElem("main:undo", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rcc())
+    {
+        (*iter)->get_rcc().toXmlElem("main:rcc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rfmt())
+    {
+        (*iter)->get_rfmt().toXmlElem("main:rfmt", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -49880,18 +50371,27 @@ CT_RevisionRowColumn* CT_RevisionRowColumn::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_undo())
-            {
-                (*iter)->get_undo().toXmlElem("main:undo", "", _outStream);
-            }
-            else if ((*iter)->has_rcc())
-            {
-                (*iter)->get_rcc().toXmlElem("main:rcc", "", _outStream);
-            }
-            else if ((*iter)->has_rfmt())
-            {
-                (*iter)->get_rfmt().toXmlElem("main:rfmt", "", _outStream);
-            }
+    
+    if ((*iter)->has_undo())
+    {
+        (*iter)->get_undo().toXmlElem("main:undo", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rcc())
+    {
+        (*iter)->get_rcc().toXmlElem("main:rcc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rfmt())
+    {
+        (*iter)->get_rfmt().toXmlElem("main:rfmt", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -50412,7 +50912,7 @@ CT_RevisionCustomView* CT_RevisionCustomView::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -51096,27 +51596,31 @@ CT_RevisionInsertSheet* CT_RevisionInsertSheet::default_instance_ = NULL;
             
     if (m_has_oc)
     {
-        m_oc->toXmlElem("main:oc", "", _outStream);;
+        m_oc->toXmlElem("main:oc", "", _outStream);
     }
+    
     
     if (m_has_nc)
     {
-        m_nc->toXmlElem("main:nc", "", _outStream);;
+        m_nc->toXmlElem("main:nc", "", _outStream);
     }
+    
     
     if (m_has_odxf)
     {
-        m_odxf->toXmlElem("main:odxf", "", _outStream);;
+        m_odxf->toXmlElem("main:odxf", "", _outStream);
     }
+    
     
     if (m_has_ndxf)
     {
-        m_ndxf->toXmlElem("main:ndxf", "", _outStream);;
+        m_ndxf->toXmlElem("main:ndxf", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -51525,12 +52029,13 @@ CT_RevisionCellChange* CT_RevisionCellChange::default_instance_ = NULL;
             
     if (m_has_dxf)
     {
-        m_dxf->toXmlElem("main:dxf", "", _outStream);;
+        m_dxf->toXmlElem("main:dxf", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -52762,17 +53267,19 @@ CT_RevisionComment* CT_RevisionComment::default_instance_ = NULL;
             
     if (m_has_formula)
     {
-        _outStream << "<main:formula>" << m_formula->toString() << "</main:formula>";;
+        _outStream << "<main:formula>" << m_formula->toString() << "</main:formula>";
     }
+    
     
     if (m_has_oldFormula)
     {
-        _outStream << "<main:oldFormula>" << m_oldFormula->toString() << "</main:oldFormula>";;
+        _outStream << "<main:oldFormula>" << m_oldFormula->toString() << "</main:oldFormula>";
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -53536,10 +54043,13 @@ CT_RevisionQueryTableField* CT_RevisionQueryTableField::default_instance_ = NULL
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_userInfo())
-            {
-                (*iter)->get_userInfo().toXmlElem("main:userInfo", "", _outStream);
-            }
+    
+    if ((*iter)->has_userInfo())
+    {
+        (*iter)->get_userInfo().toXmlElem("main:userInfo", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -53718,7 +54228,7 @@ CT_Users* CT_Users::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -54163,120 +54673,192 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
             
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);
     }
+    
     
     if (m_has_dimension)
     {
-        m_dimension->toXmlElem("main:dimension", "", _outStream);;
+        m_dimension->toXmlElem("main:dimension", "", _outStream);
     }
+    
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);
     }
+    
     
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);;
+        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cols())
-            {
-                (*iter)->get_cols().toXmlElem("main:cols", "", _outStream);
-            }
-            else if ((*iter)->has_sheetData())
-            {
-                (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
-            }
-            else if ((*iter)->has_sheetProtection())
-            {
-                (*iter)->get_sheetProtection().toXmlElem("main:sheetProtection", "", _outStream);
-            }
-            else if ((*iter)->has_autoFilter())
-            {
-                (*iter)->get_autoFilter().toXmlElem("main:autoFilter", "", _outStream);
-            }
-            else if ((*iter)->has_sortState())
-            {
-                (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
-            }
-            else if ((*iter)->has_dataConsolidate())
-            {
-                (*iter)->get_dataConsolidate().toXmlElem("main:dataConsolidate", "", _outStream);
-            }
-            else if ((*iter)->has_customSheetViews())
-            {
-                (*iter)->get_customSheetViews().toXmlElem("main:customSheetViews", "", _outStream);
-            }
-            else if ((*iter)->has_phoneticPr())
-            {
-                (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
-            }
-            else if ((*iter)->has_conditionalFormatting())
-            {
-                (*iter)->get_conditionalFormatting().toXmlElem("main:conditionalFormatting", "", _outStream);
-            }
-            else if ((*iter)->has_printOptions())
-            {
-                (*iter)->get_printOptions().toXmlElem("main:printOptions", "", _outStream);
-            }
-            else if ((*iter)->has_pageMargins())
-            {
-                (*iter)->get_pageMargins().toXmlElem("main:pageMargins", "", _outStream);
-            }
-            else if ((*iter)->has_pageSetup())
-            {
-                (*iter)->get_pageSetup().toXmlElem("main:pageSetup", "", _outStream);
-            }
-            else if ((*iter)->has_headerFooter())
-            {
-                (*iter)->get_headerFooter().toXmlElem("main:headerFooter", "", _outStream);
-            }
-            else if ((*iter)->has_rowBreaks())
-            {
-                (*iter)->get_rowBreaks().toXmlElem("main:rowBreaks", "", _outStream);
-            }
-            else if ((*iter)->has_colBreaks())
-            {
-                (*iter)->get_colBreaks().toXmlElem("main:colBreaks", "", _outStream);
-            }
-            else if ((*iter)->has_customProperties())
-            {
-                (*iter)->get_customProperties().toXmlElem("main:customProperties", "", _outStream);
-            }
-            else if ((*iter)->has_drawing())
-            {
-                (*iter)->get_drawing().toXmlElem("main:drawing", "", _outStream);
-            }
-            else if ((*iter)->has_legacyDrawing())
-            {
-                (*iter)->get_legacyDrawing().toXmlElem("main:legacyDrawing", "", _outStream);
-            }
-            else if ((*iter)->has_legacyDrawingHF())
-            {
-                (*iter)->get_legacyDrawingHF().toXmlElem("main:legacyDrawingHF", "", _outStream);
-            }
-            else if ((*iter)->has_drawingHF())
-            {
-                (*iter)->get_drawingHF().toXmlElem("main:drawingHF", "", _outStream);
-            }
-            else if ((*iter)->has_picture())
-            {
-                (*iter)->get_picture().toXmlElem("main:picture", "", _outStream);
-            }
-            else if ((*iter)->has_oleObjects())
-            {
-                (*iter)->get_oleObjects().toXmlElem("main:oleObjects", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_cols())
+    {
+        (*iter)->get_cols().toXmlElem("main:cols", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sheetData())
+    {
+        (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sheetProtection())
+    {
+        (*iter)->get_sheetProtection().toXmlElem("main:sheetProtection", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_autoFilter())
+    {
+        (*iter)->get_autoFilter().toXmlElem("main:autoFilter", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sortState())
+    {
+        (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dataConsolidate())
+    {
+        (*iter)->get_dataConsolidate().toXmlElem("main:dataConsolidate", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_customSheetViews())
+    {
+        (*iter)->get_customSheetViews().toXmlElem("main:customSheetViews", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_phoneticPr())
+    {
+        (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_conditionalFormatting())
+    {
+        (*iter)->get_conditionalFormatting().toXmlElem("main:conditionalFormatting", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_printOptions())
+    {
+        (*iter)->get_printOptions().toXmlElem("main:printOptions", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pageMargins())
+    {
+        (*iter)->get_pageMargins().toXmlElem("main:pageMargins", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pageSetup())
+    {
+        (*iter)->get_pageSetup().toXmlElem("main:pageSetup", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_headerFooter())
+    {
+        (*iter)->get_headerFooter().toXmlElem("main:headerFooter", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rowBreaks())
+    {
+        (*iter)->get_rowBreaks().toXmlElem("main:rowBreaks", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_colBreaks())
+    {
+        (*iter)->get_colBreaks().toXmlElem("main:colBreaks", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_customProperties())
+    {
+        (*iter)->get_customProperties().toXmlElem("main:customProperties", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_drawing())
+    {
+        (*iter)->get_drawing().toXmlElem("main:drawing", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_legacyDrawing())
+    {
+        (*iter)->get_legacyDrawing().toXmlElem("main:legacyDrawing", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_legacyDrawingHF())
+    {
+        (*iter)->get_legacyDrawingHF().toXmlElem("main:legacyDrawingHF", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_drawingHF())
+    {
+        (*iter)->get_drawingHF().toXmlElem("main:drawingHF", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_picture())
+    {
+        (*iter)->get_picture().toXmlElem("main:picture", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_oleObjects())
+    {
+        (*iter)->get_oleObjects().toXmlElem("main:oleObjects", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -60057,82 +60639,97 @@ CT_Macrosheet* CT_Macrosheet::default_instance_ = NULL;
             
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);
     }
+    
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);
     }
+    
     
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);;
+        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);
     }
+    
     
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);;
+        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);
     }
+    
     
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);;
+        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);
     }
+    
     
     if (m_has_printOptions)
     {
-        m_printOptions->toXmlElem("main:printOptions", "", _outStream);;
+        m_printOptions->toXmlElem("main:printOptions", "", _outStream);
     }
+    
     
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);
     }
+    
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);
     }
+    
     
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);
     }
+    
     
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("main:drawing", "", _outStream);;
+        m_drawing->toXmlElem("main:drawing", "", _outStream);
     }
+    
     
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);;
+        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);
     }
+    
     
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);;
+        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);
     }
+    
     
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);;
+        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);
     }
+    
     
     if (m_has_oleObjects)
     {
-        m_oleObjects->toXmlElem("main:oleObjects", "", _outStream);;
+        m_oleObjects->toXmlElem("main:oleObjects", "", _outStream);
     }
+    
     
     if (m_has_controls)
     {
-        m_controls->toXmlElem("main:controls", "", _outStream);;
+        m_controls->toXmlElem("main:controls", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -60601,168 +61198,276 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
             
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);
     }
+    
     
     if (m_has_dimension)
     {
-        m_dimension->toXmlElem("main:dimension", "", _outStream);;
+        m_dimension->toXmlElem("main:dimension", "", _outStream);
     }
+    
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);
     }
+    
     
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);;
+        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cols())
-            {
-                (*iter)->get_cols().toXmlElem("main:cols", "", _outStream);
-            }
-            else if ((*iter)->has_sheetData())
-            {
-                (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
-            }
-            else if ((*iter)->has_sheetCalcPr())
-            {
-                (*iter)->get_sheetCalcPr().toXmlElem("main:sheetCalcPr", "", _outStream);
-            }
-            else if ((*iter)->has_sheetProtection())
-            {
-                (*iter)->get_sheetProtection().toXmlElem("main:sheetProtection", "", _outStream);
-            }
-            else if ((*iter)->has_protectedRanges())
-            {
-                (*iter)->get_protectedRanges().toXmlElem("main:protectedRanges", "", _outStream);
-            }
-            else if ((*iter)->has_scenarios())
-            {
-                (*iter)->get_scenarios().toXmlElem("main:scenarios", "", _outStream);
-            }
-            else if ((*iter)->has_autoFilter())
-            {
-                (*iter)->get_autoFilter().toXmlElem("main:autoFilter", "", _outStream);
-            }
-            else if ((*iter)->has_sortState())
-            {
-                (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
-            }
-            else if ((*iter)->has_dataConsolidate())
-            {
-                (*iter)->get_dataConsolidate().toXmlElem("main:dataConsolidate", "", _outStream);
-            }
-            else if ((*iter)->has_customSheetViews())
-            {
-                (*iter)->get_customSheetViews().toXmlElem("main:customSheetViews", "", _outStream);
-            }
-            else if ((*iter)->has_mergeCells())
-            {
-                (*iter)->get_mergeCells().toXmlElem("main:mergeCells", "", _outStream);
-            }
-            else if ((*iter)->has_phoneticPr())
-            {
-                (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
-            }
-            else if ((*iter)->has_conditionalFormatting())
-            {
-                (*iter)->get_conditionalFormatting().toXmlElem("main:conditionalFormatting", "", _outStream);
-            }
-            else if ((*iter)->has_dataValidations())
-            {
-                (*iter)->get_dataValidations().toXmlElem("main:dataValidations", "", _outStream);
-            }
-            else if ((*iter)->has_hyperlinks())
-            {
-                (*iter)->get_hyperlinks().toXmlElem("main:hyperlinks", "", _outStream);
-            }
-            else if ((*iter)->has_printOptions())
-            {
-                (*iter)->get_printOptions().toXmlElem("main:printOptions", "", _outStream);
-            }
-            else if ((*iter)->has_pageMargins())
-            {
-                (*iter)->get_pageMargins().toXmlElem("main:pageMargins", "", _outStream);
-            }
-            else if ((*iter)->has_pageSetup())
-            {
-                (*iter)->get_pageSetup().toXmlElem("main:pageSetup", "", _outStream);
-            }
-            else if ((*iter)->has_headerFooter())
-            {
-                (*iter)->get_headerFooter().toXmlElem("main:headerFooter", "", _outStream);
-            }
-            else if ((*iter)->has_rowBreaks())
-            {
-                (*iter)->get_rowBreaks().toXmlElem("main:rowBreaks", "", _outStream);
-            }
-            else if ((*iter)->has_colBreaks())
-            {
-                (*iter)->get_colBreaks().toXmlElem("main:colBreaks", "", _outStream);
-            }
-            else if ((*iter)->has_customProperties())
-            {
-                (*iter)->get_customProperties().toXmlElem("main:customProperties", "", _outStream);
-            }
-            else if ((*iter)->has_cellWatches())
-            {
-                (*iter)->get_cellWatches().toXmlElem("main:cellWatches", "", _outStream);
-            }
-            else if ((*iter)->has_ignoredErrors())
-            {
-                (*iter)->get_ignoredErrors().toXmlElem("main:ignoredErrors", "", _outStream);
-            }
-            else if ((*iter)->has_smartTags())
-            {
-                (*iter)->get_smartTags().toXmlElem("main:smartTags", "", _outStream);
-            }
-            else if ((*iter)->has_drawing())
-            {
-                (*iter)->get_drawing().toXmlElem("main:drawing", "", _outStream);
-            }
-            else if ((*iter)->has_legacyDrawing())
-            {
-                (*iter)->get_legacyDrawing().toXmlElem("main:legacyDrawing", "", _outStream);
-            }
-            else if ((*iter)->has_legacyDrawingHF())
-            {
-                (*iter)->get_legacyDrawingHF().toXmlElem("main:legacyDrawingHF", "", _outStream);
-            }
-            else if ((*iter)->has_drawingHF())
-            {
-                (*iter)->get_drawingHF().toXmlElem("main:drawingHF", "", _outStream);
-            }
-            else if ((*iter)->has_picture())
-            {
-                (*iter)->get_picture().toXmlElem("main:picture", "", _outStream);
-            }
-            else if ((*iter)->has_oleObjects())
-            {
-                (*iter)->get_oleObjects().toXmlElem("main:oleObjects", "", _outStream);
-            }
-            else if ((*iter)->has_controls())
-            {
-                (*iter)->get_controls().toXmlElem("main:controls", "", _outStream);
-            }
-            else if ((*iter)->has_webPublishItems())
-            {
-                (*iter)->get_webPublishItems().toXmlElem("main:webPublishItems", "", _outStream);
-            }
-            else if ((*iter)->has_tableParts())
-            {
-                (*iter)->get_tableParts().toXmlElem("main:tableParts", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_cols())
+    {
+        (*iter)->get_cols().toXmlElem("main:cols", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sheetData())
+    {
+        (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sheetCalcPr())
+    {
+        (*iter)->get_sheetCalcPr().toXmlElem("main:sheetCalcPr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sheetProtection())
+    {
+        (*iter)->get_sheetProtection().toXmlElem("main:sheetProtection", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_protectedRanges())
+    {
+        (*iter)->get_protectedRanges().toXmlElem("main:protectedRanges", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_scenarios())
+    {
+        (*iter)->get_scenarios().toXmlElem("main:scenarios", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_autoFilter())
+    {
+        (*iter)->get_autoFilter().toXmlElem("main:autoFilter", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sortState())
+    {
+        (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dataConsolidate())
+    {
+        (*iter)->get_dataConsolidate().toXmlElem("main:dataConsolidate", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_customSheetViews())
+    {
+        (*iter)->get_customSheetViews().toXmlElem("main:customSheetViews", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_mergeCells())
+    {
+        (*iter)->get_mergeCells().toXmlElem("main:mergeCells", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_phoneticPr())
+    {
+        (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_conditionalFormatting())
+    {
+        (*iter)->get_conditionalFormatting().toXmlElem("main:conditionalFormatting", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dataValidations())
+    {
+        (*iter)->get_dataValidations().toXmlElem("main:dataValidations", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hyperlinks())
+    {
+        (*iter)->get_hyperlinks().toXmlElem("main:hyperlinks", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_printOptions())
+    {
+        (*iter)->get_printOptions().toXmlElem("main:printOptions", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pageMargins())
+    {
+        (*iter)->get_pageMargins().toXmlElem("main:pageMargins", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pageSetup())
+    {
+        (*iter)->get_pageSetup().toXmlElem("main:pageSetup", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_headerFooter())
+    {
+        (*iter)->get_headerFooter().toXmlElem("main:headerFooter", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rowBreaks())
+    {
+        (*iter)->get_rowBreaks().toXmlElem("main:rowBreaks", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_colBreaks())
+    {
+        (*iter)->get_colBreaks().toXmlElem("main:colBreaks", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_customProperties())
+    {
+        (*iter)->get_customProperties().toXmlElem("main:customProperties", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_cellWatches())
+    {
+        (*iter)->get_cellWatches().toXmlElem("main:cellWatches", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_ignoredErrors())
+    {
+        (*iter)->get_ignoredErrors().toXmlElem("main:ignoredErrors", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_smartTags())
+    {
+        (*iter)->get_smartTags().toXmlElem("main:smartTags", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_drawing())
+    {
+        (*iter)->get_drawing().toXmlElem("main:drawing", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_legacyDrawing())
+    {
+        (*iter)->get_legacyDrawing().toXmlElem("main:legacyDrawing", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_legacyDrawingHF())
+    {
+        (*iter)->get_legacyDrawingHF().toXmlElem("main:legacyDrawingHF", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_drawingHF())
+    {
+        (*iter)->get_drawingHF().toXmlElem("main:drawingHF", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_picture())
+    {
+        (*iter)->get_picture().toXmlElem("main:picture", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_oleObjects())
+    {
+        (*iter)->get_oleObjects().toXmlElem("main:oleObjects", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_controls())
+    {
+        (*iter)->get_controls().toXmlElem("main:controls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_webPublishItems())
+    {
+        (*iter)->get_webPublishItems().toXmlElem("main:webPublishItems", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_tableParts())
+    {
+        (*iter)->get_tableParts().toXmlElem("main:tableParts", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -72483,10 +73188,13 @@ CT_Worksheet* CT_Worksheet::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_row())
-            {
-                (*iter)->get_row().toXmlElem("main:row", "", _outStream);
-            }
+    
+    if ((*iter)->has_row())
+    {
+        (*iter)->get_row().toXmlElem("main:row", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -72917,10 +73625,13 @@ CT_SheetFormatPr* CT_SheetFormatPr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_col())
-            {
-                (*iter)->get_col().toXmlElem("main:col", "", _outStream);
-            }
+    
+    if ((*iter)->has_col())
+    {
+        (*iter)->get_col().toXmlElem("main:col", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -73461,14 +74172,20 @@ CT_Col* CT_Col::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_c())
-            {
-                (*iter)->get_c().toXmlElem("main:c", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_c())
+    {
+        (*iter)->get_c().toXmlElem("main:c", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -73999,22 +74716,25 @@ CT_Row* CT_Row::default_instance_ = NULL;
             
     if (m_has_f)
     {
-        m_f->toXmlElem("main:f", "", _outStream);;
+        m_f->toXmlElem("main:f", "", _outStream);
     }
+    
     
     if (m_has_v)
     {
-        _outStream << "<main:v>" << m_v->toString() << "</main:v>";;
+        _outStream << "<main:v>" << m_v->toString() << "</main:v>";
     }
+    
     
     if (m_has_is)
     {
-        m_is->toXmlElem("main:is", "", _outStream);;
+        m_is->toXmlElem("main:is", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -74367,17 +75087,19 @@ CT_Cell* CT_Cell::default_instance_ = NULL;
             
     if (m_has_tabColor)
     {
-        m_tabColor->toXmlElem("main:tabColor", "", _outStream);;
+        m_tabColor->toXmlElem("main:tabColor", "", _outStream);
     }
+    
     
     if (m_has_outlinePr)
     {
-        m_outlinePr->toXmlElem("main:outlinePr", "", _outStream);;
+        m_outlinePr->toXmlElem("main:outlinePr", "", _outStream);
     }
+    
     
     if (m_has_pageSetUpPr)
     {
-        m_pageSetUpPr->toXmlElem("main:pageSetUpPr", "", _outStream);;
+        m_pageSetUpPr->toXmlElem("main:pageSetUpPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -74664,14 +75386,20 @@ CT_SheetDimension* CT_SheetDimension::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_sheetView())
-            {
-                (*iter)->get_sheetView().toXmlElem("main:sheetView", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_sheetView())
+    {
+        (*iter)->get_sheetView().toXmlElem("main:sheetView", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -75077,25 +75805,34 @@ CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
             
     if (m_has_pane)
     {
-        m_pane->toXmlElem("main:pane", "", _outStream);;
+        m_pane->toXmlElem("main:pane", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_selection())
-            {
-                (*iter)->get_selection().toXmlElem("main:selection", "", _outStream);
-            }
-            else if ((*iter)->has_pivotSelection())
-            {
-                (*iter)->get_pivotSelection().toXmlElem("main:pivotSelection", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_selection())
+    {
+        (*iter)->get_selection().toXmlElem("main:selection", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pivotSelection())
+    {
+        (*iter)->get_pivotSelection().toXmlElem("main:pivotSelection", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -76026,7 +76763,7 @@ CT_Pane* CT_Pane::default_instance_ = NULL;
             
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);;
+        m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -76562,10 +77299,13 @@ CT_Selection* CT_Selection::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_brk())
-            {
-                (*iter)->get_brk().toXmlElem("main:brk", "", _outStream);
-            }
+    
+    if ((*iter)->has_brk())
+    {
+        (*iter)->get_brk().toXmlElem("main:brk", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -77164,7 +77904,7 @@ CT_PageSetUpPr* CT_PageSetUpPr::default_instance_ = NULL;
             
     if (m_has_dataRefs)
     {
-        m_dataRefs->toXmlElem("main:dataRefs", "", _outStream);;
+        m_dataRefs->toXmlElem("main:dataRefs", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -77317,10 +78057,13 @@ CT_DataConsolidate* CT_DataConsolidate::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_dataRef())
-            {
-                (*iter)->get_dataRef().toXmlElem("main:dataRef", "", _outStream);
-            }
+    
+    if ((*iter)->has_dataRef())
+    {
+        (*iter)->get_dataRef().toXmlElem("main:dataRef", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -77620,10 +78363,13 @@ CT_DataRef* CT_DataRef::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_mergeCell())
-            {
-                (*iter)->get_mergeCell().toXmlElem("main:mergeCell", "", _outStream);
-            }
+    
+    if ((*iter)->has_mergeCell())
+    {
+        (*iter)->get_mergeCell().toXmlElem("main:mergeCell", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -77803,10 +78549,13 @@ CT_MergeCell* CT_MergeCell::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cellSmartTags())
-            {
-                (*iter)->get_cellSmartTags().toXmlElem("main:cellSmartTags", "", _outStream);
-            }
+    
+    if ((*iter)->has_cellSmartTags())
+    {
+        (*iter)->get_cellSmartTags().toXmlElem("main:cellSmartTags", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -77914,10 +78663,13 @@ CT_SmartTags* CT_SmartTags::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cellSmartTag())
-            {
-                (*iter)->get_cellSmartTag().toXmlElem("main:cellSmartTag", "", _outStream);
-            }
+    
+    if ((*iter)->has_cellSmartTag())
+    {
+        (*iter)->get_cellSmartTag().toXmlElem("main:cellSmartTag", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -78061,10 +78813,13 @@ CT_CellSmartTags* CT_CellSmartTags::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cellSmartTagPr())
-            {
-                (*iter)->get_cellSmartTagPr().toXmlElem("main:cellSmartTagPr", "", _outStream);
-            }
+    
+    if ((*iter)->has_cellSmartTagPr())
+    {
+        (*iter)->get_cellSmartTagPr().toXmlElem("main:cellSmartTagPr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -79012,10 +79767,13 @@ CT_DrawingHF* CT_DrawingHF::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_customSheetView())
-            {
-                (*iter)->get_customSheetView().toXmlElem("main:customSheetView", "", _outStream);
-            }
+    
+    if ((*iter)->has_customSheetView())
+    {
+        (*iter)->get_customSheetView().toXmlElem("main:customSheetView", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -79681,52 +80439,61 @@ CT_CustomSheetViews* CT_CustomSheetViews::default_instance_ = NULL;
             
     if (m_has_pane)
     {
-        m_pane->toXmlElem("main:pane", "", _outStream);;
+        m_pane->toXmlElem("main:pane", "", _outStream);
     }
+    
     
     if (m_has_selection)
     {
-        m_selection->toXmlElem("main:selection", "", _outStream);;
+        m_selection->toXmlElem("main:selection", "", _outStream);
     }
+    
     
     if (m_has_rowBreaks)
     {
-        m_rowBreaks->toXmlElem("main:rowBreaks", "", _outStream);;
+        m_rowBreaks->toXmlElem("main:rowBreaks", "", _outStream);
     }
+    
     
     if (m_has_colBreaks)
     {
-        m_colBreaks->toXmlElem("main:colBreaks", "", _outStream);;
+        m_colBreaks->toXmlElem("main:colBreaks", "", _outStream);
     }
+    
     
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);
     }
+    
     
     if (m_has_printOptions)
     {
-        m_printOptions->toXmlElem("main:printOptions", "", _outStream);;
+        m_printOptions->toXmlElem("main:printOptions", "", _outStream);
     }
+    
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);
     }
+    
     
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);
     }
+    
     
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);;
+        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -80164,10 +80931,13 @@ CT_CustomSheetView* CT_CustomSheetView::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_dataValidation())
-            {
-                (*iter)->get_dataValidation().toXmlElem("main:dataValidation", "", _outStream);
-            }
+    
+    if ((*iter)->has_dataValidation())
+    {
+        (*iter)->get_dataValidation().toXmlElem("main:dataValidation", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -80570,12 +81340,13 @@ CT_DataValidations* CT_DataValidations::default_instance_ = NULL;
             
     if (m_has_formula1)
     {
-        _outStream << "<main:formula1>" << m_formula1->toString() << "</main:formula1>";;
+        _outStream << "<main:formula1>" << m_formula1->toString() << "</main:formula1>";
     }
+    
     
     if (m_has_formula2)
     {
-        _outStream << "<main:formula2>" << m_formula2->toString() << "</main:formula2>";;
+        _outStream << "<main:formula2>" << m_formula2->toString() << "</main:formula2>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -80913,14 +81684,20 @@ CT_DataValidation* CT_DataValidation::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cfRule())
-            {
-                (*iter)->get_cfRule().toXmlElem("main:cfRule", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_cfRule())
+    {
+        (*iter)->get_cfRule().toXmlElem("main:cfRule", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -81291,26 +82068,41 @@ CT_ConditionalFormatting* CT_ConditionalFormatting::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_formula())
-            {
-                _outStream << "<main:formula>" << (*iter)->get_formula().toString() << "</main:formula>";
-            }
-            else if ((*iter)->has_colorScale())
-            {
-                (*iter)->get_colorScale().toXmlElem("main:colorScale", "", _outStream);
-            }
-            else if ((*iter)->has_dataBar())
-            {
-                (*iter)->get_dataBar().toXmlElem("main:dataBar", "", _outStream);
-            }
-            else if ((*iter)->has_iconSet())
-            {
-                (*iter)->get_iconSet().toXmlElem("main:iconSet", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_formula())
+    {
+        _outStream << "<main:formula>" << (*iter)->get_formula().toString() << "</main:formula>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_colorScale())
+    {
+        (*iter)->get_colorScale().toXmlElem("main:colorScale", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dataBar())
+    {
+        (*iter)->get_dataBar().toXmlElem("main:dataBar", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_iconSet())
+    {
+        (*iter)->get_iconSet().toXmlElem("main:iconSet", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -81915,10 +82707,13 @@ CT_CfRule* CT_CfRule::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_hyperlink())
-            {
-                (*iter)->get_hyperlink().toXmlElem("main:hyperlink", "", _outStream);
-            }
+    
+    if ((*iter)->has_hyperlink())
+    {
+        (*iter)->get_hyperlink().toXmlElem("main:hyperlink", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -82636,14 +83431,20 @@ CT_CellFormula* CT_CellFormula::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cfvo())
-            {
-                (*iter)->get_cfvo().toXmlElem("main:cfvo", "", _outStream);
-            }
-            else if ((*iter)->has_color())
-            {
-                (*iter)->get_color().toXmlElem("main:color", "", _outStream);
-            }
+    
+    if ((*iter)->has_cfvo())
+    {
+        (*iter)->get_cfvo().toXmlElem("main:cfvo", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_color())
+    {
+        (*iter)->get_color().toXmlElem("main:color", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -82820,14 +83621,20 @@ CT_ColorScale* CT_ColorScale::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cfvo())
-            {
-                (*iter)->get_cfvo().toXmlElem("main:cfvo", "", _outStream);
-            }
-            else if ((*iter)->has_color())
-            {
-                (*iter)->get_color().toXmlElem("main:color", "", _outStream);
-            }
+    
+    if ((*iter)->has_cfvo())
+    {
+        (*iter)->get_cfvo().toXmlElem("main:cfvo", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_color())
+    {
+        (*iter)->get_color().toXmlElem("main:color", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -83061,10 +83868,13 @@ CT_DataBar* CT_DataBar::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cfvo())
-            {
-                (*iter)->get_cfvo().toXmlElem("main:cfvo", "", _outStream);
-            }
+    
+    if ((*iter)->has_cfvo())
+    {
+        (*iter)->get_cfvo().toXmlElem("main:cfvo", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -83284,7 +84094,7 @@ CT_IconSet* CT_IconSet::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -84615,32 +85425,37 @@ CT_PageSetup* CT_PageSetup::default_instance_ = NULL;
             
     if (m_has_oddHeader)
     {
-        _outStream << "<main:oddHeader>" << m_oddHeader->toString() << "</main:oddHeader>";;
+        _outStream << "<main:oddHeader>" << m_oddHeader->toString() << "</main:oddHeader>";
     }
+    
     
     if (m_has_oddFooter)
     {
-        _outStream << "<main:oddFooter>" << m_oddFooter->toString() << "</main:oddFooter>";;
+        _outStream << "<main:oddFooter>" << m_oddFooter->toString() << "</main:oddFooter>";
     }
+    
     
     if (m_has_evenHeader)
     {
-        _outStream << "<main:evenHeader>" << m_evenHeader->toString() << "</main:evenHeader>";;
+        _outStream << "<main:evenHeader>" << m_evenHeader->toString() << "</main:evenHeader>";
     }
+    
     
     if (m_has_evenFooter)
     {
-        _outStream << "<main:evenFooter>" << m_evenFooter->toString() << "</main:evenFooter>";;
+        _outStream << "<main:evenFooter>" << m_evenFooter->toString() << "</main:evenFooter>";
     }
+    
     
     if (m_has_firstHeader)
     {
-        _outStream << "<main:firstHeader>" << m_firstHeader->toString() << "</main:firstHeader>";;
+        _outStream << "<main:firstHeader>" << m_firstHeader->toString() << "</main:firstHeader>";
     }
+    
     
     if (m_has_firstFooter)
     {
-        _outStream << "<main:firstFooter>" << m_firstFooter->toString() << "</main:firstFooter>";;
+        _outStream << "<main:firstFooter>" << m_firstFooter->toString() << "</main:firstFooter>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -84801,10 +85616,13 @@ CT_HeaderFooter* CT_HeaderFooter::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_scenario())
-            {
-                (*iter)->get_scenario().toXmlElem("main:scenario", "", _outStream);
-            }
+    
+    if ((*iter)->has_scenario())
+    {
+        (*iter)->get_scenario().toXmlElem("main:scenario", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -85570,10 +86388,13 @@ CT_SheetProtection* CT_SheetProtection::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_protectedRange())
-            {
-                (*iter)->get_protectedRange().toXmlElem("main:protectedRange", "", _outStream);
-            }
+    
+    if ((*iter)->has_protectedRange())
+    {
+        (*iter)->get_protectedRange().toXmlElem("main:protectedRange", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -85775,10 +86596,13 @@ CT_ProtectedRanges* CT_ProtectedRanges::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_securityDescriptor())
-            {
-                _outStream << "<main:securityDescriptor>" << (*iter)->get_securityDescriptor() << "</main:securityDescriptor>";
-            }
+    
+    if ((*iter)->has_securityDescriptor())
+    {
+        _outStream << "<main:securityDescriptor>" << (*iter)->get_securityDescriptor() << "</main:securityDescriptor>";
+    }
+    
+    
         }
     }
     
@@ -86089,10 +86913,13 @@ CT_ProtectedRange* CT_ProtectedRange::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_inputCells())
-            {
-                (*iter)->get_inputCells().toXmlElem("main:inputCells", "", _outStream);
-            }
+    
+    if ((*iter)->has_inputCells())
+    {
+        (*iter)->get_inputCells().toXmlElem("main:inputCells", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -86492,10 +87319,13 @@ CT_InputCells* CT_InputCells::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cellWatch())
-            {
-                (*iter)->get_cellWatch().toXmlElem("main:cellWatch", "", _outStream);
-            }
+    
+    if ((*iter)->has_cellWatch())
+    {
+        (*iter)->get_cellWatch().toXmlElem("main:cellWatch", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -87129,72 +87959,85 @@ CT_CellWatch* CT_CellWatch::default_instance_ = NULL;
             
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);
     }
+    
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);
     }
+    
     
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);;
+        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);
     }
+    
     
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);;
+        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);
     }
+    
     
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);
     }
+    
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);
     }
+    
     
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);
     }
+    
     
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("main:drawing", "", _outStream);;
+        m_drawing->toXmlElem("main:drawing", "", _outStream);
     }
+    
     
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);;
+        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);
     }
+    
     
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);;
+        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);
     }
+    
     
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);;
+        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);
     }
+    
     
     if (m_has_picture)
     {
-        m_picture->toXmlElem("main:picture", "", _outStream);;
+        m_picture->toXmlElem("main:picture", "", _outStream);
     }
+    
     
     if (m_has_webPublishItems)
     {
-        m_webPublishItems->toXmlElem("main:webPublishItems", "", _outStream);;
+        m_webPublishItems->toXmlElem("main:webPublishItems", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -87290,7 +88133,7 @@ CT_Chartsheet* CT_Chartsheet::default_instance_ = NULL;
             
     if (m_has_tabColor)
     {
-        m_tabColor->toXmlElem("main:tabColor", "", _outStream);;
+        m_tabColor->toXmlElem("main:tabColor", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -87390,14 +88233,20 @@ CT_ChartsheetPr* CT_ChartsheetPr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_sheetView())
-            {
-                (*iter)->get_sheetView().toXmlElem("main:sheetView", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_sheetView())
+    {
+        (*iter)->get_sheetView().toXmlElem("main:sheetView", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -87593,7 +88442,7 @@ CT_ChartsheetViews* CT_ChartsheetViews::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -88385,10 +89234,13 @@ CT_CsPageSetup* CT_CsPageSetup::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_customSheetView())
-            {
-                (*iter)->get_customSheetView().toXmlElem("main:customSheetView", "", _outStream);
-            }
+    
+    if ((*iter)->has_customSheetView())
+    {
+        (*iter)->get_customSheetView().toXmlElem("main:customSheetView", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -88621,17 +89473,19 @@ CT_CustomChartsheetViews* CT_CustomChartsheetViews::default_instance_ = NULL;
             
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);
     }
+    
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);
     }
+    
     
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -88763,10 +89617,13 @@ CT_CustomChartsheetView* CT_CustomChartsheetView::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_customPr())
-            {
-                (*iter)->get_customPr().toXmlElem("main:customPr", "", _outStream);
-            }
+    
+    if ((*iter)->has_customPr())
+    {
+        (*iter)->get_customPr().toXmlElem("main:customPr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -88967,10 +89824,13 @@ CT_CustomProperty* CT_CustomProperty::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_oleObject())
-            {
-                (*iter)->get_oleObject().toXmlElem("main:oleObject", "", _outStream);
-            }
+    
+    if ((*iter)->has_oleObject())
+    {
+        (*iter)->get_oleObject().toXmlElem("main:oleObject", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -89178,7 +90038,7 @@ CT_OleObjects* CT_OleObjects::default_instance_ = NULL;
             
     if (m_has_objectPr)
     {
-        m_objectPr->toXmlElem("main:objectPr", "", _outStream);;
+        m_objectPr->toXmlElem("main:objectPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -89530,7 +90390,7 @@ CT_OleObject* CT_OleObject::default_instance_ = NULL;
             
     if (m_has_anchor)
     {
-        m_anchor->toXmlElem("main:anchor", "", _outStream);;
+        m_anchor->toXmlElem("main:anchor", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -89803,10 +90663,13 @@ CT_ObjectPr* CT_ObjectPr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_webPublishItem())
-            {
-                (*iter)->get_webPublishItem().toXmlElem("main:webPublishItem", "", _outStream);
-            }
+    
+    if ((*iter)->has_webPublishItem())
+    {
+        (*iter)->get_webPublishItem().toXmlElem("main:webPublishItem", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -90225,10 +91088,13 @@ CT_WebPublishItem* CT_WebPublishItem::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_control())
-            {
-                (*iter)->get_control().toXmlElem("main:control", "", _outStream);
-            }
+    
+    if ((*iter)->has_control())
+    {
+        (*iter)->get_control().toXmlElem("main:control", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -90374,7 +91240,7 @@ CT_Controls* CT_Controls::default_instance_ = NULL;
             
     if (m_has_controlPr)
     {
-        m_controlPr->toXmlElem("main:controlPr", "", _outStream);;
+        m_controlPr->toXmlElem("main:controlPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -90701,7 +91567,7 @@ CT_Control* CT_Control::default_instance_ = NULL;
             
     if (m_has_anchor)
     {
-        m_anchor->toXmlElem("main:anchor", "", _outStream);;
+        m_anchor->toXmlElem("main:anchor", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -91033,14 +91899,20 @@ CT_ControlPr* CT_ControlPr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ignoredError())
-            {
-                (*iter)->get_ignoredError().toXmlElem("main:ignoredError", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_ignoredError())
+    {
+        (*iter)->get_ignoredError().toXmlElem("main:ignoredError", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -91501,10 +92373,13 @@ CT_IgnoredError* CT_IgnoredError::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tablePart())
-            {
-                (*iter)->get_tablePart().toXmlElem("main:tablePart", "", _outStream);
-            }
+    
+    if ((*iter)->has_tablePart())
+    {
+        (*iter)->get_tablePart().toXmlElem("main:tablePart", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -91810,39 +92685,53 @@ CT_TablePart* CT_TablePart::default_instance_ = NULL;
             
     if (m_has_metadataTypes)
     {
-        m_metadataTypes->toXmlElem("main:metadataTypes", "", _outStream);;
+        m_metadataTypes->toXmlElem("main:metadataTypes", "", _outStream);
     }
+    
     
     if (m_has_metadataStrings)
     {
-        m_metadataStrings->toXmlElem("main:metadataStrings", "", _outStream);;
+        m_metadataStrings->toXmlElem("main:metadataStrings", "", _outStream);
     }
+    
     
     if (m_has_mdxMetadata)
     {
-        m_mdxMetadata->toXmlElem("main:mdxMetadata", "", _outStream);;
+        m_mdxMetadata->toXmlElem("main:mdxMetadata", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_futureMetadata())
-            {
-                (*iter)->get_futureMetadata().toXmlElem("main:futureMetadata", "", _outStream);
-            }
-            else if ((*iter)->has_cellMetadata())
-            {
-                (*iter)->get_cellMetadata().toXmlElem("main:cellMetadata", "", _outStream);
-            }
-            else if ((*iter)->has_valueMetadata())
-            {
-                (*iter)->get_valueMetadata().toXmlElem("main:valueMetadata", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_futureMetadata())
+    {
+        (*iter)->get_futureMetadata().toXmlElem("main:futureMetadata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_cellMetadata())
+    {
+        (*iter)->get_cellMetadata().toXmlElem("main:cellMetadata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_valueMetadata())
+    {
+        (*iter)->get_valueMetadata().toXmlElem("main:valueMetadata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -92133,10 +93022,13 @@ CT_Metadata* CT_Metadata::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_metadataType())
-            {
-                (*iter)->get_metadataType().toXmlElem("main:metadataType", "", _outStream);
-            }
+    
+    if ((*iter)->has_metadataType())
+    {
+        (*iter)->get_metadataType().toXmlElem("main:metadataType", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -93054,10 +93946,13 @@ CT_MetadataType* CT_MetadataType::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_bk())
-            {
-                (*iter)->get_bk().toXmlElem("main:bk", "", _outStream);
-            }
+    
+    if ((*iter)->has_bk())
+    {
+        (*iter)->get_bk().toXmlElem("main:bk", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -93166,10 +94061,13 @@ CT_MetadataBlocks* CT_MetadataBlocks::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_rc())
-            {
-                (*iter)->get_rc().toXmlElem("main:rc", "", _outStream);
-            }
+    
+    if ((*iter)->has_rc())
+    {
+        (*iter)->get_rc().toXmlElem("main:rc", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -93384,14 +94282,20 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_bk())
-            {
-                (*iter)->get_bk().toXmlElem("main:bk", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_bk())
+    {
+        (*iter)->get_bk().toXmlElem("main:bk", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -93580,7 +94484,7 @@ CT_FutureMetadata* CT_FutureMetadata::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -93649,10 +94553,13 @@ CT_FutureMetadataBlock* CT_FutureMetadataBlock::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_mdx())
-            {
-                (*iter)->get_mdx().toXmlElem("main:mdx", "", _outStream);
-            }
+    
+    if ((*iter)->has_mdx())
+    {
+        (*iter)->get_mdx().toXmlElem("main:mdx", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -94020,22 +94927,25 @@ CT_MdxMetadata* CT_MdxMetadata::default_instance_ = NULL;
             
     if (m_has_t)
     {
-        m_t->toXmlElem("main:t", "", _outStream);;
+        m_t->toXmlElem("main:t", "", _outStream);
     }
+    
     
     if (m_has_ms)
     {
-        m_ms->toXmlElem("main:ms", "", _outStream);;
+        m_ms->toXmlElem("main:ms", "", _outStream);
     }
+    
     
     if (m_has_p)
     {
-        m_p->toXmlElem("main:p", "", _outStream);;
+        m_p->toXmlElem("main:p", "", _outStream);
     }
+    
     
     if (m_has_k)
     {
-        m_k->toXmlElem("main:k", "", _outStream);;
+        m_k->toXmlElem("main:k", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -94257,10 +95167,13 @@ CT_Mdx* CT_Mdx::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_n())
-            {
-                (*iter)->get_n().toXmlElem("main:n", "", _outStream);
-            }
+    
+    if ((*iter)->has_n())
+    {
+        (*iter)->get_n().toXmlElem("main:n", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -94562,10 +95475,13 @@ CT_MdxTuple* CT_MdxTuple::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_n())
-            {
-                (*iter)->get_n().toXmlElem("main:n", "", _outStream);
-            }
+    
+    if ((*iter)->has_n())
+    {
+        (*iter)->get_n().toXmlElem("main:n", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -95020,10 +95936,13 @@ CT_MetadataStringIndex* CT_MetadataStringIndex::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_s())
-            {
-                (*iter)->get_s().toXmlElem("main:s", "", _outStream);
-            }
+    
+    if ((*iter)->has_s())
+    {
+        (*iter)->get_s().toXmlElem("main:s", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -95132,10 +96051,13 @@ CT_MetadataStrings* CT_MetadataStrings::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_singleXmlCell())
-            {
-                (*iter)->get_singleXmlCell().toXmlElem("main:singleXmlCell", "", _outStream);
-            }
+    
+    if ((*iter)->has_singleXmlCell())
+    {
+        (*iter)->get_singleXmlCell().toXmlElem("main:singleXmlCell", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -95316,12 +96238,13 @@ CT_SingleXmlCells* CT_SingleXmlCells::default_instance_ = NULL;
             
     if (m_has_xmlCellPr)
     {
-        m_xmlCellPr->toXmlElem("main:xmlCellPr", "", _outStream);;
+        m_xmlCellPr->toXmlElem("main:xmlCellPr", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -95510,12 +96433,13 @@ CT_SingleXmlCell* CT_SingleXmlCell::default_instance_ = NULL;
             
     if (m_has_xmlPr)
     {
-        m_xmlPr->toXmlElem("main:xmlPr", "", _outStream);;
+        m_xmlPr->toXmlElem("main:xmlPr", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -95670,7 +96594,7 @@ CT_XmlCellPr* CT_XmlCellPr::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -96151,57 +97075,67 @@ CT_XmlPr* CT_XmlPr::default_instance_ = NULL;
             
     if (m_has_numFmts)
     {
-        m_numFmts->toXmlElem("main:numFmts", "", _outStream);;
+        m_numFmts->toXmlElem("main:numFmts", "", _outStream);
     }
+    
     
     if (m_has_fonts)
     {
-        m_fonts->toXmlElem("main:fonts", "", _outStream);;
+        m_fonts->toXmlElem("main:fonts", "", _outStream);
     }
+    
     
     if (m_has_fills)
     {
-        m_fills->toXmlElem("main:fills", "", _outStream);;
+        m_fills->toXmlElem("main:fills", "", _outStream);
     }
+    
     
     if (m_has_borders)
     {
-        m_borders->toXmlElem("main:borders", "", _outStream);;
+        m_borders->toXmlElem("main:borders", "", _outStream);
     }
+    
     
     if (m_has_cellStyleXfs)
     {
-        m_cellStyleXfs->toXmlElem("main:cellStyleXfs", "", _outStream);;
+        m_cellStyleXfs->toXmlElem("main:cellStyleXfs", "", _outStream);
     }
+    
     
     if (m_has_cellXfs)
     {
-        m_cellXfs->toXmlElem("main:cellXfs", "", _outStream);;
+        m_cellXfs->toXmlElem("main:cellXfs", "", _outStream);
     }
+    
     
     if (m_has_cellStyles)
     {
-        m_cellStyles->toXmlElem("main:cellStyles", "", _outStream);;
+        m_cellStyles->toXmlElem("main:cellStyles", "", _outStream);
     }
+    
     
     if (m_has_dxfs)
     {
-        m_dxfs->toXmlElem("main:dxfs", "", _outStream);;
+        m_dxfs->toXmlElem("main:dxfs", "", _outStream);
     }
+    
     
     if (m_has_tableStyles)
     {
-        m_tableStyles->toXmlElem("main:tableStyles", "", _outStream);;
+        m_tableStyles->toXmlElem("main:tableStyles", "", _outStream);
     }
+    
     
     if (m_has_colors)
     {
-        m_colors->toXmlElem("main:colors", "", _outStream);;
+        m_colors->toXmlElem("main:colors", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -96567,10 +97501,13 @@ CT_CellAlignment* CT_CellAlignment::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_border())
-            {
-                (*iter)->get_border().toXmlElem("main:border", "", _outStream);
-            }
+    
+    if ((*iter)->has_border())
+    {
+        (*iter)->get_border().toXmlElem("main:border", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -97006,47 +97943,55 @@ CT_Borders* CT_Borders::default_instance_ = NULL;
             
     if (m_has_start)
     {
-        m_start->toXmlElem("main:start", "", _outStream);;
+        m_start->toXmlElem("main:start", "", _outStream);
     }
+    
     
     if (m_has_end)
     {
-        m_end->toXmlElem("main:end", "", _outStream);;
+        m_end->toXmlElem("main:end", "", _outStream);
     }
+    
     
     if (m_has_left)
     {
-        m_left->toXmlElem("main:left", "", _outStream);;
+        m_left->toXmlElem("main:left", "", _outStream);
     }
+    
     
     if (m_has_right)
     {
-        m_right->toXmlElem("main:right", "", _outStream);;
+        m_right->toXmlElem("main:right", "", _outStream);
     }
+    
     
     if (m_has_top)
     {
-        m_top->toXmlElem("main:top", "", _outStream);;
+        m_top->toXmlElem("main:top", "", _outStream);
     }
+    
     
     if (m_has_bottom)
     {
-        m_bottom->toXmlElem("main:bottom", "", _outStream);;
+        m_bottom->toXmlElem("main:bottom", "", _outStream);
     }
+    
     
     if (m_has_diagonal)
     {
-        m_diagonal->toXmlElem("main:diagonal", "", _outStream);;
+        m_diagonal->toXmlElem("main:diagonal", "", _outStream);
     }
+    
     
     if (m_has_vertical)
     {
-        m_vertical->toXmlElem("main:vertical", "", _outStream);;
+        m_vertical->toXmlElem("main:vertical", "", _outStream);
     }
+    
     
     if (m_has_horizontal)
     {
-        m_horizontal->toXmlElem("main:horizontal", "", _outStream);;
+        m_horizontal->toXmlElem("main:horizontal", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -97185,7 +98130,7 @@ CT_Border* CT_Border::default_instance_ = NULL;
             
     if (m_has_color)
     {
-        m_color->toXmlElem("main:color", "", _outStream);;
+        m_color->toXmlElem("main:color", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -97362,10 +98307,13 @@ CT_CellProtection* CT_CellProtection::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_font())
-            {
-                (*iter)->get_font().toXmlElem("main:font", "", _outStream);
-            }
+    
+    if ((*iter)->has_font())
+    {
+        (*iter)->get_font().toXmlElem("main:font", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -97483,10 +98431,13 @@ CT_Fonts* CT_Fonts::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_fill())
-            {
-                (*iter)->get_fill().toXmlElem("main:fill", "", _outStream);
-            }
+    
+    if ((*iter)->has_fill())
+    {
+        (*iter)->get_fill().toXmlElem("main:fill", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -97665,12 +98616,13 @@ CT_Fills* CT_Fills::default_instance_ = NULL;
             
     if (m_has_patternFill)
     {
-        m_patternFill->toXmlElem("main:patternFill", "", _outStream);;
+        m_patternFill->toXmlElem("main:patternFill", "", _outStream);
     }
+    
     
     if (m_has_gradientFill)
     {
-        m_gradientFill->toXmlElem("main:gradientFill", "", _outStream);;
+        m_gradientFill->toXmlElem("main:gradientFill", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -97796,12 +98748,13 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
             
     if (m_has_fgColor)
     {
-        m_fgColor->toXmlElem("main:fgColor", "", _outStream);;
+        m_fgColor->toXmlElem("main:fgColor", "", _outStream);
     }
+    
     
     if (m_has_bgColor)
     {
-        m_bgColor->toXmlElem("main:bgColor", "", _outStream);;
+        m_bgColor->toXmlElem("main:bgColor", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -98130,10 +99083,13 @@ CT_Color* CT_Color::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_stop())
-            {
-                (*iter)->get_stop().toXmlElem("main:stop", "", _outStream);
-            }
+    
+    if ((*iter)->has_stop())
+    {
+        (*iter)->get_stop().toXmlElem("main:stop", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -98351,7 +99307,7 @@ CT_GradientFill* CT_GradientFill::default_instance_ = NULL;
             
     if (m_has_color)
     {
-        m_color->toXmlElem("main:color", "", _outStream);;
+        m_color->toXmlElem("main:color", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -98436,10 +99392,13 @@ CT_GradientStop* CT_GradientStop::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_numFmt())
-            {
-                (*iter)->get_numFmt().toXmlElem("main:numFmt", "", _outStream);
-            }
+    
+    if ((*iter)->has_numFmt())
+    {
+        (*iter)->get_numFmt().toXmlElem("main:numFmt", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -98665,10 +99624,13 @@ CT_NumFmt* CT_NumFmt::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_xf())
-            {
-                (*iter)->get_xf().toXmlElem("main:xf", "", _outStream);
-            }
+    
+    if ((*iter)->has_xf())
+    {
+        (*iter)->get_xf().toXmlElem("main:xf", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -98786,10 +99748,13 @@ CT_CellStyleXfs* CT_CellStyleXfs::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_xf())
-            {
-                (*iter)->get_xf().toXmlElem("main:xf", "", _outStream);
-            }
+    
+    if ((*iter)->has_xf())
+    {
+        (*iter)->get_xf().toXmlElem("main:xf", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -99155,17 +100120,19 @@ CT_CellXfs* CT_CellXfs::default_instance_ = NULL;
             
     if (m_has_alignment)
     {
-        m_alignment->toXmlElem("main:alignment", "", _outStream);;
+        m_alignment->toXmlElem("main:alignment", "", _outStream);
     }
+    
     
     if (m_has_protection)
     {
-        m_protection->toXmlElem("main:protection", "", _outStream);;
+        m_protection->toXmlElem("main:protection", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -99462,10 +100429,13 @@ CT_Xf* CT_Xf::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cellStyle())
-            {
-                (*iter)->get_cellStyle().toXmlElem("main:cellStyle", "", _outStream);
-            }
+    
+    if ((*iter)->has_cellStyle())
+    {
+        (*iter)->get_cellStyle().toXmlElem("main:cellStyle", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -99666,7 +100636,7 @@ CT_CellStyles* CT_CellStyles::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -99839,10 +100809,13 @@ CT_CellStyle* CT_CellStyle::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_dxf())
-            {
-                (*iter)->get_dxf().toXmlElem("main:dxf", "", _outStream);
-            }
+    
+    if ((*iter)->has_dxf())
+    {
+        (*iter)->get_dxf().toXmlElem("main:dxf", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -100176,37 +101149,43 @@ CT_Dxfs* CT_Dxfs::default_instance_ = NULL;
             
     if (m_has_font)
     {
-        m_font->toXmlElem("main:font", "", _outStream);;
+        m_font->toXmlElem("main:font", "", _outStream);
     }
+    
     
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("main:numFmt", "", _outStream);;
+        m_numFmt->toXmlElem("main:numFmt", "", _outStream);
     }
+    
     
     if (m_has_fill)
     {
-        m_fill->toXmlElem("main:fill", "", _outStream);;
+        m_fill->toXmlElem("main:fill", "", _outStream);
     }
+    
     
     if (m_has_alignment)
     {
-        m_alignment->toXmlElem("main:alignment", "", _outStream);;
+        m_alignment->toXmlElem("main:alignment", "", _outStream);
     }
+    
     
     if (m_has_border)
     {
-        m_border->toXmlElem("main:border", "", _outStream);;
+        m_border->toXmlElem("main:border", "", _outStream);
     }
+    
     
     if (m_has_protection)
     {
-        m_protection->toXmlElem("main:protection", "", _outStream);;
+        m_protection->toXmlElem("main:protection", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -100316,12 +101295,13 @@ CT_Dxf* CT_Dxf::default_instance_ = NULL;
             
     if (m_has_indexedColors)
     {
-        m_indexedColors->toXmlElem("main:indexedColors", "", _outStream);;
+        m_indexedColors->toXmlElem("main:indexedColors", "", _outStream);
     }
+    
     
     if (m_has_mruColors)
     {
-        m_mruColors->toXmlElem("main:mruColors", "", _outStream);;
+        m_mruColors->toXmlElem("main:mruColors", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -100381,10 +101361,13 @@ CT_Colors* CT_Colors::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_rgbColor())
-            {
-                (*iter)->get_rgbColor().toXmlElem("main:rgbColor", "", _outStream);
-            }
+    
+    if ((*iter)->has_rgbColor())
+    {
+        (*iter)->get_rgbColor().toXmlElem("main:rgbColor", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -100477,10 +101460,13 @@ CT_IndexedColors* CT_IndexedColors::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_color())
-            {
-                (*iter)->get_color().toXmlElem("main:color", "", _outStream);
-            }
+    
+    if ((*iter)->has_color())
+    {
+        (*iter)->get_color().toXmlElem("main:color", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -100675,10 +101661,13 @@ CT_RgbColor* CT_RgbColor::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tableStyle())
-            {
-                (*iter)->get_tableStyle().toXmlElem("main:tableStyle", "", _outStream);
-            }
+    
+    if ((*iter)->has_tableStyle())
+    {
+        (*iter)->get_tableStyle().toXmlElem("main:tableStyle", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -100861,10 +101850,13 @@ CT_TableStyles* CT_TableStyles::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tableStyleElement())
-            {
-                (*iter)->get_tableStyleElement().toXmlElem("main:tableStyleElement", "", _outStream);
-            }
+    
+    if ((*iter)->has_tableStyleElement())
+    {
+        (*iter)->get_tableStyleElement().toXmlElem("main:tableStyleElement", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -101735,66 +102727,111 @@ CT_UnderlineProperty* CT_UnderlineProperty::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_name())
-            {
-                (*iter)->get_name().toXmlElem("main:name", "", _outStream);
-            }
-            else if ((*iter)->has_charset())
-            {
-                (*iter)->get_charset().toXmlElem("main:charset", "", _outStream);
-            }
-            else if ((*iter)->has_family())
-            {
-                (*iter)->get_family().toXmlElem("main:family", "", _outStream);
-            }
-            else if ((*iter)->has_b())
-            {
-                (*iter)->get_b().toXmlElem("main:b", "", _outStream);
-            }
-            else if ((*iter)->has_i())
-            {
-                (*iter)->get_i().toXmlElem("main:i", "", _outStream);
-            }
-            else if ((*iter)->has_strike())
-            {
-                (*iter)->get_strike().toXmlElem("main:strike", "", _outStream);
-            }
-            else if ((*iter)->has_outline())
-            {
-                (*iter)->get_outline().toXmlElem("main:outline", "", _outStream);
-            }
-            else if ((*iter)->has_shadow())
-            {
-                (*iter)->get_shadow().toXmlElem("main:shadow", "", _outStream);
-            }
-            else if ((*iter)->has_condense())
-            {
-                (*iter)->get_condense().toXmlElem("main:condense", "", _outStream);
-            }
-            else if ((*iter)->has_extend())
-            {
-                (*iter)->get_extend().toXmlElem("main:extend", "", _outStream);
-            }
-            else if ((*iter)->has_color())
-            {
-                (*iter)->get_color().toXmlElem("main:color", "", _outStream);
-            }
-            else if ((*iter)->has_sz())
-            {
-                (*iter)->get_sz().toXmlElem("main:sz", "", _outStream);
-            }
-            else if ((*iter)->has_u())
-            {
-                (*iter)->get_u().toXmlElem("main:u", "", _outStream);
-            }
-            else if ((*iter)->has_vertAlign())
-            {
-                (*iter)->get_vertAlign().toXmlElem("main:vertAlign", "", _outStream);
-            }
-            else if ((*iter)->has_scheme())
-            {
-                (*iter)->get_scheme().toXmlElem("main:scheme", "", _outStream);
-            }
+    
+    if ((*iter)->has_name())
+    {
+        (*iter)->get_name().toXmlElem("main:name", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_charset())
+    {
+        (*iter)->get_charset().toXmlElem("main:charset", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_family())
+    {
+        (*iter)->get_family().toXmlElem("main:family", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_b())
+    {
+        (*iter)->get_b().toXmlElem("main:b", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_i())
+    {
+        (*iter)->get_i().toXmlElem("main:i", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_strike())
+    {
+        (*iter)->get_strike().toXmlElem("main:strike", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_outline())
+    {
+        (*iter)->get_outline().toXmlElem("main:outline", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shadow())
+    {
+        (*iter)->get_shadow().toXmlElem("main:shadow", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_condense())
+    {
+        (*iter)->get_condense().toXmlElem("main:condense", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extend())
+    {
+        (*iter)->get_extend().toXmlElem("main:extend", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_color())
+    {
+        (*iter)->get_color().toXmlElem("main:color", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sz())
+    {
+        (*iter)->get_sz().toXmlElem("main:sz", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_u())
+    {
+        (*iter)->get_u().toXmlElem("main:u", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_vertAlign())
+    {
+        (*iter)->get_vertAlign().toXmlElem("main:vertAlign", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_scheme())
+    {
+        (*iter)->get_scheme().toXmlElem("main:scheme", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -104403,22 +105440,24 @@ CT_FontFamily* CT_FontFamily::default_instance_ = NULL;
             
     if (m_has_externalBook)
     {
-        m_externalBook->toXmlElem("main:externalBook", "", _outStream);;
+        m_externalBook->toXmlElem("main:externalBook", "", _outStream);
     }
+    
     
     if (m_has_ddeLink)
     {
-        m_ddeLink->toXmlElem("main:ddeLink", "", _outStream);;
+        m_ddeLink->toXmlElem("main:ddeLink", "", _outStream);
     }
+    
     
     if (m_has_oleLink)
     {
-        m_oleLink->toXmlElem("main:oleLink", "", _outStream);;
+        m_oleLink->toXmlElem("main:oleLink", "", _outStream);
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -104579,17 +105618,19 @@ CT_ExternalLink* CT_ExternalLink::default_instance_ = NULL;
             
     if (m_has_sheetNames)
     {
-        m_sheetNames->toXmlElem("main:sheetNames", "", _outStream);;
+        m_sheetNames->toXmlElem("main:sheetNames", "", _outStream);
     }
+    
     
     if (m_has_definedNames)
     {
-        m_definedNames->toXmlElem("main:definedNames", "", _outStream);;
+        m_definedNames->toXmlElem("main:definedNames", "", _outStream);
     }
+    
     
     if (m_has_sheetDataSet)
     {
-        m_sheetDataSet->toXmlElem("main:sheetDataSet", "", _outStream);;
+        m_sheetDataSet->toXmlElem("main:sheetDataSet", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -104669,10 +105710,13 @@ CT_ExternalBook* CT_ExternalBook::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_sheetName())
-            {
-                (*iter)->get_sheetName().toXmlElem("main:sheetName", "", _outStream);
-            }
+    
+    if ((*iter)->has_sheetName())
+    {
+        (*iter)->get_sheetName().toXmlElem("main:sheetName", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -104836,10 +105880,13 @@ CT_ExternalSheetName* CT_ExternalSheetName::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_definedName())
-            {
-                (*iter)->get_definedName().toXmlElem("main:definedName", "", _outStream);
-            }
+    
+    if ((*iter)->has_definedName())
+    {
+        (*iter)->get_definedName().toXmlElem("main:definedName", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -105067,10 +106114,13 @@ CT_ExternalDefinedName* CT_ExternalDefinedName::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_sheetData())
-            {
-                (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
-            }
+    
+    if ((*iter)->has_sheetData())
+    {
+        (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -105183,10 +106233,13 @@ CT_ExternalSheetDataSet* CT_ExternalSheetDataSet::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_row())
-            {
-                (*iter)->get_row().toXmlElem("main:row", "", _outStream);
-            }
+    
+    if ((*iter)->has_row())
+    {
+        (*iter)->get_row().toXmlElem("main:row", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -105320,10 +106373,13 @@ CT_ExternalSheetData* CT_ExternalSheetData::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cell())
-            {
-                (*iter)->get_cell().toXmlElem("main:cell", "", _outStream);
-            }
+    
+    if ((*iter)->has_cell())
+    {
+        (*iter)->get_cell().toXmlElem("main:cell", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -105491,7 +106547,7 @@ CT_ExternalRow* CT_ExternalRow::default_instance_ = NULL;
             
     if (m_has_v)
     {
-        _outStream << "<main:v>" << m_v->toString() << "</main:v>";;
+        _outStream << "<main:v>" << m_v->toString() << "</main:v>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -105655,7 +106711,7 @@ CT_ExternalCell* CT_ExternalCell::default_instance_ = NULL;
             
     if (m_has_ddeItems)
     {
-        m_ddeItems->toXmlElem("main:ddeItems", "", _outStream);;
+        m_ddeItems->toXmlElem("main:ddeItems", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -105755,10 +106811,13 @@ CT_DdeLink* CT_DdeLink::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_ddeItem())
-            {
-                (*iter)->get_ddeItem().toXmlElem("main:ddeItem", "", _outStream);
-            }
+    
+    if ((*iter)->has_ddeItem())
+    {
+        (*iter)->get_ddeItem().toXmlElem("main:ddeItem", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -105915,7 +106974,7 @@ CT_DdeItems* CT_DdeItems::default_instance_ = NULL;
             
     if (m_has_values)
     {
-        m_values->toXmlElem("main:values", "", _outStream);;
+        m_values->toXmlElem("main:values", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -106063,10 +107122,13 @@ CT_DdeItem* CT_DdeItem::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_value())
-            {
-                (*iter)->get_value().toXmlElem("main:value", "", _outStream);
-            }
+    
+    if ((*iter)->has_value())
+    {
+        (*iter)->get_value().toXmlElem("main:value", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -106222,7 +107284,7 @@ CT_DdeValues* CT_DdeValues::default_instance_ = NULL;
             
     if (m_has_val)
     {
-        _outStream << "<main:val>" << m_val->toString() << "</main:val>";;
+        _outStream << "<main:val>" << m_val->toString() << "</main:val>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -106350,7 +107412,7 @@ CT_DdeValue* CT_DdeValue::default_instance_ = NULL;
             
     if (m_has_oleItems)
     {
-        m_oleItems->toXmlElem("main:oleItems", "", _outStream);;
+        m_oleItems->toXmlElem("main:oleItems", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -106450,10 +107512,13 @@ CT_OleLink* CT_OleLink::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_oleItem())
-            {
-                (*iter)->get_oleItem().toXmlElem("main:oleItem", "", _outStream);
-            }
+    
+    if ((*iter)->has_oleItem())
+    {
+        (*iter)->get_oleItem().toXmlElem("main:oleItem", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -107178,27 +108243,31 @@ CT_OleItem* CT_OleItem::default_instance_ = NULL;
             
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);;
+        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);
     }
+    
     
     if (m_has_sortState)
     {
-        m_sortState->toXmlElem("main:sortState", "", _outStream);;
+        m_sortState->toXmlElem("main:sortState", "", _outStream);
     }
+    
     
     if (m_has_tableColumns)
     {
-        m_tableColumns->toXmlElem("main:tableColumns", "", _outStream);;
+        m_tableColumns->toXmlElem("main:tableColumns", "", _outStream);
     }
+    
     
     if (m_has_tableStyleInfo)
     {
-        m_tableStyleInfo->toXmlElem("main:tableStyleInfo", "", _outStream);;
+        m_tableStyleInfo->toXmlElem("main:tableStyleInfo", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -107854,10 +108923,13 @@ CT_TableStyleInfo* CT_TableStyleInfo::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tableColumn())
-            {
-                (*iter)->get_tableColumn().toXmlElem("main:tableColumn", "", _outStream);
-            }
+    
+    if ((*iter)->has_tableColumn())
+    {
+        (*iter)->get_tableColumn().toXmlElem("main:tableColumn", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -108277,22 +109349,25 @@ CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
             
     if (m_has_calculatedColumnFormula)
     {
-        m_calculatedColumnFormula->toXmlElem("main:calculatedColumnFormula", "", _outStream);;
+        m_calculatedColumnFormula->toXmlElem("main:calculatedColumnFormula", "", _outStream);
     }
+    
     
     if (m_has_totalsRowFormula)
     {
-        m_totalsRowFormula->toXmlElem("main:totalsRowFormula", "", _outStream);;
+        m_totalsRowFormula->toXmlElem("main:totalsRowFormula", "", _outStream);
     }
+    
     
     if (m_has_xmlColumnPr)
     {
-        m_xmlColumnPr->toXmlElem("main:xmlColumnPr", "", _outStream);;
+        m_xmlColumnPr->toXmlElem("main:xmlColumnPr", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -108715,7 +109790,7 @@ CT_TableFormula* CT_TableFormula::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -108855,14 +109930,20 @@ CT_XmlColumnPr* CT_XmlColumnPr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_volType())
-            {
-                (*iter)->get_volType().toXmlElem("main:volType", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_volType())
+    {
+        (*iter)->get_volType().toXmlElem("main:volType", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -109015,10 +110096,13 @@ CT_VolTypes* CT_VolTypes::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_main())
-            {
-                (*iter)->get_main().toXmlElem("main:main", "", _outStream);
-            }
+    
+    if ((*iter)->has_main())
+    {
+        (*iter)->get_main().toXmlElem("main:main", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -109146,10 +110230,13 @@ CT_VolType* CT_VolType::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_tp())
-            {
-                (*iter)->get_tp().toXmlElem("main:tp", "", _outStream);
-            }
+    
+    if ((*iter)->has_tp())
+    {
+        (*iter)->get_tp().toXmlElem("main:tp", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -109318,21 +110405,27 @@ CT_VolMain* CT_VolMain::default_instance_ = NULL;
             
     if (m_has_v)
     {
-        _outStream << "<main:v>" << m_v->toString() << "</main:v>";;
+        _outStream << "<main:v>" << m_v->toString() << "</main:v>";
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_stp())
-            {
-                _outStream << "<main:stp>" << (*iter)->get_stp().toString() << "</main:stp>";
-            }
-            else if ((*iter)->has_tr())
-            {
-                (*iter)->get_tr().toXmlElem("main:tr", "", _outStream);
-            }
+    
+    if ((*iter)->has_stp())
+    {
+        _outStream << "<main:stp>" << (*iter)->get_stp().toString() << "</main:stp>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_tr())
+    {
+        (*iter)->get_tr().toXmlElem("main:tr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -110177,100 +111270,124 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
             
     if (m_has_fileVersion)
     {
-        m_fileVersion->toXmlElem("main:fileVersion", "", _outStream);;
+        m_fileVersion->toXmlElem("main:fileVersion", "", _outStream);
     }
+    
     
     if (m_has_fileSharing)
     {
-        m_fileSharing->toXmlElem("main:fileSharing", "", _outStream);;
+        m_fileSharing->toXmlElem("main:fileSharing", "", _outStream);
     }
+    
     
     if (m_has_workbookPr)
     {
-        m_workbookPr->toXmlElem("main:workbookPr", "", _outStream);;
+        m_workbookPr->toXmlElem("main:workbookPr", "", _outStream);
     }
+    
     
     if (m_has_workbookProtection)
     {
-        m_workbookProtection->toXmlElem("main:workbookProtection", "", _outStream);;
+        m_workbookProtection->toXmlElem("main:workbookProtection", "", _outStream);
     }
+    
     
     if (m_has_bookViews)
     {
-        m_bookViews->toXmlElem("main:bookViews", "", _outStream);;
+        m_bookViews->toXmlElem("main:bookViews", "", _outStream);
     }
+    
     
     if (m_has_sheets)
     {
-        m_sheets->toXmlElem("main:sheets", "", _outStream);;
+        m_sheets->toXmlElem("main:sheets", "", _outStream);
     }
+    
     
     if (m_has_functionGroups)
     {
-        m_functionGroups->toXmlElem("main:functionGroups", "", _outStream);;
+        m_functionGroups->toXmlElem("main:functionGroups", "", _outStream);
     }
+    
     
     if (m_has_externalReferences)
     {
-        m_externalReferences->toXmlElem("main:externalReferences", "", _outStream);;
+        m_externalReferences->toXmlElem("main:externalReferences", "", _outStream);
     }
+    
     
     if (m_has_definedNames)
     {
-        m_definedNames->toXmlElem("main:definedNames", "", _outStream);;
+        m_definedNames->toXmlElem("main:definedNames", "", _outStream);
     }
+    
     
     if (m_has_calcPr)
     {
-        m_calcPr->toXmlElem("main:calcPr", "", _outStream);;
+        m_calcPr->toXmlElem("main:calcPr", "", _outStream);
     }
+    
     
     if (m_has_oleSize)
     {
-        m_oleSize->toXmlElem("main:oleSize", "", _outStream);;
+        m_oleSize->toXmlElem("main:oleSize", "", _outStream);
     }
+    
     
     if (m_has_customWorkbookViews)
     {
-        m_customWorkbookViews->toXmlElem("main:customWorkbookViews", "", _outStream);;
+        m_customWorkbookViews->toXmlElem("main:customWorkbookViews", "", _outStream);
     }
+    
     
     if (m_has_pivotCaches)
     {
-        m_pivotCaches->toXmlElem("main:pivotCaches", "", _outStream);;
+        m_pivotCaches->toXmlElem("main:pivotCaches", "", _outStream);
     }
+    
     
     if (m_has_smartTagPr)
     {
-        m_smartTagPr->toXmlElem("main:smartTagPr", "", _outStream);;
+        m_smartTagPr->toXmlElem("main:smartTagPr", "", _outStream);
     }
+    
     
     if (m_has_smartTagTypes)
     {
-        m_smartTagTypes->toXmlElem("main:smartTagTypes", "", _outStream);;
+        m_smartTagTypes->toXmlElem("main:smartTagTypes", "", _outStream);
     }
+    
     
     if (m_has_webPublishing)
     {
-        m_webPublishing->toXmlElem("main:webPublishing", "", _outStream);;
+        m_webPublishing->toXmlElem("main:webPublishing", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_fileRecoveryPr())
-            {
-                (*iter)->get_fileRecoveryPr().toXmlElem("main:fileRecoveryPr", "", _outStream);
-            }
-            else if ((*iter)->has_webPublishObjects())
-            {
-                (*iter)->get_webPublishObjects().toXmlElem("main:webPublishObjects", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_fileRecoveryPr())
+    {
+        (*iter)->get_fileRecoveryPr().toXmlElem("main:fileRecoveryPr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_webPublishObjects())
+    {
+        (*iter)->get_webPublishObjects().toXmlElem("main:webPublishObjects", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -110670,10 +111787,13 @@ CT_FileVersion* CT_FileVersion::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_workbookView())
-            {
-                (*iter)->get_workbookView().toXmlElem("main:workbookView", "", _outStream);
-            }
+    
+    if ((*iter)->has_workbookView())
+    {
+        (*iter)->get_workbookView().toXmlElem("main:workbookView", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -110929,7 +112049,7 @@ CT_BookViews* CT_BookViews::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -111201,10 +112321,13 @@ CT_BookView* CT_BookView::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_customWorkbookView())
-            {
-                (*iter)->get_customWorkbookView().toXmlElem("main:customWorkbookView", "", _outStream);
-            }
+    
+    if ((*iter)->has_customWorkbookView())
+    {
+        (*iter)->get_customWorkbookView().toXmlElem("main:customWorkbookView", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -111599,7 +112722,7 @@ CT_CustomWorkbookViews* CT_CustomWorkbookViews::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -112059,10 +113182,13 @@ CT_CustomWorkbookView* CT_CustomWorkbookView::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_sheet())
-            {
-                (*iter)->get_sheet().toXmlElem("main:sheet", "", _outStream);
-            }
+    
+    if ((*iter)->has_sheet())
+    {
+        (*iter)->get_sheet().toXmlElem("main:sheet", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -112965,10 +114091,13 @@ CT_SmartTagPr* CT_SmartTagPr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_smartTagType())
-            {
-                (*iter)->get_smartTagType().toXmlElem("main:smartTagType", "", _outStream);
-            }
+    
+    if ((*iter)->has_smartTagType())
+    {
+        (*iter)->get_smartTagType().toXmlElem("main:smartTagType", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -113753,10 +114882,13 @@ CT_CalcPr* CT_CalcPr::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_definedName())
-            {
-                (*iter)->get_definedName().toXmlElem("main:definedName", "", _outStream);
-            }
+    
+    if ((*iter)->has_definedName())
+    {
+        (*iter)->get_definedName().toXmlElem("main:definedName", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -114358,10 +115490,13 @@ CT_DefinedName* CT_DefinedName::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_externalReference())
-            {
-                (*iter)->get_externalReference().toXmlElem("main:externalReference", "", _outStream);
-            }
+    
+    if ((*iter)->has_externalReference())
+    {
+        (*iter)->get_externalReference().toXmlElem("main:externalReference", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -114596,10 +115731,13 @@ CT_SheetBackgroundPicture* CT_SheetBackgroundPicture::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_pivotCache())
-            {
-                (*iter)->get_pivotCache().toXmlElem("main:pivotCache", "", _outStream);
-            }
+    
+    if ((*iter)->has_pivotCache())
+    {
+        (*iter)->get_pivotCache().toXmlElem("main:pivotCache", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -115889,10 +117027,13 @@ CT_WebPublishing* CT_WebPublishing::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_functionGroup())
-            {
-                (*iter)->get_functionGroup().toXmlElem("main:functionGroup", "", _outStream);
-            }
+    
+    if ((*iter)->has_functionGroup())
+    {
+        (*iter)->get_functionGroup().toXmlElem("main:functionGroup", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -116081,10 +117222,13 @@ CT_FunctionGroup* CT_FunctionGroup::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_webPublishObject())
-            {
-                (*iter)->get_webPublishObject().toXmlElem("main:webPublishObject", "", _outStream);
-            }
+    
+    if ((*iter)->has_webPublishObject())
+    {
+        (*iter)->get_webPublishObject().toXmlElem("main:webPublishObject", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -116437,14 +117581,20 @@ CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_c())
-            {
-                (*iter)->get_c().toXmlElem("main:c", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_c())
+    {
+        (*iter)->get_c().toXmlElem("main:c", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -116667,17 +117817,19 @@ calcChain_element* calcChain_element::default_instance_ = NULL;
     
     if (m_has_authors)
     {
-        m_authors->toXmlElem("main:authors", "", _outStream);;
+        m_authors->toXmlElem("main:authors", "", _outStream);
     }
+    
     
     if (m_has_commentList)
     {
-        m_commentList->toXmlElem("main:commentList", "", _outStream);;
+        m_commentList->toXmlElem("main:commentList", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:comments>";
@@ -116754,14 +117906,20 @@ comments_element* comments_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_Schema())
-            {
-                (*iter)->get_Schema().toXmlElem("main:Schema", "", _outStream);
-            }
-            else if ((*iter)->has_Map())
-            {
-                (*iter)->get_Map().toXmlElem("main:Map", "", _outStream);
-            }
+    
+    if ((*iter)->has_Schema())
+    {
+        (*iter)->get_Schema().toXmlElem("main:Schema", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_Map())
+    {
+        (*iter)->get_Map().toXmlElem("main:Map", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -116915,10 +118073,13 @@ MapInfo_element* MapInfo_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_connection())
-            {
-                (*iter)->get_connection().toXmlElem("main:connection", "", _outStream);
-            }
+    
+    if ((*iter)->has_connection())
+    {
+        (*iter)->get_connection().toXmlElem("main:connection", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -117596,57 +118757,67 @@ connections_element* connections_element::default_instance_ = NULL;
     
     if (m_has_cacheSource)
     {
-        m_cacheSource->toXmlElem("main:cacheSource", "", _outStream);;
+        m_cacheSource->toXmlElem("main:cacheSource", "", _outStream);
     }
+    
     
     if (m_has_cacheFields)
     {
-        m_cacheFields->toXmlElem("main:cacheFields", "", _outStream);;
+        m_cacheFields->toXmlElem("main:cacheFields", "", _outStream);
     }
+    
     
     if (m_has_cacheHierarchies)
     {
-        m_cacheHierarchies->toXmlElem("main:cacheHierarchies", "", _outStream);;
+        m_cacheHierarchies->toXmlElem("main:cacheHierarchies", "", _outStream);
     }
+    
     
     if (m_has_kpis)
     {
-        m_kpis->toXmlElem("main:kpis", "", _outStream);;
+        m_kpis->toXmlElem("main:kpis", "", _outStream);
     }
+    
     
     if (m_has_tupleCache)
     {
-        m_tupleCache->toXmlElem("main:tupleCache", "", _outStream);;
+        m_tupleCache->toXmlElem("main:tupleCache", "", _outStream);
     }
+    
     
     if (m_has_calculatedItems)
     {
-        m_calculatedItems->toXmlElem("main:calculatedItems", "", _outStream);;
+        m_calculatedItems->toXmlElem("main:calculatedItems", "", _outStream);
     }
+    
     
     if (m_has_calculatedMembers)
     {
-        m_calculatedMembers->toXmlElem("main:calculatedMembers", "", _outStream);;
+        m_calculatedMembers->toXmlElem("main:calculatedMembers", "", _outStream);
     }
+    
     
     if (m_has_dimensions)
     {
-        m_dimensions->toXmlElem("main:dimensions", "", _outStream);;
+        m_dimensions->toXmlElem("main:dimensions", "", _outStream);
     }
+    
     
     if (m_has_measureGroups)
     {
-        m_measureGroups->toXmlElem("main:measureGroups", "", _outStream);;
+        m_measureGroups->toXmlElem("main:measureGroups", "", _outStream);
     }
+    
     
     if (m_has_maps)
     {
-        m_maps->toXmlElem("main:maps", "", _outStream);;
+        m_maps->toXmlElem("main:maps", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:pivotCacheDefinition>";
@@ -118035,14 +119206,20 @@ pivotCacheDefinition_element* pivotCacheDefinition_element::default_instance_ = 
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_r())
-            {
-                (*iter)->get_r().toXmlElem("main:r", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_r())
+    {
+        (*iter)->get_r().toXmlElem("main:r", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -119584,87 +120761,103 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     
     if (m_has_location)
     {
-        m_location->toXmlElem("main:location", "", _outStream);;
+        m_location->toXmlElem("main:location", "", _outStream);
     }
+    
     
     if (m_has_pivotFields)
     {
-        m_pivotFields->toXmlElem("main:pivotFields", "", _outStream);;
+        m_pivotFields->toXmlElem("main:pivotFields", "", _outStream);
     }
+    
     
     if (m_has_rowFields)
     {
-        m_rowFields->toXmlElem("main:rowFields", "", _outStream);;
+        m_rowFields->toXmlElem("main:rowFields", "", _outStream);
     }
+    
     
     if (m_has_rowItems)
     {
-        m_rowItems->toXmlElem("main:rowItems", "", _outStream);;
+        m_rowItems->toXmlElem("main:rowItems", "", _outStream);
     }
+    
     
     if (m_has_colFields)
     {
-        m_colFields->toXmlElem("main:colFields", "", _outStream);;
+        m_colFields->toXmlElem("main:colFields", "", _outStream);
     }
+    
     
     if (m_has_colItems)
     {
-        m_colItems->toXmlElem("main:colItems", "", _outStream);;
+        m_colItems->toXmlElem("main:colItems", "", _outStream);
     }
+    
     
     if (m_has_pageFields)
     {
-        m_pageFields->toXmlElem("main:pageFields", "", _outStream);;
+        m_pageFields->toXmlElem("main:pageFields", "", _outStream);
     }
+    
     
     if (m_has_dataFields)
     {
-        m_dataFields->toXmlElem("main:dataFields", "", _outStream);;
+        m_dataFields->toXmlElem("main:dataFields", "", _outStream);
     }
+    
     
     if (m_has_formats)
     {
-        m_formats->toXmlElem("main:formats", "", _outStream);;
+        m_formats->toXmlElem("main:formats", "", _outStream);
     }
+    
     
     if (m_has_conditionalFormats)
     {
-        m_conditionalFormats->toXmlElem("main:conditionalFormats", "", _outStream);;
+        m_conditionalFormats->toXmlElem("main:conditionalFormats", "", _outStream);
     }
+    
     
     if (m_has_chartFormats)
     {
-        m_chartFormats->toXmlElem("main:chartFormats", "", _outStream);;
+        m_chartFormats->toXmlElem("main:chartFormats", "", _outStream);
     }
+    
     
     if (m_has_pivotHierarchies)
     {
-        m_pivotHierarchies->toXmlElem("main:pivotHierarchies", "", _outStream);;
+        m_pivotHierarchies->toXmlElem("main:pivotHierarchies", "", _outStream);
     }
+    
     
     if (m_has_pivotTableStyleInfo)
     {
-        m_pivotTableStyleInfo->toXmlElem("main:pivotTableStyleInfo", "", _outStream);;
+        m_pivotTableStyleInfo->toXmlElem("main:pivotTableStyleInfo", "", _outStream);
     }
+    
     
     if (m_has_filters)
     {
-        m_filters->toXmlElem("main:filters", "", _outStream);;
+        m_filters->toXmlElem("main:filters", "", _outStream);
     }
+    
     
     if (m_has_rowHierarchiesUsage)
     {
-        m_rowHierarchiesUsage->toXmlElem("main:rowHierarchiesUsage", "", _outStream);;
+        m_rowHierarchiesUsage->toXmlElem("main:rowHierarchiesUsage", "", _outStream);
     }
+    
     
     if (m_has_colHierarchiesUsage)
     {
-        m_colHierarchiesUsage->toXmlElem("main:colHierarchiesUsage", "", _outStream);;
+        m_colHierarchiesUsage->toXmlElem("main:colHierarchiesUsage", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:pivotTableDefinition>";
@@ -121159,12 +122352,13 @@ pivotTableDefinition_element* pivotTableDefinition_element::default_instance_ = 
     
     if (m_has_queryTableRefresh)
     {
-        m_queryTableRefresh->toXmlElem("main:queryTableRefresh", "", _outStream);;
+        m_queryTableRefresh->toXmlElem("main:queryTableRefresh", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:queryTable>";
@@ -121612,14 +122806,20 @@ queryTable_element* queryTable_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_si())
-            {
-                (*iter)->get_si().toXmlElem("main:si", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_si())
+    {
+        (*iter)->get_si().toXmlElem("main:si", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -121931,10 +123131,13 @@ sst_element* sst_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_header())
-            {
-                (*iter)->get_header().toXmlElem("main:header", "", _outStream);
-            }
+    
+    if ((*iter)->has_header())
+    {
+        (*iter)->get_header().toXmlElem("main:header", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -122315,54 +123518,90 @@ headers_element* headers_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_rrc())
-            {
-                (*iter)->get_rrc().toXmlElem("main:rrc", "", _outStream);
-            }
-            else if ((*iter)->has_rm())
-            {
-                (*iter)->get_rm().toXmlElem("main:rm", "", _outStream);
-            }
-            else if ((*iter)->has_rcv())
-            {
-                (*iter)->get_rcv().toXmlElem("main:rcv", "", _outStream);
-            }
-            else if ((*iter)->has_rsnm())
-            {
-                (*iter)->get_rsnm().toXmlElem("main:rsnm", "", _outStream);
-            }
-            else if ((*iter)->has_ris())
-            {
-                (*iter)->get_ris().toXmlElem("main:ris", "", _outStream);
-            }
-            else if ((*iter)->has_rcc())
-            {
-                (*iter)->get_rcc().toXmlElem("main:rcc", "", _outStream);
-            }
-            else if ((*iter)->has_rfmt())
-            {
-                (*iter)->get_rfmt().toXmlElem("main:rfmt", "", _outStream);
-            }
-            else if ((*iter)->has_raf())
-            {
-                (*iter)->get_raf().toXmlElem("main:raf", "", _outStream);
-            }
-            else if ((*iter)->has_rdn())
-            {
-                (*iter)->get_rdn().toXmlElem("main:rdn", "", _outStream);
-            }
-            else if ((*iter)->has_rcmt())
-            {
-                (*iter)->get_rcmt().toXmlElem("main:rcmt", "", _outStream);
-            }
-            else if ((*iter)->has_rqt())
-            {
-                (*iter)->get_rqt().toXmlElem("main:rqt", "", _outStream);
-            }
-            else if ((*iter)->has_rcft())
-            {
-                (*iter)->get_rcft().toXmlElem("main:rcft", "", _outStream);
-            }
+    
+    if ((*iter)->has_rrc())
+    {
+        (*iter)->get_rrc().toXmlElem("main:rrc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rm())
+    {
+        (*iter)->get_rm().toXmlElem("main:rm", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rcv())
+    {
+        (*iter)->get_rcv().toXmlElem("main:rcv", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rsnm())
+    {
+        (*iter)->get_rsnm().toXmlElem("main:rsnm", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_ris())
+    {
+        (*iter)->get_ris().toXmlElem("main:ris", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rcc())
+    {
+        (*iter)->get_rcc().toXmlElem("main:rcc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rfmt())
+    {
+        (*iter)->get_rfmt().toXmlElem("main:rfmt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_raf())
+    {
+        (*iter)->get_raf().toXmlElem("main:raf", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rdn())
+    {
+        (*iter)->get_rdn().toXmlElem("main:rdn", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rcmt())
+    {
+        (*iter)->get_rcmt().toXmlElem("main:rcmt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rqt())
+    {
+        (*iter)->get_rqt().toXmlElem("main:rqt", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rcft())
+    {
+        (*iter)->get_rcft().toXmlElem("main:rcft", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -123949,10 +125188,13 @@ revisions_element* revisions_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_userInfo())
-            {
-                (*iter)->get_userInfo().toXmlElem("main:userInfo", "", _outStream);
-            }
+    
+    if ((*iter)->has_userInfo())
+    {
+        (*iter)->get_userInfo().toXmlElem("main:userInfo", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -124470,168 +125712,276 @@ users_element* users_element::default_instance_ = NULL;
     
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);
     }
+    
     
     if (m_has_dimension)
     {
-        m_dimension->toXmlElem("main:dimension", "", _outStream);;
+        m_dimension->toXmlElem("main:dimension", "", _outStream);
     }
+    
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);
     }
+    
     
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);;
+        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cols())
-            {
-                (*iter)->get_cols().toXmlElem("main:cols", "", _outStream);
-            }
-            else if ((*iter)->has_sheetData())
-            {
-                (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
-            }
-            else if ((*iter)->has_sheetCalcPr())
-            {
-                (*iter)->get_sheetCalcPr().toXmlElem("main:sheetCalcPr", "", _outStream);
-            }
-            else if ((*iter)->has_sheetProtection())
-            {
-                (*iter)->get_sheetProtection().toXmlElem("main:sheetProtection", "", _outStream);
-            }
-            else if ((*iter)->has_protectedRanges())
-            {
-                (*iter)->get_protectedRanges().toXmlElem("main:protectedRanges", "", _outStream);
-            }
-            else if ((*iter)->has_scenarios())
-            {
-                (*iter)->get_scenarios().toXmlElem("main:scenarios", "", _outStream);
-            }
-            else if ((*iter)->has_autoFilter())
-            {
-                (*iter)->get_autoFilter().toXmlElem("main:autoFilter", "", _outStream);
-            }
-            else if ((*iter)->has_sortState())
-            {
-                (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
-            }
-            else if ((*iter)->has_dataConsolidate())
-            {
-                (*iter)->get_dataConsolidate().toXmlElem("main:dataConsolidate", "", _outStream);
-            }
-            else if ((*iter)->has_customSheetViews())
-            {
-                (*iter)->get_customSheetViews().toXmlElem("main:customSheetViews", "", _outStream);
-            }
-            else if ((*iter)->has_mergeCells())
-            {
-                (*iter)->get_mergeCells().toXmlElem("main:mergeCells", "", _outStream);
-            }
-            else if ((*iter)->has_phoneticPr())
-            {
-                (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
-            }
-            else if ((*iter)->has_conditionalFormatting())
-            {
-                (*iter)->get_conditionalFormatting().toXmlElem("main:conditionalFormatting", "", _outStream);
-            }
-            else if ((*iter)->has_dataValidations())
-            {
-                (*iter)->get_dataValidations().toXmlElem("main:dataValidations", "", _outStream);
-            }
-            else if ((*iter)->has_hyperlinks())
-            {
-                (*iter)->get_hyperlinks().toXmlElem("main:hyperlinks", "", _outStream);
-            }
-            else if ((*iter)->has_printOptions())
-            {
-                (*iter)->get_printOptions().toXmlElem("main:printOptions", "", _outStream);
-            }
-            else if ((*iter)->has_pageMargins())
-            {
-                (*iter)->get_pageMargins().toXmlElem("main:pageMargins", "", _outStream);
-            }
-            else if ((*iter)->has_pageSetup())
-            {
-                (*iter)->get_pageSetup().toXmlElem("main:pageSetup", "", _outStream);
-            }
-            else if ((*iter)->has_headerFooter())
-            {
-                (*iter)->get_headerFooter().toXmlElem("main:headerFooter", "", _outStream);
-            }
-            else if ((*iter)->has_rowBreaks())
-            {
-                (*iter)->get_rowBreaks().toXmlElem("main:rowBreaks", "", _outStream);
-            }
-            else if ((*iter)->has_colBreaks())
-            {
-                (*iter)->get_colBreaks().toXmlElem("main:colBreaks", "", _outStream);
-            }
-            else if ((*iter)->has_customProperties())
-            {
-                (*iter)->get_customProperties().toXmlElem("main:customProperties", "", _outStream);
-            }
-            else if ((*iter)->has_cellWatches())
-            {
-                (*iter)->get_cellWatches().toXmlElem("main:cellWatches", "", _outStream);
-            }
-            else if ((*iter)->has_ignoredErrors())
-            {
-                (*iter)->get_ignoredErrors().toXmlElem("main:ignoredErrors", "", _outStream);
-            }
-            else if ((*iter)->has_smartTags())
-            {
-                (*iter)->get_smartTags().toXmlElem("main:smartTags", "", _outStream);
-            }
-            else if ((*iter)->has_drawing())
-            {
-                (*iter)->get_drawing().toXmlElem("main:drawing", "", _outStream);
-            }
-            else if ((*iter)->has_legacyDrawing())
-            {
-                (*iter)->get_legacyDrawing().toXmlElem("main:legacyDrawing", "", _outStream);
-            }
-            else if ((*iter)->has_legacyDrawingHF())
-            {
-                (*iter)->get_legacyDrawingHF().toXmlElem("main:legacyDrawingHF", "", _outStream);
-            }
-            else if ((*iter)->has_drawingHF())
-            {
-                (*iter)->get_drawingHF().toXmlElem("main:drawingHF", "", _outStream);
-            }
-            else if ((*iter)->has_picture())
-            {
-                (*iter)->get_picture().toXmlElem("main:picture", "", _outStream);
-            }
-            else if ((*iter)->has_oleObjects())
-            {
-                (*iter)->get_oleObjects().toXmlElem("main:oleObjects", "", _outStream);
-            }
-            else if ((*iter)->has_controls())
-            {
-                (*iter)->get_controls().toXmlElem("main:controls", "", _outStream);
-            }
-            else if ((*iter)->has_webPublishItems())
-            {
-                (*iter)->get_webPublishItems().toXmlElem("main:webPublishItems", "", _outStream);
-            }
-            else if ((*iter)->has_tableParts())
-            {
-                (*iter)->get_tableParts().toXmlElem("main:tableParts", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_cols())
+    {
+        (*iter)->get_cols().toXmlElem("main:cols", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sheetData())
+    {
+        (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sheetCalcPr())
+    {
+        (*iter)->get_sheetCalcPr().toXmlElem("main:sheetCalcPr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sheetProtection())
+    {
+        (*iter)->get_sheetProtection().toXmlElem("main:sheetProtection", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_protectedRanges())
+    {
+        (*iter)->get_protectedRanges().toXmlElem("main:protectedRanges", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_scenarios())
+    {
+        (*iter)->get_scenarios().toXmlElem("main:scenarios", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_autoFilter())
+    {
+        (*iter)->get_autoFilter().toXmlElem("main:autoFilter", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sortState())
+    {
+        (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dataConsolidate())
+    {
+        (*iter)->get_dataConsolidate().toXmlElem("main:dataConsolidate", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_customSheetViews())
+    {
+        (*iter)->get_customSheetViews().toXmlElem("main:customSheetViews", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_mergeCells())
+    {
+        (*iter)->get_mergeCells().toXmlElem("main:mergeCells", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_phoneticPr())
+    {
+        (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_conditionalFormatting())
+    {
+        (*iter)->get_conditionalFormatting().toXmlElem("main:conditionalFormatting", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_dataValidations())
+    {
+        (*iter)->get_dataValidations().toXmlElem("main:dataValidations", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_hyperlinks())
+    {
+        (*iter)->get_hyperlinks().toXmlElem("main:hyperlinks", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_printOptions())
+    {
+        (*iter)->get_printOptions().toXmlElem("main:printOptions", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pageMargins())
+    {
+        (*iter)->get_pageMargins().toXmlElem("main:pageMargins", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_pageSetup())
+    {
+        (*iter)->get_pageSetup().toXmlElem("main:pageSetup", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_headerFooter())
+    {
+        (*iter)->get_headerFooter().toXmlElem("main:headerFooter", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_rowBreaks())
+    {
+        (*iter)->get_rowBreaks().toXmlElem("main:rowBreaks", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_colBreaks())
+    {
+        (*iter)->get_colBreaks().toXmlElem("main:colBreaks", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_customProperties())
+    {
+        (*iter)->get_customProperties().toXmlElem("main:customProperties", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_cellWatches())
+    {
+        (*iter)->get_cellWatches().toXmlElem("main:cellWatches", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_ignoredErrors())
+    {
+        (*iter)->get_ignoredErrors().toXmlElem("main:ignoredErrors", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_smartTags())
+    {
+        (*iter)->get_smartTags().toXmlElem("main:smartTags", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_drawing())
+    {
+        (*iter)->get_drawing().toXmlElem("main:drawing", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_legacyDrawing())
+    {
+        (*iter)->get_legacyDrawing().toXmlElem("main:legacyDrawing", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_legacyDrawingHF())
+    {
+        (*iter)->get_legacyDrawingHF().toXmlElem("main:legacyDrawingHF", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_drawingHF())
+    {
+        (*iter)->get_drawingHF().toXmlElem("main:drawingHF", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_picture())
+    {
+        (*iter)->get_picture().toXmlElem("main:picture", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_oleObjects())
+    {
+        (*iter)->get_oleObjects().toXmlElem("main:oleObjects", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_controls())
+    {
+        (*iter)->get_controls().toXmlElem("main:controls", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_webPublishItems())
+    {
+        (*iter)->get_webPublishItems().toXmlElem("main:webPublishItems", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_tableParts())
+    {
+        (*iter)->get_tableParts().toXmlElem("main:tableParts", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -136822,72 +138172,85 @@ worksheet_element* worksheet_element::default_instance_ = NULL;
     
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);
     }
+    
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);
     }
+    
     
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);;
+        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);
     }
+    
     
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);;
+        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);
     }
+    
     
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);
     }
+    
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);
     }
+    
     
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);
     }
+    
     
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("main:drawing", "", _outStream);;
+        m_drawing->toXmlElem("main:drawing", "", _outStream);
     }
+    
     
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);;
+        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);
     }
+    
     
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);;
+        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);
     }
+    
     
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);;
+        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);
     }
+    
     
     if (m_has_picture)
     {
-        m_picture->toXmlElem("main:picture", "", _outStream);;
+        m_picture->toXmlElem("main:picture", "", _outStream);
     }
+    
     
     if (m_has_webPublishItems)
     {
-        m_webPublishItems->toXmlElem("main:webPublishItems", "", _outStream);;
+        m_webPublishItems->toXmlElem("main:webPublishItems", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:chartsheet>";
@@ -137487,82 +138850,97 @@ chartsheet_element* chartsheet_element::default_instance_ = NULL;
     
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);;
+        m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);
     }
+    
     
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);;
+        m_sheetViews->toXmlElem("main:sheetViews", "", _outStream);
     }
+    
     
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);;
+        m_sheetFormatPr->toXmlElem("main:sheetFormatPr", "", _outStream);
     }
+    
     
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);;
+        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);
     }
+    
     
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);;
+        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);
     }
+    
     
     if (m_has_printOptions)
     {
-        m_printOptions->toXmlElem("main:printOptions", "", _outStream);;
+        m_printOptions->toXmlElem("main:printOptions", "", _outStream);
     }
+    
     
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);;
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);
     }
+    
     
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);;
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);
     }
+    
     
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);;
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);
     }
+    
     
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("main:drawing", "", _outStream);;
+        m_drawing->toXmlElem("main:drawing", "", _outStream);
     }
+    
     
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);;
+        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);
     }
+    
     
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);;
+        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);
     }
+    
     
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);;
+        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);
     }
+    
     
     if (m_has_oleObjects)
     {
-        m_oleObjects->toXmlElem("main:oleObjects", "", _outStream);;
+        m_oleObjects->toXmlElem("main:oleObjects", "", _outStream);
     }
+    
     
     if (m_has_controls)
     {
-        m_controls->toXmlElem("main:controls", "", _outStream);;
+        m_controls->toXmlElem("main:controls", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:dialogsheet>";
@@ -137748,39 +139126,53 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
     
     if (m_has_metadataTypes)
     {
-        m_metadataTypes->toXmlElem("main:metadataTypes", "", _outStream);;
+        m_metadataTypes->toXmlElem("main:metadataTypes", "", _outStream);
     }
+    
     
     if (m_has_metadataStrings)
     {
-        m_metadataStrings->toXmlElem("main:metadataStrings", "", _outStream);;
+        m_metadataStrings->toXmlElem("main:metadataStrings", "", _outStream);
     }
+    
     
     if (m_has_mdxMetadata)
     {
-        m_mdxMetadata->toXmlElem("main:mdxMetadata", "", _outStream);;
+        m_mdxMetadata->toXmlElem("main:mdxMetadata", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_futureMetadata())
-            {
-                (*iter)->get_futureMetadata().toXmlElem("main:futureMetadata", "", _outStream);
-            }
-            else if ((*iter)->has_cellMetadata())
-            {
-                (*iter)->get_cellMetadata().toXmlElem("main:cellMetadata", "", _outStream);
-            }
-            else if ((*iter)->has_valueMetadata())
-            {
-                (*iter)->get_valueMetadata().toXmlElem("main:valueMetadata", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_futureMetadata())
+    {
+        (*iter)->get_futureMetadata().toXmlElem("main:futureMetadata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_cellMetadata())
+    {
+        (*iter)->get_cellMetadata().toXmlElem("main:cellMetadata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_valueMetadata())
+    {
+        (*iter)->get_valueMetadata().toXmlElem("main:valueMetadata", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -138062,10 +139454,13 @@ metadata_element* metadata_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_singleXmlCell())
-            {
-                (*iter)->get_singleXmlCell().toXmlElem("main:singleXmlCell", "", _outStream);
-            }
+    
+    if ((*iter)->has_singleXmlCell())
+    {
+        (*iter)->get_singleXmlCell().toXmlElem("main:singleXmlCell", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -138523,57 +139918,67 @@ singleXmlCells_element* singleXmlCells_element::default_instance_ = NULL;
     
     if (m_has_numFmts)
     {
-        m_numFmts->toXmlElem("main:numFmts", "", _outStream);;
+        m_numFmts->toXmlElem("main:numFmts", "", _outStream);
     }
+    
     
     if (m_has_fonts)
     {
-        m_fonts->toXmlElem("main:fonts", "", _outStream);;
+        m_fonts->toXmlElem("main:fonts", "", _outStream);
     }
+    
     
     if (m_has_fills)
     {
-        m_fills->toXmlElem("main:fills", "", _outStream);;
+        m_fills->toXmlElem("main:fills", "", _outStream);
     }
+    
     
     if (m_has_borders)
     {
-        m_borders->toXmlElem("main:borders", "", _outStream);;
+        m_borders->toXmlElem("main:borders", "", _outStream);
     }
+    
     
     if (m_has_cellStyleXfs)
     {
-        m_cellStyleXfs->toXmlElem("main:cellStyleXfs", "", _outStream);;
+        m_cellStyleXfs->toXmlElem("main:cellStyleXfs", "", _outStream);
     }
+    
     
     if (m_has_cellXfs)
     {
-        m_cellXfs->toXmlElem("main:cellXfs", "", _outStream);;
+        m_cellXfs->toXmlElem("main:cellXfs", "", _outStream);
     }
+    
     
     if (m_has_cellStyles)
     {
-        m_cellStyles->toXmlElem("main:cellStyles", "", _outStream);;
+        m_cellStyles->toXmlElem("main:cellStyles", "", _outStream);
     }
+    
     
     if (m_has_dxfs)
     {
-        m_dxfs->toXmlElem("main:dxfs", "", _outStream);;
+        m_dxfs->toXmlElem("main:dxfs", "", _outStream);
     }
+    
     
     if (m_has_tableStyles)
     {
-        m_tableStyles->toXmlElem("main:tableStyles", "", _outStream);;
+        m_tableStyles->toXmlElem("main:tableStyles", "", _outStream);
     }
+    
     
     if (m_has_colors)
     {
-        m_colors->toXmlElem("main:colors", "", _outStream);;
+        m_colors->toXmlElem("main:colors", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:styleSheet>";
@@ -138810,22 +140215,24 @@ styleSheet_element* styleSheet_element::default_instance_ = NULL;
     
     if (m_has_externalBook)
     {
-        m_externalBook->toXmlElem("main:externalBook", "", _outStream);;
+        m_externalBook->toXmlElem("main:externalBook", "", _outStream);
     }
+    
     
     if (m_has_ddeLink)
     {
-        m_ddeLink->toXmlElem("main:ddeLink", "", _outStream);;
+        m_ddeLink->toXmlElem("main:ddeLink", "", _outStream);
     }
+    
     
     if (m_has_oleLink)
     {
-        m_oleLink->toXmlElem("main:oleLink", "", _outStream);;
+        m_oleLink->toXmlElem("main:oleLink", "", _outStream);
     }
      
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:externalLink>";
@@ -139365,27 +140772,31 @@ externalLink_element* externalLink_element::default_instance_ = NULL;
     
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);;
+        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);
     }
+    
     
     if (m_has_sortState)
     {
-        m_sortState->toXmlElem("main:sortState", "", _outStream);;
+        m_sortState->toXmlElem("main:sortState", "", _outStream);
     }
+    
     
     if (m_has_tableColumns)
     {
-        m_tableColumns->toXmlElem("main:tableColumns", "", _outStream);;
+        m_tableColumns->toXmlElem("main:tableColumns", "", _outStream);
     }
+    
     
     if (m_has_tableStyleInfo)
     {
-        m_tableStyleInfo->toXmlElem("main:tableStyleInfo", "", _outStream);;
+        m_tableStyleInfo->toXmlElem("main:tableStyleInfo", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("main:extLst", "", _outStream);;
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:table>";
@@ -139861,14 +141272,20 @@ table_element* table_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_volType())
-            {
-                (*iter)->get_volType().toXmlElem("main:volType", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_volType())
+    {
+        (*iter)->get_volType().toXmlElem("main:volType", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -140595,100 +142012,124 @@ volTypes_element* volTypes_element::default_instance_ = NULL;
     
     if (m_has_fileVersion)
     {
-        m_fileVersion->toXmlElem("main:fileVersion", "", _outStream);;
+        m_fileVersion->toXmlElem("main:fileVersion", "", _outStream);
     }
+    
     
     if (m_has_fileSharing)
     {
-        m_fileSharing->toXmlElem("main:fileSharing", "", _outStream);;
+        m_fileSharing->toXmlElem("main:fileSharing", "", _outStream);
     }
+    
     
     if (m_has_workbookPr)
     {
-        m_workbookPr->toXmlElem("main:workbookPr", "", _outStream);;
+        m_workbookPr->toXmlElem("main:workbookPr", "", _outStream);
     }
+    
     
     if (m_has_workbookProtection)
     {
-        m_workbookProtection->toXmlElem("main:workbookProtection", "", _outStream);;
+        m_workbookProtection->toXmlElem("main:workbookProtection", "", _outStream);
     }
+    
     
     if (m_has_bookViews)
     {
-        m_bookViews->toXmlElem("main:bookViews", "", _outStream);;
+        m_bookViews->toXmlElem("main:bookViews", "", _outStream);
     }
+    
     
     if (m_has_sheets)
     {
-        m_sheets->toXmlElem("main:sheets", "", _outStream);;
+        m_sheets->toXmlElem("main:sheets", "", _outStream);
     }
+    
     
     if (m_has_functionGroups)
     {
-        m_functionGroups->toXmlElem("main:functionGroups", "", _outStream);;
+        m_functionGroups->toXmlElem("main:functionGroups", "", _outStream);
     }
+    
     
     if (m_has_externalReferences)
     {
-        m_externalReferences->toXmlElem("main:externalReferences", "", _outStream);;
+        m_externalReferences->toXmlElem("main:externalReferences", "", _outStream);
     }
+    
     
     if (m_has_definedNames)
     {
-        m_definedNames->toXmlElem("main:definedNames", "", _outStream);;
+        m_definedNames->toXmlElem("main:definedNames", "", _outStream);
     }
+    
     
     if (m_has_calcPr)
     {
-        m_calcPr->toXmlElem("main:calcPr", "", _outStream);;
+        m_calcPr->toXmlElem("main:calcPr", "", _outStream);
     }
+    
     
     if (m_has_oleSize)
     {
-        m_oleSize->toXmlElem("main:oleSize", "", _outStream);;
+        m_oleSize->toXmlElem("main:oleSize", "", _outStream);
     }
+    
     
     if (m_has_customWorkbookViews)
     {
-        m_customWorkbookViews->toXmlElem("main:customWorkbookViews", "", _outStream);;
+        m_customWorkbookViews->toXmlElem("main:customWorkbookViews", "", _outStream);
     }
+    
     
     if (m_has_pivotCaches)
     {
-        m_pivotCaches->toXmlElem("main:pivotCaches", "", _outStream);;
+        m_pivotCaches->toXmlElem("main:pivotCaches", "", _outStream);
     }
+    
     
     if (m_has_smartTagPr)
     {
-        m_smartTagPr->toXmlElem("main:smartTagPr", "", _outStream);;
+        m_smartTagPr->toXmlElem("main:smartTagPr", "", _outStream);
     }
+    
     
     if (m_has_smartTagTypes)
     {
-        m_smartTagTypes->toXmlElem("main:smartTagTypes", "", _outStream);;
+        m_smartTagTypes->toXmlElem("main:smartTagTypes", "", _outStream);
     }
+    
     
     if (m_has_webPublishing)
     {
-        m_webPublishing->toXmlElem("main:webPublishing", "", _outStream);;
+        m_webPublishing->toXmlElem("main:webPublishing", "", _outStream);
     }
      
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_fileRecoveryPr())
-            {
-                (*iter)->get_fileRecoveryPr().toXmlElem("main:fileRecoveryPr", "", _outStream);
-            }
-            else if ((*iter)->has_webPublishObjects())
-            {
-                (*iter)->get_webPublishObjects().toXmlElem("main:webPublishObjects", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_fileRecoveryPr())
+    {
+        (*iter)->get_fileRecoveryPr().toXmlElem("main:fileRecoveryPr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_webPublishObjects())
+    {
+        (*iter)->get_webPublishObjects().toXmlElem("main:webPublishObjects", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     

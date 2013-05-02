@@ -573,86 +573,146 @@ CT_Null* CT_Null::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_variant())
-            {
-                (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
-            }
-            else if ((*iter)->has_i1())
-            {
-                _outStream << "<vt:i1>" << (*iter)->get_i1() << "</vt:i1>";
-            }
-            else if ((*iter)->has_i2())
-            {
-                _outStream << "<vt:i2>" << (*iter)->get_i2() << "</vt:i2>";
-            }
-            else if ((*iter)->has_i4())
-            {
-                _outStream << "<vt:i4>" << (*iter)->get_i4() << "</vt:i4>";
-            }
-            else if ((*iter)->has_i8())
-            {
-                _outStream << "<vt:i8>" << (*iter)->get_i8() << "</vt:i8>";
-            }
-            else if ((*iter)->has_ui1())
-            {
-                _outStream << "<vt:ui1>" << (*iter)->get_ui1() << "</vt:ui1>";
-            }
-            else if ((*iter)->has_ui2())
-            {
-                _outStream << "<vt:ui2>" << (*iter)->get_ui2() << "</vt:ui2>";
-            }
-            else if ((*iter)->has_ui4())
-            {
-                _outStream << "<vt:ui4>" << (*iter)->get_ui4() << "</vt:ui4>";
-            }
-            else if ((*iter)->has_ui8())
-            {
-                _outStream << "<vt:ui8>" << (*iter)->get_ui8() << "</vt:ui8>";
-            }
-            else if ((*iter)->has_r4())
-            {
-                _outStream << "<vt:r4>" << (*iter)->get_r4() << "</vt:r4>";
-            }
-            else if ((*iter)->has_r8())
-            {
-                _outStream << "<vt:r8>" << (*iter)->get_r8() << "</vt:r8>";
-            }
-            else if ((*iter)->has_lpstr())
-            {
-                _outStream << "<vt:lpstr>" << (*iter)->get_lpstr() << "</vt:lpstr>";
-            }
-            else if ((*iter)->has_lpwstr())
-            {
-                _outStream << "<vt:lpwstr>" << (*iter)->get_lpwstr() << "</vt:lpwstr>";
-            }
-            else if ((*iter)->has_bstr())
-            {
-                _outStream << "<vt:bstr>" << (*iter)->get_bstr() << "</vt:bstr>";
-            }
-            else if ((*iter)->has_date())
-            {
-                _outStream << "<vt:date>" << (*iter)->get_date() << "</vt:date>";
-            }
-            else if ((*iter)->has_filetime())
-            {
-                _outStream << "<vt:filetime>" << (*iter)->get_filetime() << "</vt:filetime>";
-            }
-            else if ((*iter)->has_bool())
-            {
-                _outStream << "<vt:bool>" << (*iter)->get_bool() << "</vt:bool>";
-            }
-            else if ((*iter)->has_cy())
-            {
-                _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
-            }
-            else if ((*iter)->has_error())
-            {
-                _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
-            }
-            else if ((*iter)->has_clsid())
-            {
-                _outStream << "<vt:clsid>" << (*iter)->get_clsid().toString() << "</vt:clsid>";
-            }
+    
+    if ((*iter)->has_variant())
+    {
+        (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_i1())
+    {
+        _outStream << "<vt:i1>" << (*iter)->get_i1() << "</vt:i1>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_i2())
+    {
+        _outStream << "<vt:i2>" << (*iter)->get_i2() << "</vt:i2>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_i4())
+    {
+        _outStream << "<vt:i4>" << (*iter)->get_i4() << "</vt:i4>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_i8())
+    {
+        _outStream << "<vt:i8>" << (*iter)->get_i8() << "</vt:i8>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui1())
+    {
+        _outStream << "<vt:ui1>" << (*iter)->get_ui1() << "</vt:ui1>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui2())
+    {
+        _outStream << "<vt:ui2>" << (*iter)->get_ui2() << "</vt:ui2>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui4())
+    {
+        _outStream << "<vt:ui4>" << (*iter)->get_ui4() << "</vt:ui4>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui8())
+    {
+        _outStream << "<vt:ui8>" << (*iter)->get_ui8() << "</vt:ui8>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_r4())
+    {
+        _outStream << "<vt:r4>" << (*iter)->get_r4() << "</vt:r4>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_r8())
+    {
+        _outStream << "<vt:r8>" << (*iter)->get_r8() << "</vt:r8>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_lpstr())
+    {
+        _outStream << "<vt:lpstr>" << (*iter)->get_lpstr() << "</vt:lpstr>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_lpwstr())
+    {
+        _outStream << "<vt:lpwstr>" << (*iter)->get_lpwstr() << "</vt:lpwstr>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_bstr())
+    {
+        _outStream << "<vt:bstr>" << (*iter)->get_bstr() << "</vt:bstr>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_date())
+    {
+        _outStream << "<vt:date>" << (*iter)->get_date() << "</vt:date>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_filetime())
+    {
+        _outStream << "<vt:filetime>" << (*iter)->get_filetime() << "</vt:filetime>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_bool())
+    {
+        _outStream << "<vt:bool>" << (*iter)->get_bool() << "</vt:bool>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_cy())
+    {
+        _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_error())
+    {
+        _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_clsid())
+    {
+        _outStream << "<vt:clsid>" << (*iter)->get_clsid().toString() << "</vt:clsid>";
+    }
+    
+    
         }
     }
     
@@ -2913,74 +2973,125 @@ CT_Vector* CT_Vector::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_variant())
-            {
-                (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
-            }
-            else if ((*iter)->has_i1())
-            {
-                _outStream << "<vt:i1>" << (*iter)->get_i1() << "</vt:i1>";
-            }
-            else if ((*iter)->has_i2())
-            {
-                _outStream << "<vt:i2>" << (*iter)->get_i2() << "</vt:i2>";
-            }
-            else if ((*iter)->has_i4())
-            {
-                _outStream << "<vt:i4>" << (*iter)->get_i4() << "</vt:i4>";
-            }
-            else if ((*iter)->has_int())
-            {
-                _outStream << "<vt:int>" << (*iter)->get_int() << "</vt:int>";
-            }
-            else if ((*iter)->has_ui1())
-            {
-                _outStream << "<vt:ui1>" << (*iter)->get_ui1() << "</vt:ui1>";
-            }
-            else if ((*iter)->has_ui2())
-            {
-                _outStream << "<vt:ui2>" << (*iter)->get_ui2() << "</vt:ui2>";
-            }
-            else if ((*iter)->has_ui4())
-            {
-                _outStream << "<vt:ui4>" << (*iter)->get_ui4() << "</vt:ui4>";
-            }
-            else if ((*iter)->has_uint())
-            {
-                _outStream << "<vt:uint>" << (*iter)->get_uint() << "</vt:uint>";
-            }
-            else if ((*iter)->has_r4())
-            {
-                _outStream << "<vt:r4>" << (*iter)->get_r4() << "</vt:r4>";
-            }
-            else if ((*iter)->has_r8())
-            {
-                _outStream << "<vt:r8>" << (*iter)->get_r8() << "</vt:r8>";
-            }
-            else if ((*iter)->has_decimal())
-            {
-                _outStream << "<vt:decimal>" << (*iter)->get_decimal() << "</vt:decimal>";
-            }
-            else if ((*iter)->has_bstr())
-            {
-                _outStream << "<vt:bstr>" << (*iter)->get_bstr() << "</vt:bstr>";
-            }
-            else if ((*iter)->has_date())
-            {
-                _outStream << "<vt:date>" << (*iter)->get_date() << "</vt:date>";
-            }
-            else if ((*iter)->has_bool())
-            {
-                _outStream << "<vt:bool>" << (*iter)->get_bool() << "</vt:bool>";
-            }
-            else if ((*iter)->has_error())
-            {
-                _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
-            }
-            else if ((*iter)->has_cy())
-            {
-                _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
-            }
+    
+    if ((*iter)->has_variant())
+    {
+        (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_i1())
+    {
+        _outStream << "<vt:i1>" << (*iter)->get_i1() << "</vt:i1>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_i2())
+    {
+        _outStream << "<vt:i2>" << (*iter)->get_i2() << "</vt:i2>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_i4())
+    {
+        _outStream << "<vt:i4>" << (*iter)->get_i4() << "</vt:i4>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_int())
+    {
+        _outStream << "<vt:int>" << (*iter)->get_int() << "</vt:int>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui1())
+    {
+        _outStream << "<vt:ui1>" << (*iter)->get_ui1() << "</vt:ui1>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui2())
+    {
+        _outStream << "<vt:ui2>" << (*iter)->get_ui2() << "</vt:ui2>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui4())
+    {
+        _outStream << "<vt:ui4>" << (*iter)->get_ui4() << "</vt:ui4>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_uint())
+    {
+        _outStream << "<vt:uint>" << (*iter)->get_uint() << "</vt:uint>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_r4())
+    {
+        _outStream << "<vt:r4>" << (*iter)->get_r4() << "</vt:r4>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_r8())
+    {
+        _outStream << "<vt:r8>" << (*iter)->get_r8() << "</vt:r8>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_decimal())
+    {
+        _outStream << "<vt:decimal>" << (*iter)->get_decimal() << "</vt:decimal>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_bstr())
+    {
+        _outStream << "<vt:bstr>" << (*iter)->get_bstr() << "</vt:bstr>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_date())
+    {
+        _outStream << "<vt:date>" << (*iter)->get_date() << "</vt:date>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_bool())
+    {
+        _outStream << "<vt:bool>" << (*iter)->get_bool() << "</vt:bool>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_error())
+    {
+        _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_cy())
+    {
+        _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
+    }
+    
+    
         }
     }
     
@@ -10551,172 +10662,205 @@ CT_Array* CT_Array::default_instance_ = NULL;
             
     if (m_has_variant)
     {
-        m_variant->toXmlElem("vt:variant", "", _outStream);;
+        m_variant->toXmlElem("vt:variant", "", _outStream);
     }
+    
     
     if (m_has_vector)
     {
-        m_vector->toXmlElem("vt:vector", "", _outStream);;
+        m_vector->toXmlElem("vt:vector", "", _outStream);
     }
+    
     
     if (m_has_array)
     {
-        m_array->toXmlElem("vt:array", "", _outStream);;
+        m_array->toXmlElem("vt:array", "", _outStream);
     }
+    
     
     if (m_has_blob)
     {
-        _outStream << "<vt:blob>" << m_blob << "</vt:blob>";;
+        _outStream << "<vt:blob>" << m_blob << "</vt:blob>";
     }
+    
     
     if (m_has_oblob)
     {
-        _outStream << "<vt:oblob>" << m_oblob << "</vt:oblob>";;
+        _outStream << "<vt:oblob>" << m_oblob << "</vt:oblob>";
     }
+    
     
     if (m_has_empty)
     {
-        m_empty->toXmlElem("vt:empty", "", _outStream);;
+        m_empty->toXmlElem("vt:empty", "", _outStream);
     }
+    
     
     if (m_has_null)
     {
-        m_null->toXmlElem("vt:null", "", _outStream);;
+        m_null->toXmlElem("vt:null", "", _outStream);
     }
+    
     
     if (m_has_i1)
     {
-        _outStream << "<vt:i1>" << m_i1 << "</vt:i1>";;
+        _outStream << "<vt:i1>" << m_i1 << "</vt:i1>";
     }
+    
     
     if (m_has_i2)
     {
-        _outStream << "<vt:i2>" << m_i2 << "</vt:i2>";;
+        _outStream << "<vt:i2>" << m_i2 << "</vt:i2>";
     }
+    
     
     if (m_has_i4)
     {
-        _outStream << "<vt:i4>" << m_i4 << "</vt:i4>";;
+        _outStream << "<vt:i4>" << m_i4 << "</vt:i4>";
     }
+    
     
     if (m_has_i8)
     {
-        _outStream << "<vt:i8>" << m_i8 << "</vt:i8>";;
+        _outStream << "<vt:i8>" << m_i8 << "</vt:i8>";
     }
+    
     
     if (m_has_int)
     {
-        _outStream << "<vt:int>" << m_int << "</vt:int>";;
+        _outStream << "<vt:int>" << m_int << "</vt:int>";
     }
+    
     
     if (m_has_ui1)
     {
-        _outStream << "<vt:ui1>" << m_ui1 << "</vt:ui1>";;
+        _outStream << "<vt:ui1>" << m_ui1 << "</vt:ui1>";
     }
+    
     
     if (m_has_ui2)
     {
-        _outStream << "<vt:ui2>" << m_ui2 << "</vt:ui2>";;
+        _outStream << "<vt:ui2>" << m_ui2 << "</vt:ui2>";
     }
+    
     
     if (m_has_ui4)
     {
-        _outStream << "<vt:ui4>" << m_ui4 << "</vt:ui4>";;
+        _outStream << "<vt:ui4>" << m_ui4 << "</vt:ui4>";
     }
+    
     
     if (m_has_ui8)
     {
-        _outStream << "<vt:ui8>" << m_ui8 << "</vt:ui8>";;
+        _outStream << "<vt:ui8>" << m_ui8 << "</vt:ui8>";
     }
+    
     
     if (m_has_uint)
     {
-        _outStream << "<vt:uint>" << m_uint << "</vt:uint>";;
+        _outStream << "<vt:uint>" << m_uint << "</vt:uint>";
     }
+    
     
     if (m_has_r4)
     {
-        _outStream << "<vt:r4>" << m_r4 << "</vt:r4>";;
+        _outStream << "<vt:r4>" << m_r4 << "</vt:r4>";
     }
+    
     
     if (m_has_r8)
     {
-        _outStream << "<vt:r8>" << m_r8 << "</vt:r8>";;
+        _outStream << "<vt:r8>" << m_r8 << "</vt:r8>";
     }
+    
     
     if (m_has_decimal)
     {
-        _outStream << "<vt:decimal>" << m_decimal << "</vt:decimal>";;
+        _outStream << "<vt:decimal>" << m_decimal << "</vt:decimal>";
     }
+    
     
     if (m_has_lpstr)
     {
-        _outStream << "<vt:lpstr>" << m_lpstr << "</vt:lpstr>";;
+        _outStream << "<vt:lpstr>" << m_lpstr << "</vt:lpstr>";
     }
+    
     
     if (m_has_lpwstr)
     {
-        _outStream << "<vt:lpwstr>" << m_lpwstr << "</vt:lpwstr>";;
+        _outStream << "<vt:lpwstr>" << m_lpwstr << "</vt:lpwstr>";
     }
+    
     
     if (m_has_bstr)
     {
-        _outStream << "<vt:bstr>" << m_bstr << "</vt:bstr>";;
+        _outStream << "<vt:bstr>" << m_bstr << "</vt:bstr>";
     }
+    
     
     if (m_has_date)
     {
-        _outStream << "<vt:date>" << m_date << "</vt:date>";;
+        _outStream << "<vt:date>" << m_date << "</vt:date>";
     }
+    
     
     if (m_has_filetime)
     {
-        _outStream << "<vt:filetime>" << m_filetime << "</vt:filetime>";;
+        _outStream << "<vt:filetime>" << m_filetime << "</vt:filetime>";
     }
+    
     
     if (m_has_bool)
     {
-        _outStream << "<vt:bool>" << m_bool << "</vt:bool>";;
+        _outStream << "<vt:bool>" << m_bool << "</vt:bool>";
     }
+    
     
     if (m_has_cy)
     {
-        _outStream << "<vt:cy>" << m_cy->toString() << "</vt:cy>";;
+        _outStream << "<vt:cy>" << m_cy->toString() << "</vt:cy>";
     }
+    
     
     if (m_has_error)
     {
-        _outStream << "<vt:error>" << m_error->toString() << "</vt:error>";;
+        _outStream << "<vt:error>" << m_error->toString() << "</vt:error>";
     }
+    
     
     if (m_has_stream)
     {
-        _outStream << "<vt:stream>" << m_stream << "</vt:stream>";;
+        _outStream << "<vt:stream>" << m_stream << "</vt:stream>";
     }
+    
     
     if (m_has_ostream)
     {
-        _outStream << "<vt:ostream>" << m_ostream << "</vt:ostream>";;
+        _outStream << "<vt:ostream>" << m_ostream << "</vt:ostream>";
     }
+    
     
     if (m_has_storage)
     {
-        _outStream << "<vt:storage>" << m_storage << "</vt:storage>";;
+        _outStream << "<vt:storage>" << m_storage << "</vt:storage>";
     }
+    
     
     if (m_has_ostorage)
     {
-        _outStream << "<vt:ostorage>" << m_ostorage << "</vt:ostorage>";;
+        _outStream << "<vt:ostorage>" << m_ostorage << "</vt:ostorage>";
     }
+    
     
     if (m_has_vstream)
     {
-        m_vstream->toXmlElem("vt:vstream", "", _outStream);;
+        m_vstream->toXmlElem("vt:vstream", "", _outStream);
     }
+    
     
     if (m_has_clsid)
     {
-        _outStream << "<vt:clsid>" << m_clsid->toString() << "</vt:clsid>";;
+        _outStream << "<vt:clsid>" << m_clsid->toString() << "</vt:clsid>";
     }
     
             _outStream << "</" << _elemName << ">";
@@ -16872,172 +17016,205 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     
     if (m_has_variant)
     {
-        m_variant->toXmlElem("vt:variant", "", _outStream);;
+        m_variant->toXmlElem("vt:variant", "", _outStream);
     }
+    
     
     if (m_has_vector)
     {
-        m_vector->toXmlElem("vt:vector", "", _outStream);;
+        m_vector->toXmlElem("vt:vector", "", _outStream);
     }
+    
     
     if (m_has_array)
     {
-        m_array->toXmlElem("vt:array", "", _outStream);;
+        m_array->toXmlElem("vt:array", "", _outStream);
     }
+    
     
     if (m_has_blob)
     {
-        _outStream << "<vt:blob>" << m_blob << "</vt:blob>";;
+        _outStream << "<vt:blob>" << m_blob << "</vt:blob>";
     }
+    
     
     if (m_has_oblob)
     {
-        _outStream << "<vt:oblob>" << m_oblob << "</vt:oblob>";;
+        _outStream << "<vt:oblob>" << m_oblob << "</vt:oblob>";
     }
+    
     
     if (m_has_empty)
     {
-        m_empty->toXmlElem("vt:empty", "", _outStream);;
+        m_empty->toXmlElem("vt:empty", "", _outStream);
     }
+    
     
     if (m_has_null)
     {
-        m_null->toXmlElem("vt:null", "", _outStream);;
+        m_null->toXmlElem("vt:null", "", _outStream);
     }
+    
     
     if (m_has_i1)
     {
-        _outStream << "<vt:i1>" << m_i1 << "</vt:i1>";;
+        _outStream << "<vt:i1>" << m_i1 << "</vt:i1>";
     }
+    
     
     if (m_has_i2)
     {
-        _outStream << "<vt:i2>" << m_i2 << "</vt:i2>";;
+        _outStream << "<vt:i2>" << m_i2 << "</vt:i2>";
     }
+    
     
     if (m_has_i4)
     {
-        _outStream << "<vt:i4>" << m_i4 << "</vt:i4>";;
+        _outStream << "<vt:i4>" << m_i4 << "</vt:i4>";
     }
+    
     
     if (m_has_i8)
     {
-        _outStream << "<vt:i8>" << m_i8 << "</vt:i8>";;
+        _outStream << "<vt:i8>" << m_i8 << "</vt:i8>";
     }
+    
     
     if (m_has_int)
     {
-        _outStream << "<vt:int>" << m_int << "</vt:int>";;
+        _outStream << "<vt:int>" << m_int << "</vt:int>";
     }
+    
     
     if (m_has_ui1)
     {
-        _outStream << "<vt:ui1>" << m_ui1 << "</vt:ui1>";;
+        _outStream << "<vt:ui1>" << m_ui1 << "</vt:ui1>";
     }
+    
     
     if (m_has_ui2)
     {
-        _outStream << "<vt:ui2>" << m_ui2 << "</vt:ui2>";;
+        _outStream << "<vt:ui2>" << m_ui2 << "</vt:ui2>";
     }
+    
     
     if (m_has_ui4)
     {
-        _outStream << "<vt:ui4>" << m_ui4 << "</vt:ui4>";;
+        _outStream << "<vt:ui4>" << m_ui4 << "</vt:ui4>";
     }
+    
     
     if (m_has_ui8)
     {
-        _outStream << "<vt:ui8>" << m_ui8 << "</vt:ui8>";;
+        _outStream << "<vt:ui8>" << m_ui8 << "</vt:ui8>";
     }
+    
     
     if (m_has_uint)
     {
-        _outStream << "<vt:uint>" << m_uint << "</vt:uint>";;
+        _outStream << "<vt:uint>" << m_uint << "</vt:uint>";
     }
+    
     
     if (m_has_r4)
     {
-        _outStream << "<vt:r4>" << m_r4 << "</vt:r4>";;
+        _outStream << "<vt:r4>" << m_r4 << "</vt:r4>";
     }
+    
     
     if (m_has_r8)
     {
-        _outStream << "<vt:r8>" << m_r8 << "</vt:r8>";;
+        _outStream << "<vt:r8>" << m_r8 << "</vt:r8>";
     }
+    
     
     if (m_has_decimal)
     {
-        _outStream << "<vt:decimal>" << m_decimal << "</vt:decimal>";;
+        _outStream << "<vt:decimal>" << m_decimal << "</vt:decimal>";
     }
+    
     
     if (m_has_lpstr)
     {
-        _outStream << "<vt:lpstr>" << m_lpstr << "</vt:lpstr>";;
+        _outStream << "<vt:lpstr>" << m_lpstr << "</vt:lpstr>";
     }
+    
     
     if (m_has_lpwstr)
     {
-        _outStream << "<vt:lpwstr>" << m_lpwstr << "</vt:lpwstr>";;
+        _outStream << "<vt:lpwstr>" << m_lpwstr << "</vt:lpwstr>";
     }
+    
     
     if (m_has_bstr)
     {
-        _outStream << "<vt:bstr>" << m_bstr << "</vt:bstr>";;
+        _outStream << "<vt:bstr>" << m_bstr << "</vt:bstr>";
     }
+    
     
     if (m_has_date)
     {
-        _outStream << "<vt:date>" << m_date << "</vt:date>";;
+        _outStream << "<vt:date>" << m_date << "</vt:date>";
     }
+    
     
     if (m_has_filetime)
     {
-        _outStream << "<vt:filetime>" << m_filetime << "</vt:filetime>";;
+        _outStream << "<vt:filetime>" << m_filetime << "</vt:filetime>";
     }
+    
     
     if (m_has_bool)
     {
-        _outStream << "<vt:bool>" << m_bool << "</vt:bool>";;
+        _outStream << "<vt:bool>" << m_bool << "</vt:bool>";
     }
+    
     
     if (m_has_cy)
     {
-        _outStream << "<vt:cy>" << m_cy->toString() << "</vt:cy>";;
+        _outStream << "<vt:cy>" << m_cy->toString() << "</vt:cy>";
     }
+    
     
     if (m_has_error)
     {
-        _outStream << "<vt:error>" << m_error->toString() << "</vt:error>";;
+        _outStream << "<vt:error>" << m_error->toString() << "</vt:error>";
     }
+    
     
     if (m_has_stream)
     {
-        _outStream << "<vt:stream>" << m_stream << "</vt:stream>";;
+        _outStream << "<vt:stream>" << m_stream << "</vt:stream>";
     }
+    
     
     if (m_has_ostream)
     {
-        _outStream << "<vt:ostream>" << m_ostream << "</vt:ostream>";;
+        _outStream << "<vt:ostream>" << m_ostream << "</vt:ostream>";
     }
+    
     
     if (m_has_storage)
     {
-        _outStream << "<vt:storage>" << m_storage << "</vt:storage>";;
+        _outStream << "<vt:storage>" << m_storage << "</vt:storage>";
     }
+    
     
     if (m_has_ostorage)
     {
-        _outStream << "<vt:ostorage>" << m_ostorage << "</vt:ostorage>";;
+        _outStream << "<vt:ostorage>" << m_ostorage << "</vt:ostorage>";
     }
+    
     
     if (m_has_vstream)
     {
-        m_vstream->toXmlElem("vt:vstream", "", _outStream);;
+        m_vstream->toXmlElem("vt:vstream", "", _outStream);
     }
+    
     
     if (m_has_clsid)
     {
-        _outStream << "<vt:clsid>" << m_clsid->toString() << "</vt:clsid>";;
+        _outStream << "<vt:clsid>" << m_clsid->toString() << "</vt:clsid>";
     }
     
     _outStream << "</vt:variant>";
@@ -17257,86 +17434,146 @@ variant_element* variant_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_variant())
-            {
-                (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
-            }
-            else if ((*iter)->has_i1())
-            {
-                _outStream << "<vt:i1>" << (*iter)->get_i1() << "</vt:i1>";
-            }
-            else if ((*iter)->has_i2())
-            {
-                _outStream << "<vt:i2>" << (*iter)->get_i2() << "</vt:i2>";
-            }
-            else if ((*iter)->has_i4())
-            {
-                _outStream << "<vt:i4>" << (*iter)->get_i4() << "</vt:i4>";
-            }
-            else if ((*iter)->has_i8())
-            {
-                _outStream << "<vt:i8>" << (*iter)->get_i8() << "</vt:i8>";
-            }
-            else if ((*iter)->has_ui1())
-            {
-                _outStream << "<vt:ui1>" << (*iter)->get_ui1() << "</vt:ui1>";
-            }
-            else if ((*iter)->has_ui2())
-            {
-                _outStream << "<vt:ui2>" << (*iter)->get_ui2() << "</vt:ui2>";
-            }
-            else if ((*iter)->has_ui4())
-            {
-                _outStream << "<vt:ui4>" << (*iter)->get_ui4() << "</vt:ui4>";
-            }
-            else if ((*iter)->has_ui8())
-            {
-                _outStream << "<vt:ui8>" << (*iter)->get_ui8() << "</vt:ui8>";
-            }
-            else if ((*iter)->has_r4())
-            {
-                _outStream << "<vt:r4>" << (*iter)->get_r4() << "</vt:r4>";
-            }
-            else if ((*iter)->has_r8())
-            {
-                _outStream << "<vt:r8>" << (*iter)->get_r8() << "</vt:r8>";
-            }
-            else if ((*iter)->has_lpstr())
-            {
-                _outStream << "<vt:lpstr>" << (*iter)->get_lpstr() << "</vt:lpstr>";
-            }
-            else if ((*iter)->has_lpwstr())
-            {
-                _outStream << "<vt:lpwstr>" << (*iter)->get_lpwstr() << "</vt:lpwstr>";
-            }
-            else if ((*iter)->has_bstr())
-            {
-                _outStream << "<vt:bstr>" << (*iter)->get_bstr() << "</vt:bstr>";
-            }
-            else if ((*iter)->has_date())
-            {
-                _outStream << "<vt:date>" << (*iter)->get_date() << "</vt:date>";
-            }
-            else if ((*iter)->has_filetime())
-            {
-                _outStream << "<vt:filetime>" << (*iter)->get_filetime() << "</vt:filetime>";
-            }
-            else if ((*iter)->has_bool())
-            {
-                _outStream << "<vt:bool>" << (*iter)->get_bool() << "</vt:bool>";
-            }
-            else if ((*iter)->has_cy())
-            {
-                _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
-            }
-            else if ((*iter)->has_error())
-            {
-                _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
-            }
-            else if ((*iter)->has_clsid())
-            {
-                _outStream << "<vt:clsid>" << (*iter)->get_clsid().toString() << "</vt:clsid>";
-            }
+    
+    if ((*iter)->has_variant())
+    {
+        (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_i1())
+    {
+        _outStream << "<vt:i1>" << (*iter)->get_i1() << "</vt:i1>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_i2())
+    {
+        _outStream << "<vt:i2>" << (*iter)->get_i2() << "</vt:i2>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_i4())
+    {
+        _outStream << "<vt:i4>" << (*iter)->get_i4() << "</vt:i4>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_i8())
+    {
+        _outStream << "<vt:i8>" << (*iter)->get_i8() << "</vt:i8>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui1())
+    {
+        _outStream << "<vt:ui1>" << (*iter)->get_ui1() << "</vt:ui1>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui2())
+    {
+        _outStream << "<vt:ui2>" << (*iter)->get_ui2() << "</vt:ui2>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui4())
+    {
+        _outStream << "<vt:ui4>" << (*iter)->get_ui4() << "</vt:ui4>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui8())
+    {
+        _outStream << "<vt:ui8>" << (*iter)->get_ui8() << "</vt:ui8>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_r4())
+    {
+        _outStream << "<vt:r4>" << (*iter)->get_r4() << "</vt:r4>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_r8())
+    {
+        _outStream << "<vt:r8>" << (*iter)->get_r8() << "</vt:r8>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_lpstr())
+    {
+        _outStream << "<vt:lpstr>" << (*iter)->get_lpstr() << "</vt:lpstr>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_lpwstr())
+    {
+        _outStream << "<vt:lpwstr>" << (*iter)->get_lpwstr() << "</vt:lpwstr>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_bstr())
+    {
+        _outStream << "<vt:bstr>" << (*iter)->get_bstr() << "</vt:bstr>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_date())
+    {
+        _outStream << "<vt:date>" << (*iter)->get_date() << "</vt:date>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_filetime())
+    {
+        _outStream << "<vt:filetime>" << (*iter)->get_filetime() << "</vt:filetime>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_bool())
+    {
+        _outStream << "<vt:bool>" << (*iter)->get_bool() << "</vt:bool>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_cy())
+    {
+        _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_error())
+    {
+        _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_clsid())
+    {
+        _outStream << "<vt:clsid>" << (*iter)->get_clsid().toString() << "</vt:clsid>";
+    }
+    
+    
         }
     }
     
@@ -19595,74 +19832,125 @@ vector_element* vector_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_variant())
-            {
-                (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
-            }
-            else if ((*iter)->has_i1())
-            {
-                _outStream << "<vt:i1>" << (*iter)->get_i1() << "</vt:i1>";
-            }
-            else if ((*iter)->has_i2())
-            {
-                _outStream << "<vt:i2>" << (*iter)->get_i2() << "</vt:i2>";
-            }
-            else if ((*iter)->has_i4())
-            {
-                _outStream << "<vt:i4>" << (*iter)->get_i4() << "</vt:i4>";
-            }
-            else if ((*iter)->has_int())
-            {
-                _outStream << "<vt:int>" << (*iter)->get_int() << "</vt:int>";
-            }
-            else if ((*iter)->has_ui1())
-            {
-                _outStream << "<vt:ui1>" << (*iter)->get_ui1() << "</vt:ui1>";
-            }
-            else if ((*iter)->has_ui2())
-            {
-                _outStream << "<vt:ui2>" << (*iter)->get_ui2() << "</vt:ui2>";
-            }
-            else if ((*iter)->has_ui4())
-            {
-                _outStream << "<vt:ui4>" << (*iter)->get_ui4() << "</vt:ui4>";
-            }
-            else if ((*iter)->has_uint())
-            {
-                _outStream << "<vt:uint>" << (*iter)->get_uint() << "</vt:uint>";
-            }
-            else if ((*iter)->has_r4())
-            {
-                _outStream << "<vt:r4>" << (*iter)->get_r4() << "</vt:r4>";
-            }
-            else if ((*iter)->has_r8())
-            {
-                _outStream << "<vt:r8>" << (*iter)->get_r8() << "</vt:r8>";
-            }
-            else if ((*iter)->has_decimal())
-            {
-                _outStream << "<vt:decimal>" << (*iter)->get_decimal() << "</vt:decimal>";
-            }
-            else if ((*iter)->has_bstr())
-            {
-                _outStream << "<vt:bstr>" << (*iter)->get_bstr() << "</vt:bstr>";
-            }
-            else if ((*iter)->has_date())
-            {
-                _outStream << "<vt:date>" << (*iter)->get_date() << "</vt:date>";
-            }
-            else if ((*iter)->has_bool())
-            {
-                _outStream << "<vt:bool>" << (*iter)->get_bool() << "</vt:bool>";
-            }
-            else if ((*iter)->has_error())
-            {
-                _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
-            }
-            else if ((*iter)->has_cy())
-            {
-                _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
-            }
+    
+    if ((*iter)->has_variant())
+    {
+        (*iter)->get_variant().toXmlElem("vt:variant", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_i1())
+    {
+        _outStream << "<vt:i1>" << (*iter)->get_i1() << "</vt:i1>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_i2())
+    {
+        _outStream << "<vt:i2>" << (*iter)->get_i2() << "</vt:i2>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_i4())
+    {
+        _outStream << "<vt:i4>" << (*iter)->get_i4() << "</vt:i4>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_int())
+    {
+        _outStream << "<vt:int>" << (*iter)->get_int() << "</vt:int>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui1())
+    {
+        _outStream << "<vt:ui1>" << (*iter)->get_ui1() << "</vt:ui1>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui2())
+    {
+        _outStream << "<vt:ui2>" << (*iter)->get_ui2() << "</vt:ui2>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_ui4())
+    {
+        _outStream << "<vt:ui4>" << (*iter)->get_ui4() << "</vt:ui4>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_uint())
+    {
+        _outStream << "<vt:uint>" << (*iter)->get_uint() << "</vt:uint>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_r4())
+    {
+        _outStream << "<vt:r4>" << (*iter)->get_r4() << "</vt:r4>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_r8())
+    {
+        _outStream << "<vt:r8>" << (*iter)->get_r8() << "</vt:r8>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_decimal())
+    {
+        _outStream << "<vt:decimal>" << (*iter)->get_decimal() << "</vt:decimal>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_bstr())
+    {
+        _outStream << "<vt:bstr>" << (*iter)->get_bstr() << "</vt:bstr>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_date())
+    {
+        _outStream << "<vt:date>" << (*iter)->get_date() << "</vt:date>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_bool())
+    {
+        _outStream << "<vt:bool>" << (*iter)->get_bool() << "</vt:bool>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_error())
+    {
+        _outStream << "<vt:error>" << (*iter)->get_error().toString() << "</vt:error>";
+    }
+    
+    
+    else 
+    if ((*iter)->has_cy())
+    {
+        _outStream << "<vt:cy>" << (*iter)->get_cy().toString() << "</vt:cy>";
+    }
+    
+    
         }
     }
     

@@ -8131,10 +8131,13 @@ CT_CTCategory* CT_CTCategory::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cat())
-            {
-                (*iter)->get_cat().toXmlElem("diagram:cat", "", _outStream);
-            }
+    
+    if ((*iter)->has_cat())
+    {
+        (*iter)->get_cat().toXmlElem("diagram:cat", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -8299,30 +8302,48 @@ CT_CTCategories* CT_CTCategories::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_a_scrgbClr())
-            {
-                (*iter)->get_a_scrgbClr().toXmlElem("a:scrgbClr", "", _outStream);
-            }
-            else if ((*iter)->has_a_srgbClr())
-            {
-                (*iter)->get_a_srgbClr().toXmlElem("a:srgbClr", "", _outStream);
-            }
-            else if ((*iter)->has_a_hslClr())
-            {
-                (*iter)->get_a_hslClr().toXmlElem("a:hslClr", "", _outStream);
-            }
-            else if ((*iter)->has_a_sysClr())
-            {
-                (*iter)->get_a_sysClr().toXmlElem("a:sysClr", "", _outStream);
-            }
-            else if ((*iter)->has_a_schemeClr())
-            {
-                (*iter)->get_a_schemeClr().toXmlElem("a:schemeClr", "", _outStream);
-            }
-            else if ((*iter)->has_a_prstClr())
-            {
-                (*iter)->get_a_prstClr().toXmlElem("a:prstClr", "", _outStream);
-            }
+    
+    if ((*iter)->has_a_scrgbClr())
+    {
+        (*iter)->get_a_scrgbClr().toXmlElem("a:scrgbClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_a_srgbClr())
+    {
+        (*iter)->get_a_srgbClr().toXmlElem("a:srgbClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_a_hslClr())
+    {
+        (*iter)->get_a_hslClr().toXmlElem("a:hslClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_a_sysClr())
+    {
+        (*iter)->get_a_sysClr().toXmlElem("a:sysClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_a_schemeClr())
+    {
+        (*iter)->get_a_schemeClr().toXmlElem("a:schemeClr", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_a_prstClr())
+    {
+        (*iter)->get_a_prstClr().toXmlElem("a:prstClr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -9095,37 +9116,43 @@ CT_Colors* CT_Colors::default_instance_ = NULL;
             
     if (m_has_fillClrLst)
     {
-        m_fillClrLst->toXmlElem("diagram:fillClrLst", "", _outStream);;
+        m_fillClrLst->toXmlElem("diagram:fillClrLst", "", _outStream);
     }
+    
     
     if (m_has_linClrLst)
     {
-        m_linClrLst->toXmlElem("diagram:linClrLst", "", _outStream);;
+        m_linClrLst->toXmlElem("diagram:linClrLst", "", _outStream);
     }
+    
     
     if (m_has_effectClrLst)
     {
-        m_effectClrLst->toXmlElem("diagram:effectClrLst", "", _outStream);;
+        m_effectClrLst->toXmlElem("diagram:effectClrLst", "", _outStream);
     }
+    
     
     if (m_has_txLinClrLst)
     {
-        m_txLinClrLst->toXmlElem("diagram:txLinClrLst", "", _outStream);;
+        m_txLinClrLst->toXmlElem("diagram:txLinClrLst", "", _outStream);
     }
+    
     
     if (m_has_txFillClrLst)
     {
-        m_txFillClrLst->toXmlElem("diagram:txFillClrLst", "", _outStream);;
+        m_txFillClrLst->toXmlElem("diagram:txFillClrLst", "", _outStream);
     }
+    
     
     if (m_has_txEffectClrLst)
     {
-        m_txEffectClrLst->toXmlElem("diagram:txEffectClrLst", "", _outStream);;
+        m_txEffectClrLst->toXmlElem("diagram:txEffectClrLst", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9253,26 +9280,41 @@ CT_CTStyleLabel* CT_CTStyleLabel::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_title())
-            {
-                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
-            }
-            else if ((*iter)->has_desc())
-            {
-                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
-            }
-            else if ((*iter)->has_catLst())
-            {
-                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
-            }
-            else if ((*iter)->has_styleLbl())
-            {
-                (*iter)->get_styleLbl().toXmlElem("diagram:styleLbl", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_title())
+    {
+        (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_desc())
+    {
+        (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_catLst())
+    {
+        (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_styleLbl())
+    {
+        (*iter)->get_styleLbl().toXmlElem("diagram:styleLbl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -9740,22 +9782,34 @@ CT_ColorTransform* CT_ColorTransform::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_title())
-            {
-                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
-            }
-            else if ((*iter)->has_desc())
-            {
-                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
-            }
-            else if ((*iter)->has_catLst())
-            {
-                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_title())
+    {
+        (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_desc())
+    {
+        (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_catLst())
+    {
+        (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -10085,10 +10139,13 @@ CT_ColorTransformHeader* CT_ColorTransformHeader::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_colorsDefHdr())
-            {
-                (*iter)->get_colorsDefHdr().toXmlElem("diagram:colorsDefHdr", "", _outStream);
-            }
+    
+    if ((*iter)->has_colorsDefHdr())
+    {
+        (*iter)->get_colorsDefHdr().toXmlElem("diagram:colorsDefHdr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -10351,22 +10408,25 @@ CT_ColorTransformHeaderLst* CT_ColorTransformHeaderLst::default_instance_ = NULL
             
     if (m_has_prSet)
     {
-        m_prSet->toXmlElem("diagram:prSet", "", _outStream);;
+        m_prSet->toXmlElem("diagram:prSet", "", _outStream);
     }
+    
     
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("diagram:spPr", "", _outStream);;
+        m_spPr->toXmlElem("diagram:spPr", "", _outStream);
     }
+    
     
     if (m_has_t)
     {
-        m_t->toXmlElem("diagram:t", "", _outStream);;
+        m_t->toXmlElem("diagram:t", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10486,10 +10546,13 @@ CT_Pt* CT_Pt::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_pt())
-            {
-                (*iter)->get_pt().toXmlElem("diagram:pt", "", _outStream);
-            }
+    
+    if ((*iter)->has_pt())
+    {
+        (*iter)->get_pt().toXmlElem("diagram:pt", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -10731,7 +10794,7 @@ CT_PtList* CT_PtList::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -10959,10 +11022,13 @@ CT_Cxn* CT_Cxn::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cxn())
-            {
-                (*iter)->get_cxn().toXmlElem("diagram:cxn", "", _outStream);
-            }
+    
+    if ((*iter)->has_cxn())
+    {
+        (*iter)->get_cxn().toXmlElem("diagram:cxn", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -11210,27 +11276,31 @@ CT_CxnList* CT_CxnList::default_instance_ = NULL;
             
     if (m_has_ptLst)
     {
-        m_ptLst->toXmlElem("diagram:ptLst", "", _outStream);;
+        m_ptLst->toXmlElem("diagram:ptLst", "", _outStream);
     }
+    
     
     if (m_has_cxnLst)
     {
-        m_cxnLst->toXmlElem("diagram:cxnLst", "", _outStream);;
+        m_cxnLst->toXmlElem("diagram:cxnLst", "", _outStream);
     }
+    
     
     if (m_has_bg)
     {
-        m_bg->toXmlElem("diagram:bg", "", _outStream);;
+        m_bg->toXmlElem("diagram:bg", "", _outStream);
     }
+    
     
     if (m_has_whole)
     {
-        m_whole->toXmlElem("diagram:whole", "", _outStream);;
+        m_whole->toXmlElem("diagram:whole", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11467,7 +11537,7 @@ CT_DataModel* CT_DataModel::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -11731,10 +11801,13 @@ CT_Constraint* CT_Constraint::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_constr())
-            {
-                (*iter)->get_constr().toXmlElem("diagram:constr", "", _outStream);
-            }
+    
+    if ((*iter)->has_constr())
+    {
+        (*iter)->get_constr().toXmlElem("diagram:constr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -11936,7 +12009,7 @@ CT_Constraints* CT_Constraints::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -12120,10 +12193,13 @@ CT_NumericRule* CT_NumericRule::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_rule())
-            {
-                (*iter)->get_rule().toXmlElem("diagram:rule", "", _outStream);
-            }
+    
+    if ((*iter)->has_rule())
+    {
+        (*iter)->get_rule().toXmlElem("diagram:rule", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -12332,7 +12408,7 @@ CT_Rules* CT_Rules::default_instance_ = NULL;
             
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -12610,10 +12686,13 @@ CT_Adj* CT_Adj::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_adj())
-            {
-                (*iter)->get_adj().toXmlElem("diagram:adj", "", _outStream);
-            }
+    
+    if ((*iter)->has_adj())
+    {
+        (*iter)->get_adj().toXmlElem("diagram:adj", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -12844,12 +12923,13 @@ CT_AdjLst* CT_AdjLst::default_instance_ = NULL;
             
     if (m_has_adjLst)
     {
-        m_adjLst->toXmlElem("diagram:adjLst", "", _outStream);;
+        m_adjLst->toXmlElem("diagram:adjLst", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -13171,14 +13251,20 @@ CT_Parameter* CT_Parameter::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_param())
-            {
-                (*iter)->get_param().toXmlElem("diagram:param", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_param())
+    {
+        (*iter)->get_param().toXmlElem("diagram:param", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -13472,46 +13558,76 @@ CT_Algorithm* CT_Algorithm::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_alg())
-            {
-                (*iter)->get_alg().toXmlElem("diagram:alg", "", _outStream);
-            }
-            else if ((*iter)->has_shape())
-            {
-                (*iter)->get_shape().toXmlElem("diagram:shape", "", _outStream);
-            }
-            else if ((*iter)->has_presOf())
-            {
-                (*iter)->get_presOf().toXmlElem("diagram:presOf", "", _outStream);
-            }
-            else if ((*iter)->has_constrLst())
-            {
-                (*iter)->get_constrLst().toXmlElem("diagram:constrLst", "", _outStream);
-            }
-            else if ((*iter)->has_ruleLst())
-            {
-                (*iter)->get_ruleLst().toXmlElem("diagram:ruleLst", "", _outStream);
-            }
-            else if ((*iter)->has_varLst())
-            {
-                (*iter)->get_varLst().toXmlElem("diagram:varLst", "", _outStream);
-            }
-            else if ((*iter)->has_forEach())
-            {
-                (*iter)->get_forEach().toXmlElem("diagram:forEach", "", _outStream);
-            }
-            else if ((*iter)->has_layoutNode())
-            {
-                (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
-            }
-            else if ((*iter)->has_choose())
-            {
-                (*iter)->get_choose().toXmlElem("diagram:choose", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_alg())
+    {
+        (*iter)->get_alg().toXmlElem("diagram:alg", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shape())
+    {
+        (*iter)->get_shape().toXmlElem("diagram:shape", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_presOf())
+    {
+        (*iter)->get_presOf().toXmlElem("diagram:presOf", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_constrLst())
+    {
+        (*iter)->get_constrLst().toXmlElem("diagram:constrLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_ruleLst())
+    {
+        (*iter)->get_ruleLst().toXmlElem("diagram:ruleLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_varLst())
+    {
+        (*iter)->get_varLst().toXmlElem("diagram:varLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_forEach())
+    {
+        (*iter)->get_forEach().toXmlElem("diagram:forEach", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_layoutNode())
+    {
+        (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_choose())
+    {
+        (*iter)->get_choose().toXmlElem("diagram:choose", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -14911,42 +15027,69 @@ CT_LayoutNode* CT_LayoutNode::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_alg())
-            {
-                (*iter)->get_alg().toXmlElem("diagram:alg", "", _outStream);
-            }
-            else if ((*iter)->has_shape())
-            {
-                (*iter)->get_shape().toXmlElem("diagram:shape", "", _outStream);
-            }
-            else if ((*iter)->has_presOf())
-            {
-                (*iter)->get_presOf().toXmlElem("diagram:presOf", "", _outStream);
-            }
-            else if ((*iter)->has_constrLst())
-            {
-                (*iter)->get_constrLst().toXmlElem("diagram:constrLst", "", _outStream);
-            }
-            else if ((*iter)->has_ruleLst())
-            {
-                (*iter)->get_ruleLst().toXmlElem("diagram:ruleLst", "", _outStream);
-            }
-            else if ((*iter)->has_forEach())
-            {
-                (*iter)->get_forEach().toXmlElem("diagram:forEach", "", _outStream);
-            }
-            else if ((*iter)->has_layoutNode())
-            {
-                (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
-            }
-            else if ((*iter)->has_choose())
-            {
-                (*iter)->get_choose().toXmlElem("diagram:choose", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_alg())
+    {
+        (*iter)->get_alg().toXmlElem("diagram:alg", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shape())
+    {
+        (*iter)->get_shape().toXmlElem("diagram:shape", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_presOf())
+    {
+        (*iter)->get_presOf().toXmlElem("diagram:presOf", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_constrLst())
+    {
+        (*iter)->get_constrLst().toXmlElem("diagram:constrLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_ruleLst())
+    {
+        (*iter)->get_ruleLst().toXmlElem("diagram:ruleLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_forEach())
+    {
+        (*iter)->get_forEach().toXmlElem("diagram:forEach", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_layoutNode())
+    {
+        (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_choose())
+    {
+        (*iter)->get_choose().toXmlElem("diagram:choose", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -16298,42 +16441,69 @@ CT_ForEach* CT_ForEach::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_alg())
-            {
-                (*iter)->get_alg().toXmlElem("diagram:alg", "", _outStream);
-            }
-            else if ((*iter)->has_shape())
-            {
-                (*iter)->get_shape().toXmlElem("diagram:shape", "", _outStream);
-            }
-            else if ((*iter)->has_presOf())
-            {
-                (*iter)->get_presOf().toXmlElem("diagram:presOf", "", _outStream);
-            }
-            else if ((*iter)->has_constrLst())
-            {
-                (*iter)->get_constrLst().toXmlElem("diagram:constrLst", "", _outStream);
-            }
-            else if ((*iter)->has_ruleLst())
-            {
-                (*iter)->get_ruleLst().toXmlElem("diagram:ruleLst", "", _outStream);
-            }
-            else if ((*iter)->has_forEach())
-            {
-                (*iter)->get_forEach().toXmlElem("diagram:forEach", "", _outStream);
-            }
-            else if ((*iter)->has_layoutNode())
-            {
-                (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
-            }
-            else if ((*iter)->has_choose())
-            {
-                (*iter)->get_choose().toXmlElem("diagram:choose", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_alg())
+    {
+        (*iter)->get_alg().toXmlElem("diagram:alg", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shape())
+    {
+        (*iter)->get_shape().toXmlElem("diagram:shape", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_presOf())
+    {
+        (*iter)->get_presOf().toXmlElem("diagram:presOf", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_constrLst())
+    {
+        (*iter)->get_constrLst().toXmlElem("diagram:constrLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_ruleLst())
+    {
+        (*iter)->get_ruleLst().toXmlElem("diagram:ruleLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_forEach())
+    {
+        (*iter)->get_forEach().toXmlElem("diagram:forEach", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_layoutNode())
+    {
+        (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_choose())
+    {
+        (*iter)->get_choose().toXmlElem("diagram:choose", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -17579,42 +17749,69 @@ CT_When* CT_When::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_alg())
-            {
-                (*iter)->get_alg().toXmlElem("diagram:alg", "", _outStream);
-            }
-            else if ((*iter)->has_shape())
-            {
-                (*iter)->get_shape().toXmlElem("diagram:shape", "", _outStream);
-            }
-            else if ((*iter)->has_presOf())
-            {
-                (*iter)->get_presOf().toXmlElem("diagram:presOf", "", _outStream);
-            }
-            else if ((*iter)->has_constrLst())
-            {
-                (*iter)->get_constrLst().toXmlElem("diagram:constrLst", "", _outStream);
-            }
-            else if ((*iter)->has_ruleLst())
-            {
-                (*iter)->get_ruleLst().toXmlElem("diagram:ruleLst", "", _outStream);
-            }
-            else if ((*iter)->has_forEach())
-            {
-                (*iter)->get_forEach().toXmlElem("diagram:forEach", "", _outStream);
-            }
-            else if ((*iter)->has_layoutNode())
-            {
-                (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
-            }
-            else if ((*iter)->has_choose())
-            {
-                (*iter)->get_choose().toXmlElem("diagram:choose", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_alg())
+    {
+        (*iter)->get_alg().toXmlElem("diagram:alg", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_shape())
+    {
+        (*iter)->get_shape().toXmlElem("diagram:shape", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_presOf())
+    {
+        (*iter)->get_presOf().toXmlElem("diagram:presOf", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_constrLst())
+    {
+        (*iter)->get_constrLst().toXmlElem("diagram:constrLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_ruleLst())
+    {
+        (*iter)->get_ruleLst().toXmlElem("diagram:ruleLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_forEach())
+    {
+        (*iter)->get_forEach().toXmlElem("diagram:forEach", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_layoutNode())
+    {
+        (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_choose())
+    {
+        (*iter)->get_choose().toXmlElem("diagram:choose", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -18604,14 +18801,20 @@ CT_Otherwise* CT_Otherwise::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_if())
-            {
-                (*iter)->get_if().toXmlElem("diagram:if", "", _outStream);
-            }
-            else if ((*iter)->has_else())
-            {
-                (*iter)->get_else().toXmlElem("diagram:else", "", _outStream);
-            }
+    
+    if ((*iter)->has_if())
+    {
+        (*iter)->get_if().toXmlElem("diagram:if", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_else())
+    {
+        (*iter)->get_else().toXmlElem("diagram:else", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -18790,7 +18993,7 @@ CT_Choose* CT_Choose::default_instance_ = NULL;
             
     if (m_has_dataModel)
     {
-        m_dataModel->toXmlElem("diagram:dataModel", "", _outStream);;
+        m_dataModel->toXmlElem("diagram:dataModel", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -18954,10 +19157,13 @@ CT_Category* CT_Category::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cat())
-            {
-                (*iter)->get_cat().toXmlElem("diagram:cat", "", _outStream);
-            }
+    
+    if ((*iter)->has_cat())
+    {
+        (*iter)->get_cat().toXmlElem("diagram:cat", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -19313,38 +19519,62 @@ CT_Description* CT_Description::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_title())
-            {
-                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
-            }
-            else if ((*iter)->has_desc())
-            {
-                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
-            }
-            else if ((*iter)->has_catLst())
-            {
-                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
-            }
-            else if ((*iter)->has_sampData())
-            {
-                (*iter)->get_sampData().toXmlElem("diagram:sampData", "", _outStream);
-            }
-            else if ((*iter)->has_styleData())
-            {
-                (*iter)->get_styleData().toXmlElem("diagram:styleData", "", _outStream);
-            }
-            else if ((*iter)->has_clrData())
-            {
-                (*iter)->get_clrData().toXmlElem("diagram:clrData", "", _outStream);
-            }
-            else if ((*iter)->has_layoutNode())
-            {
-                (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_title())
+    {
+        (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_desc())
+    {
+        (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_catLst())
+    {
+        (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sampData())
+    {
+        (*iter)->get_sampData().toXmlElem("diagram:sampData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_styleData())
+    {
+        (*iter)->get_styleData().toXmlElem("diagram:styleData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_clrData())
+    {
+        (*iter)->get_clrData().toXmlElem("diagram:clrData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_layoutNode())
+    {
+        (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -20244,22 +20474,34 @@ CT_DiagramDefinition* CT_DiagramDefinition::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_title())
-            {
-                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
-            }
-            else if ((*iter)->has_desc())
-            {
-                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
-            }
-            else if ((*iter)->has_catLst())
-            {
-                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_title())
+    {
+        (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_desc())
+    {
+        (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_catLst())
+    {
+        (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -20605,10 +20847,13 @@ CT_DiagramDefinitionHeader* CT_DiagramDefinitionHeader::default_instance_ = NULL
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_layoutDefHdr())
-            {
-                (*iter)->get_layoutDefHdr().toXmlElem("diagram:layoutDefHdr", "", _outStream);
-            }
+    
+    if ((*iter)->has_layoutDefHdr())
+    {
+        (*iter)->get_layoutDefHdr().toXmlElem("diagram:layoutDefHdr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -21294,12 +21539,13 @@ CT_RelIds* CT_RelIds::default_instance_ = NULL;
             
     if (m_has_presLayoutVars)
     {
-        m_presLayoutVars->toXmlElem("diagram:presLayoutVars", "", _outStream);;
+        m_presLayoutVars->toXmlElem("diagram:presLayoutVars", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("diagram:style", "", _outStream);;
+        m_style->toXmlElem("diagram:style", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -22757,47 +23003,55 @@ CT_ResizeHandles* CT_ResizeHandles::default_instance_ = NULL;
             
     if (m_has_orgChart)
     {
-        m_orgChart->toXmlElem("diagram:orgChart", "", _outStream);;
+        m_orgChart->toXmlElem("diagram:orgChart", "", _outStream);
     }
+    
     
     if (m_has_chMax)
     {
-        m_chMax->toXmlElem("diagram:chMax", "", _outStream);;
+        m_chMax->toXmlElem("diagram:chMax", "", _outStream);
     }
+    
     
     if (m_has_chPref)
     {
-        m_chPref->toXmlElem("diagram:chPref", "", _outStream);;
+        m_chPref->toXmlElem("diagram:chPref", "", _outStream);
     }
+    
     
     if (m_has_bulletEnabled)
     {
-        m_bulletEnabled->toXmlElem("diagram:bulletEnabled", "", _outStream);;
+        m_bulletEnabled->toXmlElem("diagram:bulletEnabled", "", _outStream);
     }
+    
     
     if (m_has_dir)
     {
-        m_dir->toXmlElem("diagram:dir", "", _outStream);;
+        m_dir->toXmlElem("diagram:dir", "", _outStream);
     }
+    
     
     if (m_has_hierBranch)
     {
-        m_hierBranch->toXmlElem("diagram:hierBranch", "", _outStream);;
+        m_hierBranch->toXmlElem("diagram:hierBranch", "", _outStream);
     }
+    
     
     if (m_has_animOne)
     {
-        m_animOne->toXmlElem("diagram:animOne", "", _outStream);;
+        m_animOne->toXmlElem("diagram:animOne", "", _outStream);
     }
+    
     
     if (m_has_animLvl)
     {
-        m_animLvl->toXmlElem("diagram:animLvl", "", _outStream);;
+        m_animLvl->toXmlElem("diagram:animLvl", "", _outStream);
     }
+    
     
     if (m_has_resizeHandles)
     {
-        m_resizeHandles->toXmlElem("diagram:resizeHandles", "", _outStream);;
+        m_resizeHandles->toXmlElem("diagram:resizeHandles", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -23121,10 +23375,13 @@ CT_SDCategory* CT_SDCategory::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_cat())
-            {
-                (*iter)->get_cat().toXmlElem("diagram:cat", "", _outStream);
-            }
+    
+    if ((*iter)->has_cat())
+    {
+        (*iter)->get_cat().toXmlElem("diagram:cat", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -23287,12 +23544,13 @@ CT_SDCategories* CT_SDCategories::default_instance_ = NULL;
             
     if (m_has_a_sp3d)
     {
-        m_a_sp3d->toXmlElem("a:sp3d", "", _outStream);;
+        m_a_sp3d->toXmlElem("a:sp3d", "", _outStream);
     }
+    
     
     if (m_has_a_flatTx)
     {
-        m_a_flatTx->toXmlElem("a:flatTx", "", _outStream);;
+        m_a_flatTx->toXmlElem("a:flatTx", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -23517,27 +23775,31 @@ CT_TextProps* CT_TextProps::default_instance_ = NULL;
             
     if (m_has_scene3d)
     {
-        m_scene3d->toXmlElem("diagram:scene3d", "", _outStream);;
+        m_scene3d->toXmlElem("diagram:scene3d", "", _outStream);
     }
+    
     
     if (m_has_sp3d)
     {
-        m_sp3d->toXmlElem("diagram:sp3d", "", _outStream);;
+        m_sp3d->toXmlElem("diagram:sp3d", "", _outStream);
     }
+    
     
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("diagram:txPr", "", _outStream);;
+        m_txPr->toXmlElem("diagram:txPr", "", _outStream);
     }
+    
     
     if (m_has_style)
     {
-        m_style->toXmlElem("diagram:style", "", _outStream);;
+        m_style->toXmlElem("diagram:style", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -23673,30 +23935,48 @@ CT_StyleLabel* CT_StyleLabel::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_title())
-            {
-                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
-            }
-            else if ((*iter)->has_desc())
-            {
-                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
-            }
-            else if ((*iter)->has_catLst())
-            {
-                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
-            }
-            else if ((*iter)->has_scene3d())
-            {
-                (*iter)->get_scene3d().toXmlElem("diagram:scene3d", "", _outStream);
-            }
-            else if ((*iter)->has_styleLbl())
-            {
-                (*iter)->get_styleLbl().toXmlElem("diagram:styleLbl", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_title())
+    {
+        (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_desc())
+    {
+        (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_catLst())
+    {
+        (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_scene3d())
+    {
+        (*iter)->get_scene3d().toXmlElem("diagram:scene3d", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_styleLbl())
+    {
+        (*iter)->get_styleLbl().toXmlElem("diagram:styleLbl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -24281,22 +24561,34 @@ CT_StyleDefinition* CT_StyleDefinition::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_title())
-            {
-                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
-            }
-            else if ((*iter)->has_desc())
-            {
-                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
-            }
-            else if ((*iter)->has_catLst())
-            {
-                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_title())
+    {
+        (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_desc())
+    {
+        (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_catLst())
+    {
+        (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -24626,10 +24918,13 @@ CT_StyleDefinitionHeader* CT_StyleDefinitionHeader::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_styleDefHdr())
-            {
-                (*iter)->get_styleDefHdr().toXmlElem("diagram:styleDefHdr", "", _outStream);
-            }
+    
+    if ((*iter)->has_styleDefHdr())
+    {
+        (*iter)->get_styleDefHdr().toXmlElem("diagram:styleDefHdr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -24774,26 +25069,41 @@ CT_StyleDefinitionHeaderLst* CT_StyleDefinitionHeaderLst::default_instance_ = NU
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_title())
-            {
-                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
-            }
-            else if ((*iter)->has_desc())
-            {
-                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
-            }
-            else if ((*iter)->has_catLst())
-            {
-                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
-            }
-            else if ((*iter)->has_styleLbl())
-            {
-                (*iter)->get_styleLbl().toXmlElem("diagram:styleLbl", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_title())
+    {
+        (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_desc())
+    {
+        (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_catLst())
+    {
+        (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_styleLbl())
+    {
+        (*iter)->get_styleLbl().toXmlElem("diagram:styleLbl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -25261,22 +25571,34 @@ colorsDef_element* colorsDef_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_title())
-            {
-                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
-            }
-            else if ((*iter)->has_desc())
-            {
-                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
-            }
-            else if ((*iter)->has_catLst())
-            {
-                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_title())
+    {
+        (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_desc())
+    {
+        (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_catLst())
+    {
+        (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -25606,10 +25928,13 @@ colorsDefHdr_element* colorsDefHdr_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_colorsDefHdr())
-            {
-                (*iter)->get_colorsDefHdr().toXmlElem("diagram:colorsDefHdr", "", _outStream);
-            }
+    
+    if ((*iter)->has_colorsDefHdr())
+    {
+        (*iter)->get_colorsDefHdr().toXmlElem("diagram:colorsDefHdr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -25857,27 +26182,31 @@ colorsDefHdrLst_element* colorsDefHdrLst_element::default_instance_ = NULL;
     
     if (m_has_ptLst)
     {
-        m_ptLst->toXmlElem("diagram:ptLst", "", _outStream);;
+        m_ptLst->toXmlElem("diagram:ptLst", "", _outStream);
     }
+    
     
     if (m_has_cxnLst)
     {
-        m_cxnLst->toXmlElem("diagram:cxnLst", "", _outStream);;
+        m_cxnLst->toXmlElem("diagram:cxnLst", "", _outStream);
     }
+    
     
     if (m_has_bg)
     {
-        m_bg->toXmlElem("diagram:bg", "", _outStream);;
+        m_bg->toXmlElem("diagram:bg", "", _outStream);
     }
+    
     
     if (m_has_whole)
     {
-        m_whole->toXmlElem("diagram:whole", "", _outStream);;
+        m_whole->toXmlElem("diagram:whole", "", _outStream);
     }
+    
     
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("diagram:extLst", "", _outStream);;
+        m_extLst->toXmlElem("diagram:extLst", "", _outStream);
     }
     
     _outStream << "</diagram:dataModel>";
@@ -26024,38 +26353,62 @@ dataModel_element* dataModel_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_title())
-            {
-                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
-            }
-            else if ((*iter)->has_desc())
-            {
-                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
-            }
-            else if ((*iter)->has_catLst())
-            {
-                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
-            }
-            else if ((*iter)->has_sampData())
-            {
-                (*iter)->get_sampData().toXmlElem("diagram:sampData", "", _outStream);
-            }
-            else if ((*iter)->has_styleData())
-            {
-                (*iter)->get_styleData().toXmlElem("diagram:styleData", "", _outStream);
-            }
-            else if ((*iter)->has_clrData())
-            {
-                (*iter)->get_clrData().toXmlElem("diagram:clrData", "", _outStream);
-            }
-            else if ((*iter)->has_layoutNode())
-            {
-                (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_title())
+    {
+        (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_desc())
+    {
+        (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_catLst())
+    {
+        (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_sampData())
+    {
+        (*iter)->get_sampData().toXmlElem("diagram:sampData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_styleData())
+    {
+        (*iter)->get_styleData().toXmlElem("diagram:styleData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_clrData())
+    {
+        (*iter)->get_clrData().toXmlElem("diagram:clrData", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_layoutNode())
+    {
+        (*iter)->get_layoutNode().toXmlElem("diagram:layoutNode", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -26955,22 +27308,34 @@ layoutDef_element* layoutDef_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_title())
-            {
-                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
-            }
-            else if ((*iter)->has_desc())
-            {
-                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
-            }
-            else if ((*iter)->has_catLst())
-            {
-                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_title())
+    {
+        (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_desc())
+    {
+        (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_catLst())
+    {
+        (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -27316,10 +27681,13 @@ layoutDefHdr_element* layoutDefHdr_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_layoutDefHdr())
-            {
-                (*iter)->get_layoutDefHdr().toXmlElem("diagram:layoutDefHdr", "", _outStream);
-            }
+    
+    if ((*iter)->has_layoutDefHdr())
+    {
+        (*iter)->get_layoutDefHdr().toXmlElem("diagram:layoutDefHdr", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -27654,30 +28022,48 @@ relIds_element* relIds_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_title())
-            {
-                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
-            }
-            else if ((*iter)->has_desc())
-            {
-                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
-            }
-            else if ((*iter)->has_catLst())
-            {
-                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
-            }
-            else if ((*iter)->has_scene3d())
-            {
-                (*iter)->get_scene3d().toXmlElem("diagram:scene3d", "", _outStream);
-            }
-            else if ((*iter)->has_styleLbl())
-            {
-                (*iter)->get_styleLbl().toXmlElem("diagram:styleLbl", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_title())
+    {
+        (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_desc())
+    {
+        (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_catLst())
+    {
+        (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_scene3d())
+    {
+        (*iter)->get_scene3d().toXmlElem("diagram:scene3d", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_styleLbl())
+    {
+        (*iter)->get_styleLbl().toXmlElem("diagram:styleLbl", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -28262,22 +28648,34 @@ styleDef_element* styleDef_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_title())
-            {
-                (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
-            }
-            else if ((*iter)->has_desc())
-            {
-                (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
-            }
-            else if ((*iter)->has_catLst())
-            {
-                (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
-            }
-            else if ((*iter)->has_extLst())
-            {
-                (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
-            }
+    
+    if ((*iter)->has_title())
+    {
+        (*iter)->get_title().toXmlElem("diagram:title", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_desc())
+    {
+        (*iter)->get_desc().toXmlElem("diagram:desc", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_catLst())
+    {
+        (*iter)->get_catLst().toXmlElem("diagram:catLst", "", _outStream);
+    }
+    
+    
+    else 
+    if ((*iter)->has_extLst())
+    {
+        (*iter)->get_extLst().toXmlElem("diagram:extLst", "", _outStream);
+    }
+    
+    
         }
     }
     
@@ -28607,10 +29005,13 @@ styleDefHdr_element* styleDefHdr_element::default_instance_ = NULL;
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
-            if ((*iter)->has_styleDefHdr())
-            {
-                (*iter)->get_styleDefHdr().toXmlElem("diagram:styleDefHdr", "", _outStream);
-            }
+    
+    if ((*iter)->has_styleDefHdr())
+    {
+        (*iter)->get_styleDefHdr().toXmlElem("diagram:styleDefHdr", "", _outStream);
+    }
+    
+    
         }
     }
     
