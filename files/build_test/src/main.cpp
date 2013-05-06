@@ -27,13 +27,13 @@ int main()
         pBodyElem->add_p()->add_r()->mutable_rPr()->add_vertAlign()->set_val_attr(ns_s::ST_VerticalAlignRun::_baseline_);
         pBodyElem->add_ins()->add_m_oMathPara();
 
-        ns_wp::CT_Anchor *pAnchorElem = pBodyElem->add_p()->add_r()->add_drawing()->add_wp_anchor();
-        pAnchorElem->mutable_extent()->set_cx_attr(27273042316900);
-        pAnchorElem->mutable_extent()->set_cy_attr(1000);
-        CT_P *pPElem = pBodyElem->add_p();
-        pPElem->add_bookmarkStart()->set_id_attr(0);
-        pPElem->add_bookmarkStart()->set_colFirst_attr(100);
-        pPElem->clear();
+//        ns_wp::CT_Anchor *pAnchorElem = pBodyElem->add_p()->add_r()->add_drawing()->add_wp_anchor();
+//        pAnchorElem->mutable_extent()->set_cx_attr(27273042316900);
+//        pAnchorElem->mutable_extent()->set_cy_attr(1000);
+//        CT_P *pPElem = pBodyElem->add_p();
+//        pPElem->add_bookmarkStart()->set_id_attr(0);
+//        pPElem->add_bookmarkStart()->set_colFirst_attr(100);
+//        pPElem->clear();
 
         pBodyElem->add_p();
         pBodyElem->add_p();

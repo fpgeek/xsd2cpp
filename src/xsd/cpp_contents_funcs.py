@@ -1295,10 +1295,11 @@ def _toClearMethodBodyStr(clearMethodBodyList):
     return clearMethodBodyStr
 
 
-def _getToXmlMethodBodyList(pbSchema, pbElemList, makeToXmlMethodBodyFunc=None):
+def _getToXmlMethodBodyList(pbSchema, pbElemList, makeToXmlMethodBodyFunc):
     return [makeToXmlMethodBodyFunc(pbSchema, pbElem) for pbElem in pbElemList]
 
-def _getToXmlMethodBodyStr(pbSchema, pbElemList):
+
+def _getToXmlMethodBodyStr(pbSchema, pbElemList, pbElemContMinOccurs, makeAssertCodeFromOccurs):
 
     def makeToXmlMethodBodyFunc(pbSchema, pbElem):
         hasVarName = 'm_has_%s' % _getCppVarNameFromElem(pbElem)
@@ -1351,14 +1352,20 @@ if (%(hasVarName)s)
                 'hasVarName':hasVarName,
                 'varName': 'm_%s' % _getCppVarNameFromElem(pbElem)
             }
+        return ''
 
-    mBodyList = _getToXmlMethodBodyList(pbSchema, pbElemList, makeToXmlMethodBodyFunc)
+
+    mBodyList = []
+    # mBodyList.append(makeAssertCodeFromOccurs(pbElemList, pbElemContMinOccurs)) # 주석 풀어야 함
+    mBodyList.extend(_getToXmlMethodBodyList(pbSchema, pbElemList, makeToXmlMethodBodyFunc))
     return '\n'.join(mBodyList)
 
 
-def _getToXmlMethodBodyStrFromRepeated(pbSchema, pbElemList, idx):
+def _getToXmlMethodBodyStrFromRepeated(pbSchema, pbElemList, idx, makeAssertCodeFromOccursReqeatedFunc):
 
     toXmlMethodBody = ''
+    toXmlMethodBody += makeAssertCodeFromOccursReqeatedFunc(pbElemList)
+
     anyElemList = filter(lambda pbElem:pbElem.type.kind == PB.Element.Type.Any, pbElemList)
     if len(anyElemList) == len(pbElemList):
         for pbElem in pbElemList:
@@ -1420,6 +1427,7 @@ if (%(hasVarCode)s)
                 'elemName': getXmlElementName(pbSchema, pbElem),
                 'getMethod': 'get_%s()' % _getCppVarNameFromElem(pbElem)
         }
+        return ''
 
     mBodyList = _getToXmlMethodBodyList(pbSchema, pbElemList, makeToXmlMethodBodyFunc)
 
@@ -1914,20 +1922,68 @@ def getClaerMethodBodyStrFromAttrs(pbAttrList):
     return _getClearMethodBodyStrFromAttrList(pbAttrList)
 
 
+def _getAsserCodeFromElemContMinOccurs(pbElemContMinOccurs):
+    if pbElemContMinOccurs == 0:
+        return 'assert(cnt == 0 || cnt == 1);'
+    else:
+        return 'assert(cnt == 1);'
+
+
 def getToXmlMethodBodyStrFromElemCont(pbSchema, pbElemCont):
+
+    def makeAssertCodeFromOccursSequence(pbElemList, pbElemContMinOccurs):
+        assertCodeList = []
+        for pbElem in pbElemList:
+            if pbElem.min_occurs == 1 and (pbElem.max_occurs.kind == PB.MaxOccurs.Count and pbElem.max_occurs.count == 1):
+                codeStr = \
+    """
+    assert(%(hasVarName)s);
+    """ % {'hasVarName': 'm_has_%s' % _getCppVarNameFromElem(pbElem)}
+                assertCodeList.append(codeStr)
+
+
+        return '\n'.join(assertCodeList)
+
+
+    def makeAssertCodeFromOccursChoice(pbElemList, pbElemContMinOccurs):
+        return \
+"""
+{
+    bool elemList[%(elemListCnt)s] = {%(hasVarListStr)s};
+    size_t cnt = 0;
+    for (size_t i=0; i < %(elemListCnt)s; ++i)
+    {
+        if (elemList[i])
+        {
+            ++cnt;
+        }
+    }
+    %(assertCodeStr)s
+}
+""" % {
+    'elemListCnt': len(pbElemList),
+    'hasVarListStr': ', '.join(['m_has_%s' % _getCppVarNameFromElem(pbElem) for pbElem in pbElemList]),
+    'assertCodeStr': _getAsserCodeFromElemContMinOccurs(pbElemContMinOccurs)
+    }
+
+
+    def makeAssertCodeFromOccursReqeated(pbElemList):
+        return '' # TODO
+
+
 
     toXmlMethodBodyStrList = []
     repeatedIdx = 1
     for elemCont in pbElemCont:
         if elemCont.kind == PB.ElementContainer.Sequence:
-            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStr(pbSchema, elemCont.sequence))
+            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStr(pbSchema, elemCont.sequence, elemCont.min_occurs, makeAssertCodeFromOccursSequence))
         elif elemCont.kind == PB.ElementContainer.Choice:
-            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStr(pbSchema, elemCont.choice))
+            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStr(pbSchema, elemCont.choice, elemCont.min_occurs, makeAssertCodeFromOccursChoice))
         elif elemCont.kind == PB.ElementContainer.RepeatedSequence:
-            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(pbSchema, elemCont.repeated_sequence, repeatedIdx))
+            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(pbSchema, elemCont.repeated_sequence, repeatedIdx, makeAssertCodeFromOccursReqeated))
             repeatedIdx += 1
         elif elemCont.kind == PB.ElementContainer.RepeatedChoice:
-            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(pbSchema, elemCont.repeated_choice, repeatedIdx))
+            toXmlMethodBodyStrList.append(_getToXmlMethodBodyStrFromRepeated(pbSchema, elemCont.repeated_choice, repeatedIdx, makeAssertCodeFromOccursReqeated))
             repeatedIdx += 1
 
     return " ".join(toXmlMethodBodyStrList)
