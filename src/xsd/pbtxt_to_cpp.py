@@ -10,7 +10,6 @@ def cppParse(cppSchema, filePath):
     cppBuf = '#include "%s.h"\n' % cppSchema.name
     cppBuf += '#include <stdlib.h>\n' 
     cppBuf += '#include <sstream>\n'
-    cppBuf += '#include <sstream>\n'
     cppBuf += '#include <assert.h>\n'
 
     deep = 0

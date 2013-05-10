@@ -1,7 +1,6 @@
 #include "dml-picture_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "dml-main_xsd.h"
 namespace ns_dpct {
@@ -102,6 +101,12 @@ namespace ns_dpct {
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvPicPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("dpct:cNvPr", "", _outStream);
@@ -253,6 +258,15 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_nvPicPr);
+        
+    
+        assert(m_has_blipFill);
+        
+    
+        assert(m_has_spPr);
+        
+    
     if (m_has_nvPicPr)
     {
         m_nvPicPr->toXmlElem("dpct:nvPicPr", "", _outStream);
@@ -407,6 +421,15 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
     _outStream << " " << "xmlns:dpct=\"http://schemas.openxmlformats.org/drawingml/2006/picture\"";
     
     _outStream << ">";
+    
+        assert(m_has_nvPicPr);
+        
+    
+        assert(m_has_blipFill);
+        
+    
+        assert(m_has_spPr);
+        
     
     if (m_has_nvPicPr)
     {

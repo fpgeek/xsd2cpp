@@ -1,7 +1,6 @@
 #include "shared-customXmlDataProperties_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "shared-commonSimpleTypes_xsd.h"
 namespace ns_customXml {
@@ -243,6 +242,7 @@ CT_DatastoreSchemaRefs* CT_DatastoreSchemaRefs::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_schemaRefs)
     {
         m_schemaRefs->toXmlElem("customXml:schemaRefs", "", _outStream);
@@ -351,6 +351,7 @@ CT_DatastoreItem* CT_DatastoreItem::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
     
     if (m_has_schemaRefs)
     {

@@ -1,7 +1,6 @@
 #include "dml-main_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "shared-relationshipReference_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
@@ -7198,6 +7197,7 @@ ST_TextIndentLevelType* ST_TextIndentLevelType::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -7336,6 +7336,7 @@ CT_AudioFile* CT_AudioFile::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -7463,6 +7464,7 @@ CT_VideoFile* CT_VideoFile::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -7716,6 +7718,12 @@ CT_AudioCDTime* CT_AudioCDTime::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_st);
+        
+    
+        assert(m_has_end);
+        
+    
     if (m_has_st)
     {
         m_st->toXmlElem("a:st", "", _outStream);
@@ -8233,6 +8241,42 @@ CT_AudioCD* CT_AudioCD::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_dk1);
+        
+    
+        assert(m_has_lt1);
+        
+    
+        assert(m_has_dk2);
+        
+    
+        assert(m_has_lt2);
+        
+    
+        assert(m_has_accent1);
+        
+    
+        assert(m_has_accent2);
+        
+    
+        assert(m_has_accent3);
+        
+    
+        assert(m_has_accent4);
+        
+    
+        assert(m_has_accent5);
+        
+    
+        assert(m_has_accent6);
+        
+    
+        assert(m_has_hlink);
+        
+    
+        assert(m_has_folHlink);
+        
+    
     if (m_has_dk1)
     {
         m_dk1->toXmlElem("a:dk1", "", _outStream);
@@ -8857,6 +8901,13 @@ CT_ColorScheme* CT_ColorScheme::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_scrgbClr)
     {
         m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
@@ -9126,7 +9177,9 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
     m_has_ea(false),
     m_ea(NULL),
     m_has_cs(false),
-    m_cs(NULL)
+    m_cs(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
     {
     }
     CT_FontCollection::~CT_FontCollection()
@@ -9212,12 +9265,28 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_OfficeArtExtensionList* CT_FontCollection::add_extLst()
+    bool CT_FontCollection::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_OfficeArtExtensionList* CT_FontCollection::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_OfficeArtExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_OfficeArtExtensionList& CT_FontCollection::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_OfficeArtExtensionList::default_instance();
     }
 
     void CT_FontCollection::clear()
@@ -9257,6 +9326,15 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_FontCollection::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -9270,6 +9348,15 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_latin);
+        
+    
+        assert(m_has_ea);
+        
+    
+        assert(m_has_cs);
+        
+    
     if (m_has_latin)
     {
         m_latin->toXmlElem("a:latin", "", _outStream);
@@ -9298,14 +9385,13 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("a:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9324,9 +9410,7 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
     // CT_FontCollection::ChildGroup_1
     CT_FontCollection::ChildGroup_1::ChildGroup_1()
     :m_has_font(false),
-    m_font(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_font(NULL)
     {
     }
     bool CT_FontCollection::ChildGroup_1::has_font() const
@@ -9336,15 +9420,6 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
 
     CT_SupplementalFont* CT_FontCollection::ChildGroup_1::mutable_font()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_font = true;
     if (!m_font)
@@ -9361,40 +9436,6 @@ CT_CustomColorList* CT_CustomColorList::default_instance_ = NULL;
         return *m_font;
     }
     return CT_SupplementalFont::default_instance();
-    }
-
-    bool CT_FontCollection::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_OfficeArtExtensionList* CT_FontCollection::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_font = false;
-    
-    if (m_font)
-    {
-        delete m_font;
-        m_font = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_OfficeArtExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_OfficeArtExtensionList& CT_FontCollection::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_OfficeArtExtensionList::default_instance();
     }
 
 CT_FontCollection* CT_FontCollection::default_instance_ = NULL;
@@ -9580,6 +9621,13 @@ CT_FontCollection* CT_FontCollection::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_effectLst)
     {
         m_effectLst->toXmlElem("a:effectLst", "", _outStream);
@@ -9591,6 +9639,7 @@ CT_FontCollection* CT_FontCollection::default_instance_ = NULL;
         m_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
      
+    
     if (m_has_scene3d)
     {
         m_scene3d->toXmlElem("a:scene3d", "", _outStream);
@@ -9752,6 +9801,12 @@ CT_EffectStyleItem* CT_EffectStyleItem::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_majorFont);
+        
+    
+        assert(m_has_minorFont);
+        
+    
     if (m_has_majorFont)
     {
         m_majorFont->toXmlElem("a:majorFont", "", _outStream);
@@ -10418,6 +10473,11 @@ CT_FillStyleList* CT_FillStyleList::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_ln));
+        assert(3 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -10516,6 +10576,11 @@ CT_LineStyleList* CT_LineStyleList::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_effectStyle));
+        assert(3 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -11326,6 +11391,18 @@ CT_BackgroundFillStyleList* CT_BackgroundFillStyleList::default_instance_ = NULL
     
             _outStream << ">";
             
+        assert(m_has_fillStyleLst);
+        
+    
+        assert(m_has_lnStyleLst);
+        
+    
+        assert(m_has_effectStyleLst);
+        
+    
+        assert(m_has_bgFillStyleLst);
+        
+    
     if (m_has_fillStyleLst)
     {
         m_fillStyleLst->toXmlElem("a:fillStyleLst", "", _outStream);
@@ -11540,6 +11617,15 @@ CT_StyleMatrix* CT_StyleMatrix::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_clrScheme);
+        
+    
+        assert(m_has_fontScheme);
+        
+    
+        assert(m_has_fmtScheme);
+        
+    
     if (m_has_clrScheme)
     {
         m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);
@@ -11610,6 +11696,7 @@ CT_BaseStyles* CT_BaseStyles::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has__any)
     {
         m__any->toXml(_outStream);
@@ -61362,6 +61449,12 @@ CT_OfficeArtExtensionList* CT_OfficeArtExtensionList::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_sx);
+        
+    
+        assert(m_has_sy);
+        
+    
     if (m_has_sx)
     {
         m_sx->toXmlElem("a:sx", "", _outStream);
@@ -61516,6 +61609,7 @@ CT_Scale2D* CT_Scale2D::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_off)
     {
         m_off->toXmlElem("a:off", "", _outStream);
@@ -61792,6 +61886,7 @@ CT_Transform2D* CT_Transform2D::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_off)
     {
         m_off->toXmlElem("a:off", "", _outStream);
@@ -63005,6 +63100,13 @@ CT_RelativeRect* CT_RelativeRect::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_scrgbClr)
     {
         m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
@@ -63915,6 +64017,7 @@ CT_EmbeddedWAVAudioFile* CT_EmbeddedWAVAudioFile::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_snd)
     {
         m_snd->toXmlElem("a:snd", "", _outStream);
@@ -64237,6 +64340,7 @@ CT_Hyperlink* CT_Hyperlink::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -64592,6 +64696,7 @@ CT_ConnectorLocking* CT_ConnectorLocking::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -64963,6 +65068,7 @@ CT_ShapeLocking* CT_ShapeLocking::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -65290,6 +65396,7 @@ CT_PictureLocking* CT_PictureLocking::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -65542,6 +65649,7 @@ CT_GroupLocking* CT_GroupLocking::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -65822,6 +65930,7 @@ CT_GraphicalObjectFrameLocking* CT_GraphicalObjectFrameLocking::default_instance
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -66187,6 +66296,7 @@ CT_ContentPartLocking* CT_ContentPartLocking::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_hlinkClick)
     {
         m_hlinkClick->toXmlElem("a:hlinkClick", "", _outStream);
@@ -66403,6 +66513,7 @@ CT_NonVisualDrawingProps* CT_NonVisualDrawingProps::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_spLocks)
     {
         m_spLocks->toXmlElem("a:spLocks", "", _outStream);
@@ -66605,6 +66716,7 @@ CT_NonVisualDrawingShapeProps* CT_NonVisualDrawingShapeProps::default_instance_ 
             
             _outStream << ">";
             
+    
     if (m_has_cxnSpLocks)
     {
         m_cxnSpLocks->toXmlElem("a:cxnSpLocks", "", _outStream);
@@ -66743,6 +66855,7 @@ CT_NonVisualConnectorProperties* CT_NonVisualConnectorProperties::default_instan
     
             _outStream << ">";
             
+    
     if (m_has_picLocks)
     {
         m_picLocks->toXmlElem("a:picLocks", "", _outStream);
@@ -66875,6 +66988,7 @@ CT_NonVisualPictureProperties* CT_NonVisualPictureProperties::default_instance_ 
             
             _outStream << ">";
             
+    
     if (m_has_grpSpLocks)
     {
         m_grpSpLocks->toXmlElem("a:grpSpLocks", "", _outStream);
@@ -66991,6 +67105,7 @@ CT_NonVisualGroupDrawingShapeProps* CT_NonVisualGroupDrawingShapeProps::default_
             
             _outStream << ">";
             
+    
     if (m_has_graphicFrameLocks)
     {
         m_graphicFrameLocks->toXmlElem("a:graphicFrameLocks", "", _outStream);
@@ -67117,6 +67232,7 @@ CT_NonVisualGraphicFrameProperties* CT_NonVisualGraphicFrameProperties::default_
     
             _outStream << ">";
             
+    
     if (m_has_cpLocks)
     {
         m_cpLocks->toXmlElem("a:cpLocks", "", _outStream);
@@ -67191,6 +67307,7 @@ CT_NonVisualContentPartProperties* CT_NonVisualContentPartProperties::default_in
     
             _outStream << ">";
             
+    
     if (m_has__any)
     {
         m__any->toXml(_outStream);
@@ -67282,6 +67399,9 @@ CT_GraphicalObjectData* CT_GraphicalObjectData::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_graphicData);
+        
+    
     if (m_has_graphicData)
     {
         m_graphicData->toXmlElem("a:graphicData", "", _outStream);
@@ -67645,6 +67765,13 @@ CT_AnimationChartElement* CT_AnimationChartElement::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_dgm, m_has_chart};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_dgm)
     {
         m_dgm->toXmlElem("a:dgm", "", _outStream);
@@ -67977,6 +68104,13 @@ CT_AnimationChartBuildProperties* CT_AnimationChartBuildProperties::default_inst
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_bldDgm, m_has_bldChart};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_bldDgm)
     {
         m_bldDgm->toXmlElem("a:bldDgm", "", _outStream);
@@ -68815,6 +68949,13 @@ CT_AnimationGraphicalObjectBuildProperties* CT_AnimationGraphicalObjectBuildProp
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[8] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill, m_has_effectLst, m_has_effectDag};
+        int cnt = count(elemHasValueList, elemHasValueList + 8, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_noFill)
     {
         m_noFill->toXmlElem("a:noFill", "", _outStream);
@@ -69022,11 +69163,19 @@ CT_BackgrCT_TextEffectoundFormatting* CT_BackgrCT_TextEffectoundFormatting::defa
             
             _outStream << ">";
             
+    
     if (m_has_ln)
     {
         m_ln->toXmlElem("a:ln", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_effectLst)
     {
         m_effectLst->toXmlElem("a:effectLst", "", _outStream);
@@ -69269,11 +69418,21 @@ CT_GvmlUseShapeRectangle* CT_GvmlUseShapeRectangle::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_txBody);
+        
+    
     if (m_has_txBody)
     {
         m_txBody->toXmlElem("a:txBody", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[2] = {m_has_useSpRect, m_has_xfrm};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_useSpRect)
     {
         m_useSpRect->toXmlElem("a:useSpRect", "", _outStream);
@@ -69285,6 +69444,7 @@ CT_GvmlUseShapeRectangle* CT_GvmlUseShapeRectangle::default_instance_ = NULL;
         m_xfrm->toXmlElem("a:xfrm", "", _outStream);
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -69395,6 +69555,12 @@ CT_GvmlTextShape* CT_GvmlTextShape::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvSpPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);
@@ -69616,6 +69782,12 @@ CT_GvmlShapeNonVisual* CT_GvmlShapeNonVisual::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_nvSpPr);
+        
+    
+        assert(m_has_spPr);
+        
+    
     if (m_has_nvSpPr)
     {
         m_nvSpPr->toXmlElem("a:nvSpPr", "", _outStream);
@@ -69750,6 +69922,12 @@ CT_GvmlShape* CT_GvmlShape::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvCxnSpPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);
@@ -69936,6 +70114,12 @@ CT_GvmlConnectorNonVisual* CT_GvmlConnectorNonVisual::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_nvCxnSpPr);
+        
+    
+        assert(m_has_spPr);
+        
+    
     if (m_has_nvCxnSpPr)
     {
         m_nvCxnSpPr->toXmlElem("a:nvCxnSpPr", "", _outStream);
@@ -70064,6 +70248,12 @@ CT_GvmlConnector* CT_GvmlConnector::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvPicPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);
@@ -70285,6 +70475,15 @@ CT_GvmlPictureNonVisual* CT_GvmlPictureNonVisual::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_nvPicPr);
+        
+    
+        assert(m_has_blipFill);
+        
+    
+        assert(m_has_spPr);
+        
+    
     if (m_has_nvPicPr)
     {
         m_nvPicPr->toXmlElem("a:nvPicPr", "", _outStream);
@@ -70419,6 +70618,12 @@ CT_GvmlPicture* CT_GvmlPicture::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvGraphicFramePr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);
@@ -70605,6 +70810,15 @@ CT_GvmlGraphicFrameNonVisual* CT_GvmlGraphicFrameNonVisual::default_instance_ = 
             
             _outStream << ">";
             
+        assert(m_has_nvGraphicFramePr);
+        
+    
+        assert(m_has_graphic);
+        
+    
+        assert(m_has_xfrm);
+        
+    
     if (m_has_nvGraphicFramePr)
     {
         m_nvGraphicFramePr->toXmlElem("a:nvGraphicFramePr", "", _outStream);
@@ -70733,6 +70947,12 @@ CT_GvmlGraphicalObjectFrame* CT_GvmlGraphicalObjectFrame::default_instance_ = NU
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvGrpSpPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("a:cNvPr", "", _outStream);
@@ -70941,6 +71161,12 @@ CT_GvmlGroupShapeNonVisual* CT_GvmlGroupShapeNonVisual::default_instance_ = NULL
             
             _outStream << ">";
             
+        assert(m_has_nvGrpSpPr);
+        
+    
+        assert(m_has_grpSpPr);
+        
+    
     if (m_has_nvGrpSpPr)
     {
         m_nvGrpSpPr->toXmlElem("a:nvGrpSpPr", "", _outStream);
@@ -71001,6 +71227,7 @@ CT_GvmlGroupShapeNonVisual* CT_GvmlGroupShapeNonVisual::default_instance_ = NULL
         }
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -71563,6 +71790,7 @@ CT_GvmlGroupShape* CT_GvmlGroupShape::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_rot)
     {
         m_rot->toXmlElem("a:rot", "", _outStream);
@@ -71731,6 +71959,7 @@ CT_Camera* CT_Camera::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_rot)
     {
         m_rot->toXmlElem("a:rot", "", _outStream);
@@ -71951,6 +72180,12 @@ CT_LightRig* CT_LightRig::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_camera);
+        
+    
+        assert(m_has_lightRig);
+        
+    
     if (m_has_camera)
     {
         m_camera->toXmlElem("a:camera", "", _outStream);
@@ -72149,6 +72384,15 @@ CT_Scene3D* CT_Scene3D::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_anchor);
+        
+    
+        assert(m_has_norm);
+        
+    
+        assert(m_has_up);
+        
+    
     if (m_has_anchor)
     {
         m_anchor->toXmlElem("a:anchor", "", _outStream);
@@ -72594,6 +72838,7 @@ CT_Bevel* CT_Bevel::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_bevelT)
     {
         m_bevelT->toXmlElem("a:bevelT", "", _outStream);
@@ -73438,6 +73683,13 @@ CT_AlphaFloorEffect* CT_AlphaFloorEffect::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_scrgbClr)
     {
         m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
@@ -73970,6 +74222,12 @@ CT_BlurEffect* CT_BlurEffect::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_clrFrom);
+        
+    
+        assert(m_has_clrTo);
+        
+    
     if (m_has_clrFrom)
     {
         m_clrFrom->toXmlElem("a:clrFrom", "", _outStream);
@@ -74518,6 +74776,13 @@ CT_ColorChangeEffect* CT_ColorChangeEffect::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_scrgbClr)
     {
         m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
@@ -74646,6 +74911,41 @@ CT_ColorReplaceEffect* CT_ColorReplaceEffect::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_scrgbClr));
+        assert(1 <= elemCnt && elemCnt <= 1);
+    }
+    
+    
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_srgbClr));
+        assert(1 <= elemCnt && elemCnt <= 1);
+    }
+    
+    
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_hslClr));
+        assert(1 <= elemCnt && elemCnt <= 1);
+    }
+    
+    
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sysClr));
+        assert(1 <= elemCnt && elemCnt <= 1);
+    }
+    
+    
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_schemeClr));
+        assert(1 <= elemCnt && elemCnt <= 1);
+    }
+    
+    
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_prstClr));
+        assert(1 <= elemCnt && elemCnt <= 1);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -75669,6 +75969,13 @@ CT_DuotoneEffect* CT_DuotoneEffect::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_scrgbClr)
     {
         m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
@@ -76476,6 +76783,13 @@ CT_HSLEffect* CT_HSLEffect::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_scrgbClr)
     {
         m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
@@ -77346,6 +77660,13 @@ CT_LuminanceEffect* CT_LuminanceEffect::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_scrgbClr)
     {
         m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
@@ -78128,6 +78449,13 @@ CT_OuterShadowEffect* CT_OuterShadowEffect::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_scrgbClr)
     {
         m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
@@ -79865,6 +80193,13 @@ CT_NoFillProperties* CT_NoFillProperties::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_scrgbClr)
     {
         m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
@@ -80084,6 +80419,7 @@ CT_LinearShadeProperties* CT_LinearShadeProperties::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_fillToRect)
     {
         m_fillToRect->toXmlElem("a:fillToRect", "", _outStream);
@@ -80646,6 +80982,13 @@ CT_PathShadeProperties* CT_PathShadeProperties::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_scrgbClr)
     {
         m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
@@ -80754,6 +81097,11 @@ CT_GradientStop* CT_GradientStop::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_gs));
+        assert(2 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -81022,11 +81370,19 @@ CT_GradientStopList* CT_GradientStopList::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_gsLst)
     {
         m_gsLst->toXmlElem("a:gsLst", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[2] = {m_has_lin, m_has_path};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_lin)
     {
         m_lin->toXmlElem("a:lin", "", _outStream);
@@ -81038,6 +81394,7 @@ CT_GradientStopList* CT_GradientStopList::default_instance_ = NULL;
         m_path->toXmlElem("a:path", "", _outStream);
     }
      
+    
     if (m_has_tileRect)
     {
         m_tileRect->toXmlElem("a:tileRect", "", _outStream);
@@ -81405,6 +81762,7 @@ CT_TileInfoProperties* CT_TileInfoProperties::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_fillRect)
     {
         m_fillRect->toXmlElem("a:fillRect", "", _outStream);
@@ -81801,6 +82159,7 @@ CT_StretchInfoProperties* CT_StretchInfoProperties::default_instance_ = NULL;
         }
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -84994,6 +85353,7 @@ CT_Blip* CT_Blip::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_blip)
     {
         m_blip->toXmlElem("a:blip", "", _outStream);
@@ -85005,6 +85365,13 @@ CT_Blip* CT_Blip::default_instance_ = NULL;
         m_srcRect->toXmlElem("a:srcRect", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[2] = {m_has_tile, m_has_stretch};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_tile)
     {
         m_tile->toXmlElem("a:tile", "", _outStream);
@@ -85169,6 +85536,7 @@ CT_BlipFillProperties* CT_BlipFillProperties::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_fgClr)
     {
         m_fgClr->toXmlElem("a:fgClr", "", _outStream);
@@ -85757,6 +86125,13 @@ CT_GroupFillProperties* CT_GroupFillProperties::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_noFill)
     {
         m_noFill->toXmlElem("a:noFill", "", _outStream);
@@ -86313,6 +86688,13 @@ CT_FillProperties* CT_FillProperties::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_noFill)
     {
         m_noFill->toXmlElem("a:noFill", "", _outStream);
@@ -86885,6 +87267,13 @@ CT_FillEffect* CT_FillEffect::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_noFill)
     {
         m_noFill->toXmlElem("a:noFill", "", _outStream);
@@ -87169,6 +87558,9 @@ CT_EffectContainer* CT_EffectContainer::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cont);
+        
+    
     if (m_has_cont)
     {
         m_cont->toXmlElem("a:cont", "", _outStream);
@@ -87260,6 +87652,9 @@ CT_AlphaModulateEffect* CT_AlphaModulateEffect::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cont);
+        
+    
     if (m_has_cont)
     {
         m_cont->toXmlElem("a:cont", "", _outStream);
@@ -87600,6 +87995,7 @@ CT_BlendEffect* CT_BlendEffect::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_blur)
     {
         m_blur->toXmlElem("a:blur", "", _outStream);
@@ -87772,6 +88168,13 @@ CT_EffectList* CT_EffectList::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_effectLst)
     {
         m_effectLst->toXmlElem("a:effectLst", "", _outStream);
@@ -88451,6 +88854,9 @@ CT_GeomRect* CT_GeomRect::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_pos);
+        
+    
     if (m_has_pos)
     {
         m_pos->toXmlElem("a:pos", "", _outStream);
@@ -88747,6 +89153,9 @@ CT_XYAdjustHandle* CT_XYAdjustHandle::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_pos);
+        
+    
     if (m_has_pos)
     {
         m_pos->toXmlElem("a:pos", "", _outStream);
@@ -88958,6 +89367,9 @@ CT_PolarAdjustHandle* CT_PolarAdjustHandle::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_pos);
+        
+    
     if (m_has_pos)
     {
         m_pos->toXmlElem("a:pos", "", _outStream);
@@ -89409,6 +89821,9 @@ CT_Connection* CT_Connection::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_pt);
+        
+    
     if (m_has_pt)
     {
         m_pt->toXmlElem("a:pt", "", _outStream);
@@ -89484,6 +89899,9 @@ CT_Path2DMoveTo* CT_Path2DMoveTo::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_pt);
+        
+    
     if (m_has_pt)
     {
         m_pt->toXmlElem("a:pt", "", _outStream);
@@ -89725,6 +90143,11 @@ CT_Path2DArcTo* CT_Path2DArcTo::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pt));
+        assert(2 <= elemCnt && elemCnt <= 2);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -89823,6 +90246,11 @@ CT_Path2DQuadBezierTo* CT_Path2DQuadBezierTo::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pt));
+        assert(3 <= elemCnt && elemCnt <= 3);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -90832,6 +91260,7 @@ CT_Path2DList* CT_Path2DList::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_avLst)
     {
         m_avLst->toXmlElem("a:avLst", "", _outStream);
@@ -90943,6 +91372,7 @@ CT_PresetGeometry2D* CT_PresetGeometry2D::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_avLst)
     {
         m_avLst->toXmlElem("a:avLst", "", _outStream);
@@ -91213,6 +91643,9 @@ CT_PresetTextShape* CT_PresetTextShape::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_pathLst);
+        
+    
     if (m_has_avLst)
     {
         m_avLst->toXmlElem("a:avLst", "", _outStream);
@@ -92993,6 +93426,13 @@ CT_DashStopList* CT_DashStopList::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[9] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_pattFill, m_has_prstDash, m_has_custDash, m_has_round, m_has_bevel, m_has_miter};
+        int cnt = count(elemHasValueList, elemHasValueList + 9, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_noFill)
     {
         m_noFill->toXmlElem("a:noFill", "", _outStream);
@@ -93046,6 +93486,7 @@ CT_DashStopList* CT_DashStopList::default_instance_ = NULL;
         m_miter->toXmlElem("a:miter", "", _outStream);
     }
      
+    
     if (m_has_headEnd)
     {
         m_headEnd->toXmlElem("a:headEnd", "", _outStream);
@@ -94251,11 +94692,19 @@ CT_LineProperties* CT_LineProperties::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_xfrm)
     {
         m_xfrm->toXmlElem("a:xfrm", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[8] = {m_has_custGeom, m_has_prstGeom, m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 8, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_custGeom)
     {
         m_custGeom->toXmlElem("a:custGeom", "", _outStream);
@@ -94303,11 +94752,19 @@ CT_LineProperties* CT_LineProperties::default_instance_ = NULL;
         m_grpFill->toXmlElem("a:grpFill", "", _outStream);
     }
      
+    
     if (m_has_ln)
     {
         m_ln->toXmlElem("a:ln", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_effectLst)
     {
         m_effectLst->toXmlElem("a:effectLst", "", _outStream);
@@ -94319,6 +94776,7 @@ CT_LineProperties* CT_LineProperties::default_instance_ = NULL;
         m_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
      
+    
     if (m_has_scene3d)
     {
         m_scene3d->toXmlElem("a:scene3d", "", _outStream);
@@ -95304,11 +95762,19 @@ CT_ShapeProperties* CT_ShapeProperties::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_xfrm)
     {
         m_xfrm->toXmlElem("a:xfrm", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[8] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill, m_has_effectLst, m_has_effectDag};
+        int cnt = count(elemHasValueList, elemHasValueList + 8, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_noFill)
     {
         m_noFill->toXmlElem("a:noFill", "", _outStream);
@@ -95356,6 +95822,7 @@ CT_ShapeProperties* CT_ShapeProperties::default_instance_ = NULL;
         m_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
      
+    
     if (m_has_scene3d)
     {
         m_scene3d->toXmlElem("a:scene3d", "", _outStream);
@@ -95924,6 +96391,13 @@ CT_GroupShapeProperties* CT_GroupShapeProperties::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_scrgbClr)
     {
         m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
@@ -96516,6 +96990,13 @@ CT_StyleMatrixReference* CT_StyleMatrixReference::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_scrgbClr)
     {
         m_scrgbClr->toXmlElem("a:scrgbClr", "", _outStream);
@@ -96746,6 +97227,18 @@ CT_FontReference* CT_FontReference::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_lnRef);
+        
+    
+        assert(m_has_fillRef);
+        
+    
+        assert(m_has_effectRef);
+        
+    
+        assert(m_has_fontRef);
+        
+    
     if (m_has_lnRef)
     {
         m_lnRef->toXmlElem("a:lnRef", "", _outStream);
@@ -96979,6 +97472,15 @@ CT_ShapeStyle* CT_ShapeStyle::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_spPr);
+        
+    
+        assert(m_has_bodyPr);
+        
+    
+        assert(m_has_lstStyle);
+        
+    
     if (m_has_spPr)
     {
         m_spPr->toXmlElem("a:spPr", "", _outStream);
@@ -97183,6 +97685,7 @@ CT_DefaultShapeDefinition* CT_DefaultShapeDefinition::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_spDef)
     {
         m_spDef->toXmlElem("a:spDef", "", _outStream);
@@ -97515,6 +98018,7 @@ CT_EmptyElement* CT_EmptyElement::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -97885,6 +98389,13 @@ CT_ColorMapping* CT_ColorMapping::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_masterClrMapping, m_has_overrideClrMapping};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_masterClrMapping)
     {
         m_masterClrMapping->toXmlElem("a:masterClrMapping", "", _outStream);
@@ -98001,6 +98512,9 @@ CT_ColorMappingOverride* CT_ColorMappingOverride::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_clrScheme);
+        
+    
     if (m_has_clrScheme)
     {
         m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);
@@ -98331,6 +98845,9 @@ CT_ColorSchemeList* CT_ColorSchemeList::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_themeElements);
+        
+    
     if (m_has_themeElements)
     {
         m_themeElements->toXmlElem("a:themeElements", "", _outStream);
@@ -98516,6 +99033,7 @@ CT_OfficeStyleSheet* CT_OfficeStyleSheet::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_clrScheme)
     {
         m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);
@@ -98638,6 +99156,12 @@ CT_BaseStylesOverride* CT_BaseStylesOverride::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_themeElements);
+        
+    
+        assert(m_has_clrMap);
+        
+    
     if (m_has_themeElements)
     {
         m_themeElements->toXmlElem("a:themeElements", "", _outStream);
@@ -99614,6 +100138,7 @@ CT_ClipboardStyleSheet* CT_ClipboardStyleSheet::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_lnL)
     {
         m_lnL->toXmlElem("a:lnL", "", _outStream);
@@ -99655,6 +100180,13 @@ CT_ClipboardStyleSheet* CT_ClipboardStyleSheet::default_instance_ = NULL;
         m_cell3D->toXmlElem("a:cell3D", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_noFill)
     {
         m_noFill->toXmlElem("a:noFill", "", _outStream);
@@ -99690,6 +100222,7 @@ CT_ClipboardStyleSheet* CT_ClipboardStyleSheet::default_instance_ = NULL;
         m_grpFill->toXmlElem("a:grpFill", "", _outStream);
     }
      
+    
     if (m_has_headers)
     {
         m_headers->toXmlElem("a:headers", "", _outStream);
@@ -100033,6 +100566,7 @@ CT_Headers* CT_Headers::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -100351,6 +100885,7 @@ CT_TableGrid* CT_TableGrid::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_txBody)
     {
         m_txBody->toXmlElem("a:txBody", "", _outStream);
@@ -100464,7 +100999,9 @@ CT_TableCell* CT_TableCell::default_instance_ = NULL;
 
     // CT_TableRow
     CT_TableRow::CT_TableRow()
-    :m_has_h_attr(false),
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_h_attr(false),
     m_h_attr(NULL)
     {
     }
@@ -100479,12 +101016,28 @@ CT_TableCell* CT_TableCell::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_OfficeArtExtensionList* CT_TableRow::add_extLst()
+    bool CT_TableRow::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_OfficeArtExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_OfficeArtExtensionList* CT_TableRow::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_OfficeArtExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_OfficeArtExtensionList& CT_TableRow::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_OfficeArtExtensionList::default_instance();
     }
 
     void CT_TableRow::clear()
@@ -100506,6 +101059,15 @@ CT_TableCell* CT_TableCell::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_TableRow::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -100535,14 +101097,13 @@ CT_TableCell* CT_TableCell::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("a:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("a:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -100581,9 +101142,7 @@ CT_TableCell* CT_TableCell::default_instance_ = NULL;
     // CT_TableRow::ChildGroup_1
     CT_TableRow::ChildGroup_1::ChildGroup_1()
     :m_has_tc(false),
-    m_tc(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_tc(NULL)
     {
     }
     bool CT_TableRow::ChildGroup_1::has_tc() const
@@ -100593,15 +101152,6 @@ CT_TableCell* CT_TableCell::default_instance_ = NULL;
 
     CT_TableCell* CT_TableRow::ChildGroup_1::mutable_tc()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_tc = true;
     if (!m_tc)
@@ -100618,40 +101168,6 @@ CT_TableCell* CT_TableCell::default_instance_ = NULL;
         return *m_tc;
     }
     return CT_TableCell::default_instance();
-    }
-
-    bool CT_TableRow::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_OfficeArtExtensionList* CT_TableRow::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_tc = false;
-    
-    if (m_tc)
-    {
-        delete m_tc;
-        m_tc = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_OfficeArtExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_OfficeArtExtensionList& CT_TableRow::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_OfficeArtExtensionList::default_instance();
     }
 
 CT_TableRow* CT_TableRow::default_instance_ = NULL;
@@ -101958,6 +102474,13 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[10] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill, m_has_effectLst, m_has_effectDag, m_has_tableStyle, m_has_tableStyleId};
+        int cnt = count(elemHasValueList, elemHasValueList + 10, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_noFill)
     {
         m_noFill->toXmlElem("a:noFill", "", _outStream);
@@ -102017,6 +102540,7 @@ CT_TableRow* CT_TableRow::default_instance_ = NULL;
         _outStream << "<a:tableStyleId>" << m_tableStyleId->toString() << "</a:tableStyleId>";
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -102256,6 +102780,9 @@ CT_TableProperties* CT_TableProperties::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_tblGrid);
+        
+    
     if (m_has_tblPr)
     {
         m_tblPr->toXmlElem("a:tblPr", "", _outStream);
@@ -102469,6 +102996,9 @@ CT_Table* CT_Table::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_bevel);
+        
+    
     if (m_has_bevel)
     {
         m_bevel->toXmlElem("a:bevel", "", _outStream);
@@ -102631,6 +103161,13 @@ CT_Cell3D* CT_Cell3D::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_ln, m_has_lnRef};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_ln)
     {
         m_ln->toXmlElem("a:ln", "", _outStream);
@@ -103537,6 +104074,13 @@ CT_ThemeableLineStyle* CT_ThemeableLineStyle::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[8] = {m_has_font, m_has_fontRef, m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 8, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_font)
     {
         m_font->toXmlElem("a:font", "", _outStream);
@@ -103584,6 +104128,7 @@ CT_ThemeableLineStyle* CT_ThemeableLineStyle::default_instance_ = NULL;
         m_prstClr->toXmlElem("a:prstClr", "", _outStream);
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -103979,6 +104524,7 @@ CT_TableStyleTextStyle* CT_TableStyleTextStyle::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_left)
     {
         m_left->toXmlElem("a:left", "", _outStream);
@@ -104319,6 +104865,13 @@ CT_TableCellBorderStyle* CT_TableCellBorderStyle::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[4] = {m_has_fill, m_has_fillRef, m_has_effect, m_has_effectRef};
+        int cnt = count(elemHasValueList, elemHasValueList + 4, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_fill)
     {
         m_fill->toXmlElem("a:fill", "", _outStream);
@@ -104537,11 +105090,19 @@ CT_TableBackgroundStyle* CT_TableBackgroundStyle::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_tcBdr)
     {
         m_tcBdr->toXmlElem("a:tcBdr", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[2] = {m_has_fill, m_has_fillRef};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_fill)
     {
         m_fill->toXmlElem("a:fill", "", _outStream);
@@ -104553,6 +105114,7 @@ CT_TableBackgroundStyle* CT_TableBackgroundStyle::default_instance_ = NULL;
         m_fillRef->toXmlElem("a:fillRef", "", _outStream);
     }
      
+    
     if (m_has_cell3D)
     {
         m_cell3D->toXmlElem("a:cell3D", "", _outStream);
@@ -104663,6 +105225,7 @@ CT_TableStyleCellStyle* CT_TableStyleCellStyle::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_tcTxStyle)
     {
         m_tcTxStyle->toXmlElem("a:tcTxStyle", "", _outStream);
@@ -105261,6 +105824,7 @@ CT_TablePartStyle* CT_TablePartStyle::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_tblBg)
     {
         m_tblBg->toXmlElem("a:tblBg", "", _outStream);
@@ -105658,6 +106222,7 @@ CT_TableStyleList* CT_TableStyleList::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_pPr)
     {
         m_pPr->toXmlElem("a:pPr", "", _outStream);
@@ -105691,6 +106256,7 @@ CT_TableStyleList* CT_TableStyleList::default_instance_ = NULL;
         }
     }
      
+    
     if (m_has_endParaRPr)
     {
         m_endParaRPr->toXmlElem("a:endParaRPr", "", _outStream);
@@ -106256,6 +106822,7 @@ CT_TextParagraph* CT_TextParagraph::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_defPPr)
     {
         m_defPPr->toXmlElem("a:defPPr", "", _outStream);
@@ -107173,11 +107740,19 @@ CT_TextNoAutofit* CT_TextNoAutofit::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_prstTxWarp)
     {
         m_prstTxWarp->toXmlElem("a:prstTxWarp", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[3] = {m_has_noAutofit, m_has_normAutofit, m_has_spAutoFit};
+        int cnt = count(elemHasValueList, elemHasValueList + 3, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_noAutofit)
     {
         m_noAutofit->toXmlElem("a:noAutofit", "", _outStream);
@@ -107195,11 +107770,19 @@ CT_TextNoAutofit* CT_TextNoAutofit::default_instance_ = NULL;
         m_spAutoFit->toXmlElem("a:spAutoFit", "", _outStream);
     }
      
+    
     if (m_has_scene3d)
     {
         m_scene3d->toXmlElem("a:scene3d", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[2] = {m_has_sp3d, m_has_flatTx};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_sp3d)
     {
         m_sp3d->toXmlElem("a:sp3d", "", _outStream);
@@ -107211,6 +107794,7 @@ CT_TextNoAutofit* CT_TextNoAutofit::default_instance_ = NULL;
         m_flatTx->toXmlElem("a:flatTx", "", _outStream);
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -107690,6 +108274,9 @@ CT_TextBodyProperties* CT_TextBodyProperties::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_bodyPr);
+        
+    
     if (m_has_bodyPr)
     {
         m_bodyPr->toXmlElem("a:bodyPr", "", _outStream);
@@ -107701,6 +108288,11 @@ CT_TextBodyProperties* CT_TextBodyProperties::default_instance_ = NULL;
         m_lstStyle->toXmlElem("a:lstStyle", "", _outStream);
     }
      
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_p));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -108236,6 +108828,9 @@ CT_TextCharBullet* CT_TextCharBullet::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_blip);
+        
+    
     if (m_has_blip)
     {
         m_blip->toXmlElem("a:blip", "", _outStream);
@@ -110248,11 +110843,19 @@ CT_TextUnderlineFillGroupWrapper* CT_TextUnderlineFillGroupWrapper::default_inst
     
             _outStream << ">";
             
+    
     if (m_has_ln)
     {
         m_ln->toXmlElem("a:ln", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[8] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill, m_has_effectLst, m_has_effectDag};
+        int cnt = count(elemHasValueList, elemHasValueList + 8, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_noFill)
     {
         m_noFill->toXmlElem("a:noFill", "", _outStream);
@@ -110300,11 +110903,19 @@ CT_TextUnderlineFillGroupWrapper* CT_TextUnderlineFillGroupWrapper::default_inst
         m_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
      
+    
     if (m_has_highlight)
     {
         m_highlight->toXmlElem("a:highlight", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[4] = {m_has_uLnTx, m_has_uLn, m_has_uFillTx, m_has_uFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 4, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_uLnTx)
     {
         m_uLnTx->toXmlElem("a:uLnTx", "", _outStream);
@@ -110328,6 +110939,7 @@ CT_TextUnderlineFillGroupWrapper* CT_TextUnderlineFillGroupWrapper::default_inst
         m_uFill->toXmlElem("a:uFill", "", _outStream);
     }
      
+    
     if (m_has_latin)
     {
         m_latin->toXmlElem("a:latin", "", _outStream);
@@ -111090,6 +111702,11 @@ CT_TextTabStop* CT_TextTabStop::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_tab));
+        assert(0 <= elemCnt && elemCnt <= 32);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -111205,6 +111822,7 @@ CT_TextTabStopList* CT_TextTabStopList::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_rPr)
     {
         m_rPr->toXmlElem("a:rPr", "", _outStream);
@@ -111335,6 +111953,13 @@ CT_TextLineBreak* CT_TextLineBreak::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_spcPct, m_has_spcPts};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_spcPct)
     {
         m_spcPct->toXmlElem("a:spcPct", "", _outStream);
@@ -113139,6 +113764,7 @@ CT_TextSpacing* CT_TextSpacing::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_lnSpc)
     {
         m_lnSpc->toXmlElem("a:lnSpc", "", _outStream);
@@ -113156,6 +113782,13 @@ CT_TextSpacing* CT_TextSpacing::default_instance_ = NULL;
         m_spcAft->toXmlElem("a:spcAft", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[11] = {m_has_buClrTx, m_has_buClr, m_has_buSzTx, m_has_buSzPct, m_has_buSzPts, m_has_buFontTx, m_has_buFont, m_has_buNone, m_has_buAutoNum, m_has_buChar, m_has_buBlip};
+        int cnt = count(elemHasValueList, elemHasValueList + 11, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_buClrTx)
     {
         m_buClrTx->toXmlElem("a:buClrTx", "", _outStream);
@@ -113221,6 +113854,7 @@ CT_TextSpacing* CT_TextSpacing::default_instance_ = NULL;
         m_buBlip->toXmlElem("a:buBlip", "", _outStream);
     }
      
+    
     if (m_has_tabLst)
     {
         m_tabLst->toXmlElem("a:tabLst", "", _outStream);
@@ -113595,6 +114229,7 @@ CT_TextParagraphProperties* CT_TextParagraphProperties::default_instance_ = NULL
     
             _outStream << ">";
             
+    
     if (m_has_rPr)
     {
         m_rPr->toXmlElem("a:rPr", "", _outStream);
@@ -113739,6 +114374,9 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_t);
+        
+    
     if (m_has_rPr)
     {
         m_rPr->toXmlElem("a:rPr", "", _outStream);
@@ -114577,6 +115215,13 @@ CT_RegularTextRun* CT_RegularTextRun::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[8] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill, m_has_effectLst, m_has_effectDag};
+        int cnt = count(elemHasValueList, elemHasValueList + 8, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_noFill)
     {
         m_noFill->toXmlElem("a:noFill", "", _outStream);
@@ -114720,6 +115365,7 @@ CT_BackgroundFormatting* CT_BackgroundFormatting::default_instance_ = NULL;
     
     _outStream << ">";
     
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -114829,6 +115475,9 @@ videoFile_element* videoFile_element::default_instance_ = NULL;
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     
     _outStream << ">";
+    
+        assert(m_has_graphicData);
+        
     
     if (m_has_graphicData)
     {
@@ -115225,6 +115874,7 @@ graphic_element* graphic_element::default_instance_ = NULL;
         }
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("a:extLst", "", _outStream);
@@ -118421,6 +119071,9 @@ blip_element* blip_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+        assert(m_has_themeElements);
+        
+    
     if (m_has_themeElements)
     {
         m_themeElements->toXmlElem("a:themeElements", "", _outStream);
@@ -118605,6 +119258,7 @@ theme_element* theme_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+    
     if (m_has_clrScheme)
     {
         m_clrScheme->toXmlElem("a:clrScheme", "", _outStream);
@@ -118777,6 +119431,9 @@ themeManager_element* themeManager_element::default_instance_ = NULL;
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     
     _outStream << ">";
+    
+        assert(m_has_tblGrid);
+        
     
     if (m_has_tblPr)
     {

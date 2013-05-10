@@ -1,7 +1,6 @@
 #include "vml-spreadsheetDrawing_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "shared-commonSimpleTypes_xsd.h"
 namespace ns_x {

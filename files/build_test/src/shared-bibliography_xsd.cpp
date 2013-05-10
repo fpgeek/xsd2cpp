@@ -1,7 +1,6 @@
 #include "shared-bibliography_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "shared-commonSimpleTypes_xsd.h"
 namespace ns_bibliography {
@@ -73,6 +72,11 @@ ST_SourceType* ST_SourceType::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_Person));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -426,6 +430,9 @@ CT_PersonType* CT_PersonType::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_NameList);
+        
+    
     if (m_has_NameList)
     {
         m_NameList->toXmlElem("bibliography:NameList", "", _outStream);
@@ -556,6 +563,13 @@ CT_NameType* CT_NameType::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_NameList, m_has_Corporate};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 0 || cnt == 1);
+    }
+    
+    
     if (m_has_NameList)
     {
         m_NameList->toXmlElem("bibliography:NameList", "", _outStream);

@@ -2051,7 +2051,9 @@ namespace ns_chart {
         CT_UnsignedInt* mutable_ptCount();
         const CT_UnsignedInt& get_ptCount() const;
         CT_NumVal* add_pt();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_NumData& default_instance();
@@ -2064,21 +2066,18 @@ namespace ns_chart {
             bool has_pt() const;
             CT_NumVal* mutable_pt();
             const CT_NumVal& get_pt() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_pt;
             CT_NumVal* m_pt;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_formatCode;
         ns_s::ST_Xstring* m_formatCode;
         bool m_has_ptCount;
         CT_UnsignedInt* m_ptCount;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_NumData* default_instance_;
     };
 
@@ -2165,7 +2164,9 @@ namespace ns_chart {
         CT_UnsignedInt* mutable_ptCount();
         const CT_UnsignedInt& get_ptCount() const;
         CT_StrVal* add_pt();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_StrData& default_instance();
@@ -2178,19 +2179,16 @@ namespace ns_chart {
             bool has_pt() const;
             CT_StrVal* mutable_pt();
             const CT_StrVal& get_pt() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_pt;
             CT_StrVal* m_pt;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_ptCount;
         CT_UnsignedInt* m_ptCount;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_StrData* default_instance_;
     };
 
@@ -2299,7 +2297,9 @@ namespace ns_chart {
         CT_UnsignedInt* mutable_ptCount();
         const CT_UnsignedInt& get_ptCount() const;
         CT_Lvl* add_lvl();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_MultiLvlStrData& default_instance();
@@ -2312,19 +2312,16 @@ namespace ns_chart {
             bool has_lvl() const;
             CT_Lvl* mutable_lvl();
             const CT_Lvl& get_lvl() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_lvl;
             CT_Lvl* m_lvl;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_ptCount;
         CT_UnsignedInt* m_ptCount;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_MultiLvlStrData* default_instance_;
     };
 
@@ -3060,6 +3057,45 @@ namespace ns_chart {
         bool has_delete() const;
         CT_Boolean* mutable_delete();
         const CT_Boolean& get_delete() const;
+        bool has_layout() const;
+        CT_Layout* mutable_layout();
+        const CT_Layout& get_layout() const;
+        bool has_tx() const;
+        CT_Tx* mutable_tx();
+        const CT_Tx& get_tx() const;
+        bool has_numFmt() const;
+        CT_NumFmt* mutable_numFmt();
+        const CT_NumFmt& get_numFmt() const;
+        bool has_spPr() const;
+        ns_a::CT_ShapeProperties* mutable_spPr();
+        const ns_a::CT_ShapeProperties& get_spPr() const;
+        bool has_txPr() const;
+        ns_a::CT_TextBody* mutable_txPr();
+        const ns_a::CT_TextBody& get_txPr() const;
+        bool has_dLblPos() const;
+        CT_DLblPos* mutable_dLblPos();
+        const CT_DLblPos& get_dLblPos() const;
+        bool has_showLegendKey() const;
+        CT_Boolean* mutable_showLegendKey();
+        const CT_Boolean& get_showLegendKey() const;
+        bool has_showVal() const;
+        CT_Boolean* mutable_showVal();
+        const CT_Boolean& get_showVal() const;
+        bool has_showCatName() const;
+        CT_Boolean* mutable_showCatName();
+        const CT_Boolean& get_showCatName() const;
+        bool has_showSerName() const;
+        CT_Boolean* mutable_showSerName();
+        const CT_Boolean& get_showSerName() const;
+        bool has_showPercent() const;
+        CT_Boolean* mutable_showPercent();
+        const CT_Boolean& get_showPercent() const;
+        bool has_showBubbleSize() const;
+        CT_Boolean* mutable_showBubbleSize();
+        const CT_Boolean& get_showBubbleSize() const;
+        bool has_separator() const;
+        void set_separator(const XSD::string_& _separator);
+        const XSD::string_& get_separator() const;
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -3072,6 +3108,32 @@ namespace ns_chart {
         CT_UnsignedInt* m_idx;
         bool m_has_delete;
         CT_Boolean* m_delete;
+        bool m_has_layout;
+        CT_Layout* m_layout;
+        bool m_has_tx;
+        CT_Tx* m_tx;
+        bool m_has_numFmt;
+        CT_NumFmt* m_numFmt;
+        bool m_has_spPr;
+        ns_a::CT_ShapeProperties* m_spPr;
+        bool m_has_txPr;
+        ns_a::CT_TextBody* m_txPr;
+        bool m_has_dLblPos;
+        CT_DLblPos* m_dLblPos;
+        bool m_has_showLegendKey;
+        CT_Boolean* m_showLegendKey;
+        bool m_has_showVal;
+        CT_Boolean* m_showVal;
+        bool m_has_showCatName;
+        CT_Boolean* m_showCatName;
+        bool m_has_showSerName;
+        CT_Boolean* m_showSerName;
+        bool m_has_showPercent;
+        CT_Boolean* m_showPercent;
+        bool m_has_showBubbleSize;
+        CT_Boolean* m_showBubbleSize;
+        bool m_has_separator;
+        XSD::string_ m_separator;
         bool m_has_extLst;
         CT_ExtensionList* m_extLst;
         static CT_DLbl* default_instance_;
@@ -3083,21 +3145,51 @@ namespace ns_chart {
         CT_DLbls();
         ~CT_DLbls();
         CT_DLbl* add_dLbl();
-        CT_Boolean* add_delete();
-        CT_NumFmt* add_numFmt();
-        ns_a::CT_ShapeProperties* add_spPr();
-        ns_a::CT_TextBody* add_txPr();
-        CT_DLblPos* add_dLblPos();
-        CT_Boolean* add_showLegendKey();
-        CT_Boolean* add_showVal();
-        CT_Boolean* add_showCatName();
-        CT_Boolean* add_showSerName();
-        CT_Boolean* add_showPercent();
-        CT_Boolean* add_showBubbleSize();
-        void add_separator(const XSD::string_& _separator);
-        CT_Boolean* add_showLeaderLines();
-        CT_ChartLines* add_leaderLines();
-        CT_ExtensionList* add_extLst();
+        bool has_delete() const;
+        CT_Boolean* mutable_delete();
+        const CT_Boolean& get_delete() const;
+        bool has_numFmt() const;
+        CT_NumFmt* mutable_numFmt();
+        const CT_NumFmt& get_numFmt() const;
+        bool has_spPr() const;
+        ns_a::CT_ShapeProperties* mutable_spPr();
+        const ns_a::CT_ShapeProperties& get_spPr() const;
+        bool has_txPr() const;
+        ns_a::CT_TextBody* mutable_txPr();
+        const ns_a::CT_TextBody& get_txPr() const;
+        bool has_dLblPos() const;
+        CT_DLblPos* mutable_dLblPos();
+        const CT_DLblPos& get_dLblPos() const;
+        bool has_showLegendKey() const;
+        CT_Boolean* mutable_showLegendKey();
+        const CT_Boolean& get_showLegendKey() const;
+        bool has_showVal() const;
+        CT_Boolean* mutable_showVal();
+        const CT_Boolean& get_showVal() const;
+        bool has_showCatName() const;
+        CT_Boolean* mutable_showCatName();
+        const CT_Boolean& get_showCatName() const;
+        bool has_showSerName() const;
+        CT_Boolean* mutable_showSerName();
+        const CT_Boolean& get_showSerName() const;
+        bool has_showPercent() const;
+        CT_Boolean* mutable_showPercent();
+        const CT_Boolean& get_showPercent() const;
+        bool has_showBubbleSize() const;
+        CT_Boolean* mutable_showBubbleSize();
+        const CT_Boolean& get_showBubbleSize() const;
+        bool has_separator() const;
+        void set_separator(const XSD::string_& _separator);
+        const XSD::string_& get_separator() const;
+        bool has_showLeaderLines() const;
+        CT_Boolean* mutable_showLeaderLines();
+        const CT_Boolean& get_showLeaderLines() const;
+        bool has_leaderLines() const;
+        CT_ChartLines* mutable_leaderLines();
+        const CT_ChartLines& get_leaderLines() const;
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DLbls& default_instance();
@@ -3110,87 +3202,42 @@ namespace ns_chart {
             bool has_dLbl() const;
             CT_DLbl* mutable_dLbl();
             const CT_DLbl& get_dLbl() const;
-            bool has_delete() const;
-            CT_Boolean* mutable_delete();
-            const CT_Boolean& get_delete() const;
-            bool has_numFmt() const;
-            CT_NumFmt* mutable_numFmt();
-            const CT_NumFmt& get_numFmt() const;
-            bool has_spPr() const;
-            ns_a::CT_ShapeProperties* mutable_spPr();
-            const ns_a::CT_ShapeProperties& get_spPr() const;
-            bool has_txPr() const;
-            ns_a::CT_TextBody* mutable_txPr();
-            const ns_a::CT_TextBody& get_txPr() const;
-            bool has_dLblPos() const;
-            CT_DLblPos* mutable_dLblPos();
-            const CT_DLblPos& get_dLblPos() const;
-            bool has_showLegendKey() const;
-            CT_Boolean* mutable_showLegendKey();
-            const CT_Boolean& get_showLegendKey() const;
-            bool has_showVal() const;
-            CT_Boolean* mutable_showVal();
-            const CT_Boolean& get_showVal() const;
-            bool has_showCatName() const;
-            CT_Boolean* mutable_showCatName();
-            const CT_Boolean& get_showCatName() const;
-            bool has_showSerName() const;
-            CT_Boolean* mutable_showSerName();
-            const CT_Boolean& get_showSerName() const;
-            bool has_showPercent() const;
-            CT_Boolean* mutable_showPercent();
-            const CT_Boolean& get_showPercent() const;
-            bool has_showBubbleSize() const;
-            CT_Boolean* mutable_showBubbleSize();
-            const CT_Boolean& get_showBubbleSize() const;
-            bool has_separator() const;
-            void set_separator(const XSD::string_& _separator);
-            const XSD::string_& get_separator() const;
-            bool has_showLeaderLines() const;
-            CT_Boolean* mutable_showLeaderLines();
-            const CT_Boolean& get_showLeaderLines() const;
-            bool has_leaderLines() const;
-            CT_ChartLines* mutable_leaderLines();
-            const CT_ChartLines& get_leaderLines() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_dLbl;
             CT_DLbl* m_dLbl;
-            bool m_has_delete;
-            CT_Boolean* m_delete;
-            bool m_has_numFmt;
-            CT_NumFmt* m_numFmt;
-            bool m_has_spPr;
-            ns_a::CT_ShapeProperties* m_spPr;
-            bool m_has_txPr;
-            ns_a::CT_TextBody* m_txPr;
-            bool m_has_dLblPos;
-            CT_DLblPos* m_dLblPos;
-            bool m_has_showLegendKey;
-            CT_Boolean* m_showLegendKey;
-            bool m_has_showVal;
-            CT_Boolean* m_showVal;
-            bool m_has_showCatName;
-            CT_Boolean* m_showCatName;
-            bool m_has_showSerName;
-            CT_Boolean* m_showSerName;
-            bool m_has_showPercent;
-            CT_Boolean* m_showPercent;
-            bool m_has_showBubbleSize;
-            CT_Boolean* m_showBubbleSize;
-            bool m_has_separator;
-            XSD::string_ m_separator;
-            bool m_has_showLeaderLines;
-            CT_Boolean* m_showLeaderLines;
-            bool m_has_leaderLines;
-            CT_ChartLines* m_leaderLines;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_delete;
+        CT_Boolean* m_delete;
+        bool m_has_numFmt;
+        CT_NumFmt* m_numFmt;
+        bool m_has_spPr;
+        ns_a::CT_ShapeProperties* m_spPr;
+        bool m_has_txPr;
+        ns_a::CT_TextBody* m_txPr;
+        bool m_has_dLblPos;
+        CT_DLblPos* m_dLblPos;
+        bool m_has_showLegendKey;
+        CT_Boolean* m_showLegendKey;
+        bool m_has_showVal;
+        CT_Boolean* m_showVal;
+        bool m_has_showCatName;
+        CT_Boolean* m_showCatName;
+        bool m_has_showSerName;
+        CT_Boolean* m_showSerName;
+        bool m_has_showPercent;
+        CT_Boolean* m_showPercent;
+        bool m_has_showBubbleSize;
+        CT_Boolean* m_showBubbleSize;
+        bool m_has_separator;
+        XSD::string_ m_separator;
+        bool m_has_showLeaderLines;
+        CT_Boolean* m_showLeaderLines;
+        bool m_has_leaderLines;
+        CT_ChartLines* m_leaderLines;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_DLbls* default_instance_;
     };
 
@@ -3670,13 +3717,25 @@ namespace ns_chart {
         CT_Marker* mutable_marker();
         const CT_Marker& get_marker() const;
         CT_DPt* add_dPt();
-        CT_DLbls* add_dLbls();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
         CT_Trendline* add_trendline();
-        CT_ErrBars* add_errBars();
-        CT_AxDataSource* add_cat();
-        CT_NumDataSource* add_val();
-        CT_Boolean* add_smooth();
-        CT_ExtensionList* add_extLst();
+        bool has_errBars() const;
+        CT_ErrBars* mutable_errBars();
+        const CT_ErrBars& get_errBars() const;
+        bool has_cat() const;
+        CT_AxDataSource* mutable_cat();
+        const CT_AxDataSource& get_cat() const;
+        bool has_val() const;
+        CT_NumDataSource* mutable_val();
+        const CT_NumDataSource& get_val() const;
+        bool has_smooth() const;
+        CT_Boolean* mutable_smooth();
+        const CT_Boolean& get_smooth() const;
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LineSer& default_instance();
@@ -3689,45 +3748,22 @@ namespace ns_chart {
             bool has_dPt() const;
             CT_DPt* mutable_dPt();
             const CT_DPt& get_dPt() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
-            bool has_trendline() const;
-            CT_Trendline* mutable_trendline();
-            const CT_Trendline& get_trendline() const;
-            bool has_errBars() const;
-            CT_ErrBars* mutable_errBars();
-            const CT_ErrBars& get_errBars() const;
-            bool has_cat() const;
-            CT_AxDataSource* mutable_cat();
-            const CT_AxDataSource& get_cat() const;
-            bool has_val() const;
-            CT_NumDataSource* mutable_val();
-            const CT_NumDataSource& get_val() const;
-            bool has_smooth() const;
-            CT_Boolean* mutable_smooth();
-            const CT_Boolean& get_smooth() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_dPt;
             CT_DPt* m_dPt;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
+            bool has_trendline() const;
+            CT_Trendline* mutable_trendline();
+            const CT_Trendline& get_trendline() const;
+        protected:
+        private:
             bool m_has_trendline;
             CT_Trendline* m_trendline;
-            bool m_has_errBars;
-            CT_ErrBars* m_errBars;
-            bool m_has_cat;
-            CT_AxDataSource* m_cat;
-            bool m_has_val;
-            CT_NumDataSource* m_val;
-            bool m_has_smooth;
-            CT_Boolean* m_smooth;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_idx;
         CT_UnsignedInt* m_idx;
@@ -3740,6 +3776,19 @@ namespace ns_chart {
         bool m_has_marker;
         CT_Marker* m_marker;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_errBars;
+        CT_ErrBars* m_errBars;
+        bool m_has_cat;
+        CT_AxDataSource* m_cat;
+        bool m_has_val;
+        CT_NumDataSource* m_val;
+        bool m_has_smooth;
+        CT_Boolean* m_smooth;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_LineSer* default_instance_;
     };
 
@@ -3764,13 +3813,23 @@ namespace ns_chart {
         CT_Marker* mutable_marker();
         const CT_Marker& get_marker() const;
         CT_DPt* add_dPt();
-        CT_DLbls* add_dLbls();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
         CT_Trendline* add_trendline();
         CT_ErrBars* add_errBars();
-        CT_AxDataSource* add_xVal();
-        CT_NumDataSource* add_yVal();
-        CT_Boolean* add_smooth();
-        CT_ExtensionList* add_extLst();
+        bool has_xVal() const;
+        CT_AxDataSource* mutable_xVal();
+        const CT_AxDataSource& get_xVal() const;
+        bool has_yVal() const;
+        CT_NumDataSource* mutable_yVal();
+        const CT_NumDataSource& get_yVal() const;
+        bool has_smooth() const;
+        CT_Boolean* mutable_smooth();
+        const CT_Boolean& get_smooth() const;
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ScatterSer& default_instance();
@@ -3783,45 +3842,27 @@ namespace ns_chart {
             bool has_dPt() const;
             CT_DPt* mutable_dPt();
             const CT_DPt& get_dPt() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
+        protected:
+        private:
+            bool m_has_dPt;
+            CT_DPt* m_dPt;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
             bool has_trendline() const;
             CT_Trendline* mutable_trendline();
             const CT_Trendline& get_trendline() const;
             bool has_errBars() const;
             CT_ErrBars* mutable_errBars();
             const CT_ErrBars& get_errBars() const;
-            bool has_xVal() const;
-            CT_AxDataSource* mutable_xVal();
-            const CT_AxDataSource& get_xVal() const;
-            bool has_yVal() const;
-            CT_NumDataSource* mutable_yVal();
-            const CT_NumDataSource& get_yVal() const;
-            bool has_smooth() const;
-            CT_Boolean* mutable_smooth();
-            const CT_Boolean& get_smooth() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
-            bool m_has_dPt;
-            CT_DPt* m_dPt;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
             bool m_has_trendline;
             CT_Trendline* m_trendline;
             bool m_has_errBars;
             CT_ErrBars* m_errBars;
-            bool m_has_xVal;
-            CT_AxDataSource* m_xVal;
-            bool m_has_yVal;
-            CT_NumDataSource* m_yVal;
-            bool m_has_smooth;
-            CT_Boolean* m_smooth;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_idx;
         CT_UnsignedInt* m_idx;
@@ -3834,6 +3875,17 @@ namespace ns_chart {
         bool m_has_marker;
         CT_Marker* m_marker;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_xVal;
+        CT_AxDataSource* m_xVal;
+        bool m_has_yVal;
+        CT_NumDataSource* m_yVal;
+        bool m_has_smooth;
+        CT_Boolean* m_smooth;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_ScatterSer* default_instance_;
     };
 
@@ -3858,10 +3910,18 @@ namespace ns_chart {
         CT_Marker* mutable_marker();
         const CT_Marker& get_marker() const;
         CT_DPt* add_dPt();
-        CT_DLbls* add_dLbls();
-        CT_AxDataSource* add_cat();
-        CT_NumDataSource* add_val();
-        CT_ExtensionList* add_extLst();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
+        bool has_cat() const;
+        CT_AxDataSource* mutable_cat();
+        const CT_AxDataSource& get_cat() const;
+        bool has_val() const;
+        CT_NumDataSource* mutable_val();
+        const CT_NumDataSource& get_val() const;
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RadarSer& default_instance();
@@ -3874,30 +3934,10 @@ namespace ns_chart {
             bool has_dPt() const;
             CT_DPt* mutable_dPt();
             const CT_DPt& get_dPt() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
-            bool has_cat() const;
-            CT_AxDataSource* mutable_cat();
-            const CT_AxDataSource& get_cat() const;
-            bool has_val() const;
-            CT_NumDataSource* mutable_val();
-            const CT_NumDataSource& get_val() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_dPt;
             CT_DPt* m_dPt;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
-            bool m_has_cat;
-            CT_AxDataSource* m_cat;
-            bool m_has_val;
-            CT_NumDataSource* m_val;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_idx;
         CT_UnsignedInt* m_idx;
@@ -3910,6 +3950,14 @@ namespace ns_chart {
         bool m_has_marker;
         CT_Marker* m_marker;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        bool m_has_cat;
+        CT_AxDataSource* m_cat;
+        bool m_has_val;
+        CT_NumDataSource* m_val;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_RadarSer* default_instance_;
     };
 
@@ -3937,13 +3985,25 @@ namespace ns_chart {
         CT_PictureOptions* mutable_pictureOptions();
         const CT_PictureOptions& get_pictureOptions() const;
         CT_DPt* add_dPt();
-        CT_DLbls* add_dLbls();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
         CT_Trendline* add_trendline();
-        CT_ErrBars* add_errBars();
-        CT_AxDataSource* add_cat();
-        CT_NumDataSource* add_val();
-        CT_Shape* add_shape();
-        CT_ExtensionList* add_extLst();
+        bool has_errBars() const;
+        CT_ErrBars* mutable_errBars();
+        const CT_ErrBars& get_errBars() const;
+        bool has_cat() const;
+        CT_AxDataSource* mutable_cat();
+        const CT_AxDataSource& get_cat() const;
+        bool has_val() const;
+        CT_NumDataSource* mutable_val();
+        const CT_NumDataSource& get_val() const;
+        bool has_shape() const;
+        CT_Shape* mutable_shape();
+        const CT_Shape& get_shape() const;
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BarSer& default_instance();
@@ -3956,45 +4016,22 @@ namespace ns_chart {
             bool has_dPt() const;
             CT_DPt* mutable_dPt();
             const CT_DPt& get_dPt() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
-            bool has_trendline() const;
-            CT_Trendline* mutable_trendline();
-            const CT_Trendline& get_trendline() const;
-            bool has_errBars() const;
-            CT_ErrBars* mutable_errBars();
-            const CT_ErrBars& get_errBars() const;
-            bool has_cat() const;
-            CT_AxDataSource* mutable_cat();
-            const CT_AxDataSource& get_cat() const;
-            bool has_val() const;
-            CT_NumDataSource* mutable_val();
-            const CT_NumDataSource& get_val() const;
-            bool has_shape() const;
-            CT_Shape* mutable_shape();
-            const CT_Shape& get_shape() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_dPt;
             CT_DPt* m_dPt;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
+            bool has_trendline() const;
+            CT_Trendline* mutable_trendline();
+            const CT_Trendline& get_trendline() const;
+        protected:
+        private:
             bool m_has_trendline;
             CT_Trendline* m_trendline;
-            bool m_has_errBars;
-            CT_ErrBars* m_errBars;
-            bool m_has_cat;
-            CT_AxDataSource* m_cat;
-            bool m_has_val;
-            CT_NumDataSource* m_val;
-            bool m_has_shape;
-            CT_Shape* m_shape;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_idx;
         CT_UnsignedInt* m_idx;
@@ -4009,6 +4046,19 @@ namespace ns_chart {
         bool m_has_pictureOptions;
         CT_PictureOptions* m_pictureOptions;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_errBars;
+        CT_ErrBars* m_errBars;
+        bool m_has_cat;
+        CT_AxDataSource* m_cat;
+        bool m_has_val;
+        CT_NumDataSource* m_val;
+        bool m_has_shape;
+        CT_Shape* m_shape;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_BarSer* default_instance_;
     };
 
@@ -4033,12 +4083,20 @@ namespace ns_chart {
         CT_PictureOptions* mutable_pictureOptions();
         const CT_PictureOptions& get_pictureOptions() const;
         CT_DPt* add_dPt();
-        CT_DLbls* add_dLbls();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
         CT_Trendline* add_trendline();
         CT_ErrBars* add_errBars();
-        CT_AxDataSource* add_cat();
-        CT_NumDataSource* add_val();
-        CT_ExtensionList* add_extLst();
+        bool has_cat() const;
+        CT_AxDataSource* mutable_cat();
+        const CT_AxDataSource& get_cat() const;
+        bool has_val() const;
+        CT_NumDataSource* mutable_val();
+        const CT_NumDataSource& get_val() const;
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AreaSer& default_instance();
@@ -4051,40 +4109,27 @@ namespace ns_chart {
             bool has_dPt() const;
             CT_DPt* mutable_dPt();
             const CT_DPt& get_dPt() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
+        protected:
+        private:
+            bool m_has_dPt;
+            CT_DPt* m_dPt;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
             bool has_trendline() const;
             CT_Trendline* mutable_trendline();
             const CT_Trendline& get_trendline() const;
             bool has_errBars() const;
             CT_ErrBars* mutable_errBars();
             const CT_ErrBars& get_errBars() const;
-            bool has_cat() const;
-            CT_AxDataSource* mutable_cat();
-            const CT_AxDataSource& get_cat() const;
-            bool has_val() const;
-            CT_NumDataSource* mutable_val();
-            const CT_NumDataSource& get_val() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
-            bool m_has_dPt;
-            CT_DPt* m_dPt;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
             bool m_has_trendline;
             CT_Trendline* m_trendline;
             bool m_has_errBars;
             CT_ErrBars* m_errBars;
-            bool m_has_cat;
-            CT_AxDataSource* m_cat;
-            bool m_has_val;
-            CT_NumDataSource* m_val;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_idx;
         CT_UnsignedInt* m_idx;
@@ -4097,6 +4142,15 @@ namespace ns_chart {
         bool m_has_pictureOptions;
         CT_PictureOptions* m_pictureOptions;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_cat;
+        CT_AxDataSource* m_cat;
+        bool m_has_val;
+        CT_NumDataSource* m_val;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_AreaSer* default_instance_;
     };
 
@@ -4121,10 +4175,18 @@ namespace ns_chart {
         CT_UnsignedInt* mutable_explosion();
         const CT_UnsignedInt& get_explosion() const;
         CT_DPt* add_dPt();
-        CT_DLbls* add_dLbls();
-        CT_AxDataSource* add_cat();
-        CT_NumDataSource* add_val();
-        CT_ExtensionList* add_extLst();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
+        bool has_cat() const;
+        CT_AxDataSource* mutable_cat();
+        const CT_AxDataSource& get_cat() const;
+        bool has_val() const;
+        CT_NumDataSource* mutable_val();
+        const CT_NumDataSource& get_val() const;
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_PieSer& default_instance();
@@ -4137,30 +4199,10 @@ namespace ns_chart {
             bool has_dPt() const;
             CT_DPt* mutable_dPt();
             const CT_DPt& get_dPt() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
-            bool has_cat() const;
-            CT_AxDataSource* mutable_cat();
-            const CT_AxDataSource& get_cat() const;
-            bool has_val() const;
-            CT_NumDataSource* mutable_val();
-            const CT_NumDataSource& get_val() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_dPt;
             CT_DPt* m_dPt;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
-            bool m_has_cat;
-            CT_AxDataSource* m_cat;
-            bool m_has_val;
-            CT_NumDataSource* m_val;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_idx;
         CT_UnsignedInt* m_idx;
@@ -4173,6 +4215,14 @@ namespace ns_chart {
         bool m_has_explosion;
         CT_UnsignedInt* m_explosion;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        bool m_has_cat;
+        CT_AxDataSource* m_cat;
+        bool m_has_val;
+        CT_NumDataSource* m_val;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_PieSer* default_instance_;
     };
 
@@ -4197,14 +4247,26 @@ namespace ns_chart {
         CT_Boolean* mutable_invertIfNegative();
         const CT_Boolean& get_invertIfNegative() const;
         CT_DPt* add_dPt();
-        CT_DLbls* add_dLbls();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
         CT_Trendline* add_trendline();
         CT_ErrBars* add_errBars();
-        CT_AxDataSource* add_xVal();
-        CT_NumDataSource* add_yVal();
-        CT_NumDataSource* add_bubbleSize();
-        CT_Boolean* add_bubble3D();
-        CT_ExtensionList* add_extLst();
+        bool has_xVal() const;
+        CT_AxDataSource* mutable_xVal();
+        const CT_AxDataSource& get_xVal() const;
+        bool has_yVal() const;
+        CT_NumDataSource* mutable_yVal();
+        const CT_NumDataSource& get_yVal() const;
+        bool has_bubbleSize() const;
+        CT_NumDataSource* mutable_bubbleSize();
+        const CT_NumDataSource& get_bubbleSize() const;
+        bool has_bubble3D() const;
+        CT_Boolean* mutable_bubble3D();
+        const CT_Boolean& get_bubble3D() const;
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BubbleSer& default_instance();
@@ -4217,50 +4279,27 @@ namespace ns_chart {
             bool has_dPt() const;
             CT_DPt* mutable_dPt();
             const CT_DPt& get_dPt() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
+        protected:
+        private:
+            bool m_has_dPt;
+            CT_DPt* m_dPt;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
             bool has_trendline() const;
             CT_Trendline* mutable_trendline();
             const CT_Trendline& get_trendline() const;
             bool has_errBars() const;
             CT_ErrBars* mutable_errBars();
             const CT_ErrBars& get_errBars() const;
-            bool has_xVal() const;
-            CT_AxDataSource* mutable_xVal();
-            const CT_AxDataSource& get_xVal() const;
-            bool has_yVal() const;
-            CT_NumDataSource* mutable_yVal();
-            const CT_NumDataSource& get_yVal() const;
-            bool has_bubbleSize() const;
-            CT_NumDataSource* mutable_bubbleSize();
-            const CT_NumDataSource& get_bubbleSize() const;
-            bool has_bubble3D() const;
-            CT_Boolean* mutable_bubble3D();
-            const CT_Boolean& get_bubble3D() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
-            bool m_has_dPt;
-            CT_DPt* m_dPt;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
             bool m_has_trendline;
             CT_Trendline* m_trendline;
             bool m_has_errBars;
             CT_ErrBars* m_errBars;
-            bool m_has_xVal;
-            CT_AxDataSource* m_xVal;
-            bool m_has_yVal;
-            CT_NumDataSource* m_yVal;
-            bool m_has_bubbleSize;
-            CT_NumDataSource* m_bubbleSize;
-            bool m_has_bubble3D;
-            CT_Boolean* m_bubble3D;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_idx;
         CT_UnsignedInt* m_idx;
@@ -4273,6 +4312,19 @@ namespace ns_chart {
         bool m_has_invertIfNegative;
         CT_Boolean* m_invertIfNegative;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_xVal;
+        CT_AxDataSource* m_xVal;
+        bool m_has_yVal;
+        CT_NumDataSource* m_yVal;
+        bool m_has_bubbleSize;
+        CT_NumDataSource* m_bubbleSize;
+        bool m_has_bubble3D;
+        CT_Boolean* m_bubble3D;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_BubbleSer* default_instance_;
     };
 
@@ -4372,8 +4424,12 @@ namespace ns_chart {
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
         CT_LineSer* add_ser();
-        CT_DLbls* add_dLbls();
-        CT_ChartLines* add_dropLines();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
+        bool has_dropLines() const;
+        CT_ChartLines* mutable_dropLines();
+        const CT_ChartLines& get_dropLines() const;
         bool has_hiLowLines() const;
         CT_ChartLines* mutable_hiLowLines();
         const CT_ChartLines& get_hiLowLines() const;
@@ -4387,7 +4443,9 @@ namespace ns_chart {
         CT_Boolean* mutable_smooth();
         const CT_Boolean& get_smooth() const;
         CT_UnsignedInt* add_axId();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_LineChart& default_instance();
@@ -4400,20 +4458,10 @@ namespace ns_chart {
             bool has_ser() const;
             CT_LineSer* mutable_ser();
             const CT_LineSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
-            bool has_dropLines() const;
-            CT_ChartLines* mutable_dropLines();
-            const CT_ChartLines& get_dropLines() const;
         protected:
         private:
             bool m_has_ser;
             CT_LineSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
-            bool m_has_dropLines;
-            CT_ChartLines* m_dropLines;
         };
         class ChildGroup_2
         {
@@ -4422,21 +4470,20 @@ namespace ns_chart {
             bool has_axId() const;
             CT_UnsignedInt* mutable_axId();
             const CT_UnsignedInt& get_axId() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_axId;
             CT_UnsignedInt* m_axId;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_grouping;
         CT_Grouping* m_grouping;
         bool m_has_varyColors;
         CT_Boolean* m_varyColors;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        bool m_has_dropLines;
+        CT_ChartLines* m_dropLines;
         bool m_has_hiLowLines;
         CT_ChartLines* m_hiLowLines;
         bool m_has_upDownBars;
@@ -4446,6 +4493,8 @@ namespace ns_chart {
         bool m_has_smooth;
         CT_Boolean* m_smooth;
         vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_LineChart* default_instance_;
     };
 
@@ -4461,13 +4510,19 @@ namespace ns_chart {
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
         CT_LineSer* add_ser();
-        CT_DLbls* add_dLbls();
-        CT_ChartLines* add_dropLines();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
+        bool has_dropLines() const;
+        CT_ChartLines* mutable_dropLines();
+        const CT_ChartLines& get_dropLines() const;
         bool has_gapDepth() const;
         CT_GapAmount* mutable_gapDepth();
         const CT_GapAmount& get_gapDepth() const;
         CT_UnsignedInt* add_axId();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Line3DChart& default_instance();
@@ -4480,20 +4535,10 @@ namespace ns_chart {
             bool has_ser() const;
             CT_LineSer* mutable_ser();
             const CT_LineSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
-            bool has_dropLines() const;
-            CT_ChartLines* mutable_dropLines();
-            const CT_ChartLines& get_dropLines() const;
         protected:
         private:
             bool m_has_ser;
             CT_LineSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
-            bool m_has_dropLines;
-            CT_ChartLines* m_dropLines;
         };
         class ChildGroup_2
         {
@@ -4502,24 +4547,25 @@ namespace ns_chart {
             bool has_axId() const;
             CT_UnsignedInt* mutable_axId();
             const CT_UnsignedInt& get_axId() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_axId;
             CT_UnsignedInt* m_axId;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_grouping;
         CT_Grouping* m_grouping;
         bool m_has_varyColors;
         CT_Boolean* m_varyColors;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        bool m_has_dropLines;
+        CT_ChartLines* m_dropLines;
         bool m_has_gapDepth;
         CT_GapAmount* m_gapDepth;
         vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_Line3DChart* default_instance_;
     };
 
@@ -4529,12 +4575,22 @@ namespace ns_chart {
         CT_StockChart();
         ~CT_StockChart();
         CT_LineSer* add_ser();
-        CT_DLbls* add_dLbls();
-        CT_ChartLines* add_dropLines();
-        CT_ChartLines* add_hiLowLines();
-        CT_UpDownBars* add_upDownBars();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
+        bool has_dropLines() const;
+        CT_ChartLines* mutable_dropLines();
+        const CT_ChartLines& get_dropLines() const;
+        bool has_hiLowLines() const;
+        CT_ChartLines* mutable_hiLowLines();
+        const CT_ChartLines& get_hiLowLines() const;
+        bool has_upDownBars() const;
+        CT_UpDownBars* mutable_upDownBars();
+        const CT_UpDownBars& get_upDownBars() const;
         CT_UnsignedInt* add_axId();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_StockChart& default_instance();
@@ -4547,42 +4603,35 @@ namespace ns_chart {
             bool has_ser() const;
             CT_LineSer* mutable_ser();
             const CT_LineSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
-            bool has_dropLines() const;
-            CT_ChartLines* mutable_dropLines();
-            const CT_ChartLines& get_dropLines() const;
-            bool has_hiLowLines() const;
-            CT_ChartLines* mutable_hiLowLines();
-            const CT_ChartLines& get_hiLowLines() const;
-            bool has_upDownBars() const;
-            CT_UpDownBars* mutable_upDownBars();
-            const CT_UpDownBars& get_upDownBars() const;
-            bool has_axId() const;
-            CT_UnsignedInt* mutable_axId();
-            const CT_UnsignedInt& get_axId() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_ser;
             CT_LineSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
-            bool m_has_dropLines;
-            CT_ChartLines* m_dropLines;
-            bool m_has_hiLowLines;
-            CT_ChartLines* m_hiLowLines;
-            bool m_has_upDownBars;
-            CT_UpDownBars* m_upDownBars;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
+            bool has_axId() const;
+            CT_UnsignedInt* mutable_axId();
+            const CT_UnsignedInt& get_axId() const;
+        protected:
+        private:
             bool m_has_axId;
             CT_UnsignedInt* m_axId;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        bool m_has_dropLines;
+        CT_ChartLines* m_dropLines;
+        bool m_has_hiLowLines;
+        CT_ChartLines* m_hiLowLines;
+        bool m_has_upDownBars;
+        CT_UpDownBars* m_upDownBars;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_StockChart* default_instance_;
     };
 
@@ -4616,9 +4665,13 @@ namespace ns_chart {
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
         CT_ScatterSer* add_ser();
-        CT_DLbls* add_dLbls();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
         CT_UnsignedInt* add_axId();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ScatterChart& default_instance();
@@ -4631,31 +4684,33 @@ namespace ns_chart {
             bool has_ser() const;
             CT_ScatterSer* mutable_ser();
             const CT_ScatterSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
-            bool has_axId() const;
-            CT_UnsignedInt* mutable_axId();
-            const CT_UnsignedInt& get_axId() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_ser;
             CT_ScatterSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
+            bool has_axId() const;
+            CT_UnsignedInt* mutable_axId();
+            const CT_UnsignedInt& get_axId() const;
+        protected:
+        private:
             bool m_has_axId;
             CT_UnsignedInt* m_axId;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_scatterStyle;
         CT_ScatterStyle* m_scatterStyle;
         bool m_has_varyColors;
         CT_Boolean* m_varyColors;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_ScatterChart* default_instance_;
     };
 
@@ -4689,9 +4744,13 @@ namespace ns_chart {
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
         CT_RadarSer* add_ser();
-        CT_DLbls* add_dLbls();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
         CT_UnsignedInt* add_axId();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_RadarChart& default_instance();
@@ -4704,31 +4763,33 @@ namespace ns_chart {
             bool has_ser() const;
             CT_RadarSer* mutable_ser();
             const CT_RadarSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
-            bool has_axId() const;
-            CT_UnsignedInt* mutable_axId();
-            const CT_UnsignedInt& get_axId() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_ser;
             CT_RadarSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
+            bool has_axId() const;
+            CT_UnsignedInt* mutable_axId();
+            const CT_UnsignedInt& get_axId() const;
+        protected:
+        private:
             bool m_has_axId;
             CT_UnsignedInt* m_axId;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_radarStyle;
         CT_RadarStyle* m_radarStyle;
         bool m_has_varyColors;
         CT_Boolean* m_varyColors;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_RadarChart* default_instance_;
     };
 
@@ -4801,7 +4862,9 @@ namespace ns_chart {
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
         CT_BarSer* add_ser();
-        CT_DLbls* add_dLbls();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
         bool has_gapWidth() const;
         CT_GapAmount* mutable_gapWidth();
         const CT_GapAmount& get_gapWidth() const;
@@ -4810,7 +4873,9 @@ namespace ns_chart {
         const CT_Overlap& get_overlap() const;
         CT_ChartLines* add_serLines();
         CT_UnsignedInt* add_axId();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BarChart& default_instance();
@@ -4823,15 +4888,10 @@ namespace ns_chart {
             bool has_ser() const;
             CT_BarSer* mutable_ser();
             const CT_BarSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
         protected:
         private:
             bool m_has_ser;
             CT_BarSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
         };
         class ChildGroup_2
         {
@@ -4843,17 +4903,12 @@ namespace ns_chart {
             bool has_axId() const;
             CT_UnsignedInt* mutable_axId();
             const CT_UnsignedInt& get_axId() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_serLines;
             CT_ChartLines* m_serLines;
             bool m_has_axId;
             CT_UnsignedInt* m_axId;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_barDir;
         CT_BarDir* m_barDir;
@@ -4862,11 +4917,15 @@ namespace ns_chart {
         bool m_has_varyColors;
         CT_Boolean* m_varyColors;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
         bool m_has_gapWidth;
         CT_GapAmount* m_gapWidth;
         bool m_has_overlap;
         CT_Overlap* m_overlap;
         vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_BarChart* default_instance_;
     };
 
@@ -4885,7 +4944,9 @@ namespace ns_chart {
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
         CT_BarSer* add_ser();
-        CT_DLbls* add_dLbls();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
         bool has_gapWidth() const;
         CT_GapAmount* mutable_gapWidth();
         const CT_GapAmount& get_gapWidth() const;
@@ -4896,7 +4957,9 @@ namespace ns_chart {
         CT_Shape* mutable_shape();
         const CT_Shape& get_shape() const;
         CT_UnsignedInt* add_axId();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Bar3DChart& default_instance();
@@ -4909,15 +4972,10 @@ namespace ns_chart {
             bool has_ser() const;
             CT_BarSer* mutable_ser();
             const CT_BarSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
         protected:
         private:
             bool m_has_ser;
             CT_BarSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
         };
         class ChildGroup_2
         {
@@ -4926,15 +4984,10 @@ namespace ns_chart {
             bool has_axId() const;
             CT_UnsignedInt* mutable_axId();
             const CT_UnsignedInt& get_axId() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_axId;
             CT_UnsignedInt* m_axId;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_barDir;
         CT_BarDir* m_barDir;
@@ -4943,6 +4996,8 @@ namespace ns_chart {
         bool m_has_varyColors;
         CT_Boolean* m_varyColors;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
         bool m_has_gapWidth;
         CT_GapAmount* m_gapWidth;
         bool m_has_gapDepth;
@@ -4950,6 +5005,8 @@ namespace ns_chart {
         bool m_has_shape;
         CT_Shape* m_shape;
         vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_Bar3DChart* default_instance_;
     };
 
@@ -4965,10 +5022,16 @@ namespace ns_chart {
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
         CT_AreaSer* add_ser();
-        CT_DLbls* add_dLbls();
-        CT_ChartLines* add_dropLines();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
+        bool has_dropLines() const;
+        CT_ChartLines* mutable_dropLines();
+        const CT_ChartLines& get_dropLines() const;
         CT_UnsignedInt* add_axId();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_AreaChart& default_instance();
@@ -4981,36 +5044,35 @@ namespace ns_chart {
             bool has_ser() const;
             CT_AreaSer* mutable_ser();
             const CT_AreaSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
-            bool has_dropLines() const;
-            CT_ChartLines* mutable_dropLines();
-            const CT_ChartLines& get_dropLines() const;
-            bool has_axId() const;
-            CT_UnsignedInt* mutable_axId();
-            const CT_UnsignedInt& get_axId() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_ser;
             CT_AreaSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
-            bool m_has_dropLines;
-            CT_ChartLines* m_dropLines;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
+            bool has_axId() const;
+            CT_UnsignedInt* mutable_axId();
+            const CT_UnsignedInt& get_axId() const;
+        protected:
+        private:
             bool m_has_axId;
             CT_UnsignedInt* m_axId;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_grouping;
         CT_Grouping* m_grouping;
         bool m_has_varyColors;
         CT_Boolean* m_varyColors;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        bool m_has_dropLines;
+        CT_ChartLines* m_dropLines;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_AreaChart* default_instance_;
     };
 
@@ -5026,13 +5088,19 @@ namespace ns_chart {
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
         CT_AreaSer* add_ser();
-        CT_DLbls* add_dLbls();
-        CT_ChartLines* add_dropLines();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
+        bool has_dropLines() const;
+        CT_ChartLines* mutable_dropLines();
+        const CT_ChartLines& get_dropLines() const;
         bool has_gapDepth() const;
         CT_GapAmount* mutable_gapDepth();
         const CT_GapAmount& get_gapDepth() const;
         CT_UnsignedInt* add_axId();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Area3DChart& default_instance();
@@ -5045,20 +5113,10 @@ namespace ns_chart {
             bool has_ser() const;
             CT_AreaSer* mutable_ser();
             const CT_AreaSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
-            bool has_dropLines() const;
-            CT_ChartLines* mutable_dropLines();
-            const CT_ChartLines& get_dropLines() const;
         protected:
         private:
             bool m_has_ser;
             CT_AreaSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
-            bool m_has_dropLines;
-            CT_ChartLines* m_dropLines;
         };
         class ChildGroup_2
         {
@@ -5067,24 +5125,25 @@ namespace ns_chart {
             bool has_axId() const;
             CT_UnsignedInt* mutable_axId();
             const CT_UnsignedInt& get_axId() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_axId;
             CT_UnsignedInt* m_axId;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_grouping;
         CT_Grouping* m_grouping;
         bool m_has_varyColors;
         CT_Boolean* m_varyColors;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        bool m_has_dropLines;
+        CT_ChartLines* m_dropLines;
         bool m_has_gapDepth;
         CT_GapAmount* m_gapDepth;
         vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_Area3DChart* default_instance_;
     };
 
@@ -5097,7 +5156,9 @@ namespace ns_chart {
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
         CT_PieSer* add_ser();
-        CT_DLbls* add_dLbls();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
         bool has_firstSliceAng() const;
         CT_FirstSliceAng* mutable_firstSliceAng();
         const CT_FirstSliceAng& get_firstSliceAng() const;
@@ -5116,19 +5177,16 @@ namespace ns_chart {
             bool has_ser() const;
             CT_PieSer* mutable_ser();
             const CT_PieSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
         protected:
         private:
             bool m_has_ser;
             CT_PieSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
         };
         bool m_has_varyColors;
         CT_Boolean* m_varyColors;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
         bool m_has_firstSliceAng;
         CT_FirstSliceAng* m_firstSliceAng;
         bool m_has_extLst;
@@ -5145,7 +5203,9 @@ namespace ns_chart {
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
         CT_PieSer* add_ser();
-        CT_DLbls* add_dLbls();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -5161,19 +5221,16 @@ namespace ns_chart {
             bool has_ser() const;
             CT_PieSer* mutable_ser();
             const CT_PieSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
         protected:
         private:
             bool m_has_ser;
             CT_PieSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
         };
         bool m_has_varyColors;
         CT_Boolean* m_varyColors;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
         bool m_has_extLst;
         CT_ExtensionList* m_extLst;
         static CT_Pie3DChart* default_instance_;
@@ -5188,7 +5245,9 @@ namespace ns_chart {
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
         CT_PieSer* add_ser();
-        CT_DLbls* add_dLbls();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
         bool has_firstSliceAng() const;
         CT_FirstSliceAng* mutable_firstSliceAng();
         const CT_FirstSliceAng& get_firstSliceAng() const;
@@ -5210,19 +5269,16 @@ namespace ns_chart {
             bool has_ser() const;
             CT_PieSer* mutable_ser();
             const CT_PieSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
         protected:
         private:
             bool m_has_ser;
             CT_PieSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
         };
         bool m_has_varyColors;
         CT_Boolean* m_varyColors;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
         bool m_has_firstSliceAng;
         CT_FirstSliceAng* m_firstSliceAng;
         bool m_has_holeSize;
@@ -5262,7 +5318,9 @@ namespace ns_chart {
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
         CT_PieSer* add_ser();
-        CT_DLbls* add_dLbls();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
         bool has_gapWidth() const;
         CT_GapAmount* mutable_gapWidth();
         const CT_GapAmount& get_gapWidth() const;
@@ -5279,7 +5337,9 @@ namespace ns_chart {
         CT_SecondPieSize* mutable_secondPieSize();
         const CT_SecondPieSize& get_secondPieSize() const;
         CT_ChartLines* add_serLines();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_OfPieChart& default_instance();
@@ -5292,15 +5352,10 @@ namespace ns_chart {
             bool has_ser() const;
             CT_PieSer* mutable_ser();
             const CT_PieSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
         protected:
         private:
             bool m_has_ser;
             CT_PieSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
         };
         class ChildGroup_2
         {
@@ -5309,21 +5364,18 @@ namespace ns_chart {
             bool has_serLines() const;
             CT_ChartLines* mutable_serLines();
             const CT_ChartLines& get_serLines() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_serLines;
             CT_ChartLines* m_serLines;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_ofPieType;
         CT_OfPieType* m_ofPieType;
         bool m_has_varyColors;
         CT_Boolean* m_varyColors;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
         bool m_has_gapWidth;
         CT_GapAmount* m_gapWidth;
         bool m_has_splitType;
@@ -5335,6 +5387,8 @@ namespace ns_chart {
         bool m_has_secondPieSize;
         CT_SecondPieSize* m_secondPieSize;
         vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_OfPieChart* default_instance_;
     };
 
@@ -5347,13 +5401,25 @@ namespace ns_chart {
         CT_Boolean* mutable_varyColors();
         const CT_Boolean& get_varyColors() const;
         CT_BubbleSer* add_ser();
-        CT_DLbls* add_dLbls();
-        CT_Boolean* add_bubble3D();
-        CT_BubbleScale* add_bubbleScale();
-        CT_Boolean* add_showNegBubbles();
-        CT_SizeRepresents* add_sizeRepresents();
+        bool has_dLbls() const;
+        CT_DLbls* mutable_dLbls();
+        const CT_DLbls& get_dLbls() const;
+        bool has_bubble3D() const;
+        CT_Boolean* mutable_bubble3D();
+        const CT_Boolean& get_bubble3D() const;
+        bool has_bubbleScale() const;
+        CT_BubbleScale* mutable_bubbleScale();
+        const CT_BubbleScale& get_bubbleScale() const;
+        bool has_showNegBubbles() const;
+        CT_Boolean* mutable_showNegBubbles();
+        const CT_Boolean& get_showNegBubbles() const;
+        bool has_sizeRepresents() const;
+        CT_SizeRepresents* mutable_sizeRepresents();
+        const CT_SizeRepresents& get_sizeRepresents() const;
         CT_UnsignedInt* add_axId();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_BubbleChart& default_instance();
@@ -5366,49 +5432,39 @@ namespace ns_chart {
             bool has_ser() const;
             CT_BubbleSer* mutable_ser();
             const CT_BubbleSer& get_ser() const;
-            bool has_dLbls() const;
-            CT_DLbls* mutable_dLbls();
-            const CT_DLbls& get_dLbls() const;
-            bool has_bubble3D() const;
-            CT_Boolean* mutable_bubble3D();
-            const CT_Boolean& get_bubble3D() const;
-            bool has_bubbleScale() const;
-            CT_BubbleScale* mutable_bubbleScale();
-            const CT_BubbleScale& get_bubbleScale() const;
-            bool has_showNegBubbles() const;
-            CT_Boolean* mutable_showNegBubbles();
-            const CT_Boolean& get_showNegBubbles() const;
-            bool has_sizeRepresents() const;
-            CT_SizeRepresents* mutable_sizeRepresents();
-            const CT_SizeRepresents& get_sizeRepresents() const;
-            bool has_axId() const;
-            CT_UnsignedInt* mutable_axId();
-            const CT_UnsignedInt& get_axId() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_ser;
             CT_BubbleSer* m_ser;
-            bool m_has_dLbls;
-            CT_DLbls* m_dLbls;
-            bool m_has_bubble3D;
-            CT_Boolean* m_bubble3D;
-            bool m_has_bubbleScale;
-            CT_BubbleScale* m_bubbleScale;
-            bool m_has_showNegBubbles;
-            CT_Boolean* m_showNegBubbles;
-            bool m_has_sizeRepresents;
-            CT_SizeRepresents* m_sizeRepresents;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
+            bool has_axId() const;
+            CT_UnsignedInt* mutable_axId();
+            const CT_UnsignedInt& get_axId() const;
+        protected:
+        private:
             bool m_has_axId;
             CT_UnsignedInt* m_axId;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_varyColors;
         CT_Boolean* m_varyColors;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_dLbls;
+        CT_DLbls* m_dLbls;
+        bool m_has_bubble3D;
+        CT_Boolean* m_bubble3D;
+        bool m_has_bubbleScale;
+        CT_BubbleScale* m_bubbleScale;
+        bool m_has_showNegBubbles;
+        CT_Boolean* m_showNegBubbles;
+        bool m_has_sizeRepresents;
+        CT_SizeRepresents* m_sizeRepresents;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_BubbleChart* default_instance_;
     };
 
@@ -5471,9 +5527,13 @@ namespace ns_chart {
         CT_Boolean* mutable_wireframe();
         const CT_Boolean& get_wireframe() const;
         CT_SurfaceSer* add_ser();
-        CT_BandFmts* add_bandFmts();
+        bool has_bandFmts() const;
+        CT_BandFmts* mutable_bandFmts();
+        const CT_BandFmts& get_bandFmts() const;
         CT_UnsignedInt* add_axId();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_SurfaceChart& default_instance();
@@ -5486,29 +5546,31 @@ namespace ns_chart {
             bool has_ser() const;
             CT_SurfaceSer* mutable_ser();
             const CT_SurfaceSer& get_ser() const;
-            bool has_bandFmts() const;
-            CT_BandFmts* mutable_bandFmts();
-            const CT_BandFmts& get_bandFmts() const;
-            bool has_axId() const;
-            CT_UnsignedInt* mutable_axId();
-            const CT_UnsignedInt& get_axId() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_ser;
             CT_SurfaceSer* m_ser;
-            bool m_has_bandFmts;
-            CT_BandFmts* m_bandFmts;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
+            bool has_axId() const;
+            CT_UnsignedInt* mutable_axId();
+            const CT_UnsignedInt& get_axId() const;
+        protected:
+        private:
             bool m_has_axId;
             CT_UnsignedInt* m_axId;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_wireframe;
         CT_Boolean* m_wireframe;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_bandFmts;
+        CT_BandFmts* m_bandFmts;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_SurfaceChart* default_instance_;
     };
 
@@ -5521,9 +5583,13 @@ namespace ns_chart {
         CT_Boolean* mutable_wireframe();
         const CT_Boolean& get_wireframe() const;
         CT_SurfaceSer* add_ser();
-        CT_BandFmts* add_bandFmts();
+        bool has_bandFmts() const;
+        CT_BandFmts* mutable_bandFmts();
+        const CT_BandFmts& get_bandFmts() const;
         CT_UnsignedInt* add_axId();
-        CT_ExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Surface3DChart& default_instance();
@@ -5536,29 +5602,31 @@ namespace ns_chart {
             bool has_ser() const;
             CT_SurfaceSer* mutable_ser();
             const CT_SurfaceSer& get_ser() const;
-            bool has_bandFmts() const;
-            CT_BandFmts* mutable_bandFmts();
-            const CT_BandFmts& get_bandFmts() const;
-            bool has_axId() const;
-            CT_UnsignedInt* mutable_axId();
-            const CT_UnsignedInt& get_axId() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_ser;
             CT_SurfaceSer* m_ser;
-            bool m_has_bandFmts;
-            CT_BandFmts* m_bandFmts;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
+            bool has_axId() const;
+            CT_UnsignedInt* mutable_axId();
+            const CT_UnsignedInt& get_axId() const;
+        protected:
+        private:
             bool m_has_axId;
             CT_UnsignedInt* m_axId;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_wireframe;
         CT_Boolean* m_wireframe;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_bandFmts;
+        CT_BandFmts* m_bandFmts;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_Surface3DChart* default_instance_;
     };
 
@@ -6703,6 +6771,9 @@ namespace ns_chart {
         bool has_delete() const;
         CT_Boolean* mutable_delete();
         const CT_Boolean& get_delete() const;
+        bool has_txPr() const;
+        ns_a::CT_TextBody* mutable_txPr();
+        const ns_a::CT_TextBody& get_txPr() const;
         bool has_extLst() const;
         CT_ExtensionList* mutable_extLst();
         const CT_ExtensionList& get_extLst() const;
@@ -6715,6 +6786,8 @@ namespace ns_chart {
         CT_UnsignedInt* m_idx;
         bool m_has_delete;
         CT_Boolean* m_delete;
+        bool m_has_txPr;
+        ns_a::CT_TextBody* m_txPr;
         bool m_has_extLst;
         CT_ExtensionList* m_extLst;
         static CT_LegendEntry* default_instance_;
@@ -6729,11 +6802,21 @@ namespace ns_chart {
         CT_LegendPos* mutable_legendPos();
         const CT_LegendPos& get_legendPos() const;
         CT_LegendEntry* add_legendEntry();
-        CT_Layout* add_layout();
-        CT_Boolean* add_overlay();
-        ns_a::CT_ShapeProperties* add_spPr();
-        ns_a::CT_TextBody* add_txPr();
-        CT_ExtensionList* add_extLst();
+        bool has_layout() const;
+        CT_Layout* mutable_layout();
+        const CT_Layout& get_layout() const;
+        bool has_overlay() const;
+        CT_Boolean* mutable_overlay();
+        const CT_Boolean& get_overlay() const;
+        bool has_spPr() const;
+        ns_a::CT_ShapeProperties* mutable_spPr();
+        const ns_a::CT_ShapeProperties& get_spPr() const;
+        bool has_txPr() const;
+        ns_a::CT_TextBody* mutable_txPr();
+        const ns_a::CT_TextBody& get_txPr() const;
+        bool has_extLst() const;
+        CT_ExtensionList* mutable_extLst();
+        const CT_ExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Legend& default_instance();
@@ -6746,39 +6829,24 @@ namespace ns_chart {
             bool has_legendEntry() const;
             CT_LegendEntry* mutable_legendEntry();
             const CT_LegendEntry& get_legendEntry() const;
-            bool has_layout() const;
-            CT_Layout* mutable_layout();
-            const CT_Layout& get_layout() const;
-            bool has_overlay() const;
-            CT_Boolean* mutable_overlay();
-            const CT_Boolean& get_overlay() const;
-            bool has_spPr() const;
-            ns_a::CT_ShapeProperties* mutable_spPr();
-            const ns_a::CT_ShapeProperties& get_spPr() const;
-            bool has_txPr() const;
-            ns_a::CT_TextBody* mutable_txPr();
-            const ns_a::CT_TextBody& get_txPr() const;
-            bool has_extLst() const;
-            CT_ExtensionList* mutable_extLst();
-            const CT_ExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_legendEntry;
             CT_LegendEntry* m_legendEntry;
-            bool m_has_layout;
-            CT_Layout* m_layout;
-            bool m_has_overlay;
-            CT_Boolean* m_overlay;
-            bool m_has_spPr;
-            ns_a::CT_ShapeProperties* m_spPr;
-            bool m_has_txPr;
-            ns_a::CT_TextBody* m_txPr;
-            bool m_has_extLst;
-            CT_ExtensionList* m_extLst;
         };
         bool m_has_legendPos;
         CT_LegendPos* m_legendPos;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_layout;
+        CT_Layout* m_layout;
+        bool m_has_overlay;
+        CT_Boolean* m_overlay;
+        bool m_has_spPr;
+        ns_a::CT_ShapeProperties* m_spPr;
+        bool m_has_txPr;
+        ns_a::CT_TextBody* m_txPr;
+        bool m_has_extLst;
+        CT_ExtensionList* m_extLst;
         static CT_Legend* default_instance_;
     };
 

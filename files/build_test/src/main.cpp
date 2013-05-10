@@ -25,7 +25,6 @@ int main()
         pBodyElem->add_p()->add_r()->mutable_rPr()->add_dstrike()->set_val_attr(valAttr);
         pBodyElem->add_p()->add_r()->mutable_rPr()->add_b();
         pBodyElem->add_p()->add_r()->mutable_rPr()->add_vertAlign()->set_val_attr(ns_s::ST_VerticalAlignRun::_baseline_);
-        pBodyElem->add_ins()->add_m_oMathPara();
 
 //        ns_wp::CT_Anchor *pAnchorElem = pBodyElem->add_p()->add_r()->add_drawing()->add_wp_anchor();
 //        pAnchorElem->mutable_extent()->set_cx_attr(27273042316900);
@@ -38,14 +37,14 @@ int main()
         pBodyElem->add_p();
         pBodyElem->add_p();
 
-        ns_v::rect_element* pVRectElement = new ns_v::rect_element();
-        pVRectElement->add_fill();
-        docElement.mutable_background()->append_v_any(pVRectElement);
-        
-        ns_vt::CT_Vstream vStreamElem;
-        vStreamElem.set_base64Binary("FF0000");
-        vStreamElem.set_version_attr(string("version"));
-        cout << vStreamElem.toXmlElemStr("test") << endl;
+//        ns_v::rect_element* pVRectElement = new ns_v::rect_element();
+//        pVRectElement->add_fill();
+//        docElement.mutable_background()->append_v_any(pVRectElement);
+//        
+//        ns_vt::CT_Vstream vStreamElem;
+//        vStreamElem.set_base64Binary("FF0000");
+//        vStreamElem.set_version_attr(string("version"));
+//        cout << vStreamElem.toXmlElemStr("test") << endl;
 
         fstream fileStream("word.xml", fstream::out);
         docElement.toXml(fileStream);
@@ -55,18 +54,18 @@ int main()
 
     // slide
     {
-        using namespace ns_p;
-
-        sld_element sldElement;
-
-        cout << sldElement.get_cSld().has_bg() << endl;
-        sldElement.mutable_cSld()->mutable_spTree()->mutable_nvGrpSpPr()->mutable_cNvPr();
-        sldElement.mutable_cSld()->mutable_spTree()->mutable_grpSpPr()->mutable_xfrm();
-        cout << sldElement.get_cSld().has_spTree() << endl;
-
-        fstream fileStream("slide.xml", fstream::out);
-        sldElement.toXml(fileStream);
-        fileStream.close();
+//        using namespace ns_p;
+//
+//        sld_element sldElement;
+//
+//        cout << sldElement.get_cSld().has_bg() << endl;
+//        sldElement.mutable_cSld()->mutable_spTree()->mutable_nvGrpSpPr()->mutable_cNvPr();
+//        sldElement.mutable_cSld()->mutable_spTree()->mutable_grpSpPr()->mutable_xfrm();
+//        cout << sldElement.get_cSld().has_spTree() << endl;
+//
+//        fstream fileStream("slide.xml", fstream::out);
+//        sldElement.toXml(fileStream);
+//        fileStream.close();
     }
 
 

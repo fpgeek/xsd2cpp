@@ -1,7 +1,6 @@
 #include "vml-officeDrawing_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "vml-main_xsd.h"
 #include "shared-relationshipReference_xsd.h"
@@ -3505,6 +3504,7 @@ CT_Proxy* CT_Proxy::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_relationtable)
     {
         m_relationtable->toXmlElem("o:relationtable", "", _outStream);
@@ -3739,6 +3739,9 @@ CT_Diagram* CT_Diagram::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has__any);
+        
+    
     if (m_has__any)
     {
         m__any->toXml(_outStream);
@@ -6854,6 +6857,7 @@ CT_Lock* CT_Lock::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_LinkType)
     {
         _outStream << "<o:LinkType>" << m_LinkType->toString() << "</o:LinkType>";
@@ -9356,6 +9360,7 @@ ink_element* ink_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+    
     if (m_has_relationtable)
     {
         m_relationtable->toXmlElem("o:relationtable", "", _outStream);
@@ -9589,6 +9594,9 @@ diagram_element* diagram_element::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
+        assert(m_has__any);
+        
     
     if (m_has__any)
     {
@@ -12101,6 +12109,7 @@ lock_element* lock_element::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
     
     if (m_has_LinkType)
     {

@@ -1,7 +1,6 @@
 #include "pml_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "shared-relationshipReference_xsd.h"
 #include "dml-main_xsd.h"
@@ -4627,6 +4626,9 @@ CT_WheelTransition* CT_WheelTransition::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_snd);
+        
+    
     if (m_has_snd)
     {
         m_snd->toXmlElem("p:snd", "", _outStream);
@@ -4773,6 +4775,13 @@ CT_TransitionStartSoundAction* CT_TransitionStartSoundAction::default_instance_ 
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_stSnd, m_has_endSnd};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_stSnd)
     {
         m_stSnd->toXmlElem("p:stSnd", "", _outStream);
@@ -9463,6 +9472,13 @@ CT_TransitionSoundAction* CT_TransitionSoundAction::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[21] = {m_has_blinds, m_has_checker, m_has_circle, m_has_dissolve, m_has_comb, m_has_cover, m_has_cut, m_has_diamond, m_has_fade, m_has_newsflash, m_has_plus, m_has_pull, m_has_push, m_has_random, m_has_randomBar, m_has_split, m_has_strips, m_has_wedge, m_has_wheel, m_has_wipe, m_has_zoom};
+        int cnt = count(elemHasValueList, elemHasValueList + 21, true);
+        assert(cnt == 0 || cnt == 1);
+    }
+    
+    
     if (m_has_blinds)
     {
         m_blinds->toXmlElem("p:blinds", "", _outStream);
@@ -9588,6 +9604,7 @@ CT_TransitionSoundAction* CT_TransitionSoundAction::default_instance_ = NULL;
         m_zoom->toXmlElem("p:zoom", "", _outStream);
     }
      
+    
     if (m_has_sndAc)
     {
         m_sndAc->toXmlElem("p:sndAc", "", _outStream);
@@ -9945,6 +9962,13 @@ CT_TLIterateIntervalPercentage* CT_TLIterateIntervalPercentage::default_instance
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_tmAbs, m_has_tmPct};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_tmAbs)
     {
         m_tmAbs->toXmlElem("p:tmAbs", "", _outStream);
@@ -10188,6 +10212,13 @@ CT_TLSubShapeId* CT_TLSubShapeId::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_charRg, m_has_pRg};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 0 || cnt == 1);
+    }
+    
+    
     if (m_has_charRg)
     {
         m_charRg->toXmlElem("p:charRg", "", _outStream);
@@ -10708,6 +10739,13 @@ CT_TLOleChartTargetElement* CT_TLOleChartTargetElement::default_instance_ = NULL
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[5] = {m_has_bg, m_has_subSp, m_has_oleChartEl, m_has_txEl, m_has_graphicEl};
+        int cnt = count(elemHasValueList, elemHasValueList + 5, true);
+        assert(cnt == 0 || cnt == 1);
+    }
+    
+    
     if (m_has_bg)
     {
         m_bg->toXmlElem("p:bg", "", _outStream);
@@ -11044,6 +11082,13 @@ CT_TLShapeTargetElement* CT_TLShapeTargetElement::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[4] = {m_has_sldTgt, m_has_sndTgt, m_has_spTgt, m_has_inkTgt};
+        int cnt = count(elemHasValueList, elemHasValueList + 4, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_sldTgt)
     {
         m_sldTgt->toXmlElem("p:sldTgt", "", _outStream);
@@ -11439,6 +11484,13 @@ CT_TLTriggerRuntimeNode* CT_TLTriggerRuntimeNode::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[3] = {m_has_tgtEl, m_has_tn, m_has_rtn};
+        int cnt = count(elemHasValueList, elemHasValueList + 3, true);
+        assert(cnt == 0 || cnt == 1);
+    }
+    
+    
     if (m_has_tgtEl)
     {
         m_tgtEl->toXmlElem("p:tgtEl", "", _outStream);
@@ -11549,6 +11601,11 @@ CT_TLTimeCondition* CT_TLTimeCondition::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cond));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -14177,6 +14234,7 @@ CT_TimeNodeList* CT_TimeNodeList::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_stCondLst)
     {
         m_stCondLst->toXmlElem("p:stCondLst", "", _outStream);
@@ -14702,6 +14760,9 @@ CT_TLCommonTimeNodeData* CT_TLCommonTimeNodeData::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cTn);
+        
+    
     if (m_has_cTn)
     {
         m_cTn->toXmlElem("p:cTn", "", _outStream);
@@ -14891,6 +14952,9 @@ CT_TLTimeNodeParallel* CT_TLTimeNodeParallel::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cTn);
+        
+    
     if (m_has_cTn)
     {
         m_cTn->toXmlElem("p:cTn", "", _outStream);
@@ -15034,6 +15098,9 @@ CT_TLTimeNodeSequence* CT_TLTimeNodeSequence::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cTn);
+        
+    
     if (m_has_cTn)
     {
         m_cTn->toXmlElem("p:cTn", "", _outStream);
@@ -15091,6 +15158,11 @@ CT_TLTimeNodeExclusive* CT_TLTimeNodeExclusive::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_attrName));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -15380,6 +15452,12 @@ CT_TLBehaviorAttributeNameList* CT_TLBehaviorAttributeNameList::default_instance
     
             _outStream << ">";
             
+        assert(m_has_cTn);
+        
+    
+        assert(m_has_tgtEl);
+        
+    
     if (m_has_cTn)
     {
         m_cTn->toXmlElem("p:cTn", "", _outStream);
@@ -16180,6 +16258,13 @@ CT_TLAnimVariantStringVal* CT_TLAnimVariantStringVal::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[5] = {m_has_boolVal, m_has_intVal, m_has_fltVal, m_has_strVal, m_has_clrVal};
+        int cnt = count(elemHasValueList, elemHasValueList + 5, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_boolVal)
     {
         m_boolVal->toXmlElem("p:boolVal", "", _outStream);
@@ -16306,6 +16391,7 @@ CT_TLAnimVariant* CT_TLAnimVariant::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_val)
     {
         m_val->toXmlElem("p:val", "", _outStream);
@@ -16617,6 +16703,9 @@ CT_TLTimeAnimateValueList* CT_TLTimeAnimateValueList::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cBhvr);
+        
+    
     if (m_has_cBhvr)
     {
         m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);
@@ -17131,6 +17220,13 @@ CT_TLByHslColorTransform* CT_TLByHslColorTransform::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_rgb, m_has_hsl};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_rgb)
     {
         m_rgb->toXmlElem("p:rgb", "", _outStream);
@@ -17350,6 +17446,9 @@ CT_TLByAnimateColorTransform* CT_TLByAnimateColorTransform::default_instance_ = 
     
             _outStream << ">";
             
+        assert(m_has_cBhvr);
+        
+    
     if (m_has_cBhvr)
     {
         m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);
@@ -17556,6 +17655,9 @@ CT_TLAnimateColorBehavior* CT_TLAnimateColorBehavior::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cBhvr);
+        
+    
     if (m_has_cBhvr)
     {
         m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);
@@ -18009,6 +18111,9 @@ CT_TLPoint* CT_TLPoint::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cBhvr);
+        
+    
     if (m_has_cBhvr)
     {
         m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);
@@ -18250,6 +18355,9 @@ CT_TLAnimateMotionBehavior* CT_TLAnimateMotionBehavior::default_instance_ = NULL
     
             _outStream << ">";
             
+        assert(m_has_cBhvr);
+        
+    
     if (m_has_cBhvr)
     {
         m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);
@@ -18500,6 +18608,9 @@ CT_TLAnimateRotationBehavior* CT_TLAnimateRotationBehavior::default_instance_ = 
     
             _outStream << ">";
             
+        assert(m_has_cBhvr);
+        
+    
     if (m_has_cBhvr)
     {
         m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);
@@ -18636,6 +18747,9 @@ CT_TLAnimateScaleBehavior* CT_TLAnimateScaleBehavior::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cBhvr);
+        
+    
     if (m_has_cBhvr)
     {
         m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);
@@ -18782,6 +18896,9 @@ CT_TLCommandBehavior* CT_TLCommandBehavior::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cBhvr);
+        
+    
     if (m_has_cBhvr)
     {
         m_cBhvr->toXmlElem("p:cBhvr", "", _outStream);
@@ -18947,6 +19064,12 @@ CT_TLSetBehavior* CT_TLSetBehavior::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cTn);
+        
+    
+        assert(m_has_tgtEl);
+        
+    
     if (m_has_cTn)
     {
         m_cTn->toXmlElem("p:cTn", "", _outStream);
@@ -19106,6 +19229,9 @@ CT_TLCommonMediaNodeData* CT_TLCommonMediaNodeData::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cMediaNode);
+        
+    
     if (m_has_cMediaNode)
     {
         m_cMediaNode->toXmlElem("p:cMediaNode", "", _outStream);
@@ -19207,6 +19333,9 @@ CT_TLMediaNodeAudio* CT_TLMediaNodeAudio::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cMediaNode);
+        
+    
     if (m_has_cMediaNode)
     {
         m_cMediaNode->toXmlElem("p:cMediaNode", "", _outStream);
@@ -19308,6 +19437,9 @@ CT_TLMediaNodeVideo* CT_TLMediaNodeVideo::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_tnLst);
+        
+    
     if (m_has_tnLst)
     {
         m_tnLst->toXmlElem("p:tnLst", "", _outStream);
@@ -19382,6 +19514,11 @@ CT_TLTemplate* CT_TLTemplate::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_tmpl));
+        assert(0 <= elemCnt && elemCnt <= 9);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -19614,6 +19751,7 @@ CT_TLTemplateList* CT_TLTemplateList::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_tmplLst)
     {
         m_tmplLst->toXmlElem("p:tmplLst", "", _outStream);
@@ -20289,6 +20427,13 @@ CT_TLOleBuildChart* CT_TLOleBuildChart::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_bldAsOne, m_has_bldSub};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_bldAsOne)
     {
         m_bldAsOne->toXmlElem("p:bldAsOne", "", _outStream);
@@ -20825,6 +20970,7 @@ CT_BuildList* CT_BuildList::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_tnLst)
     {
         m_tnLst->toXmlElem("p:tnLst", "", _outStream);
@@ -21375,7 +21521,8 @@ CT_TagsData* CT_TagsData::default_instance_ = NULL;
 
     // CT_CustomerDataList
     CT_CustomerDataList::CT_CustomerDataList()
-
+    :m_has_tags(false),
+    m_tags(NULL)
     {
     }
     CT_CustomerDataList::~CT_CustomerDataList()
@@ -21389,12 +21536,28 @@ CT_TagsData* CT_TagsData::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_TagsData* CT_CustomerDataList::add_tags()
+    bool CT_CustomerDataList::has_tags() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_TagsData* pNewChild = pChildGroup->mutable_tags();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_tags;
+    }
+
+    CT_TagsData* CT_CustomerDataList::mutable_tags()
+    {    
+    m_has_tags = true;
+    if (!m_tags)
+    {
+        m_tags = new CT_TagsData();
+    }
+    return m_tags;
+    }
+
+    const CT_TagsData& CT_CustomerDataList::get_tags() const
+    {    
+    if (m_tags)
+    {
+        return *m_tags;
+    }
+    return CT_TagsData::default_instance();
     }
 
     void CT_CustomerDataList::clear()
@@ -21407,6 +21570,15 @@ CT_TagsData* CT_TagsData::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_tags = false;
+    
+    if (m_tags)
+    {
+        delete m_tags;
+        m_tags = NULL;
+    }
+    
     }
 
     void CT_CustomerDataList::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -21431,14 +21603,13 @@ CT_TagsData* CT_TagsData::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_tags())
-    {
-        (*iter)->get_tags().toXmlElem("p:tags", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_tags)
+    {
+        m_tags->toXmlElem("p:tags", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -21457,9 +21628,7 @@ CT_TagsData* CT_TagsData::default_instance_ = NULL;
     // CT_CustomerDataList::ChildGroup_1
     CT_CustomerDataList::ChildGroup_1::ChildGroup_1()
     :m_has_custData(false),
-    m_custData(NULL),
-    m_has_tags(false),
-    m_tags(NULL)
+    m_custData(NULL)
     {
     }
     bool CT_CustomerDataList::ChildGroup_1::has_custData() const
@@ -21469,15 +21638,6 @@ CT_TagsData* CT_TagsData::default_instance_ = NULL;
 
     CT_CustomerData* CT_CustomerDataList::ChildGroup_1::mutable_custData()
     {    
-    
-    m_has_tags = false;
-    
-    if (m_tags)
-    {
-        delete m_tags;
-        m_tags = NULL;
-    }
-    ;
     
     m_has_custData = true;
     if (!m_custData)
@@ -21494,40 +21654,6 @@ CT_TagsData* CT_TagsData::default_instance_ = NULL;
         return *m_custData;
     }
     return CT_CustomerData::default_instance();
-    }
-
-    bool CT_CustomerDataList::ChildGroup_1::has_tags() const
-    {    
-    return m_has_tags;
-    }
-
-    CT_TagsData* CT_CustomerDataList::ChildGroup_1::mutable_tags()
-    {    
-    
-    m_has_custData = false;
-    
-    if (m_custData)
-    {
-        delete m_custData;
-        m_custData = NULL;
-    }
-    ;
-    
-    m_has_tags = true;
-    if (!m_tags)
-    {
-        m_tags = new CT_TagsData();
-    }
-    return m_tags;
-    }
-
-    const CT_TagsData& CT_CustomerDataList::ChildGroup_1::get_tags() const
-    {    
-    if (m_tags)
-    {
-        return *m_tags;
-    }
-    return CT_TagsData::default_instance();
     }
 
 CT_CustomerDataList* CT_CustomerDataList::default_instance_ = NULL;
@@ -21565,6 +21691,7 @@ CT_CustomerDataList* CT_CustomerDataList::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has__any)
     {
         m__any->toXml(_outStream);
@@ -21945,6 +22072,7 @@ CT_ExtensionListModify* CT_ExtensionListModify::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -22301,6 +22429,12 @@ CT_CommentAuthorList* CT_CommentAuthorList::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_pos);
+        
+    
+        assert(m_has_text);
+        
+    
     if (m_has_pos)
     {
         m_pos->toXmlElem("p:pos", "", _outStream);
@@ -22555,6 +22689,7 @@ CT_CommentList* CT_CommentList::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -22660,6 +22795,7 @@ CT_OleObjectEmbed* CT_OleObjectEmbed::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -22941,6 +23077,13 @@ CT_OleObjectLink* CT_OleObjectLink::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_embed, m_has_link};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_embed)
     {
         m_embed->toXmlElem("p:embed", "", _outStream);
@@ -22952,6 +23095,7 @@ CT_OleObjectLink* CT_OleObjectLink::default_instance_ = NULL;
         m_link->toXmlElem("p:link", "", _outStream);
     }
      
+    
     if (m_has_pic)
     {
         m_pic->toXmlElem("p:pic", "", _outStream);
@@ -23279,6 +23423,7 @@ CT_OleObject* CT_OleObject::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -23604,6 +23749,7 @@ CT_ControlList* CT_ControlList::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -23851,6 +23997,7 @@ CT_SlideIdList* CT_SlideIdList::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -24081,6 +24228,7 @@ CT_SlideMasterIdList* CT_SlideMasterIdList::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -24176,6 +24324,7 @@ CT_NotesMasterIdListEntry* CT_NotesMasterIdListEntry::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_notesMasterId)
     {
         m_notesMasterId->toXmlElem("p:notesMasterId", "", _outStream);
@@ -24267,6 +24416,7 @@ CT_NotesMasterIdList* CT_NotesMasterIdList::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -24362,6 +24512,7 @@ CT_HandoutMasterIdListEntry* CT_HandoutMasterIdListEntry::default_instance_ = NU
             
             _outStream << ">";
             
+    
     if (m_has_handoutMasterId)
     {
         m_handoutMasterId->toXmlElem("p:handoutMasterId", "", _outStream);
@@ -24648,6 +24799,9 @@ CT_EmbeddedFontDataId* CT_EmbeddedFontDataId::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_font);
+        
+    
     if (m_has_font)
     {
         m_font->toXmlElem("p:font", "", _outStream);
@@ -24979,6 +25133,9 @@ CT_SmartTags* CT_SmartTags::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_sldLst);
+        
+    
     if (m_has_sldLst)
     {
         m_sldLst->toXmlElem("p:sldLst", "", _outStream);
@@ -25250,6 +25407,7 @@ CT_CustomShowList* CT_CustomShowList::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -26792,6 +26950,9 @@ CT_ModifyVerifier* CT_ModifyVerifier::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_notesSz);
+        
+    
     if (m_has_sldMasterIdLst)
     {
         m_sldMasterIdLst->toXmlElem("p:sldMasterIdLst", "", _outStream);
@@ -27366,6 +27527,13 @@ CT_Presentation* CT_Presentation::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[3] = {m_has_sldAll, m_has_sldRg, m_has_custShow};
+        int cnt = count(elemHasValueList, elemHasValueList + 3, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_sldAll)
     {
         m_sldAll->toXmlElem("p:sldAll", "", _outStream);
@@ -27383,6 +27551,7 @@ CT_Presentation* CT_Presentation::default_instance_ = NULL;
         m_custShow->toXmlElem("p:custShow", "", _outStream);
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -27642,6 +27811,7 @@ CT_HtmlPublishProperties* CT_HtmlPublishProperties::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -27939,6 +28109,7 @@ CT_WebProperties* CT_WebProperties::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -28788,6 +28959,13 @@ CT_ShowInfoKiosk* CT_ShowInfoKiosk::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[6] = {m_has_present, m_has_browse, m_has_kiosk, m_has_sldAll, m_has_sldRg, m_has_custShow};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_present)
     {
         m_present->toXmlElem("p:present", "", _outStream);
@@ -28823,6 +29001,7 @@ CT_ShowInfoKiosk* CT_ShowInfoKiosk::default_instance_ = NULL;
         m_custShow->toXmlElem("p:custShow", "", _outStream);
     }
      
+    
     if (m_has_penClr)
     {
         m_penClr->toXmlElem("p:penClr", "", _outStream);
@@ -29143,6 +29322,7 @@ CT_ShowProperties* CT_ShowProperties::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_htmlPubPr)
     {
         m_htmlPubPr->toXmlElem("p:htmlPubPr", "", _outStream);
@@ -29291,6 +29471,7 @@ CT_PresentationProperties* CT_PresentationProperties::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -29502,6 +29683,7 @@ CT_HeaderFooter* CT_HeaderFooter::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -30120,11 +30302,19 @@ CT_Placeholder* CT_Placeholder::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_ph)
     {
         m_ph->toXmlElem("p:ph", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[5] = {m_has_a_audioCd, m_has_a_wavAudioFile, m_has_a_audioFile, m_has_a_videoFile, m_has_a_quickTimeFile};
+        int cnt = count(elemHasValueList, elemHasValueList + 5, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_a_audioCd)
     {
         m_a_audioCd->toXmlElem("a:audioCd", "", _outStream);
@@ -30154,6 +30344,7 @@ CT_Placeholder* CT_Placeholder::default_instance_ = NULL;
         m_a_quickTimeFile->toXmlElem("a:quickTimeFile", "", _outStream);
     }
      
+    
     if (m_has_custDataLst)
     {
         m_custDataLst->toXmlElem("p:custDataLst", "", _outStream);
@@ -30337,6 +30528,15 @@ CT_ApplicationNonVisualDrawingProps* CT_ApplicationNonVisualDrawingProps::defaul
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvSpPr);
+        
+    
+        assert(m_has_nvPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("p:cNvPr", "", _outStream);
@@ -30574,6 +30774,12 @@ CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_nvSpPr);
+        
+    
+        assert(m_has_spPr);
+        
+    
     if (m_has_nvSpPr)
     {
         m_nvSpPr->toXmlElem("p:nvSpPr", "", _outStream);
@@ -30759,6 +30965,15 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvCxnSpPr);
+        
+    
+        assert(m_has_nvPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("p:cNvPr", "", _outStream);
@@ -30951,6 +31166,12 @@ CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_nvCxnSpPr);
+        
+    
+        assert(m_has_spPr);
+        
+    
     if (m_has_nvCxnSpPr)
     {
         m_nvCxnSpPr->toXmlElem("p:nvCxnSpPr", "", _outStream);
@@ -31114,6 +31335,15 @@ CT_Connector* CT_Connector::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvPicPr);
+        
+    
+        assert(m_has_nvPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("p:cNvPr", "", _outStream);
@@ -31341,6 +31571,15 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_nvPicPr);
+        
+    
+        assert(m_has_blipFill);
+        
+    
+        assert(m_has_spPr);
+        
+    
     if (m_has_nvPicPr)
     {
         m_nvPicPr->toXmlElem("p:nvPicPr", "", _outStream);
@@ -31510,6 +31749,15 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvGraphicFramePr);
+        
+    
+        assert(m_has_nvPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("p:cNvPr", "", _outStream);
@@ -31718,6 +31966,15 @@ CT_GraphicalObjectFrameNonVisual* CT_GraphicalObjectFrameNonVisual::default_inst
     
             _outStream << ">";
             
+        assert(m_has_nvGraphicFramePr);
+        
+    
+        assert(m_has_xfrm);
+        
+    
+        assert(m_has_a_graphic);
+        
+    
     if (m_has_nvGraphicFramePr)
     {
         m_nvGraphicFramePr->toXmlElem("p:nvGraphicFramePr", "", _outStream);
@@ -31900,7 +32157,16 @@ CT_GraphicalObjectFrame* CT_GraphicalObjectFrame::default_instance_ = NULL;
             }
             
             _outStream << ">";
-            
+        
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvGrpSpPr);
+        
+    
+        assert(m_has_nvPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("p:cNvPr", "", _outStream);
@@ -32115,6 +32381,12 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_nvGrpSpPr);
+        
+    
+        assert(m_has_grpSpPr);
+        
+    
     if (m_has_nvGrpSpPr)
     {
         m_nvGrpSpPr->toXmlElem("p:nvGrpSpPr", "", _outStream);
@@ -32175,6 +32447,7 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
         }
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -33560,6 +33833,13 @@ CT_Rel* CT_Rel::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[8] = {m_has_a_noFill, m_has_a_solidFill, m_has_a_gradFill, m_has_a_blipFill, m_has_a_pattFill, m_has_a_grpFill, m_has_a_effectLst, m_has_a_effectDag};
+        int cnt = count(elemHasValueList, elemHasValueList + 8, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_a_noFill)
     {
         m_a_noFill->toXmlElem("a:noFill", "", _outStream);
@@ -33607,6 +33887,7 @@ CT_Rel* CT_Rel::default_instance_ = NULL;
         m_a_effectDag->toXmlElem("a:effectDag", "", _outStream);
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -33769,6 +34050,13 @@ CT_BackgroundProperties* CT_BackgroundProperties::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_bgPr, m_has_bgRef};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_bgPr)
     {
         m_bgPr->toXmlElem("p:bgPr", "", _outStream);
@@ -34020,6 +34308,9 @@ CT_Background* CT_Background::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_spTree);
+        
+    
     if (m_has_bg)
     {
         m_bg->toXmlElem("p:bg", "", _outStream);
@@ -34307,6 +34598,9 @@ CT_CommonSlideData* CT_CommonSlideData::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cSld);
+        
+    
     if (m_has_cSld)
     {
         m_cSld->toXmlElem("p:cSld", "", _outStream);
@@ -34700,6 +34994,9 @@ CT_Slide* CT_Slide::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cSld);
+        
+    
     if (m_has_cSld)
     {
         m_cSld->toXmlElem("p:cSld", "", _outStream);
@@ -35010,6 +35307,7 @@ CT_SlideLayout* CT_SlideLayout::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_titleStyle)
     {
         m_titleStyle->toXmlElem("p:titleStyle", "", _outStream);
@@ -35136,6 +35434,7 @@ CT_SlideMasterTextStyles* CT_SlideMasterTextStyles::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -35605,6 +35904,12 @@ CT_SlideLayoutIdList* CT_SlideLayoutIdList::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cSld);
+        
+    
+        assert(m_has_clrMap);
+        
+    
     if (m_has_cSld)
     {
         m_cSld->toXmlElem("p:cSld", "", _outStream);
@@ -35843,6 +36148,12 @@ CT_SlideMaster* CT_SlideMaster::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cSld);
+        
+    
+        assert(m_has_clrMap);
+        
+    
     if (m_has_cSld)
     {
         m_cSld->toXmlElem("p:cSld", "", _outStream);
@@ -36076,6 +36387,12 @@ CT_HandoutMaster* CT_HandoutMaster::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cSld);
+        
+    
+        assert(m_has_clrMap);
+        
+    
     if (m_has_cSld)
     {
         m_cSld->toXmlElem("p:cSld", "", _outStream);
@@ -36266,6 +36583,9 @@ CT_NotesMaster* CT_NotesMaster::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cSld);
+        
+    
     if (m_has_cSld)
     {
         m_cSld->toXmlElem("p:cSld", "", _outStream);
@@ -36417,6 +36737,7 @@ CT_NotesSlide* CT_NotesSlide::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("p:extLst", "", _outStream);
@@ -36961,6 +37282,12 @@ CT_NormalViewPortion* CT_NormalViewPortion::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_restoredLeft);
+        
+    
+        assert(m_has_restoredTop);
+        
+    
     if (m_has_restoredLeft)
     {
         m_restoredLeft->toXmlElem("p:restoredLeft", "", _outStream);
@@ -37181,6 +37508,12 @@ CT_NormalViewProperties* CT_NormalViewProperties::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_scale);
+        
+    
+        assert(m_has_origin);
+        
+    
     if (m_has_scale)
     {
         m_scale->toXmlElem("p:scale", "", _outStream);
@@ -37313,6 +37646,9 @@ CT_CommonViewProperties* CT_CommonViewProperties::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cViewPr);
+        
+    
     if (m_has_cViewPr)
     {
         m_cViewPr->toXmlElem("p:cViewPr", "", _outStream);
@@ -37661,6 +37997,9 @@ CT_OutlineViewSlideList* CT_OutlineViewSlideList::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cViewPr);
+        
+    
     if (m_has_cViewPr)
     {
         m_cViewPr->toXmlElem("p:cViewPr", "", _outStream);
@@ -37793,6 +38132,9 @@ CT_OutlineViewProperties* CT_OutlineViewProperties::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cViewPr);
+        
+    
     if (m_has_cViewPr)
     {
         m_cViewPr->toXmlElem("p:cViewPr", "", _outStream);
@@ -38164,6 +38506,9 @@ CT_GuideList* CT_GuideList::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cViewPr);
+        
+    
     if (m_has_cViewPr)
     {
         m_cViewPr->toXmlElem("p:cViewPr", "", _outStream);
@@ -38328,6 +38673,9 @@ CT_CommonSlideViewProperties* CT_CommonSlideViewProperties::default_instance_ = 
             
             _outStream << ">";
             
+        assert(m_has_cSldViewPr);
+        
+    
     if (m_has_cSldViewPr)
     {
         m_cSldViewPr->toXmlElem("p:cSldViewPr", "", _outStream);
@@ -38444,6 +38792,9 @@ CT_SlideViewProperties* CT_SlideViewProperties::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cSldViewPr);
+        
+    
     if (m_has_cSldViewPr)
     {
         m_cSldViewPr->toXmlElem("p:cSldViewPr", "", _outStream);
@@ -38797,6 +39148,7 @@ CT_NotesViewProperties* CT_NotesViewProperties::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_normalViewPr)
     {
         m_normalViewPr->toXmlElem("p:normalViewPr", "", _outStream);
@@ -39338,6 +39690,13 @@ cmLst_element* cmLst_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+    {
+        bool elemHasValueList[2] = {m_has_embed, m_has_link};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_embed)
     {
         m_embed->toXmlElem("p:embed", "", _outStream);
@@ -39349,6 +39708,7 @@ cmLst_element* cmLst_element::default_instance_ = NULL;
         m_link->toXmlElem("p:link", "", _outStream);
     }
      
+    
     if (m_has_pic)
     {
         m_pic->toXmlElem("p:pic", "", _outStream);
@@ -40191,6 +40551,9 @@ oleObj_element* oleObj_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+        assert(m_has_notesSz);
+        
+    
     if (m_has_sldMasterIdLst)
     {
         m_sldMasterIdLst->toXmlElem("p:sldMasterIdLst", "", _outStream);
@@ -40729,6 +41092,7 @@ presentation_element* presentation_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+    
     if (m_has_htmlPubPr)
     {
         m_htmlPubPr->toXmlElem("p:htmlPubPr", "", _outStream);
@@ -41005,6 +41369,9 @@ presentationPr_element* presentationPr_element::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
+        assert(m_has_cSld);
+        
     
     if (m_has_cSld)
     {
@@ -41398,6 +41765,9 @@ sld_element* sld_element::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
+        assert(m_has_cSld);
+        
     
     if (m_has_cSld)
     {
@@ -41859,6 +42229,12 @@ sldLayout_element* sldLayout_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+        assert(m_has_cSld);
+        
+    
+        assert(m_has_clrMap);
+        
+    
     if (m_has_cSld)
     {
         m_cSld->toXmlElem("p:cSld", "", _outStream);
@@ -42097,6 +42473,12 @@ sldMaster_element* sldMaster_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+        assert(m_has_cSld);
+        
+    
+        assert(m_has_clrMap);
+        
+    
     if (m_has_cSld)
     {
         m_cSld->toXmlElem("p:cSld", "", _outStream);
@@ -42330,6 +42712,12 @@ handoutMaster_element* handoutMaster_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+        assert(m_has_cSld);
+        
+    
+        assert(m_has_clrMap);
+        
+    
     if (m_has_cSld)
     {
         m_cSld->toXmlElem("p:cSld", "", _outStream);
@@ -42520,6 +42908,9 @@ notesMaster_element* notesMaster_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+        assert(m_has_cSld);
+        
+    
     if (m_has_cSld)
     {
         m_cSld->toXmlElem("p:cSld", "", _outStream);
@@ -42670,6 +43061,7 @@ notes_element* notes_element::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
     
     if (m_has_extLst)
     {
@@ -43164,6 +43556,7 @@ tagLst_element* tagLst_element::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
     
     if (m_has_normalViewPr)
     {

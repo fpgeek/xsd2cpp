@@ -1,7 +1,6 @@
 #include "shared-documentPropertiesExtended_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "shared-documentPropertiesVariantTypes_xsd.h"
 namespace ns_extended_properties {
@@ -103,6 +102,9 @@ CT_Properties* CT_Properties::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_vt_vector);
+        
+    
     if (m_has_vt_vector)
     {
         m_vt_vector->toXmlElem("vt:vector", "", _outStream);
@@ -178,6 +180,9 @@ CT_VectorVariant* CT_VectorVariant::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_vt_vector);
+        
+    
     if (m_has_vt_vector)
     {
         m_vt_vector->toXmlElem("vt:vector", "", _outStream);
@@ -239,6 +244,9 @@ CT_VectorLpstr* CT_VectorLpstr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_vt_blob);
+        
+    
     if (m_has_vt_blob)
     {
         _outStream << "<vt:blob>" << m_vt_blob << "</vt:blob>";

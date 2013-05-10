@@ -1,7 +1,6 @@
 #include "shared-math_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "wml_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
@@ -2055,6 +2054,10 @@ CT_ManualBreak* CT_ManualBreak::default_instance_ = NULL;
     m_lit(NULL),
     m_has_nor(false),
     m_nor(NULL),
+    m_has_scr(false),
+    m_scr(NULL),
+    m_has_sty(false),
+    m_sty(NULL),
     m_has_brk(false),
     m_brk(NULL),
     m_has_aln(false),
@@ -2096,6 +2099,24 @@ CT_ManualBreak* CT_ManualBreak::default_instance_ = NULL;
     CT_OnOff* CT_RPR::mutable_nor()
     {    
     
+    m_has_scr = false;
+    
+    if (m_scr)
+    {
+        delete m_scr;
+        m_scr = NULL;
+    }
+    ;
+    
+    m_has_sty = false;
+    
+    if (m_sty)
+    {
+        delete m_sty;
+        m_sty = NULL;
+    }
+    ;
+    
     m_has_nor = true;
     if (!m_nor)
     {
@@ -2111,6 +2132,92 @@ CT_ManualBreak* CT_ManualBreak::default_instance_ = NULL;
         return *m_nor;
     }
     return CT_OnOff::default_instance();
+    }
+
+    bool CT_RPR::has_scr() const
+    {    
+    return m_has_scr;
+    }
+
+    CT_Script* CT_RPR::mutable_scr()
+    {    
+    
+    m_has_nor = false;
+    
+    if (m_nor)
+    {
+        delete m_nor;
+        m_nor = NULL;
+    }
+    ;
+    
+    m_has_sty = false;
+    
+    if (m_sty)
+    {
+        delete m_sty;
+        m_sty = NULL;
+    }
+    ;
+    
+    m_has_scr = true;
+    if (!m_scr)
+    {
+        m_scr = new CT_Script();
+    }
+    return m_scr;
+    }
+
+    const CT_Script& CT_RPR::get_scr() const
+    {    
+    if (m_scr)
+    {
+        return *m_scr;
+    }
+    return CT_Script::default_instance();
+    }
+
+    bool CT_RPR::has_sty() const
+    {    
+    return m_has_sty;
+    }
+
+    CT_Style* CT_RPR::mutable_sty()
+    {    
+    
+    m_has_nor = false;
+    
+    if (m_nor)
+    {
+        delete m_nor;
+        m_nor = NULL;
+    }
+    ;
+    
+    m_has_scr = false;
+    
+    if (m_scr)
+    {
+        delete m_scr;
+        m_scr = NULL;
+    }
+    ;
+    
+    m_has_sty = true;
+    if (!m_sty)
+    {
+        m_sty = new CT_Style();
+    }
+    return m_sty;
+    }
+
+    const CT_Style& CT_RPR::get_sty() const
+    {    
+    if (m_sty)
+    {
+        return *m_sty;
+    }
+    return CT_Style::default_instance();
     }
 
     bool CT_RPR::has_brk() const
@@ -2180,6 +2287,24 @@ CT_ManualBreak* CT_ManualBreak::default_instance_ = NULL;
         m_nor = NULL;
     }
     
+    
+    m_has_scr = false;
+    
+    if (m_scr)
+    {
+        delete m_scr;
+        m_scr = NULL;
+    }
+    
+    
+    m_has_sty = false;
+    
+    if (m_sty)
+    {
+        delete m_sty;
+        m_sty = NULL;
+    }
+    
      
     m_has_brk = false;
     
@@ -2211,16 +2336,37 @@ CT_ManualBreak* CT_ManualBreak::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_lit)
     {
         m_lit->toXmlElem("m:lit", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[3] = {m_has_nor, m_has_scr, m_has_sty};
+        int cnt = count(elemHasValueList, elemHasValueList + 3, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_nor)
     {
         m_nor->toXmlElem("m:nor", "", _outStream);
     }
+    
+    
+    if (m_has_scr)
+    {
+        m_scr->toXmlElem("m:scr", "", _outStream);
+    }
+    
+    
+    if (m_has_sty)
+    {
+        m_sty->toXmlElem("m:sty", "", _outStream);
+    }
      
+    
     if (m_has_brk)
     {
         m_brk->toXmlElem("m:brk", "", _outStream);
@@ -2689,6 +2835,7 @@ CT_Text* CT_Text::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_rPr)
     {
         m_rPr->toXmlElem("m:rPr", "", _outStream);
@@ -13982,7 +14129,9 @@ CT_R* CT_R::default_instance_ = NULL;
 
     // CT_CtrlPr
     CT_CtrlPr::CT_CtrlPr()
-    :m_has_w_ins(false),
+    :m_has_w_rPr(false),
+    m_w_rPr(NULL),
+    m_has_w_ins(false),
     m_w_ins(NULL),
     m_has_w_del(false),
     m_w_del(NULL)
@@ -13991,6 +14140,49 @@ CT_R* CT_R::default_instance_ = NULL;
     CT_CtrlPr::~CT_CtrlPr()
 {
     clear();    }
+    bool CT_CtrlPr::has_w_rPr() const
+    {    
+    return m_has_w_rPr;
+    }
+
+    ns_w::CT_RPr* CT_CtrlPr::mutable_w_rPr()
+    {    
+    
+    m_has_w_ins = false;
+    
+    if (m_w_ins)
+    {
+        delete m_w_ins;
+        m_w_ins = NULL;
+    }
+    ;
+    
+    m_has_w_del = false;
+    
+    if (m_w_del)
+    {
+        delete m_w_del;
+        m_w_del = NULL;
+    }
+    ;
+    
+    m_has_w_rPr = true;
+    if (!m_w_rPr)
+    {
+        m_w_rPr = new ns_w::CT_RPr();
+    }
+    return m_w_rPr;
+    }
+
+    const ns_w::CT_RPr& CT_CtrlPr::get_w_rPr() const
+    {    
+    if (m_w_rPr)
+    {
+        return *m_w_rPr;
+    }
+    return ns_w::CT_RPr::default_instance();
+    }
+
     bool CT_CtrlPr::has_w_ins() const
     {    
     return m_has_w_ins;
@@ -13998,6 +14190,15 @@ CT_R* CT_R::default_instance_ = NULL;
 
     ns_w::CT_MathCtrlIns* CT_CtrlPr::mutable_w_ins()
     {    
+    
+    m_has_w_rPr = false;
+    
+    if (m_w_rPr)
+    {
+        delete m_w_rPr;
+        m_w_rPr = NULL;
+    }
+    ;
     
     m_has_w_del = false;
     
@@ -14033,6 +14234,15 @@ CT_R* CT_R::default_instance_ = NULL;
     ns_w::CT_MathCtrlDel* CT_CtrlPr::mutable_w_del()
     {    
     
+    m_has_w_rPr = false;
+    
+    if (m_w_rPr)
+    {
+        delete m_w_rPr;
+        m_w_rPr = NULL;
+    }
+    ;
+    
     m_has_w_ins = false;
     
     if (m_w_ins)
@@ -14060,7 +14270,16 @@ CT_R* CT_R::default_instance_ = NULL;
     }
 
     void CT_CtrlPr::clear()
-    {     
+    {    
+    m_has_w_rPr = false;
+    
+    if (m_w_rPr)
+    {
+        delete m_w_rPr;
+        m_w_rPr = NULL;
+    }
+    
+    
     m_has_w_ins = false;
     
     if (m_w_ins)
@@ -14090,7 +14309,20 @@ CT_R* CT_R::default_instance_ = NULL;
             }
             
             _outStream << ">";
-             
+            
+    {
+        bool elemHasValueList[3] = {m_has_w_rPr, m_has_w_ins, m_has_w_del};
+        int cnt = count(elemHasValueList, elemHasValueList + 3, true);
+        assert(cnt == 1);
+    }
+    
+    
+    if (m_has_w_rPr)
+    {
+        m_w_rPr->toXmlElem("w:rPr", "", _outStream);
+    }
+    
+    
     if (m_has_w_ins)
     {
         m_w_ins->toXmlElem("w:ins", "", _outStream);
@@ -14207,6 +14439,7 @@ CT_CtrlPr* CT_CtrlPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_chr)
     {
         m_chr->toXmlElem("m:chr", "", _outStream);
@@ -14323,6 +14556,9 @@ CT_AccPr* CT_AccPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_e);
+        
+    
     if (m_has_accPr)
     {
         m_accPr->toXmlElem("m:accPr", "", _outStream);
@@ -14439,6 +14675,7 @@ CT_Acc* CT_Acc::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_pos)
     {
         m_pos->toXmlElem("m:pos", "", _outStream);
@@ -14555,6 +14792,9 @@ CT_BarPr* CT_BarPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_e);
+        
+    
     if (m_has_barPr)
     {
         m_barPr->toXmlElem("m:barPr", "", _outStream);
@@ -14811,6 +15051,7 @@ CT_Bar* CT_Bar::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_opEmu)
     {
         m_opEmu->toXmlElem("m:opEmu", "", _outStream);
@@ -14951,6 +15192,9 @@ CT_BoxPr* CT_BoxPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_e);
+        
+    
     if (m_has_boxPr)
     {
         m_boxPr->toXmlElem("m:boxPr", "", _outStream);
@@ -15312,6 +15556,7 @@ CT_Box* CT_Box::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_hideTop)
     {
         m_hideTop->toXmlElem("m:hideTop", "", _outStream);
@@ -15470,6 +15715,9 @@ CT_BorderBoxPr* CT_BorderBoxPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_e);
+        
+    
     if (m_has_borderBoxPr)
     {
         m_borderBoxPr->toXmlElem("m:borderBoxPr", "", _outStream);
@@ -15726,6 +15974,7 @@ CT_BorderBox* CT_BorderBox::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_begChr)
     {
         m_begChr->toXmlElem("m:begChr", "", _outStream);
@@ -15848,11 +16097,17 @@ CT_DPr* CT_DPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_dPr)
     {
         m_dPr->toXmlElem("m:dPr", "", _outStream);
     }
      
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_e));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -16144,6 +16399,7 @@ CT_D* CT_D::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_baseJc)
     {
         m_baseJc->toXmlElem("m:baseJc", "", _outStream);
@@ -16266,11 +16522,17 @@ CT_EqArrPr* CT_EqArrPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_eqArrPr)
     {
         m_eqArrPr->toXmlElem("m:eqArrPr", "", _outStream);
     }
      
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_e));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -16422,6 +16684,7 @@ CT_EqArr* CT_EqArr::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_type)
     {
         m_type->toXmlElem("m:type", "", _outStream);
@@ -16573,6 +16836,12 @@ CT_FPr* CT_FPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_num);
+        
+    
+        assert(m_has_den);
+        
+    
     if (m_has_fPr)
     {
         m_fPr->toXmlElem("m:fPr", "", _outStream);
@@ -16660,6 +16929,7 @@ CT_F* CT_F::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_ctrlPr)
     {
         m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
@@ -16805,6 +17075,12 @@ CT_FuncPr* CT_FuncPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_fName);
+        
+    
+        assert(m_has_e);
+        
+    
     if (m_has_funcPr)
     {
         m_funcPr->toXmlElem("m:funcPr", "", _outStream);
@@ -16997,6 +17273,7 @@ CT_Func* CT_Func::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_chr)
     {
         m_chr->toXmlElem("m:chr", "", _outStream);
@@ -17125,6 +17402,9 @@ CT_GroupChrPr* CT_GroupChrPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_e);
+        
+    
     if (m_has_groupChrPr)
     {
         m_groupChrPr->toXmlElem("m:groupChrPr", "", _outStream);
@@ -17206,6 +17486,7 @@ CT_GroupChr* CT_GroupChr::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_ctrlPr)
     {
         m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
@@ -17351,6 +17632,12 @@ CT_LimLowPr* CT_LimLowPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_e);
+        
+    
+        assert(m_has_lim);
+        
+    
     if (m_has_limLowPr)
     {
         m_limLowPr->toXmlElem("m:limLowPr", "", _outStream);
@@ -17438,6 +17725,7 @@ CT_LimLow* CT_LimLow::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_ctrlPr)
     {
         m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
@@ -17583,6 +17871,12 @@ CT_LimUppPr* CT_LimUppPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_e);
+        
+    
+        assert(m_has_lim);
+        
+    
     if (m_has_limUppPr)
     {
         m_limUppPr->toXmlElem("m:limUppPr", "", _outStream);
@@ -17705,6 +17999,7 @@ CT_LimUpp* CT_LimUpp::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_count)
     {
         m_count->toXmlElem("m:count", "", _outStream);
@@ -17786,6 +18081,7 @@ CT_MCPr* CT_MCPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_mcPr)
     {
         m_mcPr->toXmlElem("m:mcPr", "", _outStream);
@@ -17844,6 +18140,11 @@ CT_MC* CT_MC::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_mc));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -18240,6 +18541,7 @@ CT_MCS* CT_MCS::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_baseJc)
     {
         m_baseJc->toXmlElem("m:baseJc", "", _outStream);
@@ -18346,6 +18648,11 @@ CT_MPr* CT_MPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_e));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -18479,11 +18786,17 @@ CT_MR* CT_MR::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_mPr)
     {
         m_mPr->toXmlElem("m:mPr", "", _outStream);
     }
      
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_mr));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -18775,6 +19088,7 @@ CT_M* CT_M::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_chr)
     {
         m_chr->toXmlElem("m:chr", "", _outStream);
@@ -18985,6 +19299,15 @@ CT_NaryPr* CT_NaryPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_sub);
+        
+    
+        assert(m_has_sup);
+        
+    
+        assert(m_has_e);
+        
+    
     if (m_has_naryPr)
     {
         m_naryPr->toXmlElem("m:naryPr", "", _outStream);
@@ -19253,6 +19576,7 @@ CT_Nary* CT_Nary::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_show)
     {
         m_show->toXmlElem("m:show", "", _outStream);
@@ -19393,6 +19717,9 @@ CT_PhantPr* CT_PhantPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_e);
+        
+    
     if (m_has_phantPr)
     {
         m_phantPr->toXmlElem("m:phantPr", "", _outStream);
@@ -19509,6 +19836,7 @@ CT_Phant* CT_Phant::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_degHide)
     {
         m_degHide->toXmlElem("m:degHide", "", _outStream);
@@ -19660,6 +19988,12 @@ CT_RadPr* CT_RadPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_deg);
+        
+    
+        assert(m_has_e);
+        
+    
     if (m_has_radPr)
     {
         m_radPr->toXmlElem("m:radPr", "", _outStream);
@@ -19747,6 +20081,7 @@ CT_Rad* CT_Rad::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_ctrlPr)
     {
         m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
@@ -19927,6 +20262,15 @@ CT_SPrePr* CT_SPrePr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_sub);
+        
+    
+        assert(m_has_sup);
+        
+    
+        assert(m_has_e);
+        
+    
     if (m_has_sPrePr)
     {
         m_sPrePr->toXmlElem("m:sPrePr", "", _outStream);
@@ -20020,6 +20364,7 @@ CT_SPre* CT_SPre::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_ctrlPr)
     {
         m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
@@ -20165,6 +20510,12 @@ CT_SSubPr* CT_SSubPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_e);
+        
+    
+        assert(m_has_sub);
+        
+    
     if (m_has_sSubPr)
     {
         m_sSubPr->toXmlElem("m:sSubPr", "", _outStream);
@@ -20287,6 +20638,7 @@ CT_SSub* CT_SSub::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_alnScr)
     {
         m_alnScr->toXmlElem("m:alnScr", "", _outStream);
@@ -20473,6 +20825,15 @@ CT_SSubSupPr* CT_SSubSupPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_e);
+        
+    
+        assert(m_has_sub);
+        
+    
+        assert(m_has_sup);
+        
+    
     if (m_has_sSubSupPr)
     {
         m_sSubSupPr->toXmlElem("m:sSubSupPr", "", _outStream);
@@ -20566,6 +20927,7 @@ CT_SSubSup* CT_SSubSup::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_ctrlPr)
     {
         m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
@@ -20711,6 +21073,12 @@ CT_SSupPr* CT_SSupPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_e);
+        
+    
+        assert(m_has_sup);
+        
+    
     if (m_has_sSupPr)
     {
         m_sSupPr->toXmlElem("m:sSupPr", "", _outStream);
@@ -20798,6 +21166,7 @@ CT_SSup* CT_SSup::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_argSz)
     {
         m_argSz->toXmlElem("m:argSz", "", _outStream);
@@ -21317,6 +21686,7 @@ CT_OMathArgPr* CT_OMathArgPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_argPr)
     {
         m_argPr->toXmlElem("m:argPr", "", _outStream);
@@ -21679,6 +22049,7 @@ CT_OMathArgPr* CT_OMathArgPr::default_instance_ = NULL;
         }
     }
      
+    
     if (m_has_ctrlPr)
     {
         m_ctrlPr->toXmlElem("m:ctrlPr", "", _outStream);
@@ -45230,6 +45601,7 @@ CT_OMathJc* CT_OMathJc::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_jc)
     {
         m_jc->toXmlElem("m:jc", "", _outStream);
@@ -46063,6 +46435,7 @@ CT_BreakBinSub* CT_BreakBinSub::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_mathFont)
     {
         m_mathFont->toXmlElem("m:mathFont", "", _outStream);
@@ -46134,6 +46507,13 @@ CT_BreakBinSub* CT_BreakBinSub::default_instance_ = NULL;
         m_intraSp->toXmlElem("m:intraSp", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[2] = {m_has_wrapIndent, m_has_wrapRight};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 0 || cnt == 1);
+    }
+    
+    
     if (m_has_wrapIndent)
     {
         m_wrapIndent->toXmlElem("m:wrapIndent", "", _outStream);
@@ -46145,6 +46525,7 @@ CT_BreakBinSub* CT_BreakBinSub::default_instance_ = NULL;
         m_wrapRight->toXmlElem("m:wrapRight", "", _outStream);
     }
      
+    
     if (m_has_intLim)
     {
         m_intLim->toXmlElem("m:intLim", "", _outStream);
@@ -46243,11 +46624,17 @@ CT_MathPr* CT_MathPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_oMathParaPr)
     {
         m_oMathParaPr->toXmlElem("m:oMathParaPr", "", _outStream);
     }
      
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_oMath));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -71115,6 +71502,7 @@ CT_OMath* CT_OMath::default_instance_ = NULL;
     
     _outStream << ">";
     
+    
     if (m_has_mathFont)
     {
         m_mathFont->toXmlElem("m:mathFont", "", _outStream);
@@ -71186,6 +71574,13 @@ CT_OMath* CT_OMath::default_instance_ = NULL;
         m_intraSp->toXmlElem("m:intraSp", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[2] = {m_has_wrapIndent, m_has_wrapRight};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 0 || cnt == 1);
+    }
+    
+    
     if (m_has_wrapIndent)
     {
         m_wrapIndent->toXmlElem("m:wrapIndent", "", _outStream);
@@ -71197,6 +71592,7 @@ CT_OMath* CT_OMath::default_instance_ = NULL;
         m_wrapRight->toXmlElem("m:wrapRight", "", _outStream);
     }
      
+    
     if (m_has_intLim)
     {
         m_intLim->toXmlElem("m:intLim", "", _outStream);
@@ -71294,11 +71690,17 @@ mathPr_element* mathPr_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+    
     if (m_has_oMathParaPr)
     {
         m_oMathParaPr->toXmlElem("m:oMathParaPr", "", _outStream);
     }
      
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_oMath));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)

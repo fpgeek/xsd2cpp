@@ -1,7 +1,6 @@
 #include "shared-documentPropertiesVariantTypes_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "shared-commonSimpleTypes_xsd.h"
 namespace ns_vt {
@@ -10660,6 +10659,13 @@ CT_Array* CT_Array::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[34] = {m_has_variant, m_has_vector, m_has_array, m_has_blob, m_has_oblob, m_has_empty, m_has_null, m_has_i1, m_has_i2, m_has_i4, m_has_i8, m_has_int, m_has_ui1, m_has_ui2, m_has_ui4, m_has_ui8, m_has_uint, m_has_r4, m_has_r8, m_has_decimal, m_has_lpstr, m_has_lpwstr, m_has_bstr, m_has_date, m_has_filetime, m_has_bool, m_has_cy, m_has_error, m_has_stream, m_has_ostream, m_has_storage, m_has_ostorage, m_has_vstream, m_has_clsid};
+        int cnt = count(elemHasValueList, elemHasValueList + 34, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_variant)
     {
         m_variant->toXmlElem("vt:variant", "", _outStream);
@@ -17013,6 +17019,13 @@ CT_Vstream* CT_Vstream::default_instance_ = NULL;
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     
     _outStream << ">";
+    
+    {
+        bool elemHasValueList[34] = {m_has_variant, m_has_vector, m_has_array, m_has_blob, m_has_oblob, m_has_empty, m_has_null, m_has_i1, m_has_i2, m_has_i4, m_has_i8, m_has_int, m_has_ui1, m_has_ui2, m_has_ui4, m_has_ui8, m_has_uint, m_has_r4, m_has_r8, m_has_decimal, m_has_lpstr, m_has_lpwstr, m_has_bstr, m_has_date, m_has_filetime, m_has_bool, m_has_cy, m_has_error, m_has_stream, m_has_ostream, m_has_storage, m_has_ostorage, m_has_vstream, m_has_clsid};
+        int cnt = count(elemHasValueList, elemHasValueList + 34, true);
+        assert(cnt == 1);
+    }
+    
     
     if (m_has_variant)
     {

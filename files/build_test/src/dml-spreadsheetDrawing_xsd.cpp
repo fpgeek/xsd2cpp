@@ -1,7 +1,6 @@
 #include "dml-spreadsheetDrawing_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "dml-main_xsd.h"
 #include "shared-relationshipReference_xsd.h"
@@ -383,6 +382,12 @@ CT_AnchorClientData* CT_AnchorClientData::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvSpPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);
@@ -612,6 +617,12 @@ CT_ShapeNonVisual* CT_ShapeNonVisual::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_nvSpPr);
+        
+    
+        assert(m_has_spPr);
+        
+    
     if (m_has_nvSpPr)
     {
         m_nvSpPr->toXmlElem("xdr:nvSpPr", "", _outStream);
@@ -804,6 +815,12 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvCxnSpPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);
@@ -976,6 +993,12 @@ CT_ConnectorNonVisual* CT_ConnectorNonVisual::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_nvCxnSpPr);
+        
+    
+        assert(m_has_spPr);
+        
+    
     if (m_has_nvCxnSpPr)
     {
         m_nvCxnSpPr->toXmlElem("xdr:nvCxnSpPr", "", _outStream);
@@ -1130,6 +1153,12 @@ CT_Connector* CT_Connector::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvPicPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);
@@ -1337,6 +1366,15 @@ CT_PictureNonVisual* CT_PictureNonVisual::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_nvPicPr);
+        
+    
+        assert(m_has_blipFill);
+        
+    
+        assert(m_has_spPr);
+        
+    
     if (m_has_nvPicPr)
     {
         m_nvPicPr->toXmlElem("xdr:nvPicPr", "", _outStream);
@@ -1497,6 +1535,12 @@ CT_Picture* CT_Picture::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvGraphicFramePr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);
@@ -1669,6 +1713,15 @@ CT_GraphicalObjectFrameNonVisual* CT_GraphicalObjectFrameNonVisual::default_inst
     
             _outStream << ">";
             
+        assert(m_has_nvGraphicFramePr);
+        
+    
+        assert(m_has_xfrm);
+        
+    
+        assert(m_has_a_graphic);
+        
+    
     if (m_has_nvGraphicFramePr)
     {
         m_nvGraphicFramePr->toXmlElem("xdr:nvGraphicFramePr", "", _outStream);
@@ -1823,6 +1876,12 @@ CT_GraphicalObjectFrame* CT_GraphicalObjectFrame::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvGrpSpPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("xdr:cNvPr", "", _outStream);
@@ -1988,6 +2047,12 @@ CT_GroupShapeNonVisual* CT_GroupShapeNonVisual::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_nvGrpSpPr);
+        
+    
+        assert(m_has_grpSpPr);
+        
+    
     if (m_has_nvGrpSpPr)
     {
         m_nvGrpSpPr->toXmlElem("xdr:nvGrpSpPr", "", _outStream);
@@ -2607,6 +2672,18 @@ CT_Rel* CT_Rel::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_col);
+        
+    
+        assert(m_has_colOff);
+        
+    
+        assert(m_has_row);
+        
+    
+        assert(m_has_rowOff);
+        
+    
     if (m_has_col)
     {
         _outStream << "<xdr:col>" << m_col->toString() << "</xdr:col>";
@@ -3272,6 +3349,12 @@ CT_Marker* CT_Marker::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_from);
+        
+    
+        assert(m_has_to);
+        
+    
     if (m_has_from)
     {
         m_from->toXmlElem("xdr:from", "", _outStream);
@@ -3283,6 +3366,13 @@ CT_Marker* CT_Marker::default_instance_ = NULL;
         m_to->toXmlElem("xdr:to", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[6] = {m_has_sp, m_has_grpSp, m_has_graphicFrame, m_has_cxnSp, m_has_pic, m_has_contentPart};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_sp)
     {
         m_sp->toXmlElem("xdr:sp", "", _outStream);
@@ -3318,6 +3408,9 @@ CT_Marker* CT_Marker::default_instance_ = NULL;
         m_contentPart->toXmlElem("xdr:contentPart", "", _outStream);
     }
      
+        assert(m_has_clientData);
+        
+    
     if (m_has_clientData)
     {
         m_clientData->toXmlElem("xdr:clientData", "", _outStream);
@@ -3969,6 +4062,12 @@ CT_TwoCellAnchor* CT_TwoCellAnchor::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_from);
+        
+    
+        assert(m_has_ext);
+        
+    
     if (m_has_from)
     {
         m_from->toXmlElem("xdr:from", "", _outStream);
@@ -3980,6 +4079,13 @@ CT_TwoCellAnchor* CT_TwoCellAnchor::default_instance_ = NULL;
         m_ext->toXmlElem("xdr:ext", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[6] = {m_has_sp, m_has_grpSp, m_has_graphicFrame, m_has_cxnSp, m_has_pic, m_has_contentPart};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_sp)
     {
         m_sp->toXmlElem("xdr:sp", "", _outStream);
@@ -4015,6 +4121,9 @@ CT_TwoCellAnchor* CT_TwoCellAnchor::default_instance_ = NULL;
         m_contentPart->toXmlElem("xdr:contentPart", "", _outStream);
     }
      
+        assert(m_has_clientData);
+        
+    
     if (m_has_clientData)
     {
         m_clientData->toXmlElem("xdr:clientData", "", _outStream);
@@ -4646,6 +4755,12 @@ CT_OneCellAnchor* CT_OneCellAnchor::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_pos);
+        
+    
+        assert(m_has_ext);
+        
+    
     if (m_has_pos)
     {
         m_pos->toXmlElem("xdr:pos", "", _outStream);
@@ -4657,6 +4772,13 @@ CT_OneCellAnchor* CT_OneCellAnchor::default_instance_ = NULL;
         m_ext->toXmlElem("xdr:ext", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[6] = {m_has_sp, m_has_grpSp, m_has_graphicFrame, m_has_cxnSp, m_has_pic, m_has_contentPart};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_sp)
     {
         m_sp->toXmlElem("xdr:sp", "", _outStream);
@@ -4692,6 +4814,9 @@ CT_OneCellAnchor* CT_OneCellAnchor::default_instance_ = NULL;
         m_contentPart->toXmlElem("xdr:contentPart", "", _outStream);
     }
      
+        assert(m_has_clientData);
+        
+    
     if (m_has_clientData)
     {
         m_clientData->toXmlElem("xdr:clientData", "", _outStream);
@@ -5108,6 +5233,18 @@ CT_Drawing* CT_Drawing::default_instance_ = NULL;
     
     _outStream << ">";
     
+        assert(m_has_col);
+        
+    
+        assert(m_has_colOff);
+        
+    
+        assert(m_has_row);
+        
+    
+        assert(m_has_rowOff);
+        
+    
     if (m_has_col)
     {
         _outStream << "<xdr:col>" << m_col->toString() << "</xdr:col>";
@@ -5304,6 +5441,18 @@ from_element* from_element::default_instance_ = NULL;
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
     
     _outStream << ">";
+    
+        assert(m_has_col);
+        
+    
+        assert(m_has_colOff);
+        
+    
+        assert(m_has_row);
+        
+    
+        assert(m_has_rowOff);
+        
     
     if (m_has_col)
     {

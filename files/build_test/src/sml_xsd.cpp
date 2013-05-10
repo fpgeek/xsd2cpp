@@ -1,7 +1,6 @@
 #include "sml_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "shared-relationshipReference_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
@@ -6375,7 +6374,11 @@ ST_TargetScreenSize* ST_TargetScreenSize::default_instance_ = NULL;
 
     // CT_AutoFilter
     CT_AutoFilter::CT_AutoFilter()
-    :m_has_ref_attr(false),
+    :m_has_sortState(false),
+    m_sortState(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_ref_attr(false),
     m_ref_attr(NULL)
     {
     }
@@ -6390,20 +6393,52 @@ ST_TargetScreenSize* ST_TargetScreenSize::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_SortState* CT_AutoFilter::add_sortState()
+    bool CT_AutoFilter::has_sortState() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SortState* pNewChild = pChildGroup->mutable_sortState();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_sortState;
     }
 
-    CT_ExtensionList* CT_AutoFilter::add_extLst()
+    CT_SortState* CT_AutoFilter::mutable_sortState()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_sortState = true;
+    if (!m_sortState)
+    {
+        m_sortState = new CT_SortState();
+    }
+    return m_sortState;
+    }
+
+    const CT_SortState& CT_AutoFilter::get_sortState() const
+    {    
+    if (m_sortState)
+    {
+        return *m_sortState;
+    }
+    return CT_SortState::default_instance();
+    }
+
+    bool CT_AutoFilter::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_AutoFilter::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_AutoFilter::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_AutoFilter::clear()
@@ -6425,6 +6460,24 @@ ST_TargetScreenSize* ST_TargetScreenSize::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_sortState = false;
+    
+    if (m_sortState)
+    {
+        delete m_sortState;
+        m_sortState = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_AutoFilter::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -6454,21 +6507,19 @@ ST_TargetScreenSize* ST_TargetScreenSize::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_sortState())
-    {
-        (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_sortState)
+    {
+        m_sortState->toXmlElem("main:sortState", "", _outStream);
+    }
+    
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -6507,11 +6558,7 @@ ST_TargetScreenSize* ST_TargetScreenSize::default_instance_ = NULL;
     // CT_AutoFilter::ChildGroup_1
     CT_AutoFilter::ChildGroup_1::ChildGroup_1()
     :m_has_filterColumn(false),
-    m_filterColumn(NULL),
-    m_has_sortState(false),
-    m_sortState(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_filterColumn(NULL)
     {
     }
     bool CT_AutoFilter::ChildGroup_1::has_filterColumn() const
@@ -6521,24 +6568,6 @@ ST_TargetScreenSize* ST_TargetScreenSize::default_instance_ = NULL;
 
     CT_FilterColumn* CT_AutoFilter::ChildGroup_1::mutable_filterColumn()
     {    
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_filterColumn = true;
     if (!m_filterColumn)
@@ -6555,92 +6584,6 @@ ST_TargetScreenSize* ST_TargetScreenSize::default_instance_ = NULL;
         return *m_filterColumn;
     }
     return CT_FilterColumn::default_instance();
-    }
-
-    bool CT_AutoFilter::ChildGroup_1::has_sortState() const
-    {    
-    return m_has_sortState;
-    }
-
-    CT_SortState* CT_AutoFilter::ChildGroup_1::mutable_sortState()
-    {    
-    
-    m_has_filterColumn = false;
-    
-    if (m_filterColumn)
-    {
-        delete m_filterColumn;
-        m_filterColumn = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_sortState = true;
-    if (!m_sortState)
-    {
-        m_sortState = new CT_SortState();
-    }
-    return m_sortState;
-    }
-
-    const CT_SortState& CT_AutoFilter::ChildGroup_1::get_sortState() const
-    {    
-    if (m_sortState)
-    {
-        return *m_sortState;
-    }
-    return CT_SortState::default_instance();
-    }
-
-    bool CT_AutoFilter::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_AutoFilter::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_filterColumn = false;
-    
-    if (m_filterColumn)
-    {
-        delete m_filterColumn;
-        m_filterColumn = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_AutoFilter::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_AutoFilter* CT_AutoFilter::default_instance_ = NULL;
@@ -7328,6 +7271,13 @@ CT_AutoFilter* CT_AutoFilter::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[7] = {m_has_filters, m_has_top10, m_has_customFilters, m_has_dynamicFilter, m_has_colorFilter, m_has_iconFilter, m_has_extLst};
+        int cnt = count(elemHasValueList, elemHasValueList + 7, true);
+        assert(cnt == 0 || cnt == 1);
+    }
+    
+    
     if (m_has_filters)
     {
         m_filters->toXmlElem("main:filters", "", _outStream);
@@ -7771,6 +7721,11 @@ CT_Filter* CT_Filter::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_customFilter));
+        assert(1 <= elemCnt && elemCnt <= 2);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -8474,7 +8429,9 @@ CT_DynamicFilter* CT_DynamicFilter::default_instance_ = NULL;
 
     // CT_SortState
     CT_SortState::CT_SortState()
-    :m_has_columnSort_attr(false),
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_columnSort_attr(false),
     m_columnSort_attr(false),
     m_has_caseSensitive_attr(false),
     m_caseSensitive_attr(false),
@@ -8495,12 +8452,28 @@ CT_DynamicFilter* CT_DynamicFilter::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_SortState::add_extLst()
+    bool CT_SortState::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_SortState::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_SortState::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_SortState::clear()
@@ -8537,6 +8510,15 @@ CT_DynamicFilter* CT_DynamicFilter::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_SortState::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -8574,6 +8556,11 @@ CT_DynamicFilter* CT_DynamicFilter::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sortCondition));
+        assert(0 <= elemCnt && elemCnt <= 64);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -8584,14 +8571,13 @@ CT_DynamicFilter* CT_DynamicFilter::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -8682,9 +8668,7 @@ CT_DynamicFilter* CT_DynamicFilter::default_instance_ = NULL;
     // CT_SortState::ChildGroup_1
     CT_SortState::ChildGroup_1::ChildGroup_1()
     :m_has_sortCondition(false),
-    m_sortCondition(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_sortCondition(NULL)
     {
     }
     bool CT_SortState::ChildGroup_1::has_sortCondition() const
@@ -8694,15 +8678,6 @@ CT_DynamicFilter* CT_DynamicFilter::default_instance_ = NULL;
 
     CT_SortCondition* CT_SortState::ChildGroup_1::mutable_sortCondition()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_sortCondition = true;
     if (!m_sortCondition)
@@ -8719,40 +8694,6 @@ CT_DynamicFilter* CT_DynamicFilter::default_instance_ = NULL;
         return *m_sortCondition;
     }
     return CT_SortCondition::default_instance();
-    }
-
-    bool CT_SortState::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_SortState::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_sortCondition = false;
-    
-    if (m_sortCondition)
-    {
-        delete m_sortCondition;
-        m_sortCondition = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_SortState::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_SortState* CT_SortState::default_instance_ = NULL;
@@ -9367,6 +9308,9 @@ CT_XStringElement* CT_XStringElement::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has__any);
+        
+    
     if (m_has__any)
     {
         m__any->toXml(_outStream);
@@ -9514,6 +9458,12 @@ CT_Extension* CT_Extension::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_xdr_from);
+        
+    
+        assert(m_has_xdr_to);
+        
+    
     if (m_has_xdr_from)
     {
         m_xdr_from->toXmlElem("xdr:from", "", _outStream);
@@ -9672,7 +9622,8 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
 
     // CT_CalcChain
     CT_CalcChain::CT_CalcChain()
-
+    :m_has_extLst(false),
+    m_extLst(NULL)
     {
     }
     CT_CalcChain::~CT_CalcChain()
@@ -9686,12 +9637,28 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_CalcChain::add_extLst()
+    bool CT_CalcChain::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_CalcChain::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_CalcChain::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_CalcChain::clear()
@@ -9704,6 +9671,15 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_CalcChain::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -9718,6 +9694,11 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_c));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -9728,14 +9709,13 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -9754,9 +9734,7 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
     // CT_CalcChain::ChildGroup_1
     CT_CalcChain::ChildGroup_1::ChildGroup_1()
     :m_has_c(false),
-    m_c(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_c(NULL)
     {
     }
     bool CT_CalcChain::ChildGroup_1::has_c() const
@@ -9766,15 +9744,6 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
 
     CT_CalcCell* CT_CalcChain::ChildGroup_1::mutable_c()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_c = true;
     if (!m_c)
@@ -9791,40 +9760,6 @@ CT_ExtensionList* CT_ExtensionList::default_instance_ = NULL;
         return *m_c;
     }
     return CT_CalcCell::default_instance();
-    }
-
-    bool CT_CalcChain::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_CalcChain::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_c = false;
-    
-    if (m_c)
-    {
-        delete m_c;
-        m_c = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_CalcChain::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_CalcChain* CT_CalcChain::default_instance_ = NULL;
@@ -10198,6 +10133,12 @@ CT_CalcCell* CT_CalcCell::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_authors);
+        
+    
+        assert(m_has_commentList);
+        
+    
     if (m_has_authors)
     {
         m_authors->toXmlElem("main:authors", "", _outStream);
@@ -10573,6 +10514,9 @@ CT_CommentList* CT_CommentList::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_text);
+        
+    
     if (m_has_text)
     {
         m_text->toXmlElem("main:text", "", _outStream);
@@ -10875,6 +10819,9 @@ CT_Comment* CT_Comment::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_anchor);
+        
+    
     if (m_has_anchor)
     {
         m_anchor->toXmlElem("main:anchor", "", _outStream);
@@ -11155,6 +11102,17 @@ CT_CommentPr* CT_CommentPr::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_Schema));
+        assert(1 <= elemCnt);
+    }
+    
+    
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_Map));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -11348,6 +11306,9 @@ CT_MapInfo* CT_MapInfo::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has__any);
+        
+    
     if (m_has__any)
     {
         m__any->toXml(_outStream);
@@ -11585,6 +11546,7 @@ CT_Schema* CT_Schema::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_DataBinding)
     {
         m_DataBinding->toXmlElem("main:DataBinding", "", _outStream);
@@ -11825,6 +11787,9 @@ CT_Map* CT_Map::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has__any);
+        
+    
     if (m_has__any)
     {
         m__any->toXml(_outStream);
@@ -11963,6 +11928,11 @@ CT_DataBinding* CT_DataBinding::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_connection));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -12509,6 +12479,7 @@ CT_Connections* CT_Connections::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_dbPr)
     {
         m_dbPr->toXmlElem("main:dbPr", "", _outStream);
@@ -13583,6 +13554,7 @@ CT_OlapPr* CT_OlapPr::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_tables)
     {
         m_tables->toXmlElem("main:tables", "", _outStream);
@@ -13874,6 +13846,11 @@ CT_WebPr* CT_WebPr::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_parameter));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -14869,6 +14846,7 @@ CT_TableMissing* CT_TableMissing::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_textFields)
     {
         m_textFields->toXmlElem("main:textFields", "", _outStream);
@@ -15216,6 +15194,11 @@ CT_TextPr* CT_TextPr::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_textField));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -16016,6 +15999,12 @@ CT_TextField* CT_TextField::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_cacheSource);
+        
+    
+        assert(m_has_cacheFields);
+        
+    
     if (m_has_cacheSource)
     {
         m_cacheSource->toXmlElem("main:cacheSource", "", _outStream);
@@ -16537,6 +16526,8 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
     m_sharedItems(NULL),
     m_has_fieldGroup(false),
     m_fieldGroup(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
     m_has_name_attr(false),
     m_name_attr(NULL),
     m_has_caption_attr(false),
@@ -16624,12 +16615,28 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_CacheField::add_extLst()
+    bool CT_CacheField::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_CacheField::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_CacheField::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_CacheField::clear()
@@ -16729,6 +16736,15 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_CacheField::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -16819,6 +16835,7 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_sharedItems)
     {
         m_sharedItems->toXmlElem("main:sharedItems", "", _outStream);
@@ -16841,14 +16858,13 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -17095,9 +17111,7 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
     // CT_CacheField::ChildGroup_1
     CT_CacheField::ChildGroup_1::ChildGroup_1()
     :m_has_mpMap(false),
-    m_mpMap(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_mpMap(NULL)
     {
     }
     bool CT_CacheField::ChildGroup_1::has_mpMap() const
@@ -17107,15 +17121,6 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
 
     CT_X* CT_CacheField::ChildGroup_1::mutable_mpMap()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_mpMap = true;
     if (!m_mpMap)
@@ -17132,40 +17137,6 @@ CT_CacheFields* CT_CacheFields::default_instance_ = NULL;
         return *m_mpMap;
     }
     return CT_X::default_instance();
-    }
-
-    bool CT_CacheField::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_CacheField::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_mpMap = false;
-    
-    if (m_mpMap)
-    {
-        delete m_mpMap;
-        m_mpMap = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_CacheField::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_CacheField* CT_CacheField::default_instance_ = NULL;
@@ -17380,6 +17351,13 @@ CT_CacheField* CT_CacheField::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[3] = {m_has_worksheetSource, m_has_consolidation, m_has_extLst};
+        int cnt = count(elemHasValueList, elemHasValueList + 3, true);
+        assert(cnt == 0 || cnt == 1);
+    }
+    
+    
     if (m_has_worksheetSource)
     {
         m_worksheetSource->toXmlElem("main:worksheetSource", "", _outStream);
@@ -17730,6 +17708,9 @@ CT_WorksheetSource* CT_WorksheetSource::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_rangeSets);
+        
+    
     if (m_has_pages)
     {
         m_pages->toXmlElem("main:pages", "", _outStream);
@@ -17819,6 +17800,11 @@ CT_Consolidation* CT_Consolidation::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_page));
+        assert(1 <= elemCnt && elemCnt <= 4);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -18138,6 +18124,11 @@ CT_PageItem* CT_PageItem::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_rangeSet));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -20924,6 +20915,7 @@ CT_Boolean* CT_Boolean::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_tpls)
     {
         m_tpls->toXmlElem("main:tpls", "", _outStream);
@@ -22107,6 +22099,7 @@ CT_DateTime* CT_DateTime::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_rangePr)
     {
         m_rangePr->toXmlElem("main:rangePr", "", _outStream);
@@ -22478,6 +22471,11 @@ CT_RangePr* CT_RangePr::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_x));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -23160,7 +23158,9 @@ CT_GroupItems* CT_GroupItems::default_instance_ = NULL;
 
     // CT_PivotCacheRecords
     CT_PivotCacheRecords::CT_PivotCacheRecords()
-    :m_has_count_attr(false),
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_count_attr(false),
     m_count_attr(0)
     {
     }
@@ -23175,12 +23175,28 @@ CT_GroupItems* CT_GroupItems::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_PivotCacheRecords::add_extLst()
+    bool CT_PivotCacheRecords::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_PivotCacheRecords::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_PivotCacheRecords::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_PivotCacheRecords::clear()
@@ -23196,6 +23212,15 @@ CT_GroupItems* CT_GroupItems::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_PivotCacheRecords::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -23225,14 +23250,13 @@ CT_GroupItems* CT_GroupItems::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -23267,9 +23291,7 @@ CT_GroupItems* CT_GroupItems::default_instance_ = NULL;
     // CT_PivotCacheRecords::ChildGroup_1
     CT_PivotCacheRecords::ChildGroup_1::ChildGroup_1()
     :m_has_r(false),
-    m_r(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_r(NULL)
     {
     }
     bool CT_PivotCacheRecords::ChildGroup_1::has_r() const
@@ -23279,15 +23301,6 @@ CT_GroupItems* CT_GroupItems::default_instance_ = NULL;
 
     CT_Record* CT_PivotCacheRecords::ChildGroup_1::mutable_r()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_r = true;
     if (!m_r)
@@ -23304,40 +23317,6 @@ CT_GroupItems* CT_GroupItems::default_instance_ = NULL;
         return *m_r;
     }
     return CT_Record::default_instance();
-    }
-
-    bool CT_PivotCacheRecords::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_PivotCacheRecords::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_r = false;
-    
-    if (m_r)
-    {
-        delete m_r;
-        m_r = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_PivotCacheRecords::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_PivotCacheRecords* CT_PivotCacheRecords::default_instance_ = NULL;
@@ -25175,6 +25154,7 @@ CT_CacheHierarchies* CT_CacheHierarchies::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_fieldsUsage)
     {
         m_fieldsUsage->toXmlElem("main:fieldsUsage", "", _outStream);
@@ -25824,6 +25804,11 @@ CT_FieldUsage* CT_FieldUsage::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_groupLevel));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -26045,6 +26030,7 @@ CT_GroupLevels* CT_GroupLevels::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_groups)
     {
         m_groups->toXmlElem("main:groups", "", _outStream);
@@ -26190,6 +26176,11 @@ CT_GroupLevel* CT_GroupLevel::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_group));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -26400,6 +26391,9 @@ CT_Groups* CT_Groups::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_groupMembers);
+        
+    
     if (m_has_groupMembers)
     {
         m_groupMembers->toXmlElem("main:groupMembers", "", _outStream);
@@ -26563,6 +26557,11 @@ CT_LevelGroup* CT_LevelGroup::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_groupMember));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -26933,6 +26932,7 @@ CT_GroupMember* CT_GroupMember::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_entries)
     {
         m_entries->toXmlElem("main:entries", "", _outStream);
@@ -27615,6 +27615,11 @@ CT_PCDSDTCEntries* CT_PCDSDTCEntries::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_tpl));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -27854,6 +27859,11 @@ CT_Tuple* CT_Tuple::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_set));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -27931,7 +27941,9 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
 
     // CT_Set
     CT_Set::CT_Set()
-    :m_has_count_attr(false),
+    :m_has_sortByTuple(false),
+    m_sortByTuple(NULL),
+    m_has_count_attr(false),
     m_count_attr(0),
     m_has_maxRank_attr(false),
     m_maxRank_attr(0),
@@ -27954,12 +27966,28 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_Tuples* CT_Set::add_sortByTuple()
+    bool CT_Set::has_sortByTuple() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_Tuples* pNewChild = pChildGroup->mutable_sortByTuple();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_sortByTuple;
+    }
+
+    CT_Tuples* CT_Set::mutable_sortByTuple()
+    {    
+    m_has_sortByTuple = true;
+    if (!m_sortByTuple)
+    {
+        m_sortByTuple = new CT_Tuples();
+    }
+    return m_sortByTuple;
+    }
+
+    const CT_Tuples& CT_Set::get_sortByTuple() const
+    {    
+    if (m_sortByTuple)
+    {
+        return *m_sortByTuple;
+    }
+    return CT_Tuples::default_instance();
     }
 
     void CT_Set::clear()
@@ -27999,6 +28027,15 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_sortByTuple = false;
+    
+    if (m_sortByTuple)
+    {
+        delete m_sortByTuple;
+        m_sortByTuple = NULL;
+    }
+    
     }
 
     void CT_Set::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -28052,14 +28089,13 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_sortByTuple())
-    {
-        (*iter)->get_sortByTuple().toXmlElem("main:sortByTuple", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_sortByTuple)
+    {
+        m_sortByTuple->toXmlElem("main:sortByTuple", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -28166,9 +28202,7 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
     // CT_Set::ChildGroup_1
     CT_Set::ChildGroup_1::ChildGroup_1()
     :m_has_tpls(false),
-    m_tpls(NULL),
-    m_has_sortByTuple(false),
-    m_sortByTuple(NULL)
+    m_tpls(NULL)
     {
     }
     bool CT_Set::ChildGroup_1::has_tpls() const
@@ -28178,15 +28212,6 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
 
     CT_Tuples* CT_Set::ChildGroup_1::mutable_tpls()
     {    
-    
-    m_has_sortByTuple = false;
-    
-    if (m_sortByTuple)
-    {
-        delete m_sortByTuple;
-        m_sortByTuple = NULL;
-    }
-    ;
     
     m_has_tpls = true;
     if (!m_tpls)
@@ -28201,40 +28226,6 @@ CT_Sets* CT_Sets::default_instance_ = NULL;
     if (m_tpls)
     {
         return *m_tpls;
-    }
-    return CT_Tuples::default_instance();
-    }
-
-    bool CT_Set::ChildGroup_1::has_sortByTuple() const
-    {    
-    return m_has_sortByTuple;
-    }
-
-    CT_Tuples* CT_Set::ChildGroup_1::mutable_sortByTuple()
-    {    
-    
-    m_has_tpls = false;
-    
-    if (m_tpls)
-    {
-        delete m_tpls;
-        m_tpls = NULL;
-    }
-    ;
-    
-    m_has_sortByTuple = true;
-    if (!m_sortByTuple)
-    {
-        m_sortByTuple = new CT_Tuples();
-    }
-    return m_sortByTuple;
-    }
-
-    const CT_Tuples& CT_Set::ChildGroup_1::get_sortByTuple() const
-    {    
-    if (m_sortByTuple)
-    {
-        return *m_sortByTuple;
     }
     return CT_Tuples::default_instance();
     }
@@ -28289,6 +28280,11 @@ CT_Set* CT_Set::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_query));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -28437,6 +28433,7 @@ CT_QueryCache* CT_QueryCache::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_tpls)
     {
         m_tpls->toXmlElem("main:tpls", "", _outStream);
@@ -28524,6 +28521,11 @@ CT_Query* CT_Query::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_calculatedItem));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -28718,6 +28720,9 @@ CT_CalculatedItems* CT_CalculatedItems::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_pivotArea);
+        
+    
     if (m_has_pivotArea)
     {
         m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);
@@ -28827,6 +28832,11 @@ CT_CalculatedItem* CT_CalculatedItem::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_calculatedMember));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -29065,6 +29075,7 @@ CT_CalculatedMembers* CT_CalculatedMembers::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -30645,6 +30656,9 @@ CT_CalculatedMember* CT_CalculatedMember::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_location);
+        
+    
     if (m_has_location)
     {
         m_location->toXmlElem("main:location", "", _outStream);
@@ -32147,6 +32161,11 @@ CT_Location* CT_Location::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pivotField));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -32911,6 +32930,7 @@ CT_PivotFields* CT_PivotFields::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_items)
     {
         m_items->toXmlElem("main:items", "", _outStream);
@@ -33790,6 +33810,9 @@ CT_PivotField* CT_PivotField::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_pivotArea);
+        
+    
     if (m_has_pivotArea)
     {
         m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);
@@ -33857,6 +33880,11 @@ CT_AutoSortScope* CT_AutoSortScope::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_item));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -34333,6 +34361,11 @@ CT_Item* CT_Item::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pageField));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -34530,6 +34563,7 @@ CT_PageFields* CT_PageFields::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -34685,6 +34719,11 @@ CT_PageField* CT_PageField::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_dataField));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -34917,6 +34956,7 @@ CT_DataFields* CT_DataFields::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -35113,6 +35153,11 @@ CT_DataField* CT_DataField::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_i));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -35236,6 +35281,11 @@ CT_rowItems* CT_rowItems::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_i));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -35610,6 +35660,11 @@ CT_X* CT_X::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_field));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -35733,6 +35788,11 @@ CT_RowFields* CT_RowFields::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_field));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -35918,6 +35978,11 @@ CT_Field* CT_Field::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_format));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -36118,6 +36183,9 @@ CT_Formats* CT_Formats::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_pivotArea);
+        
+    
     if (m_has_pivotArea)
     {
         m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);
@@ -36231,6 +36299,11 @@ CT_Format* CT_Format::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_conditionalFormat));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -36442,6 +36515,9 @@ CT_ConditionalFormats* CT_ConditionalFormats::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_pivotAreas);
+        
+    
     if (m_has_pivotAreas)
     {
         m_pivotAreas->toXmlElem("main:pivotAreas", "", _outStream);
@@ -36696,6 +36772,11 @@ CT_PivotAreas* CT_PivotAreas::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_chartFormat));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -36859,6 +36940,9 @@ CT_ChartFormats* CT_ChartFormats::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_pivotArea);
+        
+    
     if (m_has_pivotArea)
     {
         m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);
@@ -36975,6 +37059,11 @@ CT_ChartFormat* CT_ChartFormat::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pivotHierarchy));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -37054,6 +37143,8 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
     CT_PivotHierarchy::CT_PivotHierarchy()
     :m_has_mps(false),
     m_mps(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
     m_has_outline_attr(false),
     m_outline_attr(false),
     m_has_multipleItemSelectionAllowed_attr(false),
@@ -37113,12 +37204,28 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_PivotHierarchy::add_extLst()
+    bool CT_PivotHierarchy::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_PivotHierarchy::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_PivotHierarchy::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_PivotHierarchy::clear()
@@ -37179,6 +37286,15 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_PivotHierarchy::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -37257,6 +37373,7 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_mps)
     {
         m_mps->toXmlElem("main:mps", "", _outStream);
@@ -37273,14 +37390,13 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -37479,9 +37595,7 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
     // CT_PivotHierarchy::ChildGroup_1
     CT_PivotHierarchy::ChildGroup_1::ChildGroup_1()
     :m_has_members(false),
-    m_members(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_members(NULL)
     {
     }
     bool CT_PivotHierarchy::ChildGroup_1::has_members() const
@@ -37491,15 +37605,6 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
 
     CT_Members* CT_PivotHierarchy::ChildGroup_1::mutable_members()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_members = true;
     if (!m_members)
@@ -37516,40 +37621,6 @@ CT_PivotHierarchies* CT_PivotHierarchies::default_instance_ = NULL;
         return *m_members;
     }
     return CT_Members::default_instance();
-    }
-
-    bool CT_PivotHierarchy::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_PivotHierarchy::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_members = false;
-    
-    if (m_members)
-    {
-        delete m_members;
-        m_members = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_PivotHierarchy::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_PivotHierarchy* CT_PivotHierarchy::default_instance_ = NULL;
@@ -37602,6 +37673,11 @@ CT_PivotHierarchy* CT_PivotHierarchy::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_rowHierarchyUsage));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -37726,6 +37802,11 @@ CT_RowHierarchiesUsage* CT_RowHierarchiesUsage::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_colHierarchyUsage));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -37911,6 +37992,11 @@ CT_HierarchyUsage* CT_HierarchyUsage::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_mp));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -38333,6 +38419,11 @@ CT_MemberProperty* CT_MemberProperty::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_member));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -39797,6 +39888,9 @@ CT_PivotFilters* CT_PivotFilters::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_autoFilter);
+        
+    
     if (m_has_autoFilter)
     {
         m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);
@@ -40258,6 +40352,7 @@ CT_PivotFilter* CT_PivotFilter::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_references)
     {
         m_references->toXmlElem("main:references", "", _outStream);
@@ -40536,6 +40631,11 @@ CT_PivotArea* CT_PivotArea::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_reference));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -40613,7 +40713,9 @@ CT_PivotAreaReferences* CT_PivotAreaReferences::default_instance_ = NULL;
 
     // CT_PivotAreaReference
     CT_PivotAreaReference::CT_PivotAreaReference()
-    :m_has_field_attr(false),
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_field_attr(false),
     m_field_attr(0),
     m_has_count_attr(false),
     m_count_attr(0),
@@ -40660,12 +40762,28 @@ CT_PivotAreaReferences* CT_PivotAreaReferences::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_PivotAreaReference::add_extLst()
+    bool CT_PivotAreaReference::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_PivotAreaReference::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_PivotAreaReference::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_PivotAreaReference::clear()
@@ -40729,6 +40847,15 @@ CT_PivotAreaReferences* CT_PivotAreaReferences::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_PivotAreaReference::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -40854,14 +40981,13 @@ CT_PivotAreaReferences* CT_PivotAreaReferences::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -41152,9 +41278,7 @@ CT_PivotAreaReferences* CT_PivotAreaReferences::default_instance_ = NULL;
     // CT_PivotAreaReference::ChildGroup_1
     CT_PivotAreaReference::ChildGroup_1::ChildGroup_1()
     :m_has_x(false),
-    m_x(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_x(NULL)
     {
     }
     bool CT_PivotAreaReference::ChildGroup_1::has_x() const
@@ -41164,15 +41288,6 @@ CT_PivotAreaReferences* CT_PivotAreaReferences::default_instance_ = NULL;
 
     CT_Index* CT_PivotAreaReference::ChildGroup_1::mutable_x()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_x = true;
     if (!m_x)
@@ -41189,40 +41304,6 @@ CT_PivotAreaReferences* CT_PivotAreaReferences::default_instance_ = NULL;
         return *m_x;
     }
     return CT_Index::default_instance();
-    }
-
-    bool CT_PivotAreaReference::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_PivotAreaReference::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_x = false;
-    
-    if (m_x)
-    {
-        delete m_x;
-        m_x = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_PivotAreaReference::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_PivotAreaReference* CT_PivotAreaReference::default_instance_ = NULL;
@@ -41632,6 +41713,7 @@ CT_Index* CT_Index::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_queryTableRefresh)
     {
         m_queryTableRefresh->toXmlElem("main:queryTableRefresh", "", _outStream);
@@ -42254,6 +42336,9 @@ CT_QueryTable* CT_QueryTable::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_queryTableFields);
+        
+    
     if (m_has_queryTableFields)
     {
         m_queryTableFields->toXmlElem("main:queryTableFields", "", _outStream);
@@ -42451,6 +42536,11 @@ CT_QueryTableRefresh* CT_QueryTableRefresh::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_deletedField));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -42860,6 +42950,7 @@ CT_QueryTableFields* CT_QueryTableFields::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -42997,7 +43088,9 @@ CT_QueryTableField* CT_QueryTableField::default_instance_ = NULL;
 
     // CT_Sst
     CT_Sst::CT_Sst()
-    :m_has_count_attr(false),
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_count_attr(false),
     m_count_attr(0),
     m_has_uniqueCount_attr(false),
     m_uniqueCount_attr(0)
@@ -43014,12 +43107,28 @@ CT_QueryTableField* CT_QueryTableField::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_Sst::add_extLst()
+    bool CT_Sst::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_Sst::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_Sst::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_Sst::clear()
@@ -43038,6 +43147,15 @@ CT_QueryTableField* CT_QueryTableField::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Sst::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -43073,14 +43191,13 @@ CT_QueryTableField* CT_QueryTableField::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -43131,9 +43248,7 @@ CT_QueryTableField* CT_QueryTableField::default_instance_ = NULL;
     // CT_Sst::ChildGroup_1
     CT_Sst::ChildGroup_1::ChildGroup_1()
     :m_has_si(false),
-    m_si(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_si(NULL)
     {
     }
     bool CT_Sst::ChildGroup_1::has_si() const
@@ -43143,15 +43258,6 @@ CT_QueryTableField* CT_QueryTableField::default_instance_ = NULL;
 
     CT_Rst* CT_Sst::ChildGroup_1::mutable_si()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_si = true;
     if (!m_si)
@@ -43168,40 +43274,6 @@ CT_QueryTableField* CT_QueryTableField::default_instance_ = NULL;
         return *m_si;
     }
     return CT_Rst::default_instance();
-    }
-
-    bool CT_Sst::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_Sst::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_si = false;
-    
-    if (m_si)
-    {
-        delete m_si;
-        m_si = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_Sst::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_Sst* CT_Sst::default_instance_ = NULL;
@@ -43283,6 +43355,9 @@ CT_Sst* CT_Sst::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_t);
+        
+    
     if (m_has_t)
     {
         _outStream << "<main:t>" << m_t->toString() << "</main:t>";
@@ -43425,6 +43500,9 @@ CT_PhoneticRun* CT_PhoneticRun::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_t);
+        
+    
     if (m_has_rPr)
     {
         m_rPr->toXmlElem("main:rPr", "", _outStream);
@@ -46030,7 +46108,9 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
     // CT_Rst
     CT_Rst::CT_Rst()
     :m_has_t(false),
-    m_t(NULL)
+    m_t(NULL),
+    m_has_phoneticPr(false),
+    m_phoneticPr(NULL)
     {
     }
     CT_Rst::~CT_Rst()
@@ -46076,12 +46156,28 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_PhoneticPr* CT_Rst::add_phoneticPr()
+    bool CT_Rst::has_phoneticPr() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PhoneticPr* pNewChild = pChildGroup->mutable_phoneticPr();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_phoneticPr;
+    }
+
+    CT_PhoneticPr* CT_Rst::mutable_phoneticPr()
+    {    
+    m_has_phoneticPr = true;
+    if (!m_phoneticPr)
+    {
+        m_phoneticPr = new CT_PhoneticPr();
+    }
+    return m_phoneticPr;
+    }
+
+    const CT_PhoneticPr& CT_Rst::get_phoneticPr() const
+    {    
+    if (m_phoneticPr)
+    {
+        return *m_phoneticPr;
+    }
+    return CT_PhoneticPr::default_instance();
     }
 
     void CT_Rst::clear()
@@ -46103,6 +46199,15 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_phoneticPr = false;
+    
+    if (m_phoneticPr)
+    {
+        delete m_phoneticPr;
+        m_phoneticPr = NULL;
+    }
+    
     }
 
     void CT_Rst::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -46116,6 +46221,7 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_t)
     {
         _outStream << "<main:t>" << m_t->toString() << "</main:t>";
@@ -46139,14 +46245,13 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_phoneticPr())
-    {
-        (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_phoneticPr)
+    {
+        m_phoneticPr->toXmlElem("main:phoneticPr", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -46167,9 +46272,7 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
     :m_has_r(false),
     m_r(NULL),
     m_has_rPh(false),
-    m_rPh(NULL),
-    m_has_phoneticPr(false),
-    m_phoneticPr(NULL)
+    m_rPh(NULL)
     {
     }
     bool CT_Rst::ChildGroup_1::has_r() const
@@ -46186,15 +46289,6 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
     {
         delete m_rPh;
         m_rPh = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
     }
     ;
     
@@ -46232,15 +46326,6 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
     }
     ;
     
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
     m_has_rPh = true;
     if (!m_rPh)
     {
@@ -46256,49 +46341,6 @@ CT_RPrElt* CT_RPrElt::default_instance_ = NULL;
         return *m_rPh;
     }
     return CT_PhoneticRun::default_instance();
-    }
-
-    bool CT_Rst::ChildGroup_1::has_phoneticPr() const
-    {    
-    return m_has_phoneticPr;
-    }
-
-    CT_PhoneticPr* CT_Rst::ChildGroup_1::mutable_phoneticPr()
-    {    
-    
-    m_has_r = false;
-    
-    if (m_r)
-    {
-        delete m_r;
-        m_r = NULL;
-    }
-    ;
-    
-    m_has_rPh = false;
-    
-    if (m_rPh)
-    {
-        delete m_rPh;
-        m_rPh = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = true;
-    if (!m_phoneticPr)
-    {
-        m_phoneticPr = new CT_PhoneticPr();
-    }
-    return m_phoneticPr;
-    }
-
-    const CT_PhoneticPr& CT_Rst::ChildGroup_1::get_phoneticPr() const
-    {    
-    if (m_phoneticPr)
-    {
-        return *m_phoneticPr;
-    }
-    return CT_PhoneticPr::default_instance();
     }
 
 CT_Rst* CT_Rst::default_instance_ = NULL;
@@ -46629,6 +46671,11 @@ CT_PhoneticPr* CT_PhoneticPr::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_header));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -48858,6 +48905,9 @@ CT_Revisions* CT_Revisions::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_sheetIdMap);
+        
+    
     if (m_has_sheetIdMap)
     {
         m_sheetIdMap->toXmlElem("main:sheetIdMap", "", _outStream);
@@ -49062,6 +49112,11 @@ CT_RevisionHeader* CT_RevisionHeader::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sheetId));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -49246,6 +49301,11 @@ CT_SheetId* CT_SheetId::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_reviewed));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -50910,6 +50970,7 @@ CT_RevisionCustomView* CT_RevisionCustomView::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -51594,6 +51655,9 @@ CT_RevisionInsertSheet* CT_RevisionInsertSheet::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_nc);
+        
+    
     if (m_has_oc)
     {
         m_oc->toXmlElem("main:oc", "", _outStream);
@@ -52027,6 +52091,7 @@ CT_RevisionCellChange* CT_RevisionCellChange::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_dxf)
     {
         m_dxf->toXmlElem("main:dxf", "", _outStream);
@@ -53265,6 +53330,7 @@ CT_RevisionComment* CT_RevisionComment::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_formula)
     {
         _outStream << "<main:formula>" << m_formula->toString() << "</main:formula>";
@@ -54040,6 +54106,11 @@ CT_RevisionQueryTableField* CT_RevisionQueryTableField::default_instance_ = NULL
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_userInfo));
+        assert(0 <= elemCnt && elemCnt <= 256);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -54226,6 +54297,7 @@ CT_Users* CT_Users::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -54326,7 +54398,49 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
     m_has_sheetViews(false),
     m_sheetViews(NULL),
     m_has_sheetFormatPr(false),
-    m_sheetFormatPr(NULL)
+    m_sheetFormatPr(NULL),
+    m_has_sheetData(false),
+    m_sheetData(NULL),
+    m_has_sheetProtection(false),
+    m_sheetProtection(NULL),
+    m_has_autoFilter(false),
+    m_autoFilter(NULL),
+    m_has_sortState(false),
+    m_sortState(NULL),
+    m_has_dataConsolidate(false),
+    m_dataConsolidate(NULL),
+    m_has_customSheetViews(false),
+    m_customSheetViews(NULL),
+    m_has_phoneticPr(false),
+    m_phoneticPr(NULL),
+    m_has_printOptions(false),
+    m_printOptions(NULL),
+    m_has_pageMargins(false),
+    m_pageMargins(NULL),
+    m_has_pageSetup(false),
+    m_pageSetup(NULL),
+    m_has_headerFooter(false),
+    m_headerFooter(NULL),
+    m_has_rowBreaks(false),
+    m_rowBreaks(NULL),
+    m_has_colBreaks(false),
+    m_colBreaks(NULL),
+    m_has_customProperties(false),
+    m_customProperties(NULL),
+    m_has_drawing(false),
+    m_drawing(NULL),
+    m_has_legacyDrawing(false),
+    m_legacyDrawing(NULL),
+    m_has_legacyDrawingHF(false),
+    m_legacyDrawingHF(NULL),
+    m_has_drawingHF(false),
+    m_drawingHF(NULL),
+    m_has_picture(false),
+    m_picture(NULL),
+    m_has_oleObjects(false),
+    m_oleObjects(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
     {
     }
     CT_Macrosheet::~CT_Macrosheet()
@@ -54436,180 +54550,516 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_SheetData* CT_Macrosheet::add_sheetData()
+    bool CT_Macrosheet::has_sheetData() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SheetData* pNewChild = pChildGroup->mutable_sheetData();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_sheetData;
     }
 
-    CT_SheetProtection* CT_Macrosheet::add_sheetProtection()
+    CT_SheetData* CT_Macrosheet::mutable_sheetData()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SheetProtection* pNewChild = pChildGroup->mutable_sheetProtection();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_sheetData = true;
+    if (!m_sheetData)
+    {
+        m_sheetData = new CT_SheetData();
+    }
+    return m_sheetData;
     }
 
-    CT_AutoFilter* CT_Macrosheet::add_autoFilter()
+    const CT_SheetData& CT_Macrosheet::get_sheetData() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_AutoFilter* pNewChild = pChildGroup->mutable_autoFilter();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_sheetData)
+    {
+        return *m_sheetData;
+    }
+    return CT_SheetData::default_instance();
     }
 
-    CT_SortState* CT_Macrosheet::add_sortState()
+    bool CT_Macrosheet::has_sheetProtection() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SortState* pNewChild = pChildGroup->mutable_sortState();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_sheetProtection;
     }
 
-    CT_DataConsolidate* CT_Macrosheet::add_dataConsolidate()
+    CT_SheetProtection* CT_Macrosheet::mutable_sheetProtection()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_DataConsolidate* pNewChild = pChildGroup->mutable_dataConsolidate();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_sheetProtection = true;
+    if (!m_sheetProtection)
+    {
+        m_sheetProtection = new CT_SheetProtection();
+    }
+    return m_sheetProtection;
     }
 
-    CT_CustomSheetViews* CT_Macrosheet::add_customSheetViews()
+    const CT_SheetProtection& CT_Macrosheet::get_sheetProtection() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_CustomSheetViews* pNewChild = pChildGroup->mutable_customSheetViews();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_sheetProtection)
+    {
+        return *m_sheetProtection;
+    }
+    return CT_SheetProtection::default_instance();
     }
 
-    CT_PhoneticPr* CT_Macrosheet::add_phoneticPr()
+    bool CT_Macrosheet::has_autoFilter() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PhoneticPr* pNewChild = pChildGroup->mutable_phoneticPr();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_autoFilter;
+    }
+
+    CT_AutoFilter* CT_Macrosheet::mutable_autoFilter()
+    {    
+    m_has_autoFilter = true;
+    if (!m_autoFilter)
+    {
+        m_autoFilter = new CT_AutoFilter();
+    }
+    return m_autoFilter;
+    }
+
+    const CT_AutoFilter& CT_Macrosheet::get_autoFilter() const
+    {    
+    if (m_autoFilter)
+    {
+        return *m_autoFilter;
+    }
+    return CT_AutoFilter::default_instance();
+    }
+
+    bool CT_Macrosheet::has_sortState() const
+    {    
+    return m_has_sortState;
+    }
+
+    CT_SortState* CT_Macrosheet::mutable_sortState()
+    {    
+    m_has_sortState = true;
+    if (!m_sortState)
+    {
+        m_sortState = new CT_SortState();
+    }
+    return m_sortState;
+    }
+
+    const CT_SortState& CT_Macrosheet::get_sortState() const
+    {    
+    if (m_sortState)
+    {
+        return *m_sortState;
+    }
+    return CT_SortState::default_instance();
+    }
+
+    bool CT_Macrosheet::has_dataConsolidate() const
+    {    
+    return m_has_dataConsolidate;
+    }
+
+    CT_DataConsolidate* CT_Macrosheet::mutable_dataConsolidate()
+    {    
+    m_has_dataConsolidate = true;
+    if (!m_dataConsolidate)
+    {
+        m_dataConsolidate = new CT_DataConsolidate();
+    }
+    return m_dataConsolidate;
+    }
+
+    const CT_DataConsolidate& CT_Macrosheet::get_dataConsolidate() const
+    {    
+    if (m_dataConsolidate)
+    {
+        return *m_dataConsolidate;
+    }
+    return CT_DataConsolidate::default_instance();
+    }
+
+    bool CT_Macrosheet::has_customSheetViews() const
+    {    
+    return m_has_customSheetViews;
+    }
+
+    CT_CustomSheetViews* CT_Macrosheet::mutable_customSheetViews()
+    {    
+    m_has_customSheetViews = true;
+    if (!m_customSheetViews)
+    {
+        m_customSheetViews = new CT_CustomSheetViews();
+    }
+    return m_customSheetViews;
+    }
+
+    const CT_CustomSheetViews& CT_Macrosheet::get_customSheetViews() const
+    {    
+    if (m_customSheetViews)
+    {
+        return *m_customSheetViews;
+    }
+    return CT_CustomSheetViews::default_instance();
+    }
+
+    bool CT_Macrosheet::has_phoneticPr() const
+    {    
+    return m_has_phoneticPr;
+    }
+
+    CT_PhoneticPr* CT_Macrosheet::mutable_phoneticPr()
+    {    
+    m_has_phoneticPr = true;
+    if (!m_phoneticPr)
+    {
+        m_phoneticPr = new CT_PhoneticPr();
+    }
+    return m_phoneticPr;
+    }
+
+    const CT_PhoneticPr& CT_Macrosheet::get_phoneticPr() const
+    {    
+    if (m_phoneticPr)
+    {
+        return *m_phoneticPr;
+    }
+    return CT_PhoneticPr::default_instance();
     }
 
     CT_ConditionalFormatting* CT_Macrosheet::add_conditionalFormatting()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_ConditionalFormatting* pNewChild = pChildGroup->mutable_conditionalFormatting();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
     }
 
-    CT_PrintOptions* CT_Macrosheet::add_printOptions()
+    bool CT_Macrosheet::has_printOptions() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PrintOptions* pNewChild = pChildGroup->mutable_printOptions();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_printOptions;
     }
 
-    CT_PageMargins* CT_Macrosheet::add_pageMargins()
+    CT_PrintOptions* CT_Macrosheet::mutable_printOptions()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PageMargins* pNewChild = pChildGroup->mutable_pageMargins();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_printOptions = true;
+    if (!m_printOptions)
+    {
+        m_printOptions = new CT_PrintOptions();
+    }
+    return m_printOptions;
     }
 
-    CT_PageSetup* CT_Macrosheet::add_pageSetup()
+    const CT_PrintOptions& CT_Macrosheet::get_printOptions() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PageSetup* pNewChild = pChildGroup->mutable_pageSetup();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_printOptions)
+    {
+        return *m_printOptions;
+    }
+    return CT_PrintOptions::default_instance();
     }
 
-    CT_HeaderFooter* CT_Macrosheet::add_headerFooter()
+    bool CT_Macrosheet::has_pageMargins() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_HeaderFooter* pNewChild = pChildGroup->mutable_headerFooter();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_pageMargins;
     }
 
-    CT_PageBreak* CT_Macrosheet::add_rowBreaks()
+    CT_PageMargins* CT_Macrosheet::mutable_pageMargins()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PageBreak* pNewChild = pChildGroup->mutable_rowBreaks();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_pageMargins = true;
+    if (!m_pageMargins)
+    {
+        m_pageMargins = new CT_PageMargins();
+    }
+    return m_pageMargins;
     }
 
-    CT_PageBreak* CT_Macrosheet::add_colBreaks()
+    const CT_PageMargins& CT_Macrosheet::get_pageMargins() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PageBreak* pNewChild = pChildGroup->mutable_colBreaks();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_pageMargins)
+    {
+        return *m_pageMargins;
+    }
+    return CT_PageMargins::default_instance();
     }
 
-    CT_CustomProperties* CT_Macrosheet::add_customProperties()
+    bool CT_Macrosheet::has_pageSetup() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_CustomProperties* pNewChild = pChildGroup->mutable_customProperties();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_pageSetup;
     }
 
-    CT_Drawing* CT_Macrosheet::add_drawing()
+    CT_PageSetup* CT_Macrosheet::mutable_pageSetup()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_Drawing* pNewChild = pChildGroup->mutable_drawing();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_pageSetup = true;
+    if (!m_pageSetup)
+    {
+        m_pageSetup = new CT_PageSetup();
+    }
+    return m_pageSetup;
     }
 
-    CT_LegacyDrawing* CT_Macrosheet::add_legacyDrawing()
+    const CT_PageSetup& CT_Macrosheet::get_pageSetup() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_LegacyDrawing* pNewChild = pChildGroup->mutable_legacyDrawing();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_pageSetup)
+    {
+        return *m_pageSetup;
+    }
+    return CT_PageSetup::default_instance();
     }
 
-    CT_LegacyDrawing* CT_Macrosheet::add_legacyDrawingHF()
+    bool CT_Macrosheet::has_headerFooter() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_LegacyDrawing* pNewChild = pChildGroup->mutable_legacyDrawingHF();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_headerFooter;
     }
 
-    CT_DrawingHF* CT_Macrosheet::add_drawingHF()
+    CT_HeaderFooter* CT_Macrosheet::mutable_headerFooter()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_DrawingHF* pNewChild = pChildGroup->mutable_drawingHF();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_headerFooter = true;
+    if (!m_headerFooter)
+    {
+        m_headerFooter = new CT_HeaderFooter();
+    }
+    return m_headerFooter;
     }
 
-    CT_SheetBackgroundPicture* CT_Macrosheet::add_picture()
+    const CT_HeaderFooter& CT_Macrosheet::get_headerFooter() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SheetBackgroundPicture* pNewChild = pChildGroup->mutable_picture();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_headerFooter)
+    {
+        return *m_headerFooter;
+    }
+    return CT_HeaderFooter::default_instance();
     }
 
-    CT_OleObjects* CT_Macrosheet::add_oleObjects()
+    bool CT_Macrosheet::has_rowBreaks() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_OleObjects* pNewChild = pChildGroup->mutable_oleObjects();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_rowBreaks;
     }
 
-    CT_ExtensionList* CT_Macrosheet::add_extLst()
+    CT_PageBreak* CT_Macrosheet::mutable_rowBreaks()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_rowBreaks = true;
+    if (!m_rowBreaks)
+    {
+        m_rowBreaks = new CT_PageBreak();
+    }
+    return m_rowBreaks;
+    }
+
+    const CT_PageBreak& CT_Macrosheet::get_rowBreaks() const
+    {    
+    if (m_rowBreaks)
+    {
+        return *m_rowBreaks;
+    }
+    return CT_PageBreak::default_instance();
+    }
+
+    bool CT_Macrosheet::has_colBreaks() const
+    {    
+    return m_has_colBreaks;
+    }
+
+    CT_PageBreak* CT_Macrosheet::mutable_colBreaks()
+    {    
+    m_has_colBreaks = true;
+    if (!m_colBreaks)
+    {
+        m_colBreaks = new CT_PageBreak();
+    }
+    return m_colBreaks;
+    }
+
+    const CT_PageBreak& CT_Macrosheet::get_colBreaks() const
+    {    
+    if (m_colBreaks)
+    {
+        return *m_colBreaks;
+    }
+    return CT_PageBreak::default_instance();
+    }
+
+    bool CT_Macrosheet::has_customProperties() const
+    {    
+    return m_has_customProperties;
+    }
+
+    CT_CustomProperties* CT_Macrosheet::mutable_customProperties()
+    {    
+    m_has_customProperties = true;
+    if (!m_customProperties)
+    {
+        m_customProperties = new CT_CustomProperties();
+    }
+    return m_customProperties;
+    }
+
+    const CT_CustomProperties& CT_Macrosheet::get_customProperties() const
+    {    
+    if (m_customProperties)
+    {
+        return *m_customProperties;
+    }
+    return CT_CustomProperties::default_instance();
+    }
+
+    bool CT_Macrosheet::has_drawing() const
+    {    
+    return m_has_drawing;
+    }
+
+    CT_Drawing* CT_Macrosheet::mutable_drawing()
+    {    
+    m_has_drawing = true;
+    if (!m_drawing)
+    {
+        m_drawing = new CT_Drawing();
+    }
+    return m_drawing;
+    }
+
+    const CT_Drawing& CT_Macrosheet::get_drawing() const
+    {    
+    if (m_drawing)
+    {
+        return *m_drawing;
+    }
+    return CT_Drawing::default_instance();
+    }
+
+    bool CT_Macrosheet::has_legacyDrawing() const
+    {    
+    return m_has_legacyDrawing;
+    }
+
+    CT_LegacyDrawing* CT_Macrosheet::mutable_legacyDrawing()
+    {    
+    m_has_legacyDrawing = true;
+    if (!m_legacyDrawing)
+    {
+        m_legacyDrawing = new CT_LegacyDrawing();
+    }
+    return m_legacyDrawing;
+    }
+
+    const CT_LegacyDrawing& CT_Macrosheet::get_legacyDrawing() const
+    {    
+    if (m_legacyDrawing)
+    {
+        return *m_legacyDrawing;
+    }
+    return CT_LegacyDrawing::default_instance();
+    }
+
+    bool CT_Macrosheet::has_legacyDrawingHF() const
+    {    
+    return m_has_legacyDrawingHF;
+    }
+
+    CT_LegacyDrawing* CT_Macrosheet::mutable_legacyDrawingHF()
+    {    
+    m_has_legacyDrawingHF = true;
+    if (!m_legacyDrawingHF)
+    {
+        m_legacyDrawingHF = new CT_LegacyDrawing();
+    }
+    return m_legacyDrawingHF;
+    }
+
+    const CT_LegacyDrawing& CT_Macrosheet::get_legacyDrawingHF() const
+    {    
+    if (m_legacyDrawingHF)
+    {
+        return *m_legacyDrawingHF;
+    }
+    return CT_LegacyDrawing::default_instance();
+    }
+
+    bool CT_Macrosheet::has_drawingHF() const
+    {    
+    return m_has_drawingHF;
+    }
+
+    CT_DrawingHF* CT_Macrosheet::mutable_drawingHF()
+    {    
+    m_has_drawingHF = true;
+    if (!m_drawingHF)
+    {
+        m_drawingHF = new CT_DrawingHF();
+    }
+    return m_drawingHF;
+    }
+
+    const CT_DrawingHF& CT_Macrosheet::get_drawingHF() const
+    {    
+    if (m_drawingHF)
+    {
+        return *m_drawingHF;
+    }
+    return CT_DrawingHF::default_instance();
+    }
+
+    bool CT_Macrosheet::has_picture() const
+    {    
+    return m_has_picture;
+    }
+
+    CT_SheetBackgroundPicture* CT_Macrosheet::mutable_picture()
+    {    
+    m_has_picture = true;
+    if (!m_picture)
+    {
+        m_picture = new CT_SheetBackgroundPicture();
+    }
+    return m_picture;
+    }
+
+    const CT_SheetBackgroundPicture& CT_Macrosheet::get_picture() const
+    {    
+    if (m_picture)
+    {
+        return *m_picture;
+    }
+    return CT_SheetBackgroundPicture::default_instance();
+    }
+
+    bool CT_Macrosheet::has_oleObjects() const
+    {    
+    return m_has_oleObjects;
+    }
+
+    CT_OleObjects* CT_Macrosheet::mutable_oleObjects()
+    {    
+    m_has_oleObjects = true;
+    if (!m_oleObjects)
+    {
+        m_oleObjects = new CT_OleObjects();
+    }
+    return m_oleObjects;
+    }
+
+    const CT_OleObjects& CT_Macrosheet::get_oleObjects() const
+    {    
+    if (m_oleObjects)
+    {
+        return *m_oleObjects;
+    }
+    return CT_OleObjects::default_instance();
+    }
+
+    bool CT_Macrosheet::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_Macrosheet::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_Macrosheet::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_Macrosheet::clear()
@@ -54658,6 +55108,204 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_sheetData = false;
+    
+    if (m_sheetData)
+    {
+        delete m_sheetData;
+        m_sheetData = NULL;
+    }
+    
+    
+    m_has_sheetProtection = false;
+    
+    if (m_sheetProtection)
+    {
+        delete m_sheetProtection;
+        m_sheetProtection = NULL;
+    }
+    
+    
+    m_has_autoFilter = false;
+    
+    if (m_autoFilter)
+    {
+        delete m_autoFilter;
+        m_autoFilter = NULL;
+    }
+    
+    
+    m_has_sortState = false;
+    
+    if (m_sortState)
+    {
+        delete m_sortState;
+        m_sortState = NULL;
+    }
+    
+    
+    m_has_dataConsolidate = false;
+    
+    if (m_dataConsolidate)
+    {
+        delete m_dataConsolidate;
+        m_dataConsolidate = NULL;
+    }
+    
+    
+    m_has_customSheetViews = false;
+    
+    if (m_customSheetViews)
+    {
+        delete m_customSheetViews;
+        m_customSheetViews = NULL;
+    }
+    
+    
+    m_has_phoneticPr = false;
+    
+    if (m_phoneticPr)
+    {
+        delete m_phoneticPr;
+        m_phoneticPr = NULL;
+    }
+    
+     
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+     
+    m_has_printOptions = false;
+    
+    if (m_printOptions)
+    {
+        delete m_printOptions;
+        m_printOptions = NULL;
+    }
+    
+    
+    m_has_pageMargins = false;
+    
+    if (m_pageMargins)
+    {
+        delete m_pageMargins;
+        m_pageMargins = NULL;
+    }
+    
+    
+    m_has_pageSetup = false;
+    
+    if (m_pageSetup)
+    {
+        delete m_pageSetup;
+        m_pageSetup = NULL;
+    }
+    
+    
+    m_has_headerFooter = false;
+    
+    if (m_headerFooter)
+    {
+        delete m_headerFooter;
+        m_headerFooter = NULL;
+    }
+    
+    
+    m_has_rowBreaks = false;
+    
+    if (m_rowBreaks)
+    {
+        delete m_rowBreaks;
+        m_rowBreaks = NULL;
+    }
+    
+    
+    m_has_colBreaks = false;
+    
+    if (m_colBreaks)
+    {
+        delete m_colBreaks;
+        m_colBreaks = NULL;
+    }
+    
+    
+    m_has_customProperties = false;
+    
+    if (m_customProperties)
+    {
+        delete m_customProperties;
+        m_customProperties = NULL;
+    }
+    
+    
+    m_has_drawing = false;
+    
+    if (m_drawing)
+    {
+        delete m_drawing;
+        m_drawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawing = false;
+    
+    if (m_legacyDrawing)
+    {
+        delete m_legacyDrawing;
+        m_legacyDrawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawingHF = false;
+    
+    if (m_legacyDrawingHF)
+    {
+        delete m_legacyDrawingHF;
+        m_legacyDrawingHF = NULL;
+    }
+    
+    
+    m_has_drawingHF = false;
+    
+    if (m_drawingHF)
+    {
+        delete m_drawingHF;
+        m_drawingHF = NULL;
+    }
+    
+    
+    m_has_picture = false;
+    
+    if (m_picture)
+    {
+        delete m_picture;
+        m_picture = NULL;
+    }
+    
+    
+    m_has_oleObjects = false;
+    
+    if (m_oleObjects)
+    {
+        delete m_oleObjects;
+        m_oleObjects = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Macrosheet::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -54671,6 +55319,7 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_sheetPr)
     {
         m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);
@@ -54705,161 +55354,149 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_sheetData())
+        }
+    }
+     
+        assert(m_has_sheetData);
+        
+    
+    if (m_has_sheetData)
     {
-        (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
+        m_sheetData->toXmlElem("main:sheetData", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_sheetProtection())
+    if (m_has_sheetProtection)
     {
-        (*iter)->get_sheetProtection().toXmlElem("main:sheetProtection", "", _outStream);
+        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_autoFilter())
+    if (m_has_autoFilter)
     {
-        (*iter)->get_autoFilter().toXmlElem("main:autoFilter", "", _outStream);
+        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_sortState())
+    if (m_has_sortState)
     {
-        (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
+        m_sortState->toXmlElem("main:sortState", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_dataConsolidate())
+    if (m_has_dataConsolidate)
     {
-        (*iter)->get_dataConsolidate().toXmlElem("main:dataConsolidate", "", _outStream);
+        m_dataConsolidate->toXmlElem("main:dataConsolidate", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_customSheetViews())
+    if (m_has_customSheetViews)
     {
-        (*iter)->get_customSheetViews().toXmlElem("main:customSheetViews", "", _outStream);
+        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_phoneticPr())
+    if (m_has_phoneticPr)
     {
-        (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
+        m_phoneticPr->toXmlElem("main:phoneticPr", "", _outStream);
     }
+     
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
     
-    
-    else 
     if ((*iter)->has_conditionalFormatting())
     {
         (*iter)->get_conditionalFormatting().toXmlElem("main:conditionalFormatting", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_printOptions())
-    {
-        (*iter)->get_printOptions().toXmlElem("main:printOptions", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_pageMargins())
-    {
-        (*iter)->get_pageMargins().toXmlElem("main:pageMargins", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_pageSetup())
-    {
-        (*iter)->get_pageSetup().toXmlElem("main:pageSetup", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_headerFooter())
-    {
-        (*iter)->get_headerFooter().toXmlElem("main:headerFooter", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_rowBreaks())
-    {
-        (*iter)->get_rowBreaks().toXmlElem("main:rowBreaks", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_colBreaks())
-    {
-        (*iter)->get_colBreaks().toXmlElem("main:colBreaks", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_customProperties())
-    {
-        (*iter)->get_customProperties().toXmlElem("main:customProperties", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_drawing())
-    {
-        (*iter)->get_drawing().toXmlElem("main:drawing", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_legacyDrawing())
-    {
-        (*iter)->get_legacyDrawing().toXmlElem("main:legacyDrawing", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_legacyDrawingHF())
-    {
-        (*iter)->get_legacyDrawingHF().toXmlElem("main:legacyDrawingHF", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_drawingHF())
-    {
-        (*iter)->get_drawingHF().toXmlElem("main:drawingHF", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_picture())
-    {
-        (*iter)->get_picture().toXmlElem("main:picture", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_oleObjects())
-    {
-        (*iter)->get_oleObjects().toXmlElem("main:oleObjects", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_printOptions)
+    {
+        m_printOptions->toXmlElem("main:printOptions", "", _outStream);
+    }
+    
+    
+    if (m_has_pageMargins)
+    {
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);
+    }
+    
+    
+    if (m_has_pageSetup)
+    {
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);
+    }
+    
+    
+    if (m_has_headerFooter)
+    {
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);
+    }
+    
+    
+    if (m_has_rowBreaks)
+    {
+        m_rowBreaks->toXmlElem("main:rowBreaks", "", _outStream);
+    }
+    
+    
+    if (m_has_colBreaks)
+    {
+        m_colBreaks->toXmlElem("main:colBreaks", "", _outStream);
+    }
+    
+    
+    if (m_has_customProperties)
+    {
+        m_customProperties->toXmlElem("main:customProperties", "", _outStream);
+    }
+    
+    
+    if (m_has_drawing)
+    {
+        m_drawing->toXmlElem("main:drawing", "", _outStream);
+    }
+    
+    
+    if (m_has_legacyDrawing)
+    {
+        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);
+    }
+    
+    
+    if (m_has_legacyDrawingHF)
+    {
+        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);
+    }
+    
+    
+    if (m_has_drawingHF)
+    {
+        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);
+    }
+    
+    
+    if (m_has_picture)
+    {
+        m_picture->toXmlElem("main:picture", "", _outStream);
+    }
+    
+    
+    if (m_has_oleObjects)
+    {
+        m_oleObjects->toXmlElem("main:oleObjects", "", _outStream);
+    }
+    
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -54878,51 +55515,7 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
     // CT_Macrosheet::ChildGroup_1
     CT_Macrosheet::ChildGroup_1::ChildGroup_1()
     :m_has_cols(false),
-    m_cols(NULL),
-    m_has_sheetData(false),
-    m_sheetData(NULL),
-    m_has_sheetProtection(false),
-    m_sheetProtection(NULL),
-    m_has_autoFilter(false),
-    m_autoFilter(NULL),
-    m_has_sortState(false),
-    m_sortState(NULL),
-    m_has_dataConsolidate(false),
-    m_dataConsolidate(NULL),
-    m_has_customSheetViews(false),
-    m_customSheetViews(NULL),
-    m_has_phoneticPr(false),
-    m_phoneticPr(NULL),
-    m_has_conditionalFormatting(false),
-    m_conditionalFormatting(NULL),
-    m_has_printOptions(false),
-    m_printOptions(NULL),
-    m_has_pageMargins(false),
-    m_pageMargins(NULL),
-    m_has_pageSetup(false),
-    m_pageSetup(NULL),
-    m_has_headerFooter(false),
-    m_headerFooter(NULL),
-    m_has_rowBreaks(false),
-    m_rowBreaks(NULL),
-    m_has_colBreaks(false),
-    m_colBreaks(NULL),
-    m_has_customProperties(false),
-    m_customProperties(NULL),
-    m_has_drawing(false),
-    m_drawing(NULL),
-    m_has_legacyDrawing(false),
-    m_legacyDrawing(NULL),
-    m_has_legacyDrawingHF(false),
-    m_legacyDrawingHF(NULL),
-    m_has_drawingHF(false),
-    m_drawingHF(NULL),
-    m_has_picture(false),
-    m_picture(NULL),
-    m_has_oleObjects(false),
-    m_oleObjects(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_cols(NULL)
     {
     }
     bool CT_Macrosheet::ChildGroup_1::has_cols() const
@@ -54932,204 +55525,6 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
 
     CT_Cols* CT_Macrosheet::ChildGroup_1::mutable_cols()
     {    
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_cols = true;
     if (!m_cols)
@@ -55148,1772 +55543,20 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
     return CT_Cols::default_instance();
     }
 
-    bool CT_Macrosheet::ChildGroup_1::has_sheetData() const
-    {    
-    return m_has_sheetData;
-    }
 
-    CT_SheetData* CT_Macrosheet::ChildGroup_1::mutable_sheetData()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
+    // CT_Macrosheet::ChildGroup_2
+    CT_Macrosheet::ChildGroup_2::ChildGroup_2()
+    :m_has_conditionalFormatting(false),
+    m_conditionalFormatting(NULL)
     {
-        delete m_cols;
-        m_cols = NULL;
     }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_sheetData = true;
-    if (!m_sheetData)
-    {
-        m_sheetData = new CT_SheetData();
-    }
-    return m_sheetData;
-    }
-
-    const CT_SheetData& CT_Macrosheet::ChildGroup_1::get_sheetData() const
-    {    
-    if (m_sheetData)
-    {
-        return *m_sheetData;
-    }
-    return CT_SheetData::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_sheetProtection() const
-    {    
-    return m_has_sheetProtection;
-    }
-
-    CT_SheetProtection* CT_Macrosheet::ChildGroup_1::mutable_sheetProtection()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = true;
-    if (!m_sheetProtection)
-    {
-        m_sheetProtection = new CT_SheetProtection();
-    }
-    return m_sheetProtection;
-    }
-
-    const CT_SheetProtection& CT_Macrosheet::ChildGroup_1::get_sheetProtection() const
-    {    
-    if (m_sheetProtection)
-    {
-        return *m_sheetProtection;
-    }
-    return CT_SheetProtection::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_autoFilter() const
-    {    
-    return m_has_autoFilter;
-    }
-
-    CT_AutoFilter* CT_Macrosheet::ChildGroup_1::mutable_autoFilter()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = true;
-    if (!m_autoFilter)
-    {
-        m_autoFilter = new CT_AutoFilter();
-    }
-    return m_autoFilter;
-    }
-
-    const CT_AutoFilter& CT_Macrosheet::ChildGroup_1::get_autoFilter() const
-    {    
-    if (m_autoFilter)
-    {
-        return *m_autoFilter;
-    }
-    return CT_AutoFilter::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_sortState() const
-    {    
-    return m_has_sortState;
-    }
-
-    CT_SortState* CT_Macrosheet::ChildGroup_1::mutable_sortState()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_sortState = true;
-    if (!m_sortState)
-    {
-        m_sortState = new CT_SortState();
-    }
-    return m_sortState;
-    }
-
-    const CT_SortState& CT_Macrosheet::ChildGroup_1::get_sortState() const
-    {    
-    if (m_sortState)
-    {
-        return *m_sortState;
-    }
-    return CT_SortState::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_dataConsolidate() const
-    {    
-    return m_has_dataConsolidate;
-    }
-
-    CT_DataConsolidate* CT_Macrosheet::ChildGroup_1::mutable_dataConsolidate()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = true;
-    if (!m_dataConsolidate)
-    {
-        m_dataConsolidate = new CT_DataConsolidate();
-    }
-    return m_dataConsolidate;
-    }
-
-    const CT_DataConsolidate& CT_Macrosheet::ChildGroup_1::get_dataConsolidate() const
-    {    
-    if (m_dataConsolidate)
-    {
-        return *m_dataConsolidate;
-    }
-    return CT_DataConsolidate::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_customSheetViews() const
-    {    
-    return m_has_customSheetViews;
-    }
-
-    CT_CustomSheetViews* CT_Macrosheet::ChildGroup_1::mutable_customSheetViews()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = true;
-    if (!m_customSheetViews)
-    {
-        m_customSheetViews = new CT_CustomSheetViews();
-    }
-    return m_customSheetViews;
-    }
-
-    const CT_CustomSheetViews& CT_Macrosheet::ChildGroup_1::get_customSheetViews() const
-    {    
-    if (m_customSheetViews)
-    {
-        return *m_customSheetViews;
-    }
-    return CT_CustomSheetViews::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_phoneticPr() const
-    {    
-    return m_has_phoneticPr;
-    }
-
-    CT_PhoneticPr* CT_Macrosheet::ChildGroup_1::mutable_phoneticPr()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = true;
-    if (!m_phoneticPr)
-    {
-        m_phoneticPr = new CT_PhoneticPr();
-    }
-    return m_phoneticPr;
-    }
-
-    const CT_PhoneticPr& CT_Macrosheet::ChildGroup_1::get_phoneticPr() const
-    {    
-    if (m_phoneticPr)
-    {
-        return *m_phoneticPr;
-    }
-    return CT_PhoneticPr::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_conditionalFormatting() const
+    bool CT_Macrosheet::ChildGroup_2::has_conditionalFormatting() const
     {    
     return m_has_conditionalFormatting;
     }
 
-    CT_ConditionalFormatting* CT_Macrosheet::ChildGroup_1::mutable_conditionalFormatting()
+    CT_ConditionalFormatting* CT_Macrosheet::ChildGroup_2::mutable_conditionalFormatting()
     {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_conditionalFormatting = true;
     if (!m_conditionalFormatting)
@@ -56923,3135 +55566,13 @@ CT_SharedUser* CT_SharedUser::default_instance_ = NULL;
     return m_conditionalFormatting;
     }
 
-    const CT_ConditionalFormatting& CT_Macrosheet::ChildGroup_1::get_conditionalFormatting() const
+    const CT_ConditionalFormatting& CT_Macrosheet::ChildGroup_2::get_conditionalFormatting() const
     {    
     if (m_conditionalFormatting)
     {
         return *m_conditionalFormatting;
     }
     return CT_ConditionalFormatting::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_printOptions() const
-    {    
-    return m_has_printOptions;
-    }
-
-    CT_PrintOptions* CT_Macrosheet::ChildGroup_1::mutable_printOptions()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_printOptions = true;
-    if (!m_printOptions)
-    {
-        m_printOptions = new CT_PrintOptions();
-    }
-    return m_printOptions;
-    }
-
-    const CT_PrintOptions& CT_Macrosheet::ChildGroup_1::get_printOptions() const
-    {    
-    if (m_printOptions)
-    {
-        return *m_printOptions;
-    }
-    return CT_PrintOptions::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_pageMargins() const
-    {    
-    return m_has_pageMargins;
-    }
-
-    CT_PageMargins* CT_Macrosheet::ChildGroup_1::mutable_pageMargins()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = true;
-    if (!m_pageMargins)
-    {
-        m_pageMargins = new CT_PageMargins();
-    }
-    return m_pageMargins;
-    }
-
-    const CT_PageMargins& CT_Macrosheet::ChildGroup_1::get_pageMargins() const
-    {    
-    if (m_pageMargins)
-    {
-        return *m_pageMargins;
-    }
-    return CT_PageMargins::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_pageSetup() const
-    {    
-    return m_has_pageSetup;
-    }
-
-    CT_PageSetup* CT_Macrosheet::ChildGroup_1::mutable_pageSetup()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = true;
-    if (!m_pageSetup)
-    {
-        m_pageSetup = new CT_PageSetup();
-    }
-    return m_pageSetup;
-    }
-
-    const CT_PageSetup& CT_Macrosheet::ChildGroup_1::get_pageSetup() const
-    {    
-    if (m_pageSetup)
-    {
-        return *m_pageSetup;
-    }
-    return CT_PageSetup::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_headerFooter() const
-    {    
-    return m_has_headerFooter;
-    }
-
-    CT_HeaderFooter* CT_Macrosheet::ChildGroup_1::mutable_headerFooter()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = true;
-    if (!m_headerFooter)
-    {
-        m_headerFooter = new CT_HeaderFooter();
-    }
-    return m_headerFooter;
-    }
-
-    const CT_HeaderFooter& CT_Macrosheet::ChildGroup_1::get_headerFooter() const
-    {    
-    if (m_headerFooter)
-    {
-        return *m_headerFooter;
-    }
-    return CT_HeaderFooter::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_rowBreaks() const
-    {    
-    return m_has_rowBreaks;
-    }
-
-    CT_PageBreak* CT_Macrosheet::ChildGroup_1::mutable_rowBreaks()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = true;
-    if (!m_rowBreaks)
-    {
-        m_rowBreaks = new CT_PageBreak();
-    }
-    return m_rowBreaks;
-    }
-
-    const CT_PageBreak& CT_Macrosheet::ChildGroup_1::get_rowBreaks() const
-    {    
-    if (m_rowBreaks)
-    {
-        return *m_rowBreaks;
-    }
-    return CT_PageBreak::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_colBreaks() const
-    {    
-    return m_has_colBreaks;
-    }
-
-    CT_PageBreak* CT_Macrosheet::ChildGroup_1::mutable_colBreaks()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = true;
-    if (!m_colBreaks)
-    {
-        m_colBreaks = new CT_PageBreak();
-    }
-    return m_colBreaks;
-    }
-
-    const CT_PageBreak& CT_Macrosheet::ChildGroup_1::get_colBreaks() const
-    {    
-    if (m_colBreaks)
-    {
-        return *m_colBreaks;
-    }
-    return CT_PageBreak::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_customProperties() const
-    {    
-    return m_has_customProperties;
-    }
-
-    CT_CustomProperties* CT_Macrosheet::ChildGroup_1::mutable_customProperties()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_customProperties = true;
-    if (!m_customProperties)
-    {
-        m_customProperties = new CT_CustomProperties();
-    }
-    return m_customProperties;
-    }
-
-    const CT_CustomProperties& CT_Macrosheet::ChildGroup_1::get_customProperties() const
-    {    
-    if (m_customProperties)
-    {
-        return *m_customProperties;
-    }
-    return CT_CustomProperties::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_drawing() const
-    {    
-    return m_has_drawing;
-    }
-
-    CT_Drawing* CT_Macrosheet::ChildGroup_1::mutable_drawing()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_drawing = true;
-    if (!m_drawing)
-    {
-        m_drawing = new CT_Drawing();
-    }
-    return m_drawing;
-    }
-
-    const CT_Drawing& CT_Macrosheet::ChildGroup_1::get_drawing() const
-    {    
-    if (m_drawing)
-    {
-        return *m_drawing;
-    }
-    return CT_Drawing::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_legacyDrawing() const
-    {    
-    return m_has_legacyDrawing;
-    }
-
-    CT_LegacyDrawing* CT_Macrosheet::ChildGroup_1::mutable_legacyDrawing()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = true;
-    if (!m_legacyDrawing)
-    {
-        m_legacyDrawing = new CT_LegacyDrawing();
-    }
-    return m_legacyDrawing;
-    }
-
-    const CT_LegacyDrawing& CT_Macrosheet::ChildGroup_1::get_legacyDrawing() const
-    {    
-    if (m_legacyDrawing)
-    {
-        return *m_legacyDrawing;
-    }
-    return CT_LegacyDrawing::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_legacyDrawingHF() const
-    {    
-    return m_has_legacyDrawingHF;
-    }
-
-    CT_LegacyDrawing* CT_Macrosheet::ChildGroup_1::mutable_legacyDrawingHF()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = true;
-    if (!m_legacyDrawingHF)
-    {
-        m_legacyDrawingHF = new CT_LegacyDrawing();
-    }
-    return m_legacyDrawingHF;
-    }
-
-    const CT_LegacyDrawing& CT_Macrosheet::ChildGroup_1::get_legacyDrawingHF() const
-    {    
-    if (m_legacyDrawingHF)
-    {
-        return *m_legacyDrawingHF;
-    }
-    return CT_LegacyDrawing::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_drawingHF() const
-    {    
-    return m_has_drawingHF;
-    }
-
-    CT_DrawingHF* CT_Macrosheet::ChildGroup_1::mutable_drawingHF()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = true;
-    if (!m_drawingHF)
-    {
-        m_drawingHF = new CT_DrawingHF();
-    }
-    return m_drawingHF;
-    }
-
-    const CT_DrawingHF& CT_Macrosheet::ChildGroup_1::get_drawingHF() const
-    {    
-    if (m_drawingHF)
-    {
-        return *m_drawingHF;
-    }
-    return CT_DrawingHF::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_picture() const
-    {    
-    return m_has_picture;
-    }
-
-    CT_SheetBackgroundPicture* CT_Macrosheet::ChildGroup_1::mutable_picture()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_picture = true;
-    if (!m_picture)
-    {
-        m_picture = new CT_SheetBackgroundPicture();
-    }
-    return m_picture;
-    }
-
-    const CT_SheetBackgroundPicture& CT_Macrosheet::ChildGroup_1::get_picture() const
-    {    
-    if (m_picture)
-    {
-        return *m_picture;
-    }
-    return CT_SheetBackgroundPicture::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_oleObjects() const
-    {    
-    return m_has_oleObjects;
-    }
-
-    CT_OleObjects* CT_Macrosheet::ChildGroup_1::mutable_oleObjects()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = true;
-    if (!m_oleObjects)
-    {
-        m_oleObjects = new CT_OleObjects();
-    }
-    return m_oleObjects;
-    }
-
-    const CT_OleObjects& CT_Macrosheet::ChildGroup_1::get_oleObjects() const
-    {    
-    if (m_oleObjects)
-    {
-        return *m_oleObjects;
-    }
-    return CT_OleObjects::default_instance();
-    }
-
-    bool CT_Macrosheet::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_Macrosheet::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_Macrosheet::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_Macrosheet* CT_Macrosheet::default_instance_ = NULL;
@@ -60637,6 +56158,7 @@ CT_Macrosheet* CT_Macrosheet::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_sheetPr)
     {
         m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);
@@ -60755,7 +56277,73 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
     m_has_sheetViews(false),
     m_sheetViews(NULL),
     m_has_sheetFormatPr(false),
-    m_sheetFormatPr(NULL)
+    m_sheetFormatPr(NULL),
+    m_has_sheetData(false),
+    m_sheetData(NULL),
+    m_has_sheetCalcPr(false),
+    m_sheetCalcPr(NULL),
+    m_has_sheetProtection(false),
+    m_sheetProtection(NULL),
+    m_has_protectedRanges(false),
+    m_protectedRanges(NULL),
+    m_has_scenarios(false),
+    m_scenarios(NULL),
+    m_has_autoFilter(false),
+    m_autoFilter(NULL),
+    m_has_sortState(false),
+    m_sortState(NULL),
+    m_has_dataConsolidate(false),
+    m_dataConsolidate(NULL),
+    m_has_customSheetViews(false),
+    m_customSheetViews(NULL),
+    m_has_mergeCells(false),
+    m_mergeCells(NULL),
+    m_has_phoneticPr(false),
+    m_phoneticPr(NULL),
+    m_has_dataValidations(false),
+    m_dataValidations(NULL),
+    m_has_hyperlinks(false),
+    m_hyperlinks(NULL),
+    m_has_printOptions(false),
+    m_printOptions(NULL),
+    m_has_pageMargins(false),
+    m_pageMargins(NULL),
+    m_has_pageSetup(false),
+    m_pageSetup(NULL),
+    m_has_headerFooter(false),
+    m_headerFooter(NULL),
+    m_has_rowBreaks(false),
+    m_rowBreaks(NULL),
+    m_has_colBreaks(false),
+    m_colBreaks(NULL),
+    m_has_customProperties(false),
+    m_customProperties(NULL),
+    m_has_cellWatches(false),
+    m_cellWatches(NULL),
+    m_has_ignoredErrors(false),
+    m_ignoredErrors(NULL),
+    m_has_smartTags(false),
+    m_smartTags(NULL),
+    m_has_drawing(false),
+    m_drawing(NULL),
+    m_has_legacyDrawing(false),
+    m_legacyDrawing(NULL),
+    m_has_legacyDrawingHF(false),
+    m_legacyDrawingHF(NULL),
+    m_has_drawingHF(false),
+    m_drawingHF(NULL),
+    m_has_picture(false),
+    m_picture(NULL),
+    m_has_oleObjects(false),
+    m_oleObjects(NULL),
+    m_has_controls(false),
+    m_controls(NULL),
+    m_has_webPublishItems(false),
+    m_webPublishItems(NULL),
+    m_has_tableParts(false),
+    m_tableParts(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
     {
     }
     CT_Worksheet::~CT_Worksheet()
@@ -60865,276 +56453,804 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_SheetData* CT_Worksheet::add_sheetData()
+    bool CT_Worksheet::has_sheetData() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SheetData* pNewChild = pChildGroup->mutable_sheetData();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_sheetData;
     }
 
-    CT_SheetCalcPr* CT_Worksheet::add_sheetCalcPr()
+    CT_SheetData* CT_Worksheet::mutable_sheetData()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SheetCalcPr* pNewChild = pChildGroup->mutable_sheetCalcPr();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_sheetData = true;
+    if (!m_sheetData)
+    {
+        m_sheetData = new CT_SheetData();
+    }
+    return m_sheetData;
     }
 
-    CT_SheetProtection* CT_Worksheet::add_sheetProtection()
+    const CT_SheetData& CT_Worksheet::get_sheetData() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SheetProtection* pNewChild = pChildGroup->mutable_sheetProtection();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_sheetData)
+    {
+        return *m_sheetData;
+    }
+    return CT_SheetData::default_instance();
     }
 
-    CT_ProtectedRanges* CT_Worksheet::add_protectedRanges()
+    bool CT_Worksheet::has_sheetCalcPr() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ProtectedRanges* pNewChild = pChildGroup->mutable_protectedRanges();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_sheetCalcPr;
     }
 
-    CT_Scenarios* CT_Worksheet::add_scenarios()
+    CT_SheetCalcPr* CT_Worksheet::mutable_sheetCalcPr()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_Scenarios* pNewChild = pChildGroup->mutable_scenarios();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_sheetCalcPr = true;
+    if (!m_sheetCalcPr)
+    {
+        m_sheetCalcPr = new CT_SheetCalcPr();
+    }
+    return m_sheetCalcPr;
     }
 
-    CT_AutoFilter* CT_Worksheet::add_autoFilter()
+    const CT_SheetCalcPr& CT_Worksheet::get_sheetCalcPr() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_AutoFilter* pNewChild = pChildGroup->mutable_autoFilter();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_sheetCalcPr)
+    {
+        return *m_sheetCalcPr;
+    }
+    return CT_SheetCalcPr::default_instance();
     }
 
-    CT_SortState* CT_Worksheet::add_sortState()
+    bool CT_Worksheet::has_sheetProtection() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SortState* pNewChild = pChildGroup->mutable_sortState();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_sheetProtection;
     }
 
-    CT_DataConsolidate* CT_Worksheet::add_dataConsolidate()
+    CT_SheetProtection* CT_Worksheet::mutable_sheetProtection()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_DataConsolidate* pNewChild = pChildGroup->mutable_dataConsolidate();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_sheetProtection = true;
+    if (!m_sheetProtection)
+    {
+        m_sheetProtection = new CT_SheetProtection();
+    }
+    return m_sheetProtection;
     }
 
-    CT_CustomSheetViews* CT_Worksheet::add_customSheetViews()
+    const CT_SheetProtection& CT_Worksheet::get_sheetProtection() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_CustomSheetViews* pNewChild = pChildGroup->mutable_customSheetViews();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_sheetProtection)
+    {
+        return *m_sheetProtection;
+    }
+    return CT_SheetProtection::default_instance();
     }
 
-    CT_MergeCells* CT_Worksheet::add_mergeCells()
+    bool CT_Worksheet::has_protectedRanges() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_MergeCells* pNewChild = pChildGroup->mutable_mergeCells();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_protectedRanges;
     }
 
-    CT_PhoneticPr* CT_Worksheet::add_phoneticPr()
+    CT_ProtectedRanges* CT_Worksheet::mutable_protectedRanges()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PhoneticPr* pNewChild = pChildGroup->mutable_phoneticPr();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_protectedRanges = true;
+    if (!m_protectedRanges)
+    {
+        m_protectedRanges = new CT_ProtectedRanges();
+    }
+    return m_protectedRanges;
+    }
+
+    const CT_ProtectedRanges& CT_Worksheet::get_protectedRanges() const
+    {    
+    if (m_protectedRanges)
+    {
+        return *m_protectedRanges;
+    }
+    return CT_ProtectedRanges::default_instance();
+    }
+
+    bool CT_Worksheet::has_scenarios() const
+    {    
+    return m_has_scenarios;
+    }
+
+    CT_Scenarios* CT_Worksheet::mutable_scenarios()
+    {    
+    m_has_scenarios = true;
+    if (!m_scenarios)
+    {
+        m_scenarios = new CT_Scenarios();
+    }
+    return m_scenarios;
+    }
+
+    const CT_Scenarios& CT_Worksheet::get_scenarios() const
+    {    
+    if (m_scenarios)
+    {
+        return *m_scenarios;
+    }
+    return CT_Scenarios::default_instance();
+    }
+
+    bool CT_Worksheet::has_autoFilter() const
+    {    
+    return m_has_autoFilter;
+    }
+
+    CT_AutoFilter* CT_Worksheet::mutable_autoFilter()
+    {    
+    m_has_autoFilter = true;
+    if (!m_autoFilter)
+    {
+        m_autoFilter = new CT_AutoFilter();
+    }
+    return m_autoFilter;
+    }
+
+    const CT_AutoFilter& CT_Worksheet::get_autoFilter() const
+    {    
+    if (m_autoFilter)
+    {
+        return *m_autoFilter;
+    }
+    return CT_AutoFilter::default_instance();
+    }
+
+    bool CT_Worksheet::has_sortState() const
+    {    
+    return m_has_sortState;
+    }
+
+    CT_SortState* CT_Worksheet::mutable_sortState()
+    {    
+    m_has_sortState = true;
+    if (!m_sortState)
+    {
+        m_sortState = new CT_SortState();
+    }
+    return m_sortState;
+    }
+
+    const CT_SortState& CT_Worksheet::get_sortState() const
+    {    
+    if (m_sortState)
+    {
+        return *m_sortState;
+    }
+    return CT_SortState::default_instance();
+    }
+
+    bool CT_Worksheet::has_dataConsolidate() const
+    {    
+    return m_has_dataConsolidate;
+    }
+
+    CT_DataConsolidate* CT_Worksheet::mutable_dataConsolidate()
+    {    
+    m_has_dataConsolidate = true;
+    if (!m_dataConsolidate)
+    {
+        m_dataConsolidate = new CT_DataConsolidate();
+    }
+    return m_dataConsolidate;
+    }
+
+    const CT_DataConsolidate& CT_Worksheet::get_dataConsolidate() const
+    {    
+    if (m_dataConsolidate)
+    {
+        return *m_dataConsolidate;
+    }
+    return CT_DataConsolidate::default_instance();
+    }
+
+    bool CT_Worksheet::has_customSheetViews() const
+    {    
+    return m_has_customSheetViews;
+    }
+
+    CT_CustomSheetViews* CT_Worksheet::mutable_customSheetViews()
+    {    
+    m_has_customSheetViews = true;
+    if (!m_customSheetViews)
+    {
+        m_customSheetViews = new CT_CustomSheetViews();
+    }
+    return m_customSheetViews;
+    }
+
+    const CT_CustomSheetViews& CT_Worksheet::get_customSheetViews() const
+    {    
+    if (m_customSheetViews)
+    {
+        return *m_customSheetViews;
+    }
+    return CT_CustomSheetViews::default_instance();
+    }
+
+    bool CT_Worksheet::has_mergeCells() const
+    {    
+    return m_has_mergeCells;
+    }
+
+    CT_MergeCells* CT_Worksheet::mutable_mergeCells()
+    {    
+    m_has_mergeCells = true;
+    if (!m_mergeCells)
+    {
+        m_mergeCells = new CT_MergeCells();
+    }
+    return m_mergeCells;
+    }
+
+    const CT_MergeCells& CT_Worksheet::get_mergeCells() const
+    {    
+    if (m_mergeCells)
+    {
+        return *m_mergeCells;
+    }
+    return CT_MergeCells::default_instance();
+    }
+
+    bool CT_Worksheet::has_phoneticPr() const
+    {    
+    return m_has_phoneticPr;
+    }
+
+    CT_PhoneticPr* CT_Worksheet::mutable_phoneticPr()
+    {    
+    m_has_phoneticPr = true;
+    if (!m_phoneticPr)
+    {
+        m_phoneticPr = new CT_PhoneticPr();
+    }
+    return m_phoneticPr;
+    }
+
+    const CT_PhoneticPr& CT_Worksheet::get_phoneticPr() const
+    {    
+    if (m_phoneticPr)
+    {
+        return *m_phoneticPr;
+    }
+    return CT_PhoneticPr::default_instance();
     }
 
     CT_ConditionalFormatting* CT_Worksheet::add_conditionalFormatting()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_ConditionalFormatting* pNewChild = pChildGroup->mutable_conditionalFormatting();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
     }
 
-    CT_DataValidations* CT_Worksheet::add_dataValidations()
+    bool CT_Worksheet::has_dataValidations() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_DataValidations* pNewChild = pChildGroup->mutable_dataValidations();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_dataValidations;
     }
 
-    CT_Hyperlinks* CT_Worksheet::add_hyperlinks()
+    CT_DataValidations* CT_Worksheet::mutable_dataValidations()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_Hyperlinks* pNewChild = pChildGroup->mutable_hyperlinks();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_dataValidations = true;
+    if (!m_dataValidations)
+    {
+        m_dataValidations = new CT_DataValidations();
+    }
+    return m_dataValidations;
     }
 
-    CT_PrintOptions* CT_Worksheet::add_printOptions()
+    const CT_DataValidations& CT_Worksheet::get_dataValidations() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PrintOptions* pNewChild = pChildGroup->mutable_printOptions();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_dataValidations)
+    {
+        return *m_dataValidations;
+    }
+    return CT_DataValidations::default_instance();
     }
 
-    CT_PageMargins* CT_Worksheet::add_pageMargins()
+    bool CT_Worksheet::has_hyperlinks() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PageMargins* pNewChild = pChildGroup->mutable_pageMargins();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_hyperlinks;
     }
 
-    CT_PageSetup* CT_Worksheet::add_pageSetup()
+    CT_Hyperlinks* CT_Worksheet::mutable_hyperlinks()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PageSetup* pNewChild = pChildGroup->mutable_pageSetup();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_hyperlinks = true;
+    if (!m_hyperlinks)
+    {
+        m_hyperlinks = new CT_Hyperlinks();
+    }
+    return m_hyperlinks;
     }
 
-    CT_HeaderFooter* CT_Worksheet::add_headerFooter()
+    const CT_Hyperlinks& CT_Worksheet::get_hyperlinks() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_HeaderFooter* pNewChild = pChildGroup->mutable_headerFooter();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_hyperlinks)
+    {
+        return *m_hyperlinks;
+    }
+    return CT_Hyperlinks::default_instance();
     }
 
-    CT_PageBreak* CT_Worksheet::add_rowBreaks()
+    bool CT_Worksheet::has_printOptions() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PageBreak* pNewChild = pChildGroup->mutable_rowBreaks();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_printOptions;
     }
 
-    CT_PageBreak* CT_Worksheet::add_colBreaks()
+    CT_PrintOptions* CT_Worksheet::mutable_printOptions()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PageBreak* pNewChild = pChildGroup->mutable_colBreaks();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_printOptions = true;
+    if (!m_printOptions)
+    {
+        m_printOptions = new CT_PrintOptions();
+    }
+    return m_printOptions;
     }
 
-    CT_CustomProperties* CT_Worksheet::add_customProperties()
+    const CT_PrintOptions& CT_Worksheet::get_printOptions() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_CustomProperties* pNewChild = pChildGroup->mutable_customProperties();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_printOptions)
+    {
+        return *m_printOptions;
+    }
+    return CT_PrintOptions::default_instance();
     }
 
-    CT_CellWatches* CT_Worksheet::add_cellWatches()
+    bool CT_Worksheet::has_pageMargins() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_CellWatches* pNewChild = pChildGroup->mutable_cellWatches();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_pageMargins;
     }
 
-    CT_IgnoredErrors* CT_Worksheet::add_ignoredErrors()
+    CT_PageMargins* CT_Worksheet::mutable_pageMargins()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_IgnoredErrors* pNewChild = pChildGroup->mutable_ignoredErrors();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_pageMargins = true;
+    if (!m_pageMargins)
+    {
+        m_pageMargins = new CT_PageMargins();
+    }
+    return m_pageMargins;
     }
 
-    CT_SmartTags* CT_Worksheet::add_smartTags()
+    const CT_PageMargins& CT_Worksheet::get_pageMargins() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SmartTags* pNewChild = pChildGroup->mutable_smartTags();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_pageMargins)
+    {
+        return *m_pageMargins;
+    }
+    return CT_PageMargins::default_instance();
     }
 
-    CT_Drawing* CT_Worksheet::add_drawing()
+    bool CT_Worksheet::has_pageSetup() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_Drawing* pNewChild = pChildGroup->mutable_drawing();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_pageSetup;
     }
 
-    CT_LegacyDrawing* CT_Worksheet::add_legacyDrawing()
+    CT_PageSetup* CT_Worksheet::mutable_pageSetup()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_LegacyDrawing* pNewChild = pChildGroup->mutable_legacyDrawing();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_pageSetup = true;
+    if (!m_pageSetup)
+    {
+        m_pageSetup = new CT_PageSetup();
+    }
+    return m_pageSetup;
     }
 
-    CT_LegacyDrawing* CT_Worksheet::add_legacyDrawingHF()
+    const CT_PageSetup& CT_Worksheet::get_pageSetup() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_LegacyDrawing* pNewChild = pChildGroup->mutable_legacyDrawingHF();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_pageSetup)
+    {
+        return *m_pageSetup;
+    }
+    return CT_PageSetup::default_instance();
     }
 
-    CT_DrawingHF* CT_Worksheet::add_drawingHF()
+    bool CT_Worksheet::has_headerFooter() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_DrawingHF* pNewChild = pChildGroup->mutable_drawingHF();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_headerFooter;
     }
 
-    CT_SheetBackgroundPicture* CT_Worksheet::add_picture()
+    CT_HeaderFooter* CT_Worksheet::mutable_headerFooter()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SheetBackgroundPicture* pNewChild = pChildGroup->mutable_picture();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_headerFooter = true;
+    if (!m_headerFooter)
+    {
+        m_headerFooter = new CT_HeaderFooter();
+    }
+    return m_headerFooter;
     }
 
-    CT_OleObjects* CT_Worksheet::add_oleObjects()
+    const CT_HeaderFooter& CT_Worksheet::get_headerFooter() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_OleObjects* pNewChild = pChildGroup->mutable_oleObjects();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_headerFooter)
+    {
+        return *m_headerFooter;
+    }
+    return CT_HeaderFooter::default_instance();
     }
 
-    CT_Controls* CT_Worksheet::add_controls()
+    bool CT_Worksheet::has_rowBreaks() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_Controls* pNewChild = pChildGroup->mutable_controls();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_rowBreaks;
     }
 
-    CT_WebPublishItems* CT_Worksheet::add_webPublishItems()
+    CT_PageBreak* CT_Worksheet::mutable_rowBreaks()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_WebPublishItems* pNewChild = pChildGroup->mutable_webPublishItems();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_rowBreaks = true;
+    if (!m_rowBreaks)
+    {
+        m_rowBreaks = new CT_PageBreak();
+    }
+    return m_rowBreaks;
     }
 
-    CT_TableParts* CT_Worksheet::add_tableParts()
+    const CT_PageBreak& CT_Worksheet::get_rowBreaks() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_TableParts* pNewChild = pChildGroup->mutable_tableParts();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_rowBreaks)
+    {
+        return *m_rowBreaks;
+    }
+    return CT_PageBreak::default_instance();
     }
 
-    CT_ExtensionList* CT_Worksheet::add_extLst()
+    bool CT_Worksheet::has_colBreaks() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_colBreaks;
+    }
+
+    CT_PageBreak* CT_Worksheet::mutable_colBreaks()
+    {    
+    m_has_colBreaks = true;
+    if (!m_colBreaks)
+    {
+        m_colBreaks = new CT_PageBreak();
+    }
+    return m_colBreaks;
+    }
+
+    const CT_PageBreak& CT_Worksheet::get_colBreaks() const
+    {    
+    if (m_colBreaks)
+    {
+        return *m_colBreaks;
+    }
+    return CT_PageBreak::default_instance();
+    }
+
+    bool CT_Worksheet::has_customProperties() const
+    {    
+    return m_has_customProperties;
+    }
+
+    CT_CustomProperties* CT_Worksheet::mutable_customProperties()
+    {    
+    m_has_customProperties = true;
+    if (!m_customProperties)
+    {
+        m_customProperties = new CT_CustomProperties();
+    }
+    return m_customProperties;
+    }
+
+    const CT_CustomProperties& CT_Worksheet::get_customProperties() const
+    {    
+    if (m_customProperties)
+    {
+        return *m_customProperties;
+    }
+    return CT_CustomProperties::default_instance();
+    }
+
+    bool CT_Worksheet::has_cellWatches() const
+    {    
+    return m_has_cellWatches;
+    }
+
+    CT_CellWatches* CT_Worksheet::mutable_cellWatches()
+    {    
+    m_has_cellWatches = true;
+    if (!m_cellWatches)
+    {
+        m_cellWatches = new CT_CellWatches();
+    }
+    return m_cellWatches;
+    }
+
+    const CT_CellWatches& CT_Worksheet::get_cellWatches() const
+    {    
+    if (m_cellWatches)
+    {
+        return *m_cellWatches;
+    }
+    return CT_CellWatches::default_instance();
+    }
+
+    bool CT_Worksheet::has_ignoredErrors() const
+    {    
+    return m_has_ignoredErrors;
+    }
+
+    CT_IgnoredErrors* CT_Worksheet::mutable_ignoredErrors()
+    {    
+    m_has_ignoredErrors = true;
+    if (!m_ignoredErrors)
+    {
+        m_ignoredErrors = new CT_IgnoredErrors();
+    }
+    return m_ignoredErrors;
+    }
+
+    const CT_IgnoredErrors& CT_Worksheet::get_ignoredErrors() const
+    {    
+    if (m_ignoredErrors)
+    {
+        return *m_ignoredErrors;
+    }
+    return CT_IgnoredErrors::default_instance();
+    }
+
+    bool CT_Worksheet::has_smartTags() const
+    {    
+    return m_has_smartTags;
+    }
+
+    CT_SmartTags* CT_Worksheet::mutable_smartTags()
+    {    
+    m_has_smartTags = true;
+    if (!m_smartTags)
+    {
+        m_smartTags = new CT_SmartTags();
+    }
+    return m_smartTags;
+    }
+
+    const CT_SmartTags& CT_Worksheet::get_smartTags() const
+    {    
+    if (m_smartTags)
+    {
+        return *m_smartTags;
+    }
+    return CT_SmartTags::default_instance();
+    }
+
+    bool CT_Worksheet::has_drawing() const
+    {    
+    return m_has_drawing;
+    }
+
+    CT_Drawing* CT_Worksheet::mutable_drawing()
+    {    
+    m_has_drawing = true;
+    if (!m_drawing)
+    {
+        m_drawing = new CT_Drawing();
+    }
+    return m_drawing;
+    }
+
+    const CT_Drawing& CT_Worksheet::get_drawing() const
+    {    
+    if (m_drawing)
+    {
+        return *m_drawing;
+    }
+    return CT_Drawing::default_instance();
+    }
+
+    bool CT_Worksheet::has_legacyDrawing() const
+    {    
+    return m_has_legacyDrawing;
+    }
+
+    CT_LegacyDrawing* CT_Worksheet::mutable_legacyDrawing()
+    {    
+    m_has_legacyDrawing = true;
+    if (!m_legacyDrawing)
+    {
+        m_legacyDrawing = new CT_LegacyDrawing();
+    }
+    return m_legacyDrawing;
+    }
+
+    const CT_LegacyDrawing& CT_Worksheet::get_legacyDrawing() const
+    {    
+    if (m_legacyDrawing)
+    {
+        return *m_legacyDrawing;
+    }
+    return CT_LegacyDrawing::default_instance();
+    }
+
+    bool CT_Worksheet::has_legacyDrawingHF() const
+    {    
+    return m_has_legacyDrawingHF;
+    }
+
+    CT_LegacyDrawing* CT_Worksheet::mutable_legacyDrawingHF()
+    {    
+    m_has_legacyDrawingHF = true;
+    if (!m_legacyDrawingHF)
+    {
+        m_legacyDrawingHF = new CT_LegacyDrawing();
+    }
+    return m_legacyDrawingHF;
+    }
+
+    const CT_LegacyDrawing& CT_Worksheet::get_legacyDrawingHF() const
+    {    
+    if (m_legacyDrawingHF)
+    {
+        return *m_legacyDrawingHF;
+    }
+    return CT_LegacyDrawing::default_instance();
+    }
+
+    bool CT_Worksheet::has_drawingHF() const
+    {    
+    return m_has_drawingHF;
+    }
+
+    CT_DrawingHF* CT_Worksheet::mutable_drawingHF()
+    {    
+    m_has_drawingHF = true;
+    if (!m_drawingHF)
+    {
+        m_drawingHF = new CT_DrawingHF();
+    }
+    return m_drawingHF;
+    }
+
+    const CT_DrawingHF& CT_Worksheet::get_drawingHF() const
+    {    
+    if (m_drawingHF)
+    {
+        return *m_drawingHF;
+    }
+    return CT_DrawingHF::default_instance();
+    }
+
+    bool CT_Worksheet::has_picture() const
+    {    
+    return m_has_picture;
+    }
+
+    CT_SheetBackgroundPicture* CT_Worksheet::mutable_picture()
+    {    
+    m_has_picture = true;
+    if (!m_picture)
+    {
+        m_picture = new CT_SheetBackgroundPicture();
+    }
+    return m_picture;
+    }
+
+    const CT_SheetBackgroundPicture& CT_Worksheet::get_picture() const
+    {    
+    if (m_picture)
+    {
+        return *m_picture;
+    }
+    return CT_SheetBackgroundPicture::default_instance();
+    }
+
+    bool CT_Worksheet::has_oleObjects() const
+    {    
+    return m_has_oleObjects;
+    }
+
+    CT_OleObjects* CT_Worksheet::mutable_oleObjects()
+    {    
+    m_has_oleObjects = true;
+    if (!m_oleObjects)
+    {
+        m_oleObjects = new CT_OleObjects();
+    }
+    return m_oleObjects;
+    }
+
+    const CT_OleObjects& CT_Worksheet::get_oleObjects() const
+    {    
+    if (m_oleObjects)
+    {
+        return *m_oleObjects;
+    }
+    return CT_OleObjects::default_instance();
+    }
+
+    bool CT_Worksheet::has_controls() const
+    {    
+    return m_has_controls;
+    }
+
+    CT_Controls* CT_Worksheet::mutable_controls()
+    {    
+    m_has_controls = true;
+    if (!m_controls)
+    {
+        m_controls = new CT_Controls();
+    }
+    return m_controls;
+    }
+
+    const CT_Controls& CT_Worksheet::get_controls() const
+    {    
+    if (m_controls)
+    {
+        return *m_controls;
+    }
+    return CT_Controls::default_instance();
+    }
+
+    bool CT_Worksheet::has_webPublishItems() const
+    {    
+    return m_has_webPublishItems;
+    }
+
+    CT_WebPublishItems* CT_Worksheet::mutable_webPublishItems()
+    {    
+    m_has_webPublishItems = true;
+    if (!m_webPublishItems)
+    {
+        m_webPublishItems = new CT_WebPublishItems();
+    }
+    return m_webPublishItems;
+    }
+
+    const CT_WebPublishItems& CT_Worksheet::get_webPublishItems() const
+    {    
+    if (m_webPublishItems)
+    {
+        return *m_webPublishItems;
+    }
+    return CT_WebPublishItems::default_instance();
+    }
+
+    bool CT_Worksheet::has_tableParts() const
+    {    
+    return m_has_tableParts;
+    }
+
+    CT_TableParts* CT_Worksheet::mutable_tableParts()
+    {    
+    m_has_tableParts = true;
+    if (!m_tableParts)
+    {
+        m_tableParts = new CT_TableParts();
+    }
+    return m_tableParts;
+    }
+
+    const CT_TableParts& CT_Worksheet::get_tableParts() const
+    {    
+    if (m_tableParts)
+    {
+        return *m_tableParts;
+    }
+    return CT_TableParts::default_instance();
+    }
+
+    bool CT_Worksheet::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_Worksheet::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_Worksheet::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_Worksheet::clear()
@@ -61183,6 +57299,312 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_sheetData = false;
+    
+    if (m_sheetData)
+    {
+        delete m_sheetData;
+        m_sheetData = NULL;
+    }
+    
+    
+    m_has_sheetCalcPr = false;
+    
+    if (m_sheetCalcPr)
+    {
+        delete m_sheetCalcPr;
+        m_sheetCalcPr = NULL;
+    }
+    
+    
+    m_has_sheetProtection = false;
+    
+    if (m_sheetProtection)
+    {
+        delete m_sheetProtection;
+        m_sheetProtection = NULL;
+    }
+    
+    
+    m_has_protectedRanges = false;
+    
+    if (m_protectedRanges)
+    {
+        delete m_protectedRanges;
+        m_protectedRanges = NULL;
+    }
+    
+    
+    m_has_scenarios = false;
+    
+    if (m_scenarios)
+    {
+        delete m_scenarios;
+        m_scenarios = NULL;
+    }
+    
+    
+    m_has_autoFilter = false;
+    
+    if (m_autoFilter)
+    {
+        delete m_autoFilter;
+        m_autoFilter = NULL;
+    }
+    
+    
+    m_has_sortState = false;
+    
+    if (m_sortState)
+    {
+        delete m_sortState;
+        m_sortState = NULL;
+    }
+    
+    
+    m_has_dataConsolidate = false;
+    
+    if (m_dataConsolidate)
+    {
+        delete m_dataConsolidate;
+        m_dataConsolidate = NULL;
+    }
+    
+    
+    m_has_customSheetViews = false;
+    
+    if (m_customSheetViews)
+    {
+        delete m_customSheetViews;
+        m_customSheetViews = NULL;
+    }
+    
+    
+    m_has_mergeCells = false;
+    
+    if (m_mergeCells)
+    {
+        delete m_mergeCells;
+        m_mergeCells = NULL;
+    }
+    
+    
+    m_has_phoneticPr = false;
+    
+    if (m_phoneticPr)
+    {
+        delete m_phoneticPr;
+        m_phoneticPr = NULL;
+    }
+    
+     
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+     
+    m_has_dataValidations = false;
+    
+    if (m_dataValidations)
+    {
+        delete m_dataValidations;
+        m_dataValidations = NULL;
+    }
+    
+    
+    m_has_hyperlinks = false;
+    
+    if (m_hyperlinks)
+    {
+        delete m_hyperlinks;
+        m_hyperlinks = NULL;
+    }
+    
+    
+    m_has_printOptions = false;
+    
+    if (m_printOptions)
+    {
+        delete m_printOptions;
+        m_printOptions = NULL;
+    }
+    
+    
+    m_has_pageMargins = false;
+    
+    if (m_pageMargins)
+    {
+        delete m_pageMargins;
+        m_pageMargins = NULL;
+    }
+    
+    
+    m_has_pageSetup = false;
+    
+    if (m_pageSetup)
+    {
+        delete m_pageSetup;
+        m_pageSetup = NULL;
+    }
+    
+    
+    m_has_headerFooter = false;
+    
+    if (m_headerFooter)
+    {
+        delete m_headerFooter;
+        m_headerFooter = NULL;
+    }
+    
+    
+    m_has_rowBreaks = false;
+    
+    if (m_rowBreaks)
+    {
+        delete m_rowBreaks;
+        m_rowBreaks = NULL;
+    }
+    
+    
+    m_has_colBreaks = false;
+    
+    if (m_colBreaks)
+    {
+        delete m_colBreaks;
+        m_colBreaks = NULL;
+    }
+    
+    
+    m_has_customProperties = false;
+    
+    if (m_customProperties)
+    {
+        delete m_customProperties;
+        m_customProperties = NULL;
+    }
+    
+    
+    m_has_cellWatches = false;
+    
+    if (m_cellWatches)
+    {
+        delete m_cellWatches;
+        m_cellWatches = NULL;
+    }
+    
+    
+    m_has_ignoredErrors = false;
+    
+    if (m_ignoredErrors)
+    {
+        delete m_ignoredErrors;
+        m_ignoredErrors = NULL;
+    }
+    
+    
+    m_has_smartTags = false;
+    
+    if (m_smartTags)
+    {
+        delete m_smartTags;
+        m_smartTags = NULL;
+    }
+    
+    
+    m_has_drawing = false;
+    
+    if (m_drawing)
+    {
+        delete m_drawing;
+        m_drawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawing = false;
+    
+    if (m_legacyDrawing)
+    {
+        delete m_legacyDrawing;
+        m_legacyDrawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawingHF = false;
+    
+    if (m_legacyDrawingHF)
+    {
+        delete m_legacyDrawingHF;
+        m_legacyDrawingHF = NULL;
+    }
+    
+    
+    m_has_drawingHF = false;
+    
+    if (m_drawingHF)
+    {
+        delete m_drawingHF;
+        m_drawingHF = NULL;
+    }
+    
+    
+    m_has_picture = false;
+    
+    if (m_picture)
+    {
+        delete m_picture;
+        m_picture = NULL;
+    }
+    
+    
+    m_has_oleObjects = false;
+    
+    if (m_oleObjects)
+    {
+        delete m_oleObjects;
+        m_oleObjects = NULL;
+    }
+    
+    
+    m_has_controls = false;
+    
+    if (m_controls)
+    {
+        delete m_controls;
+        m_controls = NULL;
+    }
+    
+    
+    m_has_webPublishItems = false;
+    
+    if (m_webPublishItems)
+    {
+        delete m_webPublishItems;
+        m_webPublishItems = NULL;
+    }
+    
+    
+    m_has_tableParts = false;
+    
+    if (m_tableParts)
+    {
+        delete m_tableParts;
+        m_tableParts = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Worksheet::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -61196,6 +57618,7 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_sheetPr)
     {
         m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);
@@ -61230,245 +57653,221 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_sheetData())
+        }
+    }
+     
+        assert(m_has_sheetData);
+        
+    
+    if (m_has_sheetData)
     {
-        (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
+        m_sheetData->toXmlElem("main:sheetData", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_sheetCalcPr())
+    if (m_has_sheetCalcPr)
     {
-        (*iter)->get_sheetCalcPr().toXmlElem("main:sheetCalcPr", "", _outStream);
+        m_sheetCalcPr->toXmlElem("main:sheetCalcPr", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_sheetProtection())
+    if (m_has_sheetProtection)
     {
-        (*iter)->get_sheetProtection().toXmlElem("main:sheetProtection", "", _outStream);
+        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_protectedRanges())
+    if (m_has_protectedRanges)
     {
-        (*iter)->get_protectedRanges().toXmlElem("main:protectedRanges", "", _outStream);
+        m_protectedRanges->toXmlElem("main:protectedRanges", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_scenarios())
+    if (m_has_scenarios)
     {
-        (*iter)->get_scenarios().toXmlElem("main:scenarios", "", _outStream);
+        m_scenarios->toXmlElem("main:scenarios", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_autoFilter())
+    if (m_has_autoFilter)
     {
-        (*iter)->get_autoFilter().toXmlElem("main:autoFilter", "", _outStream);
+        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_sortState())
+    if (m_has_sortState)
     {
-        (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
+        m_sortState->toXmlElem("main:sortState", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_dataConsolidate())
+    if (m_has_dataConsolidate)
     {
-        (*iter)->get_dataConsolidate().toXmlElem("main:dataConsolidate", "", _outStream);
+        m_dataConsolidate->toXmlElem("main:dataConsolidate", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_customSheetViews())
+    if (m_has_customSheetViews)
     {
-        (*iter)->get_customSheetViews().toXmlElem("main:customSheetViews", "", _outStream);
+        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_mergeCells())
+    if (m_has_mergeCells)
     {
-        (*iter)->get_mergeCells().toXmlElem("main:mergeCells", "", _outStream);
+        m_mergeCells->toXmlElem("main:mergeCells", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_phoneticPr())
+    if (m_has_phoneticPr)
     {
-        (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
+        m_phoneticPr->toXmlElem("main:phoneticPr", "", _outStream);
     }
+     
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
     
-    
-    else 
     if ((*iter)->has_conditionalFormatting())
     {
         (*iter)->get_conditionalFormatting().toXmlElem("main:conditionalFormatting", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_dataValidations())
-    {
-        (*iter)->get_dataValidations().toXmlElem("main:dataValidations", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_hyperlinks())
-    {
-        (*iter)->get_hyperlinks().toXmlElem("main:hyperlinks", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_printOptions())
-    {
-        (*iter)->get_printOptions().toXmlElem("main:printOptions", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_pageMargins())
-    {
-        (*iter)->get_pageMargins().toXmlElem("main:pageMargins", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_pageSetup())
-    {
-        (*iter)->get_pageSetup().toXmlElem("main:pageSetup", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_headerFooter())
-    {
-        (*iter)->get_headerFooter().toXmlElem("main:headerFooter", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_rowBreaks())
-    {
-        (*iter)->get_rowBreaks().toXmlElem("main:rowBreaks", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_colBreaks())
-    {
-        (*iter)->get_colBreaks().toXmlElem("main:colBreaks", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_customProperties())
-    {
-        (*iter)->get_customProperties().toXmlElem("main:customProperties", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_cellWatches())
-    {
-        (*iter)->get_cellWatches().toXmlElem("main:cellWatches", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_ignoredErrors())
-    {
-        (*iter)->get_ignoredErrors().toXmlElem("main:ignoredErrors", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_smartTags())
-    {
-        (*iter)->get_smartTags().toXmlElem("main:smartTags", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_drawing())
-    {
-        (*iter)->get_drawing().toXmlElem("main:drawing", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_legacyDrawing())
-    {
-        (*iter)->get_legacyDrawing().toXmlElem("main:legacyDrawing", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_legacyDrawingHF())
-    {
-        (*iter)->get_legacyDrawingHF().toXmlElem("main:legacyDrawingHF", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_drawingHF())
-    {
-        (*iter)->get_drawingHF().toXmlElem("main:drawingHF", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_picture())
-    {
-        (*iter)->get_picture().toXmlElem("main:picture", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_oleObjects())
-    {
-        (*iter)->get_oleObjects().toXmlElem("main:oleObjects", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_controls())
-    {
-        (*iter)->get_controls().toXmlElem("main:controls", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_webPublishItems())
-    {
-        (*iter)->get_webPublishItems().toXmlElem("main:webPublishItems", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_tableParts())
-    {
-        (*iter)->get_tableParts().toXmlElem("main:tableParts", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_dataValidations)
+    {
+        m_dataValidations->toXmlElem("main:dataValidations", "", _outStream);
+    }
+    
+    
+    if (m_has_hyperlinks)
+    {
+        m_hyperlinks->toXmlElem("main:hyperlinks", "", _outStream);
+    }
+    
+    
+    if (m_has_printOptions)
+    {
+        m_printOptions->toXmlElem("main:printOptions", "", _outStream);
+    }
+    
+    
+    if (m_has_pageMargins)
+    {
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);
+    }
+    
+    
+    if (m_has_pageSetup)
+    {
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);
+    }
+    
+    
+    if (m_has_headerFooter)
+    {
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);
+    }
+    
+    
+    if (m_has_rowBreaks)
+    {
+        m_rowBreaks->toXmlElem("main:rowBreaks", "", _outStream);
+    }
+    
+    
+    if (m_has_colBreaks)
+    {
+        m_colBreaks->toXmlElem("main:colBreaks", "", _outStream);
+    }
+    
+    
+    if (m_has_customProperties)
+    {
+        m_customProperties->toXmlElem("main:customProperties", "", _outStream);
+    }
+    
+    
+    if (m_has_cellWatches)
+    {
+        m_cellWatches->toXmlElem("main:cellWatches", "", _outStream);
+    }
+    
+    
+    if (m_has_ignoredErrors)
+    {
+        m_ignoredErrors->toXmlElem("main:ignoredErrors", "", _outStream);
+    }
+    
+    
+    if (m_has_smartTags)
+    {
+        m_smartTags->toXmlElem("main:smartTags", "", _outStream);
+    }
+    
+    
+    if (m_has_drawing)
+    {
+        m_drawing->toXmlElem("main:drawing", "", _outStream);
+    }
+    
+    
+    if (m_has_legacyDrawing)
+    {
+        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);
+    }
+    
+    
+    if (m_has_legacyDrawingHF)
+    {
+        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);
+    }
+    
+    
+    if (m_has_drawingHF)
+    {
+        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);
+    }
+    
+    
+    if (m_has_picture)
+    {
+        m_picture->toXmlElem("main:picture", "", _outStream);
+    }
+    
+    
+    if (m_has_oleObjects)
+    {
+        m_oleObjects->toXmlElem("main:oleObjects", "", _outStream);
+    }
+    
+    
+    if (m_has_controls)
+    {
+        m_controls->toXmlElem("main:controls", "", _outStream);
+    }
+    
+    
+    if (m_has_webPublishItems)
+    {
+        m_webPublishItems->toXmlElem("main:webPublishItems", "", _outStream);
+    }
+    
+    
+    if (m_has_tableParts)
+    {
+        m_tableParts->toXmlElem("main:tableParts", "", _outStream);
+    }
+    
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -61487,75 +57886,7 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
     // CT_Worksheet::ChildGroup_1
     CT_Worksheet::ChildGroup_1::ChildGroup_1()
     :m_has_cols(false),
-    m_cols(NULL),
-    m_has_sheetData(false),
-    m_sheetData(NULL),
-    m_has_sheetCalcPr(false),
-    m_sheetCalcPr(NULL),
-    m_has_sheetProtection(false),
-    m_sheetProtection(NULL),
-    m_has_protectedRanges(false),
-    m_protectedRanges(NULL),
-    m_has_scenarios(false),
-    m_scenarios(NULL),
-    m_has_autoFilter(false),
-    m_autoFilter(NULL),
-    m_has_sortState(false),
-    m_sortState(NULL),
-    m_has_dataConsolidate(false),
-    m_dataConsolidate(NULL),
-    m_has_customSheetViews(false),
-    m_customSheetViews(NULL),
-    m_has_mergeCells(false),
-    m_mergeCells(NULL),
-    m_has_phoneticPr(false),
-    m_phoneticPr(NULL),
-    m_has_conditionalFormatting(false),
-    m_conditionalFormatting(NULL),
-    m_has_dataValidations(false),
-    m_dataValidations(NULL),
-    m_has_hyperlinks(false),
-    m_hyperlinks(NULL),
-    m_has_printOptions(false),
-    m_printOptions(NULL),
-    m_has_pageMargins(false),
-    m_pageMargins(NULL),
-    m_has_pageSetup(false),
-    m_pageSetup(NULL),
-    m_has_headerFooter(false),
-    m_headerFooter(NULL),
-    m_has_rowBreaks(false),
-    m_rowBreaks(NULL),
-    m_has_colBreaks(false),
-    m_colBreaks(NULL),
-    m_has_customProperties(false),
-    m_customProperties(NULL),
-    m_has_cellWatches(false),
-    m_cellWatches(NULL),
-    m_has_ignoredErrors(false),
-    m_ignoredErrors(NULL),
-    m_has_smartTags(false),
-    m_smartTags(NULL),
-    m_has_drawing(false),
-    m_drawing(NULL),
-    m_has_legacyDrawing(false),
-    m_legacyDrawing(NULL),
-    m_has_legacyDrawingHF(false),
-    m_legacyDrawingHF(NULL),
-    m_has_drawingHF(false),
-    m_drawingHF(NULL),
-    m_has_picture(false),
-    m_picture(NULL),
-    m_has_oleObjects(false),
-    m_oleObjects(NULL),
-    m_has_controls(false),
-    m_controls(NULL),
-    m_has_webPublishItems(false),
-    m_webPublishItems(NULL),
-    m_has_tableParts(false),
-    m_tableParts(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_cols(NULL)
     {
     }
     bool CT_Worksheet::ChildGroup_1::has_cols() const
@@ -61565,312 +57896,6 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
 
     CT_Cols* CT_Worksheet::ChildGroup_1::mutable_cols()
     {    
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_cols = true;
     if (!m_cols)
@@ -61889,3960 +57914,20 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
     return CT_Cols::default_instance();
     }
 
-    bool CT_Worksheet::ChildGroup_1::has_sheetData() const
-    {    
-    return m_has_sheetData;
-    }
 
-    CT_SheetData* CT_Worksheet::ChildGroup_1::mutable_sheetData()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
+    // CT_Worksheet::ChildGroup_2
+    CT_Worksheet::ChildGroup_2::ChildGroup_2()
+    :m_has_conditionalFormatting(false),
+    m_conditionalFormatting(NULL)
     {
-        delete m_cols;
-        m_cols = NULL;
     }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_sheetData = true;
-    if (!m_sheetData)
-    {
-        m_sheetData = new CT_SheetData();
-    }
-    return m_sheetData;
-    }
-
-    const CT_SheetData& CT_Worksheet::ChildGroup_1::get_sheetData() const
-    {    
-    if (m_sheetData)
-    {
-        return *m_sheetData;
-    }
-    return CT_SheetData::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_sheetCalcPr() const
-    {    
-    return m_has_sheetCalcPr;
-    }
-
-    CT_SheetCalcPr* CT_Worksheet::ChildGroup_1::mutable_sheetCalcPr()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = true;
-    if (!m_sheetCalcPr)
-    {
-        m_sheetCalcPr = new CT_SheetCalcPr();
-    }
-    return m_sheetCalcPr;
-    }
-
-    const CT_SheetCalcPr& CT_Worksheet::ChildGroup_1::get_sheetCalcPr() const
-    {    
-    if (m_sheetCalcPr)
-    {
-        return *m_sheetCalcPr;
-    }
-    return CT_SheetCalcPr::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_sheetProtection() const
-    {    
-    return m_has_sheetProtection;
-    }
-
-    CT_SheetProtection* CT_Worksheet::ChildGroup_1::mutable_sheetProtection()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = true;
-    if (!m_sheetProtection)
-    {
-        m_sheetProtection = new CT_SheetProtection();
-    }
-    return m_sheetProtection;
-    }
-
-    const CT_SheetProtection& CT_Worksheet::ChildGroup_1::get_sheetProtection() const
-    {    
-    if (m_sheetProtection)
-    {
-        return *m_sheetProtection;
-    }
-    return CT_SheetProtection::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_protectedRanges() const
-    {    
-    return m_has_protectedRanges;
-    }
-
-    CT_ProtectedRanges* CT_Worksheet::ChildGroup_1::mutable_protectedRanges()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = true;
-    if (!m_protectedRanges)
-    {
-        m_protectedRanges = new CT_ProtectedRanges();
-    }
-    return m_protectedRanges;
-    }
-
-    const CT_ProtectedRanges& CT_Worksheet::ChildGroup_1::get_protectedRanges() const
-    {    
-    if (m_protectedRanges)
-    {
-        return *m_protectedRanges;
-    }
-    return CT_ProtectedRanges::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_scenarios() const
-    {    
-    return m_has_scenarios;
-    }
-
-    CT_Scenarios* CT_Worksheet::ChildGroup_1::mutable_scenarios()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_scenarios = true;
-    if (!m_scenarios)
-    {
-        m_scenarios = new CT_Scenarios();
-    }
-    return m_scenarios;
-    }
-
-    const CT_Scenarios& CT_Worksheet::ChildGroup_1::get_scenarios() const
-    {    
-    if (m_scenarios)
-    {
-        return *m_scenarios;
-    }
-    return CT_Scenarios::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_autoFilter() const
-    {    
-    return m_has_autoFilter;
-    }
-
-    CT_AutoFilter* CT_Worksheet::ChildGroup_1::mutable_autoFilter()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = true;
-    if (!m_autoFilter)
-    {
-        m_autoFilter = new CT_AutoFilter();
-    }
-    return m_autoFilter;
-    }
-
-    const CT_AutoFilter& CT_Worksheet::ChildGroup_1::get_autoFilter() const
-    {    
-    if (m_autoFilter)
-    {
-        return *m_autoFilter;
-    }
-    return CT_AutoFilter::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_sortState() const
-    {    
-    return m_has_sortState;
-    }
-
-    CT_SortState* CT_Worksheet::ChildGroup_1::mutable_sortState()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_sortState = true;
-    if (!m_sortState)
-    {
-        m_sortState = new CT_SortState();
-    }
-    return m_sortState;
-    }
-
-    const CT_SortState& CT_Worksheet::ChildGroup_1::get_sortState() const
-    {    
-    if (m_sortState)
-    {
-        return *m_sortState;
-    }
-    return CT_SortState::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_dataConsolidate() const
-    {    
-    return m_has_dataConsolidate;
-    }
-
-    CT_DataConsolidate* CT_Worksheet::ChildGroup_1::mutable_dataConsolidate()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = true;
-    if (!m_dataConsolidate)
-    {
-        m_dataConsolidate = new CT_DataConsolidate();
-    }
-    return m_dataConsolidate;
-    }
-
-    const CT_DataConsolidate& CT_Worksheet::ChildGroup_1::get_dataConsolidate() const
-    {    
-    if (m_dataConsolidate)
-    {
-        return *m_dataConsolidate;
-    }
-    return CT_DataConsolidate::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_customSheetViews() const
-    {    
-    return m_has_customSheetViews;
-    }
-
-    CT_CustomSheetViews* CT_Worksheet::ChildGroup_1::mutable_customSheetViews()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = true;
-    if (!m_customSheetViews)
-    {
-        m_customSheetViews = new CT_CustomSheetViews();
-    }
-    return m_customSheetViews;
-    }
-
-    const CT_CustomSheetViews& CT_Worksheet::ChildGroup_1::get_customSheetViews() const
-    {    
-    if (m_customSheetViews)
-    {
-        return *m_customSheetViews;
-    }
-    return CT_CustomSheetViews::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_mergeCells() const
-    {    
-    return m_has_mergeCells;
-    }
-
-    CT_MergeCells* CT_Worksheet::ChildGroup_1::mutable_mergeCells()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = true;
-    if (!m_mergeCells)
-    {
-        m_mergeCells = new CT_MergeCells();
-    }
-    return m_mergeCells;
-    }
-
-    const CT_MergeCells& CT_Worksheet::ChildGroup_1::get_mergeCells() const
-    {    
-    if (m_mergeCells)
-    {
-        return *m_mergeCells;
-    }
-    return CT_MergeCells::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_phoneticPr() const
-    {    
-    return m_has_phoneticPr;
-    }
-
-    CT_PhoneticPr* CT_Worksheet::ChildGroup_1::mutable_phoneticPr()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = true;
-    if (!m_phoneticPr)
-    {
-        m_phoneticPr = new CT_PhoneticPr();
-    }
-    return m_phoneticPr;
-    }
-
-    const CT_PhoneticPr& CT_Worksheet::ChildGroup_1::get_phoneticPr() const
-    {    
-    if (m_phoneticPr)
-    {
-        return *m_phoneticPr;
-    }
-    return CT_PhoneticPr::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_conditionalFormatting() const
+    bool CT_Worksheet::ChildGroup_2::has_conditionalFormatting() const
     {    
     return m_has_conditionalFormatting;
     }
 
-    CT_ConditionalFormatting* CT_Worksheet::ChildGroup_1::mutable_conditionalFormatting()
+    CT_ConditionalFormatting* CT_Worksheet::ChildGroup_2::mutable_conditionalFormatting()
     {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_conditionalFormatting = true;
     if (!m_conditionalFormatting)
@@ -65852,7295 +57937,13 @@ CT_Dialogsheet* CT_Dialogsheet::default_instance_ = NULL;
     return m_conditionalFormatting;
     }
 
-    const CT_ConditionalFormatting& CT_Worksheet::ChildGroup_1::get_conditionalFormatting() const
+    const CT_ConditionalFormatting& CT_Worksheet::ChildGroup_2::get_conditionalFormatting() const
     {    
     if (m_conditionalFormatting)
     {
         return *m_conditionalFormatting;
     }
     return CT_ConditionalFormatting::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_dataValidations() const
-    {    
-    return m_has_dataValidations;
-    }
-
-    CT_DataValidations* CT_Worksheet::ChildGroup_1::mutable_dataValidations()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = true;
-    if (!m_dataValidations)
-    {
-        m_dataValidations = new CT_DataValidations();
-    }
-    return m_dataValidations;
-    }
-
-    const CT_DataValidations& CT_Worksheet::ChildGroup_1::get_dataValidations() const
-    {    
-    if (m_dataValidations)
-    {
-        return *m_dataValidations;
-    }
-    return CT_DataValidations::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_hyperlinks() const
-    {    
-    return m_has_hyperlinks;
-    }
-
-    CT_Hyperlinks* CT_Worksheet::ChildGroup_1::mutable_hyperlinks()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = true;
-    if (!m_hyperlinks)
-    {
-        m_hyperlinks = new CT_Hyperlinks();
-    }
-    return m_hyperlinks;
-    }
-
-    const CT_Hyperlinks& CT_Worksheet::ChildGroup_1::get_hyperlinks() const
-    {    
-    if (m_hyperlinks)
-    {
-        return *m_hyperlinks;
-    }
-    return CT_Hyperlinks::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_printOptions() const
-    {    
-    return m_has_printOptions;
-    }
-
-    CT_PrintOptions* CT_Worksheet::ChildGroup_1::mutable_printOptions()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_printOptions = true;
-    if (!m_printOptions)
-    {
-        m_printOptions = new CT_PrintOptions();
-    }
-    return m_printOptions;
-    }
-
-    const CT_PrintOptions& CT_Worksheet::ChildGroup_1::get_printOptions() const
-    {    
-    if (m_printOptions)
-    {
-        return *m_printOptions;
-    }
-    return CT_PrintOptions::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_pageMargins() const
-    {    
-    return m_has_pageMargins;
-    }
-
-    CT_PageMargins* CT_Worksheet::ChildGroup_1::mutable_pageMargins()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = true;
-    if (!m_pageMargins)
-    {
-        m_pageMargins = new CT_PageMargins();
-    }
-    return m_pageMargins;
-    }
-
-    const CT_PageMargins& CT_Worksheet::ChildGroup_1::get_pageMargins() const
-    {    
-    if (m_pageMargins)
-    {
-        return *m_pageMargins;
-    }
-    return CT_PageMargins::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_pageSetup() const
-    {    
-    return m_has_pageSetup;
-    }
-
-    CT_PageSetup* CT_Worksheet::ChildGroup_1::mutable_pageSetup()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = true;
-    if (!m_pageSetup)
-    {
-        m_pageSetup = new CT_PageSetup();
-    }
-    return m_pageSetup;
-    }
-
-    const CT_PageSetup& CT_Worksheet::ChildGroup_1::get_pageSetup() const
-    {    
-    if (m_pageSetup)
-    {
-        return *m_pageSetup;
-    }
-    return CT_PageSetup::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_headerFooter() const
-    {    
-    return m_has_headerFooter;
-    }
-
-    CT_HeaderFooter* CT_Worksheet::ChildGroup_1::mutable_headerFooter()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = true;
-    if (!m_headerFooter)
-    {
-        m_headerFooter = new CT_HeaderFooter();
-    }
-    return m_headerFooter;
-    }
-
-    const CT_HeaderFooter& CT_Worksheet::ChildGroup_1::get_headerFooter() const
-    {    
-    if (m_headerFooter)
-    {
-        return *m_headerFooter;
-    }
-    return CT_HeaderFooter::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_rowBreaks() const
-    {    
-    return m_has_rowBreaks;
-    }
-
-    CT_PageBreak* CT_Worksheet::ChildGroup_1::mutable_rowBreaks()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = true;
-    if (!m_rowBreaks)
-    {
-        m_rowBreaks = new CT_PageBreak();
-    }
-    return m_rowBreaks;
-    }
-
-    const CT_PageBreak& CT_Worksheet::ChildGroup_1::get_rowBreaks() const
-    {    
-    if (m_rowBreaks)
-    {
-        return *m_rowBreaks;
-    }
-    return CT_PageBreak::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_colBreaks() const
-    {    
-    return m_has_colBreaks;
-    }
-
-    CT_PageBreak* CT_Worksheet::ChildGroup_1::mutable_colBreaks()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = true;
-    if (!m_colBreaks)
-    {
-        m_colBreaks = new CT_PageBreak();
-    }
-    return m_colBreaks;
-    }
-
-    const CT_PageBreak& CT_Worksheet::ChildGroup_1::get_colBreaks() const
-    {    
-    if (m_colBreaks)
-    {
-        return *m_colBreaks;
-    }
-    return CT_PageBreak::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_customProperties() const
-    {    
-    return m_has_customProperties;
-    }
-
-    CT_CustomProperties* CT_Worksheet::ChildGroup_1::mutable_customProperties()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_customProperties = true;
-    if (!m_customProperties)
-    {
-        m_customProperties = new CT_CustomProperties();
-    }
-    return m_customProperties;
-    }
-
-    const CT_CustomProperties& CT_Worksheet::ChildGroup_1::get_customProperties() const
-    {    
-    if (m_customProperties)
-    {
-        return *m_customProperties;
-    }
-    return CT_CustomProperties::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_cellWatches() const
-    {    
-    return m_has_cellWatches;
-    }
-
-    CT_CellWatches* CT_Worksheet::ChildGroup_1::mutable_cellWatches()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = true;
-    if (!m_cellWatches)
-    {
-        m_cellWatches = new CT_CellWatches();
-    }
-    return m_cellWatches;
-    }
-
-    const CT_CellWatches& CT_Worksheet::ChildGroup_1::get_cellWatches() const
-    {    
-    if (m_cellWatches)
-    {
-        return *m_cellWatches;
-    }
-    return CT_CellWatches::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_ignoredErrors() const
-    {    
-    return m_has_ignoredErrors;
-    }
-
-    CT_IgnoredErrors* CT_Worksheet::ChildGroup_1::mutable_ignoredErrors()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = true;
-    if (!m_ignoredErrors)
-    {
-        m_ignoredErrors = new CT_IgnoredErrors();
-    }
-    return m_ignoredErrors;
-    }
-
-    const CT_IgnoredErrors& CT_Worksheet::ChildGroup_1::get_ignoredErrors() const
-    {    
-    if (m_ignoredErrors)
-    {
-        return *m_ignoredErrors;
-    }
-    return CT_IgnoredErrors::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_smartTags() const
-    {    
-    return m_has_smartTags;
-    }
-
-    CT_SmartTags* CT_Worksheet::ChildGroup_1::mutable_smartTags()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_smartTags = true;
-    if (!m_smartTags)
-    {
-        m_smartTags = new CT_SmartTags();
-    }
-    return m_smartTags;
-    }
-
-    const CT_SmartTags& CT_Worksheet::ChildGroup_1::get_smartTags() const
-    {    
-    if (m_smartTags)
-    {
-        return *m_smartTags;
-    }
-    return CT_SmartTags::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_drawing() const
-    {    
-    return m_has_drawing;
-    }
-
-    CT_Drawing* CT_Worksheet::ChildGroup_1::mutable_drawing()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_drawing = true;
-    if (!m_drawing)
-    {
-        m_drawing = new CT_Drawing();
-    }
-    return m_drawing;
-    }
-
-    const CT_Drawing& CT_Worksheet::ChildGroup_1::get_drawing() const
-    {    
-    if (m_drawing)
-    {
-        return *m_drawing;
-    }
-    return CT_Drawing::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_legacyDrawing() const
-    {    
-    return m_has_legacyDrawing;
-    }
-
-    CT_LegacyDrawing* CT_Worksheet::ChildGroup_1::mutable_legacyDrawing()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = true;
-    if (!m_legacyDrawing)
-    {
-        m_legacyDrawing = new CT_LegacyDrawing();
-    }
-    return m_legacyDrawing;
-    }
-
-    const CT_LegacyDrawing& CT_Worksheet::ChildGroup_1::get_legacyDrawing() const
-    {    
-    if (m_legacyDrawing)
-    {
-        return *m_legacyDrawing;
-    }
-    return CT_LegacyDrawing::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_legacyDrawingHF() const
-    {    
-    return m_has_legacyDrawingHF;
-    }
-
-    CT_LegacyDrawing* CT_Worksheet::ChildGroup_1::mutable_legacyDrawingHF()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = true;
-    if (!m_legacyDrawingHF)
-    {
-        m_legacyDrawingHF = new CT_LegacyDrawing();
-    }
-    return m_legacyDrawingHF;
-    }
-
-    const CT_LegacyDrawing& CT_Worksheet::ChildGroup_1::get_legacyDrawingHF() const
-    {    
-    if (m_legacyDrawingHF)
-    {
-        return *m_legacyDrawingHF;
-    }
-    return CT_LegacyDrawing::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_drawingHF() const
-    {    
-    return m_has_drawingHF;
-    }
-
-    CT_DrawingHF* CT_Worksheet::ChildGroup_1::mutable_drawingHF()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = true;
-    if (!m_drawingHF)
-    {
-        m_drawingHF = new CT_DrawingHF();
-    }
-    return m_drawingHF;
-    }
-
-    const CT_DrawingHF& CT_Worksheet::ChildGroup_1::get_drawingHF() const
-    {    
-    if (m_drawingHF)
-    {
-        return *m_drawingHF;
-    }
-    return CT_DrawingHF::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_picture() const
-    {    
-    return m_has_picture;
-    }
-
-    CT_SheetBackgroundPicture* CT_Worksheet::ChildGroup_1::mutable_picture()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_picture = true;
-    if (!m_picture)
-    {
-        m_picture = new CT_SheetBackgroundPicture();
-    }
-    return m_picture;
-    }
-
-    const CT_SheetBackgroundPicture& CT_Worksheet::ChildGroup_1::get_picture() const
-    {    
-    if (m_picture)
-    {
-        return *m_picture;
-    }
-    return CT_SheetBackgroundPicture::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_oleObjects() const
-    {    
-    return m_has_oleObjects;
-    }
-
-    CT_OleObjects* CT_Worksheet::ChildGroup_1::mutable_oleObjects()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = true;
-    if (!m_oleObjects)
-    {
-        m_oleObjects = new CT_OleObjects();
-    }
-    return m_oleObjects;
-    }
-
-    const CT_OleObjects& CT_Worksheet::ChildGroup_1::get_oleObjects() const
-    {    
-    if (m_oleObjects)
-    {
-        return *m_oleObjects;
-    }
-    return CT_OleObjects::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_controls() const
-    {    
-    return m_has_controls;
-    }
-
-    CT_Controls* CT_Worksheet::ChildGroup_1::mutable_controls()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_controls = true;
-    if (!m_controls)
-    {
-        m_controls = new CT_Controls();
-    }
-    return m_controls;
-    }
-
-    const CT_Controls& CT_Worksheet::ChildGroup_1::get_controls() const
-    {    
-    if (m_controls)
-    {
-        return *m_controls;
-    }
-    return CT_Controls::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_webPublishItems() const
-    {    
-    return m_has_webPublishItems;
-    }
-
-    CT_WebPublishItems* CT_Worksheet::ChildGroup_1::mutable_webPublishItems()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = true;
-    if (!m_webPublishItems)
-    {
-        m_webPublishItems = new CT_WebPublishItems();
-    }
-    return m_webPublishItems;
-    }
-
-    const CT_WebPublishItems& CT_Worksheet::ChildGroup_1::get_webPublishItems() const
-    {    
-    if (m_webPublishItems)
-    {
-        return *m_webPublishItems;
-    }
-    return CT_WebPublishItems::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_tableParts() const
-    {    
-    return m_has_tableParts;
-    }
-
-    CT_TableParts* CT_Worksheet::ChildGroup_1::mutable_tableParts()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_tableParts = true;
-    if (!m_tableParts)
-    {
-        m_tableParts = new CT_TableParts();
-    }
-    return m_tableParts;
-    }
-
-    const CT_TableParts& CT_Worksheet::ChildGroup_1::get_tableParts() const
-    {    
-    if (m_tableParts)
-    {
-        return *m_tableParts;
-    }
-    return CT_TableParts::default_instance();
-    }
-
-    bool CT_Worksheet::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_Worksheet::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_Worksheet::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_Worksheet* CT_Worksheet::default_instance_ = NULL;
@@ -73622,6 +58425,11 @@ CT_SheetFormatPr* CT_SheetFormatPr::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_col));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -73987,7 +58795,9 @@ CT_Col* CT_Col::default_instance_ = NULL;
 
     // CT_Row
     CT_Row::CT_Row()
-    :m_has_r_attr(false),
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_r_attr(false),
     m_r_attr(0),
     m_has_spans_attr(false),
     m_spans_attr(NULL),
@@ -74024,12 +58834,28 @@ CT_Col* CT_Col::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_Row::add_extLst()
+    bool CT_Row::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_Row::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_Row::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_Row::clear()
@@ -74084,6 +58910,15 @@ CT_Col* CT_Col::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Row::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -74179,14 +59014,13 @@ CT_Col* CT_Col::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -74401,9 +59235,7 @@ CT_Col* CT_Col::default_instance_ = NULL;
     // CT_Row::ChildGroup_1
     CT_Row::ChildGroup_1::ChildGroup_1()
     :m_has_c(false),
-    m_c(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_c(NULL)
     {
     }
     bool CT_Row::ChildGroup_1::has_c() const
@@ -74413,15 +59245,6 @@ CT_Col* CT_Col::default_instance_ = NULL;
 
     CT_Cell* CT_Row::ChildGroup_1::mutable_c()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_c = true;
     if (!m_c)
@@ -74438,40 +59261,6 @@ CT_Col* CT_Col::default_instance_ = NULL;
         return *m_c;
     }
     return CT_Cell::default_instance();
-    }
-
-    bool CT_Row::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_Row::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_c = false;
-    
-    if (m_c)
-    {
-        delete m_c;
-        m_c = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_Row::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_Row* CT_Row::default_instance_ = NULL;
@@ -74714,6 +59503,7 @@ CT_Row* CT_Row::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_f)
     {
         m_f->toXmlElem("main:f", "", _outStream);
@@ -75085,6 +59875,7 @@ CT_Cell* CT_Cell::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_tabColor)
     {
         m_tabColor->toXmlElem("main:tabColor", "", _outStream);
@@ -75337,7 +60128,8 @@ CT_SheetDimension* CT_SheetDimension::default_instance_ = NULL;
 
     // CT_SheetViews
     CT_SheetViews::CT_SheetViews()
-
+    :m_has_extLst(false),
+    m_extLst(NULL)
     {
     }
     CT_SheetViews::~CT_SheetViews()
@@ -75351,12 +60143,28 @@ CT_SheetDimension* CT_SheetDimension::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_SheetViews::add_extLst()
+    bool CT_SheetViews::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_SheetViews::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_SheetViews::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_SheetViews::clear()
@@ -75369,6 +60177,15 @@ CT_SheetDimension* CT_SheetDimension::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_SheetViews::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -75383,6 +60200,11 @@ CT_SheetDimension* CT_SheetDimension::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sheetView));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -75393,14 +60215,13 @@ CT_SheetDimension* CT_SheetDimension::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -75419,9 +60240,7 @@ CT_SheetDimension* CT_SheetDimension::default_instance_ = NULL;
     // CT_SheetViews::ChildGroup_1
     CT_SheetViews::ChildGroup_1::ChildGroup_1()
     :m_has_sheetView(false),
-    m_sheetView(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_sheetView(NULL)
     {
     }
     bool CT_SheetViews::ChildGroup_1::has_sheetView() const
@@ -75431,15 +60250,6 @@ CT_SheetDimension* CT_SheetDimension::default_instance_ = NULL;
 
     CT_SheetView* CT_SheetViews::ChildGroup_1::mutable_sheetView()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_sheetView = true;
     if (!m_sheetView)
@@ -75458,46 +60268,14 @@ CT_SheetDimension* CT_SheetDimension::default_instance_ = NULL;
     return CT_SheetView::default_instance();
     }
 
-    bool CT_SheetViews::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_SheetViews::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_sheetView = false;
-    
-    if (m_sheetView)
-    {
-        delete m_sheetView;
-        m_sheetView = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_SheetViews::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
-    }
-
 CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
 
     // CT_SheetView
     CT_SheetView::CT_SheetView()
     :m_has_pane(false),
     m_pane(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
     m_has_windowProtection_attr(false),
     m_windowProtection_attr(false),
     m_has_showFormulas_attr(false),
@@ -75581,12 +60359,28 @@ CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_SheetView::add_extLst()
+    bool CT_SheetView::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_SheetView::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_SheetView::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_SheetView::clear()
@@ -75677,6 +60471,15 @@ CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_SheetView::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -75803,11 +60606,23 @@ CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_pane)
     {
         m_pane->toXmlElem("main:pane", "", _outStream);
     }
      
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_selection));
+        assert(0 <= elemCnt && elemCnt <= 4);
+    }
+    
+    
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pivotSelection));
+        assert(0 <= elemCnt && elemCnt <= 4);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -75826,14 +60641,13 @@ CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -76166,9 +60980,7 @@ CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
     :m_has_selection(false),
     m_selection(NULL),
     m_has_pivotSelection(false),
-    m_pivotSelection(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_pivotSelection(NULL)
     {
     }
     bool CT_SheetView::ChildGroup_1::has_selection() const
@@ -76185,15 +60997,6 @@ CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
     {
         delete m_pivotSelection;
         m_pivotSelection = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
     }
     ;
     
@@ -76231,15 +61034,6 @@ CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
     }
     ;
     
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
     m_has_pivotSelection = true;
     if (!m_pivotSelection)
     {
@@ -76255,49 +61049,6 @@ CT_SheetViews* CT_SheetViews::default_instance_ = NULL;
         return *m_pivotSelection;
     }
     return CT_PivotSelection::default_instance();
-    }
-
-    bool CT_SheetView::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_SheetView::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_selection = false;
-    
-    if (m_selection)
-    {
-        delete m_selection;
-        m_selection = NULL;
-    }
-    ;
-    
-    m_has_pivotSelection = false;
-    
-    if (m_pivotSelection)
-    {
-        delete m_pivotSelection;
-        m_pivotSelection = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_SheetView::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_SheetView* CT_SheetView::default_instance_ = NULL;
@@ -76761,6 +61512,9 @@ CT_Pane* CT_Pane::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_pivotArea);
+        
+    
     if (m_has_pivotArea)
     {
         m_pivotArea->toXmlElem("main:pivotArea", "", _outStream);
@@ -77902,6 +62656,7 @@ CT_PageSetUpPr* CT_PageSetUpPr::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_dataRefs)
     {
         m_dataRefs->toXmlElem("main:dataRefs", "", _outStream);
@@ -78360,6 +63115,11 @@ CT_DataRef* CT_DataRef::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_mergeCell));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -78546,6 +63306,11 @@ CT_MergeCell* CT_MergeCell::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cellSmartTags));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -78659,6 +63424,11 @@ CT_SmartTags* CT_SmartTags::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cellSmartTag));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -79764,6 +64534,11 @@ CT_DrawingHF* CT_DrawingHF::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_customSheetView));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -80437,6 +65212,7 @@ CT_CustomSheetViews* CT_CustomSheetViews::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_pane)
     {
         m_pane->toXmlElem("main:pane", "", _outStream);
@@ -80928,6 +65704,11 @@ CT_CustomSheetView* CT_CustomSheetView::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_dataValidation));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -81338,6 +66119,7 @@ CT_DataValidations* CT_DataValidations::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_formula1)
     {
         _outStream << "<main:formula1>" << m_formula1->toString() << "</main:formula1>";
@@ -81609,7 +66391,9 @@ CT_DataValidation* CT_DataValidation::default_instance_ = NULL;
 
     // CT_ConditionalFormatting
     CT_ConditionalFormatting::CT_ConditionalFormatting()
-    :m_has_pivot_attr(false),
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_pivot_attr(false),
     m_pivot_attr(false),
     m_has_sqref_attr(false),
     m_sqref_attr(NULL)
@@ -81626,12 +66410,28 @@ CT_DataValidation* CT_DataValidation::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_ConditionalFormatting::add_extLst()
+    bool CT_ConditionalFormatting::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_ConditionalFormatting::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_ConditionalFormatting::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_ConditionalFormatting::clear()
@@ -81656,6 +66456,15 @@ CT_DataValidation* CT_DataValidation::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_ConditionalFormatting::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -81681,6 +66490,11 @@ CT_DataValidation* CT_DataValidation::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cfRule));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -81691,14 +66505,13 @@ CT_DataValidation* CT_DataValidation::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -81753,9 +66566,7 @@ CT_DataValidation* CT_DataValidation::default_instance_ = NULL;
     // CT_ConditionalFormatting::ChildGroup_1
     CT_ConditionalFormatting::ChildGroup_1::ChildGroup_1()
     :m_has_cfRule(false),
-    m_cfRule(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_cfRule(NULL)
     {
     }
     bool CT_ConditionalFormatting::ChildGroup_1::has_cfRule() const
@@ -81765,15 +66576,6 @@ CT_DataValidation* CT_DataValidation::default_instance_ = NULL;
 
     CT_CfRule* CT_ConditionalFormatting::ChildGroup_1::mutable_cfRule()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_cfRule = true;
     if (!m_cfRule)
@@ -81792,45 +66594,19 @@ CT_DataValidation* CT_DataValidation::default_instance_ = NULL;
     return CT_CfRule::default_instance();
     }
 
-    bool CT_ConditionalFormatting::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_ConditionalFormatting::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_cfRule = false;
-    
-    if (m_cfRule)
-    {
-        delete m_cfRule;
-        m_cfRule = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_ConditionalFormatting::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
-    }
-
 CT_ConditionalFormatting* CT_ConditionalFormatting::default_instance_ = NULL;
 
     // CT_CfRule
     CT_CfRule::CT_CfRule()
-    :m_has_type_attr(false),
+    :m_has_colorScale(false),
+    m_colorScale(NULL),
+    m_has_dataBar(false),
+    m_dataBar(NULL),
+    m_has_iconSet(false),
+    m_iconSet(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_type_attr(false),
     m_type_attr(NULL),
     m_has_dxfId_attr(false),
     m_dxfId_attr(NULL),
@@ -81869,36 +66645,100 @@ CT_ConditionalFormatting* CT_ConditionalFormatting::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ColorScale* CT_CfRule::add_colorScale()
+    bool CT_CfRule::has_colorScale() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ColorScale* pNewChild = pChildGroup->mutable_colorScale();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_colorScale;
     }
 
-    CT_DataBar* CT_CfRule::add_dataBar()
+    CT_ColorScale* CT_CfRule::mutable_colorScale()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_DataBar* pNewChild = pChildGroup->mutable_dataBar();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_colorScale = true;
+    if (!m_colorScale)
+    {
+        m_colorScale = new CT_ColorScale();
+    }
+    return m_colorScale;
     }
 
-    CT_IconSet* CT_CfRule::add_iconSet()
+    const CT_ColorScale& CT_CfRule::get_colorScale() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_IconSet* pNewChild = pChildGroup->mutable_iconSet();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_colorScale)
+    {
+        return *m_colorScale;
+    }
+    return CT_ColorScale::default_instance();
     }
 
-    CT_ExtensionList* CT_CfRule::add_extLst()
+    bool CT_CfRule::has_dataBar() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_dataBar;
+    }
+
+    CT_DataBar* CT_CfRule::mutable_dataBar()
+    {    
+    m_has_dataBar = true;
+    if (!m_dataBar)
+    {
+        m_dataBar = new CT_DataBar();
+    }
+    return m_dataBar;
+    }
+
+    const CT_DataBar& CT_CfRule::get_dataBar() const
+    {    
+    if (m_dataBar)
+    {
+        return *m_dataBar;
+    }
+    return CT_DataBar::default_instance();
+    }
+
+    bool CT_CfRule::has_iconSet() const
+    {    
+    return m_has_iconSet;
+    }
+
+    CT_IconSet* CT_CfRule::mutable_iconSet()
+    {    
+    m_has_iconSet = true;
+    if (!m_iconSet)
+    {
+        m_iconSet = new CT_IconSet();
+    }
+    return m_iconSet;
+    }
+
+    const CT_IconSet& CT_CfRule::get_iconSet() const
+    {    
+    if (m_iconSet)
+    {
+        return *m_iconSet;
+    }
+    return CT_IconSet::default_instance();
+    }
+
+    bool CT_CfRule::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_CfRule::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_CfRule::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_CfRule::clear()
@@ -81974,6 +66814,42 @@ CT_ConditionalFormatting* CT_ConditionalFormatting::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_colorScale = false;
+    
+    if (m_colorScale)
+    {
+        delete m_colorScale;
+        m_colorScale = NULL;
+    }
+    
+    
+    m_has_dataBar = false;
+    
+    if (m_dataBar)
+    {
+        delete m_dataBar;
+        m_dataBar = NULL;
+    }
+    
+    
+    m_has_iconSet = false;
+    
+    if (m_iconSet)
+    {
+        delete m_iconSet;
+        m_iconSet = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_CfRule::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -82065,6 +66941,11 @@ CT_ConditionalFormatting* CT_ConditionalFormatting::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_formula));
+        assert(0 <= elemCnt && elemCnt <= 3);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -82075,35 +66956,31 @@ CT_ConditionalFormatting* CT_ConditionalFormatting::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_colorScale())
-    {
-        (*iter)->get_colorScale().toXmlElem("main:colorScale", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_dataBar())
-    {
-        (*iter)->get_dataBar().toXmlElem("main:dataBar", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_iconSet())
-    {
-        (*iter)->get_iconSet().toXmlElem("main:iconSet", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_colorScale)
+    {
+        m_colorScale->toXmlElem("main:colorScale", "", _outStream);
+    }
+    
+    
+    if (m_has_dataBar)
+    {
+        m_dataBar->toXmlElem("main:dataBar", "", _outStream);
+    }
+    
+    
+    if (m_has_iconSet)
+    {
+        m_iconSet->toXmlElem("main:iconSet", "", _outStream);
+    }
+    
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -82346,15 +67223,7 @@ CT_ConditionalFormatting* CT_ConditionalFormatting::default_instance_ = NULL;
     // CT_CfRule::ChildGroup_1
     CT_CfRule::ChildGroup_1::ChildGroup_1()
     :m_has_formula(false),
-    m_formula(NULL),
-    m_has_colorScale(false),
-    m_colorScale(NULL),
-    m_has_dataBar(false),
-    m_dataBar(NULL),
-    m_has_iconSet(false),
-    m_iconSet(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_formula(NULL)
     {
     }
     bool CT_CfRule::ChildGroup_1::has_formula() const
@@ -82364,42 +67233,6 @@ CT_ConditionalFormatting* CT_ConditionalFormatting::default_instance_ = NULL;
 
     ST_Formula* CT_CfRule::ChildGroup_1::mutable_formula()
     {    
-    
-    m_has_colorScale = false;
-    
-    if (m_colorScale)
-    {
-        delete m_colorScale;
-        m_colorScale = NULL;
-    }
-    ;
-    
-    m_has_dataBar = false;
-    
-    if (m_dataBar)
-    {
-        delete m_dataBar;
-        m_dataBar = NULL;
-    }
-    ;
-    
-    m_has_iconSet = false;
-    
-    if (m_iconSet)
-    {
-        delete m_iconSet;
-        m_iconSet = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_formula = true;
     if (!m_formula)
@@ -82416,250 +67249,6 @@ CT_ConditionalFormatting* CT_ConditionalFormatting::default_instance_ = NULL;
         return *m_formula;
     }
     return ST_Formula::default_instance();
-    }
-
-    bool CT_CfRule::ChildGroup_1::has_colorScale() const
-    {    
-    return m_has_colorScale;
-    }
-
-    CT_ColorScale* CT_CfRule::ChildGroup_1::mutable_colorScale()
-    {    
-    
-    m_has_formula = false;
-    
-    if (m_formula)
-    {
-        delete m_formula;
-        m_formula = NULL;
-    }
-    ;
-    
-    m_has_dataBar = false;
-    
-    if (m_dataBar)
-    {
-        delete m_dataBar;
-        m_dataBar = NULL;
-    }
-    ;
-    
-    m_has_iconSet = false;
-    
-    if (m_iconSet)
-    {
-        delete m_iconSet;
-        m_iconSet = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_colorScale = true;
-    if (!m_colorScale)
-    {
-        m_colorScale = new CT_ColorScale();
-    }
-    return m_colorScale;
-    }
-
-    const CT_ColorScale& CT_CfRule::ChildGroup_1::get_colorScale() const
-    {    
-    if (m_colorScale)
-    {
-        return *m_colorScale;
-    }
-    return CT_ColorScale::default_instance();
-    }
-
-    bool CT_CfRule::ChildGroup_1::has_dataBar() const
-    {    
-    return m_has_dataBar;
-    }
-
-    CT_DataBar* CT_CfRule::ChildGroup_1::mutable_dataBar()
-    {    
-    
-    m_has_formula = false;
-    
-    if (m_formula)
-    {
-        delete m_formula;
-        m_formula = NULL;
-    }
-    ;
-    
-    m_has_colorScale = false;
-    
-    if (m_colorScale)
-    {
-        delete m_colorScale;
-        m_colorScale = NULL;
-    }
-    ;
-    
-    m_has_iconSet = false;
-    
-    if (m_iconSet)
-    {
-        delete m_iconSet;
-        m_iconSet = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_dataBar = true;
-    if (!m_dataBar)
-    {
-        m_dataBar = new CT_DataBar();
-    }
-    return m_dataBar;
-    }
-
-    const CT_DataBar& CT_CfRule::ChildGroup_1::get_dataBar() const
-    {    
-    if (m_dataBar)
-    {
-        return *m_dataBar;
-    }
-    return CT_DataBar::default_instance();
-    }
-
-    bool CT_CfRule::ChildGroup_1::has_iconSet() const
-    {    
-    return m_has_iconSet;
-    }
-
-    CT_IconSet* CT_CfRule::ChildGroup_1::mutable_iconSet()
-    {    
-    
-    m_has_formula = false;
-    
-    if (m_formula)
-    {
-        delete m_formula;
-        m_formula = NULL;
-    }
-    ;
-    
-    m_has_colorScale = false;
-    
-    if (m_colorScale)
-    {
-        delete m_colorScale;
-        m_colorScale = NULL;
-    }
-    ;
-    
-    m_has_dataBar = false;
-    
-    if (m_dataBar)
-    {
-        delete m_dataBar;
-        m_dataBar = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_iconSet = true;
-    if (!m_iconSet)
-    {
-        m_iconSet = new CT_IconSet();
-    }
-    return m_iconSet;
-    }
-
-    const CT_IconSet& CT_CfRule::ChildGroup_1::get_iconSet() const
-    {    
-    if (m_iconSet)
-    {
-        return *m_iconSet;
-    }
-    return CT_IconSet::default_instance();
-    }
-
-    bool CT_CfRule::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_CfRule::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_formula = false;
-    
-    if (m_formula)
-    {
-        delete m_formula;
-        m_formula = NULL;
-    }
-    ;
-    
-    m_has_colorScale = false;
-    
-    if (m_colorScale)
-    {
-        delete m_colorScale;
-        m_colorScale = NULL;
-    }
-    ;
-    
-    m_has_dataBar = false;
-    
-    if (m_dataBar)
-    {
-        delete m_dataBar;
-        m_dataBar = NULL;
-    }
-    ;
-    
-    m_has_iconSet = false;
-    
-    if (m_iconSet)
-    {
-        delete m_iconSet;
-        m_iconSet = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_CfRule::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_CfRule* CT_CfRule::default_instance_ = NULL;
@@ -82703,6 +67292,11 @@ CT_CfRule* CT_CfRule::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_hyperlink));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -83428,6 +68022,17 @@ CT_CellFormula* CT_CellFormula::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cfvo));
+        assert(2 <= elemCnt);
+    }
+    
+    
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_color));
+        assert(2 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -83541,7 +68146,9 @@ CT_ColorScale* CT_ColorScale::default_instance_ = NULL;
 
     // CT_DataBar
     CT_DataBar::CT_DataBar()
-    :m_has_minLength_attr(false),
+    :m_has_color(false),
+    m_color(NULL),
+    m_has_minLength_attr(false),
     m_minLength_attr(0),
     m_has_maxLength_attr(false),
     m_maxLength_attr(0),
@@ -83560,12 +68167,28 @@ CT_ColorScale* CT_ColorScale::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_Color* CT_DataBar::add_color()
+    bool CT_DataBar::has_color() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_Color* pNewChild = pChildGroup->mutable_color();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_color;
+    }
+
+    CT_Color* CT_DataBar::mutable_color()
+    {    
+    m_has_color = true;
+    if (!m_color)
+    {
+        m_color = new CT_Color();
+    }
+    return m_color;
+    }
+
+    const CT_Color& CT_DataBar::get_color() const
+    {    
+    if (m_color)
+    {
+        return *m_color;
+    }
+    return CT_Color::default_instance();
     }
 
     void CT_DataBar::clear()
@@ -83587,6 +68210,15 @@ CT_ColorScale* CT_ColorScale::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_color = false;
+    
+    if (m_color)
+    {
+        delete m_color;
+        m_color = NULL;
+    }
+    
     }
 
     void CT_DataBar::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -83618,6 +68250,11 @@ CT_ColorScale* CT_ColorScale::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cfvo));
+        assert(2 <= elemCnt && elemCnt <= 2);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -83628,14 +68265,15 @@ CT_ColorScale* CT_ColorScale::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_color())
-    {
-        (*iter)->get_color().toXmlElem("main:color", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+        assert(m_has_color);
+        
+    
+    if (m_has_color)
+    {
+        m_color->toXmlElem("main:color", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -83702,9 +68340,7 @@ CT_ColorScale* CT_ColorScale::default_instance_ = NULL;
     // CT_DataBar::ChildGroup_1
     CT_DataBar::ChildGroup_1::ChildGroup_1()
     :m_has_cfvo(false),
-    m_cfvo(NULL),
-    m_has_color(false),
-    m_color(NULL)
+    m_cfvo(NULL)
     {
     }
     bool CT_DataBar::ChildGroup_1::has_cfvo() const
@@ -83714,15 +68350,6 @@ CT_ColorScale* CT_ColorScale::default_instance_ = NULL;
 
     CT_Cfvo* CT_DataBar::ChildGroup_1::mutable_cfvo()
     {    
-    
-    m_has_color = false;
-    
-    if (m_color)
-    {
-        delete m_color;
-        m_color = NULL;
-    }
-    ;
     
     m_has_cfvo = true;
     if (!m_cfvo)
@@ -83739,40 +68366,6 @@ CT_ColorScale* CT_ColorScale::default_instance_ = NULL;
         return *m_cfvo;
     }
     return CT_Cfvo::default_instance();
-    }
-
-    bool CT_DataBar::ChildGroup_1::has_color() const
-    {    
-    return m_has_color;
-    }
-
-    CT_Color* CT_DataBar::ChildGroup_1::mutable_color()
-    {    
-    
-    m_has_cfvo = false;
-    
-    if (m_cfvo)
-    {
-        delete m_cfvo;
-        m_cfvo = NULL;
-    }
-    ;
-    
-    m_has_color = true;
-    if (!m_color)
-    {
-        m_color = new CT_Color();
-    }
-    return m_color;
-    }
-
-    const CT_Color& CT_DataBar::ChildGroup_1::get_color() const
-    {    
-    if (m_color)
-    {
-        return *m_color;
-    }
-    return CT_Color::default_instance();
     }
 
 CT_DataBar* CT_DataBar::default_instance_ = NULL;
@@ -83864,6 +68457,11 @@ CT_DataBar* CT_DataBar::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cfvo));
+        assert(2 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -84092,6 +68690,7 @@ CT_IconSet* CT_IconSet::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -85423,6 +70022,7 @@ CT_PageSetup* CT_PageSetup::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_oddHeader)
     {
         _outStream << "<main:oddHeader>" << m_oddHeader->toString() << "</main:oddHeader>";
@@ -85612,6 +70212,11 @@ CT_HeaderFooter* CT_HeaderFooter::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_scenario));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -86385,6 +70990,11 @@ CT_SheetProtection* CT_SheetProtection::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_protectedRange));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -86910,6 +71520,11 @@ CT_ProtectedRange* CT_ProtectedRange::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_inputCells));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -87315,6 +71930,11 @@ CT_InputCells* CT_InputCells::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cellWatch));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -87957,6 +72577,12 @@ CT_CellWatch* CT_CellWatch::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_sheetViews);
+        
+    
+        assert(m_has_drawing);
+        
+    
     if (m_has_sheetPr)
     {
         m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);
@@ -88131,6 +72757,7 @@ CT_Chartsheet* CT_Chartsheet::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_tabColor)
     {
         m_tabColor->toXmlElem("main:tabColor", "", _outStream);
@@ -88184,7 +72811,8 @@ CT_ChartsheetPr* CT_ChartsheetPr::default_instance_ = NULL;
 
     // CT_ChartsheetViews
     CT_ChartsheetViews::CT_ChartsheetViews()
-
+    :m_has_extLst(false),
+    m_extLst(NULL)
     {
     }
     CT_ChartsheetViews::~CT_ChartsheetViews()
@@ -88198,12 +72826,28 @@ CT_ChartsheetPr* CT_ChartsheetPr::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_ChartsheetViews::add_extLst()
+    bool CT_ChartsheetViews::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_ChartsheetViews::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_ChartsheetViews::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_ChartsheetViews::clear()
@@ -88216,6 +72860,15 @@ CT_ChartsheetPr* CT_ChartsheetPr::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_ChartsheetViews::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -88230,6 +72883,11 @@ CT_ChartsheetPr* CT_ChartsheetPr::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sheetView));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -88240,14 +72898,13 @@ CT_ChartsheetPr* CT_ChartsheetPr::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -88266,9 +72923,7 @@ CT_ChartsheetPr* CT_ChartsheetPr::default_instance_ = NULL;
     // CT_ChartsheetViews::ChildGroup_1
     CT_ChartsheetViews::ChildGroup_1::ChildGroup_1()
     :m_has_sheetView(false),
-    m_sheetView(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_sheetView(NULL)
     {
     }
     bool CT_ChartsheetViews::ChildGroup_1::has_sheetView() const
@@ -88278,15 +72933,6 @@ CT_ChartsheetPr* CT_ChartsheetPr::default_instance_ = NULL;
 
     CT_ChartsheetView* CT_ChartsheetViews::ChildGroup_1::mutable_sheetView()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_sheetView = true;
     if (!m_sheetView)
@@ -88303,40 +72949,6 @@ CT_ChartsheetPr* CT_ChartsheetPr::default_instance_ = NULL;
         return *m_sheetView;
     }
     return CT_ChartsheetView::default_instance();
-    }
-
-    bool CT_ChartsheetViews::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_ChartsheetViews::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_sheetView = false;
-    
-    if (m_sheetView)
-    {
-        delete m_sheetView;
-        m_sheetView = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_ChartsheetViews::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_ChartsheetViews* CT_ChartsheetViews::default_instance_ = NULL;
@@ -88440,6 +73052,7 @@ CT_ChartsheetViews* CT_ChartsheetViews::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -89471,6 +74084,7 @@ CT_CustomChartsheetViews* CT_CustomChartsheetViews::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_pageMargins)
     {
         m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);
@@ -89613,6 +74227,11 @@ CT_CustomChartsheetView* CT_CustomChartsheetView::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_customPr));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -89820,6 +74439,11 @@ CT_CustomProperty* CT_CustomProperty::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_oleObject));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -90036,6 +74660,7 @@ CT_OleObjects* CT_OleObjects::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_objectPr)
     {
         m_objectPr->toXmlElem("main:objectPr", "", _outStream);
@@ -90388,6 +75013,9 @@ CT_OleObject* CT_OleObject::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_anchor);
+        
+    
     if (m_has_anchor)
     {
         m_anchor->toXmlElem("main:anchor", "", _outStream);
@@ -90659,6 +75287,11 @@ CT_ObjectPr* CT_ObjectPr::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_webPublishItem));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -91085,6 +75718,11 @@ CT_WebPublishItem* CT_WebPublishItem::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_control));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -91238,6 +75876,7 @@ CT_Controls* CT_Controls::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_controlPr)
     {
         m_controlPr->toXmlElem("main:controlPr", "", _outStream);
@@ -91565,6 +76204,9 @@ CT_Control* CT_Control::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_anchor);
+        
+    
     if (m_has_anchor)
     {
         m_anchor->toXmlElem("main:anchor", "", _outStream);
@@ -91850,7 +76492,8 @@ CT_ControlPr* CT_ControlPr::default_instance_ = NULL;
 
     // CT_IgnoredErrors
     CT_IgnoredErrors::CT_IgnoredErrors()
-
+    :m_has_extLst(false),
+    m_extLst(NULL)
     {
     }
     CT_IgnoredErrors::~CT_IgnoredErrors()
@@ -91864,12 +76507,28 @@ CT_ControlPr* CT_ControlPr::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_IgnoredErrors::add_extLst()
+    bool CT_IgnoredErrors::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_IgnoredErrors::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_IgnoredErrors::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_IgnoredErrors::clear()
@@ -91882,6 +76541,15 @@ CT_ControlPr* CT_ControlPr::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_IgnoredErrors::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -91896,6 +76564,11 @@ CT_ControlPr* CT_ControlPr::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_ignoredError));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -91906,14 +76579,13 @@ CT_ControlPr* CT_ControlPr::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -91932,9 +76604,7 @@ CT_ControlPr* CT_ControlPr::default_instance_ = NULL;
     // CT_IgnoredErrors::ChildGroup_1
     CT_IgnoredErrors::ChildGroup_1::ChildGroup_1()
     :m_has_ignoredError(false),
-    m_ignoredError(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_ignoredError(NULL)
     {
     }
     bool CT_IgnoredErrors::ChildGroup_1::has_ignoredError() const
@@ -91944,15 +76614,6 @@ CT_ControlPr* CT_ControlPr::default_instance_ = NULL;
 
     CT_IgnoredError* CT_IgnoredErrors::ChildGroup_1::mutable_ignoredError()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_ignoredError = true;
     if (!m_ignoredError)
@@ -91969,40 +76630,6 @@ CT_ControlPr* CT_ControlPr::default_instance_ = NULL;
         return *m_ignoredError;
     }
     return CT_IgnoredError::default_instance();
-    }
-
-    bool CT_IgnoredErrors::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_IgnoredErrors::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_ignoredError = false;
-    
-    if (m_ignoredError)
-    {
-        delete m_ignoredError;
-        m_ignoredError = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_IgnoredErrors::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_IgnoredErrors* CT_IgnoredErrors::default_instance_ = NULL;
@@ -92523,7 +77150,13 @@ CT_TablePart* CT_TablePart::default_instance_ = NULL;
     m_has_metadataStrings(false),
     m_metadataStrings(NULL),
     m_has_mdxMetadata(false),
-    m_mdxMetadata(NULL)
+    m_mdxMetadata(NULL),
+    m_has_cellMetadata(false),
+    m_cellMetadata(NULL),
+    m_has_valueMetadata(false),
+    m_valueMetadata(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
     {
     }
     CT_Metadata::~CT_Metadata()
@@ -92609,28 +77242,76 @@ CT_TablePart* CT_TablePart::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_MetadataBlocks* CT_Metadata::add_cellMetadata()
+    bool CT_Metadata::has_cellMetadata() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_MetadataBlocks* pNewChild = pChildGroup->mutable_cellMetadata();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_cellMetadata;
     }
 
-    CT_MetadataBlocks* CT_Metadata::add_valueMetadata()
+    CT_MetadataBlocks* CT_Metadata::mutable_cellMetadata()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_MetadataBlocks* pNewChild = pChildGroup->mutable_valueMetadata();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_cellMetadata = true;
+    if (!m_cellMetadata)
+    {
+        m_cellMetadata = new CT_MetadataBlocks();
+    }
+    return m_cellMetadata;
     }
 
-    CT_ExtensionList* CT_Metadata::add_extLst()
+    const CT_MetadataBlocks& CT_Metadata::get_cellMetadata() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_cellMetadata)
+    {
+        return *m_cellMetadata;
+    }
+    return CT_MetadataBlocks::default_instance();
+    }
+
+    bool CT_Metadata::has_valueMetadata() const
+    {    
+    return m_has_valueMetadata;
+    }
+
+    CT_MetadataBlocks* CT_Metadata::mutable_valueMetadata()
+    {    
+    m_has_valueMetadata = true;
+    if (!m_valueMetadata)
+    {
+        m_valueMetadata = new CT_MetadataBlocks();
+    }
+    return m_valueMetadata;
+    }
+
+    const CT_MetadataBlocks& CT_Metadata::get_valueMetadata() const
+    {    
+    if (m_valueMetadata)
+    {
+        return *m_valueMetadata;
+    }
+    return CT_MetadataBlocks::default_instance();
+    }
+
+    bool CT_Metadata::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_Metadata::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_Metadata::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_Metadata::clear()
@@ -92670,6 +77351,33 @@ CT_TablePart* CT_TablePart::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_cellMetadata = false;
+    
+    if (m_cellMetadata)
+    {
+        delete m_cellMetadata;
+        m_cellMetadata = NULL;
+    }
+    
+    
+    m_has_valueMetadata = false;
+    
+    if (m_valueMetadata)
+    {
+        delete m_valueMetadata;
+        m_valueMetadata = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Metadata::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -92683,6 +77391,7 @@ CT_TablePart* CT_TablePart::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_metadataTypes)
     {
         m_metadataTypes->toXmlElem("main:metadataTypes", "", _outStream);
@@ -92711,28 +77420,25 @@ CT_TablePart* CT_TablePart::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_cellMetadata())
-    {
-        (*iter)->get_cellMetadata().toXmlElem("main:cellMetadata", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_valueMetadata())
-    {
-        (*iter)->get_valueMetadata().toXmlElem("main:valueMetadata", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_cellMetadata)
+    {
+        m_cellMetadata->toXmlElem("main:cellMetadata", "", _outStream);
+    }
+    
+    
+    if (m_has_valueMetadata)
+    {
+        m_valueMetadata->toXmlElem("main:valueMetadata", "", _outStream);
+    }
+    
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -92751,13 +77457,7 @@ CT_TablePart* CT_TablePart::default_instance_ = NULL;
     // CT_Metadata::ChildGroup_1
     CT_Metadata::ChildGroup_1::ChildGroup_1()
     :m_has_futureMetadata(false),
-    m_futureMetadata(NULL),
-    m_has_cellMetadata(false),
-    m_cellMetadata(NULL),
-    m_has_valueMetadata(false),
-    m_valueMetadata(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_futureMetadata(NULL)
     {
     }
     bool CT_Metadata::ChildGroup_1::has_futureMetadata() const
@@ -92767,33 +77467,6 @@ CT_TablePart* CT_TablePart::default_instance_ = NULL;
 
     CT_FutureMetadata* CT_Metadata::ChildGroup_1::mutable_futureMetadata()
     {    
-    
-    m_has_cellMetadata = false;
-    
-    if (m_cellMetadata)
-    {
-        delete m_cellMetadata;
-        m_cellMetadata = NULL;
-    }
-    ;
-    
-    m_has_valueMetadata = false;
-    
-    if (m_valueMetadata)
-    {
-        delete m_valueMetadata;
-        m_valueMetadata = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_futureMetadata = true;
     if (!m_futureMetadata)
@@ -92810,162 +77483,6 @@ CT_TablePart* CT_TablePart::default_instance_ = NULL;
         return *m_futureMetadata;
     }
     return CT_FutureMetadata::default_instance();
-    }
-
-    bool CT_Metadata::ChildGroup_1::has_cellMetadata() const
-    {    
-    return m_has_cellMetadata;
-    }
-
-    CT_MetadataBlocks* CT_Metadata::ChildGroup_1::mutable_cellMetadata()
-    {    
-    
-    m_has_futureMetadata = false;
-    
-    if (m_futureMetadata)
-    {
-        delete m_futureMetadata;
-        m_futureMetadata = NULL;
-    }
-    ;
-    
-    m_has_valueMetadata = false;
-    
-    if (m_valueMetadata)
-    {
-        delete m_valueMetadata;
-        m_valueMetadata = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_cellMetadata = true;
-    if (!m_cellMetadata)
-    {
-        m_cellMetadata = new CT_MetadataBlocks();
-    }
-    return m_cellMetadata;
-    }
-
-    const CT_MetadataBlocks& CT_Metadata::ChildGroup_1::get_cellMetadata() const
-    {    
-    if (m_cellMetadata)
-    {
-        return *m_cellMetadata;
-    }
-    return CT_MetadataBlocks::default_instance();
-    }
-
-    bool CT_Metadata::ChildGroup_1::has_valueMetadata() const
-    {    
-    return m_has_valueMetadata;
-    }
-
-    CT_MetadataBlocks* CT_Metadata::ChildGroup_1::mutable_valueMetadata()
-    {    
-    
-    m_has_futureMetadata = false;
-    
-    if (m_futureMetadata)
-    {
-        delete m_futureMetadata;
-        m_futureMetadata = NULL;
-    }
-    ;
-    
-    m_has_cellMetadata = false;
-    
-    if (m_cellMetadata)
-    {
-        delete m_cellMetadata;
-        m_cellMetadata = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_valueMetadata = true;
-    if (!m_valueMetadata)
-    {
-        m_valueMetadata = new CT_MetadataBlocks();
-    }
-    return m_valueMetadata;
-    }
-
-    const CT_MetadataBlocks& CT_Metadata::ChildGroup_1::get_valueMetadata() const
-    {    
-    if (m_valueMetadata)
-    {
-        return *m_valueMetadata;
-    }
-    return CT_MetadataBlocks::default_instance();
-    }
-
-    bool CT_Metadata::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_Metadata::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_futureMetadata = false;
-    
-    if (m_futureMetadata)
-    {
-        delete m_futureMetadata;
-        m_futureMetadata = NULL;
-    }
-    ;
-    
-    m_has_cellMetadata = false;
-    
-    if (m_cellMetadata)
-    {
-        delete m_cellMetadata;
-        m_cellMetadata = NULL;
-    }
-    ;
-    
-    m_has_valueMetadata = false;
-    
-    if (m_valueMetadata)
-    {
-        delete m_valueMetadata;
-        m_valueMetadata = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_Metadata::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_Metadata* CT_Metadata::default_instance_ = NULL;
@@ -93018,6 +77535,11 @@ CT_Metadata* CT_Metadata::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_metadataType));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -93943,6 +78465,11 @@ CT_MetadataType* CT_MetadataType::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_bk));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -94057,6 +78584,11 @@ CT_MetadataBlocks* CT_MetadataBlocks::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_rc));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -94207,7 +78739,9 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
 
     // CT_FutureMetadata
     CT_FutureMetadata::CT_FutureMetadata()
-    :m_has_name_attr(false),
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_name_attr(false),
     m_name_attr(NULL),
     m_has_count_attr(false),
     m_count_attr(0)
@@ -94224,12 +78758,28 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_FutureMetadata::add_extLst()
+    bool CT_FutureMetadata::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_FutureMetadata::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_FutureMetadata::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_FutureMetadata::clear()
@@ -94254,6 +78804,15 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_FutureMetadata::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -94289,14 +78848,13 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -94351,9 +78909,7 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
     // CT_FutureMetadata::ChildGroup_1
     CT_FutureMetadata::ChildGroup_1::ChildGroup_1()
     :m_has_bk(false),
-    m_bk(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_bk(NULL)
     {
     }
     bool CT_FutureMetadata::ChildGroup_1::has_bk() const
@@ -94363,15 +78919,6 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
 
     CT_FutureMetadataBlock* CT_FutureMetadata::ChildGroup_1::mutable_bk()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_bk = true;
     if (!m_bk)
@@ -94388,40 +78935,6 @@ CT_MetadataRecord* CT_MetadataRecord::default_instance_ = NULL;
         return *m_bk;
     }
     return CT_FutureMetadataBlock::default_instance();
-    }
-
-    bool CT_FutureMetadata::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_FutureMetadata::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_bk = false;
-    
-    if (m_bk)
-    {
-        delete m_bk;
-        m_bk = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_FutureMetadata::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_FutureMetadata* CT_FutureMetadata::default_instance_ = NULL;
@@ -94482,6 +78995,7 @@ CT_FutureMetadata* CT_FutureMetadata::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -94549,6 +79063,11 @@ CT_FutureMetadataBlock* CT_FutureMetadataBlock::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_mdx));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -94925,6 +79444,13 @@ CT_MdxMetadata* CT_MdxMetadata::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[4] = {m_has_t, m_has_ms, m_has_p, m_has_k};
+        int cnt = count(elemHasValueList, elemHasValueList + 4, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_t)
     {
         m_t->toXmlElem("main:t", "", _outStream);
@@ -95933,6 +80459,11 @@ CT_MetadataStringIndex* CT_MetadataStringIndex::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_s));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -96047,6 +80578,11 @@ CT_MetadataStrings* CT_MetadataStrings::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_singleXmlCell));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -96236,6 +80772,9 @@ CT_SingleXmlCells* CT_SingleXmlCells::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_xmlCellPr);
+        
+    
     if (m_has_xmlCellPr)
     {
         m_xmlCellPr->toXmlElem("main:xmlCellPr", "", _outStream);
@@ -96431,6 +80970,9 @@ CT_SingleXmlCell* CT_SingleXmlCell::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_xmlPr);
+        
+    
     if (m_has_xmlPr)
     {
         m_xmlPr->toXmlElem("main:xmlPr", "", _outStream);
@@ -96592,6 +81134,7 @@ CT_XmlCellPr* CT_XmlCellPr::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -97073,6 +81616,7 @@ CT_XmlPr* CT_XmlPr::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_numFmts)
     {
         m_numFmts->toXmlElem("main:numFmts", "", _outStream);
@@ -97941,6 +82485,7 @@ CT_Borders* CT_Borders::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_start)
     {
         m_start->toXmlElem("main:start", "", _outStream);
@@ -98128,6 +82673,7 @@ CT_Border* CT_Border::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_color)
     {
         m_color->toXmlElem("main:color", "", _outStream);
@@ -98614,6 +83160,13 @@ CT_Fills* CT_Fills::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_patternFill, m_has_gradientFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_patternFill)
     {
         m_patternFill->toXmlElem("main:patternFill", "", _outStream);
@@ -98746,6 +83299,7 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_fgColor)
     {
         m_fgColor->toXmlElem("main:fgColor", "", _outStream);
@@ -99305,6 +83859,9 @@ CT_GradientFill* CT_GradientFill::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_color);
+        
+    
     if (m_has_color)
     {
         m_color->toXmlElem("main:color", "", _outStream);
@@ -99621,6 +84178,11 @@ CT_NumFmt* CT_NumFmt::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_xf));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -99744,6 +84306,11 @@ CT_CellStyleXfs* CT_CellStyleXfs::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_xf));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -100118,6 +84685,7 @@ CT_CellXfs* CT_CellXfs::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_alignment)
     {
         m_alignment->toXmlElem("main:alignment", "", _outStream);
@@ -100426,6 +84994,11 @@ CT_Xf* CT_Xf::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_cellStyle));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -100634,6 +85207,7 @@ CT_CellStyles* CT_CellStyles::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -101147,6 +85721,7 @@ CT_Dxfs* CT_Dxfs::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_font)
     {
         m_font->toXmlElem("main:font", "", _outStream);
@@ -101293,6 +85868,7 @@ CT_Dxf* CT_Dxf::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_indexedColors)
     {
         m_indexedColors->toXmlElem("main:indexedColors", "", _outStream);
@@ -101357,6 +85933,11 @@ CT_Colors* CT_Colors::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_rgbColor));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -101456,6 +86037,11 @@ CT_IndexedColors* CT_IndexedColors::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_color));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -105438,6 +90024,13 @@ CT_FontFamily* CT_FontFamily::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        bool elemHasValueList[3] = {m_has_externalBook, m_has_ddeLink, m_has_oleLink};
+        int cnt = count(elemHasValueList, elemHasValueList + 3, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_externalBook)
     {
         m_externalBook->toXmlElem("main:externalBook", "", _outStream);
@@ -105455,6 +90048,7 @@ CT_FontFamily* CT_FontFamily::default_instance_ = NULL;
         m_oleLink->toXmlElem("main:oleLink", "", _outStream);
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -105616,6 +90210,7 @@ CT_ExternalLink* CT_ExternalLink::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_sheetNames)
     {
         m_sheetNames->toXmlElem("main:sheetNames", "", _outStream);
@@ -105706,6 +90301,11 @@ CT_ExternalBook* CT_ExternalBook::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sheetName));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -106110,6 +90710,11 @@ CT_ExternalDefinedName* CT_ExternalDefinedName::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sheetData));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -106545,6 +91150,7 @@ CT_ExternalRow* CT_ExternalRow::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_v)
     {
         _outStream << "<main:v>" << m_v->toString() << "</main:v>";
@@ -106709,6 +91315,7 @@ CT_ExternalCell* CT_ExternalCell::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_ddeItems)
     {
         m_ddeItems->toXmlElem("main:ddeItems", "", _outStream);
@@ -106972,6 +91579,7 @@ CT_DdeItems* CT_DdeItems::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_values)
     {
         m_values->toXmlElem("main:values", "", _outStream);
@@ -107118,6 +91726,11 @@ CT_DdeItem* CT_DdeItem::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_value));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -107282,6 +91895,9 @@ CT_DdeValues* CT_DdeValues::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_val);
+        
+    
     if (m_has_val)
     {
         _outStream << "<main:val>" << m_val->toString() << "</main:val>";
@@ -107410,6 +92026,7 @@ CT_DdeValue* CT_DdeValue::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_oleItems)
     {
         m_oleItems->toXmlElem("main:oleItems", "", _outStream);
@@ -108241,6 +92858,9 @@ CT_OleItem* CT_OleItem::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_tableColumns);
+        
+    
     if (m_has_autoFilter)
     {
         m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);
@@ -108920,6 +93540,11 @@ CT_TableStyleInfo* CT_TableStyleInfo::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_tableColumn));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -109347,6 +93972,7 @@ CT_TableColumns* CT_TableColumns::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_calculatedColumnFormula)
     {
         m_calculatedColumnFormula->toXmlElem("main:calculatedColumnFormula", "", _outStream);
@@ -109788,6 +94414,7 @@ CT_TableFormula* CT_TableFormula::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -109881,7 +94508,8 @@ CT_XmlColumnPr* CT_XmlColumnPr::default_instance_ = NULL;
 
     // CT_VolTypes
     CT_VolTypes::CT_VolTypes()
-
+    :m_has_extLst(false),
+    m_extLst(NULL)
     {
     }
     CT_VolTypes::~CT_VolTypes()
@@ -109895,12 +94523,28 @@ CT_XmlColumnPr* CT_XmlColumnPr::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* CT_VolTypes::add_extLst()
+    bool CT_VolTypes::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_VolTypes::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_VolTypes::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_VolTypes::clear()
@@ -109913,6 +94557,15 @@ CT_XmlColumnPr* CT_XmlColumnPr::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_VolTypes::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -109927,6 +94580,11 @@ CT_XmlColumnPr* CT_XmlColumnPr::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_volType));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -109937,14 +94595,13 @@ CT_XmlColumnPr* CT_XmlColumnPr::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -109963,9 +94620,7 @@ CT_XmlColumnPr* CT_XmlColumnPr::default_instance_ = NULL;
     // CT_VolTypes::ChildGroup_1
     CT_VolTypes::ChildGroup_1::ChildGroup_1()
     :m_has_volType(false),
-    m_volType(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_volType(NULL)
     {
     }
     bool CT_VolTypes::ChildGroup_1::has_volType() const
@@ -109975,15 +94630,6 @@ CT_XmlColumnPr* CT_XmlColumnPr::default_instance_ = NULL;
 
     CT_VolType* CT_VolTypes::ChildGroup_1::mutable_volType()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_volType = true;
     if (!m_volType)
@@ -110000,40 +94646,6 @@ CT_XmlColumnPr* CT_XmlColumnPr::default_instance_ = NULL;
         return *m_volType;
     }
     return CT_VolType::default_instance();
-    }
-
-    bool CT_VolTypes::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_VolTypes::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_volType = false;
-    
-    if (m_volType)
-    {
-        delete m_volType;
-        m_volType = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_VolTypes::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_VolTypes* CT_VolTypes::default_instance_ = NULL;
@@ -110092,6 +94704,11 @@ CT_VolTypes* CT_VolTypes::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_main));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -110226,6 +94843,11 @@ CT_VolType* CT_VolType::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_tp));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -110403,11 +95025,19 @@ CT_VolMain* CT_VolMain::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_v);
+        
+    
     if (m_has_v)
     {
         _outStream << "<main:v>" << m_v->toString() << "</main:v>";
     }
      
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_tr));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -110672,6 +95302,10 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
     m_smartTagTypes(NULL),
     m_has_webPublishing(false),
     m_webPublishing(NULL),
+    m_has_webPublishObjects(false),
+    m_webPublishObjects(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
     m_has_conformance_attr(false),
     m_conformance_attr(NULL)
     {
@@ -111071,20 +95705,52 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_WebPublishObjects* CT_Workbook::add_webPublishObjects()
+    bool CT_Workbook::has_webPublishObjects() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_WebPublishObjects* pNewChild = pChildGroup->mutable_webPublishObjects();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_webPublishObjects;
     }
 
-    CT_ExtensionList* CT_Workbook::add_extLst()
+    CT_WebPublishObjects* CT_Workbook::mutable_webPublishObjects()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_webPublishObjects = true;
+    if (!m_webPublishObjects)
+    {
+        m_webPublishObjects = new CT_WebPublishObjects();
+    }
+    return m_webPublishObjects;
+    }
+
+    const CT_WebPublishObjects& CT_Workbook::get_webPublishObjects() const
+    {    
+    if (m_webPublishObjects)
+    {
+        return *m_webPublishObjects;
+    }
+    return CT_WebPublishObjects::default_instance();
+    }
+
+    bool CT_Workbook::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* CT_Workbook::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& CT_Workbook::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void CT_Workbook::clear()
@@ -111250,6 +95916,24 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_webPublishObjects = false;
+    
+    if (m_webPublishObjects)
+    {
+        delete m_webPublishObjects;
+        m_webPublishObjects = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void CT_Workbook::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const
@@ -111268,6 +95952,9 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_sheets);
+        
+    
     if (m_has_fileVersion)
     {
         m_fileVersion->toXmlElem("main:fileVersion", "", _outStream);
@@ -111374,21 +96061,19 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_webPublishObjects())
-    {
-        (*iter)->get_webPublishObjects().toXmlElem("main:webPublishObjects", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_webPublishObjects)
+    {
+        m_webPublishObjects->toXmlElem("main:webPublishObjects", "", _outStream);
+    }
+    
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
             _outStream << "</" << _elemName << ">";
@@ -111427,11 +96112,7 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
     // CT_Workbook::ChildGroup_1
     CT_Workbook::ChildGroup_1::ChildGroup_1()
     :m_has_fileRecoveryPr(false),
-    m_fileRecoveryPr(NULL),
-    m_has_webPublishObjects(false),
-    m_webPublishObjects(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_fileRecoveryPr(NULL)
     {
     }
     bool CT_Workbook::ChildGroup_1::has_fileRecoveryPr() const
@@ -111441,24 +96122,6 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
 
     CT_FileRecoveryPr* CT_Workbook::ChildGroup_1::mutable_fileRecoveryPr()
     {    
-    
-    m_has_webPublishObjects = false;
-    
-    if (m_webPublishObjects)
-    {
-        delete m_webPublishObjects;
-        m_webPublishObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_fileRecoveryPr = true;
     if (!m_fileRecoveryPr)
@@ -111475,92 +96138,6 @@ CT_VolTopicRef* CT_VolTopicRef::default_instance_ = NULL;
         return *m_fileRecoveryPr;
     }
     return CT_FileRecoveryPr::default_instance();
-    }
-
-    bool CT_Workbook::ChildGroup_1::has_webPublishObjects() const
-    {    
-    return m_has_webPublishObjects;
-    }
-
-    CT_WebPublishObjects* CT_Workbook::ChildGroup_1::mutable_webPublishObjects()
-    {    
-    
-    m_has_fileRecoveryPr = false;
-    
-    if (m_fileRecoveryPr)
-    {
-        delete m_fileRecoveryPr;
-        m_fileRecoveryPr = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_webPublishObjects = true;
-    if (!m_webPublishObjects)
-    {
-        m_webPublishObjects = new CT_WebPublishObjects();
-    }
-    return m_webPublishObjects;
-    }
-
-    const CT_WebPublishObjects& CT_Workbook::ChildGroup_1::get_webPublishObjects() const
-    {    
-    if (m_webPublishObjects)
-    {
-        return *m_webPublishObjects;
-    }
-    return CT_WebPublishObjects::default_instance();
-    }
-
-    bool CT_Workbook::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* CT_Workbook::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_fileRecoveryPr = false;
-    
-    if (m_fileRecoveryPr)
-    {
-        delete m_fileRecoveryPr;
-        m_fileRecoveryPr = NULL;
-    }
-    ;
-    
-    m_has_webPublishObjects = false;
-    
-    if (m_webPublishObjects)
-    {
-        delete m_webPublishObjects;
-        m_webPublishObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& CT_Workbook::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 CT_Workbook* CT_Workbook::default_instance_ = NULL;
@@ -111783,6 +96360,11 @@ CT_FileVersion* CT_FileVersion::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_workbookView));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -112047,6 +96629,7 @@ CT_BookViews* CT_BookViews::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -112317,6 +96900,11 @@ CT_BookView* CT_BookView::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_customWorkbookView));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -112720,6 +97308,7 @@ CT_CustomWorkbookViews* CT_CustomWorkbookViews::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -113178,6 +97767,11 @@ CT_CustomWorkbookView* CT_CustomWorkbookView::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sheet));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -115487,6 +100081,11 @@ CT_DefinedName* CT_DefinedName::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_externalReference));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -115727,6 +100326,11 @@ CT_SheetBackgroundPicture* CT_SheetBackgroundPicture::default_instance_ = NULL;
             
             _outStream << ">";
             
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pivotCache));
+        assert(1 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -117219,6 +101823,11 @@ CT_FunctionGroup* CT_FunctionGroup::default_instance_ = NULL;
             _outStream << ">";
             
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_webPublishObject));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -117532,7 +102141,8 @@ CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
 
     // calcChain_element
     calcChain_element::calcChain_element()
-
+    :m_has_extLst(false),
+    m_extLst(NULL)
     {
     }
     calcChain_element::~calcChain_element()
@@ -117546,12 +102156,28 @@ CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* calcChain_element::add_extLst()
+    bool calcChain_element::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* calcChain_element::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& calcChain_element::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void calcChain_element::clear()
@@ -117564,6 +102190,15 @@ CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void calcChain_element::toXml(std::ostream& _outStream) const
@@ -117578,6 +102213,11 @@ CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
     _outStream << ">";
     
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_c));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -117588,14 +102228,13 @@ CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:calcChain>";
@@ -117614,9 +102253,7 @@ CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
     // calcChain_element::ChildGroup_1
     calcChain_element::ChildGroup_1::ChildGroup_1()
     :m_has_c(false),
-    m_c(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_c(NULL)
     {
     }
     bool calcChain_element::ChildGroup_1::has_c() const
@@ -117626,15 +102263,6 @@ CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
 
     CT_CalcCell* calcChain_element::ChildGroup_1::mutable_c()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_c = true;
     if (!m_c)
@@ -117651,40 +102279,6 @@ CT_WebPublishObject* CT_WebPublishObject::default_instance_ = NULL;
         return *m_c;
     }
     return CT_CalcCell::default_instance();
-    }
-
-    bool calcChain_element::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* calcChain_element::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_c = false;
-    
-    if (m_c)
-    {
-        delete m_c;
-        m_c = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& calcChain_element::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 calcChain_element* calcChain_element::default_instance_ = NULL;
@@ -117815,6 +102409,12 @@ calcChain_element* calcChain_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+        assert(m_has_authors);
+        
+    
+        assert(m_has_commentList);
+        
+    
     if (m_has_authors)
     {
         m_authors->toXmlElem("main:authors", "", _outStream);
@@ -117901,6 +102501,17 @@ comments_element* comments_element::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_Schema));
+        assert(1 <= elemCnt);
+    }
+    
+    
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_Map));
+        assert(1 <= elemCnt);
+    }
     
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -118068,6 +102679,11 @@ MapInfo_element* MapInfo_element::default_instance_ = NULL;
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
     
     _outStream << ">";
+    
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_connection));
+        assert(1 <= elemCnt);
+    }
     
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -118755,6 +103371,12 @@ connections_element* connections_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+        assert(m_has_cacheSource);
+        
+    
+        assert(m_has_cacheFields);
+        
+    
     if (m_has_cacheSource)
     {
         m_cacheSource->toXmlElem("main:cacheSource", "", _outStream);
@@ -119148,7 +103770,9 @@ pivotCacheDefinition_element* pivotCacheDefinition_element::default_instance_ = 
 
     // pivotCacheRecords_element
     pivotCacheRecords_element::pivotCacheRecords_element()
-    :m_has_count_attr(false),
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_count_attr(false),
     m_count_attr(0)
     {
     }
@@ -119163,12 +103787,28 @@ pivotCacheDefinition_element* pivotCacheDefinition_element::default_instance_ = 
     return pNewChild;
     }
 
-    CT_ExtensionList* pivotCacheRecords_element::add_extLst()
+    bool pivotCacheRecords_element::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* pivotCacheRecords_element::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& pivotCacheRecords_element::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void pivotCacheRecords_element::clear()
@@ -119184,6 +103824,15 @@ pivotCacheDefinition_element* pivotCacheDefinition_element::default_instance_ = 
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void pivotCacheRecords_element::toXml(std::ostream& _outStream) const
@@ -119213,14 +103862,13 @@ pivotCacheDefinition_element* pivotCacheDefinition_element::default_instance_ = 
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:pivotCacheRecords>";
@@ -119255,9 +103903,7 @@ pivotCacheDefinition_element* pivotCacheDefinition_element::default_instance_ = 
     // pivotCacheRecords_element::ChildGroup_1
     pivotCacheRecords_element::ChildGroup_1::ChildGroup_1()
     :m_has_r(false),
-    m_r(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_r(NULL)
     {
     }
     bool pivotCacheRecords_element::ChildGroup_1::has_r() const
@@ -119267,15 +103913,6 @@ pivotCacheDefinition_element* pivotCacheDefinition_element::default_instance_ = 
 
     CT_Record* pivotCacheRecords_element::ChildGroup_1::mutable_r()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_r = true;
     if (!m_r)
@@ -119292,40 +103929,6 @@ pivotCacheDefinition_element* pivotCacheDefinition_element::default_instance_ = 
         return *m_r;
     }
     return CT_Record::default_instance();
-    }
-
-    bool pivotCacheRecords_element::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* pivotCacheRecords_element::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_r = false;
-    
-    if (m_r)
-    {
-        delete m_r;
-        m_r = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& pivotCacheRecords_element::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
@@ -120758,6 +105361,9 @@ pivotCacheRecords_element* pivotCacheRecords_element::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
+        assert(m_has_location);
+        
     
     if (m_has_location)
     {
@@ -122350,6 +106956,7 @@ pivotTableDefinition_element* pivotTableDefinition_element::default_instance_ = 
     
     _outStream << ">";
     
+    
     if (m_has_queryTableRefresh)
     {
         m_queryTableRefresh->toXmlElem("main:queryTableRefresh", "", _outStream);
@@ -122737,7 +107344,9 @@ queryTable_element* queryTable_element::default_instance_ = NULL;
 
     // sst_element
     sst_element::sst_element()
-    :m_has_count_attr(false),
+    :m_has_extLst(false),
+    m_extLst(NULL),
+    m_has_count_attr(false),
     m_count_attr(0),
     m_has_uniqueCount_attr(false),
     m_uniqueCount_attr(0)
@@ -122754,12 +107363,28 @@ queryTable_element* queryTable_element::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* sst_element::add_extLst()
+    bool sst_element::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* sst_element::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& sst_element::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void sst_element::clear()
@@ -122778,6 +107403,15 @@ queryTable_element* queryTable_element::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void sst_element::toXml(std::ostream& _outStream) const
@@ -122813,14 +107447,13 @@ queryTable_element* queryTable_element::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:sst>";
@@ -122871,9 +107504,7 @@ queryTable_element* queryTable_element::default_instance_ = NULL;
     // sst_element::ChildGroup_1
     sst_element::ChildGroup_1::ChildGroup_1()
     :m_has_si(false),
-    m_si(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_si(NULL)
     {
     }
     bool sst_element::ChildGroup_1::has_si() const
@@ -122883,15 +107514,6 @@ queryTable_element* queryTable_element::default_instance_ = NULL;
 
     CT_Rst* sst_element::ChildGroup_1::mutable_si()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_si = true;
     if (!m_si)
@@ -122908,40 +107530,6 @@ queryTable_element* queryTable_element::default_instance_ = NULL;
         return *m_si;
     }
     return CT_Rst::default_instance();
-    }
-
-    bool sst_element::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* sst_element::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_si = false;
-    
-    if (m_si)
-    {
-        delete m_si;
-        m_si = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& sst_element::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 sst_element* sst_element::default_instance_ = NULL;
@@ -123126,6 +107714,11 @@ sst_element* sst_element::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_header));
+        assert(1 <= elemCnt);
+    }
     
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -125185,6 +109778,11 @@ revisions_element* revisions_element::default_instance_ = NULL;
     _outStream << ">";
     
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_userInfo));
+        assert(0 <= elemCnt && elemCnt <= 256);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -125269,7 +109867,73 @@ users_element* users_element::default_instance_ = NULL;
     m_has_sheetViews(false),
     m_sheetViews(NULL),
     m_has_sheetFormatPr(false),
-    m_sheetFormatPr(NULL)
+    m_sheetFormatPr(NULL),
+    m_has_sheetData(false),
+    m_sheetData(NULL),
+    m_has_sheetCalcPr(false),
+    m_sheetCalcPr(NULL),
+    m_has_sheetProtection(false),
+    m_sheetProtection(NULL),
+    m_has_protectedRanges(false),
+    m_protectedRanges(NULL),
+    m_has_scenarios(false),
+    m_scenarios(NULL),
+    m_has_autoFilter(false),
+    m_autoFilter(NULL),
+    m_has_sortState(false),
+    m_sortState(NULL),
+    m_has_dataConsolidate(false),
+    m_dataConsolidate(NULL),
+    m_has_customSheetViews(false),
+    m_customSheetViews(NULL),
+    m_has_mergeCells(false),
+    m_mergeCells(NULL),
+    m_has_phoneticPr(false),
+    m_phoneticPr(NULL),
+    m_has_dataValidations(false),
+    m_dataValidations(NULL),
+    m_has_hyperlinks(false),
+    m_hyperlinks(NULL),
+    m_has_printOptions(false),
+    m_printOptions(NULL),
+    m_has_pageMargins(false),
+    m_pageMargins(NULL),
+    m_has_pageSetup(false),
+    m_pageSetup(NULL),
+    m_has_headerFooter(false),
+    m_headerFooter(NULL),
+    m_has_rowBreaks(false),
+    m_rowBreaks(NULL),
+    m_has_colBreaks(false),
+    m_colBreaks(NULL),
+    m_has_customProperties(false),
+    m_customProperties(NULL),
+    m_has_cellWatches(false),
+    m_cellWatches(NULL),
+    m_has_ignoredErrors(false),
+    m_ignoredErrors(NULL),
+    m_has_smartTags(false),
+    m_smartTags(NULL),
+    m_has_drawing(false),
+    m_drawing(NULL),
+    m_has_legacyDrawing(false),
+    m_legacyDrawing(NULL),
+    m_has_legacyDrawingHF(false),
+    m_legacyDrawingHF(NULL),
+    m_has_drawingHF(false),
+    m_drawingHF(NULL),
+    m_has_picture(false),
+    m_picture(NULL),
+    m_has_oleObjects(false),
+    m_oleObjects(NULL),
+    m_has_controls(false),
+    m_controls(NULL),
+    m_has_webPublishItems(false),
+    m_webPublishItems(NULL),
+    m_has_tableParts(false),
+    m_tableParts(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
     {
     }
     worksheet_element::~worksheet_element()
@@ -125379,276 +110043,804 @@ users_element* users_element::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_SheetData* worksheet_element::add_sheetData()
+    bool worksheet_element::has_sheetData() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SheetData* pNewChild = pChildGroup->mutable_sheetData();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_sheetData;
     }
 
-    CT_SheetCalcPr* worksheet_element::add_sheetCalcPr()
+    CT_SheetData* worksheet_element::mutable_sheetData()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SheetCalcPr* pNewChild = pChildGroup->mutable_sheetCalcPr();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_sheetData = true;
+    if (!m_sheetData)
+    {
+        m_sheetData = new CT_SheetData();
+    }
+    return m_sheetData;
     }
 
-    CT_SheetProtection* worksheet_element::add_sheetProtection()
+    const CT_SheetData& worksheet_element::get_sheetData() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SheetProtection* pNewChild = pChildGroup->mutable_sheetProtection();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_sheetData)
+    {
+        return *m_sheetData;
+    }
+    return CT_SheetData::default_instance();
     }
 
-    CT_ProtectedRanges* worksheet_element::add_protectedRanges()
+    bool worksheet_element::has_sheetCalcPr() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ProtectedRanges* pNewChild = pChildGroup->mutable_protectedRanges();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_sheetCalcPr;
     }
 
-    CT_Scenarios* worksheet_element::add_scenarios()
+    CT_SheetCalcPr* worksheet_element::mutable_sheetCalcPr()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_Scenarios* pNewChild = pChildGroup->mutable_scenarios();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_sheetCalcPr = true;
+    if (!m_sheetCalcPr)
+    {
+        m_sheetCalcPr = new CT_SheetCalcPr();
+    }
+    return m_sheetCalcPr;
     }
 
-    CT_AutoFilter* worksheet_element::add_autoFilter()
+    const CT_SheetCalcPr& worksheet_element::get_sheetCalcPr() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_AutoFilter* pNewChild = pChildGroup->mutable_autoFilter();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_sheetCalcPr)
+    {
+        return *m_sheetCalcPr;
+    }
+    return CT_SheetCalcPr::default_instance();
     }
 
-    CT_SortState* worksheet_element::add_sortState()
+    bool worksheet_element::has_sheetProtection() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SortState* pNewChild = pChildGroup->mutable_sortState();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_sheetProtection;
     }
 
-    CT_DataConsolidate* worksheet_element::add_dataConsolidate()
+    CT_SheetProtection* worksheet_element::mutable_sheetProtection()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_DataConsolidate* pNewChild = pChildGroup->mutable_dataConsolidate();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_sheetProtection = true;
+    if (!m_sheetProtection)
+    {
+        m_sheetProtection = new CT_SheetProtection();
+    }
+    return m_sheetProtection;
     }
 
-    CT_CustomSheetViews* worksheet_element::add_customSheetViews()
+    const CT_SheetProtection& worksheet_element::get_sheetProtection() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_CustomSheetViews* pNewChild = pChildGroup->mutable_customSheetViews();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_sheetProtection)
+    {
+        return *m_sheetProtection;
+    }
+    return CT_SheetProtection::default_instance();
     }
 
-    CT_MergeCells* worksheet_element::add_mergeCells()
+    bool worksheet_element::has_protectedRanges() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_MergeCells* pNewChild = pChildGroup->mutable_mergeCells();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_protectedRanges;
     }
 
-    CT_PhoneticPr* worksheet_element::add_phoneticPr()
+    CT_ProtectedRanges* worksheet_element::mutable_protectedRanges()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PhoneticPr* pNewChild = pChildGroup->mutable_phoneticPr();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_protectedRanges = true;
+    if (!m_protectedRanges)
+    {
+        m_protectedRanges = new CT_ProtectedRanges();
+    }
+    return m_protectedRanges;
+    }
+
+    const CT_ProtectedRanges& worksheet_element::get_protectedRanges() const
+    {    
+    if (m_protectedRanges)
+    {
+        return *m_protectedRanges;
+    }
+    return CT_ProtectedRanges::default_instance();
+    }
+
+    bool worksheet_element::has_scenarios() const
+    {    
+    return m_has_scenarios;
+    }
+
+    CT_Scenarios* worksheet_element::mutable_scenarios()
+    {    
+    m_has_scenarios = true;
+    if (!m_scenarios)
+    {
+        m_scenarios = new CT_Scenarios();
+    }
+    return m_scenarios;
+    }
+
+    const CT_Scenarios& worksheet_element::get_scenarios() const
+    {    
+    if (m_scenarios)
+    {
+        return *m_scenarios;
+    }
+    return CT_Scenarios::default_instance();
+    }
+
+    bool worksheet_element::has_autoFilter() const
+    {    
+    return m_has_autoFilter;
+    }
+
+    CT_AutoFilter* worksheet_element::mutable_autoFilter()
+    {    
+    m_has_autoFilter = true;
+    if (!m_autoFilter)
+    {
+        m_autoFilter = new CT_AutoFilter();
+    }
+    return m_autoFilter;
+    }
+
+    const CT_AutoFilter& worksheet_element::get_autoFilter() const
+    {    
+    if (m_autoFilter)
+    {
+        return *m_autoFilter;
+    }
+    return CT_AutoFilter::default_instance();
+    }
+
+    bool worksheet_element::has_sortState() const
+    {    
+    return m_has_sortState;
+    }
+
+    CT_SortState* worksheet_element::mutable_sortState()
+    {    
+    m_has_sortState = true;
+    if (!m_sortState)
+    {
+        m_sortState = new CT_SortState();
+    }
+    return m_sortState;
+    }
+
+    const CT_SortState& worksheet_element::get_sortState() const
+    {    
+    if (m_sortState)
+    {
+        return *m_sortState;
+    }
+    return CT_SortState::default_instance();
+    }
+
+    bool worksheet_element::has_dataConsolidate() const
+    {    
+    return m_has_dataConsolidate;
+    }
+
+    CT_DataConsolidate* worksheet_element::mutable_dataConsolidate()
+    {    
+    m_has_dataConsolidate = true;
+    if (!m_dataConsolidate)
+    {
+        m_dataConsolidate = new CT_DataConsolidate();
+    }
+    return m_dataConsolidate;
+    }
+
+    const CT_DataConsolidate& worksheet_element::get_dataConsolidate() const
+    {    
+    if (m_dataConsolidate)
+    {
+        return *m_dataConsolidate;
+    }
+    return CT_DataConsolidate::default_instance();
+    }
+
+    bool worksheet_element::has_customSheetViews() const
+    {    
+    return m_has_customSheetViews;
+    }
+
+    CT_CustomSheetViews* worksheet_element::mutable_customSheetViews()
+    {    
+    m_has_customSheetViews = true;
+    if (!m_customSheetViews)
+    {
+        m_customSheetViews = new CT_CustomSheetViews();
+    }
+    return m_customSheetViews;
+    }
+
+    const CT_CustomSheetViews& worksheet_element::get_customSheetViews() const
+    {    
+    if (m_customSheetViews)
+    {
+        return *m_customSheetViews;
+    }
+    return CT_CustomSheetViews::default_instance();
+    }
+
+    bool worksheet_element::has_mergeCells() const
+    {    
+    return m_has_mergeCells;
+    }
+
+    CT_MergeCells* worksheet_element::mutable_mergeCells()
+    {    
+    m_has_mergeCells = true;
+    if (!m_mergeCells)
+    {
+        m_mergeCells = new CT_MergeCells();
+    }
+    return m_mergeCells;
+    }
+
+    const CT_MergeCells& worksheet_element::get_mergeCells() const
+    {    
+    if (m_mergeCells)
+    {
+        return *m_mergeCells;
+    }
+    return CT_MergeCells::default_instance();
+    }
+
+    bool worksheet_element::has_phoneticPr() const
+    {    
+    return m_has_phoneticPr;
+    }
+
+    CT_PhoneticPr* worksheet_element::mutable_phoneticPr()
+    {    
+    m_has_phoneticPr = true;
+    if (!m_phoneticPr)
+    {
+        m_phoneticPr = new CT_PhoneticPr();
+    }
+    return m_phoneticPr;
+    }
+
+    const CT_PhoneticPr& worksheet_element::get_phoneticPr() const
+    {    
+    if (m_phoneticPr)
+    {
+        return *m_phoneticPr;
+    }
+    return CT_PhoneticPr::default_instance();
     }
 
     CT_ConditionalFormatting* worksheet_element::add_conditionalFormatting()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
+    ChildGroup_2 *pChildGroup = new ChildGroup_2();
     CT_ConditionalFormatting* pNewChild = pChildGroup->mutable_conditionalFormatting();
-    m_childGroupList_1.push_back(pChildGroup);
+    m_childGroupList_2.push_back(pChildGroup);
     return pNewChild;
     }
 
-    CT_DataValidations* worksheet_element::add_dataValidations()
+    bool worksheet_element::has_dataValidations() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_DataValidations* pNewChild = pChildGroup->mutable_dataValidations();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_dataValidations;
     }
 
-    CT_Hyperlinks* worksheet_element::add_hyperlinks()
+    CT_DataValidations* worksheet_element::mutable_dataValidations()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_Hyperlinks* pNewChild = pChildGroup->mutable_hyperlinks();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_dataValidations = true;
+    if (!m_dataValidations)
+    {
+        m_dataValidations = new CT_DataValidations();
+    }
+    return m_dataValidations;
     }
 
-    CT_PrintOptions* worksheet_element::add_printOptions()
+    const CT_DataValidations& worksheet_element::get_dataValidations() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PrintOptions* pNewChild = pChildGroup->mutable_printOptions();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_dataValidations)
+    {
+        return *m_dataValidations;
+    }
+    return CT_DataValidations::default_instance();
     }
 
-    CT_PageMargins* worksheet_element::add_pageMargins()
+    bool worksheet_element::has_hyperlinks() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PageMargins* pNewChild = pChildGroup->mutable_pageMargins();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_hyperlinks;
     }
 
-    CT_PageSetup* worksheet_element::add_pageSetup()
+    CT_Hyperlinks* worksheet_element::mutable_hyperlinks()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PageSetup* pNewChild = pChildGroup->mutable_pageSetup();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_hyperlinks = true;
+    if (!m_hyperlinks)
+    {
+        m_hyperlinks = new CT_Hyperlinks();
+    }
+    return m_hyperlinks;
     }
 
-    CT_HeaderFooter* worksheet_element::add_headerFooter()
+    const CT_Hyperlinks& worksheet_element::get_hyperlinks() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_HeaderFooter* pNewChild = pChildGroup->mutable_headerFooter();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_hyperlinks)
+    {
+        return *m_hyperlinks;
+    }
+    return CT_Hyperlinks::default_instance();
     }
 
-    CT_PageBreak* worksheet_element::add_rowBreaks()
+    bool worksheet_element::has_printOptions() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PageBreak* pNewChild = pChildGroup->mutable_rowBreaks();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_printOptions;
     }
 
-    CT_PageBreak* worksheet_element::add_colBreaks()
+    CT_PrintOptions* worksheet_element::mutable_printOptions()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_PageBreak* pNewChild = pChildGroup->mutable_colBreaks();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_printOptions = true;
+    if (!m_printOptions)
+    {
+        m_printOptions = new CT_PrintOptions();
+    }
+    return m_printOptions;
     }
 
-    CT_CustomProperties* worksheet_element::add_customProperties()
+    const CT_PrintOptions& worksheet_element::get_printOptions() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_CustomProperties* pNewChild = pChildGroup->mutable_customProperties();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_printOptions)
+    {
+        return *m_printOptions;
+    }
+    return CT_PrintOptions::default_instance();
     }
 
-    CT_CellWatches* worksheet_element::add_cellWatches()
+    bool worksheet_element::has_pageMargins() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_CellWatches* pNewChild = pChildGroup->mutable_cellWatches();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_pageMargins;
     }
 
-    CT_IgnoredErrors* worksheet_element::add_ignoredErrors()
+    CT_PageMargins* worksheet_element::mutable_pageMargins()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_IgnoredErrors* pNewChild = pChildGroup->mutable_ignoredErrors();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_pageMargins = true;
+    if (!m_pageMargins)
+    {
+        m_pageMargins = new CT_PageMargins();
+    }
+    return m_pageMargins;
     }
 
-    CT_SmartTags* worksheet_element::add_smartTags()
+    const CT_PageMargins& worksheet_element::get_pageMargins() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SmartTags* pNewChild = pChildGroup->mutable_smartTags();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_pageMargins)
+    {
+        return *m_pageMargins;
+    }
+    return CT_PageMargins::default_instance();
     }
 
-    CT_Drawing* worksheet_element::add_drawing()
+    bool worksheet_element::has_pageSetup() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_Drawing* pNewChild = pChildGroup->mutable_drawing();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_pageSetup;
     }
 
-    CT_LegacyDrawing* worksheet_element::add_legacyDrawing()
+    CT_PageSetup* worksheet_element::mutable_pageSetup()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_LegacyDrawing* pNewChild = pChildGroup->mutable_legacyDrawing();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_pageSetup = true;
+    if (!m_pageSetup)
+    {
+        m_pageSetup = new CT_PageSetup();
+    }
+    return m_pageSetup;
     }
 
-    CT_LegacyDrawing* worksheet_element::add_legacyDrawingHF()
+    const CT_PageSetup& worksheet_element::get_pageSetup() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_LegacyDrawing* pNewChild = pChildGroup->mutable_legacyDrawingHF();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_pageSetup)
+    {
+        return *m_pageSetup;
+    }
+    return CT_PageSetup::default_instance();
     }
 
-    CT_DrawingHF* worksheet_element::add_drawingHF()
+    bool worksheet_element::has_headerFooter() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_DrawingHF* pNewChild = pChildGroup->mutable_drawingHF();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_headerFooter;
     }
 
-    CT_SheetBackgroundPicture* worksheet_element::add_picture()
+    CT_HeaderFooter* worksheet_element::mutable_headerFooter()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_SheetBackgroundPicture* pNewChild = pChildGroup->mutable_picture();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_headerFooter = true;
+    if (!m_headerFooter)
+    {
+        m_headerFooter = new CT_HeaderFooter();
+    }
+    return m_headerFooter;
     }
 
-    CT_OleObjects* worksheet_element::add_oleObjects()
+    const CT_HeaderFooter& worksheet_element::get_headerFooter() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_OleObjects* pNewChild = pChildGroup->mutable_oleObjects();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_headerFooter)
+    {
+        return *m_headerFooter;
+    }
+    return CT_HeaderFooter::default_instance();
     }
 
-    CT_Controls* worksheet_element::add_controls()
+    bool worksheet_element::has_rowBreaks() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_Controls* pNewChild = pChildGroup->mutable_controls();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_rowBreaks;
     }
 
-    CT_WebPublishItems* worksheet_element::add_webPublishItems()
+    CT_PageBreak* worksheet_element::mutable_rowBreaks()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_WebPublishItems* pNewChild = pChildGroup->mutable_webPublishItems();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_rowBreaks = true;
+    if (!m_rowBreaks)
+    {
+        m_rowBreaks = new CT_PageBreak();
+    }
+    return m_rowBreaks;
     }
 
-    CT_TableParts* worksheet_element::add_tableParts()
+    const CT_PageBreak& worksheet_element::get_rowBreaks() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_TableParts* pNewChild = pChildGroup->mutable_tableParts();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_rowBreaks)
+    {
+        return *m_rowBreaks;
+    }
+    return CT_PageBreak::default_instance();
     }
 
-    CT_ExtensionList* worksheet_element::add_extLst()
+    bool worksheet_element::has_colBreaks() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_colBreaks;
+    }
+
+    CT_PageBreak* worksheet_element::mutable_colBreaks()
+    {    
+    m_has_colBreaks = true;
+    if (!m_colBreaks)
+    {
+        m_colBreaks = new CT_PageBreak();
+    }
+    return m_colBreaks;
+    }
+
+    const CT_PageBreak& worksheet_element::get_colBreaks() const
+    {    
+    if (m_colBreaks)
+    {
+        return *m_colBreaks;
+    }
+    return CT_PageBreak::default_instance();
+    }
+
+    bool worksheet_element::has_customProperties() const
+    {    
+    return m_has_customProperties;
+    }
+
+    CT_CustomProperties* worksheet_element::mutable_customProperties()
+    {    
+    m_has_customProperties = true;
+    if (!m_customProperties)
+    {
+        m_customProperties = new CT_CustomProperties();
+    }
+    return m_customProperties;
+    }
+
+    const CT_CustomProperties& worksheet_element::get_customProperties() const
+    {    
+    if (m_customProperties)
+    {
+        return *m_customProperties;
+    }
+    return CT_CustomProperties::default_instance();
+    }
+
+    bool worksheet_element::has_cellWatches() const
+    {    
+    return m_has_cellWatches;
+    }
+
+    CT_CellWatches* worksheet_element::mutable_cellWatches()
+    {    
+    m_has_cellWatches = true;
+    if (!m_cellWatches)
+    {
+        m_cellWatches = new CT_CellWatches();
+    }
+    return m_cellWatches;
+    }
+
+    const CT_CellWatches& worksheet_element::get_cellWatches() const
+    {    
+    if (m_cellWatches)
+    {
+        return *m_cellWatches;
+    }
+    return CT_CellWatches::default_instance();
+    }
+
+    bool worksheet_element::has_ignoredErrors() const
+    {    
+    return m_has_ignoredErrors;
+    }
+
+    CT_IgnoredErrors* worksheet_element::mutable_ignoredErrors()
+    {    
+    m_has_ignoredErrors = true;
+    if (!m_ignoredErrors)
+    {
+        m_ignoredErrors = new CT_IgnoredErrors();
+    }
+    return m_ignoredErrors;
+    }
+
+    const CT_IgnoredErrors& worksheet_element::get_ignoredErrors() const
+    {    
+    if (m_ignoredErrors)
+    {
+        return *m_ignoredErrors;
+    }
+    return CT_IgnoredErrors::default_instance();
+    }
+
+    bool worksheet_element::has_smartTags() const
+    {    
+    return m_has_smartTags;
+    }
+
+    CT_SmartTags* worksheet_element::mutable_smartTags()
+    {    
+    m_has_smartTags = true;
+    if (!m_smartTags)
+    {
+        m_smartTags = new CT_SmartTags();
+    }
+    return m_smartTags;
+    }
+
+    const CT_SmartTags& worksheet_element::get_smartTags() const
+    {    
+    if (m_smartTags)
+    {
+        return *m_smartTags;
+    }
+    return CT_SmartTags::default_instance();
+    }
+
+    bool worksheet_element::has_drawing() const
+    {    
+    return m_has_drawing;
+    }
+
+    CT_Drawing* worksheet_element::mutable_drawing()
+    {    
+    m_has_drawing = true;
+    if (!m_drawing)
+    {
+        m_drawing = new CT_Drawing();
+    }
+    return m_drawing;
+    }
+
+    const CT_Drawing& worksheet_element::get_drawing() const
+    {    
+    if (m_drawing)
+    {
+        return *m_drawing;
+    }
+    return CT_Drawing::default_instance();
+    }
+
+    bool worksheet_element::has_legacyDrawing() const
+    {    
+    return m_has_legacyDrawing;
+    }
+
+    CT_LegacyDrawing* worksheet_element::mutable_legacyDrawing()
+    {    
+    m_has_legacyDrawing = true;
+    if (!m_legacyDrawing)
+    {
+        m_legacyDrawing = new CT_LegacyDrawing();
+    }
+    return m_legacyDrawing;
+    }
+
+    const CT_LegacyDrawing& worksheet_element::get_legacyDrawing() const
+    {    
+    if (m_legacyDrawing)
+    {
+        return *m_legacyDrawing;
+    }
+    return CT_LegacyDrawing::default_instance();
+    }
+
+    bool worksheet_element::has_legacyDrawingHF() const
+    {    
+    return m_has_legacyDrawingHF;
+    }
+
+    CT_LegacyDrawing* worksheet_element::mutable_legacyDrawingHF()
+    {    
+    m_has_legacyDrawingHF = true;
+    if (!m_legacyDrawingHF)
+    {
+        m_legacyDrawingHF = new CT_LegacyDrawing();
+    }
+    return m_legacyDrawingHF;
+    }
+
+    const CT_LegacyDrawing& worksheet_element::get_legacyDrawingHF() const
+    {    
+    if (m_legacyDrawingHF)
+    {
+        return *m_legacyDrawingHF;
+    }
+    return CT_LegacyDrawing::default_instance();
+    }
+
+    bool worksheet_element::has_drawingHF() const
+    {    
+    return m_has_drawingHF;
+    }
+
+    CT_DrawingHF* worksheet_element::mutable_drawingHF()
+    {    
+    m_has_drawingHF = true;
+    if (!m_drawingHF)
+    {
+        m_drawingHF = new CT_DrawingHF();
+    }
+    return m_drawingHF;
+    }
+
+    const CT_DrawingHF& worksheet_element::get_drawingHF() const
+    {    
+    if (m_drawingHF)
+    {
+        return *m_drawingHF;
+    }
+    return CT_DrawingHF::default_instance();
+    }
+
+    bool worksheet_element::has_picture() const
+    {    
+    return m_has_picture;
+    }
+
+    CT_SheetBackgroundPicture* worksheet_element::mutable_picture()
+    {    
+    m_has_picture = true;
+    if (!m_picture)
+    {
+        m_picture = new CT_SheetBackgroundPicture();
+    }
+    return m_picture;
+    }
+
+    const CT_SheetBackgroundPicture& worksheet_element::get_picture() const
+    {    
+    if (m_picture)
+    {
+        return *m_picture;
+    }
+    return CT_SheetBackgroundPicture::default_instance();
+    }
+
+    bool worksheet_element::has_oleObjects() const
+    {    
+    return m_has_oleObjects;
+    }
+
+    CT_OleObjects* worksheet_element::mutable_oleObjects()
+    {    
+    m_has_oleObjects = true;
+    if (!m_oleObjects)
+    {
+        m_oleObjects = new CT_OleObjects();
+    }
+    return m_oleObjects;
+    }
+
+    const CT_OleObjects& worksheet_element::get_oleObjects() const
+    {    
+    if (m_oleObjects)
+    {
+        return *m_oleObjects;
+    }
+    return CT_OleObjects::default_instance();
+    }
+
+    bool worksheet_element::has_controls() const
+    {    
+    return m_has_controls;
+    }
+
+    CT_Controls* worksheet_element::mutable_controls()
+    {    
+    m_has_controls = true;
+    if (!m_controls)
+    {
+        m_controls = new CT_Controls();
+    }
+    return m_controls;
+    }
+
+    const CT_Controls& worksheet_element::get_controls() const
+    {    
+    if (m_controls)
+    {
+        return *m_controls;
+    }
+    return CT_Controls::default_instance();
+    }
+
+    bool worksheet_element::has_webPublishItems() const
+    {    
+    return m_has_webPublishItems;
+    }
+
+    CT_WebPublishItems* worksheet_element::mutable_webPublishItems()
+    {    
+    m_has_webPublishItems = true;
+    if (!m_webPublishItems)
+    {
+        m_webPublishItems = new CT_WebPublishItems();
+    }
+    return m_webPublishItems;
+    }
+
+    const CT_WebPublishItems& worksheet_element::get_webPublishItems() const
+    {    
+    if (m_webPublishItems)
+    {
+        return *m_webPublishItems;
+    }
+    return CT_WebPublishItems::default_instance();
+    }
+
+    bool worksheet_element::has_tableParts() const
+    {    
+    return m_has_tableParts;
+    }
+
+    CT_TableParts* worksheet_element::mutable_tableParts()
+    {    
+    m_has_tableParts = true;
+    if (!m_tableParts)
+    {
+        m_tableParts = new CT_TableParts();
+    }
+    return m_tableParts;
+    }
+
+    const CT_TableParts& worksheet_element::get_tableParts() const
+    {    
+    if (m_tableParts)
+    {
+        return *m_tableParts;
+    }
+    return CT_TableParts::default_instance();
+    }
+
+    bool worksheet_element::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* worksheet_element::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& worksheet_element::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void worksheet_element::clear()
@@ -125697,6 +110889,312 @@ users_element* users_element::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_sheetData = false;
+    
+    if (m_sheetData)
+    {
+        delete m_sheetData;
+        m_sheetData = NULL;
+    }
+    
+    
+    m_has_sheetCalcPr = false;
+    
+    if (m_sheetCalcPr)
+    {
+        delete m_sheetCalcPr;
+        m_sheetCalcPr = NULL;
+    }
+    
+    
+    m_has_sheetProtection = false;
+    
+    if (m_sheetProtection)
+    {
+        delete m_sheetProtection;
+        m_sheetProtection = NULL;
+    }
+    
+    
+    m_has_protectedRanges = false;
+    
+    if (m_protectedRanges)
+    {
+        delete m_protectedRanges;
+        m_protectedRanges = NULL;
+    }
+    
+    
+    m_has_scenarios = false;
+    
+    if (m_scenarios)
+    {
+        delete m_scenarios;
+        m_scenarios = NULL;
+    }
+    
+    
+    m_has_autoFilter = false;
+    
+    if (m_autoFilter)
+    {
+        delete m_autoFilter;
+        m_autoFilter = NULL;
+    }
+    
+    
+    m_has_sortState = false;
+    
+    if (m_sortState)
+    {
+        delete m_sortState;
+        m_sortState = NULL;
+    }
+    
+    
+    m_has_dataConsolidate = false;
+    
+    if (m_dataConsolidate)
+    {
+        delete m_dataConsolidate;
+        m_dataConsolidate = NULL;
+    }
+    
+    
+    m_has_customSheetViews = false;
+    
+    if (m_customSheetViews)
+    {
+        delete m_customSheetViews;
+        m_customSheetViews = NULL;
+    }
+    
+    
+    m_has_mergeCells = false;
+    
+    if (m_mergeCells)
+    {
+        delete m_mergeCells;
+        m_mergeCells = NULL;
+    }
+    
+    
+    m_has_phoneticPr = false;
+    
+    if (m_phoneticPr)
+    {
+        delete m_phoneticPr;
+        m_phoneticPr = NULL;
+    }
+    
+     
+    {
+        vector<ChildGroup_2*>::iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
+            delete *iter;
+        }
+        m_childGroupList_2.clear();
+    }
+     
+    m_has_dataValidations = false;
+    
+    if (m_dataValidations)
+    {
+        delete m_dataValidations;
+        m_dataValidations = NULL;
+    }
+    
+    
+    m_has_hyperlinks = false;
+    
+    if (m_hyperlinks)
+    {
+        delete m_hyperlinks;
+        m_hyperlinks = NULL;
+    }
+    
+    
+    m_has_printOptions = false;
+    
+    if (m_printOptions)
+    {
+        delete m_printOptions;
+        m_printOptions = NULL;
+    }
+    
+    
+    m_has_pageMargins = false;
+    
+    if (m_pageMargins)
+    {
+        delete m_pageMargins;
+        m_pageMargins = NULL;
+    }
+    
+    
+    m_has_pageSetup = false;
+    
+    if (m_pageSetup)
+    {
+        delete m_pageSetup;
+        m_pageSetup = NULL;
+    }
+    
+    
+    m_has_headerFooter = false;
+    
+    if (m_headerFooter)
+    {
+        delete m_headerFooter;
+        m_headerFooter = NULL;
+    }
+    
+    
+    m_has_rowBreaks = false;
+    
+    if (m_rowBreaks)
+    {
+        delete m_rowBreaks;
+        m_rowBreaks = NULL;
+    }
+    
+    
+    m_has_colBreaks = false;
+    
+    if (m_colBreaks)
+    {
+        delete m_colBreaks;
+        m_colBreaks = NULL;
+    }
+    
+    
+    m_has_customProperties = false;
+    
+    if (m_customProperties)
+    {
+        delete m_customProperties;
+        m_customProperties = NULL;
+    }
+    
+    
+    m_has_cellWatches = false;
+    
+    if (m_cellWatches)
+    {
+        delete m_cellWatches;
+        m_cellWatches = NULL;
+    }
+    
+    
+    m_has_ignoredErrors = false;
+    
+    if (m_ignoredErrors)
+    {
+        delete m_ignoredErrors;
+        m_ignoredErrors = NULL;
+    }
+    
+    
+    m_has_smartTags = false;
+    
+    if (m_smartTags)
+    {
+        delete m_smartTags;
+        m_smartTags = NULL;
+    }
+    
+    
+    m_has_drawing = false;
+    
+    if (m_drawing)
+    {
+        delete m_drawing;
+        m_drawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawing = false;
+    
+    if (m_legacyDrawing)
+    {
+        delete m_legacyDrawing;
+        m_legacyDrawing = NULL;
+    }
+    
+    
+    m_has_legacyDrawingHF = false;
+    
+    if (m_legacyDrawingHF)
+    {
+        delete m_legacyDrawingHF;
+        m_legacyDrawingHF = NULL;
+    }
+    
+    
+    m_has_drawingHF = false;
+    
+    if (m_drawingHF)
+    {
+        delete m_drawingHF;
+        m_drawingHF = NULL;
+    }
+    
+    
+    m_has_picture = false;
+    
+    if (m_picture)
+    {
+        delete m_picture;
+        m_picture = NULL;
+    }
+    
+    
+    m_has_oleObjects = false;
+    
+    if (m_oleObjects)
+    {
+        delete m_oleObjects;
+        m_oleObjects = NULL;
+    }
+    
+    
+    m_has_controls = false;
+    
+    if (m_controls)
+    {
+        delete m_controls;
+        m_controls = NULL;
+    }
+    
+    
+    m_has_webPublishItems = false;
+    
+    if (m_webPublishItems)
+    {
+        delete m_webPublishItems;
+        m_webPublishItems = NULL;
+    }
+    
+    
+    m_has_tableParts = false;
+    
+    if (m_tableParts)
+    {
+        delete m_tableParts;
+        m_tableParts = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void worksheet_element::toXml(std::ostream& _outStream) const
@@ -125709,6 +111207,7 @@ users_element* users_element::default_instance_ = NULL;
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
     
     _outStream << ">";
+    
     
     if (m_has_sheetPr)
     {
@@ -125744,245 +111243,221 @@ users_element* users_element::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_sheetData())
+        }
+    }
+     
+        assert(m_has_sheetData);
+        
+    
+    if (m_has_sheetData)
     {
-        (*iter)->get_sheetData().toXmlElem("main:sheetData", "", _outStream);
+        m_sheetData->toXmlElem("main:sheetData", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_sheetCalcPr())
+    if (m_has_sheetCalcPr)
     {
-        (*iter)->get_sheetCalcPr().toXmlElem("main:sheetCalcPr", "", _outStream);
+        m_sheetCalcPr->toXmlElem("main:sheetCalcPr", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_sheetProtection())
+    if (m_has_sheetProtection)
     {
-        (*iter)->get_sheetProtection().toXmlElem("main:sheetProtection", "", _outStream);
+        m_sheetProtection->toXmlElem("main:sheetProtection", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_protectedRanges())
+    if (m_has_protectedRanges)
     {
-        (*iter)->get_protectedRanges().toXmlElem("main:protectedRanges", "", _outStream);
+        m_protectedRanges->toXmlElem("main:protectedRanges", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_scenarios())
+    if (m_has_scenarios)
     {
-        (*iter)->get_scenarios().toXmlElem("main:scenarios", "", _outStream);
+        m_scenarios->toXmlElem("main:scenarios", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_autoFilter())
+    if (m_has_autoFilter)
     {
-        (*iter)->get_autoFilter().toXmlElem("main:autoFilter", "", _outStream);
+        m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_sortState())
+    if (m_has_sortState)
     {
-        (*iter)->get_sortState().toXmlElem("main:sortState", "", _outStream);
+        m_sortState->toXmlElem("main:sortState", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_dataConsolidate())
+    if (m_has_dataConsolidate)
     {
-        (*iter)->get_dataConsolidate().toXmlElem("main:dataConsolidate", "", _outStream);
+        m_dataConsolidate->toXmlElem("main:dataConsolidate", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_customSheetViews())
+    if (m_has_customSheetViews)
     {
-        (*iter)->get_customSheetViews().toXmlElem("main:customSheetViews", "", _outStream);
+        m_customSheetViews->toXmlElem("main:customSheetViews", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_mergeCells())
+    if (m_has_mergeCells)
     {
-        (*iter)->get_mergeCells().toXmlElem("main:mergeCells", "", _outStream);
+        m_mergeCells->toXmlElem("main:mergeCells", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_phoneticPr())
+    if (m_has_phoneticPr)
     {
-        (*iter)->get_phoneticPr().toXmlElem("main:phoneticPr", "", _outStream);
+        m_phoneticPr->toXmlElem("main:phoneticPr", "", _outStream);
     }
+     
+    {
+        vector<ChildGroup_2*>::const_iterator iter;
+        for (iter = m_childGroupList_2.begin(); iter != m_childGroupList_2.end(); ++iter)
+        {
     
-    
-    else 
     if ((*iter)->has_conditionalFormatting())
     {
         (*iter)->get_conditionalFormatting().toXmlElem("main:conditionalFormatting", "", _outStream);
     }
     
     
-    else 
-    if ((*iter)->has_dataValidations())
-    {
-        (*iter)->get_dataValidations().toXmlElem("main:dataValidations", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_hyperlinks())
-    {
-        (*iter)->get_hyperlinks().toXmlElem("main:hyperlinks", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_printOptions())
-    {
-        (*iter)->get_printOptions().toXmlElem("main:printOptions", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_pageMargins())
-    {
-        (*iter)->get_pageMargins().toXmlElem("main:pageMargins", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_pageSetup())
-    {
-        (*iter)->get_pageSetup().toXmlElem("main:pageSetup", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_headerFooter())
-    {
-        (*iter)->get_headerFooter().toXmlElem("main:headerFooter", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_rowBreaks())
-    {
-        (*iter)->get_rowBreaks().toXmlElem("main:rowBreaks", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_colBreaks())
-    {
-        (*iter)->get_colBreaks().toXmlElem("main:colBreaks", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_customProperties())
-    {
-        (*iter)->get_customProperties().toXmlElem("main:customProperties", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_cellWatches())
-    {
-        (*iter)->get_cellWatches().toXmlElem("main:cellWatches", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_ignoredErrors())
-    {
-        (*iter)->get_ignoredErrors().toXmlElem("main:ignoredErrors", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_smartTags())
-    {
-        (*iter)->get_smartTags().toXmlElem("main:smartTags", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_drawing())
-    {
-        (*iter)->get_drawing().toXmlElem("main:drawing", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_legacyDrawing())
-    {
-        (*iter)->get_legacyDrawing().toXmlElem("main:legacyDrawing", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_legacyDrawingHF())
-    {
-        (*iter)->get_legacyDrawingHF().toXmlElem("main:legacyDrawingHF", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_drawingHF())
-    {
-        (*iter)->get_drawingHF().toXmlElem("main:drawingHF", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_picture())
-    {
-        (*iter)->get_picture().toXmlElem("main:picture", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_oleObjects())
-    {
-        (*iter)->get_oleObjects().toXmlElem("main:oleObjects", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_controls())
-    {
-        (*iter)->get_controls().toXmlElem("main:controls", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_webPublishItems())
-    {
-        (*iter)->get_webPublishItems().toXmlElem("main:webPublishItems", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_tableParts())
-    {
-        (*iter)->get_tableParts().toXmlElem("main:tableParts", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_dataValidations)
+    {
+        m_dataValidations->toXmlElem("main:dataValidations", "", _outStream);
+    }
+    
+    
+    if (m_has_hyperlinks)
+    {
+        m_hyperlinks->toXmlElem("main:hyperlinks", "", _outStream);
+    }
+    
+    
+    if (m_has_printOptions)
+    {
+        m_printOptions->toXmlElem("main:printOptions", "", _outStream);
+    }
+    
+    
+    if (m_has_pageMargins)
+    {
+        m_pageMargins->toXmlElem("main:pageMargins", "", _outStream);
+    }
+    
+    
+    if (m_has_pageSetup)
+    {
+        m_pageSetup->toXmlElem("main:pageSetup", "", _outStream);
+    }
+    
+    
+    if (m_has_headerFooter)
+    {
+        m_headerFooter->toXmlElem("main:headerFooter", "", _outStream);
+    }
+    
+    
+    if (m_has_rowBreaks)
+    {
+        m_rowBreaks->toXmlElem("main:rowBreaks", "", _outStream);
+    }
+    
+    
+    if (m_has_colBreaks)
+    {
+        m_colBreaks->toXmlElem("main:colBreaks", "", _outStream);
+    }
+    
+    
+    if (m_has_customProperties)
+    {
+        m_customProperties->toXmlElem("main:customProperties", "", _outStream);
+    }
+    
+    
+    if (m_has_cellWatches)
+    {
+        m_cellWatches->toXmlElem("main:cellWatches", "", _outStream);
+    }
+    
+    
+    if (m_has_ignoredErrors)
+    {
+        m_ignoredErrors->toXmlElem("main:ignoredErrors", "", _outStream);
+    }
+    
+    
+    if (m_has_smartTags)
+    {
+        m_smartTags->toXmlElem("main:smartTags", "", _outStream);
+    }
+    
+    
+    if (m_has_drawing)
+    {
+        m_drawing->toXmlElem("main:drawing", "", _outStream);
+    }
+    
+    
+    if (m_has_legacyDrawing)
+    {
+        m_legacyDrawing->toXmlElem("main:legacyDrawing", "", _outStream);
+    }
+    
+    
+    if (m_has_legacyDrawingHF)
+    {
+        m_legacyDrawingHF->toXmlElem("main:legacyDrawingHF", "", _outStream);
+    }
+    
+    
+    if (m_has_drawingHF)
+    {
+        m_drawingHF->toXmlElem("main:drawingHF", "", _outStream);
+    }
+    
+    
+    if (m_has_picture)
+    {
+        m_picture->toXmlElem("main:picture", "", _outStream);
+    }
+    
+    
+    if (m_has_oleObjects)
+    {
+        m_oleObjects->toXmlElem("main:oleObjects", "", _outStream);
+    }
+    
+    
+    if (m_has_controls)
+    {
+        m_controls->toXmlElem("main:controls", "", _outStream);
+    }
+    
+    
+    if (m_has_webPublishItems)
+    {
+        m_webPublishItems->toXmlElem("main:webPublishItems", "", _outStream);
+    }
+    
+    
+    if (m_has_tableParts)
+    {
+        m_tableParts->toXmlElem("main:tableParts", "", _outStream);
+    }
+    
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:worksheet>";
@@ -126001,75 +111476,7 @@ users_element* users_element::default_instance_ = NULL;
     // worksheet_element::ChildGroup_1
     worksheet_element::ChildGroup_1::ChildGroup_1()
     :m_has_cols(false),
-    m_cols(NULL),
-    m_has_sheetData(false),
-    m_sheetData(NULL),
-    m_has_sheetCalcPr(false),
-    m_sheetCalcPr(NULL),
-    m_has_sheetProtection(false),
-    m_sheetProtection(NULL),
-    m_has_protectedRanges(false),
-    m_protectedRanges(NULL),
-    m_has_scenarios(false),
-    m_scenarios(NULL),
-    m_has_autoFilter(false),
-    m_autoFilter(NULL),
-    m_has_sortState(false),
-    m_sortState(NULL),
-    m_has_dataConsolidate(false),
-    m_dataConsolidate(NULL),
-    m_has_customSheetViews(false),
-    m_customSheetViews(NULL),
-    m_has_mergeCells(false),
-    m_mergeCells(NULL),
-    m_has_phoneticPr(false),
-    m_phoneticPr(NULL),
-    m_has_conditionalFormatting(false),
-    m_conditionalFormatting(NULL),
-    m_has_dataValidations(false),
-    m_dataValidations(NULL),
-    m_has_hyperlinks(false),
-    m_hyperlinks(NULL),
-    m_has_printOptions(false),
-    m_printOptions(NULL),
-    m_has_pageMargins(false),
-    m_pageMargins(NULL),
-    m_has_pageSetup(false),
-    m_pageSetup(NULL),
-    m_has_headerFooter(false),
-    m_headerFooter(NULL),
-    m_has_rowBreaks(false),
-    m_rowBreaks(NULL),
-    m_has_colBreaks(false),
-    m_colBreaks(NULL),
-    m_has_customProperties(false),
-    m_customProperties(NULL),
-    m_has_cellWatches(false),
-    m_cellWatches(NULL),
-    m_has_ignoredErrors(false),
-    m_ignoredErrors(NULL),
-    m_has_smartTags(false),
-    m_smartTags(NULL),
-    m_has_drawing(false),
-    m_drawing(NULL),
-    m_has_legacyDrawing(false),
-    m_legacyDrawing(NULL),
-    m_has_legacyDrawingHF(false),
-    m_legacyDrawingHF(NULL),
-    m_has_drawingHF(false),
-    m_drawingHF(NULL),
-    m_has_picture(false),
-    m_picture(NULL),
-    m_has_oleObjects(false),
-    m_oleObjects(NULL),
-    m_has_controls(false),
-    m_controls(NULL),
-    m_has_webPublishItems(false),
-    m_webPublishItems(NULL),
-    m_has_tableParts(false),
-    m_tableParts(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_cols(NULL)
     {
     }
     bool worksheet_element::ChildGroup_1::has_cols() const
@@ -126079,312 +111486,6 @@ users_element* users_element::default_instance_ = NULL;
 
     CT_Cols* worksheet_element::ChildGroup_1::mutable_cols()
     {    
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_cols = true;
     if (!m_cols)
@@ -126403,3960 +111504,20 @@ users_element* users_element::default_instance_ = NULL;
     return CT_Cols::default_instance();
     }
 
-    bool worksheet_element::ChildGroup_1::has_sheetData() const
-    {    
-    return m_has_sheetData;
-    }
 
-    CT_SheetData* worksheet_element::ChildGroup_1::mutable_sheetData()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
+    // worksheet_element::ChildGroup_2
+    worksheet_element::ChildGroup_2::ChildGroup_2()
+    :m_has_conditionalFormatting(false),
+    m_conditionalFormatting(NULL)
     {
-        delete m_cols;
-        m_cols = NULL;
     }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_sheetData = true;
-    if (!m_sheetData)
-    {
-        m_sheetData = new CT_SheetData();
-    }
-    return m_sheetData;
-    }
-
-    const CT_SheetData& worksheet_element::ChildGroup_1::get_sheetData() const
-    {    
-    if (m_sheetData)
-    {
-        return *m_sheetData;
-    }
-    return CT_SheetData::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_sheetCalcPr() const
-    {    
-    return m_has_sheetCalcPr;
-    }
-
-    CT_SheetCalcPr* worksheet_element::ChildGroup_1::mutable_sheetCalcPr()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = true;
-    if (!m_sheetCalcPr)
-    {
-        m_sheetCalcPr = new CT_SheetCalcPr();
-    }
-    return m_sheetCalcPr;
-    }
-
-    const CT_SheetCalcPr& worksheet_element::ChildGroup_1::get_sheetCalcPr() const
-    {    
-    if (m_sheetCalcPr)
-    {
-        return *m_sheetCalcPr;
-    }
-    return CT_SheetCalcPr::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_sheetProtection() const
-    {    
-    return m_has_sheetProtection;
-    }
-
-    CT_SheetProtection* worksheet_element::ChildGroup_1::mutable_sheetProtection()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = true;
-    if (!m_sheetProtection)
-    {
-        m_sheetProtection = new CT_SheetProtection();
-    }
-    return m_sheetProtection;
-    }
-
-    const CT_SheetProtection& worksheet_element::ChildGroup_1::get_sheetProtection() const
-    {    
-    if (m_sheetProtection)
-    {
-        return *m_sheetProtection;
-    }
-    return CT_SheetProtection::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_protectedRanges() const
-    {    
-    return m_has_protectedRanges;
-    }
-
-    CT_ProtectedRanges* worksheet_element::ChildGroup_1::mutable_protectedRanges()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = true;
-    if (!m_protectedRanges)
-    {
-        m_protectedRanges = new CT_ProtectedRanges();
-    }
-    return m_protectedRanges;
-    }
-
-    const CT_ProtectedRanges& worksheet_element::ChildGroup_1::get_protectedRanges() const
-    {    
-    if (m_protectedRanges)
-    {
-        return *m_protectedRanges;
-    }
-    return CT_ProtectedRanges::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_scenarios() const
-    {    
-    return m_has_scenarios;
-    }
-
-    CT_Scenarios* worksheet_element::ChildGroup_1::mutable_scenarios()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_scenarios = true;
-    if (!m_scenarios)
-    {
-        m_scenarios = new CT_Scenarios();
-    }
-    return m_scenarios;
-    }
-
-    const CT_Scenarios& worksheet_element::ChildGroup_1::get_scenarios() const
-    {    
-    if (m_scenarios)
-    {
-        return *m_scenarios;
-    }
-    return CT_Scenarios::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_autoFilter() const
-    {    
-    return m_has_autoFilter;
-    }
-
-    CT_AutoFilter* worksheet_element::ChildGroup_1::mutable_autoFilter()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = true;
-    if (!m_autoFilter)
-    {
-        m_autoFilter = new CT_AutoFilter();
-    }
-    return m_autoFilter;
-    }
-
-    const CT_AutoFilter& worksheet_element::ChildGroup_1::get_autoFilter() const
-    {    
-    if (m_autoFilter)
-    {
-        return *m_autoFilter;
-    }
-    return CT_AutoFilter::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_sortState() const
-    {    
-    return m_has_sortState;
-    }
-
-    CT_SortState* worksheet_element::ChildGroup_1::mutable_sortState()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_sortState = true;
-    if (!m_sortState)
-    {
-        m_sortState = new CT_SortState();
-    }
-    return m_sortState;
-    }
-
-    const CT_SortState& worksheet_element::ChildGroup_1::get_sortState() const
-    {    
-    if (m_sortState)
-    {
-        return *m_sortState;
-    }
-    return CT_SortState::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_dataConsolidate() const
-    {    
-    return m_has_dataConsolidate;
-    }
-
-    CT_DataConsolidate* worksheet_element::ChildGroup_1::mutable_dataConsolidate()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = true;
-    if (!m_dataConsolidate)
-    {
-        m_dataConsolidate = new CT_DataConsolidate();
-    }
-    return m_dataConsolidate;
-    }
-
-    const CT_DataConsolidate& worksheet_element::ChildGroup_1::get_dataConsolidate() const
-    {    
-    if (m_dataConsolidate)
-    {
-        return *m_dataConsolidate;
-    }
-    return CT_DataConsolidate::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_customSheetViews() const
-    {    
-    return m_has_customSheetViews;
-    }
-
-    CT_CustomSheetViews* worksheet_element::ChildGroup_1::mutable_customSheetViews()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = true;
-    if (!m_customSheetViews)
-    {
-        m_customSheetViews = new CT_CustomSheetViews();
-    }
-    return m_customSheetViews;
-    }
-
-    const CT_CustomSheetViews& worksheet_element::ChildGroup_1::get_customSheetViews() const
-    {    
-    if (m_customSheetViews)
-    {
-        return *m_customSheetViews;
-    }
-    return CT_CustomSheetViews::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_mergeCells() const
-    {    
-    return m_has_mergeCells;
-    }
-
-    CT_MergeCells* worksheet_element::ChildGroup_1::mutable_mergeCells()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = true;
-    if (!m_mergeCells)
-    {
-        m_mergeCells = new CT_MergeCells();
-    }
-    return m_mergeCells;
-    }
-
-    const CT_MergeCells& worksheet_element::ChildGroup_1::get_mergeCells() const
-    {    
-    if (m_mergeCells)
-    {
-        return *m_mergeCells;
-    }
-    return CT_MergeCells::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_phoneticPr() const
-    {    
-    return m_has_phoneticPr;
-    }
-
-    CT_PhoneticPr* worksheet_element::ChildGroup_1::mutable_phoneticPr()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = true;
-    if (!m_phoneticPr)
-    {
-        m_phoneticPr = new CT_PhoneticPr();
-    }
-    return m_phoneticPr;
-    }
-
-    const CT_PhoneticPr& worksheet_element::ChildGroup_1::get_phoneticPr() const
-    {    
-    if (m_phoneticPr)
-    {
-        return *m_phoneticPr;
-    }
-    return CT_PhoneticPr::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_conditionalFormatting() const
+    bool worksheet_element::ChildGroup_2::has_conditionalFormatting() const
     {    
     return m_has_conditionalFormatting;
     }
 
-    CT_ConditionalFormatting* worksheet_element::ChildGroup_1::mutable_conditionalFormatting()
+    CT_ConditionalFormatting* worksheet_element::ChildGroup_2::mutable_conditionalFormatting()
     {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_conditionalFormatting = true;
     if (!m_conditionalFormatting)
@@ -130366,7295 +111527,13 @@ users_element* users_element::default_instance_ = NULL;
     return m_conditionalFormatting;
     }
 
-    const CT_ConditionalFormatting& worksheet_element::ChildGroup_1::get_conditionalFormatting() const
+    const CT_ConditionalFormatting& worksheet_element::ChildGroup_2::get_conditionalFormatting() const
     {    
     if (m_conditionalFormatting)
     {
         return *m_conditionalFormatting;
     }
     return CT_ConditionalFormatting::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_dataValidations() const
-    {    
-    return m_has_dataValidations;
-    }
-
-    CT_DataValidations* worksheet_element::ChildGroup_1::mutable_dataValidations()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = true;
-    if (!m_dataValidations)
-    {
-        m_dataValidations = new CT_DataValidations();
-    }
-    return m_dataValidations;
-    }
-
-    const CT_DataValidations& worksheet_element::ChildGroup_1::get_dataValidations() const
-    {    
-    if (m_dataValidations)
-    {
-        return *m_dataValidations;
-    }
-    return CT_DataValidations::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_hyperlinks() const
-    {    
-    return m_has_hyperlinks;
-    }
-
-    CT_Hyperlinks* worksheet_element::ChildGroup_1::mutable_hyperlinks()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = true;
-    if (!m_hyperlinks)
-    {
-        m_hyperlinks = new CT_Hyperlinks();
-    }
-    return m_hyperlinks;
-    }
-
-    const CT_Hyperlinks& worksheet_element::ChildGroup_1::get_hyperlinks() const
-    {    
-    if (m_hyperlinks)
-    {
-        return *m_hyperlinks;
-    }
-    return CT_Hyperlinks::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_printOptions() const
-    {    
-    return m_has_printOptions;
-    }
-
-    CT_PrintOptions* worksheet_element::ChildGroup_1::mutable_printOptions()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_printOptions = true;
-    if (!m_printOptions)
-    {
-        m_printOptions = new CT_PrintOptions();
-    }
-    return m_printOptions;
-    }
-
-    const CT_PrintOptions& worksheet_element::ChildGroup_1::get_printOptions() const
-    {    
-    if (m_printOptions)
-    {
-        return *m_printOptions;
-    }
-    return CT_PrintOptions::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_pageMargins() const
-    {    
-    return m_has_pageMargins;
-    }
-
-    CT_PageMargins* worksheet_element::ChildGroup_1::mutable_pageMargins()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = true;
-    if (!m_pageMargins)
-    {
-        m_pageMargins = new CT_PageMargins();
-    }
-    return m_pageMargins;
-    }
-
-    const CT_PageMargins& worksheet_element::ChildGroup_1::get_pageMargins() const
-    {    
-    if (m_pageMargins)
-    {
-        return *m_pageMargins;
-    }
-    return CT_PageMargins::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_pageSetup() const
-    {    
-    return m_has_pageSetup;
-    }
-
-    CT_PageSetup* worksheet_element::ChildGroup_1::mutable_pageSetup()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = true;
-    if (!m_pageSetup)
-    {
-        m_pageSetup = new CT_PageSetup();
-    }
-    return m_pageSetup;
-    }
-
-    const CT_PageSetup& worksheet_element::ChildGroup_1::get_pageSetup() const
-    {    
-    if (m_pageSetup)
-    {
-        return *m_pageSetup;
-    }
-    return CT_PageSetup::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_headerFooter() const
-    {    
-    return m_has_headerFooter;
-    }
-
-    CT_HeaderFooter* worksheet_element::ChildGroup_1::mutable_headerFooter()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = true;
-    if (!m_headerFooter)
-    {
-        m_headerFooter = new CT_HeaderFooter();
-    }
-    return m_headerFooter;
-    }
-
-    const CT_HeaderFooter& worksheet_element::ChildGroup_1::get_headerFooter() const
-    {    
-    if (m_headerFooter)
-    {
-        return *m_headerFooter;
-    }
-    return CT_HeaderFooter::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_rowBreaks() const
-    {    
-    return m_has_rowBreaks;
-    }
-
-    CT_PageBreak* worksheet_element::ChildGroup_1::mutable_rowBreaks()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = true;
-    if (!m_rowBreaks)
-    {
-        m_rowBreaks = new CT_PageBreak();
-    }
-    return m_rowBreaks;
-    }
-
-    const CT_PageBreak& worksheet_element::ChildGroup_1::get_rowBreaks() const
-    {    
-    if (m_rowBreaks)
-    {
-        return *m_rowBreaks;
-    }
-    return CT_PageBreak::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_colBreaks() const
-    {    
-    return m_has_colBreaks;
-    }
-
-    CT_PageBreak* worksheet_element::ChildGroup_1::mutable_colBreaks()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = true;
-    if (!m_colBreaks)
-    {
-        m_colBreaks = new CT_PageBreak();
-    }
-    return m_colBreaks;
-    }
-
-    const CT_PageBreak& worksheet_element::ChildGroup_1::get_colBreaks() const
-    {    
-    if (m_colBreaks)
-    {
-        return *m_colBreaks;
-    }
-    return CT_PageBreak::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_customProperties() const
-    {    
-    return m_has_customProperties;
-    }
-
-    CT_CustomProperties* worksheet_element::ChildGroup_1::mutable_customProperties()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_customProperties = true;
-    if (!m_customProperties)
-    {
-        m_customProperties = new CT_CustomProperties();
-    }
-    return m_customProperties;
-    }
-
-    const CT_CustomProperties& worksheet_element::ChildGroup_1::get_customProperties() const
-    {    
-    if (m_customProperties)
-    {
-        return *m_customProperties;
-    }
-    return CT_CustomProperties::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_cellWatches() const
-    {    
-    return m_has_cellWatches;
-    }
-
-    CT_CellWatches* worksheet_element::ChildGroup_1::mutable_cellWatches()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = true;
-    if (!m_cellWatches)
-    {
-        m_cellWatches = new CT_CellWatches();
-    }
-    return m_cellWatches;
-    }
-
-    const CT_CellWatches& worksheet_element::ChildGroup_1::get_cellWatches() const
-    {    
-    if (m_cellWatches)
-    {
-        return *m_cellWatches;
-    }
-    return CT_CellWatches::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_ignoredErrors() const
-    {    
-    return m_has_ignoredErrors;
-    }
-
-    CT_IgnoredErrors* worksheet_element::ChildGroup_1::mutable_ignoredErrors()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = true;
-    if (!m_ignoredErrors)
-    {
-        m_ignoredErrors = new CT_IgnoredErrors();
-    }
-    return m_ignoredErrors;
-    }
-
-    const CT_IgnoredErrors& worksheet_element::ChildGroup_1::get_ignoredErrors() const
-    {    
-    if (m_ignoredErrors)
-    {
-        return *m_ignoredErrors;
-    }
-    return CT_IgnoredErrors::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_smartTags() const
-    {    
-    return m_has_smartTags;
-    }
-
-    CT_SmartTags* worksheet_element::ChildGroup_1::mutable_smartTags()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_smartTags = true;
-    if (!m_smartTags)
-    {
-        m_smartTags = new CT_SmartTags();
-    }
-    return m_smartTags;
-    }
-
-    const CT_SmartTags& worksheet_element::ChildGroup_1::get_smartTags() const
-    {    
-    if (m_smartTags)
-    {
-        return *m_smartTags;
-    }
-    return CT_SmartTags::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_drawing() const
-    {    
-    return m_has_drawing;
-    }
-
-    CT_Drawing* worksheet_element::ChildGroup_1::mutable_drawing()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_drawing = true;
-    if (!m_drawing)
-    {
-        m_drawing = new CT_Drawing();
-    }
-    return m_drawing;
-    }
-
-    const CT_Drawing& worksheet_element::ChildGroup_1::get_drawing() const
-    {    
-    if (m_drawing)
-    {
-        return *m_drawing;
-    }
-    return CT_Drawing::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_legacyDrawing() const
-    {    
-    return m_has_legacyDrawing;
-    }
-
-    CT_LegacyDrawing* worksheet_element::ChildGroup_1::mutable_legacyDrawing()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = true;
-    if (!m_legacyDrawing)
-    {
-        m_legacyDrawing = new CT_LegacyDrawing();
-    }
-    return m_legacyDrawing;
-    }
-
-    const CT_LegacyDrawing& worksheet_element::ChildGroup_1::get_legacyDrawing() const
-    {    
-    if (m_legacyDrawing)
-    {
-        return *m_legacyDrawing;
-    }
-    return CT_LegacyDrawing::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_legacyDrawingHF() const
-    {    
-    return m_has_legacyDrawingHF;
-    }
-
-    CT_LegacyDrawing* worksheet_element::ChildGroup_1::mutable_legacyDrawingHF()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = true;
-    if (!m_legacyDrawingHF)
-    {
-        m_legacyDrawingHF = new CT_LegacyDrawing();
-    }
-    return m_legacyDrawingHF;
-    }
-
-    const CT_LegacyDrawing& worksheet_element::ChildGroup_1::get_legacyDrawingHF() const
-    {    
-    if (m_legacyDrawingHF)
-    {
-        return *m_legacyDrawingHF;
-    }
-    return CT_LegacyDrawing::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_drawingHF() const
-    {    
-    return m_has_drawingHF;
-    }
-
-    CT_DrawingHF* worksheet_element::ChildGroup_1::mutable_drawingHF()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = true;
-    if (!m_drawingHF)
-    {
-        m_drawingHF = new CT_DrawingHF();
-    }
-    return m_drawingHF;
-    }
-
-    const CT_DrawingHF& worksheet_element::ChildGroup_1::get_drawingHF() const
-    {    
-    if (m_drawingHF)
-    {
-        return *m_drawingHF;
-    }
-    return CT_DrawingHF::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_picture() const
-    {    
-    return m_has_picture;
-    }
-
-    CT_SheetBackgroundPicture* worksheet_element::ChildGroup_1::mutable_picture()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_picture = true;
-    if (!m_picture)
-    {
-        m_picture = new CT_SheetBackgroundPicture();
-    }
-    return m_picture;
-    }
-
-    const CT_SheetBackgroundPicture& worksheet_element::ChildGroup_1::get_picture() const
-    {    
-    if (m_picture)
-    {
-        return *m_picture;
-    }
-    return CT_SheetBackgroundPicture::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_oleObjects() const
-    {    
-    return m_has_oleObjects;
-    }
-
-    CT_OleObjects* worksheet_element::ChildGroup_1::mutable_oleObjects()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = true;
-    if (!m_oleObjects)
-    {
-        m_oleObjects = new CT_OleObjects();
-    }
-    return m_oleObjects;
-    }
-
-    const CT_OleObjects& worksheet_element::ChildGroup_1::get_oleObjects() const
-    {    
-    if (m_oleObjects)
-    {
-        return *m_oleObjects;
-    }
-    return CT_OleObjects::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_controls() const
-    {    
-    return m_has_controls;
-    }
-
-    CT_Controls* worksheet_element::ChildGroup_1::mutable_controls()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_controls = true;
-    if (!m_controls)
-    {
-        m_controls = new CT_Controls();
-    }
-    return m_controls;
-    }
-
-    const CT_Controls& worksheet_element::ChildGroup_1::get_controls() const
-    {    
-    if (m_controls)
-    {
-        return *m_controls;
-    }
-    return CT_Controls::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_webPublishItems() const
-    {    
-    return m_has_webPublishItems;
-    }
-
-    CT_WebPublishItems* worksheet_element::ChildGroup_1::mutable_webPublishItems()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = true;
-    if (!m_webPublishItems)
-    {
-        m_webPublishItems = new CT_WebPublishItems();
-    }
-    return m_webPublishItems;
-    }
-
-    const CT_WebPublishItems& worksheet_element::ChildGroup_1::get_webPublishItems() const
-    {    
-    if (m_webPublishItems)
-    {
-        return *m_webPublishItems;
-    }
-    return CT_WebPublishItems::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_tableParts() const
-    {    
-    return m_has_tableParts;
-    }
-
-    CT_TableParts* worksheet_element::ChildGroup_1::mutable_tableParts()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_tableParts = true;
-    if (!m_tableParts)
-    {
-        m_tableParts = new CT_TableParts();
-    }
-    return m_tableParts;
-    }
-
-    const CT_TableParts& worksheet_element::ChildGroup_1::get_tableParts() const
-    {    
-    if (m_tableParts)
-    {
-        return *m_tableParts;
-    }
-    return CT_TableParts::default_instance();
-    }
-
-    bool worksheet_element::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* worksheet_element::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_cols = false;
-    
-    if (m_cols)
-    {
-        delete m_cols;
-        m_cols = NULL;
-    }
-    ;
-    
-    m_has_sheetData = false;
-    
-    if (m_sheetData)
-    {
-        delete m_sheetData;
-        m_sheetData = NULL;
-    }
-    ;
-    
-    m_has_sheetCalcPr = false;
-    
-    if (m_sheetCalcPr)
-    {
-        delete m_sheetCalcPr;
-        m_sheetCalcPr = NULL;
-    }
-    ;
-    
-    m_has_sheetProtection = false;
-    
-    if (m_sheetProtection)
-    {
-        delete m_sheetProtection;
-        m_sheetProtection = NULL;
-    }
-    ;
-    
-    m_has_protectedRanges = false;
-    
-    if (m_protectedRanges)
-    {
-        delete m_protectedRanges;
-        m_protectedRanges = NULL;
-    }
-    ;
-    
-    m_has_scenarios = false;
-    
-    if (m_scenarios)
-    {
-        delete m_scenarios;
-        m_scenarios = NULL;
-    }
-    ;
-    
-    m_has_autoFilter = false;
-    
-    if (m_autoFilter)
-    {
-        delete m_autoFilter;
-        m_autoFilter = NULL;
-    }
-    ;
-    
-    m_has_sortState = false;
-    
-    if (m_sortState)
-    {
-        delete m_sortState;
-        m_sortState = NULL;
-    }
-    ;
-    
-    m_has_dataConsolidate = false;
-    
-    if (m_dataConsolidate)
-    {
-        delete m_dataConsolidate;
-        m_dataConsolidate = NULL;
-    }
-    ;
-    
-    m_has_customSheetViews = false;
-    
-    if (m_customSheetViews)
-    {
-        delete m_customSheetViews;
-        m_customSheetViews = NULL;
-    }
-    ;
-    
-    m_has_mergeCells = false;
-    
-    if (m_mergeCells)
-    {
-        delete m_mergeCells;
-        m_mergeCells = NULL;
-    }
-    ;
-    
-    m_has_phoneticPr = false;
-    
-    if (m_phoneticPr)
-    {
-        delete m_phoneticPr;
-        m_phoneticPr = NULL;
-    }
-    ;
-    
-    m_has_conditionalFormatting = false;
-    
-    if (m_conditionalFormatting)
-    {
-        delete m_conditionalFormatting;
-        m_conditionalFormatting = NULL;
-    }
-    ;
-    
-    m_has_dataValidations = false;
-    
-    if (m_dataValidations)
-    {
-        delete m_dataValidations;
-        m_dataValidations = NULL;
-    }
-    ;
-    
-    m_has_hyperlinks = false;
-    
-    if (m_hyperlinks)
-    {
-        delete m_hyperlinks;
-        m_hyperlinks = NULL;
-    }
-    ;
-    
-    m_has_printOptions = false;
-    
-    if (m_printOptions)
-    {
-        delete m_printOptions;
-        m_printOptions = NULL;
-    }
-    ;
-    
-    m_has_pageMargins = false;
-    
-    if (m_pageMargins)
-    {
-        delete m_pageMargins;
-        m_pageMargins = NULL;
-    }
-    ;
-    
-    m_has_pageSetup = false;
-    
-    if (m_pageSetup)
-    {
-        delete m_pageSetup;
-        m_pageSetup = NULL;
-    }
-    ;
-    
-    m_has_headerFooter = false;
-    
-    if (m_headerFooter)
-    {
-        delete m_headerFooter;
-        m_headerFooter = NULL;
-    }
-    ;
-    
-    m_has_rowBreaks = false;
-    
-    if (m_rowBreaks)
-    {
-        delete m_rowBreaks;
-        m_rowBreaks = NULL;
-    }
-    ;
-    
-    m_has_colBreaks = false;
-    
-    if (m_colBreaks)
-    {
-        delete m_colBreaks;
-        m_colBreaks = NULL;
-    }
-    ;
-    
-    m_has_customProperties = false;
-    
-    if (m_customProperties)
-    {
-        delete m_customProperties;
-        m_customProperties = NULL;
-    }
-    ;
-    
-    m_has_cellWatches = false;
-    
-    if (m_cellWatches)
-    {
-        delete m_cellWatches;
-        m_cellWatches = NULL;
-    }
-    ;
-    
-    m_has_ignoredErrors = false;
-    
-    if (m_ignoredErrors)
-    {
-        delete m_ignoredErrors;
-        m_ignoredErrors = NULL;
-    }
-    ;
-    
-    m_has_smartTags = false;
-    
-    if (m_smartTags)
-    {
-        delete m_smartTags;
-        m_smartTags = NULL;
-    }
-    ;
-    
-    m_has_drawing = false;
-    
-    if (m_drawing)
-    {
-        delete m_drawing;
-        m_drawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawing = false;
-    
-    if (m_legacyDrawing)
-    {
-        delete m_legacyDrawing;
-        m_legacyDrawing = NULL;
-    }
-    ;
-    
-    m_has_legacyDrawingHF = false;
-    
-    if (m_legacyDrawingHF)
-    {
-        delete m_legacyDrawingHF;
-        m_legacyDrawingHF = NULL;
-    }
-    ;
-    
-    m_has_drawingHF = false;
-    
-    if (m_drawingHF)
-    {
-        delete m_drawingHF;
-        m_drawingHF = NULL;
-    }
-    ;
-    
-    m_has_picture = false;
-    
-    if (m_picture)
-    {
-        delete m_picture;
-        m_picture = NULL;
-    }
-    ;
-    
-    m_has_oleObjects = false;
-    
-    if (m_oleObjects)
-    {
-        delete m_oleObjects;
-        m_oleObjects = NULL;
-    }
-    ;
-    
-    m_has_controls = false;
-    
-    if (m_controls)
-    {
-        delete m_controls;
-        m_controls = NULL;
-    }
-    ;
-    
-    m_has_webPublishItems = false;
-    
-    if (m_webPublishItems)
-    {
-        delete m_webPublishItems;
-        m_webPublishItems = NULL;
-    }
-    ;
-    
-    m_has_tableParts = false;
-    
-    if (m_tableParts)
-    {
-        delete m_tableParts;
-        m_tableParts = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& worksheet_element::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 worksheet_element* worksheet_element::default_instance_ = NULL;
@@ -138169,6 +112048,12 @@ worksheet_element* worksheet_element::default_instance_ = NULL;
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
     
     _outStream << ">";
+    
+        assert(m_has_sheetViews);
+        
+    
+        assert(m_has_drawing);
+        
     
     if (m_has_sheetPr)
     {
@@ -138848,6 +112733,7 @@ chartsheet_element* chartsheet_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+    
     if (m_has_sheetPr)
     {
         m_sheetPr->toXmlElem("main:sheetPr", "", _outStream);
@@ -138964,7 +112850,13 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
     m_has_metadataStrings(false),
     m_metadataStrings(NULL),
     m_has_mdxMetadata(false),
-    m_mdxMetadata(NULL)
+    m_mdxMetadata(NULL),
+    m_has_cellMetadata(false),
+    m_cellMetadata(NULL),
+    m_has_valueMetadata(false),
+    m_valueMetadata(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL)
     {
     }
     metadata_element::~metadata_element()
@@ -139050,28 +112942,76 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_MetadataBlocks* metadata_element::add_cellMetadata()
+    bool metadata_element::has_cellMetadata() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_MetadataBlocks* pNewChild = pChildGroup->mutable_cellMetadata();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_cellMetadata;
     }
 
-    CT_MetadataBlocks* metadata_element::add_valueMetadata()
+    CT_MetadataBlocks* metadata_element::mutable_cellMetadata()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_MetadataBlocks* pNewChild = pChildGroup->mutable_valueMetadata();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_cellMetadata = true;
+    if (!m_cellMetadata)
+    {
+        m_cellMetadata = new CT_MetadataBlocks();
+    }
+    return m_cellMetadata;
     }
 
-    CT_ExtensionList* metadata_element::add_extLst()
+    const CT_MetadataBlocks& metadata_element::get_cellMetadata() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    if (m_cellMetadata)
+    {
+        return *m_cellMetadata;
+    }
+    return CT_MetadataBlocks::default_instance();
+    }
+
+    bool metadata_element::has_valueMetadata() const
+    {    
+    return m_has_valueMetadata;
+    }
+
+    CT_MetadataBlocks* metadata_element::mutable_valueMetadata()
+    {    
+    m_has_valueMetadata = true;
+    if (!m_valueMetadata)
+    {
+        m_valueMetadata = new CT_MetadataBlocks();
+    }
+    return m_valueMetadata;
+    }
+
+    const CT_MetadataBlocks& metadata_element::get_valueMetadata() const
+    {    
+    if (m_valueMetadata)
+    {
+        return *m_valueMetadata;
+    }
+    return CT_MetadataBlocks::default_instance();
+    }
+
+    bool metadata_element::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* metadata_element::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& metadata_element::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void metadata_element::clear()
@@ -139111,6 +113051,33 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_cellMetadata = false;
+    
+    if (m_cellMetadata)
+    {
+        delete m_cellMetadata;
+        m_cellMetadata = NULL;
+    }
+    
+    
+    m_has_valueMetadata = false;
+    
+    if (m_valueMetadata)
+    {
+        delete m_valueMetadata;
+        m_valueMetadata = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void metadata_element::toXml(std::ostream& _outStream) const
@@ -139123,6 +113090,7 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
     
     _outStream << ">";
+    
     
     if (m_has_metadataTypes)
     {
@@ -139152,28 +113120,25 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_cellMetadata())
-    {
-        (*iter)->get_cellMetadata().toXmlElem("main:cellMetadata", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_valueMetadata())
-    {
-        (*iter)->get_valueMetadata().toXmlElem("main:valueMetadata", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_cellMetadata)
+    {
+        m_cellMetadata->toXmlElem("main:cellMetadata", "", _outStream);
+    }
+    
+    
+    if (m_has_valueMetadata)
+    {
+        m_valueMetadata->toXmlElem("main:valueMetadata", "", _outStream);
+    }
+    
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:metadata>";
@@ -139192,13 +113157,7 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
     // metadata_element::ChildGroup_1
     metadata_element::ChildGroup_1::ChildGroup_1()
     :m_has_futureMetadata(false),
-    m_futureMetadata(NULL),
-    m_has_cellMetadata(false),
-    m_cellMetadata(NULL),
-    m_has_valueMetadata(false),
-    m_valueMetadata(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_futureMetadata(NULL)
     {
     }
     bool metadata_element::ChildGroup_1::has_futureMetadata() const
@@ -139208,33 +113167,6 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
 
     CT_FutureMetadata* metadata_element::ChildGroup_1::mutable_futureMetadata()
     {    
-    
-    m_has_cellMetadata = false;
-    
-    if (m_cellMetadata)
-    {
-        delete m_cellMetadata;
-        m_cellMetadata = NULL;
-    }
-    ;
-    
-    m_has_valueMetadata = false;
-    
-    if (m_valueMetadata)
-    {
-        delete m_valueMetadata;
-        m_valueMetadata = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_futureMetadata = true;
     if (!m_futureMetadata)
@@ -139251,162 +113183,6 @@ dialogsheet_element* dialogsheet_element::default_instance_ = NULL;
         return *m_futureMetadata;
     }
     return CT_FutureMetadata::default_instance();
-    }
-
-    bool metadata_element::ChildGroup_1::has_cellMetadata() const
-    {    
-    return m_has_cellMetadata;
-    }
-
-    CT_MetadataBlocks* metadata_element::ChildGroup_1::mutable_cellMetadata()
-    {    
-    
-    m_has_futureMetadata = false;
-    
-    if (m_futureMetadata)
-    {
-        delete m_futureMetadata;
-        m_futureMetadata = NULL;
-    }
-    ;
-    
-    m_has_valueMetadata = false;
-    
-    if (m_valueMetadata)
-    {
-        delete m_valueMetadata;
-        m_valueMetadata = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_cellMetadata = true;
-    if (!m_cellMetadata)
-    {
-        m_cellMetadata = new CT_MetadataBlocks();
-    }
-    return m_cellMetadata;
-    }
-
-    const CT_MetadataBlocks& metadata_element::ChildGroup_1::get_cellMetadata() const
-    {    
-    if (m_cellMetadata)
-    {
-        return *m_cellMetadata;
-    }
-    return CT_MetadataBlocks::default_instance();
-    }
-
-    bool metadata_element::ChildGroup_1::has_valueMetadata() const
-    {    
-    return m_has_valueMetadata;
-    }
-
-    CT_MetadataBlocks* metadata_element::ChildGroup_1::mutable_valueMetadata()
-    {    
-    
-    m_has_futureMetadata = false;
-    
-    if (m_futureMetadata)
-    {
-        delete m_futureMetadata;
-        m_futureMetadata = NULL;
-    }
-    ;
-    
-    m_has_cellMetadata = false;
-    
-    if (m_cellMetadata)
-    {
-        delete m_cellMetadata;
-        m_cellMetadata = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_valueMetadata = true;
-    if (!m_valueMetadata)
-    {
-        m_valueMetadata = new CT_MetadataBlocks();
-    }
-    return m_valueMetadata;
-    }
-
-    const CT_MetadataBlocks& metadata_element::ChildGroup_1::get_valueMetadata() const
-    {    
-    if (m_valueMetadata)
-    {
-        return *m_valueMetadata;
-    }
-    return CT_MetadataBlocks::default_instance();
-    }
-
-    bool metadata_element::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* metadata_element::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_futureMetadata = false;
-    
-    if (m_futureMetadata)
-    {
-        delete m_futureMetadata;
-        m_futureMetadata = NULL;
-    }
-    ;
-    
-    m_has_cellMetadata = false;
-    
-    if (m_cellMetadata)
-    {
-        delete m_cellMetadata;
-        m_cellMetadata = NULL;
-    }
-    ;
-    
-    m_has_valueMetadata = false;
-    
-    if (m_valueMetadata)
-    {
-        delete m_valueMetadata;
-        m_valueMetadata = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& metadata_element::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 metadata_element* metadata_element::default_instance_ = NULL;
@@ -139449,6 +113225,11 @@ metadata_element* metadata_element::default_instance_ = NULL;
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
     
     _outStream << ">";
+    
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_singleXmlCell));
+        assert(1 <= elemCnt);
+    }
     
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -139916,6 +113697,7 @@ singleXmlCells_element* singleXmlCells_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+    
     if (m_has_numFmts)
     {
         m_numFmts->toXmlElem("main:numFmts", "", _outStream);
@@ -140213,6 +113995,13 @@ styleSheet_element* styleSheet_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+    {
+        bool elemHasValueList[3] = {m_has_externalBook, m_has_ddeLink, m_has_oleLink};
+        int cnt = count(elemHasValueList, elemHasValueList + 3, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_externalBook)
     {
         m_externalBook->toXmlElem("main:externalBook", "", _outStream);
@@ -140230,6 +114019,7 @@ styleSheet_element* styleSheet_element::default_instance_ = NULL;
         m_oleLink->toXmlElem("main:oleLink", "", _outStream);
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("main:extLst", "", _outStream);
@@ -140770,6 +114560,9 @@ externalLink_element* externalLink_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+        assert(m_has_tableColumns);
+        
+    
     if (m_has_autoFilter)
     {
         m_autoFilter->toXmlElem("main:autoFilter", "", _outStream);
@@ -141223,7 +115016,8 @@ table_element* table_element::default_instance_ = NULL;
 
     // volTypes_element
     volTypes_element::volTypes_element()
-
+    :m_has_extLst(false),
+    m_extLst(NULL)
     {
     }
     volTypes_element::~volTypes_element()
@@ -141237,12 +115031,28 @@ table_element* table_element::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_ExtensionList* volTypes_element::add_extLst()
+    bool volTypes_element::has_extLst() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* volTypes_element::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& volTypes_element::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void volTypes_element::clear()
@@ -141255,6 +115065,15 @@ table_element* table_element::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void volTypes_element::toXml(std::ostream& _outStream) const
@@ -141269,6 +115088,11 @@ table_element* table_element::default_instance_ = NULL;
     _outStream << ">";
     
     {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_volType));
+        assert(1 <= elemCnt);
+    }
+    
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -141279,14 +115103,13 @@ table_element* table_element::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:volTypes>";
@@ -141305,9 +115128,7 @@ table_element* table_element::default_instance_ = NULL;
     // volTypes_element::ChildGroup_1
     volTypes_element::ChildGroup_1::ChildGroup_1()
     :m_has_volType(false),
-    m_volType(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_volType(NULL)
     {
     }
     bool volTypes_element::ChildGroup_1::has_volType() const
@@ -141317,15 +115138,6 @@ table_element* table_element::default_instance_ = NULL;
 
     CT_VolType* volTypes_element::ChildGroup_1::mutable_volType()
     {    
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_volType = true;
     if (!m_volType)
@@ -141342,40 +115154,6 @@ table_element* table_element::default_instance_ = NULL;
         return *m_volType;
     }
     return CT_VolType::default_instance();
-    }
-
-    bool volTypes_element::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* volTypes_element::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_volType = false;
-    
-    if (m_volType)
-    {
-        delete m_volType;
-        m_volType = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& volTypes_element::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 volTypes_element* volTypes_element::default_instance_ = NULL;
@@ -141414,6 +115192,10 @@ volTypes_element* volTypes_element::default_instance_ = NULL;
     m_smartTagTypes(NULL),
     m_has_webPublishing(false),
     m_webPublishing(NULL),
+    m_has_webPublishObjects(false),
+    m_webPublishObjects(NULL),
+    m_has_extLst(false),
+    m_extLst(NULL),
     m_has_conformance_attr(false),
     m_conformance_attr(NULL)
     {
@@ -141813,20 +115595,52 @@ volTypes_element* volTypes_element::default_instance_ = NULL;
     return pNewChild;
     }
 
-    CT_WebPublishObjects* workbook_element::add_webPublishObjects()
+    bool workbook_element::has_webPublishObjects() const
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_WebPublishObjects* pNewChild = pChildGroup->mutable_webPublishObjects();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    return m_has_webPublishObjects;
     }
 
-    CT_ExtensionList* workbook_element::add_extLst()
+    CT_WebPublishObjects* workbook_element::mutable_webPublishObjects()
     {    
-    ChildGroup_1 *pChildGroup = new ChildGroup_1();
-    CT_ExtensionList* pNewChild = pChildGroup->mutable_extLst();
-    m_childGroupList_1.push_back(pChildGroup);
-    return pNewChild;
+    m_has_webPublishObjects = true;
+    if (!m_webPublishObjects)
+    {
+        m_webPublishObjects = new CT_WebPublishObjects();
+    }
+    return m_webPublishObjects;
+    }
+
+    const CT_WebPublishObjects& workbook_element::get_webPublishObjects() const
+    {    
+    if (m_webPublishObjects)
+    {
+        return *m_webPublishObjects;
+    }
+    return CT_WebPublishObjects::default_instance();
+    }
+
+    bool workbook_element::has_extLst() const
+    {    
+    return m_has_extLst;
+    }
+
+    CT_ExtensionList* workbook_element::mutable_extLst()
+    {    
+    m_has_extLst = true;
+    if (!m_extLst)
+    {
+        m_extLst = new CT_ExtensionList();
+    }
+    return m_extLst;
+    }
+
+    const CT_ExtensionList& workbook_element::get_extLst() const
+    {    
+    if (m_extLst)
+    {
+        return *m_extLst;
+    }
+    return CT_ExtensionList::default_instance();
     }
 
     void workbook_element::clear()
@@ -141992,6 +115806,24 @@ volTypes_element* volTypes_element::default_instance_ = NULL;
         }
         m_childGroupList_1.clear();
     }
+     
+    m_has_webPublishObjects = false;
+    
+    if (m_webPublishObjects)
+    {
+        delete m_webPublishObjects;
+        m_webPublishObjects = NULL;
+    }
+    
+    
+    m_has_extLst = false;
+    
+    if (m_extLst)
+    {
+        delete m_extLst;
+        m_extLst = NULL;
+    }
+    
     }
 
     void workbook_element::toXml(std::ostream& _outStream) const
@@ -142009,6 +115841,9 @@ volTypes_element* volTypes_element::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
+        assert(m_has_sheets);
+        
     
     if (m_has_fileVersion)
     {
@@ -142116,21 +115951,19 @@ volTypes_element* volTypes_element::default_instance_ = NULL;
     }
     
     
-    else 
-    if ((*iter)->has_webPublishObjects())
-    {
-        (*iter)->get_webPublishObjects().toXmlElem("main:webPublishObjects", "", _outStream);
-    }
-    
-    
-    else 
-    if ((*iter)->has_extLst())
-    {
-        (*iter)->get_extLst().toXmlElem("main:extLst", "", _outStream);
-    }
-    
-    
         }
+    }
+     
+    
+    if (m_has_webPublishObjects)
+    {
+        m_webPublishObjects->toXmlElem("main:webPublishObjects", "", _outStream);
+    }
+    
+    
+    if (m_has_extLst)
+    {
+        m_extLst->toXmlElem("main:extLst", "", _outStream);
     }
     
     _outStream << "</main:workbook>";
@@ -142169,11 +116002,7 @@ volTypes_element* volTypes_element::default_instance_ = NULL;
     // workbook_element::ChildGroup_1
     workbook_element::ChildGroup_1::ChildGroup_1()
     :m_has_fileRecoveryPr(false),
-    m_fileRecoveryPr(NULL),
-    m_has_webPublishObjects(false),
-    m_webPublishObjects(NULL),
-    m_has_extLst(false),
-    m_extLst(NULL)
+    m_fileRecoveryPr(NULL)
     {
     }
     bool workbook_element::ChildGroup_1::has_fileRecoveryPr() const
@@ -142183,24 +116012,6 @@ volTypes_element* volTypes_element::default_instance_ = NULL;
 
     CT_FileRecoveryPr* workbook_element::ChildGroup_1::mutable_fileRecoveryPr()
     {    
-    
-    m_has_webPublishObjects = false;
-    
-    if (m_webPublishObjects)
-    {
-        delete m_webPublishObjects;
-        m_webPublishObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
     
     m_has_fileRecoveryPr = true;
     if (!m_fileRecoveryPr)
@@ -142217,92 +116028,6 @@ volTypes_element* volTypes_element::default_instance_ = NULL;
         return *m_fileRecoveryPr;
     }
     return CT_FileRecoveryPr::default_instance();
-    }
-
-    bool workbook_element::ChildGroup_1::has_webPublishObjects() const
-    {    
-    return m_has_webPublishObjects;
-    }
-
-    CT_WebPublishObjects* workbook_element::ChildGroup_1::mutable_webPublishObjects()
-    {    
-    
-    m_has_fileRecoveryPr = false;
-    
-    if (m_fileRecoveryPr)
-    {
-        delete m_fileRecoveryPr;
-        m_fileRecoveryPr = NULL;
-    }
-    ;
-    
-    m_has_extLst = false;
-    
-    if (m_extLst)
-    {
-        delete m_extLst;
-        m_extLst = NULL;
-    }
-    ;
-    
-    m_has_webPublishObjects = true;
-    if (!m_webPublishObjects)
-    {
-        m_webPublishObjects = new CT_WebPublishObjects();
-    }
-    return m_webPublishObjects;
-    }
-
-    const CT_WebPublishObjects& workbook_element::ChildGroup_1::get_webPublishObjects() const
-    {    
-    if (m_webPublishObjects)
-    {
-        return *m_webPublishObjects;
-    }
-    return CT_WebPublishObjects::default_instance();
-    }
-
-    bool workbook_element::ChildGroup_1::has_extLst() const
-    {    
-    return m_has_extLst;
-    }
-
-    CT_ExtensionList* workbook_element::ChildGroup_1::mutable_extLst()
-    {    
-    
-    m_has_fileRecoveryPr = false;
-    
-    if (m_fileRecoveryPr)
-    {
-        delete m_fileRecoveryPr;
-        m_fileRecoveryPr = NULL;
-    }
-    ;
-    
-    m_has_webPublishObjects = false;
-    
-    if (m_webPublishObjects)
-    {
-        delete m_webPublishObjects;
-        m_webPublishObjects = NULL;
-    }
-    ;
-    
-    m_has_extLst = true;
-    if (!m_extLst)
-    {
-        m_extLst = new CT_ExtensionList();
-    }
-    return m_extLst;
-    }
-
-    const CT_ExtensionList& workbook_element::ChildGroup_1::get_extLst() const
-    {    
-    if (m_extLst)
-    {
-        return *m_extLst;
-    }
-    return CT_ExtensionList::default_instance();
     }
 
 workbook_element* workbook_element::default_instance_ = NULL;

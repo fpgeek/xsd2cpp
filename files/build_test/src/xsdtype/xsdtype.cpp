@@ -1,5 +1,7 @@
 #include "xsdtype.h"
 #include <sstream>
+#include <algorithm>
+#include <assert.h>
 
 namespace XSD {
     
@@ -103,7 +105,7 @@ namespace XSD {
         stringstream xmlStr;
         toXml(xmlStr);
         return xmlStr.str();
-    }
+}
 }
 
 namespace ns_xml

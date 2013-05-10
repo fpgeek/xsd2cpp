@@ -761,6 +761,12 @@ namespace ns_m {
         bool has_nor() const;
         CT_OnOff* mutable_nor();
         const CT_OnOff& get_nor() const;
+        bool has_scr() const;
+        CT_Script* mutable_scr();
+        const CT_Script& get_scr() const;
+        bool has_sty() const;
+        CT_Style* mutable_sty();
+        const CT_Style& get_sty() const;
         bool has_brk() const;
         CT_ManualBreak* mutable_brk();
         const CT_ManualBreak& get_brk() const;
@@ -776,6 +782,10 @@ namespace ns_m {
         CT_OnOff* m_lit;
         bool m_has_nor;
         CT_OnOff* m_nor;
+        bool m_has_scr;
+        CT_Script* m_scr;
+        bool m_has_sty;
+        CT_Style* m_sty;
         bool m_has_brk;
         CT_ManualBreak* m_brk;
         bool m_has_aln;
@@ -1041,6 +1051,9 @@ namespace ns_m {
     public:
         CT_CtrlPr();
         ~CT_CtrlPr();
+        bool has_w_rPr() const;
+        ns_w::CT_RPr* mutable_w_rPr();
+        const ns_w::CT_RPr& get_w_rPr() const;
         bool has_w_ins() const;
         ns_w::CT_MathCtrlIns* mutable_w_ins();
         const ns_w::CT_MathCtrlIns& get_w_ins() const;
@@ -1052,6 +1065,8 @@ namespace ns_m {
         static const CT_CtrlPr& default_instance();
     protected:
     private:
+        bool m_has_w_rPr;
+        ns_w::CT_RPr* m_w_rPr;
         bool m_has_w_ins;
         ns_w::CT_MathCtrlIns* m_w_ins;
         bool m_has_w_del;

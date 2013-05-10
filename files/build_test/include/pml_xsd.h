@@ -4042,7 +4042,9 @@ namespace ns_p {
         CT_CustomerDataList();
         ~CT_CustomerDataList();
         CT_CustomerData* add_custData();
-        CT_TagsData* add_tags();
+        bool has_tags() const;
+        CT_TagsData* mutable_tags();
+        const CT_TagsData& get_tags() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_CustomerDataList& default_instance();
@@ -4055,17 +4057,14 @@ namespace ns_p {
             bool has_custData() const;
             CT_CustomerData* mutable_custData();
             const CT_CustomerData& get_custData() const;
-            bool has_tags() const;
-            CT_TagsData* mutable_tags();
-            const CT_TagsData& get_tags() const;
         protected:
         private:
             bool m_has_custData;
             CT_CustomerData* m_custData;
-            bool m_has_tags;
-            CT_TagsData* m_tags;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_tags;
+        CT_TagsData* m_tags;
         static CT_CustomerDataList* default_instance_;
     };
 

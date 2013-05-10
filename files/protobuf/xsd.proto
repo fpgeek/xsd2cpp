@@ -131,6 +131,7 @@ message ElementContainer {
 	repeated Element repeated_sequence = 4;
 	repeated Element repeated_choice = 5;
 	optional uint32 min_occurs = 6[default=0];
+	optional MaxOccurs max_occurs = 7;
 }
 
 message MaxOccurs {

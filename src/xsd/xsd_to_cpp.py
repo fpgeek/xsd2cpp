@@ -23,7 +23,7 @@ def _makeCppFileProp(cppFile, pbSchema):
             cppFile.include_file.append(includeFileName)
 
 
-def _makeToXmlElemMethodBody(pbSchema, pbComplexType, cppClass):
+def _makeToXmlElemMethodBody(pbSchema, pbComplexType, cppClass, cppFile):
 
     toXmlMethodBodyStr = \
         """
@@ -42,7 +42,7 @@ def _makeToXmlElemMethodBody(pbSchema, pbComplexType, cppClass):
         """
         _outStream << ">";
         """
-    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromElemCont(pbSchema, pbComplexType.element_container)
+    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromElemCont(pbSchema, pbComplexType.element_container, cppFile)
 
     if pbComplexType.HasField('extension'):
         if pbComplexType.extension.base.kind == PB.Base.BuiltIn:
@@ -67,7 +67,7 @@ def getToStringVarNameFromBuiltIn(pbBuiltIn):
         return 'm_%s' % CPP_FUNC.getCppVarName(builtInStr)
 
 
-def _makeToXmlMethodBodyForElem(pbSchema, pbComplexType, cppClass, pbElem):
+def _makeToXmlMethodBodyForElem(pbSchema, pbComplexType, cppClass, pbElem, cppFile):
 
     xmlElementName = CPP_FUNC.getXmlElementName(pbSchema, pbElem)
     toXmlMethodBodyStr = \
@@ -85,7 +85,7 @@ _outStream << "<%s";
 """
 _outStream << ">";
 """
-    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromElemCont(pbSchema, pbComplexType.element_container)
+    toXmlMethodBodyStr += CPP_FUNC.getToXmlMethodBodyStrFromElemCont(pbSchema, pbComplexType.element_container, cppFile)
     toXmlMethodBodyStr += \
 """
 _outStream << "</%s>";
@@ -113,13 +113,14 @@ def _makeCppClasses(cppFile, pbSchema, allPbSchemas):
         cppClass.name = pbComplexType.name
         cppClass.parent_class.append('XSD::ComplexType')
 
-        _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass, _makeToXmlElemMethodBody)
+        makeToXmlElemMethodBodyFunc = functools.partial(_makeToXmlElemMethodBody, cppFile=cppFile)
+        _makeCppClassFromComplexType(pbSchema, pbComplexType, cppClass, makeToXmlElemMethodBodyFunc)
 
     for pbElement in pbSchema.element:
         cppClass = cppFile.class_.add()
         cppClass.name = '%s_element' % pbElement.name
         cppClass.parent_class.append('Element')
-        _makeCppClassFromElement(pbSchema, pbElement, cppClass, allPbSchemas)
+        _makeCppClassFromElement(pbSchema, pbElement, cppClass, allPbSchemas, cppFile)
 
     for pbAttr in pbSchema.attribute:
         cppClass = cppFile.class_.add()
@@ -164,7 +165,7 @@ def getCppNs(name):
 
 
 # Element를 class로 만들기
-def _makeCppClassFromElement(pbSchema, pbElement, cppClass, allPbSchemas):
+def _makeCppClassFromElement(pbSchema, pbElement, cppClass, allPbSchemas, cppFile):
     cppVarType = _getCppVarTypeFromElem(pbElement)
     # cppClass.parent_class.append(cppVarType)
 
@@ -184,7 +185,7 @@ def _makeCppClassFromElement(pbSchema, pbElement, cppClass, allPbSchemas):
 
     if len(foundCtTypes) == 1:
         for ctType in foundCtTypes:
-            makeToXmlMethodBodyFunc = functools.partial(_makeToXmlMethodBodyForElem, pbElem=pbElement)
+            makeToXmlMethodBodyFunc = functools.partial(_makeToXmlMethodBodyForElem, pbElem=pbElement, cppFile=cppFile)
             _makeCppClassFromComplexType(pbSchema, ctType, cppClass, makeToXmlMethodBodyFunc)
 
 # Attribute를 class로 만들기

@@ -1,7 +1,6 @@
 #include "vml-main_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "vml-officeDrawing_xsd.h"
 #include "wml_xsd.h"
@@ -8381,6 +8380,7 @@ CT_Shape* CT_Shape::default_instance_ = NULL;
         }
     }
      
+    
     if (m_has_o_complex)
     {
         m_o_complex->toXmlElem("o:complex", "", _outStream);
@@ -26196,6 +26196,7 @@ CT_Group* CT_Group::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_fill)
     {
         m_fill->toXmlElem("v:fill", "", _outStream);
@@ -26775,6 +26776,7 @@ CT_Background* CT_Background::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_o_fill)
     {
         m_o_fill->toXmlElem("o:fill", "", _outStream);
@@ -30160,6 +30162,7 @@ CT_Shadow* CT_Shadow::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_o_left)
     {
         m_o_left->toXmlElem("o:left", "", _outStream);
@@ -30868,6 +30871,13 @@ CT_Stroke* CT_Stroke::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_w_txbxContent, m_has__any};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_w_txbxContent)
     {
         m_w_txbxContent->toXmlElem("w:txbxContent", "", _outStream);
@@ -84490,6 +84500,7 @@ shape_element* shape_element::default_instance_ = NULL;
         }
     }
      
+    
     if (m_has_o_complex)
     {
         m_o_complex->toXmlElem("o:complex", "", _outStream);
@@ -102313,6 +102324,7 @@ group_element* group_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+    
     if (m_has_fill)
     {
         m_fill->toXmlElem("v:fill", "", _outStream);
@@ -102895,6 +102907,7 @@ background_element* background_element::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
     
     if (m_has_o_fill)
     {
@@ -105049,6 +105062,13 @@ path_element* path_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+    {
+        bool elemHasValueList[2] = {m_has_w_txbxContent, m_has__any};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_w_txbxContent)
     {
         m_w_txbxContent->toXmlElem("w:txbxContent", "", _outStream);
@@ -106178,6 +106198,7 @@ shadow_element* shadow_element::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
     
     if (m_has_o_left)
     {

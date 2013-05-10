@@ -3636,7 +3636,9 @@ namespace ns_a {
         CT_TextFont* mutable_cs();
         const CT_TextFont& get_cs() const;
         CT_SupplementalFont* add_font();
-        CT_OfficeArtExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_OfficeArtExtensionList* mutable_extLst();
+        const CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_FontCollection& default_instance();
@@ -3649,15 +3651,10 @@ namespace ns_a {
             bool has_font() const;
             CT_SupplementalFont* mutable_font();
             const CT_SupplementalFont& get_font() const;
-            bool has_extLst() const;
-            CT_OfficeArtExtensionList* mutable_extLst();
-            const CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_font;
             CT_SupplementalFont* m_font;
-            bool m_has_extLst;
-            CT_OfficeArtExtensionList* m_extLst;
         };
         bool m_has_latin;
         CT_TextFont* m_latin;
@@ -3666,6 +3663,8 @@ namespace ns_a {
         bool m_has_cs;
         CT_TextFont* m_cs;
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_extLst;
+        CT_OfficeArtExtensionList* m_extLst;
         static CT_FontCollection* default_instance_;
     };
 
@@ -10710,7 +10709,9 @@ namespace ns_a {
         CT_TableRow();
         ~CT_TableRow();
         CT_TableCell* add_tc();
-        CT_OfficeArtExtensionList* add_extLst();
+        bool has_extLst() const;
+        CT_OfficeArtExtensionList* mutable_extLst();
+        const CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_TableRow& default_instance();
@@ -10726,17 +10727,14 @@ namespace ns_a {
             bool has_tc() const;
             CT_TableCell* mutable_tc();
             const CT_TableCell& get_tc() const;
-            bool has_extLst() const;
-            CT_OfficeArtExtensionList* mutable_extLst();
-            const CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_tc;
             CT_TableCell* m_tc;
-            bool m_has_extLst;
-            CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_extLst;
+        CT_OfficeArtExtensionList* m_extLst;
         static CT_TableRow* default_instance_;
         bool m_has_h_attr;
         ST_Coordinate* m_h_attr;

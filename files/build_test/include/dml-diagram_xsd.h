@@ -2503,9 +2503,13 @@ namespace ns_diagram {
         ~CT_ColorTransform();
         CT_CTName* add_title();
         CT_CTDescription* add_desc();
-        CT_CTCategories* add_catLst();
+        bool has_catLst() const;
+        CT_CTCategories* mutable_catLst();
+        const CT_CTCategories& get_catLst() const;
         CT_CTStyleLabel* add_styleLbl();
-        ns_a::CT_OfficeArtExtensionList* add_extLst();
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ColorTransform& default_instance();
@@ -2527,29 +2531,31 @@ namespace ns_diagram {
             bool has_desc() const;
             CT_CTDescription* mutable_desc();
             const CT_CTDescription& get_desc() const;
-            bool has_catLst() const;
-            CT_CTCategories* mutable_catLst();
-            const CT_CTCategories& get_catLst() const;
-            bool has_styleLbl() const;
-            CT_CTStyleLabel* mutable_styleLbl();
-            const CT_CTStyleLabel& get_styleLbl() const;
-            bool has_extLst() const;
-            ns_a::CT_OfficeArtExtensionList* mutable_extLst();
-            const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_title;
             CT_CTName* m_title;
             bool m_has_desc;
             CT_CTDescription* m_desc;
-            bool m_has_catLst;
-            CT_CTCategories* m_catLst;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
+            bool has_styleLbl() const;
+            CT_CTStyleLabel* mutable_styleLbl();
+            const CT_CTStyleLabel& get_styleLbl() const;
+        protected:
+        private:
             bool m_has_styleLbl;
             CT_CTStyleLabel* m_styleLbl;
-            bool m_has_extLst;
-            ns_a::CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_catLst;
+        CT_CTCategories* m_catLst;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static CT_ColorTransform* default_instance_;
         bool m_has_uniqueId_attr;
         XSD::string_ m_uniqueId_attr;
@@ -2564,8 +2570,12 @@ namespace ns_diagram {
         ~CT_ColorTransformHeader();
         CT_CTName* add_title();
         CT_CTDescription* add_desc();
-        CT_CTCategories* add_catLst();
-        ns_a::CT_OfficeArtExtensionList* add_extLst();
+        bool has_catLst() const;
+        CT_CTCategories* mutable_catLst();
+        const CT_CTCategories& get_catLst() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_ColorTransformHeader& default_instance();
@@ -2590,24 +2600,18 @@ namespace ns_diagram {
             bool has_desc() const;
             CT_CTDescription* mutable_desc();
             const CT_CTDescription& get_desc() const;
-            bool has_catLst() const;
-            CT_CTCategories* mutable_catLst();
-            const CT_CTCategories& get_catLst() const;
-            bool has_extLst() const;
-            ns_a::CT_OfficeArtExtensionList* mutable_extLst();
-            const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_title;
             CT_CTName* m_title;
             bool m_has_desc;
             CT_CTDescription* m_desc;
-            bool m_has_catLst;
-            CT_CTCategories* m_catLst;
-            bool m_has_extLst;
-            ns_a::CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_catLst;
+        CT_CTCategories* m_catLst;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static CT_ColorTransformHeader* default_instance_;
         bool m_has_uniqueId_attr;
         XSD::string_ m_uniqueId_attr;
@@ -3212,7 +3216,9 @@ namespace ns_diagram {
         CT_Algorithm();
         ~CT_Algorithm();
         CT_Parameter* add_param();
-        ns_a::CT_OfficeArtExtensionList* add_extLst();
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Algorithm& default_instance();
@@ -3231,17 +3237,14 @@ namespace ns_diagram {
             bool has_param() const;
             CT_Parameter* mutable_param();
             const CT_Parameter& get_param() const;
-            bool has_extLst() const;
-            ns_a::CT_OfficeArtExtensionList* mutable_extLst();
-            const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_param;
             CT_Parameter* m_param;
-            bool m_has_extLst;
-            ns_a::CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static CT_Algorithm* default_instance_;
         bool m_has_type_attr;
         ST_AlgorithmType* m_type_attr;
@@ -3681,7 +3684,9 @@ namespace ns_diagram {
         CT_Choose();
         ~CT_Choose();
         CT_When* add_if();
-        CT_Otherwise* add_else();
+        bool has_else() const;
+        CT_Otherwise* mutable_else();
+        const CT_Otherwise& get_else() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_Choose& default_instance();
@@ -3697,17 +3702,14 @@ namespace ns_diagram {
             bool has_if() const;
             CT_When* mutable_if();
             const CT_When& get_if() const;
-            bool has_else() const;
-            CT_Otherwise* mutable_else();
-            const CT_Otherwise& get_else() const;
         protected:
         private:
             bool m_has_if;
             CT_When* m_if;
-            bool m_has_else;
-            CT_Otherwise* m_else;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_else;
+        CT_Otherwise* m_else;
         static CT_Choose* default_instance_;
         bool m_has_name_attr;
         XSD::string_ m_name_attr;
@@ -3839,12 +3841,24 @@ namespace ns_diagram {
         ~CT_DiagramDefinition();
         CT_Name* add_title();
         CT_Description* add_desc();
-        CT_Categories* add_catLst();
-        CT_SampleData* add_sampData();
-        CT_SampleData* add_styleData();
-        CT_SampleData* add_clrData();
-        CT_LayoutNode* add_layoutNode();
-        ns_a::CT_OfficeArtExtensionList* add_extLst();
+        bool has_catLst() const;
+        CT_Categories* mutable_catLst();
+        const CT_Categories& get_catLst() const;
+        bool has_sampData() const;
+        CT_SampleData* mutable_sampData();
+        const CT_SampleData& get_sampData() const;
+        bool has_styleData() const;
+        CT_SampleData* mutable_styleData();
+        const CT_SampleData& get_styleData() const;
+        bool has_clrData() const;
+        CT_SampleData* mutable_clrData();
+        const CT_SampleData& get_clrData() const;
+        bool has_layoutNode() const;
+        CT_LayoutNode* mutable_layoutNode();
+        const CT_LayoutNode& get_layoutNode() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DiagramDefinition& default_instance();
@@ -3869,44 +3883,26 @@ namespace ns_diagram {
             bool has_desc() const;
             CT_Description* mutable_desc();
             const CT_Description& get_desc() const;
-            bool has_catLst() const;
-            CT_Categories* mutable_catLst();
-            const CT_Categories& get_catLst() const;
-            bool has_sampData() const;
-            CT_SampleData* mutable_sampData();
-            const CT_SampleData& get_sampData() const;
-            bool has_styleData() const;
-            CT_SampleData* mutable_styleData();
-            const CT_SampleData& get_styleData() const;
-            bool has_clrData() const;
-            CT_SampleData* mutable_clrData();
-            const CT_SampleData& get_clrData() const;
-            bool has_layoutNode() const;
-            CT_LayoutNode* mutable_layoutNode();
-            const CT_LayoutNode& get_layoutNode() const;
-            bool has_extLst() const;
-            ns_a::CT_OfficeArtExtensionList* mutable_extLst();
-            const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_title;
             CT_Name* m_title;
             bool m_has_desc;
             CT_Description* m_desc;
-            bool m_has_catLst;
-            CT_Categories* m_catLst;
-            bool m_has_sampData;
-            CT_SampleData* m_sampData;
-            bool m_has_styleData;
-            CT_SampleData* m_styleData;
-            bool m_has_clrData;
-            CT_SampleData* m_clrData;
-            bool m_has_layoutNode;
-            CT_LayoutNode* m_layoutNode;
-            bool m_has_extLst;
-            ns_a::CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_catLst;
+        CT_Categories* m_catLst;
+        bool m_has_sampData;
+        CT_SampleData* m_sampData;
+        bool m_has_styleData;
+        CT_SampleData* m_styleData;
+        bool m_has_clrData;
+        CT_SampleData* m_clrData;
+        bool m_has_layoutNode;
+        CT_LayoutNode* m_layoutNode;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static CT_DiagramDefinition* default_instance_;
         bool m_has_uniqueId_attr;
         XSD::string_ m_uniqueId_attr;
@@ -3923,8 +3919,12 @@ namespace ns_diagram {
         ~CT_DiagramDefinitionHeader();
         CT_Name* add_title();
         CT_Description* add_desc();
-        CT_Categories* add_catLst();
-        ns_a::CT_OfficeArtExtensionList* add_extLst();
+        bool has_catLst() const;
+        CT_Categories* mutable_catLst();
+        const CT_Categories& get_catLst() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_DiagramDefinitionHeader& default_instance();
@@ -3952,24 +3952,18 @@ namespace ns_diagram {
             bool has_desc() const;
             CT_Description* mutable_desc();
             const CT_Description& get_desc() const;
-            bool has_catLst() const;
-            CT_Categories* mutable_catLst();
-            const CT_Categories& get_catLst() const;
-            bool has_extLst() const;
-            ns_a::CT_OfficeArtExtensionList* mutable_extLst();
-            const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_title;
             CT_Name* m_title;
             bool m_has_desc;
             CT_Description* m_desc;
-            bool m_has_catLst;
-            CT_Categories* m_catLst;
-            bool m_has_extLst;
-            ns_a::CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_catLst;
+        CT_Categories* m_catLst;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static CT_DiagramDefinitionHeader* default_instance_;
         bool m_has_uniqueId_attr;
         XSD::string_ m_uniqueId_attr;
@@ -4593,10 +4587,16 @@ namespace ns_diagram {
         ~CT_StyleDefinition();
         CT_SDName* add_title();
         CT_SDDescription* add_desc();
-        CT_SDCategories* add_catLst();
-        ns_a::CT_Scene3D* add_scene3d();
+        bool has_catLst() const;
+        CT_SDCategories* mutable_catLst();
+        const CT_SDCategories& get_catLst() const;
+        bool has_scene3d() const;
+        ns_a::CT_Scene3D* mutable_scene3d();
+        const ns_a::CT_Scene3D& get_scene3d() const;
         CT_StyleLabel* add_styleLbl();
-        ns_a::CT_OfficeArtExtensionList* add_extLst();
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_StyleDefinition& default_instance();
@@ -4618,34 +4618,33 @@ namespace ns_diagram {
             bool has_desc() const;
             CT_SDDescription* mutable_desc();
             const CT_SDDescription& get_desc() const;
-            bool has_catLst() const;
-            CT_SDCategories* mutable_catLst();
-            const CT_SDCategories& get_catLst() const;
-            bool has_scene3d() const;
-            ns_a::CT_Scene3D* mutable_scene3d();
-            const ns_a::CT_Scene3D& get_scene3d() const;
-            bool has_styleLbl() const;
-            CT_StyleLabel* mutable_styleLbl();
-            const CT_StyleLabel& get_styleLbl() const;
-            bool has_extLst() const;
-            ns_a::CT_OfficeArtExtensionList* mutable_extLst();
-            const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_title;
             CT_SDName* m_title;
             bool m_has_desc;
             CT_SDDescription* m_desc;
-            bool m_has_catLst;
-            CT_SDCategories* m_catLst;
-            bool m_has_scene3d;
-            ns_a::CT_Scene3D* m_scene3d;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
+            bool has_styleLbl() const;
+            CT_StyleLabel* mutable_styleLbl();
+            const CT_StyleLabel& get_styleLbl() const;
+        protected:
+        private:
             bool m_has_styleLbl;
             CT_StyleLabel* m_styleLbl;
-            bool m_has_extLst;
-            ns_a::CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_catLst;
+        CT_SDCategories* m_catLst;
+        bool m_has_scene3d;
+        ns_a::CT_Scene3D* m_scene3d;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static CT_StyleDefinition* default_instance_;
         bool m_has_uniqueId_attr;
         XSD::string_ m_uniqueId_attr;
@@ -4660,8 +4659,12 @@ namespace ns_diagram {
         ~CT_StyleDefinitionHeader();
         CT_SDName* add_title();
         CT_SDDescription* add_desc();
-        CT_SDCategories* add_catLst();
-        ns_a::CT_OfficeArtExtensionList* add_extLst();
+        bool has_catLst() const;
+        CT_SDCategories* mutable_catLst();
+        const CT_SDCategories& get_catLst() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
         static const CT_StyleDefinitionHeader& default_instance();
@@ -4686,24 +4689,18 @@ namespace ns_diagram {
             bool has_desc() const;
             CT_SDDescription* mutable_desc();
             const CT_SDDescription& get_desc() const;
-            bool has_catLst() const;
-            CT_SDCategories* mutable_catLst();
-            const CT_SDCategories& get_catLst() const;
-            bool has_extLst() const;
-            ns_a::CT_OfficeArtExtensionList* mutable_extLst();
-            const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_title;
             CT_SDName* m_title;
             bool m_has_desc;
             CT_SDDescription* m_desc;
-            bool m_has_catLst;
-            CT_SDCategories* m_catLst;
-            bool m_has_extLst;
-            ns_a::CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_catLst;
+        CT_SDCategories* m_catLst;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static CT_StyleDefinitionHeader* default_instance_;
         bool m_has_uniqueId_attr;
         XSD::string_ m_uniqueId_attr;
@@ -4747,9 +4744,13 @@ namespace ns_diagram {
         ~colorsDef_element();
         CT_CTName* add_title();
         CT_CTDescription* add_desc();
-        CT_CTCategories* add_catLst();
+        bool has_catLst() const;
+        CT_CTCategories* mutable_catLst();
+        const CT_CTCategories& get_catLst() const;
         CT_CTStyleLabel* add_styleLbl();
-        ns_a::CT_OfficeArtExtensionList* add_extLst();
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const colorsDef_element& default_instance();
@@ -4771,29 +4772,31 @@ namespace ns_diagram {
             bool has_desc() const;
             CT_CTDescription* mutable_desc();
             const CT_CTDescription& get_desc() const;
-            bool has_catLst() const;
-            CT_CTCategories* mutable_catLst();
-            const CT_CTCategories& get_catLst() const;
-            bool has_styleLbl() const;
-            CT_CTStyleLabel* mutable_styleLbl();
-            const CT_CTStyleLabel& get_styleLbl() const;
-            bool has_extLst() const;
-            ns_a::CT_OfficeArtExtensionList* mutable_extLst();
-            const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_title;
             CT_CTName* m_title;
             bool m_has_desc;
             CT_CTDescription* m_desc;
-            bool m_has_catLst;
-            CT_CTCategories* m_catLst;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
+            bool has_styleLbl() const;
+            CT_CTStyleLabel* mutable_styleLbl();
+            const CT_CTStyleLabel& get_styleLbl() const;
+        protected:
+        private:
             bool m_has_styleLbl;
             CT_CTStyleLabel* m_styleLbl;
-            bool m_has_extLst;
-            ns_a::CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_catLst;
+        CT_CTCategories* m_catLst;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static colorsDef_element* default_instance_;
         bool m_has_uniqueId_attr;
         XSD::string_ m_uniqueId_attr;
@@ -4808,8 +4811,12 @@ namespace ns_diagram {
         ~colorsDefHdr_element();
         CT_CTName* add_title();
         CT_CTDescription* add_desc();
-        CT_CTCategories* add_catLst();
-        ns_a::CT_OfficeArtExtensionList* add_extLst();
+        bool has_catLst() const;
+        CT_CTCategories* mutable_catLst();
+        const CT_CTCategories& get_catLst() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const colorsDefHdr_element& default_instance();
@@ -4834,24 +4841,18 @@ namespace ns_diagram {
             bool has_desc() const;
             CT_CTDescription* mutable_desc();
             const CT_CTDescription& get_desc() const;
-            bool has_catLst() const;
-            CT_CTCategories* mutable_catLst();
-            const CT_CTCategories& get_catLst() const;
-            bool has_extLst() const;
-            ns_a::CT_OfficeArtExtensionList* mutable_extLst();
-            const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_title;
             CT_CTName* m_title;
             bool m_has_desc;
             CT_CTDescription* m_desc;
-            bool m_has_catLst;
-            CT_CTCategories* m_catLst;
-            bool m_has_extLst;
-            ns_a::CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_catLst;
+        CT_CTCategories* m_catLst;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static colorsDefHdr_element* default_instance_;
         bool m_has_uniqueId_attr;
         XSD::string_ m_uniqueId_attr;
@@ -4933,12 +4934,24 @@ namespace ns_diagram {
         ~layoutDef_element();
         CT_Name* add_title();
         CT_Description* add_desc();
-        CT_Categories* add_catLst();
-        CT_SampleData* add_sampData();
-        CT_SampleData* add_styleData();
-        CT_SampleData* add_clrData();
-        CT_LayoutNode* add_layoutNode();
-        ns_a::CT_OfficeArtExtensionList* add_extLst();
+        bool has_catLst() const;
+        CT_Categories* mutable_catLst();
+        const CT_Categories& get_catLst() const;
+        bool has_sampData() const;
+        CT_SampleData* mutable_sampData();
+        const CT_SampleData& get_sampData() const;
+        bool has_styleData() const;
+        CT_SampleData* mutable_styleData();
+        const CT_SampleData& get_styleData() const;
+        bool has_clrData() const;
+        CT_SampleData* mutable_clrData();
+        const CT_SampleData& get_clrData() const;
+        bool has_layoutNode() const;
+        CT_LayoutNode* mutable_layoutNode();
+        const CT_LayoutNode& get_layoutNode() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const layoutDef_element& default_instance();
@@ -4963,44 +4976,26 @@ namespace ns_diagram {
             bool has_desc() const;
             CT_Description* mutable_desc();
             const CT_Description& get_desc() const;
-            bool has_catLst() const;
-            CT_Categories* mutable_catLst();
-            const CT_Categories& get_catLst() const;
-            bool has_sampData() const;
-            CT_SampleData* mutable_sampData();
-            const CT_SampleData& get_sampData() const;
-            bool has_styleData() const;
-            CT_SampleData* mutable_styleData();
-            const CT_SampleData& get_styleData() const;
-            bool has_clrData() const;
-            CT_SampleData* mutable_clrData();
-            const CT_SampleData& get_clrData() const;
-            bool has_layoutNode() const;
-            CT_LayoutNode* mutable_layoutNode();
-            const CT_LayoutNode& get_layoutNode() const;
-            bool has_extLst() const;
-            ns_a::CT_OfficeArtExtensionList* mutable_extLst();
-            const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_title;
             CT_Name* m_title;
             bool m_has_desc;
             CT_Description* m_desc;
-            bool m_has_catLst;
-            CT_Categories* m_catLst;
-            bool m_has_sampData;
-            CT_SampleData* m_sampData;
-            bool m_has_styleData;
-            CT_SampleData* m_styleData;
-            bool m_has_clrData;
-            CT_SampleData* m_clrData;
-            bool m_has_layoutNode;
-            CT_LayoutNode* m_layoutNode;
-            bool m_has_extLst;
-            ns_a::CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_catLst;
+        CT_Categories* m_catLst;
+        bool m_has_sampData;
+        CT_SampleData* m_sampData;
+        bool m_has_styleData;
+        CT_SampleData* m_styleData;
+        bool m_has_clrData;
+        CT_SampleData* m_clrData;
+        bool m_has_layoutNode;
+        CT_LayoutNode* m_layoutNode;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static layoutDef_element* default_instance_;
         bool m_has_uniqueId_attr;
         XSD::string_ m_uniqueId_attr;
@@ -5017,8 +5012,12 @@ namespace ns_diagram {
         ~layoutDefHdr_element();
         CT_Name* add_title();
         CT_Description* add_desc();
-        CT_Categories* add_catLst();
-        ns_a::CT_OfficeArtExtensionList* add_extLst();
+        bool has_catLst() const;
+        CT_Categories* mutable_catLst();
+        const CT_Categories& get_catLst() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const layoutDefHdr_element& default_instance();
@@ -5046,24 +5045,18 @@ namespace ns_diagram {
             bool has_desc() const;
             CT_Description* mutable_desc();
             const CT_Description& get_desc() const;
-            bool has_catLst() const;
-            CT_Categories* mutable_catLst();
-            const CT_Categories& get_catLst() const;
-            bool has_extLst() const;
-            ns_a::CT_OfficeArtExtensionList* mutable_extLst();
-            const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_title;
             CT_Name* m_title;
             bool m_has_desc;
             CT_Description* m_desc;
-            bool m_has_catLst;
-            CT_Categories* m_catLst;
-            bool m_has_extLst;
-            ns_a::CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_catLst;
+        CT_Categories* m_catLst;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static layoutDefHdr_element* default_instance_;
         bool m_has_uniqueId_attr;
         XSD::string_ m_uniqueId_attr;
@@ -5142,10 +5135,16 @@ namespace ns_diagram {
         ~styleDef_element();
         CT_SDName* add_title();
         CT_SDDescription* add_desc();
-        CT_SDCategories* add_catLst();
-        ns_a::CT_Scene3D* add_scene3d();
+        bool has_catLst() const;
+        CT_SDCategories* mutable_catLst();
+        const CT_SDCategories& get_catLst() const;
+        bool has_scene3d() const;
+        ns_a::CT_Scene3D* mutable_scene3d();
+        const ns_a::CT_Scene3D& get_scene3d() const;
         CT_StyleLabel* add_styleLbl();
-        ns_a::CT_OfficeArtExtensionList* add_extLst();
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const styleDef_element& default_instance();
@@ -5167,34 +5166,33 @@ namespace ns_diagram {
             bool has_desc() const;
             CT_SDDescription* mutable_desc();
             const CT_SDDescription& get_desc() const;
-            bool has_catLst() const;
-            CT_SDCategories* mutable_catLst();
-            const CT_SDCategories& get_catLst() const;
-            bool has_scene3d() const;
-            ns_a::CT_Scene3D* mutable_scene3d();
-            const ns_a::CT_Scene3D& get_scene3d() const;
-            bool has_styleLbl() const;
-            CT_StyleLabel* mutable_styleLbl();
-            const CT_StyleLabel& get_styleLbl() const;
-            bool has_extLst() const;
-            ns_a::CT_OfficeArtExtensionList* mutable_extLst();
-            const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_title;
             CT_SDName* m_title;
             bool m_has_desc;
             CT_SDDescription* m_desc;
-            bool m_has_catLst;
-            CT_SDCategories* m_catLst;
-            bool m_has_scene3d;
-            ns_a::CT_Scene3D* m_scene3d;
+        };
+        class ChildGroup_2
+        {
+        public:
+            ChildGroup_2();
+            bool has_styleLbl() const;
+            CT_StyleLabel* mutable_styleLbl();
+            const CT_StyleLabel& get_styleLbl() const;
+        protected:
+        private:
             bool m_has_styleLbl;
             CT_StyleLabel* m_styleLbl;
-            bool m_has_extLst;
-            ns_a::CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_catLst;
+        CT_SDCategories* m_catLst;
+        bool m_has_scene3d;
+        ns_a::CT_Scene3D* m_scene3d;
+        vector<ChildGroup_2*> m_childGroupList_2;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static styleDef_element* default_instance_;
         bool m_has_uniqueId_attr;
         XSD::string_ m_uniqueId_attr;
@@ -5209,8 +5207,12 @@ namespace ns_diagram {
         ~styleDefHdr_element();
         CT_SDName* add_title();
         CT_SDDescription* add_desc();
-        CT_SDCategories* add_catLst();
-        ns_a::CT_OfficeArtExtensionList* add_extLst();
+        bool has_catLst() const;
+        CT_SDCategories* mutable_catLst();
+        const CT_SDCategories& get_catLst() const;
+        bool has_extLst() const;
+        ns_a::CT_OfficeArtExtensionList* mutable_extLst();
+        const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         void clear();
         void toXml(std::ostream& _outStream) const;
         static const styleDefHdr_element& default_instance();
@@ -5235,24 +5237,18 @@ namespace ns_diagram {
             bool has_desc() const;
             CT_SDDescription* mutable_desc();
             const CT_SDDescription& get_desc() const;
-            bool has_catLst() const;
-            CT_SDCategories* mutable_catLst();
-            const CT_SDCategories& get_catLst() const;
-            bool has_extLst() const;
-            ns_a::CT_OfficeArtExtensionList* mutable_extLst();
-            const ns_a::CT_OfficeArtExtensionList& get_extLst() const;
         protected:
         private:
             bool m_has_title;
             CT_SDName* m_title;
             bool m_has_desc;
             CT_SDDescription* m_desc;
-            bool m_has_catLst;
-            CT_SDCategories* m_catLst;
-            bool m_has_extLst;
-            ns_a::CT_OfficeArtExtensionList* m_extLst;
         };
         vector<ChildGroup_1*> m_childGroupList_1;
+        bool m_has_catLst;
+        CT_SDCategories* m_catLst;
+        bool m_has_extLst;
+        ns_a::CT_OfficeArtExtensionList* m_extLst;
         static styleDefHdr_element* default_instance_;
         bool m_has_uniqueId_attr;
         XSD::string_ m_uniqueId_attr;

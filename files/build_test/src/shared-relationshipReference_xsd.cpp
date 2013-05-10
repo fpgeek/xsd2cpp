@@ -1,7 +1,6 @@
 #include "shared-relationshipReference_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 namespace ns_r {
  using namespace std;

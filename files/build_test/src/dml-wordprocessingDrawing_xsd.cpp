@@ -1,7 +1,6 @@
 #include "dml-wordprocessingDrawing_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 #include "dml-main_xsd.h"
 #include "wml_xsd.h"
@@ -920,6 +919,15 @@ CT_EffectExtent* CT_EffectExtent::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_extent);
+        
+    
+        assert(m_has_docPr);
+        
+    
+        assert(m_has_a_graphic);
+        
+    
     if (m_has_extent)
     {
         m_extent->toXmlElem("wp:extent", "", _outStream);
@@ -1126,11 +1134,19 @@ CT_Inline* CT_Inline::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_start);
+        
+    
     if (m_has_start)
     {
         m_start->toXmlElem("wp:start", "", _outStream);
     }
      
+    {
+        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_lineTo));
+        assert(2 <= elemCnt);
+    }
+    
     {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
@@ -1383,6 +1399,7 @@ CT_WrapNone* CT_WrapNone::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_effectExtent)
     {
         m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);
@@ -1608,6 +1625,9 @@ CT_WrapSquare* CT_WrapSquare::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_wrapPolygon);
+        
+    
     if (m_has_wrapPolygon)
     {
         m_wrapPolygon->toXmlElem("wp:wrapPolygon", "", _outStream);
@@ -1793,6 +1813,9 @@ CT_WrapTight* CT_WrapTight::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_wrapPolygon);
+        
+    
     if (m_has_wrapPolygon)
     {
         m_wrapPolygon->toXmlElem("wp:wrapPolygon", "", _outStream);
@@ -1961,6 +1984,7 @@ CT_WrapThrough* CT_WrapThrough::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_effectExtent)
     {
         m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);
@@ -2147,6 +2171,13 @@ CT_WrapTopBottom* CT_WrapTopBottom::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_align, m_has_posOffset};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_align)
     {
         _outStream << "<wp:align>" << m_align->toString() << "</wp:align>";
@@ -2319,6 +2350,13 @@ CT_PosH* CT_PosH::default_instance_ = NULL;
     
             _outStream << ">";
             
+    {
+        bool elemHasValueList[2] = {m_has_align, m_has_posOffset};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_align)
     {
         _outStream << "<wp:align>" << m_align->toString() << "</wp:align>";
@@ -3169,6 +3207,18 @@ CT_PosV* CT_PosV::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_simplePos);
+        
+    
+        assert(m_has_positionH);
+        
+    
+        assert(m_has_positionV);
+        
+    
+        assert(m_has_extent);
+        
+    
     if (m_has_simplePos)
     {
         m_simplePos->toXmlElem("wp:simplePos", "", _outStream);
@@ -3198,6 +3248,13 @@ CT_PosV* CT_PosV::default_instance_ = NULL;
         m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[5] = {m_has_wrapNone, m_has_wrapSquare, m_has_wrapTight, m_has_wrapThrough, m_has_wrapTopAndBottom};
+        int cnt = count(elemHasValueList, elemHasValueList + 5, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_wrapNone)
     {
         m_wrapNone->toXmlElem("wp:wrapNone", "", _outStream);
@@ -3227,6 +3284,12 @@ CT_PosV* CT_PosV::default_instance_ = NULL;
         m_wrapTopAndBottom->toXmlElem("wp:wrapTopAndBottom", "", _outStream);
     }
      
+        assert(m_has_docPr);
+        
+    
+        assert(m_has_a_graphic);
+        
+    
     if (m_has_docPr)
     {
         m_docPr->toXmlElem("wp:docPr", "", _outStream);
@@ -3587,6 +3650,9 @@ CT_TxbxContent* CT_TxbxContent::default_instance_ = NULL;
     
             _outStream << ">";
             
+        assert(m_has_txbxContent);
+        
+    
     if (m_has_txbxContent)
     {
         m_txbxContent->toXmlElem("wp:txbxContent", "", _outStream);
@@ -3705,6 +3771,7 @@ CT_TextboxInfo* CT_TextboxInfo::default_instance_ = NULL;
     
             _outStream << ">";
             
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("wp:extLst", "", _outStream);
@@ -4142,11 +4209,19 @@ CT_LinkedTextboxInformation* CT_LinkedTextboxInformation::default_instance_ = NU
     
             _outStream << ">";
             
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[2] = {m_has_cNvSpPr, m_has_cNvCnPr};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_cNvSpPr)
     {
         m_cNvSpPr->toXmlElem("wp:cNvSpPr", "", _outStream);
@@ -4158,6 +4233,9 @@ CT_LinkedTextboxInformation* CT_LinkedTextboxInformation::default_instance_ = NU
         m_cNvCnPr->toXmlElem("wp:cNvCnPr", "", _outStream);
     }
      
+        assert(m_has_spPr);
+        
+    
     if (m_has_spPr)
     {
         m_spPr->toXmlElem("wp:spPr", "", _outStream);
@@ -4175,6 +4253,13 @@ CT_LinkedTextboxInformation* CT_LinkedTextboxInformation::default_instance_ = NU
         m_extLst->toXmlElem("wp:extLst", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[2] = {m_has_txbx, m_has_linkedTxbx};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 0 || cnt == 1);
+    }
+    
+    
     if (m_has_txbx)
     {
         m_txbx->toXmlElem("wp:txbx", "", _outStream);
@@ -4186,6 +4271,9 @@ CT_LinkedTextboxInformation* CT_LinkedTextboxInformation::default_instance_ = NU
         m_linkedTxbx->toXmlElem("wp:linkedTxbx", "", _outStream);
     }
      
+        assert(m_has_bodyPr);
+        
+    
     if (m_has_bodyPr)
     {
         m_bodyPr->toXmlElem("wp:bodyPr", "", _outStream);
@@ -4417,6 +4505,18 @@ CT_WordprocessingShape* CT_WordprocessingShape::default_instance_ = NULL;
             
             _outStream << ">";
             
+        assert(m_has_cNvPr);
+        
+    
+        assert(m_has_cNvFrPr);
+        
+    
+        assert(m_has_xfrm);
+        
+    
+        assert(m_has_a_graphic);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);
@@ -4551,6 +4651,7 @@ CT_GraphicFrame* CT_GraphicFrame::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);
@@ -4735,6 +4836,7 @@ CT_WordprocessingContentPartNonVisual* CT_WordprocessingContentPartNonVisual::de
     
             _outStream << ">";
             
+    
     if (m_has_nvContentPartPr)
     {
         m_nvContentPartPr->toXmlElem("wp:nvContentPartPr", "", _outStream);
@@ -5016,6 +5118,12 @@ CT_WordprocessingContentPart* CT_WordprocessingContentPart::default_instance_ = 
             
             _outStream << ">";
             
+        assert(m_has_cNvGrpSpPr);
+        
+    
+        assert(m_has_grpSpPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);
@@ -5075,6 +5183,7 @@ CT_WordprocessingContentPart* CT_WordprocessingContentPart::default_instance_ = 
         }
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("wp:extLst", "", _outStream);
@@ -5589,6 +5698,7 @@ CT_WordprocessingGroup* CT_WordprocessingGroup::default_instance_ = NULL;
             
             _outStream << ">";
             
+    
     if (m_has_bg)
     {
         m_bg->toXmlElem("wp:bg", "", _outStream);
@@ -5642,6 +5752,7 @@ CT_WordprocessingGroup* CT_WordprocessingGroup::default_instance_ = NULL;
         }
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("wp:extLst", "", _outStream);
@@ -6157,6 +6268,7 @@ CT_WordprocessingCanvas* CT_WordprocessingCanvas::default_instance_ = NULL;
     
     _outStream << ">";
     
+    
     if (m_has_bg)
     {
         m_bg->toXmlElem("wp:bg", "", _outStream);
@@ -6210,6 +6322,7 @@ CT_WordprocessingCanvas* CT_WordprocessingCanvas::default_instance_ = NULL;
         }
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("wp:extLst", "", _outStream);
@@ -6760,6 +6873,12 @@ wpc_element* wpc_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+        assert(m_has_cNvGrpSpPr);
+        
+    
+        assert(m_has_grpSpPr);
+        
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);
@@ -6819,6 +6938,7 @@ wpc_element* wpc_element::default_instance_ = NULL;
         }
     }
      
+    
     if (m_has_extLst)
     {
         m_extLst->toXmlElem("wp:extLst", "", _outStream);
@@ -7545,11 +7665,19 @@ wgp_element* wgp_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+    
     if (m_has_cNvPr)
     {
         m_cNvPr->toXmlElem("wp:cNvPr", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[2] = {m_has_cNvSpPr, m_has_cNvCnPr};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_cNvSpPr)
     {
         m_cNvSpPr->toXmlElem("wp:cNvSpPr", "", _outStream);
@@ -7561,6 +7689,9 @@ wgp_element* wgp_element::default_instance_ = NULL;
         m_cNvCnPr->toXmlElem("wp:cNvCnPr", "", _outStream);
     }
      
+        assert(m_has_spPr);
+        
+    
     if (m_has_spPr)
     {
         m_spPr->toXmlElem("wp:spPr", "", _outStream);
@@ -7578,6 +7709,13 @@ wgp_element* wgp_element::default_instance_ = NULL;
         m_extLst->toXmlElem("wp:extLst", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[2] = {m_has_txbx, m_has_linkedTxbx};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 0 || cnt == 1);
+    }
+    
+    
     if (m_has_txbx)
     {
         m_txbx->toXmlElem("wp:txbx", "", _outStream);
@@ -7589,6 +7727,9 @@ wgp_element* wgp_element::default_instance_ = NULL;
         m_linkedTxbx->toXmlElem("wp:linkedTxbx", "", _outStream);
     }
      
+        assert(m_has_bodyPr);
+        
+    
     if (m_has_bodyPr)
     {
         m_bodyPr->toXmlElem("wp:bodyPr", "", _outStream);
@@ -7887,6 +8028,15 @@ wsp_element* wsp_element::default_instance_ = NULL;
     }
     
     _outStream << ">";
+    
+        assert(m_has_extent);
+        
+    
+        assert(m_has_docPr);
+        
+    
+        assert(m_has_a_graphic);
+        
     
     if (m_has_extent)
     {
@@ -8817,6 +8967,18 @@ inline_element* inline_element::default_instance_ = NULL;
     
     _outStream << ">";
     
+        assert(m_has_simplePos);
+        
+    
+        assert(m_has_positionH);
+        
+    
+        assert(m_has_positionV);
+        
+    
+        assert(m_has_extent);
+        
+    
     if (m_has_simplePos)
     {
         m_simplePos->toXmlElem("wp:simplePos", "", _outStream);
@@ -8846,6 +9008,13 @@ inline_element* inline_element::default_instance_ = NULL;
         m_effectExtent->toXmlElem("wp:effectExtent", "", _outStream);
     }
      
+    {
+        bool elemHasValueList[5] = {m_has_wrapNone, m_has_wrapSquare, m_has_wrapTight, m_has_wrapThrough, m_has_wrapTopAndBottom};
+        int cnt = count(elemHasValueList, elemHasValueList + 5, true);
+        assert(cnt == 1);
+    }
+    
+    
     if (m_has_wrapNone)
     {
         m_wrapNone->toXmlElem("wp:wrapNone", "", _outStream);
@@ -8875,6 +9044,12 @@ inline_element* inline_element::default_instance_ = NULL;
         m_wrapTopAndBottom->toXmlElem("wp:wrapTopAndBottom", "", _outStream);
     }
      
+        assert(m_has_docPr);
+        
+    
+        assert(m_has_a_graphic);
+        
+    
     if (m_has_docPr)
     {
         m_docPr->toXmlElem("wp:docPr", "", _outStream);

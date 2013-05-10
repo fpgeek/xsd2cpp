@@ -1,7 +1,6 @@
 #include "shared-commonSimpleTypes_xsd.h"
 #include <stdlib.h>
 #include <sstream>
-#include <sstream>
 #include <assert.h>
 namespace ns_s {
  using namespace std;
