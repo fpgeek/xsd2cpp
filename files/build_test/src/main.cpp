@@ -40,7 +40,7 @@ int main()
 //        ns_v::rect_element* pVRectElement = new ns_v::rect_element();
 //        pVRectElement->add_fill();
 //        docElement.mutable_background()->append_v_any(pVRectElement);
-//        
+//
 //        ns_vt::CT_Vstream vStreamElem;
 //        vStreamElem.set_base64Binary("FF0000");
 //        vStreamElem.set_version_attr(string("version"));

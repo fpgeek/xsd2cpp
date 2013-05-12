@@ -246,9 +246,6 @@ class ALL_SCHEMA:
         if name:
             pbComplexType.name = name
 
-        if name == 'CT_Rect':
-            print 'CT_Rect'
-
         for childElem in complexTypeElem:
             # minOccurs = parseMinOccurs(childElem)
             # if (pbElemCont is not None) and (pbElemCont.min_occurs < minOccurs):

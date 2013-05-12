@@ -3,12 +3,12 @@
 #include <sstream>
 #include <assert.h>
 #include "dml-main_xsd.h"
-namespace ns_lockedCanvas {
- using namespace std;
+namespace ns_lc {
+using namespace std;
 
-    // Element
+// Element
 
-    // Attribute
+// Attribute
 
-    // lockedCanvas_element
+// lockedCanvas_element
 }

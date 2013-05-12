@@ -9,6 +9,22 @@ import pbtxt_to_h as txt2h
 import os
 import google.protobuf.text_format as PT
 
+# TODO
+userSetNsPrefixMap = {
+'http://schemas.openxmlformats.org/drawingml/2006/chart':'ct',
+'http://schemas.openxmlformats.org/drawingml/2006/diagram':'dg',
+'http://schemas.openxmlformats.org/drawingml/2006/lockedCanvas':'lc',
+'http://schemas.openxmlformats.org/officeDocument/2006/characteristics':'ch',
+'http://schemas.openxmlformats.org/officeDocument/2006/bibliography':'bi',
+'http://schemas.openxmlformats.org/officeDocument/2006/customXml':'cu',
+'http://schemas.openxmlformats.org/officeDocument/2006/custom-properties':'cp',
+'http://schemas.openxmlformats.org/officeDocument/2006/extended-properties':'ep',
+'http://schemas.openxmlformats.org/spreadsheetml/2006/main':'ss'
+}
+
+
+
+
 def writePbFile(filePath, pbMsg):
     f = open(filePath, "wb")
     PT.PrintMessage(pbMsg, f)
@@ -34,7 +50,7 @@ def getFileNsNameFormDefaultNs(pbSchema, allNsList):
         if len(nsPrefixList) > 0:
             nsPrefix = nsPrefixList[0]
         else:
-            nsPrefix = defaultURI.split('/')[-1].replace('-', '_')
+            nsPrefix = userSetNsPrefixMap.get(defaultURI)
 
     return nsPrefix
 
@@ -79,4 +95,5 @@ def run(xsdFileDirPath):
         txt2h.hParse(cppProtoFile, '../../files/build_test/include/%s.h' % cppProtoFile.name)
 
 if __name__ == '__main__':
+    os.chdir(os.path.dirname( os.path.abspath( __file__ ) ))
     run('../../files/xsd')

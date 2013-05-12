@@ -4,5 +4,5 @@ src/xsd/*.pyc
 files/cpp/*
 files/header/*
 files/build_test/build/
-files/built_test/include/*.orig
-files/built_test/src/*.orig
+files/build_test/include/*.orig
+files/build_test/src/*.orig

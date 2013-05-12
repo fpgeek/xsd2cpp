@@ -228,18 +228,29 @@ def _getVarNameToXmlFromBuiltIn(cppVarType, pbAttr):
         return 'm_%s_attr' % _getCppVarNameFromAttr(pbAttr)
 
 
+def _getAssertCodeFromAttr(pbAttr, hasVarName):
+    if pbAttr.use == PB.Attribute.required:
+        return 'assert(%s);' % hasVarName
+    return ''
+
+
+
 def _makeToXmlMethodBodyFromAttrBuiltInWithAttrName(pbShema, cppVarType, pbAttr):
-        return \
+    hasVarName = 'm_has_%s_attr' % _getCppVarNameFromAttr(pbAttr)
+    return \
 """
+%(assertCode)s
 if (%(hasVarName)s)
 {
     _outStream << " " << "%(attrName)s" << "=\\\\"" << %(varName)s << "\\\\"";
 }
 """ % {
-        'hasVarName': 'm_has_%s_attr' % _getCppVarNameFromAttr(pbAttr),
+        'hasVarName': hasVarName,
         'varName' : _getVarNameToXmlFromBuiltIn(cppVarType, pbAttr),
-        'attrName' : getXmlAttributeName(pbShema, pbAttr)
+        'attrName' : getXmlAttributeName(pbShema, pbAttr),
+        'assertCode' : _getAssertCodeFromAttr(pbAttr, hasVarName)
         }
+
 
 def _makeToXmlMethodBodyFromAttrBuiltIn(cppVarType, varName):
     if cppVarType == 'boolean':
@@ -265,16 +276,19 @@ def _makeToXmlMethodBodyFromAttrEnum(className, enumTypeName, cppVarName):
 
 
 def _makeToXmlMethodBodyFromAttrSTName(pbSchema, pbAttr):
+    hasVarName = 'm_has_%s_attr' % _getCppVarNameFromAttr(pbAttr)
     return \
 """
+%(assertCode)s
 if (%(hasVarName)s)
 {
     %(varName)s->toXmlAttr("%(attrName)s", _outStream);
 }
 """ % {
-        'hasVarName' : 'm_has_%s_attr' % _getCppVarNameFromAttr(pbAttr),
+        'hasVarName' : hasVarName,
         'varName': 'm_%s_attr' % _getCppVarNameFromAttr(pbAttr),
-        'attrName': getXmlAttributeName(pbSchema, pbAttr)
+        'attrName': getXmlAttributeName(pbSchema, pbAttr),
+        'assertCode' : _getAssertCodeFromAttr(pbAttr, hasVarName)
     }
 
 
@@ -1391,8 +1405,7 @@ def _getToXmlMethodBodyStrFromRepeated(pbSchema, pbElemList, idx, makeAssertCode
         hasVarCode = '(*iter)->%(has_method)s()' % {'has_method':'has_%s' % _getCppVarNameFromElem(pbElem)}
         if pbElem.type.kind == PB.Element.Type.BuiltIn:
             return \
-"""
-if (%(hasVarCode)s)
+"""if (%(hasVarCode)s)
 {
     _outStream << "<%(elemName)s>" << (*iter)->%(getMethod)s << "</%(elemName)s>";
 }
@@ -1403,8 +1416,7 @@ if (%(hasVarCode)s)
             }
         elif pbElem.type.kind == PB.Element.Type.SimpleTypeName:
             return \
-"""
-if (%(hasVarCode)s)
+"""if (%(hasVarCode)s)
 {
     _outStream << "<%(elemName)s>" << (*iter)->%(getMethod)s.toString() << "</%(elemName)s>";
 }
@@ -1415,8 +1427,7 @@ if (%(hasVarCode)s)
             }
         else:
             return \
-"""
-if (%(hasVarCode)s)
+"""if (%(hasVarCode)s)
 {
     (*iter)->%(getMethod)s.toXmlElem("%(elemName)s", "", _outStream);
 }
