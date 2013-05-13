@@ -1,6 +1,8 @@
 #include "shared-bibliography_xsd.h"
 #include <stdlib.h>
 #include <sstream>
+#include <algorithm>
+#include <functional>
 #include <assert.h>
 #include "shared-commonSimpleTypes_xsd.h"
 namespace ns_b {

@@ -1,6 +1,8 @@
 #include "shared-documentPropertiesCustom_xsd.h"
 #include <stdlib.h>
 #include <sstream>
+#include <algorithm>
+#include <functional>
 #include <assert.h>
 #include "shared-documentPropertiesVariantTypes_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"

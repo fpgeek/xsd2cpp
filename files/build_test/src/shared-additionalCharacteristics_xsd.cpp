@@ -1,6 +1,8 @@
 #include "shared-additionalCharacteristics_xsd.h"
 #include <stdlib.h>
 #include <sstream>
+#include <algorithm>
+#include <functional>
 #include <assert.h>
 namespace ns_ac {
 using namespace std;

@@ -1,6 +1,8 @@
 #include "dml-diagram_xsd.h"
 #include <stdlib.h>
 #include <sstream>
+#include <algorithm>
+#include <functional>
 #include <assert.h>
 #include "shared-relationshipReference_xsd.h"
 #include "dml-main_xsd.h"

@@ -1,6 +1,8 @@
 #include "vml-presentationDrawing_xsd.h"
 #include <stdlib.h>
 #include <sstream>
+#include <algorithm>
+#include <functional>
 #include <assert.h>
 namespace ns_pvml {
 using namespace std;

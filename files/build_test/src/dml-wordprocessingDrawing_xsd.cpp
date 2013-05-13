@@ -1,6 +1,8 @@
 #include "dml-wordprocessingDrawing_xsd.h"
 #include <stdlib.h>
 #include <sstream>
+#include <algorithm>
+#include <functional>
 #include <assert.h>
 #include "dml-main_xsd.h"
 #include "wml_xsd.h"

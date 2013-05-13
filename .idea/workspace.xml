@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6651581d-8f63-42fd-bdbc-22e2c035dc44" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsd/main.py" afterPath="$PROJECT_DIR$/src/xsd/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-chart_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-chart_xsd.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/dml-chart_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-chart_xsd.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsd/pbtxt_to_cpp.py" afterPath="$PROJECT_DIR$/src/xsd/pbtxt_to_cpp.py" />
     </list>
     <ignored path="xsd2cpp.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368359244789" ignored="false" />
     <file path="/start_script.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1362742972339" ignored="false" />
     <file path="/wml-wordprocessingShape.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1362743317535" ignored="false" />
-    <file path="/a.dummy" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368406716316" ignored="false" />
+    <file path="/a.dummy" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368409169293" ignored="false" />
     <file path="/wml-wordprocessingGroup.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1362743426016" ignored="false" />
     <file path="/wml.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1363185160692" ignored="false" />
     <file path="/xsd.proto" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368084911034" ignored="false" />
@@ -31,7 +33,7 @@
     <file path="/cpp_contents_funcs.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368359898087" ignored="false" />
     <file path="/dml-main.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1366097251389" ignored="false" />
     <file path="/fragment.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1366346529838" ignored="false" />
-    <file path="/pbtxt_to_cpp.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368081970279" ignored="false" />
+    <file path="/pbtxt_to_cpp.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368409199008" ignored="false" />
     <file path="/pbtxt_to_h.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1366353843304" ignored="false" />
     <file path="/shared-commonSimpleTypes.xsd.txt" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1366353502049" ignored="false" />
     <file path="/vml-main.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1366946804814" ignored="false" />
@@ -81,13 +83,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.6262948">
       <split-first>
         <leaf>
-          <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/xsd/main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="46" column="24" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.46448088">
-                  <folding>
-                    <element signature="e#49#79#0" expanded="true" />
-                  </folding>
+                <state line="8" column="9" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0">
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -137,6 +137,15 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="pbtxt_to_cpp.py" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/xsd/pbtxt_to_cpp.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="12" column="38" selection-start="314" selection-end="314" vertical-scroll-proportion="0.30054644">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="shared-additionalCharacteristics.xsd" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/files/xsd/shared-additionalCharacteristics.xsd">
               <provider selected="true" editor-type-id="text-editor">
@@ -159,15 +168,6 @@
             <entry file="file://$PROJECT_DIR$/files/xsd/dml-diagram.xsd">
               <provider selected="true" editor-type-id="text-editor">
                 <state line="17" column="20" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="27" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -224,7 +224,6 @@
         <option value="$PROJECT_DIR$/files/xsd/vml-main.xsd" />
         <option value="$PROJECT_DIR$/files/pb_text/dml-wordprocessingDrawing.xsd.txt" />
         <option value="$PROJECT_DIR$/src/xsd/xsd_to_cpp.py" />
-        <option value="$PROJECT_DIR$/src/xsd/pbtxt_to_cpp.py" />
         <option value="$PROJECT_DIR$/files/protobuf/cpp.proto" />
         <option value="$PROJECT_DIR$/files/pb_text/vml-main.xsd.txt" />
         <option value="$PROJECT_DIR$/files/protobuf/xsd.proto" />
@@ -232,6 +231,7 @@
         <option value="$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/xsd/main.py" />
+        <option value="$PROJECT_DIR$/src/xsd/pbtxt_to_cpp.py" />
       </list>
     </option>
   </component>
@@ -710,13 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsd/pbtxt_to_cpp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="17" selection-start="599" selection-end="602" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/files/protobuf/xsd.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state line="200" column="12" selection-start="4361" selection-end="4364" vertical-scroll-proportion="0.57894737">
@@ -803,10 +796,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/xsd/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="24" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.46448088">
-          <folding>
-            <element signature="e#49#79#0" expanded="true" />
-          </folding>
+        <state line="8" column="9" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsd/pbtxt_to_cpp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="38" selection-start="314" selection-end="314" vertical-scroll-proportion="0.30054644">
+          <folding />
         </state>
       </provider>
     </entry>

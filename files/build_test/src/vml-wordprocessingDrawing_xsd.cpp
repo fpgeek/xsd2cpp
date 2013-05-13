@@ -1,6 +1,8 @@
 #include "vml-wordprocessingDrawing_xsd.h"
 #include <stdlib.h>
 #include <sstream>
+#include <algorithm>
+#include <functional>
 #include <assert.h>
 namespace ns_w10 {
 using namespace std;

@@ -1,6 +1,8 @@
 #include "vml-main_xsd.h"
 #include <stdlib.h>
 #include <sstream>
+#include <algorithm>
+#include <functional>
 #include <assert.h>
 #include "vml-officeDrawing_xsd.h"
 #include "wml_xsd.h"

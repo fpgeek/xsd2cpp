@@ -1,6 +1,8 @@
 #include "dml-picture_xsd.h"
 #include <stdlib.h>
 #include <sstream>
+#include <algorithm>
+#include <functional>
 #include <assert.h>
 #include "dml-main_xsd.h"
 namespace ns_dpct {
