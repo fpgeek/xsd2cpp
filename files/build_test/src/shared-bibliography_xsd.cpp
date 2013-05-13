@@ -3,7 +3,7 @@
 #include <sstream>
 #include <assert.h>
 #include "shared-commonSimpleTypes_xsd.h"
-namespace ns_bi {
+namespace ns_b {
 using namespace std;
 
 // Element
@@ -85,7 +85,7 @@ void CT_NameListType::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_Person())
             {
-                (*iter)->get_Person().toXmlElem("bi:Person", "", _outStream);
+                (*iter)->get_Person().toXmlElem("b:Person", "", _outStream);
             }
 
 
@@ -200,19 +200,19 @@ void CT_PersonType::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_Last())
             {
-                _outStream << "<bi:Last>" << (*iter)->get_Last().toString() << "</bi:Last>";
+                _outStream << "<b:Last>" << (*iter)->get_Last().toString() << "</b:Last>";
             }
 
 
             else if ((*iter)->has_First())
             {
-                _outStream << "<bi:First>" << (*iter)->get_First().toString() << "</bi:First>";
+                _outStream << "<b:First>" << (*iter)->get_First().toString() << "</b:First>";
             }
 
 
             else if ((*iter)->has_Middle())
             {
-                _outStream << "<bi:Middle>" << (*iter)->get_Middle().toString() << "</bi:Middle>";
+                _outStream << "<b:Middle>" << (*iter)->get_Middle().toString() << "</b:Middle>";
             }
 
 
@@ -435,7 +435,7 @@ void CT_NameType::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_NameList)
     {
-        m_NameList->toXmlElem("bi:NameList", "", _outStream);
+        m_NameList->toXmlElem("b:NameList", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -573,13 +573,13 @@ void CT_NameOrCorporateType::toXmlElem(const std::string& _elemName, const std::
 
     if (m_has_NameList)
     {
-        m_NameList->toXmlElem("bi:NameList", "", _outStream);
+        m_NameList->toXmlElem("b:NameList", "", _outStream);
     }
 
 
     if (m_has_Corporate)
     {
-        _outStream << "<bi:Corporate>" << m_Corporate->toString() << "</bi:Corporate>";
+        _outStream << "<b:Corporate>" << m_Corporate->toString() << "</b:Corporate>";
     }
 
     _outStream << "</" << _elemName << ">";
@@ -762,97 +762,97 @@ void CT_AuthorType::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_Artist())
             {
-                (*iter)->get_Artist().toXmlElem("bi:Artist", "", _outStream);
+                (*iter)->get_Artist().toXmlElem("b:Artist", "", _outStream);
             }
 
 
             else if ((*iter)->has_Author())
             {
-                (*iter)->get_Author().toXmlElem("bi:Author", "", _outStream);
+                (*iter)->get_Author().toXmlElem("b:Author", "", _outStream);
             }
 
 
             else if ((*iter)->has_BookAuthor())
             {
-                (*iter)->get_BookAuthor().toXmlElem("bi:BookAuthor", "", _outStream);
+                (*iter)->get_BookAuthor().toXmlElem("b:BookAuthor", "", _outStream);
             }
 
 
             else if ((*iter)->has_Compiler())
             {
-                (*iter)->get_Compiler().toXmlElem("bi:Compiler", "", _outStream);
+                (*iter)->get_Compiler().toXmlElem("b:Compiler", "", _outStream);
             }
 
 
             else if ((*iter)->has_Composer())
             {
-                (*iter)->get_Composer().toXmlElem("bi:Composer", "", _outStream);
+                (*iter)->get_Composer().toXmlElem("b:Composer", "", _outStream);
             }
 
 
             else if ((*iter)->has_Conductor())
             {
-                (*iter)->get_Conductor().toXmlElem("bi:Conductor", "", _outStream);
+                (*iter)->get_Conductor().toXmlElem("b:Conductor", "", _outStream);
             }
 
 
             else if ((*iter)->has_Counsel())
             {
-                (*iter)->get_Counsel().toXmlElem("bi:Counsel", "", _outStream);
+                (*iter)->get_Counsel().toXmlElem("b:Counsel", "", _outStream);
             }
 
 
             else if ((*iter)->has_Director())
             {
-                (*iter)->get_Director().toXmlElem("bi:Director", "", _outStream);
+                (*iter)->get_Director().toXmlElem("b:Director", "", _outStream);
             }
 
 
             else if ((*iter)->has_Editor())
             {
-                (*iter)->get_Editor().toXmlElem("bi:Editor", "", _outStream);
+                (*iter)->get_Editor().toXmlElem("b:Editor", "", _outStream);
             }
 
 
             else if ((*iter)->has_Interviewee())
             {
-                (*iter)->get_Interviewee().toXmlElem("bi:Interviewee", "", _outStream);
+                (*iter)->get_Interviewee().toXmlElem("b:Interviewee", "", _outStream);
             }
 
 
             else if ((*iter)->has_Interviewer())
             {
-                (*iter)->get_Interviewer().toXmlElem("bi:Interviewer", "", _outStream);
+                (*iter)->get_Interviewer().toXmlElem("b:Interviewer", "", _outStream);
             }
 
 
             else if ((*iter)->has_Inventor())
             {
-                (*iter)->get_Inventor().toXmlElem("bi:Inventor", "", _outStream);
+                (*iter)->get_Inventor().toXmlElem("b:Inventor", "", _outStream);
             }
 
 
             else if ((*iter)->has_Performer())
             {
-                (*iter)->get_Performer().toXmlElem("bi:Performer", "", _outStream);
+                (*iter)->get_Performer().toXmlElem("b:Performer", "", _outStream);
             }
 
 
             else if ((*iter)->has_ProducerName())
             {
-                (*iter)->get_ProducerName().toXmlElem("bi:ProducerName", "", _outStream);
+                (*iter)->get_ProducerName().toXmlElem("b:ProducerName", "", _outStream);
             }
 
 
             else if ((*iter)->has_Translator())
             {
-                (*iter)->get_Translator().toXmlElem("bi:Translator", "", _outStream);
+                (*iter)->get_Translator().toXmlElem("b:Translator", "", _outStream);
             }
 
 
             else if ((*iter)->has_Writer())
             {
-                (*iter)->get_Writer().toXmlElem("bi:Writer", "", _outStream);
+                (*iter)->get_Writer().toXmlElem("b:Writer", "", _outStream);
             }
 
 
@@ -3924,313 +3924,313 @@ void CT_SourceType::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_AbbreviatedCaseNumber())
             {
-                _outStream << "<bi:AbbreviatedCaseNumber>" << (*iter)->get_AbbreviatedCaseNumber().toString() << "</bi:AbbreviatedCaseNumber>";
+                _outStream << "<b:AbbreviatedCaseNumber>" << (*iter)->get_AbbreviatedCaseNumber().toString() << "</b:AbbreviatedCaseNumber>";
             }
 
 
             else if ((*iter)->has_AlbumTitle())
             {
-                _outStream << "<bi:AlbumTitle>" << (*iter)->get_AlbumTitle().toString() << "</bi:AlbumTitle>";
+                _outStream << "<b:AlbumTitle>" << (*iter)->get_AlbumTitle().toString() << "</b:AlbumTitle>";
             }
 
 
             else if ((*iter)->has_Author())
             {
-                (*iter)->get_Author().toXmlElem("bi:Author", "", _outStream);
+                (*iter)->get_Author().toXmlElem("b:Author", "", _outStream);
             }
 
 
             else if ((*iter)->has_BookTitle())
             {
-                _outStream << "<bi:BookTitle>" << (*iter)->get_BookTitle().toString() << "</bi:BookTitle>";
+                _outStream << "<b:BookTitle>" << (*iter)->get_BookTitle().toString() << "</b:BookTitle>";
             }
 
 
             else if ((*iter)->has_Broadcaster())
             {
-                _outStream << "<bi:Broadcaster>" << (*iter)->get_Broadcaster().toString() << "</bi:Broadcaster>";
+                _outStream << "<b:Broadcaster>" << (*iter)->get_Broadcaster().toString() << "</b:Broadcaster>";
             }
 
 
             else if ((*iter)->has_BroadcastTitle())
             {
-                _outStream << "<bi:BroadcastTitle>" << (*iter)->get_BroadcastTitle().toString() << "</bi:BroadcastTitle>";
+                _outStream << "<b:BroadcastTitle>" << (*iter)->get_BroadcastTitle().toString() << "</b:BroadcastTitle>";
             }
 
 
             else if ((*iter)->has_CaseNumber())
             {
-                _outStream << "<bi:CaseNumber>" << (*iter)->get_CaseNumber().toString() << "</bi:CaseNumber>";
+                _outStream << "<b:CaseNumber>" << (*iter)->get_CaseNumber().toString() << "</b:CaseNumber>";
             }
 
 
             else if ((*iter)->has_ChapterNumber())
             {
-                _outStream << "<bi:ChapterNumber>" << (*iter)->get_ChapterNumber().toString() << "</bi:ChapterNumber>";
+                _outStream << "<b:ChapterNumber>" << (*iter)->get_ChapterNumber().toString() << "</b:ChapterNumber>";
             }
 
 
             else if ((*iter)->has_City())
             {
-                _outStream << "<bi:City>" << (*iter)->get_City().toString() << "</bi:City>";
+                _outStream << "<b:City>" << (*iter)->get_City().toString() << "</b:City>";
             }
 
 
             else if ((*iter)->has_Comments())
             {
-                _outStream << "<bi:Comments>" << (*iter)->get_Comments().toString() << "</bi:Comments>";
+                _outStream << "<b:Comments>" << (*iter)->get_Comments().toString() << "</b:Comments>";
             }
 
 
             else if ((*iter)->has_ConferenceName())
             {
-                _outStream << "<bi:ConferenceName>" << (*iter)->get_ConferenceName().toString() << "</bi:ConferenceName>";
+                _outStream << "<b:ConferenceName>" << (*iter)->get_ConferenceName().toString() << "</b:ConferenceName>";
             }
 
 
             else if ((*iter)->has_CountryRegion())
             {
-                _outStream << "<bi:CountryRegion>" << (*iter)->get_CountryRegion().toString() << "</bi:CountryRegion>";
+                _outStream << "<b:CountryRegion>" << (*iter)->get_CountryRegion().toString() << "</b:CountryRegion>";
             }
 
 
             else if ((*iter)->has_Court())
             {
-                _outStream << "<bi:Court>" << (*iter)->get_Court().toString() << "</bi:Court>";
+                _outStream << "<b:Court>" << (*iter)->get_Court().toString() << "</b:Court>";
             }
 
 
             else if ((*iter)->has_Day())
             {
-                _outStream << "<bi:Day>" << (*iter)->get_Day().toString() << "</bi:Day>";
+                _outStream << "<b:Day>" << (*iter)->get_Day().toString() << "</b:Day>";
             }
 
 
             else if ((*iter)->has_DayAccessed())
             {
-                _outStream << "<bi:DayAccessed>" << (*iter)->get_DayAccessed().toString() << "</bi:DayAccessed>";
+                _outStream << "<b:DayAccessed>" << (*iter)->get_DayAccessed().toString() << "</b:DayAccessed>";
             }
 
 
             else if ((*iter)->has_Department())
             {
-                _outStream << "<bi:Department>" << (*iter)->get_Department().toString() << "</bi:Department>";
+                _outStream << "<b:Department>" << (*iter)->get_Department().toString() << "</b:Department>";
             }
 
 
             else if ((*iter)->has_Distributor())
             {
-                _outStream << "<bi:Distributor>" << (*iter)->get_Distributor().toString() << "</bi:Distributor>";
+                _outStream << "<b:Distributor>" << (*iter)->get_Distributor().toString() << "</b:Distributor>";
             }
 
 
             else if ((*iter)->has_Edition())
             {
-                _outStream << "<bi:Edition>" << (*iter)->get_Edition().toString() << "</bi:Edition>";
+                _outStream << "<b:Edition>" << (*iter)->get_Edition().toString() << "</b:Edition>";
             }
 
 
             else if ((*iter)->has_Guid())
             {
-                _outStream << "<bi:Guid>" << (*iter)->get_Guid().toString() << "</bi:Guid>";
+                _outStream << "<b:Guid>" << (*iter)->get_Guid().toString() << "</b:Guid>";
             }
 
 
             else if ((*iter)->has_Institution())
             {
-                _outStream << "<bi:Institution>" << (*iter)->get_Institution().toString() << "</bi:Institution>";
+                _outStream << "<b:Institution>" << (*iter)->get_Institution().toString() << "</b:Institution>";
             }
 
 
             else if ((*iter)->has_InternetSiteTitle())
             {
-                _outStream << "<bi:InternetSiteTitle>" << (*iter)->get_InternetSiteTitle().toString() << "</bi:InternetSiteTitle>";
+                _outStream << "<b:InternetSiteTitle>" << (*iter)->get_InternetSiteTitle().toString() << "</b:InternetSiteTitle>";
             }
 
 
             else if ((*iter)->has_Issue())
             {
-                _outStream << "<bi:Issue>" << (*iter)->get_Issue().toString() << "</bi:Issue>";
+                _outStream << "<b:Issue>" << (*iter)->get_Issue().toString() << "</b:Issue>";
             }
 
 
             else if ((*iter)->has_JournalName())
             {
-                _outStream << "<bi:JournalName>" << (*iter)->get_JournalName().toString() << "</bi:JournalName>";
+                _outStream << "<b:JournalName>" << (*iter)->get_JournalName().toString() << "</b:JournalName>";
             }
 
 
             else if ((*iter)->has_LCID())
             {
-                _outStream << "<bi:LCID>" << (*iter)->get_LCID().toString() << "</bi:LCID>";
+                _outStream << "<b:LCID>" << (*iter)->get_LCID().toString() << "</b:LCID>";
             }
 
 
             else if ((*iter)->has_Medium())
             {
-                _outStream << "<bi:Medium>" << (*iter)->get_Medium().toString() << "</bi:Medium>";
+                _outStream << "<b:Medium>" << (*iter)->get_Medium().toString() << "</b:Medium>";
             }
 
 
             else if ((*iter)->has_Month())
             {
-                _outStream << "<bi:Month>" << (*iter)->get_Month().toString() << "</bi:Month>";
+                _outStream << "<b:Month>" << (*iter)->get_Month().toString() << "</b:Month>";
             }
 
 
             else if ((*iter)->has_MonthAccessed())
             {
-                _outStream << "<bi:MonthAccessed>" << (*iter)->get_MonthAccessed().toString() << "</bi:MonthAccessed>";
+                _outStream << "<b:MonthAccessed>" << (*iter)->get_MonthAccessed().toString() << "</b:MonthAccessed>";
             }
 
 
             else if ((*iter)->has_NumberVolumes())
             {
-                _outStream << "<bi:NumberVolumes>" << (*iter)->get_NumberVolumes().toString() << "</bi:NumberVolumes>";
+                _outStream << "<b:NumberVolumes>" << (*iter)->get_NumberVolumes().toString() << "</b:NumberVolumes>";
             }
 
 
             else if ((*iter)->has_Pages())
             {
-                _outStream << "<bi:Pages>" << (*iter)->get_Pages().toString() << "</bi:Pages>";
+                _outStream << "<b:Pages>" << (*iter)->get_Pages().toString() << "</b:Pages>";
             }
 
 
             else if ((*iter)->has_PatentNumber())
             {
-                _outStream << "<bi:PatentNumber>" << (*iter)->get_PatentNumber().toString() << "</bi:PatentNumber>";
+                _outStream << "<b:PatentNumber>" << (*iter)->get_PatentNumber().toString() << "</b:PatentNumber>";
             }
 
 
             else if ((*iter)->has_PeriodicalTitle())
             {
-                _outStream << "<bi:PeriodicalTitle>" << (*iter)->get_PeriodicalTitle().toString() << "</bi:PeriodicalTitle>";
+                _outStream << "<b:PeriodicalTitle>" << (*iter)->get_PeriodicalTitle().toString() << "</b:PeriodicalTitle>";
             }
 
 
             else if ((*iter)->has_ProductionCompany())
             {
-                _outStream << "<bi:ProductionCompany>" << (*iter)->get_ProductionCompany().toString() << "</bi:ProductionCompany>";
+                _outStream << "<b:ProductionCompany>" << (*iter)->get_ProductionCompany().toString() << "</b:ProductionCompany>";
             }
 
 
             else if ((*iter)->has_PublicationTitle())
             {
-                _outStream << "<bi:PublicationTitle>" << (*iter)->get_PublicationTitle().toString() << "</bi:PublicationTitle>";
+                _outStream << "<b:PublicationTitle>" << (*iter)->get_PublicationTitle().toString() << "</b:PublicationTitle>";
             }
 
 
             else if ((*iter)->has_Publisher())
             {
-                _outStream << "<bi:Publisher>" << (*iter)->get_Publisher().toString() << "</bi:Publisher>";
+                _outStream << "<b:Publisher>" << (*iter)->get_Publisher().toString() << "</b:Publisher>";
             }
 
 
             else if ((*iter)->has_RecordingNumber())
             {
-                _outStream << "<bi:RecordingNumber>" << (*iter)->get_RecordingNumber().toString() << "</bi:RecordingNumber>";
+                _outStream << "<b:RecordingNumber>" << (*iter)->get_RecordingNumber().toString() << "</b:RecordingNumber>";
             }
 
 
             else if ((*iter)->has_RefOrder())
             {
-                _outStream << "<bi:RefOrder>" << (*iter)->get_RefOrder().toString() << "</bi:RefOrder>";
+                _outStream << "<b:RefOrder>" << (*iter)->get_RefOrder().toString() << "</b:RefOrder>";
             }
 
 
             else if ((*iter)->has_Reporter())
             {
-                _outStream << "<bi:Reporter>" << (*iter)->get_Reporter().toString() << "</bi:Reporter>";
+                _outStream << "<b:Reporter>" << (*iter)->get_Reporter().toString() << "</b:Reporter>";
             }
 
 
             else if ((*iter)->has_SourceType())
             {
-                _outStream << "<bi:SourceType>" << (*iter)->get_SourceType().toString() << "</bi:SourceType>";
+                _outStream << "<b:SourceType>" << (*iter)->get_SourceType().toString() << "</b:SourceType>";
             }
 
 
             else if ((*iter)->has_ShortTitle())
             {
-                _outStream << "<bi:ShortTitle>" << (*iter)->get_ShortTitle().toString() << "</bi:ShortTitle>";
+                _outStream << "<b:ShortTitle>" << (*iter)->get_ShortTitle().toString() << "</b:ShortTitle>";
             }
 
 
             else if ((*iter)->has_StandardNumber())
             {
-                _outStream << "<bi:StandardNumber>" << (*iter)->get_StandardNumber().toString() << "</bi:StandardNumber>";
+                _outStream << "<b:StandardNumber>" << (*iter)->get_StandardNumber().toString() << "</b:StandardNumber>";
             }
 
 
             else if ((*iter)->has_StateProvince())
             {
-                _outStream << "<bi:StateProvince>" << (*iter)->get_StateProvince().toString() << "</bi:StateProvince>";
+                _outStream << "<b:StateProvince>" << (*iter)->get_StateProvince().toString() << "</b:StateProvince>";
             }
 
 
             else if ((*iter)->has_Station())
             {
-                _outStream << "<bi:Station>" << (*iter)->get_Station().toString() << "</bi:Station>";
+                _outStream << "<b:Station>" << (*iter)->get_Station().toString() << "</b:Station>";
             }
 
 
             else if ((*iter)->has_Tag())
             {
-                _outStream << "<bi:Tag>" << (*iter)->get_Tag().toString() << "</bi:Tag>";
+                _outStream << "<b:Tag>" << (*iter)->get_Tag().toString() << "</b:Tag>";
             }
 
 
             else if ((*iter)->has_Theater())
             {
-                _outStream << "<bi:Theater>" << (*iter)->get_Theater().toString() << "</bi:Theater>";
+                _outStream << "<b:Theater>" << (*iter)->get_Theater().toString() << "</b:Theater>";
             }
 
 
             else if ((*iter)->has_ThesisType())
             {
-                _outStream << "<bi:ThesisType>" << (*iter)->get_ThesisType().toString() << "</bi:ThesisType>";
+                _outStream << "<b:ThesisType>" << (*iter)->get_ThesisType().toString() << "</b:ThesisType>";
             }
 
 
             else if ((*iter)->has_Title())
             {
-                _outStream << "<bi:Title>" << (*iter)->get_Title().toString() << "</bi:Title>";
+                _outStream << "<b:Title>" << (*iter)->get_Title().toString() << "</b:Title>";
             }
 
 
             else if ((*iter)->has_Type())
             {
-                _outStream << "<bi:Type>" << (*iter)->get_Type().toString() << "</bi:Type>";
+                _outStream << "<b:Type>" << (*iter)->get_Type().toString() << "</b:Type>";
             }
 
 
             else if ((*iter)->has_URL())
             {
-                _outStream << "<bi:URL>" << (*iter)->get_URL().toString() << "</bi:URL>";
+                _outStream << "<b:URL>" << (*iter)->get_URL().toString() << "</b:URL>";
             }
 
 
             else if ((*iter)->has_Version())
             {
-                _outStream << "<bi:Version>" << (*iter)->get_Version().toString() << "</bi:Version>";
+                _outStream << "<b:Version>" << (*iter)->get_Version().toString() << "</b:Version>";
             }
 
 
             else if ((*iter)->has_Volume())
             {
-                _outStream << "<bi:Volume>" << (*iter)->get_Volume().toString() << "</bi:Volume>";
+                _outStream << "<b:Volume>" << (*iter)->get_Volume().toString() << "</b:Volume>";
             }
 
 
             else if ((*iter)->has_Year())
             {
-                _outStream << "<bi:Year>" << (*iter)->get_Year().toString() << "</bi:Year>";
+                _outStream << "<b:Year>" << (*iter)->get_Year().toString() << "</b:Year>";
             }
 
 
             else if ((*iter)->has_YearAccessed())
             {
-                _outStream << "<bi:YearAccessed>" << (*iter)->get_YearAccessed().toString() << "</bi:YearAccessed>";
+                _outStream << "<b:YearAccessed>" << (*iter)->get_YearAccessed().toString() << "</b:YearAccessed>";
             }
 
 
@@ -29626,7 +29626,7 @@ void CT_Sources::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_Source())
             {
-                (*iter)->get_Source().toXmlElem("bi:Source", "", _outStream);
+                (*iter)->get_Source().toXmlElem("b:Source", "", _outStream);
             }
 
 
@@ -29802,9 +29802,9 @@ void Sources_element::clear()
 
 void Sources_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<bi:Sources";
+    _outStream << "<b:Sources";
 
-    _outStream << " " << "xmlns:bi=\"http://schemas.openxmlformats.org/officeDocument/2006/bibliography\"";
+    _outStream << " " << "xmlns:b=\"http://schemas.openxmlformats.org/officeDocument/2006/bibliography\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
 
@@ -29835,14 +29835,14 @@ void Sources_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_Source())
             {
-                (*iter)->get_Source().toXmlElem("bi:Source", "", _outStream);
+                (*iter)->get_Source().toXmlElem("b:Source", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</bi:Sources>";
+    _outStream << "</b:Sources>";
 }
 
 const Sources_element& Sources_element::default_instance()

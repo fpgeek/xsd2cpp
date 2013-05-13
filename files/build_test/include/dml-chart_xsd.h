@@ -1,4 +1,4 @@
-namespace ns_ct {
+namespace ns_c {
 class Element;
 class Attribute;
 class ST_LayoutTarget;
@@ -220,7 +220,7 @@ class chart_element;
 #include "dml-main_xsd.h"
 #include "dml-chartDrawing_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
-namespace ns_ct {
+namespace ns_c {
 using namespace std;
 class Element: public XSD::Element
 {

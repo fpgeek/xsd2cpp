@@ -3,7 +3,7 @@
 #include <sstream>
 #include <assert.h>
 #include "shared-documentPropertiesVariantTypes_xsd.h"
-namespace ns_ep {
+namespace ns_ap {
 using namespace std;
 
 // Element
@@ -284,14 +284,14 @@ void Properties_element::clear()
 
 void Properties_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ep:Properties";
+    _outStream << "<ap:Properties";
 
-    _outStream << " " << "xmlns:ep=\"http://schemas.openxmlformats.org/officeDocument/2006/extended-properties\"";
+    _outStream << " " << "xmlns:ap=\"http://schemas.openxmlformats.org/officeDocument/2006/extended-properties\"";
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
 
     _outStream << ">";
 
-    _outStream << "</ep:Properties>";
+    _outStream << "</ap:Properties>";
 }
 
 const Properties_element& Properties_element::default_instance()

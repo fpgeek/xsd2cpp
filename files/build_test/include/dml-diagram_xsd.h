@@ -1,4 +1,4 @@
-namespace ns_dg {
+namespace ns_dgm {
 class Element;
 class Attribute;
 class ST_ClrAppMethod;
@@ -147,7 +147,7 @@ class styleDefHdrLst_element;
 #include "shared-relationshipReference_xsd.h"
 #include "dml-main_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
-namespace ns_dg {
+namespace ns_dgm {
 using namespace std;
 class Element: public XSD::Element
 {

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <sstream>
 #include <assert.h>
-namespace ns_ch {
+namespace ns_ac {
 using namespace std;
 
 // Element
@@ -122,7 +122,7 @@ void CT_AdditionalCharacteristics::toXmlElem(const std::string& _elemName, const
         {
             if ((*iter)->has_characteristic())
             {
-                (*iter)->get_characteristic().toXmlElem("ch:characteristic", "", _outStream);
+                (*iter)->get_characteristic().toXmlElem("ac:characteristic", "", _outStream);
             }
 
 
@@ -363,9 +363,9 @@ void additionalCharacteristics_element::clear()
 
 void additionalCharacteristics_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ch:additionalCharacteristics";
+    _outStream << "<ac:additionalCharacteristics";
 
-    _outStream << " " << "xmlns:ch=\"http://schemas.openxmlformats.org/officeDocument/2006/characteristics\"";
+    _outStream << " " << "xmlns:ac=\"http://schemas.openxmlformats.org/officeDocument/2006/characteristics\"";
 
     _outStream << ">";
 
@@ -375,14 +375,14 @@ void additionalCharacteristics_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_characteristic())
             {
-                (*iter)->get_characteristic().toXmlElem("ch:characteristic", "", _outStream);
+                (*iter)->get_characteristic().toXmlElem("ac:characteristic", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</ch:additionalCharacteristics>";
+    _outStream << "</ac:additionalCharacteristics>";
 }
 
 const additionalCharacteristics_element& additionalCharacteristics_element::default_instance()

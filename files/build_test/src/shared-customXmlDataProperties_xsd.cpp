@@ -3,7 +3,7 @@
 #include <sstream>
 #include <assert.h>
 #include "shared-commonSimpleTypes_xsd.h"
-namespace ns_cu {
+namespace ns_ds {
 using namespace std;
 
 // Element
@@ -38,7 +38,7 @@ void CT_DatastoreSchemaRef::toXmlElem(const std::string& _elemName, const std::s
     assert(m_has_uri_attr);
     if (m_has_uri_attr)
     {
-        _outStream << " " << "cu:uri" << "=\"" << m_uri_attr << "\"";
+        _outStream << " " << "ds:uri" << "=\"" << m_uri_attr << "\"";
     }
 
     _outStream << ">";
@@ -119,7 +119,7 @@ void CT_DatastoreSchemaRefs::toXmlElem(const std::string& _elemName, const std::
         {
             if ((*iter)->has_schemaRef())
             {
-                (*iter)->get_schemaRef().toXmlElem("cu:schemaRef", "", _outStream);
+                (*iter)->get_schemaRef().toXmlElem("ds:schemaRef", "", _outStream);
             }
 
 
@@ -241,7 +241,7 @@ void CT_DatastoreItem::toXmlElem(const std::string& _elemName, const std::string
     assert(m_has_itemID_attr);
     if (m_has_itemID_attr)
     {
-        m_itemID_attr->toXmlAttr("cu:itemID", _outStream);
+        m_itemID_attr->toXmlAttr("ds:itemID", _outStream);
     }
 
     _outStream << ">";
@@ -249,7 +249,7 @@ void CT_DatastoreItem::toXmlElem(const std::string& _elemName, const std::string
 
     if (m_has_schemaRefs)
     {
-        m_schemaRefs->toXmlElem("cu:schemaRefs", "", _outStream);
+        m_schemaRefs->toXmlElem("ds:schemaRefs", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -345,15 +345,15 @@ void datastoreItem_element::clear()
 
 void datastoreItem_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<cu:datastoreItem";
+    _outStream << "<ds:datastoreItem";
 
-    _outStream << " " << "xmlns:cu=\"http://schemas.openxmlformats.org/officeDocument/2006/customXml\"";
+    _outStream << " " << "xmlns:ds=\"http://schemas.openxmlformats.org/officeDocument/2006/customXml\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
 
     assert(m_has_itemID_attr);
     if (m_has_itemID_attr)
     {
-        m_itemID_attr->toXmlAttr("cu:itemID", _outStream);
+        m_itemID_attr->toXmlAttr("ds:itemID", _outStream);
     }
 
     _outStream << ">";
@@ -361,10 +361,10 @@ void datastoreItem_element::toXml(std::ostream& _outStream) const
 
     if (m_has_schemaRefs)
     {
-        m_schemaRefs->toXmlElem("cu:schemaRefs", "", _outStream);
+        m_schemaRefs->toXmlElem("ds:schemaRefs", "", _outStream);
     }
 
-    _outStream << "</cu:datastoreItem>";
+    _outStream << "</ds:datastoreItem>";
 }
 
 const datastoreItem_element& datastoreItem_element::default_instance()

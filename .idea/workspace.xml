@@ -2,133 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6651581d-8f63-42fd-bdbc-22e2c035dc44" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build/build_mac.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/dml-chartDrawing_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/dml-chart_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/dml-diagram_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/dml-lockedCanvas_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/dml-main_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/dml-picture_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/main.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/pml_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/shared-additionalCharacteristics_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/shared-bibliography_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/shared-commonSimpleTypes_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/shared-customXmlDataProperties_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/shared-math_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/sml_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/vml-main_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/vml-officeDrawing_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/vml-presentationDrawing_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/files/build_test/src/wml_xsd.cpp.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-chartDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-chartDrawing_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-chart_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-chart_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-diagram_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-diagram_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-lockedCanvas_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-lockedCanvas_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-main_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-main_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-picture_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-picture_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-spreadsheetDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-spreadsheetDrawing_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/dml-wordprocessingDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-wordprocessingDrawing_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/pml_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/pml_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-additionalCharacteristics_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-additionalCharacteristics_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-bibliography_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-bibliography_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-commonSimpleTypes_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-commonSimpleTypes_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-customXmlDataProperties_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-customXmlDataProperties_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-customXmlSchemaProperties_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-customXmlSchemaProperties_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesCustom_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesCustom_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesExtended_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesExtended_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-math_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-math_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/shared-relationshipReference_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-relationshipReference_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/sml_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/sml_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/vml-main_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/vml-main_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/vml-officeDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/vml-officeDrawing_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/vml-presentationDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/vml-presentationDrawing_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/vml-spreadsheetDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/vml-spreadsheetDrawing_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/vml-wordprocessingDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/vml-wordprocessingDrawing_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/include/wml_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/wml_xsd.h.orig" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/files/build_test/src/shared-relationshipReference_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-relationshipReference_xsd.cpp.orig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py" afterPath="$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-chartDrawing_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-chartDrawing_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/dml-chartDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-chartDrawing_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-chart_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-chart_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/dml-chart_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-chart_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-diagram_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-diagram_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/dml-diagram_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-diagram_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-lockedCanvas_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-lockedCanvas_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/dml-lockedCanvas_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-lockedCanvas_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-main_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-main_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/dml-main_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-main_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-picture_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-picture_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/dml-picture_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-picture_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-spreadsheetDrawing_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/dml-spreadsheetDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-spreadsheetDrawing_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/dml-wordprocessingDrawing_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/dml-wordprocessingDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/dml-wordprocessingDrawing_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/main.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/main.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsd/main.py" afterPath="$PROJECT_DIR$/src/xsd/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/pml_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/pml_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/pml_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/pml_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-additionalCharacteristics_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-additionalCharacteristics_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/shared-additionalCharacteristics_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-additionalCharacteristics_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-bibliography_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-bibliography_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/shared-bibliography_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-bibliography_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-commonSimpleTypes_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-commonSimpleTypes_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/shared-commonSimpleTypes_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-commonSimpleTypes_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-customXmlDataProperties_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-customXmlDataProperties_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/shared-customXmlDataProperties_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-customXmlDataProperties_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-customXmlSchemaProperties_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/shared-customXmlSchemaProperties_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-customXmlSchemaProperties_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesCustom_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesCustom_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesCustom_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesExtended_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesExtended_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesExtended_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-documentPropertiesVariantTypes_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-documentPropertiesVariantTypes_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-math_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-math_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/shared-math_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-math_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-relationshipReference_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-relationshipReference_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/shared-relationshipReference_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/shared-relationshipReference_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/sml_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/sml_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/sml_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/sml_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/vml-main_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/vml-main_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/vml-main_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/vml-main_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/vml-officeDrawing_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/vml-officeDrawing_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/vml-officeDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/vml-officeDrawing_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/vml-presentationDrawing_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/vml-presentationDrawing_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/vml-presentationDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/vml-presentationDrawing_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/vml-spreadsheetDrawing_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/vml-spreadsheetDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/vml-spreadsheetDrawing_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/vml-wordprocessingDrawing_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/vml-wordprocessingDrawing_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/vml-wordprocessingDrawing_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/wml_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/wml_xsd.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/include/wml_xsd.h" afterPath="$PROJECT_DIR$/files/build_test/include/wml_xsd.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/protobuf/xsd.proto" afterPath="$PROJECT_DIR$/files/protobuf/xsd.proto" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsd/xsd_parser.py" afterPath="$PROJECT_DIR$/src/xsd/xsd_parser.py" />
     </list>
     <ignored path="xsd2cpp.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368359244789" ignored="false" />
     <file path="/start_script.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1362742972339" ignored="false" />
     <file path="/wml-wordprocessingShape.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1362743317535" ignored="false" />
-    <file path="/a.dummy" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368359927405" ignored="false" />
+    <file path="/a.dummy" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368406716316" ignored="false" />
     <file path="/wml-wordprocessingGroup.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1362743426016" ignored="false" />
     <file path="/wml.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1363185160692" ignored="false" />
     <file path="/xsd.proto" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368084911034" ignored="false" />
     <file path="/shared-commonSimpleTypes.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1365552178411" ignored="false" />
     <file path="$PROJECT_DIR$/../../Synapsoft/xsd2cpp/trunk/src/python/xsd2cpp/src/xsd2cpp/xsd/Xsd2Cpp2.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1362751822256" ignored="false" />
     <file path="/test.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1362807324874" ignored="false" />
-    <file path="/main.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368361150004" ignored="false" />
+    <file path="/main.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368406985144" ignored="false" />
     <file path="/.gitignore" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368361963775" ignored="false" />
     <file path="/wml.xsd.txt" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1366098392585" ignored="false" />
     <file path="/proto_file_writer.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1363609916797" ignored="false" />
@@ -193,19 +81,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.6262948">
       <split-first>
         <leaf>
-          <file leaf-file-name="xsd_parser.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/xsd/xsd_parser.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="234" column="0" selection-start="10501" selection-end="10501" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/xsd/main.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="54" column="0" selection-start="1720" selection-end="1720" vertical-scroll-proportion="0.0">
+                <state line="46" column="24" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.46448088">
                   <folding>
                     <element signature="e#49#79#0" expanded="true" />
                   </folding>
@@ -213,46 +92,82 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="sml.xsd" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/files/xsd/sml.xsd">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="17" column="37" selection-start="1044" selection-end="1056" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="shared-documentPropertiesExtended.xsd" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/files/xsd/shared-documentPropertiesExtended.xsd">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="3" column="27" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="shared-documentPropertiesCustom.xsd" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/files/xsd/shared-documentPropertiesCustom.xsd">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="11" column="31" selection-start="809" selection-end="819" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="shared-customXmlDataProperties.xsd" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/files/xsd/shared-customXmlDataProperties.xsd">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="23" column="34" selection-start="1193" selection-end="1206" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="shared-bibliography.xsd" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/files/xsd/shared-bibliography.xsd">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="134" column="28" selection-start="6926" selection-end="6933" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="shared-additionalCharacteristics.xsd" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/files/xsd/shared-additionalCharacteristics.xsd">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="7" column="39" selection-start="400" selection-end="414" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dml-lockedCanvas.xsd" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/files/xsd/dml-lockedCanvas.xsd">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="9" column="33" selection-start="567" selection-end="579" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dml-diagram.xsd" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/files/xsd/dml-diagram.xsd">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="17" column="20" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="11" selection-start="130" selection-end="130" vertical-scroll-proportion="0.1744186">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cpp_contents_funcs.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="2030" column="23" selection-start="63483" selection-end="63483" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="dml-chart.xsd" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/files/xsd/dml-chart.xsd">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="20" selection-start="1854" selection-end="1854" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="pbtxt_to_cpp.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/xsd/pbtxt_to_cpp.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="24" column="17" selection-start="599" selection-end="602" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="wml.xsd.txt" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/files/pb_text/wml.xsd.txt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="22761" column="26" selection-start="414992" selection-end="414992" vertical-scroll-proportion="0.0">
+                <state line="7" column="27" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -265,7 +180,7 @@
           <file leaf-file-name="xsd.proto" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/files/protobuf/xsd.proto">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="200" column="12" selection-start="4361" selection-end="4364" vertical-scroll-proportion="0.5621806">
+                <state line="200" column="12" selection-start="4361" selection-end="4364" vertical-scroll-proportion="0.57894737">
                   <folding />
                 </state>
               </provider>
@@ -315,8 +230,8 @@
         <option value="$PROJECT_DIR$/files/protobuf/xsd.proto" />
         <option value="$PROJECT_DIR$/src/xsd/xsd_parser.py" />
         <option value="$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py" />
-        <option value="$PROJECT_DIR$/src/xsd/main.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/xsd/main.py" />
       </list>
     </option>
   </component>
@@ -694,14 +609,14 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20895523" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20895523" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.81218904" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18005739" sideWeight="0.81218904" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18005739" sideWeight="0.7910448" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22014925" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.7798507" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18781094" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18781094" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18253969" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -781,56 +696,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/files/xsd/dml-diagram.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="594" column="35" selection-start="32615" selection-end="32615" vertical-scroll-proportion="0.60271645" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/xsd/vml-main.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="457" column="28" selection-start="22007" selection-end="22007" vertical-scroll-proportion="0.37375414" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/xsd/wml.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3424" column="54" selection-start="161583" selection-end="161583" vertical-scroll-proportion="0.22297297" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/protobuf/cpp.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="19" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/pb_text/shared-math.xsd.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3839" column="7" selection-start="68148" selection-end="68148" vertical-scroll-proportion="0.024916943">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/xsd/shared-math.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="570" column="68" selection-start="22875" selection-end="22884" vertical-scroll-proportion="0.57641196">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/pb_text/vml-main.xsd.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4834" column="12" selection-start="88319" selection-end="88319" vertical-scroll-proportion="0.024916943">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsd/xsd_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="234" column="0" selection-start="10501" selection-end="10501" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/files/pb_text/dml-chart.xsd.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5065" column="7" selection-start="89149" selection-end="89149" vertical-scroll-proportion="0.024916943">
@@ -854,7 +719,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/files/protobuf/xsd.proto">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="200" column="12" selection-start="4361" selection-end="4364" vertical-scroll-proportion="0.5621806">
+        <state line="200" column="12" selection-start="4361" selection-end="4364" vertical-scroll-proportion="0.57894737">
           <folding />
         </state>
       </provider>
@@ -873,19 +738,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsd/main.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1720" selection-end="1720" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#49#79#0" expanded="true" />
-          </folding>
+        <state line="7" column="27" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/files/xsd/dml-diagram.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="11" selection-start="130" selection-end="130" vertical-scroll-proportion="0.1744186">
+        <state line="17" column="20" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/xsd/dml-lockedCanvas.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="33" selection-start="567" selection-end="579" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/xsd/shared-additionalCharacteristics.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="39" selection-start="400" selection-end="414" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/xsd/shared-bibliography.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="28" selection-start="6926" selection-end="6933" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/xsd/shared-customXmlDataProperties.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="34" selection-start="1193" selection-end="1206" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/xsd/shared-documentPropertiesCustom.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="31" selection-start="809" selection-end="819" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/xsd/shared-documentPropertiesExtended.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="27" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/xsd/sml.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="37" selection-start="1044" selection-end="1056" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsd/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="24" selection-start="1454" selection-end="1454" vertical-scroll-proportion="0.46448088">
+          <folding>
+            <element signature="e#49#79#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

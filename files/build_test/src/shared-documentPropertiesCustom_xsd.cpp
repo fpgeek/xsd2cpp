@@ -4,7 +4,7 @@
 #include <assert.h>
 #include "shared-documentPropertiesVariantTypes_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
-namespace ns_cp {
+namespace ns_op {
 using namespace std;
 
 // Element
@@ -57,7 +57,7 @@ void CT_Properties::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_property())
             {
-                (*iter)->get_property().toXmlElem("cp:property", "", _outStream);
+                (*iter)->get_property().toXmlElem("op:property", "", _outStream);
             }
 
 
@@ -6044,9 +6044,9 @@ void Properties_element::clear()
 
 void Properties_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<cp:Properties";
+    _outStream << "<op:Properties";
 
-    _outStream << " " << "xmlns:cp=\"http://schemas.openxmlformats.org/officeDocument/2006/custom-properties\"";
+    _outStream << " " << "xmlns:op=\"http://schemas.openxmlformats.org/officeDocument/2006/custom-properties\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:vt=\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\"";
 
@@ -6058,14 +6058,14 @@ void Properties_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_property())
             {
-                (*iter)->get_property().toXmlElem("cp:property", "", _outStream);
+                (*iter)->get_property().toXmlElem("op:property", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</cp:Properties>";
+    _outStream << "</op:Properties>";
 }
 
 const Properties_element& Properties_element::default_instance()

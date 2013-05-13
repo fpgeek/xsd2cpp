@@ -1,4 +1,4 @@
-namespace ns_ep {
+namespace ns_ap {
 class Element;
 class Attribute;
 class CT_Properties;
@@ -15,7 +15,7 @@ class Properties_element;
 #include <string>
 #include <iostream>
 #include "shared-documentPropertiesVariantTypes_xsd.h"
-namespace ns_ep {
+namespace ns_ap {
 using namespace std;
 class Element: public XSD::Element
 {

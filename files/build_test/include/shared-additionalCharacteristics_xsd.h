@@ -1,4 +1,4 @@
-namespace ns_ch {
+namespace ns_ac {
 class Element;
 class Attribute;
 class ST_Relation;
@@ -13,7 +13,7 @@ class additionalCharacteristics_element;
 #include <vector>
 #include <string>
 #include <iostream>
-namespace ns_ch {
+namespace ns_ac {
 using namespace std;
 class Element: public XSD::Element
 {

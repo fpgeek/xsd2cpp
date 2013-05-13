@@ -5,7 +5,7 @@
 #include "shared-relationshipReference_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
 #include "dml-spreadsheetDrawing_xsd.h"
-namespace ns_ss {
+namespace ns_x {
 using namespace std;
 
 // Element
@@ -6599,7 +6599,7 @@ void CT_AutoFilter::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_filterColumn())
             {
-                (*iter)->get_filterColumn().toXmlElem("ss:filterColumn", "", _outStream);
+                (*iter)->get_filterColumn().toXmlElem("x:filterColumn", "", _outStream);
             }
 
 
@@ -6609,13 +6609,13 @@ void CT_AutoFilter::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_sortState)
     {
-        m_sortState->toXmlElem("ss:sortState", "", _outStream);
+        m_sortState->toXmlElem("x:sortState", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -7380,43 +7380,43 @@ void CT_FilterColumn::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_filters)
     {
-        m_filters->toXmlElem("ss:filters", "", _outStream);
+        m_filters->toXmlElem("x:filters", "", _outStream);
     }
 
 
     if (m_has_top10)
     {
-        m_top10->toXmlElem("ss:top10", "", _outStream);
+        m_top10->toXmlElem("x:top10", "", _outStream);
     }
 
 
     if (m_has_customFilters)
     {
-        m_customFilters->toXmlElem("ss:customFilters", "", _outStream);
+        m_customFilters->toXmlElem("x:customFilters", "", _outStream);
     }
 
 
     if (m_has_dynamicFilter)
     {
-        m_dynamicFilter->toXmlElem("ss:dynamicFilter", "", _outStream);
+        m_dynamicFilter->toXmlElem("x:dynamicFilter", "", _outStream);
     }
 
 
     if (m_has_colorFilter)
     {
-        m_colorFilter->toXmlElem("ss:colorFilter", "", _outStream);
+        m_colorFilter->toXmlElem("x:colorFilter", "", _outStream);
     }
 
 
     if (m_has_iconFilter)
     {
-        m_iconFilter->toXmlElem("ss:iconFilter", "", _outStream);
+        m_iconFilter->toXmlElem("x:iconFilter", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -7563,13 +7563,13 @@ void CT_Filters::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_filter())
             {
-                (*iter)->get_filter().toXmlElem("ss:filter", "", _outStream);
+                (*iter)->get_filter().toXmlElem("x:filter", "", _outStream);
             }
 
 
             else if ((*iter)->has_dateGroupItem())
             {
-                (*iter)->get_dateGroupItem().toXmlElem("ss:dateGroupItem", "", _outStream);
+                (*iter)->get_dateGroupItem().toXmlElem("x:dateGroupItem", "", _outStream);
             }
 
 
@@ -7837,7 +7837,7 @@ void CT_CustomFilters::toXmlElem(const std::string& _elemName, const std::string
         {
             if ((*iter)->has_customFilter())
             {
-                (*iter)->get_customFilter().toXmlElem("ss:customFilter", "", _outStream);
+                (*iter)->get_customFilter().toXmlElem("x:customFilter", "", _outStream);
             }
 
 
@@ -8695,7 +8695,7 @@ void CT_SortState::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_sortCondition())
             {
-                (*iter)->get_sortCondition().toXmlElem("ss:sortCondition", "", _outStream);
+                (*iter)->get_sortCondition().toXmlElem("x:sortCondition", "", _outStream);
             }
 
 
@@ -8705,7 +8705,7 @@ void CT_SortState::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -9718,7 +9718,7 @@ void CT_ExtensionList::toXmlElem(const std::string& _elemName, const std::string
         {
             if ((*iter)->has_ext())
             {
-                (*iter)->get_ext().toXmlElem("ss:ext", "", _outStream);
+                (*iter)->get_ext().toXmlElem("x:ext", "", _outStream);
             }
 
 
@@ -9856,7 +9856,7 @@ void CT_CalcChain::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_c())
             {
-                (*iter)->get_c().toXmlElem("ss:c", "", _outStream);
+                (*iter)->get_c().toXmlElem("x:c", "", _outStream);
             }
 
 
@@ -9866,7 +9866,7 @@ void CT_CalcChain::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -10301,19 +10301,19 @@ void CT_Comments::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_authors)
     {
-        m_authors->toXmlElem("ss:authors", "", _outStream);
+        m_authors->toXmlElem("x:authors", "", _outStream);
     }
 
 
     if (m_has_commentList)
     {
-        m_commentList->toXmlElem("ss:commentList", "", _outStream);
+        m_commentList->toXmlElem("x:commentList", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -10376,7 +10376,7 @@ void CT_Authors::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_author())
             {
-                _outStream << "<ss:author>" << (*iter)->get_author().toString() << "</ss:author>";
+                _outStream << "<x:author>" << (*iter)->get_author().toString() << "</x:author>";
             }
 
 
@@ -10475,7 +10475,7 @@ void CT_CommentList::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_comment())
             {
-                (*iter)->get_comment().toXmlElem("ss:comment", "", _outStream);
+                (*iter)->get_comment().toXmlElem("x:comment", "", _outStream);
             }
 
 
@@ -10684,13 +10684,13 @@ void CT_Comment::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_text)
     {
-        m_text->toXmlElem("ss:text", "", _outStream);
+        m_text->toXmlElem("x:text", "", _outStream);
     }
 
 
     if (m_has_commentPr)
     {
-        m_commentPr->toXmlElem("ss:commentPr", "", _outStream);
+        m_commentPr->toXmlElem("x:commentPr", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -11002,7 +11002,7 @@ void CT_CommentPr::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_anchor)
     {
-        m_anchor->toXmlElem("ss:anchor", "", _outStream);
+        m_anchor->toXmlElem("x:anchor", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -11298,13 +11298,13 @@ void CT_MapInfo::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_Schema())
             {
-                (*iter)->get_Schema().toXmlElem("ss:Schema", "", _outStream);
+                (*iter)->get_Schema().toXmlElem("x:Schema", "", _outStream);
             }
 
 
             else if ((*iter)->has_Map())
             {
-                (*iter)->get_Map().toXmlElem("ss:Map", "", _outStream);
+                (*iter)->get_Map().toXmlElem("x:Map", "", _outStream);
             }
 
 
@@ -11742,7 +11742,7 @@ void CT_Map::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
 
     if (m_has_DataBinding)
     {
-        m_DataBinding->toXmlElem("ss:DataBinding", "", _outStream);
+        m_DataBinding->toXmlElem("x:DataBinding", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -12139,7 +12139,7 @@ void CT_Connections::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_connection())
             {
-                (*iter)->get_connection().toXmlElem("ss:connection", "", _outStream);
+                (*iter)->get_connection().toXmlElem("x:connection", "", _outStream);
             }
 
 
@@ -12702,37 +12702,37 @@ void CT_Connection::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_dbPr)
     {
-        m_dbPr->toXmlElem("ss:dbPr", "", _outStream);
+        m_dbPr->toXmlElem("x:dbPr", "", _outStream);
     }
 
 
     if (m_has_olapPr)
     {
-        m_olapPr->toXmlElem("ss:olapPr", "", _outStream);
+        m_olapPr->toXmlElem("x:olapPr", "", _outStream);
     }
 
 
     if (m_has_webPr)
     {
-        m_webPr->toXmlElem("ss:webPr", "", _outStream);
+        m_webPr->toXmlElem("x:webPr", "", _outStream);
     }
 
 
     if (m_has_textPr)
     {
-        m_textPr->toXmlElem("ss:textPr", "", _outStream);
+        m_textPr->toXmlElem("x:textPr", "", _outStream);
     }
 
 
     if (m_has_parameters)
     {
-        m_parameters->toXmlElem("ss:parameters", "", _outStream);
+        m_parameters->toXmlElem("x:parameters", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -13806,7 +13806,7 @@ void CT_WebPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_tables)
     {
-        m_tables->toXmlElem("ss:tables", "", _outStream);
+        m_tables->toXmlElem("x:tables", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -14108,7 +14108,7 @@ void CT_Parameters::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_parameter())
             {
-                (*iter)->get_parameter().toXmlElem("ss:parameter", "", _outStream);
+                (*iter)->get_parameter().toXmlElem("x:parameter", "", _outStream);
             }
 
 
@@ -14614,19 +14614,19 @@ void CT_Tables::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_m())
             {
-                (*iter)->get_m().toXmlElem("ss:m", "", _outStream);
+                (*iter)->get_m().toXmlElem("x:m", "", _outStream);
             }
 
 
             else if ((*iter)->has_s())
             {
-                (*iter)->get_s().toXmlElem("ss:s", "", _outStream);
+                (*iter)->get_s().toXmlElem("x:s", "", _outStream);
             }
 
 
             else if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("ss:x", "", _outStream);
+                (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
 
 
@@ -15127,7 +15127,7 @@ void CT_TextPr::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_textFields)
     {
-        m_textFields->toXmlElem("ss:textFields", "", _outStream);
+        m_textFields->toXmlElem("x:textFields", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -15485,7 +15485,7 @@ void CT_TextFields::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_textField())
             {
-                (*iter)->get_textField().toXmlElem("ss:textField", "", _outStream);
+                (*iter)->get_textField().toXmlElem("x:textField", "", _outStream);
             }
 
 
@@ -16309,67 +16309,67 @@ void CT_PivotCacheDefinition::toXmlElem(const std::string& _elemName, const std:
 
     if (m_has_cacheSource)
     {
-        m_cacheSource->toXmlElem("ss:cacheSource", "", _outStream);
+        m_cacheSource->toXmlElem("x:cacheSource", "", _outStream);
     }
 
 
     if (m_has_cacheFields)
     {
-        m_cacheFields->toXmlElem("ss:cacheFields", "", _outStream);
+        m_cacheFields->toXmlElem("x:cacheFields", "", _outStream);
     }
 
 
     if (m_has_cacheHierarchies)
     {
-        m_cacheHierarchies->toXmlElem("ss:cacheHierarchies", "", _outStream);
+        m_cacheHierarchies->toXmlElem("x:cacheHierarchies", "", _outStream);
     }
 
 
     if (m_has_kpis)
     {
-        m_kpis->toXmlElem("ss:kpis", "", _outStream);
+        m_kpis->toXmlElem("x:kpis", "", _outStream);
     }
 
 
     if (m_has_tupleCache)
     {
-        m_tupleCache->toXmlElem("ss:tupleCache", "", _outStream);
+        m_tupleCache->toXmlElem("x:tupleCache", "", _outStream);
     }
 
 
     if (m_has_calculatedItems)
     {
-        m_calculatedItems->toXmlElem("ss:calculatedItems", "", _outStream);
+        m_calculatedItems->toXmlElem("x:calculatedItems", "", _outStream);
     }
 
 
     if (m_has_calculatedMembers)
     {
-        m_calculatedMembers->toXmlElem("ss:calculatedMembers", "", _outStream);
+        m_calculatedMembers->toXmlElem("x:calculatedMembers", "", _outStream);
     }
 
 
     if (m_has_dimensions)
     {
-        m_dimensions->toXmlElem("ss:dimensions", "", _outStream);
+        m_dimensions->toXmlElem("x:dimensions", "", _outStream);
     }
 
 
     if (m_has_measureGroups)
     {
-        m_measureGroups->toXmlElem("ss:measureGroups", "", _outStream);
+        m_measureGroups->toXmlElem("x:measureGroups", "", _outStream);
     }
 
 
     if (m_has_maps)
     {
-        m_maps->toXmlElem("ss:maps", "", _outStream);
+        m_maps->toXmlElem("x:maps", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -16754,7 +16754,7 @@ void CT_CacheFields::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_cacheField())
             {
-                (*iter)->get_cacheField().toXmlElem("ss:cacheField", "", _outStream);
+                (*iter)->get_cacheField().toXmlElem("x:cacheField", "", _outStream);
             }
 
 
@@ -17155,13 +17155,13 @@ void CT_CacheField::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_sharedItems)
     {
-        m_sharedItems->toXmlElem("ss:sharedItems", "", _outStream);
+        m_sharedItems->toXmlElem("x:sharedItems", "", _outStream);
     }
 
 
     if (m_has_fieldGroup)
     {
-        m_fieldGroup->toXmlElem("ss:fieldGroup", "", _outStream);
+        m_fieldGroup->toXmlElem("x:fieldGroup", "", _outStream);
     }
 
     {
@@ -17170,7 +17170,7 @@ void CT_CacheField::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_mpMap())
             {
-                (*iter)->get_mpMap().toXmlElem("ss:mpMap", "", _outStream);
+                (*iter)->get_mpMap().toXmlElem("x:mpMap", "", _outStream);
             }
 
 
@@ -17180,7 +17180,7 @@ void CT_CacheField::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -17679,19 +17679,19 @@ void CT_CacheSource::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_worksheetSource)
     {
-        m_worksheetSource->toXmlElem("ss:worksheetSource", "", _outStream);
+        m_worksheetSource->toXmlElem("x:worksheetSource", "", _outStream);
     }
 
 
     if (m_has_consolidation)
     {
-        m_consolidation->toXmlElem("ss:consolidation", "", _outStream);
+        m_consolidation->toXmlElem("x:consolidation", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -18039,13 +18039,13 @@ void CT_Consolidation::toXmlElem(const std::string& _elemName, const std::string
 
     if (m_has_pages)
     {
-        m_pages->toXmlElem("ss:pages", "", _outStream);
+        m_pages->toXmlElem("x:pages", "", _outStream);
     }
 
 
     if (m_has_rangeSets)
     {
-        m_rangeSets->toXmlElem("ss:rangeSets", "", _outStream);
+        m_rangeSets->toXmlElem("x:rangeSets", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -18139,7 +18139,7 @@ void CT_Pages::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
         {
             if ((*iter)->has_page())
             {
-                (*iter)->get_page().toXmlElem("ss:page", "", _outStream);
+                (*iter)->get_page().toXmlElem("x:page", "", _outStream);
             }
 
 
@@ -18264,7 +18264,7 @@ void CT_PCDSCPage::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_pageItem())
             {
-                (*iter)->get_pageItem().toXmlElem("ss:pageItem", "", _outStream);
+                (*iter)->get_pageItem().toXmlElem("x:pageItem", "", _outStream);
             }
 
 
@@ -18467,7 +18467,7 @@ void CT_RangeSets::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_rangeSet())
             {
-                (*iter)->get_rangeSet().toXmlElem("ss:rangeSet", "", _outStream);
+                (*iter)->get_rangeSet().toXmlElem("x:rangeSet", "", _outStream);
             }
 
 
@@ -19087,37 +19087,37 @@ void CT_SharedItems::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_m())
             {
-                (*iter)->get_m().toXmlElem("ss:m", "", _outStream);
+                (*iter)->get_m().toXmlElem("x:m", "", _outStream);
             }
 
 
             else if ((*iter)->has_n())
             {
-                (*iter)->get_n().toXmlElem("ss:n", "", _outStream);
+                (*iter)->get_n().toXmlElem("x:n", "", _outStream);
             }
 
 
             else if ((*iter)->has_b())
             {
-                (*iter)->get_b().toXmlElem("ss:b", "", _outStream);
+                (*iter)->get_b().toXmlElem("x:b", "", _outStream);
             }
 
 
             else if ((*iter)->has_e())
             {
-                (*iter)->get_e().toXmlElem("ss:e", "", _outStream);
+                (*iter)->get_e().toXmlElem("x:e", "", _outStream);
             }
 
 
             else if ((*iter)->has_s())
             {
-                (*iter)->get_s().toXmlElem("ss:s", "", _outStream);
+                (*iter)->get_s().toXmlElem("x:s", "", _outStream);
             }
 
 
             else if ((*iter)->has_d())
             {
-                (*iter)->get_d().toXmlElem("ss:d", "", _outStream);
+                (*iter)->get_d().toXmlElem("x:d", "", _outStream);
             }
 
 
@@ -20001,13 +20001,13 @@ void CT_Missing::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_tpls())
             {
-                (*iter)->get_tpls().toXmlElem("ss:tpls", "", _outStream);
+                (*iter)->get_tpls().toXmlElem("x:tpls", "", _outStream);
             }
 
 
             else if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("ss:x", "", _outStream);
+                (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
 
 
@@ -20507,13 +20507,13 @@ void CT_Number::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_tpls())
             {
-                (*iter)->get_tpls().toXmlElem("ss:tpls", "", _outStream);
+                (*iter)->get_tpls().toXmlElem("x:tpls", "", _outStream);
             }
 
 
             else if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("ss:x", "", _outStream);
+                (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
 
 
@@ -20925,7 +20925,7 @@ void CT_Boolean::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("ss:x", "", _outStream);
+                (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
 
 
@@ -21306,7 +21306,7 @@ void CT_Error::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_tpls)
     {
-        m_tpls->toXmlElem("ss:tpls", "", _outStream);
+        m_tpls->toXmlElem("x:tpls", "", _outStream);
     }
 
     {
@@ -21315,7 +21315,7 @@ void CT_Error::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
         {
             if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("ss:x", "", _outStream);
+                (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
 
 
@@ -21796,13 +21796,13 @@ void CT_String::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_tpls())
             {
-                (*iter)->get_tpls().toXmlElem("ss:tpls", "", _outStream);
+                (*iter)->get_tpls().toXmlElem("x:tpls", "", _outStream);
             }
 
 
             else if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("ss:x", "", _outStream);
+                (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
 
 
@@ -22218,7 +22218,7 @@ void CT_DateTime::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("ss:x", "", _outStream);
+                (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
 
 
@@ -22508,19 +22508,19 @@ void CT_FieldGroup::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_rangePr)
     {
-        m_rangePr->toXmlElem("ss:rangePr", "", _outStream);
+        m_rangePr->toXmlElem("x:rangePr", "", _outStream);
     }
 
 
     if (m_has_discretePr)
     {
-        m_discretePr->toXmlElem("ss:discretePr", "", _outStream);
+        m_discretePr->toXmlElem("x:discretePr", "", _outStream);
     }
 
 
     if (m_has_groupItems)
     {
-        m_groupItems->toXmlElem("ss:groupItems", "", _outStream);
+        m_groupItems->toXmlElem("x:groupItems", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -22899,7 +22899,7 @@ void CT_DiscretePr::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("ss:x", "", _outStream);
+                (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
 
 
@@ -23064,37 +23064,37 @@ void CT_GroupItems::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_m())
             {
-                (*iter)->get_m().toXmlElem("ss:m", "", _outStream);
+                (*iter)->get_m().toXmlElem("x:m", "", _outStream);
             }
 
 
             else if ((*iter)->has_n())
             {
-                (*iter)->get_n().toXmlElem("ss:n", "", _outStream);
+                (*iter)->get_n().toXmlElem("x:n", "", _outStream);
             }
 
 
             else if ((*iter)->has_b())
             {
-                (*iter)->get_b().toXmlElem("ss:b", "", _outStream);
+                (*iter)->get_b().toXmlElem("x:b", "", _outStream);
             }
 
 
             else if ((*iter)->has_e())
             {
-                (*iter)->get_e().toXmlElem("ss:e", "", _outStream);
+                (*iter)->get_e().toXmlElem("x:e", "", _outStream);
             }
 
 
             else if ((*iter)->has_s())
             {
-                (*iter)->get_s().toXmlElem("ss:s", "", _outStream);
+                (*iter)->get_s().toXmlElem("x:s", "", _outStream);
             }
 
 
             else if ((*iter)->has_d())
             {
-                (*iter)->get_d().toXmlElem("ss:d", "", _outStream);
+                (*iter)->get_d().toXmlElem("x:d", "", _outStream);
             }
 
 
@@ -23659,7 +23659,7 @@ void CT_PivotCacheRecords::toXmlElem(const std::string& _elemName, const std::st
         {
             if ((*iter)->has_r())
             {
-                (*iter)->get_r().toXmlElem("ss:r", "", _outStream);
+                (*iter)->get_r().toXmlElem("x:r", "", _outStream);
             }
 
 
@@ -23669,7 +23669,7 @@ void CT_PivotCacheRecords::toXmlElem(const std::string& _elemName, const std::st
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -23828,43 +23828,43 @@ void CT_Record::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_m())
             {
-                (*iter)->get_m().toXmlElem("ss:m", "", _outStream);
+                (*iter)->get_m().toXmlElem("x:m", "", _outStream);
             }
 
 
             else if ((*iter)->has_n())
             {
-                (*iter)->get_n().toXmlElem("ss:n", "", _outStream);
+                (*iter)->get_n().toXmlElem("x:n", "", _outStream);
             }
 
 
             else if ((*iter)->has_b())
             {
-                (*iter)->get_b().toXmlElem("ss:b", "", _outStream);
+                (*iter)->get_b().toXmlElem("x:b", "", _outStream);
             }
 
 
             else if ((*iter)->has_e())
             {
-                (*iter)->get_e().toXmlElem("ss:e", "", _outStream);
+                (*iter)->get_e().toXmlElem("x:e", "", _outStream);
             }
 
 
             else if ((*iter)->has_s())
             {
-                (*iter)->get_s().toXmlElem("ss:s", "", _outStream);
+                (*iter)->get_s().toXmlElem("x:s", "", _outStream);
             }
 
 
             else if ((*iter)->has_d())
             {
-                (*iter)->get_d().toXmlElem("ss:d", "", _outStream);
+                (*iter)->get_d().toXmlElem("x:d", "", _outStream);
             }
 
 
             else if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("ss:x", "", _outStream);
+                (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
 
 
@@ -24513,7 +24513,7 @@ void CT_PCDKPIs::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_kpi())
             {
-                (*iter)->get_kpi().toXmlElem("ss:kpi", "", _outStream);
+                (*iter)->get_kpi().toXmlElem("x:kpi", "", _outStream);
             }
 
 
@@ -25091,7 +25091,7 @@ void CT_CacheHierarchies::toXmlElem(const std::string& _elemName, const std::str
         {
             if ((*iter)->has_cacheHierarchy())
             {
-                (*iter)->get_cacheHierarchy().toXmlElem("ss:cacheHierarchy", "", _outStream);
+                (*iter)->get_cacheHierarchy().toXmlElem("x:cacheHierarchy", "", _outStream);
             }
 
 
@@ -25601,19 +25601,19 @@ void CT_CacheHierarchy::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_fieldsUsage)
     {
-        m_fieldsUsage->toXmlElem("ss:fieldsUsage", "", _outStream);
+        m_fieldsUsage->toXmlElem("x:fieldsUsage", "", _outStream);
     }
 
 
     if (m_has_groupLevels)
     {
-        m_groupLevels->toXmlElem("ss:groupLevels", "", _outStream);
+        m_groupLevels->toXmlElem("x:groupLevels", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -26070,7 +26070,7 @@ void CT_FieldsUsage::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_fieldUsage())
             {
-                (*iter)->get_fieldUsage().toXmlElem("ss:fieldUsage", "", _outStream);
+                (*iter)->get_fieldUsage().toXmlElem("x:fieldUsage", "", _outStream);
             }
 
 
@@ -26263,7 +26263,7 @@ void CT_GroupLevels::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_groupLevel())
             {
-                (*iter)->get_groupLevel().toXmlElem("ss:groupLevel", "", _outStream);
+                (*iter)->get_groupLevel().toXmlElem("x:groupLevel", "", _outStream);
             }
 
 
@@ -26486,13 +26486,13 @@ void CT_GroupLevel::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_groups)
     {
-        m_groups->toXmlElem("ss:groups", "", _outStream);
+        m_groups->toXmlElem("x:groups", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -26642,7 +26642,7 @@ void CT_Groups::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_group())
             {
-                (*iter)->get_group().toXmlElem("ss:group", "", _outStream);
+                (*iter)->get_group().toXmlElem("x:group", "", _outStream);
             }
 
 
@@ -26856,7 +26856,7 @@ void CT_LevelGroup::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_groupMembers)
     {
-        m_groupMembers->toXmlElem("ss:groupMembers", "", _outStream);
+        m_groupMembers->toXmlElem("x:groupMembers", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -27030,7 +27030,7 @@ void CT_GroupMembers::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_groupMember())
             {
-                (*iter)->get_groupMember().toXmlElem("ss:groupMember", "", _outStream);
+                (*iter)->get_groupMember().toXmlElem("x:groupMember", "", _outStream);
             }
 
 
@@ -27400,31 +27400,31 @@ void CT_TupleCache::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_entries)
     {
-        m_entries->toXmlElem("ss:entries", "", _outStream);
+        m_entries->toXmlElem("x:entries", "", _outStream);
     }
 
 
     if (m_has_sets)
     {
-        m_sets->toXmlElem("ss:sets", "", _outStream);
+        m_sets->toXmlElem("x:sets", "", _outStream);
     }
 
 
     if (m_has_queryCache)
     {
-        m_queryCache->toXmlElem("ss:queryCache", "", _outStream);
+        m_queryCache->toXmlElem("x:queryCache", "", _outStream);
     }
 
 
     if (m_has_serverFormats)
     {
-        m_serverFormats->toXmlElem("ss:serverFormats", "", _outStream);
+        m_serverFormats->toXmlElem("x:serverFormats", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -27608,7 +27608,7 @@ void CT_ServerFormats::toXmlElem(const std::string& _elemName, const std::string
         {
             if ((*iter)->has_serverFormat())
             {
-                (*iter)->get_serverFormat().toXmlElem("ss:serverFormat", "", _outStream);
+                (*iter)->get_serverFormat().toXmlElem("x:serverFormat", "", _outStream);
             }
 
 
@@ -27757,25 +27757,25 @@ void CT_PCDSDTCEntries::toXmlElem(const std::string& _elemName, const std::strin
         {
             if ((*iter)->has_m())
             {
-                (*iter)->get_m().toXmlElem("ss:m", "", _outStream);
+                (*iter)->get_m().toXmlElem("x:m", "", _outStream);
             }
 
 
             else if ((*iter)->has_n())
             {
-                (*iter)->get_n().toXmlElem("ss:n", "", _outStream);
+                (*iter)->get_n().toXmlElem("x:n", "", _outStream);
             }
 
 
             else if ((*iter)->has_e())
             {
-                (*iter)->get_e().toXmlElem("ss:e", "", _outStream);
+                (*iter)->get_e().toXmlElem("x:e", "", _outStream);
             }
 
 
             else if ((*iter)->has_s())
             {
-                (*iter)->get_s().toXmlElem("ss:s", "", _outStream);
+                (*iter)->get_s().toXmlElem("x:s", "", _outStream);
             }
 
 
@@ -28094,7 +28094,7 @@ void CT_Tuples::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_tpl())
             {
-                (*iter)->get_tpl().toXmlElem("ss:tpl", "", _outStream);
+                (*iter)->get_tpl().toXmlElem("x:tpl", "", _outStream);
             }
 
 
@@ -28343,7 +28343,7 @@ void CT_Sets::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
         {
             if ((*iter)->has_set())
             {
-                (*iter)->get_set().toXmlElem("ss:set", "", _outStream);
+                (*iter)->get_set().toXmlElem("x:set", "", _outStream);
             }
 
 
@@ -28563,7 +28563,7 @@ void CT_Set::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
         {
             if ((*iter)->has_tpls())
             {
-                (*iter)->get_tpls().toXmlElem("ss:tpls", "", _outStream);
+                (*iter)->get_tpls().toXmlElem("x:tpls", "", _outStream);
             }
 
 
@@ -28573,7 +28573,7 @@ void CT_Set::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
 
     if (m_has_sortByTuple)
     {
-        m_sortByTuple->toXmlElem("ss:sortByTuple", "", _outStream);
+        m_sortByTuple->toXmlElem("x:sortByTuple", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -28771,7 +28771,7 @@ void CT_QueryCache::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_query())
             {
-                (*iter)->get_query().toXmlElem("ss:query", "", _outStream);
+                (*iter)->get_query().toXmlElem("x:query", "", _outStream);
             }
 
 
@@ -28917,7 +28917,7 @@ void CT_Query::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_tpls)
     {
-        m_tpls->toXmlElem("ss:tpls", "", _outStream);
+        m_tpls->toXmlElem("x:tpls", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -29015,7 +29015,7 @@ void CT_CalculatedItems::toXmlElem(const std::string& _elemName, const std::stri
         {
             if ((*iter)->has_calculatedItem())
             {
-                (*iter)->get_calculatedItem().toXmlElem("ss:calculatedItem", "", _outStream);
+                (*iter)->get_calculatedItem().toXmlElem("x:calculatedItem", "", _outStream);
             }
 
 
@@ -29210,13 +29210,13 @@ void CT_CalculatedItem::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("ss:pivotArea", "", _outStream);
+        m_pivotArea->toXmlElem("x:pivotArea", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -29330,7 +29330,7 @@ void CT_CalculatedMembers::toXmlElem(const std::string& _elemName, const std::st
         {
             if ((*iter)->has_calculatedMember())
             {
-                (*iter)->get_calculatedMember().toXmlElem("ss:calculatedMember", "", _outStream);
+                (*iter)->get_calculatedMember().toXmlElem("x:calculatedMember", "", _outStream);
             }
 
 
@@ -29572,7 +29572,7 @@ void CT_CalculatedMember::toXmlElem(const std::string& _elemName, const std::str
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -31224,103 +31224,103 @@ void CT_pivotTableDefinition::toXmlElem(const std::string& _elemName, const std:
 
     if (m_has_location)
     {
-        m_location->toXmlElem("ss:location", "", _outStream);
+        m_location->toXmlElem("x:location", "", _outStream);
     }
 
 
     if (m_has_pivotFields)
     {
-        m_pivotFields->toXmlElem("ss:pivotFields", "", _outStream);
+        m_pivotFields->toXmlElem("x:pivotFields", "", _outStream);
     }
 
 
     if (m_has_rowFields)
     {
-        m_rowFields->toXmlElem("ss:rowFields", "", _outStream);
+        m_rowFields->toXmlElem("x:rowFields", "", _outStream);
     }
 
 
     if (m_has_rowItems)
     {
-        m_rowItems->toXmlElem("ss:rowItems", "", _outStream);
+        m_rowItems->toXmlElem("x:rowItems", "", _outStream);
     }
 
 
     if (m_has_colFields)
     {
-        m_colFields->toXmlElem("ss:colFields", "", _outStream);
+        m_colFields->toXmlElem("x:colFields", "", _outStream);
     }
 
 
     if (m_has_colItems)
     {
-        m_colItems->toXmlElem("ss:colItems", "", _outStream);
+        m_colItems->toXmlElem("x:colItems", "", _outStream);
     }
 
 
     if (m_has_pageFields)
     {
-        m_pageFields->toXmlElem("ss:pageFields", "", _outStream);
+        m_pageFields->toXmlElem("x:pageFields", "", _outStream);
     }
 
 
     if (m_has_dataFields)
     {
-        m_dataFields->toXmlElem("ss:dataFields", "", _outStream);
+        m_dataFields->toXmlElem("x:dataFields", "", _outStream);
     }
 
 
     if (m_has_formats)
     {
-        m_formats->toXmlElem("ss:formats", "", _outStream);
+        m_formats->toXmlElem("x:formats", "", _outStream);
     }
 
 
     if (m_has_conditionalFormats)
     {
-        m_conditionalFormats->toXmlElem("ss:conditionalFormats", "", _outStream);
+        m_conditionalFormats->toXmlElem("x:conditionalFormats", "", _outStream);
     }
 
 
     if (m_has_chartFormats)
     {
-        m_chartFormats->toXmlElem("ss:chartFormats", "", _outStream);
+        m_chartFormats->toXmlElem("x:chartFormats", "", _outStream);
     }
 
 
     if (m_has_pivotHierarchies)
     {
-        m_pivotHierarchies->toXmlElem("ss:pivotHierarchies", "", _outStream);
+        m_pivotHierarchies->toXmlElem("x:pivotHierarchies", "", _outStream);
     }
 
 
     if (m_has_pivotTableStyleInfo)
     {
-        m_pivotTableStyleInfo->toXmlElem("ss:pivotTableStyleInfo", "", _outStream);
+        m_pivotTableStyleInfo->toXmlElem("x:pivotTableStyleInfo", "", _outStream);
     }
 
 
     if (m_has_filters)
     {
-        m_filters->toXmlElem("ss:filters", "", _outStream);
+        m_filters->toXmlElem("x:filters", "", _outStream);
     }
 
 
     if (m_has_rowHierarchiesUsage)
     {
-        m_rowHierarchiesUsage->toXmlElem("ss:rowHierarchiesUsage", "", _outStream);
+        m_rowHierarchiesUsage->toXmlElem("x:rowHierarchiesUsage", "", _outStream);
     }
 
 
     if (m_has_colHierarchiesUsage)
     {
-        m_colHierarchiesUsage->toXmlElem("ss:colHierarchiesUsage", "", _outStream);
+        m_colHierarchiesUsage->toXmlElem("x:colHierarchiesUsage", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -32743,7 +32743,7 @@ void CT_PivotFields::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_pivotField())
             {
-                (*iter)->get_pivotField().toXmlElem("ss:pivotField", "", _outStream);
+                (*iter)->get_pivotField().toXmlElem("x:pivotField", "", _outStream);
             }
 
 
@@ -33553,19 +33553,19 @@ void CT_PivotField::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_items)
     {
-        m_items->toXmlElem("ss:items", "", _outStream);
+        m_items->toXmlElem("x:items", "", _outStream);
     }
 
 
     if (m_has_autoSortScope)
     {
-        m_autoSortScope->toXmlElem("ss:autoSortScope", "", _outStream);
+        m_autoSortScope->toXmlElem("x:autoSortScope", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -34436,7 +34436,7 @@ void CT_AutoSortScope::toXmlElem(const std::string& _elemName, const std::string
 
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("ss:pivotArea", "", _outStream);
+        m_pivotArea->toXmlElem("x:pivotArea", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -34514,7 +34514,7 @@ void CT_Items::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
         {
             if ((*iter)->has_item())
             {
-                (*iter)->get_item().toXmlElem("ss:item", "", _outStream);
+                (*iter)->get_item().toXmlElem("x:item", "", _outStream);
             }
 
 
@@ -35007,7 +35007,7 @@ void CT_PageFields::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_pageField())
             {
-                (*iter)->get_pageField().toXmlElem("ss:pageField", "", _outStream);
+                (*iter)->get_pageField().toXmlElem("x:pageField", "", _outStream);
             }
 
 
@@ -35207,7 +35207,7 @@ void CT_PageField::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -35373,7 +35373,7 @@ void CT_DataFields::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_dataField())
             {
-                (*iter)->get_dataField().toXmlElem("ss:dataField", "", _outStream);
+                (*iter)->get_dataField().toXmlElem("x:dataField", "", _outStream);
             }
 
 
@@ -35609,7 +35609,7 @@ void CT_DataField::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -35815,7 +35815,7 @@ void CT_rowItems::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_i())
             {
-                (*iter)->get_i().toXmlElem("ss:i", "", _outStream);
+                (*iter)->get_i().toXmlElem("x:i", "", _outStream);
             }
 
 
@@ -35945,7 +35945,7 @@ void CT_colItems::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_i())
             {
-                (*iter)->get_i().toXmlElem("ss:i", "", _outStream);
+                (*iter)->get_i().toXmlElem("x:i", "", _outStream);
             }
 
 
@@ -36100,7 +36100,7 @@ void CT_I::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr,
         {
             if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("ss:x", "", _outStream);
+                (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
 
 
@@ -36329,7 +36329,7 @@ void CT_RowFields::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_field())
             {
-                (*iter)->get_field().toXmlElem("ss:field", "", _outStream);
+                (*iter)->get_field().toXmlElem("x:field", "", _outStream);
             }
 
 
@@ -36459,7 +36459,7 @@ void CT_ColFields::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_field())
             {
-                (*iter)->get_field().toXmlElem("ss:field", "", _outStream);
+                (*iter)->get_field().toXmlElem("x:field", "", _outStream);
             }
 
 
@@ -36652,7 +36652,7 @@ void CT_Formats::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_format())
             {
-                (*iter)->get_format().toXmlElem("ss:format", "", _outStream);
+                (*iter)->get_format().toXmlElem("x:format", "", _outStream);
             }
 
 
@@ -36853,13 +36853,13 @@ void CT_Format::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("ss:pivotArea", "", _outStream);
+        m_pivotArea->toXmlElem("x:pivotArea", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -36977,7 +36977,7 @@ void CT_ConditionalFormats::toXmlElem(const std::string& _elemName, const std::s
         {
             if ((*iter)->has_conditionalFormat())
             {
-                (*iter)->get_conditionalFormat().toXmlElem("ss:conditionalFormat", "", _outStream);
+                (*iter)->get_conditionalFormat().toXmlElem("x:conditionalFormat", "", _outStream);
             }
 
 
@@ -37190,13 +37190,13 @@ void CT_ConditionalFormat::toXmlElem(const std::string& _elemName, const std::st
 
     if (m_has_pivotAreas)
     {
-        m_pivotAreas->toXmlElem("ss:pivotAreas", "", _outStream);
+        m_pivotAreas->toXmlElem("x:pivotAreas", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -37325,7 +37325,7 @@ void CT_PivotAreas::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_pivotArea())
             {
-                (*iter)->get_pivotArea().toXmlElem("ss:pivotArea", "", _outStream);
+                (*iter)->get_pivotArea().toXmlElem("x:pivotArea", "", _outStream);
             }
 
 
@@ -37455,7 +37455,7 @@ void CT_ChartFormats::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_chartFormat())
             {
-                (*iter)->get_chartFormat().toXmlElem("ss:chartFormat", "", _outStream);
+                (*iter)->get_chartFormat().toXmlElem("x:chartFormat", "", _outStream);
             }
 
 
@@ -37621,7 +37621,7 @@ void CT_ChartFormat::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("ss:pivotArea", "", _outStream);
+        m_pivotArea->toXmlElem("x:pivotArea", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -37747,7 +37747,7 @@ void CT_PivotHierarchies::toXmlElem(const std::string& _elemName, const std::str
         {
             if ((*iter)->has_pivotHierarchy())
             {
-                (*iter)->get_pivotHierarchy().toXmlElem("ss:pivotHierarchy", "", _outStream);
+                (*iter)->get_pivotHierarchy().toXmlElem("x:pivotHierarchy", "", _outStream);
             }
 
 
@@ -38065,7 +38065,7 @@ void CT_PivotHierarchy::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_mps)
     {
-        m_mps->toXmlElem("ss:mps", "", _outStream);
+        m_mps->toXmlElem("x:mps", "", _outStream);
     }
 
     {
@@ -38074,7 +38074,7 @@ void CT_PivotHierarchy::toXmlElem(const std::string& _elemName, const std::strin
         {
             if ((*iter)->has_members())
             {
-                (*iter)->get_members().toXmlElem("ss:members", "", _outStream);
+                (*iter)->get_members().toXmlElem("x:members", "", _outStream);
             }
 
 
@@ -38084,7 +38084,7 @@ void CT_PivotHierarchy::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -38374,7 +38374,7 @@ void CT_RowHierarchiesUsage::toXmlElem(const std::string& _elemName, const std::
         {
             if ((*iter)->has_rowHierarchyUsage())
             {
-                (*iter)->get_rowHierarchyUsage().toXmlElem("ss:rowHierarchyUsage", "", _outStream);
+                (*iter)->get_rowHierarchyUsage().toXmlElem("x:rowHierarchyUsage", "", _outStream);
             }
 
 
@@ -38504,7 +38504,7 @@ void CT_ColHierarchiesUsage::toXmlElem(const std::string& _elemName, const std::
         {
             if ((*iter)->has_colHierarchyUsage())
             {
-                (*iter)->get_colHierarchyUsage().toXmlElem("ss:colHierarchyUsage", "", _outStream);
+                (*iter)->get_colHierarchyUsage().toXmlElem("x:colHierarchyUsage", "", _outStream);
             }
 
 
@@ -38697,7 +38697,7 @@ void CT_MemberProperties::toXmlElem(const std::string& _elemName, const std::str
         {
             if ((*iter)->has_mp())
             {
-                (*iter)->get_mp().toXmlElem("ss:mp", "", _outStream);
+                (*iter)->get_mp().toXmlElem("x:mp", "", _outStream);
             }
 
 
@@ -39136,7 +39136,7 @@ void CT_Members::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_member())
             {
-                (*iter)->get_member().toXmlElem("ss:member", "", _outStream);
+                (*iter)->get_member().toXmlElem("x:member", "", _outStream);
             }
 
 
@@ -39350,7 +39350,7 @@ void CT_Dimensions::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_dimension())
             {
-                (*iter)->get_dimension().toXmlElem("ss:dimension", "", _outStream);
+                (*iter)->get_dimension().toXmlElem("x:dimension", "", _outStream);
             }
 
 
@@ -39652,7 +39652,7 @@ void CT_MeasureGroups::toXmlElem(const std::string& _elemName, const std::string
         {
             if ((*iter)->has_measureGroup())
             {
-                (*iter)->get_measureGroup().toXmlElem("ss:measureGroup", "", _outStream);
+                (*iter)->get_measureGroup().toXmlElem("x:measureGroup", "", _outStream);
             }
 
 
@@ -39777,7 +39777,7 @@ void CT_MeasureDimensionMaps::toXmlElem(const std::string& _elemName, const std:
         {
             if ((*iter)->has_map())
             {
-                (*iter)->get_map().toXmlElem("ss:map", "", _outStream);
+                (*iter)->get_map().toXmlElem("x:map", "", _outStream);
             }
 
 
@@ -40307,7 +40307,7 @@ void CT_PivotFilters::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_filter())
             {
-                (*iter)->get_filter().toXmlElem("ss:filter", "", _outStream);
+                (*iter)->get_filter().toXmlElem("x:filter", "", _outStream);
             }
 
 
@@ -40634,13 +40634,13 @@ void CT_PivotFilter::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("ss:autoFilter", "", _outStream);
+        m_autoFilter->toXmlElem("x:autoFilter", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -41109,13 +41109,13 @@ void CT_PivotArea::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_references)
     {
-        m_references->toXmlElem("ss:references", "", _outStream);
+        m_references->toXmlElem("x:references", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -41397,7 +41397,7 @@ void CT_PivotAreaReferences::toXmlElem(const std::string& _elemName, const std::
         {
             if ((*iter)->has_reference())
             {
-                (*iter)->get_reference().toXmlElem("ss:reference", "", _outStream);
+                (*iter)->get_reference().toXmlElem("x:reference", "", _outStream);
             }
 
 
@@ -41749,7 +41749,7 @@ void CT_PivotAreaReference::toXmlElem(const std::string& _elemName, const std::s
         {
             if ((*iter)->has_x())
             {
-                (*iter)->get_x().toXmlElem("ss:x", "", _outStream);
+                (*iter)->get_x().toXmlElem("x:x", "", _outStream);
             }
 
 
@@ -41759,7 +41759,7 @@ void CT_PivotAreaReference::toXmlElem(const std::string& _elemName, const std::s
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -42513,13 +42513,13 @@ void CT_QueryTable::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_queryTableRefresh)
     {
-        m_queryTableRefresh->toXmlElem("ss:queryTableRefresh", "", _outStream);
+        m_queryTableRefresh->toXmlElem("x:queryTableRefresh", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -43146,25 +43146,25 @@ void CT_QueryTableRefresh::toXmlElem(const std::string& _elemName, const std::st
 
     if (m_has_queryTableFields)
     {
-        m_queryTableFields->toXmlElem("ss:queryTableFields", "", _outStream);
+        m_queryTableFields->toXmlElem("x:queryTableFields", "", _outStream);
     }
 
 
     if (m_has_queryTableDeletedFields)
     {
-        m_queryTableDeletedFields->toXmlElem("ss:queryTableDeletedFields", "", _outStream);
+        m_queryTableDeletedFields->toXmlElem("x:queryTableDeletedFields", "", _outStream);
     }
 
 
     if (m_has_sortState)
     {
-        m_sortState->toXmlElem("ss:sortState", "", _outStream);
+        m_sortState->toXmlElem("x:sortState", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -43354,7 +43354,7 @@ void CT_QueryTableDeletedFields::toXmlElem(const std::string& _elemName, const s
         {
             if ((*iter)->has_deletedField())
             {
-                (*iter)->get_deletedField().toXmlElem("ss:deletedField", "", _outStream);
+                (*iter)->get_deletedField().toXmlElem("x:deletedField", "", _outStream);
             }
 
 
@@ -43552,7 +43552,7 @@ void CT_QueryTableFields::toXmlElem(const std::string& _elemName, const std::str
         {
             if ((*iter)->has_queryTableField())
             {
-                (*iter)->get_queryTableField().toXmlElem("ss:queryTableField", "", _outStream);
+                (*iter)->get_queryTableField().toXmlElem("x:queryTableField", "", _outStream);
             }
 
 
@@ -43770,7 +43770,7 @@ void CT_QueryTableField::toXmlElem(const std::string& _elemName, const std::stri
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -44006,7 +44006,7 @@ void CT_Sst::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
         {
             if ((*iter)->has_si())
             {
-                (*iter)->get_si().toXmlElem("ss:si", "", _outStream);
+                (*iter)->get_si().toXmlElem("x:si", "", _outStream);
             }
 
 
@@ -44016,7 +44016,7 @@ void CT_Sst::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -44182,7 +44182,7 @@ void CT_PhoneticRun::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_t)
     {
-        _outStream << "<ss:t>" << m_t->toString() << "</ss:t>";
+        _outStream << "<x:t>" << m_t->toString() << "</x:t>";
     }
 
     _outStream << "</" << _elemName << ">";
@@ -44328,13 +44328,13 @@ void CT_RElt::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
 
     if (m_has_rPr)
     {
-        m_rPr->toXmlElem("ss:rPr", "", _outStream);
+        m_rPr->toXmlElem("x:rPr", "", _outStream);
     }
 
 
     if (m_has_t)
     {
-        _outStream << "<ss:t>" << m_t->toString() << "</ss:t>";
+        _outStream << "<x:t>" << m_t->toString() << "</x:t>";
     }
 
     _outStream << "</" << _elemName << ">";
@@ -44509,91 +44509,91 @@ void CT_RPrElt::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_rFont())
             {
-                (*iter)->get_rFont().toXmlElem("ss:rFont", "", _outStream);
+                (*iter)->get_rFont().toXmlElem("x:rFont", "", _outStream);
             }
 
 
             else if ((*iter)->has_charset())
             {
-                (*iter)->get_charset().toXmlElem("ss:charset", "", _outStream);
+                (*iter)->get_charset().toXmlElem("x:charset", "", _outStream);
             }
 
 
             else if ((*iter)->has_family())
             {
-                (*iter)->get_family().toXmlElem("ss:family", "", _outStream);
+                (*iter)->get_family().toXmlElem("x:family", "", _outStream);
             }
 
 
             else if ((*iter)->has_b())
             {
-                (*iter)->get_b().toXmlElem("ss:b", "", _outStream);
+                (*iter)->get_b().toXmlElem("x:b", "", _outStream);
             }
 
 
             else if ((*iter)->has_i())
             {
-                (*iter)->get_i().toXmlElem("ss:i", "", _outStream);
+                (*iter)->get_i().toXmlElem("x:i", "", _outStream);
             }
 
 
             else if ((*iter)->has_strike())
             {
-                (*iter)->get_strike().toXmlElem("ss:strike", "", _outStream);
+                (*iter)->get_strike().toXmlElem("x:strike", "", _outStream);
             }
 
 
             else if ((*iter)->has_outline())
             {
-                (*iter)->get_outline().toXmlElem("ss:outline", "", _outStream);
+                (*iter)->get_outline().toXmlElem("x:outline", "", _outStream);
             }
 
 
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("ss:shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("x:shadow", "", _outStream);
             }
 
 
             else if ((*iter)->has_condense())
             {
-                (*iter)->get_condense().toXmlElem("ss:condense", "", _outStream);
+                (*iter)->get_condense().toXmlElem("x:condense", "", _outStream);
             }
 
 
             else if ((*iter)->has_extend())
             {
-                (*iter)->get_extend().toXmlElem("ss:extend", "", _outStream);
+                (*iter)->get_extend().toXmlElem("x:extend", "", _outStream);
             }
 
 
             else if ((*iter)->has_color())
             {
-                (*iter)->get_color().toXmlElem("ss:color", "", _outStream);
+                (*iter)->get_color().toXmlElem("x:color", "", _outStream);
             }
 
 
             else if ((*iter)->has_sz())
             {
-                (*iter)->get_sz().toXmlElem("ss:sz", "", _outStream);
+                (*iter)->get_sz().toXmlElem("x:sz", "", _outStream);
             }
 
 
             else if ((*iter)->has_u())
             {
-                (*iter)->get_u().toXmlElem("ss:u", "", _outStream);
+                (*iter)->get_u().toXmlElem("x:u", "", _outStream);
             }
 
 
             else if ((*iter)->has_vertAlign())
             {
-                (*iter)->get_vertAlign().toXmlElem("ss:vertAlign", "", _outStream);
+                (*iter)->get_vertAlign().toXmlElem("x:vertAlign", "", _outStream);
             }
 
 
             else if ((*iter)->has_scheme())
             {
-                (*iter)->get_scheme().toXmlElem("ss:scheme", "", _outStream);
+                (*iter)->get_scheme().toXmlElem("x:scheme", "", _outStream);
             }
 
 
@@ -47034,7 +47034,7 @@ void CT_Rst::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
 
     if (m_has_t)
     {
-        _outStream << "<ss:t>" << m_t->toString() << "</ss:t>";
+        _outStream << "<x:t>" << m_t->toString() << "</x:t>";
     }
 
     {
@@ -47043,13 +47043,13 @@ void CT_Rst::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
         {
             if ((*iter)->has_r())
             {
-                (*iter)->get_r().toXmlElem("ss:r", "", _outStream);
+                (*iter)->get_r().toXmlElem("x:r", "", _outStream);
             }
 
 
             else if ((*iter)->has_rPh())
             {
-                (*iter)->get_rPh().toXmlElem("ss:rPh", "", _outStream);
+                (*iter)->get_rPh().toXmlElem("x:rPh", "", _outStream);
             }
 
 
@@ -47059,7 +47059,7 @@ void CT_Rst::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
 
     if (m_has_phoneticPr)
     {
-        m_phoneticPr->toXmlElem("ss:phoneticPr", "", _outStream);
+        m_phoneticPr->toXmlElem("x:phoneticPr", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -47507,7 +47507,7 @@ void CT_RevisionHeaders::toXmlElem(const std::string& _elemName, const std::stri
         {
             if ((*iter)->has_header())
             {
-                (*iter)->get_header().toXmlElem("ss:header", "", _outStream);
+                (*iter)->get_header().toXmlElem("x:header", "", _outStream);
             }
 
 
@@ -47894,73 +47894,73 @@ void CT_Revisions::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_rrc())
             {
-                (*iter)->get_rrc().toXmlElem("ss:rrc", "", _outStream);
+                (*iter)->get_rrc().toXmlElem("x:rrc", "", _outStream);
             }
 
 
             else if ((*iter)->has_rm())
             {
-                (*iter)->get_rm().toXmlElem("ss:rm", "", _outStream);
+                (*iter)->get_rm().toXmlElem("x:rm", "", _outStream);
             }
 
 
             else if ((*iter)->has_rcv())
             {
-                (*iter)->get_rcv().toXmlElem("ss:rcv", "", _outStream);
+                (*iter)->get_rcv().toXmlElem("x:rcv", "", _outStream);
             }
 
 
             else if ((*iter)->has_rsnm())
             {
-                (*iter)->get_rsnm().toXmlElem("ss:rsnm", "", _outStream);
+                (*iter)->get_rsnm().toXmlElem("x:rsnm", "", _outStream);
             }
 
 
             else if ((*iter)->has_ris())
             {
-                (*iter)->get_ris().toXmlElem("ss:ris", "", _outStream);
+                (*iter)->get_ris().toXmlElem("x:ris", "", _outStream);
             }
 
 
             else if ((*iter)->has_rcc())
             {
-                (*iter)->get_rcc().toXmlElem("ss:rcc", "", _outStream);
+                (*iter)->get_rcc().toXmlElem("x:rcc", "", _outStream);
             }
 
 
             else if ((*iter)->has_rfmt())
             {
-                (*iter)->get_rfmt().toXmlElem("ss:rfmt", "", _outStream);
+                (*iter)->get_rfmt().toXmlElem("x:rfmt", "", _outStream);
             }
 
 
             else if ((*iter)->has_raf())
             {
-                (*iter)->get_raf().toXmlElem("ss:raf", "", _outStream);
+                (*iter)->get_raf().toXmlElem("x:raf", "", _outStream);
             }
 
 
             else if ((*iter)->has_rdn())
             {
-                (*iter)->get_rdn().toXmlElem("ss:rdn", "", _outStream);
+                (*iter)->get_rdn().toXmlElem("x:rdn", "", _outStream);
             }
 
 
             else if ((*iter)->has_rcmt())
             {
-                (*iter)->get_rcmt().toXmlElem("ss:rcmt", "", _outStream);
+                (*iter)->get_rcmt().toXmlElem("x:rcmt", "", _outStream);
             }
 
 
             else if ((*iter)->has_rqt())
             {
-                (*iter)->get_rqt().toXmlElem("ss:rqt", "", _outStream);
+                (*iter)->get_rqt().toXmlElem("x:rqt", "", _outStream);
             }
 
 
             else if ((*iter)->has_rcft())
             {
-                (*iter)->get_rcft().toXmlElem("ss:rcft", "", _outStream);
+                (*iter)->get_rcft().toXmlElem("x:rcft", "", _outStream);
             }
 
 
@@ -49731,19 +49731,19 @@ void CT_RevisionHeader::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_sheetIdMap)
     {
-        m_sheetIdMap->toXmlElem("ss:sheetIdMap", "", _outStream);
+        m_sheetIdMap->toXmlElem("x:sheetIdMap", "", _outStream);
     }
 
 
     if (m_has_reviewedList)
     {
-        m_reviewedList->toXmlElem("ss:reviewedList", "", _outStream);
+        m_reviewedList->toXmlElem("x:reviewedList", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -49945,7 +49945,7 @@ void CT_SheetIdMap::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_sheetId())
             {
-                (*iter)->get_sheetId().toXmlElem("ss:sheetId", "", _outStream);
+                (*iter)->get_sheetId().toXmlElem("x:sheetId", "", _outStream);
             }
 
 
@@ -50138,7 +50138,7 @@ void CT_ReviewedRevisions::toXmlElem(const std::string& _elemName, const std::st
         {
             if ((*iter)->has_reviewed())
             {
-                (*iter)->get_reviewed().toXmlElem("ss:reviewed", "", _outStream);
+                (*iter)->get_reviewed().toXmlElem("x:reviewed", "", _outStream);
             }
 
 
@@ -50821,19 +50821,19 @@ void CT_RevisionRowColumn::toXmlElem(const std::string& _elemName, const std::st
         {
             if ((*iter)->has_undo())
             {
-                (*iter)->get_undo().toXmlElem("ss:undo", "", _outStream);
+                (*iter)->get_undo().toXmlElem("x:undo", "", _outStream);
             }
 
 
             else if ((*iter)->has_rcc())
             {
-                (*iter)->get_rcc().toXmlElem("ss:rcc", "", _outStream);
+                (*iter)->get_rcc().toXmlElem("x:rcc", "", _outStream);
             }
 
 
             else if ((*iter)->has_rfmt())
             {
-                (*iter)->get_rfmt().toXmlElem("ss:rfmt", "", _outStream);
+                (*iter)->get_rfmt().toXmlElem("x:rfmt", "", _outStream);
             }
 
 
@@ -51286,19 +51286,19 @@ void CT_RevisionMove::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_undo())
             {
-                (*iter)->get_undo().toXmlElem("ss:undo", "", _outStream);
+                (*iter)->get_undo().toXmlElem("x:undo", "", _outStream);
             }
 
 
             else if ((*iter)->has_rcc())
             {
-                (*iter)->get_rcc().toXmlElem("ss:rcc", "", _outStream);
+                (*iter)->get_rcc().toXmlElem("x:rcc", "", _outStream);
             }
 
 
             else if ((*iter)->has_rfmt())
             {
-                (*iter)->get_rfmt().toXmlElem("ss:rfmt", "", _outStream);
+                (*iter)->get_rfmt().toXmlElem("x:rfmt", "", _outStream);
             }
 
 
@@ -51833,7 +51833,7 @@ void CT_RevisionSheetRename::toXmlElem(const std::string& _elemName, const std::
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -52542,31 +52542,31 @@ void CT_RevisionCellChange::toXmlElem(const std::string& _elemName, const std::s
 
     if (m_has_oc)
     {
-        m_oc->toXmlElem("ss:oc", "", _outStream);
+        m_oc->toXmlElem("x:oc", "", _outStream);
     }
 
 
     if (m_has_nc)
     {
-        m_nc->toXmlElem("ss:nc", "", _outStream);
+        m_nc->toXmlElem("x:nc", "", _outStream);
     }
 
 
     if (m_has_odxf)
     {
-        m_odxf->toXmlElem("ss:odxf", "", _outStream);
+        m_odxf->toXmlElem("x:odxf", "", _outStream);
     }
 
 
     if (m_has_ndxf)
     {
-        m_ndxf->toXmlElem("ss:ndxf", "", _outStream);
+        m_ndxf->toXmlElem("x:ndxf", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -52983,13 +52983,13 @@ void CT_RevisionFormatting::toXmlElem(const std::string& _elemName, const std::s
 
     if (m_has_dxf)
     {
-        m_dxf->toXmlElem("ss:dxf", "", _outStream);
+        m_dxf->toXmlElem("x:dxf", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -54269,19 +54269,19 @@ void CT_RevisionDefinedName::toXmlElem(const std::string& _elemName, const std::
 
     if (m_has_formula)
     {
-        _outStream << "<ss:formula>" << m_formula->toString() << "</ss:formula>";
+        _outStream << "<x:formula>" << m_formula->toString() << "</x:formula>";
     }
 
 
     if (m_has_oldFormula)
     {
-        _outStream << "<ss:oldFormula>" << m_oldFormula->toString() << "</ss:oldFormula>";
+        _outStream << "<x:oldFormula>" << m_oldFormula->toString() << "</x:oldFormula>";
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -55063,7 +55063,7 @@ void CT_Users::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
         {
             if ((*iter)->has_userInfo())
             {
-                (*iter)->get_userInfo().toXmlElem("ss:userInfo", "", _outStream);
+                (*iter)->get_userInfo().toXmlElem("x:userInfo", "", _outStream);
             }
 
 
@@ -55251,7 +55251,7 @@ void CT_SharedUser::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -56274,25 +56274,25 @@ void CT_Macrosheet::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("ss:sheetPr", "", _outStream);
+        m_sheetPr->toXmlElem("x:sheetPr", "", _outStream);
     }
 
 
     if (m_has_dimension)
     {
-        m_dimension->toXmlElem("ss:dimension", "", _outStream);
+        m_dimension->toXmlElem("x:dimension", "", _outStream);
     }
 
 
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("ss:sheetViews", "", _outStream);
+        m_sheetViews->toXmlElem("x:sheetViews", "", _outStream);
     }
 
 
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("ss:sheetFormatPr", "", _outStream);
+        m_sheetFormatPr->toXmlElem("x:sheetFormatPr", "", _outStream);
     }
 
     {
@@ -56301,7 +56301,7 @@ void CT_Macrosheet::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_cols())
             {
-                (*iter)->get_cols().toXmlElem("ss:cols", "", _outStream);
+                (*iter)->get_cols().toXmlElem("x:cols", "", _outStream);
             }
 
 
@@ -56313,43 +56313,43 @@ void CT_Macrosheet::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_sheetData)
     {
-        m_sheetData->toXmlElem("ss:sheetData", "", _outStream);
+        m_sheetData->toXmlElem("x:sheetData", "", _outStream);
     }
 
 
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("ss:sheetProtection", "", _outStream);
+        m_sheetProtection->toXmlElem("x:sheetProtection", "", _outStream);
     }
 
 
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("ss:autoFilter", "", _outStream);
+        m_autoFilter->toXmlElem("x:autoFilter", "", _outStream);
     }
 
 
     if (m_has_sortState)
     {
-        m_sortState->toXmlElem("ss:sortState", "", _outStream);
+        m_sortState->toXmlElem("x:sortState", "", _outStream);
     }
 
 
     if (m_has_dataConsolidate)
     {
-        m_dataConsolidate->toXmlElem("ss:dataConsolidate", "", _outStream);
+        m_dataConsolidate->toXmlElem("x:dataConsolidate", "", _outStream);
     }
 
 
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("ss:customSheetViews", "", _outStream);
+        m_customSheetViews->toXmlElem("x:customSheetViews", "", _outStream);
     }
 
 
     if (m_has_phoneticPr)
     {
-        m_phoneticPr->toXmlElem("ss:phoneticPr", "", _outStream);
+        m_phoneticPr->toXmlElem("x:phoneticPr", "", _outStream);
     }
 
     {
@@ -56358,7 +56358,7 @@ void CT_Macrosheet::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_conditionalFormatting())
             {
-                (*iter)->get_conditionalFormatting().toXmlElem("ss:conditionalFormatting", "", _outStream);
+                (*iter)->get_conditionalFormatting().toXmlElem("x:conditionalFormatting", "", _outStream);
             }
 
 
@@ -56368,85 +56368,85 @@ void CT_Macrosheet::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_printOptions)
     {
-        m_printOptions->toXmlElem("ss:printOptions", "", _outStream);
+        m_printOptions->toXmlElem("x:printOptions", "", _outStream);
     }
 
 
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("ss:pageMargins", "", _outStream);
+        m_pageMargins->toXmlElem("x:pageMargins", "", _outStream);
     }
 
 
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("ss:pageSetup", "", _outStream);
+        m_pageSetup->toXmlElem("x:pageSetup", "", _outStream);
     }
 
 
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("ss:headerFooter", "", _outStream);
+        m_headerFooter->toXmlElem("x:headerFooter", "", _outStream);
     }
 
 
     if (m_has_rowBreaks)
     {
-        m_rowBreaks->toXmlElem("ss:rowBreaks", "", _outStream);
+        m_rowBreaks->toXmlElem("x:rowBreaks", "", _outStream);
     }
 
 
     if (m_has_colBreaks)
     {
-        m_colBreaks->toXmlElem("ss:colBreaks", "", _outStream);
+        m_colBreaks->toXmlElem("x:colBreaks", "", _outStream);
     }
 
 
     if (m_has_customProperties)
     {
-        m_customProperties->toXmlElem("ss:customProperties", "", _outStream);
+        m_customProperties->toXmlElem("x:customProperties", "", _outStream);
     }
 
 
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("ss:drawing", "", _outStream);
+        m_drawing->toXmlElem("x:drawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("ss:legacyDrawing", "", _outStream);
+        m_legacyDrawing->toXmlElem("x:legacyDrawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("ss:legacyDrawingHF", "", _outStream);
+        m_legacyDrawingHF->toXmlElem("x:legacyDrawingHF", "", _outStream);
     }
 
 
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("ss:drawingHF", "", _outStream);
+        m_drawingHF->toXmlElem("x:drawingHF", "", _outStream);
     }
 
 
     if (m_has_picture)
     {
-        m_picture->toXmlElem("ss:picture", "", _outStream);
+        m_picture->toXmlElem("x:picture", "", _outStream);
     }
 
 
     if (m_has_oleObjects)
     {
-        m_oleObjects->toXmlElem("ss:oleObjects", "", _outStream);
+        m_oleObjects->toXmlElem("x:oleObjects", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -57112,97 +57112,97 @@ void CT_Dialogsheet::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("ss:sheetPr", "", _outStream);
+        m_sheetPr->toXmlElem("x:sheetPr", "", _outStream);
     }
 
 
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("ss:sheetViews", "", _outStream);
+        m_sheetViews->toXmlElem("x:sheetViews", "", _outStream);
     }
 
 
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("ss:sheetFormatPr", "", _outStream);
+        m_sheetFormatPr->toXmlElem("x:sheetFormatPr", "", _outStream);
     }
 
 
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("ss:sheetProtection", "", _outStream);
+        m_sheetProtection->toXmlElem("x:sheetProtection", "", _outStream);
     }
 
 
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("ss:customSheetViews", "", _outStream);
+        m_customSheetViews->toXmlElem("x:customSheetViews", "", _outStream);
     }
 
 
     if (m_has_printOptions)
     {
-        m_printOptions->toXmlElem("ss:printOptions", "", _outStream);
+        m_printOptions->toXmlElem("x:printOptions", "", _outStream);
     }
 
 
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("ss:pageMargins", "", _outStream);
+        m_pageMargins->toXmlElem("x:pageMargins", "", _outStream);
     }
 
 
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("ss:pageSetup", "", _outStream);
+        m_pageSetup->toXmlElem("x:pageSetup", "", _outStream);
     }
 
 
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("ss:headerFooter", "", _outStream);
+        m_headerFooter->toXmlElem("x:headerFooter", "", _outStream);
     }
 
 
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("ss:drawing", "", _outStream);
+        m_drawing->toXmlElem("x:drawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("ss:legacyDrawing", "", _outStream);
+        m_legacyDrawing->toXmlElem("x:legacyDrawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("ss:legacyDrawingHF", "", _outStream);
+        m_legacyDrawingHF->toXmlElem("x:legacyDrawingHF", "", _outStream);
     }
 
 
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("ss:drawingHF", "", _outStream);
+        m_drawingHF->toXmlElem("x:drawingHF", "", _outStream);
     }
 
 
     if (m_has_oleObjects)
     {
-        m_oleObjects->toXmlElem("ss:oleObjects", "", _outStream);
+        m_oleObjects->toXmlElem("x:oleObjects", "", _outStream);
     }
 
 
     if (m_has_controls)
     {
-        m_controls->toXmlElem("ss:controls", "", _outStream);
+        m_controls->toXmlElem("x:controls", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -58573,25 +58573,25 @@ void CT_Worksheet::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("ss:sheetPr", "", _outStream);
+        m_sheetPr->toXmlElem("x:sheetPr", "", _outStream);
     }
 
 
     if (m_has_dimension)
     {
-        m_dimension->toXmlElem("ss:dimension", "", _outStream);
+        m_dimension->toXmlElem("x:dimension", "", _outStream);
     }
 
 
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("ss:sheetViews", "", _outStream);
+        m_sheetViews->toXmlElem("x:sheetViews", "", _outStream);
     }
 
 
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("ss:sheetFormatPr", "", _outStream);
+        m_sheetFormatPr->toXmlElem("x:sheetFormatPr", "", _outStream);
     }
 
     {
@@ -58600,7 +58600,7 @@ void CT_Worksheet::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_cols())
             {
-                (*iter)->get_cols().toXmlElem("ss:cols", "", _outStream);
+                (*iter)->get_cols().toXmlElem("x:cols", "", _outStream);
             }
 
 
@@ -58612,67 +58612,67 @@ void CT_Worksheet::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_sheetData)
     {
-        m_sheetData->toXmlElem("ss:sheetData", "", _outStream);
+        m_sheetData->toXmlElem("x:sheetData", "", _outStream);
     }
 
 
     if (m_has_sheetCalcPr)
     {
-        m_sheetCalcPr->toXmlElem("ss:sheetCalcPr", "", _outStream);
+        m_sheetCalcPr->toXmlElem("x:sheetCalcPr", "", _outStream);
     }
 
 
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("ss:sheetProtection", "", _outStream);
+        m_sheetProtection->toXmlElem("x:sheetProtection", "", _outStream);
     }
 
 
     if (m_has_protectedRanges)
     {
-        m_protectedRanges->toXmlElem("ss:protectedRanges", "", _outStream);
+        m_protectedRanges->toXmlElem("x:protectedRanges", "", _outStream);
     }
 
 
     if (m_has_scenarios)
     {
-        m_scenarios->toXmlElem("ss:scenarios", "", _outStream);
+        m_scenarios->toXmlElem("x:scenarios", "", _outStream);
     }
 
 
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("ss:autoFilter", "", _outStream);
+        m_autoFilter->toXmlElem("x:autoFilter", "", _outStream);
     }
 
 
     if (m_has_sortState)
     {
-        m_sortState->toXmlElem("ss:sortState", "", _outStream);
+        m_sortState->toXmlElem("x:sortState", "", _outStream);
     }
 
 
     if (m_has_dataConsolidate)
     {
-        m_dataConsolidate->toXmlElem("ss:dataConsolidate", "", _outStream);
+        m_dataConsolidate->toXmlElem("x:dataConsolidate", "", _outStream);
     }
 
 
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("ss:customSheetViews", "", _outStream);
+        m_customSheetViews->toXmlElem("x:customSheetViews", "", _outStream);
     }
 
 
     if (m_has_mergeCells)
     {
-        m_mergeCells->toXmlElem("ss:mergeCells", "", _outStream);
+        m_mergeCells->toXmlElem("x:mergeCells", "", _outStream);
     }
 
 
     if (m_has_phoneticPr)
     {
-        m_phoneticPr->toXmlElem("ss:phoneticPr", "", _outStream);
+        m_phoneticPr->toXmlElem("x:phoneticPr", "", _outStream);
     }
 
     {
@@ -58681,7 +58681,7 @@ void CT_Worksheet::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_conditionalFormatting())
             {
-                (*iter)->get_conditionalFormatting().toXmlElem("ss:conditionalFormatting", "", _outStream);
+                (*iter)->get_conditionalFormatting().toXmlElem("x:conditionalFormatting", "", _outStream);
             }
 
 
@@ -58691,133 +58691,133 @@ void CT_Worksheet::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_dataValidations)
     {
-        m_dataValidations->toXmlElem("ss:dataValidations", "", _outStream);
+        m_dataValidations->toXmlElem("x:dataValidations", "", _outStream);
     }
 
 
     if (m_has_hyperlinks)
     {
-        m_hyperlinks->toXmlElem("ss:hyperlinks", "", _outStream);
+        m_hyperlinks->toXmlElem("x:hyperlinks", "", _outStream);
     }
 
 
     if (m_has_printOptions)
     {
-        m_printOptions->toXmlElem("ss:printOptions", "", _outStream);
+        m_printOptions->toXmlElem("x:printOptions", "", _outStream);
     }
 
 
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("ss:pageMargins", "", _outStream);
+        m_pageMargins->toXmlElem("x:pageMargins", "", _outStream);
     }
 
 
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("ss:pageSetup", "", _outStream);
+        m_pageSetup->toXmlElem("x:pageSetup", "", _outStream);
     }
 
 
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("ss:headerFooter", "", _outStream);
+        m_headerFooter->toXmlElem("x:headerFooter", "", _outStream);
     }
 
 
     if (m_has_rowBreaks)
     {
-        m_rowBreaks->toXmlElem("ss:rowBreaks", "", _outStream);
+        m_rowBreaks->toXmlElem("x:rowBreaks", "", _outStream);
     }
 
 
     if (m_has_colBreaks)
     {
-        m_colBreaks->toXmlElem("ss:colBreaks", "", _outStream);
+        m_colBreaks->toXmlElem("x:colBreaks", "", _outStream);
     }
 
 
     if (m_has_customProperties)
     {
-        m_customProperties->toXmlElem("ss:customProperties", "", _outStream);
+        m_customProperties->toXmlElem("x:customProperties", "", _outStream);
     }
 
 
     if (m_has_cellWatches)
     {
-        m_cellWatches->toXmlElem("ss:cellWatches", "", _outStream);
+        m_cellWatches->toXmlElem("x:cellWatches", "", _outStream);
     }
 
 
     if (m_has_ignoredErrors)
     {
-        m_ignoredErrors->toXmlElem("ss:ignoredErrors", "", _outStream);
+        m_ignoredErrors->toXmlElem("x:ignoredErrors", "", _outStream);
     }
 
 
     if (m_has_smartTags)
     {
-        m_smartTags->toXmlElem("ss:smartTags", "", _outStream);
+        m_smartTags->toXmlElem("x:smartTags", "", _outStream);
     }
 
 
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("ss:drawing", "", _outStream);
+        m_drawing->toXmlElem("x:drawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("ss:legacyDrawing", "", _outStream);
+        m_legacyDrawing->toXmlElem("x:legacyDrawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("ss:legacyDrawingHF", "", _outStream);
+        m_legacyDrawingHF->toXmlElem("x:legacyDrawingHF", "", _outStream);
     }
 
 
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("ss:drawingHF", "", _outStream);
+        m_drawingHF->toXmlElem("x:drawingHF", "", _outStream);
     }
 
 
     if (m_has_picture)
     {
-        m_picture->toXmlElem("ss:picture", "", _outStream);
+        m_picture->toXmlElem("x:picture", "", _outStream);
     }
 
 
     if (m_has_oleObjects)
     {
-        m_oleObjects->toXmlElem("ss:oleObjects", "", _outStream);
+        m_oleObjects->toXmlElem("x:oleObjects", "", _outStream);
     }
 
 
     if (m_has_controls)
     {
-        m_controls->toXmlElem("ss:controls", "", _outStream);
+        m_controls->toXmlElem("x:controls", "", _outStream);
     }
 
 
     if (m_has_webPublishItems)
     {
-        m_webPublishItems->toXmlElem("ss:webPublishItems", "", _outStream);
+        m_webPublishItems->toXmlElem("x:webPublishItems", "", _outStream);
     }
 
 
     if (m_has_tableParts)
     {
-        m_tableParts->toXmlElem("ss:tableParts", "", _outStream);
+        m_tableParts->toXmlElem("x:tableParts", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -58944,7 +58944,7 @@ void CT_SheetData::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_row())
             {
-                (*iter)->get_row().toXmlElem("ss:row", "", _outStream);
+                (*iter)->get_row().toXmlElem("x:row", "", _outStream);
             }
 
 
@@ -59398,7 +59398,7 @@ void CT_Cols::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
         {
             if ((*iter)->has_col())
             {
-                (*iter)->get_col().toXmlElem("ss:col", "", _outStream);
+                (*iter)->get_col().toXmlElem("x:col", "", _outStream);
             }
 
 
@@ -59995,7 +59995,7 @@ void CT_Row::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
         {
             if ((*iter)->has_c())
             {
-                (*iter)->get_c().toXmlElem("ss:c", "", _outStream);
+                (*iter)->get_c().toXmlElem("x:c", "", _outStream);
             }
 
 
@@ -60005,7 +60005,7 @@ void CT_Row::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -60498,25 +60498,25 @@ void CT_Cell::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
 
     if (m_has_f)
     {
-        m_f->toXmlElem("ss:f", "", _outStream);
+        m_f->toXmlElem("x:f", "", _outStream);
     }
 
 
     if (m_has_v)
     {
-        _outStream << "<ss:v>" << m_v->toString() << "</ss:v>";
+        _outStream << "<x:v>" << m_v->toString() << "</x:v>";
     }
 
 
     if (m_has_is)
     {
-        m_is->toXmlElem("ss:is", "", _outStream);
+        m_is->toXmlElem("x:is", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -60880,19 +60880,19 @@ void CT_SheetPr::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_tabColor)
     {
-        m_tabColor->toXmlElem("ss:tabColor", "", _outStream);
+        m_tabColor->toXmlElem("x:tabColor", "", _outStream);
     }
 
 
     if (m_has_outlinePr)
     {
-        m_outlinePr->toXmlElem("ss:outlinePr", "", _outStream);
+        m_outlinePr->toXmlElem("x:outlinePr", "", _outStream);
     }
 
 
     if (m_has_pageSetUpPr)
     {
-        m_pageSetUpPr->toXmlElem("ss:pageSetUpPr", "", _outStream);
+        m_pageSetUpPr->toXmlElem("x:pageSetUpPr", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -61215,7 +61215,7 @@ void CT_SheetViews::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_sheetView())
             {
-                (*iter)->get_sheetView().toXmlElem("ss:sheetView", "", _outStream);
+                (*iter)->get_sheetView().toXmlElem("x:sheetView", "", _outStream);
             }
 
 
@@ -61225,7 +61225,7 @@ void CT_SheetViews::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -61633,7 +61633,7 @@ void CT_SheetView::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_pane)
     {
-        m_pane->toXmlElem("ss:pane", "", _outStream);
+        m_pane->toXmlElem("x:pane", "", _outStream);
     }
 
     {
@@ -61653,13 +61653,13 @@ void CT_SheetView::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_selection())
             {
-                (*iter)->get_selection().toXmlElem("ss:selection", "", _outStream);
+                (*iter)->get_selection().toXmlElem("x:selection", "", _outStream);
             }
 
 
             else if ((*iter)->has_pivotSelection())
             {
-                (*iter)->get_pivotSelection().toXmlElem("ss:pivotSelection", "", _outStream);
+                (*iter)->get_pivotSelection().toXmlElem("x:pivotSelection", "", _outStream);
             }
 
 
@@ -61669,7 +61669,7 @@ void CT_SheetView::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -62563,7 +62563,7 @@ void CT_PivotSelection::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_pivotArea)
     {
-        m_pivotArea->toXmlElem("ss:pivotArea", "", _outStream);
+        m_pivotArea->toXmlElem("x:pivotArea", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -63109,7 +63109,7 @@ void CT_PageBreak::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_brk())
             {
-                (*iter)->get_brk().toXmlElem("ss:brk", "", _outStream);
+                (*iter)->get_brk().toXmlElem("x:brk", "", _outStream);
             }
 
 
@@ -63732,7 +63732,7 @@ void CT_DataConsolidate::toXmlElem(const std::string& _elemName, const std::stri
 
     if (m_has_dataRefs)
     {
-        m_dataRefs->toXmlElem("ss:dataRefs", "", _outStream);
+        m_dataRefs->toXmlElem("x:dataRefs", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -63889,7 +63889,7 @@ void CT_DataRefs::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_dataRef())
             {
-                (*iter)->get_dataRef().toXmlElem("ss:dataRef", "", _outStream);
+                (*iter)->get_dataRef().toXmlElem("x:dataRef", "", _outStream);
             }
 
 
@@ -64206,7 +64206,7 @@ void CT_MergeCells::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_mergeCell())
             {
-                (*iter)->get_mergeCell().toXmlElem("ss:mergeCell", "", _outStream);
+                (*iter)->get_mergeCell().toXmlElem("x:mergeCell", "", _outStream);
             }
 
 
@@ -64399,7 +64399,7 @@ void CT_SmartTags::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_cellSmartTags())
             {
-                (*iter)->get_cellSmartTags().toXmlElem("ss:cellSmartTags", "", _outStream);
+                (*iter)->get_cellSmartTags().toXmlElem("x:cellSmartTags", "", _outStream);
             }
 
 
@@ -64519,7 +64519,7 @@ void CT_CellSmartTags::toXmlElem(const std::string& _elemName, const std::string
         {
             if ((*iter)->has_cellSmartTag())
             {
-                (*iter)->get_cellSmartTag().toXmlElem("ss:cellSmartTag", "", _outStream);
+                (*iter)->get_cellSmartTag().toXmlElem("x:cellSmartTag", "", _outStream);
             }
 
 
@@ -64672,7 +64672,7 @@ void CT_CellSmartTag::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_cellSmartTagPr())
             {
-                (*iter)->get_cellSmartTagPr().toXmlElem("ss:cellSmartTagPr", "", _outStream);
+                (*iter)->get_cellSmartTagPr().toXmlElem("x:cellSmartTagPr", "", _outStream);
             }
 
 
@@ -65658,7 +65658,7 @@ void CT_CustomSheetViews::toXmlElem(const std::string& _elemName, const std::str
         {
             if ((*iter)->has_customSheetView())
             {
-                (*iter)->get_customSheetView().toXmlElem("ss:customSheetView", "", _outStream);
+                (*iter)->get_customSheetView().toXmlElem("x:customSheetView", "", _outStream);
             }
 
 
@@ -66349,61 +66349,61 @@ void CT_CustomSheetView::toXmlElem(const std::string& _elemName, const std::stri
 
     if (m_has_pane)
     {
-        m_pane->toXmlElem("ss:pane", "", _outStream);
+        m_pane->toXmlElem("x:pane", "", _outStream);
     }
 
 
     if (m_has_selection)
     {
-        m_selection->toXmlElem("ss:selection", "", _outStream);
+        m_selection->toXmlElem("x:selection", "", _outStream);
     }
 
 
     if (m_has_rowBreaks)
     {
-        m_rowBreaks->toXmlElem("ss:rowBreaks", "", _outStream);
+        m_rowBreaks->toXmlElem("x:rowBreaks", "", _outStream);
     }
 
 
     if (m_has_colBreaks)
     {
-        m_colBreaks->toXmlElem("ss:colBreaks", "", _outStream);
+        m_colBreaks->toXmlElem("x:colBreaks", "", _outStream);
     }
 
 
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("ss:pageMargins", "", _outStream);
+        m_pageMargins->toXmlElem("x:pageMargins", "", _outStream);
     }
 
 
     if (m_has_printOptions)
     {
-        m_printOptions->toXmlElem("ss:printOptions", "", _outStream);
+        m_printOptions->toXmlElem("x:printOptions", "", _outStream);
     }
 
 
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("ss:pageSetup", "", _outStream);
+        m_pageSetup->toXmlElem("x:pageSetup", "", _outStream);
     }
 
 
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("ss:headerFooter", "", _outStream);
+        m_headerFooter->toXmlElem("x:headerFooter", "", _outStream);
     }
 
 
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("ss:autoFilter", "", _outStream);
+        m_autoFilter->toXmlElem("x:autoFilter", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -66853,7 +66853,7 @@ void CT_DataValidations::toXmlElem(const std::string& _elemName, const std::stri
         {
             if ((*iter)->has_dataValidation())
             {
-                (*iter)->get_dataValidation().toXmlElem("ss:dataValidation", "", _outStream);
+                (*iter)->get_dataValidation().toXmlElem("x:dataValidation", "", _outStream);
             }
 
 
@@ -67274,13 +67274,13 @@ void CT_DataValidation::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_formula1)
     {
-        _outStream << "<ss:formula1>" << m_formula1->toString() << "</ss:formula1>";
+        _outStream << "<x:formula1>" << m_formula1->toString() << "</x:formula1>";
     }
 
 
     if (m_has_formula2)
     {
-        _outStream << "<ss:formula2>" << m_formula2->toString() << "</ss:formula2>";
+        _outStream << "<x:formula2>" << m_formula2->toString() << "</x:formula2>";
     }
 
     _outStream << "</" << _elemName << ">";
@@ -67655,7 +67655,7 @@ void CT_ConditionalFormatting::toXmlElem(const std::string& _elemName, const std
         {
             if ((*iter)->has_cfRule())
             {
-                (*iter)->get_cfRule().toXmlElem("ss:cfRule", "", _outStream);
+                (*iter)->get_cfRule().toXmlElem("x:cfRule", "", _outStream);
             }
 
 
@@ -67665,7 +67665,7 @@ void CT_ConditionalFormatting::toXmlElem(const std::string& _elemName, const std
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -68119,7 +68119,7 @@ void CT_CfRule::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_formula())
             {
-                _outStream << "<ss:formula>" << (*iter)->get_formula().toString() << "</ss:formula>";
+                _outStream << "<x:formula>" << (*iter)->get_formula().toString() << "</x:formula>";
             }
 
 
@@ -68129,25 +68129,25 @@ void CT_CfRule::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_colorScale)
     {
-        m_colorScale->toXmlElem("ss:colorScale", "", _outStream);
+        m_colorScale->toXmlElem("x:colorScale", "", _outStream);
     }
 
 
     if (m_has_dataBar)
     {
-        m_dataBar->toXmlElem("ss:dataBar", "", _outStream);
+        m_dataBar->toXmlElem("x:dataBar", "", _outStream);
     }
 
 
     if (m_has_iconSet)
     {
-        m_iconSet->toXmlElem("ss:iconSet", "", _outStream);
+        m_iconSet->toXmlElem("x:iconSet", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -68471,7 +68471,7 @@ void CT_Hyperlinks::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_hyperlink())
             {
-                (*iter)->get_hyperlink().toXmlElem("ss:hyperlink", "", _outStream);
+                (*iter)->get_hyperlink().toXmlElem("x:hyperlink", "", _outStream);
             }
 
 
@@ -69226,13 +69226,13 @@ void CT_ColorScale::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_cfvo())
             {
-                (*iter)->get_cfvo().toXmlElem("ss:cfvo", "", _outStream);
+                (*iter)->get_cfvo().toXmlElem("x:cfvo", "", _outStream);
             }
 
 
             else if ((*iter)->has_color())
             {
-                (*iter)->get_color().toXmlElem("ss:color", "", _outStream);
+                (*iter)->get_color().toXmlElem("x:color", "", _outStream);
             }
 
 
@@ -69450,7 +69450,7 @@ void CT_DataBar::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_cfvo())
             {
-                (*iter)->get_cfvo().toXmlElem("ss:cfvo", "", _outStream);
+                (*iter)->get_cfvo().toXmlElem("x:cfvo", "", _outStream);
             }
 
 
@@ -69462,7 +69462,7 @@ void CT_DataBar::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_color)
     {
-        m_color->toXmlElem("ss:color", "", _outStream);
+        m_color->toXmlElem("x:color", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -69662,7 +69662,7 @@ void CT_IconSet::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_cfvo())
             {
-                (*iter)->get_cfvo().toXmlElem("ss:cfvo", "", _outStream);
+                (*iter)->get_cfvo().toXmlElem("x:cfvo", "", _outStream);
             }
 
 
@@ -69890,7 +69890,7 @@ void CT_Cfvo::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -71260,37 +71260,37 @@ void CT_HeaderFooter::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_oddHeader)
     {
-        _outStream << "<ss:oddHeader>" << m_oddHeader->toString() << "</ss:oddHeader>";
+        _outStream << "<x:oddHeader>" << m_oddHeader->toString() << "</x:oddHeader>";
     }
 
 
     if (m_has_oddFooter)
     {
-        _outStream << "<ss:oddFooter>" << m_oddFooter->toString() << "</ss:oddFooter>";
+        _outStream << "<x:oddFooter>" << m_oddFooter->toString() << "</x:oddFooter>";
     }
 
 
     if (m_has_evenHeader)
     {
-        _outStream << "<ss:evenHeader>" << m_evenHeader->toString() << "</ss:evenHeader>";
+        _outStream << "<x:evenHeader>" << m_evenHeader->toString() << "</x:evenHeader>";
     }
 
 
     if (m_has_evenFooter)
     {
-        _outStream << "<ss:evenFooter>" << m_evenFooter->toString() << "</ss:evenFooter>";
+        _outStream << "<x:evenFooter>" << m_evenFooter->toString() << "</x:evenFooter>";
     }
 
 
     if (m_has_firstHeader)
     {
-        _outStream << "<ss:firstHeader>" << m_firstHeader->toString() << "</ss:firstHeader>";
+        _outStream << "<x:firstHeader>" << m_firstHeader->toString() << "</x:firstHeader>";
     }
 
 
     if (m_has_firstFooter)
     {
-        _outStream << "<ss:firstFooter>" << m_firstFooter->toString() << "</ss:firstFooter>";
+        _outStream << "<x:firstFooter>" << m_firstFooter->toString() << "</x:firstFooter>";
     }
 
     _outStream << "</" << _elemName << ">";
@@ -71462,7 +71462,7 @@ void CT_Scenarios::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_scenario())
             {
-                (*iter)->get_scenario().toXmlElem("ss:scenario", "", _outStream);
+                (*iter)->get_scenario().toXmlElem("x:scenario", "", _outStream);
             }
 
 
@@ -72261,7 +72261,7 @@ void CT_ProtectedRanges::toXmlElem(const std::string& _elemName, const std::stri
         {
             if ((*iter)->has_protectedRange())
             {
-                (*iter)->get_protectedRange().toXmlElem("ss:protectedRange", "", _outStream);
+                (*iter)->get_protectedRange().toXmlElem("x:protectedRange", "", _outStream);
             }
 
 
@@ -72477,7 +72477,7 @@ void CT_ProtectedRange::toXmlElem(const std::string& _elemName, const std::strin
         {
             if ((*iter)->has_securityDescriptor())
             {
-                _outStream << "<ss:securityDescriptor>" << (*iter)->get_securityDescriptor() << "</ss:securityDescriptor>";
+                _outStream << "<x:securityDescriptor>" << (*iter)->get_securityDescriptor() << "</x:securityDescriptor>";
             }
 
 
@@ -72805,7 +72805,7 @@ void CT_Scenario::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_inputCells())
             {
-                (*iter)->get_inputCells().toXmlElem("ss:inputCells", "", _outStream);
+                (*iter)->get_inputCells().toXmlElem("x:inputCells", "", _outStream);
             }
 
 
@@ -73222,7 +73222,7 @@ void CT_CellWatches::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_cellWatch())
             {
-                (*iter)->get_cellWatch().toXmlElem("ss:cellWatch", "", _outStream);
+                (*iter)->get_cellWatch().toXmlElem("x:cellWatch", "", _outStream);
             }
 
 
@@ -73868,85 +73868,85 @@ void CT_Chartsheet::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("ss:sheetPr", "", _outStream);
+        m_sheetPr->toXmlElem("x:sheetPr", "", _outStream);
     }
 
 
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("ss:sheetViews", "", _outStream);
+        m_sheetViews->toXmlElem("x:sheetViews", "", _outStream);
     }
 
 
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("ss:sheetProtection", "", _outStream);
+        m_sheetProtection->toXmlElem("x:sheetProtection", "", _outStream);
     }
 
 
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("ss:customSheetViews", "", _outStream);
+        m_customSheetViews->toXmlElem("x:customSheetViews", "", _outStream);
     }
 
 
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("ss:pageMargins", "", _outStream);
+        m_pageMargins->toXmlElem("x:pageMargins", "", _outStream);
     }
 
 
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("ss:pageSetup", "", _outStream);
+        m_pageSetup->toXmlElem("x:pageSetup", "", _outStream);
     }
 
 
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("ss:headerFooter", "", _outStream);
+        m_headerFooter->toXmlElem("x:headerFooter", "", _outStream);
     }
 
 
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("ss:drawing", "", _outStream);
+        m_drawing->toXmlElem("x:drawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("ss:legacyDrawing", "", _outStream);
+        m_legacyDrawing->toXmlElem("x:legacyDrawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("ss:legacyDrawingHF", "", _outStream);
+        m_legacyDrawingHF->toXmlElem("x:legacyDrawingHF", "", _outStream);
     }
 
 
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("ss:drawingHF", "", _outStream);
+        m_drawingHF->toXmlElem("x:drawingHF", "", _outStream);
     }
 
 
     if (m_has_picture)
     {
-        m_picture->toXmlElem("ss:picture", "", _outStream);
+        m_picture->toXmlElem("x:picture", "", _outStream);
     }
 
 
     if (m_has_webPublishItems)
     {
-        m_webPublishItems->toXmlElem("ss:webPublishItems", "", _outStream);
+        m_webPublishItems->toXmlElem("x:webPublishItems", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -74046,7 +74046,7 @@ void CT_ChartsheetPr::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_tabColor)
     {
-        m_tabColor->toXmlElem("ss:tabColor", "", _outStream);
+        m_tabColor->toXmlElem("x:tabColor", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -74180,7 +74180,7 @@ void CT_ChartsheetViews::toXmlElem(const std::string& _elemName, const std::stri
         {
             if ((*iter)->has_sheetView())
             {
-                (*iter)->get_sheetView().toXmlElem("ss:sheetView", "", _outStream);
+                (*iter)->get_sheetView().toXmlElem("x:sheetView", "", _outStream);
             }
 
 
@@ -74190,7 +74190,7 @@ void CT_ChartsheetViews::toXmlElem(const std::string& _elemName, const std::stri
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -74346,7 +74346,7 @@ void CT_ChartsheetView::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -75163,7 +75163,7 @@ void CT_CustomChartsheetViews::toXmlElem(const std::string& _elemName, const std
         {
             if ((*iter)->has_customSheetView())
             {
-                (*iter)->get_customSheetView().toXmlElem("ss:customSheetView", "", _outStream);
+                (*iter)->get_customSheetView().toXmlElem("x:customSheetView", "", _outStream);
             }
 
 
@@ -75405,19 +75405,19 @@ void CT_CustomChartsheetView::toXmlElem(const std::string& _elemName, const std:
 
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("ss:pageMargins", "", _outStream);
+        m_pageMargins->toXmlElem("x:pageMargins", "", _outStream);
     }
 
 
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("ss:pageSetup", "", _outStream);
+        m_pageSetup->toXmlElem("x:pageSetup", "", _outStream);
     }
 
 
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("ss:headerFooter", "", _outStream);
+        m_headerFooter->toXmlElem("x:headerFooter", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -75557,7 +75557,7 @@ void CT_CustomProperties::toXmlElem(const std::string& _elemName, const std::str
         {
             if ((*iter)->has_customPr())
             {
-                (*iter)->get_customPr().toXmlElem("ss:customPr", "", _outStream);
+                (*iter)->get_customPr().toXmlElem("x:customPr", "", _outStream);
             }
 
 
@@ -75772,7 +75772,7 @@ void CT_OleObjects::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_oleObject())
             {
-                (*iter)->get_oleObject().toXmlElem("ss:oleObject", "", _outStream);
+                (*iter)->get_oleObject().toXmlElem("x:oleObject", "", _outStream);
             }
 
 
@@ -75992,7 +75992,7 @@ void CT_OleObject::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_objectPr)
     {
-        m_objectPr->toXmlElem("ss:objectPr", "", _outStream);
+        m_objectPr->toXmlElem("x:objectPr", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -76360,7 +76360,7 @@ void CT_ObjectPr::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_anchor)
     {
-        m_anchor->toXmlElem("ss:anchor", "", _outStream);
+        m_anchor->toXmlElem("x:anchor", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -76642,7 +76642,7 @@ void CT_WebPublishItems::toXmlElem(const std::string& _elemName, const std::stri
         {
             if ((*iter)->has_webPublishItem())
             {
-                (*iter)->get_webPublishItem().toXmlElem("ss:webPublishItem", "", _outStream);
+                (*iter)->get_webPublishItem().toXmlElem("x:webPublishItem", "", _outStream);
             }
 
 
@@ -77081,7 +77081,7 @@ void CT_Controls::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_control())
             {
-                (*iter)->get_control().toXmlElem("ss:control", "", _outStream);
+                (*iter)->get_control().toXmlElem("x:control", "", _outStream);
             }
 
 
@@ -77235,7 +77235,7 @@ void CT_Control::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_controlPr)
     {
-        m_controlPr->toXmlElem("ss:controlPr", "", _outStream);
+        m_controlPr->toXmlElem("x:controlPr", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -77581,7 +77581,7 @@ void CT_ControlPr::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_anchor)
     {
-        m_anchor->toXmlElem("ss:anchor", "", _outStream);
+        m_anchor->toXmlElem("x:anchor", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -77947,7 +77947,7 @@ void CT_IgnoredErrors::toXmlElem(const std::string& _elemName, const std::string
         {
             if ((*iter)->has_ignoredError())
             {
-                (*iter)->get_ignoredError().toXmlElem("ss:ignoredError", "", _outStream);
+                (*iter)->get_ignoredError().toXmlElem("x:ignoredError", "", _outStream);
             }
 
 
@@ -77957,7 +77957,7 @@ void CT_IgnoredErrors::toXmlElem(const std::string& _elemName, const std::string
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -78387,7 +78387,7 @@ void CT_TableParts::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_tablePart())
             {
-                (*iter)->get_tablePart().toXmlElem("ss:tablePart", "", _outStream);
+                (*iter)->get_tablePart().toXmlElem("x:tablePart", "", _outStream);
             }
 
 
@@ -78781,19 +78781,19 @@ void CT_Metadata::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_metadataTypes)
     {
-        m_metadataTypes->toXmlElem("ss:metadataTypes", "", _outStream);
+        m_metadataTypes->toXmlElem("x:metadataTypes", "", _outStream);
     }
 
 
     if (m_has_metadataStrings)
     {
-        m_metadataStrings->toXmlElem("ss:metadataStrings", "", _outStream);
+        m_metadataStrings->toXmlElem("x:metadataStrings", "", _outStream);
     }
 
 
     if (m_has_mdxMetadata)
     {
-        m_mdxMetadata->toXmlElem("ss:mdxMetadata", "", _outStream);
+        m_mdxMetadata->toXmlElem("x:mdxMetadata", "", _outStream);
     }
 
     {
@@ -78802,7 +78802,7 @@ void CT_Metadata::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_futureMetadata())
             {
-                (*iter)->get_futureMetadata().toXmlElem("ss:futureMetadata", "", _outStream);
+                (*iter)->get_futureMetadata().toXmlElem("x:futureMetadata", "", _outStream);
             }
 
 
@@ -78812,19 +78812,19 @@ void CT_Metadata::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_cellMetadata)
     {
-        m_cellMetadata->toXmlElem("ss:cellMetadata", "", _outStream);
+        m_cellMetadata->toXmlElem("x:cellMetadata", "", _outStream);
     }
 
 
     if (m_has_valueMetadata)
     {
-        m_valueMetadata->toXmlElem("ss:valueMetadata", "", _outStream);
+        m_valueMetadata->toXmlElem("x:valueMetadata", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -78934,7 +78934,7 @@ void CT_MetadataTypes::toXmlElem(const std::string& _elemName, const std::string
         {
             if ((*iter)->has_metadataType())
             {
-                (*iter)->get_metadataType().toXmlElem("ss:metadataType", "", _outStream);
+                (*iter)->get_metadataType().toXmlElem("x:metadataType", "", _outStream);
             }
 
 
@@ -79893,7 +79893,7 @@ void CT_MetadataBlocks::toXmlElem(const std::string& _elemName, const std::strin
         {
             if ((*iter)->has_bk())
             {
-                (*iter)->get_bk().toXmlElem("ss:bk", "", _outStream);
+                (*iter)->get_bk().toXmlElem("x:bk", "", _outStream);
             }
 
 
@@ -80013,7 +80013,7 @@ void CT_MetadataBlock::toXmlElem(const std::string& _elemName, const std::string
         {
             if ((*iter)->has_rc())
             {
-                (*iter)->get_rc().toXmlElem("ss:rc", "", _outStream);
+                (*iter)->get_rc().toXmlElem("x:rc", "", _outStream);
             }
 
 
@@ -80266,7 +80266,7 @@ void CT_FutureMetadata::toXmlElem(const std::string& _elemName, const std::strin
         {
             if ((*iter)->has_bk())
             {
-                (*iter)->get_bk().toXmlElem("ss:bk", "", _outStream);
+                (*iter)->get_bk().toXmlElem("x:bk", "", _outStream);
             }
 
 
@@ -80276,7 +80276,7 @@ void CT_FutureMetadata::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -80421,7 +80421,7 @@ void CT_FutureMetadataBlock::toXmlElem(const std::string& _elemName, const std::
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -80499,7 +80499,7 @@ void CT_MdxMetadata::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_mdx())
             {
-                (*iter)->get_mdx().toXmlElem("ss:mdx", "", _outStream);
+                (*iter)->get_mdx().toXmlElem("x:mdx", "", _outStream);
             }
 
 
@@ -80880,25 +80880,25 @@ void CT_Mdx::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
 
     if (m_has_t)
     {
-        m_t->toXmlElem("ss:t", "", _outStream);
+        m_t->toXmlElem("x:t", "", _outStream);
     }
 
 
     if (m_has_ms)
     {
-        m_ms->toXmlElem("ss:ms", "", _outStream);
+        m_ms->toXmlElem("x:ms", "", _outStream);
     }
 
 
     if (m_has_p)
     {
-        m_p->toXmlElem("ss:p", "", _outStream);
+        m_p->toXmlElem("x:p", "", _outStream);
     }
 
 
     if (m_has_k)
     {
-        m_k->toXmlElem("ss:k", "", _outStream);
+        m_k->toXmlElem("x:k", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -81133,7 +81133,7 @@ void CT_MdxTuple::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_n())
             {
-                (*iter)->get_n().toXmlElem("ss:n", "", _outStream);
+                (*iter)->get_n().toXmlElem("x:n", "", _outStream);
             }
 
 
@@ -81444,7 +81444,7 @@ void CT_MdxSet::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_n())
             {
-                (*iter)->get_n().toXmlElem("ss:n", "", _outStream);
+                (*iter)->get_n().toXmlElem("x:n", "", _outStream);
             }
 
 
@@ -81921,7 +81921,7 @@ void CT_MetadataStrings::toXmlElem(const std::string& _elemName, const std::stri
         {
             if ((*iter)->has_s())
             {
-                (*iter)->get_s().toXmlElem("ss:s", "", _outStream);
+                (*iter)->get_s().toXmlElem("x:s", "", _outStream);
             }
 
 
@@ -82041,7 +82041,7 @@ void CT_SingleXmlCells::toXmlElem(const std::string& _elemName, const std::strin
         {
             if ((*iter)->has_singleXmlCell())
             {
-                (*iter)->get_singleXmlCell().toXmlElem("ss:singleXmlCell", "", _outStream);
+                (*iter)->get_singleXmlCell().toXmlElem("x:singleXmlCell", "", _outStream);
             }
 
 
@@ -82232,13 +82232,13 @@ void CT_SingleXmlCell::toXmlElem(const std::string& _elemName, const std::string
 
     if (m_has_xmlCellPr)
     {
-        m_xmlCellPr->toXmlElem("ss:xmlCellPr", "", _outStream);
+        m_xmlCellPr->toXmlElem("x:xmlCellPr", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -82433,13 +82433,13 @@ void CT_XmlCellPr::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_xmlPr)
     {
-        m_xmlPr->toXmlElem("ss:xmlPr", "", _outStream);
+        m_xmlPr->toXmlElem("x:xmlPr", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -82599,7 +82599,7 @@ void CT_XmlPr::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -83082,67 +83082,67 @@ void CT_Stylesheet::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_numFmts)
     {
-        m_numFmts->toXmlElem("ss:numFmts", "", _outStream);
+        m_numFmts->toXmlElem("x:numFmts", "", _outStream);
     }
 
 
     if (m_has_fonts)
     {
-        m_fonts->toXmlElem("ss:fonts", "", _outStream);
+        m_fonts->toXmlElem("x:fonts", "", _outStream);
     }
 
 
     if (m_has_fills)
     {
-        m_fills->toXmlElem("ss:fills", "", _outStream);
+        m_fills->toXmlElem("x:fills", "", _outStream);
     }
 
 
     if (m_has_borders)
     {
-        m_borders->toXmlElem("ss:borders", "", _outStream);
+        m_borders->toXmlElem("x:borders", "", _outStream);
     }
 
 
     if (m_has_cellStyleXfs)
     {
-        m_cellStyleXfs->toXmlElem("ss:cellStyleXfs", "", _outStream);
+        m_cellStyleXfs->toXmlElem("x:cellStyleXfs", "", _outStream);
     }
 
 
     if (m_has_cellXfs)
     {
-        m_cellXfs->toXmlElem("ss:cellXfs", "", _outStream);
+        m_cellXfs->toXmlElem("x:cellXfs", "", _outStream);
     }
 
 
     if (m_has_cellStyles)
     {
-        m_cellStyles->toXmlElem("ss:cellStyles", "", _outStream);
+        m_cellStyles->toXmlElem("x:cellStyles", "", _outStream);
     }
 
 
     if (m_has_dxfs)
     {
-        m_dxfs->toXmlElem("ss:dxfs", "", _outStream);
+        m_dxfs->toXmlElem("x:dxfs", "", _outStream);
     }
 
 
     if (m_has_tableStyles)
     {
-        m_tableStyles->toXmlElem("ss:tableStyles", "", _outStream);
+        m_tableStyles->toXmlElem("x:tableStyles", "", _outStream);
     }
 
 
     if (m_has_colors)
     {
-        m_colors->toXmlElem("ss:colors", "", _outStream);
+        m_colors->toXmlElem("x:colors", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -83522,7 +83522,7 @@ void CT_Borders::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_border())
             {
-                (*iter)->get_border().toXmlElem("ss:border", "", _outStream);
+                (*iter)->get_border().toXmlElem("x:border", "", _outStream);
             }
 
 
@@ -83966,55 +83966,55 @@ void CT_Border::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_start)
     {
-        m_start->toXmlElem("ss:start", "", _outStream);
+        m_start->toXmlElem("x:start", "", _outStream);
     }
 
 
     if (m_has_end)
     {
-        m_end->toXmlElem("ss:end", "", _outStream);
+        m_end->toXmlElem("x:end", "", _outStream);
     }
 
 
     if (m_has_left)
     {
-        m_left->toXmlElem("ss:left", "", _outStream);
+        m_left->toXmlElem("x:left", "", _outStream);
     }
 
 
     if (m_has_right)
     {
-        m_right->toXmlElem("ss:right", "", _outStream);
+        m_right->toXmlElem("x:right", "", _outStream);
     }
 
 
     if (m_has_top)
     {
-        m_top->toXmlElem("ss:top", "", _outStream);
+        m_top->toXmlElem("x:top", "", _outStream);
     }
 
 
     if (m_has_bottom)
     {
-        m_bottom->toXmlElem("ss:bottom", "", _outStream);
+        m_bottom->toXmlElem("x:bottom", "", _outStream);
     }
 
 
     if (m_has_diagonal)
     {
-        m_diagonal->toXmlElem("ss:diagonal", "", _outStream);
+        m_diagonal->toXmlElem("x:diagonal", "", _outStream);
     }
 
 
     if (m_has_vertical)
     {
-        m_vertical->toXmlElem("ss:vertical", "", _outStream);
+        m_vertical->toXmlElem("x:vertical", "", _outStream);
     }
 
 
     if (m_has_horizontal)
     {
-        m_horizontal->toXmlElem("ss:horizontal", "", _outStream);
+        m_horizontal->toXmlElem("x:horizontal", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -84156,7 +84156,7 @@ void CT_BorderPr::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_color)
     {
-        m_color->toXmlElem("ss:color", "", _outStream);
+        m_color->toXmlElem("x:color", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -84340,7 +84340,7 @@ void CT_Fonts::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
         {
             if ((*iter)->has_font())
             {
-                (*iter)->get_font().toXmlElem("ss:font", "", _outStream);
+                (*iter)->get_font().toXmlElem("x:font", "", _outStream);
             }
 
 
@@ -84465,7 +84465,7 @@ void CT_Fills::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
         {
             if ((*iter)->has_fill())
             {
-                (*iter)->get_fill().toXmlElem("ss:fill", "", _outStream);
+                (*iter)->get_fill().toXmlElem("x:fill", "", _outStream);
             }
 
 
@@ -84655,13 +84655,13 @@ void CT_Fill::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
 
     if (m_has_patternFill)
     {
-        m_patternFill->toXmlElem("ss:patternFill", "", _outStream);
+        m_patternFill->toXmlElem("x:patternFill", "", _outStream);
     }
 
 
     if (m_has_gradientFill)
     {
-        m_gradientFill->toXmlElem("ss:gradientFill", "", _outStream);
+        m_gradientFill->toXmlElem("x:gradientFill", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -84790,13 +84790,13 @@ void CT_PatternFill::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_fgColor)
     {
-        m_fgColor->toXmlElem("ss:fgColor", "", _outStream);
+        m_fgColor->toXmlElem("x:fgColor", "", _outStream);
     }
 
 
     if (m_has_bgColor)
     {
-        m_bgColor->toXmlElem("ss:bgColor", "", _outStream);
+        m_bgColor->toXmlElem("x:bgColor", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -85140,7 +85140,7 @@ void CT_GradientFill::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_stop())
             {
-                (*iter)->get_stop().toXmlElem("ss:stop", "", _outStream);
+                (*iter)->get_stop().toXmlElem("x:stop", "", _outStream);
             }
 
 
@@ -85366,7 +85366,7 @@ void CT_GradientStop::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_color)
     {
-        m_color->toXmlElem("ss:color", "", _outStream);
+        m_color->toXmlElem("x:color", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -85455,7 +85455,7 @@ void CT_NumFmts::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_numFmt())
             {
-                (*iter)->get_numFmt().toXmlElem("ss:numFmt", "", _outStream);
+                (*iter)->get_numFmt().toXmlElem("x:numFmt", "", _outStream);
             }
 
 
@@ -85696,7 +85696,7 @@ void CT_CellStyleXfs::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_xf())
             {
-                (*iter)->get_xf().toXmlElem("ss:xf", "", _outStream);
+                (*iter)->get_xf().toXmlElem("x:xf", "", _outStream);
             }
 
 
@@ -85826,7 +85826,7 @@ void CT_CellXfs::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_xf())
             {
-                (*iter)->get_xf().toXmlElem("ss:xf", "", _outStream);
+                (*iter)->get_xf().toXmlElem("x:xf", "", _outStream);
             }
 
 
@@ -86210,19 +86210,19 @@ void CT_Xf::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr
 
     if (m_has_alignment)
     {
-        m_alignment->toXmlElem("ss:alignment", "", _outStream);
+        m_alignment->toXmlElem("x:alignment", "", _outStream);
     }
 
 
     if (m_has_protection)
     {
-        m_protection->toXmlElem("ss:protection", "", _outStream);
+        m_protection->toXmlElem("x:protection", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -86528,7 +86528,7 @@ void CT_CellStyles::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_cellStyle())
             {
-                (*iter)->get_cellStyle().toXmlElem("ss:cellStyle", "", _outStream);
+                (*iter)->get_cellStyle().toXmlElem("x:cellStyle", "", _outStream);
             }
 
 
@@ -86740,7 +86740,7 @@ void CT_CellStyle::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -86917,7 +86917,7 @@ void CT_Dxfs::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
         {
             if ((*iter)->has_dxf())
             {
-                (*iter)->get_dxf().toXmlElem("ss:dxf", "", _outStream);
+                (*iter)->get_dxf().toXmlElem("x:dxf", "", _outStream);
             }
 
 
@@ -87256,43 +87256,43 @@ void CT_Dxf::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
 
     if (m_has_font)
     {
-        m_font->toXmlElem("ss:font", "", _outStream);
+        m_font->toXmlElem("x:font", "", _outStream);
     }
 
 
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("ss:numFmt", "", _outStream);
+        m_numFmt->toXmlElem("x:numFmt", "", _outStream);
     }
 
 
     if (m_has_fill)
     {
-        m_fill->toXmlElem("ss:fill", "", _outStream);
+        m_fill->toXmlElem("x:fill", "", _outStream);
     }
 
 
     if (m_has_alignment)
     {
-        m_alignment->toXmlElem("ss:alignment", "", _outStream);
+        m_alignment->toXmlElem("x:alignment", "", _outStream);
     }
 
 
     if (m_has_border)
     {
-        m_border->toXmlElem("ss:border", "", _outStream);
+        m_border->toXmlElem("x:border", "", _outStream);
     }
 
 
     if (m_has_protection)
     {
-        m_protection->toXmlElem("ss:protection", "", _outStream);
+        m_protection->toXmlElem("x:protection", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -87404,13 +87404,13 @@ void CT_Colors::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_indexedColors)
     {
-        m_indexedColors->toXmlElem("ss:indexedColors", "", _outStream);
+        m_indexedColors->toXmlElem("x:indexedColors", "", _outStream);
     }
 
 
     if (m_has_mruColors)
     {
-        m_mruColors->toXmlElem("ss:mruColors", "", _outStream);
+        m_mruColors->toXmlElem("x:mruColors", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -87478,7 +87478,7 @@ void CT_IndexedColors::toXmlElem(const std::string& _elemName, const std::string
         {
             if ((*iter)->has_rgbColor())
             {
-                (*iter)->get_rgbColor().toXmlElem("ss:rgbColor", "", _outStream);
+                (*iter)->get_rgbColor().toXmlElem("x:rgbColor", "", _outStream);
             }
 
 
@@ -87582,7 +87582,7 @@ void CT_MRUColors::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_color())
             {
-                (*iter)->get_color().toXmlElem("ss:color", "", _outStream);
+                (*iter)->get_color().toXmlElem("x:color", "", _outStream);
             }
 
 
@@ -87788,7 +87788,7 @@ void CT_TableStyles::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_tableStyle())
             {
-                (*iter)->get_tableStyle().toXmlElem("ss:tableStyle", "", _outStream);
+                (*iter)->get_tableStyle().toXmlElem("x:tableStyle", "", _outStream);
             }
 
 
@@ -87981,7 +87981,7 @@ void CT_TableStyle::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_tableStyleElement())
             {
-                (*iter)->get_tableStyleElement().toXmlElem("ss:tableStyleElement", "", _outStream);
+                (*iter)->get_tableStyleElement().toXmlElem("x:tableStyleElement", "", _outStream);
             }
 
 
@@ -88876,91 +88876,91 @@ void CT_Font::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
         {
             if ((*iter)->has_name())
             {
-                (*iter)->get_name().toXmlElem("ss:name", "", _outStream);
+                (*iter)->get_name().toXmlElem("x:name", "", _outStream);
             }
 
 
             else if ((*iter)->has_charset())
             {
-                (*iter)->get_charset().toXmlElem("ss:charset", "", _outStream);
+                (*iter)->get_charset().toXmlElem("x:charset", "", _outStream);
             }
 
 
             else if ((*iter)->has_family())
             {
-                (*iter)->get_family().toXmlElem("ss:family", "", _outStream);
+                (*iter)->get_family().toXmlElem("x:family", "", _outStream);
             }
 
 
             else if ((*iter)->has_b())
             {
-                (*iter)->get_b().toXmlElem("ss:b", "", _outStream);
+                (*iter)->get_b().toXmlElem("x:b", "", _outStream);
             }
 
 
             else if ((*iter)->has_i())
             {
-                (*iter)->get_i().toXmlElem("ss:i", "", _outStream);
+                (*iter)->get_i().toXmlElem("x:i", "", _outStream);
             }
 
 
             else if ((*iter)->has_strike())
             {
-                (*iter)->get_strike().toXmlElem("ss:strike", "", _outStream);
+                (*iter)->get_strike().toXmlElem("x:strike", "", _outStream);
             }
 
 
             else if ((*iter)->has_outline())
             {
-                (*iter)->get_outline().toXmlElem("ss:outline", "", _outStream);
+                (*iter)->get_outline().toXmlElem("x:outline", "", _outStream);
             }
 
 
             else if ((*iter)->has_shadow())
             {
-                (*iter)->get_shadow().toXmlElem("ss:shadow", "", _outStream);
+                (*iter)->get_shadow().toXmlElem("x:shadow", "", _outStream);
             }
 
 
             else if ((*iter)->has_condense())
             {
-                (*iter)->get_condense().toXmlElem("ss:condense", "", _outStream);
+                (*iter)->get_condense().toXmlElem("x:condense", "", _outStream);
             }
 
 
             else if ((*iter)->has_extend())
             {
-                (*iter)->get_extend().toXmlElem("ss:extend", "", _outStream);
+                (*iter)->get_extend().toXmlElem("x:extend", "", _outStream);
             }
 
 
             else if ((*iter)->has_color())
             {
-                (*iter)->get_color().toXmlElem("ss:color", "", _outStream);
+                (*iter)->get_color().toXmlElem("x:color", "", _outStream);
             }
 
 
             else if ((*iter)->has_sz())
             {
-                (*iter)->get_sz().toXmlElem("ss:sz", "", _outStream);
+                (*iter)->get_sz().toXmlElem("x:sz", "", _outStream);
             }
 
 
             else if ((*iter)->has_u())
             {
-                (*iter)->get_u().toXmlElem("ss:u", "", _outStream);
+                (*iter)->get_u().toXmlElem("x:u", "", _outStream);
             }
 
 
             else if ((*iter)->has_vertAlign())
             {
-                (*iter)->get_vertAlign().toXmlElem("ss:vertAlign", "", _outStream);
+                (*iter)->get_vertAlign().toXmlElem("x:vertAlign", "", _outStream);
             }
 
 
             else if ((*iter)->has_scheme())
             {
-                (*iter)->get_scheme().toXmlElem("ss:scheme", "", _outStream);
+                (*iter)->get_scheme().toXmlElem("x:scheme", "", _outStream);
             }
 
 
@@ -91582,25 +91582,25 @@ void CT_ExternalLink::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_externalBook)
     {
-        m_externalBook->toXmlElem("ss:externalBook", "", _outStream);
+        m_externalBook->toXmlElem("x:externalBook", "", _outStream);
     }
 
 
     if (m_has_ddeLink)
     {
-        m_ddeLink->toXmlElem("ss:ddeLink", "", _outStream);
+        m_ddeLink->toXmlElem("x:ddeLink", "", _outStream);
     }
 
 
     if (m_has_oleLink)
     {
-        m_oleLink->toXmlElem("ss:oleLink", "", _outStream);
+        m_oleLink->toXmlElem("x:oleLink", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -91764,19 +91764,19 @@ void CT_ExternalBook::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_sheetNames)
     {
-        m_sheetNames->toXmlElem("ss:sheetNames", "", _outStream);
+        m_sheetNames->toXmlElem("x:sheetNames", "", _outStream);
     }
 
 
     if (m_has_definedNames)
     {
-        m_definedNames->toXmlElem("ss:definedNames", "", _outStream);
+        m_definedNames->toXmlElem("x:definedNames", "", _outStream);
     }
 
 
     if (m_has_sheetDataSet)
     {
-        m_sheetDataSet->toXmlElem("ss:sheetDataSet", "", _outStream);
+        m_sheetDataSet->toXmlElem("x:sheetDataSet", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -91864,7 +91864,7 @@ void CT_ExternalSheetNames::toXmlElem(const std::string& _elemName, const std::s
         {
             if ((*iter)->has_sheetName())
             {
-                (*iter)->get_sheetName().toXmlElem("ss:sheetName", "", _outStream);
+                (*iter)->get_sheetName().toXmlElem("x:sheetName", "", _outStream);
             }
 
 
@@ -92036,7 +92036,7 @@ void CT_ExternalDefinedNames::toXmlElem(const std::string& _elemName, const std:
         {
             if ((*iter)->has_definedName())
             {
-                (*iter)->get_definedName().toXmlElem("ss:definedName", "", _outStream);
+                (*iter)->get_definedName().toXmlElem("x:definedName", "", _outStream);
             }
 
 
@@ -92279,7 +92279,7 @@ void CT_ExternalSheetDataSet::toXmlElem(const std::string& _elemName, const std:
         {
             if ((*iter)->has_sheetData())
             {
-                (*iter)->get_sheetData().toXmlElem("ss:sheetData", "", _outStream);
+                (*iter)->get_sheetData().toXmlElem("x:sheetData", "", _outStream);
             }
 
 
@@ -92400,7 +92400,7 @@ void CT_ExternalSheetData::toXmlElem(const std::string& _elemName, const std::st
         {
             if ((*iter)->has_row())
             {
-                (*iter)->get_row().toXmlElem("ss:row", "", _outStream);
+                (*iter)->get_row().toXmlElem("x:row", "", _outStream);
             }
 
 
@@ -92541,7 +92541,7 @@ void CT_ExternalRow::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_cell())
             {
-                (*iter)->get_cell().toXmlElem("ss:cell", "", _outStream);
+                (*iter)->get_cell().toXmlElem("x:cell", "", _outStream);
             }
 
 
@@ -92717,7 +92717,7 @@ void CT_ExternalCell::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_v)
     {
-        _outStream << "<ss:v>" << m_v->toString() << "</ss:v>";
+        _outStream << "<x:v>" << m_v->toString() << "</x:v>";
     }
 
     _outStream << "</" << _elemName << ">";
@@ -92885,7 +92885,7 @@ void CT_DdeLink::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_ddeItems)
     {
-        m_ddeItems->toXmlElem("ss:ddeItems", "", _outStream);
+        m_ddeItems->toXmlElem("x:ddeItems", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -92988,7 +92988,7 @@ void CT_DdeItems::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_ddeItem())
             {
-                (*iter)->get_ddeItem().toXmlElem("ss:ddeItem", "", _outStream);
+                (*iter)->get_ddeItem().toXmlElem("x:ddeItem", "", _outStream);
             }
 
 
@@ -93154,7 +93154,7 @@ void CT_DdeItem::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_values)
     {
-        m_values->toXmlElem("ss:values", "", _outStream);
+        m_values->toXmlElem("x:values", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -93312,7 +93312,7 @@ void CT_DdeValues::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_value())
             {
-                (*iter)->get_value().toXmlElem("ss:value", "", _outStream);
+                (*iter)->get_value().toXmlElem("x:value", "", _outStream);
             }
 
 
@@ -93476,7 +93476,7 @@ void CT_DdeValue::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_val)
     {
-        _outStream << "<ss:val>" << m_val->toString() << "</ss:val>";
+        _outStream << "<x:val>" << m_val->toString() << "</x:val>";
     }
 
     _outStream << "</" << _elemName << ">";
@@ -93608,7 +93608,7 @@ void CT_OleLink::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_oleItems)
     {
-        m_oleItems->toXmlElem("ss:oleItems", "", _outStream);
+        m_oleItems->toXmlElem("x:oleItems", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -93711,7 +93711,7 @@ void CT_OleItems::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_oleItem())
             {
-                (*iter)->get_oleItem().toXmlElem("ss:oleItem", "", _outStream);
+                (*iter)->get_oleItem().toXmlElem("x:oleItem", "", _outStream);
             }
 
 
@@ -94470,31 +94470,31 @@ void CT_Table::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("ss:autoFilter", "", _outStream);
+        m_autoFilter->toXmlElem("x:autoFilter", "", _outStream);
     }
 
 
     if (m_has_sortState)
     {
-        m_sortState->toXmlElem("ss:sortState", "", _outStream);
+        m_sortState->toXmlElem("x:sortState", "", _outStream);
     }
 
 
     if (m_has_tableColumns)
     {
-        m_tableColumns->toXmlElem("ss:tableColumns", "", _outStream);
+        m_tableColumns->toXmlElem("x:tableColumns", "", _outStream);
     }
 
 
     if (m_has_tableStyleInfo)
     {
-        m_tableStyleInfo->toXmlElem("ss:tableStyleInfo", "", _outStream);
+        m_tableStyleInfo->toXmlElem("x:tableStyleInfo", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -95165,7 +95165,7 @@ void CT_TableColumns::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_tableColumn())
             {
-                (*iter)->get_tableColumn().toXmlElem("ss:tableColumn", "", _outStream);
+                (*iter)->get_tableColumn().toXmlElem("x:tableColumn", "", _outStream);
             }
 
 
@@ -95602,25 +95602,25 @@ void CT_TableColumn::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_calculatedColumnFormula)
     {
-        m_calculatedColumnFormula->toXmlElem("ss:calculatedColumnFormula", "", _outStream);
+        m_calculatedColumnFormula->toXmlElem("x:calculatedColumnFormula", "", _outStream);
     }
 
 
     if (m_has_totalsRowFormula)
     {
-        m_totalsRowFormula->toXmlElem("ss:totalsRowFormula", "", _outStream);
+        m_totalsRowFormula->toXmlElem("x:totalsRowFormula", "", _outStream);
     }
 
 
     if (m_has_xmlColumnPr)
     {
-        m_xmlColumnPr->toXmlElem("ss:xmlColumnPr", "", _outStream);
+        m_xmlColumnPr->toXmlElem("x:xmlColumnPr", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -96052,7 +96052,7 @@ void CT_XmlColumnPr::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -96226,7 +96226,7 @@ void CT_VolTypes::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_volType())
             {
-                (*iter)->get_volType().toXmlElem("ss:volType", "", _outStream);
+                (*iter)->get_volType().toXmlElem("x:volType", "", _outStream);
             }
 
 
@@ -96236,7 +96236,7 @@ void CT_VolTypes::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -96352,7 +96352,7 @@ void CT_VolType::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_main())
             {
-                (*iter)->get_main().toXmlElem("ss:main", "", _outStream);
+                (*iter)->get_main().toXmlElem("x:main", "", _outStream);
             }
 
 
@@ -96492,7 +96492,7 @@ void CT_VolMain::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_tp())
             {
-                (*iter)->get_tp().toXmlElem("ss:tp", "", _outStream);
+                (*iter)->get_tp().toXmlElem("x:tp", "", _outStream);
             }
 
 
@@ -96669,7 +96669,7 @@ void CT_VolTopic::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_v)
     {
-        _outStream << "<ss:v>" << m_v->toString() << "</ss:v>";
+        _outStream << "<x:v>" << m_v->toString() << "</x:v>";
     }
 
     {
@@ -96683,13 +96683,13 @@ void CT_VolTopic::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_stp())
             {
-                _outStream << "<ss:stp>" << (*iter)->get_stp().toString() << "</ss:stp>";
+                _outStream << "<x:stp>" << (*iter)->get_stp().toString() << "</x:stp>";
             }
 
 
             else if ((*iter)->has_tr())
             {
-                (*iter)->get_tr().toXmlElem("ss:tr", "", _outStream);
+                (*iter)->get_tr().toXmlElem("x:tr", "", _outStream);
             }
 
 
@@ -97599,97 +97599,97 @@ void CT_Workbook::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_fileVersion)
     {
-        m_fileVersion->toXmlElem("ss:fileVersion", "", _outStream);
+        m_fileVersion->toXmlElem("x:fileVersion", "", _outStream);
     }
 
 
     if (m_has_fileSharing)
     {
-        m_fileSharing->toXmlElem("ss:fileSharing", "", _outStream);
+        m_fileSharing->toXmlElem("x:fileSharing", "", _outStream);
     }
 
 
     if (m_has_workbookPr)
     {
-        m_workbookPr->toXmlElem("ss:workbookPr", "", _outStream);
+        m_workbookPr->toXmlElem("x:workbookPr", "", _outStream);
     }
 
 
     if (m_has_workbookProtection)
     {
-        m_workbookProtection->toXmlElem("ss:workbookProtection", "", _outStream);
+        m_workbookProtection->toXmlElem("x:workbookProtection", "", _outStream);
     }
 
 
     if (m_has_bookViews)
     {
-        m_bookViews->toXmlElem("ss:bookViews", "", _outStream);
+        m_bookViews->toXmlElem("x:bookViews", "", _outStream);
     }
 
 
     if (m_has_sheets)
     {
-        m_sheets->toXmlElem("ss:sheets", "", _outStream);
+        m_sheets->toXmlElem("x:sheets", "", _outStream);
     }
 
 
     if (m_has_functionGroups)
     {
-        m_functionGroups->toXmlElem("ss:functionGroups", "", _outStream);
+        m_functionGroups->toXmlElem("x:functionGroups", "", _outStream);
     }
 
 
     if (m_has_externalReferences)
     {
-        m_externalReferences->toXmlElem("ss:externalReferences", "", _outStream);
+        m_externalReferences->toXmlElem("x:externalReferences", "", _outStream);
     }
 
 
     if (m_has_definedNames)
     {
-        m_definedNames->toXmlElem("ss:definedNames", "", _outStream);
+        m_definedNames->toXmlElem("x:definedNames", "", _outStream);
     }
 
 
     if (m_has_calcPr)
     {
-        m_calcPr->toXmlElem("ss:calcPr", "", _outStream);
+        m_calcPr->toXmlElem("x:calcPr", "", _outStream);
     }
 
 
     if (m_has_oleSize)
     {
-        m_oleSize->toXmlElem("ss:oleSize", "", _outStream);
+        m_oleSize->toXmlElem("x:oleSize", "", _outStream);
     }
 
 
     if (m_has_customWorkbookViews)
     {
-        m_customWorkbookViews->toXmlElem("ss:customWorkbookViews", "", _outStream);
+        m_customWorkbookViews->toXmlElem("x:customWorkbookViews", "", _outStream);
     }
 
 
     if (m_has_pivotCaches)
     {
-        m_pivotCaches->toXmlElem("ss:pivotCaches", "", _outStream);
+        m_pivotCaches->toXmlElem("x:pivotCaches", "", _outStream);
     }
 
 
     if (m_has_smartTagPr)
     {
-        m_smartTagPr->toXmlElem("ss:smartTagPr", "", _outStream);
+        m_smartTagPr->toXmlElem("x:smartTagPr", "", _outStream);
     }
 
 
     if (m_has_smartTagTypes)
     {
-        m_smartTagTypes->toXmlElem("ss:smartTagTypes", "", _outStream);
+        m_smartTagTypes->toXmlElem("x:smartTagTypes", "", _outStream);
     }
 
 
     if (m_has_webPublishing)
     {
-        m_webPublishing->toXmlElem("ss:webPublishing", "", _outStream);
+        m_webPublishing->toXmlElem("x:webPublishing", "", _outStream);
     }
 
     {
@@ -97698,7 +97698,7 @@ void CT_Workbook::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_fileRecoveryPr())
             {
-                (*iter)->get_fileRecoveryPr().toXmlElem("ss:fileRecoveryPr", "", _outStream);
+                (*iter)->get_fileRecoveryPr().toXmlElem("x:fileRecoveryPr", "", _outStream);
             }
 
 
@@ -97708,13 +97708,13 @@ void CT_Workbook::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_webPublishObjects)
     {
-        m_webPublishObjects->toXmlElem("ss:webPublishObjects", "", _outStream);
+        m_webPublishObjects->toXmlElem("x:webPublishObjects", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -98019,7 +98019,7 @@ void CT_BookViews::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_workbookView())
             {
-                (*iter)->get_workbookView().toXmlElem("ss:workbookView", "", _outStream);
+                (*iter)->get_workbookView().toXmlElem("x:workbookView", "", _outStream);
             }
 
 
@@ -98293,7 +98293,7 @@ void CT_BookView::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -98573,7 +98573,7 @@ void CT_CustomWorkbookViews::toXmlElem(const std::string& _elemName, const std::
         {
             if ((*iter)->has_customWorkbookView())
             {
-                (*iter)->get_customWorkbookView().toXmlElem("ss:customWorkbookView", "", _outStream);
+                (*iter)->get_customWorkbookView().toXmlElem("x:customWorkbookView", "", _outStream);
             }
 
 
@@ -98997,7 +98997,7 @@ void CT_CustomWorkbookView::toXmlElem(const std::string& _elemName, const std::s
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -99465,7 +99465,7 @@ void CT_Sheets::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_sheet())
             {
-                (*iter)->get_sheet().toXmlElem("ss:sheet", "", _outStream);
+                (*iter)->get_sheet().toXmlElem("x:sheet", "", _outStream);
             }
 
 
@@ -100401,7 +100401,7 @@ void CT_SmartTagTypes::toXmlElem(const std::string& _elemName, const std::string
         {
             if ((*iter)->has_smartTagType())
             {
-                (*iter)->get_smartTagType().toXmlElem("ss:smartTagType", "", _outStream);
+                (*iter)->get_smartTagType().toXmlElem("x:smartTagType", "", _outStream);
             }
 
 
@@ -101215,7 +101215,7 @@ void CT_DefinedNames::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_definedName())
             {
-                (*iter)->get_definedName().toXmlElem("ss:definedName", "", _outStream);
+                (*iter)->get_definedName().toXmlElem("x:definedName", "", _outStream);
             }
 
 
@@ -101845,7 +101845,7 @@ void CT_ExternalReferences::toXmlElem(const std::string& _elemName, const std::s
         {
             if ((*iter)->has_externalReference())
             {
-                (*iter)->get_externalReference().toXmlElem("ss:externalReference", "", _outStream);
+                (*iter)->get_externalReference().toXmlElem("x:externalReference", "", _outStream);
             }
 
 
@@ -102095,7 +102095,7 @@ void CT_PivotCaches::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_pivotCache())
             {
-                (*iter)->get_pivotCache().toXmlElem("ss:pivotCache", "", _outStream);
+                (*iter)->get_pivotCache().toXmlElem("x:pivotCache", "", _outStream);
             }
 
 
@@ -103431,7 +103431,7 @@ void CT_FunctionGroups::toXmlElem(const std::string& _elemName, const std::strin
         {
             if ((*iter)->has_functionGroup())
             {
-                (*iter)->get_functionGroup().toXmlElem("ss:functionGroup", "", _outStream);
+                (*iter)->get_functionGroup().toXmlElem("x:functionGroup", "", _outStream);
             }
 
 
@@ -103634,7 +103634,7 @@ void CT_WebPublishObjects::toXmlElem(const std::string& _elemName, const std::st
         {
             if ((*iter)->has_webPublishObject())
             {
-                (*iter)->get_webPublishObject().toXmlElem("ss:webPublishObject", "", _outStream);
+                (*iter)->get_webPublishObject().toXmlElem("x:webPublishObject", "", _outStream);
             }
 
 
@@ -104011,9 +104011,9 @@ void calcChain_element::clear()
 
 void calcChain_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:calcChain";
+    _outStream << "<x:calcChain";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -104031,7 +104031,7 @@ void calcChain_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_c())
             {
-                (*iter)->get_c().toXmlElem("ss:c", "", _outStream);
+                (*iter)->get_c().toXmlElem("x:c", "", _outStream);
             }
 
 
@@ -104041,10 +104041,10 @@ void calcChain_element::toXml(std::ostream& _outStream) const
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:calcChain>";
+    _outStream << "</x:calcChain>";
 }
 
 const calcChain_element& calcChain_element::default_instance()
@@ -104208,9 +104208,9 @@ void comments_element::clear()
 
 void comments_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:comments";
+    _outStream << "<x:comments";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -104225,22 +104225,22 @@ void comments_element::toXml(std::ostream& _outStream) const
 
     if (m_has_authors)
     {
-        m_authors->toXmlElem("ss:authors", "", _outStream);
+        m_authors->toXmlElem("x:authors", "", _outStream);
     }
 
 
     if (m_has_commentList)
     {
-        m_commentList->toXmlElem("ss:commentList", "", _outStream);
+        m_commentList->toXmlElem("x:commentList", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:comments>";
+    _outStream << "</x:comments>";
 }
 
 const comments_element& comments_element::default_instance()
@@ -104297,9 +104297,9 @@ void MapInfo_element::clear()
 
 void MapInfo_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:MapInfo";
+    _outStream << "<x:MapInfo";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -104329,20 +104329,20 @@ void MapInfo_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_Schema())
             {
-                (*iter)->get_Schema().toXmlElem("ss:Schema", "", _outStream);
+                (*iter)->get_Schema().toXmlElem("x:Schema", "", _outStream);
             }
 
 
             else if ((*iter)->has_Map())
             {
-                (*iter)->get_Map().toXmlElem("ss:Map", "", _outStream);
+                (*iter)->get_Map().toXmlElem("x:Map", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</ss:MapInfo>";
+    _outStream << "</x:MapInfo>";
 }
 
 const MapInfo_element& MapInfo_element::default_instance()
@@ -104480,9 +104480,9 @@ void connections_element::clear()
 
 void connections_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:connections";
+    _outStream << "<x:connections";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -104500,14 +104500,14 @@ void connections_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_connection())
             {
-                (*iter)->get_connection().toXmlElem("ss:connection", "", _outStream);
+                (*iter)->get_connection().toXmlElem("x:connection", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</ss:connections>";
+    _outStream << "</x:connections>";
 }
 
 const connections_element& connections_element::default_instance()
@@ -105058,9 +105058,9 @@ void pivotCacheDefinition_element::clear()
 
 void pivotCacheDefinition_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:pivotCacheDefinition";
+    _outStream << "<x:pivotCacheDefinition";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -105207,70 +105207,70 @@ void pivotCacheDefinition_element::toXml(std::ostream& _outStream) const
 
     if (m_has_cacheSource)
     {
-        m_cacheSource->toXmlElem("ss:cacheSource", "", _outStream);
+        m_cacheSource->toXmlElem("x:cacheSource", "", _outStream);
     }
 
 
     if (m_has_cacheFields)
     {
-        m_cacheFields->toXmlElem("ss:cacheFields", "", _outStream);
+        m_cacheFields->toXmlElem("x:cacheFields", "", _outStream);
     }
 
 
     if (m_has_cacheHierarchies)
     {
-        m_cacheHierarchies->toXmlElem("ss:cacheHierarchies", "", _outStream);
+        m_cacheHierarchies->toXmlElem("x:cacheHierarchies", "", _outStream);
     }
 
 
     if (m_has_kpis)
     {
-        m_kpis->toXmlElem("ss:kpis", "", _outStream);
+        m_kpis->toXmlElem("x:kpis", "", _outStream);
     }
 
 
     if (m_has_tupleCache)
     {
-        m_tupleCache->toXmlElem("ss:tupleCache", "", _outStream);
+        m_tupleCache->toXmlElem("x:tupleCache", "", _outStream);
     }
 
 
     if (m_has_calculatedItems)
     {
-        m_calculatedItems->toXmlElem("ss:calculatedItems", "", _outStream);
+        m_calculatedItems->toXmlElem("x:calculatedItems", "", _outStream);
     }
 
 
     if (m_has_calculatedMembers)
     {
-        m_calculatedMembers->toXmlElem("ss:calculatedMembers", "", _outStream);
+        m_calculatedMembers->toXmlElem("x:calculatedMembers", "", _outStream);
     }
 
 
     if (m_has_dimensions)
     {
-        m_dimensions->toXmlElem("ss:dimensions", "", _outStream);
+        m_dimensions->toXmlElem("x:dimensions", "", _outStream);
     }
 
 
     if (m_has_measureGroups)
     {
-        m_measureGroups->toXmlElem("ss:measureGroups", "", _outStream);
+        m_measureGroups->toXmlElem("x:measureGroups", "", _outStream);
     }
 
 
     if (m_has_maps)
     {
-        m_maps->toXmlElem("ss:maps", "", _outStream);
+        m_maps->toXmlElem("x:maps", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:pivotCacheDefinition>";
+    _outStream << "</x:pivotCacheDefinition>";
 }
 
 const pivotCacheDefinition_element& pivotCacheDefinition_element::default_instance()
@@ -105666,9 +105666,9 @@ void pivotCacheRecords_element::clear()
 
 void pivotCacheRecords_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:pivotCacheRecords";
+    _outStream << "<x:pivotCacheRecords";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -105687,7 +105687,7 @@ void pivotCacheRecords_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_r())
             {
-                (*iter)->get_r().toXmlElem("ss:r", "", _outStream);
+                (*iter)->get_r().toXmlElem("x:r", "", _outStream);
             }
 
 
@@ -105697,10 +105697,10 @@ void pivotCacheRecords_element::toXml(std::ostream& _outStream) const
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:pivotCacheRecords>";
+    _outStream << "</x:pivotCacheRecords>";
 }
 
 const pivotCacheRecords_element& pivotCacheRecords_element::default_instance()
@@ -106776,9 +106776,9 @@ void pivotTableDefinition_element::clear()
 
 void pivotTableDefinition_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:pivotTableDefinition";
+    _outStream << "<x:pivotTableDefinition";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -107265,106 +107265,106 @@ void pivotTableDefinition_element::toXml(std::ostream& _outStream) const
 
     if (m_has_location)
     {
-        m_location->toXmlElem("ss:location", "", _outStream);
+        m_location->toXmlElem("x:location", "", _outStream);
     }
 
 
     if (m_has_pivotFields)
     {
-        m_pivotFields->toXmlElem("ss:pivotFields", "", _outStream);
+        m_pivotFields->toXmlElem("x:pivotFields", "", _outStream);
     }
 
 
     if (m_has_rowFields)
     {
-        m_rowFields->toXmlElem("ss:rowFields", "", _outStream);
+        m_rowFields->toXmlElem("x:rowFields", "", _outStream);
     }
 
 
     if (m_has_rowItems)
     {
-        m_rowItems->toXmlElem("ss:rowItems", "", _outStream);
+        m_rowItems->toXmlElem("x:rowItems", "", _outStream);
     }
 
 
     if (m_has_colFields)
     {
-        m_colFields->toXmlElem("ss:colFields", "", _outStream);
+        m_colFields->toXmlElem("x:colFields", "", _outStream);
     }
 
 
     if (m_has_colItems)
     {
-        m_colItems->toXmlElem("ss:colItems", "", _outStream);
+        m_colItems->toXmlElem("x:colItems", "", _outStream);
     }
 
 
     if (m_has_pageFields)
     {
-        m_pageFields->toXmlElem("ss:pageFields", "", _outStream);
+        m_pageFields->toXmlElem("x:pageFields", "", _outStream);
     }
 
 
     if (m_has_dataFields)
     {
-        m_dataFields->toXmlElem("ss:dataFields", "", _outStream);
+        m_dataFields->toXmlElem("x:dataFields", "", _outStream);
     }
 
 
     if (m_has_formats)
     {
-        m_formats->toXmlElem("ss:formats", "", _outStream);
+        m_formats->toXmlElem("x:formats", "", _outStream);
     }
 
 
     if (m_has_conditionalFormats)
     {
-        m_conditionalFormats->toXmlElem("ss:conditionalFormats", "", _outStream);
+        m_conditionalFormats->toXmlElem("x:conditionalFormats", "", _outStream);
     }
 
 
     if (m_has_chartFormats)
     {
-        m_chartFormats->toXmlElem("ss:chartFormats", "", _outStream);
+        m_chartFormats->toXmlElem("x:chartFormats", "", _outStream);
     }
 
 
     if (m_has_pivotHierarchies)
     {
-        m_pivotHierarchies->toXmlElem("ss:pivotHierarchies", "", _outStream);
+        m_pivotHierarchies->toXmlElem("x:pivotHierarchies", "", _outStream);
     }
 
 
     if (m_has_pivotTableStyleInfo)
     {
-        m_pivotTableStyleInfo->toXmlElem("ss:pivotTableStyleInfo", "", _outStream);
+        m_pivotTableStyleInfo->toXmlElem("x:pivotTableStyleInfo", "", _outStream);
     }
 
 
     if (m_has_filters)
     {
-        m_filters->toXmlElem("ss:filters", "", _outStream);
+        m_filters->toXmlElem("x:filters", "", _outStream);
     }
 
 
     if (m_has_rowHierarchiesUsage)
     {
-        m_rowHierarchiesUsage->toXmlElem("ss:rowHierarchiesUsage", "", _outStream);
+        m_rowHierarchiesUsage->toXmlElem("x:rowHierarchiesUsage", "", _outStream);
     }
 
 
     if (m_has_colHierarchiesUsage)
     {
-        m_colHierarchiesUsage->toXmlElem("ss:colHierarchiesUsage", "", _outStream);
+        m_colHierarchiesUsage->toXmlElem("x:colHierarchiesUsage", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:pivotTableDefinition>";
+    _outStream << "</x:pivotTableDefinition>";
 }
 
 const pivotTableDefinition_element& pivotTableDefinition_element::default_instance()
@@ -108715,9 +108715,9 @@ void queryTable_element::clear()
 
 void queryTable_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:queryTable";
+    _outStream << "<x:queryTable";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -108880,16 +108880,16 @@ void queryTable_element::toXml(std::ostream& _outStream) const
 
     if (m_has_queryTableRefresh)
     {
-        m_queryTableRefresh->toXmlElem("ss:queryTableRefresh", "", _outStream);
+        m_queryTableRefresh->toXmlElem("x:queryTableRefresh", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:queryTable>";
+    _outStream << "</x:queryTable>";
 }
 
 const queryTable_element& queryTable_element::default_instance()
@@ -109338,9 +109338,9 @@ void sst_element::clear()
 
 void sst_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:sst";
+    _outStream << "<x:sst";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -109366,7 +109366,7 @@ void sst_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_si())
             {
-                (*iter)->get_si().toXmlElem("ss:si", "", _outStream);
+                (*iter)->get_si().toXmlElem("x:si", "", _outStream);
             }
 
 
@@ -109376,10 +109376,10 @@ void sst_element::toXml(std::ostream& _outStream) const
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:sst>";
+    _outStream << "</x:sst>";
 }
 
 const sst_element& sst_element::default_instance()
@@ -109559,9 +109559,9 @@ void headers_element::clear()
 
 void headers_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:headers";
+    _outStream << "<x:headers";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -109662,14 +109662,14 @@ void headers_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_header())
             {
-                (*iter)->get_header().toXmlElem("ss:header", "", _outStream);
+                (*iter)->get_header().toXmlElem("x:header", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</ss:headers>";
+    _outStream << "</x:headers>";
 }
 
 const headers_element& headers_element::default_instance()
@@ -110034,9 +110034,9 @@ void revisions_element::clear()
 
 void revisions_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:revisions";
+    _outStream << "<x:revisions";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -110049,80 +110049,80 @@ void revisions_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_rrc())
             {
-                (*iter)->get_rrc().toXmlElem("ss:rrc", "", _outStream);
+                (*iter)->get_rrc().toXmlElem("x:rrc", "", _outStream);
             }
 
 
             else if ((*iter)->has_rm())
             {
-                (*iter)->get_rm().toXmlElem("ss:rm", "", _outStream);
+                (*iter)->get_rm().toXmlElem("x:rm", "", _outStream);
             }
 
 
             else if ((*iter)->has_rcv())
             {
-                (*iter)->get_rcv().toXmlElem("ss:rcv", "", _outStream);
+                (*iter)->get_rcv().toXmlElem("x:rcv", "", _outStream);
             }
 
 
             else if ((*iter)->has_rsnm())
             {
-                (*iter)->get_rsnm().toXmlElem("ss:rsnm", "", _outStream);
+                (*iter)->get_rsnm().toXmlElem("x:rsnm", "", _outStream);
             }
 
 
             else if ((*iter)->has_ris())
             {
-                (*iter)->get_ris().toXmlElem("ss:ris", "", _outStream);
+                (*iter)->get_ris().toXmlElem("x:ris", "", _outStream);
             }
 
 
             else if ((*iter)->has_rcc())
             {
-                (*iter)->get_rcc().toXmlElem("ss:rcc", "", _outStream);
+                (*iter)->get_rcc().toXmlElem("x:rcc", "", _outStream);
             }
 
 
             else if ((*iter)->has_rfmt())
             {
-                (*iter)->get_rfmt().toXmlElem("ss:rfmt", "", _outStream);
+                (*iter)->get_rfmt().toXmlElem("x:rfmt", "", _outStream);
             }
 
 
             else if ((*iter)->has_raf())
             {
-                (*iter)->get_raf().toXmlElem("ss:raf", "", _outStream);
+                (*iter)->get_raf().toXmlElem("x:raf", "", _outStream);
             }
 
 
             else if ((*iter)->has_rdn())
             {
-                (*iter)->get_rdn().toXmlElem("ss:rdn", "", _outStream);
+                (*iter)->get_rdn().toXmlElem("x:rdn", "", _outStream);
             }
 
 
             else if ((*iter)->has_rcmt())
             {
-                (*iter)->get_rcmt().toXmlElem("ss:rcmt", "", _outStream);
+                (*iter)->get_rcmt().toXmlElem("x:rcmt", "", _outStream);
             }
 
 
             else if ((*iter)->has_rqt())
             {
-                (*iter)->get_rqt().toXmlElem("ss:rqt", "", _outStream);
+                (*iter)->get_rqt().toXmlElem("x:rqt", "", _outStream);
             }
 
 
             else if ((*iter)->has_rcft())
             {
-                (*iter)->get_rcft().toXmlElem("ss:rcft", "", _outStream);
+                (*iter)->get_rcft().toXmlElem("x:rcft", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</ss:revisions>";
+    _outStream << "</x:revisions>";
 }
 
 const revisions_element& revisions_element::default_instance()
@@ -111688,9 +111688,9 @@ void users_element::clear()
 
 void users_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:users";
+    _outStream << "<x:users";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -111714,14 +111714,14 @@ void users_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_userInfo())
             {
-                (*iter)->get_userInfo().toXmlElem("ss:userInfo", "", _outStream);
+                (*iter)->get_userInfo().toXmlElem("x:userInfo", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</ss:users>";
+    _outStream << "</x:users>";
 }
 
 const users_element& users_element::default_instance()
@@ -113125,9 +113125,9 @@ void worksheet_element::clear()
 
 void worksheet_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:worksheet";
+    _outStream << "<x:worksheet";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -113137,25 +113137,25 @@ void worksheet_element::toXml(std::ostream& _outStream) const
 
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("ss:sheetPr", "", _outStream);
+        m_sheetPr->toXmlElem("x:sheetPr", "", _outStream);
     }
 
 
     if (m_has_dimension)
     {
-        m_dimension->toXmlElem("ss:dimension", "", _outStream);
+        m_dimension->toXmlElem("x:dimension", "", _outStream);
     }
 
 
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("ss:sheetViews", "", _outStream);
+        m_sheetViews->toXmlElem("x:sheetViews", "", _outStream);
     }
 
 
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("ss:sheetFormatPr", "", _outStream);
+        m_sheetFormatPr->toXmlElem("x:sheetFormatPr", "", _outStream);
     }
 
     {
@@ -113164,7 +113164,7 @@ void worksheet_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_cols())
             {
-                (*iter)->get_cols().toXmlElem("ss:cols", "", _outStream);
+                (*iter)->get_cols().toXmlElem("x:cols", "", _outStream);
             }
 
 
@@ -113176,67 +113176,67 @@ void worksheet_element::toXml(std::ostream& _outStream) const
 
     if (m_has_sheetData)
     {
-        m_sheetData->toXmlElem("ss:sheetData", "", _outStream);
+        m_sheetData->toXmlElem("x:sheetData", "", _outStream);
     }
 
 
     if (m_has_sheetCalcPr)
     {
-        m_sheetCalcPr->toXmlElem("ss:sheetCalcPr", "", _outStream);
+        m_sheetCalcPr->toXmlElem("x:sheetCalcPr", "", _outStream);
     }
 
 
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("ss:sheetProtection", "", _outStream);
+        m_sheetProtection->toXmlElem("x:sheetProtection", "", _outStream);
     }
 
 
     if (m_has_protectedRanges)
     {
-        m_protectedRanges->toXmlElem("ss:protectedRanges", "", _outStream);
+        m_protectedRanges->toXmlElem("x:protectedRanges", "", _outStream);
     }
 
 
     if (m_has_scenarios)
     {
-        m_scenarios->toXmlElem("ss:scenarios", "", _outStream);
+        m_scenarios->toXmlElem("x:scenarios", "", _outStream);
     }
 
 
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("ss:autoFilter", "", _outStream);
+        m_autoFilter->toXmlElem("x:autoFilter", "", _outStream);
     }
 
 
     if (m_has_sortState)
     {
-        m_sortState->toXmlElem("ss:sortState", "", _outStream);
+        m_sortState->toXmlElem("x:sortState", "", _outStream);
     }
 
 
     if (m_has_dataConsolidate)
     {
-        m_dataConsolidate->toXmlElem("ss:dataConsolidate", "", _outStream);
+        m_dataConsolidate->toXmlElem("x:dataConsolidate", "", _outStream);
     }
 
 
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("ss:customSheetViews", "", _outStream);
+        m_customSheetViews->toXmlElem("x:customSheetViews", "", _outStream);
     }
 
 
     if (m_has_mergeCells)
     {
-        m_mergeCells->toXmlElem("ss:mergeCells", "", _outStream);
+        m_mergeCells->toXmlElem("x:mergeCells", "", _outStream);
     }
 
 
     if (m_has_phoneticPr)
     {
-        m_phoneticPr->toXmlElem("ss:phoneticPr", "", _outStream);
+        m_phoneticPr->toXmlElem("x:phoneticPr", "", _outStream);
     }
 
     {
@@ -113245,7 +113245,7 @@ void worksheet_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_conditionalFormatting())
             {
-                (*iter)->get_conditionalFormatting().toXmlElem("ss:conditionalFormatting", "", _outStream);
+                (*iter)->get_conditionalFormatting().toXmlElem("x:conditionalFormatting", "", _outStream);
             }
 
 
@@ -113255,136 +113255,136 @@ void worksheet_element::toXml(std::ostream& _outStream) const
 
     if (m_has_dataValidations)
     {
-        m_dataValidations->toXmlElem("ss:dataValidations", "", _outStream);
+        m_dataValidations->toXmlElem("x:dataValidations", "", _outStream);
     }
 
 
     if (m_has_hyperlinks)
     {
-        m_hyperlinks->toXmlElem("ss:hyperlinks", "", _outStream);
+        m_hyperlinks->toXmlElem("x:hyperlinks", "", _outStream);
     }
 
 
     if (m_has_printOptions)
     {
-        m_printOptions->toXmlElem("ss:printOptions", "", _outStream);
+        m_printOptions->toXmlElem("x:printOptions", "", _outStream);
     }
 
 
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("ss:pageMargins", "", _outStream);
+        m_pageMargins->toXmlElem("x:pageMargins", "", _outStream);
     }
 
 
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("ss:pageSetup", "", _outStream);
+        m_pageSetup->toXmlElem("x:pageSetup", "", _outStream);
     }
 
 
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("ss:headerFooter", "", _outStream);
+        m_headerFooter->toXmlElem("x:headerFooter", "", _outStream);
     }
 
 
     if (m_has_rowBreaks)
     {
-        m_rowBreaks->toXmlElem("ss:rowBreaks", "", _outStream);
+        m_rowBreaks->toXmlElem("x:rowBreaks", "", _outStream);
     }
 
 
     if (m_has_colBreaks)
     {
-        m_colBreaks->toXmlElem("ss:colBreaks", "", _outStream);
+        m_colBreaks->toXmlElem("x:colBreaks", "", _outStream);
     }
 
 
     if (m_has_customProperties)
     {
-        m_customProperties->toXmlElem("ss:customProperties", "", _outStream);
+        m_customProperties->toXmlElem("x:customProperties", "", _outStream);
     }
 
 
     if (m_has_cellWatches)
     {
-        m_cellWatches->toXmlElem("ss:cellWatches", "", _outStream);
+        m_cellWatches->toXmlElem("x:cellWatches", "", _outStream);
     }
 
 
     if (m_has_ignoredErrors)
     {
-        m_ignoredErrors->toXmlElem("ss:ignoredErrors", "", _outStream);
+        m_ignoredErrors->toXmlElem("x:ignoredErrors", "", _outStream);
     }
 
 
     if (m_has_smartTags)
     {
-        m_smartTags->toXmlElem("ss:smartTags", "", _outStream);
+        m_smartTags->toXmlElem("x:smartTags", "", _outStream);
     }
 
 
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("ss:drawing", "", _outStream);
+        m_drawing->toXmlElem("x:drawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("ss:legacyDrawing", "", _outStream);
+        m_legacyDrawing->toXmlElem("x:legacyDrawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("ss:legacyDrawingHF", "", _outStream);
+        m_legacyDrawingHF->toXmlElem("x:legacyDrawingHF", "", _outStream);
     }
 
 
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("ss:drawingHF", "", _outStream);
+        m_drawingHF->toXmlElem("x:drawingHF", "", _outStream);
     }
 
 
     if (m_has_picture)
     {
-        m_picture->toXmlElem("ss:picture", "", _outStream);
+        m_picture->toXmlElem("x:picture", "", _outStream);
     }
 
 
     if (m_has_oleObjects)
     {
-        m_oleObjects->toXmlElem("ss:oleObjects", "", _outStream);
+        m_oleObjects->toXmlElem("x:oleObjects", "", _outStream);
     }
 
 
     if (m_has_controls)
     {
-        m_controls->toXmlElem("ss:controls", "", _outStream);
+        m_controls->toXmlElem("x:controls", "", _outStream);
     }
 
 
     if (m_has_webPublishItems)
     {
-        m_webPublishItems->toXmlElem("ss:webPublishItems", "", _outStream);
+        m_webPublishItems->toXmlElem("x:webPublishItems", "", _outStream);
     }
 
 
     if (m_has_tableParts)
     {
-        m_tableParts->toXmlElem("ss:tableParts", "", _outStream);
+        m_tableParts->toXmlElem("x:tableParts", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:worksheet>";
+    _outStream << "</x:worksheet>";
 }
 
 const worksheet_element& worksheet_element::default_instance()
@@ -113965,9 +113965,9 @@ void chartsheet_element::clear()
 
 void chartsheet_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:chartsheet";
+    _outStream << "<x:chartsheet";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -113982,88 +113982,88 @@ void chartsheet_element::toXml(std::ostream& _outStream) const
 
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("ss:sheetPr", "", _outStream);
+        m_sheetPr->toXmlElem("x:sheetPr", "", _outStream);
     }
 
 
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("ss:sheetViews", "", _outStream);
+        m_sheetViews->toXmlElem("x:sheetViews", "", _outStream);
     }
 
 
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("ss:sheetProtection", "", _outStream);
+        m_sheetProtection->toXmlElem("x:sheetProtection", "", _outStream);
     }
 
 
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("ss:customSheetViews", "", _outStream);
+        m_customSheetViews->toXmlElem("x:customSheetViews", "", _outStream);
     }
 
 
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("ss:pageMargins", "", _outStream);
+        m_pageMargins->toXmlElem("x:pageMargins", "", _outStream);
     }
 
 
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("ss:pageSetup", "", _outStream);
+        m_pageSetup->toXmlElem("x:pageSetup", "", _outStream);
     }
 
 
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("ss:headerFooter", "", _outStream);
+        m_headerFooter->toXmlElem("x:headerFooter", "", _outStream);
     }
 
 
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("ss:drawing", "", _outStream);
+        m_drawing->toXmlElem("x:drawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("ss:legacyDrawing", "", _outStream);
+        m_legacyDrawing->toXmlElem("x:legacyDrawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("ss:legacyDrawingHF", "", _outStream);
+        m_legacyDrawingHF->toXmlElem("x:legacyDrawingHF", "", _outStream);
     }
 
 
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("ss:drawingHF", "", _outStream);
+        m_drawingHF->toXmlElem("x:drawingHF", "", _outStream);
     }
 
 
     if (m_has_picture)
     {
-        m_picture->toXmlElem("ss:picture", "", _outStream);
+        m_picture->toXmlElem("x:picture", "", _outStream);
     }
 
 
     if (m_has_webPublishItems)
     {
-        m_webPublishItems->toXmlElem("ss:webPublishItems", "", _outStream);
+        m_webPublishItems->toXmlElem("x:webPublishItems", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:chartsheet>";
+    _outStream << "</x:chartsheet>";
 }
 
 const chartsheet_element& chartsheet_element::default_instance()
@@ -114650,9 +114650,9 @@ void dialogsheet_element::clear()
 
 void dialogsheet_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:dialogsheet";
+    _outStream << "<x:dialogsheet";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -114662,100 +114662,100 @@ void dialogsheet_element::toXml(std::ostream& _outStream) const
 
     if (m_has_sheetPr)
     {
-        m_sheetPr->toXmlElem("ss:sheetPr", "", _outStream);
+        m_sheetPr->toXmlElem("x:sheetPr", "", _outStream);
     }
 
 
     if (m_has_sheetViews)
     {
-        m_sheetViews->toXmlElem("ss:sheetViews", "", _outStream);
+        m_sheetViews->toXmlElem("x:sheetViews", "", _outStream);
     }
 
 
     if (m_has_sheetFormatPr)
     {
-        m_sheetFormatPr->toXmlElem("ss:sheetFormatPr", "", _outStream);
+        m_sheetFormatPr->toXmlElem("x:sheetFormatPr", "", _outStream);
     }
 
 
     if (m_has_sheetProtection)
     {
-        m_sheetProtection->toXmlElem("ss:sheetProtection", "", _outStream);
+        m_sheetProtection->toXmlElem("x:sheetProtection", "", _outStream);
     }
 
 
     if (m_has_customSheetViews)
     {
-        m_customSheetViews->toXmlElem("ss:customSheetViews", "", _outStream);
+        m_customSheetViews->toXmlElem("x:customSheetViews", "", _outStream);
     }
 
 
     if (m_has_printOptions)
     {
-        m_printOptions->toXmlElem("ss:printOptions", "", _outStream);
+        m_printOptions->toXmlElem("x:printOptions", "", _outStream);
     }
 
 
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("ss:pageMargins", "", _outStream);
+        m_pageMargins->toXmlElem("x:pageMargins", "", _outStream);
     }
 
 
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("ss:pageSetup", "", _outStream);
+        m_pageSetup->toXmlElem("x:pageSetup", "", _outStream);
     }
 
 
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("ss:headerFooter", "", _outStream);
+        m_headerFooter->toXmlElem("x:headerFooter", "", _outStream);
     }
 
 
     if (m_has_drawing)
     {
-        m_drawing->toXmlElem("ss:drawing", "", _outStream);
+        m_drawing->toXmlElem("x:drawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawing)
     {
-        m_legacyDrawing->toXmlElem("ss:legacyDrawing", "", _outStream);
+        m_legacyDrawing->toXmlElem("x:legacyDrawing", "", _outStream);
     }
 
 
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("ss:legacyDrawingHF", "", _outStream);
+        m_legacyDrawingHF->toXmlElem("x:legacyDrawingHF", "", _outStream);
     }
 
 
     if (m_has_drawingHF)
     {
-        m_drawingHF->toXmlElem("ss:drawingHF", "", _outStream);
+        m_drawingHF->toXmlElem("x:drawingHF", "", _outStream);
     }
 
 
     if (m_has_oleObjects)
     {
-        m_oleObjects->toXmlElem("ss:oleObjects", "", _outStream);
+        m_oleObjects->toXmlElem("x:oleObjects", "", _outStream);
     }
 
 
     if (m_has_controls)
     {
-        m_controls->toXmlElem("ss:controls", "", _outStream);
+        m_controls->toXmlElem("x:controls", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:dialogsheet>";
+    _outStream << "</x:dialogsheet>";
 }
 
 const dialogsheet_element& dialogsheet_element::default_instance()
@@ -115009,9 +115009,9 @@ void metadata_element::clear()
 
 void metadata_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:metadata";
+    _outStream << "<x:metadata";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -115021,19 +115021,19 @@ void metadata_element::toXml(std::ostream& _outStream) const
 
     if (m_has_metadataTypes)
     {
-        m_metadataTypes->toXmlElem("ss:metadataTypes", "", _outStream);
+        m_metadataTypes->toXmlElem("x:metadataTypes", "", _outStream);
     }
 
 
     if (m_has_metadataStrings)
     {
-        m_metadataStrings->toXmlElem("ss:metadataStrings", "", _outStream);
+        m_metadataStrings->toXmlElem("x:metadataStrings", "", _outStream);
     }
 
 
     if (m_has_mdxMetadata)
     {
-        m_mdxMetadata->toXmlElem("ss:mdxMetadata", "", _outStream);
+        m_mdxMetadata->toXmlElem("x:mdxMetadata", "", _outStream);
     }
 
     {
@@ -115042,7 +115042,7 @@ void metadata_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_futureMetadata())
             {
-                (*iter)->get_futureMetadata().toXmlElem("ss:futureMetadata", "", _outStream);
+                (*iter)->get_futureMetadata().toXmlElem("x:futureMetadata", "", _outStream);
             }
 
 
@@ -115052,22 +115052,22 @@ void metadata_element::toXml(std::ostream& _outStream) const
 
     if (m_has_cellMetadata)
     {
-        m_cellMetadata->toXmlElem("ss:cellMetadata", "", _outStream);
+        m_cellMetadata->toXmlElem("x:cellMetadata", "", _outStream);
     }
 
 
     if (m_has_valueMetadata)
     {
-        m_valueMetadata->toXmlElem("ss:valueMetadata", "", _outStream);
+        m_valueMetadata->toXmlElem("x:valueMetadata", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:metadata>";
+    _outStream << "</x:metadata>";
 }
 
 const metadata_element& metadata_element::default_instance()
@@ -115144,9 +115144,9 @@ void singleXmlCells_element::clear()
 
 void singleXmlCells_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:singleXmlCells";
+    _outStream << "<x:singleXmlCells";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -115164,14 +115164,14 @@ void singleXmlCells_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_singleXmlCell())
             {
-                (*iter)->get_singleXmlCell().toXmlElem("ss:singleXmlCell", "", _outStream);
+                (*iter)->get_singleXmlCell().toXmlElem("x:singleXmlCell", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</ss:singleXmlCells>";
+    _outStream << "</x:singleXmlCells>";
 }
 
 const singleXmlCells_element& singleXmlCells_element::default_instance()
@@ -115615,9 +115615,9 @@ void styleSheet_element::clear()
 
 void styleSheet_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:styleSheet";
+    _outStream << "<x:styleSheet";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -115627,70 +115627,70 @@ void styleSheet_element::toXml(std::ostream& _outStream) const
 
     if (m_has_numFmts)
     {
-        m_numFmts->toXmlElem("ss:numFmts", "", _outStream);
+        m_numFmts->toXmlElem("x:numFmts", "", _outStream);
     }
 
 
     if (m_has_fonts)
     {
-        m_fonts->toXmlElem("ss:fonts", "", _outStream);
+        m_fonts->toXmlElem("x:fonts", "", _outStream);
     }
 
 
     if (m_has_fills)
     {
-        m_fills->toXmlElem("ss:fills", "", _outStream);
+        m_fills->toXmlElem("x:fills", "", _outStream);
     }
 
 
     if (m_has_borders)
     {
-        m_borders->toXmlElem("ss:borders", "", _outStream);
+        m_borders->toXmlElem("x:borders", "", _outStream);
     }
 
 
     if (m_has_cellStyleXfs)
     {
-        m_cellStyleXfs->toXmlElem("ss:cellStyleXfs", "", _outStream);
+        m_cellStyleXfs->toXmlElem("x:cellStyleXfs", "", _outStream);
     }
 
 
     if (m_has_cellXfs)
     {
-        m_cellXfs->toXmlElem("ss:cellXfs", "", _outStream);
+        m_cellXfs->toXmlElem("x:cellXfs", "", _outStream);
     }
 
 
     if (m_has_cellStyles)
     {
-        m_cellStyles->toXmlElem("ss:cellStyles", "", _outStream);
+        m_cellStyles->toXmlElem("x:cellStyles", "", _outStream);
     }
 
 
     if (m_has_dxfs)
     {
-        m_dxfs->toXmlElem("ss:dxfs", "", _outStream);
+        m_dxfs->toXmlElem("x:dxfs", "", _outStream);
     }
 
 
     if (m_has_tableStyles)
     {
-        m_tableStyles->toXmlElem("ss:tableStyles", "", _outStream);
+        m_tableStyles->toXmlElem("x:tableStyles", "", _outStream);
     }
 
 
     if (m_has_colors)
     {
-        m_colors->toXmlElem("ss:colors", "", _outStream);
+        m_colors->toXmlElem("x:colors", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:styleSheet>";
+    _outStream << "</x:styleSheet>";
 }
 
 const styleSheet_element& styleSheet_element::default_instance()
@@ -115914,9 +115914,9 @@ void externalLink_element::clear()
 
 void externalLink_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:externalLink";
+    _outStream << "<x:externalLink";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -115932,28 +115932,28 @@ void externalLink_element::toXml(std::ostream& _outStream) const
 
     if (m_has_externalBook)
     {
-        m_externalBook->toXmlElem("ss:externalBook", "", _outStream);
+        m_externalBook->toXmlElem("x:externalBook", "", _outStream);
     }
 
 
     if (m_has_ddeLink)
     {
-        m_ddeLink->toXmlElem("ss:ddeLink", "", _outStream);
+        m_ddeLink->toXmlElem("x:ddeLink", "", _outStream);
     }
 
 
     if (m_has_oleLink)
     {
-        m_oleLink->toXmlElem("ss:oleLink", "", _outStream);
+        m_oleLink->toXmlElem("x:oleLink", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:externalLink>";
+    _outStream << "</x:externalLink>";
 }
 
 const externalLink_element& externalLink_element::default_instance()
@@ -116349,9 +116349,9 @@ void table_element::clear()
 
 void table_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:table";
+    _outStream << "<x:table";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -116516,34 +116516,34 @@ void table_element::toXml(std::ostream& _outStream) const
 
     if (m_has_autoFilter)
     {
-        m_autoFilter->toXmlElem("ss:autoFilter", "", _outStream);
+        m_autoFilter->toXmlElem("x:autoFilter", "", _outStream);
     }
 
 
     if (m_has_sortState)
     {
-        m_sortState->toXmlElem("ss:sortState", "", _outStream);
+        m_sortState->toXmlElem("x:sortState", "", _outStream);
     }
 
 
     if (m_has_tableColumns)
     {
-        m_tableColumns->toXmlElem("ss:tableColumns", "", _outStream);
+        m_tableColumns->toXmlElem("x:tableColumns", "", _outStream);
     }
 
 
     if (m_has_tableStyleInfo)
     {
-        m_tableStyleInfo->toXmlElem("ss:tableStyleInfo", "", _outStream);
+        m_tableStyleInfo->toXmlElem("x:tableStyleInfo", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:table>";
+    _outStream << "</x:table>";
 }
 
 const table_element& table_element::default_instance()
@@ -117030,9 +117030,9 @@ void volTypes_element::clear()
 
 void volTypes_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:volTypes";
+    _outStream << "<x:volTypes";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -117050,7 +117050,7 @@ void volTypes_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_volType())
             {
-                (*iter)->get_volType().toXmlElem("ss:volType", "", _outStream);
+                (*iter)->get_volType().toXmlElem("x:volType", "", _outStream);
             }
 
 
@@ -117060,10 +117060,10 @@ void volTypes_element::toXml(std::ostream& _outStream) const
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:volTypes>";
+    _outStream << "</x:volTypes>";
 }
 
 const volTypes_element& volTypes_element::default_instance()
@@ -117780,9 +117780,9 @@ void workbook_element::clear()
 
 void workbook_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ss:workbook";
+    _outStream << "<x:workbook";
 
-    _outStream << " " << "xmlns:ss=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
+    _outStream << " " << "xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:xdr=\"http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing\"";
@@ -117800,97 +117800,97 @@ void workbook_element::toXml(std::ostream& _outStream) const
 
     if (m_has_fileVersion)
     {
-        m_fileVersion->toXmlElem("ss:fileVersion", "", _outStream);
+        m_fileVersion->toXmlElem("x:fileVersion", "", _outStream);
     }
 
 
     if (m_has_fileSharing)
     {
-        m_fileSharing->toXmlElem("ss:fileSharing", "", _outStream);
+        m_fileSharing->toXmlElem("x:fileSharing", "", _outStream);
     }
 
 
     if (m_has_workbookPr)
     {
-        m_workbookPr->toXmlElem("ss:workbookPr", "", _outStream);
+        m_workbookPr->toXmlElem("x:workbookPr", "", _outStream);
     }
 
 
     if (m_has_workbookProtection)
     {
-        m_workbookProtection->toXmlElem("ss:workbookProtection", "", _outStream);
+        m_workbookProtection->toXmlElem("x:workbookProtection", "", _outStream);
     }
 
 
     if (m_has_bookViews)
     {
-        m_bookViews->toXmlElem("ss:bookViews", "", _outStream);
+        m_bookViews->toXmlElem("x:bookViews", "", _outStream);
     }
 
 
     if (m_has_sheets)
     {
-        m_sheets->toXmlElem("ss:sheets", "", _outStream);
+        m_sheets->toXmlElem("x:sheets", "", _outStream);
     }
 
 
     if (m_has_functionGroups)
     {
-        m_functionGroups->toXmlElem("ss:functionGroups", "", _outStream);
+        m_functionGroups->toXmlElem("x:functionGroups", "", _outStream);
     }
 
 
     if (m_has_externalReferences)
     {
-        m_externalReferences->toXmlElem("ss:externalReferences", "", _outStream);
+        m_externalReferences->toXmlElem("x:externalReferences", "", _outStream);
     }
 
 
     if (m_has_definedNames)
     {
-        m_definedNames->toXmlElem("ss:definedNames", "", _outStream);
+        m_definedNames->toXmlElem("x:definedNames", "", _outStream);
     }
 
 
     if (m_has_calcPr)
     {
-        m_calcPr->toXmlElem("ss:calcPr", "", _outStream);
+        m_calcPr->toXmlElem("x:calcPr", "", _outStream);
     }
 
 
     if (m_has_oleSize)
     {
-        m_oleSize->toXmlElem("ss:oleSize", "", _outStream);
+        m_oleSize->toXmlElem("x:oleSize", "", _outStream);
     }
 
 
     if (m_has_customWorkbookViews)
     {
-        m_customWorkbookViews->toXmlElem("ss:customWorkbookViews", "", _outStream);
+        m_customWorkbookViews->toXmlElem("x:customWorkbookViews", "", _outStream);
     }
 
 
     if (m_has_pivotCaches)
     {
-        m_pivotCaches->toXmlElem("ss:pivotCaches", "", _outStream);
+        m_pivotCaches->toXmlElem("x:pivotCaches", "", _outStream);
     }
 
 
     if (m_has_smartTagPr)
     {
-        m_smartTagPr->toXmlElem("ss:smartTagPr", "", _outStream);
+        m_smartTagPr->toXmlElem("x:smartTagPr", "", _outStream);
     }
 
 
     if (m_has_smartTagTypes)
     {
-        m_smartTagTypes->toXmlElem("ss:smartTagTypes", "", _outStream);
+        m_smartTagTypes->toXmlElem("x:smartTagTypes", "", _outStream);
     }
 
 
     if (m_has_webPublishing)
     {
-        m_webPublishing->toXmlElem("ss:webPublishing", "", _outStream);
+        m_webPublishing->toXmlElem("x:webPublishing", "", _outStream);
     }
 
     {
@@ -117899,7 +117899,7 @@ void workbook_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_fileRecoveryPr())
             {
-                (*iter)->get_fileRecoveryPr().toXmlElem("ss:fileRecoveryPr", "", _outStream);
+                (*iter)->get_fileRecoveryPr().toXmlElem("x:fileRecoveryPr", "", _outStream);
             }
 
 
@@ -117909,16 +117909,16 @@ void workbook_element::toXml(std::ostream& _outStream) const
 
     if (m_has_webPublishObjects)
     {
-        m_webPublishObjects->toXmlElem("ss:webPublishObjects", "", _outStream);
+        m_webPublishObjects->toXmlElem("x:webPublishObjects", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ss:extLst", "", _outStream);
+        m_extLst->toXmlElem("x:extLst", "", _outStream);
     }
 
-    _outStream << "</ss:workbook>";
+    _outStream << "</x:workbook>";
 }
 
 const workbook_element& workbook_element::default_instance()

@@ -1,4 +1,4 @@
-namespace ns_ss {
+namespace ns_x {
 class Element;
 class Attribute;
 class ST_FilterOperator;
@@ -496,7 +496,7 @@ class workbook_element;
 #include "shared-relationshipReference_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
 #include "dml-spreadsheetDrawing_xsd.h"
-namespace ns_ss {
+namespace ns_x {
 using namespace std;
 class Element: public XSD::Element
 {

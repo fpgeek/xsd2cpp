@@ -5,7 +5,7 @@
 #include "shared-relationshipReference_xsd.h"
 #include "dml-main_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
-namespace ns_dg {
+namespace ns_dgm {
 using namespace std;
 
 // Element
@@ -8215,7 +8215,7 @@ void CT_CTCategories::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_cat())
             {
-                (*iter)->get_cat().toXmlElem("dg:cat", "", _outStream);
+                (*iter)->get_cat().toXmlElem("dgm:cat", "", _outStream);
             }
 
 
@@ -9197,43 +9197,43 @@ void CT_CTStyleLabel::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_fillClrLst)
     {
-        m_fillClrLst->toXmlElem("dg:fillClrLst", "", _outStream);
+        m_fillClrLst->toXmlElem("dgm:fillClrLst", "", _outStream);
     }
 
 
     if (m_has_linClrLst)
     {
-        m_linClrLst->toXmlElem("dg:linClrLst", "", _outStream);
+        m_linClrLst->toXmlElem("dgm:linClrLst", "", _outStream);
     }
 
 
     if (m_has_effectClrLst)
     {
-        m_effectClrLst->toXmlElem("dg:effectClrLst", "", _outStream);
+        m_effectClrLst->toXmlElem("dgm:effectClrLst", "", _outStream);
     }
 
 
     if (m_has_txLinClrLst)
     {
-        m_txLinClrLst->toXmlElem("dg:txLinClrLst", "", _outStream);
+        m_txLinClrLst->toXmlElem("dgm:txLinClrLst", "", _outStream);
     }
 
 
     if (m_has_txFillClrLst)
     {
-        m_txFillClrLst->toXmlElem("dg:txFillClrLst", "", _outStream);
+        m_txFillClrLst->toXmlElem("dgm:txFillClrLst", "", _outStream);
     }
 
 
     if (m_has_txEffectClrLst)
     {
-        m_txEffectClrLst->toXmlElem("dg:txEffectClrLst", "", _outStream);
+        m_txEffectClrLst->toXmlElem("dgm:txEffectClrLst", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -9429,13 +9429,13 @@ void CT_ColorTransform::toXmlElem(const std::string& _elemName, const std::strin
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("dg:title", "", _outStream);
+                (*iter)->get_title().toXmlElem("dgm:title", "", _outStream);
             }
 
 
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("dg:desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
 
 
@@ -9445,7 +9445,7 @@ void CT_ColorTransform::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_catLst)
     {
-        m_catLst->toXmlElem("dg:catLst", "", _outStream);
+        m_catLst->toXmlElem("dgm:catLst", "", _outStream);
     }
 
     {
@@ -9454,7 +9454,7 @@ void CT_ColorTransform::toXmlElem(const std::string& _elemName, const std::strin
         {
             if ((*iter)->has_styleLbl())
             {
-                (*iter)->get_styleLbl().toXmlElem("dg:styleLbl", "", _outStream);
+                (*iter)->get_styleLbl().toXmlElem("dgm:styleLbl", "", _outStream);
             }
 
 
@@ -9464,7 +9464,7 @@ void CT_ColorTransform::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -9791,13 +9791,13 @@ void CT_ColorTransformHeader::toXmlElem(const std::string& _elemName, const std:
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("dg:title", "", _outStream);
+                (*iter)->get_title().toXmlElem("dgm:title", "", _outStream);
             }
 
 
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("dg:desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
 
 
@@ -9807,13 +9807,13 @@ void CT_ColorTransformHeader::toXmlElem(const std::string& _elemName, const std:
 
     if (m_has_catLst)
     {
-        m_catLst->toXmlElem("dg:catLst", "", _outStream);
+        m_catLst->toXmlElem("dgm:catLst", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -10001,7 +10001,7 @@ void CT_ColorTransformHeaderLst::toXmlElem(const std::string& _elemName, const s
         {
             if ((*iter)->has_colorsDefHdr())
             {
-                (*iter)->get_colorsDefHdr().toXmlElem("dg:colorsDefHdr", "", _outStream);
+                (*iter)->get_colorsDefHdr().toXmlElem("dgm:colorsDefHdr", "", _outStream);
             }
 
 
@@ -10272,25 +10272,25 @@ void CT_Pt::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr
 
     if (m_has_prSet)
     {
-        m_prSet->toXmlElem("dg:prSet", "", _outStream);
+        m_prSet->toXmlElem("dgm:prSet", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("dg:spPr", "", _outStream);
+        m_spPr->toXmlElem("dgm:spPr", "", _outStream);
     }
 
 
     if (m_has_t)
     {
-        m_t->toXmlElem("dg:t", "", _outStream);
+        m_t->toXmlElem("dgm:t", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -10413,7 +10413,7 @@ void CT_PtList::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_pt())
             {
-                (*iter)->get_pt().toXmlElem("dg:pt", "", _outStream);
+                (*iter)->get_pt().toXmlElem("dgm:pt", "", _outStream);
             }
 
 
@@ -10669,7 +10669,7 @@ void CT_Cxn::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -10900,7 +10900,7 @@ void CT_CxnList::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_cxn())
             {
-                (*iter)->get_cxn().toXmlElem("dg:cxn", "", _outStream);
+                (*iter)->get_cxn().toXmlElem("dgm:cxn", "", _outStream);
             }
 
 
@@ -11155,31 +11155,31 @@ void CT_DataModel::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_ptLst)
     {
-        m_ptLst->toXmlElem("dg:ptLst", "", _outStream);
+        m_ptLst->toXmlElem("dgm:ptLst", "", _outStream);
     }
 
 
     if (m_has_cxnLst)
     {
-        m_cxnLst->toXmlElem("dg:cxnLst", "", _outStream);
+        m_cxnLst->toXmlElem("dgm:cxnLst", "", _outStream);
     }
 
 
     if (m_has_bg)
     {
-        m_bg->toXmlElem("dg:bg", "", _outStream);
+        m_bg->toXmlElem("dgm:bg", "", _outStream);
     }
 
 
     if (m_has_whole)
     {
-        m_whole->toXmlElem("dg:whole", "", _outStream);
+        m_whole->toXmlElem("dgm:whole", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -11429,7 +11429,7 @@ void CT_Constraint::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -11696,7 +11696,7 @@ void CT_Constraints::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_constr())
             {
-                (*iter)->get_constr().toXmlElem("dg:constr", "", _outStream);
+                (*iter)->get_constr().toXmlElem("dgm:constr", "", _outStream);
             }
 
 
@@ -11910,7 +11910,7 @@ void CT_NumericRule::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -12097,7 +12097,7 @@ void CT_Rules::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
         {
             if ((*iter)->has_rule())
             {
-                (*iter)->get_rule().toXmlElem("dg:rule", "", _outStream);
+                (*iter)->get_rule().toXmlElem("dgm:rule", "", _outStream);
             }
 
 
@@ -12317,7 +12317,7 @@ void CT_PresentationOf::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -12601,7 +12601,7 @@ void CT_AdjLst::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_adj())
             {
-                (*iter)->get_adj().toXmlElem("dg:adj", "", _outStream);
+                (*iter)->get_adj().toXmlElem("dgm:adj", "", _outStream);
             }
 
 
@@ -12844,13 +12844,13 @@ void CT_Shape::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_adjLst)
     {
-        m_adjLst->toXmlElem("dg:adjLst", "", _outStream);
+        m_adjLst->toXmlElem("dgm:adjLst", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -13207,7 +13207,7 @@ void CT_Algorithm::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_param())
             {
-                (*iter)->get_param().toXmlElem("dg:param", "", _outStream);
+                (*iter)->get_param().toXmlElem("dgm:param", "", _outStream);
             }
 
 
@@ -13217,7 +13217,7 @@ void CT_Algorithm::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -13472,61 +13472,61 @@ void CT_LayoutNode::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_alg())
             {
-                (*iter)->get_alg().toXmlElem("dg:alg", "", _outStream);
+                (*iter)->get_alg().toXmlElem("dgm:alg", "", _outStream);
             }
 
 
             else if ((*iter)->has_shape())
             {
-                (*iter)->get_shape().toXmlElem("dg:shape", "", _outStream);
+                (*iter)->get_shape().toXmlElem("dgm:shape", "", _outStream);
             }
 
 
             else if ((*iter)->has_presOf())
             {
-                (*iter)->get_presOf().toXmlElem("dg:presOf", "", _outStream);
+                (*iter)->get_presOf().toXmlElem("dgm:presOf", "", _outStream);
             }
 
 
             else if ((*iter)->has_constrLst())
             {
-                (*iter)->get_constrLst().toXmlElem("dg:constrLst", "", _outStream);
+                (*iter)->get_constrLst().toXmlElem("dgm:constrLst", "", _outStream);
             }
 
 
             else if ((*iter)->has_ruleLst())
             {
-                (*iter)->get_ruleLst().toXmlElem("dg:ruleLst", "", _outStream);
+                (*iter)->get_ruleLst().toXmlElem("dgm:ruleLst", "", _outStream);
             }
 
 
             else if ((*iter)->has_varLst())
             {
-                (*iter)->get_varLst().toXmlElem("dg:varLst", "", _outStream);
+                (*iter)->get_varLst().toXmlElem("dgm:varLst", "", _outStream);
             }
 
 
             else if ((*iter)->has_forEach())
             {
-                (*iter)->get_forEach().toXmlElem("dg:forEach", "", _outStream);
+                (*iter)->get_forEach().toXmlElem("dgm:forEach", "", _outStream);
             }
 
 
             else if ((*iter)->has_layoutNode())
             {
-                (*iter)->get_layoutNode().toXmlElem("dg:layoutNode", "", _outStream);
+                (*iter)->get_layoutNode().toXmlElem("dgm:layoutNode", "", _outStream);
             }
 
 
             else if ((*iter)->has_choose())
             {
-                (*iter)->get_choose().toXmlElem("dg:choose", "", _outStream);
+                (*iter)->get_choose().toXmlElem("dgm:choose", "", _outStream);
             }
 
 
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("dg:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("dgm:extLst", "", _outStream);
             }
 
 
@@ -14940,55 +14940,55 @@ void CT_ForEach::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_alg())
             {
-                (*iter)->get_alg().toXmlElem("dg:alg", "", _outStream);
+                (*iter)->get_alg().toXmlElem("dgm:alg", "", _outStream);
             }
 
 
             else if ((*iter)->has_shape())
             {
-                (*iter)->get_shape().toXmlElem("dg:shape", "", _outStream);
+                (*iter)->get_shape().toXmlElem("dgm:shape", "", _outStream);
             }
 
 
             else if ((*iter)->has_presOf())
             {
-                (*iter)->get_presOf().toXmlElem("dg:presOf", "", _outStream);
+                (*iter)->get_presOf().toXmlElem("dgm:presOf", "", _outStream);
             }
 
 
             else if ((*iter)->has_constrLst())
             {
-                (*iter)->get_constrLst().toXmlElem("dg:constrLst", "", _outStream);
+                (*iter)->get_constrLst().toXmlElem("dgm:constrLst", "", _outStream);
             }
 
 
             else if ((*iter)->has_ruleLst())
             {
-                (*iter)->get_ruleLst().toXmlElem("dg:ruleLst", "", _outStream);
+                (*iter)->get_ruleLst().toXmlElem("dgm:ruleLst", "", _outStream);
             }
 
 
             else if ((*iter)->has_forEach())
             {
-                (*iter)->get_forEach().toXmlElem("dg:forEach", "", _outStream);
+                (*iter)->get_forEach().toXmlElem("dgm:forEach", "", _outStream);
             }
 
 
             else if ((*iter)->has_layoutNode())
             {
-                (*iter)->get_layoutNode().toXmlElem("dg:layoutNode", "", _outStream);
+                (*iter)->get_layoutNode().toXmlElem("dgm:layoutNode", "", _outStream);
             }
 
 
             else if ((*iter)->has_choose())
             {
-                (*iter)->get_choose().toXmlElem("dg:choose", "", _outStream);
+                (*iter)->get_choose().toXmlElem("dgm:choose", "", _outStream);
             }
 
 
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("dg:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("dgm:extLst", "", _outStream);
             }
 
 
@@ -16357,55 +16357,55 @@ void CT_When::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
         {
             if ((*iter)->has_alg())
             {
-                (*iter)->get_alg().toXmlElem("dg:alg", "", _outStream);
+                (*iter)->get_alg().toXmlElem("dgm:alg", "", _outStream);
             }
 
 
             else if ((*iter)->has_shape())
             {
-                (*iter)->get_shape().toXmlElem("dg:shape", "", _outStream);
+                (*iter)->get_shape().toXmlElem("dgm:shape", "", _outStream);
             }
 
 
             else if ((*iter)->has_presOf())
             {
-                (*iter)->get_presOf().toXmlElem("dg:presOf", "", _outStream);
+                (*iter)->get_presOf().toXmlElem("dgm:presOf", "", _outStream);
             }
 
 
             else if ((*iter)->has_constrLst())
             {
-                (*iter)->get_constrLst().toXmlElem("dg:constrLst", "", _outStream);
+                (*iter)->get_constrLst().toXmlElem("dgm:constrLst", "", _outStream);
             }
 
 
             else if ((*iter)->has_ruleLst())
             {
-                (*iter)->get_ruleLst().toXmlElem("dg:ruleLst", "", _outStream);
+                (*iter)->get_ruleLst().toXmlElem("dgm:ruleLst", "", _outStream);
             }
 
 
             else if ((*iter)->has_forEach())
             {
-                (*iter)->get_forEach().toXmlElem("dg:forEach", "", _outStream);
+                (*iter)->get_forEach().toXmlElem("dgm:forEach", "", _outStream);
             }
 
 
             else if ((*iter)->has_layoutNode())
             {
-                (*iter)->get_layoutNode().toXmlElem("dg:layoutNode", "", _outStream);
+                (*iter)->get_layoutNode().toXmlElem("dgm:layoutNode", "", _outStream);
             }
 
 
             else if ((*iter)->has_choose())
             {
-                (*iter)->get_choose().toXmlElem("dg:choose", "", _outStream);
+                (*iter)->get_choose().toXmlElem("dgm:choose", "", _outStream);
             }
 
 
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("dg:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("dgm:extLst", "", _outStream);
             }
 
 
@@ -17658,55 +17658,55 @@ void CT_Otherwise::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_alg())
             {
-                (*iter)->get_alg().toXmlElem("dg:alg", "", _outStream);
+                (*iter)->get_alg().toXmlElem("dgm:alg", "", _outStream);
             }
 
 
             else if ((*iter)->has_shape())
             {
-                (*iter)->get_shape().toXmlElem("dg:shape", "", _outStream);
+                (*iter)->get_shape().toXmlElem("dgm:shape", "", _outStream);
             }
 
 
             else if ((*iter)->has_presOf())
             {
-                (*iter)->get_presOf().toXmlElem("dg:presOf", "", _outStream);
+                (*iter)->get_presOf().toXmlElem("dgm:presOf", "", _outStream);
             }
 
 
             else if ((*iter)->has_constrLst())
             {
-                (*iter)->get_constrLst().toXmlElem("dg:constrLst", "", _outStream);
+                (*iter)->get_constrLst().toXmlElem("dgm:constrLst", "", _outStream);
             }
 
 
             else if ((*iter)->has_ruleLst())
             {
-                (*iter)->get_ruleLst().toXmlElem("dg:ruleLst", "", _outStream);
+                (*iter)->get_ruleLst().toXmlElem("dgm:ruleLst", "", _outStream);
             }
 
 
             else if ((*iter)->has_forEach())
             {
-                (*iter)->get_forEach().toXmlElem("dg:forEach", "", _outStream);
+                (*iter)->get_forEach().toXmlElem("dgm:forEach", "", _outStream);
             }
 
 
             else if ((*iter)->has_layoutNode())
             {
-                (*iter)->get_layoutNode().toXmlElem("dg:layoutNode", "", _outStream);
+                (*iter)->get_layoutNode().toXmlElem("dgm:layoutNode", "", _outStream);
             }
 
 
             else if ((*iter)->has_choose())
             {
-                (*iter)->get_choose().toXmlElem("dg:choose", "", _outStream);
+                (*iter)->get_choose().toXmlElem("dgm:choose", "", _outStream);
             }
 
 
             else if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("dg:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("dgm:extLst", "", _outStream);
             }
 
 
@@ -18735,7 +18735,7 @@ void CT_Choose::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_if())
             {
-                (*iter)->get_if().toXmlElem("dg:if", "", _outStream);
+                (*iter)->get_if().toXmlElem("dgm:if", "", _outStream);
             }
 
 
@@ -18745,7 +18745,7 @@ void CT_Choose::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_else)
     {
-        m_else->toXmlElem("dg:else", "", _outStream);
+        m_else->toXmlElem("dgm:else", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -18881,7 +18881,7 @@ void CT_SampleData::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_dataModel)
     {
-        m_dataModel->toXmlElem("dg:dataModel", "", _outStream);
+        m_dataModel->toXmlElem("dgm:dataModel", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -19051,7 +19051,7 @@ void CT_Categories::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_cat())
             {
-                (*iter)->get_cat().toXmlElem("dg:cat", "", _outStream);
+                (*iter)->get_cat().toXmlElem("dgm:cat", "", _outStream);
             }
 
 
@@ -19584,13 +19584,13 @@ void CT_DiagramDefinition::toXmlElem(const std::string& _elemName, const std::st
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("dg:title", "", _outStream);
+                (*iter)->get_title().toXmlElem("dgm:title", "", _outStream);
             }
 
 
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("dg:desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
 
 
@@ -19602,37 +19602,37 @@ void CT_DiagramDefinition::toXmlElem(const std::string& _elemName, const std::st
 
     if (m_has_catLst)
     {
-        m_catLst->toXmlElem("dg:catLst", "", _outStream);
+        m_catLst->toXmlElem("dgm:catLst", "", _outStream);
     }
 
 
     if (m_has_sampData)
     {
-        m_sampData->toXmlElem("dg:sampData", "", _outStream);
+        m_sampData->toXmlElem("dgm:sampData", "", _outStream);
     }
 
 
     if (m_has_styleData)
     {
-        m_styleData->toXmlElem("dg:styleData", "", _outStream);
+        m_styleData->toXmlElem("dgm:styleData", "", _outStream);
     }
 
 
     if (m_has_clrData)
     {
-        m_clrData->toXmlElem("dg:clrData", "", _outStream);
+        m_clrData->toXmlElem("dgm:clrData", "", _outStream);
     }
 
 
     if (m_has_layoutNode)
     {
-        m_layoutNode->toXmlElem("dg:layoutNode", "", _outStream);
+        m_layoutNode->toXmlElem("dgm:layoutNode", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -19955,13 +19955,13 @@ void CT_DiagramDefinitionHeader::toXmlElem(const std::string& _elemName, const s
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("dg:title", "", _outStream);
+                (*iter)->get_title().toXmlElem("dgm:title", "", _outStream);
             }
 
 
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("dg:desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
 
 
@@ -19971,13 +19971,13 @@ void CT_DiagramDefinitionHeader::toXmlElem(const std::string& _elemName, const s
 
     if (m_has_catLst)
     {
-        m_catLst->toXmlElem("dg:catLst", "", _outStream);
+        m_catLst->toXmlElem("dgm:catLst", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -20181,7 +20181,7 @@ void CT_DiagramDefinitionHeaderLst::toXmlElem(const std::string& _elemName, cons
         {
             if ((*iter)->has_layoutDefHdr())
             {
-                (*iter)->get_layoutDefHdr().toXmlElem("dg:layoutDefHdr", "", _outStream);
+                (*iter)->get_layoutDefHdr().toXmlElem("dgm:layoutDefHdr", "", _outStream);
             }
 
 
@@ -20905,13 +20905,13 @@ void CT_ElemPropSet::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_presLayoutVars)
     {
-        m_presLayoutVars->toXmlElem("dg:presLayoutVars", "", _outStream);
+        m_presLayoutVars->toXmlElem("dgm:presLayoutVars", "", _outStream);
     }
 
 
     if (m_has_style)
     {
-        m_style->toXmlElem("dg:style", "", _outStream);
+        m_style->toXmlElem("dgm:style", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -22389,55 +22389,55 @@ void CT_LayoutVariablePropertySet::toXmlElem(const std::string& _elemName, const
 
     if (m_has_orgChart)
     {
-        m_orgChart->toXmlElem("dg:orgChart", "", _outStream);
+        m_orgChart->toXmlElem("dgm:orgChart", "", _outStream);
     }
 
 
     if (m_has_chMax)
     {
-        m_chMax->toXmlElem("dg:chMax", "", _outStream);
+        m_chMax->toXmlElem("dgm:chMax", "", _outStream);
     }
 
 
     if (m_has_chPref)
     {
-        m_chPref->toXmlElem("dg:chPref", "", _outStream);
+        m_chPref->toXmlElem("dgm:chPref", "", _outStream);
     }
 
 
     if (m_has_bulletEnabled)
     {
-        m_bulletEnabled->toXmlElem("dg:bulletEnabled", "", _outStream);
+        m_bulletEnabled->toXmlElem("dgm:bulletEnabled", "", _outStream);
     }
 
 
     if (m_has_dir)
     {
-        m_dir->toXmlElem("dg:dir", "", _outStream);
+        m_dir->toXmlElem("dgm:dir", "", _outStream);
     }
 
 
     if (m_has_hierBranch)
     {
-        m_hierBranch->toXmlElem("dg:hierBranch", "", _outStream);
+        m_hierBranch->toXmlElem("dgm:hierBranch", "", _outStream);
     }
 
 
     if (m_has_animOne)
     {
-        m_animOne->toXmlElem("dg:animOne", "", _outStream);
+        m_animOne->toXmlElem("dgm:animOne", "", _outStream);
     }
 
 
     if (m_has_animLvl)
     {
-        m_animLvl->toXmlElem("dg:animLvl", "", _outStream);
+        m_animLvl->toXmlElem("dgm:animLvl", "", _outStream);
     }
 
 
     if (m_has_resizeHandles)
     {
-        m_resizeHandles->toXmlElem("dg:resizeHandles", "", _outStream);
+        m_resizeHandles->toXmlElem("dgm:resizeHandles", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -22773,7 +22773,7 @@ void CT_SDCategories::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_cat())
             {
-                (*iter)->get_cat().toXmlElem("dg:cat", "", _outStream);
+                (*iter)->get_cat().toXmlElem("dgm:cat", "", _outStream);
             }
 
 
@@ -23181,31 +23181,31 @@ void CT_StyleLabel::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_scene3d)
     {
-        m_scene3d->toXmlElem("dg:scene3d", "", _outStream);
+        m_scene3d->toXmlElem("dgm:scene3d", "", _outStream);
     }
 
 
     if (m_has_sp3d)
     {
-        m_sp3d->toXmlElem("dg:sp3d", "", _outStream);
+        m_sp3d->toXmlElem("dgm:sp3d", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("dg:txPr", "", _outStream);
+        m_txPr->toXmlElem("dgm:txPr", "", _outStream);
     }
 
 
     if (m_has_style)
     {
-        m_style->toXmlElem("dg:style", "", _outStream);
+        m_style->toXmlElem("dgm:style", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -23436,13 +23436,13 @@ void CT_StyleDefinition::toXmlElem(const std::string& _elemName, const std::stri
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("dg:title", "", _outStream);
+                (*iter)->get_title().toXmlElem("dgm:title", "", _outStream);
             }
 
 
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("dg:desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
 
 
@@ -23452,13 +23452,13 @@ void CT_StyleDefinition::toXmlElem(const std::string& _elemName, const std::stri
 
     if (m_has_catLst)
     {
-        m_catLst->toXmlElem("dg:catLst", "", _outStream);
+        m_catLst->toXmlElem("dgm:catLst", "", _outStream);
     }
 
 
     if (m_has_scene3d)
     {
-        m_scene3d->toXmlElem("dg:scene3d", "", _outStream);
+        m_scene3d->toXmlElem("dgm:scene3d", "", _outStream);
     }
 
     {
@@ -23467,7 +23467,7 @@ void CT_StyleDefinition::toXmlElem(const std::string& _elemName, const std::stri
         {
             if ((*iter)->has_styleLbl())
             {
-                (*iter)->get_styleLbl().toXmlElem("dg:styleLbl", "", _outStream);
+                (*iter)->get_styleLbl().toXmlElem("dgm:styleLbl", "", _outStream);
             }
 
 
@@ -23477,7 +23477,7 @@ void CT_StyleDefinition::toXmlElem(const std::string& _elemName, const std::stri
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -23804,13 +23804,13 @@ void CT_StyleDefinitionHeader::toXmlElem(const std::string& _elemName, const std
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("dg:title", "", _outStream);
+                (*iter)->get_title().toXmlElem("dgm:title", "", _outStream);
             }
 
 
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("dg:desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
 
 
@@ -23820,13 +23820,13 @@ void CT_StyleDefinitionHeader::toXmlElem(const std::string& _elemName, const std
 
     if (m_has_catLst)
     {
-        m_catLst->toXmlElem("dg:catLst", "", _outStream);
+        m_catLst->toXmlElem("dgm:catLst", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -24014,7 +24014,7 @@ void CT_StyleDefinitionHeaderLst::toXmlElem(const std::string& _elemName, const 
         {
             if ((*iter)->has_styleDefHdr())
             {
-                (*iter)->get_styleDefHdr().toXmlElem("dg:styleDefHdr", "", _outStream);
+                (*iter)->get_styleDefHdr().toXmlElem("dgm:styleDefHdr", "", _outStream);
             }
 
 
@@ -24202,9 +24202,9 @@ void colorsDef_element::clear()
 
 void colorsDef_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<dg:colorsDef";
+    _outStream << "<dgm:colorsDef";
 
-    _outStream << " " << "xmlns:dg=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
+    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
@@ -24230,13 +24230,13 @@ void colorsDef_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("dg:title", "", _outStream);
+                (*iter)->get_title().toXmlElem("dgm:title", "", _outStream);
             }
 
 
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("dg:desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
 
 
@@ -24246,7 +24246,7 @@ void colorsDef_element::toXml(std::ostream& _outStream) const
 
     if (m_has_catLst)
     {
-        m_catLst->toXmlElem("dg:catLst", "", _outStream);
+        m_catLst->toXmlElem("dgm:catLst", "", _outStream);
     }
 
     {
@@ -24255,7 +24255,7 @@ void colorsDef_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_styleLbl())
             {
-                (*iter)->get_styleLbl().toXmlElem("dg:styleLbl", "", _outStream);
+                (*iter)->get_styleLbl().toXmlElem("dgm:styleLbl", "", _outStream);
             }
 
 
@@ -24265,10 +24265,10 @@ void colorsDef_element::toXml(std::ostream& _outStream) const
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
-    _outStream << "</dg:colorsDef>";
+    _outStream << "</dgm:colorsDef>";
 }
 
 const colorsDef_element& colorsDef_element::default_instance()
@@ -24546,9 +24546,9 @@ void colorsDefHdr_element::clear()
 
 void colorsDefHdr_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<dg:colorsDefHdr";
+    _outStream << "<dgm:colorsDefHdr";
 
-    _outStream << " " << "xmlns:dg=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
+    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
@@ -24592,13 +24592,13 @@ void colorsDefHdr_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("dg:title", "", _outStream);
+                (*iter)->get_title().toXmlElem("dgm:title", "", _outStream);
             }
 
 
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("dg:desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
 
 
@@ -24608,16 +24608,16 @@ void colorsDefHdr_element::toXml(std::ostream& _outStream) const
 
     if (m_has_catLst)
     {
-        m_catLst->toXmlElem("dg:catLst", "", _outStream);
+        m_catLst->toXmlElem("dgm:catLst", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
-    _outStream << "</dg:colorsDefHdr>";
+    _outStream << "</dgm:colorsDefHdr>";
 }
 
 const colorsDefHdr_element& colorsDefHdr_element::default_instance()
@@ -24787,9 +24787,9 @@ void colorsDefHdrLst_element::clear()
 
 void colorsDefHdrLst_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<dg:colorsDefHdrLst";
+    _outStream << "<dgm:colorsDefHdrLst";
 
-    _outStream << " " << "xmlns:dg=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
+    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
@@ -24802,14 +24802,14 @@ void colorsDefHdrLst_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_colorsDefHdr())
             {
-                (*iter)->get_colorsDefHdr().toXmlElem("dg:colorsDefHdr", "", _outStream);
+                (*iter)->get_colorsDefHdr().toXmlElem("dgm:colorsDefHdr", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</dg:colorsDefHdrLst>";
+    _outStream << "</dgm:colorsDefHdrLst>";
 }
 
 const colorsDefHdrLst_element& colorsDefHdrLst_element::default_instance()
@@ -25043,9 +25043,9 @@ void dataModel_element::clear()
 
 void dataModel_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<dg:dataModel";
+    _outStream << "<dgm:dataModel";
 
-    _outStream << " " << "xmlns:dg=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
+    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
@@ -25057,34 +25057,34 @@ void dataModel_element::toXml(std::ostream& _outStream) const
 
     if (m_has_ptLst)
     {
-        m_ptLst->toXmlElem("dg:ptLst", "", _outStream);
+        m_ptLst->toXmlElem("dgm:ptLst", "", _outStream);
     }
 
 
     if (m_has_cxnLst)
     {
-        m_cxnLst->toXmlElem("dg:cxnLst", "", _outStream);
+        m_cxnLst->toXmlElem("dgm:cxnLst", "", _outStream);
     }
 
 
     if (m_has_bg)
     {
-        m_bg->toXmlElem("dg:bg", "", _outStream);
+        m_bg->toXmlElem("dgm:bg", "", _outStream);
     }
 
 
     if (m_has_whole)
     {
-        m_whole->toXmlElem("dg:whole", "", _outStream);
+        m_whole->toXmlElem("dgm:whole", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
-    _outStream << "</dg:dataModel>";
+    _outStream << "</dgm:dataModel>";
 }
 
 const dataModel_element& dataModel_element::default_instance()
@@ -25361,9 +25361,9 @@ void layoutDef_element::clear()
 
 void layoutDef_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<dg:layoutDef";
+    _outStream << "<dgm:layoutDef";
 
-    _outStream << " " << "xmlns:dg=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
+    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
@@ -25396,13 +25396,13 @@ void layoutDef_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("dg:title", "", _outStream);
+                (*iter)->get_title().toXmlElem("dgm:title", "", _outStream);
             }
 
 
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("dg:desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
 
 
@@ -25414,40 +25414,40 @@ void layoutDef_element::toXml(std::ostream& _outStream) const
 
     if (m_has_catLst)
     {
-        m_catLst->toXmlElem("dg:catLst", "", _outStream);
+        m_catLst->toXmlElem("dgm:catLst", "", _outStream);
     }
 
 
     if (m_has_sampData)
     {
-        m_sampData->toXmlElem("dg:sampData", "", _outStream);
+        m_sampData->toXmlElem("dgm:sampData", "", _outStream);
     }
 
 
     if (m_has_styleData)
     {
-        m_styleData->toXmlElem("dg:styleData", "", _outStream);
+        m_styleData->toXmlElem("dgm:styleData", "", _outStream);
     }
 
 
     if (m_has_clrData)
     {
-        m_clrData->toXmlElem("dg:clrData", "", _outStream);
+        m_clrData->toXmlElem("dgm:clrData", "", _outStream);
     }
 
 
     if (m_has_layoutNode)
     {
-        m_layoutNode->toXmlElem("dg:layoutNode", "", _outStream);
+        m_layoutNode->toXmlElem("dgm:layoutNode", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
-    _outStream << "</dg:layoutDef>";
+    _outStream << "</dgm:layoutDef>";
 }
 
 const layoutDef_element& layoutDef_element::default_instance()
@@ -25714,9 +25714,9 @@ void layoutDefHdr_element::clear()
 
 void layoutDefHdr_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<dg:layoutDefHdr";
+    _outStream << "<dgm:layoutDefHdr";
 
-    _outStream << " " << "xmlns:dg=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
+    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
@@ -25767,13 +25767,13 @@ void layoutDefHdr_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("dg:title", "", _outStream);
+                (*iter)->get_title().toXmlElem("dgm:title", "", _outStream);
             }
 
 
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("dg:desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
 
 
@@ -25783,16 +25783,16 @@ void layoutDefHdr_element::toXml(std::ostream& _outStream) const
 
     if (m_has_catLst)
     {
-        m_catLst->toXmlElem("dg:catLst", "", _outStream);
+        m_catLst->toXmlElem("dgm:catLst", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
-    _outStream << "</dg:layoutDefHdr>";
+    _outStream << "</dgm:layoutDefHdr>";
 }
 
 const layoutDefHdr_element& layoutDefHdr_element::default_instance()
@@ -25978,9 +25978,9 @@ void layoutDefHdrLst_element::clear()
 
 void layoutDefHdrLst_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<dg:layoutDefHdrLst";
+    _outStream << "<dgm:layoutDefHdrLst";
 
-    _outStream << " " << "xmlns:dg=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
+    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
@@ -25993,14 +25993,14 @@ void layoutDefHdrLst_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_layoutDefHdr())
             {
-                (*iter)->get_layoutDefHdr().toXmlElem("dg:layoutDefHdr", "", _outStream);
+                (*iter)->get_layoutDefHdr().toXmlElem("dgm:layoutDefHdr", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</dg:layoutDefHdrLst>";
+    _outStream << "</dgm:layoutDefHdrLst>";
 }
 
 const layoutDefHdrLst_element& layoutDefHdrLst_element::default_instance()
@@ -26103,9 +26103,9 @@ void relIds_element::clear()
 
 void relIds_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<dg:relIds";
+    _outStream << "<dgm:relIds";
 
-    _outStream << " " << "xmlns:dg=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
+    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
@@ -26139,7 +26139,7 @@ void relIds_element::toXml(std::ostream& _outStream) const
 
     _outStream << ">";
 
-    _outStream << "</dg:relIds>";
+    _outStream << "</dgm:relIds>";
 }
 
 const relIds_element& relIds_element::default_instance()
@@ -26403,9 +26403,9 @@ void styleDef_element::clear()
 
 void styleDef_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<dg:styleDef";
+    _outStream << "<dgm:styleDef";
 
-    _outStream << " " << "xmlns:dg=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
+    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
@@ -26431,13 +26431,13 @@ void styleDef_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("dg:title", "", _outStream);
+                (*iter)->get_title().toXmlElem("dgm:title", "", _outStream);
             }
 
 
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("dg:desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
 
 
@@ -26447,13 +26447,13 @@ void styleDef_element::toXml(std::ostream& _outStream) const
 
     if (m_has_catLst)
     {
-        m_catLst->toXmlElem("dg:catLst", "", _outStream);
+        m_catLst->toXmlElem("dgm:catLst", "", _outStream);
     }
 
 
     if (m_has_scene3d)
     {
-        m_scene3d->toXmlElem("dg:scene3d", "", _outStream);
+        m_scene3d->toXmlElem("dgm:scene3d", "", _outStream);
     }
 
     {
@@ -26462,7 +26462,7 @@ void styleDef_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_styleLbl())
             {
-                (*iter)->get_styleLbl().toXmlElem("dg:styleLbl", "", _outStream);
+                (*iter)->get_styleLbl().toXmlElem("dgm:styleLbl", "", _outStream);
             }
 
 
@@ -26472,10 +26472,10 @@ void styleDef_element::toXml(std::ostream& _outStream) const
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
-    _outStream << "</dg:styleDef>";
+    _outStream << "</dgm:styleDef>";
 }
 
 const styleDef_element& styleDef_element::default_instance()
@@ -26753,9 +26753,9 @@ void styleDefHdr_element::clear()
 
 void styleDefHdr_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<dg:styleDefHdr";
+    _outStream << "<dgm:styleDefHdr";
 
-    _outStream << " " << "xmlns:dg=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
+    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
@@ -26799,13 +26799,13 @@ void styleDefHdr_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_title())
             {
-                (*iter)->get_title().toXmlElem("dg:title", "", _outStream);
+                (*iter)->get_title().toXmlElem("dgm:title", "", _outStream);
             }
 
 
             else if ((*iter)->has_desc())
             {
-                (*iter)->get_desc().toXmlElem("dg:desc", "", _outStream);
+                (*iter)->get_desc().toXmlElem("dgm:desc", "", _outStream);
             }
 
 
@@ -26815,16 +26815,16 @@ void styleDefHdr_element::toXml(std::ostream& _outStream) const
 
     if (m_has_catLst)
     {
-        m_catLst->toXmlElem("dg:catLst", "", _outStream);
+        m_catLst->toXmlElem("dgm:catLst", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("dg:extLst", "", _outStream);
+        m_extLst->toXmlElem("dgm:extLst", "", _outStream);
     }
 
-    _outStream << "</dg:styleDefHdr>";
+    _outStream << "</dgm:styleDefHdr>";
 }
 
 const styleDefHdr_element& styleDefHdr_element::default_instance()
@@ -26994,9 +26994,9 @@ void styleDefHdrLst_element::clear()
 
 void styleDefHdrLst_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<dg:styleDefHdrLst";
+    _outStream << "<dgm:styleDefHdrLst";
 
-    _outStream << " " << "xmlns:dg=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
+    _outStream << " " << "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
     _outStream << " " << "xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"";
@@ -27009,14 +27009,14 @@ void styleDefHdrLst_element::toXml(std::ostream& _outStream) const
         {
             if ((*iter)->has_styleDefHdr())
             {
-                (*iter)->get_styleDefHdr().toXmlElem("dg:styleDefHdr", "", _outStream);
+                (*iter)->get_styleDefHdr().toXmlElem("dgm:styleDefHdr", "", _outStream);
             }
 
 
         }
     }
 
-    _outStream << "</dg:styleDefHdrLst>";
+    _outStream << "</dgm:styleDefHdrLst>";
 }
 
 const styleDefHdrLst_element& styleDefHdrLst_element::default_instance()

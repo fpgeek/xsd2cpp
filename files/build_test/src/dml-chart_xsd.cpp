@@ -6,7 +6,7 @@
 #include "dml-main_xsd.h"
 #include "dml-chartDrawing_xsd.h"
 #include "shared-commonSimpleTypes_xsd.h"
-namespace ns_ct {
+namespace ns_c {
 using namespace std;
 
 // Element
@@ -5412,7 +5412,7 @@ void CT_ExtensionList::toXmlElem(const std::string& _elemName, const std::string
         {
             if ((*iter)->has_ext())
             {
-                (*iter)->get_ext().toXmlElem("ct:ext", "", _outStream);
+                (*iter)->get_ext().toXmlElem("c:ext", "", _outStream);
             }
 
 
@@ -5556,7 +5556,7 @@ void CT_NumVal::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_v)
     {
-        _outStream << "<ct:v>" << m_v->toString() << "</ct:v>";
+        _outStream << "<c:v>" << m_v->toString() << "</c:v>";
     }
 
     _outStream << "</" << _elemName << ">";
@@ -5756,13 +5756,13 @@ void CT_NumData::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_formatCode)
     {
-        _outStream << "<ct:formatCode>" << m_formatCode->toString() << "</ct:formatCode>";
+        _outStream << "<c:formatCode>" << m_formatCode->toString() << "</c:formatCode>";
     }
 
 
     if (m_has_ptCount)
     {
-        m_ptCount->toXmlElem("ct:ptCount", "", _outStream);
+        m_ptCount->toXmlElem("c:ptCount", "", _outStream);
     }
 
     {
@@ -5771,7 +5771,7 @@ void CT_NumData::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_pt())
             {
-                (*iter)->get_pt().toXmlElem("ct:pt", "", _outStream);
+                (*iter)->get_pt().toXmlElem("c:pt", "", _outStream);
             }
 
 
@@ -5781,7 +5781,7 @@ void CT_NumData::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -5948,19 +5948,19 @@ void CT_NumRef::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_f)
     {
-        _outStream << "<ct:f>" << m_f << "</ct:f>";
+        _outStream << "<c:f>" << m_f << "</c:f>";
     }
 
 
     if (m_has_numCache)
     {
-        m_numCache->toXmlElem("ct:numCache", "", _outStream);
+        m_numCache->toXmlElem("c:numCache", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -6098,13 +6098,13 @@ void CT_NumDataSource::toXmlElem(const std::string& _elemName, const std::string
 
     if (m_has_numRef)
     {
-        m_numRef->toXmlElem("ct:numRef", "", _outStream);
+        m_numRef->toXmlElem("c:numRef", "", _outStream);
     }
 
 
     if (m_has_numLit)
     {
-        m_numLit->toXmlElem("ct:numLit", "", _outStream);
+        m_numLit->toXmlElem("c:numLit", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -6194,7 +6194,7 @@ void CT_StrVal::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_v)
     {
-        _outStream << "<ct:v>" << m_v->toString() << "</ct:v>";
+        _outStream << "<c:v>" << m_v->toString() << "</c:v>";
     }
 
     _outStream << "</" << _elemName << ">";
@@ -6339,7 +6339,7 @@ void CT_StrData::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_ptCount)
     {
-        m_ptCount->toXmlElem("ct:ptCount", "", _outStream);
+        m_ptCount->toXmlElem("c:ptCount", "", _outStream);
     }
 
     {
@@ -6348,7 +6348,7 @@ void CT_StrData::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_pt())
             {
-                (*iter)->get_pt().toXmlElem("ct:pt", "", _outStream);
+                (*iter)->get_pt().toXmlElem("c:pt", "", _outStream);
             }
 
 
@@ -6358,7 +6358,7 @@ void CT_StrData::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -6525,19 +6525,19 @@ void CT_StrRef::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_f)
     {
-        _outStream << "<ct:f>" << m_f << "</ct:f>";
+        _outStream << "<c:f>" << m_f << "</c:f>";
     }
 
 
     if (m_has_strCache)
     {
-        m_strCache->toXmlElem("ct:strCache", "", _outStream);
+        m_strCache->toXmlElem("c:strCache", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -6675,13 +6675,13 @@ void CT_Tx::toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr
 
     if (m_has_strRef)
     {
-        m_strRef->toXmlElem("ct:strRef", "", _outStream);
+        m_strRef->toXmlElem("c:strRef", "", _outStream);
     }
 
 
     if (m_has_rich)
     {
-        m_rich->toXmlElem("ct:rich", "", _outStream);
+        m_rich->toXmlElem("c:rich", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -6817,7 +6817,7 @@ void CT_Lvl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
         {
             if ((*iter)->has_pt())
             {
-                (*iter)->get_pt().toXmlElem("ct:pt", "", _outStream);
+                (*iter)->get_pt().toXmlElem("c:pt", "", _outStream);
             }
 
 
@@ -6982,7 +6982,7 @@ void CT_MultiLvlStrData::toXmlElem(const std::string& _elemName, const std::stri
 
     if (m_has_ptCount)
     {
-        m_ptCount->toXmlElem("ct:ptCount", "", _outStream);
+        m_ptCount->toXmlElem("c:ptCount", "", _outStream);
     }
 
     {
@@ -6991,7 +6991,7 @@ void CT_MultiLvlStrData::toXmlElem(const std::string& _elemName, const std::stri
         {
             if ((*iter)->has_lvl())
             {
-                (*iter)->get_lvl().toXmlElem("ct:lvl", "", _outStream);
+                (*iter)->get_lvl().toXmlElem("c:lvl", "", _outStream);
             }
 
 
@@ -7001,7 +7001,7 @@ void CT_MultiLvlStrData::toXmlElem(const std::string& _elemName, const std::stri
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -7168,19 +7168,19 @@ void CT_MultiLvlStrRef::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_f)
     {
-        _outStream << "<ct:f>" << m_f << "</ct:f>";
+        _outStream << "<c:f>" << m_f << "</c:f>";
     }
 
 
     if (m_has_multiLvlStrCache)
     {
-        m_multiLvlStrCache->toXmlElem("ct:multiLvlStrCache", "", _outStream);
+        m_multiLvlStrCache->toXmlElem("c:multiLvlStrCache", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -7588,31 +7588,31 @@ void CT_AxDataSource::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_multiLvlStrRef)
     {
-        m_multiLvlStrRef->toXmlElem("ct:multiLvlStrRef", "", _outStream);
+        m_multiLvlStrRef->toXmlElem("c:multiLvlStrRef", "", _outStream);
     }
 
 
     if (m_has_numRef)
     {
-        m_numRef->toXmlElem("ct:numRef", "", _outStream);
+        m_numRef->toXmlElem("c:numRef", "", _outStream);
     }
 
 
     if (m_has_numLit)
     {
-        m_numLit->toXmlElem("ct:numLit", "", _outStream);
+        m_numLit->toXmlElem("c:numLit", "", _outStream);
     }
 
 
     if (m_has_strRef)
     {
-        m_strRef->toXmlElem("ct:strRef", "", _outStream);
+        m_strRef->toXmlElem("c:strRef", "", _outStream);
     }
 
 
     if (m_has_strLit)
     {
-        m_strLit->toXmlElem("ct:strLit", "", _outStream);
+        m_strLit->toXmlElem("c:strLit", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -7750,13 +7750,13 @@ void CT_SerTx::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_strRef)
     {
-        m_strRef->toXmlElem("ct:strRef", "", _outStream);
+        m_strRef->toXmlElem("c:strRef", "", _outStream);
     }
 
 
     if (m_has_v)
     {
-        _outStream << "<ct:v>" << m_v->toString() << "</ct:v>";
+        _outStream << "<c:v>" << m_v->toString() << "</c:v>";
     }
 
     _outStream << "</" << _elemName << ">";
@@ -8294,61 +8294,61 @@ void CT_ManualLayout::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_layoutTarget)
     {
-        m_layoutTarget->toXmlElem("ct:layoutTarget", "", _outStream);
+        m_layoutTarget->toXmlElem("c:layoutTarget", "", _outStream);
     }
 
 
     if (m_has_xMode)
     {
-        m_xMode->toXmlElem("ct:xMode", "", _outStream);
+        m_xMode->toXmlElem("c:xMode", "", _outStream);
     }
 
 
     if (m_has_yMode)
     {
-        m_yMode->toXmlElem("ct:yMode", "", _outStream);
+        m_yMode->toXmlElem("c:yMode", "", _outStream);
     }
 
 
     if (m_has_wMode)
     {
-        m_wMode->toXmlElem("ct:wMode", "", _outStream);
+        m_wMode->toXmlElem("c:wMode", "", _outStream);
     }
 
 
     if (m_has_hMode)
     {
-        m_hMode->toXmlElem("ct:hMode", "", _outStream);
+        m_hMode->toXmlElem("c:hMode", "", _outStream);
     }
 
 
     if (m_has_x)
     {
-        m_x->toXmlElem("ct:x", "", _outStream);
+        m_x->toXmlElem("c:x", "", _outStream);
     }
 
 
     if (m_has_y)
     {
-        m_y->toXmlElem("ct:y", "", _outStream);
+        m_y->toXmlElem("c:y", "", _outStream);
     }
 
 
     if (m_has_w)
     {
-        m_w->toXmlElem("ct:w", "", _outStream);
+        m_w->toXmlElem("c:w", "", _outStream);
     }
 
 
     if (m_has_h)
     {
-        m_h->toXmlElem("ct:h", "", _outStream);
+        m_h->toXmlElem("c:h", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -8460,13 +8460,13 @@ void CT_Layout::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_manualLayout)
     {
-        m_manualLayout->toXmlElem("ct:manualLayout", "", _outStream);
+        m_manualLayout->toXmlElem("c:manualLayout", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -8718,37 +8718,37 @@ void CT_Title::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_tx)
     {
-        m_tx->toXmlElem("ct:tx", "", _outStream);
+        m_tx->toXmlElem("c:tx", "", _outStream);
     }
 
 
     if (m_has_layout)
     {
-        m_layout->toXmlElem("ct:layout", "", _outStream);
+        m_layout->toXmlElem("c:layout", "", _outStream);
     }
 
 
     if (m_has_overlay)
     {
-        m_overlay->toXmlElem("ct:overlay", "", _outStream);
+        m_overlay->toXmlElem("c:overlay", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -9400,43 +9400,43 @@ void CT_View3D::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_rotX)
     {
-        m_rotX->toXmlElem("ct:rotX", "", _outStream);
+        m_rotX->toXmlElem("c:rotX", "", _outStream);
     }
 
 
     if (m_has_hPercent)
     {
-        m_hPercent->toXmlElem("ct:hPercent", "", _outStream);
+        m_hPercent->toXmlElem("c:hPercent", "", _outStream);
     }
 
 
     if (m_has_rotY)
     {
-        m_rotY->toXmlElem("ct:rotY", "", _outStream);
+        m_rotY->toXmlElem("c:rotY", "", _outStream);
     }
 
 
     if (m_has_depthPercent)
     {
-        m_depthPercent->toXmlElem("ct:depthPercent", "", _outStream);
+        m_depthPercent->toXmlElem("c:depthPercent", "", _outStream);
     }
 
 
     if (m_has_rAngAx)
     {
-        m_rAngAx->toXmlElem("ct:rAngAx", "", _outStream);
+        m_rAngAx->toXmlElem("c:rAngAx", "", _outStream);
     }
 
 
     if (m_has_perspective)
     {
-        m_perspective->toXmlElem("ct:perspective", "", _outStream);
+        m_perspective->toXmlElem("c:perspective", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -9618,25 +9618,25 @@ void CT_Surface::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_thickness)
     {
-        m_thickness->toXmlElem("ct:thickness", "", _outStream);
+        m_thickness->toXmlElem("c:thickness", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_pictureOptions)
     {
-        m_pictureOptions->toXmlElem("ct:pictureOptions", "", _outStream);
+        m_pictureOptions->toXmlElem("c:pictureOptions", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -9996,43 +9996,43 @@ void CT_DTable::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_showHorzBorder)
     {
-        m_showHorzBorder->toXmlElem("ct:showHorzBorder", "", _outStream);
+        m_showHorzBorder->toXmlElem("c:showHorzBorder", "", _outStream);
     }
 
 
     if (m_has_showVertBorder)
     {
-        m_showVertBorder->toXmlElem("ct:showVertBorder", "", _outStream);
+        m_showVertBorder->toXmlElem("c:showVertBorder", "", _outStream);
     }
 
 
     if (m_has_showOutline)
     {
-        m_showOutline->toXmlElem("ct:showOutline", "", _outStream);
+        m_showOutline->toXmlElem("c:showOutline", "", _outStream);
     }
 
 
     if (m_has_showKeys)
     {
-        m_showKeys->toXmlElem("ct:showKeys", "", _outStream);
+        m_showKeys->toXmlElem("c:showKeys", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -10606,7 +10606,7 @@ void CT_CustSplit::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_secondPiePt())
             {
-                (*iter)->get_secondPiePt().toXmlElem("ct:secondPiePt", "", _outStream);
+                (*iter)->get_secondPiePt().toXmlElem("c:secondPiePt", "", _outStream);
             }
 
 
@@ -13126,7 +13126,7 @@ void CT_DLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
 
     if (m_has_idx)
     {
-        m_idx->toXmlElem("ct:idx", "", _outStream);
+        m_idx->toXmlElem("c:idx", "", _outStream);
     }
 
     {
@@ -13138,91 +13138,91 @@ void CT_DLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
 
     if (m_has_delete)
     {
-        m_delete->toXmlElem("ct:delete", "", _outStream);
+        m_delete->toXmlElem("c:delete", "", _outStream);
     }
 
 
     if (m_has_layout)
     {
-        m_layout->toXmlElem("ct:layout", "", _outStream);
+        m_layout->toXmlElem("c:layout", "", _outStream);
     }
 
 
     if (m_has_tx)
     {
-        m_tx->toXmlElem("ct:tx", "", _outStream);
+        m_tx->toXmlElem("c:tx", "", _outStream);
     }
 
 
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("ct:numFmt", "", _outStream);
+        m_numFmt->toXmlElem("c:numFmt", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_dLblPos)
     {
-        m_dLblPos->toXmlElem("ct:dLblPos", "", _outStream);
+        m_dLblPos->toXmlElem("c:dLblPos", "", _outStream);
     }
 
 
     if (m_has_showLegendKey)
     {
-        m_showLegendKey->toXmlElem("ct:showLegendKey", "", _outStream);
+        m_showLegendKey->toXmlElem("c:showLegendKey", "", _outStream);
     }
 
 
     if (m_has_showVal)
     {
-        m_showVal->toXmlElem("ct:showVal", "", _outStream);
+        m_showVal->toXmlElem("c:showVal", "", _outStream);
     }
 
 
     if (m_has_showCatName)
     {
-        m_showCatName->toXmlElem("ct:showCatName", "", _outStream);
+        m_showCatName->toXmlElem("c:showCatName", "", _outStream);
     }
 
 
     if (m_has_showSerName)
     {
-        m_showSerName->toXmlElem("ct:showSerName", "", _outStream);
+        m_showSerName->toXmlElem("c:showSerName", "", _outStream);
     }
 
 
     if (m_has_showPercent)
     {
-        m_showPercent->toXmlElem("ct:showPercent", "", _outStream);
+        m_showPercent->toXmlElem("c:showPercent", "", _outStream);
     }
 
 
     if (m_has_showBubbleSize)
     {
-        m_showBubbleSize->toXmlElem("ct:showBubbleSize", "", _outStream);
+        m_showBubbleSize->toXmlElem("c:showBubbleSize", "", _outStream);
     }
 
 
     if (m_has_separator)
     {
-        _outStream << "<ct:separator>" << m_separator << "</ct:separator>";
+        _outStream << "<c:separator>" << m_separator << "</c:separator>";
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -15369,7 +15369,7 @@ void CT_DLbls::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
         {
             if ((*iter)->has_dLbl())
             {
-                (*iter)->get_dLbl().toXmlElem("ct:dLbl", "", _outStream);
+                (*iter)->get_dLbl().toXmlElem("c:dLbl", "", _outStream);
             }
 
 
@@ -15385,91 +15385,91 @@ void CT_DLbls::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_delete)
     {
-        m_delete->toXmlElem("ct:delete", "", _outStream);
+        m_delete->toXmlElem("c:delete", "", _outStream);
     }
 
 
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("ct:numFmt", "", _outStream);
+        m_numFmt->toXmlElem("c:numFmt", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_dLblPos)
     {
-        m_dLblPos->toXmlElem("ct:dLblPos", "", _outStream);
+        m_dLblPos->toXmlElem("c:dLblPos", "", _outStream);
     }
 
 
     if (m_has_showLegendKey)
     {
-        m_showLegendKey->toXmlElem("ct:showLegendKey", "", _outStream);
+        m_showLegendKey->toXmlElem("c:showLegendKey", "", _outStream);
     }
 
 
     if (m_has_showVal)
     {
-        m_showVal->toXmlElem("ct:showVal", "", _outStream);
+        m_showVal->toXmlElem("c:showVal", "", _outStream);
     }
 
 
     if (m_has_showCatName)
     {
-        m_showCatName->toXmlElem("ct:showCatName", "", _outStream);
+        m_showCatName->toXmlElem("c:showCatName", "", _outStream);
     }
 
 
     if (m_has_showSerName)
     {
-        m_showSerName->toXmlElem("ct:showSerName", "", _outStream);
+        m_showSerName->toXmlElem("c:showSerName", "", _outStream);
     }
 
 
     if (m_has_showPercent)
     {
-        m_showPercent->toXmlElem("ct:showPercent", "", _outStream);
+        m_showPercent->toXmlElem("c:showPercent", "", _outStream);
     }
 
 
     if (m_has_showBubbleSize)
     {
-        m_showBubbleSize->toXmlElem("ct:showBubbleSize", "", _outStream);
+        m_showBubbleSize->toXmlElem("c:showBubbleSize", "", _outStream);
     }
 
 
     if (m_has_separator)
     {
-        _outStream << "<ct:separator>" << m_separator << "</ct:separator>";
+        _outStream << "<c:separator>" << m_separator << "</c:separator>";
     }
 
 
     if (m_has_showLeaderLines)
     {
-        m_showLeaderLines->toXmlElem("ct:showLeaderLines", "", _outStream);
+        m_showLeaderLines->toXmlElem("c:showLeaderLines", "", _outStream);
     }
 
 
     if (m_has_leaderLines)
     {
-        m_leaderLines->toXmlElem("ct:leaderLines", "", _outStream);
+        m_leaderLines->toXmlElem("c:leaderLines", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -15829,25 +15829,25 @@ void CT_Marker::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_symbol)
     {
-        m_symbol->toXmlElem("ct:symbol", "", _outStream);
+        m_symbol->toXmlElem("c:symbol", "", _outStream);
     }
 
 
     if (m_has_size)
     {
-        m_size->toXmlElem("ct:size", "", _outStream);
+        m_size->toXmlElem("c:size", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -16171,49 +16171,49 @@ void CT_DPt::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
 
     if (m_has_idx)
     {
-        m_idx->toXmlElem("ct:idx", "", _outStream);
+        m_idx->toXmlElem("c:idx", "", _outStream);
     }
 
 
     if (m_has_invertIfNegative)
     {
-        m_invertIfNegative->toXmlElem("ct:invertIfNegative", "", _outStream);
+        m_invertIfNegative->toXmlElem("c:invertIfNegative", "", _outStream);
     }
 
 
     if (m_has_marker)
     {
-        m_marker->toXmlElem("ct:marker", "", _outStream);
+        m_marker->toXmlElem("c:marker", "", _outStream);
     }
 
 
     if (m_has_bubble3D)
     {
-        m_bubble3D->toXmlElem("ct:bubble3D", "", _outStream);
+        m_bubble3D->toXmlElem("c:bubble3D", "", _outStream);
     }
 
 
     if (m_has_explosion)
     {
-        m_explosion->toXmlElem("ct:explosion", "", _outStream);
+        m_explosion->toXmlElem("c:explosion", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_pictureOptions)
     {
-        m_pictureOptions->toXmlElem("ct:pictureOptions", "", _outStream);
+        m_pictureOptions->toXmlElem("c:pictureOptions", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -16684,37 +16684,37 @@ void CT_TrendlineLbl::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_layout)
     {
-        m_layout->toXmlElem("ct:layout", "", _outStream);
+        m_layout->toXmlElem("c:layout", "", _outStream);
     }
 
 
     if (m_has_tx)
     {
-        m_tx->toXmlElem("ct:tx", "", _outStream);
+        m_tx->toXmlElem("c:tx", "", _outStream);
     }
 
 
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("ct:numFmt", "", _outStream);
+        m_numFmt->toXmlElem("c:numFmt", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -17164,73 +17164,73 @@ void CT_Trendline::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_name)
     {
-        _outStream << "<ct:name>" << m_name << "</ct:name>";
+        _outStream << "<c:name>" << m_name << "</c:name>";
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_trendlineType)
     {
-        m_trendlineType->toXmlElem("ct:trendlineType", "", _outStream);
+        m_trendlineType->toXmlElem("c:trendlineType", "", _outStream);
     }
 
 
     if (m_has_order)
     {
-        m_order->toXmlElem("ct:order", "", _outStream);
+        m_order->toXmlElem("c:order", "", _outStream);
     }
 
 
     if (m_has_period)
     {
-        m_period->toXmlElem("ct:period", "", _outStream);
+        m_period->toXmlElem("c:period", "", _outStream);
     }
 
 
     if (m_has_forward)
     {
-        m_forward->toXmlElem("ct:forward", "", _outStream);
+        m_forward->toXmlElem("c:forward", "", _outStream);
     }
 
 
     if (m_has_backward)
     {
-        m_backward->toXmlElem("ct:backward", "", _outStream);
+        m_backward->toXmlElem("c:backward", "", _outStream);
     }
 
 
     if (m_has_intercept)
     {
-        m_intercept->toXmlElem("ct:intercept", "", _outStream);
+        m_intercept->toXmlElem("c:intercept", "", _outStream);
     }
 
 
     if (m_has_dispRSqr)
     {
-        m_dispRSqr->toXmlElem("ct:dispRSqr", "", _outStream);
+        m_dispRSqr->toXmlElem("c:dispRSqr", "", _outStream);
     }
 
 
     if (m_has_dispEq)
     {
-        m_dispEq->toXmlElem("ct:dispEq", "", _outStream);
+        m_dispEq->toXmlElem("c:dispEq", "", _outStream);
     }
 
 
     if (m_has_trendlineLbl)
     {
-        m_trendlineLbl->toXmlElem("ct:trendlineLbl", "", _outStream);
+        m_trendlineLbl->toXmlElem("c:trendlineLbl", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -17811,55 +17811,55 @@ void CT_ErrBars::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_errDir)
     {
-        m_errDir->toXmlElem("ct:errDir", "", _outStream);
+        m_errDir->toXmlElem("c:errDir", "", _outStream);
     }
 
 
     if (m_has_errBarType)
     {
-        m_errBarType->toXmlElem("ct:errBarType", "", _outStream);
+        m_errBarType->toXmlElem("c:errBarType", "", _outStream);
     }
 
 
     if (m_has_errValType)
     {
-        m_errValType->toXmlElem("ct:errValType", "", _outStream);
+        m_errValType->toXmlElem("c:errValType", "", _outStream);
     }
 
 
     if (m_has_noEndCap)
     {
-        m_noEndCap->toXmlElem("ct:noEndCap", "", _outStream);
+        m_noEndCap->toXmlElem("c:noEndCap", "", _outStream);
     }
 
 
     if (m_has_plus)
     {
-        m_plus->toXmlElem("ct:plus", "", _outStream);
+        m_plus->toXmlElem("c:plus", "", _outStream);
     }
 
 
     if (m_has_minus)
     {
-        m_minus->toXmlElem("ct:minus", "", _outStream);
+        m_minus->toXmlElem("c:minus", "", _outStream);
     }
 
 
     if (m_has_val)
     {
-        m_val->toXmlElem("ct:val", "", _outStream);
+        m_val->toXmlElem("c:val", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -17936,7 +17936,7 @@ void CT_UpDownBar::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -18118,25 +18118,25 @@ void CT_UpDownBars::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_gapWidth)
     {
-        m_gapWidth->toXmlElem("ct:gapWidth", "", _outStream);
+        m_gapWidth->toXmlElem("c:gapWidth", "", _outStream);
     }
 
 
     if (m_has_upBars)
     {
-        m_upBars->toXmlElem("ct:upBars", "", _outStream);
+        m_upBars->toXmlElem("c:upBars", "", _outStream);
     }
 
 
     if (m_has_downBars)
     {
-        m_downBars->toXmlElem("ct:downBars", "", _outStream);
+        m_downBars->toXmlElem("c:downBars", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -18602,31 +18602,31 @@ void CT_LineSer::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_idx)
     {
-        m_idx->toXmlElem("ct:idx", "", _outStream);
+        m_idx->toXmlElem("c:idx", "", _outStream);
     }
 
 
     if (m_has_order)
     {
-        m_order->toXmlElem("ct:order", "", _outStream);
+        m_order->toXmlElem("c:order", "", _outStream);
     }
 
 
     if (m_has_tx)
     {
-        m_tx->toXmlElem("ct:tx", "", _outStream);
+        m_tx->toXmlElem("c:tx", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_marker)
     {
-        m_marker->toXmlElem("ct:marker", "", _outStream);
+        m_marker->toXmlElem("c:marker", "", _outStream);
     }
 
     {
@@ -18635,7 +18635,7 @@ void CT_LineSer::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("ct:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("c:dPt", "", _outStream);
             }
 
 
@@ -18645,7 +18645,7 @@ void CT_LineSer::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
     {
@@ -18654,7 +18654,7 @@ void CT_LineSer::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_trendline())
             {
-                (*iter)->get_trendline().toXmlElem("ct:trendline", "", _outStream);
+                (*iter)->get_trendline().toXmlElem("c:trendline", "", _outStream);
             }
 
 
@@ -18664,31 +18664,31 @@ void CT_LineSer::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_errBars)
     {
-        m_errBars->toXmlElem("ct:errBars", "", _outStream);
+        m_errBars->toXmlElem("c:errBars", "", _outStream);
     }
 
 
     if (m_has_cat)
     {
-        m_cat->toXmlElem("ct:cat", "", _outStream);
+        m_cat->toXmlElem("c:cat", "", _outStream);
     }
 
 
     if (m_has_val)
     {
-        m_val->toXmlElem("ct:val", "", _outStream);
+        m_val->toXmlElem("c:val", "", _outStream);
     }
 
 
     if (m_has_smooth)
     {
-        m_smooth->toXmlElem("ct:smooth", "", _outStream);
+        m_smooth->toXmlElem("c:smooth", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -19191,31 +19191,31 @@ void CT_ScatterSer::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_idx)
     {
-        m_idx->toXmlElem("ct:idx", "", _outStream);
+        m_idx->toXmlElem("c:idx", "", _outStream);
     }
 
 
     if (m_has_order)
     {
-        m_order->toXmlElem("ct:order", "", _outStream);
+        m_order->toXmlElem("c:order", "", _outStream);
     }
 
 
     if (m_has_tx)
     {
-        m_tx->toXmlElem("ct:tx", "", _outStream);
+        m_tx->toXmlElem("c:tx", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_marker)
     {
-        m_marker->toXmlElem("ct:marker", "", _outStream);
+        m_marker->toXmlElem("c:marker", "", _outStream);
     }
 
     {
@@ -19224,7 +19224,7 @@ void CT_ScatterSer::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("ct:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("c:dPt", "", _outStream);
             }
 
 
@@ -19234,7 +19234,7 @@ void CT_ScatterSer::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
     {
@@ -19243,13 +19243,13 @@ void CT_ScatterSer::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_trendline())
             {
-                (*iter)->get_trendline().toXmlElem("ct:trendline", "", _outStream);
+                (*iter)->get_trendline().toXmlElem("c:trendline", "", _outStream);
             }
 
 
             else if ((*iter)->has_errBars())
             {
-                (*iter)->get_errBars().toXmlElem("ct:errBars", "", _outStream);
+                (*iter)->get_errBars().toXmlElem("c:errBars", "", _outStream);
             }
 
 
@@ -19259,25 +19259,25 @@ void CT_ScatterSer::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_xVal)
     {
-        m_xVal->toXmlElem("ct:xVal", "", _outStream);
+        m_xVal->toXmlElem("c:xVal", "", _outStream);
     }
 
 
     if (m_has_yVal)
     {
-        m_yVal->toXmlElem("ct:yVal", "", _outStream);
+        m_yVal->toXmlElem("c:yVal", "", _outStream);
     }
 
 
     if (m_has_smooth)
     {
-        m_smooth->toXmlElem("ct:smooth", "", _outStream);
+        m_smooth->toXmlElem("c:smooth", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -19765,31 +19765,31 @@ void CT_RadarSer::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_idx)
     {
-        m_idx->toXmlElem("ct:idx", "", _outStream);
+        m_idx->toXmlElem("c:idx", "", _outStream);
     }
 
 
     if (m_has_order)
     {
-        m_order->toXmlElem("ct:order", "", _outStream);
+        m_order->toXmlElem("c:order", "", _outStream);
     }
 
 
     if (m_has_tx)
     {
-        m_tx->toXmlElem("ct:tx", "", _outStream);
+        m_tx->toXmlElem("c:tx", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_marker)
     {
-        m_marker->toXmlElem("ct:marker", "", _outStream);
+        m_marker->toXmlElem("c:marker", "", _outStream);
     }
 
     {
@@ -19798,7 +19798,7 @@ void CT_RadarSer::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("ct:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("c:dPt", "", _outStream);
             }
 
 
@@ -19808,25 +19808,25 @@ void CT_RadarSer::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_cat)
     {
-        m_cat->toXmlElem("ct:cat", "", _outStream);
+        m_cat->toXmlElem("c:cat", "", _outStream);
     }
 
 
     if (m_has_val)
     {
-        m_val->toXmlElem("ct:val", "", _outStream);
+        m_val->toXmlElem("c:val", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -20359,37 +20359,37 @@ void CT_BarSer::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_idx)
     {
-        m_idx->toXmlElem("ct:idx", "", _outStream);
+        m_idx->toXmlElem("c:idx", "", _outStream);
     }
 
 
     if (m_has_order)
     {
-        m_order->toXmlElem("ct:order", "", _outStream);
+        m_order->toXmlElem("c:order", "", _outStream);
     }
 
 
     if (m_has_tx)
     {
-        m_tx->toXmlElem("ct:tx", "", _outStream);
+        m_tx->toXmlElem("c:tx", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_invertIfNegative)
     {
-        m_invertIfNegative->toXmlElem("ct:invertIfNegative", "", _outStream);
+        m_invertIfNegative->toXmlElem("c:invertIfNegative", "", _outStream);
     }
 
 
     if (m_has_pictureOptions)
     {
-        m_pictureOptions->toXmlElem("ct:pictureOptions", "", _outStream);
+        m_pictureOptions->toXmlElem("c:pictureOptions", "", _outStream);
     }
 
     {
@@ -20398,7 +20398,7 @@ void CT_BarSer::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("ct:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("c:dPt", "", _outStream);
             }
 
 
@@ -20408,7 +20408,7 @@ void CT_BarSer::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
     {
@@ -20417,7 +20417,7 @@ void CT_BarSer::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_trendline())
             {
-                (*iter)->get_trendline().toXmlElem("ct:trendline", "", _outStream);
+                (*iter)->get_trendline().toXmlElem("c:trendline", "", _outStream);
             }
 
 
@@ -20427,31 +20427,31 @@ void CT_BarSer::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_errBars)
     {
-        m_errBars->toXmlElem("ct:errBars", "", _outStream);
+        m_errBars->toXmlElem("c:errBars", "", _outStream);
     }
 
 
     if (m_has_cat)
     {
-        m_cat->toXmlElem("ct:cat", "", _outStream);
+        m_cat->toXmlElem("c:cat", "", _outStream);
     }
 
 
     if (m_has_val)
     {
-        m_val->toXmlElem("ct:val", "", _outStream);
+        m_val->toXmlElem("c:val", "", _outStream);
     }
 
 
     if (m_has_shape)
     {
-        m_shape->toXmlElem("ct:shape", "", _outStream);
+        m_shape->toXmlElem("c:shape", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -20919,31 +20919,31 @@ void CT_AreaSer::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_idx)
     {
-        m_idx->toXmlElem("ct:idx", "", _outStream);
+        m_idx->toXmlElem("c:idx", "", _outStream);
     }
 
 
     if (m_has_order)
     {
-        m_order->toXmlElem("ct:order", "", _outStream);
+        m_order->toXmlElem("c:order", "", _outStream);
     }
 
 
     if (m_has_tx)
     {
-        m_tx->toXmlElem("ct:tx", "", _outStream);
+        m_tx->toXmlElem("c:tx", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_pictureOptions)
     {
-        m_pictureOptions->toXmlElem("ct:pictureOptions", "", _outStream);
+        m_pictureOptions->toXmlElem("c:pictureOptions", "", _outStream);
     }
 
     {
@@ -20952,7 +20952,7 @@ void CT_AreaSer::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("ct:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("c:dPt", "", _outStream);
             }
 
 
@@ -20962,7 +20962,7 @@ void CT_AreaSer::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
     {
@@ -20971,13 +20971,13 @@ void CT_AreaSer::toXmlElem(const std::string& _elemName, const std::string& _xml
         {
             if ((*iter)->has_trendline())
             {
-                (*iter)->get_trendline().toXmlElem("ct:trendline", "", _outStream);
+                (*iter)->get_trendline().toXmlElem("c:trendline", "", _outStream);
             }
 
 
             else if ((*iter)->has_errBars())
             {
-                (*iter)->get_errBars().toXmlElem("ct:errBars", "", _outStream);
+                (*iter)->get_errBars().toXmlElem("c:errBars", "", _outStream);
             }
 
 
@@ -20987,19 +20987,19 @@ void CT_AreaSer::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_cat)
     {
-        m_cat->toXmlElem("ct:cat", "", _outStream);
+        m_cat->toXmlElem("c:cat", "", _outStream);
     }
 
 
     if (m_has_val)
     {
-        m_val->toXmlElem("ct:val", "", _outStream);
+        m_val->toXmlElem("c:val", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -21487,31 +21487,31 @@ void CT_PieSer::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_idx)
     {
-        m_idx->toXmlElem("ct:idx", "", _outStream);
+        m_idx->toXmlElem("c:idx", "", _outStream);
     }
 
 
     if (m_has_order)
     {
-        m_order->toXmlElem("ct:order", "", _outStream);
+        m_order->toXmlElem("c:order", "", _outStream);
     }
 
 
     if (m_has_tx)
     {
-        m_tx->toXmlElem("ct:tx", "", _outStream);
+        m_tx->toXmlElem("c:tx", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_explosion)
     {
-        m_explosion->toXmlElem("ct:explosion", "", _outStream);
+        m_explosion->toXmlElem("c:explosion", "", _outStream);
     }
 
     {
@@ -21520,7 +21520,7 @@ void CT_PieSer::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("ct:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("c:dPt", "", _outStream);
             }
 
 
@@ -21530,25 +21530,25 @@ void CT_PieSer::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_cat)
     {
-        m_cat->toXmlElem("ct:cat", "", _outStream);
+        m_cat->toXmlElem("c:cat", "", _outStream);
     }
 
 
     if (m_has_val)
     {
-        m_val->toXmlElem("ct:val", "", _outStream);
+        m_val->toXmlElem("c:val", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -22054,31 +22054,31 @@ void CT_BubbleSer::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_idx)
     {
-        m_idx->toXmlElem("ct:idx", "", _outStream);
+        m_idx->toXmlElem("c:idx", "", _outStream);
     }
 
 
     if (m_has_order)
     {
-        m_order->toXmlElem("ct:order", "", _outStream);
+        m_order->toXmlElem("c:order", "", _outStream);
     }
 
 
     if (m_has_tx)
     {
-        m_tx->toXmlElem("ct:tx", "", _outStream);
+        m_tx->toXmlElem("c:tx", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_invertIfNegative)
     {
-        m_invertIfNegative->toXmlElem("ct:invertIfNegative", "", _outStream);
+        m_invertIfNegative->toXmlElem("c:invertIfNegative", "", _outStream);
     }
 
     {
@@ -22087,7 +22087,7 @@ void CT_BubbleSer::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_dPt())
             {
-                (*iter)->get_dPt().toXmlElem("ct:dPt", "", _outStream);
+                (*iter)->get_dPt().toXmlElem("c:dPt", "", _outStream);
             }
 
 
@@ -22097,7 +22097,7 @@ void CT_BubbleSer::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
     {
@@ -22106,13 +22106,13 @@ void CT_BubbleSer::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_trendline())
             {
-                (*iter)->get_trendline().toXmlElem("ct:trendline", "", _outStream);
+                (*iter)->get_trendline().toXmlElem("c:trendline", "", _outStream);
             }
 
 
             else if ((*iter)->has_errBars())
             {
-                (*iter)->get_errBars().toXmlElem("ct:errBars", "", _outStream);
+                (*iter)->get_errBars().toXmlElem("c:errBars", "", _outStream);
             }
 
 
@@ -22122,31 +22122,31 @@ void CT_BubbleSer::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_xVal)
     {
-        m_xVal->toXmlElem("ct:xVal", "", _outStream);
+        m_xVal->toXmlElem("c:xVal", "", _outStream);
     }
 
 
     if (m_has_yVal)
     {
-        m_yVal->toXmlElem("ct:yVal", "", _outStream);
+        m_yVal->toXmlElem("c:yVal", "", _outStream);
     }
 
 
     if (m_has_bubbleSize)
     {
-        m_bubbleSize->toXmlElem("ct:bubbleSize", "", _outStream);
+        m_bubbleSize->toXmlElem("c:bubbleSize", "", _outStream);
     }
 
 
     if (m_has_bubble3D)
     {
-        m_bubble3D->toXmlElem("ct:bubble3D", "", _outStream);
+        m_bubble3D->toXmlElem("c:bubble3D", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -22547,43 +22547,43 @@ void CT_SurfaceSer::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_idx)
     {
-        m_idx->toXmlElem("ct:idx", "", _outStream);
+        m_idx->toXmlElem("c:idx", "", _outStream);
     }
 
 
     if (m_has_order)
     {
-        m_order->toXmlElem("ct:order", "", _outStream);
+        m_order->toXmlElem("c:order", "", _outStream);
     }
 
 
     if (m_has_tx)
     {
-        m_tx->toXmlElem("ct:tx", "", _outStream);
+        m_tx->toXmlElem("c:tx", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_cat)
     {
-        m_cat->toXmlElem("ct:cat", "", _outStream);
+        m_cat->toXmlElem("c:cat", "", _outStream);
     }
 
 
     if (m_has_val)
     {
-        m_val->toXmlElem("ct:val", "", _outStream);
+        m_val->toXmlElem("c:val", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -22733,7 +22733,7 @@ void CT_ChartLines::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -23126,13 +23126,13 @@ void CT_LineChart::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("ct:grouping", "", _outStream);
+        m_grouping->toXmlElem("c:grouping", "", _outStream);
     }
 
 
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("ct:varyColors", "", _outStream);
+        m_varyColors->toXmlElem("c:varyColors", "", _outStream);
     }
 
     {
@@ -23141,7 +23141,7 @@ void CT_LineChart::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -23151,37 +23151,37 @@ void CT_LineChart::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_dropLines)
     {
-        m_dropLines->toXmlElem("ct:dropLines", "", _outStream);
+        m_dropLines->toXmlElem("c:dropLines", "", _outStream);
     }
 
 
     if (m_has_hiLowLines)
     {
-        m_hiLowLines->toXmlElem("ct:hiLowLines", "", _outStream);
+        m_hiLowLines->toXmlElem("c:hiLowLines", "", _outStream);
     }
 
 
     if (m_has_upDownBars)
     {
-        m_upDownBars->toXmlElem("ct:upDownBars", "", _outStream);
+        m_upDownBars->toXmlElem("c:upDownBars", "", _outStream);
     }
 
 
     if (m_has_marker)
     {
-        m_marker->toXmlElem("ct:marker", "", _outStream);
+        m_marker->toXmlElem("c:marker", "", _outStream);
     }
 
 
     if (m_has_smooth)
     {
-        m_smooth->toXmlElem("ct:smooth", "", _outStream);
+        m_smooth->toXmlElem("c:smooth", "", _outStream);
     }
 
     {
@@ -23190,7 +23190,7 @@ void CT_LineChart::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("ct:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("c:axId", "", _outStream);
             }
 
 
@@ -23200,7 +23200,7 @@ void CT_LineChart::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -23552,13 +23552,13 @@ void CT_Line3DChart::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("ct:grouping", "", _outStream);
+        m_grouping->toXmlElem("c:grouping", "", _outStream);
     }
 
 
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("ct:varyColors", "", _outStream);
+        m_varyColors->toXmlElem("c:varyColors", "", _outStream);
     }
 
     {
@@ -23567,7 +23567,7 @@ void CT_Line3DChart::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -23577,19 +23577,19 @@ void CT_Line3DChart::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_dropLines)
     {
-        m_dropLines->toXmlElem("ct:dropLines", "", _outStream);
+        m_dropLines->toXmlElem("c:dropLines", "", _outStream);
     }
 
 
     if (m_has_gapDepth)
     {
-        m_gapDepth->toXmlElem("ct:gapDepth", "", _outStream);
+        m_gapDepth->toXmlElem("c:gapDepth", "", _outStream);
     }
 
     {
@@ -23598,7 +23598,7 @@ void CT_Line3DChart::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("ct:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("c:axId", "", _outStream);
             }
 
 
@@ -23608,7 +23608,7 @@ void CT_Line3DChart::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -23931,7 +23931,7 @@ void CT_StockChart::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -23941,25 +23941,25 @@ void CT_StockChart::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_dropLines)
     {
-        m_dropLines->toXmlElem("ct:dropLines", "", _outStream);
+        m_dropLines->toXmlElem("c:dropLines", "", _outStream);
     }
 
 
     if (m_has_hiLowLines)
     {
-        m_hiLowLines->toXmlElem("ct:hiLowLines", "", _outStream);
+        m_hiLowLines->toXmlElem("c:hiLowLines", "", _outStream);
     }
 
 
     if (m_has_upDownBars)
     {
-        m_upDownBars->toXmlElem("ct:upDownBars", "", _outStream);
+        m_upDownBars->toXmlElem("c:upDownBars", "", _outStream);
     }
 
     {
@@ -23973,7 +23973,7 @@ void CT_StockChart::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("ct:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("c:axId", "", _outStream);
             }
 
 
@@ -23983,7 +23983,7 @@ void CT_StockChart::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -24338,13 +24338,13 @@ void CT_ScatterChart::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_scatterStyle)
     {
-        m_scatterStyle->toXmlElem("ct:scatterStyle", "", _outStream);
+        m_scatterStyle->toXmlElem("c:scatterStyle", "", _outStream);
     }
 
 
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("ct:varyColors", "", _outStream);
+        m_varyColors->toXmlElem("c:varyColors", "", _outStream);
     }
 
     {
@@ -24353,7 +24353,7 @@ void CT_ScatterChart::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -24363,7 +24363,7 @@ void CT_ScatterChart::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
     {
@@ -24372,7 +24372,7 @@ void CT_ScatterChart::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("ct:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("c:axId", "", _outStream);
             }
 
 
@@ -24382,7 +24382,7 @@ void CT_ScatterChart::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -24737,13 +24737,13 @@ void CT_RadarChart::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_radarStyle)
     {
-        m_radarStyle->toXmlElem("ct:radarStyle", "", _outStream);
+        m_radarStyle->toXmlElem("c:radarStyle", "", _outStream);
     }
 
 
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("ct:varyColors", "", _outStream);
+        m_varyColors->toXmlElem("c:varyColors", "", _outStream);
     }
 
     {
@@ -24752,7 +24752,7 @@ void CT_RadarChart::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -24762,7 +24762,7 @@ void CT_RadarChart::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
     {
@@ -24771,7 +24771,7 @@ void CT_RadarChart::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("ct:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("c:axId", "", _outStream);
             }
 
 
@@ -24781,7 +24781,7 @@ void CT_RadarChart::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -25395,19 +25395,19 @@ void CT_BarChart::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_barDir)
     {
-        m_barDir->toXmlElem("ct:barDir", "", _outStream);
+        m_barDir->toXmlElem("c:barDir", "", _outStream);
     }
 
 
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("ct:grouping", "", _outStream);
+        m_grouping->toXmlElem("c:grouping", "", _outStream);
     }
 
 
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("ct:varyColors", "", _outStream);
+        m_varyColors->toXmlElem("c:varyColors", "", _outStream);
     }
 
     {
@@ -25416,7 +25416,7 @@ void CT_BarChart::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -25426,19 +25426,19 @@ void CT_BarChart::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_gapWidth)
     {
-        m_gapWidth->toXmlElem("ct:gapWidth", "", _outStream);
+        m_gapWidth->toXmlElem("c:gapWidth", "", _outStream);
     }
 
 
     if (m_has_overlap)
     {
-        m_overlap->toXmlElem("ct:overlap", "", _outStream);
+        m_overlap->toXmlElem("c:overlap", "", _outStream);
     }
 
     {
@@ -25447,13 +25447,13 @@ void CT_BarChart::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_serLines())
             {
-                (*iter)->get_serLines().toXmlElem("ct:serLines", "", _outStream);
+                (*iter)->get_serLines().toXmlElem("c:serLines", "", _outStream);
             }
 
 
             else if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("ct:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("c:axId", "", _outStream);
             }
 
 
@@ -25463,7 +25463,7 @@ void CT_BarChart::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -25930,19 +25930,19 @@ void CT_Bar3DChart::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_barDir)
     {
-        m_barDir->toXmlElem("ct:barDir", "", _outStream);
+        m_barDir->toXmlElem("c:barDir", "", _outStream);
     }
 
 
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("ct:grouping", "", _outStream);
+        m_grouping->toXmlElem("c:grouping", "", _outStream);
     }
 
 
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("ct:varyColors", "", _outStream);
+        m_varyColors->toXmlElem("c:varyColors", "", _outStream);
     }
 
     {
@@ -25951,7 +25951,7 @@ void CT_Bar3DChart::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -25961,25 +25961,25 @@ void CT_Bar3DChart::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_gapWidth)
     {
-        m_gapWidth->toXmlElem("ct:gapWidth", "", _outStream);
+        m_gapWidth->toXmlElem("c:gapWidth", "", _outStream);
     }
 
 
     if (m_has_gapDepth)
     {
-        m_gapDepth->toXmlElem("ct:gapDepth", "", _outStream);
+        m_gapDepth->toXmlElem("c:gapDepth", "", _outStream);
     }
 
 
     if (m_has_shape)
     {
-        m_shape->toXmlElem("ct:shape", "", _outStream);
+        m_shape->toXmlElem("c:shape", "", _outStream);
     }
 
     {
@@ -25988,7 +25988,7 @@ void CT_Bar3DChart::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("ct:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("c:axId", "", _outStream);
             }
 
 
@@ -25998,7 +25998,7 @@ void CT_Bar3DChart::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -26313,13 +26313,13 @@ void CT_AreaChart::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("ct:grouping", "", _outStream);
+        m_grouping->toXmlElem("c:grouping", "", _outStream);
     }
 
 
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("ct:varyColors", "", _outStream);
+        m_varyColors->toXmlElem("c:varyColors", "", _outStream);
     }
 
     {
@@ -26328,7 +26328,7 @@ void CT_AreaChart::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -26338,13 +26338,13 @@ void CT_AreaChart::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_dropLines)
     {
-        m_dropLines->toXmlElem("ct:dropLines", "", _outStream);
+        m_dropLines->toXmlElem("c:dropLines", "", _outStream);
     }
 
     {
@@ -26353,7 +26353,7 @@ void CT_AreaChart::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("ct:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("c:axId", "", _outStream);
             }
 
 
@@ -26363,7 +26363,7 @@ void CT_AreaChart::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -26713,13 +26713,13 @@ void CT_Area3DChart::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_grouping)
     {
-        m_grouping->toXmlElem("ct:grouping", "", _outStream);
+        m_grouping->toXmlElem("c:grouping", "", _outStream);
     }
 
 
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("ct:varyColors", "", _outStream);
+        m_varyColors->toXmlElem("c:varyColors", "", _outStream);
     }
 
     {
@@ -26728,7 +26728,7 @@ void CT_Area3DChart::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -26738,19 +26738,19 @@ void CT_Area3DChart::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_dropLines)
     {
-        m_dropLines->toXmlElem("ct:dropLines", "", _outStream);
+        m_dropLines->toXmlElem("c:dropLines", "", _outStream);
     }
 
 
     if (m_has_gapDepth)
     {
-        m_gapDepth->toXmlElem("ct:gapDepth", "", _outStream);
+        m_gapDepth->toXmlElem("c:gapDepth", "", _outStream);
     }
 
     {
@@ -26759,7 +26759,7 @@ void CT_Area3DChart::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("ct:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("c:axId", "", _outStream);
             }
 
 
@@ -26769,7 +26769,7 @@ void CT_Area3DChart::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -27032,7 +27032,7 @@ void CT_PieChart::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("ct:varyColors", "", _outStream);
+        m_varyColors->toXmlElem("c:varyColors", "", _outStream);
     }
 
     {
@@ -27041,7 +27041,7 @@ void CT_PieChart::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -27051,19 +27051,19 @@ void CT_PieChart::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_firstSliceAng)
     {
-        m_firstSliceAng->toXmlElem("ct:firstSliceAng", "", _outStream);
+        m_firstSliceAng->toXmlElem("c:firstSliceAng", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -27259,7 +27259,7 @@ void CT_Pie3DChart::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("ct:varyColors", "", _outStream);
+        m_varyColors->toXmlElem("c:varyColors", "", _outStream);
     }
 
     {
@@ -27268,7 +27268,7 @@ void CT_Pie3DChart::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -27278,13 +27278,13 @@ void CT_Pie3DChart::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -27550,7 +27550,7 @@ void CT_DoughnutChart::toXmlElem(const std::string& _elemName, const std::string
 
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("ct:varyColors", "", _outStream);
+        m_varyColors->toXmlElem("c:varyColors", "", _outStream);
     }
 
     {
@@ -27559,7 +27559,7 @@ void CT_DoughnutChart::toXmlElem(const std::string& _elemName, const std::string
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -27569,25 +27569,25 @@ void CT_DoughnutChart::toXmlElem(const std::string& _elemName, const std::string
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_firstSliceAng)
     {
-        m_firstSliceAng->toXmlElem("ct:firstSliceAng", "", _outStream);
+        m_firstSliceAng->toXmlElem("c:firstSliceAng", "", _outStream);
     }
 
 
     if (m_has_holeSize)
     {
-        m_holeSize->toXmlElem("ct:holeSize", "", _outStream);
+        m_holeSize->toXmlElem("c:holeSize", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -28085,13 +28085,13 @@ void CT_OfPieChart::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_ofPieType)
     {
-        m_ofPieType->toXmlElem("ct:ofPieType", "", _outStream);
+        m_ofPieType->toXmlElem("c:ofPieType", "", _outStream);
     }
 
 
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("ct:varyColors", "", _outStream);
+        m_varyColors->toXmlElem("c:varyColors", "", _outStream);
     }
 
     {
@@ -28100,7 +28100,7 @@ void CT_OfPieChart::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -28110,37 +28110,37 @@ void CT_OfPieChart::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_gapWidth)
     {
-        m_gapWidth->toXmlElem("ct:gapWidth", "", _outStream);
+        m_gapWidth->toXmlElem("c:gapWidth", "", _outStream);
     }
 
 
     if (m_has_splitType)
     {
-        m_splitType->toXmlElem("ct:splitType", "", _outStream);
+        m_splitType->toXmlElem("c:splitType", "", _outStream);
     }
 
 
     if (m_has_splitPos)
     {
-        m_splitPos->toXmlElem("ct:splitPos", "", _outStream);
+        m_splitPos->toXmlElem("c:splitPos", "", _outStream);
     }
 
 
     if (m_has_custSplit)
     {
-        m_custSplit->toXmlElem("ct:custSplit", "", _outStream);
+        m_custSplit->toXmlElem("c:custSplit", "", _outStream);
     }
 
 
     if (m_has_secondPieSize)
     {
-        m_secondPieSize->toXmlElem("ct:secondPieSize", "", _outStream);
+        m_secondPieSize->toXmlElem("c:secondPieSize", "", _outStream);
     }
 
     {
@@ -28149,7 +28149,7 @@ void CT_OfPieChart::toXmlElem(const std::string& _elemName, const std::string& _
         {
             if ((*iter)->has_serLines())
             {
-                (*iter)->get_serLines().toXmlElem("ct:serLines", "", _outStream);
+                (*iter)->get_serLines().toXmlElem("c:serLines", "", _outStream);
             }
 
 
@@ -28159,7 +28159,7 @@ void CT_OfPieChart::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -28544,7 +28544,7 @@ void CT_BubbleChart::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_varyColors)
     {
-        m_varyColors->toXmlElem("ct:varyColors", "", _outStream);
+        m_varyColors->toXmlElem("c:varyColors", "", _outStream);
     }
 
     {
@@ -28553,7 +28553,7 @@ void CT_BubbleChart::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -28563,31 +28563,31 @@ void CT_BubbleChart::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_dLbls)
     {
-        m_dLbls->toXmlElem("ct:dLbls", "", _outStream);
+        m_dLbls->toXmlElem("c:dLbls", "", _outStream);
     }
 
 
     if (m_has_bubble3D)
     {
-        m_bubble3D->toXmlElem("ct:bubble3D", "", _outStream);
+        m_bubble3D->toXmlElem("c:bubble3D", "", _outStream);
     }
 
 
     if (m_has_bubbleScale)
     {
-        m_bubbleScale->toXmlElem("ct:bubbleScale", "", _outStream);
+        m_bubbleScale->toXmlElem("c:bubbleScale", "", _outStream);
     }
 
 
     if (m_has_showNegBubbles)
     {
-        m_showNegBubbles->toXmlElem("ct:showNegBubbles", "", _outStream);
+        m_showNegBubbles->toXmlElem("c:showNegBubbles", "", _outStream);
     }
 
 
     if (m_has_sizeRepresents)
     {
-        m_sizeRepresents->toXmlElem("ct:sizeRepresents", "", _outStream);
+        m_sizeRepresents->toXmlElem("c:sizeRepresents", "", _outStream);
     }
 
     {
@@ -28596,7 +28596,7 @@ void CT_BubbleChart::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("ct:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("c:axId", "", _outStream);
             }
 
 
@@ -28606,7 +28606,7 @@ void CT_BubbleChart::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -28784,13 +28784,13 @@ void CT_BandFmt::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_idx)
     {
-        m_idx->toXmlElem("ct:idx", "", _outStream);
+        m_idx->toXmlElem("c:idx", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -28853,7 +28853,7 @@ void CT_BandFmts::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_bandFmt())
             {
-                (*iter)->get_bandFmt().toXmlElem("ct:bandFmt", "", _outStream);
+                (*iter)->get_bandFmt().toXmlElem("c:bandFmt", "", _outStream);
             }
 
 
@@ -29070,7 +29070,7 @@ void CT_SurfaceChart::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_wireframe)
     {
-        m_wireframe->toXmlElem("ct:wireframe", "", _outStream);
+        m_wireframe->toXmlElem("c:wireframe", "", _outStream);
     }
 
     {
@@ -29079,7 +29079,7 @@ void CT_SurfaceChart::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -29089,7 +29089,7 @@ void CT_SurfaceChart::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_bandFmts)
     {
-        m_bandFmts->toXmlElem("ct:bandFmts", "", _outStream);
+        m_bandFmts->toXmlElem("c:bandFmts", "", _outStream);
     }
 
     {
@@ -29098,7 +29098,7 @@ void CT_SurfaceChart::toXmlElem(const std::string& _elemName, const std::string&
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("ct:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("c:axId", "", _outStream);
             }
 
 
@@ -29108,7 +29108,7 @@ void CT_SurfaceChart::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -29353,7 +29353,7 @@ void CT_Surface3DChart::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_wireframe)
     {
-        m_wireframe->toXmlElem("ct:wireframe", "", _outStream);
+        m_wireframe->toXmlElem("c:wireframe", "", _outStream);
     }
 
     {
@@ -29362,7 +29362,7 @@ void CT_Surface3DChart::toXmlElem(const std::string& _elemName, const std::strin
         {
             if ((*iter)->has_ser())
             {
-                (*iter)->get_ser().toXmlElem("ct:ser", "", _outStream);
+                (*iter)->get_ser().toXmlElem("c:ser", "", _outStream);
             }
 
 
@@ -29372,7 +29372,7 @@ void CT_Surface3DChart::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_bandFmts)
     {
-        m_bandFmts->toXmlElem("ct:bandFmts", "", _outStream);
+        m_bandFmts->toXmlElem("c:bandFmts", "", _outStream);
     }
 
     {
@@ -29381,7 +29381,7 @@ void CT_Surface3DChart::toXmlElem(const std::string& _elemName, const std::strin
         {
             if ((*iter)->has_axId())
             {
-                (*iter)->get_axId().toXmlElem("ct:axId", "", _outStream);
+                (*iter)->get_axId().toXmlElem("c:axId", "", _outStream);
             }
 
 
@@ -29391,7 +29391,7 @@ void CT_Surface3DChart::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -30475,31 +30475,31 @@ void CT_PictureOptions::toXmlElem(const std::string& _elemName, const std::strin
 
     if (m_has_applyToFront)
     {
-        m_applyToFront->toXmlElem("ct:applyToFront", "", _outStream);
+        m_applyToFront->toXmlElem("c:applyToFront", "", _outStream);
     }
 
 
     if (m_has_applyToSides)
     {
-        m_applyToSides->toXmlElem("ct:applyToSides", "", _outStream);
+        m_applyToSides->toXmlElem("c:applyToSides", "", _outStream);
     }
 
 
     if (m_has_applyToEnd)
     {
-        m_applyToEnd->toXmlElem("ct:applyToEnd", "", _outStream);
+        m_applyToEnd->toXmlElem("c:applyToEnd", "", _outStream);
     }
 
 
     if (m_has_pictureFormat)
     {
-        m_pictureFormat->toXmlElem("ct:pictureFormat", "", _outStream);
+        m_pictureFormat->toXmlElem("c:pictureFormat", "", _outStream);
     }
 
 
     if (m_has_pictureStackUnit)
     {
-        m_pictureStackUnit->toXmlElem("ct:pictureStackUnit", "", _outStream);
+        m_pictureStackUnit->toXmlElem("c:pictureStackUnit", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -30681,25 +30681,25 @@ void CT_DispUnitsLbl::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_layout)
     {
-        m_layout->toXmlElem("ct:layout", "", _outStream);
+        m_layout->toXmlElem("c:layout", "", _outStream);
     }
 
 
     if (m_has_tx)
     {
-        m_tx->toXmlElem("ct:tx", "", _outStream);
+        m_tx->toXmlElem("c:tx", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -30907,25 +30907,25 @@ void CT_DispUnits::toXmlElem(const std::string& _elemName, const std::string& _x
 
     if (m_has_custUnit)
     {
-        m_custUnit->toXmlElem("ct:custUnit", "", _outStream);
+        m_custUnit->toXmlElem("c:custUnit", "", _outStream);
     }
 
 
     if (m_has_builtInUnit)
     {
-        m_builtInUnit->toXmlElem("ct:builtInUnit", "", _outStream);
+        m_builtInUnit->toXmlElem("c:builtInUnit", "", _outStream);
     }
 
 
     if (m_has_dispUnitsLbl)
     {
-        m_dispUnitsLbl->toXmlElem("ct:dispUnitsLbl", "", _outStream);
+        m_dispUnitsLbl->toXmlElem("c:dispUnitsLbl", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -31288,31 +31288,31 @@ void CT_Scaling::toXmlElem(const std::string& _elemName, const std::string& _xml
 
     if (m_has_logBase)
     {
-        m_logBase->toXmlElem("ct:logBase", "", _outStream);
+        m_logBase->toXmlElem("c:logBase", "", _outStream);
     }
 
 
     if (m_has_orientation)
     {
-        m_orientation->toXmlElem("ct:orientation", "", _outStream);
+        m_orientation->toXmlElem("c:orientation", "", _outStream);
     }
 
 
     if (m_has_max)
     {
-        m_max->toXmlElem("ct:max", "", _outStream);
+        m_max->toXmlElem("c:max", "", _outStream);
     }
 
 
     if (m_has_min)
     {
-        m_min->toXmlElem("ct:min", "", _outStream);
+        m_min->toXmlElem("c:min", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -32263,85 +32263,85 @@ void CT_CatAx::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_axId)
     {
-        m_axId->toXmlElem("ct:axId", "", _outStream);
+        m_axId->toXmlElem("c:axId", "", _outStream);
     }
 
 
     if (m_has_scaling)
     {
-        m_scaling->toXmlElem("ct:scaling", "", _outStream);
+        m_scaling->toXmlElem("c:scaling", "", _outStream);
     }
 
 
     if (m_has_delete)
     {
-        m_delete->toXmlElem("ct:delete", "", _outStream);
+        m_delete->toXmlElem("c:delete", "", _outStream);
     }
 
 
     if (m_has_axPos)
     {
-        m_axPos->toXmlElem("ct:axPos", "", _outStream);
+        m_axPos->toXmlElem("c:axPos", "", _outStream);
     }
 
 
     if (m_has_majorGridlines)
     {
-        m_majorGridlines->toXmlElem("ct:majorGridlines", "", _outStream);
+        m_majorGridlines->toXmlElem("c:majorGridlines", "", _outStream);
     }
 
 
     if (m_has_minorGridlines)
     {
-        m_minorGridlines->toXmlElem("ct:minorGridlines", "", _outStream);
+        m_minorGridlines->toXmlElem("c:minorGridlines", "", _outStream);
     }
 
 
     if (m_has_title)
     {
-        m_title->toXmlElem("ct:title", "", _outStream);
+        m_title->toXmlElem("c:title", "", _outStream);
     }
 
 
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("ct:numFmt", "", _outStream);
+        m_numFmt->toXmlElem("c:numFmt", "", _outStream);
     }
 
 
     if (m_has_majorTickMark)
     {
-        m_majorTickMark->toXmlElem("ct:majorTickMark", "", _outStream);
+        m_majorTickMark->toXmlElem("c:majorTickMark", "", _outStream);
     }
 
 
     if (m_has_minorTickMark)
     {
-        m_minorTickMark->toXmlElem("ct:minorTickMark", "", _outStream);
+        m_minorTickMark->toXmlElem("c:minorTickMark", "", _outStream);
     }
 
 
     if (m_has_tickLblPos)
     {
-        m_tickLblPos->toXmlElem("ct:tickLblPos", "", _outStream);
+        m_tickLblPos->toXmlElem("c:tickLblPos", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_crossAx)
     {
-        m_crossAx->toXmlElem("ct:crossAx", "", _outStream);
+        m_crossAx->toXmlElem("c:crossAx", "", _outStream);
     }
 
     {
@@ -32353,55 +32353,55 @@ void CT_CatAx::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_crosses)
     {
-        m_crosses->toXmlElem("ct:crosses", "", _outStream);
+        m_crosses->toXmlElem("c:crosses", "", _outStream);
     }
 
 
     if (m_has_crossesAt)
     {
-        m_crossesAt->toXmlElem("ct:crossesAt", "", _outStream);
+        m_crossesAt->toXmlElem("c:crossesAt", "", _outStream);
     }
 
 
     if (m_has_auto)
     {
-        m_auto->toXmlElem("ct:auto", "", _outStream);
+        m_auto->toXmlElem("c:auto", "", _outStream);
     }
 
 
     if (m_has_lblAlgn)
     {
-        m_lblAlgn->toXmlElem("ct:lblAlgn", "", _outStream);
+        m_lblAlgn->toXmlElem("c:lblAlgn", "", _outStream);
     }
 
 
     if (m_has_lblOffset)
     {
-        m_lblOffset->toXmlElem("ct:lblOffset", "", _outStream);
+        m_lblOffset->toXmlElem("c:lblOffset", "", _outStream);
     }
 
 
     if (m_has_tickLblSkip)
     {
-        m_tickLblSkip->toXmlElem("ct:tickLblSkip", "", _outStream);
+        m_tickLblSkip->toXmlElem("c:tickLblSkip", "", _outStream);
     }
 
 
     if (m_has_tickMarkSkip)
     {
-        m_tickMarkSkip->toXmlElem("ct:tickMarkSkip", "", _outStream);
+        m_tickMarkSkip->toXmlElem("c:tickMarkSkip", "", _outStream);
     }
 
 
     if (m_has_noMultiLvlLbl)
     {
-        m_noMultiLvlLbl->toXmlElem("ct:noMultiLvlLbl", "", _outStream);
+        m_noMultiLvlLbl->toXmlElem("c:noMultiLvlLbl", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -33314,85 +33314,85 @@ void CT_DateAx::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_axId)
     {
-        m_axId->toXmlElem("ct:axId", "", _outStream);
+        m_axId->toXmlElem("c:axId", "", _outStream);
     }
 
 
     if (m_has_scaling)
     {
-        m_scaling->toXmlElem("ct:scaling", "", _outStream);
+        m_scaling->toXmlElem("c:scaling", "", _outStream);
     }
 
 
     if (m_has_delete)
     {
-        m_delete->toXmlElem("ct:delete", "", _outStream);
+        m_delete->toXmlElem("c:delete", "", _outStream);
     }
 
 
     if (m_has_axPos)
     {
-        m_axPos->toXmlElem("ct:axPos", "", _outStream);
+        m_axPos->toXmlElem("c:axPos", "", _outStream);
     }
 
 
     if (m_has_majorGridlines)
     {
-        m_majorGridlines->toXmlElem("ct:majorGridlines", "", _outStream);
+        m_majorGridlines->toXmlElem("c:majorGridlines", "", _outStream);
     }
 
 
     if (m_has_minorGridlines)
     {
-        m_minorGridlines->toXmlElem("ct:minorGridlines", "", _outStream);
+        m_minorGridlines->toXmlElem("c:minorGridlines", "", _outStream);
     }
 
 
     if (m_has_title)
     {
-        m_title->toXmlElem("ct:title", "", _outStream);
+        m_title->toXmlElem("c:title", "", _outStream);
     }
 
 
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("ct:numFmt", "", _outStream);
+        m_numFmt->toXmlElem("c:numFmt", "", _outStream);
     }
 
 
     if (m_has_majorTickMark)
     {
-        m_majorTickMark->toXmlElem("ct:majorTickMark", "", _outStream);
+        m_majorTickMark->toXmlElem("c:majorTickMark", "", _outStream);
     }
 
 
     if (m_has_minorTickMark)
     {
-        m_minorTickMark->toXmlElem("ct:minorTickMark", "", _outStream);
+        m_minorTickMark->toXmlElem("c:minorTickMark", "", _outStream);
     }
 
 
     if (m_has_tickLblPos)
     {
-        m_tickLblPos->toXmlElem("ct:tickLblPos", "", _outStream);
+        m_tickLblPos->toXmlElem("c:tickLblPos", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_crossAx)
     {
-        m_crossAx->toXmlElem("ct:crossAx", "", _outStream);
+        m_crossAx->toXmlElem("c:crossAx", "", _outStream);
     }
 
     {
@@ -33404,61 +33404,61 @@ void CT_DateAx::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_crosses)
     {
-        m_crosses->toXmlElem("ct:crosses", "", _outStream);
+        m_crosses->toXmlElem("c:crosses", "", _outStream);
     }
 
 
     if (m_has_crossesAt)
     {
-        m_crossesAt->toXmlElem("ct:crossesAt", "", _outStream);
+        m_crossesAt->toXmlElem("c:crossesAt", "", _outStream);
     }
 
 
     if (m_has_auto)
     {
-        m_auto->toXmlElem("ct:auto", "", _outStream);
+        m_auto->toXmlElem("c:auto", "", _outStream);
     }
 
 
     if (m_has_lblOffset)
     {
-        m_lblOffset->toXmlElem("ct:lblOffset", "", _outStream);
+        m_lblOffset->toXmlElem("c:lblOffset", "", _outStream);
     }
 
 
     if (m_has_baseTimeUnit)
     {
-        m_baseTimeUnit->toXmlElem("ct:baseTimeUnit", "", _outStream);
+        m_baseTimeUnit->toXmlElem("c:baseTimeUnit", "", _outStream);
     }
 
 
     if (m_has_majorUnit)
     {
-        m_majorUnit->toXmlElem("ct:majorUnit", "", _outStream);
+        m_majorUnit->toXmlElem("c:majorUnit", "", _outStream);
     }
 
 
     if (m_has_majorTimeUnit)
     {
-        m_majorTimeUnit->toXmlElem("ct:majorTimeUnit", "", _outStream);
+        m_majorTimeUnit->toXmlElem("c:majorTimeUnit", "", _outStream);
     }
 
 
     if (m_has_minorUnit)
     {
-        m_minorUnit->toXmlElem("ct:minorUnit", "", _outStream);
+        m_minorUnit->toXmlElem("c:minorUnit", "", _outStream);
     }
 
 
     if (m_has_minorTimeUnit)
     {
-        m_minorTimeUnit->toXmlElem("ct:minorTimeUnit", "", _outStream);
+        m_minorTimeUnit->toXmlElem("c:minorTimeUnit", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -34196,85 +34196,85 @@ void CT_SerAx::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_axId)
     {
-        m_axId->toXmlElem("ct:axId", "", _outStream);
+        m_axId->toXmlElem("c:axId", "", _outStream);
     }
 
 
     if (m_has_scaling)
     {
-        m_scaling->toXmlElem("ct:scaling", "", _outStream);
+        m_scaling->toXmlElem("c:scaling", "", _outStream);
     }
 
 
     if (m_has_delete)
     {
-        m_delete->toXmlElem("ct:delete", "", _outStream);
+        m_delete->toXmlElem("c:delete", "", _outStream);
     }
 
 
     if (m_has_axPos)
     {
-        m_axPos->toXmlElem("ct:axPos", "", _outStream);
+        m_axPos->toXmlElem("c:axPos", "", _outStream);
     }
 
 
     if (m_has_majorGridlines)
     {
-        m_majorGridlines->toXmlElem("ct:majorGridlines", "", _outStream);
+        m_majorGridlines->toXmlElem("c:majorGridlines", "", _outStream);
     }
 
 
     if (m_has_minorGridlines)
     {
-        m_minorGridlines->toXmlElem("ct:minorGridlines", "", _outStream);
+        m_minorGridlines->toXmlElem("c:minorGridlines", "", _outStream);
     }
 
 
     if (m_has_title)
     {
-        m_title->toXmlElem("ct:title", "", _outStream);
+        m_title->toXmlElem("c:title", "", _outStream);
     }
 
 
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("ct:numFmt", "", _outStream);
+        m_numFmt->toXmlElem("c:numFmt", "", _outStream);
     }
 
 
     if (m_has_majorTickMark)
     {
-        m_majorTickMark->toXmlElem("ct:majorTickMark", "", _outStream);
+        m_majorTickMark->toXmlElem("c:majorTickMark", "", _outStream);
     }
 
 
     if (m_has_minorTickMark)
     {
-        m_minorTickMark->toXmlElem("ct:minorTickMark", "", _outStream);
+        m_minorTickMark->toXmlElem("c:minorTickMark", "", _outStream);
     }
 
 
     if (m_has_tickLblPos)
     {
-        m_tickLblPos->toXmlElem("ct:tickLblPos", "", _outStream);
+        m_tickLblPos->toXmlElem("c:tickLblPos", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_crossAx)
     {
-        m_crossAx->toXmlElem("ct:crossAx", "", _outStream);
+        m_crossAx->toXmlElem("c:crossAx", "", _outStream);
     }
 
     {
@@ -34286,31 +34286,31 @@ void CT_SerAx::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_crosses)
     {
-        m_crosses->toXmlElem("ct:crosses", "", _outStream);
+        m_crosses->toXmlElem("c:crosses", "", _outStream);
     }
 
 
     if (m_has_crossesAt)
     {
-        m_crossesAt->toXmlElem("ct:crossesAt", "", _outStream);
+        m_crossesAt->toXmlElem("c:crossesAt", "", _outStream);
     }
 
 
     if (m_has_tickLblSkip)
     {
-        m_tickLblSkip->toXmlElem("ct:tickLblSkip", "", _outStream);
+        m_tickLblSkip->toXmlElem("c:tickLblSkip", "", _outStream);
     }
 
 
     if (m_has_tickMarkSkip)
     {
-        m_tickMarkSkip->toXmlElem("ct:tickMarkSkip", "", _outStream);
+        m_tickMarkSkip->toXmlElem("c:tickMarkSkip", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -35118,85 +35118,85 @@ void CT_ValAx::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_axId)
     {
-        m_axId->toXmlElem("ct:axId", "", _outStream);
+        m_axId->toXmlElem("c:axId", "", _outStream);
     }
 
 
     if (m_has_scaling)
     {
-        m_scaling->toXmlElem("ct:scaling", "", _outStream);
+        m_scaling->toXmlElem("c:scaling", "", _outStream);
     }
 
 
     if (m_has_delete)
     {
-        m_delete->toXmlElem("ct:delete", "", _outStream);
+        m_delete->toXmlElem("c:delete", "", _outStream);
     }
 
 
     if (m_has_axPos)
     {
-        m_axPos->toXmlElem("ct:axPos", "", _outStream);
+        m_axPos->toXmlElem("c:axPos", "", _outStream);
     }
 
 
     if (m_has_majorGridlines)
     {
-        m_majorGridlines->toXmlElem("ct:majorGridlines", "", _outStream);
+        m_majorGridlines->toXmlElem("c:majorGridlines", "", _outStream);
     }
 
 
     if (m_has_minorGridlines)
     {
-        m_minorGridlines->toXmlElem("ct:minorGridlines", "", _outStream);
+        m_minorGridlines->toXmlElem("c:minorGridlines", "", _outStream);
     }
 
 
     if (m_has_title)
     {
-        m_title->toXmlElem("ct:title", "", _outStream);
+        m_title->toXmlElem("c:title", "", _outStream);
     }
 
 
     if (m_has_numFmt)
     {
-        m_numFmt->toXmlElem("ct:numFmt", "", _outStream);
+        m_numFmt->toXmlElem("c:numFmt", "", _outStream);
     }
 
 
     if (m_has_majorTickMark)
     {
-        m_majorTickMark->toXmlElem("ct:majorTickMark", "", _outStream);
+        m_majorTickMark->toXmlElem("c:majorTickMark", "", _outStream);
     }
 
 
     if (m_has_minorTickMark)
     {
-        m_minorTickMark->toXmlElem("ct:minorTickMark", "", _outStream);
+        m_minorTickMark->toXmlElem("c:minorTickMark", "", _outStream);
     }
 
 
     if (m_has_tickLblPos)
     {
-        m_tickLblPos->toXmlElem("ct:tickLblPos", "", _outStream);
+        m_tickLblPos->toXmlElem("c:tickLblPos", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_crossAx)
     {
-        m_crossAx->toXmlElem("ct:crossAx", "", _outStream);
+        m_crossAx->toXmlElem("c:crossAx", "", _outStream);
     }
 
     {
@@ -35208,43 +35208,43 @@ void CT_ValAx::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_crosses)
     {
-        m_crosses->toXmlElem("ct:crosses", "", _outStream);
+        m_crosses->toXmlElem("c:crosses", "", _outStream);
     }
 
 
     if (m_has_crossesAt)
     {
-        m_crossesAt->toXmlElem("ct:crossesAt", "", _outStream);
+        m_crossesAt->toXmlElem("c:crossesAt", "", _outStream);
     }
 
 
     if (m_has_crossBetween)
     {
-        m_crossBetween->toXmlElem("ct:crossBetween", "", _outStream);
+        m_crossBetween->toXmlElem("c:crossBetween", "", _outStream);
     }
 
 
     if (m_has_majorUnit)
     {
-        m_majorUnit->toXmlElem("ct:majorUnit", "", _outStream);
+        m_majorUnit->toXmlElem("c:majorUnit", "", _outStream);
     }
 
 
     if (m_has_minorUnit)
     {
-        m_minorUnit->toXmlElem("ct:minorUnit", "", _outStream);
+        m_minorUnit->toXmlElem("c:minorUnit", "", _outStream);
     }
 
 
     if (m_has_dispUnits)
     {
-        m_dispUnits->toXmlElem("ct:dispUnits", "", _outStream);
+        m_dispUnits->toXmlElem("c:dispUnits", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -35595,7 +35595,7 @@ void CT_PlotArea::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_layout)
     {
-        m_layout->toXmlElem("ct:layout", "", _outStream);
+        m_layout->toXmlElem("c:layout", "", _outStream);
     }
 
     {
@@ -35604,121 +35604,121 @@ void CT_PlotArea::toXmlElem(const std::string& _elemName, const std::string& _xm
         {
             if ((*iter)->has_areaChart())
             {
-                (*iter)->get_areaChart().toXmlElem("ct:areaChart", "", _outStream);
+                (*iter)->get_areaChart().toXmlElem("c:areaChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_area3DChart())
             {
-                (*iter)->get_area3DChart().toXmlElem("ct:area3DChart", "", _outStream);
+                (*iter)->get_area3DChart().toXmlElem("c:area3DChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_lineChart())
             {
-                (*iter)->get_lineChart().toXmlElem("ct:lineChart", "", _outStream);
+                (*iter)->get_lineChart().toXmlElem("c:lineChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_line3DChart())
             {
-                (*iter)->get_line3DChart().toXmlElem("ct:line3DChart", "", _outStream);
+                (*iter)->get_line3DChart().toXmlElem("c:line3DChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_stockChart())
             {
-                (*iter)->get_stockChart().toXmlElem("ct:stockChart", "", _outStream);
+                (*iter)->get_stockChart().toXmlElem("c:stockChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_radarChart())
             {
-                (*iter)->get_radarChart().toXmlElem("ct:radarChart", "", _outStream);
+                (*iter)->get_radarChart().toXmlElem("c:radarChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_scatterChart())
             {
-                (*iter)->get_scatterChart().toXmlElem("ct:scatterChart", "", _outStream);
+                (*iter)->get_scatterChart().toXmlElem("c:scatterChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_pieChart())
             {
-                (*iter)->get_pieChart().toXmlElem("ct:pieChart", "", _outStream);
+                (*iter)->get_pieChart().toXmlElem("c:pieChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_pie3DChart())
             {
-                (*iter)->get_pie3DChart().toXmlElem("ct:pie3DChart", "", _outStream);
+                (*iter)->get_pie3DChart().toXmlElem("c:pie3DChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_doughnutChart())
             {
-                (*iter)->get_doughnutChart().toXmlElem("ct:doughnutChart", "", _outStream);
+                (*iter)->get_doughnutChart().toXmlElem("c:doughnutChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_barChart())
             {
-                (*iter)->get_barChart().toXmlElem("ct:barChart", "", _outStream);
+                (*iter)->get_barChart().toXmlElem("c:barChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_bar3DChart())
             {
-                (*iter)->get_bar3DChart().toXmlElem("ct:bar3DChart", "", _outStream);
+                (*iter)->get_bar3DChart().toXmlElem("c:bar3DChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_ofPieChart())
             {
-                (*iter)->get_ofPieChart().toXmlElem("ct:ofPieChart", "", _outStream);
+                (*iter)->get_ofPieChart().toXmlElem("c:ofPieChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_surfaceChart())
             {
-                (*iter)->get_surfaceChart().toXmlElem("ct:surfaceChart", "", _outStream);
+                (*iter)->get_surfaceChart().toXmlElem("c:surfaceChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_surface3DChart())
             {
-                (*iter)->get_surface3DChart().toXmlElem("ct:surface3DChart", "", _outStream);
+                (*iter)->get_surface3DChart().toXmlElem("c:surface3DChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_bubbleChart())
             {
-                (*iter)->get_bubbleChart().toXmlElem("ct:bubbleChart", "", _outStream);
+                (*iter)->get_bubbleChart().toXmlElem("c:bubbleChart", "", _outStream);
             }
 
 
             else if ((*iter)->has_valAx())
             {
-                (*iter)->get_valAx().toXmlElem("ct:valAx", "", _outStream);
+                (*iter)->get_valAx().toXmlElem("c:valAx", "", _outStream);
             }
 
 
             else if ((*iter)->has_catAx())
             {
-                (*iter)->get_catAx().toXmlElem("ct:catAx", "", _outStream);
+                (*iter)->get_catAx().toXmlElem("c:catAx", "", _outStream);
             }
 
 
             else if ((*iter)->has_dateAx())
             {
-                (*iter)->get_dateAx().toXmlElem("ct:dateAx", "", _outStream);
+                (*iter)->get_dateAx().toXmlElem("c:dateAx", "", _outStream);
             }
 
 
             else if ((*iter)->has_serAx())
             {
-                (*iter)->get_serAx().toXmlElem("ct:serAx", "", _outStream);
+                (*iter)->get_serAx().toXmlElem("c:serAx", "", _outStream);
             }
 
 
@@ -35728,19 +35728,19 @@ void CT_PlotArea::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_dTable)
     {
-        m_dTable->toXmlElem("ct:dTable", "", _outStream);
+        m_dTable->toXmlElem("c:dTable", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -39959,37 +39959,37 @@ void CT_PivotFmt::toXmlElem(const std::string& _elemName, const std::string& _xm
 
     if (m_has_idx)
     {
-        m_idx->toXmlElem("ct:idx", "", _outStream);
+        m_idx->toXmlElem("c:idx", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_marker)
     {
-        m_marker->toXmlElem("ct:marker", "", _outStream);
+        m_marker->toXmlElem("c:marker", "", _outStream);
     }
 
 
     if (m_has_dLbl)
     {
-        m_dLbl->toXmlElem("ct:dLbl", "", _outStream);
+        m_dLbl->toXmlElem("c:dLbl", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -40052,7 +40052,7 @@ void CT_PivotFmts::toXmlElem(const std::string& _elemName, const std::string& _x
         {
             if ((*iter)->has_pivotFmt())
             {
-                (*iter)->get_pivotFmt().toXmlElem("ct:pivotFmt", "", _outStream);
+                (*iter)->get_pivotFmt().toXmlElem("c:pivotFmt", "", _outStream);
             }
 
 
@@ -40365,7 +40365,7 @@ void CT_LegendEntry::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_idx)
     {
-        m_idx->toXmlElem("ct:idx", "", _outStream);
+        m_idx->toXmlElem("c:idx", "", _outStream);
     }
 
     {
@@ -40377,19 +40377,19 @@ void CT_LegendEntry::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_delete)
     {
-        m_delete->toXmlElem("ct:delete", "", _outStream);
+        m_delete->toXmlElem("c:delete", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -40658,7 +40658,7 @@ void CT_Legend::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_legendPos)
     {
-        m_legendPos->toXmlElem("ct:legendPos", "", _outStream);
+        m_legendPos->toXmlElem("c:legendPos", "", _outStream);
     }
 
     {
@@ -40667,7 +40667,7 @@ void CT_Legend::toXmlElem(const std::string& _elemName, const std::string& _xmlN
         {
             if ((*iter)->has_legendEntry())
             {
-                (*iter)->get_legendEntry().toXmlElem("ct:legendEntry", "", _outStream);
+                (*iter)->get_legendEntry().toXmlElem("c:legendEntry", "", _outStream);
             }
 
 
@@ -40677,31 +40677,31 @@ void CT_Legend::toXmlElem(const std::string& _elemName, const std::string& _xmlN
 
     if (m_has_layout)
     {
-        m_layout->toXmlElem("ct:layout", "", _outStream);
+        m_layout->toXmlElem("c:layout", "", _outStream);
     }
 
 
     if (m_has_overlay)
     {
-        m_overlay->toXmlElem("ct:overlay", "", _outStream);
+        m_overlay->toXmlElem("c:overlay", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -41305,79 +41305,79 @@ void CT_Chart::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
 
     if (m_has_title)
     {
-        m_title->toXmlElem("ct:title", "", _outStream);
+        m_title->toXmlElem("c:title", "", _outStream);
     }
 
 
     if (m_has_autoTitleDeleted)
     {
-        m_autoTitleDeleted->toXmlElem("ct:autoTitleDeleted", "", _outStream);
+        m_autoTitleDeleted->toXmlElem("c:autoTitleDeleted", "", _outStream);
     }
 
 
     if (m_has_pivotFmts)
     {
-        m_pivotFmts->toXmlElem("ct:pivotFmts", "", _outStream);
+        m_pivotFmts->toXmlElem("c:pivotFmts", "", _outStream);
     }
 
 
     if (m_has_view3D)
     {
-        m_view3D->toXmlElem("ct:view3D", "", _outStream);
+        m_view3D->toXmlElem("c:view3D", "", _outStream);
     }
 
 
     if (m_has_floor)
     {
-        m_floor->toXmlElem("ct:floor", "", _outStream);
+        m_floor->toXmlElem("c:floor", "", _outStream);
     }
 
 
     if (m_has_sideWall)
     {
-        m_sideWall->toXmlElem("ct:sideWall", "", _outStream);
+        m_sideWall->toXmlElem("c:sideWall", "", _outStream);
     }
 
 
     if (m_has_backWall)
     {
-        m_backWall->toXmlElem("ct:backWall", "", _outStream);
+        m_backWall->toXmlElem("c:backWall", "", _outStream);
     }
 
 
     if (m_has_plotArea)
     {
-        m_plotArea->toXmlElem("ct:plotArea", "", _outStream);
+        m_plotArea->toXmlElem("c:plotArea", "", _outStream);
     }
 
 
     if (m_has_legend)
     {
-        m_legend->toXmlElem("ct:legend", "", _outStream);
+        m_legend->toXmlElem("c:legend", "", _outStream);
     }
 
 
     if (m_has_plotVisOnly)
     {
-        m_plotVisOnly->toXmlElem("ct:plotVisOnly", "", _outStream);
+        m_plotVisOnly->toXmlElem("c:plotVisOnly", "", _outStream);
     }
 
 
     if (m_has_dispBlanksAs)
     {
-        m_dispBlanksAs->toXmlElem("ct:dispBlanksAs", "", _outStream);
+        m_dispBlanksAs->toXmlElem("c:dispBlanksAs", "", _outStream);
     }
 
 
     if (m_has_showDLblsOverMax)
     {
-        m_showDLblsOverMax->toXmlElem("ct:showDLblsOverMax", "", _outStream);
+        m_showDLblsOverMax->toXmlElem("c:showDLblsOverMax", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -41584,13 +41584,13 @@ void CT_PivotSource::toXmlElem(const std::string& _elemName, const std::string& 
 
     if (m_has_name)
     {
-        _outStream << "<ct:name>" << m_name->toString() << "</ct:name>";
+        _outStream << "<c:name>" << m_name->toString() << "</c:name>";
     }
 
 
     if (m_has_fmtId)
     {
-        m_fmtId->toXmlElem("ct:fmtId", "", _outStream);
+        m_fmtId->toXmlElem("c:fmtId", "", _outStream);
     }
 
     {
@@ -41599,7 +41599,7 @@ void CT_PivotSource::toXmlElem(const std::string& _elemName, const std::string& 
         {
             if ((*iter)->has_extLst())
             {
-                (*iter)->get_extLst().toXmlElem("ct:extLst", "", _outStream);
+                (*iter)->get_extLst().toXmlElem("c:extLst", "", _outStream);
             }
 
 
@@ -41852,31 +41852,31 @@ void CT_Protection::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_chartObject)
     {
-        m_chartObject->toXmlElem("ct:chartObject", "", _outStream);
+        m_chartObject->toXmlElem("c:chartObject", "", _outStream);
     }
 
 
     if (m_has_data)
     {
-        m_data->toXmlElem("ct:data", "", _outStream);
+        m_data->toXmlElem("c:data", "", _outStream);
     }
 
 
     if (m_has_formatting)
     {
-        m_formatting->toXmlElem("ct:formatting", "", _outStream);
+        m_formatting->toXmlElem("c:formatting", "", _outStream);
     }
 
 
     if (m_has_selection)
     {
-        m_selection->toXmlElem("ct:selection", "", _outStream);
+        m_selection->toXmlElem("c:selection", "", _outStream);
     }
 
 
     if (m_has_userInterface)
     {
-        m_userInterface->toXmlElem("ct:userInterface", "", _outStream);
+        m_userInterface->toXmlElem("c:userInterface", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -42163,37 +42163,37 @@ void CT_HeaderFooter::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_oddHeader)
     {
-        _outStream << "<ct:oddHeader>" << m_oddHeader->toString() << "</ct:oddHeader>";
+        _outStream << "<c:oddHeader>" << m_oddHeader->toString() << "</c:oddHeader>";
     }
 
 
     if (m_has_oddFooter)
     {
-        _outStream << "<ct:oddFooter>" << m_oddFooter->toString() << "</ct:oddFooter>";
+        _outStream << "<c:oddFooter>" << m_oddFooter->toString() << "</c:oddFooter>";
     }
 
 
     if (m_has_evenHeader)
     {
-        _outStream << "<ct:evenHeader>" << m_evenHeader->toString() << "</ct:evenHeader>";
+        _outStream << "<c:evenHeader>" << m_evenHeader->toString() << "</c:evenHeader>";
     }
 
 
     if (m_has_evenFooter)
     {
-        _outStream << "<ct:evenFooter>" << m_evenFooter->toString() << "</ct:evenFooter>";
+        _outStream << "<c:evenFooter>" << m_evenFooter->toString() << "</c:evenFooter>";
     }
 
 
     if (m_has_firstHeader)
     {
-        _outStream << "<ct:firstHeader>" << m_firstHeader->toString() << "</ct:firstHeader>";
+        _outStream << "<c:firstHeader>" << m_firstHeader->toString() << "</c:firstHeader>";
     }
 
 
     if (m_has_firstFooter)
     {
-        _outStream << "<ct:firstFooter>" << m_firstFooter->toString() << "</ct:firstFooter>";
+        _outStream << "<c:firstFooter>" << m_firstFooter->toString() << "</c:firstFooter>";
     }
 
     _outStream << "</" << _elemName << ">";
@@ -42538,7 +42538,7 @@ void CT_ExternalData::toXmlElem(const std::string& _elemName, const std::string&
 
     if (m_has_autoUpdate)
     {
-        m_autoUpdate->toXmlElem("ct:autoUpdate", "", _outStream);
+        m_autoUpdate->toXmlElem("c:autoUpdate", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -43113,25 +43113,25 @@ void CT_PrintSettings::toXmlElem(const std::string& _elemName, const std::string
 
     if (m_has_headerFooter)
     {
-        m_headerFooter->toXmlElem("ct:headerFooter", "", _outStream);
+        m_headerFooter->toXmlElem("c:headerFooter", "", _outStream);
     }
 
 
     if (m_has_pageMargins)
     {
-        m_pageMargins->toXmlElem("ct:pageMargins", "", _outStream);
+        m_pageMargins->toXmlElem("c:pageMargins", "", _outStream);
     }
 
 
     if (m_has_pageSetup)
     {
-        m_pageSetup->toXmlElem("ct:pageSetup", "", _outStream);
+        m_pageSetup->toXmlElem("c:pageSetup", "", _outStream);
     }
 
 
     if (m_has_legacyDrawingHF)
     {
-        m_legacyDrawingHF->toXmlElem("ct:legacyDrawingHF", "", _outStream);
+        m_legacyDrawingHF->toXmlElem("c:legacyDrawingHF", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -43665,85 +43665,85 @@ void CT_ChartSpace::toXmlElem(const std::string& _elemName, const std::string& _
 
     if (m_has_date1904)
     {
-        m_date1904->toXmlElem("ct:date1904", "", _outStream);
+        m_date1904->toXmlElem("c:date1904", "", _outStream);
     }
 
 
     if (m_has_lang)
     {
-        m_lang->toXmlElem("ct:lang", "", _outStream);
+        m_lang->toXmlElem("c:lang", "", _outStream);
     }
 
 
     if (m_has_roundedCorners)
     {
-        m_roundedCorners->toXmlElem("ct:roundedCorners", "", _outStream);
+        m_roundedCorners->toXmlElem("c:roundedCorners", "", _outStream);
     }
 
 
     if (m_has_style)
     {
-        m_style->toXmlElem("ct:style", "", _outStream);
+        m_style->toXmlElem("c:style", "", _outStream);
     }
 
 
     if (m_has_clrMapOvr)
     {
-        m_clrMapOvr->toXmlElem("ct:clrMapOvr", "", _outStream);
+        m_clrMapOvr->toXmlElem("c:clrMapOvr", "", _outStream);
     }
 
 
     if (m_has_pivotSource)
     {
-        m_pivotSource->toXmlElem("ct:pivotSource", "", _outStream);
+        m_pivotSource->toXmlElem("c:pivotSource", "", _outStream);
     }
 
 
     if (m_has_protection)
     {
-        m_protection->toXmlElem("ct:protection", "", _outStream);
+        m_protection->toXmlElem("c:protection", "", _outStream);
     }
 
 
     if (m_has_chart)
     {
-        m_chart->toXmlElem("ct:chart", "", _outStream);
+        m_chart->toXmlElem("c:chart", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_externalData)
     {
-        m_externalData->toXmlElem("ct:externalData", "", _outStream);
+        m_externalData->toXmlElem("c:externalData", "", _outStream);
     }
 
 
     if (m_has_printSettings)
     {
-        m_printSettings->toXmlElem("ct:printSettings", "", _outStream);
+        m_printSettings->toXmlElem("c:printSettings", "", _outStream);
     }
 
 
     if (m_has_userShapes)
     {
-        m_userShapes->toXmlElem("ct:userShapes", "", _outStream);
+        m_userShapes->toXmlElem("c:userShapes", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
     _outStream << "</" << _elemName << ">";
@@ -44263,9 +44263,9 @@ void chartSpace_element::clear()
 
 void chartSpace_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ct:chartSpace";
+    _outStream << "<c:chartSpace";
 
-    _outStream << " " << "xmlns:ct=\"http://schemas.openxmlformats.org/drawingml/2006/chart\"";
+    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/chart\"";
     _outStream << " " << "xmlns:cdr=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
@@ -44278,88 +44278,88 @@ void chartSpace_element::toXml(std::ostream& _outStream) const
 
     if (m_has_date1904)
     {
-        m_date1904->toXmlElem("ct:date1904", "", _outStream);
+        m_date1904->toXmlElem("c:date1904", "", _outStream);
     }
 
 
     if (m_has_lang)
     {
-        m_lang->toXmlElem("ct:lang", "", _outStream);
+        m_lang->toXmlElem("c:lang", "", _outStream);
     }
 
 
     if (m_has_roundedCorners)
     {
-        m_roundedCorners->toXmlElem("ct:roundedCorners", "", _outStream);
+        m_roundedCorners->toXmlElem("c:roundedCorners", "", _outStream);
     }
 
 
     if (m_has_style)
     {
-        m_style->toXmlElem("ct:style", "", _outStream);
+        m_style->toXmlElem("c:style", "", _outStream);
     }
 
 
     if (m_has_clrMapOvr)
     {
-        m_clrMapOvr->toXmlElem("ct:clrMapOvr", "", _outStream);
+        m_clrMapOvr->toXmlElem("c:clrMapOvr", "", _outStream);
     }
 
 
     if (m_has_pivotSource)
     {
-        m_pivotSource->toXmlElem("ct:pivotSource", "", _outStream);
+        m_pivotSource->toXmlElem("c:pivotSource", "", _outStream);
     }
 
 
     if (m_has_protection)
     {
-        m_protection->toXmlElem("ct:protection", "", _outStream);
+        m_protection->toXmlElem("c:protection", "", _outStream);
     }
 
 
     if (m_has_chart)
     {
-        m_chart->toXmlElem("ct:chart", "", _outStream);
+        m_chart->toXmlElem("c:chart", "", _outStream);
     }
 
 
     if (m_has_spPr)
     {
-        m_spPr->toXmlElem("ct:spPr", "", _outStream);
+        m_spPr->toXmlElem("c:spPr", "", _outStream);
     }
 
 
     if (m_has_txPr)
     {
-        m_txPr->toXmlElem("ct:txPr", "", _outStream);
+        m_txPr->toXmlElem("c:txPr", "", _outStream);
     }
 
 
     if (m_has_externalData)
     {
-        m_externalData->toXmlElem("ct:externalData", "", _outStream);
+        m_externalData->toXmlElem("c:externalData", "", _outStream);
     }
 
 
     if (m_has_printSettings)
     {
-        m_printSettings->toXmlElem("ct:printSettings", "", _outStream);
+        m_printSettings->toXmlElem("c:printSettings", "", _outStream);
     }
 
 
     if (m_has_userShapes)
     {
-        m_userShapes->toXmlElem("ct:userShapes", "", _outStream);
+        m_userShapes->toXmlElem("c:userShapes", "", _outStream);
     }
 
 
     if (m_has_extLst)
     {
-        m_extLst->toXmlElem("ct:extLst", "", _outStream);
+        m_extLst->toXmlElem("c:extLst", "", _outStream);
     }
 
-    _outStream << "</ct:chartSpace>";
+    _outStream << "</c:chartSpace>";
 }
 
 const chartSpace_element& chartSpace_element::default_instance()
@@ -44399,9 +44399,9 @@ void chart_element::clear()
 
 void chart_element::toXml(std::ostream& _outStream) const
 {
-    _outStream << "<ct:chart";
+    _outStream << "<c:chart";
 
-    _outStream << " " << "xmlns:ct=\"http://schemas.openxmlformats.org/drawingml/2006/chart\"";
+    _outStream << " " << "xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/chart\"";
     _outStream << " " << "xmlns:cdr=\"http://schemas.openxmlformats.org/drawingml/2006/chartDrawing\"";
     _outStream << " " << "xmlns:s=\"http://schemas.openxmlformats.org/officeDocument/2006/sharedTypes\"";
     _outStream << " " << "xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"";
@@ -44415,7 +44415,7 @@ void chart_element::toXml(std::ostream& _outStream) const
 
     _outStream << ">";
 
-    _outStream << "</ct:chart>";
+    _outStream << "</c:chart>";
 }
 
 const chart_element& chart_element::default_instance()

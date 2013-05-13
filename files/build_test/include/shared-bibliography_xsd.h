@@ -1,4 +1,4 @@
-namespace ns_bi {
+namespace ns_b {
 class Element;
 class Attribute;
 class ST_SourceType;
@@ -19,7 +19,7 @@ class Sources_element;
 #include <string>
 #include <iostream>
 #include "shared-commonSimpleTypes_xsd.h"
-namespace ns_bi {
+namespace ns_b {
 using namespace std;
 class Element: public XSD::Element
 {

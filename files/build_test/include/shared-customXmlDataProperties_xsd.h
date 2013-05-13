@@ -1,4 +1,4 @@
-namespace ns_cu {
+namespace ns_ds {
 class Element;
 class Attribute;
 class CT_DatastoreSchemaRef;
@@ -14,7 +14,7 @@ class datastoreItem_element;
 #include <string>
 #include <iostream>
 #include "shared-commonSimpleTypes_xsd.h"
-namespace ns_cu {
+namespace ns_ds {
 using namespace std;
 class Element: public XSD::Element
 {

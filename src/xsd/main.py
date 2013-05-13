@@ -11,15 +11,15 @@ import google.protobuf.text_format as PT
 
 # TODO
 userSetNsPrefixMap = {
-'http://schemas.openxmlformats.org/drawingml/2006/chart':'ct',
-'http://schemas.openxmlformats.org/drawingml/2006/diagram':'dg',
+'http://schemas.openxmlformats.org/drawingml/2006/chart':'c',
+'http://schemas.openxmlformats.org/drawingml/2006/diagram':'dgm',
 'http://schemas.openxmlformats.org/drawingml/2006/lockedCanvas':'lc',
-'http://schemas.openxmlformats.org/officeDocument/2006/characteristics':'ch',
-'http://schemas.openxmlformats.org/officeDocument/2006/bibliography':'bi',
-'http://schemas.openxmlformats.org/officeDocument/2006/customXml':'cu',
-'http://schemas.openxmlformats.org/officeDocument/2006/custom-properties':'cp',
-'http://schemas.openxmlformats.org/officeDocument/2006/extended-properties':'ep',
-'http://schemas.openxmlformats.org/spreadsheetml/2006/main':'ss'
+'http://schemas.openxmlformats.org/officeDocument/2006/characteristics':'ac',
+'http://schemas.openxmlformats.org/officeDocument/2006/bibliography':'b',
+'http://schemas.openxmlformats.org/officeDocument/2006/customXml':'ds',
+'http://schemas.openxmlformats.org/officeDocument/2006/custom-properties':'op',
+'http://schemas.openxmlformats.org/officeDocument/2006/extended-properties':'ap',
+'http://schemas.openxmlformats.org/spreadsheetml/2006/main':'x'
 }
 
 
@@ -47,10 +47,11 @@ def getFileNsNameFormDefaultNs(pbSchema, allNsList):
     if len(defaultURI) > 0:
         defaultURI = defaultURI[0]
         nsPrefixList = [ns.prefix for ns in allNsList if ns.uri == defaultURI]
-        if len(nsPrefixList) > 0:
-            nsPrefix = nsPrefixList[0]
-        else:
+
+        if defaultURI in userSetNsPrefixMap.keys():
             nsPrefix = userSetNsPrefixMap.get(defaultURI)
+        elif len(nsPrefixList) > 0:
+            nsPrefix = nsPrefixList[0]
 
     return nsPrefix
 
