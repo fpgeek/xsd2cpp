@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.openxmlformats.org/package/2006/relationships" xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <xsd:complexType name="CT_Relationship">
+    <xsd:attribute name="Id" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Relationship Id</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="Type" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Relationship Type</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="Target" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Relationship Target</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="TargetMode" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation>Relationship Target Mode</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="CT_Relationships">
+    <xsd:sequence>
+      <xsd:element name="Relationship" type="CT_Relationship" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>Relationship</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Relationships" type="CT_Relationships">
+    <xsd:annotation>
+      <xsd:documentation>Content Types</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           xmlns:dc="http://purl.org/dc/elements/1.1/"
+           xmlns:dcmitype="http://purl.org/dc/dcmitype/"
+           targetNamespace="http://purl.org/dc/terms/"
+           xmlns="http://purl.org/dc/terms/"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+      DCterms XML Schema
+      XML Schema for http://purl.org/dc/terms/ namespace
+
+      Created 2003-04-02
+
+      Created by 
+
+      Tim Cole (t-cole3@uiuc.edu)
+      Tom Habing (thabing@uiuc.edu)
+      Jane Hunter (jane@dstc.edu.au)
+      Pete Johnston (p.johnston@ukoln.ac.uk),
+      Carl Lagoze (lagoze@cs.cornell.edu)
+
+      This schema declares XML elements for the DC elements and
+      DC element refinements from the http://purl.org/dc/terms/ namespace.
+      
+      It reuses the complexType dc:SimpleLiteral, imported from the dc.xsd
+      schema, which permits simple element content, and makes the xml:lang
+      attribute available.
+
+      This complexType permits the derivation of other complexTypes
+      which would permit child elements.
+
+      DC elements are declared as substitutable for the abstract element dc:any, and 
+      DC element refinements are defined as substitutable for the base elements 
+      which they refine.
+
+      This means that the default type for all XML elements (i.e. all DC elements and 
+      element refinements) is dc:SimpleLiteral.
+
+      Encoding schemes are defined as complexTypes which are restrictions
+      of the dc:SimpleLiteral complexType. These complexTypes restrict 
+      values to an appropriates syntax or format using data typing,
+      regular expressions, or enumerated lists.
+  
+      In order to specify one of these encodings an xsi:type attribute must 
+      be used in the instance document.
+
+      Also, note that one shortcoming of this approach is that any type can be 
+      applied to any of the elements or refinements.  There is no convenient way
+      to restrict types to specific elements using this approach.
+
+    </xsd:documentation>
+
+  </xsd:annotation>
+
+
+  <xsd:import namespace="http://www.w3.org/XML/1998/namespace"
+             schemaLocation="xml.xsd">
+  </xsd:import>
+
+   <xsd:import namespace="http://purl.org/dc/elements/1.1/"
+              schemaLocation="dc.xsd"/>
+
+   <xsd:import namespace="http://purl.org/dc/dcmitype/"
+              schemaLocation="dcmitype.xsd"/>
+
+  <xsd:simpleType name="ST_String">
+    <xsd:annotation>
+      <xsd:documentation>String</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+
+  <xsd:complexType name="SimpleLiteral">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        This is the default type for all of the DC elements.
+        It permits text content only with optional
+        xml:lang attribute.
+        Text is allowed because mixed="true", but sub-elements
+        are disallowed because minOccurs="0" and maxOccurs="0"
+        are on the xsd:any tag.
+
+        This complexType allows for restriction or extension permitting
+        child elements.
+      </xsd:documentation>
+    </xsd:annotation>
+
+    <xsd:simpleContent>
+      <xsd:extension base="ST_String">
+        <xsd:attribute ref="xml:lang" use="optional">
+          <xsd:annotation>
+            <xsd:documentation>Content Contains Significant Whitespace</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+   <xsd:element name="alternative" type="SimpleLiteral"/>
+
+   <xsd:element name="tableOfContents" type="SimpleLiteral"/>
+   <xsd:element name="abstract" type="SimpleLiteral"/>
+
+   <xsd:element name="created" type="SimpleLiteral"/>
+   <xsd:element name="valid" type="SimpleLiteral"/>
+   <xsd:element name="available" type="SimpleLiteral"/>
+   <xsd:element name="issued" type="SimpleLiteral"/>
+   <xsd:element name="modified" type="SimpleLiteral"/>
+   <xsd:element name="dateAccepted" type="SimpleLiteral"/>
+   <xsd:element name="dateCopyrighted" type="SimpleLiteral"/>
+   <xsd:element name="dateSubmitted" type="SimpleLiteral"/>
+
+   <xsd:element name="extent" type="SimpleLiteral"/>
+   <xsd:element name="medium" type="SimpleLiteral"/>
+
+   <xsd:element name="isVersionOf" type="SimpleLiteral"/>
+   <xsd:element name="hasVersion" type="SimpleLiteral"/>
+   <xsd:element name="isReplacedBy" type="SimpleLiteral"/>
+   <xsd:element name="replaces" type="SimpleLiteral"/>
+   <xsd:element name="isRequiredBy" type="SimpleLiteral"/>
+   <xsd:element name="requires" type="SimpleLiteral"/>
+   <xsd:element name="isPartOf" type="SimpleLiteral"/>
+   <xsd:element name="hasPart" type="SimpleLiteral"/>
+   <xsd:element name="isReferencedBy" type="SimpleLiteral"/>
+   <xsd:element name="references" type="SimpleLiteral"/>
+   <xsd:element name="isFormatOf" type="SimpleLiteral"/>
+   <xsd:element name="hasFormat" type="SimpleLiteral"/>
+   <xsd:element name="conformsTo" type="SimpleLiteral"/>
+
+   <xsd:element name="spatial" type="SimpleLiteral"/>
+   <xsd:element name="temporal" type="SimpleLiteral"/>
+
+   <xsd:element name="audience" type="SimpleLiteral"/>
+
+   <xsd:element name="mediator" type="SimpleLiteral"/>
+   <xsd:element name="educationLevel" type="SimpleLiteral"/>
+
+   <xsd:element name="accessRights" type="SimpleLiteral"/>
+
+   <xsd:element name="bibliographicCitation" type="SimpleLiteral"/>
+
+  <xsd:group name="elementsAndRefinementsGroup">
+  	<xsd:annotation>
+    	<xsd:documentation xml:lang="en">
+    		This group is included as a convenience for schema authors
+            who need to refer to all the DC elements and element refinements 
+            in the http://purl.org/dc/elements/1.1/ and 
+            http://purl.org/dc/terms namespaces. 
+            N.B. Refinements available via substitution groups.
+    	</xsd:documentation>
+  	</xsd:annotation>
+
+  <xsd:sequence>
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+	<xsd:element ref="dc:any" />
+    </xsd:choice>
+  </xsd:sequence>
+  </xsd:group>	
+
+  <xsd:complexType name="elementOrRefinementContainer">
+  	<xsd:annotation>
+    	<xsd:documentation xml:lang="en">
+    		This is included as a convenience for schema authors who need to define a root
+    		or container element for all of the DC elements and element refinements.
+    	</xsd:documentation>
+  	</xsd:annotation>
+
+    <xsd:choice>
+      <xsd:group ref="elementsAndRefinementsGroup"/>
+    </xsd:choice>
+  </xsd:complexType>
+
+
+</xsd:schema>

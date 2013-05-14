@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://purl.org/dc/dcmitype/"
+           targetNamespace="http://purl.org/dc/dcmitype/"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+      DCMI Type Vocabulary XML Schema
+      XML Schema for http://purl.org/dc/dcmitype/ namespace
+
+      Created 2003-04-02
+
+      Created by 
+
+      Tim Cole (t-cole3@uiuc.edu)
+      Tom Habing (thabing@uiuc.edu)
+      Jane Hunter (jane@dstc.edu.au)
+      Pete Johnston (p.johnston@ukoln.ac.uk),
+      Carl Lagoze (lagoze@cs.cornell.edu)
+
+      This schema defines a simpleType which enumerates
+      the allowable values for the DCMI Type Vocabulary.
+    </xsd:documentation>
+
+ 
+  </xsd:annotation>
+
+
+  <xsd:simpleType name="DCMIType">
+     <xsd:union>
+        <xsd:simpleType>
+           <xsd:restriction base="xsd:Name">
+		<xsd:enumeration value="Collection"/>
+		<xsd:enumeration value="Dataset"/>
+		<xsd:enumeration value="Event"/>
+		<xsd:enumeration value="Image"/>
+		<xsd:enumeration value="InteractiveResource"/>
+		<xsd:enumeration value="Service"/>
+		<xsd:enumeration value="Software"/>
+		<xsd:enumeration value="Sound"/>
+		<xsd:enumeration value="Text"/>
+		<xsd:enumeration value="PhysicalObject"/>
+            </xsd:restriction>
+        </xsd:simpleType> 
+     </xsd:union>
+  </xsd:simpleType>
+
+</xsd:schema>

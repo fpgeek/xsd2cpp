@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" elementFormDefault="qualified" blockDefault="#all">
+
+  <xsd:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="dc.xsd" />
+  <xsd:import namespace="http://purl.org/dc/terms/" schemaLocation="dcterms.xsd" />
+  <xsd:import id="xml" namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+
+  <!--   
+        Note: the preceding import statement may need to be modified depending on the W3C XML Schema validator you are using.
+        If your validator requires the schemaLocation be present, you may use the following import statement:
+              
+        <xsd:import id="xml"    namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd" />
+
+        If your validator requires that the schema be stored locally, you should first download the schema from the following URL:
+        http://www.w3.org/2001/xml.xsd, and then update the schemaLocation attribute to point to the local path of the schema file:
+        
+        <xsd:import id="xml"    namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="[local path] "/>
+  -->
+
+  <xsd:simpleType name="ST_String">
+    <xsd:annotation>
+      <xsd:documentation>String</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string" />
+  </xsd:simpleType>
+
+  <xsd:element name="coreProperties" type="CT_CoreProperties" />
+
+  <xsd:complexType name="CT_CoreProperties">
+    <xsd:all>
+      <xsd:element name="category" minOccurs="0" maxOccurs="1" type="xsd:string" />
+      <xsd:element name="contentStatus" minOccurs="0" maxOccurs="1" type="xsd:string" />
+      <xsd:element ref="dcterms:created" minOccurs="0" maxOccurs="1" />
+      <xsd:element ref="dc:creator" minOccurs="0" maxOccurs="1" />
+      <xsd:element ref="dc:description" minOccurs="0" maxOccurs="1" />
+      <xsd:element ref="dc:identifier" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="keywords" minOccurs="0" maxOccurs="1" type="CT_Keywords" />
+      <xsd:element ref="dc:language" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="lastModifiedBy" minOccurs="0" maxOccurs="1" type="xsd:string" />
+      <xsd:element name="lastPrinted" minOccurs="0" maxOccurs="1" type="xsd:dateTime" />
+      <xsd:element ref="dcterms:modified" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="revision" minOccurs="0" maxOccurs="1" type="xsd:string" />
+      <xsd:element ref="dc:subject" minOccurs="0" maxOccurs="1" />
+      <xsd:element ref="dc:title" minOccurs="0" maxOccurs="1" />
+      <xsd:element name="version" minOccurs="0" maxOccurs="1" type="xsd:string" />
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:complexType name="CT_Keywords" mixed="true">
+    <xsd:sequence>
+      <xsd:element name="value" minOccurs="0" maxOccurs="unbounded" type="CT_Keyword" />
+    </xsd:sequence>
+    <xsd:attribute ref="xml:lang" use="optional" />
+  </xsd:complexType>
+
+  <xsd:complexType name="CT_Keyword">
+    <xsd:simpleContent>
+      <xsd:extension base="ST_String">
+        <xsd:attribute ref="xml:lang" use="optional">
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+</xsd:schema>
