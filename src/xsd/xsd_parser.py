@@ -591,7 +591,7 @@ class ALL_SCHEMA:
 
         for childElem in allElem:
             if childElem.tag == '{%s}element' % XSD_URI:
-                self._parseElement(xmlSchema, childElem, pbComplexType, pbElemCont, pbContType, pbMaxOccurs)
+                self._parseElement(xmlSchema, childElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs)
 
     def _parseSimpleType(self, xmlSchema, simpleTypeElem, pbSimpleType):
         name = simpleTypeElem.attrib.get('name')

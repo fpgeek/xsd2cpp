@@ -18566,11 +18566,46 @@ class CT_DocPartPr: public XSD::ComplexType
 public:
     CT_DocPartPr();
     ~CT_DocPartPr();
+    bool has_name() const;
+    CT_DocPartName* mutable_name();
+    const CT_DocPartName& get_name() const;
+    bool has_style() const;
+    CT_String* mutable_style();
+    const CT_String& get_style() const;
+    bool has_category() const;
+    CT_DocPartCategory* mutable_category();
+    const CT_DocPartCategory& get_category() const;
+    bool has_types() const;
+    CT_DocPartTypes* mutable_types();
+    const CT_DocPartTypes& get_types() const;
+    bool has_behaviors() const;
+    CT_DocPartBehaviors* mutable_behaviors();
+    const CT_DocPartBehaviors& get_behaviors() const;
+    bool has_description() const;
+    CT_String* mutable_description();
+    const CT_String& get_description() const;
+    bool has_guid() const;
+    CT_Guid* mutable_guid();
+    const CT_Guid& get_guid() const;
     void clear();
     void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
     static const CT_DocPartPr& default_instance();
 protected:
 private:
+    bool m_has_name;
+    CT_DocPartName* m_name;
+    bool m_has_style;
+    CT_String* m_style;
+    bool m_has_category;
+    CT_DocPartCategory* m_category;
+    bool m_has_types;
+    CT_DocPartTypes* m_types;
+    bool m_has_behaviors;
+    CT_DocPartBehaviors* m_behaviors;
+    bool m_has_description;
+    CT_String* m_description;
+    bool m_has_guid;
+    CT_Guid* m_guid;
     static CT_DocPartPr* default_instance_;
 };
 

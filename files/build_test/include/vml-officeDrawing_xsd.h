@@ -769,6 +769,36 @@ class CT_ShapeDefaults: public XSD::ComplexType
 public:
     CT_ShapeDefaults();
     ~CT_ShapeDefaults();
+    bool has_v_fill() const;
+    ns_v::CT_Fill* mutable_v_fill();
+    const ns_v::CT_Fill& get_v_fill() const;
+    bool has_v_stroke() const;
+    ns_v::CT_Stroke* mutable_v_stroke();
+    const ns_v::CT_Stroke& get_v_stroke() const;
+    bool has_v_textbox() const;
+    ns_v::CT_Textbox* mutable_v_textbox();
+    const ns_v::CT_Textbox& get_v_textbox() const;
+    bool has_v_shadow() const;
+    ns_v::CT_Shadow* mutable_v_shadow();
+    const ns_v::CT_Shadow& get_v_shadow() const;
+    bool has_skew() const;
+    CT_Skew* mutable_skew();
+    const CT_Skew& get_skew() const;
+    bool has_extrusion() const;
+    CT_Extrusion* mutable_extrusion();
+    const CT_Extrusion& get_extrusion() const;
+    bool has_callout() const;
+    CT_Callout* mutable_callout();
+    const CT_Callout& get_callout() const;
+    bool has_lock() const;
+    CT_Lock* mutable_lock();
+    const CT_Lock& get_lock() const;
+    bool has_colormru() const;
+    CT_ColorMru* mutable_colormru();
+    const CT_ColorMru& get_colormru() const;
+    bool has_colormenu() const;
+    CT_ColorMenu* mutable_colormenu();
+    const CT_ColorMenu& get_colormenu() const;
     void clear();
     void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
     static const CT_ShapeDefaults& default_instance();
@@ -798,6 +828,26 @@ public:
     const ns_s::ST_TrueFalse& get_allowincell_attr() const;
 protected:
 private:
+    bool m_has_v_fill;
+    ns_v::CT_Fill* m_v_fill;
+    bool m_has_v_stroke;
+    ns_v::CT_Stroke* m_v_stroke;
+    bool m_has_v_textbox;
+    ns_v::CT_Textbox* m_v_textbox;
+    bool m_has_v_shadow;
+    ns_v::CT_Shadow* m_v_shadow;
+    bool m_has_skew;
+    CT_Skew* m_skew;
+    bool m_has_extrusion;
+    CT_Extrusion* m_extrusion;
+    bool m_has_callout;
+    CT_Callout* m_callout;
+    bool m_has_lock;
+    CT_Lock* m_lock;
+    bool m_has_colormru;
+    CT_ColorMru* m_colormru;
+    bool m_has_colormenu;
+    CT_ColorMenu* m_colormenu;
     static CT_ShapeDefaults* default_instance_;
     bool m_has_v_ext_attr;
     ns_v::ST_Ext* m_v_ext_attr;
@@ -928,6 +978,15 @@ class CT_ShapeLayout: public XSD::ComplexType
 public:
     CT_ShapeLayout();
     ~CT_ShapeLayout();
+    bool has_idmap() const;
+    CT_IdMap* mutable_idmap();
+    const CT_IdMap& get_idmap() const;
+    bool has_regrouptable() const;
+    CT_RegroupTable* mutable_regrouptable();
+    const CT_RegroupTable& get_regrouptable() const;
+    bool has_rules() const;
+    CT_Rules* mutable_rules();
+    const CT_Rules& get_rules() const;
     void clear();
     void toXmlElem(const std::string& _elemName, const std::string& _xmlNsStr, std::ostream& _outStream) const;
     static const CT_ShapeLayout& default_instance();
@@ -936,6 +995,12 @@ public:
     const ns_v::ST_Ext& get_v_ext_attr() const;
 protected:
 private:
+    bool m_has_idmap;
+    CT_IdMap* m_idmap;
+    bool m_has_regrouptable;
+    CT_RegroupTable* m_regrouptable;
+    bool m_has_rules;
+    CT_Rules* m_rules;
     static CT_ShapeLayout* default_instance_;
     bool m_has_v_ext_attr;
     ns_v::ST_Ext* m_v_ext_attr;
@@ -1997,6 +2062,36 @@ class shapedefaults_element: public Element
 public:
     shapedefaults_element();
     ~shapedefaults_element();
+    bool has_v_fill() const;
+    ns_v::CT_Fill* mutable_v_fill();
+    const ns_v::CT_Fill& get_v_fill() const;
+    bool has_v_stroke() const;
+    ns_v::CT_Stroke* mutable_v_stroke();
+    const ns_v::CT_Stroke& get_v_stroke() const;
+    bool has_v_textbox() const;
+    ns_v::CT_Textbox* mutable_v_textbox();
+    const ns_v::CT_Textbox& get_v_textbox() const;
+    bool has_v_shadow() const;
+    ns_v::CT_Shadow* mutable_v_shadow();
+    const ns_v::CT_Shadow& get_v_shadow() const;
+    bool has_skew() const;
+    CT_Skew* mutable_skew();
+    const CT_Skew& get_skew() const;
+    bool has_extrusion() const;
+    CT_Extrusion* mutable_extrusion();
+    const CT_Extrusion& get_extrusion() const;
+    bool has_callout() const;
+    CT_Callout* mutable_callout();
+    const CT_Callout& get_callout() const;
+    bool has_lock() const;
+    CT_Lock* mutable_lock();
+    const CT_Lock& get_lock() const;
+    bool has_colormru() const;
+    CT_ColorMru* mutable_colormru();
+    const CT_ColorMru& get_colormru() const;
+    bool has_colormenu() const;
+    CT_ColorMenu* mutable_colormenu();
+    const CT_ColorMenu& get_colormenu() const;
     void clear();
     void toXml(std::ostream& _outStream) const;
     static const shapedefaults_element& default_instance();
@@ -2026,6 +2121,26 @@ public:
     const ns_s::ST_TrueFalse& get_allowincell_attr() const;
 protected:
 private:
+    bool m_has_v_fill;
+    ns_v::CT_Fill* m_v_fill;
+    bool m_has_v_stroke;
+    ns_v::CT_Stroke* m_v_stroke;
+    bool m_has_v_textbox;
+    ns_v::CT_Textbox* m_v_textbox;
+    bool m_has_v_shadow;
+    ns_v::CT_Shadow* m_v_shadow;
+    bool m_has_skew;
+    CT_Skew* m_skew;
+    bool m_has_extrusion;
+    CT_Extrusion* m_extrusion;
+    bool m_has_callout;
+    CT_Callout* m_callout;
+    bool m_has_lock;
+    CT_Lock* m_lock;
+    bool m_has_colormru;
+    CT_ColorMru* m_colormru;
+    bool m_has_colormenu;
+    CT_ColorMenu* m_colormenu;
     static shapedefaults_element* default_instance_;
     bool m_has_v_ext_attr;
     ns_v::ST_Ext* m_v_ext_attr;
@@ -2050,6 +2165,15 @@ class shapelayout_element: public Element
 public:
     shapelayout_element();
     ~shapelayout_element();
+    bool has_idmap() const;
+    CT_IdMap* mutable_idmap();
+    const CT_IdMap& get_idmap() const;
+    bool has_regrouptable() const;
+    CT_RegroupTable* mutable_regrouptable();
+    const CT_RegroupTable& get_regrouptable() const;
+    bool has_rules() const;
+    CT_Rules* mutable_rules();
+    const CT_Rules& get_rules() const;
     void clear();
     void toXml(std::ostream& _outStream) const;
     static const shapelayout_element& default_instance();
@@ -2058,6 +2182,12 @@ public:
     const ns_v::ST_Ext& get_v_ext_attr() const;
 protected:
 private:
+    bool m_has_idmap;
+    CT_IdMap* m_idmap;
+    bool m_has_regrouptable;
+    CT_RegroupTable* m_regrouptable;
+    bool m_has_rules;
+    CT_Rules* m_rules;
     static shapelayout_element* default_instance_;
     bool m_has_v_ext_attr;
     ns_v::ST_Ext* m_v_ext_attr;

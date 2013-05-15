@@ -1530,7 +1530,27 @@ ST_FillType* ST_FillType::default_instance_ = NULL;
 
 // CT_ShapeDefaults
 CT_ShapeDefaults::CT_ShapeDefaults()
-    :m_has_v_ext_attr(false),
+    :m_has_v_fill(false),
+     m_v_fill(NULL),
+     m_has_v_stroke(false),
+     m_v_stroke(NULL),
+     m_has_v_textbox(false),
+     m_v_textbox(NULL),
+     m_has_v_shadow(false),
+     m_v_shadow(NULL),
+     m_has_skew(false),
+     m_skew(NULL),
+     m_has_extrusion(false),
+     m_extrusion(NULL),
+     m_has_callout(false),
+     m_callout(NULL),
+     m_has_lock(false),
+     m_lock(NULL),
+     m_has_colormru(false),
+     m_colormru(NULL),
+     m_has_colormenu(false),
+     m_colormenu(NULL),
+     m_has_v_ext_attr(false),
      m_v_ext_attr(NULL),
      m_has_spidmax_attr(false),
      m_spidmax_attr(0),
@@ -1552,6 +1572,246 @@ CT_ShapeDefaults::~CT_ShapeDefaults()
 {
     clear();
 }
+bool CT_ShapeDefaults::has_v_fill() const
+{
+    return m_has_v_fill;
+}
+
+ns_v::CT_Fill* CT_ShapeDefaults::mutable_v_fill()
+{
+    m_has_v_fill = true;
+    if (!m_v_fill)
+    {
+        m_v_fill = new ns_v::CT_Fill();
+    }
+    return m_v_fill;
+}
+
+const ns_v::CT_Fill& CT_ShapeDefaults::get_v_fill() const
+{
+    if (m_v_fill)
+    {
+        return *m_v_fill;
+    }
+    return ns_v::CT_Fill::default_instance();
+}
+
+bool CT_ShapeDefaults::has_v_stroke() const
+{
+    return m_has_v_stroke;
+}
+
+ns_v::CT_Stroke* CT_ShapeDefaults::mutable_v_stroke()
+{
+    m_has_v_stroke = true;
+    if (!m_v_stroke)
+    {
+        m_v_stroke = new ns_v::CT_Stroke();
+    }
+    return m_v_stroke;
+}
+
+const ns_v::CT_Stroke& CT_ShapeDefaults::get_v_stroke() const
+{
+    if (m_v_stroke)
+    {
+        return *m_v_stroke;
+    }
+    return ns_v::CT_Stroke::default_instance();
+}
+
+bool CT_ShapeDefaults::has_v_textbox() const
+{
+    return m_has_v_textbox;
+}
+
+ns_v::CT_Textbox* CT_ShapeDefaults::mutable_v_textbox()
+{
+    m_has_v_textbox = true;
+    if (!m_v_textbox)
+    {
+        m_v_textbox = new ns_v::CT_Textbox();
+    }
+    return m_v_textbox;
+}
+
+const ns_v::CT_Textbox& CT_ShapeDefaults::get_v_textbox() const
+{
+    if (m_v_textbox)
+    {
+        return *m_v_textbox;
+    }
+    return ns_v::CT_Textbox::default_instance();
+}
+
+bool CT_ShapeDefaults::has_v_shadow() const
+{
+    return m_has_v_shadow;
+}
+
+ns_v::CT_Shadow* CT_ShapeDefaults::mutable_v_shadow()
+{
+    m_has_v_shadow = true;
+    if (!m_v_shadow)
+    {
+        m_v_shadow = new ns_v::CT_Shadow();
+    }
+    return m_v_shadow;
+}
+
+const ns_v::CT_Shadow& CT_ShapeDefaults::get_v_shadow() const
+{
+    if (m_v_shadow)
+    {
+        return *m_v_shadow;
+    }
+    return ns_v::CT_Shadow::default_instance();
+}
+
+bool CT_ShapeDefaults::has_skew() const
+{
+    return m_has_skew;
+}
+
+CT_Skew* CT_ShapeDefaults::mutable_skew()
+{
+    m_has_skew = true;
+    if (!m_skew)
+    {
+        m_skew = new CT_Skew();
+    }
+    return m_skew;
+}
+
+const CT_Skew& CT_ShapeDefaults::get_skew() const
+{
+    if (m_skew)
+    {
+        return *m_skew;
+    }
+    return CT_Skew::default_instance();
+}
+
+bool CT_ShapeDefaults::has_extrusion() const
+{
+    return m_has_extrusion;
+}
+
+CT_Extrusion* CT_ShapeDefaults::mutable_extrusion()
+{
+    m_has_extrusion = true;
+    if (!m_extrusion)
+    {
+        m_extrusion = new CT_Extrusion();
+    }
+    return m_extrusion;
+}
+
+const CT_Extrusion& CT_ShapeDefaults::get_extrusion() const
+{
+    if (m_extrusion)
+    {
+        return *m_extrusion;
+    }
+    return CT_Extrusion::default_instance();
+}
+
+bool CT_ShapeDefaults::has_callout() const
+{
+    return m_has_callout;
+}
+
+CT_Callout* CT_ShapeDefaults::mutable_callout()
+{
+    m_has_callout = true;
+    if (!m_callout)
+    {
+        m_callout = new CT_Callout();
+    }
+    return m_callout;
+}
+
+const CT_Callout& CT_ShapeDefaults::get_callout() const
+{
+    if (m_callout)
+    {
+        return *m_callout;
+    }
+    return CT_Callout::default_instance();
+}
+
+bool CT_ShapeDefaults::has_lock() const
+{
+    return m_has_lock;
+}
+
+CT_Lock* CT_ShapeDefaults::mutable_lock()
+{
+    m_has_lock = true;
+    if (!m_lock)
+    {
+        m_lock = new CT_Lock();
+    }
+    return m_lock;
+}
+
+const CT_Lock& CT_ShapeDefaults::get_lock() const
+{
+    if (m_lock)
+    {
+        return *m_lock;
+    }
+    return CT_Lock::default_instance();
+}
+
+bool CT_ShapeDefaults::has_colormru() const
+{
+    return m_has_colormru;
+}
+
+CT_ColorMru* CT_ShapeDefaults::mutable_colormru()
+{
+    m_has_colormru = true;
+    if (!m_colormru)
+    {
+        m_colormru = new CT_ColorMru();
+    }
+    return m_colormru;
+}
+
+const CT_ColorMru& CT_ShapeDefaults::get_colormru() const
+{
+    if (m_colormru)
+    {
+        return *m_colormru;
+    }
+    return CT_ColorMru::default_instance();
+}
+
+bool CT_ShapeDefaults::has_colormenu() const
+{
+    return m_has_colormenu;
+}
+
+CT_ColorMenu* CT_ShapeDefaults::mutable_colormenu()
+{
+    m_has_colormenu = true;
+    if (!m_colormenu)
+    {
+        m_colormenu = new CT_ColorMenu();
+    }
+    return m_colormenu;
+}
+
+const CT_ColorMenu& CT_ShapeDefaults::get_colormenu() const
+{
+    if (m_colormenu)
+    {
+        return *m_colormenu;
+    }
+    return CT_ColorMenu::default_instance();
+}
+
 void CT_ShapeDefaults::clear()
 {
     m_has_v_ext_attr = false;
@@ -1611,6 +1871,96 @@ void CT_ShapeDefaults::clear()
     {
         delete m_allowincell_attr;
         m_allowincell_attr = NULL;
+    }
+
+
+    m_has_v_fill = false;
+
+    if (m_v_fill)
+    {
+        delete m_v_fill;
+        m_v_fill = NULL;
+    }
+
+
+    m_has_v_stroke = false;
+
+    if (m_v_stroke)
+    {
+        delete m_v_stroke;
+        m_v_stroke = NULL;
+    }
+
+
+    m_has_v_textbox = false;
+
+    if (m_v_textbox)
+    {
+        delete m_v_textbox;
+        m_v_textbox = NULL;
+    }
+
+
+    m_has_v_shadow = false;
+
+    if (m_v_shadow)
+    {
+        delete m_v_shadow;
+        m_v_shadow = NULL;
+    }
+
+
+    m_has_skew = false;
+
+    if (m_skew)
+    {
+        delete m_skew;
+        m_skew = NULL;
+    }
+
+
+    m_has_extrusion = false;
+
+    if (m_extrusion)
+    {
+        delete m_extrusion;
+        m_extrusion = NULL;
+    }
+
+
+    m_has_callout = false;
+
+    if (m_callout)
+    {
+        delete m_callout;
+        m_callout = NULL;
+    }
+
+
+    m_has_lock = false;
+
+    if (m_lock)
+    {
+        delete m_lock;
+        m_lock = NULL;
+    }
+
+
+    m_has_colormru = false;
+
+    if (m_colormru)
+    {
+        delete m_colormru;
+        m_colormru = NULL;
+    }
+
+
+    m_has_colormenu = false;
+
+    if (m_colormenu)
+    {
+        delete m_colormenu;
+        m_colormenu = NULL;
     }
 
 }
@@ -1680,6 +2030,66 @@ void CT_ShapeDefaults::toXmlElem(const std::string& _elemName, const std::string
     }
 
     _outStream << ">";
+
+
+    if (m_has_v_fill)
+    {
+        m_v_fill->toXmlElem("v:fill", "", _outStream);
+    }
+
+
+    if (m_has_v_stroke)
+    {
+        m_v_stroke->toXmlElem("v:stroke", "", _outStream);
+    }
+
+
+    if (m_has_v_textbox)
+    {
+        m_v_textbox->toXmlElem("v:textbox", "", _outStream);
+    }
+
+
+    if (m_has_v_shadow)
+    {
+        m_v_shadow->toXmlElem("v:shadow", "", _outStream);
+    }
+
+
+    if (m_has_skew)
+    {
+        m_skew->toXmlElem("o:skew", "", _outStream);
+    }
+
+
+    if (m_has_extrusion)
+    {
+        m_extrusion->toXmlElem("o:extrusion", "", _outStream);
+    }
+
+
+    if (m_has_callout)
+    {
+        m_callout->toXmlElem("o:callout", "", _outStream);
+    }
+
+
+    if (m_has_lock)
+    {
+        m_lock->toXmlElem("o:lock", "", _outStream);
+    }
+
+
+    if (m_has_colormru)
+    {
+        m_colormru->toXmlElem("o:colormru", "", _outStream);
+    }
+
+
+    if (m_has_colormenu)
+    {
+        m_colormenu->toXmlElem("o:colormenu", "", _outStream);
+    }
 
     _outStream << "</" << _elemName << ">";
 }
@@ -2457,7 +2867,13 @@ CT_SignatureLine* CT_SignatureLine::default_instance_ = NULL;
 
 // CT_ShapeLayout
 CT_ShapeLayout::CT_ShapeLayout()
-    :m_has_v_ext_attr(false),
+    :m_has_idmap(false),
+     m_idmap(NULL),
+     m_has_regrouptable(false),
+     m_regrouptable(NULL),
+     m_has_rules(false),
+     m_rules(NULL),
+     m_has_v_ext_attr(false),
      m_v_ext_attr(NULL)
 {
 }
@@ -2465,6 +2881,78 @@ CT_ShapeLayout::~CT_ShapeLayout()
 {
     clear();
 }
+bool CT_ShapeLayout::has_idmap() const
+{
+    return m_has_idmap;
+}
+
+CT_IdMap* CT_ShapeLayout::mutable_idmap()
+{
+    m_has_idmap = true;
+    if (!m_idmap)
+    {
+        m_idmap = new CT_IdMap();
+    }
+    return m_idmap;
+}
+
+const CT_IdMap& CT_ShapeLayout::get_idmap() const
+{
+    if (m_idmap)
+    {
+        return *m_idmap;
+    }
+    return CT_IdMap::default_instance();
+}
+
+bool CT_ShapeLayout::has_regrouptable() const
+{
+    return m_has_regrouptable;
+}
+
+CT_RegroupTable* CT_ShapeLayout::mutable_regrouptable()
+{
+    m_has_regrouptable = true;
+    if (!m_regrouptable)
+    {
+        m_regrouptable = new CT_RegroupTable();
+    }
+    return m_regrouptable;
+}
+
+const CT_RegroupTable& CT_ShapeLayout::get_regrouptable() const
+{
+    if (m_regrouptable)
+    {
+        return *m_regrouptable;
+    }
+    return CT_RegroupTable::default_instance();
+}
+
+bool CT_ShapeLayout::has_rules() const
+{
+    return m_has_rules;
+}
+
+CT_Rules* CT_ShapeLayout::mutable_rules()
+{
+    m_has_rules = true;
+    if (!m_rules)
+    {
+        m_rules = new CT_Rules();
+    }
+    return m_rules;
+}
+
+const CT_Rules& CT_ShapeLayout::get_rules() const
+{
+    if (m_rules)
+    {
+        return *m_rules;
+    }
+    return CT_Rules::default_instance();
+}
+
 void CT_ShapeLayout::clear()
 {
     m_has_v_ext_attr = false;
@@ -2473,6 +2961,33 @@ void CT_ShapeLayout::clear()
     {
         delete m_v_ext_attr;
         m_v_ext_attr = NULL;
+    }
+
+
+    m_has_idmap = false;
+
+    if (m_idmap)
+    {
+        delete m_idmap;
+        m_idmap = NULL;
+    }
+
+
+    m_has_regrouptable = false;
+
+    if (m_regrouptable)
+    {
+        delete m_regrouptable;
+        m_regrouptable = NULL;
+    }
+
+
+    m_has_rules = false;
+
+    if (m_rules)
+    {
+        delete m_rules;
+        m_rules = NULL;
     }
 
 }
@@ -2493,6 +3008,24 @@ void CT_ShapeLayout::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     _outStream << ">";
+
+
+    if (m_has_idmap)
+    {
+        m_idmap->toXmlElem("o:idmap", "", _outStream);
+    }
+
+
+    if (m_has_regrouptable)
+    {
+        m_regrouptable->toXmlElem("o:regrouptable", "", _outStream);
+    }
+
+
+    if (m_has_rules)
+    {
+        m_rules->toXmlElem("o:rules", "", _outStream);
+    }
 
     _outStream << "</" << _elemName << ">";
 }
@@ -8413,7 +8946,27 @@ CT_Fill* CT_Fill::default_instance_ = NULL;
 
 // shapedefaults_element
 shapedefaults_element::shapedefaults_element()
-    :m_has_v_ext_attr(false),
+    :m_has_v_fill(false),
+     m_v_fill(NULL),
+     m_has_v_stroke(false),
+     m_v_stroke(NULL),
+     m_has_v_textbox(false),
+     m_v_textbox(NULL),
+     m_has_v_shadow(false),
+     m_v_shadow(NULL),
+     m_has_skew(false),
+     m_skew(NULL),
+     m_has_extrusion(false),
+     m_extrusion(NULL),
+     m_has_callout(false),
+     m_callout(NULL),
+     m_has_lock(false),
+     m_lock(NULL),
+     m_has_colormru(false),
+     m_colormru(NULL),
+     m_has_colormenu(false),
+     m_colormenu(NULL),
+     m_has_v_ext_attr(false),
      m_v_ext_attr(NULL),
      m_has_spidmax_attr(false),
      m_spidmax_attr(0),
@@ -8435,6 +8988,246 @@ shapedefaults_element::~shapedefaults_element()
 {
     clear();
 }
+bool shapedefaults_element::has_v_fill() const
+{
+    return m_has_v_fill;
+}
+
+ns_v::CT_Fill* shapedefaults_element::mutable_v_fill()
+{
+    m_has_v_fill = true;
+    if (!m_v_fill)
+    {
+        m_v_fill = new ns_v::CT_Fill();
+    }
+    return m_v_fill;
+}
+
+const ns_v::CT_Fill& shapedefaults_element::get_v_fill() const
+{
+    if (m_v_fill)
+    {
+        return *m_v_fill;
+    }
+    return ns_v::CT_Fill::default_instance();
+}
+
+bool shapedefaults_element::has_v_stroke() const
+{
+    return m_has_v_stroke;
+}
+
+ns_v::CT_Stroke* shapedefaults_element::mutable_v_stroke()
+{
+    m_has_v_stroke = true;
+    if (!m_v_stroke)
+    {
+        m_v_stroke = new ns_v::CT_Stroke();
+    }
+    return m_v_stroke;
+}
+
+const ns_v::CT_Stroke& shapedefaults_element::get_v_stroke() const
+{
+    if (m_v_stroke)
+    {
+        return *m_v_stroke;
+    }
+    return ns_v::CT_Stroke::default_instance();
+}
+
+bool shapedefaults_element::has_v_textbox() const
+{
+    return m_has_v_textbox;
+}
+
+ns_v::CT_Textbox* shapedefaults_element::mutable_v_textbox()
+{
+    m_has_v_textbox = true;
+    if (!m_v_textbox)
+    {
+        m_v_textbox = new ns_v::CT_Textbox();
+    }
+    return m_v_textbox;
+}
+
+const ns_v::CT_Textbox& shapedefaults_element::get_v_textbox() const
+{
+    if (m_v_textbox)
+    {
+        return *m_v_textbox;
+    }
+    return ns_v::CT_Textbox::default_instance();
+}
+
+bool shapedefaults_element::has_v_shadow() const
+{
+    return m_has_v_shadow;
+}
+
+ns_v::CT_Shadow* shapedefaults_element::mutable_v_shadow()
+{
+    m_has_v_shadow = true;
+    if (!m_v_shadow)
+    {
+        m_v_shadow = new ns_v::CT_Shadow();
+    }
+    return m_v_shadow;
+}
+
+const ns_v::CT_Shadow& shapedefaults_element::get_v_shadow() const
+{
+    if (m_v_shadow)
+    {
+        return *m_v_shadow;
+    }
+    return ns_v::CT_Shadow::default_instance();
+}
+
+bool shapedefaults_element::has_skew() const
+{
+    return m_has_skew;
+}
+
+CT_Skew* shapedefaults_element::mutable_skew()
+{
+    m_has_skew = true;
+    if (!m_skew)
+    {
+        m_skew = new CT_Skew();
+    }
+    return m_skew;
+}
+
+const CT_Skew& shapedefaults_element::get_skew() const
+{
+    if (m_skew)
+    {
+        return *m_skew;
+    }
+    return CT_Skew::default_instance();
+}
+
+bool shapedefaults_element::has_extrusion() const
+{
+    return m_has_extrusion;
+}
+
+CT_Extrusion* shapedefaults_element::mutable_extrusion()
+{
+    m_has_extrusion = true;
+    if (!m_extrusion)
+    {
+        m_extrusion = new CT_Extrusion();
+    }
+    return m_extrusion;
+}
+
+const CT_Extrusion& shapedefaults_element::get_extrusion() const
+{
+    if (m_extrusion)
+    {
+        return *m_extrusion;
+    }
+    return CT_Extrusion::default_instance();
+}
+
+bool shapedefaults_element::has_callout() const
+{
+    return m_has_callout;
+}
+
+CT_Callout* shapedefaults_element::mutable_callout()
+{
+    m_has_callout = true;
+    if (!m_callout)
+    {
+        m_callout = new CT_Callout();
+    }
+    return m_callout;
+}
+
+const CT_Callout& shapedefaults_element::get_callout() const
+{
+    if (m_callout)
+    {
+        return *m_callout;
+    }
+    return CT_Callout::default_instance();
+}
+
+bool shapedefaults_element::has_lock() const
+{
+    return m_has_lock;
+}
+
+CT_Lock* shapedefaults_element::mutable_lock()
+{
+    m_has_lock = true;
+    if (!m_lock)
+    {
+        m_lock = new CT_Lock();
+    }
+    return m_lock;
+}
+
+const CT_Lock& shapedefaults_element::get_lock() const
+{
+    if (m_lock)
+    {
+        return *m_lock;
+    }
+    return CT_Lock::default_instance();
+}
+
+bool shapedefaults_element::has_colormru() const
+{
+    return m_has_colormru;
+}
+
+CT_ColorMru* shapedefaults_element::mutable_colormru()
+{
+    m_has_colormru = true;
+    if (!m_colormru)
+    {
+        m_colormru = new CT_ColorMru();
+    }
+    return m_colormru;
+}
+
+const CT_ColorMru& shapedefaults_element::get_colormru() const
+{
+    if (m_colormru)
+    {
+        return *m_colormru;
+    }
+    return CT_ColorMru::default_instance();
+}
+
+bool shapedefaults_element::has_colormenu() const
+{
+    return m_has_colormenu;
+}
+
+CT_ColorMenu* shapedefaults_element::mutable_colormenu()
+{
+    m_has_colormenu = true;
+    if (!m_colormenu)
+    {
+        m_colormenu = new CT_ColorMenu();
+    }
+    return m_colormenu;
+}
+
+const CT_ColorMenu& shapedefaults_element::get_colormenu() const
+{
+    if (m_colormenu)
+    {
+        return *m_colormenu;
+    }
+    return CT_ColorMenu::default_instance();
+}
+
 void shapedefaults_element::clear()
 {
     m_has_v_ext_attr = false;
@@ -8494,6 +9287,96 @@ void shapedefaults_element::clear()
     {
         delete m_allowincell_attr;
         m_allowincell_attr = NULL;
+    }
+
+
+    m_has_v_fill = false;
+
+    if (m_v_fill)
+    {
+        delete m_v_fill;
+        m_v_fill = NULL;
+    }
+
+
+    m_has_v_stroke = false;
+
+    if (m_v_stroke)
+    {
+        delete m_v_stroke;
+        m_v_stroke = NULL;
+    }
+
+
+    m_has_v_textbox = false;
+
+    if (m_v_textbox)
+    {
+        delete m_v_textbox;
+        m_v_textbox = NULL;
+    }
+
+
+    m_has_v_shadow = false;
+
+    if (m_v_shadow)
+    {
+        delete m_v_shadow;
+        m_v_shadow = NULL;
+    }
+
+
+    m_has_skew = false;
+
+    if (m_skew)
+    {
+        delete m_skew;
+        m_skew = NULL;
+    }
+
+
+    m_has_extrusion = false;
+
+    if (m_extrusion)
+    {
+        delete m_extrusion;
+        m_extrusion = NULL;
+    }
+
+
+    m_has_callout = false;
+
+    if (m_callout)
+    {
+        delete m_callout;
+        m_callout = NULL;
+    }
+
+
+    m_has_lock = false;
+
+    if (m_lock)
+    {
+        delete m_lock;
+        m_lock = NULL;
+    }
+
+
+    m_has_colormru = false;
+
+    if (m_colormru)
+    {
+        delete m_colormru;
+        m_colormru = NULL;
+    }
+
+
+    m_has_colormenu = false;
+
+    if (m_colormenu)
+    {
+        delete m_colormenu;
+        m_colormenu = NULL;
     }
 
 }
@@ -8563,6 +9446,66 @@ void shapedefaults_element::toXml(std::ostream& _outStream) const
     }
 
     _outStream << ">";
+
+
+    if (m_has_v_fill)
+    {
+        m_v_fill->toXmlElem("v:fill", "", _outStream);
+    }
+
+
+    if (m_has_v_stroke)
+    {
+        m_v_stroke->toXmlElem("v:stroke", "", _outStream);
+    }
+
+
+    if (m_has_v_textbox)
+    {
+        m_v_textbox->toXmlElem("v:textbox", "", _outStream);
+    }
+
+
+    if (m_has_v_shadow)
+    {
+        m_v_shadow->toXmlElem("v:shadow", "", _outStream);
+    }
+
+
+    if (m_has_skew)
+    {
+        m_skew->toXmlElem("o:skew", "", _outStream);
+    }
+
+
+    if (m_has_extrusion)
+    {
+        m_extrusion->toXmlElem("o:extrusion", "", _outStream);
+    }
+
+
+    if (m_has_callout)
+    {
+        m_callout->toXmlElem("o:callout", "", _outStream);
+    }
+
+
+    if (m_has_lock)
+    {
+        m_lock->toXmlElem("o:lock", "", _outStream);
+    }
+
+
+    if (m_has_colormru)
+    {
+        m_colormru->toXmlElem("o:colormru", "", _outStream);
+    }
+
+
+    if (m_has_colormenu)
+    {
+        m_colormenu->toXmlElem("o:colormenu", "", _outStream);
+    }
 
     _outStream << "</o:shapedefaults>";
 }
@@ -8732,7 +9675,13 @@ shapedefaults_element* shapedefaults_element::default_instance_ = NULL;
 
 // shapelayout_element
 shapelayout_element::shapelayout_element()
-    :m_has_v_ext_attr(false),
+    :m_has_idmap(false),
+     m_idmap(NULL),
+     m_has_regrouptable(false),
+     m_regrouptable(NULL),
+     m_has_rules(false),
+     m_rules(NULL),
+     m_has_v_ext_attr(false),
      m_v_ext_attr(NULL)
 {
 }
@@ -8740,6 +9689,78 @@ shapelayout_element::~shapelayout_element()
 {
     clear();
 }
+bool shapelayout_element::has_idmap() const
+{
+    return m_has_idmap;
+}
+
+CT_IdMap* shapelayout_element::mutable_idmap()
+{
+    m_has_idmap = true;
+    if (!m_idmap)
+    {
+        m_idmap = new CT_IdMap();
+    }
+    return m_idmap;
+}
+
+const CT_IdMap& shapelayout_element::get_idmap() const
+{
+    if (m_idmap)
+    {
+        return *m_idmap;
+    }
+    return CT_IdMap::default_instance();
+}
+
+bool shapelayout_element::has_regrouptable() const
+{
+    return m_has_regrouptable;
+}
+
+CT_RegroupTable* shapelayout_element::mutable_regrouptable()
+{
+    m_has_regrouptable = true;
+    if (!m_regrouptable)
+    {
+        m_regrouptable = new CT_RegroupTable();
+    }
+    return m_regrouptable;
+}
+
+const CT_RegroupTable& shapelayout_element::get_regrouptable() const
+{
+    if (m_regrouptable)
+    {
+        return *m_regrouptable;
+    }
+    return CT_RegroupTable::default_instance();
+}
+
+bool shapelayout_element::has_rules() const
+{
+    return m_has_rules;
+}
+
+CT_Rules* shapelayout_element::mutable_rules()
+{
+    m_has_rules = true;
+    if (!m_rules)
+    {
+        m_rules = new CT_Rules();
+    }
+    return m_rules;
+}
+
+const CT_Rules& shapelayout_element::get_rules() const
+{
+    if (m_rules)
+    {
+        return *m_rules;
+    }
+    return CT_Rules::default_instance();
+}
+
 void shapelayout_element::clear()
 {
     m_has_v_ext_attr = false;
@@ -8748,6 +9769,33 @@ void shapelayout_element::clear()
     {
         delete m_v_ext_attr;
         m_v_ext_attr = NULL;
+    }
+
+
+    m_has_idmap = false;
+
+    if (m_idmap)
+    {
+        delete m_idmap;
+        m_idmap = NULL;
+    }
+
+
+    m_has_regrouptable = false;
+
+    if (m_regrouptable)
+    {
+        delete m_regrouptable;
+        m_regrouptable = NULL;
+    }
+
+
+    m_has_rules = false;
+
+    if (m_rules)
+    {
+        delete m_rules;
+        m_rules = NULL;
     }
 
 }
@@ -8768,6 +9816,24 @@ void shapelayout_element::toXml(std::ostream& _outStream) const
     }
 
     _outStream << ">";
+
+
+    if (m_has_idmap)
+    {
+        m_idmap->toXmlElem("o:idmap", "", _outStream);
+    }
+
+
+    if (m_has_regrouptable)
+    {
+        m_regrouptable->toXmlElem("o:regrouptable", "", _outStream);
+    }
+
+
+    if (m_has_rules)
+    {
+        m_rules->toXmlElem("o:rules", "", _outStream);
+    }
 
     _outStream << "</o:shapelayout>";
 }
