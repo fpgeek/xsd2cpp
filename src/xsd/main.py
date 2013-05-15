@@ -19,7 +19,10 @@ userSetNsPrefixMap = {
 'http://schemas.openxmlformats.org/officeDocument/2006/customXml':'ds',
 'http://schemas.openxmlformats.org/officeDocument/2006/custom-properties':'op',
 'http://schemas.openxmlformats.org/officeDocument/2006/extended-properties':'ap',
-'http://schemas.openxmlformats.org/spreadsheetml/2006/main':'x'
+'http://schemas.openxmlformats.org/spreadsheetml/2006/main':'x',
+'http://schemas.openxmlformats.org/markup-compatibility/2006':'mc',
+'http://schemas.openxmlformats.org/package/2006/metadata/core-properties':'cp',
+'http://schemas.openxmlformats.org/package/2006/relationships':'rs'
 }
 
 
@@ -52,6 +55,8 @@ def getFileNsNameFormDefaultNs(pbSchema, allNsList):
             nsPrefix = userSetNsPrefixMap.get(defaultURI)
         elif len(nsPrefixList) > 0:
             nsPrefix = nsPrefixList[0]
+        else:
+            print defaultURI
 
     return nsPrefix
 
@@ -85,6 +90,7 @@ def run(xsdFileDirPath):
         fileNsName = fileNsMap.get(pbSchema.file_name)
         if fileNsName is None:
             fileNsName = getFileNsNameFormDefaultNs(pbSchema, allNsList)
+
 
         pbSchema.xml_ns_prefix = fileNsName
         cppProtoFile = xsd2cpp.parseToCpp(pbSchema, pbSchemas)

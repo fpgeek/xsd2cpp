@@ -5,6 +5,7 @@
 #include "vml-main_xsd.h"
 #include "pml_xsd.h"
 #include "shared-documentPropertiesVariantTypes_xsd.h"
+#include "shared-relationships_xsd.h"
 
 int main()
 {
@@ -25,6 +26,22 @@ int main()
         pBodyElem->add_p()->add_r()->mutable_rPr()->add_dstrike()->set_val_attr(valAttr);
         pBodyElem->add_p()->add_r()->mutable_rPr()->add_b();
         pBodyElem->add_p()->add_r()->mutable_rPr()->add_vertAlign()->set_val_attr(ns_s::ST_VerticalAlignRun::_baseline_);
+
+        {
+            ns_rs::Relationships_element relationships;
+            ns_rs::CT_Relationship *pRelationship = relationships.add_Relationship();
+            pRelationship->set_Id_attr("1");
+            pRelationship->set_Target_attr("Target");
+            pRelationship->set_TargetMode_attr("TargetMode");
+            pRelationship->set_Type_attr("Type");
+
+            fstream fileStream("Relationships.xml", fstream::out);
+            relationships.toXml(fileStream);
+            fileStream.close();
+        }
+
+
+
 
 //        ns_wp::CT_Anchor *pAnchorElem = pBodyElem->add_p()->add_r()->add_drawing()->add_wp_anchor();
 //        pAnchorElem->mutable_extent()->set_cx_attr(27273042316900);

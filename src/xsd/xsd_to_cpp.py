@@ -129,7 +129,10 @@ def _makeCppClasses(cppFile, pbSchema, allPbSchemas):
 
 def _getXmlNsPrefixStr(nsPrefix, mainNsPrefix):
     if nsPrefix == '':
-        return 'xmlns:%s' % mainNsPrefix
+        if mainNsPrefix:
+            return 'xmlns:%s' % mainNsPrefix
+        else:
+            return 'xmlns'
     else:
         return 'xmlns:%s' % nsPrefix
 
