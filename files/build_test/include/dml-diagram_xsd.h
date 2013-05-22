@@ -278,6 +278,7 @@ class ST_LayoutShapeType: public XSD::SimpleType
 {
 public:
     ST_LayoutShapeType();
+    ST_LayoutShapeType(const ST_LayoutShapeType& _ST_LayoutShapeType);
     ~ST_LayoutShapeType();
     bool has_ST_ShapeType() const;
     ns_a::ST_ShapeType* mutable_ST_ShapeType();
@@ -324,6 +325,7 @@ class ST_ParameterVal: public XSD::SimpleType
 {
 public:
     ST_ParameterVal();
+    ST_ParameterVal(const ST_ParameterVal& _ST_ParameterVal);
     ~ST_ParameterVal();
     bool has_ST_DiagramHorizontalAlignment() const;
     ST_DiagramHorizontalAlignment* mutable_ST_DiagramHorizontalAlignment();
@@ -554,6 +556,7 @@ class ST_ModelId: public XSD::SimpleType
 {
 public:
     ST_ModelId();
+    ST_ModelId(const ST_ModelId& _ST_ModelId);
     ~ST_ModelId();
     bool has_int() const;
     void set_int(const XSD::int_& _int);
@@ -580,6 +583,7 @@ class ST_PrSetCustVal: public XSD::SimpleType
 {
 public:
     ST_PrSetCustVal();
+    ST_PrSetCustVal(const ST_PrSetCustVal& _ST_PrSetCustVal);
     ~ST_PrSetCustVal();
     bool has_ST_Percentage() const;
     ns_s::ST_Percentage* mutable_ST_Percentage();
@@ -2148,6 +2152,7 @@ class ST_FunctionValue: public XSD::SimpleType
 {
 public:
     ST_FunctionValue();
+    ST_FunctionValue(const ST_FunctionValue& _ST_FunctionValue);
     ~ST_FunctionValue();
     bool has_int() const;
     void set_int(const XSD::int_& _int);
@@ -2238,6 +2243,7 @@ class ST_FunctionArgument: public XSD::SimpleType
 {
 public:
     ST_FunctionArgument();
+    ST_FunctionArgument(const ST_FunctionArgument& _ST_FunctionArgument);
     ~ST_FunctionArgument();
     bool has_ST_VariableType() const;
     ST_VariableType* mutable_ST_VariableType();

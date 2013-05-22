@@ -30,6 +30,7 @@ class DCMIType: public XSD::SimpleType
 {
 public:
     DCMIType();
+    DCMIType(const DCMIType& _DCMIType);
     ~DCMIType();
     std::string toString() const;
     void clear();

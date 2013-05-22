@@ -18,7 +18,7 @@ ST_SourceType::ST_SourceType()
 {
 }
 ST_SourceType::ST_SourceType(const ns_s::ST_String& _ST_String)
-
+    :ns_s::ST_String(_ST_String)
 {
 }
 ST_SourceType::~ST_SourceType()

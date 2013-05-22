@@ -16,6 +16,10 @@ DCMIType::DCMIType()
 
 {
 }
+DCMIType::DCMIType(const DCMIType& _DCMIType)
+
+{
+}
 DCMIType::~DCMIType()
 {
     clear();

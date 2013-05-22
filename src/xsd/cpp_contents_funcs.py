@@ -767,13 +767,19 @@ def simpleType_restriction_simpleTypeName(pbRestriction, cppClass):
 
     cppClass.constructor.add()
 
-    argument = cppClass.constructor.add().argument.add()
+    constructor2 =  cppClass.constructor.add()
+    argument = constructor2.argument.add()
     argument.type = '%s&' % _getCppVarType(pbSTName)
     argument.name = '_%s' % getCppVarName(pbSTName)
     argument.const = True
 
+    constInit = constructor2.const_init.add()
+    constInit.name = _getCppVarType(pbSTName)
+    constInit.value = argument.name
+
     cppClass.parent_class.remove('XSD::SimpleType')
     cppClass.parent_class.append(_getCppVarType(pbSTName))
+
 
     makeDefaultInstanceMember(cppClass)
     makeDefaultInstanceMethod(cppClass)
@@ -796,6 +802,7 @@ def simpleType_union(pbSchema, pbUnion, cppClass):
 
     toXmlMethodBodyList = []
     toStringBodyList = []
+    copyConstBodyList = []
     constInitList = []
     for pbMemberType in pbUnion.member_type:
         if pbMemberType.kind == PB.Union.MemberType.BuiltIn:
@@ -815,8 +822,20 @@ def simpleType_union(pbSchema, pbUnion, cppClass):
             varConstInit.value = _getInitValueFromBuiltIn(pbMemberType.built_in)
             constInitList.append(varConstInit)
 
+            copyConstBodyList.append(\
+"""
+%(thisHasVarName)s = %(hasVarName)s;
+%(thisVarName)s = %(varName)s;
+""" % {'thisHasVarName' : hasVarName,
+       'hasVarName': '_%s.has_%s()' % (cppClass.name, cppVarType),
+       'thisVarName' : varName,
+       'varName' : '_%s.get_%s()' % (cppClass.name, cppVarType)}
+)
+
         elif pbMemberType.kind == PB.Union.MemberType.SimpleTypeName:
             simpleType_union_simpleTypeName(pbMemberType.simple_type_name, pbUnionMemberNames, cppClass)
+            cppVarType = _getCppVarType(pbMemberType.simple_type_name)
+            cppVarName = getCppVarName(pbMemberType.simple_type_name)
             varName = 'm_%s' % getCppVarName(pbMemberType.simple_type_name)
             hasVarName = 'm_has_%s' % getCppVarName(pbMemberType.simple_type_name)
             toXmlMethodBodyList.append((hasVarName, _makeToXmlMethodBodyFromUnion(varName)))
@@ -830,6 +849,22 @@ def simpleType_union(pbSchema, pbUnion, cppClass):
             varConstInit.name = varName
             varConstInit.value = 'NULL'
             constInitList.append(varConstInit)
+
+            copyConstBodyList.append(\
+"""
+%(thisHasVarName)s = %(hasVarName)s;
+if (%(hasVarName)s)
+{
+    %(thisVarName)s = new %(classType)s(%(varName)s);
+}
+""" % {'thisHasVarName' : hasVarName,
+       'hasVarName': '_%s.has_%s()' % (cppClass.name, cppVarName),
+       'thisVarName' : varName,
+       'varName' : '_%s.get_%s()' % (cppClass.name, cppVarName),
+       'classType' : cppVarType
+    }
+)
+
         else:
             assert(False)
 
@@ -839,6 +874,14 @@ def simpleType_union(pbSchema, pbUnion, cppClass):
         newConstInit = constructor.const_init.add()
         newConstInit.CopyFrom(constInit)
 
+    # deep copy 복사생성자
+    copyConstructor = cppClass.constructor.add()
+    arg = copyConstructor.argument.add()
+    arg.type = '%s&' % cppClass.name
+    arg.name = '_%s' % cppClass.name
+    arg.const = True
+
+    copyConstructor.body = '\n'.join(copyConstBodyList);
 
     # UNION - toString method
     toStringMethod = cppClass.method.add()

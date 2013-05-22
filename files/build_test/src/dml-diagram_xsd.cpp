@@ -285,6 +285,23 @@ ST_LayoutShapeType::ST_LayoutShapeType()
      m_ST_OutputShapeType(NULL)
 {
 }
+ST_LayoutShapeType::ST_LayoutShapeType(const ST_LayoutShapeType& _ST_LayoutShapeType)
+
+{
+
+    m_has_ST_ShapeType = _ST_LayoutShapeType.has_ST_ShapeType();
+    if (_ST_LayoutShapeType.has_ST_ShapeType())
+    {
+        m_ST_ShapeType = new ns_a::ST_ShapeType(_ST_LayoutShapeType.get_ST_ShapeType());
+    }
+
+
+    m_has_ST_OutputShapeType = _ST_LayoutShapeType.has_ST_OutputShapeType();
+    if (_ST_LayoutShapeType.has_ST_OutputShapeType())
+    {
+        m_ST_OutputShapeType = new ST_OutputShapeType(_ST_LayoutShapeType.get_ST_OutputShapeType());
+    }
+}
 ST_LayoutShapeType::~ST_LayoutShapeType()
 {
     clear();
@@ -545,6 +562,249 @@ ST_ParameterVal::ST_ParameterVal()
      m_has_ST_ConnectorPoint(false),
      m_ST_ConnectorPoint(NULL)
 {
+}
+ST_ParameterVal::ST_ParameterVal(const ST_ParameterVal& _ST_ParameterVal)
+
+{
+
+    m_has_ST_DiagramHorizontalAlignment = _ST_ParameterVal.has_ST_DiagramHorizontalAlignment();
+    if (_ST_ParameterVal.has_ST_DiagramHorizontalAlignment())
+    {
+        m_ST_DiagramHorizontalAlignment = new ST_DiagramHorizontalAlignment(_ST_ParameterVal.get_ST_DiagramHorizontalAlignment());
+    }
+
+
+    m_has_ST_VerticalAlignment = _ST_ParameterVal.has_ST_VerticalAlignment();
+    if (_ST_ParameterVal.has_ST_VerticalAlignment())
+    {
+        m_ST_VerticalAlignment = new ST_VerticalAlignment(_ST_ParameterVal.get_ST_VerticalAlignment());
+    }
+
+
+    m_has_ST_ChildDirection = _ST_ParameterVal.has_ST_ChildDirection();
+    if (_ST_ParameterVal.has_ST_ChildDirection())
+    {
+        m_ST_ChildDirection = new ST_ChildDirection(_ST_ParameterVal.get_ST_ChildDirection());
+    }
+
+
+    m_has_ST_ChildAlignment = _ST_ParameterVal.has_ST_ChildAlignment();
+    if (_ST_ParameterVal.has_ST_ChildAlignment())
+    {
+        m_ST_ChildAlignment = new ST_ChildAlignment(_ST_ParameterVal.get_ST_ChildAlignment());
+    }
+
+
+    m_has_ST_SecondaryChildAlignment = _ST_ParameterVal.has_ST_SecondaryChildAlignment();
+    if (_ST_ParameterVal.has_ST_SecondaryChildAlignment())
+    {
+        m_ST_SecondaryChildAlignment = new ST_SecondaryChildAlignment(_ST_ParameterVal.get_ST_SecondaryChildAlignment());
+    }
+
+
+    m_has_ST_LinearDirection = _ST_ParameterVal.has_ST_LinearDirection();
+    if (_ST_ParameterVal.has_ST_LinearDirection())
+    {
+        m_ST_LinearDirection = new ST_LinearDirection(_ST_ParameterVal.get_ST_LinearDirection());
+    }
+
+
+    m_has_ST_SecondaryLinearDirection = _ST_ParameterVal.has_ST_SecondaryLinearDirection();
+    if (_ST_ParameterVal.has_ST_SecondaryLinearDirection())
+    {
+        m_ST_SecondaryLinearDirection = new ST_SecondaryLinearDirection(_ST_ParameterVal.get_ST_SecondaryLinearDirection());
+    }
+
+
+    m_has_ST_StartingElement = _ST_ParameterVal.has_ST_StartingElement();
+    if (_ST_ParameterVal.has_ST_StartingElement())
+    {
+        m_ST_StartingElement = new ST_StartingElement(_ST_ParameterVal.get_ST_StartingElement());
+    }
+
+
+    m_has_ST_BendPoint = _ST_ParameterVal.has_ST_BendPoint();
+    if (_ST_ParameterVal.has_ST_BendPoint())
+    {
+        m_ST_BendPoint = new ST_BendPoint(_ST_ParameterVal.get_ST_BendPoint());
+    }
+
+
+    m_has_ST_ConnectorRouting = _ST_ParameterVal.has_ST_ConnectorRouting();
+    if (_ST_ParameterVal.has_ST_ConnectorRouting())
+    {
+        m_ST_ConnectorRouting = new ST_ConnectorRouting(_ST_ParameterVal.get_ST_ConnectorRouting());
+    }
+
+
+    m_has_ST_ArrowheadStyle = _ST_ParameterVal.has_ST_ArrowheadStyle();
+    if (_ST_ParameterVal.has_ST_ArrowheadStyle())
+    {
+        m_ST_ArrowheadStyle = new ST_ArrowheadStyle(_ST_ParameterVal.get_ST_ArrowheadStyle());
+    }
+
+
+    m_has_ST_ConnectorDimension = _ST_ParameterVal.has_ST_ConnectorDimension();
+    if (_ST_ParameterVal.has_ST_ConnectorDimension())
+    {
+        m_ST_ConnectorDimension = new ST_ConnectorDimension(_ST_ParameterVal.get_ST_ConnectorDimension());
+    }
+
+
+    m_has_ST_RotationPath = _ST_ParameterVal.has_ST_RotationPath();
+    if (_ST_ParameterVal.has_ST_RotationPath())
+    {
+        m_ST_RotationPath = new ST_RotationPath(_ST_ParameterVal.get_ST_RotationPath());
+    }
+
+
+    m_has_ST_CenterShapeMapping = _ST_ParameterVal.has_ST_CenterShapeMapping();
+    if (_ST_ParameterVal.has_ST_CenterShapeMapping())
+    {
+        m_ST_CenterShapeMapping = new ST_CenterShapeMapping(_ST_ParameterVal.get_ST_CenterShapeMapping());
+    }
+
+
+    m_has_ST_NodeHorizontalAlignment = _ST_ParameterVal.has_ST_NodeHorizontalAlignment();
+    if (_ST_ParameterVal.has_ST_NodeHorizontalAlignment())
+    {
+        m_ST_NodeHorizontalAlignment = new ST_NodeHorizontalAlignment(_ST_ParameterVal.get_ST_NodeHorizontalAlignment());
+    }
+
+
+    m_has_ST_NodeVerticalAlignment = _ST_ParameterVal.has_ST_NodeVerticalAlignment();
+    if (_ST_ParameterVal.has_ST_NodeVerticalAlignment())
+    {
+        m_ST_NodeVerticalAlignment = new ST_NodeVerticalAlignment(_ST_ParameterVal.get_ST_NodeVerticalAlignment());
+    }
+
+
+    m_has_ST_FallbackDimension = _ST_ParameterVal.has_ST_FallbackDimension();
+    if (_ST_ParameterVal.has_ST_FallbackDimension())
+    {
+        m_ST_FallbackDimension = new ST_FallbackDimension(_ST_ParameterVal.get_ST_FallbackDimension());
+    }
+
+
+    m_has_ST_TextDirection = _ST_ParameterVal.has_ST_TextDirection();
+    if (_ST_ParameterVal.has_ST_TextDirection())
+    {
+        m_ST_TextDirection = new ST_TextDirection(_ST_ParameterVal.get_ST_TextDirection());
+    }
+
+
+    m_has_ST_PyramidAccentPosition = _ST_ParameterVal.has_ST_PyramidAccentPosition();
+    if (_ST_ParameterVal.has_ST_PyramidAccentPosition())
+    {
+        m_ST_PyramidAccentPosition = new ST_PyramidAccentPosition(_ST_ParameterVal.get_ST_PyramidAccentPosition());
+    }
+
+
+    m_has_ST_PyramidAccentTextMargin = _ST_ParameterVal.has_ST_PyramidAccentTextMargin();
+    if (_ST_ParameterVal.has_ST_PyramidAccentTextMargin())
+    {
+        m_ST_PyramidAccentTextMargin = new ST_PyramidAccentTextMargin(_ST_ParameterVal.get_ST_PyramidAccentTextMargin());
+    }
+
+
+    m_has_ST_TextBlockDirection = _ST_ParameterVal.has_ST_TextBlockDirection();
+    if (_ST_ParameterVal.has_ST_TextBlockDirection())
+    {
+        m_ST_TextBlockDirection = new ST_TextBlockDirection(_ST_ParameterVal.get_ST_TextBlockDirection());
+    }
+
+
+    m_has_ST_TextAnchorHorizontal = _ST_ParameterVal.has_ST_TextAnchorHorizontal();
+    if (_ST_ParameterVal.has_ST_TextAnchorHorizontal())
+    {
+        m_ST_TextAnchorHorizontal = new ST_TextAnchorHorizontal(_ST_ParameterVal.get_ST_TextAnchorHorizontal());
+    }
+
+
+    m_has_ST_TextAnchorVertical = _ST_ParameterVal.has_ST_TextAnchorVertical();
+    if (_ST_ParameterVal.has_ST_TextAnchorVertical())
+    {
+        m_ST_TextAnchorVertical = new ST_TextAnchorVertical(_ST_ParameterVal.get_ST_TextAnchorVertical());
+    }
+
+
+    m_has_ST_DiagramTextAlignment = _ST_ParameterVal.has_ST_DiagramTextAlignment();
+    if (_ST_ParameterVal.has_ST_DiagramTextAlignment())
+    {
+        m_ST_DiagramTextAlignment = new ST_DiagramTextAlignment(_ST_ParameterVal.get_ST_DiagramTextAlignment());
+    }
+
+
+    m_has_ST_AutoTextRotation = _ST_ParameterVal.has_ST_AutoTextRotation();
+    if (_ST_ParameterVal.has_ST_AutoTextRotation())
+    {
+        m_ST_AutoTextRotation = new ST_AutoTextRotation(_ST_ParameterVal.get_ST_AutoTextRotation());
+    }
+
+
+    m_has_ST_GrowDirection = _ST_ParameterVal.has_ST_GrowDirection();
+    if (_ST_ParameterVal.has_ST_GrowDirection())
+    {
+        m_ST_GrowDirection = new ST_GrowDirection(_ST_ParameterVal.get_ST_GrowDirection());
+    }
+
+
+    m_has_ST_FlowDirection = _ST_ParameterVal.has_ST_FlowDirection();
+    if (_ST_ParameterVal.has_ST_FlowDirection())
+    {
+        m_ST_FlowDirection = new ST_FlowDirection(_ST_ParameterVal.get_ST_FlowDirection());
+    }
+
+
+    m_has_ST_ContinueDirection = _ST_ParameterVal.has_ST_ContinueDirection();
+    if (_ST_ParameterVal.has_ST_ContinueDirection())
+    {
+        m_ST_ContinueDirection = new ST_ContinueDirection(_ST_ParameterVal.get_ST_ContinueDirection());
+    }
+
+
+    m_has_ST_Breakpoint = _ST_ParameterVal.has_ST_Breakpoint();
+    if (_ST_ParameterVal.has_ST_Breakpoint())
+    {
+        m_ST_Breakpoint = new ST_Breakpoint(_ST_ParameterVal.get_ST_Breakpoint());
+    }
+
+
+    m_has_ST_Offset = _ST_ParameterVal.has_ST_Offset();
+    if (_ST_ParameterVal.has_ST_Offset())
+    {
+        m_ST_Offset = new ST_Offset(_ST_ParameterVal.get_ST_Offset());
+    }
+
+
+    m_has_ST_HierarchyAlignment = _ST_ParameterVal.has_ST_HierarchyAlignment();
+    if (_ST_ParameterVal.has_ST_HierarchyAlignment())
+    {
+        m_ST_HierarchyAlignment = new ST_HierarchyAlignment(_ST_ParameterVal.get_ST_HierarchyAlignment());
+    }
+
+
+    m_has_int = _ST_ParameterVal.has_int();
+    m_int = _ST_ParameterVal.get_int();
+
+
+    m_has_double = _ST_ParameterVal.has_double();
+    m_double = _ST_ParameterVal.get_double();
+
+
+    m_has_boolean = _ST_ParameterVal.has_boolean();
+    m_boolean = _ST_ParameterVal.get_boolean();
+
+
+    m_has_string = _ST_ParameterVal.has_string();
+    m_string = _ST_ParameterVal.get_string();
+
+
+    m_has_ST_ConnectorPoint = _ST_ParameterVal.has_ST_ConnectorPoint();
+    if (_ST_ParameterVal.has_ST_ConnectorPoint())
+    {
+        m_ST_ConnectorPoint = new ST_ConnectorPoint(_ST_ParameterVal.get_ST_ConnectorPoint());
+    }
 }
 ST_ParameterVal::~ST_ParameterVal()
 {
@@ -3460,6 +3720,20 @@ ST_ModelId::ST_ModelId()
      m_ST_Guid(NULL)
 {
 }
+ST_ModelId::ST_ModelId(const ST_ModelId& _ST_ModelId)
+
+{
+
+    m_has_int = _ST_ModelId.has_int();
+    m_int = _ST_ModelId.get_int();
+
+
+    m_has_ST_Guid = _ST_ModelId.has_ST_Guid();
+    if (_ST_ModelId.has_ST_Guid())
+    {
+        m_ST_Guid = new ns_s::ST_Guid(_ST_ModelId.get_ST_Guid());
+    }
+}
 ST_ModelId::~ST_ModelId()
 {
     clear();
@@ -3579,6 +3853,20 @@ ST_PrSetCustVal::ST_PrSetCustVal()
      m_has_int(false),
      m_int(0)
 {
+}
+ST_PrSetCustVal::ST_PrSetCustVal(const ST_PrSetCustVal& _ST_PrSetCustVal)
+
+{
+
+    m_has_ST_Percentage = _ST_PrSetCustVal.has_ST_Percentage();
+    if (_ST_PrSetCustVal.has_ST_Percentage())
+    {
+        m_ST_Percentage = new ns_s::ST_Percentage(_ST_PrSetCustVal.get_ST_Percentage());
+    }
+
+
+    m_has_int = _ST_PrSetCustVal.has_int();
+    m_int = _ST_PrSetCustVal.get_int();
 }
 ST_PrSetCustVal::~ST_PrSetCustVal()
 {
@@ -7312,6 +7600,52 @@ ST_FunctionValue::ST_FunctionValue()
      m_ST_ResizeHandlesStr(NULL)
 {
 }
+ST_FunctionValue::ST_FunctionValue(const ST_FunctionValue& _ST_FunctionValue)
+
+{
+
+    m_has_int = _ST_FunctionValue.has_int();
+    m_int = _ST_FunctionValue.get_int();
+
+
+    m_has_boolean = _ST_FunctionValue.has_boolean();
+    m_boolean = _ST_FunctionValue.get_boolean();
+
+
+    m_has_ST_Direction = _ST_FunctionValue.has_ST_Direction();
+    if (_ST_FunctionValue.has_ST_Direction())
+    {
+        m_ST_Direction = new ST_Direction(_ST_FunctionValue.get_ST_Direction());
+    }
+
+
+    m_has_ST_HierBranchStyle = _ST_FunctionValue.has_ST_HierBranchStyle();
+    if (_ST_FunctionValue.has_ST_HierBranchStyle())
+    {
+        m_ST_HierBranchStyle = new ST_HierBranchStyle(_ST_FunctionValue.get_ST_HierBranchStyle());
+    }
+
+
+    m_has_ST_AnimOneStr = _ST_FunctionValue.has_ST_AnimOneStr();
+    if (_ST_FunctionValue.has_ST_AnimOneStr())
+    {
+        m_ST_AnimOneStr = new ST_AnimOneStr(_ST_FunctionValue.get_ST_AnimOneStr());
+    }
+
+
+    m_has_ST_AnimLvlStr = _ST_FunctionValue.has_ST_AnimLvlStr();
+    if (_ST_FunctionValue.has_ST_AnimLvlStr())
+    {
+        m_ST_AnimLvlStr = new ST_AnimLvlStr(_ST_FunctionValue.get_ST_AnimLvlStr());
+    }
+
+
+    m_has_ST_ResizeHandlesStr = _ST_FunctionValue.has_ST_ResizeHandlesStr();
+    if (_ST_FunctionValue.has_ST_ResizeHandlesStr())
+    {
+        m_ST_ResizeHandlesStr = new ST_ResizeHandlesStr(_ST_FunctionValue.get_ST_ResizeHandlesStr());
+    }
+}
 ST_FunctionValue::~ST_FunctionValue()
 {
     clear();
@@ -7759,6 +8093,16 @@ ST_FunctionArgument::ST_FunctionArgument()
     :m_has_ST_VariableType(false),
      m_ST_VariableType(NULL)
 {
+}
+ST_FunctionArgument::ST_FunctionArgument(const ST_FunctionArgument& _ST_FunctionArgument)
+
+{
+
+    m_has_ST_VariableType = _ST_FunctionArgument.has_ST_VariableType();
+    if (_ST_FunctionArgument.has_ST_VariableType())
+    {
+        m_ST_VariableType = new ST_VariableType(_ST_FunctionArgument.get_ST_VariableType());
+    }
 }
 ST_FunctionArgument::~ST_FunctionArgument()
 {

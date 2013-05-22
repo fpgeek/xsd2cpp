@@ -610,6 +610,20 @@ ST_OnOff::ST_OnOff()
      m_ST_OnOff1(NULL)
 {
 }
+ST_OnOff::ST_OnOff(const ST_OnOff& _ST_OnOff)
+
+{
+
+    m_has_boolean = _ST_OnOff.has_boolean();
+    m_boolean = _ST_OnOff.get_boolean();
+
+
+    m_has_ST_OnOff1 = _ST_OnOff.has_ST_OnOff1();
+    if (_ST_OnOff.has_ST_OnOff1())
+    {
+        m_ST_OnOff1 = new ST_OnOff1(_ST_OnOff.get_ST_OnOff1());
+    }
+}
 ST_OnOff::~ST_OnOff()
 {
     clear();
@@ -1118,6 +1132,23 @@ ST_TwipsMeasure::ST_TwipsMeasure()
      m_has_ST_PositiveUniversalMeasure(false),
      m_ST_PositiveUniversalMeasure(NULL)
 {
+}
+ST_TwipsMeasure::ST_TwipsMeasure(const ST_TwipsMeasure& _ST_TwipsMeasure)
+
+{
+
+    m_has_ST_UnsignedDecimalNumber = _ST_TwipsMeasure.has_ST_UnsignedDecimalNumber();
+    if (_ST_TwipsMeasure.has_ST_UnsignedDecimalNumber())
+    {
+        m_ST_UnsignedDecimalNumber = new ST_UnsignedDecimalNumber(_ST_TwipsMeasure.get_ST_UnsignedDecimalNumber());
+    }
+
+
+    m_has_ST_PositiveUniversalMeasure = _ST_TwipsMeasure.has_ST_PositiveUniversalMeasure();
+    if (_ST_TwipsMeasure.has_ST_PositiveUniversalMeasure())
+    {
+        m_ST_PositiveUniversalMeasure = new ST_PositiveUniversalMeasure(_ST_TwipsMeasure.get_ST_PositiveUniversalMeasure());
+    }
 }
 ST_TwipsMeasure::~ST_TwipsMeasure()
 {
@@ -1637,7 +1668,7 @@ ST_PositiveUniversalMeasure::ST_PositiveUniversalMeasure()
 {
 }
 ST_PositiveUniversalMeasure::ST_PositiveUniversalMeasure(const ST_UniversalMeasure& _ST_UniversalMeasure)
-
+    :ST_UniversalMeasure(_ST_UniversalMeasure)
 {
 }
 ST_PositiveUniversalMeasure::~ST_PositiveUniversalMeasure()
@@ -1725,7 +1756,7 @@ ST_FixedPercentage::ST_FixedPercentage()
 {
 }
 ST_FixedPercentage::ST_FixedPercentage(const ST_Percentage& _ST_Percentage)
-
+    :ST_Percentage(_ST_Percentage)
 {
 }
 ST_FixedPercentage::~ST_FixedPercentage()
@@ -1749,7 +1780,7 @@ ST_PositivePercentage::ST_PositivePercentage()
 {
 }
 ST_PositivePercentage::ST_PositivePercentage(const ST_Percentage& _ST_Percentage)
-
+    :ST_Percentage(_ST_Percentage)
 {
 }
 ST_PositivePercentage::~ST_PositivePercentage()
@@ -1773,7 +1804,7 @@ ST_PositiveFixedPercentage::ST_PositiveFixedPercentage()
 {
 }
 ST_PositiveFixedPercentage::ST_PositiveFixedPercentage(const ST_Percentage& _ST_Percentage)
-
+    :ST_Percentage(_ST_Percentage)
 {
 }
 ST_PositiveFixedPercentage::~ST_PositiveFixedPercentage()

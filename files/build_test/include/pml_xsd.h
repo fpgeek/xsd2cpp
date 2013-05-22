@@ -335,6 +335,7 @@ class ST_TransitionEightDirectionType: public XSD::SimpleType
 {
 public:
     ST_TransitionEightDirectionType();
+    ST_TransitionEightDirectionType(const ST_TransitionEightDirectionType& _ST_TransitionEightDirectionType);
     ~ST_TransitionEightDirectionType();
     bool has_ST_TransitionSideDirectionType() const;
     ST_TransitionSideDirectionType* mutable_ST_TransitionSideDirectionType();
@@ -413,6 +414,7 @@ class ST_TLTime: public XSD::SimpleType
 {
 public:
     ST_TLTime();
+    ST_TLTime(const ST_TLTime& _ST_TLTime);
     ~ST_TLTime();
     bool has_unsignedInt() const;
     void set_unsignedInt(const XSD::unsignedInt_& _unsignedInt);
@@ -907,6 +909,7 @@ class ST_TLTimeAnimateValueTime: public XSD::SimpleType
 {
 public:
     ST_TLTimeAnimateValueTime();
+    ST_TLTimeAnimateValueTime(const ST_TLTimeAnimateValueTime& _ST_TLTimeAnimateValueTime);
     ~ST_TLTimeAnimateValueTime();
     bool has_ST_PositiveFixedPercentage() const;
     ns_a::ST_PositiveFixedPercentage* mutable_ST_PositiveFixedPercentage();

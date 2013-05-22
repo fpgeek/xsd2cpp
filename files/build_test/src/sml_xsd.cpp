@@ -723,7 +723,7 @@ ST_Formula::ST_Formula()
 {
 }
 ST_Formula::ST_Formula(const ns_s::ST_Xstring& _ST_Xstring)
-
+    :ns_s::ST_Xstring(_ST_Xstring)
 {
 }
 ST_Formula::~ST_Formula()

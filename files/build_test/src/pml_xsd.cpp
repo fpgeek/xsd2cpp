@@ -218,6 +218,23 @@ ST_TransitionEightDirectionType::ST_TransitionEightDirectionType()
      m_ST_TransitionCornerDirectionType(NULL)
 {
 }
+ST_TransitionEightDirectionType::ST_TransitionEightDirectionType(const ST_TransitionEightDirectionType& _ST_TransitionEightDirectionType)
+
+{
+
+    m_has_ST_TransitionSideDirectionType = _ST_TransitionEightDirectionType.has_ST_TransitionSideDirectionType();
+    if (_ST_TransitionEightDirectionType.has_ST_TransitionSideDirectionType())
+    {
+        m_ST_TransitionSideDirectionType = new ST_TransitionSideDirectionType(_ST_TransitionEightDirectionType.get_ST_TransitionSideDirectionType());
+    }
+
+
+    m_has_ST_TransitionCornerDirectionType = _ST_TransitionEightDirectionType.has_ST_TransitionCornerDirectionType();
+    if (_ST_TransitionEightDirectionType.has_ST_TransitionCornerDirectionType())
+    {
+        m_ST_TransitionCornerDirectionType = new ST_TransitionCornerDirectionType(_ST_TransitionEightDirectionType.get_ST_TransitionCornerDirectionType());
+    }
+}
 ST_TransitionEightDirectionType::~ST_TransitionEightDirectionType()
 {
     clear();
@@ -473,6 +490,20 @@ ST_TLTime::ST_TLTime()
      m_has_ST_TLTimeIndefinite(false),
      m_ST_TLTimeIndefinite(NULL)
 {
+}
+ST_TLTime::ST_TLTime(const ST_TLTime& _ST_TLTime)
+
+{
+
+    m_has_unsignedInt = _ST_TLTime.has_unsignedInt();
+    m_unsignedInt = _ST_TLTime.get_unsignedInt();
+
+
+    m_has_ST_TLTimeIndefinite = _ST_TLTime.has_ST_TLTimeIndefinite();
+    if (_ST_TLTime.has_ST_TLTimeIndefinite())
+    {
+        m_ST_TLTimeIndefinite = new ST_TLTimeIndefinite(_ST_TLTime.get_ST_TLTimeIndefinite());
+    }
 }
 ST_TLTime::~ST_TLTime()
 {
@@ -1713,6 +1744,23 @@ ST_TLTimeAnimateValueTime::ST_TLTimeAnimateValueTime()
      m_has_ST_TLTimeIndefinite(false),
      m_ST_TLTimeIndefinite(NULL)
 {
+}
+ST_TLTimeAnimateValueTime::ST_TLTimeAnimateValueTime(const ST_TLTimeAnimateValueTime& _ST_TLTimeAnimateValueTime)
+
+{
+
+    m_has_ST_PositiveFixedPercentage = _ST_TLTimeAnimateValueTime.has_ST_PositiveFixedPercentage();
+    if (_ST_TLTimeAnimateValueTime.has_ST_PositiveFixedPercentage())
+    {
+        m_ST_PositiveFixedPercentage = new ns_a::ST_PositiveFixedPercentage(_ST_TLTimeAnimateValueTime.get_ST_PositiveFixedPercentage());
+    }
+
+
+    m_has_ST_TLTimeIndefinite = _ST_TLTimeAnimateValueTime.has_ST_TLTimeIndefinite();
+    if (_ST_TLTimeAnimateValueTime.has_ST_TLTimeIndefinite())
+    {
+        m_ST_TLTimeIndefinite = new ST_TLTimeIndefinite(_ST_TLTimeAnimateValueTime.get_ST_TLTimeIndefinite());
+    }
 }
 ST_TLTimeAnimateValueTime::~ST_TLTimeAnimateValueTime()
 {
@@ -3094,7 +3142,7 @@ ST_SlideSizeCoordinate::ST_SlideSizeCoordinate()
 {
 }
 ST_SlideSizeCoordinate::ST_SlideSizeCoordinate(const ns_a::ST_PositiveCoordinate32& _ST_PositiveCoordinate32)
-
+    :ns_a::ST_PositiveCoordinate32(_ST_PositiveCoordinate32)
 {
 }
 ST_SlideSizeCoordinate::~ST_SlideSizeCoordinate()

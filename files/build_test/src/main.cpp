@@ -6,6 +6,7 @@
 #include "pml_xsd.h"
 #include "shared-documentPropertiesVariantTypes_xsd.h"
 #include "shared-relationships_xsd.h"
+#include "pml_xsd.h"
 
 int main()
 {
@@ -39,6 +40,15 @@ int main()
             relationships.toXml(fileStream);
             fileStream.close();
         }
+
+//        ns_a::ST_PositiveFixedPercentage *pfp = new ns_a::ST_PositiveFixedPercentage();
+//        pfp->mutable_ST_PositiveFixedPercentage()->set_string("test");
+//
+//        ns_a::ST_PositiveFixedPercentage pfp2(*pfp);
+//        delete pfp;
+//        if (pfp2.has_ST_PositiveFixedPercentage()) {
+//            cout << pfp2.get_ST_PositiveFixedPercentage().get_string() << endl;
+//        }
 
 
 

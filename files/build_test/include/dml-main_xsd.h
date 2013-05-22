@@ -452,6 +452,7 @@ class ST_Coordinate: public XSD::SimpleType
 {
 public:
     ST_Coordinate();
+    ST_Coordinate(const ST_Coordinate& _ST_Coordinate);
     ~ST_Coordinate();
     bool has_ST_CoordinateUnqualified() const;
     ST_CoordinateUnqualified* mutable_ST_CoordinateUnqualified();
@@ -498,6 +499,7 @@ class ST_Coordinate32: public XSD::SimpleType
 {
 public:
     ST_Coordinate32();
+    ST_Coordinate32(const ST_Coordinate32& _ST_Coordinate32);
     ~ST_Coordinate32();
     bool has_ST_Coordinate32Unqualified() const;
     ST_Coordinate32Unqualified* mutable_ST_Coordinate32Unqualified();
@@ -620,6 +622,7 @@ class ST_Percentage: public XSD::SimpleType
 {
 public:
     ST_Percentage();
+    ST_Percentage(const ST_Percentage& _ST_Percentage);
     ~ST_Percentage();
     bool has_ST_PercentageDecimal() const;
     ST_PercentageDecimal* mutable_ST_PercentageDecimal();
@@ -666,6 +669,7 @@ class ST_PositivePercentage: public XSD::SimpleType
 {
 public:
     ST_PositivePercentage();
+    ST_PositivePercentage(const ST_PositivePercentage& _ST_PositivePercentage);
     ~ST_PositivePercentage();
     bool has_ST_PositivePercentageDecimal() const;
     ST_PositivePercentageDecimal* mutable_ST_PositivePercentageDecimal();
@@ -704,6 +708,7 @@ class ST_FixedPercentage: public XSD::SimpleType
 {
 public:
     ST_FixedPercentage();
+    ST_FixedPercentage(const ST_FixedPercentage& _ST_FixedPercentage);
     ~ST_FixedPercentage();
     bool has_ST_FixedPercentageDecimal() const;
     ST_FixedPercentageDecimal* mutable_ST_FixedPercentageDecimal();
@@ -742,6 +747,7 @@ class ST_PositiveFixedPercentage: public XSD::SimpleType
 {
 public:
     ST_PositiveFixedPercentage();
+    ST_PositiveFixedPercentage(const ST_PositiveFixedPercentage& _ST_PositiveFixedPercentage);
     ~ST_PositiveFixedPercentage();
     bool has_ST_PositiveFixedPercentageDecimal() const;
     ST_PositiveFixedPercentageDecimal* mutable_ST_PositiveFixedPercentageDecimal();
@@ -1285,6 +1291,7 @@ class ST_AnimationDgmBuildType: public XSD::SimpleType
 {
 public:
     ST_AnimationDgmBuildType();
+    ST_AnimationDgmBuildType(const ST_AnimationDgmBuildType& _ST_AnimationDgmBuildType);
     ~ST_AnimationDgmBuildType();
     bool has_ST_AnimationBuildType() const;
     ST_AnimationBuildType* mutable_ST_AnimationBuildType();
@@ -1339,6 +1346,7 @@ class ST_AnimationChartBuildType: public XSD::SimpleType
 {
 public:
     ST_AnimationChartBuildType();
+    ST_AnimationChartBuildType(const ST_AnimationChartBuildType& _ST_AnimationChartBuildType);
     ~ST_AnimationChartBuildType();
     bool has_ST_AnimationBuildType() const;
     ST_AnimationBuildType* mutable_ST_AnimationBuildType();
@@ -2198,6 +2206,7 @@ class ST_AdjCoordinate: public XSD::SimpleType
 {
 public:
     ST_AdjCoordinate();
+    ST_AdjCoordinate(const ST_AdjCoordinate& _ST_AdjCoordinate);
     ~ST_AdjCoordinate();
     bool has_ST_Coordinate() const;
     ST_Coordinate* mutable_ST_Coordinate();
@@ -2224,6 +2233,7 @@ class ST_AdjAngle: public XSD::SimpleType
 {
 public:
     ST_AdjAngle();
+    ST_AdjAngle(const ST_AdjAngle& _ST_AdjAngle);
     ~ST_AdjAngle();
     bool has_ST_Angle() const;
     ST_Angle* mutable_ST_Angle();
@@ -2699,6 +2709,7 @@ class ST_TextFontScalePercentOrPercentString: public XSD::SimpleType
 {
 public:
     ST_TextFontScalePercentOrPercentString();
+    ST_TextFontScalePercentOrPercentString(const ST_TextFontScalePercentOrPercentString& _ST_TextFontScalePercentOrPercentString);
     ~ST_TextFontScalePercentOrPercentString();
     bool has_ST_TextFontScalePercent() const;
     ST_TextFontScalePercent* mutable_ST_TextFontScalePercent();
@@ -2822,6 +2833,7 @@ class ST_TextBulletSize: public XSD::SimpleType
 {
 public:
     ST_TextBulletSize();
+    ST_TextBulletSize(const ST_TextBulletSize& _ST_TextBulletSize);
     ~ST_TextBulletSize();
     bool has_ST_TextBulletSizePercent() const;
     ST_TextBulletSizePercent* mutable_ST_TextBulletSizePercent();
@@ -2880,6 +2892,7 @@ class ST_TextPoint: public XSD::SimpleType
 {
 public:
     ST_TextPoint();
+    ST_TextPoint(const ST_TextPoint& _ST_TextPoint);
     ~ST_TextPoint();
     bool has_ST_TextPointUnqualified() const;
     ST_TextPointUnqualified* mutable_ST_TextPointUnqualified();
@@ -3144,6 +3157,7 @@ class ST_TextSpacingPercentOrPercentString: public XSD::SimpleType
 {
 public:
     ST_TextSpacingPercentOrPercentString();
+    ST_TextSpacingPercentOrPercentString(const ST_TextSpacingPercentOrPercentString& _ST_TextSpacingPercentOrPercentString);
     ~ST_TextSpacingPercentOrPercentString();
     bool has_ST_TextSpacingPercent() const;
     ST_TextSpacingPercent* mutable_ST_TextSpacingPercent();

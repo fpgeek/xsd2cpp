@@ -217,6 +217,23 @@ ST_HPercent::ST_HPercent()
      m_ST_HPercentUShort(NULL)
 {
 }
+ST_HPercent::ST_HPercent(const ST_HPercent& _ST_HPercent)
+
+{
+
+    m_has_ST_HPercentWithSymbol = _ST_HPercent.has_ST_HPercentWithSymbol();
+    if (_ST_HPercent.has_ST_HPercentWithSymbol())
+    {
+        m_ST_HPercentWithSymbol = new ST_HPercentWithSymbol(_ST_HPercent.get_ST_HPercentWithSymbol());
+    }
+
+
+    m_has_ST_HPercentUShort = _ST_HPercent.has_ST_HPercentUShort();
+    if (_ST_HPercent.has_ST_HPercentUShort())
+    {
+        m_ST_HPercentUShort = new ST_HPercentUShort(_ST_HPercent.get_ST_HPercentUShort());
+    }
+}
 ST_HPercent::~ST_HPercent()
 {
     clear();
@@ -540,6 +557,23 @@ ST_DepthPercent::ST_DepthPercent()
      m_has_ST_DepthPercentUShort(false),
      m_ST_DepthPercentUShort(NULL)
 {
+}
+ST_DepthPercent::ST_DepthPercent(const ST_DepthPercent& _ST_DepthPercent)
+
+{
+
+    m_has_ST_DepthPercentWithSymbol = _ST_DepthPercent.has_ST_DepthPercentWithSymbol();
+    if (_ST_DepthPercent.has_ST_DepthPercentWithSymbol())
+    {
+        m_ST_DepthPercentWithSymbol = new ST_DepthPercentWithSymbol(_ST_DepthPercent.get_ST_DepthPercentWithSymbol());
+    }
+
+
+    m_has_ST_DepthPercentUShort = _ST_DepthPercent.has_ST_DepthPercentUShort();
+    if (_ST_DepthPercent.has_ST_DepthPercentUShort())
+    {
+        m_ST_DepthPercentUShort = new ST_DepthPercentUShort(_ST_DepthPercent.get_ST_DepthPercentUShort());
+    }
 }
 ST_DepthPercent::~ST_DepthPercent()
 {
@@ -865,6 +899,20 @@ ST_Thickness::ST_Thickness()
      m_unsignedInt(0)
 {
 }
+ST_Thickness::ST_Thickness(const ST_Thickness& _ST_Thickness)
+
+{
+
+    m_has_ST_ThicknessPercent = _ST_Thickness.has_ST_ThicknessPercent();
+    if (_ST_Thickness.has_ST_ThicknessPercent())
+    {
+        m_ST_ThicknessPercent = new ST_ThicknessPercent(_ST_Thickness.get_ST_ThicknessPercent());
+    }
+
+
+    m_has_unsignedInt = _ST_Thickness.has_unsignedInt();
+    m_unsignedInt = _ST_Thickness.get_unsignedInt();
+}
 ST_Thickness::~ST_Thickness()
 {
     clear();
@@ -1048,6 +1096,23 @@ ST_GapAmount::ST_GapAmount()
      m_has_ST_GapAmountUShort(false),
      m_ST_GapAmountUShort(NULL)
 {
+}
+ST_GapAmount::ST_GapAmount(const ST_GapAmount& _ST_GapAmount)
+
+{
+
+    m_has_ST_GapAmountPercent = _ST_GapAmount.has_ST_GapAmountPercent();
+    if (_ST_GapAmount.has_ST_GapAmountPercent())
+    {
+        m_ST_GapAmountPercent = new ST_GapAmountPercent(_ST_GapAmount.get_ST_GapAmountPercent());
+    }
+
+
+    m_has_ST_GapAmountUShort = _ST_GapAmount.has_ST_GapAmountUShort();
+    if (_ST_GapAmount.has_ST_GapAmountUShort())
+    {
+        m_ST_GapAmountUShort = new ST_GapAmountUShort(_ST_GapAmount.get_ST_GapAmountUShort());
+    }
 }
 ST_GapAmount::~ST_GapAmount()
 {
@@ -1307,6 +1372,23 @@ ST_Overlap::ST_Overlap()
      m_ST_OverlapByte(NULL)
 {
 }
+ST_Overlap::ST_Overlap(const ST_Overlap& _ST_Overlap)
+
+{
+
+    m_has_ST_OverlapPercent = _ST_Overlap.has_ST_OverlapPercent();
+    if (_ST_Overlap.has_ST_OverlapPercent())
+    {
+        m_ST_OverlapPercent = new ST_OverlapPercent(_ST_Overlap.get_ST_OverlapPercent());
+    }
+
+
+    m_has_ST_OverlapByte = _ST_Overlap.has_ST_OverlapByte();
+    if (_ST_Overlap.has_ST_OverlapByte())
+    {
+        m_ST_OverlapByte = new ST_OverlapByte(_ST_Overlap.get_ST_OverlapByte());
+    }
+}
 ST_Overlap::~ST_Overlap()
 {
     clear();
@@ -1564,6 +1646,23 @@ ST_BubbleScale::ST_BubbleScale()
      m_has_ST_BubbleScaleUInt(false),
      m_ST_BubbleScaleUInt(NULL)
 {
+}
+ST_BubbleScale::ST_BubbleScale(const ST_BubbleScale& _ST_BubbleScale)
+
+{
+
+    m_has_ST_BubbleScalePercent = _ST_BubbleScale.has_ST_BubbleScalePercent();
+    if (_ST_BubbleScale.has_ST_BubbleScalePercent())
+    {
+        m_ST_BubbleScalePercent = new ST_BubbleScalePercent(_ST_BubbleScale.get_ST_BubbleScalePercent());
+    }
+
+
+    m_has_ST_BubbleScaleUInt = _ST_BubbleScale.has_ST_BubbleScaleUInt();
+    if (_ST_BubbleScale.has_ST_BubbleScaleUInt())
+    {
+        m_ST_BubbleScaleUInt = new ST_BubbleScaleUInt(_ST_BubbleScale.get_ST_BubbleScaleUInt());
+    }
 }
 ST_BubbleScale::~ST_BubbleScale()
 {
@@ -1953,6 +2052,23 @@ ST_HoleSize::ST_HoleSize()
      m_ST_HoleSizeUByte(NULL)
 {
 }
+ST_HoleSize::ST_HoleSize(const ST_HoleSize& _ST_HoleSize)
+
+{
+
+    m_has_ST_HoleSizePercent = _ST_HoleSize.has_ST_HoleSizePercent();
+    if (_ST_HoleSize.has_ST_HoleSizePercent())
+    {
+        m_ST_HoleSizePercent = new ST_HoleSizePercent(_ST_HoleSize.get_ST_HoleSizePercent());
+    }
+
+
+    m_has_ST_HoleSizeUByte = _ST_HoleSize.has_ST_HoleSizeUByte();
+    if (_ST_HoleSize.has_ST_HoleSizeUByte())
+    {
+        m_ST_HoleSizeUByte = new ST_HoleSizeUByte(_ST_HoleSize.get_ST_HoleSizeUByte());
+    }
+}
 ST_HoleSize::~ST_HoleSize()
 {
     clear();
@@ -2277,6 +2393,23 @@ ST_SecondPieSize::ST_SecondPieSize()
      m_has_ST_SecondPieSizeUShort(false),
      m_ST_SecondPieSizeUShort(NULL)
 {
+}
+ST_SecondPieSize::ST_SecondPieSize(const ST_SecondPieSize& _ST_SecondPieSize)
+
+{
+
+    m_has_ST_SecondPieSizePercent = _ST_SecondPieSize.has_ST_SecondPieSizePercent();
+    if (_ST_SecondPieSize.has_ST_SecondPieSizePercent())
+    {
+        m_ST_SecondPieSizePercent = new ST_SecondPieSizePercent(_ST_SecondPieSize.get_ST_SecondPieSizePercent());
+    }
+
+
+    m_has_ST_SecondPieSizeUShort = _ST_SecondPieSize.has_ST_SecondPieSizeUShort();
+    if (_ST_SecondPieSize.has_ST_SecondPieSizeUShort())
+    {
+        m_ST_SecondPieSizeUShort = new ST_SecondPieSizeUShort(_ST_SecondPieSize.get_ST_SecondPieSizeUShort());
+    }
 }
 ST_SecondPieSize::~ST_SecondPieSize()
 {
@@ -4519,6 +4652,23 @@ ST_LblOffset::ST_LblOffset()
      m_has_ST_LblOffsetUShort(false),
      m_ST_LblOffsetUShort(NULL)
 {
+}
+ST_LblOffset::ST_LblOffset(const ST_LblOffset& _ST_LblOffset)
+
+{
+
+    m_has_ST_LblOffsetPercent = _ST_LblOffset.has_ST_LblOffsetPercent();
+    if (_ST_LblOffset.has_ST_LblOffsetPercent())
+    {
+        m_ST_LblOffsetPercent = new ST_LblOffsetPercent(_ST_LblOffset.get_ST_LblOffsetPercent());
+    }
+
+
+    m_has_ST_LblOffsetUShort = _ST_LblOffset.has_ST_LblOffsetUShort();
+    if (_ST_LblOffset.has_ST_LblOffsetUShort())
+    {
+        m_ST_LblOffsetUShort = new ST_LblOffsetUShort(_ST_LblOffset.get_ST_LblOffsetUShort());
+    }
 }
 ST_LblOffset::~ST_LblOffset()
 {

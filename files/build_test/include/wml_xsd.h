@@ -505,6 +505,7 @@ class ST_DecimalNumberOrPercent: public XSD::SimpleType
 {
 public:
     ST_DecimalNumberOrPercent();
+    ST_DecimalNumberOrPercent(const ST_DecimalNumberOrPercent& _ST_DecimalNumberOrPercent);
     ~ST_DecimalNumberOrPercent();
     bool has_ST_UnqualifiedPercentage() const;
     ST_UnqualifiedPercentage* mutable_ST_UnqualifiedPercentage();
@@ -571,6 +572,7 @@ class ST_SignedTwipsMeasure: public XSD::SimpleType
 {
 public:
     ST_SignedTwipsMeasure();
+    ST_SignedTwipsMeasure(const ST_SignedTwipsMeasure& _ST_SignedTwipsMeasure);
     ~ST_SignedTwipsMeasure();
     bool has_integer() const;
     void set_integer(const XSD::integer_& _integer);
@@ -609,6 +611,7 @@ class ST_HpsMeasure: public XSD::SimpleType
 {
 public:
     ST_HpsMeasure();
+    ST_HpsMeasure(const ST_HpsMeasure& _ST_HpsMeasure);
     ~ST_HpsMeasure();
     bool has_ST_UnsignedDecimalNumber() const;
     ns_s::ST_UnsignedDecimalNumber* mutable_ST_UnsignedDecimalNumber();
@@ -635,6 +638,7 @@ class ST_SignedHpsMeasure: public XSD::SimpleType
 {
 public:
     ST_SignedHpsMeasure();
+    ST_SignedHpsMeasure(const ST_SignedHpsMeasure& _ST_SignedHpsMeasure);
     ~ST_SignedHpsMeasure();
     bool has_integer() const;
     void set_integer(const XSD::integer_& _integer);
@@ -725,6 +729,7 @@ class ST_TextScale: public XSD::SimpleType
 {
 public:
     ST_TextScale();
+    ST_TextScale(const ST_TextScale& _ST_TextScale);
     ~ST_TextScale();
     bool has_ST_TextScalePercent() const;
     ST_TextScalePercent* mutable_ST_TextScalePercent();
@@ -857,6 +862,7 @@ class ST_HexColor: public XSD::SimpleType
 {
 public:
     ST_HexColor();
+    ST_HexColor(const ST_HexColor& _ST_HexColor);
     ~ST_HexColor();
     bool has_ST_HexColorAuto() const;
     ST_HexColorAuto* mutable_ST_HexColorAuto();
@@ -2946,6 +2952,7 @@ class ST_MeasurementOrPercent: public XSD::SimpleType
 {
 public:
     ST_MeasurementOrPercent();
+    ST_MeasurementOrPercent(const ST_MeasurementOrPercent& _ST_MeasurementOrPercent);
     ~ST_MeasurementOrPercent();
     bool has_ST_DecimalNumberOrPercent() const;
     ST_DecimalNumberOrPercent* mutable_ST_DecimalNumberOrPercent();

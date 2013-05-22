@@ -228,6 +228,23 @@ ST_Coordinate::ST_Coordinate()
      m_ST_UniversalMeasure(NULL)
 {
 }
+ST_Coordinate::ST_Coordinate(const ST_Coordinate& _ST_Coordinate)
+
+{
+
+    m_has_ST_CoordinateUnqualified = _ST_Coordinate.has_ST_CoordinateUnqualified();
+    if (_ST_Coordinate.has_ST_CoordinateUnqualified())
+    {
+        m_ST_CoordinateUnqualified = new ST_CoordinateUnqualified(_ST_Coordinate.get_ST_CoordinateUnqualified());
+    }
+
+
+    m_has_ST_UniversalMeasure = _ST_Coordinate.has_ST_UniversalMeasure();
+    if (_ST_Coordinate.has_ST_UniversalMeasure())
+    {
+        m_ST_UniversalMeasure = new ns_s::ST_UniversalMeasure(_ST_Coordinate.get_ST_UniversalMeasure());
+    }
+}
 ST_Coordinate::~ST_Coordinate()
 {
     clear();
@@ -421,6 +438,23 @@ ST_Coordinate32::ST_Coordinate32()
      m_has_ST_UniversalMeasure(false),
      m_ST_UniversalMeasure(NULL)
 {
+}
+ST_Coordinate32::ST_Coordinate32(const ST_Coordinate32& _ST_Coordinate32)
+
+{
+
+    m_has_ST_Coordinate32Unqualified = _ST_Coordinate32.has_ST_Coordinate32Unqualified();
+    if (_ST_Coordinate32.has_ST_Coordinate32Unqualified())
+    {
+        m_ST_Coordinate32Unqualified = new ST_Coordinate32Unqualified(_ST_Coordinate32.get_ST_Coordinate32Unqualified());
+    }
+
+
+    m_has_ST_UniversalMeasure = _ST_Coordinate32.has_ST_UniversalMeasure();
+    if (_ST_Coordinate32.has_ST_UniversalMeasure())
+    {
+        m_ST_UniversalMeasure = new ns_s::ST_UniversalMeasure(_ST_Coordinate32.get_ST_UniversalMeasure());
+    }
 }
 ST_Coordinate32::~ST_Coordinate32()
 {
@@ -678,7 +712,7 @@ ST_PositiveCoordinate32::ST_PositiveCoordinate32()
 {
 }
 ST_PositiveCoordinate32::ST_PositiveCoordinate32(const ST_Coordinate32Unqualified& _ST_Coordinate32Unqualified)
-
+    :ST_Coordinate32Unqualified(_ST_Coordinate32Unqualified)
 {
 }
 ST_PositiveCoordinate32::~ST_PositiveCoordinate32()
@@ -766,7 +800,7 @@ ST_FixedAngle::ST_FixedAngle()
 {
 }
 ST_FixedAngle::ST_FixedAngle(const ST_Angle& _ST_Angle)
-
+    :ST_Angle(_ST_Angle)
 {
 }
 ST_FixedAngle::~ST_FixedAngle()
@@ -790,7 +824,7 @@ ST_PositiveFixedAngle::ST_PositiveFixedAngle()
 {
 }
 ST_PositiveFixedAngle::ST_PositiveFixedAngle(const ST_Angle& _ST_Angle)
-
+    :ST_Angle(_ST_Angle)
 {
 }
 ST_PositiveFixedAngle::~ST_PositiveFixedAngle()
@@ -815,6 +849,23 @@ ST_Percentage::ST_Percentage()
      m_has_ST_Percentage(false),
      m_ST_Percentage(NULL)
 {
+}
+ST_Percentage::ST_Percentage(const ST_Percentage& _ST_Percentage)
+
+{
+
+    m_has_ST_PercentageDecimal = _ST_Percentage.has_ST_PercentageDecimal();
+    if (_ST_Percentage.has_ST_PercentageDecimal())
+    {
+        m_ST_PercentageDecimal = new ST_PercentageDecimal(_ST_Percentage.get_ST_PercentageDecimal());
+    }
+
+
+    m_has_ST_Percentage = _ST_Percentage.has_ST_Percentage();
+    if (_ST_Percentage.has_ST_Percentage())
+    {
+        m_ST_Percentage = new ns_s::ST_Percentage(_ST_Percentage.get_ST_Percentage());
+    }
 }
 ST_Percentage::~ST_Percentage()
 {
@@ -1008,6 +1059,23 @@ ST_PositivePercentage::ST_PositivePercentage()
      m_ST_PositivePercentage(NULL)
 {
 }
+ST_PositivePercentage::ST_PositivePercentage(const ST_PositivePercentage& _ST_PositivePercentage)
+
+{
+
+    m_has_ST_PositivePercentageDecimal = _ST_PositivePercentage.has_ST_PositivePercentageDecimal();
+    if (_ST_PositivePercentage.has_ST_PositivePercentageDecimal())
+    {
+        m_ST_PositivePercentageDecimal = new ST_PositivePercentageDecimal(_ST_PositivePercentage.get_ST_PositivePercentageDecimal());
+    }
+
+
+    m_has_ST_PositivePercentage = _ST_PositivePercentage.has_ST_PositivePercentage();
+    if (_ST_PositivePercentage.has_ST_PositivePercentage())
+    {
+        m_ST_PositivePercentage = new ns_s::ST_PositivePercentage(_ST_PositivePercentage.get_ST_PositivePercentage());
+    }
+}
 ST_PositivePercentage::~ST_PositivePercentage()
 {
     clear();
@@ -1134,7 +1202,7 @@ ST_PositivePercentageDecimal::ST_PositivePercentageDecimal()
 {
 }
 ST_PositivePercentageDecimal::ST_PositivePercentageDecimal(const ST_PercentageDecimal& _ST_PercentageDecimal)
-
+    :ST_PercentageDecimal(_ST_PercentageDecimal)
 {
 }
 ST_PositivePercentageDecimal::~ST_PositivePercentageDecimal()
@@ -1159,6 +1227,23 @@ ST_FixedPercentage::ST_FixedPercentage()
      m_has_ST_FixedPercentage(false),
      m_ST_FixedPercentage(NULL)
 {
+}
+ST_FixedPercentage::ST_FixedPercentage(const ST_FixedPercentage& _ST_FixedPercentage)
+
+{
+
+    m_has_ST_FixedPercentageDecimal = _ST_FixedPercentage.has_ST_FixedPercentageDecimal();
+    if (_ST_FixedPercentage.has_ST_FixedPercentageDecimal())
+    {
+        m_ST_FixedPercentageDecimal = new ST_FixedPercentageDecimal(_ST_FixedPercentage.get_ST_FixedPercentageDecimal());
+    }
+
+
+    m_has_ST_FixedPercentage = _ST_FixedPercentage.has_ST_FixedPercentage();
+    if (_ST_FixedPercentage.has_ST_FixedPercentage())
+    {
+        m_ST_FixedPercentage = new ns_s::ST_FixedPercentage(_ST_FixedPercentage.get_ST_FixedPercentage());
+    }
 }
 ST_FixedPercentage::~ST_FixedPercentage()
 {
@@ -1286,7 +1371,7 @@ ST_FixedPercentageDecimal::ST_FixedPercentageDecimal()
 {
 }
 ST_FixedPercentageDecimal::ST_FixedPercentageDecimal(const ST_PercentageDecimal& _ST_PercentageDecimal)
-
+    :ST_PercentageDecimal(_ST_PercentageDecimal)
 {
 }
 ST_FixedPercentageDecimal::~ST_FixedPercentageDecimal()
@@ -1311,6 +1396,23 @@ ST_PositiveFixedPercentage::ST_PositiveFixedPercentage()
      m_has_ST_PositiveFixedPercentage(false),
      m_ST_PositiveFixedPercentage(NULL)
 {
+}
+ST_PositiveFixedPercentage::ST_PositiveFixedPercentage(const ST_PositiveFixedPercentage& _ST_PositiveFixedPercentage)
+
+{
+
+    m_has_ST_PositiveFixedPercentageDecimal = _ST_PositiveFixedPercentage.has_ST_PositiveFixedPercentageDecimal();
+    if (_ST_PositiveFixedPercentage.has_ST_PositiveFixedPercentageDecimal())
+    {
+        m_ST_PositiveFixedPercentageDecimal = new ST_PositiveFixedPercentageDecimal(_ST_PositiveFixedPercentage.get_ST_PositiveFixedPercentageDecimal());
+    }
+
+
+    m_has_ST_PositiveFixedPercentage = _ST_PositiveFixedPercentage.has_ST_PositiveFixedPercentage();
+    if (_ST_PositiveFixedPercentage.has_ST_PositiveFixedPercentage())
+    {
+        m_ST_PositiveFixedPercentage = new ns_s::ST_PositiveFixedPercentage(_ST_PositiveFixedPercentage.get_ST_PositiveFixedPercentage());
+    }
 }
 ST_PositiveFixedPercentage::~ST_PositiveFixedPercentage()
 {
@@ -1438,7 +1540,7 @@ ST_PositiveFixedPercentageDecimal::ST_PositiveFixedPercentageDecimal()
 {
 }
 ST_PositiveFixedPercentageDecimal::ST_PositiveFixedPercentageDecimal(const ST_PercentageDecimal& _ST_PercentageDecimal)
-
+    :ST_PercentageDecimal(_ST_PercentageDecimal)
 {
 }
 ST_PositiveFixedPercentageDecimal::~ST_PositiveFixedPercentageDecimal()
@@ -2355,6 +2457,23 @@ ST_AnimationDgmBuildType::ST_AnimationDgmBuildType()
      m_ST_AnimationDgmOnlyBuildType(NULL)
 {
 }
+ST_AnimationDgmBuildType::ST_AnimationDgmBuildType(const ST_AnimationDgmBuildType& _ST_AnimationDgmBuildType)
+
+{
+
+    m_has_ST_AnimationBuildType = _ST_AnimationDgmBuildType.has_ST_AnimationBuildType();
+    if (_ST_AnimationDgmBuildType.has_ST_AnimationBuildType())
+    {
+        m_ST_AnimationBuildType = new ST_AnimationBuildType(_ST_AnimationDgmBuildType.get_ST_AnimationBuildType());
+    }
+
+
+    m_has_ST_AnimationDgmOnlyBuildType = _ST_AnimationDgmBuildType.has_ST_AnimationDgmOnlyBuildType();
+    if (_ST_AnimationDgmBuildType.has_ST_AnimationDgmOnlyBuildType())
+    {
+        m_ST_AnimationDgmOnlyBuildType = new ST_AnimationDgmOnlyBuildType(_ST_AnimationDgmBuildType.get_ST_AnimationDgmOnlyBuildType());
+    }
+}
 ST_AnimationDgmBuildType::~ST_AnimationDgmBuildType()
 {
     clear();
@@ -2548,6 +2667,23 @@ ST_AnimationChartBuildType::ST_AnimationChartBuildType()
      m_has_ST_AnimationChartOnlyBuildType(false),
      m_ST_AnimationChartOnlyBuildType(NULL)
 {
+}
+ST_AnimationChartBuildType::ST_AnimationChartBuildType(const ST_AnimationChartBuildType& _ST_AnimationChartBuildType)
+
+{
+
+    m_has_ST_AnimationBuildType = _ST_AnimationChartBuildType.has_ST_AnimationBuildType();
+    if (_ST_AnimationChartBuildType.has_ST_AnimationBuildType())
+    {
+        m_ST_AnimationBuildType = new ST_AnimationBuildType(_ST_AnimationChartBuildType.get_ST_AnimationBuildType());
+    }
+
+
+    m_has_ST_AnimationChartOnlyBuildType = _ST_AnimationChartBuildType.has_ST_AnimationChartOnlyBuildType();
+    if (_ST_AnimationChartBuildType.has_ST_AnimationChartOnlyBuildType())
+    {
+        m_ST_AnimationChartOnlyBuildType = new ST_AnimationChartOnlyBuildType(_ST_AnimationChartBuildType.get_ST_AnimationChartOnlyBuildType());
+    }
 }
 ST_AnimationChartBuildType::~ST_AnimationChartBuildType()
 {
@@ -2799,7 +2935,7 @@ ST_FOVAngle::ST_FOVAngle()
 {
 }
 ST_FOVAngle::ST_FOVAngle(const ST_Angle& _ST_Angle)
-
+    :ST_Angle(_ST_Angle)
 {
 }
 ST_FOVAngle::~ST_FOVAngle()
@@ -4142,6 +4278,23 @@ ST_AdjCoordinate::ST_AdjCoordinate()
      m_ST_GeomGuideName(NULL)
 {
 }
+ST_AdjCoordinate::ST_AdjCoordinate(const ST_AdjCoordinate& _ST_AdjCoordinate)
+
+{
+
+    m_has_ST_Coordinate = _ST_AdjCoordinate.has_ST_Coordinate();
+    if (_ST_AdjCoordinate.has_ST_Coordinate())
+    {
+        m_ST_Coordinate = new ST_Coordinate(_ST_AdjCoordinate.get_ST_Coordinate());
+    }
+
+
+    m_has_ST_GeomGuideName = _ST_AdjCoordinate.has_ST_GeomGuideName();
+    if (_ST_AdjCoordinate.has_ST_GeomGuideName())
+    {
+        m_ST_GeomGuideName = new ST_GeomGuideName(_ST_AdjCoordinate.get_ST_GeomGuideName());
+    }
+}
 ST_AdjCoordinate::~ST_AdjCoordinate()
 {
     clear();
@@ -4269,6 +4422,23 @@ ST_AdjAngle::ST_AdjAngle()
      m_has_ST_GeomGuideName(false),
      m_ST_GeomGuideName(NULL)
 {
+}
+ST_AdjAngle::ST_AdjAngle(const ST_AdjAngle& _ST_AdjAngle)
+
+{
+
+    m_has_ST_Angle = _ST_AdjAngle.has_ST_Angle();
+    if (_ST_AdjAngle.has_ST_Angle())
+    {
+        m_ST_Angle = new ST_Angle(_ST_AdjAngle.get_ST_Angle());
+    }
+
+
+    m_has_ST_GeomGuideName = _ST_AdjAngle.has_ST_GeomGuideName();
+    if (_ST_AdjAngle.has_ST_GeomGuideName())
+    {
+        m_ST_GeomGuideName = new ST_GeomGuideName(_ST_AdjAngle.get_ST_GeomGuideName());
+    }
 }
 ST_AdjAngle::~ST_AdjAngle()
 {
@@ -4800,7 +4970,7 @@ ST_LineWidth::ST_LineWidth()
 {
 }
 ST_LineWidth::ST_LineWidth(const ST_Coordinate32Unqualified& _ST_Coordinate32Unqualified)
-
+    :ST_Coordinate32Unqualified(_ST_Coordinate32Unqualified)
 {
 }
 ST_LineWidth::~ST_LineWidth()
@@ -5481,6 +5651,23 @@ ST_TextFontScalePercentOrPercentString::ST_TextFontScalePercentOrPercentString()
      m_ST_Percentage(NULL)
 {
 }
+ST_TextFontScalePercentOrPercentString::ST_TextFontScalePercentOrPercentString(const ST_TextFontScalePercentOrPercentString& _ST_TextFontScalePercentOrPercentString)
+
+{
+
+    m_has_ST_TextFontScalePercent = _ST_TextFontScalePercentOrPercentString.has_ST_TextFontScalePercent();
+    if (_ST_TextFontScalePercentOrPercentString.has_ST_TextFontScalePercent())
+    {
+        m_ST_TextFontScalePercent = new ST_TextFontScalePercent(_ST_TextFontScalePercentOrPercentString.get_ST_TextFontScalePercent());
+    }
+
+
+    m_has_ST_Percentage = _ST_TextFontScalePercentOrPercentString.has_ST_Percentage();
+    if (_ST_TextFontScalePercentOrPercentString.has_ST_Percentage())
+    {
+        m_ST_Percentage = new ns_s::ST_Percentage(_ST_TextFontScalePercentOrPercentString.get_ST_Percentage());
+    }
+}
 ST_TextFontScalePercentOrPercentString::~ST_TextFontScalePercentOrPercentString()
 {
     clear();
@@ -5607,7 +5794,7 @@ ST_TextFontScalePercent::ST_TextFontScalePercent()
 {
 }
 ST_TextFontScalePercent::ST_TextFontScalePercent(const ST_PercentageDecimal& _ST_PercentageDecimal)
-
+    :ST_PercentageDecimal(_ST_PercentageDecimal)
 {
 }
 ST_TextFontScalePercent::~ST_TextFontScalePercent()
@@ -5802,6 +5989,23 @@ ST_TextBulletSize::ST_TextBulletSize()
      m_ST_TextBulletSizeDecimal(NULL)
 {
 }
+ST_TextBulletSize::ST_TextBulletSize(const ST_TextBulletSize& _ST_TextBulletSize)
+
+{
+
+    m_has_ST_TextBulletSizePercent = _ST_TextBulletSize.has_ST_TextBulletSizePercent();
+    if (_ST_TextBulletSize.has_ST_TextBulletSizePercent())
+    {
+        m_ST_TextBulletSizePercent = new ST_TextBulletSizePercent(_ST_TextBulletSize.get_ST_TextBulletSizePercent());
+    }
+
+
+    m_has_ST_TextBulletSizeDecimal = _ST_TextBulletSize.has_ST_TextBulletSizeDecimal();
+    if (_ST_TextBulletSize.has_ST_TextBulletSizeDecimal())
+    {
+        m_ST_TextBulletSizeDecimal = new ST_TextBulletSizeDecimal(_ST_TextBulletSize.get_ST_TextBulletSizeDecimal());
+    }
+}
 ST_TextBulletSize::~ST_TextBulletSize()
 {
     clear();
@@ -5992,7 +6196,7 @@ ST_TextBulletSizeDecimal::ST_TextBulletSizeDecimal()
 {
 }
 ST_TextBulletSizeDecimal::ST_TextBulletSizeDecimal(const ST_PercentageDecimal& _ST_PercentageDecimal)
-
+    :ST_PercentageDecimal(_ST_PercentageDecimal)
 {
 }
 ST_TextBulletSizeDecimal::~ST_TextBulletSizeDecimal()
@@ -6017,6 +6221,23 @@ ST_TextPoint::ST_TextPoint()
      m_has_ST_UniversalMeasure(false),
      m_ST_UniversalMeasure(NULL)
 {
+}
+ST_TextPoint::ST_TextPoint(const ST_TextPoint& _ST_TextPoint)
+
+{
+
+    m_has_ST_TextPointUnqualified = _ST_TextPoint.has_ST_TextPointUnqualified();
+    if (_ST_TextPoint.has_ST_TextPointUnqualified())
+    {
+        m_ST_TextPointUnqualified = new ST_TextPointUnqualified(_ST_TextPoint.get_ST_TextPointUnqualified());
+    }
+
+
+    m_has_ST_UniversalMeasure = _ST_TextPoint.has_ST_UniversalMeasure();
+    if (_ST_TextPoint.has_ST_UniversalMeasure())
+    {
+        m_ST_UniversalMeasure = new ns_s::ST_UniversalMeasure(_ST_TextPoint.get_ST_UniversalMeasure());
+    }
 }
 ST_TextPoint::~ST_TextPoint()
 {
@@ -6764,6 +6985,23 @@ ST_TextSpacingPercentOrPercentString::ST_TextSpacingPercentOrPercentString()
      m_ST_Percentage(NULL)
 {
 }
+ST_TextSpacingPercentOrPercentString::ST_TextSpacingPercentOrPercentString(const ST_TextSpacingPercentOrPercentString& _ST_TextSpacingPercentOrPercentString)
+
+{
+
+    m_has_ST_TextSpacingPercent = _ST_TextSpacingPercentOrPercentString.has_ST_TextSpacingPercent();
+    if (_ST_TextSpacingPercentOrPercentString.has_ST_TextSpacingPercent())
+    {
+        m_ST_TextSpacingPercent = new ST_TextSpacingPercent(_ST_TextSpacingPercentOrPercentString.get_ST_TextSpacingPercent());
+    }
+
+
+    m_has_ST_Percentage = _ST_TextSpacingPercentOrPercentString.has_ST_Percentage();
+    if (_ST_TextSpacingPercentOrPercentString.has_ST_Percentage())
+    {
+        m_ST_Percentage = new ns_s::ST_Percentage(_ST_TextSpacingPercentOrPercentString.get_ST_Percentage());
+    }
+}
 ST_TextSpacingPercentOrPercentString::~ST_TextSpacingPercentOrPercentString()
 {
     clear();
@@ -6890,7 +7128,7 @@ ST_TextSpacingPercent::ST_TextSpacingPercent()
 {
 }
 ST_TextSpacingPercent::ST_TextSpacingPercent(const ST_PercentageDecimal& _ST_PercentageDecimal)
-
+    :ST_PercentageDecimal(_ST_PercentageDecimal)
 {
 }
 ST_TextSpacingPercent::~ST_TextSpacingPercent()
@@ -6914,7 +7152,7 @@ ST_TextMargin::ST_TextMargin()
 {
 }
 ST_TextMargin::ST_TextMargin(const ST_Coordinate32Unqualified& _ST_Coordinate32Unqualified)
-
+    :ST_Coordinate32Unqualified(_ST_Coordinate32Unqualified)
 {
 }
 ST_TextMargin::~ST_TextMargin()
@@ -6938,7 +7176,7 @@ ST_TextIndent::ST_TextIndent()
 {
 }
 ST_TextIndent::ST_TextIndent(const ST_Coordinate32Unqualified& _ST_Coordinate32Unqualified)
-
+    :ST_Coordinate32Unqualified(_ST_Coordinate32Unqualified)
 {
 }
 ST_TextIndent::~ST_TextIndent()

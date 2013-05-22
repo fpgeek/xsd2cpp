@@ -312,6 +312,7 @@ class ST_HPercent: public XSD::SimpleType
 {
 public:
     ST_HPercent();
+    ST_HPercent(const ST_HPercent& _ST_HPercent);
     ~ST_HPercent();
     bool has_ST_HPercentWithSymbol() const;
     ST_HPercentWithSymbol* mutable_ST_HPercentWithSymbol();
@@ -398,6 +399,7 @@ class ST_DepthPercent: public XSD::SimpleType
 {
 public:
     ST_DepthPercent();
+    ST_DepthPercent(const ST_DepthPercent& _ST_DepthPercent);
     ~ST_DepthPercent();
     bool has_ST_DepthPercentWithSymbol() const;
     ST_DepthPercentWithSymbol* mutable_ST_DepthPercentWithSymbol();
@@ -484,6 +486,7 @@ class ST_Thickness: public XSD::SimpleType
 {
 public:
     ST_Thickness();
+    ST_Thickness(const ST_Thickness& _ST_Thickness);
     ~ST_Thickness();
     bool has_ST_ThicknessPercent() const;
     ST_ThicknessPercent* mutable_ST_ThicknessPercent();
@@ -530,6 +533,7 @@ class ST_GapAmount: public XSD::SimpleType
 {
 public:
     ST_GapAmount();
+    ST_GapAmount(const ST_GapAmount& _ST_GapAmount);
     ~ST_GapAmount();
     bool has_ST_GapAmountPercent() const;
     ST_GapAmountPercent* mutable_ST_GapAmountPercent();
@@ -596,6 +600,7 @@ class ST_Overlap: public XSD::SimpleType
 {
 public:
     ST_Overlap();
+    ST_Overlap(const ST_Overlap& _ST_Overlap);
     ~ST_Overlap();
     bool has_ST_OverlapPercent() const;
     ST_OverlapPercent* mutable_ST_OverlapPercent();
@@ -662,6 +667,7 @@ class ST_BubbleScale: public XSD::SimpleType
 {
 public:
     ST_BubbleScale();
+    ST_BubbleScale(const ST_BubbleScale& _ST_BubbleScale);
     ~ST_BubbleScale();
     bool has_ST_BubbleScalePercent() const;
     ST_BubbleScalePercent* mutable_ST_BubbleScalePercent();
@@ -774,6 +780,7 @@ class ST_HoleSize: public XSD::SimpleType
 {
 public:
     ST_HoleSize();
+    ST_HoleSize(const ST_HoleSize& _ST_HoleSize);
     ~ST_HoleSize();
     bool has_ST_HoleSizePercent() const;
     ST_HoleSizePercent* mutable_ST_HoleSizePercent();
@@ -869,6 +876,7 @@ class ST_SecondPieSize: public XSD::SimpleType
 {
 public:
     ST_SecondPieSize();
+    ST_SecondPieSize(const ST_SecondPieSize& _ST_SecondPieSize);
     ~ST_SecondPieSize();
     bool has_ST_SecondPieSizePercent() const;
     ST_SecondPieSizePercent* mutable_ST_SecondPieSizePercent();
@@ -1727,6 +1735,7 @@ class ST_LblOffset: public XSD::SimpleType
 {
 public:
     ST_LblOffset();
+    ST_LblOffset(const ST_LblOffset& _ST_LblOffset);
     ~ST_LblOffset();
     bool has_ST_LblOffsetPercent() const;
     ST_LblOffsetPercent* mutable_ST_LblOffsetPercent();

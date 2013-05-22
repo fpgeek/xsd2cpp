@@ -274,6 +274,7 @@ class ST_OnOff: public XSD::SimpleType
 {
 public:
     ST_OnOff();
+    ST_OnOff(const ST_OnOff& _ST_OnOff);
     ~ST_OnOff();
     bool has_boolean() const;
     void set_boolean(const XSD::boolean_& _boolean);
@@ -445,6 +446,7 @@ class ST_TwipsMeasure: public XSD::SimpleType
 {
 public:
     ST_TwipsMeasure();
+    ST_TwipsMeasure(const ST_TwipsMeasure& _ST_TwipsMeasure);
     ~ST_TwipsMeasure();
     bool has_ST_UnsignedDecimalNumber() const;
     ST_UnsignedDecimalNumber* mutable_ST_UnsignedDecimalNumber();
