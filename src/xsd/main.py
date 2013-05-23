@@ -22,7 +22,8 @@ userSetNsPrefixMap = {
 'http://schemas.openxmlformats.org/spreadsheetml/2006/main':'x',
 'http://schemas.openxmlformats.org/markup-compatibility/2006':'mc',
 'http://schemas.openxmlformats.org/package/2006/metadata/core-properties':'cp',
-'http://schemas.openxmlformats.org/package/2006/relationships':'rs'
+'http://schemas.openxmlformats.org/package/2006/relationships':'rs',
+'http://schemas.openxmlformats.org/package/2006/content-types':'ct'
 }
 
 

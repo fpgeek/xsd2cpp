@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://schemas.openxmlformats.org/package/2006/content-types" xmlns="http://schemas.openxmlformats.org/package/2006/content-types" elementFormDefault="qualified">
+  <xsd:complexType name="CT_Default">
+    <xsd:attribute name="Extension" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Default Extension</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="ContentType" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Default ContentType</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="CT_Override">
+    <xsd:attribute name="PartName" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Override PartName</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="ContentType" type="xsd:string" use="required">
+      <xsd:annotation>
+        <xsd:documentation>Override ContentType</xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="CT_Types">
+    <xsd:sequence>
+      <xsd:element name="Default" type="CT_Default" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>Default</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="Override" type="CT_Override" minOccurs="0" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>Override</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="Types" type="CT_Types">
+    <xsd:annotation>
+      <xsd:documentation>Content Types</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+</xsd:schema>
