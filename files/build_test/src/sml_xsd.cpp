@@ -763,7 +763,7 @@ bool ST_UnsignedIntHex::has_hexBinary() const
 }
 
 void ST_UnsignedIntHex::set_hexBinary(const XSD::hexBinary_& _hexBinary)
-{   assert(_hexBinary.size() == 4);
+{   assert(_hexBinary.size() == 8);
 
     m_has_hexBinary = true;
     m_hexBinary = _hexBinary;
@@ -828,7 +828,7 @@ bool ST_UnsignedShortHex::has_hexBinary() const
 }
 
 void ST_UnsignedShortHex::set_hexBinary(const XSD::hexBinary_& _hexBinary)
-{   assert(_hexBinary.size() == 2);
+{   assert(_hexBinary.size() == 4);
 
     m_has_hexBinary = true;
     m_hexBinary = _hexBinary;

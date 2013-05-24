@@ -97,7 +97,7 @@ bool ST_HexColorRGB::has_hexBinary() const
 }
 
 void ST_HexColorRGB::set_hexBinary(const XSD::hexBinary_& _hexBinary)
-{   assert(_hexBinary.size() == 3);
+{   assert(_hexBinary.size() == 6);
 
     m_has_hexBinary = true;
     m_hexBinary = _hexBinary;
@@ -162,7 +162,7 @@ bool ST_Panose::has_hexBinary() const
 }
 
 void ST_Panose::set_hexBinary(const XSD::hexBinary_& _hexBinary)
-{   assert(_hexBinary.size() == 10);
+{   assert(_hexBinary.size() == 20);
 
     m_has_hexBinary = true;
     m_hexBinary = _hexBinary;

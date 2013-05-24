@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6651581d-8f63-42fd-bdbc-22e2c035dc44" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsd/main.py" afterPath="$PROJECT_DIR$/src/xsd/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py" afterPath="$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/shared-commonSimpleTypes_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/shared-commonSimpleTypes_xsd.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/sml_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/sml_xsd.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/files/build_test/src/wml_xsd.cpp" afterPath="$PROJECT_DIR$/files/build_test/src/wml_xsd.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="xsd2cpp.iws" />
@@ -10,7 +13,7 @@
     <file path="/Dummy.txt" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1369270629497" ignored="false" />
     <file path="/start_script.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1362742972339" ignored="false" />
     <file path="/wml-wordprocessingShape.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1362743317535" ignored="false" />
-    <file path="/a.dummy" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1369295354358" ignored="false" />
+    <file path="/a.dummy" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1369358234728" ignored="false" />
     <file path="/wml-wordprocessingGroup.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1362743426016" ignored="false" />
     <file path="/wml.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1363185160692" ignored="false" />
     <file path="/xsd.proto" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368084911034" ignored="false" />
@@ -29,7 +32,7 @@
     <file path="/xsd_to_cpp.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368519033983" ignored="false" />
     <file path="/cpp.proto" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368075148660" ignored="false" />
     <file path="/vml-spreadsheetDrawing.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1365844123866" ignored="false" />
-    <file path="/cpp_contents_funcs.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1369225009558" ignored="false" />
+    <file path="/cpp_contents_funcs.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1369357449954" ignored="false" />
     <file path="/dml-main.xsd" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1366097251389" ignored="false" />
     <file path="/fragment.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1366346529838" ignored="false" />
     <file path="/pbtxt_to_cpp.py" changelist="6651581d-8f63-42fd-bdbc-22e2c035dc44" time="1368516399654" ignored="false" />
@@ -84,53 +87,106 @@
     <favorites_list name="xsd2cpp" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="dml-main.xsd" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files/xsd/dml-main.xsd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2531" column="19" selection-start="125542" selection-end="125542" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wml.xsd" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files/xsd/wml.xsd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3610" column="20" selection-start="169527" selection-end="169527" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shared-contentTypes.xsd" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/files/xsd/shared-contentTypes.xsd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="20" selection-start="985" selection-end="985" vertical-scroll-proportion="0.38828337">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shared-bibliography.xsd" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/files/xsd/shared-bibliography.xsd">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="46" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/xsd/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="30" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.6064849">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="dml-main.xsd" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/files/xsd/dml-main.xsd">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="2531" column="19" selection-start="125542" selection-end="125542" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="wml.xsd" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/files/xsd/wml.xsd">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="3610" column="20" selection-start="169527" selection-end="169527" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="shared-contentTypes.xsd" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/files/xsd/shared-contentTypes.xsd">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="16" column="22" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="xsd_pb2.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/xsd/xsd_pb2.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="450" column="12" selection-start="20120" selection-end="20120" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="xsd_parser.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/xsd/xsd_parser.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="87" column="57" selection-start="4747" selection-end="4747" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="sml.xsd" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/files/xsd/sml.xsd">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="220" column="29" selection-start="10709" selection-end="10709" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="cpp_contents_funcs.py" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="445" column="41" selection-start="13382" selection-end="13382" vertical-scroll-proportion="0.37626627">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="shared-bibliography.xsd" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/files/xsd/shared-bibliography.xsd">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="6" column="46" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/xsd/main.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="31" column="30" selection-start="1219" selection-end="1219" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="xsd.proto" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/files/protobuf/xsd.proto">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="267" column="17" selection-start="5534" selection-end="5543" vertical-scroll-proportion="1.1078432">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -161,10 +217,10 @@
         <option value="$PROJECT_DIR$/src/xsd/xsd_to_cpp.py" />
         <option value="$PROJECT_DIR$/files/xsd/shared-relationships.xsd" />
         <option value="$PROJECT_DIR$/src/xsd/xsd_parser.py" />
-        <option value="$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py" />
         <option value="$PROJECT_DIR$/build/build_mac.sh" />
         <option value="$PROJECT_DIR$/src/xsd/main.py" />
         <option value="$PROJECT_DIR$/files/xsd/shared-contentTypes.xsd" />
+        <option value="$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py" />
       </list>
     </option>
   </component>
@@ -278,7 +334,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="xsd" />
+              <option name="myItemId" value="protobuf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -570,18 +626,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2085954" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2085954" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964131" sideWeight="0.81218904" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2760098" sideWeight="0.812369" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16952264" sideWeight="0.7914046" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22014925" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32998565" sideWeight="0.7798507" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18763103" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18763103" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18253969" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -661,31 +717,16 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/files/pb_text/shared-documentPropertiesCustom.xsd.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="7" selection-start="1714" selection-end="1714" vertical-scroll-proportion="0.19438446" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/xsd/shared-documentPropertiesExtended.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="33" selection-start="706" selection-end="714" vertical-scroll-proportion="0.1738661" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build/build_mac.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="43" selection-start="191" selection-end="191" vertical-scroll-proportion="0.08522727" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/files/xsd/shared-commonSimpleTypes.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="24" selection-start="6132" selection-end="6132" vertical-scroll-proportion="0.7443182">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/xsd/xsd_to_cpp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="296" column="40" selection-start="11068" selection-end="11068" vertical-scroll-proportion="0.732493" />
+        <state line="296" column="40" selection-start="11068" selection-end="11068" vertical-scroll-proportion="0.732493">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/files/xsd/dml-chart.xsd">
@@ -697,17 +738,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/files/xsd/dcmitype.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="24" selection-start="928" selection-end="928" vertical-scroll-proportion="0.5254471" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="812" column="77" selection-start="24007" selection-end="24007" vertical-scroll-proportion="0.57329464" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/xsd/xsd_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="265" column="47" selection-start="12250" selection-end="12250" vertical-scroll-proportion="0.021008404">
+        <state line="32" column="24" selection-start="928" selection-end="928" vertical-scroll-proportion="0.5254471">
           <folding />
         </state>
       </provider>
@@ -715,11 +746,6 @@
     <entry file="file://$PROJECT_DIR$/files/protobuf/cpp.proto">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="24" selection-start="361" selection-end="372" vertical-scroll-proportion="0.2008253" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/files/protobuf/xsd.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="12" selection-start="2869" selection-end="2869" vertical-scroll-proportion="0.16506189" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/files/xsd/dml-main.xsd">
@@ -752,7 +778,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/files/xsd/shared-contentTypes.xsd">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="20" selection-start="985" selection-end="985" vertical-scroll-proportion="0.38828337">
+        <state line="16" column="22" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsd/xsd_pb2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="450" column="12" selection-start="20120" selection-end="20120" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/xsd/sml.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="220" column="29" selection-start="10709" selection-end="10709" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsd/xsd_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="57" selection-start="4747" selection-end="4747" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/protobuf/xsd.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="267" column="17" selection-start="5534" selection-end="5543" vertical-scroll-proportion="1.1078432">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/xsd/shared-commonSimpleTypes.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="42" selection-start="635" selection-end="635" vertical-scroll-proportion="0.31437126">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/xsd/cpp_contents_funcs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="445" column="41" selection-start="13382" selection-end="13382" vertical-scroll-proportion="0.37626627">
           <folding />
         </state>
       </provider>

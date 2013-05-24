@@ -438,7 +438,10 @@ def _makeRestrictionSetMethodCode(argName, pbRestriction):
         assert(False) # TODO - 아직 office 관련 xsd에는 속성이 지정지 않아 처리하지 않음
 
     if pbRestriction.HasField('length'):
-        codeList.append('assert(%(arg)s.size() == %(rest)s);' % {'rest':pbRestriction.length, 'arg':argName})
+        length = pbRestriction.length
+        if pbRestriction.base.kind == PB.Base.BuiltIn and pbRestriction.base.built_in == PB.BuiltIn.hexBinary:
+            length *= 2
+        codeList.append('assert(%(arg)s.size() == %(rest)s);' % {'rest':length, 'arg':argName})
 
     if pbRestriction.HasField('min_length'):
         codeList.append('assert(%(rest)s <= %(arg)s.size());' % {'rest':pbRestriction.min_length, 'arg':argName})
