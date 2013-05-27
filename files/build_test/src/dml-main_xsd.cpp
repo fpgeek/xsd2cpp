@@ -229,7 +229,10 @@ ST_Coordinate::ST_Coordinate()
 {
 }
 ST_Coordinate::ST_Coordinate(const ST_Coordinate& _ST_Coordinate)
-
+    :m_has_ST_CoordinateUnqualified(false),
+     m_ST_CoordinateUnqualified(NULL),
+     m_has_ST_UniversalMeasure(false),
+     m_ST_UniversalMeasure(NULL)
 {
 
     m_has_ST_CoordinateUnqualified = _ST_Coordinate.has_ST_CoordinateUnqualified();
@@ -440,7 +443,10 @@ ST_Coordinate32::ST_Coordinate32()
 {
 }
 ST_Coordinate32::ST_Coordinate32(const ST_Coordinate32& _ST_Coordinate32)
-
+    :m_has_ST_Coordinate32Unqualified(false),
+     m_ST_Coordinate32Unqualified(NULL),
+     m_has_ST_UniversalMeasure(false),
+     m_ST_UniversalMeasure(NULL)
 {
 
     m_has_ST_Coordinate32Unqualified = _ST_Coordinate32.has_ST_Coordinate32Unqualified();
@@ -851,7 +857,10 @@ ST_Percentage::ST_Percentage()
 {
 }
 ST_Percentage::ST_Percentage(const ST_Percentage& _ST_Percentage)
-
+    :m_has_ST_PercentageDecimal(false),
+     m_ST_PercentageDecimal(NULL),
+     m_has_ST_Percentage(false),
+     m_ST_Percentage(NULL)
 {
 
     m_has_ST_PercentageDecimal = _ST_Percentage.has_ST_PercentageDecimal();
@@ -1060,7 +1069,10 @@ ST_PositivePercentage::ST_PositivePercentage()
 {
 }
 ST_PositivePercentage::ST_PositivePercentage(const ST_PositivePercentage& _ST_PositivePercentage)
-
+    :m_has_ST_PositivePercentageDecimal(false),
+     m_ST_PositivePercentageDecimal(NULL),
+     m_has_ST_PositivePercentage(false),
+     m_ST_PositivePercentage(NULL)
 {
 
     m_has_ST_PositivePercentageDecimal = _ST_PositivePercentage.has_ST_PositivePercentageDecimal();
@@ -1229,7 +1241,10 @@ ST_FixedPercentage::ST_FixedPercentage()
 {
 }
 ST_FixedPercentage::ST_FixedPercentage(const ST_FixedPercentage& _ST_FixedPercentage)
-
+    :m_has_ST_FixedPercentageDecimal(false),
+     m_ST_FixedPercentageDecimal(NULL),
+     m_has_ST_FixedPercentage(false),
+     m_ST_FixedPercentage(NULL)
 {
 
     m_has_ST_FixedPercentageDecimal = _ST_FixedPercentage.has_ST_FixedPercentageDecimal();
@@ -1398,7 +1413,10 @@ ST_PositiveFixedPercentage::ST_PositiveFixedPercentage()
 {
 }
 ST_PositiveFixedPercentage::ST_PositiveFixedPercentage(const ST_PositiveFixedPercentage& _ST_PositiveFixedPercentage)
-
+    :m_has_ST_PositiveFixedPercentageDecimal(false),
+     m_ST_PositiveFixedPercentageDecimal(NULL),
+     m_has_ST_PositiveFixedPercentage(false),
+     m_ST_PositiveFixedPercentage(NULL)
 {
 
     m_has_ST_PositiveFixedPercentageDecimal = _ST_PositiveFixedPercentage.has_ST_PositiveFixedPercentageDecimal();
@@ -2458,7 +2476,10 @@ ST_AnimationDgmBuildType::ST_AnimationDgmBuildType()
 {
 }
 ST_AnimationDgmBuildType::ST_AnimationDgmBuildType(const ST_AnimationDgmBuildType& _ST_AnimationDgmBuildType)
-
+    :m_has_ST_AnimationBuildType(false),
+     m_ST_AnimationBuildType(NULL),
+     m_has_ST_AnimationDgmOnlyBuildType(false),
+     m_ST_AnimationDgmOnlyBuildType(NULL)
 {
 
     m_has_ST_AnimationBuildType = _ST_AnimationDgmBuildType.has_ST_AnimationBuildType();
@@ -2669,7 +2690,10 @@ ST_AnimationChartBuildType::ST_AnimationChartBuildType()
 {
 }
 ST_AnimationChartBuildType::ST_AnimationChartBuildType(const ST_AnimationChartBuildType& _ST_AnimationChartBuildType)
-
+    :m_has_ST_AnimationBuildType(false),
+     m_ST_AnimationBuildType(NULL),
+     m_has_ST_AnimationChartOnlyBuildType(false),
+     m_ST_AnimationChartOnlyBuildType(NULL)
 {
 
     m_has_ST_AnimationBuildType = _ST_AnimationChartBuildType.has_ST_AnimationBuildType();
@@ -4279,7 +4303,10 @@ ST_AdjCoordinate::ST_AdjCoordinate()
 {
 }
 ST_AdjCoordinate::ST_AdjCoordinate(const ST_AdjCoordinate& _ST_AdjCoordinate)
-
+    :m_has_ST_Coordinate(false),
+     m_ST_Coordinate(NULL),
+     m_has_ST_GeomGuideName(false),
+     m_ST_GeomGuideName(NULL)
 {
 
     m_has_ST_Coordinate = _ST_AdjCoordinate.has_ST_Coordinate();
@@ -4424,7 +4451,10 @@ ST_AdjAngle::ST_AdjAngle()
 {
 }
 ST_AdjAngle::ST_AdjAngle(const ST_AdjAngle& _ST_AdjAngle)
-
+    :m_has_ST_Angle(false),
+     m_ST_Angle(NULL),
+     m_has_ST_GeomGuideName(false),
+     m_ST_GeomGuideName(NULL)
 {
 
     m_has_ST_Angle = _ST_AdjAngle.has_ST_Angle();
@@ -5652,7 +5682,10 @@ ST_TextFontScalePercentOrPercentString::ST_TextFontScalePercentOrPercentString()
 {
 }
 ST_TextFontScalePercentOrPercentString::ST_TextFontScalePercentOrPercentString(const ST_TextFontScalePercentOrPercentString& _ST_TextFontScalePercentOrPercentString)
-
+    :m_has_ST_TextFontScalePercent(false),
+     m_ST_TextFontScalePercent(NULL),
+     m_has_ST_Percentage(false),
+     m_ST_Percentage(NULL)
 {
 
     m_has_ST_TextFontScalePercent = _ST_TextFontScalePercentOrPercentString.has_ST_TextFontScalePercent();
@@ -5990,7 +6023,10 @@ ST_TextBulletSize::ST_TextBulletSize()
 {
 }
 ST_TextBulletSize::ST_TextBulletSize(const ST_TextBulletSize& _ST_TextBulletSize)
-
+    :m_has_ST_TextBulletSizePercent(false),
+     m_ST_TextBulletSizePercent(NULL),
+     m_has_ST_TextBulletSizeDecimal(false),
+     m_ST_TextBulletSizeDecimal(NULL)
 {
 
     m_has_ST_TextBulletSizePercent = _ST_TextBulletSize.has_ST_TextBulletSizePercent();
@@ -6223,7 +6259,10 @@ ST_TextPoint::ST_TextPoint()
 {
 }
 ST_TextPoint::ST_TextPoint(const ST_TextPoint& _ST_TextPoint)
-
+    :m_has_ST_TextPointUnqualified(false),
+     m_ST_TextPointUnqualified(NULL),
+     m_has_ST_UniversalMeasure(false),
+     m_ST_UniversalMeasure(NULL)
 {
 
     m_has_ST_TextPointUnqualified = _ST_TextPoint.has_ST_TextPointUnqualified();
@@ -6986,7 +7025,10 @@ ST_TextSpacingPercentOrPercentString::ST_TextSpacingPercentOrPercentString()
 {
 }
 ST_TextSpacingPercentOrPercentString::ST_TextSpacingPercentOrPercentString(const ST_TextSpacingPercentOrPercentString& _ST_TextSpacingPercentOrPercentString)
-
+    :m_has_ST_TextSpacingPercent(false),
+     m_ST_TextSpacingPercent(NULL),
+     m_has_ST_Percentage(false),
+     m_ST_Percentage(NULL)
 {
 
     m_has_ST_TextSpacingPercent = _ST_TextSpacingPercentOrPercentString.has_ST_TextSpacingPercent();
@@ -68581,24 +68623,6 @@ CT_NoFillProperties* CT_BackgrCT_TextEffectoundFormatting::mutable_noFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_noFill = true;
     if (!m_noFill)
     {
@@ -68666,24 +68690,6 @@ CT_SolidColorFillProperties* CT_BackgrCT_TextEffectoundFormatting::mutable_solid
     {
         delete m_grpFill;
         m_grpFill = NULL;
-    }
-    ;
-
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
     }
     ;
 
@@ -68757,24 +68763,6 @@ CT_GradientFillProperties* CT_BackgrCT_TextEffectoundFormatting::mutable_gradFil
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_gradFill = true;
     if (!m_gradFill)
     {
@@ -68842,24 +68830,6 @@ CT_BlipFillProperties* CT_BackgrCT_TextEffectoundFormatting::mutable_blipFill()
     {
         delete m_grpFill;
         m_grpFill = NULL;
-    }
-    ;
-
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
     }
     ;
 
@@ -68933,24 +68903,6 @@ CT_PatternFillProperties* CT_BackgrCT_TextEffectoundFormatting::mutable_pattFill
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_pattFill = true;
     if (!m_pattFill)
     {
@@ -69021,24 +68973,6 @@ CT_GroupFillProperties* CT_BackgrCT_TextEffectoundFormatting::mutable_grpFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_grpFill = true;
     if (!m_grpFill)
     {
@@ -69063,60 +68997,6 @@ bool CT_BackgrCT_TextEffectoundFormatting::has_effectLst() const
 
 CT_EffectList* CT_BackgrCT_TextEffectoundFormatting::mutable_effectLst()
 {
-
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
 
     m_has_effectDag = false;
 
@@ -69151,60 +69031,6 @@ bool CT_BackgrCT_TextEffectoundFormatting::has_effectDag() const
 
 CT_EffectContainer* CT_BackgrCT_TextEffectoundFormatting::mutable_effectDag()
 {
-
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
 
     m_has_effectLst = false;
 
@@ -69319,8 +69145,8 @@ void CT_BackgrCT_TextEffectoundFormatting::toXmlElem(const std::string& _elemNam
     _outStream << ">";
 
     {
-        bool elemHasValueList[8] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill, m_has_effectLst, m_has_effectDag};
-        int cnt = count(elemHasValueList, elemHasValueList + 8, true);
+        bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
         assert(cnt == 1);
     }
 
@@ -69358,6 +69184,12 @@ void CT_BackgrCT_TextEffectoundFormatting::toXmlElem(const std::string& _elemNam
     if (m_has_grpFill)
     {
         m_grpFill->toXmlElem("a:grpFill", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
     }
 
 
@@ -92886,51 +92718,6 @@ CT_NoFillProperties* CT_LineProperties::mutable_noFill()
     }
     ;
 
-    m_has_prstDash = false;
-
-    if (m_prstDash)
-    {
-        delete m_prstDash;
-        m_prstDash = NULL;
-    }
-    ;
-
-    m_has_custDash = false;
-
-    if (m_custDash)
-    {
-        delete m_custDash;
-        m_custDash = NULL;
-    }
-    ;
-
-    m_has_round = false;
-
-    if (m_round)
-    {
-        delete m_round;
-        m_round = NULL;
-    }
-    ;
-
-    m_has_bevel = false;
-
-    if (m_bevel)
-    {
-        delete m_bevel;
-        m_bevel = NULL;
-    }
-    ;
-
-    m_has_miter = false;
-
-    if (m_miter)
-    {
-        delete m_miter;
-        m_miter = NULL;
-    }
-    ;
-
     m_has_noFill = true;
     if (!m_noFill)
     {
@@ -92980,51 +92767,6 @@ CT_SolidColorFillProperties* CT_LineProperties::mutable_solidFill()
     {
         delete m_pattFill;
         m_pattFill = NULL;
-    }
-    ;
-
-    m_has_prstDash = false;
-
-    if (m_prstDash)
-    {
-        delete m_prstDash;
-        m_prstDash = NULL;
-    }
-    ;
-
-    m_has_custDash = false;
-
-    if (m_custDash)
-    {
-        delete m_custDash;
-        m_custDash = NULL;
-    }
-    ;
-
-    m_has_round = false;
-
-    if (m_round)
-    {
-        delete m_round;
-        m_round = NULL;
-    }
-    ;
-
-    m_has_bevel = false;
-
-    if (m_bevel)
-    {
-        delete m_bevel;
-        m_bevel = NULL;
-    }
-    ;
-
-    m_has_miter = false;
-
-    if (m_miter)
-    {
-        delete m_miter;
-        m_miter = NULL;
     }
     ;
 
@@ -93080,51 +92822,6 @@ CT_GradientFillProperties* CT_LineProperties::mutable_gradFill()
     }
     ;
 
-    m_has_prstDash = false;
-
-    if (m_prstDash)
-    {
-        delete m_prstDash;
-        m_prstDash = NULL;
-    }
-    ;
-
-    m_has_custDash = false;
-
-    if (m_custDash)
-    {
-        delete m_custDash;
-        m_custDash = NULL;
-    }
-    ;
-
-    m_has_round = false;
-
-    if (m_round)
-    {
-        delete m_round;
-        m_round = NULL;
-    }
-    ;
-
-    m_has_bevel = false;
-
-    if (m_bevel)
-    {
-        delete m_bevel;
-        m_bevel = NULL;
-    }
-    ;
-
-    m_has_miter = false;
-
-    if (m_miter)
-    {
-        delete m_miter;
-        m_miter = NULL;
-    }
-    ;
-
     m_has_gradFill = true;
     if (!m_gradFill)
     {
@@ -93177,51 +92874,6 @@ CT_PatternFillProperties* CT_LineProperties::mutable_pattFill()
     }
     ;
 
-    m_has_prstDash = false;
-
-    if (m_prstDash)
-    {
-        delete m_prstDash;
-        m_prstDash = NULL;
-    }
-    ;
-
-    m_has_custDash = false;
-
-    if (m_custDash)
-    {
-        delete m_custDash;
-        m_custDash = NULL;
-    }
-    ;
-
-    m_has_round = false;
-
-    if (m_round)
-    {
-        delete m_round;
-        m_round = NULL;
-    }
-    ;
-
-    m_has_bevel = false;
-
-    if (m_bevel)
-    {
-        delete m_bevel;
-        m_bevel = NULL;
-    }
-    ;
-
-    m_has_miter = false;
-
-    if (m_miter)
-    {
-        delete m_miter;
-        m_miter = NULL;
-    }
-    ;
-
     m_has_pattFill = true;
     if (!m_pattFill)
     {
@@ -93247,75 +92899,12 @@ bool CT_LineProperties::has_prstDash() const
 CT_PresetLineDashProperties* CT_LineProperties::mutable_prstDash()
 {
 
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
     m_has_custDash = false;
 
     if (m_custDash)
     {
         delete m_custDash;
         m_custDash = NULL;
-    }
-    ;
-
-    m_has_round = false;
-
-    if (m_round)
-    {
-        delete m_round;
-        m_round = NULL;
-    }
-    ;
-
-    m_has_bevel = false;
-
-    if (m_bevel)
-    {
-        delete m_bevel;
-        m_bevel = NULL;
-    }
-    ;
-
-    m_has_miter = false;
-
-    if (m_miter)
-    {
-        delete m_miter;
-        m_miter = NULL;
     }
     ;
 
@@ -93344,75 +92933,12 @@ bool CT_LineProperties::has_custDash() const
 CT_DashStopList* CT_LineProperties::mutable_custDash()
 {
 
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
     m_has_prstDash = false;
 
     if (m_prstDash)
     {
         delete m_prstDash;
         m_prstDash = NULL;
-    }
-    ;
-
-    m_has_round = false;
-
-    if (m_round)
-    {
-        delete m_round;
-        m_round = NULL;
-    }
-    ;
-
-    m_has_bevel = false;
-
-    if (m_bevel)
-    {
-        delete m_bevel;
-        m_bevel = NULL;
-    }
-    ;
-
-    m_has_miter = false;
-
-    if (m_miter)
-    {
-        delete m_miter;
-        m_miter = NULL;
     }
     ;
 
@@ -93440,60 +92966,6 @@ bool CT_LineProperties::has_round() const
 
 CT_LineJoinRound* CT_LineProperties::mutable_round()
 {
-
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_prstDash = false;
-
-    if (m_prstDash)
-    {
-        delete m_prstDash;
-        m_prstDash = NULL;
-    }
-    ;
-
-    m_has_custDash = false;
-
-    if (m_custDash)
-    {
-        delete m_custDash;
-        m_custDash = NULL;
-    }
-    ;
 
     m_has_bevel = false;
 
@@ -93538,60 +93010,6 @@ bool CT_LineProperties::has_bevel() const
 CT_LineJoinBevel* CT_LineProperties::mutable_bevel()
 {
 
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_prstDash = false;
-
-    if (m_prstDash)
-    {
-        delete m_prstDash;
-        m_prstDash = NULL;
-    }
-    ;
-
-    m_has_custDash = false;
-
-    if (m_custDash)
-    {
-        delete m_custDash;
-        m_custDash = NULL;
-    }
-    ;
-
     m_has_round = false;
 
     if (m_round)
@@ -93634,60 +93052,6 @@ bool CT_LineProperties::has_miter() const
 
 CT_LineJoinMiterProperties* CT_LineProperties::mutable_miter()
 {
-
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_prstDash = false;
-
-    if (m_prstDash)
-    {
-        delete m_prstDash;
-        m_prstDash = NULL;
-    }
-    ;
-
-    m_has_custDash = false;
-
-    if (m_custDash)
-    {
-        delete m_custDash;
-        m_custDash = NULL;
-    }
-    ;
 
     m_has_round = false;
 
@@ -93982,8 +93346,8 @@ void CT_LineProperties::toXmlElem(const std::string& _elemName, const std::strin
     _outStream << ">";
 
     {
-        bool elemHasValueList[9] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_pattFill, m_has_prstDash, m_has_custDash, m_has_round, m_has_bevel, m_has_miter};
-        int cnt = count(elemHasValueList, elemHasValueList + 9, true);
+        bool elemHasValueList[4] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_pattFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 4, true);
         assert(cnt == 1);
     }
 
@@ -94011,6 +93375,12 @@ void CT_LineProperties::toXmlElem(const std::string& _elemName, const std::strin
         m_pattFill->toXmlElem("a:pattFill", "", _outStream);
     }
 
+    {
+        bool elemHasValueList[2] = {m_has_prstDash, m_has_custDash};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+
 
     if (m_has_prstDash)
     {
@@ -94021,6 +93391,12 @@ void CT_LineProperties::toXmlElem(const std::string& _elemName, const std::strin
     if (m_has_custDash)
     {
         m_custDash->toXmlElem("a:custDash", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[3] = {m_has_round, m_has_bevel, m_has_miter};
+        int cnt = count(elemHasValueList, elemHasValueList + 3, true);
+        assert(cnt == 1);
     }
 
 
@@ -94234,60 +93610,6 @@ CT_CustomGeometry2D* CT_ShapeProperties::mutable_custGeom()
     }
     ;
 
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
-
     m_has_custGeom = true;
     if (!m_custGeom)
     {
@@ -94322,60 +93644,6 @@ CT_PresetGeometry2D* CT_ShapeProperties::mutable_prstGeom()
     }
     ;
 
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
-
     m_has_prstGeom = true;
     if (!m_prstGeom)
     {
@@ -94400,24 +93668,6 @@ bool CT_ShapeProperties::has_noFill() const
 
 CT_NoFillProperties* CT_ShapeProperties::mutable_noFill()
 {
-
-    m_has_custGeom = false;
-
-    if (m_custGeom)
-    {
-        delete m_custGeom;
-        m_custGeom = NULL;
-    }
-    ;
-
-    m_has_prstGeom = false;
-
-    if (m_prstGeom)
-    {
-        delete m_prstGeom;
-        m_prstGeom = NULL;
-    }
-    ;
 
     m_has_solidFill = false;
 
@@ -94489,24 +93739,6 @@ bool CT_ShapeProperties::has_solidFill() const
 CT_SolidColorFillProperties* CT_ShapeProperties::mutable_solidFill()
 {
 
-    m_has_custGeom = false;
-
-    if (m_custGeom)
-    {
-        delete m_custGeom;
-        m_custGeom = NULL;
-    }
-    ;
-
-    m_has_prstGeom = false;
-
-    if (m_prstGeom)
-    {
-        delete m_prstGeom;
-        m_prstGeom = NULL;
-    }
-    ;
-
     m_has_noFill = false;
 
     if (m_noFill)
@@ -94576,24 +93808,6 @@ bool CT_ShapeProperties::has_gradFill() const
 
 CT_GradientFillProperties* CT_ShapeProperties::mutable_gradFill()
 {
-
-    m_has_custGeom = false;
-
-    if (m_custGeom)
-    {
-        delete m_custGeom;
-        m_custGeom = NULL;
-    }
-    ;
-
-    m_has_prstGeom = false;
-
-    if (m_prstGeom)
-    {
-        delete m_prstGeom;
-        m_prstGeom = NULL;
-    }
-    ;
 
     m_has_noFill = false;
 
@@ -94665,24 +93879,6 @@ bool CT_ShapeProperties::has_blipFill() const
 CT_BlipFillProperties* CT_ShapeProperties::mutable_blipFill()
 {
 
-    m_has_custGeom = false;
-
-    if (m_custGeom)
-    {
-        delete m_custGeom;
-        m_custGeom = NULL;
-    }
-    ;
-
-    m_has_prstGeom = false;
-
-    if (m_prstGeom)
-    {
-        delete m_prstGeom;
-        m_prstGeom = NULL;
-    }
-    ;
-
     m_has_noFill = false;
 
     if (m_noFill)
@@ -94753,24 +93949,6 @@ bool CT_ShapeProperties::has_pattFill() const
 CT_PatternFillProperties* CT_ShapeProperties::mutable_pattFill()
 {
 
-    m_has_custGeom = false;
-
-    if (m_custGeom)
-    {
-        delete m_custGeom;
-        m_custGeom = NULL;
-    }
-    ;
-
-    m_has_prstGeom = false;
-
-    if (m_prstGeom)
-    {
-        delete m_prstGeom;
-        m_prstGeom = NULL;
-    }
-    ;
-
     m_has_noFill = false;
 
     if (m_noFill)
@@ -94840,24 +94018,6 @@ bool CT_ShapeProperties::has_grpFill() const
 
 CT_GroupFillProperties* CT_ShapeProperties::mutable_grpFill()
 {
-
-    m_has_custGeom = false;
-
-    if (m_custGeom)
-    {
-        delete m_custGeom;
-        m_custGeom = NULL;
-    }
-    ;
-
-    m_has_prstGeom = false;
-
-    if (m_prstGeom)
-    {
-        delete m_prstGeom;
-        m_prstGeom = NULL;
-    }
-    ;
 
     m_has_noFill = false;
 
@@ -95256,8 +94416,8 @@ void CT_ShapeProperties::toXmlElem(const std::string& _elemName, const std::stri
     }
 
     {
-        bool elemHasValueList[8] = {m_has_custGeom, m_has_prstGeom, m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
-        int cnt = count(elemHasValueList, elemHasValueList + 8, true);
+        bool elemHasValueList[2] = {m_has_custGeom, m_has_prstGeom};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
         assert(cnt == 1);
     }
 
@@ -95271,6 +94431,12 @@ void CT_ShapeProperties::toXmlElem(const std::string& _elemName, const std::stri
     if (m_has_prstGeom)
     {
         m_prstGeom->toXmlElem("a:prstGeom", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
     }
 
 
@@ -95494,24 +94660,6 @@ CT_NoFillProperties* CT_GroupShapeProperties::mutable_noFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_noFill = true;
     if (!m_noFill)
     {
@@ -95579,24 +94727,6 @@ CT_SolidColorFillProperties* CT_GroupShapeProperties::mutable_solidFill()
     {
         delete m_grpFill;
         m_grpFill = NULL;
-    }
-    ;
-
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
     }
     ;
 
@@ -95670,24 +94800,6 @@ CT_GradientFillProperties* CT_GroupShapeProperties::mutable_gradFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_gradFill = true;
     if (!m_gradFill)
     {
@@ -95755,24 +94867,6 @@ CT_BlipFillProperties* CT_GroupShapeProperties::mutable_blipFill()
     {
         delete m_grpFill;
         m_grpFill = NULL;
-    }
-    ;
-
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
     }
     ;
 
@@ -95846,24 +94940,6 @@ CT_PatternFillProperties* CT_GroupShapeProperties::mutable_pattFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_pattFill = true;
     if (!m_pattFill)
     {
@@ -95934,24 +95010,6 @@ CT_GroupFillProperties* CT_GroupShapeProperties::mutable_grpFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_grpFill = true;
     if (!m_grpFill)
     {
@@ -95976,60 +95034,6 @@ bool CT_GroupShapeProperties::has_effectLst() const
 
 CT_EffectList* CT_GroupShapeProperties::mutable_effectLst()
 {
-
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
 
     m_has_effectDag = false;
 
@@ -96064,60 +95068,6 @@ bool CT_GroupShapeProperties::has_effectDag() const
 
 CT_EffectContainer* CT_GroupShapeProperties::mutable_effectDag()
 {
-
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
 
     m_has_effectLst = false;
 
@@ -96328,8 +95278,8 @@ void CT_GroupShapeProperties::toXmlElem(const std::string& _elemName, const std:
     }
 
     {
-        bool elemHasValueList[8] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill, m_has_effectLst, m_has_effectDag};
-        int cnt = count(elemHasValueList, elemHasValueList + 8, true);
+        bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
         assert(cnt == 1);
     }
 
@@ -96367,6 +95317,12 @@ void CT_GroupShapeProperties::toXmlElem(const std::string& _elemName, const std:
     if (m_has_grpFill)
     {
         m_grpFill->toXmlElem("a:grpFill", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
     }
 
 
@@ -101873,42 +100829,6 @@ CT_NoFillProperties* CT_TableProperties::mutable_noFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
-    m_has_tableStyle = false;
-
-    if (m_tableStyle)
-    {
-        delete m_tableStyle;
-        m_tableStyle = NULL;
-    }
-    ;
-
-    m_has_tableStyleId = false;
-
-    if (m_tableStyleId)
-    {
-        delete m_tableStyleId;
-        m_tableStyleId = NULL;
-    }
-    ;
-
     m_has_noFill = true;
     if (!m_noFill)
     {
@@ -101976,42 +100896,6 @@ CT_SolidColorFillProperties* CT_TableProperties::mutable_solidFill()
     {
         delete m_grpFill;
         m_grpFill = NULL;
-    }
-    ;
-
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
-    m_has_tableStyle = false;
-
-    if (m_tableStyle)
-    {
-        delete m_tableStyle;
-        m_tableStyle = NULL;
-    }
-    ;
-
-    m_has_tableStyleId = false;
-
-    if (m_tableStyleId)
-    {
-        delete m_tableStyleId;
-        m_tableStyleId = NULL;
     }
     ;
 
@@ -102085,42 +100969,6 @@ CT_GradientFillProperties* CT_TableProperties::mutable_gradFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
-    m_has_tableStyle = false;
-
-    if (m_tableStyle)
-    {
-        delete m_tableStyle;
-        m_tableStyle = NULL;
-    }
-    ;
-
-    m_has_tableStyleId = false;
-
-    if (m_tableStyleId)
-    {
-        delete m_tableStyleId;
-        m_tableStyleId = NULL;
-    }
-    ;
-
     m_has_gradFill = true;
     if (!m_gradFill)
     {
@@ -102188,42 +101036,6 @@ CT_BlipFillProperties* CT_TableProperties::mutable_blipFill()
     {
         delete m_grpFill;
         m_grpFill = NULL;
-    }
-    ;
-
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
-    m_has_tableStyle = false;
-
-    if (m_tableStyle)
-    {
-        delete m_tableStyle;
-        m_tableStyle = NULL;
-    }
-    ;
-
-    m_has_tableStyleId = false;
-
-    if (m_tableStyleId)
-    {
-        delete m_tableStyleId;
-        m_tableStyleId = NULL;
     }
     ;
 
@@ -102297,42 +101109,6 @@ CT_PatternFillProperties* CT_TableProperties::mutable_pattFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
-    m_has_tableStyle = false;
-
-    if (m_tableStyle)
-    {
-        delete m_tableStyle;
-        m_tableStyle = NULL;
-    }
-    ;
-
-    m_has_tableStyleId = false;
-
-    if (m_tableStyleId)
-    {
-        delete m_tableStyleId;
-        m_tableStyleId = NULL;
-    }
-    ;
-
     m_has_pattFill = true;
     if (!m_pattFill)
     {
@@ -102403,42 +101179,6 @@ CT_GroupFillProperties* CT_TableProperties::mutable_grpFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
-    m_has_tableStyle = false;
-
-    if (m_tableStyle)
-    {
-        delete m_tableStyle;
-        m_tableStyle = NULL;
-    }
-    ;
-
-    m_has_tableStyleId = false;
-
-    if (m_tableStyleId)
-    {
-        delete m_tableStyleId;
-        m_tableStyleId = NULL;
-    }
-    ;
-
     m_has_grpFill = true;
     if (!m_grpFill)
     {
@@ -102463,60 +101203,6 @@ bool CT_TableProperties::has_effectLst() const
 
 CT_EffectList* CT_TableProperties::mutable_effectLst()
 {
-
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
 
     m_has_effectDag = false;
 
@@ -102570,60 +101256,6 @@ bool CT_TableProperties::has_effectDag() const
 CT_EffectContainer* CT_TableProperties::mutable_effectDag()
 {
 
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
-
     m_has_effectLst = false;
 
     if (m_effectLst)
@@ -102676,60 +101308,6 @@ bool CT_TableProperties::has_tableStyle() const
 CT_TableStyle* CT_TableProperties::mutable_tableStyle()
 {
 
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
-
     m_has_effectLst = false;
 
     if (m_effectLst)
@@ -102781,60 +101359,6 @@ bool CT_TableProperties::has_tableStyleId() const
 
 ns_s::ST_Guid* CT_TableProperties::mutable_tableStyleId()
 {
-
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
 
     m_has_effectLst = false;
 
@@ -103087,8 +101611,8 @@ void CT_TableProperties::toXmlElem(const std::string& _elemName, const std::stri
     _outStream << ">";
 
     {
-        bool elemHasValueList[10] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill, m_has_effectLst, m_has_effectDag, m_has_tableStyle, m_has_tableStyleId};
-        int cnt = count(elemHasValueList, elemHasValueList + 10, true);
+        bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
         assert(cnt == 1);
     }
 
@@ -103126,6 +101650,12 @@ void CT_TableProperties::toXmlElem(const std::string& _elemName, const std::stri
     if (m_has_grpFill)
     {
         m_grpFill->toXmlElem("a:grpFill", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[4] = {m_has_effectLst, m_has_effectDag, m_has_tableStyle, m_has_tableStyleId};
+        int cnt = count(elemHasValueList, elemHasValueList + 4, true);
+        assert(cnt == 1);
     }
 
 
@@ -103855,60 +102385,6 @@ CT_FontCollection* CT_TableStyleTextStyle::mutable_font()
     }
     ;
 
-    m_has_scrgbClr = false;
-
-    if (m_scrgbClr)
-    {
-        delete m_scrgbClr;
-        m_scrgbClr = NULL;
-    }
-    ;
-
-    m_has_srgbClr = false;
-
-    if (m_srgbClr)
-    {
-        delete m_srgbClr;
-        m_srgbClr = NULL;
-    }
-    ;
-
-    m_has_hslClr = false;
-
-    if (m_hslClr)
-    {
-        delete m_hslClr;
-        m_hslClr = NULL;
-    }
-    ;
-
-    m_has_sysClr = false;
-
-    if (m_sysClr)
-    {
-        delete m_sysClr;
-        m_sysClr = NULL;
-    }
-    ;
-
-    m_has_schemeClr = false;
-
-    if (m_schemeClr)
-    {
-        delete m_schemeClr;
-        m_schemeClr = NULL;
-    }
-    ;
-
-    m_has_prstClr = false;
-
-    if (m_prstClr)
-    {
-        delete m_prstClr;
-        m_prstClr = NULL;
-    }
-    ;
-
     m_has_font = true;
     if (!m_font)
     {
@@ -103943,60 +102419,6 @@ CT_FontReference* CT_TableStyleTextStyle::mutable_fontRef()
     }
     ;
 
-    m_has_scrgbClr = false;
-
-    if (m_scrgbClr)
-    {
-        delete m_scrgbClr;
-        m_scrgbClr = NULL;
-    }
-    ;
-
-    m_has_srgbClr = false;
-
-    if (m_srgbClr)
-    {
-        delete m_srgbClr;
-        m_srgbClr = NULL;
-    }
-    ;
-
-    m_has_hslClr = false;
-
-    if (m_hslClr)
-    {
-        delete m_hslClr;
-        m_hslClr = NULL;
-    }
-    ;
-
-    m_has_sysClr = false;
-
-    if (m_sysClr)
-    {
-        delete m_sysClr;
-        m_sysClr = NULL;
-    }
-    ;
-
-    m_has_schemeClr = false;
-
-    if (m_schemeClr)
-    {
-        delete m_schemeClr;
-        m_schemeClr = NULL;
-    }
-    ;
-
-    m_has_prstClr = false;
-
-    if (m_prstClr)
-    {
-        delete m_prstClr;
-        m_prstClr = NULL;
-    }
-    ;
-
     m_has_fontRef = true;
     if (!m_fontRef)
     {
@@ -104021,24 +102443,6 @@ bool CT_TableStyleTextStyle::has_scrgbClr() const
 
 CT_ScRgbColor* CT_TableStyleTextStyle::mutable_scrgbClr()
 {
-
-    m_has_font = false;
-
-    if (m_font)
-    {
-        delete m_font;
-        m_font = NULL;
-    }
-    ;
-
-    m_has_fontRef = false;
-
-    if (m_fontRef)
-    {
-        delete m_fontRef;
-        m_fontRef = NULL;
-    }
-    ;
 
     m_has_srgbClr = false;
 
@@ -104110,24 +102514,6 @@ bool CT_TableStyleTextStyle::has_srgbClr() const
 CT_SRgbColor* CT_TableStyleTextStyle::mutable_srgbClr()
 {
 
-    m_has_font = false;
-
-    if (m_font)
-    {
-        delete m_font;
-        m_font = NULL;
-    }
-    ;
-
-    m_has_fontRef = false;
-
-    if (m_fontRef)
-    {
-        delete m_fontRef;
-        m_fontRef = NULL;
-    }
-    ;
-
     m_has_scrgbClr = false;
 
     if (m_scrgbClr)
@@ -104197,24 +102583,6 @@ bool CT_TableStyleTextStyle::has_hslClr() const
 
 CT_HslColor* CT_TableStyleTextStyle::mutable_hslClr()
 {
-
-    m_has_font = false;
-
-    if (m_font)
-    {
-        delete m_font;
-        m_font = NULL;
-    }
-    ;
-
-    m_has_fontRef = false;
-
-    if (m_fontRef)
-    {
-        delete m_fontRef;
-        m_fontRef = NULL;
-    }
-    ;
 
     m_has_scrgbClr = false;
 
@@ -104286,24 +102654,6 @@ bool CT_TableStyleTextStyle::has_sysClr() const
 CT_SystemColor* CT_TableStyleTextStyle::mutable_sysClr()
 {
 
-    m_has_font = false;
-
-    if (m_font)
-    {
-        delete m_font;
-        m_font = NULL;
-    }
-    ;
-
-    m_has_fontRef = false;
-
-    if (m_fontRef)
-    {
-        delete m_fontRef;
-        m_fontRef = NULL;
-    }
-    ;
-
     m_has_scrgbClr = false;
 
     if (m_scrgbClr)
@@ -104374,24 +102724,6 @@ bool CT_TableStyleTextStyle::has_schemeClr() const
 CT_SchemeColor* CT_TableStyleTextStyle::mutable_schemeClr()
 {
 
-    m_has_font = false;
-
-    if (m_font)
-    {
-        delete m_font;
-        m_font = NULL;
-    }
-    ;
-
-    m_has_fontRef = false;
-
-    if (m_fontRef)
-    {
-        delete m_fontRef;
-        m_fontRef = NULL;
-    }
-    ;
-
     m_has_scrgbClr = false;
 
     if (m_scrgbClr)
@@ -104461,24 +102793,6 @@ bool CT_TableStyleTextStyle::has_prstClr() const
 
 CT_PresetColor* CT_TableStyleTextStyle::mutable_prstClr()
 {
-
-    m_has_font = false;
-
-    if (m_font)
-    {
-        delete m_font;
-        m_font = NULL;
-    }
-    ;
-
-    m_has_fontRef = false;
-
-    if (m_fontRef)
-    {
-        delete m_fontRef;
-        m_fontRef = NULL;
-    }
-    ;
 
     m_has_scrgbClr = false;
 
@@ -104693,8 +103007,8 @@ void CT_TableStyleTextStyle::toXmlElem(const std::string& _elemName, const std::
     _outStream << ">";
 
     {
-        bool elemHasValueList[8] = {m_has_font, m_has_fontRef, m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
-        int cnt = count(elemHasValueList, elemHasValueList + 8, true);
+        bool elemHasValueList[2] = {m_has_font, m_has_fontRef};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
         assert(cnt == 1);
     }
 
@@ -104708,6 +103022,12 @@ void CT_TableStyleTextStyle::toXmlElem(const std::string& _elemName, const std::
     if (m_has_fontRef)
     {
         m_fontRef->toXmlElem("a:fontRef", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
+        assert(cnt == 1);
     }
 
 
@@ -105244,24 +103564,6 @@ CT_FillProperties* CT_TableBackgroundStyle::mutable_fill()
     }
     ;
 
-    m_has_effect = false;
-
-    if (m_effect)
-    {
-        delete m_effect;
-        m_effect = NULL;
-    }
-    ;
-
-    m_has_effectRef = false;
-
-    if (m_effectRef)
-    {
-        delete m_effectRef;
-        m_effectRef = NULL;
-    }
-    ;
-
     m_has_fill = true;
     if (!m_fill)
     {
@@ -105296,24 +103598,6 @@ CT_StyleMatrixReference* CT_TableBackgroundStyle::mutable_fillRef()
     }
     ;
 
-    m_has_effect = false;
-
-    if (m_effect)
-    {
-        delete m_effect;
-        m_effect = NULL;
-    }
-    ;
-
-    m_has_effectRef = false;
-
-    if (m_effectRef)
-    {
-        delete m_effectRef;
-        m_effectRef = NULL;
-    }
-    ;
-
     m_has_fillRef = true;
     if (!m_fillRef)
     {
@@ -105338,24 +103622,6 @@ bool CT_TableBackgroundStyle::has_effect() const
 
 CT_EffectProperties* CT_TableBackgroundStyle::mutable_effect()
 {
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_fillRef = false;
-
-    if (m_fillRef)
-    {
-        delete m_fillRef;
-        m_fillRef = NULL;
-    }
-    ;
 
     m_has_effectRef = false;
 
@@ -105390,24 +103656,6 @@ bool CT_TableBackgroundStyle::has_effectRef() const
 
 CT_StyleMatrixReference* CT_TableBackgroundStyle::mutable_effectRef()
 {
-
-    m_has_fill = false;
-
-    if (m_fill)
-    {
-        delete m_fill;
-        m_fill = NULL;
-    }
-    ;
-
-    m_has_fillRef = false;
-
-    if (m_fillRef)
-    {
-        delete m_fillRef;
-        m_fillRef = NULL;
-    }
-    ;
 
     m_has_effect = false;
 
@@ -105486,8 +103734,8 @@ void CT_TableBackgroundStyle::toXmlElem(const std::string& _elemName, const std:
     _outStream << ">";
 
     {
-        bool elemHasValueList[4] = {m_has_fill, m_has_fillRef, m_has_effect, m_has_effectRef};
-        int cnt = count(elemHasValueList, elemHasValueList + 4, true);
+        bool elemHasValueList[2] = {m_has_fill, m_has_fillRef};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
         assert(cnt == 1);
     }
 
@@ -105501,6 +103749,12 @@ void CT_TableBackgroundStyle::toXmlElem(const std::string& _elemName, const std:
     if (m_has_fillRef)
     {
         m_fillRef->toXmlElem("a:fillRef", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[2] = {m_has_effect, m_has_effectRef};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
     }
 
 
@@ -110005,24 +108259,6 @@ CT_NoFillProperties* CT_TextCharacterProperties::mutable_noFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_noFill = true;
     if (!m_noFill)
     {
@@ -110090,24 +108326,6 @@ CT_SolidColorFillProperties* CT_TextCharacterProperties::mutable_solidFill()
     {
         delete m_grpFill;
         m_grpFill = NULL;
-    }
-    ;
-
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
     }
     ;
 
@@ -110181,24 +108399,6 @@ CT_GradientFillProperties* CT_TextCharacterProperties::mutable_gradFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_gradFill = true;
     if (!m_gradFill)
     {
@@ -110266,24 +108466,6 @@ CT_BlipFillProperties* CT_TextCharacterProperties::mutable_blipFill()
     {
         delete m_grpFill;
         m_grpFill = NULL;
-    }
-    ;
-
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
     }
     ;
 
@@ -110357,24 +108539,6 @@ CT_PatternFillProperties* CT_TextCharacterProperties::mutable_pattFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_pattFill = true;
     if (!m_pattFill)
     {
@@ -110445,24 +108609,6 @@ CT_GroupFillProperties* CT_TextCharacterProperties::mutable_grpFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_grpFill = true;
     if (!m_grpFill)
     {
@@ -110487,60 +108633,6 @@ bool CT_TextCharacterProperties::has_effectLst() const
 
 CT_EffectList* CT_TextCharacterProperties::mutable_effectLst()
 {
-
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
 
     m_has_effectDag = false;
 
@@ -110575,60 +108667,6 @@ bool CT_TextCharacterProperties::has_effectDag() const
 
 CT_EffectContainer* CT_TextCharacterProperties::mutable_effectDag()
 {
-
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
 
     m_has_effectLst = false;
 
@@ -110697,24 +108735,6 @@ CT_TextUnderlineLineFollowText* CT_TextCharacterProperties::mutable_uLnTx()
     }
     ;
 
-    m_has_uFillTx = false;
-
-    if (m_uFillTx)
-    {
-        delete m_uFillTx;
-        m_uFillTx = NULL;
-    }
-    ;
-
-    m_has_uFill = false;
-
-    if (m_uFill)
-    {
-        delete m_uFill;
-        m_uFill = NULL;
-    }
-    ;
-
     m_has_uLnTx = true;
     if (!m_uLnTx)
     {
@@ -110749,24 +108769,6 @@ CT_LineProperties* CT_TextCharacterProperties::mutable_uLn()
     }
     ;
 
-    m_has_uFillTx = false;
-
-    if (m_uFillTx)
-    {
-        delete m_uFillTx;
-        m_uFillTx = NULL;
-    }
-    ;
-
-    m_has_uFill = false;
-
-    if (m_uFill)
-    {
-        delete m_uFill;
-        m_uFill = NULL;
-    }
-    ;
-
     m_has_uLn = true;
     if (!m_uLn)
     {
@@ -110791,24 +108793,6 @@ bool CT_TextCharacterProperties::has_uFillTx() const
 
 CT_TextUnderlineFillFollowText* CT_TextCharacterProperties::mutable_uFillTx()
 {
-
-    m_has_uLnTx = false;
-
-    if (m_uLnTx)
-    {
-        delete m_uLnTx;
-        m_uLnTx = NULL;
-    }
-    ;
-
-    m_has_uLn = false;
-
-    if (m_uLn)
-    {
-        delete m_uLn;
-        m_uLn = NULL;
-    }
-    ;
 
     m_has_uFill = false;
 
@@ -110843,24 +108827,6 @@ bool CT_TextCharacterProperties::has_uFill() const
 
 CT_TextUnderlineFillGroupWrapper* CT_TextCharacterProperties::mutable_uFill()
 {
-
-    m_has_uLnTx = false;
-
-    if (m_uLnTx)
-    {
-        delete m_uLnTx;
-        m_uLnTx = NULL;
-    }
-    ;
-
-    m_has_uLn = false;
-
-    if (m_uLn)
-    {
-        delete m_uLn;
-        m_uLn = NULL;
-    }
-    ;
 
     m_has_uFillTx = false;
 
@@ -111542,8 +109508,8 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     }
 
     {
-        bool elemHasValueList[8] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill, m_has_effectLst, m_has_effectDag};
-        int cnt = count(elemHasValueList, elemHasValueList + 8, true);
+        bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
         assert(cnt == 1);
     }
 
@@ -111583,6 +109549,12 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
         m_grpFill->toXmlElem("a:grpFill", "", _outStream);
     }
 
+    {
+        bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+
 
     if (m_has_effectLst)
     {
@@ -111602,8 +109574,8 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     }
 
     {
-        bool elemHasValueList[4] = {m_has_uLnTx, m_has_uLn, m_has_uFillTx, m_has_uFill};
-        int cnt = count(elemHasValueList, elemHasValueList + 4, true);
+        bool elemHasValueList[2] = {m_has_uLnTx, m_has_uLn};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
         assert(cnt == 1);
     }
 
@@ -111617,6 +109589,12 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     if (m_has_uLn)
     {
         m_uLn->toXmlElem("a:uLn", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[2] = {m_has_uFillTx, m_has_uFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
     }
 
 
@@ -112841,87 +110819,6 @@ CT_TextBulletColorFollowText* CT_TextParagraphProperties::mutable_buClrTx()
     }
     ;
 
-    m_has_buSzTx = false;
-
-    if (m_buSzTx)
-    {
-        delete m_buSzTx;
-        m_buSzTx = NULL;
-    }
-    ;
-
-    m_has_buSzPct = false;
-
-    if (m_buSzPct)
-    {
-        delete m_buSzPct;
-        m_buSzPct = NULL;
-    }
-    ;
-
-    m_has_buSzPts = false;
-
-    if (m_buSzPts)
-    {
-        delete m_buSzPts;
-        m_buSzPts = NULL;
-    }
-    ;
-
-    m_has_buFontTx = false;
-
-    if (m_buFontTx)
-    {
-        delete m_buFontTx;
-        m_buFontTx = NULL;
-    }
-    ;
-
-    m_has_buFont = false;
-
-    if (m_buFont)
-    {
-        delete m_buFont;
-        m_buFont = NULL;
-    }
-    ;
-
-    m_has_buNone = false;
-
-    if (m_buNone)
-    {
-        delete m_buNone;
-        m_buNone = NULL;
-    }
-    ;
-
-    m_has_buAutoNum = false;
-
-    if (m_buAutoNum)
-    {
-        delete m_buAutoNum;
-        m_buAutoNum = NULL;
-    }
-    ;
-
-    m_has_buChar = false;
-
-    if (m_buChar)
-    {
-        delete m_buChar;
-        m_buChar = NULL;
-    }
-    ;
-
-    m_has_buBlip = false;
-
-    if (m_buBlip)
-    {
-        delete m_buBlip;
-        m_buBlip = NULL;
-    }
-    ;
-
     m_has_buClrTx = true;
     if (!m_buClrTx)
     {
@@ -112956,87 +110853,6 @@ CT_Color* CT_TextParagraphProperties::mutable_buClr()
     }
     ;
 
-    m_has_buSzTx = false;
-
-    if (m_buSzTx)
-    {
-        delete m_buSzTx;
-        m_buSzTx = NULL;
-    }
-    ;
-
-    m_has_buSzPct = false;
-
-    if (m_buSzPct)
-    {
-        delete m_buSzPct;
-        m_buSzPct = NULL;
-    }
-    ;
-
-    m_has_buSzPts = false;
-
-    if (m_buSzPts)
-    {
-        delete m_buSzPts;
-        m_buSzPts = NULL;
-    }
-    ;
-
-    m_has_buFontTx = false;
-
-    if (m_buFontTx)
-    {
-        delete m_buFontTx;
-        m_buFontTx = NULL;
-    }
-    ;
-
-    m_has_buFont = false;
-
-    if (m_buFont)
-    {
-        delete m_buFont;
-        m_buFont = NULL;
-    }
-    ;
-
-    m_has_buNone = false;
-
-    if (m_buNone)
-    {
-        delete m_buNone;
-        m_buNone = NULL;
-    }
-    ;
-
-    m_has_buAutoNum = false;
-
-    if (m_buAutoNum)
-    {
-        delete m_buAutoNum;
-        m_buAutoNum = NULL;
-    }
-    ;
-
-    m_has_buChar = false;
-
-    if (m_buChar)
-    {
-        delete m_buChar;
-        m_buChar = NULL;
-    }
-    ;
-
-    m_has_buBlip = false;
-
-    if (m_buBlip)
-    {
-        delete m_buBlip;
-        m_buBlip = NULL;
-    }
-    ;
-
     m_has_buClr = true;
     if (!m_buClr)
     {
@@ -113062,24 +110878,6 @@ bool CT_TextParagraphProperties::has_buSzTx() const
 CT_TextBulletSizeFollowText* CT_TextParagraphProperties::mutable_buSzTx()
 {
 
-    m_has_buClrTx = false;
-
-    if (m_buClrTx)
-    {
-        delete m_buClrTx;
-        m_buClrTx = NULL;
-    }
-    ;
-
-    m_has_buClr = false;
-
-    if (m_buClr)
-    {
-        delete m_buClr;
-        m_buClr = NULL;
-    }
-    ;
-
     m_has_buSzPct = false;
 
     if (m_buSzPct)
@@ -113095,60 +110893,6 @@ CT_TextBulletSizeFollowText* CT_TextParagraphProperties::mutable_buSzTx()
     {
         delete m_buSzPts;
         m_buSzPts = NULL;
-    }
-    ;
-
-    m_has_buFontTx = false;
-
-    if (m_buFontTx)
-    {
-        delete m_buFontTx;
-        m_buFontTx = NULL;
-    }
-    ;
-
-    m_has_buFont = false;
-
-    if (m_buFont)
-    {
-        delete m_buFont;
-        m_buFont = NULL;
-    }
-    ;
-
-    m_has_buNone = false;
-
-    if (m_buNone)
-    {
-        delete m_buNone;
-        m_buNone = NULL;
-    }
-    ;
-
-    m_has_buAutoNum = false;
-
-    if (m_buAutoNum)
-    {
-        delete m_buAutoNum;
-        m_buAutoNum = NULL;
-    }
-    ;
-
-    m_has_buChar = false;
-
-    if (m_buChar)
-    {
-        delete m_buChar;
-        m_buChar = NULL;
-    }
-    ;
-
-    m_has_buBlip = false;
-
-    if (m_buBlip)
-    {
-        delete m_buBlip;
-        m_buBlip = NULL;
     }
     ;
 
@@ -113177,24 +110921,6 @@ bool CT_TextParagraphProperties::has_buSzPct() const
 CT_TextBulletSizePercent* CT_TextParagraphProperties::mutable_buSzPct()
 {
 
-    m_has_buClrTx = false;
-
-    if (m_buClrTx)
-    {
-        delete m_buClrTx;
-        m_buClrTx = NULL;
-    }
-    ;
-
-    m_has_buClr = false;
-
-    if (m_buClr)
-    {
-        delete m_buClr;
-        m_buClr = NULL;
-    }
-    ;
-
     m_has_buSzTx = false;
 
     if (m_buSzTx)
@@ -113210,60 +110936,6 @@ CT_TextBulletSizePercent* CT_TextParagraphProperties::mutable_buSzPct()
     {
         delete m_buSzPts;
         m_buSzPts = NULL;
-    }
-    ;
-
-    m_has_buFontTx = false;
-
-    if (m_buFontTx)
-    {
-        delete m_buFontTx;
-        m_buFontTx = NULL;
-    }
-    ;
-
-    m_has_buFont = false;
-
-    if (m_buFont)
-    {
-        delete m_buFont;
-        m_buFont = NULL;
-    }
-    ;
-
-    m_has_buNone = false;
-
-    if (m_buNone)
-    {
-        delete m_buNone;
-        m_buNone = NULL;
-    }
-    ;
-
-    m_has_buAutoNum = false;
-
-    if (m_buAutoNum)
-    {
-        delete m_buAutoNum;
-        m_buAutoNum = NULL;
-    }
-    ;
-
-    m_has_buChar = false;
-
-    if (m_buChar)
-    {
-        delete m_buChar;
-        m_buChar = NULL;
-    }
-    ;
-
-    m_has_buBlip = false;
-
-    if (m_buBlip)
-    {
-        delete m_buBlip;
-        m_buBlip = NULL;
     }
     ;
 
@@ -113292,24 +110964,6 @@ bool CT_TextParagraphProperties::has_buSzPts() const
 CT_TextBulletSizePoint* CT_TextParagraphProperties::mutable_buSzPts()
 {
 
-    m_has_buClrTx = false;
-
-    if (m_buClrTx)
-    {
-        delete m_buClrTx;
-        m_buClrTx = NULL;
-    }
-    ;
-
-    m_has_buClr = false;
-
-    if (m_buClr)
-    {
-        delete m_buClr;
-        m_buClr = NULL;
-    }
-    ;
-
     m_has_buSzTx = false;
 
     if (m_buSzTx)
@@ -113325,60 +110979,6 @@ CT_TextBulletSizePoint* CT_TextParagraphProperties::mutable_buSzPts()
     {
         delete m_buSzPct;
         m_buSzPct = NULL;
-    }
-    ;
-
-    m_has_buFontTx = false;
-
-    if (m_buFontTx)
-    {
-        delete m_buFontTx;
-        m_buFontTx = NULL;
-    }
-    ;
-
-    m_has_buFont = false;
-
-    if (m_buFont)
-    {
-        delete m_buFont;
-        m_buFont = NULL;
-    }
-    ;
-
-    m_has_buNone = false;
-
-    if (m_buNone)
-    {
-        delete m_buNone;
-        m_buNone = NULL;
-    }
-    ;
-
-    m_has_buAutoNum = false;
-
-    if (m_buAutoNum)
-    {
-        delete m_buAutoNum;
-        m_buAutoNum = NULL;
-    }
-    ;
-
-    m_has_buChar = false;
-
-    if (m_buChar)
-    {
-        delete m_buChar;
-        m_buChar = NULL;
-    }
-    ;
-
-    m_has_buBlip = false;
-
-    if (m_buBlip)
-    {
-        delete m_buBlip;
-        m_buBlip = NULL;
     }
     ;
 
@@ -113407,93 +111007,12 @@ bool CT_TextParagraphProperties::has_buFontTx() const
 CT_TextBulletTypefaceFollowText* CT_TextParagraphProperties::mutable_buFontTx()
 {
 
-    m_has_buClrTx = false;
-
-    if (m_buClrTx)
-    {
-        delete m_buClrTx;
-        m_buClrTx = NULL;
-    }
-    ;
-
-    m_has_buClr = false;
-
-    if (m_buClr)
-    {
-        delete m_buClr;
-        m_buClr = NULL;
-    }
-    ;
-
-    m_has_buSzTx = false;
-
-    if (m_buSzTx)
-    {
-        delete m_buSzTx;
-        m_buSzTx = NULL;
-    }
-    ;
-
-    m_has_buSzPct = false;
-
-    if (m_buSzPct)
-    {
-        delete m_buSzPct;
-        m_buSzPct = NULL;
-    }
-    ;
-
-    m_has_buSzPts = false;
-
-    if (m_buSzPts)
-    {
-        delete m_buSzPts;
-        m_buSzPts = NULL;
-    }
-    ;
-
     m_has_buFont = false;
 
     if (m_buFont)
     {
         delete m_buFont;
         m_buFont = NULL;
-    }
-    ;
-
-    m_has_buNone = false;
-
-    if (m_buNone)
-    {
-        delete m_buNone;
-        m_buNone = NULL;
-    }
-    ;
-
-    m_has_buAutoNum = false;
-
-    if (m_buAutoNum)
-    {
-        delete m_buAutoNum;
-        m_buAutoNum = NULL;
-    }
-    ;
-
-    m_has_buChar = false;
-
-    if (m_buChar)
-    {
-        delete m_buChar;
-        m_buChar = NULL;
-    }
-    ;
-
-    m_has_buBlip = false;
-
-    if (m_buBlip)
-    {
-        delete m_buBlip;
-        m_buBlip = NULL;
     }
     ;
 
@@ -113522,93 +111041,12 @@ bool CT_TextParagraphProperties::has_buFont() const
 CT_TextFont* CT_TextParagraphProperties::mutable_buFont()
 {
 
-    m_has_buClrTx = false;
-
-    if (m_buClrTx)
-    {
-        delete m_buClrTx;
-        m_buClrTx = NULL;
-    }
-    ;
-
-    m_has_buClr = false;
-
-    if (m_buClr)
-    {
-        delete m_buClr;
-        m_buClr = NULL;
-    }
-    ;
-
-    m_has_buSzTx = false;
-
-    if (m_buSzTx)
-    {
-        delete m_buSzTx;
-        m_buSzTx = NULL;
-    }
-    ;
-
-    m_has_buSzPct = false;
-
-    if (m_buSzPct)
-    {
-        delete m_buSzPct;
-        m_buSzPct = NULL;
-    }
-    ;
-
-    m_has_buSzPts = false;
-
-    if (m_buSzPts)
-    {
-        delete m_buSzPts;
-        m_buSzPts = NULL;
-    }
-    ;
-
     m_has_buFontTx = false;
 
     if (m_buFontTx)
     {
         delete m_buFontTx;
         m_buFontTx = NULL;
-    }
-    ;
-
-    m_has_buNone = false;
-
-    if (m_buNone)
-    {
-        delete m_buNone;
-        m_buNone = NULL;
-    }
-    ;
-
-    m_has_buAutoNum = false;
-
-    if (m_buAutoNum)
-    {
-        delete m_buAutoNum;
-        m_buAutoNum = NULL;
-    }
-    ;
-
-    m_has_buChar = false;
-
-    if (m_buChar)
-    {
-        delete m_buChar;
-        m_buChar = NULL;
-    }
-    ;
-
-    m_has_buBlip = false;
-
-    if (m_buBlip)
-    {
-        delete m_buBlip;
-        m_buBlip = NULL;
     }
     ;
 
@@ -113636,69 +111074,6 @@ bool CT_TextParagraphProperties::has_buNone() const
 
 CT_TextNoBullet* CT_TextParagraphProperties::mutable_buNone()
 {
-
-    m_has_buClrTx = false;
-
-    if (m_buClrTx)
-    {
-        delete m_buClrTx;
-        m_buClrTx = NULL;
-    }
-    ;
-
-    m_has_buClr = false;
-
-    if (m_buClr)
-    {
-        delete m_buClr;
-        m_buClr = NULL;
-    }
-    ;
-
-    m_has_buSzTx = false;
-
-    if (m_buSzTx)
-    {
-        delete m_buSzTx;
-        m_buSzTx = NULL;
-    }
-    ;
-
-    m_has_buSzPct = false;
-
-    if (m_buSzPct)
-    {
-        delete m_buSzPct;
-        m_buSzPct = NULL;
-    }
-    ;
-
-    m_has_buSzPts = false;
-
-    if (m_buSzPts)
-    {
-        delete m_buSzPts;
-        m_buSzPts = NULL;
-    }
-    ;
-
-    m_has_buFontTx = false;
-
-    if (m_buFontTx)
-    {
-        delete m_buFontTx;
-        m_buFontTx = NULL;
-    }
-    ;
-
-    m_has_buFont = false;
-
-    if (m_buFont)
-    {
-        delete m_buFont;
-        m_buFont = NULL;
-    }
-    ;
 
     m_has_buAutoNum = false;
 
@@ -113752,69 +111127,6 @@ bool CT_TextParagraphProperties::has_buAutoNum() const
 CT_TextAutonumberBullet* CT_TextParagraphProperties::mutable_buAutoNum()
 {
 
-    m_has_buClrTx = false;
-
-    if (m_buClrTx)
-    {
-        delete m_buClrTx;
-        m_buClrTx = NULL;
-    }
-    ;
-
-    m_has_buClr = false;
-
-    if (m_buClr)
-    {
-        delete m_buClr;
-        m_buClr = NULL;
-    }
-    ;
-
-    m_has_buSzTx = false;
-
-    if (m_buSzTx)
-    {
-        delete m_buSzTx;
-        m_buSzTx = NULL;
-    }
-    ;
-
-    m_has_buSzPct = false;
-
-    if (m_buSzPct)
-    {
-        delete m_buSzPct;
-        m_buSzPct = NULL;
-    }
-    ;
-
-    m_has_buSzPts = false;
-
-    if (m_buSzPts)
-    {
-        delete m_buSzPts;
-        m_buSzPts = NULL;
-    }
-    ;
-
-    m_has_buFontTx = false;
-
-    if (m_buFontTx)
-    {
-        delete m_buFontTx;
-        m_buFontTx = NULL;
-    }
-    ;
-
-    m_has_buFont = false;
-
-    if (m_buFont)
-    {
-        delete m_buFont;
-        m_buFont = NULL;
-    }
-    ;
-
     m_has_buNone = false;
 
     if (m_buNone)
@@ -113867,69 +111179,6 @@ bool CT_TextParagraphProperties::has_buChar() const
 CT_TextCharBullet* CT_TextParagraphProperties::mutable_buChar()
 {
 
-    m_has_buClrTx = false;
-
-    if (m_buClrTx)
-    {
-        delete m_buClrTx;
-        m_buClrTx = NULL;
-    }
-    ;
-
-    m_has_buClr = false;
-
-    if (m_buClr)
-    {
-        delete m_buClr;
-        m_buClr = NULL;
-    }
-    ;
-
-    m_has_buSzTx = false;
-
-    if (m_buSzTx)
-    {
-        delete m_buSzTx;
-        m_buSzTx = NULL;
-    }
-    ;
-
-    m_has_buSzPct = false;
-
-    if (m_buSzPct)
-    {
-        delete m_buSzPct;
-        m_buSzPct = NULL;
-    }
-    ;
-
-    m_has_buSzPts = false;
-
-    if (m_buSzPts)
-    {
-        delete m_buSzPts;
-        m_buSzPts = NULL;
-    }
-    ;
-
-    m_has_buFontTx = false;
-
-    if (m_buFontTx)
-    {
-        delete m_buFontTx;
-        m_buFontTx = NULL;
-    }
-    ;
-
-    m_has_buFont = false;
-
-    if (m_buFont)
-    {
-        delete m_buFont;
-        m_buFont = NULL;
-    }
-    ;
-
     m_has_buNone = false;
 
     if (m_buNone)
@@ -113981,69 +111230,6 @@ bool CT_TextParagraphProperties::has_buBlip() const
 
 CT_TextBlipBullet* CT_TextParagraphProperties::mutable_buBlip()
 {
-
-    m_has_buClrTx = false;
-
-    if (m_buClrTx)
-    {
-        delete m_buClrTx;
-        m_buClrTx = NULL;
-    }
-    ;
-
-    m_has_buClr = false;
-
-    if (m_buClr)
-    {
-        delete m_buClr;
-        m_buClr = NULL;
-    }
-    ;
-
-    m_has_buSzTx = false;
-
-    if (m_buSzTx)
-    {
-        delete m_buSzTx;
-        m_buSzTx = NULL;
-    }
-    ;
-
-    m_has_buSzPct = false;
-
-    if (m_buSzPct)
-    {
-        delete m_buSzPct;
-        m_buSzPct = NULL;
-    }
-    ;
-
-    m_has_buSzPts = false;
-
-    if (m_buSzPts)
-    {
-        delete m_buSzPts;
-        m_buSzPts = NULL;
-    }
-    ;
-
-    m_has_buFontTx = false;
-
-    if (m_buFontTx)
-    {
-        delete m_buFontTx;
-        m_buFontTx = NULL;
-    }
-    ;
-
-    m_has_buFont = false;
-
-    if (m_buFont)
-    {
-        delete m_buFont;
-        m_buFont = NULL;
-    }
-    ;
 
     m_has_buNone = false;
 
@@ -114498,8 +111684,8 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     }
 
     {
-        bool elemHasValueList[11] = {m_has_buClrTx, m_has_buClr, m_has_buSzTx, m_has_buSzPct, m_has_buSzPts, m_has_buFontTx, m_has_buFont, m_has_buNone, m_has_buAutoNum, m_has_buChar, m_has_buBlip};
-        int cnt = count(elemHasValueList, elemHasValueList + 11, true);
+        bool elemHasValueList[2] = {m_has_buClrTx, m_has_buClr};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
         assert(cnt == 1);
     }
 
@@ -114513,6 +111699,12 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     if (m_has_buClr)
     {
         m_buClr->toXmlElem("a:buClr", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[3] = {m_has_buSzTx, m_has_buSzPct, m_has_buSzPts};
+        int cnt = count(elemHasValueList, elemHasValueList + 3, true);
+        assert(cnt == 1);
     }
 
 
@@ -114533,6 +111725,12 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
         m_buSzPts->toXmlElem("a:buSzPts", "", _outStream);
     }
 
+    {
+        bool elemHasValueList[2] = {m_has_buFontTx, m_has_buFont};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
+    }
+
 
     if (m_has_buFontTx)
     {
@@ -114543,6 +111741,12 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     if (m_has_buFont)
     {
         m_buFont->toXmlElem("a:buFont", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[4] = {m_has_buNone, m_has_buAutoNum, m_has_buChar, m_has_buBlip};
+        int cnt = count(elemHasValueList, elemHasValueList + 4, true);
+        assert(cnt == 1);
     }
 
 
@@ -115198,24 +112402,6 @@ CT_NoFillProperties* CT_BackgroundFormatting::mutable_noFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_noFill = true;
     if (!m_noFill)
     {
@@ -115283,24 +112469,6 @@ CT_SolidColorFillProperties* CT_BackgroundFormatting::mutable_solidFill()
     {
         delete m_grpFill;
         m_grpFill = NULL;
-    }
-    ;
-
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
     }
     ;
 
@@ -115374,24 +112542,6 @@ CT_GradientFillProperties* CT_BackgroundFormatting::mutable_gradFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_gradFill = true;
     if (!m_gradFill)
     {
@@ -115459,24 +112609,6 @@ CT_BlipFillProperties* CT_BackgroundFormatting::mutable_blipFill()
     {
         delete m_grpFill;
         m_grpFill = NULL;
-    }
-    ;
-
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
     }
     ;
 
@@ -115550,24 +112682,6 @@ CT_PatternFillProperties* CT_BackgroundFormatting::mutable_pattFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_pattFill = true;
     if (!m_pattFill)
     {
@@ -115638,24 +112752,6 @@ CT_GroupFillProperties* CT_BackgroundFormatting::mutable_grpFill()
     }
     ;
 
-    m_has_effectLst = false;
-
-    if (m_effectLst)
-    {
-        delete m_effectLst;
-        m_effectLst = NULL;
-    }
-    ;
-
-    m_has_effectDag = false;
-
-    if (m_effectDag)
-    {
-        delete m_effectDag;
-        m_effectDag = NULL;
-    }
-    ;
-
     m_has_grpFill = true;
     if (!m_grpFill)
     {
@@ -115680,60 +112776,6 @@ bool CT_BackgroundFormatting::has_effectLst() const
 
 CT_EffectList* CT_BackgroundFormatting::mutable_effectLst()
 {
-
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
 
     m_has_effectDag = false;
 
@@ -115768,60 +112810,6 @@ bool CT_BackgroundFormatting::has_effectDag() const
 
 CT_EffectContainer* CT_BackgroundFormatting::mutable_effectDag()
 {
-
-    m_has_noFill = false;
-
-    if (m_noFill)
-    {
-        delete m_noFill;
-        m_noFill = NULL;
-    }
-    ;
-
-    m_has_solidFill = false;
-
-    if (m_solidFill)
-    {
-        delete m_solidFill;
-        m_solidFill = NULL;
-    }
-    ;
-
-    m_has_gradFill = false;
-
-    if (m_gradFill)
-    {
-        delete m_gradFill;
-        m_gradFill = NULL;
-    }
-    ;
-
-    m_has_blipFill = false;
-
-    if (m_blipFill)
-    {
-        delete m_blipFill;
-        m_blipFill = NULL;
-    }
-    ;
-
-    m_has_pattFill = false;
-
-    if (m_pattFill)
-    {
-        delete m_pattFill;
-        m_pattFill = NULL;
-    }
-    ;
-
-    m_has_grpFill = false;
-
-    if (m_grpFill)
-    {
-        delete m_grpFill;
-        m_grpFill = NULL;
-    }
-    ;
 
     m_has_effectLst = false;
 
@@ -115936,8 +112924,8 @@ void CT_BackgroundFormatting::toXmlElem(const std::string& _elemName, const std:
     _outStream << ">";
 
     {
-        bool elemHasValueList[8] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill, m_has_effectLst, m_has_effectDag};
-        int cnt = count(elemHasValueList, elemHasValueList + 8, true);
+        bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
+        int cnt = count(elemHasValueList, elemHasValueList + 6, true);
         assert(cnt == 1);
     }
 
@@ -115975,6 +112963,12 @@ void CT_BackgroundFormatting::toXmlElem(const std::string& _elemName, const std:
     if (m_has_grpFill)
     {
         m_grpFill->toXmlElem("a:grpFill", "", _outStream);
+    }
+
+    {
+        bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
+        assert(cnt == 1);
     }
 
 

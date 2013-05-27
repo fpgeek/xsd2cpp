@@ -7,6 +7,7 @@
 #include "shared-documentPropertiesVariantTypes_xsd.h"
 #include "shared-relationships_xsd.h"
 #include "pml_xsd.h"
+#include "dml-main_xsd.h"
 
 int main()
 {
@@ -40,6 +41,10 @@ int main()
             relationships.toXml(fileStream);
             fileStream.close();
         }
+        
+//        ns_a::CT_TextParagraphProperties pp;
+//        pp.mutable_buChar();
+//        pp.mutable_buFont();
 
 //        ns_a::ST_PositiveFixedPercentage *pfp = new ns_a::ST_PositiveFixedPercentage();
 //        pfp->mutable_ST_PositiveFixedPercentage()->set_string("test");

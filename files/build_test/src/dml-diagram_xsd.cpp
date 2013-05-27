@@ -286,7 +286,10 @@ ST_LayoutShapeType::ST_LayoutShapeType()
 {
 }
 ST_LayoutShapeType::ST_LayoutShapeType(const ST_LayoutShapeType& _ST_LayoutShapeType)
-
+    :m_has_ST_ShapeType(false),
+     m_ST_ShapeType(NULL),
+     m_has_ST_OutputShapeType(false),
+     m_ST_OutputShapeType(NULL)
 {
 
     m_has_ST_ShapeType = _ST_LayoutShapeType.has_ST_ShapeType();
@@ -564,7 +567,78 @@ ST_ParameterVal::ST_ParameterVal()
 {
 }
 ST_ParameterVal::ST_ParameterVal(const ST_ParameterVal& _ST_ParameterVal)
-
+    :m_has_ST_DiagramHorizontalAlignment(false),
+     m_ST_DiagramHorizontalAlignment(NULL),
+     m_has_ST_VerticalAlignment(false),
+     m_ST_VerticalAlignment(NULL),
+     m_has_ST_ChildDirection(false),
+     m_ST_ChildDirection(NULL),
+     m_has_ST_ChildAlignment(false),
+     m_ST_ChildAlignment(NULL),
+     m_has_ST_SecondaryChildAlignment(false),
+     m_ST_SecondaryChildAlignment(NULL),
+     m_has_ST_LinearDirection(false),
+     m_ST_LinearDirection(NULL),
+     m_has_ST_SecondaryLinearDirection(false),
+     m_ST_SecondaryLinearDirection(NULL),
+     m_has_ST_StartingElement(false),
+     m_ST_StartingElement(NULL),
+     m_has_ST_BendPoint(false),
+     m_ST_BendPoint(NULL),
+     m_has_ST_ConnectorRouting(false),
+     m_ST_ConnectorRouting(NULL),
+     m_has_ST_ArrowheadStyle(false),
+     m_ST_ArrowheadStyle(NULL),
+     m_has_ST_ConnectorDimension(false),
+     m_ST_ConnectorDimension(NULL),
+     m_has_ST_RotationPath(false),
+     m_ST_RotationPath(NULL),
+     m_has_ST_CenterShapeMapping(false),
+     m_ST_CenterShapeMapping(NULL),
+     m_has_ST_NodeHorizontalAlignment(false),
+     m_ST_NodeHorizontalAlignment(NULL),
+     m_has_ST_NodeVerticalAlignment(false),
+     m_ST_NodeVerticalAlignment(NULL),
+     m_has_ST_FallbackDimension(false),
+     m_ST_FallbackDimension(NULL),
+     m_has_ST_TextDirection(false),
+     m_ST_TextDirection(NULL),
+     m_has_ST_PyramidAccentPosition(false),
+     m_ST_PyramidAccentPosition(NULL),
+     m_has_ST_PyramidAccentTextMargin(false),
+     m_ST_PyramidAccentTextMargin(NULL),
+     m_has_ST_TextBlockDirection(false),
+     m_ST_TextBlockDirection(NULL),
+     m_has_ST_TextAnchorHorizontal(false),
+     m_ST_TextAnchorHorizontal(NULL),
+     m_has_ST_TextAnchorVertical(false),
+     m_ST_TextAnchorVertical(NULL),
+     m_has_ST_DiagramTextAlignment(false),
+     m_ST_DiagramTextAlignment(NULL),
+     m_has_ST_AutoTextRotation(false),
+     m_ST_AutoTextRotation(NULL),
+     m_has_ST_GrowDirection(false),
+     m_ST_GrowDirection(NULL),
+     m_has_ST_FlowDirection(false),
+     m_ST_FlowDirection(NULL),
+     m_has_ST_ContinueDirection(false),
+     m_ST_ContinueDirection(NULL),
+     m_has_ST_Breakpoint(false),
+     m_ST_Breakpoint(NULL),
+     m_has_ST_Offset(false),
+     m_ST_Offset(NULL),
+     m_has_ST_HierarchyAlignment(false),
+     m_ST_HierarchyAlignment(NULL),
+     m_has_int(false),
+     m_int(0),
+     m_has_double(false),
+     m_double(0),
+     m_has_boolean(false),
+     m_boolean(false),
+     m_has_string(false),
+     m_string(""),
+     m_has_ST_ConnectorPoint(false),
+     m_ST_ConnectorPoint(NULL)
 {
 
     m_has_ST_DiagramHorizontalAlignment = _ST_ParameterVal.has_ST_DiagramHorizontalAlignment();
@@ -3721,7 +3795,10 @@ ST_ModelId::ST_ModelId()
 {
 }
 ST_ModelId::ST_ModelId(const ST_ModelId& _ST_ModelId)
-
+    :m_has_int(false),
+     m_int(0),
+     m_has_ST_Guid(false),
+     m_ST_Guid(NULL)
 {
 
     m_has_int = _ST_ModelId.has_int();
@@ -3855,7 +3932,10 @@ ST_PrSetCustVal::ST_PrSetCustVal()
 {
 }
 ST_PrSetCustVal::ST_PrSetCustVal(const ST_PrSetCustVal& _ST_PrSetCustVal)
-
+    :m_has_ST_Percentage(false),
+     m_ST_Percentage(NULL),
+     m_has_int(false),
+     m_int(0)
 {
 
     m_has_ST_Percentage = _ST_PrSetCustVal.has_ST_Percentage();
@@ -7601,7 +7681,20 @@ ST_FunctionValue::ST_FunctionValue()
 {
 }
 ST_FunctionValue::ST_FunctionValue(const ST_FunctionValue& _ST_FunctionValue)
-
+    :m_has_int(false),
+     m_int(0),
+     m_has_boolean(false),
+     m_boolean(false),
+     m_has_ST_Direction(false),
+     m_ST_Direction(NULL),
+     m_has_ST_HierBranchStyle(false),
+     m_ST_HierBranchStyle(NULL),
+     m_has_ST_AnimOneStr(false),
+     m_ST_AnimOneStr(NULL),
+     m_has_ST_AnimLvlStr(false),
+     m_ST_AnimLvlStr(NULL),
+     m_has_ST_ResizeHandlesStr(false),
+     m_ST_ResizeHandlesStr(NULL)
 {
 
     m_has_int = _ST_FunctionValue.has_int();
@@ -8095,7 +8188,8 @@ ST_FunctionArgument::ST_FunctionArgument()
 {
 }
 ST_FunctionArgument::ST_FunctionArgument(const ST_FunctionArgument& _ST_FunctionArgument)
-
+    :m_has_ST_VariableType(false),
+     m_ST_VariableType(NULL)
 {
 
     m_has_ST_VariableType = _ST_FunctionArgument.has_ST_VariableType();

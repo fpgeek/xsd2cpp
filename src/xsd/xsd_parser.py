@@ -539,6 +539,7 @@ class ALL_SCHEMA:
         return pbElem
 
     def _parseGroup(self, xmlSchema, groupElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix=None):
+
         maxOccurs = parseMaxOccurs(groupElem)
         if pbMaxOccurs is None:
             pbMaxOccurs = maxOccurs
@@ -563,6 +564,7 @@ class ALL_SCHEMA:
             otherGroupElem, otherSchema = self._findGroup(xmlSchema, ref)
             if hasNsPrefix(ref):
                 nsPrefix = getNsPrefix(ref)
+            pbElemCont = pbComplexType.element_container.add()
             self._parseGroup(otherSchema, otherGroupElem, pbComplexType, pbContType, pbElemCont, pbMaxOccurs, nsPrefix)
 
         for childElem in groupElem:

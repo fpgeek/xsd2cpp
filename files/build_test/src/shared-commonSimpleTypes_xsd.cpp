@@ -611,7 +611,10 @@ ST_OnOff::ST_OnOff()
 {
 }
 ST_OnOff::ST_OnOff(const ST_OnOff& _ST_OnOff)
-
+    :m_has_boolean(false),
+     m_boolean(false),
+     m_has_ST_OnOff1(false),
+     m_ST_OnOff1(NULL)
 {
 
     m_has_boolean = _ST_OnOff.has_boolean();
@@ -1134,7 +1137,10 @@ ST_TwipsMeasure::ST_TwipsMeasure()
 {
 }
 ST_TwipsMeasure::ST_TwipsMeasure(const ST_TwipsMeasure& _ST_TwipsMeasure)
-
+    :m_has_ST_UnsignedDecimalNumber(false),
+     m_ST_UnsignedDecimalNumber(NULL),
+     m_has_ST_PositiveUniversalMeasure(false),
+     m_ST_PositiveUniversalMeasure(NULL)
 {
 
     m_has_ST_UnsignedDecimalNumber = _ST_TwipsMeasure.has_ST_UnsignedDecimalNumber();

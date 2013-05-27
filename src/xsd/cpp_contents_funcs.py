@@ -879,6 +879,9 @@ if (%(hasVarName)s)
 
     # deep copy 복사생성자
     copyConstructor = cppClass.constructor.add()
+    for constInit in constInitList:
+        newConstInit = copyConstructor.const_init.add()
+        newConstInit.CopyFrom(constInit)
     arg = copyConstructor.argument.add()
     arg.type = '%s&' % cppClass.name
     arg.name = '_%s' % cppClass.name
