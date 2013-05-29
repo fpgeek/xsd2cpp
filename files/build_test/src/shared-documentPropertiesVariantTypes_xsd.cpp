@@ -580,6 +580,11 @@ void CT_Vector::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -2962,6 +2967,11 @@ void CT_Array::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -17430,6 +17440,11 @@ void vector_element::toXml(std::ostream& _outStream) const
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -19810,6 +19825,11 @@ void array_element::toXml(std::ostream& _outStream) const
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;

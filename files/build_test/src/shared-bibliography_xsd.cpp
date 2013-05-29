@@ -77,8 +77,8 @@ void CT_NameListType::toXmlElem(const std::string& _elemName, const std::string&
     _outStream << ">";
 
     {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_Person));
-        assert(1 <= elemCnt);
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -195,6 +195,11 @@ void CT_PersonType::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -29623,6 +29628,11 @@ void CT_Sources::toXmlElem(const std::string& _elemName, const std::string& _xml
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -29830,6 +29840,11 @@ void Sources_element::toXml(std::ostream& _outStream) const
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;

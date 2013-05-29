@@ -9521,6 +9521,11 @@ void CT_CustomColorList::toXmlElem(const std::string& _elemName, const std::stri
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -9782,6 +9787,11 @@ void CT_FontCollection::toXmlElem(const std::string& _elemName, const std::strin
     if (m_has_cs)
     {
         m_cs->toXmlElem("a:cs", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -10347,6 +10357,11 @@ void CT_FillStyleList::toXmlElem(const std::string& _elemName, const std::string
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -10881,8 +10896,8 @@ void CT_LineStyleList::toXmlElem(const std::string& _elemName, const std::string
     _outStream << ">";
 
     {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_ln));
-        assert(3 <= elemCnt);
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -10985,8 +11000,8 @@ void CT_EffectStyleList::toXmlElem(const std::string& _elemName, const std::stri
     _outStream << ">";
 
     {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_effectStyle));
-        assert(3 <= elemCnt);
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -11127,6 +11142,11 @@ void CT_BackgroundFillStyleList::toXmlElem(const std::string& _elemName, const s
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -13382,6 +13402,11 @@ void CT_ScRgbColor::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -21470,6 +21495,11 @@ void CT_SRgbColor::toXmlElem(const std::string& _elemName, const std::string& _x
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -29550,6 +29580,11 @@ void CT_HslColor::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -37656,6 +37691,11 @@ void CT_SystemColor::toXmlElem(const std::string& _elemName, const std::string& 
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -45722,6 +45762,11 @@ void CT_SchemeColor::toXmlElem(const std::string& _elemName, const std::string& 
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -53768,6 +53813,11 @@ void CT_PresetColor::toXmlElem(const std::string& _elemName, const std::string& 
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -61582,6 +61632,11 @@ void CT_OfficeArtExtensionList::toXmlElem(const std::string& _elemName, const st
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -63544,6 +63599,11 @@ void CT_ColorMRU::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -69147,7 +69207,7 @@ void CT_BackgrCT_TextEffectoundFormatting::toXmlElem(const std::string& _elemNam
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -69189,7 +69249,7 @@ void CT_BackgrCT_TextEffectoundFormatting::toXmlElem(const std::string& _elemNam
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -69374,7 +69434,7 @@ void CT_WholeE2oFormatting::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -73919,7 +73979,7 @@ void CT_AlphaInverseEffect::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -75160,38 +75220,8 @@ void CT_DuotoneEffect::toXmlElem(const std::string& _elemName, const std::string
     _outStream << ">";
 
     {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_scrgbClr));
-        assert(1 <= elemCnt && elemCnt <= 1);
-    }
-
-
-    {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_srgbClr));
-        assert(1 <= elemCnt && elemCnt <= 1);
-    }
-
-
-    {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_hslClr));
-        assert(1 <= elemCnt && elemCnt <= 1);
-    }
-
-
-    {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_sysClr));
-        assert(1 <= elemCnt && elemCnt <= 1);
-    }
-
-
-    {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_schemeClr));
-        assert(1 <= elemCnt && elemCnt <= 1);
-    }
-
-
-    {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_prstClr));
-        assert(1 <= elemCnt && elemCnt <= 1);
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 2);
     }
 
     {
@@ -80498,7 +80528,7 @@ void CT_SolidColorFillProperties::toXmlElem(const std::string& _elemName, const 
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -81408,8 +81438,8 @@ void CT_GradientStopList::toXmlElem(const std::string& _elemName, const std::str
     _outStream << ">";
 
     {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_gs));
-        assert(2 <= elemCnt);
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -81691,7 +81721,7 @@ void CT_GradientFillProperties::toXmlElem(const std::string& _elemName, const st
     {
         bool elemHasValueList[2] = {m_has_lin, m_has_path};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -85678,7 +85708,7 @@ void CT_BlipFillProperties::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[2] = {m_has_tile, m_has_stretch};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -88679,6 +88709,11 @@ void CT_GeomGuideList::toXmlElem(const std::string& _elemName, const std::string
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -89962,6 +89997,11 @@ void CT_ConnectionSiteList::toXmlElem(const std::string& _elemName, const std::s
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -90507,8 +90547,8 @@ void CT_Path2DQuadBezierTo::toXmlElem(const std::string& _elemName, const std::s
     _outStream << ">";
 
     {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pt));
-        assert(2 <= elemCnt && elemCnt <= 2);
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -90611,8 +90651,8 @@ void CT_Path2DCubicBezierTo::toXmlElem(const std::string& _elemName, const std::
     _outStream << ">";
 
     {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_pt));
-        assert(3 <= elemCnt && elemCnt <= 3);
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -91492,6 +91532,11 @@ void CT_Path2DList::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -92585,6 +92630,11 @@ void CT_DashStopList::toXmlElem(const std::string& _elemName, const std::string&
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -93348,7 +93398,7 @@ void CT_LineProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[4] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_pattFill};
         int cnt = count(elemHasValueList, elemHasValueList + 4, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -93378,7 +93428,7 @@ void CT_LineProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[2] = {m_has_prstDash, m_has_custDash};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -93396,7 +93446,7 @@ void CT_LineProperties::toXmlElem(const std::string& _elemName, const std::strin
     {
         bool elemHasValueList[3] = {m_has_round, m_has_bevel, m_has_miter};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -94418,7 +94468,7 @@ void CT_ShapeProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[2] = {m_has_custGeom, m_has_prstGeom};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -94436,7 +94486,7 @@ void CT_ShapeProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -94484,7 +94534,7 @@ void CT_ShapeProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -95280,7 +95330,7 @@ void CT_GroupShapeProperties::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -95322,7 +95372,7 @@ void CT_GroupShapeProperties::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -95911,7 +95961,7 @@ void CT_StyleMatrixReference::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -96512,7 +96562,7 @@ void CT_FontReference::toXmlElem(const std::string& _elemName, const std::string
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -98117,6 +98167,11 @@ void CT_ColorSchemeList::toXmlElem(const std::string& _elemName, const std::stri
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -99734,7 +99789,7 @@ void CT_TableCellProperties::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -100200,6 +100255,11 @@ void CT_TableGrid::toXmlElem(const std::string& _elemName, const std::string& _x
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -100646,6 +100706,11 @@ void CT_TableRow::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;
@@ -101613,7 +101678,7 @@ void CT_TableProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -101655,7 +101720,7 @@ void CT_TableProperties::toXmlElem(const std::string& _elemName, const std::stri
     {
         bool elemHasValueList[4] = {m_has_effectLst, m_has_effectDag, m_has_tableStyle, m_has_tableStyleId};
         int cnt = count(elemHasValueList, elemHasValueList + 4, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -101935,6 +102000,11 @@ void CT_Table::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     if (m_has_tblGrid)
     {
         m_tblGrid->toXmlElem("a:tblGrid", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -103009,7 +103079,7 @@ void CT_TableStyleTextStyle::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[2] = {m_has_font, m_has_fontRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -103027,7 +103097,7 @@ void CT_TableStyleTextStyle::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[6] = {m_has_scrgbClr, m_has_srgbClr, m_has_hslClr, m_has_sysClr, m_has_schemeClr, m_has_prstClr};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -103736,7 +103806,7 @@ void CT_TableBackgroundStyle::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_fill, m_has_fillRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -103754,7 +103824,7 @@ void CT_TableBackgroundStyle::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_effect, m_has_effectRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -103974,7 +104044,7 @@ void CT_TableStyleCellStyle::toXmlElem(const std::string& _elemName, const std::
     {
         bool elemHasValueList[2] = {m_has_fill, m_has_fillRef};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -104900,6 +104970,11 @@ void CT_TableStyleList::toXmlElem(const std::string& _elemName, const std::strin
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -105107,6 +105182,11 @@ void CT_TextParagraph::toXmlElem(const std::string& _elemName, const std::string
     if (m_has_pPr)
     {
         m_pPr->toXmlElem("a:pPr", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -106653,7 +106733,7 @@ void CT_TextBodyProperties::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[3] = {m_has_noAutofit, m_has_normAutofit, m_has_spAutoFit};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -106683,7 +106763,7 @@ void CT_TextBodyProperties::toXmlElem(const std::string& _elemName, const std::s
     {
         bool elemHasValueList[2] = {m_has_sp3d, m_has_flatTx};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -107194,8 +107274,8 @@ void CT_TextBody::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_p));
-        assert(1 <= elemCnt);
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -109510,7 +109590,7 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -109552,7 +109632,7 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -109576,7 +109656,7 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_uLnTx, m_has_uLn};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -109594,7 +109674,7 @@ void CT_TextCharacterProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_uFillTx, m_has_uFill};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -110382,8 +110462,8 @@ void CT_TextTabStopList::toXmlElem(const std::string& _elemName, const std::stri
     _outStream << ">";
 
     {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_tab));
-        assert(0 <= elemCnt && elemCnt <= 32);
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -111686,7 +111766,7 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_buClrTx, m_has_buClr};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -111704,7 +111784,7 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[3] = {m_has_buSzTx, m_has_buSzPct, m_has_buSzPts};
         int cnt = count(elemHasValueList, elemHasValueList + 3, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -111728,7 +111808,7 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[2] = {m_has_buFontTx, m_has_buFont};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -111746,7 +111826,7 @@ void CT_TextParagraphProperties::toXmlElem(const std::string& _elemName, const s
     {
         bool elemHasValueList[4] = {m_has_buNone, m_has_buAutoNum, m_has_buChar, m_has_buBlip};
         int cnt = count(elemHasValueList, elemHasValueList + 4, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -112926,7 +113006,7 @@ void CT_BackgroundFormatting::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[6] = {m_has_noFill, m_has_solidFill, m_has_gradFill, m_has_blipFill, m_has_pattFill, m_has_grpFill};
         int cnt = count(elemHasValueList, elemHasValueList + 6, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -112968,7 +113048,7 @@ void CT_BackgroundFormatting::toXmlElem(const std::string& _elemName, const std:
     {
         bool elemHasValueList[2] = {m_has_effectLst, m_has_effectDag};
         int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 0 || cnt == 1);
+        assert(cnt == 1);
     }
 
 
@@ -117157,6 +117237,11 @@ void tbl_element::toXml(std::ostream& _outStream) const
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -117269,6 +117354,11 @@ void tblStyleLst_element::toXml(std::ostream& _outStream) const
     }
 
     _outStream << ">";
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
 
     {
         vector<ChildGroup_1*>::const_iterator iter;

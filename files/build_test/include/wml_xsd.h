@@ -5401,21 +5401,6 @@ private:
         bool has_tbl() const;
         CT_Tbl* mutable_tbl();
         const CT_Tbl& get_tbl() const;
-    protected:
-    private:
-        bool m_has_customXml;
-        CT_CustomXmlBlock* m_customXml;
-        bool m_has_sdt;
-        CT_SdtBlock* m_sdt;
-        bool m_has_p;
-        CT_P* m_p;
-        bool m_has_tbl;
-        CT_Tbl* m_tbl;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -5425,19 +5410,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -5498,8 +5470,31 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
+        bool has_altChunk() const;
+        CT_AltChunk* mutable_altChunk();
+        const CT_AltChunk& get_altChunk() const;
     protected:
     private:
+        bool m_has_customXml;
+        CT_CustomXmlBlock* m_customXml;
+        bool m_has_sdt;
+        CT_SdtBlock* m_sdt;
+        bool m_has_p;
+        CT_P* m_p;
+        bool m_has_tbl;
+        CT_Tbl* m_tbl;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
         bool m_has_bookmarkStart;
         CT_Bookmark* m_bookmarkStart;
         bool m_has_bookmarkEnd;
@@ -5540,22 +5535,6 @@ private:
         CT_RunTrackChange* m_moveFrom;
         bool m_has_moveTo;
         CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
-        bool has_altChunk() const;
-        CT_AltChunk* mutable_altChunk();
-        const CT_AltChunk& get_altChunk() const;
-    protected:
-    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -5564,9 +5543,6 @@ private:
         CT_AltChunk* m_altChunk;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
     static CT_Comment* default_instance_;
     bool m_has_id_attr;
     ST_DecimalNumber* m_id_attr;
@@ -5990,25 +5966,6 @@ private:
         bool has_r() const;
         CT_R* mutable_r();
         const CT_R& get_r() const;
-    protected:
-    private:
-        bool m_has_customXml;
-        CT_CustomXmlRun* m_customXml;
-        bool m_has_smartTag;
-        CT_SmartTagRun* m_smartTag;
-        bool m_has_sdt;
-        CT_SdtRun* m_sdt;
-        bool m_has_dir;
-        CT_DirContentRun* m_dir;
-        bool m_has_bdo;
-        CT_BdoContentRun* m_bdo;
-        bool m_has_r;
-        CT_R* m_r;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -6018,19 +5975,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -6091,70 +6035,12 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
-    protected:
-    private:
-        bool m_has_bookmarkStart;
-        CT_Bookmark* m_bookmarkStart;
-        bool m_has_bookmarkEnd;
-        CT_MarkupRange* m_bookmarkEnd;
-        bool m_has_moveFromRangeStart;
-        CT_MoveBookmark* m_moveFromRangeStart;
-        bool m_has_moveFromRangeEnd;
-        CT_MarkupRange* m_moveFromRangeEnd;
-        bool m_has_moveToRangeStart;
-        CT_MoveBookmark* m_moveToRangeStart;
-        bool m_has_moveToRangeEnd;
-        CT_MarkupRange* m_moveToRangeEnd;
-        bool m_has_commentRangeStart;
-        CT_MarkupRange* m_commentRangeStart;
-        bool m_has_commentRangeEnd;
-        CT_MarkupRange* m_commentRangeEnd;
-        bool m_has_customXmlInsRangeStart;
-        CT_TrackChange* m_customXmlInsRangeStart;
-        bool m_has_customXmlInsRangeEnd;
-        CT_Markup* m_customXmlInsRangeEnd;
-        bool m_has_customXmlDelRangeStart;
-        CT_TrackChange* m_customXmlDelRangeStart;
-        bool m_has_customXmlDelRangeEnd;
-        CT_Markup* m_customXmlDelRangeEnd;
-        bool m_has_customXmlMoveFromRangeStart;
-        CT_TrackChange* m_customXmlMoveFromRangeStart;
-        bool m_has_customXmlMoveFromRangeEnd;
-        CT_Markup* m_customXmlMoveFromRangeEnd;
-        bool m_has_customXmlMoveToRangeStart;
-        CT_TrackChange* m_customXmlMoveToRangeStart;
-        bool m_has_customXmlMoveToRangeEnd;
-        CT_Markup* m_customXmlMoveToRangeEnd;
-        bool m_has_ins;
-        CT_RunTrackChange* m_ins;
-        bool m_has_del;
-        CT_RunTrackChange* m_del;
-        bool m_has_moveFrom;
-        CT_RunTrackChange* m_moveFrom;
-        bool m_has_moveTo;
-        CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
         bool has_m_oMathPara() const;
         ns_m::CT_OMathPara* mutable_m_oMathPara();
         const ns_m::CT_OMathPara& get_m_oMathPara() const;
         bool has_m_oMath() const;
         ns_m::CT_OMath* mutable_m_oMath();
         const ns_m::CT_OMath& get_m_oMath() const;
-    protected:
-    private:
-        bool m_has_m_oMathPara;
-        ns_m::CT_OMathPara* m_m_oMathPara;
-        bool m_has_m_oMath;
-        ns_m::CT_OMath* m_m_oMath;
-    };
-    class ChildGroup_5
-    {
-    public:
-        ChildGroup_5();
         bool has_m_acc() const;
         ns_m::CT_Acc* mutable_m_acc();
         const ns_m::CT_Acc& get_m_acc() const;
@@ -6217,6 +6103,68 @@ private:
         const ns_m::CT_R& get_m_r() const;
     protected:
     private:
+        bool m_has_customXml;
+        CT_CustomXmlRun* m_customXml;
+        bool m_has_smartTag;
+        CT_SmartTagRun* m_smartTag;
+        bool m_has_sdt;
+        CT_SdtRun* m_sdt;
+        bool m_has_dir;
+        CT_DirContentRun* m_dir;
+        bool m_has_bdo;
+        CT_BdoContentRun* m_bdo;
+        bool m_has_r;
+        CT_R* m_r;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
+        bool m_has_bookmarkStart;
+        CT_Bookmark* m_bookmarkStart;
+        bool m_has_bookmarkEnd;
+        CT_MarkupRange* m_bookmarkEnd;
+        bool m_has_moveFromRangeStart;
+        CT_MoveBookmark* m_moveFromRangeStart;
+        bool m_has_moveFromRangeEnd;
+        CT_MarkupRange* m_moveFromRangeEnd;
+        bool m_has_moveToRangeStart;
+        CT_MoveBookmark* m_moveToRangeStart;
+        bool m_has_moveToRangeEnd;
+        CT_MarkupRange* m_moveToRangeEnd;
+        bool m_has_commentRangeStart;
+        CT_MarkupRange* m_commentRangeStart;
+        bool m_has_commentRangeEnd;
+        CT_MarkupRange* m_commentRangeEnd;
+        bool m_has_customXmlInsRangeStart;
+        CT_TrackChange* m_customXmlInsRangeStart;
+        bool m_has_customXmlInsRangeEnd;
+        CT_Markup* m_customXmlInsRangeEnd;
+        bool m_has_customXmlDelRangeStart;
+        CT_TrackChange* m_customXmlDelRangeStart;
+        bool m_has_customXmlDelRangeEnd;
+        CT_Markup* m_customXmlDelRangeEnd;
+        bool m_has_customXmlMoveFromRangeStart;
+        CT_TrackChange* m_customXmlMoveFromRangeStart;
+        bool m_has_customXmlMoveFromRangeEnd;
+        CT_Markup* m_customXmlMoveFromRangeEnd;
+        bool m_has_customXmlMoveToRangeStart;
+        CT_TrackChange* m_customXmlMoveToRangeStart;
+        bool m_has_customXmlMoveToRangeEnd;
+        CT_Markup* m_customXmlMoveToRangeEnd;
+        bool m_has_ins;
+        CT_RunTrackChange* m_ins;
+        bool m_has_del;
+        CT_RunTrackChange* m_del;
+        bool m_has_moveFrom;
+        CT_RunTrackChange* m_moveFrom;
+        bool m_has_moveTo;
+        CT_RunTrackChange* m_moveTo;
+        bool m_has_m_oMathPara;
+        ns_m::CT_OMathPara* m_m_oMathPara;
+        bool m_has_m_oMath;
+        ns_m::CT_OMath* m_m_oMath;
         bool m_has_m_acc;
         ns_m::CT_Acc* m_m_acc;
         bool m_has_m_bar;
@@ -6259,10 +6207,6 @@ private:
         ns_m::CT_R* m_m_r;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
-    vector<ChildGroup_5*> m_childGroupList_5;
     static CT_RunTrackChange* default_instance_;
     bool m_has_id_attr;
     ST_DecimalNumber* m_id_attr;
@@ -7311,25 +7255,6 @@ private:
         bool has_r() const;
         CT_R* mutable_r();
         const CT_R& get_r() const;
-    protected:
-    private:
-        bool m_has_customXml;
-        CT_CustomXmlRun* m_customXml;
-        bool m_has_smartTag;
-        CT_SmartTagRun* m_smartTag;
-        bool m_has_sdt;
-        CT_SdtRun* m_sdt;
-        bool m_has_dir;
-        CT_DirContentRun* m_dir;
-        bool m_has_bdo;
-        CT_BdoContentRun* m_bdo;
-        bool m_has_r;
-        CT_R* m_r;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -7339,19 +7264,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -7412,8 +7324,41 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
+        bool has_fldSimple() const;
+        CT_SimpleField* mutable_fldSimple();
+        const CT_SimpleField& get_fldSimple() const;
+        bool has_hyperlink() const;
+        CT_Hyperlink* mutable_hyperlink();
+        const CT_Hyperlink& get_hyperlink() const;
+        bool has_subDoc() const;
+        CT_Rel* mutable_subDoc();
+        const CT_Rel& get_subDoc() const;
     protected:
     private:
+        bool m_has_customXml;
+        CT_CustomXmlRun* m_customXml;
+        bool m_has_smartTag;
+        CT_SmartTagRun* m_smartTag;
+        bool m_has_sdt;
+        CT_SdtRun* m_sdt;
+        bool m_has_dir;
+        CT_DirContentRun* m_dir;
+        bool m_has_bdo;
+        CT_BdoContentRun* m_bdo;
+        bool m_has_r;
+        CT_R* m_r;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
         bool m_has_bookmarkStart;
         CT_Bookmark* m_bookmarkStart;
         bool m_has_bookmarkEnd;
@@ -7454,28 +7399,6 @@ private:
         CT_RunTrackChange* m_moveFrom;
         bool m_has_moveTo;
         CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
-        bool has_fldSimple() const;
-        CT_SimpleField* mutable_fldSimple();
-        const CT_SimpleField& get_fldSimple() const;
-        bool has_hyperlink() const;
-        CT_Hyperlink* mutable_hyperlink();
-        const CT_Hyperlink& get_hyperlink() const;
-        bool has_subDoc() const;
-        CT_Rel* mutable_subDoc();
-        const CT_Rel& get_subDoc() const;
-    protected:
-    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -7490,9 +7413,6 @@ private:
     bool m_has_fldData;
     CT_Text* m_fldData;
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
     static CT_SimpleField* default_instance_;
     bool m_has_instr_attr;
     ns_s::ST_String* m_instr_attr;
@@ -11230,25 +11150,6 @@ private:
         bool has_r() const;
         CT_R* mutable_r();
         const CT_R& get_r() const;
-    protected:
-    private:
-        bool m_has_customXml;
-        CT_CustomXmlRun* m_customXml;
-        bool m_has_smartTag;
-        CT_SmartTagRun* m_smartTag;
-        bool m_has_sdt;
-        CT_SdtRun* m_sdt;
-        bool m_has_dir;
-        CT_DirContentRun* m_dir;
-        bool m_has_bdo;
-        CT_BdoContentRun* m_bdo;
-        bool m_has_r;
-        CT_R* m_r;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -11258,19 +11159,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -11331,8 +11219,41 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
+        bool has_fldSimple() const;
+        CT_SimpleField* mutable_fldSimple();
+        const CT_SimpleField& get_fldSimple() const;
+        bool has_hyperlink() const;
+        CT_Hyperlink* mutable_hyperlink();
+        const CT_Hyperlink& get_hyperlink() const;
+        bool has_subDoc() const;
+        CT_Rel* mutable_subDoc();
+        const CT_Rel& get_subDoc() const;
     protected:
     private:
+        bool m_has_customXml;
+        CT_CustomXmlRun* m_customXml;
+        bool m_has_smartTag;
+        CT_SmartTagRun* m_smartTag;
+        bool m_has_sdt;
+        CT_SdtRun* m_sdt;
+        bool m_has_dir;
+        CT_DirContentRun* m_dir;
+        bool m_has_bdo;
+        CT_BdoContentRun* m_bdo;
+        bool m_has_r;
+        CT_R* m_r;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
         bool m_has_bookmarkStart;
         CT_Bookmark* m_bookmarkStart;
         bool m_has_bookmarkEnd;
@@ -11373,28 +11294,6 @@ private:
         CT_RunTrackChange* m_moveFrom;
         bool m_has_moveTo;
         CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
-        bool has_fldSimple() const;
-        CT_SimpleField* mutable_fldSimple();
-        const CT_SimpleField& get_fldSimple() const;
-        bool has_hyperlink() const;
-        CT_Hyperlink* mutable_hyperlink();
-        const CT_Hyperlink& get_hyperlink() const;
-        bool has_subDoc() const;
-        CT_Rel* mutable_subDoc();
-        const CT_Rel& get_subDoc() const;
-    protected:
-    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -11409,9 +11308,6 @@ private:
     bool m_has_customXmlPr;
     CT_CustomXmlPr* m_customXmlPr;
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
     static CT_CustomXmlRun* default_instance_;
     bool m_has_uri_attr;
     ns_s::ST_String* m_uri_attr;
@@ -11494,25 +11390,6 @@ private:
         bool has_r() const;
         CT_R* mutable_r();
         const CT_R& get_r() const;
-    protected:
-    private:
-        bool m_has_customXml;
-        CT_CustomXmlRun* m_customXml;
-        bool m_has_smartTag;
-        CT_SmartTagRun* m_smartTag;
-        bool m_has_sdt;
-        CT_SdtRun* m_sdt;
-        bool m_has_dir;
-        CT_DirContentRun* m_dir;
-        bool m_has_bdo;
-        CT_BdoContentRun* m_bdo;
-        bool m_has_r;
-        CT_R* m_r;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -11522,19 +11399,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -11595,8 +11459,41 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
+        bool has_fldSimple() const;
+        CT_SimpleField* mutable_fldSimple();
+        const CT_SimpleField& get_fldSimple() const;
+        bool has_hyperlink() const;
+        CT_Hyperlink* mutable_hyperlink();
+        const CT_Hyperlink& get_hyperlink() const;
+        bool has_subDoc() const;
+        CT_Rel* mutable_subDoc();
+        const CT_Rel& get_subDoc() const;
     protected:
     private:
+        bool m_has_customXml;
+        CT_CustomXmlRun* m_customXml;
+        bool m_has_smartTag;
+        CT_SmartTagRun* m_smartTag;
+        bool m_has_sdt;
+        CT_SdtRun* m_sdt;
+        bool m_has_dir;
+        CT_DirContentRun* m_dir;
+        bool m_has_bdo;
+        CT_BdoContentRun* m_bdo;
+        bool m_has_r;
+        CT_R* m_r;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
         bool m_has_bookmarkStart;
         CT_Bookmark* m_bookmarkStart;
         bool m_has_bookmarkEnd;
@@ -11637,28 +11534,6 @@ private:
         CT_RunTrackChange* m_moveFrom;
         bool m_has_moveTo;
         CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
-        bool has_fldSimple() const;
-        CT_SimpleField* mutable_fldSimple();
-        const CT_SimpleField& get_fldSimple() const;
-        bool has_hyperlink() const;
-        CT_Hyperlink* mutable_hyperlink();
-        const CT_Hyperlink& get_hyperlink() const;
-        bool has_subDoc() const;
-        CT_Rel* mutable_subDoc();
-        const CT_Rel& get_subDoc() const;
-    protected:
-    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -11673,9 +11548,6 @@ private:
     bool m_has_smartTagPr;
     CT_SmartTagPr* m_smartTagPr;
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
     static CT_SmartTagRun* default_instance_;
     bool m_has_uri_attr;
     ns_s::ST_String* m_uri_attr;
@@ -11747,21 +11619,6 @@ private:
         bool has_tbl() const;
         CT_Tbl* mutable_tbl();
         const CT_Tbl& get_tbl() const;
-    protected:
-    private:
-        bool m_has_customXml;
-        CT_CustomXmlBlock* m_customXml;
-        bool m_has_sdt;
-        CT_SdtBlock* m_sdt;
-        bool m_has_p;
-        CT_P* m_p;
-        bool m_has_tbl;
-        CT_Tbl* m_tbl;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -11771,19 +11628,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -11844,8 +11688,28 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
     protected:
     private:
+        bool m_has_customXml;
+        CT_CustomXmlBlock* m_customXml;
+        bool m_has_sdt;
+        CT_SdtBlock* m_sdt;
+        bool m_has_p;
+        CT_P* m_p;
+        bool m_has_tbl;
+        CT_Tbl* m_tbl;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
         bool m_has_bookmarkStart;
         CT_Bookmark* m_bookmarkStart;
         bool m_has_bookmarkEnd;
@@ -11886,19 +11750,6 @@ private:
         CT_RunTrackChange* m_moveFrom;
         bool m_has_moveTo;
         CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
-    protected:
-    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -11907,9 +11758,6 @@ private:
     bool m_has_customXmlPr;
     CT_CustomXmlPr* m_customXmlPr;
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
     static CT_CustomXmlBlock* default_instance_;
     bool m_has_uri_attr;
     ns_s::ST_String* m_uri_attr;
@@ -12009,19 +11857,6 @@ private:
         bool has_sdt() const;
         CT_SdtRow* mutable_sdt();
         const CT_SdtRow& get_sdt() const;
-    protected:
-    private:
-        bool m_has_tr;
-        CT_Row* m_tr;
-        bool m_has_customXml;
-        CT_CustomXmlRow* m_customXml;
-        bool m_has_sdt;
-        CT_SdtRow* m_sdt;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -12031,19 +11866,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -12104,8 +11926,26 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
     protected:
     private:
+        bool m_has_tr;
+        CT_Row* m_tr;
+        bool m_has_customXml;
+        CT_CustomXmlRow* m_customXml;
+        bool m_has_sdt;
+        CT_SdtRow* m_sdt;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
         bool m_has_bookmarkStart;
         CT_Bookmark* m_bookmarkStart;
         bool m_has_bookmarkEnd;
@@ -12146,19 +11986,6 @@ private:
         CT_RunTrackChange* m_moveFrom;
         bool m_has_moveTo;
         CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
-    protected:
-    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -12167,9 +11994,6 @@ private:
     bool m_has_customXmlPr;
     CT_CustomXmlPr* m_customXmlPr;
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
     static CT_CustomXmlRow* default_instance_;
     bool m_has_uri_attr;
     ns_s::ST_String* m_uri_attr;
@@ -12237,19 +12061,6 @@ private:
         bool has_sdt() const;
         CT_SdtCell* mutable_sdt();
         const CT_SdtCell& get_sdt() const;
-    protected:
-    private:
-        bool m_has_tc;
-        CT_Tc* m_tc;
-        bool m_has_customXml;
-        CT_CustomXmlCell* m_customXml;
-        bool m_has_sdt;
-        CT_SdtCell* m_sdt;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -12259,19 +12070,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -12332,8 +12130,26 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
     protected:
     private:
+        bool m_has_tc;
+        CT_Tc* m_tc;
+        bool m_has_customXml;
+        CT_CustomXmlCell* m_customXml;
+        bool m_has_sdt;
+        CT_SdtCell* m_sdt;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
         bool m_has_bookmarkStart;
         CT_Bookmark* m_bookmarkStart;
         bool m_has_bookmarkEnd;
@@ -12374,19 +12190,6 @@ private:
         CT_RunTrackChange* m_moveFrom;
         bool m_has_moveTo;
         CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
-    protected:
-    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -12395,9 +12198,6 @@ private:
     bool m_has_customXmlPr;
     CT_CustomXmlPr* m_customXmlPr;
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
     static CT_CustomXmlCell* default_instance_;
     bool m_has_uri_attr;
     ns_s::ST_String* m_uri_attr;
@@ -12516,25 +12316,6 @@ private:
         bool has_r() const;
         CT_R* mutable_r();
         const CT_R& get_r() const;
-    protected:
-    private:
-        bool m_has_customXml;
-        CT_CustomXmlRun* m_customXml;
-        bool m_has_smartTag;
-        CT_SmartTagRun* m_smartTag;
-        bool m_has_sdt;
-        CT_SdtRun* m_sdt;
-        bool m_has_dir;
-        CT_DirContentRun* m_dir;
-        bool m_has_bdo;
-        CT_BdoContentRun* m_bdo;
-        bool m_has_r;
-        CT_R* m_r;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -12544,19 +12325,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -12617,8 +12385,41 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
+        bool has_fldSimple() const;
+        CT_SimpleField* mutable_fldSimple();
+        const CT_SimpleField& get_fldSimple() const;
+        bool has_hyperlink() const;
+        CT_Hyperlink* mutable_hyperlink();
+        const CT_Hyperlink& get_hyperlink() const;
+        bool has_subDoc() const;
+        CT_Rel* mutable_subDoc();
+        const CT_Rel& get_subDoc() const;
     protected:
     private:
+        bool m_has_customXml;
+        CT_CustomXmlRun* m_customXml;
+        bool m_has_smartTag;
+        CT_SmartTagRun* m_smartTag;
+        bool m_has_sdt;
+        CT_SdtRun* m_sdt;
+        bool m_has_dir;
+        CT_DirContentRun* m_dir;
+        bool m_has_bdo;
+        CT_BdoContentRun* m_bdo;
+        bool m_has_r;
+        CT_R* m_r;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
         bool m_has_bookmarkStart;
         CT_Bookmark* m_bookmarkStart;
         bool m_has_bookmarkEnd;
@@ -12659,28 +12460,6 @@ private:
         CT_RunTrackChange* m_moveFrom;
         bool m_has_moveTo;
         CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
-        bool has_fldSimple() const;
-        CT_SimpleField* mutable_fldSimple();
-        const CT_SimpleField& get_fldSimple() const;
-        bool has_hyperlink() const;
-        CT_Hyperlink* mutable_hyperlink();
-        const CT_Hyperlink& get_hyperlink() const;
-        bool has_subDoc() const;
-        CT_Rel* mutable_subDoc();
-        const CT_Rel& get_subDoc() const;
-    protected:
-    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -12695,9 +12474,6 @@ private:
     bool m_has_pPr;
     CT_PPr* m_pPr;
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
     static CT_P* default_instance_;
     bool m_has_rsidRPr_attr;
     ST_LongHexNumber* m_rsidRPr_attr;
@@ -13322,21 +13098,6 @@ private:
         bool has_tbl() const;
         CT_Tbl* mutable_tbl();
         const CT_Tbl& get_tbl() const;
-    protected:
-    private:
-        bool m_has_customXml;
-        CT_CustomXmlBlock* m_customXml;
-        bool m_has_sdt;
-        CT_SdtBlock* m_sdt;
-        bool m_has_p;
-        CT_P* m_p;
-        bool m_has_tbl;
-        CT_Tbl* m_tbl;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -13346,19 +13107,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -13419,8 +13167,31 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
+        bool has_altChunk() const;
+        CT_AltChunk* mutable_altChunk();
+        const CT_AltChunk& get_altChunk() const;
     protected:
     private:
+        bool m_has_customXml;
+        CT_CustomXmlBlock* m_customXml;
+        bool m_has_sdt;
+        CT_SdtBlock* m_sdt;
+        bool m_has_p;
+        CT_P* m_p;
+        bool m_has_tbl;
+        CT_Tbl* m_tbl;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
         bool m_has_bookmarkStart;
         CT_Bookmark* m_bookmarkStart;
         bool m_has_bookmarkEnd;
@@ -13461,22 +13232,6 @@ private:
         CT_RunTrackChange* m_moveFrom;
         bool m_has_moveTo;
         CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
-        bool has_altChunk() const;
-        CT_AltChunk* mutable_altChunk();
-        const CT_AltChunk& get_altChunk() const;
-    protected:
-    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -13487,9 +13242,6 @@ private:
     bool m_has_tcPr;
     CT_TcPr* m_tcPr;
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
     static CT_Tc* default_instance_;
     bool m_has_id_attr;
     ns_s::ST_String* m_id_attr;
@@ -13870,19 +13622,6 @@ private:
         bool has_sdt() const;
         CT_SdtCell* mutable_sdt();
         const CT_SdtCell& get_sdt() const;
-    protected:
-    private:
-        bool m_has_tc;
-        CT_Tc* m_tc;
-        bool m_has_customXml;
-        CT_CustomXmlCell* m_customXml;
-        bool m_has_sdt;
-        CT_SdtCell* m_sdt;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -13892,19 +13631,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -13965,8 +13691,26 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
     protected:
     private:
+        bool m_has_tc;
+        CT_Tc* m_tc;
+        bool m_has_customXml;
+        CT_CustomXmlCell* m_customXml;
+        bool m_has_sdt;
+        CT_SdtCell* m_sdt;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
         bool m_has_bookmarkStart;
         CT_Bookmark* m_bookmarkStart;
         bool m_has_bookmarkEnd;
@@ -14007,19 +13751,6 @@ private:
         CT_RunTrackChange* m_moveFrom;
         bool m_has_moveTo;
         CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
-    protected:
-    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -14030,9 +13761,6 @@ private:
     bool m_has_trPr;
     CT_TrPr* m_trPr;
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
     static CT_Row* default_instance_;
     bool m_has_rsidRPr_attr;
     ST_LongHexNumber* m_rsidRPr_attr;
@@ -14618,19 +14346,6 @@ private:
         bool has_sdt() const;
         CT_SdtRow* mutable_sdt();
         const CT_SdtRow& get_sdt() const;
-    protected:
-    private:
-        bool m_has_tr;
-        CT_Row* m_tr;
-        bool m_has_customXml;
-        CT_CustomXmlRow* m_customXml;
-        bool m_has_sdt;
-        CT_SdtRow* m_sdt;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -14640,19 +14355,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -14713,8 +14415,26 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
     protected:
     private:
+        bool m_has_tr;
+        CT_Row* m_tr;
+        bool m_has_customXml;
+        CT_CustomXmlRow* m_customXml;
+        bool m_has_sdt;
+        CT_SdtRow* m_sdt;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
         bool m_has_bookmarkStart;
         CT_Bookmark* m_bookmarkStart;
         bool m_has_bookmarkEnd;
@@ -14755,19 +14475,6 @@ private:
         CT_RunTrackChange* m_moveFrom;
         bool m_has_moveTo;
         CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
-    protected:
-    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -14778,9 +14485,6 @@ private:
     bool m_has_tblGrid;
     CT_TblGrid* m_tblGrid;
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
     static CT_Tbl* default_instance_;
 };
 
@@ -15012,21 +14716,6 @@ private:
         bool has_tbl() const;
         CT_Tbl* mutable_tbl();
         const CT_Tbl& get_tbl() const;
-    protected:
-    private:
-        bool m_has_customXml;
-        CT_CustomXmlBlock* m_customXml;
-        bool m_has_sdt;
-        CT_SdtBlock* m_sdt;
-        bool m_has_p;
-        CT_P* m_p;
-        bool m_has_tbl;
-        CT_Tbl* m_tbl;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -15036,19 +14725,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -15109,8 +14785,31 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
+        bool has_altChunk() const;
+        CT_AltChunk* mutable_altChunk();
+        const CT_AltChunk& get_altChunk() const;
     protected:
     private:
+        bool m_has_customXml;
+        CT_CustomXmlBlock* m_customXml;
+        bool m_has_sdt;
+        CT_SdtBlock* m_sdt;
+        bool m_has_p;
+        CT_P* m_p;
+        bool m_has_tbl;
+        CT_Tbl* m_tbl;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
         bool m_has_bookmarkStart;
         CT_Bookmark* m_bookmarkStart;
         bool m_has_bookmarkEnd;
@@ -15151,22 +14850,6 @@ private:
         CT_RunTrackChange* m_moveFrom;
         bool m_has_moveTo;
         CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
-        bool has_altChunk() const;
-        CT_AltChunk* mutable_altChunk();
-        const CT_AltChunk& get_altChunk() const;
-    protected:
-    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -15175,9 +14858,6 @@ private:
         CT_AltChunk* m_altChunk;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
     static CT_FtnEdn* default_instance_;
     bool m_has_type_attr;
     ST_FtnEdn* m_type_attr;
@@ -18476,21 +18156,6 @@ private:
         bool has_tbl() const;
         CT_Tbl* mutable_tbl();
         const CT_Tbl& get_tbl() const;
-    protected:
-    private:
-        bool m_has_customXml;
-        CT_CustomXmlBlock* m_customXml;
-        bool m_has_sdt;
-        CT_SdtBlock* m_sdt;
-        bool m_has_p;
-        CT_P* m_p;
-        bool m_has_tbl;
-        CT_Tbl* m_tbl;
-    };
-    class ChildGroup_2
-    {
-    public:
-        ChildGroup_2();
         bool has_proofErr() const;
         CT_ProofErr* mutable_proofErr();
         const CT_ProofErr& get_proofErr() const;
@@ -18500,19 +18165,6 @@ private:
         bool has_permEnd() const;
         CT_Perm* mutable_permEnd();
         const CT_Perm& get_permEnd() const;
-    protected:
-    private:
-        bool m_has_proofErr;
-        CT_ProofErr* m_proofErr;
-        bool m_has_permStart;
-        CT_PermStart* m_permStart;
-        bool m_has_permEnd;
-        CT_Perm* m_permEnd;
-    };
-    class ChildGroup_3
-    {
-    public:
-        ChildGroup_3();
         bool has_bookmarkStart() const;
         CT_Bookmark* mutable_bookmarkStart();
         const CT_Bookmark& get_bookmarkStart() const;
@@ -18573,8 +18225,31 @@ private:
         bool has_moveTo() const;
         CT_RunTrackChange* mutable_moveTo();
         const CT_RunTrackChange& get_moveTo() const;
+        bool has_m_oMathPara() const;
+        ns_m::CT_OMathPara* mutable_m_oMathPara();
+        const ns_m::CT_OMathPara& get_m_oMathPara() const;
+        bool has_m_oMath() const;
+        ns_m::CT_OMath* mutable_m_oMath();
+        const ns_m::CT_OMath& get_m_oMath() const;
+        bool has_altChunk() const;
+        CT_AltChunk* mutable_altChunk();
+        const CT_AltChunk& get_altChunk() const;
     protected:
     private:
+        bool m_has_customXml;
+        CT_CustomXmlBlock* m_customXml;
+        bool m_has_sdt;
+        CT_SdtBlock* m_sdt;
+        bool m_has_p;
+        CT_P* m_p;
+        bool m_has_tbl;
+        CT_Tbl* m_tbl;
+        bool m_has_proofErr;
+        CT_ProofErr* m_proofErr;
+        bool m_has_permStart;
+        CT_PermStart* m_permStart;
+        bool m_has_permEnd;
+        CT_Perm* m_permEnd;
         bool m_has_bookmarkStart;
         CT_Bookmark* m_bookmarkStart;
         bool m_has_bookmarkEnd;
@@ -18615,22 +18290,6 @@ private:
         CT_RunTrackChange* m_moveFrom;
         bool m_has_moveTo;
         CT_RunTrackChange* m_moveTo;
-    };
-    class ChildGroup_4
-    {
-    public:
-        ChildGroup_4();
-        bool has_m_oMathPara() const;
-        ns_m::CT_OMathPara* mutable_m_oMathPara();
-        const ns_m::CT_OMathPara& get_m_oMathPara() const;
-        bool has_m_oMath() const;
-        ns_m::CT_OMath* mutable_m_oMath();
-        const ns_m::CT_OMath& get_m_oMath() const;
-        bool has_altChunk() const;
-        CT_AltChunk* mutable_altChunk();
-        const CT_AltChunk& get_altChunk() const;
-    protected:
-    private:
         bool m_has_m_oMathPara;
         ns_m::CT_OMathPara* m_m_oMathPara;
         bool m_has_m_oMath;
@@ -18639,9 +18298,6 @@ private:
         CT_AltChunk* m_altChunk;
     };
     vector<ChildGroup_1*> m_childGroupList_1;
-    vector<ChildGroup_2*> m_childGroupList_2;
-    vector<ChildGroup_3*> m_childGroupList_3;
-    vector<ChildGroup_4*> m_childGroupList_4;
     bool m_has_sectPr;
     CT_SectPr* m_sectPr;
     static CT_Body* default_instance_;

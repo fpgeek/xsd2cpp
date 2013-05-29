@@ -2021,30 +2021,44 @@ def getToXmlMethodBodyStrFromElemCont(pbSchema, pbElemCont, cppFile):
 
     def getElemCountAssertCode(pbMinOccurs, pbMaxOccurs):
         if pbMaxOccurs.kind == PB.MaxOccurs.Unbounded:
-            return 'assert(%(min_cnt)s <= elemCnt)' % {'min_cnt': pbMinOccurs}
+            return 'assert(%(min_cnt)s <= childSize)' % {'min_cnt': pbMinOccurs}
         elif pbMaxOccurs.kind == PB.MaxOccurs.Count:
-            return 'assert(%(min_cnt)s <= elemCnt && elemCnt <= %(max_cnt)s)' % {'min_cnt':pbMinOccurs, 'max_cnt':pbMaxOccurs.count}
+            return 'assert(%(min_cnt)s <= childSize && childSize <= %(max_cnt)s)' % {'min_cnt':pbMinOccurs, 'max_cnt':pbMaxOccurs.count}
 
 
     def makeAssertCodeFromOccursReqeated(pbElemList, idx, pbElemCont):
+        if pbElemCont.min_occurs == 0 and pbElemCont.max_occurs.kind == PB.MaxOccurs.Unbounded:
+            return ''
+
         vector_name = 'm_childGroupList_%d' % idx
-        childGroupType = 'ChildGroup_%d' % idx
+        # childGroupType = 'ChildGroup_%d' % idx
 
-        codeList = []
-        for pbElem in pbElemList:
-            if (not (pbElem.min_occurs == 0 and pbElem.max_occurs.kind == PB.MaxOccurs.Unbounded)) \
-                and (not (pbElemCont.max_occurs.kind == PB.MaxOccurs.Unbounded)):
-
-                codeList.append("""
+        return \
+"""
 {
-    int elemCnt = count_if(%(vector_name)s.begin(), %(vector_name)s.end(), %(has_func_name)s);
-    %(assert_code)s;
+    const size_t childSize = %(vector_name)s.size();
+    %(assertCode)s;
 }
-""" % {'vector_name':vector_name,
-       'assert_code': getElemCountAssertCode(pbElem.min_occurs, pbElem.max_occurs),
-       'has_func_name':'mem_fun(&%s::%s)' % (childGroupType, 'has_%s' % _getCppVarNameFromElem(pbElem))})
+""" % {
+    'vector_name':vector_name,
+    'assertCode': getElemCountAssertCode(pbElemCont.min_occurs, pbElemCont.max_occurs)
+}
 
-        return '\n'.join(codeList)
+#         codeList = []
+#         for pbElem in pbElemList:
+#             if (not (pbElem.min_occurs == 0 and pbElem.max_occurs.kind == PB.MaxOccurs.Unbounded)) \
+#                 and (not (pbElemCont.max_occurs.kind == PB.MaxOccurs.Unbounded)):
+#
+#                 codeList.append("""
+# {
+#     int elemCnt = count_if(%(vector_name)s.begin(), %(vector_name)s.end(), %(has_func_name)s);
+#     %(assert_code)s;
+# }
+# """ % {'vector_name':vector_name,
+#        'assert_code': getElemCountAssertCode(pbElem.min_occurs, pbElem.max_occurs),
+#        'has_func_name':'mem_fun(&%s::%s)' % (childGroupType, 'has_%s' % _getCppVarNameFromElem(pbElem))})
+#
+#         return '\n'.join(codeList)
 
 
     toXmlMethodBodyStrList = []

@@ -1164,8 +1164,8 @@ void CT_WrapPath::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_lineTo));
-        assert(2 <= elemCnt);
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {

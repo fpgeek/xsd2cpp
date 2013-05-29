@@ -5586,6 +5586,11 @@ void CT_ExtensionList::toXmlElem(const std::string& _elemName, const std::string
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -5942,6 +5947,11 @@ void CT_NumData::toXmlElem(const std::string& _elemName, const std::string& _xml
     if (m_has_ptCount)
     {
         m_ptCount->toXmlElem("c:ptCount", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -6522,6 +6532,11 @@ void CT_StrData::toXmlElem(const std::string& _elemName, const std::string& _xml
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -6991,6 +7006,11 @@ void CT_Lvl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsSt
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -7162,6 +7182,11 @@ void CT_MultiLvlStrData::toXmlElem(const std::string& _elemName, const std::stri
     if (m_has_ptCount)
     {
         m_ptCount->toXmlElem("c:ptCount", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -10780,6 +10805,11 @@ void CT_CustSplit::toXmlElem(const std::string& _elemName, const std::string& _x
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -11230,6 +11260,117 @@ bool CT_DLbl::has_delete() const
 CT_Boolean* CT_DLbl::mutable_delete()
 {
 
+    m_has_layout = false;
+
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+
+    m_has_tx = false;
+
+    if (m_tx)
+    {
+        delete m_tx;
+        m_tx = NULL;
+    }
+    ;
+
+    m_has_numFmt = false;
+
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+
+    m_has_spPr = false;
+
+    if (m_spPr)
+    {
+        delete m_spPr;
+        m_spPr = NULL;
+    }
+    ;
+
+    m_has_txPr = false;
+
+    if (m_txPr)
+    {
+        delete m_txPr;
+        m_txPr = NULL;
+    }
+    ;
+
+    m_has_dLblPos = false;
+
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+
+    m_has_showLegendKey = false;
+
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+
+    m_has_showVal = false;
+
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+
+    m_has_showCatName = false;
+
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+
+    m_has_showSerName = false;
+
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+
+    m_has_showPercent = false;
+
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+
+    m_has_showBubbleSize = false;
+
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+
+    m_has_separator = false;
+    m_separator.clear();;
+
     m_has_delete = true;
     if (!m_delete)
     {
@@ -11255,6 +11396,15 @@ bool CT_DLbl::has_layout() const
 CT_Layout* CT_DLbl::mutable_layout()
 {
 
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
     m_has_tx = false;
 
     if (m_tx)
@@ -11263,6 +11413,99 @@ CT_Layout* CT_DLbl::mutable_layout()
         m_tx = NULL;
     }
     ;
+
+    m_has_numFmt = false;
+
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+
+    m_has_spPr = false;
+
+    if (m_spPr)
+    {
+        delete m_spPr;
+        m_spPr = NULL;
+    }
+    ;
+
+    m_has_txPr = false;
+
+    if (m_txPr)
+    {
+        delete m_txPr;
+        m_txPr = NULL;
+    }
+    ;
+
+    m_has_dLblPos = false;
+
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+
+    m_has_showLegendKey = false;
+
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+
+    m_has_showVal = false;
+
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+
+    m_has_showCatName = false;
+
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+
+    m_has_showSerName = false;
+
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+
+    m_has_showPercent = false;
+
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+
+    m_has_showBubbleSize = false;
+
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+
+    m_has_separator = false;
+    m_separator.clear();;
 
     m_has_layout = true;
     if (!m_layout)
@@ -11289,6 +11532,15 @@ bool CT_DLbl::has_tx() const
 CT_Tx* CT_DLbl::mutable_tx()
 {
 
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
     m_has_layout = false;
 
     if (m_layout)
@@ -11297,6 +11549,99 @@ CT_Tx* CT_DLbl::mutable_tx()
         m_layout = NULL;
     }
     ;
+
+    m_has_numFmt = false;
+
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+
+    m_has_spPr = false;
+
+    if (m_spPr)
+    {
+        delete m_spPr;
+        m_spPr = NULL;
+    }
+    ;
+
+    m_has_txPr = false;
+
+    if (m_txPr)
+    {
+        delete m_txPr;
+        m_txPr = NULL;
+    }
+    ;
+
+    m_has_dLblPos = false;
+
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+
+    m_has_showLegendKey = false;
+
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+
+    m_has_showVal = false;
+
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+
+    m_has_showCatName = false;
+
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+
+    m_has_showSerName = false;
+
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+
+    m_has_showPercent = false;
+
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+
+    m_has_showBubbleSize = false;
+
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+
+    m_has_separator = false;
+    m_separator.clear();;
 
     m_has_tx = true;
     if (!m_tx)
@@ -11322,6 +11667,33 @@ bool CT_DLbl::has_numFmt() const
 
 CT_NumFmt* CT_DLbl::mutable_numFmt()
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
+    m_has_layout = false;
+
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+
+    m_has_tx = false;
+
+    if (m_tx)
+    {
+        delete m_tx;
+        m_tx = NULL;
+    }
+    ;
 
     m_has_spPr = false;
 
@@ -11432,6 +11804,33 @@ bool CT_DLbl::has_spPr() const
 ns_a::CT_ShapeProperties* CT_DLbl::mutable_spPr()
 {
 
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
+    m_has_layout = false;
+
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+
+    m_has_tx = false;
+
+    if (m_tx)
+    {
+        delete m_tx;
+        m_tx = NULL;
+    }
+    ;
+
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -11540,6 +11939,33 @@ bool CT_DLbl::has_txPr() const
 
 ns_a::CT_TextBody* CT_DLbl::mutable_txPr()
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
+    m_has_layout = false;
+
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+
+    m_has_tx = false;
+
+    if (m_tx)
+    {
+        delete m_tx;
+        m_tx = NULL;
+    }
+    ;
 
     m_has_numFmt = false;
 
@@ -11650,6 +12076,33 @@ bool CT_DLbl::has_dLblPos() const
 CT_DLblPos* CT_DLbl::mutable_dLblPos()
 {
 
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
+    m_has_layout = false;
+
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+
+    m_has_tx = false;
+
+    if (m_tx)
+    {
+        delete m_tx;
+        m_tx = NULL;
+    }
+    ;
+
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -11758,6 +12211,33 @@ bool CT_DLbl::has_showLegendKey() const
 
 CT_Boolean* CT_DLbl::mutable_showLegendKey()
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
+    m_has_layout = false;
+
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+
+    m_has_tx = false;
+
+    if (m_tx)
+    {
+        delete m_tx;
+        m_tx = NULL;
+    }
+    ;
 
     m_has_numFmt = false;
 
@@ -11868,6 +12348,33 @@ bool CT_DLbl::has_showVal() const
 CT_Boolean* CT_DLbl::mutable_showVal()
 {
 
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
+    m_has_layout = false;
+
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+
+    m_has_tx = false;
+
+    if (m_tx)
+    {
+        delete m_tx;
+        m_tx = NULL;
+    }
+    ;
+
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -11976,6 +12483,33 @@ bool CT_DLbl::has_showCatName() const
 
 CT_Boolean* CT_DLbl::mutable_showCatName()
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
+    m_has_layout = false;
+
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+
+    m_has_tx = false;
+
+    if (m_tx)
+    {
+        delete m_tx;
+        m_tx = NULL;
+    }
+    ;
 
     m_has_numFmt = false;
 
@@ -12086,6 +12620,33 @@ bool CT_DLbl::has_showSerName() const
 CT_Boolean* CT_DLbl::mutable_showSerName()
 {
 
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
+    m_has_layout = false;
+
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+
+    m_has_tx = false;
+
+    if (m_tx)
+    {
+        delete m_tx;
+        m_tx = NULL;
+    }
+    ;
+
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -12194,6 +12755,33 @@ bool CT_DLbl::has_showPercent() const
 
 CT_Boolean* CT_DLbl::mutable_showPercent()
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
+    m_has_layout = false;
+
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+
+    m_has_tx = false;
+
+    if (m_tx)
+    {
+        delete m_tx;
+        m_tx = NULL;
+    }
+    ;
 
     m_has_numFmt = false;
 
@@ -12304,6 +12892,33 @@ bool CT_DLbl::has_showBubbleSize() const
 CT_Boolean* CT_DLbl::mutable_showBubbleSize()
 {
 
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
+    m_has_layout = false;
+
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+
+    m_has_tx = false;
+
+    if (m_tx)
+    {
+        delete m_tx;
+        m_tx = NULL;
+    }
+    ;
+
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -12412,6 +13027,33 @@ bool CT_DLbl::has_separator() const
 
 void CT_DLbl::set_separator(const XSD::string_& _separator)
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
+    m_has_layout = false;
+
+    if (m_layout)
+    {
+        delete m_layout;
+        m_layout = NULL;
+    }
+    ;
+
+    m_has_tx = false;
+
+    if (m_tx)
+    {
+        delete m_tx;
+        m_tx = NULL;
+    }
+    ;
 
     m_has_numFmt = false;
 
@@ -12697,8 +13339,8 @@ void CT_DLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     }
 
     {
-        bool elemHasValueList[1] = {m_has_delete};
-        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
+        bool elemHasValueList[14] = {m_has_delete, m_has_layout, m_has_tx, m_has_numFmt, m_has_spPr, m_has_txPr, m_has_dLblPos, m_has_showLegendKey, m_has_showVal, m_has_showCatName, m_has_showSerName, m_has_showPercent, m_has_showBubbleSize, m_has_separator};
+        int cnt = count(elemHasValueList, elemHasValueList + 14, true);
         assert(cnt == 1);
     }
 
@@ -12706,12 +13348,6 @@ void CT_DLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     if (m_has_delete)
     {
         m_delete->toXmlElem("c:delete", "", _outStream);
-    }
-
-    {
-        bool elemHasValueList[2] = {m_has_layout, m_has_tx};
-        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
-        assert(cnt == 1);
     }
 
 
@@ -12724,12 +13360,6 @@ void CT_DLbl::toXmlElem(const std::string& _elemName, const std::string& _xmlNsS
     if (m_has_tx)
     {
         m_tx->toXmlElem("c:tx", "", _outStream);
-    }
-
-    {
-        bool elemHasValueList[11] = {m_has_numFmt, m_has_spPr, m_has_txPr, m_has_dLblPos, m_has_showLegendKey, m_has_showVal, m_has_showCatName, m_has_showSerName, m_has_showPercent, m_has_showBubbleSize, m_has_separator};
-        int cnt = count(elemHasValueList, elemHasValueList + 11, true);
-        assert(cnt == 1);
     }
 
 
@@ -12872,6 +13502,117 @@ bool CT_DLbls::has_delete() const
 CT_Boolean* CT_DLbls::mutable_delete()
 {
 
+    m_has_numFmt = false;
+
+    if (m_numFmt)
+    {
+        delete m_numFmt;
+        m_numFmt = NULL;
+    }
+    ;
+
+    m_has_spPr = false;
+
+    if (m_spPr)
+    {
+        delete m_spPr;
+        m_spPr = NULL;
+    }
+    ;
+
+    m_has_txPr = false;
+
+    if (m_txPr)
+    {
+        delete m_txPr;
+        m_txPr = NULL;
+    }
+    ;
+
+    m_has_dLblPos = false;
+
+    if (m_dLblPos)
+    {
+        delete m_dLblPos;
+        m_dLblPos = NULL;
+    }
+    ;
+
+    m_has_showLegendKey = false;
+
+    if (m_showLegendKey)
+    {
+        delete m_showLegendKey;
+        m_showLegendKey = NULL;
+    }
+    ;
+
+    m_has_showVal = false;
+
+    if (m_showVal)
+    {
+        delete m_showVal;
+        m_showVal = NULL;
+    }
+    ;
+
+    m_has_showCatName = false;
+
+    if (m_showCatName)
+    {
+        delete m_showCatName;
+        m_showCatName = NULL;
+    }
+    ;
+
+    m_has_showSerName = false;
+
+    if (m_showSerName)
+    {
+        delete m_showSerName;
+        m_showSerName = NULL;
+    }
+    ;
+
+    m_has_showPercent = false;
+
+    if (m_showPercent)
+    {
+        delete m_showPercent;
+        m_showPercent = NULL;
+    }
+    ;
+
+    m_has_showBubbleSize = false;
+
+    if (m_showBubbleSize)
+    {
+        delete m_showBubbleSize;
+        m_showBubbleSize = NULL;
+    }
+    ;
+
+    m_has_separator = false;
+    m_separator.clear();;
+
+    m_has_showLeaderLines = false;
+
+    if (m_showLeaderLines)
+    {
+        delete m_showLeaderLines;
+        m_showLeaderLines = NULL;
+    }
+    ;
+
+    m_has_leaderLines = false;
+
+    if (m_leaderLines)
+    {
+        delete m_leaderLines;
+        m_leaderLines = NULL;
+    }
+    ;
+
     m_has_delete = true;
     if (!m_delete)
     {
@@ -12896,6 +13637,15 @@ bool CT_DLbls::has_numFmt() const
 
 CT_NumFmt* CT_DLbls::mutable_numFmt()
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
 
     m_has_spPr = false;
 
@@ -13024,6 +13774,15 @@ bool CT_DLbls::has_spPr() const
 ns_a::CT_ShapeProperties* CT_DLbls::mutable_spPr()
 {
 
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -13150,6 +13909,15 @@ bool CT_DLbls::has_txPr() const
 
 ns_a::CT_TextBody* CT_DLbls::mutable_txPr()
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
 
     m_has_numFmt = false;
 
@@ -13278,6 +14046,15 @@ bool CT_DLbls::has_dLblPos() const
 CT_DLblPos* CT_DLbls::mutable_dLblPos()
 {
 
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -13404,6 +14181,15 @@ bool CT_DLbls::has_showLegendKey() const
 
 CT_Boolean* CT_DLbls::mutable_showLegendKey()
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
 
     m_has_numFmt = false;
 
@@ -13532,6 +14318,15 @@ bool CT_DLbls::has_showVal() const
 CT_Boolean* CT_DLbls::mutable_showVal()
 {
 
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -13658,6 +14453,15 @@ bool CT_DLbls::has_showCatName() const
 
 CT_Boolean* CT_DLbls::mutable_showCatName()
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
 
     m_has_numFmt = false;
 
@@ -13786,6 +14590,15 @@ bool CT_DLbls::has_showSerName() const
 CT_Boolean* CT_DLbls::mutable_showSerName()
 {
 
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -13912,6 +14725,15 @@ bool CT_DLbls::has_showPercent() const
 
 CT_Boolean* CT_DLbls::mutable_showPercent()
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
 
     m_has_numFmt = false;
 
@@ -14040,6 +14862,15 @@ bool CT_DLbls::has_showBubbleSize() const
 CT_Boolean* CT_DLbls::mutable_showBubbleSize()
 {
 
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -14167,6 +14998,15 @@ bool CT_DLbls::has_separator() const
 void CT_DLbls::set_separator(const XSD::string_& _separator)
 {
 
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
+
     m_has_numFmt = false;
 
     if (m_numFmt)
@@ -14291,6 +15131,15 @@ bool CT_DLbls::has_showLeaderLines() const
 
 CT_Boolean* CT_DLbls::mutable_showLeaderLines()
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
 
     m_has_numFmt = false;
 
@@ -14418,6 +15267,15 @@ bool CT_DLbls::has_leaderLines() const
 
 CT_ChartLines* CT_DLbls::mutable_leaderLines()
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
 
     m_has_numFmt = false;
 
@@ -14715,6 +15573,11 @@ void CT_DLbls::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -14728,8 +15591,8 @@ void CT_DLbls::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     }
 
     {
-        bool elemHasValueList[1] = {m_has_delete};
-        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
+        bool elemHasValueList[14] = {m_has_delete, m_has_numFmt, m_has_spPr, m_has_txPr, m_has_dLblPos, m_has_showLegendKey, m_has_showVal, m_has_showCatName, m_has_showSerName, m_has_showPercent, m_has_showBubbleSize, m_has_separator, m_has_showLeaderLines, m_has_leaderLines};
+        int cnt = count(elemHasValueList, elemHasValueList + 14, true);
         assert(cnt == 1);
     }
 
@@ -14737,12 +15600,6 @@ void CT_DLbls::toXmlElem(const std::string& _elemName, const std::string& _xmlNs
     if (m_has_delete)
     {
         m_delete->toXmlElem("c:delete", "", _outStream);
-    }
-
-    {
-        bool elemHasValueList[13] = {m_has_numFmt, m_has_spPr, m_has_txPr, m_has_dLblPos, m_has_showLegendKey, m_has_showVal, m_has_showCatName, m_has_showSerName, m_has_showPercent, m_has_showBubbleSize, m_has_separator, m_has_showLeaderLines, m_has_leaderLines};
-        int cnt = count(elemHasValueList, elemHasValueList + 13, true);
-        assert(cnt == 1);
     }
 
 
@@ -17987,6 +18844,11 @@ void CT_LineSer::toXmlElem(const std::string& _elemName, const std::string& _xml
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -18003,6 +18865,11 @@ void CT_LineSer::toXmlElem(const std::string& _elemName, const std::string& _xml
     if (m_has_dLbls)
     {
         m_dLbls->toXmlElem("c:dLbls", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -18576,6 +19443,11 @@ void CT_ScatterSer::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -18592,6 +19464,11 @@ void CT_ScatterSer::toXmlElem(const std::string& _elemName, const std::string& _
     if (m_has_dLbls)
     {
         m_dLbls->toXmlElem("c:dLbls", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -19147,6 +20024,11 @@ void CT_RadarSer::toXmlElem(const std::string& _elemName, const std::string& _xm
     if (m_has_marker)
     {
         m_marker->toXmlElem("c:marker", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -19750,6 +20632,11 @@ void CT_BarSer::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -19766,6 +20653,11 @@ void CT_BarSer::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     if (m_has_dLbls)
     {
         m_dLbls->toXmlElem("c:dLbls", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -20304,6 +21196,11 @@ void CT_AreaSer::toXmlElem(const std::string& _elemName, const std::string& _xml
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -20320,6 +21217,11 @@ void CT_AreaSer::toXmlElem(const std::string& _elemName, const std::string& _xml
     if (m_has_dLbls)
     {
         m_dLbls->toXmlElem("c:dLbls", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -20869,6 +21771,11 @@ void CT_PieSer::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     if (m_has_explosion)
     {
         m_explosion->toXmlElem("c:explosion", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -21439,6 +22346,11 @@ void CT_BubbleSer::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -21455,6 +22367,11 @@ void CT_BubbleSer::toXmlElem(const std::string& _elemName, const std::string& _x
     if (m_has_dLbls)
     {
         m_dLbls->toXmlElem("c:dLbls", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -22493,6 +23410,11 @@ void CT_LineChart::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -22539,6 +23461,11 @@ void CT_LineChart::toXmlElem(const std::string& _elemName, const std::string& _x
     if (m_has_smooth)
     {
         m_smooth->toXmlElem("c:smooth", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -22919,6 +23846,11 @@ void CT_Line3DChart::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -22947,6 +23879,11 @@ void CT_Line3DChart::toXmlElem(const std::string& _elemName, const std::string& 
     if (m_has_gapDepth)
     {
         m_gapDepth->toXmlElem("c:gapDepth", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -23278,8 +24215,8 @@ void CT_StockChart::toXmlElem(const std::string& _elemName, const std::string& _
     _outStream << ">";
 
     {
-        int elemCnt = count_if(m_childGroupList_1.begin(), m_childGroupList_1.end(), mem_fun(&ChildGroup_1::has_ser));
-        assert(3 <= elemCnt && elemCnt <= 4);
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -23320,8 +24257,8 @@ void CT_StockChart::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     {
-        int elemCnt = count_if(m_childGroupList_2.begin(), m_childGroupList_2.end(), mem_fun(&ChildGroup_2::has_axId));
-        assert(2 <= elemCnt && elemCnt <= 2);
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize && childSize <= 4);
     }
 
     {
@@ -23705,6 +24642,11 @@ void CT_ScatterChart::toXmlElem(const std::string& _elemName, const std::string&
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -23721,6 +24663,11 @@ void CT_ScatterChart::toXmlElem(const std::string& _elemName, const std::string&
     if (m_has_dLbls)
     {
         m_dLbls->toXmlElem("c:dLbls", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -24104,6 +25051,11 @@ void CT_RadarChart::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -24120,6 +25072,11 @@ void CT_RadarChart::toXmlElem(const std::string& _elemName, const std::string& _
     if (m_has_dLbls)
     {
         m_dLbls->toXmlElem("c:dLbls", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -24768,6 +25725,11 @@ void CT_BarChart::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -24796,6 +25758,11 @@ void CT_BarChart::toXmlElem(const std::string& _elemName, const std::string& _xm
     if (m_has_overlap)
     {
         m_overlap->toXmlElem("c:overlap", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -25303,6 +26270,11 @@ void CT_Bar3DChart::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -25337,6 +26309,11 @@ void CT_Bar3DChart::toXmlElem(const std::string& _elemName, const std::string& _
     if (m_has_shape)
     {
         m_shape->toXmlElem("c:shape", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -25680,6 +26657,11 @@ void CT_AreaChart::toXmlElem(const std::string& _elemName, const std::string& _x
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -25702,6 +26684,11 @@ void CT_AreaChart::toXmlElem(const std::string& _elemName, const std::string& _x
     if (m_has_dropLines)
     {
         m_dropLines->toXmlElem("c:dropLines", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -26080,6 +27067,11 @@ void CT_Area3DChart::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -26108,6 +27100,11 @@ void CT_Area3DChart::toXmlElem(const std::string& _elemName, const std::string& 
     if (m_has_gapDepth)
     {
         m_gapDepth->toXmlElem("c:gapDepth", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -26393,6 +27390,11 @@ void CT_PieChart::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -26617,6 +27619,11 @@ void CT_Pie3DChart::toXmlElem(const std::string& _elemName, const std::string& _
     if (m_has_varyColors)
     {
         m_varyColors->toXmlElem("c:varyColors", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -26908,6 +27915,11 @@ void CT_DoughnutChart::toXmlElem(const std::string& _elemName, const std::string
     if (m_has_varyColors)
     {
         m_varyColors->toXmlElem("c:varyColors", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -27452,6 +28464,11 @@ void CT_OfPieChart::toXmlElem(const std::string& _elemName, const std::string& _
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -27498,6 +28515,11 @@ void CT_OfPieChart::toXmlElem(const std::string& _elemName, const std::string& _
     if (m_has_secondPieSize)
     {
         m_secondPieSize->toXmlElem("c:secondPieSize", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -27905,6 +28927,11 @@ void CT_BubbleChart::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -27945,6 +28972,11 @@ void CT_BubbleChart::toXmlElem(const std::string& _elemName, const std::string& 
     if (m_has_sizeRepresents)
     {
         m_sizeRepresents->toXmlElem("c:sizeRepresents", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -28205,6 +29237,11 @@ void CT_BandFmts::toXmlElem(const std::string& _elemName, const std::string& _xm
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -28431,6 +29468,11 @@ void CT_SurfaceChart::toXmlElem(const std::string& _elemName, const std::string&
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -28447,6 +29489,11 @@ void CT_SurfaceChart::toXmlElem(const std::string& _elemName, const std::string&
     if (m_has_bandFmts)
     {
         m_bandFmts->toXmlElem("c:bandFmts", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -28714,6 +29761,11 @@ void CT_Surface3DChart::toXmlElem(const std::string& _elemName, const std::strin
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -28730,6 +29782,11 @@ void CT_Surface3DChart::toXmlElem(const std::string& _elemName, const std::strin
     if (m_has_bandFmts)
     {
         m_bandFmts->toXmlElem("c:bandFmts", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_2.size();
+        assert(1 <= childSize);
     }
 
     {
@@ -34956,6 +36013,11 @@ void CT_PlotArea::toXmlElem(const std::string& _elemName, const std::string& _xm
     }
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -39404,6 +40466,11 @@ void CT_PivotFmts::toXmlElem(const std::string& _elemName, const std::string& _x
     _outStream << ">";
 
     {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
+    }
+
+    {
         vector<ChildGroup_1*>::const_iterator iter;
         for (iter = m_childGroupList_1.begin(); iter != m_childGroupList_1.end(); ++iter)
         {
@@ -39583,6 +40650,15 @@ bool CT_LegendEntry::has_delete() const
 CT_Boolean* CT_LegendEntry::mutable_delete()
 {
 
+    m_has_txPr = false;
+
+    if (m_txPr)
+    {
+        delete m_txPr;
+        m_txPr = NULL;
+    }
+    ;
+
     m_has_delete = true;
     if (!m_delete)
     {
@@ -39607,6 +40683,15 @@ bool CT_LegendEntry::has_txPr() const
 
 ns_a::CT_TextBody* CT_LegendEntry::mutable_txPr()
 {
+
+    m_has_delete = false;
+
+    if (m_delete)
+    {
+        delete m_delete;
+        m_delete = NULL;
+    }
+    ;
 
     m_has_txPr = true;
     if (!m_txPr)
@@ -39708,8 +40793,8 @@ void CT_LegendEntry::toXmlElem(const std::string& _elemName, const std::string& 
     }
 
     {
-        bool elemHasValueList[1] = {m_has_delete};
-        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
+        bool elemHasValueList[2] = {m_has_delete, m_has_txPr};
+        int cnt = count(elemHasValueList, elemHasValueList + 2, true);
         assert(cnt == 1);
     }
 
@@ -39717,12 +40802,6 @@ void CT_LegendEntry::toXmlElem(const std::string& _elemName, const std::string& 
     if (m_has_delete)
     {
         m_delete->toXmlElem("c:delete", "", _outStream);
-    }
-
-    {
-        bool elemHasValueList[1] = {m_has_txPr};
-        int cnt = count(elemHasValueList, elemHasValueList + 1, true);
-        assert(cnt == 1);
     }
 
 
@@ -40004,6 +41083,11 @@ void CT_Legend::toXmlElem(const std::string& _elemName, const std::string& _xmlN
     if (m_has_legendPos)
     {
         m_legendPos->toXmlElem("c:legendPos", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
@@ -40936,6 +42020,11 @@ void CT_PivotSource::toXmlElem(const std::string& _elemName, const std::string& 
     if (m_has_fmtId)
     {
         m_fmtId->toXmlElem("c:fmtId", "", _outStream);
+    }
+
+    {
+        const size_t childSize = m_childGroupList_1.size();
+        assert(1 <= childSize && childSize <= 1);
     }
 
     {
