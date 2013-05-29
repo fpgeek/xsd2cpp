@@ -244,8 +244,8 @@ class ALL_SCHEMA:
     def _parseComplexType(self, xmlSchema, complexTypeElem, pbComplexType, pbContType, pbElemCont=None):
         name = complexTypeElem.attrib.get('name')
         if name:
-            if name == "CT_FldChar":
-                print 'CT_FldChar'
+            if name == "CT_GroupShapeProperties":
+                print 'CT_GroupShapeProperties'
             pbComplexType.name = name
 
         for childElem in complexTypeElem:
@@ -390,10 +390,19 @@ class ALL_SCHEMA:
         for tag, childElems in childElemGroups:
             # pbElemCont = None
             if tag == '{%s}element' % XSD_URI or tag == '{%s}any' % XSD_URI:
-                pbElemCont = pbComplexType.element_container.add()
-                pbElemCont.kind = pbContType
-                updateElemContMinOccurs(pbElemCont, minOccurs)
-                if pbMaxOccurs: pbElemCont.max_occurs.CopyFrom(pbMaxOccurs)
+                if pbElemCont:
+                    pbNewElemCont = pbComplexType.element_container.add()
+                    pbNewElemCont.kind = pbContType
+                    pbNewElemCont.min_occurs = pbElemCont.min_occurs
+                    updateElemContMinOccurs(pbNewElemCont, minOccurs)
+                    if pbMaxOccurs: pbNewElemCont.max_occurs.CopyFrom(pbMaxOccurs)
+                    pbElemCont = pbNewElemCont
+                else:
+                    pbElemCont = pbComplexType.element_container.add()
+                    pbElemCont.kind = pbContType
+                    updateElemContMinOccurs(pbElemCont, minOccurs)
+                    if pbMaxOccurs: pbElemCont.max_occurs.CopyFrom(pbMaxOccurs)
+
 
             for childElem in childElems:
                 if childElem.tag == '{%s}element' % XSD_URI:
